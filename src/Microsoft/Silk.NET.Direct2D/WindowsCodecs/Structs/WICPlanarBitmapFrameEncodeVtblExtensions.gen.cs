@@ -106,48 +106,48 @@ public unsafe static class WICPlanarBitmapFrameEncodeVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int WriteSource(this ComPtr<IWICPlanarBitmapFrameEncode> thisVtbl, IWICBitmapSource** ppPlanes, uint cPlanes, Rect* prcSource)
+    public static unsafe int WriteSource(this ComPtr<IWICPlanarBitmapFrameEncode> thisVtbl, IWICBitmapSource** ppPlanes, uint cPlanes, Silk.NET.Maths.Rectangle<int>* prcSource)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
-        ret = ((delegate* unmanaged[Stdcall]<IWICPlanarBitmapFrameEncode*, IWICBitmapSource**, uint, Rect*, int>)@this->LpVtbl[4])(@this, ppPlanes, cPlanes, prcSource);
+        ret = ((delegate* unmanaged[Stdcall]<IWICPlanarBitmapFrameEncode*, IWICBitmapSource**, uint, Silk.NET.Maths.Rectangle<int>*, int>)@this->LpVtbl[4])(@this, ppPlanes, cPlanes, prcSource);
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int WriteSource(this ComPtr<IWICPlanarBitmapFrameEncode> thisVtbl, IWICBitmapSource** ppPlanes, uint cPlanes, ref Rect prcSource)
+    public static unsafe int WriteSource(this ComPtr<IWICPlanarBitmapFrameEncode> thisVtbl, IWICBitmapSource** ppPlanes, uint cPlanes, ref Silk.NET.Maths.Rectangle<int> prcSource)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
-        fixed (Rect* prcSourcePtr = &prcSource)
+        fixed (Silk.NET.Maths.Rectangle<int>* prcSourcePtr = &prcSource)
         {
-            ret = ((delegate* unmanaged[Stdcall]<IWICPlanarBitmapFrameEncode*, IWICBitmapSource**, uint, Rect*, int>)@this->LpVtbl[4])(@this, ppPlanes, cPlanes, prcSourcePtr);
+            ret = ((delegate* unmanaged[Stdcall]<IWICPlanarBitmapFrameEncode*, IWICBitmapSource**, uint, Silk.NET.Maths.Rectangle<int>*, int>)@this->LpVtbl[4])(@this, ppPlanes, cPlanes, prcSourcePtr);
         }
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int WriteSource(this ComPtr<IWICPlanarBitmapFrameEncode> thisVtbl, ref IWICBitmapSource* ppPlanes, uint cPlanes, Rect* prcSource)
+    public static unsafe int WriteSource(this ComPtr<IWICPlanarBitmapFrameEncode> thisVtbl, ref IWICBitmapSource* ppPlanes, uint cPlanes, Silk.NET.Maths.Rectangle<int>* prcSource)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
         fixed (IWICBitmapSource** ppPlanesPtr = &ppPlanes)
         {
-            ret = ((delegate* unmanaged[Stdcall]<IWICPlanarBitmapFrameEncode*, IWICBitmapSource**, uint, Rect*, int>)@this->LpVtbl[4])(@this, ppPlanesPtr, cPlanes, prcSource);
+            ret = ((delegate* unmanaged[Stdcall]<IWICPlanarBitmapFrameEncode*, IWICBitmapSource**, uint, Silk.NET.Maths.Rectangle<int>*, int>)@this->LpVtbl[4])(@this, ppPlanesPtr, cPlanes, prcSource);
         }
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int WriteSource(this ComPtr<IWICPlanarBitmapFrameEncode> thisVtbl, ref IWICBitmapSource* ppPlanes, uint cPlanes, ref Rect prcSource)
+    public static unsafe int WriteSource(this ComPtr<IWICPlanarBitmapFrameEncode> thisVtbl, ref IWICBitmapSource* ppPlanes, uint cPlanes, ref Silk.NET.Maths.Rectangle<int> prcSource)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
         fixed (IWICBitmapSource** ppPlanesPtr = &ppPlanes)
         {
-            fixed (Rect* prcSourcePtr = &prcSource)
+            fixed (Silk.NET.Maths.Rectangle<int>* prcSourcePtr = &prcSource)
             {
-                ret = ((delegate* unmanaged[Stdcall]<IWICPlanarBitmapFrameEncode*, IWICBitmapSource**, uint, Rect*, int>)@this->LpVtbl[4])(@this, ppPlanesPtr, cPlanes, prcSourcePtr);
+                ret = ((delegate* unmanaged[Stdcall]<IWICPlanarBitmapFrameEncode*, IWICBitmapSource**, uint, Silk.NET.Maths.Rectangle<int>*, int>)@this->LpVtbl[4])(@this, ppPlanesPtr, cPlanes, prcSourcePtr);
             }
         }
         return ret;
@@ -187,7 +187,7 @@ public unsafe static class WICPlanarBitmapFrameEncodeVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int WriteSource<TI0>(this ComPtr<IWICPlanarBitmapFrameEncode> thisVtbl, ref ComPtr<TI0> ppPlanes, uint cPlanes, Rect* prcSource) where TI0 : unmanaged, IComVtbl<IWICBitmapSource>, IComVtbl<TI0>
+    public static unsafe int WriteSource<TI0>(this ComPtr<IWICPlanarBitmapFrameEncode> thisVtbl, ref ComPtr<TI0> ppPlanes, uint cPlanes, Silk.NET.Maths.Rectangle<int>* prcSource) where TI0 : unmanaged, IComVtbl<IWICBitmapSource>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -195,7 +195,7 @@ public unsafe static class WICPlanarBitmapFrameEncodeVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int WriteSource(this ComPtr<IWICPlanarBitmapFrameEncode> thisVtbl, IWICBitmapSource** ppPlanes, uint cPlanes, Span<Rect> prcSource)
+    public static unsafe int WriteSource(this ComPtr<IWICPlanarBitmapFrameEncode> thisVtbl, IWICBitmapSource** ppPlanes, uint cPlanes, Span<Silk.NET.Maths.Rectangle<int>> prcSource)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -203,7 +203,7 @@ public unsafe static class WICPlanarBitmapFrameEncodeVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int WriteSource<TI0>(this ComPtr<IWICPlanarBitmapFrameEncode> thisVtbl, ref ComPtr<TI0> ppPlanes, uint cPlanes, ref Rect prcSource) where TI0 : unmanaged, IComVtbl<IWICBitmapSource>, IComVtbl<TI0>
+    public static int WriteSource<TI0>(this ComPtr<IWICPlanarBitmapFrameEncode> thisVtbl, ref ComPtr<TI0> ppPlanes, uint cPlanes, ref Silk.NET.Maths.Rectangle<int> prcSource) where TI0 : unmanaged, IComVtbl<IWICBitmapSource>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -211,7 +211,7 @@ public unsafe static class WICPlanarBitmapFrameEncodeVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int WriteSource(this ComPtr<IWICPlanarBitmapFrameEncode> thisVtbl, ref IWICBitmapSource* ppPlanes, uint cPlanes, Span<Rect> prcSource)
+    public static unsafe int WriteSource(this ComPtr<IWICPlanarBitmapFrameEncode> thisVtbl, ref IWICBitmapSource* ppPlanes, uint cPlanes, Span<Silk.NET.Maths.Rectangle<int>> prcSource)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader

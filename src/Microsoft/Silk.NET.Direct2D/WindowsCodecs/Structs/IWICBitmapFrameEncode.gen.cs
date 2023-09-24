@@ -266,48 +266,48 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int WriteSource(IWICBitmapSource* pIBitmapSource, Rect* prc)
+        public readonly unsafe int WriteSource(IWICBitmapSource* pIBitmapSource, Silk.NET.Maths.Rectangle<int>* prc)
         {
             var @this = (IWICBitmapFrameEncode*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<IWICBitmapFrameEncode*, IWICBitmapSource*, Rect*, int>)@this->LpVtbl[11])(@this, pIBitmapSource, prc);
+            ret = ((delegate* unmanaged[Stdcall]<IWICBitmapFrameEncode*, IWICBitmapSource*, Silk.NET.Maths.Rectangle<int>*, int>)@this->LpVtbl[11])(@this, pIBitmapSource, prc);
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int WriteSource(IWICBitmapSource* pIBitmapSource, ref Rect prc)
+        public readonly unsafe int WriteSource(IWICBitmapSource* pIBitmapSource, ref Silk.NET.Maths.Rectangle<int> prc)
         {
             var @this = (IWICBitmapFrameEncode*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            fixed (Rect* prcPtr = &prc)
+            fixed (Silk.NET.Maths.Rectangle<int>* prcPtr = &prc)
             {
-                ret = ((delegate* unmanaged[Stdcall]<IWICBitmapFrameEncode*, IWICBitmapSource*, Rect*, int>)@this->LpVtbl[11])(@this, pIBitmapSource, prcPtr);
+                ret = ((delegate* unmanaged[Stdcall]<IWICBitmapFrameEncode*, IWICBitmapSource*, Silk.NET.Maths.Rectangle<int>*, int>)@this->LpVtbl[11])(@this, pIBitmapSource, prcPtr);
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int WriteSource(ref IWICBitmapSource pIBitmapSource, Rect* prc)
+        public readonly unsafe int WriteSource(ref IWICBitmapSource pIBitmapSource, Silk.NET.Maths.Rectangle<int>* prc)
         {
             var @this = (IWICBitmapFrameEncode*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
             fixed (IWICBitmapSource* pIBitmapSourcePtr = &pIBitmapSource)
             {
-                ret = ((delegate* unmanaged[Stdcall]<IWICBitmapFrameEncode*, IWICBitmapSource*, Rect*, int>)@this->LpVtbl[11])(@this, pIBitmapSourcePtr, prc);
+                ret = ((delegate* unmanaged[Stdcall]<IWICBitmapFrameEncode*, IWICBitmapSource*, Silk.NET.Maths.Rectangle<int>*, int>)@this->LpVtbl[11])(@this, pIBitmapSourcePtr, prc);
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int WriteSource(ref IWICBitmapSource pIBitmapSource, ref Rect prc)
+        public readonly int WriteSource(ref IWICBitmapSource pIBitmapSource, ref Silk.NET.Maths.Rectangle<int> prc)
         {
             var @this = (IWICBitmapFrameEncode*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
             fixed (IWICBitmapSource* pIBitmapSourcePtr = &pIBitmapSource)
             {
-                fixed (Rect* prcPtr = &prc)
+                fixed (Silk.NET.Maths.Rectangle<int>* prcPtr = &prc)
                 {
-                    ret = ((delegate* unmanaged[Stdcall]<IWICBitmapFrameEncode*, IWICBitmapSource*, Rect*, int>)@this->LpVtbl[11])(@this, pIBitmapSourcePtr, prcPtr);
+                    ret = ((delegate* unmanaged[Stdcall]<IWICBitmapFrameEncode*, IWICBitmapSource*, Silk.NET.Maths.Rectangle<int>*, int>)@this->LpVtbl[11])(@this, pIBitmapSourcePtr, prcPtr);
                 }
             }
             return ret;
@@ -385,7 +385,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int WriteSource<TI0>(ComPtr<TI0> pIBitmapSource, Rect* prc) where TI0 : unmanaged, IComVtbl<IWICBitmapSource>, IComVtbl<TI0>
+        public readonly unsafe int WriteSource<TI0>(ComPtr<TI0> pIBitmapSource, Silk.NET.Maths.Rectangle<int>* prc) where TI0 : unmanaged, IComVtbl<IWICBitmapSource>, IComVtbl<TI0>
         {
             var @this = (IWICBitmapFrameEncode*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -393,7 +393,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int WriteSource<TI0>(ComPtr<TI0> pIBitmapSource, ref Rect prc) where TI0 : unmanaged, IComVtbl<IWICBitmapSource>, IComVtbl<TI0>
+        public readonly int WriteSource<TI0>(ComPtr<TI0> pIBitmapSource, ref Silk.NET.Maths.Rectangle<int> prc) where TI0 : unmanaged, IComVtbl<IWICBitmapSource>, IComVtbl<TI0>
         {
             var @this = (IWICBitmapFrameEncode*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader

@@ -1625,7 +1625,8 @@
             },
             "exclude": [
                 "ID2D1Device",
-                "ID2D1Image"
+                "ID2D1Image",
+                "WICRect"
             ],
             "rename": {
                 "WICProgressNotification": "ProgressNotificationEnum"
@@ -1678,7 +1679,8 @@
                     "tagPROPBAG2": "void",
                     "HPALETTE__": "void",
                     "HBITMAP__": "void",
-                    "HICON__": "void"
+                    "HICON__": "void",
+                    "WICRect": "Silk.NET.Maths.Rectangle<int>"
                 },
                 {
                     "$include.commonTypeMap": "build/csharp_typemap.json"

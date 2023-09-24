@@ -154,73 +154,73 @@ public unsafe static class WICDdsFrameDecodeVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CopyBlocks(this ComPtr<IWICDdsFrameDecode> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Rect* prcBoundsInBlocks, uint cbStride, uint cbBufferSize, byte* pbBuffer)
+    public static unsafe int CopyBlocks(this ComPtr<IWICDdsFrameDecode> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Rectangle<int>* prcBoundsInBlocks, uint cbStride, uint cbBufferSize, byte* pbBuffer)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
-        ret = ((delegate* unmanaged[Stdcall]<IWICDdsFrameDecode*, Rect*, uint, uint, byte*, int>)@this->LpVtbl[5])(@this, prcBoundsInBlocks, cbStride, cbBufferSize, pbBuffer);
+        ret = ((delegate* unmanaged[Stdcall]<IWICDdsFrameDecode*, Silk.NET.Maths.Rectangle<int>*, uint, uint, byte*, int>)@this->LpVtbl[5])(@this, prcBoundsInBlocks, cbStride, cbBufferSize, pbBuffer);
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CopyBlocks(this ComPtr<IWICDdsFrameDecode> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Rect* prcBoundsInBlocks, uint cbStride, uint cbBufferSize, ref byte pbBuffer)
+    public static unsafe int CopyBlocks(this ComPtr<IWICDdsFrameDecode> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Rectangle<int>* prcBoundsInBlocks, uint cbStride, uint cbBufferSize, ref byte pbBuffer)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
         fixed (byte* pbBufferPtr = &pbBuffer)
         {
-            ret = ((delegate* unmanaged[Stdcall]<IWICDdsFrameDecode*, Rect*, uint, uint, byte*, int>)@this->LpVtbl[5])(@this, prcBoundsInBlocks, cbStride, cbBufferSize, pbBufferPtr);
+            ret = ((delegate* unmanaged[Stdcall]<IWICDdsFrameDecode*, Silk.NET.Maths.Rectangle<int>*, uint, uint, byte*, int>)@this->LpVtbl[5])(@this, prcBoundsInBlocks, cbStride, cbBufferSize, pbBufferPtr);
         }
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CopyBlocks(this ComPtr<IWICDdsFrameDecode> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Rect* prcBoundsInBlocks, uint cbStride, uint cbBufferSize, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pbBuffer)
+    public static unsafe int CopyBlocks(this ComPtr<IWICDdsFrameDecode> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Rectangle<int>* prcBoundsInBlocks, uint cbStride, uint cbBufferSize, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pbBuffer)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
         var pbBufferPtr = (byte*) SilkMarshal.StringToPtr(pbBuffer, NativeStringEncoding.UTF8);
-        ret = ((delegate* unmanaged[Stdcall]<IWICDdsFrameDecode*, Rect*, uint, uint, byte*, int>)@this->LpVtbl[5])(@this, prcBoundsInBlocks, cbStride, cbBufferSize, pbBufferPtr);
+        ret = ((delegate* unmanaged[Stdcall]<IWICDdsFrameDecode*, Silk.NET.Maths.Rectangle<int>*, uint, uint, byte*, int>)@this->LpVtbl[5])(@this, prcBoundsInBlocks, cbStride, cbBufferSize, pbBufferPtr);
         SilkMarshal.Free((nint)pbBufferPtr);
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CopyBlocks(this ComPtr<IWICDdsFrameDecode> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Rect prcBoundsInBlocks, uint cbStride, uint cbBufferSize, byte* pbBuffer)
+    public static unsafe int CopyBlocks(this ComPtr<IWICDdsFrameDecode> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Maths.Rectangle<int> prcBoundsInBlocks, uint cbStride, uint cbBufferSize, byte* pbBuffer)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
-        fixed (Rect* prcBoundsInBlocksPtr = &prcBoundsInBlocks)
+        fixed (Silk.NET.Maths.Rectangle<int>* prcBoundsInBlocksPtr = &prcBoundsInBlocks)
         {
-            ret = ((delegate* unmanaged[Stdcall]<IWICDdsFrameDecode*, Rect*, uint, uint, byte*, int>)@this->LpVtbl[5])(@this, prcBoundsInBlocksPtr, cbStride, cbBufferSize, pbBuffer);
+            ret = ((delegate* unmanaged[Stdcall]<IWICDdsFrameDecode*, Silk.NET.Maths.Rectangle<int>*, uint, uint, byte*, int>)@this->LpVtbl[5])(@this, prcBoundsInBlocksPtr, cbStride, cbBufferSize, pbBuffer);
         }
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static int CopyBlocks(this ComPtr<IWICDdsFrameDecode> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Rect prcBoundsInBlocks, uint cbStride, uint cbBufferSize, ref byte pbBuffer)
+    public static int CopyBlocks(this ComPtr<IWICDdsFrameDecode> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Maths.Rectangle<int> prcBoundsInBlocks, uint cbStride, uint cbBufferSize, ref byte pbBuffer)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
-        fixed (Rect* prcBoundsInBlocksPtr = &prcBoundsInBlocks)
+        fixed (Silk.NET.Maths.Rectangle<int>* prcBoundsInBlocksPtr = &prcBoundsInBlocks)
         {
             fixed (byte* pbBufferPtr = &pbBuffer)
             {
-                ret = ((delegate* unmanaged[Stdcall]<IWICDdsFrameDecode*, Rect*, uint, uint, byte*, int>)@this->LpVtbl[5])(@this, prcBoundsInBlocksPtr, cbStride, cbBufferSize, pbBufferPtr);
+                ret = ((delegate* unmanaged[Stdcall]<IWICDdsFrameDecode*, Silk.NET.Maths.Rectangle<int>*, uint, uint, byte*, int>)@this->LpVtbl[5])(@this, prcBoundsInBlocksPtr, cbStride, cbBufferSize, pbBufferPtr);
             }
         }
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static int CopyBlocks(this ComPtr<IWICDdsFrameDecode> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Rect prcBoundsInBlocks, uint cbStride, uint cbBufferSize, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pbBuffer)
+    public static int CopyBlocks(this ComPtr<IWICDdsFrameDecode> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Maths.Rectangle<int> prcBoundsInBlocks, uint cbStride, uint cbBufferSize, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pbBuffer)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
-        fixed (Rect* prcBoundsInBlocksPtr = &prcBoundsInBlocks)
+        fixed (Silk.NET.Maths.Rectangle<int>* prcBoundsInBlocksPtr = &prcBoundsInBlocks)
         {
         var pbBufferPtr = (byte*) SilkMarshal.StringToPtr(pbBuffer, NativeStringEncoding.UTF8);
-            ret = ((delegate* unmanaged[Stdcall]<IWICDdsFrameDecode*, Rect*, uint, uint, byte*, int>)@this->LpVtbl[5])(@this, prcBoundsInBlocksPtr, cbStride, cbBufferSize, pbBufferPtr);
+            ret = ((delegate* unmanaged[Stdcall]<IWICDdsFrameDecode*, Silk.NET.Maths.Rectangle<int>*, uint, uint, byte*, int>)@this->LpVtbl[5])(@this, prcBoundsInBlocksPtr, cbStride, cbBufferSize, pbBufferPtr);
         SilkMarshal.Free((nint)pbBufferPtr);
         }
         return ret;
@@ -284,7 +284,7 @@ public unsafe static class WICDdsFrameDecodeVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CopyBlocks(this ComPtr<IWICDdsFrameDecode> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Rect* prcBoundsInBlocks, uint cbStride, uint cbBufferSize, Span<byte> pbBuffer)
+    public static unsafe int CopyBlocks(this ComPtr<IWICDdsFrameDecode> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Rectangle<int>* prcBoundsInBlocks, uint cbStride, uint cbBufferSize, Span<byte> pbBuffer)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -292,7 +292,7 @@ public unsafe static class WICDdsFrameDecodeVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CopyBlocks(this ComPtr<IWICDdsFrameDecode> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Rect> prcBoundsInBlocks, uint cbStride, uint cbBufferSize, byte* pbBuffer)
+    public static unsafe int CopyBlocks(this ComPtr<IWICDdsFrameDecode> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Silk.NET.Maths.Rectangle<int>> prcBoundsInBlocks, uint cbStride, uint cbBufferSize, byte* pbBuffer)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -300,7 +300,7 @@ public unsafe static class WICDdsFrameDecodeVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int CopyBlocks(this ComPtr<IWICDdsFrameDecode> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Rect> prcBoundsInBlocks, uint cbStride, uint cbBufferSize, Span<byte> pbBuffer)
+    public static int CopyBlocks(this ComPtr<IWICDdsFrameDecode> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Silk.NET.Maths.Rectangle<int>> prcBoundsInBlocks, uint cbStride, uint cbBufferSize, Span<byte> pbBuffer)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -308,7 +308,7 @@ public unsafe static class WICDdsFrameDecodeVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int CopyBlocks(this ComPtr<IWICDdsFrameDecode> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Rect> prcBoundsInBlocks, uint cbStride, uint cbBufferSize, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pbBuffer)
+    public static int CopyBlocks(this ComPtr<IWICDdsFrameDecode> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Silk.NET.Maths.Rectangle<int>> prcBoundsInBlocks, uint cbStride, uint cbBufferSize, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pbBuffer)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader

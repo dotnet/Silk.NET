@@ -639,48 +639,48 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CopyPixels([Flow(Silk.NET.Core.Native.FlowDirection.In)] Rect* prcSource, uint uiWidth, uint uiHeight, BitmapTransformOptions dstTransform, PlanarOptions dstPlanarOptions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] BitmapPlane* pDstPlanes, uint cPlanes)
+        public readonly unsafe int CopyPixels([Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Rectangle<int>* prcSource, uint uiWidth, uint uiHeight, BitmapTransformOptions dstTransform, PlanarOptions dstPlanarOptions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] BitmapPlane* pDstPlanes, uint cPlanes)
         {
             var @this = (IWICPlanarBitmapSourceTransform*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<IWICPlanarBitmapSourceTransform*, Rect*, uint, uint, BitmapTransformOptions, PlanarOptions, BitmapPlane*, uint, int>)@this->LpVtbl[4])(@this, prcSource, uiWidth, uiHeight, dstTransform, dstPlanarOptions, pDstPlanes, cPlanes);
+            ret = ((delegate* unmanaged[Stdcall]<IWICPlanarBitmapSourceTransform*, Silk.NET.Maths.Rectangle<int>*, uint, uint, BitmapTransformOptions, PlanarOptions, BitmapPlane*, uint, int>)@this->LpVtbl[4])(@this, prcSource, uiWidth, uiHeight, dstTransform, dstPlanarOptions, pDstPlanes, cPlanes);
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CopyPixels([Flow(Silk.NET.Core.Native.FlowDirection.In)] Rect* prcSource, uint uiWidth, uint uiHeight, BitmapTransformOptions dstTransform, PlanarOptions dstPlanarOptions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in BitmapPlane pDstPlanes, uint cPlanes)
+        public readonly unsafe int CopyPixels([Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Rectangle<int>* prcSource, uint uiWidth, uint uiHeight, BitmapTransformOptions dstTransform, PlanarOptions dstPlanarOptions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in BitmapPlane pDstPlanes, uint cPlanes)
         {
             var @this = (IWICPlanarBitmapSourceTransform*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
             fixed (BitmapPlane* pDstPlanesPtr = &pDstPlanes)
             {
-                ret = ((delegate* unmanaged[Stdcall]<IWICPlanarBitmapSourceTransform*, Rect*, uint, uint, BitmapTransformOptions, PlanarOptions, BitmapPlane*, uint, int>)@this->LpVtbl[4])(@this, prcSource, uiWidth, uiHeight, dstTransform, dstPlanarOptions, pDstPlanesPtr, cPlanes);
+                ret = ((delegate* unmanaged[Stdcall]<IWICPlanarBitmapSourceTransform*, Silk.NET.Maths.Rectangle<int>*, uint, uint, BitmapTransformOptions, PlanarOptions, BitmapPlane*, uint, int>)@this->LpVtbl[4])(@this, prcSource, uiWidth, uiHeight, dstTransform, dstPlanarOptions, pDstPlanesPtr, cPlanes);
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CopyPixels([Flow(Silk.NET.Core.Native.FlowDirection.In)] in Rect prcSource, uint uiWidth, uint uiHeight, BitmapTransformOptions dstTransform, PlanarOptions dstPlanarOptions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] BitmapPlane* pDstPlanes, uint cPlanes)
+        public readonly unsafe int CopyPixels([Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Maths.Rectangle<int> prcSource, uint uiWidth, uint uiHeight, BitmapTransformOptions dstTransform, PlanarOptions dstPlanarOptions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] BitmapPlane* pDstPlanes, uint cPlanes)
         {
             var @this = (IWICPlanarBitmapSourceTransform*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            fixed (Rect* prcSourcePtr = &prcSource)
+            fixed (Silk.NET.Maths.Rectangle<int>* prcSourcePtr = &prcSource)
             {
-                ret = ((delegate* unmanaged[Stdcall]<IWICPlanarBitmapSourceTransform*, Rect*, uint, uint, BitmapTransformOptions, PlanarOptions, BitmapPlane*, uint, int>)@this->LpVtbl[4])(@this, prcSourcePtr, uiWidth, uiHeight, dstTransform, dstPlanarOptions, pDstPlanes, cPlanes);
+                ret = ((delegate* unmanaged[Stdcall]<IWICPlanarBitmapSourceTransform*, Silk.NET.Maths.Rectangle<int>*, uint, uint, BitmapTransformOptions, PlanarOptions, BitmapPlane*, uint, int>)@this->LpVtbl[4])(@this, prcSourcePtr, uiWidth, uiHeight, dstTransform, dstPlanarOptions, pDstPlanes, cPlanes);
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int CopyPixels([Flow(Silk.NET.Core.Native.FlowDirection.In)] in Rect prcSource, uint uiWidth, uint uiHeight, BitmapTransformOptions dstTransform, PlanarOptions dstPlanarOptions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in BitmapPlane pDstPlanes, uint cPlanes)
+        public readonly int CopyPixels([Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Maths.Rectangle<int> prcSource, uint uiWidth, uint uiHeight, BitmapTransformOptions dstTransform, PlanarOptions dstPlanarOptions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in BitmapPlane pDstPlanes, uint cPlanes)
         {
             var @this = (IWICPlanarBitmapSourceTransform*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            fixed (Rect* prcSourcePtr = &prcSource)
+            fixed (Silk.NET.Maths.Rectangle<int>* prcSourcePtr = &prcSource)
             {
                 fixed (BitmapPlane* pDstPlanesPtr = &pDstPlanes)
                 {
-                    ret = ((delegate* unmanaged[Stdcall]<IWICPlanarBitmapSourceTransform*, Rect*, uint, uint, BitmapTransformOptions, PlanarOptions, BitmapPlane*, uint, int>)@this->LpVtbl[4])(@this, prcSourcePtr, uiWidth, uiHeight, dstTransform, dstPlanarOptions, pDstPlanesPtr, cPlanes);
+                    ret = ((delegate* unmanaged[Stdcall]<IWICPlanarBitmapSourceTransform*, Silk.NET.Maths.Rectangle<int>*, uint, uint, BitmapTransformOptions, PlanarOptions, BitmapPlane*, uint, int>)@this->LpVtbl[4])(@this, prcSourcePtr, uiWidth, uiHeight, dstTransform, dstPlanarOptions, pDstPlanesPtr, cPlanes);
                 }
             }
             return ret;
