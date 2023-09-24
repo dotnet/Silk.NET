@@ -21,6 +21,7 @@ namespace Silk.NET.WebGPU
     {
         public RenderPassColorAttachment
         (
+            ChainedStruct* nextInChain = null,
             TextureView* view = null,
             TextureView* resolveTarget = null,
             LoadOp? loadOp = null,
@@ -28,6 +29,11 @@ namespace Silk.NET.WebGPU
             Color? clearValue = null
         ) : this()
         {
+            if (nextInChain is not null)
+            {
+                NextInChain = nextInChain;
+            }
+
             if (view is not null)
             {
                 View = view;
@@ -54,6 +60,11 @@ namespace Silk.NET.WebGPU
             }
         }
 
+
+        [NativeName("Type", "const WGPUChainedStruct *")]
+        [NativeName("Type.Name", "const WGPUChainedStruct *")]
+        [NativeName("Name", "nextInChain")]
+        public ChainedStruct* NextInChain;
 
         [NativeName("Type", "WGPUTextureView")]
         [NativeName("Type.Name", "WGPUTextureView")]

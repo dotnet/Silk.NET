@@ -64,8 +64,8 @@ namespace Silk.NET.WebGPU
         [NativeName("Name", "viewDimension")]
         public TextureViewDimension ViewDimension;
 
-        [NativeName("Type", "bool")]
-        [NativeName("Type.Name", "bool")]
+        [NativeName("Type", "WGPUBool")]
+        [NativeName("Type.Name", "WGPUBool")]
         [NativeName("Name", "multisampled")]
         public Silk.NET.Core.Bool32 Multisampled;
     }

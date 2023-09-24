@@ -99,8 +99,8 @@ namespace Silk.NET.WebGPU
         [NativeName("Name", "depthClearValue")]
         public float DepthClearValue;
 
-        [NativeName("Type", "bool")]
-        [NativeName("Type.Name", "bool")]
+        [NativeName("Type", "WGPUBool")]
+        [NativeName("Type.Name", "WGPUBool")]
         [NativeName("Name", "depthReadOnly")]
         public Silk.NET.Core.Bool32 DepthReadOnly;
 
@@ -119,8 +119,8 @@ namespace Silk.NET.WebGPU
         [NativeName("Name", "stencilClearValue")]
         public uint StencilClearValue;
 
-        [NativeName("Type", "bool")]
-        [NativeName("Type.Name", "bool")]
+        [NativeName("Type", "WGPUBool")]
+        [NativeName("Type.Name", "WGPUBool")]
         [NativeName("Name", "stencilReadOnly")]
         public Silk.NET.Core.Bool32 StencilReadOnly;
     }

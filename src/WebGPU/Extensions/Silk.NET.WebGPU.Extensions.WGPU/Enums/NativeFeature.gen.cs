@@ -13,15 +13,15 @@ namespace Silk.NET.WebGPU.Extensions.WGPU
     public enum NativeFeature : int
     {
         [NativeName("Name", "WGPUNativeFeature_PushConstants")]
-        PushConstants = 0x60000001,
+        PushConstants = 0x30001,
         [NativeName("Name", "WGPUNativeFeature_TextureAdapterSpecificFormatFeatures")]
-        TextureAdapterSpecificFormatFeatures = 0x60000002,
+        TextureAdapterSpecificFormatFeatures = 0x30002,
         [NativeName("Name", "WGPUNativeFeature_MultiDrawIndirect")]
-        MultiDrawIndirect = 0x60000003,
+        MultiDrawIndirect = 0x30003,
         [NativeName("Name", "WGPUNativeFeature_MultiDrawIndirectCount")]
-        MultiDrawIndirectCount = 0x60000004,
+        MultiDrawIndirectCount = 0x30004,
         [NativeName("Name", "WGPUNativeFeature_VertexWritableStorage")]
-        VertexWritableStorage = 0x60000005,
+        VertexWritableStorage = 0x30005,
         [NativeName("Name", "WGPUNativeFeature_Force32")]
         Force32 = 0x7FFFFFFF,
     }

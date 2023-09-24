@@ -23,7 +23,7 @@ namespace Silk.NET.WebGPU
         (
             ChainedStruct* nextInChain = null,
             byte* label = null,
-            nuint? requiredFeaturesCount = null,
+            nuint? requiredFeatureCount = null,
             FeatureName* requiredFeatures = null,
             RequiredLimits* requiredLimits = null,
             QueueDescriptor? defaultQueue = null,
@@ -41,9 +41,9 @@ namespace Silk.NET.WebGPU
                 Label = label;
             }
 
-            if (requiredFeaturesCount is not null)
+            if (requiredFeatureCount is not null)
             {
-                RequiredFeaturesCount = requiredFeaturesCount.Value;
+                RequiredFeatureCount = requiredFeatureCount.Value;
             }
 
             if (requiredFeatures is not null)
@@ -85,8 +85,8 @@ namespace Silk.NET.WebGPU
 
         [NativeName("Type", "size_t")]
         [NativeName("Type.Name", "size_t")]
-        [NativeName("Name", "requiredFeaturesCount")]
-        public nuint RequiredFeaturesCount;
+        [NativeName("Name", "requiredFeatureCount")]
+        public nuint RequiredFeatureCount;
 
         [NativeName("Type", "const WGPUFeatureName *")]
         [NativeName("Type.Name", "const WGPUFeatureName *")]

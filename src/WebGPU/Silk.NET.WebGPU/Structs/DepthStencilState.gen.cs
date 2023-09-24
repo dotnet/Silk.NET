@@ -101,8 +101,8 @@ namespace Silk.NET.WebGPU
         [NativeName("Name", "format")]
         public TextureFormat Format;
 
-        [NativeName("Type", "bool")]
-        [NativeName("Type.Name", "bool")]
+        [NativeName("Type", "WGPUBool")]
+        [NativeName("Type.Name", "WGPUBool")]
         [NativeName("Name", "depthWriteEnabled")]
         public Silk.NET.Core.Bool32 DepthWriteEnabled;
 

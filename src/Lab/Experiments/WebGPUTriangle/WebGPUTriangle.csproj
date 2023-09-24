@@ -9,7 +9,6 @@
     </PropertyGroup>
 
     <ItemGroup>
-        <ProjectReference Include="..\..\..\WebGPU\Extensions\Silk.NET.WebGPU.Extensions.Disposal\Silk.NET.WebGPU.Extensions.Disposal.csproj" />
         <ProjectReference Include="..\..\..\WebGPU\Extensions\Silk.NET.WebGPU.Extensions.WGPU\Silk.NET.WebGPU.Extensions.WGPU.csproj" />
         <ProjectReference Include="..\..\..\WebGPU\Silk.NET.WebGPU\Silk.NET.WebGPU.csproj" />
         <ProjectReference Include="..\..\..\Windowing\Extensions\Silk.NET.Windowing.Extensions\Silk.NET.Windowing.Extensions.csproj" />
