@@ -169,7 +169,7 @@ Any post-3.0, pre-4.0 release will be versioned as follows:
 - The major version will always be 3
 - The minor version will be the number of the monthly update cycle i.e. the first monthly update will be versioned 3.1, the second 3.2, etc...
 - The patch version will always be 0, unless it is an emergency patch in which case it'll be the number of the emergency patch i.e. if an emergency patch is required after the first monthly update the version will be 3.1.1, if another one is required (heaven forbid) in this same cycle it'll be 3.1.2 etc...
-- The revision version will always be 0.
+- The revision version will always be 0, unless it is a preview build generated from the `develop` branch in which case it'll be 1.
 
 Users are expected to keep all of the versions of all Silk.NET packages they are using in-sync. We could write a Roslyn analyser or MSBuild target to help push users to this.
 
