@@ -37,16 +37,16 @@ jobs:
               run: |
                   echo running extras
                   ${{ matrix.env.extras }}
-            
+
             # Install python
             - uses: actions/setup-python@v4
               with:
-                python-version: '3.10'
-                    
+                  python-version: "3.10"
+
             # Install CMake and Ninja
             - uses: lukka/get-cmake@latest
 
             - name: Build MoltenVK
               run: ${{ matrix.env.nuke_invoke }} MoltenVK
               env:
-                  PUSHABLE_GITHUB_TOKEN: ${{ secrets.PUSHABLE_GITHUB_TOKEN }}  
+                  PUSHABLE_GITHUB_TOKEN: ${{ secrets.PUSHABLE_GITHUB_TOKEN }}
