@@ -40,8 +40,8 @@ jobs:
             
             # Install python
             - uses: actions/setup-python@v4
-                with:
-                    python-version: '3.10'
+              with:
+                python-version: '3.10'
                     
             # Install CMake and Ninja
             - uses: lukka/get-cmake@latest
