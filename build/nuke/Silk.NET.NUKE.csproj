@@ -9,6 +9,7 @@
     <NukeScriptDirectory>..\..</NukeScriptDirectory>
     <LangVersion>preview</LangVersion>
     <NukeTelemetryVersion>1</NukeTelemetryVersion>
+    <EnableUnsafeBinaryFormatterSerialization>true</EnableUnsafeBinaryFormatterSerialization>
   </PropertyGroup>
 
   <ItemGroup>
