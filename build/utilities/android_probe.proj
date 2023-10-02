@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+net8.0-android<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <TargetFramework>net6.0-android</TargetFramework>
     <SupportedOSPlatformVersion>21</SupportedOSPlatformVersion>
