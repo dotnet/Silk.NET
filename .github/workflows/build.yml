@@ -34,14 +34,6 @@ jobs:
       uses: actions/setup-dotnet@v1
       with:
         dotnet-version: 6.0.201
-    - name: Setup .NET 5.0
-      uses: actions/setup-dotnet@v1
-      with:
-        dotnet-version: 5.0.201
-    - name: Setup .NET Core 3.1
-      uses: actions/setup-dotnet@v1
-      with:
-        dotnet-version: 3.1.404
     - name: Install Workloads
       # TODO: This is slow. Maybe we can make a docker container with this already done?
       run: dotnet workload install android ios maccatalyst maui
