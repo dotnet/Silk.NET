@@ -63,8 +63,8 @@ jobs:
     - name: Pack (CI)
       if: ${{ github.repository != 'dotnet/Silk.NET' || !startsWith(github.ref, 'refs/tags/') }}
       # TODO build native mixins such as BuildLibSilkDroid
-      run: .\build.cmd Pack --configuration Release --msbuild-properties VersionSuffix=build${{ github.run_number }}.0 ContinuousIntegrationBuild=true
-    - name: Pack (CD)
+      run: .\build.cmd Pack --configuration ${{ github.repository == 'dotnet/Silk.NET' && github.event_name != 'pull_request' && 'Release' || 'Debug' }} --msbuild-properties VersionSuffix=build${{ github.run_number }}.0 ContinuousIntegrationBuild=true
+    - name: Pack (CD) 
       if: ${{ github.repository == 'dotnet/Silk.NET' && startsWith(github.ref, 'refs/tags/') }}
       # TODO build native mixins such as BuildLibSilkDroid
       run: .\build.cmd Pack --configuration Release --msbuild-properties ContinuousIntegrationBuild=true
@@ -94,4 +94,3 @@ jobs:
     - name: Push to NuGet
       if: ${{ github.repository == 'dotnet/Silk.NET' && startsWith(github.ref, 'refs/tags/') }}
       run: .\build.cmd PushToNuGet --skip Clean Restore Pack --nuget-api-key ${{ secrets.NUGET_TOKEN }}
-    
