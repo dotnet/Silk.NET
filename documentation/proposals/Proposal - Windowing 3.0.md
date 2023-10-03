@@ -1,4 +1,4 @@
-net8.0-macnet8.0-iosnet8.0-android# Summary
+# Summary
 
 Cross-platform windowing for Silk.NET rebuilt from the ground-up.
 
