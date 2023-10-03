@@ -34,6 +34,26 @@ jobs:
       with:
         path: ~/.dotnet
         key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('**/global.json', '**/*.*proj') }}
+    - name: Cache Android installation
+      id: androidsdkcache
+      uses: actions/cache@v3
+      env:
+        cache-name: androidsdk
+      with:
+        path: /Users/runner/Library/Android/sdk
+        key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('**/global.json', '**/*.*proj') }}
+    - name: Setup Android Environment
+      if: ${{ steps.androidsdkcache.outputs.cache-hit != 'true' }}
+      uses: android-actions/setup-android@v2
+      env:
+        ANDROID_SDK_ROOT: /Users/runner/Library/Android/sdk
+    - name: Install Android Platforms
+      if: ${{ steps.androidsdkcache.outputs.cache-hit != 'true' }}
+      run: |
+        sdkmanager --install "build-tools;32.0.0"
+        sdkmanager --install "platform-tools"
+        sdkmanager --install "platforms;android-33"
+        sdkmanager --install "platforms;android-34"
     - name: Setup .NET 8.0
       uses: actions/setup-dotnet@v1
       if: ${{ steps.dotdotnet.outputs.cache-hit != 'true' }}
@@ -70,8 +90,6 @@ jobs:
       if: ${{ github.repository == 'dotnet/Silk.NET' && startsWith(github.ref, 'refs/tags/') }}
       # TODO build native mixins such as BuildLibSilkDroid
       run: ./build.sh Pack --configuration Release --msbuild-properties ContinuousIntegrationBuild=true
-      env:
-        ANDROID_HOME: /Users/runner/Library/Android/sdk
     - name: Upload Unsigned Artifacts to Actions
       uses: actions/upload-artifact@v2.2.4
       with:
