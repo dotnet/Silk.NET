@@ -26,20 +26,31 @@ jobs:
       with:
         java-version: 11
         distribution: "temurin"
+    - name: Cache .NET installation
+      id: dotdotnet
+      uses: actions/cache@v3
+      env:
+        cache-name: dotdotnet
+      with:
+        path: ~/.dotnet
+        key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('**/global.json', '**/*.*proj') }}
     - name: Setup .NET 8.0
       uses: actions/setup-dotnet@v1
+      if: ${{ steps.dotdotnet.outputs.cache-hit != 'true' }}
       with:
         dotnet-version: 8.0.100-rc.1.23463.5
     - name: Setup .NET 7.0
       uses: actions/setup-dotnet@v1
+      if: ${{ steps.dotdotnet.outputs.cache-hit != 'true' }}
       with:
         dotnet-version: 7.0.102
     - name: Setup .NET 6.0
       uses: actions/setup-dotnet@v1
+      if: ${{ steps.dotdotnet.outputs.cache-hit != 'true' }}
       with:
         dotnet-version: 6.0.201
     - name: Install Workloads
-      # TODO: This is slow. Maybe we can make a docker container with this already done?
+      if: ${{ steps.dotdotnet.outputs.cache-hit != 'true' }}
       run: dotnet workload install android ios maccatalyst maui wasm-tools-net6
     #- name: Test
     #  if: ${{ github.repository != 'dotnet/Silk.NET' || !startsWith(github.ref, 'refs/tags/') }}
@@ -53,10 +64,14 @@ jobs:
       if: ${{ github.repository != 'dotnet/Silk.NET' || !startsWith(github.ref, 'refs/tags/') }}
       # TODO build native mixins such as BuildLibSilkDroid
       run: ./build.sh Pack --configuration Release --msbuild-properties VersionSuffix=build${{ github.run_number }}.0 ContinuousIntegrationBuild=true
+      env:
+        ANDROID_HOME: /Users/runner/Library/Android/sdk
     - name: Pack (CD)
       if: ${{ github.repository == 'dotnet/Silk.NET' && startsWith(github.ref, 'refs/tags/') }}
       # TODO build native mixins such as BuildLibSilkDroid
       run: ./build.sh Pack --configuration Release --msbuild-properties ContinuousIntegrationBuild=true
+      env:
+        ANDROID_HOME: /Users/runner/Library/Android/sdk
     - name: Upload Unsigned Artifacts to Actions
       uses: actions/upload-artifact@v2.2.4
       with:
