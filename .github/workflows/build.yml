@@ -52,6 +52,7 @@ jobs:
       run: |
         sdkmanager --install "build-tools;32.0.0"
         sdkmanager --install "platform-tools"
+        sdkmanager --install "platforms;android-31"
         sdkmanager --install "platforms;android-33"
         sdkmanager --install "platforms;android-34"
     - name: Setup .NET 6.0
