@@ -61,7 +61,10 @@ jobs:
         dotnet-version: 6.0.201
     - name: Install Workloads for .NET 6
       if: ${{ steps.dotdotnet.outputs.cache-hit != 'true' }}
-      run: dotnet workload install android ios maccatalyst maui
+      run: |
+        mv global.json notglobal.json
+        dotnet workload install android ios maccatalyst maui
+        mv notglobal.json global.json
     - name: Setup .NET 7.0
       uses: actions/setup-dotnet@v1
       if: ${{ steps.dotdotnet.outputs.cache-hit != 'true' }}
