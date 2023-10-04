@@ -26,29 +26,11 @@ jobs:
       with:
         java-version: 11
         distribution: "temurin"
-    - name: Cache .NET installation
-      id: dotdotnet
-      uses: actions/cache@v3
-      env:
-        cache-name: dotdotnet
-      with:
-        path: ~/.dotnet
-        key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('**/global.json', '**/*.*proj') }}
-    - name: Cache Android installation
-      id: androidsdkcache
-      uses: actions/cache@v3
-      env:
-        cache-name: androidsdk
-      with:
-        path: /Users/runner/Library/Android/sdk
-        key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('**/global.json', '**/*.*proj') }}
     - name: Setup Android Environment
-      if: ${{ steps.androidsdkcache.outputs.cache-hit != 'true' }}
       uses: android-actions/setup-android@v2
       env:
         ANDROID_SDK_ROOT: /Users/runner/Library/Android/sdk
     - name: Install Android Platforms
-      if: ${{ steps.androidsdkcache.outputs.cache-hit != 'true' }}
       run: |
         sdkmanager --install "build-tools;32.0.0"
         sdkmanager --install "platform-tools"
@@ -57,16 +39,13 @@ jobs:
         sdkmanager --install "platforms;android-34"
     - name: Setup .NET 6.0
       uses: actions/setup-dotnet@v1
-      if: ${{ steps.dotdotnet.outputs.cache-hit != 'true' }}
       with:
         dotnet-version: 6.0.201
     - name: Setup .NET 7.0
       uses: actions/setup-dotnet@v1
-      if: ${{ steps.dotdotnet.outputs.cache-hit != 'true' }}
       with:
         dotnet-version: 7.0.102
     - name: Install Workloads
-      if: ${{ steps.dotdotnet.outputs.cache-hit != 'true' }}
       run: dotnet workload install android ios maccatalyst maui
     #- name: Test
     #  if: ${{ github.repository != 'dotnet/Silk.NET' || !startsWith(github.ref, 'refs/tags/') }}
