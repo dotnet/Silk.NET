@@ -19,7 +19,9 @@ jobs:
     # This will:
     # - use windows-quick (self-hosted only, approx ~45 mins) on this repo if it's available
     # - use macos-13-large (approx ~55 mins) otherwise
-    runs-on: ${{ github.repository == 'dotnet/Silk.NET' && 'windows-quick' || 'macos-13-large' }}
+    runs-on:
+      group: Larger GitHub-hosted runners
+      labels: windows-latest
     steps:
     - uses: actions/checkout@v3.5.2
       with:
