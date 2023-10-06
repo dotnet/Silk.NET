@@ -16,7 +16,10 @@ permissions:
   packages: write
 jobs:
   Build:
-    runs-on: windows-2022-64core
+    # This will:
+    # - use windows-quick (self-hosted only, approx ~45 mins) on this repo if it's available
+    # - use macos-13-large (approx ~55 mins) otherwise
+    runs-on: ${{ github.repository == 'dotnet/Silk.NET' && 'windows-quick' || 'macos-13-large' }}
     steps:
     - uses: actions/checkout@v3.5.2
       with:
