@@ -63,7 +63,7 @@ jobs:
     - name: Pack (CI)
       if: ${{ github.repository != 'dotnet/Silk.NET' || !startsWith(github.ref, 'refs/tags/') }}
       # TODO build native mixins such as BuildLibSilkDroid
-      run: .\build.cmd Pack --configuration Release --msbuild-properties VersionSuffix=build${{ github.run_number }}.0 ContinuousIntegrationBuild=true
+      run: .\build.cmd Pack --configuration Debug --msbuild-properties VersionSuffix=build${{ github.run_number }}.0 ContinuousIntegrationBuild=true
     - name: Pack (CD)
       if: ${{ github.repository == 'dotnet/Silk.NET' && startsWith(github.ref, 'refs/tags/') }}
       # TODO build native mixins such as BuildLibSilkDroid
