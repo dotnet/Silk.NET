@@ -81,5 +81,14 @@ namespace Silk.NET.Core.Native
 
         /// <summary>A 2-byte, OLE-defined VARIANT_BOOL type (true = -1, false = 0).</summary>
         VariantBool = 37,
+
+        /// <summary>
+        /// A WinRT string.
+        /// </summary>
+        /// <remarks>
+        /// Value is large enough such that any future additions to .NET's own UnmanagedType shouldn't conflict with
+        /// this.
+        /// </remarks>
+        WinString = 0x44500001
     }
 }

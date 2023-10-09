@@ -17,6 +17,38 @@ namespace Silk.NET.Direct3D11
     public static class D3D11Overloads
     {
         /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15, Column 8 in windows.graphics.directx.direct3d11.interop.h")]
+        public static unsafe int CreateDirect3D11DeviceFromDXGIDevice(this D3D11 thisApi, Span<Silk.NET.DXGI.IDXGIDevice> dxgiDevice, Silk.NET.Core.Native.IInspectable** graphicsDevice)
+        {
+            // SpanOverloader
+            return thisApi.CreateDirect3D11DeviceFromDXGIDevice(ref dxgiDevice.GetPinnableReference(), graphicsDevice);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15, Column 8 in windows.graphics.directx.direct3d11.interop.h")]
+        public static unsafe int CreateDirect3D11DeviceFromDXGIDevice(this D3D11 thisApi, Span<Silk.NET.DXGI.IDXGIDevice> dxgiDevice, ref Silk.NET.Core.Native.IInspectable* graphicsDevice)
+        {
+            // SpanOverloader
+            return thisApi.CreateDirect3D11DeviceFromDXGIDevice(ref dxgiDevice.GetPinnableReference(), ref graphicsDevice);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 19, Column 8 in windows.graphics.directx.direct3d11.interop.h")]
+        public static unsafe int CreateDirect3D11SurfaceFromDXGISurface(this D3D11 thisApi, Span<Silk.NET.DXGI.IDXGISurface> dgxiSurface, Silk.NET.Core.Native.IInspectable** graphicsSurface)
+        {
+            // SpanOverloader
+            return thisApi.CreateDirect3D11SurfaceFromDXGISurface(ref dgxiSurface.GetPinnableReference(), graphicsSurface);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 19, Column 8 in windows.graphics.directx.direct3d11.interop.h")]
+        public static unsafe int CreateDirect3D11SurfaceFromDXGISurface(this D3D11 thisApi, Span<Silk.NET.DXGI.IDXGISurface> dgxiSurface, ref Silk.NET.Core.Native.IInspectable* graphicsSurface)
+        {
+            // SpanOverloader
+            return thisApi.CreateDirect3D11SurfaceFromDXGISurface(ref dgxiSurface.GetPinnableReference(), ref graphicsSurface);
+        }
+
+        /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 571, Column 1 in d3d11shadertracing.h")]
         public static unsafe int D3DDisassemble11Trace(this D3D11 thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] void* pSrcData, nuint SrcDataSize, Span<ID3D11ShaderTrace> pTrace, uint StartStep, uint NumSteps, uint Flags, Silk.NET.Core.Native.ID3D10Blob** ppDisassembly)
         {

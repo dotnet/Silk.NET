@@ -16,12 +16,27 @@ namespace Silk.NET.Direct3D11
 {
     public unsafe partial class D3D11 : NativeAPI
     {
+        [NativeName("Type", "")]
+        [NativeName("Name", "InterfaceName_Windows_Graphics_DirectX_Direct3D11_IDirect3DDevice")]
+        public const string InterfaceNameWindowsGraphicsDirectXDirect3D11IDirect3DDevice = unchecked((string) "Windows.Graphics.DirectX.Direct3D11.IDirect3DDevice");
+        [NativeName("Type", "")]
+        [NativeName("Name", "InterfaceName_Windows_Graphics_DirectX_Direct3D11_IDirect3DSurface")]
+        public const string InterfaceNameWindowsGraphicsDirectXDirect3D11IDirect3DSurface = unchecked((string) "Windows.Graphics.DirectX.Direct3D11.IDirect3DSurface");
         [NativeName("Type", "int")]
         [NativeName("Name", "__REQUIRED_RPCNDR_H_VERSION__")]
-        public const int RequiredRpcndrHVersion = unchecked((int) 0x1F5);
+        public const int RequiredRpcndrHVersion = unchecked((int) 0x1F4);
         [NativeName("Type", "int")]
         [NativeName("Name", "__REQUIRED_RPCSAL_H_VERSION__")]
         public const int RequiredRpcsalHVersion = unchecked((int) 0x64);
+        [NativeName("Type", "")]
+        [NativeName("Name", "CHECK_NS_PREFIX_STATE")]
+        public const string CheckNSPrefixState = unchecked((string) "always");
+        [NativeName("Type", "int")]
+        [NativeName("Name", "WINDOWS_FOUNDATION_FOUNDATIONCONTRACT_VERSION")]
+        public const int WindowsFoundationFoundationcontractVersion = unchecked((int) 0x40000);
+        [NativeName("Type", "int")]
+        [NativeName("Name", "WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION")]
+        public const int WindowsFoundationUniversalapicontractVersion = unchecked((int) 0xF0000);
         [NativeName("Type", "int")]
         [NativeName("Name", "D3D11_SDK_LAYERS_VERSION")]
         public const int SdkLayersVersion = unchecked((int) 0x1);
@@ -1182,6 +1197,46 @@ namespace Silk.NET.Direct3D11
         public const int SdkVersion = unchecked((int) 0x7);
 
         /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15, Column 8 in windows.graphics.directx.direct3d11.interop.h")]
+        [NativeApi(EntryPoint = "CreateDirect3D11DeviceFromDXGIDevice", Convention = CallingConvention.StdCall)]
+        public unsafe partial int CreateDirect3D11DeviceFromDXGIDevice(Silk.NET.DXGI.IDXGIDevice* dxgiDevice, Silk.NET.Core.Native.IInspectable** graphicsDevice);
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15, Column 8 in windows.graphics.directx.direct3d11.interop.h")]
+        [NativeApi(EntryPoint = "CreateDirect3D11DeviceFromDXGIDevice", Convention = CallingConvention.StdCall)]
+        public unsafe partial int CreateDirect3D11DeviceFromDXGIDevice(Silk.NET.DXGI.IDXGIDevice* dxgiDevice, ref Silk.NET.Core.Native.IInspectable* graphicsDevice);
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15, Column 8 in windows.graphics.directx.direct3d11.interop.h")]
+        [NativeApi(EntryPoint = "CreateDirect3D11DeviceFromDXGIDevice", Convention = CallingConvention.StdCall)]
+        public unsafe partial int CreateDirect3D11DeviceFromDXGIDevice(ref Silk.NET.DXGI.IDXGIDevice dxgiDevice, Silk.NET.Core.Native.IInspectable** graphicsDevice);
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15, Column 8 in windows.graphics.directx.direct3d11.interop.h")]
+        [NativeApi(EntryPoint = "CreateDirect3D11DeviceFromDXGIDevice", Convention = CallingConvention.StdCall)]
+        public unsafe partial int CreateDirect3D11DeviceFromDXGIDevice(ref Silk.NET.DXGI.IDXGIDevice dxgiDevice, ref Silk.NET.Core.Native.IInspectable* graphicsDevice);
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 19, Column 8 in windows.graphics.directx.direct3d11.interop.h")]
+        [NativeApi(EntryPoint = "CreateDirect3D11SurfaceFromDXGISurface", Convention = CallingConvention.StdCall)]
+        public unsafe partial int CreateDirect3D11SurfaceFromDXGISurface(Silk.NET.DXGI.IDXGISurface* dgxiSurface, Silk.NET.Core.Native.IInspectable** graphicsSurface);
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 19, Column 8 in windows.graphics.directx.direct3d11.interop.h")]
+        [NativeApi(EntryPoint = "CreateDirect3D11SurfaceFromDXGISurface", Convention = CallingConvention.StdCall)]
+        public unsafe partial int CreateDirect3D11SurfaceFromDXGISurface(Silk.NET.DXGI.IDXGISurface* dgxiSurface, ref Silk.NET.Core.Native.IInspectable* graphicsSurface);
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 19, Column 8 in windows.graphics.directx.direct3d11.interop.h")]
+        [NativeApi(EntryPoint = "CreateDirect3D11SurfaceFromDXGISurface", Convention = CallingConvention.StdCall)]
+        public unsafe partial int CreateDirect3D11SurfaceFromDXGISurface(ref Silk.NET.DXGI.IDXGISurface dgxiSurface, Silk.NET.Core.Native.IInspectable** graphicsSurface);
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 19, Column 8 in windows.graphics.directx.direct3d11.interop.h")]
+        [NativeApi(EntryPoint = "CreateDirect3D11SurfaceFromDXGISurface", Convention = CallingConvention.StdCall)]
+        public unsafe partial int CreateDirect3D11SurfaceFromDXGISurface(ref Silk.NET.DXGI.IDXGISurface dgxiSurface, ref Silk.NET.Core.Native.IInspectable* graphicsSurface);
+
+        /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 571, Column 1 in d3d11shadertracing.h")]
         [NativeApi(EntryPoint = "D3DDisassemble11Trace", Convention = CallingConvention.StdCall)]
         public unsafe partial int D3DDisassemble11Trace([Flow(Silk.NET.Core.Native.FlowDirection.In)] void* pSrcData, nuint SrcDataSize, ID3D11ShaderTrace* pTrace, uint StartStep, uint NumSteps, uint Flags, Silk.NET.Core.Native.ID3D10Blob** ppDisassembly);
@@ -2020,6 +2075,38 @@ namespace Silk.NET.Direct3D11
         [NativeName("Src", "Line 15115, Column 16 in d3d11.h")]
         [NativeApi(EntryPoint = "D3D11CreateDeviceAndSwapChain", Convention = CallingConvention.StdCall)]
         public unsafe partial int CreateDeviceAndSwapChain(ref Silk.NET.DXGI.IDXGIAdapter pAdapter, Silk.NET.Core.Native.D3DDriverType DriverType, nint Software, uint Flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Core.Native.D3DFeatureLevel pFeatureLevels, uint FeatureLevels, uint SDKVersion, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.DXGI.SwapChainDesc pSwapChainDesc, ref Silk.NET.DXGI.IDXGISwapChain* ppSwapChain, ref ID3D11Device* ppDevice, ref Silk.NET.Core.Native.D3DFeatureLevel pFeatureLevel, ref ID3D11DeviceContext* ppImmediateContext);
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15, Column 8 in windows.graphics.directx.direct3d11.interop.h")]
+        public unsafe int CreateDirect3D11DeviceFromDXGIDevice<TI0>(Silk.NET.DXGI.IDXGIDevice* dxgiDevice, ref ComPtr<TI0> graphicsDevice) where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Native.IInspectable>, IComVtbl<TI0>
+        {
+            // ComPtrOverloader
+            return CreateDirect3D11DeviceFromDXGIDevice(dxgiDevice, (Silk.NET.Core.Native.IInspectable**) graphicsDevice.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 15, Column 8 in windows.graphics.directx.direct3d11.interop.h")]
+        public unsafe int CreateDirect3D11DeviceFromDXGIDevice<TI0>(ref Silk.NET.DXGI.IDXGIDevice dxgiDevice, ref ComPtr<TI0> graphicsDevice) where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Native.IInspectable>, IComVtbl<TI0>
+        {
+            // ComPtrOverloader
+            return CreateDirect3D11DeviceFromDXGIDevice(ref dxgiDevice, (Silk.NET.Core.Native.IInspectable**) graphicsDevice.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 19, Column 8 in windows.graphics.directx.direct3d11.interop.h")]
+        public unsafe int CreateDirect3D11SurfaceFromDXGISurface<TI0>(Silk.NET.DXGI.IDXGISurface* dgxiSurface, ref ComPtr<TI0> graphicsSurface) where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Native.IInspectable>, IComVtbl<TI0>
+        {
+            // ComPtrOverloader
+            return CreateDirect3D11SurfaceFromDXGISurface(dgxiSurface, (Silk.NET.Core.Native.IInspectable**) graphicsSurface.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 19, Column 8 in windows.graphics.directx.direct3d11.interop.h")]
+        public unsafe int CreateDirect3D11SurfaceFromDXGISurface<TI0>(ref Silk.NET.DXGI.IDXGISurface dgxiSurface, ref ComPtr<TI0> graphicsSurface) where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Native.IInspectable>, IComVtbl<TI0>
+        {
+            // ComPtrOverloader
+            return CreateDirect3D11SurfaceFromDXGISurface(ref dgxiSurface, (Silk.NET.Core.Native.IInspectable**) graphicsSurface.GetAddressOf());
+        }
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 571, Column 1 in d3d11shadertracing.h")]

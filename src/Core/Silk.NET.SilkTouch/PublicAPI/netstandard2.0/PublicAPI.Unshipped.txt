@@ -1,3 +1,4 @@
 #nullable enable
 Silk.NET.SilkTouch.MarshalContext.EntryPoint.get -> string!
 Silk.NET.SilkTouch.MarshalContext.MarshalContext(Microsoft.CodeAnalysis.Compilation! compilation, Microsoft.CodeAnalysis.IMethodSymbol! methodSymbol, string! entryPoint) -> void
+Silk.NET.Core.Native.UnmanagedType.WinString = 1146093569 -> Silk.NET.Core.Native.UnmanagedType
