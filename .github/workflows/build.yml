@@ -40,7 +40,7 @@ jobs:
     - name: Setup .NET 6.0
       uses: actions/setup-dotnet@v1
       with:
-        dotnet-version: 6.0.201
+        dotnet-version: 6.0.414
     - name: Setup .NET 7.0
       uses: actions/setup-dotnet@v1
       with:
