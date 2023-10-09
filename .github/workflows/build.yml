@@ -16,7 +16,7 @@ permissions:
   packages: write
 jobs:
   Build:
-    runs-on: macos-latest-xlarge
+    runs-on: macos-13-xlarge
     steps:
     - uses: actions/checkout@v3.5.2
       with:
@@ -58,7 +58,8 @@ jobs:
     - name: Pack (CI)
       if: ${{ github.repository != 'dotnet/Silk.NET' || !startsWith(github.ref, 'refs/tags/') }}
       # TODO build native mixins such as BuildLibSilkDroid
-      run: ./build.sh Pack --configuration Release --msbuild-properties VersionSuffix=build${{ github.run_number }}.0 ContinuousIntegrationBuild=true
+      # Use a release NUKE so it doesn't interfere with the debug build
+      run: dotnet run --project build/nuke/Silk.NET.NUKE.csproj -c Release -- Pack --configuration Debug --msbuild-properties VersionSuffix=build${{ github.run_number }}.0 ContinuousIntegrationBuild=true
       env:
         ANDROID_HOME: /Users/runner/Library/Android/sdk
     - name: Pack (CD)
