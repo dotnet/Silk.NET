@@ -216,7 +216,7 @@ partial class Build
         var finalArgs = arguments.RenderForExecution();
         if (!Warnings)
         {
-            finalArgs += " /verbosity:detailed";
+            finalArgs += " /clp:errorsonly";
         }
 
         using var proc = StartProcess
