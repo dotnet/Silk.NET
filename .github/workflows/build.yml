@@ -16,12 +16,7 @@ permissions:
   packages: write
 jobs:
   Build:
-    # This will:
-    # - use windows-quick (self-hosted only, approx ~45 mins) on this repo if it's available
-    # - use macos-13-large (approx ~55 mins) otherwise
-    runs-on:
-      group: Larger GitHub-hosted runners
-      labels: windows-latest
+    runs-on: macos-latest-xlarge
     steps:
     - uses: actions/checkout@v3.5.2
       with:
@@ -52,11 +47,11 @@ jobs:
         dotnet-version: 7.0.102
     - name: Install Workloads
       run: dotnet workload install android ios maccatalyst maui
-    #- name: Test
-    #  if: ${{ github.repository != 'dotnet/Silk.NET' || !startsWith(github.ref, 'refs/tags/') }}
-    #  # skip Clean, Restore, and Compile as this will build the affect the whole solution.
-    #  # dotnet test will compile the necessary projects for testing only.
-    #  run: ./build.sh Test --skip Clean Restore Compile
+    - name: Test
+      if: ${{ github.repository != 'dotnet/Silk.NET' || !startsWith(github.ref, 'refs/tags/') }}
+      # skip Clean, Restore, and Compile as this will build the affect the whole solution.
+      # dotnet test will compile the necessary projects for testing only.
+      run: ./build.sh Test --skip Clean Restore Compile
     - name: Validation Checks
       if: ${{ github.repository != 'dotnet/Silk.NET' || !startsWith(github.ref, 'refs/tags/') }}
       run: ./build.sh ValidateSolution
