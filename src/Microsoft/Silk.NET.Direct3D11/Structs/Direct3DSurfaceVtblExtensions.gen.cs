@@ -133,22 +133,22 @@ public unsafe static class Direct3DSurfaceVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetRuntimeClassName(this ComPtr<IDirect3DSurface> thisVtbl, HSTRING__** className)
+    public static unsafe int GetRuntimeClassName(this ComPtr<IDirect3DSurface> thisVtbl, WinString* className)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
-        ret = ((delegate* unmanaged[Stdcall]<IDirect3DSurface*, HSTRING__**, int>)@this->LpVtbl[4])(@this, className);
+        ret = ((delegate* unmanaged[Stdcall]<IDirect3DSurface*, WinString*, int>)@this->LpVtbl[4])(@this, className);
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetRuntimeClassName(this ComPtr<IDirect3DSurface> thisVtbl, ref HSTRING__* className)
+    public static int GetRuntimeClassName(this ComPtr<IDirect3DSurface> thisVtbl, ref WinString className)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
-        fixed (HSTRING__** classNamePtr = &className)
+        fixed (WinString* classNamePtr = &className)
         {
-            ret = ((delegate* unmanaged[Stdcall]<IDirect3DSurface*, HSTRING__**, int>)@this->LpVtbl[4])(@this, classNamePtr);
+            ret = ((delegate* unmanaged[Stdcall]<IDirect3DSurface*, WinString*, int>)@this->LpVtbl[4])(@this, classNamePtr);
         }
         return ret;
     }
@@ -234,6 +234,14 @@ public unsafe static class Direct3DSurfaceVtblExtensions
         var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->GetIids(ref iidCount.GetPinnableReference(), ref iids);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static int GetRuntimeClassName(this ComPtr<IDirect3DSurface> thisVtbl, Span<WinString> className)
+    {
+        var @this = thisVtbl.Handle;
+        // SpanOverloader
+        return @this->GetRuntimeClassName(ref className.GetPinnableReference());
     }
 
     /// <summary>To be documented.</summary>

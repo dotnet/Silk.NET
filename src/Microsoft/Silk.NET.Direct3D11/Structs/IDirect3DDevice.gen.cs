@@ -162,22 +162,22 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetRuntimeClassName(HSTRING__** className)
+        public readonly unsafe int GetRuntimeClassName(WinString* className)
         {
             var @this = (IDirect3DDevice*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<IDirect3DDevice*, HSTRING__**, int>)@this->LpVtbl[4])(@this, className);
+            ret = ((delegate* unmanaged[Stdcall]<IDirect3DDevice*, WinString*, int>)@this->LpVtbl[4])(@this, className);
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetRuntimeClassName(ref HSTRING__* className)
+        public readonly int GetRuntimeClassName(ref WinString className)
         {
             var @this = (IDirect3DDevice*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            fixed (HSTRING__** classNamePtr = &className)
+            fixed (WinString* classNamePtr = &className)
             {
-                ret = ((delegate* unmanaged[Stdcall]<IDirect3DDevice*, HSTRING__**, int>)@this->LpVtbl[4])(@this, classNamePtr);
+                ret = ((delegate* unmanaged[Stdcall]<IDirect3DDevice*, WinString*, int>)@this->LpVtbl[4])(@this, classNamePtr);
             }
             return ret;
         }
