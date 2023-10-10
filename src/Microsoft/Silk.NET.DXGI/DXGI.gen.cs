@@ -17,14 +17,23 @@ namespace Silk.NET.DXGI
     public unsafe partial class DXGI : NativeAPI
     {
         [NativeName("Type", "int")]
-        [NativeName("Name", "DXGI_FORMAT_DEFINED")]
-        public const int FormatDefined = unchecked((int) 0x1);
-        [NativeName("Type", "int")]
         [NativeName("Name", "__REQUIRED_RPCNDR_H_VERSION__")]
-        public const int RequiredRpcndrHVersion = unchecked((int) 0x1F5);
+        public const int RequiredRpcndrHVersion = unchecked((int) 0x1F4);
         [NativeName("Type", "int")]
         [NativeName("Name", "__REQUIRED_RPCSAL_H_VERSION__")]
         public const int RequiredRpcsalHVersion = unchecked((int) 0x64);
+        [NativeName("Type", "")]
+        [NativeName("Name", "CHECK_NS_PREFIX_STATE")]
+        public const string CheckNSPrefixState = unchecked((string) "always");
+        [NativeName("Type", "int")]
+        [NativeName("Name", "WINDOWS_FOUNDATION_FOUNDATIONCONTRACT_VERSION")]
+        public const int WindowsFoundationFoundationcontractVersion = unchecked((int) 0x40000);
+        [NativeName("Type", "int")]
+        [NativeName("Name", "WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION")]
+        public const int WindowsFoundationUniversalapicontractVersion = unchecked((int) 0xF0000);
+        [NativeName("Type", "int")]
+        [NativeName("Name", "DXGI_FORMAT_DEFINED")]
+        public const int FormatDefined = unchecked((int) 0x1);
         [NativeName("Type", "int")]
         [NativeName("Name", "DXGI_DEBUG_BINARY_VERSION")]
         public const int DebugBinaryVersion = unchecked((int) 0x1);

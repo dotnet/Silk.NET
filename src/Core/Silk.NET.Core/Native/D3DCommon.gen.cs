@@ -17,12 +17,6 @@ namespace Silk.NET.Core.Native
     public unsafe partial class D3DCommon
     {
         [NativeName("Type", "int")]
-        [NativeName("Name", "__REQUIRED_RPCNDR_H_VERSION__")]
-        public const int RequiredRpcndrHVersion = unchecked((int) 0x1F5);
-        [NativeName("Type", "int")]
-        [NativeName("Name", "__REQUIRED_RPCSAL_H_VERSION__")]
-        public const int RequiredRpcsalHVersion = unchecked((int) 0x64);
-        [NativeName("Type", "int")]
         [NativeName("Name", "D3D_FL9_1_REQ_TEXTURE1D_U_DIMENSION")]
         public const int D3DFL91ReqTexture1DUDimension = unchecked((int) 0x800);
         [NativeName("Type", "int")]
