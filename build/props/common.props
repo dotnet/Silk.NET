@@ -24,6 +24,7 @@
         <Description Condition="'$(Description)' == ''">
             Silk.NET is a high-speed, advanced library, providing bindings to popular low-level APIs such as OpenGL, OpenCL, OpenAL, OpenXR, GLFW, SDL, Vulkan, Assimp, and DirectX.
         </Description>
+        <CheckEolWorkloads>false</CheckEolWorkloads>
     </PropertyGroup>
     <PropertyGroup Condition="$(TargetFramework.StartsWith('net6')) or $(TargetFramework.StartsWith('net7')) or $(TargetFramework.StartsWith('net8'))">
         <IsTrimmable>true</IsTrimmable>

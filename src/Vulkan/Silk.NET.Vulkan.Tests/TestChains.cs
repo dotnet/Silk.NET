@@ -153,7 +153,9 @@ public class TestChains
         Assert.NotEqual((nint) chain.Item1Ptr, (nint) newChain.Item1Ptr);
 
         // Test equality
-        Assert.Equal(chain, newChain);
+        Assert.Equal(chain.Head with {PNext = null}, newChain.Head with {PNext = null});
+        Assert.Equal(chain.Item1, newChain.Item1);
+        Assert.Equal((nint)chain.Head.PNext, (nint)chain.Item1Ptr);
         Assert.True(chain == newChain);
 
         // Modify second chain
@@ -433,7 +435,9 @@ public class TestChains
         Assert.NotEqual((nint) chain.Item1Ptr, (nint) newChain.Item1Ptr);
 
         // Test equality
-        Assert.Equal(chain, newChain);
+        Assert.Equal(chain.Head with {PNext = null}, newChain.Head with {PNext = null});
+        Assert.Equal(chain.Item1, newChain.Item1);
+        Assert.Equal((nint)chain.Head.PNext, (nint)chain.Item1Ptr);
         Assert.True(chain == newChain);
         var hashCode = chain.GetHashCode();
         var newHashCode = newChain.GetHashCode();

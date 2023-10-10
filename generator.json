@@ -926,7 +926,8 @@
         {
             "profileName": "Core",
             "sources": [
-                "$windowsSdkDir/Include/$windowsSdkVersion/um/d3dcommon.h"
+                "$windowsSdkDir/Include/$windowsSdkVersion/um/d3dcommon.h",
+                "$windowsSdkDir/Include/$windowsSdkVersion/winrt/inspectable.h"
             ],
             "mode": "Clang",
             "cacheDir": "build/cache",
@@ -954,10 +955,22 @@
                 ],
                 "traverse": [],
                 "classes": {
-                    "d3dcommon.h": "[Core]D3DCommon"
+                    "d3dcommon.h": "[Core]D3DCommon",
+                    "inspectable.h": "[Core]WinRT"
                 }
             },
-            "exclude": [],
+            "exclude": [
+                "HSTRING_UserSize",
+                "HSTRING_UserMarshal",
+                "HSTRING_UserUnmarshal",
+                "HSTRING_UserFree",
+                "HSTRING_UserSize64",
+                "HSTRING_UserMarshal64",
+                "HSTRING_UserUnmarshal64",
+                "HSTRING_UserFree64",
+                "__REQUIRED_RPCNDR_H_VERSION__",
+                "__REQUIRED_RPCSAL_H_VERSION__"
+            ],
             "rename": {
                 "_D3D_CBUFFER_TYPE": "D3DCBufferType",
                 "_D3D_SHADER_CBUFFER_FLAGS": "D3DShaderCBufferFlags"
@@ -965,7 +978,8 @@
             "bakery": {
                 "profileNames": [
                     "d3dcommon",
-                    "silk.net.core.native.dcommon"
+                    "silk.net.core.native.dcommon",
+                    "inspectable"
                 ]
             },
             "output": {
@@ -1140,7 +1154,8 @@
                 "$windowsSdkDir/Include/$windowsSdkVersion/shared/dxgi1_5.h",
                 "$windowsSdkDir/Include/$windowsSdkVersion/shared/dxgi1_6.h",
                 "$windowsSdkDir/Include/$windowsSdkVersion/um/dxgidebug.h",
-                "$windowsSdkDir/Include/$windowsSdkVersion/shared/dxgiformat.h"
+                "$windowsSdkDir/Include/$windowsSdkVersion/shared/dxgiformat.h",
+                "$windowsSdkDir/Include/$windowsSdkVersion/winrt/windows.graphics.directx.h"
             ],
             "mode": "Clang",
             "cacheDir": "build/cache",
@@ -1176,7 +1191,8 @@
                     "dxgi1_5.h": "[Core]DXGI",
                     "dxgi1_6.h": "[Core]DXGI",
                     "dxgidebug.h": "[Core]DXGI",
-                    "dxgiformat.h": "[Core]DXGI"
+                    "dxgiformat.h": "[Core]DXGI",
+                    "windows.graphics.directx.h": "[Core]DXGI"
                 },
                 "comRefs": [
                     "Silk.NET.Core.Native.ID3D10Blob",
@@ -1195,7 +1211,8 @@
                     "dxgi1_5",
                     "dxgi1_6",
                     "dxgidebug",
-                    "dxgiformat"
+                    "dxgiformat",
+                    "windows.graphics.directx"
                 ]
             },
             "output": {
@@ -1698,7 +1715,9 @@
                 "$windowsSdkDir/Include/$windowsSdkVersion/um/d3d11shader.h",
                 "$windowsSdkDir/Include/$windowsSdkVersion/um/d3d11shadertracing.h",
                 "$windowsSdkDir/Include/$windowsSdkVersion/um/d3d11sdklayers.h",
-                "$windowsSdkDir/Include/$windowsSdkVersion/um/d3d11on12.h"
+                "$windowsSdkDir/Include/$windowsSdkVersion/um/d3d11on12.h",
+                "$windowsSdkDir/Include/$windowsSdkVersion/um/windows.graphics.directx.direct3d11.interop.h",
+                "$windowsSdkDir/Include/$windowsSdkVersion/winrt/windows.graphics.directx.direct3d11.h"
             ],
             "mode": "Clang",
             "cacheDir": "build/cache",
@@ -1732,7 +1751,9 @@
                     "d3d11shader.h": "[Core]D3D11",
                     "d3d11shadertracing.h": "[Core]D3D11",
                     "d3d11sdklayers.h": "[Core]D3D11",
-                    "d3d11on12.h": "[D3D11On12:D3D11]D3D11On12"
+                    "d3d11on12.h": "[D3D11On12:D3D11]D3D11On12",
+                    "windows.graphics.directx.direct3d11.interop.h": "[Core]D3D11",
+                    "windows.graphics.directx.direct3d11.h": "[Core]D3D11"
                 },
                 "comRefs": [
                     "Silk.NET.DXGI.IDXGIAdapter",
@@ -1758,7 +1779,9 @@
                     "d3d11shader",
                     "d3d11shadertracing",
                     "d3d11sdklayers",
-                    "d3d11on12"
+                    "d3d11on12",
+                    "windows.graphics.directx.direct3d11.interop",
+                    "windows.graphics.directx.direct3d11"
                 ]
             },
             "output": {
@@ -1784,7 +1807,10 @@
                     "ID3D10Blob": "Silk.NET.Core.Native.ID3D10Blob",
                     "D3D12_RESOURCE_STATES": "Silk.NET.Direct3D12.ResourceStates",
                     "ID3D12Fence": "Silk.NET.Direct3D12.ID3D12Fence",
-                    "ID3D12CommandQueue": "Silk.NET.Direct3D12.ID3D12CommandQueue"
+                    "ID3D12CommandQueue": "Silk.NET.Direct3D12.ID3D12CommandQueue",
+                    "ABI::Windows::Graphics::DirectX::Direct3D11::Direct3DSurfaceDescription": "Direct3DSurfaceDescription",
+                    "ABI::Windows::Graphics::DirectX::DirectXPixelFormat": "Silk.NET.DXGI.DirectXPixelFormat",
+                    "ABI::Windows::Graphics::DirectX::Direct3D11::Direct3DMultisampleDescription": "Direct3DMultisampleDescription"
                 },
                 {
                     "$include.dxTypemap": "build/dx_typemap.json",
