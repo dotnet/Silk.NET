@@ -424,6 +424,7 @@ namespace Silk.NET.Windowing.Glfw
                 throw new InvalidOperationException("Window should be initialized.");
             }
 
+            var budget = 1024;
             if (icons == null)
             {
                 _glfw.SetWindowIcon(_glfwWindow, 0, null);
@@ -431,11 +432,37 @@ namespace Silk.NET.Windowing.Glfw
             else
             {
                 var images = stackalloc Image[icons.Length];
+                nint harr = 0;
+                var harrLen = 0;
+                var harrOff = 0;
                 for (var i = 0; i < icons.Length; i++)
                 {
                     var icon = icons[i];
                     // ReSharper disable once StackAllocInsideLoop
-                    Span<byte> iconMemory = stackalloc byte[icon.Pixels.Length];
+                    var iconMemory = budget >= icon.Pixels.Length
+                        ? stackalloc byte[icon.Pixels.Length]
+                        : harr == 0
+                            ? null
+                            : new Span<byte>((void*)(harr + harrOff), icon.Pixels.Length);
+                    if (iconMemory == null)
+                    {
+                        for (var j = i; j < icons.Length; j++)
+                        {
+                            harrLen += icons[j].Pixels.Length;
+                        }
+
+                        harr = SilkMarshal.Allocate(harrLen);
+                        iconMemory = new Span<byte>((void*) harr, icon.Pixels.Length);
+                        harrOff = icon.Pixels.Length;
+                    }
+                    else if (budget >= icon.Pixels.Length)
+                    {
+                        budget -= icon.Pixels.Length;
+                    }
+                    else
+                    {
+                        harrOff += icon.Pixels.Length;
+                    }
                     images[i] = new()
                     {
                         Width = icon.Width, Height = icon.Height,
@@ -446,6 +473,10 @@ namespace Silk.NET.Windowing.Glfw
                 }
 
                 _glfw.SetWindowIcon(_glfwWindow, icons.Length, images);
+                if (harr != 0)
+                {
+                    SilkMarshal.Free(harr);
+                }
                 GLFW.Glfw.ThrowExceptions();
             }
         }
