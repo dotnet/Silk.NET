@@ -34,7 +34,7 @@ public unsafe struct WinString : IDisposable
         [DllImport("kernel32.dll")]
         static extern void* HeapAlloc(void* heap, uint dwFlags, nuint dwBytes);
 
-        HString = (Header*)HeapAlloc(GetProcessHeap(), 0, (nuint)sizeof(Header) + 2 * nChars);
+        HString = (Header*)HeapAlloc(ProcessHeap, 0, (nuint)sizeof(Header) + 2 * nChars);
         HString->Flags = 0;
         HString->Length = (uint)nChars;
         HString->Reserved0 = 0;
@@ -55,7 +55,7 @@ public unsafe struct WinString : IDisposable
 
         if (Interlocked.Decrement(ref HString->RefCount) < 1)
         {
-            if (HeapFree(GetProcessHeap(), 0, HString) == 0)
+            if (HeapFree(ProcessHeap, 0, HString) == 0)
             {
                 SilkMarshal.ThrowHResult(Marshal.GetHRForLastWin32Error());
             }
@@ -77,6 +77,8 @@ public unsafe struct WinString : IDisposable
     
     [DllImport("kernel32.dll")]
     private static extern void* GetProcessHeap();
+
+    private static readonly void* ProcessHeap = GetProcessHeap();
 
     public void Dispose() => Release();
 
