@@ -18,11 +18,7 @@ namespace Silk.NET.Windowing.Glfw
         /// <summary>
         /// Prioritizes the GLFW windowing platform over others.
         /// </summary>
-        public static void Use()
-        {
-            RegisterPlatform(); // may not be done by reflection on NativeAOT
-            Window.PrioritizeGlfw();
-        }
+        public static void Use() => Window.PrioritizeOrAdd(() => new GlfwPlatform(), true);
 
         /// <summary>
         /// Gets a value indicating whether the given view is a GLFW view.

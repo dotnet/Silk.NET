@@ -13,7 +13,7 @@ namespace Silk.NET.Input
     /// </summary>
     public static class InputWindowExtensions
     {
-        private static List<IInputPlatform> _platforms = new List<IInputPlatform>();
+        internal static List<IInputPlatform> _platforms = new List<IInputPlatform>();
 
         /// <summary>
         /// Gets the input platforms currently registered with the input system.
