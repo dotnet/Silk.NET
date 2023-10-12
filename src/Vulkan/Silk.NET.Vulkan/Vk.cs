@@ -152,7 +152,7 @@ namespace Silk.NET.Vulkan
         private HashSet<(string extension, string layer)> _cachedInstanceExtensions;
 
         // Contains strings in form of '<IntPtr>|<Extension name>' for each extension and '<IntPtr>' to indicate an extension has been loaded.
-        private Dictionary<PhysicalDevice, HashSet<string>> _cachedDeviceExtensions = new Dictionary<PhysicalDevice, HashSet<string>>();
+        private Dictionary<PhysicalDevice, HashSet<(string extension, string layer)>> _cachedDeviceExtensions = new Dictionary<PhysicalDevice, HashSet<(string extension, string layer)>>();
         private ReaderWriterLockSlim _cachedDeviceExtensionsLock = new ReaderWriterLockSlim();
 
         private ConcurrentDictionary<Instance, PhysicalDevice[]> _cachedPhyscialDevices = new ConcurrentDictionary<Instance, PhysicalDevice[]>();
@@ -219,9 +219,6 @@ namespace Silk.NET.Vulkan
         /// <returns>Whether the device extension is available.</returns>
         public unsafe bool IsDeviceExtensionPresent(PhysicalDevice device, string extension, string layer = null)
         {
-            var prefix = device.Handle.ToString();
-            var prefixSep = prefix + '|';
-            var fullKey = prefixSep + extension + '|' + layer;
             var result = false;
 
             // We place a devices handle into the hashset to indicate it has been previously loaded.
@@ -237,21 +234,11 @@ namespace Silk.NET.Vulkan
             _cachedDeviceExtensionsLock.EnterUpgradeableReadLock();
 
             //If we do not have a cache for this specific device,
-            if (!_cachedDeviceExtensions.ContainsKey(device))
+            if (!_cachedDeviceExtensions.TryGetValue(device, out var extensions))
             {
                 //Create one
-                _cachedDeviceExtensions[device] = new HashSet<string>();
-            }
+                extensions = _cachedDeviceExtensions[device] = new HashSet<(string extension, string layer)>();
 
-            // We check for the extension first to avoid 2 lookups
-            if (_cachedDeviceExtensions[device].Contains(fullKey))
-            {
-                // We found the extension
-                result = true;
-            }
-            else if (!_cachedDeviceExtensions[device].Contains(prefix))
-            {
-                // The lack of the device handle indicates we've not been previously initialised.  We now need a write lock.
                 _cachedDeviceExtensionsLock.EnterWriteLock();
                 GlobalMemory mem = null;
                 try
@@ -272,15 +259,7 @@ namespace Silk.NET.Vulkan
                             EnumerateDeviceExtensionProperties(device, (byte*)layerPtr, &deviceExtPropertiesCount, props);
                             for (int j = 0; j < deviceExtPropertiesCount; j++)
                             {
-                                // Prefix the extension name
-                                var newKey = prefixSep + Marshal.PtrToStringAnsi((nint)props[j].ExtensionName);
-                                _cachedDeviceExtensions[device].Add(newKey);
-                                if (!result && string.Equals(newKey, fullKey))
-                                {
-                                    // We found the extension (no need to do another lookup as we're scanning anyway)
-                                    // As such this has taken 2 lookups + initialisation scan.
-                                    result = true;
-                                }
+                                extensions.Add((Marshal.PtrToStringAnsi((nint)props[j].ExtensionName), layer));
                             }
                         }
                     }
@@ -290,8 +269,13 @@ namespace Silk.NET.Vulkan
                     _cachedDeviceExtensionsLock.ExitWriteLock();
                     mem?.Dispose();
                 }
-            } // else result = false - takes 2 lookups, one to check for extension, and one to check initialisation.
+            }
 
+            if (extensions.Contains((extension, layer)))
+            {
+                // We found the extension
+                result = true;
+            }
             _cachedDeviceExtensionsLock.ExitUpgradeableReadLock();
             return result;
         }
