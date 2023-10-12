@@ -16,10 +16,10 @@ using Silk.NET.Core.Loader;
 
 namespace Silk.NET.Vulkan.Video
 {
-    [NativeName("Name", "StdVideoEncodeH265SliceSegmentLongTermRefPics")]
-    public unsafe partial struct StdVideoEncodeH265SliceSegmentLongTermRefPics
+    [NativeName("Name", "StdVideoEncodeH265LongTermRefPics")]
+    public unsafe partial struct StdVideoEncodeH265LongTermRefPics
     {
-        public StdVideoEncodeH265SliceSegmentLongTermRefPics
+        public StdVideoEncodeH265LongTermRefPics
         (
             byte? numLongTermSps = null,
             byte? numLongTermPics = null,

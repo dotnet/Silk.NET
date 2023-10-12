@@ -46,7 +46,7 @@ namespace Silk.NET.OpenXR.Extensions.VARJO
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "xrSetMarkerTrackingPredictionVARJO", Convention = CallingConvention.Winapi)]
-        public partial Result SetMarkerTrackingPredictionVarjo([Count(Count = 0)] Session session, [Count(Count = 0)] ulong markerId, [Count(Count = 0)] uint enabled);
+        public partial Result SetMarkerTrackingPredictionVarjo([Count(Count = 0)] Session session, [Count(Count = 0)] ulong markerId, [Count(Count = 0)] uint enable);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "xrSetMarkerTrackingTimeoutVARJO", Convention = CallingConvention.Winapi)]

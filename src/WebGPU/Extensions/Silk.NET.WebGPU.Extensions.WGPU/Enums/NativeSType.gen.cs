@@ -24,6 +24,10 @@ namespace Silk.NET.WebGPU.Extensions.WGPU
         STypeSupportedLimitsExtras = 0x30005,
         [NativeName("Name", "WGPUSType_InstanceExtras")]
         STypeInstanceExtras = 0x30006,
+        [NativeName("Name", "WGPUSType_BindGroupEntryExtras")]
+        STypeBindGroupEntryExtras = 0x30007,
+        [NativeName("Name", "WGPUSType_BindGroupLayoutEntryExtras")]
+        STypeBindGroupLayoutEntryExtras = 0x30008,
         [NativeName("Name", "WGPUNativeSType_Force32")]
         NativeSTypeForce32 = 0x7FFFFFFF,
     }

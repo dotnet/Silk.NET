@@ -18,7 +18,12 @@ namespace Silk.NET.Vulkan
         [Obsolete("Deprecated in favour of \"PrecedingExternallyEncodedBytesBitKhr\"")]
         [NativeName("Name", "VK_VIDEO_ENCODE_CAPABILITY_PRECEDING_EXTERNALLY_ENCODED_BYTES_BIT_KHR")]
         VideoEncodeCapabilityPrecedingExternallyEncodedBytesBitKhr = 1,
+        [Obsolete("Deprecated in favour of \"InsufficientBitstreamBufferRangeDetectionBitKhr\"")]
+        [NativeName("Name", "VK_VIDEO_ENCODE_CAPABILITY_INSUFFICIENT_BITSTREAM_BUFFER_RANGE_DETECTION_BIT_KHR")]
+        VideoEncodeCapabilityInsufficientBitstreamBufferRangeDetectionBitKhr = 2,
         [NativeName("Name", "VK_VIDEO_ENCODE_CAPABILITY_PRECEDING_EXTERNALLY_ENCODED_BYTES_BIT_KHR")]
         PrecedingExternallyEncodedBytesBitKhr = 1,
+        [NativeName("Name", "VK_VIDEO_ENCODE_CAPABILITY_INSUFFICIENT_BITSTREAM_BUFFER_RANGE_DETECTION_BIT_KHR")]
+        InsufficientBitstreamBufferRangeDetectionBitKhr = 2,
     }
 }

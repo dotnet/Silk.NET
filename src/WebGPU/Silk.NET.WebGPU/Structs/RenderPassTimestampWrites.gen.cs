@@ -16,14 +16,14 @@ using Silk.NET.Core.Loader;
 
 namespace Silk.NET.WebGPU
 {
-    [NativeName("Name", "WGPURenderPassTimestampWrite")]
-    public unsafe partial struct RenderPassTimestampWrite
+    [NativeName("Name", "WGPURenderPassTimestampWrites")]
+    public unsafe partial struct RenderPassTimestampWrites
     {
-        public RenderPassTimestampWrite
+        public RenderPassTimestampWrites
         (
             QuerySet* querySet = null,
-            uint? queryIndex = null,
-            RenderPassTimestampLocation? location = null
+            uint? beginningOfPassWriteIndex = null,
+            uint? endOfPassWriteIndex = null
         ) : this()
         {
             if (querySet is not null)
@@ -31,14 +31,14 @@ namespace Silk.NET.WebGPU
                 QuerySet = querySet;
             }
 
-            if (queryIndex is not null)
+            if (beginningOfPassWriteIndex is not null)
             {
-                QueryIndex = queryIndex.Value;
+                BeginningOfPassWriteIndex = beginningOfPassWriteIndex.Value;
             }
 
-            if (location is not null)
+            if (endOfPassWriteIndex is not null)
             {
-                Location = location.Value;
+                EndOfPassWriteIndex = endOfPassWriteIndex.Value;
             }
         }
 
@@ -50,12 +50,12 @@ namespace Silk.NET.WebGPU
 
         [NativeName("Type", "uint32_t")]
         [NativeName("Type.Name", "uint32_t")]
-        [NativeName("Name", "queryIndex")]
-        public uint QueryIndex;
+        [NativeName("Name", "beginningOfPassWriteIndex")]
+        public uint BeginningOfPassWriteIndex;
 
-        [NativeName("Type", "WGPURenderPassTimestampLocation")]
-        [NativeName("Type.Name", "WGPURenderPassTimestampLocation")]
-        [NativeName("Name", "location")]
-        public RenderPassTimestampLocation Location;
+        [NativeName("Type", "uint32_t")]
+        [NativeName("Type.Name", "uint32_t")]
+        [NativeName("Name", "endOfPassWriteIndex")]
+        public uint EndOfPassWriteIndex;
     }
 }

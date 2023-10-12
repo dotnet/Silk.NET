@@ -15,15 +15,15 @@ namespace Silk.NET.SPIRV
     {
         [NativeName("Name", "SpvCooperativeMatrixOperandsMaskNone")]
         MaskNone = 0x0,
-        [NativeName("Name", "SpvCooperativeMatrixOperandsMatrixASignedComponentsMask")]
-        MatrixASignedComponentsMask = 0x1,
-        [NativeName("Name", "SpvCooperativeMatrixOperandsMatrixBSignedComponentsMask")]
-        MatrixBSignedComponentsMask = 0x2,
-        [NativeName("Name", "SpvCooperativeMatrixOperandsMatrixCSignedComponentsMask")]
-        MatrixCSignedComponentsMask = 0x4,
-        [NativeName("Name", "SpvCooperativeMatrixOperandsMatrixResultSignedComponentsMask")]
-        MatrixResultSignedComponentsMask = 0x8,
-        [NativeName("Name", "SpvCooperativeMatrixOperandsSaturatingAccumulationMask")]
-        SaturatingAccumulationMask = 0x10,
+        [NativeName("Name", "SpvCooperativeMatrixOperandsMatrixASignedComponentsKHRMask")]
+        MatrixASignedComponentsKhrMask = 0x1,
+        [NativeName("Name", "SpvCooperativeMatrixOperandsMatrixBSignedComponentsKHRMask")]
+        MatrixBSignedComponentsKhrMask = 0x2,
+        [NativeName("Name", "SpvCooperativeMatrixOperandsMatrixCSignedComponentsKHRMask")]
+        MatrixCSignedComponentsKhrMask = 0x4,
+        [NativeName("Name", "SpvCooperativeMatrixOperandsMatrixResultSignedComponentsKHRMask")]
+        MatrixResultSignedComponentsKhrMask = 0x8,
+        [NativeName("Name", "SpvCooperativeMatrixOperandsSaturatingAccumulationKHRMask")]
+        SaturatingAccumulationKhrMask = 0x10,
     }
 }

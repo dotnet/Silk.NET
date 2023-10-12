@@ -72,6 +72,12 @@ namespace Silk.NET.Vulkan
         [Obsolete("Deprecated in favour of \"DependentSliceSegmentFlagSetBitExt\"")]
         [NativeName("Name", "VK_VIDEO_ENCODE_H265_STD_DEPENDENT_SLICE_SEGMENT_FLAG_SET_BIT_EXT")]
         VideoEncodeH265StdDependentSliceSegmentFlagSetBitExt = 262144,
+        [Obsolete("Deprecated in favour of \"SliceQPDeltaBitExt\"")]
+        [NativeName("Name", "VK_VIDEO_ENCODE_H265_STD_SLICE_QP_DELTA_BIT_EXT")]
+        VideoEncodeH265StdSliceQPDeltaBitExt = 524288,
+        [Obsolete("Deprecated in favour of \"DifferentSliceQPDeltaBitExt\"")]
+        [NativeName("Name", "VK_VIDEO_ENCODE_H265_STD_DIFFERENT_SLICE_QP_DELTA_BIT_EXT")]
+        VideoEncodeH265StdDifferentSliceQPDeltaBitExt = 1048576,
         [NativeName("Name", "VK_VIDEO_ENCODE_H265_STD_SEPARATE_COLOR_PLANE_FLAG_SET_BIT_EXT")]
         SeparateColorPlaneFlagSetBitExt = 1,
         [NativeName("Name", "VK_VIDEO_ENCODE_H265_STD_SAMPLE_ADAPTIVE_OFFSET_ENABLED_FLAG_SET_BIT_EXT")]
@@ -110,5 +116,9 @@ namespace Silk.NET.Vulkan
         DependentSliceSegmentsEnabledFlagSetBitExt = 131072,
         [NativeName("Name", "VK_VIDEO_ENCODE_H265_STD_DEPENDENT_SLICE_SEGMENT_FLAG_SET_BIT_EXT")]
         DependentSliceSegmentFlagSetBitExt = 262144,
+        [NativeName("Name", "VK_VIDEO_ENCODE_H265_STD_SLICE_QP_DELTA_BIT_EXT")]
+        SliceQPDeltaBitExt = 524288,
+        [NativeName("Name", "VK_VIDEO_ENCODE_H265_STD_DIFFERENT_SLICE_QP_DELTA_BIT_EXT")]
+        DifferentSliceQPDeltaBitExt = 1048576,
     }
 }

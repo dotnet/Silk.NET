@@ -12,16 +12,16 @@ namespace Silk.NET.SPIRV
     [NativeName("Name", "SpvCooperativeMatrixOperandsShift_")]
     public enum CooperativeMatrixOperandsShift : int
     {
-        [NativeName("Name", "SpvCooperativeMatrixOperandsMatrixASignedComponentsShift")]
-        MatrixASignedComponentsShift = 0x0,
-        [NativeName("Name", "SpvCooperativeMatrixOperandsMatrixBSignedComponentsShift")]
-        MatrixBSignedComponentsShift = 0x1,
-        [NativeName("Name", "SpvCooperativeMatrixOperandsMatrixCSignedComponentsShift")]
-        MatrixCSignedComponentsShift = 0x2,
-        [NativeName("Name", "SpvCooperativeMatrixOperandsMatrixResultSignedComponentsShift")]
-        MatrixResultSignedComponentsShift = 0x3,
-        [NativeName("Name", "SpvCooperativeMatrixOperandsSaturatingAccumulationShift")]
-        SaturatingAccumulationShift = 0x4,
+        [NativeName("Name", "SpvCooperativeMatrixOperandsMatrixASignedComponentsKHRShift")]
+        MatrixASignedComponentsKhrShift = 0x0,
+        [NativeName("Name", "SpvCooperativeMatrixOperandsMatrixBSignedComponentsKHRShift")]
+        MatrixBSignedComponentsKhrShift = 0x1,
+        [NativeName("Name", "SpvCooperativeMatrixOperandsMatrixCSignedComponentsKHRShift")]
+        MatrixCSignedComponentsKhrShift = 0x2,
+        [NativeName("Name", "SpvCooperativeMatrixOperandsMatrixResultSignedComponentsKHRShift")]
+        MatrixResultSignedComponentsKhrShift = 0x3,
+        [NativeName("Name", "SpvCooperativeMatrixOperandsSaturatingAccumulationKHRShift")]
+        SaturatingAccumulationKhrShift = 0x4,
         [NativeName("Name", "SpvCooperativeMatrixOperandsMax")]
         Max = 0x7FFFFFFF,
     }

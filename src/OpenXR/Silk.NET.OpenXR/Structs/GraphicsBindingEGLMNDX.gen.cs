@@ -23,7 +23,7 @@ namespace Silk.NET.OpenXR
         (
             StructureType? type = StructureType.TypeGraphicsBindingEglMndx,
             void* next = null,
-            PfnVoidFunction? getProcAddress = null,
+            PFN_xrEglGetProcAddressMNDX? getProcAddress = null,
             nint? display = null,
             nint? config = null,
             nint? context = null
@@ -71,10 +71,10 @@ namespace Silk.NET.OpenXR
         [NativeName("Name", "next")]
         public void* Next;
 /// <summary></summary>
-        [NativeName("Type", "PFNEGLGETPROCADDRESSPROC")]
-        [NativeName("Type.Name", "PFNEGLGETPROCADDRESSPROC")]
+        [NativeName("Type", "PFN_xrEglGetProcAddressMNDX")]
+        [NativeName("Type.Name", "PFN_xrEglGetProcAddressMNDX")]
         [NativeName("Name", "getProcAddress")]
-        public PfnVoidFunction GetProcAddress;
+        public PFN_xrEglGetProcAddressMNDX GetProcAddress;
 /// <summary></summary>
         [NativeName("Type", "EGLDisplay")]
         [NativeName("Type.Name", "EGLDisplay")]

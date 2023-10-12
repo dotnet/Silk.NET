@@ -29,6 +29,7 @@ namespace Silk.NET.SPIRV.Reflect
             uint? typeFlags = null,
             uint? decorationFlags = null,
             Traits? traits = null,
+            TypeDescription* structTypeDescription = null,
             uint? memberCount = null,
             TypeDescription* members = null
         ) : this()
@@ -71,6 +72,11 @@ namespace Silk.NET.SPIRV.Reflect
             if (traits is not null)
             {
                 Traits = traits.Value;
+            }
+
+            if (structTypeDescription is not null)
+            {
+                StructTypeDescription = structTypeDescription;
             }
 
             if (memberCount is not null)
@@ -124,6 +130,11 @@ namespace Silk.NET.SPIRV.Reflect
         [NativeName("Type.Name", "struct Traits")]
         [NativeName("Name", "traits")]
         public Traits Traits;
+
+        [NativeName("Type", "struct SpvReflectTypeDescription *")]
+        [NativeName("Type.Name", "struct SpvReflectTypeDescription *")]
+        [NativeName("Name", "struct_type_description")]
+        public TypeDescription* StructTypeDescription;
 
         [NativeName("Type", "uint32_t")]
         [NativeName("Type.Name", "uint32_t")]

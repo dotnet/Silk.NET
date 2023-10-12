@@ -58,9 +58,15 @@ namespace Silk.NET.OpenXR
         FaceTrackerFB = 1000201000,
         [NativeName("Name", "XR_OBJECT_TYPE_EYE_TRACKER_FB")]
         EyeTrackerFB = 1000202000,
+        [NativeName("Name", "XR_OBJECT_TYPE_VIRTUAL_KEYBOARD_META")]
+        VirtualKeyboardMeta = 1000219000,
         [NativeName("Name", "XR_OBJECT_TYPE_SPACE_USER_FB")]
         SpaceUserFB = 1000241000,
+        [NativeName("Name", "XR_OBJECT_TYPE_PASSTHROUGH_COLOR_LUT_META")]
+        PassthroughColorLutMeta = 1000266000,
         [NativeName("Name", "XR_OBJECT_TYPE_PASSTHROUGH_HTC")]
         PassthroughHtc = 1000317000,
+        [NativeName("Name", "XR_OBJECT_TYPE_PLANE_DETECTOR_EXT")]
+        PlaneDetectorExt = 1000429000,
     }
 }

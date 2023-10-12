@@ -69,6 +69,10 @@ namespace Silk.NET.OpenCL.Extensions.ARM
         ComputeUnitBatchQueueSize = 0x40,
         [NativeName("Name", "CL_DEVICE_SCHEDULING_COMPUTE_UNIT_BATCH_QUEUE_SIZE_ARM")]
         DeviceSchedulingComputeUnitBatchQueueSizeArm = 0x40,
+        [NativeName("Name", "CL_DEVICE_SCHEDULING_COMPUTE_UNIT_LIMIT_ARM")]
+        ComputeUnitLimit = 0x80,
+        [NativeName("Name", "CL_DEVICE_SCHEDULING_COMPUTE_UNIT_LIMIT_ARM")]
+        DeviceSchedulingComputeUnitLimitArm = 0x80,
         [NativeName("Name", "CL_DEVICE_SVM_COARSE_GRAIN_BUFFER_ARM")]
         CoarseGrainBuffer = 0x1,
         [NativeName("Name", "CL_DEVICE_SVM_COARSE_GRAIN_BUFFER_ARM")]
@@ -219,6 +223,10 @@ namespace Silk.NET.OpenCL.Extensions.ARM
         DeferredFlushArm = 0x41EC,
         [NativeName("Name", "CL_QUEUE_DEFERRED_FLUSH_ARM")]
         QueueDeferredFlushArm = 0x41EC,
+        [NativeName("Name", "CL_QUEUE_COMPUTE_UNIT_LIMIT_ARM")]
+        ComputeUnitLimitArm = 0x41F3,
+        [NativeName("Name", "CL_QUEUE_COMPUTE_UNIT_LIMIT_ARM")]
+        QueueComputeUnitLimitArm = 0x41F3,
         [NativeName("Name", "CL_QUEUE_JOB_SLOT_ARM")]
         JobSlotArm = 0x41E1,
         [NativeName("Name", "CL_QUEUE_JOB_SLOT_ARM")]

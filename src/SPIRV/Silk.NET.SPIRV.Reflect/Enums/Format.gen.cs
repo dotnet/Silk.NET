@@ -14,6 +14,30 @@ namespace Silk.NET.SPIRV.Reflect
     {
         [NativeName("Name", "SPV_REFLECT_FORMAT_UNDEFINED")]
         Undefined = 0x0,
+        [NativeName("Name", "SPV_REFLECT_FORMAT_R16_UINT")]
+        R16Uint = 0x4A,
+        [NativeName("Name", "SPV_REFLECT_FORMAT_R16_SINT")]
+        R16Sint = 0x4B,
+        [NativeName("Name", "SPV_REFLECT_FORMAT_R16_SFLOAT")]
+        R16Sfloat = 0x4C,
+        [NativeName("Name", "SPV_REFLECT_FORMAT_R16G16_UINT")]
+        R16G16Uint = 0x51,
+        [NativeName("Name", "SPV_REFLECT_FORMAT_R16G16_SINT")]
+        R16G16Sint = 0x52,
+        [NativeName("Name", "SPV_REFLECT_FORMAT_R16G16_SFLOAT")]
+        R16G16Sfloat = 0x53,
+        [NativeName("Name", "SPV_REFLECT_FORMAT_R16G16B16_UINT")]
+        R16G16B16Uint = 0x58,
+        [NativeName("Name", "SPV_REFLECT_FORMAT_R16G16B16_SINT")]
+        R16G16B16Sint = 0x59,
+        [NativeName("Name", "SPV_REFLECT_FORMAT_R16G16B16_SFLOAT")]
+        R16G16B16Sfloat = 0x5A,
+        [NativeName("Name", "SPV_REFLECT_FORMAT_R16G16B16A16_UINT")]
+        R16G16B16A16Uint = 0x5F,
+        [NativeName("Name", "SPV_REFLECT_FORMAT_R16G16B16A16_SINT")]
+        R16G16B16A16Sint = 0x60,
+        [NativeName("Name", "SPV_REFLECT_FORMAT_R16G16B16A16_SFLOAT")]
+        R16G16B16A16Sfloat = 0x61,
         [NativeName("Name", "SPV_REFLECT_FORMAT_R32_UINT")]
         R32Uint = 0x62,
         [NativeName("Name", "SPV_REFLECT_FORMAT_R32_SINT")]

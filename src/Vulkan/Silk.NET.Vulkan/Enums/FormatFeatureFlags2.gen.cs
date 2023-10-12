@@ -192,6 +192,9 @@ namespace Silk.NET.Vulkan
         [Obsolete("Deprecated in favour of \"FragmentShadingRateAttachmentBitKhr\"")]
         [NativeName("Name", "VK_FORMAT_FEATURE_2_FRAGMENT_SHADING_RATE_ATTACHMENT_BIT_KHR")]
         FormatFeature2FragmentShadingRateAttachmentBitKhr = 1073741824,
+        [Obsolete("Deprecated in favour of \"HostImageTransferBitExt\"")]
+        [NativeName("Name", "VK_FORMAT_FEATURE_2_HOST_IMAGE_TRANSFER_BIT_EXT")]
+        FormatFeature2HostImageTransferBitExt = 70368744177664,
         [Obsolete("Deprecated in favour of \"VideoEncodeInputBitKhr\"")]
         [NativeName("Name", "VK_FORMAT_FEATURE_2_VIDEO_ENCODE_INPUT_BIT_KHR")]
         FormatFeature2VideoEncodeInputBitKhr = 134217728,
@@ -340,6 +343,8 @@ namespace Silk.NET.Vulkan
         FragmentDensityMapBitExt = 16777216,
         [NativeName("Name", "VK_FORMAT_FEATURE_2_FRAGMENT_SHADING_RATE_ATTACHMENT_BIT_KHR")]
         FragmentShadingRateAttachmentBitKhr = 1073741824,
+        [NativeName("Name", "VK_FORMAT_FEATURE_2_HOST_IMAGE_TRANSFER_BIT_EXT")]
+        HostImageTransferBitExt = 70368744177664,
         [NativeName("Name", "VK_FORMAT_FEATURE_2_VIDEO_ENCODE_INPUT_BIT_KHR")]
         VideoEncodeInputBitKhr = 134217728,
         [NativeName("Name", "VK_FORMAT_FEATURE_2_VIDEO_ENCODE_DPB_BIT_KHR")]

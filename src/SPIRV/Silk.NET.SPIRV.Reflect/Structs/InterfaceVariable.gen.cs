@@ -24,6 +24,7 @@ namespace Silk.NET.SPIRV.Reflect
             uint? spirvId = null,
             byte* name = null,
             uint? location = null,
+            uint? component = null,
             Silk.NET.SPIRV.StorageClass? storageClass = null,
             byte* semantic = null,
             uint? decorationFlags = null,
@@ -50,6 +51,11 @@ namespace Silk.NET.SPIRV.Reflect
             if (location is not null)
             {
                 Location = location.Value;
+            }
+
+            if (component is not null)
+            {
+                Component = component.Value;
             }
 
             if (storageClass is not null)
@@ -124,6 +130,11 @@ namespace Silk.NET.SPIRV.Reflect
         [NativeName("Name", "location")]
         public uint Location;
 
+        [NativeName("Type", "uint32_t")]
+        [NativeName("Type.Name", "uint32_t")]
+        [NativeName("Name", "component")]
+        public uint Component;
+
         [NativeName("Type", "SpvStorageClass")]
         [NativeName("Type.Name", "SpvStorageClass")]
         [NativeName("Name", "storage_class")]
@@ -174,8 +185,8 @@ namespace Silk.NET.SPIRV.Reflect
         [NativeName("Name", "type_description")]
         public TypeDescription* TypeDescription;
 
-        [NativeName("Type", "struct (unnamed struct at spirv_reflect.h:360:3)")]
-        [NativeName("Type.Name", "struct (unnamed struct at spirv_reflect.h:360:3)")]
+        [NativeName("Type", "struct (unnamed struct at spirv_reflect.h:389:3)")]
+        [NativeName("Type.Name", "struct (unnamed struct at spirv_reflect.h:389:3)")]
         [NativeName("Name", "word_offset")]
         public InterfaceVariableWordOffset WordOffset;
     }

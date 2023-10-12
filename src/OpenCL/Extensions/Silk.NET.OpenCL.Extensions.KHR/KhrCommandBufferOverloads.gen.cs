@@ -3347,6 +3347,378 @@ namespace Silk.NET.OpenCL.Extensions.KHR
             return thisApi.CommandNdrangeKernel(command_buffer, command_queue, in properties.GetPinnableReference(), kernel, work_dim, in global_work_offset.GetPinnableReference(), in global_work_size.GetPinnableReference(), in local_work_size.GetPinnableReference(), num_sync_points_in_wait_list, in sync_point_wait_list.GetPinnableReference(), out sync_point.GetPinnableReference(), out mutable_handle.GetPinnableReference());
         }
 
+        public static unsafe int CommandSvmmemcpy(this KhrCommandBuffer thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint command_buffer, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint command_queue, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] void* dst_ptr, [Flow(Silk.NET.Core.Native.FlowDirection.In)] void* src_ptr, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint size, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* sync_point_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] uint* sync_point, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<nint> mutable_handle)
+        {
+            // SpanOverloader
+            return thisApi.CommandSvmmemcpy(command_buffer, command_queue, dst_ptr, src_ptr, size, num_sync_points_in_wait_list, sync_point_wait_list, sync_point, out mutable_handle.GetPinnableReference());
+        }
+
+        public static unsafe int CommandSvmmemcpy(this KhrCommandBuffer thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint command_buffer, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint command_queue, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] void* dst_ptr, [Flow(Silk.NET.Core.Native.FlowDirection.In)] void* src_ptr, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint size, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* sync_point_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<uint> sync_point, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] nint* mutable_handle)
+        {
+            // SpanOverloader
+            return thisApi.CommandSvmmemcpy(command_buffer, command_queue, dst_ptr, src_ptr, size, num_sync_points_in_wait_list, sync_point_wait_list, out sync_point.GetPinnableReference(), mutable_handle);
+        }
+
+        public static unsafe int CommandSvmmemcpy(this KhrCommandBuffer thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint command_buffer, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint command_queue, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] void* dst_ptr, [Flow(Silk.NET.Core.Native.FlowDirection.In)] void* src_ptr, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint size, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* sync_point_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<uint> sync_point, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<nint> mutable_handle)
+        {
+            // SpanOverloader
+            return thisApi.CommandSvmmemcpy(command_buffer, command_queue, dst_ptr, src_ptr, size, num_sync_points_in_wait_list, sync_point_wait_list, out sync_point.GetPinnableReference(), out mutable_handle.GetPinnableReference());
+        }
+
+        public static unsafe int CommandSvmmemcpy(this KhrCommandBuffer thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint command_buffer, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint command_queue, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] void* dst_ptr, [Flow(Silk.NET.Core.Native.FlowDirection.In)] void* src_ptr, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint size, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<uint> sync_point_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] uint* sync_point, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] nint* mutable_handle)
+        {
+            // SpanOverloader
+            return thisApi.CommandSvmmemcpy(command_buffer, command_queue, dst_ptr, src_ptr, size, num_sync_points_in_wait_list, in sync_point_wait_list.GetPinnableReference(), sync_point, mutable_handle);
+        }
+
+        public static unsafe int CommandSvmmemcpy(this KhrCommandBuffer thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint command_buffer, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint command_queue, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] void* dst_ptr, [Flow(Silk.NET.Core.Native.FlowDirection.In)] void* src_ptr, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint size, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<uint> sync_point_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] uint* sync_point, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<nint> mutable_handle)
+        {
+            // SpanOverloader
+            return thisApi.CommandSvmmemcpy(command_buffer, command_queue, dst_ptr, src_ptr, size, num_sync_points_in_wait_list, in sync_point_wait_list.GetPinnableReference(), sync_point, out mutable_handle.GetPinnableReference());
+        }
+
+        public static unsafe int CommandSvmmemcpy(this KhrCommandBuffer thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint command_buffer, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint command_queue, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] void* dst_ptr, [Flow(Silk.NET.Core.Native.FlowDirection.In)] void* src_ptr, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint size, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<uint> sync_point_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<uint> sync_point, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] nint* mutable_handle)
+        {
+            // SpanOverloader
+            return thisApi.CommandSvmmemcpy(command_buffer, command_queue, dst_ptr, src_ptr, size, num_sync_points_in_wait_list, in sync_point_wait_list.GetPinnableReference(), out sync_point.GetPinnableReference(), mutable_handle);
+        }
+
+        public static unsafe int CommandSvmmemcpy(this KhrCommandBuffer thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint command_buffer, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint command_queue, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] void* dst_ptr, [Flow(Silk.NET.Core.Native.FlowDirection.In)] void* src_ptr, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint size, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<uint> sync_point_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<uint> sync_point, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<nint> mutable_handle)
+        {
+            // SpanOverloader
+            return thisApi.CommandSvmmemcpy(command_buffer, command_queue, dst_ptr, src_ptr, size, num_sync_points_in_wait_list, in sync_point_wait_list.GetPinnableReference(), out sync_point.GetPinnableReference(), out mutable_handle.GetPinnableReference());
+        }
+
+        public static unsafe int CommandSvmmemcpy<T0>(this KhrCommandBuffer thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint command_buffer, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint command_queue, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] void* dst_ptr, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> src_ptr, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint size, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* sync_point_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] uint* sync_point, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] nint* mutable_handle) where T0 : unmanaged
+        {
+            // SpanOverloader
+            return thisApi.CommandSvmmemcpy(command_buffer, command_queue, dst_ptr, in src_ptr.GetPinnableReference(), size, num_sync_points_in_wait_list, sync_point_wait_list, sync_point, mutable_handle);
+        }
+
+        public static unsafe int CommandSvmmemcpy<T0>(this KhrCommandBuffer thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint command_buffer, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint command_queue, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] void* dst_ptr, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> src_ptr, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint size, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* sync_point_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] uint* sync_point, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<nint> mutable_handle) where T0 : unmanaged
+        {
+            // SpanOverloader
+            return thisApi.CommandSvmmemcpy(command_buffer, command_queue, dst_ptr, in src_ptr.GetPinnableReference(), size, num_sync_points_in_wait_list, sync_point_wait_list, sync_point, out mutable_handle.GetPinnableReference());
+        }
+
+        public static unsafe int CommandSvmmemcpy<T0>(this KhrCommandBuffer thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint command_buffer, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint command_queue, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] void* dst_ptr, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> src_ptr, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint size, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* sync_point_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<uint> sync_point, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] nint* mutable_handle) where T0 : unmanaged
+        {
+            // SpanOverloader
+            return thisApi.CommandSvmmemcpy(command_buffer, command_queue, dst_ptr, in src_ptr.GetPinnableReference(), size, num_sync_points_in_wait_list, sync_point_wait_list, out sync_point.GetPinnableReference(), mutable_handle);
+        }
+
+        public static unsafe int CommandSvmmemcpy<T0>(this KhrCommandBuffer thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint command_buffer, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint command_queue, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] void* dst_ptr, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> src_ptr, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint size, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* sync_point_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<uint> sync_point, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<nint> mutable_handle) where T0 : unmanaged
+        {
+            // SpanOverloader
+            return thisApi.CommandSvmmemcpy(command_buffer, command_queue, dst_ptr, in src_ptr.GetPinnableReference(), size, num_sync_points_in_wait_list, sync_point_wait_list, out sync_point.GetPinnableReference(), out mutable_handle.GetPinnableReference());
+        }
+
+        public static unsafe int CommandSvmmemcpy<T0>(this KhrCommandBuffer thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint command_buffer, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint command_queue, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] void* dst_ptr, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> src_ptr, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint size, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<uint> sync_point_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] uint* sync_point, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] nint* mutable_handle) where T0 : unmanaged
+        {
+            // SpanOverloader
+            return thisApi.CommandSvmmemcpy(command_buffer, command_queue, dst_ptr, in src_ptr.GetPinnableReference(), size, num_sync_points_in_wait_list, in sync_point_wait_list.GetPinnableReference(), sync_point, mutable_handle);
+        }
+
+        public static unsafe int CommandSvmmemcpy<T0>(this KhrCommandBuffer thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint command_buffer, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint command_queue, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] void* dst_ptr, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> src_ptr, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint size, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<uint> sync_point_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] uint* sync_point, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<nint> mutable_handle) where T0 : unmanaged
+        {
+            // SpanOverloader
+            return thisApi.CommandSvmmemcpy(command_buffer, command_queue, dst_ptr, in src_ptr.GetPinnableReference(), size, num_sync_points_in_wait_list, in sync_point_wait_list.GetPinnableReference(), sync_point, out mutable_handle.GetPinnableReference());
+        }
+
+        public static unsafe int CommandSvmmemcpy<T0>(this KhrCommandBuffer thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint command_buffer, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint command_queue, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] void* dst_ptr, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> src_ptr, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint size, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<uint> sync_point_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<uint> sync_point, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] nint* mutable_handle) where T0 : unmanaged
+        {
+            // SpanOverloader
+            return thisApi.CommandSvmmemcpy(command_buffer, command_queue, dst_ptr, in src_ptr.GetPinnableReference(), size, num_sync_points_in_wait_list, in sync_point_wait_list.GetPinnableReference(), out sync_point.GetPinnableReference(), mutable_handle);
+        }
+
+        public static unsafe int CommandSvmmemcpy<T0>(this KhrCommandBuffer thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint command_buffer, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint command_queue, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] void* dst_ptr, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> src_ptr, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint size, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<uint> sync_point_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<uint> sync_point, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<nint> mutable_handle) where T0 : unmanaged
+        {
+            // SpanOverloader
+            return thisApi.CommandSvmmemcpy(command_buffer, command_queue, dst_ptr, in src_ptr.GetPinnableReference(), size, num_sync_points_in_wait_list, in sync_point_wait_list.GetPinnableReference(), out sync_point.GetPinnableReference(), out mutable_handle.GetPinnableReference());
+        }
+
+        public static unsafe int CommandSvmmemcpy<T0>(this KhrCommandBuffer thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint command_buffer, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint command_queue, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<T0> dst_ptr, [Flow(Silk.NET.Core.Native.FlowDirection.In)] void* src_ptr, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint size, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* sync_point_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] uint* sync_point, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] nint* mutable_handle) where T0 : unmanaged
+        {
+            // SpanOverloader
+            return thisApi.CommandSvmmemcpy(command_buffer, command_queue, out dst_ptr.GetPinnableReference(), src_ptr, size, num_sync_points_in_wait_list, sync_point_wait_list, sync_point, mutable_handle);
+        }
+
+        public static unsafe int CommandSvmmemcpy<T0>(this KhrCommandBuffer thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint command_buffer, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint command_queue, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<T0> dst_ptr, [Flow(Silk.NET.Core.Native.FlowDirection.In)] void* src_ptr, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint size, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* sync_point_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] uint* sync_point, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<nint> mutable_handle) where T0 : unmanaged
+        {
+            // SpanOverloader
+            return thisApi.CommandSvmmemcpy(command_buffer, command_queue, out dst_ptr.GetPinnableReference(), src_ptr, size, num_sync_points_in_wait_list, sync_point_wait_list, sync_point, out mutable_handle.GetPinnableReference());
+        }
+
+        public static unsafe int CommandSvmmemcpy<T0>(this KhrCommandBuffer thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint command_buffer, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint command_queue, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<T0> dst_ptr, [Flow(Silk.NET.Core.Native.FlowDirection.In)] void* src_ptr, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint size, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* sync_point_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<uint> sync_point, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] nint* mutable_handle) where T0 : unmanaged
+        {
+            // SpanOverloader
+            return thisApi.CommandSvmmemcpy(command_buffer, command_queue, out dst_ptr.GetPinnableReference(), src_ptr, size, num_sync_points_in_wait_list, sync_point_wait_list, out sync_point.GetPinnableReference(), mutable_handle);
+        }
+
+        public static unsafe int CommandSvmmemcpy<T0>(this KhrCommandBuffer thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint command_buffer, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint command_queue, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<T0> dst_ptr, [Flow(Silk.NET.Core.Native.FlowDirection.In)] void* src_ptr, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint size, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* sync_point_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<uint> sync_point, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<nint> mutable_handle) where T0 : unmanaged
+        {
+            // SpanOverloader
+            return thisApi.CommandSvmmemcpy(command_buffer, command_queue, out dst_ptr.GetPinnableReference(), src_ptr, size, num_sync_points_in_wait_list, sync_point_wait_list, out sync_point.GetPinnableReference(), out mutable_handle.GetPinnableReference());
+        }
+
+        public static unsafe int CommandSvmmemcpy<T0>(this KhrCommandBuffer thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint command_buffer, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint command_queue, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<T0> dst_ptr, [Flow(Silk.NET.Core.Native.FlowDirection.In)] void* src_ptr, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint size, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<uint> sync_point_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] uint* sync_point, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] nint* mutable_handle) where T0 : unmanaged
+        {
+            // SpanOverloader
+            return thisApi.CommandSvmmemcpy(command_buffer, command_queue, out dst_ptr.GetPinnableReference(), src_ptr, size, num_sync_points_in_wait_list, in sync_point_wait_list.GetPinnableReference(), sync_point, mutable_handle);
+        }
+
+        public static unsafe int CommandSvmmemcpy<T0>(this KhrCommandBuffer thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint command_buffer, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint command_queue, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<T0> dst_ptr, [Flow(Silk.NET.Core.Native.FlowDirection.In)] void* src_ptr, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint size, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<uint> sync_point_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] uint* sync_point, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<nint> mutable_handle) where T0 : unmanaged
+        {
+            // SpanOverloader
+            return thisApi.CommandSvmmemcpy(command_buffer, command_queue, out dst_ptr.GetPinnableReference(), src_ptr, size, num_sync_points_in_wait_list, in sync_point_wait_list.GetPinnableReference(), sync_point, out mutable_handle.GetPinnableReference());
+        }
+
+        public static unsafe int CommandSvmmemcpy<T0>(this KhrCommandBuffer thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint command_buffer, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint command_queue, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<T0> dst_ptr, [Flow(Silk.NET.Core.Native.FlowDirection.In)] void* src_ptr, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint size, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<uint> sync_point_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<uint> sync_point, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] nint* mutable_handle) where T0 : unmanaged
+        {
+            // SpanOverloader
+            return thisApi.CommandSvmmemcpy(command_buffer, command_queue, out dst_ptr.GetPinnableReference(), src_ptr, size, num_sync_points_in_wait_list, in sync_point_wait_list.GetPinnableReference(), out sync_point.GetPinnableReference(), mutable_handle);
+        }
+
+        public static unsafe int CommandSvmmemcpy<T0>(this KhrCommandBuffer thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint command_buffer, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint command_queue, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<T0> dst_ptr, [Flow(Silk.NET.Core.Native.FlowDirection.In)] void* src_ptr, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint size, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<uint> sync_point_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<uint> sync_point, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<nint> mutable_handle) where T0 : unmanaged
+        {
+            // SpanOverloader
+            return thisApi.CommandSvmmemcpy(command_buffer, command_queue, out dst_ptr.GetPinnableReference(), src_ptr, size, num_sync_points_in_wait_list, in sync_point_wait_list.GetPinnableReference(), out sync_point.GetPinnableReference(), out mutable_handle.GetPinnableReference());
+        }
+
+        public static unsafe int CommandSvmmemcpy<T0, T1>(this KhrCommandBuffer thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint command_buffer, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint command_queue, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<T0> dst_ptr, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T1> src_ptr, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint size, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* sync_point_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] uint* sync_point, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] nint* mutable_handle) where T0 : unmanaged where T1 : unmanaged
+        {
+            // SpanOverloader
+            return thisApi.CommandSvmmemcpy(command_buffer, command_queue, out dst_ptr.GetPinnableReference(), in src_ptr.GetPinnableReference(), size, num_sync_points_in_wait_list, sync_point_wait_list, sync_point, mutable_handle);
+        }
+
+        public static unsafe int CommandSvmmemcpy<T0, T1>(this KhrCommandBuffer thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint command_buffer, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint command_queue, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<T0> dst_ptr, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T1> src_ptr, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint size, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* sync_point_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] uint* sync_point, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<nint> mutable_handle) where T0 : unmanaged where T1 : unmanaged
+        {
+            // SpanOverloader
+            return thisApi.CommandSvmmemcpy(command_buffer, command_queue, out dst_ptr.GetPinnableReference(), in src_ptr.GetPinnableReference(), size, num_sync_points_in_wait_list, sync_point_wait_list, sync_point, out mutable_handle.GetPinnableReference());
+        }
+
+        public static unsafe int CommandSvmmemcpy<T0, T1>(this KhrCommandBuffer thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint command_buffer, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint command_queue, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<T0> dst_ptr, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T1> src_ptr, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint size, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* sync_point_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<uint> sync_point, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] nint* mutable_handle) where T0 : unmanaged where T1 : unmanaged
+        {
+            // SpanOverloader
+            return thisApi.CommandSvmmemcpy(command_buffer, command_queue, out dst_ptr.GetPinnableReference(), in src_ptr.GetPinnableReference(), size, num_sync_points_in_wait_list, sync_point_wait_list, out sync_point.GetPinnableReference(), mutable_handle);
+        }
+
+        public static unsafe int CommandSvmmemcpy<T0, T1>(this KhrCommandBuffer thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint command_buffer, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint command_queue, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<T0> dst_ptr, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T1> src_ptr, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint size, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* sync_point_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<uint> sync_point, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<nint> mutable_handle) where T0 : unmanaged where T1 : unmanaged
+        {
+            // SpanOverloader
+            return thisApi.CommandSvmmemcpy(command_buffer, command_queue, out dst_ptr.GetPinnableReference(), in src_ptr.GetPinnableReference(), size, num_sync_points_in_wait_list, sync_point_wait_list, out sync_point.GetPinnableReference(), out mutable_handle.GetPinnableReference());
+        }
+
+        public static unsafe int CommandSvmmemcpy<T0, T1>(this KhrCommandBuffer thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint command_buffer, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint command_queue, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<T0> dst_ptr, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T1> src_ptr, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint size, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<uint> sync_point_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] uint* sync_point, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] nint* mutable_handle) where T0 : unmanaged where T1 : unmanaged
+        {
+            // SpanOverloader
+            return thisApi.CommandSvmmemcpy(command_buffer, command_queue, out dst_ptr.GetPinnableReference(), in src_ptr.GetPinnableReference(), size, num_sync_points_in_wait_list, in sync_point_wait_list.GetPinnableReference(), sync_point, mutable_handle);
+        }
+
+        public static unsafe int CommandSvmmemcpy<T0, T1>(this KhrCommandBuffer thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint command_buffer, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint command_queue, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<T0> dst_ptr, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T1> src_ptr, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint size, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<uint> sync_point_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] uint* sync_point, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<nint> mutable_handle) where T0 : unmanaged where T1 : unmanaged
+        {
+            // SpanOverloader
+            return thisApi.CommandSvmmemcpy(command_buffer, command_queue, out dst_ptr.GetPinnableReference(), in src_ptr.GetPinnableReference(), size, num_sync_points_in_wait_list, in sync_point_wait_list.GetPinnableReference(), sync_point, out mutable_handle.GetPinnableReference());
+        }
+
+        public static unsafe int CommandSvmmemcpy<T0, T1>(this KhrCommandBuffer thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint command_buffer, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint command_queue, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<T0> dst_ptr, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T1> src_ptr, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint size, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<uint> sync_point_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<uint> sync_point, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] nint* mutable_handle) where T0 : unmanaged where T1 : unmanaged
+        {
+            // SpanOverloader
+            return thisApi.CommandSvmmemcpy(command_buffer, command_queue, out dst_ptr.GetPinnableReference(), in src_ptr.GetPinnableReference(), size, num_sync_points_in_wait_list, in sync_point_wait_list.GetPinnableReference(), out sync_point.GetPinnableReference(), mutable_handle);
+        }
+
+        public static unsafe int CommandSvmmemcpy<T0, T1>(this KhrCommandBuffer thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint command_buffer, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint command_queue, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<T0> dst_ptr, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T1> src_ptr, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint size, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<uint> sync_point_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<uint> sync_point, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<nint> mutable_handle) where T0 : unmanaged where T1 : unmanaged
+        {
+            // SpanOverloader
+            return thisApi.CommandSvmmemcpy(command_buffer, command_queue, out dst_ptr.GetPinnableReference(), in src_ptr.GetPinnableReference(), size, num_sync_points_in_wait_list, in sync_point_wait_list.GetPinnableReference(), out sync_point.GetPinnableReference(), out mutable_handle.GetPinnableReference());
+        }
+
+        public static unsafe int CommandSvmmemFill(this KhrCommandBuffer thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint command_buffer, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint command_queue, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] void* svm_ptr, [Flow(Silk.NET.Core.Native.FlowDirection.In)] void* pattern, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint pattern_size, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint size, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* sync_point_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] uint* sync_point, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<nint> mutable_handle)
+        {
+            // SpanOverloader
+            return thisApi.CommandSvmmemFill(command_buffer, command_queue, svm_ptr, pattern, pattern_size, size, num_sync_points_in_wait_list, sync_point_wait_list, sync_point, out mutable_handle.GetPinnableReference());
+        }
+
+        public static unsafe int CommandSvmmemFill(this KhrCommandBuffer thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint command_buffer, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint command_queue, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] void* svm_ptr, [Flow(Silk.NET.Core.Native.FlowDirection.In)] void* pattern, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint pattern_size, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint size, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* sync_point_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<uint> sync_point, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] nint* mutable_handle)
+        {
+            // SpanOverloader
+            return thisApi.CommandSvmmemFill(command_buffer, command_queue, svm_ptr, pattern, pattern_size, size, num_sync_points_in_wait_list, sync_point_wait_list, out sync_point.GetPinnableReference(), mutable_handle);
+        }
+
+        public static unsafe int CommandSvmmemFill(this KhrCommandBuffer thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint command_buffer, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint command_queue, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] void* svm_ptr, [Flow(Silk.NET.Core.Native.FlowDirection.In)] void* pattern, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint pattern_size, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint size, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* sync_point_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<uint> sync_point, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<nint> mutable_handle)
+        {
+            // SpanOverloader
+            return thisApi.CommandSvmmemFill(command_buffer, command_queue, svm_ptr, pattern, pattern_size, size, num_sync_points_in_wait_list, sync_point_wait_list, out sync_point.GetPinnableReference(), out mutable_handle.GetPinnableReference());
+        }
+
+        public static unsafe int CommandSvmmemFill(this KhrCommandBuffer thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint command_buffer, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint command_queue, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] void* svm_ptr, [Flow(Silk.NET.Core.Native.FlowDirection.In)] void* pattern, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint pattern_size, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint size, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<uint> sync_point_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] uint* sync_point, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] nint* mutable_handle)
+        {
+            // SpanOverloader
+            return thisApi.CommandSvmmemFill(command_buffer, command_queue, svm_ptr, pattern, pattern_size, size, num_sync_points_in_wait_list, in sync_point_wait_list.GetPinnableReference(), sync_point, mutable_handle);
+        }
+
+        public static unsafe int CommandSvmmemFill(this KhrCommandBuffer thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint command_buffer, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint command_queue, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] void* svm_ptr, [Flow(Silk.NET.Core.Native.FlowDirection.In)] void* pattern, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint pattern_size, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint size, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<uint> sync_point_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] uint* sync_point, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<nint> mutable_handle)
+        {
+            // SpanOverloader
+            return thisApi.CommandSvmmemFill(command_buffer, command_queue, svm_ptr, pattern, pattern_size, size, num_sync_points_in_wait_list, in sync_point_wait_list.GetPinnableReference(), sync_point, out mutable_handle.GetPinnableReference());
+        }
+
+        public static unsafe int CommandSvmmemFill(this KhrCommandBuffer thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint command_buffer, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint command_queue, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] void* svm_ptr, [Flow(Silk.NET.Core.Native.FlowDirection.In)] void* pattern, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint pattern_size, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint size, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<uint> sync_point_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<uint> sync_point, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] nint* mutable_handle)
+        {
+            // SpanOverloader
+            return thisApi.CommandSvmmemFill(command_buffer, command_queue, svm_ptr, pattern, pattern_size, size, num_sync_points_in_wait_list, in sync_point_wait_list.GetPinnableReference(), out sync_point.GetPinnableReference(), mutable_handle);
+        }
+
+        public static unsafe int CommandSvmmemFill(this KhrCommandBuffer thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint command_buffer, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint command_queue, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] void* svm_ptr, [Flow(Silk.NET.Core.Native.FlowDirection.In)] void* pattern, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint pattern_size, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint size, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<uint> sync_point_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<uint> sync_point, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<nint> mutable_handle)
+        {
+            // SpanOverloader
+            return thisApi.CommandSvmmemFill(command_buffer, command_queue, svm_ptr, pattern, pattern_size, size, num_sync_points_in_wait_list, in sync_point_wait_list.GetPinnableReference(), out sync_point.GetPinnableReference(), out mutable_handle.GetPinnableReference());
+        }
+
+        public static unsafe int CommandSvmmemFill<T0>(this KhrCommandBuffer thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint command_buffer, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint command_queue, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] void* svm_ptr, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> pattern, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint pattern_size, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint size, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* sync_point_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] uint* sync_point, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] nint* mutable_handle) where T0 : unmanaged
+        {
+            // SpanOverloader
+            return thisApi.CommandSvmmemFill(command_buffer, command_queue, svm_ptr, in pattern.GetPinnableReference(), pattern_size, size, num_sync_points_in_wait_list, sync_point_wait_list, sync_point, mutable_handle);
+        }
+
+        public static unsafe int CommandSvmmemFill<T0>(this KhrCommandBuffer thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint command_buffer, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint command_queue, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] void* svm_ptr, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> pattern, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint pattern_size, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint size, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* sync_point_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] uint* sync_point, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<nint> mutable_handle) where T0 : unmanaged
+        {
+            // SpanOverloader
+            return thisApi.CommandSvmmemFill(command_buffer, command_queue, svm_ptr, in pattern.GetPinnableReference(), pattern_size, size, num_sync_points_in_wait_list, sync_point_wait_list, sync_point, out mutable_handle.GetPinnableReference());
+        }
+
+        public static unsafe int CommandSvmmemFill<T0>(this KhrCommandBuffer thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint command_buffer, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint command_queue, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] void* svm_ptr, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> pattern, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint pattern_size, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint size, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* sync_point_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<uint> sync_point, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] nint* mutable_handle) where T0 : unmanaged
+        {
+            // SpanOverloader
+            return thisApi.CommandSvmmemFill(command_buffer, command_queue, svm_ptr, in pattern.GetPinnableReference(), pattern_size, size, num_sync_points_in_wait_list, sync_point_wait_list, out sync_point.GetPinnableReference(), mutable_handle);
+        }
+
+        public static unsafe int CommandSvmmemFill<T0>(this KhrCommandBuffer thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint command_buffer, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint command_queue, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] void* svm_ptr, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> pattern, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint pattern_size, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint size, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* sync_point_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<uint> sync_point, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<nint> mutable_handle) where T0 : unmanaged
+        {
+            // SpanOverloader
+            return thisApi.CommandSvmmemFill(command_buffer, command_queue, svm_ptr, in pattern.GetPinnableReference(), pattern_size, size, num_sync_points_in_wait_list, sync_point_wait_list, out sync_point.GetPinnableReference(), out mutable_handle.GetPinnableReference());
+        }
+
+        public static unsafe int CommandSvmmemFill<T0>(this KhrCommandBuffer thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint command_buffer, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint command_queue, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] void* svm_ptr, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> pattern, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint pattern_size, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint size, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<uint> sync_point_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] uint* sync_point, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] nint* mutable_handle) where T0 : unmanaged
+        {
+            // SpanOverloader
+            return thisApi.CommandSvmmemFill(command_buffer, command_queue, svm_ptr, in pattern.GetPinnableReference(), pattern_size, size, num_sync_points_in_wait_list, in sync_point_wait_list.GetPinnableReference(), sync_point, mutable_handle);
+        }
+
+        public static unsafe int CommandSvmmemFill<T0>(this KhrCommandBuffer thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint command_buffer, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint command_queue, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] void* svm_ptr, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> pattern, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint pattern_size, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint size, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<uint> sync_point_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] uint* sync_point, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<nint> mutable_handle) where T0 : unmanaged
+        {
+            // SpanOverloader
+            return thisApi.CommandSvmmemFill(command_buffer, command_queue, svm_ptr, in pattern.GetPinnableReference(), pattern_size, size, num_sync_points_in_wait_list, in sync_point_wait_list.GetPinnableReference(), sync_point, out mutable_handle.GetPinnableReference());
+        }
+
+        public static unsafe int CommandSvmmemFill<T0>(this KhrCommandBuffer thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint command_buffer, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint command_queue, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] void* svm_ptr, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> pattern, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint pattern_size, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint size, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<uint> sync_point_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<uint> sync_point, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] nint* mutable_handle) where T0 : unmanaged
+        {
+            // SpanOverloader
+            return thisApi.CommandSvmmemFill(command_buffer, command_queue, svm_ptr, in pattern.GetPinnableReference(), pattern_size, size, num_sync_points_in_wait_list, in sync_point_wait_list.GetPinnableReference(), out sync_point.GetPinnableReference(), mutable_handle);
+        }
+
+        public static unsafe int CommandSvmmemFill<T0>(this KhrCommandBuffer thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint command_buffer, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint command_queue, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] void* svm_ptr, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> pattern, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint pattern_size, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint size, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<uint> sync_point_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<uint> sync_point, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<nint> mutable_handle) where T0 : unmanaged
+        {
+            // SpanOverloader
+            return thisApi.CommandSvmmemFill(command_buffer, command_queue, svm_ptr, in pattern.GetPinnableReference(), pattern_size, size, num_sync_points_in_wait_list, in sync_point_wait_list.GetPinnableReference(), out sync_point.GetPinnableReference(), out mutable_handle.GetPinnableReference());
+        }
+
+        public static unsafe int CommandSvmmemFill<T0>(this KhrCommandBuffer thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint command_buffer, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint command_queue, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<T0> svm_ptr, [Flow(Silk.NET.Core.Native.FlowDirection.In)] void* pattern, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint pattern_size, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint size, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* sync_point_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] uint* sync_point, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] nint* mutable_handle) where T0 : unmanaged
+        {
+            // SpanOverloader
+            return thisApi.CommandSvmmemFill(command_buffer, command_queue, out svm_ptr.GetPinnableReference(), pattern, pattern_size, size, num_sync_points_in_wait_list, sync_point_wait_list, sync_point, mutable_handle);
+        }
+
+        public static unsafe int CommandSvmmemFill<T0>(this KhrCommandBuffer thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint command_buffer, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint command_queue, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<T0> svm_ptr, [Flow(Silk.NET.Core.Native.FlowDirection.In)] void* pattern, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint pattern_size, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint size, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* sync_point_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] uint* sync_point, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<nint> mutable_handle) where T0 : unmanaged
+        {
+            // SpanOverloader
+            return thisApi.CommandSvmmemFill(command_buffer, command_queue, out svm_ptr.GetPinnableReference(), pattern, pattern_size, size, num_sync_points_in_wait_list, sync_point_wait_list, sync_point, out mutable_handle.GetPinnableReference());
+        }
+
+        public static unsafe int CommandSvmmemFill<T0>(this KhrCommandBuffer thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint command_buffer, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint command_queue, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<T0> svm_ptr, [Flow(Silk.NET.Core.Native.FlowDirection.In)] void* pattern, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint pattern_size, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint size, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* sync_point_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<uint> sync_point, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] nint* mutable_handle) where T0 : unmanaged
+        {
+            // SpanOverloader
+            return thisApi.CommandSvmmemFill(command_buffer, command_queue, out svm_ptr.GetPinnableReference(), pattern, pattern_size, size, num_sync_points_in_wait_list, sync_point_wait_list, out sync_point.GetPinnableReference(), mutable_handle);
+        }
+
+        public static unsafe int CommandSvmmemFill<T0>(this KhrCommandBuffer thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint command_buffer, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint command_queue, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<T0> svm_ptr, [Flow(Silk.NET.Core.Native.FlowDirection.In)] void* pattern, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint pattern_size, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint size, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* sync_point_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<uint> sync_point, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<nint> mutable_handle) where T0 : unmanaged
+        {
+            // SpanOverloader
+            return thisApi.CommandSvmmemFill(command_buffer, command_queue, out svm_ptr.GetPinnableReference(), pattern, pattern_size, size, num_sync_points_in_wait_list, sync_point_wait_list, out sync_point.GetPinnableReference(), out mutable_handle.GetPinnableReference());
+        }
+
+        public static unsafe int CommandSvmmemFill<T0>(this KhrCommandBuffer thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint command_buffer, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint command_queue, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<T0> svm_ptr, [Flow(Silk.NET.Core.Native.FlowDirection.In)] void* pattern, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint pattern_size, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint size, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<uint> sync_point_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] uint* sync_point, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] nint* mutable_handle) where T0 : unmanaged
+        {
+            // SpanOverloader
+            return thisApi.CommandSvmmemFill(command_buffer, command_queue, out svm_ptr.GetPinnableReference(), pattern, pattern_size, size, num_sync_points_in_wait_list, in sync_point_wait_list.GetPinnableReference(), sync_point, mutable_handle);
+        }
+
+        public static unsafe int CommandSvmmemFill<T0>(this KhrCommandBuffer thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint command_buffer, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint command_queue, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<T0> svm_ptr, [Flow(Silk.NET.Core.Native.FlowDirection.In)] void* pattern, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint pattern_size, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint size, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<uint> sync_point_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] uint* sync_point, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<nint> mutable_handle) where T0 : unmanaged
+        {
+            // SpanOverloader
+            return thisApi.CommandSvmmemFill(command_buffer, command_queue, out svm_ptr.GetPinnableReference(), pattern, pattern_size, size, num_sync_points_in_wait_list, in sync_point_wait_list.GetPinnableReference(), sync_point, out mutable_handle.GetPinnableReference());
+        }
+
+        public static unsafe int CommandSvmmemFill<T0>(this KhrCommandBuffer thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint command_buffer, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint command_queue, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<T0> svm_ptr, [Flow(Silk.NET.Core.Native.FlowDirection.In)] void* pattern, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint pattern_size, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint size, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<uint> sync_point_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<uint> sync_point, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] nint* mutable_handle) where T0 : unmanaged
+        {
+            // SpanOverloader
+            return thisApi.CommandSvmmemFill(command_buffer, command_queue, out svm_ptr.GetPinnableReference(), pattern, pattern_size, size, num_sync_points_in_wait_list, in sync_point_wait_list.GetPinnableReference(), out sync_point.GetPinnableReference(), mutable_handle);
+        }
+
+        public static unsafe int CommandSvmmemFill<T0>(this KhrCommandBuffer thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint command_buffer, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint command_queue, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<T0> svm_ptr, [Flow(Silk.NET.Core.Native.FlowDirection.In)] void* pattern, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint pattern_size, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint size, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<uint> sync_point_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<uint> sync_point, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<nint> mutable_handle) where T0 : unmanaged
+        {
+            // SpanOverloader
+            return thisApi.CommandSvmmemFill(command_buffer, command_queue, out svm_ptr.GetPinnableReference(), pattern, pattern_size, size, num_sync_points_in_wait_list, in sync_point_wait_list.GetPinnableReference(), out sync_point.GetPinnableReference(), out mutable_handle.GetPinnableReference());
+        }
+
+        public static unsafe int CommandSvmmemFill<T0, T1>(this KhrCommandBuffer thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint command_buffer, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint command_queue, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<T0> svm_ptr, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T1> pattern, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint pattern_size, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint size, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* sync_point_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] uint* sync_point, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] nint* mutable_handle) where T0 : unmanaged where T1 : unmanaged
+        {
+            // SpanOverloader
+            return thisApi.CommandSvmmemFill(command_buffer, command_queue, out svm_ptr.GetPinnableReference(), in pattern.GetPinnableReference(), pattern_size, size, num_sync_points_in_wait_list, sync_point_wait_list, sync_point, mutable_handle);
+        }
+
+        public static unsafe int CommandSvmmemFill<T0, T1>(this KhrCommandBuffer thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint command_buffer, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint command_queue, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<T0> svm_ptr, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T1> pattern, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint pattern_size, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint size, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* sync_point_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] uint* sync_point, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<nint> mutable_handle) where T0 : unmanaged where T1 : unmanaged
+        {
+            // SpanOverloader
+            return thisApi.CommandSvmmemFill(command_buffer, command_queue, out svm_ptr.GetPinnableReference(), in pattern.GetPinnableReference(), pattern_size, size, num_sync_points_in_wait_list, sync_point_wait_list, sync_point, out mutable_handle.GetPinnableReference());
+        }
+
+        public static unsafe int CommandSvmmemFill<T0, T1>(this KhrCommandBuffer thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint command_buffer, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint command_queue, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<T0> svm_ptr, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T1> pattern, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint pattern_size, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint size, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* sync_point_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<uint> sync_point, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] nint* mutable_handle) where T0 : unmanaged where T1 : unmanaged
+        {
+            // SpanOverloader
+            return thisApi.CommandSvmmemFill(command_buffer, command_queue, out svm_ptr.GetPinnableReference(), in pattern.GetPinnableReference(), pattern_size, size, num_sync_points_in_wait_list, sync_point_wait_list, out sync_point.GetPinnableReference(), mutable_handle);
+        }
+
+        public static unsafe int CommandSvmmemFill<T0, T1>(this KhrCommandBuffer thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint command_buffer, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint command_queue, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<T0> svm_ptr, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T1> pattern, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint pattern_size, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint size, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* sync_point_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<uint> sync_point, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<nint> mutable_handle) where T0 : unmanaged where T1 : unmanaged
+        {
+            // SpanOverloader
+            return thisApi.CommandSvmmemFill(command_buffer, command_queue, out svm_ptr.GetPinnableReference(), in pattern.GetPinnableReference(), pattern_size, size, num_sync_points_in_wait_list, sync_point_wait_list, out sync_point.GetPinnableReference(), out mutable_handle.GetPinnableReference());
+        }
+
+        public static unsafe int CommandSvmmemFill<T0, T1>(this KhrCommandBuffer thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint command_buffer, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint command_queue, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<T0> svm_ptr, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T1> pattern, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint pattern_size, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint size, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<uint> sync_point_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] uint* sync_point, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] nint* mutable_handle) where T0 : unmanaged where T1 : unmanaged
+        {
+            // SpanOverloader
+            return thisApi.CommandSvmmemFill(command_buffer, command_queue, out svm_ptr.GetPinnableReference(), in pattern.GetPinnableReference(), pattern_size, size, num_sync_points_in_wait_list, in sync_point_wait_list.GetPinnableReference(), sync_point, mutable_handle);
+        }
+
+        public static unsafe int CommandSvmmemFill<T0, T1>(this KhrCommandBuffer thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint command_buffer, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint command_queue, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<T0> svm_ptr, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T1> pattern, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint pattern_size, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint size, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<uint> sync_point_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] uint* sync_point, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<nint> mutable_handle) where T0 : unmanaged where T1 : unmanaged
+        {
+            // SpanOverloader
+            return thisApi.CommandSvmmemFill(command_buffer, command_queue, out svm_ptr.GetPinnableReference(), in pattern.GetPinnableReference(), pattern_size, size, num_sync_points_in_wait_list, in sync_point_wait_list.GetPinnableReference(), sync_point, out mutable_handle.GetPinnableReference());
+        }
+
+        public static unsafe int CommandSvmmemFill<T0, T1>(this KhrCommandBuffer thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint command_buffer, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint command_queue, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<T0> svm_ptr, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T1> pattern, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint pattern_size, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint size, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<uint> sync_point_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<uint> sync_point, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] nint* mutable_handle) where T0 : unmanaged where T1 : unmanaged
+        {
+            // SpanOverloader
+            return thisApi.CommandSvmmemFill(command_buffer, command_queue, out svm_ptr.GetPinnableReference(), in pattern.GetPinnableReference(), pattern_size, size, num_sync_points_in_wait_list, in sync_point_wait_list.GetPinnableReference(), out sync_point.GetPinnableReference(), mutable_handle);
+        }
+
+        public static unsafe int CommandSvmmemFill<T0, T1>(this KhrCommandBuffer thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint command_buffer, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint command_queue, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<T0> svm_ptr, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T1> pattern, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint pattern_size, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint size, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<uint> sync_point_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<uint> sync_point, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<nint> mutable_handle) where T0 : unmanaged where T1 : unmanaged
+        {
+            // SpanOverloader
+            return thisApi.CommandSvmmemFill(command_buffer, command_queue, out svm_ptr.GetPinnableReference(), in pattern.GetPinnableReference(), pattern_size, size, num_sync_points_in_wait_list, in sync_point_wait_list.GetPinnableReference(), out sync_point.GetPinnableReference(), out mutable_handle.GetPinnableReference());
+        }
+
         public static unsafe nint CreateCommandBuffer(this KhrCommandBuffer thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint num_queues, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint* queues, [Flow(Silk.NET.Core.Native.FlowDirection.In)] CommandBufferProperties* properties, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<int> errcode_ret)
         {
             // SpanOverloader

@@ -170,9 +170,9 @@ namespace Silk.NET.OpenCL.Extensions.INTEL
         [NativeName("Name", "CL_ME_SKIP_BLOCK_TYPE_16x16_INTEL")]
         MESkipBlockType16x16Intel = 0x0,
         [NativeName("Name", "CL_ME_SKIP_BLOCK_TYPE_8x8_INTEL")]
-        Type8x8 = 0x1,
+        Type8x8 = 0x4,
         [NativeName("Name", "CL_ME_SKIP_BLOCK_TYPE_8x8_INTEL")]
-        MESkipBlockType8x8Intel = 0x1,
+        MESkipBlockType8x8Intel = 0x4,
         [NativeName("Name", "CL_QUEUE_CAPABILITY_CREATE_SINGLE_QUEUE_EVENTS_INTEL")]
         CreateSingleQueueEvents = 0x1,
         [NativeName("Name", "CL_QUEUE_CAPABILITY_CREATE_SINGLE_QUEUE_EVENTS_INTEL")]
@@ -993,6 +993,8 @@ namespace Silk.NET.OpenCL.Extensions.INTEL
         DX9SharedHandleIntel = 0x4074,
         [NativeName("Name", "CL_MEM_DX9_SHARED_HANDLE_INTEL")]
         MemDX9SharedHandleIntel = 0x4074,
+        [NativeName("Name", "CL_MEM_LOCALLY_UNCACHED_RESOURCE_INTEL")]
+        LocallyUncachedResourceIntel = 0x4218,
         [NativeName("Name", "CL_MEM_LOCALLY_UNCACHED_RESOURCE_INTEL")]
         MemLocallyUncachedResourceIntel = 0x4218,
         [NativeName("Name", "CL_MEM_DEVICE_ID_INTEL")]
