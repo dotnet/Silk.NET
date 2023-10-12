@@ -6,283 +6,268 @@ Proposal design for a platform invoke (P/Invoke) mechanism for Silk.NET 3.0.
 - Kai Jellinghaus (@HurricanKai)
 
 # Current Status
-- [x] Proposed
-- [x] Discussed with Working Group (WG)
-- [x] Approved
+- [ ] Proposed
+- [ ] Discussed with Working Group (WG)
+- [ ] Approved
 - [ ] Implemented
 
 # Design Decisions
 - This proposal builds on the foundations laid out by Silk.NET's move to source generators in 2.0, and the introduction of the SilkTouch source generator as a result of this.
 - This proposal assumes no knowledge of Silk.NET 2.0's SilkTouch. 
 - This takes the knowledge and insight gained during development of SilkTouch, and uses it to create a new set of generators which incorporate lessons learnt.
-- This proposal breaks down the generator process into three distinct stages:
+- Text herein marked **INFORMATIVE** does not form a normative part of this proposal, and is for background only.
+- Within this proposal, the key words **must**, **required**, **shall**, **should**, **recommended**, **may**, **could**, and **optional** are to be interpreted as described in [RFC 2119 - Key words for use in RFCs to Indicate Requirement Levels](https://www.ietf.org/rfc/rfc2119.txt). The additional key word **optionally** is an alternate form of **optional**, for use where grammatically appropriate. These key words are highlighted in the proposal for clarity.
 
-## SilkTouch Scraper
+# INFORMATIVE: Points of Contention in 2.X
 
-The Scraper is responsible for creating partial classes from some input source. It is a drop-in replacement for what BuildTools does today. Instead of doing all the parsing and interpretation of the input source ourselves, the proposed Scraper will instead use only C headers and have a "preburner" for gathering minimal metadata to feed into the generation process.
+## API Objects
 
-The generation process of the proposed Scraper will be entirely different. Silk.NET will no longer do any parsing and interpretation of C headers or XML of C headers, instead we will delegate this to the ClangSharp P/Invoke Generator in the form of a "subagent" (a separate process spun up by the Scraper), adding appropriate modifications to ClangSharp P/Invoke Generator as necessary. This means that we will no longer be using the Khronos XML registries for generating bindings. Instead, we'll use the preburner stage to use the XML registry only to gather minimal metadata instructing the ClangSharp subagent to add metadata attributes to certain functions, parameters, or types; which will then be picked up on by the later stages of SilkTouch. An example of such metadata would be parsing the flow and len XML attributes to add appropriate C# attributes to influence overload generation.
+In Silk.NET 1.0 Previews 1-3, AdvancedDLSupport was used which used System.Reflection.Emit to generate function pointer calls at runtime. It did this by implementing abstract methods, and therefore an API object was required. In 1.0 Preview 4 Ultz's SuperInvoke library was used instead, which was an MIT-licensed clean-room implementation of AdvancedDLSupport produced in response to community confusion over the license grant that made Silk.NET users exempt from AdvancedDLSupport's LGPL license. It used the same abstract method mechanism.
 
-This also naturally makes us entirely dependent on an external dependency, but I propose we work with Microsoft as much as possible to add the functionality we need in the least breaking way possible, and in a way that satisfies both us and Microsoft. All designs for such modifications will be formalized in the ClangSharp repo. Should we fail to do this, we'll maintain a fork so we can still benefit from improvements made upstream, while giving ourselves the freedom to add the functionality we need.
+In Silk.NET 2.X, a source generator was used instead, which became SilkTouch. SilkTouch was developed when source generators and function pointers were still in heavy development and not even in preview yet, and as a result they were not well understood at time of development. In this respect SilkTouch was too bleeding-edge, as its usage of source generators have been realised to be less than ideal and somewhat abusive of what source generators were meant to do. This was first acknowledged by Kai, SilkTouch's creator, in his [November 2020 blog post](https://dotnet.github.io/Silk.NET/blog/nov-2020/silktouch-invokes-marshalling.html) on SilkTouch. In addition, because its development had completed and was effectively on maintenance mode by the time 2.0 was in full release, innovations that came after this point were rarely wielded, such as the incremental source generator API.
 
-Microsoft have already stated that they're happy to work with us to get Silk.NET using ClangSharp, one maintainer even saying they're happy to add a CI test stage into the ClangSharp repo to ensure no incoming changes break Silk.NET's generation process.
+One of the mistakes in hindsight that 2.X made was stick to the 1.X model of API objects, which was already disliked by a small subset of the Silk.NET community. There wasn't really any discussion around this decision, it was just naturally made during SilkTouch's initial tasking: "replace `abstract` with `partial`, and Bob's your uncle". This decision was felt the most when the Clang backend of BuildTools came online, and bindings to traditional C/C++ libraries that objectively should be static methods were instead using the same API object mechanism designed for the Khronos bindings.
 
-There is no required behaviour for the Scraper (due to a lot of unknowns at the moment) other than it **MUST** invoke ClangSharp to generate C# Emitter-compatible classes, and it **MUST** add appropriate attributes to invoke the Overloader stage according to any metadata available from Khronos XML if applicable.
+## BuildTools Portability
 
-## SilkTouch Emitter
-The Emitter, one of the two final stages whose resources **MUST** be entirely independent of eachother, is responsible for generating the actual indirect calls for performing the P/Invoke.
+Before Silk.NET started development, Dylan Perks (@Perksey) and Jarl Gullberg (@Nihlus) were maintainers of the OpenTK project focusing on developing the OpenTK 4.0 rewrite project. The majority of their work focused around rewriting the various generators that OpenTK was using to generate its OpenGL bindings (namely [Generator.Bind](https://github.com/opentk/opentk/tree/70c36adba8ccad34f15584e75cabc0e0f5aebb2f/src/Generators/Generator.Bind) and [Generator.Convert](https://github.com/opentk/opentk/tree/70c36adba8ccad34f15584e75cabc0e0f5aebb2f/src/Generators/Generator.Convert)), although significant work on the [OpenAL bindings](https://github.com/opentk/opentk/tree/70c36adba8ccad34f15584e75cabc0e0f5aebb2f/src/OpenAL) was also done by Jarl to act as a demonstration of what the generator's bindings infrastructure should look like. Upon their departure from Silk.NET, OpenTK 4.0 was unwinded back to a form that looked more familiar with OpenTK 3.0, and Dylan founded Silk.NET and contacted Jarl for permission to include the OpenAL bindings verbatim into Silk.NET - to this day these bindings remain for the most part unchanged from their original form in their version of OpenTK 4.0. In addition, Dylan brought forward the rewritten generators, and merged them into a single generator called BuildTools.
 
-The Emitter operates on partial methods, the behaviour of the implementations of which depending on the context in which it's used.
+This history is important to illustrate just how intertwined OpenGL and BuildTools were, and how easily issues arose when future tasking let to more advanced bindings generation mechanisms being retro-fitted into a bindings model that fundamentally was not built for it. BuildTools has multiple backends, but it still all boils down to the same object model and generation mechanisms, which did not prove extensible especially for the later Clang-based bindings (e.g. the COM-based Windows SDK). This, combined with the the API object concept, meant using these bindings felt completely foreign to use compared to other alternatives such as the .NET Foundation's TerraFX library.
 
-All attributes **MUST** be name matched only, to allow the user to define these themselves and not create a hard dependency on a specific Silk.NET library such as the Silk.NET Core. 
+## Excessive Overloads
 
-Candidate methods for implementation by the Emitter **MUST** be partial and not have an implementation part yet. Their containing types **MUST** also be partial.
+One of the areas of BuildTools that has gone through the largest number of iterations is the overloader. OpenTK was (in)famous for the concessions it made in API accuracy for the sake of usability. For instance, `IntPtr` often was given an `int` overload, for CLS compliance unsigned numbers were replaced with signed ones, and there were a slew of other overloads which made OpenTK very usable but did not match the 1:1 ethos of Silk.NET. Because of this, the overloader was rewritten to provide some overloads of similar usability as well as some original overloads too.
 
-The Emitter **MUST** be able to be invoked via the SilkTouch CLI and **MAY** be able to be invoked via an incremental Roslyn source generator.
+1.0 Preview 1 was shipped with array (including generic arrays) and ref overloads, along with function-transforming overloads such as the overloaders that handled `glDelete`, `glGen`, etc. The later previews and releases expanded on this. However, a consistent item of feedback throughout the entirety of 1.X's lifecycle is that the overloads did not feel sufficient or were inconsistently applied (e.g. if you had one parameter using an overloaded variant, the other parameters would not be overloaded). This resulted in a lot of tradeoffs in user code in where to use `unsafe` code, and most users just ended up using the unsafe variants always.
 
-### Call Styles
+This was [attempted to be addressed](https://github.com/dotnet/Silk.NET/pull/275) in 2.0 Preview 2 (back when the only Clang-based bindings were SDL and Assimp), and for the most part our users are a lot more satisfied with the overload situation in 2.X from a code-cleanliness perspective. The new overloader would generate every single permutation of overloaded parameters to allay complaints of inconsistency from users. However, this had another unintended side-effect in that the IDE experience was now terrible due to the shear quantity of overloads produced. In the early days of Silk.NET 2.0's development cycle this was acceptable, and the Silk.NET developers (both on the Silk.NET team and in the community) clearly grew comfortable enough with it such that this mechanism was never questioned again before Silk.NET 2.0's initial release.
 
-The Emitter's primary purpose is to load and use function pointers in a native library sourced from an operating system's kernel, though this doesn't necessarily have to be the case. This logic will be emitted by the Emitter itself, and will not require an external dependency like the Silk.NET Core. However, this logic will no longer be implicit.
+Later on in 2.X's cycle, this mechanism became more and more called into question, given that as more overloaders were added the problem was compounded. The most famous examples came  when we were adding new bindings with all the overloads in place, such as Direct2D which had a 16-parameter function that resulted in 65565 overloads being generated.
 
-#### Built-in: Dynamic-Link Library Call Style
+# Previous Iterations of This Proposal
 
-Consider the following example:
-```cs
-[UseDynamicLibrary("glfw3.dll")]
-public partial class Glfw
-{
-    public partial void glfwInit();
-}
-```
+The general theme behind these points of contention is the generation mechanisms and infrastructure put in place for Silk.NET were very much designed for OpenGL and other similar Khronos APIs, with the later non-Khronos bindings not being specifically designed for, instead the tasking was "how can we fit these other non-Khronos bindings to fit our existing bindings infrastructure built for OpenGL?".
 
-The `UseDynamicLibrary` attribute instructs the Emitter that it **MUST** use [`DllImport`](https://docs.microsoft.com/en-us/dotnet/api/system.runtime.interopservices.dllimportattribute?view=net-5.0) to access native functions. [`NativeLibrary`](https://docs.microsoft.com/en-us/dotnet/api/system.runtime.interopservices.nativelibrary?view=net-5.0) can be used to modify the libsuperrary loading process per other requirements defined below. For the entry point, the function name **MUST** be used unless a `NativeApi` attribute is provided, in which case the `EntryPoint` indicated by that attribute **MUST** be used.
+The Working Group approved an earlier version of this proposal on 25th February 2022, whereby a hybrid source generator/AOT generator solution was used. The solution looked and felt a lot like Silk.NET 2.X, and had a similar overloading mechanism (just different mechanisms of invocation). However, given that Silk.NET 2.X was again built without these points of contentions in mind and without non-Khronos bindings in mind, we ran the risk of running into similar issues.
 
-Consider the following example:
-```cs
-[UseDynamicLibrary("glfw3.dll", "libglfw3.dylib")]
-public partial class Glfw { /* ... */ }
-```
+However, the approved version of this proposal has a lot of great points as well. One of the most pertinent points in the approved proposal is the ability to have the overloader applied to user-defined and/or non-generated functions. Another pertinent point was the ability to have a very stable foundation for the native signatures, as Silk.NET 2.X underwent a lot of massively-breaking updates due to the signatures/types already present in the shipped version of the library were fundamentally wrong due to generator error.
 
-`UseDynamicLibrary` **MUST** be able to be specified on either a function or type.
+Since the creation of that proposal, the [SilkX](https://github.com/Perksey/SilkX) project (led by Dylan Perks/@Perksey) has been pioneering the underlying concepts of the approved proposal but using mechanisms that provide the least contention for the generator users (primarily the Silk.NET maintainers). This proposal is based on the conclusion of that project, and if this proposal is approved SilkX shall be merged into the main Silk.NET repo and become the official Silk.NET 3.0 implementation.
 
-The Emitter **MUST** allow multiple candidate library names and cycle through each candidate until one loads successfully.
+The Working Group should note that Kai did make some progress with the original implementation of Silk.NET 3.0 as approved by the Working Group, however the SilkX project was spawned from the realisation that the proposed solution was too large in scope given the time constraints of the primary Silk.NET developers. This work still lives in the develop/3.0 branch until this proposal is approved.
 
-#### Built-in: Static-Link Library Call Style
+# ClangSharp Generation
 
-Consider the following example:
-```cs
-[UseStaticLibrary]
-public partial class Glfw
-{
-    public partial void glfwInit();
-}
-```
+As in the previously approved version of this proposal, the generation process of the proposed generator will be entirely different to BuildTools. Silk.NET will no longer do any parsing and interpretation of C headers or XML of C headers, instead we will delegate this to the ClangSharp P/Invoke Generator library, adding appropriate modifications to inputs/outputs as necessary. This means that we will no longer be using the Khronos XML registries for generating bindings directly.
 
-The `UseStaticLibrary` attribute instructs the Emitter that it **MUST** use [`DllImport`](https://docs.microsoft.com/en-us/dotnet/api/system.runtime.interopservices.dllimportattribute?view=net-5.0) to access native functions. `__Internal` **MUST** be used for the library name. For the entry point, the function name **MUST** be used unless a `NativeApi` attribute is provided, in which case the `EntryPoint` indicated by that attribute **MUST** be used.
+Instead, we'll use a "mod" system to use the XML registry and other metadata sources to influence the various stages of the generator cycle. Each mod is initialised (which in turn may do HTTP requests, XML parsing, etc) and **shall** be given the ClangSharp input response files. Once the modifications (if any) have been applied to those inputs, ClangSharp **shall** be run with each of those inputs, and the C# syntax trees saved. Those syntax trees **shall** then be fed back into the mod, and the syntax modifications (if any) will be applied. Finally, the syntax trees **shall** be added to the MSBuild workspace where the mods **shall** have one final opportunity to enact workspace-wide modifications. The details of this system is implementation-defined.
 
-`UseStaticLibrary` **MUST** be able to be specified on either a function or type.
+This naturally makes us entirely dependent on an external dependency, but I propose we work with Tanner Gooding (the ClangSharp project lead) as much as possible to add the functionality we need in the least breaking way possible, and in a way that satisfies both us and ClangSharp. All designs for such modifications will be formalized in the ClangSharp repo. Should we fail to do this, we'll maintain a fork so we can still benefit from improvements made upstream, while giving ourselves the freedom to add the functionality we need.
 
-Consider the following example:
-```cs
-#if __IOS__
-[UseStaticLibrary]
-#endif
-[UseDynamicLibrary("glfw3.dll")]
-public partial class Glfw
-{
-    public partial void glfwInit();
-}
-```
+Tanner has already stated that they're happy to work with us to get Silk.NET using ClangSharp, even saying they're happy to add a CI test stage into the ClangSharp repo to ensure no incoming changes break Silk.NET's generation process.
 
-The Emitter **MUST** only generate code if all preprocessor directives guarding the `UseStaticLibrary` attribute evaluate to true. If the attribute is defined on both the function and the containing type, the preprocessor directives surrounding the function's attribute **MUST** be used instead of the preprocessor directives surrounding the type.
+# Implicit Cast-Based Overloading
 
-Note to the reader: Given preprocessor directives are processed at parse time in Roslyn, both of those last requirements are basically benign.
+The pivotal proposal around which the SilkX experiment revolves is solving the excessive overload problem by having no overloads at all. Namely, Silk.NET.Core will have a set of "pointer-like" types that can be implicitly casted to by a multitude of different types. This gives the user the same flexibility as having all different permutations of overloaded parameters generated without having to do so, and thereby alleviates the requirement of having overloads at all.
 
-#### Custom Call Style: Procedure Address Expressions
+`Ptr` and `Mut` `ref struct`s **shall** be defined wrapping a `ref` and `ref readonly` respectively. These types **shall** have generic and non-generic variants. This shall be repeated up to 3 pointer dimensions, taking into account C's mutability rules in each instantiation. This means that there will be 14 top-level generic structs and 14 top-level non-generic structs. These **should** be auto-generated to ensure they remain maintainable. IL weaving **may** be required for the higher dimensions.
 
-Custom code may be used as a call style by providing a pointer to SilkTouch using a Procedure Address Expression. This is useful in scenarios such as COM interop.
+Unless deemed inappropriate, inapplicable, and/or infeasible by the Silk.NET team (the team reserved the right to do so without Working Group approval), the types **should** have the following characteristics:
+- An instance **must** be constructable from a `ref T` or `ref readonly T` (depending on the outer dimension mutability) where `T` is either the generic type (or `byte` for non-generic variants), a "pointer-like" type of the inner dimension of type being constructed.
+- An indexer **must** be present accepting a `nuint` for the index, returning a `ref T` or `ref readonly T` (depending on the outer dimension mutability) where `T` is either the generic type (or `byte` for non-generic variants), a "pointer-like" type of the inner dimension of type being indexed.
+- A `GetPinnableReference` **must** be present taking no parameters and returning a `ref T` or `ref readonly T` (depending on the outer dimension mutability) where `T` is the native raw pointer representation of the inner dimension.
+- For single-dimension pointers, an `AsSpan` method **must** be present taking an `int` length argument (due to historical reasons in the .NET BCL) returning a `Span<T>` or `ReadOnlySpan<T>` (depending on the outer dimension mutability) where `T` the pointee type. For non-generic pointer-like types, a generic argument **may** be used to specify the type of the span.
+- An array of the same jagged dimension **must** be implicitly convertible to the type.
+- For single-dimension pointers, a multi-dimensional array (up to 3 dimensions) **must** be implicitly convertible to the type.
+- A raw pointer of the same dimensions **must** be implicitly convertible to the type.
+- `NullPtr` **must** be implicitly convertible to the type, and the returned pointer must represent a null reference.
+- An explicit operator **must** be present to unsafely convert the reference represented by the pointer to a raw pointer without the user using `fixed`/`GetPinnableReference`.
+- An explicit operator **must** be present to unsafely convert the reference represented by the pointer to a void pointer without the user using `fixed`/`GetPinnableReference`.
+- For generic pointer types, an implicit operator **must** be present to convert the pointer type to a `string` (or an array of strings of the inner dimension's jaggedness i.e. `PtrPtrPtr<byte>` becomes `string[][]`). Much like `ReadOnlySpan<char>`, `ToString` **must** call this implicitly if the type is a single-dimension pointer to a string pointee type. The implicit cast **may** throw an exception if the pointee type is not a string pointee type. This is because we can't constrain the type used on implicit operators on generic types.
+- An `==` and `!=` operator **must** be present to check equality with another pointer of the same type.
+- An `==` and `!=` operator **must** be present to check equality with `NullPtr` i.e. check whether the pointer is null.
+- For generic pointer types to a string pointee type, where the inner-most dimension is immutable, a `string` (or an array of strings of the inner dimension's jaggedness i.e. `PtrPtrPtr<byte>` becomes `string[][]`) **must** be implicitly convertible to the pointer type. The implicit cast **may** throw an exception if the pointee type is not a string pointee type. This is because we can't constrain the type used on implicit operators on generic types.
+- For single dimension generic pointer types, `Span<T>` **must** be implicitly convertible to the pointer type.
+- For single dimension generic immutable pointer types, `ReadOnlySpan<T>` **must** be implicitly convertible to the pointer type.
 
-Procedure Address Expressions are C# expressions that **MUST** evaluate to a `void*`, `nint`, or `IntPtr`. This is the actual address in memory of the function being invoked.
+Our goal with this implicitness it to make the experience of using pointers as similar to C as possible without feeling completely alien in a high-level language. This is the logic behind the string casting as well. The public API surface for our bindings **shall** use these wrapper types.
 
-Consider the following example:
-```cs
-public partial struct IUnknown
-{
-    public void** LpVtbl;
-    [UseExpression("LpVtbl[1]")]
-    public partial uint AddRef();
-}
-```
+For the avoidance of doubt, a string pointee type **shall** be defined as one of: `byte`, `sbyte`, `char`, `short`, `ushort`, `int`, `uint`. For single-byte string pointee types, UTF-8 **shall** be used. For 2-byte string pointee types, UTF-16 **shall** be used. For 4-byte string pointee types, UTF-32 **shall** be used. 
 
-`GetProcAddress` indicates that the C# code given **MUST** be used as the Procedure Address Expression to retrieve the function address to call. Any arbritrary code can be inserted into this attribute, so long as the result of the code once evaluated meets the Procedure Address Expression definition. For example, this is valid:
-```cs
-public partial struct IUnknownNullableContainer
-{
-    public IUnknownPtr? Value;
-    [UseExpression("Value.GetValueOrDefault().InnerValue->LpVtbl[1]")]
-    public partial uint AddRef();
-}
+**INFORMATIVE:** This was discussed informally by the Working Group in a Coffee & Code Catchup. The recording for this catchup can be found on the .NET Foundation YouTube channel [here](https://www.youtube.com/watch?v=N7qcETE4X_I). The most pertinent points were regarding ease of use and discoverability - unless the user reads the documentation (which will exist per the Working Group approved Software Development Plan), they won't know what all of these `Ptr` types mean and how to use them. It is our goal to make this as easy to understand as possible, with the goal being the ability to read one short page and instantly know how to use the majority of the library, but this was nonetheless a concern from the Working Group. There was also some desire to revisit the 1.X style of overloading, but the Silk.NET team were hesitant to do so to avoid history repeating itself. This is not an invalid suggestion however, given that TerraFX exists and can be treated as an equal now due to .NET Foundation membership, and their focus is exclusively unsafe so users that want unsafe can just use TerraFX. However, Silk.NET still wants to be as flexible as possible thus we have persisted in this model for this proposal.
 
-public struct IUnknownPtr
-{
-    public IUnknown* InnerValue;
-}
+**INFORMATIVE:** The Working Group previously expressed concerns for implicit casting for the trivial case of `string` to `ReadOnlySpan<char>` in the 2021 meeting regarding the previous version of this proposal (see Meeting Notes).
 
-public struct IUnknown
-{
-    public void** LpVtbl;
-}
-```
+# API Objects & Static Methods
 
-The Emitter **SHOULD** implicitly parenthesise the expression given in the attribute.
+One of the most common complaints throughout the entirety of Silk.NET's lifetime was the lack of static functions. We have argued that this is required for the sake of validity, and this is completely true *for the Khronos bindings*. This should have never been the case for the non-Khronos bindings. However, there are some users that do indeed prefer the API object mechanism and it does provide undeniable flexibility and control versus the alternative of static state that often does not lend itself to multi-context and/or multi-backend solutions. We still want to keep that flexibility, however we recognise that not all users need it.
 
-Unless another call style is applicable, the Emitter **MUST** mandate that every function has a `UseExpression` (Procedure Address Expression) specified.
+This is why the solution proposed includes both static functions and API objects, with one being a wrapper over the other where most appropriate.
 
-The Emitter **MUST** call the function pointer returned by the Procedure Address Expression as part of this call style.
-
-#### Custom Call Style: Procedure Address Methods
-
-A level more abstracted than Procedure Address Expressions, which allows any custom code to retrieve a function pointer; Procedure Address Methods work similarly to the native library call style from an API perspective, but function similarly to the Procedure Address Expressions call style.
-
-The aim of this call style is to provide flexibility without comprimising code readability. Consider the following example:
+Each binding **shall** have a "V-Table" interface generated like so:
 
 ```cs
-[UseMethod(nameof(GetProcAddressShim))]
-public partial class Glfw
+public interface IMyStringLibrary
 {
-    [UseDynamicLibrary("glfw3.dll")]
-    public partial nint glfwGetProcAddress(byte* str);
-
-    // shim to convert the string, which SilkTouch needs to use, to a byte pointer - THIS IS NOT A MODEL EXAMPLE!
-    private nint GetProcAddressShim(string str) => glfwGetProcAddress((byte*) Marshal.StringToHGlobalAnsi(str));
-
-    public partial void glBegin(uint mode);
-}
-```
-
-Procedure Address Methods are method groups (or an otherwise callable expression) within the scope of the method that **MUST** return a `void*`, `nint`, or `IntPtr` when invoked. This is the actual address in memory of the function being invoked.
-
-Procedure Address Methods **MUST** take one parameter of type `string`.
-
-For the parameter passed into the callable specified in the attribute, the function name **MUST** be used unless the `EntryPoint` property in the `NativeApi` attribute is provided, in which case the `EntryPoint` indicated by the attribute **MUST** be used.
-
-The Emitter **MUST** call the function pointer returned by the Procedure Address Method as part of this call style.
-
-#### Call Style Priority
-
-Consider the following example:
-
-```cs
-[UseDynamicLibrary("glfw3.dll")]
-public partial class Glfw
-{
-    public partial nint glfwGetProcAddress(byte* str);
-    [UseExpression("glfwGetProcAddress((byte*)Unsafe.AsPointer(ref Unsafe.AsRef(0x006e696765426c67)))")]
-    public partial void glBegin(uint mode);
-}
-```
-
-Here, a class using the Dynamic Library call style has a method which does not follow the call style defined at the class level, and is overridden using a `UseExpression` attribute.
-
-If multiple call styles are applicable, the following order of preference **MUST** be respected:
-- Procedure Address Expressions
-- Procedure Address Methods
-- Static-Link Library
-- Dynamic-Link Library
-
-Function-level attributes **MUST** be preferred over type-level ones, and follow the same order of preference.
-
-### Native Calls
-For the most part, the resultant native signature used by the Emitter is matched 1:1 with the method signature. However there are certain modifications you can apply. Namely, the `NativeApi` attribute will allow specification of specific calling conventions. For example:
-
-```cs
-[NativeApi(Conventions = new[]{typeof(CallConvMemberFunction), typeof(CallConvSuppressGCTransition)}]
-public partial D3D12_HEAP_PROPERTIES GetCustomHeapProperties(uint nodeMask, D3D12_HEAP_TYPE heapType);
-```
-
-
-`Conventions` will be used as the primary mechanism for customizing the behaviour of generation, just as `NativeApi` will be used as the primary attribute for this as well. The behaviour of each bit will be described in documentation comments in the Proposed API section.
-
-The Emitter does not do any marshalling. As such, the Emitter **MUST** mandate that every parameter and return type of every function fits the `unmanaged` constraint. For the readers benefit, this can be done using a property on `ITypeSymbol` in Roslyn.
-
-## SilkTouch Overloader
-The Overloader, one of the two final stages whose resources **MUST** be entirely independent of eachother, creates overloads of functions that expose a more user-friendly interface than the function it overloads, and do appropriate marshalling to lower the parameter types used down to the original function's types.
-
-The Overloader **MUST** be able to be used on any function and not be tied to any of the Emitter's constraints.
-
-The Overloader **MUST** be able to be invoked via the SilkTouch CLI and **MAY** be able to be invoked via an incremental Roslyn source generator.
-
-The Overloader does not care about existing methods. If the Overloader generates an overload that also happens to exist manually, it is the user's repsonsibility to disable the relevant overloads for these cases.
-
-However, if the Overloader thinks that the overload it's generating may conflict with another overload or the original function, it **SHOULD** output the overload as an extension method rather than a method within the containing type, unless the original method is static in which case it **MUST** discard the overload and generate a warning. It **SHOULD** also do this if the containing type is not partial.
-
-The Silk.NET team does not wish to specify the functionality of the overloader at this time, and wishes to instead define this by experimenting with the overloader's functionality during development; with the understanding that the Silk.NET team must formalize a proposal with the working group before a "go live" release ships.
-
-# Proposed API
-- Here you do some code blocks, this is the heart and soul of the proposal. DON'T DO ANY IMPLEMENTATIONS! Just declarations.
-
-## `UseDynamicLibrary`
-```cs
-namespace Silk.NET.Core
-{
-    [AttributeUsage(AttributeTargets.Function | AttributeTargets.Class)]
-    public class UseDynamicLibraryAttribute : Attribute
+    public interface Static
     {
-        public UseDynamicLibrary(string libraryName, params string[] alternativeNames);
-        public string LibraryName { get; }
-        public string[] AlternativeNames { get; }
+        static abstract byte* ToLower(byte* str);
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        static virtual Ptr<byte> ToLower(Ptr<byte> str)
+        {
+            fixed (byte* nStr = str)
+            {
+                return ToLower(nStr);
+            }
+        }
+        static abstract void FreeResult(byte* str);
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        static virtual FreeResult(Ptr<byte> str)
+        {
+            fixed (byte* nStr = str)
+            {
+                FreeResult(nStr);
+            }
+        }
+    }
+    byte* ToLower(byte* str);
+    Ptr<byte> ToLower(Ptr<byte> str)
+    {
+        fixed (byte* nStr = str)
+        {
+            return ToLower(nStr);
+        }
+    }
+    void FreeResult(byte* str);
+    void FreeResult(Ptr<byte> str)
+    {
+        fixed (byte* nStr = str)
+        {
+            FreeResult(nStr);
+        }
     }
 }
 ```
 
-## `UseStaticLibrary`
+The Silk.NET team reserves the right to define the behaviour for when the `static abstract` and `static virtual` or DIM and non-DIM conflict by return types only. This will be worked out during development, but **may** require removing the native representations and duplicating the marshalling logic for each of the implementations.
+
+Each library being bound to **shall** have an interface generated, named using the class name provided by the generator user prefixed with `I`.
+
+This interface **shall** contain a subinterface named `Static`.
+
+The `Static` subinterface **shall** contain a `static abstract` or `static virtual` (depending on the conflict outcome above) function representing the native signature using the wrapper types for each function exposed by the library.
+
+The `Static` subinterface **should** contain a `static abstract` function representing the native, raw, and blittable signature for each function exposed by the library.
+
+The top-level interface **shall** contain a function representing the native signature using the wrapper types for each function exposed by the library. This **should** be implemented using a Default Interface Method.
+
+The top-level interface **should** contain a function representing the native, raw, and blittable signature for each function exposed by the library.
+
+This contains both a static and a non-static variant. An implementation **shall** be created as follows:
+
 ```cs
-namespace Silk.NET.Core
+public class MyStringLibrary : IMyStringLibrary
 {
-    [AttributeUsage(AttributeTargets.Function | AttributeTargets.Class)]
-    public class UseStaticLibraryAttribute : Attribute
+    public static class DllImport : IMyStringLibrary.Static
     {
+        [DllImportAttribute("mystringlib")]
+        public static extern byte* ToLower(byte* str);
+        [DllImportAttribute("mystringlib")]
+        public static extern void FreeResult(byte* str);
     }
+    public class StaticWrapper<T> : IMyStringLibrary where T: IMyStringLibrary.Static
+    {
+        public StaticWrapper();
+        public byte* ToLower(byte* str) => T.ToLower(str);
+        public void FreeResult(byte* str) => T.FreeResult(str);
+    }
+    public class ThreadLocal : IMyStringLibrary.Static
+    {
+        private static ThreadLocal<IMyStringLibrary> _current = new();
+        public static void MakeCurrent(IMyStringLibrary current) => _current.Value = current;
+        public static byte* ToLower(byte* str) => _current.Value.ToLower(str);
+        public static void FreeResult(byte* str) => _current.Value.FreeResult(str);
+        public static Ptr<byte> ToLower(Ptr<byte> str) => _current.Value.ToLower(str);
+        public static void FreeResult(Ptr<byte> str) => _current.Value.FreeResult(str);
+    }
+
+    // Non-Static Interface
+    private Func<string, nint> _getProcAddress;
+    byte* IMyStringLibrary.ToLower(byte* str)
+    {
+        var ptr = _getProcAddress("ToLower");
+        if (ptr is 0) throw new("some symbol loading exception...");
+        return ((delegate* unmanaged<byte*, byte*>)ptr)(str);
+    }
+    
+    void IMyStringLibrary.FreeResult(byte* str)
+    {
+        var ptr = _getProcAddress("FreeResult");
+        if (ptr is 0) throw new("some symbol loading exception...");
+        return ((delegate* unmanaged<byte*, void>)ptr)(str);
+    }
+
+    public static IMyStringLibrary Create() => new StaticWrapper<DllImport>();
+    public static IMyStringLibrary Create(Func<string, nint> getProcAddress) => new MyStringLibrary { _getProcAddress = getProcAddress };
+
+    // Static Interface
+    public static byte* ToLower(byte* str) => DllImport.ToLower(str);
+    public static Ptr<byte> ToLower(Ptr<byte> str) => DllImport.ToLower(str);
+    public static void FreeResult(byte* str) => DllImport.FreeResult(str);
+    public static void FreeResult(Ptr<byte> str) => DllImport.FreeResult(str);
 }
 ```
 
-## `UseExpression`
-```cs
-namespace Silk.NET.Core
-{
-    [AttributeUsage(AttributeTargets.Function | AttributeTargets.Class)]
-    public class UseExpressionAttribute : Attribute
-    {
-        public UseExpressionAttribute(string expr);
-        public string Expression { get; }
-    }
-}
-```
+**INFORMATIVE:** `getProcAddress` delegates replace "native contexts".
 
-## `UseMethod`
-```cs
-namespace Silk.NET.Core
-{
-    [AttributeUsage(AttributeTargets.Function | AttributeTargets.Class)]
-    public class UseMethodAttribute : Attribute
-    {
-        public UseMethodAttribute(string expr);
-        public string Expression { get; }
-    }
-}
-```
+There exist requirements for all of the following:
+- A native function retrieved using a thread-specific "native context" can be called using a static function (for OpenGL)
+- A native function retrieved using a custom "native context" delegate can be called using a static function (for Vulkan, OpenCL, OpenXR).
+- A native function retrieved using the platform-default mechanism can be called using a static function (for literally everything else).
 
-## `NativeApi`
-```cs
-namespace Silk.NET.Core
-{
-    public class NativeApiAttribute : Attribute
-    {
-        public string EntryPoint { get; set; }
-        public Type[] Conventions { get; set; }
-    }
-}
-```
+**INFORMATIVE:** `Create` replaces `GetApi`.
+
+While this somewhat balloons the API surface, this provides the most flexibility and most entry points into the bindings without adding lots of API-specific code into SilkTouch.
+
+Each bindings **shall** have a class generated to match the generated interface. The name of this class **shall** be the same as the interface without the leading `I` prefix.
+
+Within each binding class a `static class` **shall** be generated for each `DllImport` look-up name provided by the generator user. If there are multiple, this class **shall** carry the pascal case version of the look-up name provided. If there is only one, this class **shall** be named `DllImport`.
+
+**INFORMATIVE:** This does not mean platform-specific name, we still have the NativeLibrary callbacks after all. This is referring to OpenAL Soft vs OpenAL for example, though even that could be implemented using NativeLibrary.
+
+Within each binding class a `class` **shall** be generated implementing the top-level interface over a generic type parameter implementing the static subinterface. This allows users to construct API objects over `DllImport`ed libraries. This **shall** be named `StaticWrapper`.
+
+Within each binding class a `static class` **shall** be generated implementing the static subinterface using a `ThreadLocal` containing an instance of the top-level interface. This allows users to call stateful native libraries (like OpenGL) using a static function.
+
+`ThreadLocal` implementations **shall** implement a `MakeCurrent` method taking an instance of the top-level interface as the parameter. On the thread on which this method is called, all subsequent static method calls on `ThreadLocal` will use the given API object.
+
+The binding class **shall** expose a `static` `Create` method with no parameters returning an instance of the top-level interface. This **should** use `StaticWrapper<T>` where `T` is the generator user's configured *static default*.
+
+**INFORMATIVE:** The Silk.NET team looks back very fondly on the API-as-interfaces scheme present in only the earliest Silk.NET 1.0 previews. The backstory is that AdvancedDLSupport originally required interfaces in order to implement the abstract class, so we added interfaces just for that, but they were removed once they became unnecessary. However, these interfaces are obviously very useful in the advent of C# having advanced mainstream dependency injection. While this is never an explicit target for a low-level, high-speed interoperability library such as Silk.NET, we take pleasure in being able to cater for this use case.
+
+Unless `ThreadLocal` is itself the *static default* configured by the generator user, the thread-local value within `ThreadLocal` should be instantiated with a value factory calling the `Create` method. If `ThreadLocal` is the *static default*, then no value factory is provided and the user must set the value using `MakeCurrent`.
+
+The binding class **shall** expose a `static` `Create` method with a `Func<string, nint>` parameter returning an instance of the top-level interface. This **shall** use an instance of the binding class itself.
+
+**INFORMATIVE:** It is undecided whether we want SilkTouch to output the `Create` methods itself or whether we want it in a non-generated partial.
+
+The binding class **shall** itself implement the top-level interface, using the `getProcAddress` delegate stored from the `Create` method to implement the native calls using a direct function pointer call.
+
+The binding class **shall** also contain shorthand functions for calling the static functions contained within the static subinterface using the *static default*.
+
+**INFORMATIVE:** It is undecided whether we want to implement the static subinterface on the binding class itself as well.
+
+**INFORMATIVE:** Do we want to make a MakeCurrent shorthand as well? This may cause confusion for OpenGL users because it doesn't make the underlying context (WGL/EGL/GLX) current, it just makes it the current source of function pointers.
+
+**INFORMATIVE:** The `DllImport` and `StaticWrapper` names need bikeshedding if performance-aware users are expected to use them directly. Perhaps `DllImport` could be called `Exports`?
+
+# Khronos Extension Handling
+
+**TODO:** Once the preceding document contents have been implemented in SilkX, describe how we're going to handle extensions. I personally think we should just do a "hint" rather than anything hard, like `SupportedOSPlatform`.
+
+# Safety in Structs
+
+**TODO:** Once the preceding document contents have been implemented in SilkX, describe the impact the wrapper types have on structs, which are currently uncatered for and always lacking overloads. @Perksey already has ideas here though.
 
 # Meeting Notes
 
