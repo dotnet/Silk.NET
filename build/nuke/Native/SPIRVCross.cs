@@ -68,19 +68,22 @@ pub fn build(b: *std.Build) void {
     if (mode != .Debug)
         lib.defineCMacro(""NDEBUG"", ""1"");
 
-    lib.addCSourceFiles(&.{
-        root_path ++ ""spirv_cross.cpp"",
-        root_path ++ ""spirv_cfg.cpp"",
-        root_path ++ ""spirv_cpp.cpp"",
-        root_path ++ ""spirv_cross_c.cpp"",
-        root_path ++ ""spirv_cross_parsed_ir.cpp"",
-        root_path ++ ""spirv_cross_util.cpp"",
-        root_path ++ ""spirv_glsl.cpp"",
-        root_path ++ ""spirv_hlsl.cpp"",
-        root_path ++ ""spirv_msl.cpp"",
-        root_path ++ ""spirv_parser.cpp"",
-        root_path ++ ""spirv_reflect.cpp"",
-    }, flags);
+    lib.addCSourceFiles(.{
+        .files = &.{
+            root_path ++ ""spirv_cross.cpp"",
+            root_path ++ ""spirv_cfg.cpp"",
+            root_path ++ ""spirv_cpp.cpp"",
+            root_path ++ ""spirv_cross_c.cpp"",
+            root_path ++ ""spirv_cross_parsed_ir.cpp"",
+            root_path ++ ""spirv_cross_util.cpp"",
+            root_path ++ ""spirv_glsl.cpp"",
+            root_path ++ ""spirv_hlsl.cpp"",
+            root_path ++ ""spirv_msl.cpp"",
+            root_path ++ ""spirv_parser.cpp"",
+            root_path ++ ""spirv_reflect.cpp"",
+        }, 
+        .flags = flags
+    });
 
     b.installArtifact(lib);
 }

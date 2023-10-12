@@ -45,7 +45,7 @@ pub fn build(b: *std.Build) void {
     const lib: *std.build.LibExeObjStep = b.addSharedLibrary(shared_lib_options);
     lib.linkLibC();
 
-    lib.addCSourceFiles(&.{""spirv_reflect.c""}, &.{ ""-std=c99"", ""-fPIC"" });
+    lib.addCSourceFiles(.{ .files = &.{""spirv_reflect.c""}, .flags = &.{ ""-std=c99"", ""-fPIC"" } });
     b.installArtifact(lib);
 }";
 
