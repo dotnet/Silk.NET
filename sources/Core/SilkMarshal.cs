@@ -85,23 +85,30 @@ public static unsafe class SilkMarshal
             {
                 var maxCharCount = Encoding.UTF8.GetMaxByteCount(str.Length) + 1;
                 byte[]? arr = null;
-                var utf8 = maxCharCount > 256
-                    ? arr = ArrayPool<byte>.Shared.Rent(maxCharCount)
-                    : stackalloc byte[maxCharCount];
-                if (Utf8.FromUtf16(str, utf8, out _, out var bytesWritten) != OperationStatus.Done)
+                try
                 {
-                    throw new ArgumentException("Failed to convert to UTF8", nameof(str));
-                }
+                    var utf8 = maxCharCount > 256
+                        ? arr = ArrayPool<byte>.Shared.Rent(maxCharCount)
+                        : stackalloc byte[maxCharCount];
+                    if (Utf8.FromUtf16(str, utf8, out _, out var bytesWritten) != OperationStatus.Done)
+                    {
+                        throw new ArgumentException("Failed to convert to UTF8", nameof(str));
+                    }
 
-                utf8 = utf8[..(bytesWritten + 1)];
-                utf8[bytesWritten] = 0;
-                var ret = new byte[utf8.Length];
-                utf8.CopyTo(ret);
-                if (arr is not null)
-                {
-                    ArrayPool<byte>.Shared.Return(arr);
+                    utf8 = utf8[..(bytesWritten + 1)];
+                    utf8[bytesWritten] = 0;
+                    var ret = new byte[utf8.Length];
+                    utf8.CopyTo(ret);
+
+                    return ret;
                 }
-                return ret;
+                finally
+                {
+                    if (arr is not null)
+                    {
+                        ArrayPool<byte>.Shared.Return(arr);
+                    }
+                }
             }
             case 2:
             {
@@ -114,19 +121,26 @@ public static unsafe class SilkMarshal
             {
                 var maxCharCount = Encoding.UTF32.GetMaxByteCount(str.Length) + 4;
                 byte[]? arr = null;
-                var utf32 = maxCharCount > 256
-                    ? arr = ArrayPool<byte>.Shared.Rent(maxCharCount)
-                    : stackalloc byte[maxCharCount];
-                var bytesWritten = Encoding.UTF32.GetBytes(str, utf32);
-                utf32 = utf32[..(bytesWritten + 4)];
-                Unsafe.As<byte, int>(ref utf32[bytesWritten]) = 0;
-                var ret = new byte[utf32.Length];
-                utf32.CopyTo(ret);
-                if (arr is not null)
+                try
                 {
-                    ArrayPool<byte>.Shared.Return(arr);
+                    var utf32 = maxCharCount > 256
+                        ? arr = ArrayPool<byte>.Shared.Rent(maxCharCount)
+                        : stackalloc byte[maxCharCount];
+                    var bytesWritten = Encoding.UTF32.GetBytes(str, utf32);
+                    utf32 = utf32[..(bytesWritten + 4)];
+                    Unsafe.As<byte, int>(ref utf32[bytesWritten]) = 0;
+                    var ret = new byte[utf32.Length];
+                    utf32.CopyTo(ret);
+
+                    return ret;
                 }
-                return ret;
+                finally
+                {
+                    if (arr is not null)
+                    {
+                        ArrayPool<byte>.Shared.Return(arr);
+                    }
+                }
             }
             default:
             {
