@@ -22,7 +22,7 @@ namespace HelloWorld
             nint[] memObjects = new nint[3];
 
             // Create an OpenCL context on first available platform
-            context = CreatContext(cl);
+            context = CreateContext(cl);
             if (context == IntPtr.Zero)
             {
                 Console.WriteLine("Failed to create OpenCL context.");
@@ -163,7 +163,7 @@ namespace HelloWorld
         {
             if (!File.Exists(fileName))
             {
-                Console.WriteLine($"文件不存在:{fileName}");
+                Console.WriteLine($"File does not exist: {fileName}");
                 return IntPtr.Zero;
             }
             using StreamReader sr = new StreamReader(fileName);
@@ -286,7 +286,7 @@ namespace HelloWorld
         /// </summary>
         /// <param name="cL"></param>
         /// <returns></returns>
-        static unsafe nint CreatContext(CL cL)
+        static unsafe nint CreateContext(CL cL)
         {
             var errNum = cL.GetPlatformIDs(1, out nint firstPlatformId, out uint numPlatforms);
             if (errNum != (int) ErrorCodes.Success || numPlatforms <= 0)
