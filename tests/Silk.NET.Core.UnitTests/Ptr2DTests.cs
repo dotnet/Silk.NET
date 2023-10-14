@@ -334,14 +334,14 @@ public class Ptr2DTests
     public unsafe void NullIsNull()
     {
         Ptr2D<nint> ptr = nullptr;
-        Assert.True(((delegate*<ref Ptr<nint>, bool>)(delegate*<ref int, bool>)&Unsafe.IsNullRef<int>)(
-            ref ((delegate*<in Ptr<nint>, ref Ptr<nint>>)(delegate*<in int, ref int>)&Unsafe.AsRef<int>)(
+        Assert.True(((delegate*<ref Ptr<nint>, bool>)(delegate*<ref readonly int, bool>)&Unsafe.IsNullRef<int>)(
+            ref ((delegate*<in Ptr<nint>, ref Ptr<nint>>)(delegate*<ref readonly int, ref int>)&Unsafe.AsRef<int>)(
                 in ptr.Ref)));
-        Assert.True(((delegate*<ref Ptr<nint>, bool>)(delegate*<ref int, bool>)&Unsafe.IsNullRef<int>)(
-            ref ((delegate*<in Ptr<nint>, ref Ptr<nint>>)(delegate*<in int, ref int>)&Unsafe.AsRef<int>)(
+        Assert.True(((delegate*<ref Ptr<nint>, bool>)(delegate*<ref readonly int, bool>)&Unsafe.IsNullRef<int>)(
+            ref ((delegate*<in Ptr<nint>, ref Ptr<nint>>)(delegate*<ref readonly int, ref int>)&Unsafe.AsRef<int>)(
                 in ptr[0])));
-        Assert.True(((delegate*<ref nint*, bool>)(delegate*<ref int, bool>)&Unsafe.IsNullRef<int>)(
-            ref ((delegate*<in nint*, ref nint*>)(delegate*<in int, ref int>)&Unsafe.AsRef<int>)(
+        Assert.True(((delegate*<ref nint*, bool>)(delegate*<ref readonly int, bool>)&Unsafe.IsNullRef<int>)(
+            ref ((delegate*<in nint*, ref nint*>)(delegate*<ref readonly int, ref int>)&Unsafe.AsRef<int>)(
                 in ptr.GetPinnableReference())));
         Assert.True((nint**) ptr is null);
         Assert.True((void**) ptr is null);

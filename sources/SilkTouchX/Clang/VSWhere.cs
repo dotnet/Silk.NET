@@ -17,7 +17,13 @@ internal record struct SetupInstance(ISetupInstance Instance)
     public string InstanceId => Instance.GetInstanceId();
 
     public DateTime InstallDate
-        => DateTime.FromFileTime(Unsafe.As<FILETIME, long>(ref Unsafe.AsRef(Instance.GetInstallDate())));
+    {
+        get
+        {
+            var ft = Instance.GetInstallDate();
+            return DateTime.FromFileTime(Unsafe.As<FILETIME, long>(ref ft));
+        }
+    }
 
     public string InstallationName => Instance.GetInstallationName();
     public string InstallationPath => Instance.GetInstallationPath();
