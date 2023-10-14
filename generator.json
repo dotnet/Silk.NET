@@ -717,6 +717,9 @@
                     "openxr"
                 ]
             },
+            "prefixOverrides": {
+                "XrPassthroughColorLutChannelsMETA": "XR_PASSTHROUGH_COLOR_LUT_CHANNELS"
+            },
             "output": {
                 "mode": "Default",
                 "path": "src/OpenXR",

@@ -12,15 +12,15 @@ namespace Silk.NET.OpenXR
     [NativeName("Name", "XrPassthroughColorLutChannelsMETA")]
     public enum PassthroughColorLutChannelsMETA : int
     {
-        [Obsolete("Deprecated in favour of \"Meta\"")]
+        [Obsolete("Deprecated in favour of \"RgbMeta\"")]
         [NativeName("Name", "XR_PASSTHROUGH_COLOR_LUT_CHANNELS_RGB_META")]
         PassthroughColorLutChannelsRgbMeta = 1,
-        [Obsolete("Deprecated in favour of \"Meta\"")]
+        [Obsolete("Deprecated in favour of \"RgbaMeta\"")]
         [NativeName("Name", "XR_PASSTHROUGH_COLOR_LUT_CHANNELS_RGBA_META")]
         PassthroughColorLutChannelsRgbaMeta = 2,
         [NativeName("Name", "XR_PASSTHROUGH_COLOR_LUT_CHANNELS_RGB_META")]
-        Meta = 1,
+        RgbMeta = 1,
         [NativeName("Name", "XR_PASSTHROUGH_COLOR_LUT_CHANNELS_RGBA_META")]
-        Meta = 2,
+        RgbaMeta = 2,
     }
 }
