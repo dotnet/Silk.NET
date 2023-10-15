@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;
+using System.Globalization;
 using System.Linq;
 using System.Text.RegularExpressions;
 using Humanizer;
@@ -22,7 +23,7 @@ public static partial class NameUtils
     {
         var ret = string.Join(
             null,
-            str.Transform(To.LowerCase, To.TitleCase)
+            str.Transform(To.LowerCase, new FirstLetterUpper())
                 .Pascalize()
                 .Where(x => char.IsLetter(x) || char.IsNumber(x))
         );
@@ -140,7 +141,7 @@ public static partial class NameUtils
         // - The regex ([\p{Ll}])([\p{Lu}]) has been added to replace lowercase letters followed by an uppercase letter with the
         //   same sequence but with an underscore inbetween,
         //   this fixes cases like SpvImageFormatR32ui being Spv_Image_FormatR32ui instead of Spv_Image_Format_R32ui
-        KebebOrSpace()
+        KebabOrSpace()
             .Replace(
                 LowerUpper()
                     .Replace(
@@ -152,7 +153,7 @@ public static partial class NameUtils
             );
 
     [GeneratedRegex(@"[-\s]")]
-    private static partial Regex KebebOrSpace();
+    private static partial Regex KebabOrSpace();
 
     [GeneratedRegex(@"([\p{Ll}])([\p{Lu}])")]
     private static partial Regex LowerUpper();
@@ -162,4 +163,44 @@ public static partial class NameUtils
 
     [GeneratedRegex(@"([\p{Lu}]+)([\p{Lu}][\p{Ll}])")]
     private static partial Regex LowerUpperLower();
+
+    internal partial class FirstLetterUpper : ICulturedStringTransformer
+    {
+        public string Transform(string input) => Transform(input, null);
+
+        public string Transform(string input, CultureInfo? culture)
+        {
+            culture ??= CultureInfo.CurrentCulture;
+
+            var result = input;
+            var matches = Words().Matches(input);
+            foreach (Match word in matches)
+            {
+                if (!AllCapitals(word.Value))
+                {
+                    result = MakeFirstLetterUpper(word, result, culture);
+                }
+            }
+
+            return result;
+        }
+
+        private static bool AllCapitals(string input) => input.ToCharArray().All(char.IsUpper);
+
+        private static string MakeFirstLetterUpper(Match word, string source, CultureInfo culture)
+        {
+            var wordToConvert = word.Value;
+            var replacement =
+                culture.TextInfo.ToUpper(wordToConvert[0])
+                + culture.TextInfo.ToLower(wordToConvert.Remove(0, 1));
+            return string.Concat(
+                source.AsSpan()[..word.Index],
+                replacement,
+                source.AsSpan(word.Index + word.Length)
+            );
+        }
+
+        [GeneratedRegex(@"(\w|[^\u0000-\u007F])+'?\w*")]
+        private static partial Regex Words();
+    }
 }

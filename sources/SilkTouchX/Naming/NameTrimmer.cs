@@ -43,6 +43,7 @@ public class NameTrimmer : INameTrimmer
                 ? 3
                 : 2
             : 1;
+        var naive = false;
         for (var i = 0; i < nPasses; i++) // try with both trimming name and non trimming name
         {
             var result = GetPrefix(container, hint, names, prefixOverrides, i == 0, i == 2);
@@ -61,10 +62,13 @@ public class NameTrimmer : INameTrimmer
                 break;
             }
 
-            // If not, do they at least start with the hint?
+            // If not, do most of them at least start with the hint?
             if (
                 hint is null
-                || !localNames.Keys.All(x => x.StartsWith(hint, StringComparison.OrdinalIgnoreCase))
+                || localNames.Keys.Count(
+                    x => x.StartsWith(hint, StringComparison.OrdinalIgnoreCase)
+                )
+                    >= localNames.Keys.Count / 2
             )
             {
                 // Nope, nothing we can do it seems, we've already tried both trimming name and non trimming name...
@@ -73,12 +77,19 @@ public class NameTrimmer : INameTrimmer
 
             // The prefix is the hint!
             prefix = hint;
+            naive = true;
             break;
         }
 
         foreach (var (trimmingName, (oldPrimary, secondary, originalName)) in localNames)
         {
-            if (prefix.Length >= trimmingName.Length)
+            if (
+                naive
+                && (
+                    prefix.Length >= trimmingName.Length
+                    || !trimmingName.StartsWith(prefix, StringComparison.OrdinalIgnoreCase)
+                )
+            )
             {
                 continue;
             }
