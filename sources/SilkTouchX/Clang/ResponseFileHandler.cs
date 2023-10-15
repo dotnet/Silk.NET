@@ -57,42 +57,125 @@ public class ResponseFileHandler
     private static readonly Option<string[]> _withUsingNameValuePairs;
     private static readonly Option<string[]> _withPackingNameValuePairs;
 
-    private static readonly string[] _additionalOptionAliases = new string[] { "--additional", "-a" };
+    private static readonly string[] _additionalOptionAliases = new string[]
+    {
+        "--additional",
+        "-a"
+    };
     private static readonly string[] _configOptionAliases = new string[] { "--config", "-c" };
-    private static readonly string[] _defineMacroOptionAliases = new string[] { "--define-macro", "-D" };
+    private static readonly string[] _defineMacroOptionAliases = new string[]
+    {
+        "--define-macro",
+        "-D"
+    };
     private static readonly string[] _excludeOptionAliases = new string[] { "--exclude", "-e" };
     private static readonly string[] _fileOptionAliases = new string[] { "--file", "-f" };
-    private static readonly string[] _fileDirectionOptionAliases = new string[] { "--file-directory", "-F" };
+    private static readonly string[] _fileDirectionOptionAliases = new string[]
+    {
+        "--file-directory",
+        "-F"
+    };
     private static readonly string[] _headerOptionAliases = new string[] { "--headerFile", "-h" };
     private static readonly string[] _includeOptionAliases = new string[] { "--include", "-i" };
-    private static readonly string[] _includeDirectoryOptionAliases = new string[] { "--include-directory", "-I" };
+    private static readonly string[] _includeDirectoryOptionAliases = new string[]
+    {
+        "--include-directory",
+        "-I"
+    };
     private static readonly string[] _languageOptionAliases = new string[] { "--language", "-x" };
     private static readonly string[] _libraryOptionAliases = new string[] { "--libraryPath", "-l" };
-    private static readonly string[] _methodClassNameOptionAliases = new string[] { "--methodClassName", "-m" };
+    private static readonly string[] _methodClassNameOptionAliases = new string[]
+    {
+        "--methodClassName",
+        "-m"
+    };
     private static readonly string[] _namespaceOptionAliases = new string[] { "--namespace", "-n" };
-    private static readonly string[] _nativeTypeNamesStripOptionAliases = new string[] { "--nativeTypeNamesToStrip" };
-    private static readonly string[] _outputModeOptionAliases = new string[] { "--output-mode", "-om" };
+    private static readonly string[] _nativeTypeNamesStripOptionAliases = new string[]
+    {
+        "--nativeTypeNamesToStrip"
+    };
+    private static readonly string[] _outputModeOptionAliases = new string[]
+    {
+        "--output-mode",
+        "-om"
+    };
     private static readonly string[] _outputOptionAliases = new string[] { "--output", "-o" };
-    private static readonly string[] _prefixStripOptionAliases = new string[] { "--prefixStrip", "-p" };
+    private static readonly string[] _prefixStripOptionAliases = new string[]
+    {
+        "--prefixStrip",
+        "-p"
+    };
     private static readonly string[] _remapOptionAliases = new string[] { "--remap", "-r" };
     private static readonly string[] _stdOptionAliases = new string[] { "--std", "-std" };
-    private static readonly string[] _testOutputOptionAliases = new string[] { "--test-output", "-to" };
+    private static readonly string[] _testOutputOptionAliases = new string[]
+    {
+        "--test-output",
+        "-to"
+    };
     private static readonly string[] _versionOptionAliases = new string[] { "--version", "-v" };
     private static readonly string[] _traverseOptionAliases = new string[] { "--traverse", "-t" };
-    private static readonly string[] _withAccessSpecifierOptionAliases = new string[] { "--with-access-specifier", "-was" };
-    private static readonly string[] _withAttributeOptionAliases = new string[] { "--with-attribute", "-wa" };
-    private static readonly string[] _withCallConvOptionAliases = new string[] { "--with-callconv", "-wcc" };
-    private static readonly string[] _withClassOptionAliases = new string[] { "--with-class", "-wc" };
+    private static readonly string[] _withAccessSpecifierOptionAliases = new string[]
+    {
+        "--with-access-specifier",
+        "-was"
+    };
+    private static readonly string[] _withAttributeOptionAliases = new string[]
+    {
+        "--with-attribute",
+        "-wa"
+    };
+    private static readonly string[] _withCallConvOptionAliases = new string[]
+    {
+        "--with-callconv",
+        "-wcc"
+    };
+    private static readonly string[] _withClassOptionAliases = new string[]
+    {
+        "--with-class",
+        "-wc"
+    };
     private static readonly string[] _withGuidOptionAliases = new string[] { "--with-guid", "-wg" };
-    private static readonly string[] _withLibraryPathOptionAliases = new string[] { "--with-librarypath", "-wlb" };
-    private static readonly string[] _withManualImportOptionAliases = new string[] { "--with-manual-import", "-wmi" };
-    private static readonly string[] _withNamespaceOptionAliases = new string[] { "--with-namespace", "-wn" };
-    private static readonly string[] _withSetLastErrorOptionAliases = new string[] { "--with-setlasterror", "-wsle" };
-    private static readonly string[] _withSuppressGCTransitionOptionAliases = new string[] { "--with-suppressgctransition", "-wsgct" };
-    private static readonly string[] _withTransparentStructOptionAliases = new string[] { "--with-transparent-struct", "-wts" };
+    private static readonly string[] _withLibraryPathOptionAliases = new string[]
+    {
+        "--with-librarypath",
+        "-wlb"
+    };
+    private static readonly string[] _withManualImportOptionAliases = new string[]
+    {
+        "--with-manual-import",
+        "-wmi"
+    };
+    private static readonly string[] _withNamespaceOptionAliases = new string[]
+    {
+        "--with-namespace",
+        "-wn"
+    };
+    private static readonly string[] _withSetLastErrorOptionAliases = new string[]
+    {
+        "--with-setlasterror",
+        "-wsle"
+    };
+    private static readonly string[] _withSuppressGCTransitionOptionAliases = new string[]
+    {
+        "--with-suppressgctransition",
+        "-wsgct"
+    };
+    private static readonly string[] _withTransparentStructOptionAliases = new string[]
+    {
+        "--with-transparent-struct",
+        "-wts"
+    };
     private static readonly string[] _withTypeOptionAliases = new string[] { "--with-type", "-wt" };
-    private static readonly string[] _withUsingOptionAliases = new string[] { "--with-using", "-wu" };
-    private static readonly string[] _withPackingOptionAliases = new string[] { "--with-packing", "-wp" };
+    private static readonly string[] _withUsingOptionAliases = new string[]
+    {
+        "--with-using",
+        "-wu"
+    };
+    private static readonly string[] _withPackingOptionAliases = new string[]
+    {
+        "--with-packing",
+        "-wp"
+    };
     private readonly ILogger<ResponseFileHandler> _logger;
 
     static ResponseFileHandler()
@@ -184,7 +267,11 @@ public class ResponseFileHandler
         _logger = logger;
     }
 
-    private static void ParseKeyValuePairs(IEnumerable<string> keyValuePairs, List<string> errorList, out Dictionary<string, string> result)
+    private static void ParseKeyValuePairs(
+        IEnumerable<string> keyValuePairs,
+        List<string> errorList,
+        out Dictionary<string, string> result
+    )
     {
         result = new Dictionary<string, string>();
 
@@ -194,7 +281,9 @@ public class ResponseFileHandler
 
             if (parts.Length != 2)
             {
-                errorList.Add($"Error: Invalid key/value pair argument: {keyValuePair}. Expected 'name=value'");
+                errorList.Add(
+                    $"Error: Invalid key/value pair argument: {keyValuePair}. Expected 'name=value'"
+                );
                 continue;
             }
 
@@ -202,7 +291,9 @@ public class ResponseFileHandler
 
             if (result.TryGetValue(key, out var value))
             {
-                errorList.Add($"Error: A key with the given name already exists: {key}. Existing: {value}");
+                errorList.Add(
+                    $"Error: A key with the given name already exists: {key}. Existing: {value}"
+                );
                 continue;
             }
 
@@ -210,7 +301,11 @@ public class ResponseFileHandler
         }
     }
 
-    private static void ParseKeyValuePairs(IEnumerable<string> keyValuePairs, List<string> errorList, out Dictionary<string, AccessSpecifier> result)
+    private static void ParseKeyValuePairs(
+        IEnumerable<string> keyValuePairs,
+        List<string> errorList,
+        out Dictionary<string, AccessSpecifier> result
+    )
     {
         result = new Dictionary<string, AccessSpecifier>();
 
@@ -220,7 +315,9 @@ public class ResponseFileHandler
 
             if (parts.Length != 2)
             {
-                errorList.Add($"Error: Invalid key/value pair argument: {keyValuePair}. Expected 'name=value'");
+                errorList.Add(
+                    $"Error: Invalid key/value pair argument: {keyValuePair}. Expected 'name=value'"
+                );
                 continue;
             }
 
@@ -228,15 +325,24 @@ public class ResponseFileHandler
 
             if (result.TryGetValue(key, out var value))
             {
-                errorList.Add($"Error: A key with the given name already exists: {key}. Existing: {value}");
+                errorList.Add(
+                    $"Error: A key with the given name already exists: {key}. Existing: {value}"
+                );
                 continue;
             }
 
-            result.Add(key, PInvokeGeneratorConfiguration.ConvertStringToAccessSpecifier(parts[1].TrimStart()));
+            result.Add(
+                key,
+                PInvokeGeneratorConfiguration.ConvertStringToAccessSpecifier(parts[1].TrimStart())
+            );
         }
     }
 
-    private static void ParseKeyValuePairs(IEnumerable<string> keyValuePairs, List<string> errorList, out Dictionary<string, Guid> result)
+    private static void ParseKeyValuePairs(
+        IEnumerable<string> keyValuePairs,
+        List<string> errorList,
+        out Dictionary<string, Guid> result
+    )
     {
         result = new Dictionary<string, Guid>();
 
@@ -246,7 +352,9 @@ public class ResponseFileHandler
 
             if (parts.Length != 2)
             {
-                errorList.Add($"Error: Invalid key/value pair argument: {keyValuePair}. Expected 'name=value'");
+                errorList.Add(
+                    $"Error: Invalid key/value pair argument: {keyValuePair}. Expected 'name=value'"
+                );
                 continue;
             }
 
@@ -254,7 +362,9 @@ public class ResponseFileHandler
 
             if (result.TryGetValue(key, out var value))
             {
-                errorList.Add($"Error: A key with the given name already exists: {key}. Existing: {value}");
+                errorList.Add(
+                    $"Error: A key with the given name already exists: {key}. Existing: {value}"
+                );
                 continue;
             }
 
@@ -268,7 +378,11 @@ public class ResponseFileHandler
         }
     }
 
-    private static void ParseKeyValuePairs(IEnumerable<string> keyValuePairs, List<string> errorList, out Dictionary<string, (string, PInvokeGeneratorTransparentStructKind)> result)
+    private static void ParseKeyValuePairs(
+        IEnumerable<string> keyValuePairs,
+        List<string> errorList,
+        out Dictionary<string, (string, PInvokeGeneratorTransparentStructKind)> result
+    )
     {
         result = new Dictionary<string, (string, PInvokeGeneratorTransparentStructKind)>();
 
@@ -278,7 +392,9 @@ public class ResponseFileHandler
 
             if (parts.Length != 2)
             {
-                errorList.Add($"Error: Invalid key/value pair argument: {keyValuePair}. Expected 'name=value' or 'name=value;kind'");
+                errorList.Add(
+                    $"Error: Invalid key/value pair argument: {keyValuePair}. Expected 'name=value' or 'name=value;kind'"
+                );
                 continue;
             }
 
@@ -286,7 +402,9 @@ public class ResponseFileHandler
 
             if (result.TryGetValue(key, out var value))
             {
-                errorList.Add($"Error: A key with the given name already exists: {key}. Existing: {value}");
+                errorList.Add(
+                    $"Error: A key with the given name already exists: {key}. Existing: {value}"
+                );
                 continue;
             }
 
@@ -296,19 +414,31 @@ public class ResponseFileHandler
             {
                 result.Add(key, (parts[0], PInvokeGeneratorTransparentStructKind.Unknown));
             }
-            else if (parts.Length == 2 && Enum.TryParse<PInvokeGeneratorTransparentStructKind>(parts[1], out var transparentStructKind))
+            else if (
+                parts.Length == 2
+                && Enum.TryParse<PInvokeGeneratorTransparentStructKind>(
+                    parts[1],
+                    out var transparentStructKind
+                )
+            )
             {
                 result.Add(key, (parts[0], transparentStructKind));
             }
             else
             {
-                errorList.Add($"Error: Invalid key/value pair argument: {keyValuePair}. Expected 'name=value' or 'name=value;kind'");
+                errorList.Add(
+                    $"Error: Invalid key/value pair argument: {keyValuePair}. Expected 'name=value' or 'name=value;kind'"
+                );
                 continue;
             }
         }
     }
 
-    private static void ParseKeyValuePairs(IEnumerable<string> keyValuePairs, List<string> errorList, out Dictionary<string, IReadOnlyList<string>> result)
+    private static void ParseKeyValuePairs(
+        IEnumerable<string> keyValuePairs,
+        List<string> errorList,
+        out Dictionary<string, IReadOnlyList<string>> result
+    )
     {
         result = new Dictionary<string, IReadOnlyList<string>>();
 
@@ -318,7 +448,9 @@ public class ResponseFileHandler
 
             if (parts.Length != 2)
             {
-                errorList.Add($"Error: Invalid key/value pair argument: {keyValuePair}. Expected 'name=value'");
+                errorList.Add(
+                    $"Error: Invalid key/value pair argument: {keyValuePair}. Expected 'name=value'"
+                );
                 continue;
             }
 
@@ -341,7 +473,8 @@ public class ResponseFileHandler
             aliases: _additionalOptionAliases,
             description: "An argument to pass to Clang when parsing the input files.",
             getDefaultValue: Array.Empty<string>
-        ) {
+        )
+        {
             AllowMultipleArgumentsPerToken = true
         };
     }
@@ -352,7 +485,8 @@ public class ResponseFileHandler
             aliases: _configOptionAliases,
             description: "A configuration option that controls how the bindings are generated. Specify 'help' to see the available options.",
             getDefaultValue: Array.Empty<string>
-        ) {
+        )
+        {
             AllowMultipleArgumentsPerToken = true
         };
     }
@@ -363,7 +497,8 @@ public class ResponseFileHandler
             aliases: _defineMacroOptionAliases,
             description: "Define <macro> to <value> (or 1 if <value> omitted).",
             getDefaultValue: Array.Empty<string>
-        ) {
+        )
+        {
             AllowMultipleArgumentsPerToken = true
         };
     }
@@ -374,7 +509,8 @@ public class ResponseFileHandler
             aliases: _excludeOptionAliases,
             description: "A declaration name to exclude from binding generation.",
             getDefaultValue: Array.Empty<string>
-        ) {
+        )
+        {
             AllowMultipleArgumentsPerToken = true
         };
     }
@@ -385,7 +521,8 @@ public class ResponseFileHandler
             aliases: _fileOptionAliases,
             description: "A file to parse and generate bindings for.",
             getDefaultValue: Array.Empty<string>
-        ) {
+        )
+        {
             AllowMultipleArgumentsPerToken = true
         };
     }
@@ -414,7 +551,8 @@ public class ResponseFileHandler
             aliases: _includeOptionAliases,
             description: "A declaration name to include in binding generation.",
             getDefaultValue: Array.Empty<string>
-        ) {
+        )
+        {
             AllowMultipleArgumentsPerToken = true
         };
     }
@@ -425,7 +563,8 @@ public class ResponseFileHandler
             aliases: _includeDirectoryOptionAliases,
             description: "Add directory to include search path.",
             getDefaultValue: Array.Empty<string>
-        ) {
+        )
+        {
             AllowMultipleArgumentsPerToken = true
         };
     }
@@ -472,7 +611,8 @@ public class ResponseFileHandler
             aliases: _nativeTypeNamesStripOptionAliases,
             description: "The contents to strip from the generated NativeTypeName attributes.",
             getDefaultValue: Array.Empty<string>
-        ) {
+        )
+        {
             AllowMultipleArgumentsPerToken = true
         };
     }
@@ -510,7 +650,8 @@ public class ResponseFileHandler
             aliases: _remapOptionAliases,
             description: "A declaration name to be remapped to another name during binding generation.",
             getDefaultValue: Array.Empty<string>
-        ) {
+        )
+        {
             AllowMultipleArgumentsPerToken = true
         };
     }
@@ -538,7 +679,8 @@ public class ResponseFileHandler
         return new Option<bool>(
             aliases: _versionOptionAliases,
             description: "Prints the current version information for the tool and its native dependencies."
-        ) {
+        )
+        {
             Arity = ArgumentArity.Zero
         };
     }
@@ -549,7 +691,8 @@ public class ResponseFileHandler
             aliases: _traverseOptionAliases,
             description: "A file name included either directly or indirectly by -f that should be traversed during binding generation.",
             getDefaultValue: Array.Empty<string>
-        ) {
+        )
+        {
             AllowMultipleArgumentsPerToken = true
         };
     }
@@ -560,7 +703,8 @@ public class ResponseFileHandler
             aliases: _withAccessSpecifierOptionAliases,
             description: "An access specifier to be used with the given qualified or remapped declaration name during binding generation. Supports wildcards.",
             getDefaultValue: Array.Empty<string>
-        ) {
+        )
+        {
             AllowMultipleArgumentsPerToken = true
         };
     }
@@ -571,7 +715,8 @@ public class ResponseFileHandler
             aliases: _withAttributeOptionAliases,
             description: "An attribute to be added to the given remapped declaration name during binding generation. Supports wildcards.",
             getDefaultValue: Array.Empty<string>
-        ) {
+        )
+        {
             AllowMultipleArgumentsPerToken = true
         };
     }
@@ -582,7 +727,8 @@ public class ResponseFileHandler
             aliases: _withCallConvOptionAliases,
             description: "A calling convention to be used for the given declaration during binding generation. Supports wildcards.",
             getDefaultValue: Array.Empty<string>
-        ) {
+        )
+        {
             AllowMultipleArgumentsPerToken = true
         };
     }
@@ -593,7 +739,8 @@ public class ResponseFileHandler
             aliases: _withClassOptionAliases,
             description: "A class to be used for the given remapped constant or function declaration name during binding generation. Supports wildcards.",
             getDefaultValue: Array.Empty<string>
-        ) {
+        )
+        {
             AllowMultipleArgumentsPerToken = true
         };
     }
@@ -604,7 +751,8 @@ public class ResponseFileHandler
             aliases: _withGuidOptionAliases,
             description: "A GUID to be used for the given declaration during binding generation. Supports wildcards.",
             getDefaultValue: Array.Empty<string>
-        ) {
+        )
+        {
             AllowMultipleArgumentsPerToken = true
         };
     }
@@ -615,7 +763,8 @@ public class ResponseFileHandler
             aliases: _withLibraryPathOptionAliases,
             description: "A library path to be used for the given declaration during binding generation. Supports wildcards.",
             getDefaultValue: Array.Empty<string>
-        ) {
+        )
+        {
             AllowMultipleArgumentsPerToken = true
         };
     }
@@ -626,7 +775,8 @@ public class ResponseFileHandler
             aliases: _withManualImportOptionAliases,
             description: "A remapped function name to be treated as a manual import during binding generation. Supports wildcards.",
             getDefaultValue: Array.Empty<string>
-        ) {
+        )
+        {
             AllowMultipleArgumentsPerToken = true
         };
     }
@@ -637,7 +787,8 @@ public class ResponseFileHandler
             aliases: _withNamespaceOptionAliases,
             description: "A namespace to be used for the given remapped declaration name during binding generation. Supports wildcards.",
             getDefaultValue: Array.Empty<string>
-        ) {
+        )
+        {
             AllowMultipleArgumentsPerToken = true
         };
     }
@@ -648,7 +799,8 @@ public class ResponseFileHandler
             aliases: _withSetLastErrorOptionAliases,
             description: "Add the SetLastError=true modifier or SetsSystemLastError attribute to a given DllImport or UnmanagedFunctionPointer. Supports wildcards.",
             getDefaultValue: Array.Empty<string>
-        ) {
+        )
+        {
             AllowMultipleArgumentsPerToken = true
         };
     }
@@ -659,7 +811,8 @@ public class ResponseFileHandler
             aliases: _withSuppressGCTransitionOptionAliases,
             description: "Add the SuppressGCTransition calling convention to a given DllImport or UnmanagedFunctionPointer. Supports wildcards.",
             getDefaultValue: Array.Empty<string>
-        ) {
+        )
+        {
             AllowMultipleArgumentsPerToken = true
         };
     }
@@ -670,7 +823,8 @@ public class ResponseFileHandler
             aliases: _withTransparentStructOptionAliases,
             description: "A remapped type name to be treated as a transparent wrapper during binding generation. Supports wildcards.",
             getDefaultValue: Array.Empty<string>
-        ) {
+        )
+        {
             AllowMultipleArgumentsPerToken = true
         };
     }
@@ -681,7 +835,8 @@ public class ResponseFileHandler
             aliases: _withTypeOptionAliases,
             description: "A type to be used for the given enum declaration during binding generation. Supports wildcards.",
             getDefaultValue: Array.Empty<string>
-        ) {
+        )
+        {
             AllowMultipleArgumentsPerToken = true
         };
     }
@@ -692,7 +847,8 @@ public class ResponseFileHandler
             aliases: _withUsingOptionAliases,
             description: "A using directive to be included for the given remapped declaration name during binding generation. Supports wildcards.",
             getDefaultValue: Array.Empty<string>
-        ) {
+        )
+        {
             AllowMultipleArgumentsPerToken = true
         };
     }
@@ -703,7 +859,8 @@ public class ResponseFileHandler
             aliases: _withPackingOptionAliases,
             description: "Overrides the StructLayoutAttribute.Pack property for the given type. Supports wildcards.",
             getDefaultValue: Array.Empty<string>
-        ) {
+        )
+        {
             AllowMultipleArgumentsPerToken = true
         };
     }
@@ -718,7 +875,8 @@ public class ResponseFileHandler
     {
         _logger.LogDebug("ClangSharp command line arguments: {0}", string.Join(" ", args));
         var parseResult = new Parser(_rootCommand).Parse(args);
-        var additionalArgs = parseResult.GetValueForOption(_additionalOption) ?? Array.Empty<string>();
+        var additionalArgs =
+            parseResult.GetValueForOption(_additionalOption) ?? Array.Empty<string>();
         var configSwitches = parseResult.GetValueForOption(_configOption) ?? Array.Empty<string>();
         var defineMacros = parseResult.GetValueForOption(_defineMacros) ?? Array.Empty<string>();
         var excludedNames = parseResult.GetValueForOption(_excludedNames) ?? Array.Empty<string>();
@@ -726,33 +884,53 @@ public class ResponseFileHandler
         var fileDirectory = parseResult.GetValueForOption(_fileDirectory) ?? "";
         var headerFile = parseResult.GetValueForOption(_headerFile) ?? "";
         var includedNames = parseResult.GetValueForOption(_includedNames) ?? Array.Empty<string>();
-        var includeDirectories = parseResult.GetValueForOption(_includeDirectories) ?? Array.Empty<string>();
+        var includeDirectories =
+            parseResult.GetValueForOption(_includeDirectories) ?? Array.Empty<string>();
         var language = parseResult.GetValueForOption(_language) ?? "";
         var libraryPath = parseResult.GetValueForOption(_libraryPath) ?? "";
         var methodClassName = parseResult.GetValueForOption(_methodClassName) ?? "";
         var methodPrefixToStrip = parseResult.GetValueForOption(_methodPrefixToStrip) ?? "";
-        var nativeTypeNamesToStrip = parseResult.GetValueForOption(_nativeTypeNamesToStrip) ?? Array.Empty<string>();
+        var nativeTypeNamesToStrip =
+            parseResult.GetValueForOption(_nativeTypeNamesToStrip) ?? Array.Empty<string>();
         var namespaceName = parseResult.GetValueForOption(_namespaceName) ?? "";
         var outputLocation = parseResult.GetValueForOption(_outputLocation) ?? "";
         var outputMode = parseResult.GetValueForOption(_outputMode);
-        var remappedNameValuePairs = parseResult.GetValueForOption(_remappedNameValuePairs) ?? Array.Empty<string>();
+        var remappedNameValuePairs =
+            parseResult.GetValueForOption(_remappedNameValuePairs) ?? Array.Empty<string>();
         var std = parseResult.GetValueForOption(_std) ?? "";
         var testOutputLocation = parseResult.GetValueForOption(_testOutputLocation) ?? "";
-        var traversalNames = parseResult.GetValueForOption(_traversalNames) ?? Array.Empty<string>();
-        var withAccessSpecifierNameValuePairs = parseResult.GetValueForOption(_withAccessSpecifierNameValuePairs) ?? Array.Empty<string>();
-        var withAttributeNameValuePairs = parseResult.GetValueForOption(_withAttributeNameValuePairs) ?? Array.Empty<string>();
-        var withCallConvNameValuePairs = parseResult.GetValueForOption(_withCallConvNameValuePairs) ?? Array.Empty<string>();
-        var withClassNameValuePairs = parseResult.GetValueForOption(_withClassNameValuePairs) ?? Array.Empty<string>();
-        var withGuidNameValuePairs = parseResult.GetValueForOption(_withGuidNameValuePairs) ?? Array.Empty<string>();
-        var withLibraryPathNameValuePairs = parseResult.GetValueForOption(_withLibraryPathNameValuePairs) ?? Array.Empty<string>();
-        var withManualImports = parseResult.GetValueForOption(_withManualImports) ?? Array.Empty<string>();
-        var withNamespaceNameValuePairs = parseResult.GetValueForOption(_withNamespaceNameValuePairs) ?? Array.Empty<string>();
-        var withSetLastErrors = parseResult.GetValueForOption(_withSetLastErrors) ?? Array.Empty<string>();
-        var withSuppressGCTransitions = parseResult.GetValueForOption(_withSuppressGCTransitions) ?? Array.Empty<string>();
-        var withTransparentStructNameValuePairs = parseResult.GetValueForOption(_withTransparentStructNameValuePairs) ?? Array.Empty<string>();
-        var withTypeNameValuePairs = parseResult.GetValueForOption(_withTypeNameValuePairs) ?? Array.Empty<string>();
-        var withUsingNameValuePairs = parseResult.GetValueForOption(_withUsingNameValuePairs) ?? Array.Empty<string>();
-        var withPackingNameValuePairs = parseResult.GetValueForOption(_withPackingNameValuePairs) ?? Array.Empty<string>();
+        var traversalNames =
+            parseResult.GetValueForOption(_traversalNames) ?? Array.Empty<string>();
+        var withAccessSpecifierNameValuePairs =
+            parseResult.GetValueForOption(_withAccessSpecifierNameValuePairs)
+            ?? Array.Empty<string>();
+        var withAttributeNameValuePairs =
+            parseResult.GetValueForOption(_withAttributeNameValuePairs) ?? Array.Empty<string>();
+        var withCallConvNameValuePairs =
+            parseResult.GetValueForOption(_withCallConvNameValuePairs) ?? Array.Empty<string>();
+        var withClassNameValuePairs =
+            parseResult.GetValueForOption(_withClassNameValuePairs) ?? Array.Empty<string>();
+        var withGuidNameValuePairs =
+            parseResult.GetValueForOption(_withGuidNameValuePairs) ?? Array.Empty<string>();
+        var withLibraryPathNameValuePairs =
+            parseResult.GetValueForOption(_withLibraryPathNameValuePairs) ?? Array.Empty<string>();
+        var withManualImports =
+            parseResult.GetValueForOption(_withManualImports) ?? Array.Empty<string>();
+        var withNamespaceNameValuePairs =
+            parseResult.GetValueForOption(_withNamespaceNameValuePairs) ?? Array.Empty<string>();
+        var withSetLastErrors =
+            parseResult.GetValueForOption(_withSetLastErrors) ?? Array.Empty<string>();
+        var withSuppressGCTransitions =
+            parseResult.GetValueForOption(_withSuppressGCTransitions) ?? Array.Empty<string>();
+        var withTransparentStructNameValuePairs =
+            parseResult.GetValueForOption(_withTransparentStructNameValuePairs)
+            ?? Array.Empty<string>();
+        var withTypeNameValuePairs =
+            parseResult.GetValueForOption(_withTypeNameValuePairs) ?? Array.Empty<string>();
+        var withUsingNameValuePairs =
+            parseResult.GetValueForOption(_withUsingNameValuePairs) ?? Array.Empty<string>();
+        var withPackingNameValuePairs =
+            parseResult.GetValueForOption(_withPackingNameValuePairs) ?? Array.Empty<string>();
 
         var errorList = new List<string>(parseResult.Errors.Select(x => x.ToString()));
 
@@ -771,25 +949,78 @@ public class ResponseFileHandler
             errorList.Add("Error: No output file location provided. Use --output or -o");
         }
 
-        ParseKeyValuePairs(remappedNameValuePairs, errorList, out Dictionary<string, string> remappedNames);
-        ParseKeyValuePairs(withAccessSpecifierNameValuePairs, errorList, out Dictionary<string, AccessSpecifier> withAccessSpecifiers);
-        ParseKeyValuePairs(withAttributeNameValuePairs, errorList, out Dictionary<string, IReadOnlyList<string>> withAttributes);
-        ParseKeyValuePairs(withCallConvNameValuePairs, errorList, out Dictionary<string, string> withCallConvs);
-        ParseKeyValuePairs(withClassNameValuePairs, errorList, out Dictionary<string, string> withClasses);
-        ParseKeyValuePairs(withGuidNameValuePairs, errorList, out Dictionary<string, Guid> withGuids);
-        ParseKeyValuePairs(withLibraryPathNameValuePairs, errorList, out Dictionary<string, string> withLibraryPaths);
-        ParseKeyValuePairs(withNamespaceNameValuePairs, errorList, out Dictionary<string, string> withNamespaces);
-        ParseKeyValuePairs(withTransparentStructNameValuePairs, errorList, out Dictionary<string, (string, PInvokeGeneratorTransparentStructKind)> withTransparentStructs);
-        ParseKeyValuePairs(withTypeNameValuePairs, errorList, out Dictionary<string, string> withTypes);
-        ParseKeyValuePairs(withUsingNameValuePairs, errorList, out Dictionary<string, IReadOnlyList<string>> withUsings);
-        ParseKeyValuePairs(withPackingNameValuePairs, errorList, out Dictionary<string, string> withPackings);
+        ParseKeyValuePairs(
+            remappedNameValuePairs,
+            errorList,
+            out Dictionary<string, string> remappedNames
+        );
+        ParseKeyValuePairs(
+            withAccessSpecifierNameValuePairs,
+            errorList,
+            out Dictionary<string, AccessSpecifier> withAccessSpecifiers
+        );
+        ParseKeyValuePairs(
+            withAttributeNameValuePairs,
+            errorList,
+            out Dictionary<string, IReadOnlyList<string>> withAttributes
+        );
+        ParseKeyValuePairs(
+            withCallConvNameValuePairs,
+            errorList,
+            out Dictionary<string, string> withCallConvs
+        );
+        ParseKeyValuePairs(
+            withClassNameValuePairs,
+            errorList,
+            out Dictionary<string, string> withClasses
+        );
+        ParseKeyValuePairs(
+            withGuidNameValuePairs,
+            errorList,
+            out Dictionary<string, Guid> withGuids
+        );
+        ParseKeyValuePairs(
+            withLibraryPathNameValuePairs,
+            errorList,
+            out Dictionary<string, string> withLibraryPaths
+        );
+        ParseKeyValuePairs(
+            withNamespaceNameValuePairs,
+            errorList,
+            out Dictionary<string, string> withNamespaces
+        );
+        ParseKeyValuePairs(
+            withTransparentStructNameValuePairs,
+            errorList,
+            out Dictionary<
+                string,
+                (string, PInvokeGeneratorTransparentStructKind)
+            > withTransparentStructs
+        );
+        ParseKeyValuePairs(
+            withTypeNameValuePairs,
+            errorList,
+            out Dictionary<string, string> withTypes
+        );
+        ParseKeyValuePairs(
+            withUsingNameValuePairs,
+            errorList,
+            out Dictionary<string, IReadOnlyList<string>> withUsings
+        );
+        ParseKeyValuePairs(
+            withPackingNameValuePairs,
+            errorList,
+            out Dictionary<string, string> withPackings
+        );
 
         foreach (var key in withTransparentStructs.Keys)
         {
             remappedNames.Add(key, key);
         }
 
-        var configOptions = RuntimeInformation.IsOSPlatform(OSPlatform.Windows) ? PInvokeGeneratorConfigurationOptions.None : PInvokeGeneratorConfigurationOptions.GenerateUnixTypes;
+        var configOptions = RuntimeInformation.IsOSPlatform(OSPlatform.Windows)
+            ? PInvokeGeneratorConfigurationOptions.None
+            : PInvokeGeneratorConfigurationOptions.GenerateUnixTypes;
         var printConfigHelp = false;
 
         foreach (var configSwitch in configSwitches)
@@ -870,7 +1101,8 @@ public class ResponseFileHandler
 
                 case "exclude-anonymous-field-helpers":
                 {
-                    configOptions |= PInvokeGeneratorConfigurationOptions.ExcludeAnonymousFieldHelpers;
+                    configOptions |=
+                        PInvokeGeneratorConfigurationOptions.ExcludeAnonymousFieldHelpers;
                     break;
                 }
 
@@ -920,7 +1152,8 @@ public class ResponseFileHandler
                 case "exclude-using-statics-for-enums":
                 case "dont-use-using-statics-for-enums":
                 {
-                    configOptions |= PInvokeGeneratorConfigurationOptions.DontUseUsingStaticsForEnums;
+                    configOptions |=
+                        PInvokeGeneratorConfigurationOptions.DontUseUsingStaticsForEnums;
                     break;
                 }
 
@@ -953,10 +1186,16 @@ public class ResponseFileHandler
                 {
                     if (string.IsNullOrWhiteSpace(testOutputLocation))
                     {
-                        errorList.Add("Error: No test output file location provided. Use --test-output or -to");
+                        errorList.Add(
+                            "Error: No test output file location provided. Use --test-output or -to"
+                        );
                     }
 
-                    if (configOptions.HasFlag(PInvokeGeneratorConfigurationOptions.GenerateTestsXUnit))
+                    if (
+                        configOptions.HasFlag(
+                            PInvokeGeneratorConfigurationOptions.GenerateTestsXUnit
+                        )
+                    )
                     {
                         errorList.Add("Cannot generate both NUnit and XUnit tests.");
                     }
@@ -968,10 +1207,16 @@ public class ResponseFileHandler
                 {
                     if (string.IsNullOrWhiteSpace(testOutputLocation))
                     {
-                        errorList.Add("Error: No test output file location provided. Use --test-output or -to");
+                        errorList.Add(
+                            "Error: No test output file location provided. Use --test-output or -to"
+                        );
                     }
 
-                    if (configOptions.HasFlag(PInvokeGeneratorConfigurationOptions.GenerateTestsNUnit))
+                    if (
+                        configOptions.HasFlag(
+                            PInvokeGeneratorConfigurationOptions.GenerateTestsNUnit
+                        )
+                    )
                     {
                         errorList.Add("Cannot generate both NUnit and XUnit tests.");
                     }
@@ -983,7 +1228,8 @@ public class ResponseFileHandler
 
                 case "generate-aggressive-inlining":
                 {
-                    configOptions |= PInvokeGeneratorConfigurationOptions.GenerateAggressiveInlining;
+                    configOptions |=
+                        PInvokeGeneratorConfigurationOptions.GenerateAggressiveInlining;
                     break;
                 }
 
@@ -1001,7 +1247,8 @@ public class ResponseFileHandler
 
                 case "generate-file-scoped-namespaces":
                 {
-                    configOptions |= PInvokeGeneratorConfigurationOptions.GenerateFileScopedNamespaces;
+                    configOptions |=
+                        PInvokeGeneratorConfigurationOptions.GenerateFileScopedNamespaces;
                     break;
                 }
 
@@ -1031,19 +1278,22 @@ public class ResponseFileHandler
 
                 case "generate-native-bitfield-attribute":
                 {
-                    configOptions |= PInvokeGeneratorConfigurationOptions.GenerateNativeBitfieldAttribute;
+                    configOptions |=
+                        PInvokeGeneratorConfigurationOptions.GenerateNativeBitfieldAttribute;
                     break;
                 }
 
                 case "generate-native-inheritance-attribute":
                 {
-                    configOptions |= PInvokeGeneratorConfigurationOptions.GenerateNativeInheritanceAttribute;
+                    configOptions |=
+                        PInvokeGeneratorConfigurationOptions.GenerateNativeInheritanceAttribute;
                     break;
                 }
 
                 case "generate-setslastsystemerror-attribute":
                 {
-                    configOptions |= PInvokeGeneratorConfigurationOptions.GenerateSetsLastSystemErrorAttribute;
+                    configOptions |=
+                        PInvokeGeneratorConfigurationOptions.GenerateSetsLastSystemErrorAttribute;
                     break;
                 }
 
@@ -1055,13 +1305,15 @@ public class ResponseFileHandler
 
                 case "generate-unmanaged-constants":
                 {
-                    configOptions |= PInvokeGeneratorConfigurationOptions.GenerateUnmanagedConstants;
+                    configOptions |=
+                        PInvokeGeneratorConfigurationOptions.GenerateUnmanagedConstants;
                     break;
                 }
 
                 case "generate-vtbl-index-attribute":
                 {
-                    configOptions |= PInvokeGeneratorConfigurationOptions.GenerateVtblIndexAttribute;
+                    configOptions |=
+                        PInvokeGeneratorConfigurationOptions.GenerateVtblIndexAttribute;
                     break;
                 }
 
@@ -1075,7 +1327,8 @@ public class ResponseFileHandler
 
                 case "log-potential-typedef-remappings":
                 {
-                    configOptions |= PInvokeGeneratorConfigurationOptions.LogPotentialTypedefRemappings;
+                    configOptions |=
+                        PInvokeGeneratorConfigurationOptions.LogPotentialTypedefRemappings;
                     break;
                 }
 
@@ -1101,14 +1354,22 @@ public class ResponseFileHandler
             }
         }
 
-        if (!string.IsNullOrWhiteSpace(testOutputLocation) && !configOptions.HasFlag(PInvokeGeneratorConfigurationOptions.GenerateTestsNUnit) && !configOptions.HasFlag(PInvokeGeneratorConfigurationOptions.GenerateTestsXUnit))
+        if (
+            !string.IsNullOrWhiteSpace(testOutputLocation)
+            && !configOptions.HasFlag(PInvokeGeneratorConfigurationOptions.GenerateTestsNUnit)
+            && !configOptions.HasFlag(PInvokeGeneratorConfigurationOptions.GenerateTestsXUnit)
+        )
         {
-            errorList.Add("Error: No test format provided. Use --config generate-tests-nunit or --config generate-tests-xunit");
+            errorList.Add(
+                "Error: No test format provided. Use --config generate-tests-nunit or --config generate-tests-xunit"
+            );
         }
 
         if (printConfigHelp)
         {
-            errorList.Add("Response file contained config ?/h/help option, please consult ClangSharp documentation.");
+            errorList.Add(
+                "Response file contained config ?/h/help option, please consult ClangSharp documentation."
+            );
         }
 
         if (errorList.Count != 0)
@@ -1120,38 +1381,66 @@ public class ResponseFileHandler
         }
 
         headerFile = Path.GetFullPath(headerFile, directory ?? Environment.CurrentDirectory);
-        testOutputLocation = Path.GetFullPath(testOutputLocation, directory ?? Environment.CurrentDirectory);
-        outputLocation = Path.GetFullPath(outputLocation, directory ?? Environment.CurrentDirectory);
+        testOutputLocation = Path.GetFullPath(
+            testOutputLocation,
+            directory ?? Environment.CurrentDirectory
+        );
+        outputLocation = Path.GetFullPath(
+            outputLocation,
+            directory ?? Environment.CurrentDirectory
+        );
         for (var i = 0; i < traversalNames.Length; i++)
         {
-            traversalNames[i] = Path.GetFullPath(traversalNames[i], directory ?? Environment.CurrentDirectory);
+            traversalNames[i] = Path.GetFullPath(
+                traversalNames[i],
+                directory ?? Environment.CurrentDirectory
+            );
         }
 
         for (var i = 0; i < includeDirectories.Length; i++)
         {
-            includeDirectories[i] = Path.GetFullPath(includeDirectories[i], directory ?? Environment.CurrentDirectory);
+            includeDirectories[i] = Path.GetFullPath(
+                includeDirectories[i],
+                directory ?? Environment.CurrentDirectory
+            );
         }
 
         var clangCommandLineArgs = string.IsNullOrWhiteSpace(std)
-                                 ? new string[] {
-                                     $"--language={language}",               // Treat subsequent input files as having type <language>
-                                     "-Wno-pragma-once-outside-header"       // We are processing files which may be header files
-                                 } : new string[] {
-                                     $"--language={language}",               // Treat subsequent input files as having type <language>
-                                     $"--std={std}",                         // Language standard to compile for
-                                     "-Wno-pragma-once-outside-header"       // We are processing files which may be header files
-                                 };
+            ? new string[]
+            {
+                $"--language={language}", // Treat subsequent input files as having type <language>
+                "-Wno-pragma-once-outside-header" // We are processing files which may be header files
+            }
+            : new string[]
+            {
+                $"--language={language}", // Treat subsequent input files as having type <language>
+                $"--std={std}", // Language standard to compile for
+                "-Wno-pragma-once-outside-header" // We are processing files which may be header files
+            };
 
-        clangCommandLineArgs = clangCommandLineArgs.Concat(includeDirectories.Select(x => "--include-directory=" + x)).ToArray();
-        clangCommandLineArgs = clangCommandLineArgs.Concat(defineMacros.Select(x => "--define-macro=" + x)).ToArray();
+        clangCommandLineArgs = clangCommandLineArgs
+            .Concat(includeDirectories.Select(x => "--include-directory=" + x))
+            .ToArray();
+        clangCommandLineArgs = clangCommandLineArgs
+            .Concat(defineMacros.Select(x => "--define-macro=" + x))
+            .ToArray();
         clangCommandLineArgs = clangCommandLineArgs.Concat(additionalArgs).ToArray();
 
         var translationFlags = CXTranslationUnit_None;
 
-        translationFlags |= CXTranslationUnit_IncludeAttributedTypes;               // Include attributed types in CXType
-        translationFlags |= CXTranslationUnit_VisitImplicitAttributes;              // Implicit attributes should be visited
+        translationFlags |= CXTranslationUnit_IncludeAttributedTypes; // Include attributed types in CXType
+        translationFlags |= CXTranslationUnit_VisitImplicitAttributes; // Implicit attributes should be visited
 
-        var config = new PInvokeGeneratorConfiguration(language, std, namespaceName, outputLocation, headerFile, outputMode, configOptions) {
+        var config = new PInvokeGeneratorConfiguration(
+            language,
+            std,
+            namespaceName,
+            outputLocation,
+            headerFile,
+            outputMode,
+            configOptions
+        )
+        {
             DefaultClass = methodClassName,
             ExcludedNames = excludedNames,
             IncludedNames = includedNames,
@@ -1182,7 +1471,14 @@ public class ResponseFileHandler
             translationFlags |= CXTranslationUnit_DetailedPreprocessingRecord;
         }
 
-        return new ResponseFile(errorList, config, files, fileDirectory, clangCommandLineArgs, translationFlags);
+        return new ResponseFile(
+            errorList,
+            config,
+            files,
+            fileDirectory,
+            clangCommandLineArgs,
+            translationFlags
+        );
     }
 
     /// <summary>
@@ -1194,16 +1490,25 @@ public class ResponseFileHandler
     /// <exception cref="InvalidOperationException">
     /// If the directory name of the file could not be determined.
     /// </exception>
-    public IEnumerable<ResponseFile> ReadResponseFiles(string directory, IReadOnlyList<string> globs)
+    public IEnumerable<ResponseFile> ReadResponseFiles(
+        string directory,
+        IReadOnlyList<string> globs
+    )
     {
-        _logger.LogDebug("Looking for response files in {0} (we are in {1})", directory, Environment.CurrentDirectory);
+        _logger.LogDebug(
+            "Looking for response files in {0} (we are in {1})",
+            directory,
+            Environment.CurrentDirectory
+        );
         foreach (var rsp in Glob(globs))
         {
             _logger.LogDebug("Reading found file: {0}", rsp);
-            var dir = Path.GetDirectoryName(rsp) ??
-                      throw new InvalidOperationException("Couldn't get directory name of path");
+            var dir =
+                Path.GetDirectoryName(rsp)
+                ?? throw new InvalidOperationException("Couldn't get directory name of path");
             var read = ReadResponseFile(RspRelativeTo(dir, rsp).ToArray(), dir);
-            yield return read with {
+            yield return read with
+            {
                 FileDirectory = dir
             };
         }
@@ -1249,19 +1554,16 @@ public class ResponseFileHandler
             return path.ToLower().Replace('\\', '/');
         }
 
-        matcher.AddIncludePatterns
-        (
-            paths.Where(x => !x.StartsWith("!")).Select(PathFixup)
-        );
-        matcher.AddExcludePatterns
-        (
+        matcher.AddIncludePatterns(paths.Where(x => !x.StartsWith("!")).Select(PathFixup));
+        matcher.AddExcludePatterns(
             paths.Where(x => x.StartsWith("!")).Select(x => x[1..]).Select(PathFixup)
         );
 
-        return matcher.GetResultsInFullPath(cd)
-            .Concat
-            (
-                paths.Select(x => x.StartsWith('!') ? x[1..] : x)
+        return matcher
+            .GetResultsInFullPath(cd)
+            .Concat(
+                paths
+                    .Select(x => x.StartsWith('!') ? x[1..] : x)
                     .Where(Path.IsPathFullyQualified)
                     .Select(Path.GetPathRoot)
                     .Where(x => x is not null)

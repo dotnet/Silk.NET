@@ -15,7 +15,9 @@ public static class DSL
     [SuppressMessage("ReSharper", "InconsistentNaming")]
     public static NullPtr nullptr
     {
-        [MethodImpl(MethodImplOptions.AggressiveOptimization | MethodImplOptions.AggressiveInlining)]
+        [MethodImpl(
+            MethodImplOptions.AggressiveOptimization | MethodImplOptions.AggressiveInlining
+        )]
         get => new();
     }
 }

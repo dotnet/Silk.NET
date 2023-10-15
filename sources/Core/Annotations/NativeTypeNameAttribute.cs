@@ -3,7 +3,16 @@
 namespace Silk.NET.Core;
 
 /// <summary>Defines the type of a member as it was used in the native signature.</summary>
-[AttributeUsage(AttributeTargets.Struct | AttributeTargets.Enum | AttributeTargets.Property | AttributeTargets.Field | AttributeTargets.Parameter | AttributeTargets.ReturnValue, AllowMultiple = false, Inherited = true)]
+[AttributeUsage(
+    AttributeTargets.Struct
+        | AttributeTargets.Enum
+        | AttributeTargets.Property
+        | AttributeTargets.Field
+        | AttributeTargets.Parameter
+        | AttributeTargets.ReturnValue,
+    AllowMultiple = false,
+    Inherited = true
+)]
 [Conditional("DEBUG")]
 public sealed class NativeTypeNameAttribute : Attribute
 {

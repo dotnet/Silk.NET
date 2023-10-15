@@ -52,7 +52,8 @@ public unsafe ref struct Any
     /// <param name="array"></param>
     /// <returns>The pointer.</returns>
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    public static implicit operator Any(Array array) => new(ref MemoryMarshal.GetArrayDataReference(array));
+    public static implicit operator Any(Array array) =>
+        new(ref MemoryMarshal.GetArrayDataReference(array));
 
     // TODO spans?
 

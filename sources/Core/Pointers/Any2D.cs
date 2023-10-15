@@ -36,13 +36,14 @@ public readonly unsafe ref struct Any2D
     /// </summary>
     public ref Any Ref
     {
-        [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
         get
         {
             // Would use the delegate* trick but this isn't optimised in JIT yet or necessarily safe
             IL.Emit.Ldarg_0();
-            IL.Emit.Ldfld(FieldRef.Field(TypeRef.Type(typeof(Any2D)),
-                nameof(InteriorRef)));
+            IL.Emit.Ldfld(FieldRef.Field(TypeRef.Type(typeof(Any2D)), nameof(InteriorRef)));
             IL.Emit.Ret();
             throw IL.Unreachable();
         }
@@ -54,12 +55,13 @@ public readonly unsafe ref struct Any2D
     /// <param name="index">The index.</param>
     public ref Any this[nuint index]
     {
-        [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
         get
         {
             IL.Emit.Ldarg_0();
-            IL.Emit.Ldfld(FieldRef.Field(TypeRef.Type(typeof(Any2D)),
-                nameof(InteriorRef)));
+            IL.Emit.Ldfld(FieldRef.Field(TypeRef.Type(typeof(Any2D)), nameof(InteriorRef)));
             IL.Emit.Ldarg_1();
             IL.Emit.Sizeof<nuint>();
             IL.Emit.Mul();
@@ -81,8 +83,7 @@ public readonly unsafe ref struct Any2D
     public ref void* GetPinnableReference()
     {
         IL.Emit.Ldarg_0();
-        IL.Emit.Ldfld(FieldRef.Field(TypeRef.Type(typeof(Any2D)),
-            nameof(InteriorRef)));
+        IL.Emit.Ldfld(FieldRef.Field(TypeRef.Type(typeof(Any2D)), nameof(InteriorRef)));
         IL.Emit.Ret();
         throw IL.Unreachable();
     }
@@ -100,8 +101,7 @@ public readonly unsafe ref struct Any2D
         IL.Emit.Initobj(TypeRef.Type(typeof(Any2D)));
         IL.Emit.Ldloca_S("ret");
         IL.Emit.Ldarg_0();
-        IL.Emit.Stfld(
-            FieldRef.Field(TypeRef.Type(typeof(Any2D)), nameof(InteriorRef)));
+        IL.Emit.Stfld(FieldRef.Field(TypeRef.Type(typeof(Any2D)), nameof(InteriorRef)));
         IL.Emit.Ldloc_S("ret");
         IL.Emit.Ret();
         throw IL.Unreachable();
@@ -123,8 +123,12 @@ public readonly unsafe ref struct Any2D
         IL.Emit.Ldarg_0();
         IL.Emit.Ldc_I4_0();
         IL.Emit.Ldelema(TypeRef.Type(typeof(void).MakePointerType()));
-        IL.Emit.Newobj(MethodRef.Constructor(TypeRef.Type(typeof(Any2D)),
-            TypeRef.Type(typeof(Any).MakeByRefType())));
+        IL.Emit.Newobj(
+            MethodRef.Constructor(
+                TypeRef.Type(typeof(Any2D)),
+                TypeRef.Type(typeof(Any).MakeByRefType())
+            )
+        );
         IL.Emit.Ret();
         throw IL.Unreachable();
     }
@@ -143,8 +147,7 @@ public readonly unsafe ref struct Any2D
         IL.Emit.Ldloca_S("ret");
         IL.Emit.Ldc_I4_0();
         IL.Emit.Conv_U();
-        IL.Emit.Stfld(
-            FieldRef.Field(TypeRef.Type(typeof(Any2D)), nameof(InteriorRef)));
+        IL.Emit.Stfld(FieldRef.Field(TypeRef.Type(typeof(Any2D)), nameof(InteriorRef)));
         IL.Emit.Ldloc_S("ret");
         IL.Emit.Ret();
         throw IL.Unreachable();
@@ -162,8 +165,7 @@ public readonly unsafe ref struct Any2D
     public static explicit operator void**(Any2D ptr)
     {
         IL.Emit.Ldarg_0();
-        IL.Emit.Ldfld(
-            FieldRef.Field(TypeRef.Type(typeof(Any2D)), nameof(InteriorRef)));
+        IL.Emit.Ldfld(FieldRef.Field(TypeRef.Type(typeof(Any2D)), nameof(InteriorRef)));
         IL.Emit.Ret();
         throw IL.Unreachable();
     }
@@ -182,7 +184,8 @@ public readonly unsafe ref struct Any2D
 
     /// <inheritdoc />
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    public override int GetHashCode() => HashCode.Combine((nint)Unsafe.AsPointer(ref Unsafe.AsRef(in InteriorRef)));
+    public override int GetHashCode() =>
+        HashCode.Combine((nint)Unsafe.AsPointer(ref Unsafe.AsRef(in InteriorRef)));
 
     /// <summary>
     /// Determines whether the given pointers point to the same location.

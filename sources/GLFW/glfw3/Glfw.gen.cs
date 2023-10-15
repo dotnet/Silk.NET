@@ -673,7 +673,7 @@ public static unsafe partial class Glfw
     {
         fixed (GLFWimage* __dsl_image = image)
         {
-            [DllImport("glfw3", EntryPoint = "glfwCreateCursor")]
+            [DllImport("glfw", EntryPoint = "glfwCreateCursor")]
             static extern GLFWcursor* __DSL_glfwCreateCursor([NativeTypeName("const GLFWimage *")] GLFWimage* image, int xhot, int yhot);
             return __DSL_glfwCreateCursor(__dsl_image, xhot, yhot);
         }
@@ -682,7 +682,7 @@ public static unsafe partial class Glfw
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     public static Ptr<GLFWcursor> glfwCreateStandardCursor(int shape)
     {
-        [DllImport("glfw3", EntryPoint = "glfwCreateStandardCursor")]
+        [DllImport("glfw", EntryPoint = "glfwCreateStandardCursor")]
         static extern GLFWcursor* __DSL_glfwCreateStandardCursor(int shape);
         return __DSL_glfwCreateStandardCursor(shape);
     }
@@ -694,20 +694,20 @@ public static unsafe partial class Glfw
         fixed (GLFWmonitor* __dsl_monitor = monitor)
         fixed (sbyte* __dsl_title = title)
         {
-            [DllImport("glfw3", EntryPoint = "glfwCreateWindow")]
+            [DllImport("glfw", EntryPoint = "glfwCreateWindow")]
             static extern GLFWwindow* __DSL_glfwCreateWindow(int width, int height, [NativeTypeName("const char *")] sbyte* title, GLFWmonitor* monitor, GLFWwindow* share);
             return __DSL_glfwCreateWindow(width, height, __dsl_title, __dsl_monitor, __dsl_share);
         }
     }
 
-    [DllImport("glfw3", ExactSpelling = true)]
+    [DllImport("glfw", ExactSpelling = true)]
     public static extern void glfwDefaultWindowHints();
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     public static void glfwDestroyCursor(Ptr<GLFWcursor> cursor)
     {
         fixed (GLFWcursor* __dsl_cursor = cursor)
         {
-            [DllImport("glfw3", EntryPoint = "glfwDestroyCursor")]
+            [DllImport("glfw", EntryPoint = "glfwDestroyCursor")]
             static extern void __DSL_glfwDestroyCursor(GLFWcursor* cursor);
             __DSL_glfwDestroyCursor(__dsl_cursor);
         }
@@ -718,7 +718,7 @@ public static unsafe partial class Glfw
     {
         fixed (GLFWwindow* __dsl_window = window)
         {
-            [DllImport("glfw3", EntryPoint = "glfwDestroyWindow")]
+            [DllImport("glfw", EntryPoint = "glfwDestroyWindow")]
             static extern void __DSL_glfwDestroyWindow(GLFWwindow* window);
             __DSL_glfwDestroyWindow(__dsl_window);
         }
@@ -729,7 +729,7 @@ public static unsafe partial class Glfw
     {
         fixed (sbyte* __dsl_extension = extension)
         {
-            [DllImport("glfw3", EntryPoint = "glfwExtensionSupported")]
+            [DllImport("glfw", EntryPoint = "glfwExtensionSupported")]
             static extern int __DSL_glfwExtensionSupported([NativeTypeName("const char *")] sbyte* extension);
             return __DSL_glfwExtensionSupported(__dsl_extension);
         }
@@ -740,7 +740,7 @@ public static unsafe partial class Glfw
     {
         fixed (GLFWwindow* __dsl_window = window)
         {
-            [DllImport("glfw3", EntryPoint = "glfwFocusWindow")]
+            [DllImport("glfw", EntryPoint = "glfwFocusWindow")]
             static extern void __DSL_glfwFocusWindow(GLFWwindow* window);
             __DSL_glfwFocusWindow(__dsl_window);
         }
@@ -752,7 +752,7 @@ public static unsafe partial class Glfw
     {
         fixed (GLFWwindow* __dsl_window = window)
         {
-            [DllImport("glfw3", EntryPoint = "glfwGetClipboardString")]
+            [DllImport("glfw", EntryPoint = "glfwGetClipboardString")]
             [return: NativeTypeName("const char *")]
             static extern sbyte* __DSL_glfwGetClipboardString(GLFWwindow* window);
             return __DSL_glfwGetClipboardString(__dsl_window);
@@ -762,7 +762,7 @@ public static unsafe partial class Glfw
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     public static Ptr<GLFWwindow> glfwGetCurrentContext()
     {
-        [DllImport("glfw3", EntryPoint = "glfwGetCurrentContext")]
+        [DllImport("glfw", EntryPoint = "glfwGetCurrentContext")]
         static extern GLFWwindow* __DSL_glfwGetCurrentContext();
         return __DSL_glfwGetCurrentContext();
     }
@@ -774,7 +774,7 @@ public static unsafe partial class Glfw
         fixed (double* __dsl_xpos = xpos)
         fixed (GLFWwindow* __dsl_window = window)
         {
-            [DllImport("glfw3", EntryPoint = "glfwGetCursorPos")]
+            [DllImport("glfw", EntryPoint = "glfwGetCursorPos")]
             static extern void __DSL_glfwGetCursorPos(GLFWwindow* window, double* xpos, double* ypos);
             __DSL_glfwGetCursorPos(__dsl_window, __dsl_xpos, __dsl_ypos);
         }
@@ -785,7 +785,7 @@ public static unsafe partial class Glfw
     {
         fixed (sbyte** __dsl_description = description)
         {
-            [DllImport("glfw3", EntryPoint = "glfwGetError")]
+            [DllImport("glfw", EntryPoint = "glfwGetError")]
             static extern int __DSL_glfwGetError([NativeTypeName("const char **")] sbyte** description);
             return __DSL_glfwGetError(__dsl_description);
         }
@@ -798,7 +798,7 @@ public static unsafe partial class Glfw
         fixed (int* __dsl_width = width)
         fixed (GLFWwindow* __dsl_window = window)
         {
-            [DllImport("glfw3", EntryPoint = "glfwGetFramebufferSize")]
+            [DllImport("glfw", EntryPoint = "glfwGetFramebufferSize")]
             static extern void __DSL_glfwGetFramebufferSize(GLFWwindow* window, int* width, int* height);
             __DSL_glfwGetFramebufferSize(__dsl_window, __dsl_width, __dsl_height);
         }
@@ -808,7 +808,7 @@ public static unsafe partial class Glfw
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     public static ConstPtr<sbyte> glfwGetGamepadName(int jid)
     {
-        [DllImport("glfw3", EntryPoint = "glfwGetGamepadName")]
+        [DllImport("glfw", EntryPoint = "glfwGetGamepadName")]
         [return: NativeTypeName("const char *")]
         static extern sbyte* __DSL_glfwGetGamepadName(int jid);
         return __DSL_glfwGetGamepadName(jid);
@@ -819,7 +819,7 @@ public static unsafe partial class Glfw
     {
         fixed (GLFWgamepadstate* __dsl_state = state)
         {
-            [DllImport("glfw3", EntryPoint = "glfwGetGamepadState")]
+            [DllImport("glfw", EntryPoint = "glfwGetGamepadState")]
             static extern int __DSL_glfwGetGamepadState(int jid, GLFWgamepadstate* state);
             return __DSL_glfwGetGamepadState(jid, __dsl_state);
         }
@@ -831,7 +831,7 @@ public static unsafe partial class Glfw
     {
         fixed (GLFWmonitor* __dsl_monitor = monitor)
         {
-            [DllImport("glfw3", EntryPoint = "glfwGetGammaRamp")]
+            [DllImport("glfw", EntryPoint = "glfwGetGammaRamp")]
             [return: NativeTypeName("const GLFWgammaramp *")]
             static extern GLFWgammaramp* __DSL_glfwGetGammaRamp(GLFWmonitor* monitor);
             return __DSL_glfwGetGammaRamp(__dsl_monitor);
@@ -843,7 +843,7 @@ public static unsafe partial class Glfw
     {
         fixed (GLFWwindow* __dsl_window = window)
         {
-            [DllImport("glfw3", EntryPoint = "glfwGetInputMode")]
+            [DllImport("glfw", EntryPoint = "glfwGetInputMode")]
             static extern int __DSL_glfwGetInputMode(GLFWwindow* window, int mode);
             return __DSL_glfwGetInputMode(__dsl_window, mode);
         }
@@ -855,7 +855,7 @@ public static unsafe partial class Glfw
     {
         fixed (int* __dsl_count = count)
         {
-            [DllImport("glfw3", EntryPoint = "glfwGetJoystickAxes")]
+            [DllImport("glfw", EntryPoint = "glfwGetJoystickAxes")]
             [return: NativeTypeName("const float *")]
             static extern float* __DSL_glfwGetJoystickAxes(int jid, int* count);
             return __DSL_glfwGetJoystickAxes(jid, __dsl_count);
@@ -868,7 +868,7 @@ public static unsafe partial class Glfw
     {
         fixed (int* __dsl_count = count)
         {
-            [DllImport("glfw3", EntryPoint = "glfwGetJoystickButtons")]
+            [DllImport("glfw", EntryPoint = "glfwGetJoystickButtons")]
             [return: NativeTypeName("const unsigned char *")]
             static extern byte* __DSL_glfwGetJoystickButtons(int jid, int* count);
             return __DSL_glfwGetJoystickButtons(jid, __dsl_count);
@@ -879,7 +879,7 @@ public static unsafe partial class Glfw
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     public static ConstPtr<sbyte> glfwGetJoystickGUID(int jid)
     {
-        [DllImport("glfw3", EntryPoint = "glfwGetJoystickGUID")]
+        [DllImport("glfw", EntryPoint = "glfwGetJoystickGUID")]
         [return: NativeTypeName("const char *")]
         static extern sbyte* __DSL_glfwGetJoystickGUID(int jid);
         return __DSL_glfwGetJoystickGUID(jid);
@@ -891,7 +891,7 @@ public static unsafe partial class Glfw
     {
         fixed (int* __dsl_count = count)
         {
-            [DllImport("glfw3", EntryPoint = "glfwGetJoystickHats")]
+            [DllImport("glfw", EntryPoint = "glfwGetJoystickHats")]
             [return: NativeTypeName("const unsigned char *")]
             static extern byte* __DSL_glfwGetJoystickHats(int jid, int* count);
             return __DSL_glfwGetJoystickHats(jid, __dsl_count);
@@ -902,7 +902,7 @@ public static unsafe partial class Glfw
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     public static ConstPtr<sbyte> glfwGetJoystickName(int jid)
     {
-        [DllImport("glfw3", EntryPoint = "glfwGetJoystickName")]
+        [DllImport("glfw", EntryPoint = "glfwGetJoystickName")]
         [return: NativeTypeName("const char *")]
         static extern sbyte* __DSL_glfwGetJoystickName(int jid);
         return __DSL_glfwGetJoystickName(jid);
@@ -911,7 +911,7 @@ public static unsafe partial class Glfw
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     public static Any glfwGetJoystickUserPointer(int jid)
     {
-        [DllImport("glfw3", EntryPoint = "glfwGetJoystickUserPointer")]
+        [DllImport("glfw", EntryPoint = "glfwGetJoystickUserPointer")]
         static extern void* __DSL_glfwGetJoystickUserPointer(int jid);
         return __DSL_glfwGetJoystickUserPointer(jid);
     }
@@ -921,7 +921,7 @@ public static unsafe partial class Glfw
     {
         fixed (GLFWwindow* __dsl_window = window)
         {
-            [DllImport("glfw3", EntryPoint = "glfwGetKey")]
+            [DllImport("glfw", EntryPoint = "glfwGetKey")]
             static extern int __DSL_glfwGetKey(GLFWwindow* window, int key);
             return __DSL_glfwGetKey(__dsl_window, key);
         }
@@ -931,13 +931,13 @@ public static unsafe partial class Glfw
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     public static ConstPtr<sbyte> glfwGetKeyName(int key, int scancode)
     {
-        [DllImport("glfw3", EntryPoint = "glfwGetKeyName")]
+        [DllImport("glfw", EntryPoint = "glfwGetKeyName")]
         [return: NativeTypeName("const char *")]
         static extern sbyte* __DSL_glfwGetKeyName(int key, int scancode);
         return __DSL_glfwGetKeyName(key, scancode);
     }
 
-    [DllImport("glfw3", ExactSpelling = true)]
+    [DllImport("glfw", ExactSpelling = true)]
     public static extern int glfwGetKeyScancode(int key);
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     public static void glfwGetMonitorContentScale(Ptr<GLFWmonitor> monitor, Ptr<float> xscale, Ptr<float> yscale)
@@ -946,7 +946,7 @@ public static unsafe partial class Glfw
         fixed (float* __dsl_xscale = xscale)
         fixed (GLFWmonitor* __dsl_monitor = monitor)
         {
-            [DllImport("glfw3", EntryPoint = "glfwGetMonitorContentScale")]
+            [DllImport("glfw", EntryPoint = "glfwGetMonitorContentScale")]
             static extern void __DSL_glfwGetMonitorContentScale(GLFWmonitor* monitor, float* xscale, float* yscale);
             __DSL_glfwGetMonitorContentScale(__dsl_monitor, __dsl_xscale, __dsl_yscale);
         }
@@ -958,7 +958,7 @@ public static unsafe partial class Glfw
     {
         fixed (GLFWmonitor* __dsl_monitor = monitor)
         {
-            [DllImport("glfw3", EntryPoint = "glfwGetMonitorName")]
+            [DllImport("glfw", EntryPoint = "glfwGetMonitorName")]
             [return: NativeTypeName("const char *")]
             static extern sbyte* __DSL_glfwGetMonitorName(GLFWmonitor* monitor);
             return __DSL_glfwGetMonitorName(__dsl_monitor);
@@ -972,7 +972,7 @@ public static unsafe partial class Glfw
         fixed (int* __dsl_widthMM = widthMM)
         fixed (GLFWmonitor* __dsl_monitor = monitor)
         {
-            [DllImport("glfw3", EntryPoint = "glfwGetMonitorPhysicalSize")]
+            [DllImport("glfw", EntryPoint = "glfwGetMonitorPhysicalSize")]
             static extern void __DSL_glfwGetMonitorPhysicalSize(GLFWmonitor* monitor, int* widthMM, int* heightMM);
             __DSL_glfwGetMonitorPhysicalSize(__dsl_monitor, __dsl_widthMM, __dsl_heightMM);
         }
@@ -985,7 +985,7 @@ public static unsafe partial class Glfw
         fixed (int* __dsl_xpos = xpos)
         fixed (GLFWmonitor* __dsl_monitor = monitor)
         {
-            [DllImport("glfw3", EntryPoint = "glfwGetMonitorPos")]
+            [DllImport("glfw", EntryPoint = "glfwGetMonitorPos")]
             static extern void __DSL_glfwGetMonitorPos(GLFWmonitor* monitor, int* xpos, int* ypos);
             __DSL_glfwGetMonitorPos(__dsl_monitor, __dsl_xpos, __dsl_ypos);
         }
@@ -996,7 +996,7 @@ public static unsafe partial class Glfw
     {
         fixed (int* __dsl_count = count)
         {
-            [DllImport("glfw3", EntryPoint = "glfwGetMonitors")]
+            [DllImport("glfw", EntryPoint = "glfwGetMonitors")]
             static extern GLFWmonitor** __DSL_glfwGetMonitors(int* count);
             return __DSL_glfwGetMonitors(__dsl_count);
         }
@@ -1007,7 +1007,7 @@ public static unsafe partial class Glfw
     {
         fixed (GLFWmonitor* __dsl_monitor = monitor)
         {
-            [DllImport("glfw3", EntryPoint = "glfwGetMonitorUserPointer")]
+            [DllImport("glfw", EntryPoint = "glfwGetMonitorUserPointer")]
             static extern void* __DSL_glfwGetMonitorUserPointer(GLFWmonitor* monitor);
             return __DSL_glfwGetMonitorUserPointer(__dsl_monitor);
         }
@@ -1022,7 +1022,7 @@ public static unsafe partial class Glfw
         fixed (int* __dsl_xpos = xpos)
         fixed (GLFWmonitor* __dsl_monitor = monitor)
         {
-            [DllImport("glfw3", EntryPoint = "glfwGetMonitorWorkarea")]
+            [DllImport("glfw", EntryPoint = "glfwGetMonitorWorkarea")]
             static extern void __DSL_glfwGetMonitorWorkarea(GLFWmonitor* monitor, int* xpos, int* ypos, int* width, int* height);
             __DSL_glfwGetMonitorWorkarea(__dsl_monitor, __dsl_xpos, __dsl_ypos, __dsl_width, __dsl_height);
         }
@@ -1033,18 +1033,18 @@ public static unsafe partial class Glfw
     {
         fixed (GLFWwindow* __dsl_window = window)
         {
-            [DllImport("glfw3", EntryPoint = "glfwGetMouseButton")]
+            [DllImport("glfw", EntryPoint = "glfwGetMouseButton")]
             static extern int __DSL_glfwGetMouseButton(GLFWwindow* window, int button);
             return __DSL_glfwGetMouseButton(__dsl_window, button);
         }
     }
 
-    [DllImport("glfw3", ExactSpelling = true)]
+    [DllImport("glfw", ExactSpelling = true)]
     public static extern int glfwGetPlatform();
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     public static Ptr<GLFWmonitor> glfwGetPrimaryMonitor()
     {
-        [DllImport("glfw3", EntryPoint = "glfwGetPrimaryMonitor")]
+        [DllImport("glfw", EntryPoint = "glfwGetPrimaryMonitor")]
         static extern GLFWmonitor* __DSL_glfwGetPrimaryMonitor();
         return __DSL_glfwGetPrimaryMonitor();
     }
@@ -1055,7 +1055,7 @@ public static unsafe partial class Glfw
     {
         fixed (sbyte* __dsl_procname = procname)
         {
-            [DllImport("glfw3", EntryPoint = "glfwGetProcAddress")]
+            [DllImport("glfw", EntryPoint = "glfwGetProcAddress")]
             [return: NativeTypeName("GLFWglproc")]
             static extern delegate* unmanaged<void> __DSL_glfwGetProcAddress([NativeTypeName("const char *")] sbyte* procname);
             return __DSL_glfwGetProcAddress(__dsl_procname);
@@ -1068,19 +1068,19 @@ public static unsafe partial class Glfw
     {
         fixed (uint* __dsl_count = count)
         {
-            [DllImport("glfw3", EntryPoint = "glfwGetRequiredInstanceExtensions")]
+            [DllImport("glfw", EntryPoint = "glfwGetRequiredInstanceExtensions")]
             [return: NativeTypeName("const char **")]
             static extern sbyte** __DSL_glfwGetRequiredInstanceExtensions([NativeTypeName("uint32_t *")] uint* count);
             return __DSL_glfwGetRequiredInstanceExtensions(__dsl_count);
         }
     }
 
-    [DllImport("glfw3", ExactSpelling = true)]
+    [DllImport("glfw", ExactSpelling = true)]
     public static extern double glfwGetTime();
-    [DllImport("glfw3", ExactSpelling = true)]
+    [DllImport("glfw", ExactSpelling = true)]
     [return: NativeTypeName("uint64_t")]
     public static extern ulong glfwGetTimerFrequency();
-    [DllImport("glfw3", ExactSpelling = true)]
+    [DllImport("glfw", ExactSpelling = true)]
     [return: NativeTypeName("uint64_t")]
     public static extern ulong glfwGetTimerValue();
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
@@ -1090,7 +1090,7 @@ public static unsafe partial class Glfw
         fixed (int* __dsl_minor = minor)
         fixed (int* __dsl_major = major)
         {
-            [DllImport("glfw3", EntryPoint = "glfwGetVersion")]
+            [DllImport("glfw", EntryPoint = "glfwGetVersion")]
             static extern void __DSL_glfwGetVersion(int* major, int* minor, int* rev);
             __DSL_glfwGetVersion(__dsl_major, __dsl_minor, __dsl_rev);
         }
@@ -1100,7 +1100,7 @@ public static unsafe partial class Glfw
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     public static ConstPtr<sbyte> glfwGetVersionString()
     {
-        [DllImport("glfw3", EntryPoint = "glfwGetVersionString")]
+        [DllImport("glfw", EntryPoint = "glfwGetVersionString")]
         [return: NativeTypeName("const char *")]
         static extern sbyte* __DSL_glfwGetVersionString();
         return __DSL_glfwGetVersionString();
@@ -1112,7 +1112,7 @@ public static unsafe partial class Glfw
     {
         fixed (GLFWmonitor* __dsl_monitor = monitor)
         {
-            [DllImport("glfw3", EntryPoint = "glfwGetVideoMode")]
+            [DllImport("glfw", EntryPoint = "glfwGetVideoMode")]
             [return: NativeTypeName("const GLFWvidmode *")]
             static extern GLFWvidmode* __DSL_glfwGetVideoMode(GLFWmonitor* monitor);
             return __DSL_glfwGetVideoMode(__dsl_monitor);
@@ -1126,7 +1126,7 @@ public static unsafe partial class Glfw
         fixed (int* __dsl_count = count)
         fixed (GLFWmonitor* __dsl_monitor = monitor)
         {
-            [DllImport("glfw3", EntryPoint = "glfwGetVideoModes")]
+            [DllImport("glfw", EntryPoint = "glfwGetVideoModes")]
             [return: NativeTypeName("const GLFWvidmode *")]
             static extern GLFWvidmode* __DSL_glfwGetVideoModes(GLFWmonitor* monitor, int* count);
             return __DSL_glfwGetVideoModes(__dsl_monitor, __dsl_count);
@@ -1138,7 +1138,7 @@ public static unsafe partial class Glfw
     {
         fixed (GLFWwindow* __dsl_window = window)
         {
-            [DllImport("glfw3", EntryPoint = "glfwGetWindowAttrib")]
+            [DllImport("glfw", EntryPoint = "glfwGetWindowAttrib")]
             static extern int __DSL_glfwGetWindowAttrib(GLFWwindow* window, int attrib);
             return __DSL_glfwGetWindowAttrib(__dsl_window, attrib);
         }
@@ -1151,7 +1151,7 @@ public static unsafe partial class Glfw
         fixed (float* __dsl_xscale = xscale)
         fixed (GLFWwindow* __dsl_window = window)
         {
-            [DllImport("glfw3", EntryPoint = "glfwGetWindowContentScale")]
+            [DllImport("glfw", EntryPoint = "glfwGetWindowContentScale")]
             static extern void __DSL_glfwGetWindowContentScale(GLFWwindow* window, float* xscale, float* yscale);
             __DSL_glfwGetWindowContentScale(__dsl_window, __dsl_xscale, __dsl_yscale);
         }
@@ -1166,7 +1166,7 @@ public static unsafe partial class Glfw
         fixed (int* __dsl_left = left)
         fixed (GLFWwindow* __dsl_window = window)
         {
-            [DllImport("glfw3", EntryPoint = "glfwGetWindowFrameSize")]
+            [DllImport("glfw", EntryPoint = "glfwGetWindowFrameSize")]
             static extern void __DSL_glfwGetWindowFrameSize(GLFWwindow* window, int* left, int* top, int* right, int* bottom);
             __DSL_glfwGetWindowFrameSize(__dsl_window, __dsl_left, __dsl_top, __dsl_right, __dsl_bottom);
         }
@@ -1177,7 +1177,7 @@ public static unsafe partial class Glfw
     {
         fixed (GLFWwindow* __dsl_window = window)
         {
-            [DllImport("glfw3", EntryPoint = "glfwGetWindowMonitor")]
+            [DllImport("glfw", EntryPoint = "glfwGetWindowMonitor")]
             static extern GLFWmonitor* __DSL_glfwGetWindowMonitor(GLFWwindow* window);
             return __DSL_glfwGetWindowMonitor(__dsl_window);
         }
@@ -1188,7 +1188,7 @@ public static unsafe partial class Glfw
     {
         fixed (GLFWwindow* __dsl_window = window)
         {
-            [DllImport("glfw3", EntryPoint = "glfwGetWindowOpacity")]
+            [DllImport("glfw", EntryPoint = "glfwGetWindowOpacity")]
             static extern float __DSL_glfwGetWindowOpacity(GLFWwindow* window);
             return __DSL_glfwGetWindowOpacity(__dsl_window);
         }
@@ -1201,7 +1201,7 @@ public static unsafe partial class Glfw
         fixed (int* __dsl_xpos = xpos)
         fixed (GLFWwindow* __dsl_window = window)
         {
-            [DllImport("glfw3", EntryPoint = "glfwGetWindowPos")]
+            [DllImport("glfw", EntryPoint = "glfwGetWindowPos")]
             static extern void __DSL_glfwGetWindowPos(GLFWwindow* window, int* xpos, int* ypos);
             __DSL_glfwGetWindowPos(__dsl_window, __dsl_xpos, __dsl_ypos);
         }
@@ -1214,7 +1214,7 @@ public static unsafe partial class Glfw
         fixed (int* __dsl_width = width)
         fixed (GLFWwindow* __dsl_window = window)
         {
-            [DllImport("glfw3", EntryPoint = "glfwGetWindowSize")]
+            [DllImport("glfw", EntryPoint = "glfwGetWindowSize")]
             static extern void __DSL_glfwGetWindowSize(GLFWwindow* window, int* width, int* height);
             __DSL_glfwGetWindowSize(__dsl_window, __dsl_width, __dsl_height);
         }
@@ -1225,7 +1225,7 @@ public static unsafe partial class Glfw
     {
         fixed (GLFWwindow* __dsl_window = window)
         {
-            [DllImport("glfw3", EntryPoint = "glfwGetWindowUserPointer")]
+            [DllImport("glfw", EntryPoint = "glfwGetWindowUserPointer")]
             static extern void* __DSL_glfwGetWindowUserPointer(GLFWwindow* window);
             return __DSL_glfwGetWindowUserPointer(__dsl_window);
         }
@@ -1236,7 +1236,7 @@ public static unsafe partial class Glfw
     {
         fixed (GLFWwindow* __dsl_window = window)
         {
-            [DllImport("glfw3", EntryPoint = "glfwHideWindow")]
+            [DllImport("glfw", EntryPoint = "glfwHideWindow")]
             static extern void __DSL_glfwHideWindow(GLFWwindow* window);
             __DSL_glfwHideWindow(__dsl_window);
         }
@@ -1247,37 +1247,37 @@ public static unsafe partial class Glfw
     {
         fixed (GLFWwindow* __dsl_window = window)
         {
-            [DllImport("glfw3", EntryPoint = "glfwIconifyWindow")]
+            [DllImport("glfw", EntryPoint = "glfwIconifyWindow")]
             static extern void __DSL_glfwIconifyWindow(GLFWwindow* window);
             __DSL_glfwIconifyWindow(__dsl_window);
         }
     }
 
-    [DllImport("glfw3", ExactSpelling = true)]
+    [DllImport("glfw", ExactSpelling = true)]
     public static extern int glfwInit();
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     public static void glfwInitAllocator([NativeTypeName("const GLFWallocator *")] ConstPtr<GLFWallocator> allocator)
     {
         fixed (GLFWallocator* __dsl_allocator = allocator)
         {
-            [DllImport("glfw3", EntryPoint = "glfwInitAllocator")]
+            [DllImport("glfw", EntryPoint = "glfwInitAllocator")]
             static extern void __DSL_glfwInitAllocator([NativeTypeName("const GLFWallocator *")] GLFWallocator* allocator);
             __DSL_glfwInitAllocator(__dsl_allocator);
         }
     }
 
-    [DllImport("glfw3", ExactSpelling = true)]
+    [DllImport("glfw", ExactSpelling = true)]
     public static extern void glfwInitHint(int hint, int value);
-    [DllImport("glfw3", ExactSpelling = true)]
+    [DllImport("glfw", ExactSpelling = true)]
     public static extern int glfwJoystickIsGamepad(int jid);
-    [DllImport("glfw3", ExactSpelling = true)]
+    [DllImport("glfw", ExactSpelling = true)]
     public static extern int glfwJoystickPresent(int jid);
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     public static void glfwMakeContextCurrent(Ptr<GLFWwindow> window)
     {
         fixed (GLFWwindow* __dsl_window = window)
         {
-            [DllImport("glfw3", EntryPoint = "glfwMakeContextCurrent")]
+            [DllImport("glfw", EntryPoint = "glfwMakeContextCurrent")]
             static extern void __DSL_glfwMakeContextCurrent(GLFWwindow* window);
             __DSL_glfwMakeContextCurrent(__dsl_window);
         }
@@ -1288,26 +1288,26 @@ public static unsafe partial class Glfw
     {
         fixed (GLFWwindow* __dsl_window = window)
         {
-            [DllImport("glfw3", EntryPoint = "glfwMaximizeWindow")]
+            [DllImport("glfw", EntryPoint = "glfwMaximizeWindow")]
             static extern void __DSL_glfwMaximizeWindow(GLFWwindow* window);
             __DSL_glfwMaximizeWindow(__dsl_window);
         }
     }
 
-    [DllImport("glfw3", ExactSpelling = true)]
+    [DllImport("glfw", ExactSpelling = true)]
     public static extern int glfwPlatformSupported(int platform);
-    [DllImport("glfw3", ExactSpelling = true)]
+    [DllImport("glfw", ExactSpelling = true)]
     public static extern void glfwPollEvents();
-    [DllImport("glfw3", ExactSpelling = true)]
+    [DllImport("glfw", ExactSpelling = true)]
     public static extern void glfwPostEmptyEvent();
-    [DllImport("glfw3", ExactSpelling = true)]
+    [DllImport("glfw", ExactSpelling = true)]
     public static extern int glfwRawMouseMotionSupported();
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     public static void glfwRequestWindowAttention(Ptr<GLFWwindow> window)
     {
         fixed (GLFWwindow* __dsl_window = window)
         {
-            [DllImport("glfw3", EntryPoint = "glfwRequestWindowAttention")]
+            [DllImport("glfw", EntryPoint = "glfwRequestWindowAttention")]
             static extern void __DSL_glfwRequestWindowAttention(GLFWwindow* window);
             __DSL_glfwRequestWindowAttention(__dsl_window);
         }
@@ -1318,7 +1318,7 @@ public static unsafe partial class Glfw
     {
         fixed (GLFWwindow* __dsl_window = window)
         {
-            [DllImport("glfw3", EntryPoint = "glfwRestoreWindow")]
+            [DllImport("glfw", EntryPoint = "glfwRestoreWindow")]
             static extern void __DSL_glfwRestoreWindow(GLFWwindow* window);
             __DSL_glfwRestoreWindow(__dsl_window);
         }
@@ -1330,7 +1330,7 @@ public static unsafe partial class Glfw
     {
         fixed (GLFWwindow* __dsl_window = window)
         {
-            [DllImport("glfw3", EntryPoint = "glfwSetCharCallback")]
+            [DllImport("glfw", EntryPoint = "glfwSetCharCallback")]
             [return: NativeTypeName("GLFWcharfun")]
             static extern delegate* unmanaged<GLFWwindow*, uint, void> __DSL_glfwSetCharCallback(GLFWwindow* window, [NativeTypeName("GLFWcharfun")] delegate* unmanaged<GLFWwindow*, uint, void> callback);
             return __DSL_glfwSetCharCallback(__dsl_window, callback);
@@ -1343,7 +1343,7 @@ public static unsafe partial class Glfw
     {
         fixed (GLFWwindow* __dsl_window = window)
         {
-            [DllImport("glfw3", EntryPoint = "glfwSetCharModsCallback")]
+            [DllImport("glfw", EntryPoint = "glfwSetCharModsCallback")]
             [return: NativeTypeName("GLFWcharmodsfun")]
             static extern delegate* unmanaged<GLFWwindow*, uint, int, void> __DSL_glfwSetCharModsCallback(GLFWwindow* window, [NativeTypeName("GLFWcharmodsfun")] delegate* unmanaged<GLFWwindow*, uint, int, void> callback);
             return __DSL_glfwSetCharModsCallback(__dsl_window, callback);
@@ -1356,7 +1356,7 @@ public static unsafe partial class Glfw
         fixed (sbyte* __dsl_string = @string)
         fixed (GLFWwindow* __dsl_window = window)
         {
-            [DllImport("glfw3", EntryPoint = "glfwSetClipboardString")]
+            [DllImport("glfw", EntryPoint = "glfwSetClipboardString")]
             static extern void __DSL_glfwSetClipboardString(GLFWwindow* window, [NativeTypeName("const char *")] sbyte* @string);
             __DSL_glfwSetClipboardString(__dsl_window, __dsl_string);
         }
@@ -1368,7 +1368,7 @@ public static unsafe partial class Glfw
         fixed (GLFWcursor* __dsl_cursor = cursor)
         fixed (GLFWwindow* __dsl_window = window)
         {
-            [DllImport("glfw3", EntryPoint = "glfwSetCursor")]
+            [DllImport("glfw", EntryPoint = "glfwSetCursor")]
             static extern void __DSL_glfwSetCursor(GLFWwindow* window, GLFWcursor* cursor);
             __DSL_glfwSetCursor(__dsl_window, __dsl_cursor);
         }
@@ -1380,7 +1380,7 @@ public static unsafe partial class Glfw
     {
         fixed (GLFWwindow* __dsl_window = window)
         {
-            [DllImport("glfw3", EntryPoint = "glfwSetCursorEnterCallback")]
+            [DllImport("glfw", EntryPoint = "glfwSetCursorEnterCallback")]
             [return: NativeTypeName("GLFWcursorenterfun")]
             static extern delegate* unmanaged<GLFWwindow*, int, void> __DSL_glfwSetCursorEnterCallback(GLFWwindow* window, [NativeTypeName("GLFWcursorenterfun")] delegate* unmanaged<GLFWwindow*, int, void> callback);
             return __DSL_glfwSetCursorEnterCallback(__dsl_window, callback);
@@ -1392,7 +1392,7 @@ public static unsafe partial class Glfw
     {
         fixed (GLFWwindow* __dsl_window = window)
         {
-            [DllImport("glfw3", EntryPoint = "glfwSetCursorPos")]
+            [DllImport("glfw", EntryPoint = "glfwSetCursorPos")]
             static extern void __DSL_glfwSetCursorPos(GLFWwindow* window, double xpos, double ypos);
             __DSL_glfwSetCursorPos(__dsl_window, xpos, ypos);
         }
@@ -1404,7 +1404,7 @@ public static unsafe partial class Glfw
     {
         fixed (GLFWwindow* __dsl_window = window)
         {
-            [DllImport("glfw3", EntryPoint = "glfwSetCursorPosCallback")]
+            [DllImport("glfw", EntryPoint = "glfwSetCursorPosCallback")]
             [return: NativeTypeName("GLFWcursorposfun")]
             static extern delegate* unmanaged<GLFWwindow*, double, double, void> __DSL_glfwSetCursorPosCallback(GLFWwindow* window, [NativeTypeName("GLFWcursorposfun")] delegate* unmanaged<GLFWwindow*, double, double, void> callback);
             return __DSL_glfwSetCursorPosCallback(__dsl_window, callback);
@@ -1417,14 +1417,14 @@ public static unsafe partial class Glfw
     {
         fixed (GLFWwindow* __dsl_window = window)
         {
-            [DllImport("glfw3", EntryPoint = "glfwSetDropCallback")]
+            [DllImport("glfw", EntryPoint = "glfwSetDropCallback")]
             [return: NativeTypeName("GLFWdropfun")]
             static extern delegate* unmanaged<GLFWwindow*, int, sbyte**, void> __DSL_glfwSetDropCallback(GLFWwindow* window, [NativeTypeName("GLFWdropfun")] delegate* unmanaged<GLFWwindow*, int, sbyte**, void> callback);
             return __DSL_glfwSetDropCallback(__dsl_window, callback);
         }
     }
 
-    [DllImport("glfw3", ExactSpelling = true)]
+    [DllImport("glfw", ExactSpelling = true)]
     [return: NativeTypeName("GLFWerrorfun")]
     public static extern delegate* unmanaged<int, sbyte*, void> glfwSetErrorCallback([NativeTypeName("GLFWerrorfun")] delegate* unmanaged<int, sbyte*, void> callback);
     [return: NativeTypeName("GLFWframebuffersizefun")]
@@ -1433,7 +1433,7 @@ public static unsafe partial class Glfw
     {
         fixed (GLFWwindow* __dsl_window = window)
         {
-            [DllImport("glfw3", EntryPoint = "glfwSetFramebufferSizeCallback")]
+            [DllImport("glfw", EntryPoint = "glfwSetFramebufferSizeCallback")]
             [return: NativeTypeName("GLFWframebuffersizefun")]
             static extern delegate* unmanaged<GLFWwindow*, int, int, void> __DSL_glfwSetFramebufferSizeCallback(GLFWwindow* window, [NativeTypeName("GLFWframebuffersizefun")] delegate* unmanaged<GLFWwindow*, int, int, void> callback);
             return __DSL_glfwSetFramebufferSizeCallback(__dsl_window, callback);
@@ -1445,7 +1445,7 @@ public static unsafe partial class Glfw
     {
         fixed (GLFWmonitor* __dsl_monitor = monitor)
         {
-            [DllImport("glfw3", EntryPoint = "glfwSetGamma")]
+            [DllImport("glfw", EntryPoint = "glfwSetGamma")]
             static extern void __DSL_glfwSetGamma(GLFWmonitor* monitor, float gamma);
             __DSL_glfwSetGamma(__dsl_monitor, gamma);
         }
@@ -1457,7 +1457,7 @@ public static unsafe partial class Glfw
         fixed (GLFWgammaramp* __dsl_ramp = ramp)
         fixed (GLFWmonitor* __dsl_monitor = monitor)
         {
-            [DllImport("glfw3", EntryPoint = "glfwSetGammaRamp")]
+            [DllImport("glfw", EntryPoint = "glfwSetGammaRamp")]
             static extern void __DSL_glfwSetGammaRamp(GLFWmonitor* monitor, [NativeTypeName("const GLFWgammaramp *")] GLFWgammaramp* ramp);
             __DSL_glfwSetGammaRamp(__dsl_monitor, __dsl_ramp);
         }
@@ -1468,13 +1468,13 @@ public static unsafe partial class Glfw
     {
         fixed (GLFWwindow* __dsl_window = window)
         {
-            [DllImport("glfw3", EntryPoint = "glfwSetInputMode")]
+            [DllImport("glfw", EntryPoint = "glfwSetInputMode")]
             static extern void __DSL_glfwSetInputMode(GLFWwindow* window, int mode, int value);
             __DSL_glfwSetInputMode(__dsl_window, mode, value);
         }
     }
 
-    [DllImport("glfw3", ExactSpelling = true)]
+    [DllImport("glfw", ExactSpelling = true)]
     [return: NativeTypeName("GLFWjoystickfun")]
     public static extern delegate* unmanaged<int, int, void> glfwSetJoystickCallback([NativeTypeName("GLFWjoystickfun")] delegate* unmanaged<int, int, void> callback);
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
@@ -1482,7 +1482,7 @@ public static unsafe partial class Glfw
     {
         fixed (void* __dsl_pointer = pointer)
         {
-            [DllImport("glfw3", EntryPoint = "glfwSetJoystickUserPointer")]
+            [DllImport("glfw", EntryPoint = "glfwSetJoystickUserPointer")]
             static extern void __DSL_glfwSetJoystickUserPointer(int jid, void* pointer);
             __DSL_glfwSetJoystickUserPointer(jid, __dsl_pointer);
         }
@@ -1494,14 +1494,14 @@ public static unsafe partial class Glfw
     {
         fixed (GLFWwindow* __dsl_window = window)
         {
-            [DllImport("glfw3", EntryPoint = "glfwSetKeyCallback")]
+            [DllImport("glfw", EntryPoint = "glfwSetKeyCallback")]
             [return: NativeTypeName("GLFWkeyfun")]
             static extern delegate* unmanaged<GLFWwindow*, int, int, int, int, void> __DSL_glfwSetKeyCallback(GLFWwindow* window, [NativeTypeName("GLFWkeyfun")] delegate* unmanaged<GLFWwindow*, int, int, int, int, void> callback);
             return __DSL_glfwSetKeyCallback(__dsl_window, callback);
         }
     }
 
-    [DllImport("glfw3", ExactSpelling = true)]
+    [DllImport("glfw", ExactSpelling = true)]
     [return: NativeTypeName("GLFWmonitorfun")]
     public static extern delegate* unmanaged<GLFWmonitor*, int, void> glfwSetMonitorCallback([NativeTypeName("GLFWmonitorfun")] delegate* unmanaged<GLFWmonitor*, int, void> callback);
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
@@ -1510,7 +1510,7 @@ public static unsafe partial class Glfw
         fixed (void* __dsl_pointer = pointer)
         fixed (GLFWmonitor* __dsl_monitor = monitor)
         {
-            [DllImport("glfw3", EntryPoint = "glfwSetMonitorUserPointer")]
+            [DllImport("glfw", EntryPoint = "glfwSetMonitorUserPointer")]
             static extern void __DSL_glfwSetMonitorUserPointer(GLFWmonitor* monitor, void* pointer);
             __DSL_glfwSetMonitorUserPointer(__dsl_monitor, __dsl_pointer);
         }
@@ -1522,7 +1522,7 @@ public static unsafe partial class Glfw
     {
         fixed (GLFWwindow* __dsl_window = window)
         {
-            [DllImport("glfw3", EntryPoint = "glfwSetMouseButtonCallback")]
+            [DllImport("glfw", EntryPoint = "glfwSetMouseButtonCallback")]
             [return: NativeTypeName("GLFWmousebuttonfun")]
             static extern delegate* unmanaged<GLFWwindow*, int, int, int, void> __DSL_glfwSetMouseButtonCallback(GLFWwindow* window, [NativeTypeName("GLFWmousebuttonfun")] delegate* unmanaged<GLFWwindow*, int, int, int, void> callback);
             return __DSL_glfwSetMouseButtonCallback(__dsl_window, callback);
@@ -1535,21 +1535,21 @@ public static unsafe partial class Glfw
     {
         fixed (GLFWwindow* __dsl_window = window)
         {
-            [DllImport("glfw3", EntryPoint = "glfwSetScrollCallback")]
+            [DllImport("glfw", EntryPoint = "glfwSetScrollCallback")]
             [return: NativeTypeName("GLFWscrollfun")]
             static extern delegate* unmanaged<GLFWwindow*, double, double, void> __DSL_glfwSetScrollCallback(GLFWwindow* window, [NativeTypeName("GLFWscrollfun")] delegate* unmanaged<GLFWwindow*, double, double, void> callback);
             return __DSL_glfwSetScrollCallback(__dsl_window, callback);
         }
     }
 
-    [DllImport("glfw3", ExactSpelling = true)]
+    [DllImport("glfw", ExactSpelling = true)]
     public static extern void glfwSetTime(double time);
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     public static void glfwSetWindowAspectRatio(Ptr<GLFWwindow> window, int numer, int denom)
     {
         fixed (GLFWwindow* __dsl_window = window)
         {
-            [DllImport("glfw3", EntryPoint = "glfwSetWindowAspectRatio")]
+            [DllImport("glfw", EntryPoint = "glfwSetWindowAspectRatio")]
             static extern void __DSL_glfwSetWindowAspectRatio(GLFWwindow* window, int numer, int denom);
             __DSL_glfwSetWindowAspectRatio(__dsl_window, numer, denom);
         }
@@ -1560,7 +1560,7 @@ public static unsafe partial class Glfw
     {
         fixed (GLFWwindow* __dsl_window = window)
         {
-            [DllImport("glfw3", EntryPoint = "glfwSetWindowAttrib")]
+            [DllImport("glfw", EntryPoint = "glfwSetWindowAttrib")]
             static extern void __DSL_glfwSetWindowAttrib(GLFWwindow* window, int attrib, int value);
             __DSL_glfwSetWindowAttrib(__dsl_window, attrib, value);
         }
@@ -1572,7 +1572,7 @@ public static unsafe partial class Glfw
     {
         fixed (GLFWwindow* __dsl_window = window)
         {
-            [DllImport("glfw3", EntryPoint = "glfwSetWindowCloseCallback")]
+            [DllImport("glfw", EntryPoint = "glfwSetWindowCloseCallback")]
             [return: NativeTypeName("GLFWwindowclosefun")]
             static extern delegate* unmanaged<GLFWwindow*, void> __DSL_glfwSetWindowCloseCallback(GLFWwindow* window, [NativeTypeName("GLFWwindowclosefun")] delegate* unmanaged<GLFWwindow*, void> callback);
             return __DSL_glfwSetWindowCloseCallback(__dsl_window, callback);
@@ -1585,7 +1585,7 @@ public static unsafe partial class Glfw
     {
         fixed (GLFWwindow* __dsl_window = window)
         {
-            [DllImport("glfw3", EntryPoint = "glfwSetWindowContentScaleCallback")]
+            [DllImport("glfw", EntryPoint = "glfwSetWindowContentScaleCallback")]
             [return: NativeTypeName("GLFWwindowcontentscalefun")]
             static extern delegate* unmanaged<GLFWwindow*, float, float, void> __DSL_glfwSetWindowContentScaleCallback(GLFWwindow* window, [NativeTypeName("GLFWwindowcontentscalefun")] delegate* unmanaged<GLFWwindow*, float, float, void> callback);
             return __DSL_glfwSetWindowContentScaleCallback(__dsl_window, callback);
@@ -1598,7 +1598,7 @@ public static unsafe partial class Glfw
     {
         fixed (GLFWwindow* __dsl_window = window)
         {
-            [DllImport("glfw3", EntryPoint = "glfwSetWindowFocusCallback")]
+            [DllImport("glfw", EntryPoint = "glfwSetWindowFocusCallback")]
             [return: NativeTypeName("GLFWwindowfocusfun")]
             static extern delegate* unmanaged<GLFWwindow*, int, void> __DSL_glfwSetWindowFocusCallback(GLFWwindow* window, [NativeTypeName("GLFWwindowfocusfun")] delegate* unmanaged<GLFWwindow*, int, void> callback);
             return __DSL_glfwSetWindowFocusCallback(__dsl_window, callback);
@@ -1611,7 +1611,7 @@ public static unsafe partial class Glfw
         fixed (GLFWimage* __dsl_images = images)
         fixed (GLFWwindow* __dsl_window = window)
         {
-            [DllImport("glfw3", EntryPoint = "glfwSetWindowIcon")]
+            [DllImport("glfw", EntryPoint = "glfwSetWindowIcon")]
             static extern void __DSL_glfwSetWindowIcon(GLFWwindow* window, int count, [NativeTypeName("const GLFWimage *")] GLFWimage* images);
             __DSL_glfwSetWindowIcon(__dsl_window, count, __dsl_images);
         }
@@ -1623,7 +1623,7 @@ public static unsafe partial class Glfw
     {
         fixed (GLFWwindow* __dsl_window = window)
         {
-            [DllImport("glfw3", EntryPoint = "glfwSetWindowIconifyCallback")]
+            [DllImport("glfw", EntryPoint = "glfwSetWindowIconifyCallback")]
             [return: NativeTypeName("GLFWwindowiconifyfun")]
             static extern delegate* unmanaged<GLFWwindow*, int, void> __DSL_glfwSetWindowIconifyCallback(GLFWwindow* window, [NativeTypeName("GLFWwindowiconifyfun")] delegate* unmanaged<GLFWwindow*, int, void> callback);
             return __DSL_glfwSetWindowIconifyCallback(__dsl_window, callback);
@@ -1636,7 +1636,7 @@ public static unsafe partial class Glfw
     {
         fixed (GLFWwindow* __dsl_window = window)
         {
-            [DllImport("glfw3", EntryPoint = "glfwSetWindowMaximizeCallback")]
+            [DllImport("glfw", EntryPoint = "glfwSetWindowMaximizeCallback")]
             [return: NativeTypeName("GLFWwindowmaximizefun")]
             static extern delegate* unmanaged<GLFWwindow*, int, void> __DSL_glfwSetWindowMaximizeCallback(GLFWwindow* window, [NativeTypeName("GLFWwindowmaximizefun")] delegate* unmanaged<GLFWwindow*, int, void> callback);
             return __DSL_glfwSetWindowMaximizeCallback(__dsl_window, callback);
@@ -1649,7 +1649,7 @@ public static unsafe partial class Glfw
         fixed (GLFWmonitor* __dsl_monitor = monitor)
         fixed (GLFWwindow* __dsl_window = window)
         {
-            [DllImport("glfw3", EntryPoint = "glfwSetWindowMonitor")]
+            [DllImport("glfw", EntryPoint = "glfwSetWindowMonitor")]
             static extern void __DSL_glfwSetWindowMonitor(GLFWwindow* window, GLFWmonitor* monitor, int xpos, int ypos, int width, int height, int refreshRate);
             __DSL_glfwSetWindowMonitor(__dsl_window, __dsl_monitor, xpos, ypos, width, height, refreshRate);
         }
@@ -1660,7 +1660,7 @@ public static unsafe partial class Glfw
     {
         fixed (GLFWwindow* __dsl_window = window)
         {
-            [DllImport("glfw3", EntryPoint = "glfwSetWindowOpacity")]
+            [DllImport("glfw", EntryPoint = "glfwSetWindowOpacity")]
             static extern void __DSL_glfwSetWindowOpacity(GLFWwindow* window, float opacity);
             __DSL_glfwSetWindowOpacity(__dsl_window, opacity);
         }
@@ -1671,7 +1671,7 @@ public static unsafe partial class Glfw
     {
         fixed (GLFWwindow* __dsl_window = window)
         {
-            [DllImport("glfw3", EntryPoint = "glfwSetWindowPos")]
+            [DllImport("glfw", EntryPoint = "glfwSetWindowPos")]
             static extern void __DSL_glfwSetWindowPos(GLFWwindow* window, int xpos, int ypos);
             __DSL_glfwSetWindowPos(__dsl_window, xpos, ypos);
         }
@@ -1683,7 +1683,7 @@ public static unsafe partial class Glfw
     {
         fixed (GLFWwindow* __dsl_window = window)
         {
-            [DllImport("glfw3", EntryPoint = "glfwSetWindowPosCallback")]
+            [DllImport("glfw", EntryPoint = "glfwSetWindowPosCallback")]
             [return: NativeTypeName("GLFWwindowposfun")]
             static extern delegate* unmanaged<GLFWwindow*, int, int, void> __DSL_glfwSetWindowPosCallback(GLFWwindow* window, [NativeTypeName("GLFWwindowposfun")] delegate* unmanaged<GLFWwindow*, int, int, void> callback);
             return __DSL_glfwSetWindowPosCallback(__dsl_window, callback);
@@ -1696,7 +1696,7 @@ public static unsafe partial class Glfw
     {
         fixed (GLFWwindow* __dsl_window = window)
         {
-            [DllImport("glfw3", EntryPoint = "glfwSetWindowRefreshCallback")]
+            [DllImport("glfw", EntryPoint = "glfwSetWindowRefreshCallback")]
             [return: NativeTypeName("GLFWwindowrefreshfun")]
             static extern delegate* unmanaged<GLFWwindow*, void> __DSL_glfwSetWindowRefreshCallback(GLFWwindow* window, [NativeTypeName("GLFWwindowrefreshfun")] delegate* unmanaged<GLFWwindow*, void> callback);
             return __DSL_glfwSetWindowRefreshCallback(__dsl_window, callback);
@@ -1708,7 +1708,7 @@ public static unsafe partial class Glfw
     {
         fixed (GLFWwindow* __dsl_window = window)
         {
-            [DllImport("glfw3", EntryPoint = "glfwSetWindowShouldClose")]
+            [DllImport("glfw", EntryPoint = "glfwSetWindowShouldClose")]
             static extern void __DSL_glfwSetWindowShouldClose(GLFWwindow* window, int value);
             __DSL_glfwSetWindowShouldClose(__dsl_window, value);
         }
@@ -1719,7 +1719,7 @@ public static unsafe partial class Glfw
     {
         fixed (GLFWwindow* __dsl_window = window)
         {
-            [DllImport("glfw3", EntryPoint = "glfwSetWindowSize")]
+            [DllImport("glfw", EntryPoint = "glfwSetWindowSize")]
             static extern void __DSL_glfwSetWindowSize(GLFWwindow* window, int width, int height);
             __DSL_glfwSetWindowSize(__dsl_window, width, height);
         }
@@ -1731,7 +1731,7 @@ public static unsafe partial class Glfw
     {
         fixed (GLFWwindow* __dsl_window = window)
         {
-            [DllImport("glfw3", EntryPoint = "glfwSetWindowSizeCallback")]
+            [DllImport("glfw", EntryPoint = "glfwSetWindowSizeCallback")]
             [return: NativeTypeName("GLFWwindowsizefun")]
             static extern delegate* unmanaged<GLFWwindow*, int, int, void> __DSL_glfwSetWindowSizeCallback(GLFWwindow* window, [NativeTypeName("GLFWwindowsizefun")] delegate* unmanaged<GLFWwindow*, int, int, void> callback);
             return __DSL_glfwSetWindowSizeCallback(__dsl_window, callback);
@@ -1743,7 +1743,7 @@ public static unsafe partial class Glfw
     {
         fixed (GLFWwindow* __dsl_window = window)
         {
-            [DllImport("glfw3", EntryPoint = "glfwSetWindowSizeLimits")]
+            [DllImport("glfw", EntryPoint = "glfwSetWindowSizeLimits")]
             static extern void __DSL_glfwSetWindowSizeLimits(GLFWwindow* window, int minwidth, int minheight, int maxwidth, int maxheight);
             __DSL_glfwSetWindowSizeLimits(__dsl_window, minwidth, minheight, maxwidth, maxheight);
         }
@@ -1755,7 +1755,7 @@ public static unsafe partial class Glfw
         fixed (sbyte* __dsl_title = title)
         fixed (GLFWwindow* __dsl_window = window)
         {
-            [DllImport("glfw3", EntryPoint = "glfwSetWindowTitle")]
+            [DllImport("glfw", EntryPoint = "glfwSetWindowTitle")]
             static extern void __DSL_glfwSetWindowTitle(GLFWwindow* window, [NativeTypeName("const char *")] sbyte* title);
             __DSL_glfwSetWindowTitle(__dsl_window, __dsl_title);
         }
@@ -1767,7 +1767,7 @@ public static unsafe partial class Glfw
         fixed (void* __dsl_pointer = pointer)
         fixed (GLFWwindow* __dsl_window = window)
         {
-            [DllImport("glfw3", EntryPoint = "glfwSetWindowUserPointer")]
+            [DllImport("glfw", EntryPoint = "glfwSetWindowUserPointer")]
             static extern void __DSL_glfwSetWindowUserPointer(GLFWwindow* window, void* pointer);
             __DSL_glfwSetWindowUserPointer(__dsl_window, __dsl_pointer);
         }
@@ -1778,7 +1778,7 @@ public static unsafe partial class Glfw
     {
         fixed (GLFWwindow* __dsl_window = window)
         {
-            [DllImport("glfw3", EntryPoint = "glfwShowWindow")]
+            [DllImport("glfw", EntryPoint = "glfwShowWindow")]
             static extern void __DSL_glfwShowWindow(GLFWwindow* window);
             __DSL_glfwShowWindow(__dsl_window);
         }
@@ -1789,41 +1789,41 @@ public static unsafe partial class Glfw
     {
         fixed (GLFWwindow* __dsl_window = window)
         {
-            [DllImport("glfw3", EntryPoint = "glfwSwapBuffers")]
+            [DllImport("glfw", EntryPoint = "glfwSwapBuffers")]
             static extern void __DSL_glfwSwapBuffers(GLFWwindow* window);
             __DSL_glfwSwapBuffers(__dsl_window);
         }
     }
 
-    [DllImport("glfw3", ExactSpelling = true)]
+    [DllImport("glfw", ExactSpelling = true)]
     public static extern void glfwSwapInterval(int interval);
-    [DllImport("glfw3", ExactSpelling = true)]
+    [DllImport("glfw", ExactSpelling = true)]
     public static extern void glfwTerminate();
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     public static int glfwUpdateGamepadMappings([NativeTypeName("const char *")] ConstPtr<sbyte> @string)
     {
         fixed (sbyte* __dsl_string = @string)
         {
-            [DllImport("glfw3", EntryPoint = "glfwUpdateGamepadMappings")]
+            [DllImport("glfw", EntryPoint = "glfwUpdateGamepadMappings")]
             static extern int __DSL_glfwUpdateGamepadMappings([NativeTypeName("const char *")] sbyte* @string);
             return __DSL_glfwUpdateGamepadMappings(__dsl_string);
         }
     }
 
-    [DllImport("glfw3", ExactSpelling = true)]
+    [DllImport("glfw", ExactSpelling = true)]
     public static extern int glfwVulkanSupported();
-    [DllImport("glfw3", ExactSpelling = true)]
+    [DllImport("glfw", ExactSpelling = true)]
     public static extern void glfwWaitEvents();
-    [DllImport("glfw3", ExactSpelling = true)]
+    [DllImport("glfw", ExactSpelling = true)]
     public static extern void glfwWaitEventsTimeout(double timeout);
-    [DllImport("glfw3", ExactSpelling = true)]
+    [DllImport("glfw", ExactSpelling = true)]
     public static extern void glfwWindowHint(int hint, int value);
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     public static void glfwWindowHintString(int hint, [NativeTypeName("const char *")] ConstPtr<sbyte> value)
     {
         fixed (sbyte* __dsl_value = value)
         {
-            [DllImport("glfw3", EntryPoint = "glfwWindowHintString")]
+            [DllImport("glfw", EntryPoint = "glfwWindowHintString")]
             static extern void __DSL_glfwWindowHintString(int hint, [NativeTypeName("const char *")] sbyte* value);
             __DSL_glfwWindowHintString(hint, __dsl_value);
         }
@@ -1834,7 +1834,7 @@ public static unsafe partial class Glfw
     {
         fixed (GLFWwindow* __dsl_window = window)
         {
-            [DllImport("glfw3", EntryPoint = "glfwWindowShouldClose")]
+            [DllImport("glfw", EntryPoint = "glfwWindowShouldClose")]
             static extern int __DSL_glfwWindowShouldClose(GLFWwindow* window);
             return __DSL_glfwWindowShouldClose(__dsl_window);
         }

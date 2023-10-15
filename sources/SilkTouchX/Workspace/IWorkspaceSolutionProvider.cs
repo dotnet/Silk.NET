@@ -24,5 +24,8 @@ public interface IWorkspaceSolutionProvider
     /// <param name="key">The configuration key.</param>
     /// <param name="applyChanges">The lambda that will execute the changes and return the modified solution.</param>
     /// <returns>The result of <see cref="MSBuildWorkspace.TryApplyChanges(Solution)"/>.</returns>
-    Task<bool> ApplyChangesAsync(string key, Func<MSBuildWorkspace, Solution, Task<Solution>> applyChanges);
+    Task<bool> ApplyChangesAsync(
+        string key,
+        Func<MSBuildWorkspace, Solution, Task<Solution>> applyChanges
+    );
 }

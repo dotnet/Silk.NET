@@ -26,8 +26,7 @@ public interface IMod
     /// <param name="key">The job name (corresponds to the configuration key for mod configs).</param>
     /// <param name="config">The job config.</param>
     /// <returns>An asynchronous task.</returns>
-    Task BeforeJobAsync(string key, SilkTouchConfiguration config)
-        => Task.CompletedTask;
+    Task BeforeJobAsync(string key, SilkTouchConfiguration config) => Task.CompletedTask;
 
     /// <summary>
     /// Runs before SilkTouch invokes ClangSharp with the given parsed response files. Gives each mod an opportunity to
@@ -38,8 +37,8 @@ public interface IMod
     /// <returns>
     /// The modified response files to be passed into either the next mod or ClangSharp if this is the last mod.
     /// </returns>
-    Task<List<ResponseFile>> BeforeScrapeAsync(string key, List<ResponseFile> rsps)
-        => Task.FromResult(rsps);
+    Task<List<ResponseFile>> BeforeScrapeAsync(string key, List<ResponseFile> rsps) =>
+        Task.FromResult(rsps);
 
     /// <summary>
     /// Runs after SilkTouch has invoked ClangSharp which generated the given syntax nodes. Gives each mod an
@@ -51,8 +50,8 @@ public interface IMod
     /// The modified syntax nodes to be either passed to the next mod or output from the generator if this is the last
     /// mod.
     /// </returns>
-    Task<GeneratedSyntax> AfterScrapeAsync(string key, GeneratedSyntax syntax)
-        => Task.FromResult(syntax);
+    Task<GeneratedSyntax> AfterScrapeAsync(string key, GeneratedSyntax syntax) =>
+        Task.FromResult(syntax);
 
     /// <summary>
     /// Runs before SilkTouch is going to output the MSBuild workspace. The generated documents have already been added,
@@ -61,8 +60,8 @@ public interface IMod
     /// <param name="key">The job name (corresponds to the configuration key for mod configs).</param>
     /// <param name="workspace">The generated output from scraping.</param>
     /// <returns>The modified MSBuild solution either to be output or passed to the next mod if applicable.</returns>
-    Task<GeneratorWorkspace> BeforeOutputAsync(string key, GeneratorWorkspace workspace)
-        => Task.FromResult(workspace);
+    Task<GeneratorWorkspace> BeforeOutputAsync(string key, GeneratorWorkspace workspace) =>
+        Task.FromResult(workspace);
 
     /// <summary>
     /// Runs after all generation activities have completed. Gives each mod an opportunity to clean up its state for
@@ -70,6 +69,5 @@ public interface IMod
     /// </summary>
     /// <param name="key">The job name (corresponds to the configuration key for mod configs).</param>
     /// <returns>An asynchronous task.</returns>
-    Task AfterJobAsync(string key)
-        => Task.CompletedTask;
+    Task AfterJobAsync(string key) => Task.CompletedTask;
 }

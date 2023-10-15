@@ -12,11 +12,14 @@ public class ModLoader
     /// </summary>
     /// <param name="name">The name.</param>
     /// <returns>The loaded mod if the mod was found, null otherwise.</returns>
-    public static Type? LoadModByName(string name) => name switch
-    {
-        nameof(ChangeNamespace) => typeof(ChangeNamespace),
-        nameof(AddStdIncludes) => typeof(AddStdIncludes),
-        nameof(UseSilkDSL) => typeof(UseSilkDSL),
-        _ => null
-    };
-}
+    public static Type? LoadModByName(string name) =>
+        name switch
+        {
+            nameof(ChangeNamespace) => typeof(ChangeNamespace),
+            nameof(AddStdIncludes) => typeof(AddStdIncludes),
+            nameof(UseSilkDSL) => typeof(UseSilkDSL),
+            nameof(PrettifyNames) => typeof(PrettifyNames),
+            nameof(CSharpier) => typeof(CSharpier),
+            _ => null
+        };
+ }

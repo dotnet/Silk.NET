@@ -14,9 +14,9 @@ namespace SilkTouchX.Mods;
 [AttributeUsage(AttributeTargets.Class)]
 [RequiresUnreferencedCode("Uses reflection to get attributes on a given mod type.")]
 [DynamicallyAccessedMembers(DynamicallyAccessedMemberTypes.All)]
-public class ModConfigurationAttribute<[DynamicallyAccessedMembers(DynamicallyAccessedMemberTypes.All)] TOptions> : Attribute
-{
-}
+public class ModConfigurationAttribute<
+    [DynamicallyAccessedMembers(DynamicallyAccessedMemberTypes.All)] TOptions
+> : Attribute { }
 
 /// <summary>
 /// Contains helper functions for <see cref="ModConfigurationAttribute{TOptions}"/>.
@@ -30,9 +30,14 @@ public static class ModConfigurationAttribute
     /// <returns>The type, or null if no configuration is specified.</returns>
     public static Type? GetConfigurationType(Type modType)
     {
-        var attribute = modType.GetCustomAttribute(typeof(ModConfigurationAttribute<>), inherit: false);
-        if (attribute is not null
-            && attribute.GetType().GetGenericTypeDefinition() == typeof(ModConfigurationAttribute<>))
+        var attribute = modType.GetCustomAttribute(
+            typeof(ModConfigurationAttribute<>),
+            inherit: false
+        );
+        if (
+            attribute is not null
+            && attribute.GetType().GetGenericTypeDefinition() == typeof(ModConfigurationAttribute<>)
+        )
         {
             return attribute.GetType().GetGenericArguments()[0];
         }

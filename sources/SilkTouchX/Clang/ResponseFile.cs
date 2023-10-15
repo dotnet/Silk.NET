@@ -15,8 +15,7 @@ namespace SilkTouchX.Clang;
 /// Additional clang command line arguments to use when creating the translation unit.
 /// </param>
 /// <param name="TranslationFlags">Flags to use when creating the translation unit.</param>
-public record ResponseFile
-(
+public record ResponseFile(
     IReadOnlyList<string> ErrorList,
     PInvokeGeneratorConfiguration GeneratorConfiguration,
     IReadOnlyList<string> Files,

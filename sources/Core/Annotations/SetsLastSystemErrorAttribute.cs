@@ -9,7 +9,5 @@ namespace Silk.NET.Core;
 public sealed class SetsLastSystemErrorAttribute : Attribute
 {
     /// <summary>Initializes a new instance of the <see cref="SetsLastSystemErrorAttribute" /> class.</summary>
-    public SetsLastSystemErrorAttribute()
-    {
-    }
+    public SetsLastSystemErrorAttribute() { }
 }

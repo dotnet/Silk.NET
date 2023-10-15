@@ -23,7 +23,10 @@ public class WindowsStdIncludeResolver : IStdIncludeResolver
     {
         if (VisualStudioResolver.TryGetVisualStudioInfo(out var info))
         {
-            _logger.LogInformation("Successfully resolved VS to {path}", info.InstallationBaseFolder);
+            _logger.LogInformation(
+                "Successfully resolved VS to {path}",
+                info.InstallationBaseFolder
+            );
             return info.MsvcToolsIncludes.Concat(info.UcrtIncludes);
         }
 

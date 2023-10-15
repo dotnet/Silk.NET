@@ -34,7 +34,8 @@ internal record struct SetupInstance(ISetupInstance Instance)
     public bool IsComplete => (State.GetValueOrDefault() & InstanceState.Complete) != 0;
     public bool? IsLaunchable => (Instance as ISetupInstance2)?.IsLaunchable();
     public bool? IsPrerelease => (Instance as ISetupInstanceCatalog)?.IsPrerelease();
-    public bool IsRebootRequired => (State.GetValueOrDefault() & InstanceState.NoRebootRequired) == 0;
+    public bool IsRebootRequired =>
+        (State.GetValueOrDefault() & InstanceState.NoRebootRequired) == 0;
     public string DisplayName => Instance.GetDisplayName();
     public string Description => Instance.GetDescription();
     public string? EnginePath => (Instance as ISetupInstance2)?.GetEnginePath();
@@ -57,8 +58,8 @@ internal record struct SetupInstance(ISetupInstance Instance)
         }
     }
 
-    public PackageReference[]? Packages
-        => (Instance as ISetupInstance2)?.GetPackages().Select(x => new PackageReference(x)).ToArray();
+    public PackageReference[]? Packages =>
+        (Instance as ISetupInstance2)?.GetPackages().Select(x => new PackageReference(x)).ToArray();
 }
 
 [SupportedOSPlatform("windows")]

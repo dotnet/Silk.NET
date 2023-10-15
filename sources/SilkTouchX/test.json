@@ -35,7 +35,9 @@
       "Solution": "../../SilkX.sln",
       "Mods": [
         "AddStdIncludes",
-        "UseSilkDSL"
+        "UseSilkDSL",
+        "PrettifyNames",
+        "CSharpier"
       ]
     }
   }

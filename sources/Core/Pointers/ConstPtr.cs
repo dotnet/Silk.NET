@@ -8,7 +8,8 @@ namespace Silk.NET.Core;
 /// Represents a constant pointer.
 /// </summary>
 /// <typeparam name="T">The pointee type.</typeparam>
-public readonly unsafe ref struct ConstPtr<T> where T: unmanaged
+public readonly unsafe ref struct ConstPtr<T>
+    where T : unmanaged
 {
     /// <summary>
     /// The underlying reference.
@@ -36,7 +37,9 @@ public readonly unsafe ref struct ConstPtr<T> where T: unmanaged
     /// <param name="index">The index.</param>
     public ref readonly T this[nuint index]
     {
-        [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
         get => ref Unsafe.Add(ref Unsafe.AsRef(in Ref), index);
     }
 
@@ -45,7 +48,8 @@ public readonly unsafe ref struct ConstPtr<T> where T: unmanaged
     /// </summary>
     /// <param name="len">The span length.</param>
     /// <returns>The span.</returns>
-    public ReadOnlySpan<T> AsSpan(int len) => MemoryMarshal.CreateReadOnlySpan(ref Unsafe.AsRef(in Ref), len);
+    public ReadOnlySpan<T> AsSpan(int len) =>
+        MemoryMarshal.CreateReadOnlySpan(ref Unsafe.AsRef(in Ref), len);
 
     /// <summary>
     /// Creates a <see cref="ConstPtr{T}"/> from a <see cref="string"/>. This implicitly marshals the string.
@@ -61,17 +65,23 @@ public readonly unsafe ref struct ConstPtr<T> where T: unmanaged
     {
         if (typeof(T) == typeof(char) || typeof(T) == typeof(ushort) || typeof(T) == typeof(short))
         {
-            return new ConstPtr<T>(ref Unsafe.As<char, T>(ref Unsafe.AsRef(in str.GetPinnableReference())));
+            return new ConstPtr<T>(
+                ref Unsafe.As<char, T>(ref Unsafe.AsRef(in str.GetPinnableReference()))
+            );
         }
 
         if (typeof(T) == typeof(byte) || typeof(T) == typeof(sbyte))
         {
-            return new ConstPtr<T>(ref Unsafe.As<byte, T>(ref Unsafe.AsRef(in SilkMarshal.StringToNative(str))));
+            return new ConstPtr<T>(
+                ref Unsafe.As<byte, T>(ref Unsafe.AsRef(in SilkMarshal.StringToNative(str)))
+            );
         }
 
         if (typeof(T) == typeof(uint) || typeof(T) == typeof(int))
         {
-            return new ConstPtr<T>(ref Unsafe.As<byte, T>(ref Unsafe.AsRef(in SilkMarshal.StringToNative(str, 4))));
+            return new ConstPtr<T>(
+                ref Unsafe.As<byte, T>(ref Unsafe.AsRef(in SilkMarshal.StringToNative(str, 4)))
+            );
         }
 
         static void Throw() => throw new InvalidCastException();
@@ -93,7 +103,8 @@ public readonly unsafe ref struct ConstPtr<T> where T: unmanaged
     /// <param name="span">The span.</param>
     /// <returns>The pointer.</returns>
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    public static implicit operator ConstPtr<T>(Span<T> span) => new(ref span.GetPinnableReference());
+    public static implicit operator ConstPtr<T>(Span<T> span) =>
+        new(ref span.GetPinnableReference());
 
     /// <summary>
     /// Creates a <see cref="ConstPtr{T}"/> from a span.
@@ -129,7 +140,8 @@ public readonly unsafe ref struct ConstPtr<T> where T: unmanaged
     /// This is unsafe if the reference is a managed reference. You should prefer pinning using <c>fixed</c> instead.
     /// </remarks>
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    public static explicit operator T*(ConstPtr<T> ptr) => (T*) Unsafe.AsPointer(ref Unsafe.AsRef(in ptr.Ref));
+    public static explicit operator T*(ConstPtr<T> ptr) =>
+        (T*)Unsafe.AsPointer(ref Unsafe.AsRef(in ptr.Ref));
 
     /// <summary>
     /// Unsafely gets the pointer to the underlying reference of this <see cref="ConstPtr{T}"/>.
@@ -140,7 +152,8 @@ public readonly unsafe ref struct ConstPtr<T> where T: unmanaged
     /// This is unsafe if the reference is a managed reference. You should prefer pinning using <c>fixed</c> instead.
     /// </remarks>
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    public static explicit operator void*(ConstPtr<T> ptr) => Unsafe.AsPointer(ref Unsafe.AsRef(in ptr.Ref));
+    public static explicit operator void*(ConstPtr<T> ptr) =>
+        Unsafe.AsPointer(ref Unsafe.AsRef(in ptr.Ref));
 
     /// <summary>
     /// Converts this pointer to a string.
@@ -162,7 +175,9 @@ public readonly unsafe ref struct ConstPtr<T> where T: unmanaged
         {
             fixed (void* raw = ptr)
             {
-                return Encoding.UTF8.GetString(MemoryMarshal.CreateReadOnlySpanFromNullTerminated((byte*)raw));
+                return Encoding.UTF8.GetString(
+                    MemoryMarshal.CreateReadOnlySpanFromNullTerminated((byte*)raw)
+                );
             }
         }
 
@@ -192,11 +207,13 @@ public readonly unsafe ref struct ConstPtr<T> where T: unmanaged
     /// <param name="other">The other pointer.</param>
     /// <returns>Whether the pointers are equal.</returns>
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    public bool Equals(ConstPtr<T> other) => Unsafe.AreSame(ref Unsafe.AsRef(in Ref), ref Unsafe.AsRef(in other.Ref));
+    public bool Equals(ConstPtr<T> other) =>
+        Unsafe.AreSame(ref Unsafe.AsRef(in Ref), ref Unsafe.AsRef(in other.Ref));
 
     /// <inheritdoc />
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    public override int GetHashCode() => HashCode.Combine((nint)Unsafe.AsPointer(ref Unsafe.AsRef(in Ref)));
+    public override int GetHashCode() =>
+        HashCode.Combine((nint)Unsafe.AsPointer(ref Unsafe.AsRef(in Ref)));
 
     /// <summary>
     /// Determines whether the given pointers point to the same location.
@@ -232,5 +249,6 @@ public readonly unsafe ref struct ConstPtr<T> where T: unmanaged
     /// <param name="_"><see cref="DSL.nullptr"/></param>
     /// <returns>Whether the pointer is null.</returns>
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    public static bool operator ==(ConstPtr<T> left, NullPtr _) => Unsafe.IsNullRef(ref Unsafe.AsRef(in left.Ref));
+    public static bool operator ==(ConstPtr<T> left, NullPtr _) =>
+        Unsafe.IsNullRef(ref Unsafe.AsRef(in left.Ref));
 }

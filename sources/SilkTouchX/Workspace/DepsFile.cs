@@ -22,7 +22,9 @@ public static class DepsFile
         var outputEnd = inputText.LastIndexOf(':');
         if (outputEnd == -1)
         {
-            throw new InvalidOperationException("Deps file did not contain ':' - should be in makefile format.");
+            throw new InvalidOperationException(
+                "Deps file did not contain ':' - should be in makefile format."
+            );
         }
 
         var outputs = inputText[..outputEnd];

@@ -17,6 +17,7 @@ public static unsafe class SilkMarshal
     private record GCHandleSentinel(GCHandle Handle)
     {
         public DependentHandle? DependentHandle { get; set; }
+
         ~GCHandleSentinel()
         {
             DependentHandle?.Dispose();
@@ -87,10 +88,14 @@ public static unsafe class SilkMarshal
                 byte[]? arr = null;
                 try
                 {
-                    var utf8 = maxCharCount > 256
-                        ? arr = ArrayPool<byte>.Shared.Rent(maxCharCount)
-                        : stackalloc byte[maxCharCount];
-                    if (Utf8.FromUtf16(str, utf8, out _, out var bytesWritten) != OperationStatus.Done)
+                    var utf8 =
+                        maxCharCount > 256
+                            ? arr = ArrayPool<byte>.Shared.Rent(maxCharCount)
+                            : stackalloc byte[maxCharCount];
+                    if (
+                        Utf8.FromUtf16(str, utf8, out _, out var bytesWritten)
+                        != OperationStatus.Done
+                    )
                     {
                         throw new ArgumentException("Failed to convert to UTF8", nameof(str));
                     }
@@ -113,7 +118,8 @@ public static unsafe class SilkMarshal
             case 2:
             {
                 var utf16 = new byte[(str.Length + 1) * 2];
-                MemoryMarshal.CreateReadOnlySpan(ref Unsafe.AsRef(in str[0]), str.Length + 1)
+                MemoryMarshal
+                    .CreateReadOnlySpan(ref Unsafe.AsRef(in str[0]), str.Length + 1)
                     .CopyTo(MemoryMarshal.Cast<byte, char>(utf16));
                 return utf16;
             }
@@ -123,9 +129,10 @@ public static unsafe class SilkMarshal
                 byte[]? arr = null;
                 try
                 {
-                    var utf32 = maxCharCount > 256
-                        ? arr = ArrayPool<byte>.Shared.Rent(maxCharCount)
-                        : stackalloc byte[maxCharCount];
+                    var utf32 =
+                        maxCharCount > 256
+                            ? arr = ArrayPool<byte>.Shared.Rent(maxCharCount)
+                            : stackalloc byte[maxCharCount];
                     var bytesWritten = Encoding.UTF32.GetBytes(str, utf32);
                     utf32 = utf32[..(bytesWritten + 4)];
                     Unsafe.As<byte, int>(ref utf32[bytesWritten]) = 0;
@@ -144,7 +151,10 @@ public static unsafe class SilkMarshal
             }
             default:
             {
-                throw new ArgumentException("Invalid char size, must be 1, 2, or 4", nameof(charSize));
+                throw new ArgumentException(
+                    "Invalid char size, must be 1, 2, or 4",
+                    nameof(charSize)
+                );
             }
         }
     }
@@ -168,7 +178,9 @@ public static unsafe class SilkMarshal
             var dep = new DependentHandle(ret, sentinel);
             if (!dep.IsAllocated)
             {
-                throw new InvalidOperationException("Failed to allocate dependent handle to keep string alive");
+                throw new InvalidOperationException(
+                    "Failed to allocate dependent handle to keep string alive"
+                );
             }
 
             sentinel.DependentHandle = dep;
@@ -204,7 +216,8 @@ public static unsafe class SilkMarshal
     /// <returns>The created array.</returns>
     /// <exception cref="InvalidOperationException">A GC exception occurred.</exception>
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
-    public static T*[] JaggedArrayToPointerArray<T>(ReadOnlySpan<T[]> array) where T : unmanaged
+    public static T*[] JaggedArrayToPointerArray<T>(ReadOnlySpan<T[]> array)
+        where T : unmanaged
     {
         var ret = new T*[array.Length];
         for (var i = 0; i < array.Length; i++)
@@ -214,11 +227,13 @@ public static unsafe class SilkMarshal
             var dep = new DependentHandle(ret, sentinel);
             if (!dep.IsAllocated)
             {
-                throw new InvalidOperationException("Failed to allocate dependent handle to keep string alive");
+                throw new InvalidOperationException(
+                    "Failed to allocate dependent handle to keep string alive"
+                );
             }
 
             sentinel.DependentHandle = dep;
-            ret[i] = (T*) handle.AddrOfPinnedObject();
+            ret[i] = (T*)handle.AddrOfPinnedObject();
         }
 
         return ret;
@@ -266,7 +281,9 @@ public static unsafe class SilkMarshal
             {
                 fixed (byte* ptr = &native)
                 {
-                    return Encoding.UTF8.GetString(MemoryMarshal.CreateReadOnlySpanFromNullTerminated(ptr));
+                    return Encoding.UTF8.GetString(
+                        MemoryMarshal.CreateReadOnlySpanFromNullTerminated(ptr)
+                    );
                 }
             }
             case 2:
@@ -302,7 +319,8 @@ public static unsafe class SilkMarshal
     /// <param name="ref">A reference to a <typeparamref name="T"/>.</param>
     /// <typeparam name="T">The pointee type.</typeparam>
     /// <returns>The pointer to the given reference.</returns>
-    public static ConstPtr<T> AsPtr<T>(ref this T @ref) where T: unmanaged => new(ref @ref);
+    public static ConstPtr<T> AsPtr<T>(ref this T @ref)
+        where T : unmanaged => new(ref @ref);
 
     /// <summary>
     /// Creates a pointer from a span.
@@ -310,8 +328,8 @@ public static unsafe class SilkMarshal
     /// <param name="ref">A span of <typeparamref name="T"/>.</param>
     /// <typeparam name="T">The pointee type.</typeparam>
     /// <returns>The pointer to the given span's elements.</returns>
-    public static ConstPtr<T> AsPtr<T>(this Span<T> @ref) where T : unmanaged =>
-        new(ref @ref.GetPinnableReference());
+    public static ConstPtr<T> AsPtr<T>(this Span<T> @ref)
+        where T : unmanaged => new(ref @ref.GetPinnableReference());
 
     /// <summary>
     /// Creates a pointer from a reference.
@@ -319,7 +337,8 @@ public static unsafe class SilkMarshal
     /// <param name="ref">A reference to a <see cref="ConstPtr{T}"/>.</param>
     /// <typeparam name="T">The pointee type.</typeparam>
     /// <returns>The pointer to the given reference.</returns>
-    public static ConstPtr2D<T> AsPtr2D<T>(ref this ConstPtr<T> @ref) where T : unmanaged => new(ref @ref);
+    public static ConstPtr2D<T> AsPtr2D<T>(ref this ConstPtr<T> @ref)
+        where T : unmanaged => new(ref @ref);
 
     /// <summary>
     /// Creates a pointer from a reference.
@@ -327,11 +346,16 @@ public static unsafe class SilkMarshal
     /// <param name="ref">A reference to a <see cref="ConstPtr{T}"/>.</param>
     /// <typeparam name="T">The pointee type.</typeparam>
     /// <returns>The pointer to the given reference.</returns>
-    public static ConstPtr2D<T> AsPtr2D<T>(ref this Span<T> @ref) where T : unmanaged
+    public static ConstPtr2D<T> AsPtr2D<T>(ref this Span<T> @ref)
+        where T : unmanaged
     {
         IL.Emit.Ldarg_0();
-        IL.Emit.Newobj(MethodRef.Constructor(TypeRef.Type(typeof(ConstPtr2D<>).MakeGenericType(typeof(T))),
-            TypeRef.Type(typeof(ConstPtr<>).MakeGenericType(typeof(T)).MakeByRefType())));
+        IL.Emit.Newobj(
+            MethodRef.Constructor(
+                TypeRef.Type(typeof(ConstPtr2D<>).MakeGenericType(typeof(T))),
+                TypeRef.Type(typeof(ConstPtr<>).MakeGenericType(typeof(T)).MakeByRefType())
+            )
+        );
         IL.Emit.Ret();
         throw IL.Unreachable();
     }
@@ -342,7 +366,8 @@ public static unsafe class SilkMarshal
     /// <param name="ref">A reference to a <typeparamref name="T"/>.</param>
     /// <typeparam name="T">The pointee type.</typeparam>
     /// <returns>The pointer to the given reference.</returns>
-    public static Ptr<T> AsPtrMut<T>(ref this T @ref) where T: unmanaged => new(ref @ref);
+    public static Ptr<T> AsPtrMut<T>(ref this T @ref)
+        where T : unmanaged => new(ref @ref);
 
     /// <summary>
     /// Creates a pointer from a span.
@@ -350,8 +375,8 @@ public static unsafe class SilkMarshal
     /// <param name="ref">A span of <typeparamref name="T"/>.</param>
     /// <typeparam name="T">The pointee type.</typeparam>
     /// <returns>The pointer to the given span's elements.</returns>
-    public static Ptr<T> AsPtrMut<T>(this Span<T> @ref) where T : unmanaged =>
-        new(ref @ref.GetPinnableReference());
+    public static Ptr<T> AsPtrMut<T>(this Span<T> @ref)
+        where T : unmanaged => new(ref @ref.GetPinnableReference());
 
     /// <summary>
     /// Creates a pointer from a reference.
@@ -359,7 +384,8 @@ public static unsafe class SilkMarshal
     /// <param name="ref">A reference to a <see cref="ConstPtr{T}"/>.</param>
     /// <typeparam name="T">The pointee type.</typeparam>
     /// <returns>The pointer to the given reference.</returns>
-    public static Ptr2D<T> AsPtrMut2D<T>(ref this Ptr<T> @ref) where T : unmanaged => new(ref @ref);
+    public static Ptr2D<T> AsPtrMut2D<T>(ref this Ptr<T> @ref)
+        where T : unmanaged => new(ref @ref);
 
     /// <summary>
     /// Creates a pointer from a reference.
@@ -367,11 +393,16 @@ public static unsafe class SilkMarshal
     /// <param name="ref">A reference to a <see cref="ConstPtr{T}"/>.</param>
     /// <typeparam name="T">The pointee type.</typeparam>
     /// <returns>The pointer to the given reference.</returns>
-    public static Ptr2D<T> AsPtrMut2D<T>(ref this Span<T> @ref) where T : unmanaged
+    public static Ptr2D<T> AsPtrMut2D<T>(ref this Span<T> @ref)
+        where T : unmanaged
     {
         IL.Emit.Ldarg_0();
-        IL.Emit.Newobj(MethodRef.Constructor(TypeRef.Type(typeof(ConstPtr2D<>).MakeGenericType(typeof(T))),
-            TypeRef.Type(typeof(ConstPtr<>).MakeGenericType(typeof(T)).MakeByRefType())));
+        IL.Emit.Newobj(
+            MethodRef.Constructor(
+                TypeRef.Type(typeof(ConstPtr2D<>).MakeGenericType(typeof(T))),
+                TypeRef.Type(typeof(ConstPtr<>).MakeGenericType(typeof(T)).MakeByRefType())
+            )
+        );
         IL.Emit.Ret();
         throw IL.Unreachable();
     }
@@ -382,20 +413,8 @@ public static unsafe class SilkMarshal
     /// <param name="ptr">The pointer.</param>
     /// <typeparam name="T">The pointee type.</typeparam>
     /// <returns>The reinterpreted pointer.</returns>
-    public static Ptr<T> ConstCast<T>(ConstPtr<T> ptr) where T : unmanaged
-    {
-        IL.Emit.Ldarg_0();
-        IL.Emit.Ret();
-        throw IL.Unreachable();
-    }
-
-    /// <summary>
-    /// Unsafely creates a <see cref="Ptr{T}"/> from a <see cref="ConstPtr{T}"/>.
-    /// </summary>
-    /// <param name="ptr">The pointer.</param>
-    /// <typeparam name="T">The pointee type.</typeparam>
-    /// <returns>The reinterpreted pointer.</returns>
-    public static ref Ptr<T> ConstCast<T>(ref ConstPtr<T> ptr) where T : unmanaged
+    public static Ptr<T> ConstCast<T>(ConstPtr<T> ptr)
+        where T : unmanaged
     {
         IL.Emit.Ldarg_0();
         IL.Emit.Ret();
@@ -408,7 +427,8 @@ public static unsafe class SilkMarshal
     /// <param name="ptr">The pointer.</param>
     /// <typeparam name="T">The pointee type.</typeparam>
     /// <returns>The reinterpreted pointer.</returns>
-    public static Ptr2D<T> ConstCast<T>(ConstPtr2D<T> ptr) where T : unmanaged
+    public static ref Ptr<T> ConstCast<T>(ref ConstPtr<T> ptr)
+        where T : unmanaged
     {
         IL.Emit.Ldarg_0();
         IL.Emit.Ret();
@@ -421,7 +441,22 @@ public static unsafe class SilkMarshal
     /// <param name="ptr">The pointer.</param>
     /// <typeparam name="T">The pointee type.</typeparam>
     /// <returns>The reinterpreted pointer.</returns>
-    public static ref Ptr2D<T> ConstCast<T>(ref ConstPtr2D<T> ptr) where T : unmanaged
+    public static Ptr2D<T> ConstCast<T>(ConstPtr2D<T> ptr)
+        where T : unmanaged
+    {
+        IL.Emit.Ldarg_0();
+        IL.Emit.Ret();
+        throw IL.Unreachable();
+    }
+
+    /// <summary>
+    /// Unsafely creates a <see cref="Ptr{T}"/> from a <see cref="ConstPtr{T}"/>.
+    /// </summary>
+    /// <param name="ptr">The pointer.</param>
+    /// <typeparam name="T">The pointee type.</typeparam>
+    /// <returns>The reinterpreted pointer.</returns>
+    public static ref Ptr2D<T> ConstCast<T>(ref ConstPtr2D<T> ptr)
+        where T : unmanaged
     {
         IL.Emit.Ldarg_0();
         IL.Emit.Ret();

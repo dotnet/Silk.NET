@@ -40,13 +40,20 @@ public class SilkTouchGenerator
     /// <param name="logger">The logger.</param>
     /// <param name="mods">The mods to use.</param>
     /// <param name="workspaceProvider">The MSBuild workspace/solution provider.</param>
-    public SilkTouchGenerator(ClangScraper scraper,
+    public SilkTouchGenerator(
+        ClangScraper scraper,
         ResponseFileHandler rspHandler,
         ILogger<SilkTouchGenerator> logger,
         IEnumerable<IMod> mods,
-        IWorkspaceSolutionProvider workspaceProvider)
-        => (_scraper, _rspHandler, _logger, _mods, _workspaceProvider) =
-            (scraper, rspHandler, logger, mods.ToArray(), workspaceProvider);
+        IWorkspaceSolutionProvider workspaceProvider
+    ) =>
+        (_scraper, _rspHandler, _logger, _mods, _workspaceProvider) = (
+            scraper,
+            rspHandler,
+            logger,
+            mods.ToArray(),
+            workspaceProvider
+        );
 
     /// <summary>
     /// Generates binding syntax trees per the given configuration.
@@ -55,9 +62,11 @@ public class SilkTouchGenerator
     /// <param name="job">The configuration.</param>
     /// <param name="ct">Cancellation token (if any)</param>
     /// <returns>The generated bindings' syntax trees.</returns>
-    public async Task<GeneratedSyntax> GenerateSyntaxAsync(string key,
+    public async Task<GeneratedSyntax> GenerateSyntaxAsync(
+        string key,
         SilkTouchConfiguration job,
-        CancellationToken ct = default)
+        CancellationToken ct = default
+    )
     {
         // Prepare the mods
         foreach (var mod in _mods)
@@ -68,14 +77,17 @@ public class SilkTouchGenerator
 
         // Read the response files
         _logger.LogInformation("Reading response files for {0}, please wait...", key);
-        var rsps = job.ClangSharpResponseFiles.SelectMany(file =>
-                _rspHandler.ReadResponseFiles(file, job.ClangSharpResponseFiles))
+        var rsps = job.ClangSharpResponseFiles
+            .SelectMany(file => _rspHandler.ReadResponseFiles(file, job.ClangSharpResponseFiles))
             .ToList();
 
         // Figure out what the common root is so we can aggregate the file paths without collisions
-        var srcRoot = job.InputSourceRoot ?? GetLongestCommonPath(rsps.Select(x => x.GeneratorConfiguration.OutputLocation));
-        var testRoot = job.InputTestRoot ??
-                       GetLongestCommonPath(rsps.Select(x => x.GeneratorConfiguration.TestOutputLocation));
+        var srcRoot =
+            job.InputSourceRoot
+            ?? GetLongestCommonPath(rsps.Select(x => x.GeneratorConfiguration.OutputLocation));
+        var testRoot =
+            job.InputTestRoot
+            ?? GetLongestCommonPath(rsps.Select(x => x.GeneratorConfiguration.TestOutputLocation));
         srcRoot = Path.GetFullPath(srcRoot);
         testRoot = Path.GetFullPath(testRoot);
 
@@ -83,63 +95,92 @@ public class SilkTouchGenerator
         // ReSharper disable once LoopCanBeConvertedToQuery
         foreach (var mod in _mods)
         {
-            _logger.LogInformation("Applying {0} mod to response files for {1}...", mod.GetType().Name, key);
+            _logger.LogInformation(
+                "Applying {0} mod to response files for {1}...",
+                mod.GetType().Name,
+                key
+            );
             rsps = await mod.BeforeScrapeAsync(key, rsps);
         }
 
         // Run the scraper over the response files
         var aggregatedBindings = new ConcurrentDictionary<string, Stream>();
         var aggregatedDiagnostics = new ConcurrentBag<Diagnostic>();
-        await Parallel.ForEachAsync(rsps, ct, async (rsp, innerCt) => await Task.Run(() => {
-            var rawBindings = _scraper.ScrapeRawBindings(rsp);
-            foreach (var (k, v) in rawBindings.Files)
-            {
-                string relativeKey;
-                if (k.StartsWith("sources/"))
-                {
-                    relativeKey =
-                        Path.Combine(
-                            "sources",
-                            Path.GetRelativePath(srcRoot, rsp.GeneratorConfiguration.OutputLocation),
-                            k[8..]);
-                }
-                else if (k.StartsWith("tests/"))
-                {
-                    relativeKey =
-                        Path.Combine(
-                            "tests",
-                            Path.GetRelativePath(testRoot, rsp.GeneratorConfiguration.TestOutputLocation),
-                            k[6..]);
-                }
-                else
-                {
-                    throw new InvalidOperationException("Bad scraper output keys.");
-                }
+        await Parallel.ForEachAsync(
+            rsps,
+            ct,
+            async (rsp, innerCt) =>
+                await Task.Run(
+                    () =>
+                    {
+                        var rawBindings = _scraper.ScrapeRawBindings(rsp);
+                        foreach (var (k, v) in rawBindings.Files)
+                        {
+                            string relativeKey;
+                            if (k.StartsWith("sources/"))
+                            {
+                                relativeKey = Path.Combine(
+                                    "sources",
+                                    Path.GetRelativePath(
+                                        srcRoot,
+                                        rsp.GeneratorConfiguration.OutputLocation
+                                    ),
+                                    k[8..]
+                                );
+                            }
+                            else if (k.StartsWith("tests/"))
+                            {
+                                relativeKey = Path.Combine(
+                                    "tests",
+                                    Path.GetRelativePath(
+                                        testRoot,
+                                        rsp.GeneratorConfiguration.TestOutputLocation
+                                    ),
+                                    k[6..]
+                                );
+                            }
+                            else
+                            {
+                                throw new InvalidOperationException("Bad scraper output keys.");
+                            }
 
-                relativeKey = relativeKey.Replace('\\', '/').TrimEnd('/');
-                if (!aggregatedBindings.TryAdd(relativeKey,
-                        job.ManualOverrides?.TryGetValue(relativeKey, out var @override) ?? false
-                            ? File.OpenRead(@override)
-                            : v))
-                {
-                    _logger.LogError("Failed to add {0} - are the response file outputs conflicting?", relativeKey);
-                }
-                else
-                {
-                    _logger.LogTrace("ClangSharp generated {0}", relativeKey);
-                }
-            }
+                            relativeKey = relativeKey.Replace('\\', '/').TrimEnd('/');
+                            if (
+                                !aggregatedBindings.TryAdd(
+                                    relativeKey,
+                                    job.ManualOverrides?.TryGetValue(relativeKey, out var @override)
+                                    ?? false
+                                        ? File.OpenRead(@override)
+                                        : v
+                                )
+                            )
+                            {
+                                _logger.LogError(
+                                    "Failed to add {0} - are the response file outputs conflicting?",
+                                    relativeKey
+                                );
+                            }
+                            else
+                            {
+                                _logger.LogTrace("ClangSharp generated {0}", relativeKey);
+                            }
+                        }
 
-            foreach (var diag in rawBindings.Diagnostics)
-            {
-                aggregatedDiagnostics.Add(diag);
-            }
-        }, innerCt));
+                        foreach (var diag in rawBindings.Diagnostics)
+                        {
+                            aggregatedDiagnostics.Add(diag);
+                        }
+                    },
+                    innerCt
+                )
+        );
 
         // Read the bindings as syntax trees
         _logger.LogInformation("Parsing bindings for {0}...", key);
-        var syntaxTrees = aggregatedBindings.ToDictionary(kvp => kvp.Key,
-            kvp => CSharpSyntaxTree.ParseText(SourceText.From(kvp.Value)).GetRoot());
+        var syntaxTrees = aggregatedBindings.ToDictionary(
+            kvp => kvp.Key,
+            kvp => CSharpSyntaxTree.ParseText(SourceText.From(kvp.Value)).GetRoot()
+        );
         aggregatedBindings.Clear(); // GC ASAP
         var bindings = new GeneratedSyntax(syntaxTrees, aggregatedDiagnostics.ToList());
 
@@ -147,7 +188,11 @@ public class SilkTouchGenerator
         // ReSharper disable once LoopCanBeConvertedToQuery
         foreach (var mod in _mods)
         {
-            _logger.LogInformation("Applying {0} mod to syntax trees for {1}...", mod.GetType().Name, key);
+            _logger.LogInformation(
+                "Applying {0} mod to syntax trees for {1}...",
+                mod.GetType().Name,
+                key
+            );
             bindings = await mod.AfterScrapeAsync(key, bindings);
         }
 
@@ -162,28 +207,37 @@ public class SilkTouchGenerator
     /// <param name="job">The generation configuration.</param>
     /// <param name="ct">Cancellation token (if any)</param>
     /// <returns>The generated bindings as memory-mapped streams.</returns>
-    public async Task<GeneratedBindings> GenerateBindingsAsync(string key,
+    public async Task<GeneratedBindings> GenerateBindingsAsync(
+        string key,
         SilkTouchConfiguration job,
-        CancellationToken ct = default)
+        CancellationToken ct = default
+    )
     {
         var result = await GenerateSyntaxAsync(key, job, ct);
-        return new GeneratedBindings(result.Files.ToDictionary(x => x.Key, x => {
-            // Create a temporary stream - this will be copied into a mmap later to ensure that we don't eat RAM
-            using var ms = new MemoryStream();
-            using var sw = new StreamWriter(ms);
-            x.Value.NormalizeWhitespace(eol: "\n").WriteTo(sw);
-            sw.Flush();
-            ms.Seek(0, SeekOrigin.Begin);
+        return new GeneratedBindings(
+            result.Files.ToDictionary(
+                x => x.Key,
+                x =>
+                {
+                    // Create a temporary stream - this will be copied into a mmap later to ensure that we don't eat RAM
+                    using var ms = new MemoryStream();
+                    using var sw = new StreamWriter(ms);
+                    x.Value.NormalizeWhitespace(eol: "\n").WriteTo(sw);
+                    sw.Flush();
+                    ms.Seek(0, SeekOrigin.Begin);
 
-            // Create a memory-mapped file
-            var mmf = MemoryMappedFile.CreateNew(null, ms.Length);
-            using var stream = mmf.CreateViewStream();
-            ms.CopyTo(stream);
-            stream.Flush();
+                    // Create a memory-mapped file
+                    var mmf = MemoryMappedFile.CreateNew(null, ms.Length);
+                    using var stream = mmf.CreateViewStream();
+                    ms.CopyTo(stream);
+                    stream.Flush();
 
-            // Return a read-only stream to ensure noone tries to write to it directly
-            return (Stream)mmf.CreateViewStream(0, ms.Length, MemoryMappedFileAccess.Read);
-        }), result.Diagnostics);
+                    // Return a read-only stream to ensure noone tries to write to it directly
+                    return (Stream)mmf.CreateViewStream(0, ms.Length, MemoryMappedFileAccess.Read);
+                }
+            ),
+            result.Diagnostics
+        );
     }
 
     /// <summary>
@@ -192,9 +246,11 @@ public class SilkTouchGenerator
     /// <param name="key">The name of the current job (used as a configuration key).</param>
     /// <param name="job">The generation configuration.</param>
     /// <param name="ct">Cancellation token (if any)</param>
-    public async Task<IReadOnlyList<Diagnostic>> OutputBindingsAsync(string key,
+    public async Task<IReadOnlyList<Diagnostic>> OutputBindingsAsync(
+        string key,
         SilkTouchConfiguration job,
-        CancellationToken ct = default)
+        CancellationToken ct = default
+    )
     {
         // Generate syntax
         var result = await GenerateSyntaxAsync(key, job, ct);
@@ -210,65 +266,102 @@ public class SilkTouchGenerator
         (string, string)? srcDeps = null;
         (string, string)? tstDeps = null;
         _logger.LogInformation("Loading workspace for {0}'s solution ({1})...", key, job.Solution);
-        var applied = await _workspaceProvider.ApplyChangesAsync(key, async (workspace, sln) => {
-            // Try and find the project for the source output
-            var (_, tmpSrcProj, srcFiles) =
-                await FindAndPrepareProjectAsync(sln, job.OutputSourceRoot, "sources/", result, null, ct);
-            // Try and find the project for the test output
-            var (srcProj, tstProj, tstFiles) =
-                await FindAndPrepareProjectAsync(sln, job.OutputTestRoot, "tests/", result, tmpSrcProj, ct);
-            // Run mods
-            // ReSharper disable NullCoalescingConditionIsAlwaysNotNullAccordingToAPIContract
-            var genWorkspace = new GeneratorWorkspace(workspace, srcProj, tstProj, srcFiles ?? Array.Empty<string>(),
-                tstFiles ?? Array.Empty<string>());
-            // ReSharper restore NullCoalescingConditionIsAlwaysNotNullAccordingToAPIContract
-            // ReSharper disable once LoopCanBeConvertedToQuery
-            foreach (var mod in _mods)
+        var applied = await _workspaceProvider.ApplyChangesAsync(
+            key,
+            async (workspace, sln) =>
             {
-                _logger.LogInformation("Applying {0} mod to workspace for {1}...", mod.GetType().Name, key);
-                genWorkspace = await mod.BeforeOutputAsync(key, genWorkspace);
-            }
-
-            // Update the file lists post-modding
-            if (genWorkspace is { SourceProject: not null } && srcFiles is not null)
-            {
-                srcFiles = RecreateFileList(srcProj!, genWorkspace.SourceProject, srcFiles);
-                srcProj = genWorkspace.SourceProject;
-                if (srcProj.FilePath is not null)
+                // Try and find the project for the source output
+                var (_, tmpSrcProj, srcFiles) = await FindAndPrepareProjectAsync(
+                    sln,
+                    job.OutputSourceRoot,
+                    "sources/",
+                    result,
+                    null,
+                    ct
+                );
+                // Try and find the project for the test output
+                var (srcProj, tstProj, tstFiles) = await FindAndPrepareProjectAsync(
+                    sln,
+                    job.OutputTestRoot,
+                    "tests/",
+                    result,
+                    tmpSrcProj,
+                    ct
+                );
+                // Run mods
+                // ReSharper disable NullCoalescingConditionIsAlwaysNotNullAccordingToAPIContract
+                var genWorkspace = new GeneratorWorkspace(
+                    workspace,
+                    srcProj,
+                    tstProj,
+                    srcFiles ?? Array.Empty<string>(),
+                    tstFiles ?? Array.Empty<string>()
+                );
+                // ReSharper restore NullCoalescingConditionIsAlwaysNotNullAccordingToAPIContract
+                // ReSharper disable once LoopCanBeConvertedToQuery
+                foreach (var mod in _mods)
                 {
-                    //srcCsprojContents = (srcProj.FilePath, await File.ReadAllTextAsync(srcProj.FilePath, ct));
+                    _logger.LogInformation(
+                        "Applying {0} mod to workspace for {1}...",
+                        mod.GetType().Name,
+                        key
+                    );
+                    genWorkspace = await mod.BeforeOutputAsync(key, genWorkspace);
                 }
-            }
-            if (genWorkspace is { TestProject: not null } && tstFiles is not null)
-            {
-                tstFiles = RecreateFileList(tstProj!, genWorkspace.TestProject, tstFiles);
-                tstProj = genWorkspace.TestProject;
-                if (tstProj.FilePath is not null)
-                {
-                    //tstCsprojContents = (tstProj.FilePath, await File.ReadAllTextAsync(tstProj.FilePath, ct));
-                }
-            }
 
-            // ReSharper disable ConditionIsAlwaysTrueOrFalseAccordingToNullableAPIContract
-            if (srcProj is not null && tstProj is not null && srcProj.Solution != tstProj.Solution)
-            {
-                throw new InvalidOperationException(
-                    "After modding, the source and test projects come from different solutions!");
+                // Update the file lists post-modding
+                if (genWorkspace is { SourceProject: not null } && srcFiles is not null)
+                {
+                    srcFiles = RecreateFileList(srcProj!, genWorkspace.SourceProject, srcFiles);
+                    srcProj = genWorkspace.SourceProject;
+                    if (srcProj.FilePath is not null)
+                    {
+                        //srcCsprojContents = (srcProj.FilePath, await File.ReadAllTextAsync(srcProj.FilePath, ct));
+                    }
+                }
+                if (genWorkspace is { TestProject: not null } && tstFiles is not null)
+                {
+                    tstFiles = RecreateFileList(tstProj!, genWorkspace.TestProject, tstFiles);
+                    tstProj = genWorkspace.TestProject;
+                    if (tstProj.FilePath is not null)
+                    {
+                        //tstCsprojContents = (tstProj.FilePath, await File.ReadAllTextAsync(tstProj.FilePath, ct));
+                    }
+                }
+
+                // ReSharper disable ConditionIsAlwaysTrueOrFalseAccordingToNullableAPIContract
+                if (
+                    srcProj is not null
+                    && tstProj is not null
+                    && srcProj.Solution != tstProj.Solution
+                )
+                {
+                    throw new InvalidOperationException(
+                        "After modding, the source and test projects come from different solutions!"
+                    );
+                }
+                // ReSharper restore ConditionIsAlwaysTrueOrFalseAccordingToNullableAPIContract
+                if (srcFiles?.Count > 0)
+                {
+                    srcDeps = (
+                        Path.Combine(job.OutputSourceRoot!, ".silktouch.d"),
+                        DepsFile.Create(Enumerable.Empty<string>(), srcFiles)
+                    );
+                }
+                if (tstFiles?.Count > 0)
+                {
+                    tstDeps = (
+                        Path.Combine(job.OutputTestRoot!, ".silktouch.d"),
+                        DepsFile.Create(Enumerable.Empty<string>(), tstFiles)
+                    );
+                }
+                _logger.LogInformation(
+                    "Applying changes to workspace for {0}, please wait...",
+                    key
+                );
+                return srcProj?.Solution ?? tstProj?.Solution ?? sln;
             }
-            // ReSharper restore ConditionIsAlwaysTrueOrFalseAccordingToNullableAPIContract
-            if (srcFiles?.Count > 0)
-            {
-                srcDeps = (Path.Combine(job.OutputSourceRoot!, ".silktouch.d"),
-                    DepsFile.Create(Enumerable.Empty<string>(), srcFiles));
-            }
-            if (tstFiles?.Count > 0)
-            {
-                tstDeps = (Path.Combine(job.OutputTestRoot!, ".silktouch.d"),
-                    DepsFile.Create(Enumerable.Empty<string>(), tstFiles));
-            }
-            _logger.LogInformation("Applying changes to workspace for {0}, please wait...", key);
-            return srcProj?.Solution ?? tstProj?.Solution ?? sln;
-        });
+        );
 
         if (applied)
         {
@@ -300,32 +393,44 @@ public class SilkTouchGenerator
         return result.Diagnostics;
     }
 
-    private async Task<(Project?, Project?, IReadOnlyList<string>)> FindAndPrepareProjectAsync(Solution sln,
+    private async Task<(Project?, Project?, IReadOnlyList<string>)> FindAndPrepareProjectAsync(
+        Solution sln,
         string? srcRoot,
         string label,
         GeneratedSyntax syntax,
         Project? ogSrcProj = null,
         CancellationToken ct = default,
-        [CallerArgumentExpression(nameof(srcRoot))]
-        string property = "")
+        [CallerArgumentExpression(nameof(srcRoot))] string property = ""
+    )
     {
         if (string.IsNullOrWhiteSpace(srcRoot))
         {
-            _logger.LogWarning("Not outputting {0} files due to {1} being omitted.", label.TrimEnd('/'), property);
+            _logger.LogWarning(
+                "Not outputting {0} files due to {1} being omitted.",
+                label.TrimEnd('/'),
+                property
+            );
             return (ogSrcProj, null, Array.Empty<string>());
         }
 
         srcRoot = Path.GetFullPath(srcRoot);
 
         // Try and find the project for the source output
-        var srcProj = sln.Projects.Where(x => x.FilePath is not null).FirstOrDefault(x =>
-            Path.GetDirectoryName(Path.GetFullPath(x.FilePath!))?.Replace('\\', '/').TrimEnd('/') ==
-            Path.GetFullPath(srcRoot).Replace('\\', '/').TrimEnd('/'));
+        var srcProj = sln.Projects
+            .Where(x => x.FilePath is not null)
+            .FirstOrDefault(
+                x =>
+                    Path.GetDirectoryName(Path.GetFullPath(x.FilePath!))
+                        ?.Replace('\\', '/')
+                        .TrimEnd('/') == Path.GetFullPath(srcRoot).Replace('\\', '/').TrimEnd('/')
+            );
         if (srcProj is null)
         {
             _logger.LogWarning(
                 "Couldn't find project in solution matching {0} output directory, not outputting {1}.",
-                label.TrimEnd('/'), label);
+                label.TrimEnd('/'),
+                label
+            );
             return (ogSrcProj, null, Array.Empty<string>());
         }
 
@@ -335,22 +440,24 @@ public class SilkTouchGenerator
         {
             _logger.LogTrace("Removing old documents per .silktouch.d...");
             var (_, oldFiles) = DepsFile.Parse(await File.ReadAllTextAsync(file, ct));
-            oldFiles = oldFiles.Select(x => Path.GetFullPath(x, srcRoot)
-                    .Replace('\\', '/'))
+            oldFiles = oldFiles
+                .Select(x => Path.GetFullPath(x, srcRoot).Replace('\\', '/'))
                 .ToArray();
-            srcProj = srcProj.RemoveDocuments(srcProj.Documents
-                .Where(x => {
-                    if (x.FilePath is null)
+            srcProj = srcProj.RemoveDocuments(
+                srcProj.Documents
+                    .Where(x =>
                     {
-                        return false;
-                    }
+                        if (x.FilePath is null)
+                        {
+                            return false;
+                        }
 
-                    var fx = Path.GetFullPath(x.FilePath, srcRoot)
-                        .Replace('\\', '/');
-                    return !fx.StartsWith("../") && oldFiles.Contains(fx);
-                })
-                .Select(x => x.Id)
-                .ToImmutableArray());
+                        var fx = Path.GetFullPath(x.FilePath, srcRoot).Replace('\\', '/');
+                        return !fx.StartsWith("../") && oldFiles.Contains(fx);
+                    })
+                    .Select(x => x.Id)
+                    .ToImmutableArray()
+            );
         }
 
         // Add new files
@@ -369,16 +476,23 @@ public class SilkTouchGenerator
             srcProj = doc.Project;
         }
 
-        var newSrcProj = ogSrcProj is null ? null : srcProj.Solution.Projects.First(x => x.Id == ogSrcProj.Id);
+        var newSrcProj = ogSrcProj is null
+            ? null
+            : srcProj.Solution.Projects.First(x => x.Id == ogSrcProj.Id);
         return (newSrcProj, srcProj, files.ToArray());
     }
 
-    private IReadOnlyList<string> RecreateFileList(Project originalProject,
+    private IReadOnlyList<string> RecreateFileList(
+        Project originalProject,
         Project newProject,
-        IReadOnlyList<string> oldFileList)
+        IReadOnlyList<string> oldFileList
+    )
     {
         // TODO might need to do more work here, feels too easy...
-        var baseFiles = originalProject.Documents.Where(x => !oldFileList.Contains(x.Name)).Select(x => x.Name).ToHashSet();
+        var baseFiles = originalProject.Documents
+            .Where(x => !oldFileList.Contains(x.Name))
+            .Select(x => x.Name)
+            .ToHashSet();
         var newFiles = newProject.Documents.Where(x => !baseFiles.Contains(x.Name));
         return newFiles.Select(x => x.Name).ToArray();
     }
@@ -405,7 +519,9 @@ public class SilkTouchGenerator
 
     internal static string GetLongestCommonPath(IEnumerable<string> s)
     {
-        var ret = GetLongestCommonPrefix(s.Select(x => Path.GetFullPath(x.Replace('\\', '/').TrimEnd('/'))).ToArray());
+        var ret = GetLongestCommonPrefix(
+            s.Select(x => Path.GetFullPath(x.Replace('\\', '/').TrimEnd('/'))).ToArray()
+        );
         Debug.Assert(Directory.Exists(ret));
         return ret;
     }

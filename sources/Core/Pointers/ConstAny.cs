@@ -25,7 +25,8 @@ public readonly unsafe ref struct ConstAny
     /// <param name="ref">The </param>
     /// <typeparam name="T"></typeparam>
     /// <returns></returns>
-    public static ConstAny Create<T>(in T @ref) => new ConstAny(ref Unsafe.As<T, byte>(ref Unsafe.AsRef(in @ref)));
+    public static ConstAny Create<T>(in T @ref) =>
+        new ConstAny(ref Unsafe.As<T, byte>(ref Unsafe.AsRef(in @ref)));
 
     /// <summary>
     /// Gets the underlying reference.
@@ -52,7 +53,8 @@ public readonly unsafe ref struct ConstAny
     /// <param name="array"></param>
     /// <returns>The pointer.</returns>
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    public static implicit operator ConstAny(Array array) => new(ref MemoryMarshal.GetArrayDataReference(array));
+    public static implicit operator ConstAny(Array array) =>
+        new(ref MemoryMarshal.GetArrayDataReference(array));
 
     // TODO spans?
 
@@ -81,7 +83,8 @@ public readonly unsafe ref struct ConstAny
     /// This is unsafe if the reference is a managed reference. You should prefer pinning using <c>fixed</c> instead.
     /// </remarks>
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    public static explicit operator void*(ConstAny ptr) => Unsafe.AsPointer(ref Unsafe.AsRef(in ptr.Ref));
+    public static explicit operator void*(ConstAny ptr) =>
+        Unsafe.AsPointer(ref Unsafe.AsRef(in ptr.Ref));
 
     // TODO strings?
 
@@ -94,11 +97,13 @@ public readonly unsafe ref struct ConstAny
     /// <param name="other">The other pointer.</param>
     /// <returns>Whether the pointers are equal.</returns>
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    public bool Equals(ConstAny other) => Unsafe.AreSame(ref Unsafe.AsRef(in Ref), ref Unsafe.AsRef(in other.Ref));
+    public bool Equals(ConstAny other) =>
+        Unsafe.AreSame(ref Unsafe.AsRef(in Ref), ref Unsafe.AsRef(in other.Ref));
 
     /// <inheritdoc />
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    public override int GetHashCode() => HashCode.Combine((nint)Unsafe.AsPointer(ref Unsafe.AsRef(in Ref)));
+    public override int GetHashCode() =>
+        HashCode.Combine((nint)Unsafe.AsPointer(ref Unsafe.AsRef(in Ref)));
 
     /// <summary>
     /// Determines whether the given pointers point to the same location.
@@ -134,5 +139,6 @@ public readonly unsafe ref struct ConstAny
     /// <param name="_"><see cref="DSL.nullptr"/></param>
     /// <returns>Whether the pointer is null.</returns>
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    public static bool operator ==(ConstAny left, NullPtr _) => Unsafe.IsNullRef(ref Unsafe.AsRef(in left.Ref));
+    public static bool operator ==(ConstAny left, NullPtr _) =>
+        Unsafe.IsNullRef(ref Unsafe.AsRef(in left.Ref));
 }

@@ -28,8 +28,7 @@ namespace SilkTouchX.Clang;
 /// <param name="Variables">
 /// The environment variables captured within a Developer Command Prompt for this installation.
 /// </param>
-public record VisualStudioInfo
-(
+public record VisualStudioInfo(
     string Name,
     string InstallationBaseFolder,
     string UcrtSdkDir,
@@ -94,10 +93,9 @@ public static class VisualStudioResolver
         foreach (var visualStudio in visualStudios)
         {
             hasVs = true;
-            Debug.WriteLine
-            (
-                $"Testing \"{visualStudio.DisplayName}\" v{visualStudio.InstallationVersion.ToString(3)} at " +
-                $"\"{visualStudio.InstallationPath}\"..."
+            Debug.WriteLine(
+                $"Testing \"{visualStudio.DisplayName}\" v{visualStudio.InstallationVersion.ToString(3)} at "
+                    + $"\"{visualStudio.InstallationPath}\"..."
             );
 
             if (!VisualStudioVarPrint.TryRun(visualStudio.InstallationPath, out var vars))
@@ -107,9 +105,11 @@ public static class VisualStudioResolver
                 return false;
             }
 
-            if (!vars.TryGetValue(MsvcInstallDirVar, out var msvcInstallDir) ||
-                !vars.TryGetValue(WinSdkUcrtSdkDirVar, out var winSdkUcrtSdkDir) ||
-                !vars.TryGetValue(WinSdkUcrtVersionVar, out var winSdkUcrtVersion))
+            if (
+                !vars.TryGetValue(MsvcInstallDirVar, out var msvcInstallDir)
+                || !vars.TryGetValue(WinSdkUcrtSdkDirVar, out var winSdkUcrtSdkDir)
+                || !vars.TryGetValue(WinSdkUcrtVersionVar, out var winSdkUcrtVersion)
+            )
             {
                 Debug.WriteLine($"\"{visualStudio.DisplayName}\" is not a viable candidate.");
                 continue;
@@ -129,8 +129,7 @@ public static class VisualStudioResolver
                 .Where(Directory.Exists)
                 .ToArray();
 
-            _cachedInfo = info = new
-            (
+            _cachedInfo = info = new(
                 visualStudio.DisplayName,
                 visualStudio.InstallationPath,
                 winSdkUcrtSdkDir,
@@ -142,11 +141,10 @@ public static class VisualStudioResolver
                 vars
             );
 
-            Console.WriteLine
-            (
-                $"Using \"{visualStudio.DisplayName}\" v{visualStudio.InstallationVersion.ToString(3)} " +
-                $"(in \"{visualStudio.InstallationPath}\") with Windows SDK v{info.UcrtVersion.ToString(4)} " +
-                $"({ucrtDirs.Length} include(s)) and MSVC ({msvcDirs.Length} include(s))"
+            Console.WriteLine(
+                $"Using \"{visualStudio.DisplayName}\" v{visualStudio.InstallationVersion.ToString(3)} "
+                    + $"(in \"{visualStudio.InstallationPath}\") with Windows SDK v{info.UcrtVersion.ToString(4)} "
+                    + $"({ucrtDirs.Length} include(s)) and MSVC ({msvcDirs.Length} include(s))"
             );
 
             return true;
@@ -158,11 +156,10 @@ public static class VisualStudioResolver
         }
 
         // if any of it's still null, we couldn't find a candidate.
-        Console.WriteLine
-        (
-            "Couldn't find a viable Visual Studio installation - ensure you have the Windows 10 SDK and C++ " +
-            "tools installed. SilkTouch Scraper may not function correctly without Visual Studio or Visual " +
-            "Studio Build Tools with these workloads."
+        Console.WriteLine(
+            "Couldn't find a viable Visual Studio installation - ensure you have the Windows 10 SDK and C++ "
+                + "tools installed. SilkTouch Scraper may not function correctly without Visual Studio or Visual "
+                + "Studio Build Tools with these workloads."
         );
 
         info = null;

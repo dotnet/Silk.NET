@@ -13,15 +13,20 @@ namespace SilkTouchX.Workspace;
 /// <summary>
 /// Default implementation of <see cref="IWorkspaceSolutionProvider"/>.
 /// </summary>
-public class WorkspaceSolutionProvider : IWorkspaceSolutionProvider, IDisposable, IProgress<ProjectLoadProgress>
+public class WorkspaceSolutionProvider
+    : IWorkspaceSolutionProvider,
+        IDisposable,
+        IProgress<ProjectLoadProgress>
 {
     private readonly Microsoft.Build.Framework.ILogger _msBuildLogger;
     private readonly ILogger<WorkspaceSolutionProvider> _logger;
     private readonly IOptionsSnapshot<SilkTouchConfiguration> _config;
 
     // Because we need to use async for populating this dictionary, we can't use ConcurrentDictionary here.
-    private readonly Dictionary<string, (MSBuildWorkspace Workspace, Solution Solution, SemaphoreSlim WriteSemaphore)>
-        _workspace = new();
+    private readonly Dictionary<
+        string,
+        (MSBuildWorkspace Workspace, Solution Solution, SemaphoreSlim WriteSemaphore)
+    > _workspace = new();
     private readonly SemaphoreSlim _workspaceSemaphore = new(1, 1);
 
     /// <summary>
@@ -30,19 +35,22 @@ public class WorkspaceSolutionProvider : IWorkspaceSolutionProvider, IDisposable
     /// <param name="logger">Logger.</param>
     /// <param name="config">Config.</param>
     /// <param name="msBuildLogger">MSBuild logger.</param>
-    public WorkspaceSolutionProvider(ILogger<WorkspaceSolutionProvider> logger,
+    public WorkspaceSolutionProvider(
+        ILogger<WorkspaceSolutionProvider> logger,
         IOptionsSnapshot<SilkTouchConfiguration> config,
-        Microsoft.Build.Framework.ILogger msBuildLogger) =>
-        (_logger, _config, _msBuildLogger) = (logger, config, msBuildLogger);
+        Microsoft.Build.Framework.ILogger msBuildLogger
+    ) => (_logger, _config, _msBuildLogger) = (logger, config, msBuildLogger);
 
     /// <inheritdoc />
-    public async Task<bool> ApplyChangesAsync(string key, Func<MSBuildWorkspace, Solution, Task<Solution>> applyChanges)
+    public async Task<bool> ApplyChangesAsync(
+        string key,
+        Func<MSBuildWorkspace, Solution, Task<Solution>> applyChanges
+    )
     {
         var fullPath = Path.GetFullPath(_config.Get(key).Solution).Replace('\\', '/').TrimEnd('/');
         await _workspaceSemaphore.WaitAsync();
         if (!_workspace.TryGetValue(fullPath, out var entry))
         {
-
             var workspace = MSBuildWorkspace.Create();
             var solution = await workspace.OpenSolutionAsync(fullPath, _msBuildLogger, this);
             entry = _workspace[fullPath] = (workspace, solution, new SemaphoreSlim(1, 1));
@@ -70,6 +78,12 @@ public class WorkspaceSolutionProvider : IWorkspaceSolutionProvider, IDisposable
     }
 
     /// <inheritdoc />
-    public void Report(ProjectLoadProgress value) => _logger.LogDebug("{0}: {1}({2}) - elapsed {3}", value.Operation,
-        value.FilePath, value.TargetFramework, value.ElapsedTime);
+    public void Report(ProjectLoadProgress value) =>
+        _logger.LogDebug(
+            "{0}: {1}({2}) - elapsed {3}",
+            value.Operation,
+            value.FilePath,
+            value.TargetFramework,
+            value.ElapsedTime
+        );
 }

@@ -21,6 +21,7 @@ namespace SilkTouchX.Clang;
 public sealed class ClangScraper
 {
     private readonly ILogger<ClangScraper> _logger;
+
     // TODO add Windows SDK and Xcode configuration
 
     /// <summary>
@@ -48,19 +49,33 @@ public sealed class ClangScraper
         }
 
         LogConfiguration(config);
-        using var pinvokeGenerator = new PInvokeGenerator(config.GeneratorConfiguration, OutputStreamFactory);
+        using var pinvokeGenerator = new PInvokeGenerator(
+            config.GeneratorConfiguration,
+            OutputStreamFactory
+        );
         var diagnostics = new List<Diagnostic>();
         foreach (var file in config.Files)
         {
             var filePath = Path.Combine(config.FileDirectory, file);
             var fileName = Path.GetFileName(file);
-            _logger.LogTrace("About to process {0} in accordance with the rsp from {1}",
+            _logger.LogTrace(
+                "About to process {0} in accordance with the rsp from {1}",
                 filePath,
-                config.FileDirectory);
-            _logger.LogTrace("Clang command line args: {0}", string.Join(" ", config.ClangCommandLineArgs));
+                config.FileDirectory
+            );
+            _logger.LogTrace(
+                "Clang command line args: {0}",
+                string.Join(" ", config.ClangCommandLineArgs)
+            );
 
-            var translationUnitError = CXTranslationUnit.TryParse(pinvokeGenerator.IndexHandle, filePath,
-                config.ClangCommandLineArgs, Array.Empty<CXUnsavedFile>(), config.TranslationFlags, out var handle);
+            var translationUnitError = CXTranslationUnit.TryParse(
+                pinvokeGenerator.IndexHandle,
+                filePath,
+                config.ClangCommandLineArgs,
+                Array.Empty<CXUnsavedFile>(),
+                config.TranslationFlags,
+                out var handle
+            );
             var skipProcessing = false;
 
             if (translationUnitError != CXError_Success)
@@ -78,15 +93,19 @@ public sealed class ClangScraper
                 {
                     using var diagnostic = handle.GetDiagnostic(i);
 
-                    _logger.Log(diagnostic.Severity switch {
-                           CXDiagnostic_Ignored => LogLevel.Trace,
-                           CXDiagnostic_Note => LogLevel.Debug,
-                           CXDiagnostic_Warning => LogLevel.Warning,
-                           CXDiagnostic_Error => LogLevel.Error,
-                           CXDiagnostic_Fatal => LogLevel.Critical,
+                    _logger.Log(
+                        diagnostic.Severity switch
+                        {
+                            CXDiagnostic_Ignored => LogLevel.Trace,
+                            CXDiagnostic_Note => LogLevel.Debug,
+                            CXDiagnostic_Warning => LogLevel.Warning,
+                            CXDiagnostic_Error => LogLevel.Error,
+                            CXDiagnostic_Fatal => LogLevel.Critical,
                             _ => LogLevel.Trace
-                        }, "    {0}",
-                        diagnostic.Format(CXDiagnostic.DefaultDisplayOptions).ToString());
+                        },
+                        "    {0}",
+                        diagnostic.Format(CXDiagnostic.DefaultDisplayOptions).ToString()
+                    );
 
                     skipProcessing |= diagnostic.Severity == CXDiagnostic_Error;
                     skipProcessing |= diagnostic.Severity == CXDiagnostic_Fatal;
@@ -105,34 +124,53 @@ public sealed class ClangScraper
                 Debug.Assert(translationUnit is not null);
 
                 _logger.LogInformation("Generating raw bindings for '{0}'", fileName);
-                pinvokeGenerator.GenerateBindings(translationUnit, filePath, config.ClangCommandLineArgs, config.TranslationFlags);
+                pinvokeGenerator.GenerateBindings(
+                    translationUnit,
+                    filePath,
+                    config.ClangCommandLineArgs,
+                    config.TranslationFlags
+                );
                 pinvokeGenerator.Close();
-                _logger.LogDebug("Completed generation for {0}, file count: {1}", filePath, files.Count);
+                _logger.LogDebug(
+                    "Completed generation for {0}, file count: {1}",
+                    filePath,
+                    files.Count
+                );
             }
             catch (Exception e)
             {
                 _logger.LogError(e, "Unhandled exception when generating bindings");
-                diagnostics.Add(new Diagnostic(DiagnosticLevel.Error,
-                    $"Unhandled exception when generating for {filePath} ({e.GetType().Name}): {e.Message}"));
+                diagnostics.Add(
+                    new Diagnostic(
+                        DiagnosticLevel.Error,
+                        $"Unhandled exception when generating for {filePath} ({e.GetType().Name}): {e.Message}"
+                    )
+                );
             }
         }
 
-        return new GeneratedBindings(files.ToDictionary(
-            kvp => IsSubPathOf(kvp.Key, config.GeneratorConfiguration.TestOutputLocation)
-                ? $"tests/{Path.GetRelativePath(config.GeneratorConfiguration.TestOutputLocation, kvp.Key)}"
-                : $"sources/{Path.GetRelativePath(config.GeneratorConfiguration.OutputLocation, kvp.Key)}",
-            kvp => {
-            // Copy the memory stream to a memory mapped file to ensure we don't eat RAM
-            var arr = ((MemoryStream)kvp.Value).ToArray();
-            var mmf = MemoryMappedFile.CreateNew(null, arr.Length);
-            using var stream = mmf.CreateViewStream();
-            stream.Write(arr);
-            stream.Flush();
-            kvp.Value.Dispose();
+        return new GeneratedBindings(
+            files.ToDictionary(
+                kvp =>
+                    IsSubPathOf(kvp.Key, config.GeneratorConfiguration.TestOutputLocation)
+                        ? $"tests/{Path.GetRelativePath(config.GeneratorConfiguration.TestOutputLocation, kvp.Key)}"
+                        : $"sources/{Path.GetRelativePath(config.GeneratorConfiguration.OutputLocation, kvp.Key)}",
+                kvp =>
+                {
+                    // Copy the memory stream to a memory mapped file to ensure we don't eat RAM
+                    var arr = ((MemoryStream)kvp.Value).ToArray();
+                    var mmf = MemoryMappedFile.CreateNew(null, arr.Length);
+                    using var stream = mmf.CreateViewStream();
+                    stream.Write(arr);
+                    stream.Flush();
+                    kvp.Value.Dispose();
 
-            // Return a read-only stream to ensure noone tries to write to it directly
-            return (Stream)mmf.CreateViewStream(0, arr.Length, MemoryMappedFileAccess.Read);
-        }), diagnostics);
+                    // Return a read-only stream to ensure noone tries to write to it directly
+                    return (Stream)mmf.CreateViewStream(0, arr.Length, MemoryMappedFileAccess.Read);
+                }
+            ),
+            diagnostics
+        );
     }
 
     /// <summary>
@@ -142,11 +180,9 @@ public sealed class ClangScraper
     /// </summary>
     private static bool IsSubPathOf(string path, string baseDirPath)
     {
-        var normalizedPath = Path.GetFullPath(path.Replace('\\', '/')
-            .TrimEnd('/'));
+        var normalizedPath = Path.GetFullPath(path.Replace('\\', '/').TrimEnd('/'));
 
-        var normalizedBaseDirPath = Path.GetFullPath(baseDirPath.Replace('\\', '/')
-            .TrimEnd('/'));
+        var normalizedBaseDirPath = Path.GetFullPath(baseDirPath.Replace('\\', '/').TrimEnd('/'));
 
         return normalizedPath.StartsWith(normalizedBaseDirPath, StringComparison.OrdinalIgnoreCase);
     }
@@ -294,17 +330,59 @@ public sealed class ClangScraper
             string.Join("\n    ", cfg.GeneratorConfiguration.WithManualImports),
             string.Join("\n    ", cfg.GeneratorConfiguration.WithSetLastErrors),
             string.Join("\n    ", cfg.GeneratorConfiguration.WithSuppressGCTransitions),
-            string.Join("\n    ", cfg.GeneratorConfiguration.RemappedNames.Select(x => $"{x.Key} = {x.Value}")),
-            string.Join("\n    ", cfg.GeneratorConfiguration.WithAccessSpecifiers.Select(x => $"{x.Key} = {x.Value}")),
-            string.Join("\n    ", cfg.GeneratorConfiguration.WithCallConvs.Select(x => $"{x.Key} = {x.Value}")),
-            string.Join("\n    ", cfg.GeneratorConfiguration.WithClasses.Select(x => $"{x.Key} = {x.Value}")),
-            string.Join("\n    ", cfg.GeneratorConfiguration.WithGuids.Select(x => $"{x.Key} = {x.Value}")),
-            string.Join("\n    ", cfg.GeneratorConfiguration.WithLibraryPaths.Select(x => $"{x.Key} = {x.Value}")),
-            string.Join("\n    ", cfg.GeneratorConfiguration.WithNamespaces.Select(x => $"{x.Key} = {x.Value}")),
-            string.Join("\n    ", cfg.GeneratorConfiguration.WithTypes.Select(x => $"{x.Key} = {x.Value}")),
-            string.Join("\n    ", cfg.GeneratorConfiguration.WithPackings.Select(x => $"{x.Key} = {x.Value}")),
-            string.Join("\n    ", cfg.GeneratorConfiguration.WithTransparentStructs.Select(x => $"{x.Key} = {x.Value}")),
-            string.Join("\n    ", cfg.GeneratorConfiguration.WithAttributes.Select(x => $"{x.Key} = {string.Join(", ", x.Value)}")),
-            string.Join("\n    ", cfg.GeneratorConfiguration.WithUsings.Select(x => $"{x.Key} = {string.Join(", ", x.Value)}"))
+            string.Join(
+                "\n    ",
+                cfg.GeneratorConfiguration.RemappedNames.Select(x => $"{x.Key} = {x.Value}")
+            ),
+            string.Join(
+                "\n    ",
+                cfg.GeneratorConfiguration.WithAccessSpecifiers.Select(x => $"{x.Key} = {x.Value}")
+            ),
+            string.Join(
+                "\n    ",
+                cfg.GeneratorConfiguration.WithCallConvs.Select(x => $"{x.Key} = {x.Value}")
+            ),
+            string.Join(
+                "\n    ",
+                cfg.GeneratorConfiguration.WithClasses.Select(x => $"{x.Key} = {x.Value}")
+            ),
+            string.Join(
+                "\n    ",
+                cfg.GeneratorConfiguration.WithGuids.Select(x => $"{x.Key} = {x.Value}")
+            ),
+            string.Join(
+                "\n    ",
+                cfg.GeneratorConfiguration.WithLibraryPaths.Select(x => $"{x.Key} = {x.Value}")
+            ),
+            string.Join(
+                "\n    ",
+                cfg.GeneratorConfiguration.WithNamespaces.Select(x => $"{x.Key} = {x.Value}")
+            ),
+            string.Join(
+                "\n    ",
+                cfg.GeneratorConfiguration.WithTypes.Select(x => $"{x.Key} = {x.Value}")
+            ),
+            string.Join(
+                "\n    ",
+                cfg.GeneratorConfiguration.WithPackings.Select(x => $"{x.Key} = {x.Value}")
+            ),
+            string.Join(
+                "\n    ",
+                cfg.GeneratorConfiguration.WithTransparentStructs.Select(
+                    x => $"{x.Key} = {x.Value}"
+                )
+            ),
+            string.Join(
+                "\n    ",
+                cfg.GeneratorConfiguration.WithAttributes.Select(
+                    x => $"{x.Key} = {string.Join(", ", x.Value)}"
+                )
+            ),
+            string.Join(
+                "\n    ",
+                cfg.GeneratorConfiguration.WithUsings.Select(
+                    x => $"{x.Key} = {string.Join(", ", x.Value)}"
+                )
+            )
         );
 }

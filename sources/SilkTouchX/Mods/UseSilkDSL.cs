@@ -34,22 +34,27 @@ public class UseSilkDSL : IMod
         return Task.FromResult(syntax);
     }
 
-    class Rewriter : CSharpSyntaxRewriter
+    private class Rewriter() : CSharpSyntaxRewriter(true)
     {
         private HashSet<string>? _parameterIdentifiers;
         private bool _returnTypeReplaceable;
         private bool _wroteUsing;
         private bool _hasUsings;
 
-        public Rewriter() : base(true) { }
-
         public override SyntaxNode? VisitClassDeclaration(ClassDeclarationSyntax node)
         {
             var ret = base.VisitClassDeclaration(node);
-            return ret switch {
+            return ret switch
+            {
                 // Make sure diffs aren't crazy
-                ClassDeclarationSyntax syn => syn.WithMembers(
-                    List(syn.Members.OrderBy(x => (x as MethodDeclarationSyntax)?.Identifier.ToString()))),
+                ClassDeclarationSyntax syn
+                    => syn.WithMembers(
+                        List(
+                            syn.Members.OrderBy(
+                                x => (x as MethodDeclarationSyntax)?.Identifier.ToString()
+                            )
+                        )
+                    ),
                 _ => ret
             };
         }
@@ -60,7 +65,9 @@ public class UseSilkDSL : IMod
             Debug.Assert(_parameterIdentifiers is null);
 
             // Make sure the function either has a body or is an extern function
-            var consider = node.Body is not null || node.Modifiers.Any(x => x.IsKind(SyntaxKind.ExternKeyword));
+            var consider =
+                node.Body is not null
+                || node.Modifiers.Any(x => x.IsKind(SyntaxKind.ExternKeyword));
             if (!consider)
             {
                 return base.VisitMethodDeclaration(node);
@@ -76,7 +83,10 @@ public class UseSilkDSL : IMod
             // VisitParameter and VisitIdentifierName will change the parameter types and replace any references of
             // the parameter with the "inner identifier" - the name of the variable yielded from the fixed statement
             // that we're yet to generate.
-            if (base.VisitMethodDeclaration(node) is not MethodDeclarationSyntax methWithReplacementsButNoFixed)
+            if (
+                base.VisitMethodDeclaration(node)
+                is not MethodDeclarationSyntax methWithReplacementsButNoFixed
+            )
             {
                 _parameterIdentifiers = null;
                 return null;
@@ -99,49 +109,116 @@ public class UseSilkDSL : IMod
                 var ident = IdentToPInvokeIdent(node.Identifier);
                 // Declare the P/Invoke function
                 var fun = LocalFunctionStatement(
-                    // Add all the original attributes back, including the DllImport but make sure that if the original
-                    // DllImport is ExactSpelling we add an EntryPoint instead (given that we're changing the function
-                    // name)
-                    List(node.AttributeLists.Select(
-                        x => x.WithAttributes(SeparatedList(x.Attributes.Select(y =>
-                            y.IsExactSpellingDllImport()
-                                ? y.WithArgumentList(AttributeArgumentList(SeparatedList(
-                                    y.ArgumentList?.Arguments.Select(z =>
-                                        z.NameEquals?.Name.Identifier.ToString() ==
-                                        nameof(DllImportAttribute.ExactSpelling)
-                                            ? AttributeArgument(
-                                                NameEquals(IdentifierName(nameof(DllImportAttribute.EntryPoint))), null,
-                                                LiteralExpression(SyntaxKind.StringLiteralExpression,
-                                                    Literal(node.Identifier.ToString())))
-                                            : z))))
-                                : y))))),
-                    // Remove any accessibility modifiers - this is a local function
-                    TokenList(node.Modifiers.Where(x => x.Kind() switch {
-                        SyntaxKind.PublicKeyword or SyntaxKind.PrivateKeyword or SyntaxKind.InternalKeyword
-                            or SyntaxKind.ProtectedKeyword => false,
-                        _ => true
-                    })), node.ReturnType, ident, null,
-                    node.ParameterList, List<TypeParameterConstraintClauseSyntax>(), node.Body,
-                    node.ExpressionBody).WithSemicolonToken(Token(SyntaxKind.SemicolonToken));
+                        // Add all the original attributes back, including the DllImport but make sure that if the original
+                        // DllImport is ExactSpelling we add an EntryPoint instead (given that we're changing the function
+                        // name)
+                        List(
+                            node.AttributeLists.Select(
+                                x =>
+                                    x.WithAttributes(
+                                        SeparatedList(
+                                            x.Attributes.Select(
+                                                y =>
+                                                    y.IsExactSpellingDllImport()
+                                                        ? y.WithArgumentList(
+                                                            AttributeArgumentList(
+                                                                SeparatedList(
+                                                                    y.ArgumentList?.Arguments.Select(
+                                                                        z =>
+                                                                            z.NameEquals?.Name.Identifier.ToString()
+                                                                            == nameof(
+                                                                                DllImportAttribute.ExactSpelling
+                                                                            )
+                                                                                ? AttributeArgument(
+                                                                                    NameEquals(
+                                                                                        IdentifierName(
+                                                                                            nameof(
+                                                                                                DllImportAttribute.EntryPoint
+                                                                                            )
+                                                                                        )
+                                                                                    ),
+                                                                                    null,
+                                                                                    LiteralExpression(
+                                                                                        SyntaxKind.StringLiteralExpression,
+                                                                                        Literal(
+                                                                                            node.Identifier.ToString()
+                                                                                        )
+                                                                                    )
+                                                                                )
+                                                                                : z
+                                                                    )
+                                                                )
+                                                            )
+                                                        )
+                                                        : y
+                                            )
+                                        )
+                                    )
+                            )
+                        ),
+                        // Remove any accessibility modifiers - this is a local function
+                        TokenList(
+                            node.Modifiers.Where(
+                                x =>
+                                    x.Kind() switch
+                                    {
+                                        SyntaxKind.PublicKeyword
+                                        or SyntaxKind.PrivateKeyword
+                                        or SyntaxKind.InternalKeyword
+                                        or SyntaxKind.ProtectedKeyword
+                                            => false,
+                                        _ => true
+                                    }
+                            )
+                        ),
+                        node.ReturnType,
+                        ident,
+                        null,
+                        node.ParameterList,
+                        List<TypeParameterConstraintClauseSyntax>(),
+                        node.Body,
+                        node.ExpressionBody
+                    )
+                    .WithSemicolonToken(Token(SyntaxKind.SemicolonToken));
 
                 // Call the P/Invoke function with the converted values
-                var inv = InvocationExpression(IdentifierName(ident),
-                    ArgumentList(SeparatedList(node.ParameterList.Parameters.Select(x =>
-                        Argument(IdentifierName(x.Type is not null && IsDSLApplicable(x.Type)
-                            ? IdentToInnerIdent(x.Identifier)
-                            : x.Identifier))))));
+                var inv = InvocationExpression(
+                    IdentifierName(ident),
+                    ArgumentList(
+                        SeparatedList(
+                            node.ParameterList.Parameters.Select(
+                                x =>
+                                    Argument(
+                                        IdentifierName(
+                                            x.Type is not null && IsDSLApplicable(x.Type)
+                                                ? IdentToInnerIdent(x.Identifier)
+                                                : x.Identifier
+                                        )
+                                    )
+                            )
+                        )
+                    )
+                );
                 body = Block(fun, hasRet ? ReturnStatement(inv) : ExpressionStatement(inv));
 
                 // Remove the extern keyword from the outer method
-                methWithReplacementsButNoFixed = methWithReplacementsButNoFixed.WithModifiers(
-                    TokenList(methWithReplacementsButNoFixed.Modifiers.Where(x =>
-                        !x.IsKind(SyntaxKind.ExternKeyword)))).AddMaxOpt();
+                methWithReplacementsButNoFixed = methWithReplacementsButNoFixed
+                    .WithModifiers(
+                        TokenList(
+                            methWithReplacementsButNoFixed.Modifiers.Where(
+                                x => !x.IsKind(SyntaxKind.ExternKeyword)
+                            )
+                        )
+                    )
+                    .AddMaxOpt();
             }
 
             // Convert expression bodies to statement bodies
             if (body is ExpressionStatementSyntax expr)
             {
-                body = Block(hasRet ? ExpressionStatement(expr.Expression) : ReturnStatement(expr.Expression));
+                body = Block(
+                    hasRet ? ExpressionStatement(expr.Expression) : ReturnStatement(expr.Expression)
+                );
             }
 
             // Generate the fixed blocks for the "inner idents"
@@ -150,9 +227,17 @@ public class UseSilkDSL : IMod
             {
                 Debug.Assert(param.Type is not null);
                 body = FixedStatement(
-                    VariableDeclaration(param.Type,
-                        SingletonSeparatedList(VariableDeclarator(IdentToInnerIdent(param.Identifier))
-                            .WithInitializer(EqualsValueClause(IdentifierName(param.Identifier))))), body);
+                    VariableDeclaration(
+                        param.Type,
+                        SingletonSeparatedList(
+                            VariableDeclarator(IdentToInnerIdent(param.Identifier))
+                                .WithInitializer(
+                                    EqualsValueClause(IdentifierName(param.Identifier))
+                                )
+                        )
+                    ),
+                    body
+                );
             }
 
             // The method body needs to be a block. Alternatively each FixedStatement could be wrapped in a Block, but
@@ -166,12 +251,14 @@ public class UseSilkDSL : IMod
             if (_returnTypeReplaceable)
             {
                 _returnTypeReplaceable = false;
-                methWithReplacementsButNoFixed =
-                    methWithReplacementsButNoFixed.WithReturnType(GetDSLType(node.ReturnType, node.AttributeLists,
-                        SyntaxKind.ReturnKeyword));
+                methWithReplacementsButNoFixed = methWithReplacementsButNoFixed.WithReturnType(
+                    GetDSLType(node.ReturnType, node.AttributeLists, SyntaxKind.ReturnKeyword)
+                );
             }
 
-            return methWithReplacementsButNoFixed.WithBody((BlockSyntax)body).WithSemicolonToken(default);
+            return methWithReplacementsButNoFixed
+                .WithBody((BlockSyntax)body)
+                .WithSemicolonToken(default);
         }
 
         public override SyntaxNode? VisitParameter(ParameterSyntax node)
@@ -179,7 +266,10 @@ public class UseSilkDSL : IMod
             var ret = base.VisitParameter(node) as ParameterSyntax;
 
             // In release builds don't do the _parameterIdentifiers lookup because we do this in the VisitIdentifierName
-            if ((_parameterIdentifiers?.Contains(node.Identifier.ToString()) ?? false) && ret is { Type: not null })
+            if (
+                (_parameterIdentifiers?.Contains(node.Identifier.ToString()) ?? false)
+                && ret is { Type: not null }
+            )
             {
                 return ret.WithType(GetDSLType(ret.Type, node.AttributeLists, null));
             }
@@ -238,11 +328,13 @@ public class UseSilkDSL : IMod
             return Identifier($"__DSL_{token}");
         }
 
-
         private static bool IsDSLApplicable(TypeSyntax syn) => syn is PointerTypeSyntax;
 
-        private static TypeSyntax GetDSLType(TypeSyntax syntax, IEnumerable<AttributeListSyntax?>? attrLists,
-            SyntaxKind? target)
+        private static TypeSyntax GetDSLType(
+            TypeSyntax syntax,
+            IEnumerable<AttributeListSyntax?>? attrLists,
+            SyntaxKind? target
+        )
         {
             var indirectionLevels = 0;
             var isVoid = false;
@@ -259,8 +351,10 @@ public class UseSilkDSL : IMod
 
             if (indirectionLevels > 2)
             {
-                throw new ArgumentOutOfRangeException(nameof(syntax),
-                    "Indirection levels greater than 2 are currently unsupported by SilkDSL.");
+                throw new ArgumentOutOfRangeException(
+                    nameof(syntax),
+                    "Indirection levels greater than 2 are currently unsupported by SilkDSL."
+                );
             }
 
             var isConst = false;
@@ -268,18 +362,26 @@ public class UseSilkDSL : IMod
             {
                 foreach (var attrs in attrLists)
                 {
-                    if (attrs is null ||
-                        (target is not null && !(attrs.Target?.Identifier.IsKind(target.Value)).GetValueOrDefault()) ||
-                        (target is null && attrs.Target is not null))
+                    if (
+                        attrs is null
+                        || (
+                            target is not null
+                            && !(attrs.Target?.Identifier.IsKind(target.Value)).GetValueOrDefault()
+                        )
+                        || (target is null && attrs.Target is not null)
+                    )
                     {
                         continue;
                     }
 
                     foreach (var attributeSyntax in attrs.Attributes)
                     {
-                        if (attributeSyntax.Name.ToString() == "NativeTypeName" &&
-                            attributeSyntax.ArgumentList?.Arguments.FirstOrDefault()?.Expression is
-                                LiteralExpressionSyntax lit && lit.Token.ValueText.StartsWith("const "))
+                        if (
+                            attributeSyntax.Name.ToString() == "NativeTypeName"
+                            && attributeSyntax.ArgumentList?.Arguments.FirstOrDefault()?.Expression
+                                is LiteralExpressionSyntax lit
+                            && lit.Token.ValueText.StartsWith("const ")
+                        )
                         {
                             isConst = true;
                         }
@@ -288,18 +390,27 @@ public class UseSilkDSL : IMod
             }
 
             return isVoid
-                ? IdentifierName(isConst switch {
-                    true when indirectionLevels > 1 => $"ConstAny{indirectionLevels}D",
-                    true => "ConstAny",
-                    false when indirectionLevels > 1 => $"Any{indirectionLevels}D",
-                    false => "Any"
-                })
-                : GenericName(Identifier(isConst switch {
-                    true when indirectionLevels > 1 => $"ConstPtr{indirectionLevels}D",
-                    true => "ConstPtr",
-                    false when indirectionLevels > 1 => $"Ptr{indirectionLevels}D",
-                    false => "Ptr"
-                })).WithTypeArgumentList(TypeArgumentList(SingletonSeparatedList(syntax)));
+                ? IdentifierName(
+                    isConst switch
+                    {
+                        true when indirectionLevels > 1 => $"ConstAny{indirectionLevels}D",
+                        true => "ConstAny",
+                        false when indirectionLevels > 1 => $"Any{indirectionLevels}D",
+                        false => "Any"
+                    }
+                )
+                : GenericName(
+                        Identifier(
+                            isConst switch
+                            {
+                                true when indirectionLevels > 1 => $"ConstPtr{indirectionLevels}D",
+                                true => "ConstPtr",
+                                false when indirectionLevels > 1 => $"Ptr{indirectionLevels}D",
+                                false => "Ptr"
+                            }
+                        )
+                    )
+                    .WithTypeArgumentList(TypeArgumentList(SingletonSeparatedList(syntax)));
         }
 
         public override SyntaxNode? VisitUsingStatement(UsingStatementSyntax node)
@@ -313,10 +424,20 @@ public class UseSilkDSL : IMod
             var ret = base.VisitCompilationUnit(node);
             if (!_wroteUsing)
             {
-                return ret switch {
-                    CompilationUnitSyntax syn => syn.AddUsings(UsingDirective(
-                        QualifiedName(QualifiedName(IdentifierName("System"), IdentifierName("Runtime")),
-                            IdentifierName("CompilerServices")))),
+                return ret switch
+                {
+                    CompilationUnitSyntax syn
+                        => syn.AddUsings(
+                            UsingDirective(
+                                QualifiedName(
+                                    QualifiedName(
+                                        IdentifierName("System"),
+                                        IdentifierName("Runtime")
+                                    ),
+                                    IdentifierName("CompilerServices")
+                                )
+                            )
+                        ),
                     _ => ret
                 };
             }
@@ -337,13 +458,19 @@ public class UseSilkDSL : IMod
             // The masochistic code writer has decided to put usings within the namespace rather than at the
             // compilation unit level, so let's begrudgingly follow suit
             _wroteUsing = true;
-            return ret switch {
-                NamespaceDeclarationSyntax syn => syn.AddUsings(UsingDirective(
-                    QualifiedName(QualifiedName(IdentifierName("System"), IdentifierName("Runtime")),
-                        IdentifierName("CompilerServices")))),
+            return ret switch
+            {
+                NamespaceDeclarationSyntax syn
+                    => syn.AddUsings(
+                        UsingDirective(
+                            QualifiedName(
+                                QualifiedName(IdentifierName("System"), IdentifierName("Runtime")),
+                                IdentifierName("CompilerServices")
+                            )
+                        )
+                    ),
                 _ => ret
             };
-
         }
     }
 }

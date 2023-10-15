@@ -8,11 +8,14 @@ using System.Diagnostics.CodeAnalysis;
 using System.IO;
 
 namespace SilkTouchX.Clang;
+
 internal static class VisualStudioVarPrint
 {
-    private static readonly string _varPrintScriptNamespace = $"{typeof(VisualStudioVarPrint).FullName}.bat";
+    private static readonly string _varPrintScriptNamespace =
+        $"{typeof(VisualStudioVarPrint).FullName}.bat";
 
     private static string? _cachedPath;
+
     public static bool TryExtractIfNeeded([NotNullWhen(true)] out string? scriptPath)
     {
         if (_cachedPath is not null)
@@ -23,8 +26,9 @@ internal static class VisualStudioVarPrint
 
         // extract the varprint script
         var varPrint = Path.Combine(Path.GetTempPath(), $"{Path.GetRandomFileName()}.bat");
-        using var varPrintRes = typeof(VisualStudioResolver).Assembly
-            .GetManifestResourceStream(_varPrintScriptNamespace);
+        using var varPrintRes = typeof(VisualStudioResolver).Assembly.GetManifestResourceStream(
+            _varPrintScriptNamespace
+        );
         if (varPrintRes is null)
         {
             Console.WriteLine($"Couldn't extract \"{_varPrintScriptNamespace}\" from assembly.");
@@ -39,7 +43,10 @@ internal static class VisualStudioVarPrint
         return true;
     }
 
-    public static bool TryRun(string vsPath, [NotNullWhen(true)] out Dictionary<string, string>? vars)
+    public static bool TryRun(
+        string vsPath,
+        [NotNullWhen(true)] out Dictionary<string, string>? vars
+    )
     {
         if (!TryExtractIfNeeded(out var varPrint))
         {
@@ -47,17 +54,15 @@ internal static class VisualStudioVarPrint
             return false;
         }
 
-        using var varPrintProc = new Process
+        using var varPrintProc = new Process();
+        varPrintProc.StartInfo = new()
         {
-            StartInfo = new()
-            {
-                FileName = "cmd",
-                Arguments = $"/c \"{varPrint}\"",
-                WorkingDirectory = vsPath,
-                UseShellExecute = false,
-                RedirectStandardOutput = true,
-                CreateNoWindow = true
-            }
+            FileName = "cmd",
+            Arguments = $"/c \"{varPrint}\"",
+            WorkingDirectory = vsPath,
+            UseShellExecute = false,
+            RedirectStandardOutput = true,
+            CreateNoWindow = true
         };
 
         vars = null;

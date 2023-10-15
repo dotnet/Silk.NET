@@ -1,5 +1,4 @@
-﻿
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;
 using System.Linq;
@@ -9,6 +8,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Options;
 using SilkTouchX.Clang;
 using SilkTouchX.Mods;
+using SilkTouchX.Naming;
 using SilkTouchX.Workspace;
 
 namespace SilkTouchX;
@@ -18,17 +18,22 @@ namespace SilkTouchX;
 /// </summary>
 public static class ServiceCollectionExtensions
 {
-    private static readonly MethodInfo _configure;
+    private static readonly MethodInfo s_configure;
+
     static ServiceCollectionExtensions()
     {
-        var cnf = typeof(OptionsConfigurationServiceCollectionExtensions)
-            .GetMethod(nameof(OptionsConfigurationServiceCollectionExtensions.Configure),
-                1,
-                new[] { typeof(IServiceCollection), typeof(string), typeof(IConfiguration) });
+        var cnf = typeof(OptionsConfigurationServiceCollectionExtensions).GetMethod(
+            nameof(OptionsConfigurationServiceCollectionExtensions.Configure),
+            1,
+            new[] { typeof(IServiceCollection), typeof(string), typeof(IConfiguration) }
+        );
 
-        _configure = cnf ?? throw new TypeAccessException(
-            $"Could not access the {nameof(OptionsConfigurationServiceCollectionExtensions.Configure)} method on " +
-            nameof(OptionsConfigurationServiceCollectionExtensions));
+        s_configure =
+            cnf
+            ?? throw new TypeAccessException(
+                $"Could not access the {nameof(OptionsConfigurationServiceCollectionExtensions.Configure)} method on "
+                    + nameof(OptionsConfigurationServiceCollectionExtensions)
+            );
     }
 
     /// <summary>
@@ -46,6 +51,8 @@ public static class ServiceCollectionExtensions
     /// <item><description><see cref="ClangScraper"/></description></item>
     /// <item><description><see cref="ResponseFileHandler"/></description></item>
     /// <item><description><see cref="SilkTouchGenerator"/></description></item>
+    /// <item><description><see cref="NameTrimmer"/></description></item>
+    /// <item><description>One or more <see cref="INameTrimmer"/>s</description></item>
     /// <item><description>An appropriate implementation of <see cref="IStdIncludeResolver"/></description></item>
     /// <item><description>Mod implementations referenced in the configurations</description></item>
     /// <item>
@@ -74,7 +81,10 @@ public static class ServiceCollectionExtensions
     /// </list>
     /// </param>
     /// <returns>The modified service collection (for chaining purposes).</returns>
-    public static IServiceCollection AddSilkTouch(this IServiceCollection services, IConfiguration config)
+    public static IServiceCollection AddSilkTouch(
+        this IServiceCollection services,
+        IConfiguration config
+    )
     {
         // References for our use of Microsoft.Extensions.Configuration/DependencyInjection:
         // - https://stevetalkscode.co.uk/using-iconfigureoptions
@@ -87,6 +97,8 @@ public static class ServiceCollectionExtensions
         services.AddSingleton<ResponseFileHandler>();
         services.AddSingleton<IWorkspaceSolutionProvider, WorkspaceSolutionProvider>();
         services.AddSingleton<Microsoft.Build.Framework.ILogger, WorkspaceLogger>();
+        services.AddSingleton<NameTrimmer>();
+        services.AddSingleton<INameTrimmer>(s => s.GetRequiredService<NameTrimmer>());
         if (OperatingSystem.IsWindows())
         {
             services.AddSingleton<IStdIncludeResolver, WindowsStdIncludeResolver>();
@@ -119,7 +131,7 @@ public static class ServiceCollectionExtensions
 
                 if (ModConfigurationAttribute.GetConfigurationType(loadedMod) is { } cfgType)
                 {
-                    _configure
+                    s_configure
                         .MakeGenericMethod(cfgType)
                         .Invoke(null, new object?[] { services, job.Key, job.GetSection(m) });
                 }
@@ -146,7 +158,9 @@ public static class ServiceCollectionExtensions
             var mods = job.GetSection("Mods").Get<string[]>() ?? Array.Empty<string>();
             foreach (var m in mods)
             {
-                if (ModConfigurationAttribute.GetConfigurationType(loadedMods[m]) is not { } cfgType)
+                if (
+                    ModConfigurationAttribute.GetConfigurationType(loadedMods[m]) is not { } cfgType
+                )
                 {
                     continue;
                 }

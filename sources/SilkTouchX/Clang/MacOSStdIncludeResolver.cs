@@ -42,37 +42,47 @@ public class MacOSStdIncludeResolver : UnixStdIncludeResolver
         string? sdk = null; // TODO XCODE!!!!!!
         _logger.LogTrace("Resolving XCode SDK using SDK {sdk}", sdk);
         var process = new Process();
-        process.StartInfo = new ProcessStartInfo
-            ("xcrun", "--show-sdk-path" + (sdk is null ? "" : $" --sdk {sdk}"))
-            {
-                RedirectStandardOutput = true
-            };
+        process.StartInfo = new ProcessStartInfo(
+            "xcrun",
+            "--show-sdk-path" + (sdk is null ? "" : $" --sdk {sdk}")
+        )
+        {
+            RedirectStandardOutput = true
+        };
         process.Start();
         process.WaitForExit();
         var output = process.StandardOutput.ReadToEnd();
-        _logger.LogTrace("Got Response from xcrun: {response} {length}", output.ReplaceLineEndings("\\n"), output.Length);
+        _logger.LogTrace(
+            "Got Response from xcrun: {response} {length}",
+            output.ReplaceLineEndings("\\n"),
+            output.Length
+        );
         var lines = output.Split('\n');
         var path = lines.Length > 0 ? lines[0] : null;
         if (string.IsNullOrWhiteSpace(path))
         {
             try
             {
-                _logger.LogTrace
-                (
+                _logger.LogTrace(
                     "Available CommandLineTools SDKs appear to be: {versions}",
-                    string.Join(", ", Directory.EnumerateDirectories("/Library/Developer/CommandLineTools/SDKs/"))
-                );
-                _logger.LogTrace
-                (
-                    "Available XCode SDK versions appear to be: {versions}",
-                    string.Join
-                    (
+                    string.Join(
                         ", ",
-                        Directory.EnumerateDirectories
-                            ("/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/")
+                        Directory.EnumerateDirectories("/Library/Developer/CommandLineTools/SDKs/")
                     )
                 );
-            } catch { /* */ }
+                _logger.LogTrace(
+                    "Available XCode SDK versions appear to be: {versions}",
+                    string.Join(
+                        ", ",
+                        Directory.EnumerateDirectories(
+                            "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/"
+                        )
+                    )
+                );
+            }
+            catch
+            { /* */
+            }
             throw new InvalidOperationException("xcrun didn't return correct lines to stdout.");
         }
         _logger.LogInformation("Resolved XCode SDK to {path}", path);

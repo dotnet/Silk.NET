@@ -9,7 +9,8 @@ namespace Silk.NET.Core;
 /// Represents a constant pointer.
 /// </summary>
 /// <typeparam name="T">The pointee type.</typeparam>
-public readonly unsafe ref struct ConstPtr2D<T> where T: unmanaged
+public readonly unsafe ref struct ConstPtr2D<T>
+    where T : unmanaged
 {
 #pragma warning disable CS0649
     private readonly ref byte InteriorRef;
@@ -25,7 +26,11 @@ public readonly unsafe ref struct ConstPtr2D<T> where T: unmanaged
         IL.Emit.Ldarg_0();
         IL.Emit.Ldarg_1();
         IL.Emit.Stfld(
-            FieldRef.Field(TypeRef.Type(typeof(ConstPtr2D<>).MakeGenericType(typeof(T))), nameof(InteriorRef)));
+            FieldRef.Field(
+                TypeRef.Type(typeof(ConstPtr2D<>).MakeGenericType(typeof(T))),
+                nameof(InteriorRef)
+            )
+        );
         IL.Emit.Ret();
         throw IL.Unreachable();
     }
@@ -38,13 +43,19 @@ public readonly unsafe ref struct ConstPtr2D<T> where T: unmanaged
     /// </summary>
     public ref readonly ConstPtr<T> Ref
     {
-        [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
         get
         {
             // Would use the delegate* trick but this isn't optimised in JIT yet or necessarily safe
             IL.Emit.Ldarg_0();
-            IL.Emit.Ldfld(FieldRef.Field(TypeRef.Type(typeof(ConstPtr2D<>).MakeGenericType(typeof(T))),
-                nameof(InteriorRef)));
+            IL.Emit.Ldfld(
+                FieldRef.Field(
+                    TypeRef.Type(typeof(ConstPtr2D<>).MakeGenericType(typeof(T))),
+                    nameof(InteriorRef)
+                )
+            );
             IL.Emit.Ret();
             throw IL.Unreachable();
         }
@@ -56,12 +67,18 @@ public readonly unsafe ref struct ConstPtr2D<T> where T: unmanaged
     /// <param name="index">The index.</param>
     public ref readonly ConstPtr<T> this[nuint index]
     {
-        [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
         get
         {
             IL.Emit.Ldarg_0();
-            IL.Emit.Ldfld(FieldRef.Field(TypeRef.Type(typeof(ConstPtr2D<>).MakeGenericType(typeof(T))),
-                nameof(InteriorRef)));
+            IL.Emit.Ldfld(
+                FieldRef.Field(
+                    TypeRef.Type(typeof(ConstPtr2D<>).MakeGenericType(typeof(T))),
+                    nameof(InteriorRef)
+                )
+            );
             IL.Emit.Ldarg_1();
             IL.Emit.Sizeof<nuint>();
             IL.Emit.Mul();
@@ -79,16 +96,27 @@ public readonly unsafe ref struct ConstPtr2D<T> where T: unmanaged
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     public ReadOnlySpan<string?> ToStringSpan(int length)
     {
-        if (typeof(T) != typeof(byte) && typeof(T) != typeof(sbyte) && typeof(T) != typeof(char) &&
-            typeof(T) != typeof(short) && typeof(T) != typeof(ushort) && typeof(T) != typeof(int) &&
-            typeof(T) != typeof(uint))
+        if (
+            typeof(T) != typeof(byte)
+            && typeof(T) != typeof(sbyte)
+            && typeof(T) != typeof(char)
+            && typeof(T) != typeof(short)
+            && typeof(T) != typeof(ushort)
+            && typeof(T) != typeof(int)
+            && typeof(T) != typeof(uint)
+        )
         {
             throw new ArrayTypeMismatchException(
-                "Must be a ConstPtr2D<T> where T is byte, sbyte, char, short, ushort, int, or uint.");
+                "Must be a ConstPtr2D<T> where T is byte, sbyte, char, short, ushort, int, or uint."
+            );
         }
         return SilkMarshal.NativeToStringArray(
-            MemoryMarshal.CreateReadOnlySpan(ref Unsafe.As<byte, nint>(ref Unsafe.AsRef(in InteriorRef)), length),
-            sizeof(T));
+            MemoryMarshal.CreateReadOnlySpan(
+                ref Unsafe.As<byte, nint>(ref Unsafe.AsRef(in InteriorRef)),
+                length
+            ),
+            sizeof(T)
+        );
     }
 
     /// <summary>
@@ -101,8 +129,12 @@ public readonly unsafe ref struct ConstPtr2D<T> where T: unmanaged
     public ref readonly T* GetPinnableReference()
     {
         IL.Emit.Ldarg_0();
-        IL.Emit.Ldfld(FieldRef.Field(TypeRef.Type(typeof(ConstPtr2D<>).MakeGenericType(typeof(T))),
-            nameof(InteriorRef)));
+        IL.Emit.Ldfld(
+            FieldRef.Field(
+                TypeRef.Type(typeof(ConstPtr2D<>).MakeGenericType(typeof(T))),
+                nameof(InteriorRef)
+            )
+        );
         IL.Emit.Ret();
         throw IL.Unreachable();
     }
@@ -115,13 +147,19 @@ public readonly unsafe ref struct ConstPtr2D<T> where T: unmanaged
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     public static implicit operator ConstPtr2D<T>(T** raw)
     {
-        IL.DeclareLocals(new LocalVar("ret", TypeRef.Type(typeof(ConstPtr2D<>).MakeGenericType(typeof(T)))));
+        IL.DeclareLocals(
+            new LocalVar("ret", TypeRef.Type(typeof(ConstPtr2D<>).MakeGenericType(typeof(T))))
+        );
         IL.Emit.Ldloca_S("ret");
         IL.Emit.Initobj(TypeRef.Type(typeof(ConstPtr2D<>).MakeGenericType(typeof(T))));
         IL.Emit.Ldloca_S("ret");
         IL.Emit.Ldarg_0();
         IL.Emit.Stfld(
-            FieldRef.Field(TypeRef.Type(typeof(ConstPtr2D<>).MakeGenericType(typeof(T))), nameof(InteriorRef)));
+            FieldRef.Field(
+                TypeRef.Type(typeof(ConstPtr2D<>).MakeGenericType(typeof(T))),
+                nameof(InteriorRef)
+            )
+        );
         IL.Emit.Ldloc_S("ret");
         IL.Emit.Ret();
         throw IL.Unreachable();
@@ -133,7 +171,8 @@ public readonly unsafe ref struct ConstPtr2D<T> where T: unmanaged
     /// <param name="array"></param>
     /// <returns>The pointer.</returns>
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    public static implicit operator ConstPtr2D<T>(T[][] array) => SilkMarshal.JaggedArrayToPointerArray<T>(array);
+    public static implicit operator ConstPtr2D<T>(T[][] array) =>
+        SilkMarshal.JaggedArrayToPointerArray<T>(array);
 
     /// <summary>
     /// Creates a <see cref="ConstPtr2D{T}"/> from a string array.
@@ -143,9 +182,15 @@ public readonly unsafe ref struct ConstPtr2D<T> where T: unmanaged
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     public static implicit operator ConstPtr2D<T>(string[] array)
     {
-        if (typeof(T) != typeof(byte) && typeof(T) != typeof(sbyte) && typeof(T) != typeof(char) &&
-            typeof(T) != typeof(short) && typeof(T) != typeof(ushort) && typeof(T) != typeof(int) &&
-            typeof(T) != typeof(uint))
+        if (
+            typeof(T) != typeof(byte)
+            && typeof(T) != typeof(sbyte)
+            && typeof(T) != typeof(char)
+            && typeof(T) != typeof(short)
+            && typeof(T) != typeof(ushort)
+            && typeof(T) != typeof(int)
+            && typeof(T) != typeof(uint)
+        )
         {
             throw new InvalidCastException();
         }
@@ -161,9 +206,15 @@ public readonly unsafe ref struct ConstPtr2D<T> where T: unmanaged
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     public static implicit operator ConstPtr2D<T>(ReadOnlySpan<string> span)
     {
-        if (typeof(T) != typeof(byte) && typeof(T) != typeof(sbyte) && typeof(T) != typeof(char) &&
-            typeof(T) != typeof(short) && typeof(T) != typeof(ushort) && typeof(T) != typeof(int) &&
-            typeof(T) != typeof(uint))
+        if (
+            typeof(T) != typeof(byte)
+            && typeof(T) != typeof(sbyte)
+            && typeof(T) != typeof(char)
+            && typeof(T) != typeof(short)
+            && typeof(T) != typeof(ushort)
+            && typeof(T) != typeof(int)
+            && typeof(T) != typeof(uint)
+        )
         {
             throw new InvalidCastException();
         }
@@ -179,9 +230,15 @@ public readonly unsafe ref struct ConstPtr2D<T> where T: unmanaged
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     public static implicit operator ConstPtr2D<T>(Span<string> span)
     {
-        if (typeof(T) != typeof(byte) && typeof(T) != typeof(sbyte) && typeof(T) != typeof(char) &&
-            typeof(T) != typeof(short) && typeof(T) != typeof(ushort) && typeof(T) != typeof(int) &&
-            typeof(T) != typeof(uint))
+        if (
+            typeof(T) != typeof(byte)
+            && typeof(T) != typeof(sbyte)
+            && typeof(T) != typeof(char)
+            && typeof(T) != typeof(short)
+            && typeof(T) != typeof(ushort)
+            && typeof(T) != typeof(int)
+            && typeof(T) != typeof(uint)
+        )
         {
             throw new InvalidCastException();
         }
@@ -201,8 +258,12 @@ public readonly unsafe ref struct ConstPtr2D<T> where T: unmanaged
         IL.Emit.Ldarg_0();
         IL.Emit.Ldc_I4_0();
         IL.Emit.Ldelema(TypeRef.Type(typeof(T).MakePointerType()));
-        IL.Emit.Newobj(MethodRef.Constructor(TypeRef.Type(typeof(ConstPtr2D<>).MakeGenericType(typeof(T))),
-            TypeRef.Type(typeof(ConstPtr<>).MakeGenericType(typeof(T)).MakeByRefType())));
+        IL.Emit.Newobj(
+            MethodRef.Constructor(
+                TypeRef.Type(typeof(ConstPtr2D<>).MakeGenericType(typeof(T))),
+                TypeRef.Type(typeof(ConstPtr<>).MakeGenericType(typeof(T)).MakeByRefType())
+            )
+        );
         IL.Emit.Ret();
         throw IL.Unreachable();
     }
@@ -215,14 +276,20 @@ public readonly unsafe ref struct ConstPtr2D<T> where T: unmanaged
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     public static implicit operator ConstPtr2D<T>(NullPtr _)
     {
-        IL.DeclareLocals(new LocalVar("ret", TypeRef.Type(typeof(ConstPtr2D<>).MakeGenericType(typeof(T)))));
+        IL.DeclareLocals(
+            new LocalVar("ret", TypeRef.Type(typeof(ConstPtr2D<>).MakeGenericType(typeof(T))))
+        );
         IL.Emit.Ldloca_S("ret");
         IL.Emit.Initobj(TypeRef.Type(typeof(ConstPtr2D<>).MakeGenericType(typeof(T))));
         IL.Emit.Ldloca_S("ret");
         IL.Emit.Ldc_I4_0();
         IL.Emit.Conv_U();
         IL.Emit.Stfld(
-            FieldRef.Field(TypeRef.Type(typeof(ConstPtr2D<>).MakeGenericType(typeof(T))), nameof(InteriorRef)));
+            FieldRef.Field(
+                TypeRef.Type(typeof(ConstPtr2D<>).MakeGenericType(typeof(T))),
+                nameof(InteriorRef)
+            )
+        );
         IL.Emit.Ldloc_S("ret");
         IL.Emit.Ret();
         throw IL.Unreachable();
@@ -241,7 +308,11 @@ public readonly unsafe ref struct ConstPtr2D<T> where T: unmanaged
     {
         IL.Emit.Ldarg_0();
         IL.Emit.Ldfld(
-            FieldRef.Field(TypeRef.Type(typeof(ConstPtr2D<>).MakeGenericType(typeof(T))), nameof(InteriorRef)));
+            FieldRef.Field(
+                TypeRef.Type(typeof(ConstPtr2D<>).MakeGenericType(typeof(T))),
+                nameof(InteriorRef)
+            )
+        );
         IL.Emit.Ret();
         throw IL.Unreachable();
     }
@@ -271,7 +342,8 @@ public readonly unsafe ref struct ConstPtr2D<T> where T: unmanaged
 
     /// <inheritdoc />
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    public override int GetHashCode() => HashCode.Combine((nint)Unsafe.AsPointer(ref Unsafe.AsRef(in InteriorRef)));
+    public override int GetHashCode() =>
+        HashCode.Combine((nint)Unsafe.AsPointer(ref Unsafe.AsRef(in InteriorRef)));
 
     /// <summary>
     /// Determines whether the given pointers point to the same location.

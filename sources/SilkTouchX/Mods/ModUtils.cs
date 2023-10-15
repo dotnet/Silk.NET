@@ -24,8 +24,10 @@ public static class ModUtils
     /// </param>
     /// <param name="candidate">The string to run the replacement on.</param>
     /// <returns>The replaced string. It may not have been modified at all.</returns>
-    public static string GroupedRegexReplace(IEnumerable<(Regex Regex, string Replacement)> mappings,
-        string candidate)
+    public static string GroupedRegexReplace(
+        IEnumerable<(Regex Regex, string Replacement)> mappings,
+        string candidate
+    )
     {
         foreach (var (regex, replacement) in mappings)
         {
@@ -51,7 +53,9 @@ public static class ModUtils
     /// </summary>
     /// <param name="cfg">The ClangSharp config.</param>
     /// <returns>The options contained within.</returns>
-    public static PInvokeGeneratorConfigurationOptions ReconstructOptions(this PInvokeGeneratorConfiguration cfg)
+    public static PInvokeGeneratorConfigurationOptions ReconstructOptions(
+        this PInvokeGeneratorConfiguration cfg
+    )
     {
         var options = PInvokeGeneratorConfigurationOptions.None;
         options |= cfg.DontUseUsingStaticsForEnums
@@ -185,9 +189,10 @@ public static class ModUtils
     public static bool IsDllImport(this AttributeSyntax node)
     {
         var sep = node.Name.ToString().Split("::").Last();
-        return sep == "DllImport" || sep == "DllImportAttribute" ||
-               sep.EndsWith("System.Runtime.InteropServices.DllImport") ||
-               sep.EndsWith("System.Runtime.InteropServices.DllImportAttribute");
+        return sep == "DllImport"
+            || sep == "DllImportAttribute"
+            || sep.EndsWith("System.Runtime.InteropServices.DllImport")
+            || sep.EndsWith("System.Runtime.InteropServices.DllImportAttribute");
     }
 
     /// <summary>
@@ -197,9 +202,15 @@ public static class ModUtils
     /// <param name="node">The attribute syntax.</param>
     /// <returns>Whether it is probably an ExactSpelling DllImport.</returns>
     public static bool IsExactSpellingDllImport(this AttributeSyntax node) =>
-        node.IsDllImport() && (node.ArgumentList?.Arguments.Any(x =>
-            x.NameEquals?.Name.Identifier.ToString() == nameof(DllImportAttribute.ExactSpelling) &&
-            x.Expression.ToString() == "true") ?? false);
+        node.IsDllImport()
+        && (
+            node.ArgumentList?.Arguments.Any(
+                x =>
+                    x.NameEquals?.Name.Identifier.ToString()
+                        == nameof(DllImportAttribute.ExactSpelling)
+                    && x.Expression.ToString() == "true"
+            ) ?? false
+        );
 
     /// <summary>
     /// Adds <see cref="MaxOpt"/> to the given <see cref="MethodDeclarationSyntax"/>'s attribute lists.
@@ -214,12 +225,30 @@ public static class ModUtils
     /// <see cref="System.Runtime.CompilerServices.MethodImplOptions.AggressiveInlining"/> and
     /// <see cref="System.Runtime.CompilerServices.MethodImplOptions.AggressiveOptimization"/> set.
     /// </summary>
-    public static readonly AttributeListSyntax MaxOpt = AttributeList(SingletonSeparatedList(
-        Attribute(IdentifierName("MethodImpl")).WithArgumentList(AttributeArgumentList(
-            SingletonSeparatedList(AttributeArgument(BinaryExpression(
-                SyntaxKind.BitwiseOrExpression,
-                MemberAccessExpression(SyntaxKind.SimpleMemberAccessExpression, IdentifierName("MethodImplOptions"),
-                    IdentifierName("AggressiveInlining")),
-                MemberAccessExpression(SyntaxKind.SimpleMemberAccessExpression, IdentifierName("MethodImplOptions"),
-                    IdentifierName("AggressiveOptimization")))))))));
+    public static readonly AttributeListSyntax MaxOpt = AttributeList(
+        SingletonSeparatedList(
+            Attribute(IdentifierName("MethodImpl"))
+                .WithArgumentList(
+                    AttributeArgumentList(
+                        SingletonSeparatedList(
+                            AttributeArgument(
+                                BinaryExpression(
+                                    SyntaxKind.BitwiseOrExpression,
+                                    MemberAccessExpression(
+                                        SyntaxKind.SimpleMemberAccessExpression,
+                                        IdentifierName("MethodImplOptions"),
+                                        IdentifierName("AggressiveInlining")
+                                    ),
+                                    MemberAccessExpression(
+                                        SyntaxKind.SimpleMemberAccessExpression,
+                                        IdentifierName("MethodImplOptions"),
+                                        IdentifierName("AggressiveOptimization")
+                                    )
+                                )
+                            )
+                        )
+                    )
+                )
+        )
+    );
 }

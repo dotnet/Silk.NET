@@ -8,7 +8,8 @@ namespace Silk.NET.Core;
 /// Represents a pointer.
 /// </summary>
 /// <typeparam name="T">The pointee type.</typeparam>
-public readonly unsafe ref struct Ptr<T> where T: unmanaged
+public readonly unsafe ref struct Ptr<T>
+    where T : unmanaged
 {
     /// <summary>
     /// The underlying reference.
@@ -36,7 +37,9 @@ public readonly unsafe ref struct Ptr<T> where T: unmanaged
     /// <param name="index">The index.</param>
     public ref T this[nuint index]
     {
-        [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
         get => ref Unsafe.Add(ref Ref, index);
     }
 
@@ -59,9 +62,15 @@ public readonly unsafe ref struct Ptr<T> where T: unmanaged
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     public static implicit operator Ptr<T>(string str)
     {
-        if (typeof(T) != typeof(byte) && typeof(T) != typeof(sbyte) && typeof(T) != typeof(char) &&
-            typeof(T) != typeof(short) && typeof(T) != typeof(ushort) && typeof(T) != typeof(int) &&
-            typeof(T) != typeof(uint))
+        if (
+            typeof(T) != typeof(byte)
+            && typeof(T) != typeof(sbyte)
+            && typeof(T) != typeof(char)
+            && typeof(T) != typeof(short)
+            && typeof(T) != typeof(ushort)
+            && typeof(T) != typeof(int)
+            && typeof(T) != typeof(uint)
+        )
         {
             throw new InvalidCastException();
         }
@@ -113,7 +122,8 @@ public readonly unsafe ref struct Ptr<T> where T: unmanaged
     /// This is unsafe if the reference is a managed reference. You should prefer pinning using <c>fixed</c> instead.
     /// </remarks>
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    public static explicit operator T*(Ptr<T> ptr) => (T*) Unsafe.AsPointer(ref Unsafe.AsRef(in ptr.Ref));
+    public static explicit operator T*(Ptr<T> ptr) =>
+        (T*)Unsafe.AsPointer(ref Unsafe.AsRef(in ptr.Ref));
 
     /// <summary>
     /// Unsafely gets the pointer to the underlying reference of this <see cref="Ptr{T}"/>.
@@ -124,7 +134,8 @@ public readonly unsafe ref struct Ptr<T> where T: unmanaged
     /// This is unsafe if the reference is a managed reference. You should prefer pinning using <c>fixed</c> instead.
     /// </remarks>
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    public static explicit operator void*(Ptr<T> ptr) => Unsafe.AsPointer(ref Unsafe.AsRef(in ptr.Ref));
+    public static explicit operator void*(Ptr<T> ptr) =>
+        Unsafe.AsPointer(ref Unsafe.AsRef(in ptr.Ref));
 
     /// <summary>
     /// Converts this pointer to a string.
@@ -146,7 +157,9 @@ public readonly unsafe ref struct Ptr<T> where T: unmanaged
         {
             fixed (void* raw = ptr)
             {
-                return Encoding.UTF8.GetString(MemoryMarshal.CreateReadOnlySpanFromNullTerminated((byte*)raw));
+                return Encoding.UTF8.GetString(
+                    MemoryMarshal.CreateReadOnlySpanFromNullTerminated((byte*)raw)
+                );
             }
         }
 
@@ -173,9 +186,15 @@ public readonly unsafe ref struct Ptr<T> where T: unmanaged
     /// <inheritdoc />
     public override string ToString()
     {
-        if (typeof(T) != typeof(byte) && typeof(T) != typeof(sbyte) && typeof(T) != typeof(char) &&
-            typeof(T) != typeof(short) && typeof(T) != typeof(ushort) && typeof(T) != typeof(int) &&
-            typeof(T) != typeof(uint))
+        if (
+            typeof(T) != typeof(byte)
+            && typeof(T) != typeof(sbyte)
+            && typeof(T) != typeof(char)
+            && typeof(T) != typeof(short)
+            && typeof(T) != typeof(ushort)
+            && typeof(T) != typeof(int)
+            && typeof(T) != typeof(uint)
+        )
         {
             return typeof(Ptr<>).MakeGenericType(typeof(T)).ToString();
         }
@@ -189,11 +208,13 @@ public readonly unsafe ref struct Ptr<T> where T: unmanaged
     /// <param name="other">The other pointer.</param>
     /// <returns>Whether the pointers are equal.</returns>
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    public bool Equals(Ptr<T> other) => Unsafe.AreSame(ref Unsafe.AsRef(in Ref), ref Unsafe.AsRef(in other.Ref));
+    public bool Equals(Ptr<T> other) =>
+        Unsafe.AreSame(ref Unsafe.AsRef(in Ref), ref Unsafe.AsRef(in other.Ref));
 
     /// <inheritdoc />
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    public override int GetHashCode() => HashCode.Combine((nint)Unsafe.AsPointer(ref Unsafe.AsRef(in Ref)));
+    public override int GetHashCode() =>
+        HashCode.Combine((nint)Unsafe.AsPointer(ref Unsafe.AsRef(in Ref)));
 
     /// <summary>
     /// Determines whether the given pointers point to the same location.
@@ -229,5 +250,6 @@ public readonly unsafe ref struct Ptr<T> where T: unmanaged
     /// <param name="_"><see cref="DSL.nullptr"/></param>
     /// <returns>Whether the pointer is null.</returns>
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    public static bool operator ==(Ptr<T> left, NullPtr _) => Unsafe.IsNullRef(ref Unsafe.AsRef(in left.Ref));
+    public static bool operator ==(Ptr<T> left, NullPtr _) =>
+        Unsafe.IsNullRef(ref Unsafe.AsRef(in left.Ref));
 }

@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.CommandLine;
 using System.IO;
 using System.Linq;
@@ -9,29 +8,40 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Logging.Console;
-using Microsoft.Extensions.Options;
 using SilkTouchX;
-using SilkTouchX.Clang;
-using SilkTouchX.Mods;
 
 var logging = new Option<LogLevel>(new[] { "--log-level", "-l" }, () => LogLevel.Information);
-var skip = new Option<string[]>(new[] { "--skip", "-s" }, Array.Empty<string>);
-var configs = new Argument<string[]>("configs",
-    "Path(s) to JSON SilkTouch configuration(s)") { Arity = ArgumentArity.OneOrMore };
-var configOverrides = new Argument<string[]>("overrides",
+var skip = new Option<string[]>(
+    new[] { "--skip", "-s" },
     Array.Empty<string>,
-    "Arguments recognisable by Microsoft.Extensions.Configuration.CommandLine to override JSON configuration items.") {
+    "A list of job names to skip."
+)
+{
     Arity = ArgumentArity.ZeroOrMore
 };
-var rootCommand = new RootCommand { configs, configOverrides, logging, skip };
-rootCommand.SetHandler(async ctx => {
+var configs = new Argument<string[]>("configs", "Path(s) to JSON SilkTouch configuration(s)")
+{
+    Arity = ArgumentArity.OneOrMore
+};
+var configOverrides = new Argument<string[]>(
+    "overrides",
+    Array.Empty<string>,
+    "Arguments recognisable by Microsoft.Extensions.Configuration.CommandLine to override JSON configuration items."
+)
+{
+    Arity = ArgumentArity.ZeroOrMore
+};
+var rootCommand = new RootCommand { logging, skip, configs, configOverrides };
+rootCommand.SetHandler(async ctx =>
+{
     // Create the ConfigurationBuilder with support for env var & command line overrides
     var cb = new ConfigurationBuilder()
         .AddEnvironmentVariables(source => source.Prefix = "SILKDOTNET_")
         .AddCommandLine(ctx.ParseResult.GetValueForArgument(configOverrides));
 
     // Add the JSON files to the ConfigurationBuilder
-    cb = ctx.ParseResult.GetValueForArgument(configs)
+    cb = ctx.ParseResult
+        .GetValueForArgument(configs)
         .Aggregate(cb, (current, file) => current.AddJsonFile(Path.GetFullPath(file)));
     var config = cb.Build();
 
@@ -39,8 +49,10 @@ rootCommand.SetHandler(async ctx => {
     MSBuildLocator.RegisterDefaults();
 
     var sp = new ServiceCollection()
-        .AddLogging(builder => {
-            builder.AddSimpleConsole(opts => {
+        .AddLogging(builder =>
+        {
+            builder.AddSimpleConsole(opts =>
+            {
                 opts.SingleLine = true;
                 opts.ColorBehavior = Console.IsOutputRedirected
                     ? LoggerColorBehavior.Disabled
@@ -55,13 +67,23 @@ rootCommand.SetHandler(async ctx => {
 
     var skipped = ctx.ParseResult.GetValueForOption(skip);
     await Parallel.ForEachAsync(
-        config.GetSection("Jobs").GetChildren().Where(x =>
-            skipped?.All(y => !x.Key.Equals(y, StringComparison.OrdinalIgnoreCase)) ?? true), async (job, ct) => {
+        config
+            .GetSection("Jobs")
+            .GetChildren()
+            .Where(
+                x => skipped?.All(y => !x.Key.Equals(y, StringComparison.OrdinalIgnoreCase)) ?? true
+            ),
+        async (job, ct) =>
+        {
             var generator = sp.GetRequiredService<SilkTouchGenerator>();
-            await generator.OutputBindingsAsync(job.Key,
-                job.Get<SilkTouchConfiguration>() ??
-                throw new InvalidOperationException("failed to bind configuration"), ct);
-        });
+            await generator.OutputBindingsAsync(
+                job.Key,
+                job.Get<SilkTouchConfiguration>()
+                    ?? throw new InvalidOperationException("failed to bind configuration"),
+                ct
+            );
+        }
+    );
 });
 
 await rootCommand.InvokeAsync(args);

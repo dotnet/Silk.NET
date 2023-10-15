@@ -27,7 +27,8 @@ public class AddStdIncludes : IMod
         for (var i = 0; i < rsps.Count; i++)
         {
             var rsp = rsps[i];
-            rsps[i] = rsp with {
+            rsps[i] = rsp with
+            {
                 ClangCommandLineArgs = rsp.ClangCommandLineArgs
                     .Concat(_resolver.GetStandardIncludes().Select(x => $"--include-directory={x}"))
                     .ToArray()
