@@ -5,10 +5,12 @@
 // Ported from glfw3.h and corresponding dependencies of GLFW3
 // Original source is Copyright © 2002-2006 Marcus Geelnard, 2006-2019 Camilla Löwy. Licensed under the zlib license.
 namespace Silk.NET.GLFW;
-public unsafe partial struct GLFWimage
+public partial struct Vidmode
 {
-    public int width;
-    public int height;
-    [NativeTypeName("unsigned char *")]
-    public byte* pixels;
+    public int Width;
+    public int Height;
+    public int Redbits;
+    public int Greenbits;
+    public int Bluebits;
+    public int Refreshrate;
 }

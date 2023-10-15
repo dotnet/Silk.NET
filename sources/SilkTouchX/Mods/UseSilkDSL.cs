@@ -40,6 +40,7 @@ public class UseSilkDSL : IMod
         private bool _returnTypeReplaceable;
         private bool _wroteUsing;
         private bool _hasUsings;
+        private bool _needsUsing;
 
         public override SyntaxNode? VisitClassDeclaration(ClassDeclarationSyntax node)
         {
@@ -211,6 +212,7 @@ public class UseSilkDSL : IMod
                         )
                     )
                     .AddMaxOpt();
+                _needsUsing = true;
             }
 
             // Convert expression bodies to statement bodies
@@ -422,7 +424,7 @@ public class UseSilkDSL : IMod
         public override SyntaxNode? VisitCompilationUnit(CompilationUnitSyntax node)
         {
             var ret = base.VisitCompilationUnit(node);
-            if (!_wroteUsing)
+            if (!_wroteUsing && _needsUsing)
             {
                 return ret switch
                 {
@@ -450,7 +452,7 @@ public class UseSilkDSL : IMod
         {
             var hadUsings = _hasUsings;
             var ret = base.VisitNamespaceDeclaration(node);
-            if (!_hasUsings || hadUsings)
+            if (!_hasUsings || hadUsings || !_needsUsing)
             {
                 return ret;
             }

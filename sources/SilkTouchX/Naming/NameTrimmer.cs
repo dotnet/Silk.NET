@@ -46,7 +46,7 @@ public class NameTrimmer : INameTrimmer
         var naive = false;
         for (var i = 0; i < nPasses; i++) // try with both trimming name and non trimming name
         {
-            var result = GetPrefix(container, hint, names, prefixOverrides, i == 0, i == 2);
+            var result = GetPrefix(container, hint, names, prefixOverrides, i == 0, naive = i == 2);
             if (result is null || names is null)
             {
                 // skip outright.

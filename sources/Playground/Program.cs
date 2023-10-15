@@ -1,19 +1,20 @@
 ﻿// See https://aka.ms/new-console-template for more information
 
-using static Silk.NET.GLFW.Glfw;
-
 // TODO bool-like
-if (glfwInit() == 0)
+
+using Silk.NET.GLFW;
+
+if (Glfw.Init() == 0)
 {
     throw new Exception("failed to init");
 }
 
-var window = glfwCreateWindow(1280, 720, "Hello Window!", nullptr, nullptr);
+var window = Glfw.CreateWindow(1280, 720, "Hello Window!", nullptr, nullptr);
 if (window == nullptr)
 {
     // TODO const correctness
     ConstPtr<sbyte> error = nullptr;
-    if (glfwGetError(error.AsPtr2D()) == 0 || error == nullptr)
+    if (Glfw.GetError(error.AsPtr2D()) == 0 || error == nullptr)
     {
         throw new Exception("failed to create window and failed to get error");
     }
@@ -21,10 +22,10 @@ if (window == nullptr)
     throw new Exception($"failed to create window: {error}");
 }
 
-while (glfwWindowShouldClose(window) == 0)
+while (Glfw.WindowShouldClose(window) == 0)
 {
-    glfwPollEvents();
+    Glfw.PollEvents();
 }
 
-glfwDestroyWindow(window);
-glfwTerminate();
+Glfw.DestroyWindow(window);
+Glfw.Terminate();

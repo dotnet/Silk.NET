@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
+using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.CodeAnalysis;
@@ -9,12 +11,14 @@ using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 using SilkTouchX.Clang;
 using SilkTouchX.Naming;
+using static Microsoft.CodeAnalysis.CSharp.SyntaxFactory;
 
 namespace SilkTouchX.Mods;
 
 /// <summary>
 /// A mod that will convert other naming conventions to the PascalCase nomenclature typically used in C#.
 /// </summary>
+[ModConfiguration<Configuration>]
 public class PrettifyNames : IMod
 {
     private readonly ILogger<PrettifyNames> _logger;
@@ -103,6 +107,11 @@ public class PrettifyNames : IMod
                         );
                     }
                 }
+                else
+                {
+                    constNames = new Dictionary<string, (string Primary, List<string>?)>();
+                }
+
                 var functionNames = functions?.ToDictionary(
                     x => x,
                     x => (Primary: x, (List<string>?)null)
@@ -124,30 +133,38 @@ public class PrettifyNames : IMod
                     }
                 }
 
+                var prettifiedOnly = visitor.PrettifyOnlyTypes.TryGetValue(typeName, out var val)
+                    ? val.Select(
+                        x => new KeyValuePair<string, (string Primary, List<string>?)>(x, (x, null))
+                    )
+                    : Enumerable.Empty<KeyValuePair<string, (string Primary, List<string>?)>>();
+
                 rewriter.Types[typeName] = (
                     newTypeName.Prettify(),
                     // TODO handle secondaries?
-                    constNames?.ToDictionary(x => x.Key, x => x.Value.Primary.Prettify()),
+                    constNames
+                        .Concat(prettifiedOnly)
+                        .ToDictionary(x => x.Key, x => x.Value.Primary.Prettify()),
                     functionNames?.ToDictionary(x => x.Key, x => x.Value.Primary.Prettify())
                 );
             }
         }
         else
         {
-            foreach (var (name, (constants, functions)) in visitor.Types)
+            foreach (var (name, (nonFunctions, functions)) in visitor.Types)
             {
                 rewriter.Types[name] = (
                     name.Prettify(),
-                    constants?.ToDictionary(x => x, x => x.Prettify()),
+                    nonFunctions?.ToDictionary(x => x, x => x.Prettify()),
                     functions?.ToDictionary(x => x, x => x.Prettify())
                 );
             }
         }
 
-        foreach (var (name, (newName, constants, functions)) in rewriter.Types)
+        foreach (var (name, (newName, nonFunctions, functions)) in rewriter.Types)
         {
             _logger.LogInformation("{} = {}", name, newName);
-            foreach (var (old, @new) in constants ?? new())
+            foreach (var (old, @new) in nonFunctions ?? new())
             {
                 _logger.LogInformation("{}.{} = {}.{}", name, old, newName, @new);
             }
@@ -157,19 +174,42 @@ public class PrettifyNames : IMod
             }
         }
 
-        return Task.FromResult(syntax);
+        return Task.FromResult(
+            syntax with
+            {
+                Files = syntax.Files
+                    .Select(
+                        x =>
+                            (
+                                x.Key.EndsWith(".gen.cs")
+                                && rewriter.Types.TryGetValue(
+                                    x.Key[(x.Key.LastIndexOf('/') + 1)..^7],
+                                    out var info
+                                )
+                                    ? $"{x.Key[..(x.Key.LastIndexOf('/') + 1)]}{info.NewName}.gen.cs"
+                                    : x.Key,
+                                rewriter.Visit(x.Value)
+                            )
+                    )
+                    .ToDictionary(x => x.Item1, x => x.Item2)
+            }
+        );
     }
 
     private class Visitor : CSharpSyntaxWalker
     {
-        public Dictionary<string, (List<string>? Constants, List<string>? Functions)> Types = new();
+        public Dictionary<string, (List<string>? NonFunctions, List<string>? Functions)> Types =
+            new();
+
+        public Dictionary<string, List<string>> PrettifyOnlyTypes = new();
         private (
             ClassDeclarationSyntax Class,
-            List<string> Constants,
+            List<string> NonFunctions,
             List<string> Functions
         )? _classInProgress;
         private (EnumDeclarationSyntax Enum, List<string> EnumMembers)? _enumInProgress;
         private FieldDeclarationSyntax? _visitingField = null;
+        private bool _prettifyOnly;
 
         public override void VisitClassDeclaration(ClassDeclarationSyntax node)
         {
@@ -188,7 +228,9 @@ public class PrettifyNames : IMod
                 Types.Add(id, inner);
             }
 
-            (inner.Constants ??= new List<string>()).AddRange(_classInProgress.Value.Constants);
+            (inner.NonFunctions ??= new List<string>()).AddRange(
+                _classInProgress.Value.NonFunctions
+            );
             (inner.Functions ??= new List<string>()).AddRange(_classInProgress.Value.Functions);
             _classInProgress = null;
         }
@@ -208,19 +250,41 @@ public class PrettifyNames : IMod
                 )
             )
             {
-                return;
+                _prettifyOnly = true;
             }
 
             _visitingField = node;
             base.VisitFieldDeclaration(node);
+            _prettifyOnly = false;
             _visitingField = null;
         }
 
         public override void VisitVariableDeclarator(VariableDeclaratorSyntax node)
         {
-            if (node.Parent?.Parent == _visitingField)
+            if (node.Parent?.Parent != _visitingField)
             {
-                _classInProgress!.Value.Constants.Add(node.Identifier.ToString());
+                return;
+            }
+
+            if (
+                _prettifyOnly
+                && node.Parent?.Parent?.Parent is BaseTypeDeclarationSyntax type
+                && type.Parent?.FirstAncestorOrSelf<BaseTypeDeclarationSyntax>() is null
+            )
+            {
+                var tiden = type.Identifier.ToString();
+                if (!PrettifyOnlyTypes.TryGetValue(tiden, out var inner))
+                {
+                    inner = new List<string>();
+                    PrettifyOnlyTypes.Add(tiden, inner);
+                }
+
+                var iden = node.Identifier.ToString();
+                inner.Add(iden);
+            }
+            else if (_classInProgress is not null && !_prettifyOnly)
+            {
+                _classInProgress.Value.NonFunctions.Add(node.Identifier.ToString());
             }
         }
 
@@ -234,10 +298,13 @@ public class PrettifyNames : IMod
 
         public override void VisitStructDeclaration(StructDeclarationSyntax node)
         {
-            if (_classInProgress is null && _enumInProgress is null)
+            if (_classInProgress is not null || _enumInProgress is not null)
             {
-                Types[node.Identifier.ToString()] = (null, null);
+                return;
             }
+
+            Types[node.Identifier.ToString()] = (null, null);
+            base.VisitStructDeclaration(node);
         }
 
         public override void VisitEnumDeclaration(EnumDeclarationSyntax node)
@@ -256,7 +323,7 @@ public class PrettifyNames : IMod
                 Types.Add(id, inner);
             }
 
-            (inner.Constants ??= new List<string>()).AddRange(_enumInProgress.Value.EnumMembers);
+            (inner.NonFunctions ??= new List<string>()).AddRange(_enumInProgress.Value.EnumMembers);
             _enumInProgress = null;
         }
     }
@@ -267,9 +334,238 @@ public class PrettifyNames : IMod
             string,
             (
                 string NewName,
-                Dictionary<string, string>? Constants,
+                Dictionary<string, string>? NonFunctions,
                 Dictionary<string, string>? Functions
             )
         > Types = new();
+
+        private (
+            BaseTypeDeclarationSyntax Type,
+            Dictionary<string, string>? NonFunctions,
+            Dictionary<string, string>? Functions
+        )? _typeInProgress;
+        private FieldDeclarationSyntax? _memberInProgress;
+        private bool _memberAccess;
+        private bool _accessing;
+        private bool _member;
+        private string? _memberAccessType;
+
+        public override SyntaxNode? VisitClassDeclaration(ClassDeclarationSyntax node)
+        {
+            if (
+                _typeInProgress is not null
+                || !Types.TryGetValue(node.Identifier.ToString(), out var info)
+            )
+            {
+                return base.VisitClassDeclaration(node);
+            }
+
+            _typeInProgress = (node, info.NonFunctions, info.Functions);
+            var ret = base.VisitClassDeclaration(node);
+            _typeInProgress = null;
+            return ((ClassDeclarationSyntax)ret!).WithIdentifier(Identifier(info.NewName));
+        }
+
+        public override SyntaxNode? VisitMethodDeclaration(MethodDeclarationSyntax node)
+        {
+            if (
+                _typeInProgress?.Functions is not null
+                && _typeInProgress.Value.Functions.TryGetValue(
+                    node.Identifier.ToString(),
+                    out var newName
+                )
+            )
+            {
+                return ((MethodDeclarationSyntax)base.VisitMethodDeclaration(node)!).WithIdentifier(
+                    Identifier(newName)
+                );
+            }
+            return base.VisitMethodDeclaration(node);
+        }
+
+        public override SyntaxNode? VisitEnumDeclaration(EnumDeclarationSyntax node)
+        {
+            if (
+                _typeInProgress is not null
+                || !Types.TryGetValue(node.Identifier.ToString(), out var info)
+            )
+            {
+                return base.VisitEnumDeclaration(node);
+            }
+
+            _typeInProgress = (node, info.NonFunctions, info.Functions);
+            var ret = base.VisitEnumDeclaration(node);
+            _typeInProgress = null;
+            return ((EnumDeclarationSyntax)ret!).WithIdentifier(Identifier(info.NewName));
+        }
+
+        public override SyntaxNode? VisitEnumMemberDeclaration(EnumMemberDeclarationSyntax node)
+        {
+            if (
+                _typeInProgress is null
+                || !(
+                    _typeInProgress.Value.NonFunctions?.TryGetValue(
+                        node.Identifier.ToString(),
+                        out var newName
+                    ) ?? false
+                )
+            )
+            {
+                return node;
+            }
+            return node.WithIdentifier(Identifier(newName));
+        }
+
+        public override SyntaxNode? VisitStructDeclaration(StructDeclarationSyntax node)
+        {
+            if (
+                _typeInProgress is not null
+                || !Types.TryGetValue(node.Identifier.ToString(), out var info)
+            )
+            {
+                return base.VisitStructDeclaration(node);
+            }
+
+            _typeInProgress = (node, info.NonFunctions, info.Functions);
+            var ret = ((StructDeclarationSyntax)base.VisitStructDeclaration(node)!).WithIdentifier(
+                Identifier(info.NewName)
+            );
+            _typeInProgress = null;
+            return ret;
+        }
+
+        public override SyntaxNode? VisitFieldDeclaration(FieldDeclarationSyntax node)
+        {
+            if (_typeInProgress is not null && _memberInProgress is null)
+            {
+                _memberInProgress = node;
+            }
+            var ret = base.VisitFieldDeclaration(node);
+            _memberInProgress = null;
+            return ret;
+        }
+
+        public override SyntaxNode? VisitPropertyDeclaration(PropertyDeclarationSyntax node)
+        {
+            if (
+                _typeInProgress?.NonFunctions is null
+                || !_typeInProgress.Value.NonFunctions.TryGetValue(
+                    node.Identifier.ToString(),
+                    out var newName
+                )
+            )
+            {
+                return node;
+            }
+            return node.WithIdentifier(Identifier(newName));
+        }
+
+        public override SyntaxNode? VisitVariableDeclarator(VariableDeclaratorSyntax node)
+        {
+            if (
+                _typeInProgress?.NonFunctions is not null
+                && _memberInProgress == node.Parent?.Parent
+                && _typeInProgress.Value.NonFunctions.TryGetValue(
+                    node.Identifier.ToString(),
+                    out var newName
+                )
+            )
+            {
+                return node.WithIdentifier(Identifier(newName));
+            }
+
+            return node;
+        }
+
+        public override SyntaxNode? VisitMemberAccessExpression(MemberAccessExpressionSyntax node)
+        {
+            _memberAccess = true;
+            _accessing = true;
+            Visit(node.Expression);
+            _accessing = false;
+            if (_memberAccessType is null || !Types.TryGetValue(_memberAccessType, out var info))
+            {
+                _memberAccess = false;
+                return node;
+            }
+
+            var accessing = (ExpressionSyntax)Visit(node.Expression);
+            _member = true;
+            var member = (SimpleNameSyntax)Visit(node.Name);
+            _member = false;
+            var ret = node.Update(accessing, VisitToken(node.OperatorToken), member);
+            _memberAccess = false;
+            _memberAccessType = null;
+            return ret;
+        }
+
+        public override SyntaxNode? VisitIdentifierName(IdentifierNameSyntax node)
+        {
+            if (_memberAccess)
+            {
+                if (_accessing) // getting the last identifier in the thing we're accessing
+                {
+                    _memberAccessType = node.Identifier.ToString();
+                    return node;
+                }
+
+                if (_member) // change name of the member we're accessing
+                {
+                    if (!Types.TryGetValue(_memberAccessType!, out var info))
+                    {
+                        return base.VisitIdentifierName(node);
+                    }
+
+                    if (
+                        info.NonFunctions?.TryGetValue(node.Identifier.ToString(), out var cName)
+                        ?? false
+                    )
+                    {
+                        return IdentifierName(cName);
+                    }
+
+                    if (
+                        info.Functions?.TryGetValue(node.Identifier.ToString(), out var fName)
+                        ?? false
+                    )
+                    {
+                        return IdentifierName(fName);
+                    }
+                }
+                else // changing name of the thing we're accessing
+                {
+                    var str = node.Identifier.ToString();
+                    if (str == _memberAccessType)
+                    {
+                        return IdentifierName(Types[str].NewName);
+                    }
+                }
+            }
+            else if (
+                _typeInProgress?.Functions is not null
+                && _typeInProgress.Value.Functions.TryGetValue(
+                    node.Identifier.ToString(),
+                    out var fName
+                )
+            )
+            {
+                return IdentifierName(fName);
+            }
+            else if (
+                _typeInProgress?.NonFunctions is not null
+                && _typeInProgress.Value.NonFunctions.TryGetValue(
+                    node.Identifier.ToString(),
+                    out var cName
+                )
+            )
+            {
+                return IdentifierName(cName);
+            }
+            else if (Types.TryGetValue(node.Identifier.ToString(), out var info))
+            {
+                return IdentifierName(info.NewName);
+            }
+            return base.VisitIdentifierName(node);
+        }
     }
 }

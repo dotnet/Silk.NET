@@ -35,10 +35,18 @@
       "Solution": "../../SilkX.sln",
       "Mods": [
         "AddStdIncludes",
+        "AddOpaqueStructs",
         "UseSilkDSL",
         "PrettifyNames",
         "CSharpier"
-      ]
+      ],
+      "AddOpaqueStructs": {
+        "Names": [
+          "GLFWcursor",
+          "GLFWmonitor",
+          "GLFWwindow"
+        ]
+      }
     }
   }
 }

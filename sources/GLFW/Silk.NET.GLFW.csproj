@@ -7,20 +7,15 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Remove="**/*.gen.cs" />
+    <Compile Include="Cursor.gen.cs" />
+    <Compile Include="glfw3/Allocator.gen.cs" />
+    <Compile Include="glfw3/Gamepadstate.gen.cs" />
+    <Compile Include="glfw3/Gammaramp.gen.cs" />
     <Compile Include="glfw3/Glfw.gen.cs" />
-    <Compile Include="glfw3/GLFWallocator.gen.cs" />
-    <Compile Include="glfw3/GLFWgamepadstate.gen.cs" />
-    <Compile Include="glfw3/GLFWgammaramp.gen.cs" />
-    <Compile Include="glfw3/GLFWimage.gen.cs" />
-    <Compile Include="glfw3/GLFWimage.gen.cs" />
-    <Compile Include="glfw3/GLFWimage.gen.cs" />
-    <Compile Include="glfw3/GLFWimage.gen.cs" />
-    <Compile Include="glfw3/GLFWimage.gen.cs" />
-    <Compile Include="glfw3/GLFWimage.gen.cs" />
-    <Compile Include="glfw3/GLFWimage.gen.cs" />
-    <Compile Include="glfw3/GLFWimage.gen.cs" />
-    <Compile Include="glfw3/GLFWimage.gen.cs" />
-    <Compile Include="glfw3/GLFWvidmode.gen.cs" />
+    <Compile Include="glfw3/Image.gen.cs" />
+    <Compile Include="glfw3/Vidmode.gen.cs" />
+    <Compile Include="Monitor.gen.cs" />
+    <Compile Include="Window.gen.cs" />
     <!-- because Roslyn is a plonker -->
   </ItemGroup>
   <ItemGroup>

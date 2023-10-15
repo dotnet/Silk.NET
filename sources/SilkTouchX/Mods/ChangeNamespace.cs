@@ -159,7 +159,7 @@ public class ChangeNamespace : IMod
                 CompilationUnitSyntax syntax
                     => syntax.AddUsings(
                         _usingsToAdd
-                            .Select(x => UsingDirective(NamespaceIntoIdentifierName(x)))
+                            .Select(x => UsingDirective(ModUtils.NamespaceIntoIdentifierName(x)))
                             .Where(
                                 x =>
                                     syntax.Usings.All(y => x.Name?.ToString() != y.Name?.ToString())
@@ -182,7 +182,7 @@ public class ChangeNamespace : IMod
             return base.VisitNamespaceDeclaration(node) switch
             {
                 NamespaceDeclarationSyntax syntax
-                    => syntax.WithName(NamespaceIntoIdentifierName(newNs)),
+                    => syntax.WithName(ModUtils.NamespaceIntoIdentifierName(newNs)),
                 { } ret => ret,
                 null => null
             };
@@ -201,24 +201,10 @@ public class ChangeNamespace : IMod
             return base.VisitFileScopedNamespaceDeclaration(node) switch
             {
                 FileScopedNamespaceDeclarationSyntax syntax
-                    => syntax.WithName(NamespaceIntoIdentifierName(newNs)),
+                    => syntax.WithName(ModUtils.NamespaceIntoIdentifierName(newNs)),
                 { } ret => ret,
                 null => null
             };
-        }
-
-        private static NameSyntax NamespaceIntoIdentifierName(ReadOnlySpan<char> ns)
-        {
-            var idx = ns.LastIndexOf('.');
-            if (idx == -1)
-            {
-                return IdentifierName(ns.ToString());
-            }
-
-            return QualifiedName(
-                NamespaceIntoIdentifierName(ns[..idx]),
-                IdentifierName(ns[(idx + 1)..].ToString())
-            );
         }
     }
 }

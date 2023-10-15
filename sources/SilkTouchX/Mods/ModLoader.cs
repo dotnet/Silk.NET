@@ -20,6 +20,7 @@ public class ModLoader
             nameof(UseSilkDSL) => typeof(UseSilkDSL),
             nameof(PrettifyNames) => typeof(PrettifyNames),
             nameof(CSharpier) => typeof(CSharpier),
+            nameof(AddOpaqueStructs) => typeof(AddOpaqueStructs),
             _ => null
         };
- }
+}

@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Runtime.InteropServices;
 using System.Text.RegularExpressions;
@@ -14,6 +15,25 @@ namespace SilkTouchX.Mods;
 /// </summary>
 public static class ModUtils
 {
+    /// <summary>
+    /// Converts a namespace string into an <see cref="NameSyntax"/>.
+    /// </summary>
+    /// <param name="ns">The namespace string.</param>
+    /// <returns>The <see cref="NameSyntax"/> representing this namespace.</returns>
+    public static NameSyntax NamespaceIntoIdentifierName(ReadOnlySpan<char> ns)
+    {
+        var idx = ns.LastIndexOf('.');
+        if (idx == -1)
+        {
+            return IdentifierName(ns.ToString());
+        }
+
+        return QualifiedName(
+            NamespaceIntoIdentifierName(ns[..idx]),
+            IdentifierName(ns[(idx + 1)..].ToString())
+        );
+    }
+
     /// <summary>
     /// Matches a potential replacement candidate against the given list of regex-replacement mappings and, if a regex
     /// matches, performs a group substitution on the replacement to replace the match.
