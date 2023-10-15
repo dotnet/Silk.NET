@@ -255,7 +255,7 @@ The binding class **shall** itself implement the top-level interface, using the 
 
 The binding class **shall** also contain shorthand functions for calling the static functions contained within the static subinterface using the *static default*.
 
-**INFORMATIVE:** It is undecided whether we want to implement the static subinterface on the binding class itself as well.
+The binding class **shall** implement the static subinterface (i.e. to proxy calls to the *static default* for ease of use).
 
 **INFORMATIVE:** Do we want to make a MakeCurrent shorthand as well? This may cause confusion for OpenGL users because it doesn't make the underlying context (WGL/EGL/GLX) current, it just makes it the current source of function pointers.
 
