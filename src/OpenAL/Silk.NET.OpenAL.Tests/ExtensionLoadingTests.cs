@@ -105,6 +105,7 @@ public class ExtensionLoadingTests
         Test<EffectExtension>();
         Test<XRam>();
         Test<DeferredUpdates>();
+        Test<SoftEffectTarget>();
 
         SilkMarshal.Free(loaderPtr);
         SilkMarshal.Free(ctxLoaderPtr);
