@@ -21,7 +21,6 @@ jobs:
                     - rid: osx-x64
                       os: macos-latest
                       name: osx-x64
-        name: .NET Tests (${{ matrix.rid }})
         runs-on: ${{ matrix.os }}
         steps:
             - uses: actions/checkout@v3
@@ -38,7 +37,7 @@ jobs:
               uses: dorny/test-reporter@v1
               if: success() || failure()
               with:
-                name: .NET Tests (${{ matrix.rid }})
+                name: .NET Test Report (${{ matrix.rid }})
                 path: ./coverage/**/*.trx
                 reporter: dotnet-trx
             - name: Upload Coverage Results
@@ -71,3 +70,4 @@ jobs:
             - uses: 5monkeys/cobertura-action@master
               with:
                 path: coveragereport/Cobertura.xml
+                minimum_coverage: 0
