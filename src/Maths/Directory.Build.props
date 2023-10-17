@@ -1,6 +1,0 @@
-<Project>
-    <PropertyGroup>
-        <SilkDescription>A small and portable mathematics and linear algebra library, useful in graphics and compute workloads.</SilkDescription>
-        <SilkExtendedDescription>This package has no other Silk.NET dependencies, so feel free to use it any project in any workload regardless of whether it uses other Silk.NET libraries or not. This is akin to System.Numerics.Vectors, only with extra types and generics (so any numerical type can be used rather than just float).%0a%0aCurrently supports:%0a- Half%0a- float%0a- double%0a- decimal%0a- byte%0a- sbyte%0a- ushort%0a- short%0a- uint%0a- int%0a- ulong%0a- long%0a- Complex%0a- BitInteger</SilkExtendedDescription>
-    </PropertyGroup>
-</Project>
