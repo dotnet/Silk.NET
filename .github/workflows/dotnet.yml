@@ -15,15 +15,13 @@ jobs:
                     - rid: win-x64
                       os: windows-latest
                       name: win-x64
-                    - rid: win-x86
-                      os: windows-latest
-                      name: win-x86
                     - rid: linux-x64
                       os: ubuntu-20.04
                       name: linux-x64
                     - rid: osx-x64
                       os: macos-latest
                       name: osx-x64
+        name: .NET Tests (${{ matrix.rid }})
         runs-on: ${{ matrix.os }}
         steps:
             - uses: actions/checkout@v3
@@ -40,7 +38,7 @@ jobs:
               uses: dorny/test-reporter@v1
               if: success() || failure()
               with:
-                name: .NET Tests
+                name: .NET Tests (${{ matrix.rid }})
                 path: ./coverage/**/*.trx
                 reporter: dotnet-trx
             - name: Upload Coverage Results
