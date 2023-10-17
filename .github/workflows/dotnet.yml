@@ -3,9 +3,8 @@ on:
     push:
     pull_request:
     merge_group:
-        types: [checks_requested]
 jobs:
-    Build & Test:
+    Test:
         strategy:
             fail-fast: false
             matrix:
@@ -46,7 +45,7 @@ jobs:
               with:
                 name: coverage-${{ matrix.name }}
                 path: ./coverage/**/coverage.cobertura.xml
-    Report Coverage:
+    Report-Coverage:
         runs-on: ubuntu-latest
         needs: Test
         permissions:
