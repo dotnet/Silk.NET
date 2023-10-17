@@ -5,6 +5,9 @@ on:
     merge_group:
 jobs:
     Test:
+        permissions:
+            pull-requests: write
+            checks: write
         strategy:
             fail-fast: false
             matrix:
