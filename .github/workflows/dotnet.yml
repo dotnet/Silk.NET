@@ -32,13 +32,13 @@ jobs:
             - name: Restore
               run: dotnet restore --runtime ${{ matrix.rid }}
             - name: Test
-              run: dotnet test -c Release --no-restore --runtime ${{ matrix.rid }} --collect:"XPlat Code Coverage" --results-directory ./coverage --logger:"trx;LogFilePath=TestResult.trx"
+              run: dotnet test -c Release --no-restore --runtime ${{ matrix.rid }} --collect:"XPlat Code Coverage" --results-directory ./coverage --logger:"trx"
             - name: Test Report
               uses: dorny/test-reporter@v1
               if: success() || failure()
               with:
                 name: .NET Tests
-                path: TestResult.trx
+                path: ./coverage/**/*.trx
                 reporter: dotnet-trx
             - name: Upload Coverage Results
               uses: actions/upload-artifact@v3
