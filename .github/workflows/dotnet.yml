@@ -3,11 +3,12 @@ on:
     push:
     pull_request:
     merge_group:
+permissions:
+    pull-requests: write
+    checks: write
+    contents: write
 jobs:
     Test:
-        permissions:
-            pull-requests: write
-            checks: write
         strategy:
             fail-fast: false
             matrix:
