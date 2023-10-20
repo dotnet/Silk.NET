@@ -54,5 +54,7 @@ namespace Silk.NET.SPIRV.Reflect
         ErrorSpirvInvalidEntryPoint = 0x13,
         [NativeName("Name", "SPV_REFLECT_RESULT_ERROR_SPIRV_INVALID_EXECUTION_MODE")]
         ErrorSpirvInvalidExecutionMode = 0x14,
+        [NativeName("Name", "SPV_REFLECT_RESULT_ERROR_SPIRV_MAX_RECURSIVE_EXCEEDED")]
+        ErrorSpirvMaxRecursiveExceeded = 0x15,
     }
 }

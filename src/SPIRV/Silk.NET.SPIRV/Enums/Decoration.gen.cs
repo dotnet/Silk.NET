@@ -250,6 +250,8 @@ namespace Silk.NET.SPIRV
         VectorComputeCallableFunctionIntel = 0x17C7,
         [NativeName("Name", "SpvDecorationMediaBlockIOINTEL")]
         MediaBlockIointel = 0x17FC,
+        [NativeName("Name", "SpvDecorationFPMaxErrorDecorationINTEL")]
+        FPMaxErrorDecorationIntel = 0x181A,
         [NativeName("Name", "SpvDecorationLatencyControlLabelINTEL")]
         LatencyControlLabelIntel = 0x181C,
         [NativeName("Name", "SpvDecorationLatencyControlConstraintINTEL")]

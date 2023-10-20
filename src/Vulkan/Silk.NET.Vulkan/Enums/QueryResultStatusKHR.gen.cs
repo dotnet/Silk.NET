@@ -21,11 +21,16 @@ namespace Silk.NET.Vulkan
         [Obsolete("Deprecated in favour of \"CompleteKhr\"")]
         [NativeName("Name", "VK_QUERY_RESULT_STATUS_COMPLETE_KHR")]
         QueryResultStatusCompleteKhr = 1,
+        [Obsolete("Deprecated in favour of \"InsufficientBitstreamBufferRangeKhr\"")]
+        [NativeName("Name", "VK_QUERY_RESULT_STATUS_INSUFFICIENT_BITSTREAM_BUFFER_RANGE_KHR")]
+        QueryResultStatusInsufficientBitstreamBufferRangeKhr = unchecked((int) -1000299000),
         [NativeName("Name", "VK_QUERY_RESULT_STATUS_ERROR_KHR")]
         ErrorKhr = unchecked((int) -1),
         [NativeName("Name", "VK_QUERY_RESULT_STATUS_NOT_READY_KHR")]
         NotReadyKhr = 0,
         [NativeName("Name", "VK_QUERY_RESULT_STATUS_COMPLETE_KHR")]
         CompleteKhr = 1,
+        [NativeName("Name", "VK_QUERY_RESULT_STATUS_INSUFFICIENT_BITSTREAM_BUFFER_RANGE_KHR")]
+        InsufficientBitstreamBufferRangeKhr = unchecked((int) -1000299000),
     }
 }

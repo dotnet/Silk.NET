@@ -26,7 +26,8 @@ namespace Silk.NET.Vulkan.Video
             StdVideoH264SliceType? sliceType = null,
             byte? sliceAlphaC0OffsetDiv2 = null,
             byte? sliceBetaOffsetDiv2 = null,
-            ushort? reserved1 = null,
+            byte? sliceQpDelta = null,
+            byte? reserved1 = null,
             StdVideoH264CabacInitIdc? cabacInitIdc = null,
             StdVideoH264DisableDeblockingFilterIdc? disableDeblockingFilterIdc = null,
             StdVideoEncodeH264WeightTable* pWeightTable = null
@@ -55,6 +56,11 @@ namespace Silk.NET.Vulkan.Video
             if (sliceBetaOffsetDiv2 is not null)
             {
                 SliceBetaOffsetDiv2 = sliceBetaOffsetDiv2.Value;
+            }
+
+            if (sliceQpDelta is not null)
+            {
+                SliceQpDelta = sliceQpDelta.Value;
             }
 
             if (reserved1 is not null)
@@ -104,10 +110,15 @@ namespace Silk.NET.Vulkan.Video
         [NativeName("Name", "slice_beta_offset_div2")]
         public byte SliceBetaOffsetDiv2;
 
-        [NativeName("Type", "uint16_t")]
-        [NativeName("Type.Name", "uint16_t")]
+        [NativeName("Type", "int8_t")]
+        [NativeName("Type.Name", "int8_t")]
+        [NativeName("Name", "slice_qp_delta")]
+        public byte SliceQpDelta;
+
+        [NativeName("Type", "uint8_t")]
+        [NativeName("Type.Name", "uint8_t")]
         [NativeName("Name", "reserved1")]
-        public ushort Reserved1;
+        public byte Reserved1;
 
         [NativeName("Type", "StdVideoH264CabacInitIdc")]
         [NativeName("Type.Name", "StdVideoH264CabacInitIdc")]

@@ -18,7 +18,7 @@ namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkPipelineCreationFeedbackCreateInfoEXT")]
     [NativeName("AliasOf", "VkPipelineCreationFeedbackCreateInfo")]
-    public unsafe partial struct PipelineCreationFeedbackCreateInfoEXT : IExtendsChain<GraphicsPipelineCreateInfo>, IExtendsChain<ComputePipelineCreateInfo>, IExtendsChain<RayTracingPipelineCreateInfoNV>, IExtendsChain<RayTracingPipelineCreateInfoKHR>
+    public unsafe partial struct PipelineCreationFeedbackCreateInfoEXT : IExtendsChain<GraphicsPipelineCreateInfo>, IExtendsChain<ComputePipelineCreateInfo>, IExtendsChain<RayTracingPipelineCreateInfoNV>, IExtendsChain<RayTracingPipelineCreateInfoKHR>, IExtendsChain<ExecutionGraphPipelineCreateInfoAMDX>
     {
         public PipelineCreationFeedbackCreateInfoEXT
         (

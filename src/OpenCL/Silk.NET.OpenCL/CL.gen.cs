@@ -56,9 +56,6 @@ namespace Silk.NET.OpenCL
         [NativeName("Name", "CL_DBL_RADIX")]
         public const double DblRadix = unchecked((double) 2);
         [NativeName("Type", "")]
-        [NativeName("Name", "CL_DEVICE_HANDLE_LIST_END_KHR")]
-        public const int DeviceHandleListEndKhr = unchecked((int) 0);
-        [NativeName("Type", "")]
         [NativeName("Name", "CL_DEVICE_PARTITION_BY_COUNTS_LIST_END")]
         public const int DevicePartitionByCountsListEnd = unchecked((int) 0x0);
         [NativeName("Type", "")]
@@ -179,6 +176,9 @@ namespace Silk.NET.OpenCL
         [NativeName("Name", "CL_M_E_F")]
         public const float MEF = unchecked((float) 2.718281828f);
         [NativeName("Type", "")]
+        [NativeName("Name", "CL_MEM_DEVICE_HANDLE_LIST_END_KHR")]
+        public const double MemDeviceHandleListEndKhr = unchecked((double) 0);
+        [NativeName("Type", "")]
         [NativeName("Name", "CL_M_LN10")]
         public const double MLN10 = unchecked((double) 2.30258509299404568402);
         [NativeName("Type", "")]
@@ -265,6 +265,9 @@ namespace Silk.NET.OpenCL
         [NativeName("Type", "")]
         [NativeName("Name", "CL_SCHAR_MIN")]
         public const sbyte ScharMin = unchecked((sbyte) sbyte.MinValue);
+        [NativeName("Type", "")]
+        [NativeName("Name", "CL_SEMAPHORE_DEVICE_HANDLE_LIST_END_KHR")]
+        public const int SemaphoreDeviceHandleListEndKhr = unchecked((int) 0);
         [NativeName("Type", "")]
         [NativeName("Name", "CL_SEMAPHORE_EXPORT_HANDLE_TYPES_LIST_END_KHR")]
         public const int SemaphoreExportHandleTypesListEndKhr = unchecked((int) 0);

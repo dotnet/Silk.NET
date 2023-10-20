@@ -17,11 +17,12 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkImageSubresource2EXT")]
+    [NativeName("AliasOf", "VkImageSubresource2KHR")]
     public unsafe partial struct ImageSubresource2EXT : IChainable
     {
         public ImageSubresource2EXT
         (
-            StructureType? sType = StructureType.ImageSubresource2Ext,
+            StructureType? sType = StructureType.ImageSubresource2Khr,
             void* pNext = null,
             ImageSubresource? imageSubresource = null
         ) : this()
@@ -61,7 +62,7 @@ namespace Silk.NET.Vulkan
         /// <inheritdoc />
         StructureType IStructuredType.StructureType()
         {
-            return SType = StructureType.ImageSubresource2Ext;
+            return SType = StructureType.ImageSubresource2Khr;
         }
 
         /// <inheritdoc />

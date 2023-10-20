@@ -957,7 +957,7 @@ namespace Silk.NET.SDL
         public const int MinorVersion = unchecked((int) 0x1C);
         [NativeName("Type", "int")]
         [NativeName("Name", "SDL_PATCHLEVEL")]
-        public const int Patchlevel = unchecked((int) 0x0);
+        public const int Patchlevel = unchecked((int) 0x1);
         [NativeName("Type", "unsigned int")]
         [NativeName("Name", "SDL_INIT_TIMER")]
         public const uint InitTimer = unchecked((uint) 0x1);

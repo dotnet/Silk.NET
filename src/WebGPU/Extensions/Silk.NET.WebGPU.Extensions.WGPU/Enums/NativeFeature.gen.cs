@@ -22,6 +22,10 @@ namespace Silk.NET.WebGPU.Extensions.WGPU
         MultiDrawIndirectCount = 0x30004,
         [NativeName("Name", "WGPUNativeFeature_VertexWritableStorage")]
         VertexWritableStorage = 0x30005,
+        [NativeName("Name", "WGPUNativeFeature_TextureBindingArray")]
+        TextureBindingArray = 0x30006,
+        [NativeName("Name", "WGPUNativeFeature_SampledTextureAndStorageBufferArrayNonUniformIndexing")]
+        SampledTextureAndStorageBufferArrayNonUniformIndexing = 0x30007,
         [NativeName("Name", "WGPUNativeFeature_Force32")]
         Force32 = 0x7FFFFFFF,
     }

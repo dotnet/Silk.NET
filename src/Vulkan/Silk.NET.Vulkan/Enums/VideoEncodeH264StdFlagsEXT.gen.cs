@@ -69,6 +69,12 @@ namespace Silk.NET.Vulkan
         [Obsolete("Deprecated in favour of \"DeblockingFilterPartialBitExt\"")]
         [NativeName("Name", "VK_VIDEO_ENCODE_H264_STD_DEBLOCKING_FILTER_PARTIAL_BIT_EXT")]
         VideoEncodeH264StdDeblockingFilterPartialBitExt = 131072,
+        [Obsolete("Deprecated in favour of \"SliceQPDeltaBitExt\"")]
+        [NativeName("Name", "VK_VIDEO_ENCODE_H264_STD_SLICE_QP_DELTA_BIT_EXT")]
+        VideoEncodeH264StdSliceQPDeltaBitExt = 524288,
+        [Obsolete("Deprecated in favour of \"DifferentSliceQPDeltaBitExt\"")]
+        [NativeName("Name", "VK_VIDEO_ENCODE_H264_STD_DIFFERENT_SLICE_QP_DELTA_BIT_EXT")]
+        VideoEncodeH264StdDifferentSliceQPDeltaBitExt = 1048576,
         [NativeName("Name", "VK_VIDEO_ENCODE_H264_STD_SEPARATE_COLOR_PLANE_FLAG_SET_BIT_EXT")]
         SeparateColorPlaneFlagSetBitExt = 1,
         [NativeName("Name", "VK_VIDEO_ENCODE_H264_STD_QPPRIME_Y_ZERO_TRANSFORM_BYPASS_FLAG_SET_BIT_EXT")]
@@ -105,5 +111,9 @@ namespace Silk.NET.Vulkan
         DeblockingFilterEnabledBitExt = 65536,
         [NativeName("Name", "VK_VIDEO_ENCODE_H264_STD_DEBLOCKING_FILTER_PARTIAL_BIT_EXT")]
         DeblockingFilterPartialBitExt = 131072,
+        [NativeName("Name", "VK_VIDEO_ENCODE_H264_STD_SLICE_QP_DELTA_BIT_EXT")]
+        SliceQPDeltaBitExt = 524288,
+        [NativeName("Name", "VK_VIDEO_ENCODE_H264_STD_DIFFERENT_SLICE_QP_DELTA_BIT_EXT")]
+        DifferentSliceQPDeltaBitExt = 1048576,
     }
 }

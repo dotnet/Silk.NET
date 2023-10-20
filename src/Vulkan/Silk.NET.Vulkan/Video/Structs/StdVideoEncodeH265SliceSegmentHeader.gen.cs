@@ -33,6 +33,8 @@ namespace Silk.NET.Vulkan.Video
             byte? sliceActYQpOffset = null,
             byte? sliceActCbQpOffset = null,
             byte? sliceActCrQpOffset = null,
+            byte? sliceQpDelta = null,
+            ushort? reserved1 = null,
             StdVideoEncodeH265WeightTable* pWeightTable = null
         ) : this()
         {
@@ -94,6 +96,16 @@ namespace Silk.NET.Vulkan.Video
             if (sliceActCrQpOffset is not null)
             {
                 SliceActCrQpOffset = sliceActCrQpOffset.Value;
+            }
+
+            if (sliceQpDelta is not null)
+            {
+                SliceQpDelta = sliceQpDelta.Value;
+            }
+
+            if (reserved1 is not null)
+            {
+                Reserved1 = reserved1.Value;
             }
 
             if (pWeightTable is not null)
@@ -162,10 +174,16 @@ namespace Silk.NET.Vulkan.Video
         [NativeName("Type.Name", "int8_t")]
         [NativeName("Name", "slice_act_cr_qp_offset")]
         public byte SliceActCrQpOffset;
-        [NativeName("Type", "uint8_t[3]")]
-        [NativeName("Type.Name", "uint8_t[3]")]
+
+        [NativeName("Type", "int8_t")]
+        [NativeName("Type.Name", "int8_t")]
+        [NativeName("Name", "slice_qp_delta")]
+        public byte SliceQpDelta;
+
+        [NativeName("Type", "uint16_t")]
+        [NativeName("Type.Name", "uint16_t")]
         [NativeName("Name", "reserved1")]
-        public fixed byte Reserved1[3];
+        public ushort Reserved1;
 
         [NativeName("Type", "const StdVideoEncodeH265WeightTable *")]
         [NativeName("Type.Name", "const StdVideoEncodeH265WeightTable *")]

@@ -64,5 +64,7 @@ namespace Silk.NET.OpenCL
         VyuyIntel = 0x4079,
         [NativeName("Name", "CL_NV12_INTEL")]
         NV12Intel = 0x410E,
+        [NativeName("Name", "CL_DEPTH_STENCIL")]
+        DepthStencil = 0x10BE,
     }
 }
