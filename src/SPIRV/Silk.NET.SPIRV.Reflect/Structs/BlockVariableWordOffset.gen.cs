@@ -16,7 +16,7 @@ using Silk.NET.Core.Loader;
 
 namespace Silk.NET.SPIRV.Reflect
 {
-    [NativeName("Name", "__AnonymousRecord_spirv_reflect_L385_C3")]
+    [NativeName("Name", "__AnonymousRecord_spirv_reflect_L415_C3")]
     public unsafe partial struct BlockVariableWordOffset
     {
         public BlockVariableWordOffset

@@ -15,6 +15,6 @@ namespace Silk.NET.OpenCL.Extensions.INTEL
         [NativeName("Name", "CL_ME_SKIP_BLOCK_TYPE_16x16_INTEL")]
         Type16x16 = 0x0,
         [NativeName("Name", "CL_ME_SKIP_BLOCK_TYPE_8x8_INTEL")]
-        Type8x8 = 0x1,
+        Type8x8 = 0x4,
     }
 }

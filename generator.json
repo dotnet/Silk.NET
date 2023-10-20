@@ -717,6 +717,9 @@
                     "openxr"
                 ]
             },
+            "prefixOverrides": {
+                "XrPassthroughColorLutChannelsMETA": "XR_PASSTHROUGH_COLOR_LUT_CHANNELS"
+            },
             "output": {
                 "mode": "Default",
                 "path": "src/OpenXR",
@@ -792,7 +795,8 @@
                     "VkFilter": "uint",
                     "XrVector4sFB": "Silk.NET.Maths.Vector4D<short>",
                     "VkImageCreateFlags": "uint",
-                    "VkImageUsageFlags": "uint"
+                    "VkImageUsageFlags": "uint",
+                    "PFN_xrEglGetProcAddressMNDX": "void*"
                 },
                 {
                     "$include.commonTypeMap": "build/csharp_typemap.json",

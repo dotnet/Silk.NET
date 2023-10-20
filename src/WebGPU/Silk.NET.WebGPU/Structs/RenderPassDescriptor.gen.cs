@@ -27,8 +27,7 @@ namespace Silk.NET.WebGPU
             RenderPassColorAttachment* colorAttachments = null,
             RenderPassDepthStencilAttachment* depthStencilAttachment = null,
             QuerySet* occlusionQuerySet = null,
-            nuint? timestampWriteCount = null,
-            RenderPassTimestampWrite* timestampWrites = null
+            RenderPassTimestampWrites* timestampWrites = null
         ) : this()
         {
             if (nextInChain is not null)
@@ -59,11 +58,6 @@ namespace Silk.NET.WebGPU
             if (occlusionQuerySet is not null)
             {
                 OcclusionQuerySet = occlusionQuerySet;
-            }
-
-            if (timestampWriteCount is not null)
-            {
-                TimestampWriteCount = timestampWriteCount.Value;
             }
 
             if (timestampWrites is not null)
@@ -103,14 +97,9 @@ namespace Silk.NET.WebGPU
         [NativeName("Name", "occlusionQuerySet")]
         public QuerySet* OcclusionQuerySet;
 
-        [NativeName("Type", "size_t")]
-        [NativeName("Type.Name", "size_t")]
-        [NativeName("Name", "timestampWriteCount")]
-        public nuint TimestampWriteCount;
-
-        [NativeName("Type", "const WGPURenderPassTimestampWrite *")]
-        [NativeName("Type.Name", "const WGPURenderPassTimestampWrite *")]
+        [NativeName("Type", "const WGPURenderPassTimestampWrites *")]
+        [NativeName("Type.Name", "const WGPURenderPassTimestampWrites *")]
         [NativeName("Name", "timestampWrites")]
-        public RenderPassTimestampWrite* TimestampWrites;
+        public RenderPassTimestampWrites* TimestampWrites;
     }
 }

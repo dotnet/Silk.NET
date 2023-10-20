@@ -7,7 +7,7 @@ using Silk.NET.Core.Attributes;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.WebGPU
+namespace Silk.NET.WebGPU.Extensions.Dawn
 {
     [NativeName("Name", "WGPUComputePassTimestampLocation")]
     public enum ComputePassTimestampLocation : int

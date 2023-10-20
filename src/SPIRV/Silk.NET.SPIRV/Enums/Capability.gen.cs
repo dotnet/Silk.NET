@@ -494,6 +494,8 @@ namespace Silk.NET.SPIRV
         SplitBarrierIntel = 0x17FD,
         [NativeName("Name", "SpvCapabilityFPGAKernelAttributesv2INTEL")]
         FpgaKernelAttributesv2intel = 0x1811,
+        [NativeName("Name", "SpvCapabilityFPMaxErrorINTEL")]
+        FPMaxErrorIntel = 0x1819,
         [NativeName("Name", "SpvCapabilityFPGALatencyControlINTEL")]
         FpgaLatencyControlIntel = 0x181B,
         [NativeName("Name", "SpvCapabilityFPGAArgumentInterfacesINTEL")]

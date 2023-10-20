@@ -14,16 +14,16 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.WebGPU
+namespace Silk.NET.WebGPU.Extensions.Dawn
 {
-    [NativeName("Name", "WGPUComputePassTimestampWrite")]
-    public unsafe partial struct ComputePassTimestampWrite
+    [NativeName("Name", "WGPURenderPassTimestampWrite")]
+    public unsafe partial struct RenderPassTimestampWrite
     {
-        public ComputePassTimestampWrite
+        public RenderPassTimestampWrite
         (
             QuerySet* querySet = null,
             uint? queryIndex = null,
-            ComputePassTimestampLocation? location = null
+            RenderPassTimestampLocation? location = null
         ) : this()
         {
             if (querySet is not null)
@@ -53,9 +53,9 @@ namespace Silk.NET.WebGPU
         [NativeName("Name", "queryIndex")]
         public uint QueryIndex;
 
-        [NativeName("Type", "WGPUComputePassTimestampLocation")]
-        [NativeName("Type.Name", "WGPUComputePassTimestampLocation")]
+        [NativeName("Type", "WGPURenderPassTimestampLocation")]
+        [NativeName("Type.Name", "WGPURenderPassTimestampLocation")]
         [NativeName("Name", "location")]
-        public ComputePassTimestampLocation Location;
+        public RenderPassTimestampLocation Location;
     }
 }

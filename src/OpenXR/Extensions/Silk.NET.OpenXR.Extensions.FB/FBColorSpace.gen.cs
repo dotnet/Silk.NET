@@ -38,7 +38,7 @@ namespace Silk.NET.OpenXR.Extensions.FB
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "xrSetColorSpaceFB", Convention = CallingConvention.Winapi)]
-        public partial Result SetColorSpaceFB([Count(Count = 0)] Session session, [Count(Count = 0)] ColorSpaceFB colorspace);
+        public partial Result SetColorSpaceFB([Count(Count = 0)] Session session, [Count(Count = 0)] ColorSpaceFB colorSpace);
 
         /// <summary>To be documented.</summary>
         public unsafe Result EnumerateColorSpacesFB([Count(Count = 0)] Session session, [Count(Count = 0)] uint* colorSpaceCountOutput, [Count(Parameter = "colorSpaceCapacityInput")] Span<ColorSpaceFB> colorSpaces)

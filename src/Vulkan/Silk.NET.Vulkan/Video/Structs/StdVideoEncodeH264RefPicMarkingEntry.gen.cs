@@ -21,16 +21,16 @@ namespace Silk.NET.Vulkan.Video
     {
         public StdVideoEncodeH264RefPicMarkingEntry
         (
-            StdVideoH264MemMgmtControlOp? operation = null,
+            StdVideoH264MemMgmtControlOp? memoryManagementControlOperation = null,
             ushort? differenceOfPicNumsMinus1 = null,
             ushort? longTermPicNum = null,
             ushort? longTermFrameIdx = null,
             ushort? maxLongTermFrameIdxPlus1 = null
         ) : this()
         {
-            if (operation is not null)
+            if (memoryManagementControlOperation is not null)
             {
-                Operation = operation.Value;
+                MemoryManagementControlOperation = memoryManagementControlOperation.Value;
             }
 
             if (differenceOfPicNumsMinus1 is not null)
@@ -57,8 +57,8 @@ namespace Silk.NET.Vulkan.Video
 
         [NativeName("Type", "StdVideoH264MemMgmtControlOp")]
         [NativeName("Type.Name", "StdVideoH264MemMgmtControlOp")]
-        [NativeName("Name", "operation")]
-        public StdVideoH264MemMgmtControlOp Operation;
+        [NativeName("Name", "memory_management_control_operation")]
+        public StdVideoH264MemMgmtControlOp MemoryManagementControlOperation;
 
         [NativeName("Type", "uint16_t")]
         [NativeName("Type.Name", "uint16_t")]

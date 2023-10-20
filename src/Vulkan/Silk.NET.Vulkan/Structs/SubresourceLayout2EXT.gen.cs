@@ -17,11 +17,12 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkSubresourceLayout2EXT")]
+    [NativeName("AliasOf", "VkSubresourceLayout2KHR")]
     public unsafe partial struct SubresourceLayout2EXT : IChainStart
     {
         public SubresourceLayout2EXT
         (
-            StructureType? sType = StructureType.SubresourceLayout2Ext,
+            StructureType? sType = StructureType.SubresourceLayout2Khr,
             void* pNext = null,
             SubresourceLayout? subresourceLayout = null
         ) : this()
@@ -61,7 +62,7 @@ namespace Silk.NET.Vulkan
         /// <inheritdoc />
         StructureType IStructuredType.StructureType()
         {
-            return SType = StructureType.SubresourceLayout2Ext;
+            return SType = StructureType.SubresourceLayout2Khr;
         }
 
         /// <inheritdoc />
@@ -79,7 +80,7 @@ namespace Silk.NET.Vulkan
         public static unsafe ref SubresourceLayout2EXT Chain(
             out SubresourceLayout2EXT capture)
         {
-            capture = new SubresourceLayout2EXT(StructureType.SubresourceLayout2Ext);
+            capture = new SubresourceLayout2EXT(StructureType.SubresourceLayout2Khr);
             return ref capture;
         }
     }

@@ -12,6 +12,9 @@ namespace Silk.NET.Assimp
     [NativeName("Name", "aiMorphingMethod")]
     public enum MorphingMethod : int
     {
+        [Obsolete("Deprecated in favour of \"Unknown\"")]
+        [NativeName("Name", "aiMorphingMethod_UNKNOWN")]
+        MorphingMethodUnknown = 0x0,
         [Obsolete("Deprecated in favour of \"VertexBlend\"")]
         [NativeName("Name", "aiMorphingMethod_VERTEX_BLEND")]
         MorphingMethodVertexBlend = 0x1,
@@ -21,6 +24,8 @@ namespace Silk.NET.Assimp
         [Obsolete("Deprecated in favour of \"MorphRelative\"")]
         [NativeName("Name", "aiMorphingMethod_MORPH_RELATIVE")]
         MorphingMethodMorphRelative = 0x3,
+        [NativeName("Name", "aiMorphingMethod_UNKNOWN")]
+        Unknown = 0x0,
         [NativeName("Name", "aiMorphingMethod_VERTEX_BLEND")]
         VertexBlend = 0x1,
         [NativeName("Name", "aiMorphingMethod_MORPH_NORMALIZED")]

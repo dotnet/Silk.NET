@@ -29,5 +29,7 @@ namespace Silk.NET.OpenCL.Extensions.ARM
         WarpThrottling = 0x20,
         [NativeName("Name", "CL_DEVICE_SCHEDULING_COMPUTE_UNIT_BATCH_QUEUE_SIZE_ARM")]
         ComputeUnitBatchQueueSize = 0x40,
+        [NativeName("Name", "CL_DEVICE_SCHEDULING_COMPUTE_UNIT_LIMIT_ARM")]
+        ComputeUnitLimit = 0x80,
     }
 }

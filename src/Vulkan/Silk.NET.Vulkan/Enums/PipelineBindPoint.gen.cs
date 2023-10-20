@@ -16,6 +16,8 @@ namespace Silk.NET.Vulkan
         Graphics = 0,
         [NativeName("Name", "VK_PIPELINE_BIND_POINT_COMPUTE")]
         Compute = 1,
+        [NativeName("Name", "VK_PIPELINE_BIND_POINT_EXECUTION_GRAPH_AMDX")]
+        ExecutionGraphAmdx = 1000134000,
         [NativeName("Name", "VK_PIPELINE_BIND_POINT_RAY_TRACING_KHR")]
         RayTracingKhr = 1000165000,
         [NativeName("Name", "VK_PIPELINE_BIND_POINT_RAY_TRACING_NV")]

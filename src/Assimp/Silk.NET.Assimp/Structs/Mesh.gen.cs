@@ -35,7 +35,7 @@ namespace Silk.NET.Assimp
             AssimpString? mName = null,
             uint? mNumAnimMeshes = null,
             AnimMesh** mAnimMeshes = null,
-            uint? mMethod = null,
+            MorphingMethod? mMethod = null,
             Silk.NET.Maths.Box3D<float>? mAABB = null,
             AssimpString** mTextureCoordsNames = null
         ) : this()
@@ -267,10 +267,10 @@ namespace Silk.NET.Assimp
         [NativeName("Name", "mAnimMeshes")]
         public AnimMesh** MAnimMeshes;
 
-        [NativeName("Type", "unsigned int")]
-        [NativeName("Type.Name", "unsigned int")]
+        [NativeName("Type", "enum aiMorphingMethod")]
+        [NativeName("Type.Name", "enum aiMorphingMethod")]
         [NativeName("Name", "mMethod")]
-        public uint MMethod;
+        public MorphingMethod MMethod;
 
         [NativeName("Type", "aiAABB")]
         [NativeName("Type.Name", "aiAABB")]

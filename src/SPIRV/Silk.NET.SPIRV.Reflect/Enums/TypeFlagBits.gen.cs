@@ -43,5 +43,7 @@ namespace Silk.NET.SPIRV.Reflect
         Struct = 0x10000000,
         [NativeName("Name", "SPV_REFLECT_TYPE_FLAG_ARRAY")]
         Array = 0x20000000,
+        [NativeName("Name", "SPV_REFLECT_TYPE_FLAG_REF")]
+        Ref = 0x40000000,
     }
 }

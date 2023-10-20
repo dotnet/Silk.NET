@@ -9,16 +9,9 @@ using Silk.NET.Core.Attributes;
 
 namespace Silk.NET.SPIRV.Reflect
 {
-    [Flags]
-    [NativeName("Name", "__AnonymousEnum_spirv_reflect_L261_C1")]
-    public enum Constants : int
+    [NativeName("Name", "__AnonymousEnum_spirv_reflect_L280_C1")]
+    public enum AnonymousEnumSpirvReflectL280C1 : int
     {
-        [NativeName("Name", "")]
-        None = 0,
-        [NativeName("Name", "SPV_REFLECT_MAX_ARRAY_DIMS")]
-        MaxArrayDims = 0x20,
-        [NativeName("Name", "SPV_REFLECT_MAX_DESCRIPTOR_SETS")]
-        MaxDescriptorSets = 0x40,
         [NativeName("Name", "SPV_REFLECT_BINDING_NUMBER_DONT_CHANGE")]
         BindingNumberDontChange = unchecked((int) 0xFFFFFFFFFFFFFFFF),
         [NativeName("Name", "SPV_REFLECT_SET_NUMBER_DONT_CHANGE")]

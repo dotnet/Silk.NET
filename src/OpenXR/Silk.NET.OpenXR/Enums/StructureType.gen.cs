@@ -729,6 +729,9 @@ namespace Silk.NET.OpenXR
         [Obsolete("Deprecated in favour of \"Boundary2DFB\"")]
         [NativeName("Name", "XR_TYPE_BOUNDARY_2D_FB")]
         TypeBoundary2DFB = 1000175002,
+        [Obsolete("Deprecated in favour of \"SemanticLabelsSupportInfoFB\"")]
+        [NativeName("Name", "XR_TYPE_SEMANTIC_LABELS_SUPPORT_INFO_FB")]
+        TypeSemanticLabelsSupportInfoFB = 1000175010,
         [Obsolete("Deprecated in favour of \"DigitalLensControlAlmalence\"")]
         [NativeName("Name", "XR_TYPE_DIGITAL_LENS_CONTROL_ALMALENCE")]
         TypeDigitalLensControlAlmalence = 1000196000,
@@ -795,6 +798,54 @@ namespace Silk.NET.OpenXR
         [Obsolete("Deprecated in favour of \"LocalDimmingFrameEndInfoMeta\"")]
         [NativeName("Name", "XR_TYPE_LOCAL_DIMMING_FRAME_END_INFO_META")]
         TypeLocalDimmingFrameEndInfoMeta = 1000216000,
+        [Obsolete("Deprecated in favour of \"PassthroughPreferencesMeta\"")]
+        [NativeName("Name", "XR_TYPE_PASSTHROUGH_PREFERENCES_META")]
+        TypePassthroughPreferencesMeta = 1000217000,
+        [Obsolete("Deprecated in favour of \"SystemVirtualKeyboardPropertiesMeta\"")]
+        [NativeName("Name", "XR_TYPE_SYSTEM_VIRTUAL_KEYBOARD_PROPERTIES_META")]
+        TypeSystemVirtualKeyboardPropertiesMeta = 1000219001,
+        [Obsolete("Deprecated in favour of \"VirtualKeyboardCreateInfoMeta\"")]
+        [NativeName("Name", "XR_TYPE_VIRTUAL_KEYBOARD_CREATE_INFO_META")]
+        TypeVirtualKeyboardCreateInfoMeta = 1000219002,
+        [Obsolete("Deprecated in favour of \"VirtualKeyboardSpaceCreateInfoMeta\"")]
+        [NativeName("Name", "XR_TYPE_VIRTUAL_KEYBOARD_SPACE_CREATE_INFO_META")]
+        TypeVirtualKeyboardSpaceCreateInfoMeta = 1000219003,
+        [Obsolete("Deprecated in favour of \"VirtualKeyboardLocationInfoMeta\"")]
+        [NativeName("Name", "XR_TYPE_VIRTUAL_KEYBOARD_LOCATION_INFO_META")]
+        TypeVirtualKeyboardLocationInfoMeta = 1000219004,
+        [Obsolete("Deprecated in favour of \"VirtualKeyboardModelVisibilitySetInfoMeta\"")]
+        [NativeName("Name", "XR_TYPE_VIRTUAL_KEYBOARD_MODEL_VISIBILITY_SET_INFO_META")]
+        TypeVirtualKeyboardModelVisibilitySetInfoMeta = 1000219005,
+        [Obsolete("Deprecated in favour of \"VirtualKeyboardAnimationStateMeta\"")]
+        [NativeName("Name", "XR_TYPE_VIRTUAL_KEYBOARD_ANIMATION_STATE_META")]
+        TypeVirtualKeyboardAnimationStateMeta = 1000219006,
+        [Obsolete("Deprecated in favour of \"VirtualKeyboardModelAnimationStatesMeta\"")]
+        [NativeName("Name", "XR_TYPE_VIRTUAL_KEYBOARD_MODEL_ANIMATION_STATES_META")]
+        TypeVirtualKeyboardModelAnimationStatesMeta = 1000219007,
+        [Obsolete("Deprecated in favour of \"VirtualKeyboardTextureDataMeta\"")]
+        [NativeName("Name", "XR_TYPE_VIRTUAL_KEYBOARD_TEXTURE_DATA_META")]
+        TypeVirtualKeyboardTextureDataMeta = 1000219009,
+        [Obsolete("Deprecated in favour of \"VirtualKeyboardInputInfoMeta\"")]
+        [NativeName("Name", "XR_TYPE_VIRTUAL_KEYBOARD_INPUT_INFO_META")]
+        TypeVirtualKeyboardInputInfoMeta = 1000219010,
+        [Obsolete("Deprecated in favour of \"VirtualKeyboardTextContextChangeInfoMeta\"")]
+        [NativeName("Name", "XR_TYPE_VIRTUAL_KEYBOARD_TEXT_CONTEXT_CHANGE_INFO_META")]
+        TypeVirtualKeyboardTextContextChangeInfoMeta = 1000219011,
+        [Obsolete("Deprecated in favour of \"EventDataVirtualKeyboardCommitTextMeta\"")]
+        [NativeName("Name", "XR_TYPE_EVENT_DATA_VIRTUAL_KEYBOARD_COMMIT_TEXT_META")]
+        TypeEventDataVirtualKeyboardCommitTextMeta = 1000219014,
+        [Obsolete("Deprecated in favour of \"EventDataVirtualKeyboardBackspaceMeta\"")]
+        [NativeName("Name", "XR_TYPE_EVENT_DATA_VIRTUAL_KEYBOARD_BACKSPACE_META")]
+        TypeEventDataVirtualKeyboardBackspaceMeta = 1000219015,
+        [Obsolete("Deprecated in favour of \"EventDataVirtualKeyboardEnterMeta\"")]
+        [NativeName("Name", "XR_TYPE_EVENT_DATA_VIRTUAL_KEYBOARD_ENTER_META")]
+        TypeEventDataVirtualKeyboardEnterMeta = 1000219016,
+        [Obsolete("Deprecated in favour of \"EventDataVirtualKeyboardShownMeta\"")]
+        [NativeName("Name", "XR_TYPE_EVENT_DATA_VIRTUAL_KEYBOARD_SHOWN_META")]
+        TypeEventDataVirtualKeyboardShownMeta = 1000219017,
+        [Obsolete("Deprecated in favour of \"EventDataVirtualKeyboardHiddenMeta\"")]
+        [NativeName("Name", "XR_TYPE_EVENT_DATA_VIRTUAL_KEYBOARD_HIDDEN_META")]
+        TypeEventDataVirtualKeyboardHiddenMeta = 1000219018,
         [Obsolete("Deprecated in favour of \"ExternalCameraOculus\"")]
         [NativeName("Name", "XR_TYPE_EXTERNAL_CAMERA_OCULUS")]
         TypeExternalCameraOculus = 1000226000,
@@ -819,6 +870,21 @@ namespace Silk.NET.OpenXR
         [Obsolete("Deprecated in favour of \"SystemHeadsetIDPropertiesMeta\"")]
         [NativeName("Name", "XR_TYPE_SYSTEM_HEADSET_ID_PROPERTIES_META")]
         TypeSystemHeadsetIDPropertiesMeta = 1000245000,
+        [Obsolete("Deprecated in favour of \"SystemPassthroughColorLutPropertiesMeta\"")]
+        [NativeName("Name", "XR_TYPE_SYSTEM_PASSTHROUGH_COLOR_LUT_PROPERTIES_META")]
+        TypeSystemPassthroughColorLutPropertiesMeta = 1000266000,
+        [Obsolete("Deprecated in favour of \"PassthroughColorLutCreateInfoMeta\"")]
+        [NativeName("Name", "XR_TYPE_PASSTHROUGH_COLOR_LUT_CREATE_INFO_META")]
+        TypePassthroughColorLutCreateInfoMeta = 1000266001,
+        [Obsolete("Deprecated in favour of \"PassthroughColorLutUpdateInfoMeta\"")]
+        [NativeName("Name", "XR_TYPE_PASSTHROUGH_COLOR_LUT_UPDATE_INFO_META")]
+        TypePassthroughColorLutUpdateInfoMeta = 1000266002,
+        [Obsolete("Deprecated in favour of \"PassthroughColorMapLutMeta\"")]
+        [NativeName("Name", "XR_TYPE_PASSTHROUGH_COLOR_MAP_LUT_META")]
+        TypePassthroughColorMapLutMeta = 1000266100,
+        [Obsolete("Deprecated in favour of \"PassthroughColorMapInterpolatedLutMeta\"")]
+        [NativeName("Name", "XR_TYPE_PASSTHROUGH_COLOR_MAP_INTERPOLATED_LUT_META")]
+        TypePassthroughColorMapInterpolatedLutMeta = 1000266101,
         [Obsolete("Deprecated in favour of \"PassthroughCreateInfoHtc\"")]
         [NativeName("Name", "XR_TYPE_PASSTHROUGH_CREATE_INFO_HTC")]
         TypePassthroughCreateInfoHtc = 1000317001,
@@ -849,6 +915,33 @@ namespace Silk.NET.OpenXR
         [Obsolete("Deprecated in favour of \"ForceFeedbackCurlApplyLocationsMndx\"")]
         [NativeName("Name", "XR_TYPE_FORCE_FEEDBACK_CURL_APPLY_LOCATIONS_MNDX")]
         TypeForceFeedbackCurlApplyLocationsMndx = 1000375001,
+        [Obsolete("Deprecated in favour of \"HandTrackingDataSourceInfoExt\"")]
+        [NativeName("Name", "XR_TYPE_HAND_TRACKING_DATA_SOURCE_INFO_EXT")]
+        TypeHandTrackingDataSourceInfoExt = 1000428000,
+        [Obsolete("Deprecated in favour of \"HandTrackingDataSourceStateExt\"")]
+        [NativeName("Name", "XR_TYPE_HAND_TRACKING_DATA_SOURCE_STATE_EXT")]
+        TypeHandTrackingDataSourceStateExt = 1000428001,
+        [Obsolete("Deprecated in favour of \"PlaneDetectorCreateInfoExt\"")]
+        [NativeName("Name", "XR_TYPE_PLANE_DETECTOR_CREATE_INFO_EXT")]
+        TypePlaneDetectorCreateInfoExt = 1000429001,
+        [Obsolete("Deprecated in favour of \"PlaneDetectorBeginInfoExt\"")]
+        [NativeName("Name", "XR_TYPE_PLANE_DETECTOR_BEGIN_INFO_EXT")]
+        TypePlaneDetectorBeginInfoExt = 1000429002,
+        [Obsolete("Deprecated in favour of \"PlaneDetectorGetInfoExt\"")]
+        [NativeName("Name", "XR_TYPE_PLANE_DETECTOR_GET_INFO_EXT")]
+        TypePlaneDetectorGetInfoExt = 1000429003,
+        [Obsolete("Deprecated in favour of \"PlaneDetectorLocationsExt\"")]
+        [NativeName("Name", "XR_TYPE_PLANE_DETECTOR_LOCATIONS_EXT")]
+        TypePlaneDetectorLocationsExt = 1000429004,
+        [Obsolete("Deprecated in favour of \"PlaneDetectorLocationExt\"")]
+        [NativeName("Name", "XR_TYPE_PLANE_DETECTOR_LOCATION_EXT")]
+        TypePlaneDetectorLocationExt = 1000429005,
+        [Obsolete("Deprecated in favour of \"PlaneDetectorPolygonBufferExt\"")]
+        [NativeName("Name", "XR_TYPE_PLANE_DETECTOR_POLYGON_BUFFER_EXT")]
+        TypePlaneDetectorPolygonBufferExt = 1000429006,
+        [Obsolete("Deprecated in favour of \"SystemPlaneDetectionPropertiesExt\"")]
+        [NativeName("Name", "XR_TYPE_SYSTEM_PLANE_DETECTION_PROPERTIES_EXT")]
+        TypeSystemPlaneDetectionPropertiesExt = 1000429007,
         [NativeName("Name", "XR_TYPE_UNKNOWN")]
         Unknown = 0,
         [NativeName("Name", "XR_TYPE_API_LAYER_PROPERTIES")]
@@ -1327,6 +1420,8 @@ namespace Silk.NET.OpenXR
         RoomLayoutFB = 1000175001,
         [NativeName("Name", "XR_TYPE_BOUNDARY_2D_FB")]
         Boundary2DFB = 1000175002,
+        [NativeName("Name", "XR_TYPE_SEMANTIC_LABELS_SUPPORT_INFO_FB")]
+        SemanticLabelsSupportInfoFB = 1000175010,
         [NativeName("Name", "XR_TYPE_DIGITAL_LENS_CONTROL_ALMALENCE")]
         DigitalLensControlAlmalence = 1000196000,
         [NativeName("Name", "XR_TYPE_EVENT_DATA_SCENE_CAPTURE_COMPLETE_FB")]
@@ -1371,6 +1466,38 @@ namespace Silk.NET.OpenXR
         CompositionLayerDepthTestFB = 1000212000,
         [NativeName("Name", "XR_TYPE_LOCAL_DIMMING_FRAME_END_INFO_META")]
         LocalDimmingFrameEndInfoMeta = 1000216000,
+        [NativeName("Name", "XR_TYPE_PASSTHROUGH_PREFERENCES_META")]
+        PassthroughPreferencesMeta = 1000217000,
+        [NativeName("Name", "XR_TYPE_SYSTEM_VIRTUAL_KEYBOARD_PROPERTIES_META")]
+        SystemVirtualKeyboardPropertiesMeta = 1000219001,
+        [NativeName("Name", "XR_TYPE_VIRTUAL_KEYBOARD_CREATE_INFO_META")]
+        VirtualKeyboardCreateInfoMeta = 1000219002,
+        [NativeName("Name", "XR_TYPE_VIRTUAL_KEYBOARD_SPACE_CREATE_INFO_META")]
+        VirtualKeyboardSpaceCreateInfoMeta = 1000219003,
+        [NativeName("Name", "XR_TYPE_VIRTUAL_KEYBOARD_LOCATION_INFO_META")]
+        VirtualKeyboardLocationInfoMeta = 1000219004,
+        [NativeName("Name", "XR_TYPE_VIRTUAL_KEYBOARD_MODEL_VISIBILITY_SET_INFO_META")]
+        VirtualKeyboardModelVisibilitySetInfoMeta = 1000219005,
+        [NativeName("Name", "XR_TYPE_VIRTUAL_KEYBOARD_ANIMATION_STATE_META")]
+        VirtualKeyboardAnimationStateMeta = 1000219006,
+        [NativeName("Name", "XR_TYPE_VIRTUAL_KEYBOARD_MODEL_ANIMATION_STATES_META")]
+        VirtualKeyboardModelAnimationStatesMeta = 1000219007,
+        [NativeName("Name", "XR_TYPE_VIRTUAL_KEYBOARD_TEXTURE_DATA_META")]
+        VirtualKeyboardTextureDataMeta = 1000219009,
+        [NativeName("Name", "XR_TYPE_VIRTUAL_KEYBOARD_INPUT_INFO_META")]
+        VirtualKeyboardInputInfoMeta = 1000219010,
+        [NativeName("Name", "XR_TYPE_VIRTUAL_KEYBOARD_TEXT_CONTEXT_CHANGE_INFO_META")]
+        VirtualKeyboardTextContextChangeInfoMeta = 1000219011,
+        [NativeName("Name", "XR_TYPE_EVENT_DATA_VIRTUAL_KEYBOARD_COMMIT_TEXT_META")]
+        EventDataVirtualKeyboardCommitTextMeta = 1000219014,
+        [NativeName("Name", "XR_TYPE_EVENT_DATA_VIRTUAL_KEYBOARD_BACKSPACE_META")]
+        EventDataVirtualKeyboardBackspaceMeta = 1000219015,
+        [NativeName("Name", "XR_TYPE_EVENT_DATA_VIRTUAL_KEYBOARD_ENTER_META")]
+        EventDataVirtualKeyboardEnterMeta = 1000219016,
+        [NativeName("Name", "XR_TYPE_EVENT_DATA_VIRTUAL_KEYBOARD_SHOWN_META")]
+        EventDataVirtualKeyboardShownMeta = 1000219017,
+        [NativeName("Name", "XR_TYPE_EVENT_DATA_VIRTUAL_KEYBOARD_HIDDEN_META")]
+        EventDataVirtualKeyboardHiddenMeta = 1000219018,
         [NativeName("Name", "XR_TYPE_EXTERNAL_CAMERA_OCULUS")]
         ExternalCameraOculus = 1000226000,
         [NativeName("Name", "XR_TYPE_VULKAN_SWAPCHAIN_CREATE_INFO_META")]
@@ -1387,6 +1514,16 @@ namespace Silk.NET.OpenXR
         SpaceUserCreateInfoFB = 1000241001,
         [NativeName("Name", "XR_TYPE_SYSTEM_HEADSET_ID_PROPERTIES_META")]
         SystemHeadsetIDPropertiesMeta = 1000245000,
+        [NativeName("Name", "XR_TYPE_SYSTEM_PASSTHROUGH_COLOR_LUT_PROPERTIES_META")]
+        SystemPassthroughColorLutPropertiesMeta = 1000266000,
+        [NativeName("Name", "XR_TYPE_PASSTHROUGH_COLOR_LUT_CREATE_INFO_META")]
+        PassthroughColorLutCreateInfoMeta = 1000266001,
+        [NativeName("Name", "XR_TYPE_PASSTHROUGH_COLOR_LUT_UPDATE_INFO_META")]
+        PassthroughColorLutUpdateInfoMeta = 1000266002,
+        [NativeName("Name", "XR_TYPE_PASSTHROUGH_COLOR_MAP_LUT_META")]
+        PassthroughColorMapLutMeta = 1000266100,
+        [NativeName("Name", "XR_TYPE_PASSTHROUGH_COLOR_MAP_INTERPOLATED_LUT_META")]
+        PassthroughColorMapInterpolatedLutMeta = 1000266101,
         [NativeName("Name", "XR_TYPE_PASSTHROUGH_CREATE_INFO_HTC")]
         PassthroughCreateInfoHtc = 1000317001,
         [NativeName("Name", "XR_TYPE_PASSTHROUGH_COLOR_HTC")]
@@ -1407,5 +1544,23 @@ namespace Silk.NET.OpenXR
         SystemForceFeedbackCurlPropertiesMndx = 1000375000,
         [NativeName("Name", "XR_TYPE_FORCE_FEEDBACK_CURL_APPLY_LOCATIONS_MNDX")]
         ForceFeedbackCurlApplyLocationsMndx = 1000375001,
+        [NativeName("Name", "XR_TYPE_HAND_TRACKING_DATA_SOURCE_INFO_EXT")]
+        HandTrackingDataSourceInfoExt = 1000428000,
+        [NativeName("Name", "XR_TYPE_HAND_TRACKING_DATA_SOURCE_STATE_EXT")]
+        HandTrackingDataSourceStateExt = 1000428001,
+        [NativeName("Name", "XR_TYPE_PLANE_DETECTOR_CREATE_INFO_EXT")]
+        PlaneDetectorCreateInfoExt = 1000429001,
+        [NativeName("Name", "XR_TYPE_PLANE_DETECTOR_BEGIN_INFO_EXT")]
+        PlaneDetectorBeginInfoExt = 1000429002,
+        [NativeName("Name", "XR_TYPE_PLANE_DETECTOR_GET_INFO_EXT")]
+        PlaneDetectorGetInfoExt = 1000429003,
+        [NativeName("Name", "XR_TYPE_PLANE_DETECTOR_LOCATIONS_EXT")]
+        PlaneDetectorLocationsExt = 1000429004,
+        [NativeName("Name", "XR_TYPE_PLANE_DETECTOR_LOCATION_EXT")]
+        PlaneDetectorLocationExt = 1000429005,
+        [NativeName("Name", "XR_TYPE_PLANE_DETECTOR_POLYGON_BUFFER_EXT")]
+        PlaneDetectorPolygonBufferExt = 1000429006,
+        [NativeName("Name", "XR_TYPE_SYSTEM_PLANE_DETECTION_PROPERTIES_EXT")]
+        SystemPlaneDetectionPropertiesExt = 1000429007,
     }
 }
