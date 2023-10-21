@@ -1,4 +1,4 @@
-﻿// See https://aka.ms/new-console-template for more information
+// See https://aka.ms/new-console-template for more information
 
 // TODO bool-like
 
@@ -13,13 +13,13 @@ var window = Glfw.CreateWindow(1280, 720, "Hello Window!", nullptr, nullptr);
 if (window == nullptr)
 {
     // TODO const correctness
-    ConstPtr<sbyte> error = nullptr;
+    Ptr<sbyte> error = nullptr;
     if (Glfw.GetError(error.AsPtr2D()) == 0 || error == nullptr)
     {
         throw new Exception("failed to create window and failed to get error");
     }
 
-    throw new Exception($"failed to create window: {error}");
+    throw new Exception($"failed to create window: {(string)error}");
 }
 
 while (Glfw.WindowShouldClose(window) == 0)

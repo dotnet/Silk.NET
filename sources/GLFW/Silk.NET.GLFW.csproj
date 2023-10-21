@@ -16,6 +16,7 @@
     <Compile Include="glfw3/Vidmode.gen.cs" />
     <Compile Include="Monitor.gen.cs" />
     <Compile Include="Window.gen.cs" />
+    <Compile Include="Window.gen.cs" />
     <!-- because Roslyn is a plonker -->
   </ItemGroup>
   <ItemGroup>

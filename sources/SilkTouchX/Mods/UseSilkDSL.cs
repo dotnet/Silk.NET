@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
@@ -395,20 +395,16 @@ public class UseSilkDSL : IMod
                 ? IdentifierName(
                     isConst switch
                     {
-                        true when indirectionLevels > 1 => $"ConstAny{indirectionLevels}D",
-                        true => "ConstAny",
-                        false when indirectionLevels > 1 => $"Any{indirectionLevels}D",
-                        false => "Any"
+                        true => string.Join("", Enumerable.Repeat("Ptr", indirectionLevels)),
+                        false => string.Join("", Enumerable.Repeat("Mut", indirectionLevels)),
                     }
                 )
                 : GenericName(
                         Identifier(
                             isConst switch
                             {
-                                true when indirectionLevels > 1 => $"ConstPtr{indirectionLevels}D",
-                                true => "ConstPtr",
-                                false when indirectionLevels > 1 => $"Ptr{indirectionLevels}D",
-                                false => "Ptr"
+                                true => string.Join("", Enumerable.Repeat("Ptr", indirectionLevels)),
+                                false => string.Join("", Enumerable.Repeat("Mut", indirectionLevels)),
                             }
                         )
                     )
