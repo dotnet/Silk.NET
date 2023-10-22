@@ -1,6 +1,3 @@
-﻿using System.Runtime.CompilerServices;
-
 namespace Silk.NET.GLFW;
-public readonly struct Monitor
-{
-}
+
+public readonly struct Monitor { }

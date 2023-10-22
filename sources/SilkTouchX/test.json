@@ -38,13 +38,20 @@
         "AddOpaqueStructs",
         "UseSilkDSL",
         "PrettifyNames",
-        "CSharpier"
+        "AddVTables"
       ],
       "AddOpaqueStructs": {
         "Names": [
           "GLFWcursor",
           "GLFWmonitor",
           "GLFWwindow"
+        ]
+      },
+      "AddVTables": {
+        "VTables": [
+          {
+            "Kind": "DllImport"
+          }
         ]
       }
     }

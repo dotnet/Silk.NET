@@ -23,7 +23,9 @@ public static partial class NameUtils
     {
         var ret = string.Join(
             null,
-            str.Transform(To.LowerCase, new FirstLetterUpper())
+            str.LenientUnderscore()
+                .Humanize()
+                .Transform(new FirstLetterUpper())
                 .Pascalize()
                 .Where(x => char.IsLetter(x) || char.IsNumber(x))
         );
@@ -176,7 +178,7 @@ public static partial class NameUtils
             var matches = Words().Matches(input);
             foreach (Match word in matches)
             {
-                if (!AllCapitals(word.Value))
+                //if (!AllCapitals(word.Value))
                 {
                     result = MakeFirstLetterUpper(word, result, culture);
                 }

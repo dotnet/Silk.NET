@@ -1,9 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 using System.Runtime.InteropServices;
 using System.Text.RegularExpressions;
 using ClangSharp;
+using Microsoft.CodeAnalysis;
 using Microsoft.CodeAnalysis.CSharp;
 using Microsoft.CodeAnalysis.CSharp.Syntax;
 using static Microsoft.CodeAnalysis.CSharp.SyntaxFactory;
@@ -205,32 +207,19 @@ public static class ModUtils
     /// Determines (naively) whether the given attribute syntax represents a <see cref="DllImportAttribute"/>.
     /// </summary>
     /// <param name="node">The attribute syntax.</param>
+    /// <param name="fullNameWithoutSuffix">
+    /// The fully-qualified attribute name including the namespace but without the <c>Attribute</c> suffix.
+    /// </param>
     /// <returns>Whether it is probably a DllImport.</returns>
-    public static bool IsDllImport(this AttributeSyntax node)
+    public static bool IsAttribute(this AttributeSyntax node, string fullNameWithoutSuffix)
     {
         var sep = node.Name.ToString().Split("::").Last();
-        return sep == "DllImport"
-            || sep == "DllImportAttribute"
-            || sep.EndsWith("System.Runtime.InteropServices.DllImport")
-            || sep.EndsWith("System.Runtime.InteropServices.DllImportAttribute");
+        var name = fullNameWithoutSuffix.Split('.').Last();
+        return sep == name
+            || sep == $"{name}Attribute"
+            || sep.EndsWith(fullNameWithoutSuffix)
+            || sep.EndsWith($"{fullNameWithoutSuffix}Attribute");
     }
-
-    /// <summary>
-    /// Determines (naively) whether the given attribute syntax represents a <see cref="DllImportAttribute"/> with
-    /// <see cref="DllImportAttribute.ExactSpelling"/> set to <c>true</c>.
-    /// </summary>
-    /// <param name="node">The attribute syntax.</param>
-    /// <returns>Whether it is probably an ExactSpelling DllImport.</returns>
-    public static bool IsExactSpellingDllImport(this AttributeSyntax node) =>
-        node.IsDllImport()
-        && (
-            node.ArgumentList?.Arguments.Any(
-                x =>
-                    x.NameEquals?.Name.Identifier.ToString()
-                        == nameof(DllImportAttribute.ExactSpelling)
-                    && x.Expression.ToString() == "true"
-            ) ?? false
-        );
 
     /// <summary>
     /// Adds <see cref="MaxOpt"/> to the given <see cref="MethodDeclarationSyntax"/>'s attribute lists.
@@ -239,6 +228,102 @@ public static class ModUtils
     /// <returns>The modified method.</returns>
     public static MethodDeclarationSyntax AddMaxOpt(this MethodDeclarationSyntax meth) =>
         meth.AddAttributeLists(MaxOpt);
+
+    /// <summary>
+    /// Gets the library name and entry-point for the given function, or returns false if this is not a native interop
+    /// function.
+    /// </summary>
+    /// <param name="meth">The method.</param>
+    /// <param name="libraryName">The library name.</param>
+    /// <param name="entryPoint">The entry-point.</param>
+    /// <returns>Whether the native function info was found.</returns>
+    public static bool GetNativeFunctionInfo(
+        this MethodDeclarationSyntax meth,
+        [NotNullWhen(true)] out string? libraryName,
+        out string? entryPoint
+    )
+    {
+        foreach (
+            var attr in from attrList in meth.AttributeLists
+            from attr in attrList.Attributes
+            where
+                attr.IsAttribute("System.Runtime.InteropServices.DllImport")
+                || attr.IsAttribute("Silk.NET.Core.NativeFunction")
+            select attr
+        )
+        {
+            libraryName =
+                (attr.ArgumentList?.Arguments.First().Expression as LiteralExpressionSyntax)
+                    ?.Token
+                    .ValueText
+                ?? throw new InvalidOperationException("DllImport was found but was not valid");
+            entryPoint = (
+                attr.ArgumentList?.Arguments
+                    .FirstOrDefault(
+                        x =>
+                            x.NameEquals is not null && x.NameEquals.Name.ToString() == "EntryPoint"
+                    )
+                    ?.Expression as LiteralExpressionSyntax
+            )
+                ?.Token
+                .ValueText;
+            return true;
+        }
+
+        libraryName = entryPoint = null;
+        return false;
+    }
+
+    /// <summary>
+    /// Adds a NativeFunctionAttribute if a <see cref="DllImportAttribute"/> is present on the
+    /// <paramref name="original"/>.
+    /// </summary>
+    /// <param name="meth">The method to modify.</param>
+    /// <param name="original">The original method.</param>
+    /// <returns>The (possibly) modified method.</returns>
+    /// <exception cref="InvalidOperationException">If a DllImportAttribute was found but wasn't valid.</exception>
+    public static MethodDeclarationSyntax AddNativeFunction(
+        this MethodDeclarationSyntax meth,
+        MethodDeclarationSyntax original
+    )
+    {
+        if (original.GetNativeFunctionInfo(out var libName, out var entryPoint))
+        {
+            return meth.AddAttributeLists(
+                AttributeList(
+                    SingletonSeparatedList(
+                        Attribute(IdentifierName("NativeFunction"))
+                            .WithArgumentList(
+                                AttributeArgumentList(
+                                    SeparatedList(
+                                        new[]
+                                        {
+                                            AttributeArgument(
+                                                LiteralExpression(
+                                                    SyntaxKind.StringLiteralExpression,
+                                                    Literal(libName)
+                                                )
+                                            ),
+                                            AttributeArgument(
+                                                    LiteralExpression(
+                                                        SyntaxKind.StringLiteralExpression,
+                                                        Literal(
+                                                            entryPoint ?? meth.Identifier.ToString()
+                                                        )
+                                                    )
+                                                )
+                                                .WithNameEquals(NameEquals("EntryPoint"))
+                                        }
+                                    )
+                                )
+                            )
+                    )
+                )
+            );
+        }
+
+        return meth;
+    }
 
     /// <summary>
     /// Gets an attribute list representing a <see cref="System.Runtime.CompilerServices.MethodImplAttribute"/> with

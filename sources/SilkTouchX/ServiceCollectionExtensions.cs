@@ -1,10 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 using System.Reflection;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.DependencyInjection.Extensions;
 using Microsoft.Extensions.Options;
 using SilkTouchX.Clang;
 using SilkTouchX.Mods;
@@ -99,6 +99,7 @@ public static class ServiceCollectionExtensions
         services.AddSingleton<Microsoft.Build.Framework.ILogger, WorkspaceLogger>();
         services.AddSingleton<NameTrimmer>();
         services.AddSingleton<INameTrimmer>(s => s.GetRequiredService<NameTrimmer>());
+        services.TryAddSingleton<IOutputWriter, DirectOutputWriter>();
         if (OperatingSystem.IsWindows())
         {
             services.AddSingleton<IStdIncludeResolver, WindowsStdIncludeResolver>();

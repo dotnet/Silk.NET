@@ -19,8 +19,8 @@ public class ModLoader
             nameof(AddStdIncludes) => typeof(AddStdIncludes),
             nameof(UseSilkDSL) => typeof(UseSilkDSL),
             nameof(PrettifyNames) => typeof(PrettifyNames),
-            nameof(CSharpier) => typeof(CSharpier),
             nameof(AddOpaqueStructs) => typeof(AddOpaqueStructs),
+            nameof(AddVTables) => typeof(AddVTables),
             _ => null
         };
 }
