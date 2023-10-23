@@ -162,7 +162,64 @@ public class AddVTables(IOptionsSnapshot<AddVTables.Configuration> config) : IMo
 
         /// <inheritdoc />
         public override ClassDeclarationSyntax AddMethod(in VTableContext ctx) =>
-            throw new NotImplementedException();
+            (
+                ctx.CurrentPartial
+                ?? ClassDeclaration(Name)
+                    .WithModifiers(
+                        TokenList(Token(SyntaxKind.PublicKeyword), Token(SyntaxKind.PartialKeyword))
+                    )
+                    .WithTypeParameterList(
+                        TypeParameterList(SingletonSeparatedList(TypeParameter("T")))
+                    )
+                    .WithBaseList(
+                        BaseList(
+                            SingletonSeparatedList<BaseTypeSyntax>(
+                                SimpleBaseType(IdentifierName($"I{ctx.ClassName}"))
+                            )
+                        )
+                    )
+                    .WithConstraintClauses(
+                        SingletonList(
+                            TypeParameterConstraintClause(
+                                IdentifierName("T"),
+                                SingletonSeparatedList<TypeParameterConstraintSyntax>(
+                                    TypeConstraint(
+                                        GenericName(
+                                            Identifier($"I{ctx.ClassName}.Static"),
+                                            TypeArgumentList(
+                                                SingletonSeparatedList<TypeSyntax>(
+                                                    IdentifierName("T")
+                                                )
+                                            )
+                                        )
+                                    )
+                                )
+                            )
+                        )
+                    )
+            ).AddMembers(
+                ctx.InstanceDecl
+                    .AddModifiers(Token(SyntaxKind.PublicKeyword))
+                    .WithBody(null)
+                    .WithExpressionBody(
+                        ArrowExpressionClause(
+                            InvocationExpression(
+                                MemberAccessExpression(
+                                    SyntaxKind.SimpleMemberAccessExpression,
+                                    IdentifierName("T"),
+                                    IdentifierName(ctx.InstanceDecl.Identifier)
+                                ),
+                                ArgumentList(
+                                    SeparatedList(
+                                        ctx.InstanceDecl.ParameterList.Parameters.Select(
+                                            x => Argument(IdentifierName(x.Identifier))
+                                        )
+                                    )
+                                )
+                            )
+                        )
+                    )
+            );
     }
 
     /// <summary>
@@ -683,7 +740,9 @@ public class AddVTables(IOptionsSnapshot<AddVTables.Configuration> config) : IMo
                         TokenList(Token(SyntaxKind.PublicKeyword), Token(SyntaxKind.StaticKeyword))
                     )
                     .WithExpressionBody(
-                        ArrowExpressionClause(ObjectCreationExpression(_staticDefaultWrapper))
+                        ArrowExpressionClause(
+                            ObjectCreationExpression(_staticDefaultWrapper, ArgumentList(), null)
+                        )
                     )
                     .WithSemicolonToken(Token(SyntaxKind.SemicolonToken));
             }

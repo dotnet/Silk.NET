@@ -10,6 +10,8 @@ namespace Silk.NET.GLFW;
 
 partial class Glfw(INativeContext nativeContext) : IDisposable
 {
+    public static IGlfw Create() => new StaticWrapper<DllImport>();
+
     public static IGlfw Create(INativeContext ctx) => new Glfw(ctx);
 
     /// <inheritdoc/>

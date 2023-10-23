@@ -52,6 +52,9 @@
           {
             "Kind": "DllImport",
             "IsDefault": true
+          },
+          {
+            "Kind": "StaticWrapper"
           }
         ]
       }
