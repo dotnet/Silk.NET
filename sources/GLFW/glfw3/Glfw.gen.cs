@@ -7,7 +7,7 @@ using System.Runtime.CompilerServices;
 
 namespace Silk.NET.GLFW;
 
-static unsafe class Glfw
+public unsafe partial class Glfw : IGlfw, IGlfw.Static
 {
     public partial class DllImport : IGlfw.Static
     {
@@ -2893,6 +2893,28 @@ static unsafe class Glfw
     [NativeTypeName("#define GLFW_DONT_CARE -1")]
     public const int DontCare = -1;
 
+    [NativeFunction("glfw", EntryPoint = "glfwCreateCursor")]
+    Mut<Cursor> IGlfw.CreateCursor(
+        [NativeTypeName("const GLFWimage *")] Ptr<Image> image,
+        int xhot,
+        int yhot
+    )
+    {
+        fixed (Image* __dsl_image = image)
+        {
+            Cursor* __DSL_glfwCreateCursor(
+                [NativeTypeName("const GLFWimage *")] Image* image,
+                int xhot,
+                int yhot
+            ) =>
+                (
+                    (delegate* unmanaged<Image*, int, int, Cursor*>)
+                        nativeContext.LoadFunction("glfwCreateCursor", "glfw")
+                )(image, xhot, yhot);
+            return __DSL_glfwCreateCursor(__dsl_image, xhot, yhot);
+        }
+    }
+
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     [NativeFunction("glfw", EntryPoint = "glfwCreateCursor")]
     public static Mut<Cursor> CreateCursor(
@@ -2913,6 +2935,17 @@ static unsafe class Glfw
         }
     }
 
+    [NativeFunction("glfw", EntryPoint = "glfwCreateStandardCursor")]
+    Mut<Cursor> IGlfw.CreateStandardCursor(int shape)
+    {
+        Cursor* __DSL_glfwCreateStandardCursor(int shape) =>
+            (
+                (delegate* unmanaged<int, Cursor*>)
+                    nativeContext.LoadFunction("glfwCreateStandardCursor", "glfw")
+            )(shape);
+        return __DSL_glfwCreateStandardCursor(shape);
+    }
+
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     [NativeFunction("glfw", EntryPoint = "glfwCreateStandardCursor")]
     public static Mut<Cursor> CreateStandardCursor(int shape)
@@ -2920,6 +2953,34 @@ static unsafe class Glfw
         [DllImport("glfw", ExactSpelling = true, EntryPoint = "glfwCreateStandardCursor")]
         static extern Cursor* __DSL_glfwCreateStandardCursor(int shape);
         return __DSL_glfwCreateStandardCursor(shape);
+    }
+
+    [NativeFunction("glfw", EntryPoint = "glfwCreateWindow")]
+    Mut<Window> IGlfw.CreateWindow(
+        int width,
+        int height,
+        [NativeTypeName("const char *")] Ptr<sbyte> title,
+        Mut<Monitor> monitor,
+        Mut<Window> share
+    )
+    {
+        fixed (Window* __dsl_share = share)
+        fixed (Monitor* __dsl_monitor = monitor)
+        fixed (sbyte* __dsl_title = title)
+        {
+            Window* __DSL_glfwCreateWindow(
+                int width,
+                int height,
+                [NativeTypeName("const char *")] sbyte* title,
+                Monitor* monitor,
+                Window* share
+            ) =>
+                (
+                    (delegate* unmanaged<int, int, sbyte*, Monitor*, Window*, Window*>)
+                        nativeContext.LoadFunction("glfwCreateWindow", "glfw")
+                )(width, height, title, monitor, share);
+            return __DSL_glfwCreateWindow(width, height, __dsl_title, __dsl_monitor, __dsl_share);
+        }
     }
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
@@ -2948,8 +3009,25 @@ static unsafe class Glfw
         }
     }
 
+    void IGlfw.DefaultWindowHints() =>
+        ((delegate* unmanaged<void>)nativeContext.LoadFunction("DefaultWindowHints", "glfw"))();
+
     [DllImport("glfw", ExactSpelling = true)]
     public static extern void DefaultWindowHints();
+
+    [NativeFunction("glfw", EntryPoint = "glfwDestroyCursor")]
+    void IGlfw.DestroyCursor(Mut<Cursor> cursor)
+    {
+        fixed (Cursor* __dsl_cursor = cursor)
+        {
+            void __DSL_glfwDestroyCursor(Cursor* cursor) =>
+                (
+                    (delegate* unmanaged<Cursor*, void>)
+                        nativeContext.LoadFunction("glfwDestroyCursor", "glfw")
+                )(cursor);
+            __DSL_glfwDestroyCursor(__dsl_cursor);
+        }
+    }
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     [NativeFunction("glfw", EntryPoint = "glfwDestroyCursor")]
@@ -2963,6 +3041,20 @@ static unsafe class Glfw
         }
     }
 
+    [NativeFunction("glfw", EntryPoint = "glfwDestroyWindow")]
+    void IGlfw.DestroyWindow(Mut<Window> window)
+    {
+        fixed (Window* __dsl_window = window)
+        {
+            void __DSL_glfwDestroyWindow(Window* window) =>
+                (
+                    (delegate* unmanaged<Window*, void>)
+                        nativeContext.LoadFunction("glfwDestroyWindow", "glfw")
+                )(window);
+            __DSL_glfwDestroyWindow(__dsl_window);
+        }
+    }
+
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     [NativeFunction("glfw", EntryPoint = "glfwDestroyWindow")]
     public static void DestroyWindow(Mut<Window> window)
@@ -2972,6 +3064,20 @@ static unsafe class Glfw
             [DllImport("glfw", ExactSpelling = true, EntryPoint = "glfwDestroyWindow")]
             static extern void __DSL_glfwDestroyWindow(Window* window);
             __DSL_glfwDestroyWindow(__dsl_window);
+        }
+    }
+
+    [NativeFunction("glfw", EntryPoint = "glfwExtensionSupported")]
+    int IGlfw.ExtensionSupported([NativeTypeName("const char *")] Ptr<sbyte> extension)
+    {
+        fixed (sbyte* __dsl_extension = extension)
+        {
+            int __DSL_glfwExtensionSupported([NativeTypeName("const char *")] sbyte* extension) =>
+                (
+                    (delegate* unmanaged<sbyte*, int>)
+                        nativeContext.LoadFunction("glfwExtensionSupported", "glfw")
+                )(extension);
+            return __DSL_glfwExtensionSupported(__dsl_extension);
         }
     }
 
@@ -2989,6 +3095,20 @@ static unsafe class Glfw
         }
     }
 
+    [NativeFunction("glfw", EntryPoint = "glfwFocusWindow")]
+    void IGlfw.FocusWindow(Mut<Window> window)
+    {
+        fixed (Window* __dsl_window = window)
+        {
+            void __DSL_glfwFocusWindow(Window* window) =>
+                (
+                    (delegate* unmanaged<Window*, void>)
+                        nativeContext.LoadFunction("glfwFocusWindow", "glfw")
+                )(window);
+            __DSL_glfwFocusWindow(__dsl_window);
+        }
+    }
+
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     [NativeFunction("glfw", EntryPoint = "glfwFocusWindow")]
     public static void FocusWindow(Mut<Window> window)
@@ -2998,6 +3118,20 @@ static unsafe class Glfw
             [DllImport("glfw", ExactSpelling = true, EntryPoint = "glfwFocusWindow")]
             static extern void __DSL_glfwFocusWindow(Window* window);
             __DSL_glfwFocusWindow(__dsl_window);
+        }
+    }
+
+    [NativeFunction("glfw", EntryPoint = "glfwGetClipboardString")]
+    Ptr<sbyte> IGlfw.GetClipboardString(Mut<Window> window)
+    {
+        fixed (Window* __dsl_window = window)
+        {
+            sbyte* __DSL_glfwGetClipboardString(Window* window) =>
+                (
+                    (delegate* unmanaged<Window*, sbyte*>)
+                        nativeContext.LoadFunction("glfwGetClipboardString", "glfw")
+                )(window);
+            return __DSL_glfwGetClipboardString(__dsl_window);
         }
     }
 
@@ -3015,6 +3149,17 @@ static unsafe class Glfw
         }
     }
 
+    [NativeFunction("glfw", EntryPoint = "glfwGetCurrentContext")]
+    Mut<Window> IGlfw.GetCurrentContext()
+    {
+        Window* __DSL_glfwGetCurrentContext() =>
+            (
+                (delegate* unmanaged<Window*>)
+                    nativeContext.LoadFunction("glfwGetCurrentContext", "glfw")
+            )();
+        return __DSL_glfwGetCurrentContext();
+    }
+
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     [NativeFunction("glfw", EntryPoint = "glfwGetCurrentContext")]
     public static Mut<Window> GetCurrentContext()
@@ -3022,6 +3167,22 @@ static unsafe class Glfw
         [DllImport("glfw", ExactSpelling = true, EntryPoint = "glfwGetCurrentContext")]
         static extern Window* __DSL_glfwGetCurrentContext();
         return __DSL_glfwGetCurrentContext();
+    }
+
+    [NativeFunction("glfw", EntryPoint = "glfwGetCursorPos")]
+    void IGlfw.GetCursorPos(Mut<Window> window, Mut<double> xpos, Mut<double> ypos)
+    {
+        fixed (double* __dsl_ypos = ypos)
+        fixed (double* __dsl_xpos = xpos)
+        fixed (Window* __dsl_window = window)
+        {
+            void __DSL_glfwGetCursorPos(Window* window, double* xpos, double* ypos) =>
+                (
+                    (delegate* unmanaged<Window*, double*, double*, void>)
+                        nativeContext.LoadFunction("glfwGetCursorPos", "glfw")
+                )(window, xpos, ypos);
+            __DSL_glfwGetCursorPos(__dsl_window, __dsl_xpos, __dsl_ypos);
+        }
     }
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
@@ -3038,6 +3199,20 @@ static unsafe class Glfw
         }
     }
 
+    [NativeFunction("glfw", EntryPoint = "glfwGetError")]
+    int IGlfw.GetError([NativeTypeName("const char **")] PtrPtr<sbyte> description)
+    {
+        fixed (sbyte** __dsl_description = description)
+        {
+            int __DSL_glfwGetError([NativeTypeName("const char **")] sbyte** description) =>
+                (
+                    (delegate* unmanaged<sbyte**, int>)
+                        nativeContext.LoadFunction("glfwGetError", "glfw")
+                )(description);
+            return __DSL_glfwGetError(__dsl_description);
+        }
+    }
+
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     [NativeFunction("glfw", EntryPoint = "glfwGetError")]
     public static int GetError([NativeTypeName("const char **")] PtrPtr<sbyte> description)
@@ -3049,6 +3224,22 @@ static unsafe class Glfw
                 [NativeTypeName("const char **")] sbyte** description
             );
             return __DSL_glfwGetError(__dsl_description);
+        }
+    }
+
+    [NativeFunction("glfw", EntryPoint = "glfwGetFramebufferSize")]
+    void IGlfw.GetFramebufferSize(Mut<Window> window, Mut<int> width, Mut<int> height)
+    {
+        fixed (int* __dsl_height = height)
+        fixed (int* __dsl_width = width)
+        fixed (Window* __dsl_window = window)
+        {
+            void __DSL_glfwGetFramebufferSize(Window* window, int* width, int* height) =>
+                (
+                    (delegate* unmanaged<Window*, int*, int*, void>)
+                        nativeContext.LoadFunction("glfwGetFramebufferSize", "glfw")
+                )(window, width, height);
+            __DSL_glfwGetFramebufferSize(__dsl_window, __dsl_width, __dsl_height);
         }
     }
 
@@ -3070,6 +3261,17 @@ static unsafe class Glfw
         }
     }
 
+    [NativeFunction("glfw", EntryPoint = "glfwGetGamepadName")]
+    Ptr<sbyte> IGlfw.GetGamepadName(int jid)
+    {
+        sbyte* __DSL_glfwGetGamepadName(int jid) =>
+            (
+                (delegate* unmanaged<int, sbyte*>)
+                    nativeContext.LoadFunction("glfwGetGamepadName", "glfw")
+            )(jid);
+        return __DSL_glfwGetGamepadName(jid);
+    }
+
     [return: NativeTypeName("const char *")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     [NativeFunction("glfw", EntryPoint = "glfwGetGamepadName")]
@@ -3081,6 +3283,20 @@ static unsafe class Glfw
         return __DSL_glfwGetGamepadName(jid);
     }
 
+    [NativeFunction("glfw", EntryPoint = "glfwGetGamepadState")]
+    int IGlfw.GetGamepadState(int jid, Mut<Gamepadstate> state)
+    {
+        fixed (Gamepadstate* __dsl_state = state)
+        {
+            int __DSL_glfwGetGamepadState(int jid, Gamepadstate* state) =>
+                (
+                    (delegate* unmanaged<int, Gamepadstate*, int>)
+                        nativeContext.LoadFunction("glfwGetGamepadState", "glfw")
+                )(jid, state);
+            return __DSL_glfwGetGamepadState(jid, __dsl_state);
+        }
+    }
+
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     [NativeFunction("glfw", EntryPoint = "glfwGetGamepadState")]
     public static int GetGamepadState(int jid, Mut<Gamepadstate> state)
@@ -3090,6 +3306,20 @@ static unsafe class Glfw
             [DllImport("glfw", ExactSpelling = true, EntryPoint = "glfwGetGamepadState")]
             static extern int __DSL_glfwGetGamepadState(int jid, Gamepadstate* state);
             return __DSL_glfwGetGamepadState(jid, __dsl_state);
+        }
+    }
+
+    [NativeFunction("glfw", EntryPoint = "glfwGetGammaRamp")]
+    Ptr<Gammaramp> IGlfw.GetGammaRamp(Mut<Monitor> monitor)
+    {
+        fixed (Monitor* __dsl_monitor = monitor)
+        {
+            Gammaramp* __DSL_glfwGetGammaRamp(Monitor* monitor) =>
+                (
+                    (delegate* unmanaged<Monitor*, Gammaramp*>)
+                        nativeContext.LoadFunction("glfwGetGammaRamp", "glfw")
+                )(monitor);
+            return __DSL_glfwGetGammaRamp(__dsl_monitor);
         }
     }
 
@@ -3107,6 +3337,20 @@ static unsafe class Glfw
         }
     }
 
+    [NativeFunction("glfw", EntryPoint = "glfwGetInputMode")]
+    int IGlfw.GetInputMode(Mut<Window> window, int mode)
+    {
+        fixed (Window* __dsl_window = window)
+        {
+            int __DSL_glfwGetInputMode(Window* window, int mode) =>
+                (
+                    (delegate* unmanaged<Window*, int, int>)
+                        nativeContext.LoadFunction("glfwGetInputMode", "glfw")
+                )(window, mode);
+            return __DSL_glfwGetInputMode(__dsl_window, mode);
+        }
+    }
+
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     [NativeFunction("glfw", EntryPoint = "glfwGetInputMode")]
     public static int GetInputMode(Mut<Window> window, int mode)
@@ -3116,6 +3360,20 @@ static unsafe class Glfw
             [DllImport("glfw", ExactSpelling = true, EntryPoint = "glfwGetInputMode")]
             static extern int __DSL_glfwGetInputMode(Window* window, int mode);
             return __DSL_glfwGetInputMode(__dsl_window, mode);
+        }
+    }
+
+    [NativeFunction("glfw", EntryPoint = "glfwGetJoystickAxes")]
+    Ptr<float> IGlfw.GetJoystickAxes(int jid, Mut<int> count)
+    {
+        fixed (int* __dsl_count = count)
+        {
+            float* __DSL_glfwGetJoystickAxes(int jid, int* count) =>
+                (
+                    (delegate* unmanaged<int, int*, float*>)
+                        nativeContext.LoadFunction("glfwGetJoystickAxes", "glfw")
+                )(jid, count);
+            return __DSL_glfwGetJoystickAxes(jid, __dsl_count);
         }
     }
 
@@ -3133,6 +3391,20 @@ static unsafe class Glfw
         }
     }
 
+    [NativeFunction("glfw", EntryPoint = "glfwGetJoystickButtons")]
+    Ptr<byte> IGlfw.GetJoystickButtons(int jid, Mut<int> count)
+    {
+        fixed (int* __dsl_count = count)
+        {
+            byte* __DSL_glfwGetJoystickButtons(int jid, int* count) =>
+                (
+                    (delegate* unmanaged<int, int*, byte*>)
+                        nativeContext.LoadFunction("glfwGetJoystickButtons", "glfw")
+                )(jid, count);
+            return __DSL_glfwGetJoystickButtons(jid, __dsl_count);
+        }
+    }
+
     [return: NativeTypeName("const unsigned char *")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     [NativeFunction("glfw", EntryPoint = "glfwGetJoystickButtons")]
@@ -3147,6 +3419,17 @@ static unsafe class Glfw
         }
     }
 
+    [NativeFunction("glfw", EntryPoint = "glfwGetJoystickGUID")]
+    Ptr<sbyte> IGlfw.GetJoystickGuid(int jid)
+    {
+        sbyte* __DSL_glfwGetJoystickGUID(int jid) =>
+            (
+                (delegate* unmanaged<int, sbyte*>)
+                    nativeContext.LoadFunction("glfwGetJoystickGUID", "glfw")
+            )(jid);
+        return __DSL_glfwGetJoystickGUID(jid);
+    }
+
     [return: NativeTypeName("const char *")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     [NativeFunction("glfw", EntryPoint = "glfwGetJoystickGUID")]
@@ -3156,6 +3439,20 @@ static unsafe class Glfw
         [return: NativeTypeName("const char *")]
         static extern sbyte* __DSL_glfwGetJoystickGUID(int jid);
         return __DSL_glfwGetJoystickGUID(jid);
+    }
+
+    [NativeFunction("glfw", EntryPoint = "glfwGetJoystickHats")]
+    Ptr<byte> IGlfw.GetJoystickHats(int jid, Mut<int> count)
+    {
+        fixed (int* __dsl_count = count)
+        {
+            byte* __DSL_glfwGetJoystickHats(int jid, int* count) =>
+                (
+                    (delegate* unmanaged<int, int*, byte*>)
+                        nativeContext.LoadFunction("glfwGetJoystickHats", "glfw")
+                )(jid, count);
+            return __DSL_glfwGetJoystickHats(jid, __dsl_count);
+        }
     }
 
     [return: NativeTypeName("const unsigned char *")]
@@ -3172,6 +3469,17 @@ static unsafe class Glfw
         }
     }
 
+    [NativeFunction("glfw", EntryPoint = "glfwGetJoystickName")]
+    Ptr<sbyte> IGlfw.GetJoystickName(int jid)
+    {
+        sbyte* __DSL_glfwGetJoystickName(int jid) =>
+            (
+                (delegate* unmanaged<int, sbyte*>)
+                    nativeContext.LoadFunction("glfwGetJoystickName", "glfw")
+            )(jid);
+        return __DSL_glfwGetJoystickName(jid);
+    }
+
     [return: NativeTypeName("const char *")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     [NativeFunction("glfw", EntryPoint = "glfwGetJoystickName")]
@@ -3183,6 +3491,17 @@ static unsafe class Glfw
         return __DSL_glfwGetJoystickName(jid);
     }
 
+    [NativeFunction("glfw", EntryPoint = "glfwGetJoystickUserPointer")]
+    Mut IGlfw.GetJoystickUserPointer(int jid)
+    {
+        void* __DSL_glfwGetJoystickUserPointer(int jid) =>
+            (
+                (delegate* unmanaged<int, void*>)
+                    nativeContext.LoadFunction("glfwGetJoystickUserPointer", "glfw")
+            )(jid);
+        return __DSL_glfwGetJoystickUserPointer(jid);
+    }
+
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     [NativeFunction("glfw", EntryPoint = "glfwGetJoystickUserPointer")]
     public static Mut GetJoystickUserPointer(int jid)
@@ -3190,6 +3509,20 @@ static unsafe class Glfw
         [DllImport("glfw", ExactSpelling = true, EntryPoint = "glfwGetJoystickUserPointer")]
         static extern void* __DSL_glfwGetJoystickUserPointer(int jid);
         return __DSL_glfwGetJoystickUserPointer(jid);
+    }
+
+    [NativeFunction("glfw", EntryPoint = "glfwGetKey")]
+    int IGlfw.GetKey(Mut<Window> window, int key)
+    {
+        fixed (Window* __dsl_window = window)
+        {
+            int __DSL_glfwGetKey(Window* window, int key) =>
+                (
+                    (delegate* unmanaged<Window*, int, int>)
+                        nativeContext.LoadFunction("glfwGetKey", "glfw")
+                )(window, key);
+            return __DSL_glfwGetKey(__dsl_window, key);
+        }
     }
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
@@ -3204,6 +3537,17 @@ static unsafe class Glfw
         }
     }
 
+    [NativeFunction("glfw", EntryPoint = "glfwGetKeyName")]
+    Ptr<sbyte> IGlfw.GetKeyName(int key, int scancode)
+    {
+        sbyte* __DSL_glfwGetKeyName(int key, int scancode) =>
+            (
+                (delegate* unmanaged<int, int, sbyte*>)
+                    nativeContext.LoadFunction("glfwGetKeyName", "glfw")
+            )(key, scancode);
+        return __DSL_glfwGetKeyName(key, scancode);
+    }
+
     [return: NativeTypeName("const char *")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     [NativeFunction("glfw", EntryPoint = "glfwGetKeyName")]
@@ -3215,8 +3559,27 @@ static unsafe class Glfw
         return __DSL_glfwGetKeyName(key, scancode);
     }
 
+    int IGlfw.GetKeyScancode(int key) =>
+        ((delegate* unmanaged<int, int>)nativeContext.LoadFunction("GetKeyScancode", "glfw"))(key);
+
     [DllImport("glfw", ExactSpelling = true)]
     public static extern int GetKeyScancode(int key);
+
+    [NativeFunction("glfw", EntryPoint = "glfwGetMonitorContentScale")]
+    void IGlfw.GetMonitorContentScale(Mut<Monitor> monitor, Mut<float> xscale, Mut<float> yscale)
+    {
+        fixed (float* __dsl_yscale = yscale)
+        fixed (float* __dsl_xscale = xscale)
+        fixed (Monitor* __dsl_monitor = monitor)
+        {
+            void __DSL_glfwGetMonitorContentScale(Monitor* monitor, float* xscale, float* yscale) =>
+                (
+                    (delegate* unmanaged<Monitor*, float*, float*, void>)
+                        nativeContext.LoadFunction("glfwGetMonitorContentScale", "glfw")
+                )(monitor, xscale, yscale);
+            __DSL_glfwGetMonitorContentScale(__dsl_monitor, __dsl_xscale, __dsl_yscale);
+        }
+    }
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     [NativeFunction("glfw", EntryPoint = "glfwGetMonitorContentScale")]
@@ -3240,6 +3603,20 @@ static unsafe class Glfw
         }
     }
 
+    [NativeFunction("glfw", EntryPoint = "glfwGetMonitorName")]
+    Ptr<sbyte> IGlfw.GetMonitorName(Mut<Monitor> monitor)
+    {
+        fixed (Monitor* __dsl_monitor = monitor)
+        {
+            sbyte* __DSL_glfwGetMonitorName(Monitor* monitor) =>
+                (
+                    (delegate* unmanaged<Monitor*, sbyte*>)
+                        nativeContext.LoadFunction("glfwGetMonitorName", "glfw")
+                )(monitor);
+            return __DSL_glfwGetMonitorName(__dsl_monitor);
+        }
+    }
+
     [return: NativeTypeName("const char *")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     [NativeFunction("glfw", EntryPoint = "glfwGetMonitorName")]
@@ -3251,6 +3628,22 @@ static unsafe class Glfw
             [return: NativeTypeName("const char *")]
             static extern sbyte* __DSL_glfwGetMonitorName(Monitor* monitor);
             return __DSL_glfwGetMonitorName(__dsl_monitor);
+        }
+    }
+
+    [NativeFunction("glfw", EntryPoint = "glfwGetMonitorPhysicalSize")]
+    void IGlfw.GetMonitorPhysicalSize(Mut<Monitor> monitor, Mut<int> widthMM, Mut<int> heightMM)
+    {
+        fixed (int* __dsl_heightMM = heightMM)
+        fixed (int* __dsl_widthMM = widthMM)
+        fixed (Monitor* __dsl_monitor = monitor)
+        {
+            void __DSL_glfwGetMonitorPhysicalSize(Monitor* monitor, int* widthMM, int* heightMM) =>
+                (
+                    (delegate* unmanaged<Monitor*, int*, int*, void>)
+                        nativeContext.LoadFunction("glfwGetMonitorPhysicalSize", "glfw")
+                )(monitor, widthMM, heightMM);
+            __DSL_glfwGetMonitorPhysicalSize(__dsl_monitor, __dsl_widthMM, __dsl_heightMM);
         }
     }
 
@@ -3276,6 +3669,22 @@ static unsafe class Glfw
         }
     }
 
+    [NativeFunction("glfw", EntryPoint = "glfwGetMonitorPos")]
+    void IGlfw.GetMonitorPos(Mut<Monitor> monitor, Mut<int> xpos, Mut<int> ypos)
+    {
+        fixed (int* __dsl_ypos = ypos)
+        fixed (int* __dsl_xpos = xpos)
+        fixed (Monitor* __dsl_monitor = monitor)
+        {
+            void __DSL_glfwGetMonitorPos(Monitor* monitor, int* xpos, int* ypos) =>
+                (
+                    (delegate* unmanaged<Monitor*, int*, int*, void>)
+                        nativeContext.LoadFunction("glfwGetMonitorPos", "glfw")
+                )(monitor, xpos, ypos);
+            __DSL_glfwGetMonitorPos(__dsl_monitor, __dsl_xpos, __dsl_ypos);
+        }
+    }
+
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     [NativeFunction("glfw", EntryPoint = "glfwGetMonitorPos")]
     public static void GetMonitorPos(Mut<Monitor> monitor, Mut<int> xpos, Mut<int> ypos)
@@ -3287,6 +3696,20 @@ static unsafe class Glfw
             [DllImport("glfw", ExactSpelling = true, EntryPoint = "glfwGetMonitorPos")]
             static extern void __DSL_glfwGetMonitorPos(Monitor* monitor, int* xpos, int* ypos);
             __DSL_glfwGetMonitorPos(__dsl_monitor, __dsl_xpos, __dsl_ypos);
+        }
+    }
+
+    [NativeFunction("glfw", EntryPoint = "glfwGetMonitors")]
+    MutMut<Monitor> IGlfw.GetMonitors(Mut<int> count)
+    {
+        fixed (int* __dsl_count = count)
+        {
+            Monitor** __DSL_glfwGetMonitors(int* count) =>
+                (
+                    (delegate* unmanaged<int*, Monitor**>)
+                        nativeContext.LoadFunction("glfwGetMonitors", "glfw")
+                )(count);
+            return __DSL_glfwGetMonitors(__dsl_count);
         }
     }
 
@@ -3302,6 +3725,20 @@ static unsafe class Glfw
         }
     }
 
+    [NativeFunction("glfw", EntryPoint = "glfwGetMonitorUserPointer")]
+    Mut IGlfw.GetMonitorUserPointer(Mut<Monitor> monitor)
+    {
+        fixed (Monitor* __dsl_monitor = monitor)
+        {
+            void* __DSL_glfwGetMonitorUserPointer(Monitor* monitor) =>
+                (
+                    (delegate* unmanaged<Monitor*, void*>)
+                        nativeContext.LoadFunction("glfwGetMonitorUserPointer", "glfw")
+                )(monitor);
+            return __DSL_glfwGetMonitorUserPointer(__dsl_monitor);
+        }
+    }
+
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     [NativeFunction("glfw", EntryPoint = "glfwGetMonitorUserPointer")]
     public static Mut GetMonitorUserPointer(Mut<Monitor> monitor)
@@ -3311,6 +3748,42 @@ static unsafe class Glfw
             [DllImport("glfw", ExactSpelling = true, EntryPoint = "glfwGetMonitorUserPointer")]
             static extern void* __DSL_glfwGetMonitorUserPointer(Monitor* monitor);
             return __DSL_glfwGetMonitorUserPointer(__dsl_monitor);
+        }
+    }
+
+    [NativeFunction("glfw", EntryPoint = "glfwGetMonitorWorkarea")]
+    void IGlfw.GetMonitorWorkarea(
+        Mut<Monitor> monitor,
+        Mut<int> xpos,
+        Mut<int> ypos,
+        Mut<int> width,
+        Mut<int> height
+    )
+    {
+        fixed (int* __dsl_height = height)
+        fixed (int* __dsl_width = width)
+        fixed (int* __dsl_ypos = ypos)
+        fixed (int* __dsl_xpos = xpos)
+        fixed (Monitor* __dsl_monitor = monitor)
+        {
+            void __DSL_glfwGetMonitorWorkarea(
+                Monitor* monitor,
+                int* xpos,
+                int* ypos,
+                int* width,
+                int* height
+            ) =>
+                (
+                    (delegate* unmanaged<Monitor*, int*, int*, int*, int*, void>)
+                        nativeContext.LoadFunction("glfwGetMonitorWorkarea", "glfw")
+                )(monitor, xpos, ypos, width, height);
+            __DSL_glfwGetMonitorWorkarea(
+                __dsl_monitor,
+                __dsl_xpos,
+                __dsl_ypos,
+                __dsl_width,
+                __dsl_height
+            );
         }
     }
 
@@ -3348,6 +3821,20 @@ static unsafe class Glfw
         }
     }
 
+    [NativeFunction("glfw", EntryPoint = "glfwGetMouseButton")]
+    int IGlfw.GetMouseButton(Mut<Window> window, int button)
+    {
+        fixed (Window* __dsl_window = window)
+        {
+            int __DSL_glfwGetMouseButton(Window* window, int button) =>
+                (
+                    (delegate* unmanaged<Window*, int, int>)
+                        nativeContext.LoadFunction("glfwGetMouseButton", "glfw")
+                )(window, button);
+            return __DSL_glfwGetMouseButton(__dsl_window, button);
+        }
+    }
+
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     [NativeFunction("glfw", EntryPoint = "glfwGetMouseButton")]
     public static int GetMouseButton(Mut<Window> window, int button)
@@ -3360,8 +3847,22 @@ static unsafe class Glfw
         }
     }
 
+    int IGlfw.GetPlatform() =>
+        ((delegate* unmanaged<int>)nativeContext.LoadFunction("GetPlatform", "glfw"))();
+
     [DllImport("glfw", ExactSpelling = true)]
     public static extern int GetPlatform();
+
+    [NativeFunction("glfw", EntryPoint = "glfwGetPrimaryMonitor")]
+    Mut<Monitor> IGlfw.GetPrimaryMonitor()
+    {
+        Monitor* __DSL_glfwGetPrimaryMonitor() =>
+            (
+                (delegate* unmanaged<Monitor*>)
+                    nativeContext.LoadFunction("glfwGetPrimaryMonitor", "glfw")
+            )();
+        return __DSL_glfwGetPrimaryMonitor();
+    }
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     [NativeFunction("glfw", EntryPoint = "glfwGetPrimaryMonitor")]
@@ -3370,6 +3871,24 @@ static unsafe class Glfw
         [DllImport("glfw", ExactSpelling = true, EntryPoint = "glfwGetPrimaryMonitor")]
         static extern Monitor* __DSL_glfwGetPrimaryMonitor();
         return __DSL_glfwGetPrimaryMonitor();
+    }
+
+    [NativeFunction("glfw", EntryPoint = "glfwGetProcAddress")]
+    delegate* unmanaged<void> IGlfw.GetProcAddress(
+        [NativeTypeName("const char *")] Ptr<sbyte> procname
+    )
+    {
+        fixed (sbyte* __dsl_procname = procname)
+        {
+            delegate* unmanaged<void> __DSL_glfwGetProcAddress(
+                [NativeTypeName("const char *")] sbyte* procname
+            ) =>
+                (
+                    (delegate* unmanaged<sbyte*, delegate* unmanaged<void>>)
+                        nativeContext.LoadFunction("glfwGetProcAddress", "glfw")
+                )(procname);
+            return __DSL_glfwGetProcAddress(__dsl_procname);
+        }
     }
 
     [return: NativeTypeName("GLFWglproc")]
@@ -3387,6 +3906,24 @@ static unsafe class Glfw
                 [NativeTypeName("const char *")] sbyte* procname
             );
             return __DSL_glfwGetProcAddress(__dsl_procname);
+        }
+    }
+
+    [NativeFunction("glfw", EntryPoint = "glfwGetRequiredInstanceExtensions")]
+    PtrPtr<sbyte> IGlfw.GetRequiredInstanceExtensions(
+        [NativeTypeName("uint32_t *")] Mut<uint> count
+    )
+    {
+        fixed (uint* __dsl_count = count)
+        {
+            sbyte** __DSL_glfwGetRequiredInstanceExtensions(
+                [NativeTypeName("uint32_t *")] uint* count
+            ) =>
+                (
+                    (delegate* unmanaged<uint*, sbyte**>)
+                        nativeContext.LoadFunction("glfwGetRequiredInstanceExtensions", "glfw")
+                )(count);
+            return __DSL_glfwGetRequiredInstanceExtensions(__dsl_count);
         }
     }
 
@@ -3412,16 +3949,41 @@ static unsafe class Glfw
         }
     }
 
+    double IGlfw.GetTime() =>
+        ((delegate* unmanaged<double>)nativeContext.LoadFunction("GetTime", "glfw"))();
+
     [DllImport("glfw", ExactSpelling = true)]
     public static extern double GetTime();
+
+    ulong IGlfw.GetTimerFrequency() =>
+        ((delegate* unmanaged<ulong>)nativeContext.LoadFunction("GetTimerFrequency", "glfw"))();
 
     [DllImport("glfw", ExactSpelling = true)]
     [return: NativeTypeName("uint64_t")]
     public static extern ulong GetTimerFrequency();
 
+    ulong IGlfw.GetTimerValue() =>
+        ((delegate* unmanaged<ulong>)nativeContext.LoadFunction("GetTimerValue", "glfw"))();
+
     [DllImport("glfw", ExactSpelling = true)]
     [return: NativeTypeName("uint64_t")]
     public static extern ulong GetTimerValue();
+
+    [NativeFunction("glfw", EntryPoint = "glfwGetVersion")]
+    void IGlfw.GetVersion(Mut<int> major, Mut<int> minor, Mut<int> rev)
+    {
+        fixed (int* __dsl_rev = rev)
+        fixed (int* __dsl_minor = minor)
+        fixed (int* __dsl_major = major)
+        {
+            void __DSL_glfwGetVersion(int* major, int* minor, int* rev) =>
+                (
+                    (delegate* unmanaged<int*, int*, int*, void>)
+                        nativeContext.LoadFunction("glfwGetVersion", "glfw")
+                )(major, minor, rev);
+            __DSL_glfwGetVersion(__dsl_major, __dsl_minor, __dsl_rev);
+        }
+    }
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     [NativeFunction("glfw", EntryPoint = "glfwGetVersion")]
@@ -3437,6 +3999,17 @@ static unsafe class Glfw
         }
     }
 
+    [NativeFunction("glfw", EntryPoint = "glfwGetVersionString")]
+    Ptr<sbyte> IGlfw.GetVersionString()
+    {
+        sbyte* __DSL_glfwGetVersionString() =>
+            (
+                (delegate* unmanaged<sbyte*>)
+                    nativeContext.LoadFunction("glfwGetVersionString", "glfw")
+            )();
+        return __DSL_glfwGetVersionString();
+    }
+
     [return: NativeTypeName("const char *")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     [NativeFunction("glfw", EntryPoint = "glfwGetVersionString")]
@@ -3446,6 +4019,20 @@ static unsafe class Glfw
         [return: NativeTypeName("const char *")]
         static extern sbyte* __DSL_glfwGetVersionString();
         return __DSL_glfwGetVersionString();
+    }
+
+    [NativeFunction("glfw", EntryPoint = "glfwGetVideoMode")]
+    Ptr<Vidmode> IGlfw.GetVideoMode(Mut<Monitor> monitor)
+    {
+        fixed (Monitor* __dsl_monitor = monitor)
+        {
+            Vidmode* __DSL_glfwGetVideoMode(Monitor* monitor) =>
+                (
+                    (delegate* unmanaged<Monitor*, Vidmode*>)
+                        nativeContext.LoadFunction("glfwGetVideoMode", "glfw")
+                )(monitor);
+            return __DSL_glfwGetVideoMode(__dsl_monitor);
+        }
     }
 
     [return: NativeTypeName("const GLFWvidmode *")]
@@ -3459,6 +4046,21 @@ static unsafe class Glfw
             [return: NativeTypeName("const GLFWvidmode *")]
             static extern Vidmode* __DSL_glfwGetVideoMode(Monitor* monitor);
             return __DSL_glfwGetVideoMode(__dsl_monitor);
+        }
+    }
+
+    [NativeFunction("glfw", EntryPoint = "glfwGetVideoModes")]
+    Ptr<Vidmode> IGlfw.GetVideoModes(Mut<Monitor> monitor, Mut<int> count)
+    {
+        fixed (int* __dsl_count = count)
+        fixed (Monitor* __dsl_monitor = monitor)
+        {
+            Vidmode* __DSL_glfwGetVideoModes(Monitor* monitor, int* count) =>
+                (
+                    (delegate* unmanaged<Monitor*, int*, Vidmode*>)
+                        nativeContext.LoadFunction("glfwGetVideoModes", "glfw")
+                )(monitor, count);
+            return __DSL_glfwGetVideoModes(__dsl_monitor, __dsl_count);
         }
     }
 
@@ -3477,6 +4079,20 @@ static unsafe class Glfw
         }
     }
 
+    [NativeFunction("glfw", EntryPoint = "glfwGetWindowAttrib")]
+    int IGlfw.GetWindowAttrib(Mut<Window> window, int attrib)
+    {
+        fixed (Window* __dsl_window = window)
+        {
+            int __DSL_glfwGetWindowAttrib(Window* window, int attrib) =>
+                (
+                    (delegate* unmanaged<Window*, int, int>)
+                        nativeContext.LoadFunction("glfwGetWindowAttrib", "glfw")
+                )(window, attrib);
+            return __DSL_glfwGetWindowAttrib(__dsl_window, attrib);
+        }
+    }
+
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     [NativeFunction("glfw", EntryPoint = "glfwGetWindowAttrib")]
     public static int GetWindowAttrib(Mut<Window> window, int attrib)
@@ -3486,6 +4102,22 @@ static unsafe class Glfw
             [DllImport("glfw", ExactSpelling = true, EntryPoint = "glfwGetWindowAttrib")]
             static extern int __DSL_glfwGetWindowAttrib(Window* window, int attrib);
             return __DSL_glfwGetWindowAttrib(__dsl_window, attrib);
+        }
+    }
+
+    [NativeFunction("glfw", EntryPoint = "glfwGetWindowContentScale")]
+    void IGlfw.GetWindowContentScale(Mut<Window> window, Mut<float> xscale, Mut<float> yscale)
+    {
+        fixed (float* __dsl_yscale = yscale)
+        fixed (float* __dsl_xscale = xscale)
+        fixed (Window* __dsl_window = window)
+        {
+            void __DSL_glfwGetWindowContentScale(Window* window, float* xscale, float* yscale) =>
+                (
+                    (delegate* unmanaged<Window*, float*, float*, void>)
+                        nativeContext.LoadFunction("glfwGetWindowContentScale", "glfw")
+                )(window, xscale, yscale);
+            __DSL_glfwGetWindowContentScale(__dsl_window, __dsl_xscale, __dsl_yscale);
         }
     }
 
@@ -3508,6 +4140,42 @@ static unsafe class Glfw
                 float* yscale
             );
             __DSL_glfwGetWindowContentScale(__dsl_window, __dsl_xscale, __dsl_yscale);
+        }
+    }
+
+    [NativeFunction("glfw", EntryPoint = "glfwGetWindowFrameSize")]
+    void IGlfw.GetWindowFrameSize(
+        Mut<Window> window,
+        Mut<int> left,
+        Mut<int> top,
+        Mut<int> right,
+        Mut<int> bottom
+    )
+    {
+        fixed (int* __dsl_bottom = bottom)
+        fixed (int* __dsl_right = right)
+        fixed (int* __dsl_top = top)
+        fixed (int* __dsl_left = left)
+        fixed (Window* __dsl_window = window)
+        {
+            void __DSL_glfwGetWindowFrameSize(
+                Window* window,
+                int* left,
+                int* top,
+                int* right,
+                int* bottom
+            ) =>
+                (
+                    (delegate* unmanaged<Window*, int*, int*, int*, int*, void>)
+                        nativeContext.LoadFunction("glfwGetWindowFrameSize", "glfw")
+                )(window, left, top, right, bottom);
+            __DSL_glfwGetWindowFrameSize(
+                __dsl_window,
+                __dsl_left,
+                __dsl_top,
+                __dsl_right,
+                __dsl_bottom
+            );
         }
     }
 
@@ -3545,6 +4213,20 @@ static unsafe class Glfw
         }
     }
 
+    [NativeFunction("glfw", EntryPoint = "glfwGetWindowMonitor")]
+    Mut<Monitor> IGlfw.GetWindowMonitor(Mut<Window> window)
+    {
+        fixed (Window* __dsl_window = window)
+        {
+            Monitor* __DSL_glfwGetWindowMonitor(Window* window) =>
+                (
+                    (delegate* unmanaged<Window*, Monitor*>)
+                        nativeContext.LoadFunction("glfwGetWindowMonitor", "glfw")
+                )(window);
+            return __DSL_glfwGetWindowMonitor(__dsl_window);
+        }
+    }
+
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     [NativeFunction("glfw", EntryPoint = "glfwGetWindowMonitor")]
     public static Mut<Monitor> GetWindowMonitor(Mut<Window> window)
@@ -3557,6 +4239,20 @@ static unsafe class Glfw
         }
     }
 
+    [NativeFunction("glfw", EntryPoint = "glfwGetWindowOpacity")]
+    float IGlfw.GetWindowOpacity(Mut<Window> window)
+    {
+        fixed (Window* __dsl_window = window)
+        {
+            float __DSL_glfwGetWindowOpacity(Window* window) =>
+                (
+                    (delegate* unmanaged<Window*, float>)
+                        nativeContext.LoadFunction("glfwGetWindowOpacity", "glfw")
+                )(window);
+            return __DSL_glfwGetWindowOpacity(__dsl_window);
+        }
+    }
+
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     [NativeFunction("glfw", EntryPoint = "glfwGetWindowOpacity")]
     public static float GetWindowOpacity(Mut<Window> window)
@@ -3566,6 +4262,22 @@ static unsafe class Glfw
             [DllImport("glfw", ExactSpelling = true, EntryPoint = "glfwGetWindowOpacity")]
             static extern float __DSL_glfwGetWindowOpacity(Window* window);
             return __DSL_glfwGetWindowOpacity(__dsl_window);
+        }
+    }
+
+    [NativeFunction("glfw", EntryPoint = "glfwGetWindowPos")]
+    void IGlfw.GetWindowPos(Mut<Window> window, Mut<int> xpos, Mut<int> ypos)
+    {
+        fixed (int* __dsl_ypos = ypos)
+        fixed (int* __dsl_xpos = xpos)
+        fixed (Window* __dsl_window = window)
+        {
+            void __DSL_glfwGetWindowPos(Window* window, int* xpos, int* ypos) =>
+                (
+                    (delegate* unmanaged<Window*, int*, int*, void>)
+                        nativeContext.LoadFunction("glfwGetWindowPos", "glfw")
+                )(window, xpos, ypos);
+            __DSL_glfwGetWindowPos(__dsl_window, __dsl_xpos, __dsl_ypos);
         }
     }
 
@@ -3583,6 +4295,22 @@ static unsafe class Glfw
         }
     }
 
+    [NativeFunction("glfw", EntryPoint = "glfwGetWindowSize")]
+    void IGlfw.GetWindowSize(Mut<Window> window, Mut<int> width, Mut<int> height)
+    {
+        fixed (int* __dsl_height = height)
+        fixed (int* __dsl_width = width)
+        fixed (Window* __dsl_window = window)
+        {
+            void __DSL_glfwGetWindowSize(Window* window, int* width, int* height) =>
+                (
+                    (delegate* unmanaged<Window*, int*, int*, void>)
+                        nativeContext.LoadFunction("glfwGetWindowSize", "glfw")
+                )(window, width, height);
+            __DSL_glfwGetWindowSize(__dsl_window, __dsl_width, __dsl_height);
+        }
+    }
+
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     [NativeFunction("glfw", EntryPoint = "glfwGetWindowSize")]
     public static void GetWindowSize(Mut<Window> window, Mut<int> width, Mut<int> height)
@@ -3594,6 +4322,20 @@ static unsafe class Glfw
             [DllImport("glfw", ExactSpelling = true, EntryPoint = "glfwGetWindowSize")]
             static extern void __DSL_glfwGetWindowSize(Window* window, int* width, int* height);
             __DSL_glfwGetWindowSize(__dsl_window, __dsl_width, __dsl_height);
+        }
+    }
+
+    [NativeFunction("glfw", EntryPoint = "glfwGetWindowUserPointer")]
+    Mut IGlfw.GetWindowUserPointer(Mut<Window> window)
+    {
+        fixed (Window* __dsl_window = window)
+        {
+            void* __DSL_glfwGetWindowUserPointer(Window* window) =>
+                (
+                    (delegate* unmanaged<Window*, void*>)
+                        nativeContext.LoadFunction("glfwGetWindowUserPointer", "glfw")
+                )(window);
+            return __DSL_glfwGetWindowUserPointer(__dsl_window);
         }
     }
 
@@ -3609,6 +4351,20 @@ static unsafe class Glfw
         }
     }
 
+    [NativeFunction("glfw", EntryPoint = "glfwHideWindow")]
+    void IGlfw.HideWindow(Mut<Window> window)
+    {
+        fixed (Window* __dsl_window = window)
+        {
+            void __DSL_glfwHideWindow(Window* window) =>
+                (
+                    (delegate* unmanaged<Window*, void>)
+                        nativeContext.LoadFunction("glfwHideWindow", "glfw")
+                )(window);
+            __DSL_glfwHideWindow(__dsl_window);
+        }
+    }
+
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     [NativeFunction("glfw", EntryPoint = "glfwHideWindow")]
     public static void HideWindow(Mut<Window> window)
@@ -3618,6 +4374,20 @@ static unsafe class Glfw
             [DllImport("glfw", ExactSpelling = true, EntryPoint = "glfwHideWindow")]
             static extern void __DSL_glfwHideWindow(Window* window);
             __DSL_glfwHideWindow(__dsl_window);
+        }
+    }
+
+    [NativeFunction("glfw", EntryPoint = "glfwIconifyWindow")]
+    void IGlfw.IconifyWindow(Mut<Window> window)
+    {
+        fixed (Window* __dsl_window = window)
+        {
+            void __DSL_glfwIconifyWindow(Window* window) =>
+                (
+                    (delegate* unmanaged<Window*, void>)
+                        nativeContext.LoadFunction("glfwIconifyWindow", "glfw")
+                )(window);
+            __DSL_glfwIconifyWindow(__dsl_window);
         }
     }
 
@@ -3633,8 +4403,26 @@ static unsafe class Glfw
         }
     }
 
+    int IGlfw.Init() => ((delegate* unmanaged<int>)nativeContext.LoadFunction("Init", "glfw"))();
+
     [DllImport("glfw", ExactSpelling = true)]
     public static extern int Init();
+
+    [NativeFunction("glfw", EntryPoint = "glfwInitAllocator")]
+    void IGlfw.InitAllocator([NativeTypeName("const GLFWallocator *")] Ptr<Allocator> allocator)
+    {
+        fixed (Allocator* __dsl_allocator = allocator)
+        {
+            void __DSL_glfwInitAllocator(
+                [NativeTypeName("const GLFWallocator *")] Allocator* allocator
+            ) =>
+                (
+                    (delegate* unmanaged<Allocator*, void>)
+                        nativeContext.LoadFunction("glfwInitAllocator", "glfw")
+                )(allocator);
+            __DSL_glfwInitAllocator(__dsl_allocator);
+        }
+    }
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     [NativeFunction("glfw", EntryPoint = "glfwInitAllocator")]
@@ -3652,14 +4440,42 @@ static unsafe class Glfw
         }
     }
 
+    void IGlfw.InitHint(int hint, int value) =>
+        ((delegate* unmanaged<int, int, void>)nativeContext.LoadFunction("InitHint", "glfw"))(
+            hint,
+            value
+        );
+
     [DllImport("glfw", ExactSpelling = true)]
     public static extern void InitHint(int hint, int value);
+
+    int IGlfw.JoystickIsGamepad(int jid) =>
+        ((delegate* unmanaged<int, int>)nativeContext.LoadFunction("JoystickIsGamepad", "glfw"))(
+            jid
+        );
 
     [DllImport("glfw", ExactSpelling = true)]
     public static extern int JoystickIsGamepad(int jid);
 
+    int IGlfw.JoystickPresent(int jid) =>
+        ((delegate* unmanaged<int, int>)nativeContext.LoadFunction("JoystickPresent", "glfw"))(jid);
+
     [DllImport("glfw", ExactSpelling = true)]
     public static extern int JoystickPresent(int jid);
+
+    [NativeFunction("glfw", EntryPoint = "glfwMakeContextCurrent")]
+    void IGlfw.MakeContextCurrent(Mut<Window> window)
+    {
+        fixed (Window* __dsl_window = window)
+        {
+            void __DSL_glfwMakeContextCurrent(Window* window) =>
+                (
+                    (delegate* unmanaged<Window*, void>)
+                        nativeContext.LoadFunction("glfwMakeContextCurrent", "glfw")
+                )(window);
+            __DSL_glfwMakeContextCurrent(__dsl_window);
+        }
+    }
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     [NativeFunction("glfw", EntryPoint = "glfwMakeContextCurrent")]
@@ -3670,6 +4486,20 @@ static unsafe class Glfw
             [DllImport("glfw", ExactSpelling = true, EntryPoint = "glfwMakeContextCurrent")]
             static extern void __DSL_glfwMakeContextCurrent(Window* window);
             __DSL_glfwMakeContextCurrent(__dsl_window);
+        }
+    }
+
+    [NativeFunction("glfw", EntryPoint = "glfwMaximizeWindow")]
+    void IGlfw.MaximizeWindow(Mut<Window> window)
+    {
+        fixed (Window* __dsl_window = window)
+        {
+            void __DSL_glfwMaximizeWindow(Window* window) =>
+                (
+                    (delegate* unmanaged<Window*, void>)
+                        nativeContext.LoadFunction("glfwMaximizeWindow", "glfw")
+                )(window);
+            __DSL_glfwMaximizeWindow(__dsl_window);
         }
     }
 
@@ -3685,17 +4515,45 @@ static unsafe class Glfw
         }
     }
 
+    int IGlfw.PlatformSupported(int platform) =>
+        ((delegate* unmanaged<int, int>)nativeContext.LoadFunction("PlatformSupported", "glfw"))(
+            platform
+        );
+
     [DllImport("glfw", ExactSpelling = true)]
     public static extern int PlatformSupported(int platform);
+
+    void IGlfw.PollEvents() =>
+        ((delegate* unmanaged<void>)nativeContext.LoadFunction("PollEvents", "glfw"))();
 
     [DllImport("glfw", ExactSpelling = true)]
     public static extern void PollEvents();
 
+    void IGlfw.PostEmptyEvent() =>
+        ((delegate* unmanaged<void>)nativeContext.LoadFunction("PostEmptyEvent", "glfw"))();
+
     [DllImport("glfw", ExactSpelling = true)]
     public static extern void PostEmptyEvent();
 
+    int IGlfw.RawMouseMotionSupported() =>
+        ((delegate* unmanaged<int>)nativeContext.LoadFunction("RawMouseMotionSupported", "glfw"))();
+
     [DllImport("glfw", ExactSpelling = true)]
     public static extern int RawMouseMotionSupported();
+
+    [NativeFunction("glfw", EntryPoint = "glfwRequestWindowAttention")]
+    void IGlfw.RequestWindowAttention(Mut<Window> window)
+    {
+        fixed (Window* __dsl_window = window)
+        {
+            void __DSL_glfwRequestWindowAttention(Window* window) =>
+                (
+                    (delegate* unmanaged<Window*, void>)
+                        nativeContext.LoadFunction("glfwRequestWindowAttention", "glfw")
+                )(window);
+            __DSL_glfwRequestWindowAttention(__dsl_window);
+        }
+    }
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     [NativeFunction("glfw", EntryPoint = "glfwRequestWindowAttention")]
@@ -3709,6 +4567,20 @@ static unsafe class Glfw
         }
     }
 
+    [NativeFunction("glfw", EntryPoint = "glfwRestoreWindow")]
+    void IGlfw.RestoreWindow(Mut<Window> window)
+    {
+        fixed (Window* __dsl_window = window)
+        {
+            void __DSL_glfwRestoreWindow(Window* window) =>
+                (
+                    (delegate* unmanaged<Window*, void>)
+                        nativeContext.LoadFunction("glfwRestoreWindow", "glfw")
+                )(window);
+            __DSL_glfwRestoreWindow(__dsl_window);
+        }
+    }
+
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     [NativeFunction("glfw", EntryPoint = "glfwRestoreWindow")]
     public static void RestoreWindow(Mut<Window> window)
@@ -3718,6 +4590,29 @@ static unsafe class Glfw
             [DllImport("glfw", ExactSpelling = true, EntryPoint = "glfwRestoreWindow")]
             static extern void __DSL_glfwRestoreWindow(Window* window);
             __DSL_glfwRestoreWindow(__dsl_window);
+        }
+    }
+
+    [NativeFunction("glfw", EntryPoint = "glfwSetCharCallback")]
+    delegate* unmanaged<Window*, uint, void> IGlfw.SetCharCallback(
+        Mut<Window> window,
+        [NativeTypeName("GLFWcharfun")] delegate* unmanaged<Window*, uint, void> callback
+    )
+    {
+        fixed (Window* __dsl_window = window)
+        {
+            delegate* unmanaged<Window*, uint, void> __DSL_glfwSetCharCallback(
+                Window* window,
+                [NativeTypeName("GLFWcharfun")] delegate* unmanaged<Window*, uint, void> callback
+            ) =>
+                (
+                    (delegate* unmanaged<
+                        Window*,
+                        delegate* unmanaged<Window*, uint, void>,
+                        delegate* unmanaged<Window*, uint, void>>)
+                        nativeContext.LoadFunction("glfwSetCharCallback", "glfw")
+                )(window, callback);
+            return __DSL_glfwSetCharCallback(__dsl_window, callback);
         }
     }
 
@@ -3738,6 +4633,30 @@ static unsafe class Glfw
                 [NativeTypeName("GLFWcharfun")] delegate* unmanaged<Window*, uint, void> callback
             );
             return __DSL_glfwSetCharCallback(__dsl_window, callback);
+        }
+    }
+
+    [NativeFunction("glfw", EntryPoint = "glfwSetCharModsCallback")]
+    delegate* unmanaged<Window*, uint, int, void> IGlfw.SetCharModsCallback(
+        Mut<Window> window,
+        [NativeTypeName("GLFWcharmodsfun")] delegate* unmanaged<Window*, uint, int, void> callback
+    )
+    {
+        fixed (Window* __dsl_window = window)
+        {
+            delegate* unmanaged<Window*, uint, int, void> __DSL_glfwSetCharModsCallback(
+                Window* window,
+                [NativeTypeName("GLFWcharmodsfun")]
+                    delegate* unmanaged<Window*, uint, int, void> callback
+            ) =>
+                (
+                    (delegate* unmanaged<
+                        Window*,
+                        delegate* unmanaged<Window*, uint, int, void>,
+                        delegate* unmanaged<Window*, uint, int, void>>)
+                        nativeContext.LoadFunction("glfwSetCharModsCallback", "glfw")
+                )(window, callback);
+            return __DSL_glfwSetCharModsCallback(__dsl_window, callback);
         }
     }
 
@@ -3766,6 +4685,27 @@ static unsafe class Glfw
         }
     }
 
+    [NativeFunction("glfw", EntryPoint = "glfwSetClipboardString")]
+    void IGlfw.SetClipboardString(
+        Mut<Window> window,
+        [NativeTypeName("const char *")] Ptr<sbyte> @string
+    )
+    {
+        fixed (sbyte* __dsl_string = @string)
+        fixed (Window* __dsl_window = window)
+        {
+            void __DSL_glfwSetClipboardString(
+                Window* window,
+                [NativeTypeName("const char *")] sbyte* @string
+            ) =>
+                (
+                    (delegate* unmanaged<Window*, sbyte*, void>)
+                        nativeContext.LoadFunction("glfwSetClipboardString", "glfw")
+                )(window, @string);
+            __DSL_glfwSetClipboardString(__dsl_window, __dsl_string);
+        }
+    }
+
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     [NativeFunction("glfw", EntryPoint = "glfwSetClipboardString")]
     public static void SetClipboardString(
@@ -3785,6 +4725,21 @@ static unsafe class Glfw
         }
     }
 
+    [NativeFunction("glfw", EntryPoint = "glfwSetCursor")]
+    void IGlfw.SetCursor(Mut<Window> window, Mut<Cursor> cursor)
+    {
+        fixed (Cursor* __dsl_cursor = cursor)
+        fixed (Window* __dsl_window = window)
+        {
+            void __DSL_glfwSetCursor(Window* window, Cursor* cursor) =>
+                (
+                    (delegate* unmanaged<Window*, Cursor*, void>)
+                        nativeContext.LoadFunction("glfwSetCursor", "glfw")
+                )(window, cursor);
+            __DSL_glfwSetCursor(__dsl_window, __dsl_cursor);
+        }
+    }
+
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     [NativeFunction("glfw", EntryPoint = "glfwSetCursor")]
     public static void SetCursor(Mut<Window> window, Mut<Cursor> cursor)
@@ -3795,6 +4750,30 @@ static unsafe class Glfw
             [DllImport("glfw", ExactSpelling = true, EntryPoint = "glfwSetCursor")]
             static extern void __DSL_glfwSetCursor(Window* window, Cursor* cursor);
             __DSL_glfwSetCursor(__dsl_window, __dsl_cursor);
+        }
+    }
+
+    [NativeFunction("glfw", EntryPoint = "glfwSetCursorEnterCallback")]
+    delegate* unmanaged<Window*, int, void> IGlfw.SetCursorEnterCallback(
+        Mut<Window> window,
+        [NativeTypeName("GLFWcursorenterfun")] delegate* unmanaged<Window*, int, void> callback
+    )
+    {
+        fixed (Window* __dsl_window = window)
+        {
+            delegate* unmanaged<Window*, int, void> __DSL_glfwSetCursorEnterCallback(
+                Window* window,
+                [NativeTypeName("GLFWcursorenterfun")]
+                    delegate* unmanaged<Window*, int, void> callback
+            ) =>
+                (
+                    (delegate* unmanaged<
+                        Window*,
+                        delegate* unmanaged<Window*, int, void>,
+                        delegate* unmanaged<Window*, int, void>>)
+                        nativeContext.LoadFunction("glfwSetCursorEnterCallback", "glfw")
+                )(window, callback);
+            return __DSL_glfwSetCursorEnterCallback(__dsl_window, callback);
         }
     }
 
@@ -3819,6 +4798,20 @@ static unsafe class Glfw
         }
     }
 
+    [NativeFunction("glfw", EntryPoint = "glfwSetCursorPos")]
+    void IGlfw.SetCursorPos(Mut<Window> window, double xpos, double ypos)
+    {
+        fixed (Window* __dsl_window = window)
+        {
+            void __DSL_glfwSetCursorPos(Window* window, double xpos, double ypos) =>
+                (
+                    (delegate* unmanaged<Window*, double, double, void>)
+                        nativeContext.LoadFunction("glfwSetCursorPos", "glfw")
+                )(window, xpos, ypos);
+            __DSL_glfwSetCursorPos(__dsl_window, xpos, ypos);
+        }
+    }
+
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     [NativeFunction("glfw", EntryPoint = "glfwSetCursorPos")]
     public static void SetCursorPos(Mut<Window> window, double xpos, double ypos)
@@ -3828,6 +4821,31 @@ static unsafe class Glfw
             [DllImport("glfw", ExactSpelling = true, EntryPoint = "glfwSetCursorPos")]
             static extern void __DSL_glfwSetCursorPos(Window* window, double xpos, double ypos);
             __DSL_glfwSetCursorPos(__dsl_window, xpos, ypos);
+        }
+    }
+
+    [NativeFunction("glfw", EntryPoint = "glfwSetCursorPosCallback")]
+    delegate* unmanaged<Window*, double, double, void> IGlfw.SetCursorPosCallback(
+        Mut<Window> window,
+        [NativeTypeName("GLFWcursorposfun")]
+            delegate* unmanaged<Window*, double, double, void> callback
+    )
+    {
+        fixed (Window* __dsl_window = window)
+        {
+            delegate* unmanaged<Window*, double, double, void> __DSL_glfwSetCursorPosCallback(
+                Window* window,
+                [NativeTypeName("GLFWcursorposfun")]
+                    delegate* unmanaged<Window*, double, double, void> callback
+            ) =>
+                (
+                    (delegate* unmanaged<
+                        Window*,
+                        delegate* unmanaged<Window*, double, double, void>,
+                        delegate* unmanaged<Window*, double, double, void>>)
+                        nativeContext.LoadFunction("glfwSetCursorPosCallback", "glfw")
+                )(window, callback);
+            return __DSL_glfwSetCursorPosCallback(__dsl_window, callback);
         }
     }
 
@@ -3857,6 +4875,30 @@ static unsafe class Glfw
         }
     }
 
+    [NativeFunction("glfw", EntryPoint = "glfwSetDropCallback")]
+    delegate* unmanaged<Window*, int, sbyte**, void> IGlfw.SetDropCallback(
+        Mut<Window> window,
+        [NativeTypeName("GLFWdropfun")] delegate* unmanaged<Window*, int, sbyte**, void> callback
+    )
+    {
+        fixed (Window* __dsl_window = window)
+        {
+            delegate* unmanaged<Window*, int, sbyte**, void> __DSL_glfwSetDropCallback(
+                Window* window,
+                [NativeTypeName("GLFWdropfun")]
+                    delegate* unmanaged<Window*, int, sbyte**, void> callback
+            ) =>
+                (
+                    (delegate* unmanaged<
+                        Window*,
+                        delegate* unmanaged<Window*, int, sbyte**, void>,
+                        delegate* unmanaged<Window*, int, sbyte**, void>>)
+                        nativeContext.LoadFunction("glfwSetDropCallback", "glfw")
+                )(window, callback);
+            return __DSL_glfwSetDropCallback(__dsl_window, callback);
+        }
+    }
+
     [return: NativeTypeName("GLFWdropfun")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     [NativeFunction("glfw", EntryPoint = "glfwSetDropCallback")]
@@ -3882,11 +4924,46 @@ static unsafe class Glfw
         }
     }
 
+    delegate* unmanaged<int, sbyte*, void> IGlfw.SetErrorCallback(
+        [NativeTypeName("GLFWerrorfun")] delegate* unmanaged<int, sbyte*, void> callback
+    ) =>
+        (
+            (delegate* unmanaged<
+                delegate* unmanaged<int, sbyte*, void>,
+                delegate* unmanaged<int, sbyte*, void>>)
+                nativeContext.LoadFunction("SetErrorCallback", "glfw")
+        )(callback);
+
     [DllImport("glfw", ExactSpelling = true)]
     [return: NativeTypeName("GLFWerrorfun")]
     public static extern delegate* unmanaged<int, sbyte*, void> SetErrorCallback(
         [NativeTypeName("GLFWerrorfun")] delegate* unmanaged<int, sbyte*, void> callback
     );
+
+    [NativeFunction("glfw", EntryPoint = "glfwSetFramebufferSizeCallback")]
+    delegate* unmanaged<Window*, int, int, void> IGlfw.SetFramebufferSizeCallback(
+        Mut<Window> window,
+        [NativeTypeName("GLFWframebuffersizefun")]
+            delegate* unmanaged<Window*, int, int, void> callback
+    )
+    {
+        fixed (Window* __dsl_window = window)
+        {
+            delegate* unmanaged<Window*, int, int, void> __DSL_glfwSetFramebufferSizeCallback(
+                Window* window,
+                [NativeTypeName("GLFWframebuffersizefun")]
+                    delegate* unmanaged<Window*, int, int, void> callback
+            ) =>
+                (
+                    (delegate* unmanaged<
+                        Window*,
+                        delegate* unmanaged<Window*, int, int, void>,
+                        delegate* unmanaged<Window*, int, int, void>>)
+                        nativeContext.LoadFunction("glfwSetFramebufferSizeCallback", "glfw")
+                )(window, callback);
+            return __DSL_glfwSetFramebufferSizeCallback(__dsl_window, callback);
+        }
+    }
 
     [return: NativeTypeName("GLFWframebuffersizefun")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
@@ -3914,6 +4991,20 @@ static unsafe class Glfw
         }
     }
 
+    [NativeFunction("glfw", EntryPoint = "glfwSetGamma")]
+    void IGlfw.SetGamma(Mut<Monitor> monitor, float gamma)
+    {
+        fixed (Monitor* __dsl_monitor = monitor)
+        {
+            void __DSL_glfwSetGamma(Monitor* monitor, float gamma) =>
+                (
+                    (delegate* unmanaged<Monitor*, float, void>)
+                        nativeContext.LoadFunction("glfwSetGamma", "glfw")
+                )(monitor, gamma);
+            __DSL_glfwSetGamma(__dsl_monitor, gamma);
+        }
+    }
+
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     [NativeFunction("glfw", EntryPoint = "glfwSetGamma")]
     public static void SetGamma(Mut<Monitor> monitor, float gamma)
@@ -3923,6 +5014,27 @@ static unsafe class Glfw
             [DllImport("glfw", ExactSpelling = true, EntryPoint = "glfwSetGamma")]
             static extern void __DSL_glfwSetGamma(Monitor* monitor, float gamma);
             __DSL_glfwSetGamma(__dsl_monitor, gamma);
+        }
+    }
+
+    [NativeFunction("glfw", EntryPoint = "glfwSetGammaRamp")]
+    void IGlfw.SetGammaRamp(
+        Mut<Monitor> monitor,
+        [NativeTypeName("const GLFWgammaramp *")] Ptr<Gammaramp> ramp
+    )
+    {
+        fixed (Gammaramp* __dsl_ramp = ramp)
+        fixed (Monitor* __dsl_monitor = monitor)
+        {
+            void __DSL_glfwSetGammaRamp(
+                Monitor* monitor,
+                [NativeTypeName("const GLFWgammaramp *")] Gammaramp* ramp
+            ) =>
+                (
+                    (delegate* unmanaged<Monitor*, Gammaramp*, void>)
+                        nativeContext.LoadFunction("glfwSetGammaRamp", "glfw")
+                )(monitor, ramp);
+            __DSL_glfwSetGammaRamp(__dsl_monitor, __dsl_ramp);
         }
     }
 
@@ -3945,6 +5057,20 @@ static unsafe class Glfw
         }
     }
 
+    [NativeFunction("glfw", EntryPoint = "glfwSetInputMode")]
+    void IGlfw.SetInputMode(Mut<Window> window, int mode, int value)
+    {
+        fixed (Window* __dsl_window = window)
+        {
+            void __DSL_glfwSetInputMode(Window* window, int mode, int value) =>
+                (
+                    (delegate* unmanaged<Window*, int, int, void>)
+                        nativeContext.LoadFunction("glfwSetInputMode", "glfw")
+                )(window, mode, value);
+            __DSL_glfwSetInputMode(__dsl_window, mode, value);
+        }
+    }
+
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     [NativeFunction("glfw", EntryPoint = "glfwSetInputMode")]
     public static void SetInputMode(Mut<Window> window, int mode, int value)
@@ -3957,11 +5083,35 @@ static unsafe class Glfw
         }
     }
 
+    delegate* unmanaged<int, int, void> IGlfw.SetJoystickCallback(
+        [NativeTypeName("GLFWjoystickfun")] delegate* unmanaged<int, int, void> callback
+    ) =>
+        (
+            (delegate* unmanaged<
+                delegate* unmanaged<int, int, void>,
+                delegate* unmanaged<int, int, void>>)
+                nativeContext.LoadFunction("SetJoystickCallback", "glfw")
+        )(callback);
+
     [DllImport("glfw", ExactSpelling = true)]
     [return: NativeTypeName("GLFWjoystickfun")]
     public static extern delegate* unmanaged<int, int, void> SetJoystickCallback(
         [NativeTypeName("GLFWjoystickfun")] delegate* unmanaged<int, int, void> callback
     );
+
+    [NativeFunction("glfw", EntryPoint = "glfwSetJoystickUserPointer")]
+    void IGlfw.SetJoystickUserPointer(int jid, Mut pointer)
+    {
+        fixed (void* __dsl_pointer = pointer)
+        {
+            void __DSL_glfwSetJoystickUserPointer(int jid, void* pointer) =>
+                (
+                    (delegate* unmanaged<int, void*, void>)
+                        nativeContext.LoadFunction("glfwSetJoystickUserPointer", "glfw")
+                )(jid, pointer);
+            __DSL_glfwSetJoystickUserPointer(jid, __dsl_pointer);
+        }
+    }
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     [NativeFunction("glfw", EntryPoint = "glfwSetJoystickUserPointer")]
@@ -3972,6 +5122,31 @@ static unsafe class Glfw
             [DllImport("glfw", ExactSpelling = true, EntryPoint = "glfwSetJoystickUserPointer")]
             static extern void __DSL_glfwSetJoystickUserPointer(int jid, void* pointer);
             __DSL_glfwSetJoystickUserPointer(jid, __dsl_pointer);
+        }
+    }
+
+    [NativeFunction("glfw", EntryPoint = "glfwSetKeyCallback")]
+    delegate* unmanaged<Window*, int, int, int, int, void> IGlfw.SetKeyCallback(
+        Mut<Window> window,
+        [NativeTypeName("GLFWkeyfun")]
+            delegate* unmanaged<Window*, int, int, int, int, void> callback
+    )
+    {
+        fixed (Window* __dsl_window = window)
+        {
+            delegate* unmanaged<Window*, int, int, int, int, void> __DSL_glfwSetKeyCallback(
+                Window* window,
+                [NativeTypeName("GLFWkeyfun")]
+                    delegate* unmanaged<Window*, int, int, int, int, void> callback
+            ) =>
+                (
+                    (delegate* unmanaged<
+                        Window*,
+                        delegate* unmanaged<Window*, int, int, int, int, void>,
+                        delegate* unmanaged<Window*, int, int, int, int, void>>)
+                        nativeContext.LoadFunction("glfwSetKeyCallback", "glfw")
+                )(window, callback);
+            return __DSL_glfwSetKeyCallback(__dsl_window, callback);
         }
     }
 
@@ -4003,11 +5178,36 @@ static unsafe class Glfw
         }
     }
 
+    delegate* unmanaged<Monitor*, int, void> IGlfw.SetMonitorCallback(
+        [NativeTypeName("GLFWmonitorfun")] delegate* unmanaged<Monitor*, int, void> callback
+    ) =>
+        (
+            (delegate* unmanaged<
+                delegate* unmanaged<Monitor*, int, void>,
+                delegate* unmanaged<Monitor*, int, void>>)
+                nativeContext.LoadFunction("SetMonitorCallback", "glfw")
+        )(callback);
+
     [DllImport("glfw", ExactSpelling = true)]
     [return: NativeTypeName("GLFWmonitorfun")]
     public static extern delegate* unmanaged<Monitor*, int, void> SetMonitorCallback(
         [NativeTypeName("GLFWmonitorfun")] delegate* unmanaged<Monitor*, int, void> callback
     );
+
+    [NativeFunction("glfw", EntryPoint = "glfwSetMonitorUserPointer")]
+    void IGlfw.SetMonitorUserPointer(Mut<Monitor> monitor, Mut pointer)
+    {
+        fixed (void* __dsl_pointer = pointer)
+        fixed (Monitor* __dsl_monitor = monitor)
+        {
+            void __DSL_glfwSetMonitorUserPointer(Monitor* monitor, void* pointer) =>
+                (
+                    (delegate* unmanaged<Monitor*, void*, void>)
+                        nativeContext.LoadFunction("glfwSetMonitorUserPointer", "glfw")
+                )(monitor, pointer);
+            __DSL_glfwSetMonitorUserPointer(__dsl_monitor, __dsl_pointer);
+        }
+    }
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     [NativeFunction("glfw", EntryPoint = "glfwSetMonitorUserPointer")]
@@ -4019,6 +5219,31 @@ static unsafe class Glfw
             [DllImport("glfw", ExactSpelling = true, EntryPoint = "glfwSetMonitorUserPointer")]
             static extern void __DSL_glfwSetMonitorUserPointer(Monitor* monitor, void* pointer);
             __DSL_glfwSetMonitorUserPointer(__dsl_monitor, __dsl_pointer);
+        }
+    }
+
+    [NativeFunction("glfw", EntryPoint = "glfwSetMouseButtonCallback")]
+    delegate* unmanaged<Window*, int, int, int, void> IGlfw.SetMouseButtonCallback(
+        Mut<Window> window,
+        [NativeTypeName("GLFWmousebuttonfun")]
+            delegate* unmanaged<Window*, int, int, int, void> callback
+    )
+    {
+        fixed (Window* __dsl_window = window)
+        {
+            delegate* unmanaged<Window*, int, int, int, void> __DSL_glfwSetMouseButtonCallback(
+                Window* window,
+                [NativeTypeName("GLFWmousebuttonfun")]
+                    delegate* unmanaged<Window*, int, int, int, void> callback
+            ) =>
+                (
+                    (delegate* unmanaged<
+                        Window*,
+                        delegate* unmanaged<Window*, int, int, int, void>,
+                        delegate* unmanaged<Window*, int, int, int, void>>)
+                        nativeContext.LoadFunction("glfwSetMouseButtonCallback", "glfw")
+                )(window, callback);
+            return __DSL_glfwSetMouseButtonCallback(__dsl_window, callback);
         }
     }
 
@@ -4049,6 +5274,31 @@ static unsafe class Glfw
         }
     }
 
+    [NativeFunction("glfw", EntryPoint = "glfwSetScrollCallback")]
+    delegate* unmanaged<Window*, double, double, void> IGlfw.SetScrollCallback(
+        Mut<Window> window,
+        [NativeTypeName("GLFWscrollfun")]
+            delegate* unmanaged<Window*, double, double, void> callback
+    )
+    {
+        fixed (Window* __dsl_window = window)
+        {
+            delegate* unmanaged<Window*, double, double, void> __DSL_glfwSetScrollCallback(
+                Window* window,
+                [NativeTypeName("GLFWscrollfun")]
+                    delegate* unmanaged<Window*, double, double, void> callback
+            ) =>
+                (
+                    (delegate* unmanaged<
+                        Window*,
+                        delegate* unmanaged<Window*, double, double, void>,
+                        delegate* unmanaged<Window*, double, double, void>>)
+                        nativeContext.LoadFunction("glfwSetScrollCallback", "glfw")
+                )(window, callback);
+            return __DSL_glfwSetScrollCallback(__dsl_window, callback);
+        }
+    }
+
     [return: NativeTypeName("GLFWscrollfun")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     [NativeFunction("glfw", EntryPoint = "glfwSetScrollCallback")]
@@ -4075,8 +5325,25 @@ static unsafe class Glfw
         }
     }
 
+    void IGlfw.SetTime(double time) =>
+        ((delegate* unmanaged<double, void>)nativeContext.LoadFunction("SetTime", "glfw"))(time);
+
     [DllImport("glfw", ExactSpelling = true)]
     public static extern void SetTime(double time);
+
+    [NativeFunction("glfw", EntryPoint = "glfwSetWindowAspectRatio")]
+    void IGlfw.SetWindowAspectRatio(Mut<Window> window, int numer, int denom)
+    {
+        fixed (Window* __dsl_window = window)
+        {
+            void __DSL_glfwSetWindowAspectRatio(Window* window, int numer, int denom) =>
+                (
+                    (delegate* unmanaged<Window*, int, int, void>)
+                        nativeContext.LoadFunction("glfwSetWindowAspectRatio", "glfw")
+                )(window, numer, denom);
+            __DSL_glfwSetWindowAspectRatio(__dsl_window, numer, denom);
+        }
+    }
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     [NativeFunction("glfw", EntryPoint = "glfwSetWindowAspectRatio")]
@@ -4090,6 +5357,20 @@ static unsafe class Glfw
         }
     }
 
+    [NativeFunction("glfw", EntryPoint = "glfwSetWindowAttrib")]
+    void IGlfw.SetWindowAttrib(Mut<Window> window, int attrib, int value)
+    {
+        fixed (Window* __dsl_window = window)
+        {
+            void __DSL_glfwSetWindowAttrib(Window* window, int attrib, int value) =>
+                (
+                    (delegate* unmanaged<Window*, int, int, void>)
+                        nativeContext.LoadFunction("glfwSetWindowAttrib", "glfw")
+                )(window, attrib, value);
+            __DSL_glfwSetWindowAttrib(__dsl_window, attrib, value);
+        }
+    }
+
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     [NativeFunction("glfw", EntryPoint = "glfwSetWindowAttrib")]
     public static void SetWindowAttrib(Mut<Window> window, int attrib, int value)
@@ -4099,6 +5380,29 @@ static unsafe class Glfw
             [DllImport("glfw", ExactSpelling = true, EntryPoint = "glfwSetWindowAttrib")]
             static extern void __DSL_glfwSetWindowAttrib(Window* window, int attrib, int value);
             __DSL_glfwSetWindowAttrib(__dsl_window, attrib, value);
+        }
+    }
+
+    [NativeFunction("glfw", EntryPoint = "glfwSetWindowCloseCallback")]
+    delegate* unmanaged<Window*, void> IGlfw.SetWindowCloseCallback(
+        Mut<Window> window,
+        [NativeTypeName("GLFWwindowclosefun")] delegate* unmanaged<Window*, void> callback
+    )
+    {
+        fixed (Window* __dsl_window = window)
+        {
+            delegate* unmanaged<Window*, void> __DSL_glfwSetWindowCloseCallback(
+                Window* window,
+                [NativeTypeName("GLFWwindowclosefun")] delegate* unmanaged<Window*, void> callback
+            ) =>
+                (
+                    (delegate* unmanaged<
+                        Window*,
+                        delegate* unmanaged<Window*, void>,
+                        delegate* unmanaged<Window*, void>>)
+                        nativeContext.LoadFunction("glfwSetWindowCloseCallback", "glfw")
+                )(window, callback);
+            return __DSL_glfwSetWindowCloseCallback(__dsl_window, callback);
         }
     }
 
@@ -4119,6 +5423,35 @@ static unsafe class Glfw
                 [NativeTypeName("GLFWwindowclosefun")] delegate* unmanaged<Window*, void> callback
             );
             return __DSL_glfwSetWindowCloseCallback(__dsl_window, callback);
+        }
+    }
+
+    [NativeFunction("glfw", EntryPoint = "glfwSetWindowContentScaleCallback")]
+    delegate* unmanaged<Window*, float, float, void> IGlfw.SetWindowContentScaleCallback(
+        Mut<Window> window,
+        [NativeTypeName("GLFWwindowcontentscalefun")]
+            delegate* unmanaged<Window*, float, float, void> callback
+    )
+    {
+        fixed (Window* __dsl_window = window)
+        {
+            delegate* unmanaged<
+                Window*,
+                float,
+                float,
+                void> __DSL_glfwSetWindowContentScaleCallback(
+                Window* window,
+                [NativeTypeName("GLFWwindowcontentscalefun")]
+                    delegate* unmanaged<Window*, float, float, void> callback
+            ) =>
+                (
+                    (delegate* unmanaged<
+                        Window*,
+                        delegate* unmanaged<Window*, float, float, void>,
+                        delegate* unmanaged<Window*, float, float, void>>)
+                        nativeContext.LoadFunction("glfwSetWindowContentScaleCallback", "glfw")
+                )(window, callback);
+            return __DSL_glfwSetWindowContentScaleCallback(__dsl_window, callback);
         }
     }
 
@@ -4152,6 +5485,30 @@ static unsafe class Glfw
         }
     }
 
+    [NativeFunction("glfw", EntryPoint = "glfwSetWindowFocusCallback")]
+    delegate* unmanaged<Window*, int, void> IGlfw.SetWindowFocusCallback(
+        Mut<Window> window,
+        [NativeTypeName("GLFWwindowfocusfun")] delegate* unmanaged<Window*, int, void> callback
+    )
+    {
+        fixed (Window* __dsl_window = window)
+        {
+            delegate* unmanaged<Window*, int, void> __DSL_glfwSetWindowFocusCallback(
+                Window* window,
+                [NativeTypeName("GLFWwindowfocusfun")]
+                    delegate* unmanaged<Window*, int, void> callback
+            ) =>
+                (
+                    (delegate* unmanaged<
+                        Window*,
+                        delegate* unmanaged<Window*, int, void>,
+                        delegate* unmanaged<Window*, int, void>>)
+                        nativeContext.LoadFunction("glfwSetWindowFocusCallback", "glfw")
+                )(window, callback);
+            return __DSL_glfwSetWindowFocusCallback(__dsl_window, callback);
+        }
+    }
+
     [return: NativeTypeName("GLFWwindowfocusfun")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     [NativeFunction("glfw", EntryPoint = "glfwSetWindowFocusCallback")]
@@ -4173,6 +5530,29 @@ static unsafe class Glfw
         }
     }
 
+    [NativeFunction("glfw", EntryPoint = "glfwSetWindowIcon")]
+    void IGlfw.SetWindowIcon(
+        Mut<Window> window,
+        int count,
+        [NativeTypeName("const GLFWimage *")] Ptr<Image> images
+    )
+    {
+        fixed (Image* __dsl_images = images)
+        fixed (Window* __dsl_window = window)
+        {
+            void __DSL_glfwSetWindowIcon(
+                Window* window,
+                int count,
+                [NativeTypeName("const GLFWimage *")] Image* images
+            ) =>
+                (
+                    (delegate* unmanaged<Window*, int, Image*, void>)
+                        nativeContext.LoadFunction("glfwSetWindowIcon", "glfw")
+                )(window, count, images);
+            __DSL_glfwSetWindowIcon(__dsl_window, count, __dsl_images);
+        }
+    }
+
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     [NativeFunction("glfw", EntryPoint = "glfwSetWindowIcon")]
     public static void SetWindowIcon(
@@ -4191,6 +5571,30 @@ static unsafe class Glfw
                 [NativeTypeName("const GLFWimage *")] Image* images
             );
             __DSL_glfwSetWindowIcon(__dsl_window, count, __dsl_images);
+        }
+    }
+
+    [NativeFunction("glfw", EntryPoint = "glfwSetWindowIconifyCallback")]
+    delegate* unmanaged<Window*, int, void> IGlfw.SetWindowIconifyCallback(
+        Mut<Window> window,
+        [NativeTypeName("GLFWwindowiconifyfun")] delegate* unmanaged<Window*, int, void> callback
+    )
+    {
+        fixed (Window* __dsl_window = window)
+        {
+            delegate* unmanaged<Window*, int, void> __DSL_glfwSetWindowIconifyCallback(
+                Window* window,
+                [NativeTypeName("GLFWwindowiconifyfun")]
+                    delegate* unmanaged<Window*, int, void> callback
+            ) =>
+                (
+                    (delegate* unmanaged<
+                        Window*,
+                        delegate* unmanaged<Window*, int, void>,
+                        delegate* unmanaged<Window*, int, void>>)
+                        nativeContext.LoadFunction("glfwSetWindowIconifyCallback", "glfw")
+                )(window, callback);
+            return __DSL_glfwSetWindowIconifyCallback(__dsl_window, callback);
         }
     }
 
@@ -4218,6 +5622,30 @@ static unsafe class Glfw
         }
     }
 
+    [NativeFunction("glfw", EntryPoint = "glfwSetWindowMaximizeCallback")]
+    delegate* unmanaged<Window*, int, void> IGlfw.SetWindowMaximizeCallback(
+        Mut<Window> window,
+        [NativeTypeName("GLFWwindowmaximizefun")] delegate* unmanaged<Window*, int, void> callback
+    )
+    {
+        fixed (Window* __dsl_window = window)
+        {
+            delegate* unmanaged<Window*, int, void> __DSL_glfwSetWindowMaximizeCallback(
+                Window* window,
+                [NativeTypeName("GLFWwindowmaximizefun")]
+                    delegate* unmanaged<Window*, int, void> callback
+            ) =>
+                (
+                    (delegate* unmanaged<
+                        Window*,
+                        delegate* unmanaged<Window*, int, void>,
+                        delegate* unmanaged<Window*, int, void>>)
+                        nativeContext.LoadFunction("glfwSetWindowMaximizeCallback", "glfw")
+                )(window, callback);
+            return __DSL_glfwSetWindowMaximizeCallback(__dsl_window, callback);
+        }
+    }
+
     [return: NativeTypeName("GLFWwindowmaximizefun")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     [NativeFunction("glfw", EntryPoint = "glfwSetWindowMaximizeCallback")]
@@ -4239,6 +5667,45 @@ static unsafe class Glfw
                     delegate* unmanaged<Window*, int, void> callback
             );
             return __DSL_glfwSetWindowMaximizeCallback(__dsl_window, callback);
+        }
+    }
+
+    [NativeFunction("glfw", EntryPoint = "glfwSetWindowMonitor")]
+    void IGlfw.SetWindowMonitor(
+        Mut<Window> window,
+        Mut<Monitor> monitor,
+        int xpos,
+        int ypos,
+        int width,
+        int height,
+        int refreshRate
+    )
+    {
+        fixed (Monitor* __dsl_monitor = monitor)
+        fixed (Window* __dsl_window = window)
+        {
+            void __DSL_glfwSetWindowMonitor(
+                Window* window,
+                Monitor* monitor,
+                int xpos,
+                int ypos,
+                int width,
+                int height,
+                int refreshRate
+            ) =>
+                (
+                    (delegate* unmanaged<Window*, Monitor*, int, int, int, int, int, void>)
+                        nativeContext.LoadFunction("glfwSetWindowMonitor", "glfw")
+                )(window, monitor, xpos, ypos, width, height, refreshRate);
+            __DSL_glfwSetWindowMonitor(
+                __dsl_window,
+                __dsl_monitor,
+                xpos,
+                ypos,
+                width,
+                height,
+                refreshRate
+            );
         }
     }
 
@@ -4279,6 +5746,20 @@ static unsafe class Glfw
         }
     }
 
+    [NativeFunction("glfw", EntryPoint = "glfwSetWindowOpacity")]
+    void IGlfw.SetWindowOpacity(Mut<Window> window, float opacity)
+    {
+        fixed (Window* __dsl_window = window)
+        {
+            void __DSL_glfwSetWindowOpacity(Window* window, float opacity) =>
+                (
+                    (delegate* unmanaged<Window*, float, void>)
+                        nativeContext.LoadFunction("glfwSetWindowOpacity", "glfw")
+                )(window, opacity);
+            __DSL_glfwSetWindowOpacity(__dsl_window, opacity);
+        }
+    }
+
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     [NativeFunction("glfw", EntryPoint = "glfwSetWindowOpacity")]
     public static void SetWindowOpacity(Mut<Window> window, float opacity)
@@ -4291,6 +5772,20 @@ static unsafe class Glfw
         }
     }
 
+    [NativeFunction("glfw", EntryPoint = "glfwSetWindowPos")]
+    void IGlfw.SetWindowPos(Mut<Window> window, int xpos, int ypos)
+    {
+        fixed (Window* __dsl_window = window)
+        {
+            void __DSL_glfwSetWindowPos(Window* window, int xpos, int ypos) =>
+                (
+                    (delegate* unmanaged<Window*, int, int, void>)
+                        nativeContext.LoadFunction("glfwSetWindowPos", "glfw")
+                )(window, xpos, ypos);
+            __DSL_glfwSetWindowPos(__dsl_window, xpos, ypos);
+        }
+    }
+
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     [NativeFunction("glfw", EntryPoint = "glfwSetWindowPos")]
     public static void SetWindowPos(Mut<Window> window, int xpos, int ypos)
@@ -4300,6 +5795,30 @@ static unsafe class Glfw
             [DllImport("glfw", ExactSpelling = true, EntryPoint = "glfwSetWindowPos")]
             static extern void __DSL_glfwSetWindowPos(Window* window, int xpos, int ypos);
             __DSL_glfwSetWindowPos(__dsl_window, xpos, ypos);
+        }
+    }
+
+    [NativeFunction("glfw", EntryPoint = "glfwSetWindowPosCallback")]
+    delegate* unmanaged<Window*, int, int, void> IGlfw.SetWindowPosCallback(
+        Mut<Window> window,
+        [NativeTypeName("GLFWwindowposfun")] delegate* unmanaged<Window*, int, int, void> callback
+    )
+    {
+        fixed (Window* __dsl_window = window)
+        {
+            delegate* unmanaged<Window*, int, int, void> __DSL_glfwSetWindowPosCallback(
+                Window* window,
+                [NativeTypeName("GLFWwindowposfun")]
+                    delegate* unmanaged<Window*, int, int, void> callback
+            ) =>
+                (
+                    (delegate* unmanaged<
+                        Window*,
+                        delegate* unmanaged<Window*, int, int, void>,
+                        delegate* unmanaged<Window*, int, int, void>>)
+                        nativeContext.LoadFunction("glfwSetWindowPosCallback", "glfw")
+                )(window, callback);
+            return __DSL_glfwSetWindowPosCallback(__dsl_window, callback);
         }
     }
 
@@ -4328,6 +5847,29 @@ static unsafe class Glfw
         }
     }
 
+    [NativeFunction("glfw", EntryPoint = "glfwSetWindowRefreshCallback")]
+    delegate* unmanaged<Window*, void> IGlfw.SetWindowRefreshCallback(
+        Mut<Window> window,
+        [NativeTypeName("GLFWwindowrefreshfun")] delegate* unmanaged<Window*, void> callback
+    )
+    {
+        fixed (Window* __dsl_window = window)
+        {
+            delegate* unmanaged<Window*, void> __DSL_glfwSetWindowRefreshCallback(
+                Window* window,
+                [NativeTypeName("GLFWwindowrefreshfun")] delegate* unmanaged<Window*, void> callback
+            ) =>
+                (
+                    (delegate* unmanaged<
+                        Window*,
+                        delegate* unmanaged<Window*, void>,
+                        delegate* unmanaged<Window*, void>>)
+                        nativeContext.LoadFunction("glfwSetWindowRefreshCallback", "glfw")
+                )(window, callback);
+            return __DSL_glfwSetWindowRefreshCallback(__dsl_window, callback);
+        }
+    }
+
     [return: NativeTypeName("GLFWwindowrefreshfun")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     [NativeFunction("glfw", EntryPoint = "glfwSetWindowRefreshCallback")]
@@ -4348,6 +5890,20 @@ static unsafe class Glfw
         }
     }
 
+    [NativeFunction("glfw", EntryPoint = "glfwSetWindowShouldClose")]
+    void IGlfw.SetWindowShouldClose(Mut<Window> window, int value)
+    {
+        fixed (Window* __dsl_window = window)
+        {
+            void __DSL_glfwSetWindowShouldClose(Window* window, int value) =>
+                (
+                    (delegate* unmanaged<Window*, int, void>)
+                        nativeContext.LoadFunction("glfwSetWindowShouldClose", "glfw")
+                )(window, value);
+            __DSL_glfwSetWindowShouldClose(__dsl_window, value);
+        }
+    }
+
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     [NativeFunction("glfw", EntryPoint = "glfwSetWindowShouldClose")]
     public static void SetWindowShouldClose(Mut<Window> window, int value)
@@ -4360,6 +5916,20 @@ static unsafe class Glfw
         }
     }
 
+    [NativeFunction("glfw", EntryPoint = "glfwSetWindowSize")]
+    void IGlfw.SetWindowSize(Mut<Window> window, int width, int height)
+    {
+        fixed (Window* __dsl_window = window)
+        {
+            void __DSL_glfwSetWindowSize(Window* window, int width, int height) =>
+                (
+                    (delegate* unmanaged<Window*, int, int, void>)
+                        nativeContext.LoadFunction("glfwSetWindowSize", "glfw")
+                )(window, width, height);
+            __DSL_glfwSetWindowSize(__dsl_window, width, height);
+        }
+    }
+
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     [NativeFunction("glfw", EntryPoint = "glfwSetWindowSize")]
     public static void SetWindowSize(Mut<Window> window, int width, int height)
@@ -4369,6 +5939,30 @@ static unsafe class Glfw
             [DllImport("glfw", ExactSpelling = true, EntryPoint = "glfwSetWindowSize")]
             static extern void __DSL_glfwSetWindowSize(Window* window, int width, int height);
             __DSL_glfwSetWindowSize(__dsl_window, width, height);
+        }
+    }
+
+    [NativeFunction("glfw", EntryPoint = "glfwSetWindowSizeCallback")]
+    delegate* unmanaged<Window*, int, int, void> IGlfw.SetWindowSizeCallback(
+        Mut<Window> window,
+        [NativeTypeName("GLFWwindowsizefun")] delegate* unmanaged<Window*, int, int, void> callback
+    )
+    {
+        fixed (Window* __dsl_window = window)
+        {
+            delegate* unmanaged<Window*, int, int, void> __DSL_glfwSetWindowSizeCallback(
+                Window* window,
+                [NativeTypeName("GLFWwindowsizefun")]
+                    delegate* unmanaged<Window*, int, int, void> callback
+            ) =>
+                (
+                    (delegate* unmanaged<
+                        Window*,
+                        delegate* unmanaged<Window*, int, int, void>,
+                        delegate* unmanaged<Window*, int, int, void>>)
+                        nativeContext.LoadFunction("glfwSetWindowSizeCallback", "glfw")
+                )(window, callback);
+            return __DSL_glfwSetWindowSizeCallback(__dsl_window, callback);
         }
     }
 
@@ -4397,6 +5991,32 @@ static unsafe class Glfw
         }
     }
 
+    [NativeFunction("glfw", EntryPoint = "glfwSetWindowSizeLimits")]
+    void IGlfw.SetWindowSizeLimits(
+        Mut<Window> window,
+        int minwidth,
+        int minheight,
+        int maxwidth,
+        int maxheight
+    )
+    {
+        fixed (Window* __dsl_window = window)
+        {
+            void __DSL_glfwSetWindowSizeLimits(
+                Window* window,
+                int minwidth,
+                int minheight,
+                int maxwidth,
+                int maxheight
+            ) =>
+                (
+                    (delegate* unmanaged<Window*, int, int, int, int, void>)
+                        nativeContext.LoadFunction("glfwSetWindowSizeLimits", "glfw")
+                )(window, minwidth, minheight, maxwidth, maxheight);
+            __DSL_glfwSetWindowSizeLimits(__dsl_window, minwidth, minheight, maxwidth, maxheight);
+        }
+    }
+
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     [NativeFunction("glfw", EntryPoint = "glfwSetWindowSizeLimits")]
     public static void SetWindowSizeLimits(
@@ -4421,6 +6041,24 @@ static unsafe class Glfw
         }
     }
 
+    [NativeFunction("glfw", EntryPoint = "glfwSetWindowTitle")]
+    void IGlfw.SetWindowTitle(Mut<Window> window, [NativeTypeName("const char *")] Ptr<sbyte> title)
+    {
+        fixed (sbyte* __dsl_title = title)
+        fixed (Window* __dsl_window = window)
+        {
+            void __DSL_glfwSetWindowTitle(
+                Window* window,
+                [NativeTypeName("const char *")] sbyte* title
+            ) =>
+                (
+                    (delegate* unmanaged<Window*, sbyte*, void>)
+                        nativeContext.LoadFunction("glfwSetWindowTitle", "glfw")
+                )(window, title);
+            __DSL_glfwSetWindowTitle(__dsl_window, __dsl_title);
+        }
+    }
+
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     [NativeFunction("glfw", EntryPoint = "glfwSetWindowTitle")]
     public static void SetWindowTitle(
@@ -4440,6 +6078,21 @@ static unsafe class Glfw
         }
     }
 
+    [NativeFunction("glfw", EntryPoint = "glfwSetWindowUserPointer")]
+    void IGlfw.SetWindowUserPointer(Mut<Window> window, Mut pointer)
+    {
+        fixed (void* __dsl_pointer = pointer)
+        fixed (Window* __dsl_window = window)
+        {
+            void __DSL_glfwSetWindowUserPointer(Window* window, void* pointer) =>
+                (
+                    (delegate* unmanaged<Window*, void*, void>)
+                        nativeContext.LoadFunction("glfwSetWindowUserPointer", "glfw")
+                )(window, pointer);
+            __DSL_glfwSetWindowUserPointer(__dsl_window, __dsl_pointer);
+        }
+    }
+
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     [NativeFunction("glfw", EntryPoint = "glfwSetWindowUserPointer")]
     public static void SetWindowUserPointer(Mut<Window> window, Mut pointer)
@@ -4450,6 +6103,20 @@ static unsafe class Glfw
             [DllImport("glfw", ExactSpelling = true, EntryPoint = "glfwSetWindowUserPointer")]
             static extern void __DSL_glfwSetWindowUserPointer(Window* window, void* pointer);
             __DSL_glfwSetWindowUserPointer(__dsl_window, __dsl_pointer);
+        }
+    }
+
+    [NativeFunction("glfw", EntryPoint = "glfwShowWindow")]
+    void IGlfw.ShowWindow(Mut<Window> window)
+    {
+        fixed (Window* __dsl_window = window)
+        {
+            void __DSL_glfwShowWindow(Window* window) =>
+                (
+                    (delegate* unmanaged<Window*, void>)
+                        nativeContext.LoadFunction("glfwShowWindow", "glfw")
+                )(window);
+            __DSL_glfwShowWindow(__dsl_window);
         }
     }
 
@@ -4465,6 +6132,20 @@ static unsafe class Glfw
         }
     }
 
+    [NativeFunction("glfw", EntryPoint = "glfwSwapBuffers")]
+    void IGlfw.SwapBuffers(Mut<Window> window)
+    {
+        fixed (Window* __dsl_window = window)
+        {
+            void __DSL_glfwSwapBuffers(Window* window) =>
+                (
+                    (delegate* unmanaged<Window*, void>)
+                        nativeContext.LoadFunction("glfwSwapBuffers", "glfw")
+                )(window);
+            __DSL_glfwSwapBuffers(__dsl_window);
+        }
+    }
+
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     [NativeFunction("glfw", EntryPoint = "glfwSwapBuffers")]
     public static void SwapBuffers(Mut<Window> window)
@@ -4477,11 +6158,33 @@ static unsafe class Glfw
         }
     }
 
+    void IGlfw.SwapInterval(int interval) =>
+        ((delegate* unmanaged<int, void>)nativeContext.LoadFunction("SwapInterval", "glfw"))(
+            interval
+        );
+
     [DllImport("glfw", ExactSpelling = true)]
     public static extern void SwapInterval(int interval);
 
+    void IGlfw.Terminate() =>
+        ((delegate* unmanaged<void>)nativeContext.LoadFunction("Terminate", "glfw"))();
+
     [DllImport("glfw", ExactSpelling = true)]
     public static extern void Terminate();
+
+    [NativeFunction("glfw", EntryPoint = "glfwUpdateGamepadMappings")]
+    int IGlfw.UpdateGamepadMappings([NativeTypeName("const char *")] Ptr<sbyte> @string)
+    {
+        fixed (sbyte* __dsl_string = @string)
+        {
+            int __DSL_glfwUpdateGamepadMappings([NativeTypeName("const char *")] sbyte* @string) =>
+                (
+                    (delegate* unmanaged<sbyte*, int>)
+                        nativeContext.LoadFunction("glfwUpdateGamepadMappings", "glfw")
+                )(@string);
+            return __DSL_glfwUpdateGamepadMappings(__dsl_string);
+        }
+    }
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     [NativeFunction("glfw", EntryPoint = "glfwUpdateGamepadMappings")]
@@ -4497,17 +6200,52 @@ static unsafe class Glfw
         }
     }
 
+    int IGlfw.VulkanSupported() =>
+        ((delegate* unmanaged<int>)nativeContext.LoadFunction("VulkanSupported", "glfw"))();
+
     [DllImport("glfw", ExactSpelling = true)]
     public static extern int VulkanSupported();
+
+    void IGlfw.WaitEvents() =>
+        ((delegate* unmanaged<void>)nativeContext.LoadFunction("WaitEvents", "glfw"))();
 
     [DllImport("glfw", ExactSpelling = true)]
     public static extern void WaitEvents();
 
+    void IGlfw.WaitEventsTimeout(double timeout) =>
+        (
+            (delegate* unmanaged<double, void>)
+                nativeContext.LoadFunction("WaitEventsTimeout", "glfw")
+        )(timeout);
+
     [DllImport("glfw", ExactSpelling = true)]
     public static extern void WaitEventsTimeout(double timeout);
 
+    void IGlfw.WindowHint(int hint, int value) =>
+        ((delegate* unmanaged<int, int, void>)nativeContext.LoadFunction("WindowHint", "glfw"))(
+            hint,
+            value
+        );
+
     [DllImport("glfw", ExactSpelling = true)]
     public static extern void WindowHint(int hint, int value);
+
+    [NativeFunction("glfw", EntryPoint = "glfwWindowHintString")]
+    void IGlfw.WindowHintString(int hint, [NativeTypeName("const char *")] Ptr<sbyte> value)
+    {
+        fixed (sbyte* __dsl_value = value)
+        {
+            void __DSL_glfwWindowHintString(
+                int hint,
+                [NativeTypeName("const char *")] sbyte* value
+            ) =>
+                (
+                    (delegate* unmanaged<int, sbyte*, void>)
+                        nativeContext.LoadFunction("glfwWindowHintString", "glfw")
+                )(hint, value);
+            __DSL_glfwWindowHintString(hint, __dsl_value);
+        }
+    }
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     [NativeFunction("glfw", EntryPoint = "glfwWindowHintString")]
@@ -4521,6 +6259,20 @@ static unsafe class Glfw
                 [NativeTypeName("const char *")] sbyte* value
             );
             __DSL_glfwWindowHintString(hint, __dsl_value);
+        }
+    }
+
+    [NativeFunction("glfw", EntryPoint = "glfwWindowShouldClose")]
+    int IGlfw.WindowShouldClose(Mut<Window> window)
+    {
+        fixed (Window* __dsl_window = window)
+        {
+            int __DSL_glfwWindowShouldClose(Window* window) =>
+                (
+                    (delegate* unmanaged<Window*, int>)
+                        nativeContext.LoadFunction("glfwWindowShouldClose", "glfw")
+                )(window);
+            return __DSL_glfwWindowShouldClose(__dsl_window);
         }
     }
 

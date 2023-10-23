@@ -182,6 +182,40 @@ public class AddVTables(IOptionsSnapshot<AddVTables.Configuration> config) : IMo
             vTables.Length
         ];
 
+        private string _staticDefault =
+            vTables.FirstOrDefault(x => x.IsDefault && x.IsStatic)?.Name
+            ?? throw new InvalidOperationException("Needs at least one static default.");
+
+        private GenericNameSyntax? _staticDefaultWrapper = vTables
+            .OfType<StaticWrapper>()
+            .FirstOrDefault()
+            ?.Name
+            is { } str
+            ? GenericName(str)
+                .WithTypeArgumentList(
+                    TypeArgumentList(
+                        SingletonSeparatedList<TypeSyntax>(
+                            IdentifierName(
+                                vTables.FirstOrDefault(x => x.IsDefault && x.IsStatic)?.Name
+                                    ?? throw new InvalidOperationException(
+                                        "Needs at least one static default."
+                                    )
+                            )
+                        )
+                    )
+                )
+            : null;
+
+        private enum MethodRewriteMode
+        {
+            NativeContextTrampoline,
+            StaticDefault
+        }
+
+        private MethodRewriteMode? _rwMode;
+
+        private List<MethodDeclarationSyntax> _methods = new();
+
         public override SyntaxNode? VisitCompilationUnit(CompilationUnitSyntax node)
         {
             foreach (var use in node.Usings)
@@ -245,13 +279,33 @@ public class AddVTables(IOptionsSnapshot<AddVTables.Configuration> config) : IMo
             var ret = (ClassDeclarationSyntax)base.VisitClassDeclaration(node)!;
             ret = ret.WithMembers(
                     List<MemberDeclarationSyntax>(
-                        _currentVTableOutputs.Where(x => x is not null).Concat(ret.Members)!
+                        _currentVTableOutputs
+                            .Where(x => x is not null)
+                            .Concat(ret.Members)
+                            .Concat(_methods)!
                     )
                 )
                 .WithModifiers(
                     TokenList(
                         ret.Modifiers.Where(
-                            x => x.Kind() is SyntaxKind.StaticKeyword or SyntaxKind.UnsafeKeyword
+                            x =>
+                                x.Kind()
+                                    is SyntaxKind.UnsafeKeyword
+                                        or SyntaxKind.PartialKeyword
+                                        or SyntaxKind.PublicKeyword
+                                        or SyntaxKind.PrivateKeyword
+                                        or SyntaxKind.InternalKeyword
+                        )
+                    )
+                )
+                .WithBaseList(
+                    BaseList(
+                        SeparatedList(
+                            new BaseTypeSyntax[]
+                            {
+                                SimpleBaseType(IdentifierName(key)),
+                                SimpleBaseType(IdentifierName($"{key}.Static"))
+                            }
                         )
                     )
                 );
@@ -293,63 +347,165 @@ public class AddVTables(IOptionsSnapshot<AddVTables.Configuration> config) : IMo
 
         public override SyntaxNode? VisitMethodDeclaration(MethodDeclarationSyntax node)
         {
+            var parent = node.FirstAncestorOrSelf<ClassDeclarationSyntax>();
             if (
-                _currentInterface is not null
-                && node.GetNativeFunctionInfo(out var lib, out var entryPoint)
-                && node.Modifiers.Any(x => x.IsKind(SyntaxKind.StaticKeyword))
+                _currentInterface is null
+                || !node.AttributeLists.GetNativeFunctionInfo(
+                    out var lib,
+                    out var entryPoint,
+                    out _
+                )
+                || !node.Modifiers.Any(x => x.IsKind(SyntaxKind.StaticKeyword))
+                || parent is null
             )
             {
-                var staticInterface = _currentInterface.Members
-                    .OfType<InterfaceDeclarationSyntax>()
-                    .First();
-                node = (MethodDeclarationSyntax)base.VisitMethodDeclaration(node)!;
-                var baseDecl = node.WithBody(null)
-                    .WithSemicolonToken(Token(SyntaxKind.SemicolonToken))
-                    .WithAttributeLists(List<AttributeListSyntax>())
-                    .AddNativeFunction(node);
-                var staticDecl = baseDecl
-                    .WithModifiers(
-                        TokenList(
-                            baseDecl.Modifiers.Where(
-                                x =>
-                                    x.Kind() is SyntaxKind.StaticKeyword or SyntaxKind.UnsafeKeyword
-                            )
-                        )
-                    )
-                    .AddModifiers(Token(SyntaxKind.AbstractKeyword));
-                var instanceDecl = baseDecl.WithModifiers(
-                    TokenList(baseDecl.Modifiers.Where(x => x.IsKind(SyntaxKind.UnsafeKeyword)))
-                );
-                _currentInterface = _currentInterface.WithMembers(
-                    List(
-                        _currentInterface.Members
-                            .Select(
-                                x =>
-                                    x == staticInterface
-                                        ? staticInterface = staticInterface.AddMembers(staticDecl)
-                                        : x
-                            )
-                            .Concat(Enumerable.Repeat(instanceDecl, 1))
-                    )
-                );
-                for (var i = 0; i < _vTables.Length; i++)
-                {
-                    _currentVTableOutputs[i] = _vTables[i].AddMethod(
-                        new VTableContext(
-                            _currentVTableOutputs[i],
-                            node,
-                            lib,
-                            entryPoint ?? node.Identifier.ToString(),
-                            staticDecl,
-                            instanceDecl,
-                            node.FirstAncestorOrSelf<ClassDeclarationSyntax>()!
-                                .Identifier.ToString()
-                        )
-                    );
-                }
+                return base.VisitMethodDeclaration(node);
             }
 
-            return node;
+            var staticInterface = _currentInterface.Members
+                .OfType<InterfaceDeclarationSyntax>()
+                .First();
+            node = (MethodDeclarationSyntax)base.VisitMethodDeclaration(node)!;
+            var baseDecl = node.WithBody(null)
+                .WithSemicolonToken(Token(SyntaxKind.SemicolonToken))
+                .WithAttributeLists(List<AttributeListSyntax>())
+                .AddNativeFunction(node);
+            var staticDecl = baseDecl
+                .WithModifiers(
+                    TokenList(
+                        baseDecl.Modifiers.Where(
+                            x => x.Kind() is SyntaxKind.StaticKeyword or SyntaxKind.UnsafeKeyword
+                        )
+                    )
+                )
+                .AddModifiers(Token(SyntaxKind.AbstractKeyword));
+            var instanceDecl = baseDecl.WithModifiers(
+                TokenList(baseDecl.Modifiers.Where(x => x.IsKind(SyntaxKind.UnsafeKeyword)))
+            );
+            _currentInterface = _currentInterface.WithMembers(
+                List(
+                    _currentInterface.Members
+                        .Select(
+                            x =>
+                                x == staticInterface
+                                    ? staticInterface = staticInterface.AddMembers(staticDecl)
+                                    : x
+                        )
+                        .Concat(Enumerable.Repeat(instanceDecl, 1))
+                )
+            );
+            for (var i = 0; i < _vTables.Length; i++)
+            {
+                _currentVTableOutputs[i] = _vTables[i].AddMethod(
+                    new VTableContext(
+                        _currentVTableOutputs[i],
+                        node,
+                        lib,
+                        entryPoint ?? node.Identifier.ToString(),
+                        staticDecl,
+                        instanceDecl,
+                        parent.Identifier.ToString()
+                    )
+                );
+            }
+
+            var nativeContextTramp = instanceDecl.WithExplicitInterfaceSpecifier(
+                ExplicitInterfaceSpecifier(IdentifierName(_currentInterface.Identifier.ToString()))
+            );
+            if (
+                node.AttributeLists.Any(
+                    x =>
+                        x.Attributes.Any(
+                            y => y.IsAttribute("System.Runtime.InteropServices.DllImport")
+                        )
+                )
+                && node.AttributeLists.GetNativeFunctionInfo(out lib, out var ep, out var callConv)
+            )
+            {
+                nativeContextTramp = nativeContextTramp
+                    .WithAttributeLists(List<AttributeListSyntax>())
+                    .WithExpressionBody(
+                        GenerateNativeContextTrampoline(
+                            lib,
+                            ep ?? node.Identifier.ToString(),
+                            callConv,
+                            node.ParameterList,
+                            node.ReturnType
+                        )
+                    )
+                    .WithSemicolonToken(Token(SyntaxKind.SemicolonToken));
+            }
+            else
+            {
+                _rwMode = MethodRewriteMode.NativeContextTrampoline;
+                nativeContextTramp = node.Body is null
+                    ? throw new InvalidOperationException(
+                        "Function must have a body if it doesn't have a DllImportAttribute."
+                    )
+                    : nativeContextTramp
+                        .WithBody((BlockSyntax)VisitBlock(node.Body)!)
+                        .WithSemicolonToken(default);
+                _rwMode = null;
+            }
+
+            _methods.Add(nativeContextTramp);
+            _methods.Add(node);
+            return null;
+        }
+
+        public override SyntaxNode? VisitLocalFunctionStatement(LocalFunctionStatementSyntax node)
+        {
+            if (
+                _rwMode == MethodRewriteMode.NativeContextTrampoline
+                && node.AttributeLists.Any(
+                    x =>
+                        x.Attributes.Any(
+                            y => y.IsAttribute("System.Runtime.InteropServices.DllImport")
+                        )
+                )
+                && node.AttributeLists.GetNativeFunctionInfo(
+                    out var lib,
+                    out var ep,
+                    out var callConv
+                )
+            )
+            {
+                // make the local function non-static and using a function pointer call on the native context returned
+                // pointer.
+                return node.WithModifiers(
+                        TokenList(
+                            node.Modifiers.Where(
+                                x =>
+                                    x.Kind()
+                                        is not SyntaxKind.StaticKeyword
+                                            and not SyntaxKind.ExternKeyword
+                            )
+                        )
+                    )
+                    .WithAttributeLists(List<AttributeListSyntax>())
+                    .WithExpressionBody(
+                        GenerateNativeContextTrampoline(
+                            lib,
+                            ep ?? node.Identifier.ToString(),
+                            callConv,
+                            node.ParameterList,
+                            node.ReturnType
+                        )
+                    )
+                    .WithSemicolonToken(Token(SyntaxKind.SemicolonToken));
+            }
+            var rmModeBefore = _rwMode;
+            var ret = (LocalFunctionStatementSyntax)base.VisitLocalFunctionStatement(node)!;
+            if (rmModeBefore != _rwMode)
+            {
+                // the NativeContextTrampoline if statement has been hit when recursing into a contained local function,
+                // make sure that we're non-static.
+                ret = ret.WithModifiers(
+                    TokenList(ret.Modifiers.Where(x => !x.IsKind(SyntaxKind.StaticKeyword)))
+                );
+            }
+
+            return ret;
         }
 
         public IEnumerable<KeyValuePair<string, SyntaxNode>> GetExtraFiles()
@@ -371,8 +527,239 @@ public class AddVTables(IOptionsSnapshot<AddVTables.Configuration> config) : IMo
                                 )
                         )
                 );
+                var nonInterface =
+                    $"{fqn[..(fqn.LastIndexOf('.') + 1)]}{fqn[(fqn.LastIndexOf('.') + 2)..]}";
+                var nonInterfaceIden = nonInterface[(nonInterface.LastIndexOf('.') + 1)..];
+                var boilerplate = ClassDeclaration(nonInterfaceIden)
+                    .WithModifiers(TokenList(Token(SyntaxKind.PartialKeyword)))
+                    .WithMembers(
+                        List<MemberDeclarationSyntax>(
+                            _vTables
+                                .Select(x => x.GetBoilerplate())
+                                .Where(x => x is not null)
+                                .Concat(GenerateTopLevelBoilerplate(nonInterfaceIden))!
+                        )
+                    )
+                    .WithParameterList(
+                        ParameterList(
+                            SingletonSeparatedList(
+                                Parameter(Identifier("nativeContext"))
+                                    .WithType(IdentifierName("INativeContext"))
+                            )
+                        )
+                    )
+                    .WithBaseList(
+                        BaseList(
+                            SingletonSeparatedList<BaseTypeSyntax>(
+                                SimpleBaseType(IdentifierName("IDisposable"))
+                            )
+                        )
+                    );
+                var usingsWithLoader = _usings.ContainsKey("Silk.NET.Core.Loader")
+                    ? _usings.Values
+                    : _usings.Values.Concat(
+                        Enumerable.Repeat(
+                            UsingDirective(
+                                ModUtils.NamespaceIntoIdentifierName("Silk.NET.Core.Loader")
+                            ),
+                            1
+                        )
+                    );
+                yield return new KeyValuePair<string, SyntaxNode>(
+                    $"sources/{nonInterface}.gen.cs",
+                    CompilationUnit()
+                        .WithUsings(List(usingsWithLoader))
+                        .WithMembers(
+                            string.IsNullOrWhiteSpace(ns)
+                                ? SingletonList<MemberDeclarationSyntax>(boilerplate)
+                                : SingletonList<MemberDeclarationSyntax>(
+                                    FileScopedNamespaceDeclaration(
+                                            ModUtils.NamespaceIntoIdentifierName(ns)
+                                        )
+                                        .WithMembers(
+                                            SingletonList<MemberDeclarationSyntax>(boilerplate)
+                                        )
+                                )
+                        )
+                );
             }
         }
+
+        private IEnumerable<MemberDeclarationSyntax> GenerateTopLevelBoilerplate(
+            string nonInterfaceName
+        )
+        {
+            if (_staticDefaultWrapper is not null)
+            {
+                yield return MethodDeclaration(IdentifierName($"I{nonInterfaceName}"), "Create")
+                    .WithModifiers(
+                        TokenList(Token(SyntaxKind.PublicKeyword), Token(SyntaxKind.StaticKeyword))
+                    )
+                    .WithExpressionBody(
+                        ArrowExpressionClause(ObjectCreationExpression(_staticDefaultWrapper))
+                    )
+                    .WithSemicolonToken(Token(SyntaxKind.SemicolonToken));
+            }
+
+            yield return MethodDeclaration(IdentifierName($"I{nonInterfaceName}"), "Create")
+                .WithModifiers(
+                    TokenList(Token(SyntaxKind.PublicKeyword), Token(SyntaxKind.StaticKeyword))
+                )
+                .WithParameterList(
+                    ParameterList(
+                        SingletonSeparatedList(
+                            Parameter(Identifier("ctx")).WithType(IdentifierName("INativeContext"))
+                        )
+                    )
+                )
+                .WithExpressionBody(
+                    ArrowExpressionClause(
+                        ObjectCreationExpression(IdentifierName(nonInterfaceName))
+                            .WithArgumentList(
+                                ArgumentList(
+                                    SingletonSeparatedList(Argument(IdentifierName("ctx")))
+                                )
+                            )
+                    )
+                )
+                .WithSemicolonToken(Token(SyntaxKind.SemicolonToken));
+
+            yield return MethodDeclaration(PredefinedType(Token(SyntaxKind.VoidKeyword)), "Dispose")
+                .WithExpressionBody(
+                    ArrowExpressionClause(
+                        InvocationExpression(
+                            MemberAccessExpression(
+                                SyntaxKind.SimpleMemberAccessExpression,
+                                IdentifierName("nativeContext"),
+                                IdentifierName("Dispose")
+                            )
+                        )
+                    )
+                )
+                .WithModifiers(TokenList(Token(SyntaxKind.PublicKeyword)))
+                .WithLeadingTrivia(
+                    TriviaList(
+                        Trivia(
+                            DocumentationCommentTrivia(
+                                SyntaxKind.SingleLineDocumentationCommentTrivia,
+                                List(
+                                    new XmlNodeSyntax[]
+                                    {
+                                        XmlText()
+                                            .WithTextTokens(
+                                                TokenList(
+                                                    XmlTextLiteral(
+                                                        TriviaList(
+                                                            DocumentationCommentExterior("///")
+                                                        ),
+                                                        " ",
+                                                        " ",
+                                                        TriviaList()
+                                                    )
+                                                )
+                                            ),
+                                        XmlEmptyElement("inheritdoc")
+                                    }
+                                )
+                            )
+                        )
+                    )
+                )
+                .WithSemicolonToken(Token(SyntaxKind.SemicolonToken));
+        }
+
+        private ArrowExpressionClauseSyntax GenerateNativeContextTrampoline(
+            string lib,
+            string ep,
+            string? callConv,
+            ParameterListSyntax parameterList,
+            TypeSyntax returnType
+        ) =>
+            ArrowExpressionClause(
+                InvocationExpression(
+                        ParenthesizedExpression(
+                            CastExpression(
+                                FunctionPointerType()
+                                    .WithCallingConvention(
+                                        FunctionPointerCallingConvention(
+                                                Token(SyntaxKind.UnmanagedKeyword)
+                                            )
+                                            .WithUnmanagedCallingConventionList(
+                                                callConv is not null
+                                                    ? FunctionPointerUnmanagedCallingConventionList(
+                                                        SingletonSeparatedList(
+                                                            FunctionPointerUnmanagedCallingConvention(
+                                                                Identifier(callConv)
+                                                            )
+                                                        )
+                                                    )
+                                                    : null
+                                            )
+                                    )
+                                    .WithParameterList(
+                                        FunctionPointerParameterList(
+                                            SeparatedList(
+                                                parameterList.Parameters
+                                                    .Select(
+                                                        x =>
+                                                            FunctionPointerParameter(
+                                                                x.Type
+                                                                    ?? throw new InvalidOperationException(
+                                                                        "Parameter has no type!"
+                                                                    )
+                                                            )
+                                                    )
+                                                    .Concat(
+                                                        Enumerable.Repeat(
+                                                            FunctionPointerParameter(returnType),
+                                                            1
+                                                        )
+                                                    )
+                                            )
+                                        )
+                                    ),
+                                InvocationExpression(
+                                        MemberAccessExpression(
+                                            SyntaxKind.SimpleMemberAccessExpression,
+                                            IdentifierName("nativeContext"),
+                                            IdentifierName("LoadFunction")
+                                        )
+                                    )
+                                    .WithArgumentList(
+                                        ArgumentList(
+                                            SeparatedList<ArgumentSyntax>(
+                                                new SyntaxNodeOrToken[]
+                                                {
+                                                    Argument(
+                                                        LiteralExpression(
+                                                            SyntaxKind.StringLiteralExpression,
+                                                            Literal(ep)
+                                                        )
+                                                    ),
+                                                    Token(SyntaxKind.CommaToken),
+                                                    Argument(
+                                                        LiteralExpression(
+                                                            SyntaxKind.StringLiteralExpression,
+                                                            Literal(lib)
+                                                        )
+                                                    )
+                                                }
+                                            )
+                                        )
+                                    )
+                            )
+                        )
+                    )
+                    .WithArgumentList(
+                        ArgumentList(
+                            SeparatedList(
+                                parameterList.Parameters.Select(
+                                    x => Argument(IdentifierName(x.Identifier.ToString()))
+                                )
+                            )
+                        )
+                    )
+            );
     }
 
     /// <inheritdoc />

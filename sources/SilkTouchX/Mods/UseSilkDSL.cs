@@ -66,7 +66,7 @@ public class UseSilkDSL : IMod
             var consider =
                 node.Body is not null
                 || node.Modifiers.Any(x => x.IsKind(SyntaxKind.ExternKeyword));
-            if (!consider || !node.GetNativeFunctionInfo(out var lib, out var ep))
+            if (!consider || !node.AttributeLists.GetNativeFunctionInfo(out var lib, out var ep, out _))
             {
                 return base.VisitMethodDeclaration(node);
             }

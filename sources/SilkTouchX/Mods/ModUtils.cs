@@ -230,21 +230,23 @@ public static class ModUtils
         meth.AddAttributeLists(MaxOpt);
 
     /// <summary>
-    /// Gets the library name and entry-point for the given function, or returns false if this is not a native interop
-    /// function.
+    /// Gets the library name and entry-point for the given attribute list, or returns false if this is not a native
+    /// interop function.
     /// </summary>
-    /// <param name="meth">The method.</param>
+    /// <param name="attrLists">The attribute lists.</param>
     /// <param name="libraryName">The library name.</param>
     /// <param name="entryPoint">The entry-point.</param>
+    /// <param name="callConv">The calling convention (if any).</param>
     /// <returns>Whether the native function info was found.</returns>
     public static bool GetNativeFunctionInfo(
-        this MethodDeclarationSyntax meth,
+        this IEnumerable<AttributeListSyntax> attrLists,
         [NotNullWhen(true)] out string? libraryName,
-        out string? entryPoint
+        out string? entryPoint,
+        out string? callConv
     )
     {
         foreach (
-            var attr in from attrList in meth.AttributeLists
+            var attr in from attrList in attrLists
             from attr in attrList.Attributes
             where
                 attr.IsAttribute("System.Runtime.InteropServices.DllImport")
@@ -261,16 +263,27 @@ public static class ModUtils
                 attr.ArgumentList?.Arguments
                     .FirstOrDefault(
                         x =>
-                            x.NameEquals is not null && x.NameEquals.Name.ToString() == "EntryPoint"
+                            x.NameEquals is not null
+                            && x.NameEquals.Name.ToString() == nameof(DllImportAttribute.EntryPoint)
                     )
                     ?.Expression as LiteralExpressionSyntax
             )
                 ?.Token
                 .ValueText;
+            callConv = (
+                attr.ArgumentList?.Arguments
+                    .FirstOrDefault(
+                        x =>
+                            x.NameEquals is not null
+                            && x.NameEquals.Name.ToString()
+                                == nameof(DllImportAttribute.CallingConvention)
+                    )
+                    ?.Expression as MemberAccessExpressionSyntax
+            )?.Name.ToString();
             return true;
         }
 
-        libraryName = entryPoint = null;
+        libraryName = entryPoint = callConv = null;
         return false;
     }
 
@@ -287,7 +300,13 @@ public static class ModUtils
         MethodDeclarationSyntax original
     )
     {
-        if (original.GetNativeFunctionInfo(out var libName, out var entryPoint))
+        if (
+            original.AttributeLists.GetNativeFunctionInfo(
+                out var libName,
+                out var entryPoint,
+                out _
+            )
+        )
         {
             return meth.AddAttributeLists(
                 AttributeList(
