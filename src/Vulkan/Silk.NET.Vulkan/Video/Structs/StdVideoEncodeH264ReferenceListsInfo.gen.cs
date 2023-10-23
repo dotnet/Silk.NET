@@ -22,13 +22,11 @@ namespace Silk.NET.Vulkan.Video
         public StdVideoEncodeH264ReferenceListsInfo
         (
             StdVideoEncodeH264ReferenceListsInfoFlags? flags = null,
-            byte? refPicList0EntryCount = null,
-            byte? refPicList1EntryCount = null,
+            byte? numRefIdxL0ActiveMinus1 = null,
+            byte? numRefIdxL1ActiveMinus1 = null,
             byte? refList0ModOpCount = null,
             byte? refList1ModOpCount = null,
             byte? refPicMarkingOpCount = null,
-            byte* pRefPicList0Entries = null,
-            byte* pRefPicList1Entries = null,
             StdVideoEncodeH264RefListModEntry* pRefList0ModOperations = null,
             StdVideoEncodeH264RefListModEntry* pRefList1ModOperations = null,
             StdVideoEncodeH264RefPicMarkingEntry* pRefPicMarkingOperations = null
@@ -39,14 +37,14 @@ namespace Silk.NET.Vulkan.Video
                 Flags = flags.Value;
             }
 
-            if (refPicList0EntryCount is not null)
+            if (numRefIdxL0ActiveMinus1 is not null)
             {
-                RefPicList0EntryCount = refPicList0EntryCount.Value;
+                NumRefIdxL0ActiveMinus1 = numRefIdxL0ActiveMinus1.Value;
             }
 
-            if (refPicList1EntryCount is not null)
+            if (numRefIdxL1ActiveMinus1 is not null)
             {
-                RefPicList1EntryCount = refPicList1EntryCount.Value;
+                NumRefIdxL1ActiveMinus1 = numRefIdxL1ActiveMinus1.Value;
             }
 
             if (refList0ModOpCount is not null)
@@ -62,16 +60,6 @@ namespace Silk.NET.Vulkan.Video
             if (refPicMarkingOpCount is not null)
             {
                 RefPicMarkingOpCount = refPicMarkingOpCount.Value;
-            }
-
-            if (pRefPicList0Entries is not null)
-            {
-                PRefPicList0Entries = pRefPicList0Entries;
-            }
-
-            if (pRefPicList1Entries is not null)
-            {
-                PRefPicList1Entries = pRefPicList1Entries;
             }
 
             if (pRefList0ModOperations is not null)
@@ -98,13 +86,21 @@ namespace Silk.NET.Vulkan.Video
 
         [NativeName("Type", "uint8_t")]
         [NativeName("Type.Name", "uint8_t")]
-        [NativeName("Name", "refPicList0EntryCount")]
-        public byte RefPicList0EntryCount;
+        [NativeName("Name", "num_ref_idx_l0_active_minus1")]
+        public byte NumRefIdxL0ActiveMinus1;
 
         [NativeName("Type", "uint8_t")]
         [NativeName("Type.Name", "uint8_t")]
-        [NativeName("Name", "refPicList1EntryCount")]
-        public byte RefPicList1EntryCount;
+        [NativeName("Name", "num_ref_idx_l1_active_minus1")]
+        public byte NumRefIdxL1ActiveMinus1;
+        [NativeName("Type", "uint8_t[32]")]
+        [NativeName("Type.Name", "uint8_t[32]")]
+        [NativeName("Name", "RefPicList0")]
+        public fixed byte RefPicList0[32];
+        [NativeName("Type", "uint8_t[32]")]
+        [NativeName("Type.Name", "uint8_t[32]")]
+        [NativeName("Name", "RefPicList1")]
+        public fixed byte RefPicList1[32];
 
         [NativeName("Type", "uint8_t")]
         [NativeName("Type.Name", "uint8_t")]
@@ -124,16 +120,6 @@ namespace Silk.NET.Vulkan.Video
         [NativeName("Type.Name", "uint8_t[7]")]
         [NativeName("Name", "reserved1")]
         public fixed byte Reserved1[7];
-
-        [NativeName("Type", "const uint8_t *")]
-        [NativeName("Type.Name", "const uint8_t *")]
-        [NativeName("Name", "pRefPicList0Entries")]
-        public byte* PRefPicList0Entries;
-
-        [NativeName("Type", "const uint8_t *")]
-        [NativeName("Type.Name", "const uint8_t *")]
-        [NativeName("Name", "pRefPicList1Entries")]
-        public byte* PRefPicList1Entries;
 
         [NativeName("Type", "const StdVideoEncodeH264RefListModEntry *")]
         [NativeName("Type.Name", "const StdVideoEncodeH264RefListModEntry *")]

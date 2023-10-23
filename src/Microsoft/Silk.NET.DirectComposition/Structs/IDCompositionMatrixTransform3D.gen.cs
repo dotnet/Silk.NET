@@ -142,7 +142,7 @@ namespace Silk.NET.DirectComposition
         {
             var @this = (IDCompositionMatrixTransform3D*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<IDCompositionMatrixTransform3D*, int, int, float, int>)@this->LpVtbl[4])(@this, row, column, value);
+            ret = ((delegate* unmanaged[Stdcall]<IDCompositionMatrixTransform3D*, int, int, float, int>)@this->LpVtbl[5])(@this, row, column, value);
             return ret;
         }
 

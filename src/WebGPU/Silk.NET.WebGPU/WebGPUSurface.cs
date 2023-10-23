@@ -5,6 +5,7 @@ using System;
 using System.Runtime.InteropServices;
 using Silk.NET.Core.Contexts;
 using Silk.NET.Core.Native;
+using Silk.NET.WebGPU.Platforms.MacOS;
 
 namespace Silk.NET.WebGPU;
 
@@ -31,7 +32,7 @@ public static class WebGPUSurface
                 Chain = new ChainedStruct
                 {
                     Next  = null,
-                    SType = SType.SurfaceDescriptorFromCanvasHtmlselector
+                    SType = SType.SurfaceDescriptorFromCanvasHtmlSelector
                 },
                 Selector = (byte*) SilkMarshal.StringToPtr("canvas")
             };
@@ -55,9 +56,14 @@ public static class WebGPUSurface
         }
         else if (view.Native.Cocoa != null)
         {
-            throw new PlatformNotSupportedException("WebGPU on MacOS is not supported at this time!");
-
+            // Based on the Veldrid Metal bindings implementation:
+            // https://github.com/veldrid/veldrid/tree/master/src/Veldrid.MetalBindings
             var cocoa = view.Native.Cocoa.Value;
+            CAMetalLayer metalLayer = CAMetalLayer.New();
+            NSWindow nsWindow = new(cocoa);
+            var contentView = nsWindow.contentView;
+            contentView.wantsLayer = true;
+            contentView.layer = metalLayer.NativePtr;
 
             var cocoaDescriptor = new SurfaceDescriptorFromMetalLayer
             {
@@ -66,8 +72,10 @@ public static class WebGPUSurface
                     Next  = null,
                     SType = SType.SurfaceDescriptorFromMetalLayer
                 },
-                Layer = null //TODO: Get the layer from the window
+                Layer = (void*) metalLayer.NativePtr
             };
+            
+            descriptor.NextInChain = (ChainedStruct*) (&cocoaDescriptor);
         }
         else if (view.Native.Wayland != null)
         {
@@ -120,7 +128,7 @@ public static class WebGPUSurface
 
         var surface = wgpu.InstanceCreateSurface(instance, descriptor);
 
-        if (descriptor.NextInChain->SType == SType.SurfaceDescriptorFromCanvasHtmlselector)
+        if (descriptor.NextInChain->SType == SType.SurfaceDescriptorFromCanvasHtmlSelector)
         {
             var htmlDescriptor = (SurfaceDescriptorFromCanvasHTMLSelector*) descriptor.NextInChain;
             

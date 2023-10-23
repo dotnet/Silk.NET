@@ -23,6 +23,9 @@ partial class Build
     static IEnumerable<string> Packages => Directory.GetFiles(PackageDirectory, "*.nupkg")
         .Where(x => Path.GetFileName(x).StartsWith("Silk.NET") || Path.GetFileName(x).StartsWith("Ultz.Native"));
 
+    static IEnumerable<string> SymbolPackages => Directory.GetFiles(PackageDirectory, "*.snupkg")
+        .Where(x => Path.GetFileName(x).StartsWith("Silk.NET") || Path.GetFileName(x).StartsWith("Ultz.Native"));
+
     Target PushToNuGet => CommonTarget
     (
         x => x.DependsOn(Pack)
@@ -35,7 +38,8 @@ partial class Build
         var outputs = Enumerable.Empty<Output>();
         const int rateLimit = 300;
 
-        var allFiles = Packages.Select((x, i) => new { Index = i, Value = x })
+        var allFiles = Packages.Concat(SymbolPackages)
+            .Select((x, i) => new { Index = i, Value = x })
             .GroupBy(x => x.Index / rateLimit)
             .Select(x => x.Select(v => v.Value).ToList())
             .ToList();
@@ -66,7 +70,7 @@ partial class Build
                         );
                     }
 
-                    srcSettings = srcSettings.SetUsername(NugetUsername).SetPassword(NugetPassword);
+                    srcSettings = srcSettings.SetUsername(NugetUsername).SetPassword(NugetPassword).SetStorePasswordInClearText(true);
                 }
 
                 outputs = outputs.Concat(DotNetNuGetAddSource(srcSettings));

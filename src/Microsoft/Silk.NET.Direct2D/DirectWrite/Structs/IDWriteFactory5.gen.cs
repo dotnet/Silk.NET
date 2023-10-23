@@ -2119,7 +2119,7 @@ namespace Silk.NET.DirectWrite
         {
             var @this = (IDWriteFactory5*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<IDWriteFactory5*, IDWriteFontFallback**, int>)@this->LpVtbl[25])(@this, fontFallback);
+            ret = ((delegate* unmanaged[Stdcall]<IDWriteFactory5*, IDWriteFontFallback**, int>)@this->LpVtbl[26])(@this, fontFallback);
             return ret;
         }
 
@@ -2130,7 +2130,7 @@ namespace Silk.NET.DirectWrite
             int ret = default;
             fixed (IDWriteFontFallback** fontFallbackPtr = &fontFallback)
             {
-                ret = ((delegate* unmanaged[Stdcall]<IDWriteFactory5*, IDWriteFontFallback**, int>)@this->LpVtbl[25])(@this, fontFallbackPtr);
+                ret = ((delegate* unmanaged[Stdcall]<IDWriteFactory5*, IDWriteFontFallback**, int>)@this->LpVtbl[26])(@this, fontFallbackPtr);
             }
             return ret;
         }
@@ -2140,7 +2140,7 @@ namespace Silk.NET.DirectWrite
         {
             var @this = (IDWriteFactory5*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<IDWriteFactory5*, IDWriteFontFallbackBuilder**, int>)@this->LpVtbl[26])(@this, fontFallbackBuilder);
+            ret = ((delegate* unmanaged[Stdcall]<IDWriteFactory5*, IDWriteFontFallbackBuilder**, int>)@this->LpVtbl[27])(@this, fontFallbackBuilder);
             return ret;
         }
 
@@ -2151,7 +2151,7 @@ namespace Silk.NET.DirectWrite
             int ret = default;
             fixed (IDWriteFontFallbackBuilder** fontFallbackBuilderPtr = &fontFallbackBuilder)
             {
-                ret = ((delegate* unmanaged[Stdcall]<IDWriteFactory5*, IDWriteFontFallbackBuilder**, int>)@this->LpVtbl[26])(@this, fontFallbackBuilderPtr);
+                ret = ((delegate* unmanaged[Stdcall]<IDWriteFactory5*, IDWriteFontFallbackBuilder**, int>)@this->LpVtbl[27])(@this, fontFallbackBuilderPtr);
             }
             return ret;
         }
@@ -2161,7 +2161,7 @@ namespace Silk.NET.DirectWrite
         {
             var @this = (IDWriteFactory5*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<IDWriteFactory5*, float, float, GlyphRun*, GlyphRunDescription*, MeasuringMode, Matrix*, uint, IDWriteColorGlyphRunEnumerator**, int>)@this->LpVtbl[27])(@this, baselineOriginX, baselineOriginY, glyphRun, glyphRunDescription, measuringMode, worldToDeviceTransform, colorPaletteIndex, colorLayers);
+            ret = ((delegate* unmanaged[Stdcall]<IDWriteFactory5*, float, float, GlyphRun*, GlyphRunDescription*, MeasuringMode, Matrix*, uint, IDWriteColorGlyphRunEnumerator**, int>)@this->LpVtbl[28])(@this, baselineOriginX, baselineOriginY, glyphRun, glyphRunDescription, measuringMode, worldToDeviceTransform, colorPaletteIndex, colorLayers);
             return ret;
         }
 
@@ -2172,7 +2172,7 @@ namespace Silk.NET.DirectWrite
             int ret = default;
             fixed (IDWriteColorGlyphRunEnumerator** colorLayersPtr = &colorLayers)
             {
-                ret = ((delegate* unmanaged[Stdcall]<IDWriteFactory5*, float, float, GlyphRun*, GlyphRunDescription*, MeasuringMode, Matrix*, uint, IDWriteColorGlyphRunEnumerator**, int>)@this->LpVtbl[27])(@this, baselineOriginX, baselineOriginY, glyphRun, glyphRunDescription, measuringMode, worldToDeviceTransform, colorPaletteIndex, colorLayersPtr);
+                ret = ((delegate* unmanaged[Stdcall]<IDWriteFactory5*, float, float, GlyphRun*, GlyphRunDescription*, MeasuringMode, Matrix*, uint, IDWriteColorGlyphRunEnumerator**, int>)@this->LpVtbl[28])(@this, baselineOriginX, baselineOriginY, glyphRun, glyphRunDescription, measuringMode, worldToDeviceTransform, colorPaletteIndex, colorLayersPtr);
             }
             return ret;
         }
@@ -2184,7 +2184,7 @@ namespace Silk.NET.DirectWrite
             int ret = default;
             fixed (Matrix* worldToDeviceTransformPtr = &worldToDeviceTransform)
             {
-                ret = ((delegate* unmanaged[Stdcall]<IDWriteFactory5*, float, float, GlyphRun*, GlyphRunDescription*, MeasuringMode, Matrix*, uint, IDWriteColorGlyphRunEnumerator**, int>)@this->LpVtbl[27])(@this, baselineOriginX, baselineOriginY, glyphRun, glyphRunDescription, measuringMode, worldToDeviceTransformPtr, colorPaletteIndex, colorLayers);
+                ret = ((delegate* unmanaged[Stdcall]<IDWriteFactory5*, float, float, GlyphRun*, GlyphRunDescription*, MeasuringMode, Matrix*, uint, IDWriteColorGlyphRunEnumerator**, int>)@this->LpVtbl[28])(@this, baselineOriginX, baselineOriginY, glyphRun, glyphRunDescription, measuringMode, worldToDeviceTransformPtr, colorPaletteIndex, colorLayers);
             }
             return ret;
         }
@@ -2198,7 +2198,7 @@ namespace Silk.NET.DirectWrite
             {
                 fixed (IDWriteColorGlyphRunEnumerator** colorLayersPtr = &colorLayers)
                 {
-                    ret = ((delegate* unmanaged[Stdcall]<IDWriteFactory5*, float, float, GlyphRun*, GlyphRunDescription*, MeasuringMode, Matrix*, uint, IDWriteColorGlyphRunEnumerator**, int>)@this->LpVtbl[27])(@this, baselineOriginX, baselineOriginY, glyphRun, glyphRunDescription, measuringMode, worldToDeviceTransformPtr, colorPaletteIndex, colorLayersPtr);
+                    ret = ((delegate* unmanaged[Stdcall]<IDWriteFactory5*, float, float, GlyphRun*, GlyphRunDescription*, MeasuringMode, Matrix*, uint, IDWriteColorGlyphRunEnumerator**, int>)@this->LpVtbl[28])(@this, baselineOriginX, baselineOriginY, glyphRun, glyphRunDescription, measuringMode, worldToDeviceTransformPtr, colorPaletteIndex, colorLayersPtr);
                 }
             }
             return ret;
@@ -2211,7 +2211,7 @@ namespace Silk.NET.DirectWrite
             int ret = default;
             fixed (GlyphRunDescription* glyphRunDescriptionPtr = &glyphRunDescription)
             {
-                ret = ((delegate* unmanaged[Stdcall]<IDWriteFactory5*, float, float, GlyphRun*, GlyphRunDescription*, MeasuringMode, Matrix*, uint, IDWriteColorGlyphRunEnumerator**, int>)@this->LpVtbl[27])(@this, baselineOriginX, baselineOriginY, glyphRun, glyphRunDescriptionPtr, measuringMode, worldToDeviceTransform, colorPaletteIndex, colorLayers);
+                ret = ((delegate* unmanaged[Stdcall]<IDWriteFactory5*, float, float, GlyphRun*, GlyphRunDescription*, MeasuringMode, Matrix*, uint, IDWriteColorGlyphRunEnumerator**, int>)@this->LpVtbl[28])(@this, baselineOriginX, baselineOriginY, glyphRun, glyphRunDescriptionPtr, measuringMode, worldToDeviceTransform, colorPaletteIndex, colorLayers);
             }
             return ret;
         }
@@ -2225,7 +2225,7 @@ namespace Silk.NET.DirectWrite
             {
                 fixed (IDWriteColorGlyphRunEnumerator** colorLayersPtr = &colorLayers)
                 {
-                    ret = ((delegate* unmanaged[Stdcall]<IDWriteFactory5*, float, float, GlyphRun*, GlyphRunDescription*, MeasuringMode, Matrix*, uint, IDWriteColorGlyphRunEnumerator**, int>)@this->LpVtbl[27])(@this, baselineOriginX, baselineOriginY, glyphRun, glyphRunDescriptionPtr, measuringMode, worldToDeviceTransform, colorPaletteIndex, colorLayersPtr);
+                    ret = ((delegate* unmanaged[Stdcall]<IDWriteFactory5*, float, float, GlyphRun*, GlyphRunDescription*, MeasuringMode, Matrix*, uint, IDWriteColorGlyphRunEnumerator**, int>)@this->LpVtbl[28])(@this, baselineOriginX, baselineOriginY, glyphRun, glyphRunDescriptionPtr, measuringMode, worldToDeviceTransform, colorPaletteIndex, colorLayersPtr);
                 }
             }
             return ret;
@@ -2240,7 +2240,7 @@ namespace Silk.NET.DirectWrite
             {
                 fixed (Matrix* worldToDeviceTransformPtr = &worldToDeviceTransform)
                 {
-                    ret = ((delegate* unmanaged[Stdcall]<IDWriteFactory5*, float, float, GlyphRun*, GlyphRunDescription*, MeasuringMode, Matrix*, uint, IDWriteColorGlyphRunEnumerator**, int>)@this->LpVtbl[27])(@this, baselineOriginX, baselineOriginY, glyphRun, glyphRunDescriptionPtr, measuringMode, worldToDeviceTransformPtr, colorPaletteIndex, colorLayers);
+                    ret = ((delegate* unmanaged[Stdcall]<IDWriteFactory5*, float, float, GlyphRun*, GlyphRunDescription*, MeasuringMode, Matrix*, uint, IDWriteColorGlyphRunEnumerator**, int>)@this->LpVtbl[28])(@this, baselineOriginX, baselineOriginY, glyphRun, glyphRunDescriptionPtr, measuringMode, worldToDeviceTransformPtr, colorPaletteIndex, colorLayers);
                 }
             }
             return ret;
@@ -2257,7 +2257,7 @@ namespace Silk.NET.DirectWrite
                 {
                     fixed (IDWriteColorGlyphRunEnumerator** colorLayersPtr = &colorLayers)
                     {
-                        ret = ((delegate* unmanaged[Stdcall]<IDWriteFactory5*, float, float, GlyphRun*, GlyphRunDescription*, MeasuringMode, Matrix*, uint, IDWriteColorGlyphRunEnumerator**, int>)@this->LpVtbl[27])(@this, baselineOriginX, baselineOriginY, glyphRun, glyphRunDescriptionPtr, measuringMode, worldToDeviceTransformPtr, colorPaletteIndex, colorLayersPtr);
+                        ret = ((delegate* unmanaged[Stdcall]<IDWriteFactory5*, float, float, GlyphRun*, GlyphRunDescription*, MeasuringMode, Matrix*, uint, IDWriteColorGlyphRunEnumerator**, int>)@this->LpVtbl[28])(@this, baselineOriginX, baselineOriginY, glyphRun, glyphRunDescriptionPtr, measuringMode, worldToDeviceTransformPtr, colorPaletteIndex, colorLayersPtr);
                     }
                 }
             }
@@ -2271,7 +2271,7 @@ namespace Silk.NET.DirectWrite
             int ret = default;
             fixed (GlyphRun* glyphRunPtr = &glyphRun)
             {
-                ret = ((delegate* unmanaged[Stdcall]<IDWriteFactory5*, float, float, GlyphRun*, GlyphRunDescription*, MeasuringMode, Matrix*, uint, IDWriteColorGlyphRunEnumerator**, int>)@this->LpVtbl[27])(@this, baselineOriginX, baselineOriginY, glyphRunPtr, glyphRunDescription, measuringMode, worldToDeviceTransform, colorPaletteIndex, colorLayers);
+                ret = ((delegate* unmanaged[Stdcall]<IDWriteFactory5*, float, float, GlyphRun*, GlyphRunDescription*, MeasuringMode, Matrix*, uint, IDWriteColorGlyphRunEnumerator**, int>)@this->LpVtbl[28])(@this, baselineOriginX, baselineOriginY, glyphRunPtr, glyphRunDescription, measuringMode, worldToDeviceTransform, colorPaletteIndex, colorLayers);
             }
             return ret;
         }
@@ -2285,7 +2285,7 @@ namespace Silk.NET.DirectWrite
             {
                 fixed (IDWriteColorGlyphRunEnumerator** colorLayersPtr = &colorLayers)
                 {
-                    ret = ((delegate* unmanaged[Stdcall]<IDWriteFactory5*, float, float, GlyphRun*, GlyphRunDescription*, MeasuringMode, Matrix*, uint, IDWriteColorGlyphRunEnumerator**, int>)@this->LpVtbl[27])(@this, baselineOriginX, baselineOriginY, glyphRunPtr, glyphRunDescription, measuringMode, worldToDeviceTransform, colorPaletteIndex, colorLayersPtr);
+                    ret = ((delegate* unmanaged[Stdcall]<IDWriteFactory5*, float, float, GlyphRun*, GlyphRunDescription*, MeasuringMode, Matrix*, uint, IDWriteColorGlyphRunEnumerator**, int>)@this->LpVtbl[28])(@this, baselineOriginX, baselineOriginY, glyphRunPtr, glyphRunDescription, measuringMode, worldToDeviceTransform, colorPaletteIndex, colorLayersPtr);
                 }
             }
             return ret;
@@ -2300,7 +2300,7 @@ namespace Silk.NET.DirectWrite
             {
                 fixed (Matrix* worldToDeviceTransformPtr = &worldToDeviceTransform)
                 {
-                    ret = ((delegate* unmanaged[Stdcall]<IDWriteFactory5*, float, float, GlyphRun*, GlyphRunDescription*, MeasuringMode, Matrix*, uint, IDWriteColorGlyphRunEnumerator**, int>)@this->LpVtbl[27])(@this, baselineOriginX, baselineOriginY, glyphRunPtr, glyphRunDescription, measuringMode, worldToDeviceTransformPtr, colorPaletteIndex, colorLayers);
+                    ret = ((delegate* unmanaged[Stdcall]<IDWriteFactory5*, float, float, GlyphRun*, GlyphRunDescription*, MeasuringMode, Matrix*, uint, IDWriteColorGlyphRunEnumerator**, int>)@this->LpVtbl[28])(@this, baselineOriginX, baselineOriginY, glyphRunPtr, glyphRunDescription, measuringMode, worldToDeviceTransformPtr, colorPaletteIndex, colorLayers);
                 }
             }
             return ret;
@@ -2317,7 +2317,7 @@ namespace Silk.NET.DirectWrite
                 {
                     fixed (IDWriteColorGlyphRunEnumerator** colorLayersPtr = &colorLayers)
                     {
-                        ret = ((delegate* unmanaged[Stdcall]<IDWriteFactory5*, float, float, GlyphRun*, GlyphRunDescription*, MeasuringMode, Matrix*, uint, IDWriteColorGlyphRunEnumerator**, int>)@this->LpVtbl[27])(@this, baselineOriginX, baselineOriginY, glyphRunPtr, glyphRunDescription, measuringMode, worldToDeviceTransformPtr, colorPaletteIndex, colorLayersPtr);
+                        ret = ((delegate* unmanaged[Stdcall]<IDWriteFactory5*, float, float, GlyphRun*, GlyphRunDescription*, MeasuringMode, Matrix*, uint, IDWriteColorGlyphRunEnumerator**, int>)@this->LpVtbl[28])(@this, baselineOriginX, baselineOriginY, glyphRunPtr, glyphRunDescription, measuringMode, worldToDeviceTransformPtr, colorPaletteIndex, colorLayersPtr);
                     }
                 }
             }
@@ -2333,7 +2333,7 @@ namespace Silk.NET.DirectWrite
             {
                 fixed (GlyphRunDescription* glyphRunDescriptionPtr = &glyphRunDescription)
                 {
-                    ret = ((delegate* unmanaged[Stdcall]<IDWriteFactory5*, float, float, GlyphRun*, GlyphRunDescription*, MeasuringMode, Matrix*, uint, IDWriteColorGlyphRunEnumerator**, int>)@this->LpVtbl[27])(@this, baselineOriginX, baselineOriginY, glyphRunPtr, glyphRunDescriptionPtr, measuringMode, worldToDeviceTransform, colorPaletteIndex, colorLayers);
+                    ret = ((delegate* unmanaged[Stdcall]<IDWriteFactory5*, float, float, GlyphRun*, GlyphRunDescription*, MeasuringMode, Matrix*, uint, IDWriteColorGlyphRunEnumerator**, int>)@this->LpVtbl[28])(@this, baselineOriginX, baselineOriginY, glyphRunPtr, glyphRunDescriptionPtr, measuringMode, worldToDeviceTransform, colorPaletteIndex, colorLayers);
                 }
             }
             return ret;
@@ -2350,7 +2350,7 @@ namespace Silk.NET.DirectWrite
                 {
                     fixed (IDWriteColorGlyphRunEnumerator** colorLayersPtr = &colorLayers)
                     {
-                        ret = ((delegate* unmanaged[Stdcall]<IDWriteFactory5*, float, float, GlyphRun*, GlyphRunDescription*, MeasuringMode, Matrix*, uint, IDWriteColorGlyphRunEnumerator**, int>)@this->LpVtbl[27])(@this, baselineOriginX, baselineOriginY, glyphRunPtr, glyphRunDescriptionPtr, measuringMode, worldToDeviceTransform, colorPaletteIndex, colorLayersPtr);
+                        ret = ((delegate* unmanaged[Stdcall]<IDWriteFactory5*, float, float, GlyphRun*, GlyphRunDescription*, MeasuringMode, Matrix*, uint, IDWriteColorGlyphRunEnumerator**, int>)@this->LpVtbl[28])(@this, baselineOriginX, baselineOriginY, glyphRunPtr, glyphRunDescriptionPtr, measuringMode, worldToDeviceTransform, colorPaletteIndex, colorLayersPtr);
                     }
                 }
             }
@@ -2368,7 +2368,7 @@ namespace Silk.NET.DirectWrite
                 {
                     fixed (Matrix* worldToDeviceTransformPtr = &worldToDeviceTransform)
                     {
-                        ret = ((delegate* unmanaged[Stdcall]<IDWriteFactory5*, float, float, GlyphRun*, GlyphRunDescription*, MeasuringMode, Matrix*, uint, IDWriteColorGlyphRunEnumerator**, int>)@this->LpVtbl[27])(@this, baselineOriginX, baselineOriginY, glyphRunPtr, glyphRunDescriptionPtr, measuringMode, worldToDeviceTransformPtr, colorPaletteIndex, colorLayers);
+                        ret = ((delegate* unmanaged[Stdcall]<IDWriteFactory5*, float, float, GlyphRun*, GlyphRunDescription*, MeasuringMode, Matrix*, uint, IDWriteColorGlyphRunEnumerator**, int>)@this->LpVtbl[28])(@this, baselineOriginX, baselineOriginY, glyphRunPtr, glyphRunDescriptionPtr, measuringMode, worldToDeviceTransformPtr, colorPaletteIndex, colorLayers);
                     }
                 }
             }
@@ -2388,7 +2388,7 @@ namespace Silk.NET.DirectWrite
                     {
                         fixed (IDWriteColorGlyphRunEnumerator** colorLayersPtr = &colorLayers)
                         {
-                            ret = ((delegate* unmanaged[Stdcall]<IDWriteFactory5*, float, float, GlyphRun*, GlyphRunDescription*, MeasuringMode, Matrix*, uint, IDWriteColorGlyphRunEnumerator**, int>)@this->LpVtbl[27])(@this, baselineOriginX, baselineOriginY, glyphRunPtr, glyphRunDescriptionPtr, measuringMode, worldToDeviceTransformPtr, colorPaletteIndex, colorLayersPtr);
+                            ret = ((delegate* unmanaged[Stdcall]<IDWriteFactory5*, float, float, GlyphRun*, GlyphRunDescription*, MeasuringMode, Matrix*, uint, IDWriteColorGlyphRunEnumerator**, int>)@this->LpVtbl[28])(@this, baselineOriginX, baselineOriginY, glyphRunPtr, glyphRunDescriptionPtr, measuringMode, worldToDeviceTransformPtr, colorPaletteIndex, colorLayersPtr);
                         }
                     }
                 }
@@ -2401,7 +2401,7 @@ namespace Silk.NET.DirectWrite
         {
             var @this = (IDWriteFactory5*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<IDWriteFactory5*, char*, Silk.NET.Core.Win32Extras.Filetime*, uint, FontSimulations, IDWriteFontFaceReference**, int>)@this->LpVtbl[28])(@this, filePath, lastWriteTime, faceIndex, fontSimulations, fontFaceReference);
+            ret = ((delegate* unmanaged[Stdcall]<IDWriteFactory5*, char*, Silk.NET.Core.Win32Extras.Filetime*, uint, FontSimulations, IDWriteFontFaceReference**, int>)@this->LpVtbl[34])(@this, filePath, lastWriteTime, faceIndex, fontSimulations, fontFaceReference);
             return ret;
         }
 
@@ -2412,7 +2412,7 @@ namespace Silk.NET.DirectWrite
             int ret = default;
             fixed (IDWriteFontFaceReference** fontFaceReferencePtr = &fontFaceReference)
             {
-                ret = ((delegate* unmanaged[Stdcall]<IDWriteFactory5*, char*, Silk.NET.Core.Win32Extras.Filetime*, uint, FontSimulations, IDWriteFontFaceReference**, int>)@this->LpVtbl[28])(@this, filePath, lastWriteTime, faceIndex, fontSimulations, fontFaceReferencePtr);
+                ret = ((delegate* unmanaged[Stdcall]<IDWriteFactory5*, char*, Silk.NET.Core.Win32Extras.Filetime*, uint, FontSimulations, IDWriteFontFaceReference**, int>)@this->LpVtbl[34])(@this, filePath, lastWriteTime, faceIndex, fontSimulations, fontFaceReferencePtr);
             }
             return ret;
         }
@@ -2424,7 +2424,7 @@ namespace Silk.NET.DirectWrite
             int ret = default;
             fixed (Silk.NET.Core.Win32Extras.Filetime* lastWriteTimePtr = &lastWriteTime)
             {
-                ret = ((delegate* unmanaged[Stdcall]<IDWriteFactory5*, char*, Silk.NET.Core.Win32Extras.Filetime*, uint, FontSimulations, IDWriteFontFaceReference**, int>)@this->LpVtbl[28])(@this, filePath, lastWriteTimePtr, faceIndex, fontSimulations, fontFaceReference);
+                ret = ((delegate* unmanaged[Stdcall]<IDWriteFactory5*, char*, Silk.NET.Core.Win32Extras.Filetime*, uint, FontSimulations, IDWriteFontFaceReference**, int>)@this->LpVtbl[34])(@this, filePath, lastWriteTimePtr, faceIndex, fontSimulations, fontFaceReference);
             }
             return ret;
         }
@@ -2438,7 +2438,7 @@ namespace Silk.NET.DirectWrite
             {
                 fixed (IDWriteFontFaceReference** fontFaceReferencePtr = &fontFaceReference)
                 {
-                    ret = ((delegate* unmanaged[Stdcall]<IDWriteFactory5*, char*, Silk.NET.Core.Win32Extras.Filetime*, uint, FontSimulations, IDWriteFontFaceReference**, int>)@this->LpVtbl[28])(@this, filePath, lastWriteTimePtr, faceIndex, fontSimulations, fontFaceReferencePtr);
+                    ret = ((delegate* unmanaged[Stdcall]<IDWriteFactory5*, char*, Silk.NET.Core.Win32Extras.Filetime*, uint, FontSimulations, IDWriteFontFaceReference**, int>)@this->LpVtbl[34])(@this, filePath, lastWriteTimePtr, faceIndex, fontSimulations, fontFaceReferencePtr);
                 }
             }
             return ret;
@@ -2451,7 +2451,7 @@ namespace Silk.NET.DirectWrite
             int ret = default;
             fixed (char* filePathPtr = &filePath)
             {
-                ret = ((delegate* unmanaged[Stdcall]<IDWriteFactory5*, char*, Silk.NET.Core.Win32Extras.Filetime*, uint, FontSimulations, IDWriteFontFaceReference**, int>)@this->LpVtbl[28])(@this, filePathPtr, lastWriteTime, faceIndex, fontSimulations, fontFaceReference);
+                ret = ((delegate* unmanaged[Stdcall]<IDWriteFactory5*, char*, Silk.NET.Core.Win32Extras.Filetime*, uint, FontSimulations, IDWriteFontFaceReference**, int>)@this->LpVtbl[34])(@this, filePathPtr, lastWriteTime, faceIndex, fontSimulations, fontFaceReference);
             }
             return ret;
         }
@@ -2465,7 +2465,7 @@ namespace Silk.NET.DirectWrite
             {
                 fixed (IDWriteFontFaceReference** fontFaceReferencePtr = &fontFaceReference)
                 {
-                    ret = ((delegate* unmanaged[Stdcall]<IDWriteFactory5*, char*, Silk.NET.Core.Win32Extras.Filetime*, uint, FontSimulations, IDWriteFontFaceReference**, int>)@this->LpVtbl[28])(@this, filePathPtr, lastWriteTime, faceIndex, fontSimulations, fontFaceReferencePtr);
+                    ret = ((delegate* unmanaged[Stdcall]<IDWriteFactory5*, char*, Silk.NET.Core.Win32Extras.Filetime*, uint, FontSimulations, IDWriteFontFaceReference**, int>)@this->LpVtbl[34])(@this, filePathPtr, lastWriteTime, faceIndex, fontSimulations, fontFaceReferencePtr);
                 }
             }
             return ret;
@@ -2480,7 +2480,7 @@ namespace Silk.NET.DirectWrite
             {
                 fixed (Silk.NET.Core.Win32Extras.Filetime* lastWriteTimePtr = &lastWriteTime)
                 {
-                    ret = ((delegate* unmanaged[Stdcall]<IDWriteFactory5*, char*, Silk.NET.Core.Win32Extras.Filetime*, uint, FontSimulations, IDWriteFontFaceReference**, int>)@this->LpVtbl[28])(@this, filePathPtr, lastWriteTimePtr, faceIndex, fontSimulations, fontFaceReference);
+                    ret = ((delegate* unmanaged[Stdcall]<IDWriteFactory5*, char*, Silk.NET.Core.Win32Extras.Filetime*, uint, FontSimulations, IDWriteFontFaceReference**, int>)@this->LpVtbl[34])(@this, filePathPtr, lastWriteTimePtr, faceIndex, fontSimulations, fontFaceReference);
                 }
             }
             return ret;
@@ -2497,7 +2497,7 @@ namespace Silk.NET.DirectWrite
                 {
                     fixed (IDWriteFontFaceReference** fontFaceReferencePtr = &fontFaceReference)
                     {
-                        ret = ((delegate* unmanaged[Stdcall]<IDWriteFactory5*, char*, Silk.NET.Core.Win32Extras.Filetime*, uint, FontSimulations, IDWriteFontFaceReference**, int>)@this->LpVtbl[28])(@this, filePathPtr, lastWriteTimePtr, faceIndex, fontSimulations, fontFaceReferencePtr);
+                        ret = ((delegate* unmanaged[Stdcall]<IDWriteFactory5*, char*, Silk.NET.Core.Win32Extras.Filetime*, uint, FontSimulations, IDWriteFontFaceReference**, int>)@this->LpVtbl[34])(@this, filePathPtr, lastWriteTimePtr, faceIndex, fontSimulations, fontFaceReferencePtr);
                     }
                 }
             }
@@ -2510,7 +2510,7 @@ namespace Silk.NET.DirectWrite
             var @this = (IDWriteFactory5*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
             var filePathPtr = (byte*) SilkMarshal.StringToPtr(filePath, NativeStringEncoding.UTF8);
-            ret = ((delegate* unmanaged[Stdcall]<IDWriteFactory5*, byte*, Silk.NET.Core.Win32Extras.Filetime*, uint, FontSimulations, IDWriteFontFaceReference**, int>)@this->LpVtbl[28])(@this, filePathPtr, lastWriteTime, faceIndex, fontSimulations, fontFaceReference);
+            ret = ((delegate* unmanaged[Stdcall]<IDWriteFactory5*, byte*, Silk.NET.Core.Win32Extras.Filetime*, uint, FontSimulations, IDWriteFontFaceReference**, int>)@this->LpVtbl[34])(@this, filePathPtr, lastWriteTime, faceIndex, fontSimulations, fontFaceReference);
             SilkMarshal.Free((nint)filePathPtr);
             return ret;
         }
@@ -2523,7 +2523,7 @@ namespace Silk.NET.DirectWrite
             var filePathPtr = (byte*) SilkMarshal.StringToPtr(filePath, NativeStringEncoding.UTF8);
             fixed (IDWriteFontFaceReference** fontFaceReferencePtr = &fontFaceReference)
             {
-                ret = ((delegate* unmanaged[Stdcall]<IDWriteFactory5*, byte*, Silk.NET.Core.Win32Extras.Filetime*, uint, FontSimulations, IDWriteFontFaceReference**, int>)@this->LpVtbl[28])(@this, filePathPtr, lastWriteTime, faceIndex, fontSimulations, fontFaceReferencePtr);
+                ret = ((delegate* unmanaged[Stdcall]<IDWriteFactory5*, byte*, Silk.NET.Core.Win32Extras.Filetime*, uint, FontSimulations, IDWriteFontFaceReference**, int>)@this->LpVtbl[34])(@this, filePathPtr, lastWriteTime, faceIndex, fontSimulations, fontFaceReferencePtr);
             }
             SilkMarshal.Free((nint)filePathPtr);
             return ret;
@@ -2537,7 +2537,7 @@ namespace Silk.NET.DirectWrite
             var filePathPtr = (byte*) SilkMarshal.StringToPtr(filePath, NativeStringEncoding.UTF8);
             fixed (Silk.NET.Core.Win32Extras.Filetime* lastWriteTimePtr = &lastWriteTime)
             {
-                ret = ((delegate* unmanaged[Stdcall]<IDWriteFactory5*, byte*, Silk.NET.Core.Win32Extras.Filetime*, uint, FontSimulations, IDWriteFontFaceReference**, int>)@this->LpVtbl[28])(@this, filePathPtr, lastWriteTimePtr, faceIndex, fontSimulations, fontFaceReference);
+                ret = ((delegate* unmanaged[Stdcall]<IDWriteFactory5*, byte*, Silk.NET.Core.Win32Extras.Filetime*, uint, FontSimulations, IDWriteFontFaceReference**, int>)@this->LpVtbl[34])(@this, filePathPtr, lastWriteTimePtr, faceIndex, fontSimulations, fontFaceReference);
             }
             SilkMarshal.Free((nint)filePathPtr);
             return ret;
@@ -2553,7 +2553,7 @@ namespace Silk.NET.DirectWrite
             {
                 fixed (IDWriteFontFaceReference** fontFaceReferencePtr = &fontFaceReference)
                 {
-                    ret = ((delegate* unmanaged[Stdcall]<IDWriteFactory5*, byte*, Silk.NET.Core.Win32Extras.Filetime*, uint, FontSimulations, IDWriteFontFaceReference**, int>)@this->LpVtbl[28])(@this, filePathPtr, lastWriteTimePtr, faceIndex, fontSimulations, fontFaceReferencePtr);
+                    ret = ((delegate* unmanaged[Stdcall]<IDWriteFactory5*, byte*, Silk.NET.Core.Win32Extras.Filetime*, uint, FontSimulations, IDWriteFontFaceReference**, int>)@this->LpVtbl[34])(@this, filePathPtr, lastWriteTimePtr, faceIndex, fontSimulations, fontFaceReferencePtr);
                 }
             }
             SilkMarshal.Free((nint)filePathPtr);
@@ -2565,7 +2565,7 @@ namespace Silk.NET.DirectWrite
         {
             var @this = (IDWriteFactory5*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<IDWriteFactory5*, IDWriteFontSet**, int>)@this->LpVtbl[29])(@this, fontSet);
+            ret = ((delegate* unmanaged[Stdcall]<IDWriteFactory5*, IDWriteFontSet**, int>)@this->LpVtbl[35])(@this, fontSet);
             return ret;
         }
 
@@ -2576,7 +2576,7 @@ namespace Silk.NET.DirectWrite
             int ret = default;
             fixed (IDWriteFontSet** fontSetPtr = &fontSet)
             {
-                ret = ((delegate* unmanaged[Stdcall]<IDWriteFactory5*, IDWriteFontSet**, int>)@this->LpVtbl[29])(@this, fontSetPtr);
+                ret = ((delegate* unmanaged[Stdcall]<IDWriteFactory5*, IDWriteFontSet**, int>)@this->LpVtbl[35])(@this, fontSetPtr);
             }
             return ret;
         }
@@ -2586,7 +2586,7 @@ namespace Silk.NET.DirectWrite
         {
             var @this = (IDWriteFactory5*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<IDWriteFactory5*, IDWriteFontSetBuilder**, int>)@this->LpVtbl[30])(@this, fontSetBuilder);
+            ret = ((delegate* unmanaged[Stdcall]<IDWriteFactory5*, IDWriteFontSetBuilder**, int>)@this->LpVtbl[36])(@this, fontSetBuilder);
             return ret;
         }
 
@@ -2597,7 +2597,7 @@ namespace Silk.NET.DirectWrite
             int ret = default;
             fixed (IDWriteFontSetBuilder** fontSetBuilderPtr = &fontSetBuilder)
             {
-                ret = ((delegate* unmanaged[Stdcall]<IDWriteFactory5*, IDWriteFontSetBuilder**, int>)@this->LpVtbl[30])(@this, fontSetBuilderPtr);
+                ret = ((delegate* unmanaged[Stdcall]<IDWriteFactory5*, IDWriteFontSetBuilder**, int>)@this->LpVtbl[36])(@this, fontSetBuilderPtr);
             }
             return ret;
         }
@@ -2607,7 +2607,7 @@ namespace Silk.NET.DirectWrite
         {
             var @this = (IDWriteFactory5*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<IDWriteFactory5*, IDWriteFontSet*, IDWriteFontCollection1**, int>)@this->LpVtbl[31])(@this, fontSet, fontCollection);
+            ret = ((delegate* unmanaged[Stdcall]<IDWriteFactory5*, IDWriteFontSet*, IDWriteFontCollection1**, int>)@this->LpVtbl[37])(@this, fontSet, fontCollection);
             return ret;
         }
 
@@ -2618,7 +2618,7 @@ namespace Silk.NET.DirectWrite
             int ret = default;
             fixed (IDWriteFontCollection1** fontCollectionPtr = &fontCollection)
             {
-                ret = ((delegate* unmanaged[Stdcall]<IDWriteFactory5*, IDWriteFontSet*, IDWriteFontCollection1**, int>)@this->LpVtbl[31])(@this, fontSet, fontCollectionPtr);
+                ret = ((delegate* unmanaged[Stdcall]<IDWriteFactory5*, IDWriteFontSet*, IDWriteFontCollection1**, int>)@this->LpVtbl[37])(@this, fontSet, fontCollectionPtr);
             }
             return ret;
         }
@@ -2630,7 +2630,7 @@ namespace Silk.NET.DirectWrite
             int ret = default;
             fixed (IDWriteFontSet* fontSetPtr = &fontSet)
             {
-                ret = ((delegate* unmanaged[Stdcall]<IDWriteFactory5*, IDWriteFontSet*, IDWriteFontCollection1**, int>)@this->LpVtbl[31])(@this, fontSetPtr, fontCollection);
+                ret = ((delegate* unmanaged[Stdcall]<IDWriteFactory5*, IDWriteFontSet*, IDWriteFontCollection1**, int>)@this->LpVtbl[37])(@this, fontSetPtr, fontCollection);
             }
             return ret;
         }
@@ -2644,7 +2644,7 @@ namespace Silk.NET.DirectWrite
             {
                 fixed (IDWriteFontCollection1** fontCollectionPtr = &fontCollection)
                 {
-                    ret = ((delegate* unmanaged[Stdcall]<IDWriteFactory5*, IDWriteFontSet*, IDWriteFontCollection1**, int>)@this->LpVtbl[31])(@this, fontSetPtr, fontCollectionPtr);
+                    ret = ((delegate* unmanaged[Stdcall]<IDWriteFactory5*, IDWriteFontSet*, IDWriteFontCollection1**, int>)@this->LpVtbl[37])(@this, fontSetPtr, fontCollectionPtr);
                 }
             }
             return ret;
@@ -2655,7 +2655,7 @@ namespace Silk.NET.DirectWrite
         {
             var @this = (IDWriteFactory5*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<IDWriteFactory5*, IDWriteFontDownloadQueue**, int>)@this->LpVtbl[32])(@this, fontDownloadQueue);
+            ret = ((delegate* unmanaged[Stdcall]<IDWriteFactory5*, IDWriteFontDownloadQueue**, int>)@this->LpVtbl[39])(@this, fontDownloadQueue);
             return ret;
         }
 
@@ -2666,7 +2666,7 @@ namespace Silk.NET.DirectWrite
             int ret = default;
             fixed (IDWriteFontDownloadQueue** fontDownloadQueuePtr = &fontDownloadQueue)
             {
-                ret = ((delegate* unmanaged[Stdcall]<IDWriteFactory5*, IDWriteFontDownloadQueue**, int>)@this->LpVtbl[32])(@this, fontDownloadQueuePtr);
+                ret = ((delegate* unmanaged[Stdcall]<IDWriteFactory5*, IDWriteFontDownloadQueue**, int>)@this->LpVtbl[39])(@this, fontDownloadQueuePtr);
             }
             return ret;
         }
@@ -2676,7 +2676,7 @@ namespace Silk.NET.DirectWrite
         {
             var @this = (IDWriteFactory5*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<IDWriteFactory5*, GlyphRun*, MeasuringMode, Silk.NET.Maths.Vector2D<float>, Matrix*, Silk.NET.Maths.Vector2D<float>*, int>)@this->LpVtbl[33])(@this, glyphRun, measuringMode, baselineOrigin, worldAndDpiTransform, glyphOrigins);
+            ret = ((delegate* unmanaged[Stdcall]<IDWriteFactory5*, GlyphRun*, MeasuringMode, Silk.NET.Maths.Vector2D<float>, Matrix*, Silk.NET.Maths.Vector2D<float>*, int>)@this->LpVtbl[42])(@this, glyphRun, measuringMode, baselineOrigin, worldAndDpiTransform, glyphOrigins);
             return ret;
         }
 
@@ -2687,7 +2687,7 @@ namespace Silk.NET.DirectWrite
             int ret = default;
             fixed (Silk.NET.Maths.Vector2D<float>* glyphOriginsPtr = &glyphOrigins)
             {
-                ret = ((delegate* unmanaged[Stdcall]<IDWriteFactory5*, GlyphRun*, MeasuringMode, Silk.NET.Maths.Vector2D<float>, Matrix*, Silk.NET.Maths.Vector2D<float>*, int>)@this->LpVtbl[33])(@this, glyphRun, measuringMode, baselineOrigin, worldAndDpiTransform, glyphOriginsPtr);
+                ret = ((delegate* unmanaged[Stdcall]<IDWriteFactory5*, GlyphRun*, MeasuringMode, Silk.NET.Maths.Vector2D<float>, Matrix*, Silk.NET.Maths.Vector2D<float>*, int>)@this->LpVtbl[42])(@this, glyphRun, measuringMode, baselineOrigin, worldAndDpiTransform, glyphOriginsPtr);
             }
             return ret;
         }
@@ -2699,7 +2699,7 @@ namespace Silk.NET.DirectWrite
             int ret = default;
             fixed (Matrix* worldAndDpiTransformPtr = &worldAndDpiTransform)
             {
-                ret = ((delegate* unmanaged[Stdcall]<IDWriteFactory5*, GlyphRun*, MeasuringMode, Silk.NET.Maths.Vector2D<float>, Matrix*, Silk.NET.Maths.Vector2D<float>*, int>)@this->LpVtbl[33])(@this, glyphRun, measuringMode, baselineOrigin, worldAndDpiTransformPtr, glyphOrigins);
+                ret = ((delegate* unmanaged[Stdcall]<IDWriteFactory5*, GlyphRun*, MeasuringMode, Silk.NET.Maths.Vector2D<float>, Matrix*, Silk.NET.Maths.Vector2D<float>*, int>)@this->LpVtbl[42])(@this, glyphRun, measuringMode, baselineOrigin, worldAndDpiTransformPtr, glyphOrigins);
             }
             return ret;
         }
@@ -2713,7 +2713,7 @@ namespace Silk.NET.DirectWrite
             {
                 fixed (Silk.NET.Maths.Vector2D<float>* glyphOriginsPtr = &glyphOrigins)
                 {
-                    ret = ((delegate* unmanaged[Stdcall]<IDWriteFactory5*, GlyphRun*, MeasuringMode, Silk.NET.Maths.Vector2D<float>, Matrix*, Silk.NET.Maths.Vector2D<float>*, int>)@this->LpVtbl[33])(@this, glyphRun, measuringMode, baselineOrigin, worldAndDpiTransformPtr, glyphOriginsPtr);
+                    ret = ((delegate* unmanaged[Stdcall]<IDWriteFactory5*, GlyphRun*, MeasuringMode, Silk.NET.Maths.Vector2D<float>, Matrix*, Silk.NET.Maths.Vector2D<float>*, int>)@this->LpVtbl[42])(@this, glyphRun, measuringMode, baselineOrigin, worldAndDpiTransformPtr, glyphOriginsPtr);
                 }
             }
             return ret;
@@ -2726,7 +2726,7 @@ namespace Silk.NET.DirectWrite
             int ret = default;
             fixed (GlyphRun* glyphRunPtr = &glyphRun)
             {
-                ret = ((delegate* unmanaged[Stdcall]<IDWriteFactory5*, GlyphRun*, MeasuringMode, Silk.NET.Maths.Vector2D<float>, Matrix*, Silk.NET.Maths.Vector2D<float>*, int>)@this->LpVtbl[33])(@this, glyphRunPtr, measuringMode, baselineOrigin, worldAndDpiTransform, glyphOrigins);
+                ret = ((delegate* unmanaged[Stdcall]<IDWriteFactory5*, GlyphRun*, MeasuringMode, Silk.NET.Maths.Vector2D<float>, Matrix*, Silk.NET.Maths.Vector2D<float>*, int>)@this->LpVtbl[42])(@this, glyphRunPtr, measuringMode, baselineOrigin, worldAndDpiTransform, glyphOrigins);
             }
             return ret;
         }
@@ -2740,7 +2740,7 @@ namespace Silk.NET.DirectWrite
             {
                 fixed (Silk.NET.Maths.Vector2D<float>* glyphOriginsPtr = &glyphOrigins)
                 {
-                    ret = ((delegate* unmanaged[Stdcall]<IDWriteFactory5*, GlyphRun*, MeasuringMode, Silk.NET.Maths.Vector2D<float>, Matrix*, Silk.NET.Maths.Vector2D<float>*, int>)@this->LpVtbl[33])(@this, glyphRunPtr, measuringMode, baselineOrigin, worldAndDpiTransform, glyphOriginsPtr);
+                    ret = ((delegate* unmanaged[Stdcall]<IDWriteFactory5*, GlyphRun*, MeasuringMode, Silk.NET.Maths.Vector2D<float>, Matrix*, Silk.NET.Maths.Vector2D<float>*, int>)@this->LpVtbl[42])(@this, glyphRunPtr, measuringMode, baselineOrigin, worldAndDpiTransform, glyphOriginsPtr);
                 }
             }
             return ret;
@@ -2755,7 +2755,7 @@ namespace Silk.NET.DirectWrite
             {
                 fixed (Matrix* worldAndDpiTransformPtr = &worldAndDpiTransform)
                 {
-                    ret = ((delegate* unmanaged[Stdcall]<IDWriteFactory5*, GlyphRun*, MeasuringMode, Silk.NET.Maths.Vector2D<float>, Matrix*, Silk.NET.Maths.Vector2D<float>*, int>)@this->LpVtbl[33])(@this, glyphRunPtr, measuringMode, baselineOrigin, worldAndDpiTransformPtr, glyphOrigins);
+                    ret = ((delegate* unmanaged[Stdcall]<IDWriteFactory5*, GlyphRun*, MeasuringMode, Silk.NET.Maths.Vector2D<float>, Matrix*, Silk.NET.Maths.Vector2D<float>*, int>)@this->LpVtbl[42])(@this, glyphRunPtr, measuringMode, baselineOrigin, worldAndDpiTransformPtr, glyphOrigins);
                 }
             }
             return ret;
@@ -2772,7 +2772,7 @@ namespace Silk.NET.DirectWrite
                 {
                     fixed (Silk.NET.Maths.Vector2D<float>* glyphOriginsPtr = &glyphOrigins)
                     {
-                        ret = ((delegate* unmanaged[Stdcall]<IDWriteFactory5*, GlyphRun*, MeasuringMode, Silk.NET.Maths.Vector2D<float>, Matrix*, Silk.NET.Maths.Vector2D<float>*, int>)@this->LpVtbl[33])(@this, glyphRunPtr, measuringMode, baselineOrigin, worldAndDpiTransformPtr, glyphOriginsPtr);
+                        ret = ((delegate* unmanaged[Stdcall]<IDWriteFactory5*, GlyphRun*, MeasuringMode, Silk.NET.Maths.Vector2D<float>, Matrix*, Silk.NET.Maths.Vector2D<float>*, int>)@this->LpVtbl[42])(@this, glyphRunPtr, measuringMode, baselineOrigin, worldAndDpiTransformPtr, glyphOriginsPtr);
                     }
                 }
             }
@@ -2784,7 +2784,7 @@ namespace Silk.NET.DirectWrite
         {
             var @this = (IDWriteFactory5*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<IDWriteFactory5*, IDWriteInMemoryFontFileLoader**, int>)@this->LpVtbl[34])(@this, newLoader);
+            ret = ((delegate* unmanaged[Stdcall]<IDWriteFactory5*, IDWriteInMemoryFontFileLoader**, int>)@this->LpVtbl[44])(@this, newLoader);
             return ret;
         }
 
@@ -2795,7 +2795,7 @@ namespace Silk.NET.DirectWrite
             int ret = default;
             fixed (IDWriteInMemoryFontFileLoader** newLoaderPtr = &newLoader)
             {
-                ret = ((delegate* unmanaged[Stdcall]<IDWriteFactory5*, IDWriteInMemoryFontFileLoader**, int>)@this->LpVtbl[34])(@this, newLoaderPtr);
+                ret = ((delegate* unmanaged[Stdcall]<IDWriteFactory5*, IDWriteInMemoryFontFileLoader**, int>)@this->LpVtbl[44])(@this, newLoaderPtr);
             }
             return ret;
         }
@@ -2805,7 +2805,7 @@ namespace Silk.NET.DirectWrite
         {
             var @this = (IDWriteFactory5*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<IDWriteFactory5*, char*, char*, IDWriteRemoteFontFileLoader**, int>)@this->LpVtbl[35])(@this, referrerUrl, extraHeaders, newLoader);
+            ret = ((delegate* unmanaged[Stdcall]<IDWriteFactory5*, char*, char*, IDWriteRemoteFontFileLoader**, int>)@this->LpVtbl[45])(@this, referrerUrl, extraHeaders, newLoader);
             return ret;
         }
 
@@ -2816,7 +2816,7 @@ namespace Silk.NET.DirectWrite
             int ret = default;
             fixed (IDWriteRemoteFontFileLoader** newLoaderPtr = &newLoader)
             {
-                ret = ((delegate* unmanaged[Stdcall]<IDWriteFactory5*, char*, char*, IDWriteRemoteFontFileLoader**, int>)@this->LpVtbl[35])(@this, referrerUrl, extraHeaders, newLoaderPtr);
+                ret = ((delegate* unmanaged[Stdcall]<IDWriteFactory5*, char*, char*, IDWriteRemoteFontFileLoader**, int>)@this->LpVtbl[45])(@this, referrerUrl, extraHeaders, newLoaderPtr);
             }
             return ret;
         }
@@ -2828,7 +2828,7 @@ namespace Silk.NET.DirectWrite
             int ret = default;
             fixed (char* extraHeadersPtr = &extraHeaders)
             {
-                ret = ((delegate* unmanaged[Stdcall]<IDWriteFactory5*, char*, char*, IDWriteRemoteFontFileLoader**, int>)@this->LpVtbl[35])(@this, referrerUrl, extraHeadersPtr, newLoader);
+                ret = ((delegate* unmanaged[Stdcall]<IDWriteFactory5*, char*, char*, IDWriteRemoteFontFileLoader**, int>)@this->LpVtbl[45])(@this, referrerUrl, extraHeadersPtr, newLoader);
             }
             return ret;
         }
@@ -2842,7 +2842,7 @@ namespace Silk.NET.DirectWrite
             {
                 fixed (IDWriteRemoteFontFileLoader** newLoaderPtr = &newLoader)
                 {
-                    ret = ((delegate* unmanaged[Stdcall]<IDWriteFactory5*, char*, char*, IDWriteRemoteFontFileLoader**, int>)@this->LpVtbl[35])(@this, referrerUrl, extraHeadersPtr, newLoaderPtr);
+                    ret = ((delegate* unmanaged[Stdcall]<IDWriteFactory5*, char*, char*, IDWriteRemoteFontFileLoader**, int>)@this->LpVtbl[45])(@this, referrerUrl, extraHeadersPtr, newLoaderPtr);
                 }
             }
             return ret;
@@ -2854,7 +2854,7 @@ namespace Silk.NET.DirectWrite
             var @this = (IDWriteFactory5*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
             var extraHeadersPtr = (byte*) SilkMarshal.StringToPtr(extraHeaders, NativeStringEncoding.UTF8);
-            ret = ((delegate* unmanaged[Stdcall]<IDWriteFactory5*, char*, byte*, IDWriteRemoteFontFileLoader**, int>)@this->LpVtbl[35])(@this, referrerUrl, extraHeadersPtr, newLoader);
+            ret = ((delegate* unmanaged[Stdcall]<IDWriteFactory5*, char*, byte*, IDWriteRemoteFontFileLoader**, int>)@this->LpVtbl[45])(@this, referrerUrl, extraHeadersPtr, newLoader);
             SilkMarshal.Free((nint)extraHeadersPtr);
             return ret;
         }
@@ -2867,7 +2867,7 @@ namespace Silk.NET.DirectWrite
             var extraHeadersPtr = (byte*) SilkMarshal.StringToPtr(extraHeaders, NativeStringEncoding.UTF8);
             fixed (IDWriteRemoteFontFileLoader** newLoaderPtr = &newLoader)
             {
-                ret = ((delegate* unmanaged[Stdcall]<IDWriteFactory5*, char*, byte*, IDWriteRemoteFontFileLoader**, int>)@this->LpVtbl[35])(@this, referrerUrl, extraHeadersPtr, newLoaderPtr);
+                ret = ((delegate* unmanaged[Stdcall]<IDWriteFactory5*, char*, byte*, IDWriteRemoteFontFileLoader**, int>)@this->LpVtbl[45])(@this, referrerUrl, extraHeadersPtr, newLoaderPtr);
             }
             SilkMarshal.Free((nint)extraHeadersPtr);
             return ret;
@@ -2880,7 +2880,7 @@ namespace Silk.NET.DirectWrite
             int ret = default;
             fixed (char* referrerUrlPtr = &referrerUrl)
             {
-                ret = ((delegate* unmanaged[Stdcall]<IDWriteFactory5*, char*, char*, IDWriteRemoteFontFileLoader**, int>)@this->LpVtbl[35])(@this, referrerUrlPtr, extraHeaders, newLoader);
+                ret = ((delegate* unmanaged[Stdcall]<IDWriteFactory5*, char*, char*, IDWriteRemoteFontFileLoader**, int>)@this->LpVtbl[45])(@this, referrerUrlPtr, extraHeaders, newLoader);
             }
             return ret;
         }
@@ -2894,7 +2894,7 @@ namespace Silk.NET.DirectWrite
             {
                 fixed (IDWriteRemoteFontFileLoader** newLoaderPtr = &newLoader)
                 {
-                    ret = ((delegate* unmanaged[Stdcall]<IDWriteFactory5*, char*, char*, IDWriteRemoteFontFileLoader**, int>)@this->LpVtbl[35])(@this, referrerUrlPtr, extraHeaders, newLoaderPtr);
+                    ret = ((delegate* unmanaged[Stdcall]<IDWriteFactory5*, char*, char*, IDWriteRemoteFontFileLoader**, int>)@this->LpVtbl[45])(@this, referrerUrlPtr, extraHeaders, newLoaderPtr);
                 }
             }
             return ret;
@@ -2909,7 +2909,7 @@ namespace Silk.NET.DirectWrite
             {
                 fixed (char* extraHeadersPtr = &extraHeaders)
                 {
-                    ret = ((delegate* unmanaged[Stdcall]<IDWriteFactory5*, char*, char*, IDWriteRemoteFontFileLoader**, int>)@this->LpVtbl[35])(@this, referrerUrlPtr, extraHeadersPtr, newLoader);
+                    ret = ((delegate* unmanaged[Stdcall]<IDWriteFactory5*, char*, char*, IDWriteRemoteFontFileLoader**, int>)@this->LpVtbl[45])(@this, referrerUrlPtr, extraHeadersPtr, newLoader);
                 }
             }
             return ret;
@@ -2926,7 +2926,7 @@ namespace Silk.NET.DirectWrite
                 {
                     fixed (IDWriteRemoteFontFileLoader** newLoaderPtr = &newLoader)
                     {
-                        ret = ((delegate* unmanaged[Stdcall]<IDWriteFactory5*, char*, char*, IDWriteRemoteFontFileLoader**, int>)@this->LpVtbl[35])(@this, referrerUrlPtr, extraHeadersPtr, newLoaderPtr);
+                        ret = ((delegate* unmanaged[Stdcall]<IDWriteFactory5*, char*, char*, IDWriteRemoteFontFileLoader**, int>)@this->LpVtbl[45])(@this, referrerUrlPtr, extraHeadersPtr, newLoaderPtr);
                     }
                 }
             }
@@ -2941,7 +2941,7 @@ namespace Silk.NET.DirectWrite
             fixed (char* referrerUrlPtr = &referrerUrl)
             {
             var extraHeadersPtr = (byte*) SilkMarshal.StringToPtr(extraHeaders, NativeStringEncoding.UTF8);
-                ret = ((delegate* unmanaged[Stdcall]<IDWriteFactory5*, char*, byte*, IDWriteRemoteFontFileLoader**, int>)@this->LpVtbl[35])(@this, referrerUrlPtr, extraHeadersPtr, newLoader);
+                ret = ((delegate* unmanaged[Stdcall]<IDWriteFactory5*, char*, byte*, IDWriteRemoteFontFileLoader**, int>)@this->LpVtbl[45])(@this, referrerUrlPtr, extraHeadersPtr, newLoader);
             SilkMarshal.Free((nint)extraHeadersPtr);
             }
             return ret;
@@ -2957,7 +2957,7 @@ namespace Silk.NET.DirectWrite
             var extraHeadersPtr = (byte*) SilkMarshal.StringToPtr(extraHeaders, NativeStringEncoding.UTF8);
                 fixed (IDWriteRemoteFontFileLoader** newLoaderPtr = &newLoader)
                 {
-                    ret = ((delegate* unmanaged[Stdcall]<IDWriteFactory5*, char*, byte*, IDWriteRemoteFontFileLoader**, int>)@this->LpVtbl[35])(@this, referrerUrlPtr, extraHeadersPtr, newLoaderPtr);
+                    ret = ((delegate* unmanaged[Stdcall]<IDWriteFactory5*, char*, byte*, IDWriteRemoteFontFileLoader**, int>)@this->LpVtbl[45])(@this, referrerUrlPtr, extraHeadersPtr, newLoaderPtr);
                 }
             SilkMarshal.Free((nint)extraHeadersPtr);
             }
@@ -2970,7 +2970,7 @@ namespace Silk.NET.DirectWrite
             var @this = (IDWriteFactory5*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
             var referrerUrlPtr = (byte*) SilkMarshal.StringToPtr(referrerUrl, NativeStringEncoding.UTF8);
-            ret = ((delegate* unmanaged[Stdcall]<IDWriteFactory5*, byte*, char*, IDWriteRemoteFontFileLoader**, int>)@this->LpVtbl[35])(@this, referrerUrlPtr, extraHeaders, newLoader);
+            ret = ((delegate* unmanaged[Stdcall]<IDWriteFactory5*, byte*, char*, IDWriteRemoteFontFileLoader**, int>)@this->LpVtbl[45])(@this, referrerUrlPtr, extraHeaders, newLoader);
             SilkMarshal.Free((nint)referrerUrlPtr);
             return ret;
         }
@@ -2983,7 +2983,7 @@ namespace Silk.NET.DirectWrite
             var referrerUrlPtr = (byte*) SilkMarshal.StringToPtr(referrerUrl, NativeStringEncoding.UTF8);
             fixed (IDWriteRemoteFontFileLoader** newLoaderPtr = &newLoader)
             {
-                ret = ((delegate* unmanaged[Stdcall]<IDWriteFactory5*, byte*, char*, IDWriteRemoteFontFileLoader**, int>)@this->LpVtbl[35])(@this, referrerUrlPtr, extraHeaders, newLoaderPtr);
+                ret = ((delegate* unmanaged[Stdcall]<IDWriteFactory5*, byte*, char*, IDWriteRemoteFontFileLoader**, int>)@this->LpVtbl[45])(@this, referrerUrlPtr, extraHeaders, newLoaderPtr);
             }
             SilkMarshal.Free((nint)referrerUrlPtr);
             return ret;
@@ -2997,7 +2997,7 @@ namespace Silk.NET.DirectWrite
             var referrerUrlPtr = (byte*) SilkMarshal.StringToPtr(referrerUrl, NativeStringEncoding.UTF8);
             fixed (char* extraHeadersPtr = &extraHeaders)
             {
-                ret = ((delegate* unmanaged[Stdcall]<IDWriteFactory5*, byte*, char*, IDWriteRemoteFontFileLoader**, int>)@this->LpVtbl[35])(@this, referrerUrlPtr, extraHeadersPtr, newLoader);
+                ret = ((delegate* unmanaged[Stdcall]<IDWriteFactory5*, byte*, char*, IDWriteRemoteFontFileLoader**, int>)@this->LpVtbl[45])(@this, referrerUrlPtr, extraHeadersPtr, newLoader);
             }
             SilkMarshal.Free((nint)referrerUrlPtr);
             return ret;
@@ -3013,7 +3013,7 @@ namespace Silk.NET.DirectWrite
             {
                 fixed (IDWriteRemoteFontFileLoader** newLoaderPtr = &newLoader)
                 {
-                    ret = ((delegate* unmanaged[Stdcall]<IDWriteFactory5*, byte*, char*, IDWriteRemoteFontFileLoader**, int>)@this->LpVtbl[35])(@this, referrerUrlPtr, extraHeadersPtr, newLoaderPtr);
+                    ret = ((delegate* unmanaged[Stdcall]<IDWriteFactory5*, byte*, char*, IDWriteRemoteFontFileLoader**, int>)@this->LpVtbl[45])(@this, referrerUrlPtr, extraHeadersPtr, newLoaderPtr);
                 }
             }
             SilkMarshal.Free((nint)referrerUrlPtr);
@@ -3027,7 +3027,7 @@ namespace Silk.NET.DirectWrite
             int ret = default;
             var referrerUrlPtr = (byte*) SilkMarshal.StringToPtr(referrerUrl, NativeStringEncoding.UTF8);
             var extraHeadersPtr = (byte*) SilkMarshal.StringToPtr(extraHeaders, NativeStringEncoding.UTF8);
-            ret = ((delegate* unmanaged[Stdcall]<IDWriteFactory5*, byte*, byte*, IDWriteRemoteFontFileLoader**, int>)@this->LpVtbl[35])(@this, referrerUrlPtr, extraHeadersPtr, newLoader);
+            ret = ((delegate* unmanaged[Stdcall]<IDWriteFactory5*, byte*, byte*, IDWriteRemoteFontFileLoader**, int>)@this->LpVtbl[45])(@this, referrerUrlPtr, extraHeadersPtr, newLoader);
             SilkMarshal.Free((nint)extraHeadersPtr);
             SilkMarshal.Free((nint)referrerUrlPtr);
             return ret;
@@ -3042,7 +3042,7 @@ namespace Silk.NET.DirectWrite
             var extraHeadersPtr = (byte*) SilkMarshal.StringToPtr(extraHeaders, NativeStringEncoding.UTF8);
             fixed (IDWriteRemoteFontFileLoader** newLoaderPtr = &newLoader)
             {
-                ret = ((delegate* unmanaged[Stdcall]<IDWriteFactory5*, byte*, byte*, IDWriteRemoteFontFileLoader**, int>)@this->LpVtbl[35])(@this, referrerUrlPtr, extraHeadersPtr, newLoaderPtr);
+                ret = ((delegate* unmanaged[Stdcall]<IDWriteFactory5*, byte*, byte*, IDWriteRemoteFontFileLoader**, int>)@this->LpVtbl[45])(@this, referrerUrlPtr, extraHeadersPtr, newLoaderPtr);
             }
             SilkMarshal.Free((nint)extraHeadersPtr);
             SilkMarshal.Free((nint)referrerUrlPtr);
@@ -3054,7 +3054,7 @@ namespace Silk.NET.DirectWrite
         {
             var @this = (IDWriteFactory5*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             ContainerType ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<IDWriteFactory5*, void*, uint, ContainerType>)@this->LpVtbl[36])(@this, fileData, fileDataSize);
+            ret = ((delegate* unmanaged[Stdcall]<IDWriteFactory5*, void*, uint, ContainerType>)@this->LpVtbl[46])(@this, fileData, fileDataSize);
             return ret;
         }
 
@@ -3065,7 +3065,7 @@ namespace Silk.NET.DirectWrite
             ContainerType ret = default;
             fixed (void* fileDataPtr = &fileData)
             {
-                ret = ((delegate* unmanaged[Stdcall]<IDWriteFactory5*, void*, uint, ContainerType>)@this->LpVtbl[36])(@this, fileDataPtr, fileDataSize);
+                ret = ((delegate* unmanaged[Stdcall]<IDWriteFactory5*, void*, uint, ContainerType>)@this->LpVtbl[46])(@this, fileDataPtr, fileDataSize);
             }
             return ret;
         }
@@ -3075,7 +3075,7 @@ namespace Silk.NET.DirectWrite
         {
             var @this = (IDWriteFactory5*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<IDWriteFactory5*, ContainerType, void*, uint, IDWriteFontFileStream**, int>)@this->LpVtbl[37])(@this, containerType, fileData, fileDataSize, unpackedFontStream);
+            ret = ((delegate* unmanaged[Stdcall]<IDWriteFactory5*, ContainerType, void*, uint, IDWriteFontFileStream**, int>)@this->LpVtbl[47])(@this, containerType, fileData, fileDataSize, unpackedFontStream);
             return ret;
         }
 
@@ -3086,7 +3086,7 @@ namespace Silk.NET.DirectWrite
             int ret = default;
             fixed (IDWriteFontFileStream** unpackedFontStreamPtr = &unpackedFontStream)
             {
-                ret = ((delegate* unmanaged[Stdcall]<IDWriteFactory5*, ContainerType, void*, uint, IDWriteFontFileStream**, int>)@this->LpVtbl[37])(@this, containerType, fileData, fileDataSize, unpackedFontStreamPtr);
+                ret = ((delegate* unmanaged[Stdcall]<IDWriteFactory5*, ContainerType, void*, uint, IDWriteFontFileStream**, int>)@this->LpVtbl[47])(@this, containerType, fileData, fileDataSize, unpackedFontStreamPtr);
             }
             return ret;
         }
@@ -3098,7 +3098,7 @@ namespace Silk.NET.DirectWrite
             int ret = default;
             fixed (void* fileDataPtr = &fileData)
             {
-                ret = ((delegate* unmanaged[Stdcall]<IDWriteFactory5*, ContainerType, void*, uint, IDWriteFontFileStream**, int>)@this->LpVtbl[37])(@this, containerType, fileDataPtr, fileDataSize, unpackedFontStream);
+                ret = ((delegate* unmanaged[Stdcall]<IDWriteFactory5*, ContainerType, void*, uint, IDWriteFontFileStream**, int>)@this->LpVtbl[47])(@this, containerType, fileDataPtr, fileDataSize, unpackedFontStream);
             }
             return ret;
         }
@@ -3112,7 +3112,7 @@ namespace Silk.NET.DirectWrite
             {
                 fixed (IDWriteFontFileStream** unpackedFontStreamPtr = &unpackedFontStream)
                 {
-                    ret = ((delegate* unmanaged[Stdcall]<IDWriteFactory5*, ContainerType, void*, uint, IDWriteFontFileStream**, int>)@this->LpVtbl[37])(@this, containerType, fileDataPtr, fileDataSize, unpackedFontStreamPtr);
+                    ret = ((delegate* unmanaged[Stdcall]<IDWriteFactory5*, ContainerType, void*, uint, IDWriteFontFileStream**, int>)@this->LpVtbl[47])(@this, containerType, fileDataPtr, fileDataSize, unpackedFontStreamPtr);
                 }
             }
             return ret;

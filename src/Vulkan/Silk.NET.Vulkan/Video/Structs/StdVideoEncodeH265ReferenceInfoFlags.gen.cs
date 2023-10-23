@@ -22,7 +22,8 @@ namespace Silk.NET.Vulkan.Video
         public StdVideoEncodeH265ReferenceInfoFlags
         (
             uint? usedForLongTermReference = null,
-            uint? unusedForReference = null
+            uint? unusedForReference = null,
+            uint? reserved = null
         ) : this()
         {
             if (usedForLongTermReference is not null)
@@ -33,6 +34,11 @@ namespace Silk.NET.Vulkan.Video
             if (unusedForReference is not null)
             {
                 UnusedForReference = unusedForReference.Value;
+            }
+
+            if (reserved is not null)
+            {
+                Reserved = reserved.Value;
             }
         }
 
@@ -53,6 +59,14 @@ namespace Silk.NET.Vulkan.Video
             get => (uint)((_bitfield1 >> 1) & 0x1u);
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             set => _bitfield1 = (uint)((uint)(_bitfield1 & ~(0x1u << 1)) | (uint)(((uint)(value) & 0x1u) << 1));
+        }
+
+        public uint Reserved
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get => (uint)((_bitfield1 >> 2) & 0x3FFFFFFFu);
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            set => _bitfield1 = (uint)((uint)(_bitfield1 & ~(0x3FFFFFFFu << 2)) | (uint)(((uint)(value) & 0x3FFFFFFFu) << 2));
         }
     }
 }

@@ -149,7 +149,7 @@ public unsafe static class DCompositionAffineTransform2DEffectVtblExtensions
     {
         var @this = thisVtbl.Handle;
         int ret = default;
-        ret = ((delegate* unmanaged[Stdcall]<IDCompositionAffineTransform2DEffect*, int, int, float, int>)@this->LpVtbl[7])(@this, row, column, value);
+        ret = ((delegate* unmanaged[Stdcall]<IDCompositionAffineTransform2DEffect*, int, int, float, int>)@this->LpVtbl[8])(@this, row, column, value);
         return ret;
     }
 
@@ -158,7 +158,7 @@ public unsafe static class DCompositionAffineTransform2DEffectVtblExtensions
     {
         var @this = thisVtbl.Handle;
         int ret = default;
-        ret = ((delegate* unmanaged[Stdcall]<IDCompositionAffineTransform2DEffect*, float, int>)@this->LpVtbl[8])(@this, sharpness);
+        ret = ((delegate* unmanaged[Stdcall]<IDCompositionAffineTransform2DEffect*, float, int>)@this->LpVtbl[10])(@this, sharpness);
         return ret;
     }
 

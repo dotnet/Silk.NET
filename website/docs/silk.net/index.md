@@ -4,7 +4,8 @@
         "Name": "Miscellaneous",
         "Url": "index.html",
         "Children": [
-            { "Url": "::faq.md" }
+            { "Url": "::faq.md" },
+            { "Url": "::experimental-feed.md" }
         ],
         "Metadata": {
             "theme.silk.nav.big_dropdown.icon.class": "icon icon-shape bg-gradient-danger rounded-circle text-white",

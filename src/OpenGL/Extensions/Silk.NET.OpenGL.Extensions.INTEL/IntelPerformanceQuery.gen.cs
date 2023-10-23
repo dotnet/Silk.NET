@@ -29,6 +29,12 @@ namespace Silk.NET.OpenGL.Extensions.INTEL
         [NativeApi(EntryPoint = "glCreatePerfQueryINTEL", Convention = CallingConvention.Winapi)]
         public partial void CreatePerfQuery([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint queryId, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] out uint queryHandle);
 
+        [NativeApi(EntryPoint = "glCreatePerfQueryINTEL", Convention = CallingConvention.Winapi)]
+        public unsafe partial void CreatePerfQuery([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint queryId, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] PerfQueryHandle* queryHandle);
+
+        [NativeApi(EntryPoint = "glCreatePerfQueryINTEL", Convention = CallingConvention.Winapi)]
+        public partial void CreatePerfQuery([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint queryId, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] out PerfQueryHandle queryHandle);
+
         [NativeApi(EntryPoint = "glDeletePerfQueryINTEL", Convention = CallingConvention.Winapi)]
         public partial void DeletePerfQuery([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint queryHandle);
 
@@ -41,11 +47,23 @@ namespace Silk.NET.OpenGL.Extensions.INTEL
         [NativeApi(EntryPoint = "glGetFirstPerfQueryIdINTEL", Convention = CallingConvention.Winapi)]
         public partial void GetFirstPerfQueryId([Flow(Silk.NET.Core.Native.FlowDirection.Out)] out uint queryId);
 
+        [NativeApi(EntryPoint = "glGetFirstPerfQueryIdINTEL", Convention = CallingConvention.Winapi)]
+        public unsafe partial void GetFirstPerfQueryId([Flow(Silk.NET.Core.Native.FlowDirection.Out)] PerfQueryId* queryId);
+
+        [NativeApi(EntryPoint = "glGetFirstPerfQueryIdINTEL", Convention = CallingConvention.Winapi)]
+        public partial void GetFirstPerfQueryId([Flow(Silk.NET.Core.Native.FlowDirection.Out)] out PerfQueryId queryId);
+
         [NativeApi(EntryPoint = "glGetNextPerfQueryIdINTEL", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetNextPerfQueryId([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint queryId, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] uint* nextQueryId);
 
         [NativeApi(EntryPoint = "glGetNextPerfQueryIdINTEL", Convention = CallingConvention.Winapi)]
         public partial void GetNextPerfQueryId([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint queryId, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] out uint nextQueryId);
+
+        [NativeApi(EntryPoint = "glGetNextPerfQueryIdINTEL", Convention = CallingConvention.Winapi)]
+        public unsafe partial void GetNextPerfQueryId([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint queryId, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] PerfQueryId* nextQueryId);
+
+        [NativeApi(EntryPoint = "glGetNextPerfQueryIdINTEL", Convention = CallingConvention.Winapi)]
+        public partial void GetNextPerfQueryId([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint queryId, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] out PerfQueryId nextQueryId);
 
         [NativeApi(EntryPoint = "glGetPerfCounterInfoINTEL", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetPerfCounterInfo([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint queryId, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint counterId, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint counterNameLength, [Count(Parameter = "counterNameLength"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] byte* counterName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint counterDescLength, [Count(Parameter = "counterDescLength"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] byte* counterDesc, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] uint* counterOffset, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] uint* counterDataSize, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] uint* counterTypeEnum, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] uint* counterDataTypeEnum, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] ulong* rawCounterMaxValue);
@@ -923,6 +941,18 @@ namespace Silk.NET.OpenGL.Extensions.INTEL
         [NativeApi(EntryPoint = "glGetPerfQueryDataINTEL", Convention = CallingConvention.Winapi)]
         public partial void GetPerfQueryData<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint queryHandle, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint dataSize, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] out T0 data, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] out uint bytesWritten) where T0 : unmanaged;
 
+        [NativeApi(EntryPoint = "glGetPerfQueryDataINTEL", Convention = CallingConvention.Winapi)]
+        public unsafe partial void GetPerfQueryData([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint queryHandle, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PerfQueryDataFlags flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint dataSize, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] void* data, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] uint* bytesWritten);
+
+        [NativeApi(EntryPoint = "glGetPerfQueryDataINTEL", Convention = CallingConvention.Winapi)]
+        public unsafe partial void GetPerfQueryData([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint queryHandle, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PerfQueryDataFlags flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint dataSize, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] void* data, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] out uint bytesWritten);
+
+        [NativeApi(EntryPoint = "glGetPerfQueryDataINTEL", Convention = CallingConvention.Winapi)]
+        public unsafe partial void GetPerfQueryData<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint queryHandle, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PerfQueryDataFlags flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint dataSize, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] out T0 data, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] uint* bytesWritten) where T0 : unmanaged;
+
+        [NativeApi(EntryPoint = "glGetPerfQueryDataINTEL", Convention = CallingConvention.Winapi)]
+        public partial void GetPerfQueryData<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint queryHandle, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PerfQueryDataFlags flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint dataSize, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] out T0 data, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] out uint bytesWritten) where T0 : unmanaged;
+
         [NativeApi(EntryPoint = "glGetPerfQueryIdByNameINTEL", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetPerfQueryIdByName([Flow(Silk.NET.Core.Native.FlowDirection.Out)] byte* queryName, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] uint* queryId);
 
@@ -940,6 +970,24 @@ namespace Silk.NET.OpenGL.Extensions.INTEL
 
         [NativeApi(EntryPoint = "glGetPerfQueryIdByNameINTEL", Convention = CallingConvention.Winapi)]
         public partial void GetPerfQueryIdByName([Flow(Silk.NET.Core.Native.FlowDirection.Out), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string queryName, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] out uint queryId);
+
+        [NativeApi(EntryPoint = "glGetPerfQueryIdByNameINTEL", Convention = CallingConvention.Winapi)]
+        public unsafe partial void GetPerfQueryIdByName([Flow(Silk.NET.Core.Native.FlowDirection.Out)] byte* queryName, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] PerfQueryId* queryId);
+
+        [NativeApi(EntryPoint = "glGetPerfQueryIdByNameINTEL", Convention = CallingConvention.Winapi)]
+        public unsafe partial void GetPerfQueryIdByName([Flow(Silk.NET.Core.Native.FlowDirection.Out)] byte* queryName, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] out PerfQueryId queryId);
+
+        [NativeApi(EntryPoint = "glGetPerfQueryIdByNameINTEL", Convention = CallingConvention.Winapi)]
+        public unsafe partial void GetPerfQueryIdByName([Flow(Silk.NET.Core.Native.FlowDirection.Out)] out byte queryName, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] PerfQueryId* queryId);
+
+        [NativeApi(EntryPoint = "glGetPerfQueryIdByNameINTEL", Convention = CallingConvention.Winapi)]
+        public partial void GetPerfQueryIdByName([Flow(Silk.NET.Core.Native.FlowDirection.Out)] out byte queryName, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] out PerfQueryId queryId);
+
+        [NativeApi(EntryPoint = "glGetPerfQueryIdByNameINTEL", Convention = CallingConvention.Winapi)]
+        public unsafe partial void GetPerfQueryIdByName([Flow(Silk.NET.Core.Native.FlowDirection.Out), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string queryName, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] PerfQueryId* queryId);
+
+        [NativeApi(EntryPoint = "glGetPerfQueryIdByNameINTEL", Convention = CallingConvention.Winapi)]
+        public partial void GetPerfQueryIdByName([Flow(Silk.NET.Core.Native.FlowDirection.Out), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string queryName, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] out PerfQueryId queryId);
 
         [NativeApi(EntryPoint = "glGetPerfQueryInfoINTEL", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetPerfQueryInfo([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint queryId, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint queryNameLength, [Count(Parameter = "queryNameLength"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] byte* queryName, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] uint* dataSize, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] uint* noCounters, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] uint* noInstances, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] uint* capsMask);
@@ -4221,6 +4269,20 @@ namespace Silk.NET.OpenGL.Extensions.INTEL
         }
 
         public unsafe uint GetPerfQueryData<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint queryHandle, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint dataSize, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] out T0 data) where T0 : unmanaged
+        {
+            // NonKhrReturnTypeOverloader
+            GetPerfQueryData(queryHandle, flags, dataSize, out data, out uint silkRet);
+            return silkRet;
+        }
+
+        public unsafe uint GetPerfQueryData([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint queryHandle, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PerfQueryDataFlags flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint dataSize, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] void* data)
+        {
+            // NonKhrReturnTypeOverloader
+            GetPerfQueryData(queryHandle, flags, dataSize, data, out uint silkRet);
+            return silkRet;
+        }
+
+        public unsafe uint GetPerfQueryData<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint queryHandle, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PerfQueryDataFlags flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint dataSize, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] out T0 data) where T0 : unmanaged
         {
             // NonKhrReturnTypeOverloader
             GetPerfQueryData(queryHandle, flags, dataSize, out data, out uint silkRet);

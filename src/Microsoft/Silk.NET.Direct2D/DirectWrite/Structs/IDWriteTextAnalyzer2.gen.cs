@@ -966,7 +966,7 @@ namespace Silk.NET.DirectWrite
         {
             var @this = (IDWriteTextAnalyzer2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<IDWriteTextAnalyzer2*, IDWriteFontFace*, ScriptAnalysis, char*, uint, uint*, FontFeatureTag*, int>)@this->LpVtbl[19])(@this, fontFace, scriptAnalysis, localeName, maxTagCount, actualTagCount, tags);
+            ret = ((delegate* unmanaged[Stdcall]<IDWriteTextAnalyzer2*, IDWriteFontFace*, ScriptAnalysis, char*, uint, uint*, FontFeatureTag*, int>)@this->LpVtbl[20])(@this, fontFace, scriptAnalysis, localeName, maxTagCount, actualTagCount, tags);
             return ret;
         }
 
@@ -977,7 +977,7 @@ namespace Silk.NET.DirectWrite
             int ret = default;
             fixed (FontFeatureTag* tagsPtr = &tags)
             {
-                ret = ((delegate* unmanaged[Stdcall]<IDWriteTextAnalyzer2*, IDWriteFontFace*, ScriptAnalysis, char*, uint, uint*, FontFeatureTag*, int>)@this->LpVtbl[19])(@this, fontFace, scriptAnalysis, localeName, maxTagCount, actualTagCount, tagsPtr);
+                ret = ((delegate* unmanaged[Stdcall]<IDWriteTextAnalyzer2*, IDWriteFontFace*, ScriptAnalysis, char*, uint, uint*, FontFeatureTag*, int>)@this->LpVtbl[20])(@this, fontFace, scriptAnalysis, localeName, maxTagCount, actualTagCount, tagsPtr);
             }
             return ret;
         }
@@ -989,7 +989,7 @@ namespace Silk.NET.DirectWrite
             int ret = default;
             fixed (uint* actualTagCountPtr = &actualTagCount)
             {
-                ret = ((delegate* unmanaged[Stdcall]<IDWriteTextAnalyzer2*, IDWriteFontFace*, ScriptAnalysis, char*, uint, uint*, FontFeatureTag*, int>)@this->LpVtbl[19])(@this, fontFace, scriptAnalysis, localeName, maxTagCount, actualTagCountPtr, tags);
+                ret = ((delegate* unmanaged[Stdcall]<IDWriteTextAnalyzer2*, IDWriteFontFace*, ScriptAnalysis, char*, uint, uint*, FontFeatureTag*, int>)@this->LpVtbl[20])(@this, fontFace, scriptAnalysis, localeName, maxTagCount, actualTagCountPtr, tags);
             }
             return ret;
         }
@@ -1003,7 +1003,7 @@ namespace Silk.NET.DirectWrite
             {
                 fixed (FontFeatureTag* tagsPtr = &tags)
                 {
-                    ret = ((delegate* unmanaged[Stdcall]<IDWriteTextAnalyzer2*, IDWriteFontFace*, ScriptAnalysis, char*, uint, uint*, FontFeatureTag*, int>)@this->LpVtbl[19])(@this, fontFace, scriptAnalysis, localeName, maxTagCount, actualTagCountPtr, tagsPtr);
+                    ret = ((delegate* unmanaged[Stdcall]<IDWriteTextAnalyzer2*, IDWriteFontFace*, ScriptAnalysis, char*, uint, uint*, FontFeatureTag*, int>)@this->LpVtbl[20])(@this, fontFace, scriptAnalysis, localeName, maxTagCount, actualTagCountPtr, tagsPtr);
                 }
             }
             return ret;
@@ -1016,7 +1016,7 @@ namespace Silk.NET.DirectWrite
             int ret = default;
             fixed (char* localeNamePtr = &localeName)
             {
-                ret = ((delegate* unmanaged[Stdcall]<IDWriteTextAnalyzer2*, IDWriteFontFace*, ScriptAnalysis, char*, uint, uint*, FontFeatureTag*, int>)@this->LpVtbl[19])(@this, fontFace, scriptAnalysis, localeNamePtr, maxTagCount, actualTagCount, tags);
+                ret = ((delegate* unmanaged[Stdcall]<IDWriteTextAnalyzer2*, IDWriteFontFace*, ScriptAnalysis, char*, uint, uint*, FontFeatureTag*, int>)@this->LpVtbl[20])(@this, fontFace, scriptAnalysis, localeNamePtr, maxTagCount, actualTagCount, tags);
             }
             return ret;
         }
@@ -1030,7 +1030,7 @@ namespace Silk.NET.DirectWrite
             {
                 fixed (FontFeatureTag* tagsPtr = &tags)
                 {
-                    ret = ((delegate* unmanaged[Stdcall]<IDWriteTextAnalyzer2*, IDWriteFontFace*, ScriptAnalysis, char*, uint, uint*, FontFeatureTag*, int>)@this->LpVtbl[19])(@this, fontFace, scriptAnalysis, localeNamePtr, maxTagCount, actualTagCount, tagsPtr);
+                    ret = ((delegate* unmanaged[Stdcall]<IDWriteTextAnalyzer2*, IDWriteFontFace*, ScriptAnalysis, char*, uint, uint*, FontFeatureTag*, int>)@this->LpVtbl[20])(@this, fontFace, scriptAnalysis, localeNamePtr, maxTagCount, actualTagCount, tagsPtr);
                 }
             }
             return ret;
@@ -1045,7 +1045,7 @@ namespace Silk.NET.DirectWrite
             {
                 fixed (uint* actualTagCountPtr = &actualTagCount)
                 {
-                    ret = ((delegate* unmanaged[Stdcall]<IDWriteTextAnalyzer2*, IDWriteFontFace*, ScriptAnalysis, char*, uint, uint*, FontFeatureTag*, int>)@this->LpVtbl[19])(@this, fontFace, scriptAnalysis, localeNamePtr, maxTagCount, actualTagCountPtr, tags);
+                    ret = ((delegate* unmanaged[Stdcall]<IDWriteTextAnalyzer2*, IDWriteFontFace*, ScriptAnalysis, char*, uint, uint*, FontFeatureTag*, int>)@this->LpVtbl[20])(@this, fontFace, scriptAnalysis, localeNamePtr, maxTagCount, actualTagCountPtr, tags);
                 }
             }
             return ret;
@@ -1062,7 +1062,7 @@ namespace Silk.NET.DirectWrite
                 {
                     fixed (FontFeatureTag* tagsPtr = &tags)
                     {
-                        ret = ((delegate* unmanaged[Stdcall]<IDWriteTextAnalyzer2*, IDWriteFontFace*, ScriptAnalysis, char*, uint, uint*, FontFeatureTag*, int>)@this->LpVtbl[19])(@this, fontFace, scriptAnalysis, localeNamePtr, maxTagCount, actualTagCountPtr, tagsPtr);
+                        ret = ((delegate* unmanaged[Stdcall]<IDWriteTextAnalyzer2*, IDWriteFontFace*, ScriptAnalysis, char*, uint, uint*, FontFeatureTag*, int>)@this->LpVtbl[20])(@this, fontFace, scriptAnalysis, localeNamePtr, maxTagCount, actualTagCountPtr, tagsPtr);
                     }
                 }
             }
@@ -1075,7 +1075,7 @@ namespace Silk.NET.DirectWrite
             var @this = (IDWriteTextAnalyzer2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
             var localeNamePtr = (byte*) SilkMarshal.StringToPtr(localeName, NativeStringEncoding.UTF8);
-            ret = ((delegate* unmanaged[Stdcall]<IDWriteTextAnalyzer2*, IDWriteFontFace*, ScriptAnalysis, byte*, uint, uint*, FontFeatureTag*, int>)@this->LpVtbl[19])(@this, fontFace, scriptAnalysis, localeNamePtr, maxTagCount, actualTagCount, tags);
+            ret = ((delegate* unmanaged[Stdcall]<IDWriteTextAnalyzer2*, IDWriteFontFace*, ScriptAnalysis, byte*, uint, uint*, FontFeatureTag*, int>)@this->LpVtbl[20])(@this, fontFace, scriptAnalysis, localeNamePtr, maxTagCount, actualTagCount, tags);
             SilkMarshal.Free((nint)localeNamePtr);
             return ret;
         }
@@ -1088,7 +1088,7 @@ namespace Silk.NET.DirectWrite
             var localeNamePtr = (byte*) SilkMarshal.StringToPtr(localeName, NativeStringEncoding.UTF8);
             fixed (FontFeatureTag* tagsPtr = &tags)
             {
-                ret = ((delegate* unmanaged[Stdcall]<IDWriteTextAnalyzer2*, IDWriteFontFace*, ScriptAnalysis, byte*, uint, uint*, FontFeatureTag*, int>)@this->LpVtbl[19])(@this, fontFace, scriptAnalysis, localeNamePtr, maxTagCount, actualTagCount, tagsPtr);
+                ret = ((delegate* unmanaged[Stdcall]<IDWriteTextAnalyzer2*, IDWriteFontFace*, ScriptAnalysis, byte*, uint, uint*, FontFeatureTag*, int>)@this->LpVtbl[20])(@this, fontFace, scriptAnalysis, localeNamePtr, maxTagCount, actualTagCount, tagsPtr);
             }
             SilkMarshal.Free((nint)localeNamePtr);
             return ret;
@@ -1102,7 +1102,7 @@ namespace Silk.NET.DirectWrite
             var localeNamePtr = (byte*) SilkMarshal.StringToPtr(localeName, NativeStringEncoding.UTF8);
             fixed (uint* actualTagCountPtr = &actualTagCount)
             {
-                ret = ((delegate* unmanaged[Stdcall]<IDWriteTextAnalyzer2*, IDWriteFontFace*, ScriptAnalysis, byte*, uint, uint*, FontFeatureTag*, int>)@this->LpVtbl[19])(@this, fontFace, scriptAnalysis, localeNamePtr, maxTagCount, actualTagCountPtr, tags);
+                ret = ((delegate* unmanaged[Stdcall]<IDWriteTextAnalyzer2*, IDWriteFontFace*, ScriptAnalysis, byte*, uint, uint*, FontFeatureTag*, int>)@this->LpVtbl[20])(@this, fontFace, scriptAnalysis, localeNamePtr, maxTagCount, actualTagCountPtr, tags);
             }
             SilkMarshal.Free((nint)localeNamePtr);
             return ret;
@@ -1118,7 +1118,7 @@ namespace Silk.NET.DirectWrite
             {
                 fixed (FontFeatureTag* tagsPtr = &tags)
                 {
-                    ret = ((delegate* unmanaged[Stdcall]<IDWriteTextAnalyzer2*, IDWriteFontFace*, ScriptAnalysis, byte*, uint, uint*, FontFeatureTag*, int>)@this->LpVtbl[19])(@this, fontFace, scriptAnalysis, localeNamePtr, maxTagCount, actualTagCountPtr, tagsPtr);
+                    ret = ((delegate* unmanaged[Stdcall]<IDWriteTextAnalyzer2*, IDWriteFontFace*, ScriptAnalysis, byte*, uint, uint*, FontFeatureTag*, int>)@this->LpVtbl[20])(@this, fontFace, scriptAnalysis, localeNamePtr, maxTagCount, actualTagCountPtr, tagsPtr);
                 }
             }
             SilkMarshal.Free((nint)localeNamePtr);
@@ -1132,7 +1132,7 @@ namespace Silk.NET.DirectWrite
             int ret = default;
             fixed (IDWriteFontFace* fontFacePtr = &fontFace)
             {
-                ret = ((delegate* unmanaged[Stdcall]<IDWriteTextAnalyzer2*, IDWriteFontFace*, ScriptAnalysis, char*, uint, uint*, FontFeatureTag*, int>)@this->LpVtbl[19])(@this, fontFacePtr, scriptAnalysis, localeName, maxTagCount, actualTagCount, tags);
+                ret = ((delegate* unmanaged[Stdcall]<IDWriteTextAnalyzer2*, IDWriteFontFace*, ScriptAnalysis, char*, uint, uint*, FontFeatureTag*, int>)@this->LpVtbl[20])(@this, fontFacePtr, scriptAnalysis, localeName, maxTagCount, actualTagCount, tags);
             }
             return ret;
         }
@@ -1146,7 +1146,7 @@ namespace Silk.NET.DirectWrite
             {
                 fixed (FontFeatureTag* tagsPtr = &tags)
                 {
-                    ret = ((delegate* unmanaged[Stdcall]<IDWriteTextAnalyzer2*, IDWriteFontFace*, ScriptAnalysis, char*, uint, uint*, FontFeatureTag*, int>)@this->LpVtbl[19])(@this, fontFacePtr, scriptAnalysis, localeName, maxTagCount, actualTagCount, tagsPtr);
+                    ret = ((delegate* unmanaged[Stdcall]<IDWriteTextAnalyzer2*, IDWriteFontFace*, ScriptAnalysis, char*, uint, uint*, FontFeatureTag*, int>)@this->LpVtbl[20])(@this, fontFacePtr, scriptAnalysis, localeName, maxTagCount, actualTagCount, tagsPtr);
                 }
             }
             return ret;
@@ -1161,7 +1161,7 @@ namespace Silk.NET.DirectWrite
             {
                 fixed (uint* actualTagCountPtr = &actualTagCount)
                 {
-                    ret = ((delegate* unmanaged[Stdcall]<IDWriteTextAnalyzer2*, IDWriteFontFace*, ScriptAnalysis, char*, uint, uint*, FontFeatureTag*, int>)@this->LpVtbl[19])(@this, fontFacePtr, scriptAnalysis, localeName, maxTagCount, actualTagCountPtr, tags);
+                    ret = ((delegate* unmanaged[Stdcall]<IDWriteTextAnalyzer2*, IDWriteFontFace*, ScriptAnalysis, char*, uint, uint*, FontFeatureTag*, int>)@this->LpVtbl[20])(@this, fontFacePtr, scriptAnalysis, localeName, maxTagCount, actualTagCountPtr, tags);
                 }
             }
             return ret;
@@ -1178,7 +1178,7 @@ namespace Silk.NET.DirectWrite
                 {
                     fixed (FontFeatureTag* tagsPtr = &tags)
                     {
-                        ret = ((delegate* unmanaged[Stdcall]<IDWriteTextAnalyzer2*, IDWriteFontFace*, ScriptAnalysis, char*, uint, uint*, FontFeatureTag*, int>)@this->LpVtbl[19])(@this, fontFacePtr, scriptAnalysis, localeName, maxTagCount, actualTagCountPtr, tagsPtr);
+                        ret = ((delegate* unmanaged[Stdcall]<IDWriteTextAnalyzer2*, IDWriteFontFace*, ScriptAnalysis, char*, uint, uint*, FontFeatureTag*, int>)@this->LpVtbl[20])(@this, fontFacePtr, scriptAnalysis, localeName, maxTagCount, actualTagCountPtr, tagsPtr);
                     }
                 }
             }
@@ -1194,7 +1194,7 @@ namespace Silk.NET.DirectWrite
             {
                 fixed (char* localeNamePtr = &localeName)
                 {
-                    ret = ((delegate* unmanaged[Stdcall]<IDWriteTextAnalyzer2*, IDWriteFontFace*, ScriptAnalysis, char*, uint, uint*, FontFeatureTag*, int>)@this->LpVtbl[19])(@this, fontFacePtr, scriptAnalysis, localeNamePtr, maxTagCount, actualTagCount, tags);
+                    ret = ((delegate* unmanaged[Stdcall]<IDWriteTextAnalyzer2*, IDWriteFontFace*, ScriptAnalysis, char*, uint, uint*, FontFeatureTag*, int>)@this->LpVtbl[20])(@this, fontFacePtr, scriptAnalysis, localeNamePtr, maxTagCount, actualTagCount, tags);
                 }
             }
             return ret;
@@ -1211,7 +1211,7 @@ namespace Silk.NET.DirectWrite
                 {
                     fixed (FontFeatureTag* tagsPtr = &tags)
                     {
-                        ret = ((delegate* unmanaged[Stdcall]<IDWriteTextAnalyzer2*, IDWriteFontFace*, ScriptAnalysis, char*, uint, uint*, FontFeatureTag*, int>)@this->LpVtbl[19])(@this, fontFacePtr, scriptAnalysis, localeNamePtr, maxTagCount, actualTagCount, tagsPtr);
+                        ret = ((delegate* unmanaged[Stdcall]<IDWriteTextAnalyzer2*, IDWriteFontFace*, ScriptAnalysis, char*, uint, uint*, FontFeatureTag*, int>)@this->LpVtbl[20])(@this, fontFacePtr, scriptAnalysis, localeNamePtr, maxTagCount, actualTagCount, tagsPtr);
                     }
                 }
             }
@@ -1229,7 +1229,7 @@ namespace Silk.NET.DirectWrite
                 {
                     fixed (uint* actualTagCountPtr = &actualTagCount)
                     {
-                        ret = ((delegate* unmanaged[Stdcall]<IDWriteTextAnalyzer2*, IDWriteFontFace*, ScriptAnalysis, char*, uint, uint*, FontFeatureTag*, int>)@this->LpVtbl[19])(@this, fontFacePtr, scriptAnalysis, localeNamePtr, maxTagCount, actualTagCountPtr, tags);
+                        ret = ((delegate* unmanaged[Stdcall]<IDWriteTextAnalyzer2*, IDWriteFontFace*, ScriptAnalysis, char*, uint, uint*, FontFeatureTag*, int>)@this->LpVtbl[20])(@this, fontFacePtr, scriptAnalysis, localeNamePtr, maxTagCount, actualTagCountPtr, tags);
                     }
                 }
             }
@@ -1249,7 +1249,7 @@ namespace Silk.NET.DirectWrite
                     {
                         fixed (FontFeatureTag* tagsPtr = &tags)
                         {
-                            ret = ((delegate* unmanaged[Stdcall]<IDWriteTextAnalyzer2*, IDWriteFontFace*, ScriptAnalysis, char*, uint, uint*, FontFeatureTag*, int>)@this->LpVtbl[19])(@this, fontFacePtr, scriptAnalysis, localeNamePtr, maxTagCount, actualTagCountPtr, tagsPtr);
+                            ret = ((delegate* unmanaged[Stdcall]<IDWriteTextAnalyzer2*, IDWriteFontFace*, ScriptAnalysis, char*, uint, uint*, FontFeatureTag*, int>)@this->LpVtbl[20])(@this, fontFacePtr, scriptAnalysis, localeNamePtr, maxTagCount, actualTagCountPtr, tagsPtr);
                         }
                     }
                 }
@@ -1265,7 +1265,7 @@ namespace Silk.NET.DirectWrite
             fixed (IDWriteFontFace* fontFacePtr = &fontFace)
             {
             var localeNamePtr = (byte*) SilkMarshal.StringToPtr(localeName, NativeStringEncoding.UTF8);
-                ret = ((delegate* unmanaged[Stdcall]<IDWriteTextAnalyzer2*, IDWriteFontFace*, ScriptAnalysis, byte*, uint, uint*, FontFeatureTag*, int>)@this->LpVtbl[19])(@this, fontFacePtr, scriptAnalysis, localeNamePtr, maxTagCount, actualTagCount, tags);
+                ret = ((delegate* unmanaged[Stdcall]<IDWriteTextAnalyzer2*, IDWriteFontFace*, ScriptAnalysis, byte*, uint, uint*, FontFeatureTag*, int>)@this->LpVtbl[20])(@this, fontFacePtr, scriptAnalysis, localeNamePtr, maxTagCount, actualTagCount, tags);
             SilkMarshal.Free((nint)localeNamePtr);
             }
             return ret;
@@ -1281,7 +1281,7 @@ namespace Silk.NET.DirectWrite
             var localeNamePtr = (byte*) SilkMarshal.StringToPtr(localeName, NativeStringEncoding.UTF8);
                 fixed (FontFeatureTag* tagsPtr = &tags)
                 {
-                    ret = ((delegate* unmanaged[Stdcall]<IDWriteTextAnalyzer2*, IDWriteFontFace*, ScriptAnalysis, byte*, uint, uint*, FontFeatureTag*, int>)@this->LpVtbl[19])(@this, fontFacePtr, scriptAnalysis, localeNamePtr, maxTagCount, actualTagCount, tagsPtr);
+                    ret = ((delegate* unmanaged[Stdcall]<IDWriteTextAnalyzer2*, IDWriteFontFace*, ScriptAnalysis, byte*, uint, uint*, FontFeatureTag*, int>)@this->LpVtbl[20])(@this, fontFacePtr, scriptAnalysis, localeNamePtr, maxTagCount, actualTagCount, tagsPtr);
                 }
             SilkMarshal.Free((nint)localeNamePtr);
             }
@@ -1298,7 +1298,7 @@ namespace Silk.NET.DirectWrite
             var localeNamePtr = (byte*) SilkMarshal.StringToPtr(localeName, NativeStringEncoding.UTF8);
                 fixed (uint* actualTagCountPtr = &actualTagCount)
                 {
-                    ret = ((delegate* unmanaged[Stdcall]<IDWriteTextAnalyzer2*, IDWriteFontFace*, ScriptAnalysis, byte*, uint, uint*, FontFeatureTag*, int>)@this->LpVtbl[19])(@this, fontFacePtr, scriptAnalysis, localeNamePtr, maxTagCount, actualTagCountPtr, tags);
+                    ret = ((delegate* unmanaged[Stdcall]<IDWriteTextAnalyzer2*, IDWriteFontFace*, ScriptAnalysis, byte*, uint, uint*, FontFeatureTag*, int>)@this->LpVtbl[20])(@this, fontFacePtr, scriptAnalysis, localeNamePtr, maxTagCount, actualTagCountPtr, tags);
                 }
             SilkMarshal.Free((nint)localeNamePtr);
             }
@@ -1317,7 +1317,7 @@ namespace Silk.NET.DirectWrite
                 {
                     fixed (FontFeatureTag* tagsPtr = &tags)
                     {
-                        ret = ((delegate* unmanaged[Stdcall]<IDWriteTextAnalyzer2*, IDWriteFontFace*, ScriptAnalysis, byte*, uint, uint*, FontFeatureTag*, int>)@this->LpVtbl[19])(@this, fontFacePtr, scriptAnalysis, localeNamePtr, maxTagCount, actualTagCountPtr, tagsPtr);
+                        ret = ((delegate* unmanaged[Stdcall]<IDWriteTextAnalyzer2*, IDWriteFontFace*, ScriptAnalysis, byte*, uint, uint*, FontFeatureTag*, int>)@this->LpVtbl[20])(@this, fontFacePtr, scriptAnalysis, localeNamePtr, maxTagCount, actualTagCountPtr, tagsPtr);
                     }
                 }
             SilkMarshal.Free((nint)localeNamePtr);
@@ -1330,7 +1330,7 @@ namespace Silk.NET.DirectWrite
         {
             var @this = (IDWriteTextAnalyzer2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<IDWriteTextAnalyzer2*, IDWriteFontFace*, ScriptAnalysis, char*, FontFeatureTag, uint, ushort*, byte*, int>)@this->LpVtbl[20])(@this, fontFace, scriptAnalysis, localeName, featureTag, glyphCount, glyphIndices, featureApplies);
+            ret = ((delegate* unmanaged[Stdcall]<IDWriteTextAnalyzer2*, IDWriteFontFace*, ScriptAnalysis, char*, FontFeatureTag, uint, ushort*, byte*, int>)@this->LpVtbl[21])(@this, fontFace, scriptAnalysis, localeName, featureTag, glyphCount, glyphIndices, featureApplies);
             return ret;
         }
 
@@ -1340,7 +1340,7 @@ namespace Silk.NET.DirectWrite
             var @this = (IDWriteTextAnalyzer2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
             var featureAppliesPtr = (byte*) SilkMarshal.StringToPtr(featureApplies, NativeStringEncoding.UTF8);
-            ret = ((delegate* unmanaged[Stdcall]<IDWriteTextAnalyzer2*, IDWriteFontFace*, ScriptAnalysis, char*, FontFeatureTag, uint, ushort*, byte*, int>)@this->LpVtbl[20])(@this, fontFace, scriptAnalysis, localeName, featureTag, glyphCount, glyphIndices, featureAppliesPtr);
+            ret = ((delegate* unmanaged[Stdcall]<IDWriteTextAnalyzer2*, IDWriteFontFace*, ScriptAnalysis, char*, FontFeatureTag, uint, ushort*, byte*, int>)@this->LpVtbl[21])(@this, fontFace, scriptAnalysis, localeName, featureTag, glyphCount, glyphIndices, featureAppliesPtr);
             SilkMarshal.Free((nint)featureAppliesPtr);
             return ret;
         }
@@ -1351,7 +1351,7 @@ namespace Silk.NET.DirectWrite
             var @this = (IDWriteTextAnalyzer2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
             var localeNamePtr = (byte*) SilkMarshal.StringToPtr(localeName, NativeStringEncoding.UTF8);
-            ret = ((delegate* unmanaged[Stdcall]<IDWriteTextAnalyzer2*, IDWriteFontFace*, ScriptAnalysis, byte*, FontFeatureTag, uint, ushort*, byte*, int>)@this->LpVtbl[20])(@this, fontFace, scriptAnalysis, localeNamePtr, featureTag, glyphCount, glyphIndices, featureApplies);
+            ret = ((delegate* unmanaged[Stdcall]<IDWriteTextAnalyzer2*, IDWriteFontFace*, ScriptAnalysis, byte*, FontFeatureTag, uint, ushort*, byte*, int>)@this->LpVtbl[21])(@this, fontFace, scriptAnalysis, localeNamePtr, featureTag, glyphCount, glyphIndices, featureApplies);
             SilkMarshal.Free((nint)localeNamePtr);
             return ret;
         }
@@ -1363,7 +1363,7 @@ namespace Silk.NET.DirectWrite
             int ret = default;
             var localeNamePtr = (byte*) SilkMarshal.StringToPtr(localeName, NativeStringEncoding.UTF8);
             var featureAppliesPtr = (byte*) SilkMarshal.StringToPtr(featureApplies, NativeStringEncoding.UTF8);
-            ret = ((delegate* unmanaged[Stdcall]<IDWriteTextAnalyzer2*, IDWriteFontFace*, ScriptAnalysis, byte*, FontFeatureTag, uint, ushort*, byte*, int>)@this->LpVtbl[20])(@this, fontFace, scriptAnalysis, localeNamePtr, featureTag, glyphCount, glyphIndices, featureAppliesPtr);
+            ret = ((delegate* unmanaged[Stdcall]<IDWriteTextAnalyzer2*, IDWriteFontFace*, ScriptAnalysis, byte*, FontFeatureTag, uint, ushort*, byte*, int>)@this->LpVtbl[21])(@this, fontFace, scriptAnalysis, localeNamePtr, featureTag, glyphCount, glyphIndices, featureAppliesPtr);
             SilkMarshal.Free((nint)featureAppliesPtr);
             SilkMarshal.Free((nint)localeNamePtr);
             return ret;

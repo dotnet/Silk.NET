@@ -23,7 +23,7 @@ namespace Silk.NET.WebGPU
         (
             ChainedStruct* nextInChain = null,
             byte* label = null,
-            uint? hintCount = null,
+            nuint? hintCount = null,
             ShaderModuleCompilationHint* hints = null
         ) : this()
         {
@@ -59,10 +59,10 @@ namespace Silk.NET.WebGPU
         [NativeName("Name", "label")]
         public byte* Label;
 
-        [NativeName("Type", "uint32_t")]
-        [NativeName("Type.Name", "uint32_t")]
+        [NativeName("Type", "size_t")]
+        [NativeName("Type.Name", "size_t")]
         [NativeName("Name", "hintCount")]
-        public uint HintCount;
+        public nuint HintCount;
 
         [NativeName("Type", "const WGPUShaderModuleCompilationHint *")]
         [NativeName("Type.Name", "const WGPUShaderModuleCompilationHint *")]

@@ -14,7 +14,7 @@ namespace Silk.NET.OpenGL.Legacy
     {
         [NativeName("Name", "GL_NONE")]
         None = 0x0,
-        [System.Obsolete]
+        [System.Obsolete("Deprecated in version 3.2")]
         [NativeName("Name", "GL_COMPARE_R_TO_TEXTURE")]
         CompareRToTexture = 0x884E,
         [NativeName("Name", "GL_COMPARE_REF_TO_TEXTURE")]

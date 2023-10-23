@@ -17,7 +17,7 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkPerformanceQueryReservationInfoKHR")]
-    public unsafe partial struct PerformanceQueryReservationInfoKHR : IExtendsChain<DeviceObjectReservationCreateInfo>
+    public unsafe partial struct PerformanceQueryReservationInfoKHR : IExtendsChain<DeviceCreateInfo>
     {
         public PerformanceQueryReservationInfoKHR
         (

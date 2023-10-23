@@ -12,7 +12,15 @@ namespace Silk.NET.Core.Native
         {
             Mode = mode;
         }
+        
+        // This is a separate constructor so we can always assume that the second argument is this discriminants.
+        public PinObjectAttribute(PinMode mode, string[] discriminants)
+        {
+            Mode = mode;
+            Discriminants = discriminants;
+        }
 
         public PinMode Mode { get; }
+        public string[] Discriminants { get; } = Array.Empty<string>();
     }
 }

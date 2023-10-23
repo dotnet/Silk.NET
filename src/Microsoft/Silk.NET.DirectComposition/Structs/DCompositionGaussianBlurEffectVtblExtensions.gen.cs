@@ -110,7 +110,7 @@ public unsafe static class DCompositionGaussianBlurEffectVtblExtensions
     {
         var @this = thisVtbl.Handle;
         int ret = default;
-        ret = ((delegate* unmanaged[Stdcall]<IDCompositionGaussianBlurEffect*, float, int>)@this->LpVtbl[4])(@this, amount);
+        ret = ((delegate* unmanaged[Stdcall]<IDCompositionGaussianBlurEffect*, float, int>)@this->LpVtbl[5])(@this, amount);
         return ret;
     }
 
@@ -119,7 +119,7 @@ public unsafe static class DCompositionGaussianBlurEffectVtblExtensions
     {
         var @this = thisVtbl.Handle;
         int ret = default;
-        ret = ((delegate* unmanaged[Stdcall]<IDCompositionGaussianBlurEffect*, Silk.NET.Direct2D.BorderMode, int>)@this->LpVtbl[5])(@this, mode);
+        ret = ((delegate* unmanaged[Stdcall]<IDCompositionGaussianBlurEffect*, Silk.NET.Direct2D.BorderMode, int>)@this->LpVtbl[6])(@this, mode);
         return ret;
     }
 

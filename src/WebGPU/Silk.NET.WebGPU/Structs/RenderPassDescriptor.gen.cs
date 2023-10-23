@@ -23,12 +23,11 @@ namespace Silk.NET.WebGPU
         (
             ChainedStruct* nextInChain = null,
             byte* label = null,
-            uint? colorAttachmentCount = null,
+            nuint? colorAttachmentCount = null,
             RenderPassColorAttachment* colorAttachments = null,
             RenderPassDepthStencilAttachment* depthStencilAttachment = null,
             QuerySet* occlusionQuerySet = null,
-            uint? timestampWriteCount = null,
-            RenderPassTimestampWrite* timestampWrites = null
+            RenderPassTimestampWrites* timestampWrites = null
         ) : this()
         {
             if (nextInChain is not null)
@@ -61,11 +60,6 @@ namespace Silk.NET.WebGPU
                 OcclusionQuerySet = occlusionQuerySet;
             }
 
-            if (timestampWriteCount is not null)
-            {
-                TimestampWriteCount = timestampWriteCount.Value;
-            }
-
             if (timestampWrites is not null)
             {
                 TimestampWrites = timestampWrites;
@@ -83,10 +77,10 @@ namespace Silk.NET.WebGPU
         [NativeName("Name", "label")]
         public byte* Label;
 
-        [NativeName("Type", "uint32_t")]
-        [NativeName("Type.Name", "uint32_t")]
+        [NativeName("Type", "size_t")]
+        [NativeName("Type.Name", "size_t")]
         [NativeName("Name", "colorAttachmentCount")]
-        public uint ColorAttachmentCount;
+        public nuint ColorAttachmentCount;
 
         [NativeName("Type", "const WGPURenderPassColorAttachment *")]
         [NativeName("Type.Name", "const WGPURenderPassColorAttachment *")]
@@ -103,14 +97,9 @@ namespace Silk.NET.WebGPU
         [NativeName("Name", "occlusionQuerySet")]
         public QuerySet* OcclusionQuerySet;
 
-        [NativeName("Type", "uint32_t")]
-        [NativeName("Type.Name", "uint32_t")]
-        [NativeName("Name", "timestampWriteCount")]
-        public uint TimestampWriteCount;
-
-        [NativeName("Type", "const WGPURenderPassTimestampWrite *")]
-        [NativeName("Type.Name", "const WGPURenderPassTimestampWrite *")]
+        [NativeName("Type", "const WGPURenderPassTimestampWrites *")]
+        [NativeName("Type.Name", "const WGPURenderPassTimestampWrites *")]
         [NativeName("Name", "timestampWrites")]
-        public RenderPassTimestampWrite* TimestampWrites;
+        public RenderPassTimestampWrites* TimestampWrites;
     }
 }

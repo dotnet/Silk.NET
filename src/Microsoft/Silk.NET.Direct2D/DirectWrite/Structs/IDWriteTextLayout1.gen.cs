@@ -819,7 +819,7 @@ namespace Silk.NET.DirectWrite
         {
             var @this = (IDWriteTextLayout1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<IDWriteTextLayout1*, uint, int*, TextRange*, int>)@this->LpVtbl[44])(@this, currentPosition, hasUnderline, textRange);
+            ret = ((delegate* unmanaged[Stdcall]<IDWriteTextLayout1*, uint, int*, TextRange*, int>)@this->LpVtbl[51])(@this, currentPosition, hasUnderline, textRange);
             return ret;
         }
 
@@ -830,7 +830,7 @@ namespace Silk.NET.DirectWrite
             int ret = default;
             fixed (TextRange* textRangePtr = &textRange)
             {
-                ret = ((delegate* unmanaged[Stdcall]<IDWriteTextLayout1*, uint, int*, TextRange*, int>)@this->LpVtbl[44])(@this, currentPosition, hasUnderline, textRangePtr);
+                ret = ((delegate* unmanaged[Stdcall]<IDWriteTextLayout1*, uint, int*, TextRange*, int>)@this->LpVtbl[51])(@this, currentPosition, hasUnderline, textRangePtr);
             }
             return ret;
         }
@@ -842,7 +842,7 @@ namespace Silk.NET.DirectWrite
             int ret = default;
             fixed (int* hasUnderlinePtr = &hasUnderline)
             {
-                ret = ((delegate* unmanaged[Stdcall]<IDWriteTextLayout1*, uint, int*, TextRange*, int>)@this->LpVtbl[44])(@this, currentPosition, hasUnderlinePtr, textRange);
+                ret = ((delegate* unmanaged[Stdcall]<IDWriteTextLayout1*, uint, int*, TextRange*, int>)@this->LpVtbl[51])(@this, currentPosition, hasUnderlinePtr, textRange);
             }
             return ret;
         }
@@ -856,7 +856,7 @@ namespace Silk.NET.DirectWrite
             {
                 fixed (TextRange* textRangePtr = &textRange)
                 {
-                    ret = ((delegate* unmanaged[Stdcall]<IDWriteTextLayout1*, uint, int*, TextRange*, int>)@this->LpVtbl[44])(@this, currentPosition, hasUnderlinePtr, textRangePtr);
+                    ret = ((delegate* unmanaged[Stdcall]<IDWriteTextLayout1*, uint, int*, TextRange*, int>)@this->LpVtbl[51])(@this, currentPosition, hasUnderlinePtr, textRangePtr);
                 }
             }
             return ret;
@@ -867,7 +867,7 @@ namespace Silk.NET.DirectWrite
         {
             var @this = (IDWriteTextLayout1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<IDWriteTextLayout1*, uint, int*, TextRange*, int>)@this->LpVtbl[45])(@this, currentPosition, hasStrikethrough, textRange);
+            ret = ((delegate* unmanaged[Stdcall]<IDWriteTextLayout1*, uint, int*, TextRange*, int>)@this->LpVtbl[52])(@this, currentPosition, hasStrikethrough, textRange);
             return ret;
         }
 
@@ -878,7 +878,7 @@ namespace Silk.NET.DirectWrite
             int ret = default;
             fixed (TextRange* textRangePtr = &textRange)
             {
-                ret = ((delegate* unmanaged[Stdcall]<IDWriteTextLayout1*, uint, int*, TextRange*, int>)@this->LpVtbl[45])(@this, currentPosition, hasStrikethrough, textRangePtr);
+                ret = ((delegate* unmanaged[Stdcall]<IDWriteTextLayout1*, uint, int*, TextRange*, int>)@this->LpVtbl[52])(@this, currentPosition, hasStrikethrough, textRangePtr);
             }
             return ret;
         }
@@ -890,7 +890,7 @@ namespace Silk.NET.DirectWrite
             int ret = default;
             fixed (int* hasStrikethroughPtr = &hasStrikethrough)
             {
-                ret = ((delegate* unmanaged[Stdcall]<IDWriteTextLayout1*, uint, int*, TextRange*, int>)@this->LpVtbl[45])(@this, currentPosition, hasStrikethroughPtr, textRange);
+                ret = ((delegate* unmanaged[Stdcall]<IDWriteTextLayout1*, uint, int*, TextRange*, int>)@this->LpVtbl[52])(@this, currentPosition, hasStrikethroughPtr, textRange);
             }
             return ret;
         }
@@ -904,7 +904,7 @@ namespace Silk.NET.DirectWrite
             {
                 fixed (TextRange* textRangePtr = &textRange)
                 {
-                    ret = ((delegate* unmanaged[Stdcall]<IDWriteTextLayout1*, uint, int*, TextRange*, int>)@this->LpVtbl[45])(@this, currentPosition, hasStrikethroughPtr, textRangePtr);
+                    ret = ((delegate* unmanaged[Stdcall]<IDWriteTextLayout1*, uint, int*, TextRange*, int>)@this->LpVtbl[52])(@this, currentPosition, hasStrikethroughPtr, textRangePtr);
                 }
             }
             return ret;
@@ -915,7 +915,7 @@ namespace Silk.NET.DirectWrite
         {
             var @this = (IDWriteTextLayout1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<IDWriteTextLayout1*, uint, Silk.NET.Core.Native.IUnknown**, TextRange*, int>)@this->LpVtbl[46])(@this, currentPosition, drawingEffect, textRange);
+            ret = ((delegate* unmanaged[Stdcall]<IDWriteTextLayout1*, uint, Silk.NET.Core.Native.IUnknown**, TextRange*, int>)@this->LpVtbl[53])(@this, currentPosition, drawingEffect, textRange);
             return ret;
         }
 
@@ -926,7 +926,7 @@ namespace Silk.NET.DirectWrite
             int ret = default;
             fixed (TextRange* textRangePtr = &textRange)
             {
-                ret = ((delegate* unmanaged[Stdcall]<IDWriteTextLayout1*, uint, Silk.NET.Core.Native.IUnknown**, TextRange*, int>)@this->LpVtbl[46])(@this, currentPosition, drawingEffect, textRangePtr);
+                ret = ((delegate* unmanaged[Stdcall]<IDWriteTextLayout1*, uint, Silk.NET.Core.Native.IUnknown**, TextRange*, int>)@this->LpVtbl[53])(@this, currentPosition, drawingEffect, textRangePtr);
             }
             return ret;
         }
@@ -938,7 +938,7 @@ namespace Silk.NET.DirectWrite
             int ret = default;
             fixed (Silk.NET.Core.Native.IUnknown** drawingEffectPtr = &drawingEffect)
             {
-                ret = ((delegate* unmanaged[Stdcall]<IDWriteTextLayout1*, uint, Silk.NET.Core.Native.IUnknown**, TextRange*, int>)@this->LpVtbl[46])(@this, currentPosition, drawingEffectPtr, textRange);
+                ret = ((delegate* unmanaged[Stdcall]<IDWriteTextLayout1*, uint, Silk.NET.Core.Native.IUnknown**, TextRange*, int>)@this->LpVtbl[53])(@this, currentPosition, drawingEffectPtr, textRange);
             }
             return ret;
         }
@@ -952,7 +952,7 @@ namespace Silk.NET.DirectWrite
             {
                 fixed (TextRange* textRangePtr = &textRange)
                 {
-                    ret = ((delegate* unmanaged[Stdcall]<IDWriteTextLayout1*, uint, Silk.NET.Core.Native.IUnknown**, TextRange*, int>)@this->LpVtbl[46])(@this, currentPosition, drawingEffectPtr, textRangePtr);
+                    ret = ((delegate* unmanaged[Stdcall]<IDWriteTextLayout1*, uint, Silk.NET.Core.Native.IUnknown**, TextRange*, int>)@this->LpVtbl[53])(@this, currentPosition, drawingEffectPtr, textRangePtr);
                 }
             }
             return ret;
@@ -963,7 +963,7 @@ namespace Silk.NET.DirectWrite
         {
             var @this = (IDWriteTextLayout1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<IDWriteTextLayout1*, uint, IDWriteInlineObject**, TextRange*, int>)@this->LpVtbl[47])(@this, currentPosition, inlineObject, textRange);
+            ret = ((delegate* unmanaged[Stdcall]<IDWriteTextLayout1*, uint, IDWriteInlineObject**, TextRange*, int>)@this->LpVtbl[54])(@this, currentPosition, inlineObject, textRange);
             return ret;
         }
 
@@ -974,7 +974,7 @@ namespace Silk.NET.DirectWrite
             int ret = default;
             fixed (TextRange* textRangePtr = &textRange)
             {
-                ret = ((delegate* unmanaged[Stdcall]<IDWriteTextLayout1*, uint, IDWriteInlineObject**, TextRange*, int>)@this->LpVtbl[47])(@this, currentPosition, inlineObject, textRangePtr);
+                ret = ((delegate* unmanaged[Stdcall]<IDWriteTextLayout1*, uint, IDWriteInlineObject**, TextRange*, int>)@this->LpVtbl[54])(@this, currentPosition, inlineObject, textRangePtr);
             }
             return ret;
         }
@@ -986,7 +986,7 @@ namespace Silk.NET.DirectWrite
             int ret = default;
             fixed (IDWriteInlineObject** inlineObjectPtr = &inlineObject)
             {
-                ret = ((delegate* unmanaged[Stdcall]<IDWriteTextLayout1*, uint, IDWriteInlineObject**, TextRange*, int>)@this->LpVtbl[47])(@this, currentPosition, inlineObjectPtr, textRange);
+                ret = ((delegate* unmanaged[Stdcall]<IDWriteTextLayout1*, uint, IDWriteInlineObject**, TextRange*, int>)@this->LpVtbl[54])(@this, currentPosition, inlineObjectPtr, textRange);
             }
             return ret;
         }
@@ -1000,7 +1000,7 @@ namespace Silk.NET.DirectWrite
             {
                 fixed (TextRange* textRangePtr = &textRange)
                 {
-                    ret = ((delegate* unmanaged[Stdcall]<IDWriteTextLayout1*, uint, IDWriteInlineObject**, TextRange*, int>)@this->LpVtbl[47])(@this, currentPosition, inlineObjectPtr, textRangePtr);
+                    ret = ((delegate* unmanaged[Stdcall]<IDWriteTextLayout1*, uint, IDWriteInlineObject**, TextRange*, int>)@this->LpVtbl[54])(@this, currentPosition, inlineObjectPtr, textRangePtr);
                 }
             }
             return ret;
@@ -1011,7 +1011,7 @@ namespace Silk.NET.DirectWrite
         {
             var @this = (IDWriteTextLayout1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<IDWriteTextLayout1*, uint, IDWriteTypography**, TextRange*, int>)@this->LpVtbl[48])(@this, currentPosition, typography, textRange);
+            ret = ((delegate* unmanaged[Stdcall]<IDWriteTextLayout1*, uint, IDWriteTypography**, TextRange*, int>)@this->LpVtbl[55])(@this, currentPosition, typography, textRange);
             return ret;
         }
 
@@ -1022,7 +1022,7 @@ namespace Silk.NET.DirectWrite
             int ret = default;
             fixed (TextRange* textRangePtr = &textRange)
             {
-                ret = ((delegate* unmanaged[Stdcall]<IDWriteTextLayout1*, uint, IDWriteTypography**, TextRange*, int>)@this->LpVtbl[48])(@this, currentPosition, typography, textRangePtr);
+                ret = ((delegate* unmanaged[Stdcall]<IDWriteTextLayout1*, uint, IDWriteTypography**, TextRange*, int>)@this->LpVtbl[55])(@this, currentPosition, typography, textRangePtr);
             }
             return ret;
         }
@@ -1034,7 +1034,7 @@ namespace Silk.NET.DirectWrite
             int ret = default;
             fixed (IDWriteTypography** typographyPtr = &typography)
             {
-                ret = ((delegate* unmanaged[Stdcall]<IDWriteTextLayout1*, uint, IDWriteTypography**, TextRange*, int>)@this->LpVtbl[48])(@this, currentPosition, typographyPtr, textRange);
+                ret = ((delegate* unmanaged[Stdcall]<IDWriteTextLayout1*, uint, IDWriteTypography**, TextRange*, int>)@this->LpVtbl[55])(@this, currentPosition, typographyPtr, textRange);
             }
             return ret;
         }
@@ -1048,7 +1048,7 @@ namespace Silk.NET.DirectWrite
             {
                 fixed (TextRange* textRangePtr = &textRange)
                 {
-                    ret = ((delegate* unmanaged[Stdcall]<IDWriteTextLayout1*, uint, IDWriteTypography**, TextRange*, int>)@this->LpVtbl[48])(@this, currentPosition, typographyPtr, textRangePtr);
+                    ret = ((delegate* unmanaged[Stdcall]<IDWriteTextLayout1*, uint, IDWriteTypography**, TextRange*, int>)@this->LpVtbl[55])(@this, currentPosition, typographyPtr, textRangePtr);
                 }
             }
             return ret;
@@ -1059,7 +1059,7 @@ namespace Silk.NET.DirectWrite
         {
             var @this = (IDWriteTextLayout1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<IDWriteTextLayout1*, void*, IDWriteTextRenderer*, float, float, int>)@this->LpVtbl[49])(@this, clientDrawingContext, renderer, originX, originY);
+            ret = ((delegate* unmanaged[Stdcall]<IDWriteTextLayout1*, void*, IDWriteTextRenderer*, float, float, int>)@this->LpVtbl[58])(@this, clientDrawingContext, renderer, originX, originY);
             return ret;
         }
 
@@ -1070,7 +1070,7 @@ namespace Silk.NET.DirectWrite
             int ret = default;
             fixed (IDWriteTextRenderer* rendererPtr = &renderer)
             {
-                ret = ((delegate* unmanaged[Stdcall]<IDWriteTextLayout1*, void*, IDWriteTextRenderer*, float, float, int>)@this->LpVtbl[49])(@this, clientDrawingContext, rendererPtr, originX, originY);
+                ret = ((delegate* unmanaged[Stdcall]<IDWriteTextLayout1*, void*, IDWriteTextRenderer*, float, float, int>)@this->LpVtbl[58])(@this, clientDrawingContext, rendererPtr, originX, originY);
             }
             return ret;
         }
@@ -1082,7 +1082,7 @@ namespace Silk.NET.DirectWrite
             int ret = default;
             fixed (void* clientDrawingContextPtr = &clientDrawingContext)
             {
-                ret = ((delegate* unmanaged[Stdcall]<IDWriteTextLayout1*, void*, IDWriteTextRenderer*, float, float, int>)@this->LpVtbl[49])(@this, clientDrawingContextPtr, renderer, originX, originY);
+                ret = ((delegate* unmanaged[Stdcall]<IDWriteTextLayout1*, void*, IDWriteTextRenderer*, float, float, int>)@this->LpVtbl[58])(@this, clientDrawingContextPtr, renderer, originX, originY);
             }
             return ret;
         }
@@ -1096,7 +1096,7 @@ namespace Silk.NET.DirectWrite
             {
                 fixed (IDWriteTextRenderer* rendererPtr = &renderer)
                 {
-                    ret = ((delegate* unmanaged[Stdcall]<IDWriteTextLayout1*, void*, IDWriteTextRenderer*, float, float, int>)@this->LpVtbl[49])(@this, clientDrawingContextPtr, rendererPtr, originX, originY);
+                    ret = ((delegate* unmanaged[Stdcall]<IDWriteTextLayout1*, void*, IDWriteTextRenderer*, float, float, int>)@this->LpVtbl[58])(@this, clientDrawingContextPtr, rendererPtr, originX, originY);
                 }
             }
             return ret;
@@ -1107,7 +1107,7 @@ namespace Silk.NET.DirectWrite
         {
             var @this = (IDWriteTextLayout1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<IDWriteTextLayout1*, LineMetrics*, uint, uint*, int>)@this->LpVtbl[50])(@this, lineMetrics, maxLineCount, actualLineCount);
+            ret = ((delegate* unmanaged[Stdcall]<IDWriteTextLayout1*, LineMetrics*, uint, uint*, int>)@this->LpVtbl[59])(@this, lineMetrics, maxLineCount, actualLineCount);
             return ret;
         }
 
@@ -1118,7 +1118,7 @@ namespace Silk.NET.DirectWrite
             int ret = default;
             fixed (uint* actualLineCountPtr = &actualLineCount)
             {
-                ret = ((delegate* unmanaged[Stdcall]<IDWriteTextLayout1*, LineMetrics*, uint, uint*, int>)@this->LpVtbl[50])(@this, lineMetrics, maxLineCount, actualLineCountPtr);
+                ret = ((delegate* unmanaged[Stdcall]<IDWriteTextLayout1*, LineMetrics*, uint, uint*, int>)@this->LpVtbl[59])(@this, lineMetrics, maxLineCount, actualLineCountPtr);
             }
             return ret;
         }
@@ -1130,7 +1130,7 @@ namespace Silk.NET.DirectWrite
             int ret = default;
             fixed (LineMetrics* lineMetricsPtr = &lineMetrics)
             {
-                ret = ((delegate* unmanaged[Stdcall]<IDWriteTextLayout1*, LineMetrics*, uint, uint*, int>)@this->LpVtbl[50])(@this, lineMetricsPtr, maxLineCount, actualLineCount);
+                ret = ((delegate* unmanaged[Stdcall]<IDWriteTextLayout1*, LineMetrics*, uint, uint*, int>)@this->LpVtbl[59])(@this, lineMetricsPtr, maxLineCount, actualLineCount);
             }
             return ret;
         }
@@ -1144,7 +1144,7 @@ namespace Silk.NET.DirectWrite
             {
                 fixed (uint* actualLineCountPtr = &actualLineCount)
                 {
-                    ret = ((delegate* unmanaged[Stdcall]<IDWriteTextLayout1*, LineMetrics*, uint, uint*, int>)@this->LpVtbl[50])(@this, lineMetricsPtr, maxLineCount, actualLineCountPtr);
+                    ret = ((delegate* unmanaged[Stdcall]<IDWriteTextLayout1*, LineMetrics*, uint, uint*, int>)@this->LpVtbl[59])(@this, lineMetricsPtr, maxLineCount, actualLineCountPtr);
                 }
             }
             return ret;
@@ -1155,7 +1155,7 @@ namespace Silk.NET.DirectWrite
         {
             var @this = (IDWriteTextLayout1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<IDWriteTextLayout1*, TextMetrics*, int>)@this->LpVtbl[51])(@this, textMetrics);
+            ret = ((delegate* unmanaged[Stdcall]<IDWriteTextLayout1*, TextMetrics*, int>)@this->LpVtbl[60])(@this, textMetrics);
             return ret;
         }
 
@@ -1166,7 +1166,7 @@ namespace Silk.NET.DirectWrite
             int ret = default;
             fixed (TextMetrics* textMetricsPtr = &textMetrics)
             {
-                ret = ((delegate* unmanaged[Stdcall]<IDWriteTextLayout1*, TextMetrics*, int>)@this->LpVtbl[51])(@this, textMetricsPtr);
+                ret = ((delegate* unmanaged[Stdcall]<IDWriteTextLayout1*, TextMetrics*, int>)@this->LpVtbl[60])(@this, textMetricsPtr);
             }
             return ret;
         }
@@ -1176,7 +1176,7 @@ namespace Silk.NET.DirectWrite
         {
             var @this = (IDWriteTextLayout1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<IDWriteTextLayout1*, OverhangMetrics*, int>)@this->LpVtbl[52])(@this, overhangs);
+            ret = ((delegate* unmanaged[Stdcall]<IDWriteTextLayout1*, OverhangMetrics*, int>)@this->LpVtbl[61])(@this, overhangs);
             return ret;
         }
 
@@ -1187,7 +1187,7 @@ namespace Silk.NET.DirectWrite
             int ret = default;
             fixed (OverhangMetrics* overhangsPtr = &overhangs)
             {
-                ret = ((delegate* unmanaged[Stdcall]<IDWriteTextLayout1*, OverhangMetrics*, int>)@this->LpVtbl[52])(@this, overhangsPtr);
+                ret = ((delegate* unmanaged[Stdcall]<IDWriteTextLayout1*, OverhangMetrics*, int>)@this->LpVtbl[61])(@this, overhangsPtr);
             }
             return ret;
         }
@@ -1197,7 +1197,7 @@ namespace Silk.NET.DirectWrite
         {
             var @this = (IDWriteTextLayout1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<IDWriteTextLayout1*, ClusterMetrics*, uint, uint*, int>)@this->LpVtbl[53])(@this, clusterMetrics, maxClusterCount, actualClusterCount);
+            ret = ((delegate* unmanaged[Stdcall]<IDWriteTextLayout1*, ClusterMetrics*, uint, uint*, int>)@this->LpVtbl[62])(@this, clusterMetrics, maxClusterCount, actualClusterCount);
             return ret;
         }
 
@@ -1208,7 +1208,7 @@ namespace Silk.NET.DirectWrite
             int ret = default;
             fixed (uint* actualClusterCountPtr = &actualClusterCount)
             {
-                ret = ((delegate* unmanaged[Stdcall]<IDWriteTextLayout1*, ClusterMetrics*, uint, uint*, int>)@this->LpVtbl[53])(@this, clusterMetrics, maxClusterCount, actualClusterCountPtr);
+                ret = ((delegate* unmanaged[Stdcall]<IDWriteTextLayout1*, ClusterMetrics*, uint, uint*, int>)@this->LpVtbl[62])(@this, clusterMetrics, maxClusterCount, actualClusterCountPtr);
             }
             return ret;
         }
@@ -1220,7 +1220,7 @@ namespace Silk.NET.DirectWrite
             int ret = default;
             fixed (ClusterMetrics* clusterMetricsPtr = &clusterMetrics)
             {
-                ret = ((delegate* unmanaged[Stdcall]<IDWriteTextLayout1*, ClusterMetrics*, uint, uint*, int>)@this->LpVtbl[53])(@this, clusterMetricsPtr, maxClusterCount, actualClusterCount);
+                ret = ((delegate* unmanaged[Stdcall]<IDWriteTextLayout1*, ClusterMetrics*, uint, uint*, int>)@this->LpVtbl[62])(@this, clusterMetricsPtr, maxClusterCount, actualClusterCount);
             }
             return ret;
         }
@@ -1234,7 +1234,7 @@ namespace Silk.NET.DirectWrite
             {
                 fixed (uint* actualClusterCountPtr = &actualClusterCount)
                 {
-                    ret = ((delegate* unmanaged[Stdcall]<IDWriteTextLayout1*, ClusterMetrics*, uint, uint*, int>)@this->LpVtbl[53])(@this, clusterMetricsPtr, maxClusterCount, actualClusterCountPtr);
+                    ret = ((delegate* unmanaged[Stdcall]<IDWriteTextLayout1*, ClusterMetrics*, uint, uint*, int>)@this->LpVtbl[62])(@this, clusterMetricsPtr, maxClusterCount, actualClusterCountPtr);
                 }
             }
             return ret;
@@ -1245,7 +1245,7 @@ namespace Silk.NET.DirectWrite
         {
             var @this = (IDWriteTextLayout1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<IDWriteTextLayout1*, float*, int>)@this->LpVtbl[54])(@this, minWidth);
+            ret = ((delegate* unmanaged[Stdcall]<IDWriteTextLayout1*, float*, int>)@this->LpVtbl[63])(@this, minWidth);
             return ret;
         }
 
@@ -1256,7 +1256,7 @@ namespace Silk.NET.DirectWrite
             int ret = default;
             fixed (float* minWidthPtr = &minWidth)
             {
-                ret = ((delegate* unmanaged[Stdcall]<IDWriteTextLayout1*, float*, int>)@this->LpVtbl[54])(@this, minWidthPtr);
+                ret = ((delegate* unmanaged[Stdcall]<IDWriteTextLayout1*, float*, int>)@this->LpVtbl[63])(@this, minWidthPtr);
             }
             return ret;
         }
@@ -1266,7 +1266,7 @@ namespace Silk.NET.DirectWrite
         {
             var @this = (IDWriteTextLayout1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<IDWriteTextLayout1*, float, float, int*, int*, HitTestMetrics*, int>)@this->LpVtbl[55])(@this, pointX, pointY, isTrailingHit, isInside, hitTestMetrics);
+            ret = ((delegate* unmanaged[Stdcall]<IDWriteTextLayout1*, float, float, int*, int*, HitTestMetrics*, int>)@this->LpVtbl[64])(@this, pointX, pointY, isTrailingHit, isInside, hitTestMetrics);
             return ret;
         }
 
@@ -1277,7 +1277,7 @@ namespace Silk.NET.DirectWrite
             int ret = default;
             fixed (HitTestMetrics* hitTestMetricsPtr = &hitTestMetrics)
             {
-                ret = ((delegate* unmanaged[Stdcall]<IDWriteTextLayout1*, float, float, int*, int*, HitTestMetrics*, int>)@this->LpVtbl[55])(@this, pointX, pointY, isTrailingHit, isInside, hitTestMetricsPtr);
+                ret = ((delegate* unmanaged[Stdcall]<IDWriteTextLayout1*, float, float, int*, int*, HitTestMetrics*, int>)@this->LpVtbl[64])(@this, pointX, pointY, isTrailingHit, isInside, hitTestMetricsPtr);
             }
             return ret;
         }
@@ -1289,7 +1289,7 @@ namespace Silk.NET.DirectWrite
             int ret = default;
             fixed (int* isInsidePtr = &isInside)
             {
-                ret = ((delegate* unmanaged[Stdcall]<IDWriteTextLayout1*, float, float, int*, int*, HitTestMetrics*, int>)@this->LpVtbl[55])(@this, pointX, pointY, isTrailingHit, isInsidePtr, hitTestMetrics);
+                ret = ((delegate* unmanaged[Stdcall]<IDWriteTextLayout1*, float, float, int*, int*, HitTestMetrics*, int>)@this->LpVtbl[64])(@this, pointX, pointY, isTrailingHit, isInsidePtr, hitTestMetrics);
             }
             return ret;
         }
@@ -1303,7 +1303,7 @@ namespace Silk.NET.DirectWrite
             {
                 fixed (HitTestMetrics* hitTestMetricsPtr = &hitTestMetrics)
                 {
-                    ret = ((delegate* unmanaged[Stdcall]<IDWriteTextLayout1*, float, float, int*, int*, HitTestMetrics*, int>)@this->LpVtbl[55])(@this, pointX, pointY, isTrailingHit, isInsidePtr, hitTestMetricsPtr);
+                    ret = ((delegate* unmanaged[Stdcall]<IDWriteTextLayout1*, float, float, int*, int*, HitTestMetrics*, int>)@this->LpVtbl[64])(@this, pointX, pointY, isTrailingHit, isInsidePtr, hitTestMetricsPtr);
                 }
             }
             return ret;
@@ -1316,7 +1316,7 @@ namespace Silk.NET.DirectWrite
             int ret = default;
             fixed (int* isTrailingHitPtr = &isTrailingHit)
             {
-                ret = ((delegate* unmanaged[Stdcall]<IDWriteTextLayout1*, float, float, int*, int*, HitTestMetrics*, int>)@this->LpVtbl[55])(@this, pointX, pointY, isTrailingHitPtr, isInside, hitTestMetrics);
+                ret = ((delegate* unmanaged[Stdcall]<IDWriteTextLayout1*, float, float, int*, int*, HitTestMetrics*, int>)@this->LpVtbl[64])(@this, pointX, pointY, isTrailingHitPtr, isInside, hitTestMetrics);
             }
             return ret;
         }
@@ -1330,7 +1330,7 @@ namespace Silk.NET.DirectWrite
             {
                 fixed (HitTestMetrics* hitTestMetricsPtr = &hitTestMetrics)
                 {
-                    ret = ((delegate* unmanaged[Stdcall]<IDWriteTextLayout1*, float, float, int*, int*, HitTestMetrics*, int>)@this->LpVtbl[55])(@this, pointX, pointY, isTrailingHitPtr, isInside, hitTestMetricsPtr);
+                    ret = ((delegate* unmanaged[Stdcall]<IDWriteTextLayout1*, float, float, int*, int*, HitTestMetrics*, int>)@this->LpVtbl[64])(@this, pointX, pointY, isTrailingHitPtr, isInside, hitTestMetricsPtr);
                 }
             }
             return ret;
@@ -1345,7 +1345,7 @@ namespace Silk.NET.DirectWrite
             {
                 fixed (int* isInsidePtr = &isInside)
                 {
-                    ret = ((delegate* unmanaged[Stdcall]<IDWriteTextLayout1*, float, float, int*, int*, HitTestMetrics*, int>)@this->LpVtbl[55])(@this, pointX, pointY, isTrailingHitPtr, isInsidePtr, hitTestMetrics);
+                    ret = ((delegate* unmanaged[Stdcall]<IDWriteTextLayout1*, float, float, int*, int*, HitTestMetrics*, int>)@this->LpVtbl[64])(@this, pointX, pointY, isTrailingHitPtr, isInsidePtr, hitTestMetrics);
                 }
             }
             return ret;
@@ -1362,7 +1362,7 @@ namespace Silk.NET.DirectWrite
                 {
                     fixed (HitTestMetrics* hitTestMetricsPtr = &hitTestMetrics)
                     {
-                        ret = ((delegate* unmanaged[Stdcall]<IDWriteTextLayout1*, float, float, int*, int*, HitTestMetrics*, int>)@this->LpVtbl[55])(@this, pointX, pointY, isTrailingHitPtr, isInsidePtr, hitTestMetricsPtr);
+                        ret = ((delegate* unmanaged[Stdcall]<IDWriteTextLayout1*, float, float, int*, int*, HitTestMetrics*, int>)@this->LpVtbl[64])(@this, pointX, pointY, isTrailingHitPtr, isInsidePtr, hitTestMetricsPtr);
                     }
                 }
             }
@@ -1374,7 +1374,7 @@ namespace Silk.NET.DirectWrite
         {
             var @this = (IDWriteTextLayout1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<IDWriteTextLayout1*, uint, Silk.NET.Core.Bool32, float*, float*, HitTestMetrics*, int>)@this->LpVtbl[56])(@this, textPosition, isTrailingHit, pointX, pointY, hitTestMetrics);
+            ret = ((delegate* unmanaged[Stdcall]<IDWriteTextLayout1*, uint, Silk.NET.Core.Bool32, float*, float*, HitTestMetrics*, int>)@this->LpVtbl[65])(@this, textPosition, isTrailingHit, pointX, pointY, hitTestMetrics);
             return ret;
         }
 
@@ -1385,7 +1385,7 @@ namespace Silk.NET.DirectWrite
             int ret = default;
             fixed (HitTestMetrics* hitTestMetricsPtr = &hitTestMetrics)
             {
-                ret = ((delegate* unmanaged[Stdcall]<IDWriteTextLayout1*, uint, Silk.NET.Core.Bool32, float*, float*, HitTestMetrics*, int>)@this->LpVtbl[56])(@this, textPosition, isTrailingHit, pointX, pointY, hitTestMetricsPtr);
+                ret = ((delegate* unmanaged[Stdcall]<IDWriteTextLayout1*, uint, Silk.NET.Core.Bool32, float*, float*, HitTestMetrics*, int>)@this->LpVtbl[65])(@this, textPosition, isTrailingHit, pointX, pointY, hitTestMetricsPtr);
             }
             return ret;
         }
@@ -1397,7 +1397,7 @@ namespace Silk.NET.DirectWrite
             int ret = default;
             fixed (float* pointYPtr = &pointY)
             {
-                ret = ((delegate* unmanaged[Stdcall]<IDWriteTextLayout1*, uint, Silk.NET.Core.Bool32, float*, float*, HitTestMetrics*, int>)@this->LpVtbl[56])(@this, textPosition, isTrailingHit, pointX, pointYPtr, hitTestMetrics);
+                ret = ((delegate* unmanaged[Stdcall]<IDWriteTextLayout1*, uint, Silk.NET.Core.Bool32, float*, float*, HitTestMetrics*, int>)@this->LpVtbl[65])(@this, textPosition, isTrailingHit, pointX, pointYPtr, hitTestMetrics);
             }
             return ret;
         }
@@ -1411,7 +1411,7 @@ namespace Silk.NET.DirectWrite
             {
                 fixed (HitTestMetrics* hitTestMetricsPtr = &hitTestMetrics)
                 {
-                    ret = ((delegate* unmanaged[Stdcall]<IDWriteTextLayout1*, uint, Silk.NET.Core.Bool32, float*, float*, HitTestMetrics*, int>)@this->LpVtbl[56])(@this, textPosition, isTrailingHit, pointX, pointYPtr, hitTestMetricsPtr);
+                    ret = ((delegate* unmanaged[Stdcall]<IDWriteTextLayout1*, uint, Silk.NET.Core.Bool32, float*, float*, HitTestMetrics*, int>)@this->LpVtbl[65])(@this, textPosition, isTrailingHit, pointX, pointYPtr, hitTestMetricsPtr);
                 }
             }
             return ret;
@@ -1424,7 +1424,7 @@ namespace Silk.NET.DirectWrite
             int ret = default;
             fixed (float* pointXPtr = &pointX)
             {
-                ret = ((delegate* unmanaged[Stdcall]<IDWriteTextLayout1*, uint, Silk.NET.Core.Bool32, float*, float*, HitTestMetrics*, int>)@this->LpVtbl[56])(@this, textPosition, isTrailingHit, pointXPtr, pointY, hitTestMetrics);
+                ret = ((delegate* unmanaged[Stdcall]<IDWriteTextLayout1*, uint, Silk.NET.Core.Bool32, float*, float*, HitTestMetrics*, int>)@this->LpVtbl[65])(@this, textPosition, isTrailingHit, pointXPtr, pointY, hitTestMetrics);
             }
             return ret;
         }
@@ -1438,7 +1438,7 @@ namespace Silk.NET.DirectWrite
             {
                 fixed (HitTestMetrics* hitTestMetricsPtr = &hitTestMetrics)
                 {
-                    ret = ((delegate* unmanaged[Stdcall]<IDWriteTextLayout1*, uint, Silk.NET.Core.Bool32, float*, float*, HitTestMetrics*, int>)@this->LpVtbl[56])(@this, textPosition, isTrailingHit, pointXPtr, pointY, hitTestMetricsPtr);
+                    ret = ((delegate* unmanaged[Stdcall]<IDWriteTextLayout1*, uint, Silk.NET.Core.Bool32, float*, float*, HitTestMetrics*, int>)@this->LpVtbl[65])(@this, textPosition, isTrailingHit, pointXPtr, pointY, hitTestMetricsPtr);
                 }
             }
             return ret;
@@ -1453,7 +1453,7 @@ namespace Silk.NET.DirectWrite
             {
                 fixed (float* pointYPtr = &pointY)
                 {
-                    ret = ((delegate* unmanaged[Stdcall]<IDWriteTextLayout1*, uint, Silk.NET.Core.Bool32, float*, float*, HitTestMetrics*, int>)@this->LpVtbl[56])(@this, textPosition, isTrailingHit, pointXPtr, pointYPtr, hitTestMetrics);
+                    ret = ((delegate* unmanaged[Stdcall]<IDWriteTextLayout1*, uint, Silk.NET.Core.Bool32, float*, float*, HitTestMetrics*, int>)@this->LpVtbl[65])(@this, textPosition, isTrailingHit, pointXPtr, pointYPtr, hitTestMetrics);
                 }
             }
             return ret;
@@ -1470,7 +1470,7 @@ namespace Silk.NET.DirectWrite
                 {
                     fixed (HitTestMetrics* hitTestMetricsPtr = &hitTestMetrics)
                     {
-                        ret = ((delegate* unmanaged[Stdcall]<IDWriteTextLayout1*, uint, Silk.NET.Core.Bool32, float*, float*, HitTestMetrics*, int>)@this->LpVtbl[56])(@this, textPosition, isTrailingHit, pointXPtr, pointYPtr, hitTestMetricsPtr);
+                        ret = ((delegate* unmanaged[Stdcall]<IDWriteTextLayout1*, uint, Silk.NET.Core.Bool32, float*, float*, HitTestMetrics*, int>)@this->LpVtbl[65])(@this, textPosition, isTrailingHit, pointXPtr, pointYPtr, hitTestMetricsPtr);
                     }
                 }
             }
@@ -1482,7 +1482,7 @@ namespace Silk.NET.DirectWrite
         {
             var @this = (IDWriteTextLayout1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<IDWriteTextLayout1*, uint, uint, float, float, HitTestMetrics*, uint, uint*, int>)@this->LpVtbl[57])(@this, textPosition, textLength, originX, originY, hitTestMetrics, maxHitTestMetricsCount, actualHitTestMetricsCount);
+            ret = ((delegate* unmanaged[Stdcall]<IDWriteTextLayout1*, uint, uint, float, float, HitTestMetrics*, uint, uint*, int>)@this->LpVtbl[66])(@this, textPosition, textLength, originX, originY, hitTestMetrics, maxHitTestMetricsCount, actualHitTestMetricsCount);
             return ret;
         }
 
@@ -1493,7 +1493,7 @@ namespace Silk.NET.DirectWrite
             int ret = default;
             fixed (uint* actualHitTestMetricsCountPtr = &actualHitTestMetricsCount)
             {
-                ret = ((delegate* unmanaged[Stdcall]<IDWriteTextLayout1*, uint, uint, float, float, HitTestMetrics*, uint, uint*, int>)@this->LpVtbl[57])(@this, textPosition, textLength, originX, originY, hitTestMetrics, maxHitTestMetricsCount, actualHitTestMetricsCountPtr);
+                ret = ((delegate* unmanaged[Stdcall]<IDWriteTextLayout1*, uint, uint, float, float, HitTestMetrics*, uint, uint*, int>)@this->LpVtbl[66])(@this, textPosition, textLength, originX, originY, hitTestMetrics, maxHitTestMetricsCount, actualHitTestMetricsCountPtr);
             }
             return ret;
         }
@@ -1505,7 +1505,7 @@ namespace Silk.NET.DirectWrite
             int ret = default;
             fixed (HitTestMetrics* hitTestMetricsPtr = &hitTestMetrics)
             {
-                ret = ((delegate* unmanaged[Stdcall]<IDWriteTextLayout1*, uint, uint, float, float, HitTestMetrics*, uint, uint*, int>)@this->LpVtbl[57])(@this, textPosition, textLength, originX, originY, hitTestMetricsPtr, maxHitTestMetricsCount, actualHitTestMetricsCount);
+                ret = ((delegate* unmanaged[Stdcall]<IDWriteTextLayout1*, uint, uint, float, float, HitTestMetrics*, uint, uint*, int>)@this->LpVtbl[66])(@this, textPosition, textLength, originX, originY, hitTestMetricsPtr, maxHitTestMetricsCount, actualHitTestMetricsCount);
             }
             return ret;
         }
@@ -1519,7 +1519,7 @@ namespace Silk.NET.DirectWrite
             {
                 fixed (uint* actualHitTestMetricsCountPtr = &actualHitTestMetricsCount)
                 {
-                    ret = ((delegate* unmanaged[Stdcall]<IDWriteTextLayout1*, uint, uint, float, float, HitTestMetrics*, uint, uint*, int>)@this->LpVtbl[57])(@this, textPosition, textLength, originX, originY, hitTestMetricsPtr, maxHitTestMetricsCount, actualHitTestMetricsCountPtr);
+                    ret = ((delegate* unmanaged[Stdcall]<IDWriteTextLayout1*, uint, uint, float, float, HitTestMetrics*, uint, uint*, int>)@this->LpVtbl[66])(@this, textPosition, textLength, originX, originY, hitTestMetricsPtr, maxHitTestMetricsCount, actualHitTestMetricsCountPtr);
                 }
             }
             return ret;
@@ -1530,7 +1530,7 @@ namespace Silk.NET.DirectWrite
         {
             var @this = (IDWriteTextLayout1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<IDWriteTextLayout1*, Silk.NET.Core.Bool32, TextRange, int>)@this->LpVtbl[58])(@this, isPairKerningEnabled, textRange);
+            ret = ((delegate* unmanaged[Stdcall]<IDWriteTextLayout1*, Silk.NET.Core.Bool32, TextRange, int>)@this->LpVtbl[67])(@this, isPairKerningEnabled, textRange);
             return ret;
         }
 
@@ -1539,7 +1539,7 @@ namespace Silk.NET.DirectWrite
         {
             var @this = (IDWriteTextLayout1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<IDWriteTextLayout1*, uint, int*, TextRange*, int>)@this->LpVtbl[59])(@this, currentPosition, isPairKerningEnabled, textRange);
+            ret = ((delegate* unmanaged[Stdcall]<IDWriteTextLayout1*, uint, int*, TextRange*, int>)@this->LpVtbl[68])(@this, currentPosition, isPairKerningEnabled, textRange);
             return ret;
         }
 
@@ -1550,7 +1550,7 @@ namespace Silk.NET.DirectWrite
             int ret = default;
             fixed (TextRange* textRangePtr = &textRange)
             {
-                ret = ((delegate* unmanaged[Stdcall]<IDWriteTextLayout1*, uint, int*, TextRange*, int>)@this->LpVtbl[59])(@this, currentPosition, isPairKerningEnabled, textRangePtr);
+                ret = ((delegate* unmanaged[Stdcall]<IDWriteTextLayout1*, uint, int*, TextRange*, int>)@this->LpVtbl[68])(@this, currentPosition, isPairKerningEnabled, textRangePtr);
             }
             return ret;
         }
@@ -1562,7 +1562,7 @@ namespace Silk.NET.DirectWrite
             int ret = default;
             fixed (int* isPairKerningEnabledPtr = &isPairKerningEnabled)
             {
-                ret = ((delegate* unmanaged[Stdcall]<IDWriteTextLayout1*, uint, int*, TextRange*, int>)@this->LpVtbl[59])(@this, currentPosition, isPairKerningEnabledPtr, textRange);
+                ret = ((delegate* unmanaged[Stdcall]<IDWriteTextLayout1*, uint, int*, TextRange*, int>)@this->LpVtbl[68])(@this, currentPosition, isPairKerningEnabledPtr, textRange);
             }
             return ret;
         }
@@ -1576,7 +1576,7 @@ namespace Silk.NET.DirectWrite
             {
                 fixed (TextRange* textRangePtr = &textRange)
                 {
-                    ret = ((delegate* unmanaged[Stdcall]<IDWriteTextLayout1*, uint, int*, TextRange*, int>)@this->LpVtbl[59])(@this, currentPosition, isPairKerningEnabledPtr, textRangePtr);
+                    ret = ((delegate* unmanaged[Stdcall]<IDWriteTextLayout1*, uint, int*, TextRange*, int>)@this->LpVtbl[68])(@this, currentPosition, isPairKerningEnabledPtr, textRangePtr);
                 }
             }
             return ret;
@@ -1587,7 +1587,7 @@ namespace Silk.NET.DirectWrite
         {
             var @this = (IDWriteTextLayout1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<IDWriteTextLayout1*, float, float, float, TextRange, int>)@this->LpVtbl[60])(@this, leadingSpacing, trailingSpacing, minimumAdvanceWidth, textRange);
+            ret = ((delegate* unmanaged[Stdcall]<IDWriteTextLayout1*, float, float, float, TextRange, int>)@this->LpVtbl[69])(@this, leadingSpacing, trailingSpacing, minimumAdvanceWidth, textRange);
             return ret;
         }
 
@@ -1596,7 +1596,7 @@ namespace Silk.NET.DirectWrite
         {
             var @this = (IDWriteTextLayout1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<IDWriteTextLayout1*, uint, float*, float*, float*, TextRange*, int>)@this->LpVtbl[61])(@this, currentPosition, leadingSpacing, trailingSpacing, minimumAdvanceWidth, textRange);
+            ret = ((delegate* unmanaged[Stdcall]<IDWriteTextLayout1*, uint, float*, float*, float*, TextRange*, int>)@this->LpVtbl[70])(@this, currentPosition, leadingSpacing, trailingSpacing, minimumAdvanceWidth, textRange);
             return ret;
         }
 
@@ -1607,7 +1607,7 @@ namespace Silk.NET.DirectWrite
             int ret = default;
             fixed (TextRange* textRangePtr = &textRange)
             {
-                ret = ((delegate* unmanaged[Stdcall]<IDWriteTextLayout1*, uint, float*, float*, float*, TextRange*, int>)@this->LpVtbl[61])(@this, currentPosition, leadingSpacing, trailingSpacing, minimumAdvanceWidth, textRangePtr);
+                ret = ((delegate* unmanaged[Stdcall]<IDWriteTextLayout1*, uint, float*, float*, float*, TextRange*, int>)@this->LpVtbl[70])(@this, currentPosition, leadingSpacing, trailingSpacing, minimumAdvanceWidth, textRangePtr);
             }
             return ret;
         }
@@ -1619,7 +1619,7 @@ namespace Silk.NET.DirectWrite
             int ret = default;
             fixed (float* minimumAdvanceWidthPtr = &minimumAdvanceWidth)
             {
-                ret = ((delegate* unmanaged[Stdcall]<IDWriteTextLayout1*, uint, float*, float*, float*, TextRange*, int>)@this->LpVtbl[61])(@this, currentPosition, leadingSpacing, trailingSpacing, minimumAdvanceWidthPtr, textRange);
+                ret = ((delegate* unmanaged[Stdcall]<IDWriteTextLayout1*, uint, float*, float*, float*, TextRange*, int>)@this->LpVtbl[70])(@this, currentPosition, leadingSpacing, trailingSpacing, minimumAdvanceWidthPtr, textRange);
             }
             return ret;
         }
@@ -1633,7 +1633,7 @@ namespace Silk.NET.DirectWrite
             {
                 fixed (TextRange* textRangePtr = &textRange)
                 {
-                    ret = ((delegate* unmanaged[Stdcall]<IDWriteTextLayout1*, uint, float*, float*, float*, TextRange*, int>)@this->LpVtbl[61])(@this, currentPosition, leadingSpacing, trailingSpacing, minimumAdvanceWidthPtr, textRangePtr);
+                    ret = ((delegate* unmanaged[Stdcall]<IDWriteTextLayout1*, uint, float*, float*, float*, TextRange*, int>)@this->LpVtbl[70])(@this, currentPosition, leadingSpacing, trailingSpacing, minimumAdvanceWidthPtr, textRangePtr);
                 }
             }
             return ret;
@@ -1646,7 +1646,7 @@ namespace Silk.NET.DirectWrite
             int ret = default;
             fixed (float* trailingSpacingPtr = &trailingSpacing)
             {
-                ret = ((delegate* unmanaged[Stdcall]<IDWriteTextLayout1*, uint, float*, float*, float*, TextRange*, int>)@this->LpVtbl[61])(@this, currentPosition, leadingSpacing, trailingSpacingPtr, minimumAdvanceWidth, textRange);
+                ret = ((delegate* unmanaged[Stdcall]<IDWriteTextLayout1*, uint, float*, float*, float*, TextRange*, int>)@this->LpVtbl[70])(@this, currentPosition, leadingSpacing, trailingSpacingPtr, minimumAdvanceWidth, textRange);
             }
             return ret;
         }
@@ -1660,7 +1660,7 @@ namespace Silk.NET.DirectWrite
             {
                 fixed (TextRange* textRangePtr = &textRange)
                 {
-                    ret = ((delegate* unmanaged[Stdcall]<IDWriteTextLayout1*, uint, float*, float*, float*, TextRange*, int>)@this->LpVtbl[61])(@this, currentPosition, leadingSpacing, trailingSpacingPtr, minimumAdvanceWidth, textRangePtr);
+                    ret = ((delegate* unmanaged[Stdcall]<IDWriteTextLayout1*, uint, float*, float*, float*, TextRange*, int>)@this->LpVtbl[70])(@this, currentPosition, leadingSpacing, trailingSpacingPtr, minimumAdvanceWidth, textRangePtr);
                 }
             }
             return ret;
@@ -1675,7 +1675,7 @@ namespace Silk.NET.DirectWrite
             {
                 fixed (float* minimumAdvanceWidthPtr = &minimumAdvanceWidth)
                 {
-                    ret = ((delegate* unmanaged[Stdcall]<IDWriteTextLayout1*, uint, float*, float*, float*, TextRange*, int>)@this->LpVtbl[61])(@this, currentPosition, leadingSpacing, trailingSpacingPtr, minimumAdvanceWidthPtr, textRange);
+                    ret = ((delegate* unmanaged[Stdcall]<IDWriteTextLayout1*, uint, float*, float*, float*, TextRange*, int>)@this->LpVtbl[70])(@this, currentPosition, leadingSpacing, trailingSpacingPtr, minimumAdvanceWidthPtr, textRange);
                 }
             }
             return ret;
@@ -1692,7 +1692,7 @@ namespace Silk.NET.DirectWrite
                 {
                     fixed (TextRange* textRangePtr = &textRange)
                     {
-                        ret = ((delegate* unmanaged[Stdcall]<IDWriteTextLayout1*, uint, float*, float*, float*, TextRange*, int>)@this->LpVtbl[61])(@this, currentPosition, leadingSpacing, trailingSpacingPtr, minimumAdvanceWidthPtr, textRangePtr);
+                        ret = ((delegate* unmanaged[Stdcall]<IDWriteTextLayout1*, uint, float*, float*, float*, TextRange*, int>)@this->LpVtbl[70])(@this, currentPosition, leadingSpacing, trailingSpacingPtr, minimumAdvanceWidthPtr, textRangePtr);
                     }
                 }
             }
@@ -1706,7 +1706,7 @@ namespace Silk.NET.DirectWrite
             int ret = default;
             fixed (float* leadingSpacingPtr = &leadingSpacing)
             {
-                ret = ((delegate* unmanaged[Stdcall]<IDWriteTextLayout1*, uint, float*, float*, float*, TextRange*, int>)@this->LpVtbl[61])(@this, currentPosition, leadingSpacingPtr, trailingSpacing, minimumAdvanceWidth, textRange);
+                ret = ((delegate* unmanaged[Stdcall]<IDWriteTextLayout1*, uint, float*, float*, float*, TextRange*, int>)@this->LpVtbl[70])(@this, currentPosition, leadingSpacingPtr, trailingSpacing, minimumAdvanceWidth, textRange);
             }
             return ret;
         }
@@ -1720,7 +1720,7 @@ namespace Silk.NET.DirectWrite
             {
                 fixed (TextRange* textRangePtr = &textRange)
                 {
-                    ret = ((delegate* unmanaged[Stdcall]<IDWriteTextLayout1*, uint, float*, float*, float*, TextRange*, int>)@this->LpVtbl[61])(@this, currentPosition, leadingSpacingPtr, trailingSpacing, minimumAdvanceWidth, textRangePtr);
+                    ret = ((delegate* unmanaged[Stdcall]<IDWriteTextLayout1*, uint, float*, float*, float*, TextRange*, int>)@this->LpVtbl[70])(@this, currentPosition, leadingSpacingPtr, trailingSpacing, minimumAdvanceWidth, textRangePtr);
                 }
             }
             return ret;
@@ -1735,7 +1735,7 @@ namespace Silk.NET.DirectWrite
             {
                 fixed (float* minimumAdvanceWidthPtr = &minimumAdvanceWidth)
                 {
-                    ret = ((delegate* unmanaged[Stdcall]<IDWriteTextLayout1*, uint, float*, float*, float*, TextRange*, int>)@this->LpVtbl[61])(@this, currentPosition, leadingSpacingPtr, trailingSpacing, minimumAdvanceWidthPtr, textRange);
+                    ret = ((delegate* unmanaged[Stdcall]<IDWriteTextLayout1*, uint, float*, float*, float*, TextRange*, int>)@this->LpVtbl[70])(@this, currentPosition, leadingSpacingPtr, trailingSpacing, minimumAdvanceWidthPtr, textRange);
                 }
             }
             return ret;
@@ -1752,7 +1752,7 @@ namespace Silk.NET.DirectWrite
                 {
                     fixed (TextRange* textRangePtr = &textRange)
                     {
-                        ret = ((delegate* unmanaged[Stdcall]<IDWriteTextLayout1*, uint, float*, float*, float*, TextRange*, int>)@this->LpVtbl[61])(@this, currentPosition, leadingSpacingPtr, trailingSpacing, minimumAdvanceWidthPtr, textRangePtr);
+                        ret = ((delegate* unmanaged[Stdcall]<IDWriteTextLayout1*, uint, float*, float*, float*, TextRange*, int>)@this->LpVtbl[70])(@this, currentPosition, leadingSpacingPtr, trailingSpacing, minimumAdvanceWidthPtr, textRangePtr);
                     }
                 }
             }
@@ -1768,7 +1768,7 @@ namespace Silk.NET.DirectWrite
             {
                 fixed (float* trailingSpacingPtr = &trailingSpacing)
                 {
-                    ret = ((delegate* unmanaged[Stdcall]<IDWriteTextLayout1*, uint, float*, float*, float*, TextRange*, int>)@this->LpVtbl[61])(@this, currentPosition, leadingSpacingPtr, trailingSpacingPtr, minimumAdvanceWidth, textRange);
+                    ret = ((delegate* unmanaged[Stdcall]<IDWriteTextLayout1*, uint, float*, float*, float*, TextRange*, int>)@this->LpVtbl[70])(@this, currentPosition, leadingSpacingPtr, trailingSpacingPtr, minimumAdvanceWidth, textRange);
                 }
             }
             return ret;
@@ -1785,7 +1785,7 @@ namespace Silk.NET.DirectWrite
                 {
                     fixed (TextRange* textRangePtr = &textRange)
                     {
-                        ret = ((delegate* unmanaged[Stdcall]<IDWriteTextLayout1*, uint, float*, float*, float*, TextRange*, int>)@this->LpVtbl[61])(@this, currentPosition, leadingSpacingPtr, trailingSpacingPtr, minimumAdvanceWidth, textRangePtr);
+                        ret = ((delegate* unmanaged[Stdcall]<IDWriteTextLayout1*, uint, float*, float*, float*, TextRange*, int>)@this->LpVtbl[70])(@this, currentPosition, leadingSpacingPtr, trailingSpacingPtr, minimumAdvanceWidth, textRangePtr);
                     }
                 }
             }
@@ -1803,7 +1803,7 @@ namespace Silk.NET.DirectWrite
                 {
                     fixed (float* minimumAdvanceWidthPtr = &minimumAdvanceWidth)
                     {
-                        ret = ((delegate* unmanaged[Stdcall]<IDWriteTextLayout1*, uint, float*, float*, float*, TextRange*, int>)@this->LpVtbl[61])(@this, currentPosition, leadingSpacingPtr, trailingSpacingPtr, minimumAdvanceWidthPtr, textRange);
+                        ret = ((delegate* unmanaged[Stdcall]<IDWriteTextLayout1*, uint, float*, float*, float*, TextRange*, int>)@this->LpVtbl[70])(@this, currentPosition, leadingSpacingPtr, trailingSpacingPtr, minimumAdvanceWidthPtr, textRange);
                     }
                 }
             }
@@ -1823,7 +1823,7 @@ namespace Silk.NET.DirectWrite
                     {
                         fixed (TextRange* textRangePtr = &textRange)
                         {
-                            ret = ((delegate* unmanaged[Stdcall]<IDWriteTextLayout1*, uint, float*, float*, float*, TextRange*, int>)@this->LpVtbl[61])(@this, currentPosition, leadingSpacingPtr, trailingSpacingPtr, minimumAdvanceWidthPtr, textRangePtr);
+                            ret = ((delegate* unmanaged[Stdcall]<IDWriteTextLayout1*, uint, float*, float*, float*, TextRange*, int>)@this->LpVtbl[70])(@this, currentPosition, leadingSpacingPtr, trailingSpacingPtr, minimumAdvanceWidthPtr, textRangePtr);
                         }
                     }
                 }

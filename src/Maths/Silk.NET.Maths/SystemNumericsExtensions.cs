@@ -66,7 +66,7 @@ namespace Silk.NET.Maths
         /// </summary>
         /// <param name="value">The source vector</param>
         /// <returns>The converted vector</returns>
-        public static System.Numerics.Vector4 ToSystem(Vector4D<float> value)
+        public static System.Numerics.Vector4 ToSystem(this Vector4D<float> value)
             => new(value.X, value.Y, value.Z, value.W);
 
         /// <summary>
@@ -127,7 +127,7 @@ namespace Silk.NET.Maths
         /// </summary>
         /// <param name="value">The source vector</param>
         /// <returns>The converted vector</returns>
-        public static Vector4D<float> ToGeneric(System.Numerics.Vector4 value)
+        public static Vector4D<float> ToGeneric(this System.Numerics.Vector4 value)
             => new(value.X, value.Y, value.Z, value.W);
     }
 }

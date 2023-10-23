@@ -43,7 +43,7 @@ namespace Silk.NET.Windowing.Sdl
         /// <summary>
         /// Prioritizes the SDL windowing platform over others.
         /// </summary>
-        public static void Use() => Window.PrioritizeSdl();
+        public static void Use() => Window.PrioritizeOrAdd(() => new SdlPlatform(), true);
 
         /// <summary>
         /// Gets a value indicating whether the given view is an SDL view.

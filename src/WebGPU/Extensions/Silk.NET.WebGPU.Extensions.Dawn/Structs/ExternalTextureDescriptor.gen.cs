@@ -133,8 +133,8 @@ namespace Silk.NET.WebGPU.Extensions.Dawn
         [NativeName("Name", "visibleSize")]
         public Extent2D VisibleSize;
 
-        [NativeName("Type", "bool")]
-        [NativeName("Type.Name", "bool")]
+        [NativeName("Type", "WGPUBool")]
+        [NativeName("Type.Name", "WGPUBool")]
         [NativeName("Name", "doYuvToRgbConversionOnly")]
         public Silk.NET.Core.Bool32 DoYuvToRgbConversionOnly;
 
@@ -158,8 +158,8 @@ namespace Silk.NET.WebGPU.Extensions.Dawn
         [NativeName("Name", "gamutConversionMatrix")]
         public float* GamutConversionMatrix;
 
-        [NativeName("Type", "bool")]
-        [NativeName("Type.Name", "bool")]
+        [NativeName("Type", "WGPUBool")]
+        [NativeName("Type.Name", "WGPUBool")]
         [NativeName("Name", "flipY")]
         public Silk.NET.Core.Bool32 FlipY;
 

@@ -357,7 +357,12 @@ public interface IChain<<#= tList #>> : <#= iBaseList #>
     /// <summary>
     /// The first structure in the structure chain.
     /// </summary>
-    TChain Head { get; }
+    TChain Head { get; set; }
+
+    /// <summary>
+    /// A reference to the first structure in the chain.
+    /// </summary>
+    ref TChain HeadRef { get; }
 <#
     }
     else
@@ -366,7 +371,12 @@ public interface IChain<<#= tList #>> : <#= iBaseList #>
     /// <summary>
     /// Structure no. <#= i #> in the structure chain.
     /// </summary>
-    T<#= iM1 #> Item<#= iM1 #> { get; }
+    T<#= iM1 #> Item<#= iM1 #> { get; set; }
+
+    /// <summary>
+    /// A reference to structure no. <#= i #> in the structure chain.
+    /// </summary>
+    ref T<#= iM1 #> Item<#= iM1 #>Ref { get; }
 <#
     }
 #>
@@ -434,6 +444,11 @@ public unsafe sealed class Chain<<#= tList #>> : Chain, IEquatable<Chain<<#= tLi
             ptr->PNext = nextPtr;
         }
     }
+
+    /// <summary>
+    /// Gets a reference to the head of the chain.
+    /// </summary>
+    public ref TChain HeadRef => ref Unsafe.AsRef<TChain>((BaseInStructure*) _headPtr);
 <#
         for (var j = 1; j < i; j++)
         {
@@ -459,6 +474,10 @@ public unsafe sealed class Chain<<#= tList #>> : Chain, IEquatable<Chain<<#= tLi
             ptr->PNext = nextPtr;
         }
     }
+    /// <summary>
+    /// Gets a reference to the second item in the chain.
+    /// </summary>
+    public ref T<#= j #> Item<#= j #>Ref => ref Unsafe.AsRef<T<#= j #>>(Item<#= j #>Ptr);
 <#
         } // for (int j = 1; j < i; j++) {
 #>

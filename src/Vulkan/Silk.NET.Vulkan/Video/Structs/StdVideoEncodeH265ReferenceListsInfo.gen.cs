@@ -23,12 +23,7 @@ namespace Silk.NET.Vulkan.Video
         (
             StdVideoEncodeH265ReferenceListsInfoFlags? flags = null,
             byte? numRefIdxL0ActiveMinus1 = null,
-            byte? numRefIdxL1ActiveMinus1 = null,
-            ushort? reserved1 = null,
-            byte* pRefPicList0Entries = null,
-            byte* pRefPicList1Entries = null,
-            byte* pRefList0Modifications = null,
-            byte* pRefList1Modifications = null
+            byte? numRefIdxL1ActiveMinus1 = null
         ) : this()
         {
             if (flags is not null)
@@ -44,31 +39,6 @@ namespace Silk.NET.Vulkan.Video
             if (numRefIdxL1ActiveMinus1 is not null)
             {
                 NumRefIdxL1ActiveMinus1 = numRefIdxL1ActiveMinus1.Value;
-            }
-
-            if (reserved1 is not null)
-            {
-                Reserved1 = reserved1.Value;
-            }
-
-            if (pRefPicList0Entries is not null)
-            {
-                PRefPicList0Entries = pRefPicList0Entries;
-            }
-
-            if (pRefPicList1Entries is not null)
-            {
-                PRefPicList1Entries = pRefPicList1Entries;
-            }
-
-            if (pRefList0Modifications is not null)
-            {
-                PRefList0Modifications = pRefList0Modifications;
-            }
-
-            if (pRefList1Modifications is not null)
-            {
-                PRefList1Modifications = pRefList1Modifications;
             }
         }
 
@@ -87,30 +57,21 @@ namespace Silk.NET.Vulkan.Video
         [NativeName("Type.Name", "uint8_t")]
         [NativeName("Name", "num_ref_idx_l1_active_minus1")]
         public byte NumRefIdxL1ActiveMinus1;
-
-        [NativeName("Type", "uint16_t")]
-        [NativeName("Type.Name", "uint16_t")]
-        [NativeName("Name", "reserved1")]
-        public ushort Reserved1;
-
-        [NativeName("Type", "const uint8_t *")]
-        [NativeName("Type.Name", "const uint8_t *")]
-        [NativeName("Name", "pRefPicList0Entries")]
-        public byte* PRefPicList0Entries;
-
-        [NativeName("Type", "const uint8_t *")]
-        [NativeName("Type.Name", "const uint8_t *")]
-        [NativeName("Name", "pRefPicList1Entries")]
-        public byte* PRefPicList1Entries;
-
-        [NativeName("Type", "const uint8_t *")]
-        [NativeName("Type.Name", "const uint8_t *")]
-        [NativeName("Name", "pRefList0Modifications")]
-        public byte* PRefList0Modifications;
-
-        [NativeName("Type", "const uint8_t *")]
-        [NativeName("Type.Name", "const uint8_t *")]
-        [NativeName("Name", "pRefList1Modifications")]
-        public byte* PRefList1Modifications;
+        [NativeName("Type", "uint8_t[15]")]
+        [NativeName("Type.Name", "uint8_t[15]")]
+        [NativeName("Name", "RefPicList0")]
+        public fixed byte RefPicList0[15];
+        [NativeName("Type", "uint8_t[15]")]
+        [NativeName("Type.Name", "uint8_t[15]")]
+        [NativeName("Name", "RefPicList1")]
+        public fixed byte RefPicList1[15];
+        [NativeName("Type", "uint8_t[15]")]
+        [NativeName("Type.Name", "uint8_t[15]")]
+        [NativeName("Name", "list_entry_l0")]
+        public fixed byte ListEntryL0[15];
+        [NativeName("Type", "uint8_t[15]")]
+        [NativeName("Type.Name", "uint8_t[15]")]
+        [NativeName("Name", "list_entry_l1")]
+        public fixed byte ListEntryL1[15];
     }
 }

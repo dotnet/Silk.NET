@@ -8,6 +8,7 @@ using System.IO;
 using System.Linq;
 using System.Numerics;
 using System.Text;
+using System.Text.RegularExpressions;
 using ClangSharp;
 using ClangSharp.Interop;
 
@@ -670,5 +671,46 @@ namespace Silk.NET.BuildTools.Common
                             _ => throw new ArgumentOutOfRangeException()
                         }
                         : throw new ArgumentException("failed to parse", nameof(value));
+        /// <summary>
+        /// Separates the input words with underscore
+        /// </summary>
+        /// <param name="input">The string to be underscored</param>
+        /// <returns></returns>
+        public static string LenientUnderscore(this string input)
+        {
+            // This is a modified version of Humanizer's Underscore methods with the following changes:
+            // - The regex ([\p{Ll}\d])([\p{Lu}]) has been replaced with
+            //   ([\p{Ll}\d])(?=[\p{Lu}][\p{Lu}\p{Ll}])([\p{Lu}]) - In this regex, the positive lookahead assertion
+            //   (?=[\p{Lu}][\p{Lu}\p{Ll}]) ensures that the next character after the match is an uppercase letter,
+            //   followed by any letter (uppercase or lowercase). This will only match if the 2nd character after the
+            //   initial match is uppercase. That was suggested by ChatGPT, a human had to add the final
+            //   [\p{Ll}])([\p{Lu}]) to ensure we don't erroneous match non-pascal case strings and to capture the
+            //   second character to ensure we can do the replacement. Still pretty smart though.
+            // - The final ToLower has been omitted as it was not deemed necessary 
+            // - The regex ([\p{Ll}])([\p{Lu}]) has been added to replace lowercase letters followed by an uppercase letter with the 
+            //   same sequence but with an underscore inbetween, 
+            //   this fixes cases like SpvImageFormatR32ui being Spv_Image_FormatR32ui instead of Spv_Image_Format_R32ui
+            return Regex.Replace
+            (
+                Regex.Replace
+                (
+                    Regex.Replace
+                    (
+                        Regex.Replace
+                        (
+                            input, 
+                            @"([\p{Lu}]+)([\p{Lu}][\p{Ll}])", 
+                            "$1_$2"
+                        ),
+                        @"([\p{Ll}])(?=[\p{Lu}][\p{Lu}\p{Ll}])([\p{Lu}])", 
+                        "$1_$2"
+                    ),
+                    @"([\p{Ll}])([\p{Lu}])", 
+                    "$1_$2"
+                ),
+                @"[-\s]", 
+                "_"
+            );
+        }
     }
 }

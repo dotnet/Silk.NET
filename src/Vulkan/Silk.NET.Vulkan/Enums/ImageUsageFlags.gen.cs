@@ -57,6 +57,9 @@ namespace Silk.NET.Vulkan
         [Obsolete("Deprecated in favour of \"FragmentShadingRateAttachmentBitKhr\"")]
         [NativeName("Name", "VK_IMAGE_USAGE_FRAGMENT_SHADING_RATE_ATTACHMENT_BIT_KHR")]
         ImageUsageFragmentShadingRateAttachmentBitKhr = 256,
+        [Obsolete("Deprecated in favour of \"HostTransferBitExt\"")]
+        [NativeName("Name", "VK_IMAGE_USAGE_HOST_TRANSFER_BIT_EXT")]
+        ImageUsageHostTransferBitExt = 4194304,
         [Obsolete("Deprecated in favour of \"VideoEncodeDstBitKhr\"")]
         [NativeName("Name", "VK_IMAGE_USAGE_VIDEO_ENCODE_DST_BIT_KHR")]
         ImageUsageVideoEncodeDstBitKhr = 8192,
@@ -106,6 +109,8 @@ namespace Silk.NET.Vulkan
         FragmentDensityMapBitExt = 512,
         [NativeName("Name", "VK_IMAGE_USAGE_FRAGMENT_SHADING_RATE_ATTACHMENT_BIT_KHR")]
         FragmentShadingRateAttachmentBitKhr = 256,
+        [NativeName("Name", "VK_IMAGE_USAGE_HOST_TRANSFER_BIT_EXT")]
+        HostTransferBitExt = 4194304,
         [NativeName("Name", "VK_IMAGE_USAGE_VIDEO_ENCODE_DST_BIT_KHR")]
         VideoEncodeDstBitKhr = 8192,
         [NativeName("Name", "VK_IMAGE_USAGE_VIDEO_ENCODE_SRC_BIT_KHR")]

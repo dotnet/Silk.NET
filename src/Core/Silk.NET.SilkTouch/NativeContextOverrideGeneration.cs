@@ -25,7 +25,8 @@ namespace Silk.NET.SilkTouch
             ref List<MemberDeclarationSyntax> members,
             ITypeSymbol classSymbol,
             INamedTypeSymbol excludeFromOverrideAttribute,
-            Compilation comp
+            Compilation comp,
+            ref List<(string Class, int Override)> overrideLog
         )
         {
             var overrides = FindNativeContextOverrides(classSymbol);
@@ -80,6 +81,7 @@ namespace Silk.NET.SilkTouch
 
             foreach (var (attSymbol, attId, lib, @override) in overrides.OrderBy(x => x.Item2))
             {
+                overrideLog.Add((classSymbol.ToDisplayString(), attId));
                 var name = NameGenerator.Name($"OVERRIDE_{attId}");
                 members.Add(@override.Type(new(name, lib, entrypoints.Where(x => x.SourceSymbol.GetAttributes()
                     .All(x2 =>
@@ -95,9 +97,20 @@ namespace Silk.NET.SilkTouch
                 (
                     BinaryExpression
                     (
-                        SyntaxKind.EqualsExpression, IdentifierName("name"),
-                        LiteralExpression(SyntaxKind.StringLiteralExpression, Literal(lib))
-                    ), ReturnStatement(ObjectCreationExpression(IdentifierName(name), ArgumentList(), null)),
+                        SyntaxKind.LogicalAndExpression,
+                        MemberAccessExpression
+                        (
+                            SyntaxKind.SimpleMemberAccessExpression,
+                            IdentifierName("SilkTouchRuntimeConfiguration"),
+                            IdentifierName($"{classSymbol.ToDisplayString().Replace(".", "")}PInvokeOverride{attId}")
+                        ),
+                        BinaryExpression
+                        (
+                            SyntaxKind.EqualsExpression, IdentifierName("name"),
+                            LiteralExpression(SyntaxKind.StringLiteralExpression, Literal(lib))
+                        )
+                    ),
+                    ReturnStatement(ObjectCreationExpression(IdentifierName(name), ArgumentList(), null)),
                     ElseClause(arrLast)
                 );
 
@@ -105,9 +118,20 @@ namespace Silk.NET.SilkTouch
                 (
                     BinaryExpression
                     (
-                        SyntaxKind.EqualsExpression, IdentifierName("n"),
-                        LiteralExpression(SyntaxKind.StringLiteralExpression, Literal(lib))
-                    ), ReturnStatement(ObjectCreationExpression(IdentifierName(name), ArgumentList(), null)),
+                        SyntaxKind.LogicalAndExpression,
+                        MemberAccessExpression
+                        (
+                            SyntaxKind.SimpleMemberAccessExpression,
+                            IdentifierName("SilkTouchRuntimeConfiguration"),
+                            IdentifierName($"{classSymbol.ToDisplayString().Replace(".", "")}PInvokeOverride{attId}")
+                        ),
+                        BinaryExpression
+                        (
+                            SyntaxKind.EqualsExpression, IdentifierName("n"),
+                            LiteralExpression(SyntaxKind.StringLiteralExpression, Literal(lib))
+                        )
+                    ),
+                    ReturnStatement(ObjectCreationExpression(IdentifierName(name), ArgumentList(), null)),
                     ElseClause(last)
                 );
             }

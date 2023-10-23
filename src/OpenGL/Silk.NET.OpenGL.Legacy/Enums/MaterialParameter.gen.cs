@@ -12,25 +12,25 @@ namespace Silk.NET.OpenGL.Legacy
     [NativeName("Name", "MaterialParameter")]
     public enum MaterialParameter : int
     {
-        [System.Obsolete]
+        [System.Obsolete("Deprecated in version 3.2")]
         [NativeName("Name", "GL_AMBIENT")]
         Ambient = 0x1200,
-        [System.Obsolete]
+        [System.Obsolete("Deprecated in version 3.2")]
         [NativeName("Name", "GL_DIFFUSE")]
         Diffuse = 0x1201,
-        [System.Obsolete]
+        [System.Obsolete("Deprecated in version 3.2")]
         [NativeName("Name", "GL_SPECULAR")]
         Specular = 0x1202,
-        [System.Obsolete]
+        [System.Obsolete("Deprecated in version 3.2")]
         [NativeName("Name", "GL_EMISSION")]
         Emission = 0x1600,
-        [System.Obsolete]
+        [System.Obsolete("Deprecated in version 3.2")]
         [NativeName("Name", "GL_SHININESS")]
         Shininess = 0x1601,
-        [System.Obsolete]
+        [System.Obsolete("Deprecated in version 3.2")]
         [NativeName("Name", "GL_AMBIENT_AND_DIFFUSE")]
         AmbientAndDiffuse = 0x1602,
-        [System.Obsolete]
+        [System.Obsolete("Deprecated in version 3.2")]
         [NativeName("Name", "GL_COLOR_INDEXES")]
         ColorIndexes = 0x1603,
     }

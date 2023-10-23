@@ -23,10 +23,12 @@ namespace Silk.NET.WebGPU
         (
             ChainedStruct* nextInChain = null,
             byte* label = null,
-            uint? requiredFeaturesCount = null,
+            nuint? requiredFeatureCount = null,
             FeatureName* requiredFeatures = null,
             RequiredLimits* requiredLimits = null,
-            QueueDescriptor? defaultQueue = null
+            QueueDescriptor? defaultQueue = null,
+            PfnDeviceLostCallback? deviceLostCallback = null,
+            void* deviceLostUserdata = null
         ) : this()
         {
             if (nextInChain is not null)
@@ -39,9 +41,9 @@ namespace Silk.NET.WebGPU
                 Label = label;
             }
 
-            if (requiredFeaturesCount is not null)
+            if (requiredFeatureCount is not null)
             {
-                RequiredFeaturesCount = requiredFeaturesCount.Value;
+                RequiredFeatureCount = requiredFeatureCount.Value;
             }
 
             if (requiredFeatures is not null)
@@ -58,6 +60,16 @@ namespace Silk.NET.WebGPU
             {
                 DefaultQueue = defaultQueue.Value;
             }
+
+            if (deviceLostCallback is not null)
+            {
+                DeviceLostCallback = deviceLostCallback.Value;
+            }
+
+            if (deviceLostUserdata is not null)
+            {
+                DeviceLostUserdata = deviceLostUserdata;
+            }
         }
 
 
@@ -71,10 +83,10 @@ namespace Silk.NET.WebGPU
         [NativeName("Name", "label")]
         public byte* Label;
 
-        [NativeName("Type", "uint32_t")]
-        [NativeName("Type.Name", "uint32_t")]
-        [NativeName("Name", "requiredFeaturesCount")]
-        public uint RequiredFeaturesCount;
+        [NativeName("Type", "size_t")]
+        [NativeName("Type.Name", "size_t")]
+        [NativeName("Name", "requiredFeatureCount")]
+        public nuint RequiredFeatureCount;
 
         [NativeName("Type", "const WGPUFeatureName *")]
         [NativeName("Type.Name", "const WGPUFeatureName *")]
@@ -90,5 +102,15 @@ namespace Silk.NET.WebGPU
         [NativeName("Type.Name", "WGPUQueueDescriptor")]
         [NativeName("Name", "defaultQueue")]
         public QueueDescriptor DefaultQueue;
+
+        [NativeName("Type", "WGPUDeviceLostCallback")]
+        [NativeName("Type.Name", "WGPUDeviceLostCallback")]
+        [NativeName("Name", "deviceLostCallback")]
+        public PfnDeviceLostCallback DeviceLostCallback;
+
+        [NativeName("Type", "void *")]
+        [NativeName("Type.Name", "void *")]
+        [NativeName("Name", "deviceLostUserdata")]
+        public void* DeviceLostUserdata;
     }
 }

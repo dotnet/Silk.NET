@@ -11,7 +11,6 @@
     </PropertyGroup>
 
     <ItemGroup>
-      <ProjectReference Include="..\..\..\..\src\WebGPU\Extensions\Silk.NET.WebGPU.Extensions.Disposal\Silk.NET.WebGPU.Extensions.Disposal.csproj" />
       <ProjectReference Include="..\..\..\..\src\WebGPU\Silk.NET.WebGPU\Silk.NET.WebGPU.csproj" />
       <ProjectReference Include="..\..\..\..\src\Windowing\Silk.NET.GLFW\Silk.NET.GLFW.csproj" />
       <ProjectReference Include="..\..\..\..\src\Windowing\Silk.NET.Windowing.Common\Silk.NET.Windowing.Common.csproj" />
@@ -28,7 +27,7 @@
     </ItemGroup>
 
     <ItemGroup>
-      <PackageReference Include="SixLabors.ImageSharp" Version="2.1.4" />
+      <PackageReference Include="SixLabors.ImageSharp" Version="2.1.6" />
     </ItemGroup>
 
 </Project>

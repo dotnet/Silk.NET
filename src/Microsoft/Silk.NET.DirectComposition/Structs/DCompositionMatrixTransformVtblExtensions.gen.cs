@@ -110,7 +110,7 @@ public unsafe static class DCompositionMatrixTransformVtblExtensions
     {
         var @this = thisVtbl.Handle;
         int ret = default;
-        ret = ((delegate* unmanaged[Stdcall]<IDCompositionMatrixTransform*, int, int, float, int>)@this->LpVtbl[4])(@this, row, column, value);
+        ret = ((delegate* unmanaged[Stdcall]<IDCompositionMatrixTransform*, int, int, float, int>)@this->LpVtbl[5])(@this, row, column, value);
         return ret;
     }
 

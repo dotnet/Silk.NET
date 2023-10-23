@@ -6,121 +6,104 @@ using Silk.NET.WebGPU.Extensions.WGPU;
 
 namespace Silk.NET.WebGPU.Extensions.Disposal
 {
+    [Obsolete("Please use the *Release functions on the WebGPU class itself!")]
     public unsafe class WebGPUDisposal
     {
         private readonly WebGPU _webGpu;
 
-        private readonly Dawn.Dawn _dawn;
-        private readonly Wgpu _wgpu;
-
         public WebGPUDisposal(WebGPU webGpu)
         {
             _webGpu = webGpu;
-
-            webGpu.TryGetDeviceExtension(null, out _dawn);
-            webGpu.TryGetDeviceExtension(null, out _wgpu);
         }
 
-        public void Dispose(TextureView* textureView)
+        public void Dispose(TextureView* textureView) 
         {
-            _wgpu?.TextureViewDrop(textureView);
-            _dawn?.TextureViewRelease(textureView);
+            _webGpu.TextureViewRelease(textureView);
         }
 
         public void Dispose(ShaderModule* shaderModule)
         {
-            _wgpu?.ShaderModuleDrop(shaderModule);
-            _dawn?.ShaderModuleRelease(shaderModule);
+            _webGpu.ShaderModuleRelease(shaderModule);
         }
 
         public void Dispose(RenderPipeline* renderPipeline)
         {
-            _wgpu?.RenderPipelineDrop(renderPipeline);
-            _dawn?.RenderPipelineRelease(renderPipeline);
+            _webGpu.RenderPipelineRelease(renderPipeline);
         }
 
         public void Dispose(RenderBundle* renderBundle)
         {
-            _wgpu?.RenderBundleDrop(renderBundle);
-            _dawn?.RenderBundleRelease(renderBundle);
+            _webGpu.RenderBundleRelease(renderBundle);
         }
 
         public void Dispose(PipelineLayout* pipelineLayout)
         {
-            _wgpu?.PipelineLayoutDrop(pipelineLayout);
-            _dawn?.PipelineLayoutRelease(pipelineLayout);
+            _webGpu.PipelineLayoutRelease(pipelineLayout);
         }
 
         public void Dispose(Device* device)
         {
-            _wgpu?.DeviceDrop(device);
-            _dawn?.DeviceRelease(device);
+            _webGpu.DeviceRelease(device);
         }
 
         public void Dispose(CommandEncoder* commandEncoder)
         {
-            _wgpu?.CommandEncoderDrop(commandEncoder);
-            _dawn?.CommandEncoderRelease(commandEncoder);
+            _webGpu.CommandEncoderRelease(commandEncoder);
         }
 
         public void Dispose(CommandBuffer* commandBuffer)
         {
-            _wgpu?.CommandBufferDrop(commandBuffer);
-            _dawn?.CommandBufferRelease(commandBuffer);
+            _webGpu.CommandBufferRelease(commandBuffer);
         }
 
         public void Dispose(ComputePipeline* computePipeline)
         {
-            _wgpu?.ComputePipelineDrop(computePipeline);
-            _dawn?.ComputePipelineRelease(computePipeline);
+            _webGpu.ComputePipelineRelease(computePipeline);
         }
 
         public void Dispose(Adapter* adapter)
         {
-            _wgpu?.AdapterDrop(adapter);
-            _dawn?.AdapterRelease(adapter);
+            _webGpu.AdapterRelease(adapter);
         }
 
         public void Dispose(BindGroup* bindGroup)
         {
-            _wgpu?.BindGroupDrop(bindGroup);
-            _dawn?.BindGroupRelease(bindGroup);
+            _webGpu.BindGroupRelease(bindGroup);
         }
 
         public void Dispose(BindGroupLayout* bindGroupLayout)
         {
-            _wgpu?.BindGroupLayoutDrop(bindGroupLayout);
-            _dawn?.BindGroupLayoutRelease(bindGroupLayout);
+            _webGpu.BindGroupLayoutRelease(bindGroupLayout);
         }
 
         public void Dispose(Buffer* buffer)
         {
-            _wgpu?.BufferDrop(buffer);
-            _dawn?.BufferRelease(buffer);
+            _webGpu.BufferRelease(buffer);
         }
 
         public void Dispose(Surface* surface)
         {
-            _wgpu?.SurfaceDrop(surface);
-            _dawn?.SurfaceRelease(surface);
+            _webGpu.SurfaceRelease(surface);
         }
 
         public void Dispose(Texture* texture)
         {
-            _wgpu?.TextureDrop(texture);
-            _dawn?.TextureRelease(texture);
+            _webGpu.TextureRelease(texture);
         }
 
         public void Dispose(Sampler* sampler)
         {
-            _wgpu?.SamplerDrop(sampler);
-            _dawn?.SamplerRelease(sampler);
+            _webGpu.SamplerRelease(sampler);
         }
 
         public void Dispose(QuerySet* querySet)
         {
-            _wgpu?.QuerySetDrop(querySet);
-            _dawn?.QuerySetRelease(querySet);
+            _webGpu.QuerySetRelease(querySet);
+        }
+
+        public void Dispose(RenderBundleEncoder* renderBundleEncoder)
+        {
+            _webGpu.RenderBundleEncoderRelease(renderBundleEncoder);
         }
     }
 }

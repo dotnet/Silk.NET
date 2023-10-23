@@ -13,6 +13,7 @@
     <_Ultz_NativePackages_Assimp_NativeLibName Condition="'$(_Ultz_NativePackages_Assimp_NativeRuntime)' == 'win-x86'">Assimp32.dll</_Ultz_NativePackages_Assimp_NativeLibName>
     <_Ultz_NativePackages_Assimp_NativeLibName Condition="'$(_Ultz_NativePackages_Assimp_NativeRuntime)' == 'win-x64'">Assimp64.dll</_Ultz_NativePackages_Assimp_NativeLibName>
     <_Ultz_NativePackages_Assimp_NativeLibName Condition="'$(_Ultz_NativePackages_Assimp_NativeRuntime)' == 'osx-x64'">libassimp.5.dylib</_Ultz_NativePackages_Assimp_NativeLibName>
+    <_Ultz_NativePackages_Assimp_NativeLibName Condition="'$(_Ultz_NativePackages_Assimp_NativeRuntime)' == 'osx-arm64'">libassimp.5.dylib</_Ultz_NativePackages_Assimp_NativeLibName>
     <_Ultz_NativePackages_Assimp_NativeLibName Condition="'$(_Ultz_NativePackages_Assimp_NativeRuntime)' == 'linux-x64'">libassimp.so.5</_Ultz_NativePackages_Assimp_NativeLibName>
   </PropertyGroup>
   <ItemGroup>

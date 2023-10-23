@@ -95,6 +95,9 @@ namespace Silk.NET.Vulkan
         [NativeName("Name", "VK_REMAINING_MIP_LEVELS")]
         public const uint RemainingMipLevels = unchecked((uint) (~0U));
         [NativeName("Type", "")]
+        [NativeName("Name", "VK_SHADER_INDEX_UNUSED_AMDX")]
+        public const uint ShaderIndexUnusedAmdx = unchecked((uint) (~0U));
+        [NativeName("Type", "")]
         [NativeName("Name", "VK_SHADER_UNUSED_KHR")]
         public const uint ShaderUnusedKhr = unchecked((uint) (~0U));
         [NativeName("Type", "")]

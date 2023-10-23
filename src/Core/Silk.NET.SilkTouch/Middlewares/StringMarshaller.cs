@@ -62,7 +62,6 @@ namespace Silk.NET.SilkTouch
                 if (b[index]) continue;
                 
                 var marshalAs = ctx.ParameterMarshalOptions[index]?.UnmanagedType ?? Default;
-
                 var charType = ctx.Compilation.CreatePointerTypeSymbol(marshalAs switch
                 {
                     UnmanagedType.BStr => ctx.Compilation.GetSpecialType(SpecialType.System_Char),
@@ -70,6 +69,8 @@ namespace Silk.NET.SilkTouch
                     UnmanagedType.LPStr => ctx.Compilation.GetSpecialType(SpecialType.System_Byte),
                     UnmanagedType.LPTStr => ctx.Compilation.GetSpecialType(SpecialType.System_Byte),
                     UnmanagedType.LPUTF8Str => ctx.Compilation.GetSpecialType(SpecialType.System_Byte),
+                    UnmanagedType.WinString => ctx.Compilation
+                        .GetTypeByMetadataName("Silk.NET.Core.Native.WinString.Header")
                 });
                 
                 var id = ctx.DeclareVariable(charType);
@@ -77,6 +78,7 @@ namespace Silk.NET.SilkTouch
                 var parameter = ctx.ResolveVariable(ctx.ParameterVariables[index]);
                 switch (ctx.MethodSymbol.Parameters[index].RefKind)
                 {
+                    // TODO case RefKind.None when marshalAs == UnmanagedType.WinString (use fixed blocks + DangerousCreate)
                     case RefKind.None:
                     case RefKind.In:
                     case RefKind.Ref:

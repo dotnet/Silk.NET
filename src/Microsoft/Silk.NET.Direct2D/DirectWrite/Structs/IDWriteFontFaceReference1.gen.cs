@@ -339,7 +339,7 @@ namespace Silk.NET.DirectWrite
         {
             var @this = (IDWriteFontFaceReference1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             uint ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<IDWriteFontFaceReference1*, uint>)@this->LpVtbl[17])(@this);
+            ret = ((delegate* unmanaged[Stdcall]<IDWriteFontFaceReference1*, uint>)@this->LpVtbl[18])(@this);
             return ret;
         }
 
@@ -348,7 +348,7 @@ namespace Silk.NET.DirectWrite
         {
             var @this = (IDWriteFontFaceReference1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<IDWriteFontFaceReference1*, FontAxisValue*, uint, int>)@this->LpVtbl[18])(@this, fontAxisValues, fontAxisValueCount);
+            ret = ((delegate* unmanaged[Stdcall]<IDWriteFontFaceReference1*, FontAxisValue*, uint, int>)@this->LpVtbl[19])(@this, fontAxisValues, fontAxisValueCount);
             return ret;
         }
 
@@ -359,7 +359,7 @@ namespace Silk.NET.DirectWrite
             int ret = default;
             fixed (FontAxisValue* fontAxisValuesPtr = &fontAxisValues)
             {
-                ret = ((delegate* unmanaged[Stdcall]<IDWriteFontFaceReference1*, FontAxisValue*, uint, int>)@this->LpVtbl[18])(@this, fontAxisValuesPtr, fontAxisValueCount);
+                ret = ((delegate* unmanaged[Stdcall]<IDWriteFontFaceReference1*, FontAxisValue*, uint, int>)@this->LpVtbl[19])(@this, fontAxisValuesPtr, fontAxisValueCount);
             }
             return ret;
         }

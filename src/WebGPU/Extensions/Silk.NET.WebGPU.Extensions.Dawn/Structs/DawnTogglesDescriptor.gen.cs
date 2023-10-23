@@ -22,9 +22,9 @@ namespace Silk.NET.WebGPU.Extensions.Dawn
         public DawnTogglesDescriptor
         (
             ChainedStruct? chain = null,
-            uint? enabledTogglesCount = null,
+            nuint? enabledToggleCount = null,
             byte** enabledToggles = null,
-            uint? disabledTogglesCount = null,
+            nuint? disabledToggleCount = null,
             byte** disabledToggles = null
         ) : this()
         {
@@ -33,9 +33,9 @@ namespace Silk.NET.WebGPU.Extensions.Dawn
                 Chain = chain.Value;
             }
 
-            if (enabledTogglesCount is not null)
+            if (enabledToggleCount is not null)
             {
-                EnabledTogglesCount = enabledTogglesCount.Value;
+                EnabledToggleCount = enabledToggleCount.Value;
             }
 
             if (enabledToggles is not null)
@@ -43,9 +43,9 @@ namespace Silk.NET.WebGPU.Extensions.Dawn
                 EnabledToggles = enabledToggles;
             }
 
-            if (disabledTogglesCount is not null)
+            if (disabledToggleCount is not null)
             {
-                DisabledTogglesCount = disabledTogglesCount.Value;
+                DisabledToggleCount = disabledToggleCount.Value;
             }
 
             if (disabledToggles is not null)
@@ -60,20 +60,20 @@ namespace Silk.NET.WebGPU.Extensions.Dawn
         [NativeName("Name", "chain")]
         public ChainedStruct Chain;
 
-        [NativeName("Type", "uint32_t")]
-        [NativeName("Type.Name", "uint32_t")]
-        [NativeName("Name", "enabledTogglesCount")]
-        public uint EnabledTogglesCount;
+        [NativeName("Type", "size_t")]
+        [NativeName("Type.Name", "size_t")]
+        [NativeName("Name", "enabledToggleCount")]
+        public nuint EnabledToggleCount;
 
         [NativeName("Type", "const char *const *")]
         [NativeName("Type.Name", "const char *const *")]
         [NativeName("Name", "enabledToggles")]
         public byte** EnabledToggles;
 
-        [NativeName("Type", "uint32_t")]
-        [NativeName("Type.Name", "uint32_t")]
-        [NativeName("Name", "disabledTogglesCount")]
-        public uint DisabledTogglesCount;
+        [NativeName("Type", "size_t")]
+        [NativeName("Type.Name", "size_t")]
+        [NativeName("Name", "disabledToggleCount")]
+        public nuint DisabledToggleCount;
 
         [NativeName("Type", "const char *const *")]
         [NativeName("Type.Name", "const char *const *")]

@@ -16,6 +16,8 @@ namespace Silk.NET.OpenCL
         Platform = 0x1084,
         [NativeName("Name", "CL_CONTEXT_INTEROP_USER_SYNC")]
         InteropUserSync = 0x1085,
+        [NativeName("Name", "CL_CONTEXT_MEMORY_INITIALIZE_KHR")]
+        MemoryInitializeKhr = 0x2030,
         [NativeName("Name", "CL_CONTEXT_TERMINATE_KHR")]
         TerminateKhr = 0x2032,
         [NativeName("Name", "CL_PRINTF_CALLBACK_ARM")]

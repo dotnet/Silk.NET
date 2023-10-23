@@ -89,7 +89,7 @@ public unsafe static class DWriteFontSetBuilder2VtblExtensions
     {
         var @this = thisVtbl.Handle;
         int ret = default;
-        ret = ((delegate* unmanaged[Stdcall]<IDWriteFontSetBuilder2*, IDWriteFontFaceReference*, int>)@this->LpVtbl[3])(@this, fontFaceReference);
+        ret = ((delegate* unmanaged[Stdcall]<IDWriteFontSetBuilder2*, IDWriteFontFaceReference*, int>)@this->LpVtbl[4])(@this, fontFaceReference);
         return ret;
     }
 
@@ -100,7 +100,7 @@ public unsafe static class DWriteFontSetBuilder2VtblExtensions
         int ret = default;
         fixed (IDWriteFontFaceReference* fontFaceReferencePtr = &fontFaceReference)
         {
-            ret = ((delegate* unmanaged[Stdcall]<IDWriteFontSetBuilder2*, IDWriteFontFaceReference*, int>)@this->LpVtbl[3])(@this, fontFaceReferencePtr);
+            ret = ((delegate* unmanaged[Stdcall]<IDWriteFontSetBuilder2*, IDWriteFontFaceReference*, int>)@this->LpVtbl[4])(@this, fontFaceReferencePtr);
         }
         return ret;
     }
@@ -110,7 +110,7 @@ public unsafe static class DWriteFontSetBuilder2VtblExtensions
     {
         var @this = thisVtbl.Handle;
         int ret = default;
-        ret = ((delegate* unmanaged[Stdcall]<IDWriteFontSetBuilder2*, IDWriteFontSet*, int>)@this->LpVtbl[4])(@this, fontSet);
+        ret = ((delegate* unmanaged[Stdcall]<IDWriteFontSetBuilder2*, IDWriteFontSet*, int>)@this->LpVtbl[5])(@this, fontSet);
         return ret;
     }
 
@@ -121,7 +121,7 @@ public unsafe static class DWriteFontSetBuilder2VtblExtensions
         int ret = default;
         fixed (IDWriteFontSet* fontSetPtr = &fontSet)
         {
-            ret = ((delegate* unmanaged[Stdcall]<IDWriteFontSetBuilder2*, IDWriteFontSet*, int>)@this->LpVtbl[4])(@this, fontSetPtr);
+            ret = ((delegate* unmanaged[Stdcall]<IDWriteFontSetBuilder2*, IDWriteFontSet*, int>)@this->LpVtbl[5])(@this, fontSetPtr);
         }
         return ret;
     }
@@ -131,7 +131,7 @@ public unsafe static class DWriteFontSetBuilder2VtblExtensions
     {
         var @this = thisVtbl.Handle;
         int ret = default;
-        ret = ((delegate* unmanaged[Stdcall]<IDWriteFontSetBuilder2*, IDWriteFontSet**, int>)@this->LpVtbl[5])(@this, fontSet);
+        ret = ((delegate* unmanaged[Stdcall]<IDWriteFontSetBuilder2*, IDWriteFontSet**, int>)@this->LpVtbl[6])(@this, fontSet);
         return ret;
     }
 
@@ -142,7 +142,7 @@ public unsafe static class DWriteFontSetBuilder2VtblExtensions
         int ret = default;
         fixed (IDWriteFontSet** fontSetPtr = &fontSet)
         {
-            ret = ((delegate* unmanaged[Stdcall]<IDWriteFontSetBuilder2*, IDWriteFontSet**, int>)@this->LpVtbl[5])(@this, fontSetPtr);
+            ret = ((delegate* unmanaged[Stdcall]<IDWriteFontSetBuilder2*, IDWriteFontSet**, int>)@this->LpVtbl[6])(@this, fontSetPtr);
         }
         return ret;
     }
@@ -152,7 +152,7 @@ public unsafe static class DWriteFontSetBuilder2VtblExtensions
     {
         var @this = thisVtbl.Handle;
         int ret = default;
-        ret = ((delegate* unmanaged[Stdcall]<IDWriteFontSetBuilder2*, IDWriteFontFile*, int>)@this->LpVtbl[6])(@this, fontFile);
+        ret = ((delegate* unmanaged[Stdcall]<IDWriteFontSetBuilder2*, IDWriteFontFile*, int>)@this->LpVtbl[7])(@this, fontFile);
         return ret;
     }
 
@@ -163,7 +163,7 @@ public unsafe static class DWriteFontSetBuilder2VtblExtensions
         int ret = default;
         fixed (IDWriteFontFile* fontFilePtr = &fontFile)
         {
-            ret = ((delegate* unmanaged[Stdcall]<IDWriteFontSetBuilder2*, IDWriteFontFile*, int>)@this->LpVtbl[6])(@this, fontFilePtr);
+            ret = ((delegate* unmanaged[Stdcall]<IDWriteFontSetBuilder2*, IDWriteFontFile*, int>)@this->LpVtbl[7])(@this, fontFilePtr);
         }
         return ret;
     }
@@ -173,7 +173,7 @@ public unsafe static class DWriteFontSetBuilder2VtblExtensions
     {
         var @this = thisVtbl.Handle;
         int ret = default;
-        ret = ((delegate* unmanaged[Stdcall]<IDWriteFontSetBuilder2*, IDWriteFontFile*, uint, FontSimulations, FontAxisValue*, uint, FontAxisRange*, uint, FontProperty*, uint, int>)@this->LpVtbl[7])(@this, fontFile, fontFaceIndex, fontSimulations, fontAxisValues, fontAxisValueCount, fontAxisRanges, fontAxisRangeCount, properties, propertyCount);
+        ret = ((delegate* unmanaged[Stdcall]<IDWriteFontSetBuilder2*, IDWriteFontFile*, uint, FontSimulations, FontAxisValue*, uint, FontAxisRange*, uint, FontProperty*, uint, int>)@this->LpVtbl[8])(@this, fontFile, fontFaceIndex, fontSimulations, fontAxisValues, fontAxisValueCount, fontAxisRanges, fontAxisRangeCount, properties, propertyCount);
         return ret;
     }
 
@@ -184,7 +184,7 @@ public unsafe static class DWriteFontSetBuilder2VtblExtensions
         int ret = default;
         fixed (FontProperty* propertiesPtr = &properties)
         {
-            ret = ((delegate* unmanaged[Stdcall]<IDWriteFontSetBuilder2*, IDWriteFontFile*, uint, FontSimulations, FontAxisValue*, uint, FontAxisRange*, uint, FontProperty*, uint, int>)@this->LpVtbl[7])(@this, fontFile, fontFaceIndex, fontSimulations, fontAxisValues, fontAxisValueCount, fontAxisRanges, fontAxisRangeCount, propertiesPtr, propertyCount);
+            ret = ((delegate* unmanaged[Stdcall]<IDWriteFontSetBuilder2*, IDWriteFontFile*, uint, FontSimulations, FontAxisValue*, uint, FontAxisRange*, uint, FontProperty*, uint, int>)@this->LpVtbl[8])(@this, fontFile, fontFaceIndex, fontSimulations, fontAxisValues, fontAxisValueCount, fontAxisRanges, fontAxisRangeCount, propertiesPtr, propertyCount);
         }
         return ret;
     }
@@ -196,7 +196,7 @@ public unsafe static class DWriteFontSetBuilder2VtblExtensions
         int ret = default;
         fixed (FontAxisRange* fontAxisRangesPtr = &fontAxisRanges)
         {
-            ret = ((delegate* unmanaged[Stdcall]<IDWriteFontSetBuilder2*, IDWriteFontFile*, uint, FontSimulations, FontAxisValue*, uint, FontAxisRange*, uint, FontProperty*, uint, int>)@this->LpVtbl[7])(@this, fontFile, fontFaceIndex, fontSimulations, fontAxisValues, fontAxisValueCount, fontAxisRangesPtr, fontAxisRangeCount, properties, propertyCount);
+            ret = ((delegate* unmanaged[Stdcall]<IDWriteFontSetBuilder2*, IDWriteFontFile*, uint, FontSimulations, FontAxisValue*, uint, FontAxisRange*, uint, FontProperty*, uint, int>)@this->LpVtbl[8])(@this, fontFile, fontFaceIndex, fontSimulations, fontAxisValues, fontAxisValueCount, fontAxisRangesPtr, fontAxisRangeCount, properties, propertyCount);
         }
         return ret;
     }
@@ -210,7 +210,7 @@ public unsafe static class DWriteFontSetBuilder2VtblExtensions
         {
             fixed (FontProperty* propertiesPtr = &properties)
             {
-                ret = ((delegate* unmanaged[Stdcall]<IDWriteFontSetBuilder2*, IDWriteFontFile*, uint, FontSimulations, FontAxisValue*, uint, FontAxisRange*, uint, FontProperty*, uint, int>)@this->LpVtbl[7])(@this, fontFile, fontFaceIndex, fontSimulations, fontAxisValues, fontAxisValueCount, fontAxisRangesPtr, fontAxisRangeCount, propertiesPtr, propertyCount);
+                ret = ((delegate* unmanaged[Stdcall]<IDWriteFontSetBuilder2*, IDWriteFontFile*, uint, FontSimulations, FontAxisValue*, uint, FontAxisRange*, uint, FontProperty*, uint, int>)@this->LpVtbl[8])(@this, fontFile, fontFaceIndex, fontSimulations, fontAxisValues, fontAxisValueCount, fontAxisRangesPtr, fontAxisRangeCount, propertiesPtr, propertyCount);
             }
         }
         return ret;
@@ -223,7 +223,7 @@ public unsafe static class DWriteFontSetBuilder2VtblExtensions
         int ret = default;
         fixed (FontAxisValue* fontAxisValuesPtr = &fontAxisValues)
         {
-            ret = ((delegate* unmanaged[Stdcall]<IDWriteFontSetBuilder2*, IDWriteFontFile*, uint, FontSimulations, FontAxisValue*, uint, FontAxisRange*, uint, FontProperty*, uint, int>)@this->LpVtbl[7])(@this, fontFile, fontFaceIndex, fontSimulations, fontAxisValuesPtr, fontAxisValueCount, fontAxisRanges, fontAxisRangeCount, properties, propertyCount);
+            ret = ((delegate* unmanaged[Stdcall]<IDWriteFontSetBuilder2*, IDWriteFontFile*, uint, FontSimulations, FontAxisValue*, uint, FontAxisRange*, uint, FontProperty*, uint, int>)@this->LpVtbl[8])(@this, fontFile, fontFaceIndex, fontSimulations, fontAxisValuesPtr, fontAxisValueCount, fontAxisRanges, fontAxisRangeCount, properties, propertyCount);
         }
         return ret;
     }
@@ -237,7 +237,7 @@ public unsafe static class DWriteFontSetBuilder2VtblExtensions
         {
             fixed (FontProperty* propertiesPtr = &properties)
             {
-                ret = ((delegate* unmanaged[Stdcall]<IDWriteFontSetBuilder2*, IDWriteFontFile*, uint, FontSimulations, FontAxisValue*, uint, FontAxisRange*, uint, FontProperty*, uint, int>)@this->LpVtbl[7])(@this, fontFile, fontFaceIndex, fontSimulations, fontAxisValuesPtr, fontAxisValueCount, fontAxisRanges, fontAxisRangeCount, propertiesPtr, propertyCount);
+                ret = ((delegate* unmanaged[Stdcall]<IDWriteFontSetBuilder2*, IDWriteFontFile*, uint, FontSimulations, FontAxisValue*, uint, FontAxisRange*, uint, FontProperty*, uint, int>)@this->LpVtbl[8])(@this, fontFile, fontFaceIndex, fontSimulations, fontAxisValuesPtr, fontAxisValueCount, fontAxisRanges, fontAxisRangeCount, propertiesPtr, propertyCount);
             }
         }
         return ret;
@@ -252,7 +252,7 @@ public unsafe static class DWriteFontSetBuilder2VtblExtensions
         {
             fixed (FontAxisRange* fontAxisRangesPtr = &fontAxisRanges)
             {
-                ret = ((delegate* unmanaged[Stdcall]<IDWriteFontSetBuilder2*, IDWriteFontFile*, uint, FontSimulations, FontAxisValue*, uint, FontAxisRange*, uint, FontProperty*, uint, int>)@this->LpVtbl[7])(@this, fontFile, fontFaceIndex, fontSimulations, fontAxisValuesPtr, fontAxisValueCount, fontAxisRangesPtr, fontAxisRangeCount, properties, propertyCount);
+                ret = ((delegate* unmanaged[Stdcall]<IDWriteFontSetBuilder2*, IDWriteFontFile*, uint, FontSimulations, FontAxisValue*, uint, FontAxisRange*, uint, FontProperty*, uint, int>)@this->LpVtbl[8])(@this, fontFile, fontFaceIndex, fontSimulations, fontAxisValuesPtr, fontAxisValueCount, fontAxisRangesPtr, fontAxisRangeCount, properties, propertyCount);
             }
         }
         return ret;
@@ -269,7 +269,7 @@ public unsafe static class DWriteFontSetBuilder2VtblExtensions
             {
                 fixed (FontProperty* propertiesPtr = &properties)
                 {
-                    ret = ((delegate* unmanaged[Stdcall]<IDWriteFontSetBuilder2*, IDWriteFontFile*, uint, FontSimulations, FontAxisValue*, uint, FontAxisRange*, uint, FontProperty*, uint, int>)@this->LpVtbl[7])(@this, fontFile, fontFaceIndex, fontSimulations, fontAxisValuesPtr, fontAxisValueCount, fontAxisRangesPtr, fontAxisRangeCount, propertiesPtr, propertyCount);
+                    ret = ((delegate* unmanaged[Stdcall]<IDWriteFontSetBuilder2*, IDWriteFontFile*, uint, FontSimulations, FontAxisValue*, uint, FontAxisRange*, uint, FontProperty*, uint, int>)@this->LpVtbl[8])(@this, fontFile, fontFaceIndex, fontSimulations, fontAxisValuesPtr, fontAxisValueCount, fontAxisRangesPtr, fontAxisRangeCount, propertiesPtr, propertyCount);
                 }
             }
         }
@@ -283,7 +283,7 @@ public unsafe static class DWriteFontSetBuilder2VtblExtensions
         int ret = default;
         fixed (IDWriteFontFile* fontFilePtr = &fontFile)
         {
-            ret = ((delegate* unmanaged[Stdcall]<IDWriteFontSetBuilder2*, IDWriteFontFile*, uint, FontSimulations, FontAxisValue*, uint, FontAxisRange*, uint, FontProperty*, uint, int>)@this->LpVtbl[7])(@this, fontFilePtr, fontFaceIndex, fontSimulations, fontAxisValues, fontAxisValueCount, fontAxisRanges, fontAxisRangeCount, properties, propertyCount);
+            ret = ((delegate* unmanaged[Stdcall]<IDWriteFontSetBuilder2*, IDWriteFontFile*, uint, FontSimulations, FontAxisValue*, uint, FontAxisRange*, uint, FontProperty*, uint, int>)@this->LpVtbl[8])(@this, fontFilePtr, fontFaceIndex, fontSimulations, fontAxisValues, fontAxisValueCount, fontAxisRanges, fontAxisRangeCount, properties, propertyCount);
         }
         return ret;
     }
@@ -297,7 +297,7 @@ public unsafe static class DWriteFontSetBuilder2VtblExtensions
         {
             fixed (FontProperty* propertiesPtr = &properties)
             {
-                ret = ((delegate* unmanaged[Stdcall]<IDWriteFontSetBuilder2*, IDWriteFontFile*, uint, FontSimulations, FontAxisValue*, uint, FontAxisRange*, uint, FontProperty*, uint, int>)@this->LpVtbl[7])(@this, fontFilePtr, fontFaceIndex, fontSimulations, fontAxisValues, fontAxisValueCount, fontAxisRanges, fontAxisRangeCount, propertiesPtr, propertyCount);
+                ret = ((delegate* unmanaged[Stdcall]<IDWriteFontSetBuilder2*, IDWriteFontFile*, uint, FontSimulations, FontAxisValue*, uint, FontAxisRange*, uint, FontProperty*, uint, int>)@this->LpVtbl[8])(@this, fontFilePtr, fontFaceIndex, fontSimulations, fontAxisValues, fontAxisValueCount, fontAxisRanges, fontAxisRangeCount, propertiesPtr, propertyCount);
             }
         }
         return ret;
@@ -312,7 +312,7 @@ public unsafe static class DWriteFontSetBuilder2VtblExtensions
         {
             fixed (FontAxisRange* fontAxisRangesPtr = &fontAxisRanges)
             {
-                ret = ((delegate* unmanaged[Stdcall]<IDWriteFontSetBuilder2*, IDWriteFontFile*, uint, FontSimulations, FontAxisValue*, uint, FontAxisRange*, uint, FontProperty*, uint, int>)@this->LpVtbl[7])(@this, fontFilePtr, fontFaceIndex, fontSimulations, fontAxisValues, fontAxisValueCount, fontAxisRangesPtr, fontAxisRangeCount, properties, propertyCount);
+                ret = ((delegate* unmanaged[Stdcall]<IDWriteFontSetBuilder2*, IDWriteFontFile*, uint, FontSimulations, FontAxisValue*, uint, FontAxisRange*, uint, FontProperty*, uint, int>)@this->LpVtbl[8])(@this, fontFilePtr, fontFaceIndex, fontSimulations, fontAxisValues, fontAxisValueCount, fontAxisRangesPtr, fontAxisRangeCount, properties, propertyCount);
             }
         }
         return ret;
@@ -329,7 +329,7 @@ public unsafe static class DWriteFontSetBuilder2VtblExtensions
             {
                 fixed (FontProperty* propertiesPtr = &properties)
                 {
-                    ret = ((delegate* unmanaged[Stdcall]<IDWriteFontSetBuilder2*, IDWriteFontFile*, uint, FontSimulations, FontAxisValue*, uint, FontAxisRange*, uint, FontProperty*, uint, int>)@this->LpVtbl[7])(@this, fontFilePtr, fontFaceIndex, fontSimulations, fontAxisValues, fontAxisValueCount, fontAxisRangesPtr, fontAxisRangeCount, propertiesPtr, propertyCount);
+                    ret = ((delegate* unmanaged[Stdcall]<IDWriteFontSetBuilder2*, IDWriteFontFile*, uint, FontSimulations, FontAxisValue*, uint, FontAxisRange*, uint, FontProperty*, uint, int>)@this->LpVtbl[8])(@this, fontFilePtr, fontFaceIndex, fontSimulations, fontAxisValues, fontAxisValueCount, fontAxisRangesPtr, fontAxisRangeCount, propertiesPtr, propertyCount);
                 }
             }
         }
@@ -345,7 +345,7 @@ public unsafe static class DWriteFontSetBuilder2VtblExtensions
         {
             fixed (FontAxisValue* fontAxisValuesPtr = &fontAxisValues)
             {
-                ret = ((delegate* unmanaged[Stdcall]<IDWriteFontSetBuilder2*, IDWriteFontFile*, uint, FontSimulations, FontAxisValue*, uint, FontAxisRange*, uint, FontProperty*, uint, int>)@this->LpVtbl[7])(@this, fontFilePtr, fontFaceIndex, fontSimulations, fontAxisValuesPtr, fontAxisValueCount, fontAxisRanges, fontAxisRangeCount, properties, propertyCount);
+                ret = ((delegate* unmanaged[Stdcall]<IDWriteFontSetBuilder2*, IDWriteFontFile*, uint, FontSimulations, FontAxisValue*, uint, FontAxisRange*, uint, FontProperty*, uint, int>)@this->LpVtbl[8])(@this, fontFilePtr, fontFaceIndex, fontSimulations, fontAxisValuesPtr, fontAxisValueCount, fontAxisRanges, fontAxisRangeCount, properties, propertyCount);
             }
         }
         return ret;
@@ -362,7 +362,7 @@ public unsafe static class DWriteFontSetBuilder2VtblExtensions
             {
                 fixed (FontProperty* propertiesPtr = &properties)
                 {
-                    ret = ((delegate* unmanaged[Stdcall]<IDWriteFontSetBuilder2*, IDWriteFontFile*, uint, FontSimulations, FontAxisValue*, uint, FontAxisRange*, uint, FontProperty*, uint, int>)@this->LpVtbl[7])(@this, fontFilePtr, fontFaceIndex, fontSimulations, fontAxisValuesPtr, fontAxisValueCount, fontAxisRanges, fontAxisRangeCount, propertiesPtr, propertyCount);
+                    ret = ((delegate* unmanaged[Stdcall]<IDWriteFontSetBuilder2*, IDWriteFontFile*, uint, FontSimulations, FontAxisValue*, uint, FontAxisRange*, uint, FontProperty*, uint, int>)@this->LpVtbl[8])(@this, fontFilePtr, fontFaceIndex, fontSimulations, fontAxisValuesPtr, fontAxisValueCount, fontAxisRanges, fontAxisRangeCount, propertiesPtr, propertyCount);
                 }
             }
         }
@@ -380,7 +380,7 @@ public unsafe static class DWriteFontSetBuilder2VtblExtensions
             {
                 fixed (FontAxisRange* fontAxisRangesPtr = &fontAxisRanges)
                 {
-                    ret = ((delegate* unmanaged[Stdcall]<IDWriteFontSetBuilder2*, IDWriteFontFile*, uint, FontSimulations, FontAxisValue*, uint, FontAxisRange*, uint, FontProperty*, uint, int>)@this->LpVtbl[7])(@this, fontFilePtr, fontFaceIndex, fontSimulations, fontAxisValuesPtr, fontAxisValueCount, fontAxisRangesPtr, fontAxisRangeCount, properties, propertyCount);
+                    ret = ((delegate* unmanaged[Stdcall]<IDWriteFontSetBuilder2*, IDWriteFontFile*, uint, FontSimulations, FontAxisValue*, uint, FontAxisRange*, uint, FontProperty*, uint, int>)@this->LpVtbl[8])(@this, fontFilePtr, fontFaceIndex, fontSimulations, fontAxisValuesPtr, fontAxisValueCount, fontAxisRangesPtr, fontAxisRangeCount, properties, propertyCount);
                 }
             }
         }
@@ -400,7 +400,7 @@ public unsafe static class DWriteFontSetBuilder2VtblExtensions
                 {
                     fixed (FontProperty* propertiesPtr = &properties)
                     {
-                        ret = ((delegate* unmanaged[Stdcall]<IDWriteFontSetBuilder2*, IDWriteFontFile*, uint, FontSimulations, FontAxisValue*, uint, FontAxisRange*, uint, FontProperty*, uint, int>)@this->LpVtbl[7])(@this, fontFilePtr, fontFaceIndex, fontSimulations, fontAxisValuesPtr, fontAxisValueCount, fontAxisRangesPtr, fontAxisRangeCount, propertiesPtr, propertyCount);
+                        ret = ((delegate* unmanaged[Stdcall]<IDWriteFontSetBuilder2*, IDWriteFontFile*, uint, FontSimulations, FontAxisValue*, uint, FontAxisRange*, uint, FontProperty*, uint, int>)@this->LpVtbl[8])(@this, fontFilePtr, fontFaceIndex, fontSimulations, fontAxisValuesPtr, fontAxisValueCount, fontAxisRangesPtr, fontAxisRangeCount, propertiesPtr, propertyCount);
                     }
                 }
             }

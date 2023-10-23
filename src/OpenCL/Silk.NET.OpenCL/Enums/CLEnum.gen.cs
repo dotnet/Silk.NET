@@ -111,6 +111,8 @@ namespace Silk.NET.OpenCL
         VyuyIntel = 0x4079,
         [NativeName("Name", "CL_NV12_INTEL")]
         NV12Intel = 0x410E,
+        [NativeName("Name", "CL_DEPTH_STENCIL")]
+        DepthStencil = 0x10BE,
         [NativeName("Name", "CL_SNORM_INT8")]
         SNormInt8 = 0x10D0,
         [NativeName("Name", "CL_SNORM_INT16")]
@@ -143,6 +145,12 @@ namespace Silk.NET.OpenCL
         Float = 0x10DE,
         [NativeName("Name", "CL_UNORM_INT_101010_2")]
         UnormInt1010102 = 0x10E0,
+        [NativeName("Name", "CL_UNORM_INT24")]
+        UnormInt24 = 0x10DF,
+        [NativeName("Name", "CL_UNSIGNED_INT_RAW10_EXT")]
+        UnsignedIntRaw10Ext = 0x10E3,
+        [NativeName("Name", "CL_UNSIGNED_INT_RAW12_EXT")]
+        UnsignedIntRaw12Ext = 0x10E4,
         [NativeName("Name", "CL_COMPLETE")]
         Complete = 0x0,
         [NativeName("Name", "CL_RUNNING")]
@@ -507,6 +515,10 @@ namespace Silk.NET.OpenCL
         InteropUserSync = 0x1085,
         [NativeName("Name", "CL_CONTEXT_INTEROP_USER_SYNC")]
         ContextInteropUserSync = 0x1085,
+        [NativeName("Name", "CL_CONTEXT_MEMORY_INITIALIZE_KHR")]
+        MemoryInitializeKhr = 0x2030,
+        [NativeName("Name", "CL_CONTEXT_MEMORY_INITIALIZE_KHR")]
+        ContextMemoryInitializeKhr = 0x2030,
         [NativeName("Name", "CL_CONTEXT_TERMINATE_KHR")]
         TerminateKhr = 0x2032,
         [NativeName("Name", "CL_CONTEXT_TERMINATE_KHR")]
@@ -1422,6 +1434,10 @@ namespace Silk.NET.OpenCL
         ExternalMemoryImportHandleTypesKhr = 0x204F,
         [NativeName("Name", "CL_DEVICE_EXTERNAL_MEMORY_IMPORT_HANDLE_TYPES_KHR")]
         DeviceExternalMemoryImportHandleTypesKhr = 0x204F,
+        [NativeName("Name", "CL_DEVICE_EXTERNAL_MEMORY_IMPORT_ASSUME_LINEAR_IMAGES_HANDLE_TYPES_KHR")]
+        ExternalMemoryImportAssumeLinearImagesHandleTypesKhr = 0x2052,
+        [NativeName("Name", "CL_DEVICE_EXTERNAL_MEMORY_IMPORT_ASSUME_LINEAR_IMAGES_HANDLE_TYPES_KHR")]
+        DeviceExternalMemoryImportAssumeLinearImagesHandleTypesKhr = 0x2052,
         [NativeName("Name", "CL_DEVICE_COMMAND_BUFFER_CAPABILITIES_KHR")]
         CommandBufferCapabilitiesKhr = 0x12A9,
         [NativeName("Name", "CL_DEVICE_COMMAND_BUFFER_CAPABILITIES_KHR")]
@@ -1450,6 +1466,14 @@ namespace Silk.NET.OpenCL
         MutableDispatchCapabilitiesKhr = 0x12B0,
         [NativeName("Name", "CL_DEVICE_MUTABLE_DISPATCH_CAPABILITIES_KHR")]
         DeviceMutableDispatchCapabilitiesKhr = 0x12B0,
+        [NativeName("Name", "CL_DEVICE_COMMAND_BUFFER_NUM_SYNC_DEVICES_KHR")]
+        CommandBufferNumSyncDevicesKhr = 0x12AB,
+        [NativeName("Name", "CL_DEVICE_COMMAND_BUFFER_NUM_SYNC_DEVICES_KHR")]
+        DeviceCommandBufferNumSyncDevicesKhr = 0x12AB,
+        [NativeName("Name", "CL_DEVICE_COMMAND_BUFFER_SYNC_DEVICES_KHR")]
+        CommandBufferSyncDevicesKhr = 0x12AC,
+        [NativeName("Name", "CL_DEVICE_COMMAND_BUFFER_SYNC_DEVICES_KHR")]
+        DeviceCommandBufferSyncDevicesKhr = 0x12AC,
         [NativeName("Name", "CL_LOCAL")]
         Local = 0x1,
         [NativeName("Name", "CL_GLOBAL")]
@@ -2231,9 +2255,15 @@ namespace Silk.NET.OpenCL
         [NativeName("Name", "CL_MEM_OBJECT_PIPE")]
         MemObjectPipe = 0x10F7,
         [NativeName("Name", "CL_MEM_ALLOC_FLAGS_IMG")]
+        AllocFlagsImg = 0x40D7,
+        [NativeName("Name", "CL_MEM_ALLOC_FLAGS_IMG")]
         MemAllocFlagsImg = 0x40D7,
-        [NativeName("Name", "CL_DEVICE_HANDLE_LIST_KHR")]
+        [NativeName("Name", "CL_MEM_DEVICE_HANDLE_LIST_KHR")]
         DeviceHandleListKhr = 0x2051,
+        [NativeName("Name", "CL_MEM_DEVICE_HANDLE_LIST_KHR")]
+        MemDeviceHandleListKhr = 0x2051,
+        [NativeName("Name", "CL_MEM_LOCALLY_UNCACHED_RESOURCE_INTEL")]
+        LocallyUncachedResourceIntel = 0x4218,
         [NativeName("Name", "CL_MEM_LOCALLY_UNCACHED_RESOURCE_INTEL")]
         MemLocallyUncachedResourceIntel = 0x4218,
         [NativeName("Name", "CL_MEM_DEVICE_ID_INTEL")]
@@ -2272,6 +2302,8 @@ namespace Silk.NET.OpenCL
         PlatformSemaphoreExportHandleTypesKhr = 0x2038,
         [NativeName("Name", "CL_PLATFORM_EXTERNAL_MEMORY_IMPORT_HANDLE_TYPES_KHR")]
         PlatformExternalMemoryImportHandleTypesKhr = 0x2044,
+        [NativeName("Name", "CL_PLATFORM_COMMAND_BUFFER_CAPABILITIES_KHR")]
+        PlatformCommandBufferCapabilitiesKhr = 0x908,
         [NativeName("Name", "CL_PROFILING_COMMAND_SUBMIT")]
         Submit = 0x1281,
         [NativeName("Name", "CL_PROFILING_COMMAND_START")]
@@ -2362,6 +2394,10 @@ namespace Silk.NET.OpenCL
         DeferredFlushArm = 0x41EC,
         [NativeName("Name", "CL_QUEUE_DEFERRED_FLUSH_ARM")]
         QueueDeferredFlushArm = 0x41EC,
+        [NativeName("Name", "CL_QUEUE_COMPUTE_UNIT_LIMIT_ARM")]
+        ComputeUnitLimitArm = 0x41F3,
+        [NativeName("Name", "CL_QUEUE_COMPUTE_UNIT_LIMIT_ARM")]
+        QueueComputeUnitLimitArm = 0x41F3,
         [NativeName("Name", "CL_QUEUE_FAMILY_INTEL")]
         FamilyIntel = 0x418C,
         [NativeName("Name", "CL_QUEUE_FAMILY_INTEL")]
@@ -2462,9 +2498,5 @@ namespace Silk.NET.OpenCL
         LayerApiVersion = 0x4240,
         [NativeName("Name", "CL_LAYER_NAME")]
         LayerName = 0x4241,
-        [NativeName("Name", "CL_DEPTH_STENCIL")]
-        DepthStencil = 0x10BE,
-        [NativeName("Name", "CL_UNORM_INT24")]
-        UnormInt24 = 0x10DF,
     }
 }

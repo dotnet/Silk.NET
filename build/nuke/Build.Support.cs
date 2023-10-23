@@ -36,7 +36,7 @@ partial class Build
 
     [Parameter("Outputs build warnings instead of keeping the MSBuild logging quiet with just errors.")]
     bool Warnings;
-    
+
     static int IndexOfOrThrow(string x, char y)
     {
         var idx = x.IndexOf(y);
@@ -116,7 +116,10 @@ partial class Build
         {
             try
             {
-                DotNet("dotnet nuget remove source \"Silk-PushPackages\"");
+                if (DotNet("dotnet nuget list source").Any(x => x.Text.Contains("Silk-PushPackages")))
+                {
+                    DotNet("dotnet nuget remove source \"Silk-PushPackages\"");
+                }
             }
             catch
             {
@@ -127,9 +130,9 @@ partial class Build
     );
 
     AbsolutePath SourceDirectory => RootDirectory / "src";
-    
+
     ConcurrentDictionary<Target, Target> Targets = new();
-    static Target GetEmptyTarget() => _ => _.Executes(() => {});
+    static Target GetEmptyTarget() => _ => _.Executes(() => { });
     Target CommonTarget([CanBeNull] Target actualTarget = null) => Targets.GetOrAdd
     (
         actualTarget ??= GetEmptyTarget(), def =>
@@ -147,7 +150,7 @@ partial class Build
             Logger.Info("GitHub token not found, skipping writing a comment.");
             return;
         }
-        
+
         var @ref = GitHubActions.Instance?.Ref;
         if (string.IsNullOrWhiteSpace(@ref))
         {
@@ -167,7 +170,7 @@ partial class Build
             Logger.Info($"Couldn't parse {@prMatch.Groups[1].Value} as an int, skipping writing a comment.");
             return;
         }
-        
+
         var github = new GitHubClient
         (
             new ProductHeaderValue("Silk.NET-CI"),
@@ -189,7 +192,7 @@ partial class Build
         {
             commentText = commentText.Replace($"{{{key}}}", value);
         }
-        
+
         commentText = commentText.Replace("{actionsRun}", GitHubActions.Instance?.RunNumber.ToString())
             .Replace("{typeId}", type);
 
@@ -213,7 +216,7 @@ partial class Build
         var finalArgs = arguments.RenderForExecution();
         if (!Warnings)
         {
-            finalArgs += " /clp:ErrorsOnly";
+            finalArgs += " /clp:errorsonly";
         }
 
         using var proc = StartProcess

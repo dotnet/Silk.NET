@@ -1,7 +1,7 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFrameworks>netstandard2.0;netstandard2.1;netcoreapp3.1;net5.0</TargetFrameworks>
+    <TargetFrameworks>netstandard2.0;netstandard2.1;netcoreapp3.1;net5.0;net6.0</TargetFrameworks>
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
     <LangVersion>preview</LangVersion>
   </PropertyGroup>
@@ -20,6 +20,8 @@
 
   <ItemGroup>
     <ProjectReference Include="..\..\Maths\Silk.NET.Maths\Silk.NET.Maths.csproj" />
+    <SilkPInvokeOverride Include="1" SilkClass="Silk.NET.SDL.Sdl" DownstreamCondition="%24(TargetFramework.Contains('android'))" />
+    <SilkPInvokeOverride Include="0" SilkClass="Silk.NET.SDL.Sdl" DownstreamCondition="%24(TargetFramework.Contains('ios')) or %24(TargetFramework.Contains('mac')) or %24(TargetFramework.Contains('tvos'))" />
   </ItemGroup>
 
   <Import Project="..\..\..\build\props\bindings.props" />

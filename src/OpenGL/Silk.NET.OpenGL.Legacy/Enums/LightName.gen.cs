@@ -12,28 +12,28 @@ namespace Silk.NET.OpenGL.Legacy
     [NativeName("Name", "LightName")]
     public enum LightName : int
     {
-        [System.Obsolete]
+        [System.Obsolete("Deprecated in version 3.2")]
         [NativeName("Name", "GL_LIGHT0")]
         Light0 = 0x4000,
-        [System.Obsolete]
+        [System.Obsolete("Deprecated in version 3.2")]
         [NativeName("Name", "GL_LIGHT1")]
         Light1 = 0x4001,
-        [System.Obsolete]
+        [System.Obsolete("Deprecated in version 3.2")]
         [NativeName("Name", "GL_LIGHT2")]
         Light2 = 0x4002,
-        [System.Obsolete]
+        [System.Obsolete("Deprecated in version 3.2")]
         [NativeName("Name", "GL_LIGHT3")]
         Light3 = 0x4003,
-        [System.Obsolete]
+        [System.Obsolete("Deprecated in version 3.2")]
         [NativeName("Name", "GL_LIGHT4")]
         Light4 = 0x4004,
-        [System.Obsolete]
+        [System.Obsolete("Deprecated in version 3.2")]
         [NativeName("Name", "GL_LIGHT5")]
         Light5 = 0x4005,
-        [System.Obsolete]
+        [System.Obsolete("Deprecated in version 3.2")]
         [NativeName("Name", "GL_LIGHT6")]
         Light6 = 0x4006,
-        [System.Obsolete]
+        [System.Obsolete("Deprecated in version 3.2")]
         [NativeName("Name", "GL_LIGHT7")]
         Light7 = 0x4007,
         [NativeName("Name", "GL_FRAGMENT_LIGHT0_SGIX")]

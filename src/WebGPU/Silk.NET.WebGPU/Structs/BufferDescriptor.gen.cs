@@ -75,8 +75,8 @@ namespace Silk.NET.WebGPU
         [NativeName("Name", "size")]
         public ulong Size;
 
-        [NativeName("Type", "bool")]
-        [NativeName("Type.Name", "bool")]
+        [NativeName("Type", "WGPUBool")]
+        [NativeName("Type.Name", "WGPUBool")]
         [NativeName("Name", "mappedAtCreation")]
         public Silk.NET.Core.Bool32 MappedAtCreation;
     }

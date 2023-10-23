@@ -131,7 +131,7 @@ public unsafe static class DCompositionColorMatrixEffectVtblExtensions
     {
         var @this = thisVtbl.Handle;
         int ret = default;
-        ret = ((delegate* unmanaged[Stdcall]<IDCompositionColorMatrixEffect*, int, int, float, int>)@this->LpVtbl[5])(@this, row, column, value);
+        ret = ((delegate* unmanaged[Stdcall]<IDCompositionColorMatrixEffect*, int, int, float, int>)@this->LpVtbl[6])(@this, row, column, value);
         return ret;
     }
 
@@ -140,7 +140,7 @@ public unsafe static class DCompositionColorMatrixEffectVtblExtensions
     {
         var @this = thisVtbl.Handle;
         int ret = default;
-        ret = ((delegate* unmanaged[Stdcall]<IDCompositionColorMatrixEffect*, Silk.NET.Direct2D.ColormatrixAlphaMode, int>)@this->LpVtbl[6])(@this, mode);
+        ret = ((delegate* unmanaged[Stdcall]<IDCompositionColorMatrixEffect*, Silk.NET.Direct2D.ColormatrixAlphaMode, int>)@this->LpVtbl[7])(@this, mode);
         return ret;
     }
 
@@ -149,7 +149,7 @@ public unsafe static class DCompositionColorMatrixEffectVtblExtensions
     {
         var @this = thisVtbl.Handle;
         int ret = default;
-        ret = ((delegate* unmanaged[Stdcall]<IDCompositionColorMatrixEffect*, Silk.NET.Core.Bool32, int>)@this->LpVtbl[7])(@this, clamp);
+        ret = ((delegate* unmanaged[Stdcall]<IDCompositionColorMatrixEffect*, Silk.NET.Core.Bool32, int>)@this->LpVtbl[8])(@this, clamp);
         return ret;
     }
 

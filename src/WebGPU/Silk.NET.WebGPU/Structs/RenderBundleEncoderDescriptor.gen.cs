@@ -23,7 +23,7 @@ namespace Silk.NET.WebGPU
         (
             ChainedStruct* nextInChain = null,
             byte* label = null,
-            uint? colorFormatsCount = null,
+            nuint? colorFormatCount = null,
             TextureFormat* colorFormats = null,
             TextureFormat? depthStencilFormat = null,
             uint? sampleCount = null,
@@ -41,9 +41,9 @@ namespace Silk.NET.WebGPU
                 Label = label;
             }
 
-            if (colorFormatsCount is not null)
+            if (colorFormatCount is not null)
             {
-                ColorFormatsCount = colorFormatsCount.Value;
+                ColorFormatCount = colorFormatCount.Value;
             }
 
             if (colorFormats is not null)
@@ -83,10 +83,10 @@ namespace Silk.NET.WebGPU
         [NativeName("Name", "label")]
         public byte* Label;
 
-        [NativeName("Type", "uint32_t")]
-        [NativeName("Type.Name", "uint32_t")]
-        [NativeName("Name", "colorFormatsCount")]
-        public uint ColorFormatsCount;
+        [NativeName("Type", "size_t")]
+        [NativeName("Type.Name", "size_t")]
+        [NativeName("Name", "colorFormatCount")]
+        public nuint ColorFormatCount;
 
         [NativeName("Type", "const WGPUTextureFormat *")]
         [NativeName("Type.Name", "const WGPUTextureFormat *")]
@@ -103,13 +103,13 @@ namespace Silk.NET.WebGPU
         [NativeName("Name", "sampleCount")]
         public uint SampleCount;
 
-        [NativeName("Type", "bool")]
-        [NativeName("Type.Name", "bool")]
+        [NativeName("Type", "WGPUBool")]
+        [NativeName("Type.Name", "WGPUBool")]
         [NativeName("Name", "depthReadOnly")]
         public Silk.NET.Core.Bool32 DepthReadOnly;
 
-        [NativeName("Type", "bool")]
-        [NativeName("Type.Name", "bool")]
+        [NativeName("Type", "WGPUBool")]
+        [NativeName("Type.Name", "WGPUBool")]
         [NativeName("Name", "stencilReadOnly")]
         public Silk.NET.Core.Bool32 StencilReadOnly;
     }

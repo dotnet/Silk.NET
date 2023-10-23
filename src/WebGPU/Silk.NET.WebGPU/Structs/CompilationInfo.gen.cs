@@ -22,7 +22,7 @@ namespace Silk.NET.WebGPU
         public CompilationInfo
         (
             ChainedStruct* nextInChain = null,
-            uint? messageCount = null,
+            nuint? messageCount = null,
             CompilationMessage* messages = null
         ) : this()
         {
@@ -48,10 +48,10 @@ namespace Silk.NET.WebGPU
         [NativeName("Name", "nextInChain")]
         public ChainedStruct* NextInChain;
 
-        [NativeName("Type", "uint32_t")]
-        [NativeName("Type.Name", "uint32_t")]
+        [NativeName("Type", "size_t")]
+        [NativeName("Type.Name", "size_t")]
         [NativeName("Name", "messageCount")]
-        public uint MessageCount;
+        public nuint MessageCount;
 
         [NativeName("Type", "const WGPUCompilationMessage *")]
         [NativeName("Type.Name", "const WGPUCompilationMessage *")]

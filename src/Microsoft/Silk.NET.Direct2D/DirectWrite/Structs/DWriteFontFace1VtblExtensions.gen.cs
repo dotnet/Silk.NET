@@ -995,7 +995,7 @@ public unsafe static class DWriteFontFace1VtblExtensions
     public static unsafe void GetCaretMetrics(this ComPtr<IDWriteFontFace1> thisVtbl, CaretMetrics* caretMetrics)
     {
         var @this = thisVtbl.Handle;
-        ((delegate* unmanaged[Stdcall]<IDWriteFontFace1*, CaretMetrics*, void>)@this->LpVtbl[18])(@this, caretMetrics);
+        ((delegate* unmanaged[Stdcall]<IDWriteFontFace1*, CaretMetrics*, void>)@this->LpVtbl[20])(@this, caretMetrics);
     }
 
     /// <summary>To be documented.</summary>
@@ -1004,7 +1004,7 @@ public unsafe static class DWriteFontFace1VtblExtensions
         var @this = thisVtbl.Handle;
         fixed (CaretMetrics* caretMetricsPtr = &caretMetrics)
         {
-            ((delegate* unmanaged[Stdcall]<IDWriteFontFace1*, CaretMetrics*, void>)@this->LpVtbl[18])(@this, caretMetricsPtr);
+            ((delegate* unmanaged[Stdcall]<IDWriteFontFace1*, CaretMetrics*, void>)@this->LpVtbl[20])(@this, caretMetricsPtr);
         }
     }
 
@@ -1013,7 +1013,7 @@ public unsafe static class DWriteFontFace1VtblExtensions
     {
         var @this = thisVtbl.Handle;
         int ret = default;
-        ret = ((delegate* unmanaged[Stdcall]<IDWriteFontFace1*, uint, UnicodeRange*, uint*, int>)@this->LpVtbl[19])(@this, maxRangeCount, unicodeRanges, actualRangeCount);
+        ret = ((delegate* unmanaged[Stdcall]<IDWriteFontFace1*, uint, UnicodeRange*, uint*, int>)@this->LpVtbl[21])(@this, maxRangeCount, unicodeRanges, actualRangeCount);
         return ret;
     }
 
@@ -1024,7 +1024,7 @@ public unsafe static class DWriteFontFace1VtblExtensions
         int ret = default;
         fixed (uint* actualRangeCountPtr = &actualRangeCount)
         {
-            ret = ((delegate* unmanaged[Stdcall]<IDWriteFontFace1*, uint, UnicodeRange*, uint*, int>)@this->LpVtbl[19])(@this, maxRangeCount, unicodeRanges, actualRangeCountPtr);
+            ret = ((delegate* unmanaged[Stdcall]<IDWriteFontFace1*, uint, UnicodeRange*, uint*, int>)@this->LpVtbl[21])(@this, maxRangeCount, unicodeRanges, actualRangeCountPtr);
         }
         return ret;
     }
@@ -1036,7 +1036,7 @@ public unsafe static class DWriteFontFace1VtblExtensions
         int ret = default;
         fixed (UnicodeRange* unicodeRangesPtr = &unicodeRanges)
         {
-            ret = ((delegate* unmanaged[Stdcall]<IDWriteFontFace1*, uint, UnicodeRange*, uint*, int>)@this->LpVtbl[19])(@this, maxRangeCount, unicodeRangesPtr, actualRangeCount);
+            ret = ((delegate* unmanaged[Stdcall]<IDWriteFontFace1*, uint, UnicodeRange*, uint*, int>)@this->LpVtbl[21])(@this, maxRangeCount, unicodeRangesPtr, actualRangeCount);
         }
         return ret;
     }
@@ -1050,7 +1050,7 @@ public unsafe static class DWriteFontFace1VtblExtensions
         {
             fixed (uint* actualRangeCountPtr = &actualRangeCount)
             {
-                ret = ((delegate* unmanaged[Stdcall]<IDWriteFontFace1*, uint, UnicodeRange*, uint*, int>)@this->LpVtbl[19])(@this, maxRangeCount, unicodeRangesPtr, actualRangeCountPtr);
+                ret = ((delegate* unmanaged[Stdcall]<IDWriteFontFace1*, uint, UnicodeRange*, uint*, int>)@this->LpVtbl[21])(@this, maxRangeCount, unicodeRangesPtr, actualRangeCountPtr);
             }
         }
         return ret;
@@ -1061,7 +1061,7 @@ public unsafe static class DWriteFontFace1VtblExtensions
     {
         var @this = thisVtbl.Handle;
         Silk.NET.Core.Bool32 ret = default;
-        ret = ((delegate* unmanaged[Stdcall]<IDWriteFontFace1*, Silk.NET.Core.Bool32>)@this->LpVtbl[20])(@this);
+        ret = ((delegate* unmanaged[Stdcall]<IDWriteFontFace1*, Silk.NET.Core.Bool32>)@this->LpVtbl[22])(@this);
         return ret;
     }
 
@@ -1070,7 +1070,7 @@ public unsafe static class DWriteFontFace1VtblExtensions
     {
         var @this = thisVtbl.Handle;
         int ret = default;
-        ret = ((delegate* unmanaged[Stdcall]<IDWriteFontFace1*, uint, ushort*, int*, Silk.NET.Core.Bool32, int>)@this->LpVtbl[21])(@this, glyphCount, glyphIndices, glyphAdvances, isSideways);
+        ret = ((delegate* unmanaged[Stdcall]<IDWriteFontFace1*, uint, ushort*, int*, Silk.NET.Core.Bool32, int>)@this->LpVtbl[23])(@this, glyphCount, glyphIndices, glyphAdvances, isSideways);
         return ret;
     }
 
@@ -1081,7 +1081,7 @@ public unsafe static class DWriteFontFace1VtblExtensions
         int ret = default;
         fixed (int* glyphAdvancesPtr = &glyphAdvances)
         {
-            ret = ((delegate* unmanaged[Stdcall]<IDWriteFontFace1*, uint, ushort*, int*, Silk.NET.Core.Bool32, int>)@this->LpVtbl[21])(@this, glyphCount, glyphIndices, glyphAdvancesPtr, isSideways);
+            ret = ((delegate* unmanaged[Stdcall]<IDWriteFontFace1*, uint, ushort*, int*, Silk.NET.Core.Bool32, int>)@this->LpVtbl[23])(@this, glyphCount, glyphIndices, glyphAdvancesPtr, isSideways);
         }
         return ret;
     }
@@ -1093,7 +1093,7 @@ public unsafe static class DWriteFontFace1VtblExtensions
         int ret = default;
         fixed (ushort* glyphIndicesPtr = &glyphIndices)
         {
-            ret = ((delegate* unmanaged[Stdcall]<IDWriteFontFace1*, uint, ushort*, int*, Silk.NET.Core.Bool32, int>)@this->LpVtbl[21])(@this, glyphCount, glyphIndicesPtr, glyphAdvances, isSideways);
+            ret = ((delegate* unmanaged[Stdcall]<IDWriteFontFace1*, uint, ushort*, int*, Silk.NET.Core.Bool32, int>)@this->LpVtbl[23])(@this, glyphCount, glyphIndicesPtr, glyphAdvances, isSideways);
         }
         return ret;
     }
@@ -1107,7 +1107,7 @@ public unsafe static class DWriteFontFace1VtblExtensions
         {
             fixed (int* glyphAdvancesPtr = &glyphAdvances)
             {
-                ret = ((delegate* unmanaged[Stdcall]<IDWriteFontFace1*, uint, ushort*, int*, Silk.NET.Core.Bool32, int>)@this->LpVtbl[21])(@this, glyphCount, glyphIndicesPtr, glyphAdvancesPtr, isSideways);
+                ret = ((delegate* unmanaged[Stdcall]<IDWriteFontFace1*, uint, ushort*, int*, Silk.NET.Core.Bool32, int>)@this->LpVtbl[23])(@this, glyphCount, glyphIndicesPtr, glyphAdvancesPtr, isSideways);
             }
         }
         return ret;
@@ -1118,7 +1118,7 @@ public unsafe static class DWriteFontFace1VtblExtensions
     {
         var @this = thisVtbl.Handle;
         int ret = default;
-        ret = ((delegate* unmanaged[Stdcall]<IDWriteFontFace1*, float, float, Matrix*, Silk.NET.Core.Bool32, Silk.NET.Core.Bool32, uint, ushort*, int*, int>)@this->LpVtbl[22])(@this, emSize, pixelsPerDip, transform, useGdiNatural, isSideways, glyphCount, glyphIndices, glyphAdvances);
+        ret = ((delegate* unmanaged[Stdcall]<IDWriteFontFace1*, float, float, Matrix*, Silk.NET.Core.Bool32, Silk.NET.Core.Bool32, uint, ushort*, int*, int>)@this->LpVtbl[24])(@this, emSize, pixelsPerDip, transform, useGdiNatural, isSideways, glyphCount, glyphIndices, glyphAdvances);
         return ret;
     }
 
@@ -1129,7 +1129,7 @@ public unsafe static class DWriteFontFace1VtblExtensions
         int ret = default;
         fixed (int* glyphAdvancesPtr = &glyphAdvances)
         {
-            ret = ((delegate* unmanaged[Stdcall]<IDWriteFontFace1*, float, float, Matrix*, Silk.NET.Core.Bool32, Silk.NET.Core.Bool32, uint, ushort*, int*, int>)@this->LpVtbl[22])(@this, emSize, pixelsPerDip, transform, useGdiNatural, isSideways, glyphCount, glyphIndices, glyphAdvancesPtr);
+            ret = ((delegate* unmanaged[Stdcall]<IDWriteFontFace1*, float, float, Matrix*, Silk.NET.Core.Bool32, Silk.NET.Core.Bool32, uint, ushort*, int*, int>)@this->LpVtbl[24])(@this, emSize, pixelsPerDip, transform, useGdiNatural, isSideways, glyphCount, glyphIndices, glyphAdvancesPtr);
         }
         return ret;
     }
@@ -1141,7 +1141,7 @@ public unsafe static class DWriteFontFace1VtblExtensions
         int ret = default;
         fixed (ushort* glyphIndicesPtr = &glyphIndices)
         {
-            ret = ((delegate* unmanaged[Stdcall]<IDWriteFontFace1*, float, float, Matrix*, Silk.NET.Core.Bool32, Silk.NET.Core.Bool32, uint, ushort*, int*, int>)@this->LpVtbl[22])(@this, emSize, pixelsPerDip, transform, useGdiNatural, isSideways, glyphCount, glyphIndicesPtr, glyphAdvances);
+            ret = ((delegate* unmanaged[Stdcall]<IDWriteFontFace1*, float, float, Matrix*, Silk.NET.Core.Bool32, Silk.NET.Core.Bool32, uint, ushort*, int*, int>)@this->LpVtbl[24])(@this, emSize, pixelsPerDip, transform, useGdiNatural, isSideways, glyphCount, glyphIndicesPtr, glyphAdvances);
         }
         return ret;
     }
@@ -1155,7 +1155,7 @@ public unsafe static class DWriteFontFace1VtblExtensions
         {
             fixed (int* glyphAdvancesPtr = &glyphAdvances)
             {
-                ret = ((delegate* unmanaged[Stdcall]<IDWriteFontFace1*, float, float, Matrix*, Silk.NET.Core.Bool32, Silk.NET.Core.Bool32, uint, ushort*, int*, int>)@this->LpVtbl[22])(@this, emSize, pixelsPerDip, transform, useGdiNatural, isSideways, glyphCount, glyphIndicesPtr, glyphAdvancesPtr);
+                ret = ((delegate* unmanaged[Stdcall]<IDWriteFontFace1*, float, float, Matrix*, Silk.NET.Core.Bool32, Silk.NET.Core.Bool32, uint, ushort*, int*, int>)@this->LpVtbl[24])(@this, emSize, pixelsPerDip, transform, useGdiNatural, isSideways, glyphCount, glyphIndicesPtr, glyphAdvancesPtr);
             }
         }
         return ret;
@@ -1168,7 +1168,7 @@ public unsafe static class DWriteFontFace1VtblExtensions
         int ret = default;
         fixed (Matrix* transformPtr = &transform)
         {
-            ret = ((delegate* unmanaged[Stdcall]<IDWriteFontFace1*, float, float, Matrix*, Silk.NET.Core.Bool32, Silk.NET.Core.Bool32, uint, ushort*, int*, int>)@this->LpVtbl[22])(@this, emSize, pixelsPerDip, transformPtr, useGdiNatural, isSideways, glyphCount, glyphIndices, glyphAdvances);
+            ret = ((delegate* unmanaged[Stdcall]<IDWriteFontFace1*, float, float, Matrix*, Silk.NET.Core.Bool32, Silk.NET.Core.Bool32, uint, ushort*, int*, int>)@this->LpVtbl[24])(@this, emSize, pixelsPerDip, transformPtr, useGdiNatural, isSideways, glyphCount, glyphIndices, glyphAdvances);
         }
         return ret;
     }
@@ -1182,7 +1182,7 @@ public unsafe static class DWriteFontFace1VtblExtensions
         {
             fixed (int* glyphAdvancesPtr = &glyphAdvances)
             {
-                ret = ((delegate* unmanaged[Stdcall]<IDWriteFontFace1*, float, float, Matrix*, Silk.NET.Core.Bool32, Silk.NET.Core.Bool32, uint, ushort*, int*, int>)@this->LpVtbl[22])(@this, emSize, pixelsPerDip, transformPtr, useGdiNatural, isSideways, glyphCount, glyphIndices, glyphAdvancesPtr);
+                ret = ((delegate* unmanaged[Stdcall]<IDWriteFontFace1*, float, float, Matrix*, Silk.NET.Core.Bool32, Silk.NET.Core.Bool32, uint, ushort*, int*, int>)@this->LpVtbl[24])(@this, emSize, pixelsPerDip, transformPtr, useGdiNatural, isSideways, glyphCount, glyphIndices, glyphAdvancesPtr);
             }
         }
         return ret;
@@ -1197,7 +1197,7 @@ public unsafe static class DWriteFontFace1VtblExtensions
         {
             fixed (ushort* glyphIndicesPtr = &glyphIndices)
             {
-                ret = ((delegate* unmanaged[Stdcall]<IDWriteFontFace1*, float, float, Matrix*, Silk.NET.Core.Bool32, Silk.NET.Core.Bool32, uint, ushort*, int*, int>)@this->LpVtbl[22])(@this, emSize, pixelsPerDip, transformPtr, useGdiNatural, isSideways, glyphCount, glyphIndicesPtr, glyphAdvances);
+                ret = ((delegate* unmanaged[Stdcall]<IDWriteFontFace1*, float, float, Matrix*, Silk.NET.Core.Bool32, Silk.NET.Core.Bool32, uint, ushort*, int*, int>)@this->LpVtbl[24])(@this, emSize, pixelsPerDip, transformPtr, useGdiNatural, isSideways, glyphCount, glyphIndicesPtr, glyphAdvances);
             }
         }
         return ret;
@@ -1214,7 +1214,7 @@ public unsafe static class DWriteFontFace1VtblExtensions
             {
                 fixed (int* glyphAdvancesPtr = &glyphAdvances)
                 {
-                    ret = ((delegate* unmanaged[Stdcall]<IDWriteFontFace1*, float, float, Matrix*, Silk.NET.Core.Bool32, Silk.NET.Core.Bool32, uint, ushort*, int*, int>)@this->LpVtbl[22])(@this, emSize, pixelsPerDip, transformPtr, useGdiNatural, isSideways, glyphCount, glyphIndicesPtr, glyphAdvancesPtr);
+                    ret = ((delegate* unmanaged[Stdcall]<IDWriteFontFace1*, float, float, Matrix*, Silk.NET.Core.Bool32, Silk.NET.Core.Bool32, uint, ushort*, int*, int>)@this->LpVtbl[24])(@this, emSize, pixelsPerDip, transformPtr, useGdiNatural, isSideways, glyphCount, glyphIndicesPtr, glyphAdvancesPtr);
                 }
             }
         }
@@ -1226,7 +1226,7 @@ public unsafe static class DWriteFontFace1VtblExtensions
     {
         var @this = thisVtbl.Handle;
         int ret = default;
-        ret = ((delegate* unmanaged[Stdcall]<IDWriteFontFace1*, uint, ushort*, int*, int>)@this->LpVtbl[23])(@this, glyphCount, glyphIndices, glyphAdvanceAdjustments);
+        ret = ((delegate* unmanaged[Stdcall]<IDWriteFontFace1*, uint, ushort*, int*, int>)@this->LpVtbl[25])(@this, glyphCount, glyphIndices, glyphAdvanceAdjustments);
         return ret;
     }
 
@@ -1237,7 +1237,7 @@ public unsafe static class DWriteFontFace1VtblExtensions
         int ret = default;
         fixed (int* glyphAdvanceAdjustmentsPtr = &glyphAdvanceAdjustments)
         {
-            ret = ((delegate* unmanaged[Stdcall]<IDWriteFontFace1*, uint, ushort*, int*, int>)@this->LpVtbl[23])(@this, glyphCount, glyphIndices, glyphAdvanceAdjustmentsPtr);
+            ret = ((delegate* unmanaged[Stdcall]<IDWriteFontFace1*, uint, ushort*, int*, int>)@this->LpVtbl[25])(@this, glyphCount, glyphIndices, glyphAdvanceAdjustmentsPtr);
         }
         return ret;
     }
@@ -1249,7 +1249,7 @@ public unsafe static class DWriteFontFace1VtblExtensions
         int ret = default;
         fixed (ushort* glyphIndicesPtr = &glyphIndices)
         {
-            ret = ((delegate* unmanaged[Stdcall]<IDWriteFontFace1*, uint, ushort*, int*, int>)@this->LpVtbl[23])(@this, glyphCount, glyphIndicesPtr, glyphAdvanceAdjustments);
+            ret = ((delegate* unmanaged[Stdcall]<IDWriteFontFace1*, uint, ushort*, int*, int>)@this->LpVtbl[25])(@this, glyphCount, glyphIndicesPtr, glyphAdvanceAdjustments);
         }
         return ret;
     }
@@ -1263,7 +1263,7 @@ public unsafe static class DWriteFontFace1VtblExtensions
         {
             fixed (int* glyphAdvanceAdjustmentsPtr = &glyphAdvanceAdjustments)
             {
-                ret = ((delegate* unmanaged[Stdcall]<IDWriteFontFace1*, uint, ushort*, int*, int>)@this->LpVtbl[23])(@this, glyphCount, glyphIndicesPtr, glyphAdvanceAdjustmentsPtr);
+                ret = ((delegate* unmanaged[Stdcall]<IDWriteFontFace1*, uint, ushort*, int*, int>)@this->LpVtbl[25])(@this, glyphCount, glyphIndicesPtr, glyphAdvanceAdjustmentsPtr);
             }
         }
         return ret;
@@ -1274,7 +1274,7 @@ public unsafe static class DWriteFontFace1VtblExtensions
     {
         var @this = thisVtbl.Handle;
         Silk.NET.Core.Bool32 ret = default;
-        ret = ((delegate* unmanaged[Stdcall]<IDWriteFontFace1*, Silk.NET.Core.Bool32>)@this->LpVtbl[24])(@this);
+        ret = ((delegate* unmanaged[Stdcall]<IDWriteFontFace1*, Silk.NET.Core.Bool32>)@this->LpVtbl[26])(@this);
         return ret;
     }
 
@@ -1283,7 +1283,7 @@ public unsafe static class DWriteFontFace1VtblExtensions
     {
         var @this = thisVtbl.Handle;
         int ret = default;
-        ret = ((delegate* unmanaged[Stdcall]<IDWriteFontFace1*, uint, ushort*, ushort*, int>)@this->LpVtbl[25])(@this, glyphCount, nominalGlyphIndices, verticalGlyphIndices);
+        ret = ((delegate* unmanaged[Stdcall]<IDWriteFontFace1*, uint, ushort*, ushort*, int>)@this->LpVtbl[28])(@this, glyphCount, nominalGlyphIndices, verticalGlyphIndices);
         return ret;
     }
 
@@ -1294,7 +1294,7 @@ public unsafe static class DWriteFontFace1VtblExtensions
         int ret = default;
         fixed (ushort* verticalGlyphIndicesPtr = &verticalGlyphIndices)
         {
-            ret = ((delegate* unmanaged[Stdcall]<IDWriteFontFace1*, uint, ushort*, ushort*, int>)@this->LpVtbl[25])(@this, glyphCount, nominalGlyphIndices, verticalGlyphIndicesPtr);
+            ret = ((delegate* unmanaged[Stdcall]<IDWriteFontFace1*, uint, ushort*, ushort*, int>)@this->LpVtbl[28])(@this, glyphCount, nominalGlyphIndices, verticalGlyphIndicesPtr);
         }
         return ret;
     }
@@ -1306,7 +1306,7 @@ public unsafe static class DWriteFontFace1VtblExtensions
         int ret = default;
         fixed (ushort* nominalGlyphIndicesPtr = &nominalGlyphIndices)
         {
-            ret = ((delegate* unmanaged[Stdcall]<IDWriteFontFace1*, uint, ushort*, ushort*, int>)@this->LpVtbl[25])(@this, glyphCount, nominalGlyphIndicesPtr, verticalGlyphIndices);
+            ret = ((delegate* unmanaged[Stdcall]<IDWriteFontFace1*, uint, ushort*, ushort*, int>)@this->LpVtbl[28])(@this, glyphCount, nominalGlyphIndicesPtr, verticalGlyphIndices);
         }
         return ret;
     }
@@ -1320,7 +1320,7 @@ public unsafe static class DWriteFontFace1VtblExtensions
         {
             fixed (ushort* verticalGlyphIndicesPtr = &verticalGlyphIndices)
             {
-                ret = ((delegate* unmanaged[Stdcall]<IDWriteFontFace1*, uint, ushort*, ushort*, int>)@this->LpVtbl[25])(@this, glyphCount, nominalGlyphIndicesPtr, verticalGlyphIndicesPtr);
+                ret = ((delegate* unmanaged[Stdcall]<IDWriteFontFace1*, uint, ushort*, ushort*, int>)@this->LpVtbl[28])(@this, glyphCount, nominalGlyphIndicesPtr, verticalGlyphIndicesPtr);
             }
         }
         return ret;
@@ -1331,7 +1331,7 @@ public unsafe static class DWriteFontFace1VtblExtensions
     {
         var @this = thisVtbl.Handle;
         Silk.NET.Core.Bool32 ret = default;
-        ret = ((delegate* unmanaged[Stdcall]<IDWriteFontFace1*, Silk.NET.Core.Bool32>)@this->LpVtbl[26])(@this);
+        ret = ((delegate* unmanaged[Stdcall]<IDWriteFontFace1*, Silk.NET.Core.Bool32>)@this->LpVtbl[29])(@this);
         return ret;
     }
 

@@ -57,6 +57,9 @@ namespace Silk.NET.Vulkan
         [Obsolete("Deprecated in favour of \"ConditionalRenderingBitExt\"")]
         [NativeName("Name", "VK_BUFFER_USAGE_CONDITIONAL_RENDERING_BIT_EXT")]
         BufferUsageConditionalRenderingBitExt = 512,
+        [Obsolete("Deprecated in favour of \"ExecutionGraphScratchBitAmdx\"")]
+        [NativeName("Name", "VK_BUFFER_USAGE_EXECUTION_GRAPH_SCRATCH_BIT_AMDX")]
+        BufferUsageExecutionGraphScratchBitAmdx = 33554432,
         [Obsolete("Deprecated in favour of \"AccelerationStructureBuildInputReadOnlyBitKhr\"")]
         [NativeName("Name", "VK_BUFFER_USAGE_ACCELERATION_STRUCTURE_BUILD_INPUT_READ_ONLY_BIT_KHR")]
         BufferUsageAccelerationStructureBuildInputReadOnlyBitKhr = 524288,
@@ -127,6 +130,8 @@ namespace Silk.NET.Vulkan
         TransformFeedbackCounterBufferBitExt = 4096,
         [NativeName("Name", "VK_BUFFER_USAGE_CONDITIONAL_RENDERING_BIT_EXT")]
         ConditionalRenderingBitExt = 512,
+        [NativeName("Name", "VK_BUFFER_USAGE_EXECUTION_GRAPH_SCRATCH_BIT_AMDX")]
+        ExecutionGraphScratchBitAmdx = 33554432,
         [NativeName("Name", "VK_BUFFER_USAGE_ACCELERATION_STRUCTURE_BUILD_INPUT_READ_ONLY_BIT_KHR")]
         AccelerationStructureBuildInputReadOnlyBitKhr = 524288,
         [NativeName("Name", "VK_BUFFER_USAGE_ACCELERATION_STRUCTURE_STORAGE_BIT_KHR")]

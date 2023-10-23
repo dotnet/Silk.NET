@@ -42,8 +42,8 @@ namespace Silk.NET.WebGPU.Extensions.Dawn
         [NativeName("Name", "chain")]
         public ChainedStruct Chain;
 
-        [NativeName("Type", "bool")]
-        [NativeName("Type.Name", "bool")]
+        [NativeName("Type", "WGPUBool")]
+        [NativeName("Type.Name", "WGPUBool")]
         [NativeName("Name", "allowNonUniformDerivatives")]
         public Silk.NET.Core.Bool32 AllowNonUniformDerivatives;
     }

@@ -12,63 +12,62 @@ on:
     # all branches
     paths-ignore:
       - 'documentation/**'
-  merge_group:
-      types: [checks_requested]
-      
+permissions:
+  packages: write
 jobs:
   Build:
-    # This will:
-    # - use windows-quick (self-hosted only) for release tags on this repo
-    # - use windows-2022 (self-hosted or GitHub-hosted depending on what's available) for development in this repo
-    # - use windows-latest (GitHub-hosted only) in all other cases (i.e. community contributions)
-    # Note: the reason we use windows-2022 instead of windows-latest is so that both the self-hosted runner
-    # (which has the windows-2022 label but NOT the windows-latest label) and the GitHub hosted runner are
-    # treated as candidates. We will never have a windows-latest self-hosted runner even if it is the latest. 
-    runs-on: ${{ github.repository == 'dotnet/Silk.NET' && startsWith(github.ref, 'refs/tags/') && 'windows-quick' || github.repository == 'dotnet/Silk.NET' && 'windows-2022' || 'windows-latest' }}
+    runs-on: macos-13-xlarge
     steps:
-    - uses: actions/checkout@v2
+    - uses: actions/checkout@v3.5.2
       with:
-        submodules: 'true'
+        submodules: 'false'
+    - name: Clone submodules non-recursively
+      run: git submodule update --init --depth 0
     - name: Setup Java JDK 11
       uses: actions/setup-java@v2.3.0
       with:
         java-version: 11
         distribution: "temurin"
+    - name: Setup Android Environment
+      uses: android-actions/setup-android@v2
+      env:
+        ANDROID_SDK_ROOT: /Users/runner/Library/Android/sdk
+    - name: Install Android Platforms
+      run: |
+        sdkmanager --install "build-tools;32.0.0"
+        sdkmanager --install "platform-tools"
+        sdkmanager --install "platforms;android-31"
+        sdkmanager --install "platforms;android-33"
+        sdkmanager --install "platforms;android-34"
+    - name: Setup .NET 6.0
+      uses: actions/setup-dotnet@v1
+      with:
+        dotnet-version: 6.0.414
     - name: Setup .NET 7.0
       uses: actions/setup-dotnet@v1
       with:
         dotnet-version: 7.0.102
-    - name: Setup .NET 6.0
-      uses: actions/setup-dotnet@v1
-      with:
-        dotnet-version: 6.0.201
-    - name: Setup .NET 5.0
-      uses: actions/setup-dotnet@v1
-      with:
-        dotnet-version: 5.0.201
-    - name: Setup .NET Core 3.1
-      uses: actions/setup-dotnet@v1
-      with:
-        dotnet-version: 3.1.404
     - name: Install Workloads
-      # TODO: This is slow. Maybe we can make a docker container with this already done?
       run: dotnet workload install android ios maccatalyst maui
     - name: Test
       if: ${{ github.repository != 'dotnet/Silk.NET' || !startsWith(github.ref, 'refs/tags/') }}
       # skip Clean, Restore, and Compile as this will build the affect the whole solution.
       # dotnet test will compile the necessary projects for testing only.
-      run: .\build.cmd Test --skip Clean Restore Compile
+      run: ./build.sh Test --skip Clean Restore Compile
     - name: Validation Checks
       if: ${{ github.repository != 'dotnet/Silk.NET' || !startsWith(github.ref, 'refs/tags/') }}
-      run: .\build.cmd ValidateSolution
+      run: ./build.sh ValidateSolution
     - name: Pack (CI)
       if: ${{ github.repository != 'dotnet/Silk.NET' || !startsWith(github.ref, 'refs/tags/') }}
       # TODO build native mixins such as BuildLibSilkDroid
-      run: .\build.cmd Pack --configuration Release --msbuild-properties VersionSuffix=build${{ github.run_number }}.0 ContinuousIntegrationBuild=true
+      # Use a release NUKE so it doesn't interfere with the debug build
+      run: dotnet run --project build/nuke/Silk.NET.NUKE.csproj -c Release -- Pack --configuration Debug --msbuild-properties VersionSuffix=build${{ github.run_number }}.0 ContinuousIntegrationBuild=true
+      env:
+        ANDROID_HOME: /Users/runner/Library/Android/sdk
     - name: Pack (CD)
       if: ${{ github.repository == 'dotnet/Silk.NET' && startsWith(github.ref, 'refs/tags/') }}
       # TODO build native mixins such as BuildLibSilkDroid
-      run: .\build.cmd Pack --configuration Release --msbuild-properties ContinuousIntegrationBuild=true
+      run: ./build.sh Pack --configuration Release --msbuild-properties ContinuousIntegrationBuild=true
     - name: Upload Unsigned Artifacts to Actions
       uses: actions/upload-artifact@v2.2.4
       with:
@@ -76,23 +75,32 @@ jobs:
         path: "build/output_packages/*.nupkg"
         if-no-files-found: warn
         retention-days: 1
-    - name: Sign Packages
-      if: ${{ github.repository == 'dotnet/Silk.NET' && startsWith(github.ref, 'refs/tags/') }}
-      run: .\build.cmd SignPackages --akv-certificate ${{ secrets.AKV_CERTIFICATE }} --akv-client-id ${{ secrets.AKV_CLIENT_ID }} --akv-client-secret ${{ secrets.AKV_CLIENT_SECRET }} --akv-tenant ${{ secrets.AKV_TENANT }} --akv-vault-url ${{ secrets.AKV_VAULT_URL }}
-    - name: Push to Azure Experimental Feed
+    - name: Push to Experimental Feed
       if: ${{ github.repository == 'dotnet/Silk.NET' && github.event_name != 'pull_request' }}
-      run: .\build.cmd PushToNuGet --skip Clean Restore Compile Pack --nuget-feed https://pkgs.dev.azure.com/UltzOS/Silk.NET/_packaging/Experimental/nuget/v3/index.json --nuget-username ${{ secrets.AZDO_ARTIFACTS_USERNAME }} --nuget-password ${{ secrets.AZDO_ARTIFACTS_TOKEN }} --nuget-api-key az
+      run: ./build.sh PushToNuGet --skip Clean Restore Compile Pack --nuget-feed https://dotnet.github.io/Silk.NET/nuget/experimental/index.json --nuget-username ${{ secrets.EXP_NUGET_USERNAME }} --nuget-password ${{ secrets.EXP_NUGET_PASSWORD }} --nuget-api-key ${{ secrets.EXP_NUGET_PASSWORD }}
     - name: Push to GitHub Packages
       if: ${{ github.repository == 'dotnet/Silk.NET' && github.event_name != 'pull_request' }}
-      run: .\build.cmd PushToNuGet --skip Clean Restore Compile Pack --nuget-feed https://nuget.pkg.github.com/dotnet/index.json --nuget-api-key ${{ secrets.GITHUB_TOKEN }}
+      run: ./build.sh PushToNuGet --skip Clean Restore Compile Pack --nuget-feed https://nuget.pkg.github.com/dotnet/index.json --nuget-api-key ${{ secrets.GITHUB_TOKEN }}
+  PushRelease:
+    name: Push Release to NuGet
+    runs-on: windows-latest
+    if: ${{ github.repository == 'dotnet/Silk.NET' && startsWith(github.ref, 'refs/tags/') }}
+    needs: [Build]
+    steps:
+    - uses: actions/checkout@v3.5.2
+      with:
+        submodules: 'false'
+    - uses: actions/download-artifact@v3
+      with:
+        name: unsigned_nupkgs
+        path: build/output_packages
+    - name: Sign Packages
+      run: .\build.cmd SignPackages --akv-certificate ${{ secrets.AKV_CERTIFICATE }} --akv-client-id ${{ secrets.AKV_CLIENT_ID }} --akv-client-secret ${{ secrets.AKV_CLIENT_SECRET }} --akv-tenant ${{ secrets.AKV_TENANT }} --akv-vault-url ${{ secrets.AKV_VAULT_URL }}
     - name: Upload Signed Artifacts to Actions
-      if: ${{ github.repository == 'dotnet/Silk.NET' && startsWith(github.ref, 'refs/tags/') }}
       uses: actions/upload-artifact@v2.2.4
       with:
         name: signed_nupkgs
         path: "build/output_packages/*.nupkg"
         if-no-files-found: warn
     - name: Push to NuGet
-      if: ${{ github.repository == 'dotnet/Silk.NET' && startsWith(github.ref, 'refs/tags/') }}
       run: .\build.cmd PushToNuGet --skip Clean Restore Pack --nuget-api-key ${{ secrets.NUGET_TOKEN }}
-    

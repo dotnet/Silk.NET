@@ -2,8 +2,6 @@ using System.Numerics;
 using Silk.NET.Core.Native;
 using Silk.NET.Maths;
 using Silk.NET.WebGPU;
-using Silk.NET.WebGPU.Extensions.Disposal;
-using Silk.NET.WebGPU.Extensions.WGPU;
 using Silk.NET.Windowing;
 using SixLabors.ImageSharp;
 using SixLabors.ImageSharp.PixelFormats;
@@ -28,18 +26,17 @@ public static unsafe class WebGPUTexturedQuad
     }
 
     // ReSharper disable once InconsistentNaming
-    private static WebGPU         wgpu            = null!;
-    private static WebGPUDisposal _WebGpuDisposal = null!;
-    private static IWindow?       _Window;
+    private static WebGPU   wgpu = null!;
+    private static IWindow _Window = null!;
 
     private static Instance*       _Instance;
     private static Surface*        _Surface;
+    private static SurfaceCapabilities _SurfaceCapabilities;
+    private static SurfaceConfiguration _SurfaceConfiguration;
     private static Adapter*        _Adapter;
     private static Device*         _Device;
     private static ShaderModule*   _Shader;
     private static RenderPipeline* _Pipeline;
-    private static SwapChain*      _SwapChain;
-    private static TextureFormat   _SwapChainFormat;
 
     private static Buffer* _VertexBuffer;
     private static ulong   _VertexBufferSize;
@@ -86,10 +83,7 @@ public static unsafe class WebGPUTexturedQuad
     {
         wgpu = WebGPU.GetApi();
 
-        _WebGpuDisposal = new WebGPUDisposal(wgpu);
-
-        InstanceDescriptor instanceDescriptor = new InstanceDescriptor();
-        _Instance = wgpu.CreateInstance(instanceDescriptor);
+        _Instance = wgpu.CreateInstance(null);
 
         _Surface = _Window.CreateWebGPUSurface(wgpu, _Instance);
 
@@ -117,11 +111,18 @@ public static unsafe class WebGPUTexturedQuad
 
         PrintAdapterFeatures();
 
+        wgpu.SurfaceGetCapabilities(_Surface, _Adapter, ref _SurfaceCapabilities);
+        
         { //Get device
+            var deviceDescriptor = new DeviceDescriptor
+            {
+                DeviceLostCallback = new PfnDeviceLostCallback(DeviceLost),
+            };
+
             wgpu.AdapterRequestDevice
             (
                 _Adapter,
-                null,
+                in deviceDescriptor,
                 new PfnRequestDeviceCallback((_, device1, _, _) => _Device = device1),
                 null
             );
@@ -130,7 +131,6 @@ public static unsafe class WebGPUTexturedQuad
         } //Get device
 
         wgpu.DeviceSetUncapturedErrorCallback(_Device, new PfnErrorCallback(UncapturedError), null);
-        wgpu.DeviceSetDeviceLostCallback(_Device, new PfnDeviceLostCallback(DeviceLost), null);
 
         { //Load shader
             var wgslDescriptor = new ShaderModuleWGSLDescriptor
@@ -138,7 +138,7 @@ public static unsafe class WebGPUTexturedQuad
                 Code = (byte*) SilkMarshal.StringToPtr(File.ReadAllText("shader.wgsl")),
                 Chain = new ChainedStruct
                 {
-                    SType = SType.ShaderModuleWgsldescriptor
+                    SType = SType.ShaderModuleWgslDescriptor
                 }
             };
 
@@ -151,8 +151,6 @@ public static unsafe class WebGPUTexturedQuad
 
             Console.WriteLine($"Created shader {(nuint) _Shader:X}");
         } //Load shader
-
-        _SwapChainFormat = wgpu.SurfaceGetPreferredFormat(_Surface, _Adapter);
 
         var vertexAttributes = stackalloc VertexAttribute[2];
 
@@ -190,7 +188,7 @@ public static unsafe class WebGPUTexturedQuad
                 Usage           = TextureUsage.CopyDst | TextureUsage.TextureBinding,
                 MipLevelCount   = 1,
                 SampleCount     = 1,
-                Dimension       = TextureDimension.TextureDimension2D,
+                Dimension       = TextureDimension.Dimension2D,
                 ViewFormats     = &viewFormat,
                 ViewFormatCount = 1
             };
@@ -200,7 +198,7 @@ public static unsafe class WebGPUTexturedQuad
             var viewDescriptor = new TextureViewDescriptor
             {
                 Format          = TextureFormat.Rgba8Unorm,
-                Dimension       = TextureViewDimension.TextureViewDimension2D,
+                Dimension       = TextureViewDimension.Dimension2D,
                 Aspect          = TextureAspect.All,
                 MipLevelCount   = 1,
                 ArrayLayerCount = 1,
@@ -260,10 +258,11 @@ public static unsafe class WebGPUTexturedQuad
         { //Create sampler
             var descriptor = new SamplerDescriptor
             {
-                Compare      = CompareFunction.Undefined,
-                MipmapFilter = MipmapFilterMode.Linear,
-                MagFilter    = FilterMode.Linear,
-                MinFilter    = FilterMode.Linear
+                Compare       = CompareFunction.Undefined,
+                MipmapFilter  = MipmapFilterMode.Linear,
+                MagFilter     = FilterMode.Linear,
+                MinFilter     = FilterMode.Linear,
+                MaxAnisotropy = 1
             };
 
             _Sampler = wgpu.DeviceCreateSampler(_Device, descriptor);
@@ -278,7 +277,7 @@ public static unsafe class WebGPUTexturedQuad
                 {
                     Multisampled  = false,
                     SampleType    = TextureSampleType.Float,
-                    ViewDimension = TextureViewDimension.TextureViewDimension2D
+                    ViewDimension = TextureViewDimension.Dimension2D
                 },
                 Visibility = ShaderStage.Fragment
             };
@@ -393,7 +392,7 @@ public static unsafe class WebGPUTexturedQuad
 
             var colorTargetState = new ColorTargetState
             {
-                Format    = _SwapChainFormat,
+                Format    = _SurfaceCapabilities.Formats[0],
                 Blend     = &blendState,
                 WriteMask = ColorWriteMask.All
             };
@@ -509,33 +508,31 @@ public static unsafe class WebGPUTexturedQuad
 
     private static void WindowOnRender(double delta)
     {
-        TextureView* nextTexture = null;
-
-        for (var attempt = 0; attempt < 2; attempt++)
+        SurfaceTexture surfaceTexture;
+        wgpu.SurfaceGetCurrentTexture(_Surface, &surfaceTexture);
+        switch (surfaceTexture.Status)
         {
-            nextTexture = wgpu.SwapChainGetCurrentTextureView(_SwapChain);
-
-            if (attempt == 0 && nextTexture == null)
-            {
-                Console.WriteLine("wgpu.SwapChainGetCurrentTextureView() failed; trying to create a new swap chain...\n");
+            case SurfaceGetCurrentTextureStatus.Timeout:
+            case SurfaceGetCurrentTextureStatus.Outdated:
+            case SurfaceGetCurrentTextureStatus.Lost:
+                // Recreate swapchain,
+                wgpu.TextureRelease(surfaceTexture.Texture);
                 CreateSwapchain();
-                continue;
-            }
-
-            break;
+                // Skip this frame
+                return;
+            case SurfaceGetCurrentTextureStatus.OutOfMemory:
+            case SurfaceGetCurrentTextureStatus.DeviceLost:
+            case SurfaceGetCurrentTextureStatus.Force32:
+                throw new Exception($"What is going on bros... {surfaceTexture.Status}");
         }
 
-        if (nextTexture == null)
-        {
-            Console.WriteLine("wgpu.SwapChainGetCurrentTextureView() failed after multiple attempts; giving up.\n");
-            return;
-        }
+        var currentTexture = wgpu.TextureCreateView(surfaceTexture.Texture, null);
 
         var encoder = wgpu.DeviceCreateCommandEncoder(_Device, new CommandEncoderDescriptor());
 
         var colorAttachment = new RenderPassColorAttachment
         {
-            View          = nextTexture,
+            View          = currentTexture,
             ResolveTarget = null,
             LoadOp        = LoadOp.Clear,
             StoreOp       = StoreOp.Store,
@@ -564,24 +561,30 @@ public static unsafe class WebGPUTexturedQuad
         wgpu.RenderPassEncoderDraw(renderPass, 6, 1, 0, 0);
 
         wgpu.RenderPassEncoderEnd(renderPass);
-        _WebGpuDisposal.Dispose(nextTexture);
 
         var queue = wgpu.DeviceGetQueue(_Device);
 
         var commandBuffer = wgpu.CommandEncoderFinish(encoder, new CommandBufferDescriptor());
 
         wgpu.QueueSubmit(queue, 1, &commandBuffer);
-        wgpu.SwapChainPresent(_SwapChain);
+        wgpu.SurfacePresent(_Surface);
         _Window.SwapBuffers();
+        
+        wgpu.CommandBufferRelease(commandBuffer);
+        wgpu.RenderPassEncoderRelease(renderPass);
+        wgpu.CommandEncoderRelease(encoder);
+        wgpu.TextureViewRelease(currentTexture);
+        wgpu.TextureRelease(surfaceTexture.Texture);
     }
 
     private static void WindowClosing()
     {
-        _WebGpuDisposal.Dispose(_Shader);
-        _WebGpuDisposal.Dispose(_Pipeline);
-        _WebGpuDisposal.Dispose(_Device);
-        _WebGpuDisposal.Dispose(_Adapter);
-        _WebGpuDisposal.Dispose(_Surface);
+        wgpu.ShaderModuleRelease(_Shader);
+        wgpu.RenderPipelineRelease(_Pipeline);
+        wgpu.DeviceRelease(_Device);
+        wgpu.AdapterRelease(_Adapter);
+        wgpu.SurfaceRelease(_Surface);
+        wgpu.InstanceRelease(_Instance);
 
         wgpu.Dispose();
     }
@@ -594,16 +597,18 @@ public static unsafe class WebGPUTexturedQuad
 
     private static void CreateSwapchain()
     {
-        var swapChainDescriptor = new SwapChainDescriptor
+        _SurfaceConfiguration = new SurfaceConfiguration
         {
-            Usage       = TextureUsage.RenderAttachment,
-            Format      = _SwapChainFormat,
-            Width       = (uint) _Window.FramebufferSize.X,
-            Height      = (uint) _Window.FramebufferSize.Y,
-            PresentMode = PresentMode.Fifo
+            Usage = TextureUsage.RenderAttachment,
+            Device = _Device,
+            Format = _SurfaceCapabilities.Formats[0],
+            PresentMode = PresentMode.Fifo,
+            AlphaMode = _SurfaceCapabilities.AlphaModes[0],
+            Width = (uint) _Window.FramebufferSize.X,
+            Height = (uint) _Window.FramebufferSize.Y,
         };
-
-        _SwapChain = wgpu.DeviceCreateSwapChain(_Device, _Surface, swapChainDescriptor);
+        
+        wgpu.SurfaceConfigure(_Surface, in _SurfaceConfiguration);
     }
 
     private static void PrintAdapterFeatures()

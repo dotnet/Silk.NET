@@ -8,7 +8,7 @@ on:
 jobs:
   build:
 
-    runs-on: windows-latest
+    runs-on: windows-quick
 
     steps:
     - uses: actions/checkout@v2
@@ -54,6 +54,6 @@ jobs:
       with:
         sdk-version: 22621
     - name: Run a full run of BuildTools
-      run: ./build.cmd regenerate-bindings --create-bindings-pr --no-parallel-generation
+      run: ./build.cmd regenerate-bindings --create-bindings-pr
       env:
         PUSHABLE_GITHUB_TOKEN: ${{ secrets.PUSHABLE_GITHUB_TOKEN }}

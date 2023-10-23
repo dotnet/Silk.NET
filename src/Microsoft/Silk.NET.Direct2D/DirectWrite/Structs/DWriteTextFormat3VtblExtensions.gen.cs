@@ -645,42 +645,12 @@ public unsafe static class DWriteTextFormat3VtblExtensions
     {
         var @this = thisVtbl.Handle;
         int ret = default;
-        ret = ((delegate* unmanaged[Stdcall]<IDWriteTextFormat3*, FontAxisValue*, uint, int>)@this->LpVtbl[36])(@this, fontAxisValues, fontAxisValueCount);
-        return ret;
-    }
-
-    /// <summary>To be documented.</summary>
-    public static int SetFontAxisValues(this ComPtr<IDWriteTextFormat3> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in FontAxisValue fontAxisValues, uint fontAxisValueCount)
-    {
-        var @this = thisVtbl.Handle;
-        int ret = default;
-        fixed (FontAxisValue* fontAxisValuesPtr = &fontAxisValues)
-        {
-            ret = ((delegate* unmanaged[Stdcall]<IDWriteTextFormat3*, FontAxisValue*, uint, int>)@this->LpVtbl[36])(@this, fontAxisValuesPtr, fontAxisValueCount);
-        }
-        return ret;
-    }
-
-    /// <summary>To be documented.</summary>
-    public static uint GetFontAxisValueCount(this ComPtr<IDWriteTextFormat3> thisVtbl)
-    {
-        var @this = thisVtbl.Handle;
-        uint ret = default;
-        ret = ((delegate* unmanaged[Stdcall]<IDWriteTextFormat3*, uint>)@this->LpVtbl[37])(@this);
-        return ret;
-    }
-
-    /// <summary>To be documented.</summary>
-    public static unsafe int GetFontAxisValues(this ComPtr<IDWriteTextFormat3> thisVtbl, FontAxisValue* fontAxisValues, uint fontAxisValueCount)
-    {
-        var @this = thisVtbl.Handle;
-        int ret = default;
         ret = ((delegate* unmanaged[Stdcall]<IDWriteTextFormat3*, FontAxisValue*, uint, int>)@this->LpVtbl[38])(@this, fontAxisValues, fontAxisValueCount);
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static int GetFontAxisValues(this ComPtr<IDWriteTextFormat3> thisVtbl, ref FontAxisValue fontAxisValues, uint fontAxisValueCount)
+    public static int SetFontAxisValues(this ComPtr<IDWriteTextFormat3> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in FontAxisValue fontAxisValues, uint fontAxisValueCount)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -692,11 +662,41 @@ public unsafe static class DWriteTextFormat3VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static uint GetFontAxisValueCount(this ComPtr<IDWriteTextFormat3> thisVtbl)
+    {
+        var @this = thisVtbl.Handle;
+        uint ret = default;
+        ret = ((delegate* unmanaged[Stdcall]<IDWriteTextFormat3*, uint>)@this->LpVtbl[39])(@this);
+        return ret;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int GetFontAxisValues(this ComPtr<IDWriteTextFormat3> thisVtbl, FontAxisValue* fontAxisValues, uint fontAxisValueCount)
+    {
+        var @this = thisVtbl.Handle;
+        int ret = default;
+        ret = ((delegate* unmanaged[Stdcall]<IDWriteTextFormat3*, FontAxisValue*, uint, int>)@this->LpVtbl[40])(@this, fontAxisValues, fontAxisValueCount);
+        return ret;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static int GetFontAxisValues(this ComPtr<IDWriteTextFormat3> thisVtbl, ref FontAxisValue fontAxisValues, uint fontAxisValueCount)
+    {
+        var @this = thisVtbl.Handle;
+        int ret = default;
+        fixed (FontAxisValue* fontAxisValuesPtr = &fontAxisValues)
+        {
+            ret = ((delegate* unmanaged[Stdcall]<IDWriteTextFormat3*, FontAxisValue*, uint, int>)@this->LpVtbl[40])(@this, fontAxisValuesPtr, fontAxisValueCount);
+        }
+        return ret;
+    }
+
+    /// <summary>To be documented.</summary>
     public static AutomaticFontAxes GetAutomaticFontAxes(this ComPtr<IDWriteTextFormat3> thisVtbl)
     {
         var @this = thisVtbl.Handle;
         AutomaticFontAxes ret = default;
-        ret = ((delegate* unmanaged[Stdcall]<IDWriteTextFormat3*, AutomaticFontAxes>)@this->LpVtbl[39])(@this);
+        ret = ((delegate* unmanaged[Stdcall]<IDWriteTextFormat3*, AutomaticFontAxes>)@this->LpVtbl[41])(@this);
         return ret;
     }
 
@@ -705,7 +705,7 @@ public unsafe static class DWriteTextFormat3VtblExtensions
     {
         var @this = thisVtbl.Handle;
         int ret = default;
-        ret = ((delegate* unmanaged[Stdcall]<IDWriteTextFormat3*, AutomaticFontAxes, int>)@this->LpVtbl[40])(@this, automaticFontAxes);
+        ret = ((delegate* unmanaged[Stdcall]<IDWriteTextFormat3*, AutomaticFontAxes, int>)@this->LpVtbl[42])(@this, automaticFontAxes);
         return ret;
     }
 

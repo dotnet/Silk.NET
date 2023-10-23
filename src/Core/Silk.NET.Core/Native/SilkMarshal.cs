@@ -276,8 +276,12 @@ namespace Silk.NET.Core.Native
         /// <param name="input">The string to marshal.</param>
         /// <param name="encoding">The target native string encoding.</param>
         /// <returns>A pointer to the memory containing the marshalled string array.</returns>
-        public static nint StringToPtr(string? input, NativeStringEncoding encoding = NativeStringEncoding.Ansi)
-            => input is null ? 0 : RegisterMemory(StringToMemory(input, encoding));
+        public static unsafe nint StringToPtr(string? input, NativeStringEncoding encoding = NativeStringEncoding.Ansi)
+            => input is null ? 0 : encoding switch
+            {
+                NativeStringEncoding.WinString => (nint)new WinString(input).HString,
+                _ => RegisterMemory(StringToMemory(input, encoding))
+            };
 
         /// <summary>
         /// Reads a null-terminated string from unmanaged memory, with the given native encoding.
@@ -285,7 +289,7 @@ namespace Silk.NET.Core.Native
         /// <param name="input">A pointer to memory containing a null-terminated string.</param>
         /// <param name="encoding">The encoding of the string in memory.</param>
         /// <returns>The string read from memory.</returns>
-        public static string? PtrToString(nint input, NativeStringEncoding encoding = NativeStringEncoding.Ansi)
+        public static unsafe string? PtrToString(nint input, NativeStringEncoding encoding = NativeStringEncoding.Ansi)
         {
             Console.WriteLine($"in ptr to string: {input}");
             if (input == 0)
@@ -301,8 +305,9 @@ namespace Silk.NET.Core.Native
                 NativeStringEncoding.LPStr     => AnsiToString(input),
                 NativeStringEncoding.LPTStr    => Utf8PtrToString(input),
                 NativeStringEncoding.LPUTF8Str => Utf8PtrToString(input),
-                NativeStringEncoding.LPWStr    => WideToString(input),
-                _                              => ThrowInvalidEncoding<string>()
+                NativeStringEncoding.LPWStr => WideToString(input),
+                NativeStringEncoding.WinString => (*(WinString*)&input).ToString(),
+                _ => ThrowInvalidEncoding<string>()
             };
             Console.WriteLine($"got {var}");
             return var;

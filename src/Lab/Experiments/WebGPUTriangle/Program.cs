@@ -1,12 +1,9 @@
 // Licensed to the .NET Foundation under one or more agreements.
 // The .NET Foundation licenses this file to you under the MIT license.
 
-using System.Diagnostics;
 using Silk.NET.Core.Native;
 using Silk.NET.Maths;
 using Silk.NET.WebGPU;
-using Silk.NET.WebGPU.Extensions.Disposal;
-using Silk.NET.WebGPU.Extensions.WGPU;
 using Silk.NET.Windowing;
 
 namespace WebGPUTriangle;
@@ -14,18 +11,18 @@ namespace WebGPUTriangle;
 public static unsafe class Program
 {
     // ReSharper disable once InconsistentNaming
-    private static WebGPU         wgpu            = null!;
-    private static WebGPUDisposal _WebGpuDisposal = null!;
-    private static IWindow?       _Window;
+    private static WebGPU   wgpu = null!;
+    private static IWindow _Window = null!;
+    
+    private static Surface*        _Surface;
+    private static SurfaceConfiguration _SurfaceConfiguration;
+    private static SurfaceCapabilities _SurfaceCapabilities;
 
     private static Instance*       _Instance;
-    private static Surface*        _Surface;
     private static Adapter*        _Adapter;
     private static Device*         _Device;
     private static ShaderModule*   _Shader;
     private static RenderPipeline* _Pipeline;
-    private static SwapChain*      _SwapChain;
-    private static TextureFormat   _SwapChainFormat;
 
     private const string SHADER = @"@vertex
 fn vs_main(@builtin(vertex_index) in_vertex_index: u32) -> @builtin(position) vec4<f32> {
@@ -73,8 +70,6 @@ fn fs_main() -> @location(0) vec4<f32> {
     {
         wgpu = WebGPU.GetApi();
 
-        _WebGpuDisposal = new WebGPUDisposal(wgpu);
-
         InstanceDescriptor instanceDescriptor = new InstanceDescriptor();
         _Instance = wgpu.CreateInstance(&instanceDescriptor);
 
@@ -100,10 +95,15 @@ fn fs_main() -> @location(0) vec4<f32> {
         PrintAdapterFeatures();
 
         { //Get device
+            var deviceDescriptor = new DeviceDescriptor
+            {
+                DeviceLostCallback = new PfnDeviceLostCallback(DeviceLost),
+            };
+
             wgpu.AdapterRequestDevice
             (
                 _Adapter,
-                null,
+                in deviceDescriptor,
                 new PfnRequestDeviceCallback((_, device1, _, _) => _Device = device1),
                 null
             );
@@ -112,7 +112,6 @@ fn fs_main() -> @location(0) vec4<f32> {
         } //Get device
 
         wgpu.DeviceSetUncapturedErrorCallback(_Device, new PfnErrorCallback(UncapturedError), null);
-        wgpu.DeviceSetDeviceLostCallback(_Device, new PfnDeviceLostCallback(DeviceLost), null);
 
         { //Load shader
             var wgslDescriptor = new ShaderModuleWGSLDescriptor
@@ -120,7 +119,7 @@ fn fs_main() -> @location(0) vec4<f32> {
                 Code = (byte*) SilkMarshal.StringToPtr(SHADER),
                 Chain = new ChainedStruct
                 {
-                    SType = SType.ShaderModuleWgsldescriptor
+                    SType = SType.ShaderModuleWgslDescriptor
                 }
             };
 
@@ -134,10 +133,9 @@ fn fs_main() -> @location(0) vec4<f32> {
             Console.WriteLine($"Created shader {(nuint) _Shader:X}");
         } //Load shader
 
-        _SwapChainFormat = wgpu.SurfaceGetPreferredFormat(_Surface, _Adapter);
+        wgpu.SurfaceGetCapabilities(_Surface, _Adapter, ref _SurfaceCapabilities);
 
         { //Create pipeline
-
             var blendState = new BlendState
             {
                 Color = new BlendComponent
@@ -156,7 +154,7 @@ fn fs_main() -> @location(0) vec4<f32> {
 
             var colorTargetState = new ColorTargetState
             {
-                Format    = _SwapChainFormat,
+                Format    = _SurfaceCapabilities.Formats[0],
                 Blend     = &blendState,
                 WriteMask = ColorWriteMask.All
             };
@@ -203,54 +201,54 @@ fn fs_main() -> @location(0) vec4<f32> {
 
     private static void WindowClosing()
     {
-        _WebGpuDisposal.Dispose(_Shader);
-        _WebGpuDisposal.Dispose(_Pipeline);
-        _WebGpuDisposal.Dispose(_Device);
-        _WebGpuDisposal.Dispose(_Adapter);
-        _WebGpuDisposal.Dispose(_Surface);
+        wgpu.ShaderModuleRelease(_Shader);
+        wgpu.RenderPipelineRelease(_Pipeline);
+        wgpu.DeviceRelease(_Device);
+        wgpu.AdapterRelease(_Adapter);
+        wgpu.SurfaceRelease(_Surface);
+        wgpu.InstanceRelease(_Instance);
 
         wgpu.Dispose();
     }
 
     private static void CreateSwapchain()
     {
-        var swapChainDescriptor = new SwapChainDescriptor
+        _SurfaceConfiguration = new SurfaceConfiguration
         {
-            Usage       = TextureUsage.RenderAttachment,
-            Format      = _SwapChainFormat,
-            Width       = (uint) _Window.FramebufferSize.X,
-            Height      = (uint) _Window.FramebufferSize.Y,
-            PresentMode = PresentMode.Fifo
+            Usage = TextureUsage.RenderAttachment, 
+            Format = _SurfaceCapabilities.Formats[0], 
+            PresentMode = PresentMode.Fifo, 
+            Device = _Device, 
+            Width = (uint)_Window.FramebufferSize.X,
+            Height = (uint)_Window.FramebufferSize.Y 
         };
 
-        _SwapChain = wgpu.DeviceCreateSwapChain(_Device, _Surface, swapChainDescriptor);
+        wgpu.SurfaceConfigure(_Surface, _SurfaceConfiguration);
     }
 
     private static void WindowOnUpdate(double delta) {}
 
     private static void WindowOnRender(double delta)
     {
-        TextureView* nextTexture = null;
-
-        for (var attempt = 0; attempt < 2; attempt++)
+        SurfaceTexture surfaceTexture;
+        wgpu.SurfaceGetCurrentTexture(_Surface, &surfaceTexture);
+        switch (surfaceTexture.Status)
         {
-            nextTexture = wgpu.SwapChainGetCurrentTextureView(_SwapChain);
-
-            if (attempt == 0 && nextTexture == null)
-            {
-                Console.WriteLine("wgpu.SwapChainGetCurrentTextureView() failed; trying to create a new swap chain...\n");
+            case SurfaceGetCurrentTextureStatus.Timeout:
+            case SurfaceGetCurrentTextureStatus.Outdated:
+            case SurfaceGetCurrentTextureStatus.Lost:
+                // Recreate swapchain,
+                wgpu.TextureRelease(surfaceTexture.Texture);
                 CreateSwapchain();
-                continue;
-            }
-
-            break;
+                // Skip this frame
+                return;
+            case SurfaceGetCurrentTextureStatus.OutOfMemory:
+            case SurfaceGetCurrentTextureStatus.DeviceLost:
+            case SurfaceGetCurrentTextureStatus.Force32:
+                throw new Exception($"What is going on bros... {surfaceTexture.Status}");
         }
 
-        if (nextTexture == null)
-        {
-            Console.WriteLine("wgpu.SwapChainGetCurrentTextureView() failed after multiple attempts; giving up.\n");
-            return;
-        }
+        var view = wgpu.TextureCreateView(surfaceTexture.Texture, null);
 
         var commandEncoderDescriptor = new CommandEncoderDescriptor();
 
@@ -258,7 +256,7 @@ fn fs_main() -> @location(0) vec4<f32> {
 
         var colorAttachment = new RenderPassColorAttachment
         {
-            View          = nextTexture,
+            View          = view,
             ResolveTarget = null,
             LoadOp        = LoadOp.Clear,
             StoreOp       = StoreOp.Store,
@@ -283,15 +281,18 @@ fn fs_main() -> @location(0) vec4<f32> {
         wgpu.RenderPassEncoderSetPipeline(renderPass, _Pipeline);
         wgpu.RenderPassEncoderDraw(renderPass, 3, 1, 0, 0);
         wgpu.RenderPassEncoderEnd(renderPass);
-        _WebGpuDisposal.Dispose(nextTexture);
 
         var queue = wgpu.DeviceGetQueue(_Device);
 
         var commandBuffer = wgpu.CommandEncoderFinish(encoder, new CommandBufferDescriptor());
 
         wgpu.QueueSubmit(queue, 1, &commandBuffer);
-        wgpu.SwapChainPresent(_SwapChain);
-        // _Window.SwapBuffers();
+        wgpu.SurfacePresent(_Surface);
+        wgpu.CommandBufferRelease(commandBuffer);
+        wgpu.RenderPassEncoderRelease(renderPass);
+        wgpu.CommandEncoderRelease(encoder);
+        wgpu.TextureViewRelease(view);
+        wgpu.TextureRelease(surfaceTexture.Texture);
     }
 
     private static void PrintAdapterFeatures()

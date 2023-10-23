@@ -10,9 +10,10 @@ namespace Silk.NET.Core.Native
         LPTStr = UnmanagedType.LPTStr,
         LPUTF8Str = UnmanagedType.LPUTF8Str,
         LPWStr = UnmanagedType.LPWStr,
+        WinString = UnmanagedType.WinString,
         Ansi = LPStr,
         Auto = LPTStr,
         Uni = LPWStr,
-        UTF8 = LPUTF8Str
+        UTF8 = LPUTF8Str,
     }
 }

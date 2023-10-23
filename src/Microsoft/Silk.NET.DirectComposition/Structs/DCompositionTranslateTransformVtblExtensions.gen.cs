@@ -89,7 +89,7 @@ public unsafe static class DCompositionTranslateTransformVtblExtensions
     {
         var @this = thisVtbl.Handle;
         int ret = default;
-        ret = ((delegate* unmanaged[Stdcall]<IDCompositionTranslateTransform*, float, int>)@this->LpVtbl[3])(@this, offsetX);
+        ret = ((delegate* unmanaged[Stdcall]<IDCompositionTranslateTransform*, float, int>)@this->LpVtbl[4])(@this, offsetX);
         return ret;
     }
 
@@ -98,7 +98,7 @@ public unsafe static class DCompositionTranslateTransformVtblExtensions
     {
         var @this = thisVtbl.Handle;
         int ret = default;
-        ret = ((delegate* unmanaged[Stdcall]<IDCompositionTranslateTransform*, float, int>)@this->LpVtbl[4])(@this, offsetY);
+        ret = ((delegate* unmanaged[Stdcall]<IDCompositionTranslateTransform*, float, int>)@this->LpVtbl[6])(@this, offsetY);
         return ret;
     }
 

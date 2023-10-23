@@ -412,6 +412,8 @@ namespace Silk.NET.OpenCL
         SemaphoreExportHandleTypesKhr = 0x204E,
         [NativeName("Name", "CL_DEVICE_EXTERNAL_MEMORY_IMPORT_HANDLE_TYPES_KHR")]
         ExternalMemoryImportHandleTypesKhr = 0x204F,
+        [NativeName("Name", "CL_DEVICE_EXTERNAL_MEMORY_IMPORT_ASSUME_LINEAR_IMAGES_HANDLE_TYPES_KHR")]
+        ExternalMemoryImportAssumeLinearImagesHandleTypesKhr = 0x2052,
         [NativeName("Name", "CL_DEVICE_COMMAND_BUFFER_CAPABILITIES_KHR")]
         CommandBufferCapabilitiesKhr = 0x12A9,
         [NativeName("Name", "CL_DEVICE_COMMAND_BUFFER_REQUIRED_QUEUE_PROPERTIES_KHR")]
@@ -426,5 +428,9 @@ namespace Silk.NET.OpenCL
         JobSlotsArm = 0x41E0,
         [NativeName("Name", "CL_DEVICE_MUTABLE_DISPATCH_CAPABILITIES_KHR")]
         MutableDispatchCapabilitiesKhr = 0x12B0,
+        [NativeName("Name", "CL_DEVICE_COMMAND_BUFFER_NUM_SYNC_DEVICES_KHR")]
+        CommandBufferNumSyncDevicesKhr = 0x12AB,
+        [NativeName("Name", "CL_DEVICE_COMMAND_BUFFER_SYNC_DEVICES_KHR")]
+        CommandBufferSyncDevicesKhr = 0x12AC,
     }
 }

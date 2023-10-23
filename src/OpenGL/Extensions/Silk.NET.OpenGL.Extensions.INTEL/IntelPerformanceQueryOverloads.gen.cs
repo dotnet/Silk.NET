@@ -22,13 +22,31 @@ namespace Silk.NET.OpenGL.Extensions.INTEL
             thisApi.CreatePerfQuery(queryId, out queryHandle.GetPinnableReference());
         }
 
+        public static unsafe void CreatePerfQuery(this IntelPerformanceQuery thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint queryId, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<PerfQueryHandle> queryHandle)
+        {
+            // SpanOverloader
+            thisApi.CreatePerfQuery(queryId, out queryHandle.GetPinnableReference());
+        }
+
         public static unsafe void GetFirstPerfQueryId(this IntelPerformanceQuery thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<uint> queryId)
         {
             // SpanOverloader
             thisApi.GetFirstPerfQueryId(out queryId.GetPinnableReference());
         }
 
+        public static unsafe void GetFirstPerfQueryId(this IntelPerformanceQuery thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<PerfQueryId> queryId)
+        {
+            // SpanOverloader
+            thisApi.GetFirstPerfQueryId(out queryId.GetPinnableReference());
+        }
+
         public static unsafe void GetNextPerfQueryId(this IntelPerformanceQuery thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint queryId, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<uint> nextQueryId)
+        {
+            // SpanOverloader
+            thisApi.GetNextPerfQueryId(queryId, out nextQueryId.GetPinnableReference());
+        }
+
+        public static unsafe void GetNextPerfQueryId(this IntelPerformanceQuery thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint queryId, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<PerfQueryId> nextQueryId)
         {
             // SpanOverloader
             thisApi.GetNextPerfQueryId(queryId, out nextQueryId.GetPinnableReference());
@@ -1774,6 +1792,24 @@ namespace Silk.NET.OpenGL.Extensions.INTEL
             thisApi.GetPerfQueryData(queryHandle, flags, dataSize, out data.GetPinnableReference(), out bytesWritten.GetPinnableReference());
         }
 
+        public static unsafe void GetPerfQueryData(this IntelPerformanceQuery thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint queryHandle, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PerfQueryDataFlags flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint dataSize, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] void* data, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<uint> bytesWritten)
+        {
+            // SpanOverloader
+            thisApi.GetPerfQueryData(queryHandle, flags, dataSize, data, out bytesWritten.GetPinnableReference());
+        }
+
+        public static unsafe void GetPerfQueryData<T0>(this IntelPerformanceQuery thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint queryHandle, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PerfQueryDataFlags flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint dataSize, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<T0> data, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] uint* bytesWritten) where T0 : unmanaged
+        {
+            // SpanOverloader
+            thisApi.GetPerfQueryData(queryHandle, flags, dataSize, out data.GetPinnableReference(), bytesWritten);
+        }
+
+        public static unsafe void GetPerfQueryData<T0>(this IntelPerformanceQuery thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint queryHandle, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PerfQueryDataFlags flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint dataSize, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<T0> data, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<uint> bytesWritten) where T0 : unmanaged
+        {
+            // SpanOverloader
+            thisApi.GetPerfQueryData(queryHandle, flags, dataSize, out data.GetPinnableReference(), out bytesWritten.GetPinnableReference());
+        }
+
         public static unsafe void GetPerfQueryIdByName(this IntelPerformanceQuery thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] byte* queryName, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<uint> queryId)
         {
             // SpanOverloader
@@ -1793,6 +1829,30 @@ namespace Silk.NET.OpenGL.Extensions.INTEL
         }
 
         public static unsafe void GetPerfQueryIdByName(this IntelPerformanceQuery thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.Out), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string queryName, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<uint> queryId)
+        {
+            // SpanOverloader
+            thisApi.GetPerfQueryIdByName(queryName, out queryId.GetPinnableReference());
+        }
+
+        public static unsafe void GetPerfQueryIdByName(this IntelPerformanceQuery thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] byte* queryName, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<PerfQueryId> queryId)
+        {
+            // SpanOverloader
+            thisApi.GetPerfQueryIdByName(queryName, out queryId.GetPinnableReference());
+        }
+
+        public static unsafe void GetPerfQueryIdByName(this IntelPerformanceQuery thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<byte> queryName, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] PerfQueryId* queryId)
+        {
+            // SpanOverloader
+            thisApi.GetPerfQueryIdByName(out queryName.GetPinnableReference(), queryId);
+        }
+
+        public static unsafe void GetPerfQueryIdByName(this IntelPerformanceQuery thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<byte> queryName, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<PerfQueryId> queryId)
+        {
+            // SpanOverloader
+            thisApi.GetPerfQueryIdByName(out queryName.GetPinnableReference(), out queryId.GetPinnableReference());
+        }
+
+        public static unsafe void GetPerfQueryIdByName(this IntelPerformanceQuery thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.Out), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string queryName, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<PerfQueryId> queryId)
         {
             // SpanOverloader
             thisApi.GetPerfQueryIdByName(queryName, out queryId.GetPinnableReference());

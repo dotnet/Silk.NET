@@ -1,0 +1,17 @@
+<Project ToolsVersion="15.0">
+  <PropertyGroup>
+    <_LibMoltenVKPath Condition="'$(RuntimeIdentifier)' == 'maccatalyst-x64' OR '$(RuntimeIdentifier)' == 'maccatalyst-arm64'">$(MSBuildThisFileDirectory)..\..\runtimes\maccatalyst\native\libMoltenVK.a</_LibMoltenVKPath>
+    <_LibMoltenVKPath Condition="$(RuntimeIdentifier) == 'iossimulator-x64' OR '$(RuntimeIdentifier)' == 'iossimulator-arm64'">$(MSBuildThisFileDirectory)..\..\runtimes\iossimulator\native\libMoltenVK.a</_LibMoltenVKPath>
+    <_LibMoltenVKPath Condition="'$(RuntimeIdentifier)' == 'ios-arm64'">$(MSBuildThisFileDirectory)..\..\runtimes\ios\native\libMoltenVK.a</_LibMoltenVKPath>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <NativeReference Include="$(_LibMoltenVKPath)" Condition="'$(_LibMoltenVKPath)' != ''">
+      <Kind>Static</Kind>
+      <Forceload>True</Forceload>
+      <IsCxx>True</IsCxx>
+      <SmartLink>False</SmartLink>
+      <LinkerFlags> -framework Metal -framework IOSurface -framework UIKit -framework QuartzCore -framework CoreGraphics -framework IOKit -framework Foundation  </LinkerFlags>
+    </NativeReference>
+  </ItemGroup>
+</Project>

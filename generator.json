@@ -434,7 +434,8 @@
                     "char": "byte",
                     "Window": "nint",
                     "VkAabbPositionsKHR": "Silk.NET.Maths.Box3D<float>",
-                    "VkAabbPositionsNV": "Silk.NET.Maths.Box3D<float>"
+                    "VkAabbPositionsNV": "Silk.NET.Maths.Box3D<float>",
+                    "_screen_buffer": "void"
                 },
                 {
                     "StdVideoDecodeH264PictureInfo": "Video.StdVideoDecodeH264PictureInfo",
@@ -557,10 +558,8 @@
                     "vk_video.h": "[Core]VkVideo"
                 }
             },
-            "exclude": [
-            ],
-            "rename": {
-            },
+            "exclude": [],
+            "rename": {},
             "bakery": {
                 "profileNames": [
                     "vk_video"
@@ -718,6 +717,9 @@
                     "openxr"
                 ]
             },
+            "prefixOverrides": {
+                "XrPassthroughColorLutChannelsMETA": "XR_PASSTHROUGH_COLOR_LUT_CHANNELS"
+            },
             "output": {
                 "mode": "Default",
                 "path": "src/OpenXR",
@@ -793,7 +795,8 @@
                     "VkFilter": "uint",
                     "XrVector4sFB": "Silk.NET.Maths.Vector4D<short>",
                     "VkImageCreateFlags": "uint",
-                    "VkImageUsageFlags": "uint"
+                    "VkImageUsageFlags": "uint",
+                    "PFN_xrEglGetProcAddressMNDX": "void*"
                 },
                 {
                     "$include.commonTypeMap": "build/csharp_typemap.json",
@@ -887,7 +890,7 @@
                         "SDL_IsChromebook",
                         "SDL_IsDeXMode",
                         "SDL_RegisterApp",
-                        "SDL_RenderGetD3D9Device",
+                        "SDL_RenderGetD3D.*",
                         "SDL_SetWindowsMessageHook",
                         "SDL_UnregisterApp",
                         "SDL_WinRT.*",
@@ -970,7 +973,8 @@
         {
             "profileName": "Core",
             "sources": [
-                "$windowsSdkDir/Include/$windowsSdkVersion/um/d3dcommon.h"
+                "$windowsSdkDir/Include/$windowsSdkVersion/um/d3dcommon.h",
+                "$windowsSdkDir/Include/$windowsSdkVersion/winrt/inspectable.h"
             ],
             "mode": "Clang",
             "cacheDir": "build/cache",
@@ -996,13 +1000,23 @@
                     "-I$windowsSdkIncludes",
                     "-Ibuild/include"
                 ],
-                "traverse": [
-                ],
+                "traverse": [],
                 "classes": {
-                    "d3dcommon.h": "[Core]D3DCommon"
+                    "d3dcommon.h": "[Core]D3DCommon",
+                    "inspectable.h": "[Core]WinRT"
                 }
             },
             "exclude": [
+                "HSTRING_UserSize",
+                "HSTRING_UserMarshal",
+                "HSTRING_UserUnmarshal",
+                "HSTRING_UserFree",
+                "HSTRING_UserSize64",
+                "HSTRING_UserMarshal64",
+                "HSTRING_UserUnmarshal64",
+                "HSTRING_UserFree64",
+                "__REQUIRED_RPCNDR_H_VERSION__",
+                "__REQUIRED_RPCSAL_H_VERSION__"
             ],
             "rename": {
                 "_D3D_CBUFFER_TYPE": "D3DCBufferType",
@@ -1011,7 +1025,8 @@
             "bakery": {
                 "profileNames": [
                     "d3dcommon",
-                    "silk.net.core.native.dcommon"
+                    "silk.net.core.native.dcommon",
+                    "inspectable"
                 ]
             },
             "output": {
@@ -1066,6 +1081,7 @@
                     "$windowsSdkDir/Include/$windowsSdkVersion/um/handleapi.h",
                     "$windowsSdkDir/Include/$windowsSdkVersion/um/fileapi.h",
                     "$windowsSdkDir/Include/$windowsSdkVersion/um/objidlbase.h",
+                    "$windowsSdkDir/Include/$windowsSdkVersion/um/objidl.h",
                     "$windowsSdkDir/Include/$windowsSdkVersion/um/Documenttarget.h",
                     "$windowsSdkDir/Include/$windowsSdkVersion/shared/evntprov.h"
                 ],
@@ -1074,7 +1090,11 @@
                 }
             },
             "exclude": [
-                "_SECURITY_ATTRIBUTES"
+                "_SECURITY_ATTRIBUTES",
+                "_STGMEDIUM_UNION",
+                "_GDI_OBJECT",
+                "__MIDL_IAdviseSink_0002",
+                "__MIDL_IAdviseSink_0003"
             ],
             "rename": {
                 "ETW_COMPRESSION_RESUMPTION_MODE": "EtwCompressionResumptionMode",
@@ -1084,7 +1104,48 @@
                 "tagSOLE_AUTHENTICATION_LIST": "SoleAuthenticationList",
                 "tagSOLE_AUTHENTICATION_SERVICE": "SoleAuthenticationService",
                 "tagSOLE_AUTHENTICATION_INFO": "SoleAuthenticationInfo",
-                "tagSTATSTG": "STATSTG"
+                "tagSTATSTG": "STATSTG",
+                "tagACTIVATIONTYPE": "ActivationType",
+                "tagCLSCTX": "CLSCTX",
+                "tagDCOM_CALL_STATE": "DCOMCallState",
+                "tagEOLE_AUTHENTICATION_CAPABILITIES": "EoleAuthenticationCapabilities",
+                "tagEXTCONN": "EXTCONN",
+                "tagGLOBALOPT_EH_VALUES": "GlobalOptEHValues",
+                "tagGLOBALOPT_PROPERTIES": "GlobalOptProperties",
+                "tagGLOBALOPT_RO_FLAGS": "GlobalOptRoFlags",
+                "tagGLOBALOPT_RPCTP_VALUES": "GlobalOptRPCTPValues",
+                "tagGLOBALOPT_UNMARSHALING_POLICY_VALUES": "GlobalUnmarshalingPolicyValues",
+                "tagLOCKTYPE": "LockType",
+                "tagMEMCTX": "MEMCTX",
+                "tagMSHCTX": "MSHCTX",
+                "tagMSHLFLAGS": "MSHLFlags",
+                "tagRPCOPT_PROPERTIES": "RPCOptProperties",
+                "tagRPCOPT_SERVER_LOCALITY_VALUES": "RPCOptServerLocalityValues",
+                "tagSTGTY": "STGTY",
+                "tagSTREAM_SEEK": "StreamSeek",
+                "tagADVF": "ADVF",
+                "tagApplicationType": "ApplicationType",
+                "tagBIND_FLAGS": "BindFlags",
+                "tagCALLTYPE": "CallType",
+                "tagDATADIR": "DATADIR",
+                "tagMKREDUCE": "MKRREDUCE",
+                "tagMKSYS": "MKSYS",
+                "tagPENDINGMSG": "PendingMsg",
+                "tagPENDINGTYPE": "PendingType",
+                "tagSERVERCALL": "ServerCall",
+                "tagShutdownType": "ShutdownType",
+                "tagTYMED": "TYMED",
+                "tagBIND_OPTS": "BindOpts",
+                "tagBIND_OPTS2": "BindOpts2",
+                "tagBIND_OPTS3": "BindOpts3",
+                "tagDVTARGETDEVICE": "DVTargetDevice",
+                "tagFORMATETC": "FORMATETC",
+                "tagINTERFACEINFO": "InterfaceInfo",
+                "tagRemSNB": "RemSNB",
+                "tagRemSTGMEDIUM": "RemSTGMEDIUM",
+                "tagSTATDATA": "STATDATA",
+                "tagSTGMEDIUM": "STGMEDIUM",
+                "tagStorageLayout": "StorageLayout"
             },
             "bakery": {
                 "profileNames": [
@@ -1119,7 +1180,10 @@
                     "tagCY": "CY",
                     "tagDEC": "TagDecimal",
                     "tagSAFEARRAYBOUND": "SafeArrayBound",
-                    "PfnTagEXCEPINFOvI": "PfnExceptionInfovI"
+                    "PfnTagEXCEPINFOvI": "PfnExceptionInfovI",
+                    "HICON__": "void",
+                    "HBITMAP__": "void",
+                    "HTASK__": "void"
                 },
                 {
                     "$include.dxTypemap": "build/dx_typemap.json",
@@ -1137,7 +1201,8 @@
                 "$windowsSdkDir/Include/$windowsSdkVersion/shared/dxgi1_5.h",
                 "$windowsSdkDir/Include/$windowsSdkVersion/shared/dxgi1_6.h",
                 "$windowsSdkDir/Include/$windowsSdkVersion/um/dxgidebug.h",
-                "$windowsSdkDir/Include/$windowsSdkVersion/shared/dxgiformat.h"
+                "$windowsSdkDir/Include/$windowsSdkVersion/shared/dxgiformat.h",
+                "$windowsSdkDir/Include/$windowsSdkVersion/winrt/windows.graphics.directx.h"
             ],
             "mode": "Clang",
             "cacheDir": "build/cache",
@@ -1173,7 +1238,8 @@
                     "dxgi1_5.h": "[Core]DXGI",
                     "dxgi1_6.h": "[Core]DXGI",
                     "dxgidebug.h": "[Core]DXGI",
-                    "dxgiformat.h": "[Core]DXGI"
+                    "dxgiformat.h": "[Core]DXGI",
+                    "windows.graphics.directx.h": "[Core]DXGI"
                 },
                 "comRefs": [
                     "Silk.NET.Core.Native.ID3D10Blob",
@@ -1181,10 +1247,8 @@
                     "Silk.NET.Core.Native.ID3DInclude"
                 ]
             },
-            "exclude": [
-            ],
-            "rename": {
-            },
+            "exclude": [],
+            "rename": {},
             "bakery": {
                 "profileNames": [
                     "dxgi",
@@ -1194,7 +1258,8 @@
                     "dxgi1_5",
                     "dxgi1_6",
                     "dxgidebug",
-                    "dxgiformat"
+                    "dxgiformat",
+                    "windows.graphics.directx"
                 ]
             },
             "output": {
@@ -1265,8 +1330,7 @@
                     "dxvahd.h": "[Core]DXVA"
                 }
             },
-            "exclude": [
-            ],
+            "exclude": [],
             "rename": {
                 "_DXVA2_VIDEOSAMPLE": "DXVA2VideoSample"
             },
@@ -1331,7 +1395,7 @@
             "controlDescriptors": [
                 "convert-windows-only",
                 "typemap-native",
-                "no-obsolete-enum"
+                "no-pre-2.17-obsolete-enums"
             ],
             "converter": {},
             "prefix": "D2D1_",
@@ -1400,8 +1464,7 @@
                 "D2D1GetGradientMeshInteriorPointsFromCoonsPatch",
                 "IDXGISurface"
             ],
-            "rename": {
-            },
+            "rename": {},
             "bakery": {
                 "profileNames": [
                     "silk.net.direct2d.dcommon",
@@ -1458,7 +1521,7 @@
             "controlDescriptors": [
                 "convert-windows-only",
                 "typemap-native",
-                "no-obsolete-enum",
+                "no-pre-2.17-obsolete-enums",
                 "no-csproj",
                 "no-extra-dir"
             ],
@@ -1523,8 +1586,7 @@
                 "ID2D1SimplifiedGeometrySink",
                 "_D3DCOLORVALUE"
             ],
-            "rename": {
-            },
+            "rename": {},
             "bakery": {
                 "profileNames": [
                     "silk.net.directwrite.dcommon",
@@ -1583,6 +1645,113 @@
             ]
         },
         {
+            "profileName": "WindowsCodecs",
+            "sources": [
+                "build/include/silk.net.windowscodecs.h",
+                "$windowsSdkDir/Include/$windowsSdkVersion/um/wincodec.h",
+                "$windowsSdkDir/Include/$windowsSdkVersion/um/wincodecsdk.h"
+            ],
+            "mode": "Clang",
+            "cacheDir": "build/cache",
+            "cacheKey": "wic",
+            "controlDescriptors": [
+                "convert-windows-only",
+                "typemap-native",
+                "no-pre-2.18-obsolete-enums",
+                "no-csproj",
+                "no-extra-dir"
+            ],
+            "converter": {},
+            "prefix": "WIC",
+            "clang": {
+                "args": [
+                    "--language=c++",
+                    "--std=c++17",
+                    "-m32",
+                    "-Wno-expansion-to-defined",
+                    "-Wno-ignored-attributes",
+                    "-Wno-ignored-pragma-intrinsic",
+                    "-Wno-nonportable-include-path",
+                    "-Wno-pragma-pack",
+                    "-I$windowsSdkIncludes",
+                    "-Ibuild/include"
+                ],
+                "traverse": [
+                    "$windowsSdkDir/Include/$windowsSdkVersion/um/wincodec.h",
+                    "$windowsSdkDir/Include/$windowsSdkVersion/um/wincodecsdk.h"
+                ],
+                "classes": {
+                    "silk.net.windowscodecs.h": "[Core]WindowsCodecs",
+                    "wincodec.h": "[Core]WindowsCodecs",
+                    "wincodecsdk.h": "[Core]WindowsCodecs",
+                    "wincodec_proxy.h": "[Core]WindowsCodecs"
+                }
+            },
+            "exclude": [
+                "ID2D1Device",
+                "ID2D1Image",
+                "WICRect"
+            ],
+            "rename": {
+                "WICProgressNotification": "ProgressNotificationEnum"
+            },
+            "bakery": {
+                "profileNames": [
+                    "silk.net.windowscodecs",
+                    "windowscodecs"
+                ]
+            },
+            "output": {
+                "mode": "Default",
+                "path": "src/Microsoft/Silk.NET.Direct2D",
+                "innerPath": "WindowsCodecs",
+                "licenseFile": "build/LICENSE_HEADER.txt",
+                "props": "build/props/bindings.props"
+            },
+            "namespace": "Silk.NET.WindowsCodecs",
+            "extensionsNamespace": "Silk.NET.WindowsCodecs.Extensions",
+            "nameContainer": {
+                "linux-x64": "libwindowscodecs.so",
+                "win-x64": "windowscodecs.dll",
+                "win-x86": "windowscodecs.dll",
+                "osx-x64": "libwindowscodecs.dylib",
+                "android": "libwindowscodecs.so",
+                "iOS": "__Internal",
+                "className": "WICLibraryNameContainer"
+            },
+            "typeMaps": [
+                {
+                    "ID2D1Device": "Silk.NET.Direct2D.ID2D1Device",
+                    "ID2D1Image": "Silk.NET.Direct2D.ID2D1Image",
+                    "D2D1_PIXEL_FORMAT": "Silk.NET.Direct2D.PixelFormat",
+                    "DXGI_JPEG_QUANTIZATION_TABLE": "Silk.NET.DXGI.JpegQuantizationTable",
+                    "DXGI_JPEG_AC_HUFFMAN_TABLE": "Silk.NET.DXGI.JpegACHuffmanTable",
+                    "DXGI_JPEG_DC_HUFFMAN_TABLE": "Silk.NET.DXGI.JpegDCHuffmanTable",
+                    "DXGI_FORMAT": "Silk.NET.DXGI.Format",
+                    "_RPC_MESSAGE": "Silk.NET.Core.Win32Extras.RPCMessage",
+                    "IRpcStubBuffer": "Silk.NET.Core.Win32Extras.IRpcStubBuffer",
+                    "IRpcChannelBuffer": "Silk.NET.Core.Win32Extras.IRpcChannelBuffer",
+                    "ISequentialStream": "Silk.NET.Core.Win32Extras.ISequentialStream",
+                    "IPersist": "Silk.NET.Core.Win32Extras.IPersist",
+                    "IPersistStream": "Silk.NET.Core.Win32Extras.IPersistStream",
+                    "IPropertyBag2": "Silk.NET.Core.Native.IUnknown",
+                    "IEnumUnknown": "Silk.NET.Core.Win32Extras.IEnumUnknown",
+                    "IEnumString": "Silk.NET.Core.Win32Extras.IEnumString",
+                    "tagSAFEARRAY": "Silk.NET.Core.Win32Extras.SafeArray",
+                    "tagSTATSTG": "Silk.NET.Core.Win32Extras.STATSTG",
+                    "tagPROPVARIANT": "void",
+                    "tagPROPBAG2": "void",
+                    "HPALETTE__": "void",
+                    "HBITMAP__": "void",
+                    "HICON__": "void",
+                    "WICRect": "Silk.NET.Maths.Rectangle<int>"
+                },
+                {
+                    "$include.commonTypeMap": "build/csharp_typemap.json"
+                }
+            ]
+        },
+        {
             "profileName": "D3D11",
             "sources": [
                 "$windowsSdkDir/Include/$windowsSdkVersion/um/d3d11.h",
@@ -1593,7 +1762,9 @@
                 "$windowsSdkDir/Include/$windowsSdkVersion/um/d3d11shader.h",
                 "$windowsSdkDir/Include/$windowsSdkVersion/um/d3d11shadertracing.h",
                 "$windowsSdkDir/Include/$windowsSdkVersion/um/d3d11sdklayers.h",
-                "$windowsSdkDir/Include/$windowsSdkVersion/um/d3d11on12.h"
+                "$windowsSdkDir/Include/$windowsSdkVersion/um/d3d11on12.h",
+                "$windowsSdkDir/Include/$windowsSdkVersion/um/windows.graphics.directx.direct3d11.interop.h",
+                "$windowsSdkDir/Include/$windowsSdkVersion/winrt/windows.graphics.directx.direct3d11.h"
             ],
             "mode": "Clang",
             "cacheDir": "build/cache",
@@ -1617,8 +1788,7 @@
                     "-I$windowsSdkIncludes",
                     "-Ibuild/include"
                 ],
-                "traverse": [
-                ],
+                "traverse": [],
                 "classes": {
                     "d3d11.h": "[Core]D3D11",
                     "d3d11_1.h": "[Core]D3D11",
@@ -1628,7 +1798,9 @@
                     "d3d11shader.h": "[Core]D3D11",
                     "d3d11shadertracing.h": "[Core]D3D11",
                     "d3d11sdklayers.h": "[Core]D3D11",
-                    "d3d11on12.h": "[D3D11On12:D3D11]D3D11On12"
+                    "d3d11on12.h": "[D3D11On12:D3D11]D3D11On12",
+                    "windows.graphics.directx.direct3d11.interop.h": "[Core]D3D11",
+                    "windows.graphics.directx.direct3d11.h": "[Core]D3D11"
                 },
                 "comRefs": [
                     "Silk.NET.DXGI.IDXGIAdapter",
@@ -1654,7 +1826,9 @@
                     "d3d11shader",
                     "d3d11shadertracing",
                     "d3d11sdklayers",
-                    "d3d11on12"
+                    "d3d11on12",
+                    "windows.graphics.directx.direct3d11.interop",
+                    "windows.graphics.directx.direct3d11"
                 ]
             },
             "output": {
@@ -1680,7 +1854,10 @@
                     "ID3D10Blob": "Silk.NET.Core.Native.ID3D10Blob",
                     "D3D12_RESOURCE_STATES": "Silk.NET.Direct3D12.ResourceStates",
                     "ID3D12Fence": "Silk.NET.Direct3D12.ID3D12Fence",
-                    "ID3D12CommandQueue": "Silk.NET.Direct3D12.ID3D12CommandQueue"
+                    "ID3D12CommandQueue": "Silk.NET.Direct3D12.ID3D12CommandQueue",
+                    "ABI::Windows::Graphics::DirectX::Direct3D11::Direct3DSurfaceDescription": "Direct3DSurfaceDescription",
+                    "ABI::Windows::Graphics::DirectX::DirectXPixelFormat": "Silk.NET.DXGI.DirectXPixelFormat",
+                    "ABI::Windows::Graphics::DirectX::Direct3D11::Direct3DMultisampleDescription": "Direct3DMultisampleDescription"
                 },
                 {
                     "$include.dxTypemap": "build/dx_typemap.json",
@@ -1718,8 +1895,7 @@
                     "-I$windowsSdkIncludes",
                     "-Ibuild/include"
                 ],
-                "traverse": [
-                ],
+                "traverse": [],
                 "classes": {
                     "d3d12.h": "[Core]D3D12",
                     "d3d12shader.h": "[Core]D3D12",
@@ -1902,10 +2078,8 @@
                     "Silk.NET.Core.Native.ID3DInclude"
                 ]
             },
-            "exclude": [
-            ],
-            "rename": {
-            },
+            "exclude": [],
+            "rename": {},
             "bakery": {
                 "profileNames": [
                     "DXC"
@@ -1966,8 +2140,7 @@
                     "-I$windowsSdkIncludes",
                     "-Ibuild/include"
                 ],
-                "traverse": [
-                ],
+                "traverse": [],
                 "classes": {
                     "d3dcompiler.h": "[Core]D3DCompiler"
                 },
@@ -1979,10 +2152,8 @@
                     "Silk.NET.Core.Native.ID3DInclude"
                 ]
             },
-            "exclude": [
-            ],
-            "rename": {
-            },
+            "exclude": [],
+            "rename": {},
             "bakery": {
                 "profileNames": [
                     "d3dcompiler"
@@ -2057,8 +2228,7 @@
                 "ID3D12Resource",
                 "ID3D12Fence"
             ],
-            "rename": {
-            },
+            "rename": {},
             "bakery": {
                 "profileNames": [
                     "silk.net.directstorage"
@@ -2097,10 +2267,10 @@
                 }
             ],
             "copy": {
-                "$nuget/Microsoft.Direct3D.DirectStorage/*/bin/ARM/*.dll": "src/Native/Silk.NET.DirectStorage.Native/runtimes/win-arm/native",
-                "$nuget/Microsoft.Direct3D.DirectStorage/*/bin/ARM64/*.dll": "src/Native/Silk.NET.DirectStorage.Native/runtimes/win-arm64/native",
-                "$nuget/Microsoft.Direct3D.DirectStorage/*/bin/x64/*.dll": "src/Native/Silk.NET.DirectStorage.Native/runtimes/win-x64/native",
-                "$nuget/Microsoft.Direct3D.DirectStorage/*/bin/x86/*.dll": "src/Native/Silk.NET.DirectStorage.Native/runtimes/win-x86/native",
+                "$nuget/Microsoft.Direct3D.DirectStorage/*/native/bin/ARM/*.dll": "src/Native/Silk.NET.DirectStorage.Native/runtimes/win-arm/native",
+                "$nuget/Microsoft.Direct3D.DirectStorage/*/native/bin/ARM64/*.dll": "src/Native/Silk.NET.DirectStorage.Native/runtimes/win-arm64/native",
+                "$nuget/Microsoft.Direct3D.DirectStorage/*/native/bin/x64/*.dll": "src/Native/Silk.NET.DirectStorage.Native/runtimes/win-x64/native",
+                "$nuget/Microsoft.Direct3D.DirectStorage/*/native/bin/x86/*.dll": "src/Native/Silk.NET.DirectStorage.Native/runtimes/win-x86/native",
                 "$nuget/Microsoft.Direct3D.DirectStorage/*/LICENSE.txt": "src/Native/Silk.NET.DirectStorage.Native/LICENSE.txt",
                 "$nuget/Microsoft.Direct3D.DirectStorage/*/$version": "src/Native/Silk.NET.DirectStorage.Native/version.txt"
             }
@@ -2115,7 +2285,7 @@
             "cacheKey": "dcomp",
             "controlDescriptors": [
                 "convert-windows-only",
-                "no-obsolete-enum",
+                "no-pre-2.17-obsolete-enums",
                 "typemap-native"
             ],
             "converter": {},
@@ -2244,10 +2414,8 @@
                     "silk.net.xaudio.x3daudio.h": "[Core]X3DAudio"
                 }
             },
-            "exclude": [
-            ],
-            "rename": {
-            },
+            "exclude": [],
+            "rename": {},
             "bakery": {
                 "profileNames": [
                     "silk.net.xaudio.xaudio2",
@@ -2306,10 +2474,8 @@
                     "silk.net.xinput.xinput.h": "[Core]XInput"
                 }
             },
-            "exclude": [
-            ],
-            "rename": {
-            },
+            "exclude": [],
+            "rename": {},
             "bakery": {
                 "profileNames": [
                     "silk.net.xinput.xinput"
@@ -2324,8 +2490,7 @@
             "namespace": "Silk.NET.XInput",
             "extensionsNamespace": "Silk.NET.XInput.Extensions",
             "typeMaps": [
-                {
-                },
+                {},
                 {
                     "$include.dxTypemap": "build/dx_typemap.json",
                     "$include.commonTypeMap": "build/csharp_typemap.json"
@@ -2344,7 +2509,7 @@
             "cacheKey": "webgpu",
             "controlDescriptors": [
                 "convert-windows-only",
-                "no-obsolete-enum",
+                "no-pre-2.17-obsolete-enums",
                 "typemap-native"
             ],
             "converter": {},
@@ -2372,8 +2537,7 @@
                     "dawn-webgpu.h": "[Dawn:WebGPU]Dawn"
                 }
             },
-            "exclude": [
-            ],
+            "exclude": [],
             "rename": {
                 "WGPUComputePipelineImpl": "ComputePipeline",
                 "WGPUAdapterImpl": "Adapter",
@@ -2416,8 +2580,8 @@
             "extensionsNamespace": "Silk.NET.WebGPU.Extensions",
             "nameContainer": {
                 "linux-x64": "libwgpu_native.so",
-                "win-x64": "libwgpu_native.dll",
-                "win-x86": "libwgpu_native.dll",
+                "win-x64": "wgpu_native.dll",
+                "win-x86": "wgpu_native.dll",
                 "osx-x64": "libwgpu_native.dylib",
                 "android": "libwgpu_native.so",
                 "className": "WebGPULibraryNameContainer"
@@ -2428,8 +2592,341 @@
                     "WGPUBufferUsageFlags": "Silk.NET.WebGPU.BufferUsage",
                     "WGPUMapModeFlags": "Silk.NET.WebGPU.MapMode",
                     "WGPUShaderStageFlags": "Silk.NET.WebGPU.ShaderStage",
-                    "WGPUTextureUsageFlags": "Silk.NET.WebGPU.TextureUsage"
+                    "WGPUTextureUsageFlags": "Silk.NET.WebGPU.TextureUsage",
+                    "WGPUInstanceBackendFlags": "Silk.NET.WebGPU.Extensions.WGPU.InstanceBackend",
+                    "WGPUBool": "Silk.NET.Core.Bool32"
                 },
+                {
+                    "$include.commonTypeMap": "build/csharp_typemap.json",
+                    "$include.dxTypeMap": "build/dx_typemap.json"
+                }
+            ]
+        },
+        {
+            "profileName": "SPIRV",
+            "sources": [
+                "build/submodules/SPIRV-Headers/include/spirv/unified1/spirv.h"
+            ],
+            "mode": "Clang",
+            "cacheDir": "build/cache",
+            "cacheKey": "spirv",
+            "controlDescriptors": [
+                "convert-windows-only",
+                "no-pre-2.18-obsolete-enums",
+                "typemap-native",
+                "no-extra-dir",
+                "no-name-container"
+            ],
+            "converter": {},
+            "prefix": "spv",
+            "clang": {
+                "args": [
+                    "--language=c++",
+                    "--std=c++17",
+                    "-m64",
+                    "-Wno-expansion-to-defined",
+                    "-Wno-ignored-attributes",
+                    "-Wno-ignored-pragma-intrinsic",
+                    "-Wno-nonportable-include-path",
+                    "-Wno-pragma-pack",
+                    "-I$windowsSdkIncludes",
+                    "-Ibuild/submodules/SPIRV-Reflect"
+                ],
+                "traverse": [
+                    "build/submodules/SPIRV-Headers/include/spirv/unified1/spirv.h"
+                ],
+                "classes": {
+                    "spirv.h": "[Core]Spv"
+                }
+            },
+            "exclude": [
+                "SPV_VERSION",
+                "SPV_REVISION"
+            ],
+            "prefixOverrides": {
+                "SpvImageChannelOrder_": "SpvImageChannelOrder"
+            },
+            "rename": {},
+            "bakery": {
+                "profileNames": [
+                    "spirv"
+                ]
+            },
+            "output": {
+                "mode": "Default",
+                "path": "src/SPIRV/Silk.NET.SPIRV",
+                "licenseFile": "build/LICENSE_HEADER.txt",
+                "props": "build/props/bindings.props"
+            },
+            "namespace": "Silk.NET.SPIRV",
+            "extensionsNamespace": "Silk.NET.SPIRV.Extensions",
+            "nameContainer": {
+                "linux-x64": "libspirv-reflect.so",
+                "win-x64": "spirv-reflect.dll",
+                "win-x86": "spirv-reflect.dll",
+                "osx-x64": "libspirv-reflect.dylib",
+                "android": "libspirv-reflect.so",
+                "className": "SPIRVReflectLibraryNameContainer"
+            },
+            "typeMaps": [
+                {
+                    "SpvReflectTypeDescription::Traits": "Traits",
+                    "SpvReflectShaderModule::Internal": "Internal",
+                    "SpvReflectNumericTraits::Scalar": "Scalar",
+                    "SpvReflectNumericTraits::Vector": "Vector",
+                    "SpvReflectNumericTraits::Matrix": "Matrix",
+                    "SpvReflectEntryPoint::LocalSize": "LocalSize"
+                },
+                {
+                    "$include.commonTypeMap": "build/csharp_typemap.json",
+                    "$include.dxTypeMap": "build/dx_typemap.json"
+                }
+            ]
+        },
+        {
+            "profileName": "SPIRVReflect",
+            "sources": [
+                "build/submodules/SPIRV-Reflect/spirv_reflect.h"
+            ],
+            "mode": "Clang",
+            "cacheDir": "build/cache",
+            "cacheKey": "spirv-reflect",
+            "controlDescriptors": [
+                "convert-windows-only",
+                "no-pre-2.18-obsolete-enums",
+                "typemap-native",
+                "no-extra-dir"
+            ],
+            "converter": {},
+            "prefix": "spvReflect",
+            "clang": {
+                "args": [
+                    "--language=c++",
+                    "--std=c++17",
+                    "-m64",
+                    "-Wno-expansion-to-defined",
+                    "-Wno-ignored-attributes",
+                    "-Wno-ignored-pragma-intrinsic",
+                    "-Wno-nonportable-include-path",
+                    "-Wno-pragma-pack",
+                    "-I$windowsSdkIncludes",
+                    "-Ibuild/submodules/SPIRV-Reflect"
+                ],
+                "traverse": [
+                    "build/submodules/SPIRV-Reflect/spirv_reflect.h"
+                ],
+                "classes": {
+                    "spirv_reflect.h": "[Core]Reflect"
+                }
+            },
+            "exclude": [
+                "SPV_REVISION",
+                "SPV_VERSION",
+                "ShaderModule"
+            ],
+            "rename": {
+                "SpvReflectDescriptorSet": "ReflectDescriptorSet",
+                "SpvReflectShaderModule": "ReflectShaderModule",
+                "__AnonymousEnum_spirv_reflect_L261_C1": "Constants",
+                "__AnonymousEnum_spirv_reflect_L266_C1": "Constants"
+            },
+            "bakery": {
+                "profileNames": [
+                    "spirv_reflect"
+                ]
+            },
+            "output": {
+                "mode": "Default",
+                "path": "src/SPIRV/Silk.NET.SPIRV.Reflect",
+                "licenseFile": "build/LICENSE_HEADER.txt",
+                "props": "build/props/bindings.props"
+            },
+            "namespace": "Silk.NET.SPIRV.Reflect",
+            "extensionsNamespace": "Silk.NET.SPIRV.Reflect.Extensions",
+            "nameContainer": {
+                "linux-x64": "libspirv-reflect.so",
+                "win-x64": "spirv-reflect.dll",
+                "win-x86": "spirv-reflect.dll",
+                "osx-x64": "libspirv-reflect.dylib",
+                "android": "libspirv-reflect.so",
+                "className": "SPIRVReflectLibraryNameContainer"
+            },
+            "typeMaps": [
+                {
+                    "SpvReflectTypeDescription::Traits": "Traits",
+                    "SpvReflectShaderModule::Internal": "Internal",
+                    "SpvReflectNumericTraits::Scalar": "Scalar",
+                    "SpvReflectNumericTraits::Vector": "Vector",
+                    "SpvReflectNumericTraits::Matrix": "Matrix",
+                    "SpvReflectEntryPoint::LocalSize": "LocalSize",
+                    "SpvSourceLanguage_": "Silk.NET.SPIRV.SourceLanguage",
+                    "SpvDim_": "Silk.NET.SPIRV.Dim",
+                    "SpvExecutionMode_": "Silk.NET.SPIRV.ExecutionMode",
+                    "SpvExecutionModel_": "Silk.NET.SPIRV.ExecutionModel",
+                    "SpvImageFormat_": "Silk.NET.SPIRV.ImageFormat",
+                    "SpvOp_": "Silk.NET.SPIRV.Op",
+                    "SpvBuiltIn_": "Silk.NET.SPIRV.BuiltIn",
+                    "SpvStorageClass_": "Silk.NET.SPIRV.StorageClass",
+                    "SpvCapability_": "Silk.NET.SPIRV.Capability"
+                },
+                {
+                    "$include.commonTypeMap": "build/csharp_typemap.json",
+                    "$include.dxTypeMap": "build/dx_typemap.json"
+                }
+            ]
+        },
+        {
+            "profileName": "SPIRVCross",
+            "sources": [
+                "build/submodules/SPIRV-Cross/spirv_cross_c.h"
+            ],
+            "mode": "Clang",
+            "cacheDir": "build/cache",
+            "cacheKey": "spirv-cross",
+            "controlDescriptors": [
+                "convert-windows-only",
+                "no-pre-2.18-obsolete-enums",
+                "typemap-native",
+                "no-extra-dir"
+            ],
+            "converter": {},
+            "prefix": "spvc_",
+            "clang": {
+                "args": [
+                    "--language=c++",
+                    "--std=c++17",
+                    "-m64",
+                    "-Wno-expansion-to-defined",
+                    "-Wno-ignored-attributes",
+                    "-Wno-ignored-pragma-intrinsic",
+                    "-Wno-nonportable-include-path",
+                    "-Wno-pragma-pack",
+                    "-I$windowsSdkIncludes",
+                    "-Ibuild/submodules/SPIRV-Cross"
+                ],
+                "traverse": [
+                    "build/submodules/SPIRV-Cross/spirv_cross_c.h"
+                ],
+                "classes": {
+                    "spirv_cross_c.h": "[Core]Cross"
+                }
+            },
+            "exclude": [],
+            "rename": {
+                "spvc_compiler_options_s": "CompilerOptions",
+                "spvc_compiler_s": "Compiler",
+                "spvc_constant_s": "Constant",
+                "spvc_context_s": "Context",
+                "spvc_parsed_ir_s": "ParsedIr",
+                "spvc_resources_s": "Resources",
+                "spvc_set_s": "Set",
+                "spvc_type_s": "CrossType"
+            },
+            "bakery": {
+                "profileNames": [
+                    "spirv_cross_c"
+                ]
+            },
+            "output": {
+                "mode": "Default",
+                "path": "src/SPIRV/Silk.NET.SPIRV.Cross",
+                "licenseFile": "build/LICENSE_HEADER.txt",
+                "props": "build/props/bindings.props"
+            },
+            "namespace": "Silk.NET.SPIRV.Cross",
+            "extensionsNamespace": "Silk.NET.SPIRV.Cross.Extensions",
+            "nameContainer": {
+                "linux-x64": "libspirv-cross.so",
+                "win-x64": "spirv-cross.dll",
+                "win-x86": "spirv-cross.dll",
+                "osx-x64": "libspirv-cross.dylib",
+                "android": "libspirv-cross.so",
+                "className": "SPIRVCrossLibraryNameContainer"
+            },
+            "typeMaps": [
+                {
+                    "SpvSourceLanguage_": "Silk.NET.SPIRV.SourceLanguage",
+                    "SpvDim_": "Silk.NET.SPIRV.Dim",
+                    "SpvExecutionMode_": "Silk.NET.SPIRV.ExecutionMode",
+                    "SpvExecutionModel_": "Silk.NET.SPIRV.ExecutionModel",
+                    "SpvImageFormat_": "Silk.NET.SPIRV.ImageFormat",
+                    "SpvOp_": "Silk.NET.SPIRV.Op",
+                    "SpvBuiltIn_": "Silk.NET.SPIRV.BuiltIn",
+                    "SpvStorageClass_": "Silk.NET.SPIRV.StorageClass",
+                    "SpvCapability_": "Silk.NET.SPIRV.Capability",
+                    "SpvDecoration_": "Silk.NET.SPIRV.Decoration",
+                    "SpvAccessQualifier_": "Silk.NET.SPIRV.AccessQualifier"
+                },
+                {
+                    "$include.commonTypeMap": "build/csharp_typemap.json",
+                    "$include.dxTypeMap": "build/dx_typemap.json"
+                }
+            ]
+        },
+        {
+            "profileName": "shaderc",
+            "sources": [
+                "build/submodules/shaderc/libshaderc/include/shaderc/shaderc.h"
+            ],
+            "mode": "Clang",
+            "cacheDir": "build/cache",
+            "cacheKey": "shaderc",
+            "controlDescriptors": [
+                "convert-windows-only",
+                "no-pre-2.18-obsolete-enums",
+                "typemap-native",
+                "no-extra-dir"
+            ],
+            "converter": {},
+            "prefix": "shaderc_",
+            "clang": {
+                "args": [
+                    "--language=c++",
+                    "--std=c++17",
+                    "-m64",
+                    "-Wno-expansion-to-defined",
+                    "-Wno-ignored-attributes",
+                    "-Wno-ignored-pragma-intrinsic",
+                    "-Wno-nonportable-include-path",
+                    "-Wno-pragma-pack",
+                    "-I$windowsSdkIncludes",
+                    "-Ibuild/submodules/shaderc/libshaderc/include"
+                ],
+                "traverse": [
+                    "build/submodules/shaderc/libshaderc/include/shaderc/shaderc.h",
+                    "build/submodules/shaderc/libshaderc/include/shaderc/env.h",
+                    "build/submodules/shaderc/libshaderc/include/shaderc/status.h"
+                ],
+                "classes": {
+                    "shaderc.h": "[Core]Shaderc",
+                    "env.h": "[Core]Shaderc"
+                }
+            },
+            "exclude": [],
+            "rename": {},
+            "bakery": {
+                "profileNames": [
+                    "shaderc"
+                ]
+            },
+            "output": {
+                "mode": "Default",
+                "path": "src/SPIRV/Silk.NET.Shaderc",
+                "licenseFile": "build/LICENSE_HEADER.txt",
+                "props": "build/props/bindings.props"
+            },
+            "namespace": "Silk.NET.Shaderc",
+            "extensionsNamespace": "Silk.NET.Shaderc.Extensions",
+            "nameContainer": {
+                "linux-x64": "libshaderc_shared.so",
+                "win-x64": "shaderc_shared.dll",
+                "win-x86": "shaderc_shared.dll",
+                "osx-x64": "libshaderc_shared.dylib",
+                "android": "libshaderc_shared.so",
+                "className": "ShadercLibraryNameContainer"
+            },
+            "typeMaps": [
+                {},
                 {
                     "$include.commonTypeMap": "build/csharp_typemap.json",
                     "$include.dxTypeMap": "build/dx_typemap.json"

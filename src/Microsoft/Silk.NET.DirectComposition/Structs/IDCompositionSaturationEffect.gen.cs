@@ -142,7 +142,7 @@ namespace Silk.NET.DirectComposition
         {
             var @this = (IDCompositionSaturationEffect*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<IDCompositionSaturationEffect*, float, int>)@this->LpVtbl[4])(@this, ratio);
+            ret = ((delegate* unmanaged[Stdcall]<IDCompositionSaturationEffect*, float, int>)@this->LpVtbl[5])(@this, ratio);
             return ret;
         }
 

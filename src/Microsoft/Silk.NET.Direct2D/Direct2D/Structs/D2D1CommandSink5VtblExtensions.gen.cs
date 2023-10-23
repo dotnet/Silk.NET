@@ -1553,7 +1553,7 @@ public unsafe static class D2D1CommandSink5VtblExtensions
     {
         var @this = thisVtbl.Handle;
         int ret = default;
-        ret = ((delegate* unmanaged[Stdcall]<ID2D1CommandSink5*, ID2D1SpriteBatch*, uint, uint, ID2D1Bitmap*, BitmapInterpolationMode, SpriteOptions, int>)@this->LpVtbl[31])(@this, spriteBatch, startIndex, spriteCount, bitmap, interpolationMode, spriteOptions);
+        ret = ((delegate* unmanaged[Stdcall]<ID2D1CommandSink5*, ID2D1SpriteBatch*, uint, uint, ID2D1Bitmap*, BitmapInterpolationMode, SpriteOptions, int>)@this->LpVtbl[32])(@this, spriteBatch, startIndex, spriteCount, bitmap, interpolationMode, spriteOptions);
         return ret;
     }
 
@@ -1564,7 +1564,7 @@ public unsafe static class D2D1CommandSink5VtblExtensions
         int ret = default;
         fixed (ID2D1Bitmap* bitmapPtr = &bitmap)
         {
-            ret = ((delegate* unmanaged[Stdcall]<ID2D1CommandSink5*, ID2D1SpriteBatch*, uint, uint, ID2D1Bitmap*, BitmapInterpolationMode, SpriteOptions, int>)@this->LpVtbl[31])(@this, spriteBatch, startIndex, spriteCount, bitmapPtr, interpolationMode, spriteOptions);
+            ret = ((delegate* unmanaged[Stdcall]<ID2D1CommandSink5*, ID2D1SpriteBatch*, uint, uint, ID2D1Bitmap*, BitmapInterpolationMode, SpriteOptions, int>)@this->LpVtbl[32])(@this, spriteBatch, startIndex, spriteCount, bitmapPtr, interpolationMode, spriteOptions);
         }
         return ret;
     }
@@ -1576,7 +1576,7 @@ public unsafe static class D2D1CommandSink5VtblExtensions
         int ret = default;
         fixed (ID2D1SpriteBatch* spriteBatchPtr = &spriteBatch)
         {
-            ret = ((delegate* unmanaged[Stdcall]<ID2D1CommandSink5*, ID2D1SpriteBatch*, uint, uint, ID2D1Bitmap*, BitmapInterpolationMode, SpriteOptions, int>)@this->LpVtbl[31])(@this, spriteBatchPtr, startIndex, spriteCount, bitmap, interpolationMode, spriteOptions);
+            ret = ((delegate* unmanaged[Stdcall]<ID2D1CommandSink5*, ID2D1SpriteBatch*, uint, uint, ID2D1Bitmap*, BitmapInterpolationMode, SpriteOptions, int>)@this->LpVtbl[32])(@this, spriteBatchPtr, startIndex, spriteCount, bitmap, interpolationMode, spriteOptions);
         }
         return ret;
     }
@@ -1590,7 +1590,7 @@ public unsafe static class D2D1CommandSink5VtblExtensions
         {
             fixed (ID2D1Bitmap* bitmapPtr = &bitmap)
             {
-                ret = ((delegate* unmanaged[Stdcall]<ID2D1CommandSink5*, ID2D1SpriteBatch*, uint, uint, ID2D1Bitmap*, BitmapInterpolationMode, SpriteOptions, int>)@this->LpVtbl[31])(@this, spriteBatchPtr, startIndex, spriteCount, bitmapPtr, interpolationMode, spriteOptions);
+                ret = ((delegate* unmanaged[Stdcall]<ID2D1CommandSink5*, ID2D1SpriteBatch*, uint, uint, ID2D1Bitmap*, BitmapInterpolationMode, SpriteOptions, int>)@this->LpVtbl[32])(@this, spriteBatchPtr, startIndex, spriteCount, bitmapPtr, interpolationMode, spriteOptions);
             }
         }
         return ret;
@@ -1601,7 +1601,7 @@ public unsafe static class D2D1CommandSink5VtblExtensions
     {
         var @this = thisVtbl.Handle;
         int ret = default;
-        ret = ((delegate* unmanaged[Stdcall]<ID2D1CommandSink5*, PrimitiveBlend, int>)@this->LpVtbl[32])(@this, primitiveBlend);
+        ret = ((delegate* unmanaged[Stdcall]<ID2D1CommandSink5*, PrimitiveBlend, int>)@this->LpVtbl[33])(@this, primitiveBlend);
         return ret;
     }
 
@@ -1610,7 +1610,7 @@ public unsafe static class D2D1CommandSink5VtblExtensions
     {
         var @this = thisVtbl.Handle;
         int ret = default;
-        ret = ((delegate* unmanaged[Stdcall]<ID2D1CommandSink5*, ID2D1Image*, BlendMode, Silk.NET.Maths.Vector2D<float>*, Silk.NET.Maths.Box2D<float>*, InterpolationMode, int>)@this->LpVtbl[33])(@this, image, blendMode, targetOffset, imageRectangle, interpolationMode);
+        ret = ((delegate* unmanaged[Stdcall]<ID2D1CommandSink5*, ID2D1Image*, BlendMode, Silk.NET.Maths.Vector2D<float>*, Silk.NET.Maths.Box2D<float>*, InterpolationMode, int>)@this->LpVtbl[34])(@this, image, blendMode, targetOffset, imageRectangle, interpolationMode);
         return ret;
     }
 
@@ -1621,7 +1621,7 @@ public unsafe static class D2D1CommandSink5VtblExtensions
         int ret = default;
         fixed (Silk.NET.Maths.Box2D<float>* imageRectanglePtr = &imageRectangle)
         {
-            ret = ((delegate* unmanaged[Stdcall]<ID2D1CommandSink5*, ID2D1Image*, BlendMode, Silk.NET.Maths.Vector2D<float>*, Silk.NET.Maths.Box2D<float>*, InterpolationMode, int>)@this->LpVtbl[33])(@this, image, blendMode, targetOffset, imageRectanglePtr, interpolationMode);
+            ret = ((delegate* unmanaged[Stdcall]<ID2D1CommandSink5*, ID2D1Image*, BlendMode, Silk.NET.Maths.Vector2D<float>*, Silk.NET.Maths.Box2D<float>*, InterpolationMode, int>)@this->LpVtbl[34])(@this, image, blendMode, targetOffset, imageRectanglePtr, interpolationMode);
         }
         return ret;
     }
@@ -1633,7 +1633,7 @@ public unsafe static class D2D1CommandSink5VtblExtensions
         int ret = default;
         fixed (Silk.NET.Maths.Vector2D<float>* targetOffsetPtr = &targetOffset)
         {
-            ret = ((delegate* unmanaged[Stdcall]<ID2D1CommandSink5*, ID2D1Image*, BlendMode, Silk.NET.Maths.Vector2D<float>*, Silk.NET.Maths.Box2D<float>*, InterpolationMode, int>)@this->LpVtbl[33])(@this, image, blendMode, targetOffsetPtr, imageRectangle, interpolationMode);
+            ret = ((delegate* unmanaged[Stdcall]<ID2D1CommandSink5*, ID2D1Image*, BlendMode, Silk.NET.Maths.Vector2D<float>*, Silk.NET.Maths.Box2D<float>*, InterpolationMode, int>)@this->LpVtbl[34])(@this, image, blendMode, targetOffsetPtr, imageRectangle, interpolationMode);
         }
         return ret;
     }
@@ -1647,7 +1647,7 @@ public unsafe static class D2D1CommandSink5VtblExtensions
         {
             fixed (Silk.NET.Maths.Box2D<float>* imageRectanglePtr = &imageRectangle)
             {
-                ret = ((delegate* unmanaged[Stdcall]<ID2D1CommandSink5*, ID2D1Image*, BlendMode, Silk.NET.Maths.Vector2D<float>*, Silk.NET.Maths.Box2D<float>*, InterpolationMode, int>)@this->LpVtbl[33])(@this, image, blendMode, targetOffsetPtr, imageRectanglePtr, interpolationMode);
+                ret = ((delegate* unmanaged[Stdcall]<ID2D1CommandSink5*, ID2D1Image*, BlendMode, Silk.NET.Maths.Vector2D<float>*, Silk.NET.Maths.Box2D<float>*, InterpolationMode, int>)@this->LpVtbl[34])(@this, image, blendMode, targetOffsetPtr, imageRectanglePtr, interpolationMode);
             }
         }
         return ret;
@@ -1660,7 +1660,7 @@ public unsafe static class D2D1CommandSink5VtblExtensions
         int ret = default;
         fixed (ID2D1Image* imagePtr = &image)
         {
-            ret = ((delegate* unmanaged[Stdcall]<ID2D1CommandSink5*, ID2D1Image*, BlendMode, Silk.NET.Maths.Vector2D<float>*, Silk.NET.Maths.Box2D<float>*, InterpolationMode, int>)@this->LpVtbl[33])(@this, imagePtr, blendMode, targetOffset, imageRectangle, interpolationMode);
+            ret = ((delegate* unmanaged[Stdcall]<ID2D1CommandSink5*, ID2D1Image*, BlendMode, Silk.NET.Maths.Vector2D<float>*, Silk.NET.Maths.Box2D<float>*, InterpolationMode, int>)@this->LpVtbl[34])(@this, imagePtr, blendMode, targetOffset, imageRectangle, interpolationMode);
         }
         return ret;
     }
@@ -1674,7 +1674,7 @@ public unsafe static class D2D1CommandSink5VtblExtensions
         {
             fixed (Silk.NET.Maths.Box2D<float>* imageRectanglePtr = &imageRectangle)
             {
-                ret = ((delegate* unmanaged[Stdcall]<ID2D1CommandSink5*, ID2D1Image*, BlendMode, Silk.NET.Maths.Vector2D<float>*, Silk.NET.Maths.Box2D<float>*, InterpolationMode, int>)@this->LpVtbl[33])(@this, imagePtr, blendMode, targetOffset, imageRectanglePtr, interpolationMode);
+                ret = ((delegate* unmanaged[Stdcall]<ID2D1CommandSink5*, ID2D1Image*, BlendMode, Silk.NET.Maths.Vector2D<float>*, Silk.NET.Maths.Box2D<float>*, InterpolationMode, int>)@this->LpVtbl[34])(@this, imagePtr, blendMode, targetOffset, imageRectanglePtr, interpolationMode);
             }
         }
         return ret;
@@ -1689,7 +1689,7 @@ public unsafe static class D2D1CommandSink5VtblExtensions
         {
             fixed (Silk.NET.Maths.Vector2D<float>* targetOffsetPtr = &targetOffset)
             {
-                ret = ((delegate* unmanaged[Stdcall]<ID2D1CommandSink5*, ID2D1Image*, BlendMode, Silk.NET.Maths.Vector2D<float>*, Silk.NET.Maths.Box2D<float>*, InterpolationMode, int>)@this->LpVtbl[33])(@this, imagePtr, blendMode, targetOffsetPtr, imageRectangle, interpolationMode);
+                ret = ((delegate* unmanaged[Stdcall]<ID2D1CommandSink5*, ID2D1Image*, BlendMode, Silk.NET.Maths.Vector2D<float>*, Silk.NET.Maths.Box2D<float>*, InterpolationMode, int>)@this->LpVtbl[34])(@this, imagePtr, blendMode, targetOffsetPtr, imageRectangle, interpolationMode);
             }
         }
         return ret;
@@ -1706,7 +1706,7 @@ public unsafe static class D2D1CommandSink5VtblExtensions
             {
                 fixed (Silk.NET.Maths.Box2D<float>* imageRectanglePtr = &imageRectangle)
                 {
-                    ret = ((delegate* unmanaged[Stdcall]<ID2D1CommandSink5*, ID2D1Image*, BlendMode, Silk.NET.Maths.Vector2D<float>*, Silk.NET.Maths.Box2D<float>*, InterpolationMode, int>)@this->LpVtbl[33])(@this, imagePtr, blendMode, targetOffsetPtr, imageRectanglePtr, interpolationMode);
+                    ret = ((delegate* unmanaged[Stdcall]<ID2D1CommandSink5*, ID2D1Image*, BlendMode, Silk.NET.Maths.Vector2D<float>*, Silk.NET.Maths.Box2D<float>*, InterpolationMode, int>)@this->LpVtbl[34])(@this, imagePtr, blendMode, targetOffsetPtr, imageRectanglePtr, interpolationMode);
                 }
             }
         }

@@ -85,61 +85,61 @@ public unsafe static class RpcOptionsVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Set(this ComPtr<IRpcOptions> thisVtbl, Silk.NET.Core.Native.IUnknown* pPrx, TagRPCOPTPROPERTIES dwProperty, nuint dwValue)
+    public static unsafe int Set(this ComPtr<IRpcOptions> thisVtbl, Silk.NET.Core.Native.IUnknown* pPrx, RPCOptProperties dwProperty, nuint dwValue)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
-        ret = ((delegate* unmanaged[Cdecl]<IRpcOptions*, Silk.NET.Core.Native.IUnknown*, TagRPCOPTPROPERTIES, nuint, int>)@this->LpVtbl[3])(@this, pPrx, dwProperty, dwValue);
+        ret = ((delegate* unmanaged[Cdecl]<IRpcOptions*, Silk.NET.Core.Native.IUnknown*, RPCOptProperties, nuint, int>)@this->LpVtbl[3])(@this, pPrx, dwProperty, dwValue);
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static int Set(this ComPtr<IRpcOptions> thisVtbl, ref Silk.NET.Core.Native.IUnknown pPrx, TagRPCOPTPROPERTIES dwProperty, nuint dwValue)
+    public static int Set(this ComPtr<IRpcOptions> thisVtbl, ref Silk.NET.Core.Native.IUnknown pPrx, RPCOptProperties dwProperty, nuint dwValue)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
         fixed (Silk.NET.Core.Native.IUnknown* pPrxPtr = &pPrx)
         {
-            ret = ((delegate* unmanaged[Cdecl]<IRpcOptions*, Silk.NET.Core.Native.IUnknown*, TagRPCOPTPROPERTIES, nuint, int>)@this->LpVtbl[3])(@this, pPrxPtr, dwProperty, dwValue);
+            ret = ((delegate* unmanaged[Cdecl]<IRpcOptions*, Silk.NET.Core.Native.IUnknown*, RPCOptProperties, nuint, int>)@this->LpVtbl[3])(@this, pPrxPtr, dwProperty, dwValue);
         }
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Query(this ComPtr<IRpcOptions> thisVtbl, Silk.NET.Core.Native.IUnknown* pPrx, TagRPCOPTPROPERTIES dwProperty, nuint* pdwValue)
+    public static unsafe int Query(this ComPtr<IRpcOptions> thisVtbl, Silk.NET.Core.Native.IUnknown* pPrx, RPCOptProperties dwProperty, nuint* pdwValue)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
-        ret = ((delegate* unmanaged[Cdecl]<IRpcOptions*, Silk.NET.Core.Native.IUnknown*, TagRPCOPTPROPERTIES, nuint*, int>)@this->LpVtbl[4])(@this, pPrx, dwProperty, pdwValue);
+        ret = ((delegate* unmanaged[Cdecl]<IRpcOptions*, Silk.NET.Core.Native.IUnknown*, RPCOptProperties, nuint*, int>)@this->LpVtbl[4])(@this, pPrx, dwProperty, pdwValue);
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Query(this ComPtr<IRpcOptions> thisVtbl, Silk.NET.Core.Native.IUnknown* pPrx, TagRPCOPTPROPERTIES dwProperty, ref nuint pdwValue)
+    public static unsafe int Query(this ComPtr<IRpcOptions> thisVtbl, Silk.NET.Core.Native.IUnknown* pPrx, RPCOptProperties dwProperty, ref nuint pdwValue)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
         fixed (nuint* pdwValuePtr = &pdwValue)
         {
-            ret = ((delegate* unmanaged[Cdecl]<IRpcOptions*, Silk.NET.Core.Native.IUnknown*, TagRPCOPTPROPERTIES, nuint*, int>)@this->LpVtbl[4])(@this, pPrx, dwProperty, pdwValuePtr);
+            ret = ((delegate* unmanaged[Cdecl]<IRpcOptions*, Silk.NET.Core.Native.IUnknown*, RPCOptProperties, nuint*, int>)@this->LpVtbl[4])(@this, pPrx, dwProperty, pdwValuePtr);
         }
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Query(this ComPtr<IRpcOptions> thisVtbl, ref Silk.NET.Core.Native.IUnknown pPrx, TagRPCOPTPROPERTIES dwProperty, nuint* pdwValue)
+    public static unsafe int Query(this ComPtr<IRpcOptions> thisVtbl, ref Silk.NET.Core.Native.IUnknown pPrx, RPCOptProperties dwProperty, nuint* pdwValue)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
         fixed (Silk.NET.Core.Native.IUnknown* pPrxPtr = &pPrx)
         {
-            ret = ((delegate* unmanaged[Cdecl]<IRpcOptions*, Silk.NET.Core.Native.IUnknown*, TagRPCOPTPROPERTIES, nuint*, int>)@this->LpVtbl[4])(@this, pPrxPtr, dwProperty, pdwValue);
+            ret = ((delegate* unmanaged[Cdecl]<IRpcOptions*, Silk.NET.Core.Native.IUnknown*, RPCOptProperties, nuint*, int>)@this->LpVtbl[4])(@this, pPrxPtr, dwProperty, pdwValue);
         }
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static int Query(this ComPtr<IRpcOptions> thisVtbl, ref Silk.NET.Core.Native.IUnknown pPrx, TagRPCOPTPROPERTIES dwProperty, ref nuint pdwValue)
+    public static int Query(this ComPtr<IRpcOptions> thisVtbl, ref Silk.NET.Core.Native.IUnknown pPrx, RPCOptProperties dwProperty, ref nuint pdwValue)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -147,7 +147,7 @@ public unsafe static class RpcOptionsVtblExtensions
         {
             fixed (nuint* pdwValuePtr = &pdwValue)
             {
-                ret = ((delegate* unmanaged[Cdecl]<IRpcOptions*, Silk.NET.Core.Native.IUnknown*, TagRPCOPTPROPERTIES, nuint*, int>)@this->LpVtbl[4])(@this, pPrxPtr, dwProperty, pdwValuePtr);
+                ret = ((delegate* unmanaged[Cdecl]<IRpcOptions*, Silk.NET.Core.Native.IUnknown*, RPCOptProperties, nuint*, int>)@this->LpVtbl[4])(@this, pPrxPtr, dwProperty, pdwValuePtr);
             }
         }
         return ret;
@@ -179,7 +179,7 @@ public unsafe static class RpcOptionsVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int Set<TI0>(this ComPtr<IRpcOptions> thisVtbl, ComPtr<TI0> pPrx, TagRPCOPTPROPERTIES dwProperty, nuint dwValue) where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Native.IUnknown>, IComVtbl<TI0>
+    public static int Set<TI0>(this ComPtr<IRpcOptions> thisVtbl, ComPtr<TI0> pPrx, RPCOptProperties dwProperty, nuint dwValue) where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Native.IUnknown>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -187,7 +187,7 @@ public unsafe static class RpcOptionsVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int Set(this ComPtr<IRpcOptions> thisVtbl, Span<Silk.NET.Core.Native.IUnknown> pPrx, TagRPCOPTPROPERTIES dwProperty, nuint dwValue)
+    public static int Set(this ComPtr<IRpcOptions> thisVtbl, Span<Silk.NET.Core.Native.IUnknown> pPrx, RPCOptProperties dwProperty, nuint dwValue)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -195,7 +195,7 @@ public unsafe static class RpcOptionsVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Query<TI0>(this ComPtr<IRpcOptions> thisVtbl, ComPtr<TI0> pPrx, TagRPCOPTPROPERTIES dwProperty, nuint* pdwValue) where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Native.IUnknown>, IComVtbl<TI0>
+    public static unsafe int Query<TI0>(this ComPtr<IRpcOptions> thisVtbl, ComPtr<TI0> pPrx, RPCOptProperties dwProperty, nuint* pdwValue) where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Native.IUnknown>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -203,7 +203,7 @@ public unsafe static class RpcOptionsVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Query(this ComPtr<IRpcOptions> thisVtbl, Silk.NET.Core.Native.IUnknown* pPrx, TagRPCOPTPROPERTIES dwProperty, Span<nuint> pdwValue)
+    public static unsafe int Query(this ComPtr<IRpcOptions> thisVtbl, Silk.NET.Core.Native.IUnknown* pPrx, RPCOptProperties dwProperty, Span<nuint> pdwValue)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -211,7 +211,7 @@ public unsafe static class RpcOptionsVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int Query<TI0>(this ComPtr<IRpcOptions> thisVtbl, ComPtr<TI0> pPrx, TagRPCOPTPROPERTIES dwProperty, ref nuint pdwValue) where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Native.IUnknown>, IComVtbl<TI0>
+    public static int Query<TI0>(this ComPtr<IRpcOptions> thisVtbl, ComPtr<TI0> pPrx, RPCOptProperties dwProperty, ref nuint pdwValue) where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Native.IUnknown>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -219,7 +219,7 @@ public unsafe static class RpcOptionsVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Query(this ComPtr<IRpcOptions> thisVtbl, Span<Silk.NET.Core.Native.IUnknown> pPrx, TagRPCOPTPROPERTIES dwProperty, nuint* pdwValue)
+    public static unsafe int Query(this ComPtr<IRpcOptions> thisVtbl, Span<Silk.NET.Core.Native.IUnknown> pPrx, RPCOptProperties dwProperty, nuint* pdwValue)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -227,7 +227,7 @@ public unsafe static class RpcOptionsVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int Query(this ComPtr<IRpcOptions> thisVtbl, Span<Silk.NET.Core.Native.IUnknown> pPrx, TagRPCOPTPROPERTIES dwProperty, Span<nuint> pdwValue)
+    public static int Query(this ComPtr<IRpcOptions> thisVtbl, Span<Silk.NET.Core.Native.IUnknown> pPrx, RPCOptProperties dwProperty, Span<nuint> pdwValue)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader

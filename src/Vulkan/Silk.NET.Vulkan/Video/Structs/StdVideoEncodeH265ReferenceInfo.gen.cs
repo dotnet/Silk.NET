@@ -22,7 +22,7 @@ namespace Silk.NET.Vulkan.Video
         public StdVideoEncodeH265ReferenceInfo
         (
             StdVideoEncodeH265ReferenceInfoFlags? flags = null,
-            StdVideoH265PictureType? pictureType = null,
+            StdVideoH265PictureType? picType = null,
             int? picOrderCntVal = null,
             byte? temporalId = null
         ) : this()
@@ -32,9 +32,9 @@ namespace Silk.NET.Vulkan.Video
                 Flags = flags.Value;
             }
 
-            if (pictureType is not null)
+            if (picType is not null)
             {
-                PictureType = pictureType.Value;
+                PicType = picType.Value;
             }
 
             if (picOrderCntVal is not null)
@@ -56,8 +56,8 @@ namespace Silk.NET.Vulkan.Video
 
         [NativeName("Type", "StdVideoH265PictureType")]
         [NativeName("Type.Name", "StdVideoH265PictureType")]
-        [NativeName("Name", "PictureType")]
-        public StdVideoH265PictureType PictureType;
+        [NativeName("Name", "pic_type")]
+        public StdVideoH265PictureType PicType;
 
         [NativeName("Type", "int32_t")]
         [NativeName("Type.Name", "int32_t")]

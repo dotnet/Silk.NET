@@ -58,6 +58,8 @@ namespace Silk.NET.OpenCL.Extensions.IMG
         [NativeName("Name", "CL_MEM_USE_GRALLOC_PTR_IMG")]
         MemUseGrallocPtrImg = 0x10000000,
         [NativeName("Name", "CL_MEM_ALLOC_FLAGS_IMG")]
+        AllocFlagsImg = 0x40D7,
+        [NativeName("Name", "CL_MEM_ALLOC_FLAGS_IMG")]
         MemAllocFlagsImg = 0x40D7,
     }
 }

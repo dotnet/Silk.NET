@@ -192,7 +192,13 @@ namespace Silk.NET.OpenXR
         ErrorSpaceNetworkRequestFailedFB = unchecked((int) -1000169003),
         [NativeName("Name", "XR_ERROR_SPACE_CLOUD_STORAGE_DISABLED_FB")]
         ErrorSpaceCloudStorageDisabledFB = unchecked((int) -1000169004),
+        [NativeName("Name", "XR_ERROR_PASSTHROUGH_COLOR_LUT_BUFFER_SIZE_MISMATCH_META")]
+        ErrorPassthroughColorLutBufferSizeMismatchMeta = unchecked((int) -1000266000),
         [NativeName("Name", "XR_ERROR_HINT_ALREADY_SET_QCOM")]
         ErrorHintAlreadySetQCom = unchecked((int) -1000306000),
+        [NativeName("Name", "XR_ERROR_SPACE_NOT_LOCATABLE_EXT")]
+        ErrorSpaceNotLocatableExt = unchecked((int) -1000429000),
+        [NativeName("Name", "XR_ERROR_PLANE_DETECTION_PERMISSION_DENIED_EXT")]
+        ErrorPlaneDetectionPermissionDeniedExt = unchecked((int) -1000429001),
     }
 }

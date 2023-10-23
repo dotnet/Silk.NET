@@ -16,7 +16,7 @@ namespace Silk.NET.OpenGL.Legacy
         PrimaryColorNV = 0x852C,
         [NativeName("Name", "GL_SECONDARY_COLOR_NV")]
         SecondaryColorNV = 0x852D,
-        [System.Obsolete]
+        [System.Obsolete("Deprecated in version 3.2")]
         [NativeName("Name", "GL_PRIMARY_COLOR")]
         PrimaryColor = 0x8577,
     }
