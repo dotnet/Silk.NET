@@ -113,7 +113,14 @@ public class AddVTables(IOptionsSnapshot<AddVTables.Configuration> config) : IMo
                     .WithBaseList(
                         BaseList(
                             SingletonSeparatedList<BaseTypeSyntax>(
-                                SimpleBaseType(IdentifierName($"I{ctx.ClassName}.Static"))
+                                SimpleBaseType(
+                                    GenericName(
+                                        Identifier($"I{ctx.ClassName}.Static"),
+                                        TypeArgumentList(
+                                            SingletonSeparatedList<TypeSyntax>(IdentifierName(Name))
+                                        )
+                                    )
+                                )
                             )
                         )
                     )
@@ -304,7 +311,16 @@ public class AddVTables(IOptionsSnapshot<AddVTables.Configuration> config) : IMo
                             new BaseTypeSyntax[]
                             {
                                 SimpleBaseType(IdentifierName(key)),
-                                SimpleBaseType(IdentifierName($"{key}.Static"))
+                                SimpleBaseType(
+                                    GenericName(
+                                        Identifier($"{key}.Static"),
+                                        TypeArgumentList(
+                                            SingletonSeparatedList<TypeSyntax>(
+                                                IdentifierName(node.Identifier)
+                                            )
+                                        )
+                                    )
+                                )
                             }
                         )
                     )
@@ -340,6 +356,28 @@ public class AddVTables(IOptionsSnapshot<AddVTables.Configuration> config) : IMo
                                 TokenList(
                                     Token(SyntaxKind.PublicKeyword),
                                     Token(SyntaxKind.PartialKeyword)
+                                )
+                            )
+                            .WithTypeParameterList(
+                                TypeParameterList(SingletonSeparatedList(TypeParameter("TSelf")))
+                            )
+                            .WithConstraintClauses(
+                                SingletonList(
+                                    TypeParameterConstraintClause(
+                                        IdentifierName("TSelf"),
+                                        SingletonSeparatedList<TypeParameterConstraintSyntax>(
+                                            TypeConstraint(
+                                                GenericName(
+                                                    Identifier("Static"),
+                                                    TypeArgumentList(
+                                                        SingletonSeparatedList<TypeSyntax>(
+                                                            IdentifierName("TSelf")
+                                                        )
+                                                    )
+                                                )
+                                            )
+                                        )
+                                    )
                                 )
                             )
                     );

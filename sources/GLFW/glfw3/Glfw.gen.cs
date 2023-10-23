@@ -7,9 +7,9 @@ using System.Runtime.CompilerServices;
 
 namespace Silk.NET.GLFW;
 
-public unsafe partial class Glfw : IGlfw, IGlfw.Static
+public unsafe partial class Glfw : IGlfw, IGlfw.Static<Glfw>
 {
-    public partial class DllImport : IGlfw.Static
+    public partial class DllImport : IGlfw.Static<DllImport>
     {
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization

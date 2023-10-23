@@ -9,7 +9,8 @@ namespace Silk.NET.GLFW;
 
 public unsafe partial interface IGlfw
 {
-    public partial interface Static
+    public partial interface Static<TSelf>
+        where TSelf : Static<TSelf>
     {
         [NativeFunction("glfw", EntryPoint = "glfwCreateCursor")]
         static abstract Mut<Cursor> CreateCursor(
