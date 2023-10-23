@@ -368,7 +368,31 @@ public class AddVTables(IOptionsSnapshot<AddVTables.Configuration> config) : IMo
             node = (MethodDeclarationSyntax)base.VisitMethodDeclaration(node)!;
             var baseDecl = node.WithBody(null)
                 .WithSemicolonToken(Token(SyntaxKind.SemicolonToken))
-                .WithAttributeLists(List<AttributeListSyntax>())
+                .WithAttributeLists(
+                    List(
+                        node.AttributeLists
+                            .Select(
+                                x =>
+                                    x.WithAttributes(
+                                        SeparatedList(
+                                            x.Attributes.Where(
+                                                y =>
+                                                    !y.IsAttribute(
+                                                        "System.Runtime.InteropServices.DllImport"
+                                                    )
+                                                    && !y.IsAttribute(
+                                                        "Silk.NET.Core.NativeFunction"
+                                                    )
+                                                    && !y.IsAttribute(
+                                                        "System.Runtime.CompilerServices.MethodImpl"
+                                                    )
+                                            )
+                                        )
+                                    )
+                            )
+                            .Where(x => x.Attributes.Count > 0)
+                    )
+                )
                 .AddNativeFunction(node);
             var staticDecl = baseDecl
                 .WithModifiers(
@@ -449,7 +473,32 @@ public class AddVTables(IOptionsSnapshot<AddVTables.Configuration> config) : IMo
             }
 
             _methods.Add(nativeContextTramp);
-            _methods.Add(node);
+
+            var staticDefaultProxy = node.WithBody(null)
+                .WithExpressionBody(
+                    ArrowExpressionClause(
+                        InvocationExpression(
+                            MemberAccessExpression(
+                                SyntaxKind.SimpleMemberAccessExpression,
+                                IdentifierName(_staticDefault),
+                                IdentifierName(node.Identifier.ToString())
+                            ),
+                            ArgumentList(
+                                SeparatedList(
+                                    node.ParameterList.Parameters.Select(
+                                        x => Argument(IdentifierName(x.Identifier))
+                                    )
+                                )
+                            )
+                        )
+                    )
+                )
+                .WithModifiers(
+                    TokenList(node.Modifiers.Where(x => !x.IsKind(SyntaxKind.ExternKeyword)))
+                )
+                .WithAttributeLists(staticDecl.AttributeLists)
+                .WithSemicolonToken(Token(SyntaxKind.SemicolonToken));
+            _methods.Add(staticDefaultProxy);
             return null;
         }
 
