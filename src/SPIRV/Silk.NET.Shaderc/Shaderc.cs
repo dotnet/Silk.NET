@@ -13,6 +13,7 @@ using static Silk.NET.Core.Attributes.ExtensionAttribute;
 
 namespace Silk.NET.Shaderc
 {
+    [PInvokeOverride(0, "__Internal")]
     public partial class Shaderc
     {
         public static Shaderc GetApi()

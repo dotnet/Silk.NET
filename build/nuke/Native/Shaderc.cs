@@ -25,7 +25,8 @@ using static Nuke.Common.Tools.DotNet.DotNetTasks;
 using static Nuke.Common.Tools.Git.GitTasks;
 using static Nuke.Common.Tools.GitHub.GitHubTasks;
 
-partial class Build {
+partial class Build
+{
     const string ShadercBuildScript = @"
     const std = @import(""std"");
 const fs = std.fs;
@@ -588,6 +589,7 @@ const root_path = root_dir() ++ ""/"";
 
             const string optimizeMode = "-Doptimize=ReleaseFast";
 
+            /*
             //Build shaderc for Linux x86
             InheritedShell($"zig build -Dtarget=x86-linux-gnu.2.16 {optimizeMode}", ShadercPath).AssertZeroExitCode();
             CopyFile(ShadercPath / "zig-out" / "lib" / $"lib{libname}.so", runtimes / "linux-x86" / "native" / $"lib{libname}.so", FileExistsPolicy.Overwrite);
@@ -619,6 +621,49 @@ const root_path = root_dir() ++ ""/"";
             //Build shaderc for MacOS ARM64
             InheritedShell($"zig build -Dtarget=aarch64-macos {optimizeMode}", ShadercPath).AssertZeroExitCode();
             CopyFile(ShadercPath / "zig-out" / "lib" / $"lib{libname}.dylib", runtimes / "osx-arm64" / "native" / $"lib{libname}.dylib", FileExistsPolicy.Overwrite);
+            */
+
+            if (RuntimeInformation.IsOSPlatform(OSPlatform.OSX))
+            {
+                var shadercBuildPath = ShadercPath / "build";
+                var shadercOptions = new Dictionary<string, string>
+                {
+                    ["SHADERC_SKIP_INSTALL"] = "ON",
+                    ["SHADERC_SKIP_TESTS"] = "ON",
+                    ["SHADERC_SKIP_EXAMPLES"] = "ON",
+
+                    ["SKIP_SPIRV_TOOLS_INSTALL"] = "ON",
+                    ["SKIP_GLSLANG_INSTALL"] = "ON"
+                };
+
+                var optionString = string.Empty;
+                foreach ((string name, string value) in shadercOptions)
+                {
+                    optionString += $" -D{name}={value}";
+                }
+
+                { //iOS
+                    DeleteDirectory(shadercBuildPath);
+
+                    InheritedShell($"cmake . -B {shadercBuildPath} -G Xcode -DCMAKE_SYSTEM_NAME=iOS -DCMAKE_OSX_ARCHITECTURES=arm64{optionString}", ShadercPath)
+                        .AssertZeroExitCode();
+                    InheritedShell($"cmake --build .{JobsArg} --config Release --target shaderc", shadercBuildPath)
+                        .AssertWaitForExit();
+
+                    CopyFile(shadercBuildPath / "libshaderc" / "Release-iphoneos" / "libshaderc.a", runtimes / "ios" / "native" / "libshaderc.a", FileExistsPolicy.Overwrite);
+                }
+
+                { //iOS simulator
+                    DeleteDirectory(shadercBuildPath);
+
+                    InheritedShell($"cmake . -B {shadercBuildPath} -G Xcode -DCMAKE_SYSTEM_NAME=iOS -DCMAKE_OSX_ARCHITECTURES=\"arm64;x86_64\"{optionString}", ShadercPath)
+                        .AssertZeroExitCode();
+                    InheritedShell($"cmake --build .{JobsArg} --config Release --target shaderc", shadercBuildPath)
+                        .AssertWaitForExit();
+
+                    CopyFile(shadercBuildPath / "libshaderc" / "Release-iphoneos" / "libshaderc.a", runtimes / "iossimulator" / "native" / "libshaderc.a", FileExistsPolicy.Overwrite);
+                }
+            }
 
             var files = (runtimes / "win-x64" / "native").GlobFiles("*.dll")
                 .Concat((runtimes / "win-x86" / "native").GlobFiles("*.dll"))
@@ -627,12 +672,14 @@ const root_path = root_dir() ++ ""/"";
                 .Concat((runtimes / "osx-arm64" / "native").GlobFiles("*.dylib"))
                 .Concat((runtimes / "linux-x64" / "native").GlobFiles("*.so"))
                 .Concat((runtimes / "linux-x86" / "native").GlobFiles("*.so"))
-                .Concat((runtimes / "linux-arm64" / "native").GlobFiles("*.so"));
+                .Concat((runtimes / "linux-arm64" / "native").GlobFiles("*.so"))
+                .Concat((runtimes / "ios" / "native").GlobFiles("*.a"))
+                .Concat((runtimes / "iossimulator" / "native").GlobFiles("*.a"));
 
             var glob = string.Empty;
             glob = files.Aggregate(glob, (current, path) => current + $"\"{path}\" ");
 
-            PrUpdatedNativeBinary("Shaderc", glob);
+            //PrUpdatedNativeBinary("Shaderc", glob);
         }
         )
     );

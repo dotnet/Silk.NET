@@ -13,6 +13,7 @@ using static Silk.NET.Core.Attributes.ExtensionAttribute;
 
 namespace Silk.NET.SPIRV.Cross
 {
+    [PInvokeOverride(0, "__Internal")]
     public partial class Cross
     {
         public static Cross GetApi()

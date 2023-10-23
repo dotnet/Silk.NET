@@ -25,7 +25,8 @@ using static Nuke.Common.Tools.DotNet.DotNetTasks;
 using static Nuke.Common.Tools.Git.GitTasks;
 using static Nuke.Common.Tools.GitHub.GitHubTasks;
 
-partial class Build {
+partial class Build
+{
     AbsolutePath SPIRVCrossPath => RootDirectory / "build" / "submodules" / "SPIRV-Cross";
 
     //This is the build script for the SPIRV-Reflect shared library
@@ -36,13 +37,12 @@ pub fn build(b: *std.Build) void {
     const target = b.standardTargetOptions(.{});
     const mode = b.standardOptimizeOption(.{});
 
-    const shared_lib_options: std.build.SharedLibraryOptions = .{
+    var lib: *std.build.LibExeObjStep = b.addSharedLibrary(.{
         .name = ""spirv-cross"",
         .target = target,
         .optimize = mode,
-    };
+    });
 
-    const lib: *std.build.LibExeObjStep = b.addSharedLibrary(shared_lib_options);
     lib.linkLibC();
     lib.linkLibCpp();
 
@@ -146,6 +146,52 @@ const root_path = root_dir() ++ ""/"";
                         CopyFile(SPIRVCrossPath / "zig-out" / "lib" / "libspirv-cross.dylib", runtimes / "osx-arm64" / "native" / "libspirv-cross.dylib", FileExistsPolicy.Overwrite);
                     }
 
+                    if (RuntimeInformation.IsOSPlatform(OSPlatform.OSX))
+                    {
+                        var spirvCrossBuildPath = SPIRVCrossPath / "build";
+                        var spirvCrossOptions = new Dictionary<string, string>
+                        {
+                            ["SPIRV_CROSS_SHARED"] = "OFF",
+                            ["SPIRV_CROSS_STATIC"] = "ON",
+                            ["SPIRV_CROSS_CLI"] = "OFF",
+                            ["SPIRV_CROSS_ENABLE_TESTS"] = "OFF",
+
+                            ["SPIRV_CROSS_ENABLE_GLSL"] = "ON",
+                            ["SPIRV_CROSS_ENABLE_HLSL"] = "ON",
+                            ["SPIRV_CROSS_ENABLE_MSL"] = "ON",
+                            ["SPIRV_CROSS_ENABLE_REFLECT"] = "ON",
+                            ["SPIRV_CROSS_ENABLE_C_API"] = "ON"
+                        };
+
+                        var optionString = string.Empty;
+                        foreach ((string name, string value) in spirvCrossOptions)
+                        {
+                            optionString += $" -D{name}={value}";
+                        }
+
+                        { //iOS
+                            DeleteDirectory(spirvCrossBuildPath);
+
+                            InheritedShell($"cmake . -B {spirvCrossBuildPath} -G Xcode -DCMAKE_SYSTEM_NAME=iOS -DCMAKE_OSX_ARCHITECTURES=arm64{optionString}", SPIRVCrossPath)
+                                .AssertZeroExitCode();
+                            InheritedShell($"cmake --build .{JobsArg} --config Release", spirvCrossBuildPath)
+                                .AssertWaitForExit();
+
+                            CopyFile(spirvCrossBuildPath / "Release-iphoneos" / "libspirv-cross-c.a", runtimes / "ios" / "native" / "libspirv-cross.a", FileExistsPolicy.Overwrite);
+                        }
+
+                        { //iOS simulator
+                            DeleteDirectory(spirvCrossBuildPath);
+
+                            InheritedShell($"cmake . -B {spirvCrossBuildPath} -G Xcode -DCMAKE_SYSTEM_NAME=iOS -DCMAKE_OSX_ARCHITECTURES=\"arm64;x86_64\"{optionString}", SPIRVCrossPath)
+                                .AssertZeroExitCode();
+                            InheritedShell($"cmake --build .{JobsArg} --config Release", spirvCrossBuildPath)
+                                .AssertWaitForExit();
+
+                            CopyFile(spirvCrossBuildPath / "Release-iphoneos" / "libspirv-cross-c.a", runtimes / "iossimulator" / "native" / "libspirv-cross.a", FileExistsPolicy.Overwrite);
+                        }
+                    }
+
                     var files = (runtimes / "win-x64" / "native").GlobFiles("*.dll")
                         .Concat((runtimes / "win-x86" / "native").GlobFiles("*.dll"))
                         .Concat((runtimes / "win-arm64" / "native").GlobFiles("*.dll"))
@@ -153,12 +199,14 @@ const root_path = root_dir() ++ ""/"";
                         .Concat((runtimes / "osx-arm64" / "native").GlobFiles("*.dylib"))
                         .Concat((runtimes / "linux-x64" / "native").GlobFiles("*.so"))
                         .Concat((runtimes / "linux-x86" / "native").GlobFiles("*.so"))
-                        .Concat((runtimes / "linux-arm64" / "native").GlobFiles("*.so"));
+                        .Concat((runtimes / "linux-arm64" / "native").GlobFiles("*.so"))
+                        .Concat((runtimes / "ios" / "native").GlobFiles("*.a"))
+                        .Concat((runtimes / "iossimulator" / "native").GlobFiles("*.a"));
 
                     var glob = string.Empty;
                     glob = files.Aggregate(glob, (current, path) => current + $"\"{path}\" ");
 
-                    PrUpdatedNativeBinary("SPIRV-Cross", glob);
+                    //PrUpdatedNativeBinary("SPIRV-Cross", glob);
                 }
             )
         );

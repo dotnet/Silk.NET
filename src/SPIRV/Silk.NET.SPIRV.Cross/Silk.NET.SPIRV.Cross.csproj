@@ -8,6 +8,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Silk.NET.SPIRV\Silk.NET.SPIRV.csproj" />
+    <SilkPInvokeOverride Include="0" SilkClass="Silk.NET.SPIRV.Cross.Cross" DownstreamCondition="%24(TargetFramework.Contains('ios')) or %24(TargetFramework.Contains('mac')) or %24(TargetFramework.Contains('tvos'))" />
   </ItemGroup>
 
   <Import Project="..\..\..\build\props\bindings.props" />

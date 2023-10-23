@@ -1,0 +1,15 @@
+<Project ToolsVersion="15.0">
+  <PropertyGroup>
+    <_Silk_NativePackages_SPIRVCross_StaticPath Condition="$(RuntimeIdentifier) == 'iossimulator-x64' OR '$(RuntimeIdentifier)' == 'iossimulator-arm64'">$(MSBuildThisFileDirectory)..\..\runtimes\iossimulator\native\libspirv-cross.a</_Silk_NativePackages_SPIRVCross_StaticPath>
+    <_Silk_NativePackages_SPIRVCross_StaticPath Condition="'$(RuntimeIdentifier)' == 'ios-arm64'">$(MSBuildThisFileDirectory)..\..\runtimes\ios\native\libspirv-cross.a</_Silk_NativePackages_SPIRVCross_StaticPath>
+  </PropertyGroup>
+  <ItemGroup>
+    <NativeReference Include="$(_Silk_NativePackages_SPIRVCross_StaticPath)" Condition="'$(_Silk_NativePackages_SPIRVCross_StaticPath)' != ''">
+      <Kind>Static</Kind>
+      <Forceload>True</Forceload>
+      <IsCxx>True</IsCxx>
+      <SmartLink>False</SmartLink>
+      <LinkerFlags>-framework Foundation -framework IOKit</LinkerFlags>
+    </NativeReference>
+  </ItemGroup>
+</Project>

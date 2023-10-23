@@ -22,6 +22,7 @@
 
     <ItemGroup>
         <Content Include="build\net461\$(PackageId).props" PackagePath="build\net461\$(PackageId).props" />
+        <Content Include="build\netstandard2.0\$(PackageId).props" PackagePath="build\netstandard2.0\$(PackageId).props" />
 
         <Content Include="runtimes\linux-x64\native\libspirv-cross.so"
                  PackagePath="runtimes\linux-x64\native\libspirv-cross.so" />
