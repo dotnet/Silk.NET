@@ -376,9 +376,46 @@ public class PrettifyNames : IMod
                 )
             )
             {
-                return ((MethodDeclarationSyntax)base.VisitMethodDeclaration(node)!).WithIdentifier(
-                    Identifier(newName)
-                );
+                return ((MethodDeclarationSyntax)base.VisitMethodDeclaration(node)!)
+                    .WithIdentifier(Identifier(newName))
+                    .WithAttributeLists(
+                        List(
+                            node.AttributeLists.Select(
+                                x =>
+                                    x.WithAttributes(
+                                        SeparatedList(
+                                            x.Attributes.Select(
+                                                y =>
+                                                    y.IsAttribute(
+                                                        "System.Runtime.InteropServices.DllImport"
+                                                    )
+                                                    && (
+                                                        y.ArgumentList?.Arguments.All(
+                                                            z =>
+                                                                z.NameEquals?.Name.ToString()
+                                                                != "EntryPoint"
+                                                        ) ?? true
+                                                    )
+                                                        ? y.AddArgumentListArguments(
+                                                            AttributeArgument(
+                                                                    LiteralExpression(
+                                                                        SyntaxKind.StringLiteralExpression,
+                                                                        Literal(
+                                                                            node.Identifier.ToString()
+                                                                        )
+                                                                    )
+                                                                )
+                                                                .WithNameEquals(
+                                                                    NameEquals("EntryPoint")
+                                                                )
+                                                        )
+                                                        : y
+                                            )
+                                        )
+                                    )
+                            )
+                        )
+                    );
             }
             return base.VisitMethodDeclaration(node);
         }

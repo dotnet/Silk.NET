@@ -78,7 +78,7 @@ public unsafe partial class Glfw : IGlfw, IGlfw.Static
             }
         }
 
-        [DllImport("glfw", ExactSpelling = true)]
+        [DllImport("glfw", ExactSpelling = true, EntryPoint = "glfwDefaultWindowHints")]
         public static extern void DefaultWindowHints();
 
         [MethodImpl(
@@ -391,7 +391,7 @@ public unsafe partial class Glfw : IGlfw, IGlfw.Static
             return __DSL_glfwGetKeyName(key, scancode);
         }
 
-        [DllImport("glfw", ExactSpelling = true)]
+        [DllImport("glfw", ExactSpelling = true, EntryPoint = "glfwGetKeyScancode")]
         public static extern int GetKeyScancode(int key);
 
         [MethodImpl(
@@ -552,7 +552,7 @@ public unsafe partial class Glfw : IGlfw, IGlfw.Static
             }
         }
 
-        [DllImport("glfw", ExactSpelling = true)]
+        [DllImport("glfw", ExactSpelling = true, EntryPoint = "glfwGetPlatform")]
         public static extern int GetPlatform();
 
         [MethodImpl(
@@ -610,14 +610,14 @@ public unsafe partial class Glfw : IGlfw, IGlfw.Static
             }
         }
 
-        [DllImport("glfw", ExactSpelling = true)]
+        [DllImport("glfw", ExactSpelling = true, EntryPoint = "glfwGetTime")]
         public static extern double GetTime();
 
-        [DllImport("glfw", ExactSpelling = true)]
+        [DllImport("glfw", ExactSpelling = true, EntryPoint = "glfwGetTimerFrequency")]
         [return: NativeTypeName("uint64_t")]
         public static extern ulong GetTimerFrequency();
 
-        [DllImport("glfw", ExactSpelling = true)]
+        [DllImport("glfw", ExactSpelling = true, EntryPoint = "glfwGetTimerValue")]
         [return: NativeTypeName("uint64_t")]
         public static extern ulong GetTimerValue();
 
@@ -859,7 +859,7 @@ public unsafe partial class Glfw : IGlfw, IGlfw.Static
             }
         }
 
-        [DllImport("glfw", ExactSpelling = true)]
+        [DllImport("glfw", ExactSpelling = true, EntryPoint = "glfwInit")]
         public static extern int Init();
 
         [MethodImpl(
@@ -880,13 +880,13 @@ public unsafe partial class Glfw : IGlfw, IGlfw.Static
             }
         }
 
-        [DllImport("glfw", ExactSpelling = true)]
+        [DllImport("glfw", ExactSpelling = true, EntryPoint = "glfwInitHint")]
         public static extern void InitHint(int hint, int value);
 
-        [DllImport("glfw", ExactSpelling = true)]
+        [DllImport("glfw", ExactSpelling = true, EntryPoint = "glfwJoystickIsGamepad")]
         public static extern int JoystickIsGamepad(int jid);
 
-        [DllImport("glfw", ExactSpelling = true)]
+        [DllImport("glfw", ExactSpelling = true, EntryPoint = "glfwJoystickPresent")]
         public static extern int JoystickPresent(int jid);
 
         [MethodImpl(
@@ -917,16 +917,16 @@ public unsafe partial class Glfw : IGlfw, IGlfw.Static
             }
         }
 
-        [DllImport("glfw", ExactSpelling = true)]
+        [DllImport("glfw", ExactSpelling = true, EntryPoint = "glfwPlatformSupported")]
         public static extern int PlatformSupported(int platform);
 
-        [DllImport("glfw", ExactSpelling = true)]
+        [DllImport("glfw", ExactSpelling = true, EntryPoint = "glfwPollEvents")]
         public static extern void PollEvents();
 
-        [DllImport("glfw", ExactSpelling = true)]
+        [DllImport("glfw", ExactSpelling = true, EntryPoint = "glfwPostEmptyEvent")]
         public static extern void PostEmptyEvent();
 
-        [DllImport("glfw", ExactSpelling = true)]
+        [DllImport("glfw", ExactSpelling = true, EntryPoint = "glfwRawMouseMotionSupported")]
         public static extern int RawMouseMotionSupported();
 
         [MethodImpl(
@@ -1140,7 +1140,7 @@ public unsafe partial class Glfw : IGlfw, IGlfw.Static
             }
         }
 
-        [DllImport("glfw", ExactSpelling = true)]
+        [DllImport("glfw", ExactSpelling = true, EntryPoint = "glfwSetErrorCallback")]
         [return: NativeTypeName("GLFWerrorfun")]
         public static extern delegate* unmanaged<int, sbyte*, void> SetErrorCallback(
             [NativeTypeName("GLFWerrorfun")] delegate* unmanaged<int, sbyte*, void> callback
@@ -1227,7 +1227,7 @@ public unsafe partial class Glfw : IGlfw, IGlfw.Static
             }
         }
 
-        [DllImport("glfw", ExactSpelling = true)]
+        [DllImport("glfw", ExactSpelling = true, EntryPoint = "glfwSetJoystickCallback")]
         [return: NativeTypeName("GLFWjoystickfun")]
         public static extern delegate* unmanaged<int, int, void> SetJoystickCallback(
             [NativeTypeName("GLFWjoystickfun")] delegate* unmanaged<int, int, void> callback
@@ -1277,7 +1277,7 @@ public unsafe partial class Glfw : IGlfw, IGlfw.Static
             }
         }
 
-        [DllImport("glfw", ExactSpelling = true)]
+        [DllImport("glfw", ExactSpelling = true, EntryPoint = "glfwSetMonitorCallback")]
         [return: NativeTypeName("GLFWmonitorfun")]
         public static extern delegate* unmanaged<Monitor*, int, void> SetMonitorCallback(
             [NativeTypeName("GLFWmonitorfun")] delegate* unmanaged<Monitor*, int, void> callback
@@ -1355,7 +1355,7 @@ public unsafe partial class Glfw : IGlfw, IGlfw.Static
             }
         }
 
-        [DllImport("glfw", ExactSpelling = true)]
+        [DllImport("glfw", ExactSpelling = true, EntryPoint = "glfwSetTime")]
         public static extern void SetTime(double time);
 
         [MethodImpl(
@@ -1834,10 +1834,10 @@ public unsafe partial class Glfw : IGlfw, IGlfw.Static
             }
         }
 
-        [DllImport("glfw", ExactSpelling = true)]
+        [DllImport("glfw", ExactSpelling = true, EntryPoint = "glfwSwapInterval")]
         public static extern void SwapInterval(int interval);
 
-        [DllImport("glfw", ExactSpelling = true)]
+        [DllImport("glfw", ExactSpelling = true, EntryPoint = "glfwTerminate")]
         public static extern void Terminate();
 
         [MethodImpl(
@@ -1856,16 +1856,16 @@ public unsafe partial class Glfw : IGlfw, IGlfw.Static
             }
         }
 
-        [DllImport("glfw", ExactSpelling = true)]
+        [DllImport("glfw", ExactSpelling = true, EntryPoint = "glfwVulkanSupported")]
         public static extern int VulkanSupported();
 
-        [DllImport("glfw", ExactSpelling = true)]
+        [DllImport("glfw", ExactSpelling = true, EntryPoint = "glfwWaitEvents")]
         public static extern void WaitEvents();
 
-        [DllImport("glfw", ExactSpelling = true)]
+        [DllImport("glfw", ExactSpelling = true, EntryPoint = "glfwWaitEventsTimeout")]
         public static extern void WaitEventsTimeout(double timeout);
 
-        [DllImport("glfw", ExactSpelling = true)]
+        [DllImport("glfw", ExactSpelling = true, EntryPoint = "glfwWindowHint")]
         public static extern void WindowHint(int hint, int value);
 
         [MethodImpl(
@@ -3010,9 +3010,9 @@ public unsafe partial class Glfw : IGlfw, IGlfw.Static
     }
 
     void IGlfw.DefaultWindowHints() =>
-        ((delegate* unmanaged<void>)nativeContext.LoadFunction("DefaultWindowHints", "glfw"))();
+        ((delegate* unmanaged<void>)nativeContext.LoadFunction("glfwDefaultWindowHints", "glfw"))();
 
-    [DllImport("glfw", ExactSpelling = true)]
+    [DllImport("glfw", ExactSpelling = true, EntryPoint = "glfwDefaultWindowHints")]
     public static extern void DefaultWindowHints();
 
     [NativeFunction("glfw", EntryPoint = "glfwDestroyCursor")]
@@ -3560,9 +3560,11 @@ public unsafe partial class Glfw : IGlfw, IGlfw.Static
     }
 
     int IGlfw.GetKeyScancode(int key) =>
-        ((delegate* unmanaged<int, int>)nativeContext.LoadFunction("GetKeyScancode", "glfw"))(key);
+        ((delegate* unmanaged<int, int>)nativeContext.LoadFunction("glfwGetKeyScancode", "glfw"))(
+            key
+        );
 
-    [DllImport("glfw", ExactSpelling = true)]
+    [DllImport("glfw", ExactSpelling = true, EntryPoint = "glfwGetKeyScancode")]
     public static extern int GetKeyScancode(int key);
 
     [NativeFunction("glfw", EntryPoint = "glfwGetMonitorContentScale")]
@@ -3848,9 +3850,9 @@ public unsafe partial class Glfw : IGlfw, IGlfw.Static
     }
 
     int IGlfw.GetPlatform() =>
-        ((delegate* unmanaged<int>)nativeContext.LoadFunction("GetPlatform", "glfw"))();
+        ((delegate* unmanaged<int>)nativeContext.LoadFunction("glfwGetPlatform", "glfw"))();
 
-    [DllImport("glfw", ExactSpelling = true)]
+    [DllImport("glfw", ExactSpelling = true, EntryPoint = "glfwGetPlatform")]
     public static extern int GetPlatform();
 
     [NativeFunction("glfw", EntryPoint = "glfwGetPrimaryMonitor")]
@@ -3950,22 +3952,22 @@ public unsafe partial class Glfw : IGlfw, IGlfw.Static
     }
 
     double IGlfw.GetTime() =>
-        ((delegate* unmanaged<double>)nativeContext.LoadFunction("GetTime", "glfw"))();
+        ((delegate* unmanaged<double>)nativeContext.LoadFunction("glfwGetTime", "glfw"))();
 
-    [DllImport("glfw", ExactSpelling = true)]
+    [DllImport("glfw", ExactSpelling = true, EntryPoint = "glfwGetTime")]
     public static extern double GetTime();
 
     ulong IGlfw.GetTimerFrequency() =>
-        ((delegate* unmanaged<ulong>)nativeContext.LoadFunction("GetTimerFrequency", "glfw"))();
+        ((delegate* unmanaged<ulong>)nativeContext.LoadFunction("glfwGetTimerFrequency", "glfw"))();
 
-    [DllImport("glfw", ExactSpelling = true)]
+    [DllImport("glfw", ExactSpelling = true, EntryPoint = "glfwGetTimerFrequency")]
     [return: NativeTypeName("uint64_t")]
     public static extern ulong GetTimerFrequency();
 
     ulong IGlfw.GetTimerValue() =>
-        ((delegate* unmanaged<ulong>)nativeContext.LoadFunction("GetTimerValue", "glfw"))();
+        ((delegate* unmanaged<ulong>)nativeContext.LoadFunction("glfwGetTimerValue", "glfw"))();
 
-    [DllImport("glfw", ExactSpelling = true)]
+    [DllImport("glfw", ExactSpelling = true, EntryPoint = "glfwGetTimerValue")]
     [return: NativeTypeName("uint64_t")]
     public static extern ulong GetTimerValue();
 
@@ -4403,9 +4405,10 @@ public unsafe partial class Glfw : IGlfw, IGlfw.Static
         }
     }
 
-    int IGlfw.Init() => ((delegate* unmanaged<int>)nativeContext.LoadFunction("Init", "glfw"))();
+    int IGlfw.Init() =>
+        ((delegate* unmanaged<int>)nativeContext.LoadFunction("glfwInit", "glfw"))();
 
-    [DllImport("glfw", ExactSpelling = true)]
+    [DllImport("glfw", ExactSpelling = true, EntryPoint = "glfwInit")]
     public static extern int Init();
 
     [NativeFunction("glfw", EntryPoint = "glfwInitAllocator")]
@@ -4441,26 +4444,29 @@ public unsafe partial class Glfw : IGlfw, IGlfw.Static
     }
 
     void IGlfw.InitHint(int hint, int value) =>
-        ((delegate* unmanaged<int, int, void>)nativeContext.LoadFunction("InitHint", "glfw"))(
+        ((delegate* unmanaged<int, int, void>)nativeContext.LoadFunction("glfwInitHint", "glfw"))(
             hint,
             value
         );
 
-    [DllImport("glfw", ExactSpelling = true)]
+    [DllImport("glfw", ExactSpelling = true, EntryPoint = "glfwInitHint")]
     public static extern void InitHint(int hint, int value);
 
     int IGlfw.JoystickIsGamepad(int jid) =>
-        ((delegate* unmanaged<int, int>)nativeContext.LoadFunction("JoystickIsGamepad", "glfw"))(
-            jid
-        );
+        (
+            (delegate* unmanaged<int, int>)
+                nativeContext.LoadFunction("glfwJoystickIsGamepad", "glfw")
+        )(jid);
 
-    [DllImport("glfw", ExactSpelling = true)]
+    [DllImport("glfw", ExactSpelling = true, EntryPoint = "glfwJoystickIsGamepad")]
     public static extern int JoystickIsGamepad(int jid);
 
     int IGlfw.JoystickPresent(int jid) =>
-        ((delegate* unmanaged<int, int>)nativeContext.LoadFunction("JoystickPresent", "glfw"))(jid);
+        ((delegate* unmanaged<int, int>)nativeContext.LoadFunction("glfwJoystickPresent", "glfw"))(
+            jid
+        );
 
-    [DllImport("glfw", ExactSpelling = true)]
+    [DllImport("glfw", ExactSpelling = true, EntryPoint = "glfwJoystickPresent")]
     public static extern int JoystickPresent(int jid);
 
     [NativeFunction("glfw", EntryPoint = "glfwMakeContextCurrent")]
@@ -4516,29 +4522,33 @@ public unsafe partial class Glfw : IGlfw, IGlfw.Static
     }
 
     int IGlfw.PlatformSupported(int platform) =>
-        ((delegate* unmanaged<int, int>)nativeContext.LoadFunction("PlatformSupported", "glfw"))(
-            platform
-        );
+        (
+            (delegate* unmanaged<int, int>)
+                nativeContext.LoadFunction("glfwPlatformSupported", "glfw")
+        )(platform);
 
-    [DllImport("glfw", ExactSpelling = true)]
+    [DllImport("glfw", ExactSpelling = true, EntryPoint = "glfwPlatformSupported")]
     public static extern int PlatformSupported(int platform);
 
     void IGlfw.PollEvents() =>
-        ((delegate* unmanaged<void>)nativeContext.LoadFunction("PollEvents", "glfw"))();
+        ((delegate* unmanaged<void>)nativeContext.LoadFunction("glfwPollEvents", "glfw"))();
 
-    [DllImport("glfw", ExactSpelling = true)]
+    [DllImport("glfw", ExactSpelling = true, EntryPoint = "glfwPollEvents")]
     public static extern void PollEvents();
 
     void IGlfw.PostEmptyEvent() =>
-        ((delegate* unmanaged<void>)nativeContext.LoadFunction("PostEmptyEvent", "glfw"))();
+        ((delegate* unmanaged<void>)nativeContext.LoadFunction("glfwPostEmptyEvent", "glfw"))();
 
-    [DllImport("glfw", ExactSpelling = true)]
+    [DllImport("glfw", ExactSpelling = true, EntryPoint = "glfwPostEmptyEvent")]
     public static extern void PostEmptyEvent();
 
     int IGlfw.RawMouseMotionSupported() =>
-        ((delegate* unmanaged<int>)nativeContext.LoadFunction("RawMouseMotionSupported", "glfw"))();
+        (
+            (delegate* unmanaged<int>)
+                nativeContext.LoadFunction("glfwRawMouseMotionSupported", "glfw")
+        )();
 
-    [DllImport("glfw", ExactSpelling = true)]
+    [DllImport("glfw", ExactSpelling = true, EntryPoint = "glfwRawMouseMotionSupported")]
     public static extern int RawMouseMotionSupported();
 
     [NativeFunction("glfw", EntryPoint = "glfwRequestWindowAttention")]
@@ -4931,10 +4941,10 @@ public unsafe partial class Glfw : IGlfw, IGlfw.Static
             (delegate* unmanaged<
                 delegate* unmanaged<int, sbyte*, void>,
                 delegate* unmanaged<int, sbyte*, void>>)
-                nativeContext.LoadFunction("SetErrorCallback", "glfw")
+                nativeContext.LoadFunction("glfwSetErrorCallback", "glfw")
         )(callback);
 
-    [DllImport("glfw", ExactSpelling = true)]
+    [DllImport("glfw", ExactSpelling = true, EntryPoint = "glfwSetErrorCallback")]
     [return: NativeTypeName("GLFWerrorfun")]
     public static extern delegate* unmanaged<int, sbyte*, void> SetErrorCallback(
         [NativeTypeName("GLFWerrorfun")] delegate* unmanaged<int, sbyte*, void> callback
@@ -5090,10 +5100,10 @@ public unsafe partial class Glfw : IGlfw, IGlfw.Static
             (delegate* unmanaged<
                 delegate* unmanaged<int, int, void>,
                 delegate* unmanaged<int, int, void>>)
-                nativeContext.LoadFunction("SetJoystickCallback", "glfw")
+                nativeContext.LoadFunction("glfwSetJoystickCallback", "glfw")
         )(callback);
 
-    [DllImport("glfw", ExactSpelling = true)]
+    [DllImport("glfw", ExactSpelling = true, EntryPoint = "glfwSetJoystickCallback")]
     [return: NativeTypeName("GLFWjoystickfun")]
     public static extern delegate* unmanaged<int, int, void> SetJoystickCallback(
         [NativeTypeName("GLFWjoystickfun")] delegate* unmanaged<int, int, void> callback
@@ -5185,10 +5195,10 @@ public unsafe partial class Glfw : IGlfw, IGlfw.Static
             (delegate* unmanaged<
                 delegate* unmanaged<Monitor*, int, void>,
                 delegate* unmanaged<Monitor*, int, void>>)
-                nativeContext.LoadFunction("SetMonitorCallback", "glfw")
+                nativeContext.LoadFunction("glfwSetMonitorCallback", "glfw")
         )(callback);
 
-    [DllImport("glfw", ExactSpelling = true)]
+    [DllImport("glfw", ExactSpelling = true, EntryPoint = "glfwSetMonitorCallback")]
     [return: NativeTypeName("GLFWmonitorfun")]
     public static extern delegate* unmanaged<Monitor*, int, void> SetMonitorCallback(
         [NativeTypeName("GLFWmonitorfun")] delegate* unmanaged<Monitor*, int, void> callback
@@ -5326,9 +5336,11 @@ public unsafe partial class Glfw : IGlfw, IGlfw.Static
     }
 
     void IGlfw.SetTime(double time) =>
-        ((delegate* unmanaged<double, void>)nativeContext.LoadFunction("SetTime", "glfw"))(time);
+        ((delegate* unmanaged<double, void>)nativeContext.LoadFunction("glfwSetTime", "glfw"))(
+            time
+        );
 
-    [DllImport("glfw", ExactSpelling = true)]
+    [DllImport("glfw", ExactSpelling = true, EntryPoint = "glfwSetTime")]
     public static extern void SetTime(double time);
 
     [NativeFunction("glfw", EntryPoint = "glfwSetWindowAspectRatio")]
@@ -6159,17 +6171,17 @@ public unsafe partial class Glfw : IGlfw, IGlfw.Static
     }
 
     void IGlfw.SwapInterval(int interval) =>
-        ((delegate* unmanaged<int, void>)nativeContext.LoadFunction("SwapInterval", "glfw"))(
+        ((delegate* unmanaged<int, void>)nativeContext.LoadFunction("glfwSwapInterval", "glfw"))(
             interval
         );
 
-    [DllImport("glfw", ExactSpelling = true)]
+    [DllImport("glfw", ExactSpelling = true, EntryPoint = "glfwSwapInterval")]
     public static extern void SwapInterval(int interval);
 
     void IGlfw.Terminate() =>
-        ((delegate* unmanaged<void>)nativeContext.LoadFunction("Terminate", "glfw"))();
+        ((delegate* unmanaged<void>)nativeContext.LoadFunction("glfwTerminate", "glfw"))();
 
-    [DllImport("glfw", ExactSpelling = true)]
+    [DllImport("glfw", ExactSpelling = true, EntryPoint = "glfwTerminate")]
     public static extern void Terminate();
 
     [NativeFunction("glfw", EntryPoint = "glfwUpdateGamepadMappings")]
@@ -6201,33 +6213,33 @@ public unsafe partial class Glfw : IGlfw, IGlfw.Static
     }
 
     int IGlfw.VulkanSupported() =>
-        ((delegate* unmanaged<int>)nativeContext.LoadFunction("VulkanSupported", "glfw"))();
+        ((delegate* unmanaged<int>)nativeContext.LoadFunction("glfwVulkanSupported", "glfw"))();
 
-    [DllImport("glfw", ExactSpelling = true)]
+    [DllImport("glfw", ExactSpelling = true, EntryPoint = "glfwVulkanSupported")]
     public static extern int VulkanSupported();
 
     void IGlfw.WaitEvents() =>
-        ((delegate* unmanaged<void>)nativeContext.LoadFunction("WaitEvents", "glfw"))();
+        ((delegate* unmanaged<void>)nativeContext.LoadFunction("glfwWaitEvents", "glfw"))();
 
-    [DllImport("glfw", ExactSpelling = true)]
+    [DllImport("glfw", ExactSpelling = true, EntryPoint = "glfwWaitEvents")]
     public static extern void WaitEvents();
 
     void IGlfw.WaitEventsTimeout(double timeout) =>
         (
             (delegate* unmanaged<double, void>)
-                nativeContext.LoadFunction("WaitEventsTimeout", "glfw")
+                nativeContext.LoadFunction("glfwWaitEventsTimeout", "glfw")
         )(timeout);
 
-    [DllImport("glfw", ExactSpelling = true)]
+    [DllImport("glfw", ExactSpelling = true, EntryPoint = "glfwWaitEventsTimeout")]
     public static extern void WaitEventsTimeout(double timeout);
 
     void IGlfw.WindowHint(int hint, int value) =>
-        ((delegate* unmanaged<int, int, void>)nativeContext.LoadFunction("WindowHint", "glfw"))(
+        ((delegate* unmanaged<int, int, void>)nativeContext.LoadFunction("glfwWindowHint", "glfw"))(
             hint,
             value
         );
 
-    [DllImport("glfw", ExactSpelling = true)]
+    [DllImport("glfw", ExactSpelling = true, EntryPoint = "glfwWindowHint")]
     public static extern void WindowHint(int hint, int value);
 
     [NativeFunction("glfw", EntryPoint = "glfwWindowHintString")]

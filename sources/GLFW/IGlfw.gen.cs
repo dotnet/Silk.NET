@@ -30,7 +30,7 @@ public unsafe partial interface IGlfw
             Mut<Window> share
         );
 
-        [NativeFunction("glfw", EntryPoint = "DefaultWindowHints")]
+        [NativeFunction("glfw", EntryPoint = "glfwDefaultWindowHints")]
         static abstract void DefaultWindowHints();
 
         [NativeFunction("glfw", EntryPoint = "glfwDestroyCursor")]
@@ -102,7 +102,7 @@ public unsafe partial interface IGlfw
         [NativeFunction("glfw", EntryPoint = "glfwGetKeyName")]
         static abstract Ptr<sbyte> GetKeyName(int key, int scancode);
 
-        [NativeFunction("glfw", EntryPoint = "GetKeyScancode")]
+        [NativeFunction("glfw", EntryPoint = "glfwGetKeyScancode")]
         static abstract int GetKeyScancode(int key);
 
         [NativeFunction("glfw", EntryPoint = "glfwGetMonitorContentScale")]
@@ -143,7 +143,7 @@ public unsafe partial interface IGlfw
         [NativeFunction("glfw", EntryPoint = "glfwGetMouseButton")]
         static abstract int GetMouseButton(Mut<Window> window, int button);
 
-        [NativeFunction("glfw", EntryPoint = "GetPlatform")]
+        [NativeFunction("glfw", EntryPoint = "glfwGetPlatform")]
         static abstract int GetPlatform();
 
         [NativeFunction("glfw", EntryPoint = "glfwGetPrimaryMonitor")]
@@ -159,13 +159,13 @@ public unsafe partial interface IGlfw
             [NativeTypeName("uint32_t *")] Mut<uint> count
         );
 
-        [NativeFunction("glfw", EntryPoint = "GetTime")]
+        [NativeFunction("glfw", EntryPoint = "glfwGetTime")]
         static abstract double GetTime();
 
-        [NativeFunction("glfw", EntryPoint = "GetTimerFrequency")]
+        [NativeFunction("glfw", EntryPoint = "glfwGetTimerFrequency")]
         static abstract ulong GetTimerFrequency();
 
-        [NativeFunction("glfw", EntryPoint = "GetTimerValue")]
+        [NativeFunction("glfw", EntryPoint = "glfwGetTimerValue")]
         static abstract ulong GetTimerValue();
 
         [NativeFunction("glfw", EntryPoint = "glfwGetVersion")]
@@ -220,7 +220,7 @@ public unsafe partial interface IGlfw
         [NativeFunction("glfw", EntryPoint = "glfwIconifyWindow")]
         static abstract void IconifyWindow(Mut<Window> window);
 
-        [NativeFunction("glfw", EntryPoint = "Init")]
+        [NativeFunction("glfw", EntryPoint = "glfwInit")]
         static abstract int Init();
 
         [NativeFunction("glfw", EntryPoint = "glfwInitAllocator")]
@@ -228,13 +228,13 @@ public unsafe partial interface IGlfw
             [NativeTypeName("const GLFWallocator *")] Ptr<Allocator> allocator
         );
 
-        [NativeFunction("glfw", EntryPoint = "InitHint")]
+        [NativeFunction("glfw", EntryPoint = "glfwInitHint")]
         static abstract void InitHint(int hint, int value);
 
-        [NativeFunction("glfw", EntryPoint = "JoystickIsGamepad")]
+        [NativeFunction("glfw", EntryPoint = "glfwJoystickIsGamepad")]
         static abstract int JoystickIsGamepad(int jid);
 
-        [NativeFunction("glfw", EntryPoint = "JoystickPresent")]
+        [NativeFunction("glfw", EntryPoint = "glfwJoystickPresent")]
         static abstract int JoystickPresent(int jid);
 
         [NativeFunction("glfw", EntryPoint = "glfwMakeContextCurrent")]
@@ -243,16 +243,16 @@ public unsafe partial interface IGlfw
         [NativeFunction("glfw", EntryPoint = "glfwMaximizeWindow")]
         static abstract void MaximizeWindow(Mut<Window> window);
 
-        [NativeFunction("glfw", EntryPoint = "PlatformSupported")]
+        [NativeFunction("glfw", EntryPoint = "glfwPlatformSupported")]
         static abstract int PlatformSupported(int platform);
 
-        [NativeFunction("glfw", EntryPoint = "PollEvents")]
+        [NativeFunction("glfw", EntryPoint = "glfwPollEvents")]
         static abstract void PollEvents();
 
-        [NativeFunction("glfw", EntryPoint = "PostEmptyEvent")]
+        [NativeFunction("glfw", EntryPoint = "glfwPostEmptyEvent")]
         static abstract void PostEmptyEvent();
 
-        [NativeFunction("glfw", EntryPoint = "RawMouseMotionSupported")]
+        [NativeFunction("glfw", EntryPoint = "glfwRawMouseMotionSupported")]
         static abstract int RawMouseMotionSupported();
 
         [NativeFunction("glfw", EntryPoint = "glfwRequestWindowAttention")]
@@ -306,7 +306,7 @@ public unsafe partial interface IGlfw
                 delegate* unmanaged<Window*, int, sbyte**, void> callback
         );
 
-        [NativeFunction("glfw", EntryPoint = "SetErrorCallback")]
+        [NativeFunction("glfw", EntryPoint = "glfwSetErrorCallback")]
         static abstract delegate* unmanaged<int, sbyte*, void> SetErrorCallback(
             [NativeTypeName("GLFWerrorfun")] delegate* unmanaged<int, sbyte*, void> callback
         );
@@ -330,7 +330,7 @@ public unsafe partial interface IGlfw
         [NativeFunction("glfw", EntryPoint = "glfwSetInputMode")]
         static abstract void SetInputMode(Mut<Window> window, int mode, int value);
 
-        [NativeFunction("glfw", EntryPoint = "SetJoystickCallback")]
+        [NativeFunction("glfw", EntryPoint = "glfwSetJoystickCallback")]
         static abstract delegate* unmanaged<int, int, void> SetJoystickCallback(
             [NativeTypeName("GLFWjoystickfun")] delegate* unmanaged<int, int, void> callback
         );
@@ -345,7 +345,7 @@ public unsafe partial interface IGlfw
                 delegate* unmanaged<Window*, int, int, int, int, void> callback
         );
 
-        [NativeFunction("glfw", EntryPoint = "SetMonitorCallback")]
+        [NativeFunction("glfw", EntryPoint = "glfwSetMonitorCallback")]
         static abstract delegate* unmanaged<Monitor*, int, void> SetMonitorCallback(
             [NativeTypeName("GLFWmonitorfun")] delegate* unmanaged<Monitor*, int, void> callback
         );
@@ -367,7 +367,7 @@ public unsafe partial interface IGlfw
                 delegate* unmanaged<Window*, double, double, void> callback
         );
 
-        [NativeFunction("glfw", EntryPoint = "SetTime")]
+        [NativeFunction("glfw", EntryPoint = "glfwSetTime")]
         static abstract void SetTime(double time);
 
         [NativeFunction("glfw", EntryPoint = "glfwSetWindowAspectRatio")]
@@ -487,10 +487,10 @@ public unsafe partial interface IGlfw
         [NativeFunction("glfw", EntryPoint = "glfwSwapBuffers")]
         static abstract void SwapBuffers(Mut<Window> window);
 
-        [NativeFunction("glfw", EntryPoint = "SwapInterval")]
+        [NativeFunction("glfw", EntryPoint = "glfwSwapInterval")]
         static abstract void SwapInterval(int interval);
 
-        [NativeFunction("glfw", EntryPoint = "Terminate")]
+        [NativeFunction("glfw", EntryPoint = "glfwTerminate")]
         static abstract void Terminate();
 
         [NativeFunction("glfw", EntryPoint = "glfwUpdateGamepadMappings")]
@@ -498,16 +498,16 @@ public unsafe partial interface IGlfw
             [NativeTypeName("const char *")] Ptr<sbyte> @string
         );
 
-        [NativeFunction("glfw", EntryPoint = "VulkanSupported")]
+        [NativeFunction("glfw", EntryPoint = "glfwVulkanSupported")]
         static abstract int VulkanSupported();
 
-        [NativeFunction("glfw", EntryPoint = "WaitEvents")]
+        [NativeFunction("glfw", EntryPoint = "glfwWaitEvents")]
         static abstract void WaitEvents();
 
-        [NativeFunction("glfw", EntryPoint = "WaitEventsTimeout")]
+        [NativeFunction("glfw", EntryPoint = "glfwWaitEventsTimeout")]
         static abstract void WaitEventsTimeout(double timeout);
 
-        [NativeFunction("glfw", EntryPoint = "WindowHint")]
+        [NativeFunction("glfw", EntryPoint = "glfwWindowHint")]
         static abstract void WindowHint(int hint, int value);
 
         [NativeFunction("glfw", EntryPoint = "glfwWindowHintString")]
@@ -539,7 +539,7 @@ public unsafe partial interface IGlfw
         Mut<Window> share
     );
 
-    [NativeFunction("glfw", EntryPoint = "DefaultWindowHints")]
+    [NativeFunction("glfw", EntryPoint = "glfwDefaultWindowHints")]
     void DefaultWindowHints();
 
     [NativeFunction("glfw", EntryPoint = "glfwDestroyCursor")]
@@ -605,7 +605,7 @@ public unsafe partial interface IGlfw
     [NativeFunction("glfw", EntryPoint = "glfwGetKeyName")]
     Ptr<sbyte> GetKeyName(int key, int scancode);
 
-    [NativeFunction("glfw", EntryPoint = "GetKeyScancode")]
+    [NativeFunction("glfw", EntryPoint = "glfwGetKeyScancode")]
     int GetKeyScancode(int key);
 
     [NativeFunction("glfw", EntryPoint = "glfwGetMonitorContentScale")]
@@ -638,7 +638,7 @@ public unsafe partial interface IGlfw
     [NativeFunction("glfw", EntryPoint = "glfwGetMouseButton")]
     int GetMouseButton(Mut<Window> window, int button);
 
-    [NativeFunction("glfw", EntryPoint = "GetPlatform")]
+    [NativeFunction("glfw", EntryPoint = "glfwGetPlatform")]
     int GetPlatform();
 
     [NativeFunction("glfw", EntryPoint = "glfwGetPrimaryMonitor")]
@@ -650,13 +650,13 @@ public unsafe partial interface IGlfw
     [NativeFunction("glfw", EntryPoint = "glfwGetRequiredInstanceExtensions")]
     PtrPtr<sbyte> GetRequiredInstanceExtensions([NativeTypeName("uint32_t *")] Mut<uint> count);
 
-    [NativeFunction("glfw", EntryPoint = "GetTime")]
+    [NativeFunction("glfw", EntryPoint = "glfwGetTime")]
     double GetTime();
 
-    [NativeFunction("glfw", EntryPoint = "GetTimerFrequency")]
+    [NativeFunction("glfw", EntryPoint = "glfwGetTimerFrequency")]
     ulong GetTimerFrequency();
 
-    [NativeFunction("glfw", EntryPoint = "GetTimerValue")]
+    [NativeFunction("glfw", EntryPoint = "glfwGetTimerValue")]
     ulong GetTimerValue();
 
     [NativeFunction("glfw", EntryPoint = "glfwGetVersion")]
@@ -707,19 +707,19 @@ public unsafe partial interface IGlfw
     [NativeFunction("glfw", EntryPoint = "glfwIconifyWindow")]
     void IconifyWindow(Mut<Window> window);
 
-    [NativeFunction("glfw", EntryPoint = "Init")]
+    [NativeFunction("glfw", EntryPoint = "glfwInit")]
     int Init();
 
     [NativeFunction("glfw", EntryPoint = "glfwInitAllocator")]
     void InitAllocator([NativeTypeName("const GLFWallocator *")] Ptr<Allocator> allocator);
 
-    [NativeFunction("glfw", EntryPoint = "InitHint")]
+    [NativeFunction("glfw", EntryPoint = "glfwInitHint")]
     void InitHint(int hint, int value);
 
-    [NativeFunction("glfw", EntryPoint = "JoystickIsGamepad")]
+    [NativeFunction("glfw", EntryPoint = "glfwJoystickIsGamepad")]
     int JoystickIsGamepad(int jid);
 
-    [NativeFunction("glfw", EntryPoint = "JoystickPresent")]
+    [NativeFunction("glfw", EntryPoint = "glfwJoystickPresent")]
     int JoystickPresent(int jid);
 
     [NativeFunction("glfw", EntryPoint = "glfwMakeContextCurrent")]
@@ -728,16 +728,16 @@ public unsafe partial interface IGlfw
     [NativeFunction("glfw", EntryPoint = "glfwMaximizeWindow")]
     void MaximizeWindow(Mut<Window> window);
 
-    [NativeFunction("glfw", EntryPoint = "PlatformSupported")]
+    [NativeFunction("glfw", EntryPoint = "glfwPlatformSupported")]
     int PlatformSupported(int platform);
 
-    [NativeFunction("glfw", EntryPoint = "PollEvents")]
+    [NativeFunction("glfw", EntryPoint = "glfwPollEvents")]
     void PollEvents();
 
-    [NativeFunction("glfw", EntryPoint = "PostEmptyEvent")]
+    [NativeFunction("glfw", EntryPoint = "glfwPostEmptyEvent")]
     void PostEmptyEvent();
 
-    [NativeFunction("glfw", EntryPoint = "RawMouseMotionSupported")]
+    [NativeFunction("glfw", EntryPoint = "glfwRawMouseMotionSupported")]
     int RawMouseMotionSupported();
 
     [NativeFunction("glfw", EntryPoint = "glfwRequestWindowAttention")]
@@ -789,7 +789,7 @@ public unsafe partial interface IGlfw
         [NativeTypeName("GLFWdropfun")] delegate* unmanaged<Window*, int, sbyte**, void> callback
     );
 
-    [NativeFunction("glfw", EntryPoint = "SetErrorCallback")]
+    [NativeFunction("glfw", EntryPoint = "glfwSetErrorCallback")]
     delegate* unmanaged<int, sbyte*, void> SetErrorCallback(
         [NativeTypeName("GLFWerrorfun")] delegate* unmanaged<int, sbyte*, void> callback
     );
@@ -813,7 +813,7 @@ public unsafe partial interface IGlfw
     [NativeFunction("glfw", EntryPoint = "glfwSetInputMode")]
     void SetInputMode(Mut<Window> window, int mode, int value);
 
-    [NativeFunction("glfw", EntryPoint = "SetJoystickCallback")]
+    [NativeFunction("glfw", EntryPoint = "glfwSetJoystickCallback")]
     delegate* unmanaged<int, int, void> SetJoystickCallback(
         [NativeTypeName("GLFWjoystickfun")] delegate* unmanaged<int, int, void> callback
     );
@@ -828,7 +828,7 @@ public unsafe partial interface IGlfw
             delegate* unmanaged<Window*, int, int, int, int, void> callback
     );
 
-    [NativeFunction("glfw", EntryPoint = "SetMonitorCallback")]
+    [NativeFunction("glfw", EntryPoint = "glfwSetMonitorCallback")]
     delegate* unmanaged<Monitor*, int, void> SetMonitorCallback(
         [NativeTypeName("GLFWmonitorfun")] delegate* unmanaged<Monitor*, int, void> callback
     );
@@ -850,7 +850,7 @@ public unsafe partial interface IGlfw
             delegate* unmanaged<Window*, double, double, void> callback
     );
 
-    [NativeFunction("glfw", EntryPoint = "SetTime")]
+    [NativeFunction("glfw", EntryPoint = "glfwSetTime")]
     void SetTime(double time);
 
     [NativeFunction("glfw", EntryPoint = "glfwSetWindowAspectRatio")]
@@ -959,25 +959,25 @@ public unsafe partial interface IGlfw
     [NativeFunction("glfw", EntryPoint = "glfwSwapBuffers")]
     void SwapBuffers(Mut<Window> window);
 
-    [NativeFunction("glfw", EntryPoint = "SwapInterval")]
+    [NativeFunction("glfw", EntryPoint = "glfwSwapInterval")]
     void SwapInterval(int interval);
 
-    [NativeFunction("glfw", EntryPoint = "Terminate")]
+    [NativeFunction("glfw", EntryPoint = "glfwTerminate")]
     void Terminate();
 
     [NativeFunction("glfw", EntryPoint = "glfwUpdateGamepadMappings")]
     int UpdateGamepadMappings([NativeTypeName("const char *")] Ptr<sbyte> @string);
 
-    [NativeFunction("glfw", EntryPoint = "VulkanSupported")]
+    [NativeFunction("glfw", EntryPoint = "glfwVulkanSupported")]
     int VulkanSupported();
 
-    [NativeFunction("glfw", EntryPoint = "WaitEvents")]
+    [NativeFunction("glfw", EntryPoint = "glfwWaitEvents")]
     void WaitEvents();
 
-    [NativeFunction("glfw", EntryPoint = "WaitEventsTimeout")]
+    [NativeFunction("glfw", EntryPoint = "glfwWaitEventsTimeout")]
     void WaitEventsTimeout(double timeout);
 
-    [NativeFunction("glfw", EntryPoint = "WindowHint")]
+    [NativeFunction("glfw", EntryPoint = "glfwWindowHint")]
     void WindowHint(int hint, int value);
 
     [NativeFunction("glfw", EntryPoint = "glfwWindowHintString")]
