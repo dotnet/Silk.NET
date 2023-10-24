@@ -108,7 +108,7 @@ public static class Program
                                                           .Node?
                                                           .Metadata?
                                                           .TryGetValue("DateTimeWritten", out var val) ?? false) &&
-                                                      DateTime.TryParse(val, out var pub)
+                                                      DateTime.TryParseExact(val, "MM/dd/yyyy HH:mm:ss", null, DateTimeStyles.AssumeUniversal, out var pub)
                                                 ? pub
                                                 : null
                                         )
