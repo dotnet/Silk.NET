@@ -59,8 +59,13 @@ namespace Silk.NET.Windowing
                 }
             );
 
-            view.DoEvents();
-            view.Reset();
+            // the above may not be an infinite loop, check whether it looks like we wanted to exit an infinite loop
+            // (if any)
+            if (view.IsClosing)
+            {
+                view.DoEvents();
+                view.Reset();
+            }
         }
 
         public static void SwapBuffers(this IView view) => view.GLContext?.SwapBuffers();

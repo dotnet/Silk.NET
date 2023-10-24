@@ -3,6 +3,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using Silk.NET.Core.Loader;
 
 namespace Silk.NET.SDL
 {
@@ -34,7 +35,14 @@ namespace Silk.NET.SDL
         /// </summary>
         static SdlProvider()
         {
-            UninitializedSDL = new Lazy<Sdl>(Sdl.GetApi);
+            UninitializedSDL = new Lazy<Sdl>(() =>
+                {
+                    Console.WriteLine("HI THERE: " + SearchPathContainer.Platform);
+                    return SearchPathContainer.Platform == UnderlyingPlatform.Browser
+                        ? Sdl.PleaseDontTryThisAtHomeGetApi()
+                        : Sdl.GetApi();
+                }
+            );
             SDL = new Lazy<Sdl>(GetSdl);
         }
 
@@ -81,7 +89,14 @@ namespace Silk.NET.SDL
         {
             SDL.Value.Quit();
             SDL.Value.Dispose();
-            UninitializedSDL = new Lazy<Sdl>(Sdl.GetApi);
+            UninitializedSDL = new Lazy<Sdl>(() =>
+                {
+                    Console.WriteLine("HI THERE: " + SearchPathContainer.Platform);
+                    return SearchPathContainer.Platform == UnderlyingPlatform.Browser
+                        ? Sdl.PleaseDontTryThisAtHomeGetApi()
+                        : Sdl.GetApi();
+                }
+            );
             SDL = new Lazy<Sdl>(GetSdl);
         }
     }

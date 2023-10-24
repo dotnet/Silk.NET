@@ -1,7 +1,3 @@
-// For more information on how shaders work, check out the web version of this tutorial
-// I'll include a simpler summary here.
-
-// First non-comment line should always be a #version statement; this just tells the GLSL compiler what version it should use
 #version 300 es
 
 // GLSL's syntax is somewhat like C, but it has a few differences.
@@ -25,7 +21,7 @@
 // Next, the keyword "in" defines this as an input variable. We'll have an example of the "out" keyword in the next tutorial.
 // Then, the keyword "vec3" means this is a vector with 3 floats inside.
 
-layout(location = 0) in highp vec3 aPosition;
+in highp vec3 aPosition;
 
 
 // Like C, we have an entrypoint function. In this case, it takes void and returns void, and must be named main.

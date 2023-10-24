@@ -1,0 +1,91 @@
+<Project Sdk="Microsoft.NET.Sdk.BlazorWebAssembly">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+      <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+
+      <DefineConstants>$(DefineConstants);TRACE;WASM</DefineConstants>
+      <EmccExtraLDFlags>-s USE_CLOSURE_COMPILER=1 -lSDL -s USE_SDL=2 -sFULL_ES3</EmccExtraLDFlags>
+      <EnableAggressiveTrimming>true</EnableAggressiveTrimming>
+      <InvariantTimezone>true</InvariantTimezone>
+      <!--<WasmEnableWebcil>false</WasmEnableWebcil>-->
+      <WasmEmitSymbolMap>true</WasmEmitSymbolMap>
+      <!--<EmccEnableAssertions>true</EmccEnableAssertions>-->
+      <!--<EmccEnvironment>web,worker</EmccEnvironment>-->
+      <!-- add OpenGL emulation -->
+      <!-- just to prove we don't do JS eval() -->
+      <_ServeHeaders>$(_ServeHeaders) -h &quot;Content-Security-Policy: default-src 'self' 'wasm-unsafe-eval'&quot;</_ServeHeaders>
+      <!-- enable reporting to profiler in browser dev tools -->
+      <!--<WasmProfilers>browser;</WasmProfilers>-->
+
+      <!-- Put "framework" (dotnet.js, dlls, etc) files directly into the AppBundle -->
+      <!--<WasmRuntimeAssetsLocation>./</WasmRuntimeAssetsLocation>-->
+      <WasmCachePath>$([System.IO.Path]::GetFullPath('$(BaseIntermediateOutputPath)/$(TargetFramework)/wasm-cache'))</WasmCachePath>
+      <WasmAllowUndefinedSymbols>true</WasmAllowUndefinedSymbols>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly" Version="8.0.0-rc.2.23480.2" />
+    <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.DevServer" Version="8.0.0-rc.2.23480.2" PrivateAssets="all" />
+    <PackageReference Include="SixLabors.ImageSharp" Version="2.1.6" />
+      <ProjectReference Include="..\..\..\Core\Silk.NET.Core\Silk.NET.Core.csproj" />
+      <ProjectReference Include="..\..\..\Input\Silk.NET.Input.Common\Silk.NET.Input.Common.csproj" />
+      <ProjectReference Include="..\..\..\Input\Silk.NET.Input.Sdl\Silk.NET.Input.Sdl.csproj" />
+      <ProjectReference Include="..\..\..\Maths\Silk.NET.Maths\Silk.NET.Maths.csproj" />
+      <ProjectReference Include="..\..\..\OpenGL\Silk.NET.OpenGL\Silk.NET.OpenGL.csproj" />
+      <ProjectReference Include="..\..\..\Windowing\Silk.NET.SDL\Silk.NET.SDL.csproj" />
+      <ProjectReference Include="..\..\..\Windowing\Silk.NET.Windowing.Common\Silk.NET.Windowing.Common.csproj" />
+      <ProjectReference Include="..\..\..\Windowing\Silk.NET.Windowing.Sdl\Silk.NET.Windowing.Sdl.csproj" />
+      <ProjectReference Include="..\SampleBase\SampleBase.csproj" />
+      <EmbeddedResource Include="..\Triangle\shader.vert" Link="shader.vert" />
+      <EmbeddedResource Include="..\Triangle\shader.frag" Link="shader.frag" />
+      <Compile Include="../Triangle/Program.cs" Link="Triangle.cs" />
+      <Compile Include="../InputTest/Program.cs" Link="InputTest.cs" />
+      <RuntimeHostConfigurationOption Include="SILK_NET_SDL_SDL_ENABLE_PINVOKE_OVERRIDE_2" Value="true" Trim="true" />
+      <DirectPInvoke Include="SDL" />
+      <DirectPInvoke Include="__Internal_emscripten" />
+      <EmccExportedRuntimeMethod Include="SDL" />
+      <EmccExportedRuntimeMethod Include="GL" />
+      <EmccExportedRuntimeMethod Include="emscripten_set_main_loop" />
+      <EmccExportedRuntimeMethod Include="emscripten_set_main_loop_timing" />
+      <EmccExportedRuntimeMethod Include="emscripten_cancel_main_loop_timing" />
+      <None Remove="Tutorial\silkSpecular.png" />
+      <EmbeddedResource Include="Tutorial\silkSpecular.png">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </EmbeddedResource>
+      <None Remove="Tutorial\silkBoxed.png" />
+      <EmbeddedResource Include="Tutorial\silkBoxed.png">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </EmbeddedResource>
+      <None Remove="Tutorial\shader.frag" />
+      <EmbeddedResource Include="Tutorial\shader.frag">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </EmbeddedResource>
+      <None Remove="Tutorial\shader.vert" />
+      <EmbeddedResource Include="Tutorial\shader.vert">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </EmbeddedResource>
+      <None Remove="Tutorial\lighting.frag" />
+      <EmbeddedResource Include="Tutorial\lighting.frag">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </EmbeddedResource>
+  </ItemGroup>
+    
+    <Target Name="AddSDL" BeforeTargets="_GenerateManagedToNative" DependsOnTargets="_PrepareForWasmBuildNative">
+        <ItemGroup>
+            <_WasmPInvokeModules Include="SDL" /> <!-- TODO not this -->
+            <_WasmPInvokeModules Include="__Internal_emscripten" /> <!-- TODO not this -->
+        </ItemGroup>
+    </Target>
+    
+    <Target Name="UnfreezeCache" DependsOnTargets="AddSDL" BeforeTargets="_WasmCompileNativeFiles;_WasmCompileAssemblyBitCodeFilesForAOT;_WasmCalculateInitialHeapSize;_WasmLinkDotNet;_CheckEmccIsExpectedVersion">
+        <ItemGroup>
+            <EmscriptenEnvVars Remove="EM_FROZEN_CACHE=True" />
+            <EmscriptenEnvVars Include="EM_FROZEN_CACHE=0" />
+            <EmscriptenEnvVars Include="FROZEN_CACHE=0" />
+        </ItemGroup>
+    </Target>
+
+</Project>

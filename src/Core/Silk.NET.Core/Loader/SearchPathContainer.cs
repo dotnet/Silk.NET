@@ -29,7 +29,7 @@ namespace Silk.NET.Core.Loader
                         ? UnderlyingPlatform.MacOS
                         : OperatingSystem.IsWindows()
                             ? Environment.Is64BitProcess ? UnderlyingPlatform.Windows64 : UnderlyingPlatform.Windows86
-                            : UnderlyingPlatform.Unknown;
+                            : OperatingSystem.IsBrowser() ? UnderlyingPlatform.Browser : UnderlyingPlatform.Unknown;
 #else
         public static UnderlyingPlatform Platform { get; set; } = RuntimeInformation.IsOSPlatform(OSPlatform.Linux)
             ? RuntimeInformation.IsOSPlatform(OSPlatform.Create("ANDROID"))
@@ -86,19 +86,24 @@ namespace Silk.NET.Core.Loader
         /// Gets the possible library names to use for the current platform.
         /// </summary>
         /// <returns>The library names.</returns>
-        public string[] GetLibraryNames() => Platform switch
+        public string[] GetLibraryNames()
         {
-            UnderlyingPlatform.Unknown => ThrowInvalidPlatform(),
-            UnderlyingPlatform.Windows64 => Windows64,
-            UnderlyingPlatform.Windows86 => Windows86,
-            UnderlyingPlatform.Linux => Linux,
-            UnderlyingPlatform.Android => Android,
-            UnderlyingPlatform.MacOS => MacOS,
-            UnderlyingPlatform.IOS => IOS,
-            UnderlyingPlatform.Browser => Browser,
-            _ => ThrowInvalidPlatform()
-        };
-        
+            var ret = Platform switch
+            {
+                UnderlyingPlatform.Unknown => ThrowInvalidPlatform(),
+                UnderlyingPlatform.Windows64 => Windows64,
+                UnderlyingPlatform.Windows86 => Windows86,
+                UnderlyingPlatform.Linux => Linux,
+                UnderlyingPlatform.Android => Android,
+                UnderlyingPlatform.MacOS => MacOS,
+                UnderlyingPlatform.IOS => IOS,
+                UnderlyingPlatform.Browser => Browser,
+                _ => ThrowInvalidPlatform()
+            };
+            Console.WriteLine("HELLO THERE: " + string.Join(", ", ret));
+            return ret;
+        }
+
         /// <summary>
         /// Gets the library name to use on the current platform.
         /// </summary>

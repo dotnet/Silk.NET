@@ -12,10 +12,9 @@ namespace Silk.NET.SDL
     // ideally we'd only use override 1 on android, but we can't really do that until it's better supported in .net 6
     // (we'd need a preprocessor directive which is only available in xamarin)
     [PInvokeOverride(2, "SDL")]
-    [PInvokeOverride(1, "libSDL2.so")]
-    [PInvokeOverride(0, "__Internal")]
     public partial class Sdl
     {
+        public static Sdl PleaseDontTryThisAtHomeGetApi() => new Sdl(new OVERRIDE_2());
         public const uint InitEverything = InitTimer | InitAudio | InitVideo |
                                            InitEvents | InitJoystick | InitHaptic |
                                            InitGamecontroller | InitSensor;
@@ -32,7 +31,7 @@ namespace Silk.NET.SDL
 
         public const string HintAppleTvRemoteAllowRotation =
             "SDL_APPLE_TV_REMOTE_ALLOW_ROTATION";
-
+        
         [Obsolete("Use HintIosHideHomeIndicator instead.")]
         public const string HintIOSHideHomeIndicator = HintIosHideHomeIndicator;
 
@@ -43,7 +42,7 @@ namespace Silk.NET.SDL
         public const string HintJoystickHidapiPs4 = HintJoystickHidapiPS4;
 
         [Obsolete("Use HintJoystickHidapiPS4Rumble instead.")]
-        public const string HintJoystickHidapiPs4Rumble = HintJoystickHidapiPS4Rumble;
+        public const string HintJoystickHidapiPs4Rumble =HintJoystickHidapiPS4Rumble;
 
         [Obsolete("Use HintVideoX11WindowVisualid instead.")]
         public const string HintVidoX11WindowVisualid = HintVideoX11WindowVisualid;

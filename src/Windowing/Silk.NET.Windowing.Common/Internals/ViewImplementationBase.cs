@@ -8,6 +8,7 @@ using System.Diagnostics;
 using System.Numerics;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
+using System.Runtime.Versioning;
 using System.Threading;
 using Silk.NET.Core.Contexts;
 using Silk.NET.Maths;
@@ -33,6 +34,7 @@ namespace Silk.NET.Windowing.Internals
         private double _renderPeriod;
         private double _updatePeriod;
         private bool _inRenderLoop;
+        private bool _emLooping;
 
         // Invocations
         private readonly ArrayPool<object> _returnArrayPool = ArrayPool<object>.Create();
@@ -203,9 +205,21 @@ namespace Silk.NET.Windowing.Internals
 #if NET6_0_OR_GREATER
             if(RuntimeInformation.IsOSPlatform(OSPlatform.Create("BROWSER")))
             {
+                if (_browserView is not null)
+                {
+                    if (_browserView == this)
+                    {
+                        Console.WriteLine("changing main loop, this is questionable behaviour.");
+                        emscripten_cancel_main_loop();
+                    }
+                    else
+                    {
+                        throw new InvalidOperationException("Multiple browser views in the loop!");
+                    }
+                }
                 _browserView = this;
                 _onFrame     = onFrame;
-                emscripten_set_main_loop((IntPtr)(delegate* unmanaged[Cdecl] <void>)&onFrameCallback, 0, true);
+                emscripten_set_main_loop((IntPtr)(delegate* unmanaged[Cdecl] <void>)&onFrameCallback, 0, false);
             }
             else 
 #endif
@@ -233,7 +247,7 @@ namespace Silk.NET.Windowing.Internals
                 if (!IsContextControlDisabled && _swapIntervalChanged)
                 {
 #if NET6_0_OR_GREATER
-                    if (RuntimeInformation.IsOSPlatform(OSPlatform.Create("BROWSER")))
+                    if (OperatingSystem.IsBrowser())
                     {
                         emscripten_set_main_loop_timing(VSync ? LoopTimingMode.RAF : LoopTimingMode.SetTimeout, VSync ? 1 : 0);
                     }
@@ -258,6 +272,22 @@ namespace Silk.NET.Windowing.Internals
             _inRenderLoop = false;
         }
 
+#if NET6_0_OR_GREATER
+        [SupportedOSPlatform("browser")]
+        internal void CanvasDropped()
+        {
+            emscripten_cancel_main_loop();
+            DoEvents();
+            Dispose();
+            if (this is INotifyCanvasDropped notify)
+            {
+                notify.CanvasDropped();
+            }
+            
+            _browserView = null;
+        }
+#endif
+        
         public void DoUpdate()
         {
             _inRenderLoop = true;

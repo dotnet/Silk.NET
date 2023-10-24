@@ -16,7 +16,7 @@ namespace Silk.NET.Windowing.Sdl
 {
     internal class SdlPlatform : IWindowPlatform
     {
-        private SdlView? _view;
+        internal SdlView? _view;
         private List<Event> _eventBuffer = new();
         private BreakneckLock _lock = BreakneckLock.Create();
         public static SdlPlatform GetOrRegister()
@@ -37,7 +37,7 @@ namespace Silk.NET.Windowing.Sdl
                 try
                 {
                     Console.WriteLine($"Trying to get sdl api");
-                    SDL.Sdl.GetApi();
+                    _ = SdlProvider.UninitializedSDL.Value;
                     Console.WriteLine($"after sdl API");
                 }
                 catch (Exception ex)

@@ -1,0 +1,49 @@
+﻿@page "/basictriangle"
+@using Silk.NET.Core.Loader
+@using Silk.NET.Core.Native
+@using Silk.NET.Windowing
+@using System.Diagnostics.CodeAnalysis
+@inject IJSRuntime JSRuntime
+
+
+<PageTitle>Home</PageTitle>
+
+<h1>Basic Triangle Demo</h1>
+
+<p>
+    It's literally just a triangle.
+</p>
+
+<br />
+
+<canvas style="width: 1920px; height: 1080px;" id="canvas" oncontextmenu="event.preventDefault()" onloadend="console.log('added canvas: ' + (Module['canvas'] = document.getElementById('canvas')))" />
+
+@code {
+    [System.Runtime.InteropServices.DllImport("SDL", EntryPoint = "SDL_GetPlatform", CallingConvention = (System.Runtime.InteropServices.CallingConvention)2)]
+    static extern unsafe byte* I_SDL_GetPlatform();
+    [System.Runtime.InteropServices.UnmanagedCallersOnly(CallConvs = new[] { typeof(System.Runtime.CompilerServices.CallConvCdecl) })]
+    static unsafe byte* S_SDL_GetPlatform() => I_SDL_GetPlatform();
+
+    protected override async Task OnAfterRenderAsync(bool firstRender)
+    {
+        if (!firstRender)
+        {
+            return;
+        }
+        await JSRuntime.InvokeVoidAsync("setCanvas", typeof(BasicTriangle).Assembly.GetName().Name, $"{typeof(BasicTriangle).FullName}.CanvasDropped");
+        unsafe
+        {
+            Console.WriteLine(SilkMarshal.PtrToString((nint) I_SDL_GetPlatform()));
+            delegate* unmanaged[Cdecl]<byte*> gp = &S_SDL_GetPlatform;
+            if (gp == null)
+            {
+                throw new("what");
+            }
+        }
+        SearchPathContainer.Platform = UnderlyingPlatform.Browser;
+        Triangle.Program.Run();
+    }
+
+    [JSInvokable("TriangleWasm.Components.Pages.BasicTriangle.CanvasDropped")]
+    public static void CanvasDropped() => Window.CanvasDropped(Triangle.Program._window);
+}

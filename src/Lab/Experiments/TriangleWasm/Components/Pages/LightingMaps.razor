@@ -1,0 +1,34 @@
+﻿@page "/lightingmaps"
+@using Silk.NET.Core.Loader
+@using Silk.NET.Core.Native
+@using Silk.NET.Windowing
+@inject IJSRuntime JSRuntime
+
+
+<PageTitle>Lighting Maps</PageTitle>
+
+<h1>Lighting Maps Demo</h1>
+
+<p>
+    Use WASD and the mouse to move about the scene.
+</p>
+
+<br />
+
+<canvas style="width: 1920px; height: 1080px;" id="canvas" oncontextmenu="event.preventDefault()" onloadend="console.log('added canvas: ' + (Module['canvas'] = document.getElementById('canvas')))" />
+
+@code {
+    protected override async Task OnAfterRenderAsync(bool firstRender)
+    {
+        if (!firstRender)
+        {
+            return;
+        }
+        await JSRuntime.InvokeVoidAsync("setCanvas", typeof(LightingMaps).Assembly.GetName().Name, $"{typeof(LightingMaps).FullName}.CanvasDropped");
+        SearchPathContainer.Platform = UnderlyingPlatform.Browser;
+        Tutorial.Program.Run();
+    }
+
+    [JSInvokable("TriangleWasm.Components.Pages.LightingMaps.CanvasDropped")]
+    public static void CanvasDropped() => Window.CanvasDropped(Tutorial.Program.window);
+}

@@ -7,6 +7,7 @@ using System.Reflection;
 using System.Threading;
 using Silk.NET.Core;
 using Silk.NET.Core.Contexts;
+using Silk.NET.Core.Loader;
 using Silk.NET.Maths;
 using Silk.NET.SDL;
 using Silk.NET.Windowing.Internals;
@@ -19,6 +20,9 @@ using Silk.NET.Windowing.Internals;
 namespace Silk.NET.Windowing.Sdl
 {
     internal unsafe class SdlView : ViewImplementationBase
+#if NET6_0_OR_GREATER
+        , INotifyCanvasDropped
+#endif
     {
         protected readonly SdlPlatform _platform;
         private const int WaitTimeout = 10;
@@ -117,6 +121,7 @@ namespace Silk.NET.Windowing.Sdl
             {
                 flags |= _platform.IsViewOnly switch
                 {
+                    true when SearchPathContainer.Platform == UnderlyingPlatform.Browser => WindowFlags.Borderless | WindowFlags.Resizable,
                     true => WindowFlags.Borderless | WindowFlags.Fullscreen | WindowFlags.Resizable,
                     false => WindowFlags.Resizable
                 };
@@ -472,5 +477,14 @@ namespace Silk.NET.Windowing.Sdl
             
             EndEventProcessing(taken);
         }
+#if NET6_0_OR_GREATER
+        public void CanvasDropped()
+        {
+            if (_platform._view == this)
+            {
+                _platform._view = null;
+            }
+        }
+#endif
     }
 }

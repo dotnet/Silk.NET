@@ -2,8 +2,11 @@
 
     <PropertyGroup>
         <OutputType>Exe</OutputType>
-        <TargetFramework>net7.0</TargetFramework>
+        <TargetFramework>net8.0</TargetFramework>
         <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+        <EmccExtraLDFlags>-s USE_SDL=2 -s USE_WEBGL2=1 -s ERROR_ON_UNDEFINED_SYMBOLS=0</EmccExtraLDFlags>
+        <WasmAllowUndefinedSymbols>true</WasmAllowUndefinedSymbols>
+        <RunAOTCompilation>True</RunAOTCompilation>
     </PropertyGroup>
 
     <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
@@ -25,13 +28,9 @@
       <ProjectReference Include="..\InputTest\InputTest.csproj" />
       <ProjectReference Include="..\SampleBase\SampleBase.csproj" />
 
-        <PackageReference Include="Uno.Foundation.Runtime.WebAssembly" Version="4.7.0-dev.730" />
-        <PackageReference Include="Uno.Wasm.Bootstrap" Version="8.0.0-dev.65" />
-        <PackageReference Include="Uno.Wasm.Bootstrap.DevServer" Version="8.0.0-dev.65" PrivateAssets="all" />
-
-        <WasmShellAdditionalPInvokeLibrary Include="SDL" />
-        <WasmShellAdditionalPInvokeLibrary Include="__Internal_emscripten" />
-        <WasmShellExtraEmccFlags Include="-s USE_SDL=2 -s USE_WEBGL2=1" />
+        <PackageReference Include="Uno.Foundation.Runtime.WebAssembly" Version="5.0.0-dev.3597" />
+        <PackageReference Include="Uno.Wasm.Bootstrap" Version="8.0.0-dev.306" />
+        <PackageReference Include="Uno.Wasm.Bootstrap.DevServer" Version="8.0.0-dev.306" PrivateAssets="all" />
     </ItemGroup>
     
     <ItemGroup>

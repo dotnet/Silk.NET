@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TriangleWasm</title>
+    <base href="/" />
+    <link rel="stylesheet" href="css/bootstrap/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/app.css" />
+    <link rel="icon" type="image/png" href="favicon.png" />
+    <link href="TriangleWasm.styles.css" rel="stylesheet" />
+    <script>
+        function setCanvas(cbAsm, cbFun){
+            console.log(`setCanvas(${cbAsm}, ${cbFun})`)
+            Module['canvas'] = document.getElementById('canvas');
+            const observer = new MutationObserver(function(mutations_list) {
+                mutations_list.forEach(function(mutation) {
+                    mutation.removedNodes.forEach(function(removed_node) {
+                        console.log("rm - " + removed_node);
+                        if(removed_node.id === 'canvas') {
+                            console.log('#canvas has been removed');
+                            observer.disconnect();
+                            DotNet.invokeMethod(cbAsm, cbFun);
+                        }
+                    });
+                });
+            });
+            observer.observe(document, {
+                attributes: true,
+                childList: true,
+                subtree: true,
+                characterData: true
+            });
+        }
+    </script>
+</head>
+
+<body>
+    <div id="app">
+        <svg class="loading-progress">
+            <circle r="40%" cx="50%" cy="50%" />
+            <circle r="40%" cx="50%" cy="50%" />
+        </svg>
+        <div class="loading-progress-text"></div>
+    </div>
+
+    <div id="blazor-error-ui">
+        An unhandled error has occurred.
+        <a href="" class="reload">Reload</a>
+        <a class="dismiss">🗙</a>
+    </div>
+    <script src="_framework/blazor.webassembly.js"></script>
+</body>
+
+</html>

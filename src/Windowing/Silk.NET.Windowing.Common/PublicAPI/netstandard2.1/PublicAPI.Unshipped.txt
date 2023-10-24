@@ -1,4 +1,5 @@
 #nullable enable
+Silk.NET.Windowing.IView.Run(System.Action! onFrame) -> bool
 Silk.NET.Windowing.IWindowPlatform.Name.get -> string!
 Silk.NET.Windowing.IWindowProperties.TopMost.get -> bool
 Silk.NET.Windowing.IWindowProperties.TopMost.set -> void

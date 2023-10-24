@@ -23,6 +23,8 @@ namespace Silk.NET.OpenGL
     [PInvokeOverride(0, "dummy")]
     public partial class GL
     {
+        private static OVERRIDE_0? _o0; 
+        
         /// <summary>
         ///     Creates a <see cref="GL" /> instance from an <see cref="IGLContextSource" />.
         /// </summary>
@@ -35,8 +37,7 @@ namespace Silk.NET.OpenGL
         public static GL GetApi(IGLContextSource contextSource)
         {
             // This is to make the Mono P/Invoke signature generator happy. Else it wont find the OpenGL function pointer signatures
-            if(RuntimeInformation.IsOSPlatform(OSPlatform.Create("BROWSER")))
-                CreateDefaultContext("dummy");
+            _o0 ??= new OVERRIDE_0();
             return GetApi
             (
                 contextSource.GLContext ??
@@ -527,7 +528,7 @@ namespace Silk.NET.OpenGL
             
             var length = (uint) length2;
             GetShaderInfoLog(shader, length * 2, out length, out info);
-            info = info.Substring(0, (int) length);
+            info = (int) length <= info.Length ? info.Substring(0, (int) length) : string.Empty;
         }
 
         /// <summary>
@@ -563,9 +564,15 @@ namespace Silk.NET.OpenGL
         public void GetProgramInfoLog(uint program, out string info)
         {
             GetProgram(program, GLEnum.InfoLogLength, out var length2);
+            if (length2 <= 0)
+            {
+                info = string.Empty;
+                return;
+            }
+
             var length = (uint) length2;
             GetProgramInfoLog(program, length * 2, out length, out info);
-            info = info.Substring(0, (int) length);
+            info = (int) length <= info.Length ? info.Substring(0, (int) length) : string.Empty;
         }
 
         /// <summary>

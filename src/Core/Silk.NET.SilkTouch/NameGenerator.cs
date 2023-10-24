@@ -40,7 +40,7 @@ namespace Silk.NET.SilkTouch
             return result.Slice(offset, MaxLength - offset).ToString();
         }
 
-#if DEBUG
+#if true
         public static string Name(string suggestion) => suggestion;
 #else
         public static string Name(string suggestion)

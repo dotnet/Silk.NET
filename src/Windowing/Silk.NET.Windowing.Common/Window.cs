@@ -7,6 +7,8 @@ using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Reflection;
+using System.Runtime.Versioning;
+using Silk.NET.Windowing.Internals;
 
 namespace Silk.NET.Windowing
 {
@@ -364,5 +366,10 @@ namespace Silk.NET.Windowing
         /// <returns>The instance of the window platform type or <c>default</c></returns>
         public static T? GetOrDefault<T>() where T : class, IWindowPlatform
             => _platformsKeys.Contains(typeof(T)) ? (T) _platformsValues[_platformsKeys.IndexOf(typeof(T))] : default;
+
+#if NET6_0_OR_GREATER
+        [SupportedOSPlatform("browser")]
+        public static void CanvasDropped(IView view) => (view as ViewImplementationBase)?.CanvasDropped();
+#endif
     }
 }

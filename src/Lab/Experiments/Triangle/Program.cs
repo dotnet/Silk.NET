@@ -1,4 +1,6 @@
+#if !WASM
 #define REOPEN_EXPERIMENT
+#endif
 
 using System;
 using System.Drawing;
@@ -26,10 +28,8 @@ namespace Triangle
         private static uint _vertexBufferObject;
         private static uint _vertexArrayObject;
         private static GL _gl;
-        private static IView _window;
+        internal static IView _window;
         private static Shader _shader;
-        
-        public static GraphicsAPI API { get; set; } = GraphicsAPI.Default;
 
 #if !ANDROID
         // Exclude the entry point if we're running in .NET 6, as this file is
@@ -53,7 +53,7 @@ namespace Triangle
             var opts = ViewOptions.Default;
             opts.FramesPerSecond = 90;
             opts.UpdatesPerSecond = 90;
-            opts.API = API;
+            opts.API = GraphicsAPI.Default;
             
             #if WASM
             //On WASM, we should be using OpenGLES 3.0
@@ -104,14 +104,14 @@ namespace Triangle
         {
             Console.WriteLine("Before GL");
             _gl = _window.CreateOpenGL();
-            // Console.WriteLine("=== BEGIN OPENGL INFORMATION");
-            // foreach (StringName val in Enum.GetValues(typeof(StringName)))
-            // {
-            //     Console.WriteLine($"{val} = {_gl.GetStringS(val)}");
-            // }
-            // Console.WriteLine("=== END OPENGL INFORMATION");
+            Console.WriteLine("=== BEGIN OPENGL INFORMATION");
+            foreach (StringName val in Enum.GetValues(typeof(StringName)))
+            {
+                 Console.WriteLine($"{val} = {_gl.GetStringS(val)}");
+            }
+            Console.WriteLine("=== END OPENGL INFORMATION");
 
-            if (API.API == ContextAPI.OpenGL)
+            if (_window.API.API == ContextAPI.OpenGL)
             {
                 _gl.Enable(GLEnum.DebugOutput);
                 _gl.Enable(GLEnum.DebugOutputSynchronous);
@@ -132,6 +132,8 @@ namespace Triangle
             Console.WriteLine("Before shader");
 #if ANDROID
             _shader = new Shader("TriangleNET6.shader.vert", "TriangleNET6.shader.frag", _gl, typeof(Program));
+#elif WASM
+            _shader = new Shader("TriangleWasm.shader.vert", "TriangleWasm.shader.frag", _gl, typeof(Program));
 #else
             _shader = new Shader("Triangle.shader.vert", "Triangle.shader.frag", _gl, typeof(Program));
 #endif

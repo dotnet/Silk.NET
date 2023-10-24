@@ -6,20 +6,13 @@
     <LangVersion>preview</LangVersion>
   </PropertyGroup>
 
-  <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|net5.0|AnyCPU'">
-    <WarningLevel>4</WarningLevel>
-  </PropertyGroup>
-
-  <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Release|net5.0|AnyCPU'">
-    <WarningLevel>4</WarningLevel>
-  </PropertyGroup>
-
   <ItemGroup>
     <PackageReference Include="Ultz.Native.SDL" Version="2.*" />
   </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\..\Maths\Silk.NET.Maths\Silk.NET.Maths.csproj" />
+    <SilkPInvokeOverride Include="2" SilkClass="Silk.NET.SDL.Sdl" DownstreamCondition="false" />
     <SilkPInvokeOverride Include="1" SilkClass="Silk.NET.SDL.Sdl" DownstreamCondition="%24(TargetFramework.Contains('android'))" />
     <SilkPInvokeOverride Include="0" SilkClass="Silk.NET.SDL.Sdl" DownstreamCondition="%24(TargetFramework.Contains('ios')) or %24(TargetFramework.Contains('mac')) or %24(TargetFramework.Contains('tvos'))" />
   </ItemGroup>
