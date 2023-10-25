@@ -160,7 +160,10 @@ const root_path = root_dir() ++ ""/"";
                             ["SPIRV_CROSS_ENABLE_HLSL"] = "ON",
                             ["SPIRV_CROSS_ENABLE_MSL"] = "ON",
                             ["SPIRV_CROSS_ENABLE_REFLECT"] = "ON",
-                            ["SPIRV_CROSS_ENABLE_C_API"] = "ON"
+                            ["SPIRV_CROSS_ENABLE_C_API"] = "ON",
+
+                            ["CMAKE_SYSTEM_NAME"] = "iOS",
+                            ["CMAKE_OSX_DEPLOYMENT_TARGET"] = "11.0"
                         };
 
                         var optionString = string.Empty;
@@ -172,7 +175,7 @@ const root_path = root_dir() ++ ""/"";
                         { //iOS
                             DeleteDirectory(spirvCrossBuildPath);
 
-                            InheritedShell($"cmake . -B {spirvCrossBuildPath} -G Xcode -DCMAKE_SYSTEM_NAME=iOS -DCMAKE_OSX_ARCHITECTURES=arm64{optionString}", SPIRVCrossPath)
+                            InheritedShell($"cmake . -B {spirvCrossBuildPath} -G Xcode -DCMAKE_OSX_ARCHITECTURES=arm64 -DCMAKE_OSX_SYSROOT=iphoneos{optionString}", SPIRVCrossPath)
                                 .AssertZeroExitCode();
                             InheritedShell($"cmake --build .{JobsArg} --config Release", spirvCrossBuildPath)
                                 .AssertWaitForExit();
@@ -183,12 +186,12 @@ const root_path = root_dir() ++ ""/"";
                         { //iOS simulator
                             DeleteDirectory(spirvCrossBuildPath);
 
-                            InheritedShell($"cmake . -B {spirvCrossBuildPath} -G Xcode -DCMAKE_SYSTEM_NAME=iOS -DCMAKE_OSX_ARCHITECTURES=\"arm64;x86_64\"{optionString}", SPIRVCrossPath)
+                            InheritedShell($"cmake . -B {spirvCrossBuildPath} -G Xcode -DCMAKE_OSX_ARCHITECTURES=\"arm64;x86_64\" -DCMAKE_OSX_SYSROOT=iphonesimulator{optionString}", SPIRVCrossPath)
                                 .AssertZeroExitCode();
                             InheritedShell($"cmake --build .{JobsArg} --config Release", spirvCrossBuildPath)
                                 .AssertWaitForExit();
 
-                            CopyFile(spirvCrossBuildPath / "Release-iphoneos" / "libspirv-cross-c.a", runtimes / "iossimulator" / "native" / "libspirv-cross.a", FileExistsPolicy.Overwrite);
+                            CopyFile(spirvCrossBuildPath / "Release-iphonesimulator" / "libspirv-cross-c.a", runtimes / "iossimulator" / "native" / "libspirv-cross.a", FileExistsPolicy.Overwrite);
                         }
                     }
 
@@ -206,7 +209,7 @@ const root_path = root_dir() ++ ""/"";
                     var glob = string.Empty;
                     glob = files.Aggregate(glob, (current, path) => current + $"\"{path}\" ");
 
-                    //PrUpdatedNativeBinary("SPIRV-Cross", glob);
+                    PrUpdatedNativeBinary("SPIRV-Cross", glob);
                 }
             )
         );

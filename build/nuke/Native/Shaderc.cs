@@ -589,7 +589,6 @@ const root_path = root_dir() ++ ""/"";
 
             const string optimizeMode = "-Doptimize=ReleaseFast";
 
-            /*
             //Build shaderc for Linux x86
             InheritedShell($"zig build -Dtarget=x86-linux-gnu.2.16 {optimizeMode}", ShadercPath).AssertZeroExitCode();
             CopyFile(ShadercPath / "zig-out" / "lib" / $"lib{libname}.so", runtimes / "linux-x86" / "native" / $"lib{libname}.so", FileExistsPolicy.Overwrite);
@@ -621,7 +620,6 @@ const root_path = root_dir() ++ ""/"";
             //Build shaderc for MacOS ARM64
             InheritedShell($"zig build -Dtarget=aarch64-macos {optimizeMode}", ShadercPath).AssertZeroExitCode();
             CopyFile(ShadercPath / "zig-out" / "lib" / $"lib{libname}.dylib", runtimes / "osx-arm64" / "native" / $"lib{libname}.dylib", FileExistsPolicy.Overwrite);
-            */
 
             if (RuntimeInformation.IsOSPlatform(OSPlatform.OSX))
             {
@@ -633,7 +631,11 @@ const root_path = root_dir() ++ ""/"";
                     ["SHADERC_SKIP_EXAMPLES"] = "ON",
 
                     ["SKIP_SPIRV_TOOLS_INSTALL"] = "ON",
-                    ["SKIP_GLSLANG_INSTALL"] = "ON"
+                    ["SKIP_GLSLANG_INSTALL"] = "ON",
+
+                    
+                    ["CMAKE_SYSTEM_NAME"] = "iOS",
+                    ["CMAKE_OSX_DEPLOYMENT_TARGET"] = "11.0"
                 };
 
                 var optionString = string.Empty;
@@ -645,7 +647,7 @@ const root_path = root_dir() ++ ""/"";
                 { //iOS
                     DeleteDirectory(shadercBuildPath);
 
-                    InheritedShell($"cmake . -B {shadercBuildPath} -G Xcode -DCMAKE_SYSTEM_NAME=iOS -DCMAKE_OSX_ARCHITECTURES=arm64{optionString}", ShadercPath)
+                    InheritedShell($"cmake . -B {shadercBuildPath} -G Xcode -DCMAKE_OSX_ARCHITECTURES=arm64 -DCMAKE_OSX_SYSROOT=iphoneos{optionString}", ShadercPath)
                         .AssertZeroExitCode();
                     InheritedShell($"cmake --build .{JobsArg} --config Release --target shaderc", shadercBuildPath)
                         .AssertWaitForExit();
@@ -656,12 +658,12 @@ const root_path = root_dir() ++ ""/"";
                 { //iOS simulator
                     DeleteDirectory(shadercBuildPath);
 
-                    InheritedShell($"cmake . -B {shadercBuildPath} -G Xcode -DCMAKE_SYSTEM_NAME=iOS -DCMAKE_OSX_ARCHITECTURES=\"arm64;x86_64\"{optionString}", ShadercPath)
+                    InheritedShell($"cmake . -B {shadercBuildPath} -G Xcode -DCMAKE_OSX_ARCHITECTURES=\"arm64;x86_64\" -DCMAKE_OSX_SYSROOT=iphonesimulator{optionString}", ShadercPath)
                         .AssertZeroExitCode();
                     InheritedShell($"cmake --build .{JobsArg} --config Release --target shaderc", shadercBuildPath)
                         .AssertWaitForExit();
 
-                    CopyFile(shadercBuildPath / "libshaderc" / "Release-iphoneos" / "libshaderc.a", runtimes / "iossimulator" / "native" / "libshaderc.a", FileExistsPolicy.Overwrite);
+                    CopyFile(shadercBuildPath / "libshaderc" / "Release-iphonesimulator" / "libshaderc.a", runtimes / "iossimulator" / "native" / "libshaderc.a", FileExistsPolicy.Overwrite);
                 }
             }
 
@@ -679,7 +681,7 @@ const root_path = root_dir() ++ ""/"";
             var glob = string.Empty;
             glob = files.Aggregate(glob, (current, path) => current + $"\"{path}\" ");
 
-            //PrUpdatedNativeBinary("Shaderc", glob);
+            PrUpdatedNativeBinary("Shaderc", glob);
         }
         )
     );
