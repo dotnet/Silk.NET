@@ -27,12 +27,14 @@ This API aims to replace the existing implementation of Silk.NET.Maths.
     - IUtf8SpanParsable
 - Provide explicit implementations of the following interfaces:
     - INumberBase (except for methods which are relevant to vectors)
+- Provide implementations of the following interfaces, but as extension/static methods:
     - IHyperbolicFunctions
     - ITrigonometricFunctions
     - ILogarithmicFunctions
     - IExponentialFunctions
     - IPowerFunctions
     - IRootFunctions
+    (The reasoning for this is that the required interface types are more narrow than INumberBase)
 - Static helper methods, where the result is expected to be bounded to 0-1 or the type of T has to be scoped to a type narrower than the one used by the primitive, have two variants:
     - Method&lt;T>: T is scoped to a narrower type (e.g IRootFunctions&lt;T>, IFloatingPoint&lt;T>)
     - Method&lt;T, TReturn>: no scope for T, but TReturn is scoped to a narrower type
