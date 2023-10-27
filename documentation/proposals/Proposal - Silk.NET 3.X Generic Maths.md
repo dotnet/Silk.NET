@@ -33,6 +33,9 @@ This API aims to replace the existing implementation of Silk.NET.Maths.
     - IExponentialFunctions
     - IPowerFunctions
     - IRootFunctions
+- Static helper methods, where the result is expected to be bounded to 0-1 or the type of T has to be scoped to a type narrower than the one used by the primitive, have two variants:
+    - Method&lt;T>: T is scoped to a narrower type (e.g IRootFunctions&lt;T>, IFloatingPoint&lt;T>)
+    - Method&lt;T, TReturn>: no scope for T, but TReturn is scoped to a narrower type
 
 
 # Proposed API
