@@ -93,9 +93,7 @@ public readonly partial struct Vector2D<T> : IVector<Vector2D<T>, T>, IVectorAls
     /// <value>The vector <c>(0,1)</c>.</value>
     public static Vector2D<T> UnitY => new(T.Zero, T.One);
 
-    public ReadOnlySpan<T> Components { get; }
-
-    static Vector2D<T> IVector<Vector2D<T>, T>.CreateFromRepeatingComponent(T scalar);
+    static Vector2D<T> IVector<Vector2D<T>, T>.Create(T scalar);
 
     public T this[int index] { get; }
 
@@ -168,38 +166,11 @@ public readonly partial struct Vector2D<T> : IVector<Vector2D<T>, T>, IVectorAls
     /// <returns><see langword="true" /> if <paramref name="left" /> and <paramref name="right" /> are not equal; otherwise, <see langword="false" />.</returns>
     public static bool operator !=(Vector2D<T> left, Vector2D<T> right);
     #endregion
-
-    #region CopyTo
-    /// <summary>Copies the elements of the vector to a specified array.</summary>
-    /// <param name="array">The destination array.</param>
-    /// <remarks><paramref name="array" /> must have at least two elements. The method copies the vector's elements starting at index 0.</remarks>
-    /// <exception cref="NullReferenceException"><paramref name="array" /> is <see langword="null" />.</exception>
-    /// <exception cref="ArgumentException">The number of elements in the current instance is greater than in the array.</exception>
-    /// <exception cref="RankException"><paramref name="array" /> is multidimensional.</exception>
-    public void CopyTo(T[] array);
-
-    /// <summary>Copies the elements of the vector to a specified array starting at a specified index position.</summary>
-    /// <param name="array">The destination array.</param>
-    /// <param name="index">The index at which to copy the first element of the vector.</param>
-    /// <remarks><paramref name="array" /> must have a sufficient number of elements to accommodate the two vector elements. In other words, elements <paramref name="index" /> through <paramref name="index" /> + 2 must already exist in <paramref name="array" />.</remarks>
-    /// <exception cref="NullReferenceException"><paramref name="array" /> is <see langword="null" />.</exception>
-    /// <exception cref="ArgumentException">The number of elements in the current instance is greater than in the array.</exception>
-    /// <exception cref="ArgumentOutOfRangeException"><paramref name="index" /> is less than zero.
-    /// -or-
-    /// <paramref name="index" /> is greater than or equal to the array length.</exception>
-    /// <exception cref="RankException"><paramref name="array" /> is multidimensional.</exception>
-    public void CopyTo(T[] array, int index);
-
-    /// <summary>Copies the vector to the given <see cref="Span{T}" />. The length of the destination span must be at least 4.</summary>
-    /// <param name="destination">The destination span which the values are copied into.</param>
-    /// <exception cref="ArgumentException">If number of elements in source vector is greater than those available in destination span.</exception>
-    public void CopyTo(Span<T> destination);
-
-    /// <summary>Attempts to copy the vector to the given <see cref="Span{Single}" />. The length of the destination span must be at least 4.</summary>
-    /// <param name="destination">The destination span which the values are copied into.</param>
-    /// <returns><see langword="true" /> if the source vector was successfully copied to <paramref name="destination" />. <see langword="false" /> if <paramref name="destination" /> is not large enough to hold the source vector.</returns>
-    public bool TryCopyTo(Span<T> destination);
-    #endregion
+1
+    static void IVector<Vector2D<T>, T>.CopyTo(in Vector2D<T> vector, T[] array) => vector.CopyTo(array);
+    static void IVector<Vector2D<T>, T>.CopyTo(in Vector2D<T> vector, T[] array, int index) => vector.CopyTo(array, index);
+    static void IVector<Vector2D<T>, T>.CopyTo(in Vector2D<T> vector, Span<T> destination) => vector.CopyTo(destination);
+    static bool IVector<Vector2D<T>, T>.TryCopyTo(in Vector2D<T> vector, Span<T> destination) => vector.TryCopyTo(destination);
 
     #region Equality
     public bool Equals(Vector2D<T> other);
@@ -368,11 +339,54 @@ public readonly partial struct Vector2D<T> : IVector<Vector2D<T>, T>, IVectorAls
     static Vector2D<T> IVector<Vector2D<T>, T>.Lerp(Vector2D<T> value1, Vector2D<T> value2, T amount); /* where T : IFloatingPoint<T> */
     static Vector2D<T> IVector<Vector2D<T>, T>.LerpClamped(Vector2D<T> value1, Vector2D<T> value2, T amount); /* where T : IFloatingPoint<T> */
     static Vector2D<T> IVector<Vector2D<T>, T>.Reflect(Vector2D<T> vector, Vector2D<T> normal); /* where T : IFloatingPoint<T> */
+    static ReadOnlySpan<T> IVector<Vector2D<T>, T>.AsSpan<T>(in this Vector2D<T> vec);
 }
 
-public static Vector2D
+public static class Vector2D
 {
+    #region CopyTo
+    /// <summary>Copies the elements of the vector to a specified array.</summary>
+    /// <param name="vector">The vector to be copied.</param>
+    /// <param name="array">The destination array.</param>
+    /// <remarks><paramref name="array" /> must have at least {{ AmountName }} elements. The method copies the vector's elements starting at index 0.</remarks>
+    /// <exception cref="NullReferenceException"><paramref name="array" /> is <see langword="null" />.</exception>
+    /// <exception cref="ArgumentException">The number of elements in the current instance is greater than in the array.</exception>
+    /// <exception cref="RankException"><paramref name="array" /> is multidimensional.</exception>
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    public static void CopyTo<T>(in this Vector2D<T> self, T[] array) where T : INumberBase<T>;
+
+    /// <summary>Copies the elements of the vector to a specified array starting at a specified index position.</summary>
+    /// <param name="vector">The vector to be copied.</param>
+    /// <param name="array">The destination array.</param>
+    /// <param name="index">The index at which to copy the first element of the vector.</param>
+    /// <remarks><paramref name="array" /> must have a sufficient number of elements to accommodate the {{ AmountName }} vector elements. In other words, elements <paramref name="index" /> through <paramref name="index" /> + {{vecN}} must already exist in <paramref name="array" />.</remarks>
+    /// <exception cref="NullReferenceException"><paramref name="array" /> is <see langword="null" />.</exception>
+    /// <exception cref="ArgumentException">The number of elements in the current instance is greater than in the array.</exception>
+    /// <exception cref="ArgumentOutOfRangeException"><paramref name="index" /> is less than zero.
+    /// -or-
+    /// <paramref name="index" /> is greater than or equal to the array length.</exception>
+    /// <exception cref="RankException"><paramref name="array" /> is multidimensional.</exception>
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    public static void CopyTo<T>(in this Vector2D<T> self, T[] array, int index) where T : INumberBase<T>;
+
+    /// <summary>Copies the vector to the given <see cref="Span{T}" />. The length of the destination span must be at least 4.</summary>
+    /// <param name="vector">The vector to be copied.</param>
+    /// <param name="destination">The destination span which the values are copied into.</param>
+    /// <exception cref="ArgumentException">If number of elements in source vector is greater than those available in destination span.</exception>
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    public static void CopyTo<T>(in this Vector2D<T> self, Span<T> destination) where T : INumberBase<T>;
+
+    /// <summary>Attempts to copy the vector to the given <see cref="Span{Single}" />. The length of the destination span must be at least 4.</summary>
+    /// <param name="vector">The vector to be copied.</param>
+    /// <param name="destination">The destination span which the values are copied into.</param>
+    /// <returns><see langword="true" /> if the source vector was successfully copied to <paramref name="destination" />. <see langword="false" /> if <paramref name="destination" /> is not large enough to hold the source vector.</returns>
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    public static bool TryCopyTo<T>(in this Vector2D<T> self, Span<T> destination) where T : INumberBase<T>;
+    #endregion
+
     #region Extension
+    public static ReadOnlySpan<T> AsSpan<T>(in this Vector2D<T> vec);
+
     /// <summary>Returns the length of this vector object.</summary>
     /// <returns>The vector's length.</returns>
     /// <altmember cref="LengthSquared{T,TReturn}"/>
@@ -789,7 +803,7 @@ public interface IVector<TVector, T> :
     /// <inheritdoc cref="IUtf8SpanFormattable.TryFormat"/>
     new bool TryFormat(Span<byte> utf8Destination, out int bytesWritten, ReadOnlySpan<char> format, IFormatProvider? provider);
 
-    static abstract TVector CreateFromRepeatingComponent(T scalar);
+    static abstract TVector Create(T scalar);
 
     static TVector INumberBase<TVector>.Zero { get; }
     static TVector INumberBase<TVector>.One { get; }
@@ -804,11 +818,9 @@ public interface IVector<TVector, T> :
     /// <value>A vector whose elements are equal to one.</value>
     new static virtual TVector One { get; }
 
-    ReadOnlySpan<T> Components { get; }
-
     T IReadOnlyList<T>.this[int index]  { get; }
 
-    public T this[int index] { get; }
+    public new T this[int index] { get; }
 
     static abstract TVector operator /(TVector left, T right);
     static abstract TVector operator *(TVector left, T right);
@@ -880,5 +892,7 @@ public interface IVector<TVector, T> :
     static TVector IUnaryPlusOperators<TVector, TVector>.operator +(TVector value) => value;
 
     static int INumberBase<TVector>.Radix => T.Radix;
+
+    static abstract ReadOnlySpan<T> AsSpan(in TVector vec);
 }
 ```
