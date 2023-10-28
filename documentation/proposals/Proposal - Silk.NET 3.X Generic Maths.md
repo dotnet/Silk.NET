@@ -647,13 +647,6 @@ public static class Vector2D
     public static Vector2D<T> MaxNumber<T>(Vector2D<T> x, Vector2D<T> y) where T : INumber<T>;
     public static Vector2D<T> MinNumber<T>(Vector2D<T> x, Vector2D<T> y) where T : INumber<T>;
 
-    // INumberBase<T>
-    // public static Vector2D<T> MaxMagnitude<T>(Vector2D<T> x, Vector2D<T> y) where T : INumberBase<T>;
-    // public static Vector2D<T> MaxMagnitudeNumber<T>(Vector2D<T> x, Vector2D<T> y) where T : INumberBase<T>;
-    // public static Vector2D<T> MinMagnitude<T>(Vector2D<T> x, Vector2D<T> y) where T : INumberBase<T>;
-    // public static Vector2D<T> MinMagnitudeNumber<T>(Vector2D<T> x, Vector2D<T> y) where T : INumberBase<T>;
-    // (there's no reason you would want these.)
-
     // IFloatingPointIeee754<TSelf>
     public static Vector2D<int> ILogB<T>(Vector2D<T> x) where T : IFloatingPointIeee754<T>;
     public static Vector2D<T> ScaleB<T>(Vector2D<T> x, Vector2D<int> n) where T : IFloatingPointIeee754<T>;
