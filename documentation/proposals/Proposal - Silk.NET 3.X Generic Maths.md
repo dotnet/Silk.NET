@@ -39,7 +39,6 @@ This API aims to replace the existing implementation of Silk.NET.Maths.
     - Method&lt;T>: T is scoped to a narrower type (e.g IRootFunctions&lt;T>, IFloatingPoint&lt;T>)
     - Method&lt;T, TReturn>: no scope for T, but TReturn is scoped to a narrower type
 
-
 # Proposed API
 - IVector&lt;TVector, T>
 - IVectorAlso&lt;TVector, T> - Covers interfaces that can't be implemented by IVector because of compiler restrictions
@@ -58,8 +57,8 @@ public readonly partial struct Vector2D<T> : IVector<Vector2D<T>, T>, IVectorAls
 {
     /// <summary>The X component of the vector.</summary>
     public readonly T X;
+
     /// <summary>The Y component of the vector.</summary>
-    [DataMember]
     public readonly T Y;
 
     internal const int Count = 2;
