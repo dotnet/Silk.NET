@@ -110,7 +110,14 @@ public readonly partial struct Vector2D<T> : IVector<Vector2D<T>, T>, IVectorAls
     /// <value>The vector <c>(0,1)</c>.</value>
     public static Vector2D<T> UnitY => new(T.Zero, T.One);
 
-    static Vector2D<T> IVector<Vector2D<T>, T>.Create(T scalar);
+    /// <summary>Creates a new <see cref="Vector2D{T}" /> object whose two elements have the same value.</summary>
+    /// <param name="value">The value to assign to all two elements.</param>
+    public static Vector2D<T> Create(T scalar);
+
+    /// <summary>Creates a vector whose elements have the specified values.</summary>
+    /// <param name="x">The value to assign to the <see cref="X" /> field.</param>
+    /// <param name="y">The value to assign to the <see cref="y" /> field.</param>
+    public static Vector2D<T> Create(T x, T y);
 
     public T this[int index] { get; }
 
@@ -363,7 +370,7 @@ public static class Vector2D
 {
     #region CopyTo
     /// <summary>Copies the elements of the vector to a specified array.</summary>
-    /// <param name="vector">The vector to be copied.</param>
+    /// <param name="self">The vector to be copied.</param>
     /// <param name="array">The destination array.</param>
     /// <remarks><paramref name="array" /> must have at least {{ AmountName }} elements. The method copies the vector's elements starting at index 0.</remarks>
     /// <exception cref="NullReferenceException"><paramref name="array" /> is <see langword="null" />.</exception>
@@ -373,7 +380,7 @@ public static class Vector2D
     public static void CopyTo<T>(in this Vector2D<T> self, T[] array) where T : INumberBase<T>;
 
     /// <summary>Copies the elements of the vector to a specified array starting at a specified index position.</summary>
-    /// <param name="vector">The vector to be copied.</param>
+    /// <param name="self">The vector to be copied.</param>
     /// <param name="array">The destination array.</param>
     /// <param name="index">The index at which to copy the first element of the vector.</param>
     /// <remarks><paramref name="array" /> must have a sufficient number of elements to accommodate the {{ AmountName }} vector elements. In other words, elements <paramref name="index" /> through <paramref name="index" /> + {{vecN}} must already exist in <paramref name="array" />.</remarks>
@@ -387,14 +394,14 @@ public static class Vector2D
     public static void CopyTo<T>(in this Vector2D<T> self, T[] array, int index) where T : INumberBase<T>;
 
     /// <summary>Copies the vector to the given <see cref="Span{T}" />. The length of the destination span must be at least 4.</summary>
-    /// <param name="vector">The vector to be copied.</param>
+    /// <param name="self">The vector to be copied.</param>
     /// <param name="destination">The destination span which the values are copied into.</param>
     /// <exception cref="ArgumentException">If number of elements in source vector is greater than those available in destination span.</exception>
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     public static void CopyTo<T>(in this Vector2D<T> self, Span<T> destination) where T : INumberBase<T>;
 
     /// <summary>Attempts to copy the vector to the given <see cref="Span{Single}" />. The length of the destination span must be at least 4.</summary>
-    /// <param name="vector">The vector to be copied.</param>
+    /// <param name="self">The vector to be copied.</param>
     /// <param name="destination">The destination span which the values are copied into.</param>
     /// <returns><see langword="true" /> if the source vector was successfully copied to <paramref name="destination" />. <see langword="false" /> if <paramref name="destination" /> is not large enough to hold the source vector.</returns>
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -814,6 +821,7 @@ public interface IVector<TVector, T> :
     new bool TryFormat(Span<byte> utf8Destination, out int bytesWritten, ReadOnlySpan<char> format, IFormatProvider? provider);
 
     static abstract TVector Create(T scalar);
+    static abstract TVector Create(ReadOnlySpan<T> values);
 
     static TVector INumberBase<TVector>.Zero { get; }
     static TVector INumberBase<TVector>.One { get; }
