@@ -45,10 +45,27 @@ This API aims to replace the existing implementation of Silk.NET.Maths.
 - Vector2D&lt;T>
 - Vector3D&lt;T>
 - Vector4D&lt;T>
+- Vector5D&lt;T> - For Matrix5X4. No System.Numerics equivalent.
 - Quaternion&lt;T>
-- Matrix3x2&lt;T>
-- Matrix4x4&lt;T>
-- Plane&lt;T>
+- Matrix2X2&lt;T>
+- Matrix2X3&lt;T>
+- Matrix2X4&lt;T>
+- Matrix3X2&lt;T>
+- Matrix3X3&lt;T>
+- Matrix3X4&lt;T>
+- Matrix4X2&lt;T>
+- Matrix4X3&lt;T>
+- Matrix4X4&lt;T>
+- Matrix5X4&lt;T>
+- Plane&lt;T> - Maybe also a two-dimensional Plane?
+- Rectangle&lt;T>
+- Cube&lt;T> - As the sides of this primitive aren't equirectangular, I propose it be called RectangularPrism&lt;T>
+- Circle&lt;T> - Maybe also Oval/Ellipse?
+- Sphere&lt;T> - Maybe also Spheroid?
+- Box2D&lt;T> - I propose BoundingBox2D&lt;T> for clarity.
+- Box3D&lt;T> - I propose BoundingBox3D&lt;T> for clarity.
+- Ray2D&lt;T>
+- Ray3D&lt;T>
 
 For all `VectorND<T>`:
 ```cs
