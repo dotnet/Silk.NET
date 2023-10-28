@@ -514,11 +514,11 @@ public static class Vector2D
     /// <returns>The interpolated vector.</returns>
     public static Vector2D<TFloat> Lerp<T, TFloat>(Vector2D<T> value1, Vector2D<T> value2, TFloat amount) where T : INumberBase<T> where TFloat : INumberBase<TFloat>, IFloatingPoint<TFloat>;
 
-    // internal static Vector2D<T> LerpUnchecked<T>(Vector2D<T> value1, Vector2D<T> value2, T amount) where T : INumberBase<T>;
+    public static Vector2D<TFloat> Lerp<T, TFloat>(Vector2D<T> value1, Vector2D<T> value2, Vector2D<TFloat> amount) where T : INumberBase<T> where TFloat : INumberBase<TFloat>, IFloatingPoint<TFloat>;
 
     public static Vector2D<TFloat> LerpClamped<T, TFloat>(Vector2D<T> value1, Vector2D<T> value2, TFloat amount) where T : INumberBase<T> where TFloat : INumberBase<TFloat>, IFloatingPoint<TFloat>;
 
-    // internal static Vector2D<T> LerpClampedUnchecked<T>(Vector2D<T> value1, Vector2D<T> value2, T amount) where T : INumberBase<T>;
+    public static Vector2D<TFloat> LerpClamped<T, TFloat>(Vector2D<T> value1, Vector2D<T> value2, Vector2D<TFloat> amount) where T : INumberBase<T> where TFloat : INumberBase<TFloat>, IFloatingPoint<TFloat>;
 
     /// <summary>Returns a vector whose elements are the maximum of each of the pairs of elements in two specified vectors.</summary>
     /// <param name="value1">The first vector.</param>
@@ -579,6 +579,10 @@ public static class Vector2D
 
     public static Vector2D<T> LerpClamped<T>(Vector2D<T> value1, Vector2D<T> value2, T amount) where T : INumberBase<T>, IFloatingPoint<T>;
 
+    public static Vector2D<T> Lerp<T>(Vector2D<T> value1, Vector2D<T> value2, Vector2D<T> amount) where T : INumberBase<T>, IFloatingPoint<T>;
+
+    public static Vector2D<T> LerpClamped<T>(Vector2D<T> value1, Vector2D<T> value2, Vector2D<T> amount) where T : INumberBase<T>, IFloatingPoint<T>;
+
     /// <summary>Returns the reflection of a vector off a surface that has the specified normal.</summary>
     /// <param name="vector">The source vector.</param>
     /// <param name="normal">The normal of the surface being reflected off.</param>
@@ -614,8 +618,8 @@ public static class Vector2D
     public static Vector2D<T> SinPi<T>(Vector2D<T> x) where T : ITrigonometricFunctions<T>;
     public static Vector2D<T> Tan<T>(Vector2D<T> x) where T : ITrigonometricFunctions<T>;
     public static Vector2D<T> TanPi<T>(Vector2D<T> x) where T : ITrigonometricFunctions<T>;
-    public static (Vector2D<T> Sin, Vector2D<T> Cos) SinCos<T>(Vector2D<T> x) where T : ITrigonometricFunctions<T>
-    public static (Vector2D<T> SinPi, Vector2D<T> CosPi) SinCosPi<T>(Vector2D<T> x) where T : ITrigonometricFunctions<T>
+    public static (Vector2D<T> Sin, Vector2D<T> Cos) SinCos<T>(Vector2D<T> x) where T : ITrigonometricFunctions<T>;
+    public static (Vector2D<T> SinPi, Vector2D<T> CosPi) SinCosPi<T>(Vector2D<T> x) where T : ITrigonometricFunctions<T>;
 
     // Equivalent implementing ILogarithmicFunctions<System.Runtime.Intrinsics.Vector3>
     public static Vector2D<T> Log<T>(Vector2D<T> x) where T : ILogarithmicFunctions<T>;
@@ -660,7 +664,6 @@ public static class Vector2D
     public static Vector2D<T> BitDecrement<T>(Vector2D<T> x) where T : IFloatingPointIeee754<T>;
     public static Vector2D<T> BitIncrement<T>(Vector2D<T> x) where T : IFloatingPointIeee754<T>;
     public static Vector2D<T> FusedMultiplyAdd<T>(Vector2D<T> left, Vector2D<T> right, Vector2D<T> addend) where T : IFloatingPointIeee754<T>;
-    // public static Vector2D<T> Lerp<T>(Vector2D<T> value1, Vector2D<T> value2, Vector2D<T> amount) where T : IFloatingPointIeee754<T>;
     public static Vector2D<T> ReciprocalEstimate<T>(Vector2D<T> x) where T : IFloatingPointIeee754<T>;
     public static Vector2D<T> ReciprocalSqrtEstimate<T>(Vector2D<T> x) where T : IFloatingPointIeee754<T>;
 
@@ -868,6 +871,8 @@ public interface IVector<TVector, T> :
     //TVector Remainder(T right) /* where T : IModulusOperators<T, T, T> */;
     static abstract TVector Lerp(TVector value1, TVector value2, T amount) /* where T : IFloatingPoint<T> */;
     static abstract TVector LerpClamped(TVector value1, TVector value2, T amount) /* where T : IFloatingPoint<T> */;
+    static abstract TVector Lerp(TVector value1, TVector value2, TVector amount) /* where T : IFloatingPoint<T> */;
+    static abstract TVector LerpClamped(TVector value1, TVector value2, TVector amount) /* where T : IFloatingPoint<T> */;
     static abstract TVector Reflect(TVector vector, TVector normal) /* where T : IFloatingPoint<T> */;
     //static abstract TVector Sqrt(TVector value) /* where T : IFloatingPoint<T>, IRootFunctions<T> */;
 
