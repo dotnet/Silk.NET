@@ -1,17 +1,16 @@
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using System.Text;
-using Silk.NET.Core.Pointers;
 
 namespace Silk.NET.Core.UnitTests;
 
-public class MutMutTests
+public class Ref2DTests
 {
     [Test]
     public void SingleStringPtrUtf8FromSpan()
     {
         Span<byte> thing = Encoding.UTF8.GetBytes(STR_1 + "\0");
-        var thingPtr = thing.AsPtrMut2D();
+        var thingPtr = thing.AsRef2D();
         Assert.That((string)thingPtr.Ref, Is.EqualTo(STR_1));
         Assert.That((string)thingPtr[0], Is.EqualTo(STR_1));
         Assert.That(thingPtr[0][0], Is.EqualTo(STR_1[0]));
@@ -23,7 +22,7 @@ public class MutMutTests
     public unsafe void SingleStringPtrUtf16FromSpan()
     {
         var thing = MemoryMarshal.Cast<byte, char>(Encoding.Unicode.GetBytes(STR_1 + "\0"));
-        var thingPtr = thing.AsPtrMut2D();
+        var thingPtr = thing.AsRef2D();
         Assert.That((string)thingPtr.Ref, Is.EqualTo(STR_1));
         Assert.That((string)thingPtr[0], Is.EqualTo(STR_1));
         Assert.That(thingPtr[0][0], Is.EqualTo(STR_1[0]));
@@ -35,7 +34,7 @@ public class MutMutTests
     public void SingleStringPtrUtf32FromSpan()
     {
         var thing = MemoryMarshal.Cast<byte, uint>(Encoding.UTF32.GetBytes(STR_1 + "\0"));
-        var thingPtr = thing.AsPtrMut2D();
+        var thingPtr = thing.AsRef2D();
         Assert.That((string)thingPtr.Ref, Is.EqualTo(STR_1));
         Assert.That((string)thingPtr[0], Is.EqualTo(STR_1));
         Assert.That(thingPtr[0][0], Is.EqualTo(STR_1[0]));
@@ -51,7 +50,7 @@ public class MutMutTests
     {
         fixed (byte* thing = Encoding.UTF8.GetBytes(STR_1 + "\0"))
         {
-            MutMut<byte> thingPtr = new[] { thing };
+            Ref2D<byte> thingPtr = new[] { thing };
             Assert.That((string)thingPtr.Ref, Is.EqualTo(STR_1));
             Assert.That((string)thingPtr[0], Is.EqualTo(STR_1));
             Assert.That(thingPtr[0][0], Is.EqualTo(STR_1[0]));
@@ -66,7 +65,7 @@ public class MutMutTests
     {
         fixed (byte* thing = Encoding.Unicode.GetBytes(STR_1 + "\0"))
         {
-            MutMut<char> thingPtr = new[] { (char*)thing };
+            Ref2D<char> thingPtr = new[] { (char*)thing };
             Assert.That((string)thingPtr.Ref, Is.EqualTo(STR_1));
             Assert.That((string)thingPtr[0], Is.EqualTo(STR_1));
             Assert.That(thingPtr[0][0], Is.EqualTo(STR_1[0]));
@@ -80,7 +79,7 @@ public class MutMutTests
     {
         fixed (byte* thing = Encoding.UTF32.GetBytes(STR_1 + "\0"))
         {
-            MutMut<uint> thingPtr = new[] { (uint*)thing };
+            Ref2D<uint> thingPtr = new[] { (uint*)thing };
             Assert.That((string)thingPtr.Ref, Is.EqualTo(STR_1));
             Assert.That((string)thingPtr[0], Is.EqualTo(STR_1));
             Assert.That(thingPtr[0][0], Is.EqualTo(STR_1[0]));
@@ -95,7 +94,7 @@ public class MutMutTests
     [Test]
     public unsafe void SingleStringPtrUtf8FromJaggedArray()
     {
-        MutMut<byte> thingPtr = new[] { Encoding.UTF8.GetBytes(STR_1 + "\0") };
+        Ref2D<byte> thingPtr = new[] { Encoding.UTF8.GetBytes(STR_1 + "\0") };
         Assert.That((string)thingPtr.Ref, Is.EqualTo(STR_1));
         Assert.That((string)thingPtr[0], Is.EqualTo(STR_1));
         Assert.That(thingPtr[0][0], Is.EqualTo(STR_1[0]));
@@ -107,7 +106,7 @@ public class MutMutTests
     [Test]
     public unsafe void SingleStringPtrUtf16FromJaggedArray()
     {
-        MutMut<char> thingPtr = new[] {
+        Ref2D<char> thingPtr = new[] {
             MemoryMarshal.Cast<byte, char>(Encoding.Unicode.GetBytes(STR_1 + "\0")).ToArray()
         };
         Assert.That((string)thingPtr.Ref, Is.EqualTo(STR_1));
@@ -120,7 +119,7 @@ public class MutMutTests
     [Test]
     public unsafe void SingleStringPtrUtf32FromJaggedArray()
     {
-        MutMut<uint> thingPtr =
+        Ref2D<uint> thingPtr =
             new[] { MemoryMarshal.Cast<byte, uint>(Encoding.UTF32.GetBytes(STR_1 + "\0")).ToArray() };
         Assert.That((string)thingPtr.Ref, Is.EqualTo(STR_1));
         Assert.That((string)thingPtr[0], Is.EqualTo(STR_1));
@@ -137,7 +136,7 @@ public class MutMutTests
     {
         fixed (byte* thing = Encoding.UTF8.GetBytes(STR_1 + "\0"))
         {
-            MutMut<byte> thingPtr = &thing;
+            Ref2D<byte> thingPtr = &thing;
             Assert.That((string)thingPtr.Ref, Is.EqualTo(STR_1));
             Assert.That((string)thingPtr[0], Is.EqualTo(STR_1));
             Assert.That(thingPtr[0][0], Is.EqualTo(STR_1[0]));
@@ -152,7 +151,7 @@ public class MutMutTests
     {
         fixed (byte* thing = Encoding.Unicode.GetBytes(STR_1 + "\0"))
         {
-            MutMut<char> thingPtr = (char**)&thing;
+            Ref2D<char> thingPtr = (char**)&thing;
             Assert.That((string)thingPtr.Ref, Is.EqualTo(STR_1));
             Assert.That((string)thingPtr[0], Is.EqualTo(STR_1));
             Assert.That(thingPtr[0][0], Is.EqualTo(STR_1[0]));
@@ -166,7 +165,7 @@ public class MutMutTests
     {
         fixed (byte* thing = Encoding.UTF32.GetBytes(STR_1 + "\0"))
         {
-            MutMut<uint> thingPtr = (uint**)&thing;
+            Ref2D<uint> thingPtr = (uint**)&thing;
             Assert.That((string)thingPtr.Ref, Is.EqualTo(STR_1));
             Assert.That((string)thingPtr[0], Is.EqualTo(STR_1));
             Assert.That(thingPtr[0][0], Is.EqualTo(STR_1[0]));
@@ -181,12 +180,12 @@ public class MutMutTests
     [Test]
     public unsafe void NullIsNull()
     {
-        MutMut<nint> ptr = nullptr;
-        Assert.True(((delegate*<ref Mut<nint>, bool>)(delegate*<ref readonly int, bool>)&Unsafe.IsNullRef<int>)(
-            ref ((delegate*<in Mut<nint>, ref Mut<nint>>)(delegate*<ref readonly int, ref int>)&Unsafe.AsRef<int>)(
+        Ref2D<nint> ptr = nullptr;
+        Assert.True(((delegate*<ref Ref<nint>, bool>)(delegate*<ref readonly int, bool>)&Unsafe.IsNullRef<int>)(
+            ref ((delegate*<in Ref<nint>, ref Ref<nint>>)(delegate*<ref readonly int, ref int>)&Unsafe.AsRef<int>)(
                 in ptr.Ref)));
-        Assert.True(((delegate*<ref Mut<nint>, bool>)(delegate*<ref readonly int, bool>)&Unsafe.IsNullRef<int>)(
-            ref ((delegate*<in Mut<nint>, ref Mut<nint>>)(delegate*<ref readonly int, ref int>)&Unsafe.AsRef<int>)(
+        Assert.True(((delegate*<ref Ref<nint>, bool>)(delegate*<ref readonly int, bool>)&Unsafe.IsNullRef<int>)(
+            ref ((delegate*<in Ref<nint>, ref Ref<nint>>)(delegate*<ref readonly int, ref int>)&Unsafe.AsRef<int>)(
                 in ptr[0])));
         Assert.True(((delegate*<ref nint*, bool>)(delegate*<ref readonly int, bool>)&Unsafe.IsNullRef<int>)(
             ref ((delegate*<in nint*, ref nint*>)(delegate*<ref readonly int, ref int>)&Unsafe.AsRef<int>)(

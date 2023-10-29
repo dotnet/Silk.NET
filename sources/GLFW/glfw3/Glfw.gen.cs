@@ -15,8 +15,8 @@ public unsafe partial class Glfw : IGlfw, IGlfw.Static
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
         [NativeFunction("glfw", EntryPoint = "glfwCreateCursor")]
-        public static Mut<Cursor> CreateCursor(
-            [NativeTypeName("const GLFWimage *")] Ptr<Image> image,
+        public static Ptr<Cursor> CreateCursor(
+            [NativeTypeName("const GLFWimage *")] Ref<Image> image,
             int xhot,
             int yhot
         )
@@ -37,7 +37,7 @@ public unsafe partial class Glfw : IGlfw, IGlfw.Static
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
         [NativeFunction("glfw", EntryPoint = "glfwCreateStandardCursor")]
-        public static Mut<Cursor> CreateStandardCursor(int shape)
+        public static Ptr<Cursor> CreateStandardCursor(int shape)
         {
             [DllImport("glfw", ExactSpelling = true, EntryPoint = "glfwCreateStandardCursor")]
             static extern Cursor* __DSL_glfwCreateStandardCursor(int shape);
@@ -48,12 +48,12 @@ public unsafe partial class Glfw : IGlfw, IGlfw.Static
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
         [NativeFunction("glfw", EntryPoint = "glfwCreateWindow")]
-        public static Mut<Window> CreateWindow(
+        public static Ptr<Window> CreateWindow(
             int width,
             int height,
-            [NativeTypeName("const char *")] Ptr<sbyte> title,
-            Mut<Monitor> monitor,
-            Mut<Window> share
+            [NativeTypeName("const char *")] Ref<sbyte> title,
+            Ref<Monitor> monitor,
+            Ref<Window> share
         )
         {
             fixed (Window* __dsl_share = share)
@@ -85,7 +85,7 @@ public unsafe partial class Glfw : IGlfw, IGlfw.Static
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
         [NativeFunction("glfw", EntryPoint = "glfwDestroyCursor")]
-        public static void DestroyCursor(Mut<Cursor> cursor)
+        public static void DestroyCursor(Ref<Cursor> cursor)
         {
             fixed (Cursor* __dsl_cursor = cursor)
             {
@@ -99,7 +99,7 @@ public unsafe partial class Glfw : IGlfw, IGlfw.Static
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
         [NativeFunction("glfw", EntryPoint = "glfwDestroyWindow")]
-        public static void DestroyWindow(Mut<Window> window)
+        public static void DestroyWindow(Ref<Window> window)
         {
             fixed (Window* __dsl_window = window)
             {
@@ -113,7 +113,7 @@ public unsafe partial class Glfw : IGlfw, IGlfw.Static
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
         [NativeFunction("glfw", EntryPoint = "glfwExtensionSupported")]
-        public static int ExtensionSupported([NativeTypeName("const char *")] Ptr<sbyte> extension)
+        public static int ExtensionSupported([NativeTypeName("const char *")] Ref<sbyte> extension)
         {
             fixed (sbyte* __dsl_extension = extension)
             {
@@ -129,7 +129,7 @@ public unsafe partial class Glfw : IGlfw, IGlfw.Static
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
         [NativeFunction("glfw", EntryPoint = "glfwFocusWindow")]
-        public static void FocusWindow(Mut<Window> window)
+        public static void FocusWindow(Ref<Window> window)
         {
             fixed (Window* __dsl_window = window)
             {
@@ -144,7 +144,7 @@ public unsafe partial class Glfw : IGlfw, IGlfw.Static
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
         [NativeFunction("glfw", EntryPoint = "glfwGetClipboardString")]
-        public static Ptr<sbyte> GetClipboardString(Mut<Window> window)
+        public static Ptr<sbyte> GetClipboardString(Ref<Window> window)
         {
             fixed (Window* __dsl_window = window)
             {
@@ -159,7 +159,7 @@ public unsafe partial class Glfw : IGlfw, IGlfw.Static
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
         [NativeFunction("glfw", EntryPoint = "glfwGetCurrentContext")]
-        public static Mut<Window> GetCurrentContext()
+        public static Ptr<Window> GetCurrentContext()
         {
             [DllImport("glfw", ExactSpelling = true, EntryPoint = "glfwGetCurrentContext")]
             static extern Window* __DSL_glfwGetCurrentContext();
@@ -170,7 +170,7 @@ public unsafe partial class Glfw : IGlfw, IGlfw.Static
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
         [NativeFunction("glfw", EntryPoint = "glfwGetCursorPos")]
-        public static void GetCursorPos(Mut<Window> window, Mut<double> xpos, Mut<double> ypos)
+        public static void GetCursorPos(Ref<Window> window, Ref<double> xpos, Ref<double> ypos)
         {
             fixed (double* __dsl_ypos = ypos)
             fixed (double* __dsl_xpos = xpos)
@@ -190,7 +190,7 @@ public unsafe partial class Glfw : IGlfw, IGlfw.Static
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
         [NativeFunction("glfw", EntryPoint = "glfwGetError")]
-        public static int GetError([NativeTypeName("const char **")] PtrPtr<sbyte> description)
+        public static int GetError([NativeTypeName("const char **")] Ref2D<sbyte> description)
         {
             fixed (sbyte** __dsl_description = description)
             {
@@ -206,7 +206,7 @@ public unsafe partial class Glfw : IGlfw, IGlfw.Static
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
         [NativeFunction("glfw", EntryPoint = "glfwGetFramebufferSize")]
-        public static void GetFramebufferSize(Mut<Window> window, Mut<int> width, Mut<int> height)
+        public static void GetFramebufferSize(Ref<Window> window, Ref<int> width, Ref<int> height)
         {
             fixed (int* __dsl_height = height)
             fixed (int* __dsl_width = width)
@@ -239,7 +239,7 @@ public unsafe partial class Glfw : IGlfw, IGlfw.Static
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
         [NativeFunction("glfw", EntryPoint = "glfwGetGamepadState")]
-        public static int GetGamepadState(int jid, Mut<Gamepadstate> state)
+        public static int GetGamepadState(int jid, Ref<Gamepadstate> state)
         {
             fixed (Gamepadstate* __dsl_state = state)
             {
@@ -254,7 +254,7 @@ public unsafe partial class Glfw : IGlfw, IGlfw.Static
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
         [NativeFunction("glfw", EntryPoint = "glfwGetGammaRamp")]
-        public static Ptr<Gammaramp> GetGammaRamp(Mut<Monitor> monitor)
+        public static Ptr<Gammaramp> GetGammaRamp(Ref<Monitor> monitor)
         {
             fixed (Monitor* __dsl_monitor = monitor)
             {
@@ -269,7 +269,7 @@ public unsafe partial class Glfw : IGlfw, IGlfw.Static
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
         [NativeFunction("glfw", EntryPoint = "glfwGetInputMode")]
-        public static int GetInputMode(Mut<Window> window, int mode)
+        public static int GetInputMode(Ref<Window> window, int mode)
         {
             fixed (Window* __dsl_window = window)
             {
@@ -284,7 +284,7 @@ public unsafe partial class Glfw : IGlfw, IGlfw.Static
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
         [NativeFunction("glfw", EntryPoint = "glfwGetJoystickAxes")]
-        public static Ptr<float> GetJoystickAxes(int jid, Mut<int> count)
+        public static Ptr<float> GetJoystickAxes(int jid, Ref<int> count)
         {
             fixed (int* __dsl_count = count)
             {
@@ -300,7 +300,7 @@ public unsafe partial class Glfw : IGlfw, IGlfw.Static
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
         [NativeFunction("glfw", EntryPoint = "glfwGetJoystickButtons")]
-        public static Ptr<byte> GetJoystickButtons(int jid, Mut<int> count)
+        public static Ptr<byte> GetJoystickButtons(int jid, Ref<int> count)
         {
             fixed (int* __dsl_count = count)
             {
@@ -329,7 +329,7 @@ public unsafe partial class Glfw : IGlfw, IGlfw.Static
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
         [NativeFunction("glfw", EntryPoint = "glfwGetJoystickHats")]
-        public static Ptr<byte> GetJoystickHats(int jid, Mut<int> count)
+        public static Ptr<byte> GetJoystickHats(int jid, Ref<int> count)
         {
             fixed (int* __dsl_count = count)
             {
@@ -357,7 +357,7 @@ public unsafe partial class Glfw : IGlfw, IGlfw.Static
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
         [NativeFunction("glfw", EntryPoint = "glfwGetJoystickUserPointer")]
-        public static Mut GetJoystickUserPointer(int jid)
+        public static Ptr GetJoystickUserPointer(int jid)
         {
             [DllImport("glfw", ExactSpelling = true, EntryPoint = "glfwGetJoystickUserPointer")]
             static extern void* __DSL_glfwGetJoystickUserPointer(int jid);
@@ -368,7 +368,7 @@ public unsafe partial class Glfw : IGlfw, IGlfw.Static
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
         [NativeFunction("glfw", EntryPoint = "glfwGetKey")]
-        public static int GetKey(Mut<Window> window, int key)
+        public static int GetKey(Ref<Window> window, int key)
         {
             fixed (Window* __dsl_window = window)
             {
@@ -399,9 +399,9 @@ public unsafe partial class Glfw : IGlfw, IGlfw.Static
         )]
         [NativeFunction("glfw", EntryPoint = "glfwGetMonitorContentScale")]
         public static void GetMonitorContentScale(
-            Mut<Monitor> monitor,
-            Mut<float> xscale,
-            Mut<float> yscale
+            Ref<Monitor> monitor,
+            Ref<float> xscale,
+            Ref<float> yscale
         )
         {
             fixed (float* __dsl_yscale = yscale)
@@ -423,7 +423,7 @@ public unsafe partial class Glfw : IGlfw, IGlfw.Static
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
         [NativeFunction("glfw", EntryPoint = "glfwGetMonitorName")]
-        public static Ptr<sbyte> GetMonitorName(Mut<Monitor> monitor)
+        public static Ptr<sbyte> GetMonitorName(Ref<Monitor> monitor)
         {
             fixed (Monitor* __dsl_monitor = monitor)
             {
@@ -439,9 +439,9 @@ public unsafe partial class Glfw : IGlfw, IGlfw.Static
         )]
         [NativeFunction("glfw", EntryPoint = "glfwGetMonitorPhysicalSize")]
         public static void GetMonitorPhysicalSize(
-            Mut<Monitor> monitor,
-            Mut<int> widthMM,
-            Mut<int> heightMM
+            Ref<Monitor> monitor,
+            Ref<int> widthMM,
+            Ref<int> heightMM
         )
         {
             fixed (int* __dsl_heightMM = heightMM)
@@ -462,7 +462,7 @@ public unsafe partial class Glfw : IGlfw, IGlfw.Static
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
         [NativeFunction("glfw", EntryPoint = "glfwGetMonitorPos")]
-        public static void GetMonitorPos(Mut<Monitor> monitor, Mut<int> xpos, Mut<int> ypos)
+        public static void GetMonitorPos(Ref<Monitor> monitor, Ref<int> xpos, Ref<int> ypos)
         {
             fixed (int* __dsl_ypos = ypos)
             fixed (int* __dsl_xpos = xpos)
@@ -478,7 +478,7 @@ public unsafe partial class Glfw : IGlfw, IGlfw.Static
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
         [NativeFunction("glfw", EntryPoint = "glfwGetMonitors")]
-        public static MutMut<Monitor> GetMonitors(Mut<int> count)
+        public static Ptr2D<Monitor> GetMonitors(Ref<int> count)
         {
             fixed (int* __dsl_count = count)
             {
@@ -492,7 +492,7 @@ public unsafe partial class Glfw : IGlfw, IGlfw.Static
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
         [NativeFunction("glfw", EntryPoint = "glfwGetMonitorUserPointer")]
-        public static Mut GetMonitorUserPointer(Mut<Monitor> monitor)
+        public static Ptr GetMonitorUserPointer(Ref<Monitor> monitor)
         {
             fixed (Monitor* __dsl_monitor = monitor)
             {
@@ -507,11 +507,11 @@ public unsafe partial class Glfw : IGlfw, IGlfw.Static
         )]
         [NativeFunction("glfw", EntryPoint = "glfwGetMonitorWorkarea")]
         public static void GetMonitorWorkarea(
-            Mut<Monitor> monitor,
-            Mut<int> xpos,
-            Mut<int> ypos,
-            Mut<int> width,
-            Mut<int> height
+            Ref<Monitor> monitor,
+            Ref<int> xpos,
+            Ref<int> ypos,
+            Ref<int> width,
+            Ref<int> height
         )
         {
             fixed (int* __dsl_height = height)
@@ -542,7 +542,7 @@ public unsafe partial class Glfw : IGlfw, IGlfw.Static
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
         [NativeFunction("glfw", EntryPoint = "glfwGetMouseButton")]
-        public static int GetMouseButton(Mut<Window> window, int button)
+        public static int GetMouseButton(Ref<Window> window, int button)
         {
             fixed (Window* __dsl_window = window)
             {
@@ -559,7 +559,7 @@ public unsafe partial class Glfw : IGlfw, IGlfw.Static
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
         [NativeFunction("glfw", EntryPoint = "glfwGetPrimaryMonitor")]
-        public static Mut<Monitor> GetPrimaryMonitor()
+        public static Ptr<Monitor> GetPrimaryMonitor()
         {
             [DllImport("glfw", ExactSpelling = true, EntryPoint = "glfwGetPrimaryMonitor")]
             static extern Monitor* __DSL_glfwGetPrimaryMonitor();
@@ -572,7 +572,7 @@ public unsafe partial class Glfw : IGlfw, IGlfw.Static
         )]
         [NativeFunction("glfw", EntryPoint = "glfwGetProcAddress")]
         public static delegate* unmanaged<void> GetProcAddress(
-            [NativeTypeName("const char *")] Ptr<sbyte> procname
+            [NativeTypeName("const char *")] Ref<sbyte> procname
         )
         {
             fixed (sbyte* __dsl_procname = procname)
@@ -591,8 +591,8 @@ public unsafe partial class Glfw : IGlfw, IGlfw.Static
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
         [NativeFunction("glfw", EntryPoint = "glfwGetRequiredInstanceExtensions")]
-        public static PtrPtr<sbyte> GetRequiredInstanceExtensions(
-            [NativeTypeName("uint32_t *")] Mut<uint> count
+        public static Ptr2D<sbyte> GetRequiredInstanceExtensions(
+            [NativeTypeName("uint32_t *")] Ref<uint> count
         )
         {
             fixed (uint* __dsl_count = count)
@@ -625,7 +625,7 @@ public unsafe partial class Glfw : IGlfw, IGlfw.Static
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
         [NativeFunction("glfw", EntryPoint = "glfwGetVersion")]
-        public static void GetVersion(Mut<int> major, Mut<int> minor, Mut<int> rev)
+        public static void GetVersion(Ref<int> major, Ref<int> minor, Ref<int> rev)
         {
             fixed (int* __dsl_rev = rev)
             fixed (int* __dsl_minor = minor)
@@ -655,7 +655,7 @@ public unsafe partial class Glfw : IGlfw, IGlfw.Static
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
         [NativeFunction("glfw", EntryPoint = "glfwGetVideoMode")]
-        public static Ptr<Vidmode> GetVideoMode(Mut<Monitor> monitor)
+        public static Ptr<Vidmode> GetVideoMode(Ref<Monitor> monitor)
         {
             fixed (Monitor* __dsl_monitor = monitor)
             {
@@ -671,7 +671,7 @@ public unsafe partial class Glfw : IGlfw, IGlfw.Static
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
         [NativeFunction("glfw", EntryPoint = "glfwGetVideoModes")]
-        public static Ptr<Vidmode> GetVideoModes(Mut<Monitor> monitor, Mut<int> count)
+        public static Ptr<Vidmode> GetVideoModes(Ref<Monitor> monitor, Ref<int> count)
         {
             fixed (int* __dsl_count = count)
             fixed (Monitor* __dsl_monitor = monitor)
@@ -687,7 +687,7 @@ public unsafe partial class Glfw : IGlfw, IGlfw.Static
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
         [NativeFunction("glfw", EntryPoint = "glfwGetWindowAttrib")]
-        public static int GetWindowAttrib(Mut<Window> window, int attrib)
+        public static int GetWindowAttrib(Ref<Window> window, int attrib)
         {
             fixed (Window* __dsl_window = window)
             {
@@ -702,9 +702,9 @@ public unsafe partial class Glfw : IGlfw, IGlfw.Static
         )]
         [NativeFunction("glfw", EntryPoint = "glfwGetWindowContentScale")]
         public static void GetWindowContentScale(
-            Mut<Window> window,
-            Mut<float> xscale,
-            Mut<float> yscale
+            Ref<Window> window,
+            Ref<float> xscale,
+            Ref<float> yscale
         )
         {
             fixed (float* __dsl_yscale = yscale)
@@ -726,11 +726,11 @@ public unsafe partial class Glfw : IGlfw, IGlfw.Static
         )]
         [NativeFunction("glfw", EntryPoint = "glfwGetWindowFrameSize")]
         public static void GetWindowFrameSize(
-            Mut<Window> window,
-            Mut<int> left,
-            Mut<int> top,
-            Mut<int> right,
-            Mut<int> bottom
+            Ref<Window> window,
+            Ref<int> left,
+            Ref<int> top,
+            Ref<int> right,
+            Ref<int> bottom
         )
         {
             fixed (int* __dsl_bottom = bottom)
@@ -761,7 +761,7 @@ public unsafe partial class Glfw : IGlfw, IGlfw.Static
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
         [NativeFunction("glfw", EntryPoint = "glfwGetWindowMonitor")]
-        public static Mut<Monitor> GetWindowMonitor(Mut<Window> window)
+        public static Ptr<Monitor> GetWindowMonitor(Ref<Window> window)
         {
             fixed (Window* __dsl_window = window)
             {
@@ -775,7 +775,7 @@ public unsafe partial class Glfw : IGlfw, IGlfw.Static
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
         [NativeFunction("glfw", EntryPoint = "glfwGetWindowOpacity")]
-        public static float GetWindowOpacity(Mut<Window> window)
+        public static float GetWindowOpacity(Ref<Window> window)
         {
             fixed (Window* __dsl_window = window)
             {
@@ -789,7 +789,7 @@ public unsafe partial class Glfw : IGlfw, IGlfw.Static
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
         [NativeFunction("glfw", EntryPoint = "glfwGetWindowPos")]
-        public static void GetWindowPos(Mut<Window> window, Mut<int> xpos, Mut<int> ypos)
+        public static void GetWindowPos(Ref<Window> window, Ref<int> xpos, Ref<int> ypos)
         {
             fixed (int* __dsl_ypos = ypos)
             fixed (int* __dsl_xpos = xpos)
@@ -805,7 +805,7 @@ public unsafe partial class Glfw : IGlfw, IGlfw.Static
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
         [NativeFunction("glfw", EntryPoint = "glfwGetWindowSize")]
-        public static void GetWindowSize(Mut<Window> window, Mut<int> width, Mut<int> height)
+        public static void GetWindowSize(Ref<Window> window, Ref<int> width, Ref<int> height)
         {
             fixed (int* __dsl_height = height)
             fixed (int* __dsl_width = width)
@@ -821,7 +821,7 @@ public unsafe partial class Glfw : IGlfw, IGlfw.Static
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
         [NativeFunction("glfw", EntryPoint = "glfwGetWindowUserPointer")]
-        public static Mut GetWindowUserPointer(Mut<Window> window)
+        public static Ptr GetWindowUserPointer(Ref<Window> window)
         {
             fixed (Window* __dsl_window = window)
             {
@@ -835,7 +835,7 @@ public unsafe partial class Glfw : IGlfw, IGlfw.Static
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
         [NativeFunction("glfw", EntryPoint = "glfwHideWindow")]
-        public static void HideWindow(Mut<Window> window)
+        public static void HideWindow(Ref<Window> window)
         {
             fixed (Window* __dsl_window = window)
             {
@@ -849,7 +849,7 @@ public unsafe partial class Glfw : IGlfw, IGlfw.Static
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
         [NativeFunction("glfw", EntryPoint = "glfwIconifyWindow")]
-        public static void IconifyWindow(Mut<Window> window)
+        public static void IconifyWindow(Ref<Window> window)
         {
             fixed (Window* __dsl_window = window)
             {
@@ -867,7 +867,7 @@ public unsafe partial class Glfw : IGlfw, IGlfw.Static
         )]
         [NativeFunction("glfw", EntryPoint = "glfwInitAllocator")]
         public static void InitAllocator(
-            [NativeTypeName("const GLFWallocator *")] Ptr<Allocator> allocator
+            [NativeTypeName("const GLFWallocator *")] Ref<Allocator> allocator
         )
         {
             fixed (Allocator* __dsl_allocator = allocator)
@@ -893,7 +893,7 @@ public unsafe partial class Glfw : IGlfw, IGlfw.Static
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
         [NativeFunction("glfw", EntryPoint = "glfwMakeContextCurrent")]
-        public static void MakeContextCurrent(Mut<Window> window)
+        public static void MakeContextCurrent(Ref<Window> window)
         {
             fixed (Window* __dsl_window = window)
             {
@@ -907,7 +907,7 @@ public unsafe partial class Glfw : IGlfw, IGlfw.Static
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
         [NativeFunction("glfw", EntryPoint = "glfwMaximizeWindow")]
-        public static void MaximizeWindow(Mut<Window> window)
+        public static void MaximizeWindow(Ref<Window> window)
         {
             fixed (Window* __dsl_window = window)
             {
@@ -933,7 +933,7 @@ public unsafe partial class Glfw : IGlfw, IGlfw.Static
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
         [NativeFunction("glfw", EntryPoint = "glfwRequestWindowAttention")]
-        public static void RequestWindowAttention(Mut<Window> window)
+        public static void RequestWindowAttention(Ref<Window> window)
         {
             fixed (Window* __dsl_window = window)
             {
@@ -947,7 +947,7 @@ public unsafe partial class Glfw : IGlfw, IGlfw.Static
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
         [NativeFunction("glfw", EntryPoint = "glfwRestoreWindow")]
-        public static void RestoreWindow(Mut<Window> window)
+        public static void RestoreWindow(Ref<Window> window)
         {
             fixed (Window* __dsl_window = window)
             {
@@ -963,7 +963,7 @@ public unsafe partial class Glfw : IGlfw, IGlfw.Static
         )]
         [NativeFunction("glfw", EntryPoint = "glfwSetCharCallback")]
         public static delegate* unmanaged<Window*, uint, void> SetCharCallback(
-            Mut<Window> window,
+            Ref<Window> window,
             [NativeTypeName("GLFWcharfun")] delegate* unmanaged<Window*, uint, void> callback
         )
         {
@@ -986,7 +986,7 @@ public unsafe partial class Glfw : IGlfw, IGlfw.Static
         )]
         [NativeFunction("glfw", EntryPoint = "glfwSetCharModsCallback")]
         public static delegate* unmanaged<Window*, uint, int, void> SetCharModsCallback(
-            Mut<Window> window,
+            Ref<Window> window,
             [NativeTypeName("GLFWcharmodsfun")]
                 delegate* unmanaged<Window*, uint, int, void> callback
         )
@@ -1013,8 +1013,8 @@ public unsafe partial class Glfw : IGlfw, IGlfw.Static
         )]
         [NativeFunction("glfw", EntryPoint = "glfwSetClipboardString")]
         public static void SetClipboardString(
-            Mut<Window> window,
-            [NativeTypeName("const char *")] Ptr<sbyte> @string
+            Ref<Window> window,
+            [NativeTypeName("const char *")] Ref<sbyte> @string
         )
         {
             fixed (sbyte* __dsl_string = @string)
@@ -1033,7 +1033,7 @@ public unsafe partial class Glfw : IGlfw, IGlfw.Static
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
         [NativeFunction("glfw", EntryPoint = "glfwSetCursor")]
-        public static void SetCursor(Mut<Window> window, Mut<Cursor> cursor)
+        public static void SetCursor(Ref<Window> window, Ref<Cursor> cursor)
         {
             fixed (Cursor* __dsl_cursor = cursor)
             fixed (Window* __dsl_window = window)
@@ -1050,7 +1050,7 @@ public unsafe partial class Glfw : IGlfw, IGlfw.Static
         )]
         [NativeFunction("glfw", EntryPoint = "glfwSetCursorEnterCallback")]
         public static delegate* unmanaged<Window*, int, void> SetCursorEnterCallback(
-            Mut<Window> window,
+            Ref<Window> window,
             [NativeTypeName("GLFWcursorenterfun")] delegate* unmanaged<Window*, int, void> callback
         )
         {
@@ -1074,7 +1074,7 @@ public unsafe partial class Glfw : IGlfw, IGlfw.Static
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
         [NativeFunction("glfw", EntryPoint = "glfwSetCursorPos")]
-        public static void SetCursorPos(Mut<Window> window, double xpos, double ypos)
+        public static void SetCursorPos(Ref<Window> window, double xpos, double ypos)
         {
             fixed (Window* __dsl_window = window)
             {
@@ -1090,7 +1090,7 @@ public unsafe partial class Glfw : IGlfw, IGlfw.Static
         )]
         [NativeFunction("glfw", EntryPoint = "glfwSetCursorPosCallback")]
         public static delegate* unmanaged<Window*, double, double, void> SetCursorPosCallback(
-            Mut<Window> window,
+            Ref<Window> window,
             [NativeTypeName("GLFWcursorposfun")]
                 delegate* unmanaged<Window*, double, double, void> callback
         )
@@ -1118,7 +1118,7 @@ public unsafe partial class Glfw : IGlfw, IGlfw.Static
         )]
         [NativeFunction("glfw", EntryPoint = "glfwSetDropCallback")]
         public static delegate* unmanaged<Window*, int, sbyte**, void> SetDropCallback(
-            Mut<Window> window,
+            Ref<Window> window,
             [NativeTypeName("GLFWdropfun")]
                 delegate* unmanaged<Window*, int, sbyte**, void> callback
         )
@@ -1152,7 +1152,7 @@ public unsafe partial class Glfw : IGlfw, IGlfw.Static
         )]
         [NativeFunction("glfw", EntryPoint = "glfwSetFramebufferSizeCallback")]
         public static delegate* unmanaged<Window*, int, int, void> SetFramebufferSizeCallback(
-            Mut<Window> window,
+            Ref<Window> window,
             [NativeTypeName("GLFWframebuffersizefun")]
                 delegate* unmanaged<Window*, int, int, void> callback
         )
@@ -1182,7 +1182,7 @@ public unsafe partial class Glfw : IGlfw, IGlfw.Static
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
         [NativeFunction("glfw", EntryPoint = "glfwSetGamma")]
-        public static void SetGamma(Mut<Monitor> monitor, float gamma)
+        public static void SetGamma(Ref<Monitor> monitor, float gamma)
         {
             fixed (Monitor* __dsl_monitor = monitor)
             {
@@ -1197,8 +1197,8 @@ public unsafe partial class Glfw : IGlfw, IGlfw.Static
         )]
         [NativeFunction("glfw", EntryPoint = "glfwSetGammaRamp")]
         public static void SetGammaRamp(
-            Mut<Monitor> monitor,
-            [NativeTypeName("const GLFWgammaramp *")] Ptr<Gammaramp> ramp
+            Ref<Monitor> monitor,
+            [NativeTypeName("const GLFWgammaramp *")] Ref<Gammaramp> ramp
         )
         {
             fixed (Gammaramp* __dsl_ramp = ramp)
@@ -1217,7 +1217,7 @@ public unsafe partial class Glfw : IGlfw, IGlfw.Static
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
         [NativeFunction("glfw", EntryPoint = "glfwSetInputMode")]
-        public static void SetInputMode(Mut<Window> window, int mode, int value)
+        public static void SetInputMode(Ref<Window> window, int mode, int value)
         {
             fixed (Window* __dsl_window = window)
             {
@@ -1237,7 +1237,7 @@ public unsafe partial class Glfw : IGlfw, IGlfw.Static
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
         [NativeFunction("glfw", EntryPoint = "glfwSetJoystickUserPointer")]
-        public static void SetJoystickUserPointer(int jid, Mut pointer)
+        public static void SetJoystickUserPointer(int jid, Ref pointer)
         {
             fixed (void* __dsl_pointer = pointer)
             {
@@ -1253,7 +1253,7 @@ public unsafe partial class Glfw : IGlfw, IGlfw.Static
         )]
         [NativeFunction("glfw", EntryPoint = "glfwSetKeyCallback")]
         public static delegate* unmanaged<Window*, int, int, int, int, void> SetKeyCallback(
-            Mut<Window> window,
+            Ref<Window> window,
             [NativeTypeName("GLFWkeyfun")]
                 delegate* unmanaged<Window*, int, int, int, int, void> callback
         )
@@ -1287,7 +1287,7 @@ public unsafe partial class Glfw : IGlfw, IGlfw.Static
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
         [NativeFunction("glfw", EntryPoint = "glfwSetMonitorUserPointer")]
-        public static void SetMonitorUserPointer(Mut<Monitor> monitor, Mut pointer)
+        public static void SetMonitorUserPointer(Ref<Monitor> monitor, Ref pointer)
         {
             fixed (void* __dsl_pointer = pointer)
             fixed (Monitor* __dsl_monitor = monitor)
@@ -1304,7 +1304,7 @@ public unsafe partial class Glfw : IGlfw, IGlfw.Static
         )]
         [NativeFunction("glfw", EntryPoint = "glfwSetMouseButtonCallback")]
         public static delegate* unmanaged<Window*, int, int, int, void> SetMouseButtonCallback(
-            Mut<Window> window,
+            Ref<Window> window,
             [NativeTypeName("GLFWmousebuttonfun")]
                 delegate* unmanaged<Window*, int, int, int, void> callback
         )
@@ -1333,7 +1333,7 @@ public unsafe partial class Glfw : IGlfw, IGlfw.Static
         )]
         [NativeFunction("glfw", EntryPoint = "glfwSetScrollCallback")]
         public static delegate* unmanaged<Window*, double, double, void> SetScrollCallback(
-            Mut<Window> window,
+            Ref<Window> window,
             [NativeTypeName("GLFWscrollfun")]
                 delegate* unmanaged<Window*, double, double, void> callback
         )
@@ -1362,7 +1362,7 @@ public unsafe partial class Glfw : IGlfw, IGlfw.Static
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
         [NativeFunction("glfw", EntryPoint = "glfwSetWindowAspectRatio")]
-        public static void SetWindowAspectRatio(Mut<Window> window, int numer, int denom)
+        public static void SetWindowAspectRatio(Ref<Window> window, int numer, int denom)
         {
             fixed (Window* __dsl_window = window)
             {
@@ -1380,7 +1380,7 @@ public unsafe partial class Glfw : IGlfw, IGlfw.Static
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
         [NativeFunction("glfw", EntryPoint = "glfwSetWindowAttrib")]
-        public static void SetWindowAttrib(Mut<Window> window, int attrib, int value)
+        public static void SetWindowAttrib(Ref<Window> window, int attrib, int value)
         {
             fixed (Window* __dsl_window = window)
             {
@@ -1396,7 +1396,7 @@ public unsafe partial class Glfw : IGlfw, IGlfw.Static
         )]
         [NativeFunction("glfw", EntryPoint = "glfwSetWindowCloseCallback")]
         public static delegate* unmanaged<Window*, void> SetWindowCloseCallback(
-            Mut<Window> window,
+            Ref<Window> window,
             [NativeTypeName("GLFWwindowclosefun")] delegate* unmanaged<Window*, void> callback
         )
         {
@@ -1423,7 +1423,7 @@ public unsafe partial class Glfw : IGlfw, IGlfw.Static
             float,
             float,
             void> SetWindowContentScaleCallback(
-            Mut<Window> window,
+            Ref<Window> window,
             [NativeTypeName("GLFWwindowcontentscalefun")]
                 delegate* unmanaged<Window*, float, float, void> callback
         )
@@ -1455,7 +1455,7 @@ public unsafe partial class Glfw : IGlfw, IGlfw.Static
         )]
         [NativeFunction("glfw", EntryPoint = "glfwSetWindowFocusCallback")]
         public static delegate* unmanaged<Window*, int, void> SetWindowFocusCallback(
-            Mut<Window> window,
+            Ref<Window> window,
             [NativeTypeName("GLFWwindowfocusfun")] delegate* unmanaged<Window*, int, void> callback
         )
         {
@@ -1480,9 +1480,9 @@ public unsafe partial class Glfw : IGlfw, IGlfw.Static
         )]
         [NativeFunction("glfw", EntryPoint = "glfwSetWindowIcon")]
         public static void SetWindowIcon(
-            Mut<Window> window,
+            Ref<Window> window,
             int count,
-            [NativeTypeName("const GLFWimage *")] Ptr<Image> images
+            [NativeTypeName("const GLFWimage *")] Ref<Image> images
         )
         {
             fixed (Image* __dsl_images = images)
@@ -1504,7 +1504,7 @@ public unsafe partial class Glfw : IGlfw, IGlfw.Static
         )]
         [NativeFunction("glfw", EntryPoint = "glfwSetWindowIconifyCallback")]
         public static delegate* unmanaged<Window*, int, void> SetWindowIconifyCallback(
-            Mut<Window> window,
+            Ref<Window> window,
             [NativeTypeName("GLFWwindowiconifyfun")]
                 delegate* unmanaged<Window*, int, void> callback
         )
@@ -1535,7 +1535,7 @@ public unsafe partial class Glfw : IGlfw, IGlfw.Static
         )]
         [NativeFunction("glfw", EntryPoint = "glfwSetWindowMaximizeCallback")]
         public static delegate* unmanaged<Window*, int, void> SetWindowMaximizeCallback(
-            Mut<Window> window,
+            Ref<Window> window,
             [NativeTypeName("GLFWwindowmaximizefun")]
                 delegate* unmanaged<Window*, int, void> callback
         )
@@ -1565,8 +1565,8 @@ public unsafe partial class Glfw : IGlfw, IGlfw.Static
         )]
         [NativeFunction("glfw", EntryPoint = "glfwSetWindowMonitor")]
         public static void SetWindowMonitor(
-            Mut<Window> window,
-            Mut<Monitor> monitor,
+            Ref<Window> window,
+            Ref<Monitor> monitor,
             int xpos,
             int ypos,
             int width,
@@ -1603,7 +1603,7 @@ public unsafe partial class Glfw : IGlfw, IGlfw.Static
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
         [NativeFunction("glfw", EntryPoint = "glfwSetWindowOpacity")]
-        public static void SetWindowOpacity(Mut<Window> window, float opacity)
+        public static void SetWindowOpacity(Ref<Window> window, float opacity)
         {
             fixed (Window* __dsl_window = window)
             {
@@ -1617,7 +1617,7 @@ public unsafe partial class Glfw : IGlfw, IGlfw.Static
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
         [NativeFunction("glfw", EntryPoint = "glfwSetWindowPos")]
-        public static void SetWindowPos(Mut<Window> window, int xpos, int ypos)
+        public static void SetWindowPos(Ref<Window> window, int xpos, int ypos)
         {
             fixed (Window* __dsl_window = window)
             {
@@ -1633,7 +1633,7 @@ public unsafe partial class Glfw : IGlfw, IGlfw.Static
         )]
         [NativeFunction("glfw", EntryPoint = "glfwSetWindowPosCallback")]
         public static delegate* unmanaged<Window*, int, int, void> SetWindowPosCallback(
-            Mut<Window> window,
+            Ref<Window> window,
             [NativeTypeName("GLFWwindowposfun")]
                 delegate* unmanaged<Window*, int, int, void> callback
         )
@@ -1661,7 +1661,7 @@ public unsafe partial class Glfw : IGlfw, IGlfw.Static
         )]
         [NativeFunction("glfw", EntryPoint = "glfwSetWindowRefreshCallback")]
         public static delegate* unmanaged<Window*, void> SetWindowRefreshCallback(
-            Mut<Window> window,
+            Ref<Window> window,
             [NativeTypeName("GLFWwindowrefreshfun")] delegate* unmanaged<Window*, void> callback
         )
         {
@@ -1686,7 +1686,7 @@ public unsafe partial class Glfw : IGlfw, IGlfw.Static
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
         [NativeFunction("glfw", EntryPoint = "glfwSetWindowShouldClose")]
-        public static void SetWindowShouldClose(Mut<Window> window, int value)
+        public static void SetWindowShouldClose(Ref<Window> window, int value)
         {
             fixed (Window* __dsl_window = window)
             {
@@ -1700,7 +1700,7 @@ public unsafe partial class Glfw : IGlfw, IGlfw.Static
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
         [NativeFunction("glfw", EntryPoint = "glfwSetWindowSize")]
-        public static void SetWindowSize(Mut<Window> window, int width, int height)
+        public static void SetWindowSize(Ref<Window> window, int width, int height)
         {
             fixed (Window* __dsl_window = window)
             {
@@ -1716,7 +1716,7 @@ public unsafe partial class Glfw : IGlfw, IGlfw.Static
         )]
         [NativeFunction("glfw", EntryPoint = "glfwSetWindowSizeCallback")]
         public static delegate* unmanaged<Window*, int, int, void> SetWindowSizeCallback(
-            Mut<Window> window,
+            Ref<Window> window,
             [NativeTypeName("GLFWwindowsizefun")]
                 delegate* unmanaged<Window*, int, int, void> callback
         )
@@ -1743,7 +1743,7 @@ public unsafe partial class Glfw : IGlfw, IGlfw.Static
         )]
         [NativeFunction("glfw", EntryPoint = "glfwSetWindowSizeLimits")]
         public static void SetWindowSizeLimits(
-            Mut<Window> window,
+            Ref<Window> window,
             int minwidth,
             int minheight,
             int maxwidth,
@@ -1775,8 +1775,8 @@ public unsafe partial class Glfw : IGlfw, IGlfw.Static
         )]
         [NativeFunction("glfw", EntryPoint = "glfwSetWindowTitle")]
         public static void SetWindowTitle(
-            Mut<Window> window,
-            [NativeTypeName("const char *")] Ptr<sbyte> title
+            Ref<Window> window,
+            [NativeTypeName("const char *")] Ref<sbyte> title
         )
         {
             fixed (sbyte* __dsl_title = title)
@@ -1795,7 +1795,7 @@ public unsafe partial class Glfw : IGlfw, IGlfw.Static
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
         [NativeFunction("glfw", EntryPoint = "glfwSetWindowUserPointer")]
-        public static void SetWindowUserPointer(Mut<Window> window, Mut pointer)
+        public static void SetWindowUserPointer(Ref<Window> window, Ref pointer)
         {
             fixed (void* __dsl_pointer = pointer)
             fixed (Window* __dsl_window = window)
@@ -1810,7 +1810,7 @@ public unsafe partial class Glfw : IGlfw, IGlfw.Static
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
         [NativeFunction("glfw", EntryPoint = "glfwShowWindow")]
-        public static void ShowWindow(Mut<Window> window)
+        public static void ShowWindow(Ref<Window> window)
         {
             fixed (Window* __dsl_window = window)
             {
@@ -1824,7 +1824,7 @@ public unsafe partial class Glfw : IGlfw, IGlfw.Static
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
         [NativeFunction("glfw", EntryPoint = "glfwSwapBuffers")]
-        public static void SwapBuffers(Mut<Window> window)
+        public static void SwapBuffers(Ref<Window> window)
         {
             fixed (Window* __dsl_window = window)
             {
@@ -1844,7 +1844,7 @@ public unsafe partial class Glfw : IGlfw, IGlfw.Static
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
         [NativeFunction("glfw", EntryPoint = "glfwUpdateGamepadMappings")]
-        public static int UpdateGamepadMappings([NativeTypeName("const char *")] Ptr<sbyte> @string)
+        public static int UpdateGamepadMappings([NativeTypeName("const char *")] Ref<sbyte> @string)
         {
             fixed (sbyte* __dsl_string = @string)
             {
@@ -1874,7 +1874,7 @@ public unsafe partial class Glfw : IGlfw, IGlfw.Static
         [NativeFunction("glfw", EntryPoint = "glfwWindowHintString")]
         public static void WindowHintString(
             int hint,
-            [NativeTypeName("const char *")] Ptr<sbyte> value
+            [NativeTypeName("const char *")] Ref<sbyte> value
         )
         {
             fixed (sbyte* __dsl_value = value)
@@ -1892,7 +1892,7 @@ public unsafe partial class Glfw : IGlfw, IGlfw.Static
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
         [NativeFunction("glfw", EntryPoint = "glfwWindowShouldClose")]
-        public static int WindowShouldClose(Mut<Window> window)
+        public static int WindowShouldClose(Ref<Window> window)
         {
             fixed (Window* __dsl_window = window)
             {
@@ -2894,8 +2894,8 @@ public unsafe partial class Glfw : IGlfw, IGlfw.Static
     public const int DontCare = -1;
 
     [NativeFunction("glfw", EntryPoint = "glfwCreateCursor")]
-    Mut<Cursor> IGlfw.CreateCursor(
-        [NativeTypeName("const GLFWimage *")] Ptr<Image> image,
+    Ptr<Cursor> IGlfw.CreateCursor(
+        [NativeTypeName("const GLFWimage *")] Ref<Image> image,
         int xhot,
         int yhot
     )
@@ -2916,14 +2916,14 @@ public unsafe partial class Glfw : IGlfw, IGlfw.Static
     }
 
     [NativeFunction("glfw", EntryPoint = "glfwCreateCursor")]
-    public static Mut<Cursor> CreateCursor(
-        [NativeTypeName("const GLFWimage *")] Ptr<Image> image,
+    public static Ptr<Cursor> CreateCursor(
+        [NativeTypeName("const GLFWimage *")] Ref<Image> image,
         int xhot,
         int yhot
     ) => DllImport.CreateCursor(image, xhot, yhot);
 
     [NativeFunction("glfw", EntryPoint = "glfwCreateStandardCursor")]
-    Mut<Cursor> IGlfw.CreateStandardCursor(int shape)
+    Ptr<Cursor> IGlfw.CreateStandardCursor(int shape)
     {
         Cursor* __DSL_glfwCreateStandardCursor(int shape) =>
             (
@@ -2934,16 +2934,16 @@ public unsafe partial class Glfw : IGlfw, IGlfw.Static
     }
 
     [NativeFunction("glfw", EntryPoint = "glfwCreateStandardCursor")]
-    public static Mut<Cursor> CreateStandardCursor(int shape) =>
+    public static Ptr<Cursor> CreateStandardCursor(int shape) =>
         DllImport.CreateStandardCursor(shape);
 
     [NativeFunction("glfw", EntryPoint = "glfwCreateWindow")]
-    Mut<Window> IGlfw.CreateWindow(
+    Ptr<Window> IGlfw.CreateWindow(
         int width,
         int height,
-        [NativeTypeName("const char *")] Ptr<sbyte> title,
-        Mut<Monitor> monitor,
-        Mut<Window> share
+        [NativeTypeName("const char *")] Ref<sbyte> title,
+        Ref<Monitor> monitor,
+        Ref<Window> share
     )
     {
         fixed (Window* __dsl_share = share)
@@ -2966,12 +2966,12 @@ public unsafe partial class Glfw : IGlfw, IGlfw.Static
     }
 
     [NativeFunction("glfw", EntryPoint = "glfwCreateWindow")]
-    public static Mut<Window> CreateWindow(
+    public static Ptr<Window> CreateWindow(
         int width,
         int height,
-        [NativeTypeName("const char *")] Ptr<sbyte> title,
-        Mut<Monitor> monitor,
-        Mut<Window> share
+        [NativeTypeName("const char *")] Ref<sbyte> title,
+        Ref<Monitor> monitor,
+        Ref<Window> share
     ) => DllImport.CreateWindow(width, height, title, monitor, share);
 
     void IGlfw.DefaultWindowHints() =>
@@ -2981,7 +2981,7 @@ public unsafe partial class Glfw : IGlfw, IGlfw.Static
     public static void DefaultWindowHints() => DllImport.DefaultWindowHints();
 
     [NativeFunction("glfw", EntryPoint = "glfwDestroyCursor")]
-    void IGlfw.DestroyCursor(Mut<Cursor> cursor)
+    void IGlfw.DestroyCursor(Ref<Cursor> cursor)
     {
         fixed (Cursor* __dsl_cursor = cursor)
         {
@@ -2995,10 +2995,10 @@ public unsafe partial class Glfw : IGlfw, IGlfw.Static
     }
 
     [NativeFunction("glfw", EntryPoint = "glfwDestroyCursor")]
-    public static void DestroyCursor(Mut<Cursor> cursor) => DllImport.DestroyCursor(cursor);
+    public static void DestroyCursor(Ref<Cursor> cursor) => DllImport.DestroyCursor(cursor);
 
     [NativeFunction("glfw", EntryPoint = "glfwDestroyWindow")]
-    void IGlfw.DestroyWindow(Mut<Window> window)
+    void IGlfw.DestroyWindow(Ref<Window> window)
     {
         fixed (Window* __dsl_window = window)
         {
@@ -3012,10 +3012,10 @@ public unsafe partial class Glfw : IGlfw, IGlfw.Static
     }
 
     [NativeFunction("glfw", EntryPoint = "glfwDestroyWindow")]
-    public static void DestroyWindow(Mut<Window> window) => DllImport.DestroyWindow(window);
+    public static void DestroyWindow(Ref<Window> window) => DllImport.DestroyWindow(window);
 
     [NativeFunction("glfw", EntryPoint = "glfwExtensionSupported")]
-    int IGlfw.ExtensionSupported([NativeTypeName("const char *")] Ptr<sbyte> extension)
+    int IGlfw.ExtensionSupported([NativeTypeName("const char *")] Ref<sbyte> extension)
     {
         fixed (sbyte* __dsl_extension = extension)
         {
@@ -3029,11 +3029,11 @@ public unsafe partial class Glfw : IGlfw, IGlfw.Static
     }
 
     [NativeFunction("glfw", EntryPoint = "glfwExtensionSupported")]
-    public static int ExtensionSupported([NativeTypeName("const char *")] Ptr<sbyte> extension) =>
+    public static int ExtensionSupported([NativeTypeName("const char *")] Ref<sbyte> extension) =>
         DllImport.ExtensionSupported(extension);
 
     [NativeFunction("glfw", EntryPoint = "glfwFocusWindow")]
-    void IGlfw.FocusWindow(Mut<Window> window)
+    void IGlfw.FocusWindow(Ref<Window> window)
     {
         fixed (Window* __dsl_window = window)
         {
@@ -3047,11 +3047,11 @@ public unsafe partial class Glfw : IGlfw, IGlfw.Static
     }
 
     [NativeFunction("glfw", EntryPoint = "glfwFocusWindow")]
-    public static void FocusWindow(Mut<Window> window) => DllImport.FocusWindow(window);
+    public static void FocusWindow(Ref<Window> window) => DllImport.FocusWindow(window);
 
     [return: NativeTypeName("const char *")]
     [NativeFunction("glfw", EntryPoint = "glfwGetClipboardString")]
-    Ptr<sbyte> IGlfw.GetClipboardString(Mut<Window> window)
+    Ptr<sbyte> IGlfw.GetClipboardString(Ref<Window> window)
     {
         fixed (Window* __dsl_window = window)
         {
@@ -3066,11 +3066,11 @@ public unsafe partial class Glfw : IGlfw, IGlfw.Static
 
     [return: NativeTypeName("const char *")]
     [NativeFunction("glfw", EntryPoint = "glfwGetClipboardString")]
-    public static Ptr<sbyte> GetClipboardString(Mut<Window> window) =>
+    public static Ptr<sbyte> GetClipboardString(Ref<Window> window) =>
         DllImport.GetClipboardString(window);
 
     [NativeFunction("glfw", EntryPoint = "glfwGetCurrentContext")]
-    Mut<Window> IGlfw.GetCurrentContext()
+    Ptr<Window> IGlfw.GetCurrentContext()
     {
         Window* __DSL_glfwGetCurrentContext() =>
             (
@@ -3081,10 +3081,10 @@ public unsafe partial class Glfw : IGlfw, IGlfw.Static
     }
 
     [NativeFunction("glfw", EntryPoint = "glfwGetCurrentContext")]
-    public static Mut<Window> GetCurrentContext() => DllImport.GetCurrentContext();
+    public static Ptr<Window> GetCurrentContext() => DllImport.GetCurrentContext();
 
     [NativeFunction("glfw", EntryPoint = "glfwGetCursorPos")]
-    void IGlfw.GetCursorPos(Mut<Window> window, Mut<double> xpos, Mut<double> ypos)
+    void IGlfw.GetCursorPos(Ref<Window> window, Ref<double> xpos, Ref<double> ypos)
     {
         fixed (double* __dsl_ypos = ypos)
         fixed (double* __dsl_xpos = xpos)
@@ -3100,11 +3100,11 @@ public unsafe partial class Glfw : IGlfw, IGlfw.Static
     }
 
     [NativeFunction("glfw", EntryPoint = "glfwGetCursorPos")]
-    public static void GetCursorPos(Mut<Window> window, Mut<double> xpos, Mut<double> ypos) =>
+    public static void GetCursorPos(Ref<Window> window, Ref<double> xpos, Ref<double> ypos) =>
         DllImport.GetCursorPos(window, xpos, ypos);
 
     [NativeFunction("glfw", EntryPoint = "glfwGetError")]
-    int IGlfw.GetError([NativeTypeName("const char **")] PtrPtr<sbyte> description)
+    int IGlfw.GetError([NativeTypeName("const char **")] Ref2D<sbyte> description)
     {
         fixed (sbyte** __dsl_description = description)
         {
@@ -3118,11 +3118,11 @@ public unsafe partial class Glfw : IGlfw, IGlfw.Static
     }
 
     [NativeFunction("glfw", EntryPoint = "glfwGetError")]
-    public static int GetError([NativeTypeName("const char **")] PtrPtr<sbyte> description) =>
+    public static int GetError([NativeTypeName("const char **")] Ref2D<sbyte> description) =>
         DllImport.GetError(description);
 
     [NativeFunction("glfw", EntryPoint = "glfwGetFramebufferSize")]
-    void IGlfw.GetFramebufferSize(Mut<Window> window, Mut<int> width, Mut<int> height)
+    void IGlfw.GetFramebufferSize(Ref<Window> window, Ref<int> width, Ref<int> height)
     {
         fixed (int* __dsl_height = height)
         fixed (int* __dsl_width = width)
@@ -3138,7 +3138,7 @@ public unsafe partial class Glfw : IGlfw, IGlfw.Static
     }
 
     [NativeFunction("glfw", EntryPoint = "glfwGetFramebufferSize")]
-    public static void GetFramebufferSize(Mut<Window> window, Mut<int> width, Mut<int> height) =>
+    public static void GetFramebufferSize(Ref<Window> window, Ref<int> width, Ref<int> height) =>
         DllImport.GetFramebufferSize(window, width, height);
 
     [return: NativeTypeName("const char *")]
@@ -3158,7 +3158,7 @@ public unsafe partial class Glfw : IGlfw, IGlfw.Static
     public static Ptr<sbyte> GetGamepadName(int jid) => DllImport.GetGamepadName(jid);
 
     [NativeFunction("glfw", EntryPoint = "glfwGetGamepadState")]
-    int IGlfw.GetGamepadState(int jid, Mut<Gamepadstate> state)
+    int IGlfw.GetGamepadState(int jid, Ref<Gamepadstate> state)
     {
         fixed (Gamepadstate* __dsl_state = state)
         {
@@ -3172,12 +3172,12 @@ public unsafe partial class Glfw : IGlfw, IGlfw.Static
     }
 
     [NativeFunction("glfw", EntryPoint = "glfwGetGamepadState")]
-    public static int GetGamepadState(int jid, Mut<Gamepadstate> state) =>
+    public static int GetGamepadState(int jid, Ref<Gamepadstate> state) =>
         DllImport.GetGamepadState(jid, state);
 
     [return: NativeTypeName("const GLFWgammaramp *")]
     [NativeFunction("glfw", EntryPoint = "glfwGetGammaRamp")]
-    Ptr<Gammaramp> IGlfw.GetGammaRamp(Mut<Monitor> monitor)
+    Ptr<Gammaramp> IGlfw.GetGammaRamp(Ref<Monitor> monitor)
     {
         fixed (Monitor* __dsl_monitor = monitor)
         {
@@ -3192,11 +3192,11 @@ public unsafe partial class Glfw : IGlfw, IGlfw.Static
 
     [return: NativeTypeName("const GLFWgammaramp *")]
     [NativeFunction("glfw", EntryPoint = "glfwGetGammaRamp")]
-    public static Ptr<Gammaramp> GetGammaRamp(Mut<Monitor> monitor) =>
+    public static Ptr<Gammaramp> GetGammaRamp(Ref<Monitor> monitor) =>
         DllImport.GetGammaRamp(monitor);
 
     [NativeFunction("glfw", EntryPoint = "glfwGetInputMode")]
-    int IGlfw.GetInputMode(Mut<Window> window, int mode)
+    int IGlfw.GetInputMode(Ref<Window> window, int mode)
     {
         fixed (Window* __dsl_window = window)
         {
@@ -3210,12 +3210,12 @@ public unsafe partial class Glfw : IGlfw, IGlfw.Static
     }
 
     [NativeFunction("glfw", EntryPoint = "glfwGetInputMode")]
-    public static int GetInputMode(Mut<Window> window, int mode) =>
+    public static int GetInputMode(Ref<Window> window, int mode) =>
         DllImport.GetInputMode(window, mode);
 
     [return: NativeTypeName("const float *")]
     [NativeFunction("glfw", EntryPoint = "glfwGetJoystickAxes")]
-    Ptr<float> IGlfw.GetJoystickAxes(int jid, Mut<int> count)
+    Ptr<float> IGlfw.GetJoystickAxes(int jid, Ref<int> count)
     {
         fixed (int* __dsl_count = count)
         {
@@ -3230,12 +3230,12 @@ public unsafe partial class Glfw : IGlfw, IGlfw.Static
 
     [return: NativeTypeName("const float *")]
     [NativeFunction("glfw", EntryPoint = "glfwGetJoystickAxes")]
-    public static Ptr<float> GetJoystickAxes(int jid, Mut<int> count) =>
+    public static Ptr<float> GetJoystickAxes(int jid, Ref<int> count) =>
         DllImport.GetJoystickAxes(jid, count);
 
     [return: NativeTypeName("const unsigned char *")]
     [NativeFunction("glfw", EntryPoint = "glfwGetJoystickButtons")]
-    Ptr<byte> IGlfw.GetJoystickButtons(int jid, Mut<int> count)
+    Ptr<byte> IGlfw.GetJoystickButtons(int jid, Ref<int> count)
     {
         fixed (int* __dsl_count = count)
         {
@@ -3250,7 +3250,7 @@ public unsafe partial class Glfw : IGlfw, IGlfw.Static
 
     [return: NativeTypeName("const unsigned char *")]
     [NativeFunction("glfw", EntryPoint = "glfwGetJoystickButtons")]
-    public static Ptr<byte> GetJoystickButtons(int jid, Mut<int> count) =>
+    public static Ptr<byte> GetJoystickButtons(int jid, Ref<int> count) =>
         DllImport.GetJoystickButtons(jid, count);
 
     [return: NativeTypeName("const char *")]
@@ -3271,7 +3271,7 @@ public unsafe partial class Glfw : IGlfw, IGlfw.Static
 
     [return: NativeTypeName("const unsigned char *")]
     [NativeFunction("glfw", EntryPoint = "glfwGetJoystickHats")]
-    Ptr<byte> IGlfw.GetJoystickHats(int jid, Mut<int> count)
+    Ptr<byte> IGlfw.GetJoystickHats(int jid, Ref<int> count)
     {
         fixed (int* __dsl_count = count)
         {
@@ -3286,7 +3286,7 @@ public unsafe partial class Glfw : IGlfw, IGlfw.Static
 
     [return: NativeTypeName("const unsigned char *")]
     [NativeFunction("glfw", EntryPoint = "glfwGetJoystickHats")]
-    public static Ptr<byte> GetJoystickHats(int jid, Mut<int> count) =>
+    public static Ptr<byte> GetJoystickHats(int jid, Ref<int> count) =>
         DllImport.GetJoystickHats(jid, count);
 
     [return: NativeTypeName("const char *")]
@@ -3306,7 +3306,7 @@ public unsafe partial class Glfw : IGlfw, IGlfw.Static
     public static Ptr<sbyte> GetJoystickName(int jid) => DllImport.GetJoystickName(jid);
 
     [NativeFunction("glfw", EntryPoint = "glfwGetJoystickUserPointer")]
-    Mut IGlfw.GetJoystickUserPointer(int jid)
+    Ptr IGlfw.GetJoystickUserPointer(int jid)
     {
         void* __DSL_glfwGetJoystickUserPointer(int jid) =>
             (
@@ -3317,10 +3317,10 @@ public unsafe partial class Glfw : IGlfw, IGlfw.Static
     }
 
     [NativeFunction("glfw", EntryPoint = "glfwGetJoystickUserPointer")]
-    public static Mut GetJoystickUserPointer(int jid) => DllImport.GetJoystickUserPointer(jid);
+    public static Ptr GetJoystickUserPointer(int jid) => DllImport.GetJoystickUserPointer(jid);
 
     [NativeFunction("glfw", EntryPoint = "glfwGetKey")]
-    int IGlfw.GetKey(Mut<Window> window, int key)
+    int IGlfw.GetKey(Ref<Window> window, int key)
     {
         fixed (Window* __dsl_window = window)
         {
@@ -3334,7 +3334,7 @@ public unsafe partial class Glfw : IGlfw, IGlfw.Static
     }
 
     [NativeFunction("glfw", EntryPoint = "glfwGetKey")]
-    public static int GetKey(Mut<Window> window, int key) => DllImport.GetKey(window, key);
+    public static int GetKey(Ref<Window> window, int key) => DllImport.GetKey(window, key);
 
     [return: NativeTypeName("const char *")]
     [NativeFunction("glfw", EntryPoint = "glfwGetKeyName")]
@@ -3362,7 +3362,7 @@ public unsafe partial class Glfw : IGlfw, IGlfw.Static
     public static int GetKeyScancode(int key) => DllImport.GetKeyScancode(key);
 
     [NativeFunction("glfw", EntryPoint = "glfwGetMonitorContentScale")]
-    void IGlfw.GetMonitorContentScale(Mut<Monitor> monitor, Mut<float> xscale, Mut<float> yscale)
+    void IGlfw.GetMonitorContentScale(Ref<Monitor> monitor, Ref<float> xscale, Ref<float> yscale)
     {
         fixed (float* __dsl_yscale = yscale)
         fixed (float* __dsl_xscale = xscale)
@@ -3379,14 +3379,14 @@ public unsafe partial class Glfw : IGlfw, IGlfw.Static
 
     [NativeFunction("glfw", EntryPoint = "glfwGetMonitorContentScale")]
     public static void GetMonitorContentScale(
-        Mut<Monitor> monitor,
-        Mut<float> xscale,
-        Mut<float> yscale
+        Ref<Monitor> monitor,
+        Ref<float> xscale,
+        Ref<float> yscale
     ) => DllImport.GetMonitorContentScale(monitor, xscale, yscale);
 
     [return: NativeTypeName("const char *")]
     [NativeFunction("glfw", EntryPoint = "glfwGetMonitorName")]
-    Ptr<sbyte> IGlfw.GetMonitorName(Mut<Monitor> monitor)
+    Ptr<sbyte> IGlfw.GetMonitorName(Ref<Monitor> monitor)
     {
         fixed (Monitor* __dsl_monitor = monitor)
         {
@@ -3401,11 +3401,11 @@ public unsafe partial class Glfw : IGlfw, IGlfw.Static
 
     [return: NativeTypeName("const char *")]
     [NativeFunction("glfw", EntryPoint = "glfwGetMonitorName")]
-    public static Ptr<sbyte> GetMonitorName(Mut<Monitor> monitor) =>
+    public static Ptr<sbyte> GetMonitorName(Ref<Monitor> monitor) =>
         DllImport.GetMonitorName(monitor);
 
     [NativeFunction("glfw", EntryPoint = "glfwGetMonitorPhysicalSize")]
-    void IGlfw.GetMonitorPhysicalSize(Mut<Monitor> monitor, Mut<int> widthMM, Mut<int> heightMM)
+    void IGlfw.GetMonitorPhysicalSize(Ref<Monitor> monitor, Ref<int> widthMM, Ref<int> heightMM)
     {
         fixed (int* __dsl_heightMM = heightMM)
         fixed (int* __dsl_widthMM = widthMM)
@@ -3422,13 +3422,13 @@ public unsafe partial class Glfw : IGlfw, IGlfw.Static
 
     [NativeFunction("glfw", EntryPoint = "glfwGetMonitorPhysicalSize")]
     public static void GetMonitorPhysicalSize(
-        Mut<Monitor> monitor,
-        Mut<int> widthMM,
-        Mut<int> heightMM
+        Ref<Monitor> monitor,
+        Ref<int> widthMM,
+        Ref<int> heightMM
     ) => DllImport.GetMonitorPhysicalSize(monitor, widthMM, heightMM);
 
     [NativeFunction("glfw", EntryPoint = "glfwGetMonitorPos")]
-    void IGlfw.GetMonitorPos(Mut<Monitor> monitor, Mut<int> xpos, Mut<int> ypos)
+    void IGlfw.GetMonitorPos(Ref<Monitor> monitor, Ref<int> xpos, Ref<int> ypos)
     {
         fixed (int* __dsl_ypos = ypos)
         fixed (int* __dsl_xpos = xpos)
@@ -3444,11 +3444,11 @@ public unsafe partial class Glfw : IGlfw, IGlfw.Static
     }
 
     [NativeFunction("glfw", EntryPoint = "glfwGetMonitorPos")]
-    public static void GetMonitorPos(Mut<Monitor> monitor, Mut<int> xpos, Mut<int> ypos) =>
+    public static void GetMonitorPos(Ref<Monitor> monitor, Ref<int> xpos, Ref<int> ypos) =>
         DllImport.GetMonitorPos(monitor, xpos, ypos);
 
     [NativeFunction("glfw", EntryPoint = "glfwGetMonitors")]
-    MutMut<Monitor> IGlfw.GetMonitors(Mut<int> count)
+    Ptr2D<Monitor> IGlfw.GetMonitors(Ref<int> count)
     {
         fixed (int* __dsl_count = count)
         {
@@ -3462,10 +3462,10 @@ public unsafe partial class Glfw : IGlfw, IGlfw.Static
     }
 
     [NativeFunction("glfw", EntryPoint = "glfwGetMonitors")]
-    public static MutMut<Monitor> GetMonitors(Mut<int> count) => DllImport.GetMonitors(count);
+    public static Ptr2D<Monitor> GetMonitors(Ref<int> count) => DllImport.GetMonitors(count);
 
     [NativeFunction("glfw", EntryPoint = "glfwGetMonitorUserPointer")]
-    Mut IGlfw.GetMonitorUserPointer(Mut<Monitor> monitor)
+    Ptr IGlfw.GetMonitorUserPointer(Ref<Monitor> monitor)
     {
         fixed (Monitor* __dsl_monitor = monitor)
         {
@@ -3479,16 +3479,16 @@ public unsafe partial class Glfw : IGlfw, IGlfw.Static
     }
 
     [NativeFunction("glfw", EntryPoint = "glfwGetMonitorUserPointer")]
-    public static Mut GetMonitorUserPointer(Mut<Monitor> monitor) =>
+    public static Ptr GetMonitorUserPointer(Ref<Monitor> monitor) =>
         DllImport.GetMonitorUserPointer(monitor);
 
     [NativeFunction("glfw", EntryPoint = "glfwGetMonitorWorkarea")]
     void IGlfw.GetMonitorWorkarea(
-        Mut<Monitor> monitor,
-        Mut<int> xpos,
-        Mut<int> ypos,
-        Mut<int> width,
-        Mut<int> height
+        Ref<Monitor> monitor,
+        Ref<int> xpos,
+        Ref<int> ypos,
+        Ref<int> width,
+        Ref<int> height
     )
     {
         fixed (int* __dsl_height = height)
@@ -3520,15 +3520,15 @@ public unsafe partial class Glfw : IGlfw, IGlfw.Static
 
     [NativeFunction("glfw", EntryPoint = "glfwGetMonitorWorkarea")]
     public static void GetMonitorWorkarea(
-        Mut<Monitor> monitor,
-        Mut<int> xpos,
-        Mut<int> ypos,
-        Mut<int> width,
-        Mut<int> height
+        Ref<Monitor> monitor,
+        Ref<int> xpos,
+        Ref<int> ypos,
+        Ref<int> width,
+        Ref<int> height
     ) => DllImport.GetMonitorWorkarea(monitor, xpos, ypos, width, height);
 
     [NativeFunction("glfw", EntryPoint = "glfwGetMouseButton")]
-    int IGlfw.GetMouseButton(Mut<Window> window, int button)
+    int IGlfw.GetMouseButton(Ref<Window> window, int button)
     {
         fixed (Window* __dsl_window = window)
         {
@@ -3542,7 +3542,7 @@ public unsafe partial class Glfw : IGlfw, IGlfw.Static
     }
 
     [NativeFunction("glfw", EntryPoint = "glfwGetMouseButton")]
-    public static int GetMouseButton(Mut<Window> window, int button) =>
+    public static int GetMouseButton(Ref<Window> window, int button) =>
         DllImport.GetMouseButton(window, button);
 
     int IGlfw.GetPlatform() =>
@@ -3552,7 +3552,7 @@ public unsafe partial class Glfw : IGlfw, IGlfw.Static
     public static int GetPlatform() => DllImport.GetPlatform();
 
     [NativeFunction("glfw", EntryPoint = "glfwGetPrimaryMonitor")]
-    Mut<Monitor> IGlfw.GetPrimaryMonitor()
+    Ptr<Monitor> IGlfw.GetPrimaryMonitor()
     {
         Monitor* __DSL_glfwGetPrimaryMonitor() =>
             (
@@ -3563,12 +3563,12 @@ public unsafe partial class Glfw : IGlfw, IGlfw.Static
     }
 
     [NativeFunction("glfw", EntryPoint = "glfwGetPrimaryMonitor")]
-    public static Mut<Monitor> GetPrimaryMonitor() => DllImport.GetPrimaryMonitor();
+    public static Ptr<Monitor> GetPrimaryMonitor() => DllImport.GetPrimaryMonitor();
 
     [return: NativeTypeName("GLFWglproc")]
     [NativeFunction("glfw", EntryPoint = "glfwGetProcAddress")]
     delegate* unmanaged<void> IGlfw.GetProcAddress(
-        [NativeTypeName("const char *")] Ptr<sbyte> procname
+        [NativeTypeName("const char *")] Ref<sbyte> procname
     )
     {
         fixed (sbyte* __dsl_procname = procname)
@@ -3587,14 +3587,12 @@ public unsafe partial class Glfw : IGlfw, IGlfw.Static
     [return: NativeTypeName("GLFWglproc")]
     [NativeFunction("glfw", EntryPoint = "glfwGetProcAddress")]
     public static delegate* unmanaged<void> GetProcAddress(
-        [NativeTypeName("const char *")] Ptr<sbyte> procname
+        [NativeTypeName("const char *")] Ref<sbyte> procname
     ) => DllImport.GetProcAddress(procname);
 
     [return: NativeTypeName("const char **")]
     [NativeFunction("glfw", EntryPoint = "glfwGetRequiredInstanceExtensions")]
-    PtrPtr<sbyte> IGlfw.GetRequiredInstanceExtensions(
-        [NativeTypeName("uint32_t *")] Mut<uint> count
-    )
+    Ptr2D<sbyte> IGlfw.GetRequiredInstanceExtensions([NativeTypeName("uint32_t *")] Ref<uint> count)
     {
         fixed (uint* __dsl_count = count)
         {
@@ -3611,8 +3609,8 @@ public unsafe partial class Glfw : IGlfw, IGlfw.Static
 
     [return: NativeTypeName("const char **")]
     [NativeFunction("glfw", EntryPoint = "glfwGetRequiredInstanceExtensions")]
-    public static PtrPtr<sbyte> GetRequiredInstanceExtensions(
-        [NativeTypeName("uint32_t *")] Mut<uint> count
+    public static Ptr2D<sbyte> GetRequiredInstanceExtensions(
+        [NativeTypeName("uint32_t *")] Ref<uint> count
     ) => DllImport.GetRequiredInstanceExtensions(count);
 
     double IGlfw.GetTime() =>
@@ -3636,7 +3634,7 @@ public unsafe partial class Glfw : IGlfw, IGlfw.Static
     public static ulong GetTimerValue() => DllImport.GetTimerValue();
 
     [NativeFunction("glfw", EntryPoint = "glfwGetVersion")]
-    void IGlfw.GetVersion(Mut<int> major, Mut<int> minor, Mut<int> rev)
+    void IGlfw.GetVersion(Ref<int> major, Ref<int> minor, Ref<int> rev)
     {
         fixed (int* __dsl_rev = rev)
         fixed (int* __dsl_minor = minor)
@@ -3652,7 +3650,7 @@ public unsafe partial class Glfw : IGlfw, IGlfw.Static
     }
 
     [NativeFunction("glfw", EntryPoint = "glfwGetVersion")]
-    public static void GetVersion(Mut<int> major, Mut<int> minor, Mut<int> rev) =>
+    public static void GetVersion(Ref<int> major, Ref<int> minor, Ref<int> rev) =>
         DllImport.GetVersion(major, minor, rev);
 
     [return: NativeTypeName("const char *")]
@@ -3673,7 +3671,7 @@ public unsafe partial class Glfw : IGlfw, IGlfw.Static
 
     [return: NativeTypeName("const GLFWvidmode *")]
     [NativeFunction("glfw", EntryPoint = "glfwGetVideoMode")]
-    Ptr<Vidmode> IGlfw.GetVideoMode(Mut<Monitor> monitor)
+    Ptr<Vidmode> IGlfw.GetVideoMode(Ref<Monitor> monitor)
     {
         fixed (Monitor* __dsl_monitor = monitor)
         {
@@ -3688,12 +3686,12 @@ public unsafe partial class Glfw : IGlfw, IGlfw.Static
 
     [return: NativeTypeName("const GLFWvidmode *")]
     [NativeFunction("glfw", EntryPoint = "glfwGetVideoMode")]
-    public static Ptr<Vidmode> GetVideoMode(Mut<Monitor> monitor) =>
+    public static Ptr<Vidmode> GetVideoMode(Ref<Monitor> monitor) =>
         DllImport.GetVideoMode(monitor);
 
     [return: NativeTypeName("const GLFWvidmode *")]
     [NativeFunction("glfw", EntryPoint = "glfwGetVideoModes")]
-    Ptr<Vidmode> IGlfw.GetVideoModes(Mut<Monitor> monitor, Mut<int> count)
+    Ptr<Vidmode> IGlfw.GetVideoModes(Ref<Monitor> monitor, Ref<int> count)
     {
         fixed (int* __dsl_count = count)
         fixed (Monitor* __dsl_monitor = monitor)
@@ -3709,11 +3707,11 @@ public unsafe partial class Glfw : IGlfw, IGlfw.Static
 
     [return: NativeTypeName("const GLFWvidmode *")]
     [NativeFunction("glfw", EntryPoint = "glfwGetVideoModes")]
-    public static Ptr<Vidmode> GetVideoModes(Mut<Monitor> monitor, Mut<int> count) =>
+    public static Ptr<Vidmode> GetVideoModes(Ref<Monitor> monitor, Ref<int> count) =>
         DllImport.GetVideoModes(monitor, count);
 
     [NativeFunction("glfw", EntryPoint = "glfwGetWindowAttrib")]
-    int IGlfw.GetWindowAttrib(Mut<Window> window, int attrib)
+    int IGlfw.GetWindowAttrib(Ref<Window> window, int attrib)
     {
         fixed (Window* __dsl_window = window)
         {
@@ -3727,11 +3725,11 @@ public unsafe partial class Glfw : IGlfw, IGlfw.Static
     }
 
     [NativeFunction("glfw", EntryPoint = "glfwGetWindowAttrib")]
-    public static int GetWindowAttrib(Mut<Window> window, int attrib) =>
+    public static int GetWindowAttrib(Ref<Window> window, int attrib) =>
         DllImport.GetWindowAttrib(window, attrib);
 
     [NativeFunction("glfw", EntryPoint = "glfwGetWindowContentScale")]
-    void IGlfw.GetWindowContentScale(Mut<Window> window, Mut<float> xscale, Mut<float> yscale)
+    void IGlfw.GetWindowContentScale(Ref<Window> window, Ref<float> xscale, Ref<float> yscale)
     {
         fixed (float* __dsl_yscale = yscale)
         fixed (float* __dsl_xscale = xscale)
@@ -3748,18 +3746,18 @@ public unsafe partial class Glfw : IGlfw, IGlfw.Static
 
     [NativeFunction("glfw", EntryPoint = "glfwGetWindowContentScale")]
     public static void GetWindowContentScale(
-        Mut<Window> window,
-        Mut<float> xscale,
-        Mut<float> yscale
+        Ref<Window> window,
+        Ref<float> xscale,
+        Ref<float> yscale
     ) => DllImport.GetWindowContentScale(window, xscale, yscale);
 
     [NativeFunction("glfw", EntryPoint = "glfwGetWindowFrameSize")]
     void IGlfw.GetWindowFrameSize(
-        Mut<Window> window,
-        Mut<int> left,
-        Mut<int> top,
-        Mut<int> right,
-        Mut<int> bottom
+        Ref<Window> window,
+        Ref<int> left,
+        Ref<int> top,
+        Ref<int> right,
+        Ref<int> bottom
     )
     {
         fixed (int* __dsl_bottom = bottom)
@@ -3791,15 +3789,15 @@ public unsafe partial class Glfw : IGlfw, IGlfw.Static
 
     [NativeFunction("glfw", EntryPoint = "glfwGetWindowFrameSize")]
     public static void GetWindowFrameSize(
-        Mut<Window> window,
-        Mut<int> left,
-        Mut<int> top,
-        Mut<int> right,
-        Mut<int> bottom
+        Ref<Window> window,
+        Ref<int> left,
+        Ref<int> top,
+        Ref<int> right,
+        Ref<int> bottom
     ) => DllImport.GetWindowFrameSize(window, left, top, right, bottom);
 
     [NativeFunction("glfw", EntryPoint = "glfwGetWindowMonitor")]
-    Mut<Monitor> IGlfw.GetWindowMonitor(Mut<Window> window)
+    Ptr<Monitor> IGlfw.GetWindowMonitor(Ref<Window> window)
     {
         fixed (Window* __dsl_window = window)
         {
@@ -3813,11 +3811,11 @@ public unsafe partial class Glfw : IGlfw, IGlfw.Static
     }
 
     [NativeFunction("glfw", EntryPoint = "glfwGetWindowMonitor")]
-    public static Mut<Monitor> GetWindowMonitor(Mut<Window> window) =>
+    public static Ptr<Monitor> GetWindowMonitor(Ref<Window> window) =>
         DllImport.GetWindowMonitor(window);
 
     [NativeFunction("glfw", EntryPoint = "glfwGetWindowOpacity")]
-    float IGlfw.GetWindowOpacity(Mut<Window> window)
+    float IGlfw.GetWindowOpacity(Ref<Window> window)
     {
         fixed (Window* __dsl_window = window)
         {
@@ -3831,10 +3829,10 @@ public unsafe partial class Glfw : IGlfw, IGlfw.Static
     }
 
     [NativeFunction("glfw", EntryPoint = "glfwGetWindowOpacity")]
-    public static float GetWindowOpacity(Mut<Window> window) => DllImport.GetWindowOpacity(window);
+    public static float GetWindowOpacity(Ref<Window> window) => DllImport.GetWindowOpacity(window);
 
     [NativeFunction("glfw", EntryPoint = "glfwGetWindowPos")]
-    void IGlfw.GetWindowPos(Mut<Window> window, Mut<int> xpos, Mut<int> ypos)
+    void IGlfw.GetWindowPos(Ref<Window> window, Ref<int> xpos, Ref<int> ypos)
     {
         fixed (int* __dsl_ypos = ypos)
         fixed (int* __dsl_xpos = xpos)
@@ -3850,11 +3848,11 @@ public unsafe partial class Glfw : IGlfw, IGlfw.Static
     }
 
     [NativeFunction("glfw", EntryPoint = "glfwGetWindowPos")]
-    public static void GetWindowPos(Mut<Window> window, Mut<int> xpos, Mut<int> ypos) =>
+    public static void GetWindowPos(Ref<Window> window, Ref<int> xpos, Ref<int> ypos) =>
         DllImport.GetWindowPos(window, xpos, ypos);
 
     [NativeFunction("glfw", EntryPoint = "glfwGetWindowSize")]
-    void IGlfw.GetWindowSize(Mut<Window> window, Mut<int> width, Mut<int> height)
+    void IGlfw.GetWindowSize(Ref<Window> window, Ref<int> width, Ref<int> height)
     {
         fixed (int* __dsl_height = height)
         fixed (int* __dsl_width = width)
@@ -3870,11 +3868,11 @@ public unsafe partial class Glfw : IGlfw, IGlfw.Static
     }
 
     [NativeFunction("glfw", EntryPoint = "glfwGetWindowSize")]
-    public static void GetWindowSize(Mut<Window> window, Mut<int> width, Mut<int> height) =>
+    public static void GetWindowSize(Ref<Window> window, Ref<int> width, Ref<int> height) =>
         DllImport.GetWindowSize(window, width, height);
 
     [NativeFunction("glfw", EntryPoint = "glfwGetWindowUserPointer")]
-    Mut IGlfw.GetWindowUserPointer(Mut<Window> window)
+    Ptr IGlfw.GetWindowUserPointer(Ref<Window> window)
     {
         fixed (Window* __dsl_window = window)
         {
@@ -3888,11 +3886,11 @@ public unsafe partial class Glfw : IGlfw, IGlfw.Static
     }
 
     [NativeFunction("glfw", EntryPoint = "glfwGetWindowUserPointer")]
-    public static Mut GetWindowUserPointer(Mut<Window> window) =>
+    public static Ptr GetWindowUserPointer(Ref<Window> window) =>
         DllImport.GetWindowUserPointer(window);
 
     [NativeFunction("glfw", EntryPoint = "glfwHideWindow")]
-    void IGlfw.HideWindow(Mut<Window> window)
+    void IGlfw.HideWindow(Ref<Window> window)
     {
         fixed (Window* __dsl_window = window)
         {
@@ -3906,10 +3904,10 @@ public unsafe partial class Glfw : IGlfw, IGlfw.Static
     }
 
     [NativeFunction("glfw", EntryPoint = "glfwHideWindow")]
-    public static void HideWindow(Mut<Window> window) => DllImport.HideWindow(window);
+    public static void HideWindow(Ref<Window> window) => DllImport.HideWindow(window);
 
     [NativeFunction("glfw", EntryPoint = "glfwIconifyWindow")]
-    void IGlfw.IconifyWindow(Mut<Window> window)
+    void IGlfw.IconifyWindow(Ref<Window> window)
     {
         fixed (Window* __dsl_window = window)
         {
@@ -3923,7 +3921,7 @@ public unsafe partial class Glfw : IGlfw, IGlfw.Static
     }
 
     [NativeFunction("glfw", EntryPoint = "glfwIconifyWindow")]
-    public static void IconifyWindow(Mut<Window> window) => DllImport.IconifyWindow(window);
+    public static void IconifyWindow(Ref<Window> window) => DllImport.IconifyWindow(window);
 
     int IGlfw.Init() =>
         ((delegate* unmanaged<int>)nativeContext.LoadFunction("glfwInit", "glfw"))();
@@ -3932,7 +3930,7 @@ public unsafe partial class Glfw : IGlfw, IGlfw.Static
     public static int Init() => DllImport.Init();
 
     [NativeFunction("glfw", EntryPoint = "glfwInitAllocator")]
-    void IGlfw.InitAllocator([NativeTypeName("const GLFWallocator *")] Ptr<Allocator> allocator)
+    void IGlfw.InitAllocator([NativeTypeName("const GLFWallocator *")] Ref<Allocator> allocator)
     {
         fixed (Allocator* __dsl_allocator = allocator)
         {
@@ -3949,7 +3947,7 @@ public unsafe partial class Glfw : IGlfw, IGlfw.Static
 
     [NativeFunction("glfw", EntryPoint = "glfwInitAllocator")]
     public static void InitAllocator(
-        [NativeTypeName("const GLFWallocator *")] Ptr<Allocator> allocator
+        [NativeTypeName("const GLFWallocator *")] Ref<Allocator> allocator
     ) => DllImport.InitAllocator(allocator);
 
     void IGlfw.InitHint(int hint, int value) =>
@@ -3979,7 +3977,7 @@ public unsafe partial class Glfw : IGlfw, IGlfw.Static
     public static int JoystickPresent(int jid) => DllImport.JoystickPresent(jid);
 
     [NativeFunction("glfw", EntryPoint = "glfwMakeContextCurrent")]
-    void IGlfw.MakeContextCurrent(Mut<Window> window)
+    void IGlfw.MakeContextCurrent(Ref<Window> window)
     {
         fixed (Window* __dsl_window = window)
         {
@@ -3993,11 +3991,11 @@ public unsafe partial class Glfw : IGlfw, IGlfw.Static
     }
 
     [NativeFunction("glfw", EntryPoint = "glfwMakeContextCurrent")]
-    public static void MakeContextCurrent(Mut<Window> window) =>
+    public static void MakeContextCurrent(Ref<Window> window) =>
         DllImport.MakeContextCurrent(window);
 
     [NativeFunction("glfw", EntryPoint = "glfwMaximizeWindow")]
-    void IGlfw.MaximizeWindow(Mut<Window> window)
+    void IGlfw.MaximizeWindow(Ref<Window> window)
     {
         fixed (Window* __dsl_window = window)
         {
@@ -4011,7 +4009,7 @@ public unsafe partial class Glfw : IGlfw, IGlfw.Static
     }
 
     [NativeFunction("glfw", EntryPoint = "glfwMaximizeWindow")]
-    public static void MaximizeWindow(Mut<Window> window) => DllImport.MaximizeWindow(window);
+    public static void MaximizeWindow(Ref<Window> window) => DllImport.MaximizeWindow(window);
 
     int IGlfw.PlatformSupported(int platform) =>
         (
@@ -4044,7 +4042,7 @@ public unsafe partial class Glfw : IGlfw, IGlfw.Static
     public static int RawMouseMotionSupported() => DllImport.RawMouseMotionSupported();
 
     [NativeFunction("glfw", EntryPoint = "glfwRequestWindowAttention")]
-    void IGlfw.RequestWindowAttention(Mut<Window> window)
+    void IGlfw.RequestWindowAttention(Ref<Window> window)
     {
         fixed (Window* __dsl_window = window)
         {
@@ -4058,11 +4056,11 @@ public unsafe partial class Glfw : IGlfw, IGlfw.Static
     }
 
     [NativeFunction("glfw", EntryPoint = "glfwRequestWindowAttention")]
-    public static void RequestWindowAttention(Mut<Window> window) =>
+    public static void RequestWindowAttention(Ref<Window> window) =>
         DllImport.RequestWindowAttention(window);
 
     [NativeFunction("glfw", EntryPoint = "glfwRestoreWindow")]
-    void IGlfw.RestoreWindow(Mut<Window> window)
+    void IGlfw.RestoreWindow(Ref<Window> window)
     {
         fixed (Window* __dsl_window = window)
         {
@@ -4076,12 +4074,12 @@ public unsafe partial class Glfw : IGlfw, IGlfw.Static
     }
 
     [NativeFunction("glfw", EntryPoint = "glfwRestoreWindow")]
-    public static void RestoreWindow(Mut<Window> window) => DllImport.RestoreWindow(window);
+    public static void RestoreWindow(Ref<Window> window) => DllImport.RestoreWindow(window);
 
     [return: NativeTypeName("GLFWcharfun")]
     [NativeFunction("glfw", EntryPoint = "glfwSetCharCallback")]
     delegate* unmanaged<Window*, uint, void> IGlfw.SetCharCallback(
-        Mut<Window> window,
+        Ref<Window> window,
         [NativeTypeName("GLFWcharfun")] delegate* unmanaged<Window*, uint, void> callback
     )
     {
@@ -4105,14 +4103,14 @@ public unsafe partial class Glfw : IGlfw, IGlfw.Static
     [return: NativeTypeName("GLFWcharfun")]
     [NativeFunction("glfw", EntryPoint = "glfwSetCharCallback")]
     public static delegate* unmanaged<Window*, uint, void> SetCharCallback(
-        Mut<Window> window,
+        Ref<Window> window,
         [NativeTypeName("GLFWcharfun")] delegate* unmanaged<Window*, uint, void> callback
     ) => DllImport.SetCharCallback(window, callback);
 
     [return: NativeTypeName("GLFWcharmodsfun")]
     [NativeFunction("glfw", EntryPoint = "glfwSetCharModsCallback")]
     delegate* unmanaged<Window*, uint, int, void> IGlfw.SetCharModsCallback(
-        Mut<Window> window,
+        Ref<Window> window,
         [NativeTypeName("GLFWcharmodsfun")] delegate* unmanaged<Window*, uint, int, void> callback
     )
     {
@@ -4137,14 +4135,14 @@ public unsafe partial class Glfw : IGlfw, IGlfw.Static
     [return: NativeTypeName("GLFWcharmodsfun")]
     [NativeFunction("glfw", EntryPoint = "glfwSetCharModsCallback")]
     public static delegate* unmanaged<Window*, uint, int, void> SetCharModsCallback(
-        Mut<Window> window,
+        Ref<Window> window,
         [NativeTypeName("GLFWcharmodsfun")] delegate* unmanaged<Window*, uint, int, void> callback
     ) => DllImport.SetCharModsCallback(window, callback);
 
     [NativeFunction("glfw", EntryPoint = "glfwSetClipboardString")]
     void IGlfw.SetClipboardString(
-        Mut<Window> window,
-        [NativeTypeName("const char *")] Ptr<sbyte> @string
+        Ref<Window> window,
+        [NativeTypeName("const char *")] Ref<sbyte> @string
     )
     {
         fixed (sbyte* __dsl_string = @string)
@@ -4164,12 +4162,12 @@ public unsafe partial class Glfw : IGlfw, IGlfw.Static
 
     [NativeFunction("glfw", EntryPoint = "glfwSetClipboardString")]
     public static void SetClipboardString(
-        Mut<Window> window,
-        [NativeTypeName("const char *")] Ptr<sbyte> @string
+        Ref<Window> window,
+        [NativeTypeName("const char *")] Ref<sbyte> @string
     ) => DllImport.SetClipboardString(window, @string);
 
     [NativeFunction("glfw", EntryPoint = "glfwSetCursor")]
-    void IGlfw.SetCursor(Mut<Window> window, Mut<Cursor> cursor)
+    void IGlfw.SetCursor(Ref<Window> window, Ref<Cursor> cursor)
     {
         fixed (Cursor* __dsl_cursor = cursor)
         fixed (Window* __dsl_window = window)
@@ -4184,13 +4182,13 @@ public unsafe partial class Glfw : IGlfw, IGlfw.Static
     }
 
     [NativeFunction("glfw", EntryPoint = "glfwSetCursor")]
-    public static void SetCursor(Mut<Window> window, Mut<Cursor> cursor) =>
+    public static void SetCursor(Ref<Window> window, Ref<Cursor> cursor) =>
         DllImport.SetCursor(window, cursor);
 
     [return: NativeTypeName("GLFWcursorenterfun")]
     [NativeFunction("glfw", EntryPoint = "glfwSetCursorEnterCallback")]
     delegate* unmanaged<Window*, int, void> IGlfw.SetCursorEnterCallback(
-        Mut<Window> window,
+        Ref<Window> window,
         [NativeTypeName("GLFWcursorenterfun")] delegate* unmanaged<Window*, int, void> callback
     )
     {
@@ -4215,12 +4213,12 @@ public unsafe partial class Glfw : IGlfw, IGlfw.Static
     [return: NativeTypeName("GLFWcursorenterfun")]
     [NativeFunction("glfw", EntryPoint = "glfwSetCursorEnterCallback")]
     public static delegate* unmanaged<Window*, int, void> SetCursorEnterCallback(
-        Mut<Window> window,
+        Ref<Window> window,
         [NativeTypeName("GLFWcursorenterfun")] delegate* unmanaged<Window*, int, void> callback
     ) => DllImport.SetCursorEnterCallback(window, callback);
 
     [NativeFunction("glfw", EntryPoint = "glfwSetCursorPos")]
-    void IGlfw.SetCursorPos(Mut<Window> window, double xpos, double ypos)
+    void IGlfw.SetCursorPos(Ref<Window> window, double xpos, double ypos)
     {
         fixed (Window* __dsl_window = window)
         {
@@ -4234,13 +4232,13 @@ public unsafe partial class Glfw : IGlfw, IGlfw.Static
     }
 
     [NativeFunction("glfw", EntryPoint = "glfwSetCursorPos")]
-    public static void SetCursorPos(Mut<Window> window, double xpos, double ypos) =>
+    public static void SetCursorPos(Ref<Window> window, double xpos, double ypos) =>
         DllImport.SetCursorPos(window, xpos, ypos);
 
     [return: NativeTypeName("GLFWcursorposfun")]
     [NativeFunction("glfw", EntryPoint = "glfwSetCursorPosCallback")]
     delegate* unmanaged<Window*, double, double, void> IGlfw.SetCursorPosCallback(
-        Mut<Window> window,
+        Ref<Window> window,
         [NativeTypeName("GLFWcursorposfun")]
             delegate* unmanaged<Window*, double, double, void> callback
     )
@@ -4266,7 +4264,7 @@ public unsafe partial class Glfw : IGlfw, IGlfw.Static
     [return: NativeTypeName("GLFWcursorposfun")]
     [NativeFunction("glfw", EntryPoint = "glfwSetCursorPosCallback")]
     public static delegate* unmanaged<Window*, double, double, void> SetCursorPosCallback(
-        Mut<Window> window,
+        Ref<Window> window,
         [NativeTypeName("GLFWcursorposfun")]
             delegate* unmanaged<Window*, double, double, void> callback
     ) => DllImport.SetCursorPosCallback(window, callback);
@@ -4274,7 +4272,7 @@ public unsafe partial class Glfw : IGlfw, IGlfw.Static
     [return: NativeTypeName("GLFWdropfun")]
     [NativeFunction("glfw", EntryPoint = "glfwSetDropCallback")]
     delegate* unmanaged<Window*, int, sbyte**, void> IGlfw.SetDropCallback(
-        Mut<Window> window,
+        Ref<Window> window,
         [NativeTypeName("GLFWdropfun")] delegate* unmanaged<Window*, int, sbyte**, void> callback
     )
     {
@@ -4299,7 +4297,7 @@ public unsafe partial class Glfw : IGlfw, IGlfw.Static
     [return: NativeTypeName("GLFWdropfun")]
     [NativeFunction("glfw", EntryPoint = "glfwSetDropCallback")]
     public static delegate* unmanaged<Window*, int, sbyte**, void> SetDropCallback(
-        Mut<Window> window,
+        Ref<Window> window,
         [NativeTypeName("GLFWdropfun")] delegate* unmanaged<Window*, int, sbyte**, void> callback
     ) => DllImport.SetDropCallback(window, callback);
 
@@ -4322,7 +4320,7 @@ public unsafe partial class Glfw : IGlfw, IGlfw.Static
     [return: NativeTypeName("GLFWframebuffersizefun")]
     [NativeFunction("glfw", EntryPoint = "glfwSetFramebufferSizeCallback")]
     delegate* unmanaged<Window*, int, int, void> IGlfw.SetFramebufferSizeCallback(
-        Mut<Window> window,
+        Ref<Window> window,
         [NativeTypeName("GLFWframebuffersizefun")]
             delegate* unmanaged<Window*, int, int, void> callback
     )
@@ -4348,13 +4346,13 @@ public unsafe partial class Glfw : IGlfw, IGlfw.Static
     [return: NativeTypeName("GLFWframebuffersizefun")]
     [NativeFunction("glfw", EntryPoint = "glfwSetFramebufferSizeCallback")]
     public static delegate* unmanaged<Window*, int, int, void> SetFramebufferSizeCallback(
-        Mut<Window> window,
+        Ref<Window> window,
         [NativeTypeName("GLFWframebuffersizefun")]
             delegate* unmanaged<Window*, int, int, void> callback
     ) => DllImport.SetFramebufferSizeCallback(window, callback);
 
     [NativeFunction("glfw", EntryPoint = "glfwSetGamma")]
-    void IGlfw.SetGamma(Mut<Monitor> monitor, float gamma)
+    void IGlfw.SetGamma(Ref<Monitor> monitor, float gamma)
     {
         fixed (Monitor* __dsl_monitor = monitor)
         {
@@ -4368,13 +4366,13 @@ public unsafe partial class Glfw : IGlfw, IGlfw.Static
     }
 
     [NativeFunction("glfw", EntryPoint = "glfwSetGamma")]
-    public static void SetGamma(Mut<Monitor> monitor, float gamma) =>
+    public static void SetGamma(Ref<Monitor> monitor, float gamma) =>
         DllImport.SetGamma(monitor, gamma);
 
     [NativeFunction("glfw", EntryPoint = "glfwSetGammaRamp")]
     void IGlfw.SetGammaRamp(
-        Mut<Monitor> monitor,
-        [NativeTypeName("const GLFWgammaramp *")] Ptr<Gammaramp> ramp
+        Ref<Monitor> monitor,
+        [NativeTypeName("const GLFWgammaramp *")] Ref<Gammaramp> ramp
     )
     {
         fixed (Gammaramp* __dsl_ramp = ramp)
@@ -4394,12 +4392,12 @@ public unsafe partial class Glfw : IGlfw, IGlfw.Static
 
     [NativeFunction("glfw", EntryPoint = "glfwSetGammaRamp")]
     public static void SetGammaRamp(
-        Mut<Monitor> monitor,
-        [NativeTypeName("const GLFWgammaramp *")] Ptr<Gammaramp> ramp
+        Ref<Monitor> monitor,
+        [NativeTypeName("const GLFWgammaramp *")] Ref<Gammaramp> ramp
     ) => DllImport.SetGammaRamp(monitor, ramp);
 
     [NativeFunction("glfw", EntryPoint = "glfwSetInputMode")]
-    void IGlfw.SetInputMode(Mut<Window> window, int mode, int value)
+    void IGlfw.SetInputMode(Ref<Window> window, int mode, int value)
     {
         fixed (Window* __dsl_window = window)
         {
@@ -4413,7 +4411,7 @@ public unsafe partial class Glfw : IGlfw, IGlfw.Static
     }
 
     [NativeFunction("glfw", EntryPoint = "glfwSetInputMode")]
-    public static void SetInputMode(Mut<Window> window, int mode, int value) =>
+    public static void SetInputMode(Ref<Window> window, int mode, int value) =>
         DllImport.SetInputMode(window, mode, value);
 
     delegate* unmanaged<int, int, void> IGlfw.SetJoystickCallback(
@@ -4433,7 +4431,7 @@ public unsafe partial class Glfw : IGlfw, IGlfw.Static
     ) => DllImport.SetJoystickCallback(callback);
 
     [NativeFunction("glfw", EntryPoint = "glfwSetJoystickUserPointer")]
-    void IGlfw.SetJoystickUserPointer(int jid, Mut pointer)
+    void IGlfw.SetJoystickUserPointer(int jid, Ref pointer)
     {
         fixed (void* __dsl_pointer = pointer)
         {
@@ -4447,13 +4445,13 @@ public unsafe partial class Glfw : IGlfw, IGlfw.Static
     }
 
     [NativeFunction("glfw", EntryPoint = "glfwSetJoystickUserPointer")]
-    public static void SetJoystickUserPointer(int jid, Mut pointer) =>
+    public static void SetJoystickUserPointer(int jid, Ref pointer) =>
         DllImport.SetJoystickUserPointer(jid, pointer);
 
     [return: NativeTypeName("GLFWkeyfun")]
     [NativeFunction("glfw", EntryPoint = "glfwSetKeyCallback")]
     delegate* unmanaged<Window*, int, int, int, int, void> IGlfw.SetKeyCallback(
-        Mut<Window> window,
+        Ref<Window> window,
         [NativeTypeName("GLFWkeyfun")]
             delegate* unmanaged<Window*, int, int, int, int, void> callback
     )
@@ -4479,7 +4477,7 @@ public unsafe partial class Glfw : IGlfw, IGlfw.Static
     [return: NativeTypeName("GLFWkeyfun")]
     [NativeFunction("glfw", EntryPoint = "glfwSetKeyCallback")]
     public static delegate* unmanaged<Window*, int, int, int, int, void> SetKeyCallback(
-        Mut<Window> window,
+        Ref<Window> window,
         [NativeTypeName("GLFWkeyfun")]
             delegate* unmanaged<Window*, int, int, int, int, void> callback
     ) => DllImport.SetKeyCallback(window, callback);
@@ -4501,7 +4499,7 @@ public unsafe partial class Glfw : IGlfw, IGlfw.Static
     ) => DllImport.SetMonitorCallback(callback);
 
     [NativeFunction("glfw", EntryPoint = "glfwSetMonitorUserPointer")]
-    void IGlfw.SetMonitorUserPointer(Mut<Monitor> monitor, Mut pointer)
+    void IGlfw.SetMonitorUserPointer(Ref<Monitor> monitor, Ref pointer)
     {
         fixed (void* __dsl_pointer = pointer)
         fixed (Monitor* __dsl_monitor = monitor)
@@ -4516,13 +4514,13 @@ public unsafe partial class Glfw : IGlfw, IGlfw.Static
     }
 
     [NativeFunction("glfw", EntryPoint = "glfwSetMonitorUserPointer")]
-    public static void SetMonitorUserPointer(Mut<Monitor> monitor, Mut pointer) =>
+    public static void SetMonitorUserPointer(Ref<Monitor> monitor, Ref pointer) =>
         DllImport.SetMonitorUserPointer(monitor, pointer);
 
     [return: NativeTypeName("GLFWmousebuttonfun")]
     [NativeFunction("glfw", EntryPoint = "glfwSetMouseButtonCallback")]
     delegate* unmanaged<Window*, int, int, int, void> IGlfw.SetMouseButtonCallback(
-        Mut<Window> window,
+        Ref<Window> window,
         [NativeTypeName("GLFWmousebuttonfun")]
             delegate* unmanaged<Window*, int, int, int, void> callback
     )
@@ -4548,7 +4546,7 @@ public unsafe partial class Glfw : IGlfw, IGlfw.Static
     [return: NativeTypeName("GLFWmousebuttonfun")]
     [NativeFunction("glfw", EntryPoint = "glfwSetMouseButtonCallback")]
     public static delegate* unmanaged<Window*, int, int, int, void> SetMouseButtonCallback(
-        Mut<Window> window,
+        Ref<Window> window,
         [NativeTypeName("GLFWmousebuttonfun")]
             delegate* unmanaged<Window*, int, int, int, void> callback
     ) => DllImport.SetMouseButtonCallback(window, callback);
@@ -4556,7 +4554,7 @@ public unsafe partial class Glfw : IGlfw, IGlfw.Static
     [return: NativeTypeName("GLFWscrollfun")]
     [NativeFunction("glfw", EntryPoint = "glfwSetScrollCallback")]
     delegate* unmanaged<Window*, double, double, void> IGlfw.SetScrollCallback(
-        Mut<Window> window,
+        Ref<Window> window,
         [NativeTypeName("GLFWscrollfun")]
             delegate* unmanaged<Window*, double, double, void> callback
     )
@@ -4582,7 +4580,7 @@ public unsafe partial class Glfw : IGlfw, IGlfw.Static
     [return: NativeTypeName("GLFWscrollfun")]
     [NativeFunction("glfw", EntryPoint = "glfwSetScrollCallback")]
     public static delegate* unmanaged<Window*, double, double, void> SetScrollCallback(
-        Mut<Window> window,
+        Ref<Window> window,
         [NativeTypeName("GLFWscrollfun")]
             delegate* unmanaged<Window*, double, double, void> callback
     ) => DllImport.SetScrollCallback(window, callback);
@@ -4596,7 +4594,7 @@ public unsafe partial class Glfw : IGlfw, IGlfw.Static
     public static void SetTime(double time) => DllImport.SetTime(time);
 
     [NativeFunction("glfw", EntryPoint = "glfwSetWindowAspectRatio")]
-    void IGlfw.SetWindowAspectRatio(Mut<Window> window, int numer, int denom)
+    void IGlfw.SetWindowAspectRatio(Ref<Window> window, int numer, int denom)
     {
         fixed (Window* __dsl_window = window)
         {
@@ -4610,11 +4608,11 @@ public unsafe partial class Glfw : IGlfw, IGlfw.Static
     }
 
     [NativeFunction("glfw", EntryPoint = "glfwSetWindowAspectRatio")]
-    public static void SetWindowAspectRatio(Mut<Window> window, int numer, int denom) =>
+    public static void SetWindowAspectRatio(Ref<Window> window, int numer, int denom) =>
         DllImport.SetWindowAspectRatio(window, numer, denom);
 
     [NativeFunction("glfw", EntryPoint = "glfwSetWindowAttrib")]
-    void IGlfw.SetWindowAttrib(Mut<Window> window, int attrib, int value)
+    void IGlfw.SetWindowAttrib(Ref<Window> window, int attrib, int value)
     {
         fixed (Window* __dsl_window = window)
         {
@@ -4628,13 +4626,13 @@ public unsafe partial class Glfw : IGlfw, IGlfw.Static
     }
 
     [NativeFunction("glfw", EntryPoint = "glfwSetWindowAttrib")]
-    public static void SetWindowAttrib(Mut<Window> window, int attrib, int value) =>
+    public static void SetWindowAttrib(Ref<Window> window, int attrib, int value) =>
         DllImport.SetWindowAttrib(window, attrib, value);
 
     [return: NativeTypeName("GLFWwindowclosefun")]
     [NativeFunction("glfw", EntryPoint = "glfwSetWindowCloseCallback")]
     delegate* unmanaged<Window*, void> IGlfw.SetWindowCloseCallback(
-        Mut<Window> window,
+        Ref<Window> window,
         [NativeTypeName("GLFWwindowclosefun")] delegate* unmanaged<Window*, void> callback
     )
     {
@@ -4658,14 +4656,14 @@ public unsafe partial class Glfw : IGlfw, IGlfw.Static
     [return: NativeTypeName("GLFWwindowclosefun")]
     [NativeFunction("glfw", EntryPoint = "glfwSetWindowCloseCallback")]
     public static delegate* unmanaged<Window*, void> SetWindowCloseCallback(
-        Mut<Window> window,
+        Ref<Window> window,
         [NativeTypeName("GLFWwindowclosefun")] delegate* unmanaged<Window*, void> callback
     ) => DllImport.SetWindowCloseCallback(window, callback);
 
     [return: NativeTypeName("GLFWwindowcontentscalefun")]
     [NativeFunction("glfw", EntryPoint = "glfwSetWindowContentScaleCallback")]
     delegate* unmanaged<Window*, float, float, void> IGlfw.SetWindowContentScaleCallback(
-        Mut<Window> window,
+        Ref<Window> window,
         [NativeTypeName("GLFWwindowcontentscalefun")]
             delegate* unmanaged<Window*, float, float, void> callback
     )
@@ -4695,7 +4693,7 @@ public unsafe partial class Glfw : IGlfw, IGlfw.Static
     [return: NativeTypeName("GLFWwindowcontentscalefun")]
     [NativeFunction("glfw", EntryPoint = "glfwSetWindowContentScaleCallback")]
     public static delegate* unmanaged<Window*, float, float, void> SetWindowContentScaleCallback(
-        Mut<Window> window,
+        Ref<Window> window,
         [NativeTypeName("GLFWwindowcontentscalefun")]
             delegate* unmanaged<Window*, float, float, void> callback
     ) => DllImport.SetWindowContentScaleCallback(window, callback);
@@ -4703,7 +4701,7 @@ public unsafe partial class Glfw : IGlfw, IGlfw.Static
     [return: NativeTypeName("GLFWwindowfocusfun")]
     [NativeFunction("glfw", EntryPoint = "glfwSetWindowFocusCallback")]
     delegate* unmanaged<Window*, int, void> IGlfw.SetWindowFocusCallback(
-        Mut<Window> window,
+        Ref<Window> window,
         [NativeTypeName("GLFWwindowfocusfun")] delegate* unmanaged<Window*, int, void> callback
     )
     {
@@ -4728,15 +4726,15 @@ public unsafe partial class Glfw : IGlfw, IGlfw.Static
     [return: NativeTypeName("GLFWwindowfocusfun")]
     [NativeFunction("glfw", EntryPoint = "glfwSetWindowFocusCallback")]
     public static delegate* unmanaged<Window*, int, void> SetWindowFocusCallback(
-        Mut<Window> window,
+        Ref<Window> window,
         [NativeTypeName("GLFWwindowfocusfun")] delegate* unmanaged<Window*, int, void> callback
     ) => DllImport.SetWindowFocusCallback(window, callback);
 
     [NativeFunction("glfw", EntryPoint = "glfwSetWindowIcon")]
     void IGlfw.SetWindowIcon(
-        Mut<Window> window,
+        Ref<Window> window,
         int count,
-        [NativeTypeName("const GLFWimage *")] Ptr<Image> images
+        [NativeTypeName("const GLFWimage *")] Ref<Image> images
     )
     {
         fixed (Image* __dsl_images = images)
@@ -4757,15 +4755,15 @@ public unsafe partial class Glfw : IGlfw, IGlfw.Static
 
     [NativeFunction("glfw", EntryPoint = "glfwSetWindowIcon")]
     public static void SetWindowIcon(
-        Mut<Window> window,
+        Ref<Window> window,
         int count,
-        [NativeTypeName("const GLFWimage *")] Ptr<Image> images
+        [NativeTypeName("const GLFWimage *")] Ref<Image> images
     ) => DllImport.SetWindowIcon(window, count, images);
 
     [return: NativeTypeName("GLFWwindowiconifyfun")]
     [NativeFunction("glfw", EntryPoint = "glfwSetWindowIconifyCallback")]
     delegate* unmanaged<Window*, int, void> IGlfw.SetWindowIconifyCallback(
-        Mut<Window> window,
+        Ref<Window> window,
         [NativeTypeName("GLFWwindowiconifyfun")] delegate* unmanaged<Window*, int, void> callback
     )
     {
@@ -4790,14 +4788,14 @@ public unsafe partial class Glfw : IGlfw, IGlfw.Static
     [return: NativeTypeName("GLFWwindowiconifyfun")]
     [NativeFunction("glfw", EntryPoint = "glfwSetWindowIconifyCallback")]
     public static delegate* unmanaged<Window*, int, void> SetWindowIconifyCallback(
-        Mut<Window> window,
+        Ref<Window> window,
         [NativeTypeName("GLFWwindowiconifyfun")] delegate* unmanaged<Window*, int, void> callback
     ) => DllImport.SetWindowIconifyCallback(window, callback);
 
     [return: NativeTypeName("GLFWwindowmaximizefun")]
     [NativeFunction("glfw", EntryPoint = "glfwSetWindowMaximizeCallback")]
     delegate* unmanaged<Window*, int, void> IGlfw.SetWindowMaximizeCallback(
-        Mut<Window> window,
+        Ref<Window> window,
         [NativeTypeName("GLFWwindowmaximizefun")] delegate* unmanaged<Window*, int, void> callback
     )
     {
@@ -4822,14 +4820,14 @@ public unsafe partial class Glfw : IGlfw, IGlfw.Static
     [return: NativeTypeName("GLFWwindowmaximizefun")]
     [NativeFunction("glfw", EntryPoint = "glfwSetWindowMaximizeCallback")]
     public static delegate* unmanaged<Window*, int, void> SetWindowMaximizeCallback(
-        Mut<Window> window,
+        Ref<Window> window,
         [NativeTypeName("GLFWwindowmaximizefun")] delegate* unmanaged<Window*, int, void> callback
     ) => DllImport.SetWindowMaximizeCallback(window, callback);
 
     [NativeFunction("glfw", EntryPoint = "glfwSetWindowMonitor")]
     void IGlfw.SetWindowMonitor(
-        Mut<Window> window,
-        Mut<Monitor> monitor,
+        Ref<Window> window,
+        Ref<Monitor> monitor,
         int xpos,
         int ypos,
         int width,
@@ -4867,8 +4865,8 @@ public unsafe partial class Glfw : IGlfw, IGlfw.Static
 
     [NativeFunction("glfw", EntryPoint = "glfwSetWindowMonitor")]
     public static void SetWindowMonitor(
-        Mut<Window> window,
-        Mut<Monitor> monitor,
+        Ref<Window> window,
+        Ref<Monitor> monitor,
         int xpos,
         int ypos,
         int width,
@@ -4877,7 +4875,7 @@ public unsafe partial class Glfw : IGlfw, IGlfw.Static
     ) => DllImport.SetWindowMonitor(window, monitor, xpos, ypos, width, height, refreshRate);
 
     [NativeFunction("glfw", EntryPoint = "glfwSetWindowOpacity")]
-    void IGlfw.SetWindowOpacity(Mut<Window> window, float opacity)
+    void IGlfw.SetWindowOpacity(Ref<Window> window, float opacity)
     {
         fixed (Window* __dsl_window = window)
         {
@@ -4891,11 +4889,11 @@ public unsafe partial class Glfw : IGlfw, IGlfw.Static
     }
 
     [NativeFunction("glfw", EntryPoint = "glfwSetWindowOpacity")]
-    public static void SetWindowOpacity(Mut<Window> window, float opacity) =>
+    public static void SetWindowOpacity(Ref<Window> window, float opacity) =>
         DllImport.SetWindowOpacity(window, opacity);
 
     [NativeFunction("glfw", EntryPoint = "glfwSetWindowPos")]
-    void IGlfw.SetWindowPos(Mut<Window> window, int xpos, int ypos)
+    void IGlfw.SetWindowPos(Ref<Window> window, int xpos, int ypos)
     {
         fixed (Window* __dsl_window = window)
         {
@@ -4909,13 +4907,13 @@ public unsafe partial class Glfw : IGlfw, IGlfw.Static
     }
 
     [NativeFunction("glfw", EntryPoint = "glfwSetWindowPos")]
-    public static void SetWindowPos(Mut<Window> window, int xpos, int ypos) =>
+    public static void SetWindowPos(Ref<Window> window, int xpos, int ypos) =>
         DllImport.SetWindowPos(window, xpos, ypos);
 
     [return: NativeTypeName("GLFWwindowposfun")]
     [NativeFunction("glfw", EntryPoint = "glfwSetWindowPosCallback")]
     delegate* unmanaged<Window*, int, int, void> IGlfw.SetWindowPosCallback(
-        Mut<Window> window,
+        Ref<Window> window,
         [NativeTypeName("GLFWwindowposfun")] delegate* unmanaged<Window*, int, int, void> callback
     )
     {
@@ -4940,14 +4938,14 @@ public unsafe partial class Glfw : IGlfw, IGlfw.Static
     [return: NativeTypeName("GLFWwindowposfun")]
     [NativeFunction("glfw", EntryPoint = "glfwSetWindowPosCallback")]
     public static delegate* unmanaged<Window*, int, int, void> SetWindowPosCallback(
-        Mut<Window> window,
+        Ref<Window> window,
         [NativeTypeName("GLFWwindowposfun")] delegate* unmanaged<Window*, int, int, void> callback
     ) => DllImport.SetWindowPosCallback(window, callback);
 
     [return: NativeTypeName("GLFWwindowrefreshfun")]
     [NativeFunction("glfw", EntryPoint = "glfwSetWindowRefreshCallback")]
     delegate* unmanaged<Window*, void> IGlfw.SetWindowRefreshCallback(
-        Mut<Window> window,
+        Ref<Window> window,
         [NativeTypeName("GLFWwindowrefreshfun")] delegate* unmanaged<Window*, void> callback
     )
     {
@@ -4971,12 +4969,12 @@ public unsafe partial class Glfw : IGlfw, IGlfw.Static
     [return: NativeTypeName("GLFWwindowrefreshfun")]
     [NativeFunction("glfw", EntryPoint = "glfwSetWindowRefreshCallback")]
     public static delegate* unmanaged<Window*, void> SetWindowRefreshCallback(
-        Mut<Window> window,
+        Ref<Window> window,
         [NativeTypeName("GLFWwindowrefreshfun")] delegate* unmanaged<Window*, void> callback
     ) => DllImport.SetWindowRefreshCallback(window, callback);
 
     [NativeFunction("glfw", EntryPoint = "glfwSetWindowShouldClose")]
-    void IGlfw.SetWindowShouldClose(Mut<Window> window, int value)
+    void IGlfw.SetWindowShouldClose(Ref<Window> window, int value)
     {
         fixed (Window* __dsl_window = window)
         {
@@ -4990,11 +4988,11 @@ public unsafe partial class Glfw : IGlfw, IGlfw.Static
     }
 
     [NativeFunction("glfw", EntryPoint = "glfwSetWindowShouldClose")]
-    public static void SetWindowShouldClose(Mut<Window> window, int value) =>
+    public static void SetWindowShouldClose(Ref<Window> window, int value) =>
         DllImport.SetWindowShouldClose(window, value);
 
     [NativeFunction("glfw", EntryPoint = "glfwSetWindowSize")]
-    void IGlfw.SetWindowSize(Mut<Window> window, int width, int height)
+    void IGlfw.SetWindowSize(Ref<Window> window, int width, int height)
     {
         fixed (Window* __dsl_window = window)
         {
@@ -5008,13 +5006,13 @@ public unsafe partial class Glfw : IGlfw, IGlfw.Static
     }
 
     [NativeFunction("glfw", EntryPoint = "glfwSetWindowSize")]
-    public static void SetWindowSize(Mut<Window> window, int width, int height) =>
+    public static void SetWindowSize(Ref<Window> window, int width, int height) =>
         DllImport.SetWindowSize(window, width, height);
 
     [return: NativeTypeName("GLFWwindowsizefun")]
     [NativeFunction("glfw", EntryPoint = "glfwSetWindowSizeCallback")]
     delegate* unmanaged<Window*, int, int, void> IGlfw.SetWindowSizeCallback(
-        Mut<Window> window,
+        Ref<Window> window,
         [NativeTypeName("GLFWwindowsizefun")] delegate* unmanaged<Window*, int, int, void> callback
     )
     {
@@ -5039,13 +5037,13 @@ public unsafe partial class Glfw : IGlfw, IGlfw.Static
     [return: NativeTypeName("GLFWwindowsizefun")]
     [NativeFunction("glfw", EntryPoint = "glfwSetWindowSizeCallback")]
     public static delegate* unmanaged<Window*, int, int, void> SetWindowSizeCallback(
-        Mut<Window> window,
+        Ref<Window> window,
         [NativeTypeName("GLFWwindowsizefun")] delegate* unmanaged<Window*, int, int, void> callback
     ) => DllImport.SetWindowSizeCallback(window, callback);
 
     [NativeFunction("glfw", EntryPoint = "glfwSetWindowSizeLimits")]
     void IGlfw.SetWindowSizeLimits(
-        Mut<Window> window,
+        Ref<Window> window,
         int minwidth,
         int minheight,
         int maxwidth,
@@ -5071,7 +5069,7 @@ public unsafe partial class Glfw : IGlfw, IGlfw.Static
 
     [NativeFunction("glfw", EntryPoint = "glfwSetWindowSizeLimits")]
     public static void SetWindowSizeLimits(
-        Mut<Window> window,
+        Ref<Window> window,
         int minwidth,
         int minheight,
         int maxwidth,
@@ -5079,7 +5077,7 @@ public unsafe partial class Glfw : IGlfw, IGlfw.Static
     ) => DllImport.SetWindowSizeLimits(window, minwidth, minheight, maxwidth, maxheight);
 
     [NativeFunction("glfw", EntryPoint = "glfwSetWindowTitle")]
-    void IGlfw.SetWindowTitle(Mut<Window> window, [NativeTypeName("const char *")] Ptr<sbyte> title)
+    void IGlfw.SetWindowTitle(Ref<Window> window, [NativeTypeName("const char *")] Ref<sbyte> title)
     {
         fixed (sbyte* __dsl_title = title)
         fixed (Window* __dsl_window = window)
@@ -5098,12 +5096,12 @@ public unsafe partial class Glfw : IGlfw, IGlfw.Static
 
     [NativeFunction("glfw", EntryPoint = "glfwSetWindowTitle")]
     public static void SetWindowTitle(
-        Mut<Window> window,
-        [NativeTypeName("const char *")] Ptr<sbyte> title
+        Ref<Window> window,
+        [NativeTypeName("const char *")] Ref<sbyte> title
     ) => DllImport.SetWindowTitle(window, title);
 
     [NativeFunction("glfw", EntryPoint = "glfwSetWindowUserPointer")]
-    void IGlfw.SetWindowUserPointer(Mut<Window> window, Mut pointer)
+    void IGlfw.SetWindowUserPointer(Ref<Window> window, Ref pointer)
     {
         fixed (void* __dsl_pointer = pointer)
         fixed (Window* __dsl_window = window)
@@ -5118,11 +5116,11 @@ public unsafe partial class Glfw : IGlfw, IGlfw.Static
     }
 
     [NativeFunction("glfw", EntryPoint = "glfwSetWindowUserPointer")]
-    public static void SetWindowUserPointer(Mut<Window> window, Mut pointer) =>
+    public static void SetWindowUserPointer(Ref<Window> window, Ref pointer) =>
         DllImport.SetWindowUserPointer(window, pointer);
 
     [NativeFunction("glfw", EntryPoint = "glfwShowWindow")]
-    void IGlfw.ShowWindow(Mut<Window> window)
+    void IGlfw.ShowWindow(Ref<Window> window)
     {
         fixed (Window* __dsl_window = window)
         {
@@ -5136,10 +5134,10 @@ public unsafe partial class Glfw : IGlfw, IGlfw.Static
     }
 
     [NativeFunction("glfw", EntryPoint = "glfwShowWindow")]
-    public static void ShowWindow(Mut<Window> window) => DllImport.ShowWindow(window);
+    public static void ShowWindow(Ref<Window> window) => DllImport.ShowWindow(window);
 
     [NativeFunction("glfw", EntryPoint = "glfwSwapBuffers")]
-    void IGlfw.SwapBuffers(Mut<Window> window)
+    void IGlfw.SwapBuffers(Ref<Window> window)
     {
         fixed (Window* __dsl_window = window)
         {
@@ -5153,7 +5151,7 @@ public unsafe partial class Glfw : IGlfw, IGlfw.Static
     }
 
     [NativeFunction("glfw", EntryPoint = "glfwSwapBuffers")]
-    public static void SwapBuffers(Mut<Window> window) => DllImport.SwapBuffers(window);
+    public static void SwapBuffers(Ref<Window> window) => DllImport.SwapBuffers(window);
 
     void IGlfw.SwapInterval(int interval) =>
         ((delegate* unmanaged<int, void>)nativeContext.LoadFunction("glfwSwapInterval", "glfw"))(
@@ -5170,7 +5168,7 @@ public unsafe partial class Glfw : IGlfw, IGlfw.Static
     public static void Terminate() => DllImport.Terminate();
 
     [NativeFunction("glfw", EntryPoint = "glfwUpdateGamepadMappings")]
-    int IGlfw.UpdateGamepadMappings([NativeTypeName("const char *")] Ptr<sbyte> @string)
+    int IGlfw.UpdateGamepadMappings([NativeTypeName("const char *")] Ref<sbyte> @string)
     {
         fixed (sbyte* __dsl_string = @string)
         {
@@ -5184,7 +5182,7 @@ public unsafe partial class Glfw : IGlfw, IGlfw.Static
     }
 
     [NativeFunction("glfw", EntryPoint = "glfwUpdateGamepadMappings")]
-    public static int UpdateGamepadMappings([NativeTypeName("const char *")] Ptr<sbyte> @string) =>
+    public static int UpdateGamepadMappings([NativeTypeName("const char *")] Ref<sbyte> @string) =>
         DllImport.UpdateGamepadMappings(@string);
 
     int IGlfw.VulkanSupported() =>
@@ -5218,7 +5216,7 @@ public unsafe partial class Glfw : IGlfw, IGlfw.Static
     public static void WindowHint(int hint, int value) => DllImport.WindowHint(hint, value);
 
     [NativeFunction("glfw", EntryPoint = "glfwWindowHintString")]
-    void IGlfw.WindowHintString(int hint, [NativeTypeName("const char *")] Ptr<sbyte> value)
+    void IGlfw.WindowHintString(int hint, [NativeTypeName("const char *")] Ref<sbyte> value)
     {
         fixed (sbyte* __dsl_value = value)
         {
@@ -5237,11 +5235,11 @@ public unsafe partial class Glfw : IGlfw, IGlfw.Static
     [NativeFunction("glfw", EntryPoint = "glfwWindowHintString")]
     public static void WindowHintString(
         int hint,
-        [NativeTypeName("const char *")] Ptr<sbyte> value
+        [NativeTypeName("const char *")] Ref<sbyte> value
     ) => DllImport.WindowHintString(hint, value);
 
     [NativeFunction("glfw", EntryPoint = "glfwWindowShouldClose")]
-    int IGlfw.WindowShouldClose(Mut<Window> window)
+    int IGlfw.WindowShouldClose(Ref<Window> window)
     {
         fixed (Window* __dsl_window = window)
         {
@@ -5255,5 +5253,5 @@ public unsafe partial class Glfw : IGlfw, IGlfw.Static
     }
 
     [NativeFunction("glfw", EntryPoint = "glfwWindowShouldClose")]
-    public static int WindowShouldClose(Mut<Window> window) => DllImport.WindowShouldClose(window);
+    public static int WindowShouldClose(Ref<Window> window) => DllImport.WindowShouldClose(window);
 }

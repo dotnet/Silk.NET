@@ -475,46 +475,46 @@ public static unsafe class SilkMarshal
     }
 
     /// <summary>
-    /// Creates a pointer from a reference.
+    /// Creates a reference from a managed reference.
     /// </summary>
     /// <param name="ref">A reference to a <typeparamref name="T"/>.</param>
     /// <typeparam name="T">The pointee type.</typeparam>
     /// <returns>The pointer to the given reference.</returns>
-    public static Ptr<T> AsPtr<T>(ref this T @ref)
+    public static Ref<T> AsRef<T>(ref this T @ref)
         where T : unmanaged => new(ref @ref);
 
     /// <summary>
-    /// Creates a pointer from a span.
+    /// Creates a reference from a span.
     /// </summary>
     /// <param name="ref">A span of <typeparamref name="T"/>.</param>
     /// <typeparam name="T">The pointee type.</typeparam>
     /// <returns>The pointer to the given span's elements.</returns>
-    public static Ptr<T> AsPtr<T>(this Span<T> @ref)
+    public static Ref<T> AsRef<T>(this Span<T> @ref)
         where T : unmanaged => new(ref @ref.GetPinnableReference());
 
     /// <summary>
-    /// Creates a pointer from a reference.
+    /// Creates a 2D Ref from a reference.
     /// </summary>
     /// <param name="ref">A reference to a <see cref="Ptr{T}"/>.</param>
     /// <typeparam name="T">The pointee type.</typeparam>
     /// <returns>The pointer to the given reference.</returns>
-    public static PtrPtr<T> AsPtr2D<T>(ref this Ptr<T> @ref)
+    public static Ref2D<T> AsRef2D<T>(ref this Ref<T> @ref)
         where T : unmanaged => new(ref @ref);
 
     /// <summary>
-    /// Creates a pointer from a reference.
+    /// Creates a 2D Ref from a reference to a span.
     /// </summary>
     /// <param name="ref">A reference to a <see cref="Ptr{T}"/>.</param>
     /// <typeparam name="T">The pointee type.</typeparam>
     /// <returns>The pointer to the given reference.</returns>
-    public static PtrPtr<T> AsPtr2D<T>(ref this Span<T> @ref)
+    public static Ref2D<T> AsRef2D<T>(ref this Span<T> @ref)
         where T : unmanaged
     {
         IL.Emit.Ldarg_0();
         IL.Emit.Newobj(
             MethodRef.Constructor(
-                TypeRef.Type(typeof(PtrPtr<>).MakeGenericType(typeof(T))),
-                TypeRef.Type(typeof(Ptr<>).MakeGenericType(typeof(T)).MakeByRefType())
+                TypeRef.Type(typeof(Ref2D<>).MakeGenericType(typeof(T))),
+                TypeRef.Type(typeof(Ref<>).MakeGenericType(typeof(T)).MakeByRefType())
             )
         );
         IL.Emit.Ret();
@@ -522,105 +522,47 @@ public static unsafe class SilkMarshal
     }
 
     /// <summary>
-    /// Creates a pointer from a reference.
+    /// Converts a span of ptrs to a 2D jagged array
     /// </summary>
-    /// <param name="ref">A reference to a <typeparamref name="T"/>.</param>
-    /// <typeparam name="T">The pointee type.</typeparam>
-    /// <returns>The pointer to the given reference.</returns>
-    public static Mut<T> AsPtrMut<T>(ref this T @ref)
-        where T : unmanaged => new(ref @ref);
-
-    /// <summary>
-    /// Creates a pointer from a span.
-    /// </summary>
-    /// <param name="ref">A span of <typeparamref name="T"/>.</param>
-    /// <typeparam name="T">The pointee type.</typeparam>
-    /// <returns>The pointer to the given span's elements.</returns>
-    public static Mut<T> AsPtrMut<T>(this Span<T> @ref)
-        where T : unmanaged => new(ref @ref.GetPinnableReference());
-
-    /// <summary>
-    /// Creates a pointer from a reference.
-    /// </summary>
-    /// <param name="ref">A reference to a <see cref="Ptr{T}"/>.</param>
-    /// <typeparam name="T">The pointee type.</typeparam>
-    /// <returns>The pointer to the given reference.</returns>
-    public static MutMut<T> AsPtrMut2D<T>(ref this Mut<T> @ref)
-        where T : unmanaged => new(ref @ref);
-
-    /// <summary>
-    /// Creates a pointer from a reference.
-    /// </summary>
-    /// <param name="ref">A reference to a <see cref="Ptr{T}"/>.</param>
-    /// <typeparam name="T">The pointee type.</typeparam>
-    /// <returns>The pointer to the given reference.</returns>
-    public static MutMut<T> AsPtrMut2D<T>(ref this Span<T> @ref)
-        where T : unmanaged
+    /// <typeparam name="T"></typeparam>
+    /// <param name="span"></param>
+    /// <param name="lengths">length of each array in the span</param>
+    /// <returns></returns>
+    public static T[][] NativeToArray<T>(Span<nint> span, int[] lengths) where T : unmanaged
     {
-        IL.Emit.Ldarg_0();
-        IL.Emit.Newobj(
-            MethodRef.Constructor(
-                TypeRef.Type(typeof(PtrPtr<>).MakeGenericType(typeof(T))),
-                TypeRef.Type(typeof(Ptr<>).MakeGenericType(typeof(T)).MakeByRefType())
-            )
-        );
-        IL.Emit.Ret();
-        throw IL.Unreachable();
+        T[][] ret = new T[span.Length][];
+        for (int i  = 0; i < span.Length; i++)
+        {
+            T* ptr = (T*)span[0];
+
+            if (ptr != null)
+            {
+                ret[i] = new Span<T>(ptr, lengths[i]).ToArray();
+            }
+        }
+        return ret;
     }
 
     /// <summary>
-    /// Unsafely creates a <see cref="Ptr{T}"/> from a <see cref="Ptr{T}"/>.
+    /// Converts a span of ptrs to a 3D jagged array
     /// </summary>
-    /// <param name="ptr">The pointer.</param>
-    /// <typeparam name="T">The pointee type.</typeparam>
-    /// <returns>The reinterpreted pointer.</returns>
-    public static Mut<T> ConstCast<T>(Ptr<T> ptr)
-        where T : unmanaged
+    /// <typeparam name="T"></typeparam>
+    /// <param name="span"></param>
+    /// <param name="lengths0">length of each array in the span</param>
+    /// <param name="lengths1">length of each array in the arrays in the span</param>
+    /// <returns></returns>
+    public static T[][][] NativeToArray<T>(Span<nint> span, int[] lengths0, int[][] lengths1) where T : unmanaged
     {
-        IL.Emit.Ldarg_0();
-        IL.Emit.Ret();
-        throw IL.Unreachable();
-    }
+        T[][][] ret = new T[span.Length][][];
+        for (int i = 0; i < span.Length; i++)
+        {
+            T* ptr = (T*)span[0];
 
-    /// <summary>
-    /// Unsafely creates a <see cref="Ptr{T}"/> from a <see cref="Ptr{T}"/>.
-    /// </summary>
-    /// <param name="ptr">The pointer.</param>
-    /// <typeparam name="T">The pointee type.</typeparam>
-    /// <returns>The reinterpreted pointer.</returns>
-    public static ref Mut<T> ConstCast<T>(ref Ptr<T> ptr)
-        where T : unmanaged
-    {
-        IL.Emit.Ldarg_0();
-        IL.Emit.Ret();
-        throw IL.Unreachable();
-    }
-
-    /// <summary>
-    /// Unsafely creates a <see cref="Ptr{T}"/> from a <see cref="Ptr{T}"/>.
-    /// </summary>
-    /// <param name="ptr">The pointer.</param>
-    /// <typeparam name="T">The pointee type.</typeparam>
-    /// <returns>The reinterpreted pointer.</returns>
-    public static MutMut<T> ConstCast<T>(PtrPtr<T> ptr)
-        where T : unmanaged
-    {
-        IL.Emit.Ldarg_0();
-        IL.Emit.Ret();
-        throw IL.Unreachable();
-    }
-
-    /// <summary>
-    /// Unsafely creates a <see cref="Ptr{T}"/> from a <see cref="Ptr{T}"/>.
-    /// </summary>
-    /// <param name="ptr">The pointer.</param>
-    /// <typeparam name="T">The pointee type.</typeparam>
-    /// <returns>The reinterpreted pointer.</returns>
-    public static ref MutMut<T> ConstCast<T>(ref PtrPtr<T> ptr)
-        where T : unmanaged
-    {
-        IL.Emit.Ldarg_0();
-        IL.Emit.Ret();
-        throw IL.Unreachable();
+            if (ptr != null)
+            {
+                ret[i] = NativeToArray<T>(new(ptr, lengths0[i]), lengths1[i]);
+            }
+        }
+        return ret;
     }
 }
