@@ -13,8 +13,8 @@ var window = Glfw.CreateWindow(1280, 720, "Hello Window!", nullptr, nullptr);
 if (window == nullptr)
 {
     // TODO const correctness
-    Ptr<sbyte> error = nullptr;
-    if (Glfw.GetError(error.AsPtr2D()) == 0 || error == nullptr)
+    Ref<sbyte> error = nullptr;
+    if (Glfw.GetError(error.AsRef2D()) == 0 || error == nullptr)
     {
         throw new Exception("failed to create window and failed to get error");
     }

@@ -220,8 +220,7 @@ public class UseSilkDSL : IMod
                             )
                         )
                     )
-                    .AddMaxOpt()
-                    .AddNativeFunction(node);
+                    .AddMaxOpt().AddNativeFunction(node);
                 UsingsToAdd.Add("System.Runtime.CompilerServices");
             }
 
@@ -346,7 +345,7 @@ public class UseSilkDSL : IMod
             TypeSyntax syntax,
             IEnumerable<AttributeListSyntax?>? attrLists,
             SyntaxKind? target
-        )
+            )
         {
             var indirectionLevels = 0;
             var isVoid = false;
@@ -369,54 +368,26 @@ public class UseSilkDSL : IMod
                 );
             }
 
-            var isConst = false;
-            if (attrLists is not null)
+            var isOut = false;
+            if (target == SyntaxKind.ReturnKeyword || (attrLists is not null && attrLists.Any(a => a is not null ? a.Attributes.Any(attr => attr.Name.ToString() == "out") : false)))
             {
-                foreach (var attrs in attrLists)
-                {
-                    if (
-                        attrs is null
-                        || (
-                            target is not null
-                            && !(attrs.Target?.Identifier.IsKind(target.Value)).GetValueOrDefault()
-                        )
-                        || (target is null && attrs.Target is not null)
-                    )
-                    {
-                        continue;
-                    }
-
-                    foreach (var attributeSyntax in attrs.Attributes)
-                    {
-                        if (
-                            attributeSyntax.Name.ToString() == "NativeTypeName"
-                            && attributeSyntax.ArgumentList?.Arguments.FirstOrDefault()?.Expression
-                                is LiteralExpressionSyntax lit
-                            && lit.Token.ValueText.StartsWith("const ")
-                        )
-                        {
-                            isConst = true;
-                        }
-                    }
-                }
+                isOut = true;
             }
 
             return isVoid
                 ? IdentifierName(
-                    isConst switch
+                    isOut switch
                     {
-                        true => string.Join("", Enumerable.Repeat("Ptr", indirectionLevels)),
-                        false => string.Join("", Enumerable.Repeat("Mut", indirectionLevels)),
+                        true => indirectionLevels > 1 ? $"Ptr{indirectionLevels}D" : "Ptr",
+                        false => indirectionLevels > 1 ? $"Ref{indirectionLevels}D" : "Ref",
                     }
                 )
                 : GenericName(
                         Identifier(
-                            isConst switch
+                            isOut switch
                             {
-                                true
-                                    => string.Join("", Enumerable.Repeat("Ptr", indirectionLevels)),
-                                false
-                                    => string.Join("", Enumerable.Repeat("Mut", indirectionLevels)),
+                                true => indirectionLevels > 1 ? $"Ptr{indirectionLevels}D" : "Ptr",
+                                false => indirectionLevels > 1 ? $"Ref{indirectionLevels}D" : "Ref",
                             }
                         )
                     )
