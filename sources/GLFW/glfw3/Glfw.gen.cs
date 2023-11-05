@@ -1907,57 +1907,57 @@ public unsafe partial class Glfw : IGlfw, IGlfw.Static<Glfw>
         where T : IGlfw.Static<T>
     {
         [NativeFunction("glfw", EntryPoint = "glfwCreateCursor")]
-        public Mut<Cursor> CreateCursor(
-            [NativeTypeName("const GLFWimage *")] Ptr<Image> image,
+        public Ptr<Cursor> CreateCursor(
+            [NativeTypeName("const GLFWimage *")] Ref<Image> image,
             int xhot,
             int yhot
         ) => T.CreateCursor(image, xhot, yhot);
 
         [NativeFunction("glfw", EntryPoint = "glfwCreateStandardCursor")]
-        public Mut<Cursor> CreateStandardCursor(int shape) => T.CreateStandardCursor(shape);
+        public Ptr<Cursor> CreateStandardCursor(int shape) => T.CreateStandardCursor(shape);
 
         [NativeFunction("glfw", EntryPoint = "glfwCreateWindow")]
-        public Mut<Window> CreateWindow(
+        public Ptr<Window> CreateWindow(
             int width,
             int height,
-            [NativeTypeName("const char *")] Ptr<sbyte> title,
-            Mut<Monitor> monitor,
-            Mut<Window> share
+            [NativeTypeName("const char *")] Ref<sbyte> title,
+            Ref<Monitor> monitor,
+            Ref<Window> share
         ) => T.CreateWindow(width, height, title, monitor, share);
 
         [NativeFunction("glfw", EntryPoint = "glfwDefaultWindowHints")]
         public void DefaultWindowHints() => T.DefaultWindowHints();
 
         [NativeFunction("glfw", EntryPoint = "glfwDestroyCursor")]
-        public void DestroyCursor(Mut<Cursor> cursor) => T.DestroyCursor(cursor);
+        public void DestroyCursor(Ref<Cursor> cursor) => T.DestroyCursor(cursor);
 
         [NativeFunction("glfw", EntryPoint = "glfwDestroyWindow")]
-        public void DestroyWindow(Mut<Window> window) => T.DestroyWindow(window);
+        public void DestroyWindow(Ref<Window> window) => T.DestroyWindow(window);
 
         [NativeFunction("glfw", EntryPoint = "glfwExtensionSupported")]
-        public int ExtensionSupported([NativeTypeName("const char *")] Ptr<sbyte> extension) =>
+        public int ExtensionSupported([NativeTypeName("const char *")] Ref<sbyte> extension) =>
             T.ExtensionSupported(extension);
 
         [NativeFunction("glfw", EntryPoint = "glfwFocusWindow")]
-        public void FocusWindow(Mut<Window> window) => T.FocusWindow(window);
+        public void FocusWindow(Ref<Window> window) => T.FocusWindow(window);
 
         [return: NativeTypeName("const char *")]
         [NativeFunction("glfw", EntryPoint = "glfwGetClipboardString")]
-        public Ptr<sbyte> GetClipboardString(Mut<Window> window) => T.GetClipboardString(window);
+        public Ptr<sbyte> GetClipboardString(Ref<Window> window) => T.GetClipboardString(window);
 
         [NativeFunction("glfw", EntryPoint = "glfwGetCurrentContext")]
-        public Mut<Window> GetCurrentContext() => T.GetCurrentContext();
+        public Ptr<Window> GetCurrentContext() => T.GetCurrentContext();
 
         [NativeFunction("glfw", EntryPoint = "glfwGetCursorPos")]
-        public void GetCursorPos(Mut<Window> window, Mut<double> xpos, Mut<double> ypos) =>
+        public void GetCursorPos(Ref<Window> window, Ref<double> xpos, Ref<double> ypos) =>
             T.GetCursorPos(window, xpos, ypos);
 
         [NativeFunction("glfw", EntryPoint = "glfwGetError")]
-        public int GetError([NativeTypeName("const char **")] PtrPtr<sbyte> description) =>
+        public int GetError([NativeTypeName("const char **")] Ref2D<sbyte> description) =>
             T.GetError(description);
 
         [NativeFunction("glfw", EntryPoint = "glfwGetFramebufferSize")]
-        public void GetFramebufferSize(Mut<Window> window, Mut<int> width, Mut<int> height) =>
+        public void GetFramebufferSize(Ref<Window> window, Ref<int> width, Ref<int> height) =>
             T.GetFramebufferSize(window, width, height);
 
         [return: NativeTypeName("const char *")]
@@ -1965,23 +1965,23 @@ public unsafe partial class Glfw : IGlfw, IGlfw.Static<Glfw>
         public Ptr<sbyte> GetGamepadName(int jid) => T.GetGamepadName(jid);
 
         [NativeFunction("glfw", EntryPoint = "glfwGetGamepadState")]
-        public int GetGamepadState(int jid, Mut<Gamepadstate> state) =>
+        public int GetGamepadState(int jid, Ref<Gamepadstate> state) =>
             T.GetGamepadState(jid, state);
 
         [return: NativeTypeName("const GLFWgammaramp *")]
         [NativeFunction("glfw", EntryPoint = "glfwGetGammaRamp")]
-        public Ptr<Gammaramp> GetGammaRamp(Mut<Monitor> monitor) => T.GetGammaRamp(monitor);
+        public Ptr<Gammaramp> GetGammaRamp(Ref<Monitor> monitor) => T.GetGammaRamp(monitor);
 
         [NativeFunction("glfw", EntryPoint = "glfwGetInputMode")]
-        public int GetInputMode(Mut<Window> window, int mode) => T.GetInputMode(window, mode);
+        public int GetInputMode(Ref<Window> window, int mode) => T.GetInputMode(window, mode);
 
         [return: NativeTypeName("const float *")]
         [NativeFunction("glfw", EntryPoint = "glfwGetJoystickAxes")]
-        public Ptr<float> GetJoystickAxes(int jid, Mut<int> count) => T.GetJoystickAxes(jid, count);
+        public Ptr<float> GetJoystickAxes(int jid, Ref<int> count) => T.GetJoystickAxes(jid, count);
 
         [return: NativeTypeName("const unsigned char *")]
         [NativeFunction("glfw", EntryPoint = "glfwGetJoystickButtons")]
-        public Ptr<byte> GetJoystickButtons(int jid, Mut<int> count) =>
+        public Ptr<byte> GetJoystickButtons(int jid, Ref<int> count) =>
             T.GetJoystickButtons(jid, count);
 
         [return: NativeTypeName("const char *")]
@@ -1990,17 +1990,17 @@ public unsafe partial class Glfw : IGlfw, IGlfw.Static<Glfw>
 
         [return: NativeTypeName("const unsigned char *")]
         [NativeFunction("glfw", EntryPoint = "glfwGetJoystickHats")]
-        public Ptr<byte> GetJoystickHats(int jid, Mut<int> count) => T.GetJoystickHats(jid, count);
+        public Ptr<byte> GetJoystickHats(int jid, Ref<int> count) => T.GetJoystickHats(jid, count);
 
         [return: NativeTypeName("const char *")]
         [NativeFunction("glfw", EntryPoint = "glfwGetJoystickName")]
         public Ptr<sbyte> GetJoystickName(int jid) => T.GetJoystickName(jid);
 
         [NativeFunction("glfw", EntryPoint = "glfwGetJoystickUserPointer")]
-        public Mut GetJoystickUserPointer(int jid) => T.GetJoystickUserPointer(jid);
+        public Ptr GetJoystickUserPointer(int jid) => T.GetJoystickUserPointer(jid);
 
         [NativeFunction("glfw", EntryPoint = "glfwGetKey")]
-        public int GetKey(Mut<Window> window, int key) => T.GetKey(window, key);
+        public int GetKey(Ref<Window> window, int key) => T.GetKey(window, key);
 
         [return: NativeTypeName("const char *")]
         [NativeFunction("glfw", EntryPoint = "glfwGetKeyName")]
@@ -2011,61 +2011,61 @@ public unsafe partial class Glfw : IGlfw, IGlfw.Static<Glfw>
 
         [NativeFunction("glfw", EntryPoint = "glfwGetMonitorContentScale")]
         public void GetMonitorContentScale(
-            Mut<Monitor> monitor,
-            Mut<float> xscale,
-            Mut<float> yscale
+            Ref<Monitor> monitor,
+            Ref<float> xscale,
+            Ref<float> yscale
         ) => T.GetMonitorContentScale(monitor, xscale, yscale);
 
         [return: NativeTypeName("const char *")]
         [NativeFunction("glfw", EntryPoint = "glfwGetMonitorName")]
-        public Ptr<sbyte> GetMonitorName(Mut<Monitor> monitor) => T.GetMonitorName(monitor);
+        public Ptr<sbyte> GetMonitorName(Ref<Monitor> monitor) => T.GetMonitorName(monitor);
 
         [NativeFunction("glfw", EntryPoint = "glfwGetMonitorPhysicalSize")]
         public void GetMonitorPhysicalSize(
-            Mut<Monitor> monitor,
-            Mut<int> widthMM,
-            Mut<int> heightMM
+            Ref<Monitor> monitor,
+            Ref<int> widthMM,
+            Ref<int> heightMM
         ) => T.GetMonitorPhysicalSize(monitor, widthMM, heightMM);
 
         [NativeFunction("glfw", EntryPoint = "glfwGetMonitorPos")]
-        public void GetMonitorPos(Mut<Monitor> monitor, Mut<int> xpos, Mut<int> ypos) =>
+        public void GetMonitorPos(Ref<Monitor> monitor, Ref<int> xpos, Ref<int> ypos) =>
             T.GetMonitorPos(monitor, xpos, ypos);
 
         [NativeFunction("glfw", EntryPoint = "glfwGetMonitors")]
-        public MutMut<Monitor> GetMonitors(Mut<int> count) => T.GetMonitors(count);
+        public Ptr2D<Monitor> GetMonitors(Ref<int> count) => T.GetMonitors(count);
 
         [NativeFunction("glfw", EntryPoint = "glfwGetMonitorUserPointer")]
-        public Mut GetMonitorUserPointer(Mut<Monitor> monitor) => T.GetMonitorUserPointer(monitor);
+        public Ptr GetMonitorUserPointer(Ref<Monitor> monitor) => T.GetMonitorUserPointer(monitor);
 
         [NativeFunction("glfw", EntryPoint = "glfwGetMonitorWorkarea")]
         public void GetMonitorWorkarea(
-            Mut<Monitor> monitor,
-            Mut<int> xpos,
-            Mut<int> ypos,
-            Mut<int> width,
-            Mut<int> height
+            Ref<Monitor> monitor,
+            Ref<int> xpos,
+            Ref<int> ypos,
+            Ref<int> width,
+            Ref<int> height
         ) => T.GetMonitorWorkarea(monitor, xpos, ypos, width, height);
 
         [NativeFunction("glfw", EntryPoint = "glfwGetMouseButton")]
-        public int GetMouseButton(Mut<Window> window, int button) =>
+        public int GetMouseButton(Ref<Window> window, int button) =>
             T.GetMouseButton(window, button);
 
         [NativeFunction("glfw", EntryPoint = "glfwGetPlatform")]
         public int GetPlatform() => T.GetPlatform();
 
         [NativeFunction("glfw", EntryPoint = "glfwGetPrimaryMonitor")]
-        public Mut<Monitor> GetPrimaryMonitor() => T.GetPrimaryMonitor();
+        public Ptr<Monitor> GetPrimaryMonitor() => T.GetPrimaryMonitor();
 
         [return: NativeTypeName("GLFWglproc")]
         [NativeFunction("glfw", EntryPoint = "glfwGetProcAddress")]
         public delegate* unmanaged<void> GetProcAddress(
-            [NativeTypeName("const char *")] Ptr<sbyte> procname
+            [NativeTypeName("const char *")] Ref<sbyte> procname
         ) => T.GetProcAddress(procname);
 
         [return: NativeTypeName("const char **")]
         [NativeFunction("glfw", EntryPoint = "glfwGetRequiredInstanceExtensions")]
-        public PtrPtr<sbyte> GetRequiredInstanceExtensions(
-            [NativeTypeName("uint32_t *")] Mut<uint> count
+        public Ptr2D<sbyte> GetRequiredInstanceExtensions(
+            [NativeTypeName("uint32_t *")] Ref<uint> count
         ) => T.GetRequiredInstanceExtensions(count);
 
         [NativeFunction("glfw", EntryPoint = "glfwGetTime")]
@@ -2080,7 +2080,7 @@ public unsafe partial class Glfw : IGlfw, IGlfw.Static<Glfw>
         public ulong GetTimerValue() => T.GetTimerValue();
 
         [NativeFunction("glfw", EntryPoint = "glfwGetVersion")]
-        public void GetVersion(Mut<int> major, Mut<int> minor, Mut<int> rev) =>
+        public void GetVersion(Ref<int> major, Ref<int> minor, Ref<int> rev) =>
             T.GetVersion(major, minor, rev);
 
         [return: NativeTypeName("const char *")]
@@ -2089,62 +2089,62 @@ public unsafe partial class Glfw : IGlfw, IGlfw.Static<Glfw>
 
         [return: NativeTypeName("const GLFWvidmode *")]
         [NativeFunction("glfw", EntryPoint = "glfwGetVideoMode")]
-        public Ptr<Vidmode> GetVideoMode(Mut<Monitor> monitor) => T.GetVideoMode(monitor);
+        public Ptr<Vidmode> GetVideoMode(Ref<Monitor> monitor) => T.GetVideoMode(monitor);
 
         [return: NativeTypeName("const GLFWvidmode *")]
         [NativeFunction("glfw", EntryPoint = "glfwGetVideoModes")]
-        public Ptr<Vidmode> GetVideoModes(Mut<Monitor> monitor, Mut<int> count) =>
+        public Ptr<Vidmode> GetVideoModes(Ref<Monitor> monitor, Ref<int> count) =>
             T.GetVideoModes(monitor, count);
 
         [NativeFunction("glfw", EntryPoint = "glfwGetWindowAttrib")]
-        public int GetWindowAttrib(Mut<Window> window, int attrib) =>
+        public int GetWindowAttrib(Ref<Window> window, int attrib) =>
             T.GetWindowAttrib(window, attrib);
 
         [NativeFunction("glfw", EntryPoint = "glfwGetWindowContentScale")]
         public void GetWindowContentScale(
-            Mut<Window> window,
-            Mut<float> xscale,
-            Mut<float> yscale
+            Ref<Window> window,
+            Ref<float> xscale,
+            Ref<float> yscale
         ) => T.GetWindowContentScale(window, xscale, yscale);
 
         [NativeFunction("glfw", EntryPoint = "glfwGetWindowFrameSize")]
         public void GetWindowFrameSize(
-            Mut<Window> window,
-            Mut<int> left,
-            Mut<int> top,
-            Mut<int> right,
-            Mut<int> bottom
+            Ref<Window> window,
+            Ref<int> left,
+            Ref<int> top,
+            Ref<int> right,
+            Ref<int> bottom
         ) => T.GetWindowFrameSize(window, left, top, right, bottom);
 
         [NativeFunction("glfw", EntryPoint = "glfwGetWindowMonitor")]
-        public Mut<Monitor> GetWindowMonitor(Mut<Window> window) => T.GetWindowMonitor(window);
+        public Ptr<Monitor> GetWindowMonitor(Ref<Window> window) => T.GetWindowMonitor(window);
 
         [NativeFunction("glfw", EntryPoint = "glfwGetWindowOpacity")]
-        public float GetWindowOpacity(Mut<Window> window) => T.GetWindowOpacity(window);
+        public float GetWindowOpacity(Ref<Window> window) => T.GetWindowOpacity(window);
 
         [NativeFunction("glfw", EntryPoint = "glfwGetWindowPos")]
-        public void GetWindowPos(Mut<Window> window, Mut<int> xpos, Mut<int> ypos) =>
+        public void GetWindowPos(Ref<Window> window, Ref<int> xpos, Ref<int> ypos) =>
             T.GetWindowPos(window, xpos, ypos);
 
         [NativeFunction("glfw", EntryPoint = "glfwGetWindowSize")]
-        public void GetWindowSize(Mut<Window> window, Mut<int> width, Mut<int> height) =>
+        public void GetWindowSize(Ref<Window> window, Ref<int> width, Ref<int> height) =>
             T.GetWindowSize(window, width, height);
 
         [NativeFunction("glfw", EntryPoint = "glfwGetWindowUserPointer")]
-        public Mut GetWindowUserPointer(Mut<Window> window) => T.GetWindowUserPointer(window);
+        public Ptr GetWindowUserPointer(Ref<Window> window) => T.GetWindowUserPointer(window);
 
         [NativeFunction("glfw", EntryPoint = "glfwHideWindow")]
-        public void HideWindow(Mut<Window> window) => T.HideWindow(window);
+        public void HideWindow(Ref<Window> window) => T.HideWindow(window);
 
         [NativeFunction("glfw", EntryPoint = "glfwIconifyWindow")]
-        public void IconifyWindow(Mut<Window> window) => T.IconifyWindow(window);
+        public void IconifyWindow(Ref<Window> window) => T.IconifyWindow(window);
 
         [NativeFunction("glfw", EntryPoint = "glfwInit")]
         public int Init() => T.Init();
 
         [NativeFunction("glfw", EntryPoint = "glfwInitAllocator")]
         public void InitAllocator(
-            [NativeTypeName("const GLFWallocator *")] Ptr<Allocator> allocator
+            [NativeTypeName("const GLFWallocator *")] Ref<Allocator> allocator
         ) => T.InitAllocator(allocator);
 
         [NativeFunction("glfw", EntryPoint = "glfwInitHint")]
@@ -2157,10 +2157,10 @@ public unsafe partial class Glfw : IGlfw, IGlfw.Static<Glfw>
         public int JoystickPresent(int jid) => T.JoystickPresent(jid);
 
         [NativeFunction("glfw", EntryPoint = "glfwMakeContextCurrent")]
-        public void MakeContextCurrent(Mut<Window> window) => T.MakeContextCurrent(window);
+        public void MakeContextCurrent(Ref<Window> window) => T.MakeContextCurrent(window);
 
         [NativeFunction("glfw", EntryPoint = "glfwMaximizeWindow")]
-        public void MaximizeWindow(Mut<Window> window) => T.MaximizeWindow(window);
+        public void MaximizeWindow(Ref<Window> window) => T.MaximizeWindow(window);
 
         [NativeFunction("glfw", EntryPoint = "glfwPlatformSupported")]
         public int PlatformSupported(int platform) => T.PlatformSupported(platform);
@@ -2175,51 +2175,51 @@ public unsafe partial class Glfw : IGlfw, IGlfw.Static<Glfw>
         public int RawMouseMotionSupported() => T.RawMouseMotionSupported();
 
         [NativeFunction("glfw", EntryPoint = "glfwRequestWindowAttention")]
-        public void RequestWindowAttention(Mut<Window> window) => T.RequestWindowAttention(window);
+        public void RequestWindowAttention(Ref<Window> window) => T.RequestWindowAttention(window);
 
         [NativeFunction("glfw", EntryPoint = "glfwRestoreWindow")]
-        public void RestoreWindow(Mut<Window> window) => T.RestoreWindow(window);
+        public void RestoreWindow(Ref<Window> window) => T.RestoreWindow(window);
 
         [return: NativeTypeName("GLFWcharfun")]
         [NativeFunction("glfw", EntryPoint = "glfwSetCharCallback")]
         public delegate* unmanaged<Window*, uint, void> SetCharCallback(
-            Mut<Window> window,
+            Ref<Window> window,
             [NativeTypeName("GLFWcharfun")] delegate* unmanaged<Window*, uint, void> callback
         ) => T.SetCharCallback(window, callback);
 
         [return: NativeTypeName("GLFWcharmodsfun")]
         [NativeFunction("glfw", EntryPoint = "glfwSetCharModsCallback")]
         public delegate* unmanaged<Window*, uint, int, void> SetCharModsCallback(
-            Mut<Window> window,
+            Ref<Window> window,
             [NativeTypeName("GLFWcharmodsfun")]
                 delegate* unmanaged<Window*, uint, int, void> callback
         ) => T.SetCharModsCallback(window, callback);
 
         [NativeFunction("glfw", EntryPoint = "glfwSetClipboardString")]
         public void SetClipboardString(
-            Mut<Window> window,
-            [NativeTypeName("const char *")] Ptr<sbyte> @string
+            Ref<Window> window,
+            [NativeTypeName("const char *")] Ref<sbyte> @string
         ) => T.SetClipboardString(window, @string);
 
         [NativeFunction("glfw", EntryPoint = "glfwSetCursor")]
-        public void SetCursor(Mut<Window> window, Mut<Cursor> cursor) =>
+        public void SetCursor(Ref<Window> window, Ref<Cursor> cursor) =>
             T.SetCursor(window, cursor);
 
         [return: NativeTypeName("GLFWcursorenterfun")]
         [NativeFunction("glfw", EntryPoint = "glfwSetCursorEnterCallback")]
         public delegate* unmanaged<Window*, int, void> SetCursorEnterCallback(
-            Mut<Window> window,
+            Ref<Window> window,
             [NativeTypeName("GLFWcursorenterfun")] delegate* unmanaged<Window*, int, void> callback
         ) => T.SetCursorEnterCallback(window, callback);
 
         [NativeFunction("glfw", EntryPoint = "glfwSetCursorPos")]
-        public void SetCursorPos(Mut<Window> window, double xpos, double ypos) =>
+        public void SetCursorPos(Ref<Window> window, double xpos, double ypos) =>
             T.SetCursorPos(window, xpos, ypos);
 
         [return: NativeTypeName("GLFWcursorposfun")]
         [NativeFunction("glfw", EntryPoint = "glfwSetCursorPosCallback")]
         public delegate* unmanaged<Window*, double, double, void> SetCursorPosCallback(
-            Mut<Window> window,
+            Ref<Window> window,
             [NativeTypeName("GLFWcursorposfun")]
                 delegate* unmanaged<Window*, double, double, void> callback
         ) => T.SetCursorPosCallback(window, callback);
@@ -2227,7 +2227,7 @@ public unsafe partial class Glfw : IGlfw, IGlfw.Static<Glfw>
         [return: NativeTypeName("GLFWdropfun")]
         [NativeFunction("glfw", EntryPoint = "glfwSetDropCallback")]
         public delegate* unmanaged<Window*, int, sbyte**, void> SetDropCallback(
-            Mut<Window> window,
+            Ref<Window> window,
             [NativeTypeName("GLFWdropfun")]
                 delegate* unmanaged<Window*, int, sbyte**, void> callback
         ) => T.SetDropCallback(window, callback);
@@ -2241,22 +2241,22 @@ public unsafe partial class Glfw : IGlfw, IGlfw.Static<Glfw>
         [return: NativeTypeName("GLFWframebuffersizefun")]
         [NativeFunction("glfw", EntryPoint = "glfwSetFramebufferSizeCallback")]
         public delegate* unmanaged<Window*, int, int, void> SetFramebufferSizeCallback(
-            Mut<Window> window,
+            Ref<Window> window,
             [NativeTypeName("GLFWframebuffersizefun")]
                 delegate* unmanaged<Window*, int, int, void> callback
         ) => T.SetFramebufferSizeCallback(window, callback);
 
         [NativeFunction("glfw", EntryPoint = "glfwSetGamma")]
-        public void SetGamma(Mut<Monitor> monitor, float gamma) => T.SetGamma(monitor, gamma);
+        public void SetGamma(Ref<Monitor> monitor, float gamma) => T.SetGamma(monitor, gamma);
 
         [NativeFunction("glfw", EntryPoint = "glfwSetGammaRamp")]
         public void SetGammaRamp(
-            Mut<Monitor> monitor,
-            [NativeTypeName("const GLFWgammaramp *")] Ptr<Gammaramp> ramp
+            Ref<Monitor> monitor,
+            [NativeTypeName("const GLFWgammaramp *")] Ref<Gammaramp> ramp
         ) => T.SetGammaRamp(monitor, ramp);
 
         [NativeFunction("glfw", EntryPoint = "glfwSetInputMode")]
-        public void SetInputMode(Mut<Window> window, int mode, int value) =>
+        public void SetInputMode(Ref<Window> window, int mode, int value) =>
             T.SetInputMode(window, mode, value);
 
         [return: NativeTypeName("GLFWjoystickfun")]
@@ -2266,13 +2266,13 @@ public unsafe partial class Glfw : IGlfw, IGlfw.Static<Glfw>
         ) => T.SetJoystickCallback(callback);
 
         [NativeFunction("glfw", EntryPoint = "glfwSetJoystickUserPointer")]
-        public void SetJoystickUserPointer(int jid, Mut pointer) =>
+        public void SetJoystickUserPointer(int jid, Ref pointer) =>
             T.SetJoystickUserPointer(jid, pointer);
 
         [return: NativeTypeName("GLFWkeyfun")]
         [NativeFunction("glfw", EntryPoint = "glfwSetKeyCallback")]
         public delegate* unmanaged<Window*, int, int, int, int, void> SetKeyCallback(
-            Mut<Window> window,
+            Ref<Window> window,
             [NativeTypeName("GLFWkeyfun")]
                 delegate* unmanaged<Window*, int, int, int, int, void> callback
         ) => T.SetKeyCallback(window, callback);
@@ -2284,13 +2284,13 @@ public unsafe partial class Glfw : IGlfw, IGlfw.Static<Glfw>
         ) => T.SetMonitorCallback(callback);
 
         [NativeFunction("glfw", EntryPoint = "glfwSetMonitorUserPointer")]
-        public void SetMonitorUserPointer(Mut<Monitor> monitor, Mut pointer) =>
+        public void SetMonitorUserPointer(Ref<Monitor> monitor, Ref pointer) =>
             T.SetMonitorUserPointer(monitor, pointer);
 
         [return: NativeTypeName("GLFWmousebuttonfun")]
         [NativeFunction("glfw", EntryPoint = "glfwSetMouseButtonCallback")]
         public delegate* unmanaged<Window*, int, int, int, void> SetMouseButtonCallback(
-            Mut<Window> window,
+            Ref<Window> window,
             [NativeTypeName("GLFWmousebuttonfun")]
                 delegate* unmanaged<Window*, int, int, int, void> callback
         ) => T.SetMouseButtonCallback(window, callback);
@@ -2298,7 +2298,7 @@ public unsafe partial class Glfw : IGlfw, IGlfw.Static<Glfw>
         [return: NativeTypeName("GLFWscrollfun")]
         [NativeFunction("glfw", EntryPoint = "glfwSetScrollCallback")]
         public delegate* unmanaged<Window*, double, double, void> SetScrollCallback(
-            Mut<Window> window,
+            Ref<Window> window,
             [NativeTypeName("GLFWscrollfun")]
                 delegate* unmanaged<Window*, double, double, void> callback
         ) => T.SetScrollCallback(window, callback);
@@ -2307,24 +2307,24 @@ public unsafe partial class Glfw : IGlfw, IGlfw.Static<Glfw>
         public void SetTime(double time) => T.SetTime(time);
 
         [NativeFunction("glfw", EntryPoint = "glfwSetWindowAspectRatio")]
-        public void SetWindowAspectRatio(Mut<Window> window, int numer, int denom) =>
+        public void SetWindowAspectRatio(Ref<Window> window, int numer, int denom) =>
             T.SetWindowAspectRatio(window, numer, denom);
 
         [NativeFunction("glfw", EntryPoint = "glfwSetWindowAttrib")]
-        public void SetWindowAttrib(Mut<Window> window, int attrib, int value) =>
+        public void SetWindowAttrib(Ref<Window> window, int attrib, int value) =>
             T.SetWindowAttrib(window, attrib, value);
 
         [return: NativeTypeName("GLFWwindowclosefun")]
         [NativeFunction("glfw", EntryPoint = "glfwSetWindowCloseCallback")]
         public delegate* unmanaged<Window*, void> SetWindowCloseCallback(
-            Mut<Window> window,
+            Ref<Window> window,
             [NativeTypeName("GLFWwindowclosefun")] delegate* unmanaged<Window*, void> callback
         ) => T.SetWindowCloseCallback(window, callback);
 
         [return: NativeTypeName("GLFWwindowcontentscalefun")]
         [NativeFunction("glfw", EntryPoint = "glfwSetWindowContentScaleCallback")]
         public delegate* unmanaged<Window*, float, float, void> SetWindowContentScaleCallback(
-            Mut<Window> window,
+            Ref<Window> window,
             [NativeTypeName("GLFWwindowcontentscalefun")]
                 delegate* unmanaged<Window*, float, float, void> callback
         ) => T.SetWindowContentScaleCallback(window, callback);
@@ -2332,21 +2332,21 @@ public unsafe partial class Glfw : IGlfw, IGlfw.Static<Glfw>
         [return: NativeTypeName("GLFWwindowfocusfun")]
         [NativeFunction("glfw", EntryPoint = "glfwSetWindowFocusCallback")]
         public delegate* unmanaged<Window*, int, void> SetWindowFocusCallback(
-            Mut<Window> window,
+            Ref<Window> window,
             [NativeTypeName("GLFWwindowfocusfun")] delegate* unmanaged<Window*, int, void> callback
         ) => T.SetWindowFocusCallback(window, callback);
 
         [NativeFunction("glfw", EntryPoint = "glfwSetWindowIcon")]
         public void SetWindowIcon(
-            Mut<Window> window,
+            Ref<Window> window,
             int count,
-            [NativeTypeName("const GLFWimage *")] Ptr<Image> images
+            [NativeTypeName("const GLFWimage *")] Ref<Image> images
         ) => T.SetWindowIcon(window, count, images);
 
         [return: NativeTypeName("GLFWwindowiconifyfun")]
         [NativeFunction("glfw", EntryPoint = "glfwSetWindowIconifyCallback")]
         public delegate* unmanaged<Window*, int, void> SetWindowIconifyCallback(
-            Mut<Window> window,
+            Ref<Window> window,
             [NativeTypeName("GLFWwindowiconifyfun")]
                 delegate* unmanaged<Window*, int, void> callback
         ) => T.SetWindowIconifyCallback(window, callback);
@@ -2354,15 +2354,15 @@ public unsafe partial class Glfw : IGlfw, IGlfw.Static<Glfw>
         [return: NativeTypeName("GLFWwindowmaximizefun")]
         [NativeFunction("glfw", EntryPoint = "glfwSetWindowMaximizeCallback")]
         public delegate* unmanaged<Window*, int, void> SetWindowMaximizeCallback(
-            Mut<Window> window,
+            Ref<Window> window,
             [NativeTypeName("GLFWwindowmaximizefun")]
                 delegate* unmanaged<Window*, int, void> callback
         ) => T.SetWindowMaximizeCallback(window, callback);
 
         [NativeFunction("glfw", EntryPoint = "glfwSetWindowMonitor")]
         public void SetWindowMonitor(
-            Mut<Window> window,
-            Mut<Monitor> monitor,
+            Ref<Window> window,
+            Ref<Monitor> monitor,
             int xpos,
             int ypos,
             int width,
@@ -2371,17 +2371,17 @@ public unsafe partial class Glfw : IGlfw, IGlfw.Static<Glfw>
         ) => T.SetWindowMonitor(window, monitor, xpos, ypos, width, height, refreshRate);
 
         [NativeFunction("glfw", EntryPoint = "glfwSetWindowOpacity")]
-        public void SetWindowOpacity(Mut<Window> window, float opacity) =>
+        public void SetWindowOpacity(Ref<Window> window, float opacity) =>
             T.SetWindowOpacity(window, opacity);
 
         [NativeFunction("glfw", EntryPoint = "glfwSetWindowPos")]
-        public void SetWindowPos(Mut<Window> window, int xpos, int ypos) =>
+        public void SetWindowPos(Ref<Window> window, int xpos, int ypos) =>
             T.SetWindowPos(window, xpos, ypos);
 
         [return: NativeTypeName("GLFWwindowposfun")]
         [NativeFunction("glfw", EntryPoint = "glfwSetWindowPosCallback")]
         public delegate* unmanaged<Window*, int, int, void> SetWindowPosCallback(
-            Mut<Window> window,
+            Ref<Window> window,
             [NativeTypeName("GLFWwindowposfun")]
                 delegate* unmanaged<Window*, int, int, void> callback
         ) => T.SetWindowPosCallback(window, callback);
@@ -2389,29 +2389,29 @@ public unsafe partial class Glfw : IGlfw, IGlfw.Static<Glfw>
         [return: NativeTypeName("GLFWwindowrefreshfun")]
         [NativeFunction("glfw", EntryPoint = "glfwSetWindowRefreshCallback")]
         public delegate* unmanaged<Window*, void> SetWindowRefreshCallback(
-            Mut<Window> window,
+            Ref<Window> window,
             [NativeTypeName("GLFWwindowrefreshfun")] delegate* unmanaged<Window*, void> callback
         ) => T.SetWindowRefreshCallback(window, callback);
 
         [NativeFunction("glfw", EntryPoint = "glfwSetWindowShouldClose")]
-        public void SetWindowShouldClose(Mut<Window> window, int value) =>
+        public void SetWindowShouldClose(Ref<Window> window, int value) =>
             T.SetWindowShouldClose(window, value);
 
         [NativeFunction("glfw", EntryPoint = "glfwSetWindowSize")]
-        public void SetWindowSize(Mut<Window> window, int width, int height) =>
+        public void SetWindowSize(Ref<Window> window, int width, int height) =>
             T.SetWindowSize(window, width, height);
 
         [return: NativeTypeName("GLFWwindowsizefun")]
         [NativeFunction("glfw", EntryPoint = "glfwSetWindowSizeCallback")]
         public delegate* unmanaged<Window*, int, int, void> SetWindowSizeCallback(
-            Mut<Window> window,
+            Ref<Window> window,
             [NativeTypeName("GLFWwindowsizefun")]
                 delegate* unmanaged<Window*, int, int, void> callback
         ) => T.SetWindowSizeCallback(window, callback);
 
         [NativeFunction("glfw", EntryPoint = "glfwSetWindowSizeLimits")]
         public void SetWindowSizeLimits(
-            Mut<Window> window,
+            Ref<Window> window,
             int minwidth,
             int minheight,
             int maxwidth,
@@ -2420,19 +2420,19 @@ public unsafe partial class Glfw : IGlfw, IGlfw.Static<Glfw>
 
         [NativeFunction("glfw", EntryPoint = "glfwSetWindowTitle")]
         public void SetWindowTitle(
-            Mut<Window> window,
-            [NativeTypeName("const char *")] Ptr<sbyte> title
+            Ref<Window> window,
+            [NativeTypeName("const char *")] Ref<sbyte> title
         ) => T.SetWindowTitle(window, title);
 
         [NativeFunction("glfw", EntryPoint = "glfwSetWindowUserPointer")]
-        public void SetWindowUserPointer(Mut<Window> window, Mut pointer) =>
+        public void SetWindowUserPointer(Ref<Window> window, Ref pointer) =>
             T.SetWindowUserPointer(window, pointer);
 
         [NativeFunction("glfw", EntryPoint = "glfwShowWindow")]
-        public void ShowWindow(Mut<Window> window) => T.ShowWindow(window);
+        public void ShowWindow(Ref<Window> window) => T.ShowWindow(window);
 
         [NativeFunction("glfw", EntryPoint = "glfwSwapBuffers")]
-        public void SwapBuffers(Mut<Window> window) => T.SwapBuffers(window);
+        public void SwapBuffers(Ref<Window> window) => T.SwapBuffers(window);
 
         [NativeFunction("glfw", EntryPoint = "glfwSwapInterval")]
         public void SwapInterval(int interval) => T.SwapInterval(interval);
@@ -2441,7 +2441,7 @@ public unsafe partial class Glfw : IGlfw, IGlfw.Static<Glfw>
         public void Terminate() => T.Terminate();
 
         [NativeFunction("glfw", EntryPoint = "glfwUpdateGamepadMappings")]
-        public int UpdateGamepadMappings([NativeTypeName("const char *")] Ptr<sbyte> @string) =>
+        public int UpdateGamepadMappings([NativeTypeName("const char *")] Ref<sbyte> @string) =>
             T.UpdateGamepadMappings(@string);
 
         [NativeFunction("glfw", EntryPoint = "glfwVulkanSupported")]
@@ -2457,12 +2457,621 @@ public unsafe partial class Glfw : IGlfw, IGlfw.Static<Glfw>
         public void WindowHint(int hint, int value) => T.WindowHint(hint, value);
 
         [NativeFunction("glfw", EntryPoint = "glfwWindowHintString")]
-        public void WindowHintString(int hint, [NativeTypeName("const char *")] Ptr<sbyte> value) =>
+        public void WindowHintString(int hint, [NativeTypeName("const char *")] Ref<sbyte> value) =>
             T.WindowHintString(hint, value);
 
         [NativeFunction("glfw", EntryPoint = "glfwWindowShouldClose")]
-        public int WindowShouldClose(Mut<Window> window) => T.WindowShouldClose(window);
+        public int WindowShouldClose(Ref<Window> window) => T.WindowShouldClose(window);
     }
+
+    public partial class ThisThread
+    {
+        [NativeFunction("glfw", EntryPoint = "glfwCreateCursor")]
+        public static Ptr<Cursor> CreateCursor(
+            [NativeTypeName("const GLFWimage *")] Ref<Image> image,
+            int xhot,
+            int yhot
+        ) => Underlying.Value!.CreateCursor(image, xhot, yhot);
+
+        [NativeFunction("glfw", EntryPoint = "glfwCreateStandardCursor")]
+        public static Ptr<Cursor> CreateStandardCursor(int shape) =>
+            Underlying.Value!.CreateStandardCursor(shape);
+
+        [NativeFunction("glfw", EntryPoint = "glfwCreateWindow")]
+        public static Ptr<Window> CreateWindow(
+            int width,
+            int height,
+            [NativeTypeName("const char *")] Ref<sbyte> title,
+            Ref<Monitor> monitor,
+            Ref<Window> share
+        ) => Underlying.Value!.CreateWindow(width, height, title, monitor, share);
+
+        [NativeFunction("glfw", EntryPoint = "glfwDefaultWindowHints")]
+        public static void DefaultWindowHints() => Underlying.Value!.DefaultWindowHints();
+
+        [NativeFunction("glfw", EntryPoint = "glfwDestroyCursor")]
+        public static void DestroyCursor(Ref<Cursor> cursor) =>
+            Underlying.Value!.DestroyCursor(cursor);
+
+        [NativeFunction("glfw", EntryPoint = "glfwDestroyWindow")]
+        public static void DestroyWindow(Ref<Window> window) =>
+            Underlying.Value!.DestroyWindow(window);
+
+        [NativeFunction("glfw", EntryPoint = "glfwExtensionSupported")]
+        public static int ExtensionSupported(
+            [NativeTypeName("const char *")] Ref<sbyte> extension
+        ) => Underlying.Value!.ExtensionSupported(extension);
+
+        [NativeFunction("glfw", EntryPoint = "glfwFocusWindow")]
+        public static void FocusWindow(Ref<Window> window) => Underlying.Value!.FocusWindow(window);
+
+        [return: NativeTypeName("const char *")]
+        [NativeFunction("glfw", EntryPoint = "glfwGetClipboardString")]
+        public static Ptr<sbyte> GetClipboardString(Ref<Window> window) =>
+            Underlying.Value!.GetClipboardString(window);
+
+        [NativeFunction("glfw", EntryPoint = "glfwGetCurrentContext")]
+        public static Ptr<Window> GetCurrentContext() => Underlying.Value!.GetCurrentContext();
+
+        [NativeFunction("glfw", EntryPoint = "glfwGetCursorPos")]
+        public static void GetCursorPos(Ref<Window> window, Ref<double> xpos, Ref<double> ypos) =>
+            Underlying.Value!.GetCursorPos(window, xpos, ypos);
+
+        [NativeFunction("glfw", EntryPoint = "glfwGetError")]
+        public static int GetError([NativeTypeName("const char **")] Ref2D<sbyte> description) =>
+            Underlying.Value!.GetError(description);
+
+        [NativeFunction("glfw", EntryPoint = "glfwGetFramebufferSize")]
+        public static void GetFramebufferSize(
+            Ref<Window> window,
+            Ref<int> width,
+            Ref<int> height
+        ) => Underlying.Value!.GetFramebufferSize(window, width, height);
+
+        [return: NativeTypeName("const char *")]
+        [NativeFunction("glfw", EntryPoint = "glfwGetGamepadName")]
+        public static Ptr<sbyte> GetGamepadName(int jid) => Underlying.Value!.GetGamepadName(jid);
+
+        [NativeFunction("glfw", EntryPoint = "glfwGetGamepadState")]
+        public static int GetGamepadState(int jid, Ref<Gamepadstate> state) =>
+            Underlying.Value!.GetGamepadState(jid, state);
+
+        [return: NativeTypeName("const GLFWgammaramp *")]
+        [NativeFunction("glfw", EntryPoint = "glfwGetGammaRamp")]
+        public static Ptr<Gammaramp> GetGammaRamp(Ref<Monitor> monitor) =>
+            Underlying.Value!.GetGammaRamp(monitor);
+
+        [NativeFunction("glfw", EntryPoint = "glfwGetInputMode")]
+        public static int GetInputMode(Ref<Window> window, int mode) =>
+            Underlying.Value!.GetInputMode(window, mode);
+
+        [return: NativeTypeName("const float *")]
+        [NativeFunction("glfw", EntryPoint = "glfwGetJoystickAxes")]
+        public static Ptr<float> GetJoystickAxes(int jid, Ref<int> count) =>
+            Underlying.Value!.GetJoystickAxes(jid, count);
+
+        [return: NativeTypeName("const unsigned char *")]
+        [NativeFunction("glfw", EntryPoint = "glfwGetJoystickButtons")]
+        public static Ptr<byte> GetJoystickButtons(int jid, Ref<int> count) =>
+            Underlying.Value!.GetJoystickButtons(jid, count);
+
+        [return: NativeTypeName("const char *")]
+        [NativeFunction("glfw", EntryPoint = "glfwGetJoystickGUID")]
+        public static Ptr<sbyte> GetJoystickGuid(int jid) => Underlying.Value!.GetJoystickGuid(jid);
+
+        [return: NativeTypeName("const unsigned char *")]
+        [NativeFunction("glfw", EntryPoint = "glfwGetJoystickHats")]
+        public static Ptr<byte> GetJoystickHats(int jid, Ref<int> count) =>
+            Underlying.Value!.GetJoystickHats(jid, count);
+
+        [return: NativeTypeName("const char *")]
+        [NativeFunction("glfw", EntryPoint = "glfwGetJoystickName")]
+        public static Ptr<sbyte> GetJoystickName(int jid) => Underlying.Value!.GetJoystickName(jid);
+
+        [NativeFunction("glfw", EntryPoint = "glfwGetJoystickUserPointer")]
+        public static Ptr GetJoystickUserPointer(int jid) =>
+            Underlying.Value!.GetJoystickUserPointer(jid);
+
+        [NativeFunction("glfw", EntryPoint = "glfwGetKey")]
+        public static int GetKey(Ref<Window> window, int key) =>
+            Underlying.Value!.GetKey(window, key);
+
+        [return: NativeTypeName("const char *")]
+        [NativeFunction("glfw", EntryPoint = "glfwGetKeyName")]
+        public static Ptr<sbyte> GetKeyName(int key, int scancode) =>
+            Underlying.Value!.GetKeyName(key, scancode);
+
+        [NativeFunction("glfw", EntryPoint = "glfwGetKeyScancode")]
+        public static int GetKeyScancode(int key) => Underlying.Value!.GetKeyScancode(key);
+
+        [NativeFunction("glfw", EntryPoint = "glfwGetMonitorContentScale")]
+        public static void GetMonitorContentScale(
+            Ref<Monitor> monitor,
+            Ref<float> xscale,
+            Ref<float> yscale
+        ) => Underlying.Value!.GetMonitorContentScale(monitor, xscale, yscale);
+
+        [return: NativeTypeName("const char *")]
+        [NativeFunction("glfw", EntryPoint = "glfwGetMonitorName")]
+        public static Ptr<sbyte> GetMonitorName(Ref<Monitor> monitor) =>
+            Underlying.Value!.GetMonitorName(monitor);
+
+        [NativeFunction("glfw", EntryPoint = "glfwGetMonitorPhysicalSize")]
+        public static void GetMonitorPhysicalSize(
+            Ref<Monitor> monitor,
+            Ref<int> widthMM,
+            Ref<int> heightMM
+        ) => Underlying.Value!.GetMonitorPhysicalSize(monitor, widthMM, heightMM);
+
+        [NativeFunction("glfw", EntryPoint = "glfwGetMonitorPos")]
+        public static void GetMonitorPos(Ref<Monitor> monitor, Ref<int> xpos, Ref<int> ypos) =>
+            Underlying.Value!.GetMonitorPos(monitor, xpos, ypos);
+
+        [NativeFunction("glfw", EntryPoint = "glfwGetMonitors")]
+        public static Ptr2D<Monitor> GetMonitors(Ref<int> count) =>
+            Underlying.Value!.GetMonitors(count);
+
+        [NativeFunction("glfw", EntryPoint = "glfwGetMonitorUserPointer")]
+        public static Ptr GetMonitorUserPointer(Ref<Monitor> monitor) =>
+            Underlying.Value!.GetMonitorUserPointer(monitor);
+
+        [NativeFunction("glfw", EntryPoint = "glfwGetMonitorWorkarea")]
+        public static void GetMonitorWorkarea(
+            Ref<Monitor> monitor,
+            Ref<int> xpos,
+            Ref<int> ypos,
+            Ref<int> width,
+            Ref<int> height
+        ) => Underlying.Value!.GetMonitorWorkarea(monitor, xpos, ypos, width, height);
+
+        [NativeFunction("glfw", EntryPoint = "glfwGetMouseButton")]
+        public static int GetMouseButton(Ref<Window> window, int button) =>
+            Underlying.Value!.GetMouseButton(window, button);
+
+        [NativeFunction("glfw", EntryPoint = "glfwGetPlatform")]
+        public static int GetPlatform() => Underlying.Value!.GetPlatform();
+
+        [NativeFunction("glfw", EntryPoint = "glfwGetPrimaryMonitor")]
+        public static Ptr<Monitor> GetPrimaryMonitor() => Underlying.Value!.GetPrimaryMonitor();
+
+        [return: NativeTypeName("GLFWglproc")]
+        [NativeFunction("glfw", EntryPoint = "glfwGetProcAddress")]
+        public static delegate* unmanaged<void> GetProcAddress(
+            [NativeTypeName("const char *")] Ref<sbyte> procname
+        ) => Underlying.Value!.GetProcAddress(procname);
+
+        [return: NativeTypeName("const char **")]
+        [NativeFunction("glfw", EntryPoint = "glfwGetRequiredInstanceExtensions")]
+        public static Ptr2D<sbyte> GetRequiredInstanceExtensions(
+            [NativeTypeName("uint32_t *")] Ref<uint> count
+        ) => Underlying.Value!.GetRequiredInstanceExtensions(count);
+
+        [NativeFunction("glfw", EntryPoint = "glfwGetTime")]
+        public static double GetTime() => Underlying.Value!.GetTime();
+
+        [return: NativeTypeName("uint64_t")]
+        [NativeFunction("glfw", EntryPoint = "glfwGetTimerFrequency")]
+        public static ulong GetTimerFrequency() => Underlying.Value!.GetTimerFrequency();
+
+        [return: NativeTypeName("uint64_t")]
+        [NativeFunction("glfw", EntryPoint = "glfwGetTimerValue")]
+        public static ulong GetTimerValue() => Underlying.Value!.GetTimerValue();
+
+        [NativeFunction("glfw", EntryPoint = "glfwGetVersion")]
+        public static void GetVersion(Ref<int> major, Ref<int> minor, Ref<int> rev) =>
+            Underlying.Value!.GetVersion(major, minor, rev);
+
+        [return: NativeTypeName("const char *")]
+        [NativeFunction("glfw", EntryPoint = "glfwGetVersionString")]
+        public static Ptr<sbyte> GetVersionString() => Underlying.Value!.GetVersionString();
+
+        [return: NativeTypeName("const GLFWvidmode *")]
+        [NativeFunction("glfw", EntryPoint = "glfwGetVideoMode")]
+        public static Ptr<Vidmode> GetVideoMode(Ref<Monitor> monitor) =>
+            Underlying.Value!.GetVideoMode(monitor);
+
+        [return: NativeTypeName("const GLFWvidmode *")]
+        [NativeFunction("glfw", EntryPoint = "glfwGetVideoModes")]
+        public static Ptr<Vidmode> GetVideoModes(Ref<Monitor> monitor, Ref<int> count) =>
+            Underlying.Value!.GetVideoModes(monitor, count);
+
+        [NativeFunction("glfw", EntryPoint = "glfwGetWindowAttrib")]
+        public static int GetWindowAttrib(Ref<Window> window, int attrib) =>
+            Underlying.Value!.GetWindowAttrib(window, attrib);
+
+        [NativeFunction("glfw", EntryPoint = "glfwGetWindowContentScale")]
+        public static void GetWindowContentScale(
+            Ref<Window> window,
+            Ref<float> xscale,
+            Ref<float> yscale
+        ) => Underlying.Value!.GetWindowContentScale(window, xscale, yscale);
+
+        [NativeFunction("glfw", EntryPoint = "glfwGetWindowFrameSize")]
+        public static void GetWindowFrameSize(
+            Ref<Window> window,
+            Ref<int> left,
+            Ref<int> top,
+            Ref<int> right,
+            Ref<int> bottom
+        ) => Underlying.Value!.GetWindowFrameSize(window, left, top, right, bottom);
+
+        [NativeFunction("glfw", EntryPoint = "glfwGetWindowMonitor")]
+        public static Ptr<Monitor> GetWindowMonitor(Ref<Window> window) =>
+            Underlying.Value!.GetWindowMonitor(window);
+
+        [NativeFunction("glfw", EntryPoint = "glfwGetWindowOpacity")]
+        public static float GetWindowOpacity(Ref<Window> window) =>
+            Underlying.Value!.GetWindowOpacity(window);
+
+        [NativeFunction("glfw", EntryPoint = "glfwGetWindowPos")]
+        public static void GetWindowPos(Ref<Window> window, Ref<int> xpos, Ref<int> ypos) =>
+            Underlying.Value!.GetWindowPos(window, xpos, ypos);
+
+        [NativeFunction("glfw", EntryPoint = "glfwGetWindowSize")]
+        public static void GetWindowSize(Ref<Window> window, Ref<int> width, Ref<int> height) =>
+            Underlying.Value!.GetWindowSize(window, width, height);
+
+        [NativeFunction("glfw", EntryPoint = "glfwGetWindowUserPointer")]
+        public static Ptr GetWindowUserPointer(Ref<Window> window) =>
+            Underlying.Value!.GetWindowUserPointer(window);
+
+        [NativeFunction("glfw", EntryPoint = "glfwHideWindow")]
+        public static void HideWindow(Ref<Window> window) => Underlying.Value!.HideWindow(window);
+
+        [NativeFunction("glfw", EntryPoint = "glfwIconifyWindow")]
+        public static void IconifyWindow(Ref<Window> window) =>
+            Underlying.Value!.IconifyWindow(window);
+
+        [NativeFunction("glfw", EntryPoint = "glfwInit")]
+        public static int Init() => Underlying.Value!.Init();
+
+        [NativeFunction("glfw", EntryPoint = "glfwInitAllocator")]
+        public static void InitAllocator(
+            [NativeTypeName("const GLFWallocator *")] Ref<Allocator> allocator
+        ) => Underlying.Value!.InitAllocator(allocator);
+
+        [NativeFunction("glfw", EntryPoint = "glfwInitHint")]
+        public static void InitHint(int hint, int value) => Underlying.Value!.InitHint(hint, value);
+
+        [NativeFunction("glfw", EntryPoint = "glfwJoystickIsGamepad")]
+        public static int JoystickIsGamepad(int jid) => Underlying.Value!.JoystickIsGamepad(jid);
+
+        [NativeFunction("glfw", EntryPoint = "glfwJoystickPresent")]
+        public static int JoystickPresent(int jid) => Underlying.Value!.JoystickPresent(jid);
+
+        [NativeFunction("glfw", EntryPoint = "glfwMakeContextCurrent")]
+        public static void MakeContextCurrent(Ref<Window> window) =>
+            Underlying.Value!.MakeContextCurrent(window);
+
+        [NativeFunction("glfw", EntryPoint = "glfwMaximizeWindow")]
+        public static void MaximizeWindow(Ref<Window> window) =>
+            Underlying.Value!.MaximizeWindow(window);
+
+        [NativeFunction("glfw", EntryPoint = "glfwPlatformSupported")]
+        public static int PlatformSupported(int platform) =>
+            Underlying.Value!.PlatformSupported(platform);
+
+        [NativeFunction("glfw", EntryPoint = "glfwPollEvents")]
+        public static void PollEvents() => Underlying.Value!.PollEvents();
+
+        [NativeFunction("glfw", EntryPoint = "glfwPostEmptyEvent")]
+        public static void PostEmptyEvent() => Underlying.Value!.PostEmptyEvent();
+
+        [NativeFunction("glfw", EntryPoint = "glfwRawMouseMotionSupported")]
+        public static int RawMouseMotionSupported() => Underlying.Value!.RawMouseMotionSupported();
+
+        [NativeFunction("glfw", EntryPoint = "glfwRequestWindowAttention")]
+        public static void RequestWindowAttention(Ref<Window> window) =>
+            Underlying.Value!.RequestWindowAttention(window);
+
+        [NativeFunction("glfw", EntryPoint = "glfwRestoreWindow")]
+        public static void RestoreWindow(Ref<Window> window) =>
+            Underlying.Value!.RestoreWindow(window);
+
+        [return: NativeTypeName("GLFWcharfun")]
+        [NativeFunction("glfw", EntryPoint = "glfwSetCharCallback")]
+        public static delegate* unmanaged<Window*, uint, void> SetCharCallback(
+            Ref<Window> window,
+            [NativeTypeName("GLFWcharfun")] delegate* unmanaged<Window*, uint, void> callback
+        ) => Underlying.Value!.SetCharCallback(window, callback);
+
+        [return: NativeTypeName("GLFWcharmodsfun")]
+        [NativeFunction("glfw", EntryPoint = "glfwSetCharModsCallback")]
+        public static delegate* unmanaged<Window*, uint, int, void> SetCharModsCallback(
+            Ref<Window> window,
+            [NativeTypeName("GLFWcharmodsfun")]
+                delegate* unmanaged<Window*, uint, int, void> callback
+        ) => Underlying.Value!.SetCharModsCallback(window, callback);
+
+        [NativeFunction("glfw", EntryPoint = "glfwSetClipboardString")]
+        public static void SetClipboardString(
+            Ref<Window> window,
+            [NativeTypeName("const char *")] Ref<sbyte> @string
+        ) => Underlying.Value!.SetClipboardString(window, @string);
+
+        [NativeFunction("glfw", EntryPoint = "glfwSetCursor")]
+        public static void SetCursor(Ref<Window> window, Ref<Cursor> cursor) =>
+            Underlying.Value!.SetCursor(window, cursor);
+
+        [return: NativeTypeName("GLFWcursorenterfun")]
+        [NativeFunction("glfw", EntryPoint = "glfwSetCursorEnterCallback")]
+        public static delegate* unmanaged<Window*, int, void> SetCursorEnterCallback(
+            Ref<Window> window,
+            [NativeTypeName("GLFWcursorenterfun")] delegate* unmanaged<Window*, int, void> callback
+        ) => Underlying.Value!.SetCursorEnterCallback(window, callback);
+
+        [NativeFunction("glfw", EntryPoint = "glfwSetCursorPos")]
+        public static void SetCursorPos(Ref<Window> window, double xpos, double ypos) =>
+            Underlying.Value!.SetCursorPos(window, xpos, ypos);
+
+        [return: NativeTypeName("GLFWcursorposfun")]
+        [NativeFunction("glfw", EntryPoint = "glfwSetCursorPosCallback")]
+        public static delegate* unmanaged<Window*, double, double, void> SetCursorPosCallback(
+            Ref<Window> window,
+            [NativeTypeName("GLFWcursorposfun")]
+                delegate* unmanaged<Window*, double, double, void> callback
+        ) => Underlying.Value!.SetCursorPosCallback(window, callback);
+
+        [return: NativeTypeName("GLFWdropfun")]
+        [NativeFunction("glfw", EntryPoint = "glfwSetDropCallback")]
+        public static delegate* unmanaged<Window*, int, sbyte**, void> SetDropCallback(
+            Ref<Window> window,
+            [NativeTypeName("GLFWdropfun")]
+                delegate* unmanaged<Window*, int, sbyte**, void> callback
+        ) => Underlying.Value!.SetDropCallback(window, callback);
+
+        [return: NativeTypeName("GLFWerrorfun")]
+        [NativeFunction("glfw", EntryPoint = "glfwSetErrorCallback")]
+        public static delegate* unmanaged<int, sbyte*, void> SetErrorCallback(
+            [NativeTypeName("GLFWerrorfun")] delegate* unmanaged<int, sbyte*, void> callback
+        ) => Underlying.Value!.SetErrorCallback(callback);
+
+        [return: NativeTypeName("GLFWframebuffersizefun")]
+        [NativeFunction("glfw", EntryPoint = "glfwSetFramebufferSizeCallback")]
+        public static delegate* unmanaged<Window*, int, int, void> SetFramebufferSizeCallback(
+            Ref<Window> window,
+            [NativeTypeName("GLFWframebuffersizefun")]
+                delegate* unmanaged<Window*, int, int, void> callback
+        ) => Underlying.Value!.SetFramebufferSizeCallback(window, callback);
+
+        [NativeFunction("glfw", EntryPoint = "glfwSetGamma")]
+        public static void SetGamma(Ref<Monitor> monitor, float gamma) =>
+            Underlying.Value!.SetGamma(monitor, gamma);
+
+        [NativeFunction("glfw", EntryPoint = "glfwSetGammaRamp")]
+        public static void SetGammaRamp(
+            Ref<Monitor> monitor,
+            [NativeTypeName("const GLFWgammaramp *")] Ref<Gammaramp> ramp
+        ) => Underlying.Value!.SetGammaRamp(monitor, ramp);
+
+        [NativeFunction("glfw", EntryPoint = "glfwSetInputMode")]
+        public static void SetInputMode(Ref<Window> window, int mode, int value) =>
+            Underlying.Value!.SetInputMode(window, mode, value);
+
+        [return: NativeTypeName("GLFWjoystickfun")]
+        [NativeFunction("glfw", EntryPoint = "glfwSetJoystickCallback")]
+        public static delegate* unmanaged<int, int, void> SetJoystickCallback(
+            [NativeTypeName("GLFWjoystickfun")] delegate* unmanaged<int, int, void> callback
+        ) => Underlying.Value!.SetJoystickCallback(callback);
+
+        [NativeFunction("glfw", EntryPoint = "glfwSetJoystickUserPointer")]
+        public static void SetJoystickUserPointer(int jid, Ref pointer) =>
+            Underlying.Value!.SetJoystickUserPointer(jid, pointer);
+
+        [return: NativeTypeName("GLFWkeyfun")]
+        [NativeFunction("glfw", EntryPoint = "glfwSetKeyCallback")]
+        public static delegate* unmanaged<Window*, int, int, int, int, void> SetKeyCallback(
+            Ref<Window> window,
+            [NativeTypeName("GLFWkeyfun")]
+                delegate* unmanaged<Window*, int, int, int, int, void> callback
+        ) => Underlying.Value!.SetKeyCallback(window, callback);
+
+        [return: NativeTypeName("GLFWmonitorfun")]
+        [NativeFunction("glfw", EntryPoint = "glfwSetMonitorCallback")]
+        public static delegate* unmanaged<Monitor*, int, void> SetMonitorCallback(
+            [NativeTypeName("GLFWmonitorfun")] delegate* unmanaged<Monitor*, int, void> callback
+        ) => Underlying.Value!.SetMonitorCallback(callback);
+
+        [NativeFunction("glfw", EntryPoint = "glfwSetMonitorUserPointer")]
+        public static void SetMonitorUserPointer(Ref<Monitor> monitor, Ref pointer) =>
+            Underlying.Value!.SetMonitorUserPointer(monitor, pointer);
+
+        [return: NativeTypeName("GLFWmousebuttonfun")]
+        [NativeFunction("glfw", EntryPoint = "glfwSetMouseButtonCallback")]
+        public static delegate* unmanaged<Window*, int, int, int, void> SetMouseButtonCallback(
+            Ref<Window> window,
+            [NativeTypeName("GLFWmousebuttonfun")]
+                delegate* unmanaged<Window*, int, int, int, void> callback
+        ) => Underlying.Value!.SetMouseButtonCallback(window, callback);
+
+        [return: NativeTypeName("GLFWscrollfun")]
+        [NativeFunction("glfw", EntryPoint = "glfwSetScrollCallback")]
+        public static delegate* unmanaged<Window*, double, double, void> SetScrollCallback(
+            Ref<Window> window,
+            [NativeTypeName("GLFWscrollfun")]
+                delegate* unmanaged<Window*, double, double, void> callback
+        ) => Underlying.Value!.SetScrollCallback(window, callback);
+
+        [NativeFunction("glfw", EntryPoint = "glfwSetTime")]
+        public static void SetTime(double time) => Underlying.Value!.SetTime(time);
+
+        [NativeFunction("glfw", EntryPoint = "glfwSetWindowAspectRatio")]
+        public static void SetWindowAspectRatio(Ref<Window> window, int numer, int denom) =>
+            Underlying.Value!.SetWindowAspectRatio(window, numer, denom);
+
+        [NativeFunction("glfw", EntryPoint = "glfwSetWindowAttrib")]
+        public static void SetWindowAttrib(Ref<Window> window, int attrib, int value) =>
+            Underlying.Value!.SetWindowAttrib(window, attrib, value);
+
+        [return: NativeTypeName("GLFWwindowclosefun")]
+        [NativeFunction("glfw", EntryPoint = "glfwSetWindowCloseCallback")]
+        public static delegate* unmanaged<Window*, void> SetWindowCloseCallback(
+            Ref<Window> window,
+            [NativeTypeName("GLFWwindowclosefun")] delegate* unmanaged<Window*, void> callback
+        ) => Underlying.Value!.SetWindowCloseCallback(window, callback);
+
+        [return: NativeTypeName("GLFWwindowcontentscalefun")]
+        [NativeFunction("glfw", EntryPoint = "glfwSetWindowContentScaleCallback")]
+        public static delegate* unmanaged<
+            Window*,
+            float,
+            float,
+            void> SetWindowContentScaleCallback(
+            Ref<Window> window,
+            [NativeTypeName("GLFWwindowcontentscalefun")]
+                delegate* unmanaged<Window*, float, float, void> callback
+        ) => Underlying.Value!.SetWindowContentScaleCallback(window, callback);
+
+        [return: NativeTypeName("GLFWwindowfocusfun")]
+        [NativeFunction("glfw", EntryPoint = "glfwSetWindowFocusCallback")]
+        public static delegate* unmanaged<Window*, int, void> SetWindowFocusCallback(
+            Ref<Window> window,
+            [NativeTypeName("GLFWwindowfocusfun")] delegate* unmanaged<Window*, int, void> callback
+        ) => Underlying.Value!.SetWindowFocusCallback(window, callback);
+
+        [NativeFunction("glfw", EntryPoint = "glfwSetWindowIcon")]
+        public static void SetWindowIcon(
+            Ref<Window> window,
+            int count,
+            [NativeTypeName("const GLFWimage *")] Ref<Image> images
+        ) => Underlying.Value!.SetWindowIcon(window, count, images);
+
+        [return: NativeTypeName("GLFWwindowiconifyfun")]
+        [NativeFunction("glfw", EntryPoint = "glfwSetWindowIconifyCallback")]
+        public static delegate* unmanaged<Window*, int, void> SetWindowIconifyCallback(
+            Ref<Window> window,
+            [NativeTypeName("GLFWwindowiconifyfun")]
+                delegate* unmanaged<Window*, int, void> callback
+        ) => Underlying.Value!.SetWindowIconifyCallback(window, callback);
+
+        [return: NativeTypeName("GLFWwindowmaximizefun")]
+        [NativeFunction("glfw", EntryPoint = "glfwSetWindowMaximizeCallback")]
+        public static delegate* unmanaged<Window*, int, void> SetWindowMaximizeCallback(
+            Ref<Window> window,
+            [NativeTypeName("GLFWwindowmaximizefun")]
+                delegate* unmanaged<Window*, int, void> callback
+        ) => Underlying.Value!.SetWindowMaximizeCallback(window, callback);
+
+        [NativeFunction("glfw", EntryPoint = "glfwSetWindowMonitor")]
+        public static void SetWindowMonitor(
+            Ref<Window> window,
+            Ref<Monitor> monitor,
+            int xpos,
+            int ypos,
+            int width,
+            int height,
+            int refreshRate
+        ) =>
+            Underlying.Value!.SetWindowMonitor(
+                window,
+                monitor,
+                xpos,
+                ypos,
+                width,
+                height,
+                refreshRate
+            );
+
+        [NativeFunction("glfw", EntryPoint = "glfwSetWindowOpacity")]
+        public static void SetWindowOpacity(Ref<Window> window, float opacity) =>
+            Underlying.Value!.SetWindowOpacity(window, opacity);
+
+        [NativeFunction("glfw", EntryPoint = "glfwSetWindowPos")]
+        public static void SetWindowPos(Ref<Window> window, int xpos, int ypos) =>
+            Underlying.Value!.SetWindowPos(window, xpos, ypos);
+
+        [return: NativeTypeName("GLFWwindowposfun")]
+        [NativeFunction("glfw", EntryPoint = "glfwSetWindowPosCallback")]
+        public static delegate* unmanaged<Window*, int, int, void> SetWindowPosCallback(
+            Ref<Window> window,
+            [NativeTypeName("GLFWwindowposfun")]
+                delegate* unmanaged<Window*, int, int, void> callback
+        ) => Underlying.Value!.SetWindowPosCallback(window, callback);
+
+        [return: NativeTypeName("GLFWwindowrefreshfun")]
+        [NativeFunction("glfw", EntryPoint = "glfwSetWindowRefreshCallback")]
+        public static delegate* unmanaged<Window*, void> SetWindowRefreshCallback(
+            Ref<Window> window,
+            [NativeTypeName("GLFWwindowrefreshfun")] delegate* unmanaged<Window*, void> callback
+        ) => Underlying.Value!.SetWindowRefreshCallback(window, callback);
+
+        [NativeFunction("glfw", EntryPoint = "glfwSetWindowShouldClose")]
+        public static void SetWindowShouldClose(Ref<Window> window, int value) =>
+            Underlying.Value!.SetWindowShouldClose(window, value);
+
+        [NativeFunction("glfw", EntryPoint = "glfwSetWindowSize")]
+        public static void SetWindowSize(Ref<Window> window, int width, int height) =>
+            Underlying.Value!.SetWindowSize(window, width, height);
+
+        [return: NativeTypeName("GLFWwindowsizefun")]
+        [NativeFunction("glfw", EntryPoint = "glfwSetWindowSizeCallback")]
+        public static delegate* unmanaged<Window*, int, int, void> SetWindowSizeCallback(
+            Ref<Window> window,
+            [NativeTypeName("GLFWwindowsizefun")]
+                delegate* unmanaged<Window*, int, int, void> callback
+        ) => Underlying.Value!.SetWindowSizeCallback(window, callback);
+
+        [NativeFunction("glfw", EntryPoint = "glfwSetWindowSizeLimits")]
+        public static void SetWindowSizeLimits(
+            Ref<Window> window,
+            int minwidth,
+            int minheight,
+            int maxwidth,
+            int maxheight
+        ) =>
+            Underlying.Value!.SetWindowSizeLimits(window, minwidth, minheight, maxwidth, maxheight);
+
+        [NativeFunction("glfw", EntryPoint = "glfwSetWindowTitle")]
+        public static void SetWindowTitle(
+            Ref<Window> window,
+            [NativeTypeName("const char *")] Ref<sbyte> title
+        ) => Underlying.Value!.SetWindowTitle(window, title);
+
+        [NativeFunction("glfw", EntryPoint = "glfwSetWindowUserPointer")]
+        public static void SetWindowUserPointer(Ref<Window> window, Ref pointer) =>
+            Underlying.Value!.SetWindowUserPointer(window, pointer);
+
+        [NativeFunction("glfw", EntryPoint = "glfwShowWindow")]
+        public static void ShowWindow(Ref<Window> window) => Underlying.Value!.ShowWindow(window);
+
+        [NativeFunction("glfw", EntryPoint = "glfwSwapBuffers")]
+        public static void SwapBuffers(Ref<Window> window) => Underlying.Value!.SwapBuffers(window);
+
+        [NativeFunction("glfw", EntryPoint = "glfwSwapInterval")]
+        public static void SwapInterval(int interval) => Underlying.Value!.SwapInterval(interval);
+
+        [NativeFunction("glfw", EntryPoint = "glfwTerminate")]
+        public static void Terminate() => Underlying.Value!.Terminate();
+
+        [NativeFunction("glfw", EntryPoint = "glfwUpdateGamepadMappings")]
+        public static int UpdateGamepadMappings(
+            [NativeTypeName("const char *")] Ref<sbyte> @string
+        ) => Underlying.Value!.UpdateGamepadMappings(@string);
+
+        [NativeFunction("glfw", EntryPoint = "glfwVulkanSupported")]
+        public static int VulkanSupported() => Underlying.Value!.VulkanSupported();
+
+        [NativeFunction("glfw", EntryPoint = "glfwWaitEvents")]
+        public static void WaitEvents() => Underlying.Value!.WaitEvents();
+
+        [NativeFunction("glfw", EntryPoint = "glfwWaitEventsTimeout")]
+        public static void WaitEventsTimeout(double timeout) =>
+            Underlying.Value!.WaitEventsTimeout(timeout);
+
+        [NativeFunction("glfw", EntryPoint = "glfwWindowHint")]
+        public static void WindowHint(int hint, int value) =>
+            Underlying.Value!.WindowHint(hint, value);
+
+        [NativeFunction("glfw", EntryPoint = "glfwWindowHintString")]
+        public static void WindowHintString(
+            int hint,
+            [NativeTypeName("const char *")] Ref<sbyte> value
+        ) => Underlying.Value!.WindowHintString(hint, value);
+
+        [NativeFunction("glfw", EntryPoint = "glfwWindowShouldClose")]
+        public static int WindowShouldClose(Ref<Window> window) =>
+            Underlying.Value!.WindowShouldClose(window);
+    };
 
     [NativeTypeName("#define GLFW_VERSION_MAJOR 3")]
     public const int VersionMajor = 3;

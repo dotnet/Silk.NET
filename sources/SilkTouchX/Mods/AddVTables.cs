@@ -25,13 +25,13 @@ public class AddVTables(IOptionsSnapshot<AddVTables.Configuration> config) : IMo
     /// </summary>
     [JsonPolymorphic(TypeDiscriminatorPropertyName = "Kind")]
     [JsonDerivedType(typeof(DllImport), nameof(DllImport))]
-    [JsonDerivedType(typeof(ThreadLocal), nameof(ThreadLocal))]
+    [JsonDerivedType(typeof(ThisThread), nameof(ThisThread))]
     [JsonDerivedType(typeof(StaticWrapper), nameof(StaticWrapper))]
     public abstract record VTable
     {
         /// <summary>
         /// If <see cref="IsStatic"/> is true, is this the static default? If <see cref="IsStatic"/> is false, should
-        /// this be the default for <see cref="ThreadLocal"/> (unless overridden?).
+        /// this be the default for <see cref="ThisThread"/> (unless overridden?).
         /// </summary>
         public bool IsDefault { get; init; }
 
@@ -49,7 +49,8 @@ public class AddVTables(IOptionsSnapshot<AddVTables.Configuration> config) : IMo
         /// Gets the "boilerplate" partial required for this VTable.
         /// </summary>
         /// <returns>The VTable class declaration</returns>
-        public virtual ClassDeclarationSyntax? GetBoilerplate() => null;
+        public virtual ClassDeclarationSyntax? GetBoilerplate(in VTableBoilerplateContext ctx) =>
+            null;
 
         /// <summary>
         /// Gets a class declaration for the VTable with the method contained in the context added.
@@ -84,6 +85,18 @@ public class AddVTables(IOptionsSnapshot<AddVTables.Configuration> config) : IMo
         MethodDeclarationSyntax StaticDecl,
         MethodDeclarationSyntax InstanceDecl,
         string ClassName
+    );
+
+    /// <summary>
+    /// Context for generating VTable boilerplate.
+    /// </summary>
+    /// <param name="ClassName">The class name.</param>
+    /// <param name="StaticDefault">The static default class name.</param>
+    /// <param name="StaticDefaultWrapper">The wrapper class for using the static default as an instance.</param>
+    public readonly record struct VTableBoilerplateContext(
+        string ClassName,
+        string? StaticDefault,
+        GenericNameSyntax? StaticDefaultWrapper
     );
 
     /// <summary>
@@ -130,7 +143,7 @@ public class AddVTables(IOptionsSnapshot<AddVTables.Configuration> config) : IMo
     /// <summary>
     /// Configuration for the static VTable wrapping a ThreadLocal instance VTable.
     /// </summary>
-    public record ThreadLocal : VTable
+    public record ThisThread : VTable
     {
         /// <summary>
         /// Should we generate a <c>partial</c> method representing the factory? If false, and we can't determine our
@@ -138,15 +151,224 @@ public class AddVTables(IOptionsSnapshot<AddVTables.Configuration> config) : IMo
         /// </summary>
         public bool GenerateFactoryPartial { get; init; } = false;
 
+        /// <summary>
+        /// Should we generate a <c>partial</c> method for setting the current value? If false, the default
+        /// implementation will be used.
+        /// </summary>
+        public bool GenerateMakeCurrentPartial { get; init; } = false;
+
         /// <inheritdoc />
-        public override string Name { get; init; } = nameof(ThreadLocal);
+        public override string Name { get; init; } = nameof(ThisThread);
 
         /// <inheritdoc />
         public override bool IsStatic => true;
 
         /// <inheritdoc />
+        public override ClassDeclarationSyntax? GetBoilerplate(in VTableBoilerplateContext ctx) =>
+            ClassDeclaration(Name)
+                .WithModifiers(
+                    TokenList(Token(SyntaxKind.PublicKeyword), Token(SyntaxKind.PartialKeyword))
+                )
+                .WithBaseList(
+                    BaseList(
+                        SingletonSeparatedList<BaseTypeSyntax>(
+                            SimpleBaseType(
+                                GenericName(
+                                    Identifier($"I{ctx.ClassName}.Static"),
+                                    TypeArgumentList(
+                                        SingletonSeparatedList<TypeSyntax>(IdentifierName(Name))
+                                    )
+                                )
+                            )
+                        )
+                    )
+                )
+                .WithMembers(
+                    List(
+                        new MemberDeclarationSyntax?[]
+                        {
+                            PropertyDeclaration(
+                                    QualifiedName(
+                                        ModUtils.NamespaceIntoIdentifierName("System.Threading"),
+                                        GenericName(
+                                            Identifier("ThreadLocal"),
+                                            TypeArgumentList(
+                                                SingletonSeparatedList<TypeSyntax>(
+                                                    IdentifierName($"I{ctx.ClassName}")
+                                                )
+                                            )
+                                        )
+                                    ),
+                                    "Underlying"
+                                )
+                                .WithModifiers(
+                                    TokenList(
+                                        Token(SyntaxKind.PublicKeyword),
+                                        Token(SyntaxKind.StaticKeyword)
+                                    )
+                                )
+                                .WithAccessorList(
+                                    AccessorList(
+                                        List(
+                                            new[]
+                                            {
+                                                AccessorDeclaration(
+                                                        SyntaxKind.GetAccessorDeclaration
+                                                    )
+                                                    .WithSemicolonToken(
+                                                        Token(SyntaxKind.SemicolonToken)
+                                                    )
+                                            }
+                                        )
+                                    )
+                                )
+                                .WithInitializer(
+                                    EqualsValueClause(
+                                        ImplicitObjectCreationExpression(
+                                            GenerateFactoryPartial
+                                                ? ArgumentList(
+                                                    SingletonSeparatedList(
+                                                        Argument(IdentifierName("ContextFactory"))
+                                                    )
+                                                )
+                                                : !string.IsNullOrWhiteSpace(ctx.StaticDefault)
+                                                && ctx.StaticDefaultWrapper is not null
+                                                && ctx.StaticDefault != Name
+                                                    ? ArgumentList(
+                                                        SingletonSeparatedList(
+                                                            Argument(
+                                                                ParenthesizedLambdaExpression()
+                                                                    .WithModifiers(
+                                                                        TokenList(
+                                                                            Token(
+                                                                                SyntaxKind.StaticKeyword
+                                                                            )
+                                                                        )
+                                                                    )
+                                                                    .WithExpressionBody(
+                                                                        ObjectCreationExpression(
+                                                                            ctx.StaticDefaultWrapper,
+                                                                            ArgumentList(),
+                                                                            null
+                                                                        )
+                                                                    )
+                                                            )
+                                                        )
+                                                    )
+                                                    : ArgumentList(),
+                                            null
+                                        )
+                                    )
+                                )
+                                .WithSemicolonToken(Token(SyntaxKind.SemicolonToken)),
+                            MethodDeclaration(
+                                    PredefinedType(Token(SyntaxKind.VoidKeyword)),
+                                    "MakeCurrent"
+                                )
+                                .WithModifiers(
+                                    GenerateMakeCurrentPartial
+                                        ? TokenList(
+                                            Token(SyntaxKind.PublicKeyword),
+                                            Token(SyntaxKind.StaticKeyword),
+                                            Token(SyntaxKind.PartialKeyword)
+                                        )
+                                        : TokenList(
+                                            Token(SyntaxKind.PublicKeyword),
+                                            Token(SyntaxKind.StaticKeyword)
+                                        )
+                                )
+                                .WithParameterList(
+                                    ParameterList(
+                                        SingletonSeparatedList(
+                                            Parameter(Identifier("ctx"))
+                                                .WithType(IdentifierName($"I{ctx.ClassName}"))
+                                        )
+                                    )
+                                )
+                                .WithExpressionBody(
+                                    GenerateMakeCurrentPartial
+                                        ? null
+                                        : ArrowExpressionClause(
+                                            AssignmentExpression(
+                                                SyntaxKind.SimpleAssignmentExpression,
+                                                MemberAccessExpression(
+                                                    SyntaxKind.SimpleMemberAccessExpression,
+                                                    IdentifierName("Underlying"),
+                                                    IdentifierName("Value")
+                                                ),
+                                                IdentifierName("ctx")
+                                            )
+                                        )
+                                )
+                                .WithSemicolonToken(Token(SyntaxKind.SemicolonToken)),
+                            GenerateFactoryPartial
+                                ? MethodDeclaration(
+                                        IdentifierName($"I{ctx.ClassName}"),
+                                        "ContextFactory"
+                                    )
+                                    .WithModifiers(
+                                        TokenList(
+                                            Token(SyntaxKind.PrivateKeyword),
+                                            Token(SyntaxKind.StaticKeyword),
+                                            Token(SyntaxKind.PartialKeyword)
+                                        )
+                                    )
+                                    .WithSemicolonToken(Token(SyntaxKind.SemicolonToken))
+                                : null
+                        }.OfType<MemberDeclarationSyntax>()
+                    )
+                );
+
+        /// <inheritdoc />
         public override ClassDeclarationSyntax AddMethod(in VTableContext ctx) =>
-            throw new NotImplementedException();
+            (
+                ctx.CurrentPartial
+                ?? ClassDeclaration(Name)
+                    .WithModifiers(
+                        TokenList(Token(SyntaxKind.PublicKeyword), Token(SyntaxKind.PartialKeyword))
+                    )
+            )
+                .AddMembers(
+                    ctx.StaticDecl
+                        .WithModifiers(
+                            TokenList(
+                                new[] { Token(SyntaxKind.PublicKeyword) }.Concat(
+                                    ctx.StaticDecl.Modifiers.Where(
+                                        x =>
+                                            x.Kind()
+                                                is SyntaxKind.StaticKeyword
+                                                    or SyntaxKind.UnsafeKeyword
+                                    )
+                                )
+                            )
+                        )
+                        .WithExpressionBody(
+                            ArrowExpressionClause(
+                                InvocationExpression(
+                                    MemberAccessExpression(
+                                        SyntaxKind.SimpleMemberAccessExpression,
+                                        PostfixUnaryExpression(
+                                            SyntaxKind.SuppressNullableWarningExpression,
+                                            MemberAccessExpression(
+                                                SyntaxKind.SimpleMemberAccessExpression,
+                                                IdentifierName("Underlying"),
+                                                IdentifierName("Value")
+                                            )
+                                        ),
+                                        IdentifierName(ctx.InstanceDecl.Identifier)
+                                    ),
+                                    ArgumentList(
+                                        SeparatedList(
+                                            ctx.InstanceDecl.ParameterList.Parameters.Select(
+                                                x => Argument(IdentifierName(x.Identifier))
+                                            )
+                                        )
+                                    )
+                                )
+                            )
+                        )
+                )
+                .WithSemicolonToken(Token(SyntaxKind.SemicolonToken));
     }
 
     /// <summary>
@@ -679,7 +901,16 @@ public class AddVTables(IOptionsSnapshot<AddVTables.Configuration> config) : IMo
                     .WithMembers(
                         List<MemberDeclarationSyntax>(
                             _vTables
-                                .Select(x => x.GetBoilerplate())
+                                .Select(
+                                    x =>
+                                        x.GetBoilerplate(
+                                            new VTableBoilerplateContext(
+                                                nonInterfaceIden,
+                                                _staticDefault,
+                                                _staticDefaultWrapper
+                                            )
+                                        )
+                                )
                                 .Where(x => x is not null)
                                 .Concat(GenerateTopLevelBoilerplate(nonInterfaceIden))!
                         )
@@ -924,7 +1155,7 @@ public class AddVTables(IOptionsSnapshot<AddVTables.Configuration> config) : IMo
                         {
                             nameof(DllImport) => typeof(DllImport),
                             nameof(StaticWrapper) => typeof(StaticWrapper),
-                            nameof(ThreadLocal) => typeof(ThreadLocal),
+                            nameof(ThisThread) => typeof(ThisThread),
                             _
                                 => throw new InvalidOperationException(
                                     "VTable must have valid \"Kind\" property"
@@ -944,7 +1175,7 @@ public class AddVTables(IOptionsSnapshot<AddVTables.Configuration> config) : IMo
                 {
                     new DllImport { IsDefault = true },
                     new StaticWrapper(),
-                    new ThreadLocal()
+                    new ThisThread()
                 }
         );
 
