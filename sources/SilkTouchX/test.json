@@ -46,20 +46,6 @@
           "GLFWmonitor",
           "GLFWwindow"
         ]
-      },
-      "AddVTables": {
-        "VTables": [
-          {
-            "Kind": "DllImport",
-            "IsDefault": true
-          },
-          {
-            "Kind": "StaticWrapper"
-          },
-          {
-            "Kind": "ThisThread"
-          }
-        ]
       }
     }
   }

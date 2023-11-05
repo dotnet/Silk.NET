@@ -69,7 +69,10 @@ public class SilkTouchGenerator
     )
     {
         // Prepare the mods
-        foreach (var mod in _mods)
+        var jobMods =
+            job.Mods?.Select(x => _mods.First(y => y.GetType().Name == x)).ToArray()
+            ?? Array.Empty<IMod>();
+        foreach (var mod in jobMods)
         {
             _logger.LogDebug("Using mod {0} for {1}", mod.GetType().Name, key);
             await mod.BeforeJobAsync(key, job);
@@ -93,7 +96,7 @@ public class SilkTouchGenerator
 
         // Mod the response files
         // ReSharper disable once LoopCanBeConvertedToQuery
-        foreach (var mod in _mods)
+        foreach (var mod in jobMods)
         {
             _logger.LogInformation(
                 "Applying {0} mod to response files for {1}...",
@@ -186,7 +189,7 @@ public class SilkTouchGenerator
 
         // Mod the bindings
         // ReSharper disable once LoopCanBeConvertedToQuery
-        foreach (var mod in _mods)
+        foreach (var mod in jobMods)
         {
             _logger.LogInformation(
                 "Applying {0} mod to syntax trees for {1}...",
