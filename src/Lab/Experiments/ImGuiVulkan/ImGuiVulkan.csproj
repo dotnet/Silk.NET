@@ -13,7 +13,7 @@
 	</ItemGroup>
 
 	<ItemGroup>
-		<PackageReference Include="ImGui.NET" Version="1.89.7.1" />
+		<PackageReference Include="ImGui.NET" Version="1.89.9.3" />
 	</ItemGroup>
 
 	<ItemGroup>
