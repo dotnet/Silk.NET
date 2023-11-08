@@ -138,6 +138,12 @@ namespace Silk.NET.Vulkan
         [Obsolete("Deprecated in favour of \"AccelerationStructureNVExt\"")]
         [NativeName("Name", "VK_DEBUG_REPORT_OBJECT_TYPE_ACCELERATION_STRUCTURE_NV_EXT")]
         DebugReportObjectTypeAccelerationStructureNVExt = 1000165000,
+        [Obsolete("Deprecated in favour of \"CudaModuleNV\"")]
+        [NativeName("Name", "VK_DEBUG_REPORT_OBJECT_TYPE_CUDA_MODULE_NV")]
+        DebugReportObjectTypeCudaModuleNV = 1000307000,
+        [Obsolete("Deprecated in favour of \"CudaFunctionNV\"")]
+        [NativeName("Name", "VK_DEBUG_REPORT_OBJECT_TYPE_CUDA_FUNCTION_NV")]
+        DebugReportObjectTypeCudaFunctionNV = 1000307001,
         [Obsolete("Deprecated in favour of \"BufferCollectionFuchsiaExt\"")]
         [NativeName("Name", "VK_DEBUG_REPORT_OBJECT_TYPE_BUFFER_COLLECTION_FUCHSIA_EXT")]
         DebugReportObjectTypeBufferCollectionFuchsiaExt = 1000366000,
@@ -225,6 +231,10 @@ namespace Silk.NET.Vulkan
         SamplerYcbcrConversionKhrExt = 1000156000,
         [NativeName("Name", "VK_DEBUG_REPORT_OBJECT_TYPE_ACCELERATION_STRUCTURE_NV_EXT")]
         AccelerationStructureNVExt = 1000165000,
+        [NativeName("Name", "VK_DEBUG_REPORT_OBJECT_TYPE_CUDA_MODULE_NV")]
+        CudaModuleNV = 1000307000,
+        [NativeName("Name", "VK_DEBUG_REPORT_OBJECT_TYPE_CUDA_FUNCTION_NV")]
+        CudaFunctionNV = 1000307001,
         [NativeName("Name", "VK_DEBUG_REPORT_OBJECT_TYPE_BUFFER_COLLECTION_FUCHSIA_EXT")]
         BufferCollectionFuchsiaExt = 1000366000,
     }
