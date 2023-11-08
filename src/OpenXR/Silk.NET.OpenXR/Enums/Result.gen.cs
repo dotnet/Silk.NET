@@ -182,6 +182,8 @@ namespace Silk.NET.OpenXR
         ErrorSpatialAnchorNameNotFoundMsft = unchecked((int) -1000142001),
         [NativeName("Name", "XR_ERROR_SPATIAL_ANCHOR_NAME_INVALID_MSFT")]
         ErrorSpatialAnchorNameInvalidMsft = unchecked((int) -1000142002),
+        [NativeName("Name", "XR_SCENE_MARKER_DATA_NOT_STRING_MSFT")]
+        SceneMarkerDataNotStringMsft = 1000147000,
         [NativeName("Name", "XR_ERROR_SPACE_MAPPING_INSUFFICIENT_FB")]
         ErrorSpaceMappingInsufficientFB = unchecked((int) -1000169000),
         [NativeName("Name", "XR_ERROR_SPACE_LOCALIZATION_FAILED_FB")]
