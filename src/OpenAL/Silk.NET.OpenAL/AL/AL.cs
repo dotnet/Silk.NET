@@ -36,8 +36,10 @@ namespace Silk.NET.OpenAL
                 SilkMarshal.StringIntoSpan(name, nameNative, NativeStringEncoding.UTF8);
                 fixed (byte* namePtr = nameNative)
                 {
-                    return ((delegate* unmanaged[Cdecl]<byte*, char>) Context.GetProcAddress("alcIsExtensionPresent"))
-                        (namePtr) == 1;
+                    var currentContext = ((delegate* unmanaged[Cdecl]<Context*>) Context.GetProcAddress("alcGetCurrentContext"))();
+                    var currentDevice = ((delegate* unmanaged[Cdecl]<Context*, Device*>) Context.GetProcAddress("alcGetContextsDevice"))(currentContext);
+                    return ((delegate* unmanaged[Cdecl]<Device*, byte*, char>) Context.GetProcAddress("alcIsExtensionPresent"))
+                        (currentDevice, namePtr) == 1;
                 }
             }
 
