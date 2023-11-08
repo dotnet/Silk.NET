@@ -123,5 +123,10 @@ namespace Silk.NET.OpenCL
         [NativeName("Type.Name", "cl_uint")]
         [NativeName("Name", "num_samples")]
         public uint NumSamples;
+/// <summary></summary>
+        [NativeName("Type", "cl_mem")]
+        [NativeName("Type.Name", "cl_mem")]
+        [NativeName("Name", "mem_object")]
+        public nint MemObject;
     }
 }
