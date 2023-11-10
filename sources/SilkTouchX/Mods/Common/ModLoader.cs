@@ -21,6 +21,7 @@ public class ModLoader
             nameof(PrettifyNames) => typeof(PrettifyNames),
             nameof(AddOpaqueStructs) => typeof(AddOpaqueStructs),
             nameof(AddVTables) => typeof(AddVTables),
+            nameof(AddApiProfiles) => typeof(AddApiProfiles),
             _ => null
         };
 }

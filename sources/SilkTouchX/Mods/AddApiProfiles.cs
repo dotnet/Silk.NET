@@ -32,7 +32,7 @@ public class AddApiProfiles(
         /// <summary>
         /// The API profile declarations.
         /// </summary>
-        public IEnumerable<ApiProfileDecl>? ApiProfiles { get; init; }
+        public IEnumerable<ApiProfileDecl>? Profiles { get; init; }
     }
 
     /// <summary>
@@ -445,6 +445,12 @@ public class AddApiProfiles(
                 );
             }
 
+            Logger?.LogTrace(
+                "Baking item for \"{}\" with discriminator \"{}\": {}",
+                Profile.Name,
+                discrim,
+                nodeToAdd
+            );
             var parent = GetOrRegisterAncestorBakeSet(nodeVisiting);
 
             // Have we seen the member before?
@@ -795,7 +801,7 @@ public class AddApiProfiles(
                 continue;
             }
 
-            var profile = cfg.ApiProfiles
+            var profile = cfg.Profiles
                 ?.Where(
                     x =>
                         path[8..].StartsWith(
@@ -882,7 +888,9 @@ public class AddApiProfiles(
                     ty.WithMembers(
                         List(
                             ty.Members.Concat(
-                                member.Inner?.Children.Values.Select(x => Bake(x).Syntax)
+                                member.Inner?.Children.Values
+                                    .OrderBy(x => x.Index)
+                                    .Select(x => Bake(x).Syntax)
                                     ?? Enumerable.Empty<MemberDeclarationSyntax>()
                             )
                         )
@@ -895,6 +903,7 @@ public class AddApiProfiles(
                         SeparatedList(
                             enumDecl.Members.Concat(
                                 member.Inner?.Children.Values
+                                    .OrderBy(x => x.Index)
                                     .Select(x => x.Syntax)
                                     .OfType<EnumMemberDeclarationSyntax>()
                                     ?? Enumerable.Empty<EnumMemberDeclarationSyntax>()
