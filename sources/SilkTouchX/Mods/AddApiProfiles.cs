@@ -843,7 +843,7 @@ public class AddApiProfiles(
             foreach (var (fqTopLevelType, bakedMember) in bakeSet.Children)
             {
                 var (iden, bakedSyntax) = Bake(bakedMember);
-                if (iden is not null)
+                if (iden is null)
                 {
                     throw new InvalidOperationException(
                         "Cannot output an unidentified syntax. Top-level syntax should be type declarations only."
@@ -853,7 +853,7 @@ public class AddApiProfiles(
                 var ns = fqTopLevelType.LastIndexOf('.') is not -1 and var idx
                     ? fqTopLevelType[..idx]
                     : null;
-                syntax.Files[$"sources/{subdir}/{PathForFullyQualified(fqTopLevelType)}"] =
+                syntax.Files[$"{subdir}/{PathForFullyQualified(fqTopLevelType)}"] =
                     CompilationUnit()
                         .WithMembers(
                             ns is null
