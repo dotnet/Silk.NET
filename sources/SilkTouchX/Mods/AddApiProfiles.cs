@@ -7,6 +7,7 @@ using Microsoft.CodeAnalysis;
 using Microsoft.CodeAnalysis.CSharp;
 using Microsoft.CodeAnalysis.CSharp.Syntax;
 using Microsoft.Extensions.Logging;
+using Microsoft.Extensions.Options;
 using SilkTouchX.Clang;
 using static Microsoft.CodeAnalysis.CSharp.SyntaxFactory;
 
@@ -16,8 +17,12 @@ namespace SilkTouchX.Mods;
 /// Adds SupportedApiProfile attributes to APIs in given source roots, optionally merging APIs into a single source set.
 /// </summary>
 /// <param name="logger">The logger to use.</param>
+/// <param name="config">The configuration snapshot.</param>
 [ModConfiguration<Configuration>]
-public class AddApiProfiles(ILogger<AddApiProfiles> logger) : IMod
+public class AddApiProfiles(
+    ILogger<AddApiProfiles> logger,
+    IOptionsSnapshot<AddApiProfiles.Configuration> config
+) : Mod
 {
     /// <summary>
     /// The mod configuration.
@@ -38,7 +43,7 @@ public class AddApiProfiles(ILogger<AddApiProfiles> logger) : IMod
         /// <summary>
         /// APIs declared in this relative source root are part of this profile.
         /// </summary>
-        public required string SourceRoot { get; init; }
+        public required string SourceSubdirectory { get; init; }
 
         /// <summary>
         /// The name of the API profile.
@@ -61,10 +66,10 @@ public class AddApiProfiles(ILogger<AddApiProfiles> logger) : IMod
         public Version? MaxVersion { get; init; }
 
         /// <summary>
-        /// If provided, merge and deduplicate ("bake") the APIs contained in the <see cref="SourceRoot"/> into this
-        /// root with any other profiles being baked into this root.
+        /// If provided, merge and deduplicate ("bake") the APIs contained in the <see cref="SourceSubdirectory"/> into
+        /// this root with any other profiles being baked into this root.
         /// </summary>
-        public string? BakeToRoot { get; init; }
+        public string? BakedOutputSubdirectory { get; init; }
 
         internal IEnumerable<AttributeArgumentSyntax> GetSupportedApiProfileAttributeArgs()
         {
@@ -119,6 +124,10 @@ public class AddApiProfiles(ILogger<AddApiProfiles> logger) : IMod
 
         public ApiProfileDecl? Profile { get; set; }
 
+        public ILogger? Logger { get; set; }
+
+        public Dictionary<string, UsingDirectiveSyntax> Usings { get; } = new();
+
         // Allowable type members for baking (we need to override these):
         // - [x] FieldDeclarationSyntax (VariableDeclarator)
         // - [x] EventFieldDeclarationSyntax
@@ -132,6 +141,7 @@ public class AddApiProfiles(ILogger<AddApiProfiles> logger) : IMod
         //     - [x] DestructorDeclarationSyntax
         //     - [x] MethodDeclarationSyntax
         //     - [x] OperatorDeclarationSyntax
+        // - [x] EnumMemberDeclarationSyntax
         //
         // Additional allowed members (done for free by GetOrRegisterTypeBakeSet)
         // - [x] StructDeclarationSyntax
@@ -139,6 +149,12 @@ public class AddApiProfiles(ILogger<AddApiProfiles> logger) : IMod
         // - [x] EnumDeclarationSyntax
         // - [x] RecordDeclarationSyntax
         // - [x] InterfaceDeclarationSyntax
+
+        public override SyntaxNode? VisitUsingDirective(UsingDirectiveSyntax node)
+        {
+            Usings[node.ToString()] = node;
+            return base.VisitUsingDirective(node);
+        }
 
         public override SyntaxNode? VisitDelegateDeclaration(DelegateDeclarationSyntax node) =>
             Visit(
@@ -157,6 +173,9 @@ public class AddApiProfiles(ILogger<AddApiProfiles> logger) : IMod
 
         public override SyntaxNode? VisitPropertyDeclaration(PropertyDeclarationSyntax node) =>
             Visit(node, node.Identifier.ToString(), base.VisitPropertyDeclaration);
+
+        public override SyntaxNode? VisitEnumMemberDeclaration(EnumMemberDeclarationSyntax node) =>
+            Visit(node, node.Identifier.ToString(), base.VisitEnumMemberDeclaration);
 
         public override SyntaxNode? VisitIndexerDeclaration(IndexerDeclarationSyntax node) =>
             Visit(
@@ -510,6 +529,54 @@ public class AddApiProfiles(ILogger<AddApiProfiles> logger) : IMod
                         );
                     }
                 }
+
+                // Check that constants and enums have the same value
+                if (
+                    (baked.Syntax, nodeToAdd) is
+
+                    (EnumMemberDeclarationSyntax lEnum, EnumMemberDeclarationSyntax rEnum)
+                )
+                {
+                    if (lEnum.EqualsValue?.Value.ToString() != rEnum.EqualsValue?.Value.ToString())
+                    {
+                        Logger?.LogWarning(
+                            "Enum member with discriminator \"{}\" differs between definitions. Left: {}, right: {}",
+                            discrim,
+                            lEnum.EqualsValue?.Value.ToString() ?? "auto-assigned",
+                            rEnum.EqualsValue?.Value.ToString() ?? "auto-assigned"
+                        );
+                    }
+                }
+                else if (
+                    (baked.Syntax, nodeToAdd) is
+
+                    (FieldDeclarationSyntax lConst, FieldDeclarationSyntax rConst)
+                )
+                {
+                    var isConst = lConst.Modifiers.Any(SyntaxKind.ConstKeyword);
+                    if (isConst != rConst.Modifiers.Any(SyntaxKind.ConstKeyword))
+                    {
+                        Logger?.LogWarning(
+                            "Const with discriminator \"{}\" isn't const in its redefinition. Left: {}, right: {}",
+                            discrim,
+                            lConst.ToString(),
+                            rConst.ToString()
+                        );
+                    }
+                    else if (
+                        isConst
+                        && lConst.Declaration.Variables[0].Initializer?.Value.ToString()
+                            != rConst.Declaration.Variables[0].Initializer?.Value.ToString()
+                    )
+                    {
+                        Logger?.LogWarning(
+                            "Const value with discriminator \"{}\" differs between definitions. Left: {}, right: {}",
+                            discrim,
+                            lConst.Declaration.Variables[0].Initializer?.Value.ToString(),
+                            rConst.Declaration.Variables[0].Initializer?.Value.ToString()
+                        );
+                    }
+                }
             }
 
             // Update the bake set. This adds if we haven't seen the member before, otherwise we just update the
@@ -715,6 +782,136 @@ public class AddApiProfiles(ILogger<AddApiProfiles> logger) : IMod
     private Dictionary<string, BakeSet> _baked = new();
 
     /// <inheritdoc />
-    public Task<GeneratedSyntax> AfterScrapeAsync(string key, GeneratedSyntax syntax) =>
-        throw new NotImplementedException();
+    public override Task<GeneratedSyntax> AfterScrapeAsync(string key, GeneratedSyntax syntax)
+    {
+        var cfg = config.Get(key);
+        var rewriter = new Rewriter { Logger = logger };
+        var bakery = new Dictionary<string, BakeSet>();
+        var baked = new List<string>();
+        foreach (var (path, root) in syntax.Files)
+        {
+            if (!path.StartsWith("sources/"))
+            {
+                continue;
+            }
+
+            var profile = cfg.ApiProfiles
+                ?.Where(
+                    x =>
+                        path[8..].StartsWith(
+                            x.SourceSubdirectory,
+                            StringComparison.OrdinalIgnoreCase
+                        )
+                )
+                .MaxBy(x => x.SourceSubdirectory.Length);
+            if (profile is null)
+            {
+                continue;
+            }
+
+            logger.LogDebug("Identified profile {} for {}", profile, path);
+            if (profile.BakedOutputSubdirectory is not null)
+            {
+                var discrim = $"sources/{profile.BakedOutputSubdirectory.Trim('/')}";
+                if (!bakery.TryGetValue(discrim, out var bakeSet))
+                {
+                    bakeSet = bakery[discrim] = new BakeSet();
+                }
+
+                rewriter.Baked = bakeSet;
+                baked.Add(path);
+            }
+
+            syntax.Files[path] = rewriter.Visit(root);
+            rewriter.Baked = null;
+        }
+
+        foreach (var path in baked)
+        {
+            syntax.Files.Remove(path);
+        }
+
+        foreach (var (subdir, bakeSet) in bakery)
+        {
+            foreach (var (fqTopLevelType, bakedMember) in bakeSet.Children)
+            {
+                var (iden, bakedSyntax) = Bake(bakedMember);
+                if (iden is not null)
+                {
+                    throw new InvalidOperationException(
+                        "Cannot output an unidentified syntax. Top-level syntax should be type declarations only."
+                    );
+                }
+
+                var ns = fqTopLevelType.LastIndexOf('.') is not -1 and var idx
+                    ? fqTopLevelType[..idx]
+                    : null;
+                syntax.Files[$"sources/{subdir}/{PathForFullyQualified(fqTopLevelType)}"] =
+                    CompilationUnit()
+                        .WithMembers(
+                            ns is null
+                                ? SingletonList(bakedSyntax)
+                                : SingletonList<MemberDeclarationSyntax>(
+                                    FileScopedNamespaceDeclaration(
+                                            ModUtils.NamespaceIntoIdentifierName(ns)
+                                        )
+                                        .WithMembers(SingletonList(bakedSyntax))
+                                        .WithUsings(List(rewriter.Usings.Values))
+                                )
+                        )
+                        .WithUsings(ns is null ? List(rewriter.Usings.Values) : default);
+            }
+        }
+
+        return Task.FromResult(syntax);
+    }
+
+    private static (string? Identifier, MemberDeclarationSyntax Syntax) Bake(
+        (MemberDeclarationSyntax Syntax, BakeSet? Inner, int Index) member
+    ) =>
+        member.Syntax switch
+        {
+            TypeDeclarationSyntax ty
+                => (
+                    ty.Identifier
+                        + (
+                            ty.TypeParameterList is { Parameters.Count: > 0 and var cnt }
+                                ? $"`{cnt}"
+                                : string.Empty
+                        ),
+                    ty.WithMembers(
+                        List(
+                            ty.Members.Concat(
+                                member.Inner?.Children.Values.Select(x => Bake(x).Syntax)
+                                    ?? Enumerable.Empty<MemberDeclarationSyntax>()
+                            )
+                        )
+                    )
+                ),
+            EnumDeclarationSyntax enumDecl
+                => (
+                    enumDecl.Identifier.ToString(),
+                    enumDecl.WithMembers(
+                        SeparatedList(
+                            enumDecl.Members.Concat(
+                                member.Inner?.Children.Values
+                                    .Select(x => x.Syntax)
+                                    .OfType<EnumMemberDeclarationSyntax>()
+                                    ?? Enumerable.Empty<EnumMemberDeclarationSyntax>()
+                            )
+                        )
+                    )
+                ),
+            DelegateDeclarationSyntax del
+                => (
+                    del.Identifier
+                        + (
+                            del.TypeParameterList is { Parameters.Count: > 0 and var cnt }
+                                ? $"`{cnt}"
+                                : string.Empty
+                        ),
+                    del
+                ),
+            var x => (null, x)
+        };
 }
