@@ -32,7 +32,7 @@ public class AddApiProfiles(
         /// <summary>
         /// The API profile declarations.
         /// </summary>
-        public IEnumerable<ApiProfileDecl>? Profiles { get; init; }
+        public ApiProfileDecl[]? Profiles { get; init; }
     }
 
     /// <summary>
@@ -801,7 +801,7 @@ public class AddApiProfiles(
                 continue;
             }
 
-            var profile = cfg.Profiles
+            rewriter.Profile = cfg.Profiles
                 ?.Where(
                     x =>
                         path[8..].StartsWith(
@@ -810,15 +810,15 @@ public class AddApiProfiles(
                         )
                 )
                 .MaxBy(x => x.SourceSubdirectory.Length);
-            if (profile is null)
+            if (rewriter.Profile is null)
             {
                 continue;
             }
 
-            logger.LogDebug("Identified profile {} for {}", profile, path);
-            if (profile.BakedOutputSubdirectory is not null)
+            logger.LogDebug("Identified profile {} for {}", rewriter.Profile, path);
+            if (rewriter.Profile.BakedOutputSubdirectory is not null)
             {
-                var discrim = $"sources/{profile.BakedOutputSubdirectory.Trim('/')}";
+                var discrim = $"sources/{rewriter.Profile.BakedOutputSubdirectory.Trim('/')}";
                 if (!bakery.TryGetValue(discrim, out var bakeSet))
                 {
                     bakeSet = bakery[discrim] = new BakeSet();
@@ -830,6 +830,7 @@ public class AddApiProfiles(
 
             syntax.Files[path] = rewriter.Visit(root);
             rewriter.Baked = null;
+            rewriter.Profile = null;
         }
 
         foreach (var path in baked)
