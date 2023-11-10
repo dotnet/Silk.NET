@@ -631,12 +631,9 @@ public class AddApiProfiles(
                 bakeSet = (
                     bakeSet!.Children.TryGetValue(discrim, out var baked)
                         ? bakeSet.Children[discrim] = (
-                            WithProfile(
-                                MergeDecls(
-                                    StripBare(decl),
-                                    (BaseTypeDeclarationSyntax)baked.Syntax
-                                ),
-                                Profile
+                            MergeDecls(
+                                WithProfile(StripBare(decl), Profile),
+                                (BaseTypeDeclarationSyntax)baked.Syntax
                             ),
                             baked.Inner ?? new BakeSet(),
                             baked.Index
@@ -654,111 +651,62 @@ public class AddApiProfiles(
                 node switch
                 {
                     // TODO do we need to strip more than this for dedupe purposes?
-                    ClassDeclarationSyntax klass => klass.WithMembers(default),
-                    StructDeclarationSyntax structure => structure.WithMembers(default),
+                    TypeDeclarationSyntax klass => klass.WithMembers(default),
                     EnumDeclarationSyntax enumeration => enumeration.WithMembers(default),
-                    RecordDeclarationSyntax record => record.WithMembers(default),
-                    InterfaceDeclarationSyntax iface => iface.WithMembers(default),
                     _ => node
                 };
 
             static BaseTypeDeclarationSyntax MergeDecls(
                 BaseTypeDeclarationSyntax node1,
                 BaseTypeDeclarationSyntax node2
-            ) =>
-                (node1, node2) switch
+            )
+            {
+                if (node1.GetType() != node2.GetType())
                 {
-                    // TODO probably need to do more than just modifiers and base lists (e.g. attributes?)
-                    (ClassDeclarationSyntax class1, ClassDeclarationSyntax class2)
-                        => class1
-                            .WithModifiers(
-                                TokenList(
-                                    class2.Modifiers
-                                        .Concat(node2.Modifiers)
-                                        .DistinctBy(x => x.ToString())
-                                )
-                            )
-                            .WithBaseList(
-                                class1.BaseList?.WithTypes(
-                                    SeparatedList(
-                                        class1.BaseList.Types
-                                            .Concat(
-                                                class2.BaseList?.Types
-                                                    ?? Enumerable.Empty<BaseTypeSyntax>()
-                                            )
-                                            .DistinctBy(x => x.ToString())
-                                    )
-                                )
-                            ),
-                    (InterfaceDeclarationSyntax if1, InterfaceDeclarationSyntax if2)
-                        => if1.WithModifiers(
-                                TokenList(
-                                    if2.Modifiers
-                                        .Concat(node2.Modifiers)
-                                        .DistinctBy(x => x.ToString())
-                                )
-                            )
-                            .WithBaseList(
-                                if1.BaseList?.WithTypes(
-                                    SeparatedList(
-                                        if1.BaseList.Types
-                                            .Concat(
-                                                if2.BaseList?.Types
-                                                    ?? Enumerable.Empty<BaseTypeSyntax>()
-                                            )
-                                            .DistinctBy(x => x.ToString())
-                                    )
-                                )
-                            ),
-                    (RecordDeclarationSyntax rec1, RecordDeclarationSyntax rec2)
-                        => rec1.WithModifiers(
-                                TokenList(
-                                    rec2.Modifiers
-                                        .Concat(node2.Modifiers)
-                                        .DistinctBy(x => x.ToString())
-                                )
-                            )
-                            .WithBaseList(
-                                rec1.BaseList?.WithTypes(
-                                    SeparatedList(
-                                        rec1.BaseList.Types
-                                            .Concat(
-                                                rec2.BaseList?.Types
-                                                    ?? Enumerable.Empty<BaseTypeSyntax>()
-                                            )
-                                            .DistinctBy(x => x.ToString())
-                                    )
-                                )
-                            ),
-                    (StructDeclarationSyntax s1, StructDeclarationSyntax s2)
-                        => s1.WithModifiers(
-                                TokenList(
-                                    s2.Modifiers
-                                        .Concat(node2.Modifiers)
-                                        .DistinctBy(x => x.ToString())
-                                )
-                            )
-                            .WithBaseList(
-                                s1.BaseList?.WithTypes(
-                                    SeparatedList(
-                                        s1.BaseList.Types
-                                            .Concat(
-                                                s2.BaseList?.Types
-                                                    ?? Enumerable.Empty<BaseTypeSyntax>()
-                                            )
-                                            .DistinctBy(x => x.ToString())
-                                    )
-                                )
-                            ),
-                    _ when node1.GetType() == node2.GetType()
-                        => node1.WithModifiers(TokenList(node1.Modifiers.Concat(node2.Modifiers))),
-                    _
-                        => throw new ArgumentException(
-                            "Node types differed - the profiles may contain two types with the "
-                                + "same name but with a different datatype (i.e. profile 1 contains a "
-                                + $"{node1.Kind().Humanize()} whereas profile 2 contains a {node2.Kind().Humanize()})"
+                    throw new ArgumentException(
+                        "Node types differed - the profiles may contain two types with the "
+                            + "same name but with a different datatype (i.e. profile 1 contains a "
+                            + $"{node1.Kind().Humanize()} whereas profile 2 contains a {node2.Kind().Humanize()})"
+                    );
+                }
+                return node1
+                    .WithModifiers(
+                        TokenList(
+                            node2.Modifiers.Concat(node2.Modifiers).DistinctBy(x => x.ToString())
                         )
-                };
+                    )
+                    .WithBaseList(
+                        node1.BaseList?.WithTypes(
+                            SeparatedList(
+                                node1.BaseList.Types
+                                    .Concat(
+                                        node2.BaseList?.Types ?? Enumerable.Empty<BaseTypeSyntax>()
+                                    )
+                                    .DistinctBy(x => x.ToString())
+                            )
+                        )
+                    )
+                    .WithAttributeLists(
+                        List(
+                            node1.AttributeLists
+                                .SelectMany(
+                                    x =>
+                                        x.Attributes.Select(
+                                            y => x.WithAttributes(SingletonSeparatedList(y))
+                                        )
+                                )
+                                .Concat(
+                                    node2.AttributeLists.SelectMany(
+                                        x =>
+                                            x.Attributes.Select(
+                                                y => x.WithAttributes(SingletonSeparatedList(y))
+                                            )
+                                    )
+                                )
+                                .DistinctBy(x => x.ToString())
+                        )
+                    );
+            }
 
             static BaseTypeDeclarationSyntax WithProfile(
                 BaseTypeDeclarationSyntax decl,

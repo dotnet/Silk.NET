@@ -1,4 +1,4 @@
-﻿<Project Sdk="Microsoft.NET.Sdk" InitialTargets="RemoveDuplicateItems">
+﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <TargetFramework>net8.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
@@ -8,15 +8,5 @@
   <ItemGroup>
     <ProjectReference Include="..\Core\Silk.NET.Core.csproj" />
   </ItemGroup>
-  <!-- again because Roslyn is a plonker -->
-  <Target Name="RemoveDuplicateItems">
-    <RemoveDuplicates Inputs="@(Compile)">
-      <Output TaskParameter="Filtered" ItemName="SilkDotNetCompile" />
-    </RemoveDuplicates>
-    <ItemGroup>
-      <Compile Remove="@(Compile)" />
-      <Compile Include="@(SilkDotNetCompile)" />
-    </ItemGroup>
-  </Target>
   <Import Project="..\Core\Silk.NET.Core.targets" />
 </Project>
