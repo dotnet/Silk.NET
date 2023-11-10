@@ -524,9 +524,9 @@ public class AddVTables(IOptionsSnapshot<AddVTables.Configuration> config) : IMo
 
         public override SyntaxNode? VisitClassDeclaration(ClassDeclarationSyntax node)
         {
-            var ns = node.FirstAncestorOrSelf<BaseNamespaceDeclarationSyntax>();
+            var ns = node.NamespaceFromSyntaxNode();
             var key = $"I{node.Identifier}";
-            var fullKey = ns is null ? node.Identifier.ToString() : $"{ns.Name}.{key}";
+            var fullKey = ns.Length == 0 ? node.Identifier.ToString() : $"{ns}.{key}";
             if (_interfaces.TryGetValue(fullKey, out var iface))
             {
                 // already using the full key
@@ -535,10 +535,11 @@ public class AddVTables(IOptionsSnapshot<AddVTables.Configuration> config) : IMo
             }
             else if (_interfaces.TryGetValue(key, out iface))
             {
-                var theirNs = iface.Syntax.FirstAncestorOrSelf<BaseNamespaceDeclarationSyntax>();
-                var theirFullKey = theirNs is null
-                    ? iface.Syntax.Identifier.ToString()
-                    : $"{theirNs.Name}.{iface.Syntax.Identifier}";
+                var theirNs = iface.Syntax.NamespaceFromSyntaxNode();
+                var theirFullKey =
+                    theirNs.Length == 0
+                        ? iface.Syntax.Identifier.ToString()
+                        : $"{theirNs}.{iface.Syntax.Identifier}";
                 if (theirFullKey == fullKey)
                 {
                     // this is our interface
@@ -552,14 +553,14 @@ public class AddVTables(IOptionsSnapshot<AddVTables.Configuration> config) : IMo
 
                     // this also means we need to create the interface with the full key
                     _currentInterface = NewInterface(key, node);
-                    _interfaces.Add(fullKey, (_currentInterface, ns?.Name.ToString()));
+                    _interfaces.Add(fullKey, (_currentInterface, ns));
                     key = fullKey;
                 }
             }
             else
             {
                 _currentInterface = NewInterface(key, node);
-                _interfaces.Add(key, (_currentInterface, ns?.Name.ToString()));
+                _interfaces.Add(key, (_currentInterface, ns));
             }
 
             var ret = (ClassDeclarationSyntax)base.VisitClassDeclaration(node)!;
@@ -605,7 +606,7 @@ public class AddVTables(IOptionsSnapshot<AddVTables.Configuration> config) : IMo
                     )
                 );
             _currentVTableOutputs = new ClassDeclarationSyntax?[_currentVTableOutputs.Length];
-            _interfaces[key] = (_currentInterface, ns?.Name.ToString());
+            _interfaces[key] = (_currentInterface, ns);
             _currentInterface = null;
             return ret;
 
@@ -672,7 +673,7 @@ public class AddVTables(IOptionsSnapshot<AddVTables.Configuration> config) : IMo
                     out var entryPoint,
                     out _
                 )
-                || !node.Modifiers.Any(x => x.IsKind(SyntaxKind.StaticKeyword))
+                || !node.Modifiers.Any(SyntaxKind.StaticKeyword)
                 || parent is null
             )
             {
@@ -1194,95 +1195,4 @@ public class AddVTables(IOptionsSnapshot<AddVTables.Configuration> config) : IMo
 
         return Task.FromResult(syntax);
     }
-
-    // public interface IMyStringLibrary
-    // {
-    //     public interface Static
-    //     {
-    //         static abstract byte* ToLower(byte* str);
-    //         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-    //         static virtual Ptr<byte> ToLower(Ptr<byte> str)
-    //         {
-    //             fixed (byte* nStr = str)
-    //             {
-    //                 return ToLower(nStr);
-    //             }
-    //         }
-    //         static abstract void FreeResult(byte* str);
-    //         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-    //         static virtual FreeResult(Ptr<byte> str)
-    //         {
-    //             fixed (byte* nStr = str)
-    //             {
-    //                 FreeResult(nStr);
-    //             }
-    //         }
-    //     }
-    //     byte* ToLower(byte* str);
-    //     Ptr<byte> ToLower(Ptr<byte> str)
-    //     {
-    //         fixed (byte* nStr = str)
-    //         {
-    //             return ToLower(nStr);
-    //         }
-    //     }
-    //     void FreeResult(byte* str);
-    //     void FreeResult(Ptr<byte> str)
-    //     {
-    //         fixed (byte* nStr = str)
-    //         {
-    //             FreeResult(nStr);
-    //         }
-    //     }
-    // }
-    // public class MyStringLibrary : IMyStringLibrary
-    // {
-    //     public static class DllImport : IMyStringLibrary.Static
-    //     {
-    //         [DllImportAttribute("mystringlib")]
-    //         public static extern byte* ToLower(byte* str);
-    //         [DllImportAttribute("mystringlib")]
-    //         public static extern void FreeResult(byte* str);
-    //     }
-    //     public class StaticWrapper<T> : IMyStringLibrary where T: IMyStringLibrary.Static
-    //     {
-    //         public StaticWrapper();
-    //         public byte* ToLower(byte* str) => T.ToLower(str);
-    //         public void FreeResult(byte* str) => T.FreeResult(str);
-    //     }
-    //     public class ThreadLocal : IMyStringLibrary.Static
-    //     {
-    //         private static ThreadLocal<IMyStringLibrary> _current = new();
-    //         public static void MakeCurrent(IMyStringLibrary current) => _current.Value = current;
-    //         public static byte* ToLower(byte* str) => _current.Value.ToLower(str);
-    //         public static void FreeResult(byte* str) => _current.Value.FreeResult(str);
-    //         public static Ptr<byte> ToLower(Ptr<byte> str) => _current.Value.ToLower(str);
-    //         public static void FreeResult(Ptr<byte> str) => _current.Value.FreeResult(str);
-    //     }
-    //
-    //     // Non-Static Interface
-    //     private Func<string, nint> _getProcAddress;
-    //     byte* IMyStringLibrary.ToLower(byte* str)
-    //     {
-    //         var ptr = _getProcAddress("ToLower");
-    //         if (ptr is 0) throw new("some symbol loading exception...");
-    //         return ((delegate* unmanaged<byte*, byte*>)ptr)(str);
-    //     }
-    //
-    //     void IMyStringLibrary.FreeResult(byte* str)
-    //     {
-    //         var ptr = _getProcAddress("FreeResult");
-    //         if (ptr is 0) throw new("some symbol loading exception...");
-    //         return ((delegate* unmanaged<byte*, void>)ptr)(str);
-    //     }
-    //
-    //     public static IMyStringLibrary Create() => new StaticWrapper<DllImport>();
-    //     public static IMyStringLibrary Create(Func<string, nint> getProcAddress) => new MyStringLibrary { _getProcAddress = getProcAddress };
-    //
-    //     // Static Interface
-    //     public static byte* ToLower(byte* str) => DllImport.ToLower(str);
-    //     public static Ptr<byte> ToLower(Ptr<byte> str) => DllImport.ToLower(str);
-    //     public static void FreeResult(byte* str) => DllImport.FreeResult(str);
-    //     public static void FreeResult(Ptr<byte> str) => DllImport.FreeResult(str);
-    // }
 }

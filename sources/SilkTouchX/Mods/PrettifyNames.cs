@@ -243,10 +243,10 @@ public class PrettifyNames : IMod
             }
 
             if (
-                !node.Modifiers.Any(x => x.IsKind(SyntaxKind.ConstKeyword))
+                !node.Modifiers.Any(SyntaxKind.ConstKeyword)
                 && (
-                    !node.Modifiers.Any(x => x.IsKind(SyntaxKind.StaticKeyword))
-                    || !node.Modifiers.Any(x => x.IsKind(SyntaxKind.ReadOnlyKeyword))
+                    !node.Modifiers.Any(SyntaxKind.StaticKeyword)
+                    || !node.Modifiers.Any(SyntaxKind.ReadOnlyKeyword)
                 )
             )
             {

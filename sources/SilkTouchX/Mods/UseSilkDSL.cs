@@ -65,7 +65,7 @@ public class UseSilkDSL : IMod
             // Make sure the function either has a body or is an extern function
             var consider =
                 node.Body is not null
-                || node.Modifiers.Any(x => x.IsKind(SyntaxKind.ExternKeyword));
+                || node.Modifiers.Any(SyntaxKind.ExternKeyword);
             if (!consider || !node.AttributeLists.GetNativeFunctionInfo(out var lib, out var ep, out _))
             {
                 return base.VisitMethodDeclaration(node);

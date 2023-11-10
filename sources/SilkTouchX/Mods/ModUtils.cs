@@ -37,6 +37,21 @@ public static class ModUtils
     }
 
     /// <summary>
+    /// Gets the namespace in which a syntax node is contained. This is transitive, so nested namespace declarations
+    /// will be accounted for.
+    /// </summary>
+    /// <param name="node">The syntax node.</param>
+    /// <returns>The namespace.</returns>
+    public static string NamespaceFromSyntaxNode(this SyntaxNode node) =>
+        string.Join(
+            '.',
+            node.Ancestors()
+                .OfType<BaseNamespaceDeclarationSyntax>()
+                .Reverse()
+                .Select(x => x.Name.ToString())
+        );
+
+    /// <summary>
     /// Matches a potential replacement candidate against the given list of regex-replacement mappings and, if a regex
     /// matches, performs a group substitution on the replacement to replace the match.
     /// </summary>
