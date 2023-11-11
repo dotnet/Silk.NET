@@ -151,7 +151,7 @@ public static class ServiceCollectionExtensions
             {
                 services.AddSingleton(loadedMods[m]);
                 services.AddSingleton<IMod>(s => (IMod)s.GetRequiredService(loadedMods[m]));
-                if (!loadedMods[m].IsAssignableTo(typeof(INameTrimmer)))
+                if (!NameTrimmerProviders.IsModTrimmerApplicable(loadedMods[m]))
                 {
                     continue;
                 }

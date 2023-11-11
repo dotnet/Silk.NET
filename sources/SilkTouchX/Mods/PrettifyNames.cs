@@ -74,7 +74,7 @@ public class PrettifyNames(
                         .OrderBy(x => x.Version)
                 )
                 {
-                    trimmer.Trim(null, cfg.GlobalPrefixHint, typeNames, cfg.PrefixOverrides);
+                    trimmer.Trim(null, cfg.GlobalPrefixHint, key, typeNames, cfg.PrefixOverrides);
                 }
             }
 
@@ -96,6 +96,7 @@ public class PrettifyNames(
                         trimmer.Trim(
                             typeName,
                             cfg.GlobalPrefixHint,
+                            key,
                             constNames,
                             cfg.PrefixOverrides
                         );
@@ -121,6 +122,7 @@ public class PrettifyNames(
                         trimmer.Trim(
                             typeName,
                             cfg.GlobalPrefixHint,
+                            key,
                             functionNames,
                             cfg.PrefixOverrides
                         );

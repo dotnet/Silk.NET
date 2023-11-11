@@ -60,6 +60,7 @@
       "Mods": [
         "AddStdIncludes",
         "AddApiProfiles",
+        "MixKhronosData",
         "AddOpaqueStructs",
         "UseSilkDSL",
         "PrettifyNames",
@@ -97,6 +98,9 @@
         "Names": [
           "GLsync"
         ]
+      },
+      "MixKhronosData": {
+        "UseDataTypeTrimmings": true
       }
     }
   }

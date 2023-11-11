@@ -22,11 +22,13 @@ public interface INameTrimmer
     /// The name of the container. e.g. if we're trimming enum members, this would be the enum type name.
     /// </param>
     /// <param name="hint">A prefix hint. Generally this is a global method prefix or what have you.</param>
+    /// <param name="jobKey">The job key.</param>
     /// <param name="names">The names within the container.</param>
     /// <param name="prefixOverrides">The prefix overrides.</param>
     void Trim(
         string? container,
         string? hint,
+        string? jobKey,
         Dictionary<string, (string Primary, List<string>? Secondary)>? names,
         Dictionary<string, string>? prefixOverrides
     );

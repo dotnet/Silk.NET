@@ -22,6 +22,7 @@ public class ModLoader
             nameof(AddOpaqueStructs) => typeof(AddOpaqueStructs),
             nameof(AddVTables) => typeof(AddVTables),
             nameof(AddApiProfiles) => typeof(AddApiProfiles),
+            nameof(MixKhronosData) => typeof(MixKhronosData),
             _ => null
         };
 }

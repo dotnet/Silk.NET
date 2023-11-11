@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using Microsoft.Extensions.Options;
 using SilkTouchX.Mods;
@@ -21,11 +22,24 @@ internal class NameTrimmerProviders
 
     public class ModTrimmer<T>(T mod, IOptionsSnapshot<SilkTouchConfiguration> job)
         : INameTrimmerProvider
-        where T : INameTrimmer
     {
         public IEnumerable<INameTrimmer> GetTrimmers(string? key) =>
             job.Get(key).Mods?.Contains(typeof(T).Name) ?? false
-                ? Enumerable.Repeat<INameTrimmer>(mod, 1)
+                ? (
+                    mod is INameTrimmer trimmer
+                        ? Enumerable.Repeat(trimmer, 1)
+                        : Enumerable.Empty<INameTrimmer>()
+                )
+                    .Concat(
+                        mod is INameTrimmerProvider provider
+                            ? provider.GetTrimmers(key)
+                            : Enumerable.Empty<INameTrimmer>()
+                    )
+                    .Distinct()
                 : Enumerable.Empty<INameTrimmer>();
     }
+
+    public static bool IsModTrimmerApplicable(Type type) =>
+        type.IsAssignableTo(typeof(INameTrimmer))
+        || type.IsAssignableTo(typeof(INameTrimmerProvider));
 }

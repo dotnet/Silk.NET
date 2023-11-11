@@ -975,7 +975,7 @@ public unsafe partial interface IGL
         [SupportedApiProfile("glcore", MinVersion = "3.2")]
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glBlendEquationi")]
-        static abstract void BlendEquationi(
+        static abstract void BlendEquation(
             [NativeTypeName("GLuint")] uint buf,
             [NativeTypeName("GLenum")] uint mode
         );
@@ -1032,7 +1032,7 @@ public unsafe partial interface IGL
         [SupportedApiProfile("glcore", MinVersion = "3.2")]
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glBlendEquationSeparatei")]
-        static abstract void BlendEquationSeparatei(
+        static abstract void BlendEquationSeparate(
             [NativeTypeName("GLuint")] uint buf,
             [NativeTypeName("GLenum")] uint modeRGB,
             [NativeTypeName("GLenum")] uint modeAlpha
@@ -1091,7 +1091,7 @@ public unsafe partial interface IGL
         [SupportedApiProfile("glcore", MinVersion = "3.2")]
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glBlendFunci")]
-        static abstract void BlendFunci(
+        static abstract void BlendFunc(
             [NativeTypeName("GLuint")] uint buf,
             [NativeTypeName("GLenum")] uint src,
             [NativeTypeName("GLenum")] uint dst
@@ -1153,7 +1153,7 @@ public unsafe partial interface IGL
         [SupportedApiProfile("glcore", MinVersion = "3.2")]
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glBlendFuncSeparatei")]
-        static abstract void BlendFuncSeparatei(
+        static abstract void BlendFuncSeparate(
             [NativeTypeName("GLuint")] uint buf,
             [NativeTypeName("GLenum")] uint srcRGB,
             [NativeTypeName("GLenum")] uint dstRGB,
@@ -1581,7 +1581,7 @@ public unsafe partial interface IGL
         [SupportedApiProfile("glcore", MinVersion = "3.2")]
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glClearBufferfi")]
-        static abstract void ClearBufferfi(
+        static abstract void ClearBuffer(
             [NativeTypeName("GLenum")] uint buffer,
             [NativeTypeName("GLint")] int drawbuffer,
             [NativeTypeName("GLfloat")] float depth,
@@ -1591,7 +1591,7 @@ public unsafe partial interface IGL
         [SupportedApiProfile("glcore", MinVersion = "3.2")]
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glClearBufferfv")]
-        static abstract void ClearBufferfv(
+        static abstract void ClearBuffer(
             [NativeTypeName("GLenum")] uint buffer,
             [NativeTypeName("GLint")] int drawbuffer,
             [NativeTypeName("const GLfloat *")] Ref<float> value
@@ -1600,7 +1600,7 @@ public unsafe partial interface IGL
         [SupportedApiProfile("glcore", MinVersion = "3.2")]
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glClearBufferiv")]
-        static abstract void ClearBufferiv(
+        static abstract void ClearBuffer(
             [NativeTypeName("GLenum")] uint buffer,
             [NativeTypeName("GLint")] int drawbuffer,
             [NativeTypeName("const GLint *")] Ref<int> value
@@ -1622,7 +1622,7 @@ public unsafe partial interface IGL
         [SupportedApiProfile("glcore", MinVersion = "3.2")]
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glClearBufferuiv")]
-        static abstract void ClearBufferuiv(
+        static abstract void ClearBuffer(
             [NativeTypeName("GLenum")] uint buffer,
             [NativeTypeName("GLint")] int drawbuffer,
             [NativeTypeName("const GLuint *")] Ref<uint> value
@@ -1692,7 +1692,7 @@ public unsafe partial interface IGL
         [SupportedApiProfile("gles1", MaxVersion = "2.0")]
         [SupportedApiProfile("gles2", MinVersion = "2.0")]
         [NativeFunction("opengl", EntryPoint = "glClearDepthf")]
-        static abstract void ClearDepthf([NativeTypeName("GLfloat")] float d);
+        static abstract void ClearDepth([NativeTypeName("GLfloat")] float d);
 
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [SupportedApiProfile("gles1", MaxVersion = "2.0")]
@@ -1763,7 +1763,7 @@ public unsafe partial interface IGL
         [SupportedApiProfile("glcore", MinVersion = "3.2")]
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glClearNamedFramebufferfi")]
-        static abstract void ClearNamedFramebufferfi(
+        static abstract void ClearNamedFramebuffer(
             [NativeTypeName("GLuint")] uint framebuffer,
             [NativeTypeName("GLenum")] uint buffer,
             [NativeTypeName("GLint")] int drawbuffer,
@@ -1774,7 +1774,7 @@ public unsafe partial interface IGL
         [SupportedApiProfile("glcore", MinVersion = "3.2")]
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glClearNamedFramebufferfv")]
-        static abstract void ClearNamedFramebufferfv(
+        static abstract void ClearNamedFramebuffer(
             [NativeTypeName("GLuint")] uint framebuffer,
             [NativeTypeName("GLenum")] uint buffer,
             [NativeTypeName("GLint")] int drawbuffer,
@@ -1784,7 +1784,7 @@ public unsafe partial interface IGL
         [SupportedApiProfile("glcore", MinVersion = "3.2")]
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glClearNamedFramebufferiv")]
-        static abstract void ClearNamedFramebufferiv(
+        static abstract void ClearNamedFramebuffer(
             [NativeTypeName("GLuint")] uint framebuffer,
             [NativeTypeName("GLenum")] uint buffer,
             [NativeTypeName("GLint")] int drawbuffer,
@@ -1794,7 +1794,7 @@ public unsafe partial interface IGL
         [SupportedApiProfile("glcore", MinVersion = "3.2")]
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glClearNamedFramebufferuiv")]
-        static abstract void ClearNamedFramebufferuiv(
+        static abstract void ClearNamedFramebuffer(
             [NativeTypeName("GLuint")] uint framebuffer,
             [NativeTypeName("GLenum")] uint buffer,
             [NativeTypeName("GLint")] int drawbuffer,
@@ -1940,7 +1940,7 @@ public unsafe partial interface IGL
 
         [SupportedApiProfile("gles1", MaxVersion = "2.0")]
         [NativeFunction("opengl", EntryPoint = "glClipPlanef")]
-        static abstract void ClipPlanef(
+        static abstract void ClipPlane(
             [NativeTypeName("GLenum")] uint p,
             [NativeTypeName("const GLfloat *")] Ref<float> eqn
         );
@@ -1984,7 +1984,7 @@ public unsafe partial interface IGL
 
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glColor3b")]
-        static abstract void Color3b(
+        static abstract void Color3(
             [NativeTypeName("GLbyte")] sbyte red,
             [NativeTypeName("GLbyte")] sbyte green,
             [NativeTypeName("GLbyte")] sbyte blue
@@ -1992,11 +1992,11 @@ public unsafe partial interface IGL
 
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glColor3bv")]
-        static abstract void Color3bv([NativeTypeName("const GLbyte *")] Ref<sbyte> v);
+        static abstract void Color3([NativeTypeName("const GLbyte *")] Ref<sbyte> v);
 
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glColor3d")]
-        static abstract void Color3d(
+        static abstract void Color3(
             [NativeTypeName("GLdouble")] double red,
             [NativeTypeName("GLdouble")] double green,
             [NativeTypeName("GLdouble")] double blue
@@ -2004,11 +2004,11 @@ public unsafe partial interface IGL
 
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glColor3dv")]
-        static abstract void Color3dv([NativeTypeName("const GLdouble *")] Ref<double> v);
+        static abstract void Color3([NativeTypeName("const GLdouble *")] Ref<double> v);
 
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glColor3f")]
-        static abstract void Color3f(
+        static abstract void Color3(
             [NativeTypeName("GLfloat")] float red,
             [NativeTypeName("GLfloat")] float green,
             [NativeTypeName("GLfloat")] float blue
@@ -2016,7 +2016,7 @@ public unsafe partial interface IGL
 
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glColor3fv")]
-        static abstract void Color3fv([NativeTypeName("const GLfloat *")] Ref<float> v);
+        static abstract void Color3([NativeTypeName("const GLfloat *")] Ref<float> v);
 
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glColor3fVertex3fSUN")]
@@ -2050,7 +2050,7 @@ public unsafe partial interface IGL
 
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glColor3i")]
-        static abstract void Color3i(
+        static abstract void Color3(
             [NativeTypeName("GLint")] int red,
             [NativeTypeName("GLint")] int green,
             [NativeTypeName("GLint")] int blue
@@ -2058,11 +2058,11 @@ public unsafe partial interface IGL
 
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glColor3iv")]
-        static abstract void Color3iv([NativeTypeName("const GLint *")] Ref<int> v);
+        static abstract void Color3([NativeTypeName("const GLint *")] Ref<int> v);
 
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glColor3s")]
-        static abstract void Color3s(
+        static abstract void Color3(
             [NativeTypeName("GLshort")] short red,
             [NativeTypeName("GLshort")] short green,
             [NativeTypeName("GLshort")] short blue
@@ -2070,11 +2070,11 @@ public unsafe partial interface IGL
 
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glColor3sv")]
-        static abstract void Color3sv([NativeTypeName("const GLshort *")] Ref<short> v);
+        static abstract void Color3([NativeTypeName("const GLshort *")] Ref<short> v);
 
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glColor3ub")]
-        static abstract void Color3ub(
+        static abstract void Color3(
             [NativeTypeName("GLubyte")] byte red,
             [NativeTypeName("GLubyte")] byte green,
             [NativeTypeName("GLubyte")] byte blue
@@ -2082,11 +2082,11 @@ public unsafe partial interface IGL
 
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glColor3ubv")]
-        static abstract void Color3ubv([NativeTypeName("const GLubyte *")] Ref<byte> v);
+        static abstract void Color3([NativeTypeName("const GLubyte *")] Ref<byte> v);
 
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glColor3ui")]
-        static abstract void Color3ui(
+        static abstract void Color3(
             [NativeTypeName("GLuint")] uint red,
             [NativeTypeName("GLuint")] uint green,
             [NativeTypeName("GLuint")] uint blue
@@ -2094,11 +2094,11 @@ public unsafe partial interface IGL
 
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glColor3uiv")]
-        static abstract void Color3uiv([NativeTypeName("const GLuint *")] Ref<uint> v);
+        static abstract void Color3([NativeTypeName("const GLuint *")] Ref<uint> v);
 
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glColor3us")]
-        static abstract void Color3us(
+        static abstract void Color3(
             [NativeTypeName("GLushort")] ushort red,
             [NativeTypeName("GLushort")] ushort green,
             [NativeTypeName("GLushort")] ushort blue
@@ -2106,7 +2106,7 @@ public unsafe partial interface IGL
 
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glColor3usv")]
-        static abstract void Color3usv([NativeTypeName("const GLushort *")] Ref<ushort> v);
+        static abstract void Color3([NativeTypeName("const GLushort *")] Ref<ushort> v);
 
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glColor3xOES")]
@@ -2122,7 +2122,7 @@ public unsafe partial interface IGL
 
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glColor4b")]
-        static abstract void Color4b(
+        static abstract void Color4(
             [NativeTypeName("GLbyte")] sbyte red,
             [NativeTypeName("GLbyte")] sbyte green,
             [NativeTypeName("GLbyte")] sbyte blue,
@@ -2131,11 +2131,11 @@ public unsafe partial interface IGL
 
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glColor4bv")]
-        static abstract void Color4bv([NativeTypeName("const GLbyte *")] Ref<sbyte> v);
+        static abstract void Color4([NativeTypeName("const GLbyte *")] Ref<sbyte> v);
 
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glColor4d")]
-        static abstract void Color4d(
+        static abstract void Color4(
             [NativeTypeName("GLdouble")] double red,
             [NativeTypeName("GLdouble")] double green,
             [NativeTypeName("GLdouble")] double blue,
@@ -2144,12 +2144,12 @@ public unsafe partial interface IGL
 
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glColor4dv")]
-        static abstract void Color4dv([NativeTypeName("const GLdouble *")] Ref<double> v);
+        static abstract void Color4([NativeTypeName("const GLdouble *")] Ref<double> v);
 
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [SupportedApiProfile("gles1", MaxVersion = "2.0")]
         [NativeFunction("opengl", EntryPoint = "glColor4f")]
-        static abstract void Color4f(
+        static abstract void Color4(
             [NativeTypeName("GLfloat")] float red,
             [NativeTypeName("GLfloat")] float green,
             [NativeTypeName("GLfloat")] float blue,
@@ -2181,7 +2181,7 @@ public unsafe partial interface IGL
 
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glColor4fv")]
-        static abstract void Color4fv([NativeTypeName("const GLfloat *")] Ref<float> v);
+        static abstract void Color4([NativeTypeName("const GLfloat *")] Ref<float> v);
 
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glColor4hNV")]
@@ -2198,7 +2198,7 @@ public unsafe partial interface IGL
 
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glColor4i")]
-        static abstract void Color4i(
+        static abstract void Color4(
             [NativeTypeName("GLint")] int red,
             [NativeTypeName("GLint")] int green,
             [NativeTypeName("GLint")] int blue,
@@ -2207,11 +2207,11 @@ public unsafe partial interface IGL
 
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glColor4iv")]
-        static abstract void Color4iv([NativeTypeName("const GLint *")] Ref<int> v);
+        static abstract void Color4([NativeTypeName("const GLint *")] Ref<int> v);
 
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glColor4s")]
-        static abstract void Color4s(
+        static abstract void Color4(
             [NativeTypeName("GLshort")] short red,
             [NativeTypeName("GLshort")] short green,
             [NativeTypeName("GLshort")] short blue,
@@ -2220,12 +2220,12 @@ public unsafe partial interface IGL
 
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glColor4sv")]
-        static abstract void Color4sv([NativeTypeName("const GLshort *")] Ref<short> v);
+        static abstract void Color4([NativeTypeName("const GLshort *")] Ref<short> v);
 
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [SupportedApiProfile("gles1", MaxVersion = "2.0")]
         [NativeFunction("opengl", EntryPoint = "glColor4ub")]
-        static abstract void Color4ub(
+        static abstract void Color4(
             [NativeTypeName("GLubyte")] byte red,
             [NativeTypeName("GLubyte")] byte green,
             [NativeTypeName("GLubyte")] byte blue,
@@ -2234,7 +2234,7 @@ public unsafe partial interface IGL
 
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glColor4ubv")]
-        static abstract void Color4ubv([NativeTypeName("const GLubyte *")] Ref<byte> v);
+        static abstract void Color4([NativeTypeName("const GLubyte *")] Ref<byte> v);
 
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glColor4ubVertex2fSUN")]
@@ -2275,7 +2275,7 @@ public unsafe partial interface IGL
 
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glColor4ui")]
-        static abstract void Color4ui(
+        static abstract void Color4(
             [NativeTypeName("GLuint")] uint red,
             [NativeTypeName("GLuint")] uint green,
             [NativeTypeName("GLuint")] uint blue,
@@ -2284,11 +2284,11 @@ public unsafe partial interface IGL
 
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glColor4uiv")]
-        static abstract void Color4uiv([NativeTypeName("const GLuint *")] Ref<uint> v);
+        static abstract void Color4([NativeTypeName("const GLuint *")] Ref<uint> v);
 
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glColor4us")]
-        static abstract void Color4us(
+        static abstract void Color4(
             [NativeTypeName("GLushort")] ushort red,
             [NativeTypeName("GLushort")] ushort green,
             [NativeTypeName("GLushort")] ushort blue,
@@ -2297,7 +2297,7 @@ public unsafe partial interface IGL
 
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glColor4usv")]
-        static abstract void Color4usv([NativeTypeName("const GLushort *")] Ref<ushort> v);
+        static abstract void Color4([NativeTypeName("const GLushort *")] Ref<ushort> v);
 
         [SupportedApiProfile("gles1", MaxVersion = "2.0")]
         [NativeFunction("opengl", EntryPoint = "glColor4x")]
@@ -2391,7 +2391,7 @@ public unsafe partial interface IGL
         [SupportedApiProfile("glcore", MinVersion = "3.2")]
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glColorMaski")]
-        static abstract void ColorMaski(
+        static abstract void ColorMask(
             [NativeTypeName("GLuint")] uint index,
             [NativeTypeName("GLboolean")] byte r,
             [NativeTypeName("GLboolean")] byte g,
@@ -2438,28 +2438,28 @@ public unsafe partial interface IGL
 
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glColorP3ui")]
-        static abstract void ColorP3ui(
+        static abstract void ColorP3(
             [NativeTypeName("GLenum")] uint type,
             [NativeTypeName("GLuint")] uint color
         );
 
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glColorP3uiv")]
-        static abstract void ColorP3uiv(
+        static abstract void ColorP3(
             [NativeTypeName("GLenum")] uint type,
             [NativeTypeName("const GLuint *")] Ref<uint> color
         );
 
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glColorP4ui")]
-        static abstract void ColorP4ui(
+        static abstract void ColorP4(
             [NativeTypeName("GLenum")] uint type,
             [NativeTypeName("GLuint")] uint color
         );
 
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glColorP4uiv")]
-        static abstract void ColorP4uiv(
+        static abstract void ColorP4(
             [NativeTypeName("GLenum")] uint type,
             [NativeTypeName("const GLuint *")] Ref<uint> color
         );
@@ -2548,7 +2548,7 @@ public unsafe partial interface IGL
 
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glColorTableParameterfv")]
-        static abstract void ColorTableParameterfv(
+        static abstract void ColorTableParameter(
             [NativeTypeName("GLenum")] uint target,
             [NativeTypeName("GLenum")] uint pname,
             [NativeTypeName("const GLfloat *")] Ref<float> @params
@@ -2564,7 +2564,7 @@ public unsafe partial interface IGL
 
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glColorTableParameteriv")]
-        static abstract void ColorTableParameteriv(
+        static abstract void ColorTableParameter(
             [NativeTypeName("GLenum")] uint target,
             [NativeTypeName("GLenum")] uint pname,
             [NativeTypeName("const GLint *")] Ref<int> @params
@@ -3182,7 +3182,7 @@ public unsafe partial interface IGL
 
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glConvolutionParameterf")]
-        static abstract void ConvolutionParameterf(
+        static abstract void ConvolutionParameter(
             [NativeTypeName("GLenum")] uint target,
             [NativeTypeName("GLenum")] uint pname,
             [NativeTypeName("GLfloat")] float @params
@@ -3198,7 +3198,7 @@ public unsafe partial interface IGL
 
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glConvolutionParameterfv")]
-        static abstract void ConvolutionParameterfv(
+        static abstract void ConvolutionParameter(
             [NativeTypeName("GLenum")] uint target,
             [NativeTypeName("GLenum")] uint pname,
             [NativeTypeName("const GLfloat *")] Ref<float> @params
@@ -3214,7 +3214,7 @@ public unsafe partial interface IGL
 
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glConvolutionParameteri")]
-        static abstract void ConvolutionParameteri(
+        static abstract void ConvolutionParameter(
             [NativeTypeName("GLenum")] uint target,
             [NativeTypeName("GLenum")] uint pname,
             [NativeTypeName("GLint")] int @params
@@ -3230,7 +3230,7 @@ public unsafe partial interface IGL
 
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glConvolutionParameteriv")]
-        static abstract void ConvolutionParameteriv(
+        static abstract void ConvolutionParameter(
             [NativeTypeName("GLenum")] uint target,
             [NativeTypeName("GLenum")] uint pname,
             [NativeTypeName("const GLint *")] Ref<int> @params
@@ -4013,7 +4013,7 @@ public unsafe partial interface IGL
         [SupportedApiProfile("glcore", MinVersion = "3.2")]
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glCreateShaderProgramv")]
-        static abstract uint CreateShaderProgramv(
+        static abstract uint CreateShaderProgram(
             [NativeTypeName("GLenum")] uint type,
             [NativeTypeName("GLsizei")] int count,
             [NativeTypeName("const GLchar *const *")] Ref2D<sbyte> strings
@@ -4661,7 +4661,7 @@ public unsafe partial interface IGL
         [SupportedApiProfile("glcore", MinVersion = "3.2")]
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glDepthRangeArrayv")]
-        static abstract void DepthRangeArrayv(
+        static abstract void DepthRangeArray(
             [NativeTypeName("GLuint")] uint first,
             [NativeTypeName("GLsizei")] int count,
             [NativeTypeName("const GLdouble *")] Ref<double> v
@@ -4680,7 +4680,7 @@ public unsafe partial interface IGL
         [SupportedApiProfile("gles1", MaxVersion = "2.0")]
         [SupportedApiProfile("gles2", MinVersion = "2.0")]
         [NativeFunction("opengl", EntryPoint = "glDepthRangef")]
-        static abstract void DepthRangef(
+        static abstract void DepthRange(
             [NativeTypeName("GLfloat")] float n,
             [NativeTypeName("GLfloat")] float f
         );
@@ -4804,7 +4804,7 @@ public unsafe partial interface IGL
         [SupportedApiProfile("glcore", MinVersion = "3.2")]
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glDisablei")]
-        static abstract void Disablei(
+        static abstract void Disable(
             [NativeTypeName("GLenum")] uint target,
             [NativeTypeName("GLuint")] uint index
         );
@@ -5606,7 +5606,7 @@ public unsafe partial interface IGL
 
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glEdgeFlagv")]
-        static abstract void EdgeFlagv([NativeTypeName("const GLboolean *")] Ref<byte> flag);
+        static abstract void EdgeFlag([NativeTypeName("const GLboolean *")] Ref<byte> flag);
 
         [SupportedApiProfile("gles1", MaxVersion = "2.0")]
         [SupportedApiProfile("gles2", MinVersion = "2.0")]
@@ -5694,7 +5694,7 @@ public unsafe partial interface IGL
         [SupportedApiProfile("glcore", MinVersion = "3.2")]
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glEnablei")]
-        static abstract void Enablei(
+        static abstract void Enable(
             [NativeTypeName("GLenum")] uint target,
             [NativeTypeName("GLuint")] uint index
         );
@@ -5865,19 +5865,19 @@ public unsafe partial interface IGL
 
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glEvalCoord1d")]
-        static abstract void EvalCoord1d([NativeTypeName("GLdouble")] double u);
+        static abstract void EvalCoord1([NativeTypeName("GLdouble")] double u);
 
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glEvalCoord1dv")]
-        static abstract void EvalCoord1dv([NativeTypeName("const GLdouble *")] Ref<double> u);
+        static abstract void EvalCoord1([NativeTypeName("const GLdouble *")] Ref<double> u);
 
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glEvalCoord1f")]
-        static abstract void EvalCoord1f([NativeTypeName("GLfloat")] float u);
+        static abstract void EvalCoord1([NativeTypeName("GLfloat")] float u);
 
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glEvalCoord1fv")]
-        static abstract void EvalCoord1fv([NativeTypeName("const GLfloat *")] Ref<float> u);
+        static abstract void EvalCoord1([NativeTypeName("const GLfloat *")] Ref<float> u);
 
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glEvalCoord1xOES")]
@@ -5889,25 +5889,25 @@ public unsafe partial interface IGL
 
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glEvalCoord2d")]
-        static abstract void EvalCoord2d(
+        static abstract void EvalCoord2(
             [NativeTypeName("GLdouble")] double u,
             [NativeTypeName("GLdouble")] double v
         );
 
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glEvalCoord2dv")]
-        static abstract void EvalCoord2dv([NativeTypeName("const GLdouble *")] Ref<double> u);
+        static abstract void EvalCoord2([NativeTypeName("const GLdouble *")] Ref<double> u);
 
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glEvalCoord2f")]
-        static abstract void EvalCoord2f(
+        static abstract void EvalCoord2(
             [NativeTypeName("GLfloat")] float u,
             [NativeTypeName("GLfloat")] float v
         );
 
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glEvalCoord2fv")]
-        static abstract void EvalCoord2fv([NativeTypeName("const GLfloat *")] Ref<float> u);
+        static abstract void EvalCoord2([NativeTypeName("const GLfloat *")] Ref<float> u);
 
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glEvalCoord2xOES")]
@@ -6253,7 +6253,7 @@ public unsafe partial interface IGL
 
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glFogCoordd")]
-        static abstract void FogCoordd([NativeTypeName("GLdouble")] double coord);
+        static abstract void FogCoord([NativeTypeName("GLdouble")] double coord);
 
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glFogCoorddEXT")]
@@ -6261,7 +6261,7 @@ public unsafe partial interface IGL
 
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glFogCoorddv")]
-        static abstract void FogCoorddv([NativeTypeName("const GLdouble *")] Ref<double> coord);
+        static abstract void FogCoord([NativeTypeName("const GLdouble *")] Ref<double> coord);
 
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glFogCoorddvEXT")]
@@ -6269,7 +6269,7 @@ public unsafe partial interface IGL
 
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glFogCoordf")]
-        static abstract void FogCoordf([NativeTypeName("GLfloat")] float coord);
+        static abstract void FogCoord([NativeTypeName("GLfloat")] float coord);
 
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glFogCoordfEXT")]
@@ -6285,7 +6285,7 @@ public unsafe partial interface IGL
 
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glFogCoordfv")]
-        static abstract void FogCoordfv([NativeTypeName("const GLfloat *")] Ref<float> coord);
+        static abstract void FogCoord([NativeTypeName("const GLfloat *")] Ref<float> coord);
 
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glFogCoordfvEXT")]
@@ -6327,7 +6327,7 @@ public unsafe partial interface IGL
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [SupportedApiProfile("gles1", MaxVersion = "2.0")]
         [NativeFunction("opengl", EntryPoint = "glFogf")]
-        static abstract void Fogf(
+        static abstract void Fog(
             [NativeTypeName("GLenum")] uint pname,
             [NativeTypeName("GLfloat")] float param1
         );
@@ -6342,21 +6342,21 @@ public unsafe partial interface IGL
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [SupportedApiProfile("gles1", MaxVersion = "2.0")]
         [NativeFunction("opengl", EntryPoint = "glFogfv")]
-        static abstract void Fogfv(
+        static abstract void Fog(
             [NativeTypeName("GLenum")] uint pname,
             [NativeTypeName("const GLfloat *")] Ref<float> @params
         );
 
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glFogi")]
-        static abstract void Fogi(
+        static abstract void Fog(
             [NativeTypeName("GLenum")] uint pname,
             [NativeTypeName("GLint")] int param1
         );
 
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glFogiv")]
-        static abstract void Fogiv(
+        static abstract void Fog(
             [NativeTypeName("GLenum")] uint pname,
             [NativeTypeName("const GLint *")] Ref<int> @params
         );
@@ -6378,7 +6378,7 @@ public unsafe partial interface IGL
 
         [SupportedApiProfile("gles1", MaxVersion = "2.0")]
         [NativeFunction("opengl", EntryPoint = "glFogxv")]
-        static abstract void Fogxv(
+        static abstract void Fogx(
             [NativeTypeName("GLenum")] uint pname,
             [NativeTypeName("const GLfixed *")] Ref<int> param1
         );
@@ -6549,7 +6549,7 @@ public unsafe partial interface IGL
         [SupportedApiProfile("glcore", MinVersion = "3.2")]
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glFramebufferParameteri")]
-        static abstract void FramebufferParameteri(
+        static abstract void FramebufferParameter(
             [NativeTypeName("GLenum")] uint target,
             [NativeTypeName("GLenum")] uint pname,
             [NativeTypeName("GLint")] int param2
@@ -6935,7 +6935,7 @@ public unsafe partial interface IGL
 
         [SupportedApiProfile("gles1", MaxVersion = "2.0")]
         [NativeFunction("opengl", EntryPoint = "glFrustumf")]
-        static abstract void Frustumf(
+        static abstract void Frustum(
             [NativeTypeName("GLfloat")] float l,
             [NativeTypeName("GLfloat")] float r,
             [NativeTypeName("GLfloat")] float b,
@@ -7287,7 +7287,7 @@ public unsafe partial interface IGL
         [SupportedApiProfile("glcore", MinVersion = "3.2")]
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glGetActiveAtomicCounterBufferiv")]
-        static abstract void GetActiveAtomicCounterBufferiv(
+        static abstract void GetActiveAtomicCounterBuffer(
             [NativeTypeName("GLuint")] uint program,
             [NativeTypeName("GLuint")] uint bufferIndex,
             [NativeTypeName("GLenum")] uint pname,
@@ -7335,7 +7335,7 @@ public unsafe partial interface IGL
         [SupportedApiProfile("glcore", MinVersion = "3.2")]
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glGetActiveSubroutineUniformiv")]
-        static abstract void GetActiveSubroutineUniformiv(
+        static abstract void GetActiveSubroutineUniform(
             [NativeTypeName("GLuint")] uint program,
             [NativeTypeName("GLenum")] uint shadertype,
             [NativeTypeName("GLuint")] uint index,
@@ -7384,7 +7384,7 @@ public unsafe partial interface IGL
         [SupportedApiProfile("glcore", MinVersion = "3.2")]
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glGetActiveUniformBlockiv")]
-        static abstract void GetActiveUniformBlockiv(
+        static abstract void GetActiveUniformBlock(
             [NativeTypeName("GLuint")] uint program,
             [NativeTypeName("GLuint")] uint uniformBlockIndex,
             [NativeTypeName("GLenum")] uint pname,
@@ -7416,7 +7416,7 @@ public unsafe partial interface IGL
         [SupportedApiProfile("glcore", MinVersion = "3.2")]
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glGetActiveUniformsiv")]
-        static abstract void GetActiveUniformsiv(
+        static abstract void GetActiveUniforms(
             [NativeTypeName("GLuint")] uint program,
             [NativeTypeName("GLsizei")] int uniformCount,
             [NativeTypeName("const GLuint *")] Ref<uint> uniformIndices,
@@ -7493,7 +7493,7 @@ public unsafe partial interface IGL
         [SupportedApiProfile("glcore", MinVersion = "3.2")]
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glGetBooleani_v")]
-        static abstract void GetBooleaniV(
+        static abstract void GetBoolean(
             [NativeTypeName("GLenum")] uint target,
             [NativeTypeName("GLuint")] uint index,
             [NativeTypeName("GLboolean *")] Ref<byte> data
@@ -7513,7 +7513,7 @@ public unsafe partial interface IGL
         [SupportedApiProfile("gles1", MaxVersion = "2.0")]
         [SupportedApiProfile("gles2", MinVersion = "2.0")]
         [NativeFunction("opengl", EntryPoint = "glGetBooleanv")]
-        static abstract void GetBooleanv(
+        static abstract void GetBoolean(
             [NativeTypeName("GLenum")] uint pname,
             [NativeTypeName("GLboolean *")] Ref<byte> data
         );
@@ -7521,7 +7521,7 @@ public unsafe partial interface IGL
         [SupportedApiProfile("glcore", MinVersion = "3.2")]
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glGetBufferParameteri64v")]
-        static abstract void GetBufferParameteri64v(
+        static abstract void GetBufferParameter(
             [NativeTypeName("GLenum")] uint target,
             [NativeTypeName("GLenum")] uint pname,
             [NativeTypeName("GLint64 *")] Ref<long> @params
@@ -7532,7 +7532,7 @@ public unsafe partial interface IGL
         [SupportedApiProfile("gles1", MaxVersion = "2.0")]
         [SupportedApiProfile("gles2", MinVersion = "2.0")]
         [NativeFunction("opengl", EntryPoint = "glGetBufferParameteriv")]
-        static abstract void GetBufferParameteriv(
+        static abstract void GetBufferParameter(
             [NativeTypeName("GLenum")] uint target,
             [NativeTypeName("GLenum")] uint pname,
             [NativeTypeName("GLint *")] Ref<int> @params
@@ -7558,7 +7558,7 @@ public unsafe partial interface IGL
         [SupportedApiProfile("glcore", MinVersion = "3.2")]
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glGetBufferPointerv")]
-        static abstract void GetBufferPointerv(
+        static abstract void GetBufferPointer(
             [NativeTypeName("GLenum")] uint target,
             [NativeTypeName("GLenum")] uint pname,
             Ref2D @params
@@ -7609,7 +7609,7 @@ public unsafe partial interface IGL
 
         [SupportedApiProfile("gles1", MaxVersion = "2.0")]
         [NativeFunction("opengl", EntryPoint = "glGetClipPlanef")]
-        static abstract void GetClipPlanef(
+        static abstract void GetClipPlane(
             [NativeTypeName("GLenum")] uint plane,
             [NativeTypeName("GLfloat *")] Ref<float> equation
         );
@@ -7657,7 +7657,7 @@ public unsafe partial interface IGL
 
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glGetColorTableParameterfv")]
-        static abstract void GetColorTableParameterfv(
+        static abstract void GetColorTableParameter(
             [NativeTypeName("GLenum")] uint target,
             [NativeTypeName("GLenum")] uint pname,
             [NativeTypeName("GLfloat *")] Ref<float> @params
@@ -7681,7 +7681,7 @@ public unsafe partial interface IGL
 
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glGetColorTableParameteriv")]
-        static abstract void GetColorTableParameteriv(
+        static abstract void GetColorTableParameter(
             [NativeTypeName("GLenum")] uint target,
             [NativeTypeName("GLenum")] uint pname,
             [NativeTypeName("GLint *")] Ref<int> @params
@@ -7850,7 +7850,7 @@ public unsafe partial interface IGL
 
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glGetConvolutionParameterfv")]
-        static abstract void GetConvolutionParameterfv(
+        static abstract void GetConvolutionParameter(
             [NativeTypeName("GLenum")] uint target,
             [NativeTypeName("GLenum")] uint pname,
             [NativeTypeName("GLfloat *")] Ref<float> @params
@@ -7866,7 +7866,7 @@ public unsafe partial interface IGL
 
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glGetConvolutionParameteriv")]
-        static abstract void GetConvolutionParameteriv(
+        static abstract void GetConvolutionParameter(
             [NativeTypeName("GLenum")] uint target,
             [NativeTypeName("GLenum")] uint pname,
             [NativeTypeName("GLint *")] Ref<int> @params
@@ -7964,7 +7964,7 @@ public unsafe partial interface IGL
         [SupportedApiProfile("glcore", MinVersion = "3.2")]
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glGetDoublei_v")]
-        static abstract void GetDoubleiV(
+        static abstract void GetDouble(
             [NativeTypeName("GLenum")] uint target,
             [NativeTypeName("GLuint")] uint index,
             [NativeTypeName("GLdouble *")] Ref<double> data
@@ -7991,7 +7991,7 @@ public unsafe partial interface IGL
         [SupportedApiProfile("glcore", MinVersion = "3.2")]
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glGetDoublev")]
-        static abstract void GetDoublev(
+        static abstract void GetDouble(
             [NativeTypeName("GLenum")] uint pname,
             [NativeTypeName("GLdouble *")] Ref<double> data
         );
@@ -8059,7 +8059,7 @@ public unsafe partial interface IGL
 
         [SupportedApiProfile("gles1", MaxVersion = "2.0")]
         [NativeFunction("opengl", EntryPoint = "glGetFixedv")]
-        static abstract void GetFixedv(
+        static abstract void GetFixed(
             [NativeTypeName("GLenum")] uint pname,
             [NativeTypeName("GLfixed *")] Ref<int> @params
         );
@@ -8075,7 +8075,7 @@ public unsafe partial interface IGL
         [SupportedApiProfile("glcore", MinVersion = "3.2")]
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glGetFloati_v")]
-        static abstract void GetFloatiV(
+        static abstract void GetFloat(
             [NativeTypeName("GLenum")] uint target,
             [NativeTypeName("GLuint")] uint index,
             [NativeTypeName("GLfloat *")] Ref<float> data
@@ -8120,7 +8120,7 @@ public unsafe partial interface IGL
         [SupportedApiProfile("gles1", MaxVersion = "2.0")]
         [SupportedApiProfile("gles2", MinVersion = "2.0")]
         [NativeFunction("opengl", EntryPoint = "glGetFloatv")]
-        static abstract void GetFloatv(
+        static abstract void GetFloat(
             [NativeTypeName("GLenum")] uint pname,
             [NativeTypeName("GLfloat *")] Ref<float> data
         );
@@ -8208,7 +8208,7 @@ public unsafe partial interface IGL
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [SupportedApiProfile("gles2", MinVersion = "2.0")]
         [NativeFunction("opengl", EntryPoint = "glGetFramebufferAttachmentParameteriv")]
-        static abstract void GetFramebufferAttachmentParameteriv(
+        static abstract void GetFramebufferAttachmentParameter(
             [NativeTypeName("GLenum")] uint target,
             [NativeTypeName("GLenum")] uint attachment,
             [NativeTypeName("GLenum")] uint pname,
@@ -8247,7 +8247,7 @@ public unsafe partial interface IGL
         [SupportedApiProfile("glcore", MinVersion = "3.2")]
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glGetFramebufferParameteriv")]
-        static abstract void GetFramebufferParameteriv(
+        static abstract void GetFramebufferParameter(
             [NativeTypeName("GLenum")] uint target,
             [NativeTypeName("GLenum")] uint pname,
             [NativeTypeName("GLint *")] Ref<int> @params
@@ -8329,7 +8329,7 @@ public unsafe partial interface IGL
 
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glGetHistogramParameterfv")]
-        static abstract void GetHistogramParameterfv(
+        static abstract void GetHistogramParameter(
             [NativeTypeName("GLenum")] uint target,
             [NativeTypeName("GLenum")] uint pname,
             [NativeTypeName("GLfloat *")] Ref<float> @params
@@ -8345,7 +8345,7 @@ public unsafe partial interface IGL
 
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glGetHistogramParameteriv")]
-        static abstract void GetHistogramParameteriv(
+        static abstract void GetHistogramParameter(
             [NativeTypeName("GLenum")] uint target,
             [NativeTypeName("GLenum")] uint pname,
             [NativeTypeName("GLint *")] Ref<int> @params
@@ -8425,7 +8425,7 @@ public unsafe partial interface IGL
         [SupportedApiProfile("glcore", MinVersion = "3.2")]
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glGetInteger64i_v")]
-        static abstract void GetInteger64iV(
+        static abstract void GetInteger64(
             [NativeTypeName("GLenum")] uint target,
             [NativeTypeName("GLuint")] uint index,
             [NativeTypeName("GLint64 *")] Ref<long> data
@@ -8434,7 +8434,7 @@ public unsafe partial interface IGL
         [SupportedApiProfile("glcore", MinVersion = "3.2")]
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glGetInteger64v")]
-        static abstract void GetInteger64v(
+        static abstract void GetInteger64(
             [NativeTypeName("GLenum")] uint pname,
             [NativeTypeName("GLint64 *")] Ref<long> data
         );
@@ -8457,7 +8457,7 @@ public unsafe partial interface IGL
         [SupportedApiProfile("glcore", MinVersion = "3.2")]
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glGetIntegeri_v")]
-        static abstract void GetIntegeriV(
+        static abstract void GetInteger(
             [NativeTypeName("GLenum")] uint target,
             [NativeTypeName("GLuint")] uint index,
             [NativeTypeName("GLint *")] Ref<int> data
@@ -8502,7 +8502,7 @@ public unsafe partial interface IGL
         [SupportedApiProfile("gles1", MaxVersion = "2.0")]
         [SupportedApiProfile("gles2", MinVersion = "2.0")]
         [NativeFunction("opengl", EntryPoint = "glGetIntegerv")]
-        static abstract void GetIntegerv(
+        static abstract void GetInteger(
             [NativeTypeName("GLenum")] uint pname,
             [NativeTypeName("GLint *")] Ref<int> data
         );
@@ -8510,7 +8510,7 @@ public unsafe partial interface IGL
         [SupportedApiProfile("glcore", MinVersion = "3.2")]
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glGetInternalformati64v")]
-        static abstract void GetInternalformati64v(
+        static abstract void GetInternalformat(
             [NativeTypeName("GLenum")] uint target,
             [NativeTypeName("GLenum")] uint internalformat,
             [NativeTypeName("GLenum")] uint pname,
@@ -8521,7 +8521,7 @@ public unsafe partial interface IGL
         [SupportedApiProfile("glcore", MinVersion = "3.2")]
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glGetInternalformativ")]
-        static abstract void GetInternalformativ(
+        static abstract void GetInternalformat(
             [NativeTypeName("GLenum")] uint target,
             [NativeTypeName("GLenum")] uint internalformat,
             [NativeTypeName("GLenum")] uint pname,
@@ -8569,7 +8569,7 @@ public unsafe partial interface IGL
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [SupportedApiProfile("gles1", MaxVersion = "2.0")]
         [NativeFunction("opengl", EntryPoint = "glGetLightfv")]
-        static abstract void GetLightfv(
+        static abstract void GetLight(
             [NativeTypeName("GLenum")] uint light,
             [NativeTypeName("GLenum")] uint pname,
             [NativeTypeName("GLfloat *")] Ref<float> @params
@@ -8577,7 +8577,7 @@ public unsafe partial interface IGL
 
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glGetLightiv")]
-        static abstract void GetLightiv(
+        static abstract void GetLight(
             [NativeTypeName("GLenum")] uint light,
             [NativeTypeName("GLenum")] uint pname,
             [NativeTypeName("GLint *")] Ref<int> @params
@@ -8593,7 +8593,7 @@ public unsafe partial interface IGL
 
         [SupportedApiProfile("gles1", MaxVersion = "2.0")]
         [NativeFunction("opengl", EntryPoint = "glGetLightxv")]
-        static abstract void GetLightxv(
+        static abstract void GetLightx(
             [NativeTypeName("GLenum")] uint light,
             [NativeTypeName("GLenum")] uint pname,
             [NativeTypeName("GLfixed *")] Ref<int> @params
@@ -8679,7 +8679,7 @@ public unsafe partial interface IGL
 
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glGetMapdv")]
-        static abstract void GetMapdv(
+        static abstract void GetMap(
             [NativeTypeName("GLenum")] uint target,
             [NativeTypeName("GLenum")] uint query,
             [NativeTypeName("GLdouble *")] Ref<double> v
@@ -8687,7 +8687,7 @@ public unsafe partial interface IGL
 
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glGetMapfv")]
-        static abstract void GetMapfv(
+        static abstract void GetMap(
             [NativeTypeName("GLenum")] uint target,
             [NativeTypeName("GLenum")] uint query,
             [NativeTypeName("GLfloat *")] Ref<float> v
@@ -8695,7 +8695,7 @@ public unsafe partial interface IGL
 
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glGetMapiv")]
-        static abstract void GetMapiv(
+        static abstract void GetMap(
             [NativeTypeName("GLenum")] uint target,
             [NativeTypeName("GLenum")] uint query,
             [NativeTypeName("GLint *")] Ref<int> v
@@ -8728,7 +8728,7 @@ public unsafe partial interface IGL
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [SupportedApiProfile("gles1", MaxVersion = "2.0")]
         [NativeFunction("opengl", EntryPoint = "glGetMaterialfv")]
-        static abstract void GetMaterialfv(
+        static abstract void GetMaterial(
             [NativeTypeName("GLenum")] uint face,
             [NativeTypeName("GLenum")] uint pname,
             [NativeTypeName("GLfloat *")] Ref<float> @params
@@ -8736,7 +8736,7 @@ public unsafe partial interface IGL
 
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glGetMaterialiv")]
-        static abstract void GetMaterialiv(
+        static abstract void GetMaterial(
             [NativeTypeName("GLenum")] uint face,
             [NativeTypeName("GLenum")] uint pname,
             [NativeTypeName("GLint *")] Ref<int> @params
@@ -8752,7 +8752,7 @@ public unsafe partial interface IGL
 
         [SupportedApiProfile("gles1", MaxVersion = "2.0")]
         [NativeFunction("opengl", EntryPoint = "glGetMaterialxv")]
-        static abstract void GetMaterialxv(
+        static abstract void GetMaterialx(
             [NativeTypeName("GLenum")] uint face,
             [NativeTypeName("GLenum")] uint pname,
             [NativeTypeName("GLfixed *")] Ref<int> @params
@@ -8809,7 +8809,7 @@ public unsafe partial interface IGL
 
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glGetMinmaxParameterfv")]
-        static abstract void GetMinmaxParameterfv(
+        static abstract void GetMinmaxParameter(
             [NativeTypeName("GLenum")] uint target,
             [NativeTypeName("GLenum")] uint pname,
             [NativeTypeName("GLfloat *")] Ref<float> @params
@@ -8825,7 +8825,7 @@ public unsafe partial interface IGL
 
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glGetMinmaxParameteriv")]
-        static abstract void GetMinmaxParameteriv(
+        static abstract void GetMinmaxParameter(
             [NativeTypeName("GLenum")] uint target,
             [NativeTypeName("GLenum")] uint pname,
             [NativeTypeName("GLint *")] Ref<int> @params
@@ -8842,7 +8842,7 @@ public unsafe partial interface IGL
         [SupportedApiProfile("glcore", MinVersion = "3.2")]
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glGetMultisamplefv")]
-        static abstract void GetMultisamplefv(
+        static abstract void GetMultisample(
             [NativeTypeName("GLenum")] uint pname,
             [NativeTypeName("GLuint")] uint index,
             [NativeTypeName("GLfloat *")] Ref<float> val
@@ -8983,7 +8983,7 @@ public unsafe partial interface IGL
         [SupportedApiProfile("glcore", MinVersion = "3.2")]
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glGetNamedBufferParameteri64v")]
-        static abstract void GetNamedBufferParameteri64v(
+        static abstract void GetNamedBufferParameter(
             [NativeTypeName("GLuint")] uint buffer,
             [NativeTypeName("GLenum")] uint pname,
             [NativeTypeName("GLint64 *")] Ref<long> @params
@@ -8992,7 +8992,7 @@ public unsafe partial interface IGL
         [SupportedApiProfile("glcore", MinVersion = "3.2")]
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glGetNamedBufferParameteriv")]
-        static abstract void GetNamedBufferParameteriv(
+        static abstract void GetNamedBufferParameter(
             [NativeTypeName("GLuint")] uint buffer,
             [NativeTypeName("GLenum")] uint pname,
             [NativeTypeName("GLint *")] Ref<int> @params
@@ -9019,7 +9019,7 @@ public unsafe partial interface IGL
         [SupportedApiProfile("glcore", MinVersion = "3.2")]
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glGetNamedBufferPointerv")]
-        static abstract void GetNamedBufferPointerv(
+        static abstract void GetNamedBufferPointer(
             [NativeTypeName("GLuint")] uint buffer,
             [NativeTypeName("GLenum")] uint pname,
             Ref2D @params
@@ -9057,7 +9057,7 @@ public unsafe partial interface IGL
         [SupportedApiProfile("glcore", MinVersion = "3.2")]
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glGetNamedFramebufferAttachmentParameteriv")]
-        static abstract void GetNamedFramebufferAttachmentParameteriv(
+        static abstract void GetNamedFramebufferAttachmentParameter(
             [NativeTypeName("GLuint")] uint framebuffer,
             [NativeTypeName("GLenum")] uint attachment,
             [NativeTypeName("GLenum")] uint pname,
@@ -9088,7 +9088,7 @@ public unsafe partial interface IGL
         [SupportedApiProfile("glcore", MinVersion = "3.2")]
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glGetNamedFramebufferParameteriv")]
-        static abstract void GetNamedFramebufferParameteriv(
+        static abstract void GetNamedFramebufferParameter(
             [NativeTypeName("GLuint")] uint framebuffer,
             [NativeTypeName("GLenum")] uint pname,
             [NativeTypeName("GLint *")] Ref<int> param2
@@ -9166,7 +9166,7 @@ public unsafe partial interface IGL
         [SupportedApiProfile("glcore", MinVersion = "3.2")]
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glGetNamedRenderbufferParameteriv")]
-        static abstract void GetNamedRenderbufferParameteriv(
+        static abstract void GetNamedRenderbufferParameter(
             [NativeTypeName("GLuint")] uint renderbuffer,
             [NativeTypeName("GLenum")] uint pname,
             [NativeTypeName("GLint *")] Ref<int> @params
@@ -9295,7 +9295,7 @@ public unsafe partial interface IGL
 
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glGetnMapdv")]
-        static abstract void GetnMapdv(
+        static abstract void GetnMap(
             [NativeTypeName("GLenum")] uint target,
             [NativeTypeName("GLenum")] uint query,
             [NativeTypeName("GLsizei")] int bufSize,
@@ -9313,7 +9313,7 @@ public unsafe partial interface IGL
 
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glGetnMapfv")]
-        static abstract void GetnMapfv(
+        static abstract void GetnMap(
             [NativeTypeName("GLenum")] uint target,
             [NativeTypeName("GLenum")] uint query,
             [NativeTypeName("GLsizei")] int bufSize,
@@ -9331,7 +9331,7 @@ public unsafe partial interface IGL
 
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glGetnMapiv")]
-        static abstract void GetnMapiv(
+        static abstract void GetnMap(
             [NativeTypeName("GLenum")] uint target,
             [NativeTypeName("GLenum")] uint query,
             [NativeTypeName("GLsizei")] int bufSize,
@@ -9371,7 +9371,7 @@ public unsafe partial interface IGL
 
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glGetnPixelMapfv")]
-        static abstract void GetnPixelMapfv(
+        static abstract void GetnPixelMap(
             [NativeTypeName("GLenum")] uint map,
             [NativeTypeName("GLsizei")] int bufSize,
             [NativeTypeName("GLfloat *")] Ref<float> values
@@ -9387,7 +9387,7 @@ public unsafe partial interface IGL
 
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glGetnPixelMapuiv")]
-        static abstract void GetnPixelMapuiv(
+        static abstract void GetnPixelMap(
             [NativeTypeName("GLenum")] uint map,
             [NativeTypeName("GLsizei")] int bufSize,
             [NativeTypeName("GLuint *")] Ref<uint> values
@@ -9403,7 +9403,7 @@ public unsafe partial interface IGL
 
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glGetnPixelMapusv")]
-        static abstract void GetnPixelMapusv(
+        static abstract void GetnPixelMap(
             [NativeTypeName("GLenum")] uint map,
             [NativeTypeName("GLsizei")] int bufSize,
             [NativeTypeName("GLushort *")] Ref<ushort> values
@@ -9484,7 +9484,7 @@ public unsafe partial interface IGL
         [SupportedApiProfile("glcore", MinVersion = "3.2")]
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glGetnUniformdv")]
-        static abstract void GetnUniformdv(
+        static abstract void GetnUniform(
             [NativeTypeName("GLuint")] uint program,
             [NativeTypeName("GLint")] int location,
             [NativeTypeName("GLsizei")] int bufSize,
@@ -9504,7 +9504,7 @@ public unsafe partial interface IGL
         [SupportedApiProfile("glcore", MinVersion = "3.2")]
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glGetnUniformfv")]
-        static abstract void GetnUniformfv(
+        static abstract void GetnUniform(
             [NativeTypeName("GLuint")] uint program,
             [NativeTypeName("GLint")] int location,
             [NativeTypeName("GLsizei")] int bufSize,
@@ -9553,7 +9553,7 @@ public unsafe partial interface IGL
         [SupportedApiProfile("glcore", MinVersion = "3.2")]
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glGetnUniformiv")]
-        static abstract void GetnUniformiv(
+        static abstract void GetnUniform(
             [NativeTypeName("GLuint")] uint program,
             [NativeTypeName("GLint")] int location,
             [NativeTypeName("GLsizei")] int bufSize,
@@ -9602,7 +9602,7 @@ public unsafe partial interface IGL
         [SupportedApiProfile("glcore", MinVersion = "3.2")]
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glGetnUniformuiv")]
-        static abstract void GetnUniformuiv(
+        static abstract void GetnUniform(
             [NativeTypeName("GLuint")] uint program,
             [NativeTypeName("GLint")] int location,
             [NativeTypeName("GLsizei")] int bufSize,
@@ -9992,28 +9992,28 @@ public unsafe partial interface IGL
 
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glGetPixelMapfv")]
-        static abstract void GetPixelMapfv(
+        static abstract void GetPixelMap(
             [NativeTypeName("GLenum")] uint map,
             [NativeTypeName("GLfloat *")] Ref<float> values
         );
 
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glGetPixelMapuiv")]
-        static abstract void GetPixelMapuiv(
+        static abstract void GetPixelMap(
             [NativeTypeName("GLenum")] uint map,
             [NativeTypeName("GLuint *")] Ref<uint> values
         );
 
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glGetPixelMapusv")]
-        static abstract void GetPixelMapusv(
+        static abstract void GetPixelMap(
             [NativeTypeName("GLenum")] uint map,
             [NativeTypeName("GLushort *")] Ref<ushort> values
         );
 
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glGetPixelMapxv")]
-        static abstract void GetPixelMapxv(
+        static abstract void GetPixelMapx(
             [NativeTypeName("GLenum")] uint map,
             [NativeTypeName("GLint")] int size,
             [NativeTypeName("GLfixed *")] Ref<int> values
@@ -10071,7 +10071,7 @@ public unsafe partial interface IGL
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [SupportedApiProfile("gles1", MaxVersion = "2.0")]
         [NativeFunction("opengl", EntryPoint = "glGetPointerv")]
-        static abstract void GetPointerv([NativeTypeName("GLenum")] uint pname, Ref2D @params);
+        static abstract void GetPointer([NativeTypeName("GLenum")] uint pname, Ref2D @params);
 
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glGetPointervEXT")]
@@ -10152,7 +10152,7 @@ public unsafe partial interface IGL
         [SupportedApiProfile("glcore", MinVersion = "3.2")]
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glGetProgramInterfaceiv")]
-        static abstract void GetProgramInterfaceiv(
+        static abstract void GetProgramInterface(
             [NativeTypeName("GLuint")] uint program,
             [NativeTypeName("GLenum")] uint programInterface,
             [NativeTypeName("GLenum")] uint pname,
@@ -10163,7 +10163,7 @@ public unsafe partial interface IGL
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [SupportedApiProfile("gles2", MinVersion = "2.0")]
         [NativeFunction("opengl", EntryPoint = "glGetProgramiv")]
-        static abstract void GetProgramiv(
+        static abstract void GetProgram(
             [NativeTypeName("GLuint")] uint program,
             [NativeTypeName("GLenum")] uint pname,
             [NativeTypeName("GLint *")] Ref<int> @params
@@ -10275,7 +10275,7 @@ public unsafe partial interface IGL
         [SupportedApiProfile("glcore", MinVersion = "3.2")]
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glGetProgramPipelineiv")]
-        static abstract void GetProgramPipelineiv(
+        static abstract void GetProgramPipeline(
             [NativeTypeName("GLuint")] uint pipeline,
             [NativeTypeName("GLenum")] uint pname,
             [NativeTypeName("GLint *")] Ref<int> @params
@@ -10317,7 +10317,7 @@ public unsafe partial interface IGL
         [SupportedApiProfile("glcore", MinVersion = "3.2")]
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glGetProgramResourceiv")]
-        static abstract void GetProgramResourceiv(
+        static abstract void GetProgramResource(
             [NativeTypeName("GLuint")] uint program,
             [NativeTypeName("GLenum")] uint programInterface,
             [NativeTypeName("GLuint")] uint index,
@@ -10372,7 +10372,7 @@ public unsafe partial interface IGL
         [SupportedApiProfile("glcore", MinVersion = "3.2")]
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glGetProgramStageiv")]
-        static abstract void GetProgramStageiv(
+        static abstract void GetProgramStage(
             [NativeTypeName("GLuint")] uint program,
             [NativeTypeName("GLenum")] uint shadertype,
             [NativeTypeName("GLenum")] uint pname,
@@ -10406,7 +10406,7 @@ public unsafe partial interface IGL
         [SupportedApiProfile("glcore", MinVersion = "3.2")]
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glGetQueryBufferObjecti64v")]
-        static abstract void GetQueryBufferObjecti64v(
+        static abstract void GetQueryBufferObject(
             [NativeTypeName("GLuint")] uint id,
             [NativeTypeName("GLuint")] uint buffer,
             [NativeTypeName("GLenum")] uint pname,
@@ -10416,7 +10416,7 @@ public unsafe partial interface IGL
         [SupportedApiProfile("glcore", MinVersion = "3.2")]
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glGetQueryBufferObjectiv")]
-        static abstract void GetQueryBufferObjectiv(
+        static abstract void GetQueryBufferObject(
             [NativeTypeName("GLuint")] uint id,
             [NativeTypeName("GLuint")] uint buffer,
             [NativeTypeName("GLenum")] uint pname,
@@ -10426,7 +10426,7 @@ public unsafe partial interface IGL
         [SupportedApiProfile("glcore", MinVersion = "3.2")]
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glGetQueryBufferObjectui64v")]
-        static abstract void GetQueryBufferObjectui64v(
+        static abstract void GetQueryBufferObject(
             [NativeTypeName("GLuint")] uint id,
             [NativeTypeName("GLuint")] uint buffer,
             [NativeTypeName("GLenum")] uint pname,
@@ -10436,7 +10436,7 @@ public unsafe partial interface IGL
         [SupportedApiProfile("glcore", MinVersion = "3.2")]
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glGetQueryBufferObjectuiv")]
-        static abstract void GetQueryBufferObjectuiv(
+        static abstract void GetQueryBufferObject(
             [NativeTypeName("GLuint")] uint id,
             [NativeTypeName("GLuint")] uint buffer,
             [NativeTypeName("GLenum")] uint pname,
@@ -10446,7 +10446,7 @@ public unsafe partial interface IGL
         [SupportedApiProfile("glcore", MinVersion = "3.2")]
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glGetQueryIndexediv")]
-        static abstract void GetQueryIndexediv(
+        static abstract void GetQueryIndexed(
             [NativeTypeName("GLenum")] uint target,
             [NativeTypeName("GLuint")] uint index,
             [NativeTypeName("GLenum")] uint pname,
@@ -10456,7 +10456,7 @@ public unsafe partial interface IGL
         [SupportedApiProfile("glcore", MinVersion = "3.2")]
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glGetQueryiv")]
-        static abstract void GetQueryiv(
+        static abstract void GetQuery(
             [NativeTypeName("GLenum")] uint target,
             [NativeTypeName("GLenum")] uint pname,
             [NativeTypeName("GLint *")] Ref<int> @params
@@ -10481,7 +10481,7 @@ public unsafe partial interface IGL
         [SupportedApiProfile("glcore", MinVersion = "3.2")]
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glGetQueryObjecti64v")]
-        static abstract void GetQueryObjecti64v(
+        static abstract void GetQueryObject(
             [NativeTypeName("GLuint")] uint id,
             [NativeTypeName("GLenum")] uint pname,
             [NativeTypeName("GLint64 *")] Ref<long> @params
@@ -10499,7 +10499,7 @@ public unsafe partial interface IGL
         [SupportedApiProfile("glcore", MinVersion = "3.2")]
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glGetQueryObjectiv")]
-        static abstract void GetQueryObjectiv(
+        static abstract void GetQueryObject(
             [NativeTypeName("GLuint")] uint id,
             [NativeTypeName("GLenum")] uint pname,
             [NativeTypeName("GLint *")] Ref<int> @params
@@ -10524,7 +10524,7 @@ public unsafe partial interface IGL
         [SupportedApiProfile("glcore", MinVersion = "3.2")]
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glGetQueryObjectui64v")]
-        static abstract void GetQueryObjectui64v(
+        static abstract void GetQueryObject(
             [NativeTypeName("GLuint")] uint id,
             [NativeTypeName("GLenum")] uint pname,
             [NativeTypeName("GLuint64 *")] Ref<ulong> @params
@@ -10542,7 +10542,7 @@ public unsafe partial interface IGL
         [SupportedApiProfile("glcore", MinVersion = "3.2")]
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glGetQueryObjectuiv")]
-        static abstract void GetQueryObjectuiv(
+        static abstract void GetQueryObject(
             [NativeTypeName("GLuint")] uint id,
             [NativeTypeName("GLenum")] uint pname,
             [NativeTypeName("GLuint *")] Ref<uint> @params
@@ -10568,7 +10568,7 @@ public unsafe partial interface IGL
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [SupportedApiProfile("gles2", MinVersion = "2.0")]
         [NativeFunction("opengl", EntryPoint = "glGetRenderbufferParameteriv")]
-        static abstract void GetRenderbufferParameteriv(
+        static abstract void GetRenderbufferParameter(
             [NativeTypeName("GLenum")] uint target,
             [NativeTypeName("GLenum")] uint pname,
             [NativeTypeName("GLint *")] Ref<int> @params
@@ -10594,7 +10594,7 @@ public unsafe partial interface IGL
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [SupportedApiProfile("gles2", MinVersion = "2.0")]
         [NativeFunction("opengl", EntryPoint = "glGetSamplerParameterfv")]
-        static abstract void GetSamplerParameterfv(
+        static abstract void GetSamplerParameter(
             [NativeTypeName("GLuint")] uint sampler,
             [NativeTypeName("GLenum")] uint pname,
             [NativeTypeName("GLfloat *")] Ref<float> @params
@@ -10603,7 +10603,7 @@ public unsafe partial interface IGL
         [SupportedApiProfile("glcore", MinVersion = "3.2")]
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glGetSamplerParameterIiv")]
-        static abstract void GetSamplerParameterIiv(
+        static abstract void GetSamplerParameterI(
             [NativeTypeName("GLuint")] uint sampler,
             [NativeTypeName("GLenum")] uint pname,
             [NativeTypeName("GLint *")] Ref<int> @params
@@ -10628,7 +10628,7 @@ public unsafe partial interface IGL
         [SupportedApiProfile("glcore", MinVersion = "3.2")]
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glGetSamplerParameterIuiv")]
-        static abstract void GetSamplerParameterIuiv(
+        static abstract void GetSamplerParameterI(
             [NativeTypeName("GLuint")] uint sampler,
             [NativeTypeName("GLenum")] uint pname,
             [NativeTypeName("GLuint *")] Ref<uint> @params
@@ -10654,7 +10654,7 @@ public unsafe partial interface IGL
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [SupportedApiProfile("gles2", MinVersion = "2.0")]
         [NativeFunction("opengl", EntryPoint = "glGetSamplerParameteriv")]
-        static abstract void GetSamplerParameteriv(
+        static abstract void GetSamplerParameter(
             [NativeTypeName("GLuint")] uint sampler,
             [NativeTypeName("GLenum")] uint pname,
             [NativeTypeName("GLint *")] Ref<int> @params
@@ -10715,7 +10715,7 @@ public unsafe partial interface IGL
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [SupportedApiProfile("gles2", MinVersion = "2.0")]
         [NativeFunction("opengl", EntryPoint = "glGetShaderiv")]
-        static abstract void GetShaderiv(
+        static abstract void GetShader(
             [NativeTypeName("GLuint")] uint shader,
             [NativeTypeName("GLenum")] uint pname,
             [NativeTypeName("GLint *")] Ref<int> @params
@@ -10798,7 +10798,7 @@ public unsafe partial interface IGL
         [SupportedApiProfile("glcore", MinVersion = "3.2")]
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glGetStringi")]
-        static abstract Ptr<byte> GetStringi(
+        static abstract Ptr<byte> GetString(
             [NativeTypeName("GLenum")] uint name,
             [NativeTypeName("GLuint")] uint index
         );
@@ -10826,7 +10826,7 @@ public unsafe partial interface IGL
         [SupportedApiProfile("glcore", MinVersion = "3.2")]
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glGetSynciv")]
-        static abstract void GetSynciv(
+        static abstract void GetSync(
             [NativeTypeName("GLsync")] Ref<Sync> sync,
             [NativeTypeName("GLenum")] uint pname,
             [NativeTypeName("GLsizei")] int count,
@@ -10862,7 +10862,7 @@ public unsafe partial interface IGL
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [SupportedApiProfile("gles1", MaxVersion = "2.0")]
         [NativeFunction("opengl", EntryPoint = "glGetTexEnvfv")]
-        static abstract void GetTexEnvfv(
+        static abstract void GetTexEnv(
             [NativeTypeName("GLenum")] uint target,
             [NativeTypeName("GLenum")] uint pname,
             [NativeTypeName("GLfloat *")] Ref<float> @params
@@ -10871,7 +10871,7 @@ public unsafe partial interface IGL
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [SupportedApiProfile("gles1", MaxVersion = "2.0")]
         [NativeFunction("opengl", EntryPoint = "glGetTexEnviv")]
-        static abstract void GetTexEnviv(
+        static abstract void GetTexEnv(
             [NativeTypeName("GLenum")] uint target,
             [NativeTypeName("GLenum")] uint pname,
             [NativeTypeName("GLint *")] Ref<int> @params
@@ -10879,7 +10879,7 @@ public unsafe partial interface IGL
 
         [SupportedApiProfile("gles1", MaxVersion = "2.0")]
         [NativeFunction("opengl", EntryPoint = "glGetTexEnvxv")]
-        static abstract void GetTexEnvxv(
+        static abstract void GetTexEnvx(
             [NativeTypeName("GLenum")] uint target,
             [NativeTypeName("GLenum")] uint pname,
             [NativeTypeName("GLfixed *")] Ref<int> @params
@@ -10904,7 +10904,7 @@ public unsafe partial interface IGL
 
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glGetTexGendv")]
-        static abstract void GetTexGendv(
+        static abstract void GetTexGen(
             [NativeTypeName("GLenum")] uint coord,
             [NativeTypeName("GLenum")] uint pname,
             [NativeTypeName("GLdouble *")] Ref<double> @params
@@ -10912,7 +10912,7 @@ public unsafe partial interface IGL
 
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glGetTexGenfv")]
-        static abstract void GetTexGenfv(
+        static abstract void GetTexGen(
             [NativeTypeName("GLenum")] uint coord,
             [NativeTypeName("GLenum")] uint pname,
             [NativeTypeName("GLfloat *")] Ref<float> @params
@@ -10928,7 +10928,7 @@ public unsafe partial interface IGL
 
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glGetTexGeniv")]
-        static abstract void GetTexGeniv(
+        static abstract void GetTexGen(
             [NativeTypeName("GLenum")] uint coord,
             [NativeTypeName("GLenum")] uint pname,
             [NativeTypeName("GLint *")] Ref<int> @params
@@ -10965,7 +10965,7 @@ public unsafe partial interface IGL
         [SupportedApiProfile("glcore", MinVersion = "3.2")]
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glGetTexLevelParameterfv")]
-        static abstract void GetTexLevelParameterfv(
+        static abstract void GetTexLevelParameter(
             [NativeTypeName("GLenum")] uint target,
             [NativeTypeName("GLint")] int level,
             [NativeTypeName("GLenum")] uint pname,
@@ -10975,7 +10975,7 @@ public unsafe partial interface IGL
         [SupportedApiProfile("glcore", MinVersion = "3.2")]
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glGetTexLevelParameteriv")]
-        static abstract void GetTexLevelParameteriv(
+        static abstract void GetTexLevelParameter(
             [NativeTypeName("GLenum")] uint target,
             [NativeTypeName("GLint")] int level,
             [NativeTypeName("GLenum")] uint pname,
@@ -10996,7 +10996,7 @@ public unsafe partial interface IGL
         [SupportedApiProfile("gles1", MaxVersion = "2.0")]
         [SupportedApiProfile("gles2", MinVersion = "2.0")]
         [NativeFunction("opengl", EntryPoint = "glGetTexParameterfv")]
-        static abstract void GetTexParameterfv(
+        static abstract void GetTexParameter(
             [NativeTypeName("GLenum")] uint target,
             [NativeTypeName("GLenum")] uint pname,
             [NativeTypeName("GLfloat *")] Ref<float> @params
@@ -11005,7 +11005,7 @@ public unsafe partial interface IGL
         [SupportedApiProfile("glcore", MinVersion = "3.2")]
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glGetTexParameterIiv")]
-        static abstract void GetTexParameterIiv(
+        static abstract void GetTexParameterI(
             [NativeTypeName("GLenum")] uint target,
             [NativeTypeName("GLenum")] uint pname,
             [NativeTypeName("GLint *")] Ref<int> @params
@@ -11031,7 +11031,7 @@ public unsafe partial interface IGL
         [SupportedApiProfile("glcore", MinVersion = "3.2")]
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glGetTexParameterIuiv")]
-        static abstract void GetTexParameterIuiv(
+        static abstract void GetTexParameterI(
             [NativeTypeName("GLenum")] uint target,
             [NativeTypeName("GLenum")] uint pname,
             [NativeTypeName("GLuint *")] Ref<uint> @params
@@ -11059,7 +11059,7 @@ public unsafe partial interface IGL
         [SupportedApiProfile("gles1", MaxVersion = "2.0")]
         [SupportedApiProfile("gles2", MinVersion = "2.0")]
         [NativeFunction("opengl", EntryPoint = "glGetTexParameteriv")]
-        static abstract void GetTexParameteriv(
+        static abstract void GetTexParameter(
             [NativeTypeName("GLenum")] uint target,
             [NativeTypeName("GLenum")] uint pname,
             [NativeTypeName("GLint *")] Ref<int> @params
@@ -11075,7 +11075,7 @@ public unsafe partial interface IGL
 
         [SupportedApiProfile("gles1", MaxVersion = "2.0")]
         [NativeFunction("opengl", EntryPoint = "glGetTexParameterxv")]
-        static abstract void GetTexParameterxv(
+        static abstract void GetTexParameterx(
             [NativeTypeName("GLenum")] uint target,
             [NativeTypeName("GLenum")] uint pname,
             [NativeTypeName("GLfixed *")] Ref<int> @params
@@ -11135,7 +11135,7 @@ public unsafe partial interface IGL
         [SupportedApiProfile("glcore", MinVersion = "3.2")]
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glGetTextureLevelParameterfv")]
-        static abstract void GetTextureLevelParameterfv(
+        static abstract void GetTextureLevelParameter(
             [NativeTypeName("GLuint")] uint texture,
             [NativeTypeName("GLint")] int level,
             [NativeTypeName("GLenum")] uint pname,
@@ -11156,7 +11156,7 @@ public unsafe partial interface IGL
         [SupportedApiProfile("glcore", MinVersion = "3.2")]
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glGetTextureLevelParameteriv")]
-        static abstract void GetTextureLevelParameteriv(
+        static abstract void GetTextureLevelParameter(
             [NativeTypeName("GLuint")] uint texture,
             [NativeTypeName("GLint")] int level,
             [NativeTypeName("GLenum")] uint pname,
@@ -11177,7 +11177,7 @@ public unsafe partial interface IGL
         [SupportedApiProfile("glcore", MinVersion = "3.2")]
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glGetTextureParameterfv")]
-        static abstract void GetTextureParameterfv(
+        static abstract void GetTextureParameter(
             [NativeTypeName("GLuint")] uint texture,
             [NativeTypeName("GLenum")] uint pname,
             [NativeTypeName("GLfloat *")] Ref<float> @params
@@ -11196,7 +11196,7 @@ public unsafe partial interface IGL
         [SupportedApiProfile("glcore", MinVersion = "3.2")]
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glGetTextureParameterIiv")]
-        static abstract void GetTextureParameterIiv(
+        static abstract void GetTextureParameterI(
             [NativeTypeName("GLuint")] uint texture,
             [NativeTypeName("GLenum")] uint pname,
             [NativeTypeName("GLint *")] Ref<int> @params
@@ -11215,7 +11215,7 @@ public unsafe partial interface IGL
         [SupportedApiProfile("glcore", MinVersion = "3.2")]
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glGetTextureParameterIuiv")]
-        static abstract void GetTextureParameterIuiv(
+        static abstract void GetTextureParameterI(
             [NativeTypeName("GLuint")] uint texture,
             [NativeTypeName("GLenum")] uint pname,
             [NativeTypeName("GLuint *")] Ref<uint> @params
@@ -11234,7 +11234,7 @@ public unsafe partial interface IGL
         [SupportedApiProfile("glcore", MinVersion = "3.2")]
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glGetTextureParameteriv")]
-        static abstract void GetTextureParameteriv(
+        static abstract void GetTextureParameter(
             [NativeTypeName("GLuint")] uint texture,
             [NativeTypeName("GLenum")] uint pname,
             [NativeTypeName("GLint *")] Ref<int> @params
@@ -11307,7 +11307,7 @@ public unsafe partial interface IGL
         [SupportedApiProfile("glcore", MinVersion = "3.2")]
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glGetTransformFeedbacki_v")]
-        static abstract void GetTransformFeedbackiV(
+        static abstract void GetTransformFeedback(
             [NativeTypeName("GLuint")] uint xfb,
             [NativeTypeName("GLenum")] uint pname,
             [NativeTypeName("GLuint")] uint index,
@@ -11317,7 +11317,7 @@ public unsafe partial interface IGL
         [SupportedApiProfile("glcore", MinVersion = "3.2")]
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glGetTransformFeedbacki64_v")]
-        static abstract void GetTransformFeedbacki64V(
+        static abstract void GetTransformFeedbacki64(
             [NativeTypeName("GLuint")] uint xfb,
             [NativeTypeName("GLenum")] uint pname,
             [NativeTypeName("GLuint")] uint index,
@@ -11327,7 +11327,7 @@ public unsafe partial interface IGL
         [SupportedApiProfile("glcore", MinVersion = "3.2")]
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glGetTransformFeedbackiv")]
-        static abstract void GetTransformFeedbackiv(
+        static abstract void GetTransformFeedback(
             [NativeTypeName("GLuint")] uint xfb,
             [NativeTypeName("GLenum")] uint pname,
             [NativeTypeName("GLint *")] Ref<int> param2
@@ -11395,7 +11395,7 @@ public unsafe partial interface IGL
         [SupportedApiProfile("glcore", MinVersion = "3.2")]
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glGetUniformdv")]
-        static abstract void GetUniformdv(
+        static abstract void GetUniform(
             [NativeTypeName("GLuint")] uint program,
             [NativeTypeName("GLint")] int location,
             [NativeTypeName("GLdouble *")] Ref<double> @params
@@ -11405,7 +11405,7 @@ public unsafe partial interface IGL
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [SupportedApiProfile("gles2", MinVersion = "2.0")]
         [NativeFunction("opengl", EntryPoint = "glGetUniformfv")]
-        static abstract void GetUniformfv(
+        static abstract void GetUniform(
             [NativeTypeName("GLuint")] uint program,
             [NativeTypeName("GLint")] int location,
             [NativeTypeName("GLfloat *")] Ref<float> @params
@@ -11452,7 +11452,7 @@ public unsafe partial interface IGL
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [SupportedApiProfile("gles2", MinVersion = "2.0")]
         [NativeFunction("opengl", EntryPoint = "glGetUniformiv")]
-        static abstract void GetUniformiv(
+        static abstract void GetUniform(
             [NativeTypeName("GLuint")] uint program,
             [NativeTypeName("GLint")] int location,
             [NativeTypeName("GLint *")] Ref<int> @params
@@ -11495,7 +11495,7 @@ public unsafe partial interface IGL
         [SupportedApiProfile("glcore", MinVersion = "3.2")]
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glGetUniformSubroutineuiv")]
-        static abstract void GetUniformSubroutineuiv(
+        static abstract void GetUniformSubroutine(
             [NativeTypeName("GLenum")] uint shadertype,
             [NativeTypeName("GLint")] int location,
             [NativeTypeName("GLuint *")] Ref<uint> @params
@@ -11522,7 +11522,7 @@ public unsafe partial interface IGL
         [SupportedApiProfile("glcore", MinVersion = "3.2")]
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glGetUniformuiv")]
-        static abstract void GetUniformuiv(
+        static abstract void GetUniform(
             [NativeTypeName("GLuint")] uint program,
             [NativeTypeName("GLint")] int location,
             [NativeTypeName("GLuint *")] Ref<uint> @params
@@ -11612,7 +11612,7 @@ public unsafe partial interface IGL
         [SupportedApiProfile("glcore", MinVersion = "3.2")]
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glGetVertexArrayIndexed64iv")]
-        static abstract void GetVertexArrayIndexed64iv(
+        static abstract void GetVertexArrayIndexed64(
             [NativeTypeName("GLuint")] uint vaobj,
             [NativeTypeName("GLuint")] uint index,
             [NativeTypeName("GLenum")] uint pname,
@@ -11622,7 +11622,7 @@ public unsafe partial interface IGL
         [SupportedApiProfile("glcore", MinVersion = "3.2")]
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glGetVertexArrayIndexediv")]
-        static abstract void GetVertexArrayIndexediv(
+        static abstract void GetVertexArrayIndexed(
             [NativeTypeName("GLuint")] uint vaobj,
             [NativeTypeName("GLuint")] uint index,
             [NativeTypeName("GLenum")] uint pname,
@@ -11651,7 +11651,7 @@ public unsafe partial interface IGL
         [SupportedApiProfile("glcore", MinVersion = "3.2")]
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glGetVertexArrayiv")]
-        static abstract void GetVertexArrayiv(
+        static abstract void GetVertexArray(
             [NativeTypeName("GLuint")] uint vaobj,
             [NativeTypeName("GLenum")] uint pname,
             [NativeTypeName("GLint *")] Ref<int> param2
@@ -11695,7 +11695,7 @@ public unsafe partial interface IGL
         [SupportedApiProfile("glcore", MinVersion = "3.2")]
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glGetVertexAttribdv")]
-        static abstract void GetVertexAttribdv(
+        static abstract void GetVertexAttrib(
             [NativeTypeName("GLuint")] uint index,
             [NativeTypeName("GLenum")] uint pname,
             [NativeTypeName("GLdouble *")] Ref<double> @params
@@ -11721,7 +11721,7 @@ public unsafe partial interface IGL
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [SupportedApiProfile("gles2", MinVersion = "2.0")]
         [NativeFunction("opengl", EntryPoint = "glGetVertexAttribfv")]
-        static abstract void GetVertexAttribfv(
+        static abstract void GetVertexAttrib(
             [NativeTypeName("GLuint")] uint index,
             [NativeTypeName("GLenum")] uint pname,
             [NativeTypeName("GLfloat *")] Ref<float> @params
@@ -11746,7 +11746,7 @@ public unsafe partial interface IGL
         [SupportedApiProfile("glcore", MinVersion = "3.2")]
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glGetVertexAttribIiv")]
-        static abstract void GetVertexAttribIiv(
+        static abstract void GetVertexAttribI(
             [NativeTypeName("GLuint")] uint index,
             [NativeTypeName("GLenum")] uint pname,
             [NativeTypeName("GLint *")] Ref<int> @params
@@ -11763,7 +11763,7 @@ public unsafe partial interface IGL
         [SupportedApiProfile("glcore", MinVersion = "3.2")]
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glGetVertexAttribIuiv")]
-        static abstract void GetVertexAttribIuiv(
+        static abstract void GetVertexAttribI(
             [NativeTypeName("GLuint")] uint index,
             [NativeTypeName("GLenum")] uint pname,
             [NativeTypeName("GLuint *")] Ref<uint> @params
@@ -11781,7 +11781,7 @@ public unsafe partial interface IGL
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [SupportedApiProfile("gles2", MinVersion = "2.0")]
         [NativeFunction("opengl", EntryPoint = "glGetVertexAttribiv")]
-        static abstract void GetVertexAttribiv(
+        static abstract void GetVertexAttrib(
             [NativeTypeName("GLuint")] uint index,
             [NativeTypeName("GLenum")] uint pname,
             [NativeTypeName("GLint *")] Ref<int> @params
@@ -11806,7 +11806,7 @@ public unsafe partial interface IGL
         [SupportedApiProfile("glcore", MinVersion = "3.2")]
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glGetVertexAttribLdv")]
-        static abstract void GetVertexAttribLdv(
+        static abstract void GetVertexAttribL(
             [NativeTypeName("GLuint")] uint index,
             [NativeTypeName("GLenum")] uint pname,
             [NativeTypeName("GLdouble *")] Ref<double> @params
@@ -11851,7 +11851,7 @@ public unsafe partial interface IGL
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [SupportedApiProfile("gles2", MinVersion = "2.0")]
         [NativeFunction("opengl", EntryPoint = "glGetVertexAttribPointerv")]
-        static abstract void GetVertexAttribPointerv(
+        static abstract void GetVertexAttribPointer(
             [NativeTypeName("GLuint")] uint index,
             [NativeTypeName("GLenum")] uint pname,
             Ref2D pointer
@@ -12123,15 +12123,15 @@ public unsafe partial interface IGL
 
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glIndexd")]
-        static abstract void Indexd([NativeTypeName("GLdouble")] double c);
+        static abstract void Index([NativeTypeName("GLdouble")] double c);
 
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glIndexdv")]
-        static abstract void Indexdv([NativeTypeName("const GLdouble *")] Ref<double> c);
+        static abstract void Index([NativeTypeName("const GLdouble *")] Ref<double> c);
 
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glIndexf")]
-        static abstract void Indexf([NativeTypeName("GLfloat")] float c);
+        static abstract void Index([NativeTypeName("GLfloat")] float c);
 
         [SupportedApiProfile("glcore", MinVersion = "3.2")]
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
@@ -12150,15 +12150,15 @@ public unsafe partial interface IGL
 
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glIndexfv")]
-        static abstract void Indexfv([NativeTypeName("const GLfloat *")] Ref<float> c);
+        static abstract void Index([NativeTypeName("const GLfloat *")] Ref<float> c);
 
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glIndexi")]
-        static abstract void Indexi([NativeTypeName("GLint")] int c);
+        static abstract void Index([NativeTypeName("GLint")] int c);
 
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glIndexiv")]
-        static abstract void Indexiv([NativeTypeName("const GLint *")] Ref<int> c);
+        static abstract void Index([NativeTypeName("const GLint *")] Ref<int> c);
 
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glIndexMask")]
@@ -12199,19 +12199,19 @@ public unsafe partial interface IGL
 
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glIndexs")]
-        static abstract void Indexs([NativeTypeName("GLshort")] short c);
+        static abstract void Index([NativeTypeName("GLshort")] short c);
 
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glIndexsv")]
-        static abstract void Indexsv([NativeTypeName("const GLshort *")] Ref<short> c);
+        static abstract void Index([NativeTypeName("const GLshort *")] Ref<short> c);
 
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glIndexub")]
-        static abstract void Indexub([NativeTypeName("GLubyte")] byte c);
+        static abstract void Index([NativeTypeName("GLubyte")] byte c);
 
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glIndexubv")]
-        static abstract void Indexubv([NativeTypeName("const GLubyte *")] Ref<byte> c);
+        static abstract void Index([NativeTypeName("const GLubyte *")] Ref<byte> c);
 
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glIndexxOES")]
@@ -12391,7 +12391,7 @@ public unsafe partial interface IGL
         [SupportedApiProfile("glcore", MinVersion = "3.2")]
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glIsEnabledi")]
-        static abstract byte IsEnabledi(
+        static abstract byte IsEnabled(
             [NativeTypeName("GLenum")] uint target,
             [NativeTypeName("GLuint")] uint index
         );
@@ -12771,7 +12771,7 @@ public unsafe partial interface IGL
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [SupportedApiProfile("gles1", MaxVersion = "2.0")]
         [NativeFunction("opengl", EntryPoint = "glLightf")]
-        static abstract void Lightf(
+        static abstract void Light(
             [NativeTypeName("GLenum")] uint light,
             [NativeTypeName("GLenum")] uint pname,
             [NativeTypeName("GLfloat")] float param2
@@ -12780,7 +12780,7 @@ public unsafe partial interface IGL
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [SupportedApiProfile("gles1", MaxVersion = "2.0")]
         [NativeFunction("opengl", EntryPoint = "glLightfv")]
-        static abstract void Lightfv(
+        static abstract void Light(
             [NativeTypeName("GLenum")] uint light,
             [NativeTypeName("GLenum")] uint pname,
             [NativeTypeName("const GLfloat *")] Ref<float> @params
@@ -12788,7 +12788,7 @@ public unsafe partial interface IGL
 
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glLighti")]
-        static abstract void Lighti(
+        static abstract void Light(
             [NativeTypeName("GLenum")] uint light,
             [NativeTypeName("GLenum")] uint pname,
             [NativeTypeName("GLint")] int param2
@@ -12796,7 +12796,7 @@ public unsafe partial interface IGL
 
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glLightiv")]
-        static abstract void Lightiv(
+        static abstract void Light(
             [NativeTypeName("GLenum")] uint light,
             [NativeTypeName("GLenum")] uint pname,
             [NativeTypeName("const GLint *")] Ref<int> @params
@@ -12805,7 +12805,7 @@ public unsafe partial interface IGL
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [SupportedApiProfile("gles1", MaxVersion = "2.0")]
         [NativeFunction("opengl", EntryPoint = "glLightModelf")]
-        static abstract void LightModelf(
+        static abstract void LightModel(
             [NativeTypeName("GLenum")] uint pname,
             [NativeTypeName("GLfloat")] float param1
         );
@@ -12813,21 +12813,21 @@ public unsafe partial interface IGL
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [SupportedApiProfile("gles1", MaxVersion = "2.0")]
         [NativeFunction("opengl", EntryPoint = "glLightModelfv")]
-        static abstract void LightModelfv(
+        static abstract void LightModel(
             [NativeTypeName("GLenum")] uint pname,
             [NativeTypeName("const GLfloat *")] Ref<float> @params
         );
 
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glLightModeli")]
-        static abstract void LightModeli(
+        static abstract void LightModel(
             [NativeTypeName("GLenum")] uint pname,
             [NativeTypeName("GLint")] int param1
         );
 
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glLightModeliv")]
-        static abstract void LightModeliv(
+        static abstract void LightModel(
             [NativeTypeName("GLenum")] uint pname,
             [NativeTypeName("const GLint *")] Ref<int> @params
         );
@@ -12849,7 +12849,7 @@ public unsafe partial interface IGL
 
         [SupportedApiProfile("gles1", MaxVersion = "2.0")]
         [NativeFunction("opengl", EntryPoint = "glLightModelxv")]
-        static abstract void LightModelxv(
+        static abstract void LightModelx(
             [NativeTypeName("GLenum")] uint pname,
             [NativeTypeName("const GLfixed *")] Ref<int> param1
         );
@@ -12881,7 +12881,7 @@ public unsafe partial interface IGL
 
         [SupportedApiProfile("gles1", MaxVersion = "2.0")]
         [NativeFunction("opengl", EntryPoint = "glLightxv")]
-        static abstract void Lightxv(
+        static abstract void Lightx(
             [NativeTypeName("GLenum")] uint light,
             [NativeTypeName("GLenum")] uint pname,
             [NativeTypeName("const GLfixed *")] Ref<int> @params
@@ -12991,12 +12991,12 @@ public unsafe partial interface IGL
 
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glLoadMatrixd")]
-        static abstract void LoadMatrixd([NativeTypeName("const GLdouble *")] Ref<double> m);
+        static abstract void LoadMatrix([NativeTypeName("const GLdouble *")] Ref<double> m);
 
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [SupportedApiProfile("gles1", MaxVersion = "2.0")]
         [NativeFunction("opengl", EntryPoint = "glLoadMatrixf")]
-        static abstract void LoadMatrixf([NativeTypeName("const GLfloat *")] Ref<float> m);
+        static abstract void LoadMatrix([NativeTypeName("const GLfloat *")] Ref<float> m);
 
         [SupportedApiProfile("gles1", MaxVersion = "2.0")]
         [NativeFunction("opengl", EntryPoint = "glLoadMatrixx")]
@@ -13026,7 +13026,7 @@ public unsafe partial interface IGL
 
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glLoadTransposeMatrixd")]
-        static abstract void LoadTransposeMatrixd(
+        static abstract void LoadTransposeMatrix(
             [NativeTypeName("const GLdouble *")] Ref<double> m
         );
 
@@ -13038,7 +13038,7 @@ public unsafe partial interface IGL
 
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glLoadTransposeMatrixf")]
-        static abstract void LoadTransposeMatrixf([NativeTypeName("const GLfloat *")] Ref<float> m);
+        static abstract void LoadTransposeMatrix([NativeTypeName("const GLfloat *")] Ref<float> m);
 
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glLoadTransposeMatrixfARB")]
@@ -13153,7 +13153,7 @@ public unsafe partial interface IGL
 
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glMap1d")]
-        static abstract void Map1d(
+        static abstract void Map1(
             [NativeTypeName("GLenum")] uint target,
             [NativeTypeName("GLdouble")] double u1,
             [NativeTypeName("GLdouble")] double u2,
@@ -13164,7 +13164,7 @@ public unsafe partial interface IGL
 
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glMap1f")]
-        static abstract void Map1f(
+        static abstract void Map1(
             [NativeTypeName("GLenum")] uint target,
             [NativeTypeName("GLfloat")] float u1,
             [NativeTypeName("GLfloat")] float u2,
@@ -13186,7 +13186,7 @@ public unsafe partial interface IGL
 
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glMap2d")]
-        static abstract void Map2d(
+        static abstract void Map2(
             [NativeTypeName("GLenum")] uint target,
             [NativeTypeName("GLdouble")] double u1,
             [NativeTypeName("GLdouble")] double u2,
@@ -13201,7 +13201,7 @@ public unsafe partial interface IGL
 
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glMap2f")]
-        static abstract void Map2f(
+        static abstract void Map2(
             [NativeTypeName("GLenum")] uint target,
             [NativeTypeName("GLfloat")] float u1,
             [NativeTypeName("GLfloat")] float u2,
@@ -13288,7 +13288,7 @@ public unsafe partial interface IGL
 
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glMapGrid1d")]
-        static abstract void MapGrid1d(
+        static abstract void MapGrid1(
             [NativeTypeName("GLint")] int un,
             [NativeTypeName("GLdouble")] double u1,
             [NativeTypeName("GLdouble")] double u2
@@ -13296,7 +13296,7 @@ public unsafe partial interface IGL
 
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glMapGrid1f")]
-        static abstract void MapGrid1f(
+        static abstract void MapGrid1(
             [NativeTypeName("GLint")] int un,
             [NativeTypeName("GLfloat")] float u1,
             [NativeTypeName("GLfloat")] float u2
@@ -13312,7 +13312,7 @@ public unsafe partial interface IGL
 
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glMapGrid2d")]
-        static abstract void MapGrid2d(
+        static abstract void MapGrid2(
             [NativeTypeName("GLint")] int un,
             [NativeTypeName("GLdouble")] double u1,
             [NativeTypeName("GLdouble")] double u2,
@@ -13323,7 +13323,7 @@ public unsafe partial interface IGL
 
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glMapGrid2f")]
-        static abstract void MapGrid2f(
+        static abstract void MapGrid2(
             [NativeTypeName("GLint")] int un,
             [NativeTypeName("GLfloat")] float u1,
             [NativeTypeName("GLfloat")] float u2,
@@ -13467,7 +13467,7 @@ public unsafe partial interface IGL
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [SupportedApiProfile("gles1", MaxVersion = "2.0")]
         [NativeFunction("opengl", EntryPoint = "glMaterialf")]
-        static abstract void Materialf(
+        static abstract void Material(
             [NativeTypeName("GLenum")] uint face,
             [NativeTypeName("GLenum")] uint pname,
             [NativeTypeName("GLfloat")] float param2
@@ -13476,7 +13476,7 @@ public unsafe partial interface IGL
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [SupportedApiProfile("gles1", MaxVersion = "2.0")]
         [NativeFunction("opengl", EntryPoint = "glMaterialfv")]
-        static abstract void Materialfv(
+        static abstract void Material(
             [NativeTypeName("GLenum")] uint face,
             [NativeTypeName("GLenum")] uint pname,
             [NativeTypeName("const GLfloat *")] Ref<float> @params
@@ -13484,7 +13484,7 @@ public unsafe partial interface IGL
 
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glMateriali")]
-        static abstract void Materiali(
+        static abstract void Material(
             [NativeTypeName("GLenum")] uint face,
             [NativeTypeName("GLenum")] uint pname,
             [NativeTypeName("GLint")] int param2
@@ -13492,7 +13492,7 @@ public unsafe partial interface IGL
 
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glMaterialiv")]
-        static abstract void Materialiv(
+        static abstract void Material(
             [NativeTypeName("GLenum")] uint face,
             [NativeTypeName("GLenum")] uint pname,
             [NativeTypeName("const GLint *")] Ref<int> @params
@@ -13517,7 +13517,7 @@ public unsafe partial interface IGL
 
         [SupportedApiProfile("gles1", MaxVersion = "2.0")]
         [NativeFunction("opengl", EntryPoint = "glMaterialxv")]
-        static abstract void Materialxv(
+        static abstract void Materialx(
             [NativeTypeName("GLenum")] uint face,
             [NativeTypeName("GLenum")] uint pname,
             [NativeTypeName("const GLfixed *")] Ref<int> param2
@@ -14333,7 +14333,7 @@ public unsafe partial interface IGL
 
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glMultiTexCoord1d")]
-        static abstract void MultiTexCoord1d(
+        static abstract void MultiTexCoord1(
             [NativeTypeName("GLenum")] uint target,
             [NativeTypeName("GLdouble")] double s
         );
@@ -14347,7 +14347,7 @@ public unsafe partial interface IGL
 
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glMultiTexCoord1dv")]
-        static abstract void MultiTexCoord1dv(
+        static abstract void MultiTexCoord1(
             [NativeTypeName("GLenum")] uint target,
             [NativeTypeName("const GLdouble *")] Ref<double> v
         );
@@ -14361,7 +14361,7 @@ public unsafe partial interface IGL
 
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glMultiTexCoord1f")]
-        static abstract void MultiTexCoord1f(
+        static abstract void MultiTexCoord1(
             [NativeTypeName("GLenum")] uint target,
             [NativeTypeName("GLfloat")] float s
         );
@@ -14375,7 +14375,7 @@ public unsafe partial interface IGL
 
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glMultiTexCoord1fv")]
-        static abstract void MultiTexCoord1fv(
+        static abstract void MultiTexCoord1(
             [NativeTypeName("GLenum")] uint target,
             [NativeTypeName("const GLfloat *")] Ref<float> v
         );
@@ -14403,7 +14403,7 @@ public unsafe partial interface IGL
 
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glMultiTexCoord1i")]
-        static abstract void MultiTexCoord1i(
+        static abstract void MultiTexCoord1(
             [NativeTypeName("GLenum")] uint target,
             [NativeTypeName("GLint")] int s
         );
@@ -14417,7 +14417,7 @@ public unsafe partial interface IGL
 
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glMultiTexCoord1iv")]
-        static abstract void MultiTexCoord1iv(
+        static abstract void MultiTexCoord1(
             [NativeTypeName("GLenum")] uint target,
             [NativeTypeName("const GLint *")] Ref<int> v
         );
@@ -14431,7 +14431,7 @@ public unsafe partial interface IGL
 
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glMultiTexCoord1s")]
-        static abstract void MultiTexCoord1s(
+        static abstract void MultiTexCoord1(
             [NativeTypeName("GLenum")] uint target,
             [NativeTypeName("GLshort")] short s
         );
@@ -14445,7 +14445,7 @@ public unsafe partial interface IGL
 
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glMultiTexCoord1sv")]
-        static abstract void MultiTexCoord1sv(
+        static abstract void MultiTexCoord1(
             [NativeTypeName("GLenum")] uint target,
             [NativeTypeName("const GLshort *")] Ref<short> v
         );
@@ -14488,7 +14488,7 @@ public unsafe partial interface IGL
 
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glMultiTexCoord2d")]
-        static abstract void MultiTexCoord2d(
+        static abstract void MultiTexCoord2(
             [NativeTypeName("GLenum")] uint target,
             [NativeTypeName("GLdouble")] double s,
             [NativeTypeName("GLdouble")] double t
@@ -14504,7 +14504,7 @@ public unsafe partial interface IGL
 
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glMultiTexCoord2dv")]
-        static abstract void MultiTexCoord2dv(
+        static abstract void MultiTexCoord2(
             [NativeTypeName("GLenum")] uint target,
             [NativeTypeName("const GLdouble *")] Ref<double> v
         );
@@ -14518,7 +14518,7 @@ public unsafe partial interface IGL
 
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glMultiTexCoord2f")]
-        static abstract void MultiTexCoord2f(
+        static abstract void MultiTexCoord2(
             [NativeTypeName("GLenum")] uint target,
             [NativeTypeName("GLfloat")] float s,
             [NativeTypeName("GLfloat")] float t
@@ -14534,7 +14534,7 @@ public unsafe partial interface IGL
 
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glMultiTexCoord2fv")]
-        static abstract void MultiTexCoord2fv(
+        static abstract void MultiTexCoord2(
             [NativeTypeName("GLenum")] uint target,
             [NativeTypeName("const GLfloat *")] Ref<float> v
         );
@@ -14563,7 +14563,7 @@ public unsafe partial interface IGL
 
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glMultiTexCoord2i")]
-        static abstract void MultiTexCoord2i(
+        static abstract void MultiTexCoord2(
             [NativeTypeName("GLenum")] uint target,
             [NativeTypeName("GLint")] int s,
             [NativeTypeName("GLint")] int t
@@ -14579,7 +14579,7 @@ public unsafe partial interface IGL
 
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glMultiTexCoord2iv")]
-        static abstract void MultiTexCoord2iv(
+        static abstract void MultiTexCoord2(
             [NativeTypeName("GLenum")] uint target,
             [NativeTypeName("const GLint *")] Ref<int> v
         );
@@ -14593,7 +14593,7 @@ public unsafe partial interface IGL
 
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glMultiTexCoord2s")]
-        static abstract void MultiTexCoord2s(
+        static abstract void MultiTexCoord2(
             [NativeTypeName("GLenum")] uint target,
             [NativeTypeName("GLshort")] short s,
             [NativeTypeName("GLshort")] short t
@@ -14609,7 +14609,7 @@ public unsafe partial interface IGL
 
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glMultiTexCoord2sv")]
-        static abstract void MultiTexCoord2sv(
+        static abstract void MultiTexCoord2(
             [NativeTypeName("GLenum")] uint target,
             [NativeTypeName("const GLshort *")] Ref<short> v
         );
@@ -14654,7 +14654,7 @@ public unsafe partial interface IGL
 
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glMultiTexCoord3d")]
-        static abstract void MultiTexCoord3d(
+        static abstract void MultiTexCoord3(
             [NativeTypeName("GLenum")] uint target,
             [NativeTypeName("GLdouble")] double s,
             [NativeTypeName("GLdouble")] double t,
@@ -14672,7 +14672,7 @@ public unsafe partial interface IGL
 
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glMultiTexCoord3dv")]
-        static abstract void MultiTexCoord3dv(
+        static abstract void MultiTexCoord3(
             [NativeTypeName("GLenum")] uint target,
             [NativeTypeName("const GLdouble *")] Ref<double> v
         );
@@ -14686,7 +14686,7 @@ public unsafe partial interface IGL
 
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glMultiTexCoord3f")]
-        static abstract void MultiTexCoord3f(
+        static abstract void MultiTexCoord3(
             [NativeTypeName("GLenum")] uint target,
             [NativeTypeName("GLfloat")] float s,
             [NativeTypeName("GLfloat")] float t,
@@ -14704,7 +14704,7 @@ public unsafe partial interface IGL
 
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glMultiTexCoord3fv")]
-        static abstract void MultiTexCoord3fv(
+        static abstract void MultiTexCoord3(
             [NativeTypeName("GLenum")] uint target,
             [NativeTypeName("const GLfloat *")] Ref<float> v
         );
@@ -14734,7 +14734,7 @@ public unsafe partial interface IGL
 
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glMultiTexCoord3i")]
-        static abstract void MultiTexCoord3i(
+        static abstract void MultiTexCoord3(
             [NativeTypeName("GLenum")] uint target,
             [NativeTypeName("GLint")] int s,
             [NativeTypeName("GLint")] int t,
@@ -14752,7 +14752,7 @@ public unsafe partial interface IGL
 
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glMultiTexCoord3iv")]
-        static abstract void MultiTexCoord3iv(
+        static abstract void MultiTexCoord3(
             [NativeTypeName("GLenum")] uint target,
             [NativeTypeName("const GLint *")] Ref<int> v
         );
@@ -14766,7 +14766,7 @@ public unsafe partial interface IGL
 
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glMultiTexCoord3s")]
-        static abstract void MultiTexCoord3s(
+        static abstract void MultiTexCoord3(
             [NativeTypeName("GLenum")] uint target,
             [NativeTypeName("GLshort")] short s,
             [NativeTypeName("GLshort")] short t,
@@ -14784,7 +14784,7 @@ public unsafe partial interface IGL
 
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glMultiTexCoord3sv")]
-        static abstract void MultiTexCoord3sv(
+        static abstract void MultiTexCoord3(
             [NativeTypeName("GLenum")] uint target,
             [NativeTypeName("const GLshort *")] Ref<short> v
         );
@@ -14831,7 +14831,7 @@ public unsafe partial interface IGL
 
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glMultiTexCoord4d")]
-        static abstract void MultiTexCoord4d(
+        static abstract void MultiTexCoord4(
             [NativeTypeName("GLenum")] uint target,
             [NativeTypeName("GLdouble")] double s,
             [NativeTypeName("GLdouble")] double t,
@@ -14851,7 +14851,7 @@ public unsafe partial interface IGL
 
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glMultiTexCoord4dv")]
-        static abstract void MultiTexCoord4dv(
+        static abstract void MultiTexCoord4(
             [NativeTypeName("GLenum")] uint target,
             [NativeTypeName("const GLdouble *")] Ref<double> v
         );
@@ -14866,7 +14866,7 @@ public unsafe partial interface IGL
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [SupportedApiProfile("gles1", MaxVersion = "2.0")]
         [NativeFunction("opengl", EntryPoint = "glMultiTexCoord4f")]
-        static abstract void MultiTexCoord4f(
+        static abstract void MultiTexCoord4(
             [NativeTypeName("GLenum")] uint target,
             [NativeTypeName("GLfloat")] float s,
             [NativeTypeName("GLfloat")] float t,
@@ -14886,7 +14886,7 @@ public unsafe partial interface IGL
 
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glMultiTexCoord4fv")]
-        static abstract void MultiTexCoord4fv(
+        static abstract void MultiTexCoord4(
             [NativeTypeName("GLenum")] uint target,
             [NativeTypeName("const GLfloat *")] Ref<float> v
         );
@@ -14917,7 +14917,7 @@ public unsafe partial interface IGL
 
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glMultiTexCoord4i")]
-        static abstract void MultiTexCoord4i(
+        static abstract void MultiTexCoord4(
             [NativeTypeName("GLenum")] uint target,
             [NativeTypeName("GLint")] int s,
             [NativeTypeName("GLint")] int t,
@@ -14937,7 +14937,7 @@ public unsafe partial interface IGL
 
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glMultiTexCoord4iv")]
-        static abstract void MultiTexCoord4iv(
+        static abstract void MultiTexCoord4(
             [NativeTypeName("GLenum")] uint target,
             [NativeTypeName("const GLint *")] Ref<int> v
         );
@@ -14951,7 +14951,7 @@ public unsafe partial interface IGL
 
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glMultiTexCoord4s")]
-        static abstract void MultiTexCoord4s(
+        static abstract void MultiTexCoord4(
             [NativeTypeName("GLenum")] uint target,
             [NativeTypeName("GLshort")] short s,
             [NativeTypeName("GLshort")] short t,
@@ -14971,7 +14971,7 @@ public unsafe partial interface IGL
 
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glMultiTexCoord4sv")]
-        static abstract void MultiTexCoord4sv(
+        static abstract void MultiTexCoord4(
             [NativeTypeName("GLenum")] uint target,
             [NativeTypeName("const GLshort *")] Ref<short> v
         );
@@ -15013,7 +15013,7 @@ public unsafe partial interface IGL
 
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glMultiTexCoordP1ui")]
-        static abstract void MultiTexCoordP1ui(
+        static abstract void MultiTexCoordP1(
             [NativeTypeName("GLenum")] uint texture,
             [NativeTypeName("GLenum")] uint type,
             [NativeTypeName("GLuint")] uint coords
@@ -15021,7 +15021,7 @@ public unsafe partial interface IGL
 
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glMultiTexCoordP1uiv")]
-        static abstract void MultiTexCoordP1uiv(
+        static abstract void MultiTexCoordP1(
             [NativeTypeName("GLenum")] uint texture,
             [NativeTypeName("GLenum")] uint type,
             [NativeTypeName("const GLuint *")] Ref<uint> coords
@@ -15029,7 +15029,7 @@ public unsafe partial interface IGL
 
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glMultiTexCoordP2ui")]
-        static abstract void MultiTexCoordP2ui(
+        static abstract void MultiTexCoordP2(
             [NativeTypeName("GLenum")] uint texture,
             [NativeTypeName("GLenum")] uint type,
             [NativeTypeName("GLuint")] uint coords
@@ -15037,7 +15037,7 @@ public unsafe partial interface IGL
 
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glMultiTexCoordP2uiv")]
-        static abstract void MultiTexCoordP2uiv(
+        static abstract void MultiTexCoordP2(
             [NativeTypeName("GLenum")] uint texture,
             [NativeTypeName("GLenum")] uint type,
             [NativeTypeName("const GLuint *")] Ref<uint> coords
@@ -15045,7 +15045,7 @@ public unsafe partial interface IGL
 
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glMultiTexCoordP3ui")]
-        static abstract void MultiTexCoordP3ui(
+        static abstract void MultiTexCoordP3(
             [NativeTypeName("GLenum")] uint texture,
             [NativeTypeName("GLenum")] uint type,
             [NativeTypeName("GLuint")] uint coords
@@ -15053,7 +15053,7 @@ public unsafe partial interface IGL
 
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glMultiTexCoordP3uiv")]
-        static abstract void MultiTexCoordP3uiv(
+        static abstract void MultiTexCoordP3(
             [NativeTypeName("GLenum")] uint texture,
             [NativeTypeName("GLenum")] uint type,
             [NativeTypeName("const GLuint *")] Ref<uint> coords
@@ -15061,7 +15061,7 @@ public unsafe partial interface IGL
 
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glMultiTexCoordP4ui")]
-        static abstract void MultiTexCoordP4ui(
+        static abstract void MultiTexCoordP4(
             [NativeTypeName("GLenum")] uint texture,
             [NativeTypeName("GLenum")] uint type,
             [NativeTypeName("GLuint")] uint coords
@@ -15069,7 +15069,7 @@ public unsafe partial interface IGL
 
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glMultiTexCoordP4uiv")]
-        static abstract void MultiTexCoordP4uiv(
+        static abstract void MultiTexCoordP4(
             [NativeTypeName("GLenum")] uint texture,
             [NativeTypeName("GLenum")] uint type,
             [NativeTypeName("const GLuint *")] Ref<uint> coords
@@ -15353,12 +15353,12 @@ public unsafe partial interface IGL
 
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glMultMatrixd")]
-        static abstract void MultMatrixd([NativeTypeName("const GLdouble *")] Ref<double> m);
+        static abstract void MultMatrix([NativeTypeName("const GLdouble *")] Ref<double> m);
 
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [SupportedApiProfile("gles1", MaxVersion = "2.0")]
         [NativeFunction("opengl", EntryPoint = "glMultMatrixf")]
-        static abstract void MultMatrixf([NativeTypeName("const GLfloat *")] Ref<float> m);
+        static abstract void MultMatrix([NativeTypeName("const GLfloat *")] Ref<float> m);
 
         [SupportedApiProfile("gles1", MaxVersion = "2.0")]
         [NativeFunction("opengl", EntryPoint = "glMultMatrixx")]
@@ -15371,7 +15371,7 @@ public unsafe partial interface IGL
 
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glMultTransposeMatrixd")]
-        static abstract void MultTransposeMatrixd(
+        static abstract void MultTransposeMatrix(
             [NativeTypeName("const GLdouble *")] Ref<double> m
         );
 
@@ -15383,7 +15383,7 @@ public unsafe partial interface IGL
 
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glMultTransposeMatrixf")]
-        static abstract void MultTransposeMatrixf([NativeTypeName("const GLfloat *")] Ref<float> m);
+        static abstract void MultTransposeMatrix([NativeTypeName("const GLfloat *")] Ref<float> m);
 
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glMultTransposeMatrixfARB")]
@@ -15552,7 +15552,7 @@ public unsafe partial interface IGL
         [SupportedApiProfile("glcore", MinVersion = "3.2")]
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glNamedFramebufferParameteri")]
-        static abstract void NamedFramebufferParameteri(
+        static abstract void NamedFramebufferParameter(
             [NativeTypeName("GLuint")] uint framebuffer,
             [NativeTypeName("GLenum")] uint pname,
             [NativeTypeName("GLint")] int param2
@@ -15944,7 +15944,7 @@ public unsafe partial interface IGL
 
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glNormal3b")]
-        static abstract void Normal3b(
+        static abstract void Normal3(
             [NativeTypeName("GLbyte")] sbyte nx,
             [NativeTypeName("GLbyte")] sbyte ny,
             [NativeTypeName("GLbyte")] sbyte nz
@@ -15952,11 +15952,11 @@ public unsafe partial interface IGL
 
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glNormal3bv")]
-        static abstract void Normal3bv([NativeTypeName("const GLbyte *")] Ref<sbyte> v);
+        static abstract void Normal3([NativeTypeName("const GLbyte *")] Ref<sbyte> v);
 
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glNormal3d")]
-        static abstract void Normal3d(
+        static abstract void Normal3(
             [NativeTypeName("GLdouble")] double nx,
             [NativeTypeName("GLdouble")] double ny,
             [NativeTypeName("GLdouble")] double nz
@@ -15964,12 +15964,12 @@ public unsafe partial interface IGL
 
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glNormal3dv")]
-        static abstract void Normal3dv([NativeTypeName("const GLdouble *")] Ref<double> v);
+        static abstract void Normal3([NativeTypeName("const GLdouble *")] Ref<double> v);
 
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [SupportedApiProfile("gles1", MaxVersion = "2.0")]
         [NativeFunction("opengl", EntryPoint = "glNormal3f")]
-        static abstract void Normal3f(
+        static abstract void Normal3(
             [NativeTypeName("GLfloat")] float nx,
             [NativeTypeName("GLfloat")] float ny,
             [NativeTypeName("GLfloat")] float nz
@@ -15977,7 +15977,7 @@ public unsafe partial interface IGL
 
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glNormal3fv")]
-        static abstract void Normal3fv([NativeTypeName("const GLfloat *")] Ref<float> v);
+        static abstract void Normal3([NativeTypeName("const GLfloat *")] Ref<float> v);
 
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glNormal3fVertex3fSUN")]
@@ -16011,7 +16011,7 @@ public unsafe partial interface IGL
 
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glNormal3i")]
-        static abstract void Normal3i(
+        static abstract void Normal3(
             [NativeTypeName("GLint")] int nx,
             [NativeTypeName("GLint")] int ny,
             [NativeTypeName("GLint")] int nz
@@ -16019,11 +16019,11 @@ public unsafe partial interface IGL
 
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glNormal3iv")]
-        static abstract void Normal3iv([NativeTypeName("const GLint *")] Ref<int> v);
+        static abstract void Normal3([NativeTypeName("const GLint *")] Ref<int> v);
 
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glNormal3s")]
-        static abstract void Normal3s(
+        static abstract void Normal3(
             [NativeTypeName("GLshort")] short nx,
             [NativeTypeName("GLshort")] short ny,
             [NativeTypeName("GLshort")] short nz
@@ -16031,7 +16031,7 @@ public unsafe partial interface IGL
 
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glNormal3sv")]
-        static abstract void Normal3sv([NativeTypeName("const GLshort *")] Ref<short> v);
+        static abstract void Normal3([NativeTypeName("const GLshort *")] Ref<short> v);
 
         [SupportedApiProfile("gles1", MaxVersion = "2.0")]
         [NativeFunction("opengl", EntryPoint = "glNormal3x")]
@@ -16064,14 +16064,14 @@ public unsafe partial interface IGL
 
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glNormalP3ui")]
-        static abstract void NormalP3ui(
+        static abstract void NormalP3(
             [NativeTypeName("GLenum")] uint type,
             [NativeTypeName("GLuint")] uint coords
         );
 
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glNormalP3uiv")]
-        static abstract void NormalP3uiv(
+        static abstract void NormalP3(
             [NativeTypeName("GLenum")] uint type,
             [NativeTypeName("const GLuint *")] Ref<uint> coords
         );
@@ -16257,7 +16257,7 @@ public unsafe partial interface IGL
 
         [SupportedApiProfile("gles1", MaxVersion = "2.0")]
         [NativeFunction("opengl", EntryPoint = "glOrthof")]
-        static abstract void Orthof(
+        static abstract void Ortho(
             [NativeTypeName("GLfloat")] float l,
             [NativeTypeName("GLfloat")] float r,
             [NativeTypeName("GLfloat")] float b,
@@ -16320,7 +16320,7 @@ public unsafe partial interface IGL
         [SupportedApiProfile("glcore", MinVersion = "3.2")]
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glPatchParameterfv")]
-        static abstract void PatchParameterfv(
+        static abstract void PatchParameter(
             [NativeTypeName("GLenum")] uint pname,
             [NativeTypeName("const GLfloat *")] Ref<float> values
         );
@@ -16328,7 +16328,7 @@ public unsafe partial interface IGL
         [SupportedApiProfile("glcore", MinVersion = "3.2")]
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glPatchParameteri")]
-        static abstract void PatchParameteri(
+        static abstract void PatchParameter(
             [NativeTypeName("GLenum")] uint pname,
             [NativeTypeName("GLint")] int value
         );
@@ -16605,7 +16605,7 @@ public unsafe partial interface IGL
 
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glPixelMapfv")]
-        static abstract void PixelMapfv(
+        static abstract void PixelMap(
             [NativeTypeName("GLenum")] uint map,
             [NativeTypeName("GLsizei")] int mapsize,
             [NativeTypeName("const GLfloat *")] Ref<float> values
@@ -16613,7 +16613,7 @@ public unsafe partial interface IGL
 
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glPixelMapuiv")]
-        static abstract void PixelMapuiv(
+        static abstract void PixelMap(
             [NativeTypeName("GLenum")] uint map,
             [NativeTypeName("GLsizei")] int mapsize,
             [NativeTypeName("const GLuint *")] Ref<uint> values
@@ -16621,7 +16621,7 @@ public unsafe partial interface IGL
 
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glPixelMapusv")]
-        static abstract void PixelMapusv(
+        static abstract void PixelMap(
             [NativeTypeName("GLenum")] uint map,
             [NativeTypeName("GLsizei")] int mapsize,
             [NativeTypeName("const GLushort *")] Ref<ushort> values
@@ -16638,7 +16638,7 @@ public unsafe partial interface IGL
         [SupportedApiProfile("glcore", MinVersion = "3.2")]
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glPixelStoref")]
-        static abstract void PixelStoref(
+        static abstract void PixelStore(
             [NativeTypeName("GLenum")] uint pname,
             [NativeTypeName("GLfloat")] float param1
         );
@@ -16648,7 +16648,7 @@ public unsafe partial interface IGL
         [SupportedApiProfile("gles1", MaxVersion = "2.0")]
         [SupportedApiProfile("gles2", MinVersion = "2.0")]
         [NativeFunction("opengl", EntryPoint = "glPixelStorei")]
-        static abstract void PixelStorei(
+        static abstract void PixelStore(
             [NativeTypeName("GLenum")] uint pname,
             [NativeTypeName("GLint")] int param1
         );
@@ -16694,14 +16694,14 @@ public unsafe partial interface IGL
 
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glPixelTransferf")]
-        static abstract void PixelTransferf(
+        static abstract void PixelTransfer(
             [NativeTypeName("GLenum")] uint pname,
             [NativeTypeName("GLfloat")] float param1
         );
 
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glPixelTransferi")]
-        static abstract void PixelTransferi(
+        static abstract void PixelTransfer(
             [NativeTypeName("GLenum")] uint pname,
             [NativeTypeName("GLint")] int param1
         );
@@ -16793,7 +16793,7 @@ public unsafe partial interface IGL
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [SupportedApiProfile("gles1", MaxVersion = "2.0")]
         [NativeFunction("opengl", EntryPoint = "glPointParameterf")]
-        static abstract void PointParameterf(
+        static abstract void PointParameter(
             [NativeTypeName("GLenum")] uint pname,
             [NativeTypeName("GLfloat")] float param1
         );
@@ -16823,7 +16823,7 @@ public unsafe partial interface IGL
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [SupportedApiProfile("gles1", MaxVersion = "2.0")]
         [NativeFunction("opengl", EntryPoint = "glPointParameterfv")]
-        static abstract void PointParameterfv(
+        static abstract void PointParameter(
             [NativeTypeName("GLenum")] uint pname,
             [NativeTypeName("const GLfloat *")] Ref<float> @params
         );
@@ -16852,7 +16852,7 @@ public unsafe partial interface IGL
         [SupportedApiProfile("glcore", MinVersion = "3.2")]
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glPointParameteri")]
-        static abstract void PointParameteri(
+        static abstract void PointParameter(
             [NativeTypeName("GLenum")] uint pname,
             [NativeTypeName("GLint")] int param1
         );
@@ -16867,7 +16867,7 @@ public unsafe partial interface IGL
         [SupportedApiProfile("glcore", MinVersion = "3.2")]
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glPointParameteriv")]
-        static abstract void PointParameteriv(
+        static abstract void PointParameter(
             [NativeTypeName("GLenum")] uint pname,
             [NativeTypeName("const GLint *")] Ref<int> @params
         );
@@ -16895,7 +16895,7 @@ public unsafe partial interface IGL
 
         [SupportedApiProfile("gles1", MaxVersion = "2.0")]
         [NativeFunction("opengl", EntryPoint = "glPointParameterxv")]
-        static abstract void PointParameterxv(
+        static abstract void PointParameterx(
             [NativeTypeName("GLenum")] uint pname,
             [NativeTypeName("const GLfixed *")] Ref<int> @params
         );
@@ -17493,7 +17493,7 @@ public unsafe partial interface IGL
         [SupportedApiProfile("glcore", MinVersion = "3.2")]
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glProgramParameteri")]
-        static abstract void ProgramParameteri(
+        static abstract void ProgramParameter(
             [NativeTypeName("GLuint")] uint program,
             [NativeTypeName("GLenum")] uint pname,
             [NativeTypeName("GLint")] int value
@@ -17567,7 +17567,7 @@ public unsafe partial interface IGL
         [SupportedApiProfile("glcore", MinVersion = "3.2")]
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glProgramUniform1d")]
-        static abstract void ProgramUniform1d(
+        static abstract void ProgramUniform1(
             [NativeTypeName("GLuint")] uint program,
             [NativeTypeName("GLint")] int location,
             [NativeTypeName("GLdouble")] double v0
@@ -17585,7 +17585,7 @@ public unsafe partial interface IGL
         [SupportedApiProfile("glcore", MinVersion = "3.2")]
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glProgramUniform1dv")]
-        static abstract void ProgramUniform1dv(
+        static abstract void ProgramUniform1(
             [NativeTypeName("GLuint")] uint program,
             [NativeTypeName("GLint")] int location,
             [NativeTypeName("GLsizei")] int count,
@@ -17605,7 +17605,7 @@ public unsafe partial interface IGL
         [SupportedApiProfile("glcore", MinVersion = "3.2")]
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glProgramUniform1f")]
-        static abstract void ProgramUniform1f(
+        static abstract void ProgramUniform1(
             [NativeTypeName("GLuint")] uint program,
             [NativeTypeName("GLint")] int location,
             [NativeTypeName("GLfloat")] float v0
@@ -17624,7 +17624,7 @@ public unsafe partial interface IGL
         [SupportedApiProfile("glcore", MinVersion = "3.2")]
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glProgramUniform1fv")]
-        static abstract void ProgramUniform1fv(
+        static abstract void ProgramUniform1(
             [NativeTypeName("GLuint")] uint program,
             [NativeTypeName("GLint")] int location,
             [NativeTypeName("GLsizei")] int count,
@@ -17645,7 +17645,7 @@ public unsafe partial interface IGL
         [SupportedApiProfile("glcore", MinVersion = "3.2")]
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glProgramUniform1i")]
-        static abstract void ProgramUniform1i(
+        static abstract void ProgramUniform1(
             [NativeTypeName("GLuint")] uint program,
             [NativeTypeName("GLint")] int location,
             [NativeTypeName("GLint")] int v0
@@ -17704,7 +17704,7 @@ public unsafe partial interface IGL
         [SupportedApiProfile("glcore", MinVersion = "3.2")]
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glProgramUniform1iv")]
-        static abstract void ProgramUniform1iv(
+        static abstract void ProgramUniform1(
             [NativeTypeName("GLuint")] uint program,
             [NativeTypeName("GLint")] int location,
             [NativeTypeName("GLsizei")] int count,
@@ -17725,7 +17725,7 @@ public unsafe partial interface IGL
         [SupportedApiProfile("glcore", MinVersion = "3.2")]
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glProgramUniform1ui")]
-        static abstract void ProgramUniform1ui(
+        static abstract void ProgramUniform1(
             [NativeTypeName("GLuint")] uint program,
             [NativeTypeName("GLint")] int location,
             [NativeTypeName("GLuint")] uint v0
@@ -17784,7 +17784,7 @@ public unsafe partial interface IGL
         [SupportedApiProfile("glcore", MinVersion = "3.2")]
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glProgramUniform1uiv")]
-        static abstract void ProgramUniform1uiv(
+        static abstract void ProgramUniform1(
             [NativeTypeName("GLuint")] uint program,
             [NativeTypeName("GLint")] int location,
             [NativeTypeName("GLsizei")] int count,
@@ -17805,7 +17805,7 @@ public unsafe partial interface IGL
         [SupportedApiProfile("glcore", MinVersion = "3.2")]
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glProgramUniform2d")]
-        static abstract void ProgramUniform2d(
+        static abstract void ProgramUniform2(
             [NativeTypeName("GLuint")] uint program,
             [NativeTypeName("GLint")] int location,
             [NativeTypeName("GLdouble")] double v0,
@@ -17825,7 +17825,7 @@ public unsafe partial interface IGL
         [SupportedApiProfile("glcore", MinVersion = "3.2")]
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glProgramUniform2dv")]
-        static abstract void ProgramUniform2dv(
+        static abstract void ProgramUniform2(
             [NativeTypeName("GLuint")] uint program,
             [NativeTypeName("GLint")] int location,
             [NativeTypeName("GLsizei")] int count,
@@ -17845,7 +17845,7 @@ public unsafe partial interface IGL
         [SupportedApiProfile("glcore", MinVersion = "3.2")]
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glProgramUniform2f")]
-        static abstract void ProgramUniform2f(
+        static abstract void ProgramUniform2(
             [NativeTypeName("GLuint")] uint program,
             [NativeTypeName("GLint")] int location,
             [NativeTypeName("GLfloat")] float v0,
@@ -17866,7 +17866,7 @@ public unsafe partial interface IGL
         [SupportedApiProfile("glcore", MinVersion = "3.2")]
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glProgramUniform2fv")]
-        static abstract void ProgramUniform2fv(
+        static abstract void ProgramUniform2(
             [NativeTypeName("GLuint")] uint program,
             [NativeTypeName("GLint")] int location,
             [NativeTypeName("GLsizei")] int count,
@@ -17887,7 +17887,7 @@ public unsafe partial interface IGL
         [SupportedApiProfile("glcore", MinVersion = "3.2")]
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glProgramUniform2i")]
-        static abstract void ProgramUniform2i(
+        static abstract void ProgramUniform2(
             [NativeTypeName("GLuint")] uint program,
             [NativeTypeName("GLint")] int location,
             [NativeTypeName("GLint")] int v0,
@@ -17950,7 +17950,7 @@ public unsafe partial interface IGL
         [SupportedApiProfile("glcore", MinVersion = "3.2")]
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glProgramUniform2iv")]
-        static abstract void ProgramUniform2iv(
+        static abstract void ProgramUniform2(
             [NativeTypeName("GLuint")] uint program,
             [NativeTypeName("GLint")] int location,
             [NativeTypeName("GLsizei")] int count,
@@ -17971,7 +17971,7 @@ public unsafe partial interface IGL
         [SupportedApiProfile("glcore", MinVersion = "3.2")]
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glProgramUniform2ui")]
-        static abstract void ProgramUniform2ui(
+        static abstract void ProgramUniform2(
             [NativeTypeName("GLuint")] uint program,
             [NativeTypeName("GLint")] int location,
             [NativeTypeName("GLuint")] uint v0,
@@ -18034,7 +18034,7 @@ public unsafe partial interface IGL
         [SupportedApiProfile("glcore", MinVersion = "3.2")]
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glProgramUniform2uiv")]
-        static abstract void ProgramUniform2uiv(
+        static abstract void ProgramUniform2(
             [NativeTypeName("GLuint")] uint program,
             [NativeTypeName("GLint")] int location,
             [NativeTypeName("GLsizei")] int count,
@@ -18055,7 +18055,7 @@ public unsafe partial interface IGL
         [SupportedApiProfile("glcore", MinVersion = "3.2")]
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glProgramUniform3d")]
-        static abstract void ProgramUniform3d(
+        static abstract void ProgramUniform3(
             [NativeTypeName("GLuint")] uint program,
             [NativeTypeName("GLint")] int location,
             [NativeTypeName("GLdouble")] double v0,
@@ -18077,7 +18077,7 @@ public unsafe partial interface IGL
         [SupportedApiProfile("glcore", MinVersion = "3.2")]
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glProgramUniform3dv")]
-        static abstract void ProgramUniform3dv(
+        static abstract void ProgramUniform3(
             [NativeTypeName("GLuint")] uint program,
             [NativeTypeName("GLint")] int location,
             [NativeTypeName("GLsizei")] int count,
@@ -18097,7 +18097,7 @@ public unsafe partial interface IGL
         [SupportedApiProfile("glcore", MinVersion = "3.2")]
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glProgramUniform3f")]
-        static abstract void ProgramUniform3f(
+        static abstract void ProgramUniform3(
             [NativeTypeName("GLuint")] uint program,
             [NativeTypeName("GLint")] int location,
             [NativeTypeName("GLfloat")] float v0,
@@ -18120,7 +18120,7 @@ public unsafe partial interface IGL
         [SupportedApiProfile("glcore", MinVersion = "3.2")]
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glProgramUniform3fv")]
-        static abstract void ProgramUniform3fv(
+        static abstract void ProgramUniform3(
             [NativeTypeName("GLuint")] uint program,
             [NativeTypeName("GLint")] int location,
             [NativeTypeName("GLsizei")] int count,
@@ -18141,7 +18141,7 @@ public unsafe partial interface IGL
         [SupportedApiProfile("glcore", MinVersion = "3.2")]
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glProgramUniform3i")]
-        static abstract void ProgramUniform3i(
+        static abstract void ProgramUniform3(
             [NativeTypeName("GLuint")] uint program,
             [NativeTypeName("GLint")] int location,
             [NativeTypeName("GLint")] int v0,
@@ -18208,7 +18208,7 @@ public unsafe partial interface IGL
         [SupportedApiProfile("glcore", MinVersion = "3.2")]
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glProgramUniform3iv")]
-        static abstract void ProgramUniform3iv(
+        static abstract void ProgramUniform3(
             [NativeTypeName("GLuint")] uint program,
             [NativeTypeName("GLint")] int location,
             [NativeTypeName("GLsizei")] int count,
@@ -18229,7 +18229,7 @@ public unsafe partial interface IGL
         [SupportedApiProfile("glcore", MinVersion = "3.2")]
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glProgramUniform3ui")]
-        static abstract void ProgramUniform3ui(
+        static abstract void ProgramUniform3(
             [NativeTypeName("GLuint")] uint program,
             [NativeTypeName("GLint")] int location,
             [NativeTypeName("GLuint")] uint v0,
@@ -18296,7 +18296,7 @@ public unsafe partial interface IGL
         [SupportedApiProfile("glcore", MinVersion = "3.2")]
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glProgramUniform3uiv")]
-        static abstract void ProgramUniform3uiv(
+        static abstract void ProgramUniform3(
             [NativeTypeName("GLuint")] uint program,
             [NativeTypeName("GLint")] int location,
             [NativeTypeName("GLsizei")] int count,
@@ -18317,7 +18317,7 @@ public unsafe partial interface IGL
         [SupportedApiProfile("glcore", MinVersion = "3.2")]
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glProgramUniform4d")]
-        static abstract void ProgramUniform4d(
+        static abstract void ProgramUniform4(
             [NativeTypeName("GLuint")] uint program,
             [NativeTypeName("GLint")] int location,
             [NativeTypeName("GLdouble")] double v0,
@@ -18341,7 +18341,7 @@ public unsafe partial interface IGL
         [SupportedApiProfile("glcore", MinVersion = "3.2")]
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glProgramUniform4dv")]
-        static abstract void ProgramUniform4dv(
+        static abstract void ProgramUniform4(
             [NativeTypeName("GLuint")] uint program,
             [NativeTypeName("GLint")] int location,
             [NativeTypeName("GLsizei")] int count,
@@ -18361,7 +18361,7 @@ public unsafe partial interface IGL
         [SupportedApiProfile("glcore", MinVersion = "3.2")]
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glProgramUniform4f")]
-        static abstract void ProgramUniform4f(
+        static abstract void ProgramUniform4(
             [NativeTypeName("GLuint")] uint program,
             [NativeTypeName("GLint")] int location,
             [NativeTypeName("GLfloat")] float v0,
@@ -18386,7 +18386,7 @@ public unsafe partial interface IGL
         [SupportedApiProfile("glcore", MinVersion = "3.2")]
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glProgramUniform4fv")]
-        static abstract void ProgramUniform4fv(
+        static abstract void ProgramUniform4(
             [NativeTypeName("GLuint")] uint program,
             [NativeTypeName("GLint")] int location,
             [NativeTypeName("GLsizei")] int count,
@@ -18407,7 +18407,7 @@ public unsafe partial interface IGL
         [SupportedApiProfile("glcore", MinVersion = "3.2")]
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glProgramUniform4i")]
-        static abstract void ProgramUniform4i(
+        static abstract void ProgramUniform4(
             [NativeTypeName("GLuint")] uint program,
             [NativeTypeName("GLint")] int location,
             [NativeTypeName("GLint")] int v0,
@@ -18478,7 +18478,7 @@ public unsafe partial interface IGL
         [SupportedApiProfile("glcore", MinVersion = "3.2")]
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glProgramUniform4iv")]
-        static abstract void ProgramUniform4iv(
+        static abstract void ProgramUniform4(
             [NativeTypeName("GLuint")] uint program,
             [NativeTypeName("GLint")] int location,
             [NativeTypeName("GLsizei")] int count,
@@ -18499,7 +18499,7 @@ public unsafe partial interface IGL
         [SupportedApiProfile("glcore", MinVersion = "3.2")]
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glProgramUniform4ui")]
-        static abstract void ProgramUniform4ui(
+        static abstract void ProgramUniform4(
             [NativeTypeName("GLuint")] uint program,
             [NativeTypeName("GLint")] int location,
             [NativeTypeName("GLuint")] uint v0,
@@ -18570,7 +18570,7 @@ public unsafe partial interface IGL
         [SupportedApiProfile("glcore", MinVersion = "3.2")]
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glProgramUniform4uiv")]
-        static abstract void ProgramUniform4uiv(
+        static abstract void ProgramUniform4(
             [NativeTypeName("GLuint")] uint program,
             [NativeTypeName("GLint")] int location,
             [NativeTypeName("GLsizei")] int count,
@@ -18648,7 +18648,7 @@ public unsafe partial interface IGL
         [SupportedApiProfile("glcore", MinVersion = "3.2")]
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glProgramUniformMatrix2dv")]
-        static abstract void ProgramUniformMatrix2dv(
+        static abstract void ProgramUniformMatrix2(
             [NativeTypeName("GLuint")] uint program,
             [NativeTypeName("GLint")] int location,
             [NativeTypeName("GLsizei")] int count,
@@ -18670,7 +18670,7 @@ public unsafe partial interface IGL
         [SupportedApiProfile("glcore", MinVersion = "3.2")]
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glProgramUniformMatrix2fv")]
-        static abstract void ProgramUniformMatrix2fv(
+        static abstract void ProgramUniformMatrix2(
             [NativeTypeName("GLuint")] uint program,
             [NativeTypeName("GLint")] int location,
             [NativeTypeName("GLsizei")] int count,
@@ -18693,7 +18693,7 @@ public unsafe partial interface IGL
         [SupportedApiProfile("glcore", MinVersion = "3.2")]
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glProgramUniformMatrix2x3dv")]
-        static abstract void ProgramUniformMatrix2x3dv(
+        static abstract void ProgramUniformMatrix2x3(
             [NativeTypeName("GLuint")] uint program,
             [NativeTypeName("GLint")] int location,
             [NativeTypeName("GLsizei")] int count,
@@ -18715,7 +18715,7 @@ public unsafe partial interface IGL
         [SupportedApiProfile("glcore", MinVersion = "3.2")]
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glProgramUniformMatrix2x3fv")]
-        static abstract void ProgramUniformMatrix2x3fv(
+        static abstract void ProgramUniformMatrix2x3(
             [NativeTypeName("GLuint")] uint program,
             [NativeTypeName("GLint")] int location,
             [NativeTypeName("GLsizei")] int count,
@@ -18738,7 +18738,7 @@ public unsafe partial interface IGL
         [SupportedApiProfile("glcore", MinVersion = "3.2")]
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glProgramUniformMatrix2x4dv")]
-        static abstract void ProgramUniformMatrix2x4dv(
+        static abstract void ProgramUniformMatrix2x4(
             [NativeTypeName("GLuint")] uint program,
             [NativeTypeName("GLint")] int location,
             [NativeTypeName("GLsizei")] int count,
@@ -18760,7 +18760,7 @@ public unsafe partial interface IGL
         [SupportedApiProfile("glcore", MinVersion = "3.2")]
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glProgramUniformMatrix2x4fv")]
-        static abstract void ProgramUniformMatrix2x4fv(
+        static abstract void ProgramUniformMatrix2x4(
             [NativeTypeName("GLuint")] uint program,
             [NativeTypeName("GLint")] int location,
             [NativeTypeName("GLsizei")] int count,
@@ -18783,7 +18783,7 @@ public unsafe partial interface IGL
         [SupportedApiProfile("glcore", MinVersion = "3.2")]
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glProgramUniformMatrix3dv")]
-        static abstract void ProgramUniformMatrix3dv(
+        static abstract void ProgramUniformMatrix3(
             [NativeTypeName("GLuint")] uint program,
             [NativeTypeName("GLint")] int location,
             [NativeTypeName("GLsizei")] int count,
@@ -18805,7 +18805,7 @@ public unsafe partial interface IGL
         [SupportedApiProfile("glcore", MinVersion = "3.2")]
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glProgramUniformMatrix3fv")]
-        static abstract void ProgramUniformMatrix3fv(
+        static abstract void ProgramUniformMatrix3(
             [NativeTypeName("GLuint")] uint program,
             [NativeTypeName("GLint")] int location,
             [NativeTypeName("GLsizei")] int count,
@@ -18828,7 +18828,7 @@ public unsafe partial interface IGL
         [SupportedApiProfile("glcore", MinVersion = "3.2")]
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glProgramUniformMatrix3x2dv")]
-        static abstract void ProgramUniformMatrix3x2dv(
+        static abstract void ProgramUniformMatrix3x2(
             [NativeTypeName("GLuint")] uint program,
             [NativeTypeName("GLint")] int location,
             [NativeTypeName("GLsizei")] int count,
@@ -18850,7 +18850,7 @@ public unsafe partial interface IGL
         [SupportedApiProfile("glcore", MinVersion = "3.2")]
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glProgramUniformMatrix3x2fv")]
-        static abstract void ProgramUniformMatrix3x2fv(
+        static abstract void ProgramUniformMatrix3x2(
             [NativeTypeName("GLuint")] uint program,
             [NativeTypeName("GLint")] int location,
             [NativeTypeName("GLsizei")] int count,
@@ -18873,7 +18873,7 @@ public unsafe partial interface IGL
         [SupportedApiProfile("glcore", MinVersion = "3.2")]
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glProgramUniformMatrix3x4dv")]
-        static abstract void ProgramUniformMatrix3x4dv(
+        static abstract void ProgramUniformMatrix3x4(
             [NativeTypeName("GLuint")] uint program,
             [NativeTypeName("GLint")] int location,
             [NativeTypeName("GLsizei")] int count,
@@ -18895,7 +18895,7 @@ public unsafe partial interface IGL
         [SupportedApiProfile("glcore", MinVersion = "3.2")]
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glProgramUniformMatrix3x4fv")]
-        static abstract void ProgramUniformMatrix3x4fv(
+        static abstract void ProgramUniformMatrix3x4(
             [NativeTypeName("GLuint")] uint program,
             [NativeTypeName("GLint")] int location,
             [NativeTypeName("GLsizei")] int count,
@@ -18918,7 +18918,7 @@ public unsafe partial interface IGL
         [SupportedApiProfile("glcore", MinVersion = "3.2")]
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glProgramUniformMatrix4dv")]
-        static abstract void ProgramUniformMatrix4dv(
+        static abstract void ProgramUniformMatrix4(
             [NativeTypeName("GLuint")] uint program,
             [NativeTypeName("GLint")] int location,
             [NativeTypeName("GLsizei")] int count,
@@ -18940,7 +18940,7 @@ public unsafe partial interface IGL
         [SupportedApiProfile("glcore", MinVersion = "3.2")]
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glProgramUniformMatrix4fv")]
-        static abstract void ProgramUniformMatrix4fv(
+        static abstract void ProgramUniformMatrix4(
             [NativeTypeName("GLuint")] uint program,
             [NativeTypeName("GLint")] int location,
             [NativeTypeName("GLsizei")] int count,
@@ -18963,7 +18963,7 @@ public unsafe partial interface IGL
         [SupportedApiProfile("glcore", MinVersion = "3.2")]
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glProgramUniformMatrix4x2dv")]
-        static abstract void ProgramUniformMatrix4x2dv(
+        static abstract void ProgramUniformMatrix4x2(
             [NativeTypeName("GLuint")] uint program,
             [NativeTypeName("GLint")] int location,
             [NativeTypeName("GLsizei")] int count,
@@ -18985,7 +18985,7 @@ public unsafe partial interface IGL
         [SupportedApiProfile("glcore", MinVersion = "3.2")]
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glProgramUniformMatrix4x2fv")]
-        static abstract void ProgramUniformMatrix4x2fv(
+        static abstract void ProgramUniformMatrix4x2(
             [NativeTypeName("GLuint")] uint program,
             [NativeTypeName("GLint")] int location,
             [NativeTypeName("GLsizei")] int count,
@@ -19008,7 +19008,7 @@ public unsafe partial interface IGL
         [SupportedApiProfile("glcore", MinVersion = "3.2")]
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glProgramUniformMatrix4x3dv")]
-        static abstract void ProgramUniformMatrix4x3dv(
+        static abstract void ProgramUniformMatrix4x3(
             [NativeTypeName("GLuint")] uint program,
             [NativeTypeName("GLint")] int location,
             [NativeTypeName("GLsizei")] int count,
@@ -19030,7 +19030,7 @@ public unsafe partial interface IGL
         [SupportedApiProfile("glcore", MinVersion = "3.2")]
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glProgramUniformMatrix4x3fv")]
-        static abstract void ProgramUniformMatrix4x3fv(
+        static abstract void ProgramUniformMatrix4x3(
             [NativeTypeName("GLuint")] uint program,
             [NativeTypeName("GLint")] int location,
             [NativeTypeName("GLsizei")] int count,
@@ -19188,47 +19188,47 @@ public unsafe partial interface IGL
 
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glRasterPos2d")]
-        static abstract void RasterPos2d(
+        static abstract void RasterPos2(
             [NativeTypeName("GLdouble")] double x,
             [NativeTypeName("GLdouble")] double y
         );
 
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glRasterPos2dv")]
-        static abstract void RasterPos2dv([NativeTypeName("const GLdouble *")] Ref<double> v);
+        static abstract void RasterPos2([NativeTypeName("const GLdouble *")] Ref<double> v);
 
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glRasterPos2f")]
-        static abstract void RasterPos2f(
+        static abstract void RasterPos2(
             [NativeTypeName("GLfloat")] float x,
             [NativeTypeName("GLfloat")] float y
         );
 
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glRasterPos2fv")]
-        static abstract void RasterPos2fv([NativeTypeName("const GLfloat *")] Ref<float> v);
+        static abstract void RasterPos2([NativeTypeName("const GLfloat *")] Ref<float> v);
 
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glRasterPos2i")]
-        static abstract void RasterPos2i(
+        static abstract void RasterPos2(
             [NativeTypeName("GLint")] int x,
             [NativeTypeName("GLint")] int y
         );
 
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glRasterPos2iv")]
-        static abstract void RasterPos2iv([NativeTypeName("const GLint *")] Ref<int> v);
+        static abstract void RasterPos2([NativeTypeName("const GLint *")] Ref<int> v);
 
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glRasterPos2s")]
-        static abstract void RasterPos2s(
+        static abstract void RasterPos2(
             [NativeTypeName("GLshort")] short x,
             [NativeTypeName("GLshort")] short y
         );
 
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glRasterPos2sv")]
-        static abstract void RasterPos2sv([NativeTypeName("const GLshort *")] Ref<short> v);
+        static abstract void RasterPos2([NativeTypeName("const GLshort *")] Ref<short> v);
 
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glRasterPos2xOES")]
@@ -19243,7 +19243,7 @@ public unsafe partial interface IGL
 
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glRasterPos3d")]
-        static abstract void RasterPos3d(
+        static abstract void RasterPos3(
             [NativeTypeName("GLdouble")] double x,
             [NativeTypeName("GLdouble")] double y,
             [NativeTypeName("GLdouble")] double z
@@ -19251,11 +19251,11 @@ public unsafe partial interface IGL
 
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glRasterPos3dv")]
-        static abstract void RasterPos3dv([NativeTypeName("const GLdouble *")] Ref<double> v);
+        static abstract void RasterPos3([NativeTypeName("const GLdouble *")] Ref<double> v);
 
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glRasterPos3f")]
-        static abstract void RasterPos3f(
+        static abstract void RasterPos3(
             [NativeTypeName("GLfloat")] float x,
             [NativeTypeName("GLfloat")] float y,
             [NativeTypeName("GLfloat")] float z
@@ -19263,11 +19263,11 @@ public unsafe partial interface IGL
 
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glRasterPos3fv")]
-        static abstract void RasterPos3fv([NativeTypeName("const GLfloat *")] Ref<float> v);
+        static abstract void RasterPos3([NativeTypeName("const GLfloat *")] Ref<float> v);
 
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glRasterPos3i")]
-        static abstract void RasterPos3i(
+        static abstract void RasterPos3(
             [NativeTypeName("GLint")] int x,
             [NativeTypeName("GLint")] int y,
             [NativeTypeName("GLint")] int z
@@ -19275,11 +19275,11 @@ public unsafe partial interface IGL
 
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glRasterPos3iv")]
-        static abstract void RasterPos3iv([NativeTypeName("const GLint *")] Ref<int> v);
+        static abstract void RasterPos3([NativeTypeName("const GLint *")] Ref<int> v);
 
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glRasterPos3s")]
-        static abstract void RasterPos3s(
+        static abstract void RasterPos3(
             [NativeTypeName("GLshort")] short x,
             [NativeTypeName("GLshort")] short y,
             [NativeTypeName("GLshort")] short z
@@ -19287,7 +19287,7 @@ public unsafe partial interface IGL
 
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glRasterPos3sv")]
-        static abstract void RasterPos3sv([NativeTypeName("const GLshort *")] Ref<short> v);
+        static abstract void RasterPos3([NativeTypeName("const GLshort *")] Ref<short> v);
 
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glRasterPos3xOES")]
@@ -19303,7 +19303,7 @@ public unsafe partial interface IGL
 
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glRasterPos4d")]
-        static abstract void RasterPos4d(
+        static abstract void RasterPos4(
             [NativeTypeName("GLdouble")] double x,
             [NativeTypeName("GLdouble")] double y,
             [NativeTypeName("GLdouble")] double z,
@@ -19312,11 +19312,11 @@ public unsafe partial interface IGL
 
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glRasterPos4dv")]
-        static abstract void RasterPos4dv([NativeTypeName("const GLdouble *")] Ref<double> v);
+        static abstract void RasterPos4([NativeTypeName("const GLdouble *")] Ref<double> v);
 
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glRasterPos4f")]
-        static abstract void RasterPos4f(
+        static abstract void RasterPos4(
             [NativeTypeName("GLfloat")] float x,
             [NativeTypeName("GLfloat")] float y,
             [NativeTypeName("GLfloat")] float z,
@@ -19325,11 +19325,11 @@ public unsafe partial interface IGL
 
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glRasterPos4fv")]
-        static abstract void RasterPos4fv([NativeTypeName("const GLfloat *")] Ref<float> v);
+        static abstract void RasterPos4([NativeTypeName("const GLfloat *")] Ref<float> v);
 
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glRasterPos4i")]
-        static abstract void RasterPos4i(
+        static abstract void RasterPos4(
             [NativeTypeName("GLint")] int x,
             [NativeTypeName("GLint")] int y,
             [NativeTypeName("GLint")] int z,
@@ -19338,11 +19338,11 @@ public unsafe partial interface IGL
 
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glRasterPos4iv")]
-        static abstract void RasterPos4iv([NativeTypeName("const GLint *")] Ref<int> v);
+        static abstract void RasterPos4([NativeTypeName("const GLint *")] Ref<int> v);
 
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glRasterPos4s")]
-        static abstract void RasterPos4s(
+        static abstract void RasterPos4(
             [NativeTypeName("GLshort")] short x,
             [NativeTypeName("GLshort")] short y,
             [NativeTypeName("GLshort")] short z,
@@ -19351,7 +19351,7 @@ public unsafe partial interface IGL
 
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glRasterPos4sv")]
-        static abstract void RasterPos4sv([NativeTypeName("const GLshort *")] Ref<short> v);
+        static abstract void RasterPos4([NativeTypeName("const GLshort *")] Ref<short> v);
 
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glRasterPos4xOES")]
@@ -19467,7 +19467,7 @@ public unsafe partial interface IGL
 
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glRectd")]
-        static abstract void Rectd(
+        static abstract void Rect(
             [NativeTypeName("GLdouble")] double x1,
             [NativeTypeName("GLdouble")] double y1,
             [NativeTypeName("GLdouble")] double x2,
@@ -19476,14 +19476,14 @@ public unsafe partial interface IGL
 
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glRectdv")]
-        static abstract void Rectdv(
+        static abstract void Rect(
             [NativeTypeName("const GLdouble *")] Ref<double> v1,
             [NativeTypeName("const GLdouble *")] Ref<double> v2
         );
 
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glRectf")]
-        static abstract void Rectf(
+        static abstract void Rect(
             [NativeTypeName("GLfloat")] float x1,
             [NativeTypeName("GLfloat")] float y1,
             [NativeTypeName("GLfloat")] float x2,
@@ -19492,14 +19492,14 @@ public unsafe partial interface IGL
 
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glRectfv")]
-        static abstract void Rectfv(
+        static abstract void Rect(
             [NativeTypeName("const GLfloat *")] Ref<float> v1,
             [NativeTypeName("const GLfloat *")] Ref<float> v2
         );
 
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glRecti")]
-        static abstract void Recti(
+        static abstract void Rect(
             [NativeTypeName("GLint")] int x1,
             [NativeTypeName("GLint")] int y1,
             [NativeTypeName("GLint")] int x2,
@@ -19508,7 +19508,7 @@ public unsafe partial interface IGL
 
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glRectiv")]
-        static abstract void Rectiv(
+        static abstract void Rect(
             [NativeTypeName("const GLint *")] Ref<int> v1,
             [NativeTypeName("const GLint *")] Ref<int> v2
         );
@@ -19524,7 +19524,7 @@ public unsafe partial interface IGL
 
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glRectsv")]
-        static abstract void Rectsv(
+        static abstract void Rect(
             [NativeTypeName("const GLshort *")] Ref<short> v1,
             [NativeTypeName("const GLshort *")] Ref<short> v2
         );
@@ -19968,7 +19968,7 @@ public unsafe partial interface IGL
 
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glRotated")]
-        static abstract void Rotated(
+        static abstract void Rotate(
             [NativeTypeName("GLdouble")] double angle,
             [NativeTypeName("GLdouble")] double x,
             [NativeTypeName("GLdouble")] double y,
@@ -19978,7 +19978,7 @@ public unsafe partial interface IGL
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [SupportedApiProfile("gles1", MaxVersion = "2.0")]
         [NativeFunction("opengl", EntryPoint = "glRotatef")]
-        static abstract void Rotatef(
+        static abstract void Rotate(
             [NativeTypeName("GLfloat")] float angle,
             [NativeTypeName("GLfloat")] float x,
             [NativeTypeName("GLfloat")] float y,
@@ -20053,7 +20053,7 @@ public unsafe partial interface IGL
         [SupportedApiProfile("glcore", MinVersion = "3.2")]
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glSampleMaski")]
-        static abstract void SampleMaski(
+        static abstract void SampleMask(
             [NativeTypeName("GLuint")] uint maskNumber,
             [NativeTypeName("GLbitfield")] uint mask
         );
@@ -20084,7 +20084,7 @@ public unsafe partial interface IGL
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [SupportedApiProfile("gles2", MinVersion = "2.0")]
         [NativeFunction("opengl", EntryPoint = "glSamplerParameterf")]
-        static abstract void SamplerParameterf(
+        static abstract void SamplerParameter(
             [NativeTypeName("GLuint")] uint sampler,
             [NativeTypeName("GLenum")] uint pname,
             [NativeTypeName("GLfloat")] float param2
@@ -20094,7 +20094,7 @@ public unsafe partial interface IGL
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [SupportedApiProfile("gles2", MinVersion = "2.0")]
         [NativeFunction("opengl", EntryPoint = "glSamplerParameterfv")]
-        static abstract void SamplerParameterfv(
+        static abstract void SamplerParameter(
             [NativeTypeName("GLuint")] uint sampler,
             [NativeTypeName("GLenum")] uint pname,
             [NativeTypeName("const GLfloat *")] Ref<float> param2
@@ -20104,7 +20104,7 @@ public unsafe partial interface IGL
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [SupportedApiProfile("gles2", MinVersion = "2.0")]
         [NativeFunction("opengl", EntryPoint = "glSamplerParameteri")]
-        static abstract void SamplerParameteri(
+        static abstract void SamplerParameter(
             [NativeTypeName("GLuint")] uint sampler,
             [NativeTypeName("GLenum")] uint pname,
             [NativeTypeName("GLint")] int param2
@@ -20113,7 +20113,7 @@ public unsafe partial interface IGL
         [SupportedApiProfile("glcore", MinVersion = "3.2")]
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glSamplerParameterIiv")]
-        static abstract void SamplerParameterIiv(
+        static abstract void SamplerParameterI(
             [NativeTypeName("GLuint")] uint sampler,
             [NativeTypeName("GLenum")] uint pname,
             [NativeTypeName("const GLint *")] Ref<int> param2
@@ -20138,7 +20138,7 @@ public unsafe partial interface IGL
         [SupportedApiProfile("glcore", MinVersion = "3.2")]
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glSamplerParameterIuiv")]
-        static abstract void SamplerParameterIuiv(
+        static abstract void SamplerParameterI(
             [NativeTypeName("GLuint")] uint sampler,
             [NativeTypeName("GLenum")] uint pname,
             [NativeTypeName("const GLuint *")] Ref<uint> param2
@@ -20164,7 +20164,7 @@ public unsafe partial interface IGL
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [SupportedApiProfile("gles2", MinVersion = "2.0")]
         [NativeFunction("opengl", EntryPoint = "glSamplerParameteriv")]
-        static abstract void SamplerParameteriv(
+        static abstract void SamplerParameter(
             [NativeTypeName("GLuint")] uint sampler,
             [NativeTypeName("GLenum")] uint pname,
             [NativeTypeName("const GLint *")] Ref<int> param2
@@ -20172,7 +20172,7 @@ public unsafe partial interface IGL
 
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glScaled")]
-        static abstract void Scaled(
+        static abstract void Scale(
             [NativeTypeName("GLdouble")] double x,
             [NativeTypeName("GLdouble")] double y,
             [NativeTypeName("GLdouble")] double z
@@ -20181,7 +20181,7 @@ public unsafe partial interface IGL
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [SupportedApiProfile("gles1", MaxVersion = "2.0")]
         [NativeFunction("opengl", EntryPoint = "glScalef")]
-        static abstract void Scalef(
+        static abstract void Scale(
             [NativeTypeName("GLfloat")] float x,
             [NativeTypeName("GLfloat")] float y,
             [NativeTypeName("GLfloat")] float z
@@ -20219,7 +20219,7 @@ public unsafe partial interface IGL
         [SupportedApiProfile("glcore", MinVersion = "3.2")]
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glScissorArrayv")]
-        static abstract void ScissorArrayv(
+        static abstract void ScissorArray(
             [NativeTypeName("GLuint")] uint first,
             [NativeTypeName("GLsizei")] int count,
             [NativeTypeName("const GLint *")] Ref<int> v
@@ -20296,7 +20296,7 @@ public unsafe partial interface IGL
         [SupportedApiProfile("glcore", MinVersion = "3.2")]
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glScissorIndexedv")]
-        static abstract void ScissorIndexedv(
+        static abstract void ScissorIndexed(
             [NativeTypeName("GLuint")] uint index,
             [NativeTypeName("const GLint *")] Ref<int> v
         );
@@ -20317,7 +20317,7 @@ public unsafe partial interface IGL
 
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glSecondaryColor3b")]
-        static abstract void SecondaryColor3b(
+        static abstract void SecondaryColor3(
             [NativeTypeName("GLbyte")] sbyte red,
             [NativeTypeName("GLbyte")] sbyte green,
             [NativeTypeName("GLbyte")] sbyte blue
@@ -20333,7 +20333,7 @@ public unsafe partial interface IGL
 
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glSecondaryColor3bv")]
-        static abstract void SecondaryColor3bv([NativeTypeName("const GLbyte *")] Ref<sbyte> v);
+        static abstract void SecondaryColor3([NativeTypeName("const GLbyte *")] Ref<sbyte> v);
 
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glSecondaryColor3bvEXT")]
@@ -20341,7 +20341,7 @@ public unsafe partial interface IGL
 
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glSecondaryColor3d")]
-        static abstract void SecondaryColor3d(
+        static abstract void SecondaryColor3(
             [NativeTypeName("GLdouble")] double red,
             [NativeTypeName("GLdouble")] double green,
             [NativeTypeName("GLdouble")] double blue
@@ -20357,7 +20357,7 @@ public unsafe partial interface IGL
 
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glSecondaryColor3dv")]
-        static abstract void SecondaryColor3dv([NativeTypeName("const GLdouble *")] Ref<double> v);
+        static abstract void SecondaryColor3([NativeTypeName("const GLdouble *")] Ref<double> v);
 
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glSecondaryColor3dvEXT")]
@@ -20367,7 +20367,7 @@ public unsafe partial interface IGL
 
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glSecondaryColor3f")]
-        static abstract void SecondaryColor3f(
+        static abstract void SecondaryColor3(
             [NativeTypeName("GLfloat")] float red,
             [NativeTypeName("GLfloat")] float green,
             [NativeTypeName("GLfloat")] float blue
@@ -20383,7 +20383,7 @@ public unsafe partial interface IGL
 
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glSecondaryColor3fv")]
-        static abstract void SecondaryColor3fv([NativeTypeName("const GLfloat *")] Ref<float> v);
+        static abstract void SecondaryColor3([NativeTypeName("const GLfloat *")] Ref<float> v);
 
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glSecondaryColor3fvEXT")]
@@ -20405,7 +20405,7 @@ public unsafe partial interface IGL
 
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glSecondaryColor3i")]
-        static abstract void SecondaryColor3i(
+        static abstract void SecondaryColor3(
             [NativeTypeName("GLint")] int red,
             [NativeTypeName("GLint")] int green,
             [NativeTypeName("GLint")] int blue
@@ -20421,7 +20421,7 @@ public unsafe partial interface IGL
 
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glSecondaryColor3iv")]
-        static abstract void SecondaryColor3iv([NativeTypeName("const GLint *")] Ref<int> v);
+        static abstract void SecondaryColor3([NativeTypeName("const GLint *")] Ref<int> v);
 
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glSecondaryColor3ivEXT")]
@@ -20429,7 +20429,7 @@ public unsafe partial interface IGL
 
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glSecondaryColor3s")]
-        static abstract void SecondaryColor3s(
+        static abstract void SecondaryColor3(
             [NativeTypeName("GLshort")] short red,
             [NativeTypeName("GLshort")] short green,
             [NativeTypeName("GLshort")] short blue
@@ -20445,7 +20445,7 @@ public unsafe partial interface IGL
 
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glSecondaryColor3sv")]
-        static abstract void SecondaryColor3sv([NativeTypeName("const GLshort *")] Ref<short> v);
+        static abstract void SecondaryColor3([NativeTypeName("const GLshort *")] Ref<short> v);
 
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glSecondaryColor3svEXT")]
@@ -20453,7 +20453,7 @@ public unsafe partial interface IGL
 
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glSecondaryColor3ub")]
-        static abstract void SecondaryColor3ub(
+        static abstract void SecondaryColor3(
             [NativeTypeName("GLubyte")] byte red,
             [NativeTypeName("GLubyte")] byte green,
             [NativeTypeName("GLubyte")] byte blue
@@ -20469,7 +20469,7 @@ public unsafe partial interface IGL
 
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glSecondaryColor3ubv")]
-        static abstract void SecondaryColor3ubv([NativeTypeName("const GLubyte *")] Ref<byte> v);
+        static abstract void SecondaryColor3([NativeTypeName("const GLubyte *")] Ref<byte> v);
 
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glSecondaryColor3ubvEXT")]
@@ -20477,7 +20477,7 @@ public unsafe partial interface IGL
 
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glSecondaryColor3ui")]
-        static abstract void SecondaryColor3ui(
+        static abstract void SecondaryColor3(
             [NativeTypeName("GLuint")] uint red,
             [NativeTypeName("GLuint")] uint green,
             [NativeTypeName("GLuint")] uint blue
@@ -20493,7 +20493,7 @@ public unsafe partial interface IGL
 
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glSecondaryColor3uiv")]
-        static abstract void SecondaryColor3uiv([NativeTypeName("const GLuint *")] Ref<uint> v);
+        static abstract void SecondaryColor3([NativeTypeName("const GLuint *")] Ref<uint> v);
 
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glSecondaryColor3uivEXT")]
@@ -20501,7 +20501,7 @@ public unsafe partial interface IGL
 
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glSecondaryColor3us")]
-        static abstract void SecondaryColor3us(
+        static abstract void SecondaryColor3(
             [NativeTypeName("GLushort")] ushort red,
             [NativeTypeName("GLushort")] ushort green,
             [NativeTypeName("GLushort")] ushort blue
@@ -20517,7 +20517,7 @@ public unsafe partial interface IGL
 
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glSecondaryColor3usv")]
-        static abstract void SecondaryColor3usv([NativeTypeName("const GLushort *")] Ref<ushort> v);
+        static abstract void SecondaryColor3([NativeTypeName("const GLushort *")] Ref<ushort> v);
 
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glSecondaryColor3usvEXT")]
@@ -20536,14 +20536,14 @@ public unsafe partial interface IGL
 
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glSecondaryColorP3ui")]
-        static abstract void SecondaryColorP3ui(
+        static abstract void SecondaryColorP3(
             [NativeTypeName("GLenum")] uint type,
             [NativeTypeName("GLuint")] uint color
         );
 
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glSecondaryColorP3uiv")]
-        static abstract void SecondaryColorP3uiv(
+        static abstract void SecondaryColorP3(
             [NativeTypeName("GLenum")] uint type,
             [NativeTypeName("const GLuint *")] Ref<uint> color
         );
@@ -21355,19 +21355,19 @@ public unsafe partial interface IGL
 
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glTexCoord1d")]
-        static abstract void TexCoord1d([NativeTypeName("GLdouble")] double s);
+        static abstract void TexCoord1([NativeTypeName("GLdouble")] double s);
 
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glTexCoord1dv")]
-        static abstract void TexCoord1dv([NativeTypeName("const GLdouble *")] Ref<double> v);
+        static abstract void TexCoord1([NativeTypeName("const GLdouble *")] Ref<double> v);
 
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glTexCoord1f")]
-        static abstract void TexCoord1f([NativeTypeName("GLfloat")] float s);
+        static abstract void TexCoord1([NativeTypeName("GLfloat")] float s);
 
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glTexCoord1fv")]
-        static abstract void TexCoord1fv([NativeTypeName("const GLfloat *")] Ref<float> v);
+        static abstract void TexCoord1([NativeTypeName("const GLfloat *")] Ref<float> v);
 
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glTexCoord1hNV")]
@@ -21379,19 +21379,19 @@ public unsafe partial interface IGL
 
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glTexCoord1i")]
-        static abstract void TexCoord1i([NativeTypeName("GLint")] int s);
+        static abstract void TexCoord1([NativeTypeName("GLint")] int s);
 
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glTexCoord1iv")]
-        static abstract void TexCoord1iv([NativeTypeName("const GLint *")] Ref<int> v);
+        static abstract void TexCoord1([NativeTypeName("const GLint *")] Ref<int> v);
 
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glTexCoord1s")]
-        static abstract void TexCoord1s([NativeTypeName("GLshort")] short s);
+        static abstract void TexCoord1([NativeTypeName("GLshort")] short s);
 
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glTexCoord1sv")]
-        static abstract void TexCoord1sv([NativeTypeName("const GLshort *")] Ref<short> v);
+        static abstract void TexCoord1([NativeTypeName("const GLshort *")] Ref<short> v);
 
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glTexCoord1xOES")]
@@ -21414,18 +21414,18 @@ public unsafe partial interface IGL
 
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glTexCoord2d")]
-        static abstract void TexCoord2d(
+        static abstract void TexCoord2(
             [NativeTypeName("GLdouble")] double s,
             [NativeTypeName("GLdouble")] double t
         );
 
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glTexCoord2dv")]
-        static abstract void TexCoord2dv([NativeTypeName("const GLdouble *")] Ref<double> v);
+        static abstract void TexCoord2([NativeTypeName("const GLdouble *")] Ref<double> v);
 
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glTexCoord2f")]
-        static abstract void TexCoord2f(
+        static abstract void TexCoord2(
             [NativeTypeName("GLfloat")] float s,
             [NativeTypeName("GLfloat")] float t
         );
@@ -21522,7 +21522,7 @@ public unsafe partial interface IGL
 
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glTexCoord2fv")]
-        static abstract void TexCoord2fv([NativeTypeName("const GLfloat *")] Ref<float> v);
+        static abstract void TexCoord2([NativeTypeName("const GLfloat *")] Ref<float> v);
 
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glTexCoord2fVertex3fSUN")]
@@ -21554,25 +21554,25 @@ public unsafe partial interface IGL
 
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glTexCoord2i")]
-        static abstract void TexCoord2i(
+        static abstract void TexCoord2(
             [NativeTypeName("GLint")] int s,
             [NativeTypeName("GLint")] int t
         );
 
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glTexCoord2iv")]
-        static abstract void TexCoord2iv([NativeTypeName("const GLint *")] Ref<int> v);
+        static abstract void TexCoord2([NativeTypeName("const GLint *")] Ref<int> v);
 
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glTexCoord2s")]
-        static abstract void TexCoord2s(
+        static abstract void TexCoord2(
             [NativeTypeName("GLshort")] short s,
             [NativeTypeName("GLshort")] short t
         );
 
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glTexCoord2sv")]
-        static abstract void TexCoord2sv([NativeTypeName("const GLshort *")] Ref<short> v);
+        static abstract void TexCoord2([NativeTypeName("const GLshort *")] Ref<short> v);
 
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glTexCoord2xOES")]
@@ -21599,7 +21599,7 @@ public unsafe partial interface IGL
 
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glTexCoord3d")]
-        static abstract void TexCoord3d(
+        static abstract void TexCoord3(
             [NativeTypeName("GLdouble")] double s,
             [NativeTypeName("GLdouble")] double t,
             [NativeTypeName("GLdouble")] double r
@@ -21607,11 +21607,11 @@ public unsafe partial interface IGL
 
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glTexCoord3dv")]
-        static abstract void TexCoord3dv([NativeTypeName("const GLdouble *")] Ref<double> v);
+        static abstract void TexCoord3([NativeTypeName("const GLdouble *")] Ref<double> v);
 
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glTexCoord3f")]
-        static abstract void TexCoord3f(
+        static abstract void TexCoord3(
             [NativeTypeName("GLfloat")] float s,
             [NativeTypeName("GLfloat")] float t,
             [NativeTypeName("GLfloat")] float r
@@ -21619,7 +21619,7 @@ public unsafe partial interface IGL
 
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glTexCoord3fv")]
-        static abstract void TexCoord3fv([NativeTypeName("const GLfloat *")] Ref<float> v);
+        static abstract void TexCoord3([NativeTypeName("const GLfloat *")] Ref<float> v);
 
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glTexCoord3hNV")]
@@ -21635,7 +21635,7 @@ public unsafe partial interface IGL
 
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glTexCoord3i")]
-        static abstract void TexCoord3i(
+        static abstract void TexCoord3(
             [NativeTypeName("GLint")] int s,
             [NativeTypeName("GLint")] int t,
             [NativeTypeName("GLint")] int r
@@ -21643,11 +21643,11 @@ public unsafe partial interface IGL
 
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glTexCoord3iv")]
-        static abstract void TexCoord3iv([NativeTypeName("const GLint *")] Ref<int> v);
+        static abstract void TexCoord3([NativeTypeName("const GLint *")] Ref<int> v);
 
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glTexCoord3s")]
-        static abstract void TexCoord3s(
+        static abstract void TexCoord3(
             [NativeTypeName("GLshort")] short s,
             [NativeTypeName("GLshort")] short t,
             [NativeTypeName("GLshort")] short r
@@ -21655,7 +21655,7 @@ public unsafe partial interface IGL
 
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glTexCoord3sv")]
-        static abstract void TexCoord3sv([NativeTypeName("const GLshort *")] Ref<short> v);
+        static abstract void TexCoord3([NativeTypeName("const GLshort *")] Ref<short> v);
 
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glTexCoord3xOES")]
@@ -21684,7 +21684,7 @@ public unsafe partial interface IGL
 
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glTexCoord4d")]
-        static abstract void TexCoord4d(
+        static abstract void TexCoord4(
             [NativeTypeName("GLdouble")] double s,
             [NativeTypeName("GLdouble")] double t,
             [NativeTypeName("GLdouble")] double r,
@@ -21693,11 +21693,11 @@ public unsafe partial interface IGL
 
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glTexCoord4dv")]
-        static abstract void TexCoord4dv([NativeTypeName("const GLdouble *")] Ref<double> v);
+        static abstract void TexCoord4([NativeTypeName("const GLdouble *")] Ref<double> v);
 
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glTexCoord4f")]
-        static abstract void TexCoord4f(
+        static abstract void TexCoord4(
             [NativeTypeName("GLfloat")] float s,
             [NativeTypeName("GLfloat")] float t,
             [NativeTypeName("GLfloat")] float r,
@@ -21735,7 +21735,7 @@ public unsafe partial interface IGL
 
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glTexCoord4fv")]
-        static abstract void TexCoord4fv([NativeTypeName("const GLfloat *")] Ref<float> v);
+        static abstract void TexCoord4([NativeTypeName("const GLfloat *")] Ref<float> v);
 
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glTexCoord4fVertex4fSUN")]
@@ -21772,7 +21772,7 @@ public unsafe partial interface IGL
 
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glTexCoord4i")]
-        static abstract void TexCoord4i(
+        static abstract void TexCoord4(
             [NativeTypeName("GLint")] int s,
             [NativeTypeName("GLint")] int t,
             [NativeTypeName("GLint")] int r,
@@ -21781,11 +21781,11 @@ public unsafe partial interface IGL
 
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glTexCoord4iv")]
-        static abstract void TexCoord4iv([NativeTypeName("const GLint *")] Ref<int> v);
+        static abstract void TexCoord4([NativeTypeName("const GLint *")] Ref<int> v);
 
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glTexCoord4s")]
-        static abstract void TexCoord4s(
+        static abstract void TexCoord4(
             [NativeTypeName("GLshort")] short s,
             [NativeTypeName("GLshort")] short t,
             [NativeTypeName("GLshort")] short r,
@@ -21794,7 +21794,7 @@ public unsafe partial interface IGL
 
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glTexCoord4sv")]
-        static abstract void TexCoord4sv([NativeTypeName("const GLshort *")] Ref<short> v);
+        static abstract void TexCoord4([NativeTypeName("const GLshort *")] Ref<short> v);
 
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glTexCoord4xOES")]
@@ -21820,56 +21820,56 @@ public unsafe partial interface IGL
 
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glTexCoordP1ui")]
-        static abstract void TexCoordP1ui(
+        static abstract void TexCoordP1(
             [NativeTypeName("GLenum")] uint type,
             [NativeTypeName("GLuint")] uint coords
         );
 
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glTexCoordP1uiv")]
-        static abstract void TexCoordP1uiv(
+        static abstract void TexCoordP1(
             [NativeTypeName("GLenum")] uint type,
             [NativeTypeName("const GLuint *")] Ref<uint> coords
         );
 
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glTexCoordP2ui")]
-        static abstract void TexCoordP2ui(
+        static abstract void TexCoordP2(
             [NativeTypeName("GLenum")] uint type,
             [NativeTypeName("GLuint")] uint coords
         );
 
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glTexCoordP2uiv")]
-        static abstract void TexCoordP2uiv(
+        static abstract void TexCoordP2(
             [NativeTypeName("GLenum")] uint type,
             [NativeTypeName("const GLuint *")] Ref<uint> coords
         );
 
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glTexCoordP3ui")]
-        static abstract void TexCoordP3ui(
+        static abstract void TexCoordP3(
             [NativeTypeName("GLenum")] uint type,
             [NativeTypeName("GLuint")] uint coords
         );
 
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glTexCoordP3uiv")]
-        static abstract void TexCoordP3uiv(
+        static abstract void TexCoordP3(
             [NativeTypeName("GLenum")] uint type,
             [NativeTypeName("const GLuint *")] Ref<uint> coords
         );
 
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glTexCoordP4ui")]
-        static abstract void TexCoordP4ui(
+        static abstract void TexCoordP4(
             [NativeTypeName("GLenum")] uint type,
             [NativeTypeName("GLuint")] uint coords
         );
 
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glTexCoordP4uiv")]
-        static abstract void TexCoordP4uiv(
+        static abstract void TexCoordP4(
             [NativeTypeName("GLenum")] uint type,
             [NativeTypeName("const GLuint *")] Ref<uint> coords
         );
@@ -21915,7 +21915,7 @@ public unsafe partial interface IGL
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [SupportedApiProfile("gles1", MaxVersion = "2.0")]
         [NativeFunction("opengl", EntryPoint = "glTexEnvf")]
-        static abstract void TexEnvf(
+        static abstract void TexEnv(
             [NativeTypeName("GLenum")] uint target,
             [NativeTypeName("GLenum")] uint pname,
             [NativeTypeName("GLfloat")] float param2
@@ -21924,7 +21924,7 @@ public unsafe partial interface IGL
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [SupportedApiProfile("gles1", MaxVersion = "2.0")]
         [NativeFunction("opengl", EntryPoint = "glTexEnvfv")]
-        static abstract void TexEnvfv(
+        static abstract void TexEnv(
             [NativeTypeName("GLenum")] uint target,
             [NativeTypeName("GLenum")] uint pname,
             [NativeTypeName("const GLfloat *")] Ref<float> @params
@@ -21933,7 +21933,7 @@ public unsafe partial interface IGL
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [SupportedApiProfile("gles1", MaxVersion = "2.0")]
         [NativeFunction("opengl", EntryPoint = "glTexEnvi")]
-        static abstract void TexEnvi(
+        static abstract void TexEnv(
             [NativeTypeName("GLenum")] uint target,
             [NativeTypeName("GLenum")] uint pname,
             [NativeTypeName("GLint")] int param2
@@ -21942,7 +21942,7 @@ public unsafe partial interface IGL
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [SupportedApiProfile("gles1", MaxVersion = "2.0")]
         [NativeFunction("opengl", EntryPoint = "glTexEnviv")]
-        static abstract void TexEnviv(
+        static abstract void TexEnv(
             [NativeTypeName("GLenum")] uint target,
             [NativeTypeName("GLenum")] uint pname,
             [NativeTypeName("const GLint *")] Ref<int> @params
@@ -21967,7 +21967,7 @@ public unsafe partial interface IGL
 
         [SupportedApiProfile("gles1", MaxVersion = "2.0")]
         [NativeFunction("opengl", EntryPoint = "glTexEnvxv")]
-        static abstract void TexEnvxv(
+        static abstract void TexEnvx(
             [NativeTypeName("GLenum")] uint target,
             [NativeTypeName("GLenum")] uint pname,
             [NativeTypeName("const GLfixed *")] Ref<int> @params
@@ -22018,7 +22018,7 @@ public unsafe partial interface IGL
 
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glTexGendv")]
-        static abstract void TexGendv(
+        static abstract void TexGen(
             [NativeTypeName("GLenum")] uint coord,
             [NativeTypeName("GLenum")] uint pname,
             [NativeTypeName("const GLdouble *")] Ref<double> @params
@@ -22026,7 +22026,7 @@ public unsafe partial interface IGL
 
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glTexGenf")]
-        static abstract void TexGenf(
+        static abstract void TexGen(
             [NativeTypeName("GLenum")] uint coord,
             [NativeTypeName("GLenum")] uint pname,
             [NativeTypeName("GLfloat")] float param2
@@ -22042,7 +22042,7 @@ public unsafe partial interface IGL
 
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glTexGenfv")]
-        static abstract void TexGenfv(
+        static abstract void TexGen(
             [NativeTypeName("GLenum")] uint coord,
             [NativeTypeName("GLenum")] uint pname,
             [NativeTypeName("const GLfloat *")] Ref<float> @params
@@ -22058,7 +22058,7 @@ public unsafe partial interface IGL
 
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glTexGeni")]
-        static abstract void TexGeni(
+        static abstract void TexGen(
             [NativeTypeName("GLenum")] uint coord,
             [NativeTypeName("GLenum")] uint pname,
             [NativeTypeName("GLint")] int param2
@@ -22074,7 +22074,7 @@ public unsafe partial interface IGL
 
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glTexGeniv")]
-        static abstract void TexGeniv(
+        static abstract void TexGen(
             [NativeTypeName("GLenum")] uint coord,
             [NativeTypeName("GLenum")] uint pname,
             [NativeTypeName("const GLint *")] Ref<int> @params
@@ -22302,7 +22302,7 @@ public unsafe partial interface IGL
         [SupportedApiProfile("gles1", MaxVersion = "2.0")]
         [SupportedApiProfile("gles2", MinVersion = "2.0")]
         [NativeFunction("opengl", EntryPoint = "glTexParameterf")]
-        static abstract void TexParameterf(
+        static abstract void TexParameter(
             [NativeTypeName("GLenum")] uint target,
             [NativeTypeName("GLenum")] uint pname,
             [NativeTypeName("GLfloat")] float param2
@@ -22313,7 +22313,7 @@ public unsafe partial interface IGL
         [SupportedApiProfile("gles1", MaxVersion = "2.0")]
         [SupportedApiProfile("gles2", MinVersion = "2.0")]
         [NativeFunction("opengl", EntryPoint = "glTexParameterfv")]
-        static abstract void TexParameterfv(
+        static abstract void TexParameter(
             [NativeTypeName("GLenum")] uint target,
             [NativeTypeName("GLenum")] uint pname,
             [NativeTypeName("const GLfloat *")] Ref<float> @params
@@ -22324,7 +22324,7 @@ public unsafe partial interface IGL
         [SupportedApiProfile("gles1", MaxVersion = "2.0")]
         [SupportedApiProfile("gles2", MinVersion = "2.0")]
         [NativeFunction("opengl", EntryPoint = "glTexParameteri")]
-        static abstract void TexParameteri(
+        static abstract void TexParameter(
             [NativeTypeName("GLenum")] uint target,
             [NativeTypeName("GLenum")] uint pname,
             [NativeTypeName("GLint")] int param2
@@ -22333,7 +22333,7 @@ public unsafe partial interface IGL
         [SupportedApiProfile("glcore", MinVersion = "3.2")]
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glTexParameterIiv")]
-        static abstract void TexParameterIiv(
+        static abstract void TexParameterI(
             [NativeTypeName("GLenum")] uint target,
             [NativeTypeName("GLenum")] uint pname,
             [NativeTypeName("const GLint *")] Ref<int> @params
@@ -22359,7 +22359,7 @@ public unsafe partial interface IGL
         [SupportedApiProfile("glcore", MinVersion = "3.2")]
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glTexParameterIuiv")]
-        static abstract void TexParameterIuiv(
+        static abstract void TexParameterI(
             [NativeTypeName("GLenum")] uint target,
             [NativeTypeName("GLenum")] uint pname,
             [NativeTypeName("const GLuint *")] Ref<uint> @params
@@ -22387,7 +22387,7 @@ public unsafe partial interface IGL
         [SupportedApiProfile("gles1", MaxVersion = "2.0")]
         [SupportedApiProfile("gles2", MinVersion = "2.0")]
         [NativeFunction("opengl", EntryPoint = "glTexParameteriv")]
-        static abstract void TexParameteriv(
+        static abstract void TexParameter(
             [NativeTypeName("GLenum")] uint target,
             [NativeTypeName("GLenum")] uint pname,
             [NativeTypeName("const GLint *")] Ref<int> @params
@@ -22412,7 +22412,7 @@ public unsafe partial interface IGL
 
         [SupportedApiProfile("gles1", MaxVersion = "2.0")]
         [NativeFunction("opengl", EntryPoint = "glTexParameterxv")]
-        static abstract void TexParameterxv(
+        static abstract void TexParameterx(
             [NativeTypeName("GLenum")] uint target,
             [NativeTypeName("GLenum")] uint pname,
             [NativeTypeName("const GLfixed *")] Ref<int> @params
@@ -23004,7 +23004,7 @@ public unsafe partial interface IGL
         [SupportedApiProfile("glcore", MinVersion = "3.2")]
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glTextureParameterf")]
-        static abstract void TextureParameterf(
+        static abstract void TextureParameter(
             [NativeTypeName("GLuint")] uint texture,
             [NativeTypeName("GLenum")] uint pname,
             [NativeTypeName("GLfloat")] float param2
@@ -23023,7 +23023,7 @@ public unsafe partial interface IGL
         [SupportedApiProfile("glcore", MinVersion = "3.2")]
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glTextureParameterfv")]
-        static abstract void TextureParameterfv(
+        static abstract void TextureParameter(
             [NativeTypeName("GLuint")] uint texture,
             [NativeTypeName("GLenum")] uint pname,
             [NativeTypeName("const GLfloat *")] Ref<float> param2
@@ -23042,7 +23042,7 @@ public unsafe partial interface IGL
         [SupportedApiProfile("glcore", MinVersion = "3.2")]
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glTextureParameteri")]
-        static abstract void TextureParameteri(
+        static abstract void TextureParameter(
             [NativeTypeName("GLuint")] uint texture,
             [NativeTypeName("GLenum")] uint pname,
             [NativeTypeName("GLint")] int param2
@@ -23061,7 +23061,7 @@ public unsafe partial interface IGL
         [SupportedApiProfile("glcore", MinVersion = "3.2")]
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glTextureParameterIiv")]
-        static abstract void TextureParameterIiv(
+        static abstract void TextureParameterI(
             [NativeTypeName("GLuint")] uint texture,
             [NativeTypeName("GLenum")] uint pname,
             [NativeTypeName("const GLint *")] Ref<int> @params
@@ -23080,7 +23080,7 @@ public unsafe partial interface IGL
         [SupportedApiProfile("glcore", MinVersion = "3.2")]
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glTextureParameterIuiv")]
-        static abstract void TextureParameterIuiv(
+        static abstract void TextureParameterI(
             [NativeTypeName("GLuint")] uint texture,
             [NativeTypeName("GLenum")] uint pname,
             [NativeTypeName("const GLuint *")] Ref<uint> @params
@@ -23099,7 +23099,7 @@ public unsafe partial interface IGL
         [SupportedApiProfile("glcore", MinVersion = "3.2")]
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glTextureParameteriv")]
-        static abstract void TextureParameteriv(
+        static abstract void TextureParameter(
             [NativeTypeName("GLuint")] uint texture,
             [NativeTypeName("GLenum")] uint pname,
             [NativeTypeName("const GLint *")] Ref<int> param2
@@ -23560,7 +23560,7 @@ public unsafe partial interface IGL
 
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glTranslated")]
-        static abstract void Translated(
+        static abstract void Translate(
             [NativeTypeName("GLdouble")] double x,
             [NativeTypeName("GLdouble")] double y,
             [NativeTypeName("GLdouble")] double z
@@ -23569,7 +23569,7 @@ public unsafe partial interface IGL
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [SupportedApiProfile("gles1", MaxVersion = "2.0")]
         [NativeFunction("opengl", EntryPoint = "glTranslatef")]
-        static abstract void Translatef(
+        static abstract void Translate(
             [NativeTypeName("GLfloat")] float x,
             [NativeTypeName("GLfloat")] float y,
             [NativeTypeName("GLfloat")] float z
@@ -23595,7 +23595,7 @@ public unsafe partial interface IGL
         [SupportedApiProfile("glcore", MinVersion = "3.2")]
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glUniform1d")]
-        static abstract void Uniform1d(
+        static abstract void Uniform1(
             [NativeTypeName("GLint")] int location,
             [NativeTypeName("GLdouble")] double x
         );
@@ -23603,7 +23603,7 @@ public unsafe partial interface IGL
         [SupportedApiProfile("glcore", MinVersion = "3.2")]
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glUniform1dv")]
-        static abstract void Uniform1dv(
+        static abstract void Uniform1(
             [NativeTypeName("GLint")] int location,
             [NativeTypeName("GLsizei")] int count,
             [NativeTypeName("const GLdouble *")] Ref<double> value
@@ -23613,7 +23613,7 @@ public unsafe partial interface IGL
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [SupportedApiProfile("gles2", MinVersion = "2.0")]
         [NativeFunction("opengl", EntryPoint = "glUniform1f")]
-        static abstract void Uniform1f(
+        static abstract void Uniform1(
             [NativeTypeName("GLint")] int location,
             [NativeTypeName("GLfloat")] float v0
         );
@@ -23629,7 +23629,7 @@ public unsafe partial interface IGL
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [SupportedApiProfile("gles2", MinVersion = "2.0")]
         [NativeFunction("opengl", EntryPoint = "glUniform1fv")]
-        static abstract void Uniform1fv(
+        static abstract void Uniform1(
             [NativeTypeName("GLint")] int location,
             [NativeTypeName("GLsizei")] int count,
             [NativeTypeName("const GLfloat *")] Ref<float> value
@@ -23647,7 +23647,7 @@ public unsafe partial interface IGL
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [SupportedApiProfile("gles2", MinVersion = "2.0")]
         [NativeFunction("opengl", EntryPoint = "glUniform1i")]
-        static abstract void Uniform1i(
+        static abstract void Uniform1(
             [NativeTypeName("GLint")] int location,
             [NativeTypeName("GLint")] int v0
         );
@@ -23699,7 +23699,7 @@ public unsafe partial interface IGL
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [SupportedApiProfile("gles2", MinVersion = "2.0")]
         [NativeFunction("opengl", EntryPoint = "glUniform1iv")]
-        static abstract void Uniform1iv(
+        static abstract void Uniform1(
             [NativeTypeName("GLint")] int location,
             [NativeTypeName("GLsizei")] int count,
             [NativeTypeName("const GLint *")] Ref<int> value
@@ -23716,7 +23716,7 @@ public unsafe partial interface IGL
         [SupportedApiProfile("glcore", MinVersion = "3.2")]
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glUniform1ui")]
-        static abstract void Uniform1ui(
+        static abstract void Uniform1(
             [NativeTypeName("GLint")] int location,
             [NativeTypeName("GLuint")] uint v0
         );
@@ -23767,7 +23767,7 @@ public unsafe partial interface IGL
         [SupportedApiProfile("glcore", MinVersion = "3.2")]
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glUniform1uiv")]
-        static abstract void Uniform1uiv(
+        static abstract void Uniform1(
             [NativeTypeName("GLint")] int location,
             [NativeTypeName("GLsizei")] int count,
             [NativeTypeName("const GLuint *")] Ref<uint> value
@@ -23784,7 +23784,7 @@ public unsafe partial interface IGL
         [SupportedApiProfile("glcore", MinVersion = "3.2")]
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glUniform2d")]
-        static abstract void Uniform2d(
+        static abstract void Uniform2(
             [NativeTypeName("GLint")] int location,
             [NativeTypeName("GLdouble")] double x,
             [NativeTypeName("GLdouble")] double y
@@ -23793,7 +23793,7 @@ public unsafe partial interface IGL
         [SupportedApiProfile("glcore", MinVersion = "3.2")]
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glUniform2dv")]
-        static abstract void Uniform2dv(
+        static abstract void Uniform2(
             [NativeTypeName("GLint")] int location,
             [NativeTypeName("GLsizei")] int count,
             [NativeTypeName("const GLdouble *")] Ref<double> value
@@ -23803,7 +23803,7 @@ public unsafe partial interface IGL
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [SupportedApiProfile("gles2", MinVersion = "2.0")]
         [NativeFunction("opengl", EntryPoint = "glUniform2f")]
-        static abstract void Uniform2f(
+        static abstract void Uniform2(
             [NativeTypeName("GLint")] int location,
             [NativeTypeName("GLfloat")] float v0,
             [NativeTypeName("GLfloat")] float v1
@@ -23821,7 +23821,7 @@ public unsafe partial interface IGL
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [SupportedApiProfile("gles2", MinVersion = "2.0")]
         [NativeFunction("opengl", EntryPoint = "glUniform2fv")]
-        static abstract void Uniform2fv(
+        static abstract void Uniform2(
             [NativeTypeName("GLint")] int location,
             [NativeTypeName("GLsizei")] int count,
             [NativeTypeName("const GLfloat *")] Ref<float> value
@@ -23839,7 +23839,7 @@ public unsafe partial interface IGL
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [SupportedApiProfile("gles2", MinVersion = "2.0")]
         [NativeFunction("opengl", EntryPoint = "glUniform2i")]
-        static abstract void Uniform2i(
+        static abstract void Uniform2(
             [NativeTypeName("GLint")] int location,
             [NativeTypeName("GLint")] int v0,
             [NativeTypeName("GLint")] int v1
@@ -23895,7 +23895,7 @@ public unsafe partial interface IGL
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [SupportedApiProfile("gles2", MinVersion = "2.0")]
         [NativeFunction("opengl", EntryPoint = "glUniform2iv")]
-        static abstract void Uniform2iv(
+        static abstract void Uniform2(
             [NativeTypeName("GLint")] int location,
             [NativeTypeName("GLsizei")] int count,
             [NativeTypeName("const GLint *")] Ref<int> value
@@ -23912,7 +23912,7 @@ public unsafe partial interface IGL
         [SupportedApiProfile("glcore", MinVersion = "3.2")]
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glUniform2ui")]
-        static abstract void Uniform2ui(
+        static abstract void Uniform2(
             [NativeTypeName("GLint")] int location,
             [NativeTypeName("GLuint")] uint v0,
             [NativeTypeName("GLuint")] uint v1
@@ -23967,7 +23967,7 @@ public unsafe partial interface IGL
         [SupportedApiProfile("glcore", MinVersion = "3.2")]
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glUniform2uiv")]
-        static abstract void Uniform2uiv(
+        static abstract void Uniform2(
             [NativeTypeName("GLint")] int location,
             [NativeTypeName("GLsizei")] int count,
             [NativeTypeName("const GLuint *")] Ref<uint> value
@@ -23984,7 +23984,7 @@ public unsafe partial interface IGL
         [SupportedApiProfile("glcore", MinVersion = "3.2")]
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glUniform3d")]
-        static abstract void Uniform3d(
+        static abstract void Uniform3(
             [NativeTypeName("GLint")] int location,
             [NativeTypeName("GLdouble")] double x,
             [NativeTypeName("GLdouble")] double y,
@@ -23994,7 +23994,7 @@ public unsafe partial interface IGL
         [SupportedApiProfile("glcore", MinVersion = "3.2")]
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glUniform3dv")]
-        static abstract void Uniform3dv(
+        static abstract void Uniform3(
             [NativeTypeName("GLint")] int location,
             [NativeTypeName("GLsizei")] int count,
             [NativeTypeName("const GLdouble *")] Ref<double> value
@@ -24004,7 +24004,7 @@ public unsafe partial interface IGL
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [SupportedApiProfile("gles2", MinVersion = "2.0")]
         [NativeFunction("opengl", EntryPoint = "glUniform3f")]
-        static abstract void Uniform3f(
+        static abstract void Uniform3(
             [NativeTypeName("GLint")] int location,
             [NativeTypeName("GLfloat")] float v0,
             [NativeTypeName("GLfloat")] float v1,
@@ -24024,7 +24024,7 @@ public unsafe partial interface IGL
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [SupportedApiProfile("gles2", MinVersion = "2.0")]
         [NativeFunction("opengl", EntryPoint = "glUniform3fv")]
-        static abstract void Uniform3fv(
+        static abstract void Uniform3(
             [NativeTypeName("GLint")] int location,
             [NativeTypeName("GLsizei")] int count,
             [NativeTypeName("const GLfloat *")] Ref<float> value
@@ -24042,7 +24042,7 @@ public unsafe partial interface IGL
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [SupportedApiProfile("gles2", MinVersion = "2.0")]
         [NativeFunction("opengl", EntryPoint = "glUniform3i")]
-        static abstract void Uniform3i(
+        static abstract void Uniform3(
             [NativeTypeName("GLint")] int location,
             [NativeTypeName("GLint")] int v0,
             [NativeTypeName("GLint")] int v1,
@@ -24102,7 +24102,7 @@ public unsafe partial interface IGL
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [SupportedApiProfile("gles2", MinVersion = "2.0")]
         [NativeFunction("opengl", EntryPoint = "glUniform3iv")]
-        static abstract void Uniform3iv(
+        static abstract void Uniform3(
             [NativeTypeName("GLint")] int location,
             [NativeTypeName("GLsizei")] int count,
             [NativeTypeName("const GLint *")] Ref<int> value
@@ -24119,7 +24119,7 @@ public unsafe partial interface IGL
         [SupportedApiProfile("glcore", MinVersion = "3.2")]
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glUniform3ui")]
-        static abstract void Uniform3ui(
+        static abstract void Uniform3(
             [NativeTypeName("GLint")] int location,
             [NativeTypeName("GLuint")] uint v0,
             [NativeTypeName("GLuint")] uint v1,
@@ -24178,7 +24178,7 @@ public unsafe partial interface IGL
         [SupportedApiProfile("glcore", MinVersion = "3.2")]
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glUniform3uiv")]
-        static abstract void Uniform3uiv(
+        static abstract void Uniform3(
             [NativeTypeName("GLint")] int location,
             [NativeTypeName("GLsizei")] int count,
             [NativeTypeName("const GLuint *")] Ref<uint> value
@@ -24195,7 +24195,7 @@ public unsafe partial interface IGL
         [SupportedApiProfile("glcore", MinVersion = "3.2")]
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glUniform4d")]
-        static abstract void Uniform4d(
+        static abstract void Uniform4(
             [NativeTypeName("GLint")] int location,
             [NativeTypeName("GLdouble")] double x,
             [NativeTypeName("GLdouble")] double y,
@@ -24206,7 +24206,7 @@ public unsafe partial interface IGL
         [SupportedApiProfile("glcore", MinVersion = "3.2")]
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glUniform4dv")]
-        static abstract void Uniform4dv(
+        static abstract void Uniform4(
             [NativeTypeName("GLint")] int location,
             [NativeTypeName("GLsizei")] int count,
             [NativeTypeName("const GLdouble *")] Ref<double> value
@@ -24216,7 +24216,7 @@ public unsafe partial interface IGL
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [SupportedApiProfile("gles2", MinVersion = "2.0")]
         [NativeFunction("opengl", EntryPoint = "glUniform4f")]
-        static abstract void Uniform4f(
+        static abstract void Uniform4(
             [NativeTypeName("GLint")] int location,
             [NativeTypeName("GLfloat")] float v0,
             [NativeTypeName("GLfloat")] float v1,
@@ -24238,7 +24238,7 @@ public unsafe partial interface IGL
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [SupportedApiProfile("gles2", MinVersion = "2.0")]
         [NativeFunction("opengl", EntryPoint = "glUniform4fv")]
-        static abstract void Uniform4fv(
+        static abstract void Uniform4(
             [NativeTypeName("GLint")] int location,
             [NativeTypeName("GLsizei")] int count,
             [NativeTypeName("const GLfloat *")] Ref<float> value
@@ -24256,7 +24256,7 @@ public unsafe partial interface IGL
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [SupportedApiProfile("gles2", MinVersion = "2.0")]
         [NativeFunction("opengl", EntryPoint = "glUniform4i")]
-        static abstract void Uniform4i(
+        static abstract void Uniform4(
             [NativeTypeName("GLint")] int location,
             [NativeTypeName("GLint")] int v0,
             [NativeTypeName("GLint")] int v1,
@@ -24320,7 +24320,7 @@ public unsafe partial interface IGL
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [SupportedApiProfile("gles2", MinVersion = "2.0")]
         [NativeFunction("opengl", EntryPoint = "glUniform4iv")]
-        static abstract void Uniform4iv(
+        static abstract void Uniform4(
             [NativeTypeName("GLint")] int location,
             [NativeTypeName("GLsizei")] int count,
             [NativeTypeName("const GLint *")] Ref<int> value
@@ -24337,7 +24337,7 @@ public unsafe partial interface IGL
         [SupportedApiProfile("glcore", MinVersion = "3.2")]
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glUniform4ui")]
-        static abstract void Uniform4ui(
+        static abstract void Uniform4(
             [NativeTypeName("GLint")] int location,
             [NativeTypeName("GLuint")] uint v0,
             [NativeTypeName("GLuint")] uint v1,
@@ -24400,7 +24400,7 @@ public unsafe partial interface IGL
         [SupportedApiProfile("glcore", MinVersion = "3.2")]
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glUniform4uiv")]
-        static abstract void Uniform4uiv(
+        static abstract void Uniform4(
             [NativeTypeName("GLint")] int location,
             [NativeTypeName("GLsizei")] int count,
             [NativeTypeName("const GLuint *")] Ref<uint> value
@@ -24485,7 +24485,7 @@ public unsafe partial interface IGL
         [SupportedApiProfile("glcore", MinVersion = "3.2")]
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glUniformMatrix2dv")]
-        static abstract void UniformMatrix2dv(
+        static abstract void UniformMatrix2(
             [NativeTypeName("GLint")] int location,
             [NativeTypeName("GLsizei")] int count,
             [NativeTypeName("GLboolean")] byte transpose,
@@ -24496,7 +24496,7 @@ public unsafe partial interface IGL
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [SupportedApiProfile("gles2", MinVersion = "2.0")]
         [NativeFunction("opengl", EntryPoint = "glUniformMatrix2fv")]
-        static abstract void UniformMatrix2fv(
+        static abstract void UniformMatrix2(
             [NativeTypeName("GLint")] int location,
             [NativeTypeName("GLsizei")] int count,
             [NativeTypeName("GLboolean")] byte transpose,
@@ -24515,7 +24515,7 @@ public unsafe partial interface IGL
         [SupportedApiProfile("glcore", MinVersion = "3.2")]
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glUniformMatrix2x3dv")]
-        static abstract void UniformMatrix2x3dv(
+        static abstract void UniformMatrix2x3(
             [NativeTypeName("GLint")] int location,
             [NativeTypeName("GLsizei")] int count,
             [NativeTypeName("GLboolean")] byte transpose,
@@ -24525,7 +24525,7 @@ public unsafe partial interface IGL
         [SupportedApiProfile("glcore", MinVersion = "3.2")]
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glUniformMatrix2x3fv")]
-        static abstract void UniformMatrix2x3fv(
+        static abstract void UniformMatrix2x3(
             [NativeTypeName("GLint")] int location,
             [NativeTypeName("GLsizei")] int count,
             [NativeTypeName("GLboolean")] byte transpose,
@@ -24544,7 +24544,7 @@ public unsafe partial interface IGL
         [SupportedApiProfile("glcore", MinVersion = "3.2")]
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glUniformMatrix2x4dv")]
-        static abstract void UniformMatrix2x4dv(
+        static abstract void UniformMatrix2x4(
             [NativeTypeName("GLint")] int location,
             [NativeTypeName("GLsizei")] int count,
             [NativeTypeName("GLboolean")] byte transpose,
@@ -24554,7 +24554,7 @@ public unsafe partial interface IGL
         [SupportedApiProfile("glcore", MinVersion = "3.2")]
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glUniformMatrix2x4fv")]
-        static abstract void UniformMatrix2x4fv(
+        static abstract void UniformMatrix2x4(
             [NativeTypeName("GLint")] int location,
             [NativeTypeName("GLsizei")] int count,
             [NativeTypeName("GLboolean")] byte transpose,
@@ -24573,7 +24573,7 @@ public unsafe partial interface IGL
         [SupportedApiProfile("glcore", MinVersion = "3.2")]
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glUniformMatrix3dv")]
-        static abstract void UniformMatrix3dv(
+        static abstract void UniformMatrix3(
             [NativeTypeName("GLint")] int location,
             [NativeTypeName("GLsizei")] int count,
             [NativeTypeName("GLboolean")] byte transpose,
@@ -24584,7 +24584,7 @@ public unsafe partial interface IGL
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [SupportedApiProfile("gles2", MinVersion = "2.0")]
         [NativeFunction("opengl", EntryPoint = "glUniformMatrix3fv")]
-        static abstract void UniformMatrix3fv(
+        static abstract void UniformMatrix3(
             [NativeTypeName("GLint")] int location,
             [NativeTypeName("GLsizei")] int count,
             [NativeTypeName("GLboolean")] byte transpose,
@@ -24603,7 +24603,7 @@ public unsafe partial interface IGL
         [SupportedApiProfile("glcore", MinVersion = "3.2")]
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glUniformMatrix3x2dv")]
-        static abstract void UniformMatrix3x2dv(
+        static abstract void UniformMatrix3x2(
             [NativeTypeName("GLint")] int location,
             [NativeTypeName("GLsizei")] int count,
             [NativeTypeName("GLboolean")] byte transpose,
@@ -24613,7 +24613,7 @@ public unsafe partial interface IGL
         [SupportedApiProfile("glcore", MinVersion = "3.2")]
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glUniformMatrix3x2fv")]
-        static abstract void UniformMatrix3x2fv(
+        static abstract void UniformMatrix3x2(
             [NativeTypeName("GLint")] int location,
             [NativeTypeName("GLsizei")] int count,
             [NativeTypeName("GLboolean")] byte transpose,
@@ -24632,7 +24632,7 @@ public unsafe partial interface IGL
         [SupportedApiProfile("glcore", MinVersion = "3.2")]
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glUniformMatrix3x4dv")]
-        static abstract void UniformMatrix3x4dv(
+        static abstract void UniformMatrix3x4(
             [NativeTypeName("GLint")] int location,
             [NativeTypeName("GLsizei")] int count,
             [NativeTypeName("GLboolean")] byte transpose,
@@ -24642,7 +24642,7 @@ public unsafe partial interface IGL
         [SupportedApiProfile("glcore", MinVersion = "3.2")]
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glUniformMatrix3x4fv")]
-        static abstract void UniformMatrix3x4fv(
+        static abstract void UniformMatrix3x4(
             [NativeTypeName("GLint")] int location,
             [NativeTypeName("GLsizei")] int count,
             [NativeTypeName("GLboolean")] byte transpose,
@@ -24661,7 +24661,7 @@ public unsafe partial interface IGL
         [SupportedApiProfile("glcore", MinVersion = "3.2")]
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glUniformMatrix4dv")]
-        static abstract void UniformMatrix4dv(
+        static abstract void UniformMatrix4(
             [NativeTypeName("GLint")] int location,
             [NativeTypeName("GLsizei")] int count,
             [NativeTypeName("GLboolean")] byte transpose,
@@ -24672,7 +24672,7 @@ public unsafe partial interface IGL
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [SupportedApiProfile("gles2", MinVersion = "2.0")]
         [NativeFunction("opengl", EntryPoint = "glUniformMatrix4fv")]
-        static abstract void UniformMatrix4fv(
+        static abstract void UniformMatrix4(
             [NativeTypeName("GLint")] int location,
             [NativeTypeName("GLsizei")] int count,
             [NativeTypeName("GLboolean")] byte transpose,
@@ -24691,7 +24691,7 @@ public unsafe partial interface IGL
         [SupportedApiProfile("glcore", MinVersion = "3.2")]
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glUniformMatrix4x2dv")]
-        static abstract void UniformMatrix4x2dv(
+        static abstract void UniformMatrix4x2(
             [NativeTypeName("GLint")] int location,
             [NativeTypeName("GLsizei")] int count,
             [NativeTypeName("GLboolean")] byte transpose,
@@ -24701,7 +24701,7 @@ public unsafe partial interface IGL
         [SupportedApiProfile("glcore", MinVersion = "3.2")]
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glUniformMatrix4x2fv")]
-        static abstract void UniformMatrix4x2fv(
+        static abstract void UniformMatrix4x2(
             [NativeTypeName("GLint")] int location,
             [NativeTypeName("GLsizei")] int count,
             [NativeTypeName("GLboolean")] byte transpose,
@@ -24720,7 +24720,7 @@ public unsafe partial interface IGL
         [SupportedApiProfile("glcore", MinVersion = "3.2")]
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glUniformMatrix4x3dv")]
-        static abstract void UniformMatrix4x3dv(
+        static abstract void UniformMatrix4x3(
             [NativeTypeName("GLint")] int location,
             [NativeTypeName("GLsizei")] int count,
             [NativeTypeName("GLboolean")] byte transpose,
@@ -24730,7 +24730,7 @@ public unsafe partial interface IGL
         [SupportedApiProfile("glcore", MinVersion = "3.2")]
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glUniformMatrix4x3fv")]
-        static abstract void UniformMatrix4x3fv(
+        static abstract void UniformMatrix4x3(
             [NativeTypeName("GLint")] int location,
             [NativeTypeName("GLsizei")] int count,
             [NativeTypeName("GLboolean")] byte transpose,
@@ -24749,7 +24749,7 @@ public unsafe partial interface IGL
         [SupportedApiProfile("glcore", MinVersion = "3.2")]
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glUniformSubroutinesuiv")]
-        static abstract void UniformSubroutinesuiv(
+        static abstract void UniformSubroutines(
             [NativeTypeName("GLenum")] uint shadertype,
             [NativeTypeName("GLsizei")] int count,
             [NativeTypeName("const GLuint *")] Ref<uint> indices
@@ -25056,25 +25056,25 @@ public unsafe partial interface IGL
 
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glVertex2d")]
-        static abstract void Vertex2d(
+        static abstract void Vertex2(
             [NativeTypeName("GLdouble")] double x,
             [NativeTypeName("GLdouble")] double y
         );
 
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glVertex2dv")]
-        static abstract void Vertex2dv([NativeTypeName("const GLdouble *")] Ref<double> v);
+        static abstract void Vertex2([NativeTypeName("const GLdouble *")] Ref<double> v);
 
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glVertex2f")]
-        static abstract void Vertex2f(
+        static abstract void Vertex2(
             [NativeTypeName("GLfloat")] float x,
             [NativeTypeName("GLfloat")] float y
         );
 
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glVertex2fv")]
-        static abstract void Vertex2fv([NativeTypeName("const GLfloat *")] Ref<float> v);
+        static abstract void Vertex2([NativeTypeName("const GLfloat *")] Ref<float> v);
 
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glVertex2hNV")]
@@ -25089,25 +25089,25 @@ public unsafe partial interface IGL
 
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glVertex2i")]
-        static abstract void Vertex2i(
+        static abstract void Vertex2(
             [NativeTypeName("GLint")] int x,
             [NativeTypeName("GLint")] int y
         );
 
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glVertex2iv")]
-        static abstract void Vertex2iv([NativeTypeName("const GLint *")] Ref<int> v);
+        static abstract void Vertex2([NativeTypeName("const GLint *")] Ref<int> v);
 
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glVertex2s")]
-        static abstract void Vertex2s(
+        static abstract void Vertex2(
             [NativeTypeName("GLshort")] short x,
             [NativeTypeName("GLshort")] short y
         );
 
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glVertex2sv")]
-        static abstract void Vertex2sv([NativeTypeName("const GLshort *")] Ref<short> v);
+        static abstract void Vertex2([NativeTypeName("const GLshort *")] Ref<short> v);
 
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glVertex2xOES")]
@@ -25131,7 +25131,7 @@ public unsafe partial interface IGL
 
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glVertex3d")]
-        static abstract void Vertex3d(
+        static abstract void Vertex3(
             [NativeTypeName("GLdouble")] double x,
             [NativeTypeName("GLdouble")] double y,
             [NativeTypeName("GLdouble")] double z
@@ -25139,11 +25139,11 @@ public unsafe partial interface IGL
 
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glVertex3dv")]
-        static abstract void Vertex3dv([NativeTypeName("const GLdouble *")] Ref<double> v);
+        static abstract void Vertex3([NativeTypeName("const GLdouble *")] Ref<double> v);
 
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glVertex3f")]
-        static abstract void Vertex3f(
+        static abstract void Vertex3(
             [NativeTypeName("GLfloat")] float x,
             [NativeTypeName("GLfloat")] float y,
             [NativeTypeName("GLfloat")] float z
@@ -25151,7 +25151,7 @@ public unsafe partial interface IGL
 
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glVertex3fv")]
-        static abstract void Vertex3fv([NativeTypeName("const GLfloat *")] Ref<float> v);
+        static abstract void Vertex3([NativeTypeName("const GLfloat *")] Ref<float> v);
 
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glVertex3hNV")]
@@ -25167,7 +25167,7 @@ public unsafe partial interface IGL
 
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glVertex3i")]
-        static abstract void Vertex3i(
+        static abstract void Vertex3(
             [NativeTypeName("GLint")] int x,
             [NativeTypeName("GLint")] int y,
             [NativeTypeName("GLint")] int z
@@ -25175,11 +25175,11 @@ public unsafe partial interface IGL
 
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glVertex3iv")]
-        static abstract void Vertex3iv([NativeTypeName("const GLint *")] Ref<int> v);
+        static abstract void Vertex3([NativeTypeName("const GLint *")] Ref<int> v);
 
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glVertex3s")]
-        static abstract void Vertex3s(
+        static abstract void Vertex3(
             [NativeTypeName("GLshort")] short x,
             [NativeTypeName("GLshort")] short y,
             [NativeTypeName("GLshort")] short z
@@ -25187,7 +25187,7 @@ public unsafe partial interface IGL
 
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glVertex3sv")]
-        static abstract void Vertex3sv([NativeTypeName("const GLshort *")] Ref<short> v);
+        static abstract void Vertex3([NativeTypeName("const GLshort *")] Ref<short> v);
 
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glVertex3xOES")]
@@ -25215,7 +25215,7 @@ public unsafe partial interface IGL
 
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glVertex4d")]
-        static abstract void Vertex4d(
+        static abstract void Vertex4(
             [NativeTypeName("GLdouble")] double x,
             [NativeTypeName("GLdouble")] double y,
             [NativeTypeName("GLdouble")] double z,
@@ -25224,11 +25224,11 @@ public unsafe partial interface IGL
 
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glVertex4dv")]
-        static abstract void Vertex4dv([NativeTypeName("const GLdouble *")] Ref<double> v);
+        static abstract void Vertex4([NativeTypeName("const GLdouble *")] Ref<double> v);
 
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glVertex4f")]
-        static abstract void Vertex4f(
+        static abstract void Vertex4(
             [NativeTypeName("GLfloat")] float x,
             [NativeTypeName("GLfloat")] float y,
             [NativeTypeName("GLfloat")] float z,
@@ -25237,7 +25237,7 @@ public unsafe partial interface IGL
 
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glVertex4fv")]
-        static abstract void Vertex4fv([NativeTypeName("const GLfloat *")] Ref<float> v);
+        static abstract void Vertex4([NativeTypeName("const GLfloat *")] Ref<float> v);
 
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glVertex4hNV")]
@@ -25254,7 +25254,7 @@ public unsafe partial interface IGL
 
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glVertex4i")]
-        static abstract void Vertex4i(
+        static abstract void Vertex4(
             [NativeTypeName("GLint")] int x,
             [NativeTypeName("GLint")] int y,
             [NativeTypeName("GLint")] int z,
@@ -25263,11 +25263,11 @@ public unsafe partial interface IGL
 
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glVertex4iv")]
-        static abstract void Vertex4iv([NativeTypeName("const GLint *")] Ref<int> v);
+        static abstract void Vertex4([NativeTypeName("const GLint *")] Ref<int> v);
 
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glVertex4s")]
-        static abstract void Vertex4s(
+        static abstract void Vertex4(
             [NativeTypeName("GLshort")] short x,
             [NativeTypeName("GLshort")] short y,
             [NativeTypeName("GLshort")] short z,
@@ -25276,7 +25276,7 @@ public unsafe partial interface IGL
 
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glVertex4sv")]
-        static abstract void Vertex4sv([NativeTypeName("const GLshort *")] Ref<short> v);
+        static abstract void Vertex4([NativeTypeName("const GLshort *")] Ref<short> v);
 
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glVertex4xOES")]
@@ -25613,7 +25613,7 @@ public unsafe partial interface IGL
         [SupportedApiProfile("glcore", MinVersion = "3.2")]
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glVertexAttrib1d")]
-        static abstract void VertexAttrib1d(
+        static abstract void VertexAttrib1(
             [NativeTypeName("GLuint")] uint index,
             [NativeTypeName("GLdouble")] double x
         );
@@ -25635,7 +25635,7 @@ public unsafe partial interface IGL
         [SupportedApiProfile("glcore", MinVersion = "3.2")]
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glVertexAttrib1dv")]
-        static abstract void VertexAttrib1dv(
+        static abstract void VertexAttrib1(
             [NativeTypeName("GLuint")] uint index,
             [NativeTypeName("const GLdouble *")] Ref<double> v
         );
@@ -25658,7 +25658,7 @@ public unsafe partial interface IGL
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [SupportedApiProfile("gles2", MinVersion = "2.0")]
         [NativeFunction("opengl", EntryPoint = "glVertexAttrib1f")]
-        static abstract void VertexAttrib1f(
+        static abstract void VertexAttrib1(
             [NativeTypeName("GLuint")] uint index,
             [NativeTypeName("GLfloat")] float x
         );
@@ -25681,7 +25681,7 @@ public unsafe partial interface IGL
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [SupportedApiProfile("gles2", MinVersion = "2.0")]
         [NativeFunction("opengl", EntryPoint = "glVertexAttrib1fv")]
-        static abstract void VertexAttrib1fv(
+        static abstract void VertexAttrib1(
             [NativeTypeName("GLuint")] uint index,
             [NativeTypeName("const GLfloat *")] Ref<float> v
         );
@@ -25717,7 +25717,7 @@ public unsafe partial interface IGL
         [SupportedApiProfile("glcore", MinVersion = "3.2")]
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glVertexAttrib1s")]
-        static abstract void VertexAttrib1s(
+        static abstract void VertexAttrib1(
             [NativeTypeName("GLuint")] uint index,
             [NativeTypeName("GLshort")] short x
         );
@@ -25739,7 +25739,7 @@ public unsafe partial interface IGL
         [SupportedApiProfile("glcore", MinVersion = "3.2")]
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glVertexAttrib1sv")]
-        static abstract void VertexAttrib1sv(
+        static abstract void VertexAttrib1(
             [NativeTypeName("GLuint")] uint index,
             [NativeTypeName("const GLshort *")] Ref<short> v
         );
@@ -25761,7 +25761,7 @@ public unsafe partial interface IGL
         [SupportedApiProfile("glcore", MinVersion = "3.2")]
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glVertexAttrib2d")]
-        static abstract void VertexAttrib2d(
+        static abstract void VertexAttrib2(
             [NativeTypeName("GLuint")] uint index,
             [NativeTypeName("GLdouble")] double x,
             [NativeTypeName("GLdouble")] double y
@@ -25786,7 +25786,7 @@ public unsafe partial interface IGL
         [SupportedApiProfile("glcore", MinVersion = "3.2")]
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glVertexAttrib2dv")]
-        static abstract void VertexAttrib2dv(
+        static abstract void VertexAttrib2(
             [NativeTypeName("GLuint")] uint index,
             [NativeTypeName("const GLdouble *")] Ref<double> v
         );
@@ -25809,7 +25809,7 @@ public unsafe partial interface IGL
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [SupportedApiProfile("gles2", MinVersion = "2.0")]
         [NativeFunction("opengl", EntryPoint = "glVertexAttrib2f")]
-        static abstract void VertexAttrib2f(
+        static abstract void VertexAttrib2(
             [NativeTypeName("GLuint")] uint index,
             [NativeTypeName("GLfloat")] float x,
             [NativeTypeName("GLfloat")] float y
@@ -25835,7 +25835,7 @@ public unsafe partial interface IGL
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [SupportedApiProfile("gles2", MinVersion = "2.0")]
         [NativeFunction("opengl", EntryPoint = "glVertexAttrib2fv")]
-        static abstract void VertexAttrib2fv(
+        static abstract void VertexAttrib2(
             [NativeTypeName("GLuint")] uint index,
             [NativeTypeName("const GLfloat *")] Ref<float> v
         );
@@ -25872,7 +25872,7 @@ public unsafe partial interface IGL
         [SupportedApiProfile("glcore", MinVersion = "3.2")]
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glVertexAttrib2s")]
-        static abstract void VertexAttrib2s(
+        static abstract void VertexAttrib2(
             [NativeTypeName("GLuint")] uint index,
             [NativeTypeName("GLshort")] short x,
             [NativeTypeName("GLshort")] short y
@@ -25897,7 +25897,7 @@ public unsafe partial interface IGL
         [SupportedApiProfile("glcore", MinVersion = "3.2")]
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glVertexAttrib2sv")]
-        static abstract void VertexAttrib2sv(
+        static abstract void VertexAttrib2(
             [NativeTypeName("GLuint")] uint index,
             [NativeTypeName("const GLshort *")] Ref<short> v
         );
@@ -25919,7 +25919,7 @@ public unsafe partial interface IGL
         [SupportedApiProfile("glcore", MinVersion = "3.2")]
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glVertexAttrib3d")]
-        static abstract void VertexAttrib3d(
+        static abstract void VertexAttrib3(
             [NativeTypeName("GLuint")] uint index,
             [NativeTypeName("GLdouble")] double x,
             [NativeTypeName("GLdouble")] double y,
@@ -25947,7 +25947,7 @@ public unsafe partial interface IGL
         [SupportedApiProfile("glcore", MinVersion = "3.2")]
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glVertexAttrib3dv")]
-        static abstract void VertexAttrib3dv(
+        static abstract void VertexAttrib3(
             [NativeTypeName("GLuint")] uint index,
             [NativeTypeName("const GLdouble *")] Ref<double> v
         );
@@ -25970,7 +25970,7 @@ public unsafe partial interface IGL
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [SupportedApiProfile("gles2", MinVersion = "2.0")]
         [NativeFunction("opengl", EntryPoint = "glVertexAttrib3f")]
-        static abstract void VertexAttrib3f(
+        static abstract void VertexAttrib3(
             [NativeTypeName("GLuint")] uint index,
             [NativeTypeName("GLfloat")] float x,
             [NativeTypeName("GLfloat")] float y,
@@ -25999,7 +25999,7 @@ public unsafe partial interface IGL
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [SupportedApiProfile("gles2", MinVersion = "2.0")]
         [NativeFunction("opengl", EntryPoint = "glVertexAttrib3fv")]
-        static abstract void VertexAttrib3fv(
+        static abstract void VertexAttrib3(
             [NativeTypeName("GLuint")] uint index,
             [NativeTypeName("const GLfloat *")] Ref<float> v
         );
@@ -26037,7 +26037,7 @@ public unsafe partial interface IGL
         [SupportedApiProfile("glcore", MinVersion = "3.2")]
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glVertexAttrib3s")]
-        static abstract void VertexAttrib3s(
+        static abstract void VertexAttrib3(
             [NativeTypeName("GLuint")] uint index,
             [NativeTypeName("GLshort")] short x,
             [NativeTypeName("GLshort")] short y,
@@ -26065,7 +26065,7 @@ public unsafe partial interface IGL
         [SupportedApiProfile("glcore", MinVersion = "3.2")]
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glVertexAttrib3sv")]
-        static abstract void VertexAttrib3sv(
+        static abstract void VertexAttrib3(
             [NativeTypeName("GLuint")] uint index,
             [NativeTypeName("const GLshort *")] Ref<short> v
         );
@@ -26087,7 +26087,7 @@ public unsafe partial interface IGL
         [SupportedApiProfile("glcore", MinVersion = "3.2")]
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glVertexAttrib4bv")]
-        static abstract void VertexAttrib4bv(
+        static abstract void VertexAttrib4(
             [NativeTypeName("GLuint")] uint index,
             [NativeTypeName("const GLbyte *")] Ref<sbyte> v
         );
@@ -26102,7 +26102,7 @@ public unsafe partial interface IGL
         [SupportedApiProfile("glcore", MinVersion = "3.2")]
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glVertexAttrib4d")]
-        static abstract void VertexAttrib4d(
+        static abstract void VertexAttrib4(
             [NativeTypeName("GLuint")] uint index,
             [NativeTypeName("GLdouble")] double x,
             [NativeTypeName("GLdouble")] double y,
@@ -26133,7 +26133,7 @@ public unsafe partial interface IGL
         [SupportedApiProfile("glcore", MinVersion = "3.2")]
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glVertexAttrib4dv")]
-        static abstract void VertexAttrib4dv(
+        static abstract void VertexAttrib4(
             [NativeTypeName("GLuint")] uint index,
             [NativeTypeName("const GLdouble *")] Ref<double> v
         );
@@ -26156,7 +26156,7 @@ public unsafe partial interface IGL
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [SupportedApiProfile("gles2", MinVersion = "2.0")]
         [NativeFunction("opengl", EntryPoint = "glVertexAttrib4f")]
-        static abstract void VertexAttrib4f(
+        static abstract void VertexAttrib4(
             [NativeTypeName("GLuint")] uint index,
             [NativeTypeName("GLfloat")] float x,
             [NativeTypeName("GLfloat")] float y,
@@ -26188,7 +26188,7 @@ public unsafe partial interface IGL
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [SupportedApiProfile("gles2", MinVersion = "2.0")]
         [NativeFunction("opengl", EntryPoint = "glVertexAttrib4fv")]
-        static abstract void VertexAttrib4fv(
+        static abstract void VertexAttrib4(
             [NativeTypeName("GLuint")] uint index,
             [NativeTypeName("const GLfloat *")] Ref<float> v
         );
@@ -26227,7 +26227,7 @@ public unsafe partial interface IGL
         [SupportedApiProfile("glcore", MinVersion = "3.2")]
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glVertexAttrib4iv")]
-        static abstract void VertexAttrib4iv(
+        static abstract void VertexAttrib4(
             [NativeTypeName("GLuint")] uint index,
             [NativeTypeName("const GLint *")] Ref<int> v
         );
@@ -26242,7 +26242,7 @@ public unsafe partial interface IGL
         [SupportedApiProfile("glcore", MinVersion = "3.2")]
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glVertexAttrib4Nbv")]
-        static abstract void VertexAttrib4nbv(
+        static abstract void VertexAttrib4n(
             [NativeTypeName("GLuint")] uint index,
             [NativeTypeName("const GLbyte *")] Ref<sbyte> v
         );
@@ -26257,7 +26257,7 @@ public unsafe partial interface IGL
         [SupportedApiProfile("glcore", MinVersion = "3.2")]
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glVertexAttrib4Niv")]
-        static abstract void VertexAttrib4niv(
+        static abstract void VertexAttrib4n(
             [NativeTypeName("GLuint")] uint index,
             [NativeTypeName("const GLint *")] Ref<int> v
         );
@@ -26272,7 +26272,7 @@ public unsafe partial interface IGL
         [SupportedApiProfile("glcore", MinVersion = "3.2")]
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glVertexAttrib4Nsv")]
-        static abstract void VertexAttrib4nsv(
+        static abstract void VertexAttrib4n(
             [NativeTypeName("GLuint")] uint index,
             [NativeTypeName("const GLshort *")] Ref<short> v
         );
@@ -26287,7 +26287,7 @@ public unsafe partial interface IGL
         [SupportedApiProfile("glcore", MinVersion = "3.2")]
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glVertexAttrib4Nub")]
-        static abstract void VertexAttrib4nub(
+        static abstract void VertexAttrib4n(
             [NativeTypeName("GLuint")] uint index,
             [NativeTypeName("GLubyte")] byte x,
             [NativeTypeName("GLubyte")] byte y,
@@ -26308,7 +26308,7 @@ public unsafe partial interface IGL
         [SupportedApiProfile("glcore", MinVersion = "3.2")]
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glVertexAttrib4Nubv")]
-        static abstract void VertexAttrib4nubv(
+        static abstract void VertexAttrib4n(
             [NativeTypeName("GLuint")] uint index,
             [NativeTypeName("const GLubyte *")] Ref<byte> v
         );
@@ -26323,7 +26323,7 @@ public unsafe partial interface IGL
         [SupportedApiProfile("glcore", MinVersion = "3.2")]
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glVertexAttrib4Nuiv")]
-        static abstract void VertexAttrib4nuiv(
+        static abstract void VertexAttrib4n(
             [NativeTypeName("GLuint")] uint index,
             [NativeTypeName("const GLuint *")] Ref<uint> v
         );
@@ -26338,7 +26338,7 @@ public unsafe partial interface IGL
         [SupportedApiProfile("glcore", MinVersion = "3.2")]
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glVertexAttrib4Nusv")]
-        static abstract void VertexAttrib4nusv(
+        static abstract void VertexAttrib4n(
             [NativeTypeName("GLuint")] uint index,
             [NativeTypeName("const GLushort *")] Ref<ushort> v
         );
@@ -26353,7 +26353,7 @@ public unsafe partial interface IGL
         [SupportedApiProfile("glcore", MinVersion = "3.2")]
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glVertexAttrib4s")]
-        static abstract void VertexAttrib4s(
+        static abstract void VertexAttrib4(
             [NativeTypeName("GLuint")] uint index,
             [NativeTypeName("GLshort")] short x,
             [NativeTypeName("GLshort")] short y,
@@ -26384,7 +26384,7 @@ public unsafe partial interface IGL
         [SupportedApiProfile("glcore", MinVersion = "3.2")]
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glVertexAttrib4sv")]
-        static abstract void VertexAttrib4sv(
+        static abstract void VertexAttrib4(
             [NativeTypeName("GLuint")] uint index,
             [NativeTypeName("const GLshort *")] Ref<short> v
         );
@@ -26416,7 +26416,7 @@ public unsafe partial interface IGL
         [SupportedApiProfile("glcore", MinVersion = "3.2")]
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glVertexAttrib4ubv")]
-        static abstract void VertexAttrib4ubv(
+        static abstract void VertexAttrib4(
             [NativeTypeName("GLuint")] uint index,
             [NativeTypeName("const GLubyte *")] Ref<byte> v
         );
@@ -26438,7 +26438,7 @@ public unsafe partial interface IGL
         [SupportedApiProfile("glcore", MinVersion = "3.2")]
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glVertexAttrib4uiv")]
-        static abstract void VertexAttrib4uiv(
+        static abstract void VertexAttrib4(
             [NativeTypeName("GLuint")] uint index,
             [NativeTypeName("const GLuint *")] Ref<uint> v
         );
@@ -26453,7 +26453,7 @@ public unsafe partial interface IGL
         [SupportedApiProfile("glcore", MinVersion = "3.2")]
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glVertexAttrib4usv")]
-        static abstract void VertexAttrib4usv(
+        static abstract void VertexAttrib4(
             [NativeTypeName("GLuint")] uint index,
             [NativeTypeName("const GLushort *")] Ref<ushort> v
         );
@@ -26547,7 +26547,7 @@ public unsafe partial interface IGL
         [SupportedApiProfile("glcore", MinVersion = "3.2")]
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glVertexAttribI1i")]
-        static abstract void VertexAttribI1i(
+        static abstract void VertexAttribI1(
             [NativeTypeName("GLuint")] uint index,
             [NativeTypeName("GLint")] int x
         );
@@ -26562,7 +26562,7 @@ public unsafe partial interface IGL
         [SupportedApiProfile("glcore", MinVersion = "3.2")]
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glVertexAttribI1iv")]
-        static abstract void VertexAttribI1iv(
+        static abstract void VertexAttribI1(
             [NativeTypeName("GLuint")] uint index,
             [NativeTypeName("const GLint *")] Ref<int> v
         );
@@ -26577,7 +26577,7 @@ public unsafe partial interface IGL
         [SupportedApiProfile("glcore", MinVersion = "3.2")]
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glVertexAttribI1ui")]
-        static abstract void VertexAttribI1ui(
+        static abstract void VertexAttribI1(
             [NativeTypeName("GLuint")] uint index,
             [NativeTypeName("GLuint")] uint x
         );
@@ -26592,7 +26592,7 @@ public unsafe partial interface IGL
         [SupportedApiProfile("glcore", MinVersion = "3.2")]
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glVertexAttribI1uiv")]
-        static abstract void VertexAttribI1uiv(
+        static abstract void VertexAttribI1(
             [NativeTypeName("GLuint")] uint index,
             [NativeTypeName("const GLuint *")] Ref<uint> v
         );
@@ -26607,7 +26607,7 @@ public unsafe partial interface IGL
         [SupportedApiProfile("glcore", MinVersion = "3.2")]
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glVertexAttribI2i")]
-        static abstract void VertexAttribI2i(
+        static abstract void VertexAttribI2(
             [NativeTypeName("GLuint")] uint index,
             [NativeTypeName("GLint")] int x,
             [NativeTypeName("GLint")] int y
@@ -26624,7 +26624,7 @@ public unsafe partial interface IGL
         [SupportedApiProfile("glcore", MinVersion = "3.2")]
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glVertexAttribI2iv")]
-        static abstract void VertexAttribI2iv(
+        static abstract void VertexAttribI2(
             [NativeTypeName("GLuint")] uint index,
             [NativeTypeName("const GLint *")] Ref<int> v
         );
@@ -26639,7 +26639,7 @@ public unsafe partial interface IGL
         [SupportedApiProfile("glcore", MinVersion = "3.2")]
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glVertexAttribI2ui")]
-        static abstract void VertexAttribI2ui(
+        static abstract void VertexAttribI2(
             [NativeTypeName("GLuint")] uint index,
             [NativeTypeName("GLuint")] uint x,
             [NativeTypeName("GLuint")] uint y
@@ -26656,7 +26656,7 @@ public unsafe partial interface IGL
         [SupportedApiProfile("glcore", MinVersion = "3.2")]
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glVertexAttribI2uiv")]
-        static abstract void VertexAttribI2uiv(
+        static abstract void VertexAttribI2(
             [NativeTypeName("GLuint")] uint index,
             [NativeTypeName("const GLuint *")] Ref<uint> v
         );
@@ -26671,7 +26671,7 @@ public unsafe partial interface IGL
         [SupportedApiProfile("glcore", MinVersion = "3.2")]
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glVertexAttribI3i")]
-        static abstract void VertexAttribI3i(
+        static abstract void VertexAttribI3(
             [NativeTypeName("GLuint")] uint index,
             [NativeTypeName("GLint")] int x,
             [NativeTypeName("GLint")] int y,
@@ -26690,7 +26690,7 @@ public unsafe partial interface IGL
         [SupportedApiProfile("glcore", MinVersion = "3.2")]
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glVertexAttribI3iv")]
-        static abstract void VertexAttribI3iv(
+        static abstract void VertexAttribI3(
             [NativeTypeName("GLuint")] uint index,
             [NativeTypeName("const GLint *")] Ref<int> v
         );
@@ -26705,7 +26705,7 @@ public unsafe partial interface IGL
         [SupportedApiProfile("glcore", MinVersion = "3.2")]
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glVertexAttribI3ui")]
-        static abstract void VertexAttribI3ui(
+        static abstract void VertexAttribI3(
             [NativeTypeName("GLuint")] uint index,
             [NativeTypeName("GLuint")] uint x,
             [NativeTypeName("GLuint")] uint y,
@@ -26724,7 +26724,7 @@ public unsafe partial interface IGL
         [SupportedApiProfile("glcore", MinVersion = "3.2")]
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glVertexAttribI3uiv")]
-        static abstract void VertexAttribI3uiv(
+        static abstract void VertexAttribI3(
             [NativeTypeName("GLuint")] uint index,
             [NativeTypeName("const GLuint *")] Ref<uint> v
         );
@@ -26739,7 +26739,7 @@ public unsafe partial interface IGL
         [SupportedApiProfile("glcore", MinVersion = "3.2")]
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glVertexAttribI4bv")]
-        static abstract void VertexAttribI4bv(
+        static abstract void VertexAttribI4(
             [NativeTypeName("GLuint")] uint index,
             [NativeTypeName("const GLbyte *")] Ref<sbyte> v
         );
@@ -26754,7 +26754,7 @@ public unsafe partial interface IGL
         [SupportedApiProfile("glcore", MinVersion = "3.2")]
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glVertexAttribI4i")]
-        static abstract void VertexAttribI4i(
+        static abstract void VertexAttribI4(
             [NativeTypeName("GLuint")] uint index,
             [NativeTypeName("GLint")] int x,
             [NativeTypeName("GLint")] int y,
@@ -26775,7 +26775,7 @@ public unsafe partial interface IGL
         [SupportedApiProfile("glcore", MinVersion = "3.2")]
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glVertexAttribI4iv")]
-        static abstract void VertexAttribI4iv(
+        static abstract void VertexAttribI4(
             [NativeTypeName("GLuint")] uint index,
             [NativeTypeName("const GLint *")] Ref<int> v
         );
@@ -26790,7 +26790,7 @@ public unsafe partial interface IGL
         [SupportedApiProfile("glcore", MinVersion = "3.2")]
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glVertexAttribI4sv")]
-        static abstract void VertexAttribI4sv(
+        static abstract void VertexAttribI4(
             [NativeTypeName("GLuint")] uint index,
             [NativeTypeName("const GLshort *")] Ref<short> v
         );
@@ -26805,7 +26805,7 @@ public unsafe partial interface IGL
         [SupportedApiProfile("glcore", MinVersion = "3.2")]
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glVertexAttribI4ubv")]
-        static abstract void VertexAttribI4ubv(
+        static abstract void VertexAttribI4(
             [NativeTypeName("GLuint")] uint index,
             [NativeTypeName("const GLubyte *")] Ref<byte> v
         );
@@ -26820,7 +26820,7 @@ public unsafe partial interface IGL
         [SupportedApiProfile("glcore", MinVersion = "3.2")]
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glVertexAttribI4ui")]
-        static abstract void VertexAttribI4ui(
+        static abstract void VertexAttribI4(
             [NativeTypeName("GLuint")] uint index,
             [NativeTypeName("GLuint")] uint x,
             [NativeTypeName("GLuint")] uint y,
@@ -26841,7 +26841,7 @@ public unsafe partial interface IGL
         [SupportedApiProfile("glcore", MinVersion = "3.2")]
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glVertexAttribI4uiv")]
-        static abstract void VertexAttribI4uiv(
+        static abstract void VertexAttribI4(
             [NativeTypeName("GLuint")] uint index,
             [NativeTypeName("const GLuint *")] Ref<uint> v
         );
@@ -26856,7 +26856,7 @@ public unsafe partial interface IGL
         [SupportedApiProfile("glcore", MinVersion = "3.2")]
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glVertexAttribI4usv")]
-        static abstract void VertexAttribI4usv(
+        static abstract void VertexAttribI4(
             [NativeTypeName("GLuint")] uint index,
             [NativeTypeName("const GLushort *")] Ref<ushort> v
         );
@@ -26912,7 +26912,7 @@ public unsafe partial interface IGL
         [SupportedApiProfile("glcore", MinVersion = "3.2")]
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glVertexAttribL1d")]
-        static abstract void VertexAttribL1d(
+        static abstract void VertexAttribL1(
             [NativeTypeName("GLuint")] uint index,
             [NativeTypeName("GLdouble")] double x
         );
@@ -26927,7 +26927,7 @@ public unsafe partial interface IGL
         [SupportedApiProfile("glcore", MinVersion = "3.2")]
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glVertexAttribL1dv")]
-        static abstract void VertexAttribL1dv(
+        static abstract void VertexAttribL1(
             [NativeTypeName("GLuint")] uint index,
             [NativeTypeName("const GLdouble *")] Ref<double> v
         );
@@ -26990,7 +26990,7 @@ public unsafe partial interface IGL
         [SupportedApiProfile("glcore", MinVersion = "3.2")]
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glVertexAttribL2d")]
-        static abstract void VertexAttribL2d(
+        static abstract void VertexAttribL2(
             [NativeTypeName("GLuint")] uint index,
             [NativeTypeName("GLdouble")] double x,
             [NativeTypeName("GLdouble")] double y
@@ -27007,7 +27007,7 @@ public unsafe partial interface IGL
         [SupportedApiProfile("glcore", MinVersion = "3.2")]
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glVertexAttribL2dv")]
-        static abstract void VertexAttribL2dv(
+        static abstract void VertexAttribL2(
             [NativeTypeName("GLuint")] uint index,
             [NativeTypeName("const GLdouble *")] Ref<double> v
         );
@@ -27056,7 +27056,7 @@ public unsafe partial interface IGL
         [SupportedApiProfile("glcore", MinVersion = "3.2")]
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glVertexAttribL3d")]
-        static abstract void VertexAttribL3d(
+        static abstract void VertexAttribL3(
             [NativeTypeName("GLuint")] uint index,
             [NativeTypeName("GLdouble")] double x,
             [NativeTypeName("GLdouble")] double y,
@@ -27075,7 +27075,7 @@ public unsafe partial interface IGL
         [SupportedApiProfile("glcore", MinVersion = "3.2")]
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glVertexAttribL3dv")]
-        static abstract void VertexAttribL3dv(
+        static abstract void VertexAttribL3(
             [NativeTypeName("GLuint")] uint index,
             [NativeTypeName("const GLdouble *")] Ref<double> v
         );
@@ -27126,7 +27126,7 @@ public unsafe partial interface IGL
         [SupportedApiProfile("glcore", MinVersion = "3.2")]
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glVertexAttribL4d")]
-        static abstract void VertexAttribL4d(
+        static abstract void VertexAttribL4(
             [NativeTypeName("GLuint")] uint index,
             [NativeTypeName("GLdouble")] double x,
             [NativeTypeName("GLdouble")] double y,
@@ -27147,7 +27147,7 @@ public unsafe partial interface IGL
         [SupportedApiProfile("glcore", MinVersion = "3.2")]
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glVertexAttribL4dv")]
-        static abstract void VertexAttribL4dv(
+        static abstract void VertexAttribL4(
             [NativeTypeName("GLuint")] uint index,
             [NativeTypeName("const GLdouble *")] Ref<double> v
         );
@@ -27241,7 +27241,7 @@ public unsafe partial interface IGL
         [SupportedApiProfile("glcore", MinVersion = "3.2")]
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glVertexAttribP1ui")]
-        static abstract void VertexAttribP1ui(
+        static abstract void VertexAttribP1(
             [NativeTypeName("GLuint")] uint index,
             [NativeTypeName("GLenum")] uint type,
             [NativeTypeName("GLboolean")] byte normalized,
@@ -27251,7 +27251,7 @@ public unsafe partial interface IGL
         [SupportedApiProfile("glcore", MinVersion = "3.2")]
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glVertexAttribP1uiv")]
-        static abstract void VertexAttribP1uiv(
+        static abstract void VertexAttribP1(
             [NativeTypeName("GLuint")] uint index,
             [NativeTypeName("GLenum")] uint type,
             [NativeTypeName("GLboolean")] byte normalized,
@@ -27261,7 +27261,7 @@ public unsafe partial interface IGL
         [SupportedApiProfile("glcore", MinVersion = "3.2")]
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glVertexAttribP2ui")]
-        static abstract void VertexAttribP2ui(
+        static abstract void VertexAttribP2(
             [NativeTypeName("GLuint")] uint index,
             [NativeTypeName("GLenum")] uint type,
             [NativeTypeName("GLboolean")] byte normalized,
@@ -27271,7 +27271,7 @@ public unsafe partial interface IGL
         [SupportedApiProfile("glcore", MinVersion = "3.2")]
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glVertexAttribP2uiv")]
-        static abstract void VertexAttribP2uiv(
+        static abstract void VertexAttribP2(
             [NativeTypeName("GLuint")] uint index,
             [NativeTypeName("GLenum")] uint type,
             [NativeTypeName("GLboolean")] byte normalized,
@@ -27281,7 +27281,7 @@ public unsafe partial interface IGL
         [SupportedApiProfile("glcore", MinVersion = "3.2")]
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glVertexAttribP3ui")]
-        static abstract void VertexAttribP3ui(
+        static abstract void VertexAttribP3(
             [NativeTypeName("GLuint")] uint index,
             [NativeTypeName("GLenum")] uint type,
             [NativeTypeName("GLboolean")] byte normalized,
@@ -27291,7 +27291,7 @@ public unsafe partial interface IGL
         [SupportedApiProfile("glcore", MinVersion = "3.2")]
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glVertexAttribP3uiv")]
-        static abstract void VertexAttribP3uiv(
+        static abstract void VertexAttribP3(
             [NativeTypeName("GLuint")] uint index,
             [NativeTypeName("GLenum")] uint type,
             [NativeTypeName("GLboolean")] byte normalized,
@@ -27301,7 +27301,7 @@ public unsafe partial interface IGL
         [SupportedApiProfile("glcore", MinVersion = "3.2")]
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glVertexAttribP4ui")]
-        static abstract void VertexAttribP4ui(
+        static abstract void VertexAttribP4(
             [NativeTypeName("GLuint")] uint index,
             [NativeTypeName("GLenum")] uint type,
             [NativeTypeName("GLboolean")] byte normalized,
@@ -27311,7 +27311,7 @@ public unsafe partial interface IGL
         [SupportedApiProfile("glcore", MinVersion = "3.2")]
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glVertexAttribP4uiv")]
-        static abstract void VertexAttribP4uiv(
+        static abstract void VertexAttribP4(
             [NativeTypeName("GLuint")] uint index,
             [NativeTypeName("GLenum")] uint type,
             [NativeTypeName("GLboolean")] byte normalized,
@@ -27533,42 +27533,42 @@ public unsafe partial interface IGL
 
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glVertexP2ui")]
-        static abstract void VertexP2ui(
+        static abstract void VertexP2(
             [NativeTypeName("GLenum")] uint type,
             [NativeTypeName("GLuint")] uint value
         );
 
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glVertexP2uiv")]
-        static abstract void VertexP2uiv(
+        static abstract void VertexP2(
             [NativeTypeName("GLenum")] uint type,
             [NativeTypeName("const GLuint *")] Ref<uint> value
         );
 
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glVertexP3ui")]
-        static abstract void VertexP3ui(
+        static abstract void VertexP3(
             [NativeTypeName("GLenum")] uint type,
             [NativeTypeName("GLuint")] uint value
         );
 
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glVertexP3uiv")]
-        static abstract void VertexP3uiv(
+        static abstract void VertexP3(
             [NativeTypeName("GLenum")] uint type,
             [NativeTypeName("const GLuint *")] Ref<uint> value
         );
 
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glVertexP4ui")]
-        static abstract void VertexP4ui(
+        static abstract void VertexP4(
             [NativeTypeName("GLenum")] uint type,
             [NativeTypeName("GLuint")] uint value
         );
 
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glVertexP4uiv")]
-        static abstract void VertexP4uiv(
+        static abstract void VertexP4(
             [NativeTypeName("GLenum")] uint type,
             [NativeTypeName("const GLuint *")] Ref<uint> value
         );
@@ -27939,7 +27939,7 @@ public unsafe partial interface IGL
         [SupportedApiProfile("glcore", MinVersion = "3.2")]
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glViewportArrayv")]
-        static abstract void ViewportArrayv(
+        static abstract void ViewportArray(
             [NativeTypeName("GLuint")] uint first,
             [NativeTypeName("GLsizei")] int count,
             [NativeTypeName("const GLfloat *")] Ref<float> v
@@ -27964,7 +27964,7 @@ public unsafe partial interface IGL
         [SupportedApiProfile("glcore", MinVersion = "3.2")]
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glViewportIndexedf")]
-        static abstract void ViewportIndexedf(
+        static abstract void ViewportIndexed(
             [NativeTypeName("GLuint")] uint index,
             [NativeTypeName("GLfloat")] float x,
             [NativeTypeName("GLfloat")] float y,
@@ -27995,7 +27995,7 @@ public unsafe partial interface IGL
         [SupportedApiProfile("glcore", MinVersion = "3.2")]
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glViewportIndexedfv")]
-        static abstract void ViewportIndexedfv(
+        static abstract void ViewportIndexed(
             [NativeTypeName("GLuint")] uint index,
             [NativeTypeName("const GLfloat *")] Ref<float> v
         );
@@ -28168,7 +28168,7 @@ public unsafe partial interface IGL
 
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glWindowPos2d")]
-        static abstract void WindowPos2d(
+        static abstract void WindowPos2(
             [NativeTypeName("GLdouble")] double x,
             [NativeTypeName("GLdouble")] double y
         );
@@ -28189,7 +28189,7 @@ public unsafe partial interface IGL
 
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glWindowPos2dv")]
-        static abstract void WindowPos2dv([NativeTypeName("const GLdouble *")] Ref<double> v);
+        static abstract void WindowPos2([NativeTypeName("const GLdouble *")] Ref<double> v);
 
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glWindowPos2dvARB")]
@@ -28201,7 +28201,7 @@ public unsafe partial interface IGL
 
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glWindowPos2f")]
-        static abstract void WindowPos2f(
+        static abstract void WindowPos2(
             [NativeTypeName("GLfloat")] float x,
             [NativeTypeName("GLfloat")] float y
         );
@@ -28222,7 +28222,7 @@ public unsafe partial interface IGL
 
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glWindowPos2fv")]
-        static abstract void WindowPos2fv([NativeTypeName("const GLfloat *")] Ref<float> v);
+        static abstract void WindowPos2([NativeTypeName("const GLfloat *")] Ref<float> v);
 
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glWindowPos2fvARB")]
@@ -28234,7 +28234,7 @@ public unsafe partial interface IGL
 
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glWindowPos2i")]
-        static abstract void WindowPos2i(
+        static abstract void WindowPos2(
             [NativeTypeName("GLint")] int x,
             [NativeTypeName("GLint")] int y
         );
@@ -28255,7 +28255,7 @@ public unsafe partial interface IGL
 
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glWindowPos2iv")]
-        static abstract void WindowPos2iv([NativeTypeName("const GLint *")] Ref<int> v);
+        static abstract void WindowPos2([NativeTypeName("const GLint *")] Ref<int> v);
 
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glWindowPos2ivARB")]
@@ -28267,7 +28267,7 @@ public unsafe partial interface IGL
 
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glWindowPos2s")]
-        static abstract void WindowPos2s(
+        static abstract void WindowPos2(
             [NativeTypeName("GLshort")] short x,
             [NativeTypeName("GLshort")] short y
         );
@@ -28288,7 +28288,7 @@ public unsafe partial interface IGL
 
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glWindowPos2sv")]
-        static abstract void WindowPos2sv([NativeTypeName("const GLshort *")] Ref<short> v);
+        static abstract void WindowPos2([NativeTypeName("const GLshort *")] Ref<short> v);
 
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glWindowPos2svARB")]
@@ -28300,7 +28300,7 @@ public unsafe partial interface IGL
 
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glWindowPos3d")]
-        static abstract void WindowPos3d(
+        static abstract void WindowPos3(
             [NativeTypeName("GLdouble")] double x,
             [NativeTypeName("GLdouble")] double y,
             [NativeTypeName("GLdouble")] double z
@@ -28324,7 +28324,7 @@ public unsafe partial interface IGL
 
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glWindowPos3dv")]
-        static abstract void WindowPos3dv([NativeTypeName("const GLdouble *")] Ref<double> v);
+        static abstract void WindowPos3([NativeTypeName("const GLdouble *")] Ref<double> v);
 
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glWindowPos3dvARB")]
@@ -28336,7 +28336,7 @@ public unsafe partial interface IGL
 
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glWindowPos3f")]
-        static abstract void WindowPos3f(
+        static abstract void WindowPos3(
             [NativeTypeName("GLfloat")] float x,
             [NativeTypeName("GLfloat")] float y,
             [NativeTypeName("GLfloat")] float z
@@ -28360,7 +28360,7 @@ public unsafe partial interface IGL
 
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glWindowPos3fv")]
-        static abstract void WindowPos3fv([NativeTypeName("const GLfloat *")] Ref<float> v);
+        static abstract void WindowPos3([NativeTypeName("const GLfloat *")] Ref<float> v);
 
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glWindowPos3fvARB")]
@@ -28372,7 +28372,7 @@ public unsafe partial interface IGL
 
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glWindowPos3i")]
-        static abstract void WindowPos3i(
+        static abstract void WindowPos3(
             [NativeTypeName("GLint")] int x,
             [NativeTypeName("GLint")] int y,
             [NativeTypeName("GLint")] int z
@@ -28396,7 +28396,7 @@ public unsafe partial interface IGL
 
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glWindowPos3iv")]
-        static abstract void WindowPos3iv([NativeTypeName("const GLint *")] Ref<int> v);
+        static abstract void WindowPos3([NativeTypeName("const GLint *")] Ref<int> v);
 
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glWindowPos3ivARB")]
@@ -28408,7 +28408,7 @@ public unsafe partial interface IGL
 
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glWindowPos3s")]
-        static abstract void WindowPos3s(
+        static abstract void WindowPos3(
             [NativeTypeName("GLshort")] short x,
             [NativeTypeName("GLshort")] short y,
             [NativeTypeName("GLshort")] short z
@@ -28432,7 +28432,7 @@ public unsafe partial interface IGL
 
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glWindowPos3sv")]
-        static abstract void WindowPos3sv([NativeTypeName("const GLshort *")] Ref<short> v);
+        static abstract void WindowPos3([NativeTypeName("const GLshort *")] Ref<short> v);
 
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glWindowPos3svARB")]
@@ -29445,7 +29445,7 @@ public unsafe partial interface IGL
     [SupportedApiProfile("glcore", MinVersion = "3.2")]
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glBlendEquationi")]
-    void BlendEquationi([NativeTypeName("GLuint")] uint buf, [NativeTypeName("GLenum")] uint mode);
+    void BlendEquation([NativeTypeName("GLuint")] uint buf, [NativeTypeName("GLenum")] uint mode);
 
     [SupportedApiProfile("glcore", MinVersion = "3.2")]
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
@@ -29499,7 +29499,7 @@ public unsafe partial interface IGL
     [SupportedApiProfile("glcore", MinVersion = "3.2")]
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glBlendEquationSeparatei")]
-    void BlendEquationSeparatei(
+    void BlendEquationSeparate(
         [NativeTypeName("GLuint")] uint buf,
         [NativeTypeName("GLenum")] uint modeRGB,
         [NativeTypeName("GLenum")] uint modeAlpha
@@ -29558,7 +29558,7 @@ public unsafe partial interface IGL
     [SupportedApiProfile("glcore", MinVersion = "3.2")]
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glBlendFunci")]
-    void BlendFunci(
+    void BlendFunc(
         [NativeTypeName("GLuint")] uint buf,
         [NativeTypeName("GLenum")] uint src,
         [NativeTypeName("GLenum")] uint dst
@@ -29620,7 +29620,7 @@ public unsafe partial interface IGL
     [SupportedApiProfile("glcore", MinVersion = "3.2")]
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glBlendFuncSeparatei")]
-    void BlendFuncSeparatei(
+    void BlendFuncSeparate(
         [NativeTypeName("GLuint")] uint buf,
         [NativeTypeName("GLenum")] uint srcRGB,
         [NativeTypeName("GLenum")] uint dstRGB,
@@ -30045,7 +30045,7 @@ public unsafe partial interface IGL
     [SupportedApiProfile("glcore", MinVersion = "3.2")]
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glClearBufferfi")]
-    void ClearBufferfi(
+    void ClearBuffer(
         [NativeTypeName("GLenum")] uint buffer,
         [NativeTypeName("GLint")] int drawbuffer,
         [NativeTypeName("GLfloat")] float depth,
@@ -30055,7 +30055,7 @@ public unsafe partial interface IGL
     [SupportedApiProfile("glcore", MinVersion = "3.2")]
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glClearBufferfv")]
-    void ClearBufferfv(
+    void ClearBuffer(
         [NativeTypeName("GLenum")] uint buffer,
         [NativeTypeName("GLint")] int drawbuffer,
         [NativeTypeName("const GLfloat *")] Ref<float> value
@@ -30064,7 +30064,7 @@ public unsafe partial interface IGL
     [SupportedApiProfile("glcore", MinVersion = "3.2")]
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glClearBufferiv")]
-    void ClearBufferiv(
+    void ClearBuffer(
         [NativeTypeName("GLenum")] uint buffer,
         [NativeTypeName("GLint")] int drawbuffer,
         [NativeTypeName("const GLint *")] Ref<int> value
@@ -30086,7 +30086,7 @@ public unsafe partial interface IGL
     [SupportedApiProfile("glcore", MinVersion = "3.2")]
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glClearBufferuiv")]
-    void ClearBufferuiv(
+    void ClearBuffer(
         [NativeTypeName("GLenum")] uint buffer,
         [NativeTypeName("GLint")] int drawbuffer,
         [NativeTypeName("const GLuint *")] Ref<uint> value
@@ -30156,7 +30156,7 @@ public unsafe partial interface IGL
     [SupportedApiProfile("gles1", MaxVersion = "2.0")]
     [SupportedApiProfile("gles2", MinVersion = "2.0")]
     [NativeFunction("opengl", EntryPoint = "glClearDepthf")]
-    void ClearDepthf([NativeTypeName("GLfloat")] float d);
+    void ClearDepth([NativeTypeName("GLfloat")] float d);
 
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [SupportedApiProfile("gles1", MaxVersion = "2.0")]
@@ -30227,7 +30227,7 @@ public unsafe partial interface IGL
     [SupportedApiProfile("glcore", MinVersion = "3.2")]
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glClearNamedFramebufferfi")]
-    void ClearNamedFramebufferfi(
+    void ClearNamedFramebuffer(
         [NativeTypeName("GLuint")] uint framebuffer,
         [NativeTypeName("GLenum")] uint buffer,
         [NativeTypeName("GLint")] int drawbuffer,
@@ -30238,7 +30238,7 @@ public unsafe partial interface IGL
     [SupportedApiProfile("glcore", MinVersion = "3.2")]
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glClearNamedFramebufferfv")]
-    void ClearNamedFramebufferfv(
+    void ClearNamedFramebuffer(
         [NativeTypeName("GLuint")] uint framebuffer,
         [NativeTypeName("GLenum")] uint buffer,
         [NativeTypeName("GLint")] int drawbuffer,
@@ -30248,7 +30248,7 @@ public unsafe partial interface IGL
     [SupportedApiProfile("glcore", MinVersion = "3.2")]
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glClearNamedFramebufferiv")]
-    void ClearNamedFramebufferiv(
+    void ClearNamedFramebuffer(
         [NativeTypeName("GLuint")] uint framebuffer,
         [NativeTypeName("GLenum")] uint buffer,
         [NativeTypeName("GLint")] int drawbuffer,
@@ -30258,7 +30258,7 @@ public unsafe partial interface IGL
     [SupportedApiProfile("glcore", MinVersion = "3.2")]
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glClearNamedFramebufferuiv")]
-    void ClearNamedFramebufferuiv(
+    void ClearNamedFramebuffer(
         [NativeTypeName("GLuint")] uint framebuffer,
         [NativeTypeName("GLenum")] uint buffer,
         [NativeTypeName("GLint")] int drawbuffer,
@@ -30401,7 +30401,7 @@ public unsafe partial interface IGL
 
     [SupportedApiProfile("gles1", MaxVersion = "2.0")]
     [NativeFunction("opengl", EntryPoint = "glClipPlanef")]
-    void ClipPlanef(
+    void ClipPlane(
         [NativeTypeName("GLenum")] uint p,
         [NativeTypeName("const GLfloat *")] Ref<float> eqn
     );
@@ -30445,7 +30445,7 @@ public unsafe partial interface IGL
 
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glColor3b")]
-    void Color3b(
+    void Color3(
         [NativeTypeName("GLbyte")] sbyte red,
         [NativeTypeName("GLbyte")] sbyte green,
         [NativeTypeName("GLbyte")] sbyte blue
@@ -30453,11 +30453,11 @@ public unsafe partial interface IGL
 
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glColor3bv")]
-    void Color3bv([NativeTypeName("const GLbyte *")] Ref<sbyte> v);
+    void Color3([NativeTypeName("const GLbyte *")] Ref<sbyte> v);
 
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glColor3d")]
-    void Color3d(
+    void Color3(
         [NativeTypeName("GLdouble")] double red,
         [NativeTypeName("GLdouble")] double green,
         [NativeTypeName("GLdouble")] double blue
@@ -30465,11 +30465,11 @@ public unsafe partial interface IGL
 
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glColor3dv")]
-    void Color3dv([NativeTypeName("const GLdouble *")] Ref<double> v);
+    void Color3([NativeTypeName("const GLdouble *")] Ref<double> v);
 
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glColor3f")]
-    void Color3f(
+    void Color3(
         [NativeTypeName("GLfloat")] float red,
         [NativeTypeName("GLfloat")] float green,
         [NativeTypeName("GLfloat")] float blue
@@ -30477,7 +30477,7 @@ public unsafe partial interface IGL
 
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glColor3fv")]
-    void Color3fv([NativeTypeName("const GLfloat *")] Ref<float> v);
+    void Color3([NativeTypeName("const GLfloat *")] Ref<float> v);
 
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glColor3fVertex3fSUN")]
@@ -30511,7 +30511,7 @@ public unsafe partial interface IGL
 
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glColor3i")]
-    void Color3i(
+    void Color3(
         [NativeTypeName("GLint")] int red,
         [NativeTypeName("GLint")] int green,
         [NativeTypeName("GLint")] int blue
@@ -30519,11 +30519,11 @@ public unsafe partial interface IGL
 
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glColor3iv")]
-    void Color3iv([NativeTypeName("const GLint *")] Ref<int> v);
+    void Color3([NativeTypeName("const GLint *")] Ref<int> v);
 
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glColor3s")]
-    void Color3s(
+    void Color3(
         [NativeTypeName("GLshort")] short red,
         [NativeTypeName("GLshort")] short green,
         [NativeTypeName("GLshort")] short blue
@@ -30531,11 +30531,11 @@ public unsafe partial interface IGL
 
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glColor3sv")]
-    void Color3sv([NativeTypeName("const GLshort *")] Ref<short> v);
+    void Color3([NativeTypeName("const GLshort *")] Ref<short> v);
 
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glColor3ub")]
-    void Color3ub(
+    void Color3(
         [NativeTypeName("GLubyte")] byte red,
         [NativeTypeName("GLubyte")] byte green,
         [NativeTypeName("GLubyte")] byte blue
@@ -30543,11 +30543,11 @@ public unsafe partial interface IGL
 
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glColor3ubv")]
-    void Color3ubv([NativeTypeName("const GLubyte *")] Ref<byte> v);
+    void Color3([NativeTypeName("const GLubyte *")] Ref<byte> v);
 
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glColor3ui")]
-    void Color3ui(
+    void Color3(
         [NativeTypeName("GLuint")] uint red,
         [NativeTypeName("GLuint")] uint green,
         [NativeTypeName("GLuint")] uint blue
@@ -30555,11 +30555,11 @@ public unsafe partial interface IGL
 
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glColor3uiv")]
-    void Color3uiv([NativeTypeName("const GLuint *")] Ref<uint> v);
+    void Color3([NativeTypeName("const GLuint *")] Ref<uint> v);
 
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glColor3us")]
-    void Color3us(
+    void Color3(
         [NativeTypeName("GLushort")] ushort red,
         [NativeTypeName("GLushort")] ushort green,
         [NativeTypeName("GLushort")] ushort blue
@@ -30567,7 +30567,7 @@ public unsafe partial interface IGL
 
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glColor3usv")]
-    void Color3usv([NativeTypeName("const GLushort *")] Ref<ushort> v);
+    void Color3([NativeTypeName("const GLushort *")] Ref<ushort> v);
 
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glColor3xOES")]
@@ -30583,7 +30583,7 @@ public unsafe partial interface IGL
 
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glColor4b")]
-    void Color4b(
+    void Color4(
         [NativeTypeName("GLbyte")] sbyte red,
         [NativeTypeName("GLbyte")] sbyte green,
         [NativeTypeName("GLbyte")] sbyte blue,
@@ -30592,11 +30592,11 @@ public unsafe partial interface IGL
 
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glColor4bv")]
-    void Color4bv([NativeTypeName("const GLbyte *")] Ref<sbyte> v);
+    void Color4([NativeTypeName("const GLbyte *")] Ref<sbyte> v);
 
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glColor4d")]
-    void Color4d(
+    void Color4(
         [NativeTypeName("GLdouble")] double red,
         [NativeTypeName("GLdouble")] double green,
         [NativeTypeName("GLdouble")] double blue,
@@ -30605,12 +30605,12 @@ public unsafe partial interface IGL
 
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glColor4dv")]
-    void Color4dv([NativeTypeName("const GLdouble *")] Ref<double> v);
+    void Color4([NativeTypeName("const GLdouble *")] Ref<double> v);
 
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [SupportedApiProfile("gles1", MaxVersion = "2.0")]
     [NativeFunction("opengl", EntryPoint = "glColor4f")]
-    void Color4f(
+    void Color4(
         [NativeTypeName("GLfloat")] float red,
         [NativeTypeName("GLfloat")] float green,
         [NativeTypeName("GLfloat")] float blue,
@@ -30642,7 +30642,7 @@ public unsafe partial interface IGL
 
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glColor4fv")]
-    void Color4fv([NativeTypeName("const GLfloat *")] Ref<float> v);
+    void Color4([NativeTypeName("const GLfloat *")] Ref<float> v);
 
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glColor4hNV")]
@@ -30659,7 +30659,7 @@ public unsafe partial interface IGL
 
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glColor4i")]
-    void Color4i(
+    void Color4(
         [NativeTypeName("GLint")] int red,
         [NativeTypeName("GLint")] int green,
         [NativeTypeName("GLint")] int blue,
@@ -30668,11 +30668,11 @@ public unsafe partial interface IGL
 
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glColor4iv")]
-    void Color4iv([NativeTypeName("const GLint *")] Ref<int> v);
+    void Color4([NativeTypeName("const GLint *")] Ref<int> v);
 
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glColor4s")]
-    void Color4s(
+    void Color4(
         [NativeTypeName("GLshort")] short red,
         [NativeTypeName("GLshort")] short green,
         [NativeTypeName("GLshort")] short blue,
@@ -30681,12 +30681,12 @@ public unsafe partial interface IGL
 
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glColor4sv")]
-    void Color4sv([NativeTypeName("const GLshort *")] Ref<short> v);
+    void Color4([NativeTypeName("const GLshort *")] Ref<short> v);
 
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [SupportedApiProfile("gles1", MaxVersion = "2.0")]
     [NativeFunction("opengl", EntryPoint = "glColor4ub")]
-    void Color4ub(
+    void Color4(
         [NativeTypeName("GLubyte")] byte red,
         [NativeTypeName("GLubyte")] byte green,
         [NativeTypeName("GLubyte")] byte blue,
@@ -30695,7 +30695,7 @@ public unsafe partial interface IGL
 
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glColor4ubv")]
-    void Color4ubv([NativeTypeName("const GLubyte *")] Ref<byte> v);
+    void Color4([NativeTypeName("const GLubyte *")] Ref<byte> v);
 
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glColor4ubVertex2fSUN")]
@@ -30736,7 +30736,7 @@ public unsafe partial interface IGL
 
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glColor4ui")]
-    void Color4ui(
+    void Color4(
         [NativeTypeName("GLuint")] uint red,
         [NativeTypeName("GLuint")] uint green,
         [NativeTypeName("GLuint")] uint blue,
@@ -30745,11 +30745,11 @@ public unsafe partial interface IGL
 
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glColor4uiv")]
-    void Color4uiv([NativeTypeName("const GLuint *")] Ref<uint> v);
+    void Color4([NativeTypeName("const GLuint *")] Ref<uint> v);
 
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glColor4us")]
-    void Color4us(
+    void Color4(
         [NativeTypeName("GLushort")] ushort red,
         [NativeTypeName("GLushort")] ushort green,
         [NativeTypeName("GLushort")] ushort blue,
@@ -30758,7 +30758,7 @@ public unsafe partial interface IGL
 
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glColor4usv")]
-    void Color4usv([NativeTypeName("const GLushort *")] Ref<ushort> v);
+    void Color4([NativeTypeName("const GLushort *")] Ref<ushort> v);
 
     [SupportedApiProfile("gles1", MaxVersion = "2.0")]
     [NativeFunction("opengl", EntryPoint = "glColor4x")]
@@ -30852,7 +30852,7 @@ public unsafe partial interface IGL
     [SupportedApiProfile("glcore", MinVersion = "3.2")]
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glColorMaski")]
-    void ColorMaski(
+    void ColorMask(
         [NativeTypeName("GLuint")] uint index,
         [NativeTypeName("GLboolean")] byte r,
         [NativeTypeName("GLboolean")] byte g,
@@ -30896,22 +30896,22 @@ public unsafe partial interface IGL
 
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glColorP3ui")]
-    void ColorP3ui([NativeTypeName("GLenum")] uint type, [NativeTypeName("GLuint")] uint color);
+    void ColorP3([NativeTypeName("GLenum")] uint type, [NativeTypeName("GLuint")] uint color);
 
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glColorP3uiv")]
-    void ColorP3uiv(
+    void ColorP3(
         [NativeTypeName("GLenum")] uint type,
         [NativeTypeName("const GLuint *")] Ref<uint> color
     );
 
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glColorP4ui")]
-    void ColorP4ui([NativeTypeName("GLenum")] uint type, [NativeTypeName("GLuint")] uint color);
+    void ColorP4([NativeTypeName("GLenum")] uint type, [NativeTypeName("GLuint")] uint color);
 
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glColorP4uiv")]
-    void ColorP4uiv(
+    void ColorP4(
         [NativeTypeName("GLenum")] uint type,
         [NativeTypeName("const GLuint *")] Ref<uint> color
     );
@@ -31000,7 +31000,7 @@ public unsafe partial interface IGL
 
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glColorTableParameterfv")]
-    void ColorTableParameterfv(
+    void ColorTableParameter(
         [NativeTypeName("GLenum")] uint target,
         [NativeTypeName("GLenum")] uint pname,
         [NativeTypeName("const GLfloat *")] Ref<float> @params
@@ -31016,7 +31016,7 @@ public unsafe partial interface IGL
 
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glColorTableParameteriv")]
-    void ColorTableParameteriv(
+    void ColorTableParameter(
         [NativeTypeName("GLenum")] uint target,
         [NativeTypeName("GLenum")] uint pname,
         [NativeTypeName("const GLint *")] Ref<int> @params
@@ -31634,7 +31634,7 @@ public unsafe partial interface IGL
 
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glConvolutionParameterf")]
-    void ConvolutionParameterf(
+    void ConvolutionParameter(
         [NativeTypeName("GLenum")] uint target,
         [NativeTypeName("GLenum")] uint pname,
         [NativeTypeName("GLfloat")] float @params
@@ -31650,7 +31650,7 @@ public unsafe partial interface IGL
 
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glConvolutionParameterfv")]
-    void ConvolutionParameterfv(
+    void ConvolutionParameter(
         [NativeTypeName("GLenum")] uint target,
         [NativeTypeName("GLenum")] uint pname,
         [NativeTypeName("const GLfloat *")] Ref<float> @params
@@ -31666,7 +31666,7 @@ public unsafe partial interface IGL
 
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glConvolutionParameteri")]
-    void ConvolutionParameteri(
+    void ConvolutionParameter(
         [NativeTypeName("GLenum")] uint target,
         [NativeTypeName("GLenum")] uint pname,
         [NativeTypeName("GLint")] int @params
@@ -31682,7 +31682,7 @@ public unsafe partial interface IGL
 
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glConvolutionParameteriv")]
-    void ConvolutionParameteriv(
+    void ConvolutionParameter(
         [NativeTypeName("GLenum")] uint target,
         [NativeTypeName("GLenum")] uint pname,
         [NativeTypeName("const GLint *")] Ref<int> @params
@@ -32465,7 +32465,7 @@ public unsafe partial interface IGL
     [SupportedApiProfile("glcore", MinVersion = "3.2")]
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glCreateShaderProgramv")]
-    uint CreateShaderProgramv(
+    uint CreateShaderProgram(
         [NativeTypeName("GLenum")] uint type,
         [NativeTypeName("GLsizei")] int count,
         [NativeTypeName("const GLchar *const *")] Ref2D<sbyte> strings
@@ -33102,7 +33102,7 @@ public unsafe partial interface IGL
     [SupportedApiProfile("glcore", MinVersion = "3.2")]
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glDepthRangeArrayv")]
-    void DepthRangeArrayv(
+    void DepthRangeArray(
         [NativeTypeName("GLuint")] uint first,
         [NativeTypeName("GLsizei")] int count,
         [NativeTypeName("const GLdouble *")] Ref<double> v
@@ -33121,7 +33121,7 @@ public unsafe partial interface IGL
     [SupportedApiProfile("gles1", MaxVersion = "2.0")]
     [SupportedApiProfile("gles2", MinVersion = "2.0")]
     [NativeFunction("opengl", EntryPoint = "glDepthRangef")]
-    void DepthRangef([NativeTypeName("GLfloat")] float n, [NativeTypeName("GLfloat")] float f);
+    void DepthRange([NativeTypeName("GLfloat")] float n, [NativeTypeName("GLfloat")] float f);
 
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [SupportedApiProfile("gles1", MaxVersion = "2.0")]
@@ -33231,7 +33231,7 @@ public unsafe partial interface IGL
     [SupportedApiProfile("glcore", MinVersion = "3.2")]
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glDisablei")]
-    void Disablei([NativeTypeName("GLenum")] uint target, [NativeTypeName("GLuint")] uint index);
+    void Disable([NativeTypeName("GLenum")] uint target, [NativeTypeName("GLuint")] uint index);
 
     [SupportedApiProfile("gles2", MinVersion = "2.0")]
     [NativeFunction("opengl", EntryPoint = "glDisableiEXT")]
@@ -34021,7 +34021,7 @@ public unsafe partial interface IGL
 
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glEdgeFlagv")]
-    void EdgeFlagv([NativeTypeName("const GLboolean *")] Ref<byte> flag);
+    void EdgeFlag([NativeTypeName("const GLboolean *")] Ref<byte> flag);
 
     [SupportedApiProfile("gles1", MaxVersion = "2.0")]
     [SupportedApiProfile("gles2", MinVersion = "2.0")]
@@ -34109,7 +34109,7 @@ public unsafe partial interface IGL
     [SupportedApiProfile("glcore", MinVersion = "3.2")]
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glEnablei")]
-    void Enablei([NativeTypeName("GLenum")] uint target, [NativeTypeName("GLuint")] uint index);
+    void Enable([NativeTypeName("GLenum")] uint target, [NativeTypeName("GLuint")] uint index);
 
     [SupportedApiProfile("gles2", MinVersion = "2.0")]
     [NativeFunction("opengl", EntryPoint = "glEnableiEXT")]
@@ -34268,19 +34268,19 @@ public unsafe partial interface IGL
 
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glEvalCoord1d")]
-    void EvalCoord1d([NativeTypeName("GLdouble")] double u);
+    void EvalCoord1([NativeTypeName("GLdouble")] double u);
 
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glEvalCoord1dv")]
-    void EvalCoord1dv([NativeTypeName("const GLdouble *")] Ref<double> u);
+    void EvalCoord1([NativeTypeName("const GLdouble *")] Ref<double> u);
 
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glEvalCoord1f")]
-    void EvalCoord1f([NativeTypeName("GLfloat")] float u);
+    void EvalCoord1([NativeTypeName("GLfloat")] float u);
 
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glEvalCoord1fv")]
-    void EvalCoord1fv([NativeTypeName("const GLfloat *")] Ref<float> u);
+    void EvalCoord1([NativeTypeName("const GLfloat *")] Ref<float> u);
 
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glEvalCoord1xOES")]
@@ -34292,19 +34292,19 @@ public unsafe partial interface IGL
 
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glEvalCoord2d")]
-    void EvalCoord2d([NativeTypeName("GLdouble")] double u, [NativeTypeName("GLdouble")] double v);
+    void EvalCoord2([NativeTypeName("GLdouble")] double u, [NativeTypeName("GLdouble")] double v);
 
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glEvalCoord2dv")]
-    void EvalCoord2dv([NativeTypeName("const GLdouble *")] Ref<double> u);
+    void EvalCoord2([NativeTypeName("const GLdouble *")] Ref<double> u);
 
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glEvalCoord2f")]
-    void EvalCoord2f([NativeTypeName("GLfloat")] float u, [NativeTypeName("GLfloat")] float v);
+    void EvalCoord2([NativeTypeName("GLfloat")] float u, [NativeTypeName("GLfloat")] float v);
 
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glEvalCoord2fv")]
-    void EvalCoord2fv([NativeTypeName("const GLfloat *")] Ref<float> u);
+    void EvalCoord2([NativeTypeName("const GLfloat *")] Ref<float> u);
 
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glEvalCoord2xOES")]
@@ -34635,7 +34635,7 @@ public unsafe partial interface IGL
 
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glFogCoordd")]
-    void FogCoordd([NativeTypeName("GLdouble")] double coord);
+    void FogCoord([NativeTypeName("GLdouble")] double coord);
 
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glFogCoorddEXT")]
@@ -34643,7 +34643,7 @@ public unsafe partial interface IGL
 
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glFogCoorddv")]
-    void FogCoorddv([NativeTypeName("const GLdouble *")] Ref<double> coord);
+    void FogCoord([NativeTypeName("const GLdouble *")] Ref<double> coord);
 
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glFogCoorddvEXT")]
@@ -34651,7 +34651,7 @@ public unsafe partial interface IGL
 
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glFogCoordf")]
-    void FogCoordf([NativeTypeName("GLfloat")] float coord);
+    void FogCoord([NativeTypeName("GLfloat")] float coord);
 
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glFogCoordfEXT")]
@@ -34667,7 +34667,7 @@ public unsafe partial interface IGL
 
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glFogCoordfv")]
-    void FogCoordfv([NativeTypeName("const GLfloat *")] Ref<float> coord);
+    void FogCoord([NativeTypeName("const GLfloat *")] Ref<float> coord);
 
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glFogCoordfvEXT")]
@@ -34709,7 +34709,7 @@ public unsafe partial interface IGL
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [SupportedApiProfile("gles1", MaxVersion = "2.0")]
     [NativeFunction("opengl", EntryPoint = "glFogf")]
-    void Fogf([NativeTypeName("GLenum")] uint pname, [NativeTypeName("GLfloat")] float param1);
+    void Fog([NativeTypeName("GLenum")] uint pname, [NativeTypeName("GLfloat")] float param1);
 
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glFogFuncSGIS")]
@@ -34721,18 +34721,18 @@ public unsafe partial interface IGL
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [SupportedApiProfile("gles1", MaxVersion = "2.0")]
     [NativeFunction("opengl", EntryPoint = "glFogfv")]
-    void Fogfv(
+    void Fog(
         [NativeTypeName("GLenum")] uint pname,
         [NativeTypeName("const GLfloat *")] Ref<float> @params
     );
 
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glFogi")]
-    void Fogi([NativeTypeName("GLenum")] uint pname, [NativeTypeName("GLint")] int param1);
+    void Fog([NativeTypeName("GLenum")] uint pname, [NativeTypeName("GLint")] int param1);
 
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glFogiv")]
-    void Fogiv(
+    void Fog(
         [NativeTypeName("GLenum")] uint pname,
         [NativeTypeName("const GLint *")] Ref<int> @params
     );
@@ -34748,7 +34748,7 @@ public unsafe partial interface IGL
 
     [SupportedApiProfile("gles1", MaxVersion = "2.0")]
     [NativeFunction("opengl", EntryPoint = "glFogxv")]
-    void Fogxv(
+    void Fogx(
         [NativeTypeName("GLenum")] uint pname,
         [NativeTypeName("const GLfixed *")] Ref<int> param1
     );
@@ -34919,7 +34919,7 @@ public unsafe partial interface IGL
     [SupportedApiProfile("glcore", MinVersion = "3.2")]
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glFramebufferParameteri")]
-    void FramebufferParameteri(
+    void FramebufferParameter(
         [NativeTypeName("GLenum")] uint target,
         [NativeTypeName("GLenum")] uint pname,
         [NativeTypeName("GLint")] int param2
@@ -35305,7 +35305,7 @@ public unsafe partial interface IGL
 
     [SupportedApiProfile("gles1", MaxVersion = "2.0")]
     [NativeFunction("opengl", EntryPoint = "glFrustumf")]
-    void Frustumf(
+    void Frustum(
         [NativeTypeName("GLfloat")] float l,
         [NativeTypeName("GLfloat")] float r,
         [NativeTypeName("GLfloat")] float b,
@@ -35654,7 +35654,7 @@ public unsafe partial interface IGL
     [SupportedApiProfile("glcore", MinVersion = "3.2")]
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glGetActiveAtomicCounterBufferiv")]
-    void GetActiveAtomicCounterBufferiv(
+    void GetActiveAtomicCounterBuffer(
         [NativeTypeName("GLuint")] uint program,
         [NativeTypeName("GLuint")] uint bufferIndex,
         [NativeTypeName("GLenum")] uint pname,
@@ -35702,7 +35702,7 @@ public unsafe partial interface IGL
     [SupportedApiProfile("glcore", MinVersion = "3.2")]
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glGetActiveSubroutineUniformiv")]
-    void GetActiveSubroutineUniformiv(
+    void GetActiveSubroutineUniform(
         [NativeTypeName("GLuint")] uint program,
         [NativeTypeName("GLenum")] uint shadertype,
         [NativeTypeName("GLuint")] uint index,
@@ -35751,7 +35751,7 @@ public unsafe partial interface IGL
     [SupportedApiProfile("glcore", MinVersion = "3.2")]
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glGetActiveUniformBlockiv")]
-    void GetActiveUniformBlockiv(
+    void GetActiveUniformBlock(
         [NativeTypeName("GLuint")] uint program,
         [NativeTypeName("GLuint")] uint uniformBlockIndex,
         [NativeTypeName("GLenum")] uint pname,
@@ -35783,7 +35783,7 @@ public unsafe partial interface IGL
     [SupportedApiProfile("glcore", MinVersion = "3.2")]
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glGetActiveUniformsiv")]
-    void GetActiveUniformsiv(
+    void GetActiveUniforms(
         [NativeTypeName("GLuint")] uint program,
         [NativeTypeName("GLsizei")] int uniformCount,
         [NativeTypeName("const GLuint *")] Ref<uint> uniformIndices,
@@ -35860,7 +35860,7 @@ public unsafe partial interface IGL
     [SupportedApiProfile("glcore", MinVersion = "3.2")]
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glGetBooleani_v")]
-    void GetBooleaniV(
+    void GetBoolean(
         [NativeTypeName("GLenum")] uint target,
         [NativeTypeName("GLuint")] uint index,
         [NativeTypeName("GLboolean *")] Ref<byte> data
@@ -35880,7 +35880,7 @@ public unsafe partial interface IGL
     [SupportedApiProfile("gles1", MaxVersion = "2.0")]
     [SupportedApiProfile("gles2", MinVersion = "2.0")]
     [NativeFunction("opengl", EntryPoint = "glGetBooleanv")]
-    void GetBooleanv(
+    void GetBoolean(
         [NativeTypeName("GLenum")] uint pname,
         [NativeTypeName("GLboolean *")] Ref<byte> data
     );
@@ -35888,7 +35888,7 @@ public unsafe partial interface IGL
     [SupportedApiProfile("glcore", MinVersion = "3.2")]
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glGetBufferParameteri64v")]
-    void GetBufferParameteri64v(
+    void GetBufferParameter(
         [NativeTypeName("GLenum")] uint target,
         [NativeTypeName("GLenum")] uint pname,
         [NativeTypeName("GLint64 *")] Ref<long> @params
@@ -35899,7 +35899,7 @@ public unsafe partial interface IGL
     [SupportedApiProfile("gles1", MaxVersion = "2.0")]
     [SupportedApiProfile("gles2", MinVersion = "2.0")]
     [NativeFunction("opengl", EntryPoint = "glGetBufferParameteriv")]
-    void GetBufferParameteriv(
+    void GetBufferParameter(
         [NativeTypeName("GLenum")] uint target,
         [NativeTypeName("GLenum")] uint pname,
         [NativeTypeName("GLint *")] Ref<int> @params
@@ -35925,7 +35925,7 @@ public unsafe partial interface IGL
     [SupportedApiProfile("glcore", MinVersion = "3.2")]
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glGetBufferPointerv")]
-    void GetBufferPointerv(
+    void GetBufferPointer(
         [NativeTypeName("GLenum")] uint target,
         [NativeTypeName("GLenum")] uint pname,
         Ref2D @params
@@ -35976,7 +35976,7 @@ public unsafe partial interface IGL
 
     [SupportedApiProfile("gles1", MaxVersion = "2.0")]
     [NativeFunction("opengl", EntryPoint = "glGetClipPlanef")]
-    void GetClipPlanef(
+    void GetClipPlane(
         [NativeTypeName("GLenum")] uint plane,
         [NativeTypeName("GLfloat *")] Ref<float> equation
     );
@@ -36024,7 +36024,7 @@ public unsafe partial interface IGL
 
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glGetColorTableParameterfv")]
-    void GetColorTableParameterfv(
+    void GetColorTableParameter(
         [NativeTypeName("GLenum")] uint target,
         [NativeTypeName("GLenum")] uint pname,
         [NativeTypeName("GLfloat *")] Ref<float> @params
@@ -36048,7 +36048,7 @@ public unsafe partial interface IGL
 
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glGetColorTableParameteriv")]
-    void GetColorTableParameteriv(
+    void GetColorTableParameter(
         [NativeTypeName("GLenum")] uint target,
         [NativeTypeName("GLenum")] uint pname,
         [NativeTypeName("GLint *")] Ref<int> @params
@@ -36217,7 +36217,7 @@ public unsafe partial interface IGL
 
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glGetConvolutionParameterfv")]
-    void GetConvolutionParameterfv(
+    void GetConvolutionParameter(
         [NativeTypeName("GLenum")] uint target,
         [NativeTypeName("GLenum")] uint pname,
         [NativeTypeName("GLfloat *")] Ref<float> @params
@@ -36233,7 +36233,7 @@ public unsafe partial interface IGL
 
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glGetConvolutionParameteriv")]
-    void GetConvolutionParameteriv(
+    void GetConvolutionParameter(
         [NativeTypeName("GLenum")] uint target,
         [NativeTypeName("GLenum")] uint pname,
         [NativeTypeName("GLint *")] Ref<int> @params
@@ -36331,7 +36331,7 @@ public unsafe partial interface IGL
     [SupportedApiProfile("glcore", MinVersion = "3.2")]
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glGetDoublei_v")]
-    void GetDoubleiV(
+    void GetDouble(
         [NativeTypeName("GLenum")] uint target,
         [NativeTypeName("GLuint")] uint index,
         [NativeTypeName("GLdouble *")] Ref<double> data
@@ -36358,7 +36358,7 @@ public unsafe partial interface IGL
     [SupportedApiProfile("glcore", MinVersion = "3.2")]
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glGetDoublev")]
-    void GetDoublev(
+    void GetDouble(
         [NativeTypeName("GLenum")] uint pname,
         [NativeTypeName("GLdouble *")] Ref<double> data
     );
@@ -36424,7 +36424,7 @@ public unsafe partial interface IGL
 
     [SupportedApiProfile("gles1", MaxVersion = "2.0")]
     [NativeFunction("opengl", EntryPoint = "glGetFixedv")]
-    void GetFixedv(
+    void GetFixed(
         [NativeTypeName("GLenum")] uint pname,
         [NativeTypeName("GLfixed *")] Ref<int> @params
     );
@@ -36440,7 +36440,7 @@ public unsafe partial interface IGL
     [SupportedApiProfile("glcore", MinVersion = "3.2")]
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glGetFloati_v")]
-    void GetFloatiV(
+    void GetFloat(
         [NativeTypeName("GLenum")] uint target,
         [NativeTypeName("GLuint")] uint index,
         [NativeTypeName("GLfloat *")] Ref<float> data
@@ -36485,7 +36485,7 @@ public unsafe partial interface IGL
     [SupportedApiProfile("gles1", MaxVersion = "2.0")]
     [SupportedApiProfile("gles2", MinVersion = "2.0")]
     [NativeFunction("opengl", EntryPoint = "glGetFloatv")]
-    void GetFloatv(
+    void GetFloat(
         [NativeTypeName("GLenum")] uint pname,
         [NativeTypeName("GLfloat *")] Ref<float> data
     );
@@ -36573,7 +36573,7 @@ public unsafe partial interface IGL
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [SupportedApiProfile("gles2", MinVersion = "2.0")]
     [NativeFunction("opengl", EntryPoint = "glGetFramebufferAttachmentParameteriv")]
-    void GetFramebufferAttachmentParameteriv(
+    void GetFramebufferAttachmentParameter(
         [NativeTypeName("GLenum")] uint target,
         [NativeTypeName("GLenum")] uint attachment,
         [NativeTypeName("GLenum")] uint pname,
@@ -36612,7 +36612,7 @@ public unsafe partial interface IGL
     [SupportedApiProfile("glcore", MinVersion = "3.2")]
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glGetFramebufferParameteriv")]
-    void GetFramebufferParameteriv(
+    void GetFramebufferParameter(
         [NativeTypeName("GLenum")] uint target,
         [NativeTypeName("GLenum")] uint pname,
         [NativeTypeName("GLint *")] Ref<int> @params
@@ -36692,7 +36692,7 @@ public unsafe partial interface IGL
 
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glGetHistogramParameterfv")]
-    void GetHistogramParameterfv(
+    void GetHistogramParameter(
         [NativeTypeName("GLenum")] uint target,
         [NativeTypeName("GLenum")] uint pname,
         [NativeTypeName("GLfloat *")] Ref<float> @params
@@ -36708,7 +36708,7 @@ public unsafe partial interface IGL
 
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glGetHistogramParameteriv")]
-    void GetHistogramParameteriv(
+    void GetHistogramParameter(
         [NativeTypeName("GLenum")] uint target,
         [NativeTypeName("GLenum")] uint pname,
         [NativeTypeName("GLint *")] Ref<int> @params
@@ -36788,7 +36788,7 @@ public unsafe partial interface IGL
     [SupportedApiProfile("glcore", MinVersion = "3.2")]
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glGetInteger64i_v")]
-    void GetInteger64iV(
+    void GetInteger64(
         [NativeTypeName("GLenum")] uint target,
         [NativeTypeName("GLuint")] uint index,
         [NativeTypeName("GLint64 *")] Ref<long> data
@@ -36797,7 +36797,7 @@ public unsafe partial interface IGL
     [SupportedApiProfile("glcore", MinVersion = "3.2")]
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glGetInteger64v")]
-    void GetInteger64v(
+    void GetInteger64(
         [NativeTypeName("GLenum")] uint pname,
         [NativeTypeName("GLint64 *")] Ref<long> data
     );
@@ -36820,7 +36820,7 @@ public unsafe partial interface IGL
     [SupportedApiProfile("glcore", MinVersion = "3.2")]
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glGetIntegeri_v")]
-    void GetIntegeriV(
+    void GetInteger(
         [NativeTypeName("GLenum")] uint target,
         [NativeTypeName("GLuint")] uint index,
         [NativeTypeName("GLint *")] Ref<int> data
@@ -36865,7 +36865,7 @@ public unsafe partial interface IGL
     [SupportedApiProfile("gles1", MaxVersion = "2.0")]
     [SupportedApiProfile("gles2", MinVersion = "2.0")]
     [NativeFunction("opengl", EntryPoint = "glGetIntegerv")]
-    void GetIntegerv(
+    void GetInteger(
         [NativeTypeName("GLenum")] uint pname,
         [NativeTypeName("GLint *")] Ref<int> data
     );
@@ -36873,7 +36873,7 @@ public unsafe partial interface IGL
     [SupportedApiProfile("glcore", MinVersion = "3.2")]
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glGetInternalformati64v")]
-    void GetInternalformati64v(
+    void GetInternalformat(
         [NativeTypeName("GLenum")] uint target,
         [NativeTypeName("GLenum")] uint internalformat,
         [NativeTypeName("GLenum")] uint pname,
@@ -36884,7 +36884,7 @@ public unsafe partial interface IGL
     [SupportedApiProfile("glcore", MinVersion = "3.2")]
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glGetInternalformativ")]
-    void GetInternalformativ(
+    void GetInternalformat(
         [NativeTypeName("GLenum")] uint target,
         [NativeTypeName("GLenum")] uint internalformat,
         [NativeTypeName("GLenum")] uint pname,
@@ -36932,7 +36932,7 @@ public unsafe partial interface IGL
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [SupportedApiProfile("gles1", MaxVersion = "2.0")]
     [NativeFunction("opengl", EntryPoint = "glGetLightfv")]
-    void GetLightfv(
+    void GetLight(
         [NativeTypeName("GLenum")] uint light,
         [NativeTypeName("GLenum")] uint pname,
         [NativeTypeName("GLfloat *")] Ref<float> @params
@@ -36940,7 +36940,7 @@ public unsafe partial interface IGL
 
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glGetLightiv")]
-    void GetLightiv(
+    void GetLight(
         [NativeTypeName("GLenum")] uint light,
         [NativeTypeName("GLenum")] uint pname,
         [NativeTypeName("GLint *")] Ref<int> @params
@@ -36956,7 +36956,7 @@ public unsafe partial interface IGL
 
     [SupportedApiProfile("gles1", MaxVersion = "2.0")]
     [NativeFunction("opengl", EntryPoint = "glGetLightxv")]
-    void GetLightxv(
+    void GetLightx(
         [NativeTypeName("GLenum")] uint light,
         [NativeTypeName("GLenum")] uint pname,
         [NativeTypeName("GLfixed *")] Ref<int> @params
@@ -37042,7 +37042,7 @@ public unsafe partial interface IGL
 
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glGetMapdv")]
-    void GetMapdv(
+    void GetMap(
         [NativeTypeName("GLenum")] uint target,
         [NativeTypeName("GLenum")] uint query,
         [NativeTypeName("GLdouble *")] Ref<double> v
@@ -37050,7 +37050,7 @@ public unsafe partial interface IGL
 
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glGetMapfv")]
-    void GetMapfv(
+    void GetMap(
         [NativeTypeName("GLenum")] uint target,
         [NativeTypeName("GLenum")] uint query,
         [NativeTypeName("GLfloat *")] Ref<float> v
@@ -37058,7 +37058,7 @@ public unsafe partial interface IGL
 
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glGetMapiv")]
-    void GetMapiv(
+    void GetMap(
         [NativeTypeName("GLenum")] uint target,
         [NativeTypeName("GLenum")] uint query,
         [NativeTypeName("GLint *")] Ref<int> v
@@ -37091,7 +37091,7 @@ public unsafe partial interface IGL
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [SupportedApiProfile("gles1", MaxVersion = "2.0")]
     [NativeFunction("opengl", EntryPoint = "glGetMaterialfv")]
-    void GetMaterialfv(
+    void GetMaterial(
         [NativeTypeName("GLenum")] uint face,
         [NativeTypeName("GLenum")] uint pname,
         [NativeTypeName("GLfloat *")] Ref<float> @params
@@ -37099,7 +37099,7 @@ public unsafe partial interface IGL
 
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glGetMaterialiv")]
-    void GetMaterialiv(
+    void GetMaterial(
         [NativeTypeName("GLenum")] uint face,
         [NativeTypeName("GLenum")] uint pname,
         [NativeTypeName("GLint *")] Ref<int> @params
@@ -37115,7 +37115,7 @@ public unsafe partial interface IGL
 
     [SupportedApiProfile("gles1", MaxVersion = "2.0")]
     [NativeFunction("opengl", EntryPoint = "glGetMaterialxv")]
-    void GetMaterialxv(
+    void GetMaterialx(
         [NativeTypeName("GLenum")] uint face,
         [NativeTypeName("GLenum")] uint pname,
         [NativeTypeName("GLfixed *")] Ref<int> @params
@@ -37172,7 +37172,7 @@ public unsafe partial interface IGL
 
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glGetMinmaxParameterfv")]
-    void GetMinmaxParameterfv(
+    void GetMinmaxParameter(
         [NativeTypeName("GLenum")] uint target,
         [NativeTypeName("GLenum")] uint pname,
         [NativeTypeName("GLfloat *")] Ref<float> @params
@@ -37188,7 +37188,7 @@ public unsafe partial interface IGL
 
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glGetMinmaxParameteriv")]
-    void GetMinmaxParameteriv(
+    void GetMinmaxParameter(
         [NativeTypeName("GLenum")] uint target,
         [NativeTypeName("GLenum")] uint pname,
         [NativeTypeName("GLint *")] Ref<int> @params
@@ -37205,7 +37205,7 @@ public unsafe partial interface IGL
     [SupportedApiProfile("glcore", MinVersion = "3.2")]
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glGetMultisamplefv")]
-    void GetMultisamplefv(
+    void GetMultisample(
         [NativeTypeName("GLenum")] uint pname,
         [NativeTypeName("GLuint")] uint index,
         [NativeTypeName("GLfloat *")] Ref<float> val
@@ -37346,7 +37346,7 @@ public unsafe partial interface IGL
     [SupportedApiProfile("glcore", MinVersion = "3.2")]
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glGetNamedBufferParameteri64v")]
-    void GetNamedBufferParameteri64v(
+    void GetNamedBufferParameter(
         [NativeTypeName("GLuint")] uint buffer,
         [NativeTypeName("GLenum")] uint pname,
         [NativeTypeName("GLint64 *")] Ref<long> @params
@@ -37355,7 +37355,7 @@ public unsafe partial interface IGL
     [SupportedApiProfile("glcore", MinVersion = "3.2")]
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glGetNamedBufferParameteriv")]
-    void GetNamedBufferParameteriv(
+    void GetNamedBufferParameter(
         [NativeTypeName("GLuint")] uint buffer,
         [NativeTypeName("GLenum")] uint pname,
         [NativeTypeName("GLint *")] Ref<int> @params
@@ -37382,7 +37382,7 @@ public unsafe partial interface IGL
     [SupportedApiProfile("glcore", MinVersion = "3.2")]
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glGetNamedBufferPointerv")]
-    void GetNamedBufferPointerv(
+    void GetNamedBufferPointer(
         [NativeTypeName("GLuint")] uint buffer,
         [NativeTypeName("GLenum")] uint pname,
         Ref2D @params
@@ -37420,7 +37420,7 @@ public unsafe partial interface IGL
     [SupportedApiProfile("glcore", MinVersion = "3.2")]
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glGetNamedFramebufferAttachmentParameteriv")]
-    void GetNamedFramebufferAttachmentParameteriv(
+    void GetNamedFramebufferAttachmentParameter(
         [NativeTypeName("GLuint")] uint framebuffer,
         [NativeTypeName("GLenum")] uint attachment,
         [NativeTypeName("GLenum")] uint pname,
@@ -37451,7 +37451,7 @@ public unsafe partial interface IGL
     [SupportedApiProfile("glcore", MinVersion = "3.2")]
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glGetNamedFramebufferParameteriv")]
-    void GetNamedFramebufferParameteriv(
+    void GetNamedFramebufferParameter(
         [NativeTypeName("GLuint")] uint framebuffer,
         [NativeTypeName("GLenum")] uint pname,
         [NativeTypeName("GLint *")] Ref<int> param2
@@ -37529,7 +37529,7 @@ public unsafe partial interface IGL
     [SupportedApiProfile("glcore", MinVersion = "3.2")]
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glGetNamedRenderbufferParameteriv")]
-    void GetNamedRenderbufferParameteriv(
+    void GetNamedRenderbufferParameter(
         [NativeTypeName("GLuint")] uint renderbuffer,
         [NativeTypeName("GLenum")] uint pname,
         [NativeTypeName("GLint *")] Ref<int> @params
@@ -37658,7 +37658,7 @@ public unsafe partial interface IGL
 
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glGetnMapdv")]
-    void GetnMapdv(
+    void GetnMap(
         [NativeTypeName("GLenum")] uint target,
         [NativeTypeName("GLenum")] uint query,
         [NativeTypeName("GLsizei")] int bufSize,
@@ -37676,7 +37676,7 @@ public unsafe partial interface IGL
 
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glGetnMapfv")]
-    void GetnMapfv(
+    void GetnMap(
         [NativeTypeName("GLenum")] uint target,
         [NativeTypeName("GLenum")] uint query,
         [NativeTypeName("GLsizei")] int bufSize,
@@ -37694,7 +37694,7 @@ public unsafe partial interface IGL
 
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glGetnMapiv")]
-    void GetnMapiv(
+    void GetnMap(
         [NativeTypeName("GLenum")] uint target,
         [NativeTypeName("GLenum")] uint query,
         [NativeTypeName("GLsizei")] int bufSize,
@@ -37734,7 +37734,7 @@ public unsafe partial interface IGL
 
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glGetnPixelMapfv")]
-    void GetnPixelMapfv(
+    void GetnPixelMap(
         [NativeTypeName("GLenum")] uint map,
         [NativeTypeName("GLsizei")] int bufSize,
         [NativeTypeName("GLfloat *")] Ref<float> values
@@ -37750,7 +37750,7 @@ public unsafe partial interface IGL
 
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glGetnPixelMapuiv")]
-    void GetnPixelMapuiv(
+    void GetnPixelMap(
         [NativeTypeName("GLenum")] uint map,
         [NativeTypeName("GLsizei")] int bufSize,
         [NativeTypeName("GLuint *")] Ref<uint> values
@@ -37766,7 +37766,7 @@ public unsafe partial interface IGL
 
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glGetnPixelMapusv")]
-    void GetnPixelMapusv(
+    void GetnPixelMap(
         [NativeTypeName("GLenum")] uint map,
         [NativeTypeName("GLsizei")] int bufSize,
         [NativeTypeName("GLushort *")] Ref<ushort> values
@@ -37847,7 +37847,7 @@ public unsafe partial interface IGL
     [SupportedApiProfile("glcore", MinVersion = "3.2")]
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glGetnUniformdv")]
-    void GetnUniformdv(
+    void GetnUniform(
         [NativeTypeName("GLuint")] uint program,
         [NativeTypeName("GLint")] int location,
         [NativeTypeName("GLsizei")] int bufSize,
@@ -37867,7 +37867,7 @@ public unsafe partial interface IGL
     [SupportedApiProfile("glcore", MinVersion = "3.2")]
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glGetnUniformfv")]
-    void GetnUniformfv(
+    void GetnUniform(
         [NativeTypeName("GLuint")] uint program,
         [NativeTypeName("GLint")] int location,
         [NativeTypeName("GLsizei")] int bufSize,
@@ -37916,7 +37916,7 @@ public unsafe partial interface IGL
     [SupportedApiProfile("glcore", MinVersion = "3.2")]
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glGetnUniformiv")]
-    void GetnUniformiv(
+    void GetnUniform(
         [NativeTypeName("GLuint")] uint program,
         [NativeTypeName("GLint")] int location,
         [NativeTypeName("GLsizei")] int bufSize,
@@ -37965,7 +37965,7 @@ public unsafe partial interface IGL
     [SupportedApiProfile("glcore", MinVersion = "3.2")]
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glGetnUniformuiv")]
-    void GetnUniformuiv(
+    void GetnUniform(
         [NativeTypeName("GLuint")] uint program,
         [NativeTypeName("GLint")] int location,
         [NativeTypeName("GLsizei")] int bufSize,
@@ -38355,28 +38355,28 @@ public unsafe partial interface IGL
 
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glGetPixelMapfv")]
-    void GetPixelMapfv(
+    void GetPixelMap(
         [NativeTypeName("GLenum")] uint map,
         [NativeTypeName("GLfloat *")] Ref<float> values
     );
 
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glGetPixelMapuiv")]
-    void GetPixelMapuiv(
+    void GetPixelMap(
         [NativeTypeName("GLenum")] uint map,
         [NativeTypeName("GLuint *")] Ref<uint> values
     );
 
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glGetPixelMapusv")]
-    void GetPixelMapusv(
+    void GetPixelMap(
         [NativeTypeName("GLenum")] uint map,
         [NativeTypeName("GLushort *")] Ref<ushort> values
     );
 
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glGetPixelMapxv")]
-    void GetPixelMapxv(
+    void GetPixelMapx(
         [NativeTypeName("GLenum")] uint map,
         [NativeTypeName("GLint")] int size,
         [NativeTypeName("GLfixed *")] Ref<int> values
@@ -38434,7 +38434,7 @@ public unsafe partial interface IGL
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [SupportedApiProfile("gles1", MaxVersion = "2.0")]
     [NativeFunction("opengl", EntryPoint = "glGetPointerv")]
-    void GetPointerv([NativeTypeName("GLenum")] uint pname, Ref2D @params);
+    void GetPointer([NativeTypeName("GLenum")] uint pname, Ref2D @params);
 
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glGetPointervEXT")]
@@ -38515,7 +38515,7 @@ public unsafe partial interface IGL
     [SupportedApiProfile("glcore", MinVersion = "3.2")]
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glGetProgramInterfaceiv")]
-    void GetProgramInterfaceiv(
+    void GetProgramInterface(
         [NativeTypeName("GLuint")] uint program,
         [NativeTypeName("GLenum")] uint programInterface,
         [NativeTypeName("GLenum")] uint pname,
@@ -38526,7 +38526,7 @@ public unsafe partial interface IGL
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [SupportedApiProfile("gles2", MinVersion = "2.0")]
     [NativeFunction("opengl", EntryPoint = "glGetProgramiv")]
-    void GetProgramiv(
+    void GetProgram(
         [NativeTypeName("GLuint")] uint program,
         [NativeTypeName("GLenum")] uint pname,
         [NativeTypeName("GLint *")] Ref<int> @params
@@ -38638,7 +38638,7 @@ public unsafe partial interface IGL
     [SupportedApiProfile("glcore", MinVersion = "3.2")]
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glGetProgramPipelineiv")]
-    void GetProgramPipelineiv(
+    void GetProgramPipeline(
         [NativeTypeName("GLuint")] uint pipeline,
         [NativeTypeName("GLenum")] uint pname,
         [NativeTypeName("GLint *")] Ref<int> @params
@@ -38680,7 +38680,7 @@ public unsafe partial interface IGL
     [SupportedApiProfile("glcore", MinVersion = "3.2")]
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glGetProgramResourceiv")]
-    void GetProgramResourceiv(
+    void GetProgramResource(
         [NativeTypeName("GLuint")] uint program,
         [NativeTypeName("GLenum")] uint programInterface,
         [NativeTypeName("GLuint")] uint index,
@@ -38735,7 +38735,7 @@ public unsafe partial interface IGL
     [SupportedApiProfile("glcore", MinVersion = "3.2")]
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glGetProgramStageiv")]
-    void GetProgramStageiv(
+    void GetProgramStage(
         [NativeTypeName("GLuint")] uint program,
         [NativeTypeName("GLenum")] uint shadertype,
         [NativeTypeName("GLenum")] uint pname,
@@ -38769,7 +38769,7 @@ public unsafe partial interface IGL
     [SupportedApiProfile("glcore", MinVersion = "3.2")]
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glGetQueryBufferObjecti64v")]
-    void GetQueryBufferObjecti64v(
+    void GetQueryBufferObject(
         [NativeTypeName("GLuint")] uint id,
         [NativeTypeName("GLuint")] uint buffer,
         [NativeTypeName("GLenum")] uint pname,
@@ -38779,7 +38779,7 @@ public unsafe partial interface IGL
     [SupportedApiProfile("glcore", MinVersion = "3.2")]
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glGetQueryBufferObjectiv")]
-    void GetQueryBufferObjectiv(
+    void GetQueryBufferObject(
         [NativeTypeName("GLuint")] uint id,
         [NativeTypeName("GLuint")] uint buffer,
         [NativeTypeName("GLenum")] uint pname,
@@ -38789,7 +38789,7 @@ public unsafe partial interface IGL
     [SupportedApiProfile("glcore", MinVersion = "3.2")]
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glGetQueryBufferObjectui64v")]
-    void GetQueryBufferObjectui64v(
+    void GetQueryBufferObject(
         [NativeTypeName("GLuint")] uint id,
         [NativeTypeName("GLuint")] uint buffer,
         [NativeTypeName("GLenum")] uint pname,
@@ -38799,7 +38799,7 @@ public unsafe partial interface IGL
     [SupportedApiProfile("glcore", MinVersion = "3.2")]
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glGetQueryBufferObjectuiv")]
-    void GetQueryBufferObjectuiv(
+    void GetQueryBufferObject(
         [NativeTypeName("GLuint")] uint id,
         [NativeTypeName("GLuint")] uint buffer,
         [NativeTypeName("GLenum")] uint pname,
@@ -38809,7 +38809,7 @@ public unsafe partial interface IGL
     [SupportedApiProfile("glcore", MinVersion = "3.2")]
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glGetQueryIndexediv")]
-    void GetQueryIndexediv(
+    void GetQueryIndexed(
         [NativeTypeName("GLenum")] uint target,
         [NativeTypeName("GLuint")] uint index,
         [NativeTypeName("GLenum")] uint pname,
@@ -38819,7 +38819,7 @@ public unsafe partial interface IGL
     [SupportedApiProfile("glcore", MinVersion = "3.2")]
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glGetQueryiv")]
-    void GetQueryiv(
+    void GetQuery(
         [NativeTypeName("GLenum")] uint target,
         [NativeTypeName("GLenum")] uint pname,
         [NativeTypeName("GLint *")] Ref<int> @params
@@ -38844,7 +38844,7 @@ public unsafe partial interface IGL
     [SupportedApiProfile("glcore", MinVersion = "3.2")]
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glGetQueryObjecti64v")]
-    void GetQueryObjecti64v(
+    void GetQueryObject(
         [NativeTypeName("GLuint")] uint id,
         [NativeTypeName("GLenum")] uint pname,
         [NativeTypeName("GLint64 *")] Ref<long> @params
@@ -38862,7 +38862,7 @@ public unsafe partial interface IGL
     [SupportedApiProfile("glcore", MinVersion = "3.2")]
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glGetQueryObjectiv")]
-    void GetQueryObjectiv(
+    void GetQueryObject(
         [NativeTypeName("GLuint")] uint id,
         [NativeTypeName("GLenum")] uint pname,
         [NativeTypeName("GLint *")] Ref<int> @params
@@ -38887,7 +38887,7 @@ public unsafe partial interface IGL
     [SupportedApiProfile("glcore", MinVersion = "3.2")]
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glGetQueryObjectui64v")]
-    void GetQueryObjectui64v(
+    void GetQueryObject(
         [NativeTypeName("GLuint")] uint id,
         [NativeTypeName("GLenum")] uint pname,
         [NativeTypeName("GLuint64 *")] Ref<ulong> @params
@@ -38905,7 +38905,7 @@ public unsafe partial interface IGL
     [SupportedApiProfile("glcore", MinVersion = "3.2")]
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glGetQueryObjectuiv")]
-    void GetQueryObjectuiv(
+    void GetQueryObject(
         [NativeTypeName("GLuint")] uint id,
         [NativeTypeName("GLenum")] uint pname,
         [NativeTypeName("GLuint *")] Ref<uint> @params
@@ -38931,7 +38931,7 @@ public unsafe partial interface IGL
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [SupportedApiProfile("gles2", MinVersion = "2.0")]
     [NativeFunction("opengl", EntryPoint = "glGetRenderbufferParameteriv")]
-    void GetRenderbufferParameteriv(
+    void GetRenderbufferParameter(
         [NativeTypeName("GLenum")] uint target,
         [NativeTypeName("GLenum")] uint pname,
         [NativeTypeName("GLint *")] Ref<int> @params
@@ -38957,7 +38957,7 @@ public unsafe partial interface IGL
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [SupportedApiProfile("gles2", MinVersion = "2.0")]
     [NativeFunction("opengl", EntryPoint = "glGetSamplerParameterfv")]
-    void GetSamplerParameterfv(
+    void GetSamplerParameter(
         [NativeTypeName("GLuint")] uint sampler,
         [NativeTypeName("GLenum")] uint pname,
         [NativeTypeName("GLfloat *")] Ref<float> @params
@@ -38966,7 +38966,7 @@ public unsafe partial interface IGL
     [SupportedApiProfile("glcore", MinVersion = "3.2")]
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glGetSamplerParameterIiv")]
-    void GetSamplerParameterIiv(
+    void GetSamplerParameterI(
         [NativeTypeName("GLuint")] uint sampler,
         [NativeTypeName("GLenum")] uint pname,
         [NativeTypeName("GLint *")] Ref<int> @params
@@ -38991,7 +38991,7 @@ public unsafe partial interface IGL
     [SupportedApiProfile("glcore", MinVersion = "3.2")]
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glGetSamplerParameterIuiv")]
-    void GetSamplerParameterIuiv(
+    void GetSamplerParameterI(
         [NativeTypeName("GLuint")] uint sampler,
         [NativeTypeName("GLenum")] uint pname,
         [NativeTypeName("GLuint *")] Ref<uint> @params
@@ -39017,7 +39017,7 @@ public unsafe partial interface IGL
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [SupportedApiProfile("gles2", MinVersion = "2.0")]
     [NativeFunction("opengl", EntryPoint = "glGetSamplerParameteriv")]
-    void GetSamplerParameteriv(
+    void GetSamplerParameter(
         [NativeTypeName("GLuint")] uint sampler,
         [NativeTypeName("GLenum")] uint pname,
         [NativeTypeName("GLint *")] Ref<int> @params
@@ -39078,7 +39078,7 @@ public unsafe partial interface IGL
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [SupportedApiProfile("gles2", MinVersion = "2.0")]
     [NativeFunction("opengl", EntryPoint = "glGetShaderiv")]
-    void GetShaderiv(
+    void GetShader(
         [NativeTypeName("GLuint")] uint shader,
         [NativeTypeName("GLenum")] uint pname,
         [NativeTypeName("GLint *")] Ref<int> @params
@@ -39161,7 +39161,7 @@ public unsafe partial interface IGL
     [SupportedApiProfile("glcore", MinVersion = "3.2")]
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glGetStringi")]
-    Ptr<byte> GetStringi(
+    Ptr<byte> GetString(
         [NativeTypeName("GLenum")] uint name,
         [NativeTypeName("GLuint")] uint index
     );
@@ -39189,7 +39189,7 @@ public unsafe partial interface IGL
     [SupportedApiProfile("glcore", MinVersion = "3.2")]
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glGetSynciv")]
-    void GetSynciv(
+    void GetSync(
         [NativeTypeName("GLsync")] Ref<Sync> sync,
         [NativeTypeName("GLenum")] uint pname,
         [NativeTypeName("GLsizei")] int count,
@@ -39225,7 +39225,7 @@ public unsafe partial interface IGL
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [SupportedApiProfile("gles1", MaxVersion = "2.0")]
     [NativeFunction("opengl", EntryPoint = "glGetTexEnvfv")]
-    void GetTexEnvfv(
+    void GetTexEnv(
         [NativeTypeName("GLenum")] uint target,
         [NativeTypeName("GLenum")] uint pname,
         [NativeTypeName("GLfloat *")] Ref<float> @params
@@ -39234,7 +39234,7 @@ public unsafe partial interface IGL
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [SupportedApiProfile("gles1", MaxVersion = "2.0")]
     [NativeFunction("opengl", EntryPoint = "glGetTexEnviv")]
-    void GetTexEnviv(
+    void GetTexEnv(
         [NativeTypeName("GLenum")] uint target,
         [NativeTypeName("GLenum")] uint pname,
         [NativeTypeName("GLint *")] Ref<int> @params
@@ -39242,7 +39242,7 @@ public unsafe partial interface IGL
 
     [SupportedApiProfile("gles1", MaxVersion = "2.0")]
     [NativeFunction("opengl", EntryPoint = "glGetTexEnvxv")]
-    void GetTexEnvxv(
+    void GetTexEnvx(
         [NativeTypeName("GLenum")] uint target,
         [NativeTypeName("GLenum")] uint pname,
         [NativeTypeName("GLfixed *")] Ref<int> @params
@@ -39267,7 +39267,7 @@ public unsafe partial interface IGL
 
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glGetTexGendv")]
-    void GetTexGendv(
+    void GetTexGen(
         [NativeTypeName("GLenum")] uint coord,
         [NativeTypeName("GLenum")] uint pname,
         [NativeTypeName("GLdouble *")] Ref<double> @params
@@ -39275,7 +39275,7 @@ public unsafe partial interface IGL
 
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glGetTexGenfv")]
-    void GetTexGenfv(
+    void GetTexGen(
         [NativeTypeName("GLenum")] uint coord,
         [NativeTypeName("GLenum")] uint pname,
         [NativeTypeName("GLfloat *")] Ref<float> @params
@@ -39291,7 +39291,7 @@ public unsafe partial interface IGL
 
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glGetTexGeniv")]
-    void GetTexGeniv(
+    void GetTexGen(
         [NativeTypeName("GLenum")] uint coord,
         [NativeTypeName("GLenum")] uint pname,
         [NativeTypeName("GLint *")] Ref<int> @params
@@ -39328,7 +39328,7 @@ public unsafe partial interface IGL
     [SupportedApiProfile("glcore", MinVersion = "3.2")]
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glGetTexLevelParameterfv")]
-    void GetTexLevelParameterfv(
+    void GetTexLevelParameter(
         [NativeTypeName("GLenum")] uint target,
         [NativeTypeName("GLint")] int level,
         [NativeTypeName("GLenum")] uint pname,
@@ -39338,7 +39338,7 @@ public unsafe partial interface IGL
     [SupportedApiProfile("glcore", MinVersion = "3.2")]
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glGetTexLevelParameteriv")]
-    void GetTexLevelParameteriv(
+    void GetTexLevelParameter(
         [NativeTypeName("GLenum")] uint target,
         [NativeTypeName("GLint")] int level,
         [NativeTypeName("GLenum")] uint pname,
@@ -39359,7 +39359,7 @@ public unsafe partial interface IGL
     [SupportedApiProfile("gles1", MaxVersion = "2.0")]
     [SupportedApiProfile("gles2", MinVersion = "2.0")]
     [NativeFunction("opengl", EntryPoint = "glGetTexParameterfv")]
-    void GetTexParameterfv(
+    void GetTexParameter(
         [NativeTypeName("GLenum")] uint target,
         [NativeTypeName("GLenum")] uint pname,
         [NativeTypeName("GLfloat *")] Ref<float> @params
@@ -39368,7 +39368,7 @@ public unsafe partial interface IGL
     [SupportedApiProfile("glcore", MinVersion = "3.2")]
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glGetTexParameterIiv")]
-    void GetTexParameterIiv(
+    void GetTexParameterI(
         [NativeTypeName("GLenum")] uint target,
         [NativeTypeName("GLenum")] uint pname,
         [NativeTypeName("GLint *")] Ref<int> @params
@@ -39394,7 +39394,7 @@ public unsafe partial interface IGL
     [SupportedApiProfile("glcore", MinVersion = "3.2")]
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glGetTexParameterIuiv")]
-    void GetTexParameterIuiv(
+    void GetTexParameterI(
         [NativeTypeName("GLenum")] uint target,
         [NativeTypeName("GLenum")] uint pname,
         [NativeTypeName("GLuint *")] Ref<uint> @params
@@ -39422,7 +39422,7 @@ public unsafe partial interface IGL
     [SupportedApiProfile("gles1", MaxVersion = "2.0")]
     [SupportedApiProfile("gles2", MinVersion = "2.0")]
     [NativeFunction("opengl", EntryPoint = "glGetTexParameteriv")]
-    void GetTexParameteriv(
+    void GetTexParameter(
         [NativeTypeName("GLenum")] uint target,
         [NativeTypeName("GLenum")] uint pname,
         [NativeTypeName("GLint *")] Ref<int> @params
@@ -39438,7 +39438,7 @@ public unsafe partial interface IGL
 
     [SupportedApiProfile("gles1", MaxVersion = "2.0")]
     [NativeFunction("opengl", EntryPoint = "glGetTexParameterxv")]
-    void GetTexParameterxv(
+    void GetTexParameterx(
         [NativeTypeName("GLenum")] uint target,
         [NativeTypeName("GLenum")] uint pname,
         [NativeTypeName("GLfixed *")] Ref<int> @params
@@ -39498,7 +39498,7 @@ public unsafe partial interface IGL
     [SupportedApiProfile("glcore", MinVersion = "3.2")]
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glGetTextureLevelParameterfv")]
-    void GetTextureLevelParameterfv(
+    void GetTextureLevelParameter(
         [NativeTypeName("GLuint")] uint texture,
         [NativeTypeName("GLint")] int level,
         [NativeTypeName("GLenum")] uint pname,
@@ -39519,7 +39519,7 @@ public unsafe partial interface IGL
     [SupportedApiProfile("glcore", MinVersion = "3.2")]
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glGetTextureLevelParameteriv")]
-    void GetTextureLevelParameteriv(
+    void GetTextureLevelParameter(
         [NativeTypeName("GLuint")] uint texture,
         [NativeTypeName("GLint")] int level,
         [NativeTypeName("GLenum")] uint pname,
@@ -39540,7 +39540,7 @@ public unsafe partial interface IGL
     [SupportedApiProfile("glcore", MinVersion = "3.2")]
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glGetTextureParameterfv")]
-    void GetTextureParameterfv(
+    void GetTextureParameter(
         [NativeTypeName("GLuint")] uint texture,
         [NativeTypeName("GLenum")] uint pname,
         [NativeTypeName("GLfloat *")] Ref<float> @params
@@ -39559,7 +39559,7 @@ public unsafe partial interface IGL
     [SupportedApiProfile("glcore", MinVersion = "3.2")]
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glGetTextureParameterIiv")]
-    void GetTextureParameterIiv(
+    void GetTextureParameterI(
         [NativeTypeName("GLuint")] uint texture,
         [NativeTypeName("GLenum")] uint pname,
         [NativeTypeName("GLint *")] Ref<int> @params
@@ -39578,7 +39578,7 @@ public unsafe partial interface IGL
     [SupportedApiProfile("glcore", MinVersion = "3.2")]
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glGetTextureParameterIuiv")]
-    void GetTextureParameterIuiv(
+    void GetTextureParameterI(
         [NativeTypeName("GLuint")] uint texture,
         [NativeTypeName("GLenum")] uint pname,
         [NativeTypeName("GLuint *")] Ref<uint> @params
@@ -39597,7 +39597,7 @@ public unsafe partial interface IGL
     [SupportedApiProfile("glcore", MinVersion = "3.2")]
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glGetTextureParameteriv")]
-    void GetTextureParameteriv(
+    void GetTextureParameter(
         [NativeTypeName("GLuint")] uint texture,
         [NativeTypeName("GLenum")] uint pname,
         [NativeTypeName("GLint *")] Ref<int> @params
@@ -39670,7 +39670,7 @@ public unsafe partial interface IGL
     [SupportedApiProfile("glcore", MinVersion = "3.2")]
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glGetTransformFeedbacki_v")]
-    void GetTransformFeedbackiV(
+    void GetTransformFeedback(
         [NativeTypeName("GLuint")] uint xfb,
         [NativeTypeName("GLenum")] uint pname,
         [NativeTypeName("GLuint")] uint index,
@@ -39680,7 +39680,7 @@ public unsafe partial interface IGL
     [SupportedApiProfile("glcore", MinVersion = "3.2")]
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glGetTransformFeedbacki64_v")]
-    void GetTransformFeedbacki64V(
+    void GetTransformFeedbacki64(
         [NativeTypeName("GLuint")] uint xfb,
         [NativeTypeName("GLenum")] uint pname,
         [NativeTypeName("GLuint")] uint index,
@@ -39690,7 +39690,7 @@ public unsafe partial interface IGL
     [SupportedApiProfile("glcore", MinVersion = "3.2")]
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glGetTransformFeedbackiv")]
-    void GetTransformFeedbackiv(
+    void GetTransformFeedback(
         [NativeTypeName("GLuint")] uint xfb,
         [NativeTypeName("GLenum")] uint pname,
         [NativeTypeName("GLint *")] Ref<int> param2
@@ -39758,7 +39758,7 @@ public unsafe partial interface IGL
     [SupportedApiProfile("glcore", MinVersion = "3.2")]
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glGetUniformdv")]
-    void GetUniformdv(
+    void GetUniform(
         [NativeTypeName("GLuint")] uint program,
         [NativeTypeName("GLint")] int location,
         [NativeTypeName("GLdouble *")] Ref<double> @params
@@ -39768,7 +39768,7 @@ public unsafe partial interface IGL
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [SupportedApiProfile("gles2", MinVersion = "2.0")]
     [NativeFunction("opengl", EntryPoint = "glGetUniformfv")]
-    void GetUniformfv(
+    void GetUniform(
         [NativeTypeName("GLuint")] uint program,
         [NativeTypeName("GLint")] int location,
         [NativeTypeName("GLfloat *")] Ref<float> @params
@@ -39815,7 +39815,7 @@ public unsafe partial interface IGL
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [SupportedApiProfile("gles2", MinVersion = "2.0")]
     [NativeFunction("opengl", EntryPoint = "glGetUniformiv")]
-    void GetUniformiv(
+    void GetUniform(
         [NativeTypeName("GLuint")] uint program,
         [NativeTypeName("GLint")] int location,
         [NativeTypeName("GLint *")] Ref<int> @params
@@ -39858,7 +39858,7 @@ public unsafe partial interface IGL
     [SupportedApiProfile("glcore", MinVersion = "3.2")]
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glGetUniformSubroutineuiv")]
-    void GetUniformSubroutineuiv(
+    void GetUniformSubroutine(
         [NativeTypeName("GLenum")] uint shadertype,
         [NativeTypeName("GLint")] int location,
         [NativeTypeName("GLuint *")] Ref<uint> @params
@@ -39885,7 +39885,7 @@ public unsafe partial interface IGL
     [SupportedApiProfile("glcore", MinVersion = "3.2")]
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glGetUniformuiv")]
-    void GetUniformuiv(
+    void GetUniform(
         [NativeTypeName("GLuint")] uint program,
         [NativeTypeName("GLint")] int location,
         [NativeTypeName("GLuint *")] Ref<uint> @params
@@ -39975,7 +39975,7 @@ public unsafe partial interface IGL
     [SupportedApiProfile("glcore", MinVersion = "3.2")]
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glGetVertexArrayIndexed64iv")]
-    void GetVertexArrayIndexed64iv(
+    void GetVertexArrayIndexed64(
         [NativeTypeName("GLuint")] uint vaobj,
         [NativeTypeName("GLuint")] uint index,
         [NativeTypeName("GLenum")] uint pname,
@@ -39985,7 +39985,7 @@ public unsafe partial interface IGL
     [SupportedApiProfile("glcore", MinVersion = "3.2")]
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glGetVertexArrayIndexediv")]
-    void GetVertexArrayIndexediv(
+    void GetVertexArrayIndexed(
         [NativeTypeName("GLuint")] uint vaobj,
         [NativeTypeName("GLuint")] uint index,
         [NativeTypeName("GLenum")] uint pname,
@@ -40014,7 +40014,7 @@ public unsafe partial interface IGL
     [SupportedApiProfile("glcore", MinVersion = "3.2")]
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glGetVertexArrayiv")]
-    void GetVertexArrayiv(
+    void GetVertexArray(
         [NativeTypeName("GLuint")] uint vaobj,
         [NativeTypeName("GLenum")] uint pname,
         [NativeTypeName("GLint *")] Ref<int> param2
@@ -40058,7 +40058,7 @@ public unsafe partial interface IGL
     [SupportedApiProfile("glcore", MinVersion = "3.2")]
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glGetVertexAttribdv")]
-    void GetVertexAttribdv(
+    void GetVertexAttrib(
         [NativeTypeName("GLuint")] uint index,
         [NativeTypeName("GLenum")] uint pname,
         [NativeTypeName("GLdouble *")] Ref<double> @params
@@ -40084,7 +40084,7 @@ public unsafe partial interface IGL
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [SupportedApiProfile("gles2", MinVersion = "2.0")]
     [NativeFunction("opengl", EntryPoint = "glGetVertexAttribfv")]
-    void GetVertexAttribfv(
+    void GetVertexAttrib(
         [NativeTypeName("GLuint")] uint index,
         [NativeTypeName("GLenum")] uint pname,
         [NativeTypeName("GLfloat *")] Ref<float> @params
@@ -40109,7 +40109,7 @@ public unsafe partial interface IGL
     [SupportedApiProfile("glcore", MinVersion = "3.2")]
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glGetVertexAttribIiv")]
-    void GetVertexAttribIiv(
+    void GetVertexAttribI(
         [NativeTypeName("GLuint")] uint index,
         [NativeTypeName("GLenum")] uint pname,
         [NativeTypeName("GLint *")] Ref<int> @params
@@ -40126,7 +40126,7 @@ public unsafe partial interface IGL
     [SupportedApiProfile("glcore", MinVersion = "3.2")]
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glGetVertexAttribIuiv")]
-    void GetVertexAttribIuiv(
+    void GetVertexAttribI(
         [NativeTypeName("GLuint")] uint index,
         [NativeTypeName("GLenum")] uint pname,
         [NativeTypeName("GLuint *")] Ref<uint> @params
@@ -40144,7 +40144,7 @@ public unsafe partial interface IGL
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [SupportedApiProfile("gles2", MinVersion = "2.0")]
     [NativeFunction("opengl", EntryPoint = "glGetVertexAttribiv")]
-    void GetVertexAttribiv(
+    void GetVertexAttrib(
         [NativeTypeName("GLuint")] uint index,
         [NativeTypeName("GLenum")] uint pname,
         [NativeTypeName("GLint *")] Ref<int> @params
@@ -40169,7 +40169,7 @@ public unsafe partial interface IGL
     [SupportedApiProfile("glcore", MinVersion = "3.2")]
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glGetVertexAttribLdv")]
-    void GetVertexAttribLdv(
+    void GetVertexAttribL(
         [NativeTypeName("GLuint")] uint index,
         [NativeTypeName("GLenum")] uint pname,
         [NativeTypeName("GLdouble *")] Ref<double> @params
@@ -40214,7 +40214,7 @@ public unsafe partial interface IGL
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [SupportedApiProfile("gles2", MinVersion = "2.0")]
     [NativeFunction("opengl", EntryPoint = "glGetVertexAttribPointerv")]
-    void GetVertexAttribPointerv(
+    void GetVertexAttribPointer(
         [NativeTypeName("GLuint")] uint index,
         [NativeTypeName("GLenum")] uint pname,
         Ref2D pointer
@@ -40478,15 +40478,15 @@ public unsafe partial interface IGL
 
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glIndexd")]
-    void Indexd([NativeTypeName("GLdouble")] double c);
+    void Index([NativeTypeName("GLdouble")] double c);
 
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glIndexdv")]
-    void Indexdv([NativeTypeName("const GLdouble *")] Ref<double> c);
+    void Index([NativeTypeName("const GLdouble *")] Ref<double> c);
 
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glIndexf")]
-    void Indexf([NativeTypeName("GLfloat")] float c);
+    void Index([NativeTypeName("GLfloat")] float c);
 
     [SupportedApiProfile("glcore", MinVersion = "3.2")]
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
@@ -40505,15 +40505,15 @@ public unsafe partial interface IGL
 
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glIndexfv")]
-    void Indexfv([NativeTypeName("const GLfloat *")] Ref<float> c);
+    void Index([NativeTypeName("const GLfloat *")] Ref<float> c);
 
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glIndexi")]
-    void Indexi([NativeTypeName("GLint")] int c);
+    void Index([NativeTypeName("GLint")] int c);
 
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glIndexiv")]
-    void Indexiv([NativeTypeName("const GLint *")] Ref<int> c);
+    void Index([NativeTypeName("const GLint *")] Ref<int> c);
 
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glIndexMask")]
@@ -40554,19 +40554,19 @@ public unsafe partial interface IGL
 
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glIndexs")]
-    void Indexs([NativeTypeName("GLshort")] short c);
+    void Index([NativeTypeName("GLshort")] short c);
 
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glIndexsv")]
-    void Indexsv([NativeTypeName("const GLshort *")] Ref<short> c);
+    void Index([NativeTypeName("const GLshort *")] Ref<short> c);
 
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glIndexub")]
-    void Indexub([NativeTypeName("GLubyte")] byte c);
+    void Index([NativeTypeName("GLubyte")] byte c);
 
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glIndexubv")]
-    void Indexubv([NativeTypeName("const GLubyte *")] Ref<byte> c);
+    void Index([NativeTypeName("const GLubyte *")] Ref<byte> c);
 
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glIndexxOES")]
@@ -40746,7 +40746,7 @@ public unsafe partial interface IGL
     [SupportedApiProfile("glcore", MinVersion = "3.2")]
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glIsEnabledi")]
-    byte IsEnabledi([NativeTypeName("GLenum")] uint target, [NativeTypeName("GLuint")] uint index);
+    byte IsEnabled([NativeTypeName("GLenum")] uint target, [NativeTypeName("GLuint")] uint index);
 
     [return: NativeTypeName("GLboolean")]
     [SupportedApiProfile("gles2", MinVersion = "2.0")]
@@ -41120,7 +41120,7 @@ public unsafe partial interface IGL
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [SupportedApiProfile("gles1", MaxVersion = "2.0")]
     [NativeFunction("opengl", EntryPoint = "glLightf")]
-    void Lightf(
+    void Light(
         [NativeTypeName("GLenum")] uint light,
         [NativeTypeName("GLenum")] uint pname,
         [NativeTypeName("GLfloat")] float param2
@@ -41129,7 +41129,7 @@ public unsafe partial interface IGL
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [SupportedApiProfile("gles1", MaxVersion = "2.0")]
     [NativeFunction("opengl", EntryPoint = "glLightfv")]
-    void Lightfv(
+    void Light(
         [NativeTypeName("GLenum")] uint light,
         [NativeTypeName("GLenum")] uint pname,
         [NativeTypeName("const GLfloat *")] Ref<float> @params
@@ -41137,7 +41137,7 @@ public unsafe partial interface IGL
 
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glLighti")]
-    void Lighti(
+    void Light(
         [NativeTypeName("GLenum")] uint light,
         [NativeTypeName("GLenum")] uint pname,
         [NativeTypeName("GLint")] int param2
@@ -41145,7 +41145,7 @@ public unsafe partial interface IGL
 
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glLightiv")]
-    void Lightiv(
+    void Light(
         [NativeTypeName("GLenum")] uint light,
         [NativeTypeName("GLenum")] uint pname,
         [NativeTypeName("const GLint *")] Ref<int> @params
@@ -41154,7 +41154,7 @@ public unsafe partial interface IGL
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [SupportedApiProfile("gles1", MaxVersion = "2.0")]
     [NativeFunction("opengl", EntryPoint = "glLightModelf")]
-    void LightModelf(
+    void LightModel(
         [NativeTypeName("GLenum")] uint pname,
         [NativeTypeName("GLfloat")] float param1
     );
@@ -41162,18 +41162,18 @@ public unsafe partial interface IGL
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [SupportedApiProfile("gles1", MaxVersion = "2.0")]
     [NativeFunction("opengl", EntryPoint = "glLightModelfv")]
-    void LightModelfv(
+    void LightModel(
         [NativeTypeName("GLenum")] uint pname,
         [NativeTypeName("const GLfloat *")] Ref<float> @params
     );
 
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glLightModeli")]
-    void LightModeli([NativeTypeName("GLenum")] uint pname, [NativeTypeName("GLint")] int param1);
+    void LightModel([NativeTypeName("GLenum")] uint pname, [NativeTypeName("GLint")] int param1);
 
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glLightModeliv")]
-    void LightModeliv(
+    void LightModel(
         [NativeTypeName("GLenum")] uint pname,
         [NativeTypeName("const GLint *")] Ref<int> @params
     );
@@ -41192,7 +41192,7 @@ public unsafe partial interface IGL
 
     [SupportedApiProfile("gles1", MaxVersion = "2.0")]
     [NativeFunction("opengl", EntryPoint = "glLightModelxv")]
-    void LightModelxv(
+    void LightModelx(
         [NativeTypeName("GLenum")] uint pname,
         [NativeTypeName("const GLfixed *")] Ref<int> param1
     );
@@ -41224,7 +41224,7 @@ public unsafe partial interface IGL
 
     [SupportedApiProfile("gles1", MaxVersion = "2.0")]
     [NativeFunction("opengl", EntryPoint = "glLightxv")]
-    void Lightxv(
+    void Lightx(
         [NativeTypeName("GLenum")] uint light,
         [NativeTypeName("GLenum")] uint pname,
         [NativeTypeName("const GLfixed *")] Ref<int> @params
@@ -41332,12 +41332,12 @@ public unsafe partial interface IGL
 
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glLoadMatrixd")]
-    void LoadMatrixd([NativeTypeName("const GLdouble *")] Ref<double> m);
+    void LoadMatrix([NativeTypeName("const GLdouble *")] Ref<double> m);
 
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [SupportedApiProfile("gles1", MaxVersion = "2.0")]
     [NativeFunction("opengl", EntryPoint = "glLoadMatrixf")]
-    void LoadMatrixf([NativeTypeName("const GLfloat *")] Ref<float> m);
+    void LoadMatrix([NativeTypeName("const GLfloat *")] Ref<float> m);
 
     [SupportedApiProfile("gles1", MaxVersion = "2.0")]
     [NativeFunction("opengl", EntryPoint = "glLoadMatrixx")]
@@ -41367,7 +41367,7 @@ public unsafe partial interface IGL
 
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glLoadTransposeMatrixd")]
-    void LoadTransposeMatrixd([NativeTypeName("const GLdouble *")] Ref<double> m);
+    void LoadTransposeMatrix([NativeTypeName("const GLdouble *")] Ref<double> m);
 
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glLoadTransposeMatrixdARB")]
@@ -41375,7 +41375,7 @@ public unsafe partial interface IGL
 
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glLoadTransposeMatrixf")]
-    void LoadTransposeMatrixf([NativeTypeName("const GLfloat *")] Ref<float> m);
+    void LoadTransposeMatrix([NativeTypeName("const GLfloat *")] Ref<float> m);
 
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glLoadTransposeMatrixfARB")]
@@ -41473,7 +41473,7 @@ public unsafe partial interface IGL
 
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glMap1d")]
-    void Map1d(
+    void Map1(
         [NativeTypeName("GLenum")] uint target,
         [NativeTypeName("GLdouble")] double u1,
         [NativeTypeName("GLdouble")] double u2,
@@ -41484,7 +41484,7 @@ public unsafe partial interface IGL
 
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glMap1f")]
-    void Map1f(
+    void Map1(
         [NativeTypeName("GLenum")] uint target,
         [NativeTypeName("GLfloat")] float u1,
         [NativeTypeName("GLfloat")] float u2,
@@ -41506,7 +41506,7 @@ public unsafe partial interface IGL
 
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glMap2d")]
-    void Map2d(
+    void Map2(
         [NativeTypeName("GLenum")] uint target,
         [NativeTypeName("GLdouble")] double u1,
         [NativeTypeName("GLdouble")] double u2,
@@ -41521,7 +41521,7 @@ public unsafe partial interface IGL
 
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glMap2f")]
-    void Map2f(
+    void Map2(
         [NativeTypeName("GLenum")] uint target,
         [NativeTypeName("GLfloat")] float u1,
         [NativeTypeName("GLfloat")] float u2,
@@ -41605,7 +41605,7 @@ public unsafe partial interface IGL
 
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glMapGrid1d")]
-    void MapGrid1d(
+    void MapGrid1(
         [NativeTypeName("GLint")] int un,
         [NativeTypeName("GLdouble")] double u1,
         [NativeTypeName("GLdouble")] double u2
@@ -41613,7 +41613,7 @@ public unsafe partial interface IGL
 
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glMapGrid1f")]
-    void MapGrid1f(
+    void MapGrid1(
         [NativeTypeName("GLint")] int un,
         [NativeTypeName("GLfloat")] float u1,
         [NativeTypeName("GLfloat")] float u2
@@ -41629,7 +41629,7 @@ public unsafe partial interface IGL
 
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glMapGrid2d")]
-    void MapGrid2d(
+    void MapGrid2(
         [NativeTypeName("GLint")] int un,
         [NativeTypeName("GLdouble")] double u1,
         [NativeTypeName("GLdouble")] double u2,
@@ -41640,7 +41640,7 @@ public unsafe partial interface IGL
 
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glMapGrid2f")]
-    void MapGrid2f(
+    void MapGrid2(
         [NativeTypeName("GLint")] int un,
         [NativeTypeName("GLfloat")] float u1,
         [NativeTypeName("GLfloat")] float u2,
@@ -41784,7 +41784,7 @@ public unsafe partial interface IGL
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [SupportedApiProfile("gles1", MaxVersion = "2.0")]
     [NativeFunction("opengl", EntryPoint = "glMaterialf")]
-    void Materialf(
+    void Material(
         [NativeTypeName("GLenum")] uint face,
         [NativeTypeName("GLenum")] uint pname,
         [NativeTypeName("GLfloat")] float param2
@@ -41793,7 +41793,7 @@ public unsafe partial interface IGL
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [SupportedApiProfile("gles1", MaxVersion = "2.0")]
     [NativeFunction("opengl", EntryPoint = "glMaterialfv")]
-    void Materialfv(
+    void Material(
         [NativeTypeName("GLenum")] uint face,
         [NativeTypeName("GLenum")] uint pname,
         [NativeTypeName("const GLfloat *")] Ref<float> @params
@@ -41801,7 +41801,7 @@ public unsafe partial interface IGL
 
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glMateriali")]
-    void Materiali(
+    void Material(
         [NativeTypeName("GLenum")] uint face,
         [NativeTypeName("GLenum")] uint pname,
         [NativeTypeName("GLint")] int param2
@@ -41809,7 +41809,7 @@ public unsafe partial interface IGL
 
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glMaterialiv")]
-    void Materialiv(
+    void Material(
         [NativeTypeName("GLenum")] uint face,
         [NativeTypeName("GLenum")] uint pname,
         [NativeTypeName("const GLint *")] Ref<int> @params
@@ -41834,7 +41834,7 @@ public unsafe partial interface IGL
 
     [SupportedApiProfile("gles1", MaxVersion = "2.0")]
     [NativeFunction("opengl", EntryPoint = "glMaterialxv")]
-    void Materialxv(
+    void Materialx(
         [NativeTypeName("GLenum")] uint face,
         [NativeTypeName("GLenum")] uint pname,
         [NativeTypeName("const GLfixed *")] Ref<int> param2
@@ -42650,7 +42650,7 @@ public unsafe partial interface IGL
 
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glMultiTexCoord1d")]
-    void MultiTexCoord1d(
+    void MultiTexCoord1(
         [NativeTypeName("GLenum")] uint target,
         [NativeTypeName("GLdouble")] double s
     );
@@ -42664,7 +42664,7 @@ public unsafe partial interface IGL
 
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glMultiTexCoord1dv")]
-    void MultiTexCoord1dv(
+    void MultiTexCoord1(
         [NativeTypeName("GLenum")] uint target,
         [NativeTypeName("const GLdouble *")] Ref<double> v
     );
@@ -42678,7 +42678,7 @@ public unsafe partial interface IGL
 
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glMultiTexCoord1f")]
-    void MultiTexCoord1f(
+    void MultiTexCoord1(
         [NativeTypeName("GLenum")] uint target,
         [NativeTypeName("GLfloat")] float s
     );
@@ -42692,7 +42692,7 @@ public unsafe partial interface IGL
 
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glMultiTexCoord1fv")]
-    void MultiTexCoord1fv(
+    void MultiTexCoord1(
         [NativeTypeName("GLenum")] uint target,
         [NativeTypeName("const GLfloat *")] Ref<float> v
     );
@@ -42720,7 +42720,7 @@ public unsafe partial interface IGL
 
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glMultiTexCoord1i")]
-    void MultiTexCoord1i([NativeTypeName("GLenum")] uint target, [NativeTypeName("GLint")] int s);
+    void MultiTexCoord1([NativeTypeName("GLenum")] uint target, [NativeTypeName("GLint")] int s);
 
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glMultiTexCoord1iARB")]
@@ -42731,7 +42731,7 @@ public unsafe partial interface IGL
 
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glMultiTexCoord1iv")]
-    void MultiTexCoord1iv(
+    void MultiTexCoord1(
         [NativeTypeName("GLenum")] uint target,
         [NativeTypeName("const GLint *")] Ref<int> v
     );
@@ -42745,7 +42745,7 @@ public unsafe partial interface IGL
 
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glMultiTexCoord1s")]
-    void MultiTexCoord1s(
+    void MultiTexCoord1(
         [NativeTypeName("GLenum")] uint target,
         [NativeTypeName("GLshort")] short s
     );
@@ -42759,7 +42759,7 @@ public unsafe partial interface IGL
 
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glMultiTexCoord1sv")]
-    void MultiTexCoord1sv(
+    void MultiTexCoord1(
         [NativeTypeName("GLenum")] uint target,
         [NativeTypeName("const GLshort *")] Ref<short> v
     );
@@ -42802,7 +42802,7 @@ public unsafe partial interface IGL
 
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glMultiTexCoord2d")]
-    void MultiTexCoord2d(
+    void MultiTexCoord2(
         [NativeTypeName("GLenum")] uint target,
         [NativeTypeName("GLdouble")] double s,
         [NativeTypeName("GLdouble")] double t
@@ -42818,7 +42818,7 @@ public unsafe partial interface IGL
 
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glMultiTexCoord2dv")]
-    void MultiTexCoord2dv(
+    void MultiTexCoord2(
         [NativeTypeName("GLenum")] uint target,
         [NativeTypeName("const GLdouble *")] Ref<double> v
     );
@@ -42832,7 +42832,7 @@ public unsafe partial interface IGL
 
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glMultiTexCoord2f")]
-    void MultiTexCoord2f(
+    void MultiTexCoord2(
         [NativeTypeName("GLenum")] uint target,
         [NativeTypeName("GLfloat")] float s,
         [NativeTypeName("GLfloat")] float t
@@ -42848,7 +42848,7 @@ public unsafe partial interface IGL
 
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glMultiTexCoord2fv")]
-    void MultiTexCoord2fv(
+    void MultiTexCoord2(
         [NativeTypeName("GLenum")] uint target,
         [NativeTypeName("const GLfloat *")] Ref<float> v
     );
@@ -42877,7 +42877,7 @@ public unsafe partial interface IGL
 
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glMultiTexCoord2i")]
-    void MultiTexCoord2i(
+    void MultiTexCoord2(
         [NativeTypeName("GLenum")] uint target,
         [NativeTypeName("GLint")] int s,
         [NativeTypeName("GLint")] int t
@@ -42893,7 +42893,7 @@ public unsafe partial interface IGL
 
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glMultiTexCoord2iv")]
-    void MultiTexCoord2iv(
+    void MultiTexCoord2(
         [NativeTypeName("GLenum")] uint target,
         [NativeTypeName("const GLint *")] Ref<int> v
     );
@@ -42907,7 +42907,7 @@ public unsafe partial interface IGL
 
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glMultiTexCoord2s")]
-    void MultiTexCoord2s(
+    void MultiTexCoord2(
         [NativeTypeName("GLenum")] uint target,
         [NativeTypeName("GLshort")] short s,
         [NativeTypeName("GLshort")] short t
@@ -42923,7 +42923,7 @@ public unsafe partial interface IGL
 
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glMultiTexCoord2sv")]
-    void MultiTexCoord2sv(
+    void MultiTexCoord2(
         [NativeTypeName("GLenum")] uint target,
         [NativeTypeName("const GLshort *")] Ref<short> v
     );
@@ -42968,7 +42968,7 @@ public unsafe partial interface IGL
 
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glMultiTexCoord3d")]
-    void MultiTexCoord3d(
+    void MultiTexCoord3(
         [NativeTypeName("GLenum")] uint target,
         [NativeTypeName("GLdouble")] double s,
         [NativeTypeName("GLdouble")] double t,
@@ -42986,7 +42986,7 @@ public unsafe partial interface IGL
 
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glMultiTexCoord3dv")]
-    void MultiTexCoord3dv(
+    void MultiTexCoord3(
         [NativeTypeName("GLenum")] uint target,
         [NativeTypeName("const GLdouble *")] Ref<double> v
     );
@@ -43000,7 +43000,7 @@ public unsafe partial interface IGL
 
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glMultiTexCoord3f")]
-    void MultiTexCoord3f(
+    void MultiTexCoord3(
         [NativeTypeName("GLenum")] uint target,
         [NativeTypeName("GLfloat")] float s,
         [NativeTypeName("GLfloat")] float t,
@@ -43018,7 +43018,7 @@ public unsafe partial interface IGL
 
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glMultiTexCoord3fv")]
-    void MultiTexCoord3fv(
+    void MultiTexCoord3(
         [NativeTypeName("GLenum")] uint target,
         [NativeTypeName("const GLfloat *")] Ref<float> v
     );
@@ -43048,7 +43048,7 @@ public unsafe partial interface IGL
 
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glMultiTexCoord3i")]
-    void MultiTexCoord3i(
+    void MultiTexCoord3(
         [NativeTypeName("GLenum")] uint target,
         [NativeTypeName("GLint")] int s,
         [NativeTypeName("GLint")] int t,
@@ -43066,7 +43066,7 @@ public unsafe partial interface IGL
 
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glMultiTexCoord3iv")]
-    void MultiTexCoord3iv(
+    void MultiTexCoord3(
         [NativeTypeName("GLenum")] uint target,
         [NativeTypeName("const GLint *")] Ref<int> v
     );
@@ -43080,7 +43080,7 @@ public unsafe partial interface IGL
 
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glMultiTexCoord3s")]
-    void MultiTexCoord3s(
+    void MultiTexCoord3(
         [NativeTypeName("GLenum")] uint target,
         [NativeTypeName("GLshort")] short s,
         [NativeTypeName("GLshort")] short t,
@@ -43098,7 +43098,7 @@ public unsafe partial interface IGL
 
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glMultiTexCoord3sv")]
-    void MultiTexCoord3sv(
+    void MultiTexCoord3(
         [NativeTypeName("GLenum")] uint target,
         [NativeTypeName("const GLshort *")] Ref<short> v
     );
@@ -43145,7 +43145,7 @@ public unsafe partial interface IGL
 
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glMultiTexCoord4d")]
-    void MultiTexCoord4d(
+    void MultiTexCoord4(
         [NativeTypeName("GLenum")] uint target,
         [NativeTypeName("GLdouble")] double s,
         [NativeTypeName("GLdouble")] double t,
@@ -43165,7 +43165,7 @@ public unsafe partial interface IGL
 
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glMultiTexCoord4dv")]
-    void MultiTexCoord4dv(
+    void MultiTexCoord4(
         [NativeTypeName("GLenum")] uint target,
         [NativeTypeName("const GLdouble *")] Ref<double> v
     );
@@ -43180,7 +43180,7 @@ public unsafe partial interface IGL
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [SupportedApiProfile("gles1", MaxVersion = "2.0")]
     [NativeFunction("opengl", EntryPoint = "glMultiTexCoord4f")]
-    void MultiTexCoord4f(
+    void MultiTexCoord4(
         [NativeTypeName("GLenum")] uint target,
         [NativeTypeName("GLfloat")] float s,
         [NativeTypeName("GLfloat")] float t,
@@ -43200,7 +43200,7 @@ public unsafe partial interface IGL
 
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glMultiTexCoord4fv")]
-    void MultiTexCoord4fv(
+    void MultiTexCoord4(
         [NativeTypeName("GLenum")] uint target,
         [NativeTypeName("const GLfloat *")] Ref<float> v
     );
@@ -43231,7 +43231,7 @@ public unsafe partial interface IGL
 
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glMultiTexCoord4i")]
-    void MultiTexCoord4i(
+    void MultiTexCoord4(
         [NativeTypeName("GLenum")] uint target,
         [NativeTypeName("GLint")] int s,
         [NativeTypeName("GLint")] int t,
@@ -43251,7 +43251,7 @@ public unsafe partial interface IGL
 
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glMultiTexCoord4iv")]
-    void MultiTexCoord4iv(
+    void MultiTexCoord4(
         [NativeTypeName("GLenum")] uint target,
         [NativeTypeName("const GLint *")] Ref<int> v
     );
@@ -43265,7 +43265,7 @@ public unsafe partial interface IGL
 
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glMultiTexCoord4s")]
-    void MultiTexCoord4s(
+    void MultiTexCoord4(
         [NativeTypeName("GLenum")] uint target,
         [NativeTypeName("GLshort")] short s,
         [NativeTypeName("GLshort")] short t,
@@ -43285,7 +43285,7 @@ public unsafe partial interface IGL
 
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glMultiTexCoord4sv")]
-    void MultiTexCoord4sv(
+    void MultiTexCoord4(
         [NativeTypeName("GLenum")] uint target,
         [NativeTypeName("const GLshort *")] Ref<short> v
     );
@@ -43327,7 +43327,7 @@ public unsafe partial interface IGL
 
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glMultiTexCoordP1ui")]
-    void MultiTexCoordP1ui(
+    void MultiTexCoordP1(
         [NativeTypeName("GLenum")] uint texture,
         [NativeTypeName("GLenum")] uint type,
         [NativeTypeName("GLuint")] uint coords
@@ -43335,7 +43335,7 @@ public unsafe partial interface IGL
 
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glMultiTexCoordP1uiv")]
-    void MultiTexCoordP1uiv(
+    void MultiTexCoordP1(
         [NativeTypeName("GLenum")] uint texture,
         [NativeTypeName("GLenum")] uint type,
         [NativeTypeName("const GLuint *")] Ref<uint> coords
@@ -43343,7 +43343,7 @@ public unsafe partial interface IGL
 
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glMultiTexCoordP2ui")]
-    void MultiTexCoordP2ui(
+    void MultiTexCoordP2(
         [NativeTypeName("GLenum")] uint texture,
         [NativeTypeName("GLenum")] uint type,
         [NativeTypeName("GLuint")] uint coords
@@ -43351,7 +43351,7 @@ public unsafe partial interface IGL
 
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glMultiTexCoordP2uiv")]
-    void MultiTexCoordP2uiv(
+    void MultiTexCoordP2(
         [NativeTypeName("GLenum")] uint texture,
         [NativeTypeName("GLenum")] uint type,
         [NativeTypeName("const GLuint *")] Ref<uint> coords
@@ -43359,7 +43359,7 @@ public unsafe partial interface IGL
 
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glMultiTexCoordP3ui")]
-    void MultiTexCoordP3ui(
+    void MultiTexCoordP3(
         [NativeTypeName("GLenum")] uint texture,
         [NativeTypeName("GLenum")] uint type,
         [NativeTypeName("GLuint")] uint coords
@@ -43367,7 +43367,7 @@ public unsafe partial interface IGL
 
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glMultiTexCoordP3uiv")]
-    void MultiTexCoordP3uiv(
+    void MultiTexCoordP3(
         [NativeTypeName("GLenum")] uint texture,
         [NativeTypeName("GLenum")] uint type,
         [NativeTypeName("const GLuint *")] Ref<uint> coords
@@ -43375,7 +43375,7 @@ public unsafe partial interface IGL
 
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glMultiTexCoordP4ui")]
-    void MultiTexCoordP4ui(
+    void MultiTexCoordP4(
         [NativeTypeName("GLenum")] uint texture,
         [NativeTypeName("GLenum")] uint type,
         [NativeTypeName("GLuint")] uint coords
@@ -43383,7 +43383,7 @@ public unsafe partial interface IGL
 
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glMultiTexCoordP4uiv")]
-    void MultiTexCoordP4uiv(
+    void MultiTexCoordP4(
         [NativeTypeName("GLenum")] uint texture,
         [NativeTypeName("GLenum")] uint type,
         [NativeTypeName("const GLuint *")] Ref<uint> coords
@@ -43667,12 +43667,12 @@ public unsafe partial interface IGL
 
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glMultMatrixd")]
-    void MultMatrixd([NativeTypeName("const GLdouble *")] Ref<double> m);
+    void MultMatrix([NativeTypeName("const GLdouble *")] Ref<double> m);
 
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [SupportedApiProfile("gles1", MaxVersion = "2.0")]
     [NativeFunction("opengl", EntryPoint = "glMultMatrixf")]
-    void MultMatrixf([NativeTypeName("const GLfloat *")] Ref<float> m);
+    void MultMatrix([NativeTypeName("const GLfloat *")] Ref<float> m);
 
     [SupportedApiProfile("gles1", MaxVersion = "2.0")]
     [NativeFunction("opengl", EntryPoint = "glMultMatrixx")]
@@ -43685,7 +43685,7 @@ public unsafe partial interface IGL
 
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glMultTransposeMatrixd")]
-    void MultTransposeMatrixd([NativeTypeName("const GLdouble *")] Ref<double> m);
+    void MultTransposeMatrix([NativeTypeName("const GLdouble *")] Ref<double> m);
 
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glMultTransposeMatrixdARB")]
@@ -43693,7 +43693,7 @@ public unsafe partial interface IGL
 
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glMultTransposeMatrixf")]
-    void MultTransposeMatrixf([NativeTypeName("const GLfloat *")] Ref<float> m);
+    void MultTransposeMatrix([NativeTypeName("const GLfloat *")] Ref<float> m);
 
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glMultTransposeMatrixfARB")]
@@ -43858,7 +43858,7 @@ public unsafe partial interface IGL
     [SupportedApiProfile("glcore", MinVersion = "3.2")]
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glNamedFramebufferParameteri")]
-    void NamedFramebufferParameteri(
+    void NamedFramebufferParameter(
         [NativeTypeName("GLuint")] uint framebuffer,
         [NativeTypeName("GLenum")] uint pname,
         [NativeTypeName("GLint")] int param2
@@ -44247,7 +44247,7 @@ public unsafe partial interface IGL
 
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glNormal3b")]
-    void Normal3b(
+    void Normal3(
         [NativeTypeName("GLbyte")] sbyte nx,
         [NativeTypeName("GLbyte")] sbyte ny,
         [NativeTypeName("GLbyte")] sbyte nz
@@ -44255,11 +44255,11 @@ public unsafe partial interface IGL
 
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glNormal3bv")]
-    void Normal3bv([NativeTypeName("const GLbyte *")] Ref<sbyte> v);
+    void Normal3([NativeTypeName("const GLbyte *")] Ref<sbyte> v);
 
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glNormal3d")]
-    void Normal3d(
+    void Normal3(
         [NativeTypeName("GLdouble")] double nx,
         [NativeTypeName("GLdouble")] double ny,
         [NativeTypeName("GLdouble")] double nz
@@ -44267,12 +44267,12 @@ public unsafe partial interface IGL
 
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glNormal3dv")]
-    void Normal3dv([NativeTypeName("const GLdouble *")] Ref<double> v);
+    void Normal3([NativeTypeName("const GLdouble *")] Ref<double> v);
 
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [SupportedApiProfile("gles1", MaxVersion = "2.0")]
     [NativeFunction("opengl", EntryPoint = "glNormal3f")]
-    void Normal3f(
+    void Normal3(
         [NativeTypeName("GLfloat")] float nx,
         [NativeTypeName("GLfloat")] float ny,
         [NativeTypeName("GLfloat")] float nz
@@ -44280,7 +44280,7 @@ public unsafe partial interface IGL
 
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glNormal3fv")]
-    void Normal3fv([NativeTypeName("const GLfloat *")] Ref<float> v);
+    void Normal3([NativeTypeName("const GLfloat *")] Ref<float> v);
 
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glNormal3fVertex3fSUN")]
@@ -44314,7 +44314,7 @@ public unsafe partial interface IGL
 
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glNormal3i")]
-    void Normal3i(
+    void Normal3(
         [NativeTypeName("GLint")] int nx,
         [NativeTypeName("GLint")] int ny,
         [NativeTypeName("GLint")] int nz
@@ -44322,11 +44322,11 @@ public unsafe partial interface IGL
 
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glNormal3iv")]
-    void Normal3iv([NativeTypeName("const GLint *")] Ref<int> v);
+    void Normal3([NativeTypeName("const GLint *")] Ref<int> v);
 
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glNormal3s")]
-    void Normal3s(
+    void Normal3(
         [NativeTypeName("GLshort")] short nx,
         [NativeTypeName("GLshort")] short ny,
         [NativeTypeName("GLshort")] short nz
@@ -44334,7 +44334,7 @@ public unsafe partial interface IGL
 
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glNormal3sv")]
-    void Normal3sv([NativeTypeName("const GLshort *")] Ref<short> v);
+    void Normal3([NativeTypeName("const GLshort *")] Ref<short> v);
 
     [SupportedApiProfile("gles1", MaxVersion = "2.0")]
     [NativeFunction("opengl", EntryPoint = "glNormal3x")]
@@ -44367,11 +44367,11 @@ public unsafe partial interface IGL
 
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glNormalP3ui")]
-    void NormalP3ui([NativeTypeName("GLenum")] uint type, [NativeTypeName("GLuint")] uint coords);
+    void NormalP3([NativeTypeName("GLenum")] uint type, [NativeTypeName("GLuint")] uint coords);
 
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glNormalP3uiv")]
-    void NormalP3uiv(
+    void NormalP3(
         [NativeTypeName("GLenum")] uint type,
         [NativeTypeName("const GLuint *")] Ref<uint> coords
     );
@@ -44557,7 +44557,7 @@ public unsafe partial interface IGL
 
     [SupportedApiProfile("gles1", MaxVersion = "2.0")]
     [NativeFunction("opengl", EntryPoint = "glOrthof")]
-    void Orthof(
+    void Ortho(
         [NativeTypeName("GLfloat")] float l,
         [NativeTypeName("GLfloat")] float r,
         [NativeTypeName("GLfloat")] float b,
@@ -44620,7 +44620,7 @@ public unsafe partial interface IGL
     [SupportedApiProfile("glcore", MinVersion = "3.2")]
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glPatchParameterfv")]
-    void PatchParameterfv(
+    void PatchParameter(
         [NativeTypeName("GLenum")] uint pname,
         [NativeTypeName("const GLfloat *")] Ref<float> values
     );
@@ -44628,10 +44628,7 @@ public unsafe partial interface IGL
     [SupportedApiProfile("glcore", MinVersion = "3.2")]
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glPatchParameteri")]
-    void PatchParameteri(
-        [NativeTypeName("GLenum")] uint pname,
-        [NativeTypeName("GLint")] int value
-    );
+    void PatchParameter([NativeTypeName("GLenum")] uint pname, [NativeTypeName("GLint")] int value);
 
     [SupportedApiProfile("gles2", MinVersion = "2.0")]
     [NativeFunction("opengl", EntryPoint = "glPatchParameteriEXT")]
@@ -44905,7 +44902,7 @@ public unsafe partial interface IGL
 
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glPixelMapfv")]
-    void PixelMapfv(
+    void PixelMap(
         [NativeTypeName("GLenum")] uint map,
         [NativeTypeName("GLsizei")] int mapsize,
         [NativeTypeName("const GLfloat *")] Ref<float> values
@@ -44913,7 +44910,7 @@ public unsafe partial interface IGL
 
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glPixelMapuiv")]
-    void PixelMapuiv(
+    void PixelMap(
         [NativeTypeName("GLenum")] uint map,
         [NativeTypeName("GLsizei")] int mapsize,
         [NativeTypeName("const GLuint *")] Ref<uint> values
@@ -44921,7 +44918,7 @@ public unsafe partial interface IGL
 
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glPixelMapusv")]
-    void PixelMapusv(
+    void PixelMap(
         [NativeTypeName("GLenum")] uint map,
         [NativeTypeName("GLsizei")] int mapsize,
         [NativeTypeName("const GLushort *")] Ref<ushort> values
@@ -44938,7 +44935,7 @@ public unsafe partial interface IGL
     [SupportedApiProfile("glcore", MinVersion = "3.2")]
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glPixelStoref")]
-    void PixelStoref(
+    void PixelStore(
         [NativeTypeName("GLenum")] uint pname,
         [NativeTypeName("GLfloat")] float param1
     );
@@ -44948,7 +44945,7 @@ public unsafe partial interface IGL
     [SupportedApiProfile("gles1", MaxVersion = "2.0")]
     [SupportedApiProfile("gles2", MinVersion = "2.0")]
     [NativeFunction("opengl", EntryPoint = "glPixelStorei")]
-    void PixelStorei([NativeTypeName("GLenum")] uint pname, [NativeTypeName("GLint")] int param1);
+    void PixelStore([NativeTypeName("GLenum")] uint pname, [NativeTypeName("GLint")] int param1);
 
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glPixelStorex")]
@@ -44988,17 +44985,14 @@ public unsafe partial interface IGL
 
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glPixelTransferf")]
-    void PixelTransferf(
+    void PixelTransfer(
         [NativeTypeName("GLenum")] uint pname,
         [NativeTypeName("GLfloat")] float param1
     );
 
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glPixelTransferi")]
-    void PixelTransferi(
-        [NativeTypeName("GLenum")] uint pname,
-        [NativeTypeName("GLint")] int param1
-    );
+    void PixelTransfer([NativeTypeName("GLenum")] uint pname, [NativeTypeName("GLint")] int param1);
 
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glPixelTransferxOES")]
@@ -45087,7 +45081,7 @@ public unsafe partial interface IGL
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [SupportedApiProfile("gles1", MaxVersion = "2.0")]
     [NativeFunction("opengl", EntryPoint = "glPointParameterf")]
-    void PointParameterf(
+    void PointParameter(
         [NativeTypeName("GLenum")] uint pname,
         [NativeTypeName("GLfloat")] float param1
     );
@@ -45117,7 +45111,7 @@ public unsafe partial interface IGL
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [SupportedApiProfile("gles1", MaxVersion = "2.0")]
     [NativeFunction("opengl", EntryPoint = "glPointParameterfv")]
-    void PointParameterfv(
+    void PointParameter(
         [NativeTypeName("GLenum")] uint pname,
         [NativeTypeName("const GLfloat *")] Ref<float> @params
     );
@@ -45146,7 +45140,7 @@ public unsafe partial interface IGL
     [SupportedApiProfile("glcore", MinVersion = "3.2")]
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glPointParameteri")]
-    void PointParameteri(
+    void PointParameter(
         [NativeTypeName("GLenum")] uint pname,
         [NativeTypeName("GLint")] int param1
     );
@@ -45161,7 +45155,7 @@ public unsafe partial interface IGL
     [SupportedApiProfile("glcore", MinVersion = "3.2")]
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glPointParameteriv")]
-    void PointParameteriv(
+    void PointParameter(
         [NativeTypeName("GLenum")] uint pname,
         [NativeTypeName("const GLint *")] Ref<int> @params
     );
@@ -45189,7 +45183,7 @@ public unsafe partial interface IGL
 
     [SupportedApiProfile("gles1", MaxVersion = "2.0")]
     [NativeFunction("opengl", EntryPoint = "glPointParameterxv")]
-    void PointParameterxv(
+    void PointParameterx(
         [NativeTypeName("GLenum")] uint pname,
         [NativeTypeName("const GLfixed *")] Ref<int> @params
     );
@@ -45781,7 +45775,7 @@ public unsafe partial interface IGL
     [SupportedApiProfile("glcore", MinVersion = "3.2")]
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glProgramParameteri")]
-    void ProgramParameteri(
+    void ProgramParameter(
         [NativeTypeName("GLuint")] uint program,
         [NativeTypeName("GLenum")] uint pname,
         [NativeTypeName("GLint")] int value
@@ -45855,7 +45849,7 @@ public unsafe partial interface IGL
     [SupportedApiProfile("glcore", MinVersion = "3.2")]
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glProgramUniform1d")]
-    void ProgramUniform1d(
+    void ProgramUniform1(
         [NativeTypeName("GLuint")] uint program,
         [NativeTypeName("GLint")] int location,
         [NativeTypeName("GLdouble")] double v0
@@ -45873,7 +45867,7 @@ public unsafe partial interface IGL
     [SupportedApiProfile("glcore", MinVersion = "3.2")]
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glProgramUniform1dv")]
-    void ProgramUniform1dv(
+    void ProgramUniform1(
         [NativeTypeName("GLuint")] uint program,
         [NativeTypeName("GLint")] int location,
         [NativeTypeName("GLsizei")] int count,
@@ -45893,7 +45887,7 @@ public unsafe partial interface IGL
     [SupportedApiProfile("glcore", MinVersion = "3.2")]
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glProgramUniform1f")]
-    void ProgramUniform1f(
+    void ProgramUniform1(
         [NativeTypeName("GLuint")] uint program,
         [NativeTypeName("GLint")] int location,
         [NativeTypeName("GLfloat")] float v0
@@ -45912,7 +45906,7 @@ public unsafe partial interface IGL
     [SupportedApiProfile("glcore", MinVersion = "3.2")]
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glProgramUniform1fv")]
-    void ProgramUniform1fv(
+    void ProgramUniform1(
         [NativeTypeName("GLuint")] uint program,
         [NativeTypeName("GLint")] int location,
         [NativeTypeName("GLsizei")] int count,
@@ -45933,7 +45927,7 @@ public unsafe partial interface IGL
     [SupportedApiProfile("glcore", MinVersion = "3.2")]
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glProgramUniform1i")]
-    void ProgramUniform1i(
+    void ProgramUniform1(
         [NativeTypeName("GLuint")] uint program,
         [NativeTypeName("GLint")] int location,
         [NativeTypeName("GLint")] int v0
@@ -45992,7 +45986,7 @@ public unsafe partial interface IGL
     [SupportedApiProfile("glcore", MinVersion = "3.2")]
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glProgramUniform1iv")]
-    void ProgramUniform1iv(
+    void ProgramUniform1(
         [NativeTypeName("GLuint")] uint program,
         [NativeTypeName("GLint")] int location,
         [NativeTypeName("GLsizei")] int count,
@@ -46013,7 +46007,7 @@ public unsafe partial interface IGL
     [SupportedApiProfile("glcore", MinVersion = "3.2")]
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glProgramUniform1ui")]
-    void ProgramUniform1ui(
+    void ProgramUniform1(
         [NativeTypeName("GLuint")] uint program,
         [NativeTypeName("GLint")] int location,
         [NativeTypeName("GLuint")] uint v0
@@ -46072,7 +46066,7 @@ public unsafe partial interface IGL
     [SupportedApiProfile("glcore", MinVersion = "3.2")]
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glProgramUniform1uiv")]
-    void ProgramUniform1uiv(
+    void ProgramUniform1(
         [NativeTypeName("GLuint")] uint program,
         [NativeTypeName("GLint")] int location,
         [NativeTypeName("GLsizei")] int count,
@@ -46093,7 +46087,7 @@ public unsafe partial interface IGL
     [SupportedApiProfile("glcore", MinVersion = "3.2")]
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glProgramUniform2d")]
-    void ProgramUniform2d(
+    void ProgramUniform2(
         [NativeTypeName("GLuint")] uint program,
         [NativeTypeName("GLint")] int location,
         [NativeTypeName("GLdouble")] double v0,
@@ -46113,7 +46107,7 @@ public unsafe partial interface IGL
     [SupportedApiProfile("glcore", MinVersion = "3.2")]
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glProgramUniform2dv")]
-    void ProgramUniform2dv(
+    void ProgramUniform2(
         [NativeTypeName("GLuint")] uint program,
         [NativeTypeName("GLint")] int location,
         [NativeTypeName("GLsizei")] int count,
@@ -46133,7 +46127,7 @@ public unsafe partial interface IGL
     [SupportedApiProfile("glcore", MinVersion = "3.2")]
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glProgramUniform2f")]
-    void ProgramUniform2f(
+    void ProgramUniform2(
         [NativeTypeName("GLuint")] uint program,
         [NativeTypeName("GLint")] int location,
         [NativeTypeName("GLfloat")] float v0,
@@ -46154,7 +46148,7 @@ public unsafe partial interface IGL
     [SupportedApiProfile("glcore", MinVersion = "3.2")]
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glProgramUniform2fv")]
-    void ProgramUniform2fv(
+    void ProgramUniform2(
         [NativeTypeName("GLuint")] uint program,
         [NativeTypeName("GLint")] int location,
         [NativeTypeName("GLsizei")] int count,
@@ -46175,7 +46169,7 @@ public unsafe partial interface IGL
     [SupportedApiProfile("glcore", MinVersion = "3.2")]
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glProgramUniform2i")]
-    void ProgramUniform2i(
+    void ProgramUniform2(
         [NativeTypeName("GLuint")] uint program,
         [NativeTypeName("GLint")] int location,
         [NativeTypeName("GLint")] int v0,
@@ -46238,7 +46232,7 @@ public unsafe partial interface IGL
     [SupportedApiProfile("glcore", MinVersion = "3.2")]
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glProgramUniform2iv")]
-    void ProgramUniform2iv(
+    void ProgramUniform2(
         [NativeTypeName("GLuint")] uint program,
         [NativeTypeName("GLint")] int location,
         [NativeTypeName("GLsizei")] int count,
@@ -46259,7 +46253,7 @@ public unsafe partial interface IGL
     [SupportedApiProfile("glcore", MinVersion = "3.2")]
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glProgramUniform2ui")]
-    void ProgramUniform2ui(
+    void ProgramUniform2(
         [NativeTypeName("GLuint")] uint program,
         [NativeTypeName("GLint")] int location,
         [NativeTypeName("GLuint")] uint v0,
@@ -46322,7 +46316,7 @@ public unsafe partial interface IGL
     [SupportedApiProfile("glcore", MinVersion = "3.2")]
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glProgramUniform2uiv")]
-    void ProgramUniform2uiv(
+    void ProgramUniform2(
         [NativeTypeName("GLuint")] uint program,
         [NativeTypeName("GLint")] int location,
         [NativeTypeName("GLsizei")] int count,
@@ -46343,7 +46337,7 @@ public unsafe partial interface IGL
     [SupportedApiProfile("glcore", MinVersion = "3.2")]
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glProgramUniform3d")]
-    void ProgramUniform3d(
+    void ProgramUniform3(
         [NativeTypeName("GLuint")] uint program,
         [NativeTypeName("GLint")] int location,
         [NativeTypeName("GLdouble")] double v0,
@@ -46365,7 +46359,7 @@ public unsafe partial interface IGL
     [SupportedApiProfile("glcore", MinVersion = "3.2")]
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glProgramUniform3dv")]
-    void ProgramUniform3dv(
+    void ProgramUniform3(
         [NativeTypeName("GLuint")] uint program,
         [NativeTypeName("GLint")] int location,
         [NativeTypeName("GLsizei")] int count,
@@ -46385,7 +46379,7 @@ public unsafe partial interface IGL
     [SupportedApiProfile("glcore", MinVersion = "3.2")]
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glProgramUniform3f")]
-    void ProgramUniform3f(
+    void ProgramUniform3(
         [NativeTypeName("GLuint")] uint program,
         [NativeTypeName("GLint")] int location,
         [NativeTypeName("GLfloat")] float v0,
@@ -46408,7 +46402,7 @@ public unsafe partial interface IGL
     [SupportedApiProfile("glcore", MinVersion = "3.2")]
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glProgramUniform3fv")]
-    void ProgramUniform3fv(
+    void ProgramUniform3(
         [NativeTypeName("GLuint")] uint program,
         [NativeTypeName("GLint")] int location,
         [NativeTypeName("GLsizei")] int count,
@@ -46429,7 +46423,7 @@ public unsafe partial interface IGL
     [SupportedApiProfile("glcore", MinVersion = "3.2")]
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glProgramUniform3i")]
-    void ProgramUniform3i(
+    void ProgramUniform3(
         [NativeTypeName("GLuint")] uint program,
         [NativeTypeName("GLint")] int location,
         [NativeTypeName("GLint")] int v0,
@@ -46496,7 +46490,7 @@ public unsafe partial interface IGL
     [SupportedApiProfile("glcore", MinVersion = "3.2")]
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glProgramUniform3iv")]
-    void ProgramUniform3iv(
+    void ProgramUniform3(
         [NativeTypeName("GLuint")] uint program,
         [NativeTypeName("GLint")] int location,
         [NativeTypeName("GLsizei")] int count,
@@ -46517,7 +46511,7 @@ public unsafe partial interface IGL
     [SupportedApiProfile("glcore", MinVersion = "3.2")]
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glProgramUniform3ui")]
-    void ProgramUniform3ui(
+    void ProgramUniform3(
         [NativeTypeName("GLuint")] uint program,
         [NativeTypeName("GLint")] int location,
         [NativeTypeName("GLuint")] uint v0,
@@ -46584,7 +46578,7 @@ public unsafe partial interface IGL
     [SupportedApiProfile("glcore", MinVersion = "3.2")]
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glProgramUniform3uiv")]
-    void ProgramUniform3uiv(
+    void ProgramUniform3(
         [NativeTypeName("GLuint")] uint program,
         [NativeTypeName("GLint")] int location,
         [NativeTypeName("GLsizei")] int count,
@@ -46605,7 +46599,7 @@ public unsafe partial interface IGL
     [SupportedApiProfile("glcore", MinVersion = "3.2")]
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glProgramUniform4d")]
-    void ProgramUniform4d(
+    void ProgramUniform4(
         [NativeTypeName("GLuint")] uint program,
         [NativeTypeName("GLint")] int location,
         [NativeTypeName("GLdouble")] double v0,
@@ -46629,7 +46623,7 @@ public unsafe partial interface IGL
     [SupportedApiProfile("glcore", MinVersion = "3.2")]
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glProgramUniform4dv")]
-    void ProgramUniform4dv(
+    void ProgramUniform4(
         [NativeTypeName("GLuint")] uint program,
         [NativeTypeName("GLint")] int location,
         [NativeTypeName("GLsizei")] int count,
@@ -46649,7 +46643,7 @@ public unsafe partial interface IGL
     [SupportedApiProfile("glcore", MinVersion = "3.2")]
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glProgramUniform4f")]
-    void ProgramUniform4f(
+    void ProgramUniform4(
         [NativeTypeName("GLuint")] uint program,
         [NativeTypeName("GLint")] int location,
         [NativeTypeName("GLfloat")] float v0,
@@ -46674,7 +46668,7 @@ public unsafe partial interface IGL
     [SupportedApiProfile("glcore", MinVersion = "3.2")]
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glProgramUniform4fv")]
-    void ProgramUniform4fv(
+    void ProgramUniform4(
         [NativeTypeName("GLuint")] uint program,
         [NativeTypeName("GLint")] int location,
         [NativeTypeName("GLsizei")] int count,
@@ -46695,7 +46689,7 @@ public unsafe partial interface IGL
     [SupportedApiProfile("glcore", MinVersion = "3.2")]
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glProgramUniform4i")]
-    void ProgramUniform4i(
+    void ProgramUniform4(
         [NativeTypeName("GLuint")] uint program,
         [NativeTypeName("GLint")] int location,
         [NativeTypeName("GLint")] int v0,
@@ -46766,7 +46760,7 @@ public unsafe partial interface IGL
     [SupportedApiProfile("glcore", MinVersion = "3.2")]
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glProgramUniform4iv")]
-    void ProgramUniform4iv(
+    void ProgramUniform4(
         [NativeTypeName("GLuint")] uint program,
         [NativeTypeName("GLint")] int location,
         [NativeTypeName("GLsizei")] int count,
@@ -46787,7 +46781,7 @@ public unsafe partial interface IGL
     [SupportedApiProfile("glcore", MinVersion = "3.2")]
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glProgramUniform4ui")]
-    void ProgramUniform4ui(
+    void ProgramUniform4(
         [NativeTypeName("GLuint")] uint program,
         [NativeTypeName("GLint")] int location,
         [NativeTypeName("GLuint")] uint v0,
@@ -46858,7 +46852,7 @@ public unsafe partial interface IGL
     [SupportedApiProfile("glcore", MinVersion = "3.2")]
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glProgramUniform4uiv")]
-    void ProgramUniform4uiv(
+    void ProgramUniform4(
         [NativeTypeName("GLuint")] uint program,
         [NativeTypeName("GLint")] int location,
         [NativeTypeName("GLsizei")] int count,
@@ -46936,7 +46930,7 @@ public unsafe partial interface IGL
     [SupportedApiProfile("glcore", MinVersion = "3.2")]
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glProgramUniformMatrix2dv")]
-    void ProgramUniformMatrix2dv(
+    void ProgramUniformMatrix2(
         [NativeTypeName("GLuint")] uint program,
         [NativeTypeName("GLint")] int location,
         [NativeTypeName("GLsizei")] int count,
@@ -46958,7 +46952,7 @@ public unsafe partial interface IGL
     [SupportedApiProfile("glcore", MinVersion = "3.2")]
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glProgramUniformMatrix2fv")]
-    void ProgramUniformMatrix2fv(
+    void ProgramUniformMatrix2(
         [NativeTypeName("GLuint")] uint program,
         [NativeTypeName("GLint")] int location,
         [NativeTypeName("GLsizei")] int count,
@@ -46981,7 +46975,7 @@ public unsafe partial interface IGL
     [SupportedApiProfile("glcore", MinVersion = "3.2")]
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glProgramUniformMatrix2x3dv")]
-    void ProgramUniformMatrix2x3dv(
+    void ProgramUniformMatrix2x3(
         [NativeTypeName("GLuint")] uint program,
         [NativeTypeName("GLint")] int location,
         [NativeTypeName("GLsizei")] int count,
@@ -47003,7 +46997,7 @@ public unsafe partial interface IGL
     [SupportedApiProfile("glcore", MinVersion = "3.2")]
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glProgramUniformMatrix2x3fv")]
-    void ProgramUniformMatrix2x3fv(
+    void ProgramUniformMatrix2x3(
         [NativeTypeName("GLuint")] uint program,
         [NativeTypeName("GLint")] int location,
         [NativeTypeName("GLsizei")] int count,
@@ -47026,7 +47020,7 @@ public unsafe partial interface IGL
     [SupportedApiProfile("glcore", MinVersion = "3.2")]
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glProgramUniformMatrix2x4dv")]
-    void ProgramUniformMatrix2x4dv(
+    void ProgramUniformMatrix2x4(
         [NativeTypeName("GLuint")] uint program,
         [NativeTypeName("GLint")] int location,
         [NativeTypeName("GLsizei")] int count,
@@ -47048,7 +47042,7 @@ public unsafe partial interface IGL
     [SupportedApiProfile("glcore", MinVersion = "3.2")]
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glProgramUniformMatrix2x4fv")]
-    void ProgramUniformMatrix2x4fv(
+    void ProgramUniformMatrix2x4(
         [NativeTypeName("GLuint")] uint program,
         [NativeTypeName("GLint")] int location,
         [NativeTypeName("GLsizei")] int count,
@@ -47071,7 +47065,7 @@ public unsafe partial interface IGL
     [SupportedApiProfile("glcore", MinVersion = "3.2")]
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glProgramUniformMatrix3dv")]
-    void ProgramUniformMatrix3dv(
+    void ProgramUniformMatrix3(
         [NativeTypeName("GLuint")] uint program,
         [NativeTypeName("GLint")] int location,
         [NativeTypeName("GLsizei")] int count,
@@ -47093,7 +47087,7 @@ public unsafe partial interface IGL
     [SupportedApiProfile("glcore", MinVersion = "3.2")]
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glProgramUniformMatrix3fv")]
-    void ProgramUniformMatrix3fv(
+    void ProgramUniformMatrix3(
         [NativeTypeName("GLuint")] uint program,
         [NativeTypeName("GLint")] int location,
         [NativeTypeName("GLsizei")] int count,
@@ -47116,7 +47110,7 @@ public unsafe partial interface IGL
     [SupportedApiProfile("glcore", MinVersion = "3.2")]
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glProgramUniformMatrix3x2dv")]
-    void ProgramUniformMatrix3x2dv(
+    void ProgramUniformMatrix3x2(
         [NativeTypeName("GLuint")] uint program,
         [NativeTypeName("GLint")] int location,
         [NativeTypeName("GLsizei")] int count,
@@ -47138,7 +47132,7 @@ public unsafe partial interface IGL
     [SupportedApiProfile("glcore", MinVersion = "3.2")]
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glProgramUniformMatrix3x2fv")]
-    void ProgramUniformMatrix3x2fv(
+    void ProgramUniformMatrix3x2(
         [NativeTypeName("GLuint")] uint program,
         [NativeTypeName("GLint")] int location,
         [NativeTypeName("GLsizei")] int count,
@@ -47161,7 +47155,7 @@ public unsafe partial interface IGL
     [SupportedApiProfile("glcore", MinVersion = "3.2")]
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glProgramUniformMatrix3x4dv")]
-    void ProgramUniformMatrix3x4dv(
+    void ProgramUniformMatrix3x4(
         [NativeTypeName("GLuint")] uint program,
         [NativeTypeName("GLint")] int location,
         [NativeTypeName("GLsizei")] int count,
@@ -47183,7 +47177,7 @@ public unsafe partial interface IGL
     [SupportedApiProfile("glcore", MinVersion = "3.2")]
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glProgramUniformMatrix3x4fv")]
-    void ProgramUniformMatrix3x4fv(
+    void ProgramUniformMatrix3x4(
         [NativeTypeName("GLuint")] uint program,
         [NativeTypeName("GLint")] int location,
         [NativeTypeName("GLsizei")] int count,
@@ -47206,7 +47200,7 @@ public unsafe partial interface IGL
     [SupportedApiProfile("glcore", MinVersion = "3.2")]
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glProgramUniformMatrix4dv")]
-    void ProgramUniformMatrix4dv(
+    void ProgramUniformMatrix4(
         [NativeTypeName("GLuint")] uint program,
         [NativeTypeName("GLint")] int location,
         [NativeTypeName("GLsizei")] int count,
@@ -47228,7 +47222,7 @@ public unsafe partial interface IGL
     [SupportedApiProfile("glcore", MinVersion = "3.2")]
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glProgramUniformMatrix4fv")]
-    void ProgramUniformMatrix4fv(
+    void ProgramUniformMatrix4(
         [NativeTypeName("GLuint")] uint program,
         [NativeTypeName("GLint")] int location,
         [NativeTypeName("GLsizei")] int count,
@@ -47251,7 +47245,7 @@ public unsafe partial interface IGL
     [SupportedApiProfile("glcore", MinVersion = "3.2")]
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glProgramUniformMatrix4x2dv")]
-    void ProgramUniformMatrix4x2dv(
+    void ProgramUniformMatrix4x2(
         [NativeTypeName("GLuint")] uint program,
         [NativeTypeName("GLint")] int location,
         [NativeTypeName("GLsizei")] int count,
@@ -47273,7 +47267,7 @@ public unsafe partial interface IGL
     [SupportedApiProfile("glcore", MinVersion = "3.2")]
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glProgramUniformMatrix4x2fv")]
-    void ProgramUniformMatrix4x2fv(
+    void ProgramUniformMatrix4x2(
         [NativeTypeName("GLuint")] uint program,
         [NativeTypeName("GLint")] int location,
         [NativeTypeName("GLsizei")] int count,
@@ -47296,7 +47290,7 @@ public unsafe partial interface IGL
     [SupportedApiProfile("glcore", MinVersion = "3.2")]
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glProgramUniformMatrix4x3dv")]
-    void ProgramUniformMatrix4x3dv(
+    void ProgramUniformMatrix4x3(
         [NativeTypeName("GLuint")] uint program,
         [NativeTypeName("GLint")] int location,
         [NativeTypeName("GLsizei")] int count,
@@ -47318,7 +47312,7 @@ public unsafe partial interface IGL
     [SupportedApiProfile("glcore", MinVersion = "3.2")]
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glProgramUniformMatrix4x3fv")]
-    void ProgramUniformMatrix4x3fv(
+    void ProgramUniformMatrix4x3(
         [NativeTypeName("GLuint")] uint program,
         [NativeTypeName("GLint")] int location,
         [NativeTypeName("GLsizei")] int count,
@@ -47473,35 +47467,35 @@ public unsafe partial interface IGL
 
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glRasterPos2d")]
-    void RasterPos2d([NativeTypeName("GLdouble")] double x, [NativeTypeName("GLdouble")] double y);
+    void RasterPos2([NativeTypeName("GLdouble")] double x, [NativeTypeName("GLdouble")] double y);
 
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glRasterPos2dv")]
-    void RasterPos2dv([NativeTypeName("const GLdouble *")] Ref<double> v);
+    void RasterPos2([NativeTypeName("const GLdouble *")] Ref<double> v);
 
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glRasterPos2f")]
-    void RasterPos2f([NativeTypeName("GLfloat")] float x, [NativeTypeName("GLfloat")] float y);
+    void RasterPos2([NativeTypeName("GLfloat")] float x, [NativeTypeName("GLfloat")] float y);
 
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glRasterPos2fv")]
-    void RasterPos2fv([NativeTypeName("const GLfloat *")] Ref<float> v);
+    void RasterPos2([NativeTypeName("const GLfloat *")] Ref<float> v);
 
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glRasterPos2i")]
-    void RasterPos2i([NativeTypeName("GLint")] int x, [NativeTypeName("GLint")] int y);
+    void RasterPos2([NativeTypeName("GLint")] int x, [NativeTypeName("GLint")] int y);
 
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glRasterPos2iv")]
-    void RasterPos2iv([NativeTypeName("const GLint *")] Ref<int> v);
+    void RasterPos2([NativeTypeName("const GLint *")] Ref<int> v);
 
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glRasterPos2s")]
-    void RasterPos2s([NativeTypeName("GLshort")] short x, [NativeTypeName("GLshort")] short y);
+    void RasterPos2([NativeTypeName("GLshort")] short x, [NativeTypeName("GLshort")] short y);
 
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glRasterPos2sv")]
-    void RasterPos2sv([NativeTypeName("const GLshort *")] Ref<short> v);
+    void RasterPos2([NativeTypeName("const GLshort *")] Ref<short> v);
 
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glRasterPos2xOES")]
@@ -47513,7 +47507,7 @@ public unsafe partial interface IGL
 
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glRasterPos3d")]
-    void RasterPos3d(
+    void RasterPos3(
         [NativeTypeName("GLdouble")] double x,
         [NativeTypeName("GLdouble")] double y,
         [NativeTypeName("GLdouble")] double z
@@ -47521,11 +47515,11 @@ public unsafe partial interface IGL
 
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glRasterPos3dv")]
-    void RasterPos3dv([NativeTypeName("const GLdouble *")] Ref<double> v);
+    void RasterPos3([NativeTypeName("const GLdouble *")] Ref<double> v);
 
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glRasterPos3f")]
-    void RasterPos3f(
+    void RasterPos3(
         [NativeTypeName("GLfloat")] float x,
         [NativeTypeName("GLfloat")] float y,
         [NativeTypeName("GLfloat")] float z
@@ -47533,11 +47527,11 @@ public unsafe partial interface IGL
 
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glRasterPos3fv")]
-    void RasterPos3fv([NativeTypeName("const GLfloat *")] Ref<float> v);
+    void RasterPos3([NativeTypeName("const GLfloat *")] Ref<float> v);
 
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glRasterPos3i")]
-    void RasterPos3i(
+    void RasterPos3(
         [NativeTypeName("GLint")] int x,
         [NativeTypeName("GLint")] int y,
         [NativeTypeName("GLint")] int z
@@ -47545,11 +47539,11 @@ public unsafe partial interface IGL
 
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glRasterPos3iv")]
-    void RasterPos3iv([NativeTypeName("const GLint *")] Ref<int> v);
+    void RasterPos3([NativeTypeName("const GLint *")] Ref<int> v);
 
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glRasterPos3s")]
-    void RasterPos3s(
+    void RasterPos3(
         [NativeTypeName("GLshort")] short x,
         [NativeTypeName("GLshort")] short y,
         [NativeTypeName("GLshort")] short z
@@ -47557,7 +47551,7 @@ public unsafe partial interface IGL
 
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glRasterPos3sv")]
-    void RasterPos3sv([NativeTypeName("const GLshort *")] Ref<short> v);
+    void RasterPos3([NativeTypeName("const GLshort *")] Ref<short> v);
 
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glRasterPos3xOES")]
@@ -47573,7 +47567,7 @@ public unsafe partial interface IGL
 
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glRasterPos4d")]
-    void RasterPos4d(
+    void RasterPos4(
         [NativeTypeName("GLdouble")] double x,
         [NativeTypeName("GLdouble")] double y,
         [NativeTypeName("GLdouble")] double z,
@@ -47582,11 +47576,11 @@ public unsafe partial interface IGL
 
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glRasterPos4dv")]
-    void RasterPos4dv([NativeTypeName("const GLdouble *")] Ref<double> v);
+    void RasterPos4([NativeTypeName("const GLdouble *")] Ref<double> v);
 
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glRasterPos4f")]
-    void RasterPos4f(
+    void RasterPos4(
         [NativeTypeName("GLfloat")] float x,
         [NativeTypeName("GLfloat")] float y,
         [NativeTypeName("GLfloat")] float z,
@@ -47595,11 +47589,11 @@ public unsafe partial interface IGL
 
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glRasterPos4fv")]
-    void RasterPos4fv([NativeTypeName("const GLfloat *")] Ref<float> v);
+    void RasterPos4([NativeTypeName("const GLfloat *")] Ref<float> v);
 
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glRasterPos4i")]
-    void RasterPos4i(
+    void RasterPos4(
         [NativeTypeName("GLint")] int x,
         [NativeTypeName("GLint")] int y,
         [NativeTypeName("GLint")] int z,
@@ -47608,11 +47602,11 @@ public unsafe partial interface IGL
 
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glRasterPos4iv")]
-    void RasterPos4iv([NativeTypeName("const GLint *")] Ref<int> v);
+    void RasterPos4([NativeTypeName("const GLint *")] Ref<int> v);
 
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glRasterPos4s")]
-    void RasterPos4s(
+    void RasterPos4(
         [NativeTypeName("GLshort")] short x,
         [NativeTypeName("GLshort")] short y,
         [NativeTypeName("GLshort")] short z,
@@ -47621,7 +47615,7 @@ public unsafe partial interface IGL
 
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glRasterPos4sv")]
-    void RasterPos4sv([NativeTypeName("const GLshort *")] Ref<short> v);
+    void RasterPos4([NativeTypeName("const GLshort *")] Ref<short> v);
 
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glRasterPos4xOES")]
@@ -47737,7 +47731,7 @@ public unsafe partial interface IGL
 
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glRectd")]
-    void Rectd(
+    void Rect(
         [NativeTypeName("GLdouble")] double x1,
         [NativeTypeName("GLdouble")] double y1,
         [NativeTypeName("GLdouble")] double x2,
@@ -47746,14 +47740,14 @@ public unsafe partial interface IGL
 
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glRectdv")]
-    void Rectdv(
+    void Rect(
         [NativeTypeName("const GLdouble *")] Ref<double> v1,
         [NativeTypeName("const GLdouble *")] Ref<double> v2
     );
 
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glRectf")]
-    void Rectf(
+    void Rect(
         [NativeTypeName("GLfloat")] float x1,
         [NativeTypeName("GLfloat")] float y1,
         [NativeTypeName("GLfloat")] float x2,
@@ -47762,14 +47756,14 @@ public unsafe partial interface IGL
 
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glRectfv")]
-    void Rectfv(
+    void Rect(
         [NativeTypeName("const GLfloat *")] Ref<float> v1,
         [NativeTypeName("const GLfloat *")] Ref<float> v2
     );
 
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glRecti")]
-    void Recti(
+    void Rect(
         [NativeTypeName("GLint")] int x1,
         [NativeTypeName("GLint")] int y1,
         [NativeTypeName("GLint")] int x2,
@@ -47778,7 +47772,7 @@ public unsafe partial interface IGL
 
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glRectiv")]
-    void Rectiv(
+    void Rect(
         [NativeTypeName("const GLint *")] Ref<int> v1,
         [NativeTypeName("const GLint *")] Ref<int> v2
     );
@@ -47794,7 +47788,7 @@ public unsafe partial interface IGL
 
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glRectsv")]
-    void Rectsv(
+    void Rect(
         [NativeTypeName("const GLshort *")] Ref<short> v1,
         [NativeTypeName("const GLshort *")] Ref<short> v2
     );
@@ -48230,7 +48224,7 @@ public unsafe partial interface IGL
 
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glRotated")]
-    void Rotated(
+    void Rotate(
         [NativeTypeName("GLdouble")] double angle,
         [NativeTypeName("GLdouble")] double x,
         [NativeTypeName("GLdouble")] double y,
@@ -48240,7 +48234,7 @@ public unsafe partial interface IGL
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [SupportedApiProfile("gles1", MaxVersion = "2.0")]
     [NativeFunction("opengl", EntryPoint = "glRotatef")]
-    void Rotatef(
+    void Rotate(
         [NativeTypeName("GLfloat")] float angle,
         [NativeTypeName("GLfloat")] float x,
         [NativeTypeName("GLfloat")] float y,
@@ -48315,7 +48309,7 @@ public unsafe partial interface IGL
     [SupportedApiProfile("glcore", MinVersion = "3.2")]
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glSampleMaski")]
-    void SampleMaski(
+    void SampleMask(
         [NativeTypeName("GLuint")] uint maskNumber,
         [NativeTypeName("GLbitfield")] uint mask
     );
@@ -48346,7 +48340,7 @@ public unsafe partial interface IGL
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [SupportedApiProfile("gles2", MinVersion = "2.0")]
     [NativeFunction("opengl", EntryPoint = "glSamplerParameterf")]
-    void SamplerParameterf(
+    void SamplerParameter(
         [NativeTypeName("GLuint")] uint sampler,
         [NativeTypeName("GLenum")] uint pname,
         [NativeTypeName("GLfloat")] float param2
@@ -48356,7 +48350,7 @@ public unsafe partial interface IGL
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [SupportedApiProfile("gles2", MinVersion = "2.0")]
     [NativeFunction("opengl", EntryPoint = "glSamplerParameterfv")]
-    void SamplerParameterfv(
+    void SamplerParameter(
         [NativeTypeName("GLuint")] uint sampler,
         [NativeTypeName("GLenum")] uint pname,
         [NativeTypeName("const GLfloat *")] Ref<float> param2
@@ -48366,7 +48360,7 @@ public unsafe partial interface IGL
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [SupportedApiProfile("gles2", MinVersion = "2.0")]
     [NativeFunction("opengl", EntryPoint = "glSamplerParameteri")]
-    void SamplerParameteri(
+    void SamplerParameter(
         [NativeTypeName("GLuint")] uint sampler,
         [NativeTypeName("GLenum")] uint pname,
         [NativeTypeName("GLint")] int param2
@@ -48375,7 +48369,7 @@ public unsafe partial interface IGL
     [SupportedApiProfile("glcore", MinVersion = "3.2")]
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glSamplerParameterIiv")]
-    void SamplerParameterIiv(
+    void SamplerParameterI(
         [NativeTypeName("GLuint")] uint sampler,
         [NativeTypeName("GLenum")] uint pname,
         [NativeTypeName("const GLint *")] Ref<int> param2
@@ -48400,7 +48394,7 @@ public unsafe partial interface IGL
     [SupportedApiProfile("glcore", MinVersion = "3.2")]
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glSamplerParameterIuiv")]
-    void SamplerParameterIuiv(
+    void SamplerParameterI(
         [NativeTypeName("GLuint")] uint sampler,
         [NativeTypeName("GLenum")] uint pname,
         [NativeTypeName("const GLuint *")] Ref<uint> param2
@@ -48426,7 +48420,7 @@ public unsafe partial interface IGL
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [SupportedApiProfile("gles2", MinVersion = "2.0")]
     [NativeFunction("opengl", EntryPoint = "glSamplerParameteriv")]
-    void SamplerParameteriv(
+    void SamplerParameter(
         [NativeTypeName("GLuint")] uint sampler,
         [NativeTypeName("GLenum")] uint pname,
         [NativeTypeName("const GLint *")] Ref<int> param2
@@ -48434,7 +48428,7 @@ public unsafe partial interface IGL
 
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glScaled")]
-    void Scaled(
+    void Scale(
         [NativeTypeName("GLdouble")] double x,
         [NativeTypeName("GLdouble")] double y,
         [NativeTypeName("GLdouble")] double z
@@ -48443,7 +48437,7 @@ public unsafe partial interface IGL
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [SupportedApiProfile("gles1", MaxVersion = "2.0")]
     [NativeFunction("opengl", EntryPoint = "glScalef")]
-    void Scalef(
+    void Scale(
         [NativeTypeName("GLfloat")] float x,
         [NativeTypeName("GLfloat")] float y,
         [NativeTypeName("GLfloat")] float z
@@ -48481,7 +48475,7 @@ public unsafe partial interface IGL
     [SupportedApiProfile("glcore", MinVersion = "3.2")]
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glScissorArrayv")]
-    void ScissorArrayv(
+    void ScissorArray(
         [NativeTypeName("GLuint")] uint first,
         [NativeTypeName("GLsizei")] int count,
         [NativeTypeName("const GLint *")] Ref<int> v
@@ -48558,7 +48552,7 @@ public unsafe partial interface IGL
     [SupportedApiProfile("glcore", MinVersion = "3.2")]
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glScissorIndexedv")]
-    void ScissorIndexedv(
+    void ScissorIndexed(
         [NativeTypeName("GLuint")] uint index,
         [NativeTypeName("const GLint *")] Ref<int> v
     );
@@ -48579,7 +48573,7 @@ public unsafe partial interface IGL
 
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glSecondaryColor3b")]
-    void SecondaryColor3b(
+    void SecondaryColor3(
         [NativeTypeName("GLbyte")] sbyte red,
         [NativeTypeName("GLbyte")] sbyte green,
         [NativeTypeName("GLbyte")] sbyte blue
@@ -48595,7 +48589,7 @@ public unsafe partial interface IGL
 
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glSecondaryColor3bv")]
-    void SecondaryColor3bv([NativeTypeName("const GLbyte *")] Ref<sbyte> v);
+    void SecondaryColor3([NativeTypeName("const GLbyte *")] Ref<sbyte> v);
 
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glSecondaryColor3bvEXT")]
@@ -48603,7 +48597,7 @@ public unsafe partial interface IGL
 
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glSecondaryColor3d")]
-    void SecondaryColor3d(
+    void SecondaryColor3(
         [NativeTypeName("GLdouble")] double red,
         [NativeTypeName("GLdouble")] double green,
         [NativeTypeName("GLdouble")] double blue
@@ -48619,7 +48613,7 @@ public unsafe partial interface IGL
 
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glSecondaryColor3dv")]
-    void SecondaryColor3dv([NativeTypeName("const GLdouble *")] Ref<double> v);
+    void SecondaryColor3([NativeTypeName("const GLdouble *")] Ref<double> v);
 
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glSecondaryColor3dvEXT")]
@@ -48627,7 +48621,7 @@ public unsafe partial interface IGL
 
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glSecondaryColor3f")]
-    void SecondaryColor3f(
+    void SecondaryColor3(
         [NativeTypeName("GLfloat")] float red,
         [NativeTypeName("GLfloat")] float green,
         [NativeTypeName("GLfloat")] float blue
@@ -48643,7 +48637,7 @@ public unsafe partial interface IGL
 
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glSecondaryColor3fv")]
-    void SecondaryColor3fv([NativeTypeName("const GLfloat *")] Ref<float> v);
+    void SecondaryColor3([NativeTypeName("const GLfloat *")] Ref<float> v);
 
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glSecondaryColor3fvEXT")]
@@ -48663,7 +48657,7 @@ public unsafe partial interface IGL
 
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glSecondaryColor3i")]
-    void SecondaryColor3i(
+    void SecondaryColor3(
         [NativeTypeName("GLint")] int red,
         [NativeTypeName("GLint")] int green,
         [NativeTypeName("GLint")] int blue
@@ -48679,7 +48673,7 @@ public unsafe partial interface IGL
 
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glSecondaryColor3iv")]
-    void SecondaryColor3iv([NativeTypeName("const GLint *")] Ref<int> v);
+    void SecondaryColor3([NativeTypeName("const GLint *")] Ref<int> v);
 
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glSecondaryColor3ivEXT")]
@@ -48687,7 +48681,7 @@ public unsafe partial interface IGL
 
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glSecondaryColor3s")]
-    void SecondaryColor3s(
+    void SecondaryColor3(
         [NativeTypeName("GLshort")] short red,
         [NativeTypeName("GLshort")] short green,
         [NativeTypeName("GLshort")] short blue
@@ -48703,7 +48697,7 @@ public unsafe partial interface IGL
 
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glSecondaryColor3sv")]
-    void SecondaryColor3sv([NativeTypeName("const GLshort *")] Ref<short> v);
+    void SecondaryColor3([NativeTypeName("const GLshort *")] Ref<short> v);
 
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glSecondaryColor3svEXT")]
@@ -48711,7 +48705,7 @@ public unsafe partial interface IGL
 
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glSecondaryColor3ub")]
-    void SecondaryColor3ub(
+    void SecondaryColor3(
         [NativeTypeName("GLubyte")] byte red,
         [NativeTypeName("GLubyte")] byte green,
         [NativeTypeName("GLubyte")] byte blue
@@ -48727,7 +48721,7 @@ public unsafe partial interface IGL
 
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glSecondaryColor3ubv")]
-    void SecondaryColor3ubv([NativeTypeName("const GLubyte *")] Ref<byte> v);
+    void SecondaryColor3([NativeTypeName("const GLubyte *")] Ref<byte> v);
 
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glSecondaryColor3ubvEXT")]
@@ -48735,7 +48729,7 @@ public unsafe partial interface IGL
 
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glSecondaryColor3ui")]
-    void SecondaryColor3ui(
+    void SecondaryColor3(
         [NativeTypeName("GLuint")] uint red,
         [NativeTypeName("GLuint")] uint green,
         [NativeTypeName("GLuint")] uint blue
@@ -48751,7 +48745,7 @@ public unsafe partial interface IGL
 
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glSecondaryColor3uiv")]
-    void SecondaryColor3uiv([NativeTypeName("const GLuint *")] Ref<uint> v);
+    void SecondaryColor3([NativeTypeName("const GLuint *")] Ref<uint> v);
 
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glSecondaryColor3uivEXT")]
@@ -48759,7 +48753,7 @@ public unsafe partial interface IGL
 
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glSecondaryColor3us")]
-    void SecondaryColor3us(
+    void SecondaryColor3(
         [NativeTypeName("GLushort")] ushort red,
         [NativeTypeName("GLushort")] ushort green,
         [NativeTypeName("GLushort")] ushort blue
@@ -48775,7 +48769,7 @@ public unsafe partial interface IGL
 
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glSecondaryColor3usv")]
-    void SecondaryColor3usv([NativeTypeName("const GLushort *")] Ref<ushort> v);
+    void SecondaryColor3([NativeTypeName("const GLushort *")] Ref<ushort> v);
 
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glSecondaryColor3usvEXT")]
@@ -48792,14 +48786,14 @@ public unsafe partial interface IGL
 
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glSecondaryColorP3ui")]
-    void SecondaryColorP3ui(
+    void SecondaryColorP3(
         [NativeTypeName("GLenum")] uint type,
         [NativeTypeName("GLuint")] uint color
     );
 
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glSecondaryColorP3uiv")]
-    void SecondaryColorP3uiv(
+    void SecondaryColorP3(
         [NativeTypeName("GLenum")] uint type,
         [NativeTypeName("const GLuint *")] Ref<uint> color
     );
@@ -49609,19 +49603,19 @@ public unsafe partial interface IGL
 
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glTexCoord1d")]
-    void TexCoord1d([NativeTypeName("GLdouble")] double s);
+    void TexCoord1([NativeTypeName("GLdouble")] double s);
 
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glTexCoord1dv")]
-    void TexCoord1dv([NativeTypeName("const GLdouble *")] Ref<double> v);
+    void TexCoord1([NativeTypeName("const GLdouble *")] Ref<double> v);
 
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glTexCoord1f")]
-    void TexCoord1f([NativeTypeName("GLfloat")] float s);
+    void TexCoord1([NativeTypeName("GLfloat")] float s);
 
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glTexCoord1fv")]
-    void TexCoord1fv([NativeTypeName("const GLfloat *")] Ref<float> v);
+    void TexCoord1([NativeTypeName("const GLfloat *")] Ref<float> v);
 
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glTexCoord1hNV")]
@@ -49633,19 +49627,19 @@ public unsafe partial interface IGL
 
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glTexCoord1i")]
-    void TexCoord1i([NativeTypeName("GLint")] int s);
+    void TexCoord1([NativeTypeName("GLint")] int s);
 
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glTexCoord1iv")]
-    void TexCoord1iv([NativeTypeName("const GLint *")] Ref<int> v);
+    void TexCoord1([NativeTypeName("const GLint *")] Ref<int> v);
 
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glTexCoord1s")]
-    void TexCoord1s([NativeTypeName("GLshort")] short s);
+    void TexCoord1([NativeTypeName("GLshort")] short s);
 
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glTexCoord1sv")]
-    void TexCoord1sv([NativeTypeName("const GLshort *")] Ref<short> v);
+    void TexCoord1([NativeTypeName("const GLshort *")] Ref<short> v);
 
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glTexCoord1xOES")]
@@ -49665,15 +49659,15 @@ public unsafe partial interface IGL
 
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glTexCoord2d")]
-    void TexCoord2d([NativeTypeName("GLdouble")] double s, [NativeTypeName("GLdouble")] double t);
+    void TexCoord2([NativeTypeName("GLdouble")] double s, [NativeTypeName("GLdouble")] double t);
 
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glTexCoord2dv")]
-    void TexCoord2dv([NativeTypeName("const GLdouble *")] Ref<double> v);
+    void TexCoord2([NativeTypeName("const GLdouble *")] Ref<double> v);
 
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glTexCoord2f")]
-    void TexCoord2f([NativeTypeName("GLfloat")] float s, [NativeTypeName("GLfloat")] float t);
+    void TexCoord2([NativeTypeName("GLfloat")] float s, [NativeTypeName("GLfloat")] float t);
 
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glTexCoord2fColor3fVertex3fSUN")]
@@ -49767,7 +49761,7 @@ public unsafe partial interface IGL
 
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glTexCoord2fv")]
-    void TexCoord2fv([NativeTypeName("const GLfloat *")] Ref<float> v);
+    void TexCoord2([NativeTypeName("const GLfloat *")] Ref<float> v);
 
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glTexCoord2fVertex3fSUN")]
@@ -49796,19 +49790,19 @@ public unsafe partial interface IGL
 
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glTexCoord2i")]
-    void TexCoord2i([NativeTypeName("GLint")] int s, [NativeTypeName("GLint")] int t);
+    void TexCoord2([NativeTypeName("GLint")] int s, [NativeTypeName("GLint")] int t);
 
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glTexCoord2iv")]
-    void TexCoord2iv([NativeTypeName("const GLint *")] Ref<int> v);
+    void TexCoord2([NativeTypeName("const GLint *")] Ref<int> v);
 
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glTexCoord2s")]
-    void TexCoord2s([NativeTypeName("GLshort")] short s, [NativeTypeName("GLshort")] short t);
+    void TexCoord2([NativeTypeName("GLshort")] short s, [NativeTypeName("GLshort")] short t);
 
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glTexCoord2sv")]
-    void TexCoord2sv([NativeTypeName("const GLshort *")] Ref<short> v);
+    void TexCoord2([NativeTypeName("const GLshort *")] Ref<short> v);
 
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glTexCoord2xOES")]
@@ -49832,7 +49826,7 @@ public unsafe partial interface IGL
 
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glTexCoord3d")]
-    void TexCoord3d(
+    void TexCoord3(
         [NativeTypeName("GLdouble")] double s,
         [NativeTypeName("GLdouble")] double t,
         [NativeTypeName("GLdouble")] double r
@@ -49840,11 +49834,11 @@ public unsafe partial interface IGL
 
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glTexCoord3dv")]
-    void TexCoord3dv([NativeTypeName("const GLdouble *")] Ref<double> v);
+    void TexCoord3([NativeTypeName("const GLdouble *")] Ref<double> v);
 
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glTexCoord3f")]
-    void TexCoord3f(
+    void TexCoord3(
         [NativeTypeName("GLfloat")] float s,
         [NativeTypeName("GLfloat")] float t,
         [NativeTypeName("GLfloat")] float r
@@ -49852,7 +49846,7 @@ public unsafe partial interface IGL
 
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glTexCoord3fv")]
-    void TexCoord3fv([NativeTypeName("const GLfloat *")] Ref<float> v);
+    void TexCoord3([NativeTypeName("const GLfloat *")] Ref<float> v);
 
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glTexCoord3hNV")]
@@ -49868,7 +49862,7 @@ public unsafe partial interface IGL
 
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glTexCoord3i")]
-    void TexCoord3i(
+    void TexCoord3(
         [NativeTypeName("GLint")] int s,
         [NativeTypeName("GLint")] int t,
         [NativeTypeName("GLint")] int r
@@ -49876,11 +49870,11 @@ public unsafe partial interface IGL
 
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glTexCoord3iv")]
-    void TexCoord3iv([NativeTypeName("const GLint *")] Ref<int> v);
+    void TexCoord3([NativeTypeName("const GLint *")] Ref<int> v);
 
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glTexCoord3s")]
-    void TexCoord3s(
+    void TexCoord3(
         [NativeTypeName("GLshort")] short s,
         [NativeTypeName("GLshort")] short t,
         [NativeTypeName("GLshort")] short r
@@ -49888,7 +49882,7 @@ public unsafe partial interface IGL
 
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glTexCoord3sv")]
-    void TexCoord3sv([NativeTypeName("const GLshort *")] Ref<short> v);
+    void TexCoord3([NativeTypeName("const GLshort *")] Ref<short> v);
 
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glTexCoord3xOES")]
@@ -49917,7 +49911,7 @@ public unsafe partial interface IGL
 
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glTexCoord4d")]
-    void TexCoord4d(
+    void TexCoord4(
         [NativeTypeName("GLdouble")] double s,
         [NativeTypeName("GLdouble")] double t,
         [NativeTypeName("GLdouble")] double r,
@@ -49926,11 +49920,11 @@ public unsafe partial interface IGL
 
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glTexCoord4dv")]
-    void TexCoord4dv([NativeTypeName("const GLdouble *")] Ref<double> v);
+    void TexCoord4([NativeTypeName("const GLdouble *")] Ref<double> v);
 
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glTexCoord4f")]
-    void TexCoord4f(
+    void TexCoord4(
         [NativeTypeName("GLfloat")] float s,
         [NativeTypeName("GLfloat")] float t,
         [NativeTypeName("GLfloat")] float r,
@@ -49968,7 +49962,7 @@ public unsafe partial interface IGL
 
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glTexCoord4fv")]
-    void TexCoord4fv([NativeTypeName("const GLfloat *")] Ref<float> v);
+    void TexCoord4([NativeTypeName("const GLfloat *")] Ref<float> v);
 
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glTexCoord4fVertex4fSUN")]
@@ -50005,7 +49999,7 @@ public unsafe partial interface IGL
 
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glTexCoord4i")]
-    void TexCoord4i(
+    void TexCoord4(
         [NativeTypeName("GLint")] int s,
         [NativeTypeName("GLint")] int t,
         [NativeTypeName("GLint")] int r,
@@ -50014,11 +50008,11 @@ public unsafe partial interface IGL
 
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glTexCoord4iv")]
-    void TexCoord4iv([NativeTypeName("const GLint *")] Ref<int> v);
+    void TexCoord4([NativeTypeName("const GLint *")] Ref<int> v);
 
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glTexCoord4s")]
-    void TexCoord4s(
+    void TexCoord4(
         [NativeTypeName("GLshort")] short s,
         [NativeTypeName("GLshort")] short t,
         [NativeTypeName("GLshort")] short r,
@@ -50027,7 +50021,7 @@ public unsafe partial interface IGL
 
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glTexCoord4sv")]
-    void TexCoord4sv([NativeTypeName("const GLshort *")] Ref<short> v);
+    void TexCoord4([NativeTypeName("const GLshort *")] Ref<short> v);
 
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glTexCoord4xOES")]
@@ -50053,44 +50047,44 @@ public unsafe partial interface IGL
 
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glTexCoordP1ui")]
-    void TexCoordP1ui([NativeTypeName("GLenum")] uint type, [NativeTypeName("GLuint")] uint coords);
+    void TexCoordP1([NativeTypeName("GLenum")] uint type, [NativeTypeName("GLuint")] uint coords);
 
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glTexCoordP1uiv")]
-    void TexCoordP1uiv(
+    void TexCoordP1(
         [NativeTypeName("GLenum")] uint type,
         [NativeTypeName("const GLuint *")] Ref<uint> coords
     );
 
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glTexCoordP2ui")]
-    void TexCoordP2ui([NativeTypeName("GLenum")] uint type, [NativeTypeName("GLuint")] uint coords);
+    void TexCoordP2([NativeTypeName("GLenum")] uint type, [NativeTypeName("GLuint")] uint coords);
 
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glTexCoordP2uiv")]
-    void TexCoordP2uiv(
+    void TexCoordP2(
         [NativeTypeName("GLenum")] uint type,
         [NativeTypeName("const GLuint *")] Ref<uint> coords
     );
 
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glTexCoordP3ui")]
-    void TexCoordP3ui([NativeTypeName("GLenum")] uint type, [NativeTypeName("GLuint")] uint coords);
+    void TexCoordP3([NativeTypeName("GLenum")] uint type, [NativeTypeName("GLuint")] uint coords);
 
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glTexCoordP3uiv")]
-    void TexCoordP3uiv(
+    void TexCoordP3(
         [NativeTypeName("GLenum")] uint type,
         [NativeTypeName("const GLuint *")] Ref<uint> coords
     );
 
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glTexCoordP4ui")]
-    void TexCoordP4ui([NativeTypeName("GLenum")] uint type, [NativeTypeName("GLuint")] uint coords);
+    void TexCoordP4([NativeTypeName("GLenum")] uint type, [NativeTypeName("GLuint")] uint coords);
 
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glTexCoordP4uiv")]
-    void TexCoordP4uiv(
+    void TexCoordP4(
         [NativeTypeName("GLenum")] uint type,
         [NativeTypeName("const GLuint *")] Ref<uint> coords
     );
@@ -50136,7 +50130,7 @@ public unsafe partial interface IGL
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [SupportedApiProfile("gles1", MaxVersion = "2.0")]
     [NativeFunction("opengl", EntryPoint = "glTexEnvf")]
-    void TexEnvf(
+    void TexEnv(
         [NativeTypeName("GLenum")] uint target,
         [NativeTypeName("GLenum")] uint pname,
         [NativeTypeName("GLfloat")] float param2
@@ -50145,7 +50139,7 @@ public unsafe partial interface IGL
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [SupportedApiProfile("gles1", MaxVersion = "2.0")]
     [NativeFunction("opengl", EntryPoint = "glTexEnvfv")]
-    void TexEnvfv(
+    void TexEnv(
         [NativeTypeName("GLenum")] uint target,
         [NativeTypeName("GLenum")] uint pname,
         [NativeTypeName("const GLfloat *")] Ref<float> @params
@@ -50154,7 +50148,7 @@ public unsafe partial interface IGL
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [SupportedApiProfile("gles1", MaxVersion = "2.0")]
     [NativeFunction("opengl", EntryPoint = "glTexEnvi")]
-    void TexEnvi(
+    void TexEnv(
         [NativeTypeName("GLenum")] uint target,
         [NativeTypeName("GLenum")] uint pname,
         [NativeTypeName("GLint")] int param2
@@ -50163,7 +50157,7 @@ public unsafe partial interface IGL
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [SupportedApiProfile("gles1", MaxVersion = "2.0")]
     [NativeFunction("opengl", EntryPoint = "glTexEnviv")]
-    void TexEnviv(
+    void TexEnv(
         [NativeTypeName("GLenum")] uint target,
         [NativeTypeName("GLenum")] uint pname,
         [NativeTypeName("const GLint *")] Ref<int> @params
@@ -50188,7 +50182,7 @@ public unsafe partial interface IGL
 
     [SupportedApiProfile("gles1", MaxVersion = "2.0")]
     [NativeFunction("opengl", EntryPoint = "glTexEnvxv")]
-    void TexEnvxv(
+    void TexEnvx(
         [NativeTypeName("GLenum")] uint target,
         [NativeTypeName("GLenum")] uint pname,
         [NativeTypeName("const GLfixed *")] Ref<int> @params
@@ -50239,7 +50233,7 @@ public unsafe partial interface IGL
 
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glTexGendv")]
-    void TexGendv(
+    void TexGen(
         [NativeTypeName("GLenum")] uint coord,
         [NativeTypeName("GLenum")] uint pname,
         [NativeTypeName("const GLdouble *")] Ref<double> @params
@@ -50247,7 +50241,7 @@ public unsafe partial interface IGL
 
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glTexGenf")]
-    void TexGenf(
+    void TexGen(
         [NativeTypeName("GLenum")] uint coord,
         [NativeTypeName("GLenum")] uint pname,
         [NativeTypeName("GLfloat")] float param2
@@ -50263,7 +50257,7 @@ public unsafe partial interface IGL
 
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glTexGenfv")]
-    void TexGenfv(
+    void TexGen(
         [NativeTypeName("GLenum")] uint coord,
         [NativeTypeName("GLenum")] uint pname,
         [NativeTypeName("const GLfloat *")] Ref<float> @params
@@ -50279,7 +50273,7 @@ public unsafe partial interface IGL
 
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glTexGeni")]
-    void TexGeni(
+    void TexGen(
         [NativeTypeName("GLenum")] uint coord,
         [NativeTypeName("GLenum")] uint pname,
         [NativeTypeName("GLint")] int param2
@@ -50295,7 +50289,7 @@ public unsafe partial interface IGL
 
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glTexGeniv")]
-    void TexGeniv(
+    void TexGen(
         [NativeTypeName("GLenum")] uint coord,
         [NativeTypeName("GLenum")] uint pname,
         [NativeTypeName("const GLint *")] Ref<int> @params
@@ -50523,7 +50517,7 @@ public unsafe partial interface IGL
     [SupportedApiProfile("gles1", MaxVersion = "2.0")]
     [SupportedApiProfile("gles2", MinVersion = "2.0")]
     [NativeFunction("opengl", EntryPoint = "glTexParameterf")]
-    void TexParameterf(
+    void TexParameter(
         [NativeTypeName("GLenum")] uint target,
         [NativeTypeName("GLenum")] uint pname,
         [NativeTypeName("GLfloat")] float param2
@@ -50534,7 +50528,7 @@ public unsafe partial interface IGL
     [SupportedApiProfile("gles1", MaxVersion = "2.0")]
     [SupportedApiProfile("gles2", MinVersion = "2.0")]
     [NativeFunction("opengl", EntryPoint = "glTexParameterfv")]
-    void TexParameterfv(
+    void TexParameter(
         [NativeTypeName("GLenum")] uint target,
         [NativeTypeName("GLenum")] uint pname,
         [NativeTypeName("const GLfloat *")] Ref<float> @params
@@ -50545,7 +50539,7 @@ public unsafe partial interface IGL
     [SupportedApiProfile("gles1", MaxVersion = "2.0")]
     [SupportedApiProfile("gles2", MinVersion = "2.0")]
     [NativeFunction("opengl", EntryPoint = "glTexParameteri")]
-    void TexParameteri(
+    void TexParameter(
         [NativeTypeName("GLenum")] uint target,
         [NativeTypeName("GLenum")] uint pname,
         [NativeTypeName("GLint")] int param2
@@ -50554,7 +50548,7 @@ public unsafe partial interface IGL
     [SupportedApiProfile("glcore", MinVersion = "3.2")]
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glTexParameterIiv")]
-    void TexParameterIiv(
+    void TexParameterI(
         [NativeTypeName("GLenum")] uint target,
         [NativeTypeName("GLenum")] uint pname,
         [NativeTypeName("const GLint *")] Ref<int> @params
@@ -50580,7 +50574,7 @@ public unsafe partial interface IGL
     [SupportedApiProfile("glcore", MinVersion = "3.2")]
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glTexParameterIuiv")]
-    void TexParameterIuiv(
+    void TexParameterI(
         [NativeTypeName("GLenum")] uint target,
         [NativeTypeName("GLenum")] uint pname,
         [NativeTypeName("const GLuint *")] Ref<uint> @params
@@ -50608,7 +50602,7 @@ public unsafe partial interface IGL
     [SupportedApiProfile("gles1", MaxVersion = "2.0")]
     [SupportedApiProfile("gles2", MinVersion = "2.0")]
     [NativeFunction("opengl", EntryPoint = "glTexParameteriv")]
-    void TexParameteriv(
+    void TexParameter(
         [NativeTypeName("GLenum")] uint target,
         [NativeTypeName("GLenum")] uint pname,
         [NativeTypeName("const GLint *")] Ref<int> @params
@@ -50633,7 +50627,7 @@ public unsafe partial interface IGL
 
     [SupportedApiProfile("gles1", MaxVersion = "2.0")]
     [NativeFunction("opengl", EntryPoint = "glTexParameterxv")]
-    void TexParameterxv(
+    void TexParameterx(
         [NativeTypeName("GLenum")] uint target,
         [NativeTypeName("GLenum")] uint pname,
         [NativeTypeName("const GLfixed *")] Ref<int> @params
@@ -51225,7 +51219,7 @@ public unsafe partial interface IGL
     [SupportedApiProfile("glcore", MinVersion = "3.2")]
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glTextureParameterf")]
-    void TextureParameterf(
+    void TextureParameter(
         [NativeTypeName("GLuint")] uint texture,
         [NativeTypeName("GLenum")] uint pname,
         [NativeTypeName("GLfloat")] float param2
@@ -51244,7 +51238,7 @@ public unsafe partial interface IGL
     [SupportedApiProfile("glcore", MinVersion = "3.2")]
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glTextureParameterfv")]
-    void TextureParameterfv(
+    void TextureParameter(
         [NativeTypeName("GLuint")] uint texture,
         [NativeTypeName("GLenum")] uint pname,
         [NativeTypeName("const GLfloat *")] Ref<float> param2
@@ -51263,7 +51257,7 @@ public unsafe partial interface IGL
     [SupportedApiProfile("glcore", MinVersion = "3.2")]
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glTextureParameteri")]
-    void TextureParameteri(
+    void TextureParameter(
         [NativeTypeName("GLuint")] uint texture,
         [NativeTypeName("GLenum")] uint pname,
         [NativeTypeName("GLint")] int param2
@@ -51282,7 +51276,7 @@ public unsafe partial interface IGL
     [SupportedApiProfile("glcore", MinVersion = "3.2")]
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glTextureParameterIiv")]
-    void TextureParameterIiv(
+    void TextureParameterI(
         [NativeTypeName("GLuint")] uint texture,
         [NativeTypeName("GLenum")] uint pname,
         [NativeTypeName("const GLint *")] Ref<int> @params
@@ -51301,7 +51295,7 @@ public unsafe partial interface IGL
     [SupportedApiProfile("glcore", MinVersion = "3.2")]
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glTextureParameterIuiv")]
-    void TextureParameterIuiv(
+    void TextureParameterI(
         [NativeTypeName("GLuint")] uint texture,
         [NativeTypeName("GLenum")] uint pname,
         [NativeTypeName("const GLuint *")] Ref<uint> @params
@@ -51320,7 +51314,7 @@ public unsafe partial interface IGL
     [SupportedApiProfile("glcore", MinVersion = "3.2")]
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glTextureParameteriv")]
-    void TextureParameteriv(
+    void TextureParameter(
         [NativeTypeName("GLuint")] uint texture,
         [NativeTypeName("GLenum")] uint pname,
         [NativeTypeName("const GLint *")] Ref<int> param2
@@ -51781,7 +51775,7 @@ public unsafe partial interface IGL
 
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glTranslated")]
-    void Translated(
+    void Translate(
         [NativeTypeName("GLdouble")] double x,
         [NativeTypeName("GLdouble")] double y,
         [NativeTypeName("GLdouble")] double z
@@ -51790,7 +51784,7 @@ public unsafe partial interface IGL
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [SupportedApiProfile("gles1", MaxVersion = "2.0")]
     [NativeFunction("opengl", EntryPoint = "glTranslatef")]
-    void Translatef(
+    void Translate(
         [NativeTypeName("GLfloat")] float x,
         [NativeTypeName("GLfloat")] float y,
         [NativeTypeName("GLfloat")] float z
@@ -51816,12 +51810,12 @@ public unsafe partial interface IGL
     [SupportedApiProfile("glcore", MinVersion = "3.2")]
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glUniform1d")]
-    void Uniform1d([NativeTypeName("GLint")] int location, [NativeTypeName("GLdouble")] double x);
+    void Uniform1([NativeTypeName("GLint")] int location, [NativeTypeName("GLdouble")] double x);
 
     [SupportedApiProfile("glcore", MinVersion = "3.2")]
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glUniform1dv")]
-    void Uniform1dv(
+    void Uniform1(
         [NativeTypeName("GLint")] int location,
         [NativeTypeName("GLsizei")] int count,
         [NativeTypeName("const GLdouble *")] Ref<double> value
@@ -51831,7 +51825,7 @@ public unsafe partial interface IGL
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [SupportedApiProfile("gles2", MinVersion = "2.0")]
     [NativeFunction("opengl", EntryPoint = "glUniform1f")]
-    void Uniform1f([NativeTypeName("GLint")] int location, [NativeTypeName("GLfloat")] float v0);
+    void Uniform1([NativeTypeName("GLint")] int location, [NativeTypeName("GLfloat")] float v0);
 
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glUniform1fARB")]
@@ -51841,7 +51835,7 @@ public unsafe partial interface IGL
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [SupportedApiProfile("gles2", MinVersion = "2.0")]
     [NativeFunction("opengl", EntryPoint = "glUniform1fv")]
-    void Uniform1fv(
+    void Uniform1(
         [NativeTypeName("GLint")] int location,
         [NativeTypeName("GLsizei")] int count,
         [NativeTypeName("const GLfloat *")] Ref<float> value
@@ -51859,7 +51853,7 @@ public unsafe partial interface IGL
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [SupportedApiProfile("gles2", MinVersion = "2.0")]
     [NativeFunction("opengl", EntryPoint = "glUniform1i")]
-    void Uniform1i([NativeTypeName("GLint")] int location, [NativeTypeName("GLint")] int v0);
+    void Uniform1([NativeTypeName("GLint")] int location, [NativeTypeName("GLint")] int v0);
 
     [SupportedApiProfile("glcore", MinVersion = "3.2")]
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
@@ -51902,7 +51896,7 @@ public unsafe partial interface IGL
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [SupportedApiProfile("gles2", MinVersion = "2.0")]
     [NativeFunction("opengl", EntryPoint = "glUniform1iv")]
-    void Uniform1iv(
+    void Uniform1(
         [NativeTypeName("GLint")] int location,
         [NativeTypeName("GLsizei")] int count,
         [NativeTypeName("const GLint *")] Ref<int> value
@@ -51919,7 +51913,7 @@ public unsafe partial interface IGL
     [SupportedApiProfile("glcore", MinVersion = "3.2")]
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glUniform1ui")]
-    void Uniform1ui([NativeTypeName("GLint")] int location, [NativeTypeName("GLuint")] uint v0);
+    void Uniform1([NativeTypeName("GLint")] int location, [NativeTypeName("GLuint")] uint v0);
 
     [SupportedApiProfile("glcore", MinVersion = "3.2")]
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
@@ -51964,7 +51958,7 @@ public unsafe partial interface IGL
     [SupportedApiProfile("glcore", MinVersion = "3.2")]
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glUniform1uiv")]
-    void Uniform1uiv(
+    void Uniform1(
         [NativeTypeName("GLint")] int location,
         [NativeTypeName("GLsizei")] int count,
         [NativeTypeName("const GLuint *")] Ref<uint> value
@@ -51981,7 +51975,7 @@ public unsafe partial interface IGL
     [SupportedApiProfile("glcore", MinVersion = "3.2")]
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glUniform2d")]
-    void Uniform2d(
+    void Uniform2(
         [NativeTypeName("GLint")] int location,
         [NativeTypeName("GLdouble")] double x,
         [NativeTypeName("GLdouble")] double y
@@ -51990,7 +51984,7 @@ public unsafe partial interface IGL
     [SupportedApiProfile("glcore", MinVersion = "3.2")]
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glUniform2dv")]
-    void Uniform2dv(
+    void Uniform2(
         [NativeTypeName("GLint")] int location,
         [NativeTypeName("GLsizei")] int count,
         [NativeTypeName("const GLdouble *")] Ref<double> value
@@ -52000,7 +51994,7 @@ public unsafe partial interface IGL
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [SupportedApiProfile("gles2", MinVersion = "2.0")]
     [NativeFunction("opengl", EntryPoint = "glUniform2f")]
-    void Uniform2f(
+    void Uniform2(
         [NativeTypeName("GLint")] int location,
         [NativeTypeName("GLfloat")] float v0,
         [NativeTypeName("GLfloat")] float v1
@@ -52018,7 +52012,7 @@ public unsafe partial interface IGL
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [SupportedApiProfile("gles2", MinVersion = "2.0")]
     [NativeFunction("opengl", EntryPoint = "glUniform2fv")]
-    void Uniform2fv(
+    void Uniform2(
         [NativeTypeName("GLint")] int location,
         [NativeTypeName("GLsizei")] int count,
         [NativeTypeName("const GLfloat *")] Ref<float> value
@@ -52036,7 +52030,7 @@ public unsafe partial interface IGL
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [SupportedApiProfile("gles2", MinVersion = "2.0")]
     [NativeFunction("opengl", EntryPoint = "glUniform2i")]
-    void Uniform2i(
+    void Uniform2(
         [NativeTypeName("GLint")] int location,
         [NativeTypeName("GLint")] int v0,
         [NativeTypeName("GLint")] int v1
@@ -52092,7 +52086,7 @@ public unsafe partial interface IGL
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [SupportedApiProfile("gles2", MinVersion = "2.0")]
     [NativeFunction("opengl", EntryPoint = "glUniform2iv")]
-    void Uniform2iv(
+    void Uniform2(
         [NativeTypeName("GLint")] int location,
         [NativeTypeName("GLsizei")] int count,
         [NativeTypeName("const GLint *")] Ref<int> value
@@ -52109,7 +52103,7 @@ public unsafe partial interface IGL
     [SupportedApiProfile("glcore", MinVersion = "3.2")]
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glUniform2ui")]
-    void Uniform2ui(
+    void Uniform2(
         [NativeTypeName("GLint")] int location,
         [NativeTypeName("GLuint")] uint v0,
         [NativeTypeName("GLuint")] uint v1
@@ -52164,7 +52158,7 @@ public unsafe partial interface IGL
     [SupportedApiProfile("glcore", MinVersion = "3.2")]
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glUniform2uiv")]
-    void Uniform2uiv(
+    void Uniform2(
         [NativeTypeName("GLint")] int location,
         [NativeTypeName("GLsizei")] int count,
         [NativeTypeName("const GLuint *")] Ref<uint> value
@@ -52181,7 +52175,7 @@ public unsafe partial interface IGL
     [SupportedApiProfile("glcore", MinVersion = "3.2")]
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glUniform3d")]
-    void Uniform3d(
+    void Uniform3(
         [NativeTypeName("GLint")] int location,
         [NativeTypeName("GLdouble")] double x,
         [NativeTypeName("GLdouble")] double y,
@@ -52191,7 +52185,7 @@ public unsafe partial interface IGL
     [SupportedApiProfile("glcore", MinVersion = "3.2")]
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glUniform3dv")]
-    void Uniform3dv(
+    void Uniform3(
         [NativeTypeName("GLint")] int location,
         [NativeTypeName("GLsizei")] int count,
         [NativeTypeName("const GLdouble *")] Ref<double> value
@@ -52201,7 +52195,7 @@ public unsafe partial interface IGL
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [SupportedApiProfile("gles2", MinVersion = "2.0")]
     [NativeFunction("opengl", EntryPoint = "glUniform3f")]
-    void Uniform3f(
+    void Uniform3(
         [NativeTypeName("GLint")] int location,
         [NativeTypeName("GLfloat")] float v0,
         [NativeTypeName("GLfloat")] float v1,
@@ -52221,7 +52215,7 @@ public unsafe partial interface IGL
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [SupportedApiProfile("gles2", MinVersion = "2.0")]
     [NativeFunction("opengl", EntryPoint = "glUniform3fv")]
-    void Uniform3fv(
+    void Uniform3(
         [NativeTypeName("GLint")] int location,
         [NativeTypeName("GLsizei")] int count,
         [NativeTypeName("const GLfloat *")] Ref<float> value
@@ -52239,7 +52233,7 @@ public unsafe partial interface IGL
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [SupportedApiProfile("gles2", MinVersion = "2.0")]
     [NativeFunction("opengl", EntryPoint = "glUniform3i")]
-    void Uniform3i(
+    void Uniform3(
         [NativeTypeName("GLint")] int location,
         [NativeTypeName("GLint")] int v0,
         [NativeTypeName("GLint")] int v1,
@@ -52299,7 +52293,7 @@ public unsafe partial interface IGL
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [SupportedApiProfile("gles2", MinVersion = "2.0")]
     [NativeFunction("opengl", EntryPoint = "glUniform3iv")]
-    void Uniform3iv(
+    void Uniform3(
         [NativeTypeName("GLint")] int location,
         [NativeTypeName("GLsizei")] int count,
         [NativeTypeName("const GLint *")] Ref<int> value
@@ -52316,7 +52310,7 @@ public unsafe partial interface IGL
     [SupportedApiProfile("glcore", MinVersion = "3.2")]
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glUniform3ui")]
-    void Uniform3ui(
+    void Uniform3(
         [NativeTypeName("GLint")] int location,
         [NativeTypeName("GLuint")] uint v0,
         [NativeTypeName("GLuint")] uint v1,
@@ -52375,7 +52369,7 @@ public unsafe partial interface IGL
     [SupportedApiProfile("glcore", MinVersion = "3.2")]
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glUniform3uiv")]
-    void Uniform3uiv(
+    void Uniform3(
         [NativeTypeName("GLint")] int location,
         [NativeTypeName("GLsizei")] int count,
         [NativeTypeName("const GLuint *")] Ref<uint> value
@@ -52392,7 +52386,7 @@ public unsafe partial interface IGL
     [SupportedApiProfile("glcore", MinVersion = "3.2")]
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glUniform4d")]
-    void Uniform4d(
+    void Uniform4(
         [NativeTypeName("GLint")] int location,
         [NativeTypeName("GLdouble")] double x,
         [NativeTypeName("GLdouble")] double y,
@@ -52403,7 +52397,7 @@ public unsafe partial interface IGL
     [SupportedApiProfile("glcore", MinVersion = "3.2")]
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glUniform4dv")]
-    void Uniform4dv(
+    void Uniform4(
         [NativeTypeName("GLint")] int location,
         [NativeTypeName("GLsizei")] int count,
         [NativeTypeName("const GLdouble *")] Ref<double> value
@@ -52413,7 +52407,7 @@ public unsafe partial interface IGL
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [SupportedApiProfile("gles2", MinVersion = "2.0")]
     [NativeFunction("opengl", EntryPoint = "glUniform4f")]
-    void Uniform4f(
+    void Uniform4(
         [NativeTypeName("GLint")] int location,
         [NativeTypeName("GLfloat")] float v0,
         [NativeTypeName("GLfloat")] float v1,
@@ -52435,7 +52429,7 @@ public unsafe partial interface IGL
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [SupportedApiProfile("gles2", MinVersion = "2.0")]
     [NativeFunction("opengl", EntryPoint = "glUniform4fv")]
-    void Uniform4fv(
+    void Uniform4(
         [NativeTypeName("GLint")] int location,
         [NativeTypeName("GLsizei")] int count,
         [NativeTypeName("const GLfloat *")] Ref<float> value
@@ -52453,7 +52447,7 @@ public unsafe partial interface IGL
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [SupportedApiProfile("gles2", MinVersion = "2.0")]
     [NativeFunction("opengl", EntryPoint = "glUniform4i")]
-    void Uniform4i(
+    void Uniform4(
         [NativeTypeName("GLint")] int location,
         [NativeTypeName("GLint")] int v0,
         [NativeTypeName("GLint")] int v1,
@@ -52517,7 +52511,7 @@ public unsafe partial interface IGL
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [SupportedApiProfile("gles2", MinVersion = "2.0")]
     [NativeFunction("opengl", EntryPoint = "glUniform4iv")]
-    void Uniform4iv(
+    void Uniform4(
         [NativeTypeName("GLint")] int location,
         [NativeTypeName("GLsizei")] int count,
         [NativeTypeName("const GLint *")] Ref<int> value
@@ -52534,7 +52528,7 @@ public unsafe partial interface IGL
     [SupportedApiProfile("glcore", MinVersion = "3.2")]
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glUniform4ui")]
-    void Uniform4ui(
+    void Uniform4(
         [NativeTypeName("GLint")] int location,
         [NativeTypeName("GLuint")] uint v0,
         [NativeTypeName("GLuint")] uint v1,
@@ -52597,7 +52591,7 @@ public unsafe partial interface IGL
     [SupportedApiProfile("glcore", MinVersion = "3.2")]
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glUniform4uiv")]
-    void Uniform4uiv(
+    void Uniform4(
         [NativeTypeName("GLint")] int location,
         [NativeTypeName("GLsizei")] int count,
         [NativeTypeName("const GLuint *")] Ref<uint> value
@@ -52682,7 +52676,7 @@ public unsafe partial interface IGL
     [SupportedApiProfile("glcore", MinVersion = "3.2")]
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glUniformMatrix2dv")]
-    void UniformMatrix2dv(
+    void UniformMatrix2(
         [NativeTypeName("GLint")] int location,
         [NativeTypeName("GLsizei")] int count,
         [NativeTypeName("GLboolean")] byte transpose,
@@ -52693,7 +52687,7 @@ public unsafe partial interface IGL
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [SupportedApiProfile("gles2", MinVersion = "2.0")]
     [NativeFunction("opengl", EntryPoint = "glUniformMatrix2fv")]
-    void UniformMatrix2fv(
+    void UniformMatrix2(
         [NativeTypeName("GLint")] int location,
         [NativeTypeName("GLsizei")] int count,
         [NativeTypeName("GLboolean")] byte transpose,
@@ -52712,7 +52706,7 @@ public unsafe partial interface IGL
     [SupportedApiProfile("glcore", MinVersion = "3.2")]
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glUniformMatrix2x3dv")]
-    void UniformMatrix2x3dv(
+    void UniformMatrix2x3(
         [NativeTypeName("GLint")] int location,
         [NativeTypeName("GLsizei")] int count,
         [NativeTypeName("GLboolean")] byte transpose,
@@ -52722,7 +52716,7 @@ public unsafe partial interface IGL
     [SupportedApiProfile("glcore", MinVersion = "3.2")]
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glUniformMatrix2x3fv")]
-    void UniformMatrix2x3fv(
+    void UniformMatrix2x3(
         [NativeTypeName("GLint")] int location,
         [NativeTypeName("GLsizei")] int count,
         [NativeTypeName("GLboolean")] byte transpose,
@@ -52741,7 +52735,7 @@ public unsafe partial interface IGL
     [SupportedApiProfile("glcore", MinVersion = "3.2")]
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glUniformMatrix2x4dv")]
-    void UniformMatrix2x4dv(
+    void UniformMatrix2x4(
         [NativeTypeName("GLint")] int location,
         [NativeTypeName("GLsizei")] int count,
         [NativeTypeName("GLboolean")] byte transpose,
@@ -52751,7 +52745,7 @@ public unsafe partial interface IGL
     [SupportedApiProfile("glcore", MinVersion = "3.2")]
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glUniformMatrix2x4fv")]
-    void UniformMatrix2x4fv(
+    void UniformMatrix2x4(
         [NativeTypeName("GLint")] int location,
         [NativeTypeName("GLsizei")] int count,
         [NativeTypeName("GLboolean")] byte transpose,
@@ -52770,7 +52764,7 @@ public unsafe partial interface IGL
     [SupportedApiProfile("glcore", MinVersion = "3.2")]
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glUniformMatrix3dv")]
-    void UniformMatrix3dv(
+    void UniformMatrix3(
         [NativeTypeName("GLint")] int location,
         [NativeTypeName("GLsizei")] int count,
         [NativeTypeName("GLboolean")] byte transpose,
@@ -52781,7 +52775,7 @@ public unsafe partial interface IGL
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [SupportedApiProfile("gles2", MinVersion = "2.0")]
     [NativeFunction("opengl", EntryPoint = "glUniformMatrix3fv")]
-    void UniformMatrix3fv(
+    void UniformMatrix3(
         [NativeTypeName("GLint")] int location,
         [NativeTypeName("GLsizei")] int count,
         [NativeTypeName("GLboolean")] byte transpose,
@@ -52800,7 +52794,7 @@ public unsafe partial interface IGL
     [SupportedApiProfile("glcore", MinVersion = "3.2")]
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glUniformMatrix3x2dv")]
-    void UniformMatrix3x2dv(
+    void UniformMatrix3x2(
         [NativeTypeName("GLint")] int location,
         [NativeTypeName("GLsizei")] int count,
         [NativeTypeName("GLboolean")] byte transpose,
@@ -52810,7 +52804,7 @@ public unsafe partial interface IGL
     [SupportedApiProfile("glcore", MinVersion = "3.2")]
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glUniformMatrix3x2fv")]
-    void UniformMatrix3x2fv(
+    void UniformMatrix3x2(
         [NativeTypeName("GLint")] int location,
         [NativeTypeName("GLsizei")] int count,
         [NativeTypeName("GLboolean")] byte transpose,
@@ -52829,7 +52823,7 @@ public unsafe partial interface IGL
     [SupportedApiProfile("glcore", MinVersion = "3.2")]
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glUniformMatrix3x4dv")]
-    void UniformMatrix3x4dv(
+    void UniformMatrix3x4(
         [NativeTypeName("GLint")] int location,
         [NativeTypeName("GLsizei")] int count,
         [NativeTypeName("GLboolean")] byte transpose,
@@ -52839,7 +52833,7 @@ public unsafe partial interface IGL
     [SupportedApiProfile("glcore", MinVersion = "3.2")]
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glUniformMatrix3x4fv")]
-    void UniformMatrix3x4fv(
+    void UniformMatrix3x4(
         [NativeTypeName("GLint")] int location,
         [NativeTypeName("GLsizei")] int count,
         [NativeTypeName("GLboolean")] byte transpose,
@@ -52858,7 +52852,7 @@ public unsafe partial interface IGL
     [SupportedApiProfile("glcore", MinVersion = "3.2")]
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glUniformMatrix4dv")]
-    void UniformMatrix4dv(
+    void UniformMatrix4(
         [NativeTypeName("GLint")] int location,
         [NativeTypeName("GLsizei")] int count,
         [NativeTypeName("GLboolean")] byte transpose,
@@ -52869,7 +52863,7 @@ public unsafe partial interface IGL
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [SupportedApiProfile("gles2", MinVersion = "2.0")]
     [NativeFunction("opengl", EntryPoint = "glUniformMatrix4fv")]
-    void UniformMatrix4fv(
+    void UniformMatrix4(
         [NativeTypeName("GLint")] int location,
         [NativeTypeName("GLsizei")] int count,
         [NativeTypeName("GLboolean")] byte transpose,
@@ -52888,7 +52882,7 @@ public unsafe partial interface IGL
     [SupportedApiProfile("glcore", MinVersion = "3.2")]
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glUniformMatrix4x2dv")]
-    void UniformMatrix4x2dv(
+    void UniformMatrix4x2(
         [NativeTypeName("GLint")] int location,
         [NativeTypeName("GLsizei")] int count,
         [NativeTypeName("GLboolean")] byte transpose,
@@ -52898,7 +52892,7 @@ public unsafe partial interface IGL
     [SupportedApiProfile("glcore", MinVersion = "3.2")]
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glUniformMatrix4x2fv")]
-    void UniformMatrix4x2fv(
+    void UniformMatrix4x2(
         [NativeTypeName("GLint")] int location,
         [NativeTypeName("GLsizei")] int count,
         [NativeTypeName("GLboolean")] byte transpose,
@@ -52917,7 +52911,7 @@ public unsafe partial interface IGL
     [SupportedApiProfile("glcore", MinVersion = "3.2")]
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glUniformMatrix4x3dv")]
-    void UniformMatrix4x3dv(
+    void UniformMatrix4x3(
         [NativeTypeName("GLint")] int location,
         [NativeTypeName("GLsizei")] int count,
         [NativeTypeName("GLboolean")] byte transpose,
@@ -52927,7 +52921,7 @@ public unsafe partial interface IGL
     [SupportedApiProfile("glcore", MinVersion = "3.2")]
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glUniformMatrix4x3fv")]
-    void UniformMatrix4x3fv(
+    void UniformMatrix4x3(
         [NativeTypeName("GLint")] int location,
         [NativeTypeName("GLsizei")] int count,
         [NativeTypeName("GLboolean")] byte transpose,
@@ -52946,7 +52940,7 @@ public unsafe partial interface IGL
     [SupportedApiProfile("glcore", MinVersion = "3.2")]
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glUniformSubroutinesuiv")]
-    void UniformSubroutinesuiv(
+    void UniformSubroutines(
         [NativeTypeName("GLenum")] uint shadertype,
         [NativeTypeName("GLsizei")] int count,
         [NativeTypeName("const GLuint *")] Ref<uint> indices
@@ -53248,19 +53242,19 @@ public unsafe partial interface IGL
 
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glVertex2d")]
-    void Vertex2d([NativeTypeName("GLdouble")] double x, [NativeTypeName("GLdouble")] double y);
+    void Vertex2([NativeTypeName("GLdouble")] double x, [NativeTypeName("GLdouble")] double y);
 
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glVertex2dv")]
-    void Vertex2dv([NativeTypeName("const GLdouble *")] Ref<double> v);
+    void Vertex2([NativeTypeName("const GLdouble *")] Ref<double> v);
 
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glVertex2f")]
-    void Vertex2f([NativeTypeName("GLfloat")] float x, [NativeTypeName("GLfloat")] float y);
+    void Vertex2([NativeTypeName("GLfloat")] float x, [NativeTypeName("GLfloat")] float y);
 
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glVertex2fv")]
-    void Vertex2fv([NativeTypeName("const GLfloat *")] Ref<float> v);
+    void Vertex2([NativeTypeName("const GLfloat *")] Ref<float> v);
 
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glVertex2hNV")]
@@ -53272,19 +53266,19 @@ public unsafe partial interface IGL
 
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glVertex2i")]
-    void Vertex2i([NativeTypeName("GLint")] int x, [NativeTypeName("GLint")] int y);
+    void Vertex2([NativeTypeName("GLint")] int x, [NativeTypeName("GLint")] int y);
 
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glVertex2iv")]
-    void Vertex2iv([NativeTypeName("const GLint *")] Ref<int> v);
+    void Vertex2([NativeTypeName("const GLint *")] Ref<int> v);
 
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glVertex2s")]
-    void Vertex2s([NativeTypeName("GLshort")] short x, [NativeTypeName("GLshort")] short y);
+    void Vertex2([NativeTypeName("GLshort")] short x, [NativeTypeName("GLshort")] short y);
 
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glVertex2sv")]
-    void Vertex2sv([NativeTypeName("const GLshort *")] Ref<short> v);
+    void Vertex2([NativeTypeName("const GLshort *")] Ref<short> v);
 
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glVertex2xOES")]
@@ -53308,7 +53302,7 @@ public unsafe partial interface IGL
 
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glVertex3d")]
-    void Vertex3d(
+    void Vertex3(
         [NativeTypeName("GLdouble")] double x,
         [NativeTypeName("GLdouble")] double y,
         [NativeTypeName("GLdouble")] double z
@@ -53316,11 +53310,11 @@ public unsafe partial interface IGL
 
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glVertex3dv")]
-    void Vertex3dv([NativeTypeName("const GLdouble *")] Ref<double> v);
+    void Vertex3([NativeTypeName("const GLdouble *")] Ref<double> v);
 
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glVertex3f")]
-    void Vertex3f(
+    void Vertex3(
         [NativeTypeName("GLfloat")] float x,
         [NativeTypeName("GLfloat")] float y,
         [NativeTypeName("GLfloat")] float z
@@ -53328,7 +53322,7 @@ public unsafe partial interface IGL
 
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glVertex3fv")]
-    void Vertex3fv([NativeTypeName("const GLfloat *")] Ref<float> v);
+    void Vertex3([NativeTypeName("const GLfloat *")] Ref<float> v);
 
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glVertex3hNV")]
@@ -53344,7 +53338,7 @@ public unsafe partial interface IGL
 
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glVertex3i")]
-    void Vertex3i(
+    void Vertex3(
         [NativeTypeName("GLint")] int x,
         [NativeTypeName("GLint")] int y,
         [NativeTypeName("GLint")] int z
@@ -53352,11 +53346,11 @@ public unsafe partial interface IGL
 
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glVertex3iv")]
-    void Vertex3iv([NativeTypeName("const GLint *")] Ref<int> v);
+    void Vertex3([NativeTypeName("const GLint *")] Ref<int> v);
 
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glVertex3s")]
-    void Vertex3s(
+    void Vertex3(
         [NativeTypeName("GLshort")] short x,
         [NativeTypeName("GLshort")] short y,
         [NativeTypeName("GLshort")] short z
@@ -53364,7 +53358,7 @@ public unsafe partial interface IGL
 
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glVertex3sv")]
-    void Vertex3sv([NativeTypeName("const GLshort *")] Ref<short> v);
+    void Vertex3([NativeTypeName("const GLshort *")] Ref<short> v);
 
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glVertex3xOES")]
@@ -53389,7 +53383,7 @@ public unsafe partial interface IGL
 
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glVertex4d")]
-    void Vertex4d(
+    void Vertex4(
         [NativeTypeName("GLdouble")] double x,
         [NativeTypeName("GLdouble")] double y,
         [NativeTypeName("GLdouble")] double z,
@@ -53398,11 +53392,11 @@ public unsafe partial interface IGL
 
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glVertex4dv")]
-    void Vertex4dv([NativeTypeName("const GLdouble *")] Ref<double> v);
+    void Vertex4([NativeTypeName("const GLdouble *")] Ref<double> v);
 
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glVertex4f")]
-    void Vertex4f(
+    void Vertex4(
         [NativeTypeName("GLfloat")] float x,
         [NativeTypeName("GLfloat")] float y,
         [NativeTypeName("GLfloat")] float z,
@@ -53411,7 +53405,7 @@ public unsafe partial interface IGL
 
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glVertex4fv")]
-    void Vertex4fv([NativeTypeName("const GLfloat *")] Ref<float> v);
+    void Vertex4([NativeTypeName("const GLfloat *")] Ref<float> v);
 
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glVertex4hNV")]
@@ -53428,7 +53422,7 @@ public unsafe partial interface IGL
 
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glVertex4i")]
-    void Vertex4i(
+    void Vertex4(
         [NativeTypeName("GLint")] int x,
         [NativeTypeName("GLint")] int y,
         [NativeTypeName("GLint")] int z,
@@ -53437,11 +53431,11 @@ public unsafe partial interface IGL
 
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glVertex4iv")]
-    void Vertex4iv([NativeTypeName("const GLint *")] Ref<int> v);
+    void Vertex4([NativeTypeName("const GLint *")] Ref<int> v);
 
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glVertex4s")]
-    void Vertex4s(
+    void Vertex4(
         [NativeTypeName("GLshort")] short x,
         [NativeTypeName("GLshort")] short y,
         [NativeTypeName("GLshort")] short z,
@@ -53450,7 +53444,7 @@ public unsafe partial interface IGL
 
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glVertex4sv")]
-    void Vertex4sv([NativeTypeName("const GLshort *")] Ref<short> v);
+    void Vertex4([NativeTypeName("const GLshort *")] Ref<short> v);
 
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glVertex4xOES")]
@@ -53784,7 +53778,7 @@ public unsafe partial interface IGL
     [SupportedApiProfile("glcore", MinVersion = "3.2")]
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glVertexAttrib1d")]
-    void VertexAttrib1d(
+    void VertexAttrib1(
         [NativeTypeName("GLuint")] uint index,
         [NativeTypeName("GLdouble")] double x
     );
@@ -53806,7 +53800,7 @@ public unsafe partial interface IGL
     [SupportedApiProfile("glcore", MinVersion = "3.2")]
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glVertexAttrib1dv")]
-    void VertexAttrib1dv(
+    void VertexAttrib1(
         [NativeTypeName("GLuint")] uint index,
         [NativeTypeName("const GLdouble *")] Ref<double> v
     );
@@ -53829,7 +53823,7 @@ public unsafe partial interface IGL
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [SupportedApiProfile("gles2", MinVersion = "2.0")]
     [NativeFunction("opengl", EntryPoint = "glVertexAttrib1f")]
-    void VertexAttrib1f([NativeTypeName("GLuint")] uint index, [NativeTypeName("GLfloat")] float x);
+    void VertexAttrib1([NativeTypeName("GLuint")] uint index, [NativeTypeName("GLfloat")] float x);
 
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glVertexAttrib1fARB")]
@@ -53849,7 +53843,7 @@ public unsafe partial interface IGL
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [SupportedApiProfile("gles2", MinVersion = "2.0")]
     [NativeFunction("opengl", EntryPoint = "glVertexAttrib1fv")]
-    void VertexAttrib1fv(
+    void VertexAttrib1(
         [NativeTypeName("GLuint")] uint index,
         [NativeTypeName("const GLfloat *")] Ref<float> v
     );
@@ -53885,7 +53879,7 @@ public unsafe partial interface IGL
     [SupportedApiProfile("glcore", MinVersion = "3.2")]
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glVertexAttrib1s")]
-    void VertexAttrib1s([NativeTypeName("GLuint")] uint index, [NativeTypeName("GLshort")] short x);
+    void VertexAttrib1([NativeTypeName("GLuint")] uint index, [NativeTypeName("GLshort")] short x);
 
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glVertexAttrib1sARB")]
@@ -53904,7 +53898,7 @@ public unsafe partial interface IGL
     [SupportedApiProfile("glcore", MinVersion = "3.2")]
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glVertexAttrib1sv")]
-    void VertexAttrib1sv(
+    void VertexAttrib1(
         [NativeTypeName("GLuint")] uint index,
         [NativeTypeName("const GLshort *")] Ref<short> v
     );
@@ -53926,7 +53920,7 @@ public unsafe partial interface IGL
     [SupportedApiProfile("glcore", MinVersion = "3.2")]
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glVertexAttrib2d")]
-    void VertexAttrib2d(
+    void VertexAttrib2(
         [NativeTypeName("GLuint")] uint index,
         [NativeTypeName("GLdouble")] double x,
         [NativeTypeName("GLdouble")] double y
@@ -53951,7 +53945,7 @@ public unsafe partial interface IGL
     [SupportedApiProfile("glcore", MinVersion = "3.2")]
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glVertexAttrib2dv")]
-    void VertexAttrib2dv(
+    void VertexAttrib2(
         [NativeTypeName("GLuint")] uint index,
         [NativeTypeName("const GLdouble *")] Ref<double> v
     );
@@ -53974,7 +53968,7 @@ public unsafe partial interface IGL
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [SupportedApiProfile("gles2", MinVersion = "2.0")]
     [NativeFunction("opengl", EntryPoint = "glVertexAttrib2f")]
-    void VertexAttrib2f(
+    void VertexAttrib2(
         [NativeTypeName("GLuint")] uint index,
         [NativeTypeName("GLfloat")] float x,
         [NativeTypeName("GLfloat")] float y
@@ -54000,7 +53994,7 @@ public unsafe partial interface IGL
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [SupportedApiProfile("gles2", MinVersion = "2.0")]
     [NativeFunction("opengl", EntryPoint = "glVertexAttrib2fv")]
-    void VertexAttrib2fv(
+    void VertexAttrib2(
         [NativeTypeName("GLuint")] uint index,
         [NativeTypeName("const GLfloat *")] Ref<float> v
     );
@@ -54037,7 +54031,7 @@ public unsafe partial interface IGL
     [SupportedApiProfile("glcore", MinVersion = "3.2")]
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glVertexAttrib2s")]
-    void VertexAttrib2s(
+    void VertexAttrib2(
         [NativeTypeName("GLuint")] uint index,
         [NativeTypeName("GLshort")] short x,
         [NativeTypeName("GLshort")] short y
@@ -54062,7 +54056,7 @@ public unsafe partial interface IGL
     [SupportedApiProfile("glcore", MinVersion = "3.2")]
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glVertexAttrib2sv")]
-    void VertexAttrib2sv(
+    void VertexAttrib2(
         [NativeTypeName("GLuint")] uint index,
         [NativeTypeName("const GLshort *")] Ref<short> v
     );
@@ -54084,7 +54078,7 @@ public unsafe partial interface IGL
     [SupportedApiProfile("glcore", MinVersion = "3.2")]
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glVertexAttrib3d")]
-    void VertexAttrib3d(
+    void VertexAttrib3(
         [NativeTypeName("GLuint")] uint index,
         [NativeTypeName("GLdouble")] double x,
         [NativeTypeName("GLdouble")] double y,
@@ -54112,7 +54106,7 @@ public unsafe partial interface IGL
     [SupportedApiProfile("glcore", MinVersion = "3.2")]
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glVertexAttrib3dv")]
-    void VertexAttrib3dv(
+    void VertexAttrib3(
         [NativeTypeName("GLuint")] uint index,
         [NativeTypeName("const GLdouble *")] Ref<double> v
     );
@@ -54135,7 +54129,7 @@ public unsafe partial interface IGL
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [SupportedApiProfile("gles2", MinVersion = "2.0")]
     [NativeFunction("opengl", EntryPoint = "glVertexAttrib3f")]
-    void VertexAttrib3f(
+    void VertexAttrib3(
         [NativeTypeName("GLuint")] uint index,
         [NativeTypeName("GLfloat")] float x,
         [NativeTypeName("GLfloat")] float y,
@@ -54164,7 +54158,7 @@ public unsafe partial interface IGL
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [SupportedApiProfile("gles2", MinVersion = "2.0")]
     [NativeFunction("opengl", EntryPoint = "glVertexAttrib3fv")]
-    void VertexAttrib3fv(
+    void VertexAttrib3(
         [NativeTypeName("GLuint")] uint index,
         [NativeTypeName("const GLfloat *")] Ref<float> v
     );
@@ -54202,7 +54196,7 @@ public unsafe partial interface IGL
     [SupportedApiProfile("glcore", MinVersion = "3.2")]
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glVertexAttrib3s")]
-    void VertexAttrib3s(
+    void VertexAttrib3(
         [NativeTypeName("GLuint")] uint index,
         [NativeTypeName("GLshort")] short x,
         [NativeTypeName("GLshort")] short y,
@@ -54230,7 +54224,7 @@ public unsafe partial interface IGL
     [SupportedApiProfile("glcore", MinVersion = "3.2")]
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glVertexAttrib3sv")]
-    void VertexAttrib3sv(
+    void VertexAttrib3(
         [NativeTypeName("GLuint")] uint index,
         [NativeTypeName("const GLshort *")] Ref<short> v
     );
@@ -54252,7 +54246,7 @@ public unsafe partial interface IGL
     [SupportedApiProfile("glcore", MinVersion = "3.2")]
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glVertexAttrib4bv")]
-    void VertexAttrib4bv(
+    void VertexAttrib4(
         [NativeTypeName("GLuint")] uint index,
         [NativeTypeName("const GLbyte *")] Ref<sbyte> v
     );
@@ -54267,7 +54261,7 @@ public unsafe partial interface IGL
     [SupportedApiProfile("glcore", MinVersion = "3.2")]
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glVertexAttrib4d")]
-    void VertexAttrib4d(
+    void VertexAttrib4(
         [NativeTypeName("GLuint")] uint index,
         [NativeTypeName("GLdouble")] double x,
         [NativeTypeName("GLdouble")] double y,
@@ -54298,7 +54292,7 @@ public unsafe partial interface IGL
     [SupportedApiProfile("glcore", MinVersion = "3.2")]
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glVertexAttrib4dv")]
-    void VertexAttrib4dv(
+    void VertexAttrib4(
         [NativeTypeName("GLuint")] uint index,
         [NativeTypeName("const GLdouble *")] Ref<double> v
     );
@@ -54321,7 +54315,7 @@ public unsafe partial interface IGL
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [SupportedApiProfile("gles2", MinVersion = "2.0")]
     [NativeFunction("opengl", EntryPoint = "glVertexAttrib4f")]
-    void VertexAttrib4f(
+    void VertexAttrib4(
         [NativeTypeName("GLuint")] uint index,
         [NativeTypeName("GLfloat")] float x,
         [NativeTypeName("GLfloat")] float y,
@@ -54353,7 +54347,7 @@ public unsafe partial interface IGL
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [SupportedApiProfile("gles2", MinVersion = "2.0")]
     [NativeFunction("opengl", EntryPoint = "glVertexAttrib4fv")]
-    void VertexAttrib4fv(
+    void VertexAttrib4(
         [NativeTypeName("GLuint")] uint index,
         [NativeTypeName("const GLfloat *")] Ref<float> v
     );
@@ -54392,7 +54386,7 @@ public unsafe partial interface IGL
     [SupportedApiProfile("glcore", MinVersion = "3.2")]
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glVertexAttrib4iv")]
-    void VertexAttrib4iv(
+    void VertexAttrib4(
         [NativeTypeName("GLuint")] uint index,
         [NativeTypeName("const GLint *")] Ref<int> v
     );
@@ -54407,7 +54401,7 @@ public unsafe partial interface IGL
     [SupportedApiProfile("glcore", MinVersion = "3.2")]
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glVertexAttrib4Nbv")]
-    void VertexAttrib4nbv(
+    void VertexAttrib4n(
         [NativeTypeName("GLuint")] uint index,
         [NativeTypeName("const GLbyte *")] Ref<sbyte> v
     );
@@ -54422,7 +54416,7 @@ public unsafe partial interface IGL
     [SupportedApiProfile("glcore", MinVersion = "3.2")]
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glVertexAttrib4Niv")]
-    void VertexAttrib4niv(
+    void VertexAttrib4n(
         [NativeTypeName("GLuint")] uint index,
         [NativeTypeName("const GLint *")] Ref<int> v
     );
@@ -54437,7 +54431,7 @@ public unsafe partial interface IGL
     [SupportedApiProfile("glcore", MinVersion = "3.2")]
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glVertexAttrib4Nsv")]
-    void VertexAttrib4nsv(
+    void VertexAttrib4n(
         [NativeTypeName("GLuint")] uint index,
         [NativeTypeName("const GLshort *")] Ref<short> v
     );
@@ -54452,7 +54446,7 @@ public unsafe partial interface IGL
     [SupportedApiProfile("glcore", MinVersion = "3.2")]
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glVertexAttrib4Nub")]
-    void VertexAttrib4nub(
+    void VertexAttrib4n(
         [NativeTypeName("GLuint")] uint index,
         [NativeTypeName("GLubyte")] byte x,
         [NativeTypeName("GLubyte")] byte y,
@@ -54473,7 +54467,7 @@ public unsafe partial interface IGL
     [SupportedApiProfile("glcore", MinVersion = "3.2")]
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glVertexAttrib4Nubv")]
-    void VertexAttrib4nubv(
+    void VertexAttrib4n(
         [NativeTypeName("GLuint")] uint index,
         [NativeTypeName("const GLubyte *")] Ref<byte> v
     );
@@ -54488,7 +54482,7 @@ public unsafe partial interface IGL
     [SupportedApiProfile("glcore", MinVersion = "3.2")]
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glVertexAttrib4Nuiv")]
-    void VertexAttrib4nuiv(
+    void VertexAttrib4n(
         [NativeTypeName("GLuint")] uint index,
         [NativeTypeName("const GLuint *")] Ref<uint> v
     );
@@ -54503,7 +54497,7 @@ public unsafe partial interface IGL
     [SupportedApiProfile("glcore", MinVersion = "3.2")]
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glVertexAttrib4Nusv")]
-    void VertexAttrib4nusv(
+    void VertexAttrib4n(
         [NativeTypeName("GLuint")] uint index,
         [NativeTypeName("const GLushort *")] Ref<ushort> v
     );
@@ -54518,7 +54512,7 @@ public unsafe partial interface IGL
     [SupportedApiProfile("glcore", MinVersion = "3.2")]
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glVertexAttrib4s")]
-    void VertexAttrib4s(
+    void VertexAttrib4(
         [NativeTypeName("GLuint")] uint index,
         [NativeTypeName("GLshort")] short x,
         [NativeTypeName("GLshort")] short y,
@@ -54549,7 +54543,7 @@ public unsafe partial interface IGL
     [SupportedApiProfile("glcore", MinVersion = "3.2")]
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glVertexAttrib4sv")]
-    void VertexAttrib4sv(
+    void VertexAttrib4(
         [NativeTypeName("GLuint")] uint index,
         [NativeTypeName("const GLshort *")] Ref<short> v
     );
@@ -54581,7 +54575,7 @@ public unsafe partial interface IGL
     [SupportedApiProfile("glcore", MinVersion = "3.2")]
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glVertexAttrib4ubv")]
-    void VertexAttrib4ubv(
+    void VertexAttrib4(
         [NativeTypeName("GLuint")] uint index,
         [NativeTypeName("const GLubyte *")] Ref<byte> v
     );
@@ -54603,7 +54597,7 @@ public unsafe partial interface IGL
     [SupportedApiProfile("glcore", MinVersion = "3.2")]
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glVertexAttrib4uiv")]
-    void VertexAttrib4uiv(
+    void VertexAttrib4(
         [NativeTypeName("GLuint")] uint index,
         [NativeTypeName("const GLuint *")] Ref<uint> v
     );
@@ -54618,7 +54612,7 @@ public unsafe partial interface IGL
     [SupportedApiProfile("glcore", MinVersion = "3.2")]
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glVertexAttrib4usv")]
-    void VertexAttrib4usv(
+    void VertexAttrib4(
         [NativeTypeName("GLuint")] uint index,
         [NativeTypeName("const GLushort *")] Ref<ushort> v
     );
@@ -54712,7 +54706,7 @@ public unsafe partial interface IGL
     [SupportedApiProfile("glcore", MinVersion = "3.2")]
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glVertexAttribI1i")]
-    void VertexAttribI1i([NativeTypeName("GLuint")] uint index, [NativeTypeName("GLint")] int x);
+    void VertexAttribI1([NativeTypeName("GLuint")] uint index, [NativeTypeName("GLint")] int x);
 
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glVertexAttribI1iEXT")]
@@ -54721,7 +54715,7 @@ public unsafe partial interface IGL
     [SupportedApiProfile("glcore", MinVersion = "3.2")]
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glVertexAttribI1iv")]
-    void VertexAttribI1iv(
+    void VertexAttribI1(
         [NativeTypeName("GLuint")] uint index,
         [NativeTypeName("const GLint *")] Ref<int> v
     );
@@ -54736,7 +54730,7 @@ public unsafe partial interface IGL
     [SupportedApiProfile("glcore", MinVersion = "3.2")]
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glVertexAttribI1ui")]
-    void VertexAttribI1ui([NativeTypeName("GLuint")] uint index, [NativeTypeName("GLuint")] uint x);
+    void VertexAttribI1([NativeTypeName("GLuint")] uint index, [NativeTypeName("GLuint")] uint x);
 
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glVertexAttribI1uiEXT")]
@@ -54748,7 +54742,7 @@ public unsafe partial interface IGL
     [SupportedApiProfile("glcore", MinVersion = "3.2")]
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glVertexAttribI1uiv")]
-    void VertexAttribI1uiv(
+    void VertexAttribI1(
         [NativeTypeName("GLuint")] uint index,
         [NativeTypeName("const GLuint *")] Ref<uint> v
     );
@@ -54763,7 +54757,7 @@ public unsafe partial interface IGL
     [SupportedApiProfile("glcore", MinVersion = "3.2")]
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glVertexAttribI2i")]
-    void VertexAttribI2i(
+    void VertexAttribI2(
         [NativeTypeName("GLuint")] uint index,
         [NativeTypeName("GLint")] int x,
         [NativeTypeName("GLint")] int y
@@ -54780,7 +54774,7 @@ public unsafe partial interface IGL
     [SupportedApiProfile("glcore", MinVersion = "3.2")]
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glVertexAttribI2iv")]
-    void VertexAttribI2iv(
+    void VertexAttribI2(
         [NativeTypeName("GLuint")] uint index,
         [NativeTypeName("const GLint *")] Ref<int> v
     );
@@ -54795,7 +54789,7 @@ public unsafe partial interface IGL
     [SupportedApiProfile("glcore", MinVersion = "3.2")]
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glVertexAttribI2ui")]
-    void VertexAttribI2ui(
+    void VertexAttribI2(
         [NativeTypeName("GLuint")] uint index,
         [NativeTypeName("GLuint")] uint x,
         [NativeTypeName("GLuint")] uint y
@@ -54812,7 +54806,7 @@ public unsafe partial interface IGL
     [SupportedApiProfile("glcore", MinVersion = "3.2")]
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glVertexAttribI2uiv")]
-    void VertexAttribI2uiv(
+    void VertexAttribI2(
         [NativeTypeName("GLuint")] uint index,
         [NativeTypeName("const GLuint *")] Ref<uint> v
     );
@@ -54827,7 +54821,7 @@ public unsafe partial interface IGL
     [SupportedApiProfile("glcore", MinVersion = "3.2")]
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glVertexAttribI3i")]
-    void VertexAttribI3i(
+    void VertexAttribI3(
         [NativeTypeName("GLuint")] uint index,
         [NativeTypeName("GLint")] int x,
         [NativeTypeName("GLint")] int y,
@@ -54846,7 +54840,7 @@ public unsafe partial interface IGL
     [SupportedApiProfile("glcore", MinVersion = "3.2")]
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glVertexAttribI3iv")]
-    void VertexAttribI3iv(
+    void VertexAttribI3(
         [NativeTypeName("GLuint")] uint index,
         [NativeTypeName("const GLint *")] Ref<int> v
     );
@@ -54861,7 +54855,7 @@ public unsafe partial interface IGL
     [SupportedApiProfile("glcore", MinVersion = "3.2")]
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glVertexAttribI3ui")]
-    void VertexAttribI3ui(
+    void VertexAttribI3(
         [NativeTypeName("GLuint")] uint index,
         [NativeTypeName("GLuint")] uint x,
         [NativeTypeName("GLuint")] uint y,
@@ -54880,7 +54874,7 @@ public unsafe partial interface IGL
     [SupportedApiProfile("glcore", MinVersion = "3.2")]
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glVertexAttribI3uiv")]
-    void VertexAttribI3uiv(
+    void VertexAttribI3(
         [NativeTypeName("GLuint")] uint index,
         [NativeTypeName("const GLuint *")] Ref<uint> v
     );
@@ -54895,7 +54889,7 @@ public unsafe partial interface IGL
     [SupportedApiProfile("glcore", MinVersion = "3.2")]
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glVertexAttribI4bv")]
-    void VertexAttribI4bv(
+    void VertexAttribI4(
         [NativeTypeName("GLuint")] uint index,
         [NativeTypeName("const GLbyte *")] Ref<sbyte> v
     );
@@ -54910,7 +54904,7 @@ public unsafe partial interface IGL
     [SupportedApiProfile("glcore", MinVersion = "3.2")]
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glVertexAttribI4i")]
-    void VertexAttribI4i(
+    void VertexAttribI4(
         [NativeTypeName("GLuint")] uint index,
         [NativeTypeName("GLint")] int x,
         [NativeTypeName("GLint")] int y,
@@ -54931,7 +54925,7 @@ public unsafe partial interface IGL
     [SupportedApiProfile("glcore", MinVersion = "3.2")]
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glVertexAttribI4iv")]
-    void VertexAttribI4iv(
+    void VertexAttribI4(
         [NativeTypeName("GLuint")] uint index,
         [NativeTypeName("const GLint *")] Ref<int> v
     );
@@ -54946,7 +54940,7 @@ public unsafe partial interface IGL
     [SupportedApiProfile("glcore", MinVersion = "3.2")]
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glVertexAttribI4sv")]
-    void VertexAttribI4sv(
+    void VertexAttribI4(
         [NativeTypeName("GLuint")] uint index,
         [NativeTypeName("const GLshort *")] Ref<short> v
     );
@@ -54961,7 +54955,7 @@ public unsafe partial interface IGL
     [SupportedApiProfile("glcore", MinVersion = "3.2")]
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glVertexAttribI4ubv")]
-    void VertexAttribI4ubv(
+    void VertexAttribI4(
         [NativeTypeName("GLuint")] uint index,
         [NativeTypeName("const GLubyte *")] Ref<byte> v
     );
@@ -54976,7 +54970,7 @@ public unsafe partial interface IGL
     [SupportedApiProfile("glcore", MinVersion = "3.2")]
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glVertexAttribI4ui")]
-    void VertexAttribI4ui(
+    void VertexAttribI4(
         [NativeTypeName("GLuint")] uint index,
         [NativeTypeName("GLuint")] uint x,
         [NativeTypeName("GLuint")] uint y,
@@ -54997,7 +54991,7 @@ public unsafe partial interface IGL
     [SupportedApiProfile("glcore", MinVersion = "3.2")]
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glVertexAttribI4uiv")]
-    void VertexAttribI4uiv(
+    void VertexAttribI4(
         [NativeTypeName("GLuint")] uint index,
         [NativeTypeName("const GLuint *")] Ref<uint> v
     );
@@ -55012,7 +55006,7 @@ public unsafe partial interface IGL
     [SupportedApiProfile("glcore", MinVersion = "3.2")]
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glVertexAttribI4usv")]
-    void VertexAttribI4usv(
+    void VertexAttribI4(
         [NativeTypeName("GLuint")] uint index,
         [NativeTypeName("const GLushort *")] Ref<ushort> v
     );
@@ -55068,7 +55062,7 @@ public unsafe partial interface IGL
     [SupportedApiProfile("glcore", MinVersion = "3.2")]
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glVertexAttribL1d")]
-    void VertexAttribL1d(
+    void VertexAttribL1(
         [NativeTypeName("GLuint")] uint index,
         [NativeTypeName("GLdouble")] double x
     );
@@ -55083,7 +55077,7 @@ public unsafe partial interface IGL
     [SupportedApiProfile("glcore", MinVersion = "3.2")]
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glVertexAttribL1dv")]
-    void VertexAttribL1dv(
+    void VertexAttribL1(
         [NativeTypeName("GLuint")] uint index,
         [NativeTypeName("const GLdouble *")] Ref<double> v
     );
@@ -55146,7 +55140,7 @@ public unsafe partial interface IGL
     [SupportedApiProfile("glcore", MinVersion = "3.2")]
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glVertexAttribL2d")]
-    void VertexAttribL2d(
+    void VertexAttribL2(
         [NativeTypeName("GLuint")] uint index,
         [NativeTypeName("GLdouble")] double x,
         [NativeTypeName("GLdouble")] double y
@@ -55163,7 +55157,7 @@ public unsafe partial interface IGL
     [SupportedApiProfile("glcore", MinVersion = "3.2")]
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glVertexAttribL2dv")]
-    void VertexAttribL2dv(
+    void VertexAttribL2(
         [NativeTypeName("GLuint")] uint index,
         [NativeTypeName("const GLdouble *")] Ref<double> v
     );
@@ -55212,7 +55206,7 @@ public unsafe partial interface IGL
     [SupportedApiProfile("glcore", MinVersion = "3.2")]
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glVertexAttribL3d")]
-    void VertexAttribL3d(
+    void VertexAttribL3(
         [NativeTypeName("GLuint")] uint index,
         [NativeTypeName("GLdouble")] double x,
         [NativeTypeName("GLdouble")] double y,
@@ -55231,7 +55225,7 @@ public unsafe partial interface IGL
     [SupportedApiProfile("glcore", MinVersion = "3.2")]
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glVertexAttribL3dv")]
-    void VertexAttribL3dv(
+    void VertexAttribL3(
         [NativeTypeName("GLuint")] uint index,
         [NativeTypeName("const GLdouble *")] Ref<double> v
     );
@@ -55282,7 +55276,7 @@ public unsafe partial interface IGL
     [SupportedApiProfile("glcore", MinVersion = "3.2")]
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glVertexAttribL4d")]
-    void VertexAttribL4d(
+    void VertexAttribL4(
         [NativeTypeName("GLuint")] uint index,
         [NativeTypeName("GLdouble")] double x,
         [NativeTypeName("GLdouble")] double y,
@@ -55303,7 +55297,7 @@ public unsafe partial interface IGL
     [SupportedApiProfile("glcore", MinVersion = "3.2")]
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glVertexAttribL4dv")]
-    void VertexAttribL4dv(
+    void VertexAttribL4(
         [NativeTypeName("GLuint")] uint index,
         [NativeTypeName("const GLdouble *")] Ref<double> v
     );
@@ -55397,7 +55391,7 @@ public unsafe partial interface IGL
     [SupportedApiProfile("glcore", MinVersion = "3.2")]
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glVertexAttribP1ui")]
-    void VertexAttribP1ui(
+    void VertexAttribP1(
         [NativeTypeName("GLuint")] uint index,
         [NativeTypeName("GLenum")] uint type,
         [NativeTypeName("GLboolean")] byte normalized,
@@ -55407,7 +55401,7 @@ public unsafe partial interface IGL
     [SupportedApiProfile("glcore", MinVersion = "3.2")]
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glVertexAttribP1uiv")]
-    void VertexAttribP1uiv(
+    void VertexAttribP1(
         [NativeTypeName("GLuint")] uint index,
         [NativeTypeName("GLenum")] uint type,
         [NativeTypeName("GLboolean")] byte normalized,
@@ -55417,7 +55411,7 @@ public unsafe partial interface IGL
     [SupportedApiProfile("glcore", MinVersion = "3.2")]
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glVertexAttribP2ui")]
-    void VertexAttribP2ui(
+    void VertexAttribP2(
         [NativeTypeName("GLuint")] uint index,
         [NativeTypeName("GLenum")] uint type,
         [NativeTypeName("GLboolean")] byte normalized,
@@ -55427,7 +55421,7 @@ public unsafe partial interface IGL
     [SupportedApiProfile("glcore", MinVersion = "3.2")]
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glVertexAttribP2uiv")]
-    void VertexAttribP2uiv(
+    void VertexAttribP2(
         [NativeTypeName("GLuint")] uint index,
         [NativeTypeName("GLenum")] uint type,
         [NativeTypeName("GLboolean")] byte normalized,
@@ -55437,7 +55431,7 @@ public unsafe partial interface IGL
     [SupportedApiProfile("glcore", MinVersion = "3.2")]
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glVertexAttribP3ui")]
-    void VertexAttribP3ui(
+    void VertexAttribP3(
         [NativeTypeName("GLuint")] uint index,
         [NativeTypeName("GLenum")] uint type,
         [NativeTypeName("GLboolean")] byte normalized,
@@ -55447,7 +55441,7 @@ public unsafe partial interface IGL
     [SupportedApiProfile("glcore", MinVersion = "3.2")]
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glVertexAttribP3uiv")]
-    void VertexAttribP3uiv(
+    void VertexAttribP3(
         [NativeTypeName("GLuint")] uint index,
         [NativeTypeName("GLenum")] uint type,
         [NativeTypeName("GLboolean")] byte normalized,
@@ -55457,7 +55451,7 @@ public unsafe partial interface IGL
     [SupportedApiProfile("glcore", MinVersion = "3.2")]
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glVertexAttribP4ui")]
-    void VertexAttribP4ui(
+    void VertexAttribP4(
         [NativeTypeName("GLuint")] uint index,
         [NativeTypeName("GLenum")] uint type,
         [NativeTypeName("GLboolean")] byte normalized,
@@ -55467,7 +55461,7 @@ public unsafe partial interface IGL
     [SupportedApiProfile("glcore", MinVersion = "3.2")]
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glVertexAttribP4uiv")]
-    void VertexAttribP4uiv(
+    void VertexAttribP4(
         [NativeTypeName("GLuint")] uint index,
         [NativeTypeName("GLenum")] uint type,
         [NativeTypeName("GLboolean")] byte normalized,
@@ -55689,33 +55683,33 @@ public unsafe partial interface IGL
 
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glVertexP2ui")]
-    void VertexP2ui([NativeTypeName("GLenum")] uint type, [NativeTypeName("GLuint")] uint value);
+    void VertexP2([NativeTypeName("GLenum")] uint type, [NativeTypeName("GLuint")] uint value);
 
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glVertexP2uiv")]
-    void VertexP2uiv(
+    void VertexP2(
         [NativeTypeName("GLenum")] uint type,
         [NativeTypeName("const GLuint *")] Ref<uint> value
     );
 
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glVertexP3ui")]
-    void VertexP3ui([NativeTypeName("GLenum")] uint type, [NativeTypeName("GLuint")] uint value);
+    void VertexP3([NativeTypeName("GLenum")] uint type, [NativeTypeName("GLuint")] uint value);
 
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glVertexP3uiv")]
-    void VertexP3uiv(
+    void VertexP3(
         [NativeTypeName("GLenum")] uint type,
         [NativeTypeName("const GLuint *")] Ref<uint> value
     );
 
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glVertexP4ui")]
-    void VertexP4ui([NativeTypeName("GLenum")] uint type, [NativeTypeName("GLuint")] uint value);
+    void VertexP4([NativeTypeName("GLenum")] uint type, [NativeTypeName("GLuint")] uint value);
 
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glVertexP4uiv")]
-    void VertexP4uiv(
+    void VertexP4(
         [NativeTypeName("GLenum")] uint type,
         [NativeTypeName("const GLuint *")] Ref<uint> value
     );
@@ -56079,7 +56073,7 @@ public unsafe partial interface IGL
     [SupportedApiProfile("glcore", MinVersion = "3.2")]
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glViewportArrayv")]
-    void ViewportArrayv(
+    void ViewportArray(
         [NativeTypeName("GLuint")] uint first,
         [NativeTypeName("GLsizei")] int count,
         [NativeTypeName("const GLfloat *")] Ref<float> v
@@ -56104,7 +56098,7 @@ public unsafe partial interface IGL
     [SupportedApiProfile("glcore", MinVersion = "3.2")]
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glViewportIndexedf")]
-    void ViewportIndexedf(
+    void ViewportIndexed(
         [NativeTypeName("GLuint")] uint index,
         [NativeTypeName("GLfloat")] float x,
         [NativeTypeName("GLfloat")] float y,
@@ -56135,7 +56129,7 @@ public unsafe partial interface IGL
     [SupportedApiProfile("glcore", MinVersion = "3.2")]
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glViewportIndexedfv")]
-    void ViewportIndexedfv(
+    void ViewportIndexed(
         [NativeTypeName("GLuint")] uint index,
         [NativeTypeName("const GLfloat *")] Ref<float> v
     );
@@ -56308,7 +56302,7 @@ public unsafe partial interface IGL
 
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glWindowPos2d")]
-    void WindowPos2d([NativeTypeName("GLdouble")] double x, [NativeTypeName("GLdouble")] double y);
+    void WindowPos2([NativeTypeName("GLdouble")] double x, [NativeTypeName("GLdouble")] double y);
 
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glWindowPos2dARB")]
@@ -56326,7 +56320,7 @@ public unsafe partial interface IGL
 
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glWindowPos2dv")]
-    void WindowPos2dv([NativeTypeName("const GLdouble *")] Ref<double> v);
+    void WindowPos2([NativeTypeName("const GLdouble *")] Ref<double> v);
 
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glWindowPos2dvARB")]
@@ -56338,7 +56332,7 @@ public unsafe partial interface IGL
 
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glWindowPos2f")]
-    void WindowPos2f([NativeTypeName("GLfloat")] float x, [NativeTypeName("GLfloat")] float y);
+    void WindowPos2([NativeTypeName("GLfloat")] float x, [NativeTypeName("GLfloat")] float y);
 
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glWindowPos2fARB")]
@@ -56350,7 +56344,7 @@ public unsafe partial interface IGL
 
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glWindowPos2fv")]
-    void WindowPos2fv([NativeTypeName("const GLfloat *")] Ref<float> v);
+    void WindowPos2([NativeTypeName("const GLfloat *")] Ref<float> v);
 
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glWindowPos2fvARB")]
@@ -56362,7 +56356,7 @@ public unsafe partial interface IGL
 
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glWindowPos2i")]
-    void WindowPos2i([NativeTypeName("GLint")] int x, [NativeTypeName("GLint")] int y);
+    void WindowPos2([NativeTypeName("GLint")] int x, [NativeTypeName("GLint")] int y);
 
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glWindowPos2iARB")]
@@ -56374,7 +56368,7 @@ public unsafe partial interface IGL
 
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glWindowPos2iv")]
-    void WindowPos2iv([NativeTypeName("const GLint *")] Ref<int> v);
+    void WindowPos2([NativeTypeName("const GLint *")] Ref<int> v);
 
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glWindowPos2ivARB")]
@@ -56386,7 +56380,7 @@ public unsafe partial interface IGL
 
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glWindowPos2s")]
-    void WindowPos2s([NativeTypeName("GLshort")] short x, [NativeTypeName("GLshort")] short y);
+    void WindowPos2([NativeTypeName("GLshort")] short x, [NativeTypeName("GLshort")] short y);
 
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glWindowPos2sARB")]
@@ -56398,7 +56392,7 @@ public unsafe partial interface IGL
 
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glWindowPos2sv")]
-    void WindowPos2sv([NativeTypeName("const GLshort *")] Ref<short> v);
+    void WindowPos2([NativeTypeName("const GLshort *")] Ref<short> v);
 
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glWindowPos2svARB")]
@@ -56410,7 +56404,7 @@ public unsafe partial interface IGL
 
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glWindowPos3d")]
-    void WindowPos3d(
+    void WindowPos3(
         [NativeTypeName("GLdouble")] double x,
         [NativeTypeName("GLdouble")] double y,
         [NativeTypeName("GLdouble")] double z
@@ -56434,7 +56428,7 @@ public unsafe partial interface IGL
 
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glWindowPos3dv")]
-    void WindowPos3dv([NativeTypeName("const GLdouble *")] Ref<double> v);
+    void WindowPos3([NativeTypeName("const GLdouble *")] Ref<double> v);
 
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glWindowPos3dvARB")]
@@ -56446,7 +56440,7 @@ public unsafe partial interface IGL
 
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glWindowPos3f")]
-    void WindowPos3f(
+    void WindowPos3(
         [NativeTypeName("GLfloat")] float x,
         [NativeTypeName("GLfloat")] float y,
         [NativeTypeName("GLfloat")] float z
@@ -56470,7 +56464,7 @@ public unsafe partial interface IGL
 
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glWindowPos3fv")]
-    void WindowPos3fv([NativeTypeName("const GLfloat *")] Ref<float> v);
+    void WindowPos3([NativeTypeName("const GLfloat *")] Ref<float> v);
 
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glWindowPos3fvARB")]
@@ -56482,7 +56476,7 @@ public unsafe partial interface IGL
 
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glWindowPos3i")]
-    void WindowPos3i(
+    void WindowPos3(
         [NativeTypeName("GLint")] int x,
         [NativeTypeName("GLint")] int y,
         [NativeTypeName("GLint")] int z
@@ -56506,7 +56500,7 @@ public unsafe partial interface IGL
 
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glWindowPos3iv")]
-    void WindowPos3iv([NativeTypeName("const GLint *")] Ref<int> v);
+    void WindowPos3([NativeTypeName("const GLint *")] Ref<int> v);
 
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glWindowPos3ivARB")]
@@ -56518,7 +56512,7 @@ public unsafe partial interface IGL
 
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glWindowPos3s")]
-    void WindowPos3s(
+    void WindowPos3(
         [NativeTypeName("GLshort")] short x,
         [NativeTypeName("GLshort")] short y,
         [NativeTypeName("GLshort")] short z
@@ -56542,7 +56536,7 @@ public unsafe partial interface IGL
 
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glWindowPos3sv")]
-    void WindowPos3sv([NativeTypeName("const GLshort *")] Ref<short> v);
+    void WindowPos3([NativeTypeName("const GLshort *")] Ref<short> v);
 
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glWindowPos3svARB")]

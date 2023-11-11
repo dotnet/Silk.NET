@@ -31,6 +31,7 @@ public class NameTrimmer : INameTrimmer
     public void Trim(
         string? container,
         string? hint,
+        string? jobKey,
         Dictionary<string, (string Primary, List<string>? Secondary)>? names,
         Dictionary<string, string>? prefixOverrides
     )
@@ -95,7 +96,13 @@ public class NameTrimmer : INameTrimmer
             }
             var sec = secondary ?? new List<string>();
             sec.Add(oldPrimary);
-            names![originalName] = (trimmingName[prefix.Length..], sec);
+            // this was trimmingName originally. given that we're using trimming name to determine a prefix but then
+            // using that prefix on the old primary, this could cause intended behaviour in some cases. there's probably
+            // a better way to do this. (this is working around glDisablei -> glDisable -> Disablei).
+            names![originalName] = (
+                oldPrimary[prefix.TakeWhile((x, i) => oldPrimary[i] == x).Count()..],
+                sec
+            );
         }
     }
 
