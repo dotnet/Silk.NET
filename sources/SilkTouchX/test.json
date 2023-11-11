@@ -60,6 +60,7 @@
       "Mods": [
         "AddStdIncludes",
         "AddApiProfiles",
+        "AddOpaqueStructs",
         "UseSilkDSL",
         "PrettifyNames",
         "AddVTables"
@@ -90,6 +91,11 @@
             "BakedOutputSubdirectory": "gl",
             "MinVersion": "2.0"
           }
+        ]
+      },
+      "AddOpaqueStructs": {
+        "Names": [
+          "GLsync"
         ]
       }
     }

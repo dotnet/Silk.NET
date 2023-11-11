@@ -20,16 +20,12 @@ namespace SilkTouchX.Mods;
 /// </summary>
 /// <param name="logger">The logger.</param>
 /// <param name="config">Configuration snapshot.</param>
-/// <param name="trimmers">Name trimmers.</param>
-/// <param name="otherMods">Other mods present in the generator.</param>
-/// <param name="jobConfig">The general job configuration.</param>
+/// <param name="trimmerProviders">Name trimmer providers.</param>
 [ModConfiguration<Configuration>]
 public class PrettifyNames(
     ILogger<PrettifyNames> logger,
     IOptionsSnapshot<PrettifyNames.Configuration> config,
-    IEnumerable<INameTrimmer> trimmers,
-    IEnumerable<IMod> otherMods,
-    IOptionsSnapshot<SilkTouchConfiguration> jobConfig
+    IEnumerable<INameTrimmerProvider> trimmerProviders
 ) : IMod
 {
     /// <summary>
@@ -73,16 +69,9 @@ public class PrettifyNames(
             if (typeNames.Count > 1 || cfg.GlobalPrefixHint is not null)
             {
                 foreach (
-                    var trimmer in (
-                        jobConfig
-                            .Get(key)
-                            .Mods?.Select(x => otherMods.First(y => y.GetType().Name == x))
-                            .OfType<INameTrimmer>() ?? Enumerable.Empty<INameTrimmer>()
-                    ).Concat(
-                        trimmers
-                            .Where(x => x.Version >= cfg.TrimmerBaseline)
-                            .OrderBy(x => x.Version)
-                    )
+                    var trimmer in trimmerProviders
+                        .SelectMany(x => x.GetTrimmers(key))
+                        .OrderBy(x => x.Version)
                 )
                 {
                     trimmer.Trim(null, cfg.GlobalPrefixHint, typeNames, cfg.PrefixOverrides);
@@ -99,8 +88,8 @@ public class PrettifyNames(
                 if (constNames is not null)
                 {
                     foreach (
-                        var trimmer in trimmers
-                            .Where(x => x.Version >= cfg.TrimmerBaseline)
+                        var trimmer in trimmerProviders
+                            .SelectMany(x => x.GetTrimmers(key))
                             .OrderBy(x => x.Version)
                     )
                     {
@@ -124,8 +113,8 @@ public class PrettifyNames(
                 if (functionNames is not null)
                 {
                     foreach (
-                        var trimmer in trimmers
-                            .Where(x => x.Version >= cfg.TrimmerBaseline)
+                        var trimmer in trimmerProviders
+                            .SelectMany(x => x.GetTrimmers(key))
                             .OrderBy(x => x.Version)
                     )
                     {

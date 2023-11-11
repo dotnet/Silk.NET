@@ -30,10 +30,6 @@ public static partial class NameUtils
                 .Pascalize()
                 .Where(x => char.IsLetter(x) || char.IsNumber(x))
         );
-        if (ret == "GlDependentArTexture2dNV")
-        {
-            Debugger.Break();
-        }
         return !char.IsLetter(ret[0]) ? $"X{ret}" : ret;
     }
 

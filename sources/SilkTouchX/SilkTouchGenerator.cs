@@ -16,6 +16,7 @@ using Microsoft.CodeAnalysis.Text;
 using Microsoft.Extensions.Logging;
 using SilkTouchX.Clang;
 using SilkTouchX.Mods;
+using SilkTouchX.Naming;
 using SilkTouchX.Workspace;
 using Diagnostic = ClangSharp.Diagnostic;
 
@@ -24,36 +25,31 @@ namespace SilkTouchX;
 /// <summary>
 /// The main entry-point class for SilkTouch.
 /// </summary>
-public class SilkTouchGenerator
+/// <param name="scraper">The scraper.</param>
+/// <param name="rspHandler">The response file handler.</param>
+/// <param name="logger">The logger.</param>
+/// <param name="mods">The mods to use.</param>
+/// <param name="outputWriter">The output writer to use.</param>
+public class SilkTouchGenerator(
+    ClangScraper scraper,
+    ResponseFileHandler rspHandler,
+    // ReSharper disable once SuggestBaseTypeForParameterInConstructor
+    ILogger<SilkTouchGenerator> logger,
+    IEnumerable<IMod> mods,
+    IOutputWriter outputWriter
+)
 {
-    private readonly IReadOnlyList<IMod> _mods;
-    private readonly ClangScraper _scraper;
-    private readonly ResponseFileHandler _rspHandler;
-    private readonly ILogger<SilkTouchGenerator> _logger;
-    private readonly IOutputWriter _outputWriter;
+    private AsyncLocal<SilkTouchConfiguration> _jobConfig = new();
 
     /// <summary>
-    /// Creates an instance with the given underlying scraper, response file handler, and logger.
+    /// Gets the loaded mods for this generator instance.
     /// </summary>
-    /// <param name="scraper">The scraper.</param>
-    /// <param name="rspHandler">The response file handler.</param>
-    /// <param name="logger">The logger.</param>
-    /// <param name="mods">The mods to use.</param>
-    /// <param name="outputWriter">The output writer to use.</param>
-    public SilkTouchGenerator(
-        ClangScraper scraper,
-        ResponseFileHandler rspHandler,
-        ILogger<SilkTouchGenerator> logger,
-        IEnumerable<IMod> mods,
-        IOutputWriter outputWriter
-    ) =>
-        (_scraper, _rspHandler, _logger, _mods, _outputWriter) = (
-            scraper,
-            rspHandler,
-            logger,
-            mods.ToArray(),
-            outputWriter
-        );
+    public IReadOnlyList<IMod> Mods { get; } = mods.ToArray();
+
+    /// <summary>
+    /// The current job.
+    /// </summary>
+    public SilkTouchConfiguration? Current => _jobConfig.Value;
 
     /// <summary>
     /// Generates binding syntax trees per the given configuration.
@@ -68,20 +64,21 @@ public class SilkTouchGenerator
         CancellationToken ct = default
     )
     {
+        _jobConfig.Value = job;
         // Prepare the mods
         var jobMods =
-            job.Mods?.Select(x => _mods.First(y => y.GetType().Name == x)).ToArray()
+            job.Mods?.Select(x => Mods.First(y => y.GetType().Name == x)).ToArray()
             ?? Array.Empty<IMod>();
         foreach (var mod in jobMods)
         {
-            _logger.LogDebug("Using mod {0} for {1}", mod.GetType().Name, key);
+            logger.LogDebug("Using mod {0} for {1}", mod.GetType().Name, key);
             await mod.BeforeJobAsync(key, job);
         }
 
         // Read the response files
-        _logger.LogInformation("Reading response files for {0}, please wait...", key);
+        logger.LogInformation("Reading response files for {0}, please wait...", key);
         var rsps = job.ClangSharpResponseFiles
-            .SelectMany(file => _rspHandler.ReadResponseFiles(file, job.ClangSharpResponseFiles))
+            .SelectMany(file => rspHandler.ReadResponseFiles(file, job.ClangSharpResponseFiles))
             .ToList();
 
         // Figure out what the common root is so we can aggregate the file paths without collisions
@@ -98,7 +95,7 @@ public class SilkTouchGenerator
         // ReSharper disable once LoopCanBeConvertedToQuery
         foreach (var mod in jobMods)
         {
-            _logger.LogInformation(
+            logger.LogInformation(
                 "Applying {0} mod to response files for {1}...",
                 mod.GetType().Name,
                 key
@@ -116,7 +113,7 @@ public class SilkTouchGenerator
                 await Task.Run(
                     () =>
                     {
-                        var rawBindings = _scraper.ScrapeRawBindings(rsp);
+                        var rawBindings = scraper.ScrapeRawBindings(rsp);
                         foreach (var (k, v) in rawBindings.Files)
                         {
                             string relativeKey;
@@ -158,14 +155,14 @@ public class SilkTouchGenerator
                                 )
                             )
                             {
-                                _logger.LogError(
+                                logger.LogError(
                                     "Failed to add {0} - are the response file outputs conflicting?",
                                     relativeKey
                                 );
                             }
                             else
                             {
-                                _logger.LogTrace("ClangSharp generated {0}", relativeKey);
+                                logger.LogTrace("ClangSharp generated {0}", relativeKey);
                             }
                         }
 
@@ -179,7 +176,7 @@ public class SilkTouchGenerator
         );
 
         // Read the bindings as syntax trees
-        _logger.LogInformation("Parsing bindings for {0}...", key);
+        logger.LogInformation("Parsing bindings for {0}...", key);
         var syntaxTrees = aggregatedBindings.ToDictionary(
             kvp => kvp.Key,
             kvp => CSharpSyntaxTree.ParseText(SourceText.From(kvp.Value)).GetRoot()
@@ -191,7 +188,7 @@ public class SilkTouchGenerator
         // ReSharper disable once LoopCanBeConvertedToQuery
         foreach (var mod in jobMods)
         {
-            _logger.LogInformation(
+            logger.LogInformation(
                 "Applying {0} mod to syntax trees for {1}...",
                 mod.GetType().Name,
                 key
@@ -219,11 +216,11 @@ public class SilkTouchGenerator
         var result = await GenerateSyntaxAsync(key, job, ct);
         if (result.Files.Count == 0)
         {
-            _logger.LogWarning("Not outputting as no files were generated.");
+            logger.LogWarning("Not outputting as no files were generated.");
             return result.Diagnostics;
         }
 
-        await _outputWriter.OutputAsync(key, job, result, ct);
+        await outputWriter.OutputAsync(key, job, result, ct);
         return result.Diagnostics;
     }
 

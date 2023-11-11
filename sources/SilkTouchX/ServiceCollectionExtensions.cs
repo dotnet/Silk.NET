@@ -99,6 +99,7 @@ public static class ServiceCollectionExtensions
         services.AddSingleton<Microsoft.Build.Framework.ILogger, WorkspaceLogger>();
         services.AddSingleton<NameTrimmer>();
         services.AddSingleton<INameTrimmer>(s => s.GetRequiredService<NameTrimmer>());
+        services.AddSingleton<INameTrimmerProvider, NameTrimmerProviders.Global>();
         services.TryAddSingleton<IOutputWriter, DirectOutputWriter>();
         if (OperatingSystem.IsWindows())
         {
@@ -150,6 +151,18 @@ public static class ServiceCollectionExtensions
             {
                 services.AddSingleton(loadedMods[m]);
                 services.AddSingleton<IMod>(s => (IMod)s.GetRequiredService(loadedMods[m]));
+                if (!loadedMods[m].IsAssignableTo(typeof(INameTrimmer)))
+                {
+                    continue;
+                }
+
+                var provider = typeof(NameTrimmerProviders.ModTrimmer<>).MakeGenericType(
+                    loadedMods[m]
+                );
+                services.AddSingleton(provider);
+                services.AddSingleton<INameTrimmerProvider>(
+                    s => (INameTrimmerProvider)s.GetRequiredService(provider)
+                );
             }
         }
 
