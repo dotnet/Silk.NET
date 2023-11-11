@@ -138,6 +138,41 @@ public class AddVTables(IOptionsSnapshot<AddVTables.Configuration> config) : IMo
                         )
                     )
             ).AddMembers(ctx.Original);
+
+        /// <inheritdoc />
+        public override ClassDeclarationSyntax? GetBoilerplate(in VTableBoilerplateContext ctx) =>
+            ClassDeclaration(Name)
+                .WithModifiers(
+                    TokenList(Token(SyntaxKind.PublicKeyword), Token(SyntaxKind.PartialKeyword))
+                )
+                .WithMembers(
+                    SingletonList<MemberDeclarationSyntax>(
+                        ConstructorDeclaration(Name)
+                            .WithModifiers(TokenList(Token(SyntaxKind.StaticKeyword)))
+                            .WithExpressionBody(
+                                ArrowExpressionClause(
+                                    InvocationExpression(
+                                        MemberAccessExpression(
+                                            SyntaxKind.SimpleMemberAccessExpression,
+                                            IdentifierName("LoaderInterface"),
+                                            IdentifierName("RegisterHook")
+                                        ),
+                                        ArgumentList(
+                                            SingletonSeparatedList(
+                                                Argument(
+                                                    MemberAccessExpression(
+                                                        SyntaxKind.SimpleMemberAccessExpression,
+                                                        IdentifierName("Assembly"),
+                                                        IdentifierName("GetExecutingAssembly")
+                                                    )
+                                                )
+                                            )
+                                        )
+                                    )
+                                )
+                            )
+                    )
+                );
     }
 
     /// <summary>
@@ -188,14 +223,11 @@ public class AddVTables(IOptionsSnapshot<AddVTables.Configuration> config) : IMo
                         new MemberDeclarationSyntax?[]
                         {
                             PropertyDeclaration(
-                                    QualifiedName(
-                                        ModUtils.NamespaceIntoIdentifierName("System.Threading"),
-                                        GenericName(
-                                            Identifier("ThreadLocal"),
-                                            TypeArgumentList(
-                                                SingletonSeparatedList<TypeSyntax>(
-                                                    IdentifierName($"I{ctx.ClassName}")
-                                                )
+                                    GenericName(
+                                        Identifier("ThreadLocal"),
+                                        TypeArgumentList(
+                                            SingletonSeparatedList<TypeSyntax>(
+                                                IdentifierName($"I{ctx.ClassName}")
                                             )
                                         )
                                     ),
