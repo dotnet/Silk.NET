@@ -74,8 +74,9 @@ public class PrettifyNames(
             {
                 foreach (
                     var trimmer in (
-                        jobConfig.Value.Mods
-                            ?.Select(x => otherMods.First(y => y.GetType().Name == x))
+                        jobConfig
+                            .Get(key)
+                            .Mods?.Select(x => otherMods.First(y => y.GetType().Name == x))
                             .OfType<INameTrimmer>() ?? Enumerable.Empty<INameTrimmer>()
                     ).Concat(
                         trimmers
