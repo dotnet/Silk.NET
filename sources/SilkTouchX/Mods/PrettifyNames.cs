@@ -18,13 +18,20 @@ namespace SilkTouchX.Mods;
 /// <summary>
 /// A mod that will convert other naming conventions to the PascalCase nomenclature typically used in C#.
 /// </summary>
+/// <param name="logger">The logger.</param>
+/// <param name="config">Configuration snapshot.</param>
+/// <param name="trimmers">Name trimmers.</param>
+/// <param name="otherMods">Other mods present in the generator.</param>
+/// <param name="jobConfig">The general job configuration.</param>
 [ModConfiguration<Configuration>]
-public class PrettifyNames : IMod
+public class PrettifyNames(
+    ILogger<PrettifyNames> logger,
+    IOptionsSnapshot<PrettifyNames.Configuration> config,
+    IEnumerable<INameTrimmer> trimmers,
+    IEnumerable<IMod> otherMods,
+    IOptionsSnapshot<SilkTouchConfiguration> jobConfig
+) : IMod
 {
-    private readonly ILogger<PrettifyNames> _logger;
-    private readonly IOptionsSnapshot<Configuration> _config;
-    private readonly IEnumerable<INameTrimmer> _trimmers;
-
     /// <summary>
     /// The configuration for the prettify names mod.
     /// </summary>
@@ -46,18 +53,6 @@ public class PrettifyNames : IMod
         public string? GlobalPrefixHint { get; init; }
     }
 
-    /// <summary>
-    /// Creates an instance of this mod.
-    /// </summary>
-    /// <param name="logger">The logger.</param>
-    /// <param name="config">Configuration snapshot.</param>
-    /// <param name="trimmers">Name trimmers.</param>
-    public PrettifyNames(
-        ILogger<PrettifyNames> logger,
-        IOptionsSnapshot<Configuration> config,
-        IEnumerable<INameTrimmer> trimmers
-    ) => (_logger, _config, _trimmers) = (logger, config, trimmers);
-
     /// <inheritdoc />
     public Task<GeneratedSyntax> AfterScrapeAsync(string key, GeneratedSyntax syntax)
     {
@@ -68,7 +63,7 @@ public class PrettifyNames : IMod
         }
 
         var rewriter = new Rewriter();
-        var cfg = _config.Get(key);
+        var cfg = config.Get(key);
         if (cfg.TrimmerBaseline is not null)
         {
             var typeNames = visitor.Types.ToDictionary(
@@ -78,9 +73,15 @@ public class PrettifyNames : IMod
             if (typeNames.Count > 1 || cfg.GlobalPrefixHint is not null)
             {
                 foreach (
-                    var trimmer in _trimmers
-                        .Where(x => x.Version >= cfg.TrimmerBaseline)
-                        .OrderBy(x => x.Version)
+                    var trimmer in (
+                        jobConfig.Value.Mods
+                            ?.Select(x => otherMods.First(y => y.GetType().Name == x))
+                            .OfType<INameTrimmer>() ?? Enumerable.Empty<INameTrimmer>()
+                    ).Concat(
+                        trimmers
+                            .Where(x => x.Version >= cfg.TrimmerBaseline)
+                            .OrderBy(x => x.Version)
+                    )
                 )
                 {
                     trimmer.Trim(null, cfg.GlobalPrefixHint, typeNames, cfg.PrefixOverrides);
@@ -97,7 +98,7 @@ public class PrettifyNames : IMod
                 if (constNames is not null)
                 {
                     foreach (
-                        var trimmer in _trimmers
+                        var trimmer in trimmers
                             .Where(x => x.Version >= cfg.TrimmerBaseline)
                             .OrderBy(x => x.Version)
                     )
@@ -122,7 +123,7 @@ public class PrettifyNames : IMod
                 if (functionNames is not null)
                 {
                     foreach (
-                        var trimmer in _trimmers
+                        var trimmer in trimmers
                             .Where(x => x.Version >= cfg.TrimmerBaseline)
                             .OrderBy(x => x.Version)
                     )
@@ -166,14 +167,14 @@ public class PrettifyNames : IMod
 
         foreach (var (name, (newName, nonFunctions, functions)) in rewriter.Types)
         {
-            _logger.LogDebug("{} = {}", name, newName);
+            logger.LogDebug("{} = {}", name, newName);
             foreach (var (old, @new) in nonFunctions ?? new())
             {
-                _logger.LogDebug("{}.{} = {}.{}", name, old, newName, @new);
+                logger.LogDebug("{}.{} = {}.{}", name, old, newName, @new);
             }
             foreach (var (old, @new) in functions ?? new())
             {
-                _logger.LogDebug("{}.{} = {}.{}", name, old, newName, @new);
+                logger.LogDebug("{}.{} = {}.{}", name, old, newName, @new);
             }
         }
 
