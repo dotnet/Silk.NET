@@ -75,13 +75,16 @@ public class PrettifyNames : IMod
                 x => x.Key,
                 x => (x.Key, (List<string>?)null)
             );
-            foreach (
-                var trimmer in _trimmers
-                    .Where(x => x.Version >= cfg.TrimmerBaseline)
-                    .OrderBy(x => x.Version)
-            )
+            if (typeNames.Count > 1 || cfg.GlobalPrefixHint is not null)
             {
-                trimmer.Trim(null, cfg.GlobalPrefixHint, typeNames, cfg.PrefixOverrides);
+                foreach (
+                    var trimmer in _trimmers
+                        .Where(x => x.Version >= cfg.TrimmerBaseline)
+                        .OrderBy(x => x.Version)
+                )
+                {
+                    trimmer.Trim(null, cfg.GlobalPrefixHint, typeNames, cfg.PrefixOverrides);
+                }
             }
 
             foreach (var (typeName, (newTypeName, _)) in typeNames)
@@ -163,14 +166,14 @@ public class PrettifyNames : IMod
 
         foreach (var (name, (newName, nonFunctions, functions)) in rewriter.Types)
         {
-            _logger.LogInformation("{} = {}", name, newName);
+            _logger.LogDebug("{} = {}", name, newName);
             foreach (var (old, @new) in nonFunctions ?? new())
             {
-                _logger.LogInformation("{}.{} = {}.{}", name, old, newName, @new);
+                _logger.LogDebug("{}.{} = {}.{}", name, old, newName, @new);
             }
             foreach (var (old, @new) in functions ?? new())
             {
-                _logger.LogInformation("{}.{} = {}.{}", name, old, newName, @new);
+                _logger.LogDebug("{}.{} = {}.{}", name, old, newName, @new);
             }
         }
 

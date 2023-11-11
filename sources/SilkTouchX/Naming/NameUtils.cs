@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Diagnostics.CodeAnalysis;
 using System.Globalization;
 using System.Linq;
@@ -29,6 +30,10 @@ public static partial class NameUtils
                 .Pascalize()
                 .Where(x => char.IsLetter(x) || char.IsNumber(x))
         );
+        if (ret == "GlDependentArTexture2dNV")
+        {
+            Debugger.Break();
+        }
         return !char.IsLetter(ret[0]) ? $"X{ret}" : ret;
     }
 
@@ -109,7 +114,10 @@ public static partial class NameUtils
                 break;
             }
 
-            foundPrefix = prefix;
+            if (pos > 1) // if pos is smaller, that means we haven't even done a full loop yet and already tripped up.
+            {
+                foundPrefix = prefix;
+            }
         }
 
         if (!naive && !foundPrefix.Contains('_'))
@@ -192,9 +200,15 @@ public static partial class NameUtils
         private static string MakeFirstLetterUpper(Match word, string source, CultureInfo culture)
         {
             var wordToConvert = word.Value;
+            var nextLetter = source.TakeWhile(char.IsDigit).Count() + 1;
+            if (nextLetter > source.Length)
+            {
+                // It's not a word?
+                return source;
+            }
             var replacement =
-                culture.TextInfo.ToUpper(wordToConvert[0])
-                + culture.TextInfo.ToLower(wordToConvert.Remove(0, 1));
+                culture.TextInfo.ToUpper(wordToConvert[..nextLetter])
+                + culture.TextInfo.ToLower(wordToConvert.Remove(0, nextLetter));
             return string.Concat(
                 source.AsSpan()[..word.Index],
                 replacement,
@@ -202,7 +216,7 @@ public static partial class NameUtils
             );
         }
 
-        [GeneratedRegex(@"(\w|[^\u0000-\u007F])+'?\w*")]
+        [GeneratedRegex(@"[0-9]*([\w]|[^\u0000-\u007F])+'?\w{2,}")]
         private static partial Regex Words();
     }
 }

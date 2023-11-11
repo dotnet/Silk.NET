@@ -58,12 +58,12 @@ public class AddApiProfiles(
         /// <summary>
         /// The minimum version that this specific profile declaration represents.
         /// </summary>
-        public Version? MinVersion { get; init; }
+        public string? MinVersion { get; init; }
 
         /// <summary>
         /// The minimum version that this specific profile declaration rpresents.
         /// </summary>
-        public Version? MaxVersion { get; init; }
+        public string? MaxVersion { get; init; }
 
         /// <summary>
         /// If provided, merge and deduplicate ("bake") the APIs contained in the <see cref="SourceSubdirectory"/> into

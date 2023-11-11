@@ -1,0 +1,17 @@
+@../settings.rsp
+@../remap.rsp
+--exclude
+__gl_gl_h_
+WIN32_LEAN_AND_MEAN
+--file
+opengl-gl.h
+--methodClassName
+GL
+--namespace
+Silk.NET.OpenGL
+--output
+../../../../sources/OpenGL/glcompat/gl
+--test-output
+../../../../tests/OpenGL/glcompat/gl
+--traverse
+../../../include/glcompat/gl.h

@@ -10,9 +10,14 @@ namespace Silk.NET.GLFW;
 
 partial class Glfw(INativeContext nativeContext) : IDisposable
 {
+    public partial class DllImport
+    {
+        static DllImport() => LoaderInterface.RegisterHook(Assembly.GetExecutingAssembly)
+    }
+
     public partial class ThisThread : IGlfw.Static<ThisThread>
     {
-        public static System.Threading.ThreadLocal<IGlfw> Underlying { get; } =
+        public static ThreadLocal<IGlfw> Underlying { get; } =
             new(static () => new StaticWrapper<DllImport>());
 
         public static void MakeCurrent(IGlfw ctx) => Underlying.Value = ctx;

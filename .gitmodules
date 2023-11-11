@@ -4,3 +4,9 @@
 [submodule "eng/submodules/glfw"]
 	path = eng/submodules/glfw
 	url = https://github.com/glfw/glfw
+[submodule "eng/submodules/opengl"]
+	path = eng/submodules/opengl
+	url = https://github.com/KhronosGroup/OpenGL-Registry.git
+[submodule "eng/submodules/egl"]
+	path = eng/submodules/egl
+	url = https://github.com/KhronosGroup/EGL-Registry/

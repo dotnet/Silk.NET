@@ -47,6 +47,51 @@
           "GLFWwindow"
         ]
       }
+    },
+    "OpenGL": {
+      "ClangSharpResponseFiles": [
+        "../../eng/silktouch/opengl/**/generate.rsp"
+      ],
+      "InputSourceRoot": "../OpenGL",
+      "InputTestRoot": "../../tests/OpenGL",
+      "OutputSourceRoot": "../OpenGL",
+      "OutputTestRoot": "../../tests/OpenGL",
+      "Solution": "../../SilkX.sln",
+      "Mods": [
+        "AddStdIncludes",
+        "AddApiProfiles",
+        "UseSilkDSL",
+        "PrettifyNames",
+        "AddVTables"
+      ],
+      "AddApiProfiles": {
+        "Profiles": [
+          {
+            "Name": "gl",
+            "SourceSubdirectory": "glcompat",
+            "BakedOutputSubdirectory": "gl",
+            "MaxVersion": "3.2"
+          },
+          {
+            "Name": "glcore",
+            "SourceSubdirectory": "glcore",
+            "BakedOutputSubdirectory": "gl",
+            "MinVersion": "3.2"
+          },
+          {
+            "Name": "gles1",
+            "SourceSubdirectory": "gles1",
+            "BakedOutputSubdirectory": "gl",
+            "MaxVersion": "2.0"
+          },
+          {
+            "Name": "gles2",
+            "SourceSubdirectory": "gles2",
+            "BakedOutputSubdirectory": "gl",
+            "MinVersion": "2.0"
+          }
+        ]
+      }
     }
   }
 }
