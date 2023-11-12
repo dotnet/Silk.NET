@@ -32,7 +32,8 @@ namespace Silk.NET.Core
         /// <param name="this"></param>
         /// <param name="length">length of the string</param>
         /// <returns>the string</returns>
-        public static string ReadToString(this Ref<byte> @this, int length) => Encoding.UTF8.GetString(@this.AsSpan(length));
+        public static string ReadToString(this Ref<byte> @this, int length) =>
+            Encoding.UTF8.GetString(@this.AsSpan(length));
 
         /// <summary>
         /// Creates a string from this <see cref="Ref{T}"/> as a c-style string
@@ -55,7 +56,8 @@ namespace Silk.NET.Core
         /// <param name="this"></param>
         /// <param name="length">length of the string</param>
         /// <returns>the string</returns>
-        public static string ReadToString(this Ref<sbyte> @this, int length) => Encoding.UTF8.GetString(MemoryMarshal.Cast<sbyte, byte>(@this.AsSpan(length)));
+        public static string ReadToString(this Ref<sbyte> @this, int length) =>
+            Encoding.UTF8.GetString(MemoryMarshal.Cast<sbyte, byte>(@this.AsSpan(length)));
 
         /// <summary>
         /// Creates a string from this <see cref="Ref{T}"/> as a c-style string
@@ -76,7 +78,8 @@ namespace Silk.NET.Core
         /// <param name="this"></param>
         /// <param name="length">length of the string</param>
         /// <returns>the string</returns>
-        public static string ReadToString(this Ref<ushort> @this, int length) => new string(MemoryMarshal.Cast<ushort, char>(@this.AsSpan(length)));
+        public static string ReadToString(this Ref<ushort> @this, int length) =>
+            new string(MemoryMarshal.Cast<ushort, char>(@this.AsSpan(length)));
 
         /// <summary>
         /// Creates a string from this <see cref="Ref{T}"/> as a c-style string
@@ -97,7 +100,8 @@ namespace Silk.NET.Core
         /// <param name="this"></param>
         /// <param name="length">length of the string</param>
         /// <returns>the string</returns>
-        public static string ReadToString(this Ref<short> @this, int length) => new string(MemoryMarshal.Cast<short, char>(@this.AsSpan(length)));
+        public static string ReadToString(this Ref<short> @this, int length) =>
+            new string(MemoryMarshal.Cast<short, char>(@this.AsSpan(length)));
 
         /// <summary>
         /// Creates a string from this <see cref="Ref{T}"/> as a c-style string
@@ -118,7 +122,8 @@ namespace Silk.NET.Core
         /// <param name="this"></param>
         /// <param name="length">length of the string</param>
         /// <returns>the string</returns>
-        public static string ReadToString(this Ref<char> @this, int length) => new string(@this.AsSpan(length));
+        public static string ReadToString(this Ref<char> @this, int length) =>
+            new string(@this.AsSpan(length));
 
         /// <summary>
         /// Creates a string from this <see cref="Ref{T}"/> as a c-style string
@@ -209,7 +214,8 @@ namespace Silk.NET.Core
         /// <param name="this"></param>
         /// <param name="length">length of the string</param>
         /// <returns>the string</returns>
-        public static string ReadToString(this Ptr<byte> @this, int length) => Encoding.UTF8.GetString(@this.AsSpan(length));
+        public static string ReadToString(this Ptr<byte> @this, int length) =>
+            Encoding.UTF8.GetString(@this.AsSpan(length));
 
         /// <summary>
         /// Creates a string from this <see cref="Ptr{T}"/> as a c-style string
@@ -232,7 +238,8 @@ namespace Silk.NET.Core
         /// <param name="this"></param>
         /// <param name="length">length of the string</param>
         /// <returns>the string</returns>
-        public static string ReadToString(this Ptr<sbyte> @this, int length) => Encoding.UTF8.GetString(MemoryMarshal.Cast<sbyte, byte>(@this.AsSpan(length)));
+        public static string ReadToString(this Ptr<sbyte> @this, int length) =>
+            Encoding.UTF8.GetString(MemoryMarshal.Cast<sbyte, byte>(@this.AsSpan(length)));
 
         /// <summary>
         /// Creates a string from this <see cref="Ptr{T}"/> as a c-style string
@@ -253,7 +260,8 @@ namespace Silk.NET.Core
         /// <param name="this"></param>
         /// <param name="length">length of the string</param>
         /// <returns>the string</returns>
-        public static string ReadToString(this Ptr<ushort> @this, int length) => new string(MemoryMarshal.Cast<ushort, char>(@this.AsSpan(length)));
+        public static string ReadToString(this Ptr<ushort> @this, int length) =>
+            new string(MemoryMarshal.Cast<ushort, char>(@this.AsSpan(length)));
 
         /// <summary>
         /// Creates a string from this <see cref="Ptr{T}"/> as a c-style string
@@ -274,7 +282,8 @@ namespace Silk.NET.Core
         /// <param name="this"></param>
         /// <param name="length">length of the string</param>
         /// <returns>the string</returns>
-        public static string ReadToString(this Ptr<short> @this, int length) => new string(MemoryMarshal.Cast<short, char>(@this.AsSpan(length)));
+        public static string ReadToString(this Ptr<short> @this, int length) =>
+            new string(MemoryMarshal.Cast<short, char>(@this.AsSpan(length)));
 
         /// <summary>
         /// Creates a string from this <see cref="Ptr{T}"/> as a c-style string
@@ -295,7 +304,8 @@ namespace Silk.NET.Core
         /// <param name="this"></param>
         /// <param name="length">length of the string</param>
         /// <returns>the string</returns>
-        public static string ReadToString(this Ptr<char> @this, int length) => new string(@this.AsSpan(length));
+        public static string ReadToString(this Ptr<char> @this, int length) =>
+            new string(@this.AsSpan(length));
 
         /// <summary>
         /// Creates a string from this <see cref="Ptr{T}"/> as a c-style string
@@ -497,7 +507,8 @@ namespace Silk.NET.Core
         /// <returns>The string array.</returns>
         public static string?[]? ReadToStringArray(this Ptr2D<byte> @this, int length)
         {
-            return SilkMarshal.NativeToStringArray(new ReadOnlySpan<nint>(@this.Native, length),
+            return SilkMarshal.NativeToStringArray(
+                new ReadOnlySpan<nint>(@this.Native, length),
                 sizeof(byte)
             );
         }
@@ -510,7 +521,8 @@ namespace Silk.NET.Core
         /// <returns>The string array.</returns>
         public static string?[]? ReadToStringArray(this Ptr2D<sbyte> @this, int length)
         {
-            return SilkMarshal.NativeToStringArray(new ReadOnlySpan<nint>(@this.Native, length),
+            return SilkMarshal.NativeToStringArray(
+                new ReadOnlySpan<nint>(@this.Native, length),
                 sizeof(sbyte)
             );
         }
@@ -523,7 +535,8 @@ namespace Silk.NET.Core
         /// <returns>The string array.</returns>
         public static string?[]? ReadToStringArray(this Ptr2D<ushort> @this, int length)
         {
-            return SilkMarshal.NativeToStringArray(new ReadOnlySpan<nint>(@this.Native, length),
+            return SilkMarshal.NativeToStringArray(
+                new ReadOnlySpan<nint>(@this.Native, length),
                 sizeof(ushort)
             );
         }
@@ -536,7 +549,8 @@ namespace Silk.NET.Core
         /// <returns>The string array.</returns>
         public static string?[]? ReadToStringArray(this Ptr2D<short> @this, int length)
         {
-            return SilkMarshal.NativeToStringArray(new ReadOnlySpan<nint>(@this.Native, length),
+            return SilkMarshal.NativeToStringArray(
+                new ReadOnlySpan<nint>(@this.Native, length),
                 sizeof(short)
             );
         }
@@ -549,7 +563,8 @@ namespace Silk.NET.Core
         /// <returns>The string array.</returns>
         public static string?[]? ReadToStringArray(this Ptr2D<char> @this, int length)
         {
-            return SilkMarshal.NativeToStringArray(new ReadOnlySpan<nint>(@this.Native, length),
+            return SilkMarshal.NativeToStringArray(
+                new ReadOnlySpan<nint>(@this.Native, length),
                 sizeof(char)
             );
         }
@@ -562,7 +577,8 @@ namespace Silk.NET.Core
         /// <returns>The string array.</returns>
         public static string?[]? ReadToStringArray(this Ptr2D<uint> @this, int length)
         {
-            return SilkMarshal.NativeToStringArray(new ReadOnlySpan<nint>(@this.Native, length),
+            return SilkMarshal.NativeToStringArray(
+                new ReadOnlySpan<nint>(@this.Native, length),
                 sizeof(uint)
             );
         }
@@ -575,7 +591,8 @@ namespace Silk.NET.Core
         /// <returns>The string array.</returns>
         public static string?[]? ReadToStringArray(this Ptr2D<int> @this, int length)
         {
-            return SilkMarshal.NativeToStringArray(new ReadOnlySpan<nint>(@this.Native, length),
+            return SilkMarshal.NativeToStringArray(
+                new ReadOnlySpan<nint>(@this.Native, length),
                 sizeof(int)
             );
         }
@@ -591,14 +608,19 @@ namespace Silk.NET.Core
         /// <param name="lengths">The number of strings in the array</param>
         /// <param name="this"></param>
         /// <returns>The string array.</returns>
-        public static string?[]?[]? ReadToStringArray(this Ref3D<byte> @this, int length, int[] lengths)
+        public static string?[]?[]? ReadToStringArray(
+            this Ref3D<byte> @this,
+            int length,
+            int[] lengths
+        )
         {
             return SilkMarshal.NativeToStringArray(
                 MemoryMarshal.CreateReadOnlySpan(
                     ref Unsafe.As<byte, nint>(ref Unsafe.AsRef(in @this.GetInteriorRef())),
                     length
                 ),
-                lengths, sizeof(byte)
+                lengths,
+                sizeof(byte)
             );
         }
 
@@ -609,14 +631,19 @@ namespace Silk.NET.Core
         /// <param name="lengths">The number of strings in the array</param>
         /// <param name="this"></param>
         /// <returns>The string array.</returns>
-        public static string?[]?[]? ReadToStringArray(this Ref3D<sbyte> @this, int length, int[] lengths)
+        public static string?[]?[]? ReadToStringArray(
+            this Ref3D<sbyte> @this,
+            int length,
+            int[] lengths
+        )
         {
             return SilkMarshal.NativeToStringArray(
                 MemoryMarshal.CreateReadOnlySpan(
                     ref Unsafe.As<byte, nint>(ref Unsafe.AsRef(in @this.GetInteriorRef())),
                     length
                 ),
-                lengths, sizeof(sbyte)
+                lengths,
+                sizeof(sbyte)
             );
         }
 
@@ -627,14 +654,19 @@ namespace Silk.NET.Core
         /// <param name="lengths">The number of strings in the array</param>
         /// <param name="this"></param>
         /// <returns>The string array.</returns>
-        public static string?[]?[]? ReadToStringArray(this Ref3D<ushort> @this, int length, int[] lengths)
+        public static string?[]?[]? ReadToStringArray(
+            this Ref3D<ushort> @this,
+            int length,
+            int[] lengths
+        )
         {
             return SilkMarshal.NativeToStringArray(
                 MemoryMarshal.CreateReadOnlySpan(
                     ref Unsafe.As<byte, nint>(ref Unsafe.AsRef(in @this.GetInteriorRef())),
                     length
                 ),
-                lengths, sizeof(ushort)
+                lengths,
+                sizeof(ushort)
             );
         }
 
@@ -645,14 +677,19 @@ namespace Silk.NET.Core
         /// <param name="lengths">The number of strings in the array</param>
         /// <param name="this"></param>
         /// <returns>The string array.</returns>
-        public static string?[]?[]? ReadToStringArray(this Ref3D<short> @this, int length, int[] lengths)
+        public static string?[]?[]? ReadToStringArray(
+            this Ref3D<short> @this,
+            int length,
+            int[] lengths
+        )
         {
             return SilkMarshal.NativeToStringArray(
                 MemoryMarshal.CreateReadOnlySpan(
                     ref Unsafe.As<byte, nint>(ref Unsafe.AsRef(in @this.GetInteriorRef())),
                     length
                 ),
-                lengths, sizeof(short)
+                lengths,
+                sizeof(short)
             );
         }
 
@@ -663,14 +700,19 @@ namespace Silk.NET.Core
         /// <param name="lengths">The number of strings in the array</param>
         /// <param name="this"></param>
         /// <returns>The string array.</returns>
-        public static string?[]?[]? ReadToStringArray(this Ref3D<char> @this, int length, int[] lengths)
+        public static string?[]?[]? ReadToStringArray(
+            this Ref3D<char> @this,
+            int length,
+            int[] lengths
+        )
         {
             return SilkMarshal.NativeToStringArray(
                 MemoryMarshal.CreateReadOnlySpan(
                     ref Unsafe.As<byte, nint>(ref Unsafe.AsRef(in @this.GetInteriorRef())),
                     length
                 ),
-                lengths, sizeof(char)
+                lengths,
+                sizeof(char)
             );
         }
 
@@ -681,14 +723,19 @@ namespace Silk.NET.Core
         /// <param name="lengths">The number of strings in the array</param>
         /// <param name="this"></param>
         /// <returns>The string array.</returns>
-        public static string?[]?[]? ReadToStringArray(this Ref3D<uint> @this, int length, int[] lengths)
+        public static string?[]?[]? ReadToStringArray(
+            this Ref3D<uint> @this,
+            int length,
+            int[] lengths
+        )
         {
             return SilkMarshal.NativeToStringArray(
                 MemoryMarshal.CreateReadOnlySpan(
                     ref Unsafe.As<byte, nint>(ref Unsafe.AsRef(in @this.GetInteriorRef())),
                     length
                 ),
-                lengths, sizeof(uint)
+                lengths,
+                sizeof(uint)
             );
         }
 
@@ -699,14 +746,19 @@ namespace Silk.NET.Core
         /// <param name="lengths">The number of strings in the array</param>
         /// <param name="this"></param>
         /// <returns>The string array.</returns>
-        public static string?[]?[]? ReadToStringArray(this Ref3D<int> @this, int length, int[] lengths)
+        public static string?[]?[]? ReadToStringArray(
+            this Ref3D<int> @this,
+            int length,
+            int[] lengths
+        )
         {
             return SilkMarshal.NativeToStringArray(
                 MemoryMarshal.CreateReadOnlySpan(
                     ref Unsafe.As<byte, nint>(ref Unsafe.AsRef(in @this.GetInteriorRef())),
                     length
                 ),
-                lengths, sizeof(int)
+                lengths,
+                sizeof(int)
             );
         }
         #endregion
@@ -719,10 +771,16 @@ namespace Silk.NET.Core
         /// <param name="lengths">The number of strings in the array</param>
         /// <param name="this"></param>
         /// <returns>The string array.</returns>
-        public static string?[]?[]? ReadToStringArray(this Ptr3D<byte> @this, int length, int[] lengths)
+        public static string?[]?[]? ReadToStringArray(
+            this Ptr3D<byte> @this,
+            int length,
+            int[] lengths
+        )
         {
-            return SilkMarshal.NativeToStringArray(new ReadOnlySpan<nint>(@this.Native, length),
-                lengths, sizeof(byte)
+            return SilkMarshal.NativeToStringArray(
+                new ReadOnlySpan<nint>(@this.Native, length),
+                lengths,
+                sizeof(byte)
             );
         }
 
@@ -733,10 +791,16 @@ namespace Silk.NET.Core
         /// <param name="lengths">The number of strings in the array</param>
         /// <param name="this"></param>
         /// <returns>The string array.</returns>
-        public static string?[]?[]? ReadToStringArray(this Ptr3D<sbyte> @this, int length, int[] lengths)
+        public static string?[]?[]? ReadToStringArray(
+            this Ptr3D<sbyte> @this,
+            int length,
+            int[] lengths
+        )
         {
-            return SilkMarshal.NativeToStringArray(new ReadOnlySpan<nint>(@this.Native, length),
-                lengths, sizeof(sbyte)
+            return SilkMarshal.NativeToStringArray(
+                new ReadOnlySpan<nint>(@this.Native, length),
+                lengths,
+                sizeof(sbyte)
             );
         }
 
@@ -747,10 +811,16 @@ namespace Silk.NET.Core
         /// <param name="lengths">The number of strings in the array</param>
         /// <param name="this"></param>
         /// <returns>The string array.</returns>
-        public static string?[]?[]? ReadToStringArray(this Ptr3D<ushort> @this, int length, int[] lengths)
+        public static string?[]?[]? ReadToStringArray(
+            this Ptr3D<ushort> @this,
+            int length,
+            int[] lengths
+        )
         {
-            return SilkMarshal.NativeToStringArray(new ReadOnlySpan<nint>(@this.Native, length),
-                lengths, sizeof(ushort)
+            return SilkMarshal.NativeToStringArray(
+                new ReadOnlySpan<nint>(@this.Native, length),
+                lengths,
+                sizeof(ushort)
             );
         }
 
@@ -761,10 +831,16 @@ namespace Silk.NET.Core
         /// <param name="lengths">The number of strings in the array</param>
         /// <param name="this"></param>
         /// <returns>The string array.</returns>
-        public static string?[]?[]? ReadToStringArray(this Ptr3D<short> @this, int length, int[] lengths)
+        public static string?[]?[]? ReadToStringArray(
+            this Ptr3D<short> @this,
+            int length,
+            int[] lengths
+        )
         {
-            return SilkMarshal.NativeToStringArray(new ReadOnlySpan<nint>(@this.Native, length),
-                lengths, sizeof(short)
+            return SilkMarshal.NativeToStringArray(
+                new ReadOnlySpan<nint>(@this.Native, length),
+                lengths,
+                sizeof(short)
             );
         }
 
@@ -775,10 +851,16 @@ namespace Silk.NET.Core
         /// <param name="lengths">The number of strings in the array</param>
         /// <param name="this"></param>
         /// <returns>The string array.</returns>
-        public static string?[]?[]? ReadToStringArray(this Ptr3D<char> @this, int length, int[] lengths)
+        public static string?[]?[]? ReadToStringArray(
+            this Ptr3D<char> @this,
+            int length,
+            int[] lengths
+        )
         {
-            return SilkMarshal.NativeToStringArray(new ReadOnlySpan<nint>(@this.Native, length),
-                lengths, sizeof(char)
+            return SilkMarshal.NativeToStringArray(
+                new ReadOnlySpan<nint>(@this.Native, length),
+                lengths,
+                sizeof(char)
             );
         }
 
@@ -789,10 +871,16 @@ namespace Silk.NET.Core
         /// <param name="lengths">The number of strings in the array</param>
         /// <param name="this"></param>
         /// <returns>The string array.</returns>
-        public static string?[]?[]? ReadToStringArray(this Ptr3D<uint> @this, int length, int[] lengths)
+        public static string?[]?[]? ReadToStringArray(
+            this Ptr3D<uint> @this,
+            int length,
+            int[] lengths
+        )
         {
-            return SilkMarshal.NativeToStringArray(new ReadOnlySpan<nint>(@this.Native, length),
-                lengths, sizeof(uint)
+            return SilkMarshal.NativeToStringArray(
+                new ReadOnlySpan<nint>(@this.Native, length),
+                lengths,
+                sizeof(uint)
             );
         }
 
@@ -803,10 +891,16 @@ namespace Silk.NET.Core
         /// <param name="lengths">The number of strings in the array</param>
         /// <param name="this"></param>
         /// <returns>The string array.</returns>
-        public static string?[]?[]? ReadToStringArray(this Ptr3D<int> @this, int length, int[] lengths)
+        public static string?[]?[]? ReadToStringArray(
+            this Ptr3D<int> @this,
+            int length,
+            int[] lengths
+        )
         {
-            return SilkMarshal.NativeToStringArray(new ReadOnlySpan<nint>(@this.Native, length),
-                lengths, sizeof(int)
+            return SilkMarshal.NativeToStringArray(
+                new ReadOnlySpan<nint>(@this.Native, length),
+                lengths,
+                sizeof(int)
             );
         }
         #endregion

@@ -48,7 +48,8 @@ public partial class MixKhronosData(
     }
 
     /// <inheritdoc />
-    public Version Version { get; } = new(0, 0); // non-versioned (also needs to be zero for sorting)
+    // non-versioned trimmer (and needs to be a big number to come after the default trimmers)
+    public Version Version { get; } = new(42, 42, 42, 42);
 
     /// <inheritdoc />
     public async Task BeforeJobAsync(string key, SilkTouchConfiguration config)

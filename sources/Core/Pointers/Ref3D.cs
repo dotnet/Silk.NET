@@ -12,7 +12,7 @@ namespace Silk.NET.Core;
 /// <summary>
 /// A three-dimensional managed reference wrapper class
 /// </summary>
-public unsafe readonly ref struct Ref3D 
+public unsafe readonly ref struct Ref3D
 {
     /// <summary>
     /// Creates a reference with the given underlying ref.
@@ -22,12 +22,7 @@ public unsafe readonly ref struct Ref3D
     {
         IL.Emit.Ldarg_0();
         IL.Emit.Ldarg_1();
-        IL.Emit.Stfld(
-            FieldRef.Field(
-                TypeRef.Type(typeof(Ref3D)),
-                nameof(InteriorRef)
-            )
-        );
+        IL.Emit.Stfld(FieldRef.Field(TypeRef.Type(typeof(Ref3D)), nameof(InteriorRef)));
         IL.Emit.Ret();
         throw IL.Unreachable();
     }
@@ -38,7 +33,7 @@ public unsafe readonly ref struct Ref3D
     /// <param name="InteriorRef">The underlying ref.</param>
     internal Ref3D(ref byte @InteriorRef)
     {
-        this.InteriorRef = ref @InteriorRef; 
+        this.InteriorRef = ref @InteriorRef;
     }
 
     /// <summary>
@@ -53,12 +48,7 @@ public unsafe readonly ref struct Ref3D
         {
             // Would use the delegate* trick but this isn't optimised in JIT yet or necessarily safe
             IL.Emit.Ldarg_0();
-            IL.Emit.Ldfld(
-            FieldRef.Field(
-                    TypeRef.Type(typeof(Ref3D)),
-                                    nameof(InteriorRef)
-                                )
-                            );
+            IL.Emit.Ldfld(FieldRef.Field(TypeRef.Type(typeof(Ref3D)), nameof(InteriorRef)));
             IL.Emit.Ret();
             throw IL.Unreachable();
         }
@@ -78,17 +68,12 @@ public unsafe readonly ref struct Ref3D
     public ref Ref2D this[nuint index]
     {
         [MethodImpl(
-        MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
-    )]
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
         get
         {
             IL.Emit.Ldarg_0();
-            IL.Emit.Ldfld(
-                FieldRef.Field(
-                    TypeRef.Type(typeof(Ref3D)),
-                    nameof(InteriorRef)
-                )
-            );
+            IL.Emit.Ldfld(FieldRef.Field(TypeRef.Type(typeof(Ref3D)), nameof(InteriorRef)));
             IL.Emit.Ldarg_1();
             IL.Emit.Sizeof<nuint>();
             IL.Emit.Mul();
@@ -105,15 +90,10 @@ public unsafe readonly ref struct Ref3D
     /// <remarks>
     /// This function allows a <see cref="Ref3D"/> to be used in a <c>fixed</c> statement.
     /// </remarks>
-    public ref byte** GetPinnableReference()
+    public ref void** GetPinnableReference()
     {
         IL.Emit.Ldarg_0();
-        IL.Emit.Ldfld(
-            FieldRef.Field(
-                TypeRef.Type(typeof(Ref3D)),
-                nameof(InteriorRef)
-            )
-        );
+        IL.Emit.Ldfld(FieldRef.Field(TypeRef.Type(typeof(Ref3D)), nameof(InteriorRef)));
         IL.Emit.Ret();
         throw IL.Unreachable();
     }
@@ -154,7 +134,7 @@ public unsafe readonly ref struct Ref3D
     /// </summary>
     /// <param name="ptr"></param>
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    public unsafe static implicit operator Ref3D(NullPtr ptr) => (void*)ptr;
+    public static unsafe implicit operator Ref3D(NullPtr ptr) => (void*)ptr;
 
     /// <summary>
     /// Determines whether a <see cref="Ref3D"/> and a NullPtr are equal
@@ -204,7 +184,8 @@ public unsafe readonly ref struct Ref3D
     /// </summary>
     /// <param name="ptr"></param>
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    public static explicit operator void*(Ref3D ptr) => Unsafe.AsPointer(ref Unsafe.AsRef(in ptr.InteriorRef));
+    public static explicit operator void*(Ref3D ptr) =>
+        Unsafe.AsPointer(ref Unsafe.AsRef(in ptr.InteriorRef));
 
     /// <summary>
     /// Creates a <see cref="Ref3D"/> from a reference
@@ -218,15 +199,16 @@ public unsafe readonly ref struct Ref3D
     /// </summary>
     /// <param name="ptr"></param>
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    public static explicit operator byte***(Ref3D ptr) => (byte***)Unsafe.AsRef(ref Unsafe.AsRef(in ptr.InteriorRef));
-    
+    public static explicit operator byte***(Ref3D ptr) =>
+        (byte***)Unsafe.AsRef(ref Unsafe.AsRef(in ptr.InteriorRef));
+
     /// <summary>
     /// creates a <see cref="Ref3D"/> from an array
     /// </summary>
     /// <param name="array"></param>
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    public static implicit operator Ref3D(byte[][][] array)
-        => SilkMarshal.JaggedArrayToPointerArray<byte>(array);
+    public static implicit operator Ref3D(byte[][][] array) =>
+        SilkMarshal.JaggedArrayToPointerArray<byte>(array);
 
     /// <summary>
     /// creates a <see cref="Ref3D"/> from a reference array

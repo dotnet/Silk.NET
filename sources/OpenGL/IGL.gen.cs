@@ -4041,8 +4041,8 @@ public unsafe partial interface IGL
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glCreateSyncFromCLeventARB")]
         static abstract Ptr<Sync> CreateSyncFromCLeventArb(
-            [NativeTypeName("struct _cl_context *")] Ref<_cl_context> context,
-            [NativeTypeName("struct _cl_event *")] Ref<_cl_event> @event,
+            [NativeTypeName("struct _cl_context *")] Ref context,
+            [NativeTypeName("struct _cl_event *")] Ref @event,
             [NativeTypeName("GLbitfield")] uint flags
         );
 
@@ -10406,7 +10406,7 @@ public unsafe partial interface IGL
         [SupportedApiProfile("glcore", MinVersion = "3.2")]
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glGetQueryBufferObjecti64v")]
-        static abstract void GetQueryBufferObject(
+        static abstract void GetQueryBufferObjecti64v(
             [NativeTypeName("GLuint")] uint id,
             [NativeTypeName("GLuint")] uint buffer,
             [NativeTypeName("GLenum")] uint pname,
@@ -10416,7 +10416,7 @@ public unsafe partial interface IGL
         [SupportedApiProfile("glcore", MinVersion = "3.2")]
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glGetQueryBufferObjectiv")]
-        static abstract void GetQueryBufferObject(
+        static abstract void GetQueryBufferObjectiv(
             [NativeTypeName("GLuint")] uint id,
             [NativeTypeName("GLuint")] uint buffer,
             [NativeTypeName("GLenum")] uint pname,
@@ -10426,7 +10426,7 @@ public unsafe partial interface IGL
         [SupportedApiProfile("glcore", MinVersion = "3.2")]
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glGetQueryBufferObjectui64v")]
-        static abstract void GetQueryBufferObject(
+        static abstract void GlGetQueryBufferObjectui64v(
             [NativeTypeName("GLuint")] uint id,
             [NativeTypeName("GLuint")] uint buffer,
             [NativeTypeName("GLenum")] uint pname,
@@ -10436,7 +10436,7 @@ public unsafe partial interface IGL
         [SupportedApiProfile("glcore", MinVersion = "3.2")]
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glGetQueryBufferObjectuiv")]
-        static abstract void GetQueryBufferObject(
+        static abstract void GlGetQueryBufferObjectuiv(
             [NativeTypeName("GLuint")] uint id,
             [NativeTypeName("GLuint")] uint buffer,
             [NativeTypeName("GLenum")] uint pname,
@@ -32493,8 +32493,8 @@ public unsafe partial interface IGL
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glCreateSyncFromCLeventARB")]
     Ptr<Sync> CreateSyncFromCLeventArb(
-        [NativeTypeName("struct _cl_context *")] Ref<_cl_context> context,
-        [NativeTypeName("struct _cl_event *")] Ref<_cl_event> @event,
+        [NativeTypeName("struct _cl_context *")] Ref context,
+        [NativeTypeName("struct _cl_event *")] Ref @event,
         [NativeTypeName("GLbitfield")] uint flags
     );
 
@@ -38769,7 +38769,7 @@ public unsafe partial interface IGL
     [SupportedApiProfile("glcore", MinVersion = "3.2")]
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glGetQueryBufferObjecti64v")]
-    void GetQueryBufferObject(
+    void GetQueryBufferObjecti64v(
         [NativeTypeName("GLuint")] uint id,
         [NativeTypeName("GLuint")] uint buffer,
         [NativeTypeName("GLenum")] uint pname,
@@ -38779,7 +38779,7 @@ public unsafe partial interface IGL
     [SupportedApiProfile("glcore", MinVersion = "3.2")]
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glGetQueryBufferObjectiv")]
-    void GetQueryBufferObject(
+    void GetQueryBufferObjectiv(
         [NativeTypeName("GLuint")] uint id,
         [NativeTypeName("GLuint")] uint buffer,
         [NativeTypeName("GLenum")] uint pname,
@@ -38789,7 +38789,7 @@ public unsafe partial interface IGL
     [SupportedApiProfile("glcore", MinVersion = "3.2")]
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glGetQueryBufferObjectui64v")]
-    void GetQueryBufferObject(
+    void GlGetQueryBufferObjectui64v(
         [NativeTypeName("GLuint")] uint id,
         [NativeTypeName("GLuint")] uint buffer,
         [NativeTypeName("GLenum")] uint pname,
@@ -38799,7 +38799,7 @@ public unsafe partial interface IGL
     [SupportedApiProfile("glcore", MinVersion = "3.2")]
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glGetQueryBufferObjectuiv")]
-    void GetQueryBufferObject(
+    void GlGetQueryBufferObjectuiv(
         [NativeTypeName("GLuint")] uint id,
         [NativeTypeName("GLuint")] uint buffer,
         [NativeTypeName("GLenum")] uint pname,

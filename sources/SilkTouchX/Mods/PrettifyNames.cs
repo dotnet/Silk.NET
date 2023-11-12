@@ -62,20 +62,17 @@ public class PrettifyNames(
         var cfg = config.Get(key);
         if (cfg.TrimmerBaseline is not null)
         {
+            var trimmers = trimmerProviders
+                .SelectMany(x => x.GetTrimmers(key))
+                .OrderBy(x => x.Version)
+                .ToArray();
             var typeNames = visitor.Types.ToDictionary(
                 x => x.Key,
                 x => (x.Key, (List<string>?)null)
             );
             if (typeNames.Count > 1 || cfg.GlobalPrefixHint is not null)
             {
-                foreach (
-                    var trimmer in trimmerProviders
-                        .SelectMany(x => x.GetTrimmers(key))
-                        .OrderBy(x => x.Version)
-                )
-                {
-                    trimmer.Trim(null, cfg.GlobalPrefixHint, key, typeNames, cfg.PrefixOverrides);
-                }
+                Trim(null, cfg.GlobalPrefixHint, key, typeNames, cfg.PrefixOverrides, trimmers);
             }
 
             foreach (var (typeName, (newTypeName, _)) in typeNames)
@@ -87,20 +84,14 @@ public class PrettifyNames(
                 );
                 if (constNames is not null)
                 {
-                    foreach (
-                        var trimmer in trimmerProviders
-                            .SelectMany(x => x.GetTrimmers(key))
-                            .OrderBy(x => x.Version)
-                    )
-                    {
-                        trimmer.Trim(
-                            typeName,
-                            cfg.GlobalPrefixHint,
-                            key,
-                            constNames,
-                            cfg.PrefixOverrides
-                        );
-                    }
+                    Trim(
+                        typeName,
+                        cfg.GlobalPrefixHint,
+                        key,
+                        constNames,
+                        cfg.PrefixOverrides,
+                        trimmers
+                    );
                 }
                 else
                 {
@@ -108,25 +99,21 @@ public class PrettifyNames(
                 }
 
                 var functionNames = functions?.ToDictionary(
-                    x => x,
-                    x => (Primary: x, (List<string>?)null)
+                    x => x.Name,
+                    x => (Primary: x.Name, (List<string>?)null)
                 );
+                var functionSyntax = functions?.ToDictionary(x => x.Name, x => x.Syntax);
                 if (functionNames is not null)
                 {
-                    foreach (
-                        var trimmer in trimmerProviders
-                            .SelectMany(x => x.GetTrimmers(key))
-                            .OrderBy(x => x.Version)
-                    )
-                    {
-                        trimmer.Trim(
-                            typeName,
-                            cfg.GlobalPrefixHint,
-                            key,
-                            functionNames,
-                            cfg.PrefixOverrides
-                        );
-                    }
+                    Trim(
+                        typeName,
+                        cfg.GlobalPrefixHint,
+                        key,
+                        functionNames,
+                        cfg.PrefixOverrides,
+                        trimmers,
+                        functionSyntax
+                    );
                 }
 
                 var prettifiedOnly = visitor.PrettifyOnlyTypes.TryGetValue(typeName, out var val)
@@ -137,7 +124,7 @@ public class PrettifyNames(
 
                 rewriter.Types[typeName] = (
                     newTypeName.Prettify(),
-                    // TODO handle secondaries?
+                    // TODO deprecate secondaries if they're within the baseline?
                     constNames
                         .Concat(prettifiedOnly)
                         .ToDictionary(x => x.Key, x => x.Value.Primary.Prettify()),
@@ -152,7 +139,7 @@ public class PrettifyNames(
                 rewriter.Types[name] = (
                     name.Prettify(),
                     nonFunctions?.ToDictionary(x => x, x => x.Prettify()),
-                    functions?.ToDictionary(x => x, x => x.Prettify())
+                    functions?.ToDictionary(x => x.Name, x => x.Name.Prettify())
                 );
             }
         }
@@ -192,16 +179,151 @@ public class PrettifyNames(
         );
     }
 
+    private static void Trim(
+        string? container,
+        string? globalPrefixHint,
+        string? key,
+        Dictionary<string, (string Primary, List<string>? Secondary)> names,
+        Dictionary<string, string>? prefixOverrides,
+        IEnumerable<INameTrimmer> trimmers,
+        Dictionary<string, MethodDeclarationSyntax>? functionSyntax = null
+    )
+    {
+        // Run each trimmer
+        foreach (var trimmer in trimmers)
+        {
+            trimmer.Trim(container, globalPrefixHint, key, names, prefixOverrides);
+        }
+
+        // Prefer shorter names
+        foreach (var (trimmingName, (primary, secondary)) in names)
+        {
+            names[trimmingName] = (primary, secondary?.OrderByDescending(x => x.Length).ToList());
+        }
+
+        // Unwind some names back to their secondary names if the primaries would duplicate
+        var primaries = new HashSet<string>();
+        var discrims = new HashSet<string>(); // <-- some conflicts are okay
+        foreach (var (trimmingName, (ogPrimary, secondary)) in names)
+        {
+            var primary = ogPrimary;
+            var discrim = functionSyntax?[trimmingName] is { } meth
+                ? ModUtils.DiscrimStr(
+                    meth.Modifiers,
+                    meth.TypeParameterList,
+                    primary,
+                    meth.ParameterList,
+                    meth.ReturnType
+                )
+                : null;
+            while (primaries.Contains(primary) && (discrim is null || discrims.Contains(discrim)))
+            {
+                primaries.Remove(primary);
+                if (discrim is not null)
+                {
+                    discrims.Remove(discrim);
+                }
+
+                // If there's no secondary, this is an involuntary conflict where the trimmed version of a separate
+                // function happens to be the same as this function's untrimmed name.
+                // "Am I out of touch? No it's the children that are wrong!"
+                var nextPrimary = secondary?.LastOrDefault() ?? primary;
+                if (secondary is { Count: > 0 })
+                {
+                    secondary.RemoveAt(secondary.Count - 1);
+                }
+
+                foreach (
+                    var (
+                        conflictingTrimmingName,
+                        (conflictingPrimary, conflictingSecondary)
+                    ) in names
+                )
+                {
+                    var conflictingDiscrim = functionSyntax?[conflictingTrimmingName] is { } cMeth
+                        ? ModUtils.DiscrimStr(
+                            cMeth.Modifiers,
+                            cMeth.TypeParameterList,
+                            conflictingPrimary,
+                            cMeth.ParameterList,
+                            cMeth.ReturnType
+                        )
+                        : null;
+                    if (
+                        conflictingTrimmingName == trimmingName
+                        || conflictingPrimary != primary
+                        || conflictingDiscrim != discrim
+                    )
+                    {
+                        continue;
+                    }
+
+                    if (conflictingSecondary?.LastOrDefault() is { } resolvedConflict)
+                    {
+                        names[conflictingTrimmingName] = (resolvedConflict, conflictingSecondary);
+                        conflictingSecondary.RemoveAt(conflictingSecondary.Count - 1);
+                        primaries.Add(resolvedConflict);
+                        if (
+                            conflictingDiscrim is not null
+                            && functionSyntax?[conflictingTrimmingName] is { } nMeth
+                        )
+                        {
+                            discrims.Add(
+                                ModUtils.DiscrimStr(
+                                    nMeth.Modifiers,
+                                    nMeth.TypeParameterList,
+                                    resolvedConflict,
+                                    nMeth.ParameterList,
+                                    nMeth.ReturnType
+                                )
+                            );
+                        }
+                    }
+                    else
+                    {
+                        primaries.Add(conflictingPrimary);
+                        if (conflictingDiscrim is not null)
+                        {
+                            discrims.Add(conflictingDiscrim);
+                        }
+                    }
+                }
+
+                primary = nextPrimary;
+            }
+
+            names[trimmingName] = (primary, secondary);
+            primaries.Add(primary);
+            if (discrim is not null && functionSyntax?[trimmingName] is { } fMeth)
+            {
+                discrims.Add(
+                    ModUtils.DiscrimStr(
+                        fMeth.Modifiers,
+                        fMeth.TypeParameterList,
+                        primary,
+                        fMeth.ParameterList,
+                        fMeth.ReturnType
+                    )
+                );
+            }
+        }
+    }
+
     private class Visitor : CSharpSyntaxWalker
     {
-        public Dictionary<string, (List<string>? NonFunctions, List<string>? Functions)> Types =
-            new();
+        public Dictionary<
+            string,
+            (
+                List<string>? NonFunctions,
+                List<(string Name, MethodDeclarationSyntax Syntax)>? Functions
+            )
+        > Types = new();
 
         public Dictionary<string, List<string>> PrettifyOnlyTypes = new();
         private (
             ClassDeclarationSyntax Class,
             List<string> NonFunctions,
-            List<string> Functions
+            List<(string Name, MethodDeclarationSyntax Syntax)> Functions
         )? _classInProgress;
         private (EnumDeclarationSyntax Enum, List<string> EnumMembers)? _enumInProgress;
         private FieldDeclarationSyntax? _visitingField = null;
@@ -215,19 +337,25 @@ public class PrettifyNames(
                 return;
             }
 
-            _classInProgress = (node, new List<string>(), new List<string>());
+            _classInProgress = (
+                node,
+                new List<string>(),
+                new List<(string, MethodDeclarationSyntax)>()
+            );
             base.VisitClassDeclaration(node);
             var id = _classInProgress.Value.Class.Identifier.ToString();
             if (!Types.TryGetValue(id, out var inner))
             {
-                inner = (new List<string>(), new List<string>());
+                inner = (new List<string>(), new List<(string, MethodDeclarationSyntax)>());
                 Types.Add(id, inner);
             }
 
             (inner.NonFunctions ??= new List<string>()).AddRange(
                 _classInProgress.Value.NonFunctions
             );
-            (inner.Functions ??= new List<string>()).AddRange(_classInProgress.Value.Functions);
+            (inner.Functions ??= new List<(string, MethodDeclarationSyntax)>()).AddRange(
+                _classInProgress.Value.Functions
+            );
             _classInProgress = null;
         }
 
@@ -288,7 +416,7 @@ public class PrettifyNames(
         {
             if (node.Parent == _classInProgress?.Class)
             {
-                _classInProgress!.Value.Functions.Add(node.Identifier.ToString());
+                _classInProgress!.Value.Functions.Add((node.Identifier.ToString(), node));
             }
         }
 
@@ -315,7 +443,7 @@ public class PrettifyNames(
             var id = _enumInProgress.Value.Enum.Identifier.ToString();
             if (!Types.TryGetValue(id, out var inner))
             {
-                inner = (new List<string>(), new List<string>());
+                inner = (new List<string>(), new List<(string, MethodDeclarationSyntax)>());
                 Types.Add(id, inner);
             }
 
@@ -345,6 +473,7 @@ public class PrettifyNames(
         private bool _accessing;
         private bool _member;
         private string? _memberAccessType;
+        private readonly List<FieldDeclarationSyntax> _constants = new();
 
         public override SyntaxNode? VisitClassDeclaration(ClassDeclarationSyntax node)
         {
@@ -357,9 +486,30 @@ public class PrettifyNames(
             }
 
             _typeInProgress = (node, info.NonFunctions, info.Functions);
-            var ret = base.VisitClassDeclaration(node);
+            var ret = (ClassDeclarationSyntax)base.VisitClassDeclaration(node)!;
             _typeInProgress = null;
-            return ((ClassDeclarationSyntax)ret!).WithIdentifier(Identifier(info.NewName));
+            ret = ret.WithIdentifier(Identifier(info.NewName))
+                .WithMembers(
+                    List(
+                        // Constants can be quite prone to conflicting with their functions e.g. consider
+                        // GL_PROGRAM_STRING_ARB and glProgramStringARB, as such we relegate the ones that don't
+                        // eventually end up in an enum to be in a subclass instead
+                        SingletonList<MemberDeclarationSyntax>(
+                                ClassDeclaration("Constants")
+                                    .WithModifiers(
+                                        TokenList(
+                                            Token(SyntaxKind.PublicKeyword),
+                                            Token(SyntaxKind.StaticKeyword),
+                                            Token(SyntaxKind.PartialKeyword)
+                                        )
+                                    )
+                                    .WithMembers(List<MemberDeclarationSyntax>(_constants))
+                            )
+                            .Concat(ret.Members)
+                    )
+                );
+            _constants.Clear();
+            return ret;
         }
 
         public override SyntaxNode? VisitMethodDeclaration(MethodDeclarationSyntax node)
@@ -475,7 +625,8 @@ public class PrettifyNames(
             }
             var ret = base.VisitFieldDeclaration(node);
             _memberInProgress = null;
-            return ret;
+            _constants.Add((FieldDeclarationSyntax)ret!);
+            return null;
         }
 
         public override SyntaxNode? VisitPropertyDeclaration(PropertyDeclarationSyntax node)

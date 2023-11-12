@@ -34,8 +34,8 @@ public readonly ref struct Ref
     public ref byte this[nuint index]
     {
         [MethodImpl(
-        MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
-    )]
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
         get => ref Unsafe.Add(ref Handle, index);
     }
 
@@ -75,7 +75,7 @@ public readonly ref struct Ref
     /// <param name="rh"></param>
     /// <returns>Whether the references are equal</returns>
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    public unsafe static bool operator ==(Ref lh, Ref rh) => (void*)lh == (void*)rh;
+    public static unsafe bool operator ==(Ref lh, Ref rh) => (void*)lh == (void*)rh;
 
     /// <summary>
     /// Determines if two <see cref="Core.Ref"/> objects are not equivalent
@@ -84,14 +84,14 @@ public readonly ref struct Ref
     /// <param name="rh"></param>
     /// <returns>Whether the references are not equal</returns>
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    public unsafe static bool operator !=(Ref lh, Ref rh) => (void*)lh != (void*)rh;
+    public static unsafe bool operator !=(Ref lh, Ref rh) => (void*)lh != (void*)rh;
 
     /// <summary>
     /// Creates a <see cref="Core.Ref"/> from a Nullptr
     /// </summary>
     /// <param name="ptr"></param>
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    public unsafe static implicit operator Ref(NullPtr ptr) => (void*)ptr;
+    public static unsafe implicit operator Ref(NullPtr ptr) => (void*)ptr;
 
     /// <summary>
     /// Determines whether a <see cref="Core.Ref"/> and a NullPtr are equal
@@ -141,28 +141,29 @@ public readonly ref struct Ref
     /// </summary>
     /// <param name="ptr"></param>
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    public unsafe static implicit operator Ref(byte* ptr) => new(ref Unsafe.AsRef<byte>(ptr));
+    public static unsafe implicit operator Ref(byte* ptr) => new(ref Unsafe.AsRef<byte>(ptr));
 
     /// <summary>
     /// Creates a <see cref="Core.Ref"/> from a void reference
     /// </summary>
     /// <param name="ptr"></param>
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    public unsafe static implicit operator Ref(void* ptr) => new(ref Unsafe.AsRef<byte>(ptr));
+    public static unsafe implicit operator Ref(void* ptr) => new(ref Unsafe.AsRef<byte>(ptr));
 
     /// <summary>
     /// Creates a byte reference from a <see cref="Core.Ref"/>
     /// </summary>
     /// <param name="ptr"></param>
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    public unsafe static explicit operator byte*(Ref ptr) => (byte*)Unsafe.AsPointer(ref ptr.Handle);
+    public static unsafe explicit operator byte*(Ref ptr) =>
+        (byte*)Unsafe.AsPointer(ref ptr.Handle);
 
     /// <summary>
     /// Creates a void reference from a <see cref="Core.Ref"/>
     /// </summary>
     /// <param name="ptr"></param>
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    public unsafe static explicit operator void*(Ref ptr) => Unsafe.AsPointer(ref ptr.Handle);
+    public static unsafe explicit operator void*(Ref ptr) => Unsafe.AsPointer(ref ptr.Handle);
 
     /// <summary>
     /// creates a <see cref="Core.Ref"/> from an array
@@ -176,14 +177,16 @@ public readonly ref struct Ref
     /// </summary>
     /// <param name="array"></param>
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    public static implicit operator Ref(byte[,] array) => MemoryMarshal.CreateSpan(ref array[0, 0], array.Length);
+    public static implicit operator Ref(byte[,] array) =>
+        MemoryMarshal.CreateSpan(ref array[0, 0], array.Length);
 
     /// <summary>
     /// creates a <see cref="Core.Ref"/> from a 3D array
     /// </summary>
     /// <param name="array"></param>
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    public static implicit operator Ref(byte[,,] array) => MemoryMarshal.CreateSpan(ref array[0, 0, 0], array.Length);
+    public static implicit operator Ref(byte[,,] array) =>
+        MemoryMarshal.CreateSpan(ref array[0, 0, 0], array.Length);
 
     /// <summary>
     /// Creates a string from this <see cref="Core.Ref"/> with the given length
@@ -199,8 +202,8 @@ public readonly ref struct Ref
     public unsafe string ReadToString()
     {
         return Encoding.UTF8.GetString(
-            MemoryMarshal.CreateReadOnlySpanFromNullTerminated(
-                (byte*)Unsafe.AsPointer(ref Handle)));
+            MemoryMarshal.CreateReadOnlySpanFromNullTerminated((byte*)Unsafe.AsPointer(ref Handle))
+        );
     }
 
     /// <summary>
@@ -214,5 +217,6 @@ public readonly ref struct Ref
     /// Creates a <see cref="Ref"/> from a string
     /// </summary>
     /// <param name="str"></param>
-    public static implicit operator Ref(string str) => new (ref Unsafe.AsRef(in SilkMarshal.StringToNative(str)));
+    public static implicit operator Ref(string str) =>
+        new(ref Unsafe.AsRef(in SilkMarshal.StringToNative(str)));
 }

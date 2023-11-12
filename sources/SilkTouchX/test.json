@@ -101,6 +101,20 @@
       },
       "MixKhronosData": {
         "UseDataTypeTrimmings": true
+      },
+      "AddVTables": {
+        "VTables": [
+          {
+            "Kind": "DllImport"
+          },
+          {
+            "Kind": "StaticWrapper"
+          },
+          {
+            "Kind": "ThisThread",
+            "IsDefault": true
+          }
+        ]
       }
     }
   }

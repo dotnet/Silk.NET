@@ -32,7 +32,8 @@ namespace Silk.NET.Core
         /// </summary>
         /// <param name="index"></param>
         /// <returns>the offset pointer value</returns>
-        public ref byte this[nuint index] => ref Unsafe.AsRef<byte>(((nuint)Native + (index)).ToPointer());
+        public ref byte this[nuint index] =>
+            ref Unsafe.AsRef<byte>(((nuint)Native + (index)).ToPointer());
 
         /// <summary>
         /// Gets the underlying pointer.
@@ -41,7 +42,9 @@ namespace Silk.NET.Core
         /// <remarks>
         /// This function allows a <see cref="Ptr"/> to be used in a <c>fixed</c> statement.
         /// </remarks>
-        [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
         public ref byte GetPinnableReference() => ref Handle;
 
         /// <summary>
@@ -50,8 +53,11 @@ namespace Silk.NET.Core
         /// <param name="length">the span length</param>
         /// <typeparam name="T"></typeparam>
         /// <returns>the span</returns>
-        [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-        public Span<T> AsSpan<T>(int length) where T : unmanaged => new(Native, length);
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public Span<T> AsSpan<T>(int length)
+            where T : unmanaged => new(Native, length);
 
         /// <summary>
         /// Creates an array with the given length for this pointer
@@ -59,8 +65,11 @@ namespace Silk.NET.Core
         /// <typeparam name="T"></typeparam>
         /// <param name="length"></param>
         /// <returns></returns>
-        [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-        public T[] ToArray<T>(int length) where T : unmanaged => AsSpan<T>(length).ToArray();
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public T[] ToArray<T>(int length)
+            where T : unmanaged => AsSpan<T>(length).ToArray();
 
         /// <summary>
         /// Determines whether a pointer and reference are equal
@@ -68,7 +77,9 @@ namespace Silk.NET.Core
         /// <param name="lh"></param>
         /// <param name="rh"></param>
         /// <returns>whether the pointer and reference are equal</returns>
-        [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
         public static bool operator ==(Ptr lh, Ref rh) => lh.Native == (void*)rh;
 
         /// <summary>
@@ -77,7 +88,9 @@ namespace Silk.NET.Core
         /// <param name="lh"></param>
         /// <param name="rh"></param>
         /// <returns>whether the pointer and reference are not equal</returns>
-        [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
         public static bool operator !=(Ptr lh, Ref rh) => lh.Native != (void*)rh;
 
         /// <summary>
@@ -86,7 +99,9 @@ namespace Silk.NET.Core
         /// <param name="lh"></param>
         /// <param name="rh"></param>
         /// <returns>whether the pointer and reference are equal</returns>
-        [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
         public static bool operator ==(Ref lh, Ptr rh) => (void*)lh == rh.Native;
 
         /// <summary>
@@ -95,7 +110,9 @@ namespace Silk.NET.Core
         /// <param name="lh"></param>
         /// <param name="rh"></param>
         /// <returns>whether the pointer and reference are not equal</returns>
-        [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
         public static bool operator !=(Ref lh, Ptr rh) => (void*)lh != rh.Native;
 
         /// <summary>
@@ -104,7 +121,9 @@ namespace Silk.NET.Core
         /// <param name="lh"></param>
         /// <param name="rh"></param>
         /// <returns>whether the two pointers are equal</returns>
-        [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
         public static bool operator ==(Ptr lh, void* rh) => lh.Native == rh;
 
         /// <summary>
@@ -113,7 +132,9 @@ namespace Silk.NET.Core
         /// <param name="lh"></param>
         /// <param name="rh"></param>
         /// <returns>whether the two pointers are not equal</returns>
-        [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
         public static bool operator !=(Ptr lh, void* rh) => lh.Native != rh;
 
         /// <summary>
@@ -122,7 +143,9 @@ namespace Silk.NET.Core
         /// <param name="lh"></param>
         /// <param name="rh"></param>
         /// <returns>whether the two pointers are equal</returns>
-        [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
         public static bool operator ==(void* lh, Ptr rh) => lh == rh.Native;
 
         /// <summary>
@@ -131,7 +154,9 @@ namespace Silk.NET.Core
         /// <param name="lh"></param>
         /// <param name="rh"></param>
         /// <returns>whether the two pointers are not equal</returns>
-        [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
         public static bool operator !=(void* lh, Ptr rh) => lh != rh.Native;
 
         /// <summary>
@@ -140,7 +165,9 @@ namespace Silk.NET.Core
         /// <param name="lh"></param>
         /// <param name="rh"></param>
         /// <returns>whether the pointer and nullptr are equal</returns>
-        [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
         public static bool operator ==(Ptr lh, NullPtr rh) => lh.Native == null;
 
         /// <summary>
@@ -149,7 +176,9 @@ namespace Silk.NET.Core
         /// <param name="lh"></param>
         /// <param name="rh"></param>
         /// <returns>whether the pointer and nullptr are not equal</returns>
-        [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
         public static bool operator !=(Ptr lh, NullPtr rh) => lh.Native != null;
 
         /// <summary>
@@ -158,7 +187,9 @@ namespace Silk.NET.Core
         /// <param name="lh"></param>
         /// <param name="rh"></param>
         /// <returns>whether the pointer and nullptr are equal</returns>
-        [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
         public static bool operator ==(NullPtr lh, Ptr rh) => null == rh.Native;
 
         /// <summary>
@@ -167,56 +198,72 @@ namespace Silk.NET.Core
         /// <param name="lh"></param>
         /// <param name="rh"></param>
         /// <returns>whether the pointer and nullptr are not equal</returns>
-        [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
         public static bool operator !=(NullPtr lh, Ptr rh) => null != rh.Native;
 
         /// <summary>
         /// Creates a <see cref="Ptr"/> from a native pointer
         /// </summary>
         /// <param name="ptr"></param>
-        [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
         public static implicit operator Ptr(void* ptr) => new(ptr);
 
         /// <summary>
         /// Creates a native pointer from a <see cref="Ptr"/>
         /// </summary>
         /// <param name="ptr"></param>
-        [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
         public static implicit operator void*(Ptr ptr) => ptr.Native;
 
         /// <summary>
         /// Creates a <see cref="Ref"/> from a <see cref="Ptr"/>
         /// </summary>
         /// <param name="ptr"></param>
-        [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
         public static implicit operator Ref(Ptr ptr) => ptr;
 
         /// <summary>
         /// Creates a <see cref="Ptr"/> from a <see cref="Ref"/>
         /// </summary>
         /// <param name="ptr"></param>
-        [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
         public static explicit operator Ptr(Ref ptr) => (void*)ptr;
 
         /// <summary>
         /// Reads this pointer as a null terminated string
         /// </summary>
         /// <returns>null-terminated string</returns>
-        [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
         public string ReadToString() => SilkMarshal.NativeToString(ref Handle) ?? string.Empty;
 
         /// <summary>
         /// Creates a string from a <see cref="Ptr"/>
         /// </summary>
         /// <param name="ptr"></param>
-        [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
         public static explicit operator string(Ptr ptr) => ptr.ReadToString();
 
         /// <summary>
         /// Creates a null ptr
         /// </summary>
         /// <param name="ptr"></param>
-        [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
         public static implicit operator Ptr(NullPtr ptr) => new(null);
 
         /// <summary>
@@ -225,7 +272,9 @@ namespace Silk.NET.Core
         /// <param name="lh"></param>
         /// <param name="rh"></param>
         /// <returns>Whether the two pointers are equal</returns>
-        [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
         public static bool operator ==(Ptr lh, Ptr rh) => lh.Native == rh.Native;
 
         /// <summary>
@@ -234,15 +283,21 @@ namespace Silk.NET.Core
         /// <param name="lh"></param>
         /// <param name="rh"></param>
         /// <returns>Whether the two pointers are equal</returns>
-        [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
         public static bool operator !=(Ptr lh, Ptr rh) => lh.Native != rh.Native;
 
         /// <inheritdoc/>
-        [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
         public override bool Equals([NotNullWhen(true)] object? obj) => base.Equals(obj);
 
         /// <inheritdoc/>
-        [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
         public override int GetHashCode() => base.GetHashCode();
     }
 }

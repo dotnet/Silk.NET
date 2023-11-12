@@ -160,10 +160,12 @@ public class AddVTables(IOptionsSnapshot<AddVTables.Configuration> config) : IMo
                                         ArgumentList(
                                             SingletonSeparatedList(
                                                 Argument(
-                                                    MemberAccessExpression(
-                                                        SyntaxKind.SimpleMemberAccessExpression,
-                                                        IdentifierName("Assembly"),
-                                                        IdentifierName("GetExecutingAssembly")
+                                                    InvocationExpression(
+                                                        MemberAccessExpression(
+                                                            SyntaxKind.SimpleMemberAccessExpression,
+                                                            IdentifierName("Assembly"),
+                                                            IdentifierName("GetExecutingAssembly")
+                                                        )
                                                     )
                                                 )
                                             )
@@ -171,6 +173,7 @@ public class AddVTables(IOptionsSnapshot<AddVTables.Configuration> config) : IMo
                                     )
                                 )
                             )
+                            .WithSemicolonToken(Token(SyntaxKind.SemicolonToken))
                     )
                 );
     }
@@ -556,6 +559,10 @@ public class AddVTables(IOptionsSnapshot<AddVTables.Configuration> config) : IMo
 
         public override SyntaxNode? VisitClassDeclaration(ClassDeclarationSyntax node)
         {
+            if (_currentInterface is not null)
+            {
+                return node;
+            }
             var ns = node.NamespaceFromSyntaxNode();
             var key = $"I{node.Identifier}";
             var fullKey = ns.Length == 0 ? node.Identifier.ToString() : $"{ns}.{key}";
@@ -963,20 +970,22 @@ public class AddVTables(IOptionsSnapshot<AddVTables.Configuration> config) : IMo
                             )
                         )
                     );
-                var usingsWithLoader = _usings.ContainsKey("Silk.NET.Core.Loader")
-                    ? _usings.Values
-                    : _usings.Values.Concat(
-                        Enumerable.Repeat(
-                            UsingDirective(
-                                ModUtils.NamespaceIntoIdentifierName("Silk.NET.Core.Loader")
-                            ),
-                            1
-                        )
+                if (!_usings.ContainsKey("Silk.NET.Core.Loader"))
+                {
+                    _usings["Silk.NET.Core.Loader"] = UsingDirective(
+                        ModUtils.NamespaceIntoIdentifierName("Silk.NET.Core.Loader")
                     );
+                }
+                if (!_usings.ContainsKey("System.Reflection"))
+                {
+                    _usings["System.Reflection"] = UsingDirective(
+                        ModUtils.NamespaceIntoIdentifierName("System.Reflection")
+                    );
+                }
                 yield return new KeyValuePair<string, SyntaxNode>(
                     $"sources/{nonInterface}.gen.cs",
                     CompilationUnit()
-                        .WithUsings(List(usingsWithLoader))
+                        .WithUsings(List(_usings.Values))
                         .WithMembers(
                             string.IsNullOrWhiteSpace(ns)
                                 ? SingletonList<MemberDeclarationSyntax>(boilerplate)

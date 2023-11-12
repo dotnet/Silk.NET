@@ -180,7 +180,7 @@ public class AddApiProfiles(
         public override SyntaxNode? VisitIndexerDeclaration(IndexerDeclarationSyntax node) =>
             Visit(
                 node,
-                $"this[{string.Join(", ", node.ParameterList.Parameters.Select(DiscrimStr))}]",
+                $"this[{string.Join(", ", node.ParameterList.Parameters.Select(ModUtils.DiscrimStr))}]",
                 base.VisitIndexerDeclaration
             );
 
@@ -212,7 +212,7 @@ public class AddApiProfiles(
         ) =>
             Visit(
                 node,
-                DiscrimStr(node.Modifiers, null, string.Empty, node.ParameterList, null),
+                ModUtils.DiscrimStr(node.Modifiers, null, string.Empty, node.ParameterList, null),
                 base.VisitConstructorDeclaration
             );
 
@@ -222,7 +222,7 @@ public class AddApiProfiles(
         public override SyntaxNode? VisitOperatorDeclaration(OperatorDeclarationSyntax node) =>
             Visit(
                 node,
-                DiscrimStr(
+                ModUtils.DiscrimStr(
                     node.Modifiers,
                     null,
                     $"op_{node.OperatorToken.Kind()}",
@@ -237,7 +237,7 @@ public class AddApiProfiles(
         ) =>
             Visit(
                 node,
-                DiscrimStr(
+                ModUtils.DiscrimStr(
                     node.Modifiers,
                     null,
                     $"op_{node.ImplicitOrExplicitKeyword.Kind()}",
@@ -250,7 +250,7 @@ public class AddApiProfiles(
         public override SyntaxNode? VisitMethodDeclaration(MethodDeclarationSyntax node) =>
             Visit(
                 node,
-                DiscrimStr(
+                ModUtils.DiscrimStr(
                     node.Modifiers,
                     node.TypeParameterList,
                     node.Identifier.ToString(),
@@ -259,31 +259,6 @@ public class AddApiProfiles(
                 ),
                 base.VisitMethodDeclaration
             );
-
-        private static string DiscrimStr(SyntaxTokenList toks, TypeSyntax? type) =>
-            toks.Any(
-                x =>
-                    x.Kind()
-                        is SyntaxKind.RefKeyword
-                            or SyntaxKind.InKeyword
-                            or SyntaxKind.OutKeyword
-            )
-                ? $"{type}&"
-                : type?.ToString() ?? string.Empty;
-
-        private static string DiscrimStr(
-            SyntaxTokenList modifiers,
-            TypeParameterListSyntax? tParams,
-            string identifier,
-            ParameterListSyntax? @params,
-            TypeSyntax? returnType
-        ) =>
-            (modifiers.Any(SyntaxKind.StaticKeyword) ? "static " : string.Empty)
-            + $"{DiscrimStr(modifiers, returnType)} {identifier}{tParams}"
-            + $"({string.Join(", ", @params?.Parameters.Select(DiscrimStr) ?? Enumerable.Empty<string>())})";
-
-        private static string DiscrimStr(ParameterSyntax param) =>
-            DiscrimStr(param.Modifiers, param.Type);
 
         public override SyntaxNode? VisitStructDeclaration(StructDeclarationSyntax node) =>
             VisitType(node, base.VisitStructDeclaration);
