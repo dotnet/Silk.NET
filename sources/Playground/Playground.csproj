@@ -9,6 +9,7 @@
 
     <ItemGroup>
       <ProjectReference Include="..\GLFW\Silk.NET.GLFW.csproj" />
+      <ProjectReference Include="..\OpenGL\Silk.NET.OpenGL.csproj" />
     </ItemGroup>
 
     <ItemGroup>

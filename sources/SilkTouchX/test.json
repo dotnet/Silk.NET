@@ -112,7 +112,8 @@
           },
           {
             "Kind": "ThisThread",
-            "IsDefault": true
+            "IsDefault": true,
+            "GenerateMakeCurrentPartial": true
           }
         ]
       }

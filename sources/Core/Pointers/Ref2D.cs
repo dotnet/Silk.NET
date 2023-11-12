@@ -228,4 +228,11 @@ public unsafe readonly ref struct Ref2D
         IL.Emit.Ret();
         throw IL.Unreachable();
     }
+
+    /// <summary>
+    /// Creates a <see cref="Ref2D"/> from a string array.
+    /// </summary>
+    /// <param name="array">The string array.</param>
+    /// <returns>The <see cref="Ref2D"/></returns>
+    public static implicit operator Ref2D(string[] array) => new(ref SilkMarshal.StringArrayToNative(array));
 }

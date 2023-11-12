@@ -228,4 +228,12 @@ public unsafe readonly ref struct Ref3D
         IL.Emit.Ret();
         throw IL.Unreachable();
     }
+
+    /// <summary>
+    /// Creates a <see cref="Ref3D"/> from a string array.
+    /// </summary>
+    /// <param name="array">The string array.</param>
+    /// <returns>The <see cref="Ref3D{T}"/></returns>
+    public static implicit operator Ref3D(string[][] array) =>
+        new(ref SilkMarshal.StringArrayToNative(array));
 }

@@ -15,7 +15,7 @@ partial class GL(INativeContext nativeContext) : IDisposable
     {
         public static ThreadLocal<IGL> Underlying { get; } = new();
 
-        public static void MakeCurrent(IGL ctx) => Underlying.Value = ctx;
+        public static partial void MakeCurrent(IGL ctx);
     }
 
     public static IGL Create(INativeContext ctx) => new GL(ctx);

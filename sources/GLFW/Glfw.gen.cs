@@ -5,6 +5,7 @@
 using System.Runtime.InteropServices;
 using System.Runtime.CompilerServices;
 using Silk.NET.Core.Loader;
+using System.Reflection;
 
 namespace Silk.NET.GLFW;
 
@@ -12,7 +13,7 @@ partial class Glfw(INativeContext nativeContext) : IDisposable
 {
     public partial class DllImport
     {
-        static DllImport() => LoaderInterface.RegisterHook(Assembly.GetExecutingAssembly)
+        static DllImport() => LoaderInterface.RegisterHook(Assembly.GetExecutingAssembly());
     }
 
     public partial class ThisThread : IGlfw.Static<ThisThread>

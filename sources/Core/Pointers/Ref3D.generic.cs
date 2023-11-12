@@ -254,5 +254,13 @@ public unsafe readonly ref struct Ref3D<T>
     /// Create a non-generic version of <see cref="Ref3D{T}"/>
     /// </summary>
     /// <param name="ptr"></param>
-    public static implicit operator Ref3D(Ref3D<T> ptr) => new Ref3D(ref ptr.InteriorRef);
+    public static implicit operator Ref3D(Ref3D<T> ptr) => new(ref ptr.InteriorRef);
+
+    /// <summary>
+    /// Creates a <see cref="Ref3D"/> from a string array.
+    /// </summary>
+    /// <param name="array">The string array.</param>
+    /// <returns>The <see cref="Ref3D{T}"/></returns>
+    public static implicit operator Ref3D<T>(string[][] array) =>
+        new(ref SilkMarshal.StringArrayToNative(array, sizeof(T)));
 }

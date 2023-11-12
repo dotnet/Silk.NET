@@ -625,6 +625,14 @@ public class PrettifyNames(
             }
             var ret = base.VisitFieldDeclaration(node);
             _memberInProgress = null;
+            if (
+                !node.Modifiers.Any(SyntaxKind.ConstKeyword)
+                || _typeInProgress?.Type is not ClassDeclarationSyntax
+            )
+            {
+                return ret;
+            }
+
             _constants.Add((FieldDeclarationSyntax)ret!);
             return null;
         }

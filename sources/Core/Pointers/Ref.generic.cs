@@ -263,5 +263,5 @@ public readonly ref struct Ref<T>
     /// Create a non-generic version of <see cref="Ref{T}"/>
     /// </summary>
     /// <param name="ptr"></param>
-    public static implicit operator Ref(Ref<T> ptr) => new Ref<T>(ref ptr.Handle);
+    public static implicit operator Ref(Ref<T> ptr) => new(ref Unsafe.As<T, byte>(ref ptr.Handle));
 }
