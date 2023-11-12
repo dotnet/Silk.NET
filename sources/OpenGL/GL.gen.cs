@@ -18,8 +18,6 @@ partial class GL(INativeContext nativeContext) : IDisposable
         public static void MakeCurrent(IGL ctx) => Underlying.Value = ctx;
     }
 
-    public static IGL Create() => new StaticWrapper<ThisThread>();
-
     public static IGL Create(INativeContext ctx) => new GL(ctx);
 
     /// <inheritdoc/>

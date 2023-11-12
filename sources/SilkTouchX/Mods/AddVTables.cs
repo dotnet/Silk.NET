@@ -1006,7 +1006,10 @@ public class AddVTables(IOptionsSnapshot<AddVTables.Configuration> config) : IMo
             string nonInterfaceName
         )
         {
-            if (_staticDefaultWrapper is not null)
+            if (
+                _staticDefaultWrapper is not null
+                && !_vTables.Any(x => x is ThisThread && x.Name == _staticDefault)
+            )
             {
                 yield return MethodDeclaration(IdentifierName($"I{nonInterfaceName}"), "Create")
                     .WithModifiers(
