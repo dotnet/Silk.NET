@@ -202,7 +202,7 @@ Matricies **must** fulfill the following requirements:
 - Stored in row major format
 - F matricies work with F vectors, and I Matricies work with I vectors
 - Both column and row vectors and individual values accessible via properties
-- An indexer that takes column indicies and outputs the value
+- An indexer that takes row and column indicies and outputs the value
 - Add, subtract, and multiply operators defined with Matricies of the same size
 - Multiply operators defined with compatible matricies, if the output matrix type already exists (AxB * BxC = AxC)
 - Multiply operator defined with the appropriate Vector type (vector4F * Matrix4x4F is valid)
@@ -239,7 +239,6 @@ Matricies **must** fulfill the following requirements:
   - CreatePerspectiveOffCenter
   - CreateReflection
   - CreateWorld
-- **Optionally** include any relevant transformation for Matrix5x4 (Color Matrix)
 
 # Quaternion
 
@@ -297,7 +296,7 @@ public readonly struct Quaternion<T> : IEquatable<Quaternion<T>>
     /// <summary>Gets a value that indicates whether the current instance is the identity quaternion.</summary>
     /// <value><see langword="true" /> if the current instance is the identity quaternion; otherwise, <see langword="false" />.</value>
     /// <altmember cref="Identity"/>
-    public bool IsIdentity;
+    public bool IsIdentity { get; }
 
     /// <summary>Adds each element in one quaternion with its corresponding element in a second quaternion.</summary>
     /// <param name="value1">The first quaternion.</param>
