@@ -26,10 +26,10 @@ While investigating the use of generic math we came to the conclusion that makin
 
 The main types defined for this proposal are two sets of vector types, `VectorNI<T>` and `VectorNF<T>` where `N` defines the dimensionality of the vector between 2 and 5. Aside from some notable exceptions the vector types will be expected to implement a similar api to the correlating one below (`VectorNI<T>` will follow `Vector2I<T>` and the `VectorNF<T>` will follow `Vector2F<T>`).
 
-Aside from the api below, the following constraints should also be followed:
-- Three Dimensional Vectors should implement a CrossProduct function which takes another vector and returns the cross product with our original vector. A static implementation of this function should be available as well.
-- Every Dimension should have the relevant number of properties (X and Y for Vector2, and X,Y,Z,W,V for Vector5) and relevant unit vectors
-- Constructors for higher dimensions should include lower dimension variants that use the lower dimensions for their specific components (vector2 -> X,Y)
+Aside from the api below, the following constraints **must** also be followed:
+- Three Dimensional Vectors **must** implement a Cross function which takes another vector and returns the cross product with our original vector. A static implementation of this function should be available as well.
+- Every Dimension **must** have the relevant number of properties (X and Y for Vector2, and X,Y,Z,W,V for Vector5) and relevant unit vectors
+- Constructors for higher dimensions **must** include lower dimension variants that use the lower dimensions for their specific components (vector2 -> X,Y)
 
 ```cs
 public readonly record struct Vector2I<TScalar> : IEquatable<Vector2I<TScalar>>, 
@@ -59,6 +59,10 @@ public readonly record struct Vector2I<TScalar> : IEquatable<Vector2I<TScalar>>,
     public TScalar this[int index] { get; }
 
     public Vector2I(TScalar x, TScalar y);
+    public Vector2I(TScalar value);
+    public Vector2I(ReadOnlySpan<TScalar> span);
+
+    public Span<TScalar> AsSpan();
 
     public static Vector2I<TScalar> operator +(Vector2I<TScalar> left, Vector2I<TScalar> right);
     public static Vector2I<TScalar> operator -(Vector2I<TScalar> left, Vector2I<TScalar> right);
@@ -126,6 +130,10 @@ public readonly record struct Vector2F<TScalar> : IEquatable<Vector2F<TScalar>>,
     public TScalar this[int index] { get; }
 
     public Vector2F(TScalar x, TScalar y);
+    public Vector2F(TScalar value);
+    public Vector2F(ReadOnlySpan<TScalar> span);
+
+    public Span<TScalar> AsSpan();
 
     public static Vector2F<TScalar> operator +(Vector2F<TScalar> left, Vector2F<TScalar> right);
     public static Vector2F<TScalar> operator -(Vector2F<TScalar> left, Vector2F<TScalar> right);
@@ -189,7 +197,7 @@ This proposal includes the following matrix types:
 
 Integer Variants do not require any functions which interact with Quaternions
 
-Matricies should fulfill the following requirements:
+Matricies **must** fulfill the following requirements:
 - be a struct
 - Stored in row major format
 - F matricies work with F vectors, and I Matricies work with I vectors
@@ -504,30 +512,30 @@ public readonly struct Quaternion<T> : IEquatable<Quaternion<T>>
 # Geometric Types
 
 The following Geometric Types are defined:
-- Box2DF
-- Box2DI
-- Box3DF
-- Box3DI
+- Box2F
+- Box2I
+- Box3F
+- Box3I
 - CircleF
 - CircleI
 - CubeF
 - CubeI
 - PlaneF
 - PlaneI
-- Ray2DF
-- Ray2DI
-- Ray3DF
-- Ray3DI
+- Ray2F
+- Ray2I
+- Ray3F
+- Ray3I
 - RectangleF
 - RectangleI
 - SphereF
 - SphereI
 
-The Box structs are defined by Min and Max Vectors, while Rectangle and Cube are defined by Origin and Size Vectors. These Types should be implicitly castable between each other.
+The Box structs are defined by Min and Max Vectors, while Rectangle and Cube are defined by Origin and Size Vectors. These Types **must** be implicitly castable between each other.
 
-Each type should include the following:
+Each type **must** include the following:
 - Intersect functions with both another instance of the type and a point
-- GetDistanceToNearest(Point,Edge,etc) functions should be available for a given point
+- GetDistanceToNearest(Point,Edge,etc) functions **must** be available for a given point
 - For all but the rays and planes, GetInflated function that takes a point and returns the scaled object that is closest to the original and contains the given point
 - Include Scale and Translation transformation functions
 - For Planes and Rays, Normalize functions
