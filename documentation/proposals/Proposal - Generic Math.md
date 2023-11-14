@@ -79,10 +79,11 @@ For each vector struct, the following requirements **must** fulfill the followin
 - A static AllBitsSet Vector with all bits set for all components
 - Define static CreateChecked, CreateSaturating, and CreateTruncating which converts other vector types to this type
   - Try variants of these methods should also be defined which out the resulting vector and return a bool representing success or failure of the operation.
-- Define Transform functions which take a Matrix of higher dimensionality assuming 1 in for missing components (Vector 2 can use Matrix2xn, Matrix3xn, and matrix4xn) and return a vector containing the output (type should match the outer type e.g. Vector2.Transform(Matrix4x4) returns Vector2)
+- Define Transform functions which take a Matrix of higher dimensionality assuming 1 in for the final missing component and 0 for the rest (Vector 2 can use Matrix2xn, Matrix3xn, and matrix4xn) and return a vector containing the output (type should match the outer type e.g. Vector2.Transform(Matrix4x4) returns Vector2)
   - A Static implementation of these functions **must** be available
-  - Define matching `*` operators which function the same
-- Define TransformNormal functions which take a Matrix of higher dimensionality assuming 0 in for missing components (Vector 2 can use Matrix2xn, Matrix3xn, and matrix4xn) and return a vector containing the output (type should match the outer type e.g. Vector2.Transform(Matrix4x4) returns Vector2)
+- Define VectorN<T> `*` MatrixNxM operators where N is the same for both Vector and Matrix, but M is any number
+  - These operators should function like Transform, but without needed assumptions
+- Define TransformNormal functions which take a Matrix of higher dimensionality assuming 0 in for all missing components (Vector 2 can use Matrix2xn, Matrix3xn, and matrix4xn) and return a vector containing the output (type should match the outer type e.g. Vector2.Transform(Matrix4x4) returns Vector2)
   - A Static implementation of these functions **must** be available
 
 For I types, the following additional requirements **must** be fulfilled:
@@ -357,7 +358,7 @@ Each type **must** include the following:
 - For Planes and Rays, Normalize functions
 - For Planes include the following static functions
   - CreateFromVerticies
-  - CreateFromVertexAndNormal
+  - CreateFromPointNormal
   - Dot
     - with a Vector4
   - DotCoordinate and DotNormal
