@@ -20,10 +20,10 @@ This API aims to replace the existing implementation of Silk.NET.Maths.
 - Within this proposal, the key words **must**, **required**, **shall**, **should**, **recommended**, **may**, **could**, and **optional** are to be interpreted as described in [RFC 2119 - Key words for use in RFCs to Indicate Requirement Levels](https://www.ietf.org/rfc/rfc2119.txt). The additional key word **optionally** is an alternate form of **optional**, for use where grammatically appropriate. These key words are highlighted in the proposal for clarity.
 
 # **INFORMATIVE** Integer and Floating Point Types
-While investigating the use of generic math we came to the conclusion that making types which supports both integer and floating point types would not be optimal. This was discussed at length on the discord [here](https://discord.com/channels/521092042781229087/587346162802229298/1167705816812498974). Ultimately it was decided to provide both an integer and floating point variant for each vector type and every type built from them. These types are generic where `Vector2I<T>` will be a 2D vector which takes any binary integer type for `T`. Similarly `Vector2F<T>` will be a 2D vector which takes any floating point type for `T`. By extension we get types like `CubeI<T>` and `RectangleF<T>`. The integer types are granted the bitwise operators `&`, `~`, `|`, and `^`. Floating point types will include some operations that require certain functions unavailable to integer types like `Length` which requires `Sqrt`.
+While investigating the use of generic math we came to the conclusion that making types which supports both integer and floating point types would not be optimal. This was discussed at length on the discord [here](https://discord.com/channels/521092042781229087/587346162802229298/1167705816812498974). Ultimately it was decided to provide both an integer and floating point variant for each vector type and every type built from them. These types are generic where `Vector2I<T>` will be a 2D vector which takes any binary integer type for `T`. Similarly `Vector2F<T>` will be a 2D vector which takes any floating point type for `T`. By extension we get types like `Rect3I<T>` and `Rect2F<T>`. The integer types are granted the bitwise operators `&`, `~`, `|`, and `^`. Floating point types will include some operations that require certain functions unavailable to integer types like `Length` which requires `Sqrt`.
 
 # I types versus F Types
-Each type in this proposal, aside from `Quaternion` ends in I or F, defining whether it is an integer type or floating point type. Integer types **must** use a generic type argument `T` with the constraint of `IBinaryInteger<T>`. On the other hand, floating point types **must** use a generic type argument `T` with the constraint of `IFloatingPointIeee754<T>`.
+Each type in this proposal, aside from `Quaternion`, ends in I or F, defining whether it is an integer type or floating point type. Integer types **must** use a generic type argument `T` with the constraint of `IBinaryInteger<T>`. On the other hand, floating point types **must** use a generic type argument `T` with the constraint of `IFloatingPointIeee754<T>`.
 
 # Vector Types
 
@@ -32,6 +32,12 @@ The main types defined for this proposal are two sets of vector types, `VectorNI
 For each vector struct, the following requirements **must** fulfill the following requirements:
 - Implements IEquatable with itself as the generic parameter
 - Implements IReadonlyList with the components as the list elements
+- Implements ISpanFormattable
+- Implements ISpanParsable
+- Implements IUtf8SpanFormattable
+- Implements IUtf8SpanParsable
+- Implements IParsable
+- Implemetns IFormattable
 - The relevant number of properties to represent the mathematical vector's components (X and Y for Vector2) and relevant unit vectors
 - Constructors which take either a single parameter and uses it for every component, a parameter for each component, or a ReadOnlySpan of values which has the same number of elements as our vector has components.
 - Constructors for 3 dimensions and up **must** include lower dimension variants that use the lower dimensions for their specific components (vector2 -> X,Y).
@@ -47,9 +53,6 @@ For each vector struct, the following requirements **must** fulfill the followin
 - A `-` unary operator which returns the negated vector.
 - A `+` unary operator which returns the vector.
 - Overrides ToString to show component values.
-- Include additional ToString implementations which take a `string` format and a `string` format and `IFormatProvider`
-- TryFormat functions which output a formatted string of the vector to a `Span<char>` or `Span<byte>`, in UTF-16 and UTF-8, respectively.
-- Static Parse and TryParse functions which take a `string`, `Span<char>`, or `Span<byte>` and `IFormatProvider`.
 - Max and Min functions, which takes another vector and returns a new vector which component-wise has the Max or Min value, respectively.
   - A Static implementation of this function **must** be available as well.
 - Max and Min functions, which takes a scalar value which matches the generic type and returns a new vector which component-wise has the Max or Min value with the scalar value, respectively.
@@ -60,7 +63,7 @@ For each vector struct, the following requirements **must** fulfill the followin
   - A Static implementation of this function **must** be available as well.
 - An Abs function which returns a vector where each component is the absolute value of the original
   - A Static implementation of this function **must** be available as well.
-- CopyTo functions which copy to an array, with or without a starting index
+- CopyTo functions which copy to an array or span, with or without a starting index
 - Explicit cast and checked cast operators to all standard variants of the F and I vector types of the same dimensionality
 - Explicit cast and checked cast to and from matching System.Numerics vector type
 - Explicit cast cast to lower dimensional matching vector with matching generic type
@@ -82,7 +85,7 @@ For each vector struct, the following requirements **must** fulfill the followin
 - Define TransformNormal functions which take a Matrix of higher dimensionality (Vector 2 can use Matrix2xn, Matrix3xn, and matrix4xn) and return a vector containing the output (type should match the outer type e.g. Vector2.Transform(Matrix4x4) returns Vector2)
   - A Static implementation of these functions **must** be available
 
-For I types, the following requirements **must** also be fulfilled:
+For I types, the following additional requirements **must** be fulfilled:
 - the bitwise `&`, `|`, and `^` operators defined between two vectors which returns a vector which has had these operators applied on a component-wise basis.
 - the bitwise `&`, `|`, and `^` operators defined between a vectors and a scalar value that matches the generic type which returns a vector which has had these operators applied on a component-wise basis with the scalar.
 - the unary bitwise `~` operator defined which negates the bits of the vector components.
@@ -115,7 +118,7 @@ For I types, the following requirements **must** also be fulfilled:
   - PopCount(Vector x)
     - returns 
 
-For F types, the following requirements **must** also be fulfilled:
+For F types, the following additional requirements **must** be fulfilled:
 - A Length property which returns the square root of LengthSquared.
 - A Normalize function which divides all components by the length of the vector
   - A static implementation of this function **must** be available but it should return a normalized vector without affecting the original vector
@@ -254,8 +257,6 @@ Matrix structs **must** fulfill the following requirements:
 - A ref indexer that takes row and column indicies and outputs the value
 - Add, subtract, and multiply operators defined with Matricies of the same size
 - Multiply operators defined with compatible matricies, if the output matrix type already exists (AxB * BxC = AxC)
-- Multiply operator defined with the appropriate Vector type (vector4F * Matrix4x4F is valid)
-  - **optionally**, include multiplication operators for Vector types smaller than the appropriate type, assuming 1 for the missing dimensions (vector2F * Matrix4x4F -> (Vector2F.x, Vector2F.y, 1, 1) * Matrix4x4F)
 - Negate Operator defined
 - Implicit conversion to and from the System.Numerics matrix type, if available
 - Invert function for square matricies
@@ -347,7 +348,7 @@ The following Geometric Types are defined:
 - SphereF
 - SphereI
 
-The Box structs are defined by Min and Max Vectors, while Rectangle and Cube are defined by Origin and Size Vectors. These Types **must** be implicitly castable between each other.
+The Box structs are defined by Min and Max Vectors, while the Rect structs are defined by Origin and Size Vectors. These Types **must** be implicitly castable between each other.
 
 Each type **must** include the following:
 - Intersect functions with both another instance of the type and a point
