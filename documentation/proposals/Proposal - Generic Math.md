@@ -329,15 +329,16 @@ The following Geometric Types are defined:
 - SphereF
 - SphereI
 
-Box and Rectangle should use Point/Extants to store their shape.
-
-**INFORMATIVE** It was decided to remove the old Box2D/Box3D from the math library as their primary function was for interop with Windows Libraries. These types should be readded as Interops later under some new name, like `D3DRect` and `D3DBox`, and outside the Math Library.
-
 Each type **must** include the following:
 - Intersect functions with both another instance of the type and a point
 - GetDistanceToNearest(Point,Edge,etc) functions **must** be available for a given point
 - For all but the rays and planes, GetInflated function that takes a point and returns the scaled object that is closest to the original and contains the given point
 - Include Scale and Translation transformation functions
+- For Box and Rectangle the following Vector properties **must** be defined
+  - Min
+  - Max
+  - Center
+  - Size
 - For Planes and Rays, Normalize functions
 - For Planes include the following static functions
   - CreateFromVerticies
