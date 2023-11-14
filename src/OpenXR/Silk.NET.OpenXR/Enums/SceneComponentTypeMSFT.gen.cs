@@ -33,6 +33,9 @@ namespace Silk.NET.OpenXR
         [Obsolete("Deprecated in favour of \"SerializedSceneFragmentMsft\"")]
         [NativeName("Name", "XR_SCENE_COMPONENT_TYPE_SERIALIZED_SCENE_FRAGMENT_MSFT")]
         SceneComponentTypeSerializedSceneFragmentMsft = 1000098000,
+        [Obsolete("Deprecated in favour of \"MarkerMsft\"")]
+        [NativeName("Name", "XR_SCENE_COMPONENT_TYPE_MARKER_MSFT")]
+        SceneComponentTypeMarkerMsft = 1000147000,
         [NativeName("Name", "XR_SCENE_COMPONENT_TYPE_INVALID_MSFT")]
         InvalidMsft = unchecked((int) -1),
         [NativeName("Name", "XR_SCENE_COMPONENT_TYPE_OBJECT_MSFT")]
@@ -45,5 +48,7 @@ namespace Silk.NET.OpenXR
         ColliderMeshMsft = 4,
         [NativeName("Name", "XR_SCENE_COMPONENT_TYPE_SERIALIZED_SCENE_FRAGMENT_MSFT")]
         SerializedSceneFragmentMsft = 1000098000,
+        [NativeName("Name", "XR_SCENE_COMPONENT_TYPE_MARKER_MSFT")]
+        MarkerMsft = 1000147000,
     }
 }

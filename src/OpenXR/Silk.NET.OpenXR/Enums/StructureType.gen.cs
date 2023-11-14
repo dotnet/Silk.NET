@@ -654,12 +654,30 @@ namespace Silk.NET.OpenXR
         [Obsolete("Deprecated in favour of \"CoordinateSpaceCreateInfoML\"")]
         [NativeName("Name", "XR_TYPE_COORDINATE_SPACE_CREATE_INFO_ML")]
         TypeCoordinateSpaceCreateInfoML = 1000137000,
+        [Obsolete("Deprecated in favour of \"EventDataHeadsetFitChangedML\"")]
+        [NativeName("Name", "XR_TYPE_EVENT_DATA_HEADSET_FIT_CHANGED_ML")]
+        TypeEventDataHeadsetFitChangedML = 1000472000,
+        [Obsolete("Deprecated in favour of \"EventDataEyeCalibrationChangedML\"")]
+        [NativeName("Name", "XR_TYPE_EVENT_DATA_EYE_CALIBRATION_CHANGED_ML")]
+        TypeEventDataEyeCalibrationChangedML = 1000472001,
+        [Obsolete("Deprecated in favour of \"UserCalibrationEnableEventsInfoML\"")]
+        [NativeName("Name", "XR_TYPE_USER_CALIBRATION_ENABLE_EVENTS_INFO_ML")]
+        TypeUserCalibrationEnableEventsInfoML = 1000472002,
         [Obsolete("Deprecated in favour of \"SpatialAnchorPersistenceInfoMsft\"")]
         [NativeName("Name", "XR_TYPE_SPATIAL_ANCHOR_PERSISTENCE_INFO_MSFT")]
         TypeSpatialAnchorPersistenceInfoMsft = 1000142000,
         [Obsolete("Deprecated in favour of \"SpatialAnchorFromPersistedAnchorCreateInfoMsft\"")]
         [NativeName("Name", "XR_TYPE_SPATIAL_ANCHOR_FROM_PERSISTED_ANCHOR_CREATE_INFO_MSFT")]
         TypeSpatialAnchorFromPersistedAnchorCreateInfoMsft = 1000142001,
+        [Obsolete("Deprecated in favour of \"SceneMarkersMsft\"")]
+        [NativeName("Name", "XR_TYPE_SCENE_MARKERS_MSFT")]
+        TypeSceneMarkersMsft = 1000147000,
+        [Obsolete("Deprecated in favour of \"SceneMarkerTypeFilterMsft\"")]
+        [NativeName("Name", "XR_TYPE_SCENE_MARKER_TYPE_FILTER_MSFT")]
+        TypeSceneMarkerTypeFilterMsft = 1000147001,
+        [Obsolete("Deprecated in favour of \"SceneMarkerQRCodesMsft\"")]
+        [NativeName("Name", "XR_TYPE_SCENE_MARKER_QR_CODES_MSFT")]
+        TypeSceneMarkerQRCodesMsft = 1000147002,
         [Obsolete("Deprecated in favour of \"SpaceQueryInfoFB\"")]
         [NativeName("Name", "XR_TYPE_SPACE_QUERY_INFO_FB")]
         TypeSpaceQueryInfoFB = 1000156001,
@@ -1370,10 +1388,22 @@ namespace Silk.NET.OpenXR
         GlobalDimmerFrameEndInfoML = 1000136000,
         [NativeName("Name", "XR_TYPE_COORDINATE_SPACE_CREATE_INFO_ML")]
         CoordinateSpaceCreateInfoML = 1000137000,
+        [NativeName("Name", "XR_TYPE_EVENT_DATA_HEADSET_FIT_CHANGED_ML")]
+        EventDataHeadsetFitChangedML = 1000472000,
+        [NativeName("Name", "XR_TYPE_EVENT_DATA_EYE_CALIBRATION_CHANGED_ML")]
+        EventDataEyeCalibrationChangedML = 1000472001,
+        [NativeName("Name", "XR_TYPE_USER_CALIBRATION_ENABLE_EVENTS_INFO_ML")]
+        UserCalibrationEnableEventsInfoML = 1000472002,
         [NativeName("Name", "XR_TYPE_SPATIAL_ANCHOR_PERSISTENCE_INFO_MSFT")]
         SpatialAnchorPersistenceInfoMsft = 1000142000,
         [NativeName("Name", "XR_TYPE_SPATIAL_ANCHOR_FROM_PERSISTED_ANCHOR_CREATE_INFO_MSFT")]
         SpatialAnchorFromPersistedAnchorCreateInfoMsft = 1000142001,
+        [NativeName("Name", "XR_TYPE_SCENE_MARKERS_MSFT")]
+        SceneMarkersMsft = 1000147000,
+        [NativeName("Name", "XR_TYPE_SCENE_MARKER_TYPE_FILTER_MSFT")]
+        SceneMarkerTypeFilterMsft = 1000147001,
+        [NativeName("Name", "XR_TYPE_SCENE_MARKER_QR_CODES_MSFT")]
+        SceneMarkerQRCodesMsft = 1000147002,
         [NativeName("Name", "XR_TYPE_SPACE_QUERY_INFO_FB")]
         SpaceQueryInfoFB = 1000156001,
         [NativeName("Name", "XR_TYPE_SPACE_QUERY_RESULTS_FB")]

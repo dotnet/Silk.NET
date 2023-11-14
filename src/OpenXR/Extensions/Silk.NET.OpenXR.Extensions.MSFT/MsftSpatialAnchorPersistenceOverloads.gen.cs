@@ -45,24 +45,24 @@ namespace Silk.NET.OpenXR.Extensions.MSFT
         }
 
         /// <summary>To be documented.</summary>
-        public static unsafe Result EnumeratePersistedSpatialAnchorNamesMsft(this MsftSpatialAnchorPersistence thisApi, [Count(Count = 0)] SpatialAnchorStoreConnectionMSFT spatialAnchorStore, [Count(Count = 0)] uint spatialAnchorNamesCapacityInput, [Count(Count = 0)] uint* spatialAnchorNamesCountOutput, [Count(Parameter = "spatialAnchorNamesCapacityInput")] Span<SpatialAnchorPersistenceNameMSFT> persistedAnchorNames)
+        public static unsafe Result EnumeratePersistedSpatialAnchorNamesMsft(this MsftSpatialAnchorPersistence thisApi, [Count(Count = 0)] SpatialAnchorStoreConnectionMSFT spatialAnchorStore, [Count(Count = 0)] uint spatialAnchorNameCapacityInput, [Count(Count = 0)] uint* spatialAnchorNameCountOutput, [Count(Parameter = "spatialAnchorNameCapacityInput")] Span<SpatialAnchorPersistenceNameMSFT> spatialAnchorNames)
         {
             // SpanOverloader
-            return thisApi.EnumeratePersistedSpatialAnchorNamesMsft(spatialAnchorStore, spatialAnchorNamesCapacityInput, spatialAnchorNamesCountOutput, ref persistedAnchorNames.GetPinnableReference());
+            return thisApi.EnumeratePersistedSpatialAnchorNamesMsft(spatialAnchorStore, spatialAnchorNameCapacityInput, spatialAnchorNameCountOutput, ref spatialAnchorNames.GetPinnableReference());
         }
 
         /// <summary>To be documented.</summary>
-        public static unsafe Result EnumeratePersistedSpatialAnchorNamesMsft(this MsftSpatialAnchorPersistence thisApi, [Count(Count = 0)] SpatialAnchorStoreConnectionMSFT spatialAnchorStore, [Count(Count = 0)] uint spatialAnchorNamesCapacityInput, [Count(Count = 0)] Span<uint> spatialAnchorNamesCountOutput, [Count(Parameter = "spatialAnchorNamesCapacityInput")] SpatialAnchorPersistenceNameMSFT* persistedAnchorNames)
+        public static unsafe Result EnumeratePersistedSpatialAnchorNamesMsft(this MsftSpatialAnchorPersistence thisApi, [Count(Count = 0)] SpatialAnchorStoreConnectionMSFT spatialAnchorStore, [Count(Count = 0)] uint spatialAnchorNameCapacityInput, [Count(Count = 0)] Span<uint> spatialAnchorNameCountOutput, [Count(Parameter = "spatialAnchorNameCapacityInput")] SpatialAnchorPersistenceNameMSFT* spatialAnchorNames)
         {
             // SpanOverloader
-            return thisApi.EnumeratePersistedSpatialAnchorNamesMsft(spatialAnchorStore, spatialAnchorNamesCapacityInput, ref spatialAnchorNamesCountOutput.GetPinnableReference(), persistedAnchorNames);
+            return thisApi.EnumeratePersistedSpatialAnchorNamesMsft(spatialAnchorStore, spatialAnchorNameCapacityInput, ref spatialAnchorNameCountOutput.GetPinnableReference(), spatialAnchorNames);
         }
 
         /// <summary>To be documented.</summary>
-        public static unsafe Result EnumeratePersistedSpatialAnchorNamesMsft(this MsftSpatialAnchorPersistence thisApi, [Count(Count = 0)] SpatialAnchorStoreConnectionMSFT spatialAnchorStore, [Count(Count = 0)] uint spatialAnchorNamesCapacityInput, [Count(Count = 0)] Span<uint> spatialAnchorNamesCountOutput, [Count(Parameter = "spatialAnchorNamesCapacityInput")] Span<SpatialAnchorPersistenceNameMSFT> persistedAnchorNames)
+        public static unsafe Result EnumeratePersistedSpatialAnchorNamesMsft(this MsftSpatialAnchorPersistence thisApi, [Count(Count = 0)] SpatialAnchorStoreConnectionMSFT spatialAnchorStore, [Count(Count = 0)] uint spatialAnchorNameCapacityInput, [Count(Count = 0)] Span<uint> spatialAnchorNameCountOutput, [Count(Parameter = "spatialAnchorNameCapacityInput")] Span<SpatialAnchorPersistenceNameMSFT> spatialAnchorNames)
         {
             // SpanOverloader
-            return thisApi.EnumeratePersistedSpatialAnchorNamesMsft(spatialAnchorStore, spatialAnchorNamesCapacityInput, ref spatialAnchorNamesCountOutput.GetPinnableReference(), ref persistedAnchorNames.GetPinnableReference());
+            return thisApi.EnumeratePersistedSpatialAnchorNamesMsft(spatialAnchorStore, spatialAnchorNameCapacityInput, ref spatialAnchorNameCountOutput.GetPinnableReference(), ref spatialAnchorNames.GetPinnableReference());
         }
 
         /// <summary>To be documented.</summary>

@@ -290,6 +290,9 @@
                 "CL_PRINTF_CALLBACK_ARM": "CL_CONTEXT_PRINTF_CALLBACK_ARM",
                 "CL_PRINTF_BUFFERSIZE_ARM": "CL_CONTEXT_PRINTF_BUFFERSIZE_ARM"
             },
+            "exclude": [
+                "cl_image_desc"
+            ],
             "bakery": {
                 "profileNames": [
                     "opencl"
@@ -345,7 +348,8 @@
                     "CL_CALLBACK_SetProgramReleaseCallback_pfn_notify*": "ObjectNotifyCallback",
                     "CL_CALLBACK_SetEventCallback_pfn_notify*": "EventNotifyCallback",
                     "CL_CALLBACK_EnqueueNativeKernel_user_func*": "UserFunction",
-                    "CL_CALLBACK_BuildProgram_pfn_notify*": "ObjectNotifyCallback"
+                    "CL_CALLBACK_BuildProgram_pfn_notify*": "ObjectNotifyCallback",
+                    "cl_image_desc": "ImageDesc"
                 },
                 {
                     "$include.commonTypeMap": "build/csharp_typemap.json",

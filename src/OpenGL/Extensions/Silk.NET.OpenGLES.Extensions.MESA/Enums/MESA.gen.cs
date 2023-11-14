@@ -24,5 +24,7 @@ namespace Silk.NET.OpenGLES.Extensions.MESA
         FramebufferSwapXYMesa = 0x8BBD,
         [NativeName("Name", "GL_PROGRAM_BINARY_FORMAT_MESA")]
         ProgramBinaryFormatMesa = 0x875F,
+        [NativeName("Name", "GL_SAMPLER_BINDING")]
+        SamplerBinding = 0x8919,
     }
 }

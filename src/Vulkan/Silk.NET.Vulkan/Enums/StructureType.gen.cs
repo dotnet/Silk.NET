@@ -500,6 +500,8 @@ namespace Silk.NET.Vulkan
         SubpassBeginInfoKhr = 1000109005,
         [NativeName("Name", "VK_STRUCTURE_TYPE_SUBPASS_END_INFO_KHR")]
         SubpassEndInfoKhr = 1000109006,
+        [NativeName("Name", "VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_RELAXED_LINE_RASTERIZATION_FEATURES_IMG")]
+        PhysicalDeviceRelaxedLineRasterizationFeaturesImg = 1000110000,
         [NativeName("Name", "VK_STRUCTURE_TYPE_SHARED_PRESENT_SURFACE_CAPABILITIES_KHR")]
         SharedPresentSurfaceCapabilitiesKhr = 1000111000,
         [NativeName("Name", "VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_EXTERNAL_FENCE_INFO_KHR")]
@@ -1178,6 +1180,16 @@ namespace Silk.NET.Vulkan
         PhysicalDeviceDiagnosticsConfigFeaturesNV = 1000300000,
         [NativeName("Name", "VK_STRUCTURE_TYPE_DEVICE_DIAGNOSTICS_CONFIG_CREATE_INFO_NV")]
         DeviceDiagnosticsConfigCreateInfoNV = 1000300001,
+        [NativeName("Name", "VK_STRUCTURE_TYPE_CUDA_MODULE_CREATE_INFO_NV")]
+        CudaModuleCreateInfoNV = 1000307000,
+        [NativeName("Name", "VK_STRUCTURE_TYPE_CUDA_FUNCTION_CREATE_INFO_NV")]
+        CudaFunctionCreateInfoNV = 1000307001,
+        [NativeName("Name", "VK_STRUCTURE_TYPE_CUDA_LAUNCH_INFO_NV")]
+        CudaLaunchInfoNV = 1000307002,
+        [NativeName("Name", "VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_CUDA_KERNEL_LAUNCH_FEATURES_NV")]
+        PhysicalDeviceCudaKernelLaunchFeaturesNV = 1000307003,
+        [NativeName("Name", "VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_CUDA_KERNEL_LAUNCH_PROPERTIES_NV")]
+        PhysicalDeviceCudaKernelLaunchPropertiesNV = 1000307004,
         [NativeName("Name", "VK_STRUCTURE_TYPE_QUERY_LOW_LATENCY_SUPPORT_NV")]
         QueryLowLatencySupportNV = 1000310000,
         [NativeName("Name", "VK_STRUCTURE_TYPE_EXPORT_METAL_OBJECT_CREATE_INFO_EXT")]
@@ -1500,6 +1512,12 @@ namespace Silk.NET.Vulkan
         DeviceImageMemoryRequirementsKhr = 1000413003,
         [NativeName("Name", "VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_SHADER_CORE_PROPERTIES_ARM")]
         PhysicalDeviceShaderCorePropertiesArm = 1000415000,
+        [NativeName("Name", "VK_STRUCTURE_TYPE_DEVICE_QUEUE_SHADER_CORE_CONTROL_CREATE_INFO_ARM")]
+        DeviceQueueShaderCoreControlCreateInfoArm = 1000417000,
+        [NativeName("Name", "VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_SCHEDULING_CONTROLS_FEATURES_ARM")]
+        PhysicalDeviceSchedulingControlsFeaturesArm = 1000417001,
+        [NativeName("Name", "VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_SCHEDULING_CONTROLS_PROPERTIES_ARM")]
+        PhysicalDeviceSchedulingControlsPropertiesArm = 1000417002,
         [NativeName("Name", "VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_IMAGE_SLICED_VIEW_OF_3D_FEATURES_EXT")]
         PhysicalDeviceImageSlicedViewOf3DFeaturesExt = 1000418000,
         [NativeName("Name", "VK_STRUCTURE_TYPE_IMAGE_VIEW_SLICED_CREATE_INFO_EXT")]
