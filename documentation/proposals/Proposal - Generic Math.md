@@ -20,7 +20,7 @@ This API aims to replace the existing implementation of Silk.NET.Maths.
 - Within this proposal, the key words **must**, **required**, **shall**, **should**, **recommended**, **may**, **could**, and **optional** are to be interpreted as described in [RFC 2119 - Key words for use in RFCs to Indicate Requirement Levels](https://www.ietf.org/rfc/rfc2119.txt). The additional key word **optionally** is an alternate form of **optional**, for use where grammatically appropriate. These key words are highlighted in the proposal for clarity.
 
 # **INFORMATIVE** Integer and Floating Point Types
-While investigating the use of generic math we came to the conclusion that making types which supports both integer and floating point types would not be optimal. This was discussed at length on the discord [here](https://discord.com/channels/521092042781229087/587346162802229298/1167705816812498974). Ultimately it was decided to provide both an integer and floating point variant for each vector type and every type built from them. These types are generic where `Vector2I<T>` will be a 2D vector which takes any binary integer type for `T`. Similarly `Vector2F<T>` will be a 2D vector which takes any floating point type for `T`. By extension we get types like `Rect3I<T>` and `Rect2F<T>`. The integer types are granted the bitwise operators `&`, `~`, `|`, and `^`. Floating point types will include some operations that require certain functions unavailable to integer types like `Length` which requires `Sqrt`.
+While investigating the use of generic math we came to the conclusion that making types which supports both integer and floating point types would not be optimal. This was discussed at length on the discord [here](https://discord.com/channels/521092042781229087/587346162802229298/1167705816812498974). Ultimately it was decided to provide both an integer and floating point variant for each vector type and every type built from them. These types are generic where `Vector2I<T>` will be a 2D vector which takes any binary integer type for `T`. Similarly `Vector2F<T>` will be a 2D vector which takes any floating point type for `T`. By extension we get types like `BoxI<T>` and `RectangleF<T>`. The integer types are granted the bitwise operators `&`, `~`, `|`, and `^`. Floating point types will include some operations that require certain functions unavailable to integer types like `Length` which requires `Sqrt`.
 
 # I types versus F Types
 Each type in this proposal, aside from `Quaternion`, ends in I or F, defining whether it is an integer type or floating point type. Integer types **must** use a generic type argument `T` with the constraint of `IBinaryInteger<T>`. On the other hand, floating point types **must** use a generic type argument `T` with the constraint of `IFloatingPointIeee754<T>`.
@@ -308,26 +308,24 @@ A Quaternion struct **must** be defined and match the following requirements:
 # Geometric Types
 
 The following Geometric Types are defined:
-- Box2F
-- Box2I
-- Box3F
-- Box3I
+- BoxF
+- BoxI
 - CircleF
 - CircleI
-- Rect3F
-- Rect3I
 - PlaneF
 - PlaneI
 - Ray2F
 - Ray2I
 - Ray3F
 - Ray3I
-- Rect2F
-- Rect2I
+- RectangleF
+- RectangleI
 - SphereF
 - SphereI
 
-The Box structs are defined by Min and Max Vectors, while the Rect structs are defined by Origin and Size Vectors. These Types **must** be implicitly castable between each other.
+Box and Rectangle should use Point/Extants to store their shape.
+
+**INFORMATIVE** It was decided to remove the old Box2D/Box3D from the math library as their primary function was for interop with Windows Libraries. These types should be readded as Interops later under some new name, like `D3DRect` and `D3DBox`, and outside the Math Library.
 
 Each type **must** include the following:
 - Intersect functions with both another instance of the type and a point
