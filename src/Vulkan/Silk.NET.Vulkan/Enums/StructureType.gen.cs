@@ -500,6 +500,8 @@ namespace Silk.NET.Vulkan
         SubpassBeginInfoKhr = 1000109005,
         [NativeName("Name", "VK_STRUCTURE_TYPE_SUBPASS_END_INFO_KHR")]
         SubpassEndInfoKhr = 1000109006,
+        [NativeName("Name", "VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_RELAXED_LINE_RASTERIZATION_FEATURES_IMG")]
+        PhysicalDeviceRelaxedLineRasterizationFeaturesImg = 1000110000,
         [NativeName("Name", "VK_STRUCTURE_TYPE_SHARED_PRESENT_SURFACE_CAPABILITIES_KHR")]
         SharedPresentSurfaceCapabilitiesKhr = 1000111000,
         [NativeName("Name", "VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_EXTERNAL_FENCE_INFO_KHR")]
