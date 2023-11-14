@@ -79,17 +79,16 @@ For each vector struct, the following requirements **must** fulfill the followin
 - A static AllBitsSet Vector with all bits set for all components
 - Define static CreateChecked, CreateSaturating, and CreateTruncating which converts other vector types to this type
   - Try variants of these methods should also be defined which out the resulting vector and return a bool representing success or failure of the operation.
-- Define Transform functions which take a Matrix of higher dimensionality (Vector 2 can use Matrix2xn, Matrix3xn, and matrix4xn) and return a vector containing the output (type should match the outer type e.g. Vector2.Transform(Matrix4x4) returns Vector2)
+- Define Transform functions which take a Matrix of higher dimensionality assuming 1 in for missing components (Vector 2 can use Matrix2xn, Matrix3xn, and matrix4xn) and return a vector containing the output (type should match the outer type e.g. Vector2.Transform(Matrix4x4) returns Vector2)
   - A Static implementation of these functions **must** be available
   - Define matching `*` operators which function the same
-- Define TransformNormal functions which take a Matrix of higher dimensionality (Vector 2 can use Matrix2xn, Matrix3xn, and matrix4xn) and return a vector containing the output (type should match the outer type e.g. Vector2.Transform(Matrix4x4) returns Vector2)
+- Define TransformNormal functions which take a Matrix of higher dimensionality assuming 0 in for missing components (Vector 2 can use Matrix2xn, Matrix3xn, and matrix4xn) and return a vector containing the output (type should match the outer type e.g. Vector2.Transform(Matrix4x4) returns Vector2)
   - A Static implementation of these functions **must** be available
 
 For I types, the following additional requirements **must** be fulfilled:
 - the bitwise `&`, `|`, and `^` operators defined between two vectors which returns a vector which has had these operators applied on a component-wise basis.
 - the bitwise `&`, `|`, and `^` operators defined between a vectors and a scalar value that matches the generic type which returns a vector which has had these operators applied on a component-wise basis with the scalar.
 - the unary bitwise `~` operator defined which negates the bits of the vector components.
-- AllBitsSet property which returns a Vector with all bits set to 1
 - Define the following functions to match available IBinaryInteger (Vector replaced with type, e.g. `Vector2I<T>`):
   - GetByteCount()
     - Returns an int representing the number of bytes that will be written as part of TryWriteLittleEndian(Span<byte>, out int).
@@ -116,7 +115,7 @@ For I types, the following additional requirements **must** be fulfilled:
   - DivRem(Vector left, Vector right)
     - Returns tuple of 2 Vectors (Vector Quotient, Vector Remainder)
   - PopCount(Vector x)
-    - returns 
+    - returns The number of set bits in the vector
 
 For F types, the following additional requirements **must** be fulfilled:
 - A Length property which returns the square root of LengthSquared.
@@ -199,7 +198,7 @@ For F types, the following additional requirements **must** be fulfilled:
   - FusedMultiplyAdd(Vector left, TScalar right, Vector addend)
   - FusedMultiplyAdd(Vector left, TScalar right, TScalar addend)
   - ReciprocalEstimate(Vector x)
-  - ReciprocalSqrtEstimate(TVector x)
+  - ReciprocalSqrtEstimate(Vector x)
   - ILogB(Vector x)
     - Returns VectorNI<T>, where N matches the dimensionality of the vector
     - **INFORMATIVE** This may require multiple methods depending on implementation
