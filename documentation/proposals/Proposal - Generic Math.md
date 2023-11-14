@@ -259,12 +259,18 @@ Matrix structs **must** fulfill the following requirements:
   - CreateFromYawPitchRoll
 - For Matrix4x3 and Matrix4x4 include the following static functions
   - CreateConstrainedBillboard
-  - CreateLookAt
-  - CreateOrthographic
-  - CreateOrthographicOffCenter
-  - CreatePerspective
-  - CreatePerspectiveFieldOfView
-  - CreatePerspectiveOffCenter
+  - CreateLookAtLH
+  - CreateOrthographicLH
+  - CreateOrthographicOffCenterLH
+  - CreatePerspectiveLH
+  - CreatePerspectiveFieldOfViewLH
+  - CreatePerspectiveOffCenterLH
+  - CreateLookAtRH
+  - CreateOrthographicRH
+  - CreateOrthographicOffCenterRH
+  - CreatePerspectiveRH
+  - CreatePerspectiveFieldOfViewRH
+  - CreatePerspectiveOffCenterRH
   - CreateReflection
   - CreateWorld
 
