@@ -606,6 +606,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "OpenCL Demos", "OpenCL Demo
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HelloWorld", "examples\CSharp\OpenCL Demos\HelloWorld\HelloWorld.csproj", "{9CB90BB8-946F-4962-9365-A97BF5C6550A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Silk.NET.OpenXR.Extensions.NV", "src\OpenXR\Extensions\Silk.NET.OpenXR.Extensions.NV\Silk.NET.OpenXR.Extensions.NV.csproj", "{34D35A41-E974-40C9-8888-3510A0F074AA}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -3687,6 +3689,18 @@ Global
 		{9CB90BB8-946F-4962-9365-A97BF5C6550A}.Release|x64.Build.0 = Release|Any CPU
 		{9CB90BB8-946F-4962-9365-A97BF5C6550A}.Release|x86.ActiveCfg = Release|Any CPU
 		{9CB90BB8-946F-4962-9365-A97BF5C6550A}.Release|x86.Build.0 = Release|Any CPU
+		{34D35A41-E974-40C9-8888-3510A0F074AA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{34D35A41-E974-40C9-8888-3510A0F074AA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{34D35A41-E974-40C9-8888-3510A0F074AA}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{34D35A41-E974-40C9-8888-3510A0F074AA}.Debug|x64.Build.0 = Debug|Any CPU
+		{34D35A41-E974-40C9-8888-3510A0F074AA}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{34D35A41-E974-40C9-8888-3510A0F074AA}.Debug|x86.Build.0 = Debug|Any CPU
+		{34D35A41-E974-40C9-8888-3510A0F074AA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{34D35A41-E974-40C9-8888-3510A0F074AA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{34D35A41-E974-40C9-8888-3510A0F074AA}.Release|x64.ActiveCfg = Release|Any CPU
+		{34D35A41-E974-40C9-8888-3510A0F074AA}.Release|x64.Build.0 = Release|Any CPU
+		{34D35A41-E974-40C9-8888-3510A0F074AA}.Release|x86.ActiveCfg = Release|Any CPU
+		{34D35A41-E974-40C9-8888-3510A0F074AA}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -3982,6 +3996,7 @@ Global
 		{A0E20061-FFF6-4444-86E0-4519A0CA6944} = {49BC383A-D7E6-4013-93C7-371479B984CC}
 		{FD0C9C4B-3777-4755-A87B-60FE65D92750} = {6842A2C6-5C7B-42DD-9825-0EDE91BFEBF7}
 		{9CB90BB8-946F-4962-9365-A97BF5C6550A} = {FD0C9C4B-3777-4755-A87B-60FE65D92750}
+		{34D35A41-E974-40C9-8888-3510A0F074AA} = {90471225-AC23-424E-B62E-F6EC4C6ECAC0}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {F5273D7F-3334-48DF-94E3-41AE6816CD4D}
