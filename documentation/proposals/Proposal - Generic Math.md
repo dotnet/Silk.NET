@@ -32,7 +32,7 @@ The main types defined for this proposal are two sets of vector types, `VectorNI
 For each vector struct, the following requirements **must** fulfill the following requirements:
 - Implements IEquatable with itself as the generic parameter
 - Implements IReadonlyList with the components as the list elements
-- The relevant number of properties to represent the mathematical vector's components (X and Y for Vector2, and X,Y,Z,W,V for Vector5) and relevant unit vectors
+- The relevant number of properties to represent the mathematical vector's components (X and Y for Vector2) and relevant unit vectors
 - Constructors which take either a single parameter and uses it for every component, a parameter for each component, or a ReadOnlySpan of values which has the same number of elements as our vector has components.
 - Constructors for 3 dimensions and up **must** include lower dimension variants that use the lower dimensions for their specific components (vector2 -> X,Y).
 - A ref indexer that takes a int index and returns the corresponding component value (0 -> x, 1 -> y, etc.)
