@@ -22,154 +22,203 @@ This API aims to replace the existing implementation of Silk.NET.Maths.
 # **INFORMATIVE** Integer and Floating Point Types
 While investigating the use of generic math we came to the conclusion that making types which supports both integer and floating point types would not be optimal. This was discussed at length on the discord [here](https://discord.com/channels/521092042781229087/587346162802229298/1167705816812498974). Ultimately it was decided to provide both an integer and floating point variant for each vector type and every type built from them. These types are generic where `Vector2I<T>` will be a 2D vector which takes any binary integer type for `T`. Similarly `Vector2F<T>` will be a 2D vector which takes any floating point type for `T`. By extension we get types like `CubeI<T>` and `RectangleF<T>`. The integer types are granted the bitwise operators `&`, `~`, `|`, and `^`. Floating point types will include some operations that require certain functions unavailable to integer types like `Length` which requires `Sqrt`.
 
+# I types versus F Types
+Each type in this proposal, aside from `Quaternion` ends in I or F, defining whether it is an integer type or floating point type. Integer types **must** use a generic type argument `T` with the constraint of `IBinaryInteger<T>`. On the other hand, floating point types **must** use a generic type argument `T` with the constraint of `IFloatingPointIeee754<T>`.
+
 # Vector Types
 
-The main types defined for this proposal are two sets of vector types, `VectorNI<T>` and `VectorNF<T>` where `N` defines the dimensionality of the vector between 2 and 5. Aside from some notable exceptions the vector types will be expected to implement a similar api to the correlating one below (`VectorNI<T>` will follow `Vector2I<T>` and the `VectorNF<T>` will follow `Vector2F<T>`).
+The main types defined for this proposal are two sets of vector types, `VectorNI<T>` and `VectorNF<T>` where `N` defines the dimensionality of the vector between 2 and 4.
 
-Aside from the api below, the following constraints **must** also be followed:
-- Three Dimensional Vectors **must** implement a Cross function which takes another vector and returns the cross product with our original vector. A static implementation of this function should be available as well.
-- Every Dimension **must** have the relevant number of properties (X and Y for Vector2, and X,Y,Z,W,V for Vector5) and relevant unit vectors
-- Constructors for higher dimensions **must** include lower dimension variants that use the lower dimensions for their specific components (vector2 -> X,Y)
+For each vector struct, the following requirements **must** fulfill the following requirements:
+- Implements IEquatable with itself as the generic parameter
+- Implements IReadonlyList with the components as the list elements
+- The relevant number of properties to represent the mathematical vector's components (X and Y for Vector2, and X,Y,Z,W,V for Vector5) and relevant unit vectors
+- Constructors which take either a single parameter and uses it for every component, a parameter for each component, or a ReadOnlySpan of values which has the same number of elements as our vector has components.
+- Constructors for 3 dimensions and up **must** include lower dimension variants that use the lower dimensions for their specific components (vector2 -> X,Y).
+- A ref indexer that takes a int index and returns the corresponding component value (0 -> x, 1 -> y, etc.)
+- An AsSpan function which returns this vector as a Span of the generic type
+- A LengthSquared property which returns the dot product of the vector with itself.
+- A Dot function which takes another vector and returns the dot product with our original vector. 
+  - A static implementation of this function **must** be available as well.
+- For 3D Vectors, a Cross function which takes another vector and returns the cross product with our original vector. 
+  - A static implementation of this function **must** be available as well.
+- `+`, `-`, `*`, `/`, and `%` operators defined between two vectors of the same type which returns a vector which has had each operation applied component-wise.
+- `+`, `-`, `*`, `/`, and `%` operators defined between a vector and a scalar value that matches the generic type which returns a vector which has had each operation applied component-wise with the scalar value. Both vector first and scalar first should be implemented.
+- A `-` unary operator which returns the negated vector.
+- A `+` unary operator which returns the vector.
+- Overrides ToString to show component values.
+- Include additional ToString implementations which take a `string` format and a `string` format and `IFormatProvider`
+- TryFormat functions which output a formatted string of the vector to a `Span<char>` or `Span<byte>`, in UTF-16 and UTF-8, respectively.
+- Static Parse and TryParse functions which take a `string`, `Span<char>`, or `Span<byte>` and `IFormatProvider`.
+- Max and Min functions, which takes another vector and returns a new vector which component-wise has the Max or Min value, respectively.
+  - A Static implementation of this function **must** be available as well.
+- Max and Min functions, which takes a scalar value which matches the generic type and returns a new vector which component-wise has the Max or Min value with the scalar value, respectively.
+  - A Static implementation of this function **must** be available as well.
+- A Clamp function which takes a Max vector and a Min vector and returns a vector which has its components bounded between the Min and Max vectors.
+  - A Static implementation of this function **must** be available as well.
+- A Clamp function which takes a Max scalar and a Min scalar, both which match the generic type, and returns a vector which has its components bounded between the Min and Max scalars.
+  - A Static implementation of this function **must** be available as well.
+- An Abs function which returns a vector where each component is the absolute value of the original
+  - A Static implementation of this function **must** be available as well.
+- CopyTo functions which copy to an array, with or without a starting index
+- Explicit cast and checked cast operators to all standard variants of the F and I vector types of the same dimensionality
+- Explicit cast and checked cast to and from matching System.Numerics vector type
+- Explicit cast cast to lower dimensional matching vector with matching generic type
+- A CopySign function which takes a vector and copies the signs component-wise to our vector
+  - A Static implementation of this function **must** be available but it should return a new vector without affecting the original
+- A Copy sign function which takes a scalar which matches the generic type, and copies the scalars sign onto each component of the vector
+  - A Static implementation of this function **must** be available but it should return a new vector without affecting the original
+- A Sign function which returns a vector where each component is only the sign segment of the original vector
+  - A Static implementation of this function **must** be available
+- Static Unit Vectors for each component
+- A Static Zero Vector with zero for all components
+- A Static One Vector with one for all components
+- A static AllBitsSet Vector with all bits set for all components
+- Define static CreateChecked, CreateSaturating, and CreateTruncating which converts other vector types to this type
+  - Try variants of these methods should also be defined which out the resulting vector and return a bool representing success or failure of the operation.
+- Define Transform functions which take a Matrix of higher dimensionality (Vector 2 can use Matrix2xn, Matrix3xn, and matrix4xn) and return a vector containing the output (type should match the outer type e.g. Vector2.Transform(Matrix4x4) returns Vector2)
+  - A Static implementation of these functions **must** be available
+  - Define matching `*` operators which function the same
+- Define TransformNormal functions which take a Matrix of higher dimensionality (Vector 2 can use Matrix2xn, Matrix3xn, and matrix4xn) and return a vector containing the output (type should match the outer type e.g. Vector2.Transform(Matrix4x4) returns Vector2)
+  - A Static implementation of these functions **must** be available
 
-```cs
-public readonly record struct Vector2I<TScalar> : IEquatable<Vector2I<TScalar>>, 
-                           IEquatable<Vector2>,
-                           IBinaryIntegerVector<Vector2I<TScalar>, TScalar>,
-                           IVector2<Vector2I<TScalar>, TScalar>
-                           where TScalar : IBinaryInteger<TScalar>
-{
-    ///<summary>
-    ///The X component of the Vector
-    ///</summary>
-    [DataMember]
-    public TScalar X { get; }
+For I types, the following requirements **must** also be fulfilled:
+- the bitwise `&`, `|`, and `^` operators defined between two vectors which returns a vector which has had these operators applied on a component-wise basis.
+- the bitwise `&`, `|`, and `^` operators defined between a vectors and a scalar value that matches the generic type which returns a vector which has had these operators applied on a component-wise basis with the scalar.
+- the unary bitwise `~` operator defined which negates the bits of the vector components.
+- AllBitsSet property which returns a Vector with all bits set to 1
+- Define the following functions to match available IBinaryInteger (Vector replaced with type, e.g. `Vector2I<T>`):
+  - GetByteCount()
+    - Returns an int representing the number of bytes that will be written as part of TryWriteLittleEndian(Span<byte>, out int).
+  - GetShortestBitLength()
+    - Returns an int representing the length, in bits, of the shortest two's complement representation of the current value.
+  - TryWriteBigEndian(Span<byte> destination, out in bytesWritten)
+    - Returns boolean of whether the operation was successful
+  - WriteBigEndian(Span<byte> destination)
+    - Returns int representing the bytes written
+  - WriteBigEndian(Span<byte> destination, int startIndex)
+    - Returns int representing the bytes written
+  - WriteBigEndian(byte[] destination)
+    - Returns int representing the bytes written
+  - TryWriteLittleEndian(Span<byte> destination, out in bytesWritten)
+    - Returns boolean of whether the operation was successful
+  - WriteLittleEndian(Span<byte> destination)
+    - Returns int representing the bytes written
+  - WriteLittleEndian(Span<byte> destination, int startIndex)
+    - Returns int representing the bytes written
+  - WriteLittleEndian(byte[] destination)
+    - Returns int representing the bytes written
+- Define the following static functions for these types to match IBinaryInteger (Vector replaced with type, e.g. `Vector2I<T>`) which returns a new vector with these operations applied component-wise, unless otherwise specified:
+  - Log2(Vector x)
+  - DivRem(Vector left, Vector right)
+    - Returns tuple of 2 Vectors (Vector Quotient, Vector Remainder)
+  - PopCount(Vector x)
+    - returns 
 
-    ///<summary>
-    ///The Y component of the Vector
-    ///</summary>
-    [DataMember]
-    public TScalar Y { get; }
-
-    public static Vector2I<TScalar> UnitX { get; }
-    public static Vector2I<TScalar> UnitY { get; }
-
-    public static Vector2I<TScalar> Zero { get; }
-    public static Vector2I<TScalar> One { get; }
-
-    public TScalar this[int index] { get; }
-
-    public Vector2I(TScalar x, TScalar y);
-    public Vector2I(TScalar value);
-    public Vector2I(ReadOnlySpan<TScalar> span);
-
-    public Span<TScalar> AsSpan();
-
-    public static Vector2I<TScalar> operator +(Vector2I<TScalar> left, Vector2I<TScalar> right);
-    public static Vector2I<TScalar> operator -(Vector2I<TScalar> left, Vector2I<TScalar> right);
-    public static Vector2I<TScalar> operator *(Vector2I<TScalar> left, Vector2I<TScalar> right);
-    public static Vector2I<TScalar> operator /(Vector2I<TScalar> left, Vector2I<TScalar> right);
-    public static Vector2I<TScalar> operator %(Vector2I<TScalar> left, Vector2I<TScalar> right);
-
-    public static Vector2I<TScalar> operator *(Vector2I<TScalar> left, TScalar right);
-    public static Vector2I<TScalar> operator /(Vector2I<TScalar> left, TScalar right);
-    public static Vector2I<TScalar> operator %(Vector2I<TScalar> left, TScalar right);
-
-    public static Vector2I<TScalar> operator *(TScalar left, Vector2I<TScalar> right);
-
-    public static Vector2I<TScalar> operator +(Vector2I<TScalar> value);
-    public static Vector2I<TScalar> operator -(Vector2I<TScalar> value);
-
-    public static Vector2I<TScalar> operator &(Vector2I<TScalar> left, Vector2I<TScalar> right);
-    public static Vector2I<TScalar> operator |(Vector2I<TScalar> left, Vector2I<TScalar> right);
-    public static Vector2I<TScalar> operator ^(Vector2I<TScalar> left, Vector2I<TScalar> right);
-
-    public static Vector2I<TScalar> operator ~(Vector2I<TScalar> value);
-
-    public TScalar LengthSquared { get; }
-
-    public Vector2I<TScalar> Dot(Vector2I<TScalar> other);
-    public TScalar DistanceSquared(Vector2I<TScalar> other);
-    public Vector2I<TScalar> Abs();
-    public void CopyTo(TScalar[] array);
-    public void CopyTo(TScalar[] array, int index);
-
-    public static Vector2I<TScalar> Dot (Vector2I<TScalar> left, Vector2I<TScalar> right);
-    public static Vector2I<TScalar> DistanceSquared (Vector2I<TScalar> left, Vector2I<TScalar> right);
-    public static Vector2I<TScalar> Clamp (Vector2I<TScalar> value, Vector2I<TScalar> min, Vector2I<TScalar> max);
-    public static Vector2I<TScalar> Min (Vector2I<TScalar> value1, Vector2I<TScalar> value2);
-    public static Vector2I<TScalar> Max (Vector2I<TScalar> value1, Vector2I<TScalar> value2);
-    public static Vector2I<TScalar> Abs (Vector2I<TScalar> value);
-}
-```
-
-```cs
-public readonly record struct Vector2F<TScalar> : IEquatable<Vector2F<TScalar>>, 
-                           IEquatable<Vector2>,
-                           IFloatingPointVector<Vector2F<TScalar>, TScalar>,
-                           IVector2<Vector2F<TScalar>, TScalar>
-                           where TScalar : IFloatingPointIeee754<TScalar>
-{
-    ///<summary>
-    ///The X component of the Vector
-    ///</summary>
-    [DataMember]
-    public TScalar X { get; }
-
-    ///<summary>
-    ///The Y component of the Vector
-    ///</summary>
-    [DataMember]
-    public TScalar Y { get; }
-
-    public static Vector2F<TScalar> UnitX { get; }
-    public static Vector2F<TScalar> UnitY { get; }
-
-    public static Vector2F<TScalar> Zero { get; }
-    public static Vector2F<TScalar> One { get; }
-
-    public TScalar this[int index] { get; }
-
-    public Vector2F(TScalar x, TScalar y);
-    public Vector2F(TScalar value);
-    public Vector2F(ReadOnlySpan<TScalar> span);
-
-    public Span<TScalar> AsSpan();
-
-    public static Vector2F<TScalar> operator +(Vector2F<TScalar> left, Vector2F<TScalar> right);
-    public static Vector2F<TScalar> operator -(Vector2F<TScalar> left, Vector2F<TScalar> right);
-    public static Vector2F<TScalar> operator *(Vector2F<TScalar> left, Vector2F<TScalar> right);
-    public static Vector2F<TScalar> operator /(Vector2F<TScalar> left, Vector2F<TScalar> right);
-    public static Vector2F<TScalar> operator %(Vector2F<TScalar> left, Vector2F<TScalar> right);
-
-    public static Vector2F<TScalar> operator *(Vector2F<TScalar> left, TScalar right);
-    public static Vector2F<TScalar> operator /(Vector2F<TScalar> left, TScalar right);
-    public static Vector2F<TScalar> operator %(Vector2F<TScalar> left, TScalar right);
-
-    public static Vector2F<TScalar> operator *(TScalar left, Vector2F<TScalar> right);
-
-    public static Vector2F<TScalar> operator +(Vector2F<TScalar> value);
-    public static Vector2F<TScalar> operator -(Vector2F<TScalar> value);
-
-    public TScalar LengthSquared { get; }
-    public TScalar Length();
-
-    public Vector2F<TScalar> Dot(Vector2F<TScalar> other);
-    public TScalar DistanceSquared(Vector2F<TScalar> other);
-    public TScalar Distance(Vector2F<TScalar> other);
-    public Vector2F<TScalar> Abs();
-    public void CopyTo(TScalar[] array);
-    public void CopyTo(TScalar[] array, int index);
-
-    public static Vector2F<TScalar> Dot (Vector2F<TScalar> left, Vector2F<TScalar> right);
-    public static Vector2F<TScalar> DistanceSquared (Vector2F<TScalar> left, Vector2F<TScalar> right);
-    public static Vector2F<TScalar> Distance (Vector2F<TScalar> left, Vector2F<TScalar> right);
-    public static Vector2F<TScalar> Clamp (Vector2F<TScalar> value, Vector2F<TScalar> min, Vector2F<TScalar> max);
-    public static Vector2F<TScalar> Min (Vector2F<TScalar> value1, Vector2F<TScalar> value2);
-    public static Vector2F<TScalar> Max (Vector2F<TScalar> value1, Vector2F<TScalar> value2);
-    public static Vector2F<TScalar> Abs (Vector2F<TScalar> value);
-}
-```
-At the end of this proposal is the definition for the new interfaces used in the these classes.
+For F types, the following requirements **must** also be fulfilled:
+- A Length property which returns the square root of LengthSquared.
+- A Normalize function which divides all components by the length of the vector
+  - A static implementation of this function **must** be available but it should return a normalized vector without affecting the original vector
+- A static Lerp function which takes Two vectors to interpolate between and a vector representing the t value for each component, and returns a vector which components are linearly interpolated between the original two vectors based on the respective t values.
+  - A clamped version of this function **must** also be available which clamps the t-values between 0 and 1
+- A static Lerp function which takes Two vectors and a scalar value which matches the generic type, and returns a vector which is linearly interpolated between the two vectors using the scalar as the t value.
+  - A clamped version of this function **must** also be available which clamps the t-values between 0 and 1
+- A Reflect Function which takes a normal vector and reflects the vector over the normal
+  - A Static implemenation of this function **must** be available as well, but should return the reflected vector without affecting the original vector.
+- The following static Vector properties which have the given value for all components
+  - PositiveInfinity
+  - NegativeInfinity
+  - NaN
+  - Epsilon
+  - NegativeZero
+  - Pi
+  - Tau
+  - E
+- Define the following static functions for these types to match IBinaryFloatingPointIeee754 (Vector replaced with type, e.g. `Vector2F<T>`) which returns a new vector with these operations applied component-wise, unless otherwise specified:
+  - Sqrt(Vector x)
+  - Acosh(Vector x)
+  - Asinh(Vector x)
+  - Atanh(Vector x)
+  - Cosh(Vector x)
+  - Sinh(Vector x)
+  - Tanh(Vector x)
+  - Acos(Vector x)
+  - AcosPi(Vector x)
+  - Asin(Vector x)
+  - AsinPi(Vector x)
+  - Atan(Vector x)
+  - AtanPi(Vector x)
+  - Cos(Vector x)
+  - CosPi(Vector x)
+  - Sin(Vector x)
+  - SinPi(Vector x)
+  - Tan(Vector x)
+  - TanPi(Vector x)
+  - DegreesToRadians(Vector degrees)
+  - RadiansToDegrees(Vector radians)
+  - SinCos(Vector x)
+    - Returns a tuple of 2 Vectors (Sin, Cos)
+  - SinCosPi(Vector x)
+    - Returns a tuple of 2 Vectors (SinPi, CosPi)
+  - Log(Vector x)
+  - Log(Vector x, Vector newBase)
+  - Log(Vector x, TScalar newBase)
+  - LogP1(Vector x)
+  - Log2(Vector x)
+  - Log2P1(Vector x)
+  - Log10(Vector x)
+  - Log10P1(Vector x)
+  - Exp(Vector x)
+  - ExpM1(Vector x)
+  - Exp2(Vector x)
+  - Exp2M1(Vector x)
+  - Exp10(Vector x)
+  - Exp10M1(Vector x)
+  - Pow(Vector x, Vector y)
+  - Pow(Vector x, TScalar y)
+  - Cbrt(Vector x)
+  - Hypot(Vector x, Vector y)
+  - Hypot(Vector x, TScalar y)
+  - RootN(Vector x, int n)
+  - Round(Vector x)
+  - Round(Vector x, int digits)
+  - Round(Vector x, MidpointRounding mode)
+  - Round(Vector x, int digits, MidpointRounding mode)
+  - Truncate(Vector x)
+  - Atan2(Vector x, Vector y)
+  - Atan2Pi(Vector x, Vector y)
+  - Atan2(Vector x, TScalar y)
+  - Atan2Pi(Vector x, TScalar y)
+  - BitDecrement(Vector x)
+  - BitIncrement(Vector x)
+  - FusedMultiplyAdd(Vector left, Vector right, Vector addend)
+  - FusedMultiplyAdd(Vector left, Vector right, TScalar addend)
+  - FusedMultiplyAdd(Vector left, TScalar right, Vector addend)
+  - FusedMultiplyAdd(Vector left, TScalar right, TScalar addend)
+  - ReciprocalEstimate(Vector x)
+  - ReciprocalSqrtEstimate(TVector x)
+  - ILogB(Vector x)
+    - Returns VectorNI<T>, where N matches the dimensionality of the vector
+    - **INFORMATIVE** This may require multiple methods depending on implementation
+  - ScaleB(Vector x, VectorNI<int> n)
+  - ScaleB(Vector x, int n)
+  - RoundToInt(Vector x)
+    - Returns `VectorNI`, where N matches the dimensionality of the vector
+    - **INFORMATIVE** This may require multiple methods depending on implementation
+  - FloorToInt(Vector x)
+    - Returns `VectorNI`, where N matches the dimensionality of the vector
+    - **INFORMATIVE** This may require multiple methods depending on implementation
+  - CeilingToInt(Vector x)
+    - Returns `VectorNI`, where N matches the dimensionality of the vector
+    - **INFORMATIVE** This may require multiple methods depending on implementation
+  - ToVector64(Vector x)
+    - Returns `System.Runtime.Intrinsics.Vector64<TScalar>`
+  - ToVector128(Vector x)
+    - Returns `System.Runtime.Intrinsics.Vector128<TScalar>`
+  - ToVector256(Vector x)
+    - Returns `System.Runtime.Intrinsics.Vector256<TScalar>`
+  - ToVector512(Vector x)
+    - Returns `System.Runtime.Intrinsics.Vector512<TScalar>`
 
 # Matrix Types
 
@@ -197,21 +246,20 @@ This proposal includes the following matrix types:
 
 Integer Variants do not require any functions which interact with Quaternions
 
-Matricies **must** fulfill the following requirements:
-- be a struct
+Matrix structs **must** fulfill the following requirements:
+- Fulfills `IEquatable<T>` where `T` is the same matrix class
 - Stored in row major format
 - F matricies work with F vectors, and I Matricies work with I vectors
-- Both column and row vectors and individual values accessible via properties
-- An indexer that takes row and column indicies and outputs the value
+- Both row vectors and individual values (M11, etc.) accessible via properties
+- A ref indexer that takes row and column indicies and outputs the value
 - Add, subtract, and multiply operators defined with Matricies of the same size
 - Multiply operators defined with compatible matricies, if the output matrix type already exists (AxB * BxC = AxC)
 - Multiply operator defined with the appropriate Vector type (vector4F * Matrix4x4F is valid)
   - **optionally**, include multiplication operators for Vector types smaller than the appropriate type, assuming 1 for the missing dimensions (vector2F * Matrix4x4F -> (Vector2F.x, Vector2F.y, 1, 1) * Matrix4x4F)
 - Negate Operator defined
-- Fulfills `IEquatable<T>` where `T` is the same matrix class and the System.Numerics version of the matrix if available
 - Implicit conversion to and from the System.Numerics matrix type, if available
 - Invert function for square matricies
-- GetDeterminant function for square matricies and Matrix3x2
+- GetDeterminant function for square matricies and Matrix3x2, Matrix4x3, and Matrix 5x4
 - Transpose function
 - static lerp function
 - static identity property
@@ -242,271 +290,40 @@ Matricies **must** fulfill the following requirements:
 
 # Quaternion
 
-Quaternion is required only to fulfill the following api:
-
-```cs
-[StructLayout(LayoutKind.Sequential), DataContract, Serializable]
-public readonly struct Quaternion<T> : IEquatable<Quaternion<T>>
-    where T : INumberBase<T>, ITrigonometricFunctions<T>, IRootFunctions<T>
-{
-    /// <summary>The X value of the vector component of the quaternion.</summary>
-    [DataMember]
-    public readonly T X { get; }
-
-    /// <summary>The Y value of the vector component of the quaternion.</summary>
-    [DataMember]
-    public readonly T Y { get; }
-
-    /// <summary>The Z value of the vector component of the quaternion.</summary>
-    [DataMember]
-    public readonly T Z { get; }
-
-    /// <summary>The rotation component of the quaternion.</summary>
-    [DataMember]
-    public readonly T W { get; }
-    
-    public ReadOnlySpan<T> Components { get; }
-
-    /// <summary>Constructs a quaternion from the specified components.</summary>
-    /// <param name="x">The value to assign to the X component of the quaternion.</param>
-    /// <param name="y">The value to assign to the Y component of the quaternion.</param>
-    /// <param name="z">The value to assign to the Z component of the quaternion.</param>
-    /// <param name="w">The value to assign to the W component of the quaternion.</param>
-    public Quaternion(T x, T y, T z, T w);
-
-    /// <summary>Creates a quaternion from the specified vector and rotation parts.</summary>
-    /// <param name="vectorPart">The vector part of the quaternion.</param>
-    /// <param name="scalarPart">The rotation part of the quaternion.</param>
-    public Quaternion(Vector3D<T> vectorPart, T scalarPart);
-
-    /// <summary>Gets a quaternion that represents a zero.</summary>
-    /// <value>A quaternion whose values are <c>(0, 0, 0, 0)</c>.</value>
-    public static Quaternion<T> Zero { get; }
-
-    /// <summary>Gets a quaternion that represents no rotation.</summary>
-    /// <value>A quaternion whose values are <c>(0, 0, 0, 1)</c>.</value>
-    public static Quaternion<T> Identity { get; }
-
-    /// <summary>Gets or sets the element at the specified index.</summary>
-    /// <param name="index">The index of the element to get or set.</param>
-    /// <returns>The element at <paramref name="index" />.</returns>
-    /// <exception cref="ArgumentOutOfRangeException"><paramref name="index" /> was less than zero or greater than the number of elements.</exception>
-    public T this[int index];
-
-    /// <summary>Gets a value that indicates whether the current instance is the identity quaternion.</summary>
-    /// <value><see langword="true" /> if the current instance is the identity quaternion; otherwise, <see langword="false" />.</value>
-    /// <altmember cref="Identity"/>
-    public bool IsIdentity { get; }
-
-    /// <summary>Adds each element in one quaternion with its corresponding element in a second quaternion.</summary>
-    /// <param name="value1">The first quaternion.</param>
-    /// <param name="value2">The second quaternion.</param>
-    /// <returns>The quaternion that contains the summed values of <paramref name="value1" /> and <paramref name="value2" />.</returns>
-    /// <remarks>The <see cref="op_Addition" /> method defines the operation of the addition operator for <see cref="Quaternion" /> objects.</remarks>
-    [MethodImpl(MethodImplOptions.AggressiveInlining)]
-    public static Quaternion<T> operator +(Quaternion<T> value1, Quaternion<T> value2);
-
-    /// <summary>Divides one quaternion by a second quaternion.</summary>
-    /// <param name="value1">The dividend.</param>
-    /// <param name="value2">The divisor.</param>
-    /// <returns>The quaternion that results from dividing <paramref name="value1" /> by <paramref name="value2" />.</returns>
-    /// <remarks>The <see cref="op_Division" /> method defines the division operation for <see cref="Quaternion" /> objects.</remarks>
-    public static Quaternion<T> operator /(Quaternion<T> value1, Quaternion<T> value2);
-
-    /// <summary>Returns a value that indicates whether two quaternions are equal.</summary>
-    /// <param name="value1">The first quaternion to compare.</param>
-    /// <param name="value2">The second quaternion to compare.</param>
-    /// <returns><see langword="true" /> if the two quaternions are equal; otherwise, <see langword="false" />.</returns>
-    /// <remarks>Two quaternions are equal if each of their corresponding components is equal.
-    /// The <see cref="op_Equality" /> method defines the operation of the equality operator for <see cref="Quaternion" /> objects.</remarks>
-    [MethodImpl(MethodImplOptions.AggressiveInlining)]
-    public static bool operator ==(Quaternion<T> value1, Quaternion<T> value2);
-
-    /// <summary>Returns a value that indicates whether two quaternions are not equal.</summary>
-    /// <param name="value1">The first quaternion to compare.</param>
-    /// <param name="value2">The second quaternion to compare.</param>
-    /// <returns><see langword="true" /> if <paramref name="value1" /> and <paramref name="value2" /> are not equal; otherwise, <see langword="false" />.</returns>
-    [MethodImpl(MethodImplOptions.AggressiveInlining)]
-    public static bool operator !=(Quaternion<T> value1, Quaternion<T> value2);
-
-    /// <summary>Returns the quaternion that results from multiplying two quaternions together.</summary>
-    /// <param name="value1">The first quaternion.</param>
-    /// <param name="value2">The second quaternion.</param>
-    /// <returns>The product quaternion.</returns>
-    /// <remarks>The <see cref="Quaternion.op_Multiply" /> method defines the operation of the multiplication operator for <see cref="Quaternion" /> objects.</remarks>
-    public static Quaternion<T> operator *(Quaternion<T> value1, Quaternion<T> value2);
-
-    /// <summary>Returns the quaternion that results from scaling all the components of a specified quaternion by a scalar factor.</summary>
-    /// <param name="value1">The source quaternion.</param>
-    /// <param name="value2">The scalar value.</param>
-    /// <returns>The scaled quaternion.</returns>
-    /// <remarks>The <see cref="Quaternion.op_Multiply" /> method defines the operation of the multiplication operator for <see cref="Quaternion" /> objects.</remarks>
-    [MethodImpl(MethodImplOptions.AggressiveInlining)]
-    public static Quaternion<T> operator *(Quaternion<T> value1, T value2);
-
-    /// <summary>Subtracts each element in a second quaternion from its corresponding element in a first quaternion.</summary>
-    /// <param name="value1">The first quaternion.</param>
-    /// <param name="value2">The second quaternion.</param>
-    /// <returns>The quaternion containing the values that result from subtracting each element in <paramref name="value2" /> from its corresponding element in <paramref name="value1" />.</returns>
-    /// <remarks>The <see cref="op_Subtraction" /> method defines the operation of the subtraction operator for <see cref="Quaternion" /> objects.</remarks>
-    [MethodImpl(MethodImplOptions.AggressiveInlining)]
-    public static Quaternion<T> operator -(Quaternion<T> value1, Quaternion<T> value2);
-
-    /// <summary>Reverses the sign of each component of the quaternion.</summary>
-    /// <param name="value">The quaternion to negate.</param>
-    /// <returns>The negated quaternion.</returns>
-    /// <remarks>The <see cref="op_UnaryNegation" /> method defines the operation of the unary negation operator for <see cref="Quaternion" /> objects.</remarks>
-    [MethodImpl(MethodImplOptions.AggressiveInlining)]
-    public static Quaternion<T> operator -(Quaternion<T> value);
-
-    /// <summary>Adds each element in one quaternion with its corresponding element in a second quaternion.</summary>
-    /// <param name="value1">The first quaternion.</param>
-    /// <param name="value2">The second quaternion.</param>
-    /// <returns>The quaternion that contains the summed values of <paramref name="value1" /> and <paramref name="value2" />.</returns>
-    [MethodImpl(MethodImplOptions.AggressiveInlining)]
-    public static Quaternion<T> Add<T>(Quaternion<T> value1, Quaternion<T> value2)
-        where T : IRootFunctions<T>, ITrigonometricFunctions<T>;
-
-    /// <summary>Concatenates two quaternions.</summary>
-    /// <param name="value1">The first quaternion rotation in the series.</param>
-    /// <param name="value2">The second quaternion rotation in the series.</param>
-    /// <returns>A new quaternion representing the concatenation of the <paramref name="value1" /> rotation followed by the <paramref name="value2" /> rotation.</returns>
-    public static Quaternion<T> Concatenate<T>(Quaternion<T> value1, Quaternion<T> value2)
-        where T : IRootFunctions<T>, ITrigonometricFunctions<T>;
-
-    /// <summary>Returns the conjugate of a specified quaternion.</summary>
-    /// <param name="value">The quaternion.</param>
-    /// <returns>A new quaternion that is the conjugate of <see langword="value" />.</returns>
-    [MethodImpl(MethodImplOptions.AggressiveInlining)]
-    public static Quaternion<T> Conjugate<T>(Quaternion<T> value)
-        where T : IRootFunctions<T>, ITrigonometricFunctions<T>;
-
-    /// <summary>Creates a quaternion from a unit vector and an angle to rotate around the vector.</summary>
-    /// <param name="axis">The unit vector to rotate around.</param>
-    /// <param name="angle">The angle, in radians, to rotate around the vector.</param>
-    /// <returns>The newly created quaternion.</returns>
-    /// <remarks><paramref name="axis" /> vector must be normalized before calling this method or the resulting <see cref="Quaternion{T}" /> will be incorrect.</remarks>
-    public static Quaternion<T> CreateFromAxisAngle<T>(Vector3DF<T> axis, T angle)
-        where T : IRootFunctions<T>, ITrigonometricFunctions<T>;
-
-    /// <summary>Creates a quaternion from the specified rotation matrix.</summary>
-    /// <param name="matrix">The rotation matrix.</param>
-    /// <returns>The newly created quaternion.</returns>
-    public static Quaternion<T> CreateFromRotationMatrix<T>(Matrix4X4F<T> matrix)
-        where T : IRootFunctions<T>, ITrigonometricFunctions<T>, IComparisonOperators<T, T, bool>;
-
-    /// <summary>Creates a new quaternion from the given yaw, pitch, and roll.</summary>
-    /// <param name="yaw">The yaw angle, in radians, around the Y axis.</param>
-    /// <param name="pitch">The pitch angle, in radians, around the X axis.</param>
-    /// <param name="roll">The roll angle, in radians, around the Z axis.</param>
-    /// <returns>The resulting quaternion.</returns>
-    public static Quaternion<T> CreateFromYawPitchRoll<T>(T yaw, T pitch, T roll)
-        where T : IRootFunctions<T>, ITrigonometricFunctions<T>;
-
-    /// <summary>Divides one quaternion by a second quaternion.</summary>
-    /// <param name="value1">The dividend.</param>
-    /// <param name="value2">The divisor.</param>
-    /// <returns>The quaternion that results from dividing <paramref name="value1" /> by <paramref name="value2" />.</returns>
-    [MethodImpl(MethodImplOptions.AggressiveInlining)]
-    public static Quaternion<T> Divide<T>(Quaternion<T> value1, Quaternion<T> value2)
-        where T : IRootFunctions<T>, ITrigonometricFunctions<T>;
-
-    /// <summary>Divides the specified quaternion by a specified scalar value.</summary>
-    /// <param name="left">The quaternion.</param>
-    /// <param name="divisor">The scalar value.</param>
-    /// <returns>The quaternion that results from the division.</returns>
-    [MethodImpl(MethodImplOptions.AggressiveInlining)]
-    internal static Quaternion<T> Divide<T>(Quaternion<T> left, T divisor)
-        where T : IRootFunctions<T>, ITrigonometricFunctions<T>;
-
-    /// <summary>Calculates the dot product of two quaternions.</summary>
-    /// <param name="quaternion1">The first quaternion.</param>
-    /// <param name="quaternion2">The second quaternion.</param>
-    /// <returns>The dot product.</returns>
-    [MethodImpl(MethodImplOptions.AggressiveInlining)]
-    public static T Dot<T>(Quaternion<T> quaternion1, Quaternion<T> quaternion2)
-        where T : IRootFunctions<T>, ITrigonometricFunctions<T>;
-
-    /// <summary>Returns the inverse of a quaternion.</summary>
-    /// <param name="value">The quaternion.</param>
-    /// <returns>The inverted quaternion.</returns>
-    [MethodImpl(MethodImplOptions.AggressiveInlining)]
-    public static Quaternion<T> Inverse<T>(Quaternion<T> value)
-        where T : IRootFunctions<T>, ITrigonometricFunctions<T>;
-
-    /// <summary>Performs a linear interpolation between two quaternions based on a value that specifies the weighting of the second quaternion.</summary>
-    /// <param name="quaternion1">The first quaternion.</param>
-    /// <param name="quaternion2">The second quaternion.</param>
-    /// <param name="amount">The relative weight of <paramref name="quaternion2" /> in the interpolation.</param>
-    /// <returns>The interpolated quaternion.</returns>
-    public static Quaternion<T> Lerp<T>(Quaternion<T> quaternion1, Quaternion<T> quaternion2, T amount)
-        where T : IRootFunctions<T>, ITrigonometricFunctions<T>, IComparisonOperators<T, T, bool>;
-
-    /// <summary>Returns the quaternion that results from multiplying two quaternions together.</summary>
-    /// <param name="value1">The first quaternion.</param>
-    /// <param name="value2">The second quaternion.</param>
-    /// <returns>The product quaternion.</returns>
-    [MethodImpl(MethodImplOptions.AggressiveInlining)]
-    public static Quaternion<T> Multiply<T>(Quaternion<T> value1, Quaternion<T> value2)
-        where T : IRootFunctions<T>, ITrigonometricFunctions<T>;
-
-    /// <summary>Returns a new quaternion whose values are the product of each pair of elements in specified quaternion and vector.</summary>
-    /// <param name="value1">The quaternion.</param>
-    /// <param name="value2">The vector.</param>
-    /// <returns>The element-wise product vector.</returns>
-    [MethodImpl(MethodImplOptions.AggressiveInlining)]
-    internal static Quaternion<T> Multiply<T>(Quaternion<T> value1, Vector4DF<T> value2)
-        where T : IRootFunctions<T>, ITrigonometricFunctions<T>;
-
-    /// <summary>Returns the quaternion that results from scaling all the components of a specified quaternion by a scalar factor.</summary>
-    /// <param name="value1">The source quaternion.</param>
-    /// <param name="value2">The scalar value.</param>
-    /// <returns>The scaled quaternion.</returns>
-    [MethodImpl(MethodImplOptions.AggressiveInlining)]
-    public static Quaternion<T> Multiply<T>(Quaternion<T> value1, T value2)
-        where T : IRootFunctions<T>, ITrigonometricFunctions<T>;
-
-    /// <summary>Reverses the sign of each component of the quaternion.</summary>
-    /// <param name="value">The quaternion to negate.</param>
-    /// <returns>The negated quaternion.</returns>
-    [MethodImpl(MethodImplOptions.AggressiveInlining)]
-    public static Quaternion<T> Negate<T>(Quaternion<T> value)
-        where T : IRootFunctions<T>, ITrigonometricFunctions<T>;
-
-    /// <summary>Divides each component of a specified <see cref="Quaternion{T}" /> by its length.</summary>
-    /// <param name="value">The quaternion to normalize.</param>
-    /// <returns>The normalized quaternion.</returns>
-    [MethodImpl(MethodImplOptions.AggressiveInlining)]
-    public static Quaternion<T> Normalize<T>(Quaternion<T> value)
-        where T : IRootFunctions<T>, ITrigonometricFunctions<T>;
-
-    /// <summary>Interpolates between two quaternions, using spherical linear interpolation.</summary>
-    /// <param name="quaternion1">The first quaternion.</param>
-    /// <param name="quaternion2">The second quaternion.</param>
-    /// <param name="amount">The relative weight of the second quaternion in the interpolation.</param>
-    /// <returns>The interpolated quaternion.</returns>
-    public static Quaternion<T> Slerp<T>(Quaternion<T> quaternion1, Quaternion<T> quaternion2, T amount)
-        where T : IRootFunctions<T>, ITrigonometricFunctions<T>, IComparisonOperators<T, T, bool>;
-
-    /// <summary>Subtracts each element in a second quaternion from its corresponding element in a first quaternion.</summary>
-    /// <param name="value1">The first quaternion.</param>
-    /// <param name="value2">The second quaternion.</param>
-    /// <returns>The quaternion containing the values that result from subtracting each element in <paramref name="value2" /> from its corresponding element in <paramref name="value1" />.</returns>
-    [MethodImpl(MethodImplOptions.AggressiveInlining)]
-    public static Quaternion<T> Subtract<T>(Quaternion<T> value1, Quaternion<T> value2)
-        where T : IRootFunctions<T>, ITrigonometricFunctions<T>;
-    
-    /// <summary>Calculates the length of the quaternion.</summary>
-    /// <returns>The computed length of the quaternion.</returns>
-    [MethodImpl(MethodImplOptions.AggressiveInlining)]
-    public static T Length<T>(this Quaternion<T> self) where T : IRootFunctions<T>, ITrigonometricFunctions<T>;
-
-    /// <summary>Calculates the squared length of the quaternion.</summary>
-    /// <returns>The length squared of the quaternion.</returns>
-    [MethodImpl(MethodImplOptions.AggressiveInlining)]
-    public static T LengthSquared<T>(this Quaternion<T> self) where T : IRootFunctions<T>, ITrigonometricFunctions<T>;
-}
-```
+A Quaternion struct **must** be defined and match the following requirements:
+- A generic struct with a type parameter `T` which is constrained by `IBinaryFloatingPointIeee754<T>` representing the scalar type
+- Implements IEquatable with itself
+- Contain 4 scalar properties (X, Y, Z, W)
+- Define a Constructor taking 4 scalar values matching the properties
+- Define a Constructor taking a Vector3F<T> and a Scalar, with the vector 3 mapping to X, Y, Z and the Scalar to the W
+- Define a Constructor taking a Vector4F<T>
+- A Vector3F<T> Axis property mapping to (X, Y, Z)
+- A T Angle property mapping to 2 * Acos(W)
+- A ref Indexer which takes an int and returns the components in order
+- An AsSpan function which returns this quaternion as a Span of the generic type
+- An IsIdentity property which returns if this Quaternion matches an Identity Quaternion
+- Define `+`, `-`, `*`, and `/` between two Quaternions
+- Define `*` with `T` multiplying each component by the scalar value returning a new quaternion
+- Define unary `~`
+- A Dot function which takes another Quaternion and returns its the dotproduct between them
+  - A static implementation of this function **must** be available
+- A LengthSquared property which returns the dot product of the quaternion with itself
+- A Length property which returns the Square Root of LengthSquared
+- An Invert function inverts the Quaternion
+  - a static Inverse function **must** be available but it returns the inverse rather than affecting the original
+- A Normalize function which normalizes the Quaternion
+  - A static implemenation of this function must be available but returns the normalized Quaternion rather than affecting the original
+- A Concatenate function which takes another Quaternion and concatenates it with this quaternion
+  - A static implementation of this function **must** be available but it returns a new Quaternion rather than affecting the originals
+- A Conjugate function which returns the conjugate of this quaternion
+  - A static implementation of this function **must** be available
+- A static CreateFromAxisAngle function which takes in a Vector3F<T> and an angle and returns a Quaternion representing that rotation
+- A static CreateFromRotationMatrix function which takes either a Matrix3x3 or Matrix4x4 and returns a Quaternion representing that rotation
+- A static CreateFromYawPitchRoll which takes either each components separately or in a Vector3F<T> and outputs a Quaternion representing that rotation
+- A static Lerp function which takes 2 Quaternions and a Scalar matching the generic type which linearly interpolates between the 2 Quaternions with scalar used as the amount to lerp
+- A static SLerp function which takes 2 Quaternions and a Scalar matching the generic type which Spherical linearly interpolates between the 2 Quaternions with scalar used as the amount to lerp
+- A static Zero Quaternion Property
+- A static Identity Quaternion Property
 
 # Geometric Types
 
@@ -517,16 +334,16 @@ The following Geometric Types are defined:
 - Box3I
 - CircleF
 - CircleI
-- CubeF
-- CubeI
+- Rect3F
+- Rect3I
 - PlaneF
 - PlaneI
 - Ray2F
 - Ray2I
 - Ray3F
 - Ray3I
-- RectangleF
-- RectangleI
+- Rect2F
+- Rect2I
 - SphereF
 - SphereI
 
@@ -540,650 +357,10 @@ Each type **must** include the following:
 - For Planes and Rays, Normalize functions
 - For Planes include the following static functions
   - CreateFromVerticies
+  - CreateFromVertexAndNormal
   - Dot
     - with a Vector4
   - DotCoordinate and DotNormal
     - with a Vector3
   - Transform
     - With a Matrix4x4 or Quaternion, if relevant
-
-# Vector Interface Definitions
-
-The following interfaces are defined for Vectors:
-
-```cs
-public interface IVector
-{
-    /// <summary>
-    /// The type of scalars in this vector type.
-    /// </summary>
-    protected static abstract Type ScalarType { get; }
-    
-    /// <summary>
-    /// The amount of scalars in this vector type.
-    /// </summary>
-    protected internal static abstract int Count { get; }
-}
-
-public interface IVectorEquatable<TVector, TScalar>
-    : IEquatable<TVector>
-    where TVector : IVector<TVector, TScalar>
-    where TScalar : INumberBase<TScalar>
-{
-    public TVector ScalarsEqual(TVector other);
-}
-
-public interface IVector<TVector, TScalar> :
-    IVector,
-    IAdditionOperators<TVector, TVector, TVector>,
-    IAdditiveIdentity<TVector, TVector>,
-    IDecrementOperators<TVector>,
-    IDivisionOperators<TVector, TVector, TVector>,
-    IEqualityOperators<TVector, TVector, bool>,
-    IIncrementOperators<TVector>,
-    IMultiplicativeIdentity<TVector, TVector>,
-    IMultiplyOperators<TVector, TVector, TVector>,
-    ISpanFormattable,
-    ISpanParsable<TVector>,
-    ISubtractionOperators<TVector, TVector, TVector>,
-    IUnaryPlusOperators<TVector, TVector>,
-    IUnaryNegationOperators<TVector, TVector>,
-    IUtf8SpanFormattable,
-    IUtf8SpanParsable<TVector>,
-    IReadOnlyList<TScalar>,
-    IVectorEquatable<TVector, TScalar>
-    where TVector : IVector<TVector, TScalar>
-    where TScalar : INumberBase<TScalar>
-{
-    static Type IVector.ScalarType => typeof(TScalar);
-
-    static virtual TVector Zero => TVector.Create(TScalar.Zero);
-
-    static virtual TVector One => TVector.Create(TScalar.One);
-
-    int IReadOnlyCollection<TScalar>.Count => TVector.Count;
-
-    TScalar IReadOnlyList<TScalar>.this[int index];
-    
-    public new TScalar this[int index];
-    
-    static abstract ReadOnlySpan<TScalar> AsSpan(TVector vec);
-
-    static TVector IAdditiveIdentity<TVector, TVector>.AdditiveIdentity => TVector.Zero;
-    static TVector IMultiplicativeIdentity<TVector, TVector>.MultiplicativeIdentity => TVector.One;
-
-    static TVector IDecrementOperators<TVector>.operator --(TVector value) => value - TVector.One;
-    static TVector IIncrementOperators<TVector>.operator ++(TVector value) => value + TVector.One;
-
-    static TVector IDecrementOperators<TVector>.operator checked --(TVector value) => value - TVector.One;
-    static TVector IIncrementOperators<TVector>.operator checked ++(TVector value) => value + TVector.One;
-
-    static TVector IUnaryPlusOperators<TVector, TVector>.operator +(TVector value) => value;
-
-    /// <summary>Divides two values together to compute their quotient.</summary>
-    /// <param name="left">The value which <paramref name="right" /> divides.</param>
-    /// <param name="right">The value which divides <paramref name="left" />.</param>
-    /// <returns>The quotient of <paramref name="left" /> divided-by <paramref name="right" />.</returns>
-    static abstract TVector operator /(TVector left, TScalar right);
-
-    /// <summary>Divides two values together to compute their quotient.</summary>
-    /// <param name="left">The value which <paramref name="right" /> divides.</param>
-    /// <param name="right">The value which divides <paramref name="left" />.</param>
-    /// <returns>The quotient of <paramref name="left" /> divided-by <paramref name="right" />.</returns>
-    /// <exception cref="OverflowException">The quotient of <paramref name="left" /> divided-by <paramref name="right" /> is not representable by <typeparamref name="TVector" />.</exception>
-    static virtual TVector operator checked /(TVector left, TScalar right) => left / right;
-
-    /// <summary>Multiplies two values together to compute their product.</summary>
-    /// <param name="left">The value which <paramref name="right" /> multiplies.</param>
-    /// <param name="right">The value which multiplies <paramref name="left" />.</param>
-    /// <returns>The product of <paramref name="left" /> multiplied-by <paramref name="right" />.</returns>
-    static abstract TVector operator *(TVector left, TScalar right);
-
-    /// <summary>Multiplies two values together to compute their product.</summary>
-    /// <param name="left">The value which <paramref name="right" /> multiplies.</param>
-    /// <param name="right">The value which multiplies <paramref name="left" />.</param>
-    /// <returns>The product of <paramref name="left" /> multiplied-by <paramref name="right" />.</returns>
-    /// <exception cref="OverflowException">The product of <paramref name="left" /> multiplied-by <paramref name="right" /> is not representable by <typeparamref name="TVector" />.</exception>
-    static virtual TVector operator checked *(TVector left, TScalar right) => left * right;
-
-    /// <summary>Multiplies two values together to compute their product.</summary>
-    /// <param name="right">The value which <paramref name="left1" /> multiplies.</param>
-    /// <param name="left1">The value which multiplies <paramref name="right" />.</param>
-    /// <returns>The product of <paramref name="right" /> multiplied-by <paramref name="left1" />.</returns>
-    static virtual TVector operator *(TScalar left1, TVector right) => right * left1;
-
-    /// <summary>Multiplies two values together to compute their product.</summary>
-    /// <param name="right">The value which <paramref name="left" /> multiplies.</param>
-    /// <param name="left">The value which multiplies <paramref name="right" />.</param>
-    /// <returns>The product of <paramref name="right" /> multiplied-by <paramref name="left" />.</returns>
-    /// <exception cref="OverflowException">The product of <paramref name="right" /> multiplied-by <paramref name="left" /> is not representable by <typeparamref name="TVector" />.</exception>
-    static virtual TVector operator checked *(TScalar left, TVector right) => right * left;
-
-    /// <summary>Returns the string representation of the current instance using the specified format string to format individual elements.</summary>
-    /// <param name="format">A standard or custom numeric format string that defines the format of individual elements.</param>
-    /// <returns>The string representation of the current instance.</returns>
-    /// <remarks>This method returns a string in which each element of the vector is formatted using <paramref name="format" /> and the current culture's formatting conventions. The "&lt;" and "&gt;" characters are used to begin and end the string, and the current culture's <see cref="NumberFormatInfo.NumberGroupSeparator" /> property followed by a space is used to separate each element.</remarks>
-    /// <related type="Article" href="/dotnet/standard/base-types/standard-numeric-format-strings">Standard Numeric Format Strings</related>
-    /// <related type="Article" href="/dotnet/standard/base-types/custom-numeric-format-strings">Custom Numeric Format Strings</related>
-    public string ToString([StringSyntax(StringSyntaxAttribute.NumericFormat)] string? format) => ToString(format, null);
-
-    static abstract TVector Create(TScalar scalar);
-    static abstract TVector Create(ReadOnlySpan<TScalar> values);
-
-    static abstract TVector GetUnitVector(uint dimension);
-
-    TScalar LengthSquared();
-    static virtual TVector Multiply(TVector left, TVector right) => left * right;
-    static virtual TVector Multiply(TVector left, TScalar right) => left * right;
-    static virtual TVector Multiply(TScalar left, TVector right) => left * right;
-    static virtual TVector Negate(TVector value) => -value;
-    static virtual TVector Subtract(TVector left, TVector right) => left - right;
-    static virtual TVector Add(TVector left, TVector right) => left + right;
-    static virtual TVector Divide(TVector left, TVector right) => left / right;
-    static virtual TVector Divide(TVector left, TScalar divisor) => left / divisor;
-    static virtual TVector Clamp(TVector value1, TScalar min, TScalar max) => TVector.Clamp(value1, TVector.Create(min), TVector.Create(max));
-    static abstract TVector Clamp(TVector value1, TVector min, TVector max);
-    static abstract TScalar DistanceSquared(TVector value1, TVector value2);
-    static abstract TScalar Dot(TVector vector1, TVector vector2);
-    static abstract TVector Max(TVector value1, TVector value2);
-    static abstract TVector Min(TVector value1, TVector value2);
-    static virtual TVector Max(TVector value1, TScalar value2) => TVector.Max(value1, TVector.Create(value2));
-    static virtual TVector Min(TVector value1, TScalar value2) => TVector.Min(value1, TVector.Create(value2));
-    static abstract TVector Abs(TVector value);
-    
-    /// <summary>Copies the elements of the vector to a specified array.</summary>
-    /// <param name="vector">The vector to be copied.</param>
-    /// <param name="array">The destination array.</param>
-    /// <remarks><paramref name="array" /> must have enough elements to fit all scalars in this vector. The method copies the vector's elements starting at index 0.</remarks>
-    /// <exception cref="NullReferenceException"><paramref name="array" /> is <see langword="null" />.</exception>
-    /// <exception cref="ArgumentException">The number of elements in the current instance is greater than in the array.</exception>
-    /// <exception cref="RankException"><paramref name="array" /> is multidimensional.</exception>
-    static abstract void CopyTo(TVector vector, TScalar[] array);
-
-    /// <summary>Copies the elements of the vector to a specified array starting at a specified index position.</summary>
-    /// <param name="vector">The vector to be copied.</param>
-    /// <param name="array">The destination array.</param>
-    /// <param name="index">The index at which to copy the first element of the vector.</param>
-    /// <remarks><paramref name="array" /> must have a sufficient number of elements to accommodate the vector elements. In other words, elements <paramref name="index" /> through <paramref name="index" /> + 2 must already exist in <paramref name="array" />.</remarks>
-    /// <exception cref="NullReferenceException"><paramref name="array" /> is <see langword="null" />.</exception>
-    /// <exception cref="ArgumentException">The number of elements in the current instance is greater than in the array.</exception>
-    /// <exception cref="ArgumentOutOfRangeException"><paramref name="index" /> is less than zero.
-    /// -or-
-    /// <paramref name="index" /> is greater than or equal to the array length.</exception>
-    /// <exception cref="RankException"><paramref name="array" /> is multidimensional.</exception>
-    static abstract void CopyTo(TVector vector, TScalar[] array, int index);
-
-    /// <summary>Copies the vector to the given <see cref="Span{TScalar}" />. The length of the destination span must be at least enough to fit all scalars in this vector.</summary>
-    /// <param name="vector">The vector to be copied.</param>
-    /// <param name="destination">The destination span which the values are copied into.</param>
-    /// <exception cref="ArgumentException">If number of elements in source vector is greater than those available in destination span.</exception>
-    static abstract void CopyTo(TVector vector, Span<TScalar> destination);
-
-    /// <summary>Attempts to copy the vector to the given <see cref="Span{Single}" />. The length of the destination span must be at least enough to fit all scalars in this vector.</summary>
-    /// <param name="vector">The vector to be copied.</param>
-    /// <param name="destination">The destination span which the values are copied into.</param>
-    /// <returns><see langword="true" /> if the source vector was successfully copied to <paramref name="destination" />. <see langword="false" /> if <paramref name="destination" /> is not large enough to hold the source vector.</returns>
-    static abstract bool TryCopyTo(TVector vector, Span<TScalar> destination);
-
-    #region Conversion
-
-    /// <summary>Creates an instance of the current type from a value, throwing an overflow exception for any values that fall outside the representable range of the current type.</summary>
-    /// <typeparam name="TOther">The type of <paramref name="value" />.</typeparam>
-    /// <param name="value">The value which is used to create the instance of <typeparamref name="TVector" />.</param>
-    /// <returns>An instance of <typeparamref name="TVector" /> created from <paramref name="value" />.</returns>
-    /// <exception cref="NotSupportedException"><typeparamref name="TOther" /> is not supported.</exception>
-    /// <exception cref="OverflowException"><paramref name="value" /> is not representable by <typeparamref name="TVector" />.</exception>
-    [MethodImpl(MethodImplOptions.AggressiveInlining)]
-    static virtual TVector CreateChecked<TOther, TOtherScalar>(TOther value)
-#nullable disable
-        where TOther : IVector<TOther, TOtherScalar> where TOtherScalar : INumberBase<TOtherScalar>;
-#nullable restore
-
-    /// <summary>Creates an instance of the current type from a value, saturating any values that fall outside the representable range of the current type.</summary>
-    /// <typeparam name="TOther">The type of <paramref name="value" />.</typeparam>
-    /// <param name="value">The value which is used to create the instance of <typeparamref name="TVector" />.</param>
-    /// <returns>An instance of <typeparamref name="TVector" /> created from <paramref name="value" />, saturating if <paramref name="value" /> falls outside the representable range of <typeparamref name="TVector" />.</returns>
-    /// <exception cref="NotSupportedException"><typeparamref name="TOther" /> is not supported.</exception>
-    [MethodImpl(MethodImplOptions.AggressiveInlining)]
-    static virtual TVector CreateSaturating<TOther, TOtherScalar>(TOther value)
-#nullable disable
-        where TOther : IVector<TOther, TOtherScalar> where TOtherScalar : INumberBase<TOtherScalar>;
-#nullable restore
-
-    /// <summary>Creates an instance of the current type from a value, truncating any values that fall outside the representable range of the current type.</summary>
-    /// <typeparam name="TOther">The type of <paramref name="value" />.</typeparam>
-    /// <param name="value">The value which is used to create the instance of <typeparamref name="TVector" />.</param>
-    /// <returns>An instance of <typeparamref name="TVector" /> created from <paramref name="value" />, truncating if <paramref name="value" /> falls outside the representable range of <typeparamref name="TVector" />.</returns>
-    /// <exception cref="NotSupportedException"><typeparamref name="TOther" /> is not supported.</exception>
-    [MethodImpl(MethodImplOptions.AggressiveInlining)]
-    static virtual TVector CreateTruncating<TOther, TOtherScalar>(TOther value)
-#nullable disable
-        where TOther : IVector<TOther, TOtherScalar> where TOtherScalar : INumberBase<TOtherScalar>;
-#nullable restore
-	
-    /// <summary>Tries to convert a value to an instance of the current type, throwing an overflow exception for any values that fall outside the representable range of the current type.</summary>
-    /// <typeparam name="TOther">The type of <paramref name="value" />.</typeparam>
-    /// <param name="value">The value which is used to create the instance of <typeparamref name="TVector" />.</param>
-    /// <param name="result">On return, contains an instance of <typeparamref name="TVector" /> converted from <paramref name="value" />.</param>
-    /// <returns><c>false</c> if <typeparamref name="TOther" /> is not supported; otherwise, <c>true</c>.</returns>
-    /// <exception cref="OverflowException"><paramref name="value" /> is not representable by <typeparamref name="TVector" />.</exception>
-    protected static abstract bool TryConvertFromChecked<TOther, TOtherScalar>(TOther value, [MaybeNullWhen(false)] out TVector result)
-#nullable disable
-        where TOther : IVector<TOther, TOtherScalar> where TOtherScalar : INumberBase<TOtherScalar>;
-#nullable restore
-
-    /// <summary>Tries to convert a value to an instance of the current type, saturating any values that fall outside the representable range of the current type.</summary>
-    /// <typeparam name="TOther">The type of <paramref name="value" />.</typeparam>
-    /// <param name="value">The value which is used to create the instance of <typeparamref name="TVector" />.</param>
-    /// <param name="result">On return, contains an instance of <typeparamref name="TVector" /> converted from <paramref name="value" />.</param>
-    /// <returns><c>false</c> if <typeparamref name="TOther" /> is not supported; otherwise, <c>true</c>.</returns>
-    protected static abstract bool TryConvertFromSaturating<TOther, TOtherScalar>(TOther value, [MaybeNullWhen(false)] out TVector result)
-#nullable disable
-        where TOther : IVector<TOther, TOtherScalar> where TOtherScalar : INumberBase<TOtherScalar>;
-#nullable restore
-
-    /// <summary>Tries to convert a value to an instance of the current type, truncating any values that fall outside the representable range of the current type.</summary>
-    /// <typeparam name="TOther">The type of <paramref name="value" />.</typeparam>
-    /// <param name="value">The value which is used to create the instance of <typeparamref name="TVector" />.</param>
-    /// <param name="result">On return, contains an instance of <typeparamref name="TVector" /> converted from <paramref name="value" />.</param>
-    /// <returns><c>false</c> if <typeparamref name="TOther" /> is not supported; otherwise, <c>true</c>.</returns>
-    protected static abstract bool TryConvertFromTruncating<TOther, TOtherScalar>(TOther value, [MaybeNullWhen(false)] out TVector result)
-#nullable disable
-        where TOther : IVector<TOther, TOtherScalar> where TOtherScalar : INumberBase<TOtherScalar>;
-#nullable restore
-
-    /// <summary>Tries to convert an instance of the current type to another type, throwing an overflow exception for any values that fall outside the representable range of the current type.</summary>
-    /// <typeparam name="TOther">The type to which <paramref name="value" /> should be converted.</typeparam>
-    /// <param name="value">The value which is used to create the instance of <typeparamref name="TOther" />.</param>
-    /// <param name="result">On return, contains an instance of <typeparamref name="TOther" /> converted from <paramref name="value" />.</param>
-    /// <returns><c>false</c> if <typeparamref name="TOther" /> is not supported; otherwise, <c>true</c>.</returns>
-    /// <exception cref="OverflowException"><paramref name="value" /> is not representable by <typeparamref name="TOther" />.</exception>
-    protected static abstract bool TryConvertToChecked<TOther, TOtherScalar>(TVector value, [MaybeNullWhen(false)] out TOther result)
-#nullable disable
-        where TOther : IVector<TOther, TOtherScalar> where TOtherScalar : INumberBase<TOtherScalar>;
-#nullable restore
-
-    /// <summary>Tries to convert an instance of the current type to another type, saturating any values that fall outside the representable range of the current type.</summary>
-    /// <typeparam name="TOther">The type to which <paramref name="value" /> should be converted.</typeparam>
-    /// <param name="value">The value which is used to create the instance of <typeparamref name="TOther" />.</param>
-    /// <param name="result">On return, contains an instance of <typeparamref name="TOther" /> converted from <paramref name="value" />.</param>
-    /// <returns><c>false</c> if <typeparamref name="TOther" /> is not supported; otherwise, <c>true</c>.</returns>
-    protected static abstract bool TryConvertToSaturating<TOther, TOtherScalar>(TVector value, [MaybeNullWhen(false)] out TOther result)
-#nullable disable
-        where TOther : IVector<TOther, TOtherScalar> where TOtherScalar : INumberBase<TOtherScalar>;
-#nullable restore
-
-    /// <summary>Tries to convert an instance of the current type to another type, truncating any values that fall outside the representable range of the current type.</summary>
-    /// <typeparam name="TOther">The type to which <paramref name="value" /> should be converted.</typeparam>
-    /// <param name="value">The value which is used to create the instance of <typeparamref name="TOther" />.</param>
-    /// <param name="result">On return, contains an instance of <typeparamref name="TOther" /> converted from <paramref name="value" />.</param>
-    /// <returns><c>false</c> if <typeparamref name="TOther" /> is not supported; otherwise, <c>true</c>.</returns>
-    protected static abstract bool TryConvertToTruncating<TOther, TOtherScalar>(TVector value, [MaybeNullWhen(false)] out TOther result)
-#nullable disable
-        where TOther : IVector<TOther, TOtherScalar> where TOtherScalar : INumberBase<TOtherScalar>;
-#nullable restore
-
-
-    #endregion
-}
-
-public interface IModulusVector<TVector, TScalar> :
-    IVector<TVector, TScalar>,
-    IModulusOperators<TVector, TVector, TVector>
-    where TVector : IModulusVector<TVector, TScalar>
-    where TScalar : INumberBase<TScalar>, IModulusOperators<TScalar, TScalar, TScalar>
-{
-    static abstract TVector operator %(TVector left, TScalar right);
-
-    static virtual TVector Remainder(TVector left, TVector right) => left % right;
-    static virtual TVector Remainder(TVector left, TScalar right) => left % right;
-}
-
-public interface INumberVector<TVector, TScalar> :
-    IModulusVector<TVector, TScalar>
-    where TVector : INumberVector<TVector, TScalar>
-    where TScalar : INumber<TScalar>
-{
-    static abstract TVector CopySign(TVector value, TVector sign);
-    static abstract TVector CopySign(TVector value, TScalar sign);
-
-    static abstract TVector Sign(TVector value);
-}
-
-public interface IBinaryNumberVector<TVector, TScalar> :
-    INumberVector<TVector, TScalar>,
-    IBitwiseOperators<TVector, TVector, TVector>
-    where TVector : IBinaryNumberVector<TVector, TScalar>
-    where TScalar : IBinaryNumber<TScalar>
-{
-    static virtual TVector AllBitsSet => TVector.Create(TScalar.AllBitsSet);
-    
-    /// <summary>Computes the log2 of a value.</summary>
-    /// <param name="value">The value whose log2 is to be computed.</param>
-    /// <returns>The log2 of <paramref name="value" />.</returns>
-    static abstract TVector Log2(TVector value);
-}
-
-public interface IBinaryIntegerVector<TVector, TScalar> :
-    IBinaryNumberVector<TVector, TScalar>
-    where TVector : IBinaryIntegerVector<TVector, TScalar>
-    where TScalar : IBinaryInteger<TScalar>
-{
-    /// <summary>Computes the quotient and remainder of two values.</summary>
-    /// <param name="left">The value which <paramref name="right" /> divides.</param>
-    /// <param name="right">The value which divides <paramref name="left" />.</param>
-    /// <returns>The quotient and remainder of <paramref name="left" /> divided-by <paramref name="right" />.</returns>
-    static virtual (TVector Quotient, TVector Remainder) DivRem(TVector left, TVector right);
-
-    /// <summary>Computes the number of bits that are set in a value.</summary>
-    /// <param name="value">The value whose set bits are to be counted.</param>
-    /// <returns>The number of set bits in <paramref name="value" />.</returns>
-    static abstract TVector PopCount(TVector value);
-
-    /// <summary>Tries to read a two's complement number from a span, in big-endian format, and convert it to an instance of the current type.</summary>
-    /// <param name="source">The span from which the two's complement number should be read.</param>
-    /// <param name="isUnsigned"><c>true</c> if <paramref name="source" /> represents an unsigned two's complement number; otherwise, <c>false</c> to indicate it represents a signed two's complement number.</param>
-    /// <param name="value">On return, contains the value read from <paramref name="source" /> or <c>default</c> if a value could not be read.</param>
-    /// <returns><c>true</c> if the value was succesfully read from <paramref name="source" />; otherwise, <c>false</c>.</returns>
-    static abstract bool TryReadBigEndian(ReadOnlySpan<byte> source, bool isUnsigned, [MaybeNullWhen(false)] out TVector value);
-
-    /// <summary>Tries to read a two's complement number from a span, in little-endian format, and convert it to an instance of the current type.</summary>
-    /// <param name="source">The span from which the two's complement number should be read.</param>
-    /// <param name="isUnsigned"><c>true</c> if <paramref name="source" /> represents an unsigned two's complement number; otherwise, <c>false</c> to indicate it represents a signed two's complement number.</param>
-    /// <param name="value">On return, contains the value read from <paramref name="source" /> or <c>default</c> if a value could not be read.</param>
-    /// <returns><c>true</c> if the value was succesfully read from <paramref name="source" />; otherwise, <c>false</c>.</returns>
-    static abstract bool TryReadLittleEndian(ReadOnlySpan<byte> source, bool isUnsigned, [MaybeNullWhen(false)] out TVector value);
-
-    /// <summary>Reads a two's complement number from a given array, in big-endian format, and converts it to an instance of the current type.</summary>
-    /// <param name="source">The array from which the two's complement number should be read.</param>
-    /// <param name="isUnsigned"><c>true</c> if <paramref name="source" /> represents an unsigned two's complement number; otherwise, <c>false</c> to indicate it represents a signed two's complement number.</param>
-    /// <returns>The value read from <paramref name="source" />.</returns>
-    /// <exception cref="OverflowException"><paramref name="source" /> is not representable by <typeparamref name="TVector" /></exception>
-    static virtual TVector ReadBigEndian(byte[] source, bool isUnsigned);
-
-    /// <summary>Reads a two's complement number from a given array, in big-endian format, and converts it to an instance of the current type.</summary>
-    /// <param name="source">The array from which the two's complement number should be read.</param>
-    /// <param name="startIndex">The starting index from which the value should be read.</param>
-    /// <param name="isUnsigned"><c>true</c> if <paramref name="source" /> represents an unsigned two's complement number; otherwise, <c>false</c> to indicate it represents a signed two's complement number.</param>
-    /// <returns>The value read from <paramref name="source" /> starting at <paramref name="startIndex" />.</returns>
-    /// <exception cref="OverflowException"><paramref name="source" /> is not representable by <typeparamref name="TVector" /></exception>
-    static virtual TVector ReadBigEndian(byte[] source, int startIndex, bool isUnsigned);
-
-    /// <summary>Reads a two's complement number from a given span, in big-endian format, and converts it to an instance of the current type.</summary>
-    /// <param name="source">The array from which the two's complement number should be read.</param>
-    /// <param name="isUnsigned"><c>true</c> if <paramref name="source" /> represents an unsigned two's complement number; otherwise, <c>false</c> to indicate it represents a signed two's complement number.</param>
-    /// <returns>The value read from <paramref name="source" />.</returns>
-    /// <exception cref="OverflowException"><paramref name="source" /> is not representable by <typeparamref name="TVector" /></exception>
-    static virtual TVector ReadBigEndian(ReadOnlySpan<byte> source, bool isUnsigned);
-
-    /// <summary>Reads a two's complement number from a given array, in little-endian format, and converts it to an instance of the current type.</summary>
-    /// <param name="source">The array from which the two's complement number should be read.</param>
-    /// <param name="isUnsigned"><c>true</c> if <paramref name="source" /> represents an unsigned two's complement number; otherwise, <c>false</c> to indicate it represents a signed two's complement number.</param>
-    /// <returns>The value read from <paramref name="source" />.</returns>
-    /// <exception cref="OverflowException"><paramref name="source" /> is not representable by <typeparamref name="TVector" /></exception>
-    static virtual TVector ReadLittleEndian(byte[] source, bool isUnsigned);
-
-    /// <summary>Reads a two's complement number from a given array, in little-endian format, and converts it to an instance of the current type.</summary>
-    /// <param name="source">The array from which the two's complement number should be read.</param>
-    /// <param name="startIndex">The starting index from which the value should be read.</param>
-    /// <param name="isUnsigned"><c>true</c> if <paramref name="source" /> represents an unsigned two's complement number; otherwise, <c>false</c> to indicate it represents a signed two's complement number.</param>
-    /// <returns>The value read from <paramref name="source" /> starting at <paramref name="startIndex" />.</returns>
-    /// <exception cref="OverflowException"><paramref name="source" /> is not representable by <typeparamref name="TVector" /></exception>
-    static virtual TVector ReadLittleEndian(byte[] source, int startIndex, bool isUnsigned);
-
-    /// <summary>Reads a two's complement number from a given span, in little-endian format, and converts it to an instance of the current type.</summary>
-    /// <param name="source">The array from which the two's complement number should be read.</param>
-    /// <param name="isUnsigned"><c>true</c> if <paramref name="source" /> represents an unsigned two's complement number; otherwise, <c>false</c> to indicate it represents a signed two's complement number.</param>
-    /// <returns>The value read from <paramref name="source" />.</returns>
-    /// <exception cref="OverflowException"><paramref name="source" /> is not representable by <typeparamref name="TVector" /></exception>
-    static virtual TVector ReadLittleEndian(ReadOnlySpan<byte> source, bool isUnsigned);
-
-    /// <summary>Gets the number of bytes that will be written as part of <see cref="TryWriteLittleEndian(Span{byte}, out int)" />.</summary>
-    /// <returns>The number of bytes that will be written as part of <see cref="TryWriteLittleEndian(Span{byte}, out int)" />.</returns>
-    int GetByteCount();
-
-    /// <summary>Gets the length, in bits, of the shortest two's complement representation of the current value.</summary>
-    /// <returns>The length, in bits, of the shortest two's complement representation of the current value.</returns>
-    int GetShortestBitLength() => GetByteCount() * 8;
-
-    /// <summary>Tries to write the current value, in big-endian format, to a given span.</summary>
-    /// <param name="destination">The span to which the current value should be written.</param>
-    /// <param name="bytesWritten">The number of bytes written to <paramref name="destination" />.</param>
-    /// <returns><c>true</c> if the value was successfully written to <paramref name="destination" />; otherwise, <c>false</c>.</returns>
-    bool TryWriteBigEndian(Span<byte> destination, out int bytesWritten);
-
-    /// <summary>Tries to write the current value, in little-endian format, to a given span.</summary>
-    /// <param name="destination">The span to which the current value should be written.</param>
-    /// <param name="bytesWritten">The number of bytes written to <paramref name="destination" />.</param>
-    /// <returns><c>true</c> if the value was successfully written to <paramref name="destination" />; otherwise, <c>false</c>.</returns>
-    bool TryWriteLittleEndian(Span<byte> destination, out int bytesWritten);
-
-    /// <summary>Writes the current value, in big-endian format, to a given array.</summary>
-    /// <param name="destination">The array to which the current value should be written.</param>
-    /// <returns>The number of bytes written to <paramref name="destination" />.</returns>
-    int WriteBigEndian(byte[] destination);
-
-    /// <summary>Writes the current value, in big-endian format, to a given array.</summary>
-    /// <param name="destination">The array to which the current value should be written.</param>
-    /// <param name="startIndex">The starting index at which the value should be written.</param>
-    /// <returns>The number of bytes written to <paramref name="destination" /> starting at <paramref name="startIndex" />.</returns>
-    int WriteBigEndian(byte[] destination, int startIndex);
-
-    /// <summary>Writes the current value, in big-endian format, to a given span.</summary>
-    /// <param name="destination">The span to which the current value should be written.</param>
-    /// <returns>The number of bytes written to <paramref name="destination" />.</returns>
-    int WriteBigEndian(Span<byte> destination);
-
-    /// <summary>Writes the current value, in little-endian format, to a given array.</summary>
-    /// <param name="destination">The array to which the current value should be written.</param>
-    /// <returns>The number of bytes written to <paramref name="destination" />.</returns>
-    int WriteLittleEndian(byte[] destination);
-
-    /// <summary>Writes the current value, in little-endian format, to a given array.</summary>
-    /// <param name="destination">The array to which the current value should be written.</param>
-    /// <param name="startIndex">The starting index at which the value should be written.</param>
-    /// <returns>The number of bytes written to <paramref name="destination" /> starting at <paramref name="startIndex" />.</returns>
-    int WriteLittleEndian(byte[] destination, int startIndex);
-
-    /// <summary>Writes the current value, in little-endian format, to a given span.</summary>
-    /// <param name="destination">The span to which the current value should be written.</param>
-    /// <returns>The number of bytes written to <paramref name="destination" />.</returns>
-    int WriteLittleEndian(Span<byte> destination);
-}
-
-public interface IFloatingPointVector<TVector, TScalar> :
-    INumberVector<TVector, TScalar>
-    // IHyperbolicFunctions<TVector>,
-    // ITrigonometricFunctions<TVector>,
-    // ILogarithmicFunctions<TVector>,
-    // IExponentialFunctions<TVector>,
-    // IPowerFunctions<TVector>,
-    // IRootFunctions<TVector>
-    where TVector : IFloatingPointVector<TVector, TScalar>
-    where TScalar : IBinaryFloatingPointIeee754<TScalar>
-{
-    TScalar Length();
-
-    static abstract TVector Normalize(TVector value);
-
-    static virtual TScalar Distance(TVector value1, TVector value2);
- 
-    static abstract TVector Lerp(TVector value1, TVector value2, TVector amount);
-    static virtual TVector Lerp(TVector value1, TVector value2, TScalar amount) => TVector.Lerp(value1, value2, TVector.Create(amount));
-    static abstract TVector LerpClamped(TVector value1, TVector value2, TVector amount);
-    static virtual TVector LerpClamped(TVector value1, TVector value2, TScalar amount) => TVector.LerpClamped(value1, value2, TVector.Create(amount));
-    static abstract TVector Reflect(TVector vector, TVector normal);
-    static abstract TVector Sqrt(TVector value);
-    
-    // Equivalent implementing IHyperbolicFunctions<System.Runtime.Intrinsics.Vector3>
-    static abstract TVector Acosh(TVector x);
-    static abstract TVector Asinh(TVector x);
-    static abstract TVector Atanh(TVector x);
-    static abstract TVector Cosh(TVector x);
-    static abstract TVector Sinh(TVector x);
-    static abstract TVector Tanh(TVector x);
-
-    // Equivalent implementing ITrigonometricFunctions<System.Runtime.Intrinsics.Vector3>
-    static abstract TVector Acos(TVector x);
-    static abstract TVector AcosPi(TVector x);
-    static abstract TVector Asin(TVector x);
-    static abstract TVector AsinPi(TVector x);
-    static abstract TVector Atan(TVector x);
-    static abstract TVector AtanPi(TVector x);
-    static abstract TVector Cos(TVector x);
-    static abstract TVector CosPi(TVector x);
-    static abstract TVector DegreesToRadians(TVector degrees);
-    static abstract TVector RadiansToDegrees(TVector radians);
-    static abstract TVector Sin(TVector x);
-    static abstract TVector SinPi(TVector x);
-    static abstract TVector Tan(TVector x);
-    static abstract TVector TanPi(TVector x);
-    static abstract (TVector Sin, TVector Cos) SinCos(TVector x);
-    static abstract (TVector SinPi, TVector CosPi) SinCosPi(TVector x);
-
-    // Equivalent implementing ILogarithmicFunctions<System.Runtime.Intrinsics.Vector3>
-    static abstract TVector Log(TVector x);
-    static abstract TVector Log(TVector x, TVector newBase);
-    static abstract TVector Log(TVector x, TScalar newBase);
-    static abstract TVector LogP1(TVector x);
-    static abstract TVector Log2(TVector x);
-    static abstract TVector Log2P1(TVector x);
-    static abstract TVector Log10(TVector x);
-    static abstract TVector Log10P1(TVector x);
-
-    // Equivalent implementing IExponentialFunctions<System.Runtime.Intrinsics.Vector3>
-    static abstract TVector Exp(TVector x);
-    static abstract TVector ExpM1(TVector x);
-    static abstract TVector Exp2(TVector x);
-    static abstract TVector Exp2M1(TVector x);
-    static abstract TVector Exp10(TVector x);
-    static abstract TVector Exp10M1(TVector x);
-
-    // Equivalent implementing IPowerFunctions<System.Runtime.Intrinsics.Vector3>
-    static abstract TVector Pow(TVector x, TVector y);
-    static abstract TVector Pow(TVector x, TScalar y);
-
-    // Equivalent implementing IRootFunctions<System.Runtime.Intrinsics.Vector3>
-    static abstract TVector Cbrt(TVector x);
-    static abstract TVector Hypot(TVector x, TVector y);
-    static abstract TVector Hypot(TVector x, TScalar y);
-    static abstract TVector RootN(TVector x, int n);
-
-    // IFloatingPoint<TVector>
-    static abstract TVector Round(TVector x);
-    static abstract TVector Round(TVector x, int digits);
-    static abstract TVector Round(TVector x, MidpointRounding mode);
-    static abstract TVector Round(TVector x, int digits, MidpointRounding mode);
-    static abstract TVector Truncate(TVector x);
-
-    // IFloatingPointIeee754<TVector>
-    static abstract TVector Atan2(TVector x, TVector y);
-    static abstract TVector Atan2Pi(TVector x, TVector y);
-    static abstract TVector Atan2(TVector x, TScalar y);
-    static abstract TVector Atan2Pi(TVector x, TScalar y);
-    static abstract TVector BitDecrement(TVector x);
-    static abstract TVector BitIncrement(TVector x);
-    static abstract TVector FusedMultiplyAdd(TVector left, TVector right, TVector addend);
-    static virtual TVector FusedMultiplyAdd(TVector left, TScalar right, TVector addend) => TVector.FusedMultiplyAdd(left, TVector.Create(right), addend); 
-    static virtual TVector FusedMultiplyAdd(TVector left, TVector right, TScalar addend) => TVector.FusedMultiplyAdd(left, right, TVector.Create(addend)); 
-    static virtual TVector FusedMultiplyAdd(TVector left, TScalar right, TScalar addend) => TVector.FusedMultiplyAdd(left, TVector.Create(right), TVector.Create(addend));
-    static abstract TVector ReciprocalEstimate(TVector x);
-    static abstract TVector ReciprocalSqrtEstimate(TVector x);
-
-    // IFloatingPointIeee754<TVector>
-    static virtual TNewVector ILogB<TNewVector>(TVector x) where TNewVector : IVector<TNewVector, int> => TVector.ILogB<TNewVector, int>(x);
-    static abstract TNewVector ILogB<TNewVector, TInt>(TVector x) where TNewVector : IVector<TNewVector, TInt> where TInt : IBinaryInteger<TInt>;
-    static abstract TVector ScaleB(TVector x, Vector2D<int> n);
-    static abstract TVector ScaleB(TVector x, int n);
-    static virtual TNewVector RoundToInt<TNewVector>(TVector vector) where TNewVector : IVector<TNewVector, int> => TVector.RoundToInt<TNewVector, int>(vector);
-    static virtual TNewVector FloorToInt<TNewVector>(TVector vector) where TNewVector : IVector<TNewVector, int> => TVector.RoundToInt<TNewVector, int>(vector);
-    static virtual TNewVector CeilingToInt<TNewVector>(TVector vector) where TNewVector : IVector<TNewVector, int> => TVector.RoundToInt<TNewVector, int>(vector);
-    static abstract TNewVector RoundToInt<TNewVector, TInt>(TVector vector)
-        where TNewVector : IVector<TNewVector, TInt>
-        where TInt : IBinaryInteger<TInt>;
-    static abstract TNewVector FloorToInt<TNewVector, TInt>(TVector vector)
-        where TNewVector : IVector<TNewVector, TInt>
-        where TInt : IBinaryInteger<TInt>;
-    static abstract TNewVector CeilingToInt<TNewVector, TInt>(TVector vector)
-        where TNewVector : IVector<TNewVector, TInt>
-        where TInt : IBinaryInteger<TInt>;
-
-    static virtual Vector64<TScalar> AsVector64(TVector self) => Vector64.Create(TVector.AsSpan(self));
-    static virtual Vector128<TScalar> AsVector128(TVector self) => Vector128.Create(TVector.AsSpan(self));
-    static virtual Vector256<TScalar> AsVector256(TVector self) => Vector256.Create(TVector.AsSpan(self));
-    static virtual Vector512<TScalar> AsVector512(TVector self) => Vector512.Create(TVector.AsSpan(self));
-}
-
-public interface IVector2<TVector, TScalar> : IVector<TVector, TScalar>
-    where TVector : IVector2<TVector, TScalar>
-    where TScalar : INumberBase<TScalar>
-{
-    static virtual TVector UnitX => { get; }
-    static virtual TVector UnitY => { get; }
-    
-    TScalar X { get; }
-    TScalar Y { get; }
-
-    static int IVector.Count => 2;
-    
-    static abstract TVector Create(TScalar x, TScalar y);
-}
-
-public interface IVector3<TVector, TScalar> : IVector<TVector, TScalar>
-    where TVector : IVector3<TVector, TScalar>
-    where TScalar : INumberBase<TScalar>
-{
-    static virtual TVector UnitX => { get; }
-    static virtual TVector UnitY => { get; }
-    static virtual TVector UnitZ => { get; }
-    
-    TScalar X { get; }
-    TScalar Y { get; }
-    TScalar Z { get; }
-
-    static int IVector.Count => 3;
-    
-    static abstract TVector Create(TScalar x, TScalar y);
-}
-
-public interface IVector4<TVector, TScalar> : IVector<TVector, TScalar>
-    where TVector : IVector4<TVector, TScalar>
-    where TScalar : INumberBase<TScalar>
-{
-    static virtual TVector UnitX { get; }
-    static virtual TVector UnitY { get; }
-    static virtual TVector UnitZ { get; }
-    static virtual TVector UnitW { get; }
-
-    TScalar X { get; }
-    TScalar Y { get; }
-    TScalar Z { get; }
-    TScalar W { get; }
-
-    static int IVector.Count => 4;
-    
-    static abstract TVector Create(TScalar x, TScalar y);
-}
-
-public interface IVector5<TVector, TScalar> : IVector<TVector, TScalar>
-    where TVector : IVector5<TVector, TScalar>
-    where TScalar : INumberBase<TScalar>
-{
-    static virtual TVector UnitX { get; }
-    static virtual TVector UnitY { get; }
-    static virtual TVector UnitZ { get; }
-    static virtual TVector UnitW { get; }
-    static virtual TVector UnitV { get; }
-
-    TScalar X { get; }
-    TScalar Y { get; }
-    TScalar Z { get; }
-    TScalar W { get; }
-    TScalar V { get; }
-
-    static int IVector.Count => 5;
-    
-    static abstract TVector Create(TScalar x, TScalar y);
-}
-```
-
