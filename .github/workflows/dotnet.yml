@@ -71,6 +71,7 @@ jobs:
                 verbosity: 'Info'
                 tag: '${{ github.run_number }}_${{ github.run_id }}'
             - uses: 5monkeys/cobertura-action@master
+              continue-on-error: true
               with:
                 path: coveragereport/Cobertura.xml
                 minimum_coverage: 0
