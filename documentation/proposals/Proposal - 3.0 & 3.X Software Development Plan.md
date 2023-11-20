@@ -170,7 +170,7 @@ Any post-3.0, pre-4.0 release will be versioned as follows:
 - The minor version will be the number of the monthly update cycle i.e. the first monthly update will be versioned 3.1, the second 3.2, etc...
 - The patch version will always be 0, unless it is an emergency patch in which case it'll be the number of the emergency patch i.e. if an emergency patch is required after the first monthly update the version will be 3.1.1, if another one is required (heaven forbid) in this same cycle it'll be 3.1.2 etc...
 - The revision version will always be 0 for released builds.
-- When a new version is released, the working tree will change to the next patch version to enable better consumption of experimental builds among other things, with provision that the version number may be changed upward at any time without the necessity of issuing a release.
+- The patch version shall be incremented after a release to ensure the working tree and therefore the experimental feed tracks a version higher than the currently released one, with the provision that this version number is not final and the final released version number shall be subject to all of the above rules.
 
 Users are expected to keep all of the versions of all Silk.NET packages they are using in-sync. We could write a Roslyn analyser or MSBuild target to help push users to this.
 
