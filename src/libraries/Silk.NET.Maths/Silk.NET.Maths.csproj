@@ -1,0 +1,18 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFrameworks>$(SilkTargetFramework)</TargetFrameworks>
+        <Nullable>enable</Nullable>
+        <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+        <GenerateDocumentationFile>true</GenerateDocumentationFile>
+        <WarningsAsErrors>true</WarningsAsErrors>
+        <LangVersion>9.0</LangVersion>
+        
+        <!-- TODO sort this out! -->
+        <DefineConstants Condition="'$(TargetFramework)' == 'netcoreapp3.1' Or '$(TargetFramework)' == 'net5.0'">$(DefineConstants);SSE</DefineConstants>
+        <DefineConstants Condition="'$(TargetFramework)' == 'netcoreapp3.1' Or '$(TargetFramework)' == 'net5.0' Or '$(TargetFramework)' == 'netstandard2.1'">$(DefineConstants);BTEC_INTRINSICS;MATHF</DefineConstants>
+        <DefineConstants Condition="'$(TargetFramework)' == 'net5.0'">$(DefineConstants);POH;AdvSIMD</DefineConstants>
+        <EnableNETAnalyzers>true</EnableNETAnalyzers>
+        <EnforceCodeStyleInBuild>true</EnforceCodeStyleInBuild>
+    </PropertyGroup>
+</Project>

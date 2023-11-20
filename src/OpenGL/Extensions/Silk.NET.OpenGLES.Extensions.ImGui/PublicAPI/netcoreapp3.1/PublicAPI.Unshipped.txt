@@ -1,5 +1,0 @@
-#nullable enable
-Silk.NET.OpenGLES.Extensions.ImGui.ImGuiController.Context -> System.IntPtr
-Silk.NET.OpenGLES.Extensions.ImGui.ImGuiController.MakeCurrent() -> void
-~Silk.NET.OpenGLES.Extensions.ImGui.ImGuiFontConfig.ImGuiFontConfig(string fontPath, int fontSize, System.Func<ImGuiNET.ImGuiIOPtr, System.IntPtr> getGlyphRange = null) -> void
-Silk.NET.OpenGLES.Extensions.ImGui.ImGuiFontConfig.GetGlyphRange.get -> System.Func<ImGuiNET.ImGuiIOPtr, System.IntPtr>

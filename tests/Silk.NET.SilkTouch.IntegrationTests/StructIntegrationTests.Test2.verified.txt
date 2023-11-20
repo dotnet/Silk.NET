@@ -1,0 +1,22 @@
+﻿
+
+/* -------------------------- NEW OUTPUT -------------------------- */
+
+namespace LIBRARY_NAMESPACE
+{
+    public struct vec2
+    {
+        public float x;
+        public float y;
+    }
+    public struct vec3
+    {
+        public vec2 Base;
+        public float z;
+    }
+    public struct vec4
+    {
+        public vec3 Base;
+        public float w;
+    }
+}

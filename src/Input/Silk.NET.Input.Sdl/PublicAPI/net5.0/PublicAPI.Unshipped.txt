@@ -1,2 +1,0 @@
-#nullable enable
-static Silk.NET.Input.Sdl.SdlInput.Use() -> void

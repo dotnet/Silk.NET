@@ -40,7 +40,7 @@ dotnet_diagnostic.RS0016.severity = error
 dotnet_diagnostic.RS0017.severity = error
 
 # we should care more about this one day
-dotnet_diagnostic.RS0041.severity = warn
+dotnet_diagnostic.RS0041.severity = error
 
 # public api warnings silk.net doesn't care about
 dotnet_diagnostic.RS0026.severity = none  # Don't add multiple public overloads with optional parameters
@@ -71,14 +71,6 @@ resharper_invert_if_highlighting = none
 resharper_web_config_module_not_resolved_highlighting = warning
 resharper_web_config_type_not_resolved_highlighting = warning
 resharper_web_config_wrong_module_highlighting = warning
-
-# Silk Touch options
-silk_touch_vtable_generate = true
-silk_touch_vtable_tree_emit_assert = true
-silk_touch_sealed_vtable_creation = true
-silk_touch_vtable_preload = false
-silk_touch_telemetry = false
-silk_touch_compact_file_format = true
 
 [*.{appxmanifest,asax,ascx,aspx,build,config,cs,cshtml,csproj,dbml,discomap,dtd,fs,fsi,fsscript,fsx,htm,html,jsproj,lsproj,master,ml,mli,njsproj,nuspec,proj,props,razor,resw,resx,skin,StyleCop,targets,tasks,vb,vbproj,xaml,xamlx,xml,xoml,xsd}]
 indent_style = space

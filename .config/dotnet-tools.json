@@ -1,0 +1,12 @@
+{
+  "version": 1,
+  "isRoot": true,
+  "tools": {
+    "silk.net.silktouch.dotnettool": {
+      "version": "3.0.0-preview",
+      "commands": [
+        "silktouch"
+      ]
+    }
+  }
+}

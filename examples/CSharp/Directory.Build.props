@@ -1,7 +1,0 @@
-﻿<Project>
-    <PropertyGroup>
-        <AssemblyName>Tutorial</AssemblyName>
-        <LangVersion>9</LangVersion>
-        <WarningsAsErrors>0618</WarningsAsErrors>
-    </PropertyGroup>
-</Project>

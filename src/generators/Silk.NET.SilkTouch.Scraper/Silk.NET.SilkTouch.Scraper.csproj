@@ -1,0 +1,22 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>net6.0</TargetFramework>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <PackageReference Include="ClangSharp.PInvokeGenerator" />
+      <PackageReference Include="Microsoft.Build.Locator" />
+      <PackageReference Include="Microsoft.Extensions.FileSystemGlobbing" />
+      <PackageReference Include="Microsoft.Extensions.Logging.Abstractions" />
+      <PackageReference Include="Microsoft.Extensions.Configuration.Abstractions" />
+      <PackageReference Include="Microsoft.Extensions.Options" />
+      <ProjectReference Include="..\Silk.NET.SilkTouch.Symbols\Silk.NET.SilkTouch.Symbols.csproj" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <None Remove="Subagent\VisualStudioVarPrint.bat" />
+      <EmbeddedResource Include="Subagent\VisualStudioVarPrint.bat" />
+    </ItemGroup>
+
+</Project>

@@ -7,24 +7,22 @@
     using var sw = new StringWriter();
     body.WriteTo(sw, HtmlEncoder.Default);
     bodyDoc.LoadHtml(sw.ToString());
-    var giscusRepo = string.Empty;
-    var giscusRepoId = string.Empty;
-    var giscusCategory = string.Empty;
-    var giscusCategoryId = string.Empty;
-    var title = Model.GetString("Title");
-    var toc = Model.GetToc();
-    string? desc = null; 
-    toc?.Node?.Metadata?.TryGetValue("Description", out desc);
-    string? previewImage = null; 
-    if (toc?.Node?.Metadata?.TryGetValue("PreviewImage", out previewImage) ?? false)
-    {
-        previewImage = "https://dotnet.github.io/Silk.NET/" + previewImage;
-    }
 }
 
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  @{
+      var title = Model.GetString("Title");
+      var toc = Model.GetToc();
+      string? desc = null; 
+      toc?.Node?.Metadata?.TryGetValue("Description", out desc);
+      string? previewImage = null; 
+      if (toc?.Node?.Metadata?.TryGetValue("PreviewImage", out previewImage) ?? false)
+      {
+          previewImage = "https://dotnet.github.io/Silk.NET/" + previewImage;
+      }
+  }
   
   @if (title is null || (!(toc is null) && toc.Root == toc.Node))
   {
@@ -100,28 +98,6 @@
   <script src="@InputUrl("theme/clipboard.min.js")"></script>
   <script src="@InputUrl("theme/headroom.min.js")"></script>
   <script src="@InputUrl("theme/silk.js")"></script>
-  @if ((toc?.Root?.Metadata?.TryGetValue("theme.silk.giscus.repo", out giscusRepo) ?? false) &&
-       (toc?.Root?.Metadata?.TryGetValue("theme.silk.giscus.repo.id", out giscusRepoId) ?? false) &&
-       (toc?.Root?.Metadata?.TryGetValue("theme.silk.giscus.category", out giscusCategory) ?? false) &&
-       (toc?.Root?.Metadata?.TryGetValue("theme.silk.giscus.category.id", out giscusCategoryId) ?? false) &&
-       (!toc?.Node?.Metadata?.ContainsKey("theme.silk.giscus.exempt") ?? true))
-  {
-      <script src="https://giscus.app/client.js"
-              data-repo="@giscusRepo"
-              data-repo-id="@giscusRepoId"
-              data-category="@giscusCategory"
-              data-category-id="@giscusCategoryId"
-              data-mapping="pathname"
-              data-strict="0"
-              data-reactions-enabled="1"
-              data-emit-metadata="0"
-              data-input-position="bottom"
-              data-theme="preferred_color_scheme"
-              data-lang="en"
-              crossorigin="anonymous"
-              async>
-      </script>
-  }
 </body>
 
 </html>

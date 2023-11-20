@@ -1,0 +1,19 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>$(SilkTargetFramework)</TargetFramework>
+        <OutputType>Exe</OutputType>
+        <LangVersion>9.0</LangVersion>
+        <SilkDocumentationExempt>true</SilkDocumentationExempt>
+        <DefineConstants Condition="'$(TargetFramework)' == 'netcoreapp3.1' Or '$(TargetFramework)' == 'net5.0'">$(DefineConstants);MATHF</DefineConstants>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <PackageReference Include="BenchmarkDotNet" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="$(SilkLibrariesDir)\Silk.NET.Maths\Silk.NET.Maths.csproj" />
+    </ItemGroup>
+
+</Project>

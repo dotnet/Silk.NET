@@ -1,0 +1,15 @@
+﻿
+
+/* -------------------------- NEW OUTPUT -------------------------- */
+
+namespace LIBRARY_NAMESPACE
+{
+    public struct x
+    {
+        public y* p;
+    }
+    public struct y
+    {
+        public x* q;
+    }
+}

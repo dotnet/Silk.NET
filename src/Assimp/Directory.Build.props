@@ -1,5 +1,0 @@
-<Project>
-    <PropertyGroup>
-        <SilkDescription>Bindings for the Open Asset Importer (Assimp), used for importing 3D models and scenes in various common formats.</SilkDescription>
-    </PropertyGroup>
-</Project>

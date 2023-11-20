@@ -1,0 +1,13 @@
+<Project>
+    <PropertyGroup>
+		<!-- See https://github.com/NuGet/Home/wiki/Centrally-managing-NuGet-package-versions -->
+		<ManagePackageVersionsCentrally>true</ManagePackageVersionsCentrally>
+		
+		<TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+        <Nullable>enable</Nullable>
+	</PropertyGroup>
+	
+	<PropertyGroup Condition="'$(GITHUB_ACTIONS)' == 'true'">
+	  <ContinuousIntegrationBuild>true</ContinuousIntegrationBuild>
+	</PropertyGroup>
+</Project>

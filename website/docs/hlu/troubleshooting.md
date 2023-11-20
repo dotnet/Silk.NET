@@ -18,8 +18,6 @@ There are multiple causes for this particular exception, however the most common
 2. The underlying windowing API does not support the current platform.
 
 ### Resolution
-#### Ensure you have the [Microsoft Visual C++ Redisributables](https://docs.microsoft.com/en-US/cpp/windows/latest-supported-vc-redist?view=msvc-170) installed!
-
 #### Ensure the underlying API is present on the system
 Silk.NET should do a good job of copying the appropriate native libraries upon build by default, and will search your PATH for them if not present in the output directory.
 
