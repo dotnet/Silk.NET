@@ -52,9 +52,9 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{A5578D12
 		tests\Directory.Build.targets = tests\Directory.Build.targets
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SilkTouchX", "sources\SilkTouchX\SilkTouchX.csproj", "{76F747A6-D971-4162-BF35-A226177FCA08}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Silk.NET.SilkTouch", "sources\Silk.NET.SilkTouch\Silk.NET.SilkTouch.csproj", "{76F747A6-D971-4162-BF35-A226177FCA08}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SilkTouchX.UnitTests", "tests\SilkTouchX\SilkTouchX.UnitTests.csproj", "{600D712C-4ABF-44C4-96C3-B1DEE1F38298}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Silk.NET.SilkTouch.UnitTests", "tests\SilkTouchX\Silk.NET.SilkTouch.UnitTests.csproj", "{600D712C-4ABF-44C4-96C3-B1DEE1F38298}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Silk.NET.GLFW", "sources\GLFW\Silk.NET.GLFW.csproj", "{7B58E4E1-0DE6-453C-95A2-25D8EE0621C1}"
 EndProject
