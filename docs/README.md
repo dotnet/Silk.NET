@@ -1,6 +1,6 @@
 <!-- Begin exclude from NuGet readme. -->
 <h1 align="center">
-    <a href="#"><img align="center" src="documentation/readme/silkdotnet_v3_horizontal_96.svg"></a>
+    <a href="#"><img align="center" src="readme/silkdotnet_v3_horizontal_96.svg"></a>
     <br />
 </h1>
 <div align="center">
@@ -12,10 +12,10 @@
 
 </div>
 
-<div> 
+<div>
 <!-- End exclude from NuGet readme. -->
 <!-- Begin include in NuGet readme.
-![Silk.NET Logo](https://raw.githubusercontent.com/dotnet/Silk.NET/main/documentation/readme/silkdotnet_v3_horizontal_96.svg)
+![Silk.NET Logo](https://raw.githubusercontent.com/dotnet/Silk.NET/develop/3.0/docs/readme/silkdotnet_v3_horizontal_96.svg)
 End include in NuGet readme. -->
 
 Silk.NET is your one-stop-shop for high-speed .NET multimedia, graphics, and compute; providing bindings to popular low-level APIs such as OpenGL, OpenCL, OpenAL, OpenXR, GLFW, SDL, Vulkan, Assimp, WebGPU, and DirectX.
@@ -31,7 +31,7 @@ Silk.NET works on any .NET Standard 2.0 compliant platform, including .NET 6.0, 
 <a href="https://dotnetfoundation.org" align="right"><img src="https://github.com/dotnet-foundation/swag/blob/main/logo/dotnetfoundation_v4.svg" alt=".NET Foundation" class="logo-footer" width="72" align="left">
 <!-- End exclude from NuGet readme. -->
 <!-- Begin include in NuGet readme.
-![.NET Foundation](https://raw.githubusercontent.com/dotnet/Silk.NET/main/documentation/readme/dotnetfoundation_v4_horizontal_64.svg)
+![.NET Foundation](https://raw.githubusercontent.com/dotnet/Silk.NET/develop/3.0/docs/readme/dotnetfoundation_v4_horizontal_64.svg)
 End include in NuGet readme. -->
 </a>
 <br />
@@ -125,9 +125,9 @@ Silk.NET is a [.NET Foundation](https://www.dotnetfoundation.org/projects) proje
 ---
 
 <div>
-    <a href="https://www.jetbrains.com/?from=Silk.NET" align="right"><img src="https://raw.githubusercontent.com/dotnet/Silk.NET/main/documentation/readme/jetbrains.svg" alt="JetBrains" class="logo-footer" width="72" align="left">
+    <a href="https://www.jetbrains.com/?from=Silk.NET" align="right"><img src="https://raw.githubusercontent.com/dotnet/Silk.NET/develop/3.0/docs/readme/jetbrains.svg" alt="JetBrains" class="logo-footer" width="72" align="left">
     <a><br/>
-        
+
 Special thanks to [JetBrains](https://www.jetbrains.com/?from=Silk.NET) for supporting us with open-source licenses for their IDEs. </a>
 </div>
 
