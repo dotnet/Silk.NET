@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
 
-namespace SilkTouchX.Naming;
+namespace Silk.NET.SilkTouch.Naming;
 
 /// <summary>
 /// The default name trimmer ported from Silk.NET 2.18 with modifications for 3.0.

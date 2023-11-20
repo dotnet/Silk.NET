@@ -5,9 +5,9 @@ using System.Threading.Tasks;
 using Microsoft.CodeAnalysis;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using SilkTouchX.Clang;
+using Silk.NET.SilkTouch.Clang;
 
-namespace SilkTouchX.Mods;
+namespace Silk.NET.SilkTouch.Mods;
 
 /// <summary>
 /// Represents a "mod" - a type that will ingest ClangSharp configurations and the outputs from their configurations,

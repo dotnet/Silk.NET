@@ -8,7 +8,7 @@ using System.Diagnostics.CodeAnalysis;
 using System.IO;
 using System.Linq;
 
-namespace SilkTouchX.Clang;
+namespace Silk.NET.SilkTouch.Clang;
 
 /// <summary>
 /// Encapsulations information regarding installed versions of Visual Studio.

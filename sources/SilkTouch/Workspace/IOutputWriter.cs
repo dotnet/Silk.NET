@@ -1,8 +1,8 @@
 ﻿using System.Threading;
 using System.Threading.Tasks;
-using SilkTouchX.Clang;
+using Silk.NET.SilkTouch.Clang;
 
-namespace SilkTouchX.Workspace;
+namespace Silk.NET.SilkTouch.Workspace;
 
 /// <summary>
 /// Represents a mechanism by which generated syntax is ingested, optionally modded further using output writer specific

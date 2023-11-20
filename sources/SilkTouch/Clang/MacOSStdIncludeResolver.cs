@@ -4,7 +4,7 @@ using System.Diagnostics;
 using System.IO;
 using Microsoft.Extensions.Logging;
 
-namespace SilkTouchX.Clang;
+namespace Silk.NET.SilkTouch.Clang;
 
 /// <summary>
 /// A macOS standard include resolver.

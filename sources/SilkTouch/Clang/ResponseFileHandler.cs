@@ -11,7 +11,7 @@ using Microsoft.Extensions.FileSystemGlobbing;
 using Microsoft.Extensions.Logging;
 using static ClangSharp.Interop.CXTranslationUnit_Flags;
 
-namespace SilkTouchX.Clang;
+namespace Silk.NET.SilkTouch.Clang;
 
 /// <summary>
 /// Reads a response file (rsp) containing ClangSharpPInvokeGenerator command line arguments.

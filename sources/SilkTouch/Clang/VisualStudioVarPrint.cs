@@ -7,7 +7,7 @@ using System.Diagnostics;
 using System.Diagnostics.CodeAnalysis;
 using System.IO;
 
-namespace SilkTouchX.Clang;
+namespace Silk.NET.SilkTouch.Clang;
 
 internal static class VisualStudioVarPrint
 {

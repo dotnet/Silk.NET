@@ -13,7 +13,7 @@ using Microsoft.Extensions.Logging;
 using static ClangSharp.Interop.CXErrorCode;
 using static ClangSharp.Interop.CXDiagnosticSeverity;
 
-namespace SilkTouchX.Clang;
+namespace Silk.NET.SilkTouch.Clang;
 
 /// <summary>
 /// Primary entrypoint of the Scraper. This class defines logic to extract symbols using ClangSharp

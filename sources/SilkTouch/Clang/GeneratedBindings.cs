@@ -4,7 +4,7 @@ using Microsoft.CodeAnalysis;
 using Microsoft.CodeAnalysis.MSBuild;
 using Diagnostic = ClangSharp.Diagnostic;
 
-namespace SilkTouchX.Clang;
+namespace Silk.NET.SilkTouch.Clang;
 
 /// <summary>
 /// Output from the <see cref="ClangScraper"/>.

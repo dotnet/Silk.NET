@@ -3,9 +3,9 @@ using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using ClangSharp;
-using SilkTouchX.Clang;
+using Silk.NET.SilkTouch.Clang;
 
-namespace SilkTouchX.Mods;
+namespace Silk.NET.SilkTouch.Mods;
 
 /// <summary>
 /// A mod that will add standard include directories to a response file that doesn't already have them (i.e. that

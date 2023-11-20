@@ -1,10 +1,10 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using SilkTouchX.Clang;
-using SilkTouchX.Naming;
+using Silk.NET.SilkTouch.Clang;
+using Silk.NET.SilkTouch.Naming;
 
-namespace SilkTouchX.Mods;
+namespace Silk.NET.SilkTouch.Mods;
 
 /// <summary>
 /// Represents an <see cref="IMod"/> with common functionality.

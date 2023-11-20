@@ -2,7 +2,7 @@
 using Microsoft.Build.Framework;
 using Microsoft.Extensions.Logging;
 
-namespace SilkTouchX.Workspace;
+namespace Silk.NET.SilkTouch.Workspace;
 
 /// <summary>
 /// Forwards MSBuild logs to MS.Extensions.Logging.

@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text.RegularExpressions;
 using Humanizer;
 
-namespace SilkTouchX.Naming;
+namespace Silk.NET.SilkTouch.Naming;
 
 /// <summary>
 /// Contains utilities used throughout the naming namespace.

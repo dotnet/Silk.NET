@@ -2,7 +2,7 @@
 using ClangSharp;
 using ClangSharp.Interop;
 
-namespace SilkTouchX.Clang;
+namespace Silk.NET.SilkTouch.Clang;
 
 /// <summary>
 /// Output from <see cref="ResponseFileHandler"/>.

@@ -8,7 +8,7 @@ using Microsoft.CodeAnalysis.MSBuild;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 
-namespace SilkTouchX.Workspace;
+namespace Silk.NET.SilkTouch.Workspace;
 
 /// <summary>
 /// Default implementation of <see cref="IWorkspaceSolutionProvider"/>.

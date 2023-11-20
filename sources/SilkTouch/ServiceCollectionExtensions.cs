@@ -6,12 +6,12 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.DependencyInjection.Extensions;
 using Microsoft.Extensions.Options;
-using SilkTouchX.Clang;
-using SilkTouchX.Mods;
-using SilkTouchX.Naming;
-using SilkTouchX.Workspace;
+using Silk.NET.SilkTouch.Clang;
+using Silk.NET.SilkTouch.Mods;
+using Silk.NET.SilkTouch.Naming;
+using Silk.NET.SilkTouch.Workspace;
 
-namespace SilkTouchX;
+namespace Silk.NET.SilkTouch;
 
 /// <summary>
 /// Provides the <see cref="AddSilkTouch"/> method.

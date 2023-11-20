@@ -4,7 +4,7 @@ using System.Reflection;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 
-namespace SilkTouchX.Mods;
+namespace Silk.NET.SilkTouch.Mods;
 
 /// <summary>
 /// Annotates the configuration type for this mod - this is used to call

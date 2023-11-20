@@ -9,9 +9,9 @@ using System.Threading.Tasks;
 using System.Xml.Linq;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
-using SilkTouchX.Naming;
+using Silk.NET.SilkTouch.Naming;
 
-namespace SilkTouchX.Mods;
+namespace Silk.NET.SilkTouch.Mods;
 
 /// <summary>
 /// A mod that reads Khronos specifications to influence codegen.

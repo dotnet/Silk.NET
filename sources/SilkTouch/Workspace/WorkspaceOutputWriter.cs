@@ -8,10 +8,10 @@ using System.Threading;
 using System.Threading.Tasks;
 using Microsoft.CodeAnalysis;
 using Microsoft.Extensions.Logging;
-using SilkTouchX.Clang;
-using SilkTouchX.Mods;
+using Silk.NET.SilkTouch.Clang;
+using Silk.NET.SilkTouch.Mods;
 
-namespace SilkTouchX.Workspace;
+namespace Silk.NET.SilkTouch.Workspace;
 
 /// <summary>
 /// An <see cref="IOutputWriter"/> that uses an MSBuild workspace to output the files.

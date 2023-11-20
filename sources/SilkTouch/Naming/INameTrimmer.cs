@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace SilkTouchX.Naming;
+namespace Silk.NET.SilkTouch.Naming;
 
 /// <summary>
 /// Represents a name trimmer.

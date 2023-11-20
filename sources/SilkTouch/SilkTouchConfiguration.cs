@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;
 
-namespace SilkTouchX;
+namespace Silk.NET.SilkTouch;
 
 /// <summary>
 /// Represents the configuration for a single generation job in SilkTouch.

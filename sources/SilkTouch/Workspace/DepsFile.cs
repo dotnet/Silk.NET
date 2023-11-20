@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 
-namespace SilkTouchX.Workspace;
+namespace Silk.NET.SilkTouch.Workspace;
 
 /// <summary>
 /// Contains utilities for working with makefile-style deps files.

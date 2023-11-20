@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.Linq;
 using Microsoft.Extensions.Options;
-using SilkTouchX.Mods;
+using Silk.NET.SilkTouch.Mods;
 
-namespace SilkTouchX.Naming;
+namespace Silk.NET.SilkTouch.Naming;
 
 internal class NameTrimmerProviders
 {

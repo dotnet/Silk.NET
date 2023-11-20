@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace SilkTouchX.Mods;
+namespace Silk.NET.SilkTouch.Mods;
 
 /// <summary>
 /// Loads <see cref="IMod"/>s based on strings contained within the configuration file.

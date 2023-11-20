@@ -14,13 +14,13 @@ using Microsoft.CodeAnalysis.CSharp;
 using Microsoft.CodeAnalysis.MSBuild;
 using Microsoft.CodeAnalysis.Text;
 using Microsoft.Extensions.Logging;
-using SilkTouchX.Clang;
-using SilkTouchX.Mods;
-using SilkTouchX.Naming;
-using SilkTouchX.Workspace;
+using Silk.NET.SilkTouch.Clang;
+using Silk.NET.SilkTouch.Mods;
+using Silk.NET.SilkTouch.Naming;
+using Silk.NET.SilkTouch.Workspace;
 using Diagnostic = ClangSharp.Diagnostic;
 
-namespace SilkTouchX;
+namespace Silk.NET.SilkTouch;
 
 /// <summary>
 /// The main entry-point class for SilkTouch.

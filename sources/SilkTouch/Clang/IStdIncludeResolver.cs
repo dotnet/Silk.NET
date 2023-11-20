@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace SilkTouchX.Clang;
+namespace Silk.NET.SilkTouch.Clang;
 
 /// <summary>
 /// A resolver for standard includes.

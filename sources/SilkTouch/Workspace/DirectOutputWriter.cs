@@ -2,9 +2,9 @@
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-using SilkTouchX.Clang;
+using Silk.NET.SilkTouch.Clang;
 
-namespace SilkTouchX.Workspace;
+namespace Silk.NET.SilkTouch.Workspace;
 
 /// <summary>
 /// An <see cref="IOutputWriter"/> that outputs directly to disk.

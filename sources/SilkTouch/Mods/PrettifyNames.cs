@@ -9,11 +9,11 @@ using Microsoft.CodeAnalysis.CSharp;
 using Microsoft.CodeAnalysis.CSharp.Syntax;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
-using SilkTouchX.Clang;
-using SilkTouchX.Naming;
+using Silk.NET.SilkTouch.Clang;
+using Silk.NET.SilkTouch.Naming;
 using static Microsoft.CodeAnalysis.CSharp.SyntaxFactory;
 
-namespace SilkTouchX.Mods;
+namespace Silk.NET.SilkTouch.Mods;
 
 /// <summary>
 /// A mod that will convert other naming conventions to the PascalCase nomenclature typically used in C#.

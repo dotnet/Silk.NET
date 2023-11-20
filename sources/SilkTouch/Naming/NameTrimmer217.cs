@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using Humanizer;
 
-namespace SilkTouchX.Naming;
+namespace Silk.NET.SilkTouch.Naming;
 
 /// <summary>
 /// The 2.17 name trimmer.

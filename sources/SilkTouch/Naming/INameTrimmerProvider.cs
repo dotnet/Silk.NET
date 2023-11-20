@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace SilkTouchX.Naming;
+namespace Silk.NET.SilkTouch.Naming;
 
 /// <summary>
 /// Provides name trimmers.

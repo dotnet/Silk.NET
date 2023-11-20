@@ -9,7 +9,7 @@ using System.Runtime.InteropServices.ComTypes;
 using System.Runtime.Versioning;
 using Microsoft.VisualStudio.Setup.Configuration;
 
-namespace SilkTouchX.Clang;
+namespace Silk.NET.SilkTouch.Clang;
 
 [SupportedOSPlatform("windows")]
 internal record struct SetupInstance(ISetupInstance Instance)

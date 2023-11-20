@@ -8,7 +8,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Logging.Console;
-using SilkTouchX;
+using Silk.NET.SilkTouch;
 
 var logging = new Option<LogLevel>(new[] { "--log-level", "-l" }, () => LogLevel.Information);
 var skip = new Option<string[]>(
