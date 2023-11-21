@@ -9,8 +9,8 @@ This API aims to replace the existing implementation of Silk.NET.Maths.
 
 # Current Status
 - [x] Proposed
-- [ ] Discussed with API Review Board (ARB)
-- [ ] Approved
+- [x] Discussed with API Review Board (ARB)
+- [x] Approved
 - [ ] Implemented
 
 # Design Decisions
@@ -349,3 +349,33 @@ Each type **must** include the following:
     - with a Vector3
   - Transform
     - With a Matrix4x4 or Quaternion, if relevant
+
+# Meeting Notes 
+
+## 19/11/2023
+
+[Video](https://www.youtube.com/live/yXNDZDE3AHE?feature=shared&t=9444)
+
+- We agree with the addition to add scalar operations over vectors (i.e. Vector4<T> * T does X*T, Y*T, ...)
+- Add an analyser for encouraging the most correct and most efficient type instead of using sub-optimal types. 
+- Ensure we've documented that.
+- Vector * Matrix?
+    - assuming row major, not allowing matrix * vector (only vector * matrix)
+    - does it make sense to just do it the way game engines do it and the way 2.0 does it?
+    - possibly technically invalid mathematically, even if common programmatically.
+    - easy to hit corner case that not all users may understand.
+- Ensuring we have no upcasting and downcasting operators that could have unexpected behaviour.
+- System.Numerics is strictly right hand, which is the same as XNA and somewhat default for OpenGL users. This differs with DirectX that is typically left hand.
+    - Happy with having explicit LH and RH functions.
+- Missing matrix APIs that were added in .NET 8 to System.Numerics
+    - CreateLookTo (additional to CreateLookAt)
+    - CreateViewport
+    - CreateBillboardLH
+    - CreateConstrainedBillboardLH
+    - CreateBillboardRH
+    - CreateConstrainedBillboardRH
+- Investigate newer less-hated alternatives to quaternions for future (see Freya Holmer talks)
+- Possibly have a general Transform struct in the future?
+- Rectangles and boxes are obscured with regards to internal layout, bindings to have interchange types that implicitly cast to the mathematical constructs that are represented by the Box/Rectangle types.
+- Investigate in the future if we can either add an Origin property for compatibility or an analyser for users to know that Min is the new Origin.
+- Approved notwithstanding the missing APIs.
