@@ -210,23 +210,23 @@ public class MyStringLibrary : IMyStringLibrary
     }
 
     // Non-Static Interface
-    private Func<string, nint> _getProcAddress;
+    private INativeContext _ctx;
     byte* IMyStringLibrary.ToLower(byte* str)
     {
-        var ptr = _getProcAddress("ToLower");
+        var ptr = _ctx.LoadFunction("ToLower");
         if (ptr is 0) throw new("some symbol loading exception...");
         return ((delegate* unmanaged<byte*, byte*>)ptr)(str);
     }
     
     void IMyStringLibrary.FreeResult(byte* str)
     {
-        var ptr = _getProcAddress("FreeResult");
+        var ptr = _ctx.LoadFunction("FreeResult");
         if (ptr is 0) throw new("some symbol loading exception...");
         return ((delegate* unmanaged<byte*, void>)ptr)(str);
     }
 
     public static IMyStringLibrary Create() => new StaticWrapper<DllImport>();
-    public static IMyStringLibrary Create(Func<string, nint> getProcAddress) => new MyStringLibrary { _getProcAddress = getProcAddress };
+    public static IMyStringLibrary Create(INativeContext ctx) => new MyStringLibrary { _ctx = ctx };
 
     // Static Interface
     public static byte* ToLower(byte* str) => DllImport.ToLower(str);
@@ -235,8 +235,6 @@ public class MyStringLibrary : IMyStringLibrary
     public static void FreeResult(Ptr<byte> str) => DllImport.FreeResult(str);
 }
 ```
-
-**INFORMATIVE:** `getProcAddress` delegates replace "native contexts".
 
 There exist requirements for all of the following:
 - A native function retrieved using a thread-specific "native context" can be called using a static function (for OpenGL)
@@ -269,7 +267,7 @@ The binding class **shall** expose a `static` `Create` method with a `Func<strin
 
 **INFORMATIVE:** It is undecided whether we want SilkTouch to output the `Create` methods itself or whether we want it in a non-generated partial.
 
-The binding class **shall** itself implement the top-level interface, using the `getProcAddress` delegate stored from the `Create` method to implement the native calls using a direct function pointer call.
+The binding class **shall** itself implement the top-level interface, using the `INativeContext` stored from the `Create` method to implement the native calls using a direct function pointer call.
 
 The binding class **shall** also contain shorthand functions for calling the static functions contained within the static subinterface using the *static default*.
 
