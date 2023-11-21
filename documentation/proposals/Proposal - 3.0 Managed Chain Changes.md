@@ -9,8 +9,8 @@ Vulkan structure chains.
 
 # Current Status
 - [x] Proposed
-- [ ] Discussed with API Review Board (ARB)
-- [ ] Approved
+- [x] Discussed with API Review Board (ARB)
+- [x] Approved
 - [ ] Implemented
 
 ## Background
@@ -141,35 +141,33 @@ the change can now be made. Having readily accessible type-safe
 pointers helps a lot with much of how the `Chain<...>` types
 are commonly used.
 
-
+This design also renames the non-generic `Chain` instead and gives it
+the head structure type `TChain` as a generic argument.
 ```diff
- public abstract class Chain
+ public abstract class BaseChain<TChain>
  {
      // ...
 -    public abstract unsafe BaseInStructure* HeadPtr { get; }
-+    public abstract unsafe void* UntypedHeadPtr { get; }
++    public abstract unsafe TChain* HeadPtr { get; }
      // ...
  }
 
- public class Chain<TChain, T1, ...> : Chain
+ public class Chain<TChain, ...> : BaseChain<TChain>
  {
      // ...
 -    public override unsafe BaseInStructure* HeadPtr { get; }
-+    public override unsafe void* UntypedHeadPtr { get; }
-+    public unsafe TChain* HeadPtr { get; }
++    public override unsafe TChain* HeadPtr { get; }
      // ...
  }
 ```
-The API change for type-safe `HeadPtr` has been separated as, due to
-the inability to implement abstract class members explicitly, making
-`HeadPtr` type-safe requires the untyped base class member, which
-exists to facilitate some conversions and generalized routines on the
-head of the chain, to be renamed. An alternative solution to this
-particular problem is provided below, but has not yet been 
-investigated at depth at this time. In addition, this proposal
-includes changing this untyped pointer to be of type `void*` so
-as not to prefer `BaseInStructure` over `BaseOutStructure` when
-the semantic difference, albeit unclear, exists.
+
+The reason for separating `BaseChain<TChain>` from `Chain<TChain>`, 
+the chain of one element, in this design is that the latter
+performs management of unmanaged memory sized to hold the singular
+`TChain` object whereas the former is the base type of all chains
+starting with `TChain`, which is to say all chains before generic
+specialization, and has no inherent knowledge of the size of
+the allocated unmanaged memory.
 
 ```diff
  public class Chain<TChain, ...> : Chain
@@ -211,33 +209,17 @@ case no change is made to that member, and is easily implemented in any
 case no matter if the concrete `ItemNPtr` members are changed to type-safe
 through the same mechanism of explicit interface implementation.
 
-### Alternative Designs
-The primary alternative design is for the renaming of `HeadPtr` on `Chain`,
-to work around the lack of explicit implementation of abstract class members.
-An alternative design renames the non-generic `Chain` instead and gives it
-the head structure type `TChain` as a generic argument.
-```diff
- public abstract class BaseChain<TChain>
- {
-     // ...
--    public abstract unsafe BaseInStructure* HeadPtr { get; }
-+    public abstract unsafe TChain* HeadPtr { get; }
-     // ...
- }
+# Meeting Notes
 
- public class Chain<TChain, ...> : BaseChain<TChain>
- {
-     // ...
--    public override unsafe BaseInStructure* HeadPtr { get; }
-+    public override unsafe TChain* HeadPtr { get; }
-     // ...
- }
-```
+## 19/11/2023
 
-The reason for separating `BaseChain<TChain>` from `Chain<TChain>`, 
-the chain of one element, in this design is that the latter
-performs management of unmanaged memory sized to hold the singular
-`TChain` object whereas the former is the base type of all chains
-starting with `TChain`, which is to say all chains before generic
-specialization, and has no inherent knowledge of the size of
-the allocated unmanaged memory.
+[Video](https://www.youtube.com/live/yXNDZDE3AHE?feature=shared&t=1221)
+
+- We believe that the chain abstractions break down significantly anyway when used as an output with layers that can possibly inject additional PNexts that aren't reflected in these abstractions.
+- As a result, this chain abstraction only really works with inputs in every case.
+- UntypedHeadPtr being changed from BaseInStructure is contrary to this assumption.
+- Why is it IStructuredType instead of ITypedStructure? Changing this doesn't affect too much, but leaving it as is doesn't affect too much either.
+- 3.0 is the opportunity to fix long-standing issues like this as it's already massively breaking, so we can do silly changes like this.
+- IStructuredType is already broken with this proposal, so let's just rename it anyway.
+- We believe that IBaseStructure is probably the most sensible name given how Vulkan names this.
+- Everything else looks fine, approved notwithstanding the above.
