@@ -7,9 +7,9 @@ Proposal design for a platform invoke (P/Invoke) mechanism for Silk.NET 3.0.
 - Andrew Davis (@Curin)
 
 # Current Status
-- [ ] Proposed
-- [ ] Discussed with Working Group (WG)
-- [ ] Approved
+- [x] Proposed
+- [x] Discussed with Working Group (WG)
+- [x] Approved
 - [ ] Implemented
 
 # Design Decisions
@@ -89,6 +89,7 @@ Unless deemed inappropriate, inapplicable, and/or infeasible by the Silk.NET tea
 - An `==` and `!=` operator **must** be present to check equality with `NullPtr` i.e. check whether the pointer is null.
 - For generic pointer types to a string pointee type, a `string` (or an array of strings of the inner dimension's jaggedness i.e. `Ref3D<byte>` becomes `string[][]`) **must** be implicitly convertible to the pointer type. The implicit cast **may** throw an exception if the pointee type is not a string pointee type. This is because we can't constrain the type used on implicit operators on generic types.
 - For single dimension generic pointer types, `Span<T>` and `ReadOnlySpan<T>`  **must** be implicitly convertible to the pointer type.
+    - For `ReadOnlySpan<char>`, it is conceivable that the span we're casting represents a string slice. Therefore, the operator **must** implicitly copy the span to a new array that is suffixed with a trailing zero char to ensure it is still usable as such, and `ref` that array instead.
 
 Unless deemed inappropriate, inapplicable, and/or infeasible by the Silk.NET team (the team reserved the right to do so without Working Group approval), the `Ptr` types **should** have the following characteristics:
 - An instance **must** be constructable from a `T*` where `T` is either the generic type (or `void*` for non-generic variants), a "pointer-like" type of the lower dimension of type being constructed.
@@ -341,4 +342,18 @@ The binding class **shall** implement the static subinterface (i.e. to proxy cal
 - [x] Change `Modifiers` to a CallConv\* `Type` array
 
 **FUTURE**
-- [ ] Report back to the Community our findings in experimenting with overloads
+- [x] Report back to the Community our findings in experimenting with overloads
+
+## 19/11/2023
+
+[Video](https://www.youtube.com/live/yXNDZDE3AHE?feature=shared&t=3326)
+
+- We discussed a particular problematic case where RegisterClassEx returns an atom which is later reinterpreted to be a pointer - a debugger will explode when inspecting this pointer as it is not necessarily 
+- Where ReadOnlySpan<char> represents a string and we don't just want to pass the ref as-is (i.e. we want to add the null terminator like we do for string).
+- Generally we think that providing a tool that works 90% of the time is fine, the unsafe overloads are always there, but we'd worry about users making incorrect assumptions and we can probably do implicit behaviour for that final 10%.
+- Require that users manually encoding strings add that null terminator and document this. Our implicit ones do the right thing.
+- Don't allow ref types to throw an error when being handed something that isn't a valid pointer.
+- Approved provided that we:
+    - make unsafe available
+    - special case ROSpan<char> as above
+- Future discussions need to be had on Vulkan implementation intricacies (getProcAddr) and also the addition of "complex" overloads.
