@@ -24,5 +24,30 @@ Where it is appropriate for a type in this proposal to have both integer and flo
 
 # Proposed API
 
-```cs
-```
+## Angle
+
+## "Collision" types.
+
+DirectX and other APIs include "collision shapes" that can be used for such things as culling. `Silk.Net.Maths` already includes some types i.e. `BoxF`, `PlaneF`. These are additional.
+
+### Frustum
+
+### OrientedBox
+
+### CollisionHelper
+
+### PlaneIntersectionType
+
+### ContainmentType
+
+## Color types.
+
+### Color
+
+### ColorBGRA
+
+### ColorHSV
+
+### Color3
+
+### Color4
