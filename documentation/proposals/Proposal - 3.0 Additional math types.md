@@ -203,6 +203,14 @@ public static class Angle
         where T : IFloatingPointIeee754<T>
         => default;
 
+     public static Angle<T> Lerp<T>(Angle<T> start, Angle<T> end, T amount)
+        where T : IFloatingPointIeee754<T>
+        => default;
+
+     public static Angle<T> SmoothStep<T>(Angle<T> start, Angle<T> end, T amount)
+        where T : IFloatingPointIeee754<T>
+        => default;
+
     public static Angle<T> Atan2<T>(T y, T x)
         where T : IFloatingPointIeee754<T>
         => default;
