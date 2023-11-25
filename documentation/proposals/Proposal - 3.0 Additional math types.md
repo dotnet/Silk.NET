@@ -226,6 +226,22 @@ public static class Angle
     public static Angle<T> Between<T>(Vector3F<T> left, Vector3F<T> right)
        where T : IFloatingPointIeee754<T>
        => default;
+
+    public static Angle<T> ZeroAngle<T>()
+        where T : IFloatingPointIeee754<T>
+         => default;
+
+    public static Angle<T> RightAngle<T>()
+        where T : IFloatingPointIeee754<T>
+         => default;
+
+    public static Angle<T> StraightAngle<T>()
+        where T : IFloatingPointIeee754<T>
+         => default;
+
+    public static Angle<T> FullRotationAngle<T>()
+        where T : IFloatingPointIeee754<T>
+         => default;
 }
 ```
 
