@@ -41,6 +41,8 @@ public readonly struct Angle<T>
     , IMultiplyOperators<T, Angle<T>, Angle<T>>
     , IModulusOperators<Angle<T>, Angle<T>, Angle<T>>
     , ISubtractionOperators<Angle<T>,Angle<T>,Angle<T>>
+    , IParsable<Angle<T>>
+    , ISpanParsable<Angle<T>>
     where T : IFloatingPointIeee754<T>
 {
 
