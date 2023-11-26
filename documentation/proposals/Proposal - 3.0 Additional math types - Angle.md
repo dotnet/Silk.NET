@@ -43,6 +43,9 @@ public readonly struct Angle<T>
     , ISubtractionOperators<Angle<T>,Angle<T>,Angle<T>>
     , IParsable<Angle<T>>
     , ISpanParsable<Angle<T>>
+    , IUtf8SpanParsable<Angle<T>>
+    , IFormattable
+    , IUtf8SpanFormattable
     where T : IFloatingPointIeee754<T>
 {
 
@@ -50,11 +53,14 @@ public readonly struct Angle<T>
 
     public Angle(T totalRadians) { }
 
-    
+    /// <summary>Angle in degrees in the range [0, 360].</summary>
     public T Degrees { get; }
+    /// <summary>Total angle in degrees.</summary>
     public T TotalDegrees { get; }
-    public T TotalRdians { get; }
-    public T Milliradians { get; }
+    /// <summary>Angle in radians in range [π, -π].</summary>
+    public T Radians { get; }
+
+    public T Hours { get; }
     public T Minutes { get; }
     public T Seconds { get; }
 
@@ -185,16 +191,17 @@ public static class Angle
     public static Angle<T> FromDegrees<T>(T degrees)
         where T : IFloatingPointIeee754<T>
          => default;
-    public static Angle<T> FromGradians<T>(T gradians)
-        where T : IFloatingPointIeee754<T>
-         => default;
-    public static Angle<T> FromMilliradians<T>(T milliradians)
+    public static Angle<T> FromHours<T>(T hours)
         where T : IFloatingPointIeee754<T>
          => default;
     public static Angle<T> FromMinutes<T>(T minutes)
         where T : IFloatingPointIeee754<T>
          => default;
     public static Angle<T> FromSeconds<T>(T seconds)
+        where T : IFloatingPointIeee754<T>
+         => default;
+
+    public static Angle<T> FromTimeSpan<T>(TimeSpan timeSpan)
         where T : IFloatingPointIeee754<T>
          => default;
 
