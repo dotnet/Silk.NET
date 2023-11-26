@@ -1,7 +1,7 @@
 # Summary
 Proposal API for additional math types to bring it up to feature parity with other popular math libraries i.e. `SlimDX`, `SharpDX`, or `Stride3D`. Leveraging modern .NET features such as `INumber<T>` and vectorization.
 
-This proposal is regarding "collision shapes" for containment and intersection tests.
+DirectX and other APIs include "collision shapes" that can be used for such things as culling. This proposal covers the addition of similar "Bounding{Shape}" types and their corresponding containment and intersection test.
 
 # Contributors
 - Daniel Keenan (dfkeenan)
@@ -26,16 +26,19 @@ Where it is appropriate for a type in this proposal to have both integer and flo
 
 # Proposed API
 
-DirectX and other APIs include "collision shapes" that can be used for such things as culling. `Silk.Net.Maths` already includes some types i.e. `BoxF`, `PlaneF`. These are additional.
+`BoundingOrientedBox` is defined with a quaternion as it's orientation. `Quaternion<T>` is constrained by the `IBinaryFloatingPointIeee754<T>` scalar type. Therefore all bounding shapes with be constrained by the `IBinaryFloatingPointIeee754<T>` scalar type.
 
-### Frustum
+### BoundingBox
 
-### OrientedBox
+### BoundingOrientedBox
 
-### CollisionHelper
+### BoundingFrustum
+
+### BoundingSphere
 
 ### PlaneIntersectionType
 
 ### ContainmentType
 
+### CollisionHelper
 
