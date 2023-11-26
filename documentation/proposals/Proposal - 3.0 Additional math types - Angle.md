@@ -46,13 +46,14 @@ public readonly struct Angle<T>
     where T : IFloatingPointIeee754<T>
 {
 
-    public readonly T Radians;
+    public readonly T TotalRadians;
 
-    public Angle(T radians) { }
+    public Angle(T totalRadians) { }
 
     
     public T Degrees { get; }
-    public T Gradians { get; }
+    public T TotalDegrees { get; }
+    public T TotalRdians { get; }
     public T Milliradians { get; }
     public T Minutes { get; }
     public T Seconds { get; }
@@ -170,6 +171,12 @@ public readonly struct Angle<T>
     public static implicit operator T(Angle<T> angle) => default;
 }
 
+```
+
+
+
+```csharp
+
 public static class Angle
 {
     public static Angle<T> FromRadians<T>(T radians)
@@ -252,29 +259,3 @@ public static class Angle
          => default;
 }
 ```
-
-## "Collision" types.
-
-DirectX and other APIs include "collision shapes" that can be used for such things as culling. `Silk.Net.Maths` already includes some types i.e. `BoxF`, `PlaneF`. These are additional.
-
-### Frustum
-
-### OrientedBox
-
-### CollisionHelper
-
-### PlaneIntersectionType
-
-### ContainmentType
-
-## Color types.
-
-### Color
-
-### ColorBGRA
-
-### ColorHSV
-
-### Color3
-
-### Color4
