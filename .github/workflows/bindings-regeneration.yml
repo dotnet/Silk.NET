@@ -1,8 +1,8 @@
 name: Bindings Regeneration
 
 on:
-  schedule:
-    - cron: '0 0 * * Fri'
+  #schedule: - disabled for now
+  #  - cron: '0 0 * * Fri'
   workflow_dispatch:
 
 jobs:
