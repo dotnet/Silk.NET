@@ -1,0 +1,4 @@
+#nullable enable
+Silk.NET.Maths.Resource
+Silk.NET.Maths.Resource.Attribute
+Silk.NET.Maths.Resource.Resource() -> void

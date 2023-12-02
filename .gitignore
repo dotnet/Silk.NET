@@ -478,3 +478,6 @@ src/**/build/
 /docs/
 src/Website/Silk.NET.Statiq/temp
 src/Website/Silk.NET.Statiq/cache
+
+# SilkTouch configs
+!eng/silktouch/**/*.rsp

@@ -1,0 +1,21 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <OutputType>Exe</OutputType>
+        <TargetFramework>net8.0</TargetFramework>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <Nullable>enable</Nullable>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\GLFW\Silk.NET.GLFW.csproj" />
+      <ProjectReference Include="..\OpenGL\Silk.NET.OpenGL.csproj" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <PackageReference Include="Ultz.Native.GLFW" Version="3.3.9.1" />
+    </ItemGroup>
+  
+    <Import Project="../Core/Silk.NET.Core.targets" />
+
+</Project>

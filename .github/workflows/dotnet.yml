@@ -1,0 +1,77 @@
+name: .NET
+on:
+    push:
+    pull_request:
+    merge_group:
+permissions:
+    statuses: write
+    checks: write
+    contents: write
+    pull-requests: write
+    actions: write
+jobs:
+    Test:
+        strategy:
+            fail-fast: false
+            matrix:
+                include:
+                    - rid: win-x64
+                      os: windows-latest
+                      name: win-x64
+                    - rid: linux-x64
+                      os: ubuntu-20.04
+                      name: linux-x64
+                    - rid: osx-x64
+                      os: macos-latest
+                      name: osx-x64
+        runs-on: ${{ matrix.os }}
+        steps:
+            - uses: actions/checkout@v3
+            - name: Setup .NET
+              uses: actions/setup-dotnet@v3
+              with:
+                dotnet-version: '8.0.x'
+                dotnet-quality: 'preview'
+            - name: Restore
+              run: dotnet restore --runtime ${{ matrix.rid }}
+            - name: Test
+              run: dotnet test -c Release --no-restore --runtime ${{ matrix.rid }} --collect:"XPlat Code Coverage" --results-directory ./coverage --logger:"trx"
+            - name: Test Report
+              uses: dorny/test-reporter@v1
+              if: success() || failure()
+              with:
+                name: .NET Test Report (${{ matrix.rid }})
+                path: ./coverage/**/*.trx
+                reporter: dotnet-trx
+            - name: Upload Coverage Results
+              uses: actions/upload-artifact@v3
+              with:
+                name: coverage-${{ matrix.name }}
+                path: ./coverage/**/coverage.cobertura.xml
+    Report-Coverage:
+        runs-on: ubuntu-latest
+        needs: Test
+        permissions:
+            pull-requests: write
+            checks: write
+        steps:
+            - uses: actions/download-artifact@v3
+              with:
+                path: ./coverage
+            - name: Setup .NET Core
+              uses: actions/setup-dotnet@v1
+              with:
+                dotnet-version: 6.0.300
+            - name: Generate Report
+              uses: danielpalme/ReportGenerator-GitHub-Action@5.1.9
+              with:
+                reports: './coverage/**/**/coverage.cobertura.xml'
+                targetdir: './coveragereport'
+                reporttypes: 'Cobertura'
+                verbosity: 'Info'
+                tag: '${{ github.run_number }}_${{ github.run_id }}'
+            - uses: 5monkeys/cobertura-action@master
+              continue-on-error: true
+              with:
+                path: coveragereport/Cobertura.xml
+                minimum_coverage: 0

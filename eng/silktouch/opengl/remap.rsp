@@ -1,0 +1,4 @@
+--remap
+__GLsync=GLsync
+_cl_context=void
+_cl_event=void

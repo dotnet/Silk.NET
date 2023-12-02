@@ -1,6 +1,0 @@
-<Project>
-    <PropertyGroup>
-        <NoWarn>1591</NoWarn> <!-- TODO remove this and document Statiq -->
-    </PropertyGroup>
-    <Import Project="$(MSBuildThisFileDirectory)../Directory.Build.props" />
-</Project>

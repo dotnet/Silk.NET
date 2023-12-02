@@ -1,0 +1,16 @@
+@../settings.rsp
+@../remap.rsp
+--exclude
+TODO_ADD_EXCLUSIONS
+--file
+glfw-glfw3.h
+--methodClassName
+Glfw
+--namespace
+Silk.NET.GLFW
+--output
+../../../../sources/GLFW/glfw3
+--test-output
+../../../../tests/GLFW/glfw3
+--traverse
+../../../submodules/glfw/include/GLFW/glfw3.h

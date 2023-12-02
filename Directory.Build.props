@@ -1,13 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
 <Project>
-    <PropertyGroup>
-		<!-- See https://github.com/NuGet/Home/wiki/Centrally-managing-NuGet-package-versions -->
-		<ManagePackageVersionsCentrally>true</ManagePackageVersionsCentrally>
-		
-		<TreatWarningsAsErrors>true</TreatWarningsAsErrors>
-        <Nullable>enable</Nullable>
-	</PropertyGroup>
-	
-	<PropertyGroup Condition="'$(GITHUB_ACTIONS)' == 'true'">
-	  <ContinuousIntegrationBuild>true</ContinuousIntegrationBuild>
-	</PropertyGroup>
+
+  <!--
+    Directory.Build.props is automatically picked up and imported by
+    Microsoft.Common.props. This file needs to exist, even if empty so that
+    files in the parent directory tree, with the same name, are not imported
+    instead. The import fairly early and only Sdk.props will have been imported
+    beforehand. We also don't need to add ourselves to MSBuildAllProjects, as
+    that is done by the file that imports us.
+  -->
+
+  <!-- Default settings that are used by other settings -->
+  <PropertyGroup>
+    <BaseArtifactsPath>$(MSBuildThisFileDirectory)artifacts/</BaseArtifactsPath>
+    <BaseArtifactsPathSuffix>$(ProjectCategory)/$(MSBuildProjectName)</BaseArtifactsPathSuffix>
+    <RepositoryUrl>https://github.com/dotnet/Silk.NET</RepositoryUrl>
+  </PropertyGroup>
+
+  <!-- Default settings that explicitly differ from the Sdk.props defaults  -->
+  <PropertyGroup>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <BaseIntermediateOutputPath>$(BaseArtifactsPath)obj/$(BaseArtifactsPathSuffix)/</BaseIntermediateOutputPath>
+    <DebugType>embedded</DebugType>
+    <EnableDefaultNoneItems>false</EnableDefaultNoneItems>
+    <Nullable>enable</Nullable>
+    <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
+    <SignAssembly>true</SignAssembly>
+    <SuppressNETCoreSdkPreviewMessage>true</SuppressNETCoreSdkPreviewMessage>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)' == 'Debug'">
+    <CheckForOverflowUnderflow>true</CheckForOverflowUnderflow>
+  </PropertyGroup>
+
+  <!-- Default settings that explicitly differ from the Sdk.targets defaults-->
+  <PropertyGroup>
+    <Authors>.NET Foundation and Contributors</Authors>
+    <BaseOutputPath>$(BaseArtifactsPath)bin/$(BaseArtifactsPathSuffix)/</BaseOutputPath>
+    <Company>.NET Foundation</Company>
+    <PackageOutputPath>$(BaseArtifactsPath)pkg/$(BaseArtifactsPathSuffix)/$(Configuration)/</PackageOutputPath>
+    <Product>Silk.NET</Product>
+    <VersionPrefix>3.0.0</VersionPrefix>
+    <VersionSuffix>alpha</VersionSuffix>
+  </PropertyGroup>
+
+  <!-- Default settings that are otherwise undefined -->
+  <PropertyGroup>
+    <Copyright>Copyright © .NET Foundation and Contributors</Copyright>
+    <Description>An experimental rewrite of Silk.NET and by extension SilkTouch - this is by no means 3.0 and if that is no longer the case this repo shall be merged with the main Silk.NET repo.</Description>
+    <Features>strict</Features>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+    <HighEntropyVA>true</HighEntropyVA>
+    <LangVersion>preview</LangVersion>
+    <NeutralLanguage>en-US</NeutralLanguage>
+    <OverwriteReadOnlyFiles>true</OverwriteReadOnlyFiles>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <PackageProjectUrl>$(RepositoryUrl)</PackageProjectUrl>
+    <ProduceReferenceAssembly>true</ProduceReferenceAssembly>
+    <RepositoryType>git</RepositoryType>
+    <UseSharedCompilation>true</UseSharedCompilation>
+  </PropertyGroup>
+
 </Project>
