@@ -26,19 +26,199 @@ Where it is appropriate for a type in this proposal to have both integer and flo
 
 # Proposed API
 
-`BoundingOrientedBox` is defined with a quaternion as it's orientation. `Quaternion<T>` is constrained by the `IBinaryFloatingPointIeee754<T>` scalar type. Therefore all bounding shapes with be constrained by the `IBinaryFloatingPointIeee754<T>` scalar type.
-
-### BoundingBox
-
-### BoundingOrientedBox
-
-### BoundingFrustum
-
-### BoundingSphere
+`BoundingOrientedBox<T>` is defined with a quaternion as it's orientation. `Quaternion<T>` is constrained by the `IBinaryFloatingPointIeee754<T>` scalar type. Therefore all bounding shapes with be constrained by the `IBinaryFloatingPointIeee754<T>` scalar type.
 
 ### PlaneIntersectionType
 
+```csharp
+ public enum PlaneIntersectionType
+ {
+     Back,
+     Front,
+     Intersecting,
+ }
+```
+
 ### ContainmentType
+```csharp
+public enum ContainmentType
+{
+    Disjoint,
+    Contains,
+    Intersects,
+}
+```
+
+### IIntersectWithRay
+```csharp
+public interface IIntersectWithRay<TSelf, TScalar>
+    where TScalar : IFloatingPointIeee754<TScalar>
+{
+    public bool Intersects(ref readonly Ray3F<TScalar> ray);
+
+    public static abstract bool Intersects(ref readonly TSelf shape, ref readonly Ray3F<TScalar> ray);
+
+    public bool Intersects(ref readonly Ray3F<TScalar> ray, out float distance);
+
+    public static abstract bool Intersects(ref readonly TSelf shape, ref readonly Ray3F<TScalar> ray, out float distance);
+
+    public bool Intersects(ref readonly Ray3F<TScalar> ray, out Vector3F<TScalar> point);
+
+    public static abstract bool Intersects(ref readonly TSelf shape, ref readonly Ray3F<TScalar> ray, out Vector3F<TScalar> point);
+}
+```
+
+### IIntersectWithPlane
+```csharp
+public interface IIntersectWithPlane<TSelf, TScalar>
+    where TScalar : IFloatingPointIeee754<TScalar>
+{
+   
+    public PlaneIntersectionType Intersects(ref readonly PlaneF<TScalar> plane);
+    public static abstract PlaneIntersectionType Intersects(ref readonly TSelf shape, ref readonly PlaneF<TScalar> plane);
+}
+```
+
+### IIntersect
+```csharp
+public interface IIntersect<TSelf, TOther>
+{
+    public bool Intersects(ref readonly TOther other);
+
+    public static abstract bool Intersects(ref readonly TSelf shape, ref readonly TOther other);
+}
+```
+
+### IContainPoint
+```csharp
+public interface IContainPoint<TSelf, TScalar>
+    where TScalar : IFloatingPointIeee754<TScalar>
+{
+
+    public ContainmentType Contains(ref readonly Vector3F<TScalar> point);
+
+    public static abstract ContainmentType Contains(ref readonly TSelf shape, ref readonly Vector3F<TScalar> point);
+
+    public ContainmentType Contains(ref readonly Vector3F<TScalar> vertex1, ref readonly Vector3F<TScalar> vertex2, ref readonly Vector3F<TScalar> vertex3);
+
+    public static abstract ContainmentType Contains(ref readonly TSelf shape, ref readonly Vector3F<TScalar> vertex1, ref readonly Vector3F<TScalar> vertex2, ref readonly Vector3F<TScalar> vertex3);
+}
+```
+
+### IContain
+```csharp
+public interface IContain<TSelf, TOther>
+{
+    public ContainmentType Contains(ref readonly TOther other);
+
+    public static abstract ContainmentType Contains(ref readonly TSelf shape, ref readonly TOther other);
+}
+```
+
+### IColliderShape
+```csharp
+public interface IColliderShape<TSelf, TScalar>
+    where TScalar : IFloatingPointIeee754<TScalar>
+{
+    public static abstract void FromPoints(ReadOnlySpan<Vector3F<TScalar>> points, out TSelf result);
+    public static abstract TSelf FromPoints(ReadOnlySpan<Vector3F<TScalar>> points);
+
+    public static abstract void Merge(ref readonly TSelf value1, ref readonly TSelf value2, out TSelf result);
+
+    public static abstract TSelf Merge(TSelf value1, TSelf value2);
+
+    public static abstract void Transform(ref readonly TSelf value, ref readonly Matrix4x4F<TScalar> transform);
+    public static abstract void Transform(ref readonly TSelf value, ref readonly Matrix4x4F<TScalar> transform, out TSelf result);
+}
+```
+
+### BoundingBox
+
+Access aligned box
+
+```csharp
+public struct BoundingBox<TScalar>
+    : IEquatable<BoundingBox<TScalar>>
+    , IEqualityOperators<BoundingBox<TScalar>, BoundingBox<TScalar>, bool>
+    , IIntersectWithRay<BoundingBox<TScalar>, TScalar>
+    , IIntersectWithPlane<BoundingBox<TScalar>, TScalar>
+    , IColliderShape<BoundingBox<TScalar>, TScalar>
+    , IContainPoint<BoundingBox<TScalar>, TScalar>
+    , IIntersect<BoundingBox<TScalar>, BoundingBox<TScalar>>
+    //Implement IIntersect for other shapes
+    , IContain<BoundingBox<TScalar>, BoundingBox<TScalar>>
+    //Implement IContain for other shapes
+    , IFormattable
+    where TScalar: IBinaryFloatingPointIeee754<TScalar>
+{
+
+}
+```
+
+### BoundingBoxExtent
+
+Access aligned box for fast frustum culling.
+
+```csharp
+
+```
+
+### BoundingOrientedBox
+
+Box with orientation
+
+```csharp
+public struct BoundingOrientedBox<TScalar>
+    : IEquatable<BoundingOrientedBox<TScalar>>
+    , IEqualityOperators<BoundingOrientedBox<TScalar>, BoundingOrientedBox<TScalar>, bool>
+    , IIntersectWithRay<BoundingOrientedBox<TScalar>, TScalar>
+    , IIntersectWithPlane<BoundingOrientedBox<TScalar>, TScalar>
+    , IColliderShape<BoundingOrientedBox<TScalar>, TScalar>
+    , IContainPoint<BoundingOrientedBox<TScalar>, TScalar>
+    , IIntersect<BoundingOrientedBox<TScalar>, BoundingOrientedBox<TScalar>>
+    //Implement IIntersect for other shapes
+    , IContain<BoundingOrientedBox<TScalar>, BoundingOrientedBox<TScalar>>
+    //Implement IContain for other shapes
+    , IFormattable
+    where TScalar : IBinaryFloatingPointIeee754<TScalar>
+{
+
+}
+```
+
+### BoundingFrustum
+
+Frustum
+
+```csharp
+
+```
+
+### BoundingSphere
+
+Sphere
+
+```csharp
+public struct BoundingSphere<TScalar>
+    : IEquatable<BoundingSphere<TScalar>>
+    , IEqualityOperators<BoundingSphere<TScalar>, BoundingSphere<TScalar>, bool>
+    , IIntersectWithRay<BoundingSphere<TScalar>, TScalar>
+    , IIntersectWithPlane<BoundingSphere<TScalar>, TScalar>
+    , IColliderShape<BoundingSphere<TScalar>, TScalar>
+    , IContainPoint<BoundingSphere<TScalar>, TScalar>
+    , IIntersect<BoundingSphere<TScalar>, BoundingSphere<TScalar>>
+    //Implement IIntersect for other shapes
+    , IContain<BoundingSphere<TScalar>, BoundingSphere<TScalar>>
+    //Implement IContain for other shapes
+    , IFormattable
+    where TScalar : IBinaryFloatingPointIeee754<TScalar>
+{
+
+}
+```
 
 ### CollisionHelper
 
+```csharp
+
+```
