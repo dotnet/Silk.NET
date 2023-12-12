@@ -654,6 +654,48 @@ namespace Silk.NET.OpenXR
         [Obsolete("Deprecated in favour of \"CoordinateSpaceCreateInfoML\"")]
         [NativeName("Name", "XR_TYPE_COORDINATE_SPACE_CREATE_INFO_ML")]
         TypeCoordinateSpaceCreateInfoML = 1000137000,
+        [Obsolete("Deprecated in favour of \"SystemMarkerUnderstandingPropertiesML\"")]
+        [NativeName("Name", "XR_TYPE_SYSTEM_MARKER_UNDERSTANDING_PROPERTIES_ML")]
+        TypeSystemMarkerUnderstandingPropertiesML = 1000138000,
+        [Obsolete("Deprecated in favour of \"MarkerDetectorCreateInfoML\"")]
+        [NativeName("Name", "XR_TYPE_MARKER_DETECTOR_CREATE_INFO_ML")]
+        TypeMarkerDetectorCreateInfoML = 1000138001,
+        [Obsolete("Deprecated in favour of \"MarkerDetectorArucoInfoML\"")]
+        [NativeName("Name", "XR_TYPE_MARKER_DETECTOR_ARUCO_INFO_ML")]
+        TypeMarkerDetectorArucoInfoML = 1000138002,
+        [Obsolete("Deprecated in favour of \"MarkerDetectorSizeInfoML\"")]
+        [NativeName("Name", "XR_TYPE_MARKER_DETECTOR_SIZE_INFO_ML")]
+        TypeMarkerDetectorSizeInfoML = 1000138003,
+        [Obsolete("Deprecated in favour of \"MarkerDetectorAprilTagInfoML\"")]
+        [NativeName("Name", "XR_TYPE_MARKER_DETECTOR_APRIL_TAG_INFO_ML")]
+        TypeMarkerDetectorAprilTagInfoML = 1000138004,
+        [Obsolete("Deprecated in favour of \"MarkerDetectorCustomProfileInfoML\"")]
+        [NativeName("Name", "XR_TYPE_MARKER_DETECTOR_CUSTOM_PROFILE_INFO_ML")]
+        TypeMarkerDetectorCustomProfileInfoML = 1000138005,
+        [Obsolete("Deprecated in favour of \"MarkerDetectorSnapshotInfoML\"")]
+        [NativeName("Name", "XR_TYPE_MARKER_DETECTOR_SNAPSHOT_INFO_ML")]
+        TypeMarkerDetectorSnapshotInfoML = 1000138006,
+        [Obsolete("Deprecated in favour of \"MarkerDetectorStateML\"")]
+        [NativeName("Name", "XR_TYPE_MARKER_DETECTOR_STATE_ML")]
+        TypeMarkerDetectorStateML = 1000138007,
+        [Obsolete("Deprecated in favour of \"MarkerSpaceCreateInfoML\"")]
+        [NativeName("Name", "XR_TYPE_MARKER_SPACE_CREATE_INFO_ML")]
+        TypeMarkerSpaceCreateInfoML = 1000138008,
+        [Obsolete("Deprecated in favour of \"LocalizationMapML\"")]
+        [NativeName("Name", "XR_TYPE_LOCALIZATION_MAP_ML")]
+        TypeLocalizationMapML = 1000139000,
+        [Obsolete("Deprecated in favour of \"EventDataLocalizationChangedML\"")]
+        [NativeName("Name", "XR_TYPE_EVENT_DATA_LOCALIZATION_CHANGED_ML")]
+        TypeEventDataLocalizationChangedML = 1000139001,
+        [Obsolete("Deprecated in favour of \"MapLocalizationRequestInfoML\"")]
+        [NativeName("Name", "XR_TYPE_MAP_LOCALIZATION_REQUEST_INFO_ML")]
+        TypeMapLocalizationRequestInfoML = 1000139002,
+        [Obsolete("Deprecated in favour of \"LocalizationMapImportInfoML\"")]
+        [NativeName("Name", "XR_TYPE_LOCALIZATION_MAP_IMPORT_INFO_ML")]
+        TypeLocalizationMapImportInfoML = 1000139003,
+        [Obsolete("Deprecated in favour of \"LocalizationEnableEventsInfoML\"")]
+        [NativeName("Name", "XR_TYPE_LOCALIZATION_ENABLE_EVENTS_INFO_ML")]
+        TypeLocalizationEnableEventsInfoML = 1000139004,
         [Obsolete("Deprecated in favour of \"EventDataHeadsetFitChangedML\"")]
         [NativeName("Name", "XR_TYPE_EVENT_DATA_HEADSET_FIT_CHANGED_ML")]
         TypeEventDataHeadsetFitChangedML = 1000472000,
@@ -924,6 +966,12 @@ namespace Silk.NET.OpenXR
         [Obsolete("Deprecated in favour of \"FoveationCustomModeInfoHtc\"")]
         [NativeName("Name", "XR_TYPE_FOVEATION_CUSTOM_MODE_INFO_HTC")]
         TypeFoveationCustomModeInfoHtc = 1000318002,
+        [Obsolete("Deprecated in favour of \"SystemAnchorPropertiesHtc\"")]
+        [NativeName("Name", "XR_TYPE_SYSTEM_ANCHOR_PROPERTIES_HTC")]
+        TypeSystemAnchorPropertiesHtc = 1000319000,
+        [Obsolete("Deprecated in favour of \"SpatialAnchorCreateInfoHtc\"")]
+        [NativeName("Name", "XR_TYPE_SPATIAL_ANCHOR_CREATE_INFO_HTC")]
+        TypeSpatialAnchorCreateInfoHtc = 1000319001,
         [Obsolete("Deprecated in favour of \"ActiveActionSetPrioritiesExt\"")]
         [NativeName("Name", "XR_TYPE_ACTIVE_ACTION_SET_PRIORITIES_EXT")]
         TypeActiveActionSetPrioritiesExt = 1000373000,
@@ -1388,6 +1436,34 @@ namespace Silk.NET.OpenXR
         GlobalDimmerFrameEndInfoML = 1000136000,
         [NativeName("Name", "XR_TYPE_COORDINATE_SPACE_CREATE_INFO_ML")]
         CoordinateSpaceCreateInfoML = 1000137000,
+        [NativeName("Name", "XR_TYPE_SYSTEM_MARKER_UNDERSTANDING_PROPERTIES_ML")]
+        SystemMarkerUnderstandingPropertiesML = 1000138000,
+        [NativeName("Name", "XR_TYPE_MARKER_DETECTOR_CREATE_INFO_ML")]
+        MarkerDetectorCreateInfoML = 1000138001,
+        [NativeName("Name", "XR_TYPE_MARKER_DETECTOR_ARUCO_INFO_ML")]
+        MarkerDetectorArucoInfoML = 1000138002,
+        [NativeName("Name", "XR_TYPE_MARKER_DETECTOR_SIZE_INFO_ML")]
+        MarkerDetectorSizeInfoML = 1000138003,
+        [NativeName("Name", "XR_TYPE_MARKER_DETECTOR_APRIL_TAG_INFO_ML")]
+        MarkerDetectorAprilTagInfoML = 1000138004,
+        [NativeName("Name", "XR_TYPE_MARKER_DETECTOR_CUSTOM_PROFILE_INFO_ML")]
+        MarkerDetectorCustomProfileInfoML = 1000138005,
+        [NativeName("Name", "XR_TYPE_MARKER_DETECTOR_SNAPSHOT_INFO_ML")]
+        MarkerDetectorSnapshotInfoML = 1000138006,
+        [NativeName("Name", "XR_TYPE_MARKER_DETECTOR_STATE_ML")]
+        MarkerDetectorStateML = 1000138007,
+        [NativeName("Name", "XR_TYPE_MARKER_SPACE_CREATE_INFO_ML")]
+        MarkerSpaceCreateInfoML = 1000138008,
+        [NativeName("Name", "XR_TYPE_LOCALIZATION_MAP_ML")]
+        LocalizationMapML = 1000139000,
+        [NativeName("Name", "XR_TYPE_EVENT_DATA_LOCALIZATION_CHANGED_ML")]
+        EventDataLocalizationChangedML = 1000139001,
+        [NativeName("Name", "XR_TYPE_MAP_LOCALIZATION_REQUEST_INFO_ML")]
+        MapLocalizationRequestInfoML = 1000139002,
+        [NativeName("Name", "XR_TYPE_LOCALIZATION_MAP_IMPORT_INFO_ML")]
+        LocalizationMapImportInfoML = 1000139003,
+        [NativeName("Name", "XR_TYPE_LOCALIZATION_ENABLE_EVENTS_INFO_ML")]
+        LocalizationEnableEventsInfoML = 1000139004,
         [NativeName("Name", "XR_TYPE_EVENT_DATA_HEADSET_FIT_CHANGED_ML")]
         EventDataHeadsetFitChangedML = 1000472000,
         [NativeName("Name", "XR_TYPE_EVENT_DATA_EYE_CALIBRATION_CHANGED_ML")]
@@ -1568,6 +1644,10 @@ namespace Silk.NET.OpenXR
         FoveationDynamicModeInfoHtc = 1000318001,
         [NativeName("Name", "XR_TYPE_FOVEATION_CUSTOM_MODE_INFO_HTC")]
         FoveationCustomModeInfoHtc = 1000318002,
+        [NativeName("Name", "XR_TYPE_SYSTEM_ANCHOR_PROPERTIES_HTC")]
+        SystemAnchorPropertiesHtc = 1000319000,
+        [NativeName("Name", "XR_TYPE_SPATIAL_ANCHOR_CREATE_INFO_HTC")]
+        SpatialAnchorCreateInfoHtc = 1000319001,
         [NativeName("Name", "XR_TYPE_ACTIVE_ACTION_SET_PRIORITIES_EXT")]
         ActiveActionSetPrioritiesExt = 1000373000,
         [NativeName("Name", "XR_TYPE_SYSTEM_FORCE_FEEDBACK_CURL_PROPERTIES_MNDX")]

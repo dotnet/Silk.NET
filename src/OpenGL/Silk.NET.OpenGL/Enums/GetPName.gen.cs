@@ -872,5 +872,19 @@ namespace Silk.NET.OpenGL
         FragmentShadingRateWithSampleMaskSupportedExt = 0x96DE,
         [NativeName("Name", "GL_FRAGMENT_SHADING_RATE_ATTACHMENT_WITH_DEFAULT_FRAMEBUFFER_SUPPORTED_EXT")]
         FragmentShadingRateAttachmentWithDefaultFramebufferSupportedExt = 0x96DF,
+        [NativeName("Name", "GL_SHADER_CORE_COUNT_ARM")]
+        ShaderCoreCountArm = 0x96F0,
+        [NativeName("Name", "GL_SHADER_CORE_ACTIVE_COUNT_ARM")]
+        ShaderCoreActiveCountArm = 0x96F1,
+        [NativeName("Name", "GL_SHADER_CORE_PRESENT_MASK_ARM")]
+        ShaderCorePresentMaskArm = 0x96F2,
+        [NativeName("Name", "GL_SHADER_CORE_MAX_WARP_COUNT_ARM")]
+        ShaderCoreMaxWarpCountArm = 0x96F3,
+        [NativeName("Name", "GL_SHADER_CORE_PIXEL_RATE_ARM")]
+        ShaderCorePixelRateArm = 0x96F4,
+        [NativeName("Name", "GL_SHADER_CORE_TEXEL_RATE_ARM")]
+        ShaderCoreTexelRateArm = 0x96F5,
+        [NativeName("Name", "GL_SHADER_CORE_FMA_RATE_ARM")]
+        ShaderCoreFmaRateArm = 0x96F6,
     }
 }

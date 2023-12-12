@@ -22,21 +22,12 @@ namespace Silk.NET.Vulkan.Extensions.NV
         public const string ExtensionName = "VK_NV_low_latency2";
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkGetLatencyTimingsNV", Convention = CallingConvention.Winapi)]
-        public unsafe partial void GetLatencyTiming([Count(Count = 0)] Device device, [Count(Count = 0)] SwapchainKHR swapchain, [Count(Count = 0)] uint* pTimingCount, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] GetLatencyMarkerInfoNV* pLatencyMarkerInfo);
+        public unsafe partial void GetLatencyTiming([Count(Count = 0)] Device device, [Count(Count = 0)] SwapchainKHR swapchain, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] GetLatencyMarkerInfoNV* pLatencyMarkerInfo);
 
         /// <summary>To be documented.</summary>
         [Inject(SilkTouchStage.Begin, "pLatencyMarkerInfo = new(StructureType.GetLatencyMarkerInfoNV);")]
         [NativeApi(EntryPoint = "vkGetLatencyTimingsNV", Convention = CallingConvention.Winapi)]
-        public unsafe partial void GetLatencyTiming([Count(Count = 0)] Device device, [Count(Count = 0)] SwapchainKHR swapchain, [Count(Count = 0)] uint* pTimingCount, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] out GetLatencyMarkerInfoNV pLatencyMarkerInfo);
-
-        /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkGetLatencyTimingsNV", Convention = CallingConvention.Winapi)]
-        public unsafe partial void GetLatencyTiming([Count(Count = 0)] Device device, [Count(Count = 0)] SwapchainKHR swapchain, [Count(Count = 0)] ref uint pTimingCount, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] GetLatencyMarkerInfoNV* pLatencyMarkerInfo);
-
-        /// <summary>To be documented.</summary>
-        [Inject(SilkTouchStage.Begin, "pLatencyMarkerInfo = new(StructureType.GetLatencyMarkerInfoNV);")]
-        [NativeApi(EntryPoint = "vkGetLatencyTimingsNV", Convention = CallingConvention.Winapi)]
-        public partial void GetLatencyTiming([Count(Count = 0)] Device device, [Count(Count = 0)] SwapchainKHR swapchain, [Count(Count = 0)] ref uint pTimingCount, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] out GetLatencyMarkerInfoNV pLatencyMarkerInfo);
+        public partial void GetLatencyTiming([Count(Count = 0)] Device device, [Count(Count = 0)] SwapchainKHR swapchain, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] out GetLatencyMarkerInfoNV pLatencyMarkerInfo);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkLatencySleepNV", Convention = CallingConvention.Winapi)]
@@ -72,19 +63,10 @@ namespace Silk.NET.Vulkan.Extensions.NV
 
         /// <summary>To be documented.</summary>
         [Inject(SilkTouchStage.Begin, "pLatencyMarkerInfo = new(StructureType.GetLatencyMarkerInfoNV);")]
-        public unsafe GetLatencyMarkerInfoNV GetLatencyTiming([Count(Count = 0)] Device device, [Count(Count = 0)] SwapchainKHR swapchain, [Count(Count = 0)] uint* pTimingCount)
+        public unsafe GetLatencyMarkerInfoNV GetLatencyTiming([Count(Count = 0)] Device device, [Count(Count = 0)] SwapchainKHR swapchain)
         {
             // NonKhrReturnTypeOverloader
-            GetLatencyTiming(device, swapchain, pTimingCount, out GetLatencyMarkerInfoNV silkRet);
-            return silkRet;
-        }
-
-        /// <summary>To be documented.</summary>
-        [Inject(SilkTouchStage.Begin, "pLatencyMarkerInfo = new(StructureType.GetLatencyMarkerInfoNV);")]
-        public unsafe GetLatencyMarkerInfoNV GetLatencyTiming([Count(Count = 0)] Device device, [Count(Count = 0)] SwapchainKHR swapchain, [Count(Count = 0)] ref uint pTimingCount)
-        {
-            // NonKhrReturnTypeOverloader
-            GetLatencyTiming(device, swapchain, ref pTimingCount, out GetLatencyMarkerInfoNV silkRet);
+            GetLatencyTiming(device, swapchain, out GetLatencyMarkerInfoNV silkRet);
             return silkRet;
         }
 

@@ -1496,6 +1496,8 @@ namespace Silk.NET.Vulkan
         PhysicalDeviceClusterCullingShaderFeaturesHuawei = 1000404000,
         [NativeName("Name", "VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_CLUSTER_CULLING_SHADER_PROPERTIES_HUAWEI")]
         PhysicalDeviceClusterCullingShaderPropertiesHuawei = 1000404001,
+        [NativeName("Name", "VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_CLUSTER_CULLING_SHADER_VRS_FEATURES_HUAWEI")]
+        PhysicalDeviceClusterCullingShaderVrsFeaturesHuawei = 1000404002,
         [NativeName("Name", "VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_BORDER_COLOR_SWIZZLE_FEATURES_EXT")]
         PhysicalDeviceBorderColorSwizzleFeaturesExt = 1000411000,
         [NativeName("Name", "VK_STRUCTURE_TYPE_SAMPLER_BORDER_COLOR_COMPONENT_MAPPING_CREATE_INFO_EXT")]
@@ -1532,6 +1534,16 @@ namespace Silk.NET.Vulkan
         PhysicalDeviceDepthClampZeroOneFeaturesExt = 1000421000,
         [NativeName("Name", "VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_NON_SEAMLESS_CUBE_MAP_FEATURES_EXT")]
         PhysicalDeviceNonSeamlessCubeMapFeaturesExt = 1000422000,
+        [NativeName("Name", "VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_RENDER_PASS_STRIPED_FEATURES_ARM")]
+        PhysicalDeviceRenderPassStripedFeaturesArm = 1000424000,
+        [NativeName("Name", "VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_RENDER_PASS_STRIPED_PROPERTIES_ARM")]
+        PhysicalDeviceRenderPassStripedPropertiesArm = 1000424001,
+        [NativeName("Name", "VK_STRUCTURE_TYPE_RENDER_PASS_STRIPE_BEGIN_INFO_ARM")]
+        RenderPassStripeBeginInfoArm = 1000424002,
+        [NativeName("Name", "VK_STRUCTURE_TYPE_RENDER_PASS_STRIPE_INFO_ARM")]
+        RenderPassStripeInfoArm = 1000424003,
+        [NativeName("Name", "VK_STRUCTURE_TYPE_RENDER_PASS_STRIPE_SUBMIT_INFO_ARM")]
+        RenderPassStripeSubmitInfoArm = 1000424004,
         [NativeName("Name", "VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_FRAGMENT_DENSITY_MAP_OFFSET_FEATURES_QCOM")]
         PhysicalDeviceFragmentDensityMapOffsetFeaturesQCom = 1000425000,
         [NativeName("Name", "VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_FRAGMENT_DENSITY_MAP_OFFSET_PROPERTIES_QCOM")]
@@ -1666,6 +1678,8 @@ namespace Silk.NET.Vulkan
         PhysicalDeviceMutableDescriptorTypeFeaturesExt = 1000351000,
         [NativeName("Name", "VK_STRUCTURE_TYPE_MUTABLE_DESCRIPTOR_TYPE_CREATE_INFO_EXT")]
         MutableDescriptorTypeCreateInfoExt = 1000351002,
+        [NativeName("Name", "VK_STRUCTURE_TYPE_LAYER_SETTINGS_CREATE_INFO_EXT")]
+        LayerSettingsCreateInfoExt = 1000496000,
         [NativeName("Name", "VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_SHADER_CORE_BUILTINS_FEATURES_ARM")]
         PhysicalDeviceShaderCoreBuiltinsFeaturesArm = 1000497000,
         [NativeName("Name", "VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_SHADER_CORE_BUILTINS_PROPERTIES_ARM")]
@@ -1722,6 +1736,12 @@ namespace Silk.NET.Vulkan
         PhysicalDeviceCubicClampFeaturesQCom = 1000521000,
         [NativeName("Name", "VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_ATTACHMENT_FEEDBACK_LOOP_DYNAMIC_STATE_FEATURES_EXT")]
         PhysicalDeviceAttachmentFeedbackLoopDynamicStateFeaturesExt = 1000524000,
+        [NativeName("Name", "VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_VERTEX_ATTRIBUTE_DIVISOR_PROPERTIES_KHR")]
+        PhysicalDeviceVertexAttributeDivisorPropertiesKhr = 1000525000,
+        [NativeName("Name", "VK_STRUCTURE_TYPE_PIPELINE_VERTEX_INPUT_DIVISOR_STATE_CREATE_INFO_KHR")]
+        PipelineVertexInputDivisorStateCreateInfoKhr = 1000190001,
+        [NativeName("Name", "VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_VERTEX_ATTRIBUTE_DIVISOR_FEATURES_KHR")]
+        PhysicalDeviceVertexAttributeDivisorFeaturesKhr = 1000190002,
         [NativeName("Name", "VK_STRUCTURE_TYPE_SCREEN_BUFFER_PROPERTIES_QNX")]
         ScreenBufferPropertiesQnx = 1000529000,
         [NativeName("Name", "VK_STRUCTURE_TYPE_SCREEN_BUFFER_FORMAT_PROPERTIES_QNX")]
@@ -1734,6 +1754,8 @@ namespace Silk.NET.Vulkan
         PhysicalDeviceExternalMemoryScreenBufferFeaturesQnx = 1000529004,
         [NativeName("Name", "VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_LAYERED_DRIVER_PROPERTIES_MSFT")]
         PhysicalDeviceLayeredDriverPropertiesMsft = 1000530000,
+        [NativeName("Name", "VK_STRUCTURE_TYPE_CALIBRATED_TIMESTAMP_INFO_KHR")]
+        CalibratedTimestampInfoKhr = 1000184000,
         [NativeName("Name", "VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_DESCRIPTOR_POOL_OVERALLOCATION_FEATURES_NV")]
         PhysicalDeviceDescriptorPoolOverallocationFeaturesNV = 1000546000,
         [NativeName("Name", "VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_SUBGROUP_PROPERTIES")]

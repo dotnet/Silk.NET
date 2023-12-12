@@ -52,6 +52,10 @@ namespace Silk.NET.OpenXR
         PassthroughLayerFB = 1000118002,
         [NativeName("Name", "XR_OBJECT_TYPE_GEOMETRY_INSTANCE_FB")]
         GeometryInstanceFB = 1000118004,
+        [NativeName("Name", "XR_OBJECT_TYPE_MARKER_DETECTOR_ML")]
+        MarkerDetectorML = 1000138000,
+        [NativeName("Name", "XR_OBJECT_TYPE_EXPORTED_LOCALIZATION_MAP_ML")]
+        ExportedLocalizationMapML = 1000139000,
         [NativeName("Name", "XR_OBJECT_TYPE_SPATIAL_ANCHOR_STORE_CONNECTION_MSFT")]
         SpatialAnchorStoreConnectionMsft = 1000142000,
         [NativeName("Name", "XR_OBJECT_TYPE_FACE_TRACKER_FB")]

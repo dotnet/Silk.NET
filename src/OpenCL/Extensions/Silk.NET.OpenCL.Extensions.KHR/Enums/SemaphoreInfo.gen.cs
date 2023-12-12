@@ -20,5 +20,7 @@ namespace Silk.NET.OpenCL.Extensions.KHR
         Properties = 0x203B,
         [NativeName("Name", "CL_SEMAPHORE_PAYLOAD_KHR")]
         Payload = 0x203C,
+        [NativeName("Name", "CL_SEMAPHORE_EXPORTABLE_KHR")]
+        Exportable = 0x2054,
     }
 }

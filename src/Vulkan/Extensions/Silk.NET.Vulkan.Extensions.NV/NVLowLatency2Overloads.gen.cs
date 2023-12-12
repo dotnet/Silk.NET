@@ -18,25 +18,10 @@ namespace Silk.NET.Vulkan.Extensions.NV
     {
         /// <summary>To be documented.</summary>
         [Inject(SilkTouchStage.Begin, "pLatencyMarkerInfo = new(StructureType.GetLatencyMarkerInfoNV);")]
-        public static unsafe void GetLatencyTiming(this NVLowLatency2 thisApi, [Count(Count = 0)] Device device, [Count(Count = 0)] SwapchainKHR swapchain, [Count(Count = 0)] uint* pTimingCount, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<GetLatencyMarkerInfoNV> pLatencyMarkerInfo)
+        public static unsafe void GetLatencyTiming(this NVLowLatency2 thisApi, [Count(Count = 0)] Device device, [Count(Count = 0)] SwapchainKHR swapchain, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<GetLatencyMarkerInfoNV> pLatencyMarkerInfo)
         {
             // SpanOverloader
-            thisApi.GetLatencyTiming(device, swapchain, pTimingCount, out pLatencyMarkerInfo.GetPinnableReference());
-        }
-
-        /// <summary>To be documented.</summary>
-        public static unsafe void GetLatencyTiming(this NVLowLatency2 thisApi, [Count(Count = 0)] Device device, [Count(Count = 0)] SwapchainKHR swapchain, [Count(Count = 0)] Span<uint> pTimingCount, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] GetLatencyMarkerInfoNV* pLatencyMarkerInfo)
-        {
-            // SpanOverloader
-            thisApi.GetLatencyTiming(device, swapchain, ref pTimingCount.GetPinnableReference(), pLatencyMarkerInfo);
-        }
-
-        /// <summary>To be documented.</summary>
-        [Inject(SilkTouchStage.Begin, "pLatencyMarkerInfo = new(StructureType.GetLatencyMarkerInfoNV);")]
-        public static unsafe void GetLatencyTiming(this NVLowLatency2 thisApi, [Count(Count = 0)] Device device, [Count(Count = 0)] SwapchainKHR swapchain, [Count(Count = 0)] Span<uint> pTimingCount, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<GetLatencyMarkerInfoNV> pLatencyMarkerInfo)
-        {
-            // SpanOverloader
-            thisApi.GetLatencyTiming(device, swapchain, ref pTimingCount.GetPinnableReference(), out pLatencyMarkerInfo.GetPinnableReference());
+            thisApi.GetLatencyTiming(device, swapchain, out pLatencyMarkerInfo.GetPinnableReference());
         }
 
         /// <summary>To be documented.</summary>

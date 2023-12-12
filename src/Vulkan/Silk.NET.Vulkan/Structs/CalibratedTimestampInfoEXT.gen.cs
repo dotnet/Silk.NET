@@ -17,13 +17,14 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkCalibratedTimestampInfoEXT")]
+    [NativeName("AliasOf", "VkCalibratedTimestampInfoKHR")]
     public unsafe partial struct CalibratedTimestampInfoEXT : IChainable
     {
         public CalibratedTimestampInfoEXT
         (
-            StructureType? sType = StructureType.CalibratedTimestampInfoExt,
+            StructureType? sType = StructureType.CalibratedTimestampInfoKhr,
             void* pNext = null,
-            TimeDomainEXT? timeDomain = null
+            TimeDomainKHR? timeDomain = null
         ) : this()
         {
             if (sType is not null)
@@ -53,15 +54,15 @@ namespace Silk.NET.Vulkan
         [NativeName("Name", "pNext")]
         public void* PNext;
 /// <summary></summary>
-        [NativeName("Type", "VkTimeDomainEXT")]
-        [NativeName("Type.Name", "VkTimeDomainEXT")]
+        [NativeName("Type", "VkTimeDomainKHR")]
+        [NativeName("Type.Name", "VkTimeDomainKHR")]
         [NativeName("Name", "timeDomain")]
-        public TimeDomainEXT TimeDomain;
+        public TimeDomainKHR TimeDomain;
 
         /// <inheritdoc />
         StructureType IStructuredType.StructureType()
         {
-            return SType = StructureType.CalibratedTimestampInfoExt;
+            return SType = StructureType.CalibratedTimestampInfoKhr;
         }
 
         /// <inheritdoc />
