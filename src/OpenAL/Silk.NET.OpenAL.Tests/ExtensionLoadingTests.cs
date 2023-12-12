@@ -87,6 +87,7 @@ public class ExtensionLoadingTests
         Test<CaptureEnumerationEnumeration>();
         Test<EffectExtensionContext>();
         Test<Disconnect>();
+        Test<ReopenDevices>();
 
         SilkMarshal.Free(loaderPtr);
         SilkMarshal.Free(ctxLoaderPtr);
