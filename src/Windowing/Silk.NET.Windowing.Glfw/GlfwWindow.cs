@@ -731,7 +731,7 @@ namespace Silk.NET.Windowing.Glfw
                 for (var i = 0; i < count; i++)
                 {
                     var p = Marshal.ReadIntPtr(paths, i * IntPtr.Size);
-                    arrayOfPaths[i] = Marshal.PtrToStringAnsi(p);
+                    arrayOfPaths[i] = SilkMarshal.PtrToString((nint) p, NativeStringEncoding.UTF8) ?? "";
                 }
 
                 FileDrop?.Invoke(arrayOfPaths);
