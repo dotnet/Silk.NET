@@ -23,6 +23,7 @@ namespace Silk.NET.Vulkan
         (
             StructureType? sType = StructureType.GetLatencyMarkerInfoNV,
             void* pNext = null,
+            uint? timingCount = null,
             LatencyTimingsFrameReportNV* pTimings = null
         ) : this()
         {
@@ -34,6 +35,11 @@ namespace Silk.NET.Vulkan
             if (pNext is not null)
             {
                 PNext = pNext;
+            }
+
+            if (timingCount is not null)
+            {
+                TimingCount = timingCount.Value;
             }
 
             if (pTimings is not null)
@@ -52,6 +58,11 @@ namespace Silk.NET.Vulkan
         [NativeName("Type.Name", "void")]
         [NativeName("Name", "pNext")]
         public void* PNext;
+/// <summary></summary>
+        [NativeName("Type", "uint32_t")]
+        [NativeName("Type.Name", "uint32_t")]
+        [NativeName("Name", "timingCount")]
+        public uint TimingCount;
 /// <summary></summary>
         [NativeName("Type", "VkLatencyTimingsFrameReportNV*")]
         [NativeName("Type.Name", "VkLatencyTimingsFrameReportNV")]

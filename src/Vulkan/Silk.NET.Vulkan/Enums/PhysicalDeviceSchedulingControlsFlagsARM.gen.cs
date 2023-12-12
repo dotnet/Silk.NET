@@ -11,7 +11,7 @@ namespace Silk.NET.Vulkan
 {
     [Flags]
     [NativeName("Name", "VkPhysicalDeviceSchedulingControlsFlagsARM")]
-    public enum PhysicalDeviceSchedulingControlsFlagsARM : int
+    public enum PhysicalDeviceSchedulingControlsFlagsARM : long
     {
         [NativeName("Name", "")]
         None = 0,
