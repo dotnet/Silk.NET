@@ -10,8 +10,8 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.SPIRV.Reflect
 {
     [Flags]
-    [NativeName("Name", "__AnonymousEnum_spirv_reflect_L275_C1")]
-    public enum AnonymousEnumSpirvReflectL275C1 : int
+    [NativeName("Name", "__AnonymousEnum_spirv_reflect_L281_C1")]
+    public enum AnonymousEnumSpirvReflectL281C1 : int
     {
         [NativeName("Name", "")]
         None = 0,

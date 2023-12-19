@@ -810,6 +810,12 @@ namespace Silk.NET.SPIRV
         FragmentFetchAmd = 0x1394,
         [NativeName("Name", "SpvOpReadClockKHR")]
         ReadClockKhr = 0x13C0,
+        [NativeName("Name", "SpvOpFinalizeNodePayloadsAMDX")]
+        FinalizeNodePayloadsAmdx = 0x13D3,
+        [NativeName("Name", "SpvOpFinishWritingNodePayloadAMDX")]
+        FinishWritingNodePayloadAmdx = 0x13D6,
+        [NativeName("Name", "SpvOpInitializeNodePayloadsAMDX")]
+        InitializeNodePayloadsAmdx = 0x13E2,
         [NativeName("Name", "SpvOpHitObjectRecordHitMotionNV")]
         HitObjectRecordHitMotionNV = 0x1481,
         [NativeName("Name", "SpvOpHitObjectRecordHitWithIndexMotionNV")]
@@ -886,6 +892,10 @@ namespace Silk.NET.SPIRV
         GroupNonUniformPartitionNV = 0x14B0,
         [NativeName("Name", "SpvOpWritePackedPrimitiveIndices4x8NV")]
         WritePackedPrimitiveIndices4x8NV = 0x14B3,
+        [NativeName("Name", "SpvOpFetchMicroTriangleVertexPositionNV")]
+        FetchMicroTriangleVertexPositionNV = 0x14B4,
+        [NativeName("Name", "SpvOpFetchMicroTriangleVertexBarycentricNV")]
+        FetchMicroTriangleVertexBarycentricNV = 0x14B5,
         [NativeName("Name", "SpvOpReportIntersectionKHR")]
         ReportIntersectionKhr = 0x14D6,
         [NativeName("Name", "SpvOpReportIntersectionNV")]
