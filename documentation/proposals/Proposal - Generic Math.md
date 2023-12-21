@@ -18,6 +18,7 @@ This API aims to replace the existing implementation of Silk.NET.Maths.
 - This proposal assumes no knowledge of the 2.x Math library.
 - Text herein marked **INFORMATIVE** does not form a normative part of this proposal, and is for background only.
 - Within this proposal, the key words **must**, **required**, **shall**, **should**, **recommended**, **may**, **could**, and **optional** are to be interpreted as described in [RFC 2119 - Key words for use in RFCs to Indicate Requirement Levels](https://www.ietf.org/rfc/rfc2119.txt). The additional key word **optionally** is an alternate form of **optional**, for use where grammatically appropriate. These key words are highlighted in the proposal for clarity.
+- If any of the APIs contained herein are later deemed mathematically invalid in the context of their exposing primitive (e.g. a specific operation being inappropriate for a specific sized matrix), the Silk.NET team reserves the right to remove them at their own accord.
 
 # **INFORMATIVE** Integer and Floating Point Types
 While investigating the use of generic math we came to the conclusion that making types which supports both integer and floating point types would not be optimal. This was discussed at length on the discord [here](https://discord.com/channels/521092042781229087/587346162802229298/1167705816812498974). Ultimately it was decided to provide both an integer and floating point variant for each vector type and every type built from them. These types are generic where `Vector2I<T>` will be a 2D vector which takes any binary integer type for `T`. Similarly `Vector2F<T>` will be a 2D vector which takes any floating point type for `T`. By extension we get types like `BoxI<T>` and `RectangleF<T>`. The integer types are granted the bitwise operators `&`, `~`, `|`, and `^`. Floating point types will include some operations that require certain functions unavailable to integer types like `Length` which requires `Sqrt`.
@@ -244,7 +245,8 @@ Matrix structs **must** fulfill the following requirements:
 - static lerp function
 - static identity property
 - For Matrix3x2, Matrix3x3, Matrix4x3, and Matrix4x4 include the following static functions
-  - CreateBillboard
+  - CreateBillboardRH
+  - CreateBillboardLH
   - CreateRotation
     - 3x3, 4x3, and 4x4 Matricies get X, Y, and Z variants for this function instead
   - CreateTranslation
@@ -258,14 +260,17 @@ Matrix structs **must** fulfill the following requirements:
     - from a Quaternion
   - CreateFromYawPitchRoll
 - For Matrix4x3 and Matrix4x4 include the following static functions
-  - CreateConstrainedBillboard
+  - CreateConstrainedBillboardLH
+  - CreateConstrainedBillboardRH
   - CreateLookAtLH
+  - CreateLookToLH
   - CreateOrthographicLH
   - CreateOrthographicOffCenterLH
   - CreatePerspectiveLH
   - CreatePerspectiveFieldOfViewLH
   - CreatePerspectiveOffCenterLH
   - CreateLookAtRH
+  - CreateLookToRH
   - CreateOrthographicRH
   - CreateOrthographicOffCenterRH
   - CreatePerspectiveRH
@@ -273,6 +278,7 @@ Matrix structs **must** fulfill the following requirements:
   - CreatePerspectiveOffCenterRH
   - CreateReflection
   - CreateWorld
+  - CreateViewport
 
 # Quaternion
 
