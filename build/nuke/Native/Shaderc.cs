@@ -347,6 +347,8 @@ fn spvTools(b: *std.Build, target: std.zig.CrossTarget, optimize: std.builtin.Op
             spirv_tools_root ++ ""source/opt/workaround1209.cpp"",
             spirv_tools_root ++ ""source/opt/wrap_opkill.cpp"",
             spirv_tools_root ++ ""source/opt/trim_capabilities_pass.cpp"",
+            spirv_tools_root ++ ""source/opt/switch_descriptorset_pass.cpp"",
+            spirv_tools_root ++ ""source/opt/invocation_interlock_placement_pass.cpp"",
             //reduce
             spirv_tools_root ++ ""source/reduce/change_operand_reduction_opportunity.cpp"",
             spirv_tools_root ++ ""source/reduce/change_operand_to_undef_reduction_opportunity.cpp"",

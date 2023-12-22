@@ -21,7 +21,7 @@ namespace Silk.NET.DirectStorage
         public const int FacilityGame = unchecked((int) 0x924);
         [NativeName("Type", "int")]
         [NativeName("Name", "DSTORAGE_SDK_VERSION")]
-        public const int SdkVersion = unchecked((int) 0xC9);
+        public const int SdkVersion = unchecked((int) 0xCA);
         [NativeName("Type", "int")]
         [NativeName("Name", "DSTORAGE_MIN_QUEUE_CAPACITY")]
         public const int MinQueueCapacity = unchecked((int) 0x80);

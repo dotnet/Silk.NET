@@ -1366,6 +1366,10 @@ namespace Silk.NET.OpenCL
         BuiltInKernelsWithVersionKhr = 0x1062,
         [NativeName("Name", "CL_DEVICE_BUILT_IN_KERNELS_WITH_VERSION_KHR")]
         DeviceBuiltInKernelsWithVersionKhr = 0x1062,
+        [NativeName("Name", "CL_DEVICE_MEMORY_CAPABILITIES_IMG")]
+        MemoryCapabilitiesImg = 0x40D8,
+        [NativeName("Name", "CL_DEVICE_MEMORY_CAPABILITIES_IMG")]
+        DeviceMemoryCapabilitiesImg = 0x40D8,
         [NativeName("Name", "CL_DEVICE_CONTROLLED_TERMINATION_CAPABILITIES_ARM")]
         ControlledTerminationCapabilitiesArm = 0x41EE,
         [NativeName("Name", "CL_DEVICE_CONTROLLED_TERMINATION_CAPABILITIES_ARM")]
