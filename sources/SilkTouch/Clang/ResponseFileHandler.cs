@@ -1540,7 +1540,7 @@ public class ResponseFileHandler
         }
     }
 
-    private static IEnumerable<string> Glob(IReadOnlyCollection<string> paths, string? cd = null)
+    internal static IEnumerable<string> Glob(IReadOnlyCollection<string> paths, string? cd = null)
     {
         cd ??= Environment.CurrentDirectory;
         var matcher = new Matcher();

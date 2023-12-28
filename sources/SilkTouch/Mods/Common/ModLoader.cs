@@ -16,7 +16,7 @@ public class ModLoader
         name switch
         {
             nameof(ChangeNamespace) => typeof(ChangeNamespace),
-            nameof(AddStdIncludes) => typeof(AddStdIncludes),
+            nameof(AddIncludes) => typeof(AddIncludes),
             nameof(UseSilkDSL) => typeof(UseSilkDSL),
             nameof(PrettifyNames) => typeof(PrettifyNames),
             nameof(AddOpaqueStructs) => typeof(AddOpaqueStructs),

@@ -481,3 +481,8 @@ src/Website/Silk.NET.Statiq/cache
 
 # SilkTouch configs
 !eng/silktouch/**/*.rsp
+
+# SilkTouch caches
+**/*.stdownload
+
+**/.DS_Store

@@ -20,9 +20,9 @@ public class MacOSStdIncludeResolver : UnixStdIncludeResolver
     public MacOSStdIncludeResolver(ILogger<MacOSStdIncludeResolver> logger) => _logger = logger;
 
     /// <inheritdoc />
-    public override IEnumerable<string> GetStandardIncludes()
+    protected override IEnumerable<string> CoreGetStandardIncludes()
     {
-        foreach (var inc in base.GetStandardIncludes())
+        foreach (var inc in base.CoreGetStandardIncludes())
         {
             yield return inc;
         }
