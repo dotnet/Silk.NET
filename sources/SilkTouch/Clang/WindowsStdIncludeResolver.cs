@@ -11,6 +11,7 @@ namespace Silk.NET.SilkTouch.Clang;
 public class WindowsStdIncludeResolver : IStdIncludeResolver
 {
     private readonly ILogger<WindowsStdIncludeResolver> _logger;
+    private volatile IEnumerable<string>? _stds;
 
     /// <summary>
     /// Creates an instance of the include resolver with the given logger.
@@ -21,13 +22,18 @@ public class WindowsStdIncludeResolver : IStdIncludeResolver
     /// <inheritdoc />
     public virtual IEnumerable<string> GetStandardIncludes()
     {
+        if (_stds is not null)
+        {
+            return _stds;
+        }
+
         if (VisualStudioResolver.TryGetVisualStudioInfo(out var info))
         {
             _logger.LogInformation(
                 "Successfully resolved VS to {path}",
                 info.InstallationBaseFolder
             );
-            return info.MsvcToolsIncludes.Concat(info.UcrtIncludes);
+            return _stds = info.MsvcToolsIncludes.Concat(info.UcrtIncludes);
         }
 
         _logger.LogWarning("Failed to resolve VS, but OS is Windows!");

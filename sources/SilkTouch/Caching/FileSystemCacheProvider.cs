@@ -78,6 +78,11 @@ public class FileSystemCacheProvider(ILogger<FileSystemCacheProvider> logger) : 
                     Directory.Delete(path, true);
                 }
 
+                if (Path.GetDirectoryName(path) is { } dn && !Directory.Exists(dn))
+                {
+                    Directory.CreateDirectory(dn);
+                }
+
                 if (File.Exists(path) && (flags & CacheFlags.NoHostDirectory) == 0)
                 {
                     File.Move(path, path + ".tmp");
