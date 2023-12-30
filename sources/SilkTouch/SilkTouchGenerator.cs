@@ -41,28 +41,35 @@ public class SilkTouchGenerator(
     IEnumerable<IMod> mods,
     IOutputWriter outputWriter,
     IInputResolver inputResolver,
-    ICacheProvider cacheProvider)
+    ICacheProvider cacheProvider
+)
 {
     private static readonly HashSet<string> ApplicableSkipIfs;
 
     static SilkTouchGenerator() =>
-        ApplicableSkipIfs = new HashSet<string>(StringComparer.OrdinalIgnoreCase) {
+        ApplicableSkipIfs = new HashSet<string>(StringComparer.OrdinalIgnoreCase)
+        {
             // Windows-specific conditions
-            OperatingSystem.IsWindows() ? "win" : "!win",
+            OperatingSystem.IsWindows()
+                ? "win"
+                : "!win",
             OperatingSystem.IsWindowsVersionAtLeast(10) ? "win10" : "!win10",
-
             // Linux-specific conditions
-            OperatingSystem.IsLinux() ? "linux" : "!linux",
-
+            OperatingSystem.IsLinux()
+                ? "linux"
+                : "!linux",
             // macOS-specific conditions - .NET 6 doesn't support anything less than Mojave
-            OperatingSystem.IsMacOS() ? "macos" : "!macos",
+            OperatingSystem.IsMacOS()
+                ? "macos"
+                : "!macos",
             OperatingSystem.IsMacOSVersionAtLeast(10, 14) ? "macos-mojave" : "!macos-mojave",
             OperatingSystem.IsMacOSVersionAtLeast(10, 15) ? "macos-catalina" : "!macos-catalina",
             OperatingSystem.IsMacOSVersionAtLeast(11) ? "macos-big-sur" : "!macos-big-sur",
             OperatingSystem.IsMacOSVersionAtLeast(12) ? "macos-monterey" : "!macos-monterey",
-
             // Others
-            VisualStudioResolver.TryGetVisualStudioInfo(out _) ? "vs" : "!vs"
+            VisualStudioResolver.TryGetVisualStudioInfo(out _)
+                ? "vs"
+                : "!vs"
         };
 
     private AsyncLocal<SilkTouchConfiguration> _jobConfig = new();
@@ -92,8 +99,10 @@ public class SilkTouchGenerator(
         CancellationToken ct = default
     )
     {
-        var job = jobConfig.GetRequiredSection($"Jobs:{key}").Get<SilkTouchConfiguration>() ??
-                  throw new InvalidOperationException("Configuration was null");
+        var sw = Stopwatch.StartNew();
+        var job =
+            jobConfig.GetRequiredSection($"Jobs:{key}").Get<SilkTouchConfiguration>()
+            ?? throw new InvalidOperationException("Configuration was null");
         job = await inputResolver.Resolve(job);
         _jobConfig.Value = job;
         // Prepare the mods
@@ -108,13 +117,17 @@ public class SilkTouchGenerator(
 
         // Read the response files
         logger.LogInformation("Reading response files for {0}, please wait...", key);
-        var rsps = job.ClangSharpResponseFiles
-            .SelectMany(file => rspHandler.ReadResponseFiles(file, job.ClangSharpResponseFiles))
+        var rsps = job.ClangSharpResponseFiles.SelectMany(
+            file => rspHandler.ReadResponseFiles(file, job.ClangSharpResponseFiles)
+        )
             .ToList();
-        var cacheKey = string.Join(',',
-                           jobConfig.AsEnumerable().Where(x =>
-                               x.Key.StartsWith($"Jobs:{key}", StringComparison.OrdinalIgnoreCase))) +
-                       string.Join(',', rsps.Select(x => x.FlatString));
+        var cacheKey =
+            string.Join(
+                ',',
+                jobConfig
+                    .AsEnumerable()
+                    .Where(x => x.Key.StartsWith($"Jobs:{key}", StringComparison.OrdinalIgnoreCase))
+            ) + string.Join(',', rsps.Select(x => x.FlatString));
         logger.LogTrace("Cache key for job (before hashing): {}", cacheKey);
         cacheKey = Convert.ToHexString(XxHash64.Hash(Encoding.UTF8.GetBytes(cacheKey)));
         GeneratedBindings? rawBindings = null;
@@ -143,22 +156,35 @@ public class SilkTouchGenerator(
                 rawBindings = await scraper.ScrapeRawBindings(rsps, job, parallelism, ct);
 
                 // Cache the bindings if we have a reason to
-                if (job.SkipScrapeIf?.Length > 0 &&
-                    rawBindings.Diagnostics.All(x => x.Level != DiagnosticLevel.Error))
+                if (
+                    job.SkipScrapeIf?.Length > 0
+                    && rawBindings.Diagnostics.All(x => x.Level != DiagnosticLevel.Error)
+                )
                 {
-                    var dirOpt = await cacheProvider.GetDirectory(cacheKey, CacheIntent.StageIntermediateOutput,
-                        CacheFlags.RequireNewLocked | CacheFlags.NoHostDirectory);
+                    var dirOpt = await cacheProvider.GetDirectory(
+                        cacheKey,
+                        CacheIntent.StageIntermediateOutput,
+                        CacheFlags.RequireNewLocked | CacheFlags.NoHostDirectory
+                    );
                     if (dirOpt is not null)
                     {
                         foreach (var (path, contents) in rawBindings.Files)
                         {
-                            await cacheProvider.CommitFile(cacheKey, CacheIntent.StageIntermediateOutput,
-                                CacheFlags.RequireNewLocked | CacheFlags.NoHostDirectory, path, contents);
+                            await cacheProvider.CommitFile(
+                                cacheKey,
+                                CacheIntent.StageIntermediateOutput,
+                                CacheFlags.RequireNewLocked | CacheFlags.NoHostDirectory,
+                                path,
+                                contents
+                            );
                             contents.Seek(0, SeekOrigin.Begin);
                         }
 
-                        await cacheProvider.CommitDirectory(cacheKey, CacheIntent.StageIntermediateOutput,
-                            CacheFlags.RequireNewLocked | CacheFlags.NoHostDirectory);
+                        await cacheProvider.CommitDirectory(
+                            cacheKey,
+                            CacheIntent.StageIntermediateOutput,
+                            CacheFlags.RequireNewLocked | CacheFlags.NoHostDirectory
+                        );
                     }
                 }
             }
@@ -173,17 +199,31 @@ public class SilkTouchGenerator(
         {
             if (skip)
             {
-                var dirOpt = await cacheProvider.GetDirectory(cacheKey, CacheIntent.StageIntermediateOutput,
-                    CacheFlags.NoHostDirectory);
+                var dirOpt = await cacheProvider.GetDirectory(
+                    cacheKey,
+                    CacheIntent.StageIntermediateOutput,
+                    CacheFlags.NoHostDirectory
+                );
                 if (dirOpt is not null)
                 {
-                    rawBindings = new GeneratedBindings(new Dictionary<string, Stream>(), Array.Empty<Diagnostic>());
-                    foreach (var file in await cacheProvider.GetFiles(cacheKey, CacheIntent.StageIntermediateOutput,
-                                 CacheFlags.NoHostDirectory))
-                    {
-                        rawBindings.Files[file] = await cacheProvider.GetFile(cacheKey,
+                    rawBindings = new GeneratedBindings(
+                        new Dictionary<string, Stream>(),
+                        Array.Empty<Diagnostic>()
+                    );
+                    foreach (
+                        var file in await cacheProvider.GetFiles(
+                            cacheKey,
                             CacheIntent.StageIntermediateOutput,
-                            CacheFlags.NoHostDirectory, file);
+                            CacheFlags.NoHostDirectory
+                        )
+                    )
+                    {
+                        rawBindings.Files[file] = await cacheProvider.GetFile(
+                            cacheKey,
+                            CacheIntent.StageIntermediateOutput,
+                            CacheFlags.NoHostDirectory,
+                            file
+                        );
                     }
                 }
             }
@@ -192,7 +232,9 @@ public class SilkTouchGenerator(
         if (rawBindings is null)
         {
             throw new InvalidOperationException(
-                "Unable to generate raw bindings and failed to find cached ClangSharp outputs.", innerException);
+                "Unable to generate raw bindings and failed to find cached ClangSharp outputs.",
+                innerException
+            );
         }
 
         // Read the bindings as syntax trees
@@ -217,6 +259,10 @@ public class SilkTouchGenerator(
         }
 
         // Output the generated bindings
+        logger.LogDebug(
+            "Bindings generation completed in {} seconds, writing to disk...",
+            sw.Elapsed.TotalSeconds
+        );
         return bindings;
     }
 
@@ -234,6 +280,7 @@ public class SilkTouchGenerator(
         CancellationToken ct = default
     )
     {
+        var sw = Stopwatch.StartNew();
         // Generate syntax
         var result = await GenerateSyntaxAsync(key, jobConfig, parallelism, ct);
         if (result.Files.Count == 0)
@@ -242,9 +289,14 @@ public class SilkTouchGenerator(
             return result.Diagnostics;
         }
 
-        var job = jobConfig.GetRequiredSection($"Jobs:{key}").Get<SilkTouchConfiguration>() ??
-                  throw new InvalidOperationException("Config was null");
+        var job =
+            jobConfig.GetRequiredSection($"Jobs:{key}").Get<SilkTouchConfiguration>()
+            ?? throw new InvalidOperationException("Config was null");
         await outputWriter.OutputAsync(key, job, result, ct);
+        logger.LogInformation(
+            "Wrote generated bindings to disk, generation completed in {} seconds.",
+            sw.Elapsed.TotalSeconds
+        );
         return result.Diagnostics;
     }
 

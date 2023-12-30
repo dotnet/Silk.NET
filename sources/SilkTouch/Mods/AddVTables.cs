@@ -364,19 +364,18 @@ public class AddVTables(IOptionsSnapshot<AddVTables.Configuration> config) : IMo
                     )
             )
                 .AddMembers(
-                    ctx.StaticDecl
-                        .WithModifiers(
-                            TokenList(
-                                new[] { Token(SyntaxKind.PublicKeyword) }.Concat(
-                                    ctx.StaticDecl.Modifiers.Where(
-                                        x =>
-                                            x.Kind()
-                                                is SyntaxKind.StaticKeyword
-                                                    or SyntaxKind.UnsafeKeyword
-                                    )
+                    ctx.StaticDecl.WithModifiers(
+                        TokenList(
+                            new[] { Token(SyntaxKind.PublicKeyword) }.Concat(
+                                ctx.StaticDecl.Modifiers.Where(
+                                    x =>
+                                        x.Kind()
+                                            is SyntaxKind.StaticKeyword
+                                                or SyntaxKind.UnsafeKeyword
                                 )
                             )
                         )
+                    )
                         .WithExpressionBody(
                             ArrowExpressionClause(
                                 InvocationExpression(
@@ -455,8 +454,7 @@ public class AddVTables(IOptionsSnapshot<AddVTables.Configuration> config) : IMo
                         )
                     )
             ).AddMembers(
-                ctx.InstanceDecl
-                    .AddModifiers(Token(SyntaxKind.PublicKeyword))
+                ctx.InstanceDecl.AddModifiers(Token(SyntaxKind.PublicKeyword))
                     .WithBody(null)
                     .WithExpressionBody(
                         ArrowExpressionClause(
@@ -496,12 +494,15 @@ public class AddVTables(IOptionsSnapshot<AddVTables.Configuration> config) : IMo
             string,
             (InterfaceDeclarationSyntax Syntax, string? Namespace)
         > _interfaces = new();
+
         private InterfaceDeclarationSyntax? _currentInterface;
-        private Dictionary<string, UsingDirectiveSyntax> _usings = new();
         private VTable[] _vTables = vTables;
+
         private ClassDeclarationSyntax?[] _currentVTableOutputs = new ClassDeclarationSyntax?[
             vTables.Length
         ];
+
+        private Dictionary<string, UsingDirectiveSyntax> _aggregatedUsings = new();
 
         private string _staticDefault =
             vTables.FirstOrDefault(x => x.IsDefault && x.IsStatic)?.Name
@@ -537,24 +538,20 @@ public class AddVTables(IOptionsSnapshot<AddVTables.Configuration> config) : IMo
 
         private List<MethodDeclarationSyntax> _methods = new();
 
-        public override SyntaxNode? VisitCompilationUnit(CompilationUnitSyntax node)
+        public override SyntaxNode? Visit(SyntaxNode? node)
         {
-            foreach (var use in node.Usings)
+            var ret = base.Visit(node);
+            if (node is CompilationUnitSyntax)
             {
-                _usings.TryAdd(use.ToString(), use);
+                foreach (var (k, v) in UsingsToAdd)
+                {
+                    _aggregatedUsings[k] = v;
+                }
+
+                UsingsToAdd.Clear();
             }
 
-            return base.VisitCompilationUnit(node);
-        }
-
-        public override SyntaxNode? VisitNamespaceDeclaration(NamespaceDeclarationSyntax node)
-        {
-            foreach (var use in node.Usings)
-            {
-                _usings.TryAdd(use.ToString(), use);
-            }
-
-            return base.VisitNamespaceDeclaration(node);
+            return ret;
         }
 
         public override SyntaxNode? VisitClassDeclaration(ClassDeclarationSyntax node)
@@ -563,6 +560,7 @@ public class AddVTables(IOptionsSnapshot<AddVTables.Configuration> config) : IMo
             {
                 return node;
             }
+
             var ns = node.NamespaceFromSyntaxNode();
             var key = $"I{node.Identifier}";
             var fullKey = ns.Length == 0 ? node.Identifier.ToString() : $"{ns}.{key}";
@@ -656,16 +654,15 @@ public class AddVTables(IOptionsSnapshot<AddVTables.Configuration> config) : IMo
                 InterfaceDeclaration(key)
                     .WithModifiers(
                         TokenList(
-                            node.Modifiers
-                                .Where(
-                                    x =>
-                                        x.Kind()
-                                            is SyntaxKind.PublicKeyword
-                                                or SyntaxKind.PrivateKeyword
-                                                or SyntaxKind.InternalKeyword
-                                                or SyntaxKind.ProtectedKeyword
-                                                or SyntaxKind.UnsafeKeyword
-                                )
+                            node.Modifiers.Where(
+                                x =>
+                                    x.Kind()
+                                        is SyntaxKind.PublicKeyword
+                                            or SyntaxKind.PrivateKeyword
+                                            or SyntaxKind.InternalKeyword
+                                            or SyntaxKind.ProtectedKeyword
+                                            or SyntaxKind.UnsafeKeyword
+                            )
                                 .Concat(Enumerable.Repeat(Token(SyntaxKind.PartialKeyword), 1))
                         )
                     )
@@ -719,34 +716,31 @@ public class AddVTables(IOptionsSnapshot<AddVTables.Configuration> config) : IMo
                 return base.VisitMethodDeclaration(node);
             }
 
-            var staticInterface = _currentInterface.Members
-                .OfType<InterfaceDeclarationSyntax>()
+            var staticInterface = _currentInterface
+                .Members.OfType<InterfaceDeclarationSyntax>()
                 .First();
             node = (MethodDeclarationSyntax)base.VisitMethodDeclaration(node)!;
             var baseDecl = node.WithBody(null)
                 .WithSemicolonToken(Token(SyntaxKind.SemicolonToken))
                 .WithAttributeLists(
                     List(
-                        node.AttributeLists
-                            .Select(
-                                x =>
-                                    x.WithAttributes(
-                                        SeparatedList(
-                                            x.Attributes.Where(
-                                                y =>
-                                                    !y.IsAttribute(
-                                                        "System.Runtime.InteropServices.DllImport"
-                                                    )
-                                                    && !y.IsAttribute(
-                                                        "Silk.NET.Core.NativeFunction"
-                                                    )
-                                                    && !y.IsAttribute(
-                                                        "System.Runtime.CompilerServices.MethodImpl"
-                                                    )
-                                            )
+                        node.AttributeLists.Select(
+                            x =>
+                                x.WithAttributes(
+                                    SeparatedList(
+                                        x.Attributes.Where(
+                                            y =>
+                                                !y.IsAttribute(
+                                                    "System.Runtime.InteropServices.DllImport"
+                                                )
+                                                && !y.IsAttribute("Silk.NET.Core.NativeFunction")
+                                                && !y.IsAttribute(
+                                                    "System.Runtime.CompilerServices.MethodImpl"
+                                                )
                                         )
                                     )
-                            )
+                                )
+                        )
                             .Where(x => x.Attributes.Count > 0)
                     )
                 )
@@ -765,8 +759,8 @@ public class AddVTables(IOptionsSnapshot<AddVTables.Configuration> config) : IMo
             );
             _currentInterface = _currentInterface.WithMembers(
                 List(
-                    _currentInterface.Members
-                        .Select(
+                    _currentInterface
+                        .Members.Select(
                             x =>
                                 x == staticInterface
                                     ? staticInterface = staticInterface.AddMembers(staticDecl)
@@ -900,6 +894,7 @@ public class AddVTables(IOptionsSnapshot<AddVTables.Configuration> config) : IMo
                     )
                     .WithSemicolonToken(Token(SyntaxKind.SemicolonToken));
             }
+
             var rmModeBefore = _rwMode;
             var ret = (LocalFunctionStatementSyntax)base.VisitLocalFunctionStatement(node)!;
             if (rmModeBefore != _rwMode)
@@ -916,12 +911,14 @@ public class AddVTables(IOptionsSnapshot<AddVTables.Configuration> config) : IMo
 
         public IEnumerable<KeyValuePair<string, SyntaxNode>> GetExtraFiles()
         {
+            var uta = UsingsToAdd;
+            UsingsToAdd = _aggregatedUsings;
             foreach (var (fqn, (iface, ns)) in _interfaces)
             {
                 yield return new KeyValuePair<string, SyntaxNode>(
                     $"sources/{fqn}.gen.cs",
                     CompilationUnit()
-                        .WithUsings(List(_usings.Values))
+                        .WithUsings(GetUsings(UsingsToAdd, null))
                         .WithMembers(
                             string.IsNullOrWhiteSpace(ns)
                                 ? SingletonList<MemberDeclarationSyntax>(iface)
@@ -970,22 +967,12 @@ public class AddVTables(IOptionsSnapshot<AddVTables.Configuration> config) : IMo
                             )
                         )
                     );
-                if (!_usings.ContainsKey("Silk.NET.Core.Loader"))
-                {
-                    _usings["Silk.NET.Core.Loader"] = UsingDirective(
-                        ModUtils.NamespaceIntoIdentifierName("Silk.NET.Core.Loader")
-                    );
-                }
-                if (!_usings.ContainsKey("System.Reflection"))
-                {
-                    _usings["System.Reflection"] = UsingDirective(
-                        ModUtils.NamespaceIntoIdentifierName("System.Reflection")
-                    );
-                }
+                AddUsing("Silk.NET.Core.Loader");
+                AddUsing("System.Reflection");
                 yield return new KeyValuePair<string, SyntaxNode>(
                     $"sources/{nonInterface}.gen.cs",
                     CompilationUnit()
-                        .WithUsings(List(_usings.Values))
+                        .WithUsings(GetUsings(UsingsToAdd, null))
                         .WithMembers(
                             string.IsNullOrWhiteSpace(ns)
                                 ? SingletonList<MemberDeclarationSyntax>(boilerplate)
@@ -1000,6 +987,8 @@ public class AddVTables(IOptionsSnapshot<AddVTables.Configuration> config) : IMo
                         )
                 );
             }
+
+            UsingsToAdd = uta;
         }
 
         private IEnumerable<MemberDeclarationSyntax> GenerateTopLevelBoilerplate(
@@ -1121,8 +1110,8 @@ public class AddVTables(IOptionsSnapshot<AddVTables.Configuration> config) : IMo
                                     .WithParameterList(
                                         FunctionPointerParameterList(
                                             SeparatedList(
-                                                parameterList.Parameters
-                                                    .Select(
+                                                parameterList
+                                                    .Parameters.Select(
                                                         x =>
                                                             FunctionPointerParameter(
                                                                 x.Type
@@ -1228,7 +1217,8 @@ public class AddVTables(IOptionsSnapshot<AddVTables.Configuration> config) : IMo
         {
             if (fname.StartsWith("sources/"))
             {
-                syntax.Files[fname] = rw.Visit(node);
+                syntax.Files[fname] =
+                    rw.Visit(node) ?? throw new InvalidOperationException("Visit returned null");
             }
         }
 

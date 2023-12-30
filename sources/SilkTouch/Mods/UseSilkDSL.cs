@@ -63,17 +63,19 @@ public class UseSilkDSL : IMod
             Debug.Assert(_parameterIdentifiers is null);
 
             // Make sure the function either has a body or is an extern function
-            var consider =
-                node.Body is not null
-                || node.Modifiers.Any(SyntaxKind.ExternKeyword);
-            if (!consider || !node.AttributeLists.GetNativeFunctionInfo(out var lib, out var ep, out _))
+            var consider = node.Body is not null || node.Modifiers.Any(SyntaxKind.ExternKeyword);
+            if (
+                !consider
+                || !node.AttributeLists.GetNativeFunctionInfo(out var lib, out var ep, out _)
+            )
             {
                 return base.VisitMethodDeclaration(node);
             }
 
             // Get the list of DSL applicable parameters
-            var paramsToChange = node.ParameterList.Parameters
-                .Where(x => x.Type is not null && IsDSLApplicable(x.Type))
+            var paramsToChange = node.ParameterList.Parameters.Where(
+                x => x.Type is not null && IsDSLApplicable(x.Type)
+            )
                 .ToArray();
             _parameterIdentifiers = paramsToChange.Select(x => x.Identifier.ToString()).ToHashSet();
             _returnTypeReplaceable = IsDSLApplicable(node.ReturnType);
@@ -220,8 +222,9 @@ public class UseSilkDSL : IMod
                             )
                         )
                     )
-                    .AddMaxOpt().AddNativeFunction(node);
-                UsingsToAdd.Add("System.Runtime.CompilerServices");
+                    .AddMaxOpt()
+                    .AddNativeFunction(node);
+                AddUsing("System.Runtime.CompilerServices");
             }
 
             // Convert expression bodies to statement bodies
@@ -345,7 +348,7 @@ public class UseSilkDSL : IMod
             TypeSyntax syntax,
             IEnumerable<AttributeListSyntax?>? attrLists,
             SyntaxKind? target
-            )
+        )
         {
             var indirectionLevels = 0;
             var isVoid = false;
@@ -369,7 +372,18 @@ public class UseSilkDSL : IMod
             }
 
             var isOut = false;
-            if (target == SyntaxKind.ReturnKeyword || (attrLists is not null && attrLists.Any(a => a is not null ? a.Attributes.Any(attr => attr.Name.ToString() == "out") : false)))
+            if (
+                target == SyntaxKind.ReturnKeyword
+                || (
+                    attrLists is not null
+                    && attrLists.Any(
+                        a =>
+                            a is not null
+                                ? a.Attributes.Any(attr => attr.Name.ToString() == "out")
+                                : false
+                    )
+                )
+            )
             {
                 isOut = true;
             }

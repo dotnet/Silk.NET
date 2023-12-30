@@ -13,7 +13,8 @@ public class UnixStdIncludeResolver : IStdIncludeResolver
     private string[]? _ret = null;
 
     /// <inheritdoc />
-    public IEnumerable<string> GetStandardIncludes() => _ret ??= CoreGetStandardIncludes().ToArray();
+    public IEnumerable<string> GetStandardIncludes() =>
+        _ret ??= CoreGetStandardIncludes().ToArray();
 
     /// <inheritdoc cref="GetStandardIncludes" />
     protected virtual IEnumerable<string> CoreGetStandardIncludes()

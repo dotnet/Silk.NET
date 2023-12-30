@@ -14,4 +14,4 @@ Silk.NET.OpenGL
 --test-output
 ../../../../tests/OpenGL/glcompat/gl
 --traverse
-../../../include/glcompat/gl.h
+../../../include/glcompat/OpenGL/gl.h

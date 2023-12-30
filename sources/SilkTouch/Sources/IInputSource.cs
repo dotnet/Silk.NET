@@ -11,5 +11,4 @@ public interface IInputSource : IInputResolver
     /// The scheme used by this source.
     /// </summary>
     public string Scheme { get; }
-
 }

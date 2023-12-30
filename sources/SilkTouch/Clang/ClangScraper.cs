@@ -13,8 +13,8 @@ using System.Threading.Tasks;
 using ClangSharp;
 using ClangSharp.Interop;
 using Microsoft.Extensions.Logging;
-using static ClangSharp.Interop.CXErrorCode;
 using static ClangSharp.Interop.CXDiagnosticSeverity;
+using static ClangSharp.Interop.CXErrorCode;
 
 namespace Silk.NET.SilkTouch.Clang;
 
@@ -97,7 +97,8 @@ public sealed class ClangScraper
                     using var diagnostic = handle.GetDiagnostic(i);
 
                     _logger.Log(
-                        diagnostic.Severity switch {
+                        diagnostic.Severity switch
+                        {
                             CXDiagnostic_Ignored => LogLevel.Trace,
                             CXDiagnostic_Note => LogLevel.Debug,
                             CXDiagnostic_Warning => LogLevel.Warning,
@@ -157,7 +158,8 @@ public sealed class ClangScraper
                     IsSubPathOf(kvp.Key, config.GeneratorConfiguration.TestOutputLocation)
                         ? $"tests/{Path.GetRelativePath(config.GeneratorConfiguration.TestOutputLocation, kvp.Key)}"
                         : $"sources/{Path.GetRelativePath(config.GeneratorConfiguration.OutputLocation, kvp.Key)}",
-                kvp => {
+                kvp =>
+                {
                     // Copy the memory stream to a memory mapped file to ensure we don't eat RAM
                     var arr = ((MemoryStream)kvp.Value).ToArray();
                     var mmf = MemoryMappedFile.CreateNew(null, arr.Length);
@@ -183,8 +185,12 @@ public sealed class ClangScraper
     /// <param name="ct">The cancellation token.</param>
     /// <returns>The aggregated bindings.</returns>
     /// <exception cref="InvalidOperationException">The scraper output wasn't as expected.</exception>
-    public async Task<GeneratedBindings> ScrapeRawBindings(IReadOnlyList<ResponseFile>? rsps,
-        SilkTouchConfiguration job, int parallelism = 0, CancellationToken ct = default)
+    public async Task<GeneratedBindings> ScrapeRawBindings(
+        IReadOnlyList<ResponseFile>? rsps,
+        SilkTouchConfiguration job,
+        int parallelism = 0,
+        CancellationToken ct = default
+    )
     {
         if (parallelism == 0)
         {
@@ -194,12 +200,16 @@ public sealed class ClangScraper
         // Figure out what the common root is so we can aggregate the file paths without collisions
         var srcRoot =
             job.InputSourceRoot
-            ?? SilkTouchGenerator.GetLongestCommonPath(rsps?.Select(x => x.GeneratorConfiguration.OutputLocation) ??
-                                                       Enumerable.Empty<string>());
+            ?? SilkTouchGenerator.GetLongestCommonPath(
+                rsps?.Select(x => x.GeneratorConfiguration.OutputLocation)
+                    ?? Enumerable.Empty<string>()
+            );
         var testRoot =
             job.InputTestRoot
-            ?? SilkTouchGenerator.GetLongestCommonPath(rsps?.Select(x => x.GeneratorConfiguration.TestOutputLocation) ??
-                                                       Enumerable.Empty<string>());
+            ?? SilkTouchGenerator.GetLongestCommonPath(
+                rsps?.Select(x => x.GeneratorConfiguration.TestOutputLocation)
+                    ?? Enumerable.Empty<string>()
+            );
         srcRoot = Path.GetFullPath(srcRoot);
         testRoot = Path.GetFullPath(testRoot);
 
@@ -210,7 +220,8 @@ public sealed class ClangScraper
             new ParallelOptions { CancellationToken = ct, MaxDegreeOfParallelism = parallelism },
             async (rsp, innerCt) =>
                 await Task.Run(
-                    () => {
+                    () =>
+                    {
                         var rawBindings = ScrapeRawBindings(rsp);
                         foreach (var (k, v) in rawBindings.Files)
                         {
@@ -273,8 +284,10 @@ public sealed class ClangScraper
                 )
         );
 
-        return new GeneratedBindings(aggregatedBindings.ToDictionary(x => x.Key, x => x.Value),
-            aggregatedDiagnostics.ToArray());
+        return new GeneratedBindings(
+            aggregatedBindings.ToDictionary(x => x.Key, x => x.Value),
+            aggregatedDiagnostics.ToArray()
+        );
     }
 
     /// <summary>

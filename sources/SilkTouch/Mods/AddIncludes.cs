@@ -18,7 +18,11 @@ namespace Silk.NET.SilkTouch.Mods;
 /// <param name="inputResolver">The user path input resolver.</param>
 /// <param name="options">The mod configuration options snapshot.</param>
 [ModConfiguration<Configuration>]
-public class AddIncludes(IStdIncludeResolver stdResolver, IInputResolver inputResolver, IOptionsSnapshot<AddIncludes.Configuration> options) : IMod
+public class AddIncludes(
+    IStdIncludeResolver stdResolver,
+    IInputResolver inputResolver,
+    IOptionsSnapshot<AddIncludes.Configuration> options
+) : IMod
 {
     /// <summary>
     /// The mod configuration.
@@ -59,16 +63,29 @@ public class AddIncludes(IStdIncludeResolver stdResolver, IInputResolver inputRe
         {
             var rsp = rsps[i];
             var cmdLineArgs = rsp.ClangCommandLineArgs.ToList();
-            cmdLineArgs.InsertRange(0, cfg.PriorityIncludes?.Select(x => $"--include-directory={x}") ?? Enumerable.Empty<string>());
-            cmdLineArgs.AddRange(cfg.AdditionalIncludes?.Select(x => $"--include-directory={x}") ?? Enumerable.Empty<string>());
+            cmdLineArgs.InsertRange(
+                0,
+                cfg.PriorityIncludes?.Select(x => $"--include-directory={x}")
+                    ?? Enumerable.Empty<string>()
+            );
+            cmdLineArgs.AddRange(
+                cfg.AdditionalIncludes?.Select(x => $"--include-directory={x}")
+                    ?? Enumerable.Empty<string>()
+            );
             if (!cfg.SuppressStdIncludes)
             {
-                cmdLineArgs.AddRange(stdResolver.GetStandardIncludes().Select(x => $"--include-directory={x}"));
+                cmdLineArgs.AddRange(
+                    stdResolver.GetStandardIncludes().Select(x => $"--include-directory={x}")
+                );
             }
 
             var matcher = new Matcher();
-            matcher.AddIncludePatterns(cfg.RemoveMatchingIncludes?.Where(x => x[0] != '!') ?? Enumerable.Empty<string>());
-            matcher.AddExcludePatterns(cfg.RemoveMatchingIncludes?.Where(x => x[0] == '!') ?? Enumerable.Empty<string>());
+            matcher.AddIncludePatterns(
+                cfg.RemoveMatchingIncludes?.Where(x => x[0] != '!') ?? Enumerable.Empty<string>()
+            );
+            matcher.AddExcludePatterns(
+                cfg.RemoveMatchingIncludes?.Where(x => x[0] == '!') ?? Enumerable.Empty<string>()
+            );
             for (var j = 0; j < cmdLineArgs.Count; j++)
             {
                 string? path = null;
@@ -88,7 +105,9 @@ public class AddIncludes(IStdIncludeResolver stdResolver, IInputResolver inputRe
                 }
                 else if (arg.StartsWith("--include-directory"))
                 {
-                    path = await inputResolver.ResolvePath(arg["--include-directory".Length..].TrimStart('='));
+                    path = await inputResolver.ResolvePath(
+                        arg["--include-directory".Length..].TrimStart('=')
+                    );
                 }
                 else if (arg.StartsWith("-I"))
                 {
@@ -101,17 +120,19 @@ public class AddIncludes(IStdIncludeResolver stdResolver, IInputResolver inputRe
                 }
 
                 path = Path.GetFullPath(path, rsp.FileDirectory);
-                if ((!Directory.Exists(path) && !cfg.KeepMissingIncludes) ||
-                    (cfg.RemoveMatchingIncludes is { Length: > 0 } && matcher.Match(path).HasMatches))
+                if (
+                    (!Directory.Exists(path) && !cfg.KeepMissingIncludes)
+                    || (
+                        cfg.RemoveMatchingIncludes is { Length: > 0 }
+                        && matcher.Match(path).HasMatches
+                    )
+                )
                 {
                     cmdLineArgs.RemoveAt(j--);
                 }
             }
 
-            rsps[i] = rsp with
-            {
-                ClangCommandLineArgs = cmdLineArgs.ToArray()
-            };
+            rsps[i] = rsp with { ClangCommandLineArgs = cmdLineArgs.ToArray() };
         }
 
         return rsps;

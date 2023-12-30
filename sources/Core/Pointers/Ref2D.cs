@@ -234,5 +234,6 @@ public unsafe readonly ref struct Ref2D
     /// </summary>
     /// <param name="array">The string array.</param>
     /// <returns>The <see cref="Ref2D"/></returns>
-    public static implicit operator Ref2D(string[] array) => new(ref SilkMarshal.StringArrayToNative(array));
+    public static implicit operator Ref2D(string[] array) =>
+        new(ref SilkMarshal.StringArrayToNative(array));
 }

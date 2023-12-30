@@ -26,7 +26,8 @@ public interface IInputResolver
     /// </summary>
     /// <param name="path">The path input.</param>
     /// <returns>The resolved path asynchronously.</returns>
-    async Task<string> ResolvePath(string path) => (await TryResolvePath(path))?.Replace('\\', '/') ?? path;
+    async Task<string> ResolvePath(string path) =>
+        (await TryResolvePath(path))?.Replace('\\', '/') ?? path;
 
     /// <summary>
     /// Resolves all of the paths referenced in the given response file in place.
@@ -56,18 +57,22 @@ public interface IInputResolver
                         {
                             break;
                         }
-                        rsp.ClangCommandLineArgs[k] = await ResolvePath(rsp.ClangCommandLineArgs[k]);
+                        rsp.ClangCommandLineArgs[k] = await ResolvePath(
+                            rsp.ClangCommandLineArgs[k]
+                        );
                         j++;
                     }
                 }
                 else if (arg.StartsWith("--include-directory"))
                 {
-                    rsp.ClangCommandLineArgs[j] = "--include-directory=" +
-                                                  await ResolvePath(arg["--include-directory".Length..].TrimStart('='));
+                    rsp.ClangCommandLineArgs[j] =
+                        "--include-directory="
+                        + await ResolvePath(arg["--include-directory".Length..].TrimStart('='));
                 }
                 else if (arg.StartsWith("-I"))
                 {
-                    rsp.ClangCommandLineArgs[j] = "-I" + await ResolvePath(arg["-I".Length..].TrimStart('='));
+                    rsp.ClangCommandLineArgs[j] =
+                        "-I" + await ResolvePath(arg["-I".Length..].TrimStart('='));
                 }
             }
 
@@ -79,9 +84,12 @@ public interface IInputResolver
 
             var tmp = Path.GetTempFileName();
             await File.WriteAllTextAsync(tmp, rsp.GeneratorConfiguration.HeaderText);
-            rsps[i] = rsp with {
+            rsps[i] = rsp with
+            {
                 Files = files,
-                FileDirectory = (await TryResolvePath(rsp.FileDirectory))?.Replace('\\', '/') ?? rsp.FileDirectory,
+                FileDirectory =
+                    (await TryResolvePath(rsp.FileDirectory))?.Replace('\\', '/')
+                    ?? rsp.FileDirectory,
                 ClangCommandLineArgs = rsp.ClangCommandLineArgs,
                 GeneratorConfiguration = new PInvokeGeneratorConfiguration(
                     rsp.GeneratorConfiguration.Language,
@@ -91,7 +99,8 @@ public interface IInputResolver
                     tmp,
                     rsp.GeneratorConfiguration.OutputMode,
                     rsp.GeneratorConfiguration.ReconstructOptions()
-                ) {
+                )
+                {
                     WithClasses = rsp.GeneratorConfiguration.WithClasses,
                     WithGuids = rsp.GeneratorConfiguration.WithGuids,
                     DefaultClass = rsp.GeneratorConfiguration.DefaultClass,
@@ -114,8 +123,11 @@ public interface IInputResolver
                     WithManualImports = rsp.GeneratorConfiguration.WithManualImports,
                     WithTransparentStructs = rsp.GeneratorConfiguration.WithTransparentStructs,
                     WithSetLastErrors = rsp.GeneratorConfiguration.WithSetLastErrors,
-                    WithSuppressGCTransitions = rsp.GeneratorConfiguration.WithSuppressGCTransitions,
-                    TestOutputLocation = await ResolvePath(rsp.GeneratorConfiguration.TestOutputLocation)
+                    WithSuppressGCTransitions =
+                        rsp.GeneratorConfiguration.WithSuppressGCTransitions,
+                    TestOutputLocation = await ResolvePath(
+                        rsp.GeneratorConfiguration.TestOutputLocation
+                    )
                 }
             };
         }
@@ -141,15 +153,26 @@ public interface IInputResolver
     async Task<SilkTouchConfiguration> Resolve(SilkTouchConfiguration config)
     {
         await ResolveInPlace(config.ClangSharpResponseFiles);
-        foreach (var (k, v) in config.ManualOverrides ?? Enumerable.Empty<KeyValuePair<string, string>>())
+        foreach (
+            var (k, v) in config.ManualOverrides ?? Enumerable.Empty<KeyValuePair<string, string>>()
+        )
         {
             config.ManualOverrides![k] = await ResolvePath(v);
         }
-        return config with {
-            InputSourceRoot = config.InputSourceRoot is null ? null : await ResolvePath(config.InputSourceRoot),
-            OutputSourceRoot = config.OutputSourceRoot is null ? null : await ResolvePath(config.OutputSourceRoot),
-            InputTestRoot = config.InputTestRoot is null ? null : await ResolvePath(config.InputTestRoot),
-            OutputTestRoot = config.OutputTestRoot is null ? null : await ResolvePath(config.OutputTestRoot)
+        return config with
+        {
+            InputSourceRoot = config.InputSourceRoot is null
+                ? null
+                : await ResolvePath(config.InputSourceRoot),
+            OutputSourceRoot = config.OutputSourceRoot is null
+                ? null
+                : await ResolvePath(config.OutputSourceRoot),
+            InputTestRoot = config.InputTestRoot is null
+                ? null
+                : await ResolvePath(config.InputTestRoot),
+            OutputTestRoot = config.OutputTestRoot is null
+                ? null
+                : await ResolvePath(config.OutputTestRoot)
         };
     }
 }

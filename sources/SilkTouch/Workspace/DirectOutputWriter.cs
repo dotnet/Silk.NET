@@ -19,10 +19,7 @@ public class DirectOutputWriter : IOutputWriter
         CancellationToken ct = default
     )
     {
-        if (
-            !Directory.Exists(job.OutputSourceRoot!)
-            && syntax.Files.Keys.Any(x => x.StartsWith("sources/"))
-        )
+        if (syntax.Files.Keys.Any(x => x.StartsWith("sources/")))
         {
             if (!Directory.Exists(job.OutputSourceRoot!))
             {

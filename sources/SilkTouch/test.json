@@ -23,7 +23,10 @@
         "Mappings": {
           "TerraFX.Interop.(.*)": "Silk.NET.$1"
         }
-      }
+      },
+      "SkipScrapeIf": [
+        "!win"
+      ]
     },
     "GLFW": {
       "ClangSharpResponseFiles": [

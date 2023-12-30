@@ -375,7 +375,11 @@ public static unsafe class SilkMarshal
     /// <param name="lengths">length of the first-level arrays</param>
     /// <returns>The read string array.</returns>
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
-    public static string?[]?[]? NativeToStringArray(ReadOnlySpan<nint> native, int[] lengths, nint charSize = 1)
+    public static string?[]?[]? NativeToStringArray(
+        ReadOnlySpan<nint> native,
+        int[] lengths,
+        nint charSize = 1
+    )
     {
         if (native == null || native.Length != lengths.Length)
         {
@@ -385,10 +389,13 @@ public static unsafe class SilkMarshal
         string?[]?[]? strings = new string[native.Length][];
         for (int i = 0; i < native.Length; i++)
         {
-            strings[i] = NativeToStringArray(MemoryMarshal.CreateReadOnlySpan(
-                ref Unsafe.As<byte, nint>(ref Unsafe.AsRef<byte>((byte*)native[i])),
-                lengths[i]
-            ), charSize);
+            strings[i] = NativeToStringArray(
+                MemoryMarshal.CreateReadOnlySpan(
+                    ref Unsafe.As<byte, nint>(ref Unsafe.AsRef<byte>((byte*)native[i])),
+                    lengths[i]
+                ),
+                charSize
+            );
         }
 
         return strings;
@@ -403,7 +410,12 @@ public static unsafe class SilkMarshal
     /// <param name="lengths1">length of the second-level arrays</param>
     /// <returns>The read string array.</returns>
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
-    public static string?[]?[]?[]? NativeToStringArray(ReadOnlySpan<nint> native, int[] lengths0, int[] lengths1, nint charSize = 1)
+    public static string?[]?[]?[]? NativeToStringArray(
+        ReadOnlySpan<nint> native,
+        int[] lengths0,
+        int[] lengths1,
+        nint charSize = 1
+    )
     {
         if (native == null || native.Length != lengths0.Length)
         {
@@ -413,10 +425,14 @@ public static unsafe class SilkMarshal
         string?[]?[]?[]? strings = new string[native.Length][][];
         for (int i = 0; i < native.Length; i++)
         {
-            strings[i] = NativeToStringArray(MemoryMarshal.CreateReadOnlySpan(
-                ref Unsafe.As<byte, nint>(ref Unsafe.AsRef<byte>((byte*)native[i])),
-                lengths0[i]
-            ), lengths1, charSize);
+            strings[i] = NativeToStringArray(
+                MemoryMarshal.CreateReadOnlySpan(
+                    ref Unsafe.As<byte, nint>(ref Unsafe.AsRef<byte>((byte*)native[i])),
+                    lengths0[i]
+                ),
+                lengths1,
+                charSize
+            );
         }
 
         return strings;
@@ -528,10 +544,11 @@ public static unsafe class SilkMarshal
     /// <param name="span"></param>
     /// <param name="lengths">length of each array in the span</param>
     /// <returns></returns>
-    public static T[][] NativeToArray<T>(Span<nint> span, int[] lengths) where T : unmanaged
+    public static T[][] NativeToArray<T>(Span<nint> span, int[] lengths)
+        where T : unmanaged
     {
         T[][] ret = new T[span.Length][];
-        for (int i  = 0; i < span.Length; i++)
+        for (int i = 0; i < span.Length; i++)
         {
             T* ptr = (T*)span[0];
 
@@ -551,7 +568,8 @@ public static unsafe class SilkMarshal
     /// <param name="lengths0">length of each array in the span</param>
     /// <param name="lengths1">length of each array in the arrays in the span</param>
     /// <returns></returns>
-    public static T[][][] NativeToArray<T>(Span<nint> span, int[] lengths0, int[][] lengths1) where T : unmanaged
+    public static T[][][] NativeToArray<T>(Span<nint> span, int[] lengths0, int[][] lengths1)
+        where T : unmanaged
     {
         T[][][] ret = new T[span.Length][][];
         for (int i = 0; i < span.Length; i++)

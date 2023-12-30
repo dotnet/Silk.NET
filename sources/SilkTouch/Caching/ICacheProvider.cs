@@ -17,7 +17,11 @@ public interface ICacheProvider
     /// <param name="intent">The intent behind the cache.</param>
     /// <param name="flags"></param>
     /// <returns>The directory and whether it is new.</returns>
-    Task<(string Path, bool IsNew)?> GetDirectory(string cacheKey, CacheIntent intent, CacheFlags flags);
+    Task<(string Path, bool IsNew)?> GetDirectory(
+        string cacheKey,
+        CacheIntent intent,
+        CacheFlags flags
+    );
 
     /// <summary>
     /// Finalises the cache output.
@@ -37,7 +41,13 @@ public interface ICacheProvider
     /// <param name="filePath">The file path within the cache.</param>
     /// <param name="stream">The stream.</param>
     /// <returns>An asynchronous task.</returns>
-    Task CommitFile(string cacheKey, CacheIntent intent, CacheFlags flags, string filePath, Stream stream);
+    Task CommitFile(
+        string cacheKey,
+        CacheIntent intent,
+        CacheFlags flags,
+        string filePath,
+        Stream stream
+    );
 
     /// <summary>
     /// Gets the file paths within the cache.

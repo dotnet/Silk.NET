@@ -20,10 +20,17 @@ public class GitInputSource(ILogger<GitInputSource> logger, ICacheProvider cache
     /// <inheritdoc />
     public async Task<string?> TryResolvePath(string path)
     {
-        var cacheKey = Convert.ToHexString(XxHash32.Hash(MemoryMarshal.Cast<char, byte>(path.AsSpan())));
+        var cacheKey = Convert.ToHexString(
+            XxHash32.Hash(MemoryMarshal.Cast<char, byte>(path.AsSpan()))
+        );
         logger.LogDebug("Cache key for {} = {}", path, cacheKey);
-        var (dir, shouldClone) =
-            (await cache.GetDirectory(cacheKey, CacheIntent.ResolvedForeignInput, CacheFlags.AllowNewLocked))!.Value;
+        var (dir, shouldClone) = (
+            await cache.GetDirectory(
+                cacheKey,
+                CacheIntent.ResolvedForeignInput,
+                CacheFlags.AllowNewLocked
+            )
+        )!.Value;
 
         path = path[4..].TrimStart('/');
         var url = path;
@@ -31,19 +38,26 @@ public class GitInputSource(ILogger<GitInputSource> logger, ICacheProvider cache
         string? pathInRepo = null;
         if (path.LastIndexOf('?') is not -1 and var i)
         {
-            argString = path[(i + 1)..].Split('&', StringSplitOptions.RemoveEmptyEntries)
-                .Aggregate(string.Empty,
-                    (args, x) => {
+            argString = path[(i + 1)..]
+                .Split('&', StringSplitOptions.RemoveEmptyEntries)
+                .Aggregate(
+                    string.Empty,
+                    (args, x) =>
+                    {
                         if (!x.StartsWith("path=", StringComparison.CurrentCultureIgnoreCase))
                         {
-                            return args + (x.LastIndexOf('=') is not -1 and var j
-                                ? $" --{x[..j]} {x[(j + 1)..]}"
-                                : $" --{x}");
+                            return args
+                                + (
+                                    x.LastIndexOf('=') is not -1 and var j
+                                        ? $" --{x[..j]} {x[(j + 1)..]}"
+                                        : $" --{x}"
+                                );
                         }
 
                         pathInRepo = x[5..];
                         return args;
-                    })
+                    }
+                )
                 .TrimStart(' ');
             url = url[..i];
         }
@@ -61,10 +75,15 @@ public class GitInputSource(ILogger<GitInputSource> logger, ICacheProvider cache
             if (proc.ExitCode != 0)
             {
                 throw new ExternalException(
-                    $"\"{proc.StartInfo.FileName} {proc.StartInfo.Arguments}\" exited with code {proc.ExitCode}");
+                    $"\"{proc.StartInfo.FileName} {proc.StartInfo.Arguments}\" exited with code {proc.ExitCode}"
+                );
             }
 
-            await cache.CommitDirectory(cacheKey, CacheIntent.ResolvedForeignInput, CacheFlags.NoHostDirectory);
+            await cache.CommitDirectory(
+                cacheKey,
+                CacheIntent.ResolvedForeignInput,
+                CacheFlags.NoHostDirectory
+            );
         }
 
         return Path.Combine(dir, pathInRepo);

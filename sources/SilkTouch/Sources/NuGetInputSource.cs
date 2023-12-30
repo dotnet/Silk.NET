@@ -30,24 +30,31 @@ public class NuGetInputSource(ICacheProvider cache, ILogger<NuGetInputSource> lo
         var version = queryString["version"]?.ToLower() ?? "latest";
         if (version == "latest")
         {
-            version = JsonSerializer.Deserialize<VersionsPayload>
-                (
+            version = JsonSerializer
+                .Deserialize<VersionsPayload>(
                     await _client.GetStringAsync(string.Format(VersionsUrl, packageName))
                 )
                 .Versions.Last();
         }
 
         var pathInPackage = uri.GetComponents(UriComponents.Path, UriFormat.Unescaped);
-        var (dir, needsDownload) = (await cache.GetDirectory($"{packageName}.{version}",
-            CacheIntent.ResolvedForeignInput,
-            CacheFlags.AllowNewLocked))!.Value;
+        var (dir, needsDownload) = (
+            await cache.GetDirectory(
+                $"{packageName}.{version}",
+                CacheIntent.ResolvedForeignInput,
+                CacheFlags.AllowNewLocked
+            )
+        )!.Value;
         if (needsDownload)
         {
             var url = string.Format(DownloadUrl, packageName, version);
             logger.LogInformation("Downloading & extracting {} into {}", url, dir);
             new ZipArchive(await _client.GetStreamAsync(url)).ExtractToDirectory(dir);
-            await cache.CommitDirectory($"{packageName}.{version}", CacheIntent.ResolvedForeignInput,
-                CacheFlags.AllowNewLocked);
+            await cache.CommitDirectory(
+                $"{packageName}.{version}",
+                CacheIntent.ResolvedForeignInput,
+                CacheFlags.AllowNewLocked
+            );
         }
 
         var semver1x4 = version[..(version.IndexOf('-') is not -1 and var v ? v : ^0)];
@@ -57,14 +64,16 @@ public class NuGetInputSource(ICacheProvider cache, ILogger<NuGetInputSource> lo
             semver1x4 += ".0";
         }
 
-        return Path.Combine(dir,
-            pathInPackage.Replace("$versionsv1x4", semver1x4).Replace("$version", version));
+        return Path.Combine(
+            dir,
+            pathInPackage.Replace("$versionsv1x4", semver1x4).Replace("$version", version)
+        );
     }
 
     /// <inheritdoc />
     public string Scheme => "nuget";
 
     private readonly record struct VersionsPayload(
-        [property: JsonPropertyName("versions")]
-        string[] Versions);
+        [property: JsonPropertyName("versions")] string[] Versions
+    );
 }
