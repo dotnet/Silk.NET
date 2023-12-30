@@ -24,34 +24,43 @@ public class DirectOutputWriter : IOutputWriter
             && syntax.Files.Keys.Any(x => x.StartsWith("sources/"))
         )
         {
-            Directory.CreateDirectory(job.OutputSourceRoot!);
+            if (!Directory.Exists(job.OutputSourceRoot!))
+            {
+                Directory.CreateDirectory(job.OutputSourceRoot!);
+            }
+            else
+            {
+                foreach (
+                    var file in Directory.GetFiles(
+                        job.OutputSourceRoot!,
+                        "*.gen.cs",
+                        SearchOption.AllDirectories
+                    )
+                )
+                {
+                    File.Delete(file);
+                }
+            }
         }
-        if (
-            !Directory.Exists(job.OutputTestRoot!)
-            && syntax.Files.Keys.Any(x => x.StartsWith("tests/"))
-        )
+        if (syntax.Files.Keys.Any(x => x.StartsWith("tests/")))
         {
-            Directory.CreateDirectory(job.OutputTestRoot!);
-        }
-        foreach (
-            var file in Directory.GetFiles(
-                job.OutputSourceRoot!,
-                "*.gen.cs",
-                SearchOption.AllDirectories
-            )
-        )
-        {
-            File.Delete(file);
-        }
-        foreach (
-            var file in Directory.GetFiles(
-                job.OutputTestRoot!,
-                "*.gen.cs",
-                SearchOption.AllDirectories
-            )
-        )
-        {
-            File.Delete(file);
+            if (!Directory.Exists(job.OutputTestRoot!))
+            {
+                Directory.CreateDirectory(job.OutputTestRoot!);
+            }
+            else
+            {
+                foreach (
+                    var file in Directory.GetFiles(
+                        job.OutputTestRoot!,
+                        "*.gen.cs",
+                        SearchOption.AllDirectories
+                    )
+                )
+                {
+                    File.Delete(file);
+                }
+            }
         }
         await Parallel.ForEachAsync(
             syntax.Files,

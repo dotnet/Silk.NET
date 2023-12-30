@@ -81,8 +81,7 @@ rootCommand.SetHandler(async ctx => {
             var generator = sp.GetRequiredService<SilkTouchGenerator>();
             await generator.OutputBindingsAsync(
                 job.Key,
-                job.Get<SilkTouchConfiguration>()
-                ?? throw new InvalidOperationException("failed to bind configuration"),
+                config,
                 ctx.ParseResult.GetValueForOption(jobs),
                 ct
             );
