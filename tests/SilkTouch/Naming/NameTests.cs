@@ -8,14 +8,6 @@ namespace Silk.NET.SilkTouch.UnitTests.Naming;
 [TestFixture]
 public class NameTests : NameTrimmer
 {
-    protected override string GetTrimmingName(Dictionary<string, string>? prefixOverrides, string name,
-        bool isContainer)
-    {
-        var ret =  base.GetTrimmingName(prefixOverrides, name, isContainer);
-        Console.WriteLine(ret);
-        return ret;
-    }
-
     [Test]
     public void SimpleGlfwTestDetermination()
     {
@@ -30,7 +22,7 @@ public class NameTests : NameTrimmer
             { "GLFWmonitor", ("GLFWmonitor", null) },
             { "GLFWwindow", ("GLFWwindow", null) }
         };
-        Assert.That(GetPrefix(null, null, test, null, true, false)?.Prefix, Is.EqualTo("GLFW_"));
+        Assert.That(GetPrefix(null, null, test, null, false, true)?.Prefix, Is.EqualTo("GLFW"));
         Trim(null, null, "GLFW", test, null);
         var expected = new Dictionary<string, string> {
             { "GLFWallocator", "Allocator" },
@@ -45,7 +37,7 @@ public class NameTests : NameTrimmer
         };
         foreach (var (key, (trimmed, _)) in test)
         {
-            Assert.That(trimmed, Is.EqualTo(expected[key]));
+            Assert.That(trimmed.Prettify(), Is.EqualTo(expected[key]));
         }
     }
 }
