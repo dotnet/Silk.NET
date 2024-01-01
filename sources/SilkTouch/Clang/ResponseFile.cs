@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using ClangSharp;
 using ClangSharp.Interop;
@@ -27,7 +28,7 @@ public record ResponseFile(
 )
 {
     internal string FlatString =>
-        $"{GeneratorConfiguration.OutputLocation}:{GeneratorConfiguration.TestOutputLocation}:"
+        $"{R(GeneratorConfiguration.OutputLocation)}:{R(GeneratorConfiguration.TestOutputLocation)}:"
         + $"{GeneratorConfiguration.GenerateLatestCode}:{GeneratorConfiguration.GeneratePreviewCode}:"
         + $"{GeneratorConfiguration.GenerateCompatibleCode}:{GeneratorConfiguration.Language}:"
         + $"{GeneratorConfiguration.DefaultClass}:{GeneratorConfiguration.DefaultNamespace}:"
@@ -35,7 +36,7 @@ public record ResponseFile(
         + $"{string.Join(',', GeneratorConfiguration.IncludedNames)}:{GeneratorConfiguration.LanguageStandard}:"
         + $"{GeneratorConfiguration.LibraryPath}:{GeneratorConfiguration.LogExclusions}:"
         + $"{GeneratorConfiguration.OutputMode}:{string.Join(',', GeneratorConfiguration.RemappedNames)}:"
-        + $"{string.Join(',', GeneratorConfiguration.TraversalNames)}:"
+        + $"{string.Join(',', GeneratorConfiguration.TraversalNames.Select(R))}:"
         + $"{string.Join(',', GeneratorConfiguration.WithAttributes)}:"
         + $"{string.Join(',', GeneratorConfiguration.WithClasses)}:{string.Join(',', GeneratorConfiguration.WithGuids)}:"
         + $"{string.Join(',', GeneratorConfiguration.WithNamespaces)}:"
@@ -68,4 +69,6 @@ public record ResponseFile(
         + $"{string.Join(',', GeneratorConfiguration.WithSuppressGCTransitions)}:"
         + $"{GeneratorConfiguration.DontUseUsingStaticsForEnums}:"
         + $"{GeneratorConfiguration.GenerateSetsLastSystemErrorAttribute}";
+
+    private static string R(string p) => Path.GetRelativePath(Environment.CurrentDirectory, p);
 }

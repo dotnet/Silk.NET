@@ -129,7 +129,6 @@ public class SilkTouchGenerator(
                     .Where(x => x.Key.StartsWith($"Jobs:{key}", StringComparison.OrdinalIgnoreCase))
             ) + string.Join(',', rsps.Select(x => x.FlatString))
         )
-            .Replace(Environment.CurrentDirectory, "...", StringComparison.OrdinalIgnoreCase)
             .Replace('\\', '/')
             .ToLower();
         logger.LogTrace("Cache key for job (before hashing): {}", cacheKey);
