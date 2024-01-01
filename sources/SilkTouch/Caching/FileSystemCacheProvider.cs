@@ -16,7 +16,7 @@ namespace Silk.NET.SilkTouch.Caching;
 public class FileSystemCacheProvider(ILogger<FileSystemCacheProvider> logger) : ICacheProvider
 {
     private readonly ConcurrentDictionary<string, SemaphoreSlim?> _semaphores = new();
-    private readonly ConcurrentDictionary<string, ZipArchive> _noHostZips = new();
+    private readonly ConcurrentDictionary<string, (FileStream, ZipArchive)> _noHostZips = new();
 
     internal static string CommonDir { get; set; } = Environment.CurrentDirectory;
 
@@ -129,8 +129,9 @@ public class FileSystemCacheProvider(ILogger<FileSystemCacheProvider> logger) : 
                         File.Delete(path);
                     }
 
-                    var za = new ZipArchive(File.OpenWrite(path), ZipArchiveMode.Create, false);
-                    _noHostZips.TryAdd(path, za);
+                    var fs = File.OpenWrite(path);
+                    var za = new ZipArchive(fs, ZipArchiveMode.Create, true);
+                    _noHostZips.TryAdd(path, (fs, za));
                 }
             }
 
@@ -164,7 +165,7 @@ public class FileSystemCacheProvider(ILogger<FileSystemCacheProvider> logger) : 
         var path = GetCachePath(cacheKey, intent);
         if ((flags & CacheFlags.NoHostDirectory) != 0 && _noHostZips.TryGetValue(path, out var zip))
         {
-            var entry = zip.CreateEntry(filePath, CompressionLevel.SmallestSize);
+            var entry = zip.Item2.CreateEntry(filePath, CompressionLevel.SmallestSize);
             await using var s = entry.Open();
             await stream.CopyToAsync(s);
         }
@@ -176,20 +177,21 @@ public class FileSystemCacheProvider(ILogger<FileSystemCacheProvider> logger) : 
     }
 
     /// <inheritdoc />
-    public Task CommitDirectory(string cacheKey, CacheIntent intent, CacheFlags flags)
+    public async Task CommitDirectory(string cacheKey, CacheIntent intent, CacheFlags flags)
     {
         var path = GetCachePath(cacheKey, intent);
-        if ((flags & CacheFlags.NoHostDirectory) != 0 && _noHostZips.TryGetValue(path, out var zip))
+        if ((flags & CacheFlags.NoHostDirectory) != 0 && _noHostZips.TryGetValue(path, out var nhzip))
         {
+            var (fs, zip) = nhzip;
             zip.Dispose();
-            _noHostZips.TryRemove(new KeyValuePair<string, ZipArchive>(path, zip));
+            await fs.FlushAsync();
+            await fs.DisposeAsync();
+            _noHostZips.TryRemove(new KeyValuePair<string, (FileStream, ZipArchive)>(path, nhzip));
         }
         else if (_semaphores.TryGetValue(path, out var sema))
         {
             sema?.Release();
         }
-
-        return Task.CompletedTask;
     }
 
     /// <inheritdoc />
@@ -198,7 +200,7 @@ public class FileSystemCacheProvider(ILogger<FileSystemCacheProvider> logger) : 
         var path = GetCachePath(cacheKey, intent);
         if ((flags & CacheFlags.NoHostDirectory) != 0 && _noHostZips.TryGetValue(path, out var zip))
         {
-            return Task.FromResult(zip.Entries.Select(x => x.FullName));
+            return Task.FromResult(zip.Item2.Entries.Select(x => x.FullName));
         }
 
         return Task.FromResult<IEnumerable<string>>(
@@ -217,7 +219,7 @@ public class FileSystemCacheProvider(ILogger<FileSystemCacheProvider> logger) : 
         var path = GetCachePath(cacheKey, intent);
         if ((flags & CacheFlags.NoHostDirectory) != 0 && _noHostZips.TryGetValue(path, out var zip))
         {
-            var file = zip.GetEntry(filePath);
+            var file = zip.Item2.GetEntry(filePath);
             if (file is null)
             {
                 throw new FileNotFoundException(null, nameof(filePath));
