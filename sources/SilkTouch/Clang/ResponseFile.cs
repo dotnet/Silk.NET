@@ -67,6 +67,5 @@ public record ResponseFile(
         + $"{string.Join(',', GeneratorConfiguration.NativeTypeNamesToStrip)}:"
         + $"{string.Join(',', GeneratorConfiguration.WithSuppressGCTransitions)}:"
         + $"{GeneratorConfiguration.DontUseUsingStaticsForEnums}:"
-        + $"{GeneratorConfiguration.GenerateSetsLastSystemErrorAttribute}".Replace(Environment.CurrentDirectory, "...",
-            StringComparison.OrdinalIgnoreCase).Replace('\\', '/').ToLower();
+        + $"{GeneratorConfiguration.GenerateSetsLastSystemErrorAttribute}";
 }

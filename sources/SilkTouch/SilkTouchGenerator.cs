@@ -121,13 +121,17 @@ public class SilkTouchGenerator(
             file => rspHandler.ReadResponseFiles(file, job.ClangSharpResponseFiles)
         )
             .ToList();
-        var cacheKey =
+        var cacheKey = (
             string.Join(
                 ',',
                 jobConfig
                     .AsEnumerable()
                     .Where(x => x.Key.StartsWith($"Jobs:{key}", StringComparison.OrdinalIgnoreCase))
-            ) + string.Join(',', rsps.Select(x => x.FlatString));
+            ) + string.Join(',', rsps.Select(x => x.FlatString))
+        )
+            .Replace(Environment.CurrentDirectory, "...", StringComparison.OrdinalIgnoreCase)
+            .Replace('\\', '/')
+            .ToLower();
         logger.LogTrace("Cache key for job (before hashing): {}", cacheKey);
         cacheKey = Convert.ToHexString(XxHash64.Hash(Encoding.UTF8.GetBytes(cacheKey)));
         logger.LogTrace("Final cache key: {}", cacheKey);

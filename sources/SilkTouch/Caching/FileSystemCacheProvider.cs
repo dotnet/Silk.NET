@@ -180,7 +180,10 @@ public class FileSystemCacheProvider(ILogger<FileSystemCacheProvider> logger) : 
     public async Task CommitDirectory(string cacheKey, CacheIntent intent, CacheFlags flags)
     {
         var path = GetCachePath(cacheKey, intent);
-        if ((flags & CacheFlags.NoHostDirectory) != 0 && _noHostZips.TryGetValue(path, out var nhzip))
+        if (
+            (flags & CacheFlags.NoHostDirectory) != 0
+            && _noHostZips.TryGetValue(path, out var nhzip)
+        )
         {
             var (fs, zip) = nhzip;
             zip.Dispose();
