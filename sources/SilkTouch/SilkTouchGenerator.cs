@@ -130,6 +130,7 @@ public class SilkTouchGenerator(
             ) + string.Join(',', rsps.Select(x => x.FlatString));
         logger.LogTrace("Cache key for job (before hashing): {}", cacheKey);
         cacheKey = Convert.ToHexString(XxHash64.Hash(Encoding.UTF8.GetBytes(cacheKey)));
+        logger.LogTrace("Final cache key: {}", cacheKey);
         GeneratedBindings? rawBindings = null;
         var skip = (job.SkipScrapeIf?.Any(ApplicableSkipIfs.Contains)).GetValueOrDefault();
         Exception? innerException = null;
@@ -225,6 +226,10 @@ public class SilkTouchGenerator(
                             file
                         );
                     }
+                }
+                else
+                {
+                    logger.LogError("Failed to retrieve cache.");
                 }
             }
         }

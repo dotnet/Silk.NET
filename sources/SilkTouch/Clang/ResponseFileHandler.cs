@@ -1551,7 +1551,7 @@ public class ResponseFileHandler
                 path = Path.GetRelativePath(Path.GetPathRoot(path)!, path);
             }
 
-            return path.ToLower().Replace('\\', '/');
+            return path.Replace('\\', '/');
         }
 
         matcher.AddIncludePatterns(paths.Where(x => !x.StartsWith("!")).Select(PathFixup));
@@ -1571,7 +1571,7 @@ public class ResponseFileHandler
                     .SelectMany(x => matcher.GetResultsInFullPath(x!))
             )
             .Concat(paths.Where(File.Exists))
-            .Select(x => Path.GetFullPath(x).ToLower().Replace('\\', '/'))
+            .Select(x => Path.GetFullPath(x).Replace('\\', '/'))
             .Distinct()
             .ToArray();
     }
