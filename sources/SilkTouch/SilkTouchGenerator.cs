@@ -131,9 +131,9 @@ public class SilkTouchGenerator(
         )
             .Replace('\\', '/')
             .ToLower();
-        logger.LogTrace("Cache key for job (before hashing): {}", cacheKey);
+        logger.LogDebug("Cache key for job (before hashing): {}", cacheKey);
         cacheKey = Convert.ToHexString(XxHash64.Hash(Encoding.UTF8.GetBytes(cacheKey)));
-        logger.LogTrace("Final cache key: {}", cacheKey);
+        logger.LogDebug("Final cache key: {}", cacheKey);
         GeneratedBindings? rawBindings = null;
         var skip = (job.SkipScrapeIf?.Any(ApplicableSkipIfs.Contains)).GetValueOrDefault();
         Exception? innerException = null;
