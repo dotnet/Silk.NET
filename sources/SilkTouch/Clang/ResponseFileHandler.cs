@@ -3,8 +3,10 @@ using System.Collections.Generic;
 using System.CommandLine;
 using System.CommandLine.Parsing;
 using System.IO;
+using System.IO.Hashing;
 using System.Linq;
 using System.Runtime.InteropServices;
+using System.Text;
 using ClangSharp;
 using ClangSharp.Abstractions;
 using Microsoft.Extensions.FileSystemGlobbing;
@@ -1477,7 +1479,8 @@ public class ResponseFileHandler
             files,
             fileDirectory,
             clangCommandLineArgs,
-            translationFlags
+            translationFlags,
+            XxHash64.HashToUInt64(Encoding.UTF8.GetBytes(string.Join('\n', args)))
         );
     }
 

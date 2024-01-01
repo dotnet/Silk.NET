@@ -127,7 +127,7 @@ public class SilkTouchGenerator(
                 jobConfig
                     .AsEnumerable()
                     .Where(x => x.Key.StartsWith($"Jobs:{key}", StringComparison.OrdinalIgnoreCase))
-            ) + string.Join(',', rsps.Select(x => x.FlatString))
+            ) + string.Join(',', rsps.Select(x => x.FileHash))
         )
             .Replace('\\', '/')
             .ToLower();
