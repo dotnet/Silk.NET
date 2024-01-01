@@ -1480,7 +1480,8 @@ public class ResponseFileHandler
             fileDirectory,
             clangCommandLineArgs,
             translationFlags,
-            XxHash64.HashToUInt64(Encoding.UTF8.GetBytes(string.Join('\n', args)))
+            XxHash64.HashToUInt64(Encoding.UTF8.GetBytes(string.Join('\n',
+                args.Select(x => x.Trim().ToLower().Replace('\\', '/')).Where(x => x.Length > 0))))
         );
     }
 
