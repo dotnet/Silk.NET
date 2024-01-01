@@ -138,22 +138,22 @@ public class SilkTouchGenerator(
         GeneratedBindings? rawBindings = null;
         var skip = (job.SkipScrapeIf?.Any(ApplicableSkipIfs.Contains)).GetValueOrDefault();
         Exception? innerException = null;
+        // Mod the response files
+        // ReSharper disable once LoopCanBeConvertedToQuery
+        foreach (var mod in jobMods)
+        {
+            logger.LogInformation(
+                "Applying {0} mod to response files for {1}...",
+                mod.GetType().Name,
+                key
+            );
+            rsps = await mod.BeforeScrapeAsync(key, rsps);
+        }
+
         try
         {
             if (!skip)
             {
-                // Mod the response files
-                // ReSharper disable once LoopCanBeConvertedToQuery
-                foreach (var mod in jobMods)
-                {
-                    logger.LogInformation(
-                        "Applying {0} mod to response files for {1}...",
-                        mod.GetType().Name,
-                        key
-                    );
-                    rsps = await mod.BeforeScrapeAsync(key, rsps);
-                }
-
                 // Resolve any foreign paths referenced in the response files
                 await inputResolver.ResolveInPlace(rsps);
 

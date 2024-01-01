@@ -143,6 +143,13 @@ public class FileSystemCacheProvider(ILogger<FileSystemCacheProvider> logger) : 
             return null;
         }
 
+        if (sema is not null && (flags & CacheFlags.NoHostDirectory) != 0)
+        {
+            var fs = File.OpenRead(path);
+            var zip = new ZipArchive(fs, ZipArchiveMode.Read, true);
+            _noHostZips.TryAdd(path, (fs, zip));
+        }
+
         if (sema is not null)
         {
             _semaphores[path] = null;
