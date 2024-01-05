@@ -160,8 +160,8 @@ public class PrettifyNames(
         return Task.FromResult(
             syntax with
             {
-                Files = syntax.Files
-                    .Select(
+                Files = syntax
+                    .Files.Select(
                         x =>
                             (
                                 x.Key.EndsWith(".gen.cs")
@@ -331,7 +331,11 @@ public class PrettifyNames(
 
         public override void VisitClassDeclaration(ClassDeclarationSyntax node)
         {
-            if (_classInProgress is not null || _enumInProgress is not null)
+            if (
+                _classInProgress is not null
+                || _enumInProgress is not null
+                || node.Ancestors().OfType<BaseTypeDeclarationSyntax>().Any()
+            )
             {
                 // ignoring nesting for now
                 return;
@@ -422,7 +426,11 @@ public class PrettifyNames(
 
         public override void VisitStructDeclaration(StructDeclarationSyntax node)
         {
-            if (_classInProgress is not null || _enumInProgress is not null)
+            if (
+                _classInProgress is not null
+                || _enumInProgress is not null
+                || node.Ancestors().OfType<BaseTypeDeclarationSyntax>().Any()
+            )
             {
                 return;
             }
@@ -433,7 +441,11 @@ public class PrettifyNames(
 
         public override void VisitEnumDeclaration(EnumDeclarationSyntax node)
         {
-            if (_classInProgress is not null || _enumInProgress is not null)
+            if (
+                _classInProgress is not null
+                || _enumInProgress is not null
+                || node.Ancestors().OfType<BaseTypeDeclarationSyntax>().Any()
+            )
             {
                 return;
             }

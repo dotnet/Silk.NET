@@ -14,6 +14,7 @@ unsafe
 
     Glfw.WindowHint(Glfw.Constants.ClientApi, Glfw.Constants.OpenglApi);
     Glfw.WindowHint(Glfw.Constants.OpenglProfile, Glfw.Constants.OpenglCoreProfile);
+    Glfw.WindowHint(Glfw.Constants.OpenglForwardCompat, Glfw.Constants.True);
     Glfw.WindowHint(Glfw.Constants.ContextVersionMajor, 3);
     Glfw.WindowHint(Glfw.Constants.ContextVersionMinor, 3);
     var window = Glfw.CreateWindow(1000, 800, "Hello Window!", nullptr, nullptr);

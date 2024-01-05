@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
 using Microsoft.Extensions.Logging;
 
 namespace Silk.NET.SilkTouch.Clang;
@@ -9,8 +10,14 @@ namespace Silk.NET.SilkTouch.Clang;
 /// </summary>
 public class UnixStdIncludeResolver : IStdIncludeResolver
 {
+    private string[]? _ret = null;
+
     /// <inheritdoc />
-    public virtual IEnumerable<string> GetStandardIncludes()
+    public IEnumerable<string> GetStandardIncludes() =>
+        _ret ??= CoreGetStandardIncludes().ToArray();
+
+    /// <inheritdoc cref="GetStandardIncludes" />
+    protected virtual IEnumerable<string> CoreGetStandardIncludes()
     {
         yield return "/usr/include";
         yield return "/usr/local/include";

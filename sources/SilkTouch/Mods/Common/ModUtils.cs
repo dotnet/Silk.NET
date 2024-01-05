@@ -335,7 +335,9 @@ public static class ModUtils
                                 == nameof(DllImportAttribute.CallingConvention)
                     )
                     ?.Expression as MemberAccessExpressionSyntax
-            )?.Name.ToString();
+            )
+                ?.Name
+                .ToString();
             return true;
         }
 

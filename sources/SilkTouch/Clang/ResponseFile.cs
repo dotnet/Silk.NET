@@ -1,4 +1,7 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
+using System.IO;
+using System.Linq;
 using ClangSharp;
 using ClangSharp.Interop;
 
@@ -15,11 +18,13 @@ namespace Silk.NET.SilkTouch.Clang;
 /// Additional clang command line arguments to use when creating the translation unit.
 /// </param>
 /// <param name="TranslationFlags">Flags to use when creating the translation unit.</param>
+/// <param name="FileHash">The XxHash64 hash of the original input.</param>
 public record ResponseFile(
     IReadOnlyList<string> ErrorList,
     PInvokeGeneratorConfiguration GeneratorConfiguration,
     IReadOnlyList<string> Files,
     string FileDirectory,
     string[] ClangCommandLineArgs,
-    CXTranslationUnit_Flags TranslationFlags
+    CXTranslationUnit_Flags TranslationFlags,
+    ulong FileHash
 );

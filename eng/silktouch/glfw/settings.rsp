@@ -5,6 +5,9 @@ TODO_DEFINE_MACROS=HERE
 header.txt
 --include-directory
 ../../../submodules/glfw/include
+../../../include/glcompat
+../../../submodules/opengl/api
+../../../submodules/egl/api
 --with-callconv
 *=Winapi
 --with-librarypath

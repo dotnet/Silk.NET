@@ -142,11 +142,6 @@ public partial class MixKhronosData(
 
         foreach (var (original, (current, previous)) in names)
         {
-            if (original == "glDisablei")
-            {
-                Debugger.Break();
-            }
-
             if (
                 EndingsToTrim().Match(current) is not { Success: true } match
                 || EndingsNotToTrim().IsMatch(current)

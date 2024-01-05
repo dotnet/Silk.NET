@@ -126,8 +126,6 @@ public class AddApiProfiles(
 
         public ILogger? Logger { get; set; }
 
-        public Dictionary<string, UsingDirectiveSyntax> Usings { get; } = new();
-
         // Allowable type members for baking (we need to override these):
         // - [x] FieldDeclarationSyntax (VariableDeclarator)
         // - [x] EventFieldDeclarationSyntax
@@ -149,12 +147,6 @@ public class AddApiProfiles(
         // - [x] EnumDeclarationSyntax
         // - [x] RecordDeclarationSyntax
         // - [x] InterfaceDeclarationSyntax
-
-        public override SyntaxNode? VisitUsingDirective(UsingDirectiveSyntax node)
-        {
-            Usings[node.ToString()] = node;
-            return base.VisitUsingDirective(node);
-        }
 
         public override SyntaxNode? VisitDelegateDeclaration(DelegateDeclarationSyntax node) =>
             Visit(
@@ -333,8 +325,8 @@ public class AddApiProfiles(
                 return null; // baking erases, but the caller should know that.
             }
 
-            var bakedFields = bakeSet.Children
-                .OrderBy(x => x.Value.Index)
+            var bakedFields = bakeSet
+                .Children.OrderBy(x => x.Value.Index)
                 .Select(x => x.Value.Syntax)
                 .OfType<FieldDeclarationSyntax>()
                 .SelectMany(x => x.Declaration.Variables.Select(y => (x.Declaration.Type, Var: y)))
@@ -491,8 +483,8 @@ public class AddApiProfiles(
                     if (precedence)
                     {
                         baked.Syntax = nodeToAdd.AddAttributeLists(
-                            baked.Syntax.AttributeLists
-                                .Select(
+                            baked
+                                .Syntax.AttributeLists.Select(
                                     x =>
                                         x.WithAttributes(
                                             SeparatedList(
@@ -653,8 +645,8 @@ public class AddApiProfiles(
                     .WithBaseList(
                         node1.BaseList?.WithTypes(
                             SeparatedList(
-                                node1.BaseList.Types
-                                    .Concat(
+                                node1
+                                    .BaseList.Types.Concat(
                                         node2.BaseList?.Types ?? Enumerable.Empty<BaseTypeSyntax>()
                                     )
                                     .DistinctBy(x => x.ToString())
@@ -663,8 +655,8 @@ public class AddApiProfiles(
                     )
                     .WithAttributeLists(
                         List(
-                            node1.AttributeLists
-                                .SelectMany(
+                            node1
+                                .AttributeLists.SelectMany(
                                     x =>
                                         x.Attributes.Select(
                                             y => x.WithAttributes(SingletonSeparatedList(y))
@@ -717,6 +709,7 @@ public class AddApiProfiles(
         var rewriter = new Rewriter { Logger = logger };
         var bakery = new Dictionary<string, BakeSet>();
         var baked = new List<string>();
+        var aggregatedUsings = new Dictionary<string, UsingDirectiveSyntax>();
         foreach (var (path, root) in syntax.Files)
         {
             if (!path.StartsWith("sources/"))
@@ -724,14 +717,9 @@ public class AddApiProfiles(
                 continue;
             }
 
-            rewriter.Profile = cfg.Profiles
-                ?.Where(
-                    x =>
-                        path[8..].StartsWith(
-                            x.SourceSubdirectory,
-                            StringComparison.OrdinalIgnoreCase
-                        )
-                )
+            rewriter.Profile = cfg.Profiles?.Where(
+                x => path[8..].StartsWith(x.SourceSubdirectory, StringComparison.OrdinalIgnoreCase)
+            )
                 .MaxBy(x => x.SourceSubdirectory.Length);
             if (rewriter.Profile is null)
             {
@@ -752,6 +740,11 @@ public class AddApiProfiles(
             }
 
             syntax.Files[path] = rewriter.Visit(root);
+            foreach (var (k, v) in rewriter.UsingsToAdd)
+            {
+                aggregatedUsings.TryAdd(k, v);
+            }
+            rewriter.UsingsToAdd.Clear();
             rewriter.Baked = null;
             rewriter.Profile = null;
         }
@@ -786,10 +779,9 @@ public class AddApiProfiles(
                                             ModUtils.NamespaceIntoIdentifierName(ns)
                                         )
                                         .WithMembers(SingletonList(bakedSyntax))
-                                        .WithUsings(List(rewriter.Usings.Values))
                                 )
                         )
-                        .WithUsings(ns is null ? List(rewriter.Usings.Values) : default);
+                        .WithUsings(ModCSharpSyntaxRewriter.GetUsings(aggregatedUsings, null));
             }
         }
 
@@ -812,8 +804,9 @@ public class AddApiProfiles(
                     ty.WithMembers(
                         List(
                             ty.Members.Concat(
-                                member.Inner?.Children.Values
-                                    .OrderBy(x => x.Index)
+                                member
+                                    .Inner?.Children
+                                    .Values.OrderBy(x => x.Index)
                                     .Select(x => Bake(x).Syntax)
                                     ?? Enumerable.Empty<MemberDeclarationSyntax>()
                             )
@@ -826,8 +819,9 @@ public class AddApiProfiles(
                     enumDecl.WithMembers(
                         SeparatedList(
                             enumDecl.Members.Concat(
-                                member.Inner?.Children.Values
-                                    .OrderBy(x => x.Index)
+                                member
+                                    .Inner?.Children
+                                    .Values.OrderBy(x => x.Index)
                                     .Select(x => x.Syntax)
                                     .OfType<EnumMemberDeclarationSyntax>()
                                     ?? Enumerable.Empty<EnumMemberDeclarationSyntax>()

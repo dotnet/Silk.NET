@@ -3,8 +3,10 @@ using System.Collections.Generic;
 using System.CommandLine;
 using System.CommandLine.Parsing;
 using System.IO;
+using System.IO.Hashing;
 using System.Linq;
 using System.Runtime.InteropServices;
+using System.Text;
 using ClangSharp;
 using ClangSharp.Abstractions;
 using Microsoft.Extensions.FileSystemGlobbing;
@@ -1477,7 +1479,9 @@ public class ResponseFileHandler
             files,
             fileDirectory,
             clangCommandLineArgs,
-            translationFlags
+            translationFlags,
+            XxHash64.HashToUInt64(Encoding.UTF8.GetBytes(string.Join('\n',
+                args.Select(x => x.Trim().ToLower().Replace('\\', '/')).Where(x => x.Length > 0))))
         );
     }
 
@@ -1540,7 +1544,7 @@ public class ResponseFileHandler
         }
     }
 
-    private static IEnumerable<string> Glob(IReadOnlyCollection<string> paths, string? cd = null)
+    internal static IEnumerable<string> Glob(IReadOnlyCollection<string> paths, string? cd = null)
     {
         cd ??= Environment.CurrentDirectory;
         var matcher = new Matcher();
@@ -1551,7 +1555,7 @@ public class ResponseFileHandler
                 path = Path.GetRelativePath(Path.GetPathRoot(path)!, path);
             }
 
-            return path.ToLower().Replace('\\', '/');
+            return path.Replace('\\', '/');
         }
 
         matcher.AddIncludePatterns(paths.Where(x => !x.StartsWith("!")).Select(PathFixup));
@@ -1571,7 +1575,7 @@ public class ResponseFileHandler
                     .SelectMany(x => matcher.GetResultsInFullPath(x!))
             )
             .Concat(paths.Where(File.Exists))
-            .Select(x => Path.GetFullPath(x).ToLower().Replace('\\', '/'))
+            .Select(x => Path.GetFullPath(x).Replace('\\', '/'))
             .Distinct()
             .ToArray();
     }

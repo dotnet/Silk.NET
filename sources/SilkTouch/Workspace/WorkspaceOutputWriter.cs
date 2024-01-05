@@ -198,8 +198,7 @@ public class WorkspaceOutputWriter : IOutputWriter
         srcRoot = Path.GetFullPath(srcRoot);
 
         // Try and find the project for the source output
-        var srcProj = sln.Projects
-            .Where(x => x.FilePath is not null)
+        var srcProj = sln.Projects.Where(x => x.FilePath is not null)
             .FirstOrDefault(
                 x =>
                     Path.GetDirectoryName(Path.GetFullPath(x.FilePath!))
@@ -226,8 +225,8 @@ public class WorkspaceOutputWriter : IOutputWriter
                 .Select(x => Path.GetFullPath(x, srcRoot).Replace('\\', '/'))
                 .ToArray();
             srcProj = srcProj.RemoveDocuments(
-                srcProj.Documents
-                    .Where(x =>
+                srcProj
+                    .Documents.Where(x =>
                     {
                         if (x.FilePath is null)
                         {
@@ -253,10 +252,7 @@ public class WorkspaceOutputWriter : IOutputWriter
 
             var trimmedPath = path[label.Length..];
             _logger.LogTrace("Adding {}...", trimmedPath);
-            var doc = srcProj.AddDocument(
-                trimmedPath,
-                await syntaxNode.ToNormalisedString(ct)
-            );
+            var doc = srcProj.AddDocument(trimmedPath, await syntaxNode.ToNormalisedString(ct));
             files.Add(trimmedPath);
             srcProj = doc.Project;
         }
@@ -274,8 +270,8 @@ public class WorkspaceOutputWriter : IOutputWriter
     )
     {
         // TODO might need to do more work here, feels too easy...
-        var baseFiles = originalProject.Documents
-            .Where(x => !oldFileList.Contains(x.Name))
+        var baseFiles = originalProject
+            .Documents.Where(x => !oldFileList.Contains(x.Name))
             .Select(x => x.Name)
             .ToHashSet();
         var newFiles = newProject.Documents.Where(x => !baseFiles.Contains(x.Name));

@@ -1,1 +1,1 @@
-#include <glcompat/gl.h>
+#include <glcompat/OpenGL/gl.h>

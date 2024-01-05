@@ -16,13 +16,17 @@
       "OutputTestRoot": "../../tests/Windows",
       "Solution": "../../Silk.NET.sln",
       "Mods": [
+        "AddIncludes",
         "ChangeNamespace"
       ],
       "ChangeNamespace": {
         "Mappings": {
           "TerraFX.Interop.(.*)": "Silk.NET.$1"
         }
-      }
+      },
+      "SkipScrapeIf": [
+        "!win"
+      ]
     },
     "GLFW": {
       "ClangSharpResponseFiles": [
@@ -34,7 +38,7 @@
       "OutputTestRoot": "../../tests/GLFW",
       "Solution": "../../Silk.NET.sln",
       "Mods": [
-        "AddStdIncludes",
+        "AddIncludes",
         "AddOpaqueStructs",
         "UseSilkDSL",
         "PrettifyNames",
@@ -58,7 +62,7 @@
       "OutputTestRoot": "../../tests/OpenGL",
       "Solution": "../../Silk.NET.sln",
       "Mods": [
-        "AddStdIncludes",
+        "AddIncludes",
         "AddApiProfiles",
         "MixKhronosData",
         "AddOpaqueStructs",

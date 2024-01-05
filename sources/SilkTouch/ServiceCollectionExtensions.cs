@@ -6,9 +6,11 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.DependencyInjection.Extensions;
 using Microsoft.Extensions.Options;
+using Silk.NET.SilkTouch.Caching;
 using Silk.NET.SilkTouch.Clang;
 using Silk.NET.SilkTouch.Mods;
 using Silk.NET.SilkTouch.Naming;
+using Silk.NET.SilkTouch.Sources;
 using Silk.NET.SilkTouch.Workspace;
 
 namespace Silk.NET.SilkTouch;
@@ -101,6 +103,10 @@ public static class ServiceCollectionExtensions
         services.AddSingleton<INameTrimmer>(s => s.GetRequiredService<NameTrimmer>());
         services.AddSingleton<INameTrimmerProvider, NameTrimmerProviders.Global>();
         services.TryAddSingleton<IOutputWriter, DirectOutputWriter>();
+        services.TryAddSingleton<ICacheProvider, FileSystemCacheProvider>();
+        services.AddSingleton<IInputSource, GitInputSource>();
+        services.AddSingleton<IInputSource, NuGetInputSource>();
+        services.TryAddSingleton<IInputResolver, UriBasedInputResolver>();
         if (OperatingSystem.IsWindows())
         {
             services.AddSingleton<IStdIncludeResolver, WindowsStdIncludeResolver>();

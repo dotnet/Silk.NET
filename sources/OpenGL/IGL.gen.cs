@@ -1,4 +1,9 @@
+// Licensed to the .NET Foundation under one or more agreements.
+// The .NET Foundation licenses this file to you under the MIT license.
+// Ported from the OpenGL Core Profile headers and corresponding dependencies.
+// Original source is Copyright 2013-2020 The Khronos Group Inc. Licensed under the MIT license.
 using System.Runtime.CompilerServices;
+using System.Runtime.InteropServices;
 
 namespace Silk.NET.OpenGL;
 
@@ -216,9 +221,9 @@ public unsafe partial interface IGL
             [NativeTypeName("GLbitfield")] uint writeGpuMask,
             [NativeTypeName("GLuint")] uint readBuffer,
             [NativeTypeName("GLuint")] uint writeBuffer,
-            [NativeTypeName("GLintptr")] long readOffset,
-            [NativeTypeName("GLintptr")] long writeOffset,
-            [NativeTypeName("GLsizeiptr")] long size,
+            [NativeTypeName("GLintptr")] nint readOffset,
+            [NativeTypeName("GLintptr")] nint writeOffset,
+            [NativeTypeName("GLsizeiptr")] nint size,
             [NativeTypeName("GLsizei")] int signalSemaphoreCount,
             [NativeTypeName("const GLuint *")] Ref<uint> signalSemaphoreArray,
             [NativeTypeName("const GLuint64 *")] Ref<ulong> signalValueArray
@@ -260,8 +265,8 @@ public unsafe partial interface IGL
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glAttachObjectARB")]
         static abstract void AttachObjectArb(
-            [NativeTypeName("GLhandleARB")] uint containerObj,
-            [NativeTypeName("GLhandleARB")] uint obj
+            [NativeTypeName("GLhandleARB")] Ref containerObj,
+            [NativeTypeName("GLhandleARB")] Ref obj
         );
 
         [SupportedApiProfile("glcore", MinVersion = "3.2")]
@@ -389,7 +394,7 @@ public unsafe partial interface IGL
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glBindAttribLocationARB")]
         static abstract void BindAttribLocationArb(
-            [NativeTypeName("GLhandleARB")] uint programObj,
+            [NativeTypeName("GLhandleARB")] Ref programObj,
             [NativeTypeName("GLuint")] uint index,
             [NativeTypeName("const GLcharARB *")] Ref<sbyte> name
         );
@@ -442,7 +447,7 @@ public unsafe partial interface IGL
             [NativeTypeName("GLenum")] uint target,
             [NativeTypeName("GLuint")] uint index,
             [NativeTypeName("GLuint")] uint buffer,
-            [NativeTypeName("GLintptr")] long offset
+            [NativeTypeName("GLintptr")] nint offset
         );
 
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
@@ -451,7 +456,7 @@ public unsafe partial interface IGL
             [NativeTypeName("GLenum")] uint target,
             [NativeTypeName("GLuint")] uint index,
             [NativeTypeName("GLuint")] uint buffer,
-            [NativeTypeName("GLintptr")] long offset
+            [NativeTypeName("GLintptr")] nint offset
         );
 
         [SupportedApiProfile("glcore", MinVersion = "3.2")]
@@ -461,8 +466,8 @@ public unsafe partial interface IGL
             [NativeTypeName("GLenum")] uint target,
             [NativeTypeName("GLuint")] uint index,
             [NativeTypeName("GLuint")] uint buffer,
-            [NativeTypeName("GLintptr")] long offset,
-            [NativeTypeName("GLsizeiptr")] long size
+            [NativeTypeName("GLintptr")] nint offset,
+            [NativeTypeName("GLsizeiptr")] nint size
         );
 
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
@@ -471,8 +476,8 @@ public unsafe partial interface IGL
             [NativeTypeName("GLenum")] uint target,
             [NativeTypeName("GLuint")] uint index,
             [NativeTypeName("GLuint")] uint buffer,
-            [NativeTypeName("GLintptr")] long offset,
-            [NativeTypeName("GLsizeiptr")] long size
+            [NativeTypeName("GLintptr")] nint offset,
+            [NativeTypeName("GLsizeiptr")] nint size
         );
 
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
@@ -481,8 +486,8 @@ public unsafe partial interface IGL
             [NativeTypeName("GLenum")] uint target,
             [NativeTypeName("GLuint")] uint index,
             [NativeTypeName("GLuint")] uint buffer,
-            [NativeTypeName("GLintptr")] long offset,
-            [NativeTypeName("GLsizeiptr")] long size
+            [NativeTypeName("GLintptr")] nint offset,
+            [NativeTypeName("GLsizeiptr")] nint size
         );
 
         [SupportedApiProfile("glcore", MinVersion = "3.2")]
@@ -503,8 +508,8 @@ public unsafe partial interface IGL
             [NativeTypeName("GLuint")] uint first,
             [NativeTypeName("GLsizei")] int count,
             [NativeTypeName("const GLuint *")] Ref<uint> buffers,
-            [NativeTypeName("const GLintptr *")] Ref<long> offsets,
-            [NativeTypeName("const GLsizeiptr *")] Ref<long> sizes
+            [NativeTypeName("const GLintptr *")] Ref<nint> offsets,
+            [NativeTypeName("const GLsizeiptr *")] Ref<nint> sizes
         );
 
         [SupportedApiProfile("glcore", MinVersion = "3.2")]
@@ -791,7 +796,7 @@ public unsafe partial interface IGL
         static abstract void BindVertexBuffer(
             [NativeTypeName("GLuint")] uint bindingindex,
             [NativeTypeName("GLuint")] uint buffer,
-            [NativeTypeName("GLintptr")] long offset,
+            [NativeTypeName("GLintptr")] nint offset,
             [NativeTypeName("GLsizei")] int stride
         );
 
@@ -802,7 +807,7 @@ public unsafe partial interface IGL
             [NativeTypeName("GLuint")] uint first,
             [NativeTypeName("GLsizei")] int count,
             [NativeTypeName("const GLuint *")] Ref<uint> buffers,
-            [NativeTypeName("const GLintptr *")] Ref<long> offsets,
+            [NativeTypeName("const GLintptr *")] Ref<nint> offsets,
             [NativeTypeName("const GLsizei *")] Ref<int> strides
         );
 
@@ -816,7 +821,7 @@ public unsafe partial interface IGL
             [NativeTypeName("GLuint")] uint video_capture_slot,
             [NativeTypeName("GLuint")] uint stream,
             [NativeTypeName("GLenum")] uint frame_region,
-            [NativeTypeName("GLintptrARB")] long offset
+            [NativeTypeName("GLintptrARB")] nint offset
         );
 
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
@@ -1349,7 +1354,7 @@ public unsafe partial interface IGL
             [NativeTypeName("GLenum")] uint pname,
             [NativeTypeName("GLuint")] uint index,
             [NativeTypeName("GLuint64EXT")] ulong address,
-            [NativeTypeName("GLsizeiptr")] long length
+            [NativeTypeName("GLsizeiptr")] nint length
         );
 
         [SupportedApiProfile("glcore", MinVersion = "3.2")]
@@ -1369,7 +1374,7 @@ public unsafe partial interface IGL
         [NativeFunction("opengl", EntryPoint = "glBufferData")]
         static abstract void BufferData(
             [NativeTypeName("GLenum")] uint target,
-            [NativeTypeName("GLsizeiptr")] long size,
+            [NativeTypeName("GLsizeiptr")] nint size,
             [NativeTypeName("const void *")] Ref data,
             [NativeTypeName("GLenum")] uint usage
         );
@@ -1378,7 +1383,7 @@ public unsafe partial interface IGL
         [NativeFunction("opengl", EntryPoint = "glBufferDataARB")]
         static abstract void BufferDataArb(
             [NativeTypeName("GLenum")] uint target,
-            [NativeTypeName("GLsizeiptrARB")] long size,
+            [NativeTypeName("GLsizeiptrARB")] nint size,
             [NativeTypeName("const void *")] Ref data,
             [NativeTypeName("GLenum")] uint usage
         );
@@ -1388,8 +1393,8 @@ public unsafe partial interface IGL
         [NativeFunction("opengl", EntryPoint = "glBufferPageCommitmentARB")]
         static abstract void BufferPageCommitmentArb(
             [NativeTypeName("GLenum")] uint target,
-            [NativeTypeName("GLintptr")] long offset,
-            [NativeTypeName("GLsizeiptr")] long size,
+            [NativeTypeName("GLintptr")] nint offset,
+            [NativeTypeName("GLsizeiptr")] nint size,
             [NativeTypeName("GLboolean")] byte commit
         );
 
@@ -1399,8 +1404,8 @@ public unsafe partial interface IGL
         [NativeFunction("opengl", EntryPoint = "glBufferPageCommitmentMemNV")]
         static abstract void BufferPageCommitmentMemNV(
             [NativeTypeName("GLenum")] uint target,
-            [NativeTypeName("GLintptr")] long offset,
-            [NativeTypeName("GLsizeiptr")] long size,
+            [NativeTypeName("GLintptr")] nint offset,
+            [NativeTypeName("GLsizeiptr")] nint size,
             [NativeTypeName("GLuint")] uint memory,
             [NativeTypeName("GLuint64")] ulong memOffset,
             [NativeTypeName("GLboolean")] byte commit
@@ -1419,7 +1424,7 @@ public unsafe partial interface IGL
         [NativeFunction("opengl", EntryPoint = "glBufferStorage")]
         static abstract void BufferStorage(
             [NativeTypeName("GLenum")] uint target,
-            [NativeTypeName("GLsizeiptr")] long size,
+            [NativeTypeName("GLsizeiptr")] nint size,
             [NativeTypeName("const void *")] Ref data,
             [NativeTypeName("GLbitfield")] uint flags
         );
@@ -1428,7 +1433,7 @@ public unsafe partial interface IGL
         [NativeFunction("opengl", EntryPoint = "glBufferStorageEXT")]
         static abstract void BufferStorageExt(
             [NativeTypeName("GLenum")] uint target,
-            [NativeTypeName("GLsizeiptr")] long size,
+            [NativeTypeName("GLsizeiptr")] nint size,
             [NativeTypeName("const void *")] Ref data,
             [NativeTypeName("GLbitfield")] uint flags
         );
@@ -1438,8 +1443,8 @@ public unsafe partial interface IGL
         [NativeFunction("opengl", EntryPoint = "glBufferStorageExternalEXT")]
         static abstract void BufferStorageExternalExt(
             [NativeTypeName("GLenum")] uint target,
-            [NativeTypeName("GLintptr")] long offset,
-            [NativeTypeName("GLsizeiptr")] long size,
+            [NativeTypeName("GLintptr")] nint offset,
+            [NativeTypeName("GLsizeiptr")] nint size,
             [NativeTypeName("GLeglClientBufferEXT")] Ref clientBuffer,
             [NativeTypeName("GLbitfield")] uint flags
         );
@@ -1449,7 +1454,7 @@ public unsafe partial interface IGL
         [NativeFunction("opengl", EntryPoint = "glBufferStorageMemEXT")]
         static abstract void BufferStorageMemExt(
             [NativeTypeName("GLenum")] uint target,
-            [NativeTypeName("GLsizeiptr")] long size,
+            [NativeTypeName("GLsizeiptr")] nint size,
             [NativeTypeName("GLuint")] uint memory,
             [NativeTypeName("GLuint64")] ulong offset
         );
@@ -1461,8 +1466,8 @@ public unsafe partial interface IGL
         [NativeFunction("opengl", EntryPoint = "glBufferSubData")]
         static abstract void BufferSubData(
             [NativeTypeName("GLenum")] uint target,
-            [NativeTypeName("GLintptr")] long offset,
-            [NativeTypeName("GLsizeiptr")] long size,
+            [NativeTypeName("GLintptr")] nint offset,
+            [NativeTypeName("GLsizeiptr")] nint size,
             [NativeTypeName("const void *")] Ref data
         );
 
@@ -1470,8 +1475,8 @@ public unsafe partial interface IGL
         [NativeFunction("opengl", EntryPoint = "glBufferSubDataARB")]
         static abstract void BufferSubDataArb(
             [NativeTypeName("GLenum")] uint target,
-            [NativeTypeName("GLintptrARB")] long offset,
-            [NativeTypeName("GLsizeiptrARB")] long size,
+            [NativeTypeName("GLintptrARB")] nint offset,
+            [NativeTypeName("GLsizeiptrARB")] nint size,
             [NativeTypeName("const void *")] Ref data
         );
 
@@ -1612,8 +1617,8 @@ public unsafe partial interface IGL
         static abstract void ClearBufferSubData(
             [NativeTypeName("GLenum")] uint target,
             [NativeTypeName("GLenum")] uint internalformat,
-            [NativeTypeName("GLintptr")] long offset,
-            [NativeTypeName("GLsizeiptr")] long size,
+            [NativeTypeName("GLintptr")] nint offset,
+            [NativeTypeName("GLsizeiptr")] nint size,
             [NativeTypeName("GLenum")] uint format,
             [NativeTypeName("GLenum")] uint type,
             [NativeTypeName("const void *")] Ref data
@@ -1740,8 +1745,8 @@ public unsafe partial interface IGL
         static abstract void ClearNamedBufferSubData(
             [NativeTypeName("GLuint")] uint buffer,
             [NativeTypeName("GLenum")] uint internalformat,
-            [NativeTypeName("GLintptr")] long offset,
-            [NativeTypeName("GLsizeiptr")] long size,
+            [NativeTypeName("GLintptr")] nint offset,
+            [NativeTypeName("GLsizeiptr")] nint size,
             [NativeTypeName("GLenum")] uint format,
             [NativeTypeName("GLenum")] uint type,
             [NativeTypeName("const void *")] Ref data
@@ -1753,8 +1758,8 @@ public unsafe partial interface IGL
         static abstract void ClearNamedBufferSubDataExt(
             [NativeTypeName("GLuint")] uint buffer,
             [NativeTypeName("GLenum")] uint internalformat,
-            [NativeTypeName("GLsizeiptr")] long offset,
-            [NativeTypeName("GLsizeiptr")] long size,
+            [NativeTypeName("GLsizeiptr")] nint offset,
+            [NativeTypeName("GLsizeiptr")] nint size,
             [NativeTypeName("GLenum")] uint format,
             [NativeTypeName("GLenum")] uint type,
             [NativeTypeName("const void *")] Ref data
@@ -2672,7 +2677,7 @@ public unsafe partial interface IGL
 
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glCompileShaderARB")]
-        static abstract void CompileShaderArb([NativeTypeName("GLhandleARB")] uint shaderObj);
+        static abstract void CompileShaderArb([NativeTypeName("GLhandleARB")] Ref shaderObj);
 
         [SupportedApiProfile("glcore", MinVersion = "3.2")]
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
@@ -3266,9 +3271,9 @@ public unsafe partial interface IGL
         static abstract void CopyBufferSubData(
             [NativeTypeName("GLenum")] uint readTarget,
             [NativeTypeName("GLenum")] uint writeTarget,
-            [NativeTypeName("GLintptr")] long readOffset,
-            [NativeTypeName("GLintptr")] long writeOffset,
-            [NativeTypeName("GLsizeiptr")] long size
+            [NativeTypeName("GLintptr")] nint readOffset,
+            [NativeTypeName("GLintptr")] nint writeOffset,
+            [NativeTypeName("GLsizeiptr")] nint size
         );
 
         [SupportedApiProfile("gles2", MinVersion = "2.0")]
@@ -3276,9 +3281,9 @@ public unsafe partial interface IGL
         static abstract void CopyBufferSubDataNV(
             [NativeTypeName("GLenum")] uint readTarget,
             [NativeTypeName("GLenum")] uint writeTarget,
-            [NativeTypeName("GLintptr")] long readOffset,
-            [NativeTypeName("GLintptr")] long writeOffset,
-            [NativeTypeName("GLsizeiptr")] long size
+            [NativeTypeName("GLintptr")] nint readOffset,
+            [NativeTypeName("GLintptr")] nint writeOffset,
+            [NativeTypeName("GLsizeiptr")] nint size
         );
 
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
@@ -3523,9 +3528,9 @@ public unsafe partial interface IGL
         static abstract void CopyNamedBufferSubData(
             [NativeTypeName("GLuint")] uint readBuffer,
             [NativeTypeName("GLuint")] uint writeBuffer,
-            [NativeTypeName("GLintptr")] long readOffset,
-            [NativeTypeName("GLintptr")] long writeOffset,
-            [NativeTypeName("GLsizeiptr")] long size
+            [NativeTypeName("GLintptr")] nint readOffset,
+            [NativeTypeName("GLintptr")] nint writeOffset,
+            [NativeTypeName("GLsizeiptr")] nint size
         );
 
         [SupportedApiProfile("glcore", MinVersion = "3.2")]
@@ -3940,7 +3945,7 @@ public unsafe partial interface IGL
         [return: NativeTypeName("GLhandleARB")]
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glCreateProgramObjectARB")]
-        static abstract uint CreateProgramObjectArb();
+        static abstract Ptr CreateProgramObjectArb();
 
         [SupportedApiProfile("glcore", MinVersion = "3.2")]
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
@@ -3998,7 +4003,7 @@ public unsafe partial interface IGL
         [return: NativeTypeName("GLhandleARB")]
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glCreateShaderObjectARB")]
-        static abstract uint CreateShaderObjectArb([NativeTypeName("GLenum")] uint shaderType);
+        static abstract Ptr CreateShaderObjectArb([NativeTypeName("GLenum")] uint shaderType);
 
         [return: NativeTypeName("GLuint")]
         [SupportedApiProfile("glcore", MinVersion = "3.2")]
@@ -4376,7 +4381,7 @@ public unsafe partial interface IGL
 
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glDeleteObjectARB")]
-        static abstract void DeleteObjectArb([NativeTypeName("GLhandleARB")] uint obj);
+        static abstract void DeleteObjectArb([NativeTypeName("GLhandleARB")] Ref obj);
 
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glDeleteOcclusionQueriesNV")]
@@ -4745,8 +4750,8 @@ public unsafe partial interface IGL
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glDetachObjectARB")]
         static abstract void DetachObjectArb(
-            [NativeTypeName("GLhandleARB")] uint containerObj,
-            [NativeTypeName("GLhandleARB")] uint attachedObj
+            [NativeTypeName("GLhandleARB")] Ref containerObj,
+            [NativeTypeName("GLhandleARB")] Ref attachedObj
         );
 
         [SupportedApiProfile("glcore", MinVersion = "3.2")]
@@ -4916,7 +4921,7 @@ public unsafe partial interface IGL
         [SupportedApiProfile("glcore", MinVersion = "3.2")]
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glDispatchComputeIndirect")]
-        static abstract void DispatchComputeIndirect([NativeTypeName("GLintptr")] long indirect);
+        static abstract void DispatchComputeIndirect([NativeTypeName("GLintptr")] nint indirect);
 
         [SupportedApiProfile("glcore", MinVersion = "3.2")]
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
@@ -5080,7 +5085,7 @@ public unsafe partial interface IGL
         static abstract void DrawCommandsNV(
             [NativeTypeName("GLenum")] uint primitiveMode,
             [NativeTypeName("GLuint")] uint buffer,
-            [NativeTypeName("const GLintptr *")] Ref<long> indirects,
+            [NativeTypeName("const GLintptr *")] Ref<nint> indirects,
             [NativeTypeName("const GLsizei *")] Ref<int> sizes,
             [NativeTypeName("GLuint")] uint count
         );
@@ -5101,7 +5106,7 @@ public unsafe partial interface IGL
         [NativeFunction("opengl", EntryPoint = "glDrawCommandsStatesNV")]
         static abstract void DrawCommandsStatesNV(
             [NativeTypeName("GLuint")] uint buffer,
-            [NativeTypeName("const GLintptr *")] Ref<long> indirects,
+            [NativeTypeName("const GLintptr *")] Ref<nint> indirects,
             [NativeTypeName("const GLsizei *")] Ref<int> sizes,
             [NativeTypeName("const GLuint *")] Ref<uint> states,
             [NativeTypeName("const GLuint *")] Ref<uint> fbos,
@@ -5324,7 +5329,7 @@ public unsafe partial interface IGL
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [SupportedApiProfile("gles2", MinVersion = "2.0")]
         [NativeFunction("opengl", EntryPoint = "glDrawMeshTasksIndirectNV")]
-        static abstract void DrawMeshTasksIndirectNV([NativeTypeName("GLintptr")] long indirect);
+        static abstract void DrawMeshTasksIndirectNV([NativeTypeName("GLintptr")] nint indirect);
 
         [SupportedApiProfile("glcore", MinVersion = "3.2")]
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
@@ -6189,16 +6194,16 @@ public unsafe partial interface IGL
         [NativeFunction("opengl", EntryPoint = "glFlushMappedBufferRange")]
         static abstract void FlushMappedBufferRange(
             [NativeTypeName("GLenum")] uint target,
-            [NativeTypeName("GLintptr")] long offset,
-            [NativeTypeName("GLsizeiptr")] long length
+            [NativeTypeName("GLintptr")] nint offset,
+            [NativeTypeName("GLsizeiptr")] nint length
         );
 
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glFlushMappedBufferRangeAPPLE")]
         static abstract void FlushMappedBufferRangeApple(
             [NativeTypeName("GLenum")] uint target,
-            [NativeTypeName("GLintptr")] long offset,
-            [NativeTypeName("GLsizeiptr")] long size
+            [NativeTypeName("GLintptr")] nint offset,
+            [NativeTypeName("GLsizeiptr")] nint size
         );
 
         [SupportedApiProfile("gles1", MaxVersion = "2.0")]
@@ -6206,8 +6211,8 @@ public unsafe partial interface IGL
         [NativeFunction("opengl", EntryPoint = "glFlushMappedBufferRangeEXT")]
         static abstract void FlushMappedBufferRangeExt(
             [NativeTypeName("GLenum")] uint target,
-            [NativeTypeName("GLintptr")] long offset,
-            [NativeTypeName("GLsizeiptr")] long length
+            [NativeTypeName("GLintptr")] nint offset,
+            [NativeTypeName("GLsizeiptr")] nint length
         );
 
         [SupportedApiProfile("glcore", MinVersion = "3.2")]
@@ -6215,8 +6220,8 @@ public unsafe partial interface IGL
         [NativeFunction("opengl", EntryPoint = "glFlushMappedNamedBufferRange")]
         static abstract void FlushMappedNamedBufferRange(
             [NativeTypeName("GLuint")] uint buffer,
-            [NativeTypeName("GLintptr")] long offset,
-            [NativeTypeName("GLsizeiptr")] long length
+            [NativeTypeName("GLintptr")] nint offset,
+            [NativeTypeName("GLsizeiptr")] nint length
         );
 
         [SupportedApiProfile("glcore", MinVersion = "3.2")]
@@ -6224,8 +6229,8 @@ public unsafe partial interface IGL
         [NativeFunction("opengl", EntryPoint = "glFlushMappedNamedBufferRangeEXT")]
         static abstract void FlushMappedNamedBufferRangeExt(
             [NativeTypeName("GLuint")] uint buffer,
-            [NativeTypeName("GLintptr")] long offset,
-            [NativeTypeName("GLsizeiptr")] long length
+            [NativeTypeName("GLintptr")] nint offset,
+            [NativeTypeName("GLsizeiptr")] nint length
         );
 
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
@@ -7311,7 +7316,7 @@ public unsafe partial interface IGL
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glGetActiveAttribARB")]
         static abstract void GetActiveAttribArb(
-            [NativeTypeName("GLhandleARB")] uint programObj,
+            [NativeTypeName("GLhandleARB")] Ref programObj,
             [NativeTypeName("GLuint")] uint index,
             [NativeTypeName("GLsizei")] int maxLength,
             [NativeTypeName("GLsizei *")] Ref<int> length,
@@ -7372,7 +7377,7 @@ public unsafe partial interface IGL
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glGetActiveUniformARB")]
         static abstract void GetActiveUniformArb(
-            [NativeTypeName("GLhandleARB")] uint programObj,
+            [NativeTypeName("GLhandleARB")] Ref programObj,
             [NativeTypeName("GLuint")] uint index,
             [NativeTypeName("GLsizei")] int maxLength,
             [NativeTypeName("GLsizei *")] Ref<int> length,
@@ -7455,10 +7460,10 @@ public unsafe partial interface IGL
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glGetAttachedObjectsARB")]
         static abstract void GetAttachedObjectsArb(
-            [NativeTypeName("GLhandleARB")] uint containerObj,
+            [NativeTypeName("GLhandleARB")] Ref containerObj,
             [NativeTypeName("GLsizei")] int maxCount,
             [NativeTypeName("GLsizei *")] Ref<int> count,
-            [NativeTypeName("GLhandleARB *")] Ref<uint> obj
+            [NativeTypeName("GLhandleARB *")] Ref2D obj
         );
 
         [SupportedApiProfile("glcore", MinVersion = "3.2")]
@@ -7486,7 +7491,7 @@ public unsafe partial interface IGL
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glGetAttribLocationARB")]
         static abstract int GetAttribLocationArb(
-            [NativeTypeName("GLhandleARB")] uint programObj,
+            [NativeTypeName("GLhandleARB")] Ref programObj,
             [NativeTypeName("const GLcharARB *")] Ref<sbyte> name
         );
 
@@ -7586,8 +7591,8 @@ public unsafe partial interface IGL
         [NativeFunction("opengl", EntryPoint = "glGetBufferSubData")]
         static abstract void GetBufferSubData(
             [NativeTypeName("GLenum")] uint target,
-            [NativeTypeName("GLintptr")] long offset,
-            [NativeTypeName("GLsizeiptr")] long size,
+            [NativeTypeName("GLintptr")] nint offset,
+            [NativeTypeName("GLsizeiptr")] nint size,
             Ref data
         );
 
@@ -7595,8 +7600,8 @@ public unsafe partial interface IGL
         [NativeFunction("opengl", EntryPoint = "glGetBufferSubDataARB")]
         static abstract void GetBufferSubDataArb(
             [NativeTypeName("GLenum")] uint target,
-            [NativeTypeName("GLintptrARB")] long offset,
-            [NativeTypeName("GLsizeiptrARB")] long size,
+            [NativeTypeName("GLintptrARB")] nint offset,
+            [NativeTypeName("GLsizeiptrARB")] nint size,
             Ref data
         );
 
@@ -8305,7 +8310,7 @@ public unsafe partial interface IGL
         [return: NativeTypeName("GLhandleARB")]
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glGetHandleARB")]
-        static abstract uint GetHandleArb([NativeTypeName("GLenum")] uint pname);
+        static abstract Ptr GetHandleArb([NativeTypeName("GLenum")] uint pname);
 
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glGetHistogram")]
@@ -8411,7 +8416,7 @@ public unsafe partial interface IGL
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glGetInfoLogARB")]
         static abstract void GetInfoLogArb(
-            [NativeTypeName("GLhandleARB")] uint obj,
+            [NativeTypeName("GLhandleARB")] Ref obj,
             [NativeTypeName("GLsizei")] int maxLength,
             [NativeTypeName("GLsizei *")] Ref<int> length,
             [NativeTypeName("GLcharARB *")] Ref<sbyte> infoLog
@@ -9039,8 +9044,8 @@ public unsafe partial interface IGL
         [NativeFunction("opengl", EntryPoint = "glGetNamedBufferSubData")]
         static abstract void GetNamedBufferSubData(
             [NativeTypeName("GLuint")] uint buffer,
-            [NativeTypeName("GLintptr")] long offset,
-            [NativeTypeName("GLsizeiptr")] long size,
+            [NativeTypeName("GLintptr")] nint offset,
+            [NativeTypeName("GLsizeiptr")] nint size,
             Ref data
         );
 
@@ -9049,8 +9054,8 @@ public unsafe partial interface IGL
         [NativeFunction("opengl", EntryPoint = "glGetNamedBufferSubDataEXT")]
         static abstract void GetNamedBufferSubDataExt(
             [NativeTypeName("GLuint")] uint buffer,
-            [NativeTypeName("GLintptr")] long offset,
-            [NativeTypeName("GLsizeiptr")] long size,
+            [NativeTypeName("GLintptr")] nint offset,
+            [NativeTypeName("GLsizeiptr")] nint size,
             Ref data
         );
 
@@ -9680,7 +9685,7 @@ public unsafe partial interface IGL
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glGetObjectParameterfvARB")]
         static abstract void GetObjectParameterfvArb(
-            [NativeTypeName("GLhandleARB")] uint obj,
+            [NativeTypeName("GLhandleARB")] Ref obj,
             [NativeTypeName("GLenum")] uint pname,
             [NativeTypeName("GLfloat *")] Ref<float> @params
         );
@@ -9697,7 +9702,7 @@ public unsafe partial interface IGL
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glGetObjectParameterivARB")]
         static abstract void GetObjectParameterivArb(
-            [NativeTypeName("GLhandleARB")] uint obj,
+            [NativeTypeName("GLhandleARB")] Ref obj,
             [NativeTypeName("GLenum")] uint pname,
             [NativeTypeName("GLint *")] Ref<int> @params
         );
@@ -10410,7 +10415,7 @@ public unsafe partial interface IGL
             [NativeTypeName("GLuint")] uint id,
             [NativeTypeName("GLuint")] uint buffer,
             [NativeTypeName("GLenum")] uint pname,
-            [NativeTypeName("GLintptr")] long offset
+            [NativeTypeName("GLintptr")] nint offset
         );
 
         [SupportedApiProfile("glcore", MinVersion = "3.2")]
@@ -10420,7 +10425,7 @@ public unsafe partial interface IGL
             [NativeTypeName("GLuint")] uint id,
             [NativeTypeName("GLuint")] uint buffer,
             [NativeTypeName("GLenum")] uint pname,
-            [NativeTypeName("GLintptr")] long offset
+            [NativeTypeName("GLintptr")] nint offset
         );
 
         [SupportedApiProfile("glcore", MinVersion = "3.2")]
@@ -10430,7 +10435,7 @@ public unsafe partial interface IGL
             [NativeTypeName("GLuint")] uint id,
             [NativeTypeName("GLuint")] uint buffer,
             [NativeTypeName("GLenum")] uint pname,
-            [NativeTypeName("GLintptr")] long offset
+            [NativeTypeName("GLintptr")] nint offset
         );
 
         [SupportedApiProfile("glcore", MinVersion = "3.2")]
@@ -10440,7 +10445,7 @@ public unsafe partial interface IGL
             [NativeTypeName("GLuint")] uint id,
             [NativeTypeName("GLuint")] uint buffer,
             [NativeTypeName("GLenum")] uint pname,
-            [NativeTypeName("GLintptr")] long offset
+            [NativeTypeName("GLintptr")] nint offset
         );
 
         [SupportedApiProfile("glcore", MinVersion = "3.2")]
@@ -10746,7 +10751,7 @@ public unsafe partial interface IGL
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glGetShaderSourceARB")]
         static abstract void GetShaderSourceArb(
-            [NativeTypeName("GLhandleARB")] uint obj,
+            [NativeTypeName("GLhandleARB")] Ref obj,
             [NativeTypeName("GLsizei")] int maxLength,
             [NativeTypeName("GLsizei *")] Ref<int> length,
             [NativeTypeName("GLcharARB *")] Ref<sbyte> source
@@ -11414,7 +11419,7 @@ public unsafe partial interface IGL
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glGetUniformfvARB")]
         static abstract void GetUniformfvArb(
-            [NativeTypeName("GLhandleARB")] uint programObj,
+            [NativeTypeName("GLhandleARB")] Ref programObj,
             [NativeTypeName("GLint")] int location,
             [NativeTypeName("GLfloat *")] Ref<float> @params
         );
@@ -11461,7 +11466,7 @@ public unsafe partial interface IGL
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glGetUniformivARB")]
         static abstract void GetUniformivArb(
-            [NativeTypeName("GLhandleARB")] uint programObj,
+            [NativeTypeName("GLhandleARB")] Ref programObj,
             [NativeTypeName("GLint")] int location,
             [NativeTypeName("GLint *")] Ref<int> @params
         );
@@ -11480,14 +11485,14 @@ public unsafe partial interface IGL
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glGetUniformLocationARB")]
         static abstract int GetUniformLocationArb(
-            [NativeTypeName("GLhandleARB")] uint programObj,
+            [NativeTypeName("GLhandleARB")] Ref programObj,
             [NativeTypeName("const GLcharARB *")] Ref<sbyte> name
         );
 
         [return: NativeTypeName("GLintptr")]
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glGetUniformOffsetEXT")]
-        static abstract long GetUniformOffsetExt(
+        static abstract nint GetUniformOffsetExt(
             [NativeTypeName("GLuint")] uint program,
             [NativeTypeName("GLint")] int location
         );
@@ -12117,7 +12122,7 @@ public unsafe partial interface IGL
         [NativeFunction("opengl", EntryPoint = "glImportSyncEXT")]
         static abstract Ptr<Sync> ImportSyncExt(
             [NativeTypeName("GLenum")] uint external_sync_type,
-            [NativeTypeName("GLintptr")] long external_sync,
+            [NativeTypeName("GLintptr")] nint external_sync,
             [NativeTypeName("GLbitfield")] uint flags
         );
 
@@ -12279,8 +12284,8 @@ public unsafe partial interface IGL
         [NativeFunction("opengl", EntryPoint = "glInvalidateBufferSubData")]
         static abstract void InvalidateBufferSubData(
             [NativeTypeName("GLuint")] uint buffer,
-            [NativeTypeName("GLintptr")] long offset,
-            [NativeTypeName("GLsizeiptr")] long length
+            [NativeTypeName("GLintptr")] nint offset,
+            [NativeTypeName("GLsizeiptr")] nint length
         );
 
         [SupportedApiProfile("glcore", MinVersion = "3.2")]
@@ -12756,8 +12761,8 @@ public unsafe partial interface IGL
         static abstract void LgpuNamedBufferSubDataNvx(
             [NativeTypeName("GLbitfield")] uint gpuMask,
             [NativeTypeName("GLuint")] uint buffer,
-            [NativeTypeName("GLintptr")] long offset,
-            [NativeTypeName("GLsizeiptr")] long size,
+            [NativeTypeName("GLintptr")] nint offset,
+            [NativeTypeName("GLsizeiptr")] nint size,
             [NativeTypeName("const void *")] Ref data
         );
 
@@ -12927,7 +12932,7 @@ public unsafe partial interface IGL
 
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glLinkProgramARB")]
-        static abstract void LinkProgramArb([NativeTypeName("GLhandleARB")] uint programObj);
+        static abstract void LinkProgramArb([NativeTypeName("GLhandleARB")] Ref programObj);
 
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glListBase")]
@@ -13257,8 +13262,8 @@ public unsafe partial interface IGL
         [NativeFunction("opengl", EntryPoint = "glMapBufferRange")]
         static abstract Ptr MapBufferRange(
             [NativeTypeName("GLenum")] uint target,
-            [NativeTypeName("GLintptr")] long offset,
-            [NativeTypeName("GLsizeiptr")] long length,
+            [NativeTypeName("GLintptr")] nint offset,
+            [NativeTypeName("GLsizeiptr")] nint length,
             [NativeTypeName("GLbitfield")] uint access
         );
 
@@ -13267,8 +13272,8 @@ public unsafe partial interface IGL
         [NativeFunction("opengl", EntryPoint = "glMapBufferRangeEXT")]
         static abstract Ptr MapBufferRangeExt(
             [NativeTypeName("GLenum")] uint target,
-            [NativeTypeName("GLintptr")] long offset,
-            [NativeTypeName("GLsizeiptr")] long length,
+            [NativeTypeName("GLintptr")] nint offset,
+            [NativeTypeName("GLsizeiptr")] nint length,
             [NativeTypeName("GLbitfield")] uint access
         );
 
@@ -13363,8 +13368,8 @@ public unsafe partial interface IGL
         [NativeFunction("opengl", EntryPoint = "glMapNamedBufferRange")]
         static abstract Ptr MapNamedBufferRange(
             [NativeTypeName("GLuint")] uint buffer,
-            [NativeTypeName("GLintptr")] long offset,
-            [NativeTypeName("GLsizeiptr")] long length,
+            [NativeTypeName("GLintptr")] nint offset,
+            [NativeTypeName("GLsizeiptr")] nint length,
             [NativeTypeName("GLbitfield")] uint access
         );
 
@@ -13373,8 +13378,8 @@ public unsafe partial interface IGL
         [NativeFunction("opengl", EntryPoint = "glMapNamedBufferRangeEXT")]
         static abstract Ptr MapNamedBufferRangeExt(
             [NativeTypeName("GLuint")] uint buffer,
-            [NativeTypeName("GLintptr")] long offset,
-            [NativeTypeName("GLsizeiptr")] long length,
+            [NativeTypeName("GLintptr")] nint offset,
+            [NativeTypeName("GLsizeiptr")] nint length,
             [NativeTypeName("GLbitfield")] uint access
         );
 
@@ -13906,8 +13911,8 @@ public unsafe partial interface IGL
         static abstract void MulticastBufferSubDataNV(
             [NativeTypeName("GLbitfield")] uint gpuMask,
             [NativeTypeName("GLuint")] uint buffer,
-            [NativeTypeName("GLintptr")] long offset,
-            [NativeTypeName("GLsizeiptr")] long size,
+            [NativeTypeName("GLintptr")] nint offset,
+            [NativeTypeName("GLsizeiptr")] nint size,
             [NativeTypeName("const void *")] Ref data
         );
 
@@ -13918,9 +13923,9 @@ public unsafe partial interface IGL
             [NativeTypeName("GLbitfield")] uint writeGpuMask,
             [NativeTypeName("GLuint")] uint readBuffer,
             [NativeTypeName("GLuint")] uint writeBuffer,
-            [NativeTypeName("GLintptr")] long readOffset,
-            [NativeTypeName("GLintptr")] long writeOffset,
-            [NativeTypeName("GLsizeiptr")] long size
+            [NativeTypeName("GLintptr")] nint readOffset,
+            [NativeTypeName("GLintptr")] nint writeOffset,
+            [NativeTypeName("GLsizeiptr")] nint size
         );
 
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
@@ -14094,7 +14099,7 @@ public unsafe partial interface IGL
         static abstract void MultiDrawArraysIndirectCount(
             [NativeTypeName("GLenum")] uint mode,
             [NativeTypeName("const void *")] Ref indirect,
-            [NativeTypeName("GLintptr")] long drawcount,
+            [NativeTypeName("GLintptr")] nint drawcount,
             [NativeTypeName("GLsizei")] int maxdrawcount,
             [NativeTypeName("GLsizei")] int stride
         );
@@ -14105,7 +14110,7 @@ public unsafe partial interface IGL
         static abstract void MultiDrawArraysIndirectCountArb(
             [NativeTypeName("GLenum")] uint mode,
             [NativeTypeName("const void *")] Ref indirect,
-            [NativeTypeName("GLintptr")] long drawcount,
+            [NativeTypeName("GLintptr")] nint drawcount,
             [NativeTypeName("GLsizei")] int maxdrawcount,
             [NativeTypeName("GLsizei")] int stride
         );
@@ -14227,7 +14232,7 @@ public unsafe partial interface IGL
             [NativeTypeName("GLenum")] uint mode,
             [NativeTypeName("GLenum")] uint type,
             [NativeTypeName("const void *")] Ref indirect,
-            [NativeTypeName("GLintptr")] long drawcount,
+            [NativeTypeName("GLintptr")] nint drawcount,
             [NativeTypeName("GLsizei")] int maxdrawcount,
             [NativeTypeName("GLsizei")] int stride
         );
@@ -14239,7 +14244,7 @@ public unsafe partial interface IGL
             [NativeTypeName("GLenum")] uint mode,
             [NativeTypeName("GLenum")] uint type,
             [NativeTypeName("const void *")] Ref indirect,
-            [NativeTypeName("GLintptr")] long drawcount,
+            [NativeTypeName("GLintptr")] nint drawcount,
             [NativeTypeName("GLsizei")] int maxdrawcount,
             [NativeTypeName("GLsizei")] int stride
         );
@@ -14259,8 +14264,8 @@ public unsafe partial interface IGL
         [SupportedApiProfile("gles2", MinVersion = "2.0")]
         [NativeFunction("opengl", EntryPoint = "glMultiDrawMeshTasksIndirectCountNV")]
         static abstract void MultiDrawMeshTasksIndirectCountNV(
-            [NativeTypeName("GLintptr")] long indirect,
-            [NativeTypeName("GLintptr")] long drawcount,
+            [NativeTypeName("GLintptr")] nint indirect,
+            [NativeTypeName("GLintptr")] nint drawcount,
             [NativeTypeName("GLsizei")] int maxdrawcount,
             [NativeTypeName("GLsizei")] int stride
         );
@@ -14270,7 +14275,7 @@ public unsafe partial interface IGL
         [SupportedApiProfile("gles2", MinVersion = "2.0")]
         [NativeFunction("opengl", EntryPoint = "glMultiDrawMeshTasksIndirectNV")]
         static abstract void MultiDrawMeshTasksIndirectNV(
-            [NativeTypeName("GLintptr")] long indirect,
+            [NativeTypeName("GLintptr")] nint indirect,
             [NativeTypeName("GLsizei")] int drawcount,
             [NativeTypeName("GLsizei")] int stride
         );
@@ -15412,7 +15417,7 @@ public unsafe partial interface IGL
         [NativeFunction("opengl", EntryPoint = "glNamedBufferData")]
         static abstract void NamedBufferData(
             [NativeTypeName("GLuint")] uint buffer,
-            [NativeTypeName("GLsizeiptr")] long size,
+            [NativeTypeName("GLsizeiptr")] nint size,
             [NativeTypeName("const void *")] Ref data,
             [NativeTypeName("GLenum")] uint usage
         );
@@ -15422,7 +15427,7 @@ public unsafe partial interface IGL
         [NativeFunction("opengl", EntryPoint = "glNamedBufferDataEXT")]
         static abstract void NamedBufferDataExt(
             [NativeTypeName("GLuint")] uint buffer,
-            [NativeTypeName("GLsizeiptr")] long size,
+            [NativeTypeName("GLsizeiptr")] nint size,
             [NativeTypeName("const void *")] Ref data,
             [NativeTypeName("GLenum")] uint usage
         );
@@ -15432,8 +15437,8 @@ public unsafe partial interface IGL
         [NativeFunction("opengl", EntryPoint = "glNamedBufferPageCommitmentARB")]
         static abstract void NamedBufferPageCommitmentArb(
             [NativeTypeName("GLuint")] uint buffer,
-            [NativeTypeName("GLintptr")] long offset,
-            [NativeTypeName("GLsizeiptr")] long size,
+            [NativeTypeName("GLintptr")] nint offset,
+            [NativeTypeName("GLsizeiptr")] nint size,
             [NativeTypeName("GLboolean")] byte commit
         );
 
@@ -15442,8 +15447,8 @@ public unsafe partial interface IGL
         [NativeFunction("opengl", EntryPoint = "glNamedBufferPageCommitmentEXT")]
         static abstract void NamedBufferPageCommitmentExt(
             [NativeTypeName("GLuint")] uint buffer,
-            [NativeTypeName("GLintptr")] long offset,
-            [NativeTypeName("GLsizeiptr")] long size,
+            [NativeTypeName("GLintptr")] nint offset,
+            [NativeTypeName("GLsizeiptr")] nint size,
             [NativeTypeName("GLboolean")] byte commit
         );
 
@@ -15453,8 +15458,8 @@ public unsafe partial interface IGL
         [NativeFunction("opengl", EntryPoint = "glNamedBufferPageCommitmentMemNV")]
         static abstract void NamedBufferPageCommitmentMemNV(
             [NativeTypeName("GLuint")] uint buffer,
-            [NativeTypeName("GLintptr")] long offset,
-            [NativeTypeName("GLsizeiptr")] long size,
+            [NativeTypeName("GLintptr")] nint offset,
+            [NativeTypeName("GLsizeiptr")] nint size,
             [NativeTypeName("GLuint")] uint memory,
             [NativeTypeName("GLuint64")] ulong memOffset,
             [NativeTypeName("GLboolean")] byte commit
@@ -15465,7 +15470,7 @@ public unsafe partial interface IGL
         [NativeFunction("opengl", EntryPoint = "glNamedBufferStorage")]
         static abstract void NamedBufferStorage(
             [NativeTypeName("GLuint")] uint buffer,
-            [NativeTypeName("GLsizeiptr")] long size,
+            [NativeTypeName("GLsizeiptr")] nint size,
             [NativeTypeName("const void *")] Ref data,
             [NativeTypeName("GLbitfield")] uint flags
         );
@@ -15475,7 +15480,7 @@ public unsafe partial interface IGL
         [NativeFunction("opengl", EntryPoint = "glNamedBufferStorageEXT")]
         static abstract void NamedBufferStorageExt(
             [NativeTypeName("GLuint")] uint buffer,
-            [NativeTypeName("GLsizeiptr")] long size,
+            [NativeTypeName("GLsizeiptr")] nint size,
             [NativeTypeName("const void *")] Ref data,
             [NativeTypeName("GLbitfield")] uint flags
         );
@@ -15485,8 +15490,8 @@ public unsafe partial interface IGL
         [NativeFunction("opengl", EntryPoint = "glNamedBufferStorageExternalEXT")]
         static abstract void NamedBufferStorageExternalExt(
             [NativeTypeName("GLuint")] uint buffer,
-            [NativeTypeName("GLintptr")] long offset,
-            [NativeTypeName("GLsizeiptr")] long size,
+            [NativeTypeName("GLintptr")] nint offset,
+            [NativeTypeName("GLsizeiptr")] nint size,
             [NativeTypeName("GLeglClientBufferEXT")] Ref clientBuffer,
             [NativeTypeName("GLbitfield")] uint flags
         );
@@ -15496,7 +15501,7 @@ public unsafe partial interface IGL
         [NativeFunction("opengl", EntryPoint = "glNamedBufferStorageMemEXT")]
         static abstract void NamedBufferStorageMemExt(
             [NativeTypeName("GLuint")] uint buffer,
-            [NativeTypeName("GLsizeiptr")] long size,
+            [NativeTypeName("GLsizeiptr")] nint size,
             [NativeTypeName("GLuint")] uint memory,
             [NativeTypeName("GLuint64")] ulong offset
         );
@@ -15506,8 +15511,8 @@ public unsafe partial interface IGL
         [NativeFunction("opengl", EntryPoint = "glNamedBufferSubData")]
         static abstract void NamedBufferSubData(
             [NativeTypeName("GLuint")] uint buffer,
-            [NativeTypeName("GLintptr")] long offset,
-            [NativeTypeName("GLsizeiptr")] long size,
+            [NativeTypeName("GLintptr")] nint offset,
+            [NativeTypeName("GLsizeiptr")] nint size,
             [NativeTypeName("const void *")] Ref data
         );
 
@@ -15516,8 +15521,8 @@ public unsafe partial interface IGL
         [NativeFunction("opengl", EntryPoint = "glNamedBufferSubDataEXT")]
         static abstract void NamedBufferSubDataExt(
             [NativeTypeName("GLuint")] uint buffer,
-            [NativeTypeName("GLintptr")] long offset,
-            [NativeTypeName("GLsizeiptr")] long size,
+            [NativeTypeName("GLintptr")] nint offset,
+            [NativeTypeName("GLsizeiptr")] nint size,
             [NativeTypeName("const void *")] Ref data
         );
 
@@ -15527,9 +15532,9 @@ public unsafe partial interface IGL
         static abstract void NamedCopyBufferSubDataExt(
             [NativeTypeName("GLuint")] uint readBuffer,
             [NativeTypeName("GLuint")] uint writeBuffer,
-            [NativeTypeName("GLintptr")] long readOffset,
-            [NativeTypeName("GLintptr")] long writeOffset,
-            [NativeTypeName("GLsizeiptr")] long size
+            [NativeTypeName("GLintptr")] nint readOffset,
+            [NativeTypeName("GLintptr")] nint writeOffset,
+            [NativeTypeName("GLsizeiptr")] nint size
         );
 
         [SupportedApiProfile("glcore", MinVersion = "3.2")]
@@ -16471,7 +16476,7 @@ public unsafe partial interface IGL
         static abstract uint PathMemoryGlyphIndexArrayNV(
             [NativeTypeName("GLuint")] uint firstPathName,
             [NativeTypeName("GLenum")] uint fontTarget,
-            [NativeTypeName("GLsizeiptr")] long fontSize,
+            [NativeTypeName("GLsizeiptr")] nint fontSize,
             [NativeTypeName("const void *")] Ref fontData,
             [NativeTypeName("GLsizei")] int faceIndex,
             [NativeTypeName("GLuint")] uint firstGlyphIndex,
@@ -20741,7 +20746,7 @@ public unsafe partial interface IGL
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glShaderSourceARB")]
         static abstract void ShaderSourceArb(
-            [NativeTypeName("GLhandleARB")] uint shaderObj,
+            [NativeTypeName("GLhandleARB")] Ref shaderObj,
             [NativeTypeName("GLsizei")] int count,
             [NativeTypeName("const GLcharARB **")] Ref2D<sbyte> @string,
             [NativeTypeName("const GLint *")] Ref<int> length
@@ -21307,8 +21312,8 @@ public unsafe partial interface IGL
             [NativeTypeName("GLenum")] uint target,
             [NativeTypeName("GLenum")] uint internalformat,
             [NativeTypeName("GLuint")] uint buffer,
-            [NativeTypeName("GLintptr")] long offset,
-            [NativeTypeName("GLsizeiptr")] long size
+            [NativeTypeName("GLintptr")] nint offset,
+            [NativeTypeName("GLsizeiptr")] nint size
         );
 
         [SupportedApiProfile("gles2", MinVersion = "2.0")]
@@ -21317,8 +21322,8 @@ public unsafe partial interface IGL
             [NativeTypeName("GLenum")] uint target,
             [NativeTypeName("GLenum")] uint internalformat,
             [NativeTypeName("GLuint")] uint buffer,
-            [NativeTypeName("GLintptr")] long offset,
-            [NativeTypeName("GLsizeiptr")] long size
+            [NativeTypeName("GLintptr")] nint offset,
+            [NativeTypeName("GLsizeiptr")] nint size
         );
 
         [SupportedApiProfile("gles2", MinVersion = "2.0")]
@@ -21327,8 +21332,8 @@ public unsafe partial interface IGL
             [NativeTypeName("GLenum")] uint target,
             [NativeTypeName("GLenum")] uint internalformat,
             [NativeTypeName("GLuint")] uint buffer,
-            [NativeTypeName("GLintptr")] long offset,
-            [NativeTypeName("GLsizeiptr")] long size
+            [NativeTypeName("GLintptr")] nint offset,
+            [NativeTypeName("GLsizeiptr")] nint size
         );
 
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
@@ -22814,8 +22819,8 @@ public unsafe partial interface IGL
             [NativeTypeName("GLuint")] uint texture,
             [NativeTypeName("GLenum")] uint internalformat,
             [NativeTypeName("GLuint")] uint buffer,
-            [NativeTypeName("GLintptr")] long offset,
-            [NativeTypeName("GLsizeiptr")] long size
+            [NativeTypeName("GLintptr")] nint offset,
+            [NativeTypeName("GLsizeiptr")] nint size
         );
 
         [SupportedApiProfile("glcore", MinVersion = "3.2")]
@@ -22826,8 +22831,8 @@ public unsafe partial interface IGL
             [NativeTypeName("GLenum")] uint target,
             [NativeTypeName("GLenum")] uint internalformat,
             [NativeTypeName("GLuint")] uint buffer,
-            [NativeTypeName("GLintptr")] long offset,
-            [NativeTypeName("GLsizeiptr")] long size
+            [NativeTypeName("GLintptr")] nint offset,
+            [NativeTypeName("GLsizeiptr")] nint size
         );
 
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
@@ -23505,8 +23510,8 @@ public unsafe partial interface IGL
             [NativeTypeName("GLuint")] uint xfb,
             [NativeTypeName("GLuint")] uint index,
             [NativeTypeName("GLuint")] uint buffer,
-            [NativeTypeName("GLintptr")] long offset,
-            [NativeTypeName("GLsizeiptr")] long size
+            [NativeTypeName("GLintptr")] nint offset,
+            [NativeTypeName("GLsizeiptr")] nint size
         );
 
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
@@ -24838,7 +24843,7 @@ public unsafe partial interface IGL
 
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glUseProgramObjectARB")]
-        static abstract void UseProgramObjectArb([NativeTypeName("GLhandleARB")] uint programObj);
+        static abstract void UseProgramObjectArb([NativeTypeName("GLhandleARB")] Ref programObj);
 
         [SupportedApiProfile("glcore", MinVersion = "3.2")]
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
@@ -24873,7 +24878,7 @@ public unsafe partial interface IGL
 
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glValidateProgramARB")]
-        static abstract void ValidateProgramArb([NativeTypeName("GLhandleARB")] uint programObj);
+        static abstract void ValidateProgramArb([NativeTypeName("GLhandleARB")] Ref programObj);
 
         [SupportedApiProfile("glcore", MinVersion = "3.2")]
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
@@ -24966,7 +24971,7 @@ public unsafe partial interface IGL
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glVDPAUGetSurfaceivNV")]
         static abstract void VdpauGetSurfaceivNV(
-            [NativeTypeName("GLvdpauSurfaceNV")] long surface,
+            [NativeTypeName("GLvdpauSurfaceNV")] nint surface,
             [NativeTypeName("GLenum")] uint pname,
             [NativeTypeName("GLsizei")] int count,
             [NativeTypeName("GLsizei *")] Ref<int> length,
@@ -24983,19 +24988,19 @@ public unsafe partial interface IGL
         [return: NativeTypeName("GLboolean")]
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glVDPAUIsSurfaceNV")]
-        static abstract byte VdpauIsSurfaceNV([NativeTypeName("GLvdpauSurfaceNV")] long surface);
+        static abstract byte VdpauIsSurfaceNV([NativeTypeName("GLvdpauSurfaceNV")] nint surface);
 
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glVDPAUMapSurfacesNV")]
         static abstract void VdpauMapSurfacesNV(
             [NativeTypeName("GLsizei")] int numSurfaces,
-            [NativeTypeName("const GLvdpauSurfaceNV *")] Ref<long> surfaces
+            [NativeTypeName("const GLvdpauSurfaceNV *")] Ref<nint> surfaces
         );
 
         [return: NativeTypeName("GLvdpauSurfaceNV")]
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glVDPAURegisterOutputSurfaceNV")]
-        static abstract long VdpauRegisterOutputSurfaceNV(
+        static abstract nint VdpauRegisterOutputSurfaceNV(
             [NativeTypeName("const void *")] Ref vdpSurface,
             [NativeTypeName("GLenum")] uint target,
             [NativeTypeName("GLsizei")] int numTextureNames,
@@ -25005,7 +25010,7 @@ public unsafe partial interface IGL
         [return: NativeTypeName("GLvdpauSurfaceNV")]
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glVDPAURegisterVideoSurfaceNV")]
-        static abstract long VdpauRegisterVideoSurfaceNV(
+        static abstract nint VdpauRegisterVideoSurfaceNV(
             [NativeTypeName("const void *")] Ref vdpSurface,
             [NativeTypeName("GLenum")] uint target,
             [NativeTypeName("GLsizei")] int numTextureNames,
@@ -25015,7 +25020,7 @@ public unsafe partial interface IGL
         [return: NativeTypeName("GLvdpauSurfaceNV")]
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glVDPAURegisterVideoSurfaceWithPictureStructureNV")]
-        static abstract long VdpauRegisterVideoSurfaceWithPictureStructureNV(
+        static abstract nint VdpauRegisterVideoSurfaceWithPictureStructureNV(
             [NativeTypeName("const void *")] Ref vdpSurface,
             [NativeTypeName("GLenum")] uint target,
             [NativeTypeName("GLsizei")] int numTextureNames,
@@ -25026,7 +25031,7 @@ public unsafe partial interface IGL
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glVDPAUSurfaceAccessNV")]
         static abstract void VdpauSurfaceAccessNV(
-            [NativeTypeName("GLvdpauSurfaceNV")] long surface,
+            [NativeTypeName("GLvdpauSurfaceNV")] nint surface,
             [NativeTypeName("GLenum")] uint access
         );
 
@@ -25034,13 +25039,13 @@ public unsafe partial interface IGL
         [NativeFunction("opengl", EntryPoint = "glVDPAUUnmapSurfacesNV")]
         static abstract void VdpauUnmapSurfacesNV(
             [NativeTypeName("GLsizei")] int numSurface,
-            [NativeTypeName("const GLvdpauSurfaceNV *")] Ref<long> surfaces
+            [NativeTypeName("const GLvdpauSurfaceNV *")] Ref<nint> surfaces
         );
 
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glVDPAUUnregisterSurfaceNV")]
         static abstract void VdpauUnregisterSurfaceNV(
-            [NativeTypeName("GLvdpauSurfaceNV")] long surface
+            [NativeTypeName("GLvdpauSurfaceNV")] nint surface
         );
 
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
@@ -25349,7 +25354,7 @@ public unsafe partial interface IGL
             [NativeTypeName("GLuint")] uint vaobj,
             [NativeTypeName("GLuint")] uint bindingindex,
             [NativeTypeName("GLuint")] uint buffer,
-            [NativeTypeName("GLintptr")] long offset,
+            [NativeTypeName("GLintptr")] nint offset,
             [NativeTypeName("GLsizei")] int stride
         );
 
@@ -25362,7 +25367,7 @@ public unsafe partial interface IGL
             [NativeTypeName("GLint")] int size,
             [NativeTypeName("GLenum")] uint type,
             [NativeTypeName("GLsizei")] int stride,
-            [NativeTypeName("GLintptr")] long offset
+            [NativeTypeName("GLintptr")] nint offset
         );
 
         [SupportedApiProfile("glcore", MinVersion = "3.2")]
@@ -25372,7 +25377,7 @@ public unsafe partial interface IGL
             [NativeTypeName("GLuint")] uint vaobj,
             [NativeTypeName("GLuint")] uint buffer,
             [NativeTypeName("GLsizei")] int stride,
-            [NativeTypeName("GLintptr")] long offset
+            [NativeTypeName("GLintptr")] nint offset
         );
 
         [SupportedApiProfile("glcore", MinVersion = "3.2")]
@@ -25391,7 +25396,7 @@ public unsafe partial interface IGL
             [NativeTypeName("GLuint")] uint buffer,
             [NativeTypeName("GLenum")] uint type,
             [NativeTypeName("GLsizei")] int stride,
-            [NativeTypeName("GLintptr")] long offset
+            [NativeTypeName("GLintptr")] nint offset
         );
 
         [SupportedApiProfile("glcore", MinVersion = "3.2")]
@@ -25402,7 +25407,7 @@ public unsafe partial interface IGL
             [NativeTypeName("GLuint")] uint buffer,
             [NativeTypeName("GLenum")] uint type,
             [NativeTypeName("GLsizei")] int stride,
-            [NativeTypeName("GLintptr")] long offset
+            [NativeTypeName("GLintptr")] nint offset
         );
 
         [SupportedApiProfile("glcore", MinVersion = "3.2")]
@@ -25415,7 +25420,7 @@ public unsafe partial interface IGL
             [NativeTypeName("GLint")] int size,
             [NativeTypeName("GLenum")] uint type,
             [NativeTypeName("GLsizei")] int stride,
-            [NativeTypeName("GLintptr")] long offset
+            [NativeTypeName("GLintptr")] nint offset
         );
 
         [SupportedApiProfile("glcore", MinVersion = "3.2")]
@@ -25426,7 +25431,7 @@ public unsafe partial interface IGL
             [NativeTypeName("GLuint")] uint buffer,
             [NativeTypeName("GLenum")] uint type,
             [NativeTypeName("GLsizei")] int stride,
-            [NativeTypeName("GLintptr")] long offset
+            [NativeTypeName("GLintptr")] nint offset
         );
 
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
@@ -25459,7 +25464,7 @@ public unsafe partial interface IGL
             [NativeTypeName("GLint")] int size,
             [NativeTypeName("GLenum")] uint type,
             [NativeTypeName("GLsizei")] int stride,
-            [NativeTypeName("GLintptr")] long offset
+            [NativeTypeName("GLintptr")] nint offset
         );
 
         [SupportedApiProfile("glcore", MinVersion = "3.2")]
@@ -25471,7 +25476,7 @@ public unsafe partial interface IGL
             [NativeTypeName("GLint")] int size,
             [NativeTypeName("GLenum")] uint type,
             [NativeTypeName("GLsizei")] int stride,
-            [NativeTypeName("GLintptr")] long offset
+            [NativeTypeName("GLintptr")] nint offset
         );
 
         [SupportedApiProfile("glcore", MinVersion = "3.2")]
@@ -25525,7 +25530,7 @@ public unsafe partial interface IGL
             [NativeTypeName("GLint")] int size,
             [NativeTypeName("GLenum")] uint type,
             [NativeTypeName("GLsizei")] int stride,
-            [NativeTypeName("GLintptr")] long offset
+            [NativeTypeName("GLintptr")] nint offset
         );
 
         [SupportedApiProfile("glcore", MinVersion = "3.2")]
@@ -25549,7 +25554,7 @@ public unsafe partial interface IGL
             [NativeTypeName("GLint")] int size,
             [NativeTypeName("GLenum")] uint type,
             [NativeTypeName("GLsizei")] int stride,
-            [NativeTypeName("GLintptr")] long offset
+            [NativeTypeName("GLintptr")] nint offset
         );
 
         [SupportedApiProfile("glcore", MinVersion = "3.2")]
@@ -25563,7 +25568,7 @@ public unsafe partial interface IGL
             [NativeTypeName("GLenum")] uint type,
             [NativeTypeName("GLboolean")] byte normalized,
             [NativeTypeName("GLsizei")] int stride,
-            [NativeTypeName("GLintptr")] long offset
+            [NativeTypeName("GLintptr")] nint offset
         );
 
         [SupportedApiProfile("glcore", MinVersion = "3.2")]
@@ -25582,7 +25587,7 @@ public unsafe partial interface IGL
             [NativeTypeName("GLuint")] uint vaobj,
             [NativeTypeName("GLuint")] uint bindingindex,
             [NativeTypeName("GLuint")] uint buffer,
-            [NativeTypeName("GLintptr")] long offset,
+            [NativeTypeName("GLintptr")] nint offset,
             [NativeTypeName("GLsizei")] int stride
         );
 
@@ -25594,7 +25599,7 @@ public unsafe partial interface IGL
             [NativeTypeName("GLuint")] uint first,
             [NativeTypeName("GLsizei")] int count,
             [NativeTypeName("const GLuint *")] Ref<uint> buffers,
-            [NativeTypeName("const GLintptr *")] Ref<long> offsets,
+            [NativeTypeName("const GLintptr *")] Ref<nint> offsets,
             [NativeTypeName("const GLsizei *")] Ref<int> strides
         );
 
@@ -25607,7 +25612,7 @@ public unsafe partial interface IGL
             [NativeTypeName("GLint")] int size,
             [NativeTypeName("GLenum")] uint type,
             [NativeTypeName("GLsizei")] int stride,
-            [NativeTypeName("GLintptr")] long offset
+            [NativeTypeName("GLintptr")] nint offset
         );
 
         [SupportedApiProfile("glcore", MinVersion = "3.2")]
@@ -28710,9 +28715,9 @@ public unsafe partial interface IGL
         [NativeTypeName("GLbitfield")] uint writeGpuMask,
         [NativeTypeName("GLuint")] uint readBuffer,
         [NativeTypeName("GLuint")] uint writeBuffer,
-        [NativeTypeName("GLintptr")] long readOffset,
-        [NativeTypeName("GLintptr")] long writeOffset,
-        [NativeTypeName("GLsizeiptr")] long size,
+        [NativeTypeName("GLintptr")] nint readOffset,
+        [NativeTypeName("GLintptr")] nint writeOffset,
+        [NativeTypeName("GLsizeiptr")] nint size,
         [NativeTypeName("GLsizei")] int signalSemaphoreCount,
         [NativeTypeName("const GLuint *")] Ref<uint> signalSemaphoreArray,
         [NativeTypeName("const GLuint64 *")] Ref<ulong> signalValueArray
@@ -28754,8 +28759,8 @@ public unsafe partial interface IGL
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glAttachObjectARB")]
     void AttachObjectArb(
-        [NativeTypeName("GLhandleARB")] uint containerObj,
-        [NativeTypeName("GLhandleARB")] uint obj
+        [NativeTypeName("GLhandleARB")] Ref containerObj,
+        [NativeTypeName("GLhandleARB")] Ref obj
     );
 
     [SupportedApiProfile("glcore", MinVersion = "3.2")]
@@ -28868,7 +28873,7 @@ public unsafe partial interface IGL
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glBindAttribLocationARB")]
     void BindAttribLocationArb(
-        [NativeTypeName("GLhandleARB")] uint programObj,
+        [NativeTypeName("GLhandleARB")] Ref programObj,
         [NativeTypeName("GLuint")] uint index,
         [NativeTypeName("const GLcharARB *")] Ref<sbyte> name
     );
@@ -28918,7 +28923,7 @@ public unsafe partial interface IGL
         [NativeTypeName("GLenum")] uint target,
         [NativeTypeName("GLuint")] uint index,
         [NativeTypeName("GLuint")] uint buffer,
-        [NativeTypeName("GLintptr")] long offset
+        [NativeTypeName("GLintptr")] nint offset
     );
 
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
@@ -28927,7 +28932,7 @@ public unsafe partial interface IGL
         [NativeTypeName("GLenum")] uint target,
         [NativeTypeName("GLuint")] uint index,
         [NativeTypeName("GLuint")] uint buffer,
-        [NativeTypeName("GLintptr")] long offset
+        [NativeTypeName("GLintptr")] nint offset
     );
 
     [SupportedApiProfile("glcore", MinVersion = "3.2")]
@@ -28937,8 +28942,8 @@ public unsafe partial interface IGL
         [NativeTypeName("GLenum")] uint target,
         [NativeTypeName("GLuint")] uint index,
         [NativeTypeName("GLuint")] uint buffer,
-        [NativeTypeName("GLintptr")] long offset,
-        [NativeTypeName("GLsizeiptr")] long size
+        [NativeTypeName("GLintptr")] nint offset,
+        [NativeTypeName("GLsizeiptr")] nint size
     );
 
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
@@ -28947,8 +28952,8 @@ public unsafe partial interface IGL
         [NativeTypeName("GLenum")] uint target,
         [NativeTypeName("GLuint")] uint index,
         [NativeTypeName("GLuint")] uint buffer,
-        [NativeTypeName("GLintptr")] long offset,
-        [NativeTypeName("GLsizeiptr")] long size
+        [NativeTypeName("GLintptr")] nint offset,
+        [NativeTypeName("GLsizeiptr")] nint size
     );
 
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
@@ -28957,8 +28962,8 @@ public unsafe partial interface IGL
         [NativeTypeName("GLenum")] uint target,
         [NativeTypeName("GLuint")] uint index,
         [NativeTypeName("GLuint")] uint buffer,
-        [NativeTypeName("GLintptr")] long offset,
-        [NativeTypeName("GLsizeiptr")] long size
+        [NativeTypeName("GLintptr")] nint offset,
+        [NativeTypeName("GLsizeiptr")] nint size
     );
 
     [SupportedApiProfile("glcore", MinVersion = "3.2")]
@@ -28979,8 +28984,8 @@ public unsafe partial interface IGL
         [NativeTypeName("GLuint")] uint first,
         [NativeTypeName("GLsizei")] int count,
         [NativeTypeName("const GLuint *")] Ref<uint> buffers,
-        [NativeTypeName("const GLintptr *")] Ref<long> offsets,
-        [NativeTypeName("const GLsizeiptr *")] Ref<long> sizes
+        [NativeTypeName("const GLintptr *")] Ref<nint> offsets,
+        [NativeTypeName("const GLsizeiptr *")] Ref<nint> sizes
     );
 
     [SupportedApiProfile("glcore", MinVersion = "3.2")]
@@ -29261,7 +29266,7 @@ public unsafe partial interface IGL
     void BindVertexBuffer(
         [NativeTypeName("GLuint")] uint bindingindex,
         [NativeTypeName("GLuint")] uint buffer,
-        [NativeTypeName("GLintptr")] long offset,
+        [NativeTypeName("GLintptr")] nint offset,
         [NativeTypeName("GLsizei")] int stride
     );
 
@@ -29272,7 +29277,7 @@ public unsafe partial interface IGL
         [NativeTypeName("GLuint")] uint first,
         [NativeTypeName("GLsizei")] int count,
         [NativeTypeName("const GLuint *")] Ref<uint> buffers,
-        [NativeTypeName("const GLintptr *")] Ref<long> offsets,
+        [NativeTypeName("const GLintptr *")] Ref<nint> offsets,
         [NativeTypeName("const GLsizei *")] Ref<int> strides
     );
 
@@ -29286,7 +29291,7 @@ public unsafe partial interface IGL
         [NativeTypeName("GLuint")] uint video_capture_slot,
         [NativeTypeName("GLuint")] uint stream,
         [NativeTypeName("GLenum")] uint frame_region,
-        [NativeTypeName("GLintptrARB")] long offset
+        [NativeTypeName("GLintptrARB")] nint offset
     );
 
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
@@ -29816,7 +29821,7 @@ public unsafe partial interface IGL
         [NativeTypeName("GLenum")] uint pname,
         [NativeTypeName("GLuint")] uint index,
         [NativeTypeName("GLuint64EXT")] ulong address,
-        [NativeTypeName("GLsizeiptr")] long length
+        [NativeTypeName("GLsizeiptr")] nint length
     );
 
     [SupportedApiProfile("glcore", MinVersion = "3.2")]
@@ -29836,7 +29841,7 @@ public unsafe partial interface IGL
     [NativeFunction("opengl", EntryPoint = "glBufferData")]
     void BufferData(
         [NativeTypeName("GLenum")] uint target,
-        [NativeTypeName("GLsizeiptr")] long size,
+        [NativeTypeName("GLsizeiptr")] nint size,
         [NativeTypeName("const void *")] Ref data,
         [NativeTypeName("GLenum")] uint usage
     );
@@ -29845,7 +29850,7 @@ public unsafe partial interface IGL
     [NativeFunction("opengl", EntryPoint = "glBufferDataARB")]
     void BufferDataArb(
         [NativeTypeName("GLenum")] uint target,
-        [NativeTypeName("GLsizeiptrARB")] long size,
+        [NativeTypeName("GLsizeiptrARB")] nint size,
         [NativeTypeName("const void *")] Ref data,
         [NativeTypeName("GLenum")] uint usage
     );
@@ -29855,8 +29860,8 @@ public unsafe partial interface IGL
     [NativeFunction("opengl", EntryPoint = "glBufferPageCommitmentARB")]
     void BufferPageCommitmentArb(
         [NativeTypeName("GLenum")] uint target,
-        [NativeTypeName("GLintptr")] long offset,
-        [NativeTypeName("GLsizeiptr")] long size,
+        [NativeTypeName("GLintptr")] nint offset,
+        [NativeTypeName("GLsizeiptr")] nint size,
         [NativeTypeName("GLboolean")] byte commit
     );
 
@@ -29866,8 +29871,8 @@ public unsafe partial interface IGL
     [NativeFunction("opengl", EntryPoint = "glBufferPageCommitmentMemNV")]
     void BufferPageCommitmentMemNV(
         [NativeTypeName("GLenum")] uint target,
-        [NativeTypeName("GLintptr")] long offset,
-        [NativeTypeName("GLsizeiptr")] long size,
+        [NativeTypeName("GLintptr")] nint offset,
+        [NativeTypeName("GLsizeiptr")] nint size,
         [NativeTypeName("GLuint")] uint memory,
         [NativeTypeName("GLuint64")] ulong memOffset,
         [NativeTypeName("GLboolean")] byte commit
@@ -29886,7 +29891,7 @@ public unsafe partial interface IGL
     [NativeFunction("opengl", EntryPoint = "glBufferStorage")]
     void BufferStorage(
         [NativeTypeName("GLenum")] uint target,
-        [NativeTypeName("GLsizeiptr")] long size,
+        [NativeTypeName("GLsizeiptr")] nint size,
         [NativeTypeName("const void *")] Ref data,
         [NativeTypeName("GLbitfield")] uint flags
     );
@@ -29895,7 +29900,7 @@ public unsafe partial interface IGL
     [NativeFunction("opengl", EntryPoint = "glBufferStorageEXT")]
     void BufferStorageExt(
         [NativeTypeName("GLenum")] uint target,
-        [NativeTypeName("GLsizeiptr")] long size,
+        [NativeTypeName("GLsizeiptr")] nint size,
         [NativeTypeName("const void *")] Ref data,
         [NativeTypeName("GLbitfield")] uint flags
     );
@@ -29905,8 +29910,8 @@ public unsafe partial interface IGL
     [NativeFunction("opengl", EntryPoint = "glBufferStorageExternalEXT")]
     void BufferStorageExternalExt(
         [NativeTypeName("GLenum")] uint target,
-        [NativeTypeName("GLintptr")] long offset,
-        [NativeTypeName("GLsizeiptr")] long size,
+        [NativeTypeName("GLintptr")] nint offset,
+        [NativeTypeName("GLsizeiptr")] nint size,
         [NativeTypeName("GLeglClientBufferEXT")] Ref clientBuffer,
         [NativeTypeName("GLbitfield")] uint flags
     );
@@ -29916,7 +29921,7 @@ public unsafe partial interface IGL
     [NativeFunction("opengl", EntryPoint = "glBufferStorageMemEXT")]
     void BufferStorageMemExt(
         [NativeTypeName("GLenum")] uint target,
-        [NativeTypeName("GLsizeiptr")] long size,
+        [NativeTypeName("GLsizeiptr")] nint size,
         [NativeTypeName("GLuint")] uint memory,
         [NativeTypeName("GLuint64")] ulong offset
     );
@@ -29928,8 +29933,8 @@ public unsafe partial interface IGL
     [NativeFunction("opengl", EntryPoint = "glBufferSubData")]
     void BufferSubData(
         [NativeTypeName("GLenum")] uint target,
-        [NativeTypeName("GLintptr")] long offset,
-        [NativeTypeName("GLsizeiptr")] long size,
+        [NativeTypeName("GLintptr")] nint offset,
+        [NativeTypeName("GLsizeiptr")] nint size,
         [NativeTypeName("const void *")] Ref data
     );
 
@@ -29937,8 +29942,8 @@ public unsafe partial interface IGL
     [NativeFunction("opengl", EntryPoint = "glBufferSubDataARB")]
     void BufferSubDataArb(
         [NativeTypeName("GLenum")] uint target,
-        [NativeTypeName("GLintptrARB")] long offset,
-        [NativeTypeName("GLsizeiptrARB")] long size,
+        [NativeTypeName("GLintptrARB")] nint offset,
+        [NativeTypeName("GLsizeiptrARB")] nint size,
         [NativeTypeName("const void *")] Ref data
     );
 
@@ -30076,8 +30081,8 @@ public unsafe partial interface IGL
     void ClearBufferSubData(
         [NativeTypeName("GLenum")] uint target,
         [NativeTypeName("GLenum")] uint internalformat,
-        [NativeTypeName("GLintptr")] long offset,
-        [NativeTypeName("GLsizeiptr")] long size,
+        [NativeTypeName("GLintptr")] nint offset,
+        [NativeTypeName("GLsizeiptr")] nint size,
         [NativeTypeName("GLenum")] uint format,
         [NativeTypeName("GLenum")] uint type,
         [NativeTypeName("const void *")] Ref data
@@ -30204,8 +30209,8 @@ public unsafe partial interface IGL
     void ClearNamedBufferSubData(
         [NativeTypeName("GLuint")] uint buffer,
         [NativeTypeName("GLenum")] uint internalformat,
-        [NativeTypeName("GLintptr")] long offset,
-        [NativeTypeName("GLsizeiptr")] long size,
+        [NativeTypeName("GLintptr")] nint offset,
+        [NativeTypeName("GLsizeiptr")] nint size,
         [NativeTypeName("GLenum")] uint format,
         [NativeTypeName("GLenum")] uint type,
         [NativeTypeName("const void *")] Ref data
@@ -30217,8 +30222,8 @@ public unsafe partial interface IGL
     void ClearNamedBufferSubDataExt(
         [NativeTypeName("GLuint")] uint buffer,
         [NativeTypeName("GLenum")] uint internalformat,
-        [NativeTypeName("GLsizeiptr")] long offset,
-        [NativeTypeName("GLsizeiptr")] long size,
+        [NativeTypeName("GLsizeiptr")] nint offset,
+        [NativeTypeName("GLsizeiptr")] nint size,
         [NativeTypeName("GLenum")] uint format,
         [NativeTypeName("GLenum")] uint type,
         [NativeTypeName("const void *")] Ref data
@@ -31124,7 +31129,7 @@ public unsafe partial interface IGL
 
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glCompileShaderARB")]
-    void CompileShaderArb([NativeTypeName("GLhandleARB")] uint shaderObj);
+    void CompileShaderArb([NativeTypeName("GLhandleARB")] Ref shaderObj);
 
     [SupportedApiProfile("glcore", MinVersion = "3.2")]
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
@@ -31718,9 +31723,9 @@ public unsafe partial interface IGL
     void CopyBufferSubData(
         [NativeTypeName("GLenum")] uint readTarget,
         [NativeTypeName("GLenum")] uint writeTarget,
-        [NativeTypeName("GLintptr")] long readOffset,
-        [NativeTypeName("GLintptr")] long writeOffset,
-        [NativeTypeName("GLsizeiptr")] long size
+        [NativeTypeName("GLintptr")] nint readOffset,
+        [NativeTypeName("GLintptr")] nint writeOffset,
+        [NativeTypeName("GLsizeiptr")] nint size
     );
 
     [SupportedApiProfile("gles2", MinVersion = "2.0")]
@@ -31728,9 +31733,9 @@ public unsafe partial interface IGL
     void CopyBufferSubDataNV(
         [NativeTypeName("GLenum")] uint readTarget,
         [NativeTypeName("GLenum")] uint writeTarget,
-        [NativeTypeName("GLintptr")] long readOffset,
-        [NativeTypeName("GLintptr")] long writeOffset,
-        [NativeTypeName("GLsizeiptr")] long size
+        [NativeTypeName("GLintptr")] nint readOffset,
+        [NativeTypeName("GLintptr")] nint writeOffset,
+        [NativeTypeName("GLsizeiptr")] nint size
     );
 
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
@@ -31975,9 +31980,9 @@ public unsafe partial interface IGL
     void CopyNamedBufferSubData(
         [NativeTypeName("GLuint")] uint readBuffer,
         [NativeTypeName("GLuint")] uint writeBuffer,
-        [NativeTypeName("GLintptr")] long readOffset,
-        [NativeTypeName("GLintptr")] long writeOffset,
-        [NativeTypeName("GLsizeiptr")] long size
+        [NativeTypeName("GLintptr")] nint readOffset,
+        [NativeTypeName("GLintptr")] nint writeOffset,
+        [NativeTypeName("GLsizeiptr")] nint size
     );
 
     [SupportedApiProfile("glcore", MinVersion = "3.2")]
@@ -32392,7 +32397,7 @@ public unsafe partial interface IGL
     [return: NativeTypeName("GLhandleARB")]
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glCreateProgramObjectARB")]
-    uint CreateProgramObjectArb();
+    Ptr CreateProgramObjectArb();
 
     [SupportedApiProfile("glcore", MinVersion = "3.2")]
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
@@ -32450,7 +32455,7 @@ public unsafe partial interface IGL
     [return: NativeTypeName("GLhandleARB")]
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glCreateShaderObjectARB")]
-    uint CreateShaderObjectArb([NativeTypeName("GLenum")] uint shaderType);
+    Ptr CreateShaderObjectArb([NativeTypeName("GLenum")] uint shaderType);
 
     [return: NativeTypeName("GLuint")]
     [SupportedApiProfile("glcore", MinVersion = "3.2")]
@@ -32823,7 +32828,7 @@ public unsafe partial interface IGL
 
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glDeleteObjectARB")]
-    void DeleteObjectArb([NativeTypeName("GLhandleARB")] uint obj);
+    void DeleteObjectArb([NativeTypeName("GLhandleARB")] Ref obj);
 
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glDeleteOcclusionQueriesNV")]
@@ -33174,8 +33179,8 @@ public unsafe partial interface IGL
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glDetachObjectARB")]
     void DetachObjectArb(
-        [NativeTypeName("GLhandleARB")] uint containerObj,
-        [NativeTypeName("GLhandleARB")] uint attachedObj
+        [NativeTypeName("GLhandleARB")] Ref containerObj,
+        [NativeTypeName("GLhandleARB")] Ref attachedObj
     );
 
     [SupportedApiProfile("glcore", MinVersion = "3.2")]
@@ -33331,7 +33336,7 @@ public unsafe partial interface IGL
     [SupportedApiProfile("glcore", MinVersion = "3.2")]
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glDispatchComputeIndirect")]
-    void DispatchComputeIndirect([NativeTypeName("GLintptr")] long indirect);
+    void DispatchComputeIndirect([NativeTypeName("GLintptr")] nint indirect);
 
     [SupportedApiProfile("glcore", MinVersion = "3.2")]
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
@@ -33495,7 +33500,7 @@ public unsafe partial interface IGL
     void DrawCommandsNV(
         [NativeTypeName("GLenum")] uint primitiveMode,
         [NativeTypeName("GLuint")] uint buffer,
-        [NativeTypeName("const GLintptr *")] Ref<long> indirects,
+        [NativeTypeName("const GLintptr *")] Ref<nint> indirects,
         [NativeTypeName("const GLsizei *")] Ref<int> sizes,
         [NativeTypeName("GLuint")] uint count
     );
@@ -33516,7 +33521,7 @@ public unsafe partial interface IGL
     [NativeFunction("opengl", EntryPoint = "glDrawCommandsStatesNV")]
     void DrawCommandsStatesNV(
         [NativeTypeName("GLuint")] uint buffer,
-        [NativeTypeName("const GLintptr *")] Ref<long> indirects,
+        [NativeTypeName("const GLintptr *")] Ref<nint> indirects,
         [NativeTypeName("const GLsizei *")] Ref<int> sizes,
         [NativeTypeName("const GLuint *")] Ref<uint> states,
         [NativeTypeName("const GLuint *")] Ref<uint> fbos,
@@ -33739,7 +33744,7 @@ public unsafe partial interface IGL
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [SupportedApiProfile("gles2", MinVersion = "2.0")]
     [NativeFunction("opengl", EntryPoint = "glDrawMeshTasksIndirectNV")]
-    void DrawMeshTasksIndirectNV([NativeTypeName("GLintptr")] long indirect);
+    void DrawMeshTasksIndirectNV([NativeTypeName("GLintptr")] nint indirect);
 
     [SupportedApiProfile("glcore", MinVersion = "3.2")]
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
@@ -34574,16 +34579,16 @@ public unsafe partial interface IGL
     [NativeFunction("opengl", EntryPoint = "glFlushMappedBufferRange")]
     void FlushMappedBufferRange(
         [NativeTypeName("GLenum")] uint target,
-        [NativeTypeName("GLintptr")] long offset,
-        [NativeTypeName("GLsizeiptr")] long length
+        [NativeTypeName("GLintptr")] nint offset,
+        [NativeTypeName("GLsizeiptr")] nint length
     );
 
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glFlushMappedBufferRangeAPPLE")]
     void FlushMappedBufferRangeApple(
         [NativeTypeName("GLenum")] uint target,
-        [NativeTypeName("GLintptr")] long offset,
-        [NativeTypeName("GLsizeiptr")] long size
+        [NativeTypeName("GLintptr")] nint offset,
+        [NativeTypeName("GLsizeiptr")] nint size
     );
 
     [SupportedApiProfile("gles1", MaxVersion = "2.0")]
@@ -34591,8 +34596,8 @@ public unsafe partial interface IGL
     [NativeFunction("opengl", EntryPoint = "glFlushMappedBufferRangeEXT")]
     void FlushMappedBufferRangeExt(
         [NativeTypeName("GLenum")] uint target,
-        [NativeTypeName("GLintptr")] long offset,
-        [NativeTypeName("GLsizeiptr")] long length
+        [NativeTypeName("GLintptr")] nint offset,
+        [NativeTypeName("GLsizeiptr")] nint length
     );
 
     [SupportedApiProfile("glcore", MinVersion = "3.2")]
@@ -34600,8 +34605,8 @@ public unsafe partial interface IGL
     [NativeFunction("opengl", EntryPoint = "glFlushMappedNamedBufferRange")]
     void FlushMappedNamedBufferRange(
         [NativeTypeName("GLuint")] uint buffer,
-        [NativeTypeName("GLintptr")] long offset,
-        [NativeTypeName("GLsizeiptr")] long length
+        [NativeTypeName("GLintptr")] nint offset,
+        [NativeTypeName("GLsizeiptr")] nint length
     );
 
     [SupportedApiProfile("glcore", MinVersion = "3.2")]
@@ -34609,8 +34614,8 @@ public unsafe partial interface IGL
     [NativeFunction("opengl", EntryPoint = "glFlushMappedNamedBufferRangeEXT")]
     void FlushMappedNamedBufferRangeExt(
         [NativeTypeName("GLuint")] uint buffer,
-        [NativeTypeName("GLintptr")] long offset,
-        [NativeTypeName("GLsizeiptr")] long length
+        [NativeTypeName("GLintptr")] nint offset,
+        [NativeTypeName("GLsizeiptr")] nint length
     );
 
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
@@ -35678,7 +35683,7 @@ public unsafe partial interface IGL
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glGetActiveAttribARB")]
     void GetActiveAttribArb(
-        [NativeTypeName("GLhandleARB")] uint programObj,
+        [NativeTypeName("GLhandleARB")] Ref programObj,
         [NativeTypeName("GLuint")] uint index,
         [NativeTypeName("GLsizei")] int maxLength,
         [NativeTypeName("GLsizei *")] Ref<int> length,
@@ -35739,7 +35744,7 @@ public unsafe partial interface IGL
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glGetActiveUniformARB")]
     void GetActiveUniformArb(
-        [NativeTypeName("GLhandleARB")] uint programObj,
+        [NativeTypeName("GLhandleARB")] Ref programObj,
         [NativeTypeName("GLuint")] uint index,
         [NativeTypeName("GLsizei")] int maxLength,
         [NativeTypeName("GLsizei *")] Ref<int> length,
@@ -35822,10 +35827,10 @@ public unsafe partial interface IGL
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glGetAttachedObjectsARB")]
     void GetAttachedObjectsArb(
-        [NativeTypeName("GLhandleARB")] uint containerObj,
+        [NativeTypeName("GLhandleARB")] Ref containerObj,
         [NativeTypeName("GLsizei")] int maxCount,
         [NativeTypeName("GLsizei *")] Ref<int> count,
-        [NativeTypeName("GLhandleARB *")] Ref<uint> obj
+        [NativeTypeName("GLhandleARB *")] Ref2D obj
     );
 
     [SupportedApiProfile("glcore", MinVersion = "3.2")]
@@ -35853,7 +35858,7 @@ public unsafe partial interface IGL
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glGetAttribLocationARB")]
     int GetAttribLocationArb(
-        [NativeTypeName("GLhandleARB")] uint programObj,
+        [NativeTypeName("GLhandleARB")] Ref programObj,
         [NativeTypeName("const GLcharARB *")] Ref<sbyte> name
     );
 
@@ -35953,8 +35958,8 @@ public unsafe partial interface IGL
     [NativeFunction("opengl", EntryPoint = "glGetBufferSubData")]
     void GetBufferSubData(
         [NativeTypeName("GLenum")] uint target,
-        [NativeTypeName("GLintptr")] long offset,
-        [NativeTypeName("GLsizeiptr")] long size,
+        [NativeTypeName("GLintptr")] nint offset,
+        [NativeTypeName("GLsizeiptr")] nint size,
         Ref data
     );
 
@@ -35962,8 +35967,8 @@ public unsafe partial interface IGL
     [NativeFunction("opengl", EntryPoint = "glGetBufferSubDataARB")]
     void GetBufferSubDataArb(
         [NativeTypeName("GLenum")] uint target,
-        [NativeTypeName("GLintptrARB")] long offset,
-        [NativeTypeName("GLsizeiptrARB")] long size,
+        [NativeTypeName("GLintptrARB")] nint offset,
+        [NativeTypeName("GLsizeiptrARB")] nint size,
         Ref data
     );
 
@@ -36668,7 +36673,7 @@ public unsafe partial interface IGL
     [return: NativeTypeName("GLhandleARB")]
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glGetHandleARB")]
-    uint GetHandleArb([NativeTypeName("GLenum")] uint pname);
+    Ptr GetHandleArb([NativeTypeName("GLenum")] uint pname);
 
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glGetHistogram")]
@@ -36774,7 +36779,7 @@ public unsafe partial interface IGL
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glGetInfoLogARB")]
     void GetInfoLogArb(
-        [NativeTypeName("GLhandleARB")] uint obj,
+        [NativeTypeName("GLhandleARB")] Ref obj,
         [NativeTypeName("GLsizei")] int maxLength,
         [NativeTypeName("GLsizei *")] Ref<int> length,
         [NativeTypeName("GLcharARB *")] Ref<sbyte> infoLog
@@ -37402,8 +37407,8 @@ public unsafe partial interface IGL
     [NativeFunction("opengl", EntryPoint = "glGetNamedBufferSubData")]
     void GetNamedBufferSubData(
         [NativeTypeName("GLuint")] uint buffer,
-        [NativeTypeName("GLintptr")] long offset,
-        [NativeTypeName("GLsizeiptr")] long size,
+        [NativeTypeName("GLintptr")] nint offset,
+        [NativeTypeName("GLsizeiptr")] nint size,
         Ref data
     );
 
@@ -37412,8 +37417,8 @@ public unsafe partial interface IGL
     [NativeFunction("opengl", EntryPoint = "glGetNamedBufferSubDataEXT")]
     void GetNamedBufferSubDataExt(
         [NativeTypeName("GLuint")] uint buffer,
-        [NativeTypeName("GLintptr")] long offset,
-        [NativeTypeName("GLsizeiptr")] long size,
+        [NativeTypeName("GLintptr")] nint offset,
+        [NativeTypeName("GLsizeiptr")] nint size,
         Ref data
     );
 
@@ -38043,7 +38048,7 @@ public unsafe partial interface IGL
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glGetObjectParameterfvARB")]
     void GetObjectParameterfvArb(
-        [NativeTypeName("GLhandleARB")] uint obj,
+        [NativeTypeName("GLhandleARB")] Ref obj,
         [NativeTypeName("GLenum")] uint pname,
         [NativeTypeName("GLfloat *")] Ref<float> @params
     );
@@ -38060,7 +38065,7 @@ public unsafe partial interface IGL
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glGetObjectParameterivARB")]
     void GetObjectParameterivArb(
-        [NativeTypeName("GLhandleARB")] uint obj,
+        [NativeTypeName("GLhandleARB")] Ref obj,
         [NativeTypeName("GLenum")] uint pname,
         [NativeTypeName("GLint *")] Ref<int> @params
     );
@@ -38773,7 +38778,7 @@ public unsafe partial interface IGL
         [NativeTypeName("GLuint")] uint id,
         [NativeTypeName("GLuint")] uint buffer,
         [NativeTypeName("GLenum")] uint pname,
-        [NativeTypeName("GLintptr")] long offset
+        [NativeTypeName("GLintptr")] nint offset
     );
 
     [SupportedApiProfile("glcore", MinVersion = "3.2")]
@@ -38783,7 +38788,7 @@ public unsafe partial interface IGL
         [NativeTypeName("GLuint")] uint id,
         [NativeTypeName("GLuint")] uint buffer,
         [NativeTypeName("GLenum")] uint pname,
-        [NativeTypeName("GLintptr")] long offset
+        [NativeTypeName("GLintptr")] nint offset
     );
 
     [SupportedApiProfile("glcore", MinVersion = "3.2")]
@@ -38793,7 +38798,7 @@ public unsafe partial interface IGL
         [NativeTypeName("GLuint")] uint id,
         [NativeTypeName("GLuint")] uint buffer,
         [NativeTypeName("GLenum")] uint pname,
-        [NativeTypeName("GLintptr")] long offset
+        [NativeTypeName("GLintptr")] nint offset
     );
 
     [SupportedApiProfile("glcore", MinVersion = "3.2")]
@@ -38803,7 +38808,7 @@ public unsafe partial interface IGL
         [NativeTypeName("GLuint")] uint id,
         [NativeTypeName("GLuint")] uint buffer,
         [NativeTypeName("GLenum")] uint pname,
-        [NativeTypeName("GLintptr")] long offset
+        [NativeTypeName("GLintptr")] nint offset
     );
 
     [SupportedApiProfile("glcore", MinVersion = "3.2")]
@@ -39109,7 +39114,7 @@ public unsafe partial interface IGL
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glGetShaderSourceARB")]
     void GetShaderSourceArb(
-        [NativeTypeName("GLhandleARB")] uint obj,
+        [NativeTypeName("GLhandleARB")] Ref obj,
         [NativeTypeName("GLsizei")] int maxLength,
         [NativeTypeName("GLsizei *")] Ref<int> length,
         [NativeTypeName("GLcharARB *")] Ref<sbyte> source
@@ -39777,7 +39782,7 @@ public unsafe partial interface IGL
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glGetUniformfvARB")]
     void GetUniformfvArb(
-        [NativeTypeName("GLhandleARB")] uint programObj,
+        [NativeTypeName("GLhandleARB")] Ref programObj,
         [NativeTypeName("GLint")] int location,
         [NativeTypeName("GLfloat *")] Ref<float> @params
     );
@@ -39824,7 +39829,7 @@ public unsafe partial interface IGL
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glGetUniformivARB")]
     void GetUniformivArb(
-        [NativeTypeName("GLhandleARB")] uint programObj,
+        [NativeTypeName("GLhandleARB")] Ref programObj,
         [NativeTypeName("GLint")] int location,
         [NativeTypeName("GLint *")] Ref<int> @params
     );
@@ -39843,14 +39848,14 @@ public unsafe partial interface IGL
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glGetUniformLocationARB")]
     int GetUniformLocationArb(
-        [NativeTypeName("GLhandleARB")] uint programObj,
+        [NativeTypeName("GLhandleARB")] Ref programObj,
         [NativeTypeName("const GLcharARB *")] Ref<sbyte> name
     );
 
     [return: NativeTypeName("GLintptr")]
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glGetUniformOffsetEXT")]
-    long GetUniformOffsetExt(
+    nint GetUniformOffsetExt(
         [NativeTypeName("GLuint")] uint program,
         [NativeTypeName("GLint")] int location
     );
@@ -40472,7 +40477,7 @@ public unsafe partial interface IGL
     [NativeFunction("opengl", EntryPoint = "glImportSyncEXT")]
     Ptr<Sync> ImportSyncExt(
         [NativeTypeName("GLenum")] uint external_sync_type,
-        [NativeTypeName("GLintptr")] long external_sync,
+        [NativeTypeName("GLintptr")] nint external_sync,
         [NativeTypeName("GLbitfield")] uint flags
     );
 
@@ -40634,8 +40639,8 @@ public unsafe partial interface IGL
     [NativeFunction("opengl", EntryPoint = "glInvalidateBufferSubData")]
     void InvalidateBufferSubData(
         [NativeTypeName("GLuint")] uint buffer,
-        [NativeTypeName("GLintptr")] long offset,
-        [NativeTypeName("GLsizeiptr")] long length
+        [NativeTypeName("GLintptr")] nint offset,
+        [NativeTypeName("GLsizeiptr")] nint length
     );
 
     [SupportedApiProfile("glcore", MinVersion = "3.2")]
@@ -41108,8 +41113,8 @@ public unsafe partial interface IGL
     void LgpuNamedBufferSubDataNvx(
         [NativeTypeName("GLbitfield")] uint gpuMask,
         [NativeTypeName("GLuint")] uint buffer,
-        [NativeTypeName("GLintptr")] long offset,
-        [NativeTypeName("GLsizeiptr")] long size,
+        [NativeTypeName("GLintptr")] nint offset,
+        [NativeTypeName("GLsizeiptr")] nint size,
         [NativeTypeName("const void *")] Ref data
     );
 
@@ -41270,7 +41275,7 @@ public unsafe partial interface IGL
 
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glLinkProgramARB")]
-    void LinkProgramArb([NativeTypeName("GLhandleARB")] uint programObj);
+    void LinkProgramArb([NativeTypeName("GLhandleARB")] Ref programObj);
 
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glListBase")]
@@ -41574,8 +41579,8 @@ public unsafe partial interface IGL
     [NativeFunction("opengl", EntryPoint = "glMapBufferRange")]
     Ptr MapBufferRange(
         [NativeTypeName("GLenum")] uint target,
-        [NativeTypeName("GLintptr")] long offset,
-        [NativeTypeName("GLsizeiptr")] long length,
+        [NativeTypeName("GLintptr")] nint offset,
+        [NativeTypeName("GLsizeiptr")] nint length,
         [NativeTypeName("GLbitfield")] uint access
     );
 
@@ -41584,8 +41589,8 @@ public unsafe partial interface IGL
     [NativeFunction("opengl", EntryPoint = "glMapBufferRangeEXT")]
     Ptr MapBufferRangeExt(
         [NativeTypeName("GLenum")] uint target,
-        [NativeTypeName("GLintptr")] long offset,
-        [NativeTypeName("GLsizeiptr")] long length,
+        [NativeTypeName("GLintptr")] nint offset,
+        [NativeTypeName("GLsizeiptr")] nint length,
         [NativeTypeName("GLbitfield")] uint access
     );
 
@@ -41680,8 +41685,8 @@ public unsafe partial interface IGL
     [NativeFunction("opengl", EntryPoint = "glMapNamedBufferRange")]
     Ptr MapNamedBufferRange(
         [NativeTypeName("GLuint")] uint buffer,
-        [NativeTypeName("GLintptr")] long offset,
-        [NativeTypeName("GLsizeiptr")] long length,
+        [NativeTypeName("GLintptr")] nint offset,
+        [NativeTypeName("GLsizeiptr")] nint length,
         [NativeTypeName("GLbitfield")] uint access
     );
 
@@ -41690,8 +41695,8 @@ public unsafe partial interface IGL
     [NativeFunction("opengl", EntryPoint = "glMapNamedBufferRangeEXT")]
     Ptr MapNamedBufferRangeExt(
         [NativeTypeName("GLuint")] uint buffer,
-        [NativeTypeName("GLintptr")] long offset,
-        [NativeTypeName("GLsizeiptr")] long length,
+        [NativeTypeName("GLintptr")] nint offset,
+        [NativeTypeName("GLsizeiptr")] nint length,
         [NativeTypeName("GLbitfield")] uint access
     );
 
@@ -42223,8 +42228,8 @@ public unsafe partial interface IGL
     void MulticastBufferSubDataNV(
         [NativeTypeName("GLbitfield")] uint gpuMask,
         [NativeTypeName("GLuint")] uint buffer,
-        [NativeTypeName("GLintptr")] long offset,
-        [NativeTypeName("GLsizeiptr")] long size,
+        [NativeTypeName("GLintptr")] nint offset,
+        [NativeTypeName("GLsizeiptr")] nint size,
         [NativeTypeName("const void *")] Ref data
     );
 
@@ -42235,9 +42240,9 @@ public unsafe partial interface IGL
         [NativeTypeName("GLbitfield")] uint writeGpuMask,
         [NativeTypeName("GLuint")] uint readBuffer,
         [NativeTypeName("GLuint")] uint writeBuffer,
-        [NativeTypeName("GLintptr")] long readOffset,
-        [NativeTypeName("GLintptr")] long writeOffset,
-        [NativeTypeName("GLsizeiptr")] long size
+        [NativeTypeName("GLintptr")] nint readOffset,
+        [NativeTypeName("GLintptr")] nint writeOffset,
+        [NativeTypeName("GLsizeiptr")] nint size
     );
 
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
@@ -42411,7 +42416,7 @@ public unsafe partial interface IGL
     void MultiDrawArraysIndirectCount(
         [NativeTypeName("GLenum")] uint mode,
         [NativeTypeName("const void *")] Ref indirect,
-        [NativeTypeName("GLintptr")] long drawcount,
+        [NativeTypeName("GLintptr")] nint drawcount,
         [NativeTypeName("GLsizei")] int maxdrawcount,
         [NativeTypeName("GLsizei")] int stride
     );
@@ -42422,7 +42427,7 @@ public unsafe partial interface IGL
     void MultiDrawArraysIndirectCountArb(
         [NativeTypeName("GLenum")] uint mode,
         [NativeTypeName("const void *")] Ref indirect,
-        [NativeTypeName("GLintptr")] long drawcount,
+        [NativeTypeName("GLintptr")] nint drawcount,
         [NativeTypeName("GLsizei")] int maxdrawcount,
         [NativeTypeName("GLsizei")] int stride
     );
@@ -42544,7 +42549,7 @@ public unsafe partial interface IGL
         [NativeTypeName("GLenum")] uint mode,
         [NativeTypeName("GLenum")] uint type,
         [NativeTypeName("const void *")] Ref indirect,
-        [NativeTypeName("GLintptr")] long drawcount,
+        [NativeTypeName("GLintptr")] nint drawcount,
         [NativeTypeName("GLsizei")] int maxdrawcount,
         [NativeTypeName("GLsizei")] int stride
     );
@@ -42556,7 +42561,7 @@ public unsafe partial interface IGL
         [NativeTypeName("GLenum")] uint mode,
         [NativeTypeName("GLenum")] uint type,
         [NativeTypeName("const void *")] Ref indirect,
-        [NativeTypeName("GLintptr")] long drawcount,
+        [NativeTypeName("GLintptr")] nint drawcount,
         [NativeTypeName("GLsizei")] int maxdrawcount,
         [NativeTypeName("GLsizei")] int stride
     );
@@ -42576,8 +42581,8 @@ public unsafe partial interface IGL
     [SupportedApiProfile("gles2", MinVersion = "2.0")]
     [NativeFunction("opengl", EntryPoint = "glMultiDrawMeshTasksIndirectCountNV")]
     void MultiDrawMeshTasksIndirectCountNV(
-        [NativeTypeName("GLintptr")] long indirect,
-        [NativeTypeName("GLintptr")] long drawcount,
+        [NativeTypeName("GLintptr")] nint indirect,
+        [NativeTypeName("GLintptr")] nint drawcount,
         [NativeTypeName("GLsizei")] int maxdrawcount,
         [NativeTypeName("GLsizei")] int stride
     );
@@ -42587,7 +42592,7 @@ public unsafe partial interface IGL
     [SupportedApiProfile("gles2", MinVersion = "2.0")]
     [NativeFunction("opengl", EntryPoint = "glMultiDrawMeshTasksIndirectNV")]
     void MultiDrawMeshTasksIndirectNV(
-        [NativeTypeName("GLintptr")] long indirect,
+        [NativeTypeName("GLintptr")] nint indirect,
         [NativeTypeName("GLsizei")] int drawcount,
         [NativeTypeName("GLsizei")] int stride
     );
@@ -43718,7 +43723,7 @@ public unsafe partial interface IGL
     [NativeFunction("opengl", EntryPoint = "glNamedBufferData")]
     void NamedBufferData(
         [NativeTypeName("GLuint")] uint buffer,
-        [NativeTypeName("GLsizeiptr")] long size,
+        [NativeTypeName("GLsizeiptr")] nint size,
         [NativeTypeName("const void *")] Ref data,
         [NativeTypeName("GLenum")] uint usage
     );
@@ -43728,7 +43733,7 @@ public unsafe partial interface IGL
     [NativeFunction("opengl", EntryPoint = "glNamedBufferDataEXT")]
     void NamedBufferDataExt(
         [NativeTypeName("GLuint")] uint buffer,
-        [NativeTypeName("GLsizeiptr")] long size,
+        [NativeTypeName("GLsizeiptr")] nint size,
         [NativeTypeName("const void *")] Ref data,
         [NativeTypeName("GLenum")] uint usage
     );
@@ -43738,8 +43743,8 @@ public unsafe partial interface IGL
     [NativeFunction("opengl", EntryPoint = "glNamedBufferPageCommitmentARB")]
     void NamedBufferPageCommitmentArb(
         [NativeTypeName("GLuint")] uint buffer,
-        [NativeTypeName("GLintptr")] long offset,
-        [NativeTypeName("GLsizeiptr")] long size,
+        [NativeTypeName("GLintptr")] nint offset,
+        [NativeTypeName("GLsizeiptr")] nint size,
         [NativeTypeName("GLboolean")] byte commit
     );
 
@@ -43748,8 +43753,8 @@ public unsafe partial interface IGL
     [NativeFunction("opengl", EntryPoint = "glNamedBufferPageCommitmentEXT")]
     void NamedBufferPageCommitmentExt(
         [NativeTypeName("GLuint")] uint buffer,
-        [NativeTypeName("GLintptr")] long offset,
-        [NativeTypeName("GLsizeiptr")] long size,
+        [NativeTypeName("GLintptr")] nint offset,
+        [NativeTypeName("GLsizeiptr")] nint size,
         [NativeTypeName("GLboolean")] byte commit
     );
 
@@ -43759,8 +43764,8 @@ public unsafe partial interface IGL
     [NativeFunction("opengl", EntryPoint = "glNamedBufferPageCommitmentMemNV")]
     void NamedBufferPageCommitmentMemNV(
         [NativeTypeName("GLuint")] uint buffer,
-        [NativeTypeName("GLintptr")] long offset,
-        [NativeTypeName("GLsizeiptr")] long size,
+        [NativeTypeName("GLintptr")] nint offset,
+        [NativeTypeName("GLsizeiptr")] nint size,
         [NativeTypeName("GLuint")] uint memory,
         [NativeTypeName("GLuint64")] ulong memOffset,
         [NativeTypeName("GLboolean")] byte commit
@@ -43771,7 +43776,7 @@ public unsafe partial interface IGL
     [NativeFunction("opengl", EntryPoint = "glNamedBufferStorage")]
     void NamedBufferStorage(
         [NativeTypeName("GLuint")] uint buffer,
-        [NativeTypeName("GLsizeiptr")] long size,
+        [NativeTypeName("GLsizeiptr")] nint size,
         [NativeTypeName("const void *")] Ref data,
         [NativeTypeName("GLbitfield")] uint flags
     );
@@ -43781,7 +43786,7 @@ public unsafe partial interface IGL
     [NativeFunction("opengl", EntryPoint = "glNamedBufferStorageEXT")]
     void NamedBufferStorageExt(
         [NativeTypeName("GLuint")] uint buffer,
-        [NativeTypeName("GLsizeiptr")] long size,
+        [NativeTypeName("GLsizeiptr")] nint size,
         [NativeTypeName("const void *")] Ref data,
         [NativeTypeName("GLbitfield")] uint flags
     );
@@ -43791,8 +43796,8 @@ public unsafe partial interface IGL
     [NativeFunction("opengl", EntryPoint = "glNamedBufferStorageExternalEXT")]
     void NamedBufferStorageExternalExt(
         [NativeTypeName("GLuint")] uint buffer,
-        [NativeTypeName("GLintptr")] long offset,
-        [NativeTypeName("GLsizeiptr")] long size,
+        [NativeTypeName("GLintptr")] nint offset,
+        [NativeTypeName("GLsizeiptr")] nint size,
         [NativeTypeName("GLeglClientBufferEXT")] Ref clientBuffer,
         [NativeTypeName("GLbitfield")] uint flags
     );
@@ -43802,7 +43807,7 @@ public unsafe partial interface IGL
     [NativeFunction("opengl", EntryPoint = "glNamedBufferStorageMemEXT")]
     void NamedBufferStorageMemExt(
         [NativeTypeName("GLuint")] uint buffer,
-        [NativeTypeName("GLsizeiptr")] long size,
+        [NativeTypeName("GLsizeiptr")] nint size,
         [NativeTypeName("GLuint")] uint memory,
         [NativeTypeName("GLuint64")] ulong offset
     );
@@ -43812,8 +43817,8 @@ public unsafe partial interface IGL
     [NativeFunction("opengl", EntryPoint = "glNamedBufferSubData")]
     void NamedBufferSubData(
         [NativeTypeName("GLuint")] uint buffer,
-        [NativeTypeName("GLintptr")] long offset,
-        [NativeTypeName("GLsizeiptr")] long size,
+        [NativeTypeName("GLintptr")] nint offset,
+        [NativeTypeName("GLsizeiptr")] nint size,
         [NativeTypeName("const void *")] Ref data
     );
 
@@ -43822,8 +43827,8 @@ public unsafe partial interface IGL
     [NativeFunction("opengl", EntryPoint = "glNamedBufferSubDataEXT")]
     void NamedBufferSubDataExt(
         [NativeTypeName("GLuint")] uint buffer,
-        [NativeTypeName("GLintptr")] long offset,
-        [NativeTypeName("GLsizeiptr")] long size,
+        [NativeTypeName("GLintptr")] nint offset,
+        [NativeTypeName("GLsizeiptr")] nint size,
         [NativeTypeName("const void *")] Ref data
     );
 
@@ -43833,9 +43838,9 @@ public unsafe partial interface IGL
     void NamedCopyBufferSubDataExt(
         [NativeTypeName("GLuint")] uint readBuffer,
         [NativeTypeName("GLuint")] uint writeBuffer,
-        [NativeTypeName("GLintptr")] long readOffset,
-        [NativeTypeName("GLintptr")] long writeOffset,
-        [NativeTypeName("GLsizeiptr")] long size
+        [NativeTypeName("GLintptr")] nint readOffset,
+        [NativeTypeName("GLintptr")] nint writeOffset,
+        [NativeTypeName("GLsizeiptr")] nint size
     );
 
     [SupportedApiProfile("glcore", MinVersion = "3.2")]
@@ -44768,7 +44773,7 @@ public unsafe partial interface IGL
     uint PathMemoryGlyphIndexArrayNV(
         [NativeTypeName("GLuint")] uint firstPathName,
         [NativeTypeName("GLenum")] uint fontTarget,
-        [NativeTypeName("GLsizeiptr")] long fontSize,
+        [NativeTypeName("GLsizeiptr")] nint fontSize,
         [NativeTypeName("const void *")] Ref fontData,
         [NativeTypeName("GLsizei")] int faceIndex,
         [NativeTypeName("GLuint")] uint firstGlyphIndex,
@@ -48991,7 +48996,7 @@ public unsafe partial interface IGL
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glShaderSourceARB")]
     void ShaderSourceArb(
-        [NativeTypeName("GLhandleARB")] uint shaderObj,
+        [NativeTypeName("GLhandleARB")] Ref shaderObj,
         [NativeTypeName("GLsizei")] int count,
         [NativeTypeName("const GLcharARB **")] Ref2D<sbyte> @string,
         [NativeTypeName("const GLint *")] Ref<int> length
@@ -49555,8 +49560,8 @@ public unsafe partial interface IGL
         [NativeTypeName("GLenum")] uint target,
         [NativeTypeName("GLenum")] uint internalformat,
         [NativeTypeName("GLuint")] uint buffer,
-        [NativeTypeName("GLintptr")] long offset,
-        [NativeTypeName("GLsizeiptr")] long size
+        [NativeTypeName("GLintptr")] nint offset,
+        [NativeTypeName("GLsizeiptr")] nint size
     );
 
     [SupportedApiProfile("gles2", MinVersion = "2.0")]
@@ -49565,8 +49570,8 @@ public unsafe partial interface IGL
         [NativeTypeName("GLenum")] uint target,
         [NativeTypeName("GLenum")] uint internalformat,
         [NativeTypeName("GLuint")] uint buffer,
-        [NativeTypeName("GLintptr")] long offset,
-        [NativeTypeName("GLsizeiptr")] long size
+        [NativeTypeName("GLintptr")] nint offset,
+        [NativeTypeName("GLsizeiptr")] nint size
     );
 
     [SupportedApiProfile("gles2", MinVersion = "2.0")]
@@ -49575,8 +49580,8 @@ public unsafe partial interface IGL
         [NativeTypeName("GLenum")] uint target,
         [NativeTypeName("GLenum")] uint internalformat,
         [NativeTypeName("GLuint")] uint buffer,
-        [NativeTypeName("GLintptr")] long offset,
-        [NativeTypeName("GLsizeiptr")] long size
+        [NativeTypeName("GLintptr")] nint offset,
+        [NativeTypeName("GLsizeiptr")] nint size
     );
 
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
@@ -51029,8 +51034,8 @@ public unsafe partial interface IGL
         [NativeTypeName("GLuint")] uint texture,
         [NativeTypeName("GLenum")] uint internalformat,
         [NativeTypeName("GLuint")] uint buffer,
-        [NativeTypeName("GLintptr")] long offset,
-        [NativeTypeName("GLsizeiptr")] long size
+        [NativeTypeName("GLintptr")] nint offset,
+        [NativeTypeName("GLsizeiptr")] nint size
     );
 
     [SupportedApiProfile("glcore", MinVersion = "3.2")]
@@ -51041,8 +51046,8 @@ public unsafe partial interface IGL
         [NativeTypeName("GLenum")] uint target,
         [NativeTypeName("GLenum")] uint internalformat,
         [NativeTypeName("GLuint")] uint buffer,
-        [NativeTypeName("GLintptr")] long offset,
-        [NativeTypeName("GLsizeiptr")] long size
+        [NativeTypeName("GLintptr")] nint offset,
+        [NativeTypeName("GLsizeiptr")] nint size
     );
 
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
@@ -51720,8 +51725,8 @@ public unsafe partial interface IGL
         [NativeTypeName("GLuint")] uint xfb,
         [NativeTypeName("GLuint")] uint index,
         [NativeTypeName("GLuint")] uint buffer,
-        [NativeTypeName("GLintptr")] long offset,
-        [NativeTypeName("GLsizeiptr")] long size
+        [NativeTypeName("GLintptr")] nint offset,
+        [NativeTypeName("GLsizeiptr")] nint size
     );
 
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
@@ -53029,7 +53034,7 @@ public unsafe partial interface IGL
 
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glUseProgramObjectARB")]
-    void UseProgramObjectArb([NativeTypeName("GLhandleARB")] uint programObj);
+    void UseProgramObjectArb([NativeTypeName("GLhandleARB")] Ref programObj);
 
     [SupportedApiProfile("glcore", MinVersion = "3.2")]
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
@@ -53064,7 +53069,7 @@ public unsafe partial interface IGL
 
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glValidateProgramARB")]
-    void ValidateProgramArb([NativeTypeName("GLhandleARB")] uint programObj);
+    void ValidateProgramArb([NativeTypeName("GLhandleARB")] Ref programObj);
 
     [SupportedApiProfile("glcore", MinVersion = "3.2")]
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
@@ -53157,7 +53162,7 @@ public unsafe partial interface IGL
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glVDPAUGetSurfaceivNV")]
     void VdpauGetSurfaceivNV(
-        [NativeTypeName("GLvdpauSurfaceNV")] long surface,
+        [NativeTypeName("GLvdpauSurfaceNV")] nint surface,
         [NativeTypeName("GLenum")] uint pname,
         [NativeTypeName("GLsizei")] int count,
         [NativeTypeName("GLsizei *")] Ref<int> length,
@@ -53174,19 +53179,19 @@ public unsafe partial interface IGL
     [return: NativeTypeName("GLboolean")]
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glVDPAUIsSurfaceNV")]
-    byte VdpauIsSurfaceNV([NativeTypeName("GLvdpauSurfaceNV")] long surface);
+    byte VdpauIsSurfaceNV([NativeTypeName("GLvdpauSurfaceNV")] nint surface);
 
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glVDPAUMapSurfacesNV")]
     void VdpauMapSurfacesNV(
         [NativeTypeName("GLsizei")] int numSurfaces,
-        [NativeTypeName("const GLvdpauSurfaceNV *")] Ref<long> surfaces
+        [NativeTypeName("const GLvdpauSurfaceNV *")] Ref<nint> surfaces
     );
 
     [return: NativeTypeName("GLvdpauSurfaceNV")]
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glVDPAURegisterOutputSurfaceNV")]
-    long VdpauRegisterOutputSurfaceNV(
+    nint VdpauRegisterOutputSurfaceNV(
         [NativeTypeName("const void *")] Ref vdpSurface,
         [NativeTypeName("GLenum")] uint target,
         [NativeTypeName("GLsizei")] int numTextureNames,
@@ -53196,7 +53201,7 @@ public unsafe partial interface IGL
     [return: NativeTypeName("GLvdpauSurfaceNV")]
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glVDPAURegisterVideoSurfaceNV")]
-    long VdpauRegisterVideoSurfaceNV(
+    nint VdpauRegisterVideoSurfaceNV(
         [NativeTypeName("const void *")] Ref vdpSurface,
         [NativeTypeName("GLenum")] uint target,
         [NativeTypeName("GLsizei")] int numTextureNames,
@@ -53206,7 +53211,7 @@ public unsafe partial interface IGL
     [return: NativeTypeName("GLvdpauSurfaceNV")]
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glVDPAURegisterVideoSurfaceWithPictureStructureNV")]
-    long VdpauRegisterVideoSurfaceWithPictureStructureNV(
+    nint VdpauRegisterVideoSurfaceWithPictureStructureNV(
         [NativeTypeName("const void *")] Ref vdpSurface,
         [NativeTypeName("GLenum")] uint target,
         [NativeTypeName("GLsizei")] int numTextureNames,
@@ -53217,7 +53222,7 @@ public unsafe partial interface IGL
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glVDPAUSurfaceAccessNV")]
     void VdpauSurfaceAccessNV(
-        [NativeTypeName("GLvdpauSurfaceNV")] long surface,
+        [NativeTypeName("GLvdpauSurfaceNV")] nint surface,
         [NativeTypeName("GLenum")] uint access
     );
 
@@ -53225,12 +53230,12 @@ public unsafe partial interface IGL
     [NativeFunction("opengl", EntryPoint = "glVDPAUUnmapSurfacesNV")]
     void VdpauUnmapSurfacesNV(
         [NativeTypeName("GLsizei")] int numSurface,
-        [NativeTypeName("const GLvdpauSurfaceNV *")] Ref<long> surfaces
+        [NativeTypeName("const GLvdpauSurfaceNV *")] Ref<nint> surfaces
     );
 
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glVDPAUUnregisterSurfaceNV")]
-    void VdpauUnregisterSurfaceNV([NativeTypeName("GLvdpauSurfaceNV")] long surface);
+    void VdpauUnregisterSurfaceNV([NativeTypeName("GLvdpauSurfaceNV")] nint surface);
 
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glVertex2bOES")]
@@ -53517,7 +53522,7 @@ public unsafe partial interface IGL
         [NativeTypeName("GLuint")] uint vaobj,
         [NativeTypeName("GLuint")] uint bindingindex,
         [NativeTypeName("GLuint")] uint buffer,
-        [NativeTypeName("GLintptr")] long offset,
+        [NativeTypeName("GLintptr")] nint offset,
         [NativeTypeName("GLsizei")] int stride
     );
 
@@ -53530,7 +53535,7 @@ public unsafe partial interface IGL
         [NativeTypeName("GLint")] int size,
         [NativeTypeName("GLenum")] uint type,
         [NativeTypeName("GLsizei")] int stride,
-        [NativeTypeName("GLintptr")] long offset
+        [NativeTypeName("GLintptr")] nint offset
     );
 
     [SupportedApiProfile("glcore", MinVersion = "3.2")]
@@ -53540,7 +53545,7 @@ public unsafe partial interface IGL
         [NativeTypeName("GLuint")] uint vaobj,
         [NativeTypeName("GLuint")] uint buffer,
         [NativeTypeName("GLsizei")] int stride,
-        [NativeTypeName("GLintptr")] long offset
+        [NativeTypeName("GLintptr")] nint offset
     );
 
     [SupportedApiProfile("glcore", MinVersion = "3.2")]
@@ -53559,7 +53564,7 @@ public unsafe partial interface IGL
         [NativeTypeName("GLuint")] uint buffer,
         [NativeTypeName("GLenum")] uint type,
         [NativeTypeName("GLsizei")] int stride,
-        [NativeTypeName("GLintptr")] long offset
+        [NativeTypeName("GLintptr")] nint offset
     );
 
     [SupportedApiProfile("glcore", MinVersion = "3.2")]
@@ -53570,7 +53575,7 @@ public unsafe partial interface IGL
         [NativeTypeName("GLuint")] uint buffer,
         [NativeTypeName("GLenum")] uint type,
         [NativeTypeName("GLsizei")] int stride,
-        [NativeTypeName("GLintptr")] long offset
+        [NativeTypeName("GLintptr")] nint offset
     );
 
     [SupportedApiProfile("glcore", MinVersion = "3.2")]
@@ -53583,7 +53588,7 @@ public unsafe partial interface IGL
         [NativeTypeName("GLint")] int size,
         [NativeTypeName("GLenum")] uint type,
         [NativeTypeName("GLsizei")] int stride,
-        [NativeTypeName("GLintptr")] long offset
+        [NativeTypeName("GLintptr")] nint offset
     );
 
     [SupportedApiProfile("glcore", MinVersion = "3.2")]
@@ -53594,7 +53599,7 @@ public unsafe partial interface IGL
         [NativeTypeName("GLuint")] uint buffer,
         [NativeTypeName("GLenum")] uint type,
         [NativeTypeName("GLsizei")] int stride,
-        [NativeTypeName("GLintptr")] long offset
+        [NativeTypeName("GLintptr")] nint offset
     );
 
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
@@ -53624,7 +53629,7 @@ public unsafe partial interface IGL
         [NativeTypeName("GLint")] int size,
         [NativeTypeName("GLenum")] uint type,
         [NativeTypeName("GLsizei")] int stride,
-        [NativeTypeName("GLintptr")] long offset
+        [NativeTypeName("GLintptr")] nint offset
     );
 
     [SupportedApiProfile("glcore", MinVersion = "3.2")]
@@ -53636,7 +53641,7 @@ public unsafe partial interface IGL
         [NativeTypeName("GLint")] int size,
         [NativeTypeName("GLenum")] uint type,
         [NativeTypeName("GLsizei")] int stride,
-        [NativeTypeName("GLintptr")] long offset
+        [NativeTypeName("GLintptr")] nint offset
     );
 
     [SupportedApiProfile("glcore", MinVersion = "3.2")]
@@ -53690,7 +53695,7 @@ public unsafe partial interface IGL
         [NativeTypeName("GLint")] int size,
         [NativeTypeName("GLenum")] uint type,
         [NativeTypeName("GLsizei")] int stride,
-        [NativeTypeName("GLintptr")] long offset
+        [NativeTypeName("GLintptr")] nint offset
     );
 
     [SupportedApiProfile("glcore", MinVersion = "3.2")]
@@ -53714,7 +53719,7 @@ public unsafe partial interface IGL
         [NativeTypeName("GLint")] int size,
         [NativeTypeName("GLenum")] uint type,
         [NativeTypeName("GLsizei")] int stride,
-        [NativeTypeName("GLintptr")] long offset
+        [NativeTypeName("GLintptr")] nint offset
     );
 
     [SupportedApiProfile("glcore", MinVersion = "3.2")]
@@ -53728,7 +53733,7 @@ public unsafe partial interface IGL
         [NativeTypeName("GLenum")] uint type,
         [NativeTypeName("GLboolean")] byte normalized,
         [NativeTypeName("GLsizei")] int stride,
-        [NativeTypeName("GLintptr")] long offset
+        [NativeTypeName("GLintptr")] nint offset
     );
 
     [SupportedApiProfile("glcore", MinVersion = "3.2")]
@@ -53747,7 +53752,7 @@ public unsafe partial interface IGL
         [NativeTypeName("GLuint")] uint vaobj,
         [NativeTypeName("GLuint")] uint bindingindex,
         [NativeTypeName("GLuint")] uint buffer,
-        [NativeTypeName("GLintptr")] long offset,
+        [NativeTypeName("GLintptr")] nint offset,
         [NativeTypeName("GLsizei")] int stride
     );
 
@@ -53759,7 +53764,7 @@ public unsafe partial interface IGL
         [NativeTypeName("GLuint")] uint first,
         [NativeTypeName("GLsizei")] int count,
         [NativeTypeName("const GLuint *")] Ref<uint> buffers,
-        [NativeTypeName("const GLintptr *")] Ref<long> offsets,
+        [NativeTypeName("const GLintptr *")] Ref<nint> offsets,
         [NativeTypeName("const GLsizei *")] Ref<int> strides
     );
 
@@ -53772,7 +53777,7 @@ public unsafe partial interface IGL
         [NativeTypeName("GLint")] int size,
         [NativeTypeName("GLenum")] uint type,
         [NativeTypeName("GLsizei")] int stride,
-        [NativeTypeName("GLintptr")] long offset
+        [NativeTypeName("GLintptr")] nint offset
     );
 
     [SupportedApiProfile("glcore", MinVersion = "3.2")]
