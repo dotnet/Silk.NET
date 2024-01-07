@@ -46,7 +46,7 @@ pub fn build(b: *std.Build) void {
     lib.linkLibC();
     lib.linkLibCpp();
 
-    var flags = &.{ ""-std=c++11"", ""-fPIC"" };
+    const flags = &.{ ""-std=c++11"", ""-fPIC"" };
 
     //Enable the GLSL, HLSL, MSL, CPP, and Reflect C APIs
     lib.defineCMacro(""SPIRV_CROSS_C_API_GLSL"", ""1"");

@@ -641,6 +641,9 @@ namespace Silk.NET.SDL
         [NativeName("Name", "SDL_HINT_JOYSTICK_THREAD")]
         public const string HintJoystickThread = unchecked((string) "SDL_JOYSTICK_THREAD");
         [NativeName("Type", "")]
+        [NativeName("Name", "SDL_HINT_JOYSTICK_WGI")]
+        public const string HintJoystickWgi = unchecked((string) "SDL_JOYSTICK_WGI");
+        [NativeName("Type", "")]
         [NativeName("Name", "SDL_HINT_KMSDRM_REQUIRE_DRM_MASTER")]
         public const string HintKmsdrmRequireDrmMaster = unchecked((string) "SDL_KMSDRM_REQUIRE_DRM_MASTER");
         [NativeName("Type", "")]
@@ -751,6 +754,9 @@ namespace Silk.NET.SDL
         [NativeName("Type", "")]
         [NativeName("Name", "SDL_HINT_RENDER_VSYNC")]
         public const string HintRenderVsync = unchecked((string) "SDL_RENDER_VSYNC");
+        [NativeName("Type", "")]
+        [NativeName("Name", "SDL_HINT_RENDER_METAL_PREFER_LOW_POWER_DEVICE")]
+        public const string HintRenderMetalPreferLowPowerDevice = unchecked((string) "SDL_RENDER_METAL_PREFER_LOW_POWER_DEVICE");
         [NativeName("Type", "")]
         [NativeName("Name", "SDL_HINT_PS2_DYNAMIC_VSYNC")]
         public const string HintPS2DynamicVsync = unchecked((string) "SDL_PS2_DYNAMIC_VSYNC");
@@ -957,7 +963,7 @@ namespace Silk.NET.SDL
         public const int MinorVersion = unchecked((int) 0x1C);
         [NativeName("Type", "int")]
         [NativeName("Name", "SDL_PATCHLEVEL")]
-        public const int Patchlevel = unchecked((int) 0x1);
+        public const int Patchlevel = unchecked((int) 0x5);
         [NativeName("Type", "unsigned int")]
         [NativeName("Name", "SDL_INIT_TIMER")]
         public const uint InitTimer = unchecked((uint) 0x1);
@@ -8676,127 +8682,127 @@ namespace Silk.NET.SDL
         public partial void Debugbreak();
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 129, Column 41 in SDL_assert.h")]
+        [NativeName("Src", "Line 131, Column 41 in SDL_assert.h")]
         [NativeApi(EntryPoint = "SDL_ReportAssertion")]
         public unsafe partial AssertState ReportAssertion(AssertData* arg0, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* arg1, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* arg2, int arg3);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 129, Column 41 in SDL_assert.h")]
+        [NativeName("Src", "Line 131, Column 41 in SDL_assert.h")]
         [NativeApi(EntryPoint = "SDL_ReportAssertion")]
         public unsafe partial AssertState ReportAssertion(AssertData* arg0, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* arg1, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte arg2, int arg3);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 129, Column 41 in SDL_assert.h")]
+        [NativeName("Src", "Line 131, Column 41 in SDL_assert.h")]
         [NativeApi(EntryPoint = "SDL_ReportAssertion")]
         public unsafe partial AssertState ReportAssertion(AssertData* arg0, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* arg1, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg2, int arg3);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 129, Column 41 in SDL_assert.h")]
+        [NativeName("Src", "Line 131, Column 41 in SDL_assert.h")]
         [NativeApi(EntryPoint = "SDL_ReportAssertion")]
         public unsafe partial AssertState ReportAssertion(AssertData* arg0, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte arg1, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* arg2, int arg3);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 129, Column 41 in SDL_assert.h")]
+        [NativeName("Src", "Line 131, Column 41 in SDL_assert.h")]
         [NativeApi(EntryPoint = "SDL_ReportAssertion")]
         public unsafe partial AssertState ReportAssertion(AssertData* arg0, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte arg1, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte arg2, int arg3);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 129, Column 41 in SDL_assert.h")]
+        [NativeName("Src", "Line 131, Column 41 in SDL_assert.h")]
         [NativeApi(EntryPoint = "SDL_ReportAssertion")]
         public unsafe partial AssertState ReportAssertion(AssertData* arg0, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte arg1, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg2, int arg3);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 129, Column 41 in SDL_assert.h")]
+        [NativeName("Src", "Line 131, Column 41 in SDL_assert.h")]
         [NativeApi(EntryPoint = "SDL_ReportAssertion")]
         public unsafe partial AssertState ReportAssertion(AssertData* arg0, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* arg2, int arg3);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 129, Column 41 in SDL_assert.h")]
+        [NativeName("Src", "Line 131, Column 41 in SDL_assert.h")]
         [NativeApi(EntryPoint = "SDL_ReportAssertion")]
         public unsafe partial AssertState ReportAssertion(AssertData* arg0, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte arg2, int arg3);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 129, Column 41 in SDL_assert.h")]
+        [NativeName("Src", "Line 131, Column 41 in SDL_assert.h")]
         [NativeApi(EntryPoint = "SDL_ReportAssertion")]
         public unsafe partial AssertState ReportAssertion(AssertData* arg0, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg2, int arg3);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 129, Column 41 in SDL_assert.h")]
+        [NativeName("Src", "Line 131, Column 41 in SDL_assert.h")]
         [NativeApi(EntryPoint = "SDL_ReportAssertion")]
         public unsafe partial AssertState ReportAssertion(ref AssertData arg0, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* arg1, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* arg2, int arg3);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 129, Column 41 in SDL_assert.h")]
+        [NativeName("Src", "Line 131, Column 41 in SDL_assert.h")]
         [NativeApi(EntryPoint = "SDL_ReportAssertion")]
         public unsafe partial AssertState ReportAssertion(ref AssertData arg0, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* arg1, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte arg2, int arg3);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 129, Column 41 in SDL_assert.h")]
+        [NativeName("Src", "Line 131, Column 41 in SDL_assert.h")]
         [NativeApi(EntryPoint = "SDL_ReportAssertion")]
         public unsafe partial AssertState ReportAssertion(ref AssertData arg0, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* arg1, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg2, int arg3);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 129, Column 41 in SDL_assert.h")]
+        [NativeName("Src", "Line 131, Column 41 in SDL_assert.h")]
         [NativeApi(EntryPoint = "SDL_ReportAssertion")]
         public unsafe partial AssertState ReportAssertion(ref AssertData arg0, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte arg1, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* arg2, int arg3);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 129, Column 41 in SDL_assert.h")]
+        [NativeName("Src", "Line 131, Column 41 in SDL_assert.h")]
         [NativeApi(EntryPoint = "SDL_ReportAssertion")]
         public partial AssertState ReportAssertion(ref AssertData arg0, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte arg1, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte arg2, int arg3);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 129, Column 41 in SDL_assert.h")]
+        [NativeName("Src", "Line 131, Column 41 in SDL_assert.h")]
         [NativeApi(EntryPoint = "SDL_ReportAssertion")]
         public partial AssertState ReportAssertion(ref AssertData arg0, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte arg1, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg2, int arg3);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 129, Column 41 in SDL_assert.h")]
+        [NativeName("Src", "Line 131, Column 41 in SDL_assert.h")]
         [NativeApi(EntryPoint = "SDL_ReportAssertion")]
         public unsafe partial AssertState ReportAssertion(ref AssertData arg0, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* arg2, int arg3);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 129, Column 41 in SDL_assert.h")]
+        [NativeName("Src", "Line 131, Column 41 in SDL_assert.h")]
         [NativeApi(EntryPoint = "SDL_ReportAssertion")]
         public partial AssertState ReportAssertion(ref AssertData arg0, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte arg2, int arg3);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 129, Column 41 in SDL_assert.h")]
+        [NativeName("Src", "Line 131, Column 41 in SDL_assert.h")]
         [NativeApi(EntryPoint = "SDL_ReportAssertion")]
         public partial AssertState ReportAssertion(ref AssertData arg0, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg2, int arg3);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 220, Column 30 in SDL_assert.h")]
+        [NativeName("Src", "Line 222, Column 30 in SDL_assert.h")]
         [NativeApi(EntryPoint = "SDL_SetAssertionHandler")]
         public unsafe partial void SetAssertionHandler(PfnAssertionHandler handler, void* userdata);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 220, Column 30 in SDL_assert.h")]
+        [NativeName("Src", "Line 222, Column 30 in SDL_assert.h")]
         [NativeApi(EntryPoint = "SDL_SetAssertionHandler")]
         public partial void SetAssertionHandler<T0>(PfnAssertionHandler handler, ref T0 userdata) where T0 : unmanaged;
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 239, Column 46 in SDL_assert.h")]
+        [NativeName("Src", "Line 241, Column 46 in SDL_assert.h")]
         [NativeApi(EntryPoint = "SDL_GetDefaultAssertionHandler")]
         public partial PfnAssertionHandler GetDefaultAssertionHandler();
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 262, Column 46 in SDL_assert.h")]
+        [NativeName("Src", "Line 264, Column 46 in SDL_assert.h")]
         [NativeApi(EntryPoint = "SDL_GetAssertionHandler")]
         public unsafe partial PfnAssertionHandler GetAssertionHandler(void** puserdata);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 262, Column 46 in SDL_assert.h")]
+        [NativeName("Src", "Line 264, Column 46 in SDL_assert.h")]
         [NativeApi(EntryPoint = "SDL_GetAssertionHandler")]
         public unsafe partial PfnAssertionHandler GetAssertionHandler(ref void* puserdata);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 290, Column 48 in SDL_assert.h")]
+        [NativeName("Src", "Line 292, Column 48 in SDL_assert.h")]
         [NativeApi(EntryPoint = "SDL_GetAssertionReport")]
         public unsafe partial AssertData* GetAssertionReport();
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 304, Column 30 in SDL_assert.h")]
+        [NativeName("Src", "Line 306, Column 30 in SDL_assert.h")]
         [NativeApi(EntryPoint = "SDL_ResetAssertionReport")]
         public partial void ResetAssertionReport();
 
@@ -12018,225 +12024,225 @@ namespace Silk.NET.SDL
         public partial void HidBleScan(SdlBool active);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 2454, Column 34 in SDL_hints.h")]
+        [NativeName("Src", "Line 2474, Column 34 in SDL_hints.h")]
         [NativeApi(EntryPoint = "SDL_SetHintWithPriority")]
         public unsafe partial SdlBool SetHintWithPriority([Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* name, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* value, HintPriority priority);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 2454, Column 34 in SDL_hints.h")]
+        [NativeName("Src", "Line 2474, Column 34 in SDL_hints.h")]
         [NativeApi(EntryPoint = "SDL_SetHintWithPriority")]
         public unsafe partial SdlBool SetHintWithPriority([Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* name, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte value, HintPriority priority);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 2454, Column 34 in SDL_hints.h")]
+        [NativeName("Src", "Line 2474, Column 34 in SDL_hints.h")]
         [NativeApi(EntryPoint = "SDL_SetHintWithPriority")]
         public unsafe partial SdlBool SetHintWithPriority([Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* name, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string value, HintPriority priority);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 2454, Column 34 in SDL_hints.h")]
+        [NativeName("Src", "Line 2474, Column 34 in SDL_hints.h")]
         [NativeApi(EntryPoint = "SDL_SetHintWithPriority")]
         public unsafe partial SdlBool SetHintWithPriority([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte name, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* value, HintPriority priority);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 2454, Column 34 in SDL_hints.h")]
+        [NativeName("Src", "Line 2474, Column 34 in SDL_hints.h")]
         [NativeApi(EntryPoint = "SDL_SetHintWithPriority")]
         public partial SdlBool SetHintWithPriority([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte name, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte value, HintPriority priority);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 2454, Column 34 in SDL_hints.h")]
+        [NativeName("Src", "Line 2474, Column 34 in SDL_hints.h")]
         [NativeApi(EntryPoint = "SDL_SetHintWithPriority")]
         public partial SdlBool SetHintWithPriority([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte name, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string value, HintPriority priority);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 2454, Column 34 in SDL_hints.h")]
+        [NativeName("Src", "Line 2474, Column 34 in SDL_hints.h")]
         [NativeApi(EntryPoint = "SDL_SetHintWithPriority")]
         public unsafe partial SdlBool SetHintWithPriority([Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string name, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* value, HintPriority priority);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 2454, Column 34 in SDL_hints.h")]
+        [NativeName("Src", "Line 2474, Column 34 in SDL_hints.h")]
         [NativeApi(EntryPoint = "SDL_SetHintWithPriority")]
         public partial SdlBool SetHintWithPriority([Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string name, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte value, HintPriority priority);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 2454, Column 34 in SDL_hints.h")]
+        [NativeName("Src", "Line 2474, Column 34 in SDL_hints.h")]
         [NativeApi(EntryPoint = "SDL_SetHintWithPriority")]
         public partial SdlBool SetHintWithPriority([Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string name, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string value, HintPriority priority);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 2474, Column 34 in SDL_hints.h")]
+        [NativeName("Src", "Line 2494, Column 34 in SDL_hints.h")]
         [NativeApi(EntryPoint = "SDL_SetHint")]
         public unsafe partial SdlBool SetHint([Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* name, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* value);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 2474, Column 34 in SDL_hints.h")]
+        [NativeName("Src", "Line 2494, Column 34 in SDL_hints.h")]
         [NativeApi(EntryPoint = "SDL_SetHint")]
         public unsafe partial SdlBool SetHint([Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* name, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte value);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 2474, Column 34 in SDL_hints.h")]
+        [NativeName("Src", "Line 2494, Column 34 in SDL_hints.h")]
         [NativeApi(EntryPoint = "SDL_SetHint")]
         public unsafe partial SdlBool SetHint([Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* name, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string value);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 2474, Column 34 in SDL_hints.h")]
+        [NativeName("Src", "Line 2494, Column 34 in SDL_hints.h")]
         [NativeApi(EntryPoint = "SDL_SetHint")]
         public unsafe partial SdlBool SetHint([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte name, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* value);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 2474, Column 34 in SDL_hints.h")]
+        [NativeName("Src", "Line 2494, Column 34 in SDL_hints.h")]
         [NativeApi(EntryPoint = "SDL_SetHint")]
         public partial SdlBool SetHint([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte name, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte value);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 2474, Column 34 in SDL_hints.h")]
+        [NativeName("Src", "Line 2494, Column 34 in SDL_hints.h")]
         [NativeApi(EntryPoint = "SDL_SetHint")]
         public partial SdlBool SetHint([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte name, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string value);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 2474, Column 34 in SDL_hints.h")]
+        [NativeName("Src", "Line 2494, Column 34 in SDL_hints.h")]
         [NativeApi(EntryPoint = "SDL_SetHint")]
         public unsafe partial SdlBool SetHint([Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string name, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* value);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 2474, Column 34 in SDL_hints.h")]
+        [NativeName("Src", "Line 2494, Column 34 in SDL_hints.h")]
         [NativeApi(EntryPoint = "SDL_SetHint")]
         public partial SdlBool SetHint([Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string name, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte value);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 2474, Column 34 in SDL_hints.h")]
+        [NativeName("Src", "Line 2494, Column 34 in SDL_hints.h")]
         [NativeApi(EntryPoint = "SDL_SetHint")]
         public partial SdlBool SetHint([Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string name, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string value);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 2492, Column 34 in SDL_hints.h")]
+        [NativeName("Src", "Line 2512, Column 34 in SDL_hints.h")]
         [NativeApi(EntryPoint = "SDL_ResetHint")]
         public unsafe partial SdlBool ResetHint([Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* name);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 2492, Column 34 in SDL_hints.h")]
+        [NativeName("Src", "Line 2512, Column 34 in SDL_hints.h")]
         [NativeApi(EntryPoint = "SDL_ResetHint")]
         public partial SdlBool ResetHint([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte name);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 2492, Column 34 in SDL_hints.h")]
+        [NativeName("Src", "Line 2512, Column 34 in SDL_hints.h")]
         [NativeApi(EntryPoint = "SDL_ResetHint")]
         public partial SdlBool ResetHint([Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string name);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 2507, Column 30 in SDL_hints.h")]
+        [NativeName("Src", "Line 2527, Column 30 in SDL_hints.h")]
         [NativeApi(EntryPoint = "SDL_ResetHints")]
         public partial void ResetHints();
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 2520, Column 38 in SDL_hints.h")]
+        [NativeName("Src", "Line 2540, Column 38 in SDL_hints.h")]
         [NativeApi(EntryPoint = "SDL_GetHint")]
         public unsafe partial byte* GetHint([Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* name);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 2520, Column 38 in SDL_hints.h")]
+        [NativeName("Src", "Line 2540, Column 38 in SDL_hints.h")]
         [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
         [NativeApi(EntryPoint = "SDL_GetHint")]
         public unsafe partial string GetHintS([Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* name);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 2520, Column 38 in SDL_hints.h")]
+        [NativeName("Src", "Line 2540, Column 38 in SDL_hints.h")]
         [NativeApi(EntryPoint = "SDL_GetHint")]
         public unsafe partial byte* GetHint([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte name);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 2520, Column 38 in SDL_hints.h")]
+        [NativeName("Src", "Line 2540, Column 38 in SDL_hints.h")]
         [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
         [NativeApi(EntryPoint = "SDL_GetHint")]
         public partial string GetHintS([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte name);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 2520, Column 38 in SDL_hints.h")]
+        [NativeName("Src", "Line 2540, Column 38 in SDL_hints.h")]
         [NativeApi(EntryPoint = "SDL_GetHint")]
         public unsafe partial byte* GetHint([Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string name);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 2520, Column 38 in SDL_hints.h")]
+        [NativeName("Src", "Line 2540, Column 38 in SDL_hints.h")]
         [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
         [NativeApi(EntryPoint = "SDL_GetHint")]
         public partial string GetHintS([Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string name);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 2535, Column 34 in SDL_hints.h")]
+        [NativeName("Src", "Line 2555, Column 34 in SDL_hints.h")]
         [NativeApi(EntryPoint = "SDL_GetHintBoolean")]
         public unsafe partial SdlBool GetHintBoolean([Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* name, SdlBool default_value);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 2535, Column 34 in SDL_hints.h")]
+        [NativeName("Src", "Line 2555, Column 34 in SDL_hints.h")]
         [NativeApi(EntryPoint = "SDL_GetHintBoolean")]
         public partial SdlBool GetHintBoolean([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte name, SdlBool default_value);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 2535, Column 34 in SDL_hints.h")]
+        [NativeName("Src", "Line 2555, Column 34 in SDL_hints.h")]
         [NativeApi(EntryPoint = "SDL_GetHintBoolean")]
         public partial SdlBool GetHintBoolean([Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string name, SdlBool default_value);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 2559, Column 30 in SDL_hints.h")]
+        [NativeName("Src", "Line 2579, Column 30 in SDL_hints.h")]
         [NativeApi(EntryPoint = "SDL_AddHintCallback")]
         public unsafe partial void AddHintCallback([Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* name, PfnHintCallback callback, void* userdata);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 2559, Column 30 in SDL_hints.h")]
+        [NativeName("Src", "Line 2579, Column 30 in SDL_hints.h")]
         [NativeApi(EntryPoint = "SDL_AddHintCallback")]
         public unsafe partial void AddHintCallback<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* name, PfnHintCallback callback, ref T0 userdata) where T0 : unmanaged;
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 2559, Column 30 in SDL_hints.h")]
+        [NativeName("Src", "Line 2579, Column 30 in SDL_hints.h")]
         [NativeApi(EntryPoint = "SDL_AddHintCallback")]
         public unsafe partial void AddHintCallback([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte name, PfnHintCallback callback, void* userdata);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 2559, Column 30 in SDL_hints.h")]
+        [NativeName("Src", "Line 2579, Column 30 in SDL_hints.h")]
         [NativeApi(EntryPoint = "SDL_AddHintCallback")]
         public partial void AddHintCallback<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte name, PfnHintCallback callback, ref T0 userdata) where T0 : unmanaged;
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 2559, Column 30 in SDL_hints.h")]
+        [NativeName("Src", "Line 2579, Column 30 in SDL_hints.h")]
         [NativeApi(EntryPoint = "SDL_AddHintCallback")]
         public unsafe partial void AddHintCallback([Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string name, PfnHintCallback callback, void* userdata);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 2559, Column 30 in SDL_hints.h")]
+        [NativeName("Src", "Line 2579, Column 30 in SDL_hints.h")]
         [NativeApi(EntryPoint = "SDL_AddHintCallback")]
         public partial void AddHintCallback<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string name, PfnHintCallback callback, ref T0 userdata) where T0 : unmanaged;
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 2575, Column 30 in SDL_hints.h")]
+        [NativeName("Src", "Line 2595, Column 30 in SDL_hints.h")]
         [NativeApi(EntryPoint = "SDL_DelHintCallback")]
         public unsafe partial void DelHintCallback([Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* name, PfnHintCallback callback, void* userdata);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 2575, Column 30 in SDL_hints.h")]
+        [NativeName("Src", "Line 2595, Column 30 in SDL_hints.h")]
         [NativeApi(EntryPoint = "SDL_DelHintCallback")]
         public unsafe partial void DelHintCallback<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* name, PfnHintCallback callback, ref T0 userdata) where T0 : unmanaged;
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 2575, Column 30 in SDL_hints.h")]
+        [NativeName("Src", "Line 2595, Column 30 in SDL_hints.h")]
         [NativeApi(EntryPoint = "SDL_DelHintCallback")]
         public unsafe partial void DelHintCallback([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte name, PfnHintCallback callback, void* userdata);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 2575, Column 30 in SDL_hints.h")]
+        [NativeName("Src", "Line 2595, Column 30 in SDL_hints.h")]
         [NativeApi(EntryPoint = "SDL_DelHintCallback")]
         public partial void DelHintCallback<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte name, PfnHintCallback callback, ref T0 userdata) where T0 : unmanaged;
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 2575, Column 30 in SDL_hints.h")]
+        [NativeName("Src", "Line 2595, Column 30 in SDL_hints.h")]
         [NativeApi(EntryPoint = "SDL_DelHintCallback")]
         public unsafe partial void DelHintCallback([Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string name, PfnHintCallback callback, void* userdata);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 2575, Column 30 in SDL_hints.h")]
+        [NativeName("Src", "Line 2595, Column 30 in SDL_hints.h")]
         [NativeApi(EntryPoint = "SDL_DelHintCallback")]
         public partial void DelHintCallback<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string name, PfnHintCallback callback, ref T0 userdata) where T0 : unmanaged;
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 2593, Column 30 in SDL_hints.h")]
+        [NativeName("Src", "Line 2613, Column 30 in SDL_hints.h")]
         [NativeApi(EntryPoint = "SDL_ClearHints")]
         public partial void ClearHints();
 

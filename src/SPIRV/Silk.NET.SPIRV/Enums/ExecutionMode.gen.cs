@@ -112,6 +112,16 @@ namespace Silk.NET.SPIRV
         EarlyAndLateFragmentTestsAmd = 0x1399,
         [NativeName("Name", "SpvExecutionModeStencilRefReplacingEXT")]
         StencilRefReplacingExt = 0x13A3,
+        [NativeName("Name", "SpvExecutionModeCoalescingAMDX")]
+        CoalescingAmdx = 0x13CD,
+        [NativeName("Name", "SpvExecutionModeMaxNodeRecursionAMDX")]
+        MaxNodeRecursionAmdx = 0x13CF,
+        [NativeName("Name", "SpvExecutionModeStaticNumWorkgroupsAMDX")]
+        StaticNumWorkgroupsAmdx = 0x13D0,
+        [NativeName("Name", "SpvExecutionModeShaderIndexAMDX")]
+        ShaderIndexAmdx = 0x13D1,
+        [NativeName("Name", "SpvExecutionModeMaxNumWorkgroupsAMDX")]
+        MaxNumWorkgroupsAmdx = 0x13D5,
         [NativeName("Name", "SpvExecutionModeStencilRefUnchangedFrontAMD")]
         StencilRefUnchangedFrontAmd = 0x13D7,
         [NativeName("Name", "SpvExecutionModeStencilRefGreaterFrontAMD")]

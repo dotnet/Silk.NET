@@ -154,6 +154,10 @@ namespace Silk.NET.SPIRV
         BaryCoordPullModelAmd = 0x1386,
         [NativeName("Name", "SpvBuiltInFragStencilRefEXT")]
         FragStencilRefExt = 0x1396,
+        [NativeName("Name", "SpvBuiltInCoalescedInputCountAMDX")]
+        CoalescedInputCountAmdx = 0x139D,
+        [NativeName("Name", "SpvBuiltInShaderIndexAMDX")]
+        ShaderIndexAmdx = 0x13D1,
         [NativeName("Name", "SpvBuiltInViewportMaskNV")]
         ViewportMaskNV = 0x1485,
         [NativeName("Name", "SpvBuiltInSecondaryPositionNV")]
@@ -260,6 +264,10 @@ namespace Silk.NET.SPIRV
         CurrentRayTimeNV = 0x14D6,
         [NativeName("Name", "SpvBuiltInHitTriangleVertexPositionsKHR")]
         HitTriangleVertexPositionsKhr = 0x14D7,
+        [NativeName("Name", "SpvBuiltInHitMicroTriangleVertexPositionsNV")]
+        HitMicroTriangleVertexPositionsNV = 0x14D9,
+        [NativeName("Name", "SpvBuiltInHitMicroTriangleVertexBarycentricsNV")]
+        HitMicroTriangleVertexBarycentricsNV = 0x14E0,
         [NativeName("Name", "SpvBuiltInIncomingRayFlagsKHR")]
         IncomingRayFlagsKhr = 0x14E7,
         [NativeName("Name", "SpvBuiltInIncomingRayFlagsNV")]
@@ -274,6 +282,10 @@ namespace Silk.NET.SPIRV
         WarpIdnv = 0x1500,
         [NativeName("Name", "SpvBuiltInSMIDNV")]
         Smidnv = 0x1501,
+        [NativeName("Name", "SpvBuiltInHitKindFrontFacingMicroTriangleNV")]
+        HitKindFrontFacingMicroTriangleNV = 0x151D,
+        [NativeName("Name", "SpvBuiltInHitKindBackFacingMicroTriangleNV")]
+        HitKindBackFacingMicroTriangleNV = 0x151E,
         [NativeName("Name", "SpvBuiltInCullMaskKHR")]
         CullMaskKhr = 0x1785,
         [NativeName("Name", "SpvBuiltInMax")]
