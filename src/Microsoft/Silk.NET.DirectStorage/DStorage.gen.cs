@@ -40,7 +40,7 @@ namespace Silk.NET.DirectStorage
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1296, Column 16 in dstorage.h")]
         [NativeApi(EntryPoint = "DStorageSetConfiguration", Convention = CallingConvention.StdCall)]
-        public partial int SetConfiguration([Flow(Silk.NET.Core.Native.FlowDirection.In)] in Configuration configuration);
+        public partial int SetConfiguration([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Configuration configuration);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1306, Column 16 in dstorage.h")]
@@ -50,7 +50,7 @@ namespace Silk.NET.DirectStorage
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1306, Column 16 in dstorage.h")]
         [NativeApi(EntryPoint = "DStorageSetConfiguration1", Convention = CallingConvention.StdCall)]
-        public partial int SetConfiguration1([Flow(Silk.NET.Core.Native.FlowDirection.In)] in Configuration1 configuration);
+        public partial int SetConfiguration1([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Configuration1 configuration);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1316, Column 16 in dstorage.h")]

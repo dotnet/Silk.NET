@@ -243,12 +243,12 @@ namespace Silk.NET.SPIRV.Cross
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 755, Column 29 in spirv_cross_c.h")]
         [NativeApi(EntryPoint = "spvc_context_parse_spirv")]
-        public unsafe partial Result ContextParseSpirv(Context* context, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint spirv, nuint word_count, ParsedIr** parsed_ir);
+        public unsafe partial Result ContextParseSpirv(Context* context, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in uint spirv, nuint word_count, ParsedIr** parsed_ir);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 755, Column 29 in spirv_cross_c.h")]
         [NativeApi(EntryPoint = "spvc_context_parse_spirv")]
-        public unsafe partial Result ContextParseSpirv(Context* context, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint spirv, nuint word_count, ref ParsedIr* parsed_ir);
+        public unsafe partial Result ContextParseSpirv(Context* context, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in uint spirv, nuint word_count, ref ParsedIr* parsed_ir);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 762, Column 29 in spirv_cross_c.h")]
@@ -298,7 +298,7 @@ namespace Silk.NET.SPIRV.Cross
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 782, Column 29 in spirv_cross_c.h")]
         [NativeApi(EntryPoint = "spvc_compiler_compile")]
-        public unsafe partial Result CompilerCompile(Compiler* compiler, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte* source);
+        public unsafe partial Result CompilerCompile(Compiler* compiler, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte* source);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 785, Column 29 in spirv_cross_c.h")]
@@ -308,7 +308,7 @@ namespace Silk.NET.SPIRV.Cross
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 785, Column 29 in spirv_cross_c.h")]
         [NativeApi(EntryPoint = "spvc_compiler_add_header_line")]
-        public unsafe partial Result CompilerAddHeaderLine(Compiler* compiler, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte line);
+        public unsafe partial Result CompilerAddHeaderLine(Compiler* compiler, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte line);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 785, Column 29 in spirv_cross_c.h")]
@@ -323,7 +323,7 @@ namespace Silk.NET.SPIRV.Cross
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 786, Column 29 in spirv_cross_c.h")]
         [NativeApi(EntryPoint = "spvc_compiler_require_extension")]
-        public unsafe partial Result CompilerRequireExtension(Compiler* compiler, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte ext);
+        public unsafe partial Result CompilerRequireExtension(Compiler* compiler, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte ext);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 786, Column 29 in spirv_cross_c.h")]
@@ -374,7 +374,7 @@ namespace Silk.NET.SPIRV.Cross
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 801, Column 29 in spirv_cross_c.h")]
         [NativeApi(EntryPoint = "spvc_compiler_hlsl_set_root_constants_layout")]
-        public unsafe partial Result CompilerHlslSetRootConstantsLayout(Compiler* compiler, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in HlslRootConstants constant_info, nuint count);
+        public unsafe partial Result CompilerHlslSetRootConstantsLayout(Compiler* compiler, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in HlslRootConstants constant_info, nuint count);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 804, Column 29 in spirv_cross_c.h")]
@@ -384,7 +384,7 @@ namespace Silk.NET.SPIRV.Cross
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 804, Column 29 in spirv_cross_c.h")]
         [NativeApi(EntryPoint = "spvc_compiler_hlsl_add_vertex_attribute_remap")]
-        public unsafe partial Result CompilerHlslAddVertexAttributeRemap(Compiler* compiler, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in HlslVertexAttributeRemap remap, nuint remaps);
+        public unsafe partial Result CompilerHlslAddVertexAttributeRemap(Compiler* compiler, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in HlslVertexAttributeRemap remap, nuint remaps);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 807, Column 34 in spirv_cross_c.h")]
@@ -404,7 +404,7 @@ namespace Silk.NET.SPIRV.Cross
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 812, Column 29 in spirv_cross_c.h")]
         [NativeApi(EntryPoint = "spvc_compiler_hlsl_add_resource_binding")]
-        public unsafe partial Result CompilerHlslAddResourceBinding(Compiler* compiler, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in HlslResourceBinding binding);
+        public unsafe partial Result CompilerHlslAddResourceBinding(Compiler* compiler, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in HlslResourceBinding binding);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 814, Column 27 in spirv_cross_c.h")]
@@ -454,7 +454,7 @@ namespace Silk.NET.SPIRV.Cross
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 833, Column 29 in spirv_cross_c.h")]
         [NativeApi(EntryPoint = "spvc_compiler_msl_add_vertex_attribute")]
-        public unsafe partial Result CompilerMslAddVertexAttribute(Compiler* compiler, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in MslVertexAttribute attrs);
+        public unsafe partial Result CompilerMslAddVertexAttribute(Compiler* compiler, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in MslVertexAttribute attrs);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 835, Column 29 in spirv_cross_c.h")]
@@ -464,7 +464,7 @@ namespace Silk.NET.SPIRV.Cross
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 835, Column 29 in spirv_cross_c.h")]
         [NativeApi(EntryPoint = "spvc_compiler_msl_add_resource_binding")]
-        public unsafe partial Result CompilerMslAddResourceBinding(Compiler* compiler, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in MslResourceBinding binding);
+        public unsafe partial Result CompilerMslAddResourceBinding(Compiler* compiler, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in MslResourceBinding binding);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 838, Column 29 in spirv_cross_c.h")]
@@ -474,7 +474,7 @@ namespace Silk.NET.SPIRV.Cross
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 838, Column 29 in spirv_cross_c.h")]
         [NativeApi(EntryPoint = "spvc_compiler_msl_add_shader_input")]
-        public unsafe partial Result CompilerMslAddShaderInput(Compiler* compiler, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in MslShaderInterfaceVar input);
+        public unsafe partial Result CompilerMslAddShaderInput(Compiler* compiler, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in MslShaderInterfaceVar input);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 840, Column 29 in spirv_cross_c.h")]
@@ -484,7 +484,7 @@ namespace Silk.NET.SPIRV.Cross
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 840, Column 29 in spirv_cross_c.h")]
         [NativeApi(EntryPoint = "spvc_compiler_msl_add_shader_input_2")]
-        public unsafe partial Result CompilerMslAddShaderInput2(Compiler* compiler, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in MslShaderInterfaceVar2 input);
+        public unsafe partial Result CompilerMslAddShaderInput2(Compiler* compiler, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in MslShaderInterfaceVar2 input);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 843, Column 29 in spirv_cross_c.h")]
@@ -494,7 +494,7 @@ namespace Silk.NET.SPIRV.Cross
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 843, Column 29 in spirv_cross_c.h")]
         [NativeApi(EntryPoint = "spvc_compiler_msl_add_shader_output")]
-        public unsafe partial Result CompilerMslAddShaderOutput(Compiler* compiler, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in MslShaderInterfaceVar output);
+        public unsafe partial Result CompilerMslAddShaderOutput(Compiler* compiler, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in MslShaderInterfaceVar output);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 845, Column 29 in spirv_cross_c.h")]
@@ -504,7 +504,7 @@ namespace Silk.NET.SPIRV.Cross
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 845, Column 29 in spirv_cross_c.h")]
         [NativeApi(EntryPoint = "spvc_compiler_msl_add_shader_output_2")]
-        public unsafe partial Result CompilerMslAddShaderOutput2(Compiler* compiler, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in MslShaderInterfaceVar2 output);
+        public unsafe partial Result CompilerMslAddShaderOutput2(Compiler* compiler, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in MslShaderInterfaceVar2 output);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 847, Column 29 in spirv_cross_c.h")]
@@ -544,7 +544,7 @@ namespace Silk.NET.SPIRV.Cross
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 859, Column 29 in spirv_cross_c.h")]
         [NativeApi(EntryPoint = "spvc_compiler_msl_remap_constexpr_sampler")]
-        public unsafe partial Result CompilerMslRemapConstexprSampler(Compiler* compiler, uint id, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in MslConstexprSampler sampler);
+        public unsafe partial Result CompilerMslRemapConstexprSampler(Compiler* compiler, uint id, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in MslConstexprSampler sampler);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 860, Column 29 in spirv_cross_c.h")]
@@ -554,7 +554,7 @@ namespace Silk.NET.SPIRV.Cross
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 860, Column 29 in spirv_cross_c.h")]
         [NativeApi(EntryPoint = "spvc_compiler_msl_remap_constexpr_sampler_by_binding")]
-        public unsafe partial Result CompilerMslRemapConstexprSamplerByBinding(Compiler* compiler, uint desc_set, uint binding, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in MslConstexprSampler sampler);
+        public unsafe partial Result CompilerMslRemapConstexprSamplerByBinding(Compiler* compiler, uint desc_set, uint binding, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in MslConstexprSampler sampler);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 861, Column 29 in spirv_cross_c.h")]
@@ -564,17 +564,17 @@ namespace Silk.NET.SPIRV.Cross
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 861, Column 29 in spirv_cross_c.h")]
         [NativeApi(EntryPoint = "spvc_compiler_msl_remap_constexpr_sampler_ycbcr")]
-        public unsafe partial Result CompilerMslRemapConstexprSamplerYcbcr(Compiler* compiler, uint id, [Flow(Silk.NET.Core.Native.FlowDirection.In)] MslConstexprSampler* sampler, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in MslSamplerYcbcrConversion conv);
+        public unsafe partial Result CompilerMslRemapConstexprSamplerYcbcr(Compiler* compiler, uint id, [Flow(Silk.NET.Core.Native.FlowDirection.In)] MslConstexprSampler* sampler, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in MslSamplerYcbcrConversion conv);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 861, Column 29 in spirv_cross_c.h")]
         [NativeApi(EntryPoint = "spvc_compiler_msl_remap_constexpr_sampler_ycbcr")]
-        public unsafe partial Result CompilerMslRemapConstexprSamplerYcbcr(Compiler* compiler, uint id, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in MslConstexprSampler sampler, [Flow(Silk.NET.Core.Native.FlowDirection.In)] MslSamplerYcbcrConversion* conv);
+        public unsafe partial Result CompilerMslRemapConstexprSamplerYcbcr(Compiler* compiler, uint id, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in MslConstexprSampler sampler, [Flow(Silk.NET.Core.Native.FlowDirection.In)] MslSamplerYcbcrConversion* conv);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 861, Column 29 in spirv_cross_c.h")]
         [NativeApi(EntryPoint = "spvc_compiler_msl_remap_constexpr_sampler_ycbcr")]
-        public unsafe partial Result CompilerMslRemapConstexprSamplerYcbcr(Compiler* compiler, uint id, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in MslConstexprSampler sampler, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in MslSamplerYcbcrConversion conv);
+        public unsafe partial Result CompilerMslRemapConstexprSamplerYcbcr(Compiler* compiler, uint id, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in MslConstexprSampler sampler, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in MslSamplerYcbcrConversion conv);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 862, Column 29 in spirv_cross_c.h")]
@@ -584,17 +584,17 @@ namespace Silk.NET.SPIRV.Cross
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 862, Column 29 in spirv_cross_c.h")]
         [NativeApi(EntryPoint = "spvc_compiler_msl_remap_constexpr_sampler_by_binding_ycbcr")]
-        public unsafe partial Result CompilerMslRemapConstexprSamplerByBindingYcbcr(Compiler* compiler, uint desc_set, uint binding, [Flow(Silk.NET.Core.Native.FlowDirection.In)] MslConstexprSampler* sampler, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in MslSamplerYcbcrConversion conv);
+        public unsafe partial Result CompilerMslRemapConstexprSamplerByBindingYcbcr(Compiler* compiler, uint desc_set, uint binding, [Flow(Silk.NET.Core.Native.FlowDirection.In)] MslConstexprSampler* sampler, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in MslSamplerYcbcrConversion conv);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 862, Column 29 in spirv_cross_c.h")]
         [NativeApi(EntryPoint = "spvc_compiler_msl_remap_constexpr_sampler_by_binding_ycbcr")]
-        public unsafe partial Result CompilerMslRemapConstexprSamplerByBindingYcbcr(Compiler* compiler, uint desc_set, uint binding, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in MslConstexprSampler sampler, [Flow(Silk.NET.Core.Native.FlowDirection.In)] MslSamplerYcbcrConversion* conv);
+        public unsafe partial Result CompilerMslRemapConstexprSamplerByBindingYcbcr(Compiler* compiler, uint desc_set, uint binding, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in MslConstexprSampler sampler, [Flow(Silk.NET.Core.Native.FlowDirection.In)] MslSamplerYcbcrConversion* conv);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 862, Column 29 in spirv_cross_c.h")]
         [NativeApi(EntryPoint = "spvc_compiler_msl_remap_constexpr_sampler_by_binding_ycbcr")]
-        public unsafe partial Result CompilerMslRemapConstexprSamplerByBindingYcbcr(Compiler* compiler, uint desc_set, uint binding, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in MslConstexprSampler sampler, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in MslSamplerYcbcrConversion conv);
+        public unsafe partial Result CompilerMslRemapConstexprSamplerByBindingYcbcr(Compiler* compiler, uint desc_set, uint binding, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in MslConstexprSampler sampler, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in MslSamplerYcbcrConversion conv);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 863, Column 29 in spirv_cross_c.h")]
@@ -629,7 +629,7 @@ namespace Silk.NET.SPIRV.Cross
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 872, Column 29 in spirv_cross_c.h")]
         [NativeApi(EntryPoint = "spvc_compiler_msl_set_combined_sampler_suffix")]
-        public unsafe partial Result CompilerMslSetCombinedSamplerSuffix(Compiler* compiler, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte suffix);
+        public unsafe partial Result CompilerMslSetCombinedSamplerSuffix(Compiler* compiler, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte suffix);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 872, Column 29 in spirv_cross_c.h")]
@@ -655,7 +655,7 @@ namespace Silk.NET.SPIRV.Cross
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 879, Column 29 in spirv_cross_c.h")]
         [NativeApi(EntryPoint = "spvc_compiler_get_active_interface_variables")]
-        public unsafe partial Result CompilerGetActiveInterfaceVariables(Compiler* compiler, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Set* set);
+        public unsafe partial Result CompilerGetActiveInterfaceVariables(Compiler* compiler, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Set* set);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 880, Column 29 in spirv_cross_c.h")]
@@ -695,12 +695,12 @@ namespace Silk.NET.SPIRV.Cross
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 885, Column 29 in spirv_cross_c.h")]
         [NativeApi(EntryPoint = "spvc_resources_get_resource_list_for_type")]
-        public unsafe partial Result ResourcesGetResourceListForType(Resources* resources, ResourceType type, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ReflectedResource* resource_list, nuint* resource_size);
+        public unsafe partial Result ResourcesGetResourceListForType(Resources* resources, ResourceType type, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ReflectedResource* resource_list, nuint* resource_size);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 885, Column 29 in spirv_cross_c.h")]
         [NativeApi(EntryPoint = "spvc_resources_get_resource_list_for_type")]
-        public unsafe partial Result ResourcesGetResourceListForType(Resources* resources, ResourceType type, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ReflectedResource* resource_list, ref nuint resource_size);
+        public unsafe partial Result ResourcesGetResourceListForType(Resources* resources, ResourceType type, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ReflectedResource* resource_list, ref nuint resource_size);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 889, Column 29 in spirv_cross_c.h")]
@@ -715,12 +715,12 @@ namespace Silk.NET.SPIRV.Cross
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 889, Column 29 in spirv_cross_c.h")]
         [NativeApi(EntryPoint = "spvc_resources_get_builtin_resource_list_for_type")]
-        public unsafe partial Result ResourcesGetBuiltinResourceListForType(Resources* resources, BuiltinResourceType type, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ReflectedBuiltinResource* resource_list, nuint* resource_size);
+        public unsafe partial Result ResourcesGetBuiltinResourceListForType(Resources* resources, BuiltinResourceType type, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ReflectedBuiltinResource* resource_list, nuint* resource_size);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 889, Column 29 in spirv_cross_c.h")]
         [NativeApi(EntryPoint = "spvc_resources_get_builtin_resource_list_for_type")]
-        public unsafe partial Result ResourcesGetBuiltinResourceListForType(Resources* resources, BuiltinResourceType type, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ReflectedBuiltinResource* resource_list, ref nuint resource_size);
+        public unsafe partial Result ResourcesGetBuiltinResourceListForType(Resources* resources, BuiltinResourceType type, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ReflectedBuiltinResource* resource_list, ref nuint resource_size);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 898, Column 22 in spirv_cross_c.h")]
@@ -735,7 +735,7 @@ namespace Silk.NET.SPIRV.Cross
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 900, Column 22 in spirv_cross_c.h")]
         [NativeApi(EntryPoint = "spvc_compiler_set_decoration_string")]
-        public unsafe partial void CompilerSetDecorationString(Compiler* compiler, uint id, Silk.NET.SPIRV.Decoration decoration, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte argument);
+        public unsafe partial void CompilerSetDecorationString(Compiler* compiler, uint id, Silk.NET.SPIRV.Decoration decoration, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte argument);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 900, Column 22 in spirv_cross_c.h")]
@@ -750,7 +750,7 @@ namespace Silk.NET.SPIRV.Cross
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 902, Column 22 in spirv_cross_c.h")]
         [NativeApi(EntryPoint = "spvc_compiler_set_name")]
-        public unsafe partial void CompilerSetName(Compiler* compiler, uint id, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte argument);
+        public unsafe partial void CompilerSetName(Compiler* compiler, uint id, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte argument);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 902, Column 22 in spirv_cross_c.h")]
@@ -770,7 +770,7 @@ namespace Silk.NET.SPIRV.Cross
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 905, Column 22 in spirv_cross_c.h")]
         [NativeApi(EntryPoint = "spvc_compiler_set_member_decoration_string")]
-        public unsafe partial void CompilerSetMemberDecorationString(Compiler* compiler, uint id, uint member_index, Silk.NET.SPIRV.Decoration decoration, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte argument);
+        public unsafe partial void CompilerSetMemberDecorationString(Compiler* compiler, uint id, uint member_index, Silk.NET.SPIRV.Decoration decoration, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte argument);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 905, Column 22 in spirv_cross_c.h")]
@@ -785,7 +785,7 @@ namespace Silk.NET.SPIRV.Cross
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 908, Column 22 in spirv_cross_c.h")]
         [NativeApi(EntryPoint = "spvc_compiler_set_member_name")]
-        public unsafe partial void CompilerSetMemberName(Compiler* compiler, uint id, uint member_index, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte argument);
+        public unsafe partial void CompilerSetMemberName(Compiler* compiler, uint id, uint member_index, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte argument);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 908, Column 22 in spirv_cross_c.h")]
@@ -879,12 +879,12 @@ namespace Silk.NET.SPIRV.Cross
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 931, Column 29 in spirv_cross_c.h")]
         [NativeApi(EntryPoint = "spvc_compiler_get_entry_points")]
-        public unsafe partial Result CompilerGetEntryPoints(Compiler* compiler, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in EntryPoint* entry_points, nuint* num_entry_points);
+        public unsafe partial Result CompilerGetEntryPoints(Compiler* compiler, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in EntryPoint* entry_points, nuint* num_entry_points);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 931, Column 29 in spirv_cross_c.h")]
         [NativeApi(EntryPoint = "spvc_compiler_get_entry_points")]
-        public unsafe partial Result CompilerGetEntryPoints(Compiler* compiler, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in EntryPoint* entry_points, ref nuint num_entry_points);
+        public unsafe partial Result CompilerGetEntryPoints(Compiler* compiler, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in EntryPoint* entry_points, ref nuint num_entry_points);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 934, Column 29 in spirv_cross_c.h")]
@@ -894,7 +894,7 @@ namespace Silk.NET.SPIRV.Cross
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 934, Column 29 in spirv_cross_c.h")]
         [NativeApi(EntryPoint = "spvc_compiler_set_entry_point")]
-        public unsafe partial Result CompilerSetEntryPoint(Compiler* compiler, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte name, Silk.NET.SPIRV.ExecutionModel model);
+        public unsafe partial Result CompilerSetEntryPoint(Compiler* compiler, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte name, Silk.NET.SPIRV.ExecutionModel model);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 934, Column 29 in spirv_cross_c.h")]
@@ -909,7 +909,7 @@ namespace Silk.NET.SPIRV.Cross
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 936, Column 29 in spirv_cross_c.h")]
         [NativeApi(EntryPoint = "spvc_compiler_rename_entry_point")]
-        public unsafe partial Result CompilerRenameEntryPoint(Compiler* compiler, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* old_name, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte new_name, Silk.NET.SPIRV.ExecutionModel model);
+        public unsafe partial Result CompilerRenameEntryPoint(Compiler* compiler, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* old_name, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte new_name, Silk.NET.SPIRV.ExecutionModel model);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 936, Column 29 in spirv_cross_c.h")]
@@ -919,17 +919,17 @@ namespace Silk.NET.SPIRV.Cross
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 936, Column 29 in spirv_cross_c.h")]
         [NativeApi(EntryPoint = "spvc_compiler_rename_entry_point")]
-        public unsafe partial Result CompilerRenameEntryPoint(Compiler* compiler, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte old_name, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* new_name, Silk.NET.SPIRV.ExecutionModel model);
+        public unsafe partial Result CompilerRenameEntryPoint(Compiler* compiler, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte old_name, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* new_name, Silk.NET.SPIRV.ExecutionModel model);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 936, Column 29 in spirv_cross_c.h")]
         [NativeApi(EntryPoint = "spvc_compiler_rename_entry_point")]
-        public unsafe partial Result CompilerRenameEntryPoint(Compiler* compiler, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte old_name, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte new_name, Silk.NET.SPIRV.ExecutionModel model);
+        public unsafe partial Result CompilerRenameEntryPoint(Compiler* compiler, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte old_name, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte new_name, Silk.NET.SPIRV.ExecutionModel model);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 936, Column 29 in spirv_cross_c.h")]
         [NativeApi(EntryPoint = "spvc_compiler_rename_entry_point")]
-        public unsafe partial Result CompilerRenameEntryPoint(Compiler* compiler, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte old_name, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string new_name, Silk.NET.SPIRV.ExecutionModel model);
+        public unsafe partial Result CompilerRenameEntryPoint(Compiler* compiler, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte old_name, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string new_name, Silk.NET.SPIRV.ExecutionModel model);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 936, Column 29 in spirv_cross_c.h")]
@@ -939,7 +939,7 @@ namespace Silk.NET.SPIRV.Cross
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 936, Column 29 in spirv_cross_c.h")]
         [NativeApi(EntryPoint = "spvc_compiler_rename_entry_point")]
-        public unsafe partial Result CompilerRenameEntryPoint(Compiler* compiler, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string old_name, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte new_name, Silk.NET.SPIRV.ExecutionModel model);
+        public unsafe partial Result CompilerRenameEntryPoint(Compiler* compiler, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string old_name, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte new_name, Silk.NET.SPIRV.ExecutionModel model);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 936, Column 29 in spirv_cross_c.h")]
@@ -960,13 +960,13 @@ namespace Silk.NET.SPIRV.Cross
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 938, Column 29 in spirv_cross_c.h")]
         [NativeApi(EntryPoint = "spvc_compiler_get_cleansed_entry_point_name")]
-        public unsafe partial byte* CompilerGetCleansedEntryPointName(Compiler* compiler, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte name, Silk.NET.SPIRV.ExecutionModel model);
+        public unsafe partial byte* CompilerGetCleansedEntryPointName(Compiler* compiler, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte name, Silk.NET.SPIRV.ExecutionModel model);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 938, Column 29 in spirv_cross_c.h")]
         [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
         [NativeApi(EntryPoint = "spvc_compiler_get_cleansed_entry_point_name")]
-        public unsafe partial string CompilerGetCleansedEntryPointNameS(Compiler* compiler, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte name, Silk.NET.SPIRV.ExecutionModel model);
+        public unsafe partial string CompilerGetCleansedEntryPointNameS(Compiler* compiler, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte name, Silk.NET.SPIRV.ExecutionModel model);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 938, Column 29 in spirv_cross_c.h")]
@@ -1007,12 +1007,12 @@ namespace Silk.NET.SPIRV.Cross
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 944, Column 29 in spirv_cross_c.h")]
         [NativeApi(EntryPoint = "spvc_compiler_get_execution_modes")]
-        public unsafe partial Result CompilerGetExecutionModes(Compiler* compiler, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.SPIRV.ExecutionMode* modes, nuint* num_modes);
+        public unsafe partial Result CompilerGetExecutionModes(Compiler* compiler, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.SPIRV.ExecutionMode* modes, nuint* num_modes);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 944, Column 29 in spirv_cross_c.h")]
         [NativeApi(EntryPoint = "spvc_compiler_get_execution_modes")]
-        public unsafe partial Result CompilerGetExecutionModes(Compiler* compiler, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.SPIRV.ExecutionMode* modes, ref nuint num_modes);
+        public unsafe partial Result CompilerGetExecutionModes(Compiler* compiler, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.SPIRV.ExecutionMode* modes, ref nuint num_modes);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 946, Column 26 in spirv_cross_c.h")]
@@ -1227,12 +1227,12 @@ namespace Silk.NET.SPIRV.Cross
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1008, Column 29 in spirv_cross_c.h")]
         [NativeApi(EntryPoint = "spvc_compiler_get_combined_image_samplers")]
-        public unsafe partial Result CompilerGetCombinedImageSamplers(Compiler* compiler, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in CombinedImageSampler* samplers, nuint* num_samplers);
+        public unsafe partial Result CompilerGetCombinedImageSamplers(Compiler* compiler, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in CombinedImageSampler* samplers, nuint* num_samplers);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1008, Column 29 in spirv_cross_c.h")]
         [NativeApi(EntryPoint = "spvc_compiler_get_combined_image_samplers")]
-        public unsafe partial Result CompilerGetCombinedImageSamplers(Compiler* compiler, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in CombinedImageSampler* samplers, ref nuint num_samplers);
+        public unsafe partial Result CompilerGetCombinedImageSamplers(Compiler* compiler, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in CombinedImageSampler* samplers, ref nuint num_samplers);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1016, Column 29 in spirv_cross_c.h")]
@@ -1247,12 +1247,12 @@ namespace Silk.NET.SPIRV.Cross
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1016, Column 29 in spirv_cross_c.h")]
         [NativeApi(EntryPoint = "spvc_compiler_get_specialization_constants")]
-        public unsafe partial Result CompilerGetSpecializationConstants(Compiler* compiler, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in SpecializationConstant* constants, nuint* num_constants);
+        public unsafe partial Result CompilerGetSpecializationConstants(Compiler* compiler, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in SpecializationConstant* constants, nuint* num_constants);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1016, Column 29 in spirv_cross_c.h")]
         [NativeApi(EntryPoint = "spvc_compiler_get_specialization_constants")]
-        public unsafe partial Result CompilerGetSpecializationConstants(Compiler* compiler, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in SpecializationConstant* constants, ref nuint num_constants);
+        public unsafe partial Result CompilerGetSpecializationConstants(Compiler* compiler, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in SpecializationConstant* constants, ref nuint num_constants);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1019, Column 31 in spirv_cross_c.h")]
@@ -1312,12 +1312,12 @@ namespace Silk.NET.SPIRV.Cross
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1031, Column 29 in spirv_cross_c.h")]
         [NativeApi(EntryPoint = "spvc_compiler_get_active_buffer_ranges")]
-        public unsafe partial Result CompilerGetActiveBufferRanges(Compiler* compiler, uint id, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in BufferRange* ranges, nuint* num_ranges);
+        public unsafe partial Result CompilerGetActiveBufferRanges(Compiler* compiler, uint id, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in BufferRange* ranges, nuint* num_ranges);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1031, Column 29 in spirv_cross_c.h")]
         [NativeApi(EntryPoint = "spvc_compiler_get_active_buffer_ranges")]
-        public unsafe partial Result CompilerGetActiveBufferRanges(Compiler* compiler, uint id, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in BufferRange* ranges, ref nuint num_ranges);
+        public unsafe partial Result CompilerGetActiveBufferRanges(Compiler* compiler, uint id, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in BufferRange* ranges, ref nuint num_ranges);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1042, Column 23 in spirv_cross_c.h")]
@@ -1377,12 +1377,12 @@ namespace Silk.NET.SPIRV.Cross
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1051, Column 22 in spirv_cross_c.h")]
         [NativeApi(EntryPoint = "spvc_constant_get_subconstants")]
-        public unsafe partial void ConstantGetSubconstants(Constant* constant, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint* constituents, nuint* count);
+        public unsafe partial void ConstantGetSubconstants(Constant* constant, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in uint* constituents, nuint* count);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1051, Column 22 in spirv_cross_c.h")]
         [NativeApi(EntryPoint = "spvc_constant_get_subconstants")]
-        public unsafe partial void ConstantGetSubconstants(Constant* constant, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint* constituents, ref nuint count);
+        public unsafe partial void ConstantGetSubconstants(Constant* constant, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in uint* constituents, ref nuint count);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1052, Column 30 in spirv_cross_c.h")]
@@ -1472,12 +1472,12 @@ namespace Silk.NET.SPIRV.Cross
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1080, Column 29 in spirv_cross_c.h")]
         [NativeApi(EntryPoint = "spvc_compiler_get_declared_capabilities")]
-        public unsafe partial Result CompilerGetDeclaredCapabilities(Compiler* compiler, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.SPIRV.Capability* capabilities, nuint* num_capabilities);
+        public unsafe partial Result CompilerGetDeclaredCapabilities(Compiler* compiler, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.SPIRV.Capability* capabilities, nuint* num_capabilities);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1080, Column 29 in spirv_cross_c.h")]
         [NativeApi(EntryPoint = "spvc_compiler_get_declared_capabilities")]
-        public unsafe partial Result CompilerGetDeclaredCapabilities(Compiler* compiler, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.SPIRV.Capability* capabilities, ref nuint num_capabilities);
+        public unsafe partial Result CompilerGetDeclaredCapabilities(Compiler* compiler, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.SPIRV.Capability* capabilities, ref nuint num_capabilities);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1083, Column 29 in spirv_cross_c.h")]
@@ -1492,12 +1492,12 @@ namespace Silk.NET.SPIRV.Cross
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1083, Column 29 in spirv_cross_c.h")]
         [NativeApi(EntryPoint = "spvc_compiler_get_declared_extensions")]
-        public unsafe partial Result CompilerGetDeclaredExtensions(Compiler* compiler, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte** extensions, nuint* num_extensions);
+        public unsafe partial Result CompilerGetDeclaredExtensions(Compiler* compiler, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte** extensions, nuint* num_extensions);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1083, Column 29 in spirv_cross_c.h")]
         [NativeApi(EntryPoint = "spvc_compiler_get_declared_extensions")]
-        public unsafe partial Result CompilerGetDeclaredExtensions(Compiler* compiler, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte** extensions, ref nuint num_extensions);
+        public unsafe partial Result CompilerGetDeclaredExtensions(Compiler* compiler, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte** extensions, ref nuint num_extensions);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1086, Column 29 in spirv_cross_c.h")]
@@ -1523,12 +1523,12 @@ namespace Silk.NET.SPIRV.Cross
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1087, Column 29 in spirv_cross_c.h")]
         [NativeApi(EntryPoint = "spvc_compiler_get_buffer_block_decorations")]
-        public unsafe partial Result CompilerGetBufferBlockDecorations(Compiler* compiler, uint id, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.SPIRV.Decoration* decorations, nuint* num_decorations);
+        public unsafe partial Result CompilerGetBufferBlockDecorations(Compiler* compiler, uint id, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.SPIRV.Decoration* decorations, nuint* num_decorations);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1087, Column 29 in spirv_cross_c.h")]
         [NativeApi(EntryPoint = "spvc_compiler_get_buffer_block_decorations")]
-        public unsafe partial Result CompilerGetBufferBlockDecorations(Compiler* compiler, uint id, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.SPIRV.Decoration* decorations, ref nuint num_decorations);
+        public unsafe partial Result CompilerGetBufferBlockDecorations(Compiler* compiler, uint id, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.SPIRV.Decoration* decorations, ref nuint num_decorations);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 782, Column 29 in spirv_cross_c.h")]

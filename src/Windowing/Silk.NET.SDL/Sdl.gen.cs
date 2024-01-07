@@ -1211,13 +1211,13 @@ namespace Silk.NET.SDL
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 482, Column 31 in SDL_stdinc.h")]
         [NativeApi(EntryPoint = "SDL_getenv")]
-        public unsafe partial byte* Getenv([Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte name);
+        public unsafe partial byte* Getenv([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte name);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 482, Column 31 in SDL_stdinc.h")]
         [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
         [NativeApi(EntryPoint = "SDL_getenv")]
-        public partial string GetenvS([Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte name);
+        public partial string GetenvS([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte name);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 482, Column 31 in SDL_stdinc.h")]
@@ -1238,7 +1238,7 @@ namespace Silk.NET.SDL
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 483, Column 29 in SDL_stdinc.h")]
         [NativeApi(EntryPoint = "SDL_setenv")]
-        public unsafe partial int Setenv([Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* name, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte value, int overwrite);
+        public unsafe partial int Setenv([Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* name, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte value, int overwrite);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 483, Column 29 in SDL_stdinc.h")]
@@ -1248,17 +1248,17 @@ namespace Silk.NET.SDL
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 483, Column 29 in SDL_stdinc.h")]
         [NativeApi(EntryPoint = "SDL_setenv")]
-        public unsafe partial int Setenv([Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte name, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* value, int overwrite);
+        public unsafe partial int Setenv([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte name, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* value, int overwrite);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 483, Column 29 in SDL_stdinc.h")]
         [NativeApi(EntryPoint = "SDL_setenv")]
-        public partial int Setenv([Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte name, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte value, int overwrite);
+        public partial int Setenv([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte name, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte value, int overwrite);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 483, Column 29 in SDL_stdinc.h")]
         [NativeApi(EntryPoint = "SDL_setenv")]
-        public partial int Setenv([Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte name, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string value, int overwrite);
+        public partial int Setenv([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte name, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string value, int overwrite);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 483, Column 29 in SDL_stdinc.h")]
@@ -1268,7 +1268,7 @@ namespace Silk.NET.SDL
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 483, Column 29 in SDL_stdinc.h")]
         [NativeApi(EntryPoint = "SDL_setenv")]
-        public partial int Setenv([Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string name, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte value, int overwrite);
+        public partial int Setenv([Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string name, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte value, int overwrite);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 483, Column 29 in SDL_stdinc.h")]
@@ -1293,17 +1293,17 @@ namespace Silk.NET.SDL
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 486, Column 32 in SDL_stdinc.h")]
         [NativeApi(EntryPoint = "SDL_bsearch")]
-        public unsafe partial void* Bsearch<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] void* key, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in T0 @base, nuint nmemb, nuint size, PfnVvVvI compare) where T0 : unmanaged;
+        public unsafe partial void* Bsearch<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] void* key, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in T0 @base, nuint nmemb, nuint size, PfnVvVvI compare) where T0 : unmanaged;
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 486, Column 32 in SDL_stdinc.h")]
         [NativeApi(EntryPoint = "SDL_bsearch")]
-        public unsafe partial void* Bsearch<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] in T0 key, [Flow(Silk.NET.Core.Native.FlowDirection.In)] void* @base, nuint nmemb, nuint size, PfnVvVvI compare) where T0 : unmanaged;
+        public unsafe partial void* Bsearch<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in T0 key, [Flow(Silk.NET.Core.Native.FlowDirection.In)] void* @base, nuint nmemb, nuint size, PfnVvVvI compare) where T0 : unmanaged;
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 486, Column 32 in SDL_stdinc.h")]
         [NativeApi(EntryPoint = "SDL_bsearch")]
-        public unsafe partial void* Bsearch<T0, T1>([Flow(Silk.NET.Core.Native.FlowDirection.In)] in T0 key, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in T1 @base, nuint nmemb, nuint size, PfnVvVvI compare) where T0 : unmanaged where T1 : unmanaged;
+        public unsafe partial void* Bsearch<T0, T1>([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in T0 key, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in T1 @base, nuint nmemb, nuint size, PfnVvVvI compare) where T0 : unmanaged where T1 : unmanaged;
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 488, Column 29 in SDL_stdinc.h")]
@@ -1388,7 +1388,7 @@ namespace Silk.NET.SDL
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 510, Column 32 in SDL_stdinc.h")]
         [NativeApi(EntryPoint = "SDL_crc16")]
-        public partial ushort Crc16<T0>(ushort crc, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in T0 data, nuint len) where T0 : unmanaged;
+        public partial ushort Crc16<T0>(ushort crc, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in T0 data, nuint len) where T0 : unmanaged;
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 511, Column 32 in SDL_stdinc.h")]
@@ -1398,7 +1398,7 @@ namespace Silk.NET.SDL
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 511, Column 32 in SDL_stdinc.h")]
         [NativeApi(EntryPoint = "SDL_crc32")]
-        public partial uint Crc32<T0>(uint crc, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in T0 data, nuint len) where T0 : unmanaged;
+        public partial uint Crc32<T0>(uint crc, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in T0 data, nuint len) where T0 : unmanaged;
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 513, Column 31 in SDL_stdinc.h")]
@@ -1418,7 +1418,7 @@ namespace Silk.NET.SDL
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 553, Column 31 in SDL_stdinc.h")]
         [NativeApi(EntryPoint = "SDL_memcpy")]
-        public unsafe partial void* Memcpy<T0>(void* dst, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in T0 src, nuint len) where T0 : unmanaged;
+        public unsafe partial void* Memcpy<T0>(void* dst, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in T0 src, nuint len) where T0 : unmanaged;
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 553, Column 31 in SDL_stdinc.h")]
@@ -1428,7 +1428,7 @@ namespace Silk.NET.SDL
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 553, Column 31 in SDL_stdinc.h")]
         [NativeApi(EntryPoint = "SDL_memcpy")]
-        public unsafe partial void* Memcpy<T0, T1>(ref T0 dst, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in T1 src, nuint len) where T0 : unmanaged where T1 : unmanaged;
+        public unsafe partial void* Memcpy<T0, T1>(ref T0 dst, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in T1 src, nuint len) where T0 : unmanaged where T1 : unmanaged;
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 555, Column 31 in SDL_stdinc.h")]
@@ -1438,7 +1438,7 @@ namespace Silk.NET.SDL
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 555, Column 31 in SDL_stdinc.h")]
         [NativeApi(EntryPoint = "SDL_memmove")]
-        public unsafe partial void* Memmove<T0>(void* dst, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in T0 src, nuint len) where T0 : unmanaged;
+        public unsafe partial void* Memmove<T0>(void* dst, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in T0 src, nuint len) where T0 : unmanaged;
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 555, Column 31 in SDL_stdinc.h")]
@@ -1448,7 +1448,7 @@ namespace Silk.NET.SDL
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 555, Column 31 in SDL_stdinc.h")]
         [NativeApi(EntryPoint = "SDL_memmove")]
-        public unsafe partial void* Memmove<T0, T1>(ref T0 dst, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in T1 src, nuint len) where T0 : unmanaged where T1 : unmanaged;
+        public unsafe partial void* Memmove<T0, T1>(ref T0 dst, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in T1 src, nuint len) where T0 : unmanaged where T1 : unmanaged;
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 556, Column 29 in SDL_stdinc.h")]
@@ -1458,17 +1458,17 @@ namespace Silk.NET.SDL
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 556, Column 29 in SDL_stdinc.h")]
         [NativeApi(EntryPoint = "SDL_memcmp")]
-        public unsafe partial int Memcmp<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] void* s1, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in T0 s2, nuint len) where T0 : unmanaged;
+        public unsafe partial int Memcmp<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] void* s1, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in T0 s2, nuint len) where T0 : unmanaged;
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 556, Column 29 in SDL_stdinc.h")]
         [NativeApi(EntryPoint = "SDL_memcmp")]
-        public unsafe partial int Memcmp<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] in T0 s1, [Flow(Silk.NET.Core.Native.FlowDirection.In)] void* s2, nuint len) where T0 : unmanaged;
+        public unsafe partial int Memcmp<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in T0 s1, [Flow(Silk.NET.Core.Native.FlowDirection.In)] void* s2, nuint len) where T0 : unmanaged;
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 556, Column 29 in SDL_stdinc.h")]
         [NativeApi(EntryPoint = "SDL_memcmp")]
-        public partial int Memcmp<T0, T1>([Flow(Silk.NET.Core.Native.FlowDirection.In)] in T0 s1, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in T1 s2, nuint len) where T0 : unmanaged where T1 : unmanaged;
+        public partial int Memcmp<T0, T1>([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in T0 s1, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in T1 s2, nuint len) where T0 : unmanaged where T1 : unmanaged;
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 558, Column 32 in SDL_stdinc.h")]
@@ -1478,7 +1478,7 @@ namespace Silk.NET.SDL
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 558, Column 32 in SDL_stdinc.h")]
         [NativeApi(EntryPoint = "SDL_wcslen")]
-        public partial nuint Wcslen([Flow(Silk.NET.Core.Native.FlowDirection.In)] in char wstr);
+        public partial nuint Wcslen([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char wstr);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 558, Column 32 in SDL_stdinc.h")]
@@ -1493,7 +1493,7 @@ namespace Silk.NET.SDL
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 559, Column 32 in SDL_stdinc.h")]
         [NativeApi(EntryPoint = "SDL_wcslcpy")]
-        public unsafe partial nuint Wcslcpy(char* dst, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in char src, nuint maxlen);
+        public unsafe partial nuint Wcslcpy(char* dst, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char src, nuint maxlen);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 559, Column 32 in SDL_stdinc.h")]
@@ -1508,7 +1508,7 @@ namespace Silk.NET.SDL
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 559, Column 32 in SDL_stdinc.h")]
         [NativeApi(EntryPoint = "SDL_wcslcpy")]
-        public partial nuint Wcslcpy(ref char dst, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in char src, nuint maxlen);
+        public partial nuint Wcslcpy(ref char dst, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char src, nuint maxlen);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 559, Column 32 in SDL_stdinc.h")]
@@ -1523,7 +1523,7 @@ namespace Silk.NET.SDL
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 559, Column 32 in SDL_stdinc.h")]
         [NativeApi(EntryPoint = "SDL_wcslcpy")]
-        public partial nuint Wcslcpy([UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string dst, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in char src, nuint maxlen);
+        public partial nuint Wcslcpy([UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string dst, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char src, nuint maxlen);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 559, Column 32 in SDL_stdinc.h")]
@@ -1538,7 +1538,7 @@ namespace Silk.NET.SDL
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 560, Column 32 in SDL_stdinc.h")]
         [NativeApi(EntryPoint = "SDL_wcslcat")]
-        public unsafe partial nuint Wcslcat(char* dst, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in char src, nuint maxlen);
+        public unsafe partial nuint Wcslcat(char* dst, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char src, nuint maxlen);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 560, Column 32 in SDL_stdinc.h")]
@@ -1553,7 +1553,7 @@ namespace Silk.NET.SDL
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 560, Column 32 in SDL_stdinc.h")]
         [NativeApi(EntryPoint = "SDL_wcslcat")]
-        public partial nuint Wcslcat(ref char dst, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in char src, nuint maxlen);
+        public partial nuint Wcslcat(ref char dst, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char src, nuint maxlen);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 560, Column 32 in SDL_stdinc.h")]
@@ -1568,7 +1568,7 @@ namespace Silk.NET.SDL
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 560, Column 32 in SDL_stdinc.h")]
         [NativeApi(EntryPoint = "SDL_wcslcat")]
-        public partial nuint Wcslcat([UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string dst, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in char src, nuint maxlen);
+        public partial nuint Wcslcat([UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string dst, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char src, nuint maxlen);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 560, Column 32 in SDL_stdinc.h")]
@@ -1589,13 +1589,13 @@ namespace Silk.NET.SDL
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 561, Column 34 in SDL_stdinc.h")]
         [NativeApi(EntryPoint = "SDL_wcsdup")]
-        public unsafe partial char* Wcsdup([Flow(Silk.NET.Core.Native.FlowDirection.In)] in char wstr);
+        public unsafe partial char* Wcsdup([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char wstr);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 561, Column 34 in SDL_stdinc.h")]
         [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
         [NativeApi(EntryPoint = "SDL_wcsdup")]
-        public partial string WcsdupS([Flow(Silk.NET.Core.Native.FlowDirection.In)] in char wstr);
+        public partial string WcsdupS([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char wstr);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 561, Column 34 in SDL_stdinc.h")]
@@ -1622,13 +1622,13 @@ namespace Silk.NET.SDL
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 562, Column 34 in SDL_stdinc.h")]
         [NativeApi(EntryPoint = "SDL_wcsstr")]
-        public unsafe partial char* Wcsstr([Flow(Silk.NET.Core.Native.FlowDirection.In)] char* haystack, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in char needle);
+        public unsafe partial char* Wcsstr([Flow(Silk.NET.Core.Native.FlowDirection.In)] char* haystack, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char needle);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 562, Column 34 in SDL_stdinc.h")]
         [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
         [NativeApi(EntryPoint = "SDL_wcsstr")]
-        public unsafe partial string WcsstrS([Flow(Silk.NET.Core.Native.FlowDirection.In)] char* haystack, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in char needle);
+        public unsafe partial string WcsstrS([Flow(Silk.NET.Core.Native.FlowDirection.In)] char* haystack, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char needle);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 562, Column 34 in SDL_stdinc.h")]
@@ -1644,35 +1644,35 @@ namespace Silk.NET.SDL
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 562, Column 34 in SDL_stdinc.h")]
         [NativeApi(EntryPoint = "SDL_wcsstr")]
-        public unsafe partial char* Wcsstr([Flow(Silk.NET.Core.Native.FlowDirection.In)] in char haystack, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* needle);
+        public unsafe partial char* Wcsstr([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char haystack, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* needle);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 562, Column 34 in SDL_stdinc.h")]
         [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
         [NativeApi(EntryPoint = "SDL_wcsstr")]
-        public unsafe partial string WcsstrS([Flow(Silk.NET.Core.Native.FlowDirection.In)] in char haystack, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* needle);
+        public unsafe partial string WcsstrS([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char haystack, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* needle);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 562, Column 34 in SDL_stdinc.h")]
         [NativeApi(EntryPoint = "SDL_wcsstr")]
-        public unsafe partial char* Wcsstr([Flow(Silk.NET.Core.Native.FlowDirection.In)] in char haystack, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in char needle);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 562, Column 34 in SDL_stdinc.h")]
-        [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
-        [NativeApi(EntryPoint = "SDL_wcsstr")]
-        public partial string WcsstrS([Flow(Silk.NET.Core.Native.FlowDirection.In)] in char haystack, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in char needle);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 562, Column 34 in SDL_stdinc.h")]
-        [NativeApi(EntryPoint = "SDL_wcsstr")]
-        public unsafe partial char* Wcsstr([Flow(Silk.NET.Core.Native.FlowDirection.In)] in char haystack, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string needle);
+        public unsafe partial char* Wcsstr([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char haystack, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char needle);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 562, Column 34 in SDL_stdinc.h")]
         [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
         [NativeApi(EntryPoint = "SDL_wcsstr")]
-        public partial string WcsstrS([Flow(Silk.NET.Core.Native.FlowDirection.In)] in char haystack, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string needle);
+        public partial string WcsstrS([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char haystack, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char needle);
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 562, Column 34 in SDL_stdinc.h")]
+        [NativeApi(EntryPoint = "SDL_wcsstr")]
+        public unsafe partial char* Wcsstr([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char haystack, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string needle);
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 562, Column 34 in SDL_stdinc.h")]
+        [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
+        [NativeApi(EntryPoint = "SDL_wcsstr")]
+        public partial string WcsstrS([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char haystack, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string needle);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 562, Column 34 in SDL_stdinc.h")]
@@ -1688,13 +1688,13 @@ namespace Silk.NET.SDL
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 562, Column 34 in SDL_stdinc.h")]
         [NativeApi(EntryPoint = "SDL_wcsstr")]
-        public unsafe partial char* Wcsstr([Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string haystack, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in char needle);
+        public unsafe partial char* Wcsstr([Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string haystack, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char needle);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 562, Column 34 in SDL_stdinc.h")]
         [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
         [NativeApi(EntryPoint = "SDL_wcsstr")]
-        public partial string WcsstrS([Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string haystack, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in char needle);
+        public partial string WcsstrS([Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string haystack, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char needle);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 562, Column 34 in SDL_stdinc.h")]
@@ -1715,7 +1715,7 @@ namespace Silk.NET.SDL
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 564, Column 29 in SDL_stdinc.h")]
         [NativeApi(EntryPoint = "SDL_wcscmp")]
-        public unsafe partial int Wcscmp([Flow(Silk.NET.Core.Native.FlowDirection.In)] char* str1, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in char str2);
+        public unsafe partial int Wcscmp([Flow(Silk.NET.Core.Native.FlowDirection.In)] char* str1, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char str2);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 564, Column 29 in SDL_stdinc.h")]
@@ -1725,17 +1725,17 @@ namespace Silk.NET.SDL
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 564, Column 29 in SDL_stdinc.h")]
         [NativeApi(EntryPoint = "SDL_wcscmp")]
-        public unsafe partial int Wcscmp([Flow(Silk.NET.Core.Native.FlowDirection.In)] in char str1, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* str2);
+        public unsafe partial int Wcscmp([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char str1, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* str2);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 564, Column 29 in SDL_stdinc.h")]
         [NativeApi(EntryPoint = "SDL_wcscmp")]
-        public partial int Wcscmp([Flow(Silk.NET.Core.Native.FlowDirection.In)] in char str1, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in char str2);
+        public partial int Wcscmp([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char str1, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char str2);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 564, Column 29 in SDL_stdinc.h")]
         [NativeApi(EntryPoint = "SDL_wcscmp")]
-        public partial int Wcscmp([Flow(Silk.NET.Core.Native.FlowDirection.In)] in char str1, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string str2);
+        public partial int Wcscmp([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char str1, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string str2);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 564, Column 29 in SDL_stdinc.h")]
@@ -1745,7 +1745,7 @@ namespace Silk.NET.SDL
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 564, Column 29 in SDL_stdinc.h")]
         [NativeApi(EntryPoint = "SDL_wcscmp")]
-        public partial int Wcscmp([Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string str1, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in char str2);
+        public partial int Wcscmp([Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string str1, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char str2);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 564, Column 29 in SDL_stdinc.h")]
@@ -1760,7 +1760,7 @@ namespace Silk.NET.SDL
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 565, Column 29 in SDL_stdinc.h")]
         [NativeApi(EntryPoint = "SDL_wcsncmp")]
-        public unsafe partial int Wcsncmp([Flow(Silk.NET.Core.Native.FlowDirection.In)] char* str1, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in char str2, nuint maxlen);
+        public unsafe partial int Wcsncmp([Flow(Silk.NET.Core.Native.FlowDirection.In)] char* str1, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char str2, nuint maxlen);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 565, Column 29 in SDL_stdinc.h")]
@@ -1770,17 +1770,17 @@ namespace Silk.NET.SDL
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 565, Column 29 in SDL_stdinc.h")]
         [NativeApi(EntryPoint = "SDL_wcsncmp")]
-        public unsafe partial int Wcsncmp([Flow(Silk.NET.Core.Native.FlowDirection.In)] in char str1, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* str2, nuint maxlen);
+        public unsafe partial int Wcsncmp([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char str1, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* str2, nuint maxlen);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 565, Column 29 in SDL_stdinc.h")]
         [NativeApi(EntryPoint = "SDL_wcsncmp")]
-        public partial int Wcsncmp([Flow(Silk.NET.Core.Native.FlowDirection.In)] in char str1, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in char str2, nuint maxlen);
+        public partial int Wcsncmp([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char str1, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char str2, nuint maxlen);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 565, Column 29 in SDL_stdinc.h")]
         [NativeApi(EntryPoint = "SDL_wcsncmp")]
-        public partial int Wcsncmp([Flow(Silk.NET.Core.Native.FlowDirection.In)] in char str1, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string str2, nuint maxlen);
+        public partial int Wcsncmp([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char str1, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string str2, nuint maxlen);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 565, Column 29 in SDL_stdinc.h")]
@@ -1790,7 +1790,7 @@ namespace Silk.NET.SDL
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 565, Column 29 in SDL_stdinc.h")]
         [NativeApi(EntryPoint = "SDL_wcsncmp")]
-        public partial int Wcsncmp([Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string str1, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in char str2, nuint maxlen);
+        public partial int Wcsncmp([Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string str1, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char str2, nuint maxlen);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 565, Column 29 in SDL_stdinc.h")]
@@ -1805,7 +1805,7 @@ namespace Silk.NET.SDL
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 566, Column 29 in SDL_stdinc.h")]
         [NativeApi(EntryPoint = "SDL_wcscasecmp")]
-        public unsafe partial int Wcscasecmp([Flow(Silk.NET.Core.Native.FlowDirection.In)] char* str1, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in char str2);
+        public unsafe partial int Wcscasecmp([Flow(Silk.NET.Core.Native.FlowDirection.In)] char* str1, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char str2);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 566, Column 29 in SDL_stdinc.h")]
@@ -1815,17 +1815,17 @@ namespace Silk.NET.SDL
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 566, Column 29 in SDL_stdinc.h")]
         [NativeApi(EntryPoint = "SDL_wcscasecmp")]
-        public unsafe partial int Wcscasecmp([Flow(Silk.NET.Core.Native.FlowDirection.In)] in char str1, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* str2);
+        public unsafe partial int Wcscasecmp([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char str1, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* str2);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 566, Column 29 in SDL_stdinc.h")]
         [NativeApi(EntryPoint = "SDL_wcscasecmp")]
-        public partial int Wcscasecmp([Flow(Silk.NET.Core.Native.FlowDirection.In)] in char str1, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in char str2);
+        public partial int Wcscasecmp([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char str1, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char str2);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 566, Column 29 in SDL_stdinc.h")]
         [NativeApi(EntryPoint = "SDL_wcscasecmp")]
-        public partial int Wcscasecmp([Flow(Silk.NET.Core.Native.FlowDirection.In)] in char str1, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string str2);
+        public partial int Wcscasecmp([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char str1, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string str2);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 566, Column 29 in SDL_stdinc.h")]
@@ -1835,7 +1835,7 @@ namespace Silk.NET.SDL
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 566, Column 29 in SDL_stdinc.h")]
         [NativeApi(EntryPoint = "SDL_wcscasecmp")]
-        public partial int Wcscasecmp([Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string str1, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in char str2);
+        public partial int Wcscasecmp([Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string str1, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char str2);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 566, Column 29 in SDL_stdinc.h")]
@@ -1850,7 +1850,7 @@ namespace Silk.NET.SDL
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 567, Column 29 in SDL_stdinc.h")]
         [NativeApi(EntryPoint = "SDL_wcsncasecmp")]
-        public unsafe partial int Wcsncasecmp([Flow(Silk.NET.Core.Native.FlowDirection.In)] char* str1, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in char str2, nuint len);
+        public unsafe partial int Wcsncasecmp([Flow(Silk.NET.Core.Native.FlowDirection.In)] char* str1, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char str2, nuint len);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 567, Column 29 in SDL_stdinc.h")]
@@ -1860,17 +1860,17 @@ namespace Silk.NET.SDL
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 567, Column 29 in SDL_stdinc.h")]
         [NativeApi(EntryPoint = "SDL_wcsncasecmp")]
-        public unsafe partial int Wcsncasecmp([Flow(Silk.NET.Core.Native.FlowDirection.In)] in char str1, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* str2, nuint len);
+        public unsafe partial int Wcsncasecmp([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char str1, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* str2, nuint len);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 567, Column 29 in SDL_stdinc.h")]
         [NativeApi(EntryPoint = "SDL_wcsncasecmp")]
-        public partial int Wcsncasecmp([Flow(Silk.NET.Core.Native.FlowDirection.In)] in char str1, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in char str2, nuint len);
+        public partial int Wcsncasecmp([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char str1, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char str2, nuint len);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 567, Column 29 in SDL_stdinc.h")]
         [NativeApi(EntryPoint = "SDL_wcsncasecmp")]
-        public partial int Wcsncasecmp([Flow(Silk.NET.Core.Native.FlowDirection.In)] in char str1, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string str2, nuint len);
+        public partial int Wcsncasecmp([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char str1, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string str2, nuint len);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 567, Column 29 in SDL_stdinc.h")]
@@ -1880,7 +1880,7 @@ namespace Silk.NET.SDL
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 567, Column 29 in SDL_stdinc.h")]
         [NativeApi(EntryPoint = "SDL_wcsncasecmp")]
-        public partial int Wcsncasecmp([Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string str1, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in char str2, nuint len);
+        public partial int Wcsncasecmp([Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string str1, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char str2, nuint len);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 567, Column 29 in SDL_stdinc.h")]
@@ -1895,7 +1895,7 @@ namespace Silk.NET.SDL
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 569, Column 32 in SDL_stdinc.h")]
         [NativeApi(EntryPoint = "SDL_strlen")]
-        public partial nuint Strlen([Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte str);
+        public partial nuint Strlen([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte str);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 569, Column 32 in SDL_stdinc.h")]
@@ -1910,7 +1910,7 @@ namespace Silk.NET.SDL
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 570, Column 32 in SDL_stdinc.h")]
         [NativeApi(EntryPoint = "SDL_strlcpy")]
-        public unsafe partial nuint Strlcpy(byte* dst, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte src, nuint maxlen);
+        public unsafe partial nuint Strlcpy(byte* dst, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte src, nuint maxlen);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 570, Column 32 in SDL_stdinc.h")]
@@ -1925,7 +1925,7 @@ namespace Silk.NET.SDL
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 570, Column 32 in SDL_stdinc.h")]
         [NativeApi(EntryPoint = "SDL_strlcpy")]
-        public partial nuint Strlcpy(ref byte dst, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte src, nuint maxlen);
+        public partial nuint Strlcpy(ref byte dst, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte src, nuint maxlen);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 570, Column 32 in SDL_stdinc.h")]
@@ -1940,7 +1940,7 @@ namespace Silk.NET.SDL
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 570, Column 32 in SDL_stdinc.h")]
         [NativeApi(EntryPoint = "SDL_strlcpy")]
-        public partial nuint Strlcpy([UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string dst, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte src, nuint maxlen);
+        public partial nuint Strlcpy([UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string dst, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte src, nuint maxlen);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 570, Column 32 in SDL_stdinc.h")]
@@ -1955,7 +1955,7 @@ namespace Silk.NET.SDL
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 571, Column 32 in SDL_stdinc.h")]
         [NativeApi(EntryPoint = "SDL_utf8strlcpy")]
-        public unsafe partial nuint Utf8strlcpy(byte* dst, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte src, nuint dst_bytes);
+        public unsafe partial nuint Utf8strlcpy(byte* dst, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte src, nuint dst_bytes);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 571, Column 32 in SDL_stdinc.h")]
@@ -1970,7 +1970,7 @@ namespace Silk.NET.SDL
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 571, Column 32 in SDL_stdinc.h")]
         [NativeApi(EntryPoint = "SDL_utf8strlcpy")]
-        public partial nuint Utf8strlcpy(ref byte dst, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte src, nuint dst_bytes);
+        public partial nuint Utf8strlcpy(ref byte dst, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte src, nuint dst_bytes);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 571, Column 32 in SDL_stdinc.h")]
@@ -1985,7 +1985,7 @@ namespace Silk.NET.SDL
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 571, Column 32 in SDL_stdinc.h")]
         [NativeApi(EntryPoint = "SDL_utf8strlcpy")]
-        public partial nuint Utf8strlcpy([UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string dst, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte src, nuint dst_bytes);
+        public partial nuint Utf8strlcpy([UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string dst, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte src, nuint dst_bytes);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 571, Column 32 in SDL_stdinc.h")]
@@ -2000,7 +2000,7 @@ namespace Silk.NET.SDL
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 572, Column 32 in SDL_stdinc.h")]
         [NativeApi(EntryPoint = "SDL_strlcat")]
-        public unsafe partial nuint Strlcat(byte* dst, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte src, nuint maxlen);
+        public unsafe partial nuint Strlcat(byte* dst, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte src, nuint maxlen);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 572, Column 32 in SDL_stdinc.h")]
@@ -2015,7 +2015,7 @@ namespace Silk.NET.SDL
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 572, Column 32 in SDL_stdinc.h")]
         [NativeApi(EntryPoint = "SDL_strlcat")]
-        public partial nuint Strlcat(ref byte dst, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte src, nuint maxlen);
+        public partial nuint Strlcat(ref byte dst, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte src, nuint maxlen);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 572, Column 32 in SDL_stdinc.h")]
@@ -2030,7 +2030,7 @@ namespace Silk.NET.SDL
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 572, Column 32 in SDL_stdinc.h")]
         [NativeApi(EntryPoint = "SDL_strlcat")]
-        public partial nuint Strlcat([UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string dst, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte src, nuint maxlen);
+        public partial nuint Strlcat([UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string dst, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte src, nuint maxlen);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 572, Column 32 in SDL_stdinc.h")]
@@ -2051,13 +2051,13 @@ namespace Silk.NET.SDL
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 573, Column 31 in SDL_stdinc.h")]
         [NativeApi(EntryPoint = "SDL_strdup")]
-        public unsafe partial byte* Strdup([Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte str);
+        public unsafe partial byte* Strdup([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte str);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 573, Column 31 in SDL_stdinc.h")]
         [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
         [NativeApi(EntryPoint = "SDL_strdup")]
-        public partial string StrdupS([Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte str);
+        public partial string StrdupS([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte str);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 573, Column 31 in SDL_stdinc.h")]
@@ -2183,13 +2183,13 @@ namespace Silk.NET.SDL
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 577, Column 31 in SDL_stdinc.h")]
         [NativeApi(EntryPoint = "SDL_strchr")]
-        public unsafe partial byte* Strchr([Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte str, int c);
+        public unsafe partial byte* Strchr([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte str, int c);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 577, Column 31 in SDL_stdinc.h")]
         [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
         [NativeApi(EntryPoint = "SDL_strchr")]
-        public partial string StrchrS([Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte str, int c);
+        public partial string StrchrS([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte str, int c);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 577, Column 31 in SDL_stdinc.h")]
@@ -2216,13 +2216,13 @@ namespace Silk.NET.SDL
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 578, Column 31 in SDL_stdinc.h")]
         [NativeApi(EntryPoint = "SDL_strrchr")]
-        public unsafe partial byte* Strrchr([Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte str, int c);
+        public unsafe partial byte* Strrchr([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte str, int c);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 578, Column 31 in SDL_stdinc.h")]
         [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
         [NativeApi(EntryPoint = "SDL_strrchr")]
-        public partial string StrrchrS([Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte str, int c);
+        public partial string StrrchrS([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte str, int c);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 578, Column 31 in SDL_stdinc.h")]
@@ -2249,13 +2249,13 @@ namespace Silk.NET.SDL
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 579, Column 31 in SDL_stdinc.h")]
         [NativeApi(EntryPoint = "SDL_strstr")]
-        public unsafe partial byte* Strstr([Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* haystack, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte needle);
+        public unsafe partial byte* Strstr([Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* haystack, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte needle);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 579, Column 31 in SDL_stdinc.h")]
         [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
         [NativeApi(EntryPoint = "SDL_strstr")]
-        public unsafe partial string StrstrS([Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* haystack, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte needle);
+        public unsafe partial string StrstrS([Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* haystack, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte needle);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 579, Column 31 in SDL_stdinc.h")]
@@ -2271,35 +2271,35 @@ namespace Silk.NET.SDL
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 579, Column 31 in SDL_stdinc.h")]
         [NativeApi(EntryPoint = "SDL_strstr")]
-        public unsafe partial byte* Strstr([Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte haystack, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* needle);
+        public unsafe partial byte* Strstr([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte haystack, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* needle);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 579, Column 31 in SDL_stdinc.h")]
         [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
         [NativeApi(EntryPoint = "SDL_strstr")]
-        public unsafe partial string StrstrS([Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte haystack, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* needle);
+        public unsafe partial string StrstrS([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte haystack, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* needle);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 579, Column 31 in SDL_stdinc.h")]
         [NativeApi(EntryPoint = "SDL_strstr")]
-        public unsafe partial byte* Strstr([Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte haystack, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte needle);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 579, Column 31 in SDL_stdinc.h")]
-        [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
-        [NativeApi(EntryPoint = "SDL_strstr")]
-        public partial string StrstrS([Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte haystack, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte needle);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 579, Column 31 in SDL_stdinc.h")]
-        [NativeApi(EntryPoint = "SDL_strstr")]
-        public unsafe partial byte* Strstr([Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte haystack, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string needle);
+        public unsafe partial byte* Strstr([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte haystack, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte needle);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 579, Column 31 in SDL_stdinc.h")]
         [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
         [NativeApi(EntryPoint = "SDL_strstr")]
-        public partial string StrstrS([Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte haystack, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string needle);
+        public partial string StrstrS([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte haystack, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte needle);
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 579, Column 31 in SDL_stdinc.h")]
+        [NativeApi(EntryPoint = "SDL_strstr")]
+        public unsafe partial byte* Strstr([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte haystack, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string needle);
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 579, Column 31 in SDL_stdinc.h")]
+        [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
+        [NativeApi(EntryPoint = "SDL_strstr")]
+        public partial string StrstrS([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte haystack, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string needle);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 579, Column 31 in SDL_stdinc.h")]
@@ -2315,13 +2315,13 @@ namespace Silk.NET.SDL
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 579, Column 31 in SDL_stdinc.h")]
         [NativeApi(EntryPoint = "SDL_strstr")]
-        public unsafe partial byte* Strstr([Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string haystack, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte needle);
+        public unsafe partial byte* Strstr([Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string haystack, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte needle);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 579, Column 31 in SDL_stdinc.h")]
         [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
         [NativeApi(EntryPoint = "SDL_strstr")]
-        public partial string StrstrS([Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string haystack, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte needle);
+        public partial string StrstrS([Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string haystack, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte needle);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 579, Column 31 in SDL_stdinc.h")]
@@ -2348,13 +2348,13 @@ namespace Silk.NET.SDL
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 580, Column 31 in SDL_stdinc.h")]
         [NativeApi(EntryPoint = "SDL_strcasestr")]
-        public unsafe partial byte* Strcasestr([Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* haystack, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte needle);
+        public unsafe partial byte* Strcasestr([Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* haystack, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte needle);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 580, Column 31 in SDL_stdinc.h")]
         [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
         [NativeApi(EntryPoint = "SDL_strcasestr")]
-        public unsafe partial string StrcasestrS([Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* haystack, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte needle);
+        public unsafe partial string StrcasestrS([Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* haystack, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte needle);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 580, Column 31 in SDL_stdinc.h")]
@@ -2370,35 +2370,35 @@ namespace Silk.NET.SDL
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 580, Column 31 in SDL_stdinc.h")]
         [NativeApi(EntryPoint = "SDL_strcasestr")]
-        public unsafe partial byte* Strcasestr([Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte haystack, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* needle);
+        public unsafe partial byte* Strcasestr([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte haystack, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* needle);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 580, Column 31 in SDL_stdinc.h")]
         [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
         [NativeApi(EntryPoint = "SDL_strcasestr")]
-        public unsafe partial string StrcasestrS([Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte haystack, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* needle);
+        public unsafe partial string StrcasestrS([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte haystack, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* needle);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 580, Column 31 in SDL_stdinc.h")]
         [NativeApi(EntryPoint = "SDL_strcasestr")]
-        public unsafe partial byte* Strcasestr([Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte haystack, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte needle);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 580, Column 31 in SDL_stdinc.h")]
-        [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
-        [NativeApi(EntryPoint = "SDL_strcasestr")]
-        public partial string StrcasestrS([Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte haystack, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte needle);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 580, Column 31 in SDL_stdinc.h")]
-        [NativeApi(EntryPoint = "SDL_strcasestr")]
-        public unsafe partial byte* Strcasestr([Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte haystack, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string needle);
+        public unsafe partial byte* Strcasestr([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte haystack, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte needle);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 580, Column 31 in SDL_stdinc.h")]
         [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
         [NativeApi(EntryPoint = "SDL_strcasestr")]
-        public partial string StrcasestrS([Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte haystack, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string needle);
+        public partial string StrcasestrS([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte haystack, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte needle);
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 580, Column 31 in SDL_stdinc.h")]
+        [NativeApi(EntryPoint = "SDL_strcasestr")]
+        public unsafe partial byte* Strcasestr([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte haystack, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string needle);
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 580, Column 31 in SDL_stdinc.h")]
+        [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
+        [NativeApi(EntryPoint = "SDL_strcasestr")]
+        public partial string StrcasestrS([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte haystack, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string needle);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 580, Column 31 in SDL_stdinc.h")]
@@ -2414,13 +2414,13 @@ namespace Silk.NET.SDL
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 580, Column 31 in SDL_stdinc.h")]
         [NativeApi(EntryPoint = "SDL_strcasestr")]
-        public unsafe partial byte* Strcasestr([Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string haystack, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte needle);
+        public unsafe partial byte* Strcasestr([Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string haystack, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte needle);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 580, Column 31 in SDL_stdinc.h")]
         [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
         [NativeApi(EntryPoint = "SDL_strcasestr")]
-        public partial string StrcasestrS([Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string haystack, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte needle);
+        public partial string StrcasestrS([Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string haystack, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte needle);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 580, Column 31 in SDL_stdinc.h")]
@@ -2458,24 +2458,24 @@ namespace Silk.NET.SDL
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 581, Column 31 in SDL_stdinc.h")]
         [NativeApi(EntryPoint = "SDL_strtokr")]
-        public unsafe partial byte* Strtokr(byte* s1, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte s2, byte** saveptr);
+        public unsafe partial byte* Strtokr(byte* s1, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte s2, byte** saveptr);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 581, Column 31 in SDL_stdinc.h")]
         [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
         [NativeApi(EntryPoint = "SDL_strtokr")]
-        public unsafe partial string StrtokrS(byte* s1, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte s2, byte** saveptr);
+        public unsafe partial string StrtokrS(byte* s1, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte s2, byte** saveptr);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 581, Column 31 in SDL_stdinc.h")]
         [NativeApi(EntryPoint = "SDL_strtokr")]
-        public unsafe partial byte* Strtokr(byte* s1, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte s2, ref byte* saveptr);
+        public unsafe partial byte* Strtokr(byte* s1, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte s2, ref byte* saveptr);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 581, Column 31 in SDL_stdinc.h")]
         [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
         [NativeApi(EntryPoint = "SDL_strtokr")]
-        public unsafe partial string StrtokrS(byte* s1, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte s2, ref byte* saveptr);
+        public unsafe partial string StrtokrS(byte* s1, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte s2, ref byte* saveptr);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 581, Column 31 in SDL_stdinc.h")]
@@ -2524,24 +2524,24 @@ namespace Silk.NET.SDL
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 581, Column 31 in SDL_stdinc.h")]
         [NativeApi(EntryPoint = "SDL_strtokr")]
-        public unsafe partial byte* Strtokr(ref byte s1, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte s2, byte** saveptr);
+        public unsafe partial byte* Strtokr(ref byte s1, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte s2, byte** saveptr);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 581, Column 31 in SDL_stdinc.h")]
         [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
         [NativeApi(EntryPoint = "SDL_strtokr")]
-        public unsafe partial string StrtokrS(ref byte s1, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte s2, byte** saveptr);
+        public unsafe partial string StrtokrS(ref byte s1, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte s2, byte** saveptr);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 581, Column 31 in SDL_stdinc.h")]
         [NativeApi(EntryPoint = "SDL_strtokr")]
-        public unsafe partial byte* Strtokr(ref byte s1, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte s2, ref byte* saveptr);
+        public unsafe partial byte* Strtokr(ref byte s1, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte s2, ref byte* saveptr);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 581, Column 31 in SDL_stdinc.h")]
         [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
         [NativeApi(EntryPoint = "SDL_strtokr")]
-        public unsafe partial string StrtokrS(ref byte s1, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte s2, ref byte* saveptr);
+        public unsafe partial string StrtokrS(ref byte s1, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte s2, ref byte* saveptr);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 581, Column 31 in SDL_stdinc.h")]
@@ -2590,24 +2590,24 @@ namespace Silk.NET.SDL
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 581, Column 31 in SDL_stdinc.h")]
         [NativeApi(EntryPoint = "SDL_strtokr")]
-        public unsafe partial byte* Strtokr([UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string s1, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte s2, byte** saveptr);
+        public unsafe partial byte* Strtokr([UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string s1, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte s2, byte** saveptr);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 581, Column 31 in SDL_stdinc.h")]
         [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
         [NativeApi(EntryPoint = "SDL_strtokr")]
-        public unsafe partial string StrtokrS([UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string s1, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte s2, byte** saveptr);
+        public unsafe partial string StrtokrS([UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string s1, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte s2, byte** saveptr);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 581, Column 31 in SDL_stdinc.h")]
         [NativeApi(EntryPoint = "SDL_strtokr")]
-        public unsafe partial byte* Strtokr([UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string s1, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte s2, ref byte* saveptr);
+        public unsafe partial byte* Strtokr([UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string s1, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte s2, ref byte* saveptr);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 581, Column 31 in SDL_stdinc.h")]
         [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
         [NativeApi(EntryPoint = "SDL_strtokr")]
-        public unsafe partial string StrtokrS([UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string s1, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte s2, ref byte* saveptr);
+        public unsafe partial string StrtokrS([UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string s1, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte s2, ref byte* saveptr);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 581, Column 31 in SDL_stdinc.h")]
@@ -2639,7 +2639,7 @@ namespace Silk.NET.SDL
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 582, Column 32 in SDL_stdinc.h")]
         [NativeApi(EntryPoint = "SDL_utf8strlen")]
-        public partial nuint Utf8strlen([Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte str);
+        public partial nuint Utf8strlen([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte str);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 582, Column 32 in SDL_stdinc.h")]
@@ -2654,7 +2654,7 @@ namespace Silk.NET.SDL
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 583, Column 32 in SDL_stdinc.h")]
         [NativeApi(EntryPoint = "SDL_utf8strnlen")]
-        public partial nuint Utf8strnlen([Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte str, nuint bytes);
+        public partial nuint Utf8strnlen([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte str, nuint bytes);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 583, Column 32 in SDL_stdinc.h")]
@@ -2867,7 +2867,7 @@ namespace Silk.NET.SDL
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 592, Column 29 in SDL_stdinc.h")]
         [NativeApi(EntryPoint = "SDL_atoi")]
-        public partial int Atoi([Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte str);
+        public partial int Atoi([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte str);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 592, Column 29 in SDL_stdinc.h")]
@@ -2882,7 +2882,7 @@ namespace Silk.NET.SDL
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 593, Column 32 in SDL_stdinc.h")]
         [NativeApi(EntryPoint = "SDL_atof")]
-        public partial double Atof([Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte str);
+        public partial double Atof([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte str);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 593, Column 32 in SDL_stdinc.h")]
@@ -2902,12 +2902,12 @@ namespace Silk.NET.SDL
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 594, Column 30 in SDL_stdinc.h")]
         [NativeApi(EntryPoint = "SDL_strtol")]
-        public unsafe partial int Strtol([Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte str, byte** endp, int @base);
+        public unsafe partial int Strtol([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte str, byte** endp, int @base);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 594, Column 30 in SDL_stdinc.h")]
         [NativeApi(EntryPoint = "SDL_strtol")]
-        public unsafe partial int Strtol([Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte str, ref byte* endp, int @base);
+        public unsafe partial int Strtol([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte str, ref byte* endp, int @base);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 594, Column 30 in SDL_stdinc.h")]
@@ -2932,12 +2932,12 @@ namespace Silk.NET.SDL
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 595, Column 39 in SDL_stdinc.h")]
         [NativeApi(EntryPoint = "SDL_strtoul")]
-        public unsafe partial uint Strtoul([Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte str, byte** endp, int @base);
+        public unsafe partial uint Strtoul([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte str, byte** endp, int @base);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 595, Column 39 in SDL_stdinc.h")]
         [NativeApi(EntryPoint = "SDL_strtoul")]
-        public unsafe partial uint Strtoul([Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte str, ref byte* endp, int @base);
+        public unsafe partial uint Strtoul([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte str, ref byte* endp, int @base);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 595, Column 39 in SDL_stdinc.h")]
@@ -2962,12 +2962,12 @@ namespace Silk.NET.SDL
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 596, Column 32 in SDL_stdinc.h")]
         [NativeApi(EntryPoint = "SDL_strtoll")]
-        public unsafe partial long Strtoll([Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte str, byte** endp, int @base);
+        public unsafe partial long Strtoll([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte str, byte** endp, int @base);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 596, Column 32 in SDL_stdinc.h")]
         [NativeApi(EntryPoint = "SDL_strtoll")]
-        public unsafe partial long Strtoll([Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte str, ref byte* endp, int @base);
+        public unsafe partial long Strtoll([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte str, ref byte* endp, int @base);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 596, Column 32 in SDL_stdinc.h")]
@@ -2992,12 +2992,12 @@ namespace Silk.NET.SDL
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 597, Column 32 in SDL_stdinc.h")]
         [NativeApi(EntryPoint = "SDL_strtoull")]
-        public unsafe partial ulong Strtoull([Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte str, byte** endp, int @base);
+        public unsafe partial ulong Strtoull([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte str, byte** endp, int @base);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 597, Column 32 in SDL_stdinc.h")]
         [NativeApi(EntryPoint = "SDL_strtoull")]
-        public unsafe partial ulong Strtoull([Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte str, ref byte* endp, int @base);
+        public unsafe partial ulong Strtoull([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte str, ref byte* endp, int @base);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 597, Column 32 in SDL_stdinc.h")]
@@ -3022,12 +3022,12 @@ namespace Silk.NET.SDL
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 598, Column 32 in SDL_stdinc.h")]
         [NativeApi(EntryPoint = "SDL_strtod")]
-        public unsafe partial double Strtod([Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte str, byte** endp);
+        public unsafe partial double Strtod([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte str, byte** endp);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 598, Column 32 in SDL_stdinc.h")]
         [NativeApi(EntryPoint = "SDL_strtod")]
-        public unsafe partial double Strtod([Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte str, ref byte* endp);
+        public unsafe partial double Strtod([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte str, ref byte* endp);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 598, Column 32 in SDL_stdinc.h")]
@@ -3047,7 +3047,7 @@ namespace Silk.NET.SDL
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 600, Column 29 in SDL_stdinc.h")]
         [NativeApi(EntryPoint = "SDL_strcmp")]
-        public unsafe partial int Strcmp([Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* str1, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte str2);
+        public unsafe partial int Strcmp([Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* str1, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte str2);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 600, Column 29 in SDL_stdinc.h")]
@@ -3057,17 +3057,17 @@ namespace Silk.NET.SDL
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 600, Column 29 in SDL_stdinc.h")]
         [NativeApi(EntryPoint = "SDL_strcmp")]
-        public unsafe partial int Strcmp([Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte str1, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* str2);
+        public unsafe partial int Strcmp([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte str1, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* str2);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 600, Column 29 in SDL_stdinc.h")]
         [NativeApi(EntryPoint = "SDL_strcmp")]
-        public partial int Strcmp([Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte str1, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte str2);
+        public partial int Strcmp([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte str1, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte str2);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 600, Column 29 in SDL_stdinc.h")]
         [NativeApi(EntryPoint = "SDL_strcmp")]
-        public partial int Strcmp([Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte str1, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string str2);
+        public partial int Strcmp([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte str1, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string str2);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 600, Column 29 in SDL_stdinc.h")]
@@ -3077,7 +3077,7 @@ namespace Silk.NET.SDL
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 600, Column 29 in SDL_stdinc.h")]
         [NativeApi(EntryPoint = "SDL_strcmp")]
-        public partial int Strcmp([Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string str1, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte str2);
+        public partial int Strcmp([Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string str1, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte str2);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 600, Column 29 in SDL_stdinc.h")]
@@ -3092,7 +3092,7 @@ namespace Silk.NET.SDL
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 601, Column 29 in SDL_stdinc.h")]
         [NativeApi(EntryPoint = "SDL_strncmp")]
-        public unsafe partial int Strncmp([Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* str1, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte str2, nuint maxlen);
+        public unsafe partial int Strncmp([Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* str1, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte str2, nuint maxlen);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 601, Column 29 in SDL_stdinc.h")]
@@ -3102,17 +3102,17 @@ namespace Silk.NET.SDL
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 601, Column 29 in SDL_stdinc.h")]
         [NativeApi(EntryPoint = "SDL_strncmp")]
-        public unsafe partial int Strncmp([Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte str1, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* str2, nuint maxlen);
+        public unsafe partial int Strncmp([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte str1, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* str2, nuint maxlen);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 601, Column 29 in SDL_stdinc.h")]
         [NativeApi(EntryPoint = "SDL_strncmp")]
-        public partial int Strncmp([Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte str1, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte str2, nuint maxlen);
+        public partial int Strncmp([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte str1, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte str2, nuint maxlen);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 601, Column 29 in SDL_stdinc.h")]
         [NativeApi(EntryPoint = "SDL_strncmp")]
-        public partial int Strncmp([Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte str1, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string str2, nuint maxlen);
+        public partial int Strncmp([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte str1, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string str2, nuint maxlen);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 601, Column 29 in SDL_stdinc.h")]
@@ -3122,7 +3122,7 @@ namespace Silk.NET.SDL
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 601, Column 29 in SDL_stdinc.h")]
         [NativeApi(EntryPoint = "SDL_strncmp")]
-        public partial int Strncmp([Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string str1, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte str2, nuint maxlen);
+        public partial int Strncmp([Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string str1, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte str2, nuint maxlen);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 601, Column 29 in SDL_stdinc.h")]
@@ -3137,7 +3137,7 @@ namespace Silk.NET.SDL
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 602, Column 29 in SDL_stdinc.h")]
         [NativeApi(EntryPoint = "SDL_strcasecmp")]
-        public unsafe partial int Strcasecmp([Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* str1, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte str2);
+        public unsafe partial int Strcasecmp([Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* str1, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte str2);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 602, Column 29 in SDL_stdinc.h")]
@@ -3147,17 +3147,17 @@ namespace Silk.NET.SDL
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 602, Column 29 in SDL_stdinc.h")]
         [NativeApi(EntryPoint = "SDL_strcasecmp")]
-        public unsafe partial int Strcasecmp([Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte str1, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* str2);
+        public unsafe partial int Strcasecmp([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte str1, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* str2);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 602, Column 29 in SDL_stdinc.h")]
         [NativeApi(EntryPoint = "SDL_strcasecmp")]
-        public partial int Strcasecmp([Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte str1, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte str2);
+        public partial int Strcasecmp([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte str1, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte str2);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 602, Column 29 in SDL_stdinc.h")]
         [NativeApi(EntryPoint = "SDL_strcasecmp")]
-        public partial int Strcasecmp([Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte str1, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string str2);
+        public partial int Strcasecmp([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte str1, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string str2);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 602, Column 29 in SDL_stdinc.h")]
@@ -3167,7 +3167,7 @@ namespace Silk.NET.SDL
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 602, Column 29 in SDL_stdinc.h")]
         [NativeApi(EntryPoint = "SDL_strcasecmp")]
-        public partial int Strcasecmp([Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string str1, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte str2);
+        public partial int Strcasecmp([Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string str1, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte str2);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 602, Column 29 in SDL_stdinc.h")]
@@ -3182,7 +3182,7 @@ namespace Silk.NET.SDL
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 603, Column 29 in SDL_stdinc.h")]
         [NativeApi(EntryPoint = "SDL_strncasecmp")]
-        public unsafe partial int Strncasecmp([Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* str1, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte str2, nuint len);
+        public unsafe partial int Strncasecmp([Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* str1, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte str2, nuint len);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 603, Column 29 in SDL_stdinc.h")]
@@ -3192,17 +3192,17 @@ namespace Silk.NET.SDL
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 603, Column 29 in SDL_stdinc.h")]
         [NativeApi(EntryPoint = "SDL_strncasecmp")]
-        public unsafe partial int Strncasecmp([Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte str1, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* str2, nuint len);
+        public unsafe partial int Strncasecmp([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte str1, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* str2, nuint len);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 603, Column 29 in SDL_stdinc.h")]
         [NativeApi(EntryPoint = "SDL_strncasecmp")]
-        public partial int Strncasecmp([Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte str1, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte str2, nuint len);
+        public partial int Strncasecmp([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte str1, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte str2, nuint len);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 603, Column 29 in SDL_stdinc.h")]
         [NativeApi(EntryPoint = "SDL_strncasecmp")]
-        public partial int Strncasecmp([Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte str1, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string str2, nuint len);
+        public partial int Strncasecmp([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte str1, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string str2, nuint len);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 603, Column 29 in SDL_stdinc.h")]
@@ -3212,7 +3212,7 @@ namespace Silk.NET.SDL
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 603, Column 29 in SDL_stdinc.h")]
         [NativeApi(EntryPoint = "SDL_strncasecmp")]
-        public partial int Strncasecmp([Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string str1, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte str2, nuint len);
+        public partial int Strncasecmp([Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string str1, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte str2, nuint len);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 603, Column 29 in SDL_stdinc.h")]
@@ -3227,7 +3227,7 @@ namespace Silk.NET.SDL
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 605, Column 29 in SDL_stdinc.h")]
         [NativeApi(EntryPoint = "SDL_sscanf")]
-        public unsafe partial int Sscanf([Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* text, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte fmt);
+        public unsafe partial int Sscanf([Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* text, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte fmt);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 605, Column 29 in SDL_stdinc.h")]
@@ -3237,17 +3237,17 @@ namespace Silk.NET.SDL
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 605, Column 29 in SDL_stdinc.h")]
         [NativeApi(EntryPoint = "SDL_sscanf")]
-        public unsafe partial int Sscanf([Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte text, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* fmt);
+        public unsafe partial int Sscanf([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte text, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* fmt);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 605, Column 29 in SDL_stdinc.h")]
         [NativeApi(EntryPoint = "SDL_sscanf")]
-        public partial int Sscanf([Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte text, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte fmt);
+        public partial int Sscanf([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte text, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte fmt);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 605, Column 29 in SDL_stdinc.h")]
         [NativeApi(EntryPoint = "SDL_sscanf")]
-        public partial int Sscanf([Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte text, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string fmt);
+        public partial int Sscanf([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte text, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string fmt);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 605, Column 29 in SDL_stdinc.h")]
@@ -3257,7 +3257,7 @@ namespace Silk.NET.SDL
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 605, Column 29 in SDL_stdinc.h")]
         [NativeApi(EntryPoint = "SDL_sscanf")]
-        public partial int Sscanf([Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string text, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte fmt);
+        public partial int Sscanf([Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string text, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte fmt);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 605, Column 29 in SDL_stdinc.h")]
@@ -3282,17 +3282,17 @@ namespace Silk.NET.SDL
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 606, Column 29 in SDL_stdinc.h")]
         [NativeApi(EntryPoint = "SDL_vsscanf")]
-        public unsafe partial int Vsscanf([Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* text, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte fmt, byte* ap);
+        public unsafe partial int Vsscanf([Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* text, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte fmt, byte* ap);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 606, Column 29 in SDL_stdinc.h")]
         [NativeApi(EntryPoint = "SDL_vsscanf")]
-        public unsafe partial int Vsscanf([Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* text, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte fmt, ref byte ap);
+        public unsafe partial int Vsscanf([Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* text, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte fmt, ref byte ap);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 606, Column 29 in SDL_stdinc.h")]
         [NativeApi(EntryPoint = "SDL_vsscanf")]
-        public unsafe partial int Vsscanf([Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* text, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte fmt, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string ap);
+        public unsafe partial int Vsscanf([Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* text, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte fmt, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string ap);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 606, Column 29 in SDL_stdinc.h")]
@@ -3312,47 +3312,47 @@ namespace Silk.NET.SDL
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 606, Column 29 in SDL_stdinc.h")]
         [NativeApi(EntryPoint = "SDL_vsscanf")]
-        public unsafe partial int Vsscanf([Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte text, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* fmt, byte* ap);
+        public unsafe partial int Vsscanf([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte text, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* fmt, byte* ap);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 606, Column 29 in SDL_stdinc.h")]
         [NativeApi(EntryPoint = "SDL_vsscanf")]
-        public unsafe partial int Vsscanf([Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte text, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* fmt, ref byte ap);
+        public unsafe partial int Vsscanf([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte text, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* fmt, ref byte ap);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 606, Column 29 in SDL_stdinc.h")]
         [NativeApi(EntryPoint = "SDL_vsscanf")]
-        public unsafe partial int Vsscanf([Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte text, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* fmt, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string ap);
+        public unsafe partial int Vsscanf([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte text, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* fmt, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string ap);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 606, Column 29 in SDL_stdinc.h")]
         [NativeApi(EntryPoint = "SDL_vsscanf")]
-        public unsafe partial int Vsscanf([Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte text, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte fmt, byte* ap);
+        public unsafe partial int Vsscanf([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte text, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte fmt, byte* ap);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 606, Column 29 in SDL_stdinc.h")]
         [NativeApi(EntryPoint = "SDL_vsscanf")]
-        public partial int Vsscanf([Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte text, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte fmt, ref byte ap);
+        public partial int Vsscanf([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte text, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte fmt, ref byte ap);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 606, Column 29 in SDL_stdinc.h")]
         [NativeApi(EntryPoint = "SDL_vsscanf")]
-        public partial int Vsscanf([Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte text, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte fmt, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string ap);
+        public partial int Vsscanf([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte text, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte fmt, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string ap);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 606, Column 29 in SDL_stdinc.h")]
         [NativeApi(EntryPoint = "SDL_vsscanf")]
-        public unsafe partial int Vsscanf([Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte text, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string fmt, byte* ap);
+        public unsafe partial int Vsscanf([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte text, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string fmt, byte* ap);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 606, Column 29 in SDL_stdinc.h")]
         [NativeApi(EntryPoint = "SDL_vsscanf")]
-        public partial int Vsscanf([Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte text, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string fmt, ref byte ap);
+        public partial int Vsscanf([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte text, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string fmt, ref byte ap);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 606, Column 29 in SDL_stdinc.h")]
         [NativeApi(EntryPoint = "SDL_vsscanf")]
-        public partial int Vsscanf([Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte text, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string fmt, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string ap);
+        public partial int Vsscanf([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte text, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string fmt, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string ap);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 606, Column 29 in SDL_stdinc.h")]
@@ -3372,17 +3372,17 @@ namespace Silk.NET.SDL
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 606, Column 29 in SDL_stdinc.h")]
         [NativeApi(EntryPoint = "SDL_vsscanf")]
-        public unsafe partial int Vsscanf([Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string text, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte fmt, byte* ap);
+        public unsafe partial int Vsscanf([Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string text, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte fmt, byte* ap);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 606, Column 29 in SDL_stdinc.h")]
         [NativeApi(EntryPoint = "SDL_vsscanf")]
-        public partial int Vsscanf([Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string text, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte fmt, ref byte ap);
+        public partial int Vsscanf([Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string text, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte fmt, ref byte ap);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 606, Column 29 in SDL_stdinc.h")]
         [NativeApi(EntryPoint = "SDL_vsscanf")]
-        public partial int Vsscanf([Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string text, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte fmt, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string ap);
+        public partial int Vsscanf([Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string text, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte fmt, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string ap);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 606, Column 29 in SDL_stdinc.h")]
@@ -3407,7 +3407,7 @@ namespace Silk.NET.SDL
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 607, Column 29 in SDL_stdinc.h")]
         [NativeApi(EntryPoint = "SDL_snprintf")]
-        public unsafe partial int Snprintf(byte* text, nuint maxlen, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte fmt);
+        public unsafe partial int Snprintf(byte* text, nuint maxlen, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte fmt);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 607, Column 29 in SDL_stdinc.h")]
@@ -3422,7 +3422,7 @@ namespace Silk.NET.SDL
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 607, Column 29 in SDL_stdinc.h")]
         [NativeApi(EntryPoint = "SDL_snprintf")]
-        public partial int Snprintf(ref byte text, nuint maxlen, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte fmt);
+        public partial int Snprintf(ref byte text, nuint maxlen, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte fmt);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 607, Column 29 in SDL_stdinc.h")]
@@ -3437,7 +3437,7 @@ namespace Silk.NET.SDL
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 607, Column 29 in SDL_stdinc.h")]
         [NativeApi(EntryPoint = "SDL_snprintf")]
-        public partial int Snprintf([UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string text, nuint maxlen, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte fmt);
+        public partial int Snprintf([UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string text, nuint maxlen, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte fmt);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 607, Column 29 in SDL_stdinc.h")]
@@ -3462,17 +3462,17 @@ namespace Silk.NET.SDL
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 608, Column 29 in SDL_stdinc.h")]
         [NativeApi(EntryPoint = "SDL_vsnprintf")]
-        public unsafe partial int Vsnprintf(byte* text, nuint maxlen, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte fmt, byte* ap);
+        public unsafe partial int Vsnprintf(byte* text, nuint maxlen, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte fmt, byte* ap);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 608, Column 29 in SDL_stdinc.h")]
         [NativeApi(EntryPoint = "SDL_vsnprintf")]
-        public unsafe partial int Vsnprintf(byte* text, nuint maxlen, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte fmt, ref byte ap);
+        public unsafe partial int Vsnprintf(byte* text, nuint maxlen, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte fmt, ref byte ap);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 608, Column 29 in SDL_stdinc.h")]
         [NativeApi(EntryPoint = "SDL_vsnprintf")]
-        public unsafe partial int Vsnprintf(byte* text, nuint maxlen, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte fmt, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string ap);
+        public unsafe partial int Vsnprintf(byte* text, nuint maxlen, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte fmt, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string ap);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 608, Column 29 in SDL_stdinc.h")]
@@ -3507,17 +3507,17 @@ namespace Silk.NET.SDL
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 608, Column 29 in SDL_stdinc.h")]
         [NativeApi(EntryPoint = "SDL_vsnprintf")]
-        public unsafe partial int Vsnprintf(ref byte text, nuint maxlen, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte fmt, byte* ap);
+        public unsafe partial int Vsnprintf(ref byte text, nuint maxlen, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte fmt, byte* ap);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 608, Column 29 in SDL_stdinc.h")]
         [NativeApi(EntryPoint = "SDL_vsnprintf")]
-        public partial int Vsnprintf(ref byte text, nuint maxlen, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte fmt, ref byte ap);
+        public partial int Vsnprintf(ref byte text, nuint maxlen, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte fmt, ref byte ap);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 608, Column 29 in SDL_stdinc.h")]
         [NativeApi(EntryPoint = "SDL_vsnprintf")]
-        public partial int Vsnprintf(ref byte text, nuint maxlen, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte fmt, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string ap);
+        public partial int Vsnprintf(ref byte text, nuint maxlen, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte fmt, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string ap);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 608, Column 29 in SDL_stdinc.h")]
@@ -3552,17 +3552,17 @@ namespace Silk.NET.SDL
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 608, Column 29 in SDL_stdinc.h")]
         [NativeApi(EntryPoint = "SDL_vsnprintf")]
-        public unsafe partial int Vsnprintf([UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string text, nuint maxlen, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte fmt, byte* ap);
+        public unsafe partial int Vsnprintf([UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string text, nuint maxlen, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte fmt, byte* ap);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 608, Column 29 in SDL_stdinc.h")]
         [NativeApi(EntryPoint = "SDL_vsnprintf")]
-        public partial int Vsnprintf([UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string text, nuint maxlen, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte fmt, ref byte ap);
+        public partial int Vsnprintf([UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string text, nuint maxlen, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte fmt, ref byte ap);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 608, Column 29 in SDL_stdinc.h")]
         [NativeApi(EntryPoint = "SDL_vsnprintf")]
-        public partial int Vsnprintf([UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string text, nuint maxlen, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte fmt, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string ap);
+        public partial int Vsnprintf([UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string text, nuint maxlen, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte fmt, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string ap);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 608, Column 29 in SDL_stdinc.h")]
@@ -3587,7 +3587,7 @@ namespace Silk.NET.SDL
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 609, Column 29 in SDL_stdinc.h")]
         [NativeApi(EntryPoint = "SDL_asprintf")]
-        public unsafe partial int Asprintf(byte** strp, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte fmt);
+        public unsafe partial int Asprintf(byte** strp, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte fmt);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 609, Column 29 in SDL_stdinc.h")]
@@ -3602,7 +3602,7 @@ namespace Silk.NET.SDL
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 609, Column 29 in SDL_stdinc.h")]
         [NativeApi(EntryPoint = "SDL_asprintf")]
-        public unsafe partial int Asprintf(ref byte* strp, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte fmt);
+        public unsafe partial int Asprintf(ref byte* strp, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte fmt);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 609, Column 29 in SDL_stdinc.h")]
@@ -3627,17 +3627,17 @@ namespace Silk.NET.SDL
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 610, Column 29 in SDL_stdinc.h")]
         [NativeApi(EntryPoint = "SDL_vasprintf")]
-        public unsafe partial int Vasprintf(byte** strp, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte fmt, byte* ap);
+        public unsafe partial int Vasprintf(byte** strp, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte fmt, byte* ap);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 610, Column 29 in SDL_stdinc.h")]
         [NativeApi(EntryPoint = "SDL_vasprintf")]
-        public unsafe partial int Vasprintf(byte** strp, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte fmt, ref byte ap);
+        public unsafe partial int Vasprintf(byte** strp, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte fmt, ref byte ap);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 610, Column 29 in SDL_stdinc.h")]
         [NativeApi(EntryPoint = "SDL_vasprintf")]
-        public unsafe partial int Vasprintf(byte** strp, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte fmt, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string ap);
+        public unsafe partial int Vasprintf(byte** strp, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte fmt, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string ap);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 610, Column 29 in SDL_stdinc.h")]
@@ -3672,17 +3672,17 @@ namespace Silk.NET.SDL
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 610, Column 29 in SDL_stdinc.h")]
         [NativeApi(EntryPoint = "SDL_vasprintf")]
-        public unsafe partial int Vasprintf(ref byte* strp, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte fmt, byte* ap);
+        public unsafe partial int Vasprintf(ref byte* strp, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte fmt, byte* ap);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 610, Column 29 in SDL_stdinc.h")]
         [NativeApi(EntryPoint = "SDL_vasprintf")]
-        public unsafe partial int Vasprintf(ref byte* strp, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte fmt, ref byte ap);
+        public unsafe partial int Vasprintf(ref byte* strp, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte fmt, ref byte ap);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 610, Column 29 in SDL_stdinc.h")]
         [NativeApi(EntryPoint = "SDL_vasprintf")]
-        public unsafe partial int Vasprintf(ref byte* strp, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte fmt, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string ap);
+        public unsafe partial int Vasprintf(ref byte* strp, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte fmt, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string ap);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 610, Column 29 in SDL_stdinc.h")]
@@ -3917,7 +3917,7 @@ namespace Silk.NET.SDL
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 683, Column 37 in SDL_stdinc.h")]
         [NativeApi(EntryPoint = "SDL_iconv_open")]
-        public unsafe partial Icon* IconvOpen([Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* tocode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte fromcode);
+        public unsafe partial Icon* IconvOpen([Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* tocode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte fromcode);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 683, Column 37 in SDL_stdinc.h")]
@@ -3927,17 +3927,17 @@ namespace Silk.NET.SDL
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 683, Column 37 in SDL_stdinc.h")]
         [NativeApi(EntryPoint = "SDL_iconv_open")]
-        public unsafe partial Icon* IconvOpen([Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte tocode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* fromcode);
+        public unsafe partial Icon* IconvOpen([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte tocode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* fromcode);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 683, Column 37 in SDL_stdinc.h")]
         [NativeApi(EntryPoint = "SDL_iconv_open")]
-        public unsafe partial Icon* IconvOpen([Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte tocode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte fromcode);
+        public unsafe partial Icon* IconvOpen([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte tocode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte fromcode);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 683, Column 37 in SDL_stdinc.h")]
         [NativeApi(EntryPoint = "SDL_iconv_open")]
-        public unsafe partial Icon* IconvOpen([Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte tocode, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string fromcode);
+        public unsafe partial Icon* IconvOpen([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte tocode, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string fromcode);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 683, Column 37 in SDL_stdinc.h")]
@@ -3947,7 +3947,7 @@ namespace Silk.NET.SDL
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 683, Column 37 in SDL_stdinc.h")]
         [NativeApi(EntryPoint = "SDL_iconv_open")]
-        public unsafe partial Icon* IconvOpen([Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string tocode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte fromcode);
+        public unsafe partial Icon* IconvOpen([Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string tocode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte fromcode);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 683, Column 37 in SDL_stdinc.h")]
@@ -4002,42 +4002,42 @@ namespace Silk.NET.SDL
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 686, Column 32 in SDL_stdinc.h")]
         [NativeApi(EntryPoint = "SDL_iconv")]
-        public unsafe partial nuint Iconv(Icon* cd, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte* inbuf, nuint* inbytesleft, byte** outbuf, nuint* outbytesleft);
+        public unsafe partial nuint Iconv(Icon* cd, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte* inbuf, nuint* inbytesleft, byte** outbuf, nuint* outbytesleft);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 686, Column 32 in SDL_stdinc.h")]
         [NativeApi(EntryPoint = "SDL_iconv")]
-        public unsafe partial nuint Iconv(Icon* cd, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte* inbuf, nuint* inbytesleft, byte** outbuf, ref nuint outbytesleft);
+        public unsafe partial nuint Iconv(Icon* cd, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte* inbuf, nuint* inbytesleft, byte** outbuf, ref nuint outbytesleft);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 686, Column 32 in SDL_stdinc.h")]
         [NativeApi(EntryPoint = "SDL_iconv")]
-        public unsafe partial nuint Iconv(Icon* cd, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte* inbuf, nuint* inbytesleft, ref byte* outbuf, nuint* outbytesleft);
+        public unsafe partial nuint Iconv(Icon* cd, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte* inbuf, nuint* inbytesleft, ref byte* outbuf, nuint* outbytesleft);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 686, Column 32 in SDL_stdinc.h")]
         [NativeApi(EntryPoint = "SDL_iconv")]
-        public unsafe partial nuint Iconv(Icon* cd, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte* inbuf, nuint* inbytesleft, ref byte* outbuf, ref nuint outbytesleft);
+        public unsafe partial nuint Iconv(Icon* cd, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte* inbuf, nuint* inbytesleft, ref byte* outbuf, ref nuint outbytesleft);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 686, Column 32 in SDL_stdinc.h")]
         [NativeApi(EntryPoint = "SDL_iconv")]
-        public unsafe partial nuint Iconv(Icon* cd, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte* inbuf, ref nuint inbytesleft, byte** outbuf, nuint* outbytesleft);
+        public unsafe partial nuint Iconv(Icon* cd, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte* inbuf, ref nuint inbytesleft, byte** outbuf, nuint* outbytesleft);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 686, Column 32 in SDL_stdinc.h")]
         [NativeApi(EntryPoint = "SDL_iconv")]
-        public unsafe partial nuint Iconv(Icon* cd, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte* inbuf, ref nuint inbytesleft, byte** outbuf, ref nuint outbytesleft);
+        public unsafe partial nuint Iconv(Icon* cd, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte* inbuf, ref nuint inbytesleft, byte** outbuf, ref nuint outbytesleft);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 686, Column 32 in SDL_stdinc.h")]
         [NativeApi(EntryPoint = "SDL_iconv")]
-        public unsafe partial nuint Iconv(Icon* cd, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte* inbuf, ref nuint inbytesleft, ref byte* outbuf, nuint* outbytesleft);
+        public unsafe partial nuint Iconv(Icon* cd, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte* inbuf, ref nuint inbytesleft, ref byte* outbuf, nuint* outbytesleft);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 686, Column 32 in SDL_stdinc.h")]
         [NativeApi(EntryPoint = "SDL_iconv")]
-        public unsafe partial nuint Iconv(Icon* cd, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte* inbuf, ref nuint inbytesleft, ref byte* outbuf, ref nuint outbytesleft);
+        public unsafe partial nuint Iconv(Icon* cd, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte* inbuf, ref nuint inbytesleft, ref byte* outbuf, ref nuint outbytesleft);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 696, Column 31 in SDL_stdinc.h")]
@@ -4053,13 +4053,13 @@ namespace Silk.NET.SDL
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 696, Column 31 in SDL_stdinc.h")]
         [NativeApi(EntryPoint = "SDL_iconv_string")]
-        public unsafe partial byte* IconvString([Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* tocode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* fromcode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte inbuf, nuint inbytesleft);
+        public unsafe partial byte* IconvString([Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* tocode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* fromcode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte inbuf, nuint inbytesleft);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 696, Column 31 in SDL_stdinc.h")]
         [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
         [NativeApi(EntryPoint = "SDL_iconv_string")]
-        public unsafe partial string IconvStringS([Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* tocode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* fromcode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte inbuf, nuint inbytesleft);
+        public unsafe partial string IconvStringS([Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* tocode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* fromcode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte inbuf, nuint inbytesleft);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 696, Column 31 in SDL_stdinc.h")]
@@ -4075,35 +4075,35 @@ namespace Silk.NET.SDL
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 696, Column 31 in SDL_stdinc.h")]
         [NativeApi(EntryPoint = "SDL_iconv_string")]
-        public unsafe partial byte* IconvString([Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* tocode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte fromcode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* inbuf, nuint inbytesleft);
+        public unsafe partial byte* IconvString([Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* tocode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte fromcode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* inbuf, nuint inbytesleft);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 696, Column 31 in SDL_stdinc.h")]
         [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
         [NativeApi(EntryPoint = "SDL_iconv_string")]
-        public unsafe partial string IconvStringS([Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* tocode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte fromcode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* inbuf, nuint inbytesleft);
+        public unsafe partial string IconvStringS([Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* tocode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte fromcode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* inbuf, nuint inbytesleft);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 696, Column 31 in SDL_stdinc.h")]
         [NativeApi(EntryPoint = "SDL_iconv_string")]
-        public unsafe partial byte* IconvString([Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* tocode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte fromcode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte inbuf, nuint inbytesleft);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 696, Column 31 in SDL_stdinc.h")]
-        [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
-        [NativeApi(EntryPoint = "SDL_iconv_string")]
-        public unsafe partial string IconvStringS([Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* tocode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte fromcode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte inbuf, nuint inbytesleft);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 696, Column 31 in SDL_stdinc.h")]
-        [NativeApi(EntryPoint = "SDL_iconv_string")]
-        public unsafe partial byte* IconvString([Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* tocode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte fromcode, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string inbuf, nuint inbytesleft);
+        public unsafe partial byte* IconvString([Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* tocode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte fromcode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte inbuf, nuint inbytesleft);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 696, Column 31 in SDL_stdinc.h")]
         [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
         [NativeApi(EntryPoint = "SDL_iconv_string")]
-        public unsafe partial string IconvStringS([Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* tocode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte fromcode, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string inbuf, nuint inbytesleft);
+        public unsafe partial string IconvStringS([Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* tocode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte fromcode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte inbuf, nuint inbytesleft);
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 696, Column 31 in SDL_stdinc.h")]
+        [NativeApi(EntryPoint = "SDL_iconv_string")]
+        public unsafe partial byte* IconvString([Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* tocode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte fromcode, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string inbuf, nuint inbytesleft);
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 696, Column 31 in SDL_stdinc.h")]
+        [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
+        [NativeApi(EntryPoint = "SDL_iconv_string")]
+        public unsafe partial string IconvStringS([Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* tocode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte fromcode, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string inbuf, nuint inbytesleft);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 696, Column 31 in SDL_stdinc.h")]
@@ -4119,13 +4119,13 @@ namespace Silk.NET.SDL
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 696, Column 31 in SDL_stdinc.h")]
         [NativeApi(EntryPoint = "SDL_iconv_string")]
-        public unsafe partial byte* IconvString([Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* tocode, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string fromcode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte inbuf, nuint inbytesleft);
+        public unsafe partial byte* IconvString([Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* tocode, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string fromcode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte inbuf, nuint inbytesleft);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 696, Column 31 in SDL_stdinc.h")]
         [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
         [NativeApi(EntryPoint = "SDL_iconv_string")]
-        public unsafe partial string IconvStringS([Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* tocode, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string fromcode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte inbuf, nuint inbytesleft);
+        public unsafe partial string IconvStringS([Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* tocode, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string fromcode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte inbuf, nuint inbytesleft);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 696, Column 31 in SDL_stdinc.h")]
@@ -4141,101 +4141,101 @@ namespace Silk.NET.SDL
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 696, Column 31 in SDL_stdinc.h")]
         [NativeApi(EntryPoint = "SDL_iconv_string")]
-        public unsafe partial byte* IconvString([Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte tocode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* fromcode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* inbuf, nuint inbytesleft);
+        public unsafe partial byte* IconvString([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte tocode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* fromcode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* inbuf, nuint inbytesleft);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 696, Column 31 in SDL_stdinc.h")]
         [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
         [NativeApi(EntryPoint = "SDL_iconv_string")]
-        public unsafe partial string IconvStringS([Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte tocode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* fromcode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* inbuf, nuint inbytesleft);
+        public unsafe partial string IconvStringS([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte tocode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* fromcode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* inbuf, nuint inbytesleft);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 696, Column 31 in SDL_stdinc.h")]
         [NativeApi(EntryPoint = "SDL_iconv_string")]
-        public unsafe partial byte* IconvString([Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte tocode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* fromcode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte inbuf, nuint inbytesleft);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 696, Column 31 in SDL_stdinc.h")]
-        [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
-        [NativeApi(EntryPoint = "SDL_iconv_string")]
-        public unsafe partial string IconvStringS([Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte tocode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* fromcode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte inbuf, nuint inbytesleft);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 696, Column 31 in SDL_stdinc.h")]
-        [NativeApi(EntryPoint = "SDL_iconv_string")]
-        public unsafe partial byte* IconvString([Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte tocode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* fromcode, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string inbuf, nuint inbytesleft);
+        public unsafe partial byte* IconvString([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte tocode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* fromcode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte inbuf, nuint inbytesleft);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 696, Column 31 in SDL_stdinc.h")]
         [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
         [NativeApi(EntryPoint = "SDL_iconv_string")]
-        public unsafe partial string IconvStringS([Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte tocode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* fromcode, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string inbuf, nuint inbytesleft);
+        public unsafe partial string IconvStringS([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte tocode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* fromcode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte inbuf, nuint inbytesleft);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 696, Column 31 in SDL_stdinc.h")]
         [NativeApi(EntryPoint = "SDL_iconv_string")]
-        public unsafe partial byte* IconvString([Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte tocode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte fromcode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* inbuf, nuint inbytesleft);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 696, Column 31 in SDL_stdinc.h")]
-        [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
-        [NativeApi(EntryPoint = "SDL_iconv_string")]
-        public unsafe partial string IconvStringS([Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte tocode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte fromcode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* inbuf, nuint inbytesleft);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 696, Column 31 in SDL_stdinc.h")]
-        [NativeApi(EntryPoint = "SDL_iconv_string")]
-        public unsafe partial byte* IconvString([Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte tocode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte fromcode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte inbuf, nuint inbytesleft);
+        public unsafe partial byte* IconvString([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte tocode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* fromcode, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string inbuf, nuint inbytesleft);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 696, Column 31 in SDL_stdinc.h")]
         [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
         [NativeApi(EntryPoint = "SDL_iconv_string")]
-        public partial string IconvStringS([Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte tocode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte fromcode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte inbuf, nuint inbytesleft);
+        public unsafe partial string IconvStringS([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte tocode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* fromcode, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string inbuf, nuint inbytesleft);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 696, Column 31 in SDL_stdinc.h")]
         [NativeApi(EntryPoint = "SDL_iconv_string")]
-        public unsafe partial byte* IconvString([Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte tocode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte fromcode, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string inbuf, nuint inbytesleft);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 696, Column 31 in SDL_stdinc.h")]
-        [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
-        [NativeApi(EntryPoint = "SDL_iconv_string")]
-        public partial string IconvStringS([Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte tocode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte fromcode, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string inbuf, nuint inbytesleft);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 696, Column 31 in SDL_stdinc.h")]
-        [NativeApi(EntryPoint = "SDL_iconv_string")]
-        public unsafe partial byte* IconvString([Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte tocode, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string fromcode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* inbuf, nuint inbytesleft);
+        public unsafe partial byte* IconvString([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte tocode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte fromcode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* inbuf, nuint inbytesleft);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 696, Column 31 in SDL_stdinc.h")]
         [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
         [NativeApi(EntryPoint = "SDL_iconv_string")]
-        public unsafe partial string IconvStringS([Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte tocode, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string fromcode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* inbuf, nuint inbytesleft);
+        public unsafe partial string IconvStringS([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte tocode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte fromcode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* inbuf, nuint inbytesleft);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 696, Column 31 in SDL_stdinc.h")]
         [NativeApi(EntryPoint = "SDL_iconv_string")]
-        public unsafe partial byte* IconvString([Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte tocode, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string fromcode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte inbuf, nuint inbytesleft);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 696, Column 31 in SDL_stdinc.h")]
-        [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
-        [NativeApi(EntryPoint = "SDL_iconv_string")]
-        public partial string IconvStringS([Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte tocode, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string fromcode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte inbuf, nuint inbytesleft);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 696, Column 31 in SDL_stdinc.h")]
-        [NativeApi(EntryPoint = "SDL_iconv_string")]
-        public unsafe partial byte* IconvString([Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte tocode, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string fromcode, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string inbuf, nuint inbytesleft);
+        public unsafe partial byte* IconvString([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte tocode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte fromcode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte inbuf, nuint inbytesleft);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 696, Column 31 in SDL_stdinc.h")]
         [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
         [NativeApi(EntryPoint = "SDL_iconv_string")]
-        public partial string IconvStringS([Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte tocode, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string fromcode, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string inbuf, nuint inbytesleft);
+        public partial string IconvStringS([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte tocode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte fromcode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte inbuf, nuint inbytesleft);
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 696, Column 31 in SDL_stdinc.h")]
+        [NativeApi(EntryPoint = "SDL_iconv_string")]
+        public unsafe partial byte* IconvString([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte tocode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte fromcode, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string inbuf, nuint inbytesleft);
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 696, Column 31 in SDL_stdinc.h")]
+        [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
+        [NativeApi(EntryPoint = "SDL_iconv_string")]
+        public partial string IconvStringS([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte tocode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte fromcode, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string inbuf, nuint inbytesleft);
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 696, Column 31 in SDL_stdinc.h")]
+        [NativeApi(EntryPoint = "SDL_iconv_string")]
+        public unsafe partial byte* IconvString([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte tocode, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string fromcode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* inbuf, nuint inbytesleft);
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 696, Column 31 in SDL_stdinc.h")]
+        [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
+        [NativeApi(EntryPoint = "SDL_iconv_string")]
+        public unsafe partial string IconvStringS([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte tocode, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string fromcode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* inbuf, nuint inbytesleft);
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 696, Column 31 in SDL_stdinc.h")]
+        [NativeApi(EntryPoint = "SDL_iconv_string")]
+        public unsafe partial byte* IconvString([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte tocode, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string fromcode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte inbuf, nuint inbytesleft);
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 696, Column 31 in SDL_stdinc.h")]
+        [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
+        [NativeApi(EntryPoint = "SDL_iconv_string")]
+        public partial string IconvStringS([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte tocode, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string fromcode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte inbuf, nuint inbytesleft);
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 696, Column 31 in SDL_stdinc.h")]
+        [NativeApi(EntryPoint = "SDL_iconv_string")]
+        public unsafe partial byte* IconvString([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte tocode, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string fromcode, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string inbuf, nuint inbytesleft);
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 696, Column 31 in SDL_stdinc.h")]
+        [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
+        [NativeApi(EntryPoint = "SDL_iconv_string")]
+        public partial string IconvStringS([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte tocode, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string fromcode, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string inbuf, nuint inbytesleft);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 696, Column 31 in SDL_stdinc.h")]
@@ -4251,13 +4251,13 @@ namespace Silk.NET.SDL
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 696, Column 31 in SDL_stdinc.h")]
         [NativeApi(EntryPoint = "SDL_iconv_string")]
-        public unsafe partial byte* IconvString([Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string tocode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* fromcode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte inbuf, nuint inbytesleft);
+        public unsafe partial byte* IconvString([Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string tocode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* fromcode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte inbuf, nuint inbytesleft);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 696, Column 31 in SDL_stdinc.h")]
         [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
         [NativeApi(EntryPoint = "SDL_iconv_string")]
-        public unsafe partial string IconvStringS([Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string tocode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* fromcode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte inbuf, nuint inbytesleft);
+        public unsafe partial string IconvStringS([Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string tocode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* fromcode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte inbuf, nuint inbytesleft);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 696, Column 31 in SDL_stdinc.h")]
@@ -4273,35 +4273,35 @@ namespace Silk.NET.SDL
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 696, Column 31 in SDL_stdinc.h")]
         [NativeApi(EntryPoint = "SDL_iconv_string")]
-        public unsafe partial byte* IconvString([Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string tocode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte fromcode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* inbuf, nuint inbytesleft);
+        public unsafe partial byte* IconvString([Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string tocode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte fromcode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* inbuf, nuint inbytesleft);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 696, Column 31 in SDL_stdinc.h")]
         [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
         [NativeApi(EntryPoint = "SDL_iconv_string")]
-        public unsafe partial string IconvStringS([Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string tocode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte fromcode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* inbuf, nuint inbytesleft);
+        public unsafe partial string IconvStringS([Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string tocode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte fromcode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* inbuf, nuint inbytesleft);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 696, Column 31 in SDL_stdinc.h")]
         [NativeApi(EntryPoint = "SDL_iconv_string")]
-        public unsafe partial byte* IconvString([Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string tocode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte fromcode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte inbuf, nuint inbytesleft);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 696, Column 31 in SDL_stdinc.h")]
-        [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
-        [NativeApi(EntryPoint = "SDL_iconv_string")]
-        public partial string IconvStringS([Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string tocode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte fromcode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte inbuf, nuint inbytesleft);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 696, Column 31 in SDL_stdinc.h")]
-        [NativeApi(EntryPoint = "SDL_iconv_string")]
-        public unsafe partial byte* IconvString([Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string tocode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte fromcode, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string inbuf, nuint inbytesleft);
+        public unsafe partial byte* IconvString([Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string tocode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte fromcode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte inbuf, nuint inbytesleft);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 696, Column 31 in SDL_stdinc.h")]
         [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
         [NativeApi(EntryPoint = "SDL_iconv_string")]
-        public partial string IconvStringS([Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string tocode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte fromcode, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string inbuf, nuint inbytesleft);
+        public partial string IconvStringS([Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string tocode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte fromcode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte inbuf, nuint inbytesleft);
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 696, Column 31 in SDL_stdinc.h")]
+        [NativeApi(EntryPoint = "SDL_iconv_string")]
+        public unsafe partial byte* IconvString([Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string tocode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte fromcode, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string inbuf, nuint inbytesleft);
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 696, Column 31 in SDL_stdinc.h")]
+        [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
+        [NativeApi(EntryPoint = "SDL_iconv_string")]
+        public partial string IconvStringS([Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string tocode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte fromcode, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string inbuf, nuint inbytesleft);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 696, Column 31 in SDL_stdinc.h")]
@@ -4317,13 +4317,13 @@ namespace Silk.NET.SDL
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 696, Column 31 in SDL_stdinc.h")]
         [NativeApi(EntryPoint = "SDL_iconv_string")]
-        public unsafe partial byte* IconvString([Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string tocode, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string fromcode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte inbuf, nuint inbytesleft);
+        public unsafe partial byte* IconvString([Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string tocode, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string fromcode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte inbuf, nuint inbytesleft);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 696, Column 31 in SDL_stdinc.h")]
         [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
         [NativeApi(EntryPoint = "SDL_iconv_string")]
-        public partial string IconvStringS([Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string tocode, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string fromcode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte inbuf, nuint inbytesleft);
+        public partial string IconvStringS([Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string tocode, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string fromcode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte inbuf, nuint inbytesleft);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 696, Column 31 in SDL_stdinc.h")]
@@ -4560,7 +4560,7 @@ namespace Silk.NET.SDL
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 484, Column 29 in SDL_pixels.h")]
         [NativeApi(EntryPoint = "SDL_SetPaletteColors")]
-        public unsafe partial int SetPaletteColors(Palette* palette, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Color colors, int firstcolor, int ncolors);
+        public unsafe partial int SetPaletteColors(Palette* palette, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Color colors, int firstcolor, int ncolors);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 484, Column 29 in SDL_pixels.h")]
@@ -4570,7 +4570,7 @@ namespace Silk.NET.SDL
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 484, Column 29 in SDL_pixels.h")]
         [NativeApi(EntryPoint = "SDL_SetPaletteColors")]
-        public partial int SetPaletteColors(ref Palette palette, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Color colors, int firstcolor, int ncolors);
+        public partial int SetPaletteColors(ref Palette palette, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Color colors, int firstcolor, int ncolors);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 497, Column 30 in SDL_pixels.h")]
@@ -4590,7 +4590,7 @@ namespace Silk.NET.SDL
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 529, Column 32 in SDL_pixels.h")]
         [NativeApi(EntryPoint = "SDL_MapRGB")]
-        public partial uint MapRGB([Flow(Silk.NET.Core.Native.FlowDirection.In)] in PixelFormat format, byte r, byte g, byte b);
+        public partial uint MapRGB([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in PixelFormat format, byte r, byte g, byte b);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 564, Column 32 in SDL_pixels.h")]
@@ -4600,7 +4600,7 @@ namespace Silk.NET.SDL
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 564, Column 32 in SDL_pixels.h")]
         [NativeApi(EntryPoint = "SDL_MapRGBA")]
-        public partial uint MapRGBA([Flow(Silk.NET.Core.Native.FlowDirection.In)] in PixelFormat format, byte r, byte g, byte b, byte a);
+        public partial uint MapRGBA([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in PixelFormat format, byte r, byte g, byte b, byte a);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 589, Column 30 in SDL_pixels.h")]
@@ -4740,137 +4740,137 @@ namespace Silk.NET.SDL
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 589, Column 30 in SDL_pixels.h")]
         [NativeApi(EntryPoint = "SDL_GetRGB")]
-        public unsafe partial void GetRGB(uint pixel, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in PixelFormat format, byte* r, byte* g, byte* b);
+        public unsafe partial void GetRGB(uint pixel, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in PixelFormat format, byte* r, byte* g, byte* b);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 589, Column 30 in SDL_pixels.h")]
         [NativeApi(EntryPoint = "SDL_GetRGB")]
-        public unsafe partial void GetRGB(uint pixel, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in PixelFormat format, byte* r, byte* g, ref byte b);
+        public unsafe partial void GetRGB(uint pixel, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in PixelFormat format, byte* r, byte* g, ref byte b);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 589, Column 30 in SDL_pixels.h")]
         [NativeApi(EntryPoint = "SDL_GetRGB")]
-        public unsafe partial void GetRGB(uint pixel, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in PixelFormat format, byte* r, byte* g, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string b);
+        public unsafe partial void GetRGB(uint pixel, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in PixelFormat format, byte* r, byte* g, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string b);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 589, Column 30 in SDL_pixels.h")]
         [NativeApi(EntryPoint = "SDL_GetRGB")]
-        public unsafe partial void GetRGB(uint pixel, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in PixelFormat format, byte* r, ref byte g, byte* b);
+        public unsafe partial void GetRGB(uint pixel, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in PixelFormat format, byte* r, ref byte g, byte* b);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 589, Column 30 in SDL_pixels.h")]
         [NativeApi(EntryPoint = "SDL_GetRGB")]
-        public unsafe partial void GetRGB(uint pixel, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in PixelFormat format, byte* r, ref byte g, ref byte b);
+        public unsafe partial void GetRGB(uint pixel, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in PixelFormat format, byte* r, ref byte g, ref byte b);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 589, Column 30 in SDL_pixels.h")]
         [NativeApi(EntryPoint = "SDL_GetRGB")]
-        public unsafe partial void GetRGB(uint pixel, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in PixelFormat format, byte* r, ref byte g, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string b);
+        public unsafe partial void GetRGB(uint pixel, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in PixelFormat format, byte* r, ref byte g, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string b);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 589, Column 30 in SDL_pixels.h")]
         [NativeApi(EntryPoint = "SDL_GetRGB")]
-        public unsafe partial void GetRGB(uint pixel, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in PixelFormat format, byte* r, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string g, byte* b);
+        public unsafe partial void GetRGB(uint pixel, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in PixelFormat format, byte* r, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string g, byte* b);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 589, Column 30 in SDL_pixels.h")]
         [NativeApi(EntryPoint = "SDL_GetRGB")]
-        public unsafe partial void GetRGB(uint pixel, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in PixelFormat format, byte* r, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string g, ref byte b);
+        public unsafe partial void GetRGB(uint pixel, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in PixelFormat format, byte* r, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string g, ref byte b);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 589, Column 30 in SDL_pixels.h")]
         [NativeApi(EntryPoint = "SDL_GetRGB")]
-        public unsafe partial void GetRGB(uint pixel, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in PixelFormat format, byte* r, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string g, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string b);
+        public unsafe partial void GetRGB(uint pixel, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in PixelFormat format, byte* r, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string g, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string b);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 589, Column 30 in SDL_pixels.h")]
         [NativeApi(EntryPoint = "SDL_GetRGB")]
-        public unsafe partial void GetRGB(uint pixel, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in PixelFormat format, ref byte r, byte* g, byte* b);
+        public unsafe partial void GetRGB(uint pixel, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in PixelFormat format, ref byte r, byte* g, byte* b);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 589, Column 30 in SDL_pixels.h")]
         [NativeApi(EntryPoint = "SDL_GetRGB")]
-        public unsafe partial void GetRGB(uint pixel, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in PixelFormat format, ref byte r, byte* g, ref byte b);
+        public unsafe partial void GetRGB(uint pixel, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in PixelFormat format, ref byte r, byte* g, ref byte b);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 589, Column 30 in SDL_pixels.h")]
         [NativeApi(EntryPoint = "SDL_GetRGB")]
-        public unsafe partial void GetRGB(uint pixel, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in PixelFormat format, ref byte r, byte* g, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string b);
+        public unsafe partial void GetRGB(uint pixel, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in PixelFormat format, ref byte r, byte* g, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string b);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 589, Column 30 in SDL_pixels.h")]
         [NativeApi(EntryPoint = "SDL_GetRGB")]
-        public unsafe partial void GetRGB(uint pixel, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in PixelFormat format, ref byte r, ref byte g, byte* b);
+        public unsafe partial void GetRGB(uint pixel, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in PixelFormat format, ref byte r, ref byte g, byte* b);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 589, Column 30 in SDL_pixels.h")]
         [NativeApi(EntryPoint = "SDL_GetRGB")]
-        public partial void GetRGB(uint pixel, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in PixelFormat format, ref byte r, ref byte g, ref byte b);
+        public partial void GetRGB(uint pixel, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in PixelFormat format, ref byte r, ref byte g, ref byte b);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 589, Column 30 in SDL_pixels.h")]
         [NativeApi(EntryPoint = "SDL_GetRGB")]
-        public partial void GetRGB(uint pixel, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in PixelFormat format, ref byte r, ref byte g, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string b);
+        public partial void GetRGB(uint pixel, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in PixelFormat format, ref byte r, ref byte g, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string b);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 589, Column 30 in SDL_pixels.h")]
         [NativeApi(EntryPoint = "SDL_GetRGB")]
-        public unsafe partial void GetRGB(uint pixel, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in PixelFormat format, ref byte r, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string g, byte* b);
+        public unsafe partial void GetRGB(uint pixel, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in PixelFormat format, ref byte r, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string g, byte* b);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 589, Column 30 in SDL_pixels.h")]
         [NativeApi(EntryPoint = "SDL_GetRGB")]
-        public partial void GetRGB(uint pixel, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in PixelFormat format, ref byte r, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string g, ref byte b);
+        public partial void GetRGB(uint pixel, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in PixelFormat format, ref byte r, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string g, ref byte b);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 589, Column 30 in SDL_pixels.h")]
         [NativeApi(EntryPoint = "SDL_GetRGB")]
-        public partial void GetRGB(uint pixel, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in PixelFormat format, ref byte r, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string g, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string b);
+        public partial void GetRGB(uint pixel, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in PixelFormat format, ref byte r, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string g, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string b);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 589, Column 30 in SDL_pixels.h")]
         [NativeApi(EntryPoint = "SDL_GetRGB")]
-        public unsafe partial void GetRGB(uint pixel, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in PixelFormat format, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string r, byte* g, byte* b);
+        public unsafe partial void GetRGB(uint pixel, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in PixelFormat format, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string r, byte* g, byte* b);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 589, Column 30 in SDL_pixels.h")]
         [NativeApi(EntryPoint = "SDL_GetRGB")]
-        public unsafe partial void GetRGB(uint pixel, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in PixelFormat format, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string r, byte* g, ref byte b);
+        public unsafe partial void GetRGB(uint pixel, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in PixelFormat format, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string r, byte* g, ref byte b);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 589, Column 30 in SDL_pixels.h")]
         [NativeApi(EntryPoint = "SDL_GetRGB")]
-        public unsafe partial void GetRGB(uint pixel, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in PixelFormat format, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string r, byte* g, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string b);
+        public unsafe partial void GetRGB(uint pixel, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in PixelFormat format, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string r, byte* g, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string b);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 589, Column 30 in SDL_pixels.h")]
         [NativeApi(EntryPoint = "SDL_GetRGB")]
-        public unsafe partial void GetRGB(uint pixel, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in PixelFormat format, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string r, ref byte g, byte* b);
+        public unsafe partial void GetRGB(uint pixel, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in PixelFormat format, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string r, ref byte g, byte* b);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 589, Column 30 in SDL_pixels.h")]
         [NativeApi(EntryPoint = "SDL_GetRGB")]
-        public partial void GetRGB(uint pixel, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in PixelFormat format, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string r, ref byte g, ref byte b);
+        public partial void GetRGB(uint pixel, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in PixelFormat format, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string r, ref byte g, ref byte b);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 589, Column 30 in SDL_pixels.h")]
         [NativeApi(EntryPoint = "SDL_GetRGB")]
-        public partial void GetRGB(uint pixel, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in PixelFormat format, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string r, ref byte g, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string b);
+        public partial void GetRGB(uint pixel, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in PixelFormat format, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string r, ref byte g, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string b);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 589, Column 30 in SDL_pixels.h")]
         [NativeApi(EntryPoint = "SDL_GetRGB")]
-        public unsafe partial void GetRGB(uint pixel, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in PixelFormat format, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string r, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string g, byte* b);
+        public unsafe partial void GetRGB(uint pixel, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in PixelFormat format, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string r, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string g, byte* b);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 589, Column 30 in SDL_pixels.h")]
         [NativeApi(EntryPoint = "SDL_GetRGB")]
-        public partial void GetRGB(uint pixel, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in PixelFormat format, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string r, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string g, ref byte b);
+        public partial void GetRGB(uint pixel, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in PixelFormat format, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string r, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string g, ref byte b);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 589, Column 30 in SDL_pixels.h")]
         [NativeApi(EntryPoint = "SDL_GetRGB")]
-        public partial void GetRGB(uint pixel, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in PixelFormat format, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string r, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string g, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string b);
+        public partial void GetRGB(uint pixel, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in PixelFormat format, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string r, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string g, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string b);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 618, Column 30 in SDL_pixels.h")]
@@ -5280,407 +5280,407 @@ namespace Silk.NET.SDL
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 618, Column 30 in SDL_pixels.h")]
         [NativeApi(EntryPoint = "SDL_GetRGBA")]
-        public unsafe partial void GetRGBA(uint pixel, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in PixelFormat format, byte* r, byte* g, byte* b, byte* a);
+        public unsafe partial void GetRGBA(uint pixel, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in PixelFormat format, byte* r, byte* g, byte* b, byte* a);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 618, Column 30 in SDL_pixels.h")]
         [NativeApi(EntryPoint = "SDL_GetRGBA")]
-        public unsafe partial void GetRGBA(uint pixel, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in PixelFormat format, byte* r, byte* g, byte* b, ref byte a);
+        public unsafe partial void GetRGBA(uint pixel, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in PixelFormat format, byte* r, byte* g, byte* b, ref byte a);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 618, Column 30 in SDL_pixels.h")]
         [NativeApi(EntryPoint = "SDL_GetRGBA")]
-        public unsafe partial void GetRGBA(uint pixel, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in PixelFormat format, byte* r, byte* g, byte* b, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string a);
+        public unsafe partial void GetRGBA(uint pixel, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in PixelFormat format, byte* r, byte* g, byte* b, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string a);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 618, Column 30 in SDL_pixels.h")]
         [NativeApi(EntryPoint = "SDL_GetRGBA")]
-        public unsafe partial void GetRGBA(uint pixel, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in PixelFormat format, byte* r, byte* g, ref byte b, byte* a);
+        public unsafe partial void GetRGBA(uint pixel, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in PixelFormat format, byte* r, byte* g, ref byte b, byte* a);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 618, Column 30 in SDL_pixels.h")]
         [NativeApi(EntryPoint = "SDL_GetRGBA")]
-        public unsafe partial void GetRGBA(uint pixel, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in PixelFormat format, byte* r, byte* g, ref byte b, ref byte a);
+        public unsafe partial void GetRGBA(uint pixel, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in PixelFormat format, byte* r, byte* g, ref byte b, ref byte a);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 618, Column 30 in SDL_pixels.h")]
         [NativeApi(EntryPoint = "SDL_GetRGBA")]
-        public unsafe partial void GetRGBA(uint pixel, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in PixelFormat format, byte* r, byte* g, ref byte b, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string a);
+        public unsafe partial void GetRGBA(uint pixel, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in PixelFormat format, byte* r, byte* g, ref byte b, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string a);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 618, Column 30 in SDL_pixels.h")]
         [NativeApi(EntryPoint = "SDL_GetRGBA")]
-        public unsafe partial void GetRGBA(uint pixel, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in PixelFormat format, byte* r, byte* g, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string b, byte* a);
+        public unsafe partial void GetRGBA(uint pixel, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in PixelFormat format, byte* r, byte* g, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string b, byte* a);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 618, Column 30 in SDL_pixels.h")]
         [NativeApi(EntryPoint = "SDL_GetRGBA")]
-        public unsafe partial void GetRGBA(uint pixel, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in PixelFormat format, byte* r, byte* g, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string b, ref byte a);
+        public unsafe partial void GetRGBA(uint pixel, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in PixelFormat format, byte* r, byte* g, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string b, ref byte a);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 618, Column 30 in SDL_pixels.h")]
         [NativeApi(EntryPoint = "SDL_GetRGBA")]
-        public unsafe partial void GetRGBA(uint pixel, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in PixelFormat format, byte* r, byte* g, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string b, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string a);
+        public unsafe partial void GetRGBA(uint pixel, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in PixelFormat format, byte* r, byte* g, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string b, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string a);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 618, Column 30 in SDL_pixels.h")]
         [NativeApi(EntryPoint = "SDL_GetRGBA")]
-        public unsafe partial void GetRGBA(uint pixel, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in PixelFormat format, byte* r, ref byte g, byte* b, byte* a);
+        public unsafe partial void GetRGBA(uint pixel, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in PixelFormat format, byte* r, ref byte g, byte* b, byte* a);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 618, Column 30 in SDL_pixels.h")]
         [NativeApi(EntryPoint = "SDL_GetRGBA")]
-        public unsafe partial void GetRGBA(uint pixel, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in PixelFormat format, byte* r, ref byte g, byte* b, ref byte a);
+        public unsafe partial void GetRGBA(uint pixel, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in PixelFormat format, byte* r, ref byte g, byte* b, ref byte a);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 618, Column 30 in SDL_pixels.h")]
         [NativeApi(EntryPoint = "SDL_GetRGBA")]
-        public unsafe partial void GetRGBA(uint pixel, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in PixelFormat format, byte* r, ref byte g, byte* b, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string a);
+        public unsafe partial void GetRGBA(uint pixel, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in PixelFormat format, byte* r, ref byte g, byte* b, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string a);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 618, Column 30 in SDL_pixels.h")]
         [NativeApi(EntryPoint = "SDL_GetRGBA")]
-        public unsafe partial void GetRGBA(uint pixel, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in PixelFormat format, byte* r, ref byte g, ref byte b, byte* a);
+        public unsafe partial void GetRGBA(uint pixel, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in PixelFormat format, byte* r, ref byte g, ref byte b, byte* a);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 618, Column 30 in SDL_pixels.h")]
         [NativeApi(EntryPoint = "SDL_GetRGBA")]
-        public unsafe partial void GetRGBA(uint pixel, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in PixelFormat format, byte* r, ref byte g, ref byte b, ref byte a);
+        public unsafe partial void GetRGBA(uint pixel, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in PixelFormat format, byte* r, ref byte g, ref byte b, ref byte a);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 618, Column 30 in SDL_pixels.h")]
         [NativeApi(EntryPoint = "SDL_GetRGBA")]
-        public unsafe partial void GetRGBA(uint pixel, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in PixelFormat format, byte* r, ref byte g, ref byte b, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string a);
+        public unsafe partial void GetRGBA(uint pixel, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in PixelFormat format, byte* r, ref byte g, ref byte b, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string a);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 618, Column 30 in SDL_pixels.h")]
         [NativeApi(EntryPoint = "SDL_GetRGBA")]
-        public unsafe partial void GetRGBA(uint pixel, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in PixelFormat format, byte* r, ref byte g, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string b, byte* a);
+        public unsafe partial void GetRGBA(uint pixel, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in PixelFormat format, byte* r, ref byte g, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string b, byte* a);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 618, Column 30 in SDL_pixels.h")]
         [NativeApi(EntryPoint = "SDL_GetRGBA")]
-        public unsafe partial void GetRGBA(uint pixel, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in PixelFormat format, byte* r, ref byte g, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string b, ref byte a);
+        public unsafe partial void GetRGBA(uint pixel, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in PixelFormat format, byte* r, ref byte g, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string b, ref byte a);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 618, Column 30 in SDL_pixels.h")]
         [NativeApi(EntryPoint = "SDL_GetRGBA")]
-        public unsafe partial void GetRGBA(uint pixel, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in PixelFormat format, byte* r, ref byte g, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string b, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string a);
+        public unsafe partial void GetRGBA(uint pixel, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in PixelFormat format, byte* r, ref byte g, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string b, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string a);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 618, Column 30 in SDL_pixels.h")]
         [NativeApi(EntryPoint = "SDL_GetRGBA")]
-        public unsafe partial void GetRGBA(uint pixel, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in PixelFormat format, byte* r, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string g, byte* b, byte* a);
+        public unsafe partial void GetRGBA(uint pixel, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in PixelFormat format, byte* r, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string g, byte* b, byte* a);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 618, Column 30 in SDL_pixels.h")]
         [NativeApi(EntryPoint = "SDL_GetRGBA")]
-        public unsafe partial void GetRGBA(uint pixel, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in PixelFormat format, byte* r, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string g, byte* b, ref byte a);
+        public unsafe partial void GetRGBA(uint pixel, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in PixelFormat format, byte* r, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string g, byte* b, ref byte a);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 618, Column 30 in SDL_pixels.h")]
         [NativeApi(EntryPoint = "SDL_GetRGBA")]
-        public unsafe partial void GetRGBA(uint pixel, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in PixelFormat format, byte* r, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string g, byte* b, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string a);
+        public unsafe partial void GetRGBA(uint pixel, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in PixelFormat format, byte* r, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string g, byte* b, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string a);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 618, Column 30 in SDL_pixels.h")]
         [NativeApi(EntryPoint = "SDL_GetRGBA")]
-        public unsafe partial void GetRGBA(uint pixel, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in PixelFormat format, byte* r, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string g, ref byte b, byte* a);
+        public unsafe partial void GetRGBA(uint pixel, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in PixelFormat format, byte* r, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string g, ref byte b, byte* a);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 618, Column 30 in SDL_pixels.h")]
         [NativeApi(EntryPoint = "SDL_GetRGBA")]
-        public unsafe partial void GetRGBA(uint pixel, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in PixelFormat format, byte* r, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string g, ref byte b, ref byte a);
+        public unsafe partial void GetRGBA(uint pixel, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in PixelFormat format, byte* r, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string g, ref byte b, ref byte a);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 618, Column 30 in SDL_pixels.h")]
         [NativeApi(EntryPoint = "SDL_GetRGBA")]
-        public unsafe partial void GetRGBA(uint pixel, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in PixelFormat format, byte* r, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string g, ref byte b, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string a);
+        public unsafe partial void GetRGBA(uint pixel, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in PixelFormat format, byte* r, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string g, ref byte b, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string a);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 618, Column 30 in SDL_pixels.h")]
         [NativeApi(EntryPoint = "SDL_GetRGBA")]
-        public unsafe partial void GetRGBA(uint pixel, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in PixelFormat format, byte* r, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string g, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string b, byte* a);
+        public unsafe partial void GetRGBA(uint pixel, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in PixelFormat format, byte* r, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string g, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string b, byte* a);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 618, Column 30 in SDL_pixels.h")]
         [NativeApi(EntryPoint = "SDL_GetRGBA")]
-        public unsafe partial void GetRGBA(uint pixel, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in PixelFormat format, byte* r, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string g, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string b, ref byte a);
+        public unsafe partial void GetRGBA(uint pixel, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in PixelFormat format, byte* r, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string g, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string b, ref byte a);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 618, Column 30 in SDL_pixels.h")]
         [NativeApi(EntryPoint = "SDL_GetRGBA")]
-        public unsafe partial void GetRGBA(uint pixel, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in PixelFormat format, byte* r, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string g, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string b, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string a);
+        public unsafe partial void GetRGBA(uint pixel, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in PixelFormat format, byte* r, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string g, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string b, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string a);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 618, Column 30 in SDL_pixels.h")]
         [NativeApi(EntryPoint = "SDL_GetRGBA")]
-        public unsafe partial void GetRGBA(uint pixel, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in PixelFormat format, ref byte r, byte* g, byte* b, byte* a);
+        public unsafe partial void GetRGBA(uint pixel, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in PixelFormat format, ref byte r, byte* g, byte* b, byte* a);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 618, Column 30 in SDL_pixels.h")]
         [NativeApi(EntryPoint = "SDL_GetRGBA")]
-        public unsafe partial void GetRGBA(uint pixel, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in PixelFormat format, ref byte r, byte* g, byte* b, ref byte a);
+        public unsafe partial void GetRGBA(uint pixel, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in PixelFormat format, ref byte r, byte* g, byte* b, ref byte a);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 618, Column 30 in SDL_pixels.h")]
         [NativeApi(EntryPoint = "SDL_GetRGBA")]
-        public unsafe partial void GetRGBA(uint pixel, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in PixelFormat format, ref byte r, byte* g, byte* b, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string a);
+        public unsafe partial void GetRGBA(uint pixel, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in PixelFormat format, ref byte r, byte* g, byte* b, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string a);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 618, Column 30 in SDL_pixels.h")]
         [NativeApi(EntryPoint = "SDL_GetRGBA")]
-        public unsafe partial void GetRGBA(uint pixel, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in PixelFormat format, ref byte r, byte* g, ref byte b, byte* a);
+        public unsafe partial void GetRGBA(uint pixel, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in PixelFormat format, ref byte r, byte* g, ref byte b, byte* a);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 618, Column 30 in SDL_pixels.h")]
         [NativeApi(EntryPoint = "SDL_GetRGBA")]
-        public unsafe partial void GetRGBA(uint pixel, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in PixelFormat format, ref byte r, byte* g, ref byte b, ref byte a);
+        public unsafe partial void GetRGBA(uint pixel, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in PixelFormat format, ref byte r, byte* g, ref byte b, ref byte a);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 618, Column 30 in SDL_pixels.h")]
         [NativeApi(EntryPoint = "SDL_GetRGBA")]
-        public unsafe partial void GetRGBA(uint pixel, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in PixelFormat format, ref byte r, byte* g, ref byte b, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string a);
+        public unsafe partial void GetRGBA(uint pixel, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in PixelFormat format, ref byte r, byte* g, ref byte b, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string a);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 618, Column 30 in SDL_pixels.h")]
         [NativeApi(EntryPoint = "SDL_GetRGBA")]
-        public unsafe partial void GetRGBA(uint pixel, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in PixelFormat format, ref byte r, byte* g, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string b, byte* a);
+        public unsafe partial void GetRGBA(uint pixel, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in PixelFormat format, ref byte r, byte* g, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string b, byte* a);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 618, Column 30 in SDL_pixels.h")]
         [NativeApi(EntryPoint = "SDL_GetRGBA")]
-        public unsafe partial void GetRGBA(uint pixel, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in PixelFormat format, ref byte r, byte* g, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string b, ref byte a);
+        public unsafe partial void GetRGBA(uint pixel, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in PixelFormat format, ref byte r, byte* g, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string b, ref byte a);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 618, Column 30 in SDL_pixels.h")]
         [NativeApi(EntryPoint = "SDL_GetRGBA")]
-        public unsafe partial void GetRGBA(uint pixel, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in PixelFormat format, ref byte r, byte* g, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string b, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string a);
+        public unsafe partial void GetRGBA(uint pixel, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in PixelFormat format, ref byte r, byte* g, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string b, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string a);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 618, Column 30 in SDL_pixels.h")]
         [NativeApi(EntryPoint = "SDL_GetRGBA")]
-        public unsafe partial void GetRGBA(uint pixel, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in PixelFormat format, ref byte r, ref byte g, byte* b, byte* a);
+        public unsafe partial void GetRGBA(uint pixel, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in PixelFormat format, ref byte r, ref byte g, byte* b, byte* a);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 618, Column 30 in SDL_pixels.h")]
         [NativeApi(EntryPoint = "SDL_GetRGBA")]
-        public unsafe partial void GetRGBA(uint pixel, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in PixelFormat format, ref byte r, ref byte g, byte* b, ref byte a);
+        public unsafe partial void GetRGBA(uint pixel, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in PixelFormat format, ref byte r, ref byte g, byte* b, ref byte a);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 618, Column 30 in SDL_pixels.h")]
         [NativeApi(EntryPoint = "SDL_GetRGBA")]
-        public unsafe partial void GetRGBA(uint pixel, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in PixelFormat format, ref byte r, ref byte g, byte* b, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string a);
+        public unsafe partial void GetRGBA(uint pixel, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in PixelFormat format, ref byte r, ref byte g, byte* b, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string a);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 618, Column 30 in SDL_pixels.h")]
         [NativeApi(EntryPoint = "SDL_GetRGBA")]
-        public unsafe partial void GetRGBA(uint pixel, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in PixelFormat format, ref byte r, ref byte g, ref byte b, byte* a);
+        public unsafe partial void GetRGBA(uint pixel, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in PixelFormat format, ref byte r, ref byte g, ref byte b, byte* a);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 618, Column 30 in SDL_pixels.h")]
         [NativeApi(EntryPoint = "SDL_GetRGBA")]
-        public partial void GetRGBA(uint pixel, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in PixelFormat format, ref byte r, ref byte g, ref byte b, ref byte a);
+        public partial void GetRGBA(uint pixel, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in PixelFormat format, ref byte r, ref byte g, ref byte b, ref byte a);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 618, Column 30 in SDL_pixels.h")]
         [NativeApi(EntryPoint = "SDL_GetRGBA")]
-        public partial void GetRGBA(uint pixel, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in PixelFormat format, ref byte r, ref byte g, ref byte b, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string a);
+        public partial void GetRGBA(uint pixel, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in PixelFormat format, ref byte r, ref byte g, ref byte b, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string a);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 618, Column 30 in SDL_pixels.h")]
         [NativeApi(EntryPoint = "SDL_GetRGBA")]
-        public unsafe partial void GetRGBA(uint pixel, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in PixelFormat format, ref byte r, ref byte g, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string b, byte* a);
+        public unsafe partial void GetRGBA(uint pixel, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in PixelFormat format, ref byte r, ref byte g, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string b, byte* a);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 618, Column 30 in SDL_pixels.h")]
         [NativeApi(EntryPoint = "SDL_GetRGBA")]
-        public partial void GetRGBA(uint pixel, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in PixelFormat format, ref byte r, ref byte g, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string b, ref byte a);
+        public partial void GetRGBA(uint pixel, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in PixelFormat format, ref byte r, ref byte g, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string b, ref byte a);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 618, Column 30 in SDL_pixels.h")]
         [NativeApi(EntryPoint = "SDL_GetRGBA")]
-        public partial void GetRGBA(uint pixel, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in PixelFormat format, ref byte r, ref byte g, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string b, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string a);
+        public partial void GetRGBA(uint pixel, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in PixelFormat format, ref byte r, ref byte g, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string b, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string a);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 618, Column 30 in SDL_pixels.h")]
         [NativeApi(EntryPoint = "SDL_GetRGBA")]
-        public unsafe partial void GetRGBA(uint pixel, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in PixelFormat format, ref byte r, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string g, byte* b, byte* a);
+        public unsafe partial void GetRGBA(uint pixel, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in PixelFormat format, ref byte r, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string g, byte* b, byte* a);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 618, Column 30 in SDL_pixels.h")]
         [NativeApi(EntryPoint = "SDL_GetRGBA")]
-        public unsafe partial void GetRGBA(uint pixel, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in PixelFormat format, ref byte r, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string g, byte* b, ref byte a);
+        public unsafe partial void GetRGBA(uint pixel, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in PixelFormat format, ref byte r, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string g, byte* b, ref byte a);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 618, Column 30 in SDL_pixels.h")]
         [NativeApi(EntryPoint = "SDL_GetRGBA")]
-        public unsafe partial void GetRGBA(uint pixel, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in PixelFormat format, ref byte r, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string g, byte* b, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string a);
+        public unsafe partial void GetRGBA(uint pixel, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in PixelFormat format, ref byte r, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string g, byte* b, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string a);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 618, Column 30 in SDL_pixels.h")]
         [NativeApi(EntryPoint = "SDL_GetRGBA")]
-        public unsafe partial void GetRGBA(uint pixel, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in PixelFormat format, ref byte r, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string g, ref byte b, byte* a);
+        public unsafe partial void GetRGBA(uint pixel, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in PixelFormat format, ref byte r, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string g, ref byte b, byte* a);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 618, Column 30 in SDL_pixels.h")]
         [NativeApi(EntryPoint = "SDL_GetRGBA")]
-        public partial void GetRGBA(uint pixel, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in PixelFormat format, ref byte r, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string g, ref byte b, ref byte a);
+        public partial void GetRGBA(uint pixel, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in PixelFormat format, ref byte r, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string g, ref byte b, ref byte a);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 618, Column 30 in SDL_pixels.h")]
         [NativeApi(EntryPoint = "SDL_GetRGBA")]
-        public partial void GetRGBA(uint pixel, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in PixelFormat format, ref byte r, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string g, ref byte b, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string a);
+        public partial void GetRGBA(uint pixel, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in PixelFormat format, ref byte r, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string g, ref byte b, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string a);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 618, Column 30 in SDL_pixels.h")]
         [NativeApi(EntryPoint = "SDL_GetRGBA")]
-        public unsafe partial void GetRGBA(uint pixel, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in PixelFormat format, ref byte r, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string g, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string b, byte* a);
+        public unsafe partial void GetRGBA(uint pixel, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in PixelFormat format, ref byte r, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string g, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string b, byte* a);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 618, Column 30 in SDL_pixels.h")]
         [NativeApi(EntryPoint = "SDL_GetRGBA")]
-        public partial void GetRGBA(uint pixel, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in PixelFormat format, ref byte r, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string g, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string b, ref byte a);
+        public partial void GetRGBA(uint pixel, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in PixelFormat format, ref byte r, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string g, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string b, ref byte a);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 618, Column 30 in SDL_pixels.h")]
         [NativeApi(EntryPoint = "SDL_GetRGBA")]
-        public partial void GetRGBA(uint pixel, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in PixelFormat format, ref byte r, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string g, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string b, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string a);
+        public partial void GetRGBA(uint pixel, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in PixelFormat format, ref byte r, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string g, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string b, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string a);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 618, Column 30 in SDL_pixels.h")]
         [NativeApi(EntryPoint = "SDL_GetRGBA")]
-        public unsafe partial void GetRGBA(uint pixel, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in PixelFormat format, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string r, byte* g, byte* b, byte* a);
+        public unsafe partial void GetRGBA(uint pixel, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in PixelFormat format, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string r, byte* g, byte* b, byte* a);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 618, Column 30 in SDL_pixels.h")]
         [NativeApi(EntryPoint = "SDL_GetRGBA")]
-        public unsafe partial void GetRGBA(uint pixel, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in PixelFormat format, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string r, byte* g, byte* b, ref byte a);
+        public unsafe partial void GetRGBA(uint pixel, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in PixelFormat format, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string r, byte* g, byte* b, ref byte a);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 618, Column 30 in SDL_pixels.h")]
         [NativeApi(EntryPoint = "SDL_GetRGBA")]
-        public unsafe partial void GetRGBA(uint pixel, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in PixelFormat format, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string r, byte* g, byte* b, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string a);
+        public unsafe partial void GetRGBA(uint pixel, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in PixelFormat format, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string r, byte* g, byte* b, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string a);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 618, Column 30 in SDL_pixels.h")]
         [NativeApi(EntryPoint = "SDL_GetRGBA")]
-        public unsafe partial void GetRGBA(uint pixel, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in PixelFormat format, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string r, byte* g, ref byte b, byte* a);
+        public unsafe partial void GetRGBA(uint pixel, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in PixelFormat format, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string r, byte* g, ref byte b, byte* a);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 618, Column 30 in SDL_pixels.h")]
         [NativeApi(EntryPoint = "SDL_GetRGBA")]
-        public unsafe partial void GetRGBA(uint pixel, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in PixelFormat format, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string r, byte* g, ref byte b, ref byte a);
+        public unsafe partial void GetRGBA(uint pixel, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in PixelFormat format, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string r, byte* g, ref byte b, ref byte a);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 618, Column 30 in SDL_pixels.h")]
         [NativeApi(EntryPoint = "SDL_GetRGBA")]
-        public unsafe partial void GetRGBA(uint pixel, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in PixelFormat format, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string r, byte* g, ref byte b, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string a);
+        public unsafe partial void GetRGBA(uint pixel, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in PixelFormat format, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string r, byte* g, ref byte b, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string a);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 618, Column 30 in SDL_pixels.h")]
         [NativeApi(EntryPoint = "SDL_GetRGBA")]
-        public unsafe partial void GetRGBA(uint pixel, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in PixelFormat format, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string r, byte* g, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string b, byte* a);
+        public unsafe partial void GetRGBA(uint pixel, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in PixelFormat format, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string r, byte* g, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string b, byte* a);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 618, Column 30 in SDL_pixels.h")]
         [NativeApi(EntryPoint = "SDL_GetRGBA")]
-        public unsafe partial void GetRGBA(uint pixel, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in PixelFormat format, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string r, byte* g, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string b, ref byte a);
+        public unsafe partial void GetRGBA(uint pixel, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in PixelFormat format, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string r, byte* g, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string b, ref byte a);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 618, Column 30 in SDL_pixels.h")]
         [NativeApi(EntryPoint = "SDL_GetRGBA")]
-        public unsafe partial void GetRGBA(uint pixel, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in PixelFormat format, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string r, byte* g, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string b, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string a);
+        public unsafe partial void GetRGBA(uint pixel, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in PixelFormat format, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string r, byte* g, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string b, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string a);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 618, Column 30 in SDL_pixels.h")]
         [NativeApi(EntryPoint = "SDL_GetRGBA")]
-        public unsafe partial void GetRGBA(uint pixel, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in PixelFormat format, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string r, ref byte g, byte* b, byte* a);
+        public unsafe partial void GetRGBA(uint pixel, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in PixelFormat format, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string r, ref byte g, byte* b, byte* a);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 618, Column 30 in SDL_pixels.h")]
         [NativeApi(EntryPoint = "SDL_GetRGBA")]
-        public unsafe partial void GetRGBA(uint pixel, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in PixelFormat format, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string r, ref byte g, byte* b, ref byte a);
+        public unsafe partial void GetRGBA(uint pixel, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in PixelFormat format, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string r, ref byte g, byte* b, ref byte a);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 618, Column 30 in SDL_pixels.h")]
         [NativeApi(EntryPoint = "SDL_GetRGBA")]
-        public unsafe partial void GetRGBA(uint pixel, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in PixelFormat format, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string r, ref byte g, byte* b, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string a);
+        public unsafe partial void GetRGBA(uint pixel, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in PixelFormat format, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string r, ref byte g, byte* b, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string a);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 618, Column 30 in SDL_pixels.h")]
         [NativeApi(EntryPoint = "SDL_GetRGBA")]
-        public unsafe partial void GetRGBA(uint pixel, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in PixelFormat format, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string r, ref byte g, ref byte b, byte* a);
+        public unsafe partial void GetRGBA(uint pixel, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in PixelFormat format, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string r, ref byte g, ref byte b, byte* a);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 618, Column 30 in SDL_pixels.h")]
         [NativeApi(EntryPoint = "SDL_GetRGBA")]
-        public partial void GetRGBA(uint pixel, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in PixelFormat format, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string r, ref byte g, ref byte b, ref byte a);
+        public partial void GetRGBA(uint pixel, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in PixelFormat format, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string r, ref byte g, ref byte b, ref byte a);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 618, Column 30 in SDL_pixels.h")]
         [NativeApi(EntryPoint = "SDL_GetRGBA")]
-        public partial void GetRGBA(uint pixel, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in PixelFormat format, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string r, ref byte g, ref byte b, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string a);
+        public partial void GetRGBA(uint pixel, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in PixelFormat format, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string r, ref byte g, ref byte b, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string a);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 618, Column 30 in SDL_pixels.h")]
         [NativeApi(EntryPoint = "SDL_GetRGBA")]
-        public unsafe partial void GetRGBA(uint pixel, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in PixelFormat format, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string r, ref byte g, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string b, byte* a);
+        public unsafe partial void GetRGBA(uint pixel, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in PixelFormat format, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string r, ref byte g, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string b, byte* a);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 618, Column 30 in SDL_pixels.h")]
         [NativeApi(EntryPoint = "SDL_GetRGBA")]
-        public partial void GetRGBA(uint pixel, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in PixelFormat format, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string r, ref byte g, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string b, ref byte a);
+        public partial void GetRGBA(uint pixel, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in PixelFormat format, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string r, ref byte g, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string b, ref byte a);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 618, Column 30 in SDL_pixels.h")]
         [NativeApi(EntryPoint = "SDL_GetRGBA")]
-        public partial void GetRGBA(uint pixel, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in PixelFormat format, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string r, ref byte g, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string b, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string a);
+        public partial void GetRGBA(uint pixel, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in PixelFormat format, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string r, ref byte g, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string b, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string a);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 618, Column 30 in SDL_pixels.h")]
         [NativeApi(EntryPoint = "SDL_GetRGBA")]
-        public unsafe partial void GetRGBA(uint pixel, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in PixelFormat format, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string r, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string g, byte* b, byte* a);
+        public unsafe partial void GetRGBA(uint pixel, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in PixelFormat format, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string r, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string g, byte* b, byte* a);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 618, Column 30 in SDL_pixels.h")]
         [NativeApi(EntryPoint = "SDL_GetRGBA")]
-        public unsafe partial void GetRGBA(uint pixel, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in PixelFormat format, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string r, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string g, byte* b, ref byte a);
+        public unsafe partial void GetRGBA(uint pixel, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in PixelFormat format, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string r, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string g, byte* b, ref byte a);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 618, Column 30 in SDL_pixels.h")]
         [NativeApi(EntryPoint = "SDL_GetRGBA")]
-        public unsafe partial void GetRGBA(uint pixel, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in PixelFormat format, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string r, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string g, byte* b, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string a);
+        public unsafe partial void GetRGBA(uint pixel, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in PixelFormat format, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string r, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string g, byte* b, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string a);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 618, Column 30 in SDL_pixels.h")]
         [NativeApi(EntryPoint = "SDL_GetRGBA")]
-        public unsafe partial void GetRGBA(uint pixel, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in PixelFormat format, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string r, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string g, ref byte b, byte* a);
+        public unsafe partial void GetRGBA(uint pixel, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in PixelFormat format, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string r, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string g, ref byte b, byte* a);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 618, Column 30 in SDL_pixels.h")]
         [NativeApi(EntryPoint = "SDL_GetRGBA")]
-        public partial void GetRGBA(uint pixel, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in PixelFormat format, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string r, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string g, ref byte b, ref byte a);
+        public partial void GetRGBA(uint pixel, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in PixelFormat format, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string r, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string g, ref byte b, ref byte a);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 618, Column 30 in SDL_pixels.h")]
         [NativeApi(EntryPoint = "SDL_GetRGBA")]
-        public partial void GetRGBA(uint pixel, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in PixelFormat format, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string r, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string g, ref byte b, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string a);
+        public partial void GetRGBA(uint pixel, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in PixelFormat format, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string r, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string g, ref byte b, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string a);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 618, Column 30 in SDL_pixels.h")]
         [NativeApi(EntryPoint = "SDL_GetRGBA")]
-        public unsafe partial void GetRGBA(uint pixel, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in PixelFormat format, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string r, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string g, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string b, byte* a);
+        public unsafe partial void GetRGBA(uint pixel, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in PixelFormat format, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string r, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string g, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string b, byte* a);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 618, Column 30 in SDL_pixels.h")]
         [NativeApi(EntryPoint = "SDL_GetRGBA")]
-        public partial void GetRGBA(uint pixel, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in PixelFormat format, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string r, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string g, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string b, ref byte a);
+        public partial void GetRGBA(uint pixel, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in PixelFormat format, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string r, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string g, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string b, ref byte a);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 618, Column 30 in SDL_pixels.h")]
         [NativeApi(EntryPoint = "SDL_GetRGBA")]
-        public partial void GetRGBA(uint pixel, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in PixelFormat format, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string r, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string g, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string b, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string a);
+        public partial void GetRGBA(uint pixel, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in PixelFormat format, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string r, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string g, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string b, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string a);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 633, Column 30 in SDL_pixels.h")]
@@ -5700,7 +5700,7 @@ namespace Silk.NET.SDL
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 66, Column 29 in SDL_error.h")]
         [NativeApi(EntryPoint = "SDL_SetError")]
-        public partial int SetError([Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte fmt);
+        public partial int SetError([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte fmt);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 66, Column 29 in SDL_error.h")]
@@ -5769,17 +5769,17 @@ namespace Silk.NET.SDL
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 146, Column 34 in SDL_rect.h")]
         [NativeApi(EntryPoint = "SDL_HasIntersection")]
-        public unsafe partial SdlBool HasIntersection([Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Rectangle<int>* A, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Maths.Rectangle<int> B);
+        public unsafe partial SdlBool HasIntersection([Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Rectangle<int>* A, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Maths.Rectangle<int> B);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 146, Column 34 in SDL_rect.h")]
         [NativeApi(EntryPoint = "SDL_HasIntersection")]
-        public unsafe partial SdlBool HasIntersection([Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Maths.Rectangle<int> A, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Rectangle<int>* B);
+        public unsafe partial SdlBool HasIntersection([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Maths.Rectangle<int> A, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Rectangle<int>* B);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 146, Column 34 in SDL_rect.h")]
         [NativeApi(EntryPoint = "SDL_HasIntersection")]
-        public partial SdlBool HasIntersection([Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Maths.Rectangle<int> A, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Maths.Rectangle<int> B);
+        public partial SdlBool HasIntersection([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Maths.Rectangle<int> A, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Maths.Rectangle<int> B);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 164, Column 34 in SDL_rect.h")]
@@ -5794,32 +5794,32 @@ namespace Silk.NET.SDL
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 164, Column 34 in SDL_rect.h")]
         [NativeApi(EntryPoint = "SDL_IntersectRect")]
-        public unsafe partial SdlBool IntersectRect([Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Rectangle<int>* A, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Maths.Rectangle<int> B, Silk.NET.Maths.Rectangle<int>* result);
+        public unsafe partial SdlBool IntersectRect([Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Rectangle<int>* A, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Maths.Rectangle<int> B, Silk.NET.Maths.Rectangle<int>* result);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 164, Column 34 in SDL_rect.h")]
         [NativeApi(EntryPoint = "SDL_IntersectRect")]
-        public unsafe partial SdlBool IntersectRect([Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Rectangle<int>* A, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Maths.Rectangle<int> B, ref Silk.NET.Maths.Rectangle<int> result);
+        public unsafe partial SdlBool IntersectRect([Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Rectangle<int>* A, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Maths.Rectangle<int> B, ref Silk.NET.Maths.Rectangle<int> result);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 164, Column 34 in SDL_rect.h")]
         [NativeApi(EntryPoint = "SDL_IntersectRect")]
-        public unsafe partial SdlBool IntersectRect([Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Maths.Rectangle<int> A, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Rectangle<int>* B, Silk.NET.Maths.Rectangle<int>* result);
+        public unsafe partial SdlBool IntersectRect([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Maths.Rectangle<int> A, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Rectangle<int>* B, Silk.NET.Maths.Rectangle<int>* result);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 164, Column 34 in SDL_rect.h")]
         [NativeApi(EntryPoint = "SDL_IntersectRect")]
-        public unsafe partial SdlBool IntersectRect([Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Maths.Rectangle<int> A, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Rectangle<int>* B, ref Silk.NET.Maths.Rectangle<int> result);
+        public unsafe partial SdlBool IntersectRect([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Maths.Rectangle<int> A, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Rectangle<int>* B, ref Silk.NET.Maths.Rectangle<int> result);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 164, Column 34 in SDL_rect.h")]
         [NativeApi(EntryPoint = "SDL_IntersectRect")]
-        public unsafe partial SdlBool IntersectRect([Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Maths.Rectangle<int> A, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Maths.Rectangle<int> B, Silk.NET.Maths.Rectangle<int>* result);
+        public unsafe partial SdlBool IntersectRect([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Maths.Rectangle<int> A, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Maths.Rectangle<int> B, Silk.NET.Maths.Rectangle<int>* result);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 164, Column 34 in SDL_rect.h")]
         [NativeApi(EntryPoint = "SDL_IntersectRect")]
-        public partial SdlBool IntersectRect([Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Maths.Rectangle<int> A, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Maths.Rectangle<int> B, ref Silk.NET.Maths.Rectangle<int> result);
+        public partial SdlBool IntersectRect([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Maths.Rectangle<int> A, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Maths.Rectangle<int> B, ref Silk.NET.Maths.Rectangle<int> result);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 178, Column 30 in SDL_rect.h")]
@@ -5834,32 +5834,32 @@ namespace Silk.NET.SDL
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 178, Column 30 in SDL_rect.h")]
         [NativeApi(EntryPoint = "SDL_UnionRect")]
-        public unsafe partial void UnionRect([Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Rectangle<int>* A, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Maths.Rectangle<int> B, Silk.NET.Maths.Rectangle<int>* result);
+        public unsafe partial void UnionRect([Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Rectangle<int>* A, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Maths.Rectangle<int> B, Silk.NET.Maths.Rectangle<int>* result);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 178, Column 30 in SDL_rect.h")]
         [NativeApi(EntryPoint = "SDL_UnionRect")]
-        public unsafe partial void UnionRect([Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Rectangle<int>* A, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Maths.Rectangle<int> B, ref Silk.NET.Maths.Rectangle<int> result);
+        public unsafe partial void UnionRect([Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Rectangle<int>* A, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Maths.Rectangle<int> B, ref Silk.NET.Maths.Rectangle<int> result);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 178, Column 30 in SDL_rect.h")]
         [NativeApi(EntryPoint = "SDL_UnionRect")]
-        public unsafe partial void UnionRect([Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Maths.Rectangle<int> A, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Rectangle<int>* B, Silk.NET.Maths.Rectangle<int>* result);
+        public unsafe partial void UnionRect([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Maths.Rectangle<int> A, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Rectangle<int>* B, Silk.NET.Maths.Rectangle<int>* result);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 178, Column 30 in SDL_rect.h")]
         [NativeApi(EntryPoint = "SDL_UnionRect")]
-        public unsafe partial void UnionRect([Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Maths.Rectangle<int> A, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Rectangle<int>* B, ref Silk.NET.Maths.Rectangle<int> result);
+        public unsafe partial void UnionRect([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Maths.Rectangle<int> A, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Rectangle<int>* B, ref Silk.NET.Maths.Rectangle<int> result);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 178, Column 30 in SDL_rect.h")]
         [NativeApi(EntryPoint = "SDL_UnionRect")]
-        public unsafe partial void UnionRect([Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Maths.Rectangle<int> A, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Maths.Rectangle<int> B, Silk.NET.Maths.Rectangle<int>* result);
+        public unsafe partial void UnionRect([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Maths.Rectangle<int> A, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Maths.Rectangle<int> B, Silk.NET.Maths.Rectangle<int>* result);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 178, Column 30 in SDL_rect.h")]
         [NativeApi(EntryPoint = "SDL_UnionRect")]
-        public partial void UnionRect([Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Maths.Rectangle<int> A, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Maths.Rectangle<int> B, ref Silk.NET.Maths.Rectangle<int> result);
+        public partial void UnionRect([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Maths.Rectangle<int> A, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Maths.Rectangle<int> B, ref Silk.NET.Maths.Rectangle<int> result);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 199, Column 34 in SDL_rect.h")]
@@ -5874,32 +5874,32 @@ namespace Silk.NET.SDL
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 199, Column 34 in SDL_rect.h")]
         [NativeApi(EntryPoint = "SDL_EnclosePoints")]
-        public unsafe partial SdlBool EnclosePoints([Flow(Silk.NET.Core.Native.FlowDirection.In)] Point* points, int count, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Maths.Rectangle<int> clip, Silk.NET.Maths.Rectangle<int>* result);
+        public unsafe partial SdlBool EnclosePoints([Flow(Silk.NET.Core.Native.FlowDirection.In)] Point* points, int count, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Maths.Rectangle<int> clip, Silk.NET.Maths.Rectangle<int>* result);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 199, Column 34 in SDL_rect.h")]
         [NativeApi(EntryPoint = "SDL_EnclosePoints")]
-        public unsafe partial SdlBool EnclosePoints([Flow(Silk.NET.Core.Native.FlowDirection.In)] Point* points, int count, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Maths.Rectangle<int> clip, ref Silk.NET.Maths.Rectangle<int> result);
+        public unsafe partial SdlBool EnclosePoints([Flow(Silk.NET.Core.Native.FlowDirection.In)] Point* points, int count, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Maths.Rectangle<int> clip, ref Silk.NET.Maths.Rectangle<int> result);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 199, Column 34 in SDL_rect.h")]
         [NativeApi(EntryPoint = "SDL_EnclosePoints")]
-        public unsafe partial SdlBool EnclosePoints([Flow(Silk.NET.Core.Native.FlowDirection.In)] in Point points, int count, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Rectangle<int>* clip, Silk.NET.Maths.Rectangle<int>* result);
+        public unsafe partial SdlBool EnclosePoints([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Point points, int count, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Rectangle<int>* clip, Silk.NET.Maths.Rectangle<int>* result);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 199, Column 34 in SDL_rect.h")]
         [NativeApi(EntryPoint = "SDL_EnclosePoints")]
-        public unsafe partial SdlBool EnclosePoints([Flow(Silk.NET.Core.Native.FlowDirection.In)] in Point points, int count, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Rectangle<int>* clip, ref Silk.NET.Maths.Rectangle<int> result);
+        public unsafe partial SdlBool EnclosePoints([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Point points, int count, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Rectangle<int>* clip, ref Silk.NET.Maths.Rectangle<int> result);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 199, Column 34 in SDL_rect.h")]
         [NativeApi(EntryPoint = "SDL_EnclosePoints")]
-        public unsafe partial SdlBool EnclosePoints([Flow(Silk.NET.Core.Native.FlowDirection.In)] in Point points, int count, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Maths.Rectangle<int> clip, Silk.NET.Maths.Rectangle<int>* result);
+        public unsafe partial SdlBool EnclosePoints([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Point points, int count, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Maths.Rectangle<int> clip, Silk.NET.Maths.Rectangle<int>* result);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 199, Column 34 in SDL_rect.h")]
         [NativeApi(EntryPoint = "SDL_EnclosePoints")]
-        public partial SdlBool EnclosePoints([Flow(Silk.NET.Core.Native.FlowDirection.In)] in Point points, int count, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Maths.Rectangle<int> clip, ref Silk.NET.Maths.Rectangle<int> result);
+        public partial SdlBool EnclosePoints([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Point points, int count, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Maths.Rectangle<int> clip, ref Silk.NET.Maths.Rectangle<int> result);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 222, Column 34 in SDL_rect.h")]
@@ -5984,82 +5984,82 @@ namespace Silk.NET.SDL
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 222, Column 34 in SDL_rect.h")]
         [NativeApi(EntryPoint = "SDL_IntersectRectAndLine")]
-        public unsafe partial SdlBool IntersectRectAndLine([Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Maths.Rectangle<int> rect, int* X1, int* Y1, int* X2, int* Y2);
+        public unsafe partial SdlBool IntersectRectAndLine([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Maths.Rectangle<int> rect, int* X1, int* Y1, int* X2, int* Y2);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 222, Column 34 in SDL_rect.h")]
         [NativeApi(EntryPoint = "SDL_IntersectRectAndLine")]
-        public unsafe partial SdlBool IntersectRectAndLine([Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Maths.Rectangle<int> rect, int* X1, int* Y1, int* X2, ref int Y2);
+        public unsafe partial SdlBool IntersectRectAndLine([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Maths.Rectangle<int> rect, int* X1, int* Y1, int* X2, ref int Y2);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 222, Column 34 in SDL_rect.h")]
         [NativeApi(EntryPoint = "SDL_IntersectRectAndLine")]
-        public unsafe partial SdlBool IntersectRectAndLine([Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Maths.Rectangle<int> rect, int* X1, int* Y1, ref int X2, int* Y2);
+        public unsafe partial SdlBool IntersectRectAndLine([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Maths.Rectangle<int> rect, int* X1, int* Y1, ref int X2, int* Y2);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 222, Column 34 in SDL_rect.h")]
         [NativeApi(EntryPoint = "SDL_IntersectRectAndLine")]
-        public unsafe partial SdlBool IntersectRectAndLine([Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Maths.Rectangle<int> rect, int* X1, int* Y1, ref int X2, ref int Y2);
+        public unsafe partial SdlBool IntersectRectAndLine([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Maths.Rectangle<int> rect, int* X1, int* Y1, ref int X2, ref int Y2);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 222, Column 34 in SDL_rect.h")]
         [NativeApi(EntryPoint = "SDL_IntersectRectAndLine")]
-        public unsafe partial SdlBool IntersectRectAndLine([Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Maths.Rectangle<int> rect, int* X1, ref int Y1, int* X2, int* Y2);
+        public unsafe partial SdlBool IntersectRectAndLine([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Maths.Rectangle<int> rect, int* X1, ref int Y1, int* X2, int* Y2);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 222, Column 34 in SDL_rect.h")]
         [NativeApi(EntryPoint = "SDL_IntersectRectAndLine")]
-        public unsafe partial SdlBool IntersectRectAndLine([Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Maths.Rectangle<int> rect, int* X1, ref int Y1, int* X2, ref int Y2);
+        public unsafe partial SdlBool IntersectRectAndLine([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Maths.Rectangle<int> rect, int* X1, ref int Y1, int* X2, ref int Y2);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 222, Column 34 in SDL_rect.h")]
         [NativeApi(EntryPoint = "SDL_IntersectRectAndLine")]
-        public unsafe partial SdlBool IntersectRectAndLine([Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Maths.Rectangle<int> rect, int* X1, ref int Y1, ref int X2, int* Y2);
+        public unsafe partial SdlBool IntersectRectAndLine([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Maths.Rectangle<int> rect, int* X1, ref int Y1, ref int X2, int* Y2);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 222, Column 34 in SDL_rect.h")]
         [NativeApi(EntryPoint = "SDL_IntersectRectAndLine")]
-        public unsafe partial SdlBool IntersectRectAndLine([Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Maths.Rectangle<int> rect, int* X1, ref int Y1, ref int X2, ref int Y2);
+        public unsafe partial SdlBool IntersectRectAndLine([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Maths.Rectangle<int> rect, int* X1, ref int Y1, ref int X2, ref int Y2);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 222, Column 34 in SDL_rect.h")]
         [NativeApi(EntryPoint = "SDL_IntersectRectAndLine")]
-        public unsafe partial SdlBool IntersectRectAndLine([Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Maths.Rectangle<int> rect, ref int X1, int* Y1, int* X2, int* Y2);
+        public unsafe partial SdlBool IntersectRectAndLine([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Maths.Rectangle<int> rect, ref int X1, int* Y1, int* X2, int* Y2);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 222, Column 34 in SDL_rect.h")]
         [NativeApi(EntryPoint = "SDL_IntersectRectAndLine")]
-        public unsafe partial SdlBool IntersectRectAndLine([Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Maths.Rectangle<int> rect, ref int X1, int* Y1, int* X2, ref int Y2);
+        public unsafe partial SdlBool IntersectRectAndLine([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Maths.Rectangle<int> rect, ref int X1, int* Y1, int* X2, ref int Y2);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 222, Column 34 in SDL_rect.h")]
         [NativeApi(EntryPoint = "SDL_IntersectRectAndLine")]
-        public unsafe partial SdlBool IntersectRectAndLine([Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Maths.Rectangle<int> rect, ref int X1, int* Y1, ref int X2, int* Y2);
+        public unsafe partial SdlBool IntersectRectAndLine([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Maths.Rectangle<int> rect, ref int X1, int* Y1, ref int X2, int* Y2);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 222, Column 34 in SDL_rect.h")]
         [NativeApi(EntryPoint = "SDL_IntersectRectAndLine")]
-        public unsafe partial SdlBool IntersectRectAndLine([Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Maths.Rectangle<int> rect, ref int X1, int* Y1, ref int X2, ref int Y2);
+        public unsafe partial SdlBool IntersectRectAndLine([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Maths.Rectangle<int> rect, ref int X1, int* Y1, ref int X2, ref int Y2);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 222, Column 34 in SDL_rect.h")]
         [NativeApi(EntryPoint = "SDL_IntersectRectAndLine")]
-        public unsafe partial SdlBool IntersectRectAndLine([Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Maths.Rectangle<int> rect, ref int X1, ref int Y1, int* X2, int* Y2);
+        public unsafe partial SdlBool IntersectRectAndLine([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Maths.Rectangle<int> rect, ref int X1, ref int Y1, int* X2, int* Y2);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 222, Column 34 in SDL_rect.h")]
         [NativeApi(EntryPoint = "SDL_IntersectRectAndLine")]
-        public unsafe partial SdlBool IntersectRectAndLine([Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Maths.Rectangle<int> rect, ref int X1, ref int Y1, int* X2, ref int Y2);
+        public unsafe partial SdlBool IntersectRectAndLine([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Maths.Rectangle<int> rect, ref int X1, ref int Y1, int* X2, ref int Y2);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 222, Column 34 in SDL_rect.h")]
         [NativeApi(EntryPoint = "SDL_IntersectRectAndLine")]
-        public unsafe partial SdlBool IntersectRectAndLine([Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Maths.Rectangle<int> rect, ref int X1, ref int Y1, ref int X2, int* Y2);
+        public unsafe partial SdlBool IntersectRectAndLine([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Maths.Rectangle<int> rect, ref int X1, ref int Y1, ref int X2, int* Y2);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 222, Column 34 in SDL_rect.h")]
         [NativeApi(EntryPoint = "SDL_IntersectRectAndLine")]
-        public partial SdlBool IntersectRectAndLine([Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Maths.Rectangle<int> rect, ref int X1, ref int Y1, ref int X2, ref int Y2);
+        public partial SdlBool IntersectRectAndLine([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Maths.Rectangle<int> rect, ref int X1, ref int Y1, ref int X2, ref int Y2);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 285, Column 34 in SDL_rect.h")]
@@ -6069,17 +6069,17 @@ namespace Silk.NET.SDL
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 285, Column 34 in SDL_rect.h")]
         [NativeApi(EntryPoint = "SDL_HasIntersectionF")]
-        public unsafe partial SdlBool HasIntersectionF([Flow(Silk.NET.Core.Native.FlowDirection.In)] FRect* A, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in FRect B);
+        public unsafe partial SdlBool HasIntersectionF([Flow(Silk.NET.Core.Native.FlowDirection.In)] FRect* A, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in FRect B);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 285, Column 34 in SDL_rect.h")]
         [NativeApi(EntryPoint = "SDL_HasIntersectionF")]
-        public unsafe partial SdlBool HasIntersectionF([Flow(Silk.NET.Core.Native.FlowDirection.In)] in FRect A, [Flow(Silk.NET.Core.Native.FlowDirection.In)] FRect* B);
+        public unsafe partial SdlBool HasIntersectionF([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in FRect A, [Flow(Silk.NET.Core.Native.FlowDirection.In)] FRect* B);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 285, Column 34 in SDL_rect.h")]
         [NativeApi(EntryPoint = "SDL_HasIntersectionF")]
-        public partial SdlBool HasIntersectionF([Flow(Silk.NET.Core.Native.FlowDirection.In)] in FRect A, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in FRect B);
+        public partial SdlBool HasIntersectionF([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in FRect A, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in FRect B);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 303, Column 34 in SDL_rect.h")]
@@ -6094,32 +6094,32 @@ namespace Silk.NET.SDL
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 303, Column 34 in SDL_rect.h")]
         [NativeApi(EntryPoint = "SDL_IntersectFRect")]
-        public unsafe partial SdlBool IntersectFRect([Flow(Silk.NET.Core.Native.FlowDirection.In)] FRect* A, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in FRect B, FRect* result);
+        public unsafe partial SdlBool IntersectFRect([Flow(Silk.NET.Core.Native.FlowDirection.In)] FRect* A, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in FRect B, FRect* result);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 303, Column 34 in SDL_rect.h")]
         [NativeApi(EntryPoint = "SDL_IntersectFRect")]
-        public unsafe partial SdlBool IntersectFRect([Flow(Silk.NET.Core.Native.FlowDirection.In)] FRect* A, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in FRect B, ref FRect result);
+        public unsafe partial SdlBool IntersectFRect([Flow(Silk.NET.Core.Native.FlowDirection.In)] FRect* A, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in FRect B, ref FRect result);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 303, Column 34 in SDL_rect.h")]
         [NativeApi(EntryPoint = "SDL_IntersectFRect")]
-        public unsafe partial SdlBool IntersectFRect([Flow(Silk.NET.Core.Native.FlowDirection.In)] in FRect A, [Flow(Silk.NET.Core.Native.FlowDirection.In)] FRect* B, FRect* result);
+        public unsafe partial SdlBool IntersectFRect([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in FRect A, [Flow(Silk.NET.Core.Native.FlowDirection.In)] FRect* B, FRect* result);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 303, Column 34 in SDL_rect.h")]
         [NativeApi(EntryPoint = "SDL_IntersectFRect")]
-        public unsafe partial SdlBool IntersectFRect([Flow(Silk.NET.Core.Native.FlowDirection.In)] in FRect A, [Flow(Silk.NET.Core.Native.FlowDirection.In)] FRect* B, ref FRect result);
+        public unsafe partial SdlBool IntersectFRect([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in FRect A, [Flow(Silk.NET.Core.Native.FlowDirection.In)] FRect* B, ref FRect result);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 303, Column 34 in SDL_rect.h")]
         [NativeApi(EntryPoint = "SDL_IntersectFRect")]
-        public unsafe partial SdlBool IntersectFRect([Flow(Silk.NET.Core.Native.FlowDirection.In)] in FRect A, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in FRect B, FRect* result);
+        public unsafe partial SdlBool IntersectFRect([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in FRect A, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in FRect B, FRect* result);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 303, Column 34 in SDL_rect.h")]
         [NativeApi(EntryPoint = "SDL_IntersectFRect")]
-        public partial SdlBool IntersectFRect([Flow(Silk.NET.Core.Native.FlowDirection.In)] in FRect A, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in FRect B, ref FRect result);
+        public partial SdlBool IntersectFRect([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in FRect A, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in FRect B, ref FRect result);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 317, Column 30 in SDL_rect.h")]
@@ -6134,32 +6134,32 @@ namespace Silk.NET.SDL
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 317, Column 30 in SDL_rect.h")]
         [NativeApi(EntryPoint = "SDL_UnionFRect")]
-        public unsafe partial void UnionFRect([Flow(Silk.NET.Core.Native.FlowDirection.In)] FRect* A, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in FRect B, FRect* result);
+        public unsafe partial void UnionFRect([Flow(Silk.NET.Core.Native.FlowDirection.In)] FRect* A, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in FRect B, FRect* result);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 317, Column 30 in SDL_rect.h")]
         [NativeApi(EntryPoint = "SDL_UnionFRect")]
-        public unsafe partial void UnionFRect([Flow(Silk.NET.Core.Native.FlowDirection.In)] FRect* A, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in FRect B, ref FRect result);
+        public unsafe partial void UnionFRect([Flow(Silk.NET.Core.Native.FlowDirection.In)] FRect* A, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in FRect B, ref FRect result);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 317, Column 30 in SDL_rect.h")]
         [NativeApi(EntryPoint = "SDL_UnionFRect")]
-        public unsafe partial void UnionFRect([Flow(Silk.NET.Core.Native.FlowDirection.In)] in FRect A, [Flow(Silk.NET.Core.Native.FlowDirection.In)] FRect* B, FRect* result);
+        public unsafe partial void UnionFRect([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in FRect A, [Flow(Silk.NET.Core.Native.FlowDirection.In)] FRect* B, FRect* result);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 317, Column 30 in SDL_rect.h")]
         [NativeApi(EntryPoint = "SDL_UnionFRect")]
-        public unsafe partial void UnionFRect([Flow(Silk.NET.Core.Native.FlowDirection.In)] in FRect A, [Flow(Silk.NET.Core.Native.FlowDirection.In)] FRect* B, ref FRect result);
+        public unsafe partial void UnionFRect([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in FRect A, [Flow(Silk.NET.Core.Native.FlowDirection.In)] FRect* B, ref FRect result);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 317, Column 30 in SDL_rect.h")]
         [NativeApi(EntryPoint = "SDL_UnionFRect")]
-        public unsafe partial void UnionFRect([Flow(Silk.NET.Core.Native.FlowDirection.In)] in FRect A, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in FRect B, FRect* result);
+        public unsafe partial void UnionFRect([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in FRect A, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in FRect B, FRect* result);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 317, Column 30 in SDL_rect.h")]
         [NativeApi(EntryPoint = "SDL_UnionFRect")]
-        public partial void UnionFRect([Flow(Silk.NET.Core.Native.FlowDirection.In)] in FRect A, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in FRect B, ref FRect result);
+        public partial void UnionFRect([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in FRect A, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in FRect B, ref FRect result);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 339, Column 34 in SDL_rect.h")]
@@ -6174,32 +6174,32 @@ namespace Silk.NET.SDL
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 339, Column 34 in SDL_rect.h")]
         [NativeApi(EntryPoint = "SDL_EncloseFPoints")]
-        public unsafe partial SdlBool EncloseFPoints([Flow(Silk.NET.Core.Native.FlowDirection.In)] FPoint* points, int count, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in FRect clip, FRect* result);
+        public unsafe partial SdlBool EncloseFPoints([Flow(Silk.NET.Core.Native.FlowDirection.In)] FPoint* points, int count, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in FRect clip, FRect* result);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 339, Column 34 in SDL_rect.h")]
         [NativeApi(EntryPoint = "SDL_EncloseFPoints")]
-        public unsafe partial SdlBool EncloseFPoints([Flow(Silk.NET.Core.Native.FlowDirection.In)] FPoint* points, int count, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in FRect clip, ref FRect result);
+        public unsafe partial SdlBool EncloseFPoints([Flow(Silk.NET.Core.Native.FlowDirection.In)] FPoint* points, int count, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in FRect clip, ref FRect result);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 339, Column 34 in SDL_rect.h")]
         [NativeApi(EntryPoint = "SDL_EncloseFPoints")]
-        public unsafe partial SdlBool EncloseFPoints([Flow(Silk.NET.Core.Native.FlowDirection.In)] in FPoint points, int count, [Flow(Silk.NET.Core.Native.FlowDirection.In)] FRect* clip, FRect* result);
+        public unsafe partial SdlBool EncloseFPoints([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in FPoint points, int count, [Flow(Silk.NET.Core.Native.FlowDirection.In)] FRect* clip, FRect* result);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 339, Column 34 in SDL_rect.h")]
         [NativeApi(EntryPoint = "SDL_EncloseFPoints")]
-        public unsafe partial SdlBool EncloseFPoints([Flow(Silk.NET.Core.Native.FlowDirection.In)] in FPoint points, int count, [Flow(Silk.NET.Core.Native.FlowDirection.In)] FRect* clip, ref FRect result);
+        public unsafe partial SdlBool EncloseFPoints([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in FPoint points, int count, [Flow(Silk.NET.Core.Native.FlowDirection.In)] FRect* clip, ref FRect result);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 339, Column 34 in SDL_rect.h")]
         [NativeApi(EntryPoint = "SDL_EncloseFPoints")]
-        public unsafe partial SdlBool EncloseFPoints([Flow(Silk.NET.Core.Native.FlowDirection.In)] in FPoint points, int count, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in FRect clip, FRect* result);
+        public unsafe partial SdlBool EncloseFPoints([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in FPoint points, int count, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in FRect clip, FRect* result);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 339, Column 34 in SDL_rect.h")]
         [NativeApi(EntryPoint = "SDL_EncloseFPoints")]
-        public partial SdlBool EncloseFPoints([Flow(Silk.NET.Core.Native.FlowDirection.In)] in FPoint points, int count, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in FRect clip, ref FRect result);
+        public partial SdlBool EncloseFPoints([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in FPoint points, int count, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in FRect clip, ref FRect result);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 363, Column 34 in SDL_rect.h")]
@@ -6284,82 +6284,82 @@ namespace Silk.NET.SDL
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 363, Column 34 in SDL_rect.h")]
         [NativeApi(EntryPoint = "SDL_IntersectFRectAndLine")]
-        public unsafe partial SdlBool IntersectFRectAndLine([Flow(Silk.NET.Core.Native.FlowDirection.In)] in FRect rect, float* X1, float* Y1, float* X2, float* Y2);
+        public unsafe partial SdlBool IntersectFRectAndLine([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in FRect rect, float* X1, float* Y1, float* X2, float* Y2);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 363, Column 34 in SDL_rect.h")]
         [NativeApi(EntryPoint = "SDL_IntersectFRectAndLine")]
-        public unsafe partial SdlBool IntersectFRectAndLine([Flow(Silk.NET.Core.Native.FlowDirection.In)] in FRect rect, float* X1, float* Y1, float* X2, ref float Y2);
+        public unsafe partial SdlBool IntersectFRectAndLine([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in FRect rect, float* X1, float* Y1, float* X2, ref float Y2);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 363, Column 34 in SDL_rect.h")]
         [NativeApi(EntryPoint = "SDL_IntersectFRectAndLine")]
-        public unsafe partial SdlBool IntersectFRectAndLine([Flow(Silk.NET.Core.Native.FlowDirection.In)] in FRect rect, float* X1, float* Y1, ref float X2, float* Y2);
+        public unsafe partial SdlBool IntersectFRectAndLine([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in FRect rect, float* X1, float* Y1, ref float X2, float* Y2);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 363, Column 34 in SDL_rect.h")]
         [NativeApi(EntryPoint = "SDL_IntersectFRectAndLine")]
-        public unsafe partial SdlBool IntersectFRectAndLine([Flow(Silk.NET.Core.Native.FlowDirection.In)] in FRect rect, float* X1, float* Y1, ref float X2, ref float Y2);
+        public unsafe partial SdlBool IntersectFRectAndLine([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in FRect rect, float* X1, float* Y1, ref float X2, ref float Y2);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 363, Column 34 in SDL_rect.h")]
         [NativeApi(EntryPoint = "SDL_IntersectFRectAndLine")]
-        public unsafe partial SdlBool IntersectFRectAndLine([Flow(Silk.NET.Core.Native.FlowDirection.In)] in FRect rect, float* X1, ref float Y1, float* X2, float* Y2);
+        public unsafe partial SdlBool IntersectFRectAndLine([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in FRect rect, float* X1, ref float Y1, float* X2, float* Y2);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 363, Column 34 in SDL_rect.h")]
         [NativeApi(EntryPoint = "SDL_IntersectFRectAndLine")]
-        public unsafe partial SdlBool IntersectFRectAndLine([Flow(Silk.NET.Core.Native.FlowDirection.In)] in FRect rect, float* X1, ref float Y1, float* X2, ref float Y2);
+        public unsafe partial SdlBool IntersectFRectAndLine([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in FRect rect, float* X1, ref float Y1, float* X2, ref float Y2);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 363, Column 34 in SDL_rect.h")]
         [NativeApi(EntryPoint = "SDL_IntersectFRectAndLine")]
-        public unsafe partial SdlBool IntersectFRectAndLine([Flow(Silk.NET.Core.Native.FlowDirection.In)] in FRect rect, float* X1, ref float Y1, ref float X2, float* Y2);
+        public unsafe partial SdlBool IntersectFRectAndLine([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in FRect rect, float* X1, ref float Y1, ref float X2, float* Y2);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 363, Column 34 in SDL_rect.h")]
         [NativeApi(EntryPoint = "SDL_IntersectFRectAndLine")]
-        public unsafe partial SdlBool IntersectFRectAndLine([Flow(Silk.NET.Core.Native.FlowDirection.In)] in FRect rect, float* X1, ref float Y1, ref float X2, ref float Y2);
+        public unsafe partial SdlBool IntersectFRectAndLine([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in FRect rect, float* X1, ref float Y1, ref float X2, ref float Y2);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 363, Column 34 in SDL_rect.h")]
         [NativeApi(EntryPoint = "SDL_IntersectFRectAndLine")]
-        public unsafe partial SdlBool IntersectFRectAndLine([Flow(Silk.NET.Core.Native.FlowDirection.In)] in FRect rect, ref float X1, float* Y1, float* X2, float* Y2);
+        public unsafe partial SdlBool IntersectFRectAndLine([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in FRect rect, ref float X1, float* Y1, float* X2, float* Y2);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 363, Column 34 in SDL_rect.h")]
         [NativeApi(EntryPoint = "SDL_IntersectFRectAndLine")]
-        public unsafe partial SdlBool IntersectFRectAndLine([Flow(Silk.NET.Core.Native.FlowDirection.In)] in FRect rect, ref float X1, float* Y1, float* X2, ref float Y2);
+        public unsafe partial SdlBool IntersectFRectAndLine([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in FRect rect, ref float X1, float* Y1, float* X2, ref float Y2);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 363, Column 34 in SDL_rect.h")]
         [NativeApi(EntryPoint = "SDL_IntersectFRectAndLine")]
-        public unsafe partial SdlBool IntersectFRectAndLine([Flow(Silk.NET.Core.Native.FlowDirection.In)] in FRect rect, ref float X1, float* Y1, ref float X2, float* Y2);
+        public unsafe partial SdlBool IntersectFRectAndLine([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in FRect rect, ref float X1, float* Y1, ref float X2, float* Y2);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 363, Column 34 in SDL_rect.h")]
         [NativeApi(EntryPoint = "SDL_IntersectFRectAndLine")]
-        public unsafe partial SdlBool IntersectFRectAndLine([Flow(Silk.NET.Core.Native.FlowDirection.In)] in FRect rect, ref float X1, float* Y1, ref float X2, ref float Y2);
+        public unsafe partial SdlBool IntersectFRectAndLine([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in FRect rect, ref float X1, float* Y1, ref float X2, ref float Y2);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 363, Column 34 in SDL_rect.h")]
         [NativeApi(EntryPoint = "SDL_IntersectFRectAndLine")]
-        public unsafe partial SdlBool IntersectFRectAndLine([Flow(Silk.NET.Core.Native.FlowDirection.In)] in FRect rect, ref float X1, ref float Y1, float* X2, float* Y2);
+        public unsafe partial SdlBool IntersectFRectAndLine([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in FRect rect, ref float X1, ref float Y1, float* X2, float* Y2);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 363, Column 34 in SDL_rect.h")]
         [NativeApi(EntryPoint = "SDL_IntersectFRectAndLine")]
-        public unsafe partial SdlBool IntersectFRectAndLine([Flow(Silk.NET.Core.Native.FlowDirection.In)] in FRect rect, ref float X1, ref float Y1, float* X2, ref float Y2);
+        public unsafe partial SdlBool IntersectFRectAndLine([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in FRect rect, ref float X1, ref float Y1, float* X2, ref float Y2);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 363, Column 34 in SDL_rect.h")]
         [NativeApi(EntryPoint = "SDL_IntersectFRectAndLine")]
-        public unsafe partial SdlBool IntersectFRectAndLine([Flow(Silk.NET.Core.Native.FlowDirection.In)] in FRect rect, ref float X1, ref float Y1, ref float X2, float* Y2);
+        public unsafe partial SdlBool IntersectFRectAndLine([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in FRect rect, ref float X1, ref float Y1, ref float X2, float* Y2);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 363, Column 34 in SDL_rect.h")]
         [NativeApi(EntryPoint = "SDL_IntersectFRectAndLine")]
-        public partial SdlBool IntersectFRectAndLine([Flow(Silk.NET.Core.Native.FlowDirection.In)] in FRect rect, ref float X1, ref float Y1, ref float X2, ref float Y2);
+        public partial SdlBool IntersectFRectAndLine([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in FRect rect, ref float X1, ref float Y1, ref float X2, ref float Y2);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 183, Column 39 in SDL_blendmode.h")]
@@ -6894,7 +6894,7 @@ namespace Silk.NET.SDL
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 620, Column 34 in SDL_surface.h")]
         [NativeApi(EntryPoint = "SDL_SetClipRect")]
-        public unsafe partial SdlBool SetClipRect(Surface* surface, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Maths.Rectangle<int> rect);
+        public unsafe partial SdlBool SetClipRect(Surface* surface, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Maths.Rectangle<int> rect);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 620, Column 34 in SDL_surface.h")]
@@ -6904,7 +6904,7 @@ namespace Silk.NET.SDL
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 620, Column 34 in SDL_surface.h")]
         [NativeApi(EntryPoint = "SDL_SetClipRect")]
-        public partial SdlBool SetClipRect(ref Surface surface, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Maths.Rectangle<int> rect);
+        public partial SdlBool SetClipRect(ref Surface surface, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Maths.Rectangle<int> rect);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 639, Column 30 in SDL_surface.h")]
@@ -6944,7 +6944,7 @@ namespace Silk.NET.SDL
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 675, Column 38 in SDL_surface.h")]
         [NativeApi(EntryPoint = "SDL_ConvertSurface")]
-        public unsafe partial Surface* ConvertSurface(Surface* src, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in PixelFormat fmt, uint flags);
+        public unsafe partial Surface* ConvertSurface(Surface* src, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in PixelFormat fmt, uint flags);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 675, Column 38 in SDL_surface.h")]
@@ -6954,7 +6954,7 @@ namespace Silk.NET.SDL
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 675, Column 38 in SDL_surface.h")]
         [NativeApi(EntryPoint = "SDL_ConvertSurface")]
-        public unsafe partial Surface* ConvertSurface(ref Surface src, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in PixelFormat fmt, uint flags);
+        public unsafe partial Surface* ConvertSurface(ref Surface src, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in PixelFormat fmt, uint flags);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 700, Column 38 in SDL_surface.h")]
@@ -6979,12 +6979,12 @@ namespace Silk.NET.SDL
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 719, Column 29 in SDL_surface.h")]
         [NativeApi(EntryPoint = "SDL_ConvertPixels")]
-        public unsafe partial int ConvertPixels<T0>(int width, int height, uint src_format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in T0 src, int src_pitch, uint dst_format, void* dst, int dst_pitch) where T0 : unmanaged;
+        public unsafe partial int ConvertPixels<T0>(int width, int height, uint src_format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in T0 src, int src_pitch, uint dst_format, void* dst, int dst_pitch) where T0 : unmanaged;
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 719, Column 29 in SDL_surface.h")]
         [NativeApi(EntryPoint = "SDL_ConvertPixels")]
-        public partial int ConvertPixels<T0, T1>(int width, int height, uint src_format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in T0 src, int src_pitch, uint dst_format, ref T1 dst, int dst_pitch) where T0 : unmanaged where T1 : unmanaged;
+        public partial int ConvertPixels<T0, T1>(int width, int height, uint src_format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in T0 src, int src_pitch, uint dst_format, ref T1 dst, int dst_pitch) where T0 : unmanaged where T1 : unmanaged;
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 745, Column 29 in SDL_surface.h")]
@@ -6999,12 +6999,12 @@ namespace Silk.NET.SDL
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 745, Column 29 in SDL_surface.h")]
         [NativeApi(EntryPoint = "SDL_PremultiplyAlpha")]
-        public unsafe partial int PremultiplyAlpha<T0>(int width, int height, uint src_format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in T0 src, int src_pitch, uint dst_format, void* dst, int dst_pitch) where T0 : unmanaged;
+        public unsafe partial int PremultiplyAlpha<T0>(int width, int height, uint src_format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in T0 src, int src_pitch, uint dst_format, void* dst, int dst_pitch) where T0 : unmanaged;
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 745, Column 29 in SDL_surface.h")]
         [NativeApi(EntryPoint = "SDL_PremultiplyAlpha")]
-        public partial int PremultiplyAlpha<T0, T1>(int width, int height, uint src_format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in T0 src, int src_pitch, uint dst_format, ref T1 dst, int dst_pitch) where T0 : unmanaged where T1 : unmanaged;
+        public partial int PremultiplyAlpha<T0, T1>(int width, int height, uint src_format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in T0 src, int src_pitch, uint dst_format, ref T1 dst, int dst_pitch) where T0 : unmanaged where T1 : unmanaged;
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 774, Column 29 in SDL_surface.h")]
@@ -7014,7 +7014,7 @@ namespace Silk.NET.SDL
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 774, Column 29 in SDL_surface.h")]
         [NativeApi(EntryPoint = "SDL_FillRect")]
-        public unsafe partial int FillRect(Surface* dst, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Maths.Rectangle<int> rect, uint color);
+        public unsafe partial int FillRect(Surface* dst, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Maths.Rectangle<int> rect, uint color);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 774, Column 29 in SDL_surface.h")]
@@ -7024,7 +7024,7 @@ namespace Silk.NET.SDL
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 774, Column 29 in SDL_surface.h")]
         [NativeApi(EntryPoint = "SDL_FillRect")]
-        public partial int FillRect(ref Surface dst, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Maths.Rectangle<int> rect, uint color);
+        public partial int FillRect(ref Surface dst, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Maths.Rectangle<int> rect, uint color);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 800, Column 29 in SDL_surface.h")]
@@ -7034,7 +7034,7 @@ namespace Silk.NET.SDL
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 800, Column 29 in SDL_surface.h")]
         [NativeApi(EntryPoint = "SDL_FillRects")]
-        public unsafe partial int FillRects(Surface* dst, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Maths.Rectangle<int> rects, int count, uint color);
+        public unsafe partial int FillRects(Surface* dst, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Maths.Rectangle<int> rects, int count, uint color);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 800, Column 29 in SDL_surface.h")]
@@ -7044,7 +7044,7 @@ namespace Silk.NET.SDL
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 800, Column 29 in SDL_surface.h")]
         [NativeApi(EntryPoint = "SDL_FillRects")]
-        public partial int FillRects(ref Surface dst, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Maths.Rectangle<int> rects, int count, uint color);
+        public partial int FillRects(ref Surface dst, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Maths.Rectangle<int> rects, int count, uint color);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 873, Column 29 in SDL_surface.h")]
@@ -7069,22 +7069,22 @@ namespace Silk.NET.SDL
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 873, Column 29 in SDL_surface.h")]
         [NativeApi(EntryPoint = "SDL_UpperBlit")]
-        public unsafe partial int UpperBlit(Surface* src, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Maths.Rectangle<int> srcrect, Surface* dst, Silk.NET.Maths.Rectangle<int>* dstrect);
+        public unsafe partial int UpperBlit(Surface* src, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Maths.Rectangle<int> srcrect, Surface* dst, Silk.NET.Maths.Rectangle<int>* dstrect);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 873, Column 29 in SDL_surface.h")]
         [NativeApi(EntryPoint = "SDL_UpperBlit")]
-        public unsafe partial int UpperBlit(Surface* src, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Maths.Rectangle<int> srcrect, Surface* dst, ref Silk.NET.Maths.Rectangle<int> dstrect);
+        public unsafe partial int UpperBlit(Surface* src, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Maths.Rectangle<int> srcrect, Surface* dst, ref Silk.NET.Maths.Rectangle<int> dstrect);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 873, Column 29 in SDL_surface.h")]
         [NativeApi(EntryPoint = "SDL_UpperBlit")]
-        public unsafe partial int UpperBlit(Surface* src, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Maths.Rectangle<int> srcrect, ref Surface dst, Silk.NET.Maths.Rectangle<int>* dstrect);
+        public unsafe partial int UpperBlit(Surface* src, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Maths.Rectangle<int> srcrect, ref Surface dst, Silk.NET.Maths.Rectangle<int>* dstrect);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 873, Column 29 in SDL_surface.h")]
         [NativeApi(EntryPoint = "SDL_UpperBlit")]
-        public unsafe partial int UpperBlit(Surface* src, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Maths.Rectangle<int> srcrect, ref Surface dst, ref Silk.NET.Maths.Rectangle<int> dstrect);
+        public unsafe partial int UpperBlit(Surface* src, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Maths.Rectangle<int> srcrect, ref Surface dst, ref Silk.NET.Maths.Rectangle<int> dstrect);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 873, Column 29 in SDL_surface.h")]
@@ -7109,22 +7109,22 @@ namespace Silk.NET.SDL
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 873, Column 29 in SDL_surface.h")]
         [NativeApi(EntryPoint = "SDL_UpperBlit")]
-        public unsafe partial int UpperBlit(ref Surface src, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Maths.Rectangle<int> srcrect, Surface* dst, Silk.NET.Maths.Rectangle<int>* dstrect);
+        public unsafe partial int UpperBlit(ref Surface src, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Maths.Rectangle<int> srcrect, Surface* dst, Silk.NET.Maths.Rectangle<int>* dstrect);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 873, Column 29 in SDL_surface.h")]
         [NativeApi(EntryPoint = "SDL_UpperBlit")]
-        public unsafe partial int UpperBlit(ref Surface src, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Maths.Rectangle<int> srcrect, Surface* dst, ref Silk.NET.Maths.Rectangle<int> dstrect);
+        public unsafe partial int UpperBlit(ref Surface src, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Maths.Rectangle<int> srcrect, Surface* dst, ref Silk.NET.Maths.Rectangle<int> dstrect);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 873, Column 29 in SDL_surface.h")]
         [NativeApi(EntryPoint = "SDL_UpperBlit")]
-        public unsafe partial int UpperBlit(ref Surface src, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Maths.Rectangle<int> srcrect, ref Surface dst, Silk.NET.Maths.Rectangle<int>* dstrect);
+        public unsafe partial int UpperBlit(ref Surface src, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Maths.Rectangle<int> srcrect, ref Surface dst, Silk.NET.Maths.Rectangle<int>* dstrect);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 873, Column 29 in SDL_surface.h")]
         [NativeApi(EntryPoint = "SDL_UpperBlit")]
-        public partial int UpperBlit(ref Surface src, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Maths.Rectangle<int> srcrect, ref Surface dst, ref Silk.NET.Maths.Rectangle<int> dstrect);
+        public partial int UpperBlit(ref Surface src, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Maths.Rectangle<int> srcrect, ref Surface dst, ref Silk.NET.Maths.Rectangle<int> dstrect);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 899, Column 29 in SDL_surface.h")]
@@ -7214,7 +7214,7 @@ namespace Silk.NET.SDL
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 912, Column 29 in SDL_surface.h")]
         [NativeApi(EntryPoint = "SDL_SoftStretch")]
-        public unsafe partial int SoftStretch(Surface* src, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Rectangle<int>* srcrect, Surface* dst, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Maths.Rectangle<int> dstrect);
+        public unsafe partial int SoftStretch(Surface* src, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Rectangle<int>* srcrect, Surface* dst, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Maths.Rectangle<int> dstrect);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 912, Column 29 in SDL_surface.h")]
@@ -7224,27 +7224,27 @@ namespace Silk.NET.SDL
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 912, Column 29 in SDL_surface.h")]
         [NativeApi(EntryPoint = "SDL_SoftStretch")]
-        public unsafe partial int SoftStretch(Surface* src, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Rectangle<int>* srcrect, ref Surface dst, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Maths.Rectangle<int> dstrect);
+        public unsafe partial int SoftStretch(Surface* src, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Rectangle<int>* srcrect, ref Surface dst, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Maths.Rectangle<int> dstrect);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 912, Column 29 in SDL_surface.h")]
         [NativeApi(EntryPoint = "SDL_SoftStretch")]
-        public unsafe partial int SoftStretch(Surface* src, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Maths.Rectangle<int> srcrect, Surface* dst, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Rectangle<int>* dstrect);
+        public unsafe partial int SoftStretch(Surface* src, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Maths.Rectangle<int> srcrect, Surface* dst, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Rectangle<int>* dstrect);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 912, Column 29 in SDL_surface.h")]
         [NativeApi(EntryPoint = "SDL_SoftStretch")]
-        public unsafe partial int SoftStretch(Surface* src, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Maths.Rectangle<int> srcrect, Surface* dst, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Maths.Rectangle<int> dstrect);
+        public unsafe partial int SoftStretch(Surface* src, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Maths.Rectangle<int> srcrect, Surface* dst, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Maths.Rectangle<int> dstrect);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 912, Column 29 in SDL_surface.h")]
         [NativeApi(EntryPoint = "SDL_SoftStretch")]
-        public unsafe partial int SoftStretch(Surface* src, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Maths.Rectangle<int> srcrect, ref Surface dst, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Rectangle<int>* dstrect);
+        public unsafe partial int SoftStretch(Surface* src, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Maths.Rectangle<int> srcrect, ref Surface dst, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Rectangle<int>* dstrect);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 912, Column 29 in SDL_surface.h")]
         [NativeApi(EntryPoint = "SDL_SoftStretch")]
-        public unsafe partial int SoftStretch(Surface* src, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Maths.Rectangle<int> srcrect, ref Surface dst, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Maths.Rectangle<int> dstrect);
+        public unsafe partial int SoftStretch(Surface* src, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Maths.Rectangle<int> srcrect, ref Surface dst, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Maths.Rectangle<int> dstrect);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 912, Column 29 in SDL_surface.h")]
@@ -7254,7 +7254,7 @@ namespace Silk.NET.SDL
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 912, Column 29 in SDL_surface.h")]
         [NativeApi(EntryPoint = "SDL_SoftStretch")]
-        public unsafe partial int SoftStretch(ref Surface src, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Rectangle<int>* srcrect, Surface* dst, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Maths.Rectangle<int> dstrect);
+        public unsafe partial int SoftStretch(ref Surface src, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Rectangle<int>* srcrect, Surface* dst, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Maths.Rectangle<int> dstrect);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 912, Column 29 in SDL_surface.h")]
@@ -7264,27 +7264,27 @@ namespace Silk.NET.SDL
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 912, Column 29 in SDL_surface.h")]
         [NativeApi(EntryPoint = "SDL_SoftStretch")]
-        public unsafe partial int SoftStretch(ref Surface src, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Rectangle<int>* srcrect, ref Surface dst, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Maths.Rectangle<int> dstrect);
+        public unsafe partial int SoftStretch(ref Surface src, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Rectangle<int>* srcrect, ref Surface dst, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Maths.Rectangle<int> dstrect);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 912, Column 29 in SDL_surface.h")]
         [NativeApi(EntryPoint = "SDL_SoftStretch")]
-        public unsafe partial int SoftStretch(ref Surface src, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Maths.Rectangle<int> srcrect, Surface* dst, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Rectangle<int>* dstrect);
+        public unsafe partial int SoftStretch(ref Surface src, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Maths.Rectangle<int> srcrect, Surface* dst, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Rectangle<int>* dstrect);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 912, Column 29 in SDL_surface.h")]
         [NativeApi(EntryPoint = "SDL_SoftStretch")]
-        public unsafe partial int SoftStretch(ref Surface src, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Maths.Rectangle<int> srcrect, Surface* dst, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Maths.Rectangle<int> dstrect);
+        public unsafe partial int SoftStretch(ref Surface src, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Maths.Rectangle<int> srcrect, Surface* dst, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Maths.Rectangle<int> dstrect);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 912, Column 29 in SDL_surface.h")]
         [NativeApi(EntryPoint = "SDL_SoftStretch")]
-        public unsafe partial int SoftStretch(ref Surface src, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Maths.Rectangle<int> srcrect, ref Surface dst, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Rectangle<int>* dstrect);
+        public unsafe partial int SoftStretch(ref Surface src, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Maths.Rectangle<int> srcrect, ref Surface dst, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Rectangle<int>* dstrect);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 912, Column 29 in SDL_surface.h")]
         [NativeApi(EntryPoint = "SDL_SoftStretch")]
-        public partial int SoftStretch(ref Surface src, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Maths.Rectangle<int> srcrect, ref Surface dst, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Maths.Rectangle<int> dstrect);
+        public partial int SoftStretch(ref Surface src, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Maths.Rectangle<int> srcrect, ref Surface dst, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Maths.Rectangle<int> dstrect);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 922, Column 29 in SDL_surface.h")]
@@ -7294,7 +7294,7 @@ namespace Silk.NET.SDL
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 922, Column 29 in SDL_surface.h")]
         [NativeApi(EntryPoint = "SDL_SoftStretchLinear")]
-        public unsafe partial int SoftStretchLinear(Surface* src, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Rectangle<int>* srcrect, Surface* dst, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Maths.Rectangle<int> dstrect);
+        public unsafe partial int SoftStretchLinear(Surface* src, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Rectangle<int>* srcrect, Surface* dst, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Maths.Rectangle<int> dstrect);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 922, Column 29 in SDL_surface.h")]
@@ -7304,27 +7304,27 @@ namespace Silk.NET.SDL
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 922, Column 29 in SDL_surface.h")]
         [NativeApi(EntryPoint = "SDL_SoftStretchLinear")]
-        public unsafe partial int SoftStretchLinear(Surface* src, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Rectangle<int>* srcrect, ref Surface dst, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Maths.Rectangle<int> dstrect);
+        public unsafe partial int SoftStretchLinear(Surface* src, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Rectangle<int>* srcrect, ref Surface dst, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Maths.Rectangle<int> dstrect);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 922, Column 29 in SDL_surface.h")]
         [NativeApi(EntryPoint = "SDL_SoftStretchLinear")]
-        public unsafe partial int SoftStretchLinear(Surface* src, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Maths.Rectangle<int> srcrect, Surface* dst, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Rectangle<int>* dstrect);
+        public unsafe partial int SoftStretchLinear(Surface* src, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Maths.Rectangle<int> srcrect, Surface* dst, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Rectangle<int>* dstrect);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 922, Column 29 in SDL_surface.h")]
         [NativeApi(EntryPoint = "SDL_SoftStretchLinear")]
-        public unsafe partial int SoftStretchLinear(Surface* src, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Maths.Rectangle<int> srcrect, Surface* dst, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Maths.Rectangle<int> dstrect);
+        public unsafe partial int SoftStretchLinear(Surface* src, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Maths.Rectangle<int> srcrect, Surface* dst, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Maths.Rectangle<int> dstrect);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 922, Column 29 in SDL_surface.h")]
         [NativeApi(EntryPoint = "SDL_SoftStretchLinear")]
-        public unsafe partial int SoftStretchLinear(Surface* src, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Maths.Rectangle<int> srcrect, ref Surface dst, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Rectangle<int>* dstrect);
+        public unsafe partial int SoftStretchLinear(Surface* src, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Maths.Rectangle<int> srcrect, ref Surface dst, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Rectangle<int>* dstrect);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 922, Column 29 in SDL_surface.h")]
         [NativeApi(EntryPoint = "SDL_SoftStretchLinear")]
-        public unsafe partial int SoftStretchLinear(Surface* src, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Maths.Rectangle<int> srcrect, ref Surface dst, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Maths.Rectangle<int> dstrect);
+        public unsafe partial int SoftStretchLinear(Surface* src, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Maths.Rectangle<int> srcrect, ref Surface dst, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Maths.Rectangle<int> dstrect);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 922, Column 29 in SDL_surface.h")]
@@ -7334,7 +7334,7 @@ namespace Silk.NET.SDL
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 922, Column 29 in SDL_surface.h")]
         [NativeApi(EntryPoint = "SDL_SoftStretchLinear")]
-        public unsafe partial int SoftStretchLinear(ref Surface src, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Rectangle<int>* srcrect, Surface* dst, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Maths.Rectangle<int> dstrect);
+        public unsafe partial int SoftStretchLinear(ref Surface src, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Rectangle<int>* srcrect, Surface* dst, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Maths.Rectangle<int> dstrect);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 922, Column 29 in SDL_surface.h")]
@@ -7344,27 +7344,27 @@ namespace Silk.NET.SDL
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 922, Column 29 in SDL_surface.h")]
         [NativeApi(EntryPoint = "SDL_SoftStretchLinear")]
-        public unsafe partial int SoftStretchLinear(ref Surface src, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Rectangle<int>* srcrect, ref Surface dst, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Maths.Rectangle<int> dstrect);
+        public unsafe partial int SoftStretchLinear(ref Surface src, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Rectangle<int>* srcrect, ref Surface dst, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Maths.Rectangle<int> dstrect);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 922, Column 29 in SDL_surface.h")]
         [NativeApi(EntryPoint = "SDL_SoftStretchLinear")]
-        public unsafe partial int SoftStretchLinear(ref Surface src, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Maths.Rectangle<int> srcrect, Surface* dst, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Rectangle<int>* dstrect);
+        public unsafe partial int SoftStretchLinear(ref Surface src, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Maths.Rectangle<int> srcrect, Surface* dst, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Rectangle<int>* dstrect);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 922, Column 29 in SDL_surface.h")]
         [NativeApi(EntryPoint = "SDL_SoftStretchLinear")]
-        public unsafe partial int SoftStretchLinear(ref Surface src, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Maths.Rectangle<int> srcrect, Surface* dst, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Maths.Rectangle<int> dstrect);
+        public unsafe partial int SoftStretchLinear(ref Surface src, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Maths.Rectangle<int> srcrect, Surface* dst, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Maths.Rectangle<int> dstrect);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 922, Column 29 in SDL_surface.h")]
         [NativeApi(EntryPoint = "SDL_SoftStretchLinear")]
-        public unsafe partial int SoftStretchLinear(ref Surface src, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Maths.Rectangle<int> srcrect, ref Surface dst, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Rectangle<int>* dstrect);
+        public unsafe partial int SoftStretchLinear(ref Surface src, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Maths.Rectangle<int> srcrect, ref Surface dst, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Rectangle<int>* dstrect);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 922, Column 29 in SDL_surface.h")]
         [NativeApi(EntryPoint = "SDL_SoftStretchLinear")]
-        public partial int SoftStretchLinear(ref Surface src, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Maths.Rectangle<int> srcrect, ref Surface dst, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Maths.Rectangle<int> dstrect);
+        public partial int SoftStretchLinear(ref Surface src, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Maths.Rectangle<int> srcrect, ref Surface dst, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Maths.Rectangle<int> dstrect);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 940, Column 29 in SDL_surface.h")]
@@ -7389,22 +7389,22 @@ namespace Silk.NET.SDL
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 940, Column 29 in SDL_surface.h")]
         [NativeApi(EntryPoint = "SDL_UpperBlitScaled")]
-        public unsafe partial int UpperBlitScaled(Surface* src, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Maths.Rectangle<int> srcrect, Surface* dst, Silk.NET.Maths.Rectangle<int>* dstrect);
+        public unsafe partial int UpperBlitScaled(Surface* src, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Maths.Rectangle<int> srcrect, Surface* dst, Silk.NET.Maths.Rectangle<int>* dstrect);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 940, Column 29 in SDL_surface.h")]
         [NativeApi(EntryPoint = "SDL_UpperBlitScaled")]
-        public unsafe partial int UpperBlitScaled(Surface* src, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Maths.Rectangle<int> srcrect, Surface* dst, ref Silk.NET.Maths.Rectangle<int> dstrect);
+        public unsafe partial int UpperBlitScaled(Surface* src, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Maths.Rectangle<int> srcrect, Surface* dst, ref Silk.NET.Maths.Rectangle<int> dstrect);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 940, Column 29 in SDL_surface.h")]
         [NativeApi(EntryPoint = "SDL_UpperBlitScaled")]
-        public unsafe partial int UpperBlitScaled(Surface* src, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Maths.Rectangle<int> srcrect, ref Surface dst, Silk.NET.Maths.Rectangle<int>* dstrect);
+        public unsafe partial int UpperBlitScaled(Surface* src, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Maths.Rectangle<int> srcrect, ref Surface dst, Silk.NET.Maths.Rectangle<int>* dstrect);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 940, Column 29 in SDL_surface.h")]
         [NativeApi(EntryPoint = "SDL_UpperBlitScaled")]
-        public unsafe partial int UpperBlitScaled(Surface* src, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Maths.Rectangle<int> srcrect, ref Surface dst, ref Silk.NET.Maths.Rectangle<int> dstrect);
+        public unsafe partial int UpperBlitScaled(Surface* src, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Maths.Rectangle<int> srcrect, ref Surface dst, ref Silk.NET.Maths.Rectangle<int> dstrect);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 940, Column 29 in SDL_surface.h")]
@@ -7429,22 +7429,22 @@ namespace Silk.NET.SDL
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 940, Column 29 in SDL_surface.h")]
         [NativeApi(EntryPoint = "SDL_UpperBlitScaled")]
-        public unsafe partial int UpperBlitScaled(ref Surface src, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Maths.Rectangle<int> srcrect, Surface* dst, Silk.NET.Maths.Rectangle<int>* dstrect);
+        public unsafe partial int UpperBlitScaled(ref Surface src, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Maths.Rectangle<int> srcrect, Surface* dst, Silk.NET.Maths.Rectangle<int>* dstrect);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 940, Column 29 in SDL_surface.h")]
         [NativeApi(EntryPoint = "SDL_UpperBlitScaled")]
-        public unsafe partial int UpperBlitScaled(ref Surface src, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Maths.Rectangle<int> srcrect, Surface* dst, ref Silk.NET.Maths.Rectangle<int> dstrect);
+        public unsafe partial int UpperBlitScaled(ref Surface src, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Maths.Rectangle<int> srcrect, Surface* dst, ref Silk.NET.Maths.Rectangle<int> dstrect);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 940, Column 29 in SDL_surface.h")]
         [NativeApi(EntryPoint = "SDL_UpperBlitScaled")]
-        public unsafe partial int UpperBlitScaled(ref Surface src, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Maths.Rectangle<int> srcrect, ref Surface dst, Silk.NET.Maths.Rectangle<int>* dstrect);
+        public unsafe partial int UpperBlitScaled(ref Surface src, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Maths.Rectangle<int> srcrect, ref Surface dst, Silk.NET.Maths.Rectangle<int>* dstrect);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 940, Column 29 in SDL_surface.h")]
         [NativeApi(EntryPoint = "SDL_UpperBlitScaled")]
-        public partial int UpperBlitScaled(ref Surface src, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Maths.Rectangle<int> srcrect, ref Surface dst, ref Silk.NET.Maths.Rectangle<int> dstrect);
+        public partial int UpperBlitScaled(ref Surface src, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Maths.Rectangle<int> srcrect, ref Surface dst, ref Silk.NET.Maths.Rectangle<int> dstrect);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 963, Column 29 in SDL_surface.h")]
@@ -7565,7 +7565,7 @@ namespace Silk.NET.SDL
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 341, Column 29 in SDL_video.h")]
         [NativeApi(EntryPoint = "SDL_VideoInit")]
-        public partial int VideoInit([Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte driver_name);
+        public partial int VideoInit([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte driver_name);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 341, Column 29 in SDL_video.h")]
@@ -7717,12 +7717,12 @@ namespace Silk.NET.SDL
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 599, Column 43 in SDL_video.h")]
         [NativeApi(EntryPoint = "SDL_GetClosestDisplayMode")]
-        public unsafe partial DisplayMode* GetClosestDisplayMode(int displayIndex, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in DisplayMode mode, DisplayMode* closest);
+        public unsafe partial DisplayMode* GetClosestDisplayMode(int displayIndex, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in DisplayMode mode, DisplayMode* closest);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 599, Column 43 in SDL_video.h")]
         [NativeApi(EntryPoint = "SDL_GetClosestDisplayMode")]
-        public unsafe partial DisplayMode* GetClosestDisplayMode(int displayIndex, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in DisplayMode mode, ref DisplayMode closest);
+        public unsafe partial DisplayMode* GetClosestDisplayMode(int displayIndex, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in DisplayMode mode, ref DisplayMode closest);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 613, Column 29 in SDL_video.h")]
@@ -7732,7 +7732,7 @@ namespace Silk.NET.SDL
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 613, Column 29 in SDL_video.h")]
         [NativeApi(EntryPoint = "SDL_GetPointDisplayIndex")]
-        public partial int GetPointDisplayIndex([Flow(Silk.NET.Core.Native.FlowDirection.In)] in Point point);
+        public partial int GetPointDisplayIndex([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Point point);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 628, Column 29 in SDL_video.h")]
@@ -7742,7 +7742,7 @@ namespace Silk.NET.SDL
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 628, Column 29 in SDL_video.h")]
         [NativeApi(EntryPoint = "SDL_GetRectDisplayIndex")]
-        public partial int GetRectDisplayIndex([Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Maths.Rectangle<int> rect);
+        public partial int GetRectDisplayIndex([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Maths.Rectangle<int> rect);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 643, Column 29 in SDL_video.h")]
@@ -7757,7 +7757,7 @@ namespace Silk.NET.SDL
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 664, Column 29 in SDL_video.h")]
         [NativeApi(EntryPoint = "SDL_SetWindowDisplayMode")]
-        public unsafe partial int SetWindowDisplayMode(Window* window, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in DisplayMode mode);
+        public unsafe partial int SetWindowDisplayMode(Window* window, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in DisplayMode mode);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 681, Column 29 in SDL_video.h")]
@@ -7792,7 +7792,7 @@ namespace Silk.NET.SDL
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 781, Column 38 in SDL_video.h")]
         [NativeApi(EntryPoint = "SDL_CreateWindow")]
-        public unsafe partial Window* CreateWindow([Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte title, int x, int y, int w, int h, uint flags);
+        public unsafe partial Window* CreateWindow([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte title, int x, int y, int w, int h, uint flags);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 781, Column 38 in SDL_video.h")]
@@ -7807,7 +7807,7 @@ namespace Silk.NET.SDL
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 802, Column 38 in SDL_video.h")]
         [NativeApi(EntryPoint = "SDL_CreateWindowFrom")]
-        public unsafe partial Window* CreateWindowFrom<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] in T0 data) where T0 : unmanaged;
+        public unsafe partial Window* CreateWindowFrom<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in T0 data) where T0 : unmanaged;
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 818, Column 32 in SDL_video.h")]
@@ -7832,7 +7832,7 @@ namespace Silk.NET.SDL
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 866, Column 30 in SDL_video.h")]
         [NativeApi(EntryPoint = "SDL_SetWindowTitle")]
-        public unsafe partial void SetWindowTitle(Window* window, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte title);
+        public unsafe partial void SetWindowTitle(Window* window, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte title);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 866, Column 30 in SDL_video.h")]
@@ -7873,12 +7873,12 @@ namespace Silk.NET.SDL
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 907, Column 31 in SDL_video.h")]
         [NativeApi(EntryPoint = "SDL_SetWindowData")]
-        public unsafe partial void* SetWindowData(Window* window, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte name, void* userdata);
+        public unsafe partial void* SetWindowData(Window* window, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte name, void* userdata);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 907, Column 31 in SDL_video.h")]
         [NativeApi(EntryPoint = "SDL_SetWindowData")]
-        public unsafe partial void* SetWindowData<T0>(Window* window, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte name, ref T0 userdata) where T0 : unmanaged;
+        public unsafe partial void* SetWindowData<T0>(Window* window, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte name, ref T0 userdata) where T0 : unmanaged;
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 907, Column 31 in SDL_video.h")]
@@ -7898,7 +7898,7 @@ namespace Silk.NET.SDL
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 922, Column 31 in SDL_video.h")]
         [NativeApi(EntryPoint = "SDL_GetWindowData")]
-        public unsafe partial void* GetWindowData(Window* window, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte name);
+        public unsafe partial void* GetWindowData(Window* window, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte name);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 922, Column 31 in SDL_video.h")]
@@ -8178,7 +8178,7 @@ namespace Silk.NET.SDL
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1355, Column 29 in SDL_video.h")]
         [NativeApi(EntryPoint = "SDL_UpdateWindowSurfaceRects")]
-        public unsafe partial int UpdateWindowSurfaceRects(Window* window, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Maths.Rectangle<int> rects, int numrects);
+        public unsafe partial int UpdateWindowSurfaceRects(Window* window, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Maths.Rectangle<int> rects, int numrects);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1371, Column 29 in SDL_video.h")]
@@ -8228,7 +8228,7 @@ namespace Silk.NET.SDL
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1509, Column 29 in SDL_video.h")]
         [NativeApi(EntryPoint = "SDL_SetWindowMouseRect")]
-        public unsafe partial int SetWindowMouseRect(Window* window, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Maths.Rectangle<int> rect);
+        public unsafe partial int SetWindowMouseRect(Window* window, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Maths.Rectangle<int> rect);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1522, Column 42 in SDL_video.h")]
@@ -8278,37 +8278,37 @@ namespace Silk.NET.SDL
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1670, Column 29 in SDL_video.h")]
         [NativeApi(EntryPoint = "SDL_SetWindowGammaRamp")]
-        public unsafe partial int SetWindowGammaRamp(Window* window, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ushort* red, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ushort* green, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ushort blue);
+        public unsafe partial int SetWindowGammaRamp(Window* window, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ushort* red, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ushort* green, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ushort blue);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1670, Column 29 in SDL_video.h")]
         [NativeApi(EntryPoint = "SDL_SetWindowGammaRamp")]
-        public unsafe partial int SetWindowGammaRamp(Window* window, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ushort* red, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ushort green, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ushort* blue);
+        public unsafe partial int SetWindowGammaRamp(Window* window, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ushort* red, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ushort green, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ushort* blue);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1670, Column 29 in SDL_video.h")]
         [NativeApi(EntryPoint = "SDL_SetWindowGammaRamp")]
-        public unsafe partial int SetWindowGammaRamp(Window* window, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ushort* red, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ushort green, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ushort blue);
+        public unsafe partial int SetWindowGammaRamp(Window* window, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ushort* red, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ushort green, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ushort blue);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1670, Column 29 in SDL_video.h")]
         [NativeApi(EntryPoint = "SDL_SetWindowGammaRamp")]
-        public unsafe partial int SetWindowGammaRamp(Window* window, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ushort red, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ushort* green, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ushort* blue);
+        public unsafe partial int SetWindowGammaRamp(Window* window, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ushort red, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ushort* green, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ushort* blue);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1670, Column 29 in SDL_video.h")]
         [NativeApi(EntryPoint = "SDL_SetWindowGammaRamp")]
-        public unsafe partial int SetWindowGammaRamp(Window* window, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ushort red, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ushort* green, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ushort blue);
+        public unsafe partial int SetWindowGammaRamp(Window* window, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ushort red, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ushort* green, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ushort blue);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1670, Column 29 in SDL_video.h")]
         [NativeApi(EntryPoint = "SDL_SetWindowGammaRamp")]
-        public unsafe partial int SetWindowGammaRamp(Window* window, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ushort red, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ushort green, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ushort* blue);
+        public unsafe partial int SetWindowGammaRamp(Window* window, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ushort red, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ushort green, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ushort* blue);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1670, Column 29 in SDL_video.h")]
         [NativeApi(EntryPoint = "SDL_SetWindowGammaRamp")]
-        public unsafe partial int SetWindowGammaRamp(Window* window, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ushort red, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ushort green, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ushort blue);
+        public unsafe partial int SetWindowGammaRamp(Window* window, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ushort red, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ushort green, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ushort blue);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1698, Column 29 in SDL_video.h")]
@@ -8393,7 +8393,7 @@ namespace Silk.NET.SDL
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1878, Column 29 in SDL_video.h")]
         [NativeApi(EntryPoint = "SDL_GL_LoadLibrary")]
-        public partial int GLLoadLibrary([Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte path);
+        public partial int GLLoadLibrary([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte path);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1878, Column 29 in SDL_video.h")]
@@ -8408,7 +8408,7 @@ namespace Silk.NET.SDL
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1931, Column 31 in SDL_video.h")]
         [NativeApi(EntryPoint = "SDL_GL_GetProcAddress")]
-        public unsafe partial void* GLGetProcAddress([Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte proc);
+        public unsafe partial void* GLGetProcAddress([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte proc);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1931, Column 31 in SDL_video.h")]
@@ -8428,7 +8428,7 @@ namespace Silk.NET.SDL
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1961, Column 34 in SDL_video.h")]
         [NativeApi(EntryPoint = "SDL_GL_ExtensionSupported")]
-        public partial SdlBool GLExtensionSupported([Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte extension);
+        public partial SdlBool GLExtensionSupported([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte extension);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1961, Column 34 in SDL_video.h")]
@@ -8533,7 +8533,7 @@ namespace Silk.NET.SDL
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 109, Column 29 in SDL_vulkan.h")]
         [NativeApi(EntryPoint = "SDL_Vulkan_LoadLibrary")]
-        public partial int VulkanLoadLibrary([Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte path);
+        public partial int VulkanLoadLibrary([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte path);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 109, Column 29 in SDL_vulkan.h")]
@@ -8558,7 +8558,7 @@ namespace Silk.NET.SDL
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 160, Column 34 in SDL_vulkan.h")]
         [NativeApi(EntryPoint = "SDL_Vulkan_GetInstanceExtensions")]
-        public unsafe partial SdlBool VulkanGetInstanceExtensions(Window* window, uint* pCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte* pNames);
+        public unsafe partial SdlBool VulkanGetInstanceExtensions(Window* window, uint* pCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte* pNames);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 160, Column 34 in SDL_vulkan.h")]
@@ -8568,7 +8568,7 @@ namespace Silk.NET.SDL
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 160, Column 34 in SDL_vulkan.h")]
         [NativeApi(EntryPoint = "SDL_Vulkan_GetInstanceExtensions")]
-        public unsafe partial SdlBool VulkanGetInstanceExtensions(Window* window, ref uint pCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte* pNames);
+        public unsafe partial SdlBool VulkanGetInstanceExtensions(Window* window, ref uint pCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte* pNames);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 182, Column 34 in SDL_vulkan.h")]
@@ -8621,13 +8621,13 @@ namespace Silk.NET.SDL
         [NativeName("Src", "Line 198, Column 29 in SDL_main.h")]
         [ExcludeFromOverride(0)]
         [NativeApi(EntryPoint = "SDL_RegisterApp")]
-        public unsafe partial int RegisterApp([Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte name, uint style, void* hInst);
+        public unsafe partial int RegisterApp([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte name, uint style, void* hInst);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 198, Column 29 in SDL_main.h")]
         [ExcludeFromOverride(0)]
         [NativeApi(EntryPoint = "SDL_RegisterApp")]
-        public partial int RegisterApp<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte name, uint style, ref T0 hInst) where T0 : unmanaged;
+        public partial int RegisterApp<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte name, uint style, ref T0 hInst) where T0 : unmanaged;
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 198, Column 29 in SDL_main.h")]
@@ -8683,7 +8683,7 @@ namespace Silk.NET.SDL
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 129, Column 41 in SDL_assert.h")]
         [NativeApi(EntryPoint = "SDL_ReportAssertion")]
-        public unsafe partial AssertState ReportAssertion(AssertData* arg0, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* arg1, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte arg2, int arg3);
+        public unsafe partial AssertState ReportAssertion(AssertData* arg0, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* arg1, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte arg2, int arg3);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 129, Column 41 in SDL_assert.h")]
@@ -8693,17 +8693,17 @@ namespace Silk.NET.SDL
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 129, Column 41 in SDL_assert.h")]
         [NativeApi(EntryPoint = "SDL_ReportAssertion")]
-        public unsafe partial AssertState ReportAssertion(AssertData* arg0, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte arg1, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* arg2, int arg3);
+        public unsafe partial AssertState ReportAssertion(AssertData* arg0, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte arg1, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* arg2, int arg3);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 129, Column 41 in SDL_assert.h")]
         [NativeApi(EntryPoint = "SDL_ReportAssertion")]
-        public unsafe partial AssertState ReportAssertion(AssertData* arg0, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte arg1, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte arg2, int arg3);
+        public unsafe partial AssertState ReportAssertion(AssertData* arg0, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte arg1, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte arg2, int arg3);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 129, Column 41 in SDL_assert.h")]
         [NativeApi(EntryPoint = "SDL_ReportAssertion")]
-        public unsafe partial AssertState ReportAssertion(AssertData* arg0, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte arg1, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg2, int arg3);
+        public unsafe partial AssertState ReportAssertion(AssertData* arg0, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte arg1, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg2, int arg3);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 129, Column 41 in SDL_assert.h")]
@@ -8713,7 +8713,7 @@ namespace Silk.NET.SDL
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 129, Column 41 in SDL_assert.h")]
         [NativeApi(EntryPoint = "SDL_ReportAssertion")]
-        public unsafe partial AssertState ReportAssertion(AssertData* arg0, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte arg2, int arg3);
+        public unsafe partial AssertState ReportAssertion(AssertData* arg0, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte arg2, int arg3);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 129, Column 41 in SDL_assert.h")]
@@ -8728,7 +8728,7 @@ namespace Silk.NET.SDL
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 129, Column 41 in SDL_assert.h")]
         [NativeApi(EntryPoint = "SDL_ReportAssertion")]
-        public unsafe partial AssertState ReportAssertion(ref AssertData arg0, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* arg1, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte arg2, int arg3);
+        public unsafe partial AssertState ReportAssertion(ref AssertData arg0, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* arg1, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte arg2, int arg3);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 129, Column 41 in SDL_assert.h")]
@@ -8738,17 +8738,17 @@ namespace Silk.NET.SDL
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 129, Column 41 in SDL_assert.h")]
         [NativeApi(EntryPoint = "SDL_ReportAssertion")]
-        public unsafe partial AssertState ReportAssertion(ref AssertData arg0, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte arg1, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* arg2, int arg3);
+        public unsafe partial AssertState ReportAssertion(ref AssertData arg0, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte arg1, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* arg2, int arg3);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 129, Column 41 in SDL_assert.h")]
         [NativeApi(EntryPoint = "SDL_ReportAssertion")]
-        public partial AssertState ReportAssertion(ref AssertData arg0, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte arg1, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte arg2, int arg3);
+        public partial AssertState ReportAssertion(ref AssertData arg0, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte arg1, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte arg2, int arg3);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 129, Column 41 in SDL_assert.h")]
         [NativeApi(EntryPoint = "SDL_ReportAssertion")]
-        public partial AssertState ReportAssertion(ref AssertData arg0, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte arg1, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg2, int arg3);
+        public partial AssertState ReportAssertion(ref AssertData arg0, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte arg1, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg2, int arg3);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 129, Column 41 in SDL_assert.h")]
@@ -8758,7 +8758,7 @@ namespace Silk.NET.SDL
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 129, Column 41 in SDL_assert.h")]
         [NativeApi(EntryPoint = "SDL_ReportAssertion")]
-        public partial AssertState ReportAssertion(ref AssertData arg0, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte arg2, int arg3);
+        public partial AssertState ReportAssertion(ref AssertData arg0, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte arg2, int arg3);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 129, Column 41 in SDL_assert.h")]
@@ -9053,12 +9053,12 @@ namespace Silk.NET.SDL
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 208, Column 1 in SDL_thread.h")]
         [NativeApi(EntryPoint = "SDL_CreateThread")]
-        public unsafe partial Thread* CreateThread(PfnThreadFunction fn, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte name, void* data);
+        public unsafe partial Thread* CreateThread(PfnThreadFunction fn, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte name, void* data);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 208, Column 1 in SDL_thread.h")]
         [NativeApi(EntryPoint = "SDL_CreateThread")]
-        public unsafe partial Thread* CreateThread<T0>(PfnThreadFunction fn, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte name, ref T0 data) where T0 : unmanaged;
+        public unsafe partial Thread* CreateThread<T0>(PfnThreadFunction fn, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte name, ref T0 data) where T0 : unmanaged;
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 208, Column 1 in SDL_thread.h")]
@@ -9083,12 +9083,12 @@ namespace Silk.NET.SDL
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 254, Column 1 in SDL_thread.h")]
         [NativeApi(EntryPoint = "SDL_CreateThreadWithStackSize")]
-        public unsafe partial Thread* CreateThreadWithStackSize(PfnThreadFunction fn, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte name, nuint stacksize, void* data);
+        public unsafe partial Thread* CreateThreadWithStackSize(PfnThreadFunction fn, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte name, nuint stacksize, void* data);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 254, Column 1 in SDL_thread.h")]
         [NativeApi(EntryPoint = "SDL_CreateThreadWithStackSize")]
-        public unsafe partial Thread* CreateThreadWithStackSize<T0>(PfnThreadFunction fn, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte name, nuint stacksize, ref T0 data) where T0 : unmanaged;
+        public unsafe partial Thread* CreateThreadWithStackSize<T0>(PfnThreadFunction fn, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte name, nuint stacksize, ref T0 data) where T0 : unmanaged;
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 254, Column 1 in SDL_thread.h")]
@@ -9159,7 +9159,7 @@ namespace Silk.NET.SDL
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 447, Column 29 in SDL_thread.h")]
         [NativeApi(EntryPoint = "SDL_TLSSet")]
-        public partial int TLSSet<T0>(uint id, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in T0 value, PfnFreeFunc destructor) where T0 : unmanaged;
+        public partial int TLSSet<T0>(uint id, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in T0 value, PfnFreeFunc destructor) where T0 : unmanaged;
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 454, Column 30 in SDL_thread.h")]
@@ -9190,7 +9190,7 @@ namespace Silk.NET.SDL
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 325, Column 29 in SDL_audio.h")]
         [NativeApi(EntryPoint = "SDL_AudioInit")]
-        public partial int AudioInit([Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte driver_name);
+        public partial int AudioInit([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte driver_name);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 325, Column 29 in SDL_audio.h")]
@@ -9292,32 +9292,32 @@ namespace Silk.NET.SDL
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 669, Column 43 in SDL_audio.h")]
         [NativeApi(EntryPoint = "SDL_OpenAudioDevice")]
-        public unsafe partial uint OpenAudioDevice([Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* device, int iscapture, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in AudioSpec desired, AudioSpec* obtained, int allowed_changes);
+        public unsafe partial uint OpenAudioDevice([Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* device, int iscapture, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in AudioSpec desired, AudioSpec* obtained, int allowed_changes);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 669, Column 43 in SDL_audio.h")]
         [NativeApi(EntryPoint = "SDL_OpenAudioDevice")]
-        public unsafe partial uint OpenAudioDevice([Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* device, int iscapture, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in AudioSpec desired, ref AudioSpec obtained, int allowed_changes);
+        public unsafe partial uint OpenAudioDevice([Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* device, int iscapture, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in AudioSpec desired, ref AudioSpec obtained, int allowed_changes);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 669, Column 43 in SDL_audio.h")]
         [NativeApi(EntryPoint = "SDL_OpenAudioDevice")]
-        public unsafe partial uint OpenAudioDevice([Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte device, int iscapture, [Flow(Silk.NET.Core.Native.FlowDirection.In)] AudioSpec* desired, AudioSpec* obtained, int allowed_changes);
+        public unsafe partial uint OpenAudioDevice([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte device, int iscapture, [Flow(Silk.NET.Core.Native.FlowDirection.In)] AudioSpec* desired, AudioSpec* obtained, int allowed_changes);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 669, Column 43 in SDL_audio.h")]
         [NativeApi(EntryPoint = "SDL_OpenAudioDevice")]
-        public unsafe partial uint OpenAudioDevice([Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte device, int iscapture, [Flow(Silk.NET.Core.Native.FlowDirection.In)] AudioSpec* desired, ref AudioSpec obtained, int allowed_changes);
+        public unsafe partial uint OpenAudioDevice([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte device, int iscapture, [Flow(Silk.NET.Core.Native.FlowDirection.In)] AudioSpec* desired, ref AudioSpec obtained, int allowed_changes);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 669, Column 43 in SDL_audio.h")]
         [NativeApi(EntryPoint = "SDL_OpenAudioDevice")]
-        public unsafe partial uint OpenAudioDevice([Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte device, int iscapture, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in AudioSpec desired, AudioSpec* obtained, int allowed_changes);
+        public unsafe partial uint OpenAudioDevice([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte device, int iscapture, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in AudioSpec desired, AudioSpec* obtained, int allowed_changes);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 669, Column 43 in SDL_audio.h")]
         [NativeApi(EntryPoint = "SDL_OpenAudioDevice")]
-        public partial uint OpenAudioDevice([Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte device, int iscapture, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in AudioSpec desired, ref AudioSpec obtained, int allowed_changes);
+        public partial uint OpenAudioDevice([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte device, int iscapture, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in AudioSpec desired, ref AudioSpec obtained, int allowed_changes);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 669, Column 43 in SDL_audio.h")]
@@ -9332,12 +9332,12 @@ namespace Silk.NET.SDL
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 669, Column 43 in SDL_audio.h")]
         [NativeApi(EntryPoint = "SDL_OpenAudioDevice")]
-        public unsafe partial uint OpenAudioDevice([Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string device, int iscapture, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in AudioSpec desired, AudioSpec* obtained, int allowed_changes);
+        public unsafe partial uint OpenAudioDevice([Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string device, int iscapture, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in AudioSpec desired, AudioSpec* obtained, int allowed_changes);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 669, Column 43 in SDL_audio.h")]
         [NativeApi(EntryPoint = "SDL_OpenAudioDevice")]
-        public partial uint OpenAudioDevice([Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string device, int iscapture, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in AudioSpec desired, ref AudioSpec obtained, int allowed_changes);
+        public partial uint OpenAudioDevice([Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string device, int iscapture, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in AudioSpec desired, ref AudioSpec obtained, int allowed_changes);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 709, Column 41 in SDL_audio.h")]
@@ -9487,7 +9487,7 @@ namespace Silk.NET.SDL
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1035, Column 29 in SDL_audio.h")]
         [NativeApi(EntryPoint = "SDL_AudioStreamPut")]
-        public unsafe partial int AudioStreamPut<T0>(AudioStream* stream, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in T0 buf, int len) where T0 : unmanaged;
+        public unsafe partial int AudioStreamPut<T0>(AudioStream* stream, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in T0 buf, int len) where T0 : unmanaged;
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1054, Column 29 in SDL_audio.h")]
@@ -9527,7 +9527,7 @@ namespace Silk.NET.SDL
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1145, Column 30 in SDL_audio.h")]
         [NativeApi(EntryPoint = "SDL_MixAudio")]
-        public unsafe partial void MixAudio(byte* dst, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte src, uint len, int volume);
+        public unsafe partial void MixAudio(byte* dst, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte src, uint len, int volume);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1145, Column 30 in SDL_audio.h")]
@@ -9542,7 +9542,7 @@ namespace Silk.NET.SDL
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1145, Column 30 in SDL_audio.h")]
         [NativeApi(EntryPoint = "SDL_MixAudio")]
-        public partial void MixAudio(ref byte dst, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte src, uint len, int volume);
+        public partial void MixAudio(ref byte dst, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte src, uint len, int volume);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1145, Column 30 in SDL_audio.h")]
@@ -9557,7 +9557,7 @@ namespace Silk.NET.SDL
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1145, Column 30 in SDL_audio.h")]
         [NativeApi(EntryPoint = "SDL_MixAudio")]
-        public partial void MixAudio([UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string dst, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte src, uint len, int volume);
+        public partial void MixAudio([UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string dst, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte src, uint len, int volume);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1145, Column 30 in SDL_audio.h")]
@@ -9572,7 +9572,7 @@ namespace Silk.NET.SDL
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1178, Column 30 in SDL_audio.h")]
         [NativeApi(EntryPoint = "SDL_MixAudioFormat")]
-        public unsafe partial void MixAudioFormat(byte* dst, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte src, ushort format, uint len, int volume);
+        public unsafe partial void MixAudioFormat(byte* dst, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte src, ushort format, uint len, int volume);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1178, Column 30 in SDL_audio.h")]
@@ -9587,7 +9587,7 @@ namespace Silk.NET.SDL
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1178, Column 30 in SDL_audio.h")]
         [NativeApi(EntryPoint = "SDL_MixAudioFormat")]
-        public partial void MixAudioFormat(ref byte dst, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte src, ushort format, uint len, int volume);
+        public partial void MixAudioFormat(ref byte dst, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte src, ushort format, uint len, int volume);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1178, Column 30 in SDL_audio.h")]
@@ -9602,7 +9602,7 @@ namespace Silk.NET.SDL
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1178, Column 30 in SDL_audio.h")]
         [NativeApi(EntryPoint = "SDL_MixAudioFormat")]
-        public partial void MixAudioFormat([UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string dst, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte src, ushort format, uint len, int volume);
+        public partial void MixAudioFormat([UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string dst, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte src, ushort format, uint len, int volume);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1178, Column 30 in SDL_audio.h")]
@@ -9617,7 +9617,7 @@ namespace Silk.NET.SDL
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1229, Column 29 in SDL_audio.h")]
         [NativeApi(EntryPoint = "SDL_QueueAudio")]
-        public partial int QueueAudio<T0>(uint dev, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in T0 data, uint len) where T0 : unmanaged;
+        public partial int QueueAudio<T0>(uint dev, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in T0 data, uint len) where T0 : unmanaged;
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1277, Column 32 in SDL_audio.h")]
@@ -9677,7 +9677,7 @@ namespace Silk.NET.SDL
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 53, Column 29 in SDL_clipboard.h")]
         [NativeApi(EntryPoint = "SDL_SetClipboardText")]
-        public partial int SetClipboardText([Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte text);
+        public partial int SetClipboardText([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte text);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 53, Column 29 in SDL_clipboard.h")]
@@ -9708,7 +9708,7 @@ namespace Silk.NET.SDL
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 97, Column 29 in SDL_clipboard.h")]
         [NativeApi(EntryPoint = "SDL_SetPrimarySelectionText")]
-        public partial int SetPrimarySelectionText([Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte text);
+        public partial int SetPrimarySelectionText([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte text);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 97, Column 29 in SDL_clipboard.h")]
@@ -9927,7 +9927,7 @@ namespace Silk.NET.SDL
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 210, Column 38 in SDL_keyboard.h")]
         [NativeApi(EntryPoint = "SDL_GetScancodeFromName")]
-        public partial Scancode GetScancodeFromName([Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte name);
+        public partial Scancode GetScancodeFromName([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte name);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 210, Column 38 in SDL_keyboard.h")]
@@ -9953,7 +9953,7 @@ namespace Silk.NET.SDL
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 244, Column 37 in SDL_keyboard.h")]
         [NativeApi(EntryPoint = "SDL_GetKeyFromName")]
-        public partial int GetKeyFromName([Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte name);
+        public partial int GetKeyFromName([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte name);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 244, Column 37 in SDL_keyboard.h")]
@@ -9993,7 +9993,7 @@ namespace Silk.NET.SDL
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 318, Column 30 in SDL_keyboard.h")]
         [NativeApi(EntryPoint = "SDL_SetTextInputRect")]
-        public partial void SetTextInputRect([Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Maths.Rectangle<int> rect);
+        public partial void SetTextInputRect([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Maths.Rectangle<int> rect);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 331, Column 34 in SDL_keyboard.h")]
@@ -10103,7 +10103,7 @@ namespace Silk.NET.SDL
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 317, Column 37 in SDL_mouse.h")]
         [NativeApi(EntryPoint = "SDL_CreateCursor")]
-        public unsafe partial Cursor* CreateCursor([Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* data, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte mask, int w, int h, int hot_x, int hot_y);
+        public unsafe partial Cursor* CreateCursor([Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* data, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte mask, int w, int h, int hot_x, int hot_y);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 317, Column 37 in SDL_mouse.h")]
@@ -10113,17 +10113,17 @@ namespace Silk.NET.SDL
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 317, Column 37 in SDL_mouse.h")]
         [NativeApi(EntryPoint = "SDL_CreateCursor")]
-        public unsafe partial Cursor* CreateCursor([Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte data, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* mask, int w, int h, int hot_x, int hot_y);
+        public unsafe partial Cursor* CreateCursor([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte data, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* mask, int w, int h, int hot_x, int hot_y);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 317, Column 37 in SDL_mouse.h")]
         [NativeApi(EntryPoint = "SDL_CreateCursor")]
-        public unsafe partial Cursor* CreateCursor([Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte data, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte mask, int w, int h, int hot_x, int hot_y);
+        public unsafe partial Cursor* CreateCursor([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte data, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte mask, int w, int h, int hot_x, int hot_y);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 317, Column 37 in SDL_mouse.h")]
         [NativeApi(EntryPoint = "SDL_CreateCursor")]
-        public unsafe partial Cursor* CreateCursor([Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte data, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string mask, int w, int h, int hot_x, int hot_y);
+        public unsafe partial Cursor* CreateCursor([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte data, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string mask, int w, int h, int hot_x, int hot_y);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 317, Column 37 in SDL_mouse.h")]
@@ -10133,7 +10133,7 @@ namespace Silk.NET.SDL
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 317, Column 37 in SDL_mouse.h")]
         [NativeApi(EntryPoint = "SDL_CreateCursor")]
-        public unsafe partial Cursor* CreateCursor([Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string data, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte mask, int w, int h, int hot_x, int hot_y);
+        public unsafe partial Cursor* CreateCursor([Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string data, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte mask, int w, int h, int hot_x, int hot_y);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 317, Column 37 in SDL_mouse.h")]
@@ -10203,7 +10203,7 @@ namespace Silk.NET.SDL
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 90, Column 34 in SDL_guid.h")]
         [NativeApi(EntryPoint = "SDL_GUIDFromString")]
-        public partial GUID GUIDFromString([Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte pchGUID);
+        public partial GUID GUIDFromString([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte pchGUID);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 90, Column 34 in SDL_guid.h")]
@@ -10310,7 +10310,7 @@ namespace Silk.NET.SDL
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 404, Column 29 in SDL_joystick.h")]
         [NativeApi(EntryPoint = "SDL_JoystickAttachVirtualEx")]
-        public partial int JoystickAttachVirtualEx([Flow(Silk.NET.Core.Native.FlowDirection.In)] in VirtualJoystickDesc desc);
+        public partial int JoystickAttachVirtualEx([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in VirtualJoystickDesc desc);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 415, Column 29 in SDL_joystick.h")]
@@ -10433,7 +10433,7 @@ namespace Silk.NET.SDL
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 656, Column 42 in SDL_joystick.h")]
         [NativeApi(EntryPoint = "SDL_JoystickGetGUIDFromString")]
-        public partial GUID JoystickGetGUIDFromString([Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte pchGUID);
+        public partial GUID JoystickGetGUIDFromString([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte pchGUID);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 656, Column 42 in SDL_joystick.h")]
@@ -10643,7 +10643,7 @@ namespace Silk.NET.SDL
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1037, Column 29 in SDL_joystick.h")]
         [NativeApi(EntryPoint = "SDL_JoystickSendEffect")]
-        public unsafe partial int JoystickSendEffect<T0>(Joystick* joystick, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in T0 data, int size) where T0 : unmanaged;
+        public unsafe partial int JoystickSendEffect<T0>(Joystick* joystick, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in T0 data, int size) where T0 : unmanaged;
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1048, Column 30 in SDL_joystick.h")]
@@ -10790,7 +10790,7 @@ namespace Silk.NET.SDL
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 201, Column 29 in SDL_gamecontroller.h")]
         [NativeApi(EntryPoint = "SDL_GameControllerAddMapping")]
-        public partial int GameControllerAddMapping([Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte mappingString);
+        public partial int GameControllerAddMapping([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte mappingString);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 201, Column 29 in SDL_gamecontroller.h")]
@@ -10989,7 +10989,7 @@ namespace Silk.NET.SDL
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 635, Column 48 in SDL_gamecontroller.h")]
         [NativeApi(EntryPoint = "SDL_GameControllerGetAxisFromString")]
-        public partial GameControllerAxis GameControllerGetAxisFromString([Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte str);
+        public partial GameControllerAxis GameControllerGetAxisFromString([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte str);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 635, Column 48 in SDL_gamecontroller.h")]
@@ -11030,7 +11030,7 @@ namespace Silk.NET.SDL
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 749, Column 50 in SDL_gamecontroller.h")]
         [NativeApi(EntryPoint = "SDL_GameControllerGetButtonFromString")]
-        public partial GameControllerButton GameControllerGetButtonFromString([Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte str);
+        public partial GameControllerButton GameControllerGetButtonFromString([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte str);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 749, Column 50 in SDL_gamecontroller.h")]
@@ -11281,7 +11281,7 @@ namespace Silk.NET.SDL
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1023, Column 29 in SDL_gamecontroller.h")]
         [NativeApi(EntryPoint = "SDL_GameControllerSendEffect")]
-        public unsafe partial int GameControllerSendEffect<T0>(GameController* gamecontroller, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in T0 data, int size) where T0 : unmanaged;
+        public unsafe partial int GameControllerSendEffect<T0>(GameController* gamecontroller, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in T0 data, int size) where T0 : unmanaged;
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1035, Column 30 in SDL_gamecontroller.h")]
@@ -11551,13 +11551,13 @@ namespace Silk.NET.SDL
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 139, Column 31 in SDL_filesystem.h")]
         [NativeApi(EntryPoint = "SDL_GetPrefPath")]
-        public unsafe partial byte* GetPrefPath([Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* org, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte app);
+        public unsafe partial byte* GetPrefPath([Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* org, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte app);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 139, Column 31 in SDL_filesystem.h")]
         [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
         [NativeApi(EntryPoint = "SDL_GetPrefPath")]
-        public unsafe partial string GetPrefPathS([Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* org, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte app);
+        public unsafe partial string GetPrefPathS([Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* org, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte app);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 139, Column 31 in SDL_filesystem.h")]
@@ -11573,35 +11573,35 @@ namespace Silk.NET.SDL
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 139, Column 31 in SDL_filesystem.h")]
         [NativeApi(EntryPoint = "SDL_GetPrefPath")]
-        public unsafe partial byte* GetPrefPath([Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte org, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* app);
+        public unsafe partial byte* GetPrefPath([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte org, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* app);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 139, Column 31 in SDL_filesystem.h")]
         [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
         [NativeApi(EntryPoint = "SDL_GetPrefPath")]
-        public unsafe partial string GetPrefPathS([Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte org, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* app);
+        public unsafe partial string GetPrefPathS([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte org, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* app);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 139, Column 31 in SDL_filesystem.h")]
         [NativeApi(EntryPoint = "SDL_GetPrefPath")]
-        public unsafe partial byte* GetPrefPath([Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte org, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte app);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 139, Column 31 in SDL_filesystem.h")]
-        [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
-        [NativeApi(EntryPoint = "SDL_GetPrefPath")]
-        public partial string GetPrefPathS([Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte org, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte app);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 139, Column 31 in SDL_filesystem.h")]
-        [NativeApi(EntryPoint = "SDL_GetPrefPath")]
-        public unsafe partial byte* GetPrefPath([Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte org, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string app);
+        public unsafe partial byte* GetPrefPath([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte org, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte app);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 139, Column 31 in SDL_filesystem.h")]
         [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
         [NativeApi(EntryPoint = "SDL_GetPrefPath")]
-        public partial string GetPrefPathS([Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte org, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string app);
+        public partial string GetPrefPathS([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte org, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte app);
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 139, Column 31 in SDL_filesystem.h")]
+        [NativeApi(EntryPoint = "SDL_GetPrefPath")]
+        public unsafe partial byte* GetPrefPath([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte org, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string app);
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 139, Column 31 in SDL_filesystem.h")]
+        [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
+        [NativeApi(EntryPoint = "SDL_GetPrefPath")]
+        public partial string GetPrefPathS([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte org, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string app);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 139, Column 31 in SDL_filesystem.h")]
@@ -11617,13 +11617,13 @@ namespace Silk.NET.SDL
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 139, Column 31 in SDL_filesystem.h")]
         [NativeApi(EntryPoint = "SDL_GetPrefPath")]
-        public unsafe partial byte* GetPrefPath([Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string org, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte app);
+        public unsafe partial byte* GetPrefPath([Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string org, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte app);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 139, Column 31 in SDL_filesystem.h")]
         [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
         [NativeApi(EntryPoint = "SDL_GetPrefPath")]
-        public partial string GetPrefPathS([Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string org, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte app);
+        public partial string GetPrefPathS([Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string org, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte app);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 139, Column 31 in SDL_filesystem.h")]
@@ -11845,7 +11845,7 @@ namespace Silk.NET.SDL
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 229, Column 42 in SDL_hidapi.h")]
         [NativeApi(EntryPoint = "SDL_hid_open")]
-        public unsafe partial HidDevice* HidOpen(ushort vendor_id, ushort product_id, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in char serial_number);
+        public unsafe partial HidDevice* HidOpen(ushort vendor_id, ushort product_id, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char serial_number);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 229, Column 42 in SDL_hidapi.h")]
@@ -11860,7 +11860,7 @@ namespace Silk.NET.SDL
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 243, Column 42 in SDL_hidapi.h")]
         [NativeApi(EntryPoint = "SDL_hid_open_path")]
-        public unsafe partial HidDevice* HidOpenPath([Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte path, int bExclusive);
+        public unsafe partial HidDevice* HidOpenPath([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte path, int bExclusive);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 243, Column 42 in SDL_hidapi.h")]
@@ -11875,7 +11875,7 @@ namespace Silk.NET.SDL
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 269, Column 29 in SDL_hidapi.h")]
         [NativeApi(EntryPoint = "SDL_hid_write")]
-        public unsafe partial int HidWrite(HidDevice* dev, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte data, nuint length);
+        public unsafe partial int HidWrite(HidDevice* dev, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte data, nuint length);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 269, Column 29 in SDL_hidapi.h")]
@@ -11925,7 +11925,7 @@ namespace Silk.NET.SDL
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 352, Column 29 in SDL_hidapi.h")]
         [NativeApi(EntryPoint = "SDL_hid_send_feature_report")]
-        public unsafe partial int HidSendFeatureReport(HidDevice* dev, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte data, nuint length);
+        public unsafe partial int HidSendFeatureReport(HidDevice* dev, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte data, nuint length);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 352, Column 29 in SDL_hidapi.h")]
@@ -12025,7 +12025,7 @@ namespace Silk.NET.SDL
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2454, Column 34 in SDL_hints.h")]
         [NativeApi(EntryPoint = "SDL_SetHintWithPriority")]
-        public unsafe partial SdlBool SetHintWithPriority([Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* name, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte value, HintPriority priority);
+        public unsafe partial SdlBool SetHintWithPriority([Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* name, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte value, HintPriority priority);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2454, Column 34 in SDL_hints.h")]
@@ -12035,17 +12035,17 @@ namespace Silk.NET.SDL
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2454, Column 34 in SDL_hints.h")]
         [NativeApi(EntryPoint = "SDL_SetHintWithPriority")]
-        public unsafe partial SdlBool SetHintWithPriority([Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte name, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* value, HintPriority priority);
+        public unsafe partial SdlBool SetHintWithPriority([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte name, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* value, HintPriority priority);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2454, Column 34 in SDL_hints.h")]
         [NativeApi(EntryPoint = "SDL_SetHintWithPriority")]
-        public partial SdlBool SetHintWithPriority([Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte name, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte value, HintPriority priority);
+        public partial SdlBool SetHintWithPriority([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte name, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte value, HintPriority priority);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2454, Column 34 in SDL_hints.h")]
         [NativeApi(EntryPoint = "SDL_SetHintWithPriority")]
-        public partial SdlBool SetHintWithPriority([Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte name, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string value, HintPriority priority);
+        public partial SdlBool SetHintWithPriority([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte name, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string value, HintPriority priority);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2454, Column 34 in SDL_hints.h")]
@@ -12055,7 +12055,7 @@ namespace Silk.NET.SDL
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2454, Column 34 in SDL_hints.h")]
         [NativeApi(EntryPoint = "SDL_SetHintWithPriority")]
-        public partial SdlBool SetHintWithPriority([Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string name, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte value, HintPriority priority);
+        public partial SdlBool SetHintWithPriority([Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string name, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte value, HintPriority priority);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2454, Column 34 in SDL_hints.h")]
@@ -12070,7 +12070,7 @@ namespace Silk.NET.SDL
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2474, Column 34 in SDL_hints.h")]
         [NativeApi(EntryPoint = "SDL_SetHint")]
-        public unsafe partial SdlBool SetHint([Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* name, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte value);
+        public unsafe partial SdlBool SetHint([Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* name, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte value);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2474, Column 34 in SDL_hints.h")]
@@ -12080,17 +12080,17 @@ namespace Silk.NET.SDL
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2474, Column 34 in SDL_hints.h")]
         [NativeApi(EntryPoint = "SDL_SetHint")]
-        public unsafe partial SdlBool SetHint([Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte name, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* value);
+        public unsafe partial SdlBool SetHint([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte name, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* value);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2474, Column 34 in SDL_hints.h")]
         [NativeApi(EntryPoint = "SDL_SetHint")]
-        public partial SdlBool SetHint([Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte name, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte value);
+        public partial SdlBool SetHint([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte name, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte value);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2474, Column 34 in SDL_hints.h")]
         [NativeApi(EntryPoint = "SDL_SetHint")]
-        public partial SdlBool SetHint([Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte name, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string value);
+        public partial SdlBool SetHint([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte name, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string value);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2474, Column 34 in SDL_hints.h")]
@@ -12100,7 +12100,7 @@ namespace Silk.NET.SDL
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2474, Column 34 in SDL_hints.h")]
         [NativeApi(EntryPoint = "SDL_SetHint")]
-        public partial SdlBool SetHint([Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string name, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte value);
+        public partial SdlBool SetHint([Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string name, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte value);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2474, Column 34 in SDL_hints.h")]
@@ -12115,7 +12115,7 @@ namespace Silk.NET.SDL
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2492, Column 34 in SDL_hints.h")]
         [NativeApi(EntryPoint = "SDL_ResetHint")]
-        public partial SdlBool ResetHint([Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte name);
+        public partial SdlBool ResetHint([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte name);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2492, Column 34 in SDL_hints.h")]
@@ -12141,13 +12141,13 @@ namespace Silk.NET.SDL
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2520, Column 38 in SDL_hints.h")]
         [NativeApi(EntryPoint = "SDL_GetHint")]
-        public unsafe partial byte* GetHint([Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte name);
+        public unsafe partial byte* GetHint([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte name);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2520, Column 38 in SDL_hints.h")]
         [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
         [NativeApi(EntryPoint = "SDL_GetHint")]
-        public partial string GetHintS([Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte name);
+        public partial string GetHintS([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte name);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2520, Column 38 in SDL_hints.h")]
@@ -12168,7 +12168,7 @@ namespace Silk.NET.SDL
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2535, Column 34 in SDL_hints.h")]
         [NativeApi(EntryPoint = "SDL_GetHintBoolean")]
-        public partial SdlBool GetHintBoolean([Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte name, SdlBool default_value);
+        public partial SdlBool GetHintBoolean([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte name, SdlBool default_value);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2535, Column 34 in SDL_hints.h")]
@@ -12188,12 +12188,12 @@ namespace Silk.NET.SDL
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2559, Column 30 in SDL_hints.h")]
         [NativeApi(EntryPoint = "SDL_AddHintCallback")]
-        public unsafe partial void AddHintCallback([Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte name, PfnHintCallback callback, void* userdata);
+        public unsafe partial void AddHintCallback([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte name, PfnHintCallback callback, void* userdata);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2559, Column 30 in SDL_hints.h")]
         [NativeApi(EntryPoint = "SDL_AddHintCallback")]
-        public partial void AddHintCallback<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte name, PfnHintCallback callback, ref T0 userdata) where T0 : unmanaged;
+        public partial void AddHintCallback<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte name, PfnHintCallback callback, ref T0 userdata) where T0 : unmanaged;
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2559, Column 30 in SDL_hints.h")]
@@ -12218,12 +12218,12 @@ namespace Silk.NET.SDL
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2575, Column 30 in SDL_hints.h")]
         [NativeApi(EntryPoint = "SDL_DelHintCallback")]
-        public unsafe partial void DelHintCallback([Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte name, PfnHintCallback callback, void* userdata);
+        public unsafe partial void DelHintCallback([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte name, PfnHintCallback callback, void* userdata);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2575, Column 30 in SDL_hints.h")]
         [NativeApi(EntryPoint = "SDL_DelHintCallback")]
-        public partial void DelHintCallback<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte name, PfnHintCallback callback, ref T0 userdata) where T0 : unmanaged;
+        public partial void DelHintCallback<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte name, PfnHintCallback callback, ref T0 userdata) where T0 : unmanaged;
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2575, Column 30 in SDL_hints.h")]
@@ -12248,7 +12248,7 @@ namespace Silk.NET.SDL
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 65, Column 31 in SDL_loadso.h")]
         [NativeApi(EntryPoint = "SDL_LoadObject")]
-        public unsafe partial void* LoadObject([Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte sofile);
+        public unsafe partial void* LoadObject([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte sofile);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 65, Column 31 in SDL_loadso.h")]
@@ -12263,7 +12263,7 @@ namespace Silk.NET.SDL
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 92, Column 31 in SDL_loadso.h")]
         [NativeApi(EntryPoint = "SDL_LoadFunction")]
-        public unsafe partial void* LoadFunction(void* handle, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte name);
+        public unsafe partial void* LoadFunction(void* handle, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte name);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 92, Column 31 in SDL_loadso.h")]
@@ -12278,7 +12278,7 @@ namespace Silk.NET.SDL
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 92, Column 31 in SDL_loadso.h")]
         [NativeApi(EntryPoint = "SDL_LoadFunction")]
-        public unsafe partial void* LoadFunction<T0>(ref T0 handle, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte name) where T0 : unmanaged;
+        public unsafe partial void* LoadFunction<T0>(ref T0 handle, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte name) where T0 : unmanaged;
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 92, Column 31 in SDL_loadso.h")]
@@ -12323,7 +12323,7 @@ namespace Silk.NET.SDL
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 182, Column 30 in SDL_log.h")]
         [NativeApi(EntryPoint = "SDL_Log")]
-        public partial void Log([Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte fmt);
+        public partial void Log([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte fmt);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 182, Column 30 in SDL_log.h")]
@@ -12338,7 +12338,7 @@ namespace Silk.NET.SDL
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 203, Column 30 in SDL_log.h")]
         [NativeApi(EntryPoint = "SDL_LogVerbose")]
-        public partial void LogVerbose(int category, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte fmt);
+        public partial void LogVerbose(int category, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte fmt);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 203, Column 30 in SDL_log.h")]
@@ -12353,7 +12353,7 @@ namespace Silk.NET.SDL
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 224, Column 30 in SDL_log.h")]
         [NativeApi(EntryPoint = "SDL_LogDebug")]
-        public partial void LogDebug(int category, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte fmt);
+        public partial void LogDebug(int category, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte fmt);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 224, Column 30 in SDL_log.h")]
@@ -12368,7 +12368,7 @@ namespace Silk.NET.SDL
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 245, Column 30 in SDL_log.h")]
         [NativeApi(EntryPoint = "SDL_LogInfo")]
-        public partial void LogInfo(int category, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte fmt);
+        public partial void LogInfo(int category, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte fmt);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 245, Column 30 in SDL_log.h")]
@@ -12383,7 +12383,7 @@ namespace Silk.NET.SDL
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 266, Column 30 in SDL_log.h")]
         [NativeApi(EntryPoint = "SDL_LogWarn")]
-        public partial void LogWarn(int category, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte fmt);
+        public partial void LogWarn(int category, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte fmt);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 266, Column 30 in SDL_log.h")]
@@ -12398,7 +12398,7 @@ namespace Silk.NET.SDL
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 287, Column 30 in SDL_log.h")]
         [NativeApi(EntryPoint = "SDL_LogError")]
-        public partial void LogError(int category, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte fmt);
+        public partial void LogError(int category, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte fmt);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 287, Column 30 in SDL_log.h")]
@@ -12413,7 +12413,7 @@ namespace Silk.NET.SDL
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 308, Column 30 in SDL_log.h")]
         [NativeApi(EntryPoint = "SDL_LogCritical")]
-        public partial void LogCritical(int category, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte fmt);
+        public partial void LogCritical(int category, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte fmt);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 308, Column 30 in SDL_log.h")]
@@ -12428,7 +12428,7 @@ namespace Silk.NET.SDL
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 330, Column 30 in SDL_log.h")]
         [NativeApi(EntryPoint = "SDL_LogMessage")]
-        public partial void LogMessage(int category, LogPriority priority, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte fmt);
+        public partial void LogMessage(int category, LogPriority priority, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte fmt);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 330, Column 30 in SDL_log.h")]
@@ -12453,17 +12453,17 @@ namespace Silk.NET.SDL
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 353, Column 30 in SDL_log.h")]
         [NativeApi(EntryPoint = "SDL_LogMessageV")]
-        public unsafe partial void LogMessageV(int category, LogPriority priority, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte fmt, byte* ap);
+        public unsafe partial void LogMessageV(int category, LogPriority priority, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte fmt, byte* ap);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 353, Column 30 in SDL_log.h")]
         [NativeApi(EntryPoint = "SDL_LogMessageV")]
-        public partial void LogMessageV(int category, LogPriority priority, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte fmt, ref byte ap);
+        public partial void LogMessageV(int category, LogPriority priority, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte fmt, ref byte ap);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 353, Column 30 in SDL_log.h")]
         [NativeApi(EntryPoint = "SDL_LogMessageV")]
-        public partial void LogMessageV(int category, LogPriority priority, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte fmt, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string ap);
+        public partial void LogMessageV(int category, LogPriority priority, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte fmt, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string ap);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 353, Column 30 in SDL_log.h")]
@@ -12523,12 +12523,12 @@ namespace Silk.NET.SDL
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 140, Column 29 in SDL_messagebox.h")]
         [NativeApi(EntryPoint = "SDL_ShowMessageBox")]
-        public unsafe partial int ShowMessageBox([Flow(Silk.NET.Core.Native.FlowDirection.In)] in MessageBoxData messageboxdata, int* buttonid);
+        public unsafe partial int ShowMessageBox([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in MessageBoxData messageboxdata, int* buttonid);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 140, Column 29 in SDL_messagebox.h")]
         [NativeApi(EntryPoint = "SDL_ShowMessageBox")]
-        public partial int ShowMessageBox([Flow(Silk.NET.Core.Native.FlowDirection.In)] in MessageBoxData messageboxdata, ref int buttonid);
+        public partial int ShowMessageBox([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in MessageBoxData messageboxdata, ref int buttonid);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 182, Column 29 in SDL_messagebox.h")]
@@ -12538,7 +12538,7 @@ namespace Silk.NET.SDL
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 182, Column 29 in SDL_messagebox.h")]
         [NativeApi(EntryPoint = "SDL_ShowSimpleMessageBox")]
-        public unsafe partial int ShowSimpleMessageBox(uint flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* title, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte message, Window* window);
+        public unsafe partial int ShowSimpleMessageBox(uint flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* title, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte message, Window* window);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 182, Column 29 in SDL_messagebox.h")]
@@ -12548,17 +12548,17 @@ namespace Silk.NET.SDL
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 182, Column 29 in SDL_messagebox.h")]
         [NativeApi(EntryPoint = "SDL_ShowSimpleMessageBox")]
-        public unsafe partial int ShowSimpleMessageBox(uint flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte title, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* message, Window* window);
+        public unsafe partial int ShowSimpleMessageBox(uint flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte title, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* message, Window* window);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 182, Column 29 in SDL_messagebox.h")]
         [NativeApi(EntryPoint = "SDL_ShowSimpleMessageBox")]
-        public unsafe partial int ShowSimpleMessageBox(uint flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte title, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte message, Window* window);
+        public unsafe partial int ShowSimpleMessageBox(uint flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte title, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte message, Window* window);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 182, Column 29 in SDL_messagebox.h")]
         [NativeApi(EntryPoint = "SDL_ShowSimpleMessageBox")]
-        public unsafe partial int ShowSimpleMessageBox(uint flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte title, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string message, Window* window);
+        public unsafe partial int ShowSimpleMessageBox(uint flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte title, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string message, Window* window);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 182, Column 29 in SDL_messagebox.h")]
@@ -12568,7 +12568,7 @@ namespace Silk.NET.SDL
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 182, Column 29 in SDL_messagebox.h")]
         [NativeApi(EntryPoint = "SDL_ShowSimpleMessageBox")]
-        public unsafe partial int ShowSimpleMessageBox(uint flags, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string title, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte message, Window* window);
+        public unsafe partial int ShowSimpleMessageBox(uint flags, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string title, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte message, Window* window);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 182, Column 29 in SDL_messagebox.h")]
@@ -13038,17 +13038,17 @@ namespace Silk.NET.SDL
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 597, Column 29 in SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_UpdateTexture")]
-        public unsafe partial int UpdateTexture<T0>(Texture* texture, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Rectangle<int>* rect, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in T0 pixels, int pitch) where T0 : unmanaged;
+        public unsafe partial int UpdateTexture<T0>(Texture* texture, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Rectangle<int>* rect, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in T0 pixels, int pitch) where T0 : unmanaged;
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 597, Column 29 in SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_UpdateTexture")]
-        public unsafe partial int UpdateTexture(Texture* texture, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Maths.Rectangle<int> rect, [Flow(Silk.NET.Core.Native.FlowDirection.In)] void* pixels, int pitch);
+        public unsafe partial int UpdateTexture(Texture* texture, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Maths.Rectangle<int> rect, [Flow(Silk.NET.Core.Native.FlowDirection.In)] void* pixels, int pitch);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 597, Column 29 in SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_UpdateTexture")]
-        public unsafe partial int UpdateTexture<T0>(Texture* texture, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Maths.Rectangle<int> rect, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in T0 pixels, int pitch) where T0 : unmanaged;
+        public unsafe partial int UpdateTexture<T0>(Texture* texture, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Maths.Rectangle<int> rect, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in T0 pixels, int pitch) where T0 : unmanaged;
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 628, Column 29 in SDL_render.h")]
@@ -13058,7 +13058,7 @@ namespace Silk.NET.SDL
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 628, Column 29 in SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_UpdateYUVTexture")]
-        public unsafe partial int UpdateYUVTexture(Texture* texture, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Rectangle<int>* rect, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* Yplane, int Ypitch, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* Uplane, int Upitch, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte Vplane, int Vpitch);
+        public unsafe partial int UpdateYUVTexture(Texture* texture, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Rectangle<int>* rect, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* Yplane, int Ypitch, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* Uplane, int Upitch, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte Vplane, int Vpitch);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 628, Column 29 in SDL_render.h")]
@@ -13068,17 +13068,17 @@ namespace Silk.NET.SDL
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 628, Column 29 in SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_UpdateYUVTexture")]
-        public unsafe partial int UpdateYUVTexture(Texture* texture, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Rectangle<int>* rect, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* Yplane, int Ypitch, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte Uplane, int Upitch, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* Vplane, int Vpitch);
+        public unsafe partial int UpdateYUVTexture(Texture* texture, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Rectangle<int>* rect, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* Yplane, int Ypitch, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte Uplane, int Upitch, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* Vplane, int Vpitch);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 628, Column 29 in SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_UpdateYUVTexture")]
-        public unsafe partial int UpdateYUVTexture(Texture* texture, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Rectangle<int>* rect, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* Yplane, int Ypitch, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte Uplane, int Upitch, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte Vplane, int Vpitch);
+        public unsafe partial int UpdateYUVTexture(Texture* texture, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Rectangle<int>* rect, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* Yplane, int Ypitch, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte Uplane, int Upitch, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte Vplane, int Vpitch);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 628, Column 29 in SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_UpdateYUVTexture")]
-        public unsafe partial int UpdateYUVTexture(Texture* texture, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Rectangle<int>* rect, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* Yplane, int Ypitch, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte Uplane, int Upitch, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string Vplane, int Vpitch);
+        public unsafe partial int UpdateYUVTexture(Texture* texture, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Rectangle<int>* rect, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* Yplane, int Ypitch, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte Uplane, int Upitch, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string Vplane, int Vpitch);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 628, Column 29 in SDL_render.h")]
@@ -13088,7 +13088,7 @@ namespace Silk.NET.SDL
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 628, Column 29 in SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_UpdateYUVTexture")]
-        public unsafe partial int UpdateYUVTexture(Texture* texture, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Rectangle<int>* rect, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* Yplane, int Ypitch, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string Uplane, int Upitch, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte Vplane, int Vpitch);
+        public unsafe partial int UpdateYUVTexture(Texture* texture, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Rectangle<int>* rect, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* Yplane, int Ypitch, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string Uplane, int Upitch, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte Vplane, int Vpitch);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 628, Column 29 in SDL_render.h")]
@@ -13098,47 +13098,47 @@ namespace Silk.NET.SDL
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 628, Column 29 in SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_UpdateYUVTexture")]
-        public unsafe partial int UpdateYUVTexture(Texture* texture, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Rectangle<int>* rect, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte Yplane, int Ypitch, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* Uplane, int Upitch, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* Vplane, int Vpitch);
+        public unsafe partial int UpdateYUVTexture(Texture* texture, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Rectangle<int>* rect, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte Yplane, int Ypitch, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* Uplane, int Upitch, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* Vplane, int Vpitch);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 628, Column 29 in SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_UpdateYUVTexture")]
-        public unsafe partial int UpdateYUVTexture(Texture* texture, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Rectangle<int>* rect, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte Yplane, int Ypitch, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* Uplane, int Upitch, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte Vplane, int Vpitch);
+        public unsafe partial int UpdateYUVTexture(Texture* texture, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Rectangle<int>* rect, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte Yplane, int Ypitch, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* Uplane, int Upitch, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte Vplane, int Vpitch);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 628, Column 29 in SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_UpdateYUVTexture")]
-        public unsafe partial int UpdateYUVTexture(Texture* texture, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Rectangle<int>* rect, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte Yplane, int Ypitch, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* Uplane, int Upitch, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string Vplane, int Vpitch);
+        public unsafe partial int UpdateYUVTexture(Texture* texture, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Rectangle<int>* rect, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte Yplane, int Ypitch, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* Uplane, int Upitch, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string Vplane, int Vpitch);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 628, Column 29 in SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_UpdateYUVTexture")]
-        public unsafe partial int UpdateYUVTexture(Texture* texture, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Rectangle<int>* rect, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte Yplane, int Ypitch, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte Uplane, int Upitch, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* Vplane, int Vpitch);
+        public unsafe partial int UpdateYUVTexture(Texture* texture, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Rectangle<int>* rect, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte Yplane, int Ypitch, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte Uplane, int Upitch, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* Vplane, int Vpitch);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 628, Column 29 in SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_UpdateYUVTexture")]
-        public unsafe partial int UpdateYUVTexture(Texture* texture, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Rectangle<int>* rect, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte Yplane, int Ypitch, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte Uplane, int Upitch, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte Vplane, int Vpitch);
+        public unsafe partial int UpdateYUVTexture(Texture* texture, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Rectangle<int>* rect, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte Yplane, int Ypitch, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte Uplane, int Upitch, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte Vplane, int Vpitch);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 628, Column 29 in SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_UpdateYUVTexture")]
-        public unsafe partial int UpdateYUVTexture(Texture* texture, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Rectangle<int>* rect, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte Yplane, int Ypitch, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte Uplane, int Upitch, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string Vplane, int Vpitch);
+        public unsafe partial int UpdateYUVTexture(Texture* texture, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Rectangle<int>* rect, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte Yplane, int Ypitch, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte Uplane, int Upitch, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string Vplane, int Vpitch);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 628, Column 29 in SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_UpdateYUVTexture")]
-        public unsafe partial int UpdateYUVTexture(Texture* texture, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Rectangle<int>* rect, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte Yplane, int Ypitch, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string Uplane, int Upitch, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* Vplane, int Vpitch);
+        public unsafe partial int UpdateYUVTexture(Texture* texture, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Rectangle<int>* rect, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte Yplane, int Ypitch, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string Uplane, int Upitch, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* Vplane, int Vpitch);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 628, Column 29 in SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_UpdateYUVTexture")]
-        public unsafe partial int UpdateYUVTexture(Texture* texture, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Rectangle<int>* rect, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte Yplane, int Ypitch, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string Uplane, int Upitch, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte Vplane, int Vpitch);
+        public unsafe partial int UpdateYUVTexture(Texture* texture, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Rectangle<int>* rect, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte Yplane, int Ypitch, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string Uplane, int Upitch, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte Vplane, int Vpitch);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 628, Column 29 in SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_UpdateYUVTexture")]
-        public unsafe partial int UpdateYUVTexture(Texture* texture, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Rectangle<int>* rect, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte Yplane, int Ypitch, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string Uplane, int Upitch, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string Vplane, int Vpitch);
+        public unsafe partial int UpdateYUVTexture(Texture* texture, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Rectangle<int>* rect, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte Yplane, int Ypitch, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string Uplane, int Upitch, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string Vplane, int Vpitch);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 628, Column 29 in SDL_render.h")]
@@ -13148,7 +13148,7 @@ namespace Silk.NET.SDL
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 628, Column 29 in SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_UpdateYUVTexture")]
-        public unsafe partial int UpdateYUVTexture(Texture* texture, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Rectangle<int>* rect, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string Yplane, int Ypitch, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* Uplane, int Upitch, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte Vplane, int Vpitch);
+        public unsafe partial int UpdateYUVTexture(Texture* texture, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Rectangle<int>* rect, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string Yplane, int Ypitch, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* Uplane, int Upitch, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte Vplane, int Vpitch);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 628, Column 29 in SDL_render.h")]
@@ -13158,17 +13158,17 @@ namespace Silk.NET.SDL
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 628, Column 29 in SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_UpdateYUVTexture")]
-        public unsafe partial int UpdateYUVTexture(Texture* texture, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Rectangle<int>* rect, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string Yplane, int Ypitch, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte Uplane, int Upitch, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* Vplane, int Vpitch);
+        public unsafe partial int UpdateYUVTexture(Texture* texture, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Rectangle<int>* rect, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string Yplane, int Ypitch, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte Uplane, int Upitch, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* Vplane, int Vpitch);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 628, Column 29 in SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_UpdateYUVTexture")]
-        public unsafe partial int UpdateYUVTexture(Texture* texture, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Rectangle<int>* rect, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string Yplane, int Ypitch, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte Uplane, int Upitch, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte Vplane, int Vpitch);
+        public unsafe partial int UpdateYUVTexture(Texture* texture, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Rectangle<int>* rect, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string Yplane, int Ypitch, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte Uplane, int Upitch, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte Vplane, int Vpitch);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 628, Column 29 in SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_UpdateYUVTexture")]
-        public unsafe partial int UpdateYUVTexture(Texture* texture, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Rectangle<int>* rect, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string Yplane, int Ypitch, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte Uplane, int Upitch, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string Vplane, int Vpitch);
+        public unsafe partial int UpdateYUVTexture(Texture* texture, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Rectangle<int>* rect, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string Yplane, int Ypitch, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte Uplane, int Upitch, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string Vplane, int Vpitch);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 628, Column 29 in SDL_render.h")]
@@ -13178,7 +13178,7 @@ namespace Silk.NET.SDL
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 628, Column 29 in SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_UpdateYUVTexture")]
-        public unsafe partial int UpdateYUVTexture(Texture* texture, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Rectangle<int>* rect, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string Yplane, int Ypitch, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string Uplane, int Upitch, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte Vplane, int Vpitch);
+        public unsafe partial int UpdateYUVTexture(Texture* texture, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Rectangle<int>* rect, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string Yplane, int Ypitch, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string Uplane, int Upitch, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte Vplane, int Vpitch);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 628, Column 29 in SDL_render.h")]
@@ -13188,137 +13188,137 @@ namespace Silk.NET.SDL
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 628, Column 29 in SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_UpdateYUVTexture")]
-        public unsafe partial int UpdateYUVTexture(Texture* texture, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Maths.Rectangle<int> rect, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* Yplane, int Ypitch, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* Uplane, int Upitch, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* Vplane, int Vpitch);
+        public unsafe partial int UpdateYUVTexture(Texture* texture, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Maths.Rectangle<int> rect, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* Yplane, int Ypitch, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* Uplane, int Upitch, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* Vplane, int Vpitch);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 628, Column 29 in SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_UpdateYUVTexture")]
-        public unsafe partial int UpdateYUVTexture(Texture* texture, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Maths.Rectangle<int> rect, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* Yplane, int Ypitch, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* Uplane, int Upitch, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte Vplane, int Vpitch);
+        public unsafe partial int UpdateYUVTexture(Texture* texture, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Maths.Rectangle<int> rect, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* Yplane, int Ypitch, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* Uplane, int Upitch, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte Vplane, int Vpitch);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 628, Column 29 in SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_UpdateYUVTexture")]
-        public unsafe partial int UpdateYUVTexture(Texture* texture, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Maths.Rectangle<int> rect, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* Yplane, int Ypitch, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* Uplane, int Upitch, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string Vplane, int Vpitch);
+        public unsafe partial int UpdateYUVTexture(Texture* texture, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Maths.Rectangle<int> rect, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* Yplane, int Ypitch, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* Uplane, int Upitch, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string Vplane, int Vpitch);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 628, Column 29 in SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_UpdateYUVTexture")]
-        public unsafe partial int UpdateYUVTexture(Texture* texture, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Maths.Rectangle<int> rect, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* Yplane, int Ypitch, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte Uplane, int Upitch, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* Vplane, int Vpitch);
+        public unsafe partial int UpdateYUVTexture(Texture* texture, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Maths.Rectangle<int> rect, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* Yplane, int Ypitch, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte Uplane, int Upitch, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* Vplane, int Vpitch);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 628, Column 29 in SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_UpdateYUVTexture")]
-        public unsafe partial int UpdateYUVTexture(Texture* texture, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Maths.Rectangle<int> rect, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* Yplane, int Ypitch, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte Uplane, int Upitch, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte Vplane, int Vpitch);
+        public unsafe partial int UpdateYUVTexture(Texture* texture, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Maths.Rectangle<int> rect, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* Yplane, int Ypitch, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte Uplane, int Upitch, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte Vplane, int Vpitch);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 628, Column 29 in SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_UpdateYUVTexture")]
-        public unsafe partial int UpdateYUVTexture(Texture* texture, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Maths.Rectangle<int> rect, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* Yplane, int Ypitch, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte Uplane, int Upitch, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string Vplane, int Vpitch);
+        public unsafe partial int UpdateYUVTexture(Texture* texture, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Maths.Rectangle<int> rect, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* Yplane, int Ypitch, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte Uplane, int Upitch, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string Vplane, int Vpitch);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 628, Column 29 in SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_UpdateYUVTexture")]
-        public unsafe partial int UpdateYUVTexture(Texture* texture, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Maths.Rectangle<int> rect, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* Yplane, int Ypitch, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string Uplane, int Upitch, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* Vplane, int Vpitch);
+        public unsafe partial int UpdateYUVTexture(Texture* texture, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Maths.Rectangle<int> rect, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* Yplane, int Ypitch, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string Uplane, int Upitch, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* Vplane, int Vpitch);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 628, Column 29 in SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_UpdateYUVTexture")]
-        public unsafe partial int UpdateYUVTexture(Texture* texture, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Maths.Rectangle<int> rect, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* Yplane, int Ypitch, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string Uplane, int Upitch, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte Vplane, int Vpitch);
+        public unsafe partial int UpdateYUVTexture(Texture* texture, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Maths.Rectangle<int> rect, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* Yplane, int Ypitch, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string Uplane, int Upitch, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte Vplane, int Vpitch);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 628, Column 29 in SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_UpdateYUVTexture")]
-        public unsafe partial int UpdateYUVTexture(Texture* texture, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Maths.Rectangle<int> rect, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* Yplane, int Ypitch, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string Uplane, int Upitch, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string Vplane, int Vpitch);
+        public unsafe partial int UpdateYUVTexture(Texture* texture, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Maths.Rectangle<int> rect, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* Yplane, int Ypitch, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string Uplane, int Upitch, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string Vplane, int Vpitch);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 628, Column 29 in SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_UpdateYUVTexture")]
-        public unsafe partial int UpdateYUVTexture(Texture* texture, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Maths.Rectangle<int> rect, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte Yplane, int Ypitch, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* Uplane, int Upitch, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* Vplane, int Vpitch);
+        public unsafe partial int UpdateYUVTexture(Texture* texture, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Maths.Rectangle<int> rect, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte Yplane, int Ypitch, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* Uplane, int Upitch, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* Vplane, int Vpitch);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 628, Column 29 in SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_UpdateYUVTexture")]
-        public unsafe partial int UpdateYUVTexture(Texture* texture, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Maths.Rectangle<int> rect, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte Yplane, int Ypitch, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* Uplane, int Upitch, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte Vplane, int Vpitch);
+        public unsafe partial int UpdateYUVTexture(Texture* texture, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Maths.Rectangle<int> rect, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte Yplane, int Ypitch, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* Uplane, int Upitch, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte Vplane, int Vpitch);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 628, Column 29 in SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_UpdateYUVTexture")]
-        public unsafe partial int UpdateYUVTexture(Texture* texture, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Maths.Rectangle<int> rect, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte Yplane, int Ypitch, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* Uplane, int Upitch, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string Vplane, int Vpitch);
+        public unsafe partial int UpdateYUVTexture(Texture* texture, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Maths.Rectangle<int> rect, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte Yplane, int Ypitch, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* Uplane, int Upitch, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string Vplane, int Vpitch);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 628, Column 29 in SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_UpdateYUVTexture")]
-        public unsafe partial int UpdateYUVTexture(Texture* texture, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Maths.Rectangle<int> rect, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte Yplane, int Ypitch, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte Uplane, int Upitch, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* Vplane, int Vpitch);
+        public unsafe partial int UpdateYUVTexture(Texture* texture, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Maths.Rectangle<int> rect, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte Yplane, int Ypitch, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte Uplane, int Upitch, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* Vplane, int Vpitch);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 628, Column 29 in SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_UpdateYUVTexture")]
-        public unsafe partial int UpdateYUVTexture(Texture* texture, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Maths.Rectangle<int> rect, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte Yplane, int Ypitch, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte Uplane, int Upitch, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte Vplane, int Vpitch);
+        public unsafe partial int UpdateYUVTexture(Texture* texture, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Maths.Rectangle<int> rect, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte Yplane, int Ypitch, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte Uplane, int Upitch, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte Vplane, int Vpitch);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 628, Column 29 in SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_UpdateYUVTexture")]
-        public unsafe partial int UpdateYUVTexture(Texture* texture, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Maths.Rectangle<int> rect, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte Yplane, int Ypitch, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte Uplane, int Upitch, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string Vplane, int Vpitch);
+        public unsafe partial int UpdateYUVTexture(Texture* texture, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Maths.Rectangle<int> rect, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte Yplane, int Ypitch, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte Uplane, int Upitch, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string Vplane, int Vpitch);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 628, Column 29 in SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_UpdateYUVTexture")]
-        public unsafe partial int UpdateYUVTexture(Texture* texture, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Maths.Rectangle<int> rect, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte Yplane, int Ypitch, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string Uplane, int Upitch, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* Vplane, int Vpitch);
+        public unsafe partial int UpdateYUVTexture(Texture* texture, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Maths.Rectangle<int> rect, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte Yplane, int Ypitch, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string Uplane, int Upitch, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* Vplane, int Vpitch);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 628, Column 29 in SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_UpdateYUVTexture")]
-        public unsafe partial int UpdateYUVTexture(Texture* texture, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Maths.Rectangle<int> rect, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte Yplane, int Ypitch, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string Uplane, int Upitch, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte Vplane, int Vpitch);
+        public unsafe partial int UpdateYUVTexture(Texture* texture, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Maths.Rectangle<int> rect, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte Yplane, int Ypitch, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string Uplane, int Upitch, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte Vplane, int Vpitch);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 628, Column 29 in SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_UpdateYUVTexture")]
-        public unsafe partial int UpdateYUVTexture(Texture* texture, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Maths.Rectangle<int> rect, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte Yplane, int Ypitch, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string Uplane, int Upitch, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string Vplane, int Vpitch);
+        public unsafe partial int UpdateYUVTexture(Texture* texture, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Maths.Rectangle<int> rect, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte Yplane, int Ypitch, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string Uplane, int Upitch, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string Vplane, int Vpitch);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 628, Column 29 in SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_UpdateYUVTexture")]
-        public unsafe partial int UpdateYUVTexture(Texture* texture, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Maths.Rectangle<int> rect, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string Yplane, int Ypitch, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* Uplane, int Upitch, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* Vplane, int Vpitch);
+        public unsafe partial int UpdateYUVTexture(Texture* texture, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Maths.Rectangle<int> rect, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string Yplane, int Ypitch, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* Uplane, int Upitch, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* Vplane, int Vpitch);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 628, Column 29 in SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_UpdateYUVTexture")]
-        public unsafe partial int UpdateYUVTexture(Texture* texture, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Maths.Rectangle<int> rect, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string Yplane, int Ypitch, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* Uplane, int Upitch, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte Vplane, int Vpitch);
+        public unsafe partial int UpdateYUVTexture(Texture* texture, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Maths.Rectangle<int> rect, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string Yplane, int Ypitch, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* Uplane, int Upitch, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte Vplane, int Vpitch);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 628, Column 29 in SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_UpdateYUVTexture")]
-        public unsafe partial int UpdateYUVTexture(Texture* texture, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Maths.Rectangle<int> rect, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string Yplane, int Ypitch, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* Uplane, int Upitch, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string Vplane, int Vpitch);
+        public unsafe partial int UpdateYUVTexture(Texture* texture, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Maths.Rectangle<int> rect, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string Yplane, int Ypitch, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* Uplane, int Upitch, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string Vplane, int Vpitch);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 628, Column 29 in SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_UpdateYUVTexture")]
-        public unsafe partial int UpdateYUVTexture(Texture* texture, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Maths.Rectangle<int> rect, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string Yplane, int Ypitch, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte Uplane, int Upitch, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* Vplane, int Vpitch);
+        public unsafe partial int UpdateYUVTexture(Texture* texture, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Maths.Rectangle<int> rect, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string Yplane, int Ypitch, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte Uplane, int Upitch, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* Vplane, int Vpitch);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 628, Column 29 in SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_UpdateYUVTexture")]
-        public unsafe partial int UpdateYUVTexture(Texture* texture, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Maths.Rectangle<int> rect, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string Yplane, int Ypitch, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte Uplane, int Upitch, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte Vplane, int Vpitch);
+        public unsafe partial int UpdateYUVTexture(Texture* texture, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Maths.Rectangle<int> rect, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string Yplane, int Ypitch, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte Uplane, int Upitch, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte Vplane, int Vpitch);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 628, Column 29 in SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_UpdateYUVTexture")]
-        public unsafe partial int UpdateYUVTexture(Texture* texture, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Maths.Rectangle<int> rect, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string Yplane, int Ypitch, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte Uplane, int Upitch, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string Vplane, int Vpitch);
+        public unsafe partial int UpdateYUVTexture(Texture* texture, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Maths.Rectangle<int> rect, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string Yplane, int Ypitch, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte Uplane, int Upitch, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string Vplane, int Vpitch);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 628, Column 29 in SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_UpdateYUVTexture")]
-        public unsafe partial int UpdateYUVTexture(Texture* texture, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Maths.Rectangle<int> rect, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string Yplane, int Ypitch, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string Uplane, int Upitch, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* Vplane, int Vpitch);
+        public unsafe partial int UpdateYUVTexture(Texture* texture, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Maths.Rectangle<int> rect, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string Yplane, int Ypitch, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string Uplane, int Upitch, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* Vplane, int Vpitch);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 628, Column 29 in SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_UpdateYUVTexture")]
-        public unsafe partial int UpdateYUVTexture(Texture* texture, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Maths.Rectangle<int> rect, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string Yplane, int Ypitch, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string Uplane, int Upitch, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte Vplane, int Vpitch);
+        public unsafe partial int UpdateYUVTexture(Texture* texture, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Maths.Rectangle<int> rect, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string Yplane, int Ypitch, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string Uplane, int Upitch, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte Vplane, int Vpitch);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 628, Column 29 in SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_UpdateYUVTexture")]
-        public unsafe partial int UpdateYUVTexture(Texture* texture, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Maths.Rectangle<int> rect, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string Yplane, int Ypitch, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string Uplane, int Upitch, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string Vplane, int Vpitch);
+        public unsafe partial int UpdateYUVTexture(Texture* texture, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Maths.Rectangle<int> rect, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string Yplane, int Ypitch, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string Uplane, int Upitch, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string Vplane, int Vpitch);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 654, Column 29 in SDL_render.h")]
@@ -13328,7 +13328,7 @@ namespace Silk.NET.SDL
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 654, Column 29 in SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_UpdateNVTexture")]
-        public unsafe partial int UpdateNVTexture(Texture* texture, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Rectangle<int>* rect, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* Yplane, int Ypitch, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte UVplane, int UVpitch);
+        public unsafe partial int UpdateNVTexture(Texture* texture, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Rectangle<int>* rect, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* Yplane, int Ypitch, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte UVplane, int UVpitch);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 654, Column 29 in SDL_render.h")]
@@ -13338,17 +13338,17 @@ namespace Silk.NET.SDL
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 654, Column 29 in SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_UpdateNVTexture")]
-        public unsafe partial int UpdateNVTexture(Texture* texture, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Rectangle<int>* rect, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte Yplane, int Ypitch, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* UVplane, int UVpitch);
+        public unsafe partial int UpdateNVTexture(Texture* texture, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Rectangle<int>* rect, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte Yplane, int Ypitch, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* UVplane, int UVpitch);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 654, Column 29 in SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_UpdateNVTexture")]
-        public unsafe partial int UpdateNVTexture(Texture* texture, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Rectangle<int>* rect, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte Yplane, int Ypitch, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte UVplane, int UVpitch);
+        public unsafe partial int UpdateNVTexture(Texture* texture, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Rectangle<int>* rect, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte Yplane, int Ypitch, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte UVplane, int UVpitch);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 654, Column 29 in SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_UpdateNVTexture")]
-        public unsafe partial int UpdateNVTexture(Texture* texture, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Rectangle<int>* rect, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte Yplane, int Ypitch, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string UVplane, int UVpitch);
+        public unsafe partial int UpdateNVTexture(Texture* texture, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Rectangle<int>* rect, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte Yplane, int Ypitch, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string UVplane, int UVpitch);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 654, Column 29 in SDL_render.h")]
@@ -13358,7 +13358,7 @@ namespace Silk.NET.SDL
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 654, Column 29 in SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_UpdateNVTexture")]
-        public unsafe partial int UpdateNVTexture(Texture* texture, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Rectangle<int>* rect, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string Yplane, int Ypitch, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte UVplane, int UVpitch);
+        public unsafe partial int UpdateNVTexture(Texture* texture, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Rectangle<int>* rect, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string Yplane, int Ypitch, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte UVplane, int UVpitch);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 654, Column 29 in SDL_render.h")]
@@ -13368,47 +13368,47 @@ namespace Silk.NET.SDL
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 654, Column 29 in SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_UpdateNVTexture")]
-        public unsafe partial int UpdateNVTexture(Texture* texture, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Maths.Rectangle<int> rect, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* Yplane, int Ypitch, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* UVplane, int UVpitch);
+        public unsafe partial int UpdateNVTexture(Texture* texture, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Maths.Rectangle<int> rect, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* Yplane, int Ypitch, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* UVplane, int UVpitch);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 654, Column 29 in SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_UpdateNVTexture")]
-        public unsafe partial int UpdateNVTexture(Texture* texture, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Maths.Rectangle<int> rect, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* Yplane, int Ypitch, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte UVplane, int UVpitch);
+        public unsafe partial int UpdateNVTexture(Texture* texture, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Maths.Rectangle<int> rect, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* Yplane, int Ypitch, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte UVplane, int UVpitch);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 654, Column 29 in SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_UpdateNVTexture")]
-        public unsafe partial int UpdateNVTexture(Texture* texture, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Maths.Rectangle<int> rect, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* Yplane, int Ypitch, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string UVplane, int UVpitch);
+        public unsafe partial int UpdateNVTexture(Texture* texture, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Maths.Rectangle<int> rect, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* Yplane, int Ypitch, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string UVplane, int UVpitch);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 654, Column 29 in SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_UpdateNVTexture")]
-        public unsafe partial int UpdateNVTexture(Texture* texture, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Maths.Rectangle<int> rect, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte Yplane, int Ypitch, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* UVplane, int UVpitch);
+        public unsafe partial int UpdateNVTexture(Texture* texture, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Maths.Rectangle<int> rect, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte Yplane, int Ypitch, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* UVplane, int UVpitch);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 654, Column 29 in SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_UpdateNVTexture")]
-        public unsafe partial int UpdateNVTexture(Texture* texture, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Maths.Rectangle<int> rect, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte Yplane, int Ypitch, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte UVplane, int UVpitch);
+        public unsafe partial int UpdateNVTexture(Texture* texture, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Maths.Rectangle<int> rect, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte Yplane, int Ypitch, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte UVplane, int UVpitch);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 654, Column 29 in SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_UpdateNVTexture")]
-        public unsafe partial int UpdateNVTexture(Texture* texture, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Maths.Rectangle<int> rect, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte Yplane, int Ypitch, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string UVplane, int UVpitch);
+        public unsafe partial int UpdateNVTexture(Texture* texture, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Maths.Rectangle<int> rect, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte Yplane, int Ypitch, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string UVplane, int UVpitch);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 654, Column 29 in SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_UpdateNVTexture")]
-        public unsafe partial int UpdateNVTexture(Texture* texture, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Maths.Rectangle<int> rect, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string Yplane, int Ypitch, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* UVplane, int UVpitch);
+        public unsafe partial int UpdateNVTexture(Texture* texture, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Maths.Rectangle<int> rect, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string Yplane, int Ypitch, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* UVplane, int UVpitch);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 654, Column 29 in SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_UpdateNVTexture")]
-        public unsafe partial int UpdateNVTexture(Texture* texture, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Maths.Rectangle<int> rect, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string Yplane, int Ypitch, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte UVplane, int UVpitch);
+        public unsafe partial int UpdateNVTexture(Texture* texture, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Maths.Rectangle<int> rect, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string Yplane, int Ypitch, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte UVplane, int UVpitch);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 654, Column 29 in SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_UpdateNVTexture")]
-        public unsafe partial int UpdateNVTexture(Texture* texture, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Maths.Rectangle<int> rect, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string Yplane, int Ypitch, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string UVplane, int UVpitch);
+        public unsafe partial int UpdateNVTexture(Texture* texture, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Maths.Rectangle<int> rect, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string Yplane, int Ypitch, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string UVplane, int UVpitch);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 686, Column 29 in SDL_render.h")]
@@ -13433,22 +13433,22 @@ namespace Silk.NET.SDL
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 686, Column 29 in SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_LockTexture")]
-        public unsafe partial int LockTexture(Texture* texture, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Maths.Rectangle<int> rect, void** pixels, int* pitch);
+        public unsafe partial int LockTexture(Texture* texture, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Maths.Rectangle<int> rect, void** pixels, int* pitch);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 686, Column 29 in SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_LockTexture")]
-        public unsafe partial int LockTexture(Texture* texture, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Maths.Rectangle<int> rect, void** pixels, ref int pitch);
+        public unsafe partial int LockTexture(Texture* texture, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Maths.Rectangle<int> rect, void** pixels, ref int pitch);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 686, Column 29 in SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_LockTexture")]
-        public unsafe partial int LockTexture(Texture* texture, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Maths.Rectangle<int> rect, ref void* pixels, int* pitch);
+        public unsafe partial int LockTexture(Texture* texture, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Maths.Rectangle<int> rect, ref void* pixels, int* pitch);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 686, Column 29 in SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_LockTexture")]
-        public unsafe partial int LockTexture(Texture* texture, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Maths.Rectangle<int> rect, ref void* pixels, ref int pitch);
+        public unsafe partial int LockTexture(Texture* texture, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Maths.Rectangle<int> rect, ref void* pixels, ref int pitch);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 722, Column 29 in SDL_render.h")]
@@ -13463,12 +13463,12 @@ namespace Silk.NET.SDL
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 722, Column 29 in SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_LockTextureToSurface")]
-        public unsafe partial int LockTextureToSurface(Texture* texture, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Maths.Rectangle<int> rect, Surface** surface);
+        public unsafe partial int LockTextureToSurface(Texture* texture, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Maths.Rectangle<int> rect, Surface** surface);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 722, Column 29 in SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_LockTextureToSurface")]
-        public unsafe partial int LockTextureToSurface(Texture* texture, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Maths.Rectangle<int> rect, ref Surface* surface);
+        public unsafe partial int LockTextureToSurface(Texture* texture, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Maths.Rectangle<int> rect, ref Surface* surface);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 743, Column 30 in SDL_render.h")]
@@ -13533,7 +13533,7 @@ namespace Silk.NET.SDL
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 895, Column 29 in SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_RenderSetViewport")]
-        public unsafe partial int RenderSetViewport(Renderer* renderer, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Maths.Rectangle<int> rect);
+        public unsafe partial int RenderSetViewport(Renderer* renderer, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Maths.Rectangle<int> rect);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 908, Column 30 in SDL_render.h")]
@@ -13553,7 +13553,7 @@ namespace Silk.NET.SDL
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 926, Column 29 in SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_RenderSetClipRect")]
-        public unsafe partial int RenderSetClipRect(Renderer* renderer, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Maths.Rectangle<int> rect);
+        public unsafe partial int RenderSetClipRect(Renderer* renderer, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Maths.Rectangle<int> rect);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 942, Column 30 in SDL_render.h")]
@@ -14078,7 +14078,7 @@ namespace Silk.NET.SDL
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1213, Column 29 in SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_RenderDrawPoints")]
-        public unsafe partial int RenderDrawPoints(Renderer* renderer, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Point points, int count);
+        public unsafe partial int RenderDrawPoints(Renderer* renderer, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Point points, int count);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1244, Column 29 in SDL_render.h")]
@@ -14093,7 +14093,7 @@ namespace Silk.NET.SDL
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1270, Column 29 in SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_RenderDrawLines")]
-        public unsafe partial int RenderDrawLines(Renderer* renderer, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Point points, int count);
+        public unsafe partial int RenderDrawLines(Renderer* renderer, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Point points, int count);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1296, Column 29 in SDL_render.h")]
@@ -14103,7 +14103,7 @@ namespace Silk.NET.SDL
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1296, Column 29 in SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_RenderDrawRect")]
-        public unsafe partial int RenderDrawRect(Renderer* renderer, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Maths.Rectangle<int> rect);
+        public unsafe partial int RenderDrawRect(Renderer* renderer, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Maths.Rectangle<int> rect);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1322, Column 29 in SDL_render.h")]
@@ -14113,7 +14113,7 @@ namespace Silk.NET.SDL
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1322, Column 29 in SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_RenderDrawRects")]
-        public unsafe partial int RenderDrawRects(Renderer* renderer, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Maths.Rectangle<int> rects, int count);
+        public unsafe partial int RenderDrawRects(Renderer* renderer, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Maths.Rectangle<int> rects, int count);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1352, Column 29 in SDL_render.h")]
@@ -14123,7 +14123,7 @@ namespace Silk.NET.SDL
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1352, Column 29 in SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_RenderFillRect")]
-        public unsafe partial int RenderFillRect(Renderer* renderer, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Maths.Rectangle<int> rect);
+        public unsafe partial int RenderFillRect(Renderer* renderer, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Maths.Rectangle<int> rect);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1377, Column 29 in SDL_render.h")]
@@ -14133,7 +14133,7 @@ namespace Silk.NET.SDL
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1377, Column 29 in SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_RenderFillRects")]
-        public unsafe partial int RenderFillRects(Renderer* renderer, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Maths.Rectangle<int> rects, int count);
+        public unsafe partial int RenderFillRects(Renderer* renderer, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Maths.Rectangle<int> rects, int count);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1409, Column 29 in SDL_render.h")]
@@ -14143,17 +14143,17 @@ namespace Silk.NET.SDL
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1409, Column 29 in SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_RenderCopy")]
-        public unsafe partial int RenderCopy(Renderer* renderer, Texture* texture, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Rectangle<int>* srcrect, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Maths.Rectangle<int> dstrect);
+        public unsafe partial int RenderCopy(Renderer* renderer, Texture* texture, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Rectangle<int>* srcrect, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Maths.Rectangle<int> dstrect);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1409, Column 29 in SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_RenderCopy")]
-        public unsafe partial int RenderCopy(Renderer* renderer, Texture* texture, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Maths.Rectangle<int> srcrect, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Rectangle<int>* dstrect);
+        public unsafe partial int RenderCopy(Renderer* renderer, Texture* texture, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Maths.Rectangle<int> srcrect, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Rectangle<int>* dstrect);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1409, Column 29 in SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_RenderCopy")]
-        public unsafe partial int RenderCopy(Renderer* renderer, Texture* texture, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Maths.Rectangle<int> srcrect, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Maths.Rectangle<int> dstrect);
+        public unsafe partial int RenderCopy(Renderer* renderer, Texture* texture, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Maths.Rectangle<int> srcrect, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Maths.Rectangle<int> dstrect);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1453, Column 29 in SDL_render.h")]
@@ -14163,37 +14163,37 @@ namespace Silk.NET.SDL
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1453, Column 29 in SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_RenderCopyEx")]
-        public unsafe partial int RenderCopyEx(Renderer* renderer, Texture* texture, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Rectangle<int>* srcrect, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Rectangle<int>* dstrect, double angle, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Point center, RendererFlip flip);
+        public unsafe partial int RenderCopyEx(Renderer* renderer, Texture* texture, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Rectangle<int>* srcrect, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Rectangle<int>* dstrect, double angle, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Point center, RendererFlip flip);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1453, Column 29 in SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_RenderCopyEx")]
-        public unsafe partial int RenderCopyEx(Renderer* renderer, Texture* texture, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Rectangle<int>* srcrect, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Maths.Rectangle<int> dstrect, double angle, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Point* center, RendererFlip flip);
+        public unsafe partial int RenderCopyEx(Renderer* renderer, Texture* texture, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Rectangle<int>* srcrect, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Maths.Rectangle<int> dstrect, double angle, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Point* center, RendererFlip flip);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1453, Column 29 in SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_RenderCopyEx")]
-        public unsafe partial int RenderCopyEx(Renderer* renderer, Texture* texture, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Rectangle<int>* srcrect, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Maths.Rectangle<int> dstrect, double angle, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Point center, RendererFlip flip);
+        public unsafe partial int RenderCopyEx(Renderer* renderer, Texture* texture, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Rectangle<int>* srcrect, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Maths.Rectangle<int> dstrect, double angle, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Point center, RendererFlip flip);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1453, Column 29 in SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_RenderCopyEx")]
-        public unsafe partial int RenderCopyEx(Renderer* renderer, Texture* texture, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Maths.Rectangle<int> srcrect, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Rectangle<int>* dstrect, double angle, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Point* center, RendererFlip flip);
+        public unsafe partial int RenderCopyEx(Renderer* renderer, Texture* texture, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Maths.Rectangle<int> srcrect, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Rectangle<int>* dstrect, double angle, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Point* center, RendererFlip flip);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1453, Column 29 in SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_RenderCopyEx")]
-        public unsafe partial int RenderCopyEx(Renderer* renderer, Texture* texture, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Maths.Rectangle<int> srcrect, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Rectangle<int>* dstrect, double angle, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Point center, RendererFlip flip);
+        public unsafe partial int RenderCopyEx(Renderer* renderer, Texture* texture, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Maths.Rectangle<int> srcrect, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Rectangle<int>* dstrect, double angle, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Point center, RendererFlip flip);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1453, Column 29 in SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_RenderCopyEx")]
-        public unsafe partial int RenderCopyEx(Renderer* renderer, Texture* texture, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Maths.Rectangle<int> srcrect, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Maths.Rectangle<int> dstrect, double angle, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Point* center, RendererFlip flip);
+        public unsafe partial int RenderCopyEx(Renderer* renderer, Texture* texture, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Maths.Rectangle<int> srcrect, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Maths.Rectangle<int> dstrect, double angle, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Point* center, RendererFlip flip);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1453, Column 29 in SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_RenderCopyEx")]
-        public unsafe partial int RenderCopyEx(Renderer* renderer, Texture* texture, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Maths.Rectangle<int> srcrect, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Maths.Rectangle<int> dstrect, double angle, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Point center, RendererFlip flip);
+        public unsafe partial int RenderCopyEx(Renderer* renderer, Texture* texture, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Maths.Rectangle<int> srcrect, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Maths.Rectangle<int> dstrect, double angle, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Point center, RendererFlip flip);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1472, Column 29 in SDL_render.h")]
@@ -14208,7 +14208,7 @@ namespace Silk.NET.SDL
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1485, Column 29 in SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_RenderDrawPointsF")]
-        public unsafe partial int RenderDrawPointsF(Renderer* renderer, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in FPoint points, int count);
+        public unsafe partial int RenderDrawPointsF(Renderer* renderer, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in FPoint points, int count);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1501, Column 29 in SDL_render.h")]
@@ -14223,7 +14223,7 @@ namespace Silk.NET.SDL
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1515, Column 29 in SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_RenderDrawLinesF")]
-        public unsafe partial int RenderDrawLinesF(Renderer* renderer, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in FPoint points, int count);
+        public unsafe partial int RenderDrawLinesF(Renderer* renderer, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in FPoint points, int count);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1529, Column 29 in SDL_render.h")]
@@ -14233,7 +14233,7 @@ namespace Silk.NET.SDL
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1529, Column 29 in SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_RenderDrawRectF")]
-        public unsafe partial int RenderDrawRectF(Renderer* renderer, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in FRect rect);
+        public unsafe partial int RenderDrawRectF(Renderer* renderer, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in FRect rect);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1543, Column 29 in SDL_render.h")]
@@ -14243,7 +14243,7 @@ namespace Silk.NET.SDL
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1543, Column 29 in SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_RenderDrawRectsF")]
-        public unsafe partial int RenderDrawRectsF(Renderer* renderer, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in FRect rects, int count);
+        public unsafe partial int RenderDrawRectsF(Renderer* renderer, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in FRect rects, int count);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1558, Column 29 in SDL_render.h")]
@@ -14253,7 +14253,7 @@ namespace Silk.NET.SDL
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1558, Column 29 in SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_RenderFillRectF")]
-        public unsafe partial int RenderFillRectF(Renderer* renderer, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in FRect rect);
+        public unsafe partial int RenderFillRectF(Renderer* renderer, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in FRect rect);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1572, Column 29 in SDL_render.h")]
@@ -14263,7 +14263,7 @@ namespace Silk.NET.SDL
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1572, Column 29 in SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_RenderFillRectsF")]
-        public unsafe partial int RenderFillRectsF(Renderer* renderer, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in FRect rects, int count);
+        public unsafe partial int RenderFillRectsF(Renderer* renderer, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in FRect rects, int count);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1590, Column 29 in SDL_render.h")]
@@ -14273,17 +14273,17 @@ namespace Silk.NET.SDL
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1590, Column 29 in SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_RenderCopyF")]
-        public unsafe partial int RenderCopyF(Renderer* renderer, Texture* texture, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Rectangle<int>* srcrect, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in FRect dstrect);
+        public unsafe partial int RenderCopyF(Renderer* renderer, Texture* texture, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Rectangle<int>* srcrect, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in FRect dstrect);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1590, Column 29 in SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_RenderCopyF")]
-        public unsafe partial int RenderCopyF(Renderer* renderer, Texture* texture, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Maths.Rectangle<int> srcrect, [Flow(Silk.NET.Core.Native.FlowDirection.In)] FRect* dstrect);
+        public unsafe partial int RenderCopyF(Renderer* renderer, Texture* texture, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Maths.Rectangle<int> srcrect, [Flow(Silk.NET.Core.Native.FlowDirection.In)] FRect* dstrect);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1590, Column 29 in SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_RenderCopyF")]
-        public unsafe partial int RenderCopyF(Renderer* renderer, Texture* texture, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Maths.Rectangle<int> srcrect, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in FRect dstrect);
+        public unsafe partial int RenderCopyF(Renderer* renderer, Texture* texture, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Maths.Rectangle<int> srcrect, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in FRect dstrect);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1616, Column 29 in SDL_render.h")]
@@ -14293,37 +14293,37 @@ namespace Silk.NET.SDL
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1616, Column 29 in SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_RenderCopyExF")]
-        public unsafe partial int RenderCopyExF(Renderer* renderer, Texture* texture, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Rectangle<int>* srcrect, [Flow(Silk.NET.Core.Native.FlowDirection.In)] FRect* dstrect, double angle, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in FPoint center, RendererFlip flip);
+        public unsafe partial int RenderCopyExF(Renderer* renderer, Texture* texture, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Rectangle<int>* srcrect, [Flow(Silk.NET.Core.Native.FlowDirection.In)] FRect* dstrect, double angle, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in FPoint center, RendererFlip flip);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1616, Column 29 in SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_RenderCopyExF")]
-        public unsafe partial int RenderCopyExF(Renderer* renderer, Texture* texture, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Rectangle<int>* srcrect, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in FRect dstrect, double angle, [Flow(Silk.NET.Core.Native.FlowDirection.In)] FPoint* center, RendererFlip flip);
+        public unsafe partial int RenderCopyExF(Renderer* renderer, Texture* texture, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Rectangle<int>* srcrect, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in FRect dstrect, double angle, [Flow(Silk.NET.Core.Native.FlowDirection.In)] FPoint* center, RendererFlip flip);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1616, Column 29 in SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_RenderCopyExF")]
-        public unsafe partial int RenderCopyExF(Renderer* renderer, Texture* texture, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Rectangle<int>* srcrect, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in FRect dstrect, double angle, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in FPoint center, RendererFlip flip);
+        public unsafe partial int RenderCopyExF(Renderer* renderer, Texture* texture, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Rectangle<int>* srcrect, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in FRect dstrect, double angle, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in FPoint center, RendererFlip flip);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1616, Column 29 in SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_RenderCopyExF")]
-        public unsafe partial int RenderCopyExF(Renderer* renderer, Texture* texture, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Maths.Rectangle<int> srcrect, [Flow(Silk.NET.Core.Native.FlowDirection.In)] FRect* dstrect, double angle, [Flow(Silk.NET.Core.Native.FlowDirection.In)] FPoint* center, RendererFlip flip);
+        public unsafe partial int RenderCopyExF(Renderer* renderer, Texture* texture, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Maths.Rectangle<int> srcrect, [Flow(Silk.NET.Core.Native.FlowDirection.In)] FRect* dstrect, double angle, [Flow(Silk.NET.Core.Native.FlowDirection.In)] FPoint* center, RendererFlip flip);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1616, Column 29 in SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_RenderCopyExF")]
-        public unsafe partial int RenderCopyExF(Renderer* renderer, Texture* texture, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Maths.Rectangle<int> srcrect, [Flow(Silk.NET.Core.Native.FlowDirection.In)] FRect* dstrect, double angle, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in FPoint center, RendererFlip flip);
+        public unsafe partial int RenderCopyExF(Renderer* renderer, Texture* texture, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Maths.Rectangle<int> srcrect, [Flow(Silk.NET.Core.Native.FlowDirection.In)] FRect* dstrect, double angle, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in FPoint center, RendererFlip flip);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1616, Column 29 in SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_RenderCopyExF")]
-        public unsafe partial int RenderCopyExF(Renderer* renderer, Texture* texture, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Maths.Rectangle<int> srcrect, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in FRect dstrect, double angle, [Flow(Silk.NET.Core.Native.FlowDirection.In)] FPoint* center, RendererFlip flip);
+        public unsafe partial int RenderCopyExF(Renderer* renderer, Texture* texture, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Maths.Rectangle<int> srcrect, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in FRect dstrect, double angle, [Flow(Silk.NET.Core.Native.FlowDirection.In)] FPoint* center, RendererFlip flip);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1616, Column 29 in SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_RenderCopyExF")]
-        public unsafe partial int RenderCopyExF(Renderer* renderer, Texture* texture, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Maths.Rectangle<int> srcrect, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in FRect dstrect, double angle, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in FPoint center, RendererFlip flip);
+        public unsafe partial int RenderCopyExF(Renderer* renderer, Texture* texture, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Maths.Rectangle<int> srcrect, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in FRect dstrect, double angle, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in FPoint center, RendererFlip flip);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1644, Column 29 in SDL_render.h")]
@@ -14333,17 +14333,17 @@ namespace Silk.NET.SDL
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1644, Column 29 in SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_RenderGeometry")]
-        public unsafe partial int RenderGeometry(Renderer* renderer, Texture* texture, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Vertex* vertices, int num_vertices, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in int indices, int num_indices);
+        public unsafe partial int RenderGeometry(Renderer* renderer, Texture* texture, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Vertex* vertices, int num_vertices, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in int indices, int num_indices);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1644, Column 29 in SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_RenderGeometry")]
-        public unsafe partial int RenderGeometry(Renderer* renderer, Texture* texture, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Vertex vertices, int num_vertices, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int* indices, int num_indices);
+        public unsafe partial int RenderGeometry(Renderer* renderer, Texture* texture, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Vertex vertices, int num_vertices, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int* indices, int num_indices);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1644, Column 29 in SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_RenderGeometry")]
-        public unsafe partial int RenderGeometry(Renderer* renderer, Texture* texture, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Vertex vertices, int num_vertices, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in int indices, int num_indices);
+        public unsafe partial int RenderGeometry(Renderer* renderer, Texture* texture, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Vertex vertices, int num_vertices, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in int indices, int num_indices);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1674, Column 29 in SDL_render.h")]
@@ -14353,77 +14353,77 @@ namespace Silk.NET.SDL
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1674, Column 29 in SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_RenderGeometryRaw")]
-        public unsafe partial int RenderGeometryRaw<T0>(Renderer* renderer, Texture* texture, [Flow(Silk.NET.Core.Native.FlowDirection.In)] float* xy, int xy_stride, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Color* color, int color_stride, [Flow(Silk.NET.Core.Native.FlowDirection.In)] float* uv, int uv_stride, int num_vertices, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in T0 indices, int num_indices, int size_indices) where T0 : unmanaged;
+        public unsafe partial int RenderGeometryRaw<T0>(Renderer* renderer, Texture* texture, [Flow(Silk.NET.Core.Native.FlowDirection.In)] float* xy, int xy_stride, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Color* color, int color_stride, [Flow(Silk.NET.Core.Native.FlowDirection.In)] float* uv, int uv_stride, int num_vertices, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in T0 indices, int num_indices, int size_indices) where T0 : unmanaged;
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1674, Column 29 in SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_RenderGeometryRaw")]
-        public unsafe partial int RenderGeometryRaw(Renderer* renderer, Texture* texture, [Flow(Silk.NET.Core.Native.FlowDirection.In)] float* xy, int xy_stride, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Color* color, int color_stride, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in float uv, int uv_stride, int num_vertices, [Flow(Silk.NET.Core.Native.FlowDirection.In)] void* indices, int num_indices, int size_indices);
+        public unsafe partial int RenderGeometryRaw(Renderer* renderer, Texture* texture, [Flow(Silk.NET.Core.Native.FlowDirection.In)] float* xy, int xy_stride, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Color* color, int color_stride, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in float uv, int uv_stride, int num_vertices, [Flow(Silk.NET.Core.Native.FlowDirection.In)] void* indices, int num_indices, int size_indices);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1674, Column 29 in SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_RenderGeometryRaw")]
-        public unsafe partial int RenderGeometryRaw<T0>(Renderer* renderer, Texture* texture, [Flow(Silk.NET.Core.Native.FlowDirection.In)] float* xy, int xy_stride, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Color* color, int color_stride, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in float uv, int uv_stride, int num_vertices, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in T0 indices, int num_indices, int size_indices) where T0 : unmanaged;
+        public unsafe partial int RenderGeometryRaw<T0>(Renderer* renderer, Texture* texture, [Flow(Silk.NET.Core.Native.FlowDirection.In)] float* xy, int xy_stride, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Color* color, int color_stride, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in float uv, int uv_stride, int num_vertices, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in T0 indices, int num_indices, int size_indices) where T0 : unmanaged;
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1674, Column 29 in SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_RenderGeometryRaw")]
-        public unsafe partial int RenderGeometryRaw(Renderer* renderer, Texture* texture, [Flow(Silk.NET.Core.Native.FlowDirection.In)] float* xy, int xy_stride, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Color color, int color_stride, [Flow(Silk.NET.Core.Native.FlowDirection.In)] float* uv, int uv_stride, int num_vertices, [Flow(Silk.NET.Core.Native.FlowDirection.In)] void* indices, int num_indices, int size_indices);
+        public unsafe partial int RenderGeometryRaw(Renderer* renderer, Texture* texture, [Flow(Silk.NET.Core.Native.FlowDirection.In)] float* xy, int xy_stride, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Color color, int color_stride, [Flow(Silk.NET.Core.Native.FlowDirection.In)] float* uv, int uv_stride, int num_vertices, [Flow(Silk.NET.Core.Native.FlowDirection.In)] void* indices, int num_indices, int size_indices);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1674, Column 29 in SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_RenderGeometryRaw")]
-        public unsafe partial int RenderGeometryRaw<T0>(Renderer* renderer, Texture* texture, [Flow(Silk.NET.Core.Native.FlowDirection.In)] float* xy, int xy_stride, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Color color, int color_stride, [Flow(Silk.NET.Core.Native.FlowDirection.In)] float* uv, int uv_stride, int num_vertices, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in T0 indices, int num_indices, int size_indices) where T0 : unmanaged;
+        public unsafe partial int RenderGeometryRaw<T0>(Renderer* renderer, Texture* texture, [Flow(Silk.NET.Core.Native.FlowDirection.In)] float* xy, int xy_stride, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Color color, int color_stride, [Flow(Silk.NET.Core.Native.FlowDirection.In)] float* uv, int uv_stride, int num_vertices, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in T0 indices, int num_indices, int size_indices) where T0 : unmanaged;
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1674, Column 29 in SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_RenderGeometryRaw")]
-        public unsafe partial int RenderGeometryRaw(Renderer* renderer, Texture* texture, [Flow(Silk.NET.Core.Native.FlowDirection.In)] float* xy, int xy_stride, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Color color, int color_stride, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in float uv, int uv_stride, int num_vertices, [Flow(Silk.NET.Core.Native.FlowDirection.In)] void* indices, int num_indices, int size_indices);
+        public unsafe partial int RenderGeometryRaw(Renderer* renderer, Texture* texture, [Flow(Silk.NET.Core.Native.FlowDirection.In)] float* xy, int xy_stride, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Color color, int color_stride, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in float uv, int uv_stride, int num_vertices, [Flow(Silk.NET.Core.Native.FlowDirection.In)] void* indices, int num_indices, int size_indices);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1674, Column 29 in SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_RenderGeometryRaw")]
-        public unsafe partial int RenderGeometryRaw<T0>(Renderer* renderer, Texture* texture, [Flow(Silk.NET.Core.Native.FlowDirection.In)] float* xy, int xy_stride, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Color color, int color_stride, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in float uv, int uv_stride, int num_vertices, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in T0 indices, int num_indices, int size_indices) where T0 : unmanaged;
+        public unsafe partial int RenderGeometryRaw<T0>(Renderer* renderer, Texture* texture, [Flow(Silk.NET.Core.Native.FlowDirection.In)] float* xy, int xy_stride, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Color color, int color_stride, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in float uv, int uv_stride, int num_vertices, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in T0 indices, int num_indices, int size_indices) where T0 : unmanaged;
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1674, Column 29 in SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_RenderGeometryRaw")]
-        public unsafe partial int RenderGeometryRaw(Renderer* renderer, Texture* texture, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in float xy, int xy_stride, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Color* color, int color_stride, [Flow(Silk.NET.Core.Native.FlowDirection.In)] float* uv, int uv_stride, int num_vertices, [Flow(Silk.NET.Core.Native.FlowDirection.In)] void* indices, int num_indices, int size_indices);
+        public unsafe partial int RenderGeometryRaw(Renderer* renderer, Texture* texture, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in float xy, int xy_stride, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Color* color, int color_stride, [Flow(Silk.NET.Core.Native.FlowDirection.In)] float* uv, int uv_stride, int num_vertices, [Flow(Silk.NET.Core.Native.FlowDirection.In)] void* indices, int num_indices, int size_indices);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1674, Column 29 in SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_RenderGeometryRaw")]
-        public unsafe partial int RenderGeometryRaw<T0>(Renderer* renderer, Texture* texture, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in float xy, int xy_stride, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Color* color, int color_stride, [Flow(Silk.NET.Core.Native.FlowDirection.In)] float* uv, int uv_stride, int num_vertices, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in T0 indices, int num_indices, int size_indices) where T0 : unmanaged;
+        public unsafe partial int RenderGeometryRaw<T0>(Renderer* renderer, Texture* texture, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in float xy, int xy_stride, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Color* color, int color_stride, [Flow(Silk.NET.Core.Native.FlowDirection.In)] float* uv, int uv_stride, int num_vertices, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in T0 indices, int num_indices, int size_indices) where T0 : unmanaged;
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1674, Column 29 in SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_RenderGeometryRaw")]
-        public unsafe partial int RenderGeometryRaw(Renderer* renderer, Texture* texture, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in float xy, int xy_stride, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Color* color, int color_stride, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in float uv, int uv_stride, int num_vertices, [Flow(Silk.NET.Core.Native.FlowDirection.In)] void* indices, int num_indices, int size_indices);
+        public unsafe partial int RenderGeometryRaw(Renderer* renderer, Texture* texture, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in float xy, int xy_stride, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Color* color, int color_stride, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in float uv, int uv_stride, int num_vertices, [Flow(Silk.NET.Core.Native.FlowDirection.In)] void* indices, int num_indices, int size_indices);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1674, Column 29 in SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_RenderGeometryRaw")]
-        public unsafe partial int RenderGeometryRaw<T0>(Renderer* renderer, Texture* texture, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in float xy, int xy_stride, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Color* color, int color_stride, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in float uv, int uv_stride, int num_vertices, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in T0 indices, int num_indices, int size_indices) where T0 : unmanaged;
+        public unsafe partial int RenderGeometryRaw<T0>(Renderer* renderer, Texture* texture, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in float xy, int xy_stride, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Color* color, int color_stride, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in float uv, int uv_stride, int num_vertices, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in T0 indices, int num_indices, int size_indices) where T0 : unmanaged;
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1674, Column 29 in SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_RenderGeometryRaw")]
-        public unsafe partial int RenderGeometryRaw(Renderer* renderer, Texture* texture, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in float xy, int xy_stride, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Color color, int color_stride, [Flow(Silk.NET.Core.Native.FlowDirection.In)] float* uv, int uv_stride, int num_vertices, [Flow(Silk.NET.Core.Native.FlowDirection.In)] void* indices, int num_indices, int size_indices);
+        public unsafe partial int RenderGeometryRaw(Renderer* renderer, Texture* texture, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in float xy, int xy_stride, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Color color, int color_stride, [Flow(Silk.NET.Core.Native.FlowDirection.In)] float* uv, int uv_stride, int num_vertices, [Flow(Silk.NET.Core.Native.FlowDirection.In)] void* indices, int num_indices, int size_indices);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1674, Column 29 in SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_RenderGeometryRaw")]
-        public unsafe partial int RenderGeometryRaw<T0>(Renderer* renderer, Texture* texture, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in float xy, int xy_stride, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Color color, int color_stride, [Flow(Silk.NET.Core.Native.FlowDirection.In)] float* uv, int uv_stride, int num_vertices, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in T0 indices, int num_indices, int size_indices) where T0 : unmanaged;
+        public unsafe partial int RenderGeometryRaw<T0>(Renderer* renderer, Texture* texture, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in float xy, int xy_stride, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Color color, int color_stride, [Flow(Silk.NET.Core.Native.FlowDirection.In)] float* uv, int uv_stride, int num_vertices, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in T0 indices, int num_indices, int size_indices) where T0 : unmanaged;
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1674, Column 29 in SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_RenderGeometryRaw")]
-        public unsafe partial int RenderGeometryRaw(Renderer* renderer, Texture* texture, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in float xy, int xy_stride, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Color color, int color_stride, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in float uv, int uv_stride, int num_vertices, [Flow(Silk.NET.Core.Native.FlowDirection.In)] void* indices, int num_indices, int size_indices);
+        public unsafe partial int RenderGeometryRaw(Renderer* renderer, Texture* texture, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in float xy, int xy_stride, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Color color, int color_stride, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in float uv, int uv_stride, int num_vertices, [Flow(Silk.NET.Core.Native.FlowDirection.In)] void* indices, int num_indices, int size_indices);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1674, Column 29 in SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_RenderGeometryRaw")]
-        public unsafe partial int RenderGeometryRaw<T0>(Renderer* renderer, Texture* texture, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in float xy, int xy_stride, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Color color, int color_stride, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in float uv, int uv_stride, int num_vertices, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in T0 indices, int num_indices, int size_indices) where T0 : unmanaged;
+        public unsafe partial int RenderGeometryRaw<T0>(Renderer* renderer, Texture* texture, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in float xy, int xy_stride, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Color color, int color_stride, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in float uv, int uv_stride, int num_vertices, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in T0 indices, int num_indices, int size_indices) where T0 : unmanaged;
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1708, Column 29 in SDL_render.h")]
@@ -14438,12 +14438,12 @@ namespace Silk.NET.SDL
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1708, Column 29 in SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_RenderReadPixels")]
-        public unsafe partial int RenderReadPixels(Renderer* renderer, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Maths.Rectangle<int> rect, uint format, void* pixels, int pitch);
+        public unsafe partial int RenderReadPixels(Renderer* renderer, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Maths.Rectangle<int> rect, uint format, void* pixels, int pitch);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1708, Column 29 in SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_RenderReadPixels")]
-        public unsafe partial int RenderReadPixels<T0>(Renderer* renderer, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Maths.Rectangle<int> rect, uint format, ref T0 pixels, int pitch) where T0 : unmanaged;
+        public unsafe partial int RenderReadPixels<T0>(Renderer* renderer, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Maths.Rectangle<int> rect, uint format, ref T0 pixels, int pitch) where T0 : unmanaged;
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1753, Column 30 in SDL_render.h")]
@@ -14513,7 +14513,7 @@ namespace Silk.NET.SDL
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 69, Column 38 in SDL_shape.h")]
         [NativeApi(EntryPoint = "SDL_CreateShapedWindow")]
-        public unsafe partial Window* CreateShapedWindow([Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte title, uint x, uint y, uint w, uint h, uint flags);
+        public unsafe partial Window* CreateShapedWindow([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte title, uint x, uint y, uint w, uint h, uint flags);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 69, Column 38 in SDL_shape.h")]
@@ -14714,7 +14714,7 @@ namespace Silk.NET.SDL
         [NativeName("Src", "Line 428, Column 34 in SDL_system.h")]
         [ExcludeFromOverride(0)]
         [NativeApi(EntryPoint = "SDL_AndroidRequestPermission")]
-        public partial SdlBool AndroidRequestPermission([Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte permission);
+        public partial SdlBool AndroidRequestPermission([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte permission);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 428, Column 34 in SDL_system.h")]
@@ -14732,7 +14732,7 @@ namespace Silk.NET.SDL
         [NativeName("Src", "Line 453, Column 29 in SDL_system.h")]
         [ExcludeFromOverride(0)]
         [NativeApi(EntryPoint = "SDL_AndroidShowToast")]
-        public partial int AndroidShowToast([Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte message, int duration, int gravity, int xoffset, int yoffset);
+        public partial int AndroidShowToast([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte message, int duration, int gravity, int xoffset, int yoffset);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 453, Column 29 in SDL_system.h")]
@@ -14897,7 +14897,7 @@ namespace Silk.NET.SDL
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 69, Column 29 in SDL_misc.h")]
         [NativeApi(EntryPoint = "SDL_OpenURL")]
-        public partial int OpenURL([Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte url);
+        public partial int OpenURL([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte url);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 69, Column 29 in SDL_misc.h")]
@@ -14956,7 +14956,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 581, Column 31 in SDL_stdinc.h")]
-        public unsafe byte* Strtokr(byte* s1, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte s2, string[] saveptrSa)
+        public unsafe byte* Strtokr(byte* s1, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte s2, string[] saveptrSa)
         {
             // StringArrayOverloader
             var saveptr = (byte**) SilkMarshal.StringArrayToPtr(saveptrSa);
@@ -14969,7 +14969,7 @@ namespace Silk.NET.SDL
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 581, Column 31 in SDL_stdinc.h")]
         [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
-        public unsafe string StrtokrS(byte* s1, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte s2, string[] saveptrSa)
+        public unsafe string StrtokrS(byte* s1, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte s2, string[] saveptrSa)
         {
             // StringArrayOverloader
             var saveptr = (byte**) SilkMarshal.StringArrayToPtr(saveptrSa);
@@ -15031,7 +15031,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 581, Column 31 in SDL_stdinc.h")]
-        public unsafe byte* Strtokr(ref byte s1, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte s2, string[] saveptrSa)
+        public unsafe byte* Strtokr(ref byte s1, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte s2, string[] saveptrSa)
         {
             // StringArrayOverloader
             var saveptr = (byte**) SilkMarshal.StringArrayToPtr(saveptrSa);
@@ -15044,7 +15044,7 @@ namespace Silk.NET.SDL
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 581, Column 31 in SDL_stdinc.h")]
         [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
-        public unsafe string StrtokrS(ref byte s1, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte s2, string[] saveptrSa)
+        public unsafe string StrtokrS(ref byte s1, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte s2, string[] saveptrSa)
         {
             // StringArrayOverloader
             var saveptr = (byte**) SilkMarshal.StringArrayToPtr(saveptrSa);
@@ -15106,7 +15106,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 581, Column 31 in SDL_stdinc.h")]
-        public unsafe byte* Strtokr([UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string s1, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte s2, string[] saveptrSa)
+        public unsafe byte* Strtokr([UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string s1, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte s2, string[] saveptrSa)
         {
             // StringArrayOverloader
             var saveptr = (byte**) SilkMarshal.StringArrayToPtr(saveptrSa);
@@ -15119,7 +15119,7 @@ namespace Silk.NET.SDL
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 581, Column 31 in SDL_stdinc.h")]
         [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
-        public unsafe string StrtokrS([UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string s1, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte s2, string[] saveptrSa)
+        public unsafe string StrtokrS([UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string s1, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte s2, string[] saveptrSa)
         {
             // StringArrayOverloader
             var saveptr = (byte**) SilkMarshal.StringArrayToPtr(saveptrSa);
@@ -15168,7 +15168,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 594, Column 30 in SDL_stdinc.h")]
-        public unsafe int Strtol([Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte str, string[] endpSa, int @base)
+        public unsafe int Strtol([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte str, string[] endpSa, int @base)
         {
             // StringArrayOverloader
             var endp = (byte**) SilkMarshal.StringArrayToPtr(endpSa);
@@ -15204,7 +15204,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 595, Column 39 in SDL_stdinc.h")]
-        public unsafe uint Strtoul([Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte str, string[] endpSa, int @base)
+        public unsafe uint Strtoul([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte str, string[] endpSa, int @base)
         {
             // StringArrayOverloader
             var endp = (byte**) SilkMarshal.StringArrayToPtr(endpSa);
@@ -15240,7 +15240,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 596, Column 32 in SDL_stdinc.h")]
-        public unsafe long Strtoll([Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte str, string[] endpSa, int @base)
+        public unsafe long Strtoll([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte str, string[] endpSa, int @base)
         {
             // StringArrayOverloader
             var endp = (byte**) SilkMarshal.StringArrayToPtr(endpSa);
@@ -15276,7 +15276,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 597, Column 32 in SDL_stdinc.h")]
-        public unsafe ulong Strtoull([Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte str, string[] endpSa, int @base)
+        public unsafe ulong Strtoull([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte str, string[] endpSa, int @base)
         {
             // StringArrayOverloader
             var endp = (byte**) SilkMarshal.StringArrayToPtr(endpSa);
@@ -15312,7 +15312,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 598, Column 32 in SDL_stdinc.h")]
-        public unsafe double Strtod([Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte str, string[] endpSa)
+        public unsafe double Strtod([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte str, string[] endpSa)
         {
             // StringArrayOverloader
             var endp = (byte**) SilkMarshal.StringArrayToPtr(endpSa);
@@ -15348,7 +15348,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 609, Column 29 in SDL_stdinc.h")]
-        public unsafe int Asprintf(string[] strpSa, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte fmt)
+        public unsafe int Asprintf(string[] strpSa, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte fmt)
         {
             // StringArrayOverloader
             var strp = (byte**) SilkMarshal.StringArrayToPtr(strpSa);
@@ -15408,7 +15408,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 610, Column 29 in SDL_stdinc.h")]
-        public unsafe int Vasprintf(string[] strpSa, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte fmt, byte* ap)
+        public unsafe int Vasprintf(string[] strpSa, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte fmt, byte* ap)
         {
             // StringArrayOverloader
             var strp = (byte**) SilkMarshal.StringArrayToPtr(strpSa);
@@ -15420,7 +15420,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 610, Column 29 in SDL_stdinc.h")]
-        public unsafe int Vasprintf(string[] strpSa, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte fmt, ref byte ap)
+        public unsafe int Vasprintf(string[] strpSa, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte fmt, ref byte ap)
         {
             // StringArrayOverloader
             var strp = (byte**) SilkMarshal.StringArrayToPtr(strpSa);
@@ -15432,7 +15432,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 610, Column 29 in SDL_stdinc.h")]
-        public unsafe int Vasprintf(string[] strpSa, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte fmt, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string ap)
+        public unsafe int Vasprintf(string[] strpSa, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte fmt, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string ap)
         {
             // StringArrayOverloader
             var strp = (byte**) SilkMarshal.StringArrayToPtr(strpSa);
@@ -15588,7 +15588,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 686, Column 32 in SDL_stdinc.h")]
-        public unsafe nuint Iconv(Icon* cd, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte* inbuf, nuint* inbytesleft, string[] outbufSa, nuint* outbytesleft)
+        public unsafe nuint Iconv(Icon* cd, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte* inbuf, nuint* inbytesleft, string[] outbufSa, nuint* outbytesleft)
         {
             // StringArrayOverloader
             var outbuf = (byte**) SilkMarshal.StringArrayToPtr(outbufSa);
@@ -15600,7 +15600,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 686, Column 32 in SDL_stdinc.h")]
-        public unsafe nuint Iconv(Icon* cd, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte* inbuf, nuint* inbytesleft, string[] outbufSa, ref nuint outbytesleft)
+        public unsafe nuint Iconv(Icon* cd, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte* inbuf, nuint* inbytesleft, string[] outbufSa, ref nuint outbytesleft)
         {
             // StringArrayOverloader
             var outbuf = (byte**) SilkMarshal.StringArrayToPtr(outbufSa);
@@ -15612,7 +15612,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 686, Column 32 in SDL_stdinc.h")]
-        public unsafe nuint Iconv(Icon* cd, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte* inbuf, ref nuint inbytesleft, string[] outbufSa, nuint* outbytesleft)
+        public unsafe nuint Iconv(Icon* cd, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte* inbuf, ref nuint inbytesleft, string[] outbufSa, nuint* outbytesleft)
         {
             // StringArrayOverloader
             var outbuf = (byte**) SilkMarshal.StringArrayToPtr(outbufSa);
@@ -15624,7 +15624,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 686, Column 32 in SDL_stdinc.h")]
-        public unsafe nuint Iconv(Icon* cd, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte* inbuf, ref nuint inbytesleft, string[] outbufSa, ref nuint outbytesleft)
+        public unsafe nuint Iconv(Icon* cd, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte* inbuf, ref nuint inbytesleft, string[] outbufSa, ref nuint outbytesleft)
         {
             // StringArrayOverloader
             var outbuf = (byte**) SilkMarshal.StringArrayToPtr(outbufSa);
