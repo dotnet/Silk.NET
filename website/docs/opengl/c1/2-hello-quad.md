@@ -547,7 +547,7 @@ That was a lot to digest! You've hopefully learned a lot along the way though, a
 
 Here's some stuff you can do now:
 
-* Move on to the [next tutorial](../../coming-soon.html), where we'll be abstracting away some of our code to make it easier to read.
+* Move on to the [next tutorial](3-hello-texture.html), where we'll see how to aply textures to our quad.
 * View the full tutorial source code on the [Silk.NET git repository](https://github.com/dotnet/Silk.NET/tree/main/examples/CSharp/OpenGL%20Tutorials/Tutorial%201.2%20-%20Hello%20quad).
 * Join the [Discord server](https://discord.gg/DTHHXRt), where you can ask questions, show your stuff, and chat with everyone there.
 

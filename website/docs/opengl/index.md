@@ -5,7 +5,8 @@
         "Url": "index.html",
         "Children": [
             {"Url": "::c1/1-hello-window.md"},
-            {"Url": "::c1/2-hello-quad.md"}
+            {"Url": "::c1/2-hello-quad.md"},
+            {"Url": "::c1/3-hello-texture.md"}
         ],
         "Metadata": {
             "theme.silk.nav.big_dropdown.icon.class": "icon icon-shape bg-gradient-primary rounded-circle text-white",
