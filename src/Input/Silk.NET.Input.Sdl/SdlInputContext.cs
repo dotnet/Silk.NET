@@ -342,6 +342,11 @@ namespace Silk.NET.Input.Sdl
             {
                 joy.Dispose();
             }
+
+            foreach (var td in SdlTouchDevices.Values)
+            {
+                td.Dispose();
+            }
         }
 
         public void ChangeConnection(IInputDevice device, bool connected)

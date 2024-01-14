@@ -10,7 +10,7 @@ namespace Silk.NET.Input
     /// <summary>
     /// An interface representing a touch device.
     /// </summary>
-    public interface ITouchDevice : IInputDevice, IDisposable
+    public interface ITouchDevice : IInputDevice
     {
         /// <summary>
         /// The known fingers this touch device has tracked.

@@ -5,7 +5,7 @@ using Silk.NET.SDL;
 
 namespace Silk.NET.Input.Sdl
 {
-    internal class SdlTouchDevice : ITouchDevice, ISdlDevice
+    internal class SdlTouchDevice : ITouchDevice, ISdlDevice, IDisposable
     {
         private readonly SdlInputContext _ctx;
         private readonly Dictionary<long, TouchFinger> _fingers = new Dictionary<long, TouchFinger>();
