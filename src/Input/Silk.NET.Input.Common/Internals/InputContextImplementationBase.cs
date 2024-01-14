@@ -46,6 +46,8 @@ internal abstract class InputContextImplementationBase : IInputContext
     public abstract IReadOnlyList<IJoystick> Joysticks { get; }
     public abstract IReadOnlyList<IKeyboard> Keyboards { get; }
     public abstract IReadOnlyList<IMouse> Mice { get; }
+    public abstract IReadOnlyList<ITouchDevice> TouchDevices { get; }
+    public abstract ITouchDevice? PrimaryTouchDevice { get; }
     public abstract IReadOnlyList<IInputDevice> OtherDevices { get; }
     public abstract event Action<IInputDevice, bool>? ConnectionChanged;
 }

@@ -8,13 +8,19 @@ namespace Silk.NET.Input
     /// <summary>
     /// Touch gesture recognizer.
     /// </summary>
-    public sealed class TouchGestureRecognizer
+    public sealed class TouchGestureRecognizer : IDisposable
     {
         private readonly ITouchDevice _device;
 
         internal TouchGestureRecognizer(ITouchDevice device)
         {
             _device = device;
+        }
+
+        /// <inheritdoc />
+        public void Dispose()
+        {
+
         }
 
         /// <summary>

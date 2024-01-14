@@ -97,7 +97,7 @@ namespace Silk.NET.Input.Sdl
 
         public void Dispose()
         {
-
+            GestureRecognizer.Dispose();
         }
 
         private string GetTouchDeviceName()
