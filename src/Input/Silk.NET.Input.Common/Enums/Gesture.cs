@@ -6,7 +6,7 @@ using System;
 namespace Silk.NET.Input
 {
     /// <summary>
-    /// Controls the behavior of the double tap gesture tracking.
+    /// Recognizable touch gesture.
     /// </summary>
     [Flags]
     public enum Gesture

@@ -140,6 +140,7 @@ namespace Silk.NET.Input
                 _firstFingerLastMoveTime = DateTime.Now;
 
                 if (!_gestureHandled &&
+                    Swipe != null &&
                     TrackedGestures.HasFlag(Gesture.Swipe) &&
                     _secondFingerIndex is null &&
                     ((Math.Abs(finger.NormalizedSpeed.X) >= SwipeMinSpeed &&
@@ -149,7 +150,7 @@ namespace Silk.NET.Input
                 {
                     _gestureHandled = true;
                     _firstFingerIndex = null;
-                    Swipe?.Invoke(finger.NormalizedSpeed);
+                    Swipe(finger.NormalizedSpeed);
                     return;
                 }
 
@@ -192,7 +193,7 @@ namespace Silk.NET.Input
                     multiGestureHandling = MultiGestureHandling.PrioritizeRotateGesture;
                 Action? zoomInvoker = null;
 
-                if (TrackedGestures.HasFlag(Gesture.Zoom))
+                if (Zoom != null && TrackedGestures.HasFlag(Gesture.Zoom))
                 {
                     var normalizedFingerDistance = secondFinger.Value.NormalizedPosition - firstFinger.Value.NormalizedPosition;
                     var normalizedDistance = normalizedFingerDistance - _initialNormalizedFingerDistance;
@@ -202,7 +203,7 @@ namespace Silk.NET.Input
                         var firstFingerPosition = firstFinger.Value.Position;
                         var fingerDistance = secondFinger.Value.Position - firstFingerPosition - _initialFingerDistance;
 
-                        zoomInvoker = () => Zoom?.Invoke(firstFingerPosition, fingerDistance);
+                        zoomInvoker = () => Zoom(firstFingerPosition, fingerDistance);
 
                         if (multiGestureHandling == MultiGestureHandling.PrioritizeZoomGesture)
                         {
@@ -212,7 +213,7 @@ namespace Silk.NET.Input
                         }
                     }
                 }
-                if (TrackedGestures.HasFlag(Gesture.Rotate))
+                if (Rotate != null && TrackedGestures.HasFlag(Gesture.Rotate))
                 {
                     var firstFingerPosition = firstFinger.Value.NormalizedPosition;
                     var secondFingerPosition = secondFinger.Value.NormalizedPosition;
@@ -227,7 +228,7 @@ namespace Silk.NET.Input
                         if (zoomInvoker != null && multiGestureHandling == MultiGestureHandling.RecognizeBothGestures)
                             zoomInvoker();
 
-                        Rotate?.Invoke(firstFinger.Value.Position, angle);
+                        Rotate(firstFinger.Value.Position, angle);
                     }
                 }
             }
@@ -257,13 +258,14 @@ namespace Silk.NET.Input
         /// </summary>
         public void Update()
         {
-            if (TrackedGestures.HasFlag(Gesture.Hold) &&
+            if (Hold != null &&
+                TrackedGestures.HasFlag(Gesture.Hold) &&
                 _firstFingerIndex != null && _firstFingerLastMoveTime != null && _secondFingerIndex is null &&
                 (DateTime.Now - _firstFingerLastMoveTime.Value).TotalMilliseconds >= HoldTime &&
                 _device.Fingers.TryGetValue(_firstFingerIndex.Value, out var finger))
             {
                 _gestureHandled = true;
-                Hold?.Invoke(finger.Position);
+                Hold(finger.Position);
                 _firstFingerIndex = null;
             }
         }
