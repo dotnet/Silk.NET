@@ -19,6 +19,11 @@ namespace Silk.NET.Input
         IReadOnlyDictionary<long, TouchFinger> Fingers { get; }
 
         /// <summary>
+        /// A recognizer for gestures.
+        /// </summary>
+        TouchGestureRecognizer GestureRecognizer { get; }
+
+        /// <summary>
         /// Checks if a specific finger is currently down on the touch surface.
         /// </summary>
         /// <param name="index">The finger index to check.</param>
