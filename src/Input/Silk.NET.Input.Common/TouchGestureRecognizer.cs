@@ -63,7 +63,7 @@ namespace Silk.NET.Input
             {
                 bool secondTap = _firstTapTime != null;
                 // Double tap is considered if it is tracked, this is the second tap and it was in time.
-                bool doubleTap = secondTap && TrackedGestures.HasFlag(Gesture.DoubleTap) &&
+                bool doubleTap = secondTap && DoubleTap != null && TrackedGestures.HasFlag(Gesture.DoubleTap) &&
                     (DateTime.Now - _firstTapTime!.Value).TotalMilliseconds <= DoubleTapTime;
 
                 if (doubleTap && _firstTapNormalizedPosition != null &&
@@ -156,7 +156,7 @@ namespace Silk.NET.Input
             }
             else
             {
-                if (_secondFingerIndex is null)
+                if (_firstFingerIndex != null && _secondFingerIndex is null)
                 {
                     _secondFingerIndex = finger.Index;
                     var firstFinger = _device.Fingers[_firstFingerIndex.Value];
@@ -289,18 +289,20 @@ namespace Silk.NET.Input
         /// The maximum distance in normalized distance (0..1) between two
         /// consecutive taps to count as a double tap.
         /// </summary>
-        [DefaultValue(8)]
+        [DefaultValue(0.05f)]
         public float DoubleTapRange { get; set; } = 0.05f;
 
         /// <summary>
         /// The minimum finger speed in normalized distance (0..1) per second to count as a swipe gesture.
         /// </summary>
-        public float SwipeMinSpeed { get; set; } = 0.15f; // TODO
+        [DefaultValue(0.15f)]
+        public float SwipeMinSpeed { get; set; } = 0.15f;
 
         /// <summary>
         /// The maximum finger speed in normalized distance (0..1) per second to count as a swipe gesture.
         /// </summary>
-        public float SwipeMaxSpeed { get; set; } = 1000.0f; // TODO
+        [DefaultValue(1000.0f)]
+        public float SwipeMaxSpeed { get; set; } = 1000.0f;
 
         /// <summary>
         /// The minimum time in milliseconds a finger must be pressed on the surface to count as a hold gesture.
@@ -311,12 +313,14 @@ namespace Silk.NET.Input
         /// <summary>
         /// Distance threshold as a normalized value (0..1) for zoom gesture tracking.
         /// </summary>
+        [DefaultValue(0.15f)]
         public float ZoomDistanceThreshold { get; set; } = 0.15f;
 
         /// <summary>
         /// Angle threshold in degrees for rotate gesture tracking.
         /// </summary>
-        public int RotateAngleThreshold { get; set; } = 12; // TODO
+        [DefaultValue(9.0f)]
+        public float RotateAngleThreshold { get; set; } = 9.0f;
 
         /// <summary>
         /// Tap gesture.
