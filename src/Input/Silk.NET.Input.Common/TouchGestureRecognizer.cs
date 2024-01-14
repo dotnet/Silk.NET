@@ -20,6 +20,7 @@ namespace Silk.NET.Input
         private Vector2? _firstTapPosition;
         private Vector2? _firstTapNormalizedPosition;
         private Vector2 _initialFingerDistance = Vector2.Zero;
+        private Vector2 _initialNormalizedFingerDistance = Vector2.Zero;
         private float _initialFingerAngle = 0.0f;
         private bool _gestureHandled = false;
 
@@ -44,7 +45,8 @@ namespace Silk.NET.Input
                 _secondFingerIndex = finger.Index;
                 var firstFinger = _device.Fingers[_firstFingerIndex.Value];
 
-                _initialFingerDistance = finger.NormalizedPosition - firstFinger.NormalizedPosition;
+                _initialFingerDistance = finger.Position - firstFinger.Position;
+                _initialNormalizedFingerDistance = finger.NormalizedPosition - firstFinger.NormalizedPosition;
                 _initialFingerAngle = (float)(Math.Atan2(finger.NormalizedPosition.Y - firstFinger.NormalizedPosition.Y,
                     finger.NormalizedPosition.X - firstFinger.NormalizedPosition.X) * 180.0 / Math.PI);
             }
@@ -118,12 +120,14 @@ namespace Silk.NET.Input
                 _firstFingerIndex = null;
                 _secondFingerIndex = null;
                 _initialFingerDistance = Vector2.Zero;
+                _initialNormalizedFingerDistance = Vector2.Zero;
                 _initialFingerAngle = 0.0f;
             }
             else if (finger.Index == _secondFingerIndex)
             {
                 _secondFingerIndex = null;
                 _initialFingerDistance = Vector2.Zero;
+                _initialNormalizedFingerDistance = Vector2.Zero;
                 _initialFingerAngle = 0.0f;
                 _gestureHandled = true;
             }
@@ -161,7 +165,8 @@ namespace Silk.NET.Input
                     _secondFingerIndex = finger.Index;
                     var firstFinger = _device.Fingers[_firstFingerIndex.Value];
 
-                    _initialFingerDistance = finger.NormalizedPosition - firstFinger.NormalizedPosition;
+                    _initialFingerDistance = finger.Position - firstFinger.Position;
+                    _initialNormalizedFingerDistance = finger.NormalizedPosition - firstFinger.NormalizedPosition;
                     _initialFingerAngle = (float) (Math.Atan2(finger.NormalizedPosition.Y - firstFinger.NormalizedPosition.Y,
                         finger.NormalizedPosition.X - firstFinger.NormalizedPosition.X) * 180.0 / Math.PI);
                 }
@@ -189,12 +194,15 @@ namespace Silk.NET.Input
 
                 if (TrackedGestures.HasFlag(Gesture.Zoom))
                 {
-                    var fingerDistance = secondFinger.Value.NormalizedPosition - firstFinger.Value.NormalizedPosition;
-                    var distance = fingerDistance - _initialFingerDistance;
+                    var normalizedFingerDistance = secondFinger.Value.NormalizedPosition - firstFinger.Value.NormalizedPosition;
+                    var normalizedDistance = normalizedFingerDistance - _initialNormalizedFingerDistance;
 
-                    if (Math.Abs(distance.X) >= ZoomDistanceThreshold || Math.Abs(distance.Y) >= ZoomDistanceThreshold)
+                    if (Math.Abs(normalizedDistance.X) >= ZoomDistanceThreshold || Math.Abs(normalizedDistance.Y) >= ZoomDistanceThreshold)
                     {
-                        zoomInvoker = () => Zoom?.Invoke(firstFinger.Value.Position, distance);
+                        var firstFingerPosition = firstFinger.Value.Position;
+                        var fingerDistance = secondFinger.Value.Position - firstFingerPosition - _initialFingerDistance;
+
+                        zoomInvoker = () => Zoom?.Invoke(firstFingerPosition, fingerDistance);
 
                         if (multiGestureHandling == MultiGestureHandling.PrioritizeZoomGesture)
                         {
@@ -326,7 +334,7 @@ namespace Silk.NET.Input
         /// Tap gesture.
         /// </summary>
         /// <remarks>
-        /// The event argument gives the finger position of the tap.
+        /// The event argument gives the finger position of the tap in pixel coordinates.
         /// </remarks>
         public event Action<Vector2>? Tap;
 
@@ -334,7 +342,7 @@ namespace Silk.NET.Input
         /// Double tap gesture.
         /// </summary>
         /// <remarks>
-        /// The event argument gives the finger position of the second tap.
+        /// The event argument gives the finger position of the second tap in pixel coordinates.
         /// </remarks>
         public event Action<Vector2>? DoubleTap;
 
@@ -350,7 +358,7 @@ namespace Silk.NET.Input
         /// Long hold gesture.
         /// </summary>
         /// <remarks>
-        /// The event argument gives the finger position at the end of the hold.
+        /// The event argument gives the finger position at the end of the hold in pixel coordinates.
         /// </remarks>
         public event Action<Vector2>? Hold;
 
@@ -358,8 +366,8 @@ namespace Silk.NET.Input
         /// Zoom gesture.
         /// </summary>
         /// <remarks>
-        /// The first event argument gives the first finger position and the second
-        /// event argument the delta of the distance of the two fingers in relation to the last zoom event.
+        /// The first event argument gives the first finger position in pixel coordinates and the second
+        /// event argument the total distance change in pixels of the two fingers in relation to the initial finger distance.
         /// </remarks>
         public event Action<Vector2, Vector2>? Zoom;
 
@@ -367,8 +375,8 @@ namespace Silk.NET.Input
         /// Rotate gesture.
         /// </summary>
         /// <remarks>
-        /// The first event argument gives the first finger position and the second
-        /// event argument gives the angle delta in degress in relation to the last rotate event.
+        /// The first event argument gives the first finger position in pixel coordinates and the second
+        /// event argument gives the total angle delta in degress in relation to the initial finger angle.
         /// </remarks>
         public event Action<Vector2, float>? Rotate;
     }
