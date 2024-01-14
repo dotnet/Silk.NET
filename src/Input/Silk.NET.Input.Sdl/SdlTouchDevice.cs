@@ -86,7 +86,7 @@ namespace Silk.NET.Input.Sdl
                     var speed = normalizedSpeed * windowSize;
                     var finger = new TouchFinger(@event.Tfinger.FingerId,
                         position, normalizedPosition, speed, normalizedSpeed,
-                        false);
+                        true);
                     FingerMove?.Invoke(this, finger, distance);
                     _fingers[finger.Index] = finger;
                     _fingerEventTimes[finger.Index] = DateTime.Now;
