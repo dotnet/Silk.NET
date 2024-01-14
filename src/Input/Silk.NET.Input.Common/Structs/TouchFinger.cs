@@ -21,7 +21,7 @@ namespace Silk.NET.Input
         public Vector2 Position { get; }
 
         /// <summary>
-        /// The last known normalized position of the finger.
+        /// The last known normalized position (0..1) of the finger.
         /// </summary>
         public Vector2 NormalizedPosition { get; }
 
@@ -31,7 +31,7 @@ namespace Silk.NET.Input
         public Vector2 Speed { get; }
 
         /// <summary>
-        /// The last known normalized speed of the finger.
+        /// The last known normalized speed (-1..1) of the finger.
         /// </summary>
         public Vector2 NormalizedSpeed { get; }
 
