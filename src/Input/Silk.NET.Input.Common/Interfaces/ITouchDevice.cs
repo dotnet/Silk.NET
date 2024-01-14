@@ -43,6 +43,10 @@ namespace Silk.NET.Input
         /// <summary>
         /// Called when the finger is moved while on the surface.
         /// </summary>
+        /// <remarks>
+        /// The last event argument gives the distance in pixels
+        /// the finger has moved since the last event.
+        /// </remarks>
         event Action<ITouchDevice, TouchFinger, Vector2>? FingerMove;
     }
 }
