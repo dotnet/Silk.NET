@@ -258,7 +258,29 @@ namespace Silk.NET.Input
         /// </summary>
         public void Update()
         {
-            if (Hold != null &&
+            if (DoubleTap != null &&
+                DoubleTapBehavior == DoubleTapBehavior.WaitForDoubleTapTimeElapse &&
+                _firstFingerIndex is null &&
+                _firstTapTime != null &&
+                (DateTime.Now - _firstTapTime.Value).TotalMilliseconds >= DoubleTapTime)
+            {
+                _gestureHandled = true;
+
+                if (Tap != null && TrackedGestures.HasFlag(Gesture.Tap) && _firstTapPosition != null)
+                {
+                    Tap(_firstTapPosition.Value);
+                }
+
+                _firstTapTime = null;
+                _firstTapPosition = null;
+                _firstTapNormalizedPosition = null;
+                _firstFingerIndex = null;
+                _secondFingerIndex = null;
+                _initialFingerDistance = Vector2.Zero;
+                _initialNormalizedFingerDistance = Vector2.Zero;
+                _initialFingerAngle = 0.0f;
+            }
+            else if (Hold != null &&
                 TrackedGestures.HasFlag(Gesture.Hold) &&
                 _firstFingerIndex != null && _firstFingerLastMoveTime != null && _secondFingerIndex is null &&
                 (DateTime.Now - _firstFingerLastMoveTime.Value).TotalMilliseconds >= HoldTime &&
