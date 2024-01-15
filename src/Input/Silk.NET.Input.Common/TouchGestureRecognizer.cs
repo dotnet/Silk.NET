@@ -203,7 +203,7 @@ namespace Silk.NET.Input
                         var firstFingerPosition = firstFinger.Value.Position;
                         var fingerDistance = secondFinger.Value.Position - firstFingerPosition - _initialFingerDistance;
 
-                        zoomInvoker = () => Zoom(firstFingerPosition, fingerDistance);
+                        zoomInvoker = () => Zoom(firstFingerPosition, new Vector2(Math.Abs(fingerDistance.X), Math.Abs(fingerDistance.Y))));
 
                         if (multiGestureHandling == MultiGestureHandling.PrioritizeZoomGesture)
                         {
