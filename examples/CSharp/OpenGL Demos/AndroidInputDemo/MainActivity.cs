@@ -100,7 +100,7 @@ namespace AndroidInputDemo
             DebugLog($"Rotate gesture at {position} with rotation {angle} degree");
         }
 
-        private static void GestureRecognizer_Zoom(Vector2 position, Vector2 zoom)
+        private static void GestureRecognizer_Zoom(Vector2 position, float zoom)
         {
             DebugLog($"Zoom gesture at {position} with zoom {zoom}");
         }
