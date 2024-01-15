@@ -19,8 +19,8 @@ namespace Silk.NET.Input
         private DateTime? _firstTapTime;
         private Vector2? _firstTapPosition;
         private Vector2? _firstTapNormalizedPosition;
-        private Vector2 _initialFingerDistance = Vector2.Zero;
-        private Vector2 _initialNormalizedFingerDistance = Vector2.Zero;
+        private float _initialFingerDistance = 0.0f;
+        private float _initialNormalizedFingerDistance = 0.0f;
         private float _initialFingerAngle = 0.0f;
         private bool _gestureHandled = false;
 
@@ -45,8 +45,8 @@ namespace Silk.NET.Input
                 _secondFingerIndex = finger.Index;
                 var firstFinger = _device.Fingers[_firstFingerIndex.Value];
 
-                _initialFingerDistance = finger.Position - firstFinger.Position;
-                _initialNormalizedFingerDistance = finger.NormalizedPosition - firstFinger.NormalizedPosition;
+                _initialFingerDistance = (finger.Position - firstFinger.Position).Length();
+                _initialNormalizedFingerDistance = (finger.NormalizedPosition - firstFinger.NormalizedPosition).Length();
                 _initialFingerAngle = (float)(Math.Atan2(finger.NormalizedPosition.Y - firstFinger.NormalizedPosition.Y,
                     finger.NormalizedPosition.X - firstFinger.NormalizedPosition.X) * 180.0 / Math.PI);
             }
@@ -119,15 +119,15 @@ namespace Silk.NET.Input
                 _firstTapNormalizedPosition = doubleTap ? null : finger.NormalizedPosition;
                 _firstFingerIndex = null;
                 _secondFingerIndex = null;
-                _initialFingerDistance = Vector2.Zero;
-                _initialNormalizedFingerDistance = Vector2.Zero;
+                _initialFingerDistance = 0.0f;
+                _initialNormalizedFingerDistance = 0.0f;
                 _initialFingerAngle = 0.0f;
             }
             else if (finger.Index == _secondFingerIndex)
             {
                 _secondFingerIndex = null;
-                _initialFingerDistance = Vector2.Zero;
-                _initialNormalizedFingerDistance = Vector2.Zero;
+                _initialFingerDistance = 0.0f;
+                _initialNormalizedFingerDistance = 0.0f;
                 _initialFingerAngle = 0.0f;
                 _gestureHandled = true;
             }
@@ -166,8 +166,8 @@ namespace Silk.NET.Input
                     _secondFingerIndex = finger.Index;
                     var firstFinger = _device.Fingers[_firstFingerIndex.Value];
 
-                    _initialFingerDistance = finger.Position - firstFinger.Position;
-                    _initialNormalizedFingerDistance = finger.NormalizedPosition - firstFinger.NormalizedPosition;
+                    _initialFingerDistance = (finger.Position - firstFinger.Position).Length();
+                    _initialNormalizedFingerDistance = (finger.NormalizedPosition - firstFinger.NormalizedPosition).Length();
                     _initialFingerAngle = (float) (Math.Atan2(finger.NormalizedPosition.Y - firstFinger.NormalizedPosition.Y,
                         finger.NormalizedPosition.X - firstFinger.NormalizedPosition.X) * 180.0 / Math.PI);
                 }
@@ -195,15 +195,16 @@ namespace Silk.NET.Input
 
                 if (Zoom != null && TrackedGestures.HasFlag(Gesture.Zoom))
                 {
-                    var normalizedFingerDistance = secondFinger.Value.NormalizedPosition - firstFinger.Value.NormalizedPosition;
+                    var normalizedFingerDistance = (secondFinger.Value.NormalizedPosition - firstFinger.Value.NormalizedPosition).Length();
                     var normalizedDistance = normalizedFingerDistance - _initialNormalizedFingerDistance;
 
-                    if (Math.Abs(normalizedDistance.X) >= ZoomDistanceThreshold || Math.Abs(normalizedDistance.Y) >= ZoomDistanceThreshold)
+                    if ((normalizedDistance >= 0.0f && normalizedDistance >= ZoomInDistanceThreshold) ||
+                        (normalizedDistance < 0.0f && -normalizedDistance >= ZoomOutDistanceThreshold))
                     {
                         var firstFingerPosition = firstFinger.Value.Position;
-                        var fingerDistance = secondFinger.Value.Position - firstFingerPosition - _initialFingerDistance;
+                        var fingerDistance = (secondFinger.Value.Position - firstFingerPosition).Length() - _initialFingerDistance;
 
-                        zoomInvoker = () => Zoom(firstFingerPosition, new Vector2(Math.Abs(fingerDistance.X), Math.Abs(fingerDistance.Y))));
+                        zoomInvoker = () => Zoom(firstFingerPosition, fingerDistance);
 
                         if (multiGestureHandling == MultiGestureHandling.PrioritizeZoomGesture)
                         {
@@ -276,8 +277,8 @@ namespace Silk.NET.Input
                 _firstTapNormalizedPosition = null;
                 _firstFingerIndex = null;
                 _secondFingerIndex = null;
-                _initialFingerDistance = Vector2.Zero;
-                _initialNormalizedFingerDistance = Vector2.Zero;
+                _initialFingerDistance = 0.0f;
+                _initialNormalizedFingerDistance = 0.0f;
                 _initialFingerAngle = 0.0f;
             }
             else if (Hold != null &&
@@ -343,10 +344,16 @@ namespace Silk.NET.Input
         public int HoldTime { get; set; } = 1000;
 
         /// <summary>
-        /// Distance threshold as a normalized value (0..1) for zoom gesture tracking.
+        /// Distance threshold as a normalized value (0..1) for zoom in gesture tracking.
         /// </summary>
         [DefaultValue(0.15f)]
-        public float ZoomDistanceThreshold { get; set; } = 0.15f;
+        public float ZoomInDistanceThreshold { get; set; } = 0.15f;
+
+        /// <summary>
+        /// Distance threshold as a normalized value (0..1) for zoom out in gesture tracking.
+        /// </summary>
+        [DefaultValue(0.15f)]
+        public float ZoomOutDistanceThreshold { get; set; } = 0.1f;
 
         /// <summary>
         /// Angle threshold in degrees for rotate gesture tracking.
@@ -393,7 +400,7 @@ namespace Silk.NET.Input
         /// The first event argument gives the first finger position in pixel coordinates and the second
         /// event argument the total distance change in pixels of the two fingers in relation to the initial finger distance.
         /// </remarks>
-        public event Action<Vector2, Vector2>? Zoom;
+        public event Action<Vector2, float>? Zoom;
 
         /// <summary>
         /// Rotate gesture.
