@@ -131,7 +131,7 @@ _gl.EnableVertexAttribArray(texCoordLoc);
 _gl.VertexAttribPointer(texCoordLoc, 2, VertexAttribPointerType.Float, false, 5 * sizeof(float), (void*)(3 * sizeof(float)));
 ```
 
-Pay attention in the last parameter, the pointer! It represents the size of bytes that that should be jumped in the start of
+Pay attention in the last parameter, the pointer! It represents the size of bytes that should be jumped in the start of
 each stride. It means GL will add 3 indexes after stride and pick the consecutive 2 values.
 if you did everything right, you will see this result!
 
@@ -293,15 +293,63 @@ Returns a solid color when the coordinate ins less than 0 or greater than 1.
 
 #### `TextureWrapMode.ClampToEdge`:
 Returns the pixel on the respective edge of the image.  
-![A big border](../../../images/opengl/chapter1/leasson3/texParameters/clampToEdge.png)
+![A weird border](../../../images/opengl/chapter1/leasson3/texParameters/clampToEdge.png)
+
+### `TextureMinFilter` & `TextureMagFilter`:
+Texture `min` and `mag` filters are the filters used when the texture's final size is, respectively, less or greater than the original size.
+For now, we will see just the main two options and see some othenr in the next section (Mipmaps).
 
 
+#### `Texture(Min/Mag)Filter.Linear`:
+The (bi)linear filter is the best for low quality images. When the pixels are appearing in the render, this filter will get the color of the nearest
+pixels of the pixel in the center of the texture coordinates and will return a linear interpolation of then.
 
+This is a example from [learn OpenGl](https://learnopengl.com/Getting-started/Textures). See how the neighbour colors are interpolated to return a different
+color:
+![linear filter](../../../images/opengl/chapter1/leasson3/texParameters/filter_linear.png)
+
+
+#### `Texture(Min/Mag)Filter.Nearest`:
+The nearest filter is made to return exactly what you're sending. It will return the exactly color that matches with the sended texture coordinate.
+![Nearest filter](../../../images/opengl/chapter1/leasson3/texParameters/filter_nearest.png)
 
 ## Mipmaps
+The last point of this tutorial. Mipmaps are a essential resource for making good renders.
+
+But first, what are Mipmaps?
+
+Mipmaps are a map of tiny versions of the texture. Following, a example form [imaginationthech blog](https://blog.imaginationtech.com/why-you-really-should-be-using-mipmapping-in-your-graphics-applications/):
+![A example of Mipmap texture](../../../images/opengl/chapter1/leasson3/example_mipmap.png)
+
+But for what this is used?
+
+At first look, mipmaps may seem very useless. But in reality, not! Mipmaps are used for when the texture is being rendered in a verry low size, what can
+cause some weird color results, even with the use of linear filter. This weird colors combination can cause a visual efect called "moiré effect", that can
+be REALLY tiring for the eyes.
+
+The mipmap purpoise is provide an alternative to the fragment shader to use a a texture closer to the appropriate size to be drawn, almost completely
+eliminating the terrible moiré effect.
+
+An example from [Wikipeedia](https://en.m.wikipedia.org/wiki/File:Mipmap_Aliasing_Comparison.png). It's possible to notice the weird patterns
+generated far away in the render without mipmaps:
+
+![Mipmap usage example](../../../images/opengl/chapter1/leasson3/mipmap_comparation.png)
+
+But if you think that generate mipmaps in one image editor for all your textures is a really hard work, Don't worry! OpenGl provides a special method to
+make this hard work for you.
+
+Just after set the texture parameters, try to add this line to your code:
+```c#
+_gl.GenerateMipmap(TextureTarget.Texture2D);
+```
+
+It will provide for your texture a set the same image, but with different sizes, and more, with a bonus blur effect.
+
 
 ## Wrapping up
 You've just completed your first Silk.NET tutorial! Here's some next steps you can take:
 * Move on to the [next tutorial](2-hello-quad.html), where you'll learn how to create a GL context and display a quad on the screen.
-* View the full tutorial source code on the [Silk.NET git repository](https://github.com/dotnet/Silk.NET/tree/main/examples/CSharp/OpenGL%20Tutorials/Tutorial%201.1%20-%20Hello%20Window).
+* View the full tutorial source code on the [Silk.NET git repository](https://github.com/dotnet/Silk.NET/tree/main/examples/CSharp/OpenGL%20Tutorials/Tutorial%201.3%20-%20Textures).
 * Join the [Discord server](https://discord.gg/DTHHXRt), where you can ask questions, show your stuff, and chat with everyone there.
+
+Something not right? [Compare your code with the final result.](../sources/1.3-final-result.html)
