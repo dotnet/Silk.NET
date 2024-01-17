@@ -47,8 +47,8 @@ this data and read it from a shader.
 ## Sending more data to shaders
 With our new objective, let's learn how to send more data to shaders, and use it as texture coordinates.
 
-texture coordinates are a type of data that can be easily manipulated just by the vertex, so this is the way that we use to send the
-coordinates.
+texture coordinates are a type of data that can be (and should be) manipulated by the vertex shader before be used by the fragment shader,
+so this is the way that we use to send the coordinates.
 
 Let's go back to our `OnLoad` function and update our `vertices` array to the following:
 ```c#
