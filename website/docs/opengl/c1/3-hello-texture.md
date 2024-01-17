@@ -335,8 +335,8 @@ At first look, mipmaps may seem very useless. But in reality, they are extremely
 which can cause some weird visual artifacts, even with the use of the linear filter. The most potent visual effect is something called the "moiré effect", which can
 be tiring for the eyes, and generally look quite ugly.
 
-The mipmap purpose is to provide an alternative to the fragment shader to use a texture closer to the appropriate size to be drawn, almost completely
-eliminating the terrible moiré effect.
+The purpose of a mipmap is to provide an alternative texture to the fragment shader, a one with a more appropriate size for the geometry being drawn, almost completely
+eliminating the moiré effect.
 
 An example from [Wikipedia](https://en.wikipedia.org/wiki/File:Mipmap_Aliasing_Comparison.png). It's possible to notice weird patterns
 generated far away in the render without mipmaps:
