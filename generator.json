@@ -104,7 +104,8 @@
         ]
       },
       "MixKhronosData": {
-        "UseDataTypeTrimmings": true
+        "UseDataTypeTrimmings": true,
+        "SpecPath": "eng/submodules/opengl/xml/gl.xml"
       },
       "AddVTables": {
         "VTables": [

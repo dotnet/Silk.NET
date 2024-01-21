@@ -179,7 +179,7 @@ public class PrettifyNames(
         );
     }
 
-    private static void Trim(
+    private void Trim(
         string? container,
         string? globalPrefixHint,
         string? key,
@@ -190,9 +190,10 @@ public class PrettifyNames(
     )
     {
         // Run each trimmer
+        string? identifiedPrefix = null;
         foreach (var trimmer in trimmers)
         {
-            trimmer.Trim(container, globalPrefixHint, key, names, prefixOverrides);
+            trimmer.Trim(container, globalPrefixHint, key, names, prefixOverrides, ref identifiedPrefix);
         }
 
         // Prefer shorter names
@@ -207,6 +208,7 @@ public class PrettifyNames(
         foreach (var (trimmingName, (ogPrimary, secondary)) in names)
         {
             var primary = ogPrimary;
+            // Get the discriminator string to account for overloads of the same function
             var discrim = functionSyntax?[trimmingName] is { } meth
                 ? ModUtils.DiscrimStr(
                     meth.Modifiers,
@@ -216,8 +218,11 @@ public class PrettifyNames(
                     meth.ReturnType
                 )
                 : null;
+            // If we contain the current proposed name and there is either no discriminant (i.e. no reoccurrences of the
+            // same name allowed) or the discriminant has been seen before...
             while (primaries.Contains(primary) && (discrim is null || discrims.Contains(discrim)))
             {
+                // Remove the occurence
                 primaries.Remove(primary);
                 if (discrim is not null)
                 {
@@ -233,6 +238,8 @@ public class PrettifyNames(
                     secondary.RemoveAt(secondary.Count - 1);
                 }
 
+                // Let's attempt to resolve any conflicts.
+                string? notRenamedConflict = null;
                 foreach (
                     var (
                         conflictingTrimmingName,
@@ -240,6 +247,16 @@ public class PrettifyNames(
                     ) in names
                 )
                 {
+                    // Micro-opt: do the checks we can ahead of creating the DiscrimStr which isn't the cheapest thing
+                    // in the world
+                    if (
+                        conflictingTrimmingName == trimmingName
+                        || conflictingPrimary != primary
+                    )
+                    {
+                        // This is us, we will always conflict with ourselves (or the primary names don't conflict)
+                        continue;
+                    }
                     var conflictingDiscrim = functionSyntax?[conflictingTrimmingName] is { } cMeth
                         ? ModUtils.DiscrimStr(
                             cMeth.Modifiers,
@@ -249,17 +266,19 @@ public class PrettifyNames(
                             cMeth.ReturnType
                         )
                         : null;
-                    if (
-                        conflictingTrimmingName == trimmingName
-                        || conflictingPrimary != primary
-                        || conflictingDiscrim != discrim
-                    )
+                    if (conflictingDiscrim != discrim)
                     {
+                        // The conflict is benign because the members are different enough to be differentiated by the
+                        // C# compiler (i.e. it's an overload of a function)
                         continue;
                     }
 
-                    if (conflictingSecondary?.LastOrDefault() is { } resolvedConflict)
+                    // If we don't have precedence (i.e. it's obvious that it's us that should have the shorter name),
+                    // do we have another name for the conflict?
+                    if (conflictingTrimmingName.Length > trimmingName.Length &&
+                        conflictingSecondary?.LastOrDefault() is { } resolvedConflict)
                     {
+                        // Rename the conflicting entry so that we can take precedence.
                         names[conflictingTrimmingName] = (resolvedConflict, conflictingSecondary);
                         conflictingSecondary.RemoveAt(conflictingSecondary.Count - 1);
                         primaries.Add(resolvedConflict);
@@ -278,18 +297,34 @@ public class PrettifyNames(
                                 )
                             );
                         }
+
+                        notRenamedConflict = null;
                     }
                     else
                     {
+                        // They take precedence, and we'll try to use nextPrimary.
+                        // We add the conflicting primary back because we removed it at the start of the outer loop.
                         primaries.Add(conflictingPrimary);
                         if (conflictingDiscrim is not null)
                         {
                             discrims.Add(conflictingDiscrim);
                         }
+
+                        notRenamedConflict = conflictingTrimmingName;
                     }
                 }
 
-                primary = nextPrimary;
+                // Retry but with our secondary name.
+                if (notRenamedConflict is not null)
+                {
+                    if (primary == nextPrimary)
+                    {
+                        logger.LogError("Couldn't resolve conflict automatically: {} is used by both {} and {}",
+                            primary, trimmingName, notRenamedConflict);
+                        break;
+                    }
+                    primary = nextPrimary;
+                }
             }
 
             names[trimmingName] = (primary, secondary);

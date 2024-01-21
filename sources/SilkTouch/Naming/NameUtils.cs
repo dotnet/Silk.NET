@@ -15,6 +15,8 @@ namespace Silk.NET.SilkTouch.Naming;
 [SuppressMessage("ReSharper", "LoopCanBeConvertedToQuery")]
 public static partial class NameUtils
 {
+    private const int LongAcronymThreshold = 4;
+
     /// <summary>
     /// Prettifies the given string.
     /// </summary>
@@ -26,7 +28,7 @@ public static partial class NameUtils
             null,
             str.LenientUnderscore()
                 .Humanize()
-                .Transform(new FirstLetterUpper())
+                .Transform(new NameTransformer())
                 .Pascalize()
                 .Where(x => char.IsLetter(x) || char.IsNumber(x))
         );
@@ -170,7 +172,7 @@ public static partial class NameUtils
     [GeneratedRegex(@"([\p{Lu}]+)([\p{Lu}][\p{Ll}])")]
     private static partial Regex LowerUpperLower();
 
-    internal partial class FirstLetterUpper : ICulturedStringTransformer
+    internal partial class NameTransformer : ICulturedStringTransformer
     {
         public string Transform(string input) => Transform(input, null);
 
@@ -178,41 +180,58 @@ public static partial class NameUtils
         {
             culture ??= CultureInfo.CurrentCulture;
 
-            var result = input;
-            var matches = Words().Matches(input);
-            foreach (Match word in matches)
+            var matches = Words().Split(input);
+            for (var i = 0; i < matches.Length; i++)
             {
-                //if (!AllCapitals(word.Value))
+                ref var word = ref matches[i];
+                if (string.IsNullOrWhiteSpace(word))
                 {
-                    result = MakeFirstLetterUpper(word, result, culture);
+                    continue;
+                }
+                if (word.Length > LongAcronymThreshold || !AllCapitals(word) ||
+                    (AllCapitals(input) && input.Length > LongAcronymThreshold && matches.Length > 1))
+                {
+                    word = MakeFirstLetterUpper(word, culture);
+                }
+
+                for (var j = i - 1; j >= 0; j--)
+                {
+                    if (string.IsNullOrWhiteSpace(matches[j]))
+                    {
+                        continue;
+                    }
+                    if (i > 0 && char.IsDigit(word[0]) && char.IsDigit(matches[j][^1]))
+                    {
+                        word = $"x{word}";
+                    }
+
+                    break;
                 }
             }
 
-            return result;
+            return string.Join(" ", matches);
         }
 
-        private static bool AllCapitals(string input) => input.ToCharArray().All(char.IsUpper);
+        private static bool AllCapitals(string input) =>
+            input.ToCharArray().All(x => char.IsUpper(x) || !char.IsLetter(x));
 
-        private static string MakeFirstLetterUpper(Match word, string source, CultureInfo culture)
+        private static string MakeFirstLetterUpper(string wordToConvert, CultureInfo culture)
         {
-            var wordToConvert = word.Value;
-            var nextLetter = source.TakeWhile(char.IsDigit).Count() + 1;
-            if (nextLetter > source.Length)
+            var nextLetter = wordToConvert.TakeWhile(char.IsDigit).Count() + 1;
+            if (nextLetter > wordToConvert.Length)
             {
                 // It's not a word?
-                return source;
+                return wordToConvert;
             }
-            var replacement =
+
+            return
                 culture.TextInfo.ToUpper(wordToConvert[..nextLetter])
                 + culture.TextInfo.ToLower(wordToConvert.Remove(0, nextLetter));
-            return string.Concat(
-                source.AsSpan()[..word.Index],
-                replacement,
-                source.AsSpan(word.Index + word.Length)
-            );
         }
 
-        [GeneratedRegex(@"[0-9]*([\w]|[^\u0000-\u007F])+'?\w{2,}")]
+        // https://chat.openai.com/share/f5eb195b-96a4-4f0f-955b-9d08b976a955
+        // https://chat.openai.com/share/8d3f2ec4-7eec-4dbd-a01e-a8d73e885964
+        [GeneratedRegex(@"(?<=\D)(?=\d)|(?<=\d)(?=\D)|\W+")]
         private static partial Regex Words();
     }
 }

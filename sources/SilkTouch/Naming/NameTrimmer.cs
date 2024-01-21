@@ -33,10 +33,10 @@ public class NameTrimmer : INameTrimmer
         string? hint,
         string? jobKey,
         Dictionary<string, (string Primary, List<string>? Secondary)>? names,
-        Dictionary<string, string>? prefixOverrides
+        Dictionary<string, string>? prefixOverrides,
+        ref string? identifiedPrefix
     )
     {
-        string prefix = null!;
         Dictionary<string, (string Primary, List<string>? Secondary, string Original)> localNames =
             null!;
         var nPasses = HasRawPass
@@ -45,41 +45,44 @@ public class NameTrimmer : INameTrimmer
                 : 2
             : 1;
         var naive = false;
-        for (var i = 0; i < nPasses; i++) // try with both trimming name and non trimming name
+        if (identifiedPrefix is null)
         {
-            var result = GetPrefix(container, hint, names, prefixOverrides, i == 0, naive = i == 2);
-            if (result is null || names is null)
+            for (var i = 0; i < nPasses; i++) // try with both trimming name and non trimming name
             {
-                // skip outright.
-                return;
-            }
+                var result = GetPrefix(container, hint, names, prefixOverrides, i == 0, naive = i == 2);
+                if (result is null || names is null)
+                {
+                    // skip outright.
+                    return;
+                }
 
-            (prefix, localNames) = result.Value;
+                (identifiedPrefix, localNames) = result.Value;
 
-            // If we have found a prefix,
-            if (prefix.Length > 0 && prefix.Length < localNames.Keys.Min(x => x.Length))
-            {
-                // break and use it for trimming!
+                // If we have found a prefix,
+                if (identifiedPrefix.Length > 0 && identifiedPrefix.Length < localNames.Keys.Min(x => x.Length))
+                {
+                    // break and use it for trimming!
+                    break;
+                }
+
+                // If not, do most of them at least start with the hint?
+                if (
+                    hint is null
+                    || localNames.Keys.Count(
+                        x => x.StartsWith(hint, StringComparison.OrdinalIgnoreCase)
+                    )
+                    >= localNames.Keys.Count / 2
+                )
+                {
+                    // Nope, nothing we can do it seems, we've already tried both trimming name and non trimming name...
+                    continue;
+                }
+
+                // The prefix is the hint!
+                identifiedPrefix = hint;
+                naive = true;
                 break;
             }
-
-            // If not, do most of them at least start with the hint?
-            if (
-                hint is null
-                || localNames.Keys.Count(
-                    x => x.StartsWith(hint, StringComparison.OrdinalIgnoreCase)
-                )
-                    >= localNames.Keys.Count / 2
-            )
-            {
-                // Nope, nothing we can do it seems, we've already tried both trimming name and non trimming name...
-                continue;
-            }
-
-            // The prefix is the hint!
-            prefix = hint;
-            naive = true;
-            break;
         }
 
         foreach (var (trimmingName, (oldPrimary, secondary, originalName)) in localNames)
@@ -87,8 +90,8 @@ public class NameTrimmer : INameTrimmer
             if (
                 naive
                 && (
-                    prefix.Length >= trimmingName.Length
-                    || !trimmingName.StartsWith(prefix, StringComparison.OrdinalIgnoreCase)
+                    identifiedPrefix!.Length >= trimmingName.Length
+                    || !trimmingName.StartsWith(identifiedPrefix, StringComparison.OrdinalIgnoreCase)
                 )
             )
             {
@@ -100,7 +103,7 @@ public class NameTrimmer : INameTrimmer
             // using that prefix on the old primary, this could cause intended behaviour in some cases. there's probably
             // a better way to do this. (this is working around glDisablei -> glDisable -> Disablei).
             names![originalName] = (
-                oldPrimary[prefix.TakeWhile((x, i) => oldPrimary[i] == x).Count()..],
+                oldPrimary[identifiedPrefix!.TakeWhile((x, i) => oldPrimary[i] == x).Count()..],
                 sec
             );
         }
