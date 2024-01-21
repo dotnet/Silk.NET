@@ -23,7 +23,8 @@ public class NameTests : NameTrimmer
             { "GLFWwindow", ("GLFWwindow", null) }
         };
         Assert.That(GetPrefix(null, null, test, null, false, true)?.Prefix, Is.EqualTo("GLFW"));
-        Trim(null, null, "GLFW", test, null);
+        string? identifiedPrefix = null;
+        Trim(null, null, "GLFW", test, null, ref identifiedPrefix);
         var expected = new Dictionary<string, string> {
             { "GLFWallocator", "Allocator" },
             { "GLFWgammaramp", "Gammaramp" },
