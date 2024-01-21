@@ -30,7 +30,7 @@ public unsafe partial interface IGL
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [SupportedApiProfile("gles2", MinVersion = "2.0")]
         [NativeFunction("opengl", EntryPoint = "glAcquireKeyedMutexWin32EXT")]
-        static abstract byte AcquireKeyedMutexWin32ext(
+        static abstract uint AcquireKeyedMutexWin32ext(
             [NativeTypeName("GLuint")] uint memory,
             [NativeTypeName("GLuint64")] ulong key,
             [NativeTypeName("GLuint")] uint timeout
@@ -167,28 +167,28 @@ public unsafe partial interface IGL
         [return: NativeTypeName("GLboolean")]
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glAreProgramsResidentNV")]
-        static abstract byte AreProgramsResidentNV(
-            [NativeTypeName("GLsizei")] int n,
+        static abstract uint AreProgramsResidentNV(
+            [NativeTypeName("GLsizei")] uint n,
             [NativeTypeName("const GLuint *")] Ref<uint> programs,
-            [NativeTypeName("GLboolean *")] Ref<byte> residences
+            [NativeTypeName("GLboolean *")] Ref<uint> residences
         );
 
         [return: NativeTypeName("GLboolean")]
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glAreTexturesResident")]
-        static abstract byte AreTexturesResident(
-            [NativeTypeName("GLsizei")] int n,
+        static abstract uint AreTexturesResident(
+            [NativeTypeName("GLsizei")] uint n,
             [NativeTypeName("const GLuint *")] Ref<uint> textures,
-            [NativeTypeName("GLboolean *")] Ref<byte> residences
+            [NativeTypeName("GLboolean *")] Ref<uint> residences
         );
 
         [return: NativeTypeName("GLboolean")]
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glAreTexturesResidentEXT")]
-        static abstract byte AreTexturesResidentExt(
-            [NativeTypeName("GLsizei")] int n,
+        static abstract uint AreTexturesResidentExt(
+            [NativeTypeName("GLsizei")] uint n,
             [NativeTypeName("const GLuint *")] Ref<uint> textures,
-            [NativeTypeName("GLboolean *")] Ref<byte> residences
+            [NativeTypeName("GLboolean *")] Ref<uint> residences
         );
 
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
@@ -205,7 +205,7 @@ public unsafe partial interface IGL
             [NativeTypeName("GLenum")] uint array,
             [NativeTypeName("GLint")] int size,
             [NativeTypeName("GLenum")] uint type,
-            [NativeTypeName("GLsizei")] int stride,
+            [NativeTypeName("GLsizei")] uint stride,
             [NativeTypeName("GLuint")] uint buffer,
             [NativeTypeName("GLuint")] uint offset
         );
@@ -214,7 +214,7 @@ public unsafe partial interface IGL
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glAsyncCopyBufferSubDataNVX")]
         static abstract uint AsyncCopyBufferSubDataNvx(
-            [NativeTypeName("GLsizei")] int waitSemaphoreCount,
+            [NativeTypeName("GLsizei")] uint waitSemaphoreCount,
             [NativeTypeName("const GLuint *")] Ref<uint> waitSemaphoreArray,
             [NativeTypeName("const GLuint64 *")] Ref<ulong> fenceValueArray,
             [NativeTypeName("GLuint")] uint readGpu,
@@ -223,8 +223,8 @@ public unsafe partial interface IGL
             [NativeTypeName("GLuint")] uint writeBuffer,
             [NativeTypeName("GLintptr")] nint readOffset,
             [NativeTypeName("GLintptr")] nint writeOffset,
-            [NativeTypeName("GLsizeiptr")] nint size,
-            [NativeTypeName("GLsizei")] int signalSemaphoreCount,
+            [NativeTypeName("GLsizeiptr")] nuint size,
+            [NativeTypeName("GLsizei")] uint signalSemaphoreCount,
             [NativeTypeName("const GLuint *")] Ref<uint> signalSemaphoreArray,
             [NativeTypeName("const GLuint64 *")] Ref<ulong> signalValueArray
         );
@@ -233,7 +233,7 @@ public unsafe partial interface IGL
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glAsyncCopyImageSubDataNVX")]
         static abstract uint AsyncCopyImageSubDataNvx(
-            [NativeTypeName("GLsizei")] int waitSemaphoreCount,
+            [NativeTypeName("GLsizei")] uint waitSemaphoreCount,
             [NativeTypeName("const GLuint *")] Ref<uint> waitSemaphoreArray,
             [NativeTypeName("const GLuint64 *")] Ref<ulong> waitValueArray,
             [NativeTypeName("GLuint")] uint srcGpu,
@@ -250,10 +250,10 @@ public unsafe partial interface IGL
             [NativeTypeName("GLint")] int dstX,
             [NativeTypeName("GLint")] int dstY,
             [NativeTypeName("GLint")] int dstZ,
-            [NativeTypeName("GLsizei")] int srcWidth,
-            [NativeTypeName("GLsizei")] int srcHeight,
-            [NativeTypeName("GLsizei")] int srcDepth,
-            [NativeTypeName("GLsizei")] int signalSemaphoreCount,
+            [NativeTypeName("GLsizei")] uint srcWidth,
+            [NativeTypeName("GLsizei")] uint srcHeight,
+            [NativeTypeName("GLsizei")] uint srcDepth,
+            [NativeTypeName("GLsizei")] uint signalSemaphoreCount,
             [NativeTypeName("const GLuint *")] Ref<uint> signalSemaphoreArray,
             [NativeTypeName("const GLuint64 *")] Ref<ulong> signalValueArray
         );
@@ -265,8 +265,8 @@ public unsafe partial interface IGL
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glAttachObjectARB")]
         static abstract void AttachObjectArb(
-            [NativeTypeName("GLhandleARB")] Ref containerObj,
-            [NativeTypeName("GLhandleARB")] Ref obj
+            [NativeTypeName("GLhandleARB")] uint containerObj,
+            [NativeTypeName("GLhandleARB")] uint obj
         );
 
         [SupportedApiProfile("glcore", MinVersion = "3.2")]
@@ -394,7 +394,7 @@ public unsafe partial interface IGL
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glBindAttribLocationARB")]
         static abstract void BindAttribLocationArb(
-            [NativeTypeName("GLhandleARB")] Ref programObj,
+            [NativeTypeName("GLhandleARB")] uint programObj,
             [NativeTypeName("GLuint")] uint index,
             [NativeTypeName("const GLcharARB *")] Ref<sbyte> name
         );
@@ -467,7 +467,7 @@ public unsafe partial interface IGL
             [NativeTypeName("GLuint")] uint index,
             [NativeTypeName("GLuint")] uint buffer,
             [NativeTypeName("GLintptr")] nint offset,
-            [NativeTypeName("GLsizeiptr")] nint size
+            [NativeTypeName("GLsizeiptr")] nuint size
         );
 
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
@@ -477,7 +477,7 @@ public unsafe partial interface IGL
             [NativeTypeName("GLuint")] uint index,
             [NativeTypeName("GLuint")] uint buffer,
             [NativeTypeName("GLintptr")] nint offset,
-            [NativeTypeName("GLsizeiptr")] nint size
+            [NativeTypeName("GLsizeiptr")] nuint size
         );
 
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
@@ -487,7 +487,7 @@ public unsafe partial interface IGL
             [NativeTypeName("GLuint")] uint index,
             [NativeTypeName("GLuint")] uint buffer,
             [NativeTypeName("GLintptr")] nint offset,
-            [NativeTypeName("GLsizeiptr")] nint size
+            [NativeTypeName("GLsizeiptr")] nuint size
         );
 
         [SupportedApiProfile("glcore", MinVersion = "3.2")]
@@ -496,7 +496,7 @@ public unsafe partial interface IGL
         static abstract void BindBuffersBase(
             [NativeTypeName("GLenum")] uint target,
             [NativeTypeName("GLuint")] uint first,
-            [NativeTypeName("GLsizei")] int count,
+            [NativeTypeName("GLsizei")] uint count,
             [NativeTypeName("const GLuint *")] Ref<uint> buffers
         );
 
@@ -506,10 +506,10 @@ public unsafe partial interface IGL
         static abstract void BindBuffersRange(
             [NativeTypeName("GLenum")] uint target,
             [NativeTypeName("GLuint")] uint first,
-            [NativeTypeName("GLsizei")] int count,
+            [NativeTypeName("GLsizei")] uint count,
             [NativeTypeName("const GLuint *")] Ref<uint> buffers,
             [NativeTypeName("const GLintptr *")] Ref<nint> offsets,
-            [NativeTypeName("const GLsizeiptr *")] Ref<nint> sizes
+            [NativeTypeName("const GLsizeiptr *")] Ref<nuint> sizes
         );
 
         [SupportedApiProfile("glcore", MinVersion = "3.2")]
@@ -583,7 +583,7 @@ public unsafe partial interface IGL
             [NativeTypeName("GLuint")] uint unit,
             [NativeTypeName("GLuint")] uint texture,
             [NativeTypeName("GLint")] int level,
-            [NativeTypeName("GLboolean")] byte layered,
+            [NativeTypeName("GLboolean")] uint layered,
             [NativeTypeName("GLint")] int layer,
             [NativeTypeName("GLenum")] uint access,
             [NativeTypeName("GLenum")] uint format
@@ -595,7 +595,7 @@ public unsafe partial interface IGL
             [NativeTypeName("GLuint")] uint index,
             [NativeTypeName("GLuint")] uint texture,
             [NativeTypeName("GLint")] int level,
-            [NativeTypeName("GLboolean")] byte layered,
+            [NativeTypeName("GLboolean")] uint layered,
             [NativeTypeName("GLint")] int layer,
             [NativeTypeName("GLenum")] uint access,
             [NativeTypeName("GLint")] int format
@@ -606,7 +606,7 @@ public unsafe partial interface IGL
         [NativeFunction("opengl", EntryPoint = "glBindImageTextures")]
         static abstract void BindImageTextures(
             [NativeTypeName("GLuint")] uint first,
-            [NativeTypeName("GLsizei")] int count,
+            [NativeTypeName("GLsizei")] uint count,
             [NativeTypeName("const GLuint *")] Ref<uint> textures
         );
 
@@ -700,7 +700,7 @@ public unsafe partial interface IGL
         [NativeFunction("opengl", EntryPoint = "glBindSamplers")]
         static abstract void BindSamplers(
             [NativeTypeName("GLuint")] uint first,
-            [NativeTypeName("GLsizei")] int count,
+            [NativeTypeName("GLsizei")] uint count,
             [NativeTypeName("const GLuint *")] Ref<uint> samplers
         );
 
@@ -741,7 +741,7 @@ public unsafe partial interface IGL
         [NativeFunction("opengl", EntryPoint = "glBindTextures")]
         static abstract void BindTextures(
             [NativeTypeName("GLuint")] uint first,
-            [NativeTypeName("GLsizei")] int count,
+            [NativeTypeName("GLsizei")] uint count,
             [NativeTypeName("const GLuint *")] Ref<uint> textures
         );
 
@@ -797,7 +797,7 @@ public unsafe partial interface IGL
             [NativeTypeName("GLuint")] uint bindingindex,
             [NativeTypeName("GLuint")] uint buffer,
             [NativeTypeName("GLintptr")] nint offset,
-            [NativeTypeName("GLsizei")] int stride
+            [NativeTypeName("GLsizei")] uint stride
         );
 
         [SupportedApiProfile("glcore", MinVersion = "3.2")]
@@ -805,10 +805,10 @@ public unsafe partial interface IGL
         [NativeFunction("opengl", EntryPoint = "glBindVertexBuffers")]
         static abstract void BindVertexBuffers(
             [NativeTypeName("GLuint")] uint first,
-            [NativeTypeName("GLsizei")] int count,
+            [NativeTypeName("GLsizei")] uint count,
             [NativeTypeName("const GLuint *")] Ref<uint> buffers,
             [NativeTypeName("const GLintptr *")] Ref<nint> offsets,
-            [NativeTypeName("const GLsizei *")] Ref<int> strides
+            [NativeTypeName("const GLsizei *")] Ref<uint> strides
         );
 
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
@@ -898,15 +898,15 @@ public unsafe partial interface IGL
         [NativeFunction("opengl", EntryPoint = "glBinormalPointerEXT")]
         static abstract void BinormalPointerExt(
             [NativeTypeName("GLenum")] uint type,
-            [NativeTypeName("GLsizei")] int stride,
+            [NativeTypeName("GLsizei")] uint stride,
             [NativeTypeName("const void *")] Ref pointer
         );
 
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glBitmap")]
         static abstract void Bitmap(
-            [NativeTypeName("GLsizei")] int width,
-            [NativeTypeName("GLsizei")] int height,
+            [NativeTypeName("GLsizei")] uint width,
+            [NativeTypeName("GLsizei")] uint height,
             [NativeTypeName("GLfloat")] float xorig,
             [NativeTypeName("GLfloat")] float yorig,
             [NativeTypeName("GLfloat")] float xmove,
@@ -917,8 +917,8 @@ public unsafe partial interface IGL
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glBitmapxOES")]
         static abstract void BitmapxOes(
-            [NativeTypeName("GLsizei")] int width,
-            [NativeTypeName("GLsizei")] int height,
+            [NativeTypeName("GLsizei")] uint width,
+            [NativeTypeName("GLsizei")] uint height,
             [NativeTypeName("GLfixed")] int xorig,
             [NativeTypeName("GLfixed")] int yorig,
             [NativeTypeName("GLfixed")] int xmove,
@@ -1354,7 +1354,7 @@ public unsafe partial interface IGL
             [NativeTypeName("GLenum")] uint pname,
             [NativeTypeName("GLuint")] uint index,
             [NativeTypeName("GLuint64EXT")] ulong address,
-            [NativeTypeName("GLsizeiptr")] nint length
+            [NativeTypeName("GLsizeiptr")] nuint length
         );
 
         [SupportedApiProfile("glcore", MinVersion = "3.2")]
@@ -1374,7 +1374,7 @@ public unsafe partial interface IGL
         [NativeFunction("opengl", EntryPoint = "glBufferData")]
         static abstract void BufferData(
             [NativeTypeName("GLenum")] uint target,
-            [NativeTypeName("GLsizeiptr")] nint size,
+            [NativeTypeName("GLsizeiptr")] nuint size,
             [NativeTypeName("const void *")] Ref data,
             [NativeTypeName("GLenum")] uint usage
         );
@@ -1394,8 +1394,8 @@ public unsafe partial interface IGL
         static abstract void BufferPageCommitmentArb(
             [NativeTypeName("GLenum")] uint target,
             [NativeTypeName("GLintptr")] nint offset,
-            [NativeTypeName("GLsizeiptr")] nint size,
-            [NativeTypeName("GLboolean")] byte commit
+            [NativeTypeName("GLsizeiptr")] nuint size,
+            [NativeTypeName("GLboolean")] uint commit
         );
 
         [SupportedApiProfile("glcore", MinVersion = "3.2")]
@@ -1405,10 +1405,10 @@ public unsafe partial interface IGL
         static abstract void BufferPageCommitmentMemNV(
             [NativeTypeName("GLenum")] uint target,
             [NativeTypeName("GLintptr")] nint offset,
-            [NativeTypeName("GLsizeiptr")] nint size,
+            [NativeTypeName("GLsizeiptr")] nuint size,
             [NativeTypeName("GLuint")] uint memory,
             [NativeTypeName("GLuint64")] ulong memOffset,
-            [NativeTypeName("GLboolean")] byte commit
+            [NativeTypeName("GLboolean")] uint commit
         );
 
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
@@ -1424,7 +1424,7 @@ public unsafe partial interface IGL
         [NativeFunction("opengl", EntryPoint = "glBufferStorage")]
         static abstract void BufferStorage(
             [NativeTypeName("GLenum")] uint target,
-            [NativeTypeName("GLsizeiptr")] nint size,
+            [NativeTypeName("GLsizeiptr")] nuint size,
             [NativeTypeName("const void *")] Ref data,
             [NativeTypeName("GLbitfield")] uint flags
         );
@@ -1433,7 +1433,7 @@ public unsafe partial interface IGL
         [NativeFunction("opengl", EntryPoint = "glBufferStorageEXT")]
         static abstract void BufferStorageExt(
             [NativeTypeName("GLenum")] uint target,
-            [NativeTypeName("GLsizeiptr")] nint size,
+            [NativeTypeName("GLsizeiptr")] nuint size,
             [NativeTypeName("const void *")] Ref data,
             [NativeTypeName("GLbitfield")] uint flags
         );
@@ -1444,7 +1444,7 @@ public unsafe partial interface IGL
         static abstract void BufferStorageExternalExt(
             [NativeTypeName("GLenum")] uint target,
             [NativeTypeName("GLintptr")] nint offset,
-            [NativeTypeName("GLsizeiptr")] nint size,
+            [NativeTypeName("GLsizeiptr")] nuint size,
             [NativeTypeName("GLeglClientBufferEXT")] Ref clientBuffer,
             [NativeTypeName("GLbitfield")] uint flags
         );
@@ -1454,7 +1454,7 @@ public unsafe partial interface IGL
         [NativeFunction("opengl", EntryPoint = "glBufferStorageMemEXT")]
         static abstract void BufferStorageMemExt(
             [NativeTypeName("GLenum")] uint target,
-            [NativeTypeName("GLsizeiptr")] nint size,
+            [NativeTypeName("GLsizeiptr")] nuint size,
             [NativeTypeName("GLuint")] uint memory,
             [NativeTypeName("GLuint64")] ulong offset
         );
@@ -1467,7 +1467,7 @@ public unsafe partial interface IGL
         static abstract void BufferSubData(
             [NativeTypeName("GLenum")] uint target,
             [NativeTypeName("GLintptr")] nint offset,
-            [NativeTypeName("GLsizeiptr")] nint size,
+            [NativeTypeName("GLsizeiptr")] nuint size,
             [NativeTypeName("const void *")] Ref data
         );
 
@@ -1492,7 +1492,7 @@ public unsafe partial interface IGL
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glCallLists")]
         static abstract void CallLists(
-            [NativeTypeName("GLsizei")] int n,
+            [NativeTypeName("GLsizei")] uint n,
             [NativeTypeName("GLenum")] uint type,
             [NativeTypeName("const void *")] Ref lists
         );
@@ -1618,7 +1618,7 @@ public unsafe partial interface IGL
             [NativeTypeName("GLenum")] uint target,
             [NativeTypeName("GLenum")] uint internalformat,
             [NativeTypeName("GLintptr")] nint offset,
-            [NativeTypeName("GLsizeiptr")] nint size,
+            [NativeTypeName("GLsizeiptr")] nuint size,
             [NativeTypeName("GLenum")] uint format,
             [NativeTypeName("GLenum")] uint type,
             [NativeTypeName("const void *")] Ref data
@@ -1746,7 +1746,7 @@ public unsafe partial interface IGL
             [NativeTypeName("GLuint")] uint buffer,
             [NativeTypeName("GLenum")] uint internalformat,
             [NativeTypeName("GLintptr")] nint offset,
-            [NativeTypeName("GLsizeiptr")] nint size,
+            [NativeTypeName("GLsizeiptr")] nuint size,
             [NativeTypeName("GLenum")] uint format,
             [NativeTypeName("GLenum")] uint type,
             [NativeTypeName("const void *")] Ref data
@@ -1758,8 +1758,8 @@ public unsafe partial interface IGL
         static abstract void ClearNamedBufferSubDataExt(
             [NativeTypeName("GLuint")] uint buffer,
             [NativeTypeName("GLenum")] uint internalformat,
-            [NativeTypeName("GLsizeiptr")] nint offset,
-            [NativeTypeName("GLsizeiptr")] nint size,
+            [NativeTypeName("GLsizeiptr")] nuint offset,
+            [NativeTypeName("GLsizeiptr")] nuint size,
             [NativeTypeName("GLenum")] uint format,
             [NativeTypeName("GLenum")] uint type,
             [NativeTypeName("const void *")] Ref data
@@ -1809,8 +1809,8 @@ public unsafe partial interface IGL
         [SupportedApiProfile("gles2", MinVersion = "2.0")]
         [NativeFunction("opengl", EntryPoint = "glClearPixelLocalStorageuiEXT")]
         static abstract void ClearPixelLocalStorageuiExt(
-            [NativeTypeName("GLsizei")] int offset,
-            [NativeTypeName("GLsizei")] int n,
+            [NativeTypeName("GLsizei")] uint offset,
+            [NativeTypeName("GLsizei")] uint n,
             [NativeTypeName("const GLuint *")] Ref<uint> values
         );
 
@@ -1851,9 +1851,9 @@ public unsafe partial interface IGL
             [NativeTypeName("GLint")] int xoffset,
             [NativeTypeName("GLint")] int yoffset,
             [NativeTypeName("GLint")] int zoffset,
-            [NativeTypeName("GLsizei")] int width,
-            [NativeTypeName("GLsizei")] int height,
-            [NativeTypeName("GLsizei")] int depth,
+            [NativeTypeName("GLsizei")] uint width,
+            [NativeTypeName("GLsizei")] uint height,
+            [NativeTypeName("GLsizei")] uint depth,
             [NativeTypeName("GLenum")] uint format,
             [NativeTypeName("GLenum")] uint type,
             [NativeTypeName("const void *")] Ref data
@@ -1867,9 +1867,9 @@ public unsafe partial interface IGL
             [NativeTypeName("GLint")] int xoffset,
             [NativeTypeName("GLint")] int yoffset,
             [NativeTypeName("GLint")] int zoffset,
-            [NativeTypeName("GLsizei")] int width,
-            [NativeTypeName("GLsizei")] int height,
-            [NativeTypeName("GLsizei")] int depth,
+            [NativeTypeName("GLsizei")] uint width,
+            [NativeTypeName("GLsizei")] uint height,
+            [NativeTypeName("GLsizei")] uint depth,
             [NativeTypeName("GLenum")] uint format,
             [NativeTypeName("GLenum")] uint type,
             [NativeTypeName("const void *")] Ref data
@@ -1896,7 +1896,7 @@ public unsafe partial interface IGL
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glClientWaitSemaphoreui64NVX")]
         static abstract void ClientWaitSemaphoreui64nvx(
-            [NativeTypeName("GLsizei")] int fenceObjectCount,
+            [NativeTypeName("GLsizei")] uint fenceObjectCount,
             [NativeTypeName("const GLuint *")] Ref<uint> semaphoreArray,
             [NativeTypeName("const GLuint64 *")] Ref<ulong> fenceValueArray
         );
@@ -2333,7 +2333,7 @@ public unsafe partial interface IGL
         static abstract void ColorFormatNV(
             [NativeTypeName("GLint")] int size,
             [NativeTypeName("GLenum")] uint type,
-            [NativeTypeName("GLsizei")] int stride
+            [NativeTypeName("GLsizei")] uint stride
         );
 
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
@@ -2387,10 +2387,10 @@ public unsafe partial interface IGL
         [SupportedApiProfile("gles2", MinVersion = "2.0")]
         [NativeFunction("opengl", EntryPoint = "glColorMask")]
         static abstract void ColorMask(
-            [NativeTypeName("GLboolean")] byte red,
-            [NativeTypeName("GLboolean")] byte green,
-            [NativeTypeName("GLboolean")] byte blue,
-            [NativeTypeName("GLboolean")] byte alpha
+            [NativeTypeName("GLboolean")] uint red,
+            [NativeTypeName("GLboolean")] uint green,
+            [NativeTypeName("GLboolean")] uint blue,
+            [NativeTypeName("GLboolean")] uint alpha
         );
 
         [SupportedApiProfile("glcore", MinVersion = "3.2")]
@@ -2398,40 +2398,40 @@ public unsafe partial interface IGL
         [NativeFunction("opengl", EntryPoint = "glColorMaski")]
         static abstract void ColorMask(
             [NativeTypeName("GLuint")] uint index,
-            [NativeTypeName("GLboolean")] byte r,
-            [NativeTypeName("GLboolean")] byte g,
-            [NativeTypeName("GLboolean")] byte b,
-            [NativeTypeName("GLboolean")] byte a
+            [NativeTypeName("GLboolean")] uint r,
+            [NativeTypeName("GLboolean")] uint g,
+            [NativeTypeName("GLboolean")] uint b,
+            [NativeTypeName("GLboolean")] uint a
         );
 
         [SupportedApiProfile("gles2", MinVersion = "2.0")]
         [NativeFunction("opengl", EntryPoint = "glColorMaskiEXT")]
         static abstract void ColorMaskiExt(
             [NativeTypeName("GLuint")] uint index,
-            [NativeTypeName("GLboolean")] byte r,
-            [NativeTypeName("GLboolean")] byte g,
-            [NativeTypeName("GLboolean")] byte b,
-            [NativeTypeName("GLboolean")] byte a
+            [NativeTypeName("GLboolean")] uint r,
+            [NativeTypeName("GLboolean")] uint g,
+            [NativeTypeName("GLboolean")] uint b,
+            [NativeTypeName("GLboolean")] uint a
         );
 
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glColorMaskIndexedEXT")]
         static abstract void ColorMaskIndexedExt(
             [NativeTypeName("GLuint")] uint index,
-            [NativeTypeName("GLboolean")] byte r,
-            [NativeTypeName("GLboolean")] byte g,
-            [NativeTypeName("GLboolean")] byte b,
-            [NativeTypeName("GLboolean")] byte a
+            [NativeTypeName("GLboolean")] uint r,
+            [NativeTypeName("GLboolean")] uint g,
+            [NativeTypeName("GLboolean")] uint b,
+            [NativeTypeName("GLboolean")] uint a
         );
 
         [SupportedApiProfile("gles2", MinVersion = "2.0")]
         [NativeFunction("opengl", EntryPoint = "glColorMaskiOES")]
         static abstract void ColorMaskiOes(
             [NativeTypeName("GLuint")] uint index,
-            [NativeTypeName("GLboolean")] byte r,
-            [NativeTypeName("GLboolean")] byte g,
-            [NativeTypeName("GLboolean")] byte b,
-            [NativeTypeName("GLboolean")] byte a
+            [NativeTypeName("GLboolean")] uint r,
+            [NativeTypeName("GLboolean")] uint g,
+            [NativeTypeName("GLboolean")] uint b,
+            [NativeTypeName("GLboolean")] uint a
         );
 
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
@@ -2475,7 +2475,7 @@ public unsafe partial interface IGL
         static abstract void ColorPointer(
             [NativeTypeName("GLint")] int size,
             [NativeTypeName("GLenum")] uint type,
-            [NativeTypeName("GLsizei")] int stride,
+            [NativeTypeName("GLsizei")] uint stride,
             [NativeTypeName("const void *")] Ref pointer
         );
 
@@ -2484,8 +2484,8 @@ public unsafe partial interface IGL
         static abstract void ColorPointerExt(
             [NativeTypeName("GLint")] int size,
             [NativeTypeName("GLenum")] uint type,
-            [NativeTypeName("GLsizei")] int stride,
-            [NativeTypeName("GLsizei")] int count,
+            [NativeTypeName("GLsizei")] uint stride,
+            [NativeTypeName("GLsizei")] uint count,
             [NativeTypeName("const void *")] Ref pointer
         );
 
@@ -2511,8 +2511,8 @@ public unsafe partial interface IGL
         [NativeFunction("opengl", EntryPoint = "glColorSubTable")]
         static abstract void ColorSubTable(
             [NativeTypeName("GLenum")] uint target,
-            [NativeTypeName("GLsizei")] int start,
-            [NativeTypeName("GLsizei")] int count,
+            [NativeTypeName("GLsizei")] uint start,
+            [NativeTypeName("GLsizei")] uint count,
             [NativeTypeName("GLenum")] uint format,
             [NativeTypeName("GLenum")] uint type,
             [NativeTypeName("const void *")] Ref data
@@ -2522,8 +2522,8 @@ public unsafe partial interface IGL
         [NativeFunction("opengl", EntryPoint = "glColorSubTableEXT")]
         static abstract void ColorSubTableExt(
             [NativeTypeName("GLenum")] uint target,
-            [NativeTypeName("GLsizei")] int start,
-            [NativeTypeName("GLsizei")] int count,
+            [NativeTypeName("GLsizei")] uint start,
+            [NativeTypeName("GLsizei")] uint count,
             [NativeTypeName("GLenum")] uint format,
             [NativeTypeName("GLenum")] uint type,
             [NativeTypeName("const void *")] Ref data
@@ -2534,7 +2534,7 @@ public unsafe partial interface IGL
         static abstract void ColorTable(
             [NativeTypeName("GLenum")] uint target,
             [NativeTypeName("GLenum")] uint internalformat,
-            [NativeTypeName("GLsizei")] int width,
+            [NativeTypeName("GLsizei")] uint width,
             [NativeTypeName("GLenum")] uint format,
             [NativeTypeName("GLenum")] uint type,
             [NativeTypeName("const void *")] Ref table
@@ -2545,7 +2545,7 @@ public unsafe partial interface IGL
         static abstract void ColorTableExt(
             [NativeTypeName("GLenum")] uint target,
             [NativeTypeName("GLenum")] uint internalFormat,
-            [NativeTypeName("GLsizei")] int width,
+            [NativeTypeName("GLsizei")] uint width,
             [NativeTypeName("GLenum")] uint format,
             [NativeTypeName("GLenum")] uint type,
             [NativeTypeName("const void *")] Ref table
@@ -2588,7 +2588,7 @@ public unsafe partial interface IGL
         static abstract void ColorTableSgi(
             [NativeTypeName("GLenum")] uint target,
             [NativeTypeName("GLenum")] uint internalformat,
-            [NativeTypeName("GLsizei")] int width,
+            [NativeTypeName("GLsizei")] uint width,
             [NativeTypeName("GLenum")] uint format,
             [NativeTypeName("GLenum")] uint type,
             [NativeTypeName("const void *")] Ref table
@@ -2615,9 +2615,9 @@ public unsafe partial interface IGL
             [NativeTypeName("GLenum")] uint sumOutput,
             [NativeTypeName("GLenum")] uint scale,
             [NativeTypeName("GLenum")] uint bias,
-            [NativeTypeName("GLboolean")] byte abDotProduct,
-            [NativeTypeName("GLboolean")] byte cdDotProduct,
-            [NativeTypeName("GLboolean")] byte muxSum
+            [NativeTypeName("GLboolean")] uint abDotProduct,
+            [NativeTypeName("GLboolean")] uint cdDotProduct,
+            [NativeTypeName("GLboolean")] uint muxSum
         );
 
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
@@ -2677,14 +2677,14 @@ public unsafe partial interface IGL
 
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glCompileShaderARB")]
-        static abstract void CompileShaderArb([NativeTypeName("GLhandleARB")] Ref shaderObj);
+        static abstract void CompileShaderArb([NativeTypeName("GLhandleARB")] uint shaderObj);
 
         [SupportedApiProfile("glcore", MinVersion = "3.2")]
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glCompileShaderIncludeARB")]
         static abstract void CompileShaderIncludeArb(
             [NativeTypeName("GLuint")] uint shader,
-            [NativeTypeName("GLsizei")] int count,
+            [NativeTypeName("GLsizei")] uint count,
             [NativeTypeName("const GLchar *const *")] Ref2D<sbyte> path,
             [NativeTypeName("const GLint *")] Ref<int> length
         );
@@ -2697,9 +2697,9 @@ public unsafe partial interface IGL
             [NativeTypeName("GLenum")] uint target,
             [NativeTypeName("GLint")] int level,
             [NativeTypeName("GLenum")] uint internalformat,
-            [NativeTypeName("GLsizei")] int width,
+            [NativeTypeName("GLsizei")] uint width,
             [NativeTypeName("GLint")] int border,
-            [NativeTypeName("GLsizei")] int imageSize,
+            [NativeTypeName("GLsizei")] uint imageSize,
             [NativeTypeName("const void *")] Ref bits
         );
 
@@ -2711,10 +2711,10 @@ public unsafe partial interface IGL
             [NativeTypeName("GLenum")] uint target,
             [NativeTypeName("GLint")] int level,
             [NativeTypeName("GLenum")] uint internalformat,
-            [NativeTypeName("GLsizei")] int width,
-            [NativeTypeName("GLsizei")] int height,
+            [NativeTypeName("GLsizei")] uint width,
+            [NativeTypeName("GLsizei")] uint height,
             [NativeTypeName("GLint")] int border,
-            [NativeTypeName("GLsizei")] int imageSize,
+            [NativeTypeName("GLsizei")] uint imageSize,
             [NativeTypeName("const void *")] Ref bits
         );
 
@@ -2726,11 +2726,11 @@ public unsafe partial interface IGL
             [NativeTypeName("GLenum")] uint target,
             [NativeTypeName("GLint")] int level,
             [NativeTypeName("GLenum")] uint internalformat,
-            [NativeTypeName("GLsizei")] int width,
-            [NativeTypeName("GLsizei")] int height,
-            [NativeTypeName("GLsizei")] int depth,
+            [NativeTypeName("GLsizei")] uint width,
+            [NativeTypeName("GLsizei")] uint height,
+            [NativeTypeName("GLsizei")] uint depth,
             [NativeTypeName("GLint")] int border,
-            [NativeTypeName("GLsizei")] int imageSize,
+            [NativeTypeName("GLsizei")] uint imageSize,
             [NativeTypeName("const void *")] Ref bits
         );
 
@@ -2742,9 +2742,9 @@ public unsafe partial interface IGL
             [NativeTypeName("GLenum")] uint target,
             [NativeTypeName("GLint")] int level,
             [NativeTypeName("GLint")] int xoffset,
-            [NativeTypeName("GLsizei")] int width,
+            [NativeTypeName("GLsizei")] uint width,
             [NativeTypeName("GLenum")] uint format,
-            [NativeTypeName("GLsizei")] int imageSize,
+            [NativeTypeName("GLsizei")] uint imageSize,
             [NativeTypeName("const void *")] Ref bits
         );
 
@@ -2757,10 +2757,10 @@ public unsafe partial interface IGL
             [NativeTypeName("GLint")] int level,
             [NativeTypeName("GLint")] int xoffset,
             [NativeTypeName("GLint")] int yoffset,
-            [NativeTypeName("GLsizei")] int width,
-            [NativeTypeName("GLsizei")] int height,
+            [NativeTypeName("GLsizei")] uint width,
+            [NativeTypeName("GLsizei")] uint height,
             [NativeTypeName("GLenum")] uint format,
-            [NativeTypeName("GLsizei")] int imageSize,
+            [NativeTypeName("GLsizei")] uint imageSize,
             [NativeTypeName("const void *")] Ref bits
         );
 
@@ -2774,11 +2774,11 @@ public unsafe partial interface IGL
             [NativeTypeName("GLint")] int xoffset,
             [NativeTypeName("GLint")] int yoffset,
             [NativeTypeName("GLint")] int zoffset,
-            [NativeTypeName("GLsizei")] int width,
-            [NativeTypeName("GLsizei")] int height,
-            [NativeTypeName("GLsizei")] int depth,
+            [NativeTypeName("GLsizei")] uint width,
+            [NativeTypeName("GLsizei")] uint height,
+            [NativeTypeName("GLsizei")] uint depth,
             [NativeTypeName("GLenum")] uint format,
-            [NativeTypeName("GLsizei")] int imageSize,
+            [NativeTypeName("GLsizei")] uint imageSize,
             [NativeTypeName("const void *")] Ref bits
         );
 
@@ -2789,9 +2789,9 @@ public unsafe partial interface IGL
             [NativeTypeName("GLenum")] uint target,
             [NativeTypeName("GLint")] int level,
             [NativeTypeName("GLenum")] uint internalformat,
-            [NativeTypeName("GLsizei")] int width,
+            [NativeTypeName("GLsizei")] uint width,
             [NativeTypeName("GLint")] int border,
-            [NativeTypeName("GLsizei")] int imageSize,
+            [NativeTypeName("GLsizei")] uint imageSize,
             [NativeTypeName("const void *")] Ref data
         );
 
@@ -2801,9 +2801,9 @@ public unsafe partial interface IGL
             [NativeTypeName("GLenum")] uint target,
             [NativeTypeName("GLint")] int level,
             [NativeTypeName("GLenum")] uint internalformat,
-            [NativeTypeName("GLsizei")] int width,
+            [NativeTypeName("GLsizei")] uint width,
             [NativeTypeName("GLint")] int border,
-            [NativeTypeName("GLsizei")] int imageSize,
+            [NativeTypeName("GLsizei")] uint imageSize,
             [NativeTypeName("const void *")] Ref data
         );
 
@@ -2816,10 +2816,10 @@ public unsafe partial interface IGL
             [NativeTypeName("GLenum")] uint target,
             [NativeTypeName("GLint")] int level,
             [NativeTypeName("GLenum")] uint internalformat,
-            [NativeTypeName("GLsizei")] int width,
-            [NativeTypeName("GLsizei")] int height,
+            [NativeTypeName("GLsizei")] uint width,
+            [NativeTypeName("GLsizei")] uint height,
             [NativeTypeName("GLint")] int border,
-            [NativeTypeName("GLsizei")] int imageSize,
+            [NativeTypeName("GLsizei")] uint imageSize,
             [NativeTypeName("const void *")] Ref data
         );
 
@@ -2829,10 +2829,10 @@ public unsafe partial interface IGL
             [NativeTypeName("GLenum")] uint target,
             [NativeTypeName("GLint")] int level,
             [NativeTypeName("GLenum")] uint internalformat,
-            [NativeTypeName("GLsizei")] int width,
-            [NativeTypeName("GLsizei")] int height,
+            [NativeTypeName("GLsizei")] uint width,
+            [NativeTypeName("GLsizei")] uint height,
             [NativeTypeName("GLint")] int border,
-            [NativeTypeName("GLsizei")] int imageSize,
+            [NativeTypeName("GLsizei")] uint imageSize,
             [NativeTypeName("const void *")] Ref data
         );
 
@@ -2843,11 +2843,11 @@ public unsafe partial interface IGL
             [NativeTypeName("GLenum")] uint target,
             [NativeTypeName("GLint")] int level,
             [NativeTypeName("GLenum")] uint internalformat,
-            [NativeTypeName("GLsizei")] int width,
-            [NativeTypeName("GLsizei")] int height,
-            [NativeTypeName("GLsizei")] int depth,
+            [NativeTypeName("GLsizei")] uint width,
+            [NativeTypeName("GLsizei")] uint height,
+            [NativeTypeName("GLsizei")] uint depth,
             [NativeTypeName("GLint")] int border,
-            [NativeTypeName("GLsizei")] int imageSize,
+            [NativeTypeName("GLsizei")] uint imageSize,
             [NativeTypeName("const void *")] Ref data
         );
 
@@ -2857,11 +2857,11 @@ public unsafe partial interface IGL
             [NativeTypeName("GLenum")] uint target,
             [NativeTypeName("GLint")] int level,
             [NativeTypeName("GLenum")] uint internalformat,
-            [NativeTypeName("GLsizei")] int width,
-            [NativeTypeName("GLsizei")] int height,
-            [NativeTypeName("GLsizei")] int depth,
+            [NativeTypeName("GLsizei")] uint width,
+            [NativeTypeName("GLsizei")] uint height,
+            [NativeTypeName("GLsizei")] uint depth,
             [NativeTypeName("GLint")] int border,
-            [NativeTypeName("GLsizei")] int imageSize,
+            [NativeTypeName("GLsizei")] uint imageSize,
             [NativeTypeName("const void *")] Ref data
         );
 
@@ -2871,11 +2871,11 @@ public unsafe partial interface IGL
             [NativeTypeName("GLenum")] uint target,
             [NativeTypeName("GLint")] int level,
             [NativeTypeName("GLenum")] uint internalformat,
-            [NativeTypeName("GLsizei")] int width,
-            [NativeTypeName("GLsizei")] int height,
-            [NativeTypeName("GLsizei")] int depth,
+            [NativeTypeName("GLsizei")] uint width,
+            [NativeTypeName("GLsizei")] uint height,
+            [NativeTypeName("GLsizei")] uint depth,
             [NativeTypeName("GLint")] int border,
-            [NativeTypeName("GLsizei")] int imageSize,
+            [NativeTypeName("GLsizei")] uint imageSize,
             [NativeTypeName("const void *")] Ref data
         );
 
@@ -2886,9 +2886,9 @@ public unsafe partial interface IGL
             [NativeTypeName("GLenum")] uint target,
             [NativeTypeName("GLint")] int level,
             [NativeTypeName("GLint")] int xoffset,
-            [NativeTypeName("GLsizei")] int width,
+            [NativeTypeName("GLsizei")] uint width,
             [NativeTypeName("GLenum")] uint format,
-            [NativeTypeName("GLsizei")] int imageSize,
+            [NativeTypeName("GLsizei")] uint imageSize,
             [NativeTypeName("const void *")] Ref data
         );
 
@@ -2898,9 +2898,9 @@ public unsafe partial interface IGL
             [NativeTypeName("GLenum")] uint target,
             [NativeTypeName("GLint")] int level,
             [NativeTypeName("GLint")] int xoffset,
-            [NativeTypeName("GLsizei")] int width,
+            [NativeTypeName("GLsizei")] uint width,
             [NativeTypeName("GLenum")] uint format,
-            [NativeTypeName("GLsizei")] int imageSize,
+            [NativeTypeName("GLsizei")] uint imageSize,
             [NativeTypeName("const void *")] Ref data
         );
 
@@ -2914,10 +2914,10 @@ public unsafe partial interface IGL
             [NativeTypeName("GLint")] int level,
             [NativeTypeName("GLint")] int xoffset,
             [NativeTypeName("GLint")] int yoffset,
-            [NativeTypeName("GLsizei")] int width,
-            [NativeTypeName("GLsizei")] int height,
+            [NativeTypeName("GLsizei")] uint width,
+            [NativeTypeName("GLsizei")] uint height,
             [NativeTypeName("GLenum")] uint format,
-            [NativeTypeName("GLsizei")] int imageSize,
+            [NativeTypeName("GLsizei")] uint imageSize,
             [NativeTypeName("const void *")] Ref data
         );
 
@@ -2928,10 +2928,10 @@ public unsafe partial interface IGL
             [NativeTypeName("GLint")] int level,
             [NativeTypeName("GLint")] int xoffset,
             [NativeTypeName("GLint")] int yoffset,
-            [NativeTypeName("GLsizei")] int width,
-            [NativeTypeName("GLsizei")] int height,
+            [NativeTypeName("GLsizei")] uint width,
+            [NativeTypeName("GLsizei")] uint height,
             [NativeTypeName("GLenum")] uint format,
-            [NativeTypeName("GLsizei")] int imageSize,
+            [NativeTypeName("GLsizei")] uint imageSize,
             [NativeTypeName("const void *")] Ref data
         );
 
@@ -2944,11 +2944,11 @@ public unsafe partial interface IGL
             [NativeTypeName("GLint")] int xoffset,
             [NativeTypeName("GLint")] int yoffset,
             [NativeTypeName("GLint")] int zoffset,
-            [NativeTypeName("GLsizei")] int width,
-            [NativeTypeName("GLsizei")] int height,
-            [NativeTypeName("GLsizei")] int depth,
+            [NativeTypeName("GLsizei")] uint width,
+            [NativeTypeName("GLsizei")] uint height,
+            [NativeTypeName("GLsizei")] uint depth,
             [NativeTypeName("GLenum")] uint format,
-            [NativeTypeName("GLsizei")] int imageSize,
+            [NativeTypeName("GLsizei")] uint imageSize,
             [NativeTypeName("const void *")] Ref data
         );
 
@@ -2960,11 +2960,11 @@ public unsafe partial interface IGL
             [NativeTypeName("GLint")] int xoffset,
             [NativeTypeName("GLint")] int yoffset,
             [NativeTypeName("GLint")] int zoffset,
-            [NativeTypeName("GLsizei")] int width,
-            [NativeTypeName("GLsizei")] int height,
-            [NativeTypeName("GLsizei")] int depth,
+            [NativeTypeName("GLsizei")] uint width,
+            [NativeTypeName("GLsizei")] uint height,
+            [NativeTypeName("GLsizei")] uint depth,
             [NativeTypeName("GLenum")] uint format,
-            [NativeTypeName("GLsizei")] int imageSize,
+            [NativeTypeName("GLsizei")] uint imageSize,
             [NativeTypeName("const void *")] Ref data
         );
 
@@ -2976,11 +2976,11 @@ public unsafe partial interface IGL
             [NativeTypeName("GLint")] int xoffset,
             [NativeTypeName("GLint")] int yoffset,
             [NativeTypeName("GLint")] int zoffset,
-            [NativeTypeName("GLsizei")] int width,
-            [NativeTypeName("GLsizei")] int height,
-            [NativeTypeName("GLsizei")] int depth,
+            [NativeTypeName("GLsizei")] uint width,
+            [NativeTypeName("GLsizei")] uint height,
+            [NativeTypeName("GLsizei")] uint depth,
             [NativeTypeName("GLenum")] uint format,
-            [NativeTypeName("GLsizei")] int imageSize,
+            [NativeTypeName("GLsizei")] uint imageSize,
             [NativeTypeName("const void *")] Ref data
         );
 
@@ -2992,9 +2992,9 @@ public unsafe partial interface IGL
             [NativeTypeName("GLenum")] uint target,
             [NativeTypeName("GLint")] int level,
             [NativeTypeName("GLenum")] uint internalformat,
-            [NativeTypeName("GLsizei")] int width,
+            [NativeTypeName("GLsizei")] uint width,
             [NativeTypeName("GLint")] int border,
-            [NativeTypeName("GLsizei")] int imageSize,
+            [NativeTypeName("GLsizei")] uint imageSize,
             [NativeTypeName("const void *")] Ref bits
         );
 
@@ -3006,10 +3006,10 @@ public unsafe partial interface IGL
             [NativeTypeName("GLenum")] uint target,
             [NativeTypeName("GLint")] int level,
             [NativeTypeName("GLenum")] uint internalformat,
-            [NativeTypeName("GLsizei")] int width,
-            [NativeTypeName("GLsizei")] int height,
+            [NativeTypeName("GLsizei")] uint width,
+            [NativeTypeName("GLsizei")] uint height,
             [NativeTypeName("GLint")] int border,
-            [NativeTypeName("GLsizei")] int imageSize,
+            [NativeTypeName("GLsizei")] uint imageSize,
             [NativeTypeName("const void *")] Ref bits
         );
 
@@ -3021,11 +3021,11 @@ public unsafe partial interface IGL
             [NativeTypeName("GLenum")] uint target,
             [NativeTypeName("GLint")] int level,
             [NativeTypeName("GLenum")] uint internalformat,
-            [NativeTypeName("GLsizei")] int width,
-            [NativeTypeName("GLsizei")] int height,
-            [NativeTypeName("GLsizei")] int depth,
+            [NativeTypeName("GLsizei")] uint width,
+            [NativeTypeName("GLsizei")] uint height,
+            [NativeTypeName("GLsizei")] uint depth,
             [NativeTypeName("GLint")] int border,
-            [NativeTypeName("GLsizei")] int imageSize,
+            [NativeTypeName("GLsizei")] uint imageSize,
             [NativeTypeName("const void *")] Ref bits
         );
 
@@ -3036,9 +3036,9 @@ public unsafe partial interface IGL
             [NativeTypeName("GLuint")] uint texture,
             [NativeTypeName("GLint")] int level,
             [NativeTypeName("GLint")] int xoffset,
-            [NativeTypeName("GLsizei")] int width,
+            [NativeTypeName("GLsizei")] uint width,
             [NativeTypeName("GLenum")] uint format,
-            [NativeTypeName("GLsizei")] int imageSize,
+            [NativeTypeName("GLsizei")] uint imageSize,
             [NativeTypeName("const void *")] Ref data
         );
 
@@ -3050,9 +3050,9 @@ public unsafe partial interface IGL
             [NativeTypeName("GLenum")] uint target,
             [NativeTypeName("GLint")] int level,
             [NativeTypeName("GLint")] int xoffset,
-            [NativeTypeName("GLsizei")] int width,
+            [NativeTypeName("GLsizei")] uint width,
             [NativeTypeName("GLenum")] uint format,
-            [NativeTypeName("GLsizei")] int imageSize,
+            [NativeTypeName("GLsizei")] uint imageSize,
             [NativeTypeName("const void *")] Ref bits
         );
 
@@ -3064,10 +3064,10 @@ public unsafe partial interface IGL
             [NativeTypeName("GLint")] int level,
             [NativeTypeName("GLint")] int xoffset,
             [NativeTypeName("GLint")] int yoffset,
-            [NativeTypeName("GLsizei")] int width,
-            [NativeTypeName("GLsizei")] int height,
+            [NativeTypeName("GLsizei")] uint width,
+            [NativeTypeName("GLsizei")] uint height,
             [NativeTypeName("GLenum")] uint format,
-            [NativeTypeName("GLsizei")] int imageSize,
+            [NativeTypeName("GLsizei")] uint imageSize,
             [NativeTypeName("const void *")] Ref data
         );
 
@@ -3080,10 +3080,10 @@ public unsafe partial interface IGL
             [NativeTypeName("GLint")] int level,
             [NativeTypeName("GLint")] int xoffset,
             [NativeTypeName("GLint")] int yoffset,
-            [NativeTypeName("GLsizei")] int width,
-            [NativeTypeName("GLsizei")] int height,
+            [NativeTypeName("GLsizei")] uint width,
+            [NativeTypeName("GLsizei")] uint height,
             [NativeTypeName("GLenum")] uint format,
-            [NativeTypeName("GLsizei")] int imageSize,
+            [NativeTypeName("GLsizei")] uint imageSize,
             [NativeTypeName("const void *")] Ref bits
         );
 
@@ -3096,11 +3096,11 @@ public unsafe partial interface IGL
             [NativeTypeName("GLint")] int xoffset,
             [NativeTypeName("GLint")] int yoffset,
             [NativeTypeName("GLint")] int zoffset,
-            [NativeTypeName("GLsizei")] int width,
-            [NativeTypeName("GLsizei")] int height,
-            [NativeTypeName("GLsizei")] int depth,
+            [NativeTypeName("GLsizei")] uint width,
+            [NativeTypeName("GLsizei")] uint height,
+            [NativeTypeName("GLsizei")] uint depth,
             [NativeTypeName("GLenum")] uint format,
-            [NativeTypeName("GLsizei")] int imageSize,
+            [NativeTypeName("GLsizei")] uint imageSize,
             [NativeTypeName("const void *")] Ref data
         );
 
@@ -3114,11 +3114,11 @@ public unsafe partial interface IGL
             [NativeTypeName("GLint")] int xoffset,
             [NativeTypeName("GLint")] int yoffset,
             [NativeTypeName("GLint")] int zoffset,
-            [NativeTypeName("GLsizei")] int width,
-            [NativeTypeName("GLsizei")] int height,
-            [NativeTypeName("GLsizei")] int depth,
+            [NativeTypeName("GLsizei")] uint width,
+            [NativeTypeName("GLsizei")] uint height,
+            [NativeTypeName("GLsizei")] uint depth,
             [NativeTypeName("GLenum")] uint format,
-            [NativeTypeName("GLsizei")] int imageSize,
+            [NativeTypeName("GLsizei")] uint imageSize,
             [NativeTypeName("const void *")] Ref bits
         );
 
@@ -3144,7 +3144,7 @@ public unsafe partial interface IGL
         static abstract void ConvolutionFilter1d(
             [NativeTypeName("GLenum")] uint target,
             [NativeTypeName("GLenum")] uint internalformat,
-            [NativeTypeName("GLsizei")] int width,
+            [NativeTypeName("GLsizei")] uint width,
             [NativeTypeName("GLenum")] uint format,
             [NativeTypeName("GLenum")] uint type,
             [NativeTypeName("const void *")] Ref image
@@ -3155,7 +3155,7 @@ public unsafe partial interface IGL
         static abstract void ConvolutionFilter1dext(
             [NativeTypeName("GLenum")] uint target,
             [NativeTypeName("GLenum")] uint internalformat,
-            [NativeTypeName("GLsizei")] int width,
+            [NativeTypeName("GLsizei")] uint width,
             [NativeTypeName("GLenum")] uint format,
             [NativeTypeName("GLenum")] uint type,
             [NativeTypeName("const void *")] Ref image
@@ -3166,8 +3166,8 @@ public unsafe partial interface IGL
         static abstract void ConvolutionFilter2d(
             [NativeTypeName("GLenum")] uint target,
             [NativeTypeName("GLenum")] uint internalformat,
-            [NativeTypeName("GLsizei")] int width,
-            [NativeTypeName("GLsizei")] int height,
+            [NativeTypeName("GLsizei")] uint width,
+            [NativeTypeName("GLsizei")] uint height,
             [NativeTypeName("GLenum")] uint format,
             [NativeTypeName("GLenum")] uint type,
             [NativeTypeName("const void *")] Ref image
@@ -3178,8 +3178,8 @@ public unsafe partial interface IGL
         static abstract void ConvolutionFilter2dext(
             [NativeTypeName("GLenum")] uint target,
             [NativeTypeName("GLenum")] uint internalformat,
-            [NativeTypeName("GLsizei")] int width,
-            [NativeTypeName("GLsizei")] int height,
+            [NativeTypeName("GLsizei")] uint width,
+            [NativeTypeName("GLsizei")] uint height,
             [NativeTypeName("GLenum")] uint format,
             [NativeTypeName("GLenum")] uint type,
             [NativeTypeName("const void *")] Ref image
@@ -3273,7 +3273,7 @@ public unsafe partial interface IGL
             [NativeTypeName("GLenum")] uint writeTarget,
             [NativeTypeName("GLintptr")] nint readOffset,
             [NativeTypeName("GLintptr")] nint writeOffset,
-            [NativeTypeName("GLsizeiptr")] nint size
+            [NativeTypeName("GLsizeiptr")] nuint size
         );
 
         [SupportedApiProfile("gles2", MinVersion = "2.0")]
@@ -3283,27 +3283,27 @@ public unsafe partial interface IGL
             [NativeTypeName("GLenum")] uint writeTarget,
             [NativeTypeName("GLintptr")] nint readOffset,
             [NativeTypeName("GLintptr")] nint writeOffset,
-            [NativeTypeName("GLsizeiptr")] nint size
+            [NativeTypeName("GLsizeiptr")] nuint size
         );
 
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glCopyColorSubTable")]
         static abstract void CopyColorSubTable(
             [NativeTypeName("GLenum")] uint target,
-            [NativeTypeName("GLsizei")] int start,
+            [NativeTypeName("GLsizei")] uint start,
             [NativeTypeName("GLint")] int x,
             [NativeTypeName("GLint")] int y,
-            [NativeTypeName("GLsizei")] int width
+            [NativeTypeName("GLsizei")] uint width
         );
 
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glCopyColorSubTableEXT")]
         static abstract void CopyColorSubTableExt(
             [NativeTypeName("GLenum")] uint target,
-            [NativeTypeName("GLsizei")] int start,
+            [NativeTypeName("GLsizei")] uint start,
             [NativeTypeName("GLint")] int x,
             [NativeTypeName("GLint")] int y,
-            [NativeTypeName("GLsizei")] int width
+            [NativeTypeName("GLsizei")] uint width
         );
 
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
@@ -3313,7 +3313,7 @@ public unsafe partial interface IGL
             [NativeTypeName("GLenum")] uint internalformat,
             [NativeTypeName("GLint")] int x,
             [NativeTypeName("GLint")] int y,
-            [NativeTypeName("GLsizei")] int width
+            [NativeTypeName("GLsizei")] uint width
         );
 
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
@@ -3323,7 +3323,7 @@ public unsafe partial interface IGL
             [NativeTypeName("GLenum")] uint internalformat,
             [NativeTypeName("GLint")] int x,
             [NativeTypeName("GLint")] int y,
-            [NativeTypeName("GLsizei")] int width
+            [NativeTypeName("GLsizei")] uint width
         );
 
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
@@ -3333,7 +3333,7 @@ public unsafe partial interface IGL
             [NativeTypeName("GLenum")] uint internalformat,
             [NativeTypeName("GLint")] int x,
             [NativeTypeName("GLint")] int y,
-            [NativeTypeName("GLsizei")] int width
+            [NativeTypeName("GLsizei")] uint width
         );
 
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
@@ -3343,7 +3343,7 @@ public unsafe partial interface IGL
             [NativeTypeName("GLenum")] uint internalformat,
             [NativeTypeName("GLint")] int x,
             [NativeTypeName("GLint")] int y,
-            [NativeTypeName("GLsizei")] int width
+            [NativeTypeName("GLsizei")] uint width
         );
 
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
@@ -3353,8 +3353,8 @@ public unsafe partial interface IGL
             [NativeTypeName("GLenum")] uint internalformat,
             [NativeTypeName("GLint")] int x,
             [NativeTypeName("GLint")] int y,
-            [NativeTypeName("GLsizei")] int width,
-            [NativeTypeName("GLsizei")] int height
+            [NativeTypeName("GLsizei")] uint width,
+            [NativeTypeName("GLsizei")] uint height
         );
 
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
@@ -3364,8 +3364,8 @@ public unsafe partial interface IGL
             [NativeTypeName("GLenum")] uint internalformat,
             [NativeTypeName("GLint")] int x,
             [NativeTypeName("GLint")] int y,
-            [NativeTypeName("GLsizei")] int width,
-            [NativeTypeName("GLsizei")] int height
+            [NativeTypeName("GLsizei")] uint width,
+            [NativeTypeName("GLsizei")] uint height
         );
 
         [SupportedApiProfile("glcore", MinVersion = "3.2")]
@@ -3384,9 +3384,9 @@ public unsafe partial interface IGL
             [NativeTypeName("GLint")] int dstX,
             [NativeTypeName("GLint")] int dstY,
             [NativeTypeName("GLint")] int dstZ,
-            [NativeTypeName("GLsizei")] int srcWidth,
-            [NativeTypeName("GLsizei")] int srcHeight,
-            [NativeTypeName("GLsizei")] int srcDepth
+            [NativeTypeName("GLsizei")] uint srcWidth,
+            [NativeTypeName("GLsizei")] uint srcHeight,
+            [NativeTypeName("GLsizei")] uint srcDepth
         );
 
         [SupportedApiProfile("gles2", MinVersion = "2.0")]
@@ -3404,9 +3404,9 @@ public unsafe partial interface IGL
             [NativeTypeName("GLint")] int dstX,
             [NativeTypeName("GLint")] int dstY,
             [NativeTypeName("GLint")] int dstZ,
-            [NativeTypeName("GLsizei")] int srcWidth,
-            [NativeTypeName("GLsizei")] int srcHeight,
-            [NativeTypeName("GLsizei")] int srcDepth
+            [NativeTypeName("GLsizei")] uint srcWidth,
+            [NativeTypeName("GLsizei")] uint srcHeight,
+            [NativeTypeName("GLsizei")] uint srcDepth
         );
 
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
@@ -3424,9 +3424,9 @@ public unsafe partial interface IGL
             [NativeTypeName("GLint")] int dstX,
             [NativeTypeName("GLint")] int dstY,
             [NativeTypeName("GLint")] int dstZ,
-            [NativeTypeName("GLsizei")] int width,
-            [NativeTypeName("GLsizei")] int height,
-            [NativeTypeName("GLsizei")] int depth
+            [NativeTypeName("GLsizei")] uint width,
+            [NativeTypeName("GLsizei")] uint height,
+            [NativeTypeName("GLsizei")] uint depth
         );
 
         [SupportedApiProfile("gles2", MinVersion = "2.0")]
@@ -3444,9 +3444,9 @@ public unsafe partial interface IGL
             [NativeTypeName("GLint")] int dstX,
             [NativeTypeName("GLint")] int dstY,
             [NativeTypeName("GLint")] int dstZ,
-            [NativeTypeName("GLsizei")] int srcWidth,
-            [NativeTypeName("GLsizei")] int srcHeight,
-            [NativeTypeName("GLsizei")] int srcDepth
+            [NativeTypeName("GLsizei")] uint srcWidth,
+            [NativeTypeName("GLsizei")] uint srcHeight,
+            [NativeTypeName("GLsizei")] uint srcDepth
         );
 
         [SupportedApiProfile("glcore", MinVersion = "3.2")]
@@ -3459,7 +3459,7 @@ public unsafe partial interface IGL
             [NativeTypeName("GLenum")] uint internalformat,
             [NativeTypeName("GLint")] int x,
             [NativeTypeName("GLint")] int y,
-            [NativeTypeName("GLsizei")] int width,
+            [NativeTypeName("GLsizei")] uint width,
             [NativeTypeName("GLint")] int border
         );
 
@@ -3473,8 +3473,8 @@ public unsafe partial interface IGL
             [NativeTypeName("GLenum")] uint internalformat,
             [NativeTypeName("GLint")] int x,
             [NativeTypeName("GLint")] int y,
-            [NativeTypeName("GLsizei")] int width,
-            [NativeTypeName("GLsizei")] int height,
+            [NativeTypeName("GLsizei")] uint width,
+            [NativeTypeName("GLsizei")] uint height,
             [NativeTypeName("GLint")] int border
         );
 
@@ -3488,7 +3488,7 @@ public unsafe partial interface IGL
             [NativeTypeName("GLint")] int xoffset,
             [NativeTypeName("GLint")] int x,
             [NativeTypeName("GLint")] int y,
-            [NativeTypeName("GLsizei")] int width
+            [NativeTypeName("GLsizei")] uint width
         );
 
         [SupportedApiProfile("glcore", MinVersion = "3.2")]
@@ -3502,8 +3502,8 @@ public unsafe partial interface IGL
             [NativeTypeName("GLint")] int yoffset,
             [NativeTypeName("GLint")] int x,
             [NativeTypeName("GLint")] int y,
-            [NativeTypeName("GLsizei")] int width,
-            [NativeTypeName("GLsizei")] int height
+            [NativeTypeName("GLsizei")] uint width,
+            [NativeTypeName("GLsizei")] uint height
         );
 
         [SupportedApiProfile("glcore", MinVersion = "3.2")]
@@ -3518,8 +3518,8 @@ public unsafe partial interface IGL
             [NativeTypeName("GLint")] int zoffset,
             [NativeTypeName("GLint")] int x,
             [NativeTypeName("GLint")] int y,
-            [NativeTypeName("GLsizei")] int width,
-            [NativeTypeName("GLsizei")] int height
+            [NativeTypeName("GLsizei")] uint width,
+            [NativeTypeName("GLsizei")] uint height
         );
 
         [SupportedApiProfile("glcore", MinVersion = "3.2")]
@@ -3530,7 +3530,7 @@ public unsafe partial interface IGL
             [NativeTypeName("GLuint")] uint writeBuffer,
             [NativeTypeName("GLintptr")] nint readOffset,
             [NativeTypeName("GLintptr")] nint writeOffset,
-            [NativeTypeName("GLsizeiptr")] nint size
+            [NativeTypeName("GLsizeiptr")] nuint size
         );
 
         [SupportedApiProfile("glcore", MinVersion = "3.2")]
@@ -3547,8 +3547,8 @@ public unsafe partial interface IGL
         static abstract void CopyPixels(
             [NativeTypeName("GLint")] int x,
             [NativeTypeName("GLint")] int y,
-            [NativeTypeName("GLsizei")] int width,
-            [NativeTypeName("GLsizei")] int height,
+            [NativeTypeName("GLsizei")] uint width,
+            [NativeTypeName("GLsizei")] uint height,
             [NativeTypeName("GLenum")] uint type
         );
 
@@ -3561,7 +3561,7 @@ public unsafe partial interface IGL
             [NativeTypeName("GLenum")] uint internalformat,
             [NativeTypeName("GLint")] int x,
             [NativeTypeName("GLint")] int y,
-            [NativeTypeName("GLsizei")] int width,
+            [NativeTypeName("GLsizei")] uint width,
             [NativeTypeName("GLint")] int border
         );
 
@@ -3573,7 +3573,7 @@ public unsafe partial interface IGL
             [NativeTypeName("GLenum")] uint internalformat,
             [NativeTypeName("GLint")] int x,
             [NativeTypeName("GLint")] int y,
-            [NativeTypeName("GLsizei")] int width,
+            [NativeTypeName("GLsizei")] uint width,
             [NativeTypeName("GLint")] int border
         );
 
@@ -3588,8 +3588,8 @@ public unsafe partial interface IGL
             [NativeTypeName("GLenum")] uint internalformat,
             [NativeTypeName("GLint")] int x,
             [NativeTypeName("GLint")] int y,
-            [NativeTypeName("GLsizei")] int width,
-            [NativeTypeName("GLsizei")] int height,
+            [NativeTypeName("GLsizei")] uint width,
+            [NativeTypeName("GLsizei")] uint height,
             [NativeTypeName("GLint")] int border
         );
 
@@ -3601,8 +3601,8 @@ public unsafe partial interface IGL
             [NativeTypeName("GLenum")] uint internalformat,
             [NativeTypeName("GLint")] int x,
             [NativeTypeName("GLint")] int y,
-            [NativeTypeName("GLsizei")] int width,
-            [NativeTypeName("GLsizei")] int height,
+            [NativeTypeName("GLsizei")] uint width,
+            [NativeTypeName("GLsizei")] uint height,
             [NativeTypeName("GLint")] int border
         );
 
@@ -3615,7 +3615,7 @@ public unsafe partial interface IGL
             [NativeTypeName("GLint")] int xoffset,
             [NativeTypeName("GLint")] int x,
             [NativeTypeName("GLint")] int y,
-            [NativeTypeName("GLsizei")] int width
+            [NativeTypeName("GLsizei")] uint width
         );
 
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
@@ -3626,7 +3626,7 @@ public unsafe partial interface IGL
             [NativeTypeName("GLint")] int xoffset,
             [NativeTypeName("GLint")] int x,
             [NativeTypeName("GLint")] int y,
-            [NativeTypeName("GLsizei")] int width
+            [NativeTypeName("GLsizei")] uint width
         );
 
         [SupportedApiProfile("glcore", MinVersion = "3.2")]
@@ -3641,8 +3641,8 @@ public unsafe partial interface IGL
             [NativeTypeName("GLint")] int yoffset,
             [NativeTypeName("GLint")] int x,
             [NativeTypeName("GLint")] int y,
-            [NativeTypeName("GLsizei")] int width,
-            [NativeTypeName("GLsizei")] int height
+            [NativeTypeName("GLsizei")] uint width,
+            [NativeTypeName("GLsizei")] uint height
         );
 
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
@@ -3654,8 +3654,8 @@ public unsafe partial interface IGL
             [NativeTypeName("GLint")] int yoffset,
             [NativeTypeName("GLint")] int x,
             [NativeTypeName("GLint")] int y,
-            [NativeTypeName("GLsizei")] int width,
-            [NativeTypeName("GLsizei")] int height
+            [NativeTypeName("GLsizei")] uint width,
+            [NativeTypeName("GLsizei")] uint height
         );
 
         [SupportedApiProfile("glcore", MinVersion = "3.2")]
@@ -3669,8 +3669,8 @@ public unsafe partial interface IGL
             [NativeTypeName("GLint")] int zoffset,
             [NativeTypeName("GLint")] int x,
             [NativeTypeName("GLint")] int y,
-            [NativeTypeName("GLsizei")] int width,
-            [NativeTypeName("GLsizei")] int height
+            [NativeTypeName("GLsizei")] uint width,
+            [NativeTypeName("GLsizei")] uint height
         );
 
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
@@ -3683,8 +3683,8 @@ public unsafe partial interface IGL
             [NativeTypeName("GLint")] int zoffset,
             [NativeTypeName("GLint")] int x,
             [NativeTypeName("GLint")] int y,
-            [NativeTypeName("GLsizei")] int width,
-            [NativeTypeName("GLsizei")] int height
+            [NativeTypeName("GLsizei")] uint width,
+            [NativeTypeName("GLsizei")] uint height
         );
 
         [SupportedApiProfile("gles2", MinVersion = "2.0")]
@@ -3697,8 +3697,8 @@ public unsafe partial interface IGL
             [NativeTypeName("GLint")] int zoffset,
             [NativeTypeName("GLint")] int x,
             [NativeTypeName("GLint")] int y,
-            [NativeTypeName("GLsizei")] int width,
-            [NativeTypeName("GLsizei")] int height
+            [NativeTypeName("GLsizei")] uint width,
+            [NativeTypeName("GLsizei")] uint height
         );
 
         [SupportedApiProfile("glcore", MinVersion = "3.2")]
@@ -3711,7 +3711,7 @@ public unsafe partial interface IGL
             [NativeTypeName("GLenum")] uint internalformat,
             [NativeTypeName("GLint")] int x,
             [NativeTypeName("GLint")] int y,
-            [NativeTypeName("GLsizei")] int width,
+            [NativeTypeName("GLsizei")] uint width,
             [NativeTypeName("GLint")] int border
         );
 
@@ -3725,8 +3725,8 @@ public unsafe partial interface IGL
             [NativeTypeName("GLenum")] uint internalformat,
             [NativeTypeName("GLint")] int x,
             [NativeTypeName("GLint")] int y,
-            [NativeTypeName("GLsizei")] int width,
-            [NativeTypeName("GLsizei")] int height,
+            [NativeTypeName("GLsizei")] uint width,
+            [NativeTypeName("GLsizei")] uint height,
             [NativeTypeName("GLint")] int border
         );
 
@@ -3737,7 +3737,7 @@ public unsafe partial interface IGL
             [NativeTypeName("GLuint")] uint destinationTexture,
             [NativeTypeName("GLuint")] uint sourceTexture,
             [NativeTypeName("GLint")] int sourceBaseLevel,
-            [NativeTypeName("GLsizei")] int sourceLevelCount
+            [NativeTypeName("GLsizei")] uint sourceLevelCount
         );
 
         [SupportedApiProfile("glcore", MinVersion = "3.2")]
@@ -3749,7 +3749,7 @@ public unsafe partial interface IGL
             [NativeTypeName("GLint")] int xoffset,
             [NativeTypeName("GLint")] int x,
             [NativeTypeName("GLint")] int y,
-            [NativeTypeName("GLsizei")] int width
+            [NativeTypeName("GLsizei")] uint width
         );
 
         [SupportedApiProfile("glcore", MinVersion = "3.2")]
@@ -3762,7 +3762,7 @@ public unsafe partial interface IGL
             [NativeTypeName("GLint")] int xoffset,
             [NativeTypeName("GLint")] int x,
             [NativeTypeName("GLint")] int y,
-            [NativeTypeName("GLsizei")] int width
+            [NativeTypeName("GLsizei")] uint width
         );
 
         [SupportedApiProfile("glcore", MinVersion = "3.2")]
@@ -3775,8 +3775,8 @@ public unsafe partial interface IGL
             [NativeTypeName("GLint")] int yoffset,
             [NativeTypeName("GLint")] int x,
             [NativeTypeName("GLint")] int y,
-            [NativeTypeName("GLsizei")] int width,
-            [NativeTypeName("GLsizei")] int height
+            [NativeTypeName("GLsizei")] uint width,
+            [NativeTypeName("GLsizei")] uint height
         );
 
         [SupportedApiProfile("glcore", MinVersion = "3.2")]
@@ -3790,8 +3790,8 @@ public unsafe partial interface IGL
             [NativeTypeName("GLint")] int yoffset,
             [NativeTypeName("GLint")] int x,
             [NativeTypeName("GLint")] int y,
-            [NativeTypeName("GLsizei")] int width,
-            [NativeTypeName("GLsizei")] int height
+            [NativeTypeName("GLsizei")] uint width,
+            [NativeTypeName("GLsizei")] uint height
         );
 
         [SupportedApiProfile("glcore", MinVersion = "3.2")]
@@ -3805,8 +3805,8 @@ public unsafe partial interface IGL
             [NativeTypeName("GLint")] int zoffset,
             [NativeTypeName("GLint")] int x,
             [NativeTypeName("GLint")] int y,
-            [NativeTypeName("GLsizei")] int width,
-            [NativeTypeName("GLsizei")] int height
+            [NativeTypeName("GLsizei")] uint width,
+            [NativeTypeName("GLsizei")] uint height
         );
 
         [SupportedApiProfile("glcore", MinVersion = "3.2")]
@@ -3821,13 +3821,13 @@ public unsafe partial interface IGL
             [NativeTypeName("GLint")] int zoffset,
             [NativeTypeName("GLint")] int x,
             [NativeTypeName("GLint")] int y,
-            [NativeTypeName("GLsizei")] int width,
-            [NativeTypeName("GLsizei")] int height
+            [NativeTypeName("GLsizei")] uint width,
+            [NativeTypeName("GLsizei")] uint height
         );
 
         [SupportedApiProfile("gles2", MinVersion = "2.0")]
         [NativeFunction("opengl", EntryPoint = "glCoverageMaskNV")]
-        static abstract void CoverageMaskNV([NativeTypeName("GLboolean")] byte mask);
+        static abstract void CoverageMaskNV([NativeTypeName("GLboolean")] uint mask);
 
         [SupportedApiProfile("glcore", MinVersion = "3.2")]
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
@@ -3840,7 +3840,7 @@ public unsafe partial interface IGL
         [SupportedApiProfile("gles2", MinVersion = "2.0")]
         [NativeFunction("opengl", EntryPoint = "glCoverageModulationTableNV")]
         static abstract void CoverageModulationTableNV(
-            [NativeTypeName("GLsizei")] int n,
+            [NativeTypeName("GLsizei")] uint n,
             [NativeTypeName("const GLfloat *")] Ref<float> v
         );
 
@@ -3853,7 +3853,7 @@ public unsafe partial interface IGL
         [SupportedApiProfile("gles2", MinVersion = "2.0")]
         [NativeFunction("opengl", EntryPoint = "glCoverFillPathInstancedNV")]
         static abstract void CoverFillPathInstancedNV(
-            [NativeTypeName("GLsizei")] int numPaths,
+            [NativeTypeName("GLsizei")] uint numPaths,
             [NativeTypeName("GLenum")] uint pathNameType,
             [NativeTypeName("const void *")] Ref paths,
             [NativeTypeName("GLuint")] uint pathBase,
@@ -3876,7 +3876,7 @@ public unsafe partial interface IGL
         [SupportedApiProfile("gles2", MinVersion = "2.0")]
         [NativeFunction("opengl", EntryPoint = "glCoverStrokePathInstancedNV")]
         static abstract void CoverStrokePathInstancedNV(
-            [NativeTypeName("GLsizei")] int numPaths,
+            [NativeTypeName("GLsizei")] uint numPaths,
             [NativeTypeName("GLenum")] uint pathNameType,
             [NativeTypeName("const void *")] Ref paths,
             [NativeTypeName("GLuint")] uint pathBase,
@@ -3898,7 +3898,7 @@ public unsafe partial interface IGL
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glCreateBuffers")]
         static abstract void CreateBuffers(
-            [NativeTypeName("GLsizei")] int n,
+            [NativeTypeName("GLsizei")] uint n,
             [NativeTypeName("GLuint *")] Ref<uint> buffers
         );
 
@@ -3906,7 +3906,7 @@ public unsafe partial interface IGL
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glCreateCommandListsNV")]
         static abstract void CreateCommandListsNV(
-            [NativeTypeName("GLsizei")] int n,
+            [NativeTypeName("GLsizei")] uint n,
             [NativeTypeName("GLuint *")] Ref<uint> lists
         );
 
@@ -3914,7 +3914,7 @@ public unsafe partial interface IGL
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glCreateFramebuffers")]
         static abstract void CreateFramebuffers(
-            [NativeTypeName("GLsizei")] int n,
+            [NativeTypeName("GLsizei")] uint n,
             [NativeTypeName("GLuint *")] Ref<uint> framebuffers
         );
 
@@ -3922,7 +3922,7 @@ public unsafe partial interface IGL
         [SupportedApiProfile("gles2", MinVersion = "2.0")]
         [NativeFunction("opengl", EntryPoint = "glCreateMemoryObjectsEXT")]
         static abstract void CreateMemoryObjectsExt(
-            [NativeTypeName("GLsizei")] int n,
+            [NativeTypeName("GLsizei")] uint n,
             [NativeTypeName("GLuint *")] Ref<uint> memoryObjects
         );
 
@@ -3945,13 +3945,13 @@ public unsafe partial interface IGL
         [return: NativeTypeName("GLhandleARB")]
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glCreateProgramObjectARB")]
-        static abstract Ptr CreateProgramObjectArb();
+        static abstract uint CreateProgramObjectArb();
 
         [SupportedApiProfile("glcore", MinVersion = "3.2")]
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glCreateProgramPipelines")]
         static abstract void CreateProgramPipelines(
-            [NativeTypeName("GLsizei")] int n,
+            [NativeTypeName("GLsizei")] uint n,
             [NativeTypeName("GLuint *")] Ref<uint> pipelines
         );
 
@@ -3965,7 +3965,7 @@ public unsafe partial interface IGL
         [NativeFunction("opengl", EntryPoint = "glCreateQueries")]
         static abstract void CreateQueries(
             [NativeTypeName("GLenum")] uint target,
-            [NativeTypeName("GLsizei")] int n,
+            [NativeTypeName("GLsizei")] uint n,
             [NativeTypeName("GLuint *")] Ref<uint> ids
         );
 
@@ -3973,7 +3973,7 @@ public unsafe partial interface IGL
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glCreateRenderbuffers")]
         static abstract void CreateRenderbuffers(
-            [NativeTypeName("GLsizei")] int n,
+            [NativeTypeName("GLsizei")] uint n,
             [NativeTypeName("GLuint *")] Ref<uint> renderbuffers
         );
 
@@ -3981,7 +3981,7 @@ public unsafe partial interface IGL
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glCreateSamplers")]
         static abstract void CreateSamplers(
-            [NativeTypeName("GLsizei")] int n,
+            [NativeTypeName("GLsizei")] uint n,
             [NativeTypeName("GLuint *")] Ref<uint> samplers
         );
 
@@ -3989,7 +3989,7 @@ public unsafe partial interface IGL
         [SupportedApiProfile("gles2", MinVersion = "2.0")]
         [NativeFunction("opengl", EntryPoint = "glCreateSemaphoresNV")]
         static abstract void CreateSemaphoresNV(
-            [NativeTypeName("GLsizei")] int n,
+            [NativeTypeName("GLsizei")] uint n,
             [NativeTypeName("GLuint *")] Ref<uint> semaphores
         );
 
@@ -4003,7 +4003,7 @@ public unsafe partial interface IGL
         [return: NativeTypeName("GLhandleARB")]
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glCreateShaderObjectARB")]
-        static abstract Ptr CreateShaderObjectArb([NativeTypeName("GLenum")] uint shaderType);
+        static abstract uint CreateShaderObjectArb([NativeTypeName("GLenum")] uint shaderType);
 
         [return: NativeTypeName("GLuint")]
         [SupportedApiProfile("glcore", MinVersion = "3.2")]
@@ -4020,7 +4020,7 @@ public unsafe partial interface IGL
         [NativeFunction("opengl", EntryPoint = "glCreateShaderProgramv")]
         static abstract uint CreateShaderProgram(
             [NativeTypeName("GLenum")] uint type,
-            [NativeTypeName("GLsizei")] int count,
+            [NativeTypeName("GLsizei")] uint count,
             [NativeTypeName("const GLchar *const *")] Ref2D<sbyte> strings
         );
 
@@ -4029,7 +4029,7 @@ public unsafe partial interface IGL
         [NativeFunction("opengl", EntryPoint = "glCreateShaderProgramvEXT")]
         static abstract uint CreateShaderProgramvExt(
             [NativeTypeName("GLenum")] uint type,
-            [NativeTypeName("GLsizei")] int count,
+            [NativeTypeName("GLsizei")] uint count,
             [NativeTypeName("const GLchar *const *")] Ref2D<sbyte> strings
         );
 
@@ -4037,7 +4037,7 @@ public unsafe partial interface IGL
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glCreateStatesNV")]
         static abstract void CreateStatesNV(
-            [NativeTypeName("GLsizei")] int n,
+            [NativeTypeName("GLsizei")] uint n,
             [NativeTypeName("GLuint *")] Ref<uint> states
         );
 
@@ -4056,7 +4056,7 @@ public unsafe partial interface IGL
         [NativeFunction("opengl", EntryPoint = "glCreateTextures")]
         static abstract void CreateTextures(
             [NativeTypeName("GLenum")] uint target,
-            [NativeTypeName("GLsizei")] int n,
+            [NativeTypeName("GLsizei")] uint n,
             [NativeTypeName("GLuint *")] Ref<uint> textures
         );
 
@@ -4064,7 +4064,7 @@ public unsafe partial interface IGL
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glCreateTransformFeedbacks")]
         static abstract void CreateTransformFeedbacks(
-            [NativeTypeName("GLsizei")] int n,
+            [NativeTypeName("GLsizei")] uint n,
             [NativeTypeName("GLuint *")] Ref<uint> ids
         );
 
@@ -4072,7 +4072,7 @@ public unsafe partial interface IGL
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glCreateVertexArrays")]
         static abstract void CreateVertexArrays(
-            [NativeTypeName("GLsizei")] int n,
+            [NativeTypeName("GLsizei")] uint n,
             [NativeTypeName("GLuint *")] Ref<uint> arrays
         );
 
@@ -4112,7 +4112,7 @@ public unsafe partial interface IGL
         [NativeFunction("opengl", EntryPoint = "glDebugMessageCallback")]
         static abstract void DebugMessageCallback(
             [NativeTypeName("GLDEBUGPROC")]
-                delegate* unmanaged<uint, uint, uint, uint, int, sbyte*, void*, void> callback,
+                delegate* unmanaged<uint, uint, uint, uint, uint, sbyte*, void*, void> callback,
             [NativeTypeName("const void *")] Ref userParam
         );
 
@@ -4120,7 +4120,7 @@ public unsafe partial interface IGL
         [NativeFunction("opengl", EntryPoint = "glDebugMessageCallbackAMD")]
         static abstract void DebugMessageCallbackAmd(
             [NativeTypeName("GLDEBUGPROCAMD")]
-                delegate* unmanaged<uint, uint, uint, int, sbyte*, void*, void> callback,
+                delegate* unmanaged<uint, uint, uint, uint, sbyte*, void*, void> callback,
             Ref userParam
         );
 
@@ -4129,7 +4129,7 @@ public unsafe partial interface IGL
         [NativeFunction("opengl", EntryPoint = "glDebugMessageCallbackARB")]
         static abstract void DebugMessageCallbackArb(
             [NativeTypeName("GLDEBUGPROCARB")]
-                delegate* unmanaged<uint, uint, uint, uint, int, sbyte*, void*, void> callback,
+                delegate* unmanaged<uint, uint, uint, uint, uint, sbyte*, void*, void> callback,
             [NativeTypeName("const void *")] Ref userParam
         );
 
@@ -4137,7 +4137,7 @@ public unsafe partial interface IGL
         [NativeFunction("opengl", EntryPoint = "glDebugMessageCallbackKHR")]
         static abstract void DebugMessageCallbackKhr(
             [NativeTypeName("GLDEBUGPROCKHR")]
-                delegate* unmanaged<uint, uint, uint, uint, int, sbyte*, void*, void> callback,
+                delegate* unmanaged<uint, uint, uint, uint, uint, sbyte*, void*, void> callback,
             [NativeTypeName("const void *")] Ref userParam
         );
 
@@ -4148,9 +4148,9 @@ public unsafe partial interface IGL
             [NativeTypeName("GLenum")] uint source,
             [NativeTypeName("GLenum")] uint type,
             [NativeTypeName("GLenum")] uint severity,
-            [NativeTypeName("GLsizei")] int count,
+            [NativeTypeName("GLsizei")] uint count,
             [NativeTypeName("const GLuint *")] Ref<uint> ids,
-            [NativeTypeName("GLboolean")] byte enabled
+            [NativeTypeName("GLboolean")] uint enabled
         );
 
         [SupportedApiProfile("glcore", MinVersion = "3.2")]
@@ -4160,9 +4160,9 @@ public unsafe partial interface IGL
             [NativeTypeName("GLenum")] uint source,
             [NativeTypeName("GLenum")] uint type,
             [NativeTypeName("GLenum")] uint severity,
-            [NativeTypeName("GLsizei")] int count,
+            [NativeTypeName("GLsizei")] uint count,
             [NativeTypeName("const GLuint *")] Ref<uint> ids,
-            [NativeTypeName("GLboolean")] byte enabled
+            [NativeTypeName("GLboolean")] uint enabled
         );
 
         [SupportedApiProfile("gles2", MinVersion = "2.0")]
@@ -4171,9 +4171,9 @@ public unsafe partial interface IGL
             [NativeTypeName("GLenum")] uint source,
             [NativeTypeName("GLenum")] uint type,
             [NativeTypeName("GLenum")] uint severity,
-            [NativeTypeName("GLsizei")] int count,
+            [NativeTypeName("GLsizei")] uint count,
             [NativeTypeName("const GLuint *")] Ref<uint> ids,
-            [NativeTypeName("GLboolean")] byte enabled
+            [NativeTypeName("GLboolean")] uint enabled
         );
 
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
@@ -4181,9 +4181,9 @@ public unsafe partial interface IGL
         static abstract void DebugMessageEnableAmd(
             [NativeTypeName("GLenum")] uint category,
             [NativeTypeName("GLenum")] uint severity,
-            [NativeTypeName("GLsizei")] int count,
+            [NativeTypeName("GLsizei")] uint count,
             [NativeTypeName("const GLuint *")] Ref<uint> ids,
-            [NativeTypeName("GLboolean")] byte enabled
+            [NativeTypeName("GLboolean")] uint enabled
         );
 
         [SupportedApiProfile("glcore", MinVersion = "3.2")]
@@ -4194,7 +4194,7 @@ public unsafe partial interface IGL
             [NativeTypeName("GLenum")] uint type,
             [NativeTypeName("GLuint")] uint id,
             [NativeTypeName("GLenum")] uint severity,
-            [NativeTypeName("GLsizei")] int length,
+            [NativeTypeName("GLsizei")] uint length,
             [NativeTypeName("const GLchar *")] Ref<sbyte> buf
         );
 
@@ -4204,7 +4204,7 @@ public unsafe partial interface IGL
             [NativeTypeName("GLenum")] uint category,
             [NativeTypeName("GLenum")] uint severity,
             [NativeTypeName("GLuint")] uint id,
-            [NativeTypeName("GLsizei")] int length,
+            [NativeTypeName("GLsizei")] uint length,
             [NativeTypeName("const GLchar *")] Ref<sbyte> buf
         );
 
@@ -4216,7 +4216,7 @@ public unsafe partial interface IGL
             [NativeTypeName("GLenum")] uint type,
             [NativeTypeName("GLuint")] uint id,
             [NativeTypeName("GLenum")] uint severity,
-            [NativeTypeName("GLsizei")] int length,
+            [NativeTypeName("GLsizei")] uint length,
             [NativeTypeName("const GLchar *")] Ref<sbyte> buf
         );
 
@@ -4227,7 +4227,7 @@ public unsafe partial interface IGL
             [NativeTypeName("GLenum")] uint type,
             [NativeTypeName("GLuint")] uint id,
             [NativeTypeName("GLenum")] uint severity,
-            [NativeTypeName("GLsizei")] int length,
+            [NativeTypeName("GLsizei")] uint length,
             [NativeTypeName("const GLchar *")] Ref<sbyte> buf
         );
 
@@ -4277,7 +4277,7 @@ public unsafe partial interface IGL
         [NativeFunction("opengl", EntryPoint = "glDeleteAsyncMarkersSGIX")]
         static abstract void DeleteAsyncMarkersSgix(
             [NativeTypeName("GLuint")] uint marker,
-            [NativeTypeName("GLsizei")] int range
+            [NativeTypeName("GLsizei")] uint range
         );
 
         [SupportedApiProfile("glcore", MinVersion = "3.2")]
@@ -4286,14 +4286,14 @@ public unsafe partial interface IGL
         [SupportedApiProfile("gles2", MinVersion = "2.0")]
         [NativeFunction("opengl", EntryPoint = "glDeleteBuffers")]
         static abstract void DeleteBuffers(
-            [NativeTypeName("GLsizei")] int n,
+            [NativeTypeName("GLsizei")] uint n,
             [NativeTypeName("const GLuint *")] Ref<uint> buffers
         );
 
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glDeleteBuffersARB")]
         static abstract void DeleteBuffersArb(
-            [NativeTypeName("GLsizei")] int n,
+            [NativeTypeName("GLsizei")] uint n,
             [NativeTypeName("const GLuint *")] Ref<uint> buffers
         );
 
@@ -4301,14 +4301,14 @@ public unsafe partial interface IGL
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glDeleteCommandListsNV")]
         static abstract void DeleteCommandListsNV(
-            [NativeTypeName("GLsizei")] int n,
+            [NativeTypeName("GLsizei")] uint n,
             [NativeTypeName("const GLuint *")] Ref<uint> lists
         );
 
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glDeleteFencesAPPLE")]
         static abstract void DeleteFencesApple(
-            [NativeTypeName("GLsizei")] int n,
+            [NativeTypeName("GLsizei")] uint n,
             [NativeTypeName("const GLuint *")] Ref<uint> fences
         );
 
@@ -4317,7 +4317,7 @@ public unsafe partial interface IGL
         [SupportedApiProfile("gles2", MinVersion = "2.0")]
         [NativeFunction("opengl", EntryPoint = "glDeleteFencesNV")]
         static abstract void DeleteFencesNV(
-            [NativeTypeName("GLsizei")] int n,
+            [NativeTypeName("GLsizei")] uint n,
             [NativeTypeName("const GLuint *")] Ref<uint> fences
         );
 
@@ -4330,21 +4330,21 @@ public unsafe partial interface IGL
         [SupportedApiProfile("gles2", MinVersion = "2.0")]
         [NativeFunction("opengl", EntryPoint = "glDeleteFramebuffers")]
         static abstract void DeleteFramebuffers(
-            [NativeTypeName("GLsizei")] int n,
+            [NativeTypeName("GLsizei")] uint n,
             [NativeTypeName("const GLuint *")] Ref<uint> framebuffers
         );
 
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glDeleteFramebuffersEXT")]
         static abstract void DeleteFramebuffersExt(
-            [NativeTypeName("GLsizei")] int n,
+            [NativeTypeName("GLsizei")] uint n,
             [NativeTypeName("const GLuint *")] Ref<uint> framebuffers
         );
 
         [SupportedApiProfile("gles1", MaxVersion = "2.0")]
         [NativeFunction("opengl", EntryPoint = "glDeleteFramebuffersOES")]
         static abstract void DeleteFramebuffersOes(
-            [NativeTypeName("GLsizei")] int n,
+            [NativeTypeName("GLsizei")] uint n,
             [NativeTypeName("const GLuint *")] Ref<uint> framebuffers
         );
 
@@ -4352,14 +4352,14 @@ public unsafe partial interface IGL
         [NativeFunction("opengl", EntryPoint = "glDeleteLists")]
         static abstract void DeleteLists(
             [NativeTypeName("GLuint")] uint list,
-            [NativeTypeName("GLsizei")] int range
+            [NativeTypeName("GLsizei")] uint range
         );
 
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [SupportedApiProfile("gles2", MinVersion = "2.0")]
         [NativeFunction("opengl", EntryPoint = "glDeleteMemoryObjectsEXT")]
         static abstract void DeleteMemoryObjectsExt(
-            [NativeTypeName("GLsizei")] int n,
+            [NativeTypeName("GLsizei")] uint n,
             [NativeTypeName("const GLuint *")] Ref<uint> memoryObjects
         );
 
@@ -4381,12 +4381,12 @@ public unsafe partial interface IGL
 
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glDeleteObjectARB")]
-        static abstract void DeleteObjectArb([NativeTypeName("GLhandleARB")] Ref obj);
+        static abstract void DeleteObjectArb([NativeTypeName("GLhandleARB")] uint obj);
 
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glDeleteOcclusionQueriesNV")]
         static abstract void DeleteOcclusionQueriesNV(
-            [NativeTypeName("GLsizei")] int n,
+            [NativeTypeName("GLsizei")] uint n,
             [NativeTypeName("const GLuint *")] Ref<uint> ids
         );
 
@@ -4396,7 +4396,7 @@ public unsafe partial interface IGL
         [NativeFunction("opengl", EntryPoint = "glDeletePathsNV")]
         static abstract void DeletePathsNV(
             [NativeTypeName("GLuint")] uint path,
-            [NativeTypeName("GLsizei")] int range
+            [NativeTypeName("GLsizei")] uint range
         );
 
         [SupportedApiProfile("glcore", MinVersion = "3.2")]
@@ -4404,7 +4404,7 @@ public unsafe partial interface IGL
         [SupportedApiProfile("gles2", MinVersion = "2.0")]
         [NativeFunction("opengl", EntryPoint = "glDeletePerfMonitorsAMD")]
         static abstract void DeletePerfMonitorsAmd(
-            [NativeTypeName("GLsizei")] int n,
+            [NativeTypeName("GLsizei")] uint n,
             [NativeTypeName("GLuint *")] Ref<uint> monitors
         );
 
@@ -4424,28 +4424,28 @@ public unsafe partial interface IGL
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glDeleteProgramPipelines")]
         static abstract void DeleteProgramPipelines(
-            [NativeTypeName("GLsizei")] int n,
+            [NativeTypeName("GLsizei")] uint n,
             [NativeTypeName("const GLuint *")] Ref<uint> pipelines
         );
 
         [SupportedApiProfile("gles2", MinVersion = "2.0")]
         [NativeFunction("opengl", EntryPoint = "glDeleteProgramPipelinesEXT")]
         static abstract void DeleteProgramPipelinesExt(
-            [NativeTypeName("GLsizei")] int n,
+            [NativeTypeName("GLsizei")] uint n,
             [NativeTypeName("const GLuint *")] Ref<uint> pipelines
         );
 
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glDeleteProgramsARB")]
         static abstract void DeleteProgramsArb(
-            [NativeTypeName("GLsizei")] int n,
+            [NativeTypeName("GLsizei")] uint n,
             [NativeTypeName("const GLuint *")] Ref<uint> programs
         );
 
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glDeleteProgramsNV")]
         static abstract void DeleteProgramsNV(
-            [NativeTypeName("GLsizei")] int n,
+            [NativeTypeName("GLsizei")] uint n,
             [NativeTypeName("const GLuint *")] Ref<uint> programs
         );
 
@@ -4453,28 +4453,28 @@ public unsafe partial interface IGL
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glDeleteQueries")]
         static abstract void DeleteQueries(
-            [NativeTypeName("GLsizei")] int n,
+            [NativeTypeName("GLsizei")] uint n,
             [NativeTypeName("const GLuint *")] Ref<uint> ids
         );
 
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glDeleteQueriesARB")]
         static abstract void DeleteQueriesArb(
-            [NativeTypeName("GLsizei")] int n,
+            [NativeTypeName("GLsizei")] uint n,
             [NativeTypeName("const GLuint *")] Ref<uint> ids
         );
 
         [SupportedApiProfile("gles2", MinVersion = "2.0")]
         [NativeFunction("opengl", EntryPoint = "glDeleteQueriesEXT")]
         static abstract void DeleteQueriesExt(
-            [NativeTypeName("GLsizei")] int n,
+            [NativeTypeName("GLsizei")] uint n,
             [NativeTypeName("const GLuint *")] Ref<uint> ids
         );
 
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glDeleteQueryResourceTagNV")]
         static abstract void DeleteQueryResourceTagNV(
-            [NativeTypeName("GLsizei")] int n,
+            [NativeTypeName("GLsizei")] uint n,
             [NativeTypeName("const GLint *")] Ref<int> tagIds
         );
 
@@ -4483,21 +4483,21 @@ public unsafe partial interface IGL
         [SupportedApiProfile("gles2", MinVersion = "2.0")]
         [NativeFunction("opengl", EntryPoint = "glDeleteRenderbuffers")]
         static abstract void DeleteRenderbuffers(
-            [NativeTypeName("GLsizei")] int n,
+            [NativeTypeName("GLsizei")] uint n,
             [NativeTypeName("const GLuint *")] Ref<uint> renderbuffers
         );
 
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glDeleteRenderbuffersEXT")]
         static abstract void DeleteRenderbuffersExt(
-            [NativeTypeName("GLsizei")] int n,
+            [NativeTypeName("GLsizei")] uint n,
             [NativeTypeName("const GLuint *")] Ref<uint> renderbuffers
         );
 
         [SupportedApiProfile("gles1", MaxVersion = "2.0")]
         [NativeFunction("opengl", EntryPoint = "glDeleteRenderbuffersOES")]
         static abstract void DeleteRenderbuffersOes(
-            [NativeTypeName("GLsizei")] int n,
+            [NativeTypeName("GLsizei")] uint n,
             [NativeTypeName("const GLuint *")] Ref<uint> renderbuffers
         );
 
@@ -4506,7 +4506,7 @@ public unsafe partial interface IGL
         [SupportedApiProfile("gles2", MinVersion = "2.0")]
         [NativeFunction("opengl", EntryPoint = "glDeleteSamplers")]
         static abstract void DeleteSamplers(
-            [NativeTypeName("GLsizei")] int count,
+            [NativeTypeName("GLsizei")] uint count,
             [NativeTypeName("const GLuint *")] Ref<uint> samplers
         );
 
@@ -4514,7 +4514,7 @@ public unsafe partial interface IGL
         [SupportedApiProfile("gles2", MinVersion = "2.0")]
         [NativeFunction("opengl", EntryPoint = "glDeleteSemaphoresEXT")]
         static abstract void DeleteSemaphoresExt(
-            [NativeTypeName("GLsizei")] int n,
+            [NativeTypeName("GLsizei")] uint n,
             [NativeTypeName("const GLuint *")] Ref<uint> semaphores
         );
 
@@ -4528,7 +4528,7 @@ public unsafe partial interface IGL
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glDeleteStatesNV")]
         static abstract void DeleteStatesNV(
-            [NativeTypeName("GLsizei")] int n,
+            [NativeTypeName("GLsizei")] uint n,
             [NativeTypeName("const GLuint *")] Ref<uint> states
         );
 
@@ -4548,14 +4548,14 @@ public unsafe partial interface IGL
         [SupportedApiProfile("gles2", MinVersion = "2.0")]
         [NativeFunction("opengl", EntryPoint = "glDeleteTextures")]
         static abstract void DeleteTextures(
-            [NativeTypeName("GLsizei")] int n,
+            [NativeTypeName("GLsizei")] uint n,
             [NativeTypeName("const GLuint *")] Ref<uint> textures
         );
 
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glDeleteTexturesEXT")]
         static abstract void DeleteTexturesExt(
-            [NativeTypeName("GLsizei")] int n,
+            [NativeTypeName("GLsizei")] uint n,
             [NativeTypeName("const GLuint *")] Ref<uint> textures
         );
 
@@ -4563,14 +4563,14 @@ public unsafe partial interface IGL
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glDeleteTransformFeedbacks")]
         static abstract void DeleteTransformFeedbacks(
-            [NativeTypeName("GLsizei")] int n,
+            [NativeTypeName("GLsizei")] uint n,
             [NativeTypeName("const GLuint *")] Ref<uint> ids
         );
 
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glDeleteTransformFeedbacksNV")]
         static abstract void DeleteTransformFeedbacksNV(
-            [NativeTypeName("GLsizei")] int n,
+            [NativeTypeName("GLsizei")] uint n,
             [NativeTypeName("const GLuint *")] Ref<uint> ids
         );
 
@@ -4578,14 +4578,14 @@ public unsafe partial interface IGL
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glDeleteVertexArrays")]
         static abstract void DeleteVertexArrays(
-            [NativeTypeName("GLsizei")] int n,
+            [NativeTypeName("GLsizei")] uint n,
             [NativeTypeName("const GLuint *")] Ref<uint> arrays
         );
 
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glDeleteVertexArraysAPPLE")]
         static abstract void DeleteVertexArraysApple(
-            [NativeTypeName("GLsizei")] int n,
+            [NativeTypeName("GLsizei")] uint n,
             [NativeTypeName("const GLuint *")] Ref<uint> arrays
         );
 
@@ -4593,7 +4593,7 @@ public unsafe partial interface IGL
         [SupportedApiProfile("gles2", MinVersion = "2.0")]
         [NativeFunction("opengl", EntryPoint = "glDeleteVertexArraysOES")]
         static abstract void DeleteVertexArraysOes(
-            [NativeTypeName("GLsizei")] int n,
+            [NativeTypeName("GLsizei")] uint n,
             [NativeTypeName("const GLuint *")] Ref<uint> arrays
         );
 
@@ -4628,7 +4628,7 @@ public unsafe partial interface IGL
         [SupportedApiProfile("gles1", MaxVersion = "2.0")]
         [SupportedApiProfile("gles2", MinVersion = "2.0")]
         [NativeFunction("opengl", EntryPoint = "glDepthMask")]
-        static abstract void DepthMask([NativeTypeName("GLboolean")] byte flag);
+        static abstract void DepthMask([NativeTypeName("GLboolean")] uint flag);
 
         [SupportedApiProfile("glcore", MinVersion = "3.2")]
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
@@ -4643,7 +4643,7 @@ public unsafe partial interface IGL
         [NativeFunction("opengl", EntryPoint = "glDepthRangeArraydvNV")]
         static abstract void DepthRangeArraydvNV(
             [NativeTypeName("GLuint")] uint first,
-            [NativeTypeName("GLsizei")] int count,
+            [NativeTypeName("GLsizei")] uint count,
             [NativeTypeName("const GLdouble *")] Ref<double> v
         );
 
@@ -4651,7 +4651,7 @@ public unsafe partial interface IGL
         [NativeFunction("opengl", EntryPoint = "glDepthRangeArrayfvNV")]
         static abstract void DepthRangeArrayfvNV(
             [NativeTypeName("GLuint")] uint first,
-            [NativeTypeName("GLsizei")] int count,
+            [NativeTypeName("GLsizei")] uint count,
             [NativeTypeName("const GLfloat *")] Ref<float> v
         );
 
@@ -4659,7 +4659,7 @@ public unsafe partial interface IGL
         [NativeFunction("opengl", EntryPoint = "glDepthRangeArrayfvOES")]
         static abstract void DepthRangeArrayfvOes(
             [NativeTypeName("GLuint")] uint first,
-            [NativeTypeName("GLsizei")] int count,
+            [NativeTypeName("GLsizei")] uint count,
             [NativeTypeName("const GLfloat *")] Ref<float> v
         );
 
@@ -4668,7 +4668,7 @@ public unsafe partial interface IGL
         [NativeFunction("opengl", EntryPoint = "glDepthRangeArrayv")]
         static abstract void DepthRangeArray(
             [NativeTypeName("GLuint")] uint first,
-            [NativeTypeName("GLsizei")] int count,
+            [NativeTypeName("GLsizei")] uint count,
             [NativeTypeName("const GLdouble *")] Ref<double> v
         );
 
@@ -4750,8 +4750,8 @@ public unsafe partial interface IGL
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glDetachObjectARB")]
         static abstract void DetachObjectArb(
-            [NativeTypeName("GLhandleARB")] Ref containerObj,
-            [NativeTypeName("GLhandleARB")] Ref attachedObj
+            [NativeTypeName("GLhandleARB")] uint containerObj,
+            [NativeTypeName("GLhandleARB")] uint attachedObj
         );
 
         [SupportedApiProfile("glcore", MinVersion = "3.2")]
@@ -4767,7 +4767,7 @@ public unsafe partial interface IGL
         [NativeFunction("opengl", EntryPoint = "glDetailTexFuncSGIS")]
         static abstract void DetailTexFuncSgis(
             [NativeTypeName("GLenum")] uint target,
-            [NativeTypeName("GLsizei")] int n,
+            [NativeTypeName("GLsizei")] uint n,
             [NativeTypeName("const GLfloat *")] Ref<float> points
         );
 
@@ -4893,7 +4893,7 @@ public unsafe partial interface IGL
         [NativeFunction("opengl", EntryPoint = "glDiscardFramebufferEXT")]
         static abstract void DiscardFramebufferExt(
             [NativeTypeName("GLenum")] uint target,
-            [NativeTypeName("GLsizei")] int numAttachments,
+            [NativeTypeName("GLsizei")] uint numAttachments,
             [NativeTypeName("const GLenum *")] Ref<uint> attachments
         );
 
@@ -4931,7 +4931,7 @@ public unsafe partial interface IGL
         static abstract void DrawArrays(
             [NativeTypeName("GLenum")] uint mode,
             [NativeTypeName("GLint")] int first,
-            [NativeTypeName("GLsizei")] int count
+            [NativeTypeName("GLsizei")] uint count
         );
 
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
@@ -4939,7 +4939,7 @@ public unsafe partial interface IGL
         static abstract void DrawArraysExt(
             [NativeTypeName("GLenum")] uint mode,
             [NativeTypeName("GLint")] int first,
-            [NativeTypeName("GLsizei")] int count
+            [NativeTypeName("GLsizei")] uint count
         );
 
         [SupportedApiProfile("glcore", MinVersion = "3.2")]
@@ -4956,8 +4956,8 @@ public unsafe partial interface IGL
         static abstract void DrawArraysInstanced(
             [NativeTypeName("GLenum")] uint mode,
             [NativeTypeName("GLint")] int first,
-            [NativeTypeName("GLsizei")] int count,
-            [NativeTypeName("GLsizei")] int instancecount
+            [NativeTypeName("GLsizei")] uint count,
+            [NativeTypeName("GLsizei")] uint instancecount
         );
 
         [SupportedApiProfile("gles2", MinVersion = "2.0")]
@@ -4965,8 +4965,8 @@ public unsafe partial interface IGL
         static abstract void DrawArraysInstancedAngle(
             [NativeTypeName("GLenum")] uint mode,
             [NativeTypeName("GLint")] int first,
-            [NativeTypeName("GLsizei")] int count,
-            [NativeTypeName("GLsizei")] int primcount
+            [NativeTypeName("GLsizei")] uint count,
+            [NativeTypeName("GLsizei")] uint primcount
         );
 
         [SupportedApiProfile("glcore", MinVersion = "3.2")]
@@ -4975,8 +4975,8 @@ public unsafe partial interface IGL
         static abstract void DrawArraysInstancedArb(
             [NativeTypeName("GLenum")] uint mode,
             [NativeTypeName("GLint")] int first,
-            [NativeTypeName("GLsizei")] int count,
-            [NativeTypeName("GLsizei")] int primcount
+            [NativeTypeName("GLsizei")] uint count,
+            [NativeTypeName("GLsizei")] uint primcount
         );
 
         [SupportedApiProfile("glcore", MinVersion = "3.2")]
@@ -4985,8 +4985,8 @@ public unsafe partial interface IGL
         static abstract void DrawArraysInstancedBaseInstance(
             [NativeTypeName("GLenum")] uint mode,
             [NativeTypeName("GLint")] int first,
-            [NativeTypeName("GLsizei")] int count,
-            [NativeTypeName("GLsizei")] int instancecount,
+            [NativeTypeName("GLsizei")] uint count,
+            [NativeTypeName("GLsizei")] uint instancecount,
             [NativeTypeName("GLuint")] uint baseinstance
         );
 
@@ -4995,8 +4995,8 @@ public unsafe partial interface IGL
         static abstract void DrawArraysInstancedBaseInstanceExt(
             [NativeTypeName("GLenum")] uint mode,
             [NativeTypeName("GLint")] int first,
-            [NativeTypeName("GLsizei")] int count,
-            [NativeTypeName("GLsizei")] int instancecount,
+            [NativeTypeName("GLsizei")] uint count,
+            [NativeTypeName("GLsizei")] uint instancecount,
             [NativeTypeName("GLuint")] uint baseinstance
         );
 
@@ -5007,8 +5007,8 @@ public unsafe partial interface IGL
         static abstract void DrawArraysInstancedExt(
             [NativeTypeName("GLenum")] uint mode,
             [NativeTypeName("GLint")] int start,
-            [NativeTypeName("GLsizei")] int count,
-            [NativeTypeName("GLsizei")] int primcount
+            [NativeTypeName("GLsizei")] uint count,
+            [NativeTypeName("GLsizei")] uint primcount
         );
 
         [SupportedApiProfile("gles2", MinVersion = "2.0")]
@@ -5016,8 +5016,8 @@ public unsafe partial interface IGL
         static abstract void DrawArraysInstancedNV(
             [NativeTypeName("GLenum")] uint mode,
             [NativeTypeName("GLint")] int first,
-            [NativeTypeName("GLsizei")] int count,
-            [NativeTypeName("GLsizei")] int primcount
+            [NativeTypeName("GLsizei")] uint count,
+            [NativeTypeName("GLsizei")] uint primcount
         );
 
         [SupportedApiProfile("glcore", MinVersion = "3.2")]
@@ -5029,28 +5029,28 @@ public unsafe partial interface IGL
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glDrawBuffers")]
         static abstract void DrawBuffers(
-            [NativeTypeName("GLsizei")] int n,
+            [NativeTypeName("GLsizei")] uint n,
             [NativeTypeName("const GLenum *")] Ref<uint> bufs
         );
 
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glDrawBuffersARB")]
         static abstract void DrawBuffersArb(
-            [NativeTypeName("GLsizei")] int n,
+            [NativeTypeName("GLsizei")] uint n,
             [NativeTypeName("const GLenum *")] Ref<uint> bufs
         );
 
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glDrawBuffersATI")]
         static abstract void DrawBuffersAti(
-            [NativeTypeName("GLsizei")] int n,
+            [NativeTypeName("GLsizei")] uint n,
             [NativeTypeName("const GLenum *")] Ref<uint> bufs
         );
 
         [SupportedApiProfile("gles2", MinVersion = "2.0")]
         [NativeFunction("opengl", EntryPoint = "glDrawBuffersEXT")]
         static abstract void DrawBuffersExt(
-            [NativeTypeName("GLsizei")] int n,
+            [NativeTypeName("GLsizei")] uint n,
             [NativeTypeName("const GLenum *")] Ref<uint> bufs
         );
 
@@ -5065,7 +5065,7 @@ public unsafe partial interface IGL
         [SupportedApiProfile("gles2", MinVersion = "2.0")]
         [NativeFunction("opengl", EntryPoint = "glDrawBuffersNV")]
         static abstract void DrawBuffersNV(
-            [NativeTypeName("GLsizei")] int n,
+            [NativeTypeName("GLsizei")] uint n,
             [NativeTypeName("const GLenum *")] Ref<uint> bufs
         );
 
@@ -5075,7 +5075,7 @@ public unsafe partial interface IGL
         static abstract void DrawCommandsAddressNV(
             [NativeTypeName("GLenum")] uint primitiveMode,
             [NativeTypeName("const GLuint64 *")] Ref<ulong> indirects,
-            [NativeTypeName("const GLsizei *")] Ref<int> sizes,
+            [NativeTypeName("const GLsizei *")] Ref<uint> sizes,
             [NativeTypeName("GLuint")] uint count
         );
 
@@ -5086,7 +5086,7 @@ public unsafe partial interface IGL
             [NativeTypeName("GLenum")] uint primitiveMode,
             [NativeTypeName("GLuint")] uint buffer,
             [NativeTypeName("const GLintptr *")] Ref<nint> indirects,
-            [NativeTypeName("const GLsizei *")] Ref<int> sizes,
+            [NativeTypeName("const GLsizei *")] Ref<uint> sizes,
             [NativeTypeName("GLuint")] uint count
         );
 
@@ -5095,7 +5095,7 @@ public unsafe partial interface IGL
         [NativeFunction("opengl", EntryPoint = "glDrawCommandsStatesAddressNV")]
         static abstract void DrawCommandsStatesAddressNV(
             [NativeTypeName("const GLuint64 *")] Ref<ulong> indirects,
-            [NativeTypeName("const GLsizei *")] Ref<int> sizes,
+            [NativeTypeName("const GLsizei *")] Ref<uint> sizes,
             [NativeTypeName("const GLuint *")] Ref<uint> states,
             [NativeTypeName("const GLuint *")] Ref<uint> fbos,
             [NativeTypeName("GLuint")] uint count
@@ -5107,7 +5107,7 @@ public unsafe partial interface IGL
         static abstract void DrawCommandsStatesNV(
             [NativeTypeName("GLuint")] uint buffer,
             [NativeTypeName("const GLintptr *")] Ref<nint> indirects,
-            [NativeTypeName("const GLsizei *")] Ref<int> sizes,
+            [NativeTypeName("const GLsizei *")] Ref<uint> sizes,
             [NativeTypeName("const GLuint *")] Ref<uint> states,
             [NativeTypeName("const GLuint *")] Ref<uint> fbos,
             [NativeTypeName("GLuint")] uint count
@@ -5118,14 +5118,14 @@ public unsafe partial interface IGL
         static abstract void DrawElementArrayApple(
             [NativeTypeName("GLenum")] uint mode,
             [NativeTypeName("GLint")] int first,
-            [NativeTypeName("GLsizei")] int count
+            [NativeTypeName("GLsizei")] uint count
         );
 
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glDrawElementArrayATI")]
         static abstract void DrawElementArrayAti(
             [NativeTypeName("GLenum")] uint mode,
-            [NativeTypeName("GLsizei")] int count
+            [NativeTypeName("GLsizei")] uint count
         );
 
         [SupportedApiProfile("glcore", MinVersion = "3.2")]
@@ -5135,7 +5135,7 @@ public unsafe partial interface IGL
         [NativeFunction("opengl", EntryPoint = "glDrawElements")]
         static abstract void DrawElements(
             [NativeTypeName("GLenum")] uint mode,
-            [NativeTypeName("GLsizei")] int count,
+            [NativeTypeName("GLsizei")] uint count,
             [NativeTypeName("GLenum")] uint type,
             [NativeTypeName("const void *")] Ref indices
         );
@@ -5145,7 +5145,7 @@ public unsafe partial interface IGL
         [NativeFunction("opengl", EntryPoint = "glDrawElementsBaseVertex")]
         static abstract void DrawElementsBaseVertex(
             [NativeTypeName("GLenum")] uint mode,
-            [NativeTypeName("GLsizei")] int count,
+            [NativeTypeName("GLsizei")] uint count,
             [NativeTypeName("GLenum")] uint type,
             [NativeTypeName("const void *")] Ref indices,
             [NativeTypeName("GLint")] int basevertex
@@ -5155,7 +5155,7 @@ public unsafe partial interface IGL
         [NativeFunction("opengl", EntryPoint = "glDrawElementsBaseVertexEXT")]
         static abstract void DrawElementsBaseVertexExt(
             [NativeTypeName("GLenum")] uint mode,
-            [NativeTypeName("GLsizei")] int count,
+            [NativeTypeName("GLsizei")] uint count,
             [NativeTypeName("GLenum")] uint type,
             [NativeTypeName("const void *")] Ref indices,
             [NativeTypeName("GLint")] int basevertex
@@ -5165,7 +5165,7 @@ public unsafe partial interface IGL
         [NativeFunction("opengl", EntryPoint = "glDrawElementsBaseVertexOES")]
         static abstract void DrawElementsBaseVertexOes(
             [NativeTypeName("GLenum")] uint mode,
-            [NativeTypeName("GLsizei")] int count,
+            [NativeTypeName("GLsizei")] uint count,
             [NativeTypeName("GLenum")] uint type,
             [NativeTypeName("const void *")] Ref indices,
             [NativeTypeName("GLint")] int basevertex
@@ -5185,20 +5185,20 @@ public unsafe partial interface IGL
         [NativeFunction("opengl", EntryPoint = "glDrawElementsInstanced")]
         static abstract void DrawElementsInstanced(
             [NativeTypeName("GLenum")] uint mode,
-            [NativeTypeName("GLsizei")] int count,
+            [NativeTypeName("GLsizei")] uint count,
             [NativeTypeName("GLenum")] uint type,
             [NativeTypeName("const void *")] Ref indices,
-            [NativeTypeName("GLsizei")] int instancecount
+            [NativeTypeName("GLsizei")] uint instancecount
         );
 
         [SupportedApiProfile("gles2", MinVersion = "2.0")]
         [NativeFunction("opengl", EntryPoint = "glDrawElementsInstancedANGLE")]
         static abstract void DrawElementsInstancedAngle(
             [NativeTypeName("GLenum")] uint mode,
-            [NativeTypeName("GLsizei")] int count,
+            [NativeTypeName("GLsizei")] uint count,
             [NativeTypeName("GLenum")] uint type,
             [NativeTypeName("const void *")] Ref indices,
-            [NativeTypeName("GLsizei")] int primcount
+            [NativeTypeName("GLsizei")] uint primcount
         );
 
         [SupportedApiProfile("glcore", MinVersion = "3.2")]
@@ -5206,10 +5206,10 @@ public unsafe partial interface IGL
         [NativeFunction("opengl", EntryPoint = "glDrawElementsInstancedARB")]
         static abstract void DrawElementsInstancedArb(
             [NativeTypeName("GLenum")] uint mode,
-            [NativeTypeName("GLsizei")] int count,
+            [NativeTypeName("GLsizei")] uint count,
             [NativeTypeName("GLenum")] uint type,
             [NativeTypeName("const void *")] Ref indices,
-            [NativeTypeName("GLsizei")] int primcount
+            [NativeTypeName("GLsizei")] uint primcount
         );
 
         [SupportedApiProfile("glcore", MinVersion = "3.2")]
@@ -5217,10 +5217,10 @@ public unsafe partial interface IGL
         [NativeFunction("opengl", EntryPoint = "glDrawElementsInstancedBaseInstance")]
         static abstract void DrawElementsInstancedBaseInstance(
             [NativeTypeName("GLenum")] uint mode,
-            [NativeTypeName("GLsizei")] int count,
+            [NativeTypeName("GLsizei")] uint count,
             [NativeTypeName("GLenum")] uint type,
             [NativeTypeName("const void *")] Ref indices,
-            [NativeTypeName("GLsizei")] int instancecount,
+            [NativeTypeName("GLsizei")] uint instancecount,
             [NativeTypeName("GLuint")] uint baseinstance
         );
 
@@ -5228,10 +5228,10 @@ public unsafe partial interface IGL
         [NativeFunction("opengl", EntryPoint = "glDrawElementsInstancedBaseInstanceEXT")]
         static abstract void DrawElementsInstancedBaseInstanceExt(
             [NativeTypeName("GLenum")] uint mode,
-            [NativeTypeName("GLsizei")] int count,
+            [NativeTypeName("GLsizei")] uint count,
             [NativeTypeName("GLenum")] uint type,
             [NativeTypeName("const void *")] Ref indices,
-            [NativeTypeName("GLsizei")] int instancecount,
+            [NativeTypeName("GLsizei")] uint instancecount,
             [NativeTypeName("GLuint")] uint baseinstance
         );
 
@@ -5240,10 +5240,10 @@ public unsafe partial interface IGL
         [NativeFunction("opengl", EntryPoint = "glDrawElementsInstancedBaseVertex")]
         static abstract void DrawElementsInstancedBaseVertex(
             [NativeTypeName("GLenum")] uint mode,
-            [NativeTypeName("GLsizei")] int count,
+            [NativeTypeName("GLsizei")] uint count,
             [NativeTypeName("GLenum")] uint type,
             [NativeTypeName("const void *")] Ref indices,
-            [NativeTypeName("GLsizei")] int instancecount,
+            [NativeTypeName("GLsizei")] uint instancecount,
             [NativeTypeName("GLint")] int basevertex
         );
 
@@ -5252,10 +5252,10 @@ public unsafe partial interface IGL
         [NativeFunction("opengl", EntryPoint = "glDrawElementsInstancedBaseVertexBaseInstance")]
         static abstract void DrawElementsInstancedBaseVertexBaseInstance(
             [NativeTypeName("GLenum")] uint mode,
-            [NativeTypeName("GLsizei")] int count,
+            [NativeTypeName("GLsizei")] uint count,
             [NativeTypeName("GLenum")] uint type,
             [NativeTypeName("const void *")] Ref indices,
-            [NativeTypeName("GLsizei")] int instancecount,
+            [NativeTypeName("GLsizei")] uint instancecount,
             [NativeTypeName("GLint")] int basevertex,
             [NativeTypeName("GLuint")] uint baseinstance
         );
@@ -5264,10 +5264,10 @@ public unsafe partial interface IGL
         [NativeFunction("opengl", EntryPoint = "glDrawElementsInstancedBaseVertexBaseInstanceEXT")]
         static abstract void DrawElementsInstancedBaseVertexBaseInstanceExt(
             [NativeTypeName("GLenum")] uint mode,
-            [NativeTypeName("GLsizei")] int count,
+            [NativeTypeName("GLsizei")] uint count,
             [NativeTypeName("GLenum")] uint type,
             [NativeTypeName("const void *")] Ref indices,
-            [NativeTypeName("GLsizei")] int instancecount,
+            [NativeTypeName("GLsizei")] uint instancecount,
             [NativeTypeName("GLint")] int basevertex,
             [NativeTypeName("GLuint")] uint baseinstance
         );
@@ -5276,10 +5276,10 @@ public unsafe partial interface IGL
         [NativeFunction("opengl", EntryPoint = "glDrawElementsInstancedBaseVertexEXT")]
         static abstract void DrawElementsInstancedBaseVertexExt(
             [NativeTypeName("GLenum")] uint mode,
-            [NativeTypeName("GLsizei")] int count,
+            [NativeTypeName("GLsizei")] uint count,
             [NativeTypeName("GLenum")] uint type,
             [NativeTypeName("const void *")] Ref indices,
-            [NativeTypeName("GLsizei")] int instancecount,
+            [NativeTypeName("GLsizei")] uint instancecount,
             [NativeTypeName("GLint")] int basevertex
         );
 
@@ -5287,10 +5287,10 @@ public unsafe partial interface IGL
         [NativeFunction("opengl", EntryPoint = "glDrawElementsInstancedBaseVertexOES")]
         static abstract void DrawElementsInstancedBaseVertexOes(
             [NativeTypeName("GLenum")] uint mode,
-            [NativeTypeName("GLsizei")] int count,
+            [NativeTypeName("GLsizei")] uint count,
             [NativeTypeName("GLenum")] uint type,
             [NativeTypeName("const void *")] Ref indices,
-            [NativeTypeName("GLsizei")] int instancecount,
+            [NativeTypeName("GLsizei")] uint instancecount,
             [NativeTypeName("GLint")] int basevertex
         );
 
@@ -5300,20 +5300,20 @@ public unsafe partial interface IGL
         [NativeFunction("opengl", EntryPoint = "glDrawElementsInstancedEXT")]
         static abstract void DrawElementsInstancedExt(
             [NativeTypeName("GLenum")] uint mode,
-            [NativeTypeName("GLsizei")] int count,
+            [NativeTypeName("GLsizei")] uint count,
             [NativeTypeName("GLenum")] uint type,
             [NativeTypeName("const void *")] Ref indices,
-            [NativeTypeName("GLsizei")] int primcount
+            [NativeTypeName("GLsizei")] uint primcount
         );
 
         [SupportedApiProfile("gles2", MinVersion = "2.0")]
         [NativeFunction("opengl", EntryPoint = "glDrawElementsInstancedNV")]
         static abstract void DrawElementsInstancedNV(
             [NativeTypeName("GLenum")] uint mode,
-            [NativeTypeName("GLsizei")] int count,
+            [NativeTypeName("GLsizei")] uint count,
             [NativeTypeName("GLenum")] uint type,
             [NativeTypeName("const void *")] Ref indices,
-            [NativeTypeName("GLsizei")] int primcount
+            [NativeTypeName("GLsizei")] uint primcount
         );
 
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
@@ -5321,8 +5321,8 @@ public unsafe partial interface IGL
         static abstract void DrawMeshArraysSun(
             [NativeTypeName("GLenum")] uint mode,
             [NativeTypeName("GLint")] int first,
-            [NativeTypeName("GLsizei")] int count,
-            [NativeTypeName("GLsizei")] int width
+            [NativeTypeName("GLsizei")] uint count,
+            [NativeTypeName("GLsizei")] uint width
         );
 
         [SupportedApiProfile("glcore", MinVersion = "3.2")]
@@ -5343,8 +5343,8 @@ public unsafe partial interface IGL
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glDrawPixels")]
         static abstract void DrawPixels(
-            [NativeTypeName("GLsizei")] int width,
-            [NativeTypeName("GLsizei")] int height,
+            [NativeTypeName("GLsizei")] uint width,
+            [NativeTypeName("GLsizei")] uint height,
             [NativeTypeName("GLenum")] uint format,
             [NativeTypeName("GLenum")] uint type,
             [NativeTypeName("const void *")] Ref pixels
@@ -5357,7 +5357,7 @@ public unsafe partial interface IGL
             [NativeTypeName("GLuint")] uint start,
             [NativeTypeName("GLuint")] uint end,
             [NativeTypeName("GLint")] int first,
-            [NativeTypeName("GLsizei")] int count
+            [NativeTypeName("GLsizei")] uint count
         );
 
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
@@ -5366,7 +5366,7 @@ public unsafe partial interface IGL
             [NativeTypeName("GLenum")] uint mode,
             [NativeTypeName("GLuint")] uint start,
             [NativeTypeName("GLuint")] uint end,
-            [NativeTypeName("GLsizei")] int count
+            [NativeTypeName("GLsizei")] uint count
         );
 
         [SupportedApiProfile("glcore", MinVersion = "3.2")]
@@ -5376,7 +5376,7 @@ public unsafe partial interface IGL
             [NativeTypeName("GLenum")] uint mode,
             [NativeTypeName("GLuint")] uint start,
             [NativeTypeName("GLuint")] uint end,
-            [NativeTypeName("GLsizei")] int count,
+            [NativeTypeName("GLsizei")] uint count,
             [NativeTypeName("GLenum")] uint type,
             [NativeTypeName("const void *")] Ref indices
         );
@@ -5388,7 +5388,7 @@ public unsafe partial interface IGL
             [NativeTypeName("GLenum")] uint mode,
             [NativeTypeName("GLuint")] uint start,
             [NativeTypeName("GLuint")] uint end,
-            [NativeTypeName("GLsizei")] int count,
+            [NativeTypeName("GLsizei")] uint count,
             [NativeTypeName("GLenum")] uint type,
             [NativeTypeName("const void *")] Ref indices,
             [NativeTypeName("GLint")] int basevertex
@@ -5400,7 +5400,7 @@ public unsafe partial interface IGL
             [NativeTypeName("GLenum")] uint mode,
             [NativeTypeName("GLuint")] uint start,
             [NativeTypeName("GLuint")] uint end,
-            [NativeTypeName("GLsizei")] int count,
+            [NativeTypeName("GLsizei")] uint count,
             [NativeTypeName("GLenum")] uint type,
             [NativeTypeName("const void *")] Ref indices,
             [NativeTypeName("GLint")] int basevertex
@@ -5412,7 +5412,7 @@ public unsafe partial interface IGL
             [NativeTypeName("GLenum")] uint mode,
             [NativeTypeName("GLuint")] uint start,
             [NativeTypeName("GLuint")] uint end,
-            [NativeTypeName("GLsizei")] int count,
+            [NativeTypeName("GLsizei")] uint count,
             [NativeTypeName("GLenum")] uint type,
             [NativeTypeName("const void *")] Ref indices,
             [NativeTypeName("GLint")] int basevertex
@@ -5424,7 +5424,7 @@ public unsafe partial interface IGL
             [NativeTypeName("GLenum")] uint mode,
             [NativeTypeName("GLuint")] uint start,
             [NativeTypeName("GLuint")] uint end,
-            [NativeTypeName("GLsizei")] int count,
+            [NativeTypeName("GLsizei")] uint count,
             [NativeTypeName("GLenum")] uint type,
             [NativeTypeName("const void *")] Ref indices
         );
@@ -5522,7 +5522,7 @@ public unsafe partial interface IGL
         static abstract void DrawTransformFeedbackInstanced(
             [NativeTypeName("GLenum")] uint mode,
             [NativeTypeName("GLuint")] uint id,
-            [NativeTypeName("GLsizei")] int instancecount
+            [NativeTypeName("GLsizei")] uint instancecount
         );
 
         [SupportedApiProfile("gles2", MinVersion = "2.0")]
@@ -5530,7 +5530,7 @@ public unsafe partial interface IGL
         static abstract void DrawTransformFeedbackInstancedExt(
             [NativeTypeName("GLenum")] uint mode,
             [NativeTypeName("GLuint")] uint id,
-            [NativeTypeName("GLsizei")] int instancecount
+            [NativeTypeName("GLsizei")] uint instancecount
         );
 
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
@@ -5556,7 +5556,7 @@ public unsafe partial interface IGL
             [NativeTypeName("GLenum")] uint mode,
             [NativeTypeName("GLuint")] uint id,
             [NativeTypeName("GLuint")] uint stream,
-            [NativeTypeName("GLsizei")] int instancecount
+            [NativeTypeName("GLsizei")] uint instancecount
         );
 
         [SupportedApiProfile("glcore", MinVersion = "3.2")]
@@ -5579,39 +5579,39 @@ public unsafe partial interface IGL
 
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glEdgeFlag")]
-        static abstract void EdgeFlag([NativeTypeName("GLboolean")] byte flag);
+        static abstract void EdgeFlag([NativeTypeName("GLboolean")] uint flag);
 
         [SupportedApiProfile("glcore", MinVersion = "3.2")]
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glEdgeFlagFormatNV")]
-        static abstract void EdgeFlagFormatNV([NativeTypeName("GLsizei")] int stride);
+        static abstract void EdgeFlagFormatNV([NativeTypeName("GLsizei")] uint stride);
 
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glEdgeFlagPointer")]
         static abstract void EdgeFlagPointer(
-            [NativeTypeName("GLsizei")] int stride,
+            [NativeTypeName("GLsizei")] uint stride,
             [NativeTypeName("const void *")] Ref pointer
         );
 
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glEdgeFlagPointerEXT")]
         static abstract void EdgeFlagPointerExt(
-            [NativeTypeName("GLsizei")] int stride,
-            [NativeTypeName("GLsizei")] int count,
-            [NativeTypeName("const GLboolean *")] Ref<byte> pointer
+            [NativeTypeName("GLsizei")] uint stride,
+            [NativeTypeName("GLsizei")] uint count,
+            [NativeTypeName("const GLboolean *")] Ref<uint> pointer
         );
 
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glEdgeFlagPointerListIBM")]
         static abstract void EdgeFlagPointerListIbm(
             [NativeTypeName("GLint")] int stride,
-            [NativeTypeName("const GLboolean **")] Ref2D<byte> pointer,
+            [NativeTypeName("const GLboolean **")] Ref2D<uint> pointer,
             [NativeTypeName("GLint")] int ptrstride
         );
 
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glEdgeFlagv")]
-        static abstract void EdgeFlag([NativeTypeName("const GLboolean *")] Ref<byte> flag);
+        static abstract void EdgeFlag([NativeTypeName("const GLboolean *")] Ref<uint> flag);
 
         [SupportedApiProfile("gles1", MaxVersion = "2.0")]
         [SupportedApiProfile("gles2", MinVersion = "2.0")]
@@ -6057,9 +6057,9 @@ public unsafe partial interface IGL
             [NativeTypeName("GLint")] int xoffset,
             [NativeTypeName("GLint")] int yoffset,
             [NativeTypeName("GLint")] int zoffset,
-            [NativeTypeName("GLsizei")] int width,
-            [NativeTypeName("GLsizei")] int height,
-            [NativeTypeName("GLsizei")] int depth,
+            [NativeTypeName("GLsizei")] uint width,
+            [NativeTypeName("GLsizei")] uint height,
+            [NativeTypeName("GLsizei")] uint depth,
             [NativeTypeName("GLenum")] uint format,
             [NativeTypeName("GLenum")] uint type,
             Ref texels
@@ -6078,7 +6078,7 @@ public unsafe partial interface IGL
         [SupportedApiProfile("gles1", MaxVersion = "2.0")]
         [SupportedApiProfile("gles2", MinVersion = "2.0")]
         [NativeFunction("opengl", EntryPoint = "glExtIsProgramBinaryQCOM")]
-        static abstract byte ExtIsProgramBinaryQcom([NativeTypeName("GLuint")] uint program);
+        static abstract uint ExtIsProgramBinaryQcom([NativeTypeName("GLuint")] uint program);
 
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glExtractComponentEXT")]
@@ -6109,7 +6109,7 @@ public unsafe partial interface IGL
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glFeedbackBuffer")]
         static abstract void FeedbackBuffer(
-            [NativeTypeName("GLsizei")] int size,
+            [NativeTypeName("GLsizei")] uint size,
             [NativeTypeName("GLenum")] uint type,
             [NativeTypeName("GLfloat *")] Ref<float> buffer
         );
@@ -6117,7 +6117,7 @@ public unsafe partial interface IGL
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glFeedbackBufferxOES")]
         static abstract void FeedbackBufferxOes(
-            [NativeTypeName("GLsizei")] int n,
+            [NativeTypeName("GLsizei")] uint n,
             [NativeTypeName("GLenum")] uint type,
             [NativeTypeName("const GLfixed *")] Ref<int> buffer
         );
@@ -6195,7 +6195,7 @@ public unsafe partial interface IGL
         static abstract void FlushMappedBufferRange(
             [NativeTypeName("GLenum")] uint target,
             [NativeTypeName("GLintptr")] nint offset,
-            [NativeTypeName("GLsizeiptr")] nint length
+            [NativeTypeName("GLsizeiptr")] nuint length
         );
 
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
@@ -6203,7 +6203,7 @@ public unsafe partial interface IGL
         static abstract void FlushMappedBufferRangeApple(
             [NativeTypeName("GLenum")] uint target,
             [NativeTypeName("GLintptr")] nint offset,
-            [NativeTypeName("GLsizeiptr")] nint size
+            [NativeTypeName("GLsizeiptr")] nuint size
         );
 
         [SupportedApiProfile("gles1", MaxVersion = "2.0")]
@@ -6212,7 +6212,7 @@ public unsafe partial interface IGL
         static abstract void FlushMappedBufferRangeExt(
             [NativeTypeName("GLenum")] uint target,
             [NativeTypeName("GLintptr")] nint offset,
-            [NativeTypeName("GLsizeiptr")] nint length
+            [NativeTypeName("GLsizeiptr")] nuint length
         );
 
         [SupportedApiProfile("glcore", MinVersion = "3.2")]
@@ -6221,7 +6221,7 @@ public unsafe partial interface IGL
         static abstract void FlushMappedNamedBufferRange(
             [NativeTypeName("GLuint")] uint buffer,
             [NativeTypeName("GLintptr")] nint offset,
-            [NativeTypeName("GLsizeiptr")] nint length
+            [NativeTypeName("GLsizeiptr")] nuint length
         );
 
         [SupportedApiProfile("glcore", MinVersion = "3.2")]
@@ -6230,7 +6230,7 @@ public unsafe partial interface IGL
         static abstract void FlushMappedNamedBufferRangeExt(
             [NativeTypeName("GLuint")] uint buffer,
             [NativeTypeName("GLintptr")] nint offset,
-            [NativeTypeName("GLsizeiptr")] nint length
+            [NativeTypeName("GLsizeiptr")] nuint length
         );
 
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
@@ -6248,7 +6248,7 @@ public unsafe partial interface IGL
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glFlushVertexArrayRangeAPPLE")]
         static abstract void FlushVertexArrayRangeApple(
-            [NativeTypeName("GLsizei")] int length,
+            [NativeTypeName("GLsizei")] uint length,
             Ref pointer
         );
 
@@ -6285,7 +6285,7 @@ public unsafe partial interface IGL
         [NativeFunction("opengl", EntryPoint = "glFogCoordFormatNV")]
         static abstract void FogCoordFormatNV(
             [NativeTypeName("GLenum")] uint type,
-            [NativeTypeName("GLsizei")] int stride
+            [NativeTypeName("GLsizei")] uint stride
         );
 
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
@@ -6308,7 +6308,7 @@ public unsafe partial interface IGL
         [NativeFunction("opengl", EntryPoint = "glFogCoordPointer")]
         static abstract void FogCoordPointer(
             [NativeTypeName("GLenum")] uint type,
-            [NativeTypeName("GLsizei")] int stride,
+            [NativeTypeName("GLsizei")] uint stride,
             [NativeTypeName("const void *")] Ref pointer
         );
 
@@ -6316,7 +6316,7 @@ public unsafe partial interface IGL
         [NativeFunction("opengl", EntryPoint = "glFogCoordPointerEXT")]
         static abstract void FogCoordPointerExt(
             [NativeTypeName("GLenum")] uint type,
-            [NativeTypeName("GLsizei")] int stride,
+            [NativeTypeName("GLsizei")] uint stride,
             [NativeTypeName("const void *")] Ref pointer
         );
 
@@ -6340,7 +6340,7 @@ public unsafe partial interface IGL
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glFogFuncSGIS")]
         static abstract void FogFuncSgis(
-            [NativeTypeName("GLsizei")] int n,
+            [NativeTypeName("GLsizei")] uint n,
             [NativeTypeName("const GLfloat *")] Ref<float> points
         );
 
@@ -6514,7 +6514,7 @@ public unsafe partial interface IGL
         [NativeFunction("opengl", EntryPoint = "glFramebufferDrawBuffersEXT")]
         static abstract void FramebufferDrawBuffersExt(
             [NativeTypeName("GLuint")] uint framebuffer,
-            [NativeTypeName("GLsizei")] int n,
+            [NativeTypeName("GLsizei")] uint n,
             [NativeTypeName("const GLenum *")] Ref<uint> bufs
         );
 
@@ -6574,7 +6574,7 @@ public unsafe partial interface IGL
         [NativeFunction("opengl", EntryPoint = "glFramebufferPixelLocalStorageSizeEXT")]
         static abstract void FramebufferPixelLocalStorageSizeExt(
             [NativeTypeName("GLuint")] uint target,
-            [NativeTypeName("GLsizei")] int size
+            [NativeTypeName("GLsizei")] uint size
         );
 
         [SupportedApiProfile("glcore", MinVersion = "3.2")]
@@ -6620,7 +6620,7 @@ public unsafe partial interface IGL
         static abstract void FramebufferSampleLocationsfvArb(
             [NativeTypeName("GLenum")] uint target,
             [NativeTypeName("GLuint")] uint start,
-            [NativeTypeName("GLsizei")] int count,
+            [NativeTypeName("GLsizei")] uint count,
             [NativeTypeName("const GLfloat *")] Ref<float> v
         );
 
@@ -6631,7 +6631,7 @@ public unsafe partial interface IGL
         static abstract void FramebufferSampleLocationsfvNV(
             [NativeTypeName("GLenum")] uint target,
             [NativeTypeName("GLuint")] uint start,
-            [NativeTypeName("GLsizei")] int count,
+            [NativeTypeName("GLsizei")] uint count,
             [NativeTypeName("const GLfloat *")] Ref<float> v
         );
 
@@ -6651,9 +6651,9 @@ public unsafe partial interface IGL
             [NativeTypeName("GLenum")] uint attachment,
             [NativeTypeName("GLuint")] uint texture,
             [NativeTypeName("GLint")] int baseLayer,
-            [NativeTypeName("GLsizei")] int numLayers,
-            [NativeTypeName("GLsizei")] int texelWidth,
-            [NativeTypeName("GLsizei")] int texelHeight
+            [NativeTypeName("GLsizei")] uint numLayers,
+            [NativeTypeName("GLsizei")] uint texelWidth,
+            [NativeTypeName("GLsizei")] uint texelHeight
         );
 
         [SupportedApiProfile("glcore", MinVersion = "3.2")]
@@ -6730,7 +6730,7 @@ public unsafe partial interface IGL
             [NativeTypeName("GLenum")] uint textarget,
             [NativeTypeName("GLuint")] uint texture,
             [NativeTypeName("GLint")] int level,
-            [NativeTypeName("GLsizei")] int samples
+            [NativeTypeName("GLsizei")] uint samples
         );
 
         [SupportedApiProfile("gles1", MaxVersion = "2.0")]
@@ -6742,7 +6742,7 @@ public unsafe partial interface IGL
             [NativeTypeName("GLenum")] uint textarget,
             [NativeTypeName("GLuint")] uint texture,
             [NativeTypeName("GLint")] int level,
-            [NativeTypeName("GLsizei")] int samples
+            [NativeTypeName("GLsizei")] uint samples
         );
 
         [SupportedApiProfile("gles1", MaxVersion = "2.0")]
@@ -6881,9 +6881,9 @@ public unsafe partial interface IGL
             [NativeTypeName("GLenum")] uint attachment,
             [NativeTypeName("GLuint")] uint texture,
             [NativeTypeName("GLint")] int level,
-            [NativeTypeName("GLsizei")] int samples,
+            [NativeTypeName("GLsizei")] uint samples,
             [NativeTypeName("GLint")] int baseViewIndex,
-            [NativeTypeName("GLsizei")] int numViews
+            [NativeTypeName("GLsizei")] uint numViews
         );
 
         [SupportedApiProfile("glcore", MinVersion = "3.2")]
@@ -6896,7 +6896,7 @@ public unsafe partial interface IGL
             [NativeTypeName("GLuint")] uint texture,
             [NativeTypeName("GLint")] int level,
             [NativeTypeName("GLint")] int baseViewIndex,
-            [NativeTypeName("GLsizei")] int numViews
+            [NativeTypeName("GLsizei")] uint numViews
         );
 
         [SupportedApiProfile("gles2", MinVersion = "2.0")]
@@ -6987,7 +6987,7 @@ public unsafe partial interface IGL
         [return: NativeTypeName("GLuint")]
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glGenAsyncMarkersSGIX")]
-        static abstract uint GenAsyncMarkersSgix([NativeTypeName("GLsizei")] int range);
+        static abstract uint GenAsyncMarkersSgix([NativeTypeName("GLsizei")] uint range);
 
         [SupportedApiProfile("glcore", MinVersion = "3.2")]
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
@@ -6995,14 +6995,14 @@ public unsafe partial interface IGL
         [SupportedApiProfile("gles2", MinVersion = "2.0")]
         [NativeFunction("opengl", EntryPoint = "glGenBuffers")]
         static abstract void GenBuffers(
-            [NativeTypeName("GLsizei")] int n,
+            [NativeTypeName("GLsizei")] uint n,
             [NativeTypeName("GLuint *")] Ref<uint> buffers
         );
 
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glGenBuffersARB")]
         static abstract void GenBuffersArb(
-            [NativeTypeName("GLsizei")] int n,
+            [NativeTypeName("GLsizei")] uint n,
             [NativeTypeName("GLuint *")] Ref<uint> buffers
         );
 
@@ -7044,7 +7044,7 @@ public unsafe partial interface IGL
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glGenFencesAPPLE")]
         static abstract void GenFencesApple(
-            [NativeTypeName("GLsizei")] int n,
+            [NativeTypeName("GLsizei")] uint n,
             [NativeTypeName("GLuint *")] Ref<uint> fences
         );
 
@@ -7053,7 +7053,7 @@ public unsafe partial interface IGL
         [SupportedApiProfile("gles2", MinVersion = "2.0")]
         [NativeFunction("opengl", EntryPoint = "glGenFencesNV")]
         static abstract void GenFencesNV(
-            [NativeTypeName("GLsizei")] int n,
+            [NativeTypeName("GLsizei")] uint n,
             [NativeTypeName("GLuint *")] Ref<uint> fences
         );
 
@@ -7067,28 +7067,28 @@ public unsafe partial interface IGL
         [SupportedApiProfile("gles2", MinVersion = "2.0")]
         [NativeFunction("opengl", EntryPoint = "glGenFramebuffers")]
         static abstract void GenFramebuffers(
-            [NativeTypeName("GLsizei")] int n,
+            [NativeTypeName("GLsizei")] uint n,
             [NativeTypeName("GLuint *")] Ref<uint> framebuffers
         );
 
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glGenFramebuffersEXT")]
         static abstract void GenFramebuffersExt(
-            [NativeTypeName("GLsizei")] int n,
+            [NativeTypeName("GLsizei")] uint n,
             [NativeTypeName("GLuint *")] Ref<uint> framebuffers
         );
 
         [SupportedApiProfile("gles1", MaxVersion = "2.0")]
         [NativeFunction("opengl", EntryPoint = "glGenFramebuffersOES")]
         static abstract void GenFramebuffersOes(
-            [NativeTypeName("GLsizei")] int n,
+            [NativeTypeName("GLsizei")] uint n,
             [NativeTypeName("GLuint *")] Ref<uint> framebuffers
         );
 
         [return: NativeTypeName("GLuint")]
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glGenLists")]
-        static abstract uint GenLists([NativeTypeName("GLsizei")] int range);
+        static abstract uint GenLists([NativeTypeName("GLsizei")] uint range);
 
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glGenNamesAMD")]
@@ -7101,7 +7101,7 @@ public unsafe partial interface IGL
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glGenOcclusionQueriesNV")]
         static abstract void GenOcclusionQueriesNV(
-            [NativeTypeName("GLsizei")] int n,
+            [NativeTypeName("GLsizei")] uint n,
             [NativeTypeName("GLuint *")] Ref<uint> ids
         );
 
@@ -7110,14 +7110,14 @@ public unsafe partial interface IGL
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [SupportedApiProfile("gles2", MinVersion = "2.0")]
         [NativeFunction("opengl", EntryPoint = "glGenPathsNV")]
-        static abstract uint GenPathsNV([NativeTypeName("GLsizei")] int range);
+        static abstract uint GenPathsNV([NativeTypeName("GLsizei")] uint range);
 
         [SupportedApiProfile("glcore", MinVersion = "3.2")]
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [SupportedApiProfile("gles2", MinVersion = "2.0")]
         [NativeFunction("opengl", EntryPoint = "glGenPerfMonitorsAMD")]
         static abstract void GenPerfMonitorsAmd(
-            [NativeTypeName("GLsizei")] int n,
+            [NativeTypeName("GLsizei")] uint n,
             [NativeTypeName("GLuint *")] Ref<uint> monitors
         );
 
@@ -7125,28 +7125,28 @@ public unsafe partial interface IGL
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glGenProgramPipelines")]
         static abstract void GenProgramPipelines(
-            [NativeTypeName("GLsizei")] int n,
+            [NativeTypeName("GLsizei")] uint n,
             [NativeTypeName("GLuint *")] Ref<uint> pipelines
         );
 
         [SupportedApiProfile("gles2", MinVersion = "2.0")]
         [NativeFunction("opengl", EntryPoint = "glGenProgramPipelinesEXT")]
         static abstract void GenProgramPipelinesExt(
-            [NativeTypeName("GLsizei")] int n,
+            [NativeTypeName("GLsizei")] uint n,
             [NativeTypeName("GLuint *")] Ref<uint> pipelines
         );
 
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glGenProgramsARB")]
         static abstract void GenProgramsArb(
-            [NativeTypeName("GLsizei")] int n,
+            [NativeTypeName("GLsizei")] uint n,
             [NativeTypeName("GLuint *")] Ref<uint> programs
         );
 
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glGenProgramsNV")]
         static abstract void GenProgramsNV(
-            [NativeTypeName("GLsizei")] int n,
+            [NativeTypeName("GLsizei")] uint n,
             [NativeTypeName("GLuint *")] Ref<uint> programs
         );
 
@@ -7154,28 +7154,28 @@ public unsafe partial interface IGL
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glGenQueries")]
         static abstract void GenQueries(
-            [NativeTypeName("GLsizei")] int n,
+            [NativeTypeName("GLsizei")] uint n,
             [NativeTypeName("GLuint *")] Ref<uint> ids
         );
 
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glGenQueriesARB")]
         static abstract void GenQueriesArb(
-            [NativeTypeName("GLsizei")] int n,
+            [NativeTypeName("GLsizei")] uint n,
             [NativeTypeName("GLuint *")] Ref<uint> ids
         );
 
         [SupportedApiProfile("gles2", MinVersion = "2.0")]
         [NativeFunction("opengl", EntryPoint = "glGenQueriesEXT")]
         static abstract void GenQueriesExt(
-            [NativeTypeName("GLsizei")] int n,
+            [NativeTypeName("GLsizei")] uint n,
             [NativeTypeName("GLuint *")] Ref<uint> ids
         );
 
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glGenQueryResourceTagNV")]
         static abstract void GenQueryResourceTagNV(
-            [NativeTypeName("GLsizei")] int n,
+            [NativeTypeName("GLsizei")] uint n,
             [NativeTypeName("GLint *")] Ref<int> tagIds
         );
 
@@ -7184,21 +7184,21 @@ public unsafe partial interface IGL
         [SupportedApiProfile("gles2", MinVersion = "2.0")]
         [NativeFunction("opengl", EntryPoint = "glGenRenderbuffers")]
         static abstract void GenRenderbuffers(
-            [NativeTypeName("GLsizei")] int n,
+            [NativeTypeName("GLsizei")] uint n,
             [NativeTypeName("GLuint *")] Ref<uint> renderbuffers
         );
 
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glGenRenderbuffersEXT")]
         static abstract void GenRenderbuffersExt(
-            [NativeTypeName("GLsizei")] int n,
+            [NativeTypeName("GLsizei")] uint n,
             [NativeTypeName("GLuint *")] Ref<uint> renderbuffers
         );
 
         [SupportedApiProfile("gles1", MaxVersion = "2.0")]
         [NativeFunction("opengl", EntryPoint = "glGenRenderbuffersOES")]
         static abstract void GenRenderbuffersOes(
-            [NativeTypeName("GLsizei")] int n,
+            [NativeTypeName("GLsizei")] uint n,
             [NativeTypeName("GLuint *")] Ref<uint> renderbuffers
         );
 
@@ -7207,7 +7207,7 @@ public unsafe partial interface IGL
         [SupportedApiProfile("gles2", MinVersion = "2.0")]
         [NativeFunction("opengl", EntryPoint = "glGenSamplers")]
         static abstract void GenSamplers(
-            [NativeTypeName("GLsizei")] int count,
+            [NativeTypeName("GLsizei")] uint count,
             [NativeTypeName("GLuint *")] Ref<uint> samplers
         );
 
@@ -7215,7 +7215,7 @@ public unsafe partial interface IGL
         [SupportedApiProfile("gles2", MinVersion = "2.0")]
         [NativeFunction("opengl", EntryPoint = "glGenSemaphoresEXT")]
         static abstract void GenSemaphoresExt(
-            [NativeTypeName("GLsizei")] int n,
+            [NativeTypeName("GLsizei")] uint n,
             [NativeTypeName("GLuint *")] Ref<uint> semaphores
         );
 
@@ -7235,14 +7235,14 @@ public unsafe partial interface IGL
         [SupportedApiProfile("gles2", MinVersion = "2.0")]
         [NativeFunction("opengl", EntryPoint = "glGenTextures")]
         static abstract void GenTextures(
-            [NativeTypeName("GLsizei")] int n,
+            [NativeTypeName("GLsizei")] uint n,
             [NativeTypeName("GLuint *")] Ref<uint> textures
         );
 
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glGenTexturesEXT")]
         static abstract void GenTexturesExt(
-            [NativeTypeName("GLsizei")] int n,
+            [NativeTypeName("GLsizei")] uint n,
             [NativeTypeName("GLuint *")] Ref<uint> textures
         );
 
@@ -7250,14 +7250,14 @@ public unsafe partial interface IGL
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glGenTransformFeedbacks")]
         static abstract void GenTransformFeedbacks(
-            [NativeTypeName("GLsizei")] int n,
+            [NativeTypeName("GLsizei")] uint n,
             [NativeTypeName("GLuint *")] Ref<uint> ids
         );
 
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glGenTransformFeedbacksNV")]
         static abstract void GenTransformFeedbacksNV(
-            [NativeTypeName("GLsizei")] int n,
+            [NativeTypeName("GLsizei")] uint n,
             [NativeTypeName("GLuint *")] Ref<uint> ids
         );
 
@@ -7265,14 +7265,14 @@ public unsafe partial interface IGL
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glGenVertexArrays")]
         static abstract void GenVertexArrays(
-            [NativeTypeName("GLsizei")] int n,
+            [NativeTypeName("GLsizei")] uint n,
             [NativeTypeName("GLuint *")] Ref<uint> arrays
         );
 
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glGenVertexArraysAPPLE")]
         static abstract void GenVertexArraysApple(
-            [NativeTypeName("GLsizei")] int n,
+            [NativeTypeName("GLsizei")] uint n,
             [NativeTypeName("GLuint *")] Ref<uint> arrays
         );
 
@@ -7280,7 +7280,7 @@ public unsafe partial interface IGL
         [SupportedApiProfile("gles2", MinVersion = "2.0")]
         [NativeFunction("opengl", EntryPoint = "glGenVertexArraysOES")]
         static abstract void GenVertexArraysOes(
-            [NativeTypeName("GLsizei")] int n,
+            [NativeTypeName("GLsizei")] uint n,
             [NativeTypeName("GLuint *")] Ref<uint> arrays
         );
 
@@ -7306,8 +7306,8 @@ public unsafe partial interface IGL
         static abstract void GetActiveAttrib(
             [NativeTypeName("GLuint")] uint program,
             [NativeTypeName("GLuint")] uint index,
-            [NativeTypeName("GLsizei")] int bufSize,
-            [NativeTypeName("GLsizei *")] Ref<int> length,
+            [NativeTypeName("GLsizei")] uint bufSize,
+            [NativeTypeName("GLsizei *")] Ref<uint> length,
             [NativeTypeName("GLint *")] Ref<int> size,
             [NativeTypeName("GLenum *")] Ref<uint> type,
             [NativeTypeName("GLchar *")] Ref<sbyte> name
@@ -7316,10 +7316,10 @@ public unsafe partial interface IGL
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glGetActiveAttribARB")]
         static abstract void GetActiveAttribArb(
-            [NativeTypeName("GLhandleARB")] Ref programObj,
+            [NativeTypeName("GLhandleARB")] uint programObj,
             [NativeTypeName("GLuint")] uint index,
-            [NativeTypeName("GLsizei")] int maxLength,
-            [NativeTypeName("GLsizei *")] Ref<int> length,
+            [NativeTypeName("GLsizei")] uint maxLength,
+            [NativeTypeName("GLsizei *")] Ref<uint> length,
             [NativeTypeName("GLint *")] Ref<int> size,
             [NativeTypeName("GLenum *")] Ref<uint> type,
             [NativeTypeName("GLcharARB *")] Ref<sbyte> name
@@ -7332,8 +7332,8 @@ public unsafe partial interface IGL
             [NativeTypeName("GLuint")] uint program,
             [NativeTypeName("GLenum")] uint shadertype,
             [NativeTypeName("GLuint")] uint index,
-            [NativeTypeName("GLsizei")] int bufSize,
-            [NativeTypeName("GLsizei *")] Ref<int> length,
+            [NativeTypeName("GLsizei")] uint bufSize,
+            [NativeTypeName("GLsizei *")] Ref<uint> length,
             [NativeTypeName("GLchar *")] Ref<sbyte> name
         );
 
@@ -7355,8 +7355,8 @@ public unsafe partial interface IGL
             [NativeTypeName("GLuint")] uint program,
             [NativeTypeName("GLenum")] uint shadertype,
             [NativeTypeName("GLuint")] uint index,
-            [NativeTypeName("GLsizei")] int bufSize,
-            [NativeTypeName("GLsizei *")] Ref<int> length,
+            [NativeTypeName("GLsizei")] uint bufSize,
+            [NativeTypeName("GLsizei *")] Ref<uint> length,
             [NativeTypeName("GLchar *")] Ref<sbyte> name
         );
 
@@ -7367,8 +7367,8 @@ public unsafe partial interface IGL
         static abstract void GetActiveUniform(
             [NativeTypeName("GLuint")] uint program,
             [NativeTypeName("GLuint")] uint index,
-            [NativeTypeName("GLsizei")] int bufSize,
-            [NativeTypeName("GLsizei *")] Ref<int> length,
+            [NativeTypeName("GLsizei")] uint bufSize,
+            [NativeTypeName("GLsizei *")] Ref<uint> length,
             [NativeTypeName("GLint *")] Ref<int> size,
             [NativeTypeName("GLenum *")] Ref<uint> type,
             [NativeTypeName("GLchar *")] Ref<sbyte> name
@@ -7377,10 +7377,10 @@ public unsafe partial interface IGL
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glGetActiveUniformARB")]
         static abstract void GetActiveUniformArb(
-            [NativeTypeName("GLhandleARB")] Ref programObj,
+            [NativeTypeName("GLhandleARB")] uint programObj,
             [NativeTypeName("GLuint")] uint index,
-            [NativeTypeName("GLsizei")] int maxLength,
-            [NativeTypeName("GLsizei *")] Ref<int> length,
+            [NativeTypeName("GLsizei")] uint maxLength,
+            [NativeTypeName("GLsizei *")] Ref<uint> length,
             [NativeTypeName("GLint *")] Ref<int> size,
             [NativeTypeName("GLenum *")] Ref<uint> type,
             [NativeTypeName("GLcharARB *")] Ref<sbyte> name
@@ -7402,8 +7402,8 @@ public unsafe partial interface IGL
         static abstract void GetActiveUniformBlockName(
             [NativeTypeName("GLuint")] uint program,
             [NativeTypeName("GLuint")] uint uniformBlockIndex,
-            [NativeTypeName("GLsizei")] int bufSize,
-            [NativeTypeName("GLsizei *")] Ref<int> length,
+            [NativeTypeName("GLsizei")] uint bufSize,
+            [NativeTypeName("GLsizei *")] Ref<uint> length,
             [NativeTypeName("GLchar *")] Ref<sbyte> uniformBlockName
         );
 
@@ -7413,8 +7413,8 @@ public unsafe partial interface IGL
         static abstract void GetActiveUniformName(
             [NativeTypeName("GLuint")] uint program,
             [NativeTypeName("GLuint")] uint uniformIndex,
-            [NativeTypeName("GLsizei")] int bufSize,
-            [NativeTypeName("GLsizei *")] Ref<int> length,
+            [NativeTypeName("GLsizei")] uint bufSize,
+            [NativeTypeName("GLsizei *")] Ref<uint> length,
             [NativeTypeName("GLchar *")] Ref<sbyte> uniformName
         );
 
@@ -7423,7 +7423,7 @@ public unsafe partial interface IGL
         [NativeFunction("opengl", EntryPoint = "glGetActiveUniformsiv")]
         static abstract void GetActiveUniforms(
             [NativeTypeName("GLuint")] uint program,
-            [NativeTypeName("GLsizei")] int uniformCount,
+            [NativeTypeName("GLsizei")] uint uniformCount,
             [NativeTypeName("const GLuint *")] Ref<uint> uniformIndices,
             [NativeTypeName("GLenum")] uint pname,
             [NativeTypeName("GLint *")] Ref<int> @params
@@ -7434,9 +7434,9 @@ public unsafe partial interface IGL
         static abstract void GetActiveVaryingNV(
             [NativeTypeName("GLuint")] uint program,
             [NativeTypeName("GLuint")] uint index,
-            [NativeTypeName("GLsizei")] int bufSize,
-            [NativeTypeName("GLsizei *")] Ref<int> length,
-            [NativeTypeName("GLsizei *")] Ref<int> size,
+            [NativeTypeName("GLsizei")] uint bufSize,
+            [NativeTypeName("GLsizei *")] Ref<uint> length,
+            [NativeTypeName("GLsizei *")] Ref<uint> size,
             [NativeTypeName("GLenum *")] Ref<uint> type,
             [NativeTypeName("GLchar *")] Ref<sbyte> name
         );
@@ -7460,10 +7460,10 @@ public unsafe partial interface IGL
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glGetAttachedObjectsARB")]
         static abstract void GetAttachedObjectsArb(
-            [NativeTypeName("GLhandleARB")] Ref containerObj,
-            [NativeTypeName("GLsizei")] int maxCount,
-            [NativeTypeName("GLsizei *")] Ref<int> count,
-            [NativeTypeName("GLhandleARB *")] Ref2D obj
+            [NativeTypeName("GLhandleARB")] uint containerObj,
+            [NativeTypeName("GLsizei")] uint maxCount,
+            [NativeTypeName("GLsizei *")] Ref<uint> count,
+            [NativeTypeName("GLhandleARB *")] Ref<uint> obj
         );
 
         [SupportedApiProfile("glcore", MinVersion = "3.2")]
@@ -7472,8 +7472,8 @@ public unsafe partial interface IGL
         [NativeFunction("opengl", EntryPoint = "glGetAttachedShaders")]
         static abstract void GetAttachedShaders(
             [NativeTypeName("GLuint")] uint program,
-            [NativeTypeName("GLsizei")] int maxCount,
-            [NativeTypeName("GLsizei *")] Ref<int> count,
+            [NativeTypeName("GLsizei")] uint maxCount,
+            [NativeTypeName("GLsizei *")] Ref<uint> count,
             [NativeTypeName("GLuint *")] Ref<uint> shaders
         );
 
@@ -7491,7 +7491,7 @@ public unsafe partial interface IGL
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glGetAttribLocationARB")]
         static abstract int GetAttribLocationArb(
-            [NativeTypeName("GLhandleARB")] Ref programObj,
+            [NativeTypeName("GLhandleARB")] uint programObj,
             [NativeTypeName("const GLcharARB *")] Ref<sbyte> name
         );
 
@@ -7501,7 +7501,7 @@ public unsafe partial interface IGL
         static abstract void GetBoolean(
             [NativeTypeName("GLenum")] uint target,
             [NativeTypeName("GLuint")] uint index,
-            [NativeTypeName("GLboolean *")] Ref<byte> data
+            [NativeTypeName("GLboolean *")] Ref<uint> data
         );
 
         [SupportedApiProfile("glcore", MinVersion = "3.2")]
@@ -7510,7 +7510,7 @@ public unsafe partial interface IGL
         static abstract void GetBooleanIndexedvExt(
             [NativeTypeName("GLenum")] uint target,
             [NativeTypeName("GLuint")] uint index,
-            [NativeTypeName("GLboolean *")] Ref<byte> data
+            [NativeTypeName("GLboolean *")] Ref<uint> data
         );
 
         [SupportedApiProfile("glcore", MinVersion = "3.2")]
@@ -7520,7 +7520,7 @@ public unsafe partial interface IGL
         [NativeFunction("opengl", EntryPoint = "glGetBooleanv")]
         static abstract void GetBoolean(
             [NativeTypeName("GLenum")] uint pname,
-            [NativeTypeName("GLboolean *")] Ref<byte> data
+            [NativeTypeName("GLboolean *")] Ref<uint> data
         );
 
         [SupportedApiProfile("glcore", MinVersion = "3.2")]
@@ -7592,7 +7592,7 @@ public unsafe partial interface IGL
         static abstract void GetBufferSubData(
             [NativeTypeName("GLenum")] uint target,
             [NativeTypeName("GLintptr")] nint offset,
-            [NativeTypeName("GLsizeiptr")] nint size,
+            [NativeTypeName("GLsizeiptr")] nuint size,
             Ref data
         );
 
@@ -7805,7 +7805,7 @@ public unsafe partial interface IGL
         static abstract void GetCompressedTextureImage(
             [NativeTypeName("GLuint")] uint texture,
             [NativeTypeName("GLint")] int level,
-            [NativeTypeName("GLsizei")] int bufSize,
+            [NativeTypeName("GLsizei")] uint bufSize,
             Ref pixels
         );
 
@@ -7828,10 +7828,10 @@ public unsafe partial interface IGL
             [NativeTypeName("GLint")] int xoffset,
             [NativeTypeName("GLint")] int yoffset,
             [NativeTypeName("GLint")] int zoffset,
-            [NativeTypeName("GLsizei")] int width,
-            [NativeTypeName("GLsizei")] int height,
-            [NativeTypeName("GLsizei")] int depth,
-            [NativeTypeName("GLsizei")] int bufSize,
+            [NativeTypeName("GLsizei")] uint width,
+            [NativeTypeName("GLsizei")] uint height,
+            [NativeTypeName("GLsizei")] uint depth,
+            [NativeTypeName("GLsizei")] uint bufSize,
             Ref pixels
         );
 
@@ -7898,7 +7898,7 @@ public unsafe partial interface IGL
         [SupportedApiProfile("gles2", MinVersion = "2.0")]
         [NativeFunction("opengl", EntryPoint = "glGetCoverageModulationTableNV")]
         static abstract void GetCoverageModulationTableNV(
-            [NativeTypeName("GLsizei")] int bufSize,
+            [NativeTypeName("GLsizei")] uint bufSize,
             [NativeTypeName("GLfloat *")] Ref<float> v
         );
 
@@ -7908,12 +7908,12 @@ public unsafe partial interface IGL
         [NativeFunction("opengl", EntryPoint = "glGetDebugMessageLog")]
         static abstract uint GetDebugMessageLog(
             [NativeTypeName("GLuint")] uint count,
-            [NativeTypeName("GLsizei")] int bufSize,
+            [NativeTypeName("GLsizei")] uint bufSize,
             [NativeTypeName("GLenum *")] Ref<uint> sources,
             [NativeTypeName("GLenum *")] Ref<uint> types,
             [NativeTypeName("GLuint *")] Ref<uint> ids,
             [NativeTypeName("GLenum *")] Ref<uint> severities,
-            [NativeTypeName("GLsizei *")] Ref<int> lengths,
+            [NativeTypeName("GLsizei *")] Ref<uint> lengths,
             [NativeTypeName("GLchar *")] Ref<sbyte> messageLog
         );
 
@@ -7922,11 +7922,11 @@ public unsafe partial interface IGL
         [NativeFunction("opengl", EntryPoint = "glGetDebugMessageLogAMD")]
         static abstract uint GetDebugMessageLogAmd(
             [NativeTypeName("GLuint")] uint count,
-            [NativeTypeName("GLsizei")] int bufSize,
+            [NativeTypeName("GLsizei")] uint bufSize,
             [NativeTypeName("GLenum *")] Ref<uint> categories,
             [NativeTypeName("GLenum *")] Ref<uint> severities,
             [NativeTypeName("GLuint *")] Ref<uint> ids,
-            [NativeTypeName("GLsizei *")] Ref<int> lengths,
+            [NativeTypeName("GLsizei *")] Ref<uint> lengths,
             [NativeTypeName("GLchar *")] Ref<sbyte> message
         );
 
@@ -7936,12 +7936,12 @@ public unsafe partial interface IGL
         [NativeFunction("opengl", EntryPoint = "glGetDebugMessageLogARB")]
         static abstract uint GetDebugMessageLogArb(
             [NativeTypeName("GLuint")] uint count,
-            [NativeTypeName("GLsizei")] int bufSize,
+            [NativeTypeName("GLsizei")] uint bufSize,
             [NativeTypeName("GLenum *")] Ref<uint> sources,
             [NativeTypeName("GLenum *")] Ref<uint> types,
             [NativeTypeName("GLuint *")] Ref<uint> ids,
             [NativeTypeName("GLenum *")] Ref<uint> severities,
-            [NativeTypeName("GLsizei *")] Ref<int> lengths,
+            [NativeTypeName("GLsizei *")] Ref<uint> lengths,
             [NativeTypeName("GLchar *")] Ref<sbyte> messageLog
         );
 
@@ -7950,12 +7950,12 @@ public unsafe partial interface IGL
         [NativeFunction("opengl", EntryPoint = "glGetDebugMessageLogKHR")]
         static abstract uint GetDebugMessageLogKhr(
             [NativeTypeName("GLuint")] uint count,
-            [NativeTypeName("GLsizei")] int bufSize,
+            [NativeTypeName("GLsizei")] uint bufSize,
             [NativeTypeName("GLenum *")] Ref<uint> sources,
             [NativeTypeName("GLenum *")] Ref<uint> types,
             [NativeTypeName("GLuint *")] Ref<uint> ids,
             [NativeTypeName("GLenum *")] Ref<uint> severities,
-            [NativeTypeName("GLsizei *")] Ref<int> lengths,
+            [NativeTypeName("GLsizei *")] Ref<uint> lengths,
             [NativeTypeName("GLchar *")] Ref<sbyte> messageLog
         );
 
@@ -8006,7 +8006,7 @@ public unsafe partial interface IGL
         [NativeFunction("opengl", EntryPoint = "glGetDriverControlsQCOM")]
         static abstract void GetDriverControlsQcom(
             [NativeTypeName("GLint *")] Ref<int> num,
-            [NativeTypeName("GLsizei")] int size,
+            [NativeTypeName("GLsizei")] uint size,
             [NativeTypeName("GLuint *")] Ref<uint> driverControls
         );
 
@@ -8015,8 +8015,8 @@ public unsafe partial interface IGL
         [NativeFunction("opengl", EntryPoint = "glGetDriverControlStringQCOM")]
         static abstract void GetDriverControlStringQcom(
             [NativeTypeName("GLuint")] uint driverControl,
-            [NativeTypeName("GLsizei")] int bufSize,
-            [NativeTypeName("GLsizei *")] Ref<int> length,
+            [NativeTypeName("GLsizei")] uint bufSize,
+            [NativeTypeName("GLsizei *")] Ref<uint> length,
             [NativeTypeName("GLchar *")] Ref<sbyte> driverControlString
         );
 
@@ -8203,9 +8203,9 @@ public unsafe partial interface IGL
         [SupportedApiProfile("gles2", MinVersion = "2.0")]
         [NativeFunction("opengl", EntryPoint = "glGetFragmentShadingRatesEXT")]
         static abstract void GetFragmentShadingRatesExt(
-            [NativeTypeName("GLsizei")] int samples,
-            [NativeTypeName("GLsizei")] int maxCount,
-            [NativeTypeName("GLsizei *")] Ref<int> count,
+            [NativeTypeName("GLsizei")] uint samples,
+            [NativeTypeName("GLsizei")] uint maxCount,
+            [NativeTypeName("GLsizei *")] Ref<uint> count,
             [NativeTypeName("GLenum *")] Ref<uint> shadingRates
         );
 
@@ -8245,7 +8245,7 @@ public unsafe partial interface IGL
             [NativeTypeName("GLenum")] uint pname,
             [NativeTypeName("GLuint")] uint numsamples,
             [NativeTypeName("GLuint")] uint pixelindex,
-            [NativeTypeName("GLsizei")] int size,
+            [NativeTypeName("GLsizei")] uint size,
             [NativeTypeName("GLfloat *")] Ref<float> values
         );
 
@@ -8280,7 +8280,7 @@ public unsafe partial interface IGL
         [return: NativeTypeName("GLsizei")]
         [SupportedApiProfile("gles2", MinVersion = "2.0")]
         [NativeFunction("opengl", EntryPoint = "glGetFramebufferPixelLocalStorageSizeEXT")]
-        static abstract int GetFramebufferPixelLocalStorageSizeExt(
+        static abstract uint GetFramebufferPixelLocalStorageSizeExt(
             [NativeTypeName("GLuint")] uint target
         );
 
@@ -8310,13 +8310,13 @@ public unsafe partial interface IGL
         [return: NativeTypeName("GLhandleARB")]
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glGetHandleARB")]
-        static abstract Ptr GetHandleArb([NativeTypeName("GLenum")] uint pname);
+        static abstract uint GetHandleArb([NativeTypeName("GLenum")] uint pname);
 
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glGetHistogram")]
         static abstract void GetHistogram(
             [NativeTypeName("GLenum")] uint target,
-            [NativeTypeName("GLboolean")] byte reset,
+            [NativeTypeName("GLboolean")] uint reset,
             [NativeTypeName("GLenum")] uint format,
             [NativeTypeName("GLenum")] uint type,
             Ref values
@@ -8326,7 +8326,7 @@ public unsafe partial interface IGL
         [NativeFunction("opengl", EntryPoint = "glGetHistogramEXT")]
         static abstract void GetHistogramExt(
             [NativeTypeName("GLenum")] uint target,
-            [NativeTypeName("GLboolean")] byte reset,
+            [NativeTypeName("GLboolean")] uint reset,
             [NativeTypeName("GLenum")] uint format,
             [NativeTypeName("GLenum")] uint type,
             Ref values
@@ -8379,7 +8379,7 @@ public unsafe partial interface IGL
         static abstract ulong GetImageHandleArb(
             [NativeTypeName("GLuint")] uint texture,
             [NativeTypeName("GLint")] int level,
-            [NativeTypeName("GLboolean")] byte layered,
+            [NativeTypeName("GLboolean")] uint layered,
             [NativeTypeName("GLint")] int layer,
             [NativeTypeName("GLenum")] uint format
         );
@@ -8392,7 +8392,7 @@ public unsafe partial interface IGL
         static abstract ulong GetImageHandleNV(
             [NativeTypeName("GLuint")] uint texture,
             [NativeTypeName("GLint")] int level,
-            [NativeTypeName("GLboolean")] byte layered,
+            [NativeTypeName("GLboolean")] uint layered,
             [NativeTypeName("GLint")] int layer,
             [NativeTypeName("GLenum")] uint format
         );
@@ -8416,9 +8416,9 @@ public unsafe partial interface IGL
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glGetInfoLogARB")]
         static abstract void GetInfoLogArb(
-            [NativeTypeName("GLhandleARB")] Ref obj,
-            [NativeTypeName("GLsizei")] int maxLength,
-            [NativeTypeName("GLsizei *")] Ref<int> length,
+            [NativeTypeName("GLhandleARB")] uint obj,
+            [NativeTypeName("GLsizei")] uint maxLength,
+            [NativeTypeName("GLsizei *")] Ref<uint> length,
             [NativeTypeName("GLcharARB *")] Ref<sbyte> infoLog
         );
 
@@ -8519,7 +8519,7 @@ public unsafe partial interface IGL
             [NativeTypeName("GLenum")] uint target,
             [NativeTypeName("GLenum")] uint internalformat,
             [NativeTypeName("GLenum")] uint pname,
-            [NativeTypeName("GLsizei")] int count,
+            [NativeTypeName("GLsizei")] uint count,
             [NativeTypeName("GLint64 *")] Ref<long> @params
         );
 
@@ -8530,7 +8530,7 @@ public unsafe partial interface IGL
             [NativeTypeName("GLenum")] uint target,
             [NativeTypeName("GLenum")] uint internalformat,
             [NativeTypeName("GLenum")] uint pname,
-            [NativeTypeName("GLsizei")] int count,
+            [NativeTypeName("GLsizei")] uint count,
             [NativeTypeName("GLint *")] Ref<int> @params
         );
 
@@ -8541,9 +8541,9 @@ public unsafe partial interface IGL
         static abstract void GetInternalformatSampleivNV(
             [NativeTypeName("GLenum")] uint target,
             [NativeTypeName("GLenum")] uint internalformat,
-            [NativeTypeName("GLsizei")] int samples,
+            [NativeTypeName("GLsizei")] uint samples,
             [NativeTypeName("GLenum")] uint pname,
-            [NativeTypeName("GLsizei")] int count,
+            [NativeTypeName("GLsizei")] uint count,
             [NativeTypeName("GLint *")] Ref<int> @params
         );
 
@@ -8552,7 +8552,7 @@ public unsafe partial interface IGL
         static abstract void GetInvariantBooleanvExt(
             [NativeTypeName("GLuint")] uint id,
             [NativeTypeName("GLenum")] uint value,
-            [NativeTypeName("GLboolean *")] Ref<byte> data
+            [NativeTypeName("GLboolean *")] Ref<uint> data
         );
 
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
@@ -8633,7 +8633,7 @@ public unsafe partial interface IGL
         static abstract void GetLocalConstantBooleanvExt(
             [NativeTypeName("GLuint")] uint id,
             [NativeTypeName("GLenum")] uint value,
-            [NativeTypeName("GLboolean *")] Ref<byte> data
+            [NativeTypeName("GLboolean *")] Ref<uint> data
         );
 
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
@@ -8676,9 +8676,9 @@ public unsafe partial interface IGL
             [NativeTypeName("GLenum")] uint target,
             [NativeTypeName("GLuint")] uint index,
             [NativeTypeName("GLenum")] uint type,
-            [NativeTypeName("GLsizei")] int ustride,
-            [NativeTypeName("GLsizei")] int vstride,
-            [NativeTypeName("GLboolean")] byte packed,
+            [NativeTypeName("GLsizei")] uint ustride,
+            [NativeTypeName("GLsizei")] uint vstride,
+            [NativeTypeName("GLboolean")] uint packed,
             Ref points
         );
 
@@ -8779,7 +8779,7 @@ public unsafe partial interface IGL
             [NativeTypeName("GLuint")] uint memory,
             [NativeTypeName("GLenum")] uint pname,
             [NativeTypeName("GLint")] int first,
-            [NativeTypeName("GLsizei")] int count,
+            [NativeTypeName("GLsizei")] uint count,
             [NativeTypeName("GLuint *")] Ref<uint> @params
         );
 
@@ -8796,7 +8796,7 @@ public unsafe partial interface IGL
         [NativeFunction("opengl", EntryPoint = "glGetMinmax")]
         static abstract void GetMinmax(
             [NativeTypeName("GLenum")] uint target,
-            [NativeTypeName("GLboolean")] byte reset,
+            [NativeTypeName("GLboolean")] uint reset,
             [NativeTypeName("GLenum")] uint format,
             [NativeTypeName("GLenum")] uint type,
             Ref values
@@ -8806,7 +8806,7 @@ public unsafe partial interface IGL
         [NativeFunction("opengl", EntryPoint = "glGetMinmaxEXT")]
         static abstract void GetMinmaxExt(
             [NativeTypeName("GLenum")] uint target,
-            [NativeTypeName("GLboolean")] byte reset,
+            [NativeTypeName("GLboolean")] uint reset,
             [NativeTypeName("GLenum")] uint format,
             [NativeTypeName("GLenum")] uint type,
             Ref values
@@ -9045,7 +9045,7 @@ public unsafe partial interface IGL
         static abstract void GetNamedBufferSubData(
             [NativeTypeName("GLuint")] uint buffer,
             [NativeTypeName("GLintptr")] nint offset,
-            [NativeTypeName("GLsizeiptr")] nint size,
+            [NativeTypeName("GLsizeiptr")] nuint size,
             Ref data
         );
 
@@ -9055,7 +9055,7 @@ public unsafe partial interface IGL
         static abstract void GetNamedBufferSubDataExt(
             [NativeTypeName("GLuint")] uint buffer,
             [NativeTypeName("GLintptr")] nint offset,
-            [NativeTypeName("GLsizeiptr")] nint size,
+            [NativeTypeName("GLsizeiptr")] nuint size,
             Ref data
         );
 
@@ -9086,7 +9086,7 @@ public unsafe partial interface IGL
             [NativeTypeName("GLenum")] uint pname,
             [NativeTypeName("GLuint")] uint numsamples,
             [NativeTypeName("GLuint")] uint pixelindex,
-            [NativeTypeName("GLsizei")] int size,
+            [NativeTypeName("GLsizei")] uint size,
             [NativeTypeName("GLfloat *")] Ref<float> values
         );
 
@@ -9192,7 +9192,7 @@ public unsafe partial interface IGL
         static abstract void GetNamedStringArb(
             [NativeTypeName("GLint")] int namelen,
             [NativeTypeName("const GLchar *")] Ref<sbyte> name,
-            [NativeTypeName("GLsizei")] int bufSize,
+            [NativeTypeName("GLsizei")] uint bufSize,
             [NativeTypeName("GLint *")] Ref<int> stringlen,
             [NativeTypeName("GLchar *")] Ref<sbyte> @string
         );
@@ -9213,7 +9213,7 @@ public unsafe partial interface IGL
             [NativeTypeName("GLenum")] uint target,
             [NativeTypeName("GLenum")] uint format,
             [NativeTypeName("GLenum")] uint type,
-            [NativeTypeName("GLsizei")] int bufSize,
+            [NativeTypeName("GLsizei")] uint bufSize,
             Ref table
         );
 
@@ -9223,7 +9223,7 @@ public unsafe partial interface IGL
             [NativeTypeName("GLenum")] uint target,
             [NativeTypeName("GLenum")] uint format,
             [NativeTypeName("GLenum")] uint type,
-            [NativeTypeName("GLsizei")] int bufSize,
+            [NativeTypeName("GLsizei")] uint bufSize,
             Ref table
         );
 
@@ -9233,7 +9233,7 @@ public unsafe partial interface IGL
         static abstract void GetnCompressedTexImage(
             [NativeTypeName("GLenum")] uint target,
             [NativeTypeName("GLint")] int lod,
-            [NativeTypeName("GLsizei")] int bufSize,
+            [NativeTypeName("GLsizei")] uint bufSize,
             Ref pixels
         );
 
@@ -9243,7 +9243,7 @@ public unsafe partial interface IGL
         static abstract void GetnCompressedTexImageArb(
             [NativeTypeName("GLenum")] uint target,
             [NativeTypeName("GLint")] int lod,
-            [NativeTypeName("GLsizei")] int bufSize,
+            [NativeTypeName("GLsizei")] uint bufSize,
             Ref img
         );
 
@@ -9253,7 +9253,7 @@ public unsafe partial interface IGL
             [NativeTypeName("GLenum")] uint target,
             [NativeTypeName("GLenum")] uint format,
             [NativeTypeName("GLenum")] uint type,
-            [NativeTypeName("GLsizei")] int bufSize,
+            [NativeTypeName("GLsizei")] uint bufSize,
             Ref image
         );
 
@@ -9263,7 +9263,7 @@ public unsafe partial interface IGL
             [NativeTypeName("GLenum")] uint target,
             [NativeTypeName("GLenum")] uint format,
             [NativeTypeName("GLenum")] uint type,
-            [NativeTypeName("GLsizei")] int bufSize,
+            [NativeTypeName("GLsizei")] uint bufSize,
             Ref image
         );
 
@@ -9280,10 +9280,10 @@ public unsafe partial interface IGL
         [NativeFunction("opengl", EntryPoint = "glGetnHistogram")]
         static abstract void GetnHistogram(
             [NativeTypeName("GLenum")] uint target,
-            [NativeTypeName("GLboolean")] byte reset,
+            [NativeTypeName("GLboolean")] uint reset,
             [NativeTypeName("GLenum")] uint format,
             [NativeTypeName("GLenum")] uint type,
-            [NativeTypeName("GLsizei")] int bufSize,
+            [NativeTypeName("GLsizei")] uint bufSize,
             Ref values
         );
 
@@ -9291,10 +9291,10 @@ public unsafe partial interface IGL
         [NativeFunction("opengl", EntryPoint = "glGetnHistogramARB")]
         static abstract void GetnHistogramArb(
             [NativeTypeName("GLenum")] uint target,
-            [NativeTypeName("GLboolean")] byte reset,
+            [NativeTypeName("GLboolean")] uint reset,
             [NativeTypeName("GLenum")] uint format,
             [NativeTypeName("GLenum")] uint type,
-            [NativeTypeName("GLsizei")] int bufSize,
+            [NativeTypeName("GLsizei")] uint bufSize,
             Ref values
         );
 
@@ -9303,7 +9303,7 @@ public unsafe partial interface IGL
         static abstract void GetnMap(
             [NativeTypeName("GLenum")] uint target,
             [NativeTypeName("GLenum")] uint query,
-            [NativeTypeName("GLsizei")] int bufSize,
+            [NativeTypeName("GLsizei")] uint bufSize,
             [NativeTypeName("GLdouble *")] Ref<double> v
         );
 
@@ -9312,7 +9312,7 @@ public unsafe partial interface IGL
         static abstract void GetnMapdvArb(
             [NativeTypeName("GLenum")] uint target,
             [NativeTypeName("GLenum")] uint query,
-            [NativeTypeName("GLsizei")] int bufSize,
+            [NativeTypeName("GLsizei")] uint bufSize,
             [NativeTypeName("GLdouble *")] Ref<double> v
         );
 
@@ -9321,7 +9321,7 @@ public unsafe partial interface IGL
         static abstract void GetnMap(
             [NativeTypeName("GLenum")] uint target,
             [NativeTypeName("GLenum")] uint query,
-            [NativeTypeName("GLsizei")] int bufSize,
+            [NativeTypeName("GLsizei")] uint bufSize,
             [NativeTypeName("GLfloat *")] Ref<float> v
         );
 
@@ -9330,7 +9330,7 @@ public unsafe partial interface IGL
         static abstract void GetnMapfvArb(
             [NativeTypeName("GLenum")] uint target,
             [NativeTypeName("GLenum")] uint query,
-            [NativeTypeName("GLsizei")] int bufSize,
+            [NativeTypeName("GLsizei")] uint bufSize,
             [NativeTypeName("GLfloat *")] Ref<float> v
         );
 
@@ -9339,7 +9339,7 @@ public unsafe partial interface IGL
         static abstract void GetnMap(
             [NativeTypeName("GLenum")] uint target,
             [NativeTypeName("GLenum")] uint query,
-            [NativeTypeName("GLsizei")] int bufSize,
+            [NativeTypeName("GLsizei")] uint bufSize,
             [NativeTypeName("GLint *")] Ref<int> v
         );
 
@@ -9348,7 +9348,7 @@ public unsafe partial interface IGL
         static abstract void GetnMapivArb(
             [NativeTypeName("GLenum")] uint target,
             [NativeTypeName("GLenum")] uint query,
-            [NativeTypeName("GLsizei")] int bufSize,
+            [NativeTypeName("GLsizei")] uint bufSize,
             [NativeTypeName("GLint *")] Ref<int> v
         );
 
@@ -9356,10 +9356,10 @@ public unsafe partial interface IGL
         [NativeFunction("opengl", EntryPoint = "glGetnMinmax")]
         static abstract void GetnMinmax(
             [NativeTypeName("GLenum")] uint target,
-            [NativeTypeName("GLboolean")] byte reset,
+            [NativeTypeName("GLboolean")] uint reset,
             [NativeTypeName("GLenum")] uint format,
             [NativeTypeName("GLenum")] uint type,
-            [NativeTypeName("GLsizei")] int bufSize,
+            [NativeTypeName("GLsizei")] uint bufSize,
             Ref values
         );
 
@@ -9367,10 +9367,10 @@ public unsafe partial interface IGL
         [NativeFunction("opengl", EntryPoint = "glGetnMinmaxARB")]
         static abstract void GetnMinmaxArb(
             [NativeTypeName("GLenum")] uint target,
-            [NativeTypeName("GLboolean")] byte reset,
+            [NativeTypeName("GLboolean")] uint reset,
             [NativeTypeName("GLenum")] uint format,
             [NativeTypeName("GLenum")] uint type,
-            [NativeTypeName("GLsizei")] int bufSize,
+            [NativeTypeName("GLsizei")] uint bufSize,
             Ref values
         );
 
@@ -9378,7 +9378,7 @@ public unsafe partial interface IGL
         [NativeFunction("opengl", EntryPoint = "glGetnPixelMapfv")]
         static abstract void GetnPixelMap(
             [NativeTypeName("GLenum")] uint map,
-            [NativeTypeName("GLsizei")] int bufSize,
+            [NativeTypeName("GLsizei")] uint bufSize,
             [NativeTypeName("GLfloat *")] Ref<float> values
         );
 
@@ -9386,7 +9386,7 @@ public unsafe partial interface IGL
         [NativeFunction("opengl", EntryPoint = "glGetnPixelMapfvARB")]
         static abstract void GetnPixelMapfvArb(
             [NativeTypeName("GLenum")] uint map,
-            [NativeTypeName("GLsizei")] int bufSize,
+            [NativeTypeName("GLsizei")] uint bufSize,
             [NativeTypeName("GLfloat *")] Ref<float> values
         );
 
@@ -9394,7 +9394,7 @@ public unsafe partial interface IGL
         [NativeFunction("opengl", EntryPoint = "glGetnPixelMapuiv")]
         static abstract void GetnPixelMap(
             [NativeTypeName("GLenum")] uint map,
-            [NativeTypeName("GLsizei")] int bufSize,
+            [NativeTypeName("GLsizei")] uint bufSize,
             [NativeTypeName("GLuint *")] Ref<uint> values
         );
 
@@ -9402,7 +9402,7 @@ public unsafe partial interface IGL
         [NativeFunction("opengl", EntryPoint = "glGetnPixelMapuivARB")]
         static abstract void GetnPixelMapuivArb(
             [NativeTypeName("GLenum")] uint map,
-            [NativeTypeName("GLsizei")] int bufSize,
+            [NativeTypeName("GLsizei")] uint bufSize,
             [NativeTypeName("GLuint *")] Ref<uint> values
         );
 
@@ -9410,7 +9410,7 @@ public unsafe partial interface IGL
         [NativeFunction("opengl", EntryPoint = "glGetnPixelMapusv")]
         static abstract void GetnPixelMap(
             [NativeTypeName("GLenum")] uint map,
-            [NativeTypeName("GLsizei")] int bufSize,
+            [NativeTypeName("GLsizei")] uint bufSize,
             [NativeTypeName("GLushort *")] Ref<ushort> values
         );
 
@@ -9418,21 +9418,21 @@ public unsafe partial interface IGL
         [NativeFunction("opengl", EntryPoint = "glGetnPixelMapusvARB")]
         static abstract void GetnPixelMapusvArb(
             [NativeTypeName("GLenum")] uint map,
-            [NativeTypeName("GLsizei")] int bufSize,
+            [NativeTypeName("GLsizei")] uint bufSize,
             [NativeTypeName("GLushort *")] Ref<ushort> values
         );
 
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glGetnPolygonStipple")]
         static abstract void GetnPolygonStipple(
-            [NativeTypeName("GLsizei")] int bufSize,
+            [NativeTypeName("GLsizei")] uint bufSize,
             [NativeTypeName("GLubyte *")] Ref<byte> pattern
         );
 
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glGetnPolygonStippleARB")]
         static abstract void GetnPolygonStippleArb(
-            [NativeTypeName("GLsizei")] int bufSize,
+            [NativeTypeName("GLsizei")] uint bufSize,
             [NativeTypeName("GLubyte *")] Ref<byte> pattern
         );
 
@@ -9442,9 +9442,9 @@ public unsafe partial interface IGL
             [NativeTypeName("GLenum")] uint target,
             [NativeTypeName("GLenum")] uint format,
             [NativeTypeName("GLenum")] uint type,
-            [NativeTypeName("GLsizei")] int rowBufSize,
+            [NativeTypeName("GLsizei")] uint rowBufSize,
             Ref row,
-            [NativeTypeName("GLsizei")] int columnBufSize,
+            [NativeTypeName("GLsizei")] uint columnBufSize,
             Ref column,
             Ref span
         );
@@ -9455,9 +9455,9 @@ public unsafe partial interface IGL
             [NativeTypeName("GLenum")] uint target,
             [NativeTypeName("GLenum")] uint format,
             [NativeTypeName("GLenum")] uint type,
-            [NativeTypeName("GLsizei")] int rowBufSize,
+            [NativeTypeName("GLsizei")] uint rowBufSize,
             Ref row,
-            [NativeTypeName("GLsizei")] int columnBufSize,
+            [NativeTypeName("GLsizei")] uint columnBufSize,
             Ref column,
             Ref span
         );
@@ -9470,7 +9470,7 @@ public unsafe partial interface IGL
             [NativeTypeName("GLint")] int level,
             [NativeTypeName("GLenum")] uint format,
             [NativeTypeName("GLenum")] uint type,
-            [NativeTypeName("GLsizei")] int bufSize,
+            [NativeTypeName("GLsizei")] uint bufSize,
             Ref pixels
         );
 
@@ -9482,7 +9482,7 @@ public unsafe partial interface IGL
             [NativeTypeName("GLint")] int level,
             [NativeTypeName("GLenum")] uint format,
             [NativeTypeName("GLenum")] uint type,
-            [NativeTypeName("GLsizei")] int bufSize,
+            [NativeTypeName("GLsizei")] uint bufSize,
             Ref img
         );
 
@@ -9492,7 +9492,7 @@ public unsafe partial interface IGL
         static abstract void GetnUniform(
             [NativeTypeName("GLuint")] uint program,
             [NativeTypeName("GLint")] int location,
-            [NativeTypeName("GLsizei")] int bufSize,
+            [NativeTypeName("GLsizei")] uint bufSize,
             [NativeTypeName("GLdouble *")] Ref<double> @params
         );
 
@@ -9502,7 +9502,7 @@ public unsafe partial interface IGL
         static abstract void GetnUniformdvArb(
             [NativeTypeName("GLuint")] uint program,
             [NativeTypeName("GLint")] int location,
-            [NativeTypeName("GLsizei")] int bufSize,
+            [NativeTypeName("GLsizei")] uint bufSize,
             [NativeTypeName("GLdouble *")] Ref<double> @params
         );
 
@@ -9512,7 +9512,7 @@ public unsafe partial interface IGL
         static abstract void GetnUniform(
             [NativeTypeName("GLuint")] uint program,
             [NativeTypeName("GLint")] int location,
-            [NativeTypeName("GLsizei")] int bufSize,
+            [NativeTypeName("GLsizei")] uint bufSize,
             [NativeTypeName("GLfloat *")] Ref<float> @params
         );
 
@@ -9522,7 +9522,7 @@ public unsafe partial interface IGL
         static abstract void GetnUniformfvArb(
             [NativeTypeName("GLuint")] uint program,
             [NativeTypeName("GLint")] int location,
-            [NativeTypeName("GLsizei")] int bufSize,
+            [NativeTypeName("GLsizei")] uint bufSize,
             [NativeTypeName("GLfloat *")] Ref<float> @params
         );
 
@@ -9532,7 +9532,7 @@ public unsafe partial interface IGL
         static abstract void GetnUniformfvExt(
             [NativeTypeName("GLuint")] uint program,
             [NativeTypeName("GLint")] int location,
-            [NativeTypeName("GLsizei")] int bufSize,
+            [NativeTypeName("GLsizei")] uint bufSize,
             [NativeTypeName("GLfloat *")] Ref<float> @params
         );
 
@@ -9541,7 +9541,7 @@ public unsafe partial interface IGL
         static abstract void GetnUniformfvKhr(
             [NativeTypeName("GLuint")] uint program,
             [NativeTypeName("GLint")] int location,
-            [NativeTypeName("GLsizei")] int bufSize,
+            [NativeTypeName("GLsizei")] uint bufSize,
             [NativeTypeName("GLfloat *")] Ref<float> @params
         );
 
@@ -9551,7 +9551,7 @@ public unsafe partial interface IGL
         static abstract void GetnUniformi64vArb(
             [NativeTypeName("GLuint")] uint program,
             [NativeTypeName("GLint")] int location,
-            [NativeTypeName("GLsizei")] int bufSize,
+            [NativeTypeName("GLsizei")] uint bufSize,
             [NativeTypeName("GLint64 *")] Ref<long> @params
         );
 
@@ -9561,7 +9561,7 @@ public unsafe partial interface IGL
         static abstract void GetnUniform(
             [NativeTypeName("GLuint")] uint program,
             [NativeTypeName("GLint")] int location,
-            [NativeTypeName("GLsizei")] int bufSize,
+            [NativeTypeName("GLsizei")] uint bufSize,
             [NativeTypeName("GLint *")] Ref<int> @params
         );
 
@@ -9571,7 +9571,7 @@ public unsafe partial interface IGL
         static abstract void GetnUniformivArb(
             [NativeTypeName("GLuint")] uint program,
             [NativeTypeName("GLint")] int location,
-            [NativeTypeName("GLsizei")] int bufSize,
+            [NativeTypeName("GLsizei")] uint bufSize,
             [NativeTypeName("GLint *")] Ref<int> @params
         );
 
@@ -9581,7 +9581,7 @@ public unsafe partial interface IGL
         static abstract void GetnUniformivExt(
             [NativeTypeName("GLuint")] uint program,
             [NativeTypeName("GLint")] int location,
-            [NativeTypeName("GLsizei")] int bufSize,
+            [NativeTypeName("GLsizei")] uint bufSize,
             [NativeTypeName("GLint *")] Ref<int> @params
         );
 
@@ -9590,7 +9590,7 @@ public unsafe partial interface IGL
         static abstract void GetnUniformivKhr(
             [NativeTypeName("GLuint")] uint program,
             [NativeTypeName("GLint")] int location,
-            [NativeTypeName("GLsizei")] int bufSize,
+            [NativeTypeName("GLsizei")] uint bufSize,
             [NativeTypeName("GLint *")] Ref<int> @params
         );
 
@@ -9600,7 +9600,7 @@ public unsafe partial interface IGL
         static abstract void GetnUniformui64vArb(
             [NativeTypeName("GLuint")] uint program,
             [NativeTypeName("GLint")] int location,
-            [NativeTypeName("GLsizei")] int bufSize,
+            [NativeTypeName("GLsizei")] uint bufSize,
             [NativeTypeName("GLuint64 *")] Ref<ulong> @params
         );
 
@@ -9610,7 +9610,7 @@ public unsafe partial interface IGL
         static abstract void GetnUniform(
             [NativeTypeName("GLuint")] uint program,
             [NativeTypeName("GLint")] int location,
-            [NativeTypeName("GLsizei")] int bufSize,
+            [NativeTypeName("GLsizei")] uint bufSize,
             [NativeTypeName("GLuint *")] Ref<uint> @params
         );
 
@@ -9620,7 +9620,7 @@ public unsafe partial interface IGL
         static abstract void GetnUniformuivArb(
             [NativeTypeName("GLuint")] uint program,
             [NativeTypeName("GLint")] int location,
-            [NativeTypeName("GLsizei")] int bufSize,
+            [NativeTypeName("GLsizei")] uint bufSize,
             [NativeTypeName("GLuint *")] Ref<uint> @params
         );
 
@@ -9629,7 +9629,7 @@ public unsafe partial interface IGL
         static abstract void GetnUniformuivKhr(
             [NativeTypeName("GLuint")] uint program,
             [NativeTypeName("GLint")] int location,
-            [NativeTypeName("GLsizei")] int bufSize,
+            [NativeTypeName("GLsizei")] uint bufSize,
             [NativeTypeName("GLuint *")] Ref<uint> @params
         );
 
@@ -9655,8 +9655,8 @@ public unsafe partial interface IGL
         static abstract void GetObjectLabel(
             [NativeTypeName("GLenum")] uint identifier,
             [NativeTypeName("GLuint")] uint name,
-            [NativeTypeName("GLsizei")] int bufSize,
-            [NativeTypeName("GLsizei *")] Ref<int> length,
+            [NativeTypeName("GLsizei")] uint bufSize,
+            [NativeTypeName("GLsizei *")] Ref<uint> length,
             [NativeTypeName("GLchar *")] Ref<sbyte> label
         );
 
@@ -9667,8 +9667,8 @@ public unsafe partial interface IGL
         static abstract void GetObjectLabelExt(
             [NativeTypeName("GLenum")] uint type,
             [NativeTypeName("GLuint")] uint @object,
-            [NativeTypeName("GLsizei")] int bufSize,
-            [NativeTypeName("GLsizei *")] Ref<int> length,
+            [NativeTypeName("GLsizei")] uint bufSize,
+            [NativeTypeName("GLsizei *")] Ref<uint> length,
             [NativeTypeName("GLchar *")] Ref<sbyte> label
         );
 
@@ -9677,15 +9677,15 @@ public unsafe partial interface IGL
         static abstract void GetObjectLabelKhr(
             [NativeTypeName("GLenum")] uint identifier,
             [NativeTypeName("GLuint")] uint name,
-            [NativeTypeName("GLsizei")] int bufSize,
-            [NativeTypeName("GLsizei *")] Ref<int> length,
+            [NativeTypeName("GLsizei")] uint bufSize,
+            [NativeTypeName("GLsizei *")] Ref<uint> length,
             [NativeTypeName("GLchar *")] Ref<sbyte> label
         );
 
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glGetObjectParameterfvARB")]
         static abstract void GetObjectParameterfvArb(
-            [NativeTypeName("GLhandleARB")] Ref obj,
+            [NativeTypeName("GLhandleARB")] uint obj,
             [NativeTypeName("GLenum")] uint pname,
             [NativeTypeName("GLfloat *")] Ref<float> @params
         );
@@ -9702,7 +9702,7 @@ public unsafe partial interface IGL
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glGetObjectParameterivARB")]
         static abstract void GetObjectParameterivArb(
-            [NativeTypeName("GLhandleARB")] Ref obj,
+            [NativeTypeName("GLhandleARB")] uint obj,
             [NativeTypeName("GLenum")] uint pname,
             [NativeTypeName("GLint *")] Ref<int> @params
         );
@@ -9712,8 +9712,8 @@ public unsafe partial interface IGL
         [NativeFunction("opengl", EntryPoint = "glGetObjectPtrLabel")]
         static abstract void GetObjectPtrLabel(
             [NativeTypeName("const void *")] Ref ptr,
-            [NativeTypeName("GLsizei")] int bufSize,
-            [NativeTypeName("GLsizei *")] Ref<int> length,
+            [NativeTypeName("GLsizei")] uint bufSize,
+            [NativeTypeName("GLsizei *")] Ref<uint> length,
             [NativeTypeName("GLchar *")] Ref<sbyte> label
         );
 
@@ -9721,8 +9721,8 @@ public unsafe partial interface IGL
         [NativeFunction("opengl", EntryPoint = "glGetObjectPtrLabelKHR")]
         static abstract void GetObjectPtrLabelKhr(
             [NativeTypeName("const void *")] Ref ptr,
-            [NativeTypeName("GLsizei")] int bufSize,
-            [NativeTypeName("GLsizei *")] Ref<int> length,
+            [NativeTypeName("GLsizei")] uint bufSize,
+            [NativeTypeName("GLsizei *")] Ref<uint> length,
             [NativeTypeName("GLchar *")] Ref<sbyte> label
         );
 
@@ -9792,8 +9792,8 @@ public unsafe partial interface IGL
         [NativeFunction("opengl", EntryPoint = "glGetPathLengthNV")]
         static abstract float GetPathLengthNV(
             [NativeTypeName("GLuint")] uint path,
-            [NativeTypeName("GLsizei")] int startSegment,
-            [NativeTypeName("GLsizei")] int numSegments
+            [NativeTypeName("GLsizei")] uint startSegment,
+            [NativeTypeName("GLsizei")] uint numSegments
         );
 
         [SupportedApiProfile("glcore", MinVersion = "3.2")]
@@ -9803,8 +9803,8 @@ public unsafe partial interface IGL
         static abstract void GetPathMetricRangeNV(
             [NativeTypeName("GLbitfield")] uint metricQueryMask,
             [NativeTypeName("GLuint")] uint firstPathName,
-            [NativeTypeName("GLsizei")] int numPaths,
-            [NativeTypeName("GLsizei")] int stride,
+            [NativeTypeName("GLsizei")] uint numPaths,
+            [NativeTypeName("GLsizei")] uint stride,
             [NativeTypeName("GLfloat *")] Ref<float> metrics
         );
 
@@ -9814,11 +9814,11 @@ public unsafe partial interface IGL
         [NativeFunction("opengl", EntryPoint = "glGetPathMetricsNV")]
         static abstract void GetPathMetricsNV(
             [NativeTypeName("GLbitfield")] uint metricQueryMask,
-            [NativeTypeName("GLsizei")] int numPaths,
+            [NativeTypeName("GLsizei")] uint numPaths,
             [NativeTypeName("GLenum")] uint pathNameType,
             [NativeTypeName("const void *")] Ref paths,
             [NativeTypeName("GLuint")] uint pathBase,
-            [NativeTypeName("GLsizei")] int stride,
+            [NativeTypeName("GLsizei")] uint stride,
             [NativeTypeName("GLfloat *")] Ref<float> metrics
         );
 
@@ -9848,7 +9848,7 @@ public unsafe partial interface IGL
         [NativeFunction("opengl", EntryPoint = "glGetPathSpacingNV")]
         static abstract void GetPathSpacingNV(
             [NativeTypeName("GLenum")] uint pathListMode,
-            [NativeTypeName("GLsizei")] int numPaths,
+            [NativeTypeName("GLsizei")] uint numPaths,
             [NativeTypeName("GLenum")] uint pathNameType,
             [NativeTypeName("const void *")] Ref paths,
             [NativeTypeName("GLuint")] uint pathBase,
@@ -9899,7 +9899,7 @@ public unsafe partial interface IGL
         static abstract void GetPerfMonitorCounterDataAmd(
             [NativeTypeName("GLuint")] uint monitor,
             [NativeTypeName("GLenum")] uint pname,
-            [NativeTypeName("GLsizei")] int dataSize,
+            [NativeTypeName("GLsizei")] uint dataSize,
             [NativeTypeName("GLuint *")] Ref<uint> data,
             [NativeTypeName("GLint *")] Ref<int> bytesWritten
         );
@@ -9923,7 +9923,7 @@ public unsafe partial interface IGL
             [NativeTypeName("GLuint")] uint group,
             [NativeTypeName("GLint *")] Ref<int> numCounters,
             [NativeTypeName("GLint *")] Ref<int> maxActiveCounters,
-            [NativeTypeName("GLsizei")] int counterSize,
+            [NativeTypeName("GLsizei")] uint counterSize,
             [NativeTypeName("GLuint *")] Ref<uint> counters
         );
 
@@ -9934,8 +9934,8 @@ public unsafe partial interface IGL
         static abstract void GetPerfMonitorCounterStringAmd(
             [NativeTypeName("GLuint")] uint group,
             [NativeTypeName("GLuint")] uint counter,
-            [NativeTypeName("GLsizei")] int bufSize,
-            [NativeTypeName("GLsizei *")] Ref<int> length,
+            [NativeTypeName("GLsizei")] uint bufSize,
+            [NativeTypeName("GLsizei *")] Ref<uint> length,
             [NativeTypeName("GLchar *")] Ref<sbyte> counterString
         );
 
@@ -9945,7 +9945,7 @@ public unsafe partial interface IGL
         [NativeFunction("opengl", EntryPoint = "glGetPerfMonitorGroupsAMD")]
         static abstract void GetPerfMonitorGroupsAmd(
             [NativeTypeName("GLint *")] Ref<int> numGroups,
-            [NativeTypeName("GLsizei")] int groupsSize,
+            [NativeTypeName("GLsizei")] uint groupsSize,
             [NativeTypeName("GLuint *")] Ref<uint> groups
         );
 
@@ -9955,8 +9955,8 @@ public unsafe partial interface IGL
         [NativeFunction("opengl", EntryPoint = "glGetPerfMonitorGroupStringAMD")]
         static abstract void GetPerfMonitorGroupStringAmd(
             [NativeTypeName("GLuint")] uint group,
-            [NativeTypeName("GLsizei")] int bufSize,
-            [NativeTypeName("GLsizei *")] Ref<int> length,
+            [NativeTypeName("GLsizei")] uint bufSize,
+            [NativeTypeName("GLsizei *")] Ref<uint> length,
             [NativeTypeName("GLchar *")] Ref<sbyte> groupString
         );
 
@@ -9967,7 +9967,7 @@ public unsafe partial interface IGL
         static abstract void GetPerfQueryDataIntel(
             [NativeTypeName("GLuint")] uint queryHandle,
             [NativeTypeName("GLuint")] uint flags,
-            [NativeTypeName("GLsizei")] int dataSize,
+            [NativeTypeName("GLsizei")] uint dataSize,
             Ref data,
             [NativeTypeName("GLuint *")] Ref<uint> bytesWritten
         );
@@ -10095,8 +10095,8 @@ public unsafe partial interface IGL
         [NativeFunction("opengl", EntryPoint = "glGetProgramBinary")]
         static abstract void GetProgramBinary(
             [NativeTypeName("GLuint")] uint program,
-            [NativeTypeName("GLsizei")] int bufSize,
-            [NativeTypeName("GLsizei *")] Ref<int> length,
+            [NativeTypeName("GLsizei")] uint bufSize,
+            [NativeTypeName("GLsizei *")] Ref<uint> length,
             [NativeTypeName("GLenum *")] Ref<uint> binaryFormat,
             Ref binary
         );
@@ -10105,8 +10105,8 @@ public unsafe partial interface IGL
         [NativeFunction("opengl", EntryPoint = "glGetProgramBinaryOES")]
         static abstract void GetProgramBinaryOes(
             [NativeTypeName("GLuint")] uint program,
-            [NativeTypeName("GLsizei")] int bufSize,
-            [NativeTypeName("GLsizei *")] Ref<int> length,
+            [NativeTypeName("GLsizei")] uint bufSize,
+            [NativeTypeName("GLsizei *")] Ref<uint> length,
             [NativeTypeName("GLenum *")] Ref<uint> binaryFormat,
             Ref binary
         );
@@ -10149,8 +10149,8 @@ public unsafe partial interface IGL
         [NativeFunction("opengl", EntryPoint = "glGetProgramInfoLog")]
         static abstract void GetProgramInfoLog(
             [NativeTypeName("GLuint")] uint program,
-            [NativeTypeName("GLsizei")] int bufSize,
-            [NativeTypeName("GLsizei *")] Ref<int> length,
+            [NativeTypeName("GLsizei")] uint bufSize,
+            [NativeTypeName("GLsizei *")] Ref<uint> length,
             [NativeTypeName("GLchar *")] Ref<sbyte> infoLog
         );
 
@@ -10226,7 +10226,7 @@ public unsafe partial interface IGL
         [NativeFunction("opengl", EntryPoint = "glGetProgramNamedParameterdvNV")]
         static abstract void GetProgramNamedParameterdvNV(
             [NativeTypeName("GLuint")] uint id,
-            [NativeTypeName("GLsizei")] int len,
+            [NativeTypeName("GLsizei")] uint len,
             [NativeTypeName("const GLubyte *")] Ref<byte> name,
             [NativeTypeName("GLdouble *")] Ref<double> @params
         );
@@ -10235,7 +10235,7 @@ public unsafe partial interface IGL
         [NativeFunction("opengl", EntryPoint = "glGetProgramNamedParameterfvNV")]
         static abstract void GetProgramNamedParameterfvNV(
             [NativeTypeName("GLuint")] uint id,
-            [NativeTypeName("GLsizei")] int len,
+            [NativeTypeName("GLsizei")] uint len,
             [NativeTypeName("const GLubyte *")] Ref<byte> name,
             [NativeTypeName("GLfloat *")] Ref<float> @params
         );
@@ -10263,8 +10263,8 @@ public unsafe partial interface IGL
         [NativeFunction("opengl", EntryPoint = "glGetProgramPipelineInfoLog")]
         static abstract void GetProgramPipelineInfoLog(
             [NativeTypeName("GLuint")] uint pipeline,
-            [NativeTypeName("GLsizei")] int bufSize,
-            [NativeTypeName("GLsizei *")] Ref<int> length,
+            [NativeTypeName("GLsizei")] uint bufSize,
+            [NativeTypeName("GLsizei *")] Ref<uint> length,
             [NativeTypeName("GLchar *")] Ref<sbyte> infoLog
         );
 
@@ -10272,8 +10272,8 @@ public unsafe partial interface IGL
         [NativeFunction("opengl", EntryPoint = "glGetProgramPipelineInfoLogEXT")]
         static abstract void GetProgramPipelineInfoLogExt(
             [NativeTypeName("GLuint")] uint pipeline,
-            [NativeTypeName("GLsizei")] int bufSize,
-            [NativeTypeName("GLsizei *")] Ref<int> length,
+            [NativeTypeName("GLsizei")] uint bufSize,
+            [NativeTypeName("GLsizei *")] Ref<uint> length,
             [NativeTypeName("GLchar *")] Ref<sbyte> infoLog
         );
 
@@ -10302,10 +10302,10 @@ public unsafe partial interface IGL
             [NativeTypeName("GLuint")] uint program,
             [NativeTypeName("GLenum")] uint programInterface,
             [NativeTypeName("GLuint")] uint index,
-            [NativeTypeName("GLsizei")] int propCount,
+            [NativeTypeName("GLsizei")] uint propCount,
             [NativeTypeName("const GLenum *")] Ref<uint> props,
-            [NativeTypeName("GLsizei")] int count,
-            [NativeTypeName("GLsizei *")] Ref<int> length,
+            [NativeTypeName("GLsizei")] uint count,
+            [NativeTypeName("GLsizei *")] Ref<uint> length,
             [NativeTypeName("GLfloat *")] Ref<float> @params
         );
 
@@ -10326,10 +10326,10 @@ public unsafe partial interface IGL
             [NativeTypeName("GLuint")] uint program,
             [NativeTypeName("GLenum")] uint programInterface,
             [NativeTypeName("GLuint")] uint index,
-            [NativeTypeName("GLsizei")] int propCount,
+            [NativeTypeName("GLsizei")] uint propCount,
             [NativeTypeName("const GLenum *")] Ref<uint> props,
-            [NativeTypeName("GLsizei")] int count,
-            [NativeTypeName("GLsizei *")] Ref<int> length,
+            [NativeTypeName("GLsizei")] uint count,
+            [NativeTypeName("GLsizei *")] Ref<uint> length,
             [NativeTypeName("GLint *")] Ref<int> @params
         );
 
@@ -10369,8 +10369,8 @@ public unsafe partial interface IGL
             [NativeTypeName("GLuint")] uint program,
             [NativeTypeName("GLenum")] uint programInterface,
             [NativeTypeName("GLuint")] uint index,
-            [NativeTypeName("GLsizei")] int bufSize,
-            [NativeTypeName("GLsizei *")] Ref<int> length,
+            [NativeTypeName("GLsizei")] uint bufSize,
+            [NativeTypeName("GLsizei *")] Ref<uint> length,
             [NativeTypeName("GLchar *")] Ref<sbyte> name
         );
 
@@ -10711,8 +10711,8 @@ public unsafe partial interface IGL
         [NativeFunction("opengl", EntryPoint = "glGetShaderInfoLog")]
         static abstract void GetShaderInfoLog(
             [NativeTypeName("GLuint")] uint shader,
-            [NativeTypeName("GLsizei")] int bufSize,
-            [NativeTypeName("GLsizei *")] Ref<int> length,
+            [NativeTypeName("GLsizei")] uint bufSize,
+            [NativeTypeName("GLsizei *")] Ref<uint> length,
             [NativeTypeName("GLchar *")] Ref<sbyte> infoLog
         );
 
@@ -10743,17 +10743,17 @@ public unsafe partial interface IGL
         [NativeFunction("opengl", EntryPoint = "glGetShaderSource")]
         static abstract void GetShaderSource(
             [NativeTypeName("GLuint")] uint shader,
-            [NativeTypeName("GLsizei")] int bufSize,
-            [NativeTypeName("GLsizei *")] Ref<int> length,
+            [NativeTypeName("GLsizei")] uint bufSize,
+            [NativeTypeName("GLsizei *")] Ref<uint> length,
             [NativeTypeName("GLchar *")] Ref<sbyte> source
         );
 
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glGetShaderSourceARB")]
         static abstract void GetShaderSourceArb(
-            [NativeTypeName("GLhandleARB")] Ref obj,
-            [NativeTypeName("GLsizei")] int maxLength,
-            [NativeTypeName("GLsizei *")] Ref<int> length,
+            [NativeTypeName("GLhandleARB")] uint obj,
+            [NativeTypeName("GLsizei")] uint maxLength,
+            [NativeTypeName("GLsizei *")] Ref<uint> length,
             [NativeTypeName("GLcharARB *")] Ref<sbyte> source
         );
 
@@ -10834,8 +10834,8 @@ public unsafe partial interface IGL
         static abstract void GetSync(
             [NativeTypeName("GLsync")] Ref<Sync> sync,
             [NativeTypeName("GLenum")] uint pname,
-            [NativeTypeName("GLsizei")] int count,
-            [NativeTypeName("GLsizei *")] Ref<int> length,
+            [NativeTypeName("GLsizei")] uint count,
+            [NativeTypeName("GLsizei *")] Ref<uint> length,
             [NativeTypeName("GLint *")] Ref<int> values
         );
 
@@ -10845,8 +10845,8 @@ public unsafe partial interface IGL
         static abstract void GetSyncivApple(
             [NativeTypeName("GLsync")] Ref<Sync> sync,
             [NativeTypeName("GLenum")] uint pname,
-            [NativeTypeName("GLsizei")] int count,
-            [NativeTypeName("GLsizei *")] Ref<int> length,
+            [NativeTypeName("GLsizei")] uint count,
+            [NativeTypeName("GLsizei *")] Ref<uint> length,
             [NativeTypeName("GLint *")] Ref<int> values
         );
 
@@ -11121,7 +11121,7 @@ public unsafe partial interface IGL
             [NativeTypeName("GLint")] int level,
             [NativeTypeName("GLenum")] uint format,
             [NativeTypeName("GLenum")] uint type,
-            [NativeTypeName("GLsizei")] int bufSize,
+            [NativeTypeName("GLsizei")] uint bufSize,
             Ref pixels
         );
 
@@ -11291,12 +11291,12 @@ public unsafe partial interface IGL
             [NativeTypeName("GLint")] int xoffset,
             [NativeTypeName("GLint")] int yoffset,
             [NativeTypeName("GLint")] int zoffset,
-            [NativeTypeName("GLsizei")] int width,
-            [NativeTypeName("GLsizei")] int height,
-            [NativeTypeName("GLsizei")] int depth,
+            [NativeTypeName("GLsizei")] uint width,
+            [NativeTypeName("GLsizei")] uint height,
+            [NativeTypeName("GLsizei")] uint depth,
             [NativeTypeName("GLenum")] uint format,
             [NativeTypeName("GLenum")] uint type,
-            [NativeTypeName("GLsizei")] int bufSize,
+            [NativeTypeName("GLsizei")] uint bufSize,
             Ref pixels
         );
 
@@ -11344,9 +11344,9 @@ public unsafe partial interface IGL
         static abstract void GetTransformFeedbackVarying(
             [NativeTypeName("GLuint")] uint program,
             [NativeTypeName("GLuint")] uint index,
-            [NativeTypeName("GLsizei")] int bufSize,
-            [NativeTypeName("GLsizei *")] Ref<int> length,
-            [NativeTypeName("GLsizei *")] Ref<int> size,
+            [NativeTypeName("GLsizei")] uint bufSize,
+            [NativeTypeName("GLsizei *")] Ref<uint> length,
+            [NativeTypeName("GLsizei *")] Ref<uint> size,
             [NativeTypeName("GLenum *")] Ref<uint> type,
             [NativeTypeName("GLchar *")] Ref<sbyte> name
         );
@@ -11356,9 +11356,9 @@ public unsafe partial interface IGL
         static abstract void GetTransformFeedbackVaryingExt(
             [NativeTypeName("GLuint")] uint program,
             [NativeTypeName("GLuint")] uint index,
-            [NativeTypeName("GLsizei")] int bufSize,
-            [NativeTypeName("GLsizei *")] Ref<int> length,
-            [NativeTypeName("GLsizei *")] Ref<int> size,
+            [NativeTypeName("GLsizei")] uint bufSize,
+            [NativeTypeName("GLsizei *")] Ref<uint> length,
+            [NativeTypeName("GLsizei *")] Ref<uint> size,
             [NativeTypeName("GLenum *")] Ref<uint> type,
             [NativeTypeName("GLchar *")] Ref<sbyte> name
         );
@@ -11375,8 +11375,8 @@ public unsafe partial interface IGL
         [NativeFunction("opengl", EntryPoint = "glGetTranslatedShaderSourceANGLE")]
         static abstract void GetTranslatedShaderSourceAngle(
             [NativeTypeName("GLuint")] uint shader,
-            [NativeTypeName("GLsizei")] int bufSize,
-            [NativeTypeName("GLsizei *")] Ref<int> length,
+            [NativeTypeName("GLsizei")] uint bufSize,
+            [NativeTypeName("GLsizei *")] Ref<uint> length,
             [NativeTypeName("GLchar *")] Ref<sbyte> source
         );
 
@@ -11419,7 +11419,7 @@ public unsafe partial interface IGL
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glGetUniformfvARB")]
         static abstract void GetUniformfvArb(
-            [NativeTypeName("GLhandleARB")] Ref programObj,
+            [NativeTypeName("GLhandleARB")] uint programObj,
             [NativeTypeName("GLint")] int location,
             [NativeTypeName("GLfloat *")] Ref<float> @params
         );
@@ -11448,7 +11448,7 @@ public unsafe partial interface IGL
         [NativeFunction("opengl", EntryPoint = "glGetUniformIndices")]
         static abstract void GetUniformIndices(
             [NativeTypeName("GLuint")] uint program,
-            [NativeTypeName("GLsizei")] int uniformCount,
+            [NativeTypeName("GLsizei")] uint uniformCount,
             [NativeTypeName("const GLchar *const *")] Ref2D<sbyte> uniformNames,
             [NativeTypeName("GLuint *")] Ref<uint> uniformIndices
         );
@@ -11466,7 +11466,7 @@ public unsafe partial interface IGL
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glGetUniformivARB")]
         static abstract void GetUniformivArb(
-            [NativeTypeName("GLhandleARB")] Ref programObj,
+            [NativeTypeName("GLhandleARB")] uint programObj,
             [NativeTypeName("GLint")] int location,
             [NativeTypeName("GLint *")] Ref<int> @params
         );
@@ -11485,7 +11485,7 @@ public unsafe partial interface IGL
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glGetUniformLocationARB")]
         static abstract int GetUniformLocationArb(
-            [NativeTypeName("GLhandleARB")] Ref programObj,
+            [NativeTypeName("GLhandleARB")] uint programObj,
             [NativeTypeName("const GLcharARB *")] Ref<sbyte> name
         );
 
@@ -11579,7 +11579,7 @@ public unsafe partial interface IGL
         static abstract void GetVariantBooleanvExt(
             [NativeTypeName("GLuint")] uint id,
             [NativeTypeName("GLenum")] uint value,
-            [NativeTypeName("GLboolean *")] Ref<byte> data
+            [NativeTypeName("GLboolean *")] Ref<uint> data
         );
 
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
@@ -12007,18 +12007,18 @@ public unsafe partial interface IGL
         [NativeFunction("opengl", EntryPoint = "glHistogram")]
         static abstract void Histogram(
             [NativeTypeName("GLenum")] uint target,
-            [NativeTypeName("GLsizei")] int width,
+            [NativeTypeName("GLsizei")] uint width,
             [NativeTypeName("GLenum")] uint internalformat,
-            [NativeTypeName("GLboolean")] byte sink
+            [NativeTypeName("GLboolean")] uint sink
         );
 
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glHistogramEXT")]
         static abstract void HistogramExt(
             [NativeTypeName("GLenum")] uint target,
-            [NativeTypeName("GLsizei")] int width,
+            [NativeTypeName("GLsizei")] uint width,
             [NativeTypeName("GLenum")] uint internalformat,
-            [NativeTypeName("GLboolean")] byte sink
+            [NativeTypeName("GLboolean")] uint sink
         );
 
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
@@ -12143,7 +12143,7 @@ public unsafe partial interface IGL
         [NativeFunction("opengl", EntryPoint = "glIndexFormatNV")]
         static abstract void IndexFormatNV(
             [NativeTypeName("GLenum")] uint type,
-            [NativeTypeName("GLsizei")] int stride
+            [NativeTypeName("GLsizei")] uint stride
         );
 
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
@@ -12180,7 +12180,7 @@ public unsafe partial interface IGL
         [NativeFunction("opengl", EntryPoint = "glIndexPointer")]
         static abstract void IndexPointer(
             [NativeTypeName("GLenum")] uint type,
-            [NativeTypeName("GLsizei")] int stride,
+            [NativeTypeName("GLsizei")] uint stride,
             [NativeTypeName("const void *")] Ref pointer
         );
 
@@ -12188,8 +12188,8 @@ public unsafe partial interface IGL
         [NativeFunction("opengl", EntryPoint = "glIndexPointerEXT")]
         static abstract void IndexPointerExt(
             [NativeTypeName("GLenum")] uint type,
-            [NativeTypeName("GLsizei")] int stride,
-            [NativeTypeName("GLsizei")] int count,
+            [NativeTypeName("GLsizei")] uint stride,
+            [NativeTypeName("GLsizei")] uint count,
             [NativeTypeName("const void *")] Ref pointer
         );
 
@@ -12244,14 +12244,14 @@ public unsafe partial interface IGL
         [SupportedApiProfile("gles2", MinVersion = "2.0")]
         [NativeFunction("opengl", EntryPoint = "glInsertEventMarkerEXT")]
         static abstract void InsertEventMarkerExt(
-            [NativeTypeName("GLsizei")] int length,
+            [NativeTypeName("GLsizei")] uint length,
             [NativeTypeName("const GLchar *")] Ref<sbyte> marker
         );
 
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glInstrumentsBufferSGIX")]
         static abstract void InstrumentsBufferSgix(
-            [NativeTypeName("GLsizei")] int size,
+            [NativeTypeName("GLsizei")] uint size,
             [NativeTypeName("GLint *")] Ref<int> buffer
         );
 
@@ -12259,7 +12259,7 @@ public unsafe partial interface IGL
         [NativeFunction("opengl", EntryPoint = "glInterleavedArrays")]
         static abstract void InterleavedArrays(
             [NativeTypeName("GLenum")] uint format,
-            [NativeTypeName("GLsizei")] int stride,
+            [NativeTypeName("GLsizei")] uint stride,
             [NativeTypeName("const void *")] Ref pointer
         );
 
@@ -12285,7 +12285,7 @@ public unsafe partial interface IGL
         static abstract void InvalidateBufferSubData(
             [NativeTypeName("GLuint")] uint buffer,
             [NativeTypeName("GLintptr")] nint offset,
-            [NativeTypeName("GLsizeiptr")] nint length
+            [NativeTypeName("GLsizeiptr")] nuint length
         );
 
         [SupportedApiProfile("glcore", MinVersion = "3.2")]
@@ -12293,7 +12293,7 @@ public unsafe partial interface IGL
         [NativeFunction("opengl", EntryPoint = "glInvalidateFramebuffer")]
         static abstract void InvalidateFramebuffer(
             [NativeTypeName("GLenum")] uint target,
-            [NativeTypeName("GLsizei")] int numAttachments,
+            [NativeTypeName("GLsizei")] uint numAttachments,
             [NativeTypeName("const GLenum *")] Ref<uint> attachments
         );
 
@@ -12302,7 +12302,7 @@ public unsafe partial interface IGL
         [NativeFunction("opengl", EntryPoint = "glInvalidateNamedFramebufferData")]
         static abstract void InvalidateNamedFramebufferData(
             [NativeTypeName("GLuint")] uint framebuffer,
-            [NativeTypeName("GLsizei")] int numAttachments,
+            [NativeTypeName("GLsizei")] uint numAttachments,
             [NativeTypeName("const GLenum *")] Ref<uint> attachments
         );
 
@@ -12311,12 +12311,12 @@ public unsafe partial interface IGL
         [NativeFunction("opengl", EntryPoint = "glInvalidateNamedFramebufferSubData")]
         static abstract void InvalidateNamedFramebufferSubData(
             [NativeTypeName("GLuint")] uint framebuffer,
-            [NativeTypeName("GLsizei")] int numAttachments,
+            [NativeTypeName("GLsizei")] uint numAttachments,
             [NativeTypeName("const GLenum *")] Ref<uint> attachments,
             [NativeTypeName("GLint")] int x,
             [NativeTypeName("GLint")] int y,
-            [NativeTypeName("GLsizei")] int width,
-            [NativeTypeName("GLsizei")] int height
+            [NativeTypeName("GLsizei")] uint width,
+            [NativeTypeName("GLsizei")] uint height
         );
 
         [SupportedApiProfile("glcore", MinVersion = "3.2")]
@@ -12324,12 +12324,12 @@ public unsafe partial interface IGL
         [NativeFunction("opengl", EntryPoint = "glInvalidateSubFramebuffer")]
         static abstract void InvalidateSubFramebuffer(
             [NativeTypeName("GLenum")] uint target,
-            [NativeTypeName("GLsizei")] int numAttachments,
+            [NativeTypeName("GLsizei")] uint numAttachments,
             [NativeTypeName("const GLenum *")] Ref<uint> attachments,
             [NativeTypeName("GLint")] int x,
             [NativeTypeName("GLint")] int y,
-            [NativeTypeName("GLsizei")] int width,
-            [NativeTypeName("GLsizei")] int height
+            [NativeTypeName("GLsizei")] uint width,
+            [NativeTypeName("GLsizei")] uint height
         );
 
         [SupportedApiProfile("glcore", MinVersion = "3.2")]
@@ -12349,15 +12349,15 @@ public unsafe partial interface IGL
             [NativeTypeName("GLint")] int xoffset,
             [NativeTypeName("GLint")] int yoffset,
             [NativeTypeName("GLint")] int zoffset,
-            [NativeTypeName("GLsizei")] int width,
-            [NativeTypeName("GLsizei")] int height,
-            [NativeTypeName("GLsizei")] int depth
+            [NativeTypeName("GLsizei")] uint width,
+            [NativeTypeName("GLsizei")] uint height,
+            [NativeTypeName("GLsizei")] uint depth
         );
 
         [return: NativeTypeName("GLboolean")]
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glIsAsyncMarkerSGIX")]
-        static abstract byte IsAsyncMarkerSgix([NativeTypeName("GLuint")] uint marker);
+        static abstract uint IsAsyncMarkerSgix([NativeTypeName("GLuint")] uint marker);
 
         [return: NativeTypeName("GLboolean")]
         [SupportedApiProfile("glcore", MinVersion = "3.2")]
@@ -12365,24 +12365,24 @@ public unsafe partial interface IGL
         [SupportedApiProfile("gles1", MaxVersion = "2.0")]
         [SupportedApiProfile("gles2", MinVersion = "2.0")]
         [NativeFunction("opengl", EntryPoint = "glIsBuffer")]
-        static abstract byte IsBuffer([NativeTypeName("GLuint")] uint buffer);
+        static abstract uint IsBuffer([NativeTypeName("GLuint")] uint buffer);
 
         [return: NativeTypeName("GLboolean")]
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glIsBufferARB")]
-        static abstract byte IsBufferArb([NativeTypeName("GLuint")] uint buffer);
+        static abstract uint IsBufferArb([NativeTypeName("GLuint")] uint buffer);
 
         [return: NativeTypeName("GLboolean")]
         [SupportedApiProfile("glcore", MinVersion = "3.2")]
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glIsBufferResidentNV")]
-        static abstract byte IsBufferResidentNV([NativeTypeName("GLenum")] uint target);
+        static abstract uint IsBufferResidentNV([NativeTypeName("GLenum")] uint target);
 
         [return: NativeTypeName("GLboolean")]
         [SupportedApiProfile("glcore", MinVersion = "3.2")]
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glIsCommandListNV")]
-        static abstract byte IsCommandListNV([NativeTypeName("GLuint")] uint list);
+        static abstract uint IsCommandListNV([NativeTypeName("GLuint")] uint list);
 
         [return: NativeTypeName("GLboolean")]
         [SupportedApiProfile("glcore", MinVersion = "3.2")]
@@ -12390,13 +12390,13 @@ public unsafe partial interface IGL
         [SupportedApiProfile("gles1", MaxVersion = "2.0")]
         [SupportedApiProfile("gles2", MinVersion = "2.0")]
         [NativeFunction("opengl", EntryPoint = "glIsEnabled")]
-        static abstract byte IsEnabled([NativeTypeName("GLenum")] uint cap);
+        static abstract uint IsEnabled([NativeTypeName("GLenum")] uint cap);
 
         [return: NativeTypeName("GLboolean")]
         [SupportedApiProfile("glcore", MinVersion = "3.2")]
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glIsEnabledi")]
-        static abstract byte IsEnabled(
+        static abstract uint IsEnabled(
             [NativeTypeName("GLenum")] uint target,
             [NativeTypeName("GLuint")] uint index
         );
@@ -12404,7 +12404,7 @@ public unsafe partial interface IGL
         [return: NativeTypeName("GLboolean")]
         [SupportedApiProfile("gles2", MinVersion = "2.0")]
         [NativeFunction("opengl", EntryPoint = "glIsEnablediEXT")]
-        static abstract byte IsEnablediExt(
+        static abstract uint IsEnablediExt(
             [NativeTypeName("GLenum")] uint target,
             [NativeTypeName("GLuint")] uint index
         );
@@ -12413,7 +12413,7 @@ public unsafe partial interface IGL
         [SupportedApiProfile("glcore", MinVersion = "3.2")]
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glIsEnabledIndexedEXT")]
-        static abstract byte IsEnabledIndexedExt(
+        static abstract uint IsEnabledIndexedExt(
             [NativeTypeName("GLenum")] uint target,
             [NativeTypeName("GLuint")] uint index
         );
@@ -12421,7 +12421,7 @@ public unsafe partial interface IGL
         [return: NativeTypeName("GLboolean")]
         [SupportedApiProfile("gles2", MinVersion = "2.0")]
         [NativeFunction("opengl", EntryPoint = "glIsEnablediNV")]
-        static abstract byte IsEnablediNV(
+        static abstract uint IsEnablediNV(
             [NativeTypeName("GLenum")] uint target,
             [NativeTypeName("GLuint")] uint index
         );
@@ -12429,7 +12429,7 @@ public unsafe partial interface IGL
         [return: NativeTypeName("GLboolean")]
         [SupportedApiProfile("gles2", MinVersion = "2.0")]
         [NativeFunction("opengl", EntryPoint = "glIsEnablediOES")]
-        static abstract byte IsEnablediOes(
+        static abstract uint IsEnablediOes(
             [NativeTypeName("GLenum")] uint target,
             [NativeTypeName("GLuint")] uint index
         );
@@ -12437,60 +12437,60 @@ public unsafe partial interface IGL
         [return: NativeTypeName("GLboolean")]
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glIsFenceAPPLE")]
-        static abstract byte IsFenceApple([NativeTypeName("GLuint")] uint fence);
+        static abstract uint IsFenceApple([NativeTypeName("GLuint")] uint fence);
 
         [return: NativeTypeName("GLboolean")]
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [SupportedApiProfile("gles1", MaxVersion = "2.0")]
         [SupportedApiProfile("gles2", MinVersion = "2.0")]
         [NativeFunction("opengl", EntryPoint = "glIsFenceNV")]
-        static abstract byte IsFenceNV([NativeTypeName("GLuint")] uint fence);
+        static abstract uint IsFenceNV([NativeTypeName("GLuint")] uint fence);
 
         [return: NativeTypeName("GLboolean")]
         [SupportedApiProfile("glcore", MinVersion = "3.2")]
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [SupportedApiProfile("gles2", MinVersion = "2.0")]
         [NativeFunction("opengl", EntryPoint = "glIsFramebuffer")]
-        static abstract byte IsFramebuffer([NativeTypeName("GLuint")] uint framebuffer);
+        static abstract uint IsFramebuffer([NativeTypeName("GLuint")] uint framebuffer);
 
         [return: NativeTypeName("GLboolean")]
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glIsFramebufferEXT")]
-        static abstract byte IsFramebufferExt([NativeTypeName("GLuint")] uint framebuffer);
+        static abstract uint IsFramebufferExt([NativeTypeName("GLuint")] uint framebuffer);
 
         [return: NativeTypeName("GLboolean")]
         [SupportedApiProfile("gles1", MaxVersion = "2.0")]
         [NativeFunction("opengl", EntryPoint = "glIsFramebufferOES")]
-        static abstract byte IsFramebufferOes([NativeTypeName("GLuint")] uint framebuffer);
+        static abstract uint IsFramebufferOes([NativeTypeName("GLuint")] uint framebuffer);
 
         [return: NativeTypeName("GLboolean")]
         [SupportedApiProfile("glcore", MinVersion = "3.2")]
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glIsImageHandleResidentARB")]
-        static abstract byte IsImageHandleResidentArb([NativeTypeName("GLuint64")] ulong handle);
+        static abstract uint IsImageHandleResidentArb([NativeTypeName("GLuint64")] ulong handle);
 
         [return: NativeTypeName("GLboolean")]
         [SupportedApiProfile("glcore", MinVersion = "3.2")]
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [SupportedApiProfile("gles2", MinVersion = "2.0")]
         [NativeFunction("opengl", EntryPoint = "glIsImageHandleResidentNV")]
-        static abstract byte IsImageHandleResidentNV([NativeTypeName("GLuint64")] ulong handle);
+        static abstract uint IsImageHandleResidentNV([NativeTypeName("GLuint64")] ulong handle);
 
         [return: NativeTypeName("GLboolean")]
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glIsList")]
-        static abstract byte IsList([NativeTypeName("GLuint")] uint list);
+        static abstract uint IsList([NativeTypeName("GLuint")] uint list);
 
         [return: NativeTypeName("GLboolean")]
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [SupportedApiProfile("gles2", MinVersion = "2.0")]
         [NativeFunction("opengl", EntryPoint = "glIsMemoryObjectEXT")]
-        static abstract byte IsMemoryObjectExt([NativeTypeName("GLuint")] uint memoryObject);
+        static abstract uint IsMemoryObjectExt([NativeTypeName("GLuint")] uint memoryObject);
 
         [return: NativeTypeName("GLboolean")]
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glIsNameAMD")]
-        static abstract byte IsNameAmd(
+        static abstract uint IsNameAmd(
             [NativeTypeName("GLenum")] uint identifier,
             [NativeTypeName("GLuint")] uint name
         );
@@ -12499,13 +12499,13 @@ public unsafe partial interface IGL
         [SupportedApiProfile("glcore", MinVersion = "3.2")]
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glIsNamedBufferResidentNV")]
-        static abstract byte IsNamedBufferResidentNV([NativeTypeName("GLuint")] uint buffer);
+        static abstract uint IsNamedBufferResidentNV([NativeTypeName("GLuint")] uint buffer);
 
         [return: NativeTypeName("GLboolean")]
         [SupportedApiProfile("glcore", MinVersion = "3.2")]
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glIsNamedStringARB")]
-        static abstract byte IsNamedStringArb(
+        static abstract uint IsNamedStringArb(
             [NativeTypeName("GLint")] int namelen,
             [NativeTypeName("const GLchar *")] Ref<sbyte> name
         );
@@ -12513,26 +12513,26 @@ public unsafe partial interface IGL
         [return: NativeTypeName("GLboolean")]
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glIsObjectBufferATI")]
-        static abstract byte IsObjectBufferAti([NativeTypeName("GLuint")] uint buffer);
+        static abstract uint IsObjectBufferAti([NativeTypeName("GLuint")] uint buffer);
 
         [return: NativeTypeName("GLboolean")]
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glIsOcclusionQueryNV")]
-        static abstract byte IsOcclusionQueryNV([NativeTypeName("GLuint")] uint id);
+        static abstract uint IsOcclusionQueryNV([NativeTypeName("GLuint")] uint id);
 
         [return: NativeTypeName("GLboolean")]
         [SupportedApiProfile("glcore", MinVersion = "3.2")]
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [SupportedApiProfile("gles2", MinVersion = "2.0")]
         [NativeFunction("opengl", EntryPoint = "glIsPathNV")]
-        static abstract byte IsPathNV([NativeTypeName("GLuint")] uint path);
+        static abstract uint IsPathNV([NativeTypeName("GLuint")] uint path);
 
         [return: NativeTypeName("GLboolean")]
         [SupportedApiProfile("glcore", MinVersion = "3.2")]
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [SupportedApiProfile("gles2", MinVersion = "2.0")]
         [NativeFunction("opengl", EntryPoint = "glIsPointInFillPathNV")]
-        static abstract byte IsPointInFillPathNV(
+        static abstract uint IsPointInFillPathNV(
             [NativeTypeName("GLuint")] uint path,
             [NativeTypeName("GLuint")] uint mask,
             [NativeTypeName("GLfloat")] float x,
@@ -12544,7 +12544,7 @@ public unsafe partial interface IGL
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [SupportedApiProfile("gles2", MinVersion = "2.0")]
         [NativeFunction("opengl", EntryPoint = "glIsPointInStrokePathNV")]
-        static abstract byte IsPointInStrokePathNV(
+        static abstract uint IsPointInStrokePathNV(
             [NativeTypeName("GLuint")] uint path,
             [NativeTypeName("GLfloat")] float x,
             [NativeTypeName("GLfloat")] float y
@@ -12555,99 +12555,99 @@ public unsafe partial interface IGL
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [SupportedApiProfile("gles2", MinVersion = "2.0")]
         [NativeFunction("opengl", EntryPoint = "glIsProgram")]
-        static abstract byte IsProgram([NativeTypeName("GLuint")] uint program);
+        static abstract uint IsProgram([NativeTypeName("GLuint")] uint program);
 
         [return: NativeTypeName("GLboolean")]
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glIsProgramARB")]
-        static abstract byte IsProgramArb([NativeTypeName("GLuint")] uint program);
+        static abstract uint IsProgramArb([NativeTypeName("GLuint")] uint program);
 
         [return: NativeTypeName("GLboolean")]
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glIsProgramNV")]
-        static abstract byte IsProgramNV([NativeTypeName("GLuint")] uint id);
+        static abstract uint IsProgramNV([NativeTypeName("GLuint")] uint id);
 
         [return: NativeTypeName("GLboolean")]
         [SupportedApiProfile("glcore", MinVersion = "3.2")]
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glIsProgramPipeline")]
-        static abstract byte IsProgramPipeline([NativeTypeName("GLuint")] uint pipeline);
+        static abstract uint IsProgramPipeline([NativeTypeName("GLuint")] uint pipeline);
 
         [return: NativeTypeName("GLboolean")]
         [SupportedApiProfile("gles2", MinVersion = "2.0")]
         [NativeFunction("opengl", EntryPoint = "glIsProgramPipelineEXT")]
-        static abstract byte IsProgramPipelineExt([NativeTypeName("GLuint")] uint pipeline);
+        static abstract uint IsProgramPipelineExt([NativeTypeName("GLuint")] uint pipeline);
 
         [return: NativeTypeName("GLboolean")]
         [SupportedApiProfile("glcore", MinVersion = "3.2")]
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glIsQuery")]
-        static abstract byte IsQuery([NativeTypeName("GLuint")] uint id);
+        static abstract uint IsQuery([NativeTypeName("GLuint")] uint id);
 
         [return: NativeTypeName("GLboolean")]
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glIsQueryARB")]
-        static abstract byte IsQueryArb([NativeTypeName("GLuint")] uint id);
+        static abstract uint IsQueryArb([NativeTypeName("GLuint")] uint id);
 
         [return: NativeTypeName("GLboolean")]
         [SupportedApiProfile("gles2", MinVersion = "2.0")]
         [NativeFunction("opengl", EntryPoint = "glIsQueryEXT")]
-        static abstract byte IsQueryExt([NativeTypeName("GLuint")] uint id);
+        static abstract uint IsQueryExt([NativeTypeName("GLuint")] uint id);
 
         [return: NativeTypeName("GLboolean")]
         [SupportedApiProfile("glcore", MinVersion = "3.2")]
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [SupportedApiProfile("gles2", MinVersion = "2.0")]
         [NativeFunction("opengl", EntryPoint = "glIsRenderbuffer")]
-        static abstract byte IsRenderbuffer([NativeTypeName("GLuint")] uint renderbuffer);
+        static abstract uint IsRenderbuffer([NativeTypeName("GLuint")] uint renderbuffer);
 
         [return: NativeTypeName("GLboolean")]
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glIsRenderbufferEXT")]
-        static abstract byte IsRenderbufferExt([NativeTypeName("GLuint")] uint renderbuffer);
+        static abstract uint IsRenderbufferExt([NativeTypeName("GLuint")] uint renderbuffer);
 
         [return: NativeTypeName("GLboolean")]
         [SupportedApiProfile("gles1", MaxVersion = "2.0")]
         [NativeFunction("opengl", EntryPoint = "glIsRenderbufferOES")]
-        static abstract byte IsRenderbufferOes([NativeTypeName("GLuint")] uint renderbuffer);
+        static abstract uint IsRenderbufferOes([NativeTypeName("GLuint")] uint renderbuffer);
 
         [return: NativeTypeName("GLboolean")]
         [SupportedApiProfile("glcore", MinVersion = "3.2")]
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [SupportedApiProfile("gles2", MinVersion = "2.0")]
         [NativeFunction("opengl", EntryPoint = "glIsSampler")]
-        static abstract byte IsSampler([NativeTypeName("GLuint")] uint sampler);
+        static abstract uint IsSampler([NativeTypeName("GLuint")] uint sampler);
 
         [return: NativeTypeName("GLboolean")]
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [SupportedApiProfile("gles2", MinVersion = "2.0")]
         [NativeFunction("opengl", EntryPoint = "glIsSemaphoreEXT")]
-        static abstract byte IsSemaphoreExt([NativeTypeName("GLuint")] uint semaphore);
+        static abstract uint IsSemaphoreExt([NativeTypeName("GLuint")] uint semaphore);
 
         [return: NativeTypeName("GLboolean")]
         [SupportedApiProfile("glcore", MinVersion = "3.2")]
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [SupportedApiProfile("gles2", MinVersion = "2.0")]
         [NativeFunction("opengl", EntryPoint = "glIsShader")]
-        static abstract byte IsShader([NativeTypeName("GLuint")] uint shader);
+        static abstract uint IsShader([NativeTypeName("GLuint")] uint shader);
 
         [return: NativeTypeName("GLboolean")]
         [SupportedApiProfile("glcore", MinVersion = "3.2")]
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glIsStateNV")]
-        static abstract byte IsStateNV([NativeTypeName("GLuint")] uint state);
+        static abstract uint IsStateNV([NativeTypeName("GLuint")] uint state);
 
         [return: NativeTypeName("GLboolean")]
         [SupportedApiProfile("glcore", MinVersion = "3.2")]
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glIsSync")]
-        static abstract byte IsSync([NativeTypeName("GLsync")] Ref<Sync> sync);
+        static abstract uint IsSync([NativeTypeName("GLsync")] Ref<Sync> sync);
 
         [return: NativeTypeName("GLboolean")]
         [SupportedApiProfile("gles1", MaxVersion = "2.0")]
         [SupportedApiProfile("gles2", MinVersion = "2.0")]
         [NativeFunction("opengl", EntryPoint = "glIsSyncAPPLE")]
-        static abstract byte IsSyncApple([NativeTypeName("GLsync")] Ref<Sync> sync);
+        static abstract uint IsSyncApple([NativeTypeName("GLsync")] Ref<Sync> sync);
 
         [return: NativeTypeName("GLboolean")]
         [SupportedApiProfile("glcore", MinVersion = "3.2")]
@@ -12655,41 +12655,41 @@ public unsafe partial interface IGL
         [SupportedApiProfile("gles1", MaxVersion = "2.0")]
         [SupportedApiProfile("gles2", MinVersion = "2.0")]
         [NativeFunction("opengl", EntryPoint = "glIsTexture")]
-        static abstract byte IsTexture([NativeTypeName("GLuint")] uint texture);
+        static abstract uint IsTexture([NativeTypeName("GLuint")] uint texture);
 
         [return: NativeTypeName("GLboolean")]
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glIsTextureEXT")]
-        static abstract byte IsTextureExt([NativeTypeName("GLuint")] uint texture);
+        static abstract uint IsTextureExt([NativeTypeName("GLuint")] uint texture);
 
         [return: NativeTypeName("GLboolean")]
         [SupportedApiProfile("glcore", MinVersion = "3.2")]
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glIsTextureHandleResidentARB")]
-        static abstract byte IsTextureHandleResidentArb([NativeTypeName("GLuint64")] ulong handle);
+        static abstract uint IsTextureHandleResidentArb([NativeTypeName("GLuint64")] ulong handle);
 
         [return: NativeTypeName("GLboolean")]
         [SupportedApiProfile("glcore", MinVersion = "3.2")]
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [SupportedApiProfile("gles2", MinVersion = "2.0")]
         [NativeFunction("opengl", EntryPoint = "glIsTextureHandleResidentNV")]
-        static abstract byte IsTextureHandleResidentNV([NativeTypeName("GLuint64")] ulong handle);
+        static abstract uint IsTextureHandleResidentNV([NativeTypeName("GLuint64")] ulong handle);
 
         [return: NativeTypeName("GLboolean")]
         [SupportedApiProfile("glcore", MinVersion = "3.2")]
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glIsTransformFeedback")]
-        static abstract byte IsTransformFeedback([NativeTypeName("GLuint")] uint id);
+        static abstract uint IsTransformFeedback([NativeTypeName("GLuint")] uint id);
 
         [return: NativeTypeName("GLboolean")]
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glIsTransformFeedbackNV")]
-        static abstract byte IsTransformFeedbackNV([NativeTypeName("GLuint")] uint id);
+        static abstract uint IsTransformFeedbackNV([NativeTypeName("GLuint")] uint id);
 
         [return: NativeTypeName("GLboolean")]
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glIsVariantEnabledEXT")]
-        static abstract byte IsVariantEnabledExt(
+        static abstract uint IsVariantEnabledExt(
             [NativeTypeName("GLuint")] uint id,
             [NativeTypeName("GLenum")] uint cap
         );
@@ -12698,23 +12698,23 @@ public unsafe partial interface IGL
         [SupportedApiProfile("glcore", MinVersion = "3.2")]
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glIsVertexArray")]
-        static abstract byte IsVertexArray([NativeTypeName("GLuint")] uint array);
+        static abstract uint IsVertexArray([NativeTypeName("GLuint")] uint array);
 
         [return: NativeTypeName("GLboolean")]
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glIsVertexArrayAPPLE")]
-        static abstract byte IsVertexArrayApple([NativeTypeName("GLuint")] uint array);
+        static abstract uint IsVertexArrayApple([NativeTypeName("GLuint")] uint array);
 
         [return: NativeTypeName("GLboolean")]
         [SupportedApiProfile("gles1", MaxVersion = "2.0")]
         [SupportedApiProfile("gles2", MinVersion = "2.0")]
         [NativeFunction("opengl", EntryPoint = "glIsVertexArrayOES")]
-        static abstract byte IsVertexArrayOes([NativeTypeName("GLuint")] uint array);
+        static abstract uint IsVertexArrayOes([NativeTypeName("GLuint")] uint array);
 
         [return: NativeTypeName("GLboolean")]
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glIsVertexAttribEnabledAPPLE")]
-        static abstract byte IsVertexAttribEnabledApple(
+        static abstract uint IsVertexAttribEnabledApple(
             [NativeTypeName("GLuint")] uint index,
             [NativeTypeName("GLenum")] uint pname
         );
@@ -12726,7 +12726,7 @@ public unsafe partial interface IGL
         static abstract void LabelObjectExt(
             [NativeTypeName("GLenum")] uint type,
             [NativeTypeName("GLuint")] uint @object,
-            [NativeTypeName("GLsizei")] int length,
+            [NativeTypeName("GLsizei")] uint length,
             [NativeTypeName("const GLchar *")] Ref<sbyte> label
         );
 
@@ -12747,9 +12747,9 @@ public unsafe partial interface IGL
             [NativeTypeName("GLint")] int dstX,
             [NativeTypeName("GLint")] int dstY,
             [NativeTypeName("GLint")] int dstZ,
-            [NativeTypeName("GLsizei")] int width,
-            [NativeTypeName("GLsizei")] int height,
-            [NativeTypeName("GLsizei")] int depth
+            [NativeTypeName("GLsizei")] uint width,
+            [NativeTypeName("GLsizei")] uint height,
+            [NativeTypeName("GLsizei")] uint depth
         );
 
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
@@ -12762,7 +12762,7 @@ public unsafe partial interface IGL
             [NativeTypeName("GLbitfield")] uint gpuMask,
             [NativeTypeName("GLuint")] uint buffer,
             [NativeTypeName("GLintptr")] nint offset,
-            [NativeTypeName("GLsizeiptr")] nint size,
+            [NativeTypeName("GLsizeiptr")] nuint size,
             [NativeTypeName("const void *")] Ref data
         );
 
@@ -12932,7 +12932,7 @@ public unsafe partial interface IGL
 
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glLinkProgramARB")]
-        static abstract void LinkProgramArb([NativeTypeName("GLhandleARB")] Ref programObj);
+        static abstract void LinkProgramArb([NativeTypeName("GLhandleARB")] uint programObj);
 
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glListBase")]
@@ -12945,7 +12945,7 @@ public unsafe partial interface IGL
             [NativeTypeName("GLuint")] uint list,
             [NativeTypeName("GLuint")] uint segment,
             [NativeTypeName("const void **")] Ref2D indirects,
-            [NativeTypeName("const GLsizei *")] Ref<int> sizes,
+            [NativeTypeName("const GLsizei *")] Ref<uint> sizes,
             [NativeTypeName("const GLuint *")] Ref<uint> states,
             [NativeTypeName("const GLuint *")] Ref<uint> fbos,
             [NativeTypeName("GLuint")] uint count
@@ -13025,7 +13025,7 @@ public unsafe partial interface IGL
         static abstract void LoadProgramNV(
             [NativeTypeName("GLenum")] uint target,
             [NativeTypeName("GLuint")] uint id,
-            [NativeTypeName("GLsizei")] int len,
+            [NativeTypeName("GLsizei")] uint len,
             [NativeTypeName("const GLubyte *")] Ref<byte> program
         );
 
@@ -13061,7 +13061,7 @@ public unsafe partial interface IGL
         [NativeFunction("opengl", EntryPoint = "glLockArraysEXT")]
         static abstract void LockArraysExt(
             [NativeTypeName("GLint")] int first,
-            [NativeTypeName("GLsizei")] int count
+            [NativeTypeName("GLsizei")] uint count
         );
 
         [SupportedApiProfile("glcore", MinVersion = "3.2")]
@@ -13263,7 +13263,7 @@ public unsafe partial interface IGL
         static abstract Ptr MapBufferRange(
             [NativeTypeName("GLenum")] uint target,
             [NativeTypeName("GLintptr")] nint offset,
-            [NativeTypeName("GLsizeiptr")] nint length,
+            [NativeTypeName("GLsizeiptr")] nuint length,
             [NativeTypeName("GLbitfield")] uint access
         );
 
@@ -13273,7 +13273,7 @@ public unsafe partial interface IGL
         static abstract Ptr MapBufferRangeExt(
             [NativeTypeName("GLenum")] uint target,
             [NativeTypeName("GLintptr")] nint offset,
-            [NativeTypeName("GLsizeiptr")] nint length,
+            [NativeTypeName("GLsizeiptr")] nuint length,
             [NativeTypeName("GLbitfield")] uint access
         );
 
@@ -13283,11 +13283,11 @@ public unsafe partial interface IGL
             [NativeTypeName("GLenum")] uint target,
             [NativeTypeName("GLuint")] uint index,
             [NativeTypeName("GLenum")] uint type,
-            [NativeTypeName("GLsizei")] int ustride,
-            [NativeTypeName("GLsizei")] int vstride,
+            [NativeTypeName("GLsizei")] uint ustride,
+            [NativeTypeName("GLsizei")] uint vstride,
             [NativeTypeName("GLint")] int uorder,
             [NativeTypeName("GLint")] int vorder,
-            [NativeTypeName("GLboolean")] byte packed,
+            [NativeTypeName("GLboolean")] uint packed,
             [NativeTypeName("const void *")] Ref points
         );
 
@@ -13369,7 +13369,7 @@ public unsafe partial interface IGL
         static abstract Ptr MapNamedBufferRange(
             [NativeTypeName("GLuint")] uint buffer,
             [NativeTypeName("GLintptr")] nint offset,
-            [NativeTypeName("GLsizeiptr")] nint length,
+            [NativeTypeName("GLsizeiptr")] nuint length,
             [NativeTypeName("GLbitfield")] uint access
         );
 
@@ -13379,7 +13379,7 @@ public unsafe partial interface IGL
         static abstract Ptr MapNamedBufferRangeExt(
             [NativeTypeName("GLuint")] uint buffer,
             [NativeTypeName("GLintptr")] nint offset,
-            [NativeTypeName("GLsizeiptr")] nint length,
+            [NativeTypeName("GLsizeiptr")] nuint length,
             [NativeTypeName("GLbitfield")] uint access
         );
 
@@ -13556,7 +13556,7 @@ public unsafe partial interface IGL
         static abstract void MatrixIndexPointerArb(
             [NativeTypeName("GLint")] int size,
             [NativeTypeName("GLenum")] uint type,
-            [NativeTypeName("GLsizei")] int stride,
+            [NativeTypeName("GLsizei")] uint stride,
             [NativeTypeName("const void *")] Ref pointer
         );
 
@@ -13565,7 +13565,7 @@ public unsafe partial interface IGL
         static abstract void MatrixIndexPointerOes(
             [NativeTypeName("GLint")] int size,
             [NativeTypeName("GLenum")] uint type,
-            [NativeTypeName("GLsizei")] int stride,
+            [NativeTypeName("GLsizei")] uint stride,
             [NativeTypeName("const void *")] Ref pointer
         );
 
@@ -13860,7 +13860,7 @@ public unsafe partial interface IGL
         static abstract void Minmax(
             [NativeTypeName("GLenum")] uint target,
             [NativeTypeName("GLenum")] uint internalformat,
-            [NativeTypeName("GLboolean")] byte sink
+            [NativeTypeName("GLboolean")] uint sink
         );
 
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
@@ -13868,7 +13868,7 @@ public unsafe partial interface IGL
         static abstract void MinmaxExt(
             [NativeTypeName("GLenum")] uint target,
             [NativeTypeName("GLenum")] uint internalformat,
-            [NativeTypeName("GLboolean")] byte sink
+            [NativeTypeName("GLboolean")] uint sink
         );
 
         [SupportedApiProfile("glcore", MinVersion = "3.2")]
@@ -13912,7 +13912,7 @@ public unsafe partial interface IGL
             [NativeTypeName("GLbitfield")] uint gpuMask,
             [NativeTypeName("GLuint")] uint buffer,
             [NativeTypeName("GLintptr")] nint offset,
-            [NativeTypeName("GLsizeiptr")] nint size,
+            [NativeTypeName("GLsizeiptr")] nuint size,
             [NativeTypeName("const void *")] Ref data
         );
 
@@ -13925,7 +13925,7 @@ public unsafe partial interface IGL
             [NativeTypeName("GLuint")] uint writeBuffer,
             [NativeTypeName("GLintptr")] nint readOffset,
             [NativeTypeName("GLintptr")] nint writeOffset,
-            [NativeTypeName("GLsizeiptr")] nint size
+            [NativeTypeName("GLsizeiptr")] nuint size
         );
 
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
@@ -13945,9 +13945,9 @@ public unsafe partial interface IGL
             [NativeTypeName("GLint")] int dstX,
             [NativeTypeName("GLint")] int dstY,
             [NativeTypeName("GLint")] int dstZ,
-            [NativeTypeName("GLsizei")] int srcWidth,
-            [NativeTypeName("GLsizei")] int srcHeight,
-            [NativeTypeName("GLsizei")] int srcDepth
+            [NativeTypeName("GLsizei")] uint srcWidth,
+            [NativeTypeName("GLsizei")] uint srcHeight,
+            [NativeTypeName("GLsizei")] uint srcDepth
         );
 
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
@@ -13956,7 +13956,7 @@ public unsafe partial interface IGL
             [NativeTypeName("GLuint")] uint gpu,
             [NativeTypeName("GLuint")] uint framebuffer,
             [NativeTypeName("GLuint")] uint start,
-            [NativeTypeName("GLsizei")] int count,
+            [NativeTypeName("GLsizei")] uint count,
             [NativeTypeName("const GLfloat *")] Ref<float> v
         );
 
@@ -14001,7 +14001,7 @@ public unsafe partial interface IGL
         static abstract void MulticastScissorArrayvNvx(
             [NativeTypeName("GLuint")] uint gpu,
             [NativeTypeName("GLuint")] uint first,
-            [NativeTypeName("GLsizei")] int count,
+            [NativeTypeName("GLsizei")] uint count,
             [NativeTypeName("const GLint *")] Ref<int> v
         );
 
@@ -14010,7 +14010,7 @@ public unsafe partial interface IGL
         static abstract void MulticastViewportArrayvNvx(
             [NativeTypeName("GLuint")] uint gpu,
             [NativeTypeName("GLuint")] uint first,
-            [NativeTypeName("GLsizei")] int count,
+            [NativeTypeName("GLsizei")] uint count,
             [NativeTypeName("const GLfloat *")] Ref<float> v
         );
 
@@ -14036,8 +14036,8 @@ public unsafe partial interface IGL
         static abstract void MultiDrawArrays(
             [NativeTypeName("GLenum")] uint mode,
             [NativeTypeName("const GLint *")] Ref<int> first,
-            [NativeTypeName("const GLsizei *")] Ref<int> count,
-            [NativeTypeName("GLsizei")] int drawcount
+            [NativeTypeName("const GLsizei *")] Ref<uint> count,
+            [NativeTypeName("GLsizei")] uint drawcount
         );
 
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
@@ -14047,8 +14047,8 @@ public unsafe partial interface IGL
         static abstract void MultiDrawArraysExt(
             [NativeTypeName("GLenum")] uint mode,
             [NativeTypeName("const GLint *")] Ref<int> first,
-            [NativeTypeName("const GLsizei *")] Ref<int> count,
-            [NativeTypeName("GLsizei")] int primcount
+            [NativeTypeName("const GLsizei *")] Ref<uint> count,
+            [NativeTypeName("GLsizei")] uint primcount
         );
 
         [SupportedApiProfile("glcore", MinVersion = "3.2")]
@@ -14057,8 +14057,8 @@ public unsafe partial interface IGL
         static abstract void MultiDrawArraysIndirect(
             [NativeTypeName("GLenum")] uint mode,
             [NativeTypeName("const void *")] Ref indirect,
-            [NativeTypeName("GLsizei")] int drawcount,
-            [NativeTypeName("GLsizei")] int stride
+            [NativeTypeName("GLsizei")] uint drawcount,
+            [NativeTypeName("GLsizei")] uint stride
         );
 
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
@@ -14066,8 +14066,8 @@ public unsafe partial interface IGL
         static abstract void MultiDrawArraysIndirectAmd(
             [NativeTypeName("GLenum")] uint mode,
             [NativeTypeName("const void *")] Ref indirect,
-            [NativeTypeName("GLsizei")] int primcount,
-            [NativeTypeName("GLsizei")] int stride
+            [NativeTypeName("GLsizei")] uint primcount,
+            [NativeTypeName("GLsizei")] uint stride
         );
 
         [SupportedApiProfile("glcore", MinVersion = "3.2")]
@@ -14076,9 +14076,9 @@ public unsafe partial interface IGL
         static abstract void MultiDrawArraysIndirectBindlessCountNV(
             [NativeTypeName("GLenum")] uint mode,
             [NativeTypeName("const void *")] Ref indirect,
-            [NativeTypeName("GLsizei")] int drawCount,
-            [NativeTypeName("GLsizei")] int maxDrawCount,
-            [NativeTypeName("GLsizei")] int stride,
+            [NativeTypeName("GLsizei")] uint drawCount,
+            [NativeTypeName("GLsizei")] uint maxDrawCount,
+            [NativeTypeName("GLsizei")] uint stride,
             [NativeTypeName("GLint")] int vertexBufferCount
         );
 
@@ -14088,8 +14088,8 @@ public unsafe partial interface IGL
         static abstract void MultiDrawArraysIndirectBindlessNV(
             [NativeTypeName("GLenum")] uint mode,
             [NativeTypeName("const void *")] Ref indirect,
-            [NativeTypeName("GLsizei")] int drawCount,
-            [NativeTypeName("GLsizei")] int stride,
+            [NativeTypeName("GLsizei")] uint drawCount,
+            [NativeTypeName("GLsizei")] uint stride,
             [NativeTypeName("GLint")] int vertexBufferCount
         );
 
@@ -14100,8 +14100,8 @@ public unsafe partial interface IGL
             [NativeTypeName("GLenum")] uint mode,
             [NativeTypeName("const void *")] Ref indirect,
             [NativeTypeName("GLintptr")] nint drawcount,
-            [NativeTypeName("GLsizei")] int maxdrawcount,
-            [NativeTypeName("GLsizei")] int stride
+            [NativeTypeName("GLsizei")] uint maxdrawcount,
+            [NativeTypeName("GLsizei")] uint stride
         );
 
         [SupportedApiProfile("glcore", MinVersion = "3.2")]
@@ -14111,8 +14111,8 @@ public unsafe partial interface IGL
             [NativeTypeName("GLenum")] uint mode,
             [NativeTypeName("const void *")] Ref indirect,
             [NativeTypeName("GLintptr")] nint drawcount,
-            [NativeTypeName("GLsizei")] int maxdrawcount,
-            [NativeTypeName("GLsizei")] int stride
+            [NativeTypeName("GLsizei")] uint maxdrawcount,
+            [NativeTypeName("GLsizei")] uint stride
         );
 
         [SupportedApiProfile("gles2", MinVersion = "2.0")]
@@ -14120,8 +14120,8 @@ public unsafe partial interface IGL
         static abstract void MultiDrawArraysIndirectExt(
             [NativeTypeName("GLenum")] uint mode,
             [NativeTypeName("const void *")] Ref indirect,
-            [NativeTypeName("GLsizei")] int drawcount,
-            [NativeTypeName("GLsizei")] int stride
+            [NativeTypeName("GLsizei")] uint drawcount,
+            [NativeTypeName("GLsizei")] uint stride
         );
 
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
@@ -14129,8 +14129,8 @@ public unsafe partial interface IGL
         static abstract void MultiDrawElementArrayApple(
             [NativeTypeName("GLenum")] uint mode,
             [NativeTypeName("const GLint *")] Ref<int> first,
-            [NativeTypeName("const GLsizei *")] Ref<int> count,
-            [NativeTypeName("GLsizei")] int primcount
+            [NativeTypeName("const GLsizei *")] Ref<uint> count,
+            [NativeTypeName("GLsizei")] uint primcount
         );
 
         [SupportedApiProfile("glcore", MinVersion = "3.2")]
@@ -14138,10 +14138,10 @@ public unsafe partial interface IGL
         [NativeFunction("opengl", EntryPoint = "glMultiDrawElements")]
         static abstract void MultiDrawElements(
             [NativeTypeName("GLenum")] uint mode,
-            [NativeTypeName("const GLsizei *")] Ref<int> count,
+            [NativeTypeName("const GLsizei *")] Ref<uint> count,
             [NativeTypeName("GLenum")] uint type,
             [NativeTypeName("const void *const *")] Ref2D indices,
-            [NativeTypeName("GLsizei")] int drawcount
+            [NativeTypeName("GLsizei")] uint drawcount
         );
 
         [SupportedApiProfile("glcore", MinVersion = "3.2")]
@@ -14149,10 +14149,10 @@ public unsafe partial interface IGL
         [NativeFunction("opengl", EntryPoint = "glMultiDrawElementsBaseVertex")]
         static abstract void MultiDrawElementsBaseVertex(
             [NativeTypeName("GLenum")] uint mode,
-            [NativeTypeName("const GLsizei *")] Ref<int> count,
+            [NativeTypeName("const GLsizei *")] Ref<uint> count,
             [NativeTypeName("GLenum")] uint type,
             [NativeTypeName("const void *const *")] Ref2D indices,
-            [NativeTypeName("GLsizei")] int drawcount,
+            [NativeTypeName("GLsizei")] uint drawcount,
             [NativeTypeName("const GLint *")] Ref<int> basevertex
         );
 
@@ -14160,10 +14160,10 @@ public unsafe partial interface IGL
         [NativeFunction("opengl", EntryPoint = "glMultiDrawElementsBaseVertexEXT")]
         static abstract void MultiDrawElementsBaseVertexExt(
             [NativeTypeName("GLenum")] uint mode,
-            [NativeTypeName("const GLsizei *")] Ref<int> count,
+            [NativeTypeName("const GLsizei *")] Ref<uint> count,
             [NativeTypeName("GLenum")] uint type,
             [NativeTypeName("const void *const *")] Ref2D indices,
-            [NativeTypeName("GLsizei")] int drawcount,
+            [NativeTypeName("GLsizei")] uint drawcount,
             [NativeTypeName("const GLint *")] Ref<int> basevertex
         );
 
@@ -14173,10 +14173,10 @@ public unsafe partial interface IGL
         [NativeFunction("opengl", EntryPoint = "glMultiDrawElementsEXT")]
         static abstract void MultiDrawElementsExt(
             [NativeTypeName("GLenum")] uint mode,
-            [NativeTypeName("const GLsizei *")] Ref<int> count,
+            [NativeTypeName("const GLsizei *")] Ref<uint> count,
             [NativeTypeName("GLenum")] uint type,
             [NativeTypeName("const void *const *")] Ref2D indices,
-            [NativeTypeName("GLsizei")] int primcount
+            [NativeTypeName("GLsizei")] uint primcount
         );
 
         [SupportedApiProfile("glcore", MinVersion = "3.2")]
@@ -14186,8 +14186,8 @@ public unsafe partial interface IGL
             [NativeTypeName("GLenum")] uint mode,
             [NativeTypeName("GLenum")] uint type,
             [NativeTypeName("const void *")] Ref indirect,
-            [NativeTypeName("GLsizei")] int drawcount,
-            [NativeTypeName("GLsizei")] int stride
+            [NativeTypeName("GLsizei")] uint drawcount,
+            [NativeTypeName("GLsizei")] uint stride
         );
 
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
@@ -14196,8 +14196,8 @@ public unsafe partial interface IGL
             [NativeTypeName("GLenum")] uint mode,
             [NativeTypeName("GLenum")] uint type,
             [NativeTypeName("const void *")] Ref indirect,
-            [NativeTypeName("GLsizei")] int primcount,
-            [NativeTypeName("GLsizei")] int stride
+            [NativeTypeName("GLsizei")] uint primcount,
+            [NativeTypeName("GLsizei")] uint stride
         );
 
         [SupportedApiProfile("glcore", MinVersion = "3.2")]
@@ -14207,9 +14207,9 @@ public unsafe partial interface IGL
             [NativeTypeName("GLenum")] uint mode,
             [NativeTypeName("GLenum")] uint type,
             [NativeTypeName("const void *")] Ref indirect,
-            [NativeTypeName("GLsizei")] int drawCount,
-            [NativeTypeName("GLsizei")] int maxDrawCount,
-            [NativeTypeName("GLsizei")] int stride,
+            [NativeTypeName("GLsizei")] uint drawCount,
+            [NativeTypeName("GLsizei")] uint maxDrawCount,
+            [NativeTypeName("GLsizei")] uint stride,
             [NativeTypeName("GLint")] int vertexBufferCount
         );
 
@@ -14220,8 +14220,8 @@ public unsafe partial interface IGL
             [NativeTypeName("GLenum")] uint mode,
             [NativeTypeName("GLenum")] uint type,
             [NativeTypeName("const void *")] Ref indirect,
-            [NativeTypeName("GLsizei")] int drawCount,
-            [NativeTypeName("GLsizei")] int stride,
+            [NativeTypeName("GLsizei")] uint drawCount,
+            [NativeTypeName("GLsizei")] uint stride,
             [NativeTypeName("GLint")] int vertexBufferCount
         );
 
@@ -14233,8 +14233,8 @@ public unsafe partial interface IGL
             [NativeTypeName("GLenum")] uint type,
             [NativeTypeName("const void *")] Ref indirect,
             [NativeTypeName("GLintptr")] nint drawcount,
-            [NativeTypeName("GLsizei")] int maxdrawcount,
-            [NativeTypeName("GLsizei")] int stride
+            [NativeTypeName("GLsizei")] uint maxdrawcount,
+            [NativeTypeName("GLsizei")] uint stride
         );
 
         [SupportedApiProfile("glcore", MinVersion = "3.2")]
@@ -14245,8 +14245,8 @@ public unsafe partial interface IGL
             [NativeTypeName("GLenum")] uint type,
             [NativeTypeName("const void *")] Ref indirect,
             [NativeTypeName("GLintptr")] nint drawcount,
-            [NativeTypeName("GLsizei")] int maxdrawcount,
-            [NativeTypeName("GLsizei")] int stride
+            [NativeTypeName("GLsizei")] uint maxdrawcount,
+            [NativeTypeName("GLsizei")] uint stride
         );
 
         [SupportedApiProfile("gles2", MinVersion = "2.0")]
@@ -14255,8 +14255,8 @@ public unsafe partial interface IGL
             [NativeTypeName("GLenum")] uint mode,
             [NativeTypeName("GLenum")] uint type,
             [NativeTypeName("const void *")] Ref indirect,
-            [NativeTypeName("GLsizei")] int drawcount,
-            [NativeTypeName("GLsizei")] int stride
+            [NativeTypeName("GLsizei")] uint drawcount,
+            [NativeTypeName("GLsizei")] uint stride
         );
 
         [SupportedApiProfile("glcore", MinVersion = "3.2")]
@@ -14266,8 +14266,8 @@ public unsafe partial interface IGL
         static abstract void MultiDrawMeshTasksIndirectCountNV(
             [NativeTypeName("GLintptr")] nint indirect,
             [NativeTypeName("GLintptr")] nint drawcount,
-            [NativeTypeName("GLsizei")] int maxdrawcount,
-            [NativeTypeName("GLsizei")] int stride
+            [NativeTypeName("GLsizei")] uint maxdrawcount,
+            [NativeTypeName("GLsizei")] uint stride
         );
 
         [SupportedApiProfile("glcore", MinVersion = "3.2")]
@@ -14276,8 +14276,8 @@ public unsafe partial interface IGL
         [NativeFunction("opengl", EntryPoint = "glMultiDrawMeshTasksIndirectNV")]
         static abstract void MultiDrawMeshTasksIndirectNV(
             [NativeTypeName("GLintptr")] nint indirect,
-            [NativeTypeName("GLsizei")] int drawcount,
-            [NativeTypeName("GLsizei")] int stride
+            [NativeTypeName("GLsizei")] uint drawcount,
+            [NativeTypeName("GLsizei")] uint stride
         );
 
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
@@ -14287,8 +14287,8 @@ public unsafe partial interface IGL
             [NativeTypeName("GLuint")] uint start,
             [NativeTypeName("GLuint")] uint end,
             [NativeTypeName("const GLint *")] Ref<int> first,
-            [NativeTypeName("const GLsizei *")] Ref<int> count,
-            [NativeTypeName("GLsizei")] int primcount
+            [NativeTypeName("const GLsizei *")] Ref<uint> count,
+            [NativeTypeName("GLsizei")] uint primcount
         );
 
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
@@ -14296,8 +14296,8 @@ public unsafe partial interface IGL
         static abstract void MultiModeDrawArraysIbm(
             [NativeTypeName("const GLenum *")] Ref<uint> mode,
             [NativeTypeName("const GLint *")] Ref<int> first,
-            [NativeTypeName("const GLsizei *")] Ref<int> count,
-            [NativeTypeName("GLsizei")] int primcount,
+            [NativeTypeName("const GLsizei *")] Ref<uint> count,
+            [NativeTypeName("GLsizei")] uint primcount,
             [NativeTypeName("GLint")] int modestride
         );
 
@@ -14305,10 +14305,10 @@ public unsafe partial interface IGL
         [NativeFunction("opengl", EntryPoint = "glMultiModeDrawElementsIBM")]
         static abstract void MultiModeDrawElementsIbm(
             [NativeTypeName("const GLenum *")] Ref<uint> mode,
-            [NativeTypeName("const GLsizei *")] Ref<int> count,
+            [NativeTypeName("const GLsizei *")] Ref<uint> count,
             [NativeTypeName("GLenum")] uint type,
             [NativeTypeName("const void *const *")] Ref2D indices,
-            [NativeTypeName("GLsizei")] int primcount,
+            [NativeTypeName("GLsizei")] uint primcount,
             [NativeTypeName("GLint")] int modestride
         );
 
@@ -15087,7 +15087,7 @@ public unsafe partial interface IGL
             [NativeTypeName("GLenum")] uint texunit,
             [NativeTypeName("GLint")] int size,
             [NativeTypeName("GLenum")] uint type,
-            [NativeTypeName("GLsizei")] int stride,
+            [NativeTypeName("GLsizei")] uint stride,
             [NativeTypeName("const void *")] Ref pointer
         );
 
@@ -15199,7 +15199,7 @@ public unsafe partial interface IGL
             [NativeTypeName("GLenum")] uint target,
             [NativeTypeName("GLint")] int level,
             [NativeTypeName("GLint")] int internalformat,
-            [NativeTypeName("GLsizei")] int width,
+            [NativeTypeName("GLsizei")] uint width,
             [NativeTypeName("GLint")] int border,
             [NativeTypeName("GLenum")] uint format,
             [NativeTypeName("GLenum")] uint type,
@@ -15214,8 +15214,8 @@ public unsafe partial interface IGL
             [NativeTypeName("GLenum")] uint target,
             [NativeTypeName("GLint")] int level,
             [NativeTypeName("GLint")] int internalformat,
-            [NativeTypeName("GLsizei")] int width,
-            [NativeTypeName("GLsizei")] int height,
+            [NativeTypeName("GLsizei")] uint width,
+            [NativeTypeName("GLsizei")] uint height,
             [NativeTypeName("GLint")] int border,
             [NativeTypeName("GLenum")] uint format,
             [NativeTypeName("GLenum")] uint type,
@@ -15230,9 +15230,9 @@ public unsafe partial interface IGL
             [NativeTypeName("GLenum")] uint target,
             [NativeTypeName("GLint")] int level,
             [NativeTypeName("GLint")] int internalformat,
-            [NativeTypeName("GLsizei")] int width,
-            [NativeTypeName("GLsizei")] int height,
-            [NativeTypeName("GLsizei")] int depth,
+            [NativeTypeName("GLsizei")] uint width,
+            [NativeTypeName("GLsizei")] uint height,
+            [NativeTypeName("GLsizei")] uint depth,
             [NativeTypeName("GLint")] int border,
             [NativeTypeName("GLenum")] uint format,
             [NativeTypeName("GLenum")] uint type,
@@ -15316,7 +15316,7 @@ public unsafe partial interface IGL
             [NativeTypeName("GLenum")] uint target,
             [NativeTypeName("GLint")] int level,
             [NativeTypeName("GLint")] int xoffset,
-            [NativeTypeName("GLsizei")] int width,
+            [NativeTypeName("GLsizei")] uint width,
             [NativeTypeName("GLenum")] uint format,
             [NativeTypeName("GLenum")] uint type,
             [NativeTypeName("const void *")] Ref pixels
@@ -15331,8 +15331,8 @@ public unsafe partial interface IGL
             [NativeTypeName("GLint")] int level,
             [NativeTypeName("GLint")] int xoffset,
             [NativeTypeName("GLint")] int yoffset,
-            [NativeTypeName("GLsizei")] int width,
-            [NativeTypeName("GLsizei")] int height,
+            [NativeTypeName("GLsizei")] uint width,
+            [NativeTypeName("GLsizei")] uint height,
             [NativeTypeName("GLenum")] uint format,
             [NativeTypeName("GLenum")] uint type,
             [NativeTypeName("const void *")] Ref pixels
@@ -15348,9 +15348,9 @@ public unsafe partial interface IGL
             [NativeTypeName("GLint")] int xoffset,
             [NativeTypeName("GLint")] int yoffset,
             [NativeTypeName("GLint")] int zoffset,
-            [NativeTypeName("GLsizei")] int width,
-            [NativeTypeName("GLsizei")] int height,
-            [NativeTypeName("GLsizei")] int depth,
+            [NativeTypeName("GLsizei")] uint width,
+            [NativeTypeName("GLsizei")] uint height,
+            [NativeTypeName("GLsizei")] uint depth,
             [NativeTypeName("GLenum")] uint format,
             [NativeTypeName("GLenum")] uint type,
             [NativeTypeName("const void *")] Ref pixels
@@ -15417,7 +15417,7 @@ public unsafe partial interface IGL
         [NativeFunction("opengl", EntryPoint = "glNamedBufferData")]
         static abstract void NamedBufferData(
             [NativeTypeName("GLuint")] uint buffer,
-            [NativeTypeName("GLsizeiptr")] nint size,
+            [NativeTypeName("GLsizeiptr")] nuint size,
             [NativeTypeName("const void *")] Ref data,
             [NativeTypeName("GLenum")] uint usage
         );
@@ -15427,7 +15427,7 @@ public unsafe partial interface IGL
         [NativeFunction("opengl", EntryPoint = "glNamedBufferDataEXT")]
         static abstract void NamedBufferDataExt(
             [NativeTypeName("GLuint")] uint buffer,
-            [NativeTypeName("GLsizeiptr")] nint size,
+            [NativeTypeName("GLsizeiptr")] nuint size,
             [NativeTypeName("const void *")] Ref data,
             [NativeTypeName("GLenum")] uint usage
         );
@@ -15438,8 +15438,8 @@ public unsafe partial interface IGL
         static abstract void NamedBufferPageCommitmentArb(
             [NativeTypeName("GLuint")] uint buffer,
             [NativeTypeName("GLintptr")] nint offset,
-            [NativeTypeName("GLsizeiptr")] nint size,
-            [NativeTypeName("GLboolean")] byte commit
+            [NativeTypeName("GLsizeiptr")] nuint size,
+            [NativeTypeName("GLboolean")] uint commit
         );
 
         [SupportedApiProfile("glcore", MinVersion = "3.2")]
@@ -15448,8 +15448,8 @@ public unsafe partial interface IGL
         static abstract void NamedBufferPageCommitmentExt(
             [NativeTypeName("GLuint")] uint buffer,
             [NativeTypeName("GLintptr")] nint offset,
-            [NativeTypeName("GLsizeiptr")] nint size,
-            [NativeTypeName("GLboolean")] byte commit
+            [NativeTypeName("GLsizeiptr")] nuint size,
+            [NativeTypeName("GLboolean")] uint commit
         );
 
         [SupportedApiProfile("glcore", MinVersion = "3.2")]
@@ -15459,10 +15459,10 @@ public unsafe partial interface IGL
         static abstract void NamedBufferPageCommitmentMemNV(
             [NativeTypeName("GLuint")] uint buffer,
             [NativeTypeName("GLintptr")] nint offset,
-            [NativeTypeName("GLsizeiptr")] nint size,
+            [NativeTypeName("GLsizeiptr")] nuint size,
             [NativeTypeName("GLuint")] uint memory,
             [NativeTypeName("GLuint64")] ulong memOffset,
-            [NativeTypeName("GLboolean")] byte commit
+            [NativeTypeName("GLboolean")] uint commit
         );
 
         [SupportedApiProfile("glcore", MinVersion = "3.2")]
@@ -15470,7 +15470,7 @@ public unsafe partial interface IGL
         [NativeFunction("opengl", EntryPoint = "glNamedBufferStorage")]
         static abstract void NamedBufferStorage(
             [NativeTypeName("GLuint")] uint buffer,
-            [NativeTypeName("GLsizeiptr")] nint size,
+            [NativeTypeName("GLsizeiptr")] nuint size,
             [NativeTypeName("const void *")] Ref data,
             [NativeTypeName("GLbitfield")] uint flags
         );
@@ -15480,7 +15480,7 @@ public unsafe partial interface IGL
         [NativeFunction("opengl", EntryPoint = "glNamedBufferStorageEXT")]
         static abstract void NamedBufferStorageExt(
             [NativeTypeName("GLuint")] uint buffer,
-            [NativeTypeName("GLsizeiptr")] nint size,
+            [NativeTypeName("GLsizeiptr")] nuint size,
             [NativeTypeName("const void *")] Ref data,
             [NativeTypeName("GLbitfield")] uint flags
         );
@@ -15491,7 +15491,7 @@ public unsafe partial interface IGL
         static abstract void NamedBufferStorageExternalExt(
             [NativeTypeName("GLuint")] uint buffer,
             [NativeTypeName("GLintptr")] nint offset,
-            [NativeTypeName("GLsizeiptr")] nint size,
+            [NativeTypeName("GLsizeiptr")] nuint size,
             [NativeTypeName("GLeglClientBufferEXT")] Ref clientBuffer,
             [NativeTypeName("GLbitfield")] uint flags
         );
@@ -15501,7 +15501,7 @@ public unsafe partial interface IGL
         [NativeFunction("opengl", EntryPoint = "glNamedBufferStorageMemEXT")]
         static abstract void NamedBufferStorageMemExt(
             [NativeTypeName("GLuint")] uint buffer,
-            [NativeTypeName("GLsizeiptr")] nint size,
+            [NativeTypeName("GLsizeiptr")] nuint size,
             [NativeTypeName("GLuint")] uint memory,
             [NativeTypeName("GLuint64")] ulong offset
         );
@@ -15512,7 +15512,7 @@ public unsafe partial interface IGL
         static abstract void NamedBufferSubData(
             [NativeTypeName("GLuint")] uint buffer,
             [NativeTypeName("GLintptr")] nint offset,
-            [NativeTypeName("GLsizeiptr")] nint size,
+            [NativeTypeName("GLsizeiptr")] nuint size,
             [NativeTypeName("const void *")] Ref data
         );
 
@@ -15522,7 +15522,7 @@ public unsafe partial interface IGL
         static abstract void NamedBufferSubDataExt(
             [NativeTypeName("GLuint")] uint buffer,
             [NativeTypeName("GLintptr")] nint offset,
-            [NativeTypeName("GLsizeiptr")] nint size,
+            [NativeTypeName("GLsizeiptr")] nuint size,
             [NativeTypeName("const void *")] Ref data
         );
 
@@ -15534,7 +15534,7 @@ public unsafe partial interface IGL
             [NativeTypeName("GLuint")] uint writeBuffer,
             [NativeTypeName("GLintptr")] nint readOffset,
             [NativeTypeName("GLintptr")] nint writeOffset,
-            [NativeTypeName("GLsizeiptr")] nint size
+            [NativeTypeName("GLsizeiptr")] nuint size
         );
 
         [SupportedApiProfile("glcore", MinVersion = "3.2")]
@@ -15550,7 +15550,7 @@ public unsafe partial interface IGL
         [NativeFunction("opengl", EntryPoint = "glNamedFramebufferDrawBuffers")]
         static abstract void NamedFramebufferDrawBuffers(
             [NativeTypeName("GLuint")] uint framebuffer,
-            [NativeTypeName("GLsizei")] int n,
+            [NativeTypeName("GLsizei")] uint n,
             [NativeTypeName("const GLenum *")] Ref<uint> bufs
         );
 
@@ -15606,7 +15606,7 @@ public unsafe partial interface IGL
         static abstract void NamedFramebufferSampleLocationsfvArb(
             [NativeTypeName("GLuint")] uint framebuffer,
             [NativeTypeName("GLuint")] uint start,
-            [NativeTypeName("GLsizei")] int count,
+            [NativeTypeName("GLsizei")] uint count,
             [NativeTypeName("const GLfloat *")] Ref<float> v
         );
 
@@ -15617,7 +15617,7 @@ public unsafe partial interface IGL
         static abstract void NamedFramebufferSampleLocationsfvNV(
             [NativeTypeName("GLuint")] uint framebuffer,
             [NativeTypeName("GLuint")] uint start,
-            [NativeTypeName("GLsizei")] int count,
+            [NativeTypeName("GLsizei")] uint count,
             [NativeTypeName("const GLfloat *")] Ref<float> v
         );
 
@@ -15816,7 +15816,7 @@ public unsafe partial interface IGL
             [NativeTypeName("GLuint")] uint program,
             [NativeTypeName("GLenum")] uint target,
             [NativeTypeName("GLuint")] uint index,
-            [NativeTypeName("GLsizei")] int count,
+            [NativeTypeName("GLsizei")] uint count,
             [NativeTypeName("const GLfloat *")] Ref<float> @params
         );
 
@@ -15827,7 +15827,7 @@ public unsafe partial interface IGL
             [NativeTypeName("GLuint")] uint program,
             [NativeTypeName("GLenum")] uint target,
             [NativeTypeName("GLuint")] uint index,
-            [NativeTypeName("GLsizei")] int count,
+            [NativeTypeName("GLsizei")] uint count,
             [NativeTypeName("const GLint *")] Ref<int> @params
         );
 
@@ -15838,7 +15838,7 @@ public unsafe partial interface IGL
             [NativeTypeName("GLuint")] uint program,
             [NativeTypeName("GLenum")] uint target,
             [NativeTypeName("GLuint")] uint index,
-            [NativeTypeName("GLsizei")] int count,
+            [NativeTypeName("GLsizei")] uint count,
             [NativeTypeName("const GLuint *")] Ref<uint> @params
         );
 
@@ -15849,7 +15849,7 @@ public unsafe partial interface IGL
             [NativeTypeName("GLuint")] uint program,
             [NativeTypeName("GLenum")] uint target,
             [NativeTypeName("GLenum")] uint format,
-            [NativeTypeName("GLsizei")] int len,
+            [NativeTypeName("GLsizei")] uint len,
             [NativeTypeName("const void *")] Ref @string
         );
 
@@ -15859,8 +15859,8 @@ public unsafe partial interface IGL
         static abstract void NamedRenderbufferStorage(
             [NativeTypeName("GLuint")] uint renderbuffer,
             [NativeTypeName("GLenum")] uint internalformat,
-            [NativeTypeName("GLsizei")] int width,
-            [NativeTypeName("GLsizei")] int height
+            [NativeTypeName("GLsizei")] uint width,
+            [NativeTypeName("GLsizei")] uint height
         );
 
         [SupportedApiProfile("glcore", MinVersion = "3.2")]
@@ -15869,8 +15869,8 @@ public unsafe partial interface IGL
         static abstract void NamedRenderbufferStorageExt(
             [NativeTypeName("GLuint")] uint renderbuffer,
             [NativeTypeName("GLenum")] uint internalformat,
-            [NativeTypeName("GLsizei")] int width,
-            [NativeTypeName("GLsizei")] int height
+            [NativeTypeName("GLsizei")] uint width,
+            [NativeTypeName("GLsizei")] uint height
         );
 
         [SupportedApiProfile("glcore", MinVersion = "3.2")]
@@ -15878,10 +15878,10 @@ public unsafe partial interface IGL
         [NativeFunction("opengl", EntryPoint = "glNamedRenderbufferStorageMultisample")]
         static abstract void NamedRenderbufferStorageMultisample(
             [NativeTypeName("GLuint")] uint renderbuffer,
-            [NativeTypeName("GLsizei")] int samples,
+            [NativeTypeName("GLsizei")] uint samples,
             [NativeTypeName("GLenum")] uint internalformat,
-            [NativeTypeName("GLsizei")] int width,
-            [NativeTypeName("GLsizei")] int height
+            [NativeTypeName("GLsizei")] uint width,
+            [NativeTypeName("GLsizei")] uint height
         );
 
         [SupportedApiProfile("glcore", MinVersion = "3.2")]
@@ -15890,11 +15890,11 @@ public unsafe partial interface IGL
         [NativeFunction("opengl", EntryPoint = "glNamedRenderbufferStorageMultisampleAdvancedAMD")]
         static abstract void NamedRenderbufferStorageMultisampleAdvancedAmd(
             [NativeTypeName("GLuint")] uint renderbuffer,
-            [NativeTypeName("GLsizei")] int samples,
-            [NativeTypeName("GLsizei")] int storageSamples,
+            [NativeTypeName("GLsizei")] uint samples,
+            [NativeTypeName("GLsizei")] uint storageSamples,
             [NativeTypeName("GLenum")] uint internalformat,
-            [NativeTypeName("GLsizei")] int width,
-            [NativeTypeName("GLsizei")] int height
+            [NativeTypeName("GLsizei")] uint width,
+            [NativeTypeName("GLsizei")] uint height
         );
 
         [SupportedApiProfile("glcore", MinVersion = "3.2")]
@@ -15902,11 +15902,11 @@ public unsafe partial interface IGL
         [NativeFunction("opengl", EntryPoint = "glNamedRenderbufferStorageMultisampleCoverageEXT")]
         static abstract void NamedRenderbufferStorageMultisampleCoverageExt(
             [NativeTypeName("GLuint")] uint renderbuffer,
-            [NativeTypeName("GLsizei")] int coverageSamples,
-            [NativeTypeName("GLsizei")] int colorSamples,
+            [NativeTypeName("GLsizei")] uint coverageSamples,
+            [NativeTypeName("GLsizei")] uint colorSamples,
             [NativeTypeName("GLenum")] uint internalformat,
-            [NativeTypeName("GLsizei")] int width,
-            [NativeTypeName("GLsizei")] int height
+            [NativeTypeName("GLsizei")] uint width,
+            [NativeTypeName("GLsizei")] uint height
         );
 
         [SupportedApiProfile("glcore", MinVersion = "3.2")]
@@ -15914,10 +15914,10 @@ public unsafe partial interface IGL
         [NativeFunction("opengl", EntryPoint = "glNamedRenderbufferStorageMultisampleEXT")]
         static abstract void NamedRenderbufferStorageMultisampleExt(
             [NativeTypeName("GLuint")] uint renderbuffer,
-            [NativeTypeName("GLsizei")] int samples,
+            [NativeTypeName("GLsizei")] uint samples,
             [NativeTypeName("GLenum")] uint internalformat,
-            [NativeTypeName("GLsizei")] int width,
-            [NativeTypeName("GLsizei")] int height
+            [NativeTypeName("GLsizei")] uint width,
+            [NativeTypeName("GLsizei")] uint height
         );
 
         [SupportedApiProfile("glcore", MinVersion = "3.2")]
@@ -15942,7 +15942,7 @@ public unsafe partial interface IGL
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glNewObjectBufferATI")]
         static abstract uint NewObjectBufferAti(
-            [NativeTypeName("GLsizei")] int size,
+            [NativeTypeName("GLsizei")] uint size,
             [NativeTypeName("const void *")] Ref pointer,
             [NativeTypeName("GLenum")] uint usage
         );
@@ -16064,7 +16064,7 @@ public unsafe partial interface IGL
         [NativeFunction("opengl", EntryPoint = "glNormalFormatNV")]
         static abstract void NormalFormatNV(
             [NativeTypeName("GLenum")] uint type,
-            [NativeTypeName("GLsizei")] int stride
+            [NativeTypeName("GLsizei")] uint stride
         );
 
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
@@ -16086,7 +16086,7 @@ public unsafe partial interface IGL
         [NativeFunction("opengl", EntryPoint = "glNormalPointer")]
         static abstract void NormalPointer(
             [NativeTypeName("GLenum")] uint type,
-            [NativeTypeName("GLsizei")] int stride,
+            [NativeTypeName("GLsizei")] uint stride,
             [NativeTypeName("const void *")] Ref pointer
         );
 
@@ -16094,8 +16094,8 @@ public unsafe partial interface IGL
         [NativeFunction("opengl", EntryPoint = "glNormalPointerEXT")]
         static abstract void NormalPointerExt(
             [NativeTypeName("GLenum")] uint type,
-            [NativeTypeName("GLsizei")] int stride,
-            [NativeTypeName("GLsizei")] int count,
+            [NativeTypeName("GLsizei")] uint stride,
+            [NativeTypeName("GLsizei")] uint count,
             [NativeTypeName("const void *")] Ref pointer
         );
 
@@ -16201,7 +16201,7 @@ public unsafe partial interface IGL
         static abstract void ObjectLabel(
             [NativeTypeName("GLenum")] uint identifier,
             [NativeTypeName("GLuint")] uint name,
-            [NativeTypeName("GLsizei")] int length,
+            [NativeTypeName("GLsizei")] uint length,
             [NativeTypeName("const GLchar *")] Ref<sbyte> label
         );
 
@@ -16210,7 +16210,7 @@ public unsafe partial interface IGL
         static abstract void ObjectLabelKhr(
             [NativeTypeName("GLenum")] uint identifier,
             [NativeTypeName("GLuint")] uint name,
-            [NativeTypeName("GLsizei")] int length,
+            [NativeTypeName("GLsizei")] uint length,
             [NativeTypeName("const GLchar *")] Ref<sbyte> label
         );
 
@@ -16219,7 +16219,7 @@ public unsafe partial interface IGL
         [NativeFunction("opengl", EntryPoint = "glObjectPtrLabel")]
         static abstract void ObjectPtrLabel(
             [NativeTypeName("const void *")] Ref ptr,
-            [NativeTypeName("GLsizei")] int length,
+            [NativeTypeName("GLsizei")] uint length,
             [NativeTypeName("const GLchar *")] Ref<sbyte> label
         );
 
@@ -16227,7 +16227,7 @@ public unsafe partial interface IGL
         [NativeFunction("opengl", EntryPoint = "glObjectPtrLabelKHR")]
         static abstract void ObjectPtrLabelKhr(
             [NativeTypeName("const void *")] Ref ptr,
-            [NativeTypeName("GLsizei")] int length,
+            [NativeTypeName("GLsizei")] uint length,
             [NativeTypeName("const GLchar *")] Ref<sbyte> label
         );
 
@@ -16367,9 +16367,9 @@ public unsafe partial interface IGL
         [NativeFunction("opengl", EntryPoint = "glPathCommandsNV")]
         static abstract void PathCommandsNV(
             [NativeTypeName("GLuint")] uint path,
-            [NativeTypeName("GLsizei")] int numCommands,
+            [NativeTypeName("GLsizei")] uint numCommands,
             [NativeTypeName("const GLubyte *")] Ref<byte> commands,
-            [NativeTypeName("GLsizei")] int numCoords,
+            [NativeTypeName("GLsizei")] uint numCoords,
             [NativeTypeName("GLenum")] uint coordType,
             [NativeTypeName("const void *")] Ref coords
         );
@@ -16380,7 +16380,7 @@ public unsafe partial interface IGL
         [NativeFunction("opengl", EntryPoint = "glPathCoordsNV")]
         static abstract void PathCoordsNV(
             [NativeTypeName("GLuint")] uint path,
-            [NativeTypeName("GLsizei")] int numCoords,
+            [NativeTypeName("GLsizei")] uint numCoords,
             [NativeTypeName("GLenum")] uint coordType,
             [NativeTypeName("const void *")] Ref coords
         );
@@ -16397,7 +16397,7 @@ public unsafe partial interface IGL
         [NativeFunction("opengl", EntryPoint = "glPathDashArrayNV")]
         static abstract void PathDashArrayNV(
             [NativeTypeName("GLuint")] uint path,
-            [NativeTypeName("GLsizei")] int dashCount,
+            [NativeTypeName("GLsizei")] uint dashCount,
             [NativeTypeName("const GLfloat *")] Ref<float> dashArray
         );
 
@@ -16416,7 +16416,7 @@ public unsafe partial interface IGL
             [NativeTypeName("const void *")] Ref fontName,
             [NativeTypeName("GLbitfield")] uint fontStyle,
             [NativeTypeName("GLuint")] uint firstGlyphIndex,
-            [NativeTypeName("GLsizei")] int numGlyphs,
+            [NativeTypeName("GLsizei")] uint numGlyphs,
             [NativeTypeName("GLuint")] uint pathParameterTemplate,
             [NativeTypeName("GLfloat")] float emScale
         );
@@ -16445,7 +16445,7 @@ public unsafe partial interface IGL
             [NativeTypeName("const void *")] Ref fontName,
             [NativeTypeName("GLbitfield")] uint fontStyle,
             [NativeTypeName("GLuint")] uint firstGlyph,
-            [NativeTypeName("GLsizei")] int numGlyphs,
+            [NativeTypeName("GLsizei")] uint numGlyphs,
             [NativeTypeName("GLenum")] uint handleMissingGlyphs,
             [NativeTypeName("GLuint")] uint pathParameterTemplate,
             [NativeTypeName("GLfloat")] float emScale
@@ -16460,7 +16460,7 @@ public unsafe partial interface IGL
             [NativeTypeName("GLenum")] uint fontTarget,
             [NativeTypeName("const void *")] Ref fontName,
             [NativeTypeName("GLbitfield")] uint fontStyle,
-            [NativeTypeName("GLsizei")] int numGlyphs,
+            [NativeTypeName("GLsizei")] uint numGlyphs,
             [NativeTypeName("GLenum")] uint type,
             [NativeTypeName("const void *")] Ref charcodes,
             [NativeTypeName("GLenum")] uint handleMissingGlyphs,
@@ -16476,11 +16476,11 @@ public unsafe partial interface IGL
         static abstract uint PathMemoryGlyphIndexArrayNV(
             [NativeTypeName("GLuint")] uint firstPathName,
             [NativeTypeName("GLenum")] uint fontTarget,
-            [NativeTypeName("GLsizeiptr")] nint fontSize,
+            [NativeTypeName("GLsizeiptr")] nuint fontSize,
             [NativeTypeName("const void *")] Ref fontData,
-            [NativeTypeName("GLsizei")] int faceIndex,
+            [NativeTypeName("GLsizei")] uint faceIndex,
             [NativeTypeName("GLuint")] uint firstGlyphIndex,
-            [NativeTypeName("GLsizei")] int numGlyphs,
+            [NativeTypeName("GLsizei")] uint numGlyphs,
             [NativeTypeName("GLuint")] uint pathParameterTemplate,
             [NativeTypeName("GLfloat")] float emScale
         );
@@ -16551,7 +16551,7 @@ public unsafe partial interface IGL
         static abstract void PathStringNV(
             [NativeTypeName("GLuint")] uint path,
             [NativeTypeName("GLenum")] uint format,
-            [NativeTypeName("GLsizei")] int length,
+            [NativeTypeName("GLsizei")] uint length,
             [NativeTypeName("const void *")] Ref pathString
         );
 
@@ -16561,11 +16561,11 @@ public unsafe partial interface IGL
         [NativeFunction("opengl", EntryPoint = "glPathSubCommandsNV")]
         static abstract void PathSubCommandsNV(
             [NativeTypeName("GLuint")] uint path,
-            [NativeTypeName("GLsizei")] int commandStart,
-            [NativeTypeName("GLsizei")] int commandsToDelete,
-            [NativeTypeName("GLsizei")] int numCommands,
+            [NativeTypeName("GLsizei")] uint commandStart,
+            [NativeTypeName("GLsizei")] uint commandsToDelete,
+            [NativeTypeName("GLsizei")] uint numCommands,
             [NativeTypeName("const GLubyte *")] Ref<byte> commands,
-            [NativeTypeName("GLsizei")] int numCoords,
+            [NativeTypeName("GLsizei")] uint numCoords,
             [NativeTypeName("GLenum")] uint coordType,
             [NativeTypeName("const void *")] Ref coords
         );
@@ -16576,8 +16576,8 @@ public unsafe partial interface IGL
         [NativeFunction("opengl", EntryPoint = "glPathSubCoordsNV")]
         static abstract void PathSubCoordsNV(
             [NativeTypeName("GLuint")] uint path,
-            [NativeTypeName("GLsizei")] int coordStart,
-            [NativeTypeName("GLsizei")] int numCoords,
+            [NativeTypeName("GLsizei")] uint coordStart,
+            [NativeTypeName("GLsizei")] uint numCoords,
             [NativeTypeName("GLenum")] uint coordType,
             [NativeTypeName("const void *")] Ref coords
         );
@@ -16604,7 +16604,7 @@ public unsafe partial interface IGL
         [NativeFunction("opengl", EntryPoint = "glPixelDataRangeNV")]
         static abstract void PixelDataRangeNV(
             [NativeTypeName("GLenum")] uint target,
-            [NativeTypeName("GLsizei")] int length,
+            [NativeTypeName("GLsizei")] uint length,
             [NativeTypeName("const void *")] Ref pointer
         );
 
@@ -16612,7 +16612,7 @@ public unsafe partial interface IGL
         [NativeFunction("opengl", EntryPoint = "glPixelMapfv")]
         static abstract void PixelMap(
             [NativeTypeName("GLenum")] uint map,
-            [NativeTypeName("GLsizei")] int mapsize,
+            [NativeTypeName("GLsizei")] uint mapsize,
             [NativeTypeName("const GLfloat *")] Ref<float> values
         );
 
@@ -16620,7 +16620,7 @@ public unsafe partial interface IGL
         [NativeFunction("opengl", EntryPoint = "glPixelMapuiv")]
         static abstract void PixelMap(
             [NativeTypeName("GLenum")] uint map,
-            [NativeTypeName("GLsizei")] int mapsize,
+            [NativeTypeName("GLsizei")] uint mapsize,
             [NativeTypeName("const GLuint *")] Ref<uint> values
         );
 
@@ -16628,7 +16628,7 @@ public unsafe partial interface IGL
         [NativeFunction("opengl", EntryPoint = "glPixelMapusv")]
         static abstract void PixelMap(
             [NativeTypeName("GLenum")] uint map,
-            [NativeTypeName("GLsizei")] int mapsize,
+            [NativeTypeName("GLsizei")] uint mapsize,
             [NativeTypeName("const GLushort *")] Ref<ushort> values
         );
 
@@ -16783,10 +16783,10 @@ public unsafe partial interface IGL
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [SupportedApiProfile("gles2", MinVersion = "2.0")]
         [NativeFunction("opengl", EntryPoint = "glPointAlongPathNV")]
-        static abstract byte PointAlongPathNV(
+        static abstract uint PointAlongPathNV(
             [NativeTypeName("GLuint")] uint path,
-            [NativeTypeName("GLsizei")] int startSegment,
-            [NativeTypeName("GLsizei")] int numSegments,
+            [NativeTypeName("GLsizei")] uint startSegment,
+            [NativeTypeName("GLsizei")] uint numSegments,
             [NativeTypeName("GLfloat")] float distance,
             [NativeTypeName("GLfloat *")] Ref<float> x,
             [NativeTypeName("GLfloat *")] Ref<float> y,
@@ -16923,7 +16923,7 @@ public unsafe partial interface IGL
         [NativeFunction("opengl", EntryPoint = "glPointSizePointerOES")]
         static abstract void PointSizePointerOes(
             [NativeTypeName("GLenum")] uint type,
-            [NativeTypeName("GLsizei")] int stride,
+            [NativeTypeName("GLsizei")] uint stride,
             [NativeTypeName("const void *")] Ref pointer
         );
 
@@ -17139,7 +17139,7 @@ public unsafe partial interface IGL
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glPrioritizeTextures")]
         static abstract void PrioritizeTextures(
-            [NativeTypeName("GLsizei")] int n,
+            [NativeTypeName("GLsizei")] uint n,
             [NativeTypeName("const GLuint *")] Ref<uint> textures,
             [NativeTypeName("const GLfloat *")] Ref<float> priorities
         );
@@ -17147,7 +17147,7 @@ public unsafe partial interface IGL
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glPrioritizeTexturesEXT")]
         static abstract void PrioritizeTexturesExt(
-            [NativeTypeName("GLsizei")] int n,
+            [NativeTypeName("GLsizei")] uint n,
             [NativeTypeName("const GLuint *")] Ref<uint> textures,
             [NativeTypeName("const GLclampf *")] Ref<float> priorities
         );
@@ -17155,7 +17155,7 @@ public unsafe partial interface IGL
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glPrioritizeTexturesxOES")]
         static abstract void PrioritizeTexturesxOes(
-            [NativeTypeName("GLsizei")] int n,
+            [NativeTypeName("GLsizei")] uint n,
             [NativeTypeName("const GLuint *")] Ref<uint> textures,
             [NativeTypeName("const GLfixed *")] Ref<int> priorities
         );
@@ -17167,7 +17167,7 @@ public unsafe partial interface IGL
             [NativeTypeName("GLuint")] uint program,
             [NativeTypeName("GLenum")] uint binaryFormat,
             [NativeTypeName("const void *")] Ref binary,
-            [NativeTypeName("GLsizei")] int length
+            [NativeTypeName("GLsizei")] uint length
         );
 
         [SupportedApiProfile("gles2", MinVersion = "2.0")]
@@ -17185,7 +17185,7 @@ public unsafe partial interface IGL
             [NativeTypeName("GLenum")] uint target,
             [NativeTypeName("GLuint")] uint bindingIndex,
             [NativeTypeName("GLuint")] uint wordIndex,
-            [NativeTypeName("GLsizei")] int count,
+            [NativeTypeName("GLsizei")] uint count,
             [NativeTypeName("const GLfloat *")] Ref<float> @params
         );
 
@@ -17195,7 +17195,7 @@ public unsafe partial interface IGL
             [NativeTypeName("GLenum")] uint target,
             [NativeTypeName("GLuint")] uint bindingIndex,
             [NativeTypeName("GLuint")] uint wordIndex,
-            [NativeTypeName("GLsizei")] int count,
+            [NativeTypeName("GLsizei")] uint count,
             [NativeTypeName("const GLint *")] Ref<int> @params
         );
 
@@ -17205,7 +17205,7 @@ public unsafe partial interface IGL
             [NativeTypeName("GLenum")] uint target,
             [NativeTypeName("GLuint")] uint bindingIndex,
             [NativeTypeName("GLuint")] uint wordIndex,
-            [NativeTypeName("GLsizei")] int count,
+            [NativeTypeName("GLsizei")] uint count,
             [NativeTypeName("const GLuint *")] Ref<uint> @params
         );
 
@@ -17290,7 +17290,7 @@ public unsafe partial interface IGL
         static abstract void ProgramEnvParameters4fvExt(
             [NativeTypeName("GLenum")] uint target,
             [NativeTypeName("GLuint")] uint index,
-            [NativeTypeName("GLsizei")] int count,
+            [NativeTypeName("GLsizei")] uint count,
             [NativeTypeName("const GLfloat *")] Ref<float> @params
         );
 
@@ -17299,7 +17299,7 @@ public unsafe partial interface IGL
         static abstract void ProgramEnvParametersI4ivNV(
             [NativeTypeName("GLenum")] uint target,
             [NativeTypeName("GLuint")] uint index,
-            [NativeTypeName("GLsizei")] int count,
+            [NativeTypeName("GLsizei")] uint count,
             [NativeTypeName("const GLint *")] Ref<int> @params
         );
 
@@ -17308,7 +17308,7 @@ public unsafe partial interface IGL
         static abstract void ProgramEnvParametersI4uivNV(
             [NativeTypeName("GLenum")] uint target,
             [NativeTypeName("GLuint")] uint index,
-            [NativeTypeName("GLsizei")] int count,
+            [NativeTypeName("GLsizei")] uint count,
             [NativeTypeName("const GLuint *")] Ref<uint> @params
         );
 
@@ -17393,7 +17393,7 @@ public unsafe partial interface IGL
         static abstract void ProgramLocalParameters4fvExt(
             [NativeTypeName("GLenum")] uint target,
             [NativeTypeName("GLuint")] uint index,
-            [NativeTypeName("GLsizei")] int count,
+            [NativeTypeName("GLsizei")] uint count,
             [NativeTypeName("const GLfloat *")] Ref<float> @params
         );
 
@@ -17402,7 +17402,7 @@ public unsafe partial interface IGL
         static abstract void ProgramLocalParametersI4ivNV(
             [NativeTypeName("GLenum")] uint target,
             [NativeTypeName("GLuint")] uint index,
-            [NativeTypeName("GLsizei")] int count,
+            [NativeTypeName("GLsizei")] uint count,
             [NativeTypeName("const GLint *")] Ref<int> @params
         );
 
@@ -17411,7 +17411,7 @@ public unsafe partial interface IGL
         static abstract void ProgramLocalParametersI4uivNV(
             [NativeTypeName("GLenum")] uint target,
             [NativeTypeName("GLuint")] uint index,
-            [NativeTypeName("GLsizei")] int count,
+            [NativeTypeName("GLsizei")] uint count,
             [NativeTypeName("const GLuint *")] Ref<uint> @params
         );
 
@@ -17419,7 +17419,7 @@ public unsafe partial interface IGL
         [NativeFunction("opengl", EntryPoint = "glProgramNamedParameter4dNV")]
         static abstract void ProgramNamedParameter4dNV(
             [NativeTypeName("GLuint")] uint id,
-            [NativeTypeName("GLsizei")] int len,
+            [NativeTypeName("GLsizei")] uint len,
             [NativeTypeName("const GLubyte *")] Ref<byte> name,
             [NativeTypeName("GLdouble")] double x,
             [NativeTypeName("GLdouble")] double y,
@@ -17431,7 +17431,7 @@ public unsafe partial interface IGL
         [NativeFunction("opengl", EntryPoint = "glProgramNamedParameter4dvNV")]
         static abstract void ProgramNamedParameter4dvNV(
             [NativeTypeName("GLuint")] uint id,
-            [NativeTypeName("GLsizei")] int len,
+            [NativeTypeName("GLsizei")] uint len,
             [NativeTypeName("const GLubyte *")] Ref<byte> name,
             [NativeTypeName("const GLdouble *")] Ref<double> v
         );
@@ -17440,7 +17440,7 @@ public unsafe partial interface IGL
         [NativeFunction("opengl", EntryPoint = "glProgramNamedParameter4fNV")]
         static abstract void ProgramNamedParameter4fNV(
             [NativeTypeName("GLuint")] uint id,
-            [NativeTypeName("GLsizei")] int len,
+            [NativeTypeName("GLsizei")] uint len,
             [NativeTypeName("const GLubyte *")] Ref<byte> name,
             [NativeTypeName("GLfloat")] float x,
             [NativeTypeName("GLfloat")] float y,
@@ -17452,7 +17452,7 @@ public unsafe partial interface IGL
         [NativeFunction("opengl", EntryPoint = "glProgramNamedParameter4fvNV")]
         static abstract void ProgramNamedParameter4fvNV(
             [NativeTypeName("GLuint")] uint id,
-            [NativeTypeName("GLsizei")] int len,
+            [NativeTypeName("GLsizei")] uint len,
             [NativeTypeName("const GLubyte *")] Ref<byte> name,
             [NativeTypeName("const GLfloat *")] Ref<float> v
         );
@@ -17527,7 +17527,7 @@ public unsafe partial interface IGL
         static abstract void ProgramParameters4dvNV(
             [NativeTypeName("GLenum")] uint target,
             [NativeTypeName("GLuint")] uint index,
-            [NativeTypeName("GLsizei")] int count,
+            [NativeTypeName("GLsizei")] uint count,
             [NativeTypeName("const GLdouble *")] Ref<double> v
         );
 
@@ -17536,7 +17536,7 @@ public unsafe partial interface IGL
         static abstract void ProgramParameters4fvNV(
             [NativeTypeName("GLenum")] uint target,
             [NativeTypeName("GLuint")] uint index,
-            [NativeTypeName("GLsizei")] int count,
+            [NativeTypeName("GLsizei")] uint count,
             [NativeTypeName("const GLfloat *")] Ref<float> v
         );
 
@@ -17557,7 +17557,7 @@ public unsafe partial interface IGL
         static abstract void ProgramStringArb(
             [NativeTypeName("GLenum")] uint target,
             [NativeTypeName("GLenum")] uint format,
-            [NativeTypeName("GLsizei")] int len,
+            [NativeTypeName("GLsizei")] uint len,
             [NativeTypeName("const void *")] Ref @string
         );
 
@@ -17565,7 +17565,7 @@ public unsafe partial interface IGL
         [NativeFunction("opengl", EntryPoint = "glProgramSubroutineParametersuivNV")]
         static abstract void ProgramSubroutineParametersuivNV(
             [NativeTypeName("GLenum")] uint target,
-            [NativeTypeName("GLsizei")] int count,
+            [NativeTypeName("GLsizei")] uint count,
             [NativeTypeName("const GLuint *")] Ref<uint> @params
         );
 
@@ -17593,7 +17593,7 @@ public unsafe partial interface IGL
         static abstract void ProgramUniform1(
             [NativeTypeName("GLuint")] uint program,
             [NativeTypeName("GLint")] int location,
-            [NativeTypeName("GLsizei")] int count,
+            [NativeTypeName("GLsizei")] uint count,
             [NativeTypeName("const GLdouble *")] Ref<double> value
         );
 
@@ -17603,7 +17603,7 @@ public unsafe partial interface IGL
         static abstract void ProgramUniform1dvExt(
             [NativeTypeName("GLuint")] uint program,
             [NativeTypeName("GLint")] int location,
-            [NativeTypeName("GLsizei")] int count,
+            [NativeTypeName("GLsizei")] uint count,
             [NativeTypeName("const GLdouble *")] Ref<double> value
         );
 
@@ -17632,7 +17632,7 @@ public unsafe partial interface IGL
         static abstract void ProgramUniform1(
             [NativeTypeName("GLuint")] uint program,
             [NativeTypeName("GLint")] int location,
-            [NativeTypeName("GLsizei")] int count,
+            [NativeTypeName("GLsizei")] uint count,
             [NativeTypeName("const GLfloat *")] Ref<float> value
         );
 
@@ -17643,7 +17643,7 @@ public unsafe partial interface IGL
         static abstract void ProgramUniform1fvExt(
             [NativeTypeName("GLuint")] uint program,
             [NativeTypeName("GLint")] int location,
-            [NativeTypeName("GLsizei")] int count,
+            [NativeTypeName("GLsizei")] uint count,
             [NativeTypeName("const GLfloat *")] Ref<float> value
         );
 
@@ -17681,7 +17681,7 @@ public unsafe partial interface IGL
         static abstract void ProgramUniform1i64vArb(
             [NativeTypeName("GLuint")] uint program,
             [NativeTypeName("GLint")] int location,
-            [NativeTypeName("GLsizei")] int count,
+            [NativeTypeName("GLsizei")] uint count,
             [NativeTypeName("const GLint64 *")] Ref<long> value
         );
 
@@ -17692,7 +17692,7 @@ public unsafe partial interface IGL
         static abstract void ProgramUniform1i64vNV(
             [NativeTypeName("GLuint")] uint program,
             [NativeTypeName("GLint")] int location,
-            [NativeTypeName("GLsizei")] int count,
+            [NativeTypeName("GLsizei")] uint count,
             [NativeTypeName("const GLint64EXT *")] Ref<long> value
         );
 
@@ -17712,7 +17712,7 @@ public unsafe partial interface IGL
         static abstract void ProgramUniform1(
             [NativeTypeName("GLuint")] uint program,
             [NativeTypeName("GLint")] int location,
-            [NativeTypeName("GLsizei")] int count,
+            [NativeTypeName("GLsizei")] uint count,
             [NativeTypeName("const GLint *")] Ref<int> value
         );
 
@@ -17723,7 +17723,7 @@ public unsafe partial interface IGL
         static abstract void ProgramUniform1ivExt(
             [NativeTypeName("GLuint")] uint program,
             [NativeTypeName("GLint")] int location,
-            [NativeTypeName("GLsizei")] int count,
+            [NativeTypeName("GLsizei")] uint count,
             [NativeTypeName("const GLint *")] Ref<int> value
         );
 
@@ -17761,7 +17761,7 @@ public unsafe partial interface IGL
         static abstract void ProgramUniform1ui64vArb(
             [NativeTypeName("GLuint")] uint program,
             [NativeTypeName("GLint")] int location,
-            [NativeTypeName("GLsizei")] int count,
+            [NativeTypeName("GLsizei")] uint count,
             [NativeTypeName("const GLuint64 *")] Ref<ulong> value
         );
 
@@ -17772,7 +17772,7 @@ public unsafe partial interface IGL
         static abstract void ProgramUniform1ui64vNV(
             [NativeTypeName("GLuint")] uint program,
             [NativeTypeName("GLint")] int location,
-            [NativeTypeName("GLsizei")] int count,
+            [NativeTypeName("GLsizei")] uint count,
             [NativeTypeName("const GLuint64EXT *")] Ref<ulong> value
         );
 
@@ -17792,7 +17792,7 @@ public unsafe partial interface IGL
         static abstract void ProgramUniform1(
             [NativeTypeName("GLuint")] uint program,
             [NativeTypeName("GLint")] int location,
-            [NativeTypeName("GLsizei")] int count,
+            [NativeTypeName("GLsizei")] uint count,
             [NativeTypeName("const GLuint *")] Ref<uint> value
         );
 
@@ -17803,7 +17803,7 @@ public unsafe partial interface IGL
         static abstract void ProgramUniform1uivExt(
             [NativeTypeName("GLuint")] uint program,
             [NativeTypeName("GLint")] int location,
-            [NativeTypeName("GLsizei")] int count,
+            [NativeTypeName("GLsizei")] uint count,
             [NativeTypeName("const GLuint *")] Ref<uint> value
         );
 
@@ -17833,7 +17833,7 @@ public unsafe partial interface IGL
         static abstract void ProgramUniform2(
             [NativeTypeName("GLuint")] uint program,
             [NativeTypeName("GLint")] int location,
-            [NativeTypeName("GLsizei")] int count,
+            [NativeTypeName("GLsizei")] uint count,
             [NativeTypeName("const GLdouble *")] Ref<double> value
         );
 
@@ -17843,7 +17843,7 @@ public unsafe partial interface IGL
         static abstract void ProgramUniform2dvExt(
             [NativeTypeName("GLuint")] uint program,
             [NativeTypeName("GLint")] int location,
-            [NativeTypeName("GLsizei")] int count,
+            [NativeTypeName("GLsizei")] uint count,
             [NativeTypeName("const GLdouble *")] Ref<double> value
         );
 
@@ -17874,7 +17874,7 @@ public unsafe partial interface IGL
         static abstract void ProgramUniform2(
             [NativeTypeName("GLuint")] uint program,
             [NativeTypeName("GLint")] int location,
-            [NativeTypeName("GLsizei")] int count,
+            [NativeTypeName("GLsizei")] uint count,
             [NativeTypeName("const GLfloat *")] Ref<float> value
         );
 
@@ -17885,7 +17885,7 @@ public unsafe partial interface IGL
         static abstract void ProgramUniform2fvExt(
             [NativeTypeName("GLuint")] uint program,
             [NativeTypeName("GLint")] int location,
-            [NativeTypeName("GLsizei")] int count,
+            [NativeTypeName("GLsizei")] uint count,
             [NativeTypeName("const GLfloat *")] Ref<float> value
         );
 
@@ -17926,7 +17926,7 @@ public unsafe partial interface IGL
         static abstract void ProgramUniform2i64vArb(
             [NativeTypeName("GLuint")] uint program,
             [NativeTypeName("GLint")] int location,
-            [NativeTypeName("GLsizei")] int count,
+            [NativeTypeName("GLsizei")] uint count,
             [NativeTypeName("const GLint64 *")] Ref<long> value
         );
 
@@ -17937,7 +17937,7 @@ public unsafe partial interface IGL
         static abstract void ProgramUniform2i64vNV(
             [NativeTypeName("GLuint")] uint program,
             [NativeTypeName("GLint")] int location,
-            [NativeTypeName("GLsizei")] int count,
+            [NativeTypeName("GLsizei")] uint count,
             [NativeTypeName("const GLint64EXT *")] Ref<long> value
         );
 
@@ -17958,7 +17958,7 @@ public unsafe partial interface IGL
         static abstract void ProgramUniform2(
             [NativeTypeName("GLuint")] uint program,
             [NativeTypeName("GLint")] int location,
-            [NativeTypeName("GLsizei")] int count,
+            [NativeTypeName("GLsizei")] uint count,
             [NativeTypeName("const GLint *")] Ref<int> value
         );
 
@@ -17969,7 +17969,7 @@ public unsafe partial interface IGL
         static abstract void ProgramUniform2ivExt(
             [NativeTypeName("GLuint")] uint program,
             [NativeTypeName("GLint")] int location,
-            [NativeTypeName("GLsizei")] int count,
+            [NativeTypeName("GLsizei")] uint count,
             [NativeTypeName("const GLint *")] Ref<int> value
         );
 
@@ -18010,7 +18010,7 @@ public unsafe partial interface IGL
         static abstract void ProgramUniform2ui64vArb(
             [NativeTypeName("GLuint")] uint program,
             [NativeTypeName("GLint")] int location,
-            [NativeTypeName("GLsizei")] int count,
+            [NativeTypeName("GLsizei")] uint count,
             [NativeTypeName("const GLuint64 *")] Ref<ulong> value
         );
 
@@ -18021,7 +18021,7 @@ public unsafe partial interface IGL
         static abstract void ProgramUniform2ui64vNV(
             [NativeTypeName("GLuint")] uint program,
             [NativeTypeName("GLint")] int location,
-            [NativeTypeName("GLsizei")] int count,
+            [NativeTypeName("GLsizei")] uint count,
             [NativeTypeName("const GLuint64EXT *")] Ref<ulong> value
         );
 
@@ -18042,7 +18042,7 @@ public unsafe partial interface IGL
         static abstract void ProgramUniform2(
             [NativeTypeName("GLuint")] uint program,
             [NativeTypeName("GLint")] int location,
-            [NativeTypeName("GLsizei")] int count,
+            [NativeTypeName("GLsizei")] uint count,
             [NativeTypeName("const GLuint *")] Ref<uint> value
         );
 
@@ -18053,7 +18053,7 @@ public unsafe partial interface IGL
         static abstract void ProgramUniform2uivExt(
             [NativeTypeName("GLuint")] uint program,
             [NativeTypeName("GLint")] int location,
-            [NativeTypeName("GLsizei")] int count,
+            [NativeTypeName("GLsizei")] uint count,
             [NativeTypeName("const GLuint *")] Ref<uint> value
         );
 
@@ -18085,7 +18085,7 @@ public unsafe partial interface IGL
         static abstract void ProgramUniform3(
             [NativeTypeName("GLuint")] uint program,
             [NativeTypeName("GLint")] int location,
-            [NativeTypeName("GLsizei")] int count,
+            [NativeTypeName("GLsizei")] uint count,
             [NativeTypeName("const GLdouble *")] Ref<double> value
         );
 
@@ -18095,7 +18095,7 @@ public unsafe partial interface IGL
         static abstract void ProgramUniform3dvExt(
             [NativeTypeName("GLuint")] uint program,
             [NativeTypeName("GLint")] int location,
-            [NativeTypeName("GLsizei")] int count,
+            [NativeTypeName("GLsizei")] uint count,
             [NativeTypeName("const GLdouble *")] Ref<double> value
         );
 
@@ -18128,7 +18128,7 @@ public unsafe partial interface IGL
         static abstract void ProgramUniform3(
             [NativeTypeName("GLuint")] uint program,
             [NativeTypeName("GLint")] int location,
-            [NativeTypeName("GLsizei")] int count,
+            [NativeTypeName("GLsizei")] uint count,
             [NativeTypeName("const GLfloat *")] Ref<float> value
         );
 
@@ -18139,7 +18139,7 @@ public unsafe partial interface IGL
         static abstract void ProgramUniform3fvExt(
             [NativeTypeName("GLuint")] uint program,
             [NativeTypeName("GLint")] int location,
-            [NativeTypeName("GLsizei")] int count,
+            [NativeTypeName("GLsizei")] uint count,
             [NativeTypeName("const GLfloat *")] Ref<float> value
         );
 
@@ -18183,7 +18183,7 @@ public unsafe partial interface IGL
         static abstract void ProgramUniform3i64vArb(
             [NativeTypeName("GLuint")] uint program,
             [NativeTypeName("GLint")] int location,
-            [NativeTypeName("GLsizei")] int count,
+            [NativeTypeName("GLsizei")] uint count,
             [NativeTypeName("const GLint64 *")] Ref<long> value
         );
 
@@ -18194,7 +18194,7 @@ public unsafe partial interface IGL
         static abstract void ProgramUniform3i64vNV(
             [NativeTypeName("GLuint")] uint program,
             [NativeTypeName("GLint")] int location,
-            [NativeTypeName("GLsizei")] int count,
+            [NativeTypeName("GLsizei")] uint count,
             [NativeTypeName("const GLint64EXT *")] Ref<long> value
         );
 
@@ -18216,7 +18216,7 @@ public unsafe partial interface IGL
         static abstract void ProgramUniform3(
             [NativeTypeName("GLuint")] uint program,
             [NativeTypeName("GLint")] int location,
-            [NativeTypeName("GLsizei")] int count,
+            [NativeTypeName("GLsizei")] uint count,
             [NativeTypeName("const GLint *")] Ref<int> value
         );
 
@@ -18227,7 +18227,7 @@ public unsafe partial interface IGL
         static abstract void ProgramUniform3ivExt(
             [NativeTypeName("GLuint")] uint program,
             [NativeTypeName("GLint")] int location,
-            [NativeTypeName("GLsizei")] int count,
+            [NativeTypeName("GLsizei")] uint count,
             [NativeTypeName("const GLint *")] Ref<int> value
         );
 
@@ -18271,7 +18271,7 @@ public unsafe partial interface IGL
         static abstract void ProgramUniform3ui64vArb(
             [NativeTypeName("GLuint")] uint program,
             [NativeTypeName("GLint")] int location,
-            [NativeTypeName("GLsizei")] int count,
+            [NativeTypeName("GLsizei")] uint count,
             [NativeTypeName("const GLuint64 *")] Ref<ulong> value
         );
 
@@ -18282,7 +18282,7 @@ public unsafe partial interface IGL
         static abstract void ProgramUniform3ui64vNV(
             [NativeTypeName("GLuint")] uint program,
             [NativeTypeName("GLint")] int location,
-            [NativeTypeName("GLsizei")] int count,
+            [NativeTypeName("GLsizei")] uint count,
             [NativeTypeName("const GLuint64EXT *")] Ref<ulong> value
         );
 
@@ -18304,7 +18304,7 @@ public unsafe partial interface IGL
         static abstract void ProgramUniform3(
             [NativeTypeName("GLuint")] uint program,
             [NativeTypeName("GLint")] int location,
-            [NativeTypeName("GLsizei")] int count,
+            [NativeTypeName("GLsizei")] uint count,
             [NativeTypeName("const GLuint *")] Ref<uint> value
         );
 
@@ -18315,7 +18315,7 @@ public unsafe partial interface IGL
         static abstract void ProgramUniform3uivExt(
             [NativeTypeName("GLuint")] uint program,
             [NativeTypeName("GLint")] int location,
-            [NativeTypeName("GLsizei")] int count,
+            [NativeTypeName("GLsizei")] uint count,
             [NativeTypeName("const GLuint *")] Ref<uint> value
         );
 
@@ -18349,7 +18349,7 @@ public unsafe partial interface IGL
         static abstract void ProgramUniform4(
             [NativeTypeName("GLuint")] uint program,
             [NativeTypeName("GLint")] int location,
-            [NativeTypeName("GLsizei")] int count,
+            [NativeTypeName("GLsizei")] uint count,
             [NativeTypeName("const GLdouble *")] Ref<double> value
         );
 
@@ -18359,7 +18359,7 @@ public unsafe partial interface IGL
         static abstract void ProgramUniform4dvExt(
             [NativeTypeName("GLuint")] uint program,
             [NativeTypeName("GLint")] int location,
-            [NativeTypeName("GLsizei")] int count,
+            [NativeTypeName("GLsizei")] uint count,
             [NativeTypeName("const GLdouble *")] Ref<double> value
         );
 
@@ -18394,7 +18394,7 @@ public unsafe partial interface IGL
         static abstract void ProgramUniform4(
             [NativeTypeName("GLuint")] uint program,
             [NativeTypeName("GLint")] int location,
-            [NativeTypeName("GLsizei")] int count,
+            [NativeTypeName("GLsizei")] uint count,
             [NativeTypeName("const GLfloat *")] Ref<float> value
         );
 
@@ -18405,7 +18405,7 @@ public unsafe partial interface IGL
         static abstract void ProgramUniform4fvExt(
             [NativeTypeName("GLuint")] uint program,
             [NativeTypeName("GLint")] int location,
-            [NativeTypeName("GLsizei")] int count,
+            [NativeTypeName("GLsizei")] uint count,
             [NativeTypeName("const GLfloat *")] Ref<float> value
         );
 
@@ -18452,7 +18452,7 @@ public unsafe partial interface IGL
         static abstract void ProgramUniform4i64vArb(
             [NativeTypeName("GLuint")] uint program,
             [NativeTypeName("GLint")] int location,
-            [NativeTypeName("GLsizei")] int count,
+            [NativeTypeName("GLsizei")] uint count,
             [NativeTypeName("const GLint64 *")] Ref<long> value
         );
 
@@ -18463,7 +18463,7 @@ public unsafe partial interface IGL
         static abstract void ProgramUniform4i64vNV(
             [NativeTypeName("GLuint")] uint program,
             [NativeTypeName("GLint")] int location,
-            [NativeTypeName("GLsizei")] int count,
+            [NativeTypeName("GLsizei")] uint count,
             [NativeTypeName("const GLint64EXT *")] Ref<long> value
         );
 
@@ -18486,7 +18486,7 @@ public unsafe partial interface IGL
         static abstract void ProgramUniform4(
             [NativeTypeName("GLuint")] uint program,
             [NativeTypeName("GLint")] int location,
-            [NativeTypeName("GLsizei")] int count,
+            [NativeTypeName("GLsizei")] uint count,
             [NativeTypeName("const GLint *")] Ref<int> value
         );
 
@@ -18497,7 +18497,7 @@ public unsafe partial interface IGL
         static abstract void ProgramUniform4ivExt(
             [NativeTypeName("GLuint")] uint program,
             [NativeTypeName("GLint")] int location,
-            [NativeTypeName("GLsizei")] int count,
+            [NativeTypeName("GLsizei")] uint count,
             [NativeTypeName("const GLint *")] Ref<int> value
         );
 
@@ -18544,7 +18544,7 @@ public unsafe partial interface IGL
         static abstract void ProgramUniform4ui64vArb(
             [NativeTypeName("GLuint")] uint program,
             [NativeTypeName("GLint")] int location,
-            [NativeTypeName("GLsizei")] int count,
+            [NativeTypeName("GLsizei")] uint count,
             [NativeTypeName("const GLuint64 *")] Ref<ulong> value
         );
 
@@ -18555,7 +18555,7 @@ public unsafe partial interface IGL
         static abstract void ProgramUniform4ui64vNV(
             [NativeTypeName("GLuint")] uint program,
             [NativeTypeName("GLint")] int location,
-            [NativeTypeName("GLsizei")] int count,
+            [NativeTypeName("GLsizei")] uint count,
             [NativeTypeName("const GLuint64EXT *")] Ref<ulong> value
         );
 
@@ -18578,7 +18578,7 @@ public unsafe partial interface IGL
         static abstract void ProgramUniform4(
             [NativeTypeName("GLuint")] uint program,
             [NativeTypeName("GLint")] int location,
-            [NativeTypeName("GLsizei")] int count,
+            [NativeTypeName("GLsizei")] uint count,
             [NativeTypeName("const GLuint *")] Ref<uint> value
         );
 
@@ -18589,7 +18589,7 @@ public unsafe partial interface IGL
         static abstract void ProgramUniform4uivExt(
             [NativeTypeName("GLuint")] uint program,
             [NativeTypeName("GLint")] int location,
-            [NativeTypeName("GLsizei")] int count,
+            [NativeTypeName("GLsizei")] uint count,
             [NativeTypeName("const GLuint *")] Ref<uint> value
         );
 
@@ -18626,7 +18626,7 @@ public unsafe partial interface IGL
         static abstract void ProgramUniformHandleui64vArb(
             [NativeTypeName("GLuint")] uint program,
             [NativeTypeName("GLint")] int location,
-            [NativeTypeName("GLsizei")] int count,
+            [NativeTypeName("GLsizei")] uint count,
             [NativeTypeName("const GLuint64 *")] Ref<ulong> values
         );
 
@@ -18635,7 +18635,7 @@ public unsafe partial interface IGL
         static abstract void ProgramUniformHandleui64vImg(
             [NativeTypeName("GLuint")] uint program,
             [NativeTypeName("GLint")] int location,
-            [NativeTypeName("GLsizei")] int count,
+            [NativeTypeName("GLsizei")] uint count,
             [NativeTypeName("const GLuint64 *")] Ref<ulong> values
         );
 
@@ -18646,7 +18646,7 @@ public unsafe partial interface IGL
         static abstract void ProgramUniformHandleui64vNV(
             [NativeTypeName("GLuint")] uint program,
             [NativeTypeName("GLint")] int location,
-            [NativeTypeName("GLsizei")] int count,
+            [NativeTypeName("GLsizei")] uint count,
             [NativeTypeName("const GLuint64 *")] Ref<ulong> values
         );
 
@@ -18656,8 +18656,8 @@ public unsafe partial interface IGL
         static abstract void ProgramUniformMatrix2(
             [NativeTypeName("GLuint")] uint program,
             [NativeTypeName("GLint")] int location,
-            [NativeTypeName("GLsizei")] int count,
-            [NativeTypeName("GLboolean")] byte transpose,
+            [NativeTypeName("GLsizei")] uint count,
+            [NativeTypeName("GLboolean")] uint transpose,
             [NativeTypeName("const GLdouble *")] Ref<double> value
         );
 
@@ -18667,8 +18667,8 @@ public unsafe partial interface IGL
         static abstract void ProgramUniformMatrix2dvExt(
             [NativeTypeName("GLuint")] uint program,
             [NativeTypeName("GLint")] int location,
-            [NativeTypeName("GLsizei")] int count,
-            [NativeTypeName("GLboolean")] byte transpose,
+            [NativeTypeName("GLsizei")] uint count,
+            [NativeTypeName("GLboolean")] uint transpose,
             [NativeTypeName("const GLdouble *")] Ref<double> value
         );
 
@@ -18678,8 +18678,8 @@ public unsafe partial interface IGL
         static abstract void ProgramUniformMatrix2(
             [NativeTypeName("GLuint")] uint program,
             [NativeTypeName("GLint")] int location,
-            [NativeTypeName("GLsizei")] int count,
-            [NativeTypeName("GLboolean")] byte transpose,
+            [NativeTypeName("GLsizei")] uint count,
+            [NativeTypeName("GLboolean")] uint transpose,
             [NativeTypeName("const GLfloat *")] Ref<float> value
         );
 
@@ -18690,8 +18690,8 @@ public unsafe partial interface IGL
         static abstract void ProgramUniformMatrix2fvExt(
             [NativeTypeName("GLuint")] uint program,
             [NativeTypeName("GLint")] int location,
-            [NativeTypeName("GLsizei")] int count,
-            [NativeTypeName("GLboolean")] byte transpose,
+            [NativeTypeName("GLsizei")] uint count,
+            [NativeTypeName("GLboolean")] uint transpose,
             [NativeTypeName("const GLfloat *")] Ref<float> value
         );
 
@@ -18701,8 +18701,8 @@ public unsafe partial interface IGL
         static abstract void ProgramUniformMatrix2x3(
             [NativeTypeName("GLuint")] uint program,
             [NativeTypeName("GLint")] int location,
-            [NativeTypeName("GLsizei")] int count,
-            [NativeTypeName("GLboolean")] byte transpose,
+            [NativeTypeName("GLsizei")] uint count,
+            [NativeTypeName("GLboolean")] uint transpose,
             [NativeTypeName("const GLdouble *")] Ref<double> value
         );
 
@@ -18712,8 +18712,8 @@ public unsafe partial interface IGL
         static abstract void ProgramUniformMatrix2x3dvExt(
             [NativeTypeName("GLuint")] uint program,
             [NativeTypeName("GLint")] int location,
-            [NativeTypeName("GLsizei")] int count,
-            [NativeTypeName("GLboolean")] byte transpose,
+            [NativeTypeName("GLsizei")] uint count,
+            [NativeTypeName("GLboolean")] uint transpose,
             [NativeTypeName("const GLdouble *")] Ref<double> value
         );
 
@@ -18723,8 +18723,8 @@ public unsafe partial interface IGL
         static abstract void ProgramUniformMatrix2x3(
             [NativeTypeName("GLuint")] uint program,
             [NativeTypeName("GLint")] int location,
-            [NativeTypeName("GLsizei")] int count,
-            [NativeTypeName("GLboolean")] byte transpose,
+            [NativeTypeName("GLsizei")] uint count,
+            [NativeTypeName("GLboolean")] uint transpose,
             [NativeTypeName("const GLfloat *")] Ref<float> value
         );
 
@@ -18735,8 +18735,8 @@ public unsafe partial interface IGL
         static abstract void ProgramUniformMatrix2x3fvExt(
             [NativeTypeName("GLuint")] uint program,
             [NativeTypeName("GLint")] int location,
-            [NativeTypeName("GLsizei")] int count,
-            [NativeTypeName("GLboolean")] byte transpose,
+            [NativeTypeName("GLsizei")] uint count,
+            [NativeTypeName("GLboolean")] uint transpose,
             [NativeTypeName("const GLfloat *")] Ref<float> value
         );
 
@@ -18746,8 +18746,8 @@ public unsafe partial interface IGL
         static abstract void ProgramUniformMatrix2x4(
             [NativeTypeName("GLuint")] uint program,
             [NativeTypeName("GLint")] int location,
-            [NativeTypeName("GLsizei")] int count,
-            [NativeTypeName("GLboolean")] byte transpose,
+            [NativeTypeName("GLsizei")] uint count,
+            [NativeTypeName("GLboolean")] uint transpose,
             [NativeTypeName("const GLdouble *")] Ref<double> value
         );
 
@@ -18757,8 +18757,8 @@ public unsafe partial interface IGL
         static abstract void ProgramUniformMatrix2x4dvExt(
             [NativeTypeName("GLuint")] uint program,
             [NativeTypeName("GLint")] int location,
-            [NativeTypeName("GLsizei")] int count,
-            [NativeTypeName("GLboolean")] byte transpose,
+            [NativeTypeName("GLsizei")] uint count,
+            [NativeTypeName("GLboolean")] uint transpose,
             [NativeTypeName("const GLdouble *")] Ref<double> value
         );
 
@@ -18768,8 +18768,8 @@ public unsafe partial interface IGL
         static abstract void ProgramUniformMatrix2x4(
             [NativeTypeName("GLuint")] uint program,
             [NativeTypeName("GLint")] int location,
-            [NativeTypeName("GLsizei")] int count,
-            [NativeTypeName("GLboolean")] byte transpose,
+            [NativeTypeName("GLsizei")] uint count,
+            [NativeTypeName("GLboolean")] uint transpose,
             [NativeTypeName("const GLfloat *")] Ref<float> value
         );
 
@@ -18780,8 +18780,8 @@ public unsafe partial interface IGL
         static abstract void ProgramUniformMatrix2x4fvExt(
             [NativeTypeName("GLuint")] uint program,
             [NativeTypeName("GLint")] int location,
-            [NativeTypeName("GLsizei")] int count,
-            [NativeTypeName("GLboolean")] byte transpose,
+            [NativeTypeName("GLsizei")] uint count,
+            [NativeTypeName("GLboolean")] uint transpose,
             [NativeTypeName("const GLfloat *")] Ref<float> value
         );
 
@@ -18791,8 +18791,8 @@ public unsafe partial interface IGL
         static abstract void ProgramUniformMatrix3(
             [NativeTypeName("GLuint")] uint program,
             [NativeTypeName("GLint")] int location,
-            [NativeTypeName("GLsizei")] int count,
-            [NativeTypeName("GLboolean")] byte transpose,
+            [NativeTypeName("GLsizei")] uint count,
+            [NativeTypeName("GLboolean")] uint transpose,
             [NativeTypeName("const GLdouble *")] Ref<double> value
         );
 
@@ -18802,8 +18802,8 @@ public unsafe partial interface IGL
         static abstract void ProgramUniformMatrix3dvExt(
             [NativeTypeName("GLuint")] uint program,
             [NativeTypeName("GLint")] int location,
-            [NativeTypeName("GLsizei")] int count,
-            [NativeTypeName("GLboolean")] byte transpose,
+            [NativeTypeName("GLsizei")] uint count,
+            [NativeTypeName("GLboolean")] uint transpose,
             [NativeTypeName("const GLdouble *")] Ref<double> value
         );
 
@@ -18813,8 +18813,8 @@ public unsafe partial interface IGL
         static abstract void ProgramUniformMatrix3(
             [NativeTypeName("GLuint")] uint program,
             [NativeTypeName("GLint")] int location,
-            [NativeTypeName("GLsizei")] int count,
-            [NativeTypeName("GLboolean")] byte transpose,
+            [NativeTypeName("GLsizei")] uint count,
+            [NativeTypeName("GLboolean")] uint transpose,
             [NativeTypeName("const GLfloat *")] Ref<float> value
         );
 
@@ -18825,8 +18825,8 @@ public unsafe partial interface IGL
         static abstract void ProgramUniformMatrix3fvExt(
             [NativeTypeName("GLuint")] uint program,
             [NativeTypeName("GLint")] int location,
-            [NativeTypeName("GLsizei")] int count,
-            [NativeTypeName("GLboolean")] byte transpose,
+            [NativeTypeName("GLsizei")] uint count,
+            [NativeTypeName("GLboolean")] uint transpose,
             [NativeTypeName("const GLfloat *")] Ref<float> value
         );
 
@@ -18836,8 +18836,8 @@ public unsafe partial interface IGL
         static abstract void ProgramUniformMatrix3x2(
             [NativeTypeName("GLuint")] uint program,
             [NativeTypeName("GLint")] int location,
-            [NativeTypeName("GLsizei")] int count,
-            [NativeTypeName("GLboolean")] byte transpose,
+            [NativeTypeName("GLsizei")] uint count,
+            [NativeTypeName("GLboolean")] uint transpose,
             [NativeTypeName("const GLdouble *")] Ref<double> value
         );
 
@@ -18847,8 +18847,8 @@ public unsafe partial interface IGL
         static abstract void ProgramUniformMatrix3x2dvExt(
             [NativeTypeName("GLuint")] uint program,
             [NativeTypeName("GLint")] int location,
-            [NativeTypeName("GLsizei")] int count,
-            [NativeTypeName("GLboolean")] byte transpose,
+            [NativeTypeName("GLsizei")] uint count,
+            [NativeTypeName("GLboolean")] uint transpose,
             [NativeTypeName("const GLdouble *")] Ref<double> value
         );
 
@@ -18858,8 +18858,8 @@ public unsafe partial interface IGL
         static abstract void ProgramUniformMatrix3x2(
             [NativeTypeName("GLuint")] uint program,
             [NativeTypeName("GLint")] int location,
-            [NativeTypeName("GLsizei")] int count,
-            [NativeTypeName("GLboolean")] byte transpose,
+            [NativeTypeName("GLsizei")] uint count,
+            [NativeTypeName("GLboolean")] uint transpose,
             [NativeTypeName("const GLfloat *")] Ref<float> value
         );
 
@@ -18870,8 +18870,8 @@ public unsafe partial interface IGL
         static abstract void ProgramUniformMatrix3x2fvExt(
             [NativeTypeName("GLuint")] uint program,
             [NativeTypeName("GLint")] int location,
-            [NativeTypeName("GLsizei")] int count,
-            [NativeTypeName("GLboolean")] byte transpose,
+            [NativeTypeName("GLsizei")] uint count,
+            [NativeTypeName("GLboolean")] uint transpose,
             [NativeTypeName("const GLfloat *")] Ref<float> value
         );
 
@@ -18881,8 +18881,8 @@ public unsafe partial interface IGL
         static abstract void ProgramUniformMatrix3x4(
             [NativeTypeName("GLuint")] uint program,
             [NativeTypeName("GLint")] int location,
-            [NativeTypeName("GLsizei")] int count,
-            [NativeTypeName("GLboolean")] byte transpose,
+            [NativeTypeName("GLsizei")] uint count,
+            [NativeTypeName("GLboolean")] uint transpose,
             [NativeTypeName("const GLdouble *")] Ref<double> value
         );
 
@@ -18892,8 +18892,8 @@ public unsafe partial interface IGL
         static abstract void ProgramUniformMatrix3x4dvExt(
             [NativeTypeName("GLuint")] uint program,
             [NativeTypeName("GLint")] int location,
-            [NativeTypeName("GLsizei")] int count,
-            [NativeTypeName("GLboolean")] byte transpose,
+            [NativeTypeName("GLsizei")] uint count,
+            [NativeTypeName("GLboolean")] uint transpose,
             [NativeTypeName("const GLdouble *")] Ref<double> value
         );
 
@@ -18903,8 +18903,8 @@ public unsafe partial interface IGL
         static abstract void ProgramUniformMatrix3x4(
             [NativeTypeName("GLuint")] uint program,
             [NativeTypeName("GLint")] int location,
-            [NativeTypeName("GLsizei")] int count,
-            [NativeTypeName("GLboolean")] byte transpose,
+            [NativeTypeName("GLsizei")] uint count,
+            [NativeTypeName("GLboolean")] uint transpose,
             [NativeTypeName("const GLfloat *")] Ref<float> value
         );
 
@@ -18915,8 +18915,8 @@ public unsafe partial interface IGL
         static abstract void ProgramUniformMatrix3x4fvExt(
             [NativeTypeName("GLuint")] uint program,
             [NativeTypeName("GLint")] int location,
-            [NativeTypeName("GLsizei")] int count,
-            [NativeTypeName("GLboolean")] byte transpose,
+            [NativeTypeName("GLsizei")] uint count,
+            [NativeTypeName("GLboolean")] uint transpose,
             [NativeTypeName("const GLfloat *")] Ref<float> value
         );
 
@@ -18926,8 +18926,8 @@ public unsafe partial interface IGL
         static abstract void ProgramUniformMatrix4(
             [NativeTypeName("GLuint")] uint program,
             [NativeTypeName("GLint")] int location,
-            [NativeTypeName("GLsizei")] int count,
-            [NativeTypeName("GLboolean")] byte transpose,
+            [NativeTypeName("GLsizei")] uint count,
+            [NativeTypeName("GLboolean")] uint transpose,
             [NativeTypeName("const GLdouble *")] Ref<double> value
         );
 
@@ -18937,8 +18937,8 @@ public unsafe partial interface IGL
         static abstract void ProgramUniformMatrix4dvExt(
             [NativeTypeName("GLuint")] uint program,
             [NativeTypeName("GLint")] int location,
-            [NativeTypeName("GLsizei")] int count,
-            [NativeTypeName("GLboolean")] byte transpose,
+            [NativeTypeName("GLsizei")] uint count,
+            [NativeTypeName("GLboolean")] uint transpose,
             [NativeTypeName("const GLdouble *")] Ref<double> value
         );
 
@@ -18948,8 +18948,8 @@ public unsafe partial interface IGL
         static abstract void ProgramUniformMatrix4(
             [NativeTypeName("GLuint")] uint program,
             [NativeTypeName("GLint")] int location,
-            [NativeTypeName("GLsizei")] int count,
-            [NativeTypeName("GLboolean")] byte transpose,
+            [NativeTypeName("GLsizei")] uint count,
+            [NativeTypeName("GLboolean")] uint transpose,
             [NativeTypeName("const GLfloat *")] Ref<float> value
         );
 
@@ -18960,8 +18960,8 @@ public unsafe partial interface IGL
         static abstract void ProgramUniformMatrix4fvExt(
             [NativeTypeName("GLuint")] uint program,
             [NativeTypeName("GLint")] int location,
-            [NativeTypeName("GLsizei")] int count,
-            [NativeTypeName("GLboolean")] byte transpose,
+            [NativeTypeName("GLsizei")] uint count,
+            [NativeTypeName("GLboolean")] uint transpose,
             [NativeTypeName("const GLfloat *")] Ref<float> value
         );
 
@@ -18971,8 +18971,8 @@ public unsafe partial interface IGL
         static abstract void ProgramUniformMatrix4x2(
             [NativeTypeName("GLuint")] uint program,
             [NativeTypeName("GLint")] int location,
-            [NativeTypeName("GLsizei")] int count,
-            [NativeTypeName("GLboolean")] byte transpose,
+            [NativeTypeName("GLsizei")] uint count,
+            [NativeTypeName("GLboolean")] uint transpose,
             [NativeTypeName("const GLdouble *")] Ref<double> value
         );
 
@@ -18982,8 +18982,8 @@ public unsafe partial interface IGL
         static abstract void ProgramUniformMatrix4x2dvExt(
             [NativeTypeName("GLuint")] uint program,
             [NativeTypeName("GLint")] int location,
-            [NativeTypeName("GLsizei")] int count,
-            [NativeTypeName("GLboolean")] byte transpose,
+            [NativeTypeName("GLsizei")] uint count,
+            [NativeTypeName("GLboolean")] uint transpose,
             [NativeTypeName("const GLdouble *")] Ref<double> value
         );
 
@@ -18993,8 +18993,8 @@ public unsafe partial interface IGL
         static abstract void ProgramUniformMatrix4x2(
             [NativeTypeName("GLuint")] uint program,
             [NativeTypeName("GLint")] int location,
-            [NativeTypeName("GLsizei")] int count,
-            [NativeTypeName("GLboolean")] byte transpose,
+            [NativeTypeName("GLsizei")] uint count,
+            [NativeTypeName("GLboolean")] uint transpose,
             [NativeTypeName("const GLfloat *")] Ref<float> value
         );
 
@@ -19005,8 +19005,8 @@ public unsafe partial interface IGL
         static abstract void ProgramUniformMatrix4x2fvExt(
             [NativeTypeName("GLuint")] uint program,
             [NativeTypeName("GLint")] int location,
-            [NativeTypeName("GLsizei")] int count,
-            [NativeTypeName("GLboolean")] byte transpose,
+            [NativeTypeName("GLsizei")] uint count,
+            [NativeTypeName("GLboolean")] uint transpose,
             [NativeTypeName("const GLfloat *")] Ref<float> value
         );
 
@@ -19016,8 +19016,8 @@ public unsafe partial interface IGL
         static abstract void ProgramUniformMatrix4x3(
             [NativeTypeName("GLuint")] uint program,
             [NativeTypeName("GLint")] int location,
-            [NativeTypeName("GLsizei")] int count,
-            [NativeTypeName("GLboolean")] byte transpose,
+            [NativeTypeName("GLsizei")] uint count,
+            [NativeTypeName("GLboolean")] uint transpose,
             [NativeTypeName("const GLdouble *")] Ref<double> value
         );
 
@@ -19027,8 +19027,8 @@ public unsafe partial interface IGL
         static abstract void ProgramUniformMatrix4x3dvExt(
             [NativeTypeName("GLuint")] uint program,
             [NativeTypeName("GLint")] int location,
-            [NativeTypeName("GLsizei")] int count,
-            [NativeTypeName("GLboolean")] byte transpose,
+            [NativeTypeName("GLsizei")] uint count,
+            [NativeTypeName("GLboolean")] uint transpose,
             [NativeTypeName("const GLdouble *")] Ref<double> value
         );
 
@@ -19038,8 +19038,8 @@ public unsafe partial interface IGL
         static abstract void ProgramUniformMatrix4x3(
             [NativeTypeName("GLuint")] uint program,
             [NativeTypeName("GLint")] int location,
-            [NativeTypeName("GLsizei")] int count,
-            [NativeTypeName("GLboolean")] byte transpose,
+            [NativeTypeName("GLsizei")] uint count,
+            [NativeTypeName("GLboolean")] uint transpose,
             [NativeTypeName("const GLfloat *")] Ref<float> value
         );
 
@@ -19050,8 +19050,8 @@ public unsafe partial interface IGL
         static abstract void ProgramUniformMatrix4x3fvExt(
             [NativeTypeName("GLuint")] uint program,
             [NativeTypeName("GLint")] int location,
-            [NativeTypeName("GLsizei")] int count,
-            [NativeTypeName("GLboolean")] byte transpose,
+            [NativeTypeName("GLsizei")] uint count,
+            [NativeTypeName("GLboolean")] uint transpose,
             [NativeTypeName("const GLfloat *")] Ref<float> value
         );
 
@@ -19070,7 +19070,7 @@ public unsafe partial interface IGL
         static abstract void ProgramUniformui64vNV(
             [NativeTypeName("GLuint")] uint program,
             [NativeTypeName("GLint")] int location,
-            [NativeTypeName("GLsizei")] int count,
+            [NativeTypeName("GLsizei")] uint count,
             [NativeTypeName("const GLuint64EXT *")] Ref<ulong> value
         );
 
@@ -19109,7 +19109,7 @@ public unsafe partial interface IGL
         static abstract void PushDebugGroup(
             [NativeTypeName("GLenum")] uint source,
             [NativeTypeName("GLuint")] uint id,
-            [NativeTypeName("GLsizei")] int length,
+            [NativeTypeName("GLsizei")] uint length,
             [NativeTypeName("const GLchar *")] Ref<sbyte> message
         );
 
@@ -19118,7 +19118,7 @@ public unsafe partial interface IGL
         static abstract void PushDebugGroupKhr(
             [NativeTypeName("GLenum")] uint source,
             [NativeTypeName("GLuint")] uint id,
-            [NativeTypeName("GLsizei")] int length,
+            [NativeTypeName("GLsizei")] uint length,
             [NativeTypeName("const GLchar *")] Ref<sbyte> message
         );
 
@@ -19128,7 +19128,7 @@ public unsafe partial interface IGL
         [SupportedApiProfile("gles2", MinVersion = "2.0")]
         [NativeFunction("opengl", EntryPoint = "glPushGroupMarkerEXT")]
         static abstract void PushGroupMarkerExt(
-            [NativeTypeName("GLsizei")] int length,
+            [NativeTypeName("GLsizei")] uint length,
             [NativeTypeName("const GLchar *")] Ref<sbyte> marker
         );
 
@@ -19377,7 +19377,7 @@ public unsafe partial interface IGL
         [NativeFunction("opengl", EntryPoint = "glRasterSamplesEXT")]
         static abstract void RasterSamplesExt(
             [NativeTypeName("GLuint")] uint samples,
-            [NativeTypeName("GLboolean")] byte fixedsamplelocations
+            [NativeTypeName("GLboolean")] uint fixedsamplelocations
         );
 
         [SupportedApiProfile("glcore", MinVersion = "3.2")]
@@ -19406,11 +19406,11 @@ public unsafe partial interface IGL
         static abstract void ReadnPixels(
             [NativeTypeName("GLint")] int x,
             [NativeTypeName("GLint")] int y,
-            [NativeTypeName("GLsizei")] int width,
-            [NativeTypeName("GLsizei")] int height,
+            [NativeTypeName("GLsizei")] uint width,
+            [NativeTypeName("GLsizei")] uint height,
             [NativeTypeName("GLenum")] uint format,
             [NativeTypeName("GLenum")] uint type,
-            [NativeTypeName("GLsizei")] int bufSize,
+            [NativeTypeName("GLsizei")] uint bufSize,
             Ref data
         );
 
@@ -19420,11 +19420,11 @@ public unsafe partial interface IGL
         static abstract void ReadnPixelsArb(
             [NativeTypeName("GLint")] int x,
             [NativeTypeName("GLint")] int y,
-            [NativeTypeName("GLsizei")] int width,
-            [NativeTypeName("GLsizei")] int height,
+            [NativeTypeName("GLsizei")] uint width,
+            [NativeTypeName("GLsizei")] uint height,
             [NativeTypeName("GLenum")] uint format,
             [NativeTypeName("GLenum")] uint type,
-            [NativeTypeName("GLsizei")] int bufSize,
+            [NativeTypeName("GLsizei")] uint bufSize,
             Ref data
         );
 
@@ -19434,11 +19434,11 @@ public unsafe partial interface IGL
         static abstract void ReadnPixelsExt(
             [NativeTypeName("GLint")] int x,
             [NativeTypeName("GLint")] int y,
-            [NativeTypeName("GLsizei")] int width,
-            [NativeTypeName("GLsizei")] int height,
+            [NativeTypeName("GLsizei")] uint width,
+            [NativeTypeName("GLsizei")] uint height,
             [NativeTypeName("GLenum")] uint format,
             [NativeTypeName("GLenum")] uint type,
-            [NativeTypeName("GLsizei")] int bufSize,
+            [NativeTypeName("GLsizei")] uint bufSize,
             Ref data
         );
 
@@ -19447,11 +19447,11 @@ public unsafe partial interface IGL
         static abstract void ReadnPixelsKhr(
             [NativeTypeName("GLint")] int x,
             [NativeTypeName("GLint")] int y,
-            [NativeTypeName("GLsizei")] int width,
-            [NativeTypeName("GLsizei")] int height,
+            [NativeTypeName("GLsizei")] uint width,
+            [NativeTypeName("GLsizei")] uint height,
             [NativeTypeName("GLenum")] uint format,
             [NativeTypeName("GLenum")] uint type,
-            [NativeTypeName("GLsizei")] int bufSize,
+            [NativeTypeName("GLsizei")] uint bufSize,
             Ref data
         );
 
@@ -19463,8 +19463,8 @@ public unsafe partial interface IGL
         static abstract void ReadPixels(
             [NativeTypeName("GLint")] int x,
             [NativeTypeName("GLint")] int y,
-            [NativeTypeName("GLsizei")] int width,
-            [NativeTypeName("GLsizei")] int height,
+            [NativeTypeName("GLsizei")] uint width,
+            [NativeTypeName("GLsizei")] uint height,
             [NativeTypeName("GLenum")] uint format,
             [NativeTypeName("GLenum")] uint type,
             Ref pixels
@@ -19560,7 +19560,7 @@ public unsafe partial interface IGL
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [SupportedApiProfile("gles2", MinVersion = "2.0")]
         [NativeFunction("opengl", EntryPoint = "glReleaseKeyedMutexWin32EXT")]
-        static abstract byte ReleaseKeyedMutexWin32ext(
+        static abstract uint ReleaseKeyedMutexWin32ext(
             [NativeTypeName("GLuint")] uint memory,
             [NativeTypeName("GLuint64")] ulong key
         );
@@ -19578,8 +19578,8 @@ public unsafe partial interface IGL
         static abstract void RenderbufferStorage(
             [NativeTypeName("GLenum")] uint target,
             [NativeTypeName("GLenum")] uint internalformat,
-            [NativeTypeName("GLsizei")] int width,
-            [NativeTypeName("GLsizei")] int height
+            [NativeTypeName("GLsizei")] uint width,
+            [NativeTypeName("GLsizei")] uint height
         );
 
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
@@ -19587,8 +19587,8 @@ public unsafe partial interface IGL
         static abstract void RenderbufferStorageExt(
             [NativeTypeName("GLenum")] uint target,
             [NativeTypeName("GLenum")] uint internalformat,
-            [NativeTypeName("GLsizei")] int width,
-            [NativeTypeName("GLsizei")] int height
+            [NativeTypeName("GLsizei")] uint width,
+            [NativeTypeName("GLsizei")] uint height
         );
 
         [SupportedApiProfile("glcore", MinVersion = "3.2")]
@@ -19596,10 +19596,10 @@ public unsafe partial interface IGL
         [NativeFunction("opengl", EntryPoint = "glRenderbufferStorageMultisample")]
         static abstract void RenderbufferStorageMultisample(
             [NativeTypeName("GLenum")] uint target,
-            [NativeTypeName("GLsizei")] int samples,
+            [NativeTypeName("GLsizei")] uint samples,
             [NativeTypeName("GLenum")] uint internalformat,
-            [NativeTypeName("GLsizei")] int width,
-            [NativeTypeName("GLsizei")] int height
+            [NativeTypeName("GLsizei")] uint width,
+            [NativeTypeName("GLsizei")] uint height
         );
 
         [SupportedApiProfile("glcore", MinVersion = "3.2")]
@@ -19608,21 +19608,21 @@ public unsafe partial interface IGL
         [NativeFunction("opengl", EntryPoint = "glRenderbufferStorageMultisampleAdvancedAMD")]
         static abstract void RenderbufferStorageMultisampleAdvancedAmd(
             [NativeTypeName("GLenum")] uint target,
-            [NativeTypeName("GLsizei")] int samples,
-            [NativeTypeName("GLsizei")] int storageSamples,
+            [NativeTypeName("GLsizei")] uint samples,
+            [NativeTypeName("GLsizei")] uint storageSamples,
             [NativeTypeName("GLenum")] uint internalformat,
-            [NativeTypeName("GLsizei")] int width,
-            [NativeTypeName("GLsizei")] int height
+            [NativeTypeName("GLsizei")] uint width,
+            [NativeTypeName("GLsizei")] uint height
         );
 
         [SupportedApiProfile("gles2", MinVersion = "2.0")]
         [NativeFunction("opengl", EntryPoint = "glRenderbufferStorageMultisampleANGLE")]
         static abstract void RenderbufferStorageMultisampleAngle(
             [NativeTypeName("GLenum")] uint target,
-            [NativeTypeName("GLsizei")] int samples,
+            [NativeTypeName("GLsizei")] uint samples,
             [NativeTypeName("GLenum")] uint internalformat,
-            [NativeTypeName("GLsizei")] int width,
-            [NativeTypeName("GLsizei")] int height
+            [NativeTypeName("GLsizei")] uint width,
+            [NativeTypeName("GLsizei")] uint height
         );
 
         [SupportedApiProfile("gles1", MaxVersion = "2.0")]
@@ -19630,10 +19630,10 @@ public unsafe partial interface IGL
         [NativeFunction("opengl", EntryPoint = "glRenderbufferStorageMultisampleAPPLE")]
         static abstract void RenderbufferStorageMultisampleApple(
             [NativeTypeName("GLenum")] uint target,
-            [NativeTypeName("GLsizei")] int samples,
+            [NativeTypeName("GLsizei")] uint samples,
             [NativeTypeName("GLenum")] uint internalformat,
-            [NativeTypeName("GLsizei")] int width,
-            [NativeTypeName("GLsizei")] int height
+            [NativeTypeName("GLsizei")] uint width,
+            [NativeTypeName("GLsizei")] uint height
         );
 
         [SupportedApiProfile("glcore", MinVersion = "3.2")]
@@ -19641,11 +19641,11 @@ public unsafe partial interface IGL
         [NativeFunction("opengl", EntryPoint = "glRenderbufferStorageMultisampleCoverageNV")]
         static abstract void RenderbufferStorageMultisampleCoverageNV(
             [NativeTypeName("GLenum")] uint target,
-            [NativeTypeName("GLsizei")] int coverageSamples,
-            [NativeTypeName("GLsizei")] int colorSamples,
+            [NativeTypeName("GLsizei")] uint coverageSamples,
+            [NativeTypeName("GLsizei")] uint colorSamples,
             [NativeTypeName("GLenum")] uint internalformat,
-            [NativeTypeName("GLsizei")] int width,
-            [NativeTypeName("GLsizei")] int height
+            [NativeTypeName("GLsizei")] uint width,
+            [NativeTypeName("GLsizei")] uint height
         );
 
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
@@ -19654,10 +19654,10 @@ public unsafe partial interface IGL
         [NativeFunction("opengl", EntryPoint = "glRenderbufferStorageMultisampleEXT")]
         static abstract void RenderbufferStorageMultisampleExt(
             [NativeTypeName("GLenum")] uint target,
-            [NativeTypeName("GLsizei")] int samples,
+            [NativeTypeName("GLsizei")] uint samples,
             [NativeTypeName("GLenum")] uint internalformat,
-            [NativeTypeName("GLsizei")] int width,
-            [NativeTypeName("GLsizei")] int height
+            [NativeTypeName("GLsizei")] uint width,
+            [NativeTypeName("GLsizei")] uint height
         );
 
         [SupportedApiProfile("gles1", MaxVersion = "2.0")]
@@ -19665,20 +19665,20 @@ public unsafe partial interface IGL
         [NativeFunction("opengl", EntryPoint = "glRenderbufferStorageMultisampleIMG")]
         static abstract void RenderbufferStorageMultisampleImg(
             [NativeTypeName("GLenum")] uint target,
-            [NativeTypeName("GLsizei")] int samples,
+            [NativeTypeName("GLsizei")] uint samples,
             [NativeTypeName("GLenum")] uint internalformat,
-            [NativeTypeName("GLsizei")] int width,
-            [NativeTypeName("GLsizei")] int height
+            [NativeTypeName("GLsizei")] uint width,
+            [NativeTypeName("GLsizei")] uint height
         );
 
         [SupportedApiProfile("gles2", MinVersion = "2.0")]
         [NativeFunction("opengl", EntryPoint = "glRenderbufferStorageMultisampleNV")]
         static abstract void RenderbufferStorageMultisampleNV(
             [NativeTypeName("GLenum")] uint target,
-            [NativeTypeName("GLsizei")] int samples,
+            [NativeTypeName("GLsizei")] uint samples,
             [NativeTypeName("GLenum")] uint internalformat,
-            [NativeTypeName("GLsizei")] int width,
-            [NativeTypeName("GLsizei")] int height
+            [NativeTypeName("GLsizei")] uint width,
+            [NativeTypeName("GLsizei")] uint height
         );
 
         [SupportedApiProfile("gles1", MaxVersion = "2.0")]
@@ -19686,8 +19686,8 @@ public unsafe partial interface IGL
         static abstract void RenderbufferStorageOes(
             [NativeTypeName("GLenum")] uint target,
             [NativeTypeName("GLenum")] uint internalformat,
-            [NativeTypeName("GLsizei")] int width,
-            [NativeTypeName("GLsizei")] int height
+            [NativeTypeName("GLsizei")] uint width,
+            [NativeTypeName("GLsizei")] uint height
         );
 
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
@@ -19703,7 +19703,7 @@ public unsafe partial interface IGL
         [NativeFunction("opengl", EntryPoint = "glReplacementCodePointerSUN")]
         static abstract void ReplacementCodePointerSun(
             [NativeTypeName("GLenum")] uint type,
-            [NativeTypeName("GLsizei")] int stride,
+            [NativeTypeName("GLsizei")] uint stride,
             [NativeTypeName("const void **")] Ref2D pointer
         );
 
@@ -19918,7 +19918,7 @@ public unsafe partial interface IGL
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glRequestResidentProgramsNV")]
         static abstract void RequestResidentProgramsNV(
-            [NativeTypeName("GLsizei")] int n,
+            [NativeTypeName("GLsizei")] uint n,
             [NativeTypeName("const GLuint *")] Ref<uint> programs
         );
 
@@ -20016,28 +20016,28 @@ public unsafe partial interface IGL
         [NativeFunction("opengl", EntryPoint = "glSampleCoverage")]
         static abstract void SampleCoverage(
             [NativeTypeName("GLfloat")] float value,
-            [NativeTypeName("GLboolean")] byte invert
+            [NativeTypeName("GLboolean")] uint invert
         );
 
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glSampleCoverageARB")]
         static abstract void SampleCoverageArb(
             [NativeTypeName("GLfloat")] float value,
-            [NativeTypeName("GLboolean")] byte invert
+            [NativeTypeName("GLboolean")] uint invert
         );
 
         [SupportedApiProfile("gles1", MaxVersion = "2.0")]
         [NativeFunction("opengl", EntryPoint = "glSampleCoveragex")]
         static abstract void SampleCoveragex(
             [NativeTypeName("GLclampx")] int value,
-            [NativeTypeName("GLboolean")] byte invert
+            [NativeTypeName("GLboolean")] uint invert
         );
 
         [SupportedApiProfile("gles1", MaxVersion = "2.0")]
         [NativeFunction("opengl", EntryPoint = "glSampleCoveragexOES")]
         static abstract void SampleCoveragexOes(
             [NativeTypeName("GLclampx")] int value,
-            [NativeTypeName("GLboolean")] byte invert
+            [NativeTypeName("GLboolean")] uint invert
         );
 
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
@@ -20052,7 +20052,7 @@ public unsafe partial interface IGL
         [NativeFunction("opengl", EntryPoint = "glSampleMaskEXT")]
         static abstract void SampleMaskExt(
             [NativeTypeName("GLclampf")] float value,
-            [NativeTypeName("GLboolean")] byte invert
+            [NativeTypeName("GLboolean")] uint invert
         );
 
         [SupportedApiProfile("glcore", MinVersion = "3.2")]
@@ -20074,7 +20074,7 @@ public unsafe partial interface IGL
         [NativeFunction("opengl", EntryPoint = "glSampleMaskSGIS")]
         static abstract void SampleMaskSgis(
             [NativeTypeName("GLclampf")] float value,
-            [NativeTypeName("GLboolean")] byte invert
+            [NativeTypeName("GLboolean")] uint invert
         );
 
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
@@ -20217,8 +20217,8 @@ public unsafe partial interface IGL
         static abstract void Scissor(
             [NativeTypeName("GLint")] int x,
             [NativeTypeName("GLint")] int y,
-            [NativeTypeName("GLsizei")] int width,
-            [NativeTypeName("GLsizei")] int height
+            [NativeTypeName("GLsizei")] uint width,
+            [NativeTypeName("GLsizei")] uint height
         );
 
         [SupportedApiProfile("glcore", MinVersion = "3.2")]
@@ -20226,7 +20226,7 @@ public unsafe partial interface IGL
         [NativeFunction("opengl", EntryPoint = "glScissorArrayv")]
         static abstract void ScissorArray(
             [NativeTypeName("GLuint")] uint first,
-            [NativeTypeName("GLsizei")] int count,
+            [NativeTypeName("GLsizei")] uint count,
             [NativeTypeName("const GLint *")] Ref<int> v
         );
 
@@ -20234,7 +20234,7 @@ public unsafe partial interface IGL
         [NativeFunction("opengl", EntryPoint = "glScissorArrayvNV")]
         static abstract void ScissorArrayvNV(
             [NativeTypeName("GLuint")] uint first,
-            [NativeTypeName("GLsizei")] int count,
+            [NativeTypeName("GLsizei")] uint count,
             [NativeTypeName("const GLint *")] Ref<int> v
         );
 
@@ -20242,7 +20242,7 @@ public unsafe partial interface IGL
         [NativeFunction("opengl", EntryPoint = "glScissorArrayvOES")]
         static abstract void ScissorArrayvOes(
             [NativeTypeName("GLuint")] uint first,
-            [NativeTypeName("GLsizei")] int count,
+            [NativeTypeName("GLsizei")] uint count,
             [NativeTypeName("const GLint *")] Ref<int> v
         );
 
@@ -20252,7 +20252,7 @@ public unsafe partial interface IGL
         [NativeFunction("opengl", EntryPoint = "glScissorExclusiveArrayvNV")]
         static abstract void ScissorExclusiveArrayvNV(
             [NativeTypeName("GLuint")] uint first,
-            [NativeTypeName("GLsizei")] int count,
+            [NativeTypeName("GLsizei")] uint count,
             [NativeTypeName("const GLint *")] Ref<int> v
         );
 
@@ -20263,8 +20263,8 @@ public unsafe partial interface IGL
         static abstract void ScissorExclusiveNV(
             [NativeTypeName("GLint")] int x,
             [NativeTypeName("GLint")] int y,
-            [NativeTypeName("GLsizei")] int width,
-            [NativeTypeName("GLsizei")] int height
+            [NativeTypeName("GLsizei")] uint width,
+            [NativeTypeName("GLsizei")] uint height
         );
 
         [SupportedApiProfile("glcore", MinVersion = "3.2")]
@@ -20274,8 +20274,8 @@ public unsafe partial interface IGL
             [NativeTypeName("GLuint")] uint index,
             [NativeTypeName("GLint")] int left,
             [NativeTypeName("GLint")] int bottom,
-            [NativeTypeName("GLsizei")] int width,
-            [NativeTypeName("GLsizei")] int height
+            [NativeTypeName("GLsizei")] uint width,
+            [NativeTypeName("GLsizei")] uint height
         );
 
         [SupportedApiProfile("gles2", MinVersion = "2.0")]
@@ -20284,8 +20284,8 @@ public unsafe partial interface IGL
             [NativeTypeName("GLuint")] uint index,
             [NativeTypeName("GLint")] int left,
             [NativeTypeName("GLint")] int bottom,
-            [NativeTypeName("GLsizei")] int width,
-            [NativeTypeName("GLsizei")] int height
+            [NativeTypeName("GLsizei")] uint width,
+            [NativeTypeName("GLsizei")] uint height
         );
 
         [SupportedApiProfile("gles2", MinVersion = "2.0")]
@@ -20294,8 +20294,8 @@ public unsafe partial interface IGL
             [NativeTypeName("GLuint")] uint index,
             [NativeTypeName("GLint")] int left,
             [NativeTypeName("GLint")] int bottom,
-            [NativeTypeName("GLsizei")] int width,
-            [NativeTypeName("GLsizei")] int height
+            [NativeTypeName("GLsizei")] uint width,
+            [NativeTypeName("GLsizei")] uint height
         );
 
         [SupportedApiProfile("glcore", MinVersion = "3.2")]
@@ -20536,7 +20536,7 @@ public unsafe partial interface IGL
         static abstract void SecondaryColorFormatNV(
             [NativeTypeName("GLint")] int size,
             [NativeTypeName("GLenum")] uint type,
-            [NativeTypeName("GLsizei")] int stride
+            [NativeTypeName("GLsizei")] uint stride
         );
 
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
@@ -20558,7 +20558,7 @@ public unsafe partial interface IGL
         static abstract void SecondaryColorPointer(
             [NativeTypeName("GLint")] int size,
             [NativeTypeName("GLenum")] uint type,
-            [NativeTypeName("GLsizei")] int stride,
+            [NativeTypeName("GLsizei")] uint stride,
             [NativeTypeName("const void *")] Ref pointer
         );
 
@@ -20567,7 +20567,7 @@ public unsafe partial interface IGL
         static abstract void SecondaryColorPointerExt(
             [NativeTypeName("GLint")] int size,
             [NativeTypeName("GLenum")] uint type,
-            [NativeTypeName("GLsizei")] int stride,
+            [NativeTypeName("GLsizei")] uint stride,
             [NativeTypeName("const void *")] Ref pointer
         );
 
@@ -20584,7 +20584,7 @@ public unsafe partial interface IGL
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glSelectBuffer")]
         static abstract void SelectBuffer(
-            [NativeTypeName("GLsizei")] int size,
+            [NativeTypeName("GLsizei")] uint size,
             [NativeTypeName("GLuint *")] Ref<uint> buffer
         );
 
@@ -20594,7 +20594,7 @@ public unsafe partial interface IGL
         [NativeFunction("opengl", EntryPoint = "glSelectPerfMonitorCountersAMD")]
         static abstract void SelectPerfMonitorCountersAmd(
             [NativeTypeName("GLuint")] uint monitor,
-            [NativeTypeName("GLboolean")] byte enable,
+            [NativeTypeName("GLboolean")] uint enable,
             [NativeTypeName("GLuint")] uint group,
             [NativeTypeName("GLint")] int numCounters,
             [NativeTypeName("GLuint *")] Ref<uint> counterList
@@ -20623,8 +20623,8 @@ public unsafe partial interface IGL
         static abstract void SeparableFilter2d(
             [NativeTypeName("GLenum")] uint target,
             [NativeTypeName("GLenum")] uint internalformat,
-            [NativeTypeName("GLsizei")] int width,
-            [NativeTypeName("GLsizei")] int height,
+            [NativeTypeName("GLsizei")] uint width,
+            [NativeTypeName("GLsizei")] uint height,
             [NativeTypeName("GLenum")] uint format,
             [NativeTypeName("GLenum")] uint type,
             [NativeTypeName("const void *")] Ref row,
@@ -20636,8 +20636,8 @@ public unsafe partial interface IGL
         static abstract void SeparableFilter2dext(
             [NativeTypeName("GLenum")] uint target,
             [NativeTypeName("GLenum")] uint internalformat,
-            [NativeTypeName("GLsizei")] int width,
-            [NativeTypeName("GLsizei")] int height,
+            [NativeTypeName("GLsizei")] uint width,
+            [NativeTypeName("GLsizei")] uint height,
             [NativeTypeName("GLenum")] uint format,
             [NativeTypeName("GLenum")] uint type,
             [NativeTypeName("const void *")] Ref row,
@@ -20698,11 +20698,11 @@ public unsafe partial interface IGL
         [SupportedApiProfile("gles2", MinVersion = "2.0")]
         [NativeFunction("opengl", EntryPoint = "glShaderBinary")]
         static abstract void ShaderBinary(
-            [NativeTypeName("GLsizei")] int count,
+            [NativeTypeName("GLsizei")] uint count,
             [NativeTypeName("const GLuint *")] Ref<uint> shaders,
             [NativeTypeName("GLenum")] uint binaryFormat,
             [NativeTypeName("const void *")] Ref binary,
-            [NativeTypeName("GLsizei")] int length
+            [NativeTypeName("GLsizei")] uint length
         );
 
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
@@ -20738,7 +20738,7 @@ public unsafe partial interface IGL
         [NativeFunction("opengl", EntryPoint = "glShaderSource")]
         static abstract void ShaderSource(
             [NativeTypeName("GLuint")] uint shader,
-            [NativeTypeName("GLsizei")] int count,
+            [NativeTypeName("GLsizei")] uint count,
             [NativeTypeName("const GLchar *const *")] Ref2D<sbyte> @string,
             [NativeTypeName("const GLint *")] Ref<int> length
         );
@@ -20746,8 +20746,8 @@ public unsafe partial interface IGL
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glShaderSourceARB")]
         static abstract void ShaderSourceArb(
-            [NativeTypeName("GLhandleARB")] Ref shaderObj,
-            [NativeTypeName("GLsizei")] int count,
+            [NativeTypeName("GLhandleARB")] uint shaderObj,
+            [NativeTypeName("GLsizei")] uint count,
             [NativeTypeName("const GLcharARB **")] Ref2D<sbyte> @string,
             [NativeTypeName("const GLint *")] Ref<int> length
         );
@@ -20777,7 +20777,7 @@ public unsafe partial interface IGL
         [SupportedApiProfile("gles2", MinVersion = "2.0")]
         [NativeFunction("opengl", EntryPoint = "glShadingRateImageBarrierNV")]
         static abstract void ShadingRateImageBarrierNV(
-            [NativeTypeName("GLboolean")] byte synchronize
+            [NativeTypeName("GLboolean")] uint synchronize
         );
 
         [SupportedApiProfile("glcore", MinVersion = "3.2")]
@@ -20787,7 +20787,7 @@ public unsafe partial interface IGL
         static abstract void ShadingRateImagePaletteNV(
             [NativeTypeName("GLuint")] uint viewport,
             [NativeTypeName("GLuint")] uint first,
-            [NativeTypeName("GLsizei")] int count,
+            [NativeTypeName("GLsizei")] uint count,
             [NativeTypeName("const GLenum *")] Ref<uint> rates
         );
 
@@ -20815,7 +20815,7 @@ public unsafe partial interface IGL
         [NativeFunction("opengl", EntryPoint = "glSharpenTexFuncSGIS")]
         static abstract void SharpenTexFuncSgis(
             [NativeTypeName("GLenum")] uint target,
-            [NativeTypeName("GLsizei")] int n,
+            [NativeTypeName("GLsizei")] uint n,
             [NativeTypeName("const GLfloat *")] Ref<float> points
         );
 
@@ -20835,7 +20835,7 @@ public unsafe partial interface IGL
         [NativeFunction("opengl", EntryPoint = "glSignalSemaphoreui64NVX")]
         static abstract void SignalSemaphoreui64nvx(
             [NativeTypeName("GLuint")] uint signalGpu,
-            [NativeTypeName("GLsizei")] int fenceObjectCount,
+            [NativeTypeName("GLsizei")] uint fenceObjectCount,
             [NativeTypeName("const GLuint *")] Ref<uint> semaphoreArray,
             [NativeTypeName("const GLuint64 *")] Ref<ulong> fenceValueArray
         );
@@ -20928,7 +20928,7 @@ public unsafe partial interface IGL
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glStencilClearTagEXT")]
         static abstract void StencilClearTagExt(
-            [NativeTypeName("GLsizei")] int stencilTagBits,
+            [NativeTypeName("GLsizei")] uint stencilTagBits,
             [NativeTypeName("GLuint")] uint stencilClearTag
         );
 
@@ -20937,7 +20937,7 @@ public unsafe partial interface IGL
         [SupportedApiProfile("gles2", MinVersion = "2.0")]
         [NativeFunction("opengl", EntryPoint = "glStencilFillPathInstancedNV")]
         static abstract void StencilFillPathInstancedNV(
-            [NativeTypeName("GLsizei")] int numPaths,
+            [NativeTypeName("GLsizei")] uint numPaths,
             [NativeTypeName("GLenum")] uint pathNameType,
             [NativeTypeName("const void *")] Ref paths,
             [NativeTypeName("GLuint")] uint pathBase,
@@ -21047,7 +21047,7 @@ public unsafe partial interface IGL
         [SupportedApiProfile("gles2", MinVersion = "2.0")]
         [NativeFunction("opengl", EntryPoint = "glStencilStrokePathInstancedNV")]
         static abstract void StencilStrokePathInstancedNV(
-            [NativeTypeName("GLsizei")] int numPaths,
+            [NativeTypeName("GLsizei")] uint numPaths,
             [NativeTypeName("GLenum")] uint pathNameType,
             [NativeTypeName("const void *")] Ref paths,
             [NativeTypeName("GLuint")] uint pathBase,
@@ -21072,7 +21072,7 @@ public unsafe partial interface IGL
         [SupportedApiProfile("gles2", MinVersion = "2.0")]
         [NativeFunction("opengl", EntryPoint = "glStencilThenCoverFillPathInstancedNV")]
         static abstract void StencilThenCoverFillPathInstancedNV(
-            [NativeTypeName("GLsizei")] int numPaths,
+            [NativeTypeName("GLsizei")] uint numPaths,
             [NativeTypeName("GLenum")] uint pathNameType,
             [NativeTypeName("const void *")] Ref paths,
             [NativeTypeName("GLuint")] uint pathBase,
@@ -21099,7 +21099,7 @@ public unsafe partial interface IGL
         [SupportedApiProfile("gles2", MinVersion = "2.0")]
         [NativeFunction("opengl", EntryPoint = "glStencilThenCoverStrokePathInstancedNV")]
         static abstract void StencilThenCoverStrokePathInstancedNV(
-            [NativeTypeName("GLsizei")] int numPaths,
+            [NativeTypeName("GLsizei")] uint numPaths,
             [NativeTypeName("GLenum")] uint pathNameType,
             [NativeTypeName("const void *")] Ref paths,
             [NativeTypeName("GLuint")] uint pathBase,
@@ -21128,7 +21128,7 @@ public unsafe partial interface IGL
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glStringMarkerGREMEDY")]
         static abstract void StringMarkerGremedy(
-            [NativeTypeName("GLsizei")] int len,
+            [NativeTypeName("GLsizei")] uint len,
             [NativeTypeName("const void *")] Ref @string
         );
 
@@ -21224,7 +21224,7 @@ public unsafe partial interface IGL
         [NativeFunction("opengl", EntryPoint = "glTangentPointerEXT")]
         static abstract void TangentPointerExt(
             [NativeTypeName("GLenum")] uint type,
-            [NativeTypeName("GLsizei")] int stride,
+            [NativeTypeName("GLsizei")] uint stride,
             [NativeTypeName("const void *")] Ref pointer
         );
 
@@ -21243,19 +21243,19 @@ public unsafe partial interface IGL
         [return: NativeTypeName("GLboolean")]
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glTestFenceAPPLE")]
-        static abstract byte TestFenceApple([NativeTypeName("GLuint")] uint fence);
+        static abstract uint TestFenceApple([NativeTypeName("GLuint")] uint fence);
 
         [return: NativeTypeName("GLboolean")]
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [SupportedApiProfile("gles1", MaxVersion = "2.0")]
         [SupportedApiProfile("gles2", MinVersion = "2.0")]
         [NativeFunction("opengl", EntryPoint = "glTestFenceNV")]
-        static abstract byte TestFenceNV([NativeTypeName("GLuint")] uint fence);
+        static abstract uint TestFenceNV([NativeTypeName("GLuint")] uint fence);
 
         [return: NativeTypeName("GLboolean")]
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glTestObjectAPPLE")]
-        static abstract byte TestObjectApple(
+        static abstract uint TestObjectApple(
             [NativeTypeName("GLenum")] uint @object,
             [NativeTypeName("GLuint")] uint name
         );
@@ -21313,7 +21313,7 @@ public unsafe partial interface IGL
             [NativeTypeName("GLenum")] uint internalformat,
             [NativeTypeName("GLuint")] uint buffer,
             [NativeTypeName("GLintptr")] nint offset,
-            [NativeTypeName("GLsizeiptr")] nint size
+            [NativeTypeName("GLsizeiptr")] nuint size
         );
 
         [SupportedApiProfile("gles2", MinVersion = "2.0")]
@@ -21323,7 +21323,7 @@ public unsafe partial interface IGL
             [NativeTypeName("GLenum")] uint internalformat,
             [NativeTypeName("GLuint")] uint buffer,
             [NativeTypeName("GLintptr")] nint offset,
-            [NativeTypeName("GLsizeiptr")] nint size
+            [NativeTypeName("GLsizeiptr")] nuint size
         );
 
         [SupportedApiProfile("gles2", MinVersion = "2.0")]
@@ -21333,7 +21333,7 @@ public unsafe partial interface IGL
             [NativeTypeName("GLenum")] uint internalformat,
             [NativeTypeName("GLuint")] uint buffer,
             [NativeTypeName("GLintptr")] nint offset,
-            [NativeTypeName("GLsizeiptr")] nint size
+            [NativeTypeName("GLsizeiptr")] nuint size
         );
 
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
@@ -21820,7 +21820,7 @@ public unsafe partial interface IGL
         static abstract void TexCoordFormatNV(
             [NativeTypeName("GLint")] int size,
             [NativeTypeName("GLenum")] uint type,
-            [NativeTypeName("GLsizei")] int stride
+            [NativeTypeName("GLsizei")] uint stride
         );
 
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
@@ -21885,7 +21885,7 @@ public unsafe partial interface IGL
         static abstract void TexCoordPointer(
             [NativeTypeName("GLint")] int size,
             [NativeTypeName("GLenum")] uint type,
-            [NativeTypeName("GLsizei")] int stride,
+            [NativeTypeName("GLsizei")] uint stride,
             [NativeTypeName("const void *")] Ref pointer
         );
 
@@ -21894,8 +21894,8 @@ public unsafe partial interface IGL
         static abstract void TexCoordPointerExt(
             [NativeTypeName("GLint")] int size,
             [NativeTypeName("GLenum")] uint type,
-            [NativeTypeName("GLsizei")] int stride,
-            [NativeTypeName("GLsizei")] int count,
+            [NativeTypeName("GLsizei")] uint stride,
+            [NativeTypeName("GLsizei")] uint count,
             [NativeTypeName("const void *")] Ref pointer
         );
 
@@ -22009,7 +22009,7 @@ public unsafe partial interface IGL
         static abstract void TexFilterFuncSgis(
             [NativeTypeName("GLenum")] uint target,
             [NativeTypeName("GLenum")] uint filter,
-            [NativeTypeName("GLsizei")] int n,
+            [NativeTypeName("GLsizei")] uint n,
             [NativeTypeName("const GLfloat *")] Ref<float> weights
         );
 
@@ -22118,7 +22118,7 @@ public unsafe partial interface IGL
             [NativeTypeName("GLenum")] uint target,
             [NativeTypeName("GLint")] int level,
             [NativeTypeName("GLint")] int internalformat,
-            [NativeTypeName("GLsizei")] int width,
+            [NativeTypeName("GLsizei")] uint width,
             [NativeTypeName("GLint")] int border,
             [NativeTypeName("GLenum")] uint format,
             [NativeTypeName("GLenum")] uint type,
@@ -22134,8 +22134,8 @@ public unsafe partial interface IGL
             [NativeTypeName("GLenum")] uint target,
             [NativeTypeName("GLint")] int level,
             [NativeTypeName("GLint")] int internalformat,
-            [NativeTypeName("GLsizei")] int width,
-            [NativeTypeName("GLsizei")] int height,
+            [NativeTypeName("GLsizei")] uint width,
+            [NativeTypeName("GLsizei")] uint height,
             [NativeTypeName("GLint")] int border,
             [NativeTypeName("GLenum")] uint format,
             [NativeTypeName("GLenum")] uint type,
@@ -22147,23 +22147,23 @@ public unsafe partial interface IGL
         [NativeFunction("opengl", EntryPoint = "glTexImage2DMultisample")]
         static abstract void TexImage2dMultisample(
             [NativeTypeName("GLenum")] uint target,
-            [NativeTypeName("GLsizei")] int samples,
+            [NativeTypeName("GLsizei")] uint samples,
             [NativeTypeName("GLenum")] uint internalformat,
-            [NativeTypeName("GLsizei")] int width,
-            [NativeTypeName("GLsizei")] int height,
-            [NativeTypeName("GLboolean")] byte fixedsamplelocations
+            [NativeTypeName("GLsizei")] uint width,
+            [NativeTypeName("GLsizei")] uint height,
+            [NativeTypeName("GLboolean")] uint fixedsamplelocations
         );
 
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glTexImage2DMultisampleCoverageNV")]
         static abstract void TexImage2dMultisampleCoverageNV(
             [NativeTypeName("GLenum")] uint target,
-            [NativeTypeName("GLsizei")] int coverageSamples,
-            [NativeTypeName("GLsizei")] int colorSamples,
+            [NativeTypeName("GLsizei")] uint coverageSamples,
+            [NativeTypeName("GLsizei")] uint colorSamples,
             [NativeTypeName("GLint")] int internalFormat,
-            [NativeTypeName("GLsizei")] int width,
-            [NativeTypeName("GLsizei")] int height,
-            [NativeTypeName("GLboolean")] byte fixedSampleLocations
+            [NativeTypeName("GLsizei")] uint width,
+            [NativeTypeName("GLsizei")] uint height,
+            [NativeTypeName("GLboolean")] uint fixedSampleLocations
         );
 
         [SupportedApiProfile("glcore", MinVersion = "3.2")]
@@ -22173,9 +22173,9 @@ public unsafe partial interface IGL
             [NativeTypeName("GLenum")] uint target,
             [NativeTypeName("GLint")] int level,
             [NativeTypeName("GLint")] int internalformat,
-            [NativeTypeName("GLsizei")] int width,
-            [NativeTypeName("GLsizei")] int height,
-            [NativeTypeName("GLsizei")] int depth,
+            [NativeTypeName("GLsizei")] uint width,
+            [NativeTypeName("GLsizei")] uint height,
+            [NativeTypeName("GLsizei")] uint depth,
             [NativeTypeName("GLint")] int border,
             [NativeTypeName("GLenum")] uint format,
             [NativeTypeName("GLenum")] uint type,
@@ -22188,9 +22188,9 @@ public unsafe partial interface IGL
             [NativeTypeName("GLenum")] uint target,
             [NativeTypeName("GLint")] int level,
             [NativeTypeName("GLenum")] uint internalformat,
-            [NativeTypeName("GLsizei")] int width,
-            [NativeTypeName("GLsizei")] int height,
-            [NativeTypeName("GLsizei")] int depth,
+            [NativeTypeName("GLsizei")] uint width,
+            [NativeTypeName("GLsizei")] uint height,
+            [NativeTypeName("GLsizei")] uint depth,
             [NativeTypeName("GLint")] int border,
             [NativeTypeName("GLenum")] uint format,
             [NativeTypeName("GLenum")] uint type,
@@ -22202,25 +22202,25 @@ public unsafe partial interface IGL
         [NativeFunction("opengl", EntryPoint = "glTexImage3DMultisample")]
         static abstract void TexImage3dMultisample(
             [NativeTypeName("GLenum")] uint target,
-            [NativeTypeName("GLsizei")] int samples,
+            [NativeTypeName("GLsizei")] uint samples,
             [NativeTypeName("GLenum")] uint internalformat,
-            [NativeTypeName("GLsizei")] int width,
-            [NativeTypeName("GLsizei")] int height,
-            [NativeTypeName("GLsizei")] int depth,
-            [NativeTypeName("GLboolean")] byte fixedsamplelocations
+            [NativeTypeName("GLsizei")] uint width,
+            [NativeTypeName("GLsizei")] uint height,
+            [NativeTypeName("GLsizei")] uint depth,
+            [NativeTypeName("GLboolean")] uint fixedsamplelocations
         );
 
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glTexImage3DMultisampleCoverageNV")]
         static abstract void TexImage3dMultisampleCoverageNV(
             [NativeTypeName("GLenum")] uint target,
-            [NativeTypeName("GLsizei")] int coverageSamples,
-            [NativeTypeName("GLsizei")] int colorSamples,
+            [NativeTypeName("GLsizei")] uint coverageSamples,
+            [NativeTypeName("GLsizei")] uint colorSamples,
             [NativeTypeName("GLint")] int internalFormat,
-            [NativeTypeName("GLsizei")] int width,
-            [NativeTypeName("GLsizei")] int height,
-            [NativeTypeName("GLsizei")] int depth,
-            [NativeTypeName("GLboolean")] byte fixedSampleLocations
+            [NativeTypeName("GLsizei")] uint width,
+            [NativeTypeName("GLsizei")] uint height,
+            [NativeTypeName("GLsizei")] uint depth,
+            [NativeTypeName("GLboolean")] uint fixedSampleLocations
         );
 
         [SupportedApiProfile("gles2", MinVersion = "2.0")]
@@ -22229,9 +22229,9 @@ public unsafe partial interface IGL
             [NativeTypeName("GLenum")] uint target,
             [NativeTypeName("GLint")] int level,
             [NativeTypeName("GLenum")] uint internalformat,
-            [NativeTypeName("GLsizei")] int width,
-            [NativeTypeName("GLsizei")] int height,
-            [NativeTypeName("GLsizei")] int depth,
+            [NativeTypeName("GLsizei")] uint width,
+            [NativeTypeName("GLsizei")] uint height,
+            [NativeTypeName("GLsizei")] uint depth,
             [NativeTypeName("GLint")] int border,
             [NativeTypeName("GLenum")] uint format,
             [NativeTypeName("GLenum")] uint type,
@@ -22244,10 +22244,10 @@ public unsafe partial interface IGL
             [NativeTypeName("GLenum")] uint target,
             [NativeTypeName("GLint")] int level,
             [NativeTypeName("GLenum")] uint internalformat,
-            [NativeTypeName("GLsizei")] int width,
-            [NativeTypeName("GLsizei")] int height,
-            [NativeTypeName("GLsizei")] int depth,
-            [NativeTypeName("GLsizei")] int size4d,
+            [NativeTypeName("GLsizei")] uint width,
+            [NativeTypeName("GLsizei")] uint height,
+            [NativeTypeName("GLsizei")] uint depth,
+            [NativeTypeName("GLsizei")] uint size4d,
             [NativeTypeName("GLint")] int border,
             [NativeTypeName("GLenum")] uint format,
             [NativeTypeName("GLenum")] uint type,
@@ -22263,10 +22263,10 @@ public unsafe partial interface IGL
             [NativeTypeName("GLint")] int xoffset,
             [NativeTypeName("GLint")] int yoffset,
             [NativeTypeName("GLint")] int zoffset,
-            [NativeTypeName("GLsizei")] int width,
-            [NativeTypeName("GLsizei")] int height,
-            [NativeTypeName("GLsizei")] int depth,
-            [NativeTypeName("GLboolean")] byte commit
+            [NativeTypeName("GLsizei")] uint width,
+            [NativeTypeName("GLsizei")] uint height,
+            [NativeTypeName("GLsizei")] uint depth,
+            [NativeTypeName("GLboolean")] uint commit
         );
 
         [SupportedApiProfile("gles2", MinVersion = "2.0")]
@@ -22277,10 +22277,10 @@ public unsafe partial interface IGL
             [NativeTypeName("GLint")] int xoffset,
             [NativeTypeName("GLint")] int yoffset,
             [NativeTypeName("GLint")] int zoffset,
-            [NativeTypeName("GLsizei")] int width,
-            [NativeTypeName("GLsizei")] int height,
-            [NativeTypeName("GLsizei")] int depth,
-            [NativeTypeName("GLboolean")] byte commit
+            [NativeTypeName("GLsizei")] uint width,
+            [NativeTypeName("GLsizei")] uint height,
+            [NativeTypeName("GLsizei")] uint depth,
+            [NativeTypeName("GLboolean")] uint commit
         );
 
         [SupportedApiProfile("glcore", MinVersion = "3.2")]
@@ -22294,12 +22294,12 @@ public unsafe partial interface IGL
             [NativeTypeName("GLint")] int xoffset,
             [NativeTypeName("GLint")] int yoffset,
             [NativeTypeName("GLint")] int zoffset,
-            [NativeTypeName("GLsizei")] int width,
-            [NativeTypeName("GLsizei")] int height,
-            [NativeTypeName("GLsizei")] int depth,
+            [NativeTypeName("GLsizei")] uint width,
+            [NativeTypeName("GLsizei")] uint height,
+            [NativeTypeName("GLsizei")] uint depth,
             [NativeTypeName("GLuint")] uint memory,
             [NativeTypeName("GLuint64")] ulong offset,
-            [NativeTypeName("GLboolean")] byte commit
+            [NativeTypeName("GLboolean")] uint commit
         );
 
         [SupportedApiProfile("glcore", MinVersion = "3.2")]
@@ -22444,9 +22444,9 @@ public unsafe partial interface IGL
         [NativeFunction("opengl", EntryPoint = "glTexStorage1D")]
         static abstract void TexStorage1d(
             [NativeTypeName("GLenum")] uint target,
-            [NativeTypeName("GLsizei")] int levels,
+            [NativeTypeName("GLsizei")] uint levels,
             [NativeTypeName("GLenum")] uint internalformat,
-            [NativeTypeName("GLsizei")] int width
+            [NativeTypeName("GLsizei")] uint width
         );
 
         [SupportedApiProfile("glcore", MinVersion = "3.2")]
@@ -22456,9 +22456,9 @@ public unsafe partial interface IGL
         [NativeFunction("opengl", EntryPoint = "glTexStorage1DEXT")]
         static abstract void TexStorage1dext(
             [NativeTypeName("GLenum")] uint target,
-            [NativeTypeName("GLsizei")] int levels,
+            [NativeTypeName("GLsizei")] uint levels,
             [NativeTypeName("GLenum")] uint internalformat,
-            [NativeTypeName("GLsizei")] int width
+            [NativeTypeName("GLsizei")] uint width
         );
 
         [SupportedApiProfile("glcore", MinVersion = "3.2")]
@@ -22466,10 +22466,10 @@ public unsafe partial interface IGL
         [NativeFunction("opengl", EntryPoint = "glTexStorage2D")]
         static abstract void TexStorage2d(
             [NativeTypeName("GLenum")] uint target,
-            [NativeTypeName("GLsizei")] int levels,
+            [NativeTypeName("GLsizei")] uint levels,
             [NativeTypeName("GLenum")] uint internalformat,
-            [NativeTypeName("GLsizei")] int width,
-            [NativeTypeName("GLsizei")] int height
+            [NativeTypeName("GLsizei")] uint width,
+            [NativeTypeName("GLsizei")] uint height
         );
 
         [SupportedApiProfile("glcore", MinVersion = "3.2")]
@@ -22479,10 +22479,10 @@ public unsafe partial interface IGL
         [NativeFunction("opengl", EntryPoint = "glTexStorage2DEXT")]
         static abstract void TexStorage2dext(
             [NativeTypeName("GLenum")] uint target,
-            [NativeTypeName("GLsizei")] int levels,
+            [NativeTypeName("GLsizei")] uint levels,
             [NativeTypeName("GLenum")] uint internalformat,
-            [NativeTypeName("GLsizei")] int width,
-            [NativeTypeName("GLsizei")] int height
+            [NativeTypeName("GLsizei")] uint width,
+            [NativeTypeName("GLsizei")] uint height
         );
 
         [SupportedApiProfile("glcore", MinVersion = "3.2")]
@@ -22490,11 +22490,11 @@ public unsafe partial interface IGL
         [NativeFunction("opengl", EntryPoint = "glTexStorage2DMultisample")]
         static abstract void TexStorage2dMultisample(
             [NativeTypeName("GLenum")] uint target,
-            [NativeTypeName("GLsizei")] int samples,
+            [NativeTypeName("GLsizei")] uint samples,
             [NativeTypeName("GLenum")] uint internalformat,
-            [NativeTypeName("GLsizei")] int width,
-            [NativeTypeName("GLsizei")] int height,
-            [NativeTypeName("GLboolean")] byte fixedsamplelocations
+            [NativeTypeName("GLsizei")] uint width,
+            [NativeTypeName("GLsizei")] uint height,
+            [NativeTypeName("GLboolean")] uint fixedsamplelocations
         );
 
         [SupportedApiProfile("glcore", MinVersion = "3.2")]
@@ -22502,11 +22502,11 @@ public unsafe partial interface IGL
         [NativeFunction("opengl", EntryPoint = "glTexStorage3D")]
         static abstract void TexStorage3d(
             [NativeTypeName("GLenum")] uint target,
-            [NativeTypeName("GLsizei")] int levels,
+            [NativeTypeName("GLsizei")] uint levels,
             [NativeTypeName("GLenum")] uint internalformat,
-            [NativeTypeName("GLsizei")] int width,
-            [NativeTypeName("GLsizei")] int height,
-            [NativeTypeName("GLsizei")] int depth
+            [NativeTypeName("GLsizei")] uint width,
+            [NativeTypeName("GLsizei")] uint height,
+            [NativeTypeName("GLsizei")] uint depth
         );
 
         [SupportedApiProfile("glcore", MinVersion = "3.2")]
@@ -22516,11 +22516,11 @@ public unsafe partial interface IGL
         [NativeFunction("opengl", EntryPoint = "glTexStorage3DEXT")]
         static abstract void TexStorage3dext(
             [NativeTypeName("GLenum")] uint target,
-            [NativeTypeName("GLsizei")] int levels,
+            [NativeTypeName("GLsizei")] uint levels,
             [NativeTypeName("GLenum")] uint internalformat,
-            [NativeTypeName("GLsizei")] int width,
-            [NativeTypeName("GLsizei")] int height,
-            [NativeTypeName("GLsizei")] int depth
+            [NativeTypeName("GLsizei")] uint width,
+            [NativeTypeName("GLsizei")] uint height,
+            [NativeTypeName("GLsizei")] uint depth
         );
 
         [SupportedApiProfile("glcore", MinVersion = "3.2")]
@@ -22528,34 +22528,34 @@ public unsafe partial interface IGL
         [NativeFunction("opengl", EntryPoint = "glTexStorage3DMultisample")]
         static abstract void TexStorage3dMultisample(
             [NativeTypeName("GLenum")] uint target,
-            [NativeTypeName("GLsizei")] int samples,
+            [NativeTypeName("GLsizei")] uint samples,
             [NativeTypeName("GLenum")] uint internalformat,
-            [NativeTypeName("GLsizei")] int width,
-            [NativeTypeName("GLsizei")] int height,
-            [NativeTypeName("GLsizei")] int depth,
-            [NativeTypeName("GLboolean")] byte fixedsamplelocations
+            [NativeTypeName("GLsizei")] uint width,
+            [NativeTypeName("GLsizei")] uint height,
+            [NativeTypeName("GLsizei")] uint depth,
+            [NativeTypeName("GLboolean")] uint fixedsamplelocations
         );
 
         [SupportedApiProfile("gles2", MinVersion = "2.0")]
         [NativeFunction("opengl", EntryPoint = "glTexStorage3DMultisampleOES")]
         static abstract void TexStorage3dMultisampleOes(
             [NativeTypeName("GLenum")] uint target,
-            [NativeTypeName("GLsizei")] int samples,
+            [NativeTypeName("GLsizei")] uint samples,
             [NativeTypeName("GLenum")] uint internalformat,
-            [NativeTypeName("GLsizei")] int width,
-            [NativeTypeName("GLsizei")] int height,
-            [NativeTypeName("GLsizei")] int depth,
-            [NativeTypeName("GLboolean")] byte fixedsamplelocations
+            [NativeTypeName("GLsizei")] uint width,
+            [NativeTypeName("GLsizei")] uint height,
+            [NativeTypeName("GLsizei")] uint depth,
+            [NativeTypeName("GLboolean")] uint fixedsamplelocations
         );
 
         [SupportedApiProfile("gles2", MinVersion = "2.0")]
         [NativeFunction("opengl", EntryPoint = "glTexStorageAttribs2DEXT")]
         static abstract void TexStorageAttribs2dext(
             [NativeTypeName("GLenum")] uint target,
-            [NativeTypeName("GLsizei")] int levels,
+            [NativeTypeName("GLsizei")] uint levels,
             [NativeTypeName("GLenum")] uint internalformat,
-            [NativeTypeName("GLsizei")] int width,
-            [NativeTypeName("GLsizei")] int height,
+            [NativeTypeName("GLsizei")] uint width,
+            [NativeTypeName("GLsizei")] uint height,
             [NativeTypeName("const GLint *")] Ref<int> attrib_list
         );
 
@@ -22563,11 +22563,11 @@ public unsafe partial interface IGL
         [NativeFunction("opengl", EntryPoint = "glTexStorageAttribs3DEXT")]
         static abstract void TexStorageAttribs3dext(
             [NativeTypeName("GLenum")] uint target,
-            [NativeTypeName("GLsizei")] int levels,
+            [NativeTypeName("GLsizei")] uint levels,
             [NativeTypeName("GLenum")] uint internalformat,
-            [NativeTypeName("GLsizei")] int width,
-            [NativeTypeName("GLsizei")] int height,
-            [NativeTypeName("GLsizei")] int depth,
+            [NativeTypeName("GLsizei")] uint width,
+            [NativeTypeName("GLsizei")] uint height,
+            [NativeTypeName("GLsizei")] uint depth,
             [NativeTypeName("const GLint *")] Ref<int> attrib_list
         );
 
@@ -22575,9 +22575,9 @@ public unsafe partial interface IGL
         [NativeFunction("opengl", EntryPoint = "glTexStorageMem1DEXT")]
         static abstract void TexStorageMem1dext(
             [NativeTypeName("GLenum")] uint target,
-            [NativeTypeName("GLsizei")] int levels,
+            [NativeTypeName("GLsizei")] uint levels,
             [NativeTypeName("GLenum")] uint internalFormat,
-            [NativeTypeName("GLsizei")] int width,
+            [NativeTypeName("GLsizei")] uint width,
             [NativeTypeName("GLuint")] uint memory,
             [NativeTypeName("GLuint64")] ulong offset
         );
@@ -22587,10 +22587,10 @@ public unsafe partial interface IGL
         [NativeFunction("opengl", EntryPoint = "glTexStorageMem2DEXT")]
         static abstract void TexStorageMem2dext(
             [NativeTypeName("GLenum")] uint target,
-            [NativeTypeName("GLsizei")] int levels,
+            [NativeTypeName("GLsizei")] uint levels,
             [NativeTypeName("GLenum")] uint internalFormat,
-            [NativeTypeName("GLsizei")] int width,
-            [NativeTypeName("GLsizei")] int height,
+            [NativeTypeName("GLsizei")] uint width,
+            [NativeTypeName("GLsizei")] uint height,
             [NativeTypeName("GLuint")] uint memory,
             [NativeTypeName("GLuint64")] ulong offset
         );
@@ -22600,11 +22600,11 @@ public unsafe partial interface IGL
         [NativeFunction("opengl", EntryPoint = "glTexStorageMem2DMultisampleEXT")]
         static abstract void TexStorageMem2dMultisampleExt(
             [NativeTypeName("GLenum")] uint target,
-            [NativeTypeName("GLsizei")] int samples,
+            [NativeTypeName("GLsizei")] uint samples,
             [NativeTypeName("GLenum")] uint internalFormat,
-            [NativeTypeName("GLsizei")] int width,
-            [NativeTypeName("GLsizei")] int height,
-            [NativeTypeName("GLboolean")] byte fixedSampleLocations,
+            [NativeTypeName("GLsizei")] uint width,
+            [NativeTypeName("GLsizei")] uint height,
+            [NativeTypeName("GLboolean")] uint fixedSampleLocations,
             [NativeTypeName("GLuint")] uint memory,
             [NativeTypeName("GLuint64")] ulong offset
         );
@@ -22614,11 +22614,11 @@ public unsafe partial interface IGL
         [NativeFunction("opengl", EntryPoint = "glTexStorageMem3DEXT")]
         static abstract void TexStorageMem3dext(
             [NativeTypeName("GLenum")] uint target,
-            [NativeTypeName("GLsizei")] int levels,
+            [NativeTypeName("GLsizei")] uint levels,
             [NativeTypeName("GLenum")] uint internalFormat,
-            [NativeTypeName("GLsizei")] int width,
-            [NativeTypeName("GLsizei")] int height,
-            [NativeTypeName("GLsizei")] int depth,
+            [NativeTypeName("GLsizei")] uint width,
+            [NativeTypeName("GLsizei")] uint height,
+            [NativeTypeName("GLsizei")] uint depth,
             [NativeTypeName("GLuint")] uint memory,
             [NativeTypeName("GLuint64")] ulong offset
         );
@@ -22628,12 +22628,12 @@ public unsafe partial interface IGL
         [NativeFunction("opengl", EntryPoint = "glTexStorageMem3DMultisampleEXT")]
         static abstract void TexStorageMem3dMultisampleExt(
             [NativeTypeName("GLenum")] uint target,
-            [NativeTypeName("GLsizei")] int samples,
+            [NativeTypeName("GLsizei")] uint samples,
             [NativeTypeName("GLenum")] uint internalFormat,
-            [NativeTypeName("GLsizei")] int width,
-            [NativeTypeName("GLsizei")] int height,
-            [NativeTypeName("GLsizei")] int depth,
-            [NativeTypeName("GLboolean")] byte fixedSampleLocations,
+            [NativeTypeName("GLsizei")] uint width,
+            [NativeTypeName("GLsizei")] uint height,
+            [NativeTypeName("GLsizei")] uint depth,
+            [NativeTypeName("GLboolean")] uint fixedSampleLocations,
             [NativeTypeName("GLuint")] uint memory,
             [NativeTypeName("GLuint64")] ulong offset
         );
@@ -22643,10 +22643,10 @@ public unsafe partial interface IGL
         static abstract void TexStorageSparseAmd(
             [NativeTypeName("GLenum")] uint target,
             [NativeTypeName("GLenum")] uint internalFormat,
-            [NativeTypeName("GLsizei")] int width,
-            [NativeTypeName("GLsizei")] int height,
-            [NativeTypeName("GLsizei")] int depth,
-            [NativeTypeName("GLsizei")] int layers,
+            [NativeTypeName("GLsizei")] uint width,
+            [NativeTypeName("GLsizei")] uint height,
+            [NativeTypeName("GLsizei")] uint depth,
+            [NativeTypeName("GLsizei")] uint layers,
             [NativeTypeName("GLbitfield")] uint flags
         );
 
@@ -22657,7 +22657,7 @@ public unsafe partial interface IGL
             [NativeTypeName("GLenum")] uint target,
             [NativeTypeName("GLint")] int level,
             [NativeTypeName("GLint")] int xoffset,
-            [NativeTypeName("GLsizei")] int width,
+            [NativeTypeName("GLsizei")] uint width,
             [NativeTypeName("GLenum")] uint format,
             [NativeTypeName("GLenum")] uint type,
             [NativeTypeName("const void *")] Ref pixels
@@ -22669,7 +22669,7 @@ public unsafe partial interface IGL
             [NativeTypeName("GLenum")] uint target,
             [NativeTypeName("GLint")] int level,
             [NativeTypeName("GLint")] int xoffset,
-            [NativeTypeName("GLsizei")] int width,
+            [NativeTypeName("GLsizei")] uint width,
             [NativeTypeName("GLenum")] uint format,
             [NativeTypeName("GLenum")] uint type,
             [NativeTypeName("const void *")] Ref pixels
@@ -22685,8 +22685,8 @@ public unsafe partial interface IGL
             [NativeTypeName("GLint")] int level,
             [NativeTypeName("GLint")] int xoffset,
             [NativeTypeName("GLint")] int yoffset,
-            [NativeTypeName("GLsizei")] int width,
-            [NativeTypeName("GLsizei")] int height,
+            [NativeTypeName("GLsizei")] uint width,
+            [NativeTypeName("GLsizei")] uint height,
             [NativeTypeName("GLenum")] uint format,
             [NativeTypeName("GLenum")] uint type,
             [NativeTypeName("const void *")] Ref pixels
@@ -22699,8 +22699,8 @@ public unsafe partial interface IGL
             [NativeTypeName("GLint")] int level,
             [NativeTypeName("GLint")] int xoffset,
             [NativeTypeName("GLint")] int yoffset,
-            [NativeTypeName("GLsizei")] int width,
-            [NativeTypeName("GLsizei")] int height,
+            [NativeTypeName("GLsizei")] uint width,
+            [NativeTypeName("GLsizei")] uint height,
             [NativeTypeName("GLenum")] uint format,
             [NativeTypeName("GLenum")] uint type,
             [NativeTypeName("const void *")] Ref pixels
@@ -22715,9 +22715,9 @@ public unsafe partial interface IGL
             [NativeTypeName("GLint")] int xoffset,
             [NativeTypeName("GLint")] int yoffset,
             [NativeTypeName("GLint")] int zoffset,
-            [NativeTypeName("GLsizei")] int width,
-            [NativeTypeName("GLsizei")] int height,
-            [NativeTypeName("GLsizei")] int depth,
+            [NativeTypeName("GLsizei")] uint width,
+            [NativeTypeName("GLsizei")] uint height,
+            [NativeTypeName("GLsizei")] uint depth,
             [NativeTypeName("GLenum")] uint format,
             [NativeTypeName("GLenum")] uint type,
             [NativeTypeName("const void *")] Ref pixels
@@ -22731,9 +22731,9 @@ public unsafe partial interface IGL
             [NativeTypeName("GLint")] int xoffset,
             [NativeTypeName("GLint")] int yoffset,
             [NativeTypeName("GLint")] int zoffset,
-            [NativeTypeName("GLsizei")] int width,
-            [NativeTypeName("GLsizei")] int height,
-            [NativeTypeName("GLsizei")] int depth,
+            [NativeTypeName("GLsizei")] uint width,
+            [NativeTypeName("GLsizei")] uint height,
+            [NativeTypeName("GLsizei")] uint depth,
             [NativeTypeName("GLenum")] uint format,
             [NativeTypeName("GLenum")] uint type,
             [NativeTypeName("const void *")] Ref pixels
@@ -22747,9 +22747,9 @@ public unsafe partial interface IGL
             [NativeTypeName("GLint")] int xoffset,
             [NativeTypeName("GLint")] int yoffset,
             [NativeTypeName("GLint")] int zoffset,
-            [NativeTypeName("GLsizei")] int width,
-            [NativeTypeName("GLsizei")] int height,
-            [NativeTypeName("GLsizei")] int depth,
+            [NativeTypeName("GLsizei")] uint width,
+            [NativeTypeName("GLsizei")] uint height,
+            [NativeTypeName("GLsizei")] uint depth,
             [NativeTypeName("GLenum")] uint format,
             [NativeTypeName("GLenum")] uint type,
             [NativeTypeName("const void *")] Ref pixels
@@ -22764,10 +22764,10 @@ public unsafe partial interface IGL
             [NativeTypeName("GLint")] int yoffset,
             [NativeTypeName("GLint")] int zoffset,
             [NativeTypeName("GLint")] int woffset,
-            [NativeTypeName("GLsizei")] int width,
-            [NativeTypeName("GLsizei")] int height,
-            [NativeTypeName("GLsizei")] int depth,
-            [NativeTypeName("GLsizei")] int size4d,
+            [NativeTypeName("GLsizei")] uint width,
+            [NativeTypeName("GLsizei")] uint height,
+            [NativeTypeName("GLsizei")] uint depth,
+            [NativeTypeName("GLsizei")] uint size4d,
             [NativeTypeName("GLenum")] uint format,
             [NativeTypeName("GLenum")] uint type,
             [NativeTypeName("const void *")] Ref pixels
@@ -22820,7 +22820,7 @@ public unsafe partial interface IGL
             [NativeTypeName("GLenum")] uint internalformat,
             [NativeTypeName("GLuint")] uint buffer,
             [NativeTypeName("GLintptr")] nint offset,
-            [NativeTypeName("GLsizeiptr")] nint size
+            [NativeTypeName("GLsizeiptr")] nuint size
         );
 
         [SupportedApiProfile("glcore", MinVersion = "3.2")]
@@ -22832,16 +22832,16 @@ public unsafe partial interface IGL
             [NativeTypeName("GLenum")] uint internalformat,
             [NativeTypeName("GLuint")] uint buffer,
             [NativeTypeName("GLintptr")] nint offset,
-            [NativeTypeName("GLsizeiptr")] nint size
+            [NativeTypeName("GLsizeiptr")] nuint size
         );
 
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glTextureColorMaskSGIS")]
         static abstract void TextureColorMaskSgis(
-            [NativeTypeName("GLboolean")] byte red,
-            [NativeTypeName("GLboolean")] byte green,
-            [NativeTypeName("GLboolean")] byte blue,
-            [NativeTypeName("GLboolean")] byte alpha
+            [NativeTypeName("GLboolean")] uint red,
+            [NativeTypeName("GLboolean")] uint green,
+            [NativeTypeName("GLboolean")] uint blue,
+            [NativeTypeName("GLboolean")] uint alpha
         );
 
         [SupportedApiProfile("gles2", MinVersion = "2.0")]
@@ -22865,7 +22865,7 @@ public unsafe partial interface IGL
             [NativeTypeName("GLenum")] uint target,
             [NativeTypeName("GLint")] int level,
             [NativeTypeName("GLint")] int internalformat,
-            [NativeTypeName("GLsizei")] int width,
+            [NativeTypeName("GLsizei")] uint width,
             [NativeTypeName("GLint")] int border,
             [NativeTypeName("GLenum")] uint format,
             [NativeTypeName("GLenum")] uint type,
@@ -22880,8 +22880,8 @@ public unsafe partial interface IGL
             [NativeTypeName("GLenum")] uint target,
             [NativeTypeName("GLint")] int level,
             [NativeTypeName("GLint")] int internalformat,
-            [NativeTypeName("GLsizei")] int width,
-            [NativeTypeName("GLsizei")] int height,
+            [NativeTypeName("GLsizei")] uint width,
+            [NativeTypeName("GLsizei")] uint height,
             [NativeTypeName("GLint")] int border,
             [NativeTypeName("GLenum")] uint format,
             [NativeTypeName("GLenum")] uint type,
@@ -22893,12 +22893,12 @@ public unsafe partial interface IGL
         static abstract void TextureImage2dMultisampleCoverageNV(
             [NativeTypeName("GLuint")] uint texture,
             [NativeTypeName("GLenum")] uint target,
-            [NativeTypeName("GLsizei")] int coverageSamples,
-            [NativeTypeName("GLsizei")] int colorSamples,
+            [NativeTypeName("GLsizei")] uint coverageSamples,
+            [NativeTypeName("GLsizei")] uint colorSamples,
             [NativeTypeName("GLint")] int internalFormat,
-            [NativeTypeName("GLsizei")] int width,
-            [NativeTypeName("GLsizei")] int height,
-            [NativeTypeName("GLboolean")] byte fixedSampleLocations
+            [NativeTypeName("GLsizei")] uint width,
+            [NativeTypeName("GLsizei")] uint height,
+            [NativeTypeName("GLboolean")] uint fixedSampleLocations
         );
 
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
@@ -22906,11 +22906,11 @@ public unsafe partial interface IGL
         static abstract void TextureImage2dMultisampleNV(
             [NativeTypeName("GLuint")] uint texture,
             [NativeTypeName("GLenum")] uint target,
-            [NativeTypeName("GLsizei")] int samples,
+            [NativeTypeName("GLsizei")] uint samples,
             [NativeTypeName("GLint")] int internalFormat,
-            [NativeTypeName("GLsizei")] int width,
-            [NativeTypeName("GLsizei")] int height,
-            [NativeTypeName("GLboolean")] byte fixedSampleLocations
+            [NativeTypeName("GLsizei")] uint width,
+            [NativeTypeName("GLsizei")] uint height,
+            [NativeTypeName("GLboolean")] uint fixedSampleLocations
         );
 
         [SupportedApiProfile("glcore", MinVersion = "3.2")]
@@ -22921,9 +22921,9 @@ public unsafe partial interface IGL
             [NativeTypeName("GLenum")] uint target,
             [NativeTypeName("GLint")] int level,
             [NativeTypeName("GLint")] int internalformat,
-            [NativeTypeName("GLsizei")] int width,
-            [NativeTypeName("GLsizei")] int height,
-            [NativeTypeName("GLsizei")] int depth,
+            [NativeTypeName("GLsizei")] uint width,
+            [NativeTypeName("GLsizei")] uint height,
+            [NativeTypeName("GLsizei")] uint depth,
             [NativeTypeName("GLint")] int border,
             [NativeTypeName("GLenum")] uint format,
             [NativeTypeName("GLenum")] uint type,
@@ -22935,13 +22935,13 @@ public unsafe partial interface IGL
         static abstract void TextureImage3dMultisampleCoverageNV(
             [NativeTypeName("GLuint")] uint texture,
             [NativeTypeName("GLenum")] uint target,
-            [NativeTypeName("GLsizei")] int coverageSamples,
-            [NativeTypeName("GLsizei")] int colorSamples,
+            [NativeTypeName("GLsizei")] uint coverageSamples,
+            [NativeTypeName("GLsizei")] uint colorSamples,
             [NativeTypeName("GLint")] int internalFormat,
-            [NativeTypeName("GLsizei")] int width,
-            [NativeTypeName("GLsizei")] int height,
-            [NativeTypeName("GLsizei")] int depth,
-            [NativeTypeName("GLboolean")] byte fixedSampleLocations
+            [NativeTypeName("GLsizei")] uint width,
+            [NativeTypeName("GLsizei")] uint height,
+            [NativeTypeName("GLsizei")] uint depth,
+            [NativeTypeName("GLboolean")] uint fixedSampleLocations
         );
 
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
@@ -22949,12 +22949,12 @@ public unsafe partial interface IGL
         static abstract void TextureImage3dMultisampleNV(
             [NativeTypeName("GLuint")] uint texture,
             [NativeTypeName("GLenum")] uint target,
-            [NativeTypeName("GLsizei")] int samples,
+            [NativeTypeName("GLsizei")] uint samples,
             [NativeTypeName("GLint")] int internalFormat,
-            [NativeTypeName("GLsizei")] int width,
-            [NativeTypeName("GLsizei")] int height,
-            [NativeTypeName("GLsizei")] int depth,
-            [NativeTypeName("GLboolean")] byte fixedSampleLocations
+            [NativeTypeName("GLsizei")] uint width,
+            [NativeTypeName("GLsizei")] uint height,
+            [NativeTypeName("GLsizei")] uint depth,
+            [NativeTypeName("GLboolean")] uint fixedSampleLocations
         );
 
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
@@ -22981,10 +22981,10 @@ public unsafe partial interface IGL
             [NativeTypeName("GLint")] int xoffset,
             [NativeTypeName("GLint")] int yoffset,
             [NativeTypeName("GLint")] int zoffset,
-            [NativeTypeName("GLsizei")] int width,
-            [NativeTypeName("GLsizei")] int height,
-            [NativeTypeName("GLsizei")] int depth,
-            [NativeTypeName("GLboolean")] byte commit
+            [NativeTypeName("GLsizei")] uint width,
+            [NativeTypeName("GLsizei")] uint height,
+            [NativeTypeName("GLsizei")] uint depth,
+            [NativeTypeName("GLboolean")] uint commit
         );
 
         [SupportedApiProfile("glcore", MinVersion = "3.2")]
@@ -22998,12 +22998,12 @@ public unsafe partial interface IGL
             [NativeTypeName("GLint")] int xoffset,
             [NativeTypeName("GLint")] int yoffset,
             [NativeTypeName("GLint")] int zoffset,
-            [NativeTypeName("GLsizei")] int width,
-            [NativeTypeName("GLsizei")] int height,
-            [NativeTypeName("GLsizei")] int depth,
+            [NativeTypeName("GLsizei")] uint width,
+            [NativeTypeName("GLsizei")] uint height,
+            [NativeTypeName("GLsizei")] uint depth,
             [NativeTypeName("GLuint")] uint memory,
             [NativeTypeName("GLuint64")] ulong offset,
-            [NativeTypeName("GLboolean")] byte commit
+            [NativeTypeName("GLboolean")] uint commit
         );
 
         [SupportedApiProfile("glcore", MinVersion = "3.2")]
@@ -23124,7 +23124,7 @@ public unsafe partial interface IGL
         [NativeFunction("opengl", EntryPoint = "glTextureRangeAPPLE")]
         static abstract void TextureRangeApple(
             [NativeTypeName("GLenum")] uint target,
-            [NativeTypeName("GLsizei")] int length,
+            [NativeTypeName("GLsizei")] uint length,
             [NativeTypeName("const void *")] Ref pointer
         );
 
@@ -23142,9 +23142,9 @@ public unsafe partial interface IGL
         [NativeFunction("opengl", EntryPoint = "glTextureStorage1D")]
         static abstract void TextureStorage1d(
             [NativeTypeName("GLuint")] uint texture,
-            [NativeTypeName("GLsizei")] int levels,
+            [NativeTypeName("GLsizei")] uint levels,
             [NativeTypeName("GLenum")] uint internalformat,
-            [NativeTypeName("GLsizei")] int width
+            [NativeTypeName("GLsizei")] uint width
         );
 
         [SupportedApiProfile("glcore", MinVersion = "3.2")]
@@ -23155,9 +23155,9 @@ public unsafe partial interface IGL
         static abstract void TextureStorage1dext(
             [NativeTypeName("GLuint")] uint texture,
             [NativeTypeName("GLenum")] uint target,
-            [NativeTypeName("GLsizei")] int levels,
+            [NativeTypeName("GLsizei")] uint levels,
             [NativeTypeName("GLenum")] uint internalformat,
-            [NativeTypeName("GLsizei")] int width
+            [NativeTypeName("GLsizei")] uint width
         );
 
         [SupportedApiProfile("glcore", MinVersion = "3.2")]
@@ -23165,10 +23165,10 @@ public unsafe partial interface IGL
         [NativeFunction("opengl", EntryPoint = "glTextureStorage2D")]
         static abstract void TextureStorage2d(
             [NativeTypeName("GLuint")] uint texture,
-            [NativeTypeName("GLsizei")] int levels,
+            [NativeTypeName("GLsizei")] uint levels,
             [NativeTypeName("GLenum")] uint internalformat,
-            [NativeTypeName("GLsizei")] int width,
-            [NativeTypeName("GLsizei")] int height
+            [NativeTypeName("GLsizei")] uint width,
+            [NativeTypeName("GLsizei")] uint height
         );
 
         [SupportedApiProfile("glcore", MinVersion = "3.2")]
@@ -23179,10 +23179,10 @@ public unsafe partial interface IGL
         static abstract void TextureStorage2dext(
             [NativeTypeName("GLuint")] uint texture,
             [NativeTypeName("GLenum")] uint target,
-            [NativeTypeName("GLsizei")] int levels,
+            [NativeTypeName("GLsizei")] uint levels,
             [NativeTypeName("GLenum")] uint internalformat,
-            [NativeTypeName("GLsizei")] int width,
-            [NativeTypeName("GLsizei")] int height
+            [NativeTypeName("GLsizei")] uint width,
+            [NativeTypeName("GLsizei")] uint height
         );
 
         [SupportedApiProfile("glcore", MinVersion = "3.2")]
@@ -23190,11 +23190,11 @@ public unsafe partial interface IGL
         [NativeFunction("opengl", EntryPoint = "glTextureStorage2DMultisample")]
         static abstract void TextureStorage2dMultisample(
             [NativeTypeName("GLuint")] uint texture,
-            [NativeTypeName("GLsizei")] int samples,
+            [NativeTypeName("GLsizei")] uint samples,
             [NativeTypeName("GLenum")] uint internalformat,
-            [NativeTypeName("GLsizei")] int width,
-            [NativeTypeName("GLsizei")] int height,
-            [NativeTypeName("GLboolean")] byte fixedsamplelocations
+            [NativeTypeName("GLsizei")] uint width,
+            [NativeTypeName("GLsizei")] uint height,
+            [NativeTypeName("GLboolean")] uint fixedsamplelocations
         );
 
         [SupportedApiProfile("glcore", MinVersion = "3.2")]
@@ -23203,11 +23203,11 @@ public unsafe partial interface IGL
         static abstract void TextureStorage2dMultisampleExt(
             [NativeTypeName("GLuint")] uint texture,
             [NativeTypeName("GLenum")] uint target,
-            [NativeTypeName("GLsizei")] int samples,
+            [NativeTypeName("GLsizei")] uint samples,
             [NativeTypeName("GLenum")] uint internalformat,
-            [NativeTypeName("GLsizei")] int width,
-            [NativeTypeName("GLsizei")] int height,
-            [NativeTypeName("GLboolean")] byte fixedsamplelocations
+            [NativeTypeName("GLsizei")] uint width,
+            [NativeTypeName("GLsizei")] uint height,
+            [NativeTypeName("GLboolean")] uint fixedsamplelocations
         );
 
         [SupportedApiProfile("glcore", MinVersion = "3.2")]
@@ -23215,11 +23215,11 @@ public unsafe partial interface IGL
         [NativeFunction("opengl", EntryPoint = "glTextureStorage3D")]
         static abstract void TextureStorage3d(
             [NativeTypeName("GLuint")] uint texture,
-            [NativeTypeName("GLsizei")] int levels,
+            [NativeTypeName("GLsizei")] uint levels,
             [NativeTypeName("GLenum")] uint internalformat,
-            [NativeTypeName("GLsizei")] int width,
-            [NativeTypeName("GLsizei")] int height,
-            [NativeTypeName("GLsizei")] int depth
+            [NativeTypeName("GLsizei")] uint width,
+            [NativeTypeName("GLsizei")] uint height,
+            [NativeTypeName("GLsizei")] uint depth
         );
 
         [SupportedApiProfile("glcore", MinVersion = "3.2")]
@@ -23230,11 +23230,11 @@ public unsafe partial interface IGL
         static abstract void TextureStorage3dext(
             [NativeTypeName("GLuint")] uint texture,
             [NativeTypeName("GLenum")] uint target,
-            [NativeTypeName("GLsizei")] int levels,
+            [NativeTypeName("GLsizei")] uint levels,
             [NativeTypeName("GLenum")] uint internalformat,
-            [NativeTypeName("GLsizei")] int width,
-            [NativeTypeName("GLsizei")] int height,
-            [NativeTypeName("GLsizei")] int depth
+            [NativeTypeName("GLsizei")] uint width,
+            [NativeTypeName("GLsizei")] uint height,
+            [NativeTypeName("GLsizei")] uint depth
         );
 
         [SupportedApiProfile("glcore", MinVersion = "3.2")]
@@ -23242,12 +23242,12 @@ public unsafe partial interface IGL
         [NativeFunction("opengl", EntryPoint = "glTextureStorage3DMultisample")]
         static abstract void TextureStorage3dMultisample(
             [NativeTypeName("GLuint")] uint texture,
-            [NativeTypeName("GLsizei")] int samples,
+            [NativeTypeName("GLsizei")] uint samples,
             [NativeTypeName("GLenum")] uint internalformat,
-            [NativeTypeName("GLsizei")] int width,
-            [NativeTypeName("GLsizei")] int height,
-            [NativeTypeName("GLsizei")] int depth,
-            [NativeTypeName("GLboolean")] byte fixedsamplelocations
+            [NativeTypeName("GLsizei")] uint width,
+            [NativeTypeName("GLsizei")] uint height,
+            [NativeTypeName("GLsizei")] uint depth,
+            [NativeTypeName("GLboolean")] uint fixedsamplelocations
         );
 
         [SupportedApiProfile("glcore", MinVersion = "3.2")]
@@ -23256,21 +23256,21 @@ public unsafe partial interface IGL
         static abstract void TextureStorage3dMultisampleExt(
             [NativeTypeName("GLuint")] uint texture,
             [NativeTypeName("GLenum")] uint target,
-            [NativeTypeName("GLsizei")] int samples,
+            [NativeTypeName("GLsizei")] uint samples,
             [NativeTypeName("GLenum")] uint internalformat,
-            [NativeTypeName("GLsizei")] int width,
-            [NativeTypeName("GLsizei")] int height,
-            [NativeTypeName("GLsizei")] int depth,
-            [NativeTypeName("GLboolean")] byte fixedsamplelocations
+            [NativeTypeName("GLsizei")] uint width,
+            [NativeTypeName("GLsizei")] uint height,
+            [NativeTypeName("GLsizei")] uint depth,
+            [NativeTypeName("GLboolean")] uint fixedsamplelocations
         );
 
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glTextureStorageMem1DEXT")]
         static abstract void TextureStorageMem1dext(
             [NativeTypeName("GLuint")] uint texture,
-            [NativeTypeName("GLsizei")] int levels,
+            [NativeTypeName("GLsizei")] uint levels,
             [NativeTypeName("GLenum")] uint internalFormat,
-            [NativeTypeName("GLsizei")] int width,
+            [NativeTypeName("GLsizei")] uint width,
             [NativeTypeName("GLuint")] uint memory,
             [NativeTypeName("GLuint64")] ulong offset
         );
@@ -23280,10 +23280,10 @@ public unsafe partial interface IGL
         [NativeFunction("opengl", EntryPoint = "glTextureStorageMem2DEXT")]
         static abstract void TextureStorageMem2dext(
             [NativeTypeName("GLuint")] uint texture,
-            [NativeTypeName("GLsizei")] int levels,
+            [NativeTypeName("GLsizei")] uint levels,
             [NativeTypeName("GLenum")] uint internalFormat,
-            [NativeTypeName("GLsizei")] int width,
-            [NativeTypeName("GLsizei")] int height,
+            [NativeTypeName("GLsizei")] uint width,
+            [NativeTypeName("GLsizei")] uint height,
             [NativeTypeName("GLuint")] uint memory,
             [NativeTypeName("GLuint64")] ulong offset
         );
@@ -23293,11 +23293,11 @@ public unsafe partial interface IGL
         [NativeFunction("opengl", EntryPoint = "glTextureStorageMem2DMultisampleEXT")]
         static abstract void TextureStorageMem2dMultisampleExt(
             [NativeTypeName("GLuint")] uint texture,
-            [NativeTypeName("GLsizei")] int samples,
+            [NativeTypeName("GLsizei")] uint samples,
             [NativeTypeName("GLenum")] uint internalFormat,
-            [NativeTypeName("GLsizei")] int width,
-            [NativeTypeName("GLsizei")] int height,
-            [NativeTypeName("GLboolean")] byte fixedSampleLocations,
+            [NativeTypeName("GLsizei")] uint width,
+            [NativeTypeName("GLsizei")] uint height,
+            [NativeTypeName("GLboolean")] uint fixedSampleLocations,
             [NativeTypeName("GLuint")] uint memory,
             [NativeTypeName("GLuint64")] ulong offset
         );
@@ -23307,11 +23307,11 @@ public unsafe partial interface IGL
         [NativeFunction("opengl", EntryPoint = "glTextureStorageMem3DEXT")]
         static abstract void TextureStorageMem3dext(
             [NativeTypeName("GLuint")] uint texture,
-            [NativeTypeName("GLsizei")] int levels,
+            [NativeTypeName("GLsizei")] uint levels,
             [NativeTypeName("GLenum")] uint internalFormat,
-            [NativeTypeName("GLsizei")] int width,
-            [NativeTypeName("GLsizei")] int height,
-            [NativeTypeName("GLsizei")] int depth,
+            [NativeTypeName("GLsizei")] uint width,
+            [NativeTypeName("GLsizei")] uint height,
+            [NativeTypeName("GLsizei")] uint depth,
             [NativeTypeName("GLuint")] uint memory,
             [NativeTypeName("GLuint64")] ulong offset
         );
@@ -23321,12 +23321,12 @@ public unsafe partial interface IGL
         [NativeFunction("opengl", EntryPoint = "glTextureStorageMem3DMultisampleEXT")]
         static abstract void TextureStorageMem3dMultisampleExt(
             [NativeTypeName("GLuint")] uint texture,
-            [NativeTypeName("GLsizei")] int samples,
+            [NativeTypeName("GLsizei")] uint samples,
             [NativeTypeName("GLenum")] uint internalFormat,
-            [NativeTypeName("GLsizei")] int width,
-            [NativeTypeName("GLsizei")] int height,
-            [NativeTypeName("GLsizei")] int depth,
-            [NativeTypeName("GLboolean")] byte fixedSampleLocations,
+            [NativeTypeName("GLsizei")] uint width,
+            [NativeTypeName("GLsizei")] uint height,
+            [NativeTypeName("GLsizei")] uint depth,
+            [NativeTypeName("GLboolean")] uint fixedSampleLocations,
             [NativeTypeName("GLuint")] uint memory,
             [NativeTypeName("GLuint64")] ulong offset
         );
@@ -23337,10 +23337,10 @@ public unsafe partial interface IGL
             [NativeTypeName("GLuint")] uint texture,
             [NativeTypeName("GLenum")] uint target,
             [NativeTypeName("GLenum")] uint internalFormat,
-            [NativeTypeName("GLsizei")] int width,
-            [NativeTypeName("GLsizei")] int height,
-            [NativeTypeName("GLsizei")] int depth,
-            [NativeTypeName("GLsizei")] int layers,
+            [NativeTypeName("GLsizei")] uint width,
+            [NativeTypeName("GLsizei")] uint height,
+            [NativeTypeName("GLsizei")] uint depth,
+            [NativeTypeName("GLsizei")] uint layers,
             [NativeTypeName("GLbitfield")] uint flags
         );
 
@@ -23351,7 +23351,7 @@ public unsafe partial interface IGL
             [NativeTypeName("GLuint")] uint texture,
             [NativeTypeName("GLint")] int level,
             [NativeTypeName("GLint")] int xoffset,
-            [NativeTypeName("GLsizei")] int width,
+            [NativeTypeName("GLsizei")] uint width,
             [NativeTypeName("GLenum")] uint format,
             [NativeTypeName("GLenum")] uint type,
             [NativeTypeName("const void *")] Ref pixels
@@ -23365,7 +23365,7 @@ public unsafe partial interface IGL
             [NativeTypeName("GLenum")] uint target,
             [NativeTypeName("GLint")] int level,
             [NativeTypeName("GLint")] int xoffset,
-            [NativeTypeName("GLsizei")] int width,
+            [NativeTypeName("GLsizei")] uint width,
             [NativeTypeName("GLenum")] uint format,
             [NativeTypeName("GLenum")] uint type,
             [NativeTypeName("const void *")] Ref pixels
@@ -23379,8 +23379,8 @@ public unsafe partial interface IGL
             [NativeTypeName("GLint")] int level,
             [NativeTypeName("GLint")] int xoffset,
             [NativeTypeName("GLint")] int yoffset,
-            [NativeTypeName("GLsizei")] int width,
-            [NativeTypeName("GLsizei")] int height,
+            [NativeTypeName("GLsizei")] uint width,
+            [NativeTypeName("GLsizei")] uint height,
             [NativeTypeName("GLenum")] uint format,
             [NativeTypeName("GLenum")] uint type,
             [NativeTypeName("const void *")] Ref pixels
@@ -23395,8 +23395,8 @@ public unsafe partial interface IGL
             [NativeTypeName("GLint")] int level,
             [NativeTypeName("GLint")] int xoffset,
             [NativeTypeName("GLint")] int yoffset,
-            [NativeTypeName("GLsizei")] int width,
-            [NativeTypeName("GLsizei")] int height,
+            [NativeTypeName("GLsizei")] uint width,
+            [NativeTypeName("GLsizei")] uint height,
             [NativeTypeName("GLenum")] uint format,
             [NativeTypeName("GLenum")] uint type,
             [NativeTypeName("const void *")] Ref pixels
@@ -23411,9 +23411,9 @@ public unsafe partial interface IGL
             [NativeTypeName("GLint")] int xoffset,
             [NativeTypeName("GLint")] int yoffset,
             [NativeTypeName("GLint")] int zoffset,
-            [NativeTypeName("GLsizei")] int width,
-            [NativeTypeName("GLsizei")] int height,
-            [NativeTypeName("GLsizei")] int depth,
+            [NativeTypeName("GLsizei")] uint width,
+            [NativeTypeName("GLsizei")] uint height,
+            [NativeTypeName("GLsizei")] uint depth,
             [NativeTypeName("GLenum")] uint format,
             [NativeTypeName("GLenum")] uint type,
             [NativeTypeName("const void *")] Ref pixels
@@ -23429,9 +23429,9 @@ public unsafe partial interface IGL
             [NativeTypeName("GLint")] int xoffset,
             [NativeTypeName("GLint")] int yoffset,
             [NativeTypeName("GLint")] int zoffset,
-            [NativeTypeName("GLsizei")] int width,
-            [NativeTypeName("GLsizei")] int height,
-            [NativeTypeName("GLsizei")] int depth,
+            [NativeTypeName("GLsizei")] uint width,
+            [NativeTypeName("GLsizei")] uint height,
+            [NativeTypeName("GLsizei")] uint depth,
             [NativeTypeName("GLenum")] uint format,
             [NativeTypeName("GLenum")] uint type,
             [NativeTypeName("const void *")] Ref pixels
@@ -23489,7 +23489,7 @@ public unsafe partial interface IGL
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glTransformFeedbackAttribsNV")]
         static abstract void TransformFeedbackAttribsNV(
-            [NativeTypeName("GLsizei")] int count,
+            [NativeTypeName("GLsizei")] uint count,
             [NativeTypeName("const GLint *")] Ref<int> attribs,
             [NativeTypeName("GLenum")] uint bufferMode
         );
@@ -23511,15 +23511,15 @@ public unsafe partial interface IGL
             [NativeTypeName("GLuint")] uint index,
             [NativeTypeName("GLuint")] uint buffer,
             [NativeTypeName("GLintptr")] nint offset,
-            [NativeTypeName("GLsizeiptr")] nint size
+            [NativeTypeName("GLsizeiptr")] nuint size
         );
 
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glTransformFeedbackStreamAttribsNV")]
         static abstract void TransformFeedbackStreamAttribsNV(
-            [NativeTypeName("GLsizei")] int count,
+            [NativeTypeName("GLsizei")] uint count,
             [NativeTypeName("const GLint *")] Ref<int> attribs,
-            [NativeTypeName("GLsizei")] int nbuffers,
+            [NativeTypeName("GLsizei")] uint nbuffers,
             [NativeTypeName("const GLint *")] Ref<int> bufstreams,
             [NativeTypeName("GLenum")] uint bufferMode
         );
@@ -23529,7 +23529,7 @@ public unsafe partial interface IGL
         [NativeFunction("opengl", EntryPoint = "glTransformFeedbackVaryings")]
         static abstract void TransformFeedbackVaryings(
             [NativeTypeName("GLuint")] uint program,
-            [NativeTypeName("GLsizei")] int count,
+            [NativeTypeName("GLsizei")] uint count,
             [NativeTypeName("const GLchar *const *")] Ref2D<sbyte> varyings,
             [NativeTypeName("GLenum")] uint bufferMode
         );
@@ -23538,7 +23538,7 @@ public unsafe partial interface IGL
         [NativeFunction("opengl", EntryPoint = "glTransformFeedbackVaryingsEXT")]
         static abstract void TransformFeedbackVaryingsExt(
             [NativeTypeName("GLuint")] uint program,
-            [NativeTypeName("GLsizei")] int count,
+            [NativeTypeName("GLsizei")] uint count,
             [NativeTypeName("const GLchar *const *")] Ref2D<sbyte> varyings,
             [NativeTypeName("GLenum")] uint bufferMode
         );
@@ -23547,7 +23547,7 @@ public unsafe partial interface IGL
         [NativeFunction("opengl", EntryPoint = "glTransformFeedbackVaryingsNV")]
         static abstract void TransformFeedbackVaryingsNV(
             [NativeTypeName("GLuint")] uint program,
-            [NativeTypeName("GLsizei")] int count,
+            [NativeTypeName("GLsizei")] uint count,
             [NativeTypeName("const GLint *")] Ref<int> locations,
             [NativeTypeName("GLenum")] uint bufferMode
         );
@@ -23610,7 +23610,7 @@ public unsafe partial interface IGL
         [NativeFunction("opengl", EntryPoint = "glUniform1dv")]
         static abstract void Uniform1(
             [NativeTypeName("GLint")] int location,
-            [NativeTypeName("GLsizei")] int count,
+            [NativeTypeName("GLsizei")] uint count,
             [NativeTypeName("const GLdouble *")] Ref<double> value
         );
 
@@ -23636,7 +23636,7 @@ public unsafe partial interface IGL
         [NativeFunction("opengl", EntryPoint = "glUniform1fv")]
         static abstract void Uniform1(
             [NativeTypeName("GLint")] int location,
-            [NativeTypeName("GLsizei")] int count,
+            [NativeTypeName("GLsizei")] uint count,
             [NativeTypeName("const GLfloat *")] Ref<float> value
         );
 
@@ -23644,7 +23644,7 @@ public unsafe partial interface IGL
         [NativeFunction("opengl", EntryPoint = "glUniform1fvARB")]
         static abstract void Uniform1fvArb(
             [NativeTypeName("GLint")] int location,
-            [NativeTypeName("GLsizei")] int count,
+            [NativeTypeName("GLsizei")] uint count,
             [NativeTypeName("const GLfloat *")] Ref<float> value
         );
 
@@ -23679,7 +23679,7 @@ public unsafe partial interface IGL
         [NativeFunction("opengl", EntryPoint = "glUniform1i64vARB")]
         static abstract void Uniform1i64vArb(
             [NativeTypeName("GLint")] int location,
-            [NativeTypeName("GLsizei")] int count,
+            [NativeTypeName("GLsizei")] uint count,
             [NativeTypeName("const GLint64 *")] Ref<long> value
         );
 
@@ -23689,7 +23689,7 @@ public unsafe partial interface IGL
         [NativeFunction("opengl", EntryPoint = "glUniform1i64vNV")]
         static abstract void Uniform1i64vNV(
             [NativeTypeName("GLint")] int location,
-            [NativeTypeName("GLsizei")] int count,
+            [NativeTypeName("GLsizei")] uint count,
             [NativeTypeName("const GLint64EXT *")] Ref<long> value
         );
 
@@ -23706,7 +23706,7 @@ public unsafe partial interface IGL
         [NativeFunction("opengl", EntryPoint = "glUniform1iv")]
         static abstract void Uniform1(
             [NativeTypeName("GLint")] int location,
-            [NativeTypeName("GLsizei")] int count,
+            [NativeTypeName("GLsizei")] uint count,
             [NativeTypeName("const GLint *")] Ref<int> value
         );
 
@@ -23714,7 +23714,7 @@ public unsafe partial interface IGL
         [NativeFunction("opengl", EntryPoint = "glUniform1ivARB")]
         static abstract void Uniform1ivArb(
             [NativeTypeName("GLint")] int location,
-            [NativeTypeName("GLsizei")] int count,
+            [NativeTypeName("GLsizei")] uint count,
             [NativeTypeName("const GLint *")] Ref<int> value
         );
 
@@ -23748,7 +23748,7 @@ public unsafe partial interface IGL
         [NativeFunction("opengl", EntryPoint = "glUniform1ui64vARB")]
         static abstract void Uniform1ui64vArb(
             [NativeTypeName("GLint")] int location,
-            [NativeTypeName("GLsizei")] int count,
+            [NativeTypeName("GLsizei")] uint count,
             [NativeTypeName("const GLuint64 *")] Ref<ulong> value
         );
 
@@ -23758,7 +23758,7 @@ public unsafe partial interface IGL
         [NativeFunction("opengl", EntryPoint = "glUniform1ui64vNV")]
         static abstract void Uniform1ui64vNV(
             [NativeTypeName("GLint")] int location,
-            [NativeTypeName("GLsizei")] int count,
+            [NativeTypeName("GLsizei")] uint count,
             [NativeTypeName("const GLuint64EXT *")] Ref<ulong> value
         );
 
@@ -23774,7 +23774,7 @@ public unsafe partial interface IGL
         [NativeFunction("opengl", EntryPoint = "glUniform1uiv")]
         static abstract void Uniform1(
             [NativeTypeName("GLint")] int location,
-            [NativeTypeName("GLsizei")] int count,
+            [NativeTypeName("GLsizei")] uint count,
             [NativeTypeName("const GLuint *")] Ref<uint> value
         );
 
@@ -23782,7 +23782,7 @@ public unsafe partial interface IGL
         [NativeFunction("opengl", EntryPoint = "glUniform1uivEXT")]
         static abstract void Uniform1uivExt(
             [NativeTypeName("GLint")] int location,
-            [NativeTypeName("GLsizei")] int count,
+            [NativeTypeName("GLsizei")] uint count,
             [NativeTypeName("const GLuint *")] Ref<uint> value
         );
 
@@ -23800,7 +23800,7 @@ public unsafe partial interface IGL
         [NativeFunction("opengl", EntryPoint = "glUniform2dv")]
         static abstract void Uniform2(
             [NativeTypeName("GLint")] int location,
-            [NativeTypeName("GLsizei")] int count,
+            [NativeTypeName("GLsizei")] uint count,
             [NativeTypeName("const GLdouble *")] Ref<double> value
         );
 
@@ -23828,7 +23828,7 @@ public unsafe partial interface IGL
         [NativeFunction("opengl", EntryPoint = "glUniform2fv")]
         static abstract void Uniform2(
             [NativeTypeName("GLint")] int location,
-            [NativeTypeName("GLsizei")] int count,
+            [NativeTypeName("GLsizei")] uint count,
             [NativeTypeName("const GLfloat *")] Ref<float> value
         );
 
@@ -23836,7 +23836,7 @@ public unsafe partial interface IGL
         [NativeFunction("opengl", EntryPoint = "glUniform2fvARB")]
         static abstract void Uniform2fvArb(
             [NativeTypeName("GLint")] int location,
-            [NativeTypeName("GLsizei")] int count,
+            [NativeTypeName("GLsizei")] uint count,
             [NativeTypeName("const GLfloat *")] Ref<float> value
         );
 
@@ -23874,7 +23874,7 @@ public unsafe partial interface IGL
         [NativeFunction("opengl", EntryPoint = "glUniform2i64vARB")]
         static abstract void Uniform2i64vArb(
             [NativeTypeName("GLint")] int location,
-            [NativeTypeName("GLsizei")] int count,
+            [NativeTypeName("GLsizei")] uint count,
             [NativeTypeName("const GLint64 *")] Ref<long> value
         );
 
@@ -23884,7 +23884,7 @@ public unsafe partial interface IGL
         [NativeFunction("opengl", EntryPoint = "glUniform2i64vNV")]
         static abstract void Uniform2i64vNV(
             [NativeTypeName("GLint")] int location,
-            [NativeTypeName("GLsizei")] int count,
+            [NativeTypeName("GLsizei")] uint count,
             [NativeTypeName("const GLint64EXT *")] Ref<long> value
         );
 
@@ -23902,7 +23902,7 @@ public unsafe partial interface IGL
         [NativeFunction("opengl", EntryPoint = "glUniform2iv")]
         static abstract void Uniform2(
             [NativeTypeName("GLint")] int location,
-            [NativeTypeName("GLsizei")] int count,
+            [NativeTypeName("GLsizei")] uint count,
             [NativeTypeName("const GLint *")] Ref<int> value
         );
 
@@ -23910,7 +23910,7 @@ public unsafe partial interface IGL
         [NativeFunction("opengl", EntryPoint = "glUniform2ivARB")]
         static abstract void Uniform2ivArb(
             [NativeTypeName("GLint")] int location,
-            [NativeTypeName("GLsizei")] int count,
+            [NativeTypeName("GLsizei")] uint count,
             [NativeTypeName("const GLint *")] Ref<int> value
         );
 
@@ -23947,7 +23947,7 @@ public unsafe partial interface IGL
         [NativeFunction("opengl", EntryPoint = "glUniform2ui64vARB")]
         static abstract void Uniform2ui64vArb(
             [NativeTypeName("GLint")] int location,
-            [NativeTypeName("GLsizei")] int count,
+            [NativeTypeName("GLsizei")] uint count,
             [NativeTypeName("const GLuint64 *")] Ref<ulong> value
         );
 
@@ -23957,7 +23957,7 @@ public unsafe partial interface IGL
         [NativeFunction("opengl", EntryPoint = "glUniform2ui64vNV")]
         static abstract void Uniform2ui64vNV(
             [NativeTypeName("GLint")] int location,
-            [NativeTypeName("GLsizei")] int count,
+            [NativeTypeName("GLsizei")] uint count,
             [NativeTypeName("const GLuint64EXT *")] Ref<ulong> value
         );
 
@@ -23974,7 +23974,7 @@ public unsafe partial interface IGL
         [NativeFunction("opengl", EntryPoint = "glUniform2uiv")]
         static abstract void Uniform2(
             [NativeTypeName("GLint")] int location,
-            [NativeTypeName("GLsizei")] int count,
+            [NativeTypeName("GLsizei")] uint count,
             [NativeTypeName("const GLuint *")] Ref<uint> value
         );
 
@@ -23982,7 +23982,7 @@ public unsafe partial interface IGL
         [NativeFunction("opengl", EntryPoint = "glUniform2uivEXT")]
         static abstract void Uniform2uivExt(
             [NativeTypeName("GLint")] int location,
-            [NativeTypeName("GLsizei")] int count,
+            [NativeTypeName("GLsizei")] uint count,
             [NativeTypeName("const GLuint *")] Ref<uint> value
         );
 
@@ -24001,7 +24001,7 @@ public unsafe partial interface IGL
         [NativeFunction("opengl", EntryPoint = "glUniform3dv")]
         static abstract void Uniform3(
             [NativeTypeName("GLint")] int location,
-            [NativeTypeName("GLsizei")] int count,
+            [NativeTypeName("GLsizei")] uint count,
             [NativeTypeName("const GLdouble *")] Ref<double> value
         );
 
@@ -24031,7 +24031,7 @@ public unsafe partial interface IGL
         [NativeFunction("opengl", EntryPoint = "glUniform3fv")]
         static abstract void Uniform3(
             [NativeTypeName("GLint")] int location,
-            [NativeTypeName("GLsizei")] int count,
+            [NativeTypeName("GLsizei")] uint count,
             [NativeTypeName("const GLfloat *")] Ref<float> value
         );
 
@@ -24039,7 +24039,7 @@ public unsafe partial interface IGL
         [NativeFunction("opengl", EntryPoint = "glUniform3fvARB")]
         static abstract void Uniform3fvArb(
             [NativeTypeName("GLint")] int location,
-            [NativeTypeName("GLsizei")] int count,
+            [NativeTypeName("GLsizei")] uint count,
             [NativeTypeName("const GLfloat *")] Ref<float> value
         );
 
@@ -24080,7 +24080,7 @@ public unsafe partial interface IGL
         [NativeFunction("opengl", EntryPoint = "glUniform3i64vARB")]
         static abstract void Uniform3i64vArb(
             [NativeTypeName("GLint")] int location,
-            [NativeTypeName("GLsizei")] int count,
+            [NativeTypeName("GLsizei")] uint count,
             [NativeTypeName("const GLint64 *")] Ref<long> value
         );
 
@@ -24090,7 +24090,7 @@ public unsafe partial interface IGL
         [NativeFunction("opengl", EntryPoint = "glUniform3i64vNV")]
         static abstract void Uniform3i64vNV(
             [NativeTypeName("GLint")] int location,
-            [NativeTypeName("GLsizei")] int count,
+            [NativeTypeName("GLsizei")] uint count,
             [NativeTypeName("const GLint64EXT *")] Ref<long> value
         );
 
@@ -24109,7 +24109,7 @@ public unsafe partial interface IGL
         [NativeFunction("opengl", EntryPoint = "glUniform3iv")]
         static abstract void Uniform3(
             [NativeTypeName("GLint")] int location,
-            [NativeTypeName("GLsizei")] int count,
+            [NativeTypeName("GLsizei")] uint count,
             [NativeTypeName("const GLint *")] Ref<int> value
         );
 
@@ -24117,7 +24117,7 @@ public unsafe partial interface IGL
         [NativeFunction("opengl", EntryPoint = "glUniform3ivARB")]
         static abstract void Uniform3ivArb(
             [NativeTypeName("GLint")] int location,
-            [NativeTypeName("GLsizei")] int count,
+            [NativeTypeName("GLsizei")] uint count,
             [NativeTypeName("const GLint *")] Ref<int> value
         );
 
@@ -24157,7 +24157,7 @@ public unsafe partial interface IGL
         [NativeFunction("opengl", EntryPoint = "glUniform3ui64vARB")]
         static abstract void Uniform3ui64vArb(
             [NativeTypeName("GLint")] int location,
-            [NativeTypeName("GLsizei")] int count,
+            [NativeTypeName("GLsizei")] uint count,
             [NativeTypeName("const GLuint64 *")] Ref<ulong> value
         );
 
@@ -24167,7 +24167,7 @@ public unsafe partial interface IGL
         [NativeFunction("opengl", EntryPoint = "glUniform3ui64vNV")]
         static abstract void Uniform3ui64vNV(
             [NativeTypeName("GLint")] int location,
-            [NativeTypeName("GLsizei")] int count,
+            [NativeTypeName("GLsizei")] uint count,
             [NativeTypeName("const GLuint64EXT *")] Ref<ulong> value
         );
 
@@ -24185,7 +24185,7 @@ public unsafe partial interface IGL
         [NativeFunction("opengl", EntryPoint = "glUniform3uiv")]
         static abstract void Uniform3(
             [NativeTypeName("GLint")] int location,
-            [NativeTypeName("GLsizei")] int count,
+            [NativeTypeName("GLsizei")] uint count,
             [NativeTypeName("const GLuint *")] Ref<uint> value
         );
 
@@ -24193,7 +24193,7 @@ public unsafe partial interface IGL
         [NativeFunction("opengl", EntryPoint = "glUniform3uivEXT")]
         static abstract void Uniform3uivExt(
             [NativeTypeName("GLint")] int location,
-            [NativeTypeName("GLsizei")] int count,
+            [NativeTypeName("GLsizei")] uint count,
             [NativeTypeName("const GLuint *")] Ref<uint> value
         );
 
@@ -24213,7 +24213,7 @@ public unsafe partial interface IGL
         [NativeFunction("opengl", EntryPoint = "glUniform4dv")]
         static abstract void Uniform4(
             [NativeTypeName("GLint")] int location,
-            [NativeTypeName("GLsizei")] int count,
+            [NativeTypeName("GLsizei")] uint count,
             [NativeTypeName("const GLdouble *")] Ref<double> value
         );
 
@@ -24245,7 +24245,7 @@ public unsafe partial interface IGL
         [NativeFunction("opengl", EntryPoint = "glUniform4fv")]
         static abstract void Uniform4(
             [NativeTypeName("GLint")] int location,
-            [NativeTypeName("GLsizei")] int count,
+            [NativeTypeName("GLsizei")] uint count,
             [NativeTypeName("const GLfloat *")] Ref<float> value
         );
 
@@ -24253,7 +24253,7 @@ public unsafe partial interface IGL
         [NativeFunction("opengl", EntryPoint = "glUniform4fvARB")]
         static abstract void Uniform4fvArb(
             [NativeTypeName("GLint")] int location,
-            [NativeTypeName("GLsizei")] int count,
+            [NativeTypeName("GLsizei")] uint count,
             [NativeTypeName("const GLfloat *")] Ref<float> value
         );
 
@@ -24297,7 +24297,7 @@ public unsafe partial interface IGL
         [NativeFunction("opengl", EntryPoint = "glUniform4i64vARB")]
         static abstract void Uniform4i64vArb(
             [NativeTypeName("GLint")] int location,
-            [NativeTypeName("GLsizei")] int count,
+            [NativeTypeName("GLsizei")] uint count,
             [NativeTypeName("const GLint64 *")] Ref<long> value
         );
 
@@ -24307,7 +24307,7 @@ public unsafe partial interface IGL
         [NativeFunction("opengl", EntryPoint = "glUniform4i64vNV")]
         static abstract void Uniform4i64vNV(
             [NativeTypeName("GLint")] int location,
-            [NativeTypeName("GLsizei")] int count,
+            [NativeTypeName("GLsizei")] uint count,
             [NativeTypeName("const GLint64EXT *")] Ref<long> value
         );
 
@@ -24327,7 +24327,7 @@ public unsafe partial interface IGL
         [NativeFunction("opengl", EntryPoint = "glUniform4iv")]
         static abstract void Uniform4(
             [NativeTypeName("GLint")] int location,
-            [NativeTypeName("GLsizei")] int count,
+            [NativeTypeName("GLsizei")] uint count,
             [NativeTypeName("const GLint *")] Ref<int> value
         );
 
@@ -24335,7 +24335,7 @@ public unsafe partial interface IGL
         [NativeFunction("opengl", EntryPoint = "glUniform4ivARB")]
         static abstract void Uniform4ivArb(
             [NativeTypeName("GLint")] int location,
-            [NativeTypeName("GLsizei")] int count,
+            [NativeTypeName("GLsizei")] uint count,
             [NativeTypeName("const GLint *")] Ref<int> value
         );
 
@@ -24378,7 +24378,7 @@ public unsafe partial interface IGL
         [NativeFunction("opengl", EntryPoint = "glUniform4ui64vARB")]
         static abstract void Uniform4ui64vArb(
             [NativeTypeName("GLint")] int location,
-            [NativeTypeName("GLsizei")] int count,
+            [NativeTypeName("GLsizei")] uint count,
             [NativeTypeName("const GLuint64 *")] Ref<ulong> value
         );
 
@@ -24388,7 +24388,7 @@ public unsafe partial interface IGL
         [NativeFunction("opengl", EntryPoint = "glUniform4ui64vNV")]
         static abstract void Uniform4ui64vNV(
             [NativeTypeName("GLint")] int location,
-            [NativeTypeName("GLsizei")] int count,
+            [NativeTypeName("GLsizei")] uint count,
             [NativeTypeName("const GLuint64EXT *")] Ref<ulong> value
         );
 
@@ -24407,7 +24407,7 @@ public unsafe partial interface IGL
         [NativeFunction("opengl", EntryPoint = "glUniform4uiv")]
         static abstract void Uniform4(
             [NativeTypeName("GLint")] int location,
-            [NativeTypeName("GLsizei")] int count,
+            [NativeTypeName("GLsizei")] uint count,
             [NativeTypeName("const GLuint *")] Ref<uint> value
         );
 
@@ -24415,7 +24415,7 @@ public unsafe partial interface IGL
         [NativeFunction("opengl", EntryPoint = "glUniform4uivEXT")]
         static abstract void Uniform4uivExt(
             [NativeTypeName("GLint")] int location,
-            [NativeTypeName("GLsizei")] int count,
+            [NativeTypeName("GLsizei")] uint count,
             [NativeTypeName("const GLuint *")] Ref<uint> value
         );
 
@@ -24465,7 +24465,7 @@ public unsafe partial interface IGL
         [NativeFunction("opengl", EntryPoint = "glUniformHandleui64vARB")]
         static abstract void UniformHandleui64vArb(
             [NativeTypeName("GLint")] int location,
-            [NativeTypeName("GLsizei")] int count,
+            [NativeTypeName("GLsizei")] uint count,
             [NativeTypeName("const GLuint64 *")] Ref<ulong> value
         );
 
@@ -24473,7 +24473,7 @@ public unsafe partial interface IGL
         [NativeFunction("opengl", EntryPoint = "glUniformHandleui64vIMG")]
         static abstract void UniformHandleui64vImg(
             [NativeTypeName("GLint")] int location,
-            [NativeTypeName("GLsizei")] int count,
+            [NativeTypeName("GLsizei")] uint count,
             [NativeTypeName("const GLuint64 *")] Ref<ulong> value
         );
 
@@ -24483,7 +24483,7 @@ public unsafe partial interface IGL
         [NativeFunction("opengl", EntryPoint = "glUniformHandleui64vNV")]
         static abstract void UniformHandleui64vNV(
             [NativeTypeName("GLint")] int location,
-            [NativeTypeName("GLsizei")] int count,
+            [NativeTypeName("GLsizei")] uint count,
             [NativeTypeName("const GLuint64 *")] Ref<ulong> value
         );
 
@@ -24492,8 +24492,8 @@ public unsafe partial interface IGL
         [NativeFunction("opengl", EntryPoint = "glUniformMatrix2dv")]
         static abstract void UniformMatrix2(
             [NativeTypeName("GLint")] int location,
-            [NativeTypeName("GLsizei")] int count,
-            [NativeTypeName("GLboolean")] byte transpose,
+            [NativeTypeName("GLsizei")] uint count,
+            [NativeTypeName("GLboolean")] uint transpose,
             [NativeTypeName("const GLdouble *")] Ref<double> value
         );
 
@@ -24503,8 +24503,8 @@ public unsafe partial interface IGL
         [NativeFunction("opengl", EntryPoint = "glUniformMatrix2fv")]
         static abstract void UniformMatrix2(
             [NativeTypeName("GLint")] int location,
-            [NativeTypeName("GLsizei")] int count,
-            [NativeTypeName("GLboolean")] byte transpose,
+            [NativeTypeName("GLsizei")] uint count,
+            [NativeTypeName("GLboolean")] uint transpose,
             [NativeTypeName("const GLfloat *")] Ref<float> value
         );
 
@@ -24512,8 +24512,8 @@ public unsafe partial interface IGL
         [NativeFunction("opengl", EntryPoint = "glUniformMatrix2fvARB")]
         static abstract void UniformMatrix2fvArb(
             [NativeTypeName("GLint")] int location,
-            [NativeTypeName("GLsizei")] int count,
-            [NativeTypeName("GLboolean")] byte transpose,
+            [NativeTypeName("GLsizei")] uint count,
+            [NativeTypeName("GLboolean")] uint transpose,
             [NativeTypeName("const GLfloat *")] Ref<float> value
         );
 
@@ -24522,8 +24522,8 @@ public unsafe partial interface IGL
         [NativeFunction("opengl", EntryPoint = "glUniformMatrix2x3dv")]
         static abstract void UniformMatrix2x3(
             [NativeTypeName("GLint")] int location,
-            [NativeTypeName("GLsizei")] int count,
-            [NativeTypeName("GLboolean")] byte transpose,
+            [NativeTypeName("GLsizei")] uint count,
+            [NativeTypeName("GLboolean")] uint transpose,
             [NativeTypeName("const GLdouble *")] Ref<double> value
         );
 
@@ -24532,8 +24532,8 @@ public unsafe partial interface IGL
         [NativeFunction("opengl", EntryPoint = "glUniformMatrix2x3fv")]
         static abstract void UniformMatrix2x3(
             [NativeTypeName("GLint")] int location,
-            [NativeTypeName("GLsizei")] int count,
-            [NativeTypeName("GLboolean")] byte transpose,
+            [NativeTypeName("GLsizei")] uint count,
+            [NativeTypeName("GLboolean")] uint transpose,
             [NativeTypeName("const GLfloat *")] Ref<float> value
         );
 
@@ -24541,8 +24541,8 @@ public unsafe partial interface IGL
         [NativeFunction("opengl", EntryPoint = "glUniformMatrix2x3fvNV")]
         static abstract void UniformMatrix2x3fvNV(
             [NativeTypeName("GLint")] int location,
-            [NativeTypeName("GLsizei")] int count,
-            [NativeTypeName("GLboolean")] byte transpose,
+            [NativeTypeName("GLsizei")] uint count,
+            [NativeTypeName("GLboolean")] uint transpose,
             [NativeTypeName("const GLfloat *")] Ref<float> value
         );
 
@@ -24551,8 +24551,8 @@ public unsafe partial interface IGL
         [NativeFunction("opengl", EntryPoint = "glUniformMatrix2x4dv")]
         static abstract void UniformMatrix2x4(
             [NativeTypeName("GLint")] int location,
-            [NativeTypeName("GLsizei")] int count,
-            [NativeTypeName("GLboolean")] byte transpose,
+            [NativeTypeName("GLsizei")] uint count,
+            [NativeTypeName("GLboolean")] uint transpose,
             [NativeTypeName("const GLdouble *")] Ref<double> value
         );
 
@@ -24561,8 +24561,8 @@ public unsafe partial interface IGL
         [NativeFunction("opengl", EntryPoint = "glUniformMatrix2x4fv")]
         static abstract void UniformMatrix2x4(
             [NativeTypeName("GLint")] int location,
-            [NativeTypeName("GLsizei")] int count,
-            [NativeTypeName("GLboolean")] byte transpose,
+            [NativeTypeName("GLsizei")] uint count,
+            [NativeTypeName("GLboolean")] uint transpose,
             [NativeTypeName("const GLfloat *")] Ref<float> value
         );
 
@@ -24570,8 +24570,8 @@ public unsafe partial interface IGL
         [NativeFunction("opengl", EntryPoint = "glUniformMatrix2x4fvNV")]
         static abstract void UniformMatrix2x4fvNV(
             [NativeTypeName("GLint")] int location,
-            [NativeTypeName("GLsizei")] int count,
-            [NativeTypeName("GLboolean")] byte transpose,
+            [NativeTypeName("GLsizei")] uint count,
+            [NativeTypeName("GLboolean")] uint transpose,
             [NativeTypeName("const GLfloat *")] Ref<float> value
         );
 
@@ -24580,8 +24580,8 @@ public unsafe partial interface IGL
         [NativeFunction("opengl", EntryPoint = "glUniformMatrix3dv")]
         static abstract void UniformMatrix3(
             [NativeTypeName("GLint")] int location,
-            [NativeTypeName("GLsizei")] int count,
-            [NativeTypeName("GLboolean")] byte transpose,
+            [NativeTypeName("GLsizei")] uint count,
+            [NativeTypeName("GLboolean")] uint transpose,
             [NativeTypeName("const GLdouble *")] Ref<double> value
         );
 
@@ -24591,8 +24591,8 @@ public unsafe partial interface IGL
         [NativeFunction("opengl", EntryPoint = "glUniformMatrix3fv")]
         static abstract void UniformMatrix3(
             [NativeTypeName("GLint")] int location,
-            [NativeTypeName("GLsizei")] int count,
-            [NativeTypeName("GLboolean")] byte transpose,
+            [NativeTypeName("GLsizei")] uint count,
+            [NativeTypeName("GLboolean")] uint transpose,
             [NativeTypeName("const GLfloat *")] Ref<float> value
         );
 
@@ -24600,8 +24600,8 @@ public unsafe partial interface IGL
         [NativeFunction("opengl", EntryPoint = "glUniformMatrix3fvARB")]
         static abstract void UniformMatrix3fvArb(
             [NativeTypeName("GLint")] int location,
-            [NativeTypeName("GLsizei")] int count,
-            [NativeTypeName("GLboolean")] byte transpose,
+            [NativeTypeName("GLsizei")] uint count,
+            [NativeTypeName("GLboolean")] uint transpose,
             [NativeTypeName("const GLfloat *")] Ref<float> value
         );
 
@@ -24610,8 +24610,8 @@ public unsafe partial interface IGL
         [NativeFunction("opengl", EntryPoint = "glUniformMatrix3x2dv")]
         static abstract void UniformMatrix3x2(
             [NativeTypeName("GLint")] int location,
-            [NativeTypeName("GLsizei")] int count,
-            [NativeTypeName("GLboolean")] byte transpose,
+            [NativeTypeName("GLsizei")] uint count,
+            [NativeTypeName("GLboolean")] uint transpose,
             [NativeTypeName("const GLdouble *")] Ref<double> value
         );
 
@@ -24620,8 +24620,8 @@ public unsafe partial interface IGL
         [NativeFunction("opengl", EntryPoint = "glUniformMatrix3x2fv")]
         static abstract void UniformMatrix3x2(
             [NativeTypeName("GLint")] int location,
-            [NativeTypeName("GLsizei")] int count,
-            [NativeTypeName("GLboolean")] byte transpose,
+            [NativeTypeName("GLsizei")] uint count,
+            [NativeTypeName("GLboolean")] uint transpose,
             [NativeTypeName("const GLfloat *")] Ref<float> value
         );
 
@@ -24629,8 +24629,8 @@ public unsafe partial interface IGL
         [NativeFunction("opengl", EntryPoint = "glUniformMatrix3x2fvNV")]
         static abstract void UniformMatrix3x2fvNV(
             [NativeTypeName("GLint")] int location,
-            [NativeTypeName("GLsizei")] int count,
-            [NativeTypeName("GLboolean")] byte transpose,
+            [NativeTypeName("GLsizei")] uint count,
+            [NativeTypeName("GLboolean")] uint transpose,
             [NativeTypeName("const GLfloat *")] Ref<float> value
         );
 
@@ -24639,8 +24639,8 @@ public unsafe partial interface IGL
         [NativeFunction("opengl", EntryPoint = "glUniformMatrix3x4dv")]
         static abstract void UniformMatrix3x4(
             [NativeTypeName("GLint")] int location,
-            [NativeTypeName("GLsizei")] int count,
-            [NativeTypeName("GLboolean")] byte transpose,
+            [NativeTypeName("GLsizei")] uint count,
+            [NativeTypeName("GLboolean")] uint transpose,
             [NativeTypeName("const GLdouble *")] Ref<double> value
         );
 
@@ -24649,8 +24649,8 @@ public unsafe partial interface IGL
         [NativeFunction("opengl", EntryPoint = "glUniformMatrix3x4fv")]
         static abstract void UniformMatrix3x4(
             [NativeTypeName("GLint")] int location,
-            [NativeTypeName("GLsizei")] int count,
-            [NativeTypeName("GLboolean")] byte transpose,
+            [NativeTypeName("GLsizei")] uint count,
+            [NativeTypeName("GLboolean")] uint transpose,
             [NativeTypeName("const GLfloat *")] Ref<float> value
         );
 
@@ -24658,8 +24658,8 @@ public unsafe partial interface IGL
         [NativeFunction("opengl", EntryPoint = "glUniformMatrix3x4fvNV")]
         static abstract void UniformMatrix3x4fvNV(
             [NativeTypeName("GLint")] int location,
-            [NativeTypeName("GLsizei")] int count,
-            [NativeTypeName("GLboolean")] byte transpose,
+            [NativeTypeName("GLsizei")] uint count,
+            [NativeTypeName("GLboolean")] uint transpose,
             [NativeTypeName("const GLfloat *")] Ref<float> value
         );
 
@@ -24668,8 +24668,8 @@ public unsafe partial interface IGL
         [NativeFunction("opengl", EntryPoint = "glUniformMatrix4dv")]
         static abstract void UniformMatrix4(
             [NativeTypeName("GLint")] int location,
-            [NativeTypeName("GLsizei")] int count,
-            [NativeTypeName("GLboolean")] byte transpose,
+            [NativeTypeName("GLsizei")] uint count,
+            [NativeTypeName("GLboolean")] uint transpose,
             [NativeTypeName("const GLdouble *")] Ref<double> value
         );
 
@@ -24679,8 +24679,8 @@ public unsafe partial interface IGL
         [NativeFunction("opengl", EntryPoint = "glUniformMatrix4fv")]
         static abstract void UniformMatrix4(
             [NativeTypeName("GLint")] int location,
-            [NativeTypeName("GLsizei")] int count,
-            [NativeTypeName("GLboolean")] byte transpose,
+            [NativeTypeName("GLsizei")] uint count,
+            [NativeTypeName("GLboolean")] uint transpose,
             [NativeTypeName("const GLfloat *")] Ref<float> value
         );
 
@@ -24688,8 +24688,8 @@ public unsafe partial interface IGL
         [NativeFunction("opengl", EntryPoint = "glUniformMatrix4fvARB")]
         static abstract void UniformMatrix4fvArb(
             [NativeTypeName("GLint")] int location,
-            [NativeTypeName("GLsizei")] int count,
-            [NativeTypeName("GLboolean")] byte transpose,
+            [NativeTypeName("GLsizei")] uint count,
+            [NativeTypeName("GLboolean")] uint transpose,
             [NativeTypeName("const GLfloat *")] Ref<float> value
         );
 
@@ -24698,8 +24698,8 @@ public unsafe partial interface IGL
         [NativeFunction("opengl", EntryPoint = "glUniformMatrix4x2dv")]
         static abstract void UniformMatrix4x2(
             [NativeTypeName("GLint")] int location,
-            [NativeTypeName("GLsizei")] int count,
-            [NativeTypeName("GLboolean")] byte transpose,
+            [NativeTypeName("GLsizei")] uint count,
+            [NativeTypeName("GLboolean")] uint transpose,
             [NativeTypeName("const GLdouble *")] Ref<double> value
         );
 
@@ -24708,8 +24708,8 @@ public unsafe partial interface IGL
         [NativeFunction("opengl", EntryPoint = "glUniformMatrix4x2fv")]
         static abstract void UniformMatrix4x2(
             [NativeTypeName("GLint")] int location,
-            [NativeTypeName("GLsizei")] int count,
-            [NativeTypeName("GLboolean")] byte transpose,
+            [NativeTypeName("GLsizei")] uint count,
+            [NativeTypeName("GLboolean")] uint transpose,
             [NativeTypeName("const GLfloat *")] Ref<float> value
         );
 
@@ -24717,8 +24717,8 @@ public unsafe partial interface IGL
         [NativeFunction("opengl", EntryPoint = "glUniformMatrix4x2fvNV")]
         static abstract void UniformMatrix4x2fvNV(
             [NativeTypeName("GLint")] int location,
-            [NativeTypeName("GLsizei")] int count,
-            [NativeTypeName("GLboolean")] byte transpose,
+            [NativeTypeName("GLsizei")] uint count,
+            [NativeTypeName("GLboolean")] uint transpose,
             [NativeTypeName("const GLfloat *")] Ref<float> value
         );
 
@@ -24727,8 +24727,8 @@ public unsafe partial interface IGL
         [NativeFunction("opengl", EntryPoint = "glUniformMatrix4x3dv")]
         static abstract void UniformMatrix4x3(
             [NativeTypeName("GLint")] int location,
-            [NativeTypeName("GLsizei")] int count,
-            [NativeTypeName("GLboolean")] byte transpose,
+            [NativeTypeName("GLsizei")] uint count,
+            [NativeTypeName("GLboolean")] uint transpose,
             [NativeTypeName("const GLdouble *")] Ref<double> value
         );
 
@@ -24737,8 +24737,8 @@ public unsafe partial interface IGL
         [NativeFunction("opengl", EntryPoint = "glUniformMatrix4x3fv")]
         static abstract void UniformMatrix4x3(
             [NativeTypeName("GLint")] int location,
-            [NativeTypeName("GLsizei")] int count,
-            [NativeTypeName("GLboolean")] byte transpose,
+            [NativeTypeName("GLsizei")] uint count,
+            [NativeTypeName("GLboolean")] uint transpose,
             [NativeTypeName("const GLfloat *")] Ref<float> value
         );
 
@@ -24746,8 +24746,8 @@ public unsafe partial interface IGL
         [NativeFunction("opengl", EntryPoint = "glUniformMatrix4x3fvNV")]
         static abstract void UniformMatrix4x3fvNV(
             [NativeTypeName("GLint")] int location,
-            [NativeTypeName("GLsizei")] int count,
-            [NativeTypeName("GLboolean")] byte transpose,
+            [NativeTypeName("GLsizei")] uint count,
+            [NativeTypeName("GLboolean")] uint transpose,
             [NativeTypeName("const GLfloat *")] Ref<float> value
         );
 
@@ -24756,7 +24756,7 @@ public unsafe partial interface IGL
         [NativeFunction("opengl", EntryPoint = "glUniformSubroutinesuiv")]
         static abstract void UniformSubroutines(
             [NativeTypeName("GLenum")] uint shadertype,
-            [NativeTypeName("GLsizei")] int count,
+            [NativeTypeName("GLsizei")] uint count,
             [NativeTypeName("const GLuint *")] Ref<uint> indices
         );
 
@@ -24773,7 +24773,7 @@ public unsafe partial interface IGL
         [NativeFunction("opengl", EntryPoint = "glUniformui64vNV")]
         static abstract void Uniformui64vNV(
             [NativeTypeName("GLint")] int location,
-            [NativeTypeName("GLsizei")] int count,
+            [NativeTypeName("GLsizei")] uint count,
             [NativeTypeName("const GLuint64EXT *")] Ref<ulong> value
         );
 
@@ -24785,30 +24785,30 @@ public unsafe partial interface IGL
         [SupportedApiProfile("glcore", MinVersion = "3.2")]
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glUnmapBuffer")]
-        static abstract byte UnmapBuffer([NativeTypeName("GLenum")] uint target);
+        static abstract uint UnmapBuffer([NativeTypeName("GLenum")] uint target);
 
         [return: NativeTypeName("GLboolean")]
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glUnmapBufferARB")]
-        static abstract byte UnmapBufferArb([NativeTypeName("GLenum")] uint target);
+        static abstract uint UnmapBufferArb([NativeTypeName("GLenum")] uint target);
 
         [return: NativeTypeName("GLboolean")]
         [SupportedApiProfile("gles1", MaxVersion = "2.0")]
         [SupportedApiProfile("gles2", MinVersion = "2.0")]
         [NativeFunction("opengl", EntryPoint = "glUnmapBufferOES")]
-        static abstract byte UnmapBufferOes([NativeTypeName("GLenum")] uint target);
+        static abstract uint UnmapBufferOes([NativeTypeName("GLenum")] uint target);
 
         [return: NativeTypeName("GLboolean")]
         [SupportedApiProfile("glcore", MinVersion = "3.2")]
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glUnmapNamedBuffer")]
-        static abstract byte UnmapNamedBuffer([NativeTypeName("GLuint")] uint buffer);
+        static abstract uint UnmapNamedBuffer([NativeTypeName("GLuint")] uint buffer);
 
         [return: NativeTypeName("GLboolean")]
         [SupportedApiProfile("glcore", MinVersion = "3.2")]
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glUnmapNamedBufferEXT")]
-        static abstract byte UnmapNamedBufferExt([NativeTypeName("GLuint")] uint buffer);
+        static abstract uint UnmapNamedBufferExt([NativeTypeName("GLuint")] uint buffer);
 
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glUnmapObjectBufferATI")]
@@ -24826,7 +24826,7 @@ public unsafe partial interface IGL
         static abstract void UpdateObjectBufferAti(
             [NativeTypeName("GLuint")] uint buffer,
             [NativeTypeName("GLuint")] uint offset,
-            [NativeTypeName("GLsizei")] int size,
+            [NativeTypeName("GLsizei")] uint size,
             [NativeTypeName("const void *")] Ref pointer,
             [NativeTypeName("GLenum")] uint preserve
         );
@@ -24843,7 +24843,7 @@ public unsafe partial interface IGL
 
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glUseProgramObjectARB")]
-        static abstract void UseProgramObjectArb([NativeTypeName("GLhandleARB")] Ref programObj);
+        static abstract void UseProgramObjectArb([NativeTypeName("GLhandleARB")] uint programObj);
 
         [SupportedApiProfile("glcore", MinVersion = "3.2")]
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
@@ -24878,7 +24878,7 @@ public unsafe partial interface IGL
 
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glValidateProgramARB")]
-        static abstract void ValidateProgramArb([NativeTypeName("GLhandleARB")] Ref programObj);
+        static abstract void ValidateProgramArb([NativeTypeName("GLhandleARB")] uint programObj);
 
         [SupportedApiProfile("glcore", MinVersion = "3.2")]
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
@@ -24894,7 +24894,7 @@ public unsafe partial interface IGL
         static abstract void VariantArrayObjectAti(
             [NativeTypeName("GLuint")] uint id,
             [NativeTypeName("GLenum")] uint type,
-            [NativeTypeName("GLsizei")] int stride,
+            [NativeTypeName("GLsizei")] uint stride,
             [NativeTypeName("GLuint")] uint buffer,
             [NativeTypeName("GLuint")] uint offset
         );
@@ -24973,8 +24973,8 @@ public unsafe partial interface IGL
         static abstract void VdpauGetSurfaceivNV(
             [NativeTypeName("GLvdpauSurfaceNV")] nint surface,
             [NativeTypeName("GLenum")] uint pname,
-            [NativeTypeName("GLsizei")] int count,
-            [NativeTypeName("GLsizei *")] Ref<int> length,
+            [NativeTypeName("GLsizei")] uint count,
+            [NativeTypeName("GLsizei *")] Ref<uint> length,
             [NativeTypeName("GLint *")] Ref<int> values
         );
 
@@ -24988,12 +24988,12 @@ public unsafe partial interface IGL
         [return: NativeTypeName("GLboolean")]
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glVDPAUIsSurfaceNV")]
-        static abstract byte VdpauIsSurfaceNV([NativeTypeName("GLvdpauSurfaceNV")] nint surface);
+        static abstract uint VdpauIsSurfaceNV([NativeTypeName("GLvdpauSurfaceNV")] nint surface);
 
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glVDPAUMapSurfacesNV")]
         static abstract void VdpauMapSurfacesNV(
-            [NativeTypeName("GLsizei")] int numSurfaces,
+            [NativeTypeName("GLsizei")] uint numSurfaces,
             [NativeTypeName("const GLvdpauSurfaceNV *")] Ref<nint> surfaces
         );
 
@@ -25003,7 +25003,7 @@ public unsafe partial interface IGL
         static abstract nint VdpauRegisterOutputSurfaceNV(
             [NativeTypeName("const void *")] Ref vdpSurface,
             [NativeTypeName("GLenum")] uint target,
-            [NativeTypeName("GLsizei")] int numTextureNames,
+            [NativeTypeName("GLsizei")] uint numTextureNames,
             [NativeTypeName("const GLuint *")] Ref<uint> textureNames
         );
 
@@ -25013,7 +25013,7 @@ public unsafe partial interface IGL
         static abstract nint VdpauRegisterVideoSurfaceNV(
             [NativeTypeName("const void *")] Ref vdpSurface,
             [NativeTypeName("GLenum")] uint target,
-            [NativeTypeName("GLsizei")] int numTextureNames,
+            [NativeTypeName("GLsizei")] uint numTextureNames,
             [NativeTypeName("const GLuint *")] Ref<uint> textureNames
         );
 
@@ -25023,9 +25023,9 @@ public unsafe partial interface IGL
         static abstract nint VdpauRegisterVideoSurfaceWithPictureStructureNV(
             [NativeTypeName("const void *")] Ref vdpSurface,
             [NativeTypeName("GLenum")] uint target,
-            [NativeTypeName("GLsizei")] int numTextureNames,
+            [NativeTypeName("GLsizei")] uint numTextureNames,
             [NativeTypeName("const GLuint *")] Ref<uint> textureNames,
-            [NativeTypeName("GLboolean")] byte isFrameStructure
+            [NativeTypeName("GLboolean")] uint isFrameStructure
         );
 
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
@@ -25038,7 +25038,7 @@ public unsafe partial interface IGL
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glVDPAUUnmapSurfacesNV")]
         static abstract void VdpauUnmapSurfacesNV(
-            [NativeTypeName("GLsizei")] int numSurface,
+            [NativeTypeName("GLsizei")] uint numSurface,
             [NativeTypeName("const GLvdpauSurfaceNV *")] Ref<nint> surfaces
         );
 
@@ -25312,7 +25312,7 @@ public unsafe partial interface IGL
             [NativeTypeName("GLuint")] uint attribindex,
             [NativeTypeName("GLint")] int size,
             [NativeTypeName("GLenum")] uint type,
-            [NativeTypeName("GLboolean")] byte normalized,
+            [NativeTypeName("GLboolean")] uint normalized,
             [NativeTypeName("GLuint")] uint relativeoffset
         );
 
@@ -25355,7 +25355,7 @@ public unsafe partial interface IGL
             [NativeTypeName("GLuint")] uint bindingindex,
             [NativeTypeName("GLuint")] uint buffer,
             [NativeTypeName("GLintptr")] nint offset,
-            [NativeTypeName("GLsizei")] int stride
+            [NativeTypeName("GLsizei")] uint stride
         );
 
         [SupportedApiProfile("glcore", MinVersion = "3.2")]
@@ -25366,7 +25366,7 @@ public unsafe partial interface IGL
             [NativeTypeName("GLuint")] uint buffer,
             [NativeTypeName("GLint")] int size,
             [NativeTypeName("GLenum")] uint type,
-            [NativeTypeName("GLsizei")] int stride,
+            [NativeTypeName("GLsizei")] uint stride,
             [NativeTypeName("GLintptr")] nint offset
         );
 
@@ -25376,7 +25376,7 @@ public unsafe partial interface IGL
         static abstract void VertexArrayEdgeFlagOffsetExt(
             [NativeTypeName("GLuint")] uint vaobj,
             [NativeTypeName("GLuint")] uint buffer,
-            [NativeTypeName("GLsizei")] int stride,
+            [NativeTypeName("GLsizei")] uint stride,
             [NativeTypeName("GLintptr")] nint offset
         );
 
@@ -25395,7 +25395,7 @@ public unsafe partial interface IGL
             [NativeTypeName("GLuint")] uint vaobj,
             [NativeTypeName("GLuint")] uint buffer,
             [NativeTypeName("GLenum")] uint type,
-            [NativeTypeName("GLsizei")] int stride,
+            [NativeTypeName("GLsizei")] uint stride,
             [NativeTypeName("GLintptr")] nint offset
         );
 
@@ -25406,7 +25406,7 @@ public unsafe partial interface IGL
             [NativeTypeName("GLuint")] uint vaobj,
             [NativeTypeName("GLuint")] uint buffer,
             [NativeTypeName("GLenum")] uint type,
-            [NativeTypeName("GLsizei")] int stride,
+            [NativeTypeName("GLsizei")] uint stride,
             [NativeTypeName("GLintptr")] nint offset
         );
 
@@ -25419,7 +25419,7 @@ public unsafe partial interface IGL
             [NativeTypeName("GLenum")] uint texunit,
             [NativeTypeName("GLint")] int size,
             [NativeTypeName("GLenum")] uint type,
-            [NativeTypeName("GLsizei")] int stride,
+            [NativeTypeName("GLsizei")] uint stride,
             [NativeTypeName("GLintptr")] nint offset
         );
 
@@ -25430,7 +25430,7 @@ public unsafe partial interface IGL
             [NativeTypeName("GLuint")] uint vaobj,
             [NativeTypeName("GLuint")] uint buffer,
             [NativeTypeName("GLenum")] uint type,
-            [NativeTypeName("GLsizei")] int stride,
+            [NativeTypeName("GLsizei")] uint stride,
             [NativeTypeName("GLintptr")] nint offset
         );
 
@@ -25444,14 +25444,14 @@ public unsafe partial interface IGL
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glVertexArrayRangeAPPLE")]
         static abstract void VertexArrayRangeApple(
-            [NativeTypeName("GLsizei")] int length,
+            [NativeTypeName("GLsizei")] uint length,
             Ref pointer
         );
 
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
         [NativeFunction("opengl", EntryPoint = "glVertexArrayRangeNV")]
         static abstract void VertexArrayRangeNV(
-            [NativeTypeName("GLsizei")] int length,
+            [NativeTypeName("GLsizei")] uint length,
             [NativeTypeName("const void *")] Ref pointer
         );
 
@@ -25463,7 +25463,7 @@ public unsafe partial interface IGL
             [NativeTypeName("GLuint")] uint buffer,
             [NativeTypeName("GLint")] int size,
             [NativeTypeName("GLenum")] uint type,
-            [NativeTypeName("GLsizei")] int stride,
+            [NativeTypeName("GLsizei")] uint stride,
             [NativeTypeName("GLintptr")] nint offset
         );
 
@@ -25475,7 +25475,7 @@ public unsafe partial interface IGL
             [NativeTypeName("GLuint")] uint buffer,
             [NativeTypeName("GLint")] int size,
             [NativeTypeName("GLenum")] uint type,
-            [NativeTypeName("GLsizei")] int stride,
+            [NativeTypeName("GLsizei")] uint stride,
             [NativeTypeName("GLintptr")] nint offset
         );
 
@@ -25505,7 +25505,7 @@ public unsafe partial interface IGL
             [NativeTypeName("GLuint")] uint attribindex,
             [NativeTypeName("GLint")] int size,
             [NativeTypeName("GLenum")] uint type,
-            [NativeTypeName("GLboolean")] byte normalized,
+            [NativeTypeName("GLboolean")] uint normalized,
             [NativeTypeName("GLuint")] uint relativeoffset
         );
 
@@ -25529,7 +25529,7 @@ public unsafe partial interface IGL
             [NativeTypeName("GLuint")] uint index,
             [NativeTypeName("GLint")] int size,
             [NativeTypeName("GLenum")] uint type,
-            [NativeTypeName("GLsizei")] int stride,
+            [NativeTypeName("GLsizei")] uint stride,
             [NativeTypeName("GLintptr")] nint offset
         );
 
@@ -25553,7 +25553,7 @@ public unsafe partial interface IGL
             [NativeTypeName("GLuint")] uint index,
             [NativeTypeName("GLint")] int size,
             [NativeTypeName("GLenum")] uint type,
-            [NativeTypeName("GLsizei")] int stride,
+            [NativeTypeName("GLsizei")] uint stride,
             [NativeTypeName("GLintptr")] nint offset
         );
 
@@ -25566,8 +25566,8 @@ public unsafe partial interface IGL
             [NativeTypeName("GLuint")] uint index,
             [NativeTypeName("GLint")] int size,
             [NativeTypeName("GLenum")] uint type,
-            [NativeTypeName("GLboolean")] byte normalized,
-            [NativeTypeName("GLsizei")] int stride,
+            [NativeTypeName("GLboolean")] uint normalized,
+            [NativeTypeName("GLsizei")] uint stride,
             [NativeTypeName("GLintptr")] nint offset
         );
 
@@ -25588,7 +25588,7 @@ public unsafe partial interface IGL
             [NativeTypeName("GLuint")] uint bindingindex,
             [NativeTypeName("GLuint")] uint buffer,
             [NativeTypeName("GLintptr")] nint offset,
-            [NativeTypeName("GLsizei")] int stride
+            [NativeTypeName("GLsizei")] uint stride
         );
 
         [SupportedApiProfile("glcore", MinVersion = "3.2")]
@@ -25597,10 +25597,10 @@ public unsafe partial interface IGL
         static abstract void VertexArrayVertexBuffers(
             [NativeTypeName("GLuint")] uint vaobj,
             [NativeTypeName("GLuint")] uint first,
-            [NativeTypeName("GLsizei")] int count,
+            [NativeTypeName("GLsizei")] uint count,
             [NativeTypeName("const GLuint *")] Ref<uint> buffers,
             [NativeTypeName("const GLintptr *")] Ref<nint> offsets,
-            [NativeTypeName("const GLsizei *")] Ref<int> strides
+            [NativeTypeName("const GLsizei *")] Ref<uint> strides
         );
 
         [SupportedApiProfile("glcore", MinVersion = "3.2")]
@@ -25611,7 +25611,7 @@ public unsafe partial interface IGL
             [NativeTypeName("GLuint")] uint buffer,
             [NativeTypeName("GLint")] int size,
             [NativeTypeName("GLenum")] uint type,
-            [NativeTypeName("GLsizei")] int stride,
+            [NativeTypeName("GLsizei")] uint stride,
             [NativeTypeName("GLintptr")] nint offset
         );
 
@@ -26476,8 +26476,8 @@ public unsafe partial interface IGL
             [NativeTypeName("GLuint")] uint index,
             [NativeTypeName("GLint")] int size,
             [NativeTypeName("GLenum")] uint type,
-            [NativeTypeName("GLboolean")] byte normalized,
-            [NativeTypeName("GLsizei")] int stride,
+            [NativeTypeName("GLboolean")] uint normalized,
+            [NativeTypeName("GLsizei")] uint stride,
             [NativeTypeName("GLuint")] uint buffer,
             [NativeTypeName("GLuint")] uint offset
         );
@@ -26534,7 +26534,7 @@ public unsafe partial interface IGL
             [NativeTypeName("GLuint")] uint attribindex,
             [NativeTypeName("GLint")] int size,
             [NativeTypeName("GLenum")] uint type,
-            [NativeTypeName("GLboolean")] byte normalized,
+            [NativeTypeName("GLboolean")] uint normalized,
             [NativeTypeName("GLuint")] uint relativeoffset
         );
 
@@ -26545,8 +26545,8 @@ public unsafe partial interface IGL
             [NativeTypeName("GLuint")] uint index,
             [NativeTypeName("GLint")] int size,
             [NativeTypeName("GLenum")] uint type,
-            [NativeTypeName("GLboolean")] byte normalized,
-            [NativeTypeName("GLsizei")] int stride
+            [NativeTypeName("GLboolean")] uint normalized,
+            [NativeTypeName("GLsizei")] uint stride
         );
 
         [SupportedApiProfile("glcore", MinVersion = "3.2")]
@@ -26890,7 +26890,7 @@ public unsafe partial interface IGL
             [NativeTypeName("GLuint")] uint index,
             [NativeTypeName("GLint")] int size,
             [NativeTypeName("GLenum")] uint type,
-            [NativeTypeName("GLsizei")] int stride
+            [NativeTypeName("GLsizei")] uint stride
         );
 
         [SupportedApiProfile("glcore", MinVersion = "3.2")]
@@ -26900,7 +26900,7 @@ public unsafe partial interface IGL
             [NativeTypeName("GLuint")] uint index,
             [NativeTypeName("GLint")] int size,
             [NativeTypeName("GLenum")] uint type,
-            [NativeTypeName("GLsizei")] int stride,
+            [NativeTypeName("GLsizei")] uint stride,
             [NativeTypeName("const void *")] Ref pointer
         );
 
@@ -26910,7 +26910,7 @@ public unsafe partial interface IGL
             [NativeTypeName("GLuint")] uint index,
             [NativeTypeName("GLint")] int size,
             [NativeTypeName("GLenum")] uint type,
-            [NativeTypeName("GLsizei")] int stride,
+            [NativeTypeName("GLsizei")] uint stride,
             [NativeTypeName("const void *")] Ref pointer
         );
 
@@ -27219,7 +27219,7 @@ public unsafe partial interface IGL
             [NativeTypeName("GLuint")] uint index,
             [NativeTypeName("GLint")] int size,
             [NativeTypeName("GLenum")] uint type,
-            [NativeTypeName("GLsizei")] int stride
+            [NativeTypeName("GLsizei")] uint stride
         );
 
         [SupportedApiProfile("glcore", MinVersion = "3.2")]
@@ -27229,7 +27229,7 @@ public unsafe partial interface IGL
             [NativeTypeName("GLuint")] uint index,
             [NativeTypeName("GLint")] int size,
             [NativeTypeName("GLenum")] uint type,
-            [NativeTypeName("GLsizei")] int stride,
+            [NativeTypeName("GLsizei")] uint stride,
             [NativeTypeName("const void *")] Ref pointer
         );
 
@@ -27239,7 +27239,7 @@ public unsafe partial interface IGL
             [NativeTypeName("GLuint")] uint index,
             [NativeTypeName("GLint")] int size,
             [NativeTypeName("GLenum")] uint type,
-            [NativeTypeName("GLsizei")] int stride,
+            [NativeTypeName("GLsizei")] uint stride,
             [NativeTypeName("const void *")] Ref pointer
         );
 
@@ -27249,7 +27249,7 @@ public unsafe partial interface IGL
         static abstract void VertexAttribP1(
             [NativeTypeName("GLuint")] uint index,
             [NativeTypeName("GLenum")] uint type,
-            [NativeTypeName("GLboolean")] byte normalized,
+            [NativeTypeName("GLboolean")] uint normalized,
             [NativeTypeName("GLuint")] uint value
         );
 
@@ -27259,7 +27259,7 @@ public unsafe partial interface IGL
         static abstract void VertexAttribP1(
             [NativeTypeName("GLuint")] uint index,
             [NativeTypeName("GLenum")] uint type,
-            [NativeTypeName("GLboolean")] byte normalized,
+            [NativeTypeName("GLboolean")] uint normalized,
             [NativeTypeName("const GLuint *")] Ref<uint> value
         );
 
@@ -27269,7 +27269,7 @@ public unsafe partial interface IGL
         static abstract void VertexAttribP2(
             [NativeTypeName("GLuint")] uint index,
             [NativeTypeName("GLenum")] uint type,
-            [NativeTypeName("GLboolean")] byte normalized,
+            [NativeTypeName("GLboolean")] uint normalized,
             [NativeTypeName("GLuint")] uint value
         );
 
@@ -27279,7 +27279,7 @@ public unsafe partial interface IGL
         static abstract void VertexAttribP2(
             [NativeTypeName("GLuint")] uint index,
             [NativeTypeName("GLenum")] uint type,
-            [NativeTypeName("GLboolean")] byte normalized,
+            [NativeTypeName("GLboolean")] uint normalized,
             [NativeTypeName("const GLuint *")] Ref<uint> value
         );
 
@@ -27289,7 +27289,7 @@ public unsafe partial interface IGL
         static abstract void VertexAttribP3(
             [NativeTypeName("GLuint")] uint index,
             [NativeTypeName("GLenum")] uint type,
-            [NativeTypeName("GLboolean")] byte normalized,
+            [NativeTypeName("GLboolean")] uint normalized,
             [NativeTypeName("GLuint")] uint value
         );
 
@@ -27299,7 +27299,7 @@ public unsafe partial interface IGL
         static abstract void VertexAttribP3(
             [NativeTypeName("GLuint")] uint index,
             [NativeTypeName("GLenum")] uint type,
-            [NativeTypeName("GLboolean")] byte normalized,
+            [NativeTypeName("GLboolean")] uint normalized,
             [NativeTypeName("const GLuint *")] Ref<uint> value
         );
 
@@ -27309,7 +27309,7 @@ public unsafe partial interface IGL
         static abstract void VertexAttribP4(
             [NativeTypeName("GLuint")] uint index,
             [NativeTypeName("GLenum")] uint type,
-            [NativeTypeName("GLboolean")] byte normalized,
+            [NativeTypeName("GLboolean")] uint normalized,
             [NativeTypeName("GLuint")] uint value
         );
 
@@ -27319,7 +27319,7 @@ public unsafe partial interface IGL
         static abstract void VertexAttribP4(
             [NativeTypeName("GLuint")] uint index,
             [NativeTypeName("GLenum")] uint type,
-            [NativeTypeName("GLboolean")] byte normalized,
+            [NativeTypeName("GLboolean")] uint normalized,
             [NativeTypeName("const GLuint *")] Ref<uint> value
         );
 
@@ -27339,8 +27339,8 @@ public unsafe partial interface IGL
             [NativeTypeName("GLuint")] uint index,
             [NativeTypeName("GLint")] int size,
             [NativeTypeName("GLenum")] uint type,
-            [NativeTypeName("GLboolean")] byte normalized,
-            [NativeTypeName("GLsizei")] int stride,
+            [NativeTypeName("GLboolean")] uint normalized,
+            [NativeTypeName("GLsizei")] uint stride,
             [NativeTypeName("const void *")] Ref pointer
         );
 
@@ -27350,8 +27350,8 @@ public unsafe partial interface IGL
             [NativeTypeName("GLuint")] uint index,
             [NativeTypeName("GLint")] int size,
             [NativeTypeName("GLenum")] uint type,
-            [NativeTypeName("GLboolean")] byte normalized,
-            [NativeTypeName("GLsizei")] int stride,
+            [NativeTypeName("GLboolean")] uint normalized,
+            [NativeTypeName("GLsizei")] uint stride,
             [NativeTypeName("const void *")] Ref pointer
         );
 
@@ -27361,7 +27361,7 @@ public unsafe partial interface IGL
             [NativeTypeName("GLuint")] uint index,
             [NativeTypeName("GLint")] int fsize,
             [NativeTypeName("GLenum")] uint type,
-            [NativeTypeName("GLsizei")] int stride,
+            [NativeTypeName("GLsizei")] uint stride,
             [NativeTypeName("const void *")] Ref pointer
         );
 
@@ -27369,7 +27369,7 @@ public unsafe partial interface IGL
         [NativeFunction("opengl", EntryPoint = "glVertexAttribs1dvNV")]
         static abstract void VertexAttribs1dvNV(
             [NativeTypeName("GLuint")] uint index,
-            [NativeTypeName("GLsizei")] int count,
+            [NativeTypeName("GLsizei")] uint count,
             [NativeTypeName("const GLdouble *")] Ref<double> v
         );
 
@@ -27377,7 +27377,7 @@ public unsafe partial interface IGL
         [NativeFunction("opengl", EntryPoint = "glVertexAttribs1fvNV")]
         static abstract void VertexAttribs1fvNV(
             [NativeTypeName("GLuint")] uint index,
-            [NativeTypeName("GLsizei")] int count,
+            [NativeTypeName("GLsizei")] uint count,
             [NativeTypeName("const GLfloat *")] Ref<float> v
         );
 
@@ -27385,7 +27385,7 @@ public unsafe partial interface IGL
         [NativeFunction("opengl", EntryPoint = "glVertexAttribs1hvNV")]
         static abstract void VertexAttribs1hvNV(
             [NativeTypeName("GLuint")] uint index,
-            [NativeTypeName("GLsizei")] int n,
+            [NativeTypeName("GLsizei")] uint n,
             [NativeTypeName("const GLhalfNV *")] Ref<ushort> v
         );
 
@@ -27393,7 +27393,7 @@ public unsafe partial interface IGL
         [NativeFunction("opengl", EntryPoint = "glVertexAttribs1svNV")]
         static abstract void VertexAttribs1svNV(
             [NativeTypeName("GLuint")] uint index,
-            [NativeTypeName("GLsizei")] int count,
+            [NativeTypeName("GLsizei")] uint count,
             [NativeTypeName("const GLshort *")] Ref<short> v
         );
 
@@ -27401,7 +27401,7 @@ public unsafe partial interface IGL
         [NativeFunction("opengl", EntryPoint = "glVertexAttribs2dvNV")]
         static abstract void VertexAttribs2dvNV(
             [NativeTypeName("GLuint")] uint index,
-            [NativeTypeName("GLsizei")] int count,
+            [NativeTypeName("GLsizei")] uint count,
             [NativeTypeName("const GLdouble *")] Ref<double> v
         );
 
@@ -27409,7 +27409,7 @@ public unsafe partial interface IGL
         [NativeFunction("opengl", EntryPoint = "glVertexAttribs2fvNV")]
         static abstract void VertexAttribs2fvNV(
             [NativeTypeName("GLuint")] uint index,
-            [NativeTypeName("GLsizei")] int count,
+            [NativeTypeName("GLsizei")] uint count,
             [NativeTypeName("const GLfloat *")] Ref<float> v
         );
 
@@ -27417,7 +27417,7 @@ public unsafe partial interface IGL
         [NativeFunction("opengl", EntryPoint = "glVertexAttribs2hvNV")]
         static abstract void VertexAttribs2hvNV(
             [NativeTypeName("GLuint")] uint index,
-            [NativeTypeName("GLsizei")] int n,
+            [NativeTypeName("GLsizei")] uint n,
             [NativeTypeName("const GLhalfNV *")] Ref<ushort> v
         );
 
@@ -27425,7 +27425,7 @@ public unsafe partial interface IGL
         [NativeFunction("opengl", EntryPoint = "glVertexAttribs2svNV")]
         static abstract void VertexAttribs2svNV(
             [NativeTypeName("GLuint")] uint index,
-            [NativeTypeName("GLsizei")] int count,
+            [NativeTypeName("GLsizei")] uint count,
             [NativeTypeName("const GLshort *")] Ref<short> v
         );
 
@@ -27433,7 +27433,7 @@ public unsafe partial interface IGL
         [NativeFunction("opengl", EntryPoint = "glVertexAttribs3dvNV")]
         static abstract void VertexAttribs3dvNV(
             [NativeTypeName("GLuint")] uint index,
-            [NativeTypeName("GLsizei")] int count,
+            [NativeTypeName("GLsizei")] uint count,
             [NativeTypeName("const GLdouble *")] Ref<double> v
         );
 
@@ -27441,7 +27441,7 @@ public unsafe partial interface IGL
         [NativeFunction("opengl", EntryPoint = "glVertexAttribs3fvNV")]
         static abstract void VertexAttribs3fvNV(
             [NativeTypeName("GLuint")] uint index,
-            [NativeTypeName("GLsizei")] int count,
+            [NativeTypeName("GLsizei")] uint count,
             [NativeTypeName("const GLfloat *")] Ref<float> v
         );
 
@@ -27449,7 +27449,7 @@ public unsafe partial interface IGL
         [NativeFunction("opengl", EntryPoint = "glVertexAttribs3hvNV")]
         static abstract void VertexAttribs3hvNV(
             [NativeTypeName("GLuint")] uint index,
-            [NativeTypeName("GLsizei")] int n,
+            [NativeTypeName("GLsizei")] uint n,
             [NativeTypeName("const GLhalfNV *")] Ref<ushort> v
         );
 
@@ -27457,7 +27457,7 @@ public unsafe partial interface IGL
         [NativeFunction("opengl", EntryPoint = "glVertexAttribs3svNV")]
         static abstract void VertexAttribs3svNV(
             [NativeTypeName("GLuint")] uint index,
-            [NativeTypeName("GLsizei")] int count,
+            [NativeTypeName("GLsizei")] uint count,
             [NativeTypeName("const GLshort *")] Ref<short> v
         );
 
@@ -27465,7 +27465,7 @@ public unsafe partial interface IGL
         [NativeFunction("opengl", EntryPoint = "glVertexAttribs4dvNV")]
         static abstract void VertexAttribs4dvNV(
             [NativeTypeName("GLuint")] uint index,
-            [NativeTypeName("GLsizei")] int count,
+            [NativeTypeName("GLsizei")] uint count,
             [NativeTypeName("const GLdouble *")] Ref<double> v
         );
 
@@ -27473,7 +27473,7 @@ public unsafe partial interface IGL
         [NativeFunction("opengl", EntryPoint = "glVertexAttribs4fvNV")]
         static abstract void VertexAttribs4fvNV(
             [NativeTypeName("GLuint")] uint index,
-            [NativeTypeName("GLsizei")] int count,
+            [NativeTypeName("GLsizei")] uint count,
             [NativeTypeName("const GLfloat *")] Ref<float> v
         );
 
@@ -27481,7 +27481,7 @@ public unsafe partial interface IGL
         [NativeFunction("opengl", EntryPoint = "glVertexAttribs4hvNV")]
         static abstract void VertexAttribs4hvNV(
             [NativeTypeName("GLuint")] uint index,
-            [NativeTypeName("GLsizei")] int n,
+            [NativeTypeName("GLsizei")] uint n,
             [NativeTypeName("const GLhalfNV *")] Ref<ushort> v
         );
 
@@ -27489,7 +27489,7 @@ public unsafe partial interface IGL
         [NativeFunction("opengl", EntryPoint = "glVertexAttribs4svNV")]
         static abstract void VertexAttribs4svNV(
             [NativeTypeName("GLuint")] uint index,
-            [NativeTypeName("GLsizei")] int count,
+            [NativeTypeName("GLsizei")] uint count,
             [NativeTypeName("const GLshort *")] Ref<short> v
         );
 
@@ -27497,7 +27497,7 @@ public unsafe partial interface IGL
         [NativeFunction("opengl", EntryPoint = "glVertexAttribs4ubvNV")]
         static abstract void VertexAttribs4ubvNV(
             [NativeTypeName("GLuint")] uint index,
-            [NativeTypeName("GLsizei")] int count,
+            [NativeTypeName("GLsizei")] uint count,
             [NativeTypeName("const GLubyte *")] Ref<byte> v
         );
 
@@ -27533,7 +27533,7 @@ public unsafe partial interface IGL
         static abstract void VertexFormatNV(
             [NativeTypeName("GLint")] int size,
             [NativeTypeName("GLenum")] uint type,
-            [NativeTypeName("GLsizei")] int stride
+            [NativeTypeName("GLsizei")] uint stride
         );
 
         [SupportedApiProfile("gl", MaxVersion = "3.2")]
@@ -27584,7 +27584,7 @@ public unsafe partial interface IGL
         static abstract void VertexPointer(
             [NativeTypeName("GLint")] int size,
             [NativeTypeName("GLenum")] uint type,
-            [NativeTypeName("GLsizei")] int stride,
+            [NativeTypeName("GLsizei")] uint stride,
             [NativeTypeName("const void *")] Ref pointer
         );
 
@@ -27593,8 +27593,8 @@ public unsafe partial interface IGL
         static abstract void VertexPointerExt(
             [NativeTypeName("GLint")] int size,
             [NativeTypeName("GLenum")] uint type,
-            [NativeTypeName("GLsizei")] int stride,
-            [NativeTypeName("GLsizei")] int count,
+            [NativeTypeName("GLsizei")] uint stride,
+            [NativeTypeName("GLsizei")] uint count,
             [NativeTypeName("const void *")] Ref pointer
         );
 
@@ -27889,7 +27889,7 @@ public unsafe partial interface IGL
         static abstract void VertexWeightPointerExt(
             [NativeTypeName("GLint")] int size,
             [NativeTypeName("GLenum")] uint type,
-            [NativeTypeName("GLsizei")] int stride,
+            [NativeTypeName("GLsizei")] uint stride,
             [NativeTypeName("const void *")] Ref pointer
         );
 
@@ -27937,8 +27937,8 @@ public unsafe partial interface IGL
         static abstract void Viewport(
             [NativeTypeName("GLint")] int x,
             [NativeTypeName("GLint")] int y,
-            [NativeTypeName("GLsizei")] int width,
-            [NativeTypeName("GLsizei")] int height
+            [NativeTypeName("GLsizei")] uint width,
+            [NativeTypeName("GLsizei")] uint height
         );
 
         [SupportedApiProfile("glcore", MinVersion = "3.2")]
@@ -27946,7 +27946,7 @@ public unsafe partial interface IGL
         [NativeFunction("opengl", EntryPoint = "glViewportArrayv")]
         static abstract void ViewportArray(
             [NativeTypeName("GLuint")] uint first,
-            [NativeTypeName("GLsizei")] int count,
+            [NativeTypeName("GLsizei")] uint count,
             [NativeTypeName("const GLfloat *")] Ref<float> v
         );
 
@@ -27954,7 +27954,7 @@ public unsafe partial interface IGL
         [NativeFunction("opengl", EntryPoint = "glViewportArrayvNV")]
         static abstract void ViewportArrayvNV(
             [NativeTypeName("GLuint")] uint first,
-            [NativeTypeName("GLsizei")] int count,
+            [NativeTypeName("GLsizei")] uint count,
             [NativeTypeName("const GLfloat *")] Ref<float> v
         );
 
@@ -27962,7 +27962,7 @@ public unsafe partial interface IGL
         [NativeFunction("opengl", EntryPoint = "glViewportArrayvOES")]
         static abstract void ViewportArrayvOes(
             [NativeTypeName("GLuint")] uint first,
-            [NativeTypeName("GLsizei")] int count,
+            [NativeTypeName("GLsizei")] uint count,
             [NativeTypeName("const GLfloat *")] Ref<float> v
         );
 
@@ -28057,7 +28057,7 @@ public unsafe partial interface IGL
         [NativeFunction("opengl", EntryPoint = "glWaitSemaphoreui64NVX")]
         static abstract void WaitSemaphoreui64nvx(
             [NativeTypeName("GLuint")] uint waitGpu,
-            [NativeTypeName("GLsizei")] int fenceObjectCount,
+            [NativeTypeName("GLsizei")] uint fenceObjectCount,
             [NativeTypeName("const GLuint *")] Ref<uint> semaphoreArray,
             [NativeTypeName("const GLuint64 *")] Ref<ulong> fenceValueArray
         );
@@ -28120,7 +28120,7 @@ public unsafe partial interface IGL
         [NativeFunction("opengl", EntryPoint = "glWeightPathsNV")]
         static abstract void WeightPathsNV(
             [NativeTypeName("GLuint")] uint resultPath,
-            [NativeTypeName("GLsizei")] int numPaths,
+            [NativeTypeName("GLsizei")] uint numPaths,
             [NativeTypeName("const GLuint *")] Ref<uint> paths,
             [NativeTypeName("const GLfloat *")] Ref<float> weights
         );
@@ -28130,7 +28130,7 @@ public unsafe partial interface IGL
         static abstract void WeightPointerArb(
             [NativeTypeName("GLint")] int size,
             [NativeTypeName("GLenum")] uint type,
-            [NativeTypeName("GLsizei")] int stride,
+            [NativeTypeName("GLsizei")] uint stride,
             [NativeTypeName("const void *")] Ref pointer
         );
 
@@ -28139,7 +28139,7 @@ public unsafe partial interface IGL
         static abstract void WeightPointerOes(
             [NativeTypeName("GLint")] int size,
             [NativeTypeName("GLenum")] uint type,
-            [NativeTypeName("GLsizei")] int stride,
+            [NativeTypeName("GLsizei")] uint stride,
             [NativeTypeName("const void *")] Ref pointer
         );
 
@@ -28505,7 +28505,7 @@ public unsafe partial interface IGL
         [NativeFunction("opengl", EntryPoint = "glWindowRectanglesEXT")]
         static abstract void WindowRectanglesExt(
             [NativeTypeName("GLenum")] uint mode,
-            [NativeTypeName("GLsizei")] int count,
+            [NativeTypeName("GLsizei")] uint count,
             [NativeTypeName("const GLint *")] Ref<int> box
         );
 
@@ -28533,7 +28533,7 @@ public unsafe partial interface IGL
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [SupportedApiProfile("gles2", MinVersion = "2.0")]
     [NativeFunction("opengl", EntryPoint = "glAcquireKeyedMutexWin32EXT")]
-    byte AcquireKeyedMutexWin32ext(
+    uint AcquireKeyedMutexWin32ext(
         [NativeTypeName("GLuint")] uint memory,
         [NativeTypeName("GLuint64")] ulong key,
         [NativeTypeName("GLuint")] uint timeout
@@ -28661,28 +28661,28 @@ public unsafe partial interface IGL
     [return: NativeTypeName("GLboolean")]
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glAreProgramsResidentNV")]
-    byte AreProgramsResidentNV(
-        [NativeTypeName("GLsizei")] int n,
+    uint AreProgramsResidentNV(
+        [NativeTypeName("GLsizei")] uint n,
         [NativeTypeName("const GLuint *")] Ref<uint> programs,
-        [NativeTypeName("GLboolean *")] Ref<byte> residences
+        [NativeTypeName("GLboolean *")] Ref<uint> residences
     );
 
     [return: NativeTypeName("GLboolean")]
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glAreTexturesResident")]
-    byte AreTexturesResident(
-        [NativeTypeName("GLsizei")] int n,
+    uint AreTexturesResident(
+        [NativeTypeName("GLsizei")] uint n,
         [NativeTypeName("const GLuint *")] Ref<uint> textures,
-        [NativeTypeName("GLboolean *")] Ref<byte> residences
+        [NativeTypeName("GLboolean *")] Ref<uint> residences
     );
 
     [return: NativeTypeName("GLboolean")]
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glAreTexturesResidentEXT")]
-    byte AreTexturesResidentExt(
-        [NativeTypeName("GLsizei")] int n,
+    uint AreTexturesResidentExt(
+        [NativeTypeName("GLsizei")] uint n,
         [NativeTypeName("const GLuint *")] Ref<uint> textures,
-        [NativeTypeName("GLboolean *")] Ref<byte> residences
+        [NativeTypeName("GLboolean *")] Ref<uint> residences
     );
 
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
@@ -28699,7 +28699,7 @@ public unsafe partial interface IGL
         [NativeTypeName("GLenum")] uint array,
         [NativeTypeName("GLint")] int size,
         [NativeTypeName("GLenum")] uint type,
-        [NativeTypeName("GLsizei")] int stride,
+        [NativeTypeName("GLsizei")] uint stride,
         [NativeTypeName("GLuint")] uint buffer,
         [NativeTypeName("GLuint")] uint offset
     );
@@ -28708,7 +28708,7 @@ public unsafe partial interface IGL
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glAsyncCopyBufferSubDataNVX")]
     uint AsyncCopyBufferSubDataNvx(
-        [NativeTypeName("GLsizei")] int waitSemaphoreCount,
+        [NativeTypeName("GLsizei")] uint waitSemaphoreCount,
         [NativeTypeName("const GLuint *")] Ref<uint> waitSemaphoreArray,
         [NativeTypeName("const GLuint64 *")] Ref<ulong> fenceValueArray,
         [NativeTypeName("GLuint")] uint readGpu,
@@ -28717,8 +28717,8 @@ public unsafe partial interface IGL
         [NativeTypeName("GLuint")] uint writeBuffer,
         [NativeTypeName("GLintptr")] nint readOffset,
         [NativeTypeName("GLintptr")] nint writeOffset,
-        [NativeTypeName("GLsizeiptr")] nint size,
-        [NativeTypeName("GLsizei")] int signalSemaphoreCount,
+        [NativeTypeName("GLsizeiptr")] nuint size,
+        [NativeTypeName("GLsizei")] uint signalSemaphoreCount,
         [NativeTypeName("const GLuint *")] Ref<uint> signalSemaphoreArray,
         [NativeTypeName("const GLuint64 *")] Ref<ulong> signalValueArray
     );
@@ -28727,7 +28727,7 @@ public unsafe partial interface IGL
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glAsyncCopyImageSubDataNVX")]
     uint AsyncCopyImageSubDataNvx(
-        [NativeTypeName("GLsizei")] int waitSemaphoreCount,
+        [NativeTypeName("GLsizei")] uint waitSemaphoreCount,
         [NativeTypeName("const GLuint *")] Ref<uint> waitSemaphoreArray,
         [NativeTypeName("const GLuint64 *")] Ref<ulong> waitValueArray,
         [NativeTypeName("GLuint")] uint srcGpu,
@@ -28744,10 +28744,10 @@ public unsafe partial interface IGL
         [NativeTypeName("GLint")] int dstX,
         [NativeTypeName("GLint")] int dstY,
         [NativeTypeName("GLint")] int dstZ,
-        [NativeTypeName("GLsizei")] int srcWidth,
-        [NativeTypeName("GLsizei")] int srcHeight,
-        [NativeTypeName("GLsizei")] int srcDepth,
-        [NativeTypeName("GLsizei")] int signalSemaphoreCount,
+        [NativeTypeName("GLsizei")] uint srcWidth,
+        [NativeTypeName("GLsizei")] uint srcHeight,
+        [NativeTypeName("GLsizei")] uint srcDepth,
+        [NativeTypeName("GLsizei")] uint signalSemaphoreCount,
         [NativeTypeName("const GLuint *")] Ref<uint> signalSemaphoreArray,
         [NativeTypeName("const GLuint64 *")] Ref<ulong> signalValueArray
     );
@@ -28759,8 +28759,8 @@ public unsafe partial interface IGL
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glAttachObjectARB")]
     void AttachObjectArb(
-        [NativeTypeName("GLhandleARB")] Ref containerObj,
-        [NativeTypeName("GLhandleARB")] Ref obj
+        [NativeTypeName("GLhandleARB")] uint containerObj,
+        [NativeTypeName("GLhandleARB")] uint obj
     );
 
     [SupportedApiProfile("glcore", MinVersion = "3.2")]
@@ -28873,7 +28873,7 @@ public unsafe partial interface IGL
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glBindAttribLocationARB")]
     void BindAttribLocationArb(
-        [NativeTypeName("GLhandleARB")] Ref programObj,
+        [NativeTypeName("GLhandleARB")] uint programObj,
         [NativeTypeName("GLuint")] uint index,
         [NativeTypeName("const GLcharARB *")] Ref<sbyte> name
     );
@@ -28943,7 +28943,7 @@ public unsafe partial interface IGL
         [NativeTypeName("GLuint")] uint index,
         [NativeTypeName("GLuint")] uint buffer,
         [NativeTypeName("GLintptr")] nint offset,
-        [NativeTypeName("GLsizeiptr")] nint size
+        [NativeTypeName("GLsizeiptr")] nuint size
     );
 
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
@@ -28953,7 +28953,7 @@ public unsafe partial interface IGL
         [NativeTypeName("GLuint")] uint index,
         [NativeTypeName("GLuint")] uint buffer,
         [NativeTypeName("GLintptr")] nint offset,
-        [NativeTypeName("GLsizeiptr")] nint size
+        [NativeTypeName("GLsizeiptr")] nuint size
     );
 
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
@@ -28963,7 +28963,7 @@ public unsafe partial interface IGL
         [NativeTypeName("GLuint")] uint index,
         [NativeTypeName("GLuint")] uint buffer,
         [NativeTypeName("GLintptr")] nint offset,
-        [NativeTypeName("GLsizeiptr")] nint size
+        [NativeTypeName("GLsizeiptr")] nuint size
     );
 
     [SupportedApiProfile("glcore", MinVersion = "3.2")]
@@ -28972,7 +28972,7 @@ public unsafe partial interface IGL
     void BindBuffersBase(
         [NativeTypeName("GLenum")] uint target,
         [NativeTypeName("GLuint")] uint first,
-        [NativeTypeName("GLsizei")] int count,
+        [NativeTypeName("GLsizei")] uint count,
         [NativeTypeName("const GLuint *")] Ref<uint> buffers
     );
 
@@ -28982,10 +28982,10 @@ public unsafe partial interface IGL
     void BindBuffersRange(
         [NativeTypeName("GLenum")] uint target,
         [NativeTypeName("GLuint")] uint first,
-        [NativeTypeName("GLsizei")] int count,
+        [NativeTypeName("GLsizei")] uint count,
         [NativeTypeName("const GLuint *")] Ref<uint> buffers,
         [NativeTypeName("const GLintptr *")] Ref<nint> offsets,
-        [NativeTypeName("const GLsizeiptr *")] Ref<nint> sizes
+        [NativeTypeName("const GLsizeiptr *")] Ref<nuint> sizes
     );
 
     [SupportedApiProfile("glcore", MinVersion = "3.2")]
@@ -29059,7 +29059,7 @@ public unsafe partial interface IGL
         [NativeTypeName("GLuint")] uint unit,
         [NativeTypeName("GLuint")] uint texture,
         [NativeTypeName("GLint")] int level,
-        [NativeTypeName("GLboolean")] byte layered,
+        [NativeTypeName("GLboolean")] uint layered,
         [NativeTypeName("GLint")] int layer,
         [NativeTypeName("GLenum")] uint access,
         [NativeTypeName("GLenum")] uint format
@@ -29071,7 +29071,7 @@ public unsafe partial interface IGL
         [NativeTypeName("GLuint")] uint index,
         [NativeTypeName("GLuint")] uint texture,
         [NativeTypeName("GLint")] int level,
-        [NativeTypeName("GLboolean")] byte layered,
+        [NativeTypeName("GLboolean")] uint layered,
         [NativeTypeName("GLint")] int layer,
         [NativeTypeName("GLenum")] uint access,
         [NativeTypeName("GLint")] int format
@@ -29082,7 +29082,7 @@ public unsafe partial interface IGL
     [NativeFunction("opengl", EntryPoint = "glBindImageTextures")]
     void BindImageTextures(
         [NativeTypeName("GLuint")] uint first,
-        [NativeTypeName("GLsizei")] int count,
+        [NativeTypeName("GLsizei")] uint count,
         [NativeTypeName("const GLuint *")] Ref<uint> textures
     );
 
@@ -29170,7 +29170,7 @@ public unsafe partial interface IGL
     [NativeFunction("opengl", EntryPoint = "glBindSamplers")]
     void BindSamplers(
         [NativeTypeName("GLuint")] uint first,
-        [NativeTypeName("GLsizei")] int count,
+        [NativeTypeName("GLsizei")] uint count,
         [NativeTypeName("const GLuint *")] Ref<uint> samplers
     );
 
@@ -29211,7 +29211,7 @@ public unsafe partial interface IGL
     [NativeFunction("opengl", EntryPoint = "glBindTextures")]
     void BindTextures(
         [NativeTypeName("GLuint")] uint first,
-        [NativeTypeName("GLsizei")] int count,
+        [NativeTypeName("GLsizei")] uint count,
         [NativeTypeName("const GLuint *")] Ref<uint> textures
     );
 
@@ -29267,7 +29267,7 @@ public unsafe partial interface IGL
         [NativeTypeName("GLuint")] uint bindingindex,
         [NativeTypeName("GLuint")] uint buffer,
         [NativeTypeName("GLintptr")] nint offset,
-        [NativeTypeName("GLsizei")] int stride
+        [NativeTypeName("GLsizei")] uint stride
     );
 
     [SupportedApiProfile("glcore", MinVersion = "3.2")]
@@ -29275,10 +29275,10 @@ public unsafe partial interface IGL
     [NativeFunction("opengl", EntryPoint = "glBindVertexBuffers")]
     void BindVertexBuffers(
         [NativeTypeName("GLuint")] uint first,
-        [NativeTypeName("GLsizei")] int count,
+        [NativeTypeName("GLsizei")] uint count,
         [NativeTypeName("const GLuint *")] Ref<uint> buffers,
         [NativeTypeName("const GLintptr *")] Ref<nint> offsets,
-        [NativeTypeName("const GLsizei *")] Ref<int> strides
+        [NativeTypeName("const GLsizei *")] Ref<uint> strides
     );
 
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
@@ -29368,15 +29368,15 @@ public unsafe partial interface IGL
     [NativeFunction("opengl", EntryPoint = "glBinormalPointerEXT")]
     void BinormalPointerExt(
         [NativeTypeName("GLenum")] uint type,
-        [NativeTypeName("GLsizei")] int stride,
+        [NativeTypeName("GLsizei")] uint stride,
         [NativeTypeName("const void *")] Ref pointer
     );
 
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glBitmap")]
     void Bitmap(
-        [NativeTypeName("GLsizei")] int width,
-        [NativeTypeName("GLsizei")] int height,
+        [NativeTypeName("GLsizei")] uint width,
+        [NativeTypeName("GLsizei")] uint height,
         [NativeTypeName("GLfloat")] float xorig,
         [NativeTypeName("GLfloat")] float yorig,
         [NativeTypeName("GLfloat")] float xmove,
@@ -29387,8 +29387,8 @@ public unsafe partial interface IGL
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glBitmapxOES")]
     void BitmapxOes(
-        [NativeTypeName("GLsizei")] int width,
-        [NativeTypeName("GLsizei")] int height,
+        [NativeTypeName("GLsizei")] uint width,
+        [NativeTypeName("GLsizei")] uint height,
         [NativeTypeName("GLfixed")] int xorig,
         [NativeTypeName("GLfixed")] int yorig,
         [NativeTypeName("GLfixed")] int xmove,
@@ -29821,7 +29821,7 @@ public unsafe partial interface IGL
         [NativeTypeName("GLenum")] uint pname,
         [NativeTypeName("GLuint")] uint index,
         [NativeTypeName("GLuint64EXT")] ulong address,
-        [NativeTypeName("GLsizeiptr")] nint length
+        [NativeTypeName("GLsizeiptr")] nuint length
     );
 
     [SupportedApiProfile("glcore", MinVersion = "3.2")]
@@ -29841,7 +29841,7 @@ public unsafe partial interface IGL
     [NativeFunction("opengl", EntryPoint = "glBufferData")]
     void BufferData(
         [NativeTypeName("GLenum")] uint target,
-        [NativeTypeName("GLsizeiptr")] nint size,
+        [NativeTypeName("GLsizeiptr")] nuint size,
         [NativeTypeName("const void *")] Ref data,
         [NativeTypeName("GLenum")] uint usage
     );
@@ -29861,8 +29861,8 @@ public unsafe partial interface IGL
     void BufferPageCommitmentArb(
         [NativeTypeName("GLenum")] uint target,
         [NativeTypeName("GLintptr")] nint offset,
-        [NativeTypeName("GLsizeiptr")] nint size,
-        [NativeTypeName("GLboolean")] byte commit
+        [NativeTypeName("GLsizeiptr")] nuint size,
+        [NativeTypeName("GLboolean")] uint commit
     );
 
     [SupportedApiProfile("glcore", MinVersion = "3.2")]
@@ -29872,10 +29872,10 @@ public unsafe partial interface IGL
     void BufferPageCommitmentMemNV(
         [NativeTypeName("GLenum")] uint target,
         [NativeTypeName("GLintptr")] nint offset,
-        [NativeTypeName("GLsizeiptr")] nint size,
+        [NativeTypeName("GLsizeiptr")] nuint size,
         [NativeTypeName("GLuint")] uint memory,
         [NativeTypeName("GLuint64")] ulong memOffset,
-        [NativeTypeName("GLboolean")] byte commit
+        [NativeTypeName("GLboolean")] uint commit
     );
 
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
@@ -29891,7 +29891,7 @@ public unsafe partial interface IGL
     [NativeFunction("opengl", EntryPoint = "glBufferStorage")]
     void BufferStorage(
         [NativeTypeName("GLenum")] uint target,
-        [NativeTypeName("GLsizeiptr")] nint size,
+        [NativeTypeName("GLsizeiptr")] nuint size,
         [NativeTypeName("const void *")] Ref data,
         [NativeTypeName("GLbitfield")] uint flags
     );
@@ -29900,7 +29900,7 @@ public unsafe partial interface IGL
     [NativeFunction("opengl", EntryPoint = "glBufferStorageEXT")]
     void BufferStorageExt(
         [NativeTypeName("GLenum")] uint target,
-        [NativeTypeName("GLsizeiptr")] nint size,
+        [NativeTypeName("GLsizeiptr")] nuint size,
         [NativeTypeName("const void *")] Ref data,
         [NativeTypeName("GLbitfield")] uint flags
     );
@@ -29911,7 +29911,7 @@ public unsafe partial interface IGL
     void BufferStorageExternalExt(
         [NativeTypeName("GLenum")] uint target,
         [NativeTypeName("GLintptr")] nint offset,
-        [NativeTypeName("GLsizeiptr")] nint size,
+        [NativeTypeName("GLsizeiptr")] nuint size,
         [NativeTypeName("GLeglClientBufferEXT")] Ref clientBuffer,
         [NativeTypeName("GLbitfield")] uint flags
     );
@@ -29921,7 +29921,7 @@ public unsafe partial interface IGL
     [NativeFunction("opengl", EntryPoint = "glBufferStorageMemEXT")]
     void BufferStorageMemExt(
         [NativeTypeName("GLenum")] uint target,
-        [NativeTypeName("GLsizeiptr")] nint size,
+        [NativeTypeName("GLsizeiptr")] nuint size,
         [NativeTypeName("GLuint")] uint memory,
         [NativeTypeName("GLuint64")] ulong offset
     );
@@ -29934,7 +29934,7 @@ public unsafe partial interface IGL
     void BufferSubData(
         [NativeTypeName("GLenum")] uint target,
         [NativeTypeName("GLintptr")] nint offset,
-        [NativeTypeName("GLsizeiptr")] nint size,
+        [NativeTypeName("GLsizeiptr")] nuint size,
         [NativeTypeName("const void *")] Ref data
     );
 
@@ -29959,7 +29959,7 @@ public unsafe partial interface IGL
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glCallLists")]
     void CallLists(
-        [NativeTypeName("GLsizei")] int n,
+        [NativeTypeName("GLsizei")] uint n,
         [NativeTypeName("GLenum")] uint type,
         [NativeTypeName("const void *")] Ref lists
     );
@@ -30082,7 +30082,7 @@ public unsafe partial interface IGL
         [NativeTypeName("GLenum")] uint target,
         [NativeTypeName("GLenum")] uint internalformat,
         [NativeTypeName("GLintptr")] nint offset,
-        [NativeTypeName("GLsizeiptr")] nint size,
+        [NativeTypeName("GLsizeiptr")] nuint size,
         [NativeTypeName("GLenum")] uint format,
         [NativeTypeName("GLenum")] uint type,
         [NativeTypeName("const void *")] Ref data
@@ -30210,7 +30210,7 @@ public unsafe partial interface IGL
         [NativeTypeName("GLuint")] uint buffer,
         [NativeTypeName("GLenum")] uint internalformat,
         [NativeTypeName("GLintptr")] nint offset,
-        [NativeTypeName("GLsizeiptr")] nint size,
+        [NativeTypeName("GLsizeiptr")] nuint size,
         [NativeTypeName("GLenum")] uint format,
         [NativeTypeName("GLenum")] uint type,
         [NativeTypeName("const void *")] Ref data
@@ -30222,8 +30222,8 @@ public unsafe partial interface IGL
     void ClearNamedBufferSubDataExt(
         [NativeTypeName("GLuint")] uint buffer,
         [NativeTypeName("GLenum")] uint internalformat,
-        [NativeTypeName("GLsizeiptr")] nint offset,
-        [NativeTypeName("GLsizeiptr")] nint size,
+        [NativeTypeName("GLsizeiptr")] nuint offset,
+        [NativeTypeName("GLsizeiptr")] nuint size,
         [NativeTypeName("GLenum")] uint format,
         [NativeTypeName("GLenum")] uint type,
         [NativeTypeName("const void *")] Ref data
@@ -30273,8 +30273,8 @@ public unsafe partial interface IGL
     [SupportedApiProfile("gles2", MinVersion = "2.0")]
     [NativeFunction("opengl", EntryPoint = "glClearPixelLocalStorageuiEXT")]
     void ClearPixelLocalStorageuiExt(
-        [NativeTypeName("GLsizei")] int offset,
-        [NativeTypeName("GLsizei")] int n,
+        [NativeTypeName("GLsizei")] uint offset,
+        [NativeTypeName("GLsizei")] uint n,
         [NativeTypeName("const GLuint *")] Ref<uint> values
     );
 
@@ -30315,9 +30315,9 @@ public unsafe partial interface IGL
         [NativeTypeName("GLint")] int xoffset,
         [NativeTypeName("GLint")] int yoffset,
         [NativeTypeName("GLint")] int zoffset,
-        [NativeTypeName("GLsizei")] int width,
-        [NativeTypeName("GLsizei")] int height,
-        [NativeTypeName("GLsizei")] int depth,
+        [NativeTypeName("GLsizei")] uint width,
+        [NativeTypeName("GLsizei")] uint height,
+        [NativeTypeName("GLsizei")] uint depth,
         [NativeTypeName("GLenum")] uint format,
         [NativeTypeName("GLenum")] uint type,
         [NativeTypeName("const void *")] Ref data
@@ -30331,9 +30331,9 @@ public unsafe partial interface IGL
         [NativeTypeName("GLint")] int xoffset,
         [NativeTypeName("GLint")] int yoffset,
         [NativeTypeName("GLint")] int zoffset,
-        [NativeTypeName("GLsizei")] int width,
-        [NativeTypeName("GLsizei")] int height,
-        [NativeTypeName("GLsizei")] int depth,
+        [NativeTypeName("GLsizei")] uint width,
+        [NativeTypeName("GLsizei")] uint height,
+        [NativeTypeName("GLsizei")] uint depth,
         [NativeTypeName("GLenum")] uint format,
         [NativeTypeName("GLenum")] uint type,
         [NativeTypeName("const void *")] Ref data
@@ -30360,7 +30360,7 @@ public unsafe partial interface IGL
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glClientWaitSemaphoreui64NVX")]
     void ClientWaitSemaphoreui64nvx(
-        [NativeTypeName("GLsizei")] int fenceObjectCount,
+        [NativeTypeName("GLsizei")] uint fenceObjectCount,
         [NativeTypeName("const GLuint *")] Ref<uint> semaphoreArray,
         [NativeTypeName("const GLuint64 *")] Ref<ulong> fenceValueArray
     );
@@ -30794,7 +30794,7 @@ public unsafe partial interface IGL
     void ColorFormatNV(
         [NativeTypeName("GLint")] int size,
         [NativeTypeName("GLenum")] uint type,
-        [NativeTypeName("GLsizei")] int stride
+        [NativeTypeName("GLsizei")] uint stride
     );
 
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
@@ -30848,10 +30848,10 @@ public unsafe partial interface IGL
     [SupportedApiProfile("gles2", MinVersion = "2.0")]
     [NativeFunction("opengl", EntryPoint = "glColorMask")]
     void ColorMask(
-        [NativeTypeName("GLboolean")] byte red,
-        [NativeTypeName("GLboolean")] byte green,
-        [NativeTypeName("GLboolean")] byte blue,
-        [NativeTypeName("GLboolean")] byte alpha
+        [NativeTypeName("GLboolean")] uint red,
+        [NativeTypeName("GLboolean")] uint green,
+        [NativeTypeName("GLboolean")] uint blue,
+        [NativeTypeName("GLboolean")] uint alpha
     );
 
     [SupportedApiProfile("glcore", MinVersion = "3.2")]
@@ -30859,40 +30859,40 @@ public unsafe partial interface IGL
     [NativeFunction("opengl", EntryPoint = "glColorMaski")]
     void ColorMask(
         [NativeTypeName("GLuint")] uint index,
-        [NativeTypeName("GLboolean")] byte r,
-        [NativeTypeName("GLboolean")] byte g,
-        [NativeTypeName("GLboolean")] byte b,
-        [NativeTypeName("GLboolean")] byte a
+        [NativeTypeName("GLboolean")] uint r,
+        [NativeTypeName("GLboolean")] uint g,
+        [NativeTypeName("GLboolean")] uint b,
+        [NativeTypeName("GLboolean")] uint a
     );
 
     [SupportedApiProfile("gles2", MinVersion = "2.0")]
     [NativeFunction("opengl", EntryPoint = "glColorMaskiEXT")]
     void ColorMaskiExt(
         [NativeTypeName("GLuint")] uint index,
-        [NativeTypeName("GLboolean")] byte r,
-        [NativeTypeName("GLboolean")] byte g,
-        [NativeTypeName("GLboolean")] byte b,
-        [NativeTypeName("GLboolean")] byte a
+        [NativeTypeName("GLboolean")] uint r,
+        [NativeTypeName("GLboolean")] uint g,
+        [NativeTypeName("GLboolean")] uint b,
+        [NativeTypeName("GLboolean")] uint a
     );
 
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glColorMaskIndexedEXT")]
     void ColorMaskIndexedExt(
         [NativeTypeName("GLuint")] uint index,
-        [NativeTypeName("GLboolean")] byte r,
-        [NativeTypeName("GLboolean")] byte g,
-        [NativeTypeName("GLboolean")] byte b,
-        [NativeTypeName("GLboolean")] byte a
+        [NativeTypeName("GLboolean")] uint r,
+        [NativeTypeName("GLboolean")] uint g,
+        [NativeTypeName("GLboolean")] uint b,
+        [NativeTypeName("GLboolean")] uint a
     );
 
     [SupportedApiProfile("gles2", MinVersion = "2.0")]
     [NativeFunction("opengl", EntryPoint = "glColorMaskiOES")]
     void ColorMaskiOes(
         [NativeTypeName("GLuint")] uint index,
-        [NativeTypeName("GLboolean")] byte r,
-        [NativeTypeName("GLboolean")] byte g,
-        [NativeTypeName("GLboolean")] byte b,
-        [NativeTypeName("GLboolean")] byte a
+        [NativeTypeName("GLboolean")] uint r,
+        [NativeTypeName("GLboolean")] uint g,
+        [NativeTypeName("GLboolean")] uint b,
+        [NativeTypeName("GLboolean")] uint a
     );
 
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
@@ -30927,7 +30927,7 @@ public unsafe partial interface IGL
     void ColorPointer(
         [NativeTypeName("GLint")] int size,
         [NativeTypeName("GLenum")] uint type,
-        [NativeTypeName("GLsizei")] int stride,
+        [NativeTypeName("GLsizei")] uint stride,
         [NativeTypeName("const void *")] Ref pointer
     );
 
@@ -30936,8 +30936,8 @@ public unsafe partial interface IGL
     void ColorPointerExt(
         [NativeTypeName("GLint")] int size,
         [NativeTypeName("GLenum")] uint type,
-        [NativeTypeName("GLsizei")] int stride,
-        [NativeTypeName("GLsizei")] int count,
+        [NativeTypeName("GLsizei")] uint stride,
+        [NativeTypeName("GLsizei")] uint count,
         [NativeTypeName("const void *")] Ref pointer
     );
 
@@ -30963,8 +30963,8 @@ public unsafe partial interface IGL
     [NativeFunction("opengl", EntryPoint = "glColorSubTable")]
     void ColorSubTable(
         [NativeTypeName("GLenum")] uint target,
-        [NativeTypeName("GLsizei")] int start,
-        [NativeTypeName("GLsizei")] int count,
+        [NativeTypeName("GLsizei")] uint start,
+        [NativeTypeName("GLsizei")] uint count,
         [NativeTypeName("GLenum")] uint format,
         [NativeTypeName("GLenum")] uint type,
         [NativeTypeName("const void *")] Ref data
@@ -30974,8 +30974,8 @@ public unsafe partial interface IGL
     [NativeFunction("opengl", EntryPoint = "glColorSubTableEXT")]
     void ColorSubTableExt(
         [NativeTypeName("GLenum")] uint target,
-        [NativeTypeName("GLsizei")] int start,
-        [NativeTypeName("GLsizei")] int count,
+        [NativeTypeName("GLsizei")] uint start,
+        [NativeTypeName("GLsizei")] uint count,
         [NativeTypeName("GLenum")] uint format,
         [NativeTypeName("GLenum")] uint type,
         [NativeTypeName("const void *")] Ref data
@@ -30986,7 +30986,7 @@ public unsafe partial interface IGL
     void ColorTable(
         [NativeTypeName("GLenum")] uint target,
         [NativeTypeName("GLenum")] uint internalformat,
-        [NativeTypeName("GLsizei")] int width,
+        [NativeTypeName("GLsizei")] uint width,
         [NativeTypeName("GLenum")] uint format,
         [NativeTypeName("GLenum")] uint type,
         [NativeTypeName("const void *")] Ref table
@@ -30997,7 +30997,7 @@ public unsafe partial interface IGL
     void ColorTableExt(
         [NativeTypeName("GLenum")] uint target,
         [NativeTypeName("GLenum")] uint internalFormat,
-        [NativeTypeName("GLsizei")] int width,
+        [NativeTypeName("GLsizei")] uint width,
         [NativeTypeName("GLenum")] uint format,
         [NativeTypeName("GLenum")] uint type,
         [NativeTypeName("const void *")] Ref table
@@ -31040,7 +31040,7 @@ public unsafe partial interface IGL
     void ColorTableSgi(
         [NativeTypeName("GLenum")] uint target,
         [NativeTypeName("GLenum")] uint internalformat,
-        [NativeTypeName("GLsizei")] int width,
+        [NativeTypeName("GLsizei")] uint width,
         [NativeTypeName("GLenum")] uint format,
         [NativeTypeName("GLenum")] uint type,
         [NativeTypeName("const void *")] Ref table
@@ -31067,9 +31067,9 @@ public unsafe partial interface IGL
         [NativeTypeName("GLenum")] uint sumOutput,
         [NativeTypeName("GLenum")] uint scale,
         [NativeTypeName("GLenum")] uint bias,
-        [NativeTypeName("GLboolean")] byte abDotProduct,
-        [NativeTypeName("GLboolean")] byte cdDotProduct,
-        [NativeTypeName("GLboolean")] byte muxSum
+        [NativeTypeName("GLboolean")] uint abDotProduct,
+        [NativeTypeName("GLboolean")] uint cdDotProduct,
+        [NativeTypeName("GLboolean")] uint muxSum
     );
 
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
@@ -31129,14 +31129,14 @@ public unsafe partial interface IGL
 
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glCompileShaderARB")]
-    void CompileShaderArb([NativeTypeName("GLhandleARB")] Ref shaderObj);
+    void CompileShaderArb([NativeTypeName("GLhandleARB")] uint shaderObj);
 
     [SupportedApiProfile("glcore", MinVersion = "3.2")]
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glCompileShaderIncludeARB")]
     void CompileShaderIncludeArb(
         [NativeTypeName("GLuint")] uint shader,
-        [NativeTypeName("GLsizei")] int count,
+        [NativeTypeName("GLsizei")] uint count,
         [NativeTypeName("const GLchar *const *")] Ref2D<sbyte> path,
         [NativeTypeName("const GLint *")] Ref<int> length
     );
@@ -31149,9 +31149,9 @@ public unsafe partial interface IGL
         [NativeTypeName("GLenum")] uint target,
         [NativeTypeName("GLint")] int level,
         [NativeTypeName("GLenum")] uint internalformat,
-        [NativeTypeName("GLsizei")] int width,
+        [NativeTypeName("GLsizei")] uint width,
         [NativeTypeName("GLint")] int border,
-        [NativeTypeName("GLsizei")] int imageSize,
+        [NativeTypeName("GLsizei")] uint imageSize,
         [NativeTypeName("const void *")] Ref bits
     );
 
@@ -31163,10 +31163,10 @@ public unsafe partial interface IGL
         [NativeTypeName("GLenum")] uint target,
         [NativeTypeName("GLint")] int level,
         [NativeTypeName("GLenum")] uint internalformat,
-        [NativeTypeName("GLsizei")] int width,
-        [NativeTypeName("GLsizei")] int height,
+        [NativeTypeName("GLsizei")] uint width,
+        [NativeTypeName("GLsizei")] uint height,
         [NativeTypeName("GLint")] int border,
-        [NativeTypeName("GLsizei")] int imageSize,
+        [NativeTypeName("GLsizei")] uint imageSize,
         [NativeTypeName("const void *")] Ref bits
     );
 
@@ -31178,11 +31178,11 @@ public unsafe partial interface IGL
         [NativeTypeName("GLenum")] uint target,
         [NativeTypeName("GLint")] int level,
         [NativeTypeName("GLenum")] uint internalformat,
-        [NativeTypeName("GLsizei")] int width,
-        [NativeTypeName("GLsizei")] int height,
-        [NativeTypeName("GLsizei")] int depth,
+        [NativeTypeName("GLsizei")] uint width,
+        [NativeTypeName("GLsizei")] uint height,
+        [NativeTypeName("GLsizei")] uint depth,
         [NativeTypeName("GLint")] int border,
-        [NativeTypeName("GLsizei")] int imageSize,
+        [NativeTypeName("GLsizei")] uint imageSize,
         [NativeTypeName("const void *")] Ref bits
     );
 
@@ -31194,9 +31194,9 @@ public unsafe partial interface IGL
         [NativeTypeName("GLenum")] uint target,
         [NativeTypeName("GLint")] int level,
         [NativeTypeName("GLint")] int xoffset,
-        [NativeTypeName("GLsizei")] int width,
+        [NativeTypeName("GLsizei")] uint width,
         [NativeTypeName("GLenum")] uint format,
-        [NativeTypeName("GLsizei")] int imageSize,
+        [NativeTypeName("GLsizei")] uint imageSize,
         [NativeTypeName("const void *")] Ref bits
     );
 
@@ -31209,10 +31209,10 @@ public unsafe partial interface IGL
         [NativeTypeName("GLint")] int level,
         [NativeTypeName("GLint")] int xoffset,
         [NativeTypeName("GLint")] int yoffset,
-        [NativeTypeName("GLsizei")] int width,
-        [NativeTypeName("GLsizei")] int height,
+        [NativeTypeName("GLsizei")] uint width,
+        [NativeTypeName("GLsizei")] uint height,
         [NativeTypeName("GLenum")] uint format,
-        [NativeTypeName("GLsizei")] int imageSize,
+        [NativeTypeName("GLsizei")] uint imageSize,
         [NativeTypeName("const void *")] Ref bits
     );
 
@@ -31226,11 +31226,11 @@ public unsafe partial interface IGL
         [NativeTypeName("GLint")] int xoffset,
         [NativeTypeName("GLint")] int yoffset,
         [NativeTypeName("GLint")] int zoffset,
-        [NativeTypeName("GLsizei")] int width,
-        [NativeTypeName("GLsizei")] int height,
-        [NativeTypeName("GLsizei")] int depth,
+        [NativeTypeName("GLsizei")] uint width,
+        [NativeTypeName("GLsizei")] uint height,
+        [NativeTypeName("GLsizei")] uint depth,
         [NativeTypeName("GLenum")] uint format,
-        [NativeTypeName("GLsizei")] int imageSize,
+        [NativeTypeName("GLsizei")] uint imageSize,
         [NativeTypeName("const void *")] Ref bits
     );
 
@@ -31241,9 +31241,9 @@ public unsafe partial interface IGL
         [NativeTypeName("GLenum")] uint target,
         [NativeTypeName("GLint")] int level,
         [NativeTypeName("GLenum")] uint internalformat,
-        [NativeTypeName("GLsizei")] int width,
+        [NativeTypeName("GLsizei")] uint width,
         [NativeTypeName("GLint")] int border,
-        [NativeTypeName("GLsizei")] int imageSize,
+        [NativeTypeName("GLsizei")] uint imageSize,
         [NativeTypeName("const void *")] Ref data
     );
 
@@ -31253,9 +31253,9 @@ public unsafe partial interface IGL
         [NativeTypeName("GLenum")] uint target,
         [NativeTypeName("GLint")] int level,
         [NativeTypeName("GLenum")] uint internalformat,
-        [NativeTypeName("GLsizei")] int width,
+        [NativeTypeName("GLsizei")] uint width,
         [NativeTypeName("GLint")] int border,
-        [NativeTypeName("GLsizei")] int imageSize,
+        [NativeTypeName("GLsizei")] uint imageSize,
         [NativeTypeName("const void *")] Ref data
     );
 
@@ -31268,10 +31268,10 @@ public unsafe partial interface IGL
         [NativeTypeName("GLenum")] uint target,
         [NativeTypeName("GLint")] int level,
         [NativeTypeName("GLenum")] uint internalformat,
-        [NativeTypeName("GLsizei")] int width,
-        [NativeTypeName("GLsizei")] int height,
+        [NativeTypeName("GLsizei")] uint width,
+        [NativeTypeName("GLsizei")] uint height,
         [NativeTypeName("GLint")] int border,
-        [NativeTypeName("GLsizei")] int imageSize,
+        [NativeTypeName("GLsizei")] uint imageSize,
         [NativeTypeName("const void *")] Ref data
     );
 
@@ -31281,10 +31281,10 @@ public unsafe partial interface IGL
         [NativeTypeName("GLenum")] uint target,
         [NativeTypeName("GLint")] int level,
         [NativeTypeName("GLenum")] uint internalformat,
-        [NativeTypeName("GLsizei")] int width,
-        [NativeTypeName("GLsizei")] int height,
+        [NativeTypeName("GLsizei")] uint width,
+        [NativeTypeName("GLsizei")] uint height,
         [NativeTypeName("GLint")] int border,
-        [NativeTypeName("GLsizei")] int imageSize,
+        [NativeTypeName("GLsizei")] uint imageSize,
         [NativeTypeName("const void *")] Ref data
     );
 
@@ -31295,11 +31295,11 @@ public unsafe partial interface IGL
         [NativeTypeName("GLenum")] uint target,
         [NativeTypeName("GLint")] int level,
         [NativeTypeName("GLenum")] uint internalformat,
-        [NativeTypeName("GLsizei")] int width,
-        [NativeTypeName("GLsizei")] int height,
-        [NativeTypeName("GLsizei")] int depth,
+        [NativeTypeName("GLsizei")] uint width,
+        [NativeTypeName("GLsizei")] uint height,
+        [NativeTypeName("GLsizei")] uint depth,
         [NativeTypeName("GLint")] int border,
-        [NativeTypeName("GLsizei")] int imageSize,
+        [NativeTypeName("GLsizei")] uint imageSize,
         [NativeTypeName("const void *")] Ref data
     );
 
@@ -31309,11 +31309,11 @@ public unsafe partial interface IGL
         [NativeTypeName("GLenum")] uint target,
         [NativeTypeName("GLint")] int level,
         [NativeTypeName("GLenum")] uint internalformat,
-        [NativeTypeName("GLsizei")] int width,
-        [NativeTypeName("GLsizei")] int height,
-        [NativeTypeName("GLsizei")] int depth,
+        [NativeTypeName("GLsizei")] uint width,
+        [NativeTypeName("GLsizei")] uint height,
+        [NativeTypeName("GLsizei")] uint depth,
         [NativeTypeName("GLint")] int border,
-        [NativeTypeName("GLsizei")] int imageSize,
+        [NativeTypeName("GLsizei")] uint imageSize,
         [NativeTypeName("const void *")] Ref data
     );
 
@@ -31323,11 +31323,11 @@ public unsafe partial interface IGL
         [NativeTypeName("GLenum")] uint target,
         [NativeTypeName("GLint")] int level,
         [NativeTypeName("GLenum")] uint internalformat,
-        [NativeTypeName("GLsizei")] int width,
-        [NativeTypeName("GLsizei")] int height,
-        [NativeTypeName("GLsizei")] int depth,
+        [NativeTypeName("GLsizei")] uint width,
+        [NativeTypeName("GLsizei")] uint height,
+        [NativeTypeName("GLsizei")] uint depth,
         [NativeTypeName("GLint")] int border,
-        [NativeTypeName("GLsizei")] int imageSize,
+        [NativeTypeName("GLsizei")] uint imageSize,
         [NativeTypeName("const void *")] Ref data
     );
 
@@ -31338,9 +31338,9 @@ public unsafe partial interface IGL
         [NativeTypeName("GLenum")] uint target,
         [NativeTypeName("GLint")] int level,
         [NativeTypeName("GLint")] int xoffset,
-        [NativeTypeName("GLsizei")] int width,
+        [NativeTypeName("GLsizei")] uint width,
         [NativeTypeName("GLenum")] uint format,
-        [NativeTypeName("GLsizei")] int imageSize,
+        [NativeTypeName("GLsizei")] uint imageSize,
         [NativeTypeName("const void *")] Ref data
     );
 
@@ -31350,9 +31350,9 @@ public unsafe partial interface IGL
         [NativeTypeName("GLenum")] uint target,
         [NativeTypeName("GLint")] int level,
         [NativeTypeName("GLint")] int xoffset,
-        [NativeTypeName("GLsizei")] int width,
+        [NativeTypeName("GLsizei")] uint width,
         [NativeTypeName("GLenum")] uint format,
-        [NativeTypeName("GLsizei")] int imageSize,
+        [NativeTypeName("GLsizei")] uint imageSize,
         [NativeTypeName("const void *")] Ref data
     );
 
@@ -31366,10 +31366,10 @@ public unsafe partial interface IGL
         [NativeTypeName("GLint")] int level,
         [NativeTypeName("GLint")] int xoffset,
         [NativeTypeName("GLint")] int yoffset,
-        [NativeTypeName("GLsizei")] int width,
-        [NativeTypeName("GLsizei")] int height,
+        [NativeTypeName("GLsizei")] uint width,
+        [NativeTypeName("GLsizei")] uint height,
         [NativeTypeName("GLenum")] uint format,
-        [NativeTypeName("GLsizei")] int imageSize,
+        [NativeTypeName("GLsizei")] uint imageSize,
         [NativeTypeName("const void *")] Ref data
     );
 
@@ -31380,10 +31380,10 @@ public unsafe partial interface IGL
         [NativeTypeName("GLint")] int level,
         [NativeTypeName("GLint")] int xoffset,
         [NativeTypeName("GLint")] int yoffset,
-        [NativeTypeName("GLsizei")] int width,
-        [NativeTypeName("GLsizei")] int height,
+        [NativeTypeName("GLsizei")] uint width,
+        [NativeTypeName("GLsizei")] uint height,
         [NativeTypeName("GLenum")] uint format,
-        [NativeTypeName("GLsizei")] int imageSize,
+        [NativeTypeName("GLsizei")] uint imageSize,
         [NativeTypeName("const void *")] Ref data
     );
 
@@ -31396,11 +31396,11 @@ public unsafe partial interface IGL
         [NativeTypeName("GLint")] int xoffset,
         [NativeTypeName("GLint")] int yoffset,
         [NativeTypeName("GLint")] int zoffset,
-        [NativeTypeName("GLsizei")] int width,
-        [NativeTypeName("GLsizei")] int height,
-        [NativeTypeName("GLsizei")] int depth,
+        [NativeTypeName("GLsizei")] uint width,
+        [NativeTypeName("GLsizei")] uint height,
+        [NativeTypeName("GLsizei")] uint depth,
         [NativeTypeName("GLenum")] uint format,
-        [NativeTypeName("GLsizei")] int imageSize,
+        [NativeTypeName("GLsizei")] uint imageSize,
         [NativeTypeName("const void *")] Ref data
     );
 
@@ -31412,11 +31412,11 @@ public unsafe partial interface IGL
         [NativeTypeName("GLint")] int xoffset,
         [NativeTypeName("GLint")] int yoffset,
         [NativeTypeName("GLint")] int zoffset,
-        [NativeTypeName("GLsizei")] int width,
-        [NativeTypeName("GLsizei")] int height,
-        [NativeTypeName("GLsizei")] int depth,
+        [NativeTypeName("GLsizei")] uint width,
+        [NativeTypeName("GLsizei")] uint height,
+        [NativeTypeName("GLsizei")] uint depth,
         [NativeTypeName("GLenum")] uint format,
-        [NativeTypeName("GLsizei")] int imageSize,
+        [NativeTypeName("GLsizei")] uint imageSize,
         [NativeTypeName("const void *")] Ref data
     );
 
@@ -31428,11 +31428,11 @@ public unsafe partial interface IGL
         [NativeTypeName("GLint")] int xoffset,
         [NativeTypeName("GLint")] int yoffset,
         [NativeTypeName("GLint")] int zoffset,
-        [NativeTypeName("GLsizei")] int width,
-        [NativeTypeName("GLsizei")] int height,
-        [NativeTypeName("GLsizei")] int depth,
+        [NativeTypeName("GLsizei")] uint width,
+        [NativeTypeName("GLsizei")] uint height,
+        [NativeTypeName("GLsizei")] uint depth,
         [NativeTypeName("GLenum")] uint format,
-        [NativeTypeName("GLsizei")] int imageSize,
+        [NativeTypeName("GLsizei")] uint imageSize,
         [NativeTypeName("const void *")] Ref data
     );
 
@@ -31444,9 +31444,9 @@ public unsafe partial interface IGL
         [NativeTypeName("GLenum")] uint target,
         [NativeTypeName("GLint")] int level,
         [NativeTypeName("GLenum")] uint internalformat,
-        [NativeTypeName("GLsizei")] int width,
+        [NativeTypeName("GLsizei")] uint width,
         [NativeTypeName("GLint")] int border,
-        [NativeTypeName("GLsizei")] int imageSize,
+        [NativeTypeName("GLsizei")] uint imageSize,
         [NativeTypeName("const void *")] Ref bits
     );
 
@@ -31458,10 +31458,10 @@ public unsafe partial interface IGL
         [NativeTypeName("GLenum")] uint target,
         [NativeTypeName("GLint")] int level,
         [NativeTypeName("GLenum")] uint internalformat,
-        [NativeTypeName("GLsizei")] int width,
-        [NativeTypeName("GLsizei")] int height,
+        [NativeTypeName("GLsizei")] uint width,
+        [NativeTypeName("GLsizei")] uint height,
         [NativeTypeName("GLint")] int border,
-        [NativeTypeName("GLsizei")] int imageSize,
+        [NativeTypeName("GLsizei")] uint imageSize,
         [NativeTypeName("const void *")] Ref bits
     );
 
@@ -31473,11 +31473,11 @@ public unsafe partial interface IGL
         [NativeTypeName("GLenum")] uint target,
         [NativeTypeName("GLint")] int level,
         [NativeTypeName("GLenum")] uint internalformat,
-        [NativeTypeName("GLsizei")] int width,
-        [NativeTypeName("GLsizei")] int height,
-        [NativeTypeName("GLsizei")] int depth,
+        [NativeTypeName("GLsizei")] uint width,
+        [NativeTypeName("GLsizei")] uint height,
+        [NativeTypeName("GLsizei")] uint depth,
         [NativeTypeName("GLint")] int border,
-        [NativeTypeName("GLsizei")] int imageSize,
+        [NativeTypeName("GLsizei")] uint imageSize,
         [NativeTypeName("const void *")] Ref bits
     );
 
@@ -31488,9 +31488,9 @@ public unsafe partial interface IGL
         [NativeTypeName("GLuint")] uint texture,
         [NativeTypeName("GLint")] int level,
         [NativeTypeName("GLint")] int xoffset,
-        [NativeTypeName("GLsizei")] int width,
+        [NativeTypeName("GLsizei")] uint width,
         [NativeTypeName("GLenum")] uint format,
-        [NativeTypeName("GLsizei")] int imageSize,
+        [NativeTypeName("GLsizei")] uint imageSize,
         [NativeTypeName("const void *")] Ref data
     );
 
@@ -31502,9 +31502,9 @@ public unsafe partial interface IGL
         [NativeTypeName("GLenum")] uint target,
         [NativeTypeName("GLint")] int level,
         [NativeTypeName("GLint")] int xoffset,
-        [NativeTypeName("GLsizei")] int width,
+        [NativeTypeName("GLsizei")] uint width,
         [NativeTypeName("GLenum")] uint format,
-        [NativeTypeName("GLsizei")] int imageSize,
+        [NativeTypeName("GLsizei")] uint imageSize,
         [NativeTypeName("const void *")] Ref bits
     );
 
@@ -31516,10 +31516,10 @@ public unsafe partial interface IGL
         [NativeTypeName("GLint")] int level,
         [NativeTypeName("GLint")] int xoffset,
         [NativeTypeName("GLint")] int yoffset,
-        [NativeTypeName("GLsizei")] int width,
-        [NativeTypeName("GLsizei")] int height,
+        [NativeTypeName("GLsizei")] uint width,
+        [NativeTypeName("GLsizei")] uint height,
         [NativeTypeName("GLenum")] uint format,
-        [NativeTypeName("GLsizei")] int imageSize,
+        [NativeTypeName("GLsizei")] uint imageSize,
         [NativeTypeName("const void *")] Ref data
     );
 
@@ -31532,10 +31532,10 @@ public unsafe partial interface IGL
         [NativeTypeName("GLint")] int level,
         [NativeTypeName("GLint")] int xoffset,
         [NativeTypeName("GLint")] int yoffset,
-        [NativeTypeName("GLsizei")] int width,
-        [NativeTypeName("GLsizei")] int height,
+        [NativeTypeName("GLsizei")] uint width,
+        [NativeTypeName("GLsizei")] uint height,
         [NativeTypeName("GLenum")] uint format,
-        [NativeTypeName("GLsizei")] int imageSize,
+        [NativeTypeName("GLsizei")] uint imageSize,
         [NativeTypeName("const void *")] Ref bits
     );
 
@@ -31548,11 +31548,11 @@ public unsafe partial interface IGL
         [NativeTypeName("GLint")] int xoffset,
         [NativeTypeName("GLint")] int yoffset,
         [NativeTypeName("GLint")] int zoffset,
-        [NativeTypeName("GLsizei")] int width,
-        [NativeTypeName("GLsizei")] int height,
-        [NativeTypeName("GLsizei")] int depth,
+        [NativeTypeName("GLsizei")] uint width,
+        [NativeTypeName("GLsizei")] uint height,
+        [NativeTypeName("GLsizei")] uint depth,
         [NativeTypeName("GLenum")] uint format,
-        [NativeTypeName("GLsizei")] int imageSize,
+        [NativeTypeName("GLsizei")] uint imageSize,
         [NativeTypeName("const void *")] Ref data
     );
 
@@ -31566,11 +31566,11 @@ public unsafe partial interface IGL
         [NativeTypeName("GLint")] int xoffset,
         [NativeTypeName("GLint")] int yoffset,
         [NativeTypeName("GLint")] int zoffset,
-        [NativeTypeName("GLsizei")] int width,
-        [NativeTypeName("GLsizei")] int height,
-        [NativeTypeName("GLsizei")] int depth,
+        [NativeTypeName("GLsizei")] uint width,
+        [NativeTypeName("GLsizei")] uint height,
+        [NativeTypeName("GLsizei")] uint depth,
         [NativeTypeName("GLenum")] uint format,
-        [NativeTypeName("GLsizei")] int imageSize,
+        [NativeTypeName("GLsizei")] uint imageSize,
         [NativeTypeName("const void *")] Ref bits
     );
 
@@ -31596,7 +31596,7 @@ public unsafe partial interface IGL
     void ConvolutionFilter1d(
         [NativeTypeName("GLenum")] uint target,
         [NativeTypeName("GLenum")] uint internalformat,
-        [NativeTypeName("GLsizei")] int width,
+        [NativeTypeName("GLsizei")] uint width,
         [NativeTypeName("GLenum")] uint format,
         [NativeTypeName("GLenum")] uint type,
         [NativeTypeName("const void *")] Ref image
@@ -31607,7 +31607,7 @@ public unsafe partial interface IGL
     void ConvolutionFilter1dext(
         [NativeTypeName("GLenum")] uint target,
         [NativeTypeName("GLenum")] uint internalformat,
-        [NativeTypeName("GLsizei")] int width,
+        [NativeTypeName("GLsizei")] uint width,
         [NativeTypeName("GLenum")] uint format,
         [NativeTypeName("GLenum")] uint type,
         [NativeTypeName("const void *")] Ref image
@@ -31618,8 +31618,8 @@ public unsafe partial interface IGL
     void ConvolutionFilter2d(
         [NativeTypeName("GLenum")] uint target,
         [NativeTypeName("GLenum")] uint internalformat,
-        [NativeTypeName("GLsizei")] int width,
-        [NativeTypeName("GLsizei")] int height,
+        [NativeTypeName("GLsizei")] uint width,
+        [NativeTypeName("GLsizei")] uint height,
         [NativeTypeName("GLenum")] uint format,
         [NativeTypeName("GLenum")] uint type,
         [NativeTypeName("const void *")] Ref image
@@ -31630,8 +31630,8 @@ public unsafe partial interface IGL
     void ConvolutionFilter2dext(
         [NativeTypeName("GLenum")] uint target,
         [NativeTypeName("GLenum")] uint internalformat,
-        [NativeTypeName("GLsizei")] int width,
-        [NativeTypeName("GLsizei")] int height,
+        [NativeTypeName("GLsizei")] uint width,
+        [NativeTypeName("GLsizei")] uint height,
         [NativeTypeName("GLenum")] uint format,
         [NativeTypeName("GLenum")] uint type,
         [NativeTypeName("const void *")] Ref image
@@ -31725,7 +31725,7 @@ public unsafe partial interface IGL
         [NativeTypeName("GLenum")] uint writeTarget,
         [NativeTypeName("GLintptr")] nint readOffset,
         [NativeTypeName("GLintptr")] nint writeOffset,
-        [NativeTypeName("GLsizeiptr")] nint size
+        [NativeTypeName("GLsizeiptr")] nuint size
     );
 
     [SupportedApiProfile("gles2", MinVersion = "2.0")]
@@ -31735,27 +31735,27 @@ public unsafe partial interface IGL
         [NativeTypeName("GLenum")] uint writeTarget,
         [NativeTypeName("GLintptr")] nint readOffset,
         [NativeTypeName("GLintptr")] nint writeOffset,
-        [NativeTypeName("GLsizeiptr")] nint size
+        [NativeTypeName("GLsizeiptr")] nuint size
     );
 
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glCopyColorSubTable")]
     void CopyColorSubTable(
         [NativeTypeName("GLenum")] uint target,
-        [NativeTypeName("GLsizei")] int start,
+        [NativeTypeName("GLsizei")] uint start,
         [NativeTypeName("GLint")] int x,
         [NativeTypeName("GLint")] int y,
-        [NativeTypeName("GLsizei")] int width
+        [NativeTypeName("GLsizei")] uint width
     );
 
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glCopyColorSubTableEXT")]
     void CopyColorSubTableExt(
         [NativeTypeName("GLenum")] uint target,
-        [NativeTypeName("GLsizei")] int start,
+        [NativeTypeName("GLsizei")] uint start,
         [NativeTypeName("GLint")] int x,
         [NativeTypeName("GLint")] int y,
-        [NativeTypeName("GLsizei")] int width
+        [NativeTypeName("GLsizei")] uint width
     );
 
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
@@ -31765,7 +31765,7 @@ public unsafe partial interface IGL
         [NativeTypeName("GLenum")] uint internalformat,
         [NativeTypeName("GLint")] int x,
         [NativeTypeName("GLint")] int y,
-        [NativeTypeName("GLsizei")] int width
+        [NativeTypeName("GLsizei")] uint width
     );
 
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
@@ -31775,7 +31775,7 @@ public unsafe partial interface IGL
         [NativeTypeName("GLenum")] uint internalformat,
         [NativeTypeName("GLint")] int x,
         [NativeTypeName("GLint")] int y,
-        [NativeTypeName("GLsizei")] int width
+        [NativeTypeName("GLsizei")] uint width
     );
 
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
@@ -31785,7 +31785,7 @@ public unsafe partial interface IGL
         [NativeTypeName("GLenum")] uint internalformat,
         [NativeTypeName("GLint")] int x,
         [NativeTypeName("GLint")] int y,
-        [NativeTypeName("GLsizei")] int width
+        [NativeTypeName("GLsizei")] uint width
     );
 
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
@@ -31795,7 +31795,7 @@ public unsafe partial interface IGL
         [NativeTypeName("GLenum")] uint internalformat,
         [NativeTypeName("GLint")] int x,
         [NativeTypeName("GLint")] int y,
-        [NativeTypeName("GLsizei")] int width
+        [NativeTypeName("GLsizei")] uint width
     );
 
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
@@ -31805,8 +31805,8 @@ public unsafe partial interface IGL
         [NativeTypeName("GLenum")] uint internalformat,
         [NativeTypeName("GLint")] int x,
         [NativeTypeName("GLint")] int y,
-        [NativeTypeName("GLsizei")] int width,
-        [NativeTypeName("GLsizei")] int height
+        [NativeTypeName("GLsizei")] uint width,
+        [NativeTypeName("GLsizei")] uint height
     );
 
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
@@ -31816,8 +31816,8 @@ public unsafe partial interface IGL
         [NativeTypeName("GLenum")] uint internalformat,
         [NativeTypeName("GLint")] int x,
         [NativeTypeName("GLint")] int y,
-        [NativeTypeName("GLsizei")] int width,
-        [NativeTypeName("GLsizei")] int height
+        [NativeTypeName("GLsizei")] uint width,
+        [NativeTypeName("GLsizei")] uint height
     );
 
     [SupportedApiProfile("glcore", MinVersion = "3.2")]
@@ -31836,9 +31836,9 @@ public unsafe partial interface IGL
         [NativeTypeName("GLint")] int dstX,
         [NativeTypeName("GLint")] int dstY,
         [NativeTypeName("GLint")] int dstZ,
-        [NativeTypeName("GLsizei")] int srcWidth,
-        [NativeTypeName("GLsizei")] int srcHeight,
-        [NativeTypeName("GLsizei")] int srcDepth
+        [NativeTypeName("GLsizei")] uint srcWidth,
+        [NativeTypeName("GLsizei")] uint srcHeight,
+        [NativeTypeName("GLsizei")] uint srcDepth
     );
 
     [SupportedApiProfile("gles2", MinVersion = "2.0")]
@@ -31856,9 +31856,9 @@ public unsafe partial interface IGL
         [NativeTypeName("GLint")] int dstX,
         [NativeTypeName("GLint")] int dstY,
         [NativeTypeName("GLint")] int dstZ,
-        [NativeTypeName("GLsizei")] int srcWidth,
-        [NativeTypeName("GLsizei")] int srcHeight,
-        [NativeTypeName("GLsizei")] int srcDepth
+        [NativeTypeName("GLsizei")] uint srcWidth,
+        [NativeTypeName("GLsizei")] uint srcHeight,
+        [NativeTypeName("GLsizei")] uint srcDepth
     );
 
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
@@ -31876,9 +31876,9 @@ public unsafe partial interface IGL
         [NativeTypeName("GLint")] int dstX,
         [NativeTypeName("GLint")] int dstY,
         [NativeTypeName("GLint")] int dstZ,
-        [NativeTypeName("GLsizei")] int width,
-        [NativeTypeName("GLsizei")] int height,
-        [NativeTypeName("GLsizei")] int depth
+        [NativeTypeName("GLsizei")] uint width,
+        [NativeTypeName("GLsizei")] uint height,
+        [NativeTypeName("GLsizei")] uint depth
     );
 
     [SupportedApiProfile("gles2", MinVersion = "2.0")]
@@ -31896,9 +31896,9 @@ public unsafe partial interface IGL
         [NativeTypeName("GLint")] int dstX,
         [NativeTypeName("GLint")] int dstY,
         [NativeTypeName("GLint")] int dstZ,
-        [NativeTypeName("GLsizei")] int srcWidth,
-        [NativeTypeName("GLsizei")] int srcHeight,
-        [NativeTypeName("GLsizei")] int srcDepth
+        [NativeTypeName("GLsizei")] uint srcWidth,
+        [NativeTypeName("GLsizei")] uint srcHeight,
+        [NativeTypeName("GLsizei")] uint srcDepth
     );
 
     [SupportedApiProfile("glcore", MinVersion = "3.2")]
@@ -31911,7 +31911,7 @@ public unsafe partial interface IGL
         [NativeTypeName("GLenum")] uint internalformat,
         [NativeTypeName("GLint")] int x,
         [NativeTypeName("GLint")] int y,
-        [NativeTypeName("GLsizei")] int width,
+        [NativeTypeName("GLsizei")] uint width,
         [NativeTypeName("GLint")] int border
     );
 
@@ -31925,8 +31925,8 @@ public unsafe partial interface IGL
         [NativeTypeName("GLenum")] uint internalformat,
         [NativeTypeName("GLint")] int x,
         [NativeTypeName("GLint")] int y,
-        [NativeTypeName("GLsizei")] int width,
-        [NativeTypeName("GLsizei")] int height,
+        [NativeTypeName("GLsizei")] uint width,
+        [NativeTypeName("GLsizei")] uint height,
         [NativeTypeName("GLint")] int border
     );
 
@@ -31940,7 +31940,7 @@ public unsafe partial interface IGL
         [NativeTypeName("GLint")] int xoffset,
         [NativeTypeName("GLint")] int x,
         [NativeTypeName("GLint")] int y,
-        [NativeTypeName("GLsizei")] int width
+        [NativeTypeName("GLsizei")] uint width
     );
 
     [SupportedApiProfile("glcore", MinVersion = "3.2")]
@@ -31954,8 +31954,8 @@ public unsafe partial interface IGL
         [NativeTypeName("GLint")] int yoffset,
         [NativeTypeName("GLint")] int x,
         [NativeTypeName("GLint")] int y,
-        [NativeTypeName("GLsizei")] int width,
-        [NativeTypeName("GLsizei")] int height
+        [NativeTypeName("GLsizei")] uint width,
+        [NativeTypeName("GLsizei")] uint height
     );
 
     [SupportedApiProfile("glcore", MinVersion = "3.2")]
@@ -31970,8 +31970,8 @@ public unsafe partial interface IGL
         [NativeTypeName("GLint")] int zoffset,
         [NativeTypeName("GLint")] int x,
         [NativeTypeName("GLint")] int y,
-        [NativeTypeName("GLsizei")] int width,
-        [NativeTypeName("GLsizei")] int height
+        [NativeTypeName("GLsizei")] uint width,
+        [NativeTypeName("GLsizei")] uint height
     );
 
     [SupportedApiProfile("glcore", MinVersion = "3.2")]
@@ -31982,7 +31982,7 @@ public unsafe partial interface IGL
         [NativeTypeName("GLuint")] uint writeBuffer,
         [NativeTypeName("GLintptr")] nint readOffset,
         [NativeTypeName("GLintptr")] nint writeOffset,
-        [NativeTypeName("GLsizeiptr")] nint size
+        [NativeTypeName("GLsizeiptr")] nuint size
     );
 
     [SupportedApiProfile("glcore", MinVersion = "3.2")]
@@ -31999,8 +31999,8 @@ public unsafe partial interface IGL
     void CopyPixels(
         [NativeTypeName("GLint")] int x,
         [NativeTypeName("GLint")] int y,
-        [NativeTypeName("GLsizei")] int width,
-        [NativeTypeName("GLsizei")] int height,
+        [NativeTypeName("GLsizei")] uint width,
+        [NativeTypeName("GLsizei")] uint height,
         [NativeTypeName("GLenum")] uint type
     );
 
@@ -32013,7 +32013,7 @@ public unsafe partial interface IGL
         [NativeTypeName("GLenum")] uint internalformat,
         [NativeTypeName("GLint")] int x,
         [NativeTypeName("GLint")] int y,
-        [NativeTypeName("GLsizei")] int width,
+        [NativeTypeName("GLsizei")] uint width,
         [NativeTypeName("GLint")] int border
     );
 
@@ -32025,7 +32025,7 @@ public unsafe partial interface IGL
         [NativeTypeName("GLenum")] uint internalformat,
         [NativeTypeName("GLint")] int x,
         [NativeTypeName("GLint")] int y,
-        [NativeTypeName("GLsizei")] int width,
+        [NativeTypeName("GLsizei")] uint width,
         [NativeTypeName("GLint")] int border
     );
 
@@ -32040,8 +32040,8 @@ public unsafe partial interface IGL
         [NativeTypeName("GLenum")] uint internalformat,
         [NativeTypeName("GLint")] int x,
         [NativeTypeName("GLint")] int y,
-        [NativeTypeName("GLsizei")] int width,
-        [NativeTypeName("GLsizei")] int height,
+        [NativeTypeName("GLsizei")] uint width,
+        [NativeTypeName("GLsizei")] uint height,
         [NativeTypeName("GLint")] int border
     );
 
@@ -32053,8 +32053,8 @@ public unsafe partial interface IGL
         [NativeTypeName("GLenum")] uint internalformat,
         [NativeTypeName("GLint")] int x,
         [NativeTypeName("GLint")] int y,
-        [NativeTypeName("GLsizei")] int width,
-        [NativeTypeName("GLsizei")] int height,
+        [NativeTypeName("GLsizei")] uint width,
+        [NativeTypeName("GLsizei")] uint height,
         [NativeTypeName("GLint")] int border
     );
 
@@ -32067,7 +32067,7 @@ public unsafe partial interface IGL
         [NativeTypeName("GLint")] int xoffset,
         [NativeTypeName("GLint")] int x,
         [NativeTypeName("GLint")] int y,
-        [NativeTypeName("GLsizei")] int width
+        [NativeTypeName("GLsizei")] uint width
     );
 
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
@@ -32078,7 +32078,7 @@ public unsafe partial interface IGL
         [NativeTypeName("GLint")] int xoffset,
         [NativeTypeName("GLint")] int x,
         [NativeTypeName("GLint")] int y,
-        [NativeTypeName("GLsizei")] int width
+        [NativeTypeName("GLsizei")] uint width
     );
 
     [SupportedApiProfile("glcore", MinVersion = "3.2")]
@@ -32093,8 +32093,8 @@ public unsafe partial interface IGL
         [NativeTypeName("GLint")] int yoffset,
         [NativeTypeName("GLint")] int x,
         [NativeTypeName("GLint")] int y,
-        [NativeTypeName("GLsizei")] int width,
-        [NativeTypeName("GLsizei")] int height
+        [NativeTypeName("GLsizei")] uint width,
+        [NativeTypeName("GLsizei")] uint height
     );
 
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
@@ -32106,8 +32106,8 @@ public unsafe partial interface IGL
         [NativeTypeName("GLint")] int yoffset,
         [NativeTypeName("GLint")] int x,
         [NativeTypeName("GLint")] int y,
-        [NativeTypeName("GLsizei")] int width,
-        [NativeTypeName("GLsizei")] int height
+        [NativeTypeName("GLsizei")] uint width,
+        [NativeTypeName("GLsizei")] uint height
     );
 
     [SupportedApiProfile("glcore", MinVersion = "3.2")]
@@ -32121,8 +32121,8 @@ public unsafe partial interface IGL
         [NativeTypeName("GLint")] int zoffset,
         [NativeTypeName("GLint")] int x,
         [NativeTypeName("GLint")] int y,
-        [NativeTypeName("GLsizei")] int width,
-        [NativeTypeName("GLsizei")] int height
+        [NativeTypeName("GLsizei")] uint width,
+        [NativeTypeName("GLsizei")] uint height
     );
 
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
@@ -32135,8 +32135,8 @@ public unsafe partial interface IGL
         [NativeTypeName("GLint")] int zoffset,
         [NativeTypeName("GLint")] int x,
         [NativeTypeName("GLint")] int y,
-        [NativeTypeName("GLsizei")] int width,
-        [NativeTypeName("GLsizei")] int height
+        [NativeTypeName("GLsizei")] uint width,
+        [NativeTypeName("GLsizei")] uint height
     );
 
     [SupportedApiProfile("gles2", MinVersion = "2.0")]
@@ -32149,8 +32149,8 @@ public unsafe partial interface IGL
         [NativeTypeName("GLint")] int zoffset,
         [NativeTypeName("GLint")] int x,
         [NativeTypeName("GLint")] int y,
-        [NativeTypeName("GLsizei")] int width,
-        [NativeTypeName("GLsizei")] int height
+        [NativeTypeName("GLsizei")] uint width,
+        [NativeTypeName("GLsizei")] uint height
     );
 
     [SupportedApiProfile("glcore", MinVersion = "3.2")]
@@ -32163,7 +32163,7 @@ public unsafe partial interface IGL
         [NativeTypeName("GLenum")] uint internalformat,
         [NativeTypeName("GLint")] int x,
         [NativeTypeName("GLint")] int y,
-        [NativeTypeName("GLsizei")] int width,
+        [NativeTypeName("GLsizei")] uint width,
         [NativeTypeName("GLint")] int border
     );
 
@@ -32177,8 +32177,8 @@ public unsafe partial interface IGL
         [NativeTypeName("GLenum")] uint internalformat,
         [NativeTypeName("GLint")] int x,
         [NativeTypeName("GLint")] int y,
-        [NativeTypeName("GLsizei")] int width,
-        [NativeTypeName("GLsizei")] int height,
+        [NativeTypeName("GLsizei")] uint width,
+        [NativeTypeName("GLsizei")] uint height,
         [NativeTypeName("GLint")] int border
     );
 
@@ -32189,7 +32189,7 @@ public unsafe partial interface IGL
         [NativeTypeName("GLuint")] uint destinationTexture,
         [NativeTypeName("GLuint")] uint sourceTexture,
         [NativeTypeName("GLint")] int sourceBaseLevel,
-        [NativeTypeName("GLsizei")] int sourceLevelCount
+        [NativeTypeName("GLsizei")] uint sourceLevelCount
     );
 
     [SupportedApiProfile("glcore", MinVersion = "3.2")]
@@ -32201,7 +32201,7 @@ public unsafe partial interface IGL
         [NativeTypeName("GLint")] int xoffset,
         [NativeTypeName("GLint")] int x,
         [NativeTypeName("GLint")] int y,
-        [NativeTypeName("GLsizei")] int width
+        [NativeTypeName("GLsizei")] uint width
     );
 
     [SupportedApiProfile("glcore", MinVersion = "3.2")]
@@ -32214,7 +32214,7 @@ public unsafe partial interface IGL
         [NativeTypeName("GLint")] int xoffset,
         [NativeTypeName("GLint")] int x,
         [NativeTypeName("GLint")] int y,
-        [NativeTypeName("GLsizei")] int width
+        [NativeTypeName("GLsizei")] uint width
     );
 
     [SupportedApiProfile("glcore", MinVersion = "3.2")]
@@ -32227,8 +32227,8 @@ public unsafe partial interface IGL
         [NativeTypeName("GLint")] int yoffset,
         [NativeTypeName("GLint")] int x,
         [NativeTypeName("GLint")] int y,
-        [NativeTypeName("GLsizei")] int width,
-        [NativeTypeName("GLsizei")] int height
+        [NativeTypeName("GLsizei")] uint width,
+        [NativeTypeName("GLsizei")] uint height
     );
 
     [SupportedApiProfile("glcore", MinVersion = "3.2")]
@@ -32242,8 +32242,8 @@ public unsafe partial interface IGL
         [NativeTypeName("GLint")] int yoffset,
         [NativeTypeName("GLint")] int x,
         [NativeTypeName("GLint")] int y,
-        [NativeTypeName("GLsizei")] int width,
-        [NativeTypeName("GLsizei")] int height
+        [NativeTypeName("GLsizei")] uint width,
+        [NativeTypeName("GLsizei")] uint height
     );
 
     [SupportedApiProfile("glcore", MinVersion = "3.2")]
@@ -32257,8 +32257,8 @@ public unsafe partial interface IGL
         [NativeTypeName("GLint")] int zoffset,
         [NativeTypeName("GLint")] int x,
         [NativeTypeName("GLint")] int y,
-        [NativeTypeName("GLsizei")] int width,
-        [NativeTypeName("GLsizei")] int height
+        [NativeTypeName("GLsizei")] uint width,
+        [NativeTypeName("GLsizei")] uint height
     );
 
     [SupportedApiProfile("glcore", MinVersion = "3.2")]
@@ -32273,13 +32273,13 @@ public unsafe partial interface IGL
         [NativeTypeName("GLint")] int zoffset,
         [NativeTypeName("GLint")] int x,
         [NativeTypeName("GLint")] int y,
-        [NativeTypeName("GLsizei")] int width,
-        [NativeTypeName("GLsizei")] int height
+        [NativeTypeName("GLsizei")] uint width,
+        [NativeTypeName("GLsizei")] uint height
     );
 
     [SupportedApiProfile("gles2", MinVersion = "2.0")]
     [NativeFunction("opengl", EntryPoint = "glCoverageMaskNV")]
-    void CoverageMaskNV([NativeTypeName("GLboolean")] byte mask);
+    void CoverageMaskNV([NativeTypeName("GLboolean")] uint mask);
 
     [SupportedApiProfile("glcore", MinVersion = "3.2")]
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
@@ -32292,7 +32292,7 @@ public unsafe partial interface IGL
     [SupportedApiProfile("gles2", MinVersion = "2.0")]
     [NativeFunction("opengl", EntryPoint = "glCoverageModulationTableNV")]
     void CoverageModulationTableNV(
-        [NativeTypeName("GLsizei")] int n,
+        [NativeTypeName("GLsizei")] uint n,
         [NativeTypeName("const GLfloat *")] Ref<float> v
     );
 
@@ -32305,7 +32305,7 @@ public unsafe partial interface IGL
     [SupportedApiProfile("gles2", MinVersion = "2.0")]
     [NativeFunction("opengl", EntryPoint = "glCoverFillPathInstancedNV")]
     void CoverFillPathInstancedNV(
-        [NativeTypeName("GLsizei")] int numPaths,
+        [NativeTypeName("GLsizei")] uint numPaths,
         [NativeTypeName("GLenum")] uint pathNameType,
         [NativeTypeName("const void *")] Ref paths,
         [NativeTypeName("GLuint")] uint pathBase,
@@ -32328,7 +32328,7 @@ public unsafe partial interface IGL
     [SupportedApiProfile("gles2", MinVersion = "2.0")]
     [NativeFunction("opengl", EntryPoint = "glCoverStrokePathInstancedNV")]
     void CoverStrokePathInstancedNV(
-        [NativeTypeName("GLsizei")] int numPaths,
+        [NativeTypeName("GLsizei")] uint numPaths,
         [NativeTypeName("GLenum")] uint pathNameType,
         [NativeTypeName("const void *")] Ref paths,
         [NativeTypeName("GLuint")] uint pathBase,
@@ -32350,7 +32350,7 @@ public unsafe partial interface IGL
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glCreateBuffers")]
     void CreateBuffers(
-        [NativeTypeName("GLsizei")] int n,
+        [NativeTypeName("GLsizei")] uint n,
         [NativeTypeName("GLuint *")] Ref<uint> buffers
     );
 
@@ -32358,7 +32358,7 @@ public unsafe partial interface IGL
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glCreateCommandListsNV")]
     void CreateCommandListsNV(
-        [NativeTypeName("GLsizei")] int n,
+        [NativeTypeName("GLsizei")] uint n,
         [NativeTypeName("GLuint *")] Ref<uint> lists
     );
 
@@ -32366,7 +32366,7 @@ public unsafe partial interface IGL
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glCreateFramebuffers")]
     void CreateFramebuffers(
-        [NativeTypeName("GLsizei")] int n,
+        [NativeTypeName("GLsizei")] uint n,
         [NativeTypeName("GLuint *")] Ref<uint> framebuffers
     );
 
@@ -32374,7 +32374,7 @@ public unsafe partial interface IGL
     [SupportedApiProfile("gles2", MinVersion = "2.0")]
     [NativeFunction("opengl", EntryPoint = "glCreateMemoryObjectsEXT")]
     void CreateMemoryObjectsExt(
-        [NativeTypeName("GLsizei")] int n,
+        [NativeTypeName("GLsizei")] uint n,
         [NativeTypeName("GLuint *")] Ref<uint> memoryObjects
     );
 
@@ -32397,13 +32397,13 @@ public unsafe partial interface IGL
     [return: NativeTypeName("GLhandleARB")]
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glCreateProgramObjectARB")]
-    Ptr CreateProgramObjectArb();
+    uint CreateProgramObjectArb();
 
     [SupportedApiProfile("glcore", MinVersion = "3.2")]
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glCreateProgramPipelines")]
     void CreateProgramPipelines(
-        [NativeTypeName("GLsizei")] int n,
+        [NativeTypeName("GLsizei")] uint n,
         [NativeTypeName("GLuint *")] Ref<uint> pipelines
     );
 
@@ -32417,7 +32417,7 @@ public unsafe partial interface IGL
     [NativeFunction("opengl", EntryPoint = "glCreateQueries")]
     void CreateQueries(
         [NativeTypeName("GLenum")] uint target,
-        [NativeTypeName("GLsizei")] int n,
+        [NativeTypeName("GLsizei")] uint n,
         [NativeTypeName("GLuint *")] Ref<uint> ids
     );
 
@@ -32425,7 +32425,7 @@ public unsafe partial interface IGL
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glCreateRenderbuffers")]
     void CreateRenderbuffers(
-        [NativeTypeName("GLsizei")] int n,
+        [NativeTypeName("GLsizei")] uint n,
         [NativeTypeName("GLuint *")] Ref<uint> renderbuffers
     );
 
@@ -32433,7 +32433,7 @@ public unsafe partial interface IGL
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glCreateSamplers")]
     void CreateSamplers(
-        [NativeTypeName("GLsizei")] int n,
+        [NativeTypeName("GLsizei")] uint n,
         [NativeTypeName("GLuint *")] Ref<uint> samplers
     );
 
@@ -32441,7 +32441,7 @@ public unsafe partial interface IGL
     [SupportedApiProfile("gles2", MinVersion = "2.0")]
     [NativeFunction("opengl", EntryPoint = "glCreateSemaphoresNV")]
     void CreateSemaphoresNV(
-        [NativeTypeName("GLsizei")] int n,
+        [NativeTypeName("GLsizei")] uint n,
         [NativeTypeName("GLuint *")] Ref<uint> semaphores
     );
 
@@ -32455,7 +32455,7 @@ public unsafe partial interface IGL
     [return: NativeTypeName("GLhandleARB")]
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glCreateShaderObjectARB")]
-    Ptr CreateShaderObjectArb([NativeTypeName("GLenum")] uint shaderType);
+    uint CreateShaderObjectArb([NativeTypeName("GLenum")] uint shaderType);
 
     [return: NativeTypeName("GLuint")]
     [SupportedApiProfile("glcore", MinVersion = "3.2")]
@@ -32472,7 +32472,7 @@ public unsafe partial interface IGL
     [NativeFunction("opengl", EntryPoint = "glCreateShaderProgramv")]
     uint CreateShaderProgram(
         [NativeTypeName("GLenum")] uint type,
-        [NativeTypeName("GLsizei")] int count,
+        [NativeTypeName("GLsizei")] uint count,
         [NativeTypeName("const GLchar *const *")] Ref2D<sbyte> strings
     );
 
@@ -32481,7 +32481,7 @@ public unsafe partial interface IGL
     [NativeFunction("opengl", EntryPoint = "glCreateShaderProgramvEXT")]
     uint CreateShaderProgramvExt(
         [NativeTypeName("GLenum")] uint type,
-        [NativeTypeName("GLsizei")] int count,
+        [NativeTypeName("GLsizei")] uint count,
         [NativeTypeName("const GLchar *const *")] Ref2D<sbyte> strings
     );
 
@@ -32489,7 +32489,7 @@ public unsafe partial interface IGL
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glCreateStatesNV")]
     void CreateStatesNV(
-        [NativeTypeName("GLsizei")] int n,
+        [NativeTypeName("GLsizei")] uint n,
         [NativeTypeName("GLuint *")] Ref<uint> states
     );
 
@@ -32508,7 +32508,7 @@ public unsafe partial interface IGL
     [NativeFunction("opengl", EntryPoint = "glCreateTextures")]
     void CreateTextures(
         [NativeTypeName("GLenum")] uint target,
-        [NativeTypeName("GLsizei")] int n,
+        [NativeTypeName("GLsizei")] uint n,
         [NativeTypeName("GLuint *")] Ref<uint> textures
     );
 
@@ -32516,7 +32516,7 @@ public unsafe partial interface IGL
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glCreateTransformFeedbacks")]
     void CreateTransformFeedbacks(
-        [NativeTypeName("GLsizei")] int n,
+        [NativeTypeName("GLsizei")] uint n,
         [NativeTypeName("GLuint *")] Ref<uint> ids
     );
 
@@ -32524,7 +32524,7 @@ public unsafe partial interface IGL
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glCreateVertexArrays")]
     void CreateVertexArrays(
-        [NativeTypeName("GLsizei")] int n,
+        [NativeTypeName("GLsizei")] uint n,
         [NativeTypeName("GLuint *")] Ref<uint> arrays
     );
 
@@ -32562,7 +32562,7 @@ public unsafe partial interface IGL
     [NativeFunction("opengl", EntryPoint = "glDebugMessageCallback")]
     void DebugMessageCallback(
         [NativeTypeName("GLDEBUGPROC")]
-            delegate* unmanaged<uint, uint, uint, uint, int, sbyte*, void*, void> callback,
+            delegate* unmanaged<uint, uint, uint, uint, uint, sbyte*, void*, void> callback,
         [NativeTypeName("const void *")] Ref userParam
     );
 
@@ -32570,7 +32570,7 @@ public unsafe partial interface IGL
     [NativeFunction("opengl", EntryPoint = "glDebugMessageCallbackAMD")]
     void DebugMessageCallbackAmd(
         [NativeTypeName("GLDEBUGPROCAMD")]
-            delegate* unmanaged<uint, uint, uint, int, sbyte*, void*, void> callback,
+            delegate* unmanaged<uint, uint, uint, uint, sbyte*, void*, void> callback,
         Ref userParam
     );
 
@@ -32579,7 +32579,7 @@ public unsafe partial interface IGL
     [NativeFunction("opengl", EntryPoint = "glDebugMessageCallbackARB")]
     void DebugMessageCallbackArb(
         [NativeTypeName("GLDEBUGPROCARB")]
-            delegate* unmanaged<uint, uint, uint, uint, int, sbyte*, void*, void> callback,
+            delegate* unmanaged<uint, uint, uint, uint, uint, sbyte*, void*, void> callback,
         [NativeTypeName("const void *")] Ref userParam
     );
 
@@ -32587,7 +32587,7 @@ public unsafe partial interface IGL
     [NativeFunction("opengl", EntryPoint = "glDebugMessageCallbackKHR")]
     void DebugMessageCallbackKhr(
         [NativeTypeName("GLDEBUGPROCKHR")]
-            delegate* unmanaged<uint, uint, uint, uint, int, sbyte*, void*, void> callback,
+            delegate* unmanaged<uint, uint, uint, uint, uint, sbyte*, void*, void> callback,
         [NativeTypeName("const void *")] Ref userParam
     );
 
@@ -32598,9 +32598,9 @@ public unsafe partial interface IGL
         [NativeTypeName("GLenum")] uint source,
         [NativeTypeName("GLenum")] uint type,
         [NativeTypeName("GLenum")] uint severity,
-        [NativeTypeName("GLsizei")] int count,
+        [NativeTypeName("GLsizei")] uint count,
         [NativeTypeName("const GLuint *")] Ref<uint> ids,
-        [NativeTypeName("GLboolean")] byte enabled
+        [NativeTypeName("GLboolean")] uint enabled
     );
 
     [SupportedApiProfile("glcore", MinVersion = "3.2")]
@@ -32610,9 +32610,9 @@ public unsafe partial interface IGL
         [NativeTypeName("GLenum")] uint source,
         [NativeTypeName("GLenum")] uint type,
         [NativeTypeName("GLenum")] uint severity,
-        [NativeTypeName("GLsizei")] int count,
+        [NativeTypeName("GLsizei")] uint count,
         [NativeTypeName("const GLuint *")] Ref<uint> ids,
-        [NativeTypeName("GLboolean")] byte enabled
+        [NativeTypeName("GLboolean")] uint enabled
     );
 
     [SupportedApiProfile("gles2", MinVersion = "2.0")]
@@ -32621,9 +32621,9 @@ public unsafe partial interface IGL
         [NativeTypeName("GLenum")] uint source,
         [NativeTypeName("GLenum")] uint type,
         [NativeTypeName("GLenum")] uint severity,
-        [NativeTypeName("GLsizei")] int count,
+        [NativeTypeName("GLsizei")] uint count,
         [NativeTypeName("const GLuint *")] Ref<uint> ids,
-        [NativeTypeName("GLboolean")] byte enabled
+        [NativeTypeName("GLboolean")] uint enabled
     );
 
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
@@ -32631,9 +32631,9 @@ public unsafe partial interface IGL
     void DebugMessageEnableAmd(
         [NativeTypeName("GLenum")] uint category,
         [NativeTypeName("GLenum")] uint severity,
-        [NativeTypeName("GLsizei")] int count,
+        [NativeTypeName("GLsizei")] uint count,
         [NativeTypeName("const GLuint *")] Ref<uint> ids,
-        [NativeTypeName("GLboolean")] byte enabled
+        [NativeTypeName("GLboolean")] uint enabled
     );
 
     [SupportedApiProfile("glcore", MinVersion = "3.2")]
@@ -32644,7 +32644,7 @@ public unsafe partial interface IGL
         [NativeTypeName("GLenum")] uint type,
         [NativeTypeName("GLuint")] uint id,
         [NativeTypeName("GLenum")] uint severity,
-        [NativeTypeName("GLsizei")] int length,
+        [NativeTypeName("GLsizei")] uint length,
         [NativeTypeName("const GLchar *")] Ref<sbyte> buf
     );
 
@@ -32654,7 +32654,7 @@ public unsafe partial interface IGL
         [NativeTypeName("GLenum")] uint category,
         [NativeTypeName("GLenum")] uint severity,
         [NativeTypeName("GLuint")] uint id,
-        [NativeTypeName("GLsizei")] int length,
+        [NativeTypeName("GLsizei")] uint length,
         [NativeTypeName("const GLchar *")] Ref<sbyte> buf
     );
 
@@ -32666,7 +32666,7 @@ public unsafe partial interface IGL
         [NativeTypeName("GLenum")] uint type,
         [NativeTypeName("GLuint")] uint id,
         [NativeTypeName("GLenum")] uint severity,
-        [NativeTypeName("GLsizei")] int length,
+        [NativeTypeName("GLsizei")] uint length,
         [NativeTypeName("const GLchar *")] Ref<sbyte> buf
     );
 
@@ -32677,7 +32677,7 @@ public unsafe partial interface IGL
         [NativeTypeName("GLenum")] uint type,
         [NativeTypeName("GLuint")] uint id,
         [NativeTypeName("GLenum")] uint severity,
-        [NativeTypeName("GLsizei")] int length,
+        [NativeTypeName("GLsizei")] uint length,
         [NativeTypeName("const GLchar *")] Ref<sbyte> buf
     );
 
@@ -32727,7 +32727,7 @@ public unsafe partial interface IGL
     [NativeFunction("opengl", EntryPoint = "glDeleteAsyncMarkersSGIX")]
     void DeleteAsyncMarkersSgix(
         [NativeTypeName("GLuint")] uint marker,
-        [NativeTypeName("GLsizei")] int range
+        [NativeTypeName("GLsizei")] uint range
     );
 
     [SupportedApiProfile("glcore", MinVersion = "3.2")]
@@ -32736,14 +32736,14 @@ public unsafe partial interface IGL
     [SupportedApiProfile("gles2", MinVersion = "2.0")]
     [NativeFunction("opengl", EntryPoint = "glDeleteBuffers")]
     void DeleteBuffers(
-        [NativeTypeName("GLsizei")] int n,
+        [NativeTypeName("GLsizei")] uint n,
         [NativeTypeName("const GLuint *")] Ref<uint> buffers
     );
 
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glDeleteBuffersARB")]
     void DeleteBuffersArb(
-        [NativeTypeName("GLsizei")] int n,
+        [NativeTypeName("GLsizei")] uint n,
         [NativeTypeName("const GLuint *")] Ref<uint> buffers
     );
 
@@ -32751,14 +32751,14 @@ public unsafe partial interface IGL
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glDeleteCommandListsNV")]
     void DeleteCommandListsNV(
-        [NativeTypeName("GLsizei")] int n,
+        [NativeTypeName("GLsizei")] uint n,
         [NativeTypeName("const GLuint *")] Ref<uint> lists
     );
 
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glDeleteFencesAPPLE")]
     void DeleteFencesApple(
-        [NativeTypeName("GLsizei")] int n,
+        [NativeTypeName("GLsizei")] uint n,
         [NativeTypeName("const GLuint *")] Ref<uint> fences
     );
 
@@ -32767,7 +32767,7 @@ public unsafe partial interface IGL
     [SupportedApiProfile("gles2", MinVersion = "2.0")]
     [NativeFunction("opengl", EntryPoint = "glDeleteFencesNV")]
     void DeleteFencesNV(
-        [NativeTypeName("GLsizei")] int n,
+        [NativeTypeName("GLsizei")] uint n,
         [NativeTypeName("const GLuint *")] Ref<uint> fences
     );
 
@@ -32780,33 +32780,33 @@ public unsafe partial interface IGL
     [SupportedApiProfile("gles2", MinVersion = "2.0")]
     [NativeFunction("opengl", EntryPoint = "glDeleteFramebuffers")]
     void DeleteFramebuffers(
-        [NativeTypeName("GLsizei")] int n,
+        [NativeTypeName("GLsizei")] uint n,
         [NativeTypeName("const GLuint *")] Ref<uint> framebuffers
     );
 
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glDeleteFramebuffersEXT")]
     void DeleteFramebuffersExt(
-        [NativeTypeName("GLsizei")] int n,
+        [NativeTypeName("GLsizei")] uint n,
         [NativeTypeName("const GLuint *")] Ref<uint> framebuffers
     );
 
     [SupportedApiProfile("gles1", MaxVersion = "2.0")]
     [NativeFunction("opengl", EntryPoint = "glDeleteFramebuffersOES")]
     void DeleteFramebuffersOes(
-        [NativeTypeName("GLsizei")] int n,
+        [NativeTypeName("GLsizei")] uint n,
         [NativeTypeName("const GLuint *")] Ref<uint> framebuffers
     );
 
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glDeleteLists")]
-    void DeleteLists([NativeTypeName("GLuint")] uint list, [NativeTypeName("GLsizei")] int range);
+    void DeleteLists([NativeTypeName("GLuint")] uint list, [NativeTypeName("GLsizei")] uint range);
 
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [SupportedApiProfile("gles2", MinVersion = "2.0")]
     [NativeFunction("opengl", EntryPoint = "glDeleteMemoryObjectsEXT")]
     void DeleteMemoryObjectsExt(
-        [NativeTypeName("GLsizei")] int n,
+        [NativeTypeName("GLsizei")] uint n,
         [NativeTypeName("const GLuint *")] Ref<uint> memoryObjects
     );
 
@@ -32828,12 +32828,12 @@ public unsafe partial interface IGL
 
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glDeleteObjectARB")]
-    void DeleteObjectArb([NativeTypeName("GLhandleARB")] Ref obj);
+    void DeleteObjectArb([NativeTypeName("GLhandleARB")] uint obj);
 
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glDeleteOcclusionQueriesNV")]
     void DeleteOcclusionQueriesNV(
-        [NativeTypeName("GLsizei")] int n,
+        [NativeTypeName("GLsizei")] uint n,
         [NativeTypeName("const GLuint *")] Ref<uint> ids
     );
 
@@ -32841,14 +32841,17 @@ public unsafe partial interface IGL
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [SupportedApiProfile("gles2", MinVersion = "2.0")]
     [NativeFunction("opengl", EntryPoint = "glDeletePathsNV")]
-    void DeletePathsNV([NativeTypeName("GLuint")] uint path, [NativeTypeName("GLsizei")] int range);
+    void DeletePathsNV(
+        [NativeTypeName("GLuint")] uint path,
+        [NativeTypeName("GLsizei")] uint range
+    );
 
     [SupportedApiProfile("glcore", MinVersion = "3.2")]
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [SupportedApiProfile("gles2", MinVersion = "2.0")]
     [NativeFunction("opengl", EntryPoint = "glDeletePerfMonitorsAMD")]
     void DeletePerfMonitorsAmd(
-        [NativeTypeName("GLsizei")] int n,
+        [NativeTypeName("GLsizei")] uint n,
         [NativeTypeName("GLuint *")] Ref<uint> monitors
     );
 
@@ -32868,28 +32871,28 @@ public unsafe partial interface IGL
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glDeleteProgramPipelines")]
     void DeleteProgramPipelines(
-        [NativeTypeName("GLsizei")] int n,
+        [NativeTypeName("GLsizei")] uint n,
         [NativeTypeName("const GLuint *")] Ref<uint> pipelines
     );
 
     [SupportedApiProfile("gles2", MinVersion = "2.0")]
     [NativeFunction("opengl", EntryPoint = "glDeleteProgramPipelinesEXT")]
     void DeleteProgramPipelinesExt(
-        [NativeTypeName("GLsizei")] int n,
+        [NativeTypeName("GLsizei")] uint n,
         [NativeTypeName("const GLuint *")] Ref<uint> pipelines
     );
 
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glDeleteProgramsARB")]
     void DeleteProgramsArb(
-        [NativeTypeName("GLsizei")] int n,
+        [NativeTypeName("GLsizei")] uint n,
         [NativeTypeName("const GLuint *")] Ref<uint> programs
     );
 
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glDeleteProgramsNV")]
     void DeleteProgramsNV(
-        [NativeTypeName("GLsizei")] int n,
+        [NativeTypeName("GLsizei")] uint n,
         [NativeTypeName("const GLuint *")] Ref<uint> programs
     );
 
@@ -32897,28 +32900,28 @@ public unsafe partial interface IGL
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glDeleteQueries")]
     void DeleteQueries(
-        [NativeTypeName("GLsizei")] int n,
+        [NativeTypeName("GLsizei")] uint n,
         [NativeTypeName("const GLuint *")] Ref<uint> ids
     );
 
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glDeleteQueriesARB")]
     void DeleteQueriesArb(
-        [NativeTypeName("GLsizei")] int n,
+        [NativeTypeName("GLsizei")] uint n,
         [NativeTypeName("const GLuint *")] Ref<uint> ids
     );
 
     [SupportedApiProfile("gles2", MinVersion = "2.0")]
     [NativeFunction("opengl", EntryPoint = "glDeleteQueriesEXT")]
     void DeleteQueriesExt(
-        [NativeTypeName("GLsizei")] int n,
+        [NativeTypeName("GLsizei")] uint n,
         [NativeTypeName("const GLuint *")] Ref<uint> ids
     );
 
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glDeleteQueryResourceTagNV")]
     void DeleteQueryResourceTagNV(
-        [NativeTypeName("GLsizei")] int n,
+        [NativeTypeName("GLsizei")] uint n,
         [NativeTypeName("const GLint *")] Ref<int> tagIds
     );
 
@@ -32927,21 +32930,21 @@ public unsafe partial interface IGL
     [SupportedApiProfile("gles2", MinVersion = "2.0")]
     [NativeFunction("opengl", EntryPoint = "glDeleteRenderbuffers")]
     void DeleteRenderbuffers(
-        [NativeTypeName("GLsizei")] int n,
+        [NativeTypeName("GLsizei")] uint n,
         [NativeTypeName("const GLuint *")] Ref<uint> renderbuffers
     );
 
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glDeleteRenderbuffersEXT")]
     void DeleteRenderbuffersExt(
-        [NativeTypeName("GLsizei")] int n,
+        [NativeTypeName("GLsizei")] uint n,
         [NativeTypeName("const GLuint *")] Ref<uint> renderbuffers
     );
 
     [SupportedApiProfile("gles1", MaxVersion = "2.0")]
     [NativeFunction("opengl", EntryPoint = "glDeleteRenderbuffersOES")]
     void DeleteRenderbuffersOes(
-        [NativeTypeName("GLsizei")] int n,
+        [NativeTypeName("GLsizei")] uint n,
         [NativeTypeName("const GLuint *")] Ref<uint> renderbuffers
     );
 
@@ -32950,7 +32953,7 @@ public unsafe partial interface IGL
     [SupportedApiProfile("gles2", MinVersion = "2.0")]
     [NativeFunction("opengl", EntryPoint = "glDeleteSamplers")]
     void DeleteSamplers(
-        [NativeTypeName("GLsizei")] int count,
+        [NativeTypeName("GLsizei")] uint count,
         [NativeTypeName("const GLuint *")] Ref<uint> samplers
     );
 
@@ -32958,7 +32961,7 @@ public unsafe partial interface IGL
     [SupportedApiProfile("gles2", MinVersion = "2.0")]
     [NativeFunction("opengl", EntryPoint = "glDeleteSemaphoresEXT")]
     void DeleteSemaphoresExt(
-        [NativeTypeName("GLsizei")] int n,
+        [NativeTypeName("GLsizei")] uint n,
         [NativeTypeName("const GLuint *")] Ref<uint> semaphores
     );
 
@@ -32972,7 +32975,7 @@ public unsafe partial interface IGL
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glDeleteStatesNV")]
     void DeleteStatesNV(
-        [NativeTypeName("GLsizei")] int n,
+        [NativeTypeName("GLsizei")] uint n,
         [NativeTypeName("const GLuint *")] Ref<uint> states
     );
 
@@ -32992,14 +32995,14 @@ public unsafe partial interface IGL
     [SupportedApiProfile("gles2", MinVersion = "2.0")]
     [NativeFunction("opengl", EntryPoint = "glDeleteTextures")]
     void DeleteTextures(
-        [NativeTypeName("GLsizei")] int n,
+        [NativeTypeName("GLsizei")] uint n,
         [NativeTypeName("const GLuint *")] Ref<uint> textures
     );
 
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glDeleteTexturesEXT")]
     void DeleteTexturesExt(
-        [NativeTypeName("GLsizei")] int n,
+        [NativeTypeName("GLsizei")] uint n,
         [NativeTypeName("const GLuint *")] Ref<uint> textures
     );
 
@@ -33007,14 +33010,14 @@ public unsafe partial interface IGL
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glDeleteTransformFeedbacks")]
     void DeleteTransformFeedbacks(
-        [NativeTypeName("GLsizei")] int n,
+        [NativeTypeName("GLsizei")] uint n,
         [NativeTypeName("const GLuint *")] Ref<uint> ids
     );
 
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glDeleteTransformFeedbacksNV")]
     void DeleteTransformFeedbacksNV(
-        [NativeTypeName("GLsizei")] int n,
+        [NativeTypeName("GLsizei")] uint n,
         [NativeTypeName("const GLuint *")] Ref<uint> ids
     );
 
@@ -33022,14 +33025,14 @@ public unsafe partial interface IGL
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glDeleteVertexArrays")]
     void DeleteVertexArrays(
-        [NativeTypeName("GLsizei")] int n,
+        [NativeTypeName("GLsizei")] uint n,
         [NativeTypeName("const GLuint *")] Ref<uint> arrays
     );
 
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glDeleteVertexArraysAPPLE")]
     void DeleteVertexArraysApple(
-        [NativeTypeName("GLsizei")] int n,
+        [NativeTypeName("GLsizei")] uint n,
         [NativeTypeName("const GLuint *")] Ref<uint> arrays
     );
 
@@ -33037,7 +33040,7 @@ public unsafe partial interface IGL
     [SupportedApiProfile("gles2", MinVersion = "2.0")]
     [NativeFunction("opengl", EntryPoint = "glDeleteVertexArraysOES")]
     void DeleteVertexArraysOes(
-        [NativeTypeName("GLsizei")] int n,
+        [NativeTypeName("GLsizei")] uint n,
         [NativeTypeName("const GLuint *")] Ref<uint> arrays
     );
 
@@ -33072,7 +33075,7 @@ public unsafe partial interface IGL
     [SupportedApiProfile("gles1", MaxVersion = "2.0")]
     [SupportedApiProfile("gles2", MinVersion = "2.0")]
     [NativeFunction("opengl", EntryPoint = "glDepthMask")]
-    void DepthMask([NativeTypeName("GLboolean")] byte flag);
+    void DepthMask([NativeTypeName("GLboolean")] uint flag);
 
     [SupportedApiProfile("glcore", MinVersion = "3.2")]
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
@@ -33084,7 +33087,7 @@ public unsafe partial interface IGL
     [NativeFunction("opengl", EntryPoint = "glDepthRangeArraydvNV")]
     void DepthRangeArraydvNV(
         [NativeTypeName("GLuint")] uint first,
-        [NativeTypeName("GLsizei")] int count,
+        [NativeTypeName("GLsizei")] uint count,
         [NativeTypeName("const GLdouble *")] Ref<double> v
     );
 
@@ -33092,7 +33095,7 @@ public unsafe partial interface IGL
     [NativeFunction("opengl", EntryPoint = "glDepthRangeArrayfvNV")]
     void DepthRangeArrayfvNV(
         [NativeTypeName("GLuint")] uint first,
-        [NativeTypeName("GLsizei")] int count,
+        [NativeTypeName("GLsizei")] uint count,
         [NativeTypeName("const GLfloat *")] Ref<float> v
     );
 
@@ -33100,7 +33103,7 @@ public unsafe partial interface IGL
     [NativeFunction("opengl", EntryPoint = "glDepthRangeArrayfvOES")]
     void DepthRangeArrayfvOes(
         [NativeTypeName("GLuint")] uint first,
-        [NativeTypeName("GLsizei")] int count,
+        [NativeTypeName("GLsizei")] uint count,
         [NativeTypeName("const GLfloat *")] Ref<float> v
     );
 
@@ -33109,7 +33112,7 @@ public unsafe partial interface IGL
     [NativeFunction("opengl", EntryPoint = "glDepthRangeArrayv")]
     void DepthRangeArray(
         [NativeTypeName("GLuint")] uint first,
-        [NativeTypeName("GLsizei")] int count,
+        [NativeTypeName("GLsizei")] uint count,
         [NativeTypeName("const GLdouble *")] Ref<double> v
     );
 
@@ -33179,8 +33182,8 @@ public unsafe partial interface IGL
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glDetachObjectARB")]
     void DetachObjectArb(
-        [NativeTypeName("GLhandleARB")] Ref containerObj,
-        [NativeTypeName("GLhandleARB")] Ref attachedObj
+        [NativeTypeName("GLhandleARB")] uint containerObj,
+        [NativeTypeName("GLhandleARB")] uint attachedObj
     );
 
     [SupportedApiProfile("glcore", MinVersion = "3.2")]
@@ -33196,7 +33199,7 @@ public unsafe partial interface IGL
     [NativeFunction("opengl", EntryPoint = "glDetailTexFuncSGIS")]
     void DetailTexFuncSgis(
         [NativeTypeName("GLenum")] uint target,
-        [NativeTypeName("GLsizei")] int n,
+        [NativeTypeName("GLsizei")] uint n,
         [NativeTypeName("const GLfloat *")] Ref<float> points
     );
 
@@ -33308,7 +33311,7 @@ public unsafe partial interface IGL
     [NativeFunction("opengl", EntryPoint = "glDiscardFramebufferEXT")]
     void DiscardFramebufferExt(
         [NativeTypeName("GLenum")] uint target,
-        [NativeTypeName("GLsizei")] int numAttachments,
+        [NativeTypeName("GLsizei")] uint numAttachments,
         [NativeTypeName("const GLenum *")] Ref<uint> attachments
     );
 
@@ -33346,7 +33349,7 @@ public unsafe partial interface IGL
     void DrawArrays(
         [NativeTypeName("GLenum")] uint mode,
         [NativeTypeName("GLint")] int first,
-        [NativeTypeName("GLsizei")] int count
+        [NativeTypeName("GLsizei")] uint count
     );
 
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
@@ -33354,7 +33357,7 @@ public unsafe partial interface IGL
     void DrawArraysExt(
         [NativeTypeName("GLenum")] uint mode,
         [NativeTypeName("GLint")] int first,
-        [NativeTypeName("GLsizei")] int count
+        [NativeTypeName("GLsizei")] uint count
     );
 
     [SupportedApiProfile("glcore", MinVersion = "3.2")]
@@ -33371,8 +33374,8 @@ public unsafe partial interface IGL
     void DrawArraysInstanced(
         [NativeTypeName("GLenum")] uint mode,
         [NativeTypeName("GLint")] int first,
-        [NativeTypeName("GLsizei")] int count,
-        [NativeTypeName("GLsizei")] int instancecount
+        [NativeTypeName("GLsizei")] uint count,
+        [NativeTypeName("GLsizei")] uint instancecount
     );
 
     [SupportedApiProfile("gles2", MinVersion = "2.0")]
@@ -33380,8 +33383,8 @@ public unsafe partial interface IGL
     void DrawArraysInstancedAngle(
         [NativeTypeName("GLenum")] uint mode,
         [NativeTypeName("GLint")] int first,
-        [NativeTypeName("GLsizei")] int count,
-        [NativeTypeName("GLsizei")] int primcount
+        [NativeTypeName("GLsizei")] uint count,
+        [NativeTypeName("GLsizei")] uint primcount
     );
 
     [SupportedApiProfile("glcore", MinVersion = "3.2")]
@@ -33390,8 +33393,8 @@ public unsafe partial interface IGL
     void DrawArraysInstancedArb(
         [NativeTypeName("GLenum")] uint mode,
         [NativeTypeName("GLint")] int first,
-        [NativeTypeName("GLsizei")] int count,
-        [NativeTypeName("GLsizei")] int primcount
+        [NativeTypeName("GLsizei")] uint count,
+        [NativeTypeName("GLsizei")] uint primcount
     );
 
     [SupportedApiProfile("glcore", MinVersion = "3.2")]
@@ -33400,8 +33403,8 @@ public unsafe partial interface IGL
     void DrawArraysInstancedBaseInstance(
         [NativeTypeName("GLenum")] uint mode,
         [NativeTypeName("GLint")] int first,
-        [NativeTypeName("GLsizei")] int count,
-        [NativeTypeName("GLsizei")] int instancecount,
+        [NativeTypeName("GLsizei")] uint count,
+        [NativeTypeName("GLsizei")] uint instancecount,
         [NativeTypeName("GLuint")] uint baseinstance
     );
 
@@ -33410,8 +33413,8 @@ public unsafe partial interface IGL
     void DrawArraysInstancedBaseInstanceExt(
         [NativeTypeName("GLenum")] uint mode,
         [NativeTypeName("GLint")] int first,
-        [NativeTypeName("GLsizei")] int count,
-        [NativeTypeName("GLsizei")] int instancecount,
+        [NativeTypeName("GLsizei")] uint count,
+        [NativeTypeName("GLsizei")] uint instancecount,
         [NativeTypeName("GLuint")] uint baseinstance
     );
 
@@ -33422,8 +33425,8 @@ public unsafe partial interface IGL
     void DrawArraysInstancedExt(
         [NativeTypeName("GLenum")] uint mode,
         [NativeTypeName("GLint")] int start,
-        [NativeTypeName("GLsizei")] int count,
-        [NativeTypeName("GLsizei")] int primcount
+        [NativeTypeName("GLsizei")] uint count,
+        [NativeTypeName("GLsizei")] uint primcount
     );
 
     [SupportedApiProfile("gles2", MinVersion = "2.0")]
@@ -33431,8 +33434,8 @@ public unsafe partial interface IGL
     void DrawArraysInstancedNV(
         [NativeTypeName("GLenum")] uint mode,
         [NativeTypeName("GLint")] int first,
-        [NativeTypeName("GLsizei")] int count,
-        [NativeTypeName("GLsizei")] int primcount
+        [NativeTypeName("GLsizei")] uint count,
+        [NativeTypeName("GLsizei")] uint primcount
     );
 
     [SupportedApiProfile("glcore", MinVersion = "3.2")]
@@ -33444,28 +33447,28 @@ public unsafe partial interface IGL
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glDrawBuffers")]
     void DrawBuffers(
-        [NativeTypeName("GLsizei")] int n,
+        [NativeTypeName("GLsizei")] uint n,
         [NativeTypeName("const GLenum *")] Ref<uint> bufs
     );
 
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glDrawBuffersARB")]
     void DrawBuffersArb(
-        [NativeTypeName("GLsizei")] int n,
+        [NativeTypeName("GLsizei")] uint n,
         [NativeTypeName("const GLenum *")] Ref<uint> bufs
     );
 
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glDrawBuffersATI")]
     void DrawBuffersAti(
-        [NativeTypeName("GLsizei")] int n,
+        [NativeTypeName("GLsizei")] uint n,
         [NativeTypeName("const GLenum *")] Ref<uint> bufs
     );
 
     [SupportedApiProfile("gles2", MinVersion = "2.0")]
     [NativeFunction("opengl", EntryPoint = "glDrawBuffersEXT")]
     void DrawBuffersExt(
-        [NativeTypeName("GLsizei")] int n,
+        [NativeTypeName("GLsizei")] uint n,
         [NativeTypeName("const GLenum *")] Ref<uint> bufs
     );
 
@@ -33480,7 +33483,7 @@ public unsafe partial interface IGL
     [SupportedApiProfile("gles2", MinVersion = "2.0")]
     [NativeFunction("opengl", EntryPoint = "glDrawBuffersNV")]
     void DrawBuffersNV(
-        [NativeTypeName("GLsizei")] int n,
+        [NativeTypeName("GLsizei")] uint n,
         [NativeTypeName("const GLenum *")] Ref<uint> bufs
     );
 
@@ -33490,7 +33493,7 @@ public unsafe partial interface IGL
     void DrawCommandsAddressNV(
         [NativeTypeName("GLenum")] uint primitiveMode,
         [NativeTypeName("const GLuint64 *")] Ref<ulong> indirects,
-        [NativeTypeName("const GLsizei *")] Ref<int> sizes,
+        [NativeTypeName("const GLsizei *")] Ref<uint> sizes,
         [NativeTypeName("GLuint")] uint count
     );
 
@@ -33501,7 +33504,7 @@ public unsafe partial interface IGL
         [NativeTypeName("GLenum")] uint primitiveMode,
         [NativeTypeName("GLuint")] uint buffer,
         [NativeTypeName("const GLintptr *")] Ref<nint> indirects,
-        [NativeTypeName("const GLsizei *")] Ref<int> sizes,
+        [NativeTypeName("const GLsizei *")] Ref<uint> sizes,
         [NativeTypeName("GLuint")] uint count
     );
 
@@ -33510,7 +33513,7 @@ public unsafe partial interface IGL
     [NativeFunction("opengl", EntryPoint = "glDrawCommandsStatesAddressNV")]
     void DrawCommandsStatesAddressNV(
         [NativeTypeName("const GLuint64 *")] Ref<ulong> indirects,
-        [NativeTypeName("const GLsizei *")] Ref<int> sizes,
+        [NativeTypeName("const GLsizei *")] Ref<uint> sizes,
         [NativeTypeName("const GLuint *")] Ref<uint> states,
         [NativeTypeName("const GLuint *")] Ref<uint> fbos,
         [NativeTypeName("GLuint")] uint count
@@ -33522,7 +33525,7 @@ public unsafe partial interface IGL
     void DrawCommandsStatesNV(
         [NativeTypeName("GLuint")] uint buffer,
         [NativeTypeName("const GLintptr *")] Ref<nint> indirects,
-        [NativeTypeName("const GLsizei *")] Ref<int> sizes,
+        [NativeTypeName("const GLsizei *")] Ref<uint> sizes,
         [NativeTypeName("const GLuint *")] Ref<uint> states,
         [NativeTypeName("const GLuint *")] Ref<uint> fbos,
         [NativeTypeName("GLuint")] uint count
@@ -33533,14 +33536,14 @@ public unsafe partial interface IGL
     void DrawElementArrayApple(
         [NativeTypeName("GLenum")] uint mode,
         [NativeTypeName("GLint")] int first,
-        [NativeTypeName("GLsizei")] int count
+        [NativeTypeName("GLsizei")] uint count
     );
 
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glDrawElementArrayATI")]
     void DrawElementArrayAti(
         [NativeTypeName("GLenum")] uint mode,
-        [NativeTypeName("GLsizei")] int count
+        [NativeTypeName("GLsizei")] uint count
     );
 
     [SupportedApiProfile("glcore", MinVersion = "3.2")]
@@ -33550,7 +33553,7 @@ public unsafe partial interface IGL
     [NativeFunction("opengl", EntryPoint = "glDrawElements")]
     void DrawElements(
         [NativeTypeName("GLenum")] uint mode,
-        [NativeTypeName("GLsizei")] int count,
+        [NativeTypeName("GLsizei")] uint count,
         [NativeTypeName("GLenum")] uint type,
         [NativeTypeName("const void *")] Ref indices
     );
@@ -33560,7 +33563,7 @@ public unsafe partial interface IGL
     [NativeFunction("opengl", EntryPoint = "glDrawElementsBaseVertex")]
     void DrawElementsBaseVertex(
         [NativeTypeName("GLenum")] uint mode,
-        [NativeTypeName("GLsizei")] int count,
+        [NativeTypeName("GLsizei")] uint count,
         [NativeTypeName("GLenum")] uint type,
         [NativeTypeName("const void *")] Ref indices,
         [NativeTypeName("GLint")] int basevertex
@@ -33570,7 +33573,7 @@ public unsafe partial interface IGL
     [NativeFunction("opengl", EntryPoint = "glDrawElementsBaseVertexEXT")]
     void DrawElementsBaseVertexExt(
         [NativeTypeName("GLenum")] uint mode,
-        [NativeTypeName("GLsizei")] int count,
+        [NativeTypeName("GLsizei")] uint count,
         [NativeTypeName("GLenum")] uint type,
         [NativeTypeName("const void *")] Ref indices,
         [NativeTypeName("GLint")] int basevertex
@@ -33580,7 +33583,7 @@ public unsafe partial interface IGL
     [NativeFunction("opengl", EntryPoint = "glDrawElementsBaseVertexOES")]
     void DrawElementsBaseVertexOes(
         [NativeTypeName("GLenum")] uint mode,
-        [NativeTypeName("GLsizei")] int count,
+        [NativeTypeName("GLsizei")] uint count,
         [NativeTypeName("GLenum")] uint type,
         [NativeTypeName("const void *")] Ref indices,
         [NativeTypeName("GLint")] int basevertex
@@ -33600,20 +33603,20 @@ public unsafe partial interface IGL
     [NativeFunction("opengl", EntryPoint = "glDrawElementsInstanced")]
     void DrawElementsInstanced(
         [NativeTypeName("GLenum")] uint mode,
-        [NativeTypeName("GLsizei")] int count,
+        [NativeTypeName("GLsizei")] uint count,
         [NativeTypeName("GLenum")] uint type,
         [NativeTypeName("const void *")] Ref indices,
-        [NativeTypeName("GLsizei")] int instancecount
+        [NativeTypeName("GLsizei")] uint instancecount
     );
 
     [SupportedApiProfile("gles2", MinVersion = "2.0")]
     [NativeFunction("opengl", EntryPoint = "glDrawElementsInstancedANGLE")]
     void DrawElementsInstancedAngle(
         [NativeTypeName("GLenum")] uint mode,
-        [NativeTypeName("GLsizei")] int count,
+        [NativeTypeName("GLsizei")] uint count,
         [NativeTypeName("GLenum")] uint type,
         [NativeTypeName("const void *")] Ref indices,
-        [NativeTypeName("GLsizei")] int primcount
+        [NativeTypeName("GLsizei")] uint primcount
     );
 
     [SupportedApiProfile("glcore", MinVersion = "3.2")]
@@ -33621,10 +33624,10 @@ public unsafe partial interface IGL
     [NativeFunction("opengl", EntryPoint = "glDrawElementsInstancedARB")]
     void DrawElementsInstancedArb(
         [NativeTypeName("GLenum")] uint mode,
-        [NativeTypeName("GLsizei")] int count,
+        [NativeTypeName("GLsizei")] uint count,
         [NativeTypeName("GLenum")] uint type,
         [NativeTypeName("const void *")] Ref indices,
-        [NativeTypeName("GLsizei")] int primcount
+        [NativeTypeName("GLsizei")] uint primcount
     );
 
     [SupportedApiProfile("glcore", MinVersion = "3.2")]
@@ -33632,10 +33635,10 @@ public unsafe partial interface IGL
     [NativeFunction("opengl", EntryPoint = "glDrawElementsInstancedBaseInstance")]
     void DrawElementsInstancedBaseInstance(
         [NativeTypeName("GLenum")] uint mode,
-        [NativeTypeName("GLsizei")] int count,
+        [NativeTypeName("GLsizei")] uint count,
         [NativeTypeName("GLenum")] uint type,
         [NativeTypeName("const void *")] Ref indices,
-        [NativeTypeName("GLsizei")] int instancecount,
+        [NativeTypeName("GLsizei")] uint instancecount,
         [NativeTypeName("GLuint")] uint baseinstance
     );
 
@@ -33643,10 +33646,10 @@ public unsafe partial interface IGL
     [NativeFunction("opengl", EntryPoint = "glDrawElementsInstancedBaseInstanceEXT")]
     void DrawElementsInstancedBaseInstanceExt(
         [NativeTypeName("GLenum")] uint mode,
-        [NativeTypeName("GLsizei")] int count,
+        [NativeTypeName("GLsizei")] uint count,
         [NativeTypeName("GLenum")] uint type,
         [NativeTypeName("const void *")] Ref indices,
-        [NativeTypeName("GLsizei")] int instancecount,
+        [NativeTypeName("GLsizei")] uint instancecount,
         [NativeTypeName("GLuint")] uint baseinstance
     );
 
@@ -33655,10 +33658,10 @@ public unsafe partial interface IGL
     [NativeFunction("opengl", EntryPoint = "glDrawElementsInstancedBaseVertex")]
     void DrawElementsInstancedBaseVertex(
         [NativeTypeName("GLenum")] uint mode,
-        [NativeTypeName("GLsizei")] int count,
+        [NativeTypeName("GLsizei")] uint count,
         [NativeTypeName("GLenum")] uint type,
         [NativeTypeName("const void *")] Ref indices,
-        [NativeTypeName("GLsizei")] int instancecount,
+        [NativeTypeName("GLsizei")] uint instancecount,
         [NativeTypeName("GLint")] int basevertex
     );
 
@@ -33667,10 +33670,10 @@ public unsafe partial interface IGL
     [NativeFunction("opengl", EntryPoint = "glDrawElementsInstancedBaseVertexBaseInstance")]
     void DrawElementsInstancedBaseVertexBaseInstance(
         [NativeTypeName("GLenum")] uint mode,
-        [NativeTypeName("GLsizei")] int count,
+        [NativeTypeName("GLsizei")] uint count,
         [NativeTypeName("GLenum")] uint type,
         [NativeTypeName("const void *")] Ref indices,
-        [NativeTypeName("GLsizei")] int instancecount,
+        [NativeTypeName("GLsizei")] uint instancecount,
         [NativeTypeName("GLint")] int basevertex,
         [NativeTypeName("GLuint")] uint baseinstance
     );
@@ -33679,10 +33682,10 @@ public unsafe partial interface IGL
     [NativeFunction("opengl", EntryPoint = "glDrawElementsInstancedBaseVertexBaseInstanceEXT")]
     void DrawElementsInstancedBaseVertexBaseInstanceExt(
         [NativeTypeName("GLenum")] uint mode,
-        [NativeTypeName("GLsizei")] int count,
+        [NativeTypeName("GLsizei")] uint count,
         [NativeTypeName("GLenum")] uint type,
         [NativeTypeName("const void *")] Ref indices,
-        [NativeTypeName("GLsizei")] int instancecount,
+        [NativeTypeName("GLsizei")] uint instancecount,
         [NativeTypeName("GLint")] int basevertex,
         [NativeTypeName("GLuint")] uint baseinstance
     );
@@ -33691,10 +33694,10 @@ public unsafe partial interface IGL
     [NativeFunction("opengl", EntryPoint = "glDrawElementsInstancedBaseVertexEXT")]
     void DrawElementsInstancedBaseVertexExt(
         [NativeTypeName("GLenum")] uint mode,
-        [NativeTypeName("GLsizei")] int count,
+        [NativeTypeName("GLsizei")] uint count,
         [NativeTypeName("GLenum")] uint type,
         [NativeTypeName("const void *")] Ref indices,
-        [NativeTypeName("GLsizei")] int instancecount,
+        [NativeTypeName("GLsizei")] uint instancecount,
         [NativeTypeName("GLint")] int basevertex
     );
 
@@ -33702,10 +33705,10 @@ public unsafe partial interface IGL
     [NativeFunction("opengl", EntryPoint = "glDrawElementsInstancedBaseVertexOES")]
     void DrawElementsInstancedBaseVertexOes(
         [NativeTypeName("GLenum")] uint mode,
-        [NativeTypeName("GLsizei")] int count,
+        [NativeTypeName("GLsizei")] uint count,
         [NativeTypeName("GLenum")] uint type,
         [NativeTypeName("const void *")] Ref indices,
-        [NativeTypeName("GLsizei")] int instancecount,
+        [NativeTypeName("GLsizei")] uint instancecount,
         [NativeTypeName("GLint")] int basevertex
     );
 
@@ -33715,20 +33718,20 @@ public unsafe partial interface IGL
     [NativeFunction("opengl", EntryPoint = "glDrawElementsInstancedEXT")]
     void DrawElementsInstancedExt(
         [NativeTypeName("GLenum")] uint mode,
-        [NativeTypeName("GLsizei")] int count,
+        [NativeTypeName("GLsizei")] uint count,
         [NativeTypeName("GLenum")] uint type,
         [NativeTypeName("const void *")] Ref indices,
-        [NativeTypeName("GLsizei")] int primcount
+        [NativeTypeName("GLsizei")] uint primcount
     );
 
     [SupportedApiProfile("gles2", MinVersion = "2.0")]
     [NativeFunction("opengl", EntryPoint = "glDrawElementsInstancedNV")]
     void DrawElementsInstancedNV(
         [NativeTypeName("GLenum")] uint mode,
-        [NativeTypeName("GLsizei")] int count,
+        [NativeTypeName("GLsizei")] uint count,
         [NativeTypeName("GLenum")] uint type,
         [NativeTypeName("const void *")] Ref indices,
-        [NativeTypeName("GLsizei")] int primcount
+        [NativeTypeName("GLsizei")] uint primcount
     );
 
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
@@ -33736,8 +33739,8 @@ public unsafe partial interface IGL
     void DrawMeshArraysSun(
         [NativeTypeName("GLenum")] uint mode,
         [NativeTypeName("GLint")] int first,
-        [NativeTypeName("GLsizei")] int count,
-        [NativeTypeName("GLsizei")] int width
+        [NativeTypeName("GLsizei")] uint count,
+        [NativeTypeName("GLsizei")] uint width
     );
 
     [SupportedApiProfile("glcore", MinVersion = "3.2")]
@@ -33758,8 +33761,8 @@ public unsafe partial interface IGL
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glDrawPixels")]
     void DrawPixels(
-        [NativeTypeName("GLsizei")] int width,
-        [NativeTypeName("GLsizei")] int height,
+        [NativeTypeName("GLsizei")] uint width,
+        [NativeTypeName("GLsizei")] uint height,
         [NativeTypeName("GLenum")] uint format,
         [NativeTypeName("GLenum")] uint type,
         [NativeTypeName("const void *")] Ref pixels
@@ -33772,7 +33775,7 @@ public unsafe partial interface IGL
         [NativeTypeName("GLuint")] uint start,
         [NativeTypeName("GLuint")] uint end,
         [NativeTypeName("GLint")] int first,
-        [NativeTypeName("GLsizei")] int count
+        [NativeTypeName("GLsizei")] uint count
     );
 
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
@@ -33781,7 +33784,7 @@ public unsafe partial interface IGL
         [NativeTypeName("GLenum")] uint mode,
         [NativeTypeName("GLuint")] uint start,
         [NativeTypeName("GLuint")] uint end,
-        [NativeTypeName("GLsizei")] int count
+        [NativeTypeName("GLsizei")] uint count
     );
 
     [SupportedApiProfile("glcore", MinVersion = "3.2")]
@@ -33791,7 +33794,7 @@ public unsafe partial interface IGL
         [NativeTypeName("GLenum")] uint mode,
         [NativeTypeName("GLuint")] uint start,
         [NativeTypeName("GLuint")] uint end,
-        [NativeTypeName("GLsizei")] int count,
+        [NativeTypeName("GLsizei")] uint count,
         [NativeTypeName("GLenum")] uint type,
         [NativeTypeName("const void *")] Ref indices
     );
@@ -33803,7 +33806,7 @@ public unsafe partial interface IGL
         [NativeTypeName("GLenum")] uint mode,
         [NativeTypeName("GLuint")] uint start,
         [NativeTypeName("GLuint")] uint end,
-        [NativeTypeName("GLsizei")] int count,
+        [NativeTypeName("GLsizei")] uint count,
         [NativeTypeName("GLenum")] uint type,
         [NativeTypeName("const void *")] Ref indices,
         [NativeTypeName("GLint")] int basevertex
@@ -33815,7 +33818,7 @@ public unsafe partial interface IGL
         [NativeTypeName("GLenum")] uint mode,
         [NativeTypeName("GLuint")] uint start,
         [NativeTypeName("GLuint")] uint end,
-        [NativeTypeName("GLsizei")] int count,
+        [NativeTypeName("GLsizei")] uint count,
         [NativeTypeName("GLenum")] uint type,
         [NativeTypeName("const void *")] Ref indices,
         [NativeTypeName("GLint")] int basevertex
@@ -33827,7 +33830,7 @@ public unsafe partial interface IGL
         [NativeTypeName("GLenum")] uint mode,
         [NativeTypeName("GLuint")] uint start,
         [NativeTypeName("GLuint")] uint end,
-        [NativeTypeName("GLsizei")] int count,
+        [NativeTypeName("GLsizei")] uint count,
         [NativeTypeName("GLenum")] uint type,
         [NativeTypeName("const void *")] Ref indices,
         [NativeTypeName("GLint")] int basevertex
@@ -33839,7 +33842,7 @@ public unsafe partial interface IGL
         [NativeTypeName("GLenum")] uint mode,
         [NativeTypeName("GLuint")] uint start,
         [NativeTypeName("GLuint")] uint end,
-        [NativeTypeName("GLsizei")] int count,
+        [NativeTypeName("GLsizei")] uint count,
         [NativeTypeName("GLenum")] uint type,
         [NativeTypeName("const void *")] Ref indices
     );
@@ -33937,7 +33940,7 @@ public unsafe partial interface IGL
     void DrawTransformFeedbackInstanced(
         [NativeTypeName("GLenum")] uint mode,
         [NativeTypeName("GLuint")] uint id,
-        [NativeTypeName("GLsizei")] int instancecount
+        [NativeTypeName("GLsizei")] uint instancecount
     );
 
     [SupportedApiProfile("gles2", MinVersion = "2.0")]
@@ -33945,7 +33948,7 @@ public unsafe partial interface IGL
     void DrawTransformFeedbackInstancedExt(
         [NativeTypeName("GLenum")] uint mode,
         [NativeTypeName("GLuint")] uint id,
-        [NativeTypeName("GLsizei")] int instancecount
+        [NativeTypeName("GLsizei")] uint instancecount
     );
 
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
@@ -33971,7 +33974,7 @@ public unsafe partial interface IGL
         [NativeTypeName("GLenum")] uint mode,
         [NativeTypeName("GLuint")] uint id,
         [NativeTypeName("GLuint")] uint stream,
-        [NativeTypeName("GLsizei")] int instancecount
+        [NativeTypeName("GLsizei")] uint instancecount
     );
 
     [SupportedApiProfile("glcore", MinVersion = "3.2")]
@@ -33994,39 +33997,39 @@ public unsafe partial interface IGL
 
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glEdgeFlag")]
-    void EdgeFlag([NativeTypeName("GLboolean")] byte flag);
+    void EdgeFlag([NativeTypeName("GLboolean")] uint flag);
 
     [SupportedApiProfile("glcore", MinVersion = "3.2")]
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glEdgeFlagFormatNV")]
-    void EdgeFlagFormatNV([NativeTypeName("GLsizei")] int stride);
+    void EdgeFlagFormatNV([NativeTypeName("GLsizei")] uint stride);
 
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glEdgeFlagPointer")]
     void EdgeFlagPointer(
-        [NativeTypeName("GLsizei")] int stride,
+        [NativeTypeName("GLsizei")] uint stride,
         [NativeTypeName("const void *")] Ref pointer
     );
 
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glEdgeFlagPointerEXT")]
     void EdgeFlagPointerExt(
-        [NativeTypeName("GLsizei")] int stride,
-        [NativeTypeName("GLsizei")] int count,
-        [NativeTypeName("const GLboolean *")] Ref<byte> pointer
+        [NativeTypeName("GLsizei")] uint stride,
+        [NativeTypeName("GLsizei")] uint count,
+        [NativeTypeName("const GLboolean *")] Ref<uint> pointer
     );
 
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glEdgeFlagPointerListIBM")]
     void EdgeFlagPointerListIbm(
         [NativeTypeName("GLint")] int stride,
-        [NativeTypeName("const GLboolean **")] Ref2D<byte> pointer,
+        [NativeTypeName("const GLboolean **")] Ref2D<uint> pointer,
         [NativeTypeName("GLint")] int ptrstride
     );
 
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glEdgeFlagv")]
-    void EdgeFlag([NativeTypeName("const GLboolean *")] Ref<byte> flag);
+    void EdgeFlag([NativeTypeName("const GLboolean *")] Ref<uint> flag);
 
     [SupportedApiProfile("gles1", MaxVersion = "2.0")]
     [SupportedApiProfile("gles2", MinVersion = "2.0")]
@@ -34442,9 +34445,9 @@ public unsafe partial interface IGL
         [NativeTypeName("GLint")] int xoffset,
         [NativeTypeName("GLint")] int yoffset,
         [NativeTypeName("GLint")] int zoffset,
-        [NativeTypeName("GLsizei")] int width,
-        [NativeTypeName("GLsizei")] int height,
-        [NativeTypeName("GLsizei")] int depth,
+        [NativeTypeName("GLsizei")] uint width,
+        [NativeTypeName("GLsizei")] uint height,
+        [NativeTypeName("GLsizei")] uint depth,
         [NativeTypeName("GLenum")] uint format,
         [NativeTypeName("GLenum")] uint type,
         Ref texels
@@ -34463,7 +34466,7 @@ public unsafe partial interface IGL
     [SupportedApiProfile("gles1", MaxVersion = "2.0")]
     [SupportedApiProfile("gles2", MinVersion = "2.0")]
     [NativeFunction("opengl", EntryPoint = "glExtIsProgramBinaryQCOM")]
-    byte ExtIsProgramBinaryQcom([NativeTypeName("GLuint")] uint program);
+    uint ExtIsProgramBinaryQcom([NativeTypeName("GLuint")] uint program);
 
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glExtractComponentEXT")]
@@ -34494,7 +34497,7 @@ public unsafe partial interface IGL
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glFeedbackBuffer")]
     void FeedbackBuffer(
-        [NativeTypeName("GLsizei")] int size,
+        [NativeTypeName("GLsizei")] uint size,
         [NativeTypeName("GLenum")] uint type,
         [NativeTypeName("GLfloat *")] Ref<float> buffer
     );
@@ -34502,7 +34505,7 @@ public unsafe partial interface IGL
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glFeedbackBufferxOES")]
     void FeedbackBufferxOes(
-        [NativeTypeName("GLsizei")] int n,
+        [NativeTypeName("GLsizei")] uint n,
         [NativeTypeName("GLenum")] uint type,
         [NativeTypeName("const GLfixed *")] Ref<int> buffer
     );
@@ -34580,7 +34583,7 @@ public unsafe partial interface IGL
     void FlushMappedBufferRange(
         [NativeTypeName("GLenum")] uint target,
         [NativeTypeName("GLintptr")] nint offset,
-        [NativeTypeName("GLsizeiptr")] nint length
+        [NativeTypeName("GLsizeiptr")] nuint length
     );
 
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
@@ -34588,7 +34591,7 @@ public unsafe partial interface IGL
     void FlushMappedBufferRangeApple(
         [NativeTypeName("GLenum")] uint target,
         [NativeTypeName("GLintptr")] nint offset,
-        [NativeTypeName("GLsizeiptr")] nint size
+        [NativeTypeName("GLsizeiptr")] nuint size
     );
 
     [SupportedApiProfile("gles1", MaxVersion = "2.0")]
@@ -34597,7 +34600,7 @@ public unsafe partial interface IGL
     void FlushMappedBufferRangeExt(
         [NativeTypeName("GLenum")] uint target,
         [NativeTypeName("GLintptr")] nint offset,
-        [NativeTypeName("GLsizeiptr")] nint length
+        [NativeTypeName("GLsizeiptr")] nuint length
     );
 
     [SupportedApiProfile("glcore", MinVersion = "3.2")]
@@ -34606,7 +34609,7 @@ public unsafe partial interface IGL
     void FlushMappedNamedBufferRange(
         [NativeTypeName("GLuint")] uint buffer,
         [NativeTypeName("GLintptr")] nint offset,
-        [NativeTypeName("GLsizeiptr")] nint length
+        [NativeTypeName("GLsizeiptr")] nuint length
     );
 
     [SupportedApiProfile("glcore", MinVersion = "3.2")]
@@ -34615,7 +34618,7 @@ public unsafe partial interface IGL
     void FlushMappedNamedBufferRangeExt(
         [NativeTypeName("GLuint")] uint buffer,
         [NativeTypeName("GLintptr")] nint offset,
-        [NativeTypeName("GLsizeiptr")] nint length
+        [NativeTypeName("GLsizeiptr")] nuint length
     );
 
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
@@ -34632,7 +34635,7 @@ public unsafe partial interface IGL
 
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glFlushVertexArrayRangeAPPLE")]
-    void FlushVertexArrayRangeApple([NativeTypeName("GLsizei")] int length, Ref pointer);
+    void FlushVertexArrayRangeApple([NativeTypeName("GLsizei")] uint length, Ref pointer);
 
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glFlushVertexArrayRangeNV")]
@@ -34667,7 +34670,7 @@ public unsafe partial interface IGL
     [NativeFunction("opengl", EntryPoint = "glFogCoordFormatNV")]
     void FogCoordFormatNV(
         [NativeTypeName("GLenum")] uint type,
-        [NativeTypeName("GLsizei")] int stride
+        [NativeTypeName("GLsizei")] uint stride
     );
 
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
@@ -34690,7 +34693,7 @@ public unsafe partial interface IGL
     [NativeFunction("opengl", EntryPoint = "glFogCoordPointer")]
     void FogCoordPointer(
         [NativeTypeName("GLenum")] uint type,
-        [NativeTypeName("GLsizei")] int stride,
+        [NativeTypeName("GLsizei")] uint stride,
         [NativeTypeName("const void *")] Ref pointer
     );
 
@@ -34698,7 +34701,7 @@ public unsafe partial interface IGL
     [NativeFunction("opengl", EntryPoint = "glFogCoordPointerEXT")]
     void FogCoordPointerExt(
         [NativeTypeName("GLenum")] uint type,
-        [NativeTypeName("GLsizei")] int stride,
+        [NativeTypeName("GLsizei")] uint stride,
         [NativeTypeName("const void *")] Ref pointer
     );
 
@@ -34719,7 +34722,7 @@ public unsafe partial interface IGL
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glFogFuncSGIS")]
     void FogFuncSgis(
-        [NativeTypeName("GLsizei")] int n,
+        [NativeTypeName("GLsizei")] uint n,
         [NativeTypeName("const GLfloat *")] Ref<float> points
     );
 
@@ -34884,7 +34887,7 @@ public unsafe partial interface IGL
     [NativeFunction("opengl", EntryPoint = "glFramebufferDrawBuffersEXT")]
     void FramebufferDrawBuffersExt(
         [NativeTypeName("GLuint")] uint framebuffer,
-        [NativeTypeName("GLsizei")] int n,
+        [NativeTypeName("GLsizei")] uint n,
         [NativeTypeName("const GLenum *")] Ref<uint> bufs
     );
 
@@ -34944,7 +34947,7 @@ public unsafe partial interface IGL
     [NativeFunction("opengl", EntryPoint = "glFramebufferPixelLocalStorageSizeEXT")]
     void FramebufferPixelLocalStorageSizeExt(
         [NativeTypeName("GLuint")] uint target,
-        [NativeTypeName("GLsizei")] int size
+        [NativeTypeName("GLsizei")] uint size
     );
 
     [SupportedApiProfile("glcore", MinVersion = "3.2")]
@@ -34990,7 +34993,7 @@ public unsafe partial interface IGL
     void FramebufferSampleLocationsfvArb(
         [NativeTypeName("GLenum")] uint target,
         [NativeTypeName("GLuint")] uint start,
-        [NativeTypeName("GLsizei")] int count,
+        [NativeTypeName("GLsizei")] uint count,
         [NativeTypeName("const GLfloat *")] Ref<float> v
     );
 
@@ -35001,7 +35004,7 @@ public unsafe partial interface IGL
     void FramebufferSampleLocationsfvNV(
         [NativeTypeName("GLenum")] uint target,
         [NativeTypeName("GLuint")] uint start,
-        [NativeTypeName("GLsizei")] int count,
+        [NativeTypeName("GLsizei")] uint count,
         [NativeTypeName("const GLfloat *")] Ref<float> v
     );
 
@@ -35021,9 +35024,9 @@ public unsafe partial interface IGL
         [NativeTypeName("GLenum")] uint attachment,
         [NativeTypeName("GLuint")] uint texture,
         [NativeTypeName("GLint")] int baseLayer,
-        [NativeTypeName("GLsizei")] int numLayers,
-        [NativeTypeName("GLsizei")] int texelWidth,
-        [NativeTypeName("GLsizei")] int texelHeight
+        [NativeTypeName("GLsizei")] uint numLayers,
+        [NativeTypeName("GLsizei")] uint texelWidth,
+        [NativeTypeName("GLsizei")] uint texelHeight
     );
 
     [SupportedApiProfile("glcore", MinVersion = "3.2")]
@@ -35100,7 +35103,7 @@ public unsafe partial interface IGL
         [NativeTypeName("GLenum")] uint textarget,
         [NativeTypeName("GLuint")] uint texture,
         [NativeTypeName("GLint")] int level,
-        [NativeTypeName("GLsizei")] int samples
+        [NativeTypeName("GLsizei")] uint samples
     );
 
     [SupportedApiProfile("gles1", MaxVersion = "2.0")]
@@ -35112,7 +35115,7 @@ public unsafe partial interface IGL
         [NativeTypeName("GLenum")] uint textarget,
         [NativeTypeName("GLuint")] uint texture,
         [NativeTypeName("GLint")] int level,
-        [NativeTypeName("GLsizei")] int samples
+        [NativeTypeName("GLsizei")] uint samples
     );
 
     [SupportedApiProfile("gles1", MaxVersion = "2.0")]
@@ -35251,9 +35254,9 @@ public unsafe partial interface IGL
         [NativeTypeName("GLenum")] uint attachment,
         [NativeTypeName("GLuint")] uint texture,
         [NativeTypeName("GLint")] int level,
-        [NativeTypeName("GLsizei")] int samples,
+        [NativeTypeName("GLsizei")] uint samples,
         [NativeTypeName("GLint")] int baseViewIndex,
-        [NativeTypeName("GLsizei")] int numViews
+        [NativeTypeName("GLsizei")] uint numViews
     );
 
     [SupportedApiProfile("glcore", MinVersion = "3.2")]
@@ -35266,7 +35269,7 @@ public unsafe partial interface IGL
         [NativeTypeName("GLuint")] uint texture,
         [NativeTypeName("GLint")] int level,
         [NativeTypeName("GLint")] int baseViewIndex,
-        [NativeTypeName("GLsizei")] int numViews
+        [NativeTypeName("GLsizei")] uint numViews
     );
 
     [SupportedApiProfile("gles2", MinVersion = "2.0")]
@@ -35357,7 +35360,7 @@ public unsafe partial interface IGL
     [return: NativeTypeName("GLuint")]
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glGenAsyncMarkersSGIX")]
-    uint GenAsyncMarkersSgix([NativeTypeName("GLsizei")] int range);
+    uint GenAsyncMarkersSgix([NativeTypeName("GLsizei")] uint range);
 
     [SupportedApiProfile("glcore", MinVersion = "3.2")]
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
@@ -35365,14 +35368,14 @@ public unsafe partial interface IGL
     [SupportedApiProfile("gles2", MinVersion = "2.0")]
     [NativeFunction("opengl", EntryPoint = "glGenBuffers")]
     void GenBuffers(
-        [NativeTypeName("GLsizei")] int n,
+        [NativeTypeName("GLsizei")] uint n,
         [NativeTypeName("GLuint *")] Ref<uint> buffers
     );
 
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glGenBuffersARB")]
     void GenBuffersArb(
-        [NativeTypeName("GLsizei")] int n,
+        [NativeTypeName("GLsizei")] uint n,
         [NativeTypeName("GLuint *")] Ref<uint> buffers
     );
 
@@ -35414,7 +35417,7 @@ public unsafe partial interface IGL
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glGenFencesAPPLE")]
     void GenFencesApple(
-        [NativeTypeName("GLsizei")] int n,
+        [NativeTypeName("GLsizei")] uint n,
         [NativeTypeName("GLuint *")] Ref<uint> fences
     );
 
@@ -35423,7 +35426,7 @@ public unsafe partial interface IGL
     [SupportedApiProfile("gles2", MinVersion = "2.0")]
     [NativeFunction("opengl", EntryPoint = "glGenFencesNV")]
     void GenFencesNV(
-        [NativeTypeName("GLsizei")] int n,
+        [NativeTypeName("GLsizei")] uint n,
         [NativeTypeName("GLuint *")] Ref<uint> fences
     );
 
@@ -35437,28 +35440,28 @@ public unsafe partial interface IGL
     [SupportedApiProfile("gles2", MinVersion = "2.0")]
     [NativeFunction("opengl", EntryPoint = "glGenFramebuffers")]
     void GenFramebuffers(
-        [NativeTypeName("GLsizei")] int n,
+        [NativeTypeName("GLsizei")] uint n,
         [NativeTypeName("GLuint *")] Ref<uint> framebuffers
     );
 
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glGenFramebuffersEXT")]
     void GenFramebuffersExt(
-        [NativeTypeName("GLsizei")] int n,
+        [NativeTypeName("GLsizei")] uint n,
         [NativeTypeName("GLuint *")] Ref<uint> framebuffers
     );
 
     [SupportedApiProfile("gles1", MaxVersion = "2.0")]
     [NativeFunction("opengl", EntryPoint = "glGenFramebuffersOES")]
     void GenFramebuffersOes(
-        [NativeTypeName("GLsizei")] int n,
+        [NativeTypeName("GLsizei")] uint n,
         [NativeTypeName("GLuint *")] Ref<uint> framebuffers
     );
 
     [return: NativeTypeName("GLuint")]
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glGenLists")]
-    uint GenLists([NativeTypeName("GLsizei")] int range);
+    uint GenLists([NativeTypeName("GLsizei")] uint range);
 
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glGenNamesAMD")]
@@ -35471,7 +35474,7 @@ public unsafe partial interface IGL
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glGenOcclusionQueriesNV")]
     void GenOcclusionQueriesNV(
-        [NativeTypeName("GLsizei")] int n,
+        [NativeTypeName("GLsizei")] uint n,
         [NativeTypeName("GLuint *")] Ref<uint> ids
     );
 
@@ -35480,14 +35483,14 @@ public unsafe partial interface IGL
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [SupportedApiProfile("gles2", MinVersion = "2.0")]
     [NativeFunction("opengl", EntryPoint = "glGenPathsNV")]
-    uint GenPathsNV([NativeTypeName("GLsizei")] int range);
+    uint GenPathsNV([NativeTypeName("GLsizei")] uint range);
 
     [SupportedApiProfile("glcore", MinVersion = "3.2")]
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [SupportedApiProfile("gles2", MinVersion = "2.0")]
     [NativeFunction("opengl", EntryPoint = "glGenPerfMonitorsAMD")]
     void GenPerfMonitorsAmd(
-        [NativeTypeName("GLsizei")] int n,
+        [NativeTypeName("GLsizei")] uint n,
         [NativeTypeName("GLuint *")] Ref<uint> monitors
     );
 
@@ -35495,54 +35498,54 @@ public unsafe partial interface IGL
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glGenProgramPipelines")]
     void GenProgramPipelines(
-        [NativeTypeName("GLsizei")] int n,
+        [NativeTypeName("GLsizei")] uint n,
         [NativeTypeName("GLuint *")] Ref<uint> pipelines
     );
 
     [SupportedApiProfile("gles2", MinVersion = "2.0")]
     [NativeFunction("opengl", EntryPoint = "glGenProgramPipelinesEXT")]
     void GenProgramPipelinesExt(
-        [NativeTypeName("GLsizei")] int n,
+        [NativeTypeName("GLsizei")] uint n,
         [NativeTypeName("GLuint *")] Ref<uint> pipelines
     );
 
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glGenProgramsARB")]
     void GenProgramsArb(
-        [NativeTypeName("GLsizei")] int n,
+        [NativeTypeName("GLsizei")] uint n,
         [NativeTypeName("GLuint *")] Ref<uint> programs
     );
 
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glGenProgramsNV")]
     void GenProgramsNV(
-        [NativeTypeName("GLsizei")] int n,
+        [NativeTypeName("GLsizei")] uint n,
         [NativeTypeName("GLuint *")] Ref<uint> programs
     );
 
     [SupportedApiProfile("glcore", MinVersion = "3.2")]
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glGenQueries")]
-    void GenQueries([NativeTypeName("GLsizei")] int n, [NativeTypeName("GLuint *")] Ref<uint> ids);
+    void GenQueries([NativeTypeName("GLsizei")] uint n, [NativeTypeName("GLuint *")] Ref<uint> ids);
 
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glGenQueriesARB")]
     void GenQueriesArb(
-        [NativeTypeName("GLsizei")] int n,
+        [NativeTypeName("GLsizei")] uint n,
         [NativeTypeName("GLuint *")] Ref<uint> ids
     );
 
     [SupportedApiProfile("gles2", MinVersion = "2.0")]
     [NativeFunction("opengl", EntryPoint = "glGenQueriesEXT")]
     void GenQueriesExt(
-        [NativeTypeName("GLsizei")] int n,
+        [NativeTypeName("GLsizei")] uint n,
         [NativeTypeName("GLuint *")] Ref<uint> ids
     );
 
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glGenQueryResourceTagNV")]
     void GenQueryResourceTagNV(
-        [NativeTypeName("GLsizei")] int n,
+        [NativeTypeName("GLsizei")] uint n,
         [NativeTypeName("GLint *")] Ref<int> tagIds
     );
 
@@ -35551,21 +35554,21 @@ public unsafe partial interface IGL
     [SupportedApiProfile("gles2", MinVersion = "2.0")]
     [NativeFunction("opengl", EntryPoint = "glGenRenderbuffers")]
     void GenRenderbuffers(
-        [NativeTypeName("GLsizei")] int n,
+        [NativeTypeName("GLsizei")] uint n,
         [NativeTypeName("GLuint *")] Ref<uint> renderbuffers
     );
 
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glGenRenderbuffersEXT")]
     void GenRenderbuffersExt(
-        [NativeTypeName("GLsizei")] int n,
+        [NativeTypeName("GLsizei")] uint n,
         [NativeTypeName("GLuint *")] Ref<uint> renderbuffers
     );
 
     [SupportedApiProfile("gles1", MaxVersion = "2.0")]
     [NativeFunction("opengl", EntryPoint = "glGenRenderbuffersOES")]
     void GenRenderbuffersOes(
-        [NativeTypeName("GLsizei")] int n,
+        [NativeTypeName("GLsizei")] uint n,
         [NativeTypeName("GLuint *")] Ref<uint> renderbuffers
     );
 
@@ -35574,7 +35577,7 @@ public unsafe partial interface IGL
     [SupportedApiProfile("gles2", MinVersion = "2.0")]
     [NativeFunction("opengl", EntryPoint = "glGenSamplers")]
     void GenSamplers(
-        [NativeTypeName("GLsizei")] int count,
+        [NativeTypeName("GLsizei")] uint count,
         [NativeTypeName("GLuint *")] Ref<uint> samplers
     );
 
@@ -35582,7 +35585,7 @@ public unsafe partial interface IGL
     [SupportedApiProfile("gles2", MinVersion = "2.0")]
     [NativeFunction("opengl", EntryPoint = "glGenSemaphoresEXT")]
     void GenSemaphoresExt(
-        [NativeTypeName("GLsizei")] int n,
+        [NativeTypeName("GLsizei")] uint n,
         [NativeTypeName("GLuint *")] Ref<uint> semaphores
     );
 
@@ -35602,14 +35605,14 @@ public unsafe partial interface IGL
     [SupportedApiProfile("gles2", MinVersion = "2.0")]
     [NativeFunction("opengl", EntryPoint = "glGenTextures")]
     void GenTextures(
-        [NativeTypeName("GLsizei")] int n,
+        [NativeTypeName("GLsizei")] uint n,
         [NativeTypeName("GLuint *")] Ref<uint> textures
     );
 
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glGenTexturesEXT")]
     void GenTexturesExt(
-        [NativeTypeName("GLsizei")] int n,
+        [NativeTypeName("GLsizei")] uint n,
         [NativeTypeName("GLuint *")] Ref<uint> textures
     );
 
@@ -35617,14 +35620,14 @@ public unsafe partial interface IGL
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glGenTransformFeedbacks")]
     void GenTransformFeedbacks(
-        [NativeTypeName("GLsizei")] int n,
+        [NativeTypeName("GLsizei")] uint n,
         [NativeTypeName("GLuint *")] Ref<uint> ids
     );
 
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glGenTransformFeedbacksNV")]
     void GenTransformFeedbacksNV(
-        [NativeTypeName("GLsizei")] int n,
+        [NativeTypeName("GLsizei")] uint n,
         [NativeTypeName("GLuint *")] Ref<uint> ids
     );
 
@@ -35632,14 +35635,14 @@ public unsafe partial interface IGL
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glGenVertexArrays")]
     void GenVertexArrays(
-        [NativeTypeName("GLsizei")] int n,
+        [NativeTypeName("GLsizei")] uint n,
         [NativeTypeName("GLuint *")] Ref<uint> arrays
     );
 
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glGenVertexArraysAPPLE")]
     void GenVertexArraysApple(
-        [NativeTypeName("GLsizei")] int n,
+        [NativeTypeName("GLsizei")] uint n,
         [NativeTypeName("GLuint *")] Ref<uint> arrays
     );
 
@@ -35647,7 +35650,7 @@ public unsafe partial interface IGL
     [SupportedApiProfile("gles2", MinVersion = "2.0")]
     [NativeFunction("opengl", EntryPoint = "glGenVertexArraysOES")]
     void GenVertexArraysOes(
-        [NativeTypeName("GLsizei")] int n,
+        [NativeTypeName("GLsizei")] uint n,
         [NativeTypeName("GLuint *")] Ref<uint> arrays
     );
 
@@ -35673,8 +35676,8 @@ public unsafe partial interface IGL
     void GetActiveAttrib(
         [NativeTypeName("GLuint")] uint program,
         [NativeTypeName("GLuint")] uint index,
-        [NativeTypeName("GLsizei")] int bufSize,
-        [NativeTypeName("GLsizei *")] Ref<int> length,
+        [NativeTypeName("GLsizei")] uint bufSize,
+        [NativeTypeName("GLsizei *")] Ref<uint> length,
         [NativeTypeName("GLint *")] Ref<int> size,
         [NativeTypeName("GLenum *")] Ref<uint> type,
         [NativeTypeName("GLchar *")] Ref<sbyte> name
@@ -35683,10 +35686,10 @@ public unsafe partial interface IGL
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glGetActiveAttribARB")]
     void GetActiveAttribArb(
-        [NativeTypeName("GLhandleARB")] Ref programObj,
+        [NativeTypeName("GLhandleARB")] uint programObj,
         [NativeTypeName("GLuint")] uint index,
-        [NativeTypeName("GLsizei")] int maxLength,
-        [NativeTypeName("GLsizei *")] Ref<int> length,
+        [NativeTypeName("GLsizei")] uint maxLength,
+        [NativeTypeName("GLsizei *")] Ref<uint> length,
         [NativeTypeName("GLint *")] Ref<int> size,
         [NativeTypeName("GLenum *")] Ref<uint> type,
         [NativeTypeName("GLcharARB *")] Ref<sbyte> name
@@ -35699,8 +35702,8 @@ public unsafe partial interface IGL
         [NativeTypeName("GLuint")] uint program,
         [NativeTypeName("GLenum")] uint shadertype,
         [NativeTypeName("GLuint")] uint index,
-        [NativeTypeName("GLsizei")] int bufSize,
-        [NativeTypeName("GLsizei *")] Ref<int> length,
+        [NativeTypeName("GLsizei")] uint bufSize,
+        [NativeTypeName("GLsizei *")] Ref<uint> length,
         [NativeTypeName("GLchar *")] Ref<sbyte> name
     );
 
@@ -35722,8 +35725,8 @@ public unsafe partial interface IGL
         [NativeTypeName("GLuint")] uint program,
         [NativeTypeName("GLenum")] uint shadertype,
         [NativeTypeName("GLuint")] uint index,
-        [NativeTypeName("GLsizei")] int bufSize,
-        [NativeTypeName("GLsizei *")] Ref<int> length,
+        [NativeTypeName("GLsizei")] uint bufSize,
+        [NativeTypeName("GLsizei *")] Ref<uint> length,
         [NativeTypeName("GLchar *")] Ref<sbyte> name
     );
 
@@ -35734,8 +35737,8 @@ public unsafe partial interface IGL
     void GetActiveUniform(
         [NativeTypeName("GLuint")] uint program,
         [NativeTypeName("GLuint")] uint index,
-        [NativeTypeName("GLsizei")] int bufSize,
-        [NativeTypeName("GLsizei *")] Ref<int> length,
+        [NativeTypeName("GLsizei")] uint bufSize,
+        [NativeTypeName("GLsizei *")] Ref<uint> length,
         [NativeTypeName("GLint *")] Ref<int> size,
         [NativeTypeName("GLenum *")] Ref<uint> type,
         [NativeTypeName("GLchar *")] Ref<sbyte> name
@@ -35744,10 +35747,10 @@ public unsafe partial interface IGL
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glGetActiveUniformARB")]
     void GetActiveUniformArb(
-        [NativeTypeName("GLhandleARB")] Ref programObj,
+        [NativeTypeName("GLhandleARB")] uint programObj,
         [NativeTypeName("GLuint")] uint index,
-        [NativeTypeName("GLsizei")] int maxLength,
-        [NativeTypeName("GLsizei *")] Ref<int> length,
+        [NativeTypeName("GLsizei")] uint maxLength,
+        [NativeTypeName("GLsizei *")] Ref<uint> length,
         [NativeTypeName("GLint *")] Ref<int> size,
         [NativeTypeName("GLenum *")] Ref<uint> type,
         [NativeTypeName("GLcharARB *")] Ref<sbyte> name
@@ -35769,8 +35772,8 @@ public unsafe partial interface IGL
     void GetActiveUniformBlockName(
         [NativeTypeName("GLuint")] uint program,
         [NativeTypeName("GLuint")] uint uniformBlockIndex,
-        [NativeTypeName("GLsizei")] int bufSize,
-        [NativeTypeName("GLsizei *")] Ref<int> length,
+        [NativeTypeName("GLsizei")] uint bufSize,
+        [NativeTypeName("GLsizei *")] Ref<uint> length,
         [NativeTypeName("GLchar *")] Ref<sbyte> uniformBlockName
     );
 
@@ -35780,8 +35783,8 @@ public unsafe partial interface IGL
     void GetActiveUniformName(
         [NativeTypeName("GLuint")] uint program,
         [NativeTypeName("GLuint")] uint uniformIndex,
-        [NativeTypeName("GLsizei")] int bufSize,
-        [NativeTypeName("GLsizei *")] Ref<int> length,
+        [NativeTypeName("GLsizei")] uint bufSize,
+        [NativeTypeName("GLsizei *")] Ref<uint> length,
         [NativeTypeName("GLchar *")] Ref<sbyte> uniformName
     );
 
@@ -35790,7 +35793,7 @@ public unsafe partial interface IGL
     [NativeFunction("opengl", EntryPoint = "glGetActiveUniformsiv")]
     void GetActiveUniforms(
         [NativeTypeName("GLuint")] uint program,
-        [NativeTypeName("GLsizei")] int uniformCount,
+        [NativeTypeName("GLsizei")] uint uniformCount,
         [NativeTypeName("const GLuint *")] Ref<uint> uniformIndices,
         [NativeTypeName("GLenum")] uint pname,
         [NativeTypeName("GLint *")] Ref<int> @params
@@ -35801,9 +35804,9 @@ public unsafe partial interface IGL
     void GetActiveVaryingNV(
         [NativeTypeName("GLuint")] uint program,
         [NativeTypeName("GLuint")] uint index,
-        [NativeTypeName("GLsizei")] int bufSize,
-        [NativeTypeName("GLsizei *")] Ref<int> length,
-        [NativeTypeName("GLsizei *")] Ref<int> size,
+        [NativeTypeName("GLsizei")] uint bufSize,
+        [NativeTypeName("GLsizei *")] Ref<uint> length,
+        [NativeTypeName("GLsizei *")] Ref<uint> size,
         [NativeTypeName("GLenum *")] Ref<uint> type,
         [NativeTypeName("GLchar *")] Ref<sbyte> name
     );
@@ -35827,10 +35830,10 @@ public unsafe partial interface IGL
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glGetAttachedObjectsARB")]
     void GetAttachedObjectsArb(
-        [NativeTypeName("GLhandleARB")] Ref containerObj,
-        [NativeTypeName("GLsizei")] int maxCount,
-        [NativeTypeName("GLsizei *")] Ref<int> count,
-        [NativeTypeName("GLhandleARB *")] Ref2D obj
+        [NativeTypeName("GLhandleARB")] uint containerObj,
+        [NativeTypeName("GLsizei")] uint maxCount,
+        [NativeTypeName("GLsizei *")] Ref<uint> count,
+        [NativeTypeName("GLhandleARB *")] Ref<uint> obj
     );
 
     [SupportedApiProfile("glcore", MinVersion = "3.2")]
@@ -35839,8 +35842,8 @@ public unsafe partial interface IGL
     [NativeFunction("opengl", EntryPoint = "glGetAttachedShaders")]
     void GetAttachedShaders(
         [NativeTypeName("GLuint")] uint program,
-        [NativeTypeName("GLsizei")] int maxCount,
-        [NativeTypeName("GLsizei *")] Ref<int> count,
+        [NativeTypeName("GLsizei")] uint maxCount,
+        [NativeTypeName("GLsizei *")] Ref<uint> count,
         [NativeTypeName("GLuint *")] Ref<uint> shaders
     );
 
@@ -35858,7 +35861,7 @@ public unsafe partial interface IGL
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glGetAttribLocationARB")]
     int GetAttribLocationArb(
-        [NativeTypeName("GLhandleARB")] Ref programObj,
+        [NativeTypeName("GLhandleARB")] uint programObj,
         [NativeTypeName("const GLcharARB *")] Ref<sbyte> name
     );
 
@@ -35868,7 +35871,7 @@ public unsafe partial interface IGL
     void GetBoolean(
         [NativeTypeName("GLenum")] uint target,
         [NativeTypeName("GLuint")] uint index,
-        [NativeTypeName("GLboolean *")] Ref<byte> data
+        [NativeTypeName("GLboolean *")] Ref<uint> data
     );
 
     [SupportedApiProfile("glcore", MinVersion = "3.2")]
@@ -35877,7 +35880,7 @@ public unsafe partial interface IGL
     void GetBooleanIndexedvExt(
         [NativeTypeName("GLenum")] uint target,
         [NativeTypeName("GLuint")] uint index,
-        [NativeTypeName("GLboolean *")] Ref<byte> data
+        [NativeTypeName("GLboolean *")] Ref<uint> data
     );
 
     [SupportedApiProfile("glcore", MinVersion = "3.2")]
@@ -35887,7 +35890,7 @@ public unsafe partial interface IGL
     [NativeFunction("opengl", EntryPoint = "glGetBooleanv")]
     void GetBoolean(
         [NativeTypeName("GLenum")] uint pname,
-        [NativeTypeName("GLboolean *")] Ref<byte> data
+        [NativeTypeName("GLboolean *")] Ref<uint> data
     );
 
     [SupportedApiProfile("glcore", MinVersion = "3.2")]
@@ -35959,7 +35962,7 @@ public unsafe partial interface IGL
     void GetBufferSubData(
         [NativeTypeName("GLenum")] uint target,
         [NativeTypeName("GLintptr")] nint offset,
-        [NativeTypeName("GLsizeiptr")] nint size,
+        [NativeTypeName("GLsizeiptr")] nuint size,
         Ref data
     );
 
@@ -36172,7 +36175,7 @@ public unsafe partial interface IGL
     void GetCompressedTextureImage(
         [NativeTypeName("GLuint")] uint texture,
         [NativeTypeName("GLint")] int level,
-        [NativeTypeName("GLsizei")] int bufSize,
+        [NativeTypeName("GLsizei")] uint bufSize,
         Ref pixels
     );
 
@@ -36195,10 +36198,10 @@ public unsafe partial interface IGL
         [NativeTypeName("GLint")] int xoffset,
         [NativeTypeName("GLint")] int yoffset,
         [NativeTypeName("GLint")] int zoffset,
-        [NativeTypeName("GLsizei")] int width,
-        [NativeTypeName("GLsizei")] int height,
-        [NativeTypeName("GLsizei")] int depth,
-        [NativeTypeName("GLsizei")] int bufSize,
+        [NativeTypeName("GLsizei")] uint width,
+        [NativeTypeName("GLsizei")] uint height,
+        [NativeTypeName("GLsizei")] uint depth,
+        [NativeTypeName("GLsizei")] uint bufSize,
         Ref pixels
     );
 
@@ -36265,7 +36268,7 @@ public unsafe partial interface IGL
     [SupportedApiProfile("gles2", MinVersion = "2.0")]
     [NativeFunction("opengl", EntryPoint = "glGetCoverageModulationTableNV")]
     void GetCoverageModulationTableNV(
-        [NativeTypeName("GLsizei")] int bufSize,
+        [NativeTypeName("GLsizei")] uint bufSize,
         [NativeTypeName("GLfloat *")] Ref<float> v
     );
 
@@ -36275,12 +36278,12 @@ public unsafe partial interface IGL
     [NativeFunction("opengl", EntryPoint = "glGetDebugMessageLog")]
     uint GetDebugMessageLog(
         [NativeTypeName("GLuint")] uint count,
-        [NativeTypeName("GLsizei")] int bufSize,
+        [NativeTypeName("GLsizei")] uint bufSize,
         [NativeTypeName("GLenum *")] Ref<uint> sources,
         [NativeTypeName("GLenum *")] Ref<uint> types,
         [NativeTypeName("GLuint *")] Ref<uint> ids,
         [NativeTypeName("GLenum *")] Ref<uint> severities,
-        [NativeTypeName("GLsizei *")] Ref<int> lengths,
+        [NativeTypeName("GLsizei *")] Ref<uint> lengths,
         [NativeTypeName("GLchar *")] Ref<sbyte> messageLog
     );
 
@@ -36289,11 +36292,11 @@ public unsafe partial interface IGL
     [NativeFunction("opengl", EntryPoint = "glGetDebugMessageLogAMD")]
     uint GetDebugMessageLogAmd(
         [NativeTypeName("GLuint")] uint count,
-        [NativeTypeName("GLsizei")] int bufSize,
+        [NativeTypeName("GLsizei")] uint bufSize,
         [NativeTypeName("GLenum *")] Ref<uint> categories,
         [NativeTypeName("GLenum *")] Ref<uint> severities,
         [NativeTypeName("GLuint *")] Ref<uint> ids,
-        [NativeTypeName("GLsizei *")] Ref<int> lengths,
+        [NativeTypeName("GLsizei *")] Ref<uint> lengths,
         [NativeTypeName("GLchar *")] Ref<sbyte> message
     );
 
@@ -36303,12 +36306,12 @@ public unsafe partial interface IGL
     [NativeFunction("opengl", EntryPoint = "glGetDebugMessageLogARB")]
     uint GetDebugMessageLogArb(
         [NativeTypeName("GLuint")] uint count,
-        [NativeTypeName("GLsizei")] int bufSize,
+        [NativeTypeName("GLsizei")] uint bufSize,
         [NativeTypeName("GLenum *")] Ref<uint> sources,
         [NativeTypeName("GLenum *")] Ref<uint> types,
         [NativeTypeName("GLuint *")] Ref<uint> ids,
         [NativeTypeName("GLenum *")] Ref<uint> severities,
-        [NativeTypeName("GLsizei *")] Ref<int> lengths,
+        [NativeTypeName("GLsizei *")] Ref<uint> lengths,
         [NativeTypeName("GLchar *")] Ref<sbyte> messageLog
     );
 
@@ -36317,12 +36320,12 @@ public unsafe partial interface IGL
     [NativeFunction("opengl", EntryPoint = "glGetDebugMessageLogKHR")]
     uint GetDebugMessageLogKhr(
         [NativeTypeName("GLuint")] uint count,
-        [NativeTypeName("GLsizei")] int bufSize,
+        [NativeTypeName("GLsizei")] uint bufSize,
         [NativeTypeName("GLenum *")] Ref<uint> sources,
         [NativeTypeName("GLenum *")] Ref<uint> types,
         [NativeTypeName("GLuint *")] Ref<uint> ids,
         [NativeTypeName("GLenum *")] Ref<uint> severities,
-        [NativeTypeName("GLsizei *")] Ref<int> lengths,
+        [NativeTypeName("GLsizei *")] Ref<uint> lengths,
         [NativeTypeName("GLchar *")] Ref<sbyte> messageLog
     );
 
@@ -36373,7 +36376,7 @@ public unsafe partial interface IGL
     [NativeFunction("opengl", EntryPoint = "glGetDriverControlsQCOM")]
     void GetDriverControlsQcom(
         [NativeTypeName("GLint *")] Ref<int> num,
-        [NativeTypeName("GLsizei")] int size,
+        [NativeTypeName("GLsizei")] uint size,
         [NativeTypeName("GLuint *")] Ref<uint> driverControls
     );
 
@@ -36382,8 +36385,8 @@ public unsafe partial interface IGL
     [NativeFunction("opengl", EntryPoint = "glGetDriverControlStringQCOM")]
     void GetDriverControlStringQcom(
         [NativeTypeName("GLuint")] uint driverControl,
-        [NativeTypeName("GLsizei")] int bufSize,
-        [NativeTypeName("GLsizei *")] Ref<int> length,
+        [NativeTypeName("GLsizei")] uint bufSize,
+        [NativeTypeName("GLsizei *")] Ref<uint> length,
         [NativeTypeName("GLchar *")] Ref<sbyte> driverControlString
     );
 
@@ -36568,9 +36571,9 @@ public unsafe partial interface IGL
     [SupportedApiProfile("gles2", MinVersion = "2.0")]
     [NativeFunction("opengl", EntryPoint = "glGetFragmentShadingRatesEXT")]
     void GetFragmentShadingRatesExt(
-        [NativeTypeName("GLsizei")] int samples,
-        [NativeTypeName("GLsizei")] int maxCount,
-        [NativeTypeName("GLsizei *")] Ref<int> count,
+        [NativeTypeName("GLsizei")] uint samples,
+        [NativeTypeName("GLsizei")] uint maxCount,
+        [NativeTypeName("GLsizei *")] Ref<uint> count,
         [NativeTypeName("GLenum *")] Ref<uint> shadingRates
     );
 
@@ -36610,7 +36613,7 @@ public unsafe partial interface IGL
         [NativeTypeName("GLenum")] uint pname,
         [NativeTypeName("GLuint")] uint numsamples,
         [NativeTypeName("GLuint")] uint pixelindex,
-        [NativeTypeName("GLsizei")] int size,
+        [NativeTypeName("GLsizei")] uint size,
         [NativeTypeName("GLfloat *")] Ref<float> values
     );
 
@@ -36645,7 +36648,7 @@ public unsafe partial interface IGL
     [return: NativeTypeName("GLsizei")]
     [SupportedApiProfile("gles2", MinVersion = "2.0")]
     [NativeFunction("opengl", EntryPoint = "glGetFramebufferPixelLocalStorageSizeEXT")]
-    int GetFramebufferPixelLocalStorageSizeExt([NativeTypeName("GLuint")] uint target);
+    uint GetFramebufferPixelLocalStorageSizeExt([NativeTypeName("GLuint")] uint target);
 
     [return: NativeTypeName("GLenum")]
     [SupportedApiProfile("glcore", MinVersion = "3.2")]
@@ -36673,13 +36676,13 @@ public unsafe partial interface IGL
     [return: NativeTypeName("GLhandleARB")]
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glGetHandleARB")]
-    Ptr GetHandleArb([NativeTypeName("GLenum")] uint pname);
+    uint GetHandleArb([NativeTypeName("GLenum")] uint pname);
 
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glGetHistogram")]
     void GetHistogram(
         [NativeTypeName("GLenum")] uint target,
-        [NativeTypeName("GLboolean")] byte reset,
+        [NativeTypeName("GLboolean")] uint reset,
         [NativeTypeName("GLenum")] uint format,
         [NativeTypeName("GLenum")] uint type,
         Ref values
@@ -36689,7 +36692,7 @@ public unsafe partial interface IGL
     [NativeFunction("opengl", EntryPoint = "glGetHistogramEXT")]
     void GetHistogramExt(
         [NativeTypeName("GLenum")] uint target,
-        [NativeTypeName("GLboolean")] byte reset,
+        [NativeTypeName("GLboolean")] uint reset,
         [NativeTypeName("GLenum")] uint format,
         [NativeTypeName("GLenum")] uint type,
         Ref values
@@ -36742,7 +36745,7 @@ public unsafe partial interface IGL
     ulong GetImageHandleArb(
         [NativeTypeName("GLuint")] uint texture,
         [NativeTypeName("GLint")] int level,
-        [NativeTypeName("GLboolean")] byte layered,
+        [NativeTypeName("GLboolean")] uint layered,
         [NativeTypeName("GLint")] int layer,
         [NativeTypeName("GLenum")] uint format
     );
@@ -36755,7 +36758,7 @@ public unsafe partial interface IGL
     ulong GetImageHandleNV(
         [NativeTypeName("GLuint")] uint texture,
         [NativeTypeName("GLint")] int level,
-        [NativeTypeName("GLboolean")] byte layered,
+        [NativeTypeName("GLboolean")] uint layered,
         [NativeTypeName("GLint")] int layer,
         [NativeTypeName("GLenum")] uint format
     );
@@ -36779,9 +36782,9 @@ public unsafe partial interface IGL
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glGetInfoLogARB")]
     void GetInfoLogArb(
-        [NativeTypeName("GLhandleARB")] Ref obj,
-        [NativeTypeName("GLsizei")] int maxLength,
-        [NativeTypeName("GLsizei *")] Ref<int> length,
+        [NativeTypeName("GLhandleARB")] uint obj,
+        [NativeTypeName("GLsizei")] uint maxLength,
+        [NativeTypeName("GLsizei *")] Ref<uint> length,
         [NativeTypeName("GLcharARB *")] Ref<sbyte> infoLog
     );
 
@@ -36882,7 +36885,7 @@ public unsafe partial interface IGL
         [NativeTypeName("GLenum")] uint target,
         [NativeTypeName("GLenum")] uint internalformat,
         [NativeTypeName("GLenum")] uint pname,
-        [NativeTypeName("GLsizei")] int count,
+        [NativeTypeName("GLsizei")] uint count,
         [NativeTypeName("GLint64 *")] Ref<long> @params
     );
 
@@ -36893,7 +36896,7 @@ public unsafe partial interface IGL
         [NativeTypeName("GLenum")] uint target,
         [NativeTypeName("GLenum")] uint internalformat,
         [NativeTypeName("GLenum")] uint pname,
-        [NativeTypeName("GLsizei")] int count,
+        [NativeTypeName("GLsizei")] uint count,
         [NativeTypeName("GLint *")] Ref<int> @params
     );
 
@@ -36904,9 +36907,9 @@ public unsafe partial interface IGL
     void GetInternalformatSampleivNV(
         [NativeTypeName("GLenum")] uint target,
         [NativeTypeName("GLenum")] uint internalformat,
-        [NativeTypeName("GLsizei")] int samples,
+        [NativeTypeName("GLsizei")] uint samples,
         [NativeTypeName("GLenum")] uint pname,
-        [NativeTypeName("GLsizei")] int count,
+        [NativeTypeName("GLsizei")] uint count,
         [NativeTypeName("GLint *")] Ref<int> @params
     );
 
@@ -36915,7 +36918,7 @@ public unsafe partial interface IGL
     void GetInvariantBooleanvExt(
         [NativeTypeName("GLuint")] uint id,
         [NativeTypeName("GLenum")] uint value,
-        [NativeTypeName("GLboolean *")] Ref<byte> data
+        [NativeTypeName("GLboolean *")] Ref<uint> data
     );
 
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
@@ -36996,7 +36999,7 @@ public unsafe partial interface IGL
     void GetLocalConstantBooleanvExt(
         [NativeTypeName("GLuint")] uint id,
         [NativeTypeName("GLenum")] uint value,
-        [NativeTypeName("GLboolean *")] Ref<byte> data
+        [NativeTypeName("GLboolean *")] Ref<uint> data
     );
 
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
@@ -37039,9 +37042,9 @@ public unsafe partial interface IGL
         [NativeTypeName("GLenum")] uint target,
         [NativeTypeName("GLuint")] uint index,
         [NativeTypeName("GLenum")] uint type,
-        [NativeTypeName("GLsizei")] int ustride,
-        [NativeTypeName("GLsizei")] int vstride,
-        [NativeTypeName("GLboolean")] byte packed,
+        [NativeTypeName("GLsizei")] uint ustride,
+        [NativeTypeName("GLsizei")] uint vstride,
+        [NativeTypeName("GLboolean")] uint packed,
         Ref points
     );
 
@@ -37142,7 +37145,7 @@ public unsafe partial interface IGL
         [NativeTypeName("GLuint")] uint memory,
         [NativeTypeName("GLenum")] uint pname,
         [NativeTypeName("GLint")] int first,
-        [NativeTypeName("GLsizei")] int count,
+        [NativeTypeName("GLsizei")] uint count,
         [NativeTypeName("GLuint *")] Ref<uint> @params
     );
 
@@ -37159,7 +37162,7 @@ public unsafe partial interface IGL
     [NativeFunction("opengl", EntryPoint = "glGetMinmax")]
     void GetMinmax(
         [NativeTypeName("GLenum")] uint target,
-        [NativeTypeName("GLboolean")] byte reset,
+        [NativeTypeName("GLboolean")] uint reset,
         [NativeTypeName("GLenum")] uint format,
         [NativeTypeName("GLenum")] uint type,
         Ref values
@@ -37169,7 +37172,7 @@ public unsafe partial interface IGL
     [NativeFunction("opengl", EntryPoint = "glGetMinmaxEXT")]
     void GetMinmaxExt(
         [NativeTypeName("GLenum")] uint target,
-        [NativeTypeName("GLboolean")] byte reset,
+        [NativeTypeName("GLboolean")] uint reset,
         [NativeTypeName("GLenum")] uint format,
         [NativeTypeName("GLenum")] uint type,
         Ref values
@@ -37408,7 +37411,7 @@ public unsafe partial interface IGL
     void GetNamedBufferSubData(
         [NativeTypeName("GLuint")] uint buffer,
         [NativeTypeName("GLintptr")] nint offset,
-        [NativeTypeName("GLsizeiptr")] nint size,
+        [NativeTypeName("GLsizeiptr")] nuint size,
         Ref data
     );
 
@@ -37418,7 +37421,7 @@ public unsafe partial interface IGL
     void GetNamedBufferSubDataExt(
         [NativeTypeName("GLuint")] uint buffer,
         [NativeTypeName("GLintptr")] nint offset,
-        [NativeTypeName("GLsizeiptr")] nint size,
+        [NativeTypeName("GLsizeiptr")] nuint size,
         Ref data
     );
 
@@ -37449,7 +37452,7 @@ public unsafe partial interface IGL
         [NativeTypeName("GLenum")] uint pname,
         [NativeTypeName("GLuint")] uint numsamples,
         [NativeTypeName("GLuint")] uint pixelindex,
-        [NativeTypeName("GLsizei")] int size,
+        [NativeTypeName("GLsizei")] uint size,
         [NativeTypeName("GLfloat *")] Ref<float> values
     );
 
@@ -37555,7 +37558,7 @@ public unsafe partial interface IGL
     void GetNamedStringArb(
         [NativeTypeName("GLint")] int namelen,
         [NativeTypeName("const GLchar *")] Ref<sbyte> name,
-        [NativeTypeName("GLsizei")] int bufSize,
+        [NativeTypeName("GLsizei")] uint bufSize,
         [NativeTypeName("GLint *")] Ref<int> stringlen,
         [NativeTypeName("GLchar *")] Ref<sbyte> @string
     );
@@ -37576,7 +37579,7 @@ public unsafe partial interface IGL
         [NativeTypeName("GLenum")] uint target,
         [NativeTypeName("GLenum")] uint format,
         [NativeTypeName("GLenum")] uint type,
-        [NativeTypeName("GLsizei")] int bufSize,
+        [NativeTypeName("GLsizei")] uint bufSize,
         Ref table
     );
 
@@ -37586,7 +37589,7 @@ public unsafe partial interface IGL
         [NativeTypeName("GLenum")] uint target,
         [NativeTypeName("GLenum")] uint format,
         [NativeTypeName("GLenum")] uint type,
-        [NativeTypeName("GLsizei")] int bufSize,
+        [NativeTypeName("GLsizei")] uint bufSize,
         Ref table
     );
 
@@ -37596,7 +37599,7 @@ public unsafe partial interface IGL
     void GetnCompressedTexImage(
         [NativeTypeName("GLenum")] uint target,
         [NativeTypeName("GLint")] int lod,
-        [NativeTypeName("GLsizei")] int bufSize,
+        [NativeTypeName("GLsizei")] uint bufSize,
         Ref pixels
     );
 
@@ -37606,7 +37609,7 @@ public unsafe partial interface IGL
     void GetnCompressedTexImageArb(
         [NativeTypeName("GLenum")] uint target,
         [NativeTypeName("GLint")] int lod,
-        [NativeTypeName("GLsizei")] int bufSize,
+        [NativeTypeName("GLsizei")] uint bufSize,
         Ref img
     );
 
@@ -37616,7 +37619,7 @@ public unsafe partial interface IGL
         [NativeTypeName("GLenum")] uint target,
         [NativeTypeName("GLenum")] uint format,
         [NativeTypeName("GLenum")] uint type,
-        [NativeTypeName("GLsizei")] int bufSize,
+        [NativeTypeName("GLsizei")] uint bufSize,
         Ref image
     );
 
@@ -37626,7 +37629,7 @@ public unsafe partial interface IGL
         [NativeTypeName("GLenum")] uint target,
         [NativeTypeName("GLenum")] uint format,
         [NativeTypeName("GLenum")] uint type,
-        [NativeTypeName("GLsizei")] int bufSize,
+        [NativeTypeName("GLsizei")] uint bufSize,
         Ref image
     );
 
@@ -37643,10 +37646,10 @@ public unsafe partial interface IGL
     [NativeFunction("opengl", EntryPoint = "glGetnHistogram")]
     void GetnHistogram(
         [NativeTypeName("GLenum")] uint target,
-        [NativeTypeName("GLboolean")] byte reset,
+        [NativeTypeName("GLboolean")] uint reset,
         [NativeTypeName("GLenum")] uint format,
         [NativeTypeName("GLenum")] uint type,
-        [NativeTypeName("GLsizei")] int bufSize,
+        [NativeTypeName("GLsizei")] uint bufSize,
         Ref values
     );
 
@@ -37654,10 +37657,10 @@ public unsafe partial interface IGL
     [NativeFunction("opengl", EntryPoint = "glGetnHistogramARB")]
     void GetnHistogramArb(
         [NativeTypeName("GLenum")] uint target,
-        [NativeTypeName("GLboolean")] byte reset,
+        [NativeTypeName("GLboolean")] uint reset,
         [NativeTypeName("GLenum")] uint format,
         [NativeTypeName("GLenum")] uint type,
-        [NativeTypeName("GLsizei")] int bufSize,
+        [NativeTypeName("GLsizei")] uint bufSize,
         Ref values
     );
 
@@ -37666,7 +37669,7 @@ public unsafe partial interface IGL
     void GetnMap(
         [NativeTypeName("GLenum")] uint target,
         [NativeTypeName("GLenum")] uint query,
-        [NativeTypeName("GLsizei")] int bufSize,
+        [NativeTypeName("GLsizei")] uint bufSize,
         [NativeTypeName("GLdouble *")] Ref<double> v
     );
 
@@ -37675,7 +37678,7 @@ public unsafe partial interface IGL
     void GetnMapdvArb(
         [NativeTypeName("GLenum")] uint target,
         [NativeTypeName("GLenum")] uint query,
-        [NativeTypeName("GLsizei")] int bufSize,
+        [NativeTypeName("GLsizei")] uint bufSize,
         [NativeTypeName("GLdouble *")] Ref<double> v
     );
 
@@ -37684,7 +37687,7 @@ public unsafe partial interface IGL
     void GetnMap(
         [NativeTypeName("GLenum")] uint target,
         [NativeTypeName("GLenum")] uint query,
-        [NativeTypeName("GLsizei")] int bufSize,
+        [NativeTypeName("GLsizei")] uint bufSize,
         [NativeTypeName("GLfloat *")] Ref<float> v
     );
 
@@ -37693,7 +37696,7 @@ public unsafe partial interface IGL
     void GetnMapfvArb(
         [NativeTypeName("GLenum")] uint target,
         [NativeTypeName("GLenum")] uint query,
-        [NativeTypeName("GLsizei")] int bufSize,
+        [NativeTypeName("GLsizei")] uint bufSize,
         [NativeTypeName("GLfloat *")] Ref<float> v
     );
 
@@ -37702,7 +37705,7 @@ public unsafe partial interface IGL
     void GetnMap(
         [NativeTypeName("GLenum")] uint target,
         [NativeTypeName("GLenum")] uint query,
-        [NativeTypeName("GLsizei")] int bufSize,
+        [NativeTypeName("GLsizei")] uint bufSize,
         [NativeTypeName("GLint *")] Ref<int> v
     );
 
@@ -37711,7 +37714,7 @@ public unsafe partial interface IGL
     void GetnMapivArb(
         [NativeTypeName("GLenum")] uint target,
         [NativeTypeName("GLenum")] uint query,
-        [NativeTypeName("GLsizei")] int bufSize,
+        [NativeTypeName("GLsizei")] uint bufSize,
         [NativeTypeName("GLint *")] Ref<int> v
     );
 
@@ -37719,10 +37722,10 @@ public unsafe partial interface IGL
     [NativeFunction("opengl", EntryPoint = "glGetnMinmax")]
     void GetnMinmax(
         [NativeTypeName("GLenum")] uint target,
-        [NativeTypeName("GLboolean")] byte reset,
+        [NativeTypeName("GLboolean")] uint reset,
         [NativeTypeName("GLenum")] uint format,
         [NativeTypeName("GLenum")] uint type,
-        [NativeTypeName("GLsizei")] int bufSize,
+        [NativeTypeName("GLsizei")] uint bufSize,
         Ref values
     );
 
@@ -37730,10 +37733,10 @@ public unsafe partial interface IGL
     [NativeFunction("opengl", EntryPoint = "glGetnMinmaxARB")]
     void GetnMinmaxArb(
         [NativeTypeName("GLenum")] uint target,
-        [NativeTypeName("GLboolean")] byte reset,
+        [NativeTypeName("GLboolean")] uint reset,
         [NativeTypeName("GLenum")] uint format,
         [NativeTypeName("GLenum")] uint type,
-        [NativeTypeName("GLsizei")] int bufSize,
+        [NativeTypeName("GLsizei")] uint bufSize,
         Ref values
     );
 
@@ -37741,7 +37744,7 @@ public unsafe partial interface IGL
     [NativeFunction("opengl", EntryPoint = "glGetnPixelMapfv")]
     void GetnPixelMap(
         [NativeTypeName("GLenum")] uint map,
-        [NativeTypeName("GLsizei")] int bufSize,
+        [NativeTypeName("GLsizei")] uint bufSize,
         [NativeTypeName("GLfloat *")] Ref<float> values
     );
 
@@ -37749,7 +37752,7 @@ public unsafe partial interface IGL
     [NativeFunction("opengl", EntryPoint = "glGetnPixelMapfvARB")]
     void GetnPixelMapfvArb(
         [NativeTypeName("GLenum")] uint map,
-        [NativeTypeName("GLsizei")] int bufSize,
+        [NativeTypeName("GLsizei")] uint bufSize,
         [NativeTypeName("GLfloat *")] Ref<float> values
     );
 
@@ -37757,7 +37760,7 @@ public unsafe partial interface IGL
     [NativeFunction("opengl", EntryPoint = "glGetnPixelMapuiv")]
     void GetnPixelMap(
         [NativeTypeName("GLenum")] uint map,
-        [NativeTypeName("GLsizei")] int bufSize,
+        [NativeTypeName("GLsizei")] uint bufSize,
         [NativeTypeName("GLuint *")] Ref<uint> values
     );
 
@@ -37765,7 +37768,7 @@ public unsafe partial interface IGL
     [NativeFunction("opengl", EntryPoint = "glGetnPixelMapuivARB")]
     void GetnPixelMapuivArb(
         [NativeTypeName("GLenum")] uint map,
-        [NativeTypeName("GLsizei")] int bufSize,
+        [NativeTypeName("GLsizei")] uint bufSize,
         [NativeTypeName("GLuint *")] Ref<uint> values
     );
 
@@ -37773,7 +37776,7 @@ public unsafe partial interface IGL
     [NativeFunction("opengl", EntryPoint = "glGetnPixelMapusv")]
     void GetnPixelMap(
         [NativeTypeName("GLenum")] uint map,
-        [NativeTypeName("GLsizei")] int bufSize,
+        [NativeTypeName("GLsizei")] uint bufSize,
         [NativeTypeName("GLushort *")] Ref<ushort> values
     );
 
@@ -37781,21 +37784,21 @@ public unsafe partial interface IGL
     [NativeFunction("opengl", EntryPoint = "glGetnPixelMapusvARB")]
     void GetnPixelMapusvArb(
         [NativeTypeName("GLenum")] uint map,
-        [NativeTypeName("GLsizei")] int bufSize,
+        [NativeTypeName("GLsizei")] uint bufSize,
         [NativeTypeName("GLushort *")] Ref<ushort> values
     );
 
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glGetnPolygonStipple")]
     void GetnPolygonStipple(
-        [NativeTypeName("GLsizei")] int bufSize,
+        [NativeTypeName("GLsizei")] uint bufSize,
         [NativeTypeName("GLubyte *")] Ref<byte> pattern
     );
 
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glGetnPolygonStippleARB")]
     void GetnPolygonStippleArb(
-        [NativeTypeName("GLsizei")] int bufSize,
+        [NativeTypeName("GLsizei")] uint bufSize,
         [NativeTypeName("GLubyte *")] Ref<byte> pattern
     );
 
@@ -37805,9 +37808,9 @@ public unsafe partial interface IGL
         [NativeTypeName("GLenum")] uint target,
         [NativeTypeName("GLenum")] uint format,
         [NativeTypeName("GLenum")] uint type,
-        [NativeTypeName("GLsizei")] int rowBufSize,
+        [NativeTypeName("GLsizei")] uint rowBufSize,
         Ref row,
-        [NativeTypeName("GLsizei")] int columnBufSize,
+        [NativeTypeName("GLsizei")] uint columnBufSize,
         Ref column,
         Ref span
     );
@@ -37818,9 +37821,9 @@ public unsafe partial interface IGL
         [NativeTypeName("GLenum")] uint target,
         [NativeTypeName("GLenum")] uint format,
         [NativeTypeName("GLenum")] uint type,
-        [NativeTypeName("GLsizei")] int rowBufSize,
+        [NativeTypeName("GLsizei")] uint rowBufSize,
         Ref row,
-        [NativeTypeName("GLsizei")] int columnBufSize,
+        [NativeTypeName("GLsizei")] uint columnBufSize,
         Ref column,
         Ref span
     );
@@ -37833,7 +37836,7 @@ public unsafe partial interface IGL
         [NativeTypeName("GLint")] int level,
         [NativeTypeName("GLenum")] uint format,
         [NativeTypeName("GLenum")] uint type,
-        [NativeTypeName("GLsizei")] int bufSize,
+        [NativeTypeName("GLsizei")] uint bufSize,
         Ref pixels
     );
 
@@ -37845,7 +37848,7 @@ public unsafe partial interface IGL
         [NativeTypeName("GLint")] int level,
         [NativeTypeName("GLenum")] uint format,
         [NativeTypeName("GLenum")] uint type,
-        [NativeTypeName("GLsizei")] int bufSize,
+        [NativeTypeName("GLsizei")] uint bufSize,
         Ref img
     );
 
@@ -37855,7 +37858,7 @@ public unsafe partial interface IGL
     void GetnUniform(
         [NativeTypeName("GLuint")] uint program,
         [NativeTypeName("GLint")] int location,
-        [NativeTypeName("GLsizei")] int bufSize,
+        [NativeTypeName("GLsizei")] uint bufSize,
         [NativeTypeName("GLdouble *")] Ref<double> @params
     );
 
@@ -37865,7 +37868,7 @@ public unsafe partial interface IGL
     void GetnUniformdvArb(
         [NativeTypeName("GLuint")] uint program,
         [NativeTypeName("GLint")] int location,
-        [NativeTypeName("GLsizei")] int bufSize,
+        [NativeTypeName("GLsizei")] uint bufSize,
         [NativeTypeName("GLdouble *")] Ref<double> @params
     );
 
@@ -37875,7 +37878,7 @@ public unsafe partial interface IGL
     void GetnUniform(
         [NativeTypeName("GLuint")] uint program,
         [NativeTypeName("GLint")] int location,
-        [NativeTypeName("GLsizei")] int bufSize,
+        [NativeTypeName("GLsizei")] uint bufSize,
         [NativeTypeName("GLfloat *")] Ref<float> @params
     );
 
@@ -37885,7 +37888,7 @@ public unsafe partial interface IGL
     void GetnUniformfvArb(
         [NativeTypeName("GLuint")] uint program,
         [NativeTypeName("GLint")] int location,
-        [NativeTypeName("GLsizei")] int bufSize,
+        [NativeTypeName("GLsizei")] uint bufSize,
         [NativeTypeName("GLfloat *")] Ref<float> @params
     );
 
@@ -37895,7 +37898,7 @@ public unsafe partial interface IGL
     void GetnUniformfvExt(
         [NativeTypeName("GLuint")] uint program,
         [NativeTypeName("GLint")] int location,
-        [NativeTypeName("GLsizei")] int bufSize,
+        [NativeTypeName("GLsizei")] uint bufSize,
         [NativeTypeName("GLfloat *")] Ref<float> @params
     );
 
@@ -37904,7 +37907,7 @@ public unsafe partial interface IGL
     void GetnUniformfvKhr(
         [NativeTypeName("GLuint")] uint program,
         [NativeTypeName("GLint")] int location,
-        [NativeTypeName("GLsizei")] int bufSize,
+        [NativeTypeName("GLsizei")] uint bufSize,
         [NativeTypeName("GLfloat *")] Ref<float> @params
     );
 
@@ -37914,7 +37917,7 @@ public unsafe partial interface IGL
     void GetnUniformi64vArb(
         [NativeTypeName("GLuint")] uint program,
         [NativeTypeName("GLint")] int location,
-        [NativeTypeName("GLsizei")] int bufSize,
+        [NativeTypeName("GLsizei")] uint bufSize,
         [NativeTypeName("GLint64 *")] Ref<long> @params
     );
 
@@ -37924,7 +37927,7 @@ public unsafe partial interface IGL
     void GetnUniform(
         [NativeTypeName("GLuint")] uint program,
         [NativeTypeName("GLint")] int location,
-        [NativeTypeName("GLsizei")] int bufSize,
+        [NativeTypeName("GLsizei")] uint bufSize,
         [NativeTypeName("GLint *")] Ref<int> @params
     );
 
@@ -37934,7 +37937,7 @@ public unsafe partial interface IGL
     void GetnUniformivArb(
         [NativeTypeName("GLuint")] uint program,
         [NativeTypeName("GLint")] int location,
-        [NativeTypeName("GLsizei")] int bufSize,
+        [NativeTypeName("GLsizei")] uint bufSize,
         [NativeTypeName("GLint *")] Ref<int> @params
     );
 
@@ -37944,7 +37947,7 @@ public unsafe partial interface IGL
     void GetnUniformivExt(
         [NativeTypeName("GLuint")] uint program,
         [NativeTypeName("GLint")] int location,
-        [NativeTypeName("GLsizei")] int bufSize,
+        [NativeTypeName("GLsizei")] uint bufSize,
         [NativeTypeName("GLint *")] Ref<int> @params
     );
 
@@ -37953,7 +37956,7 @@ public unsafe partial interface IGL
     void GetnUniformivKhr(
         [NativeTypeName("GLuint")] uint program,
         [NativeTypeName("GLint")] int location,
-        [NativeTypeName("GLsizei")] int bufSize,
+        [NativeTypeName("GLsizei")] uint bufSize,
         [NativeTypeName("GLint *")] Ref<int> @params
     );
 
@@ -37963,7 +37966,7 @@ public unsafe partial interface IGL
     void GetnUniformui64vArb(
         [NativeTypeName("GLuint")] uint program,
         [NativeTypeName("GLint")] int location,
-        [NativeTypeName("GLsizei")] int bufSize,
+        [NativeTypeName("GLsizei")] uint bufSize,
         [NativeTypeName("GLuint64 *")] Ref<ulong> @params
     );
 
@@ -37973,7 +37976,7 @@ public unsafe partial interface IGL
     void GetnUniform(
         [NativeTypeName("GLuint")] uint program,
         [NativeTypeName("GLint")] int location,
-        [NativeTypeName("GLsizei")] int bufSize,
+        [NativeTypeName("GLsizei")] uint bufSize,
         [NativeTypeName("GLuint *")] Ref<uint> @params
     );
 
@@ -37983,7 +37986,7 @@ public unsafe partial interface IGL
     void GetnUniformuivArb(
         [NativeTypeName("GLuint")] uint program,
         [NativeTypeName("GLint")] int location,
-        [NativeTypeName("GLsizei")] int bufSize,
+        [NativeTypeName("GLsizei")] uint bufSize,
         [NativeTypeName("GLuint *")] Ref<uint> @params
     );
 
@@ -37992,7 +37995,7 @@ public unsafe partial interface IGL
     void GetnUniformuivKhr(
         [NativeTypeName("GLuint")] uint program,
         [NativeTypeName("GLint")] int location,
-        [NativeTypeName("GLsizei")] int bufSize,
+        [NativeTypeName("GLsizei")] uint bufSize,
         [NativeTypeName("GLuint *")] Ref<uint> @params
     );
 
@@ -38018,8 +38021,8 @@ public unsafe partial interface IGL
     void GetObjectLabel(
         [NativeTypeName("GLenum")] uint identifier,
         [NativeTypeName("GLuint")] uint name,
-        [NativeTypeName("GLsizei")] int bufSize,
-        [NativeTypeName("GLsizei *")] Ref<int> length,
+        [NativeTypeName("GLsizei")] uint bufSize,
+        [NativeTypeName("GLsizei *")] Ref<uint> length,
         [NativeTypeName("GLchar *")] Ref<sbyte> label
     );
 
@@ -38030,8 +38033,8 @@ public unsafe partial interface IGL
     void GetObjectLabelExt(
         [NativeTypeName("GLenum")] uint type,
         [NativeTypeName("GLuint")] uint @object,
-        [NativeTypeName("GLsizei")] int bufSize,
-        [NativeTypeName("GLsizei *")] Ref<int> length,
+        [NativeTypeName("GLsizei")] uint bufSize,
+        [NativeTypeName("GLsizei *")] Ref<uint> length,
         [NativeTypeName("GLchar *")] Ref<sbyte> label
     );
 
@@ -38040,15 +38043,15 @@ public unsafe partial interface IGL
     void GetObjectLabelKhr(
         [NativeTypeName("GLenum")] uint identifier,
         [NativeTypeName("GLuint")] uint name,
-        [NativeTypeName("GLsizei")] int bufSize,
-        [NativeTypeName("GLsizei *")] Ref<int> length,
+        [NativeTypeName("GLsizei")] uint bufSize,
+        [NativeTypeName("GLsizei *")] Ref<uint> length,
         [NativeTypeName("GLchar *")] Ref<sbyte> label
     );
 
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glGetObjectParameterfvARB")]
     void GetObjectParameterfvArb(
-        [NativeTypeName("GLhandleARB")] Ref obj,
+        [NativeTypeName("GLhandleARB")] uint obj,
         [NativeTypeName("GLenum")] uint pname,
         [NativeTypeName("GLfloat *")] Ref<float> @params
     );
@@ -38065,7 +38068,7 @@ public unsafe partial interface IGL
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glGetObjectParameterivARB")]
     void GetObjectParameterivArb(
-        [NativeTypeName("GLhandleARB")] Ref obj,
+        [NativeTypeName("GLhandleARB")] uint obj,
         [NativeTypeName("GLenum")] uint pname,
         [NativeTypeName("GLint *")] Ref<int> @params
     );
@@ -38075,8 +38078,8 @@ public unsafe partial interface IGL
     [NativeFunction("opengl", EntryPoint = "glGetObjectPtrLabel")]
     void GetObjectPtrLabel(
         [NativeTypeName("const void *")] Ref ptr,
-        [NativeTypeName("GLsizei")] int bufSize,
-        [NativeTypeName("GLsizei *")] Ref<int> length,
+        [NativeTypeName("GLsizei")] uint bufSize,
+        [NativeTypeName("GLsizei *")] Ref<uint> length,
         [NativeTypeName("GLchar *")] Ref<sbyte> label
     );
 
@@ -38084,8 +38087,8 @@ public unsafe partial interface IGL
     [NativeFunction("opengl", EntryPoint = "glGetObjectPtrLabelKHR")]
     void GetObjectPtrLabelKhr(
         [NativeTypeName("const void *")] Ref ptr,
-        [NativeTypeName("GLsizei")] int bufSize,
-        [NativeTypeName("GLsizei *")] Ref<int> length,
+        [NativeTypeName("GLsizei")] uint bufSize,
+        [NativeTypeName("GLsizei *")] Ref<uint> length,
         [NativeTypeName("GLchar *")] Ref<sbyte> label
     );
 
@@ -38155,8 +38158,8 @@ public unsafe partial interface IGL
     [NativeFunction("opengl", EntryPoint = "glGetPathLengthNV")]
     float GetPathLengthNV(
         [NativeTypeName("GLuint")] uint path,
-        [NativeTypeName("GLsizei")] int startSegment,
-        [NativeTypeName("GLsizei")] int numSegments
+        [NativeTypeName("GLsizei")] uint startSegment,
+        [NativeTypeName("GLsizei")] uint numSegments
     );
 
     [SupportedApiProfile("glcore", MinVersion = "3.2")]
@@ -38166,8 +38169,8 @@ public unsafe partial interface IGL
     void GetPathMetricRangeNV(
         [NativeTypeName("GLbitfield")] uint metricQueryMask,
         [NativeTypeName("GLuint")] uint firstPathName,
-        [NativeTypeName("GLsizei")] int numPaths,
-        [NativeTypeName("GLsizei")] int stride,
+        [NativeTypeName("GLsizei")] uint numPaths,
+        [NativeTypeName("GLsizei")] uint stride,
         [NativeTypeName("GLfloat *")] Ref<float> metrics
     );
 
@@ -38177,11 +38180,11 @@ public unsafe partial interface IGL
     [NativeFunction("opengl", EntryPoint = "glGetPathMetricsNV")]
     void GetPathMetricsNV(
         [NativeTypeName("GLbitfield")] uint metricQueryMask,
-        [NativeTypeName("GLsizei")] int numPaths,
+        [NativeTypeName("GLsizei")] uint numPaths,
         [NativeTypeName("GLenum")] uint pathNameType,
         [NativeTypeName("const void *")] Ref paths,
         [NativeTypeName("GLuint")] uint pathBase,
-        [NativeTypeName("GLsizei")] int stride,
+        [NativeTypeName("GLsizei")] uint stride,
         [NativeTypeName("GLfloat *")] Ref<float> metrics
     );
 
@@ -38211,7 +38214,7 @@ public unsafe partial interface IGL
     [NativeFunction("opengl", EntryPoint = "glGetPathSpacingNV")]
     void GetPathSpacingNV(
         [NativeTypeName("GLenum")] uint pathListMode,
-        [NativeTypeName("GLsizei")] int numPaths,
+        [NativeTypeName("GLsizei")] uint numPaths,
         [NativeTypeName("GLenum")] uint pathNameType,
         [NativeTypeName("const void *")] Ref paths,
         [NativeTypeName("GLuint")] uint pathBase,
@@ -38262,7 +38265,7 @@ public unsafe partial interface IGL
     void GetPerfMonitorCounterDataAmd(
         [NativeTypeName("GLuint")] uint monitor,
         [NativeTypeName("GLenum")] uint pname,
-        [NativeTypeName("GLsizei")] int dataSize,
+        [NativeTypeName("GLsizei")] uint dataSize,
         [NativeTypeName("GLuint *")] Ref<uint> data,
         [NativeTypeName("GLint *")] Ref<int> bytesWritten
     );
@@ -38286,7 +38289,7 @@ public unsafe partial interface IGL
         [NativeTypeName("GLuint")] uint group,
         [NativeTypeName("GLint *")] Ref<int> numCounters,
         [NativeTypeName("GLint *")] Ref<int> maxActiveCounters,
-        [NativeTypeName("GLsizei")] int counterSize,
+        [NativeTypeName("GLsizei")] uint counterSize,
         [NativeTypeName("GLuint *")] Ref<uint> counters
     );
 
@@ -38297,8 +38300,8 @@ public unsafe partial interface IGL
     void GetPerfMonitorCounterStringAmd(
         [NativeTypeName("GLuint")] uint group,
         [NativeTypeName("GLuint")] uint counter,
-        [NativeTypeName("GLsizei")] int bufSize,
-        [NativeTypeName("GLsizei *")] Ref<int> length,
+        [NativeTypeName("GLsizei")] uint bufSize,
+        [NativeTypeName("GLsizei *")] Ref<uint> length,
         [NativeTypeName("GLchar *")] Ref<sbyte> counterString
     );
 
@@ -38308,7 +38311,7 @@ public unsafe partial interface IGL
     [NativeFunction("opengl", EntryPoint = "glGetPerfMonitorGroupsAMD")]
     void GetPerfMonitorGroupsAmd(
         [NativeTypeName("GLint *")] Ref<int> numGroups,
-        [NativeTypeName("GLsizei")] int groupsSize,
+        [NativeTypeName("GLsizei")] uint groupsSize,
         [NativeTypeName("GLuint *")] Ref<uint> groups
     );
 
@@ -38318,8 +38321,8 @@ public unsafe partial interface IGL
     [NativeFunction("opengl", EntryPoint = "glGetPerfMonitorGroupStringAMD")]
     void GetPerfMonitorGroupStringAmd(
         [NativeTypeName("GLuint")] uint group,
-        [NativeTypeName("GLsizei")] int bufSize,
-        [NativeTypeName("GLsizei *")] Ref<int> length,
+        [NativeTypeName("GLsizei")] uint bufSize,
+        [NativeTypeName("GLsizei *")] Ref<uint> length,
         [NativeTypeName("GLchar *")] Ref<sbyte> groupString
     );
 
@@ -38330,7 +38333,7 @@ public unsafe partial interface IGL
     void GetPerfQueryDataIntel(
         [NativeTypeName("GLuint")] uint queryHandle,
         [NativeTypeName("GLuint")] uint flags,
-        [NativeTypeName("GLsizei")] int dataSize,
+        [NativeTypeName("GLsizei")] uint dataSize,
         Ref data,
         [NativeTypeName("GLuint *")] Ref<uint> bytesWritten
     );
@@ -38458,8 +38461,8 @@ public unsafe partial interface IGL
     [NativeFunction("opengl", EntryPoint = "glGetProgramBinary")]
     void GetProgramBinary(
         [NativeTypeName("GLuint")] uint program,
-        [NativeTypeName("GLsizei")] int bufSize,
-        [NativeTypeName("GLsizei *")] Ref<int> length,
+        [NativeTypeName("GLsizei")] uint bufSize,
+        [NativeTypeName("GLsizei *")] Ref<uint> length,
         [NativeTypeName("GLenum *")] Ref<uint> binaryFormat,
         Ref binary
     );
@@ -38468,8 +38471,8 @@ public unsafe partial interface IGL
     [NativeFunction("opengl", EntryPoint = "glGetProgramBinaryOES")]
     void GetProgramBinaryOes(
         [NativeTypeName("GLuint")] uint program,
-        [NativeTypeName("GLsizei")] int bufSize,
-        [NativeTypeName("GLsizei *")] Ref<int> length,
+        [NativeTypeName("GLsizei")] uint bufSize,
+        [NativeTypeName("GLsizei *")] Ref<uint> length,
         [NativeTypeName("GLenum *")] Ref<uint> binaryFormat,
         Ref binary
     );
@@ -38512,8 +38515,8 @@ public unsafe partial interface IGL
     [NativeFunction("opengl", EntryPoint = "glGetProgramInfoLog")]
     void GetProgramInfoLog(
         [NativeTypeName("GLuint")] uint program,
-        [NativeTypeName("GLsizei")] int bufSize,
-        [NativeTypeName("GLsizei *")] Ref<int> length,
+        [NativeTypeName("GLsizei")] uint bufSize,
+        [NativeTypeName("GLsizei *")] Ref<uint> length,
         [NativeTypeName("GLchar *")] Ref<sbyte> infoLog
     );
 
@@ -38589,7 +38592,7 @@ public unsafe partial interface IGL
     [NativeFunction("opengl", EntryPoint = "glGetProgramNamedParameterdvNV")]
     void GetProgramNamedParameterdvNV(
         [NativeTypeName("GLuint")] uint id,
-        [NativeTypeName("GLsizei")] int len,
+        [NativeTypeName("GLsizei")] uint len,
         [NativeTypeName("const GLubyte *")] Ref<byte> name,
         [NativeTypeName("GLdouble *")] Ref<double> @params
     );
@@ -38598,7 +38601,7 @@ public unsafe partial interface IGL
     [NativeFunction("opengl", EntryPoint = "glGetProgramNamedParameterfvNV")]
     void GetProgramNamedParameterfvNV(
         [NativeTypeName("GLuint")] uint id,
-        [NativeTypeName("GLsizei")] int len,
+        [NativeTypeName("GLsizei")] uint len,
         [NativeTypeName("const GLubyte *")] Ref<byte> name,
         [NativeTypeName("GLfloat *")] Ref<float> @params
     );
@@ -38626,8 +38629,8 @@ public unsafe partial interface IGL
     [NativeFunction("opengl", EntryPoint = "glGetProgramPipelineInfoLog")]
     void GetProgramPipelineInfoLog(
         [NativeTypeName("GLuint")] uint pipeline,
-        [NativeTypeName("GLsizei")] int bufSize,
-        [NativeTypeName("GLsizei *")] Ref<int> length,
+        [NativeTypeName("GLsizei")] uint bufSize,
+        [NativeTypeName("GLsizei *")] Ref<uint> length,
         [NativeTypeName("GLchar *")] Ref<sbyte> infoLog
     );
 
@@ -38635,8 +38638,8 @@ public unsafe partial interface IGL
     [NativeFunction("opengl", EntryPoint = "glGetProgramPipelineInfoLogEXT")]
     void GetProgramPipelineInfoLogExt(
         [NativeTypeName("GLuint")] uint pipeline,
-        [NativeTypeName("GLsizei")] int bufSize,
-        [NativeTypeName("GLsizei *")] Ref<int> length,
+        [NativeTypeName("GLsizei")] uint bufSize,
+        [NativeTypeName("GLsizei *")] Ref<uint> length,
         [NativeTypeName("GLchar *")] Ref<sbyte> infoLog
     );
 
@@ -38665,10 +38668,10 @@ public unsafe partial interface IGL
         [NativeTypeName("GLuint")] uint program,
         [NativeTypeName("GLenum")] uint programInterface,
         [NativeTypeName("GLuint")] uint index,
-        [NativeTypeName("GLsizei")] int propCount,
+        [NativeTypeName("GLsizei")] uint propCount,
         [NativeTypeName("const GLenum *")] Ref<uint> props,
-        [NativeTypeName("GLsizei")] int count,
-        [NativeTypeName("GLsizei *")] Ref<int> length,
+        [NativeTypeName("GLsizei")] uint count,
+        [NativeTypeName("GLsizei *")] Ref<uint> length,
         [NativeTypeName("GLfloat *")] Ref<float> @params
     );
 
@@ -38689,10 +38692,10 @@ public unsafe partial interface IGL
         [NativeTypeName("GLuint")] uint program,
         [NativeTypeName("GLenum")] uint programInterface,
         [NativeTypeName("GLuint")] uint index,
-        [NativeTypeName("GLsizei")] int propCount,
+        [NativeTypeName("GLsizei")] uint propCount,
         [NativeTypeName("const GLenum *")] Ref<uint> props,
-        [NativeTypeName("GLsizei")] int count,
-        [NativeTypeName("GLsizei *")] Ref<int> length,
+        [NativeTypeName("GLsizei")] uint count,
+        [NativeTypeName("GLsizei *")] Ref<uint> length,
         [NativeTypeName("GLint *")] Ref<int> @params
     );
 
@@ -38732,8 +38735,8 @@ public unsafe partial interface IGL
         [NativeTypeName("GLuint")] uint program,
         [NativeTypeName("GLenum")] uint programInterface,
         [NativeTypeName("GLuint")] uint index,
-        [NativeTypeName("GLsizei")] int bufSize,
-        [NativeTypeName("GLsizei *")] Ref<int> length,
+        [NativeTypeName("GLsizei")] uint bufSize,
+        [NativeTypeName("GLsizei *")] Ref<uint> length,
         [NativeTypeName("GLchar *")] Ref<sbyte> name
     );
 
@@ -39074,8 +39077,8 @@ public unsafe partial interface IGL
     [NativeFunction("opengl", EntryPoint = "glGetShaderInfoLog")]
     void GetShaderInfoLog(
         [NativeTypeName("GLuint")] uint shader,
-        [NativeTypeName("GLsizei")] int bufSize,
-        [NativeTypeName("GLsizei *")] Ref<int> length,
+        [NativeTypeName("GLsizei")] uint bufSize,
+        [NativeTypeName("GLsizei *")] Ref<uint> length,
         [NativeTypeName("GLchar *")] Ref<sbyte> infoLog
     );
 
@@ -39106,17 +39109,17 @@ public unsafe partial interface IGL
     [NativeFunction("opengl", EntryPoint = "glGetShaderSource")]
     void GetShaderSource(
         [NativeTypeName("GLuint")] uint shader,
-        [NativeTypeName("GLsizei")] int bufSize,
-        [NativeTypeName("GLsizei *")] Ref<int> length,
+        [NativeTypeName("GLsizei")] uint bufSize,
+        [NativeTypeName("GLsizei *")] Ref<uint> length,
         [NativeTypeName("GLchar *")] Ref<sbyte> source
     );
 
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glGetShaderSourceARB")]
     void GetShaderSourceArb(
-        [NativeTypeName("GLhandleARB")] Ref obj,
-        [NativeTypeName("GLsizei")] int maxLength,
-        [NativeTypeName("GLsizei *")] Ref<int> length,
+        [NativeTypeName("GLhandleARB")] uint obj,
+        [NativeTypeName("GLsizei")] uint maxLength,
+        [NativeTypeName("GLsizei *")] Ref<uint> length,
         [NativeTypeName("GLcharARB *")] Ref<sbyte> source
     );
 
@@ -39197,8 +39200,8 @@ public unsafe partial interface IGL
     void GetSync(
         [NativeTypeName("GLsync")] Ref<Sync> sync,
         [NativeTypeName("GLenum")] uint pname,
-        [NativeTypeName("GLsizei")] int count,
-        [NativeTypeName("GLsizei *")] Ref<int> length,
+        [NativeTypeName("GLsizei")] uint count,
+        [NativeTypeName("GLsizei *")] Ref<uint> length,
         [NativeTypeName("GLint *")] Ref<int> values
     );
 
@@ -39208,8 +39211,8 @@ public unsafe partial interface IGL
     void GetSyncivApple(
         [NativeTypeName("GLsync")] Ref<Sync> sync,
         [NativeTypeName("GLenum")] uint pname,
-        [NativeTypeName("GLsizei")] int count,
-        [NativeTypeName("GLsizei *")] Ref<int> length,
+        [NativeTypeName("GLsizei")] uint count,
+        [NativeTypeName("GLsizei *")] Ref<uint> length,
         [NativeTypeName("GLint *")] Ref<int> values
     );
 
@@ -39484,7 +39487,7 @@ public unsafe partial interface IGL
         [NativeTypeName("GLint")] int level,
         [NativeTypeName("GLenum")] uint format,
         [NativeTypeName("GLenum")] uint type,
-        [NativeTypeName("GLsizei")] int bufSize,
+        [NativeTypeName("GLsizei")] uint bufSize,
         Ref pixels
     );
 
@@ -39654,12 +39657,12 @@ public unsafe partial interface IGL
         [NativeTypeName("GLint")] int xoffset,
         [NativeTypeName("GLint")] int yoffset,
         [NativeTypeName("GLint")] int zoffset,
-        [NativeTypeName("GLsizei")] int width,
-        [NativeTypeName("GLsizei")] int height,
-        [NativeTypeName("GLsizei")] int depth,
+        [NativeTypeName("GLsizei")] uint width,
+        [NativeTypeName("GLsizei")] uint height,
+        [NativeTypeName("GLsizei")] uint depth,
         [NativeTypeName("GLenum")] uint format,
         [NativeTypeName("GLenum")] uint type,
-        [NativeTypeName("GLsizei")] int bufSize,
+        [NativeTypeName("GLsizei")] uint bufSize,
         Ref pixels
     );
 
@@ -39707,9 +39710,9 @@ public unsafe partial interface IGL
     void GetTransformFeedbackVarying(
         [NativeTypeName("GLuint")] uint program,
         [NativeTypeName("GLuint")] uint index,
-        [NativeTypeName("GLsizei")] int bufSize,
-        [NativeTypeName("GLsizei *")] Ref<int> length,
-        [NativeTypeName("GLsizei *")] Ref<int> size,
+        [NativeTypeName("GLsizei")] uint bufSize,
+        [NativeTypeName("GLsizei *")] Ref<uint> length,
+        [NativeTypeName("GLsizei *")] Ref<uint> size,
         [NativeTypeName("GLenum *")] Ref<uint> type,
         [NativeTypeName("GLchar *")] Ref<sbyte> name
     );
@@ -39719,9 +39722,9 @@ public unsafe partial interface IGL
     void GetTransformFeedbackVaryingExt(
         [NativeTypeName("GLuint")] uint program,
         [NativeTypeName("GLuint")] uint index,
-        [NativeTypeName("GLsizei")] int bufSize,
-        [NativeTypeName("GLsizei *")] Ref<int> length,
-        [NativeTypeName("GLsizei *")] Ref<int> size,
+        [NativeTypeName("GLsizei")] uint bufSize,
+        [NativeTypeName("GLsizei *")] Ref<uint> length,
+        [NativeTypeName("GLsizei *")] Ref<uint> size,
         [NativeTypeName("GLenum *")] Ref<uint> type,
         [NativeTypeName("GLchar *")] Ref<sbyte> name
     );
@@ -39738,8 +39741,8 @@ public unsafe partial interface IGL
     [NativeFunction("opengl", EntryPoint = "glGetTranslatedShaderSourceANGLE")]
     void GetTranslatedShaderSourceAngle(
         [NativeTypeName("GLuint")] uint shader,
-        [NativeTypeName("GLsizei")] int bufSize,
-        [NativeTypeName("GLsizei *")] Ref<int> length,
+        [NativeTypeName("GLsizei")] uint bufSize,
+        [NativeTypeName("GLsizei *")] Ref<uint> length,
         [NativeTypeName("GLchar *")] Ref<sbyte> source
     );
 
@@ -39782,7 +39785,7 @@ public unsafe partial interface IGL
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glGetUniformfvARB")]
     void GetUniformfvArb(
-        [NativeTypeName("GLhandleARB")] Ref programObj,
+        [NativeTypeName("GLhandleARB")] uint programObj,
         [NativeTypeName("GLint")] int location,
         [NativeTypeName("GLfloat *")] Ref<float> @params
     );
@@ -39811,7 +39814,7 @@ public unsafe partial interface IGL
     [NativeFunction("opengl", EntryPoint = "glGetUniformIndices")]
     void GetUniformIndices(
         [NativeTypeName("GLuint")] uint program,
-        [NativeTypeName("GLsizei")] int uniformCount,
+        [NativeTypeName("GLsizei")] uint uniformCount,
         [NativeTypeName("const GLchar *const *")] Ref2D<sbyte> uniformNames,
         [NativeTypeName("GLuint *")] Ref<uint> uniformIndices
     );
@@ -39829,7 +39832,7 @@ public unsafe partial interface IGL
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glGetUniformivARB")]
     void GetUniformivArb(
-        [NativeTypeName("GLhandleARB")] Ref programObj,
+        [NativeTypeName("GLhandleARB")] uint programObj,
         [NativeTypeName("GLint")] int location,
         [NativeTypeName("GLint *")] Ref<int> @params
     );
@@ -39848,7 +39851,7 @@ public unsafe partial interface IGL
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glGetUniformLocationARB")]
     int GetUniformLocationArb(
-        [NativeTypeName("GLhandleARB")] Ref programObj,
+        [NativeTypeName("GLhandleARB")] uint programObj,
         [NativeTypeName("const GLcharARB *")] Ref<sbyte> name
     );
 
@@ -39942,7 +39945,7 @@ public unsafe partial interface IGL
     void GetVariantBooleanvExt(
         [NativeTypeName("GLuint")] uint id,
         [NativeTypeName("GLenum")] uint value,
-        [NativeTypeName("GLboolean *")] Ref<byte> data
+        [NativeTypeName("GLboolean *")] Ref<uint> data
     );
 
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
@@ -40362,18 +40365,18 @@ public unsafe partial interface IGL
     [NativeFunction("opengl", EntryPoint = "glHistogram")]
     void Histogram(
         [NativeTypeName("GLenum")] uint target,
-        [NativeTypeName("GLsizei")] int width,
+        [NativeTypeName("GLsizei")] uint width,
         [NativeTypeName("GLenum")] uint internalformat,
-        [NativeTypeName("GLboolean")] byte sink
+        [NativeTypeName("GLboolean")] uint sink
     );
 
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glHistogramEXT")]
     void HistogramExt(
         [NativeTypeName("GLenum")] uint target,
-        [NativeTypeName("GLsizei")] int width,
+        [NativeTypeName("GLsizei")] uint width,
         [NativeTypeName("GLenum")] uint internalformat,
-        [NativeTypeName("GLboolean")] byte sink
+        [NativeTypeName("GLboolean")] uint sink
     );
 
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
@@ -40498,7 +40501,7 @@ public unsafe partial interface IGL
     [NativeFunction("opengl", EntryPoint = "glIndexFormatNV")]
     void IndexFormatNV(
         [NativeTypeName("GLenum")] uint type,
-        [NativeTypeName("GLsizei")] int stride
+        [NativeTypeName("GLsizei")] uint stride
     );
 
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
@@ -40535,7 +40538,7 @@ public unsafe partial interface IGL
     [NativeFunction("opengl", EntryPoint = "glIndexPointer")]
     void IndexPointer(
         [NativeTypeName("GLenum")] uint type,
-        [NativeTypeName("GLsizei")] int stride,
+        [NativeTypeName("GLsizei")] uint stride,
         [NativeTypeName("const void *")] Ref pointer
     );
 
@@ -40543,8 +40546,8 @@ public unsafe partial interface IGL
     [NativeFunction("opengl", EntryPoint = "glIndexPointerEXT")]
     void IndexPointerExt(
         [NativeTypeName("GLenum")] uint type,
-        [NativeTypeName("GLsizei")] int stride,
-        [NativeTypeName("GLsizei")] int count,
+        [NativeTypeName("GLsizei")] uint stride,
+        [NativeTypeName("GLsizei")] uint count,
         [NativeTypeName("const void *")] Ref pointer
     );
 
@@ -40599,14 +40602,14 @@ public unsafe partial interface IGL
     [SupportedApiProfile("gles2", MinVersion = "2.0")]
     [NativeFunction("opengl", EntryPoint = "glInsertEventMarkerEXT")]
     void InsertEventMarkerExt(
-        [NativeTypeName("GLsizei")] int length,
+        [NativeTypeName("GLsizei")] uint length,
         [NativeTypeName("const GLchar *")] Ref<sbyte> marker
     );
 
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glInstrumentsBufferSGIX")]
     void InstrumentsBufferSgix(
-        [NativeTypeName("GLsizei")] int size,
+        [NativeTypeName("GLsizei")] uint size,
         [NativeTypeName("GLint *")] Ref<int> buffer
     );
 
@@ -40614,7 +40617,7 @@ public unsafe partial interface IGL
     [NativeFunction("opengl", EntryPoint = "glInterleavedArrays")]
     void InterleavedArrays(
         [NativeTypeName("GLenum")] uint format,
-        [NativeTypeName("GLsizei")] int stride,
+        [NativeTypeName("GLsizei")] uint stride,
         [NativeTypeName("const void *")] Ref pointer
     );
 
@@ -40640,7 +40643,7 @@ public unsafe partial interface IGL
     void InvalidateBufferSubData(
         [NativeTypeName("GLuint")] uint buffer,
         [NativeTypeName("GLintptr")] nint offset,
-        [NativeTypeName("GLsizeiptr")] nint length
+        [NativeTypeName("GLsizeiptr")] nuint length
     );
 
     [SupportedApiProfile("glcore", MinVersion = "3.2")]
@@ -40648,7 +40651,7 @@ public unsafe partial interface IGL
     [NativeFunction("opengl", EntryPoint = "glInvalidateFramebuffer")]
     void InvalidateFramebuffer(
         [NativeTypeName("GLenum")] uint target,
-        [NativeTypeName("GLsizei")] int numAttachments,
+        [NativeTypeName("GLsizei")] uint numAttachments,
         [NativeTypeName("const GLenum *")] Ref<uint> attachments
     );
 
@@ -40657,7 +40660,7 @@ public unsafe partial interface IGL
     [NativeFunction("opengl", EntryPoint = "glInvalidateNamedFramebufferData")]
     void InvalidateNamedFramebufferData(
         [NativeTypeName("GLuint")] uint framebuffer,
-        [NativeTypeName("GLsizei")] int numAttachments,
+        [NativeTypeName("GLsizei")] uint numAttachments,
         [NativeTypeName("const GLenum *")] Ref<uint> attachments
     );
 
@@ -40666,12 +40669,12 @@ public unsafe partial interface IGL
     [NativeFunction("opengl", EntryPoint = "glInvalidateNamedFramebufferSubData")]
     void InvalidateNamedFramebufferSubData(
         [NativeTypeName("GLuint")] uint framebuffer,
-        [NativeTypeName("GLsizei")] int numAttachments,
+        [NativeTypeName("GLsizei")] uint numAttachments,
         [NativeTypeName("const GLenum *")] Ref<uint> attachments,
         [NativeTypeName("GLint")] int x,
         [NativeTypeName("GLint")] int y,
-        [NativeTypeName("GLsizei")] int width,
-        [NativeTypeName("GLsizei")] int height
+        [NativeTypeName("GLsizei")] uint width,
+        [NativeTypeName("GLsizei")] uint height
     );
 
     [SupportedApiProfile("glcore", MinVersion = "3.2")]
@@ -40679,12 +40682,12 @@ public unsafe partial interface IGL
     [NativeFunction("opengl", EntryPoint = "glInvalidateSubFramebuffer")]
     void InvalidateSubFramebuffer(
         [NativeTypeName("GLenum")] uint target,
-        [NativeTypeName("GLsizei")] int numAttachments,
+        [NativeTypeName("GLsizei")] uint numAttachments,
         [NativeTypeName("const GLenum *")] Ref<uint> attachments,
         [NativeTypeName("GLint")] int x,
         [NativeTypeName("GLint")] int y,
-        [NativeTypeName("GLsizei")] int width,
-        [NativeTypeName("GLsizei")] int height
+        [NativeTypeName("GLsizei")] uint width,
+        [NativeTypeName("GLsizei")] uint height
     );
 
     [SupportedApiProfile("glcore", MinVersion = "3.2")]
@@ -40704,15 +40707,15 @@ public unsafe partial interface IGL
         [NativeTypeName("GLint")] int xoffset,
         [NativeTypeName("GLint")] int yoffset,
         [NativeTypeName("GLint")] int zoffset,
-        [NativeTypeName("GLsizei")] int width,
-        [NativeTypeName("GLsizei")] int height,
-        [NativeTypeName("GLsizei")] int depth
+        [NativeTypeName("GLsizei")] uint width,
+        [NativeTypeName("GLsizei")] uint height,
+        [NativeTypeName("GLsizei")] uint depth
     );
 
     [return: NativeTypeName("GLboolean")]
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glIsAsyncMarkerSGIX")]
-    byte IsAsyncMarkerSgix([NativeTypeName("GLuint")] uint marker);
+    uint IsAsyncMarkerSgix([NativeTypeName("GLuint")] uint marker);
 
     [return: NativeTypeName("GLboolean")]
     [SupportedApiProfile("glcore", MinVersion = "3.2")]
@@ -40720,24 +40723,24 @@ public unsafe partial interface IGL
     [SupportedApiProfile("gles1", MaxVersion = "2.0")]
     [SupportedApiProfile("gles2", MinVersion = "2.0")]
     [NativeFunction("opengl", EntryPoint = "glIsBuffer")]
-    byte IsBuffer([NativeTypeName("GLuint")] uint buffer);
+    uint IsBuffer([NativeTypeName("GLuint")] uint buffer);
 
     [return: NativeTypeName("GLboolean")]
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glIsBufferARB")]
-    byte IsBufferArb([NativeTypeName("GLuint")] uint buffer);
+    uint IsBufferArb([NativeTypeName("GLuint")] uint buffer);
 
     [return: NativeTypeName("GLboolean")]
     [SupportedApiProfile("glcore", MinVersion = "3.2")]
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glIsBufferResidentNV")]
-    byte IsBufferResidentNV([NativeTypeName("GLenum")] uint target);
+    uint IsBufferResidentNV([NativeTypeName("GLenum")] uint target);
 
     [return: NativeTypeName("GLboolean")]
     [SupportedApiProfile("glcore", MinVersion = "3.2")]
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glIsCommandListNV")]
-    byte IsCommandListNV([NativeTypeName("GLuint")] uint list);
+    uint IsCommandListNV([NativeTypeName("GLuint")] uint list);
 
     [return: NativeTypeName("GLboolean")]
     [SupportedApiProfile("glcore", MinVersion = "3.2")]
@@ -40745,18 +40748,18 @@ public unsafe partial interface IGL
     [SupportedApiProfile("gles1", MaxVersion = "2.0")]
     [SupportedApiProfile("gles2", MinVersion = "2.0")]
     [NativeFunction("opengl", EntryPoint = "glIsEnabled")]
-    byte IsEnabled([NativeTypeName("GLenum")] uint cap);
+    uint IsEnabled([NativeTypeName("GLenum")] uint cap);
 
     [return: NativeTypeName("GLboolean")]
     [SupportedApiProfile("glcore", MinVersion = "3.2")]
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glIsEnabledi")]
-    byte IsEnabled([NativeTypeName("GLenum")] uint target, [NativeTypeName("GLuint")] uint index);
+    uint IsEnabled([NativeTypeName("GLenum")] uint target, [NativeTypeName("GLuint")] uint index);
 
     [return: NativeTypeName("GLboolean")]
     [SupportedApiProfile("gles2", MinVersion = "2.0")]
     [NativeFunction("opengl", EntryPoint = "glIsEnablediEXT")]
-    byte IsEnablediExt(
+    uint IsEnablediExt(
         [NativeTypeName("GLenum")] uint target,
         [NativeTypeName("GLuint")] uint index
     );
@@ -40765,7 +40768,7 @@ public unsafe partial interface IGL
     [SupportedApiProfile("glcore", MinVersion = "3.2")]
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glIsEnabledIndexedEXT")]
-    byte IsEnabledIndexedExt(
+    uint IsEnabledIndexedExt(
         [NativeTypeName("GLenum")] uint target,
         [NativeTypeName("GLuint")] uint index
     );
@@ -40773,7 +40776,7 @@ public unsafe partial interface IGL
     [return: NativeTypeName("GLboolean")]
     [SupportedApiProfile("gles2", MinVersion = "2.0")]
     [NativeFunction("opengl", EntryPoint = "glIsEnablediNV")]
-    byte IsEnablediNV(
+    uint IsEnablediNV(
         [NativeTypeName("GLenum")] uint target,
         [NativeTypeName("GLuint")] uint index
     );
@@ -40781,7 +40784,7 @@ public unsafe partial interface IGL
     [return: NativeTypeName("GLboolean")]
     [SupportedApiProfile("gles2", MinVersion = "2.0")]
     [NativeFunction("opengl", EntryPoint = "glIsEnablediOES")]
-    byte IsEnablediOes(
+    uint IsEnablediOes(
         [NativeTypeName("GLenum")] uint target,
         [NativeTypeName("GLuint")] uint index
     );
@@ -40789,60 +40792,60 @@ public unsafe partial interface IGL
     [return: NativeTypeName("GLboolean")]
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glIsFenceAPPLE")]
-    byte IsFenceApple([NativeTypeName("GLuint")] uint fence);
+    uint IsFenceApple([NativeTypeName("GLuint")] uint fence);
 
     [return: NativeTypeName("GLboolean")]
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [SupportedApiProfile("gles1", MaxVersion = "2.0")]
     [SupportedApiProfile("gles2", MinVersion = "2.0")]
     [NativeFunction("opengl", EntryPoint = "glIsFenceNV")]
-    byte IsFenceNV([NativeTypeName("GLuint")] uint fence);
+    uint IsFenceNV([NativeTypeName("GLuint")] uint fence);
 
     [return: NativeTypeName("GLboolean")]
     [SupportedApiProfile("glcore", MinVersion = "3.2")]
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [SupportedApiProfile("gles2", MinVersion = "2.0")]
     [NativeFunction("opengl", EntryPoint = "glIsFramebuffer")]
-    byte IsFramebuffer([NativeTypeName("GLuint")] uint framebuffer);
+    uint IsFramebuffer([NativeTypeName("GLuint")] uint framebuffer);
 
     [return: NativeTypeName("GLboolean")]
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glIsFramebufferEXT")]
-    byte IsFramebufferExt([NativeTypeName("GLuint")] uint framebuffer);
+    uint IsFramebufferExt([NativeTypeName("GLuint")] uint framebuffer);
 
     [return: NativeTypeName("GLboolean")]
     [SupportedApiProfile("gles1", MaxVersion = "2.0")]
     [NativeFunction("opengl", EntryPoint = "glIsFramebufferOES")]
-    byte IsFramebufferOes([NativeTypeName("GLuint")] uint framebuffer);
+    uint IsFramebufferOes([NativeTypeName("GLuint")] uint framebuffer);
 
     [return: NativeTypeName("GLboolean")]
     [SupportedApiProfile("glcore", MinVersion = "3.2")]
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glIsImageHandleResidentARB")]
-    byte IsImageHandleResidentArb([NativeTypeName("GLuint64")] ulong handle);
+    uint IsImageHandleResidentArb([NativeTypeName("GLuint64")] ulong handle);
 
     [return: NativeTypeName("GLboolean")]
     [SupportedApiProfile("glcore", MinVersion = "3.2")]
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [SupportedApiProfile("gles2", MinVersion = "2.0")]
     [NativeFunction("opengl", EntryPoint = "glIsImageHandleResidentNV")]
-    byte IsImageHandleResidentNV([NativeTypeName("GLuint64")] ulong handle);
+    uint IsImageHandleResidentNV([NativeTypeName("GLuint64")] ulong handle);
 
     [return: NativeTypeName("GLboolean")]
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glIsList")]
-    byte IsList([NativeTypeName("GLuint")] uint list);
+    uint IsList([NativeTypeName("GLuint")] uint list);
 
     [return: NativeTypeName("GLboolean")]
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [SupportedApiProfile("gles2", MinVersion = "2.0")]
     [NativeFunction("opengl", EntryPoint = "glIsMemoryObjectEXT")]
-    byte IsMemoryObjectExt([NativeTypeName("GLuint")] uint memoryObject);
+    uint IsMemoryObjectExt([NativeTypeName("GLuint")] uint memoryObject);
 
     [return: NativeTypeName("GLboolean")]
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glIsNameAMD")]
-    byte IsNameAmd(
+    uint IsNameAmd(
         [NativeTypeName("GLenum")] uint identifier,
         [NativeTypeName("GLuint")] uint name
     );
@@ -40851,13 +40854,13 @@ public unsafe partial interface IGL
     [SupportedApiProfile("glcore", MinVersion = "3.2")]
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glIsNamedBufferResidentNV")]
-    byte IsNamedBufferResidentNV([NativeTypeName("GLuint")] uint buffer);
+    uint IsNamedBufferResidentNV([NativeTypeName("GLuint")] uint buffer);
 
     [return: NativeTypeName("GLboolean")]
     [SupportedApiProfile("glcore", MinVersion = "3.2")]
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glIsNamedStringARB")]
-    byte IsNamedStringArb(
+    uint IsNamedStringArb(
         [NativeTypeName("GLint")] int namelen,
         [NativeTypeName("const GLchar *")] Ref<sbyte> name
     );
@@ -40865,26 +40868,26 @@ public unsafe partial interface IGL
     [return: NativeTypeName("GLboolean")]
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glIsObjectBufferATI")]
-    byte IsObjectBufferAti([NativeTypeName("GLuint")] uint buffer);
+    uint IsObjectBufferAti([NativeTypeName("GLuint")] uint buffer);
 
     [return: NativeTypeName("GLboolean")]
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glIsOcclusionQueryNV")]
-    byte IsOcclusionQueryNV([NativeTypeName("GLuint")] uint id);
+    uint IsOcclusionQueryNV([NativeTypeName("GLuint")] uint id);
 
     [return: NativeTypeName("GLboolean")]
     [SupportedApiProfile("glcore", MinVersion = "3.2")]
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [SupportedApiProfile("gles2", MinVersion = "2.0")]
     [NativeFunction("opengl", EntryPoint = "glIsPathNV")]
-    byte IsPathNV([NativeTypeName("GLuint")] uint path);
+    uint IsPathNV([NativeTypeName("GLuint")] uint path);
 
     [return: NativeTypeName("GLboolean")]
     [SupportedApiProfile("glcore", MinVersion = "3.2")]
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [SupportedApiProfile("gles2", MinVersion = "2.0")]
     [NativeFunction("opengl", EntryPoint = "glIsPointInFillPathNV")]
-    byte IsPointInFillPathNV(
+    uint IsPointInFillPathNV(
         [NativeTypeName("GLuint")] uint path,
         [NativeTypeName("GLuint")] uint mask,
         [NativeTypeName("GLfloat")] float x,
@@ -40896,7 +40899,7 @@ public unsafe partial interface IGL
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [SupportedApiProfile("gles2", MinVersion = "2.0")]
     [NativeFunction("opengl", EntryPoint = "glIsPointInStrokePathNV")]
-    byte IsPointInStrokePathNV(
+    uint IsPointInStrokePathNV(
         [NativeTypeName("GLuint")] uint path,
         [NativeTypeName("GLfloat")] float x,
         [NativeTypeName("GLfloat")] float y
@@ -40907,99 +40910,99 @@ public unsafe partial interface IGL
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [SupportedApiProfile("gles2", MinVersion = "2.0")]
     [NativeFunction("opengl", EntryPoint = "glIsProgram")]
-    byte IsProgram([NativeTypeName("GLuint")] uint program);
+    uint IsProgram([NativeTypeName("GLuint")] uint program);
 
     [return: NativeTypeName("GLboolean")]
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glIsProgramARB")]
-    byte IsProgramArb([NativeTypeName("GLuint")] uint program);
+    uint IsProgramArb([NativeTypeName("GLuint")] uint program);
 
     [return: NativeTypeName("GLboolean")]
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glIsProgramNV")]
-    byte IsProgramNV([NativeTypeName("GLuint")] uint id);
+    uint IsProgramNV([NativeTypeName("GLuint")] uint id);
 
     [return: NativeTypeName("GLboolean")]
     [SupportedApiProfile("glcore", MinVersion = "3.2")]
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glIsProgramPipeline")]
-    byte IsProgramPipeline([NativeTypeName("GLuint")] uint pipeline);
+    uint IsProgramPipeline([NativeTypeName("GLuint")] uint pipeline);
 
     [return: NativeTypeName("GLboolean")]
     [SupportedApiProfile("gles2", MinVersion = "2.0")]
     [NativeFunction("opengl", EntryPoint = "glIsProgramPipelineEXT")]
-    byte IsProgramPipelineExt([NativeTypeName("GLuint")] uint pipeline);
+    uint IsProgramPipelineExt([NativeTypeName("GLuint")] uint pipeline);
 
     [return: NativeTypeName("GLboolean")]
     [SupportedApiProfile("glcore", MinVersion = "3.2")]
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glIsQuery")]
-    byte IsQuery([NativeTypeName("GLuint")] uint id);
+    uint IsQuery([NativeTypeName("GLuint")] uint id);
 
     [return: NativeTypeName("GLboolean")]
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glIsQueryARB")]
-    byte IsQueryArb([NativeTypeName("GLuint")] uint id);
+    uint IsQueryArb([NativeTypeName("GLuint")] uint id);
 
     [return: NativeTypeName("GLboolean")]
     [SupportedApiProfile("gles2", MinVersion = "2.0")]
     [NativeFunction("opengl", EntryPoint = "glIsQueryEXT")]
-    byte IsQueryExt([NativeTypeName("GLuint")] uint id);
+    uint IsQueryExt([NativeTypeName("GLuint")] uint id);
 
     [return: NativeTypeName("GLboolean")]
     [SupportedApiProfile("glcore", MinVersion = "3.2")]
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [SupportedApiProfile("gles2", MinVersion = "2.0")]
     [NativeFunction("opengl", EntryPoint = "glIsRenderbuffer")]
-    byte IsRenderbuffer([NativeTypeName("GLuint")] uint renderbuffer);
+    uint IsRenderbuffer([NativeTypeName("GLuint")] uint renderbuffer);
 
     [return: NativeTypeName("GLboolean")]
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glIsRenderbufferEXT")]
-    byte IsRenderbufferExt([NativeTypeName("GLuint")] uint renderbuffer);
+    uint IsRenderbufferExt([NativeTypeName("GLuint")] uint renderbuffer);
 
     [return: NativeTypeName("GLboolean")]
     [SupportedApiProfile("gles1", MaxVersion = "2.0")]
     [NativeFunction("opengl", EntryPoint = "glIsRenderbufferOES")]
-    byte IsRenderbufferOes([NativeTypeName("GLuint")] uint renderbuffer);
+    uint IsRenderbufferOes([NativeTypeName("GLuint")] uint renderbuffer);
 
     [return: NativeTypeName("GLboolean")]
     [SupportedApiProfile("glcore", MinVersion = "3.2")]
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [SupportedApiProfile("gles2", MinVersion = "2.0")]
     [NativeFunction("opengl", EntryPoint = "glIsSampler")]
-    byte IsSampler([NativeTypeName("GLuint")] uint sampler);
+    uint IsSampler([NativeTypeName("GLuint")] uint sampler);
 
     [return: NativeTypeName("GLboolean")]
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [SupportedApiProfile("gles2", MinVersion = "2.0")]
     [NativeFunction("opengl", EntryPoint = "glIsSemaphoreEXT")]
-    byte IsSemaphoreExt([NativeTypeName("GLuint")] uint semaphore);
+    uint IsSemaphoreExt([NativeTypeName("GLuint")] uint semaphore);
 
     [return: NativeTypeName("GLboolean")]
     [SupportedApiProfile("glcore", MinVersion = "3.2")]
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [SupportedApiProfile("gles2", MinVersion = "2.0")]
     [NativeFunction("opengl", EntryPoint = "glIsShader")]
-    byte IsShader([NativeTypeName("GLuint")] uint shader);
+    uint IsShader([NativeTypeName("GLuint")] uint shader);
 
     [return: NativeTypeName("GLboolean")]
     [SupportedApiProfile("glcore", MinVersion = "3.2")]
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glIsStateNV")]
-    byte IsStateNV([NativeTypeName("GLuint")] uint state);
+    uint IsStateNV([NativeTypeName("GLuint")] uint state);
 
     [return: NativeTypeName("GLboolean")]
     [SupportedApiProfile("glcore", MinVersion = "3.2")]
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glIsSync")]
-    byte IsSync([NativeTypeName("GLsync")] Ref<Sync> sync);
+    uint IsSync([NativeTypeName("GLsync")] Ref<Sync> sync);
 
     [return: NativeTypeName("GLboolean")]
     [SupportedApiProfile("gles1", MaxVersion = "2.0")]
     [SupportedApiProfile("gles2", MinVersion = "2.0")]
     [NativeFunction("opengl", EntryPoint = "glIsSyncAPPLE")]
-    byte IsSyncApple([NativeTypeName("GLsync")] Ref<Sync> sync);
+    uint IsSyncApple([NativeTypeName("GLsync")] Ref<Sync> sync);
 
     [return: NativeTypeName("GLboolean")]
     [SupportedApiProfile("glcore", MinVersion = "3.2")]
@@ -41007,41 +41010,41 @@ public unsafe partial interface IGL
     [SupportedApiProfile("gles1", MaxVersion = "2.0")]
     [SupportedApiProfile("gles2", MinVersion = "2.0")]
     [NativeFunction("opengl", EntryPoint = "glIsTexture")]
-    byte IsTexture([NativeTypeName("GLuint")] uint texture);
+    uint IsTexture([NativeTypeName("GLuint")] uint texture);
 
     [return: NativeTypeName("GLboolean")]
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glIsTextureEXT")]
-    byte IsTextureExt([NativeTypeName("GLuint")] uint texture);
+    uint IsTextureExt([NativeTypeName("GLuint")] uint texture);
 
     [return: NativeTypeName("GLboolean")]
     [SupportedApiProfile("glcore", MinVersion = "3.2")]
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glIsTextureHandleResidentARB")]
-    byte IsTextureHandleResidentArb([NativeTypeName("GLuint64")] ulong handle);
+    uint IsTextureHandleResidentArb([NativeTypeName("GLuint64")] ulong handle);
 
     [return: NativeTypeName("GLboolean")]
     [SupportedApiProfile("glcore", MinVersion = "3.2")]
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [SupportedApiProfile("gles2", MinVersion = "2.0")]
     [NativeFunction("opengl", EntryPoint = "glIsTextureHandleResidentNV")]
-    byte IsTextureHandleResidentNV([NativeTypeName("GLuint64")] ulong handle);
+    uint IsTextureHandleResidentNV([NativeTypeName("GLuint64")] ulong handle);
 
     [return: NativeTypeName("GLboolean")]
     [SupportedApiProfile("glcore", MinVersion = "3.2")]
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glIsTransformFeedback")]
-    byte IsTransformFeedback([NativeTypeName("GLuint")] uint id);
+    uint IsTransformFeedback([NativeTypeName("GLuint")] uint id);
 
     [return: NativeTypeName("GLboolean")]
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glIsTransformFeedbackNV")]
-    byte IsTransformFeedbackNV([NativeTypeName("GLuint")] uint id);
+    uint IsTransformFeedbackNV([NativeTypeName("GLuint")] uint id);
 
     [return: NativeTypeName("GLboolean")]
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glIsVariantEnabledEXT")]
-    byte IsVariantEnabledExt(
+    uint IsVariantEnabledExt(
         [NativeTypeName("GLuint")] uint id,
         [NativeTypeName("GLenum")] uint cap
     );
@@ -41050,23 +41053,23 @@ public unsafe partial interface IGL
     [SupportedApiProfile("glcore", MinVersion = "3.2")]
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glIsVertexArray")]
-    byte IsVertexArray([NativeTypeName("GLuint")] uint array);
+    uint IsVertexArray([NativeTypeName("GLuint")] uint array);
 
     [return: NativeTypeName("GLboolean")]
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glIsVertexArrayAPPLE")]
-    byte IsVertexArrayApple([NativeTypeName("GLuint")] uint array);
+    uint IsVertexArrayApple([NativeTypeName("GLuint")] uint array);
 
     [return: NativeTypeName("GLboolean")]
     [SupportedApiProfile("gles1", MaxVersion = "2.0")]
     [SupportedApiProfile("gles2", MinVersion = "2.0")]
     [NativeFunction("opengl", EntryPoint = "glIsVertexArrayOES")]
-    byte IsVertexArrayOes([NativeTypeName("GLuint")] uint array);
+    uint IsVertexArrayOes([NativeTypeName("GLuint")] uint array);
 
     [return: NativeTypeName("GLboolean")]
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glIsVertexAttribEnabledAPPLE")]
-    byte IsVertexAttribEnabledApple(
+    uint IsVertexAttribEnabledApple(
         [NativeTypeName("GLuint")] uint index,
         [NativeTypeName("GLenum")] uint pname
     );
@@ -41078,7 +41081,7 @@ public unsafe partial interface IGL
     void LabelObjectExt(
         [NativeTypeName("GLenum")] uint type,
         [NativeTypeName("GLuint")] uint @object,
-        [NativeTypeName("GLsizei")] int length,
+        [NativeTypeName("GLsizei")] uint length,
         [NativeTypeName("const GLchar *")] Ref<sbyte> label
     );
 
@@ -41099,9 +41102,9 @@ public unsafe partial interface IGL
         [NativeTypeName("GLint")] int dstX,
         [NativeTypeName("GLint")] int dstY,
         [NativeTypeName("GLint")] int dstZ,
-        [NativeTypeName("GLsizei")] int width,
-        [NativeTypeName("GLsizei")] int height,
-        [NativeTypeName("GLsizei")] int depth
+        [NativeTypeName("GLsizei")] uint width,
+        [NativeTypeName("GLsizei")] uint height,
+        [NativeTypeName("GLsizei")] uint depth
     );
 
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
@@ -41114,7 +41117,7 @@ public unsafe partial interface IGL
         [NativeTypeName("GLbitfield")] uint gpuMask,
         [NativeTypeName("GLuint")] uint buffer,
         [NativeTypeName("GLintptr")] nint offset,
-        [NativeTypeName("GLsizeiptr")] nint size,
+        [NativeTypeName("GLsizeiptr")] nuint size,
         [NativeTypeName("const void *")] Ref data
     );
 
@@ -41275,7 +41278,7 @@ public unsafe partial interface IGL
 
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glLinkProgramARB")]
-    void LinkProgramArb([NativeTypeName("GLhandleARB")] Ref programObj);
+    void LinkProgramArb([NativeTypeName("GLhandleARB")] uint programObj);
 
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glListBase")]
@@ -41288,7 +41291,7 @@ public unsafe partial interface IGL
         [NativeTypeName("GLuint")] uint list,
         [NativeTypeName("GLuint")] uint segment,
         [NativeTypeName("const void **")] Ref2D indirects,
-        [NativeTypeName("const GLsizei *")] Ref<int> sizes,
+        [NativeTypeName("const GLsizei *")] Ref<uint> sizes,
         [NativeTypeName("const GLuint *")] Ref<uint> states,
         [NativeTypeName("const GLuint *")] Ref<uint> fbos,
         [NativeTypeName("GLuint")] uint count
@@ -41366,7 +41369,7 @@ public unsafe partial interface IGL
     void LoadProgramNV(
         [NativeTypeName("GLenum")] uint target,
         [NativeTypeName("GLuint")] uint id,
-        [NativeTypeName("GLsizei")] int len,
+        [NativeTypeName("GLsizei")] uint len,
         [NativeTypeName("const GLubyte *")] Ref<byte> program
     );
 
@@ -41392,7 +41395,7 @@ public unsafe partial interface IGL
 
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glLockArraysEXT")]
-    void LockArraysExt([NativeTypeName("GLint")] int first, [NativeTypeName("GLsizei")] int count);
+    void LockArraysExt([NativeTypeName("GLint")] int first, [NativeTypeName("GLsizei")] uint count);
 
     [SupportedApiProfile("glcore", MinVersion = "3.2")]
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
@@ -41580,7 +41583,7 @@ public unsafe partial interface IGL
     Ptr MapBufferRange(
         [NativeTypeName("GLenum")] uint target,
         [NativeTypeName("GLintptr")] nint offset,
-        [NativeTypeName("GLsizeiptr")] nint length,
+        [NativeTypeName("GLsizeiptr")] nuint length,
         [NativeTypeName("GLbitfield")] uint access
     );
 
@@ -41590,7 +41593,7 @@ public unsafe partial interface IGL
     Ptr MapBufferRangeExt(
         [NativeTypeName("GLenum")] uint target,
         [NativeTypeName("GLintptr")] nint offset,
-        [NativeTypeName("GLsizeiptr")] nint length,
+        [NativeTypeName("GLsizeiptr")] nuint length,
         [NativeTypeName("GLbitfield")] uint access
     );
 
@@ -41600,11 +41603,11 @@ public unsafe partial interface IGL
         [NativeTypeName("GLenum")] uint target,
         [NativeTypeName("GLuint")] uint index,
         [NativeTypeName("GLenum")] uint type,
-        [NativeTypeName("GLsizei")] int ustride,
-        [NativeTypeName("GLsizei")] int vstride,
+        [NativeTypeName("GLsizei")] uint ustride,
+        [NativeTypeName("GLsizei")] uint vstride,
         [NativeTypeName("GLint")] int uorder,
         [NativeTypeName("GLint")] int vorder,
-        [NativeTypeName("GLboolean")] byte packed,
+        [NativeTypeName("GLboolean")] uint packed,
         [NativeTypeName("const void *")] Ref points
     );
 
@@ -41686,7 +41689,7 @@ public unsafe partial interface IGL
     Ptr MapNamedBufferRange(
         [NativeTypeName("GLuint")] uint buffer,
         [NativeTypeName("GLintptr")] nint offset,
-        [NativeTypeName("GLsizeiptr")] nint length,
+        [NativeTypeName("GLsizeiptr")] nuint length,
         [NativeTypeName("GLbitfield")] uint access
     );
 
@@ -41696,7 +41699,7 @@ public unsafe partial interface IGL
     Ptr MapNamedBufferRangeExt(
         [NativeTypeName("GLuint")] uint buffer,
         [NativeTypeName("GLintptr")] nint offset,
-        [NativeTypeName("GLsizeiptr")] nint length,
+        [NativeTypeName("GLsizeiptr")] nuint length,
         [NativeTypeName("GLbitfield")] uint access
     );
 
@@ -41873,7 +41876,7 @@ public unsafe partial interface IGL
     void MatrixIndexPointerArb(
         [NativeTypeName("GLint")] int size,
         [NativeTypeName("GLenum")] uint type,
-        [NativeTypeName("GLsizei")] int stride,
+        [NativeTypeName("GLsizei")] uint stride,
         [NativeTypeName("const void *")] Ref pointer
     );
 
@@ -41882,7 +41885,7 @@ public unsafe partial interface IGL
     void MatrixIndexPointerOes(
         [NativeTypeName("GLint")] int size,
         [NativeTypeName("GLenum")] uint type,
-        [NativeTypeName("GLsizei")] int stride,
+        [NativeTypeName("GLsizei")] uint stride,
         [NativeTypeName("const void *")] Ref pointer
     );
 
@@ -42177,7 +42180,7 @@ public unsafe partial interface IGL
     void Minmax(
         [NativeTypeName("GLenum")] uint target,
         [NativeTypeName("GLenum")] uint internalformat,
-        [NativeTypeName("GLboolean")] byte sink
+        [NativeTypeName("GLboolean")] uint sink
     );
 
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
@@ -42185,7 +42188,7 @@ public unsafe partial interface IGL
     void MinmaxExt(
         [NativeTypeName("GLenum")] uint target,
         [NativeTypeName("GLenum")] uint internalformat,
-        [NativeTypeName("GLboolean")] byte sink
+        [NativeTypeName("GLboolean")] uint sink
     );
 
     [SupportedApiProfile("glcore", MinVersion = "3.2")]
@@ -42229,7 +42232,7 @@ public unsafe partial interface IGL
         [NativeTypeName("GLbitfield")] uint gpuMask,
         [NativeTypeName("GLuint")] uint buffer,
         [NativeTypeName("GLintptr")] nint offset,
-        [NativeTypeName("GLsizeiptr")] nint size,
+        [NativeTypeName("GLsizeiptr")] nuint size,
         [NativeTypeName("const void *")] Ref data
     );
 
@@ -42242,7 +42245,7 @@ public unsafe partial interface IGL
         [NativeTypeName("GLuint")] uint writeBuffer,
         [NativeTypeName("GLintptr")] nint readOffset,
         [NativeTypeName("GLintptr")] nint writeOffset,
-        [NativeTypeName("GLsizeiptr")] nint size
+        [NativeTypeName("GLsizeiptr")] nuint size
     );
 
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
@@ -42262,9 +42265,9 @@ public unsafe partial interface IGL
         [NativeTypeName("GLint")] int dstX,
         [NativeTypeName("GLint")] int dstY,
         [NativeTypeName("GLint")] int dstZ,
-        [NativeTypeName("GLsizei")] int srcWidth,
-        [NativeTypeName("GLsizei")] int srcHeight,
-        [NativeTypeName("GLsizei")] int srcDepth
+        [NativeTypeName("GLsizei")] uint srcWidth,
+        [NativeTypeName("GLsizei")] uint srcHeight,
+        [NativeTypeName("GLsizei")] uint srcDepth
     );
 
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
@@ -42273,7 +42276,7 @@ public unsafe partial interface IGL
         [NativeTypeName("GLuint")] uint gpu,
         [NativeTypeName("GLuint")] uint framebuffer,
         [NativeTypeName("GLuint")] uint start,
-        [NativeTypeName("GLsizei")] int count,
+        [NativeTypeName("GLsizei")] uint count,
         [NativeTypeName("const GLfloat *")] Ref<float> v
     );
 
@@ -42318,7 +42321,7 @@ public unsafe partial interface IGL
     void MulticastScissorArrayvNvx(
         [NativeTypeName("GLuint")] uint gpu,
         [NativeTypeName("GLuint")] uint first,
-        [NativeTypeName("GLsizei")] int count,
+        [NativeTypeName("GLsizei")] uint count,
         [NativeTypeName("const GLint *")] Ref<int> v
     );
 
@@ -42327,7 +42330,7 @@ public unsafe partial interface IGL
     void MulticastViewportArrayvNvx(
         [NativeTypeName("GLuint")] uint gpu,
         [NativeTypeName("GLuint")] uint first,
-        [NativeTypeName("GLsizei")] int count,
+        [NativeTypeName("GLsizei")] uint count,
         [NativeTypeName("const GLfloat *")] Ref<float> v
     );
 
@@ -42353,8 +42356,8 @@ public unsafe partial interface IGL
     void MultiDrawArrays(
         [NativeTypeName("GLenum")] uint mode,
         [NativeTypeName("const GLint *")] Ref<int> first,
-        [NativeTypeName("const GLsizei *")] Ref<int> count,
-        [NativeTypeName("GLsizei")] int drawcount
+        [NativeTypeName("const GLsizei *")] Ref<uint> count,
+        [NativeTypeName("GLsizei")] uint drawcount
     );
 
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
@@ -42364,8 +42367,8 @@ public unsafe partial interface IGL
     void MultiDrawArraysExt(
         [NativeTypeName("GLenum")] uint mode,
         [NativeTypeName("const GLint *")] Ref<int> first,
-        [NativeTypeName("const GLsizei *")] Ref<int> count,
-        [NativeTypeName("GLsizei")] int primcount
+        [NativeTypeName("const GLsizei *")] Ref<uint> count,
+        [NativeTypeName("GLsizei")] uint primcount
     );
 
     [SupportedApiProfile("glcore", MinVersion = "3.2")]
@@ -42374,8 +42377,8 @@ public unsafe partial interface IGL
     void MultiDrawArraysIndirect(
         [NativeTypeName("GLenum")] uint mode,
         [NativeTypeName("const void *")] Ref indirect,
-        [NativeTypeName("GLsizei")] int drawcount,
-        [NativeTypeName("GLsizei")] int stride
+        [NativeTypeName("GLsizei")] uint drawcount,
+        [NativeTypeName("GLsizei")] uint stride
     );
 
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
@@ -42383,8 +42386,8 @@ public unsafe partial interface IGL
     void MultiDrawArraysIndirectAmd(
         [NativeTypeName("GLenum")] uint mode,
         [NativeTypeName("const void *")] Ref indirect,
-        [NativeTypeName("GLsizei")] int primcount,
-        [NativeTypeName("GLsizei")] int stride
+        [NativeTypeName("GLsizei")] uint primcount,
+        [NativeTypeName("GLsizei")] uint stride
     );
 
     [SupportedApiProfile("glcore", MinVersion = "3.2")]
@@ -42393,9 +42396,9 @@ public unsafe partial interface IGL
     void MultiDrawArraysIndirectBindlessCountNV(
         [NativeTypeName("GLenum")] uint mode,
         [NativeTypeName("const void *")] Ref indirect,
-        [NativeTypeName("GLsizei")] int drawCount,
-        [NativeTypeName("GLsizei")] int maxDrawCount,
-        [NativeTypeName("GLsizei")] int stride,
+        [NativeTypeName("GLsizei")] uint drawCount,
+        [NativeTypeName("GLsizei")] uint maxDrawCount,
+        [NativeTypeName("GLsizei")] uint stride,
         [NativeTypeName("GLint")] int vertexBufferCount
     );
 
@@ -42405,8 +42408,8 @@ public unsafe partial interface IGL
     void MultiDrawArraysIndirectBindlessNV(
         [NativeTypeName("GLenum")] uint mode,
         [NativeTypeName("const void *")] Ref indirect,
-        [NativeTypeName("GLsizei")] int drawCount,
-        [NativeTypeName("GLsizei")] int stride,
+        [NativeTypeName("GLsizei")] uint drawCount,
+        [NativeTypeName("GLsizei")] uint stride,
         [NativeTypeName("GLint")] int vertexBufferCount
     );
 
@@ -42417,8 +42420,8 @@ public unsafe partial interface IGL
         [NativeTypeName("GLenum")] uint mode,
         [NativeTypeName("const void *")] Ref indirect,
         [NativeTypeName("GLintptr")] nint drawcount,
-        [NativeTypeName("GLsizei")] int maxdrawcount,
-        [NativeTypeName("GLsizei")] int stride
+        [NativeTypeName("GLsizei")] uint maxdrawcount,
+        [NativeTypeName("GLsizei")] uint stride
     );
 
     [SupportedApiProfile("glcore", MinVersion = "3.2")]
@@ -42428,8 +42431,8 @@ public unsafe partial interface IGL
         [NativeTypeName("GLenum")] uint mode,
         [NativeTypeName("const void *")] Ref indirect,
         [NativeTypeName("GLintptr")] nint drawcount,
-        [NativeTypeName("GLsizei")] int maxdrawcount,
-        [NativeTypeName("GLsizei")] int stride
+        [NativeTypeName("GLsizei")] uint maxdrawcount,
+        [NativeTypeName("GLsizei")] uint stride
     );
 
     [SupportedApiProfile("gles2", MinVersion = "2.0")]
@@ -42437,8 +42440,8 @@ public unsafe partial interface IGL
     void MultiDrawArraysIndirectExt(
         [NativeTypeName("GLenum")] uint mode,
         [NativeTypeName("const void *")] Ref indirect,
-        [NativeTypeName("GLsizei")] int drawcount,
-        [NativeTypeName("GLsizei")] int stride
+        [NativeTypeName("GLsizei")] uint drawcount,
+        [NativeTypeName("GLsizei")] uint stride
     );
 
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
@@ -42446,8 +42449,8 @@ public unsafe partial interface IGL
     void MultiDrawElementArrayApple(
         [NativeTypeName("GLenum")] uint mode,
         [NativeTypeName("const GLint *")] Ref<int> first,
-        [NativeTypeName("const GLsizei *")] Ref<int> count,
-        [NativeTypeName("GLsizei")] int primcount
+        [NativeTypeName("const GLsizei *")] Ref<uint> count,
+        [NativeTypeName("GLsizei")] uint primcount
     );
 
     [SupportedApiProfile("glcore", MinVersion = "3.2")]
@@ -42455,10 +42458,10 @@ public unsafe partial interface IGL
     [NativeFunction("opengl", EntryPoint = "glMultiDrawElements")]
     void MultiDrawElements(
         [NativeTypeName("GLenum")] uint mode,
-        [NativeTypeName("const GLsizei *")] Ref<int> count,
+        [NativeTypeName("const GLsizei *")] Ref<uint> count,
         [NativeTypeName("GLenum")] uint type,
         [NativeTypeName("const void *const *")] Ref2D indices,
-        [NativeTypeName("GLsizei")] int drawcount
+        [NativeTypeName("GLsizei")] uint drawcount
     );
 
     [SupportedApiProfile("glcore", MinVersion = "3.2")]
@@ -42466,10 +42469,10 @@ public unsafe partial interface IGL
     [NativeFunction("opengl", EntryPoint = "glMultiDrawElementsBaseVertex")]
     void MultiDrawElementsBaseVertex(
         [NativeTypeName("GLenum")] uint mode,
-        [NativeTypeName("const GLsizei *")] Ref<int> count,
+        [NativeTypeName("const GLsizei *")] Ref<uint> count,
         [NativeTypeName("GLenum")] uint type,
         [NativeTypeName("const void *const *")] Ref2D indices,
-        [NativeTypeName("GLsizei")] int drawcount,
+        [NativeTypeName("GLsizei")] uint drawcount,
         [NativeTypeName("const GLint *")] Ref<int> basevertex
     );
 
@@ -42477,10 +42480,10 @@ public unsafe partial interface IGL
     [NativeFunction("opengl", EntryPoint = "glMultiDrawElementsBaseVertexEXT")]
     void MultiDrawElementsBaseVertexExt(
         [NativeTypeName("GLenum")] uint mode,
-        [NativeTypeName("const GLsizei *")] Ref<int> count,
+        [NativeTypeName("const GLsizei *")] Ref<uint> count,
         [NativeTypeName("GLenum")] uint type,
         [NativeTypeName("const void *const *")] Ref2D indices,
-        [NativeTypeName("GLsizei")] int drawcount,
+        [NativeTypeName("GLsizei")] uint drawcount,
         [NativeTypeName("const GLint *")] Ref<int> basevertex
     );
 
@@ -42490,10 +42493,10 @@ public unsafe partial interface IGL
     [NativeFunction("opengl", EntryPoint = "glMultiDrawElementsEXT")]
     void MultiDrawElementsExt(
         [NativeTypeName("GLenum")] uint mode,
-        [NativeTypeName("const GLsizei *")] Ref<int> count,
+        [NativeTypeName("const GLsizei *")] Ref<uint> count,
         [NativeTypeName("GLenum")] uint type,
         [NativeTypeName("const void *const *")] Ref2D indices,
-        [NativeTypeName("GLsizei")] int primcount
+        [NativeTypeName("GLsizei")] uint primcount
     );
 
     [SupportedApiProfile("glcore", MinVersion = "3.2")]
@@ -42503,8 +42506,8 @@ public unsafe partial interface IGL
         [NativeTypeName("GLenum")] uint mode,
         [NativeTypeName("GLenum")] uint type,
         [NativeTypeName("const void *")] Ref indirect,
-        [NativeTypeName("GLsizei")] int drawcount,
-        [NativeTypeName("GLsizei")] int stride
+        [NativeTypeName("GLsizei")] uint drawcount,
+        [NativeTypeName("GLsizei")] uint stride
     );
 
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
@@ -42513,8 +42516,8 @@ public unsafe partial interface IGL
         [NativeTypeName("GLenum")] uint mode,
         [NativeTypeName("GLenum")] uint type,
         [NativeTypeName("const void *")] Ref indirect,
-        [NativeTypeName("GLsizei")] int primcount,
-        [NativeTypeName("GLsizei")] int stride
+        [NativeTypeName("GLsizei")] uint primcount,
+        [NativeTypeName("GLsizei")] uint stride
     );
 
     [SupportedApiProfile("glcore", MinVersion = "3.2")]
@@ -42524,9 +42527,9 @@ public unsafe partial interface IGL
         [NativeTypeName("GLenum")] uint mode,
         [NativeTypeName("GLenum")] uint type,
         [NativeTypeName("const void *")] Ref indirect,
-        [NativeTypeName("GLsizei")] int drawCount,
-        [NativeTypeName("GLsizei")] int maxDrawCount,
-        [NativeTypeName("GLsizei")] int stride,
+        [NativeTypeName("GLsizei")] uint drawCount,
+        [NativeTypeName("GLsizei")] uint maxDrawCount,
+        [NativeTypeName("GLsizei")] uint stride,
         [NativeTypeName("GLint")] int vertexBufferCount
     );
 
@@ -42537,8 +42540,8 @@ public unsafe partial interface IGL
         [NativeTypeName("GLenum")] uint mode,
         [NativeTypeName("GLenum")] uint type,
         [NativeTypeName("const void *")] Ref indirect,
-        [NativeTypeName("GLsizei")] int drawCount,
-        [NativeTypeName("GLsizei")] int stride,
+        [NativeTypeName("GLsizei")] uint drawCount,
+        [NativeTypeName("GLsizei")] uint stride,
         [NativeTypeName("GLint")] int vertexBufferCount
     );
 
@@ -42550,8 +42553,8 @@ public unsafe partial interface IGL
         [NativeTypeName("GLenum")] uint type,
         [NativeTypeName("const void *")] Ref indirect,
         [NativeTypeName("GLintptr")] nint drawcount,
-        [NativeTypeName("GLsizei")] int maxdrawcount,
-        [NativeTypeName("GLsizei")] int stride
+        [NativeTypeName("GLsizei")] uint maxdrawcount,
+        [NativeTypeName("GLsizei")] uint stride
     );
 
     [SupportedApiProfile("glcore", MinVersion = "3.2")]
@@ -42562,8 +42565,8 @@ public unsafe partial interface IGL
         [NativeTypeName("GLenum")] uint type,
         [NativeTypeName("const void *")] Ref indirect,
         [NativeTypeName("GLintptr")] nint drawcount,
-        [NativeTypeName("GLsizei")] int maxdrawcount,
-        [NativeTypeName("GLsizei")] int stride
+        [NativeTypeName("GLsizei")] uint maxdrawcount,
+        [NativeTypeName("GLsizei")] uint stride
     );
 
     [SupportedApiProfile("gles2", MinVersion = "2.0")]
@@ -42572,8 +42575,8 @@ public unsafe partial interface IGL
         [NativeTypeName("GLenum")] uint mode,
         [NativeTypeName("GLenum")] uint type,
         [NativeTypeName("const void *")] Ref indirect,
-        [NativeTypeName("GLsizei")] int drawcount,
-        [NativeTypeName("GLsizei")] int stride
+        [NativeTypeName("GLsizei")] uint drawcount,
+        [NativeTypeName("GLsizei")] uint stride
     );
 
     [SupportedApiProfile("glcore", MinVersion = "3.2")]
@@ -42583,8 +42586,8 @@ public unsafe partial interface IGL
     void MultiDrawMeshTasksIndirectCountNV(
         [NativeTypeName("GLintptr")] nint indirect,
         [NativeTypeName("GLintptr")] nint drawcount,
-        [NativeTypeName("GLsizei")] int maxdrawcount,
-        [NativeTypeName("GLsizei")] int stride
+        [NativeTypeName("GLsizei")] uint maxdrawcount,
+        [NativeTypeName("GLsizei")] uint stride
     );
 
     [SupportedApiProfile("glcore", MinVersion = "3.2")]
@@ -42593,8 +42596,8 @@ public unsafe partial interface IGL
     [NativeFunction("opengl", EntryPoint = "glMultiDrawMeshTasksIndirectNV")]
     void MultiDrawMeshTasksIndirectNV(
         [NativeTypeName("GLintptr")] nint indirect,
-        [NativeTypeName("GLsizei")] int drawcount,
-        [NativeTypeName("GLsizei")] int stride
+        [NativeTypeName("GLsizei")] uint drawcount,
+        [NativeTypeName("GLsizei")] uint stride
     );
 
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
@@ -42604,8 +42607,8 @@ public unsafe partial interface IGL
         [NativeTypeName("GLuint")] uint start,
         [NativeTypeName("GLuint")] uint end,
         [NativeTypeName("const GLint *")] Ref<int> first,
-        [NativeTypeName("const GLsizei *")] Ref<int> count,
-        [NativeTypeName("GLsizei")] int primcount
+        [NativeTypeName("const GLsizei *")] Ref<uint> count,
+        [NativeTypeName("GLsizei")] uint primcount
     );
 
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
@@ -42613,8 +42616,8 @@ public unsafe partial interface IGL
     void MultiModeDrawArraysIbm(
         [NativeTypeName("const GLenum *")] Ref<uint> mode,
         [NativeTypeName("const GLint *")] Ref<int> first,
-        [NativeTypeName("const GLsizei *")] Ref<int> count,
-        [NativeTypeName("GLsizei")] int primcount,
+        [NativeTypeName("const GLsizei *")] Ref<uint> count,
+        [NativeTypeName("GLsizei")] uint primcount,
         [NativeTypeName("GLint")] int modestride
     );
 
@@ -42622,10 +42625,10 @@ public unsafe partial interface IGL
     [NativeFunction("opengl", EntryPoint = "glMultiModeDrawElementsIBM")]
     void MultiModeDrawElementsIbm(
         [NativeTypeName("const GLenum *")] Ref<uint> mode,
-        [NativeTypeName("const GLsizei *")] Ref<int> count,
+        [NativeTypeName("const GLsizei *")] Ref<uint> count,
         [NativeTypeName("GLenum")] uint type,
         [NativeTypeName("const void *const *")] Ref2D indices,
-        [NativeTypeName("GLsizei")] int primcount,
+        [NativeTypeName("GLsizei")] uint primcount,
         [NativeTypeName("GLint")] int modestride
     );
 
@@ -43401,7 +43404,7 @@ public unsafe partial interface IGL
         [NativeTypeName("GLenum")] uint texunit,
         [NativeTypeName("GLint")] int size,
         [NativeTypeName("GLenum")] uint type,
-        [NativeTypeName("GLsizei")] int stride,
+        [NativeTypeName("GLsizei")] uint stride,
         [NativeTypeName("const void *")] Ref pointer
     );
 
@@ -43513,7 +43516,7 @@ public unsafe partial interface IGL
         [NativeTypeName("GLenum")] uint target,
         [NativeTypeName("GLint")] int level,
         [NativeTypeName("GLint")] int internalformat,
-        [NativeTypeName("GLsizei")] int width,
+        [NativeTypeName("GLsizei")] uint width,
         [NativeTypeName("GLint")] int border,
         [NativeTypeName("GLenum")] uint format,
         [NativeTypeName("GLenum")] uint type,
@@ -43528,8 +43531,8 @@ public unsafe partial interface IGL
         [NativeTypeName("GLenum")] uint target,
         [NativeTypeName("GLint")] int level,
         [NativeTypeName("GLint")] int internalformat,
-        [NativeTypeName("GLsizei")] int width,
-        [NativeTypeName("GLsizei")] int height,
+        [NativeTypeName("GLsizei")] uint width,
+        [NativeTypeName("GLsizei")] uint height,
         [NativeTypeName("GLint")] int border,
         [NativeTypeName("GLenum")] uint format,
         [NativeTypeName("GLenum")] uint type,
@@ -43544,9 +43547,9 @@ public unsafe partial interface IGL
         [NativeTypeName("GLenum")] uint target,
         [NativeTypeName("GLint")] int level,
         [NativeTypeName("GLint")] int internalformat,
-        [NativeTypeName("GLsizei")] int width,
-        [NativeTypeName("GLsizei")] int height,
-        [NativeTypeName("GLsizei")] int depth,
+        [NativeTypeName("GLsizei")] uint width,
+        [NativeTypeName("GLsizei")] uint height,
+        [NativeTypeName("GLsizei")] uint depth,
         [NativeTypeName("GLint")] int border,
         [NativeTypeName("GLenum")] uint format,
         [NativeTypeName("GLenum")] uint type,
@@ -43630,7 +43633,7 @@ public unsafe partial interface IGL
         [NativeTypeName("GLenum")] uint target,
         [NativeTypeName("GLint")] int level,
         [NativeTypeName("GLint")] int xoffset,
-        [NativeTypeName("GLsizei")] int width,
+        [NativeTypeName("GLsizei")] uint width,
         [NativeTypeName("GLenum")] uint format,
         [NativeTypeName("GLenum")] uint type,
         [NativeTypeName("const void *")] Ref pixels
@@ -43645,8 +43648,8 @@ public unsafe partial interface IGL
         [NativeTypeName("GLint")] int level,
         [NativeTypeName("GLint")] int xoffset,
         [NativeTypeName("GLint")] int yoffset,
-        [NativeTypeName("GLsizei")] int width,
-        [NativeTypeName("GLsizei")] int height,
+        [NativeTypeName("GLsizei")] uint width,
+        [NativeTypeName("GLsizei")] uint height,
         [NativeTypeName("GLenum")] uint format,
         [NativeTypeName("GLenum")] uint type,
         [NativeTypeName("const void *")] Ref pixels
@@ -43662,9 +43665,9 @@ public unsafe partial interface IGL
         [NativeTypeName("GLint")] int xoffset,
         [NativeTypeName("GLint")] int yoffset,
         [NativeTypeName("GLint")] int zoffset,
-        [NativeTypeName("GLsizei")] int width,
-        [NativeTypeName("GLsizei")] int height,
-        [NativeTypeName("GLsizei")] int depth,
+        [NativeTypeName("GLsizei")] uint width,
+        [NativeTypeName("GLsizei")] uint height,
+        [NativeTypeName("GLsizei")] uint depth,
         [NativeTypeName("GLenum")] uint format,
         [NativeTypeName("GLenum")] uint type,
         [NativeTypeName("const void *")] Ref pixels
@@ -43723,7 +43726,7 @@ public unsafe partial interface IGL
     [NativeFunction("opengl", EntryPoint = "glNamedBufferData")]
     void NamedBufferData(
         [NativeTypeName("GLuint")] uint buffer,
-        [NativeTypeName("GLsizeiptr")] nint size,
+        [NativeTypeName("GLsizeiptr")] nuint size,
         [NativeTypeName("const void *")] Ref data,
         [NativeTypeName("GLenum")] uint usage
     );
@@ -43733,7 +43736,7 @@ public unsafe partial interface IGL
     [NativeFunction("opengl", EntryPoint = "glNamedBufferDataEXT")]
     void NamedBufferDataExt(
         [NativeTypeName("GLuint")] uint buffer,
-        [NativeTypeName("GLsizeiptr")] nint size,
+        [NativeTypeName("GLsizeiptr")] nuint size,
         [NativeTypeName("const void *")] Ref data,
         [NativeTypeName("GLenum")] uint usage
     );
@@ -43744,8 +43747,8 @@ public unsafe partial interface IGL
     void NamedBufferPageCommitmentArb(
         [NativeTypeName("GLuint")] uint buffer,
         [NativeTypeName("GLintptr")] nint offset,
-        [NativeTypeName("GLsizeiptr")] nint size,
-        [NativeTypeName("GLboolean")] byte commit
+        [NativeTypeName("GLsizeiptr")] nuint size,
+        [NativeTypeName("GLboolean")] uint commit
     );
 
     [SupportedApiProfile("glcore", MinVersion = "3.2")]
@@ -43754,8 +43757,8 @@ public unsafe partial interface IGL
     void NamedBufferPageCommitmentExt(
         [NativeTypeName("GLuint")] uint buffer,
         [NativeTypeName("GLintptr")] nint offset,
-        [NativeTypeName("GLsizeiptr")] nint size,
-        [NativeTypeName("GLboolean")] byte commit
+        [NativeTypeName("GLsizeiptr")] nuint size,
+        [NativeTypeName("GLboolean")] uint commit
     );
 
     [SupportedApiProfile("glcore", MinVersion = "3.2")]
@@ -43765,10 +43768,10 @@ public unsafe partial interface IGL
     void NamedBufferPageCommitmentMemNV(
         [NativeTypeName("GLuint")] uint buffer,
         [NativeTypeName("GLintptr")] nint offset,
-        [NativeTypeName("GLsizeiptr")] nint size,
+        [NativeTypeName("GLsizeiptr")] nuint size,
         [NativeTypeName("GLuint")] uint memory,
         [NativeTypeName("GLuint64")] ulong memOffset,
-        [NativeTypeName("GLboolean")] byte commit
+        [NativeTypeName("GLboolean")] uint commit
     );
 
     [SupportedApiProfile("glcore", MinVersion = "3.2")]
@@ -43776,7 +43779,7 @@ public unsafe partial interface IGL
     [NativeFunction("opengl", EntryPoint = "glNamedBufferStorage")]
     void NamedBufferStorage(
         [NativeTypeName("GLuint")] uint buffer,
-        [NativeTypeName("GLsizeiptr")] nint size,
+        [NativeTypeName("GLsizeiptr")] nuint size,
         [NativeTypeName("const void *")] Ref data,
         [NativeTypeName("GLbitfield")] uint flags
     );
@@ -43786,7 +43789,7 @@ public unsafe partial interface IGL
     [NativeFunction("opengl", EntryPoint = "glNamedBufferStorageEXT")]
     void NamedBufferStorageExt(
         [NativeTypeName("GLuint")] uint buffer,
-        [NativeTypeName("GLsizeiptr")] nint size,
+        [NativeTypeName("GLsizeiptr")] nuint size,
         [NativeTypeName("const void *")] Ref data,
         [NativeTypeName("GLbitfield")] uint flags
     );
@@ -43797,7 +43800,7 @@ public unsafe partial interface IGL
     void NamedBufferStorageExternalExt(
         [NativeTypeName("GLuint")] uint buffer,
         [NativeTypeName("GLintptr")] nint offset,
-        [NativeTypeName("GLsizeiptr")] nint size,
+        [NativeTypeName("GLsizeiptr")] nuint size,
         [NativeTypeName("GLeglClientBufferEXT")] Ref clientBuffer,
         [NativeTypeName("GLbitfield")] uint flags
     );
@@ -43807,7 +43810,7 @@ public unsafe partial interface IGL
     [NativeFunction("opengl", EntryPoint = "glNamedBufferStorageMemEXT")]
     void NamedBufferStorageMemExt(
         [NativeTypeName("GLuint")] uint buffer,
-        [NativeTypeName("GLsizeiptr")] nint size,
+        [NativeTypeName("GLsizeiptr")] nuint size,
         [NativeTypeName("GLuint")] uint memory,
         [NativeTypeName("GLuint64")] ulong offset
     );
@@ -43818,7 +43821,7 @@ public unsafe partial interface IGL
     void NamedBufferSubData(
         [NativeTypeName("GLuint")] uint buffer,
         [NativeTypeName("GLintptr")] nint offset,
-        [NativeTypeName("GLsizeiptr")] nint size,
+        [NativeTypeName("GLsizeiptr")] nuint size,
         [NativeTypeName("const void *")] Ref data
     );
 
@@ -43828,7 +43831,7 @@ public unsafe partial interface IGL
     void NamedBufferSubDataExt(
         [NativeTypeName("GLuint")] uint buffer,
         [NativeTypeName("GLintptr")] nint offset,
-        [NativeTypeName("GLsizeiptr")] nint size,
+        [NativeTypeName("GLsizeiptr")] nuint size,
         [NativeTypeName("const void *")] Ref data
     );
 
@@ -43840,7 +43843,7 @@ public unsafe partial interface IGL
         [NativeTypeName("GLuint")] uint writeBuffer,
         [NativeTypeName("GLintptr")] nint readOffset,
         [NativeTypeName("GLintptr")] nint writeOffset,
-        [NativeTypeName("GLsizeiptr")] nint size
+        [NativeTypeName("GLsizeiptr")] nuint size
     );
 
     [SupportedApiProfile("glcore", MinVersion = "3.2")]
@@ -43856,7 +43859,7 @@ public unsafe partial interface IGL
     [NativeFunction("opengl", EntryPoint = "glNamedFramebufferDrawBuffers")]
     void NamedFramebufferDrawBuffers(
         [NativeTypeName("GLuint")] uint framebuffer,
-        [NativeTypeName("GLsizei")] int n,
+        [NativeTypeName("GLsizei")] uint n,
         [NativeTypeName("const GLenum *")] Ref<uint> bufs
     );
 
@@ -43912,7 +43915,7 @@ public unsafe partial interface IGL
     void NamedFramebufferSampleLocationsfvArb(
         [NativeTypeName("GLuint")] uint framebuffer,
         [NativeTypeName("GLuint")] uint start,
-        [NativeTypeName("GLsizei")] int count,
+        [NativeTypeName("GLsizei")] uint count,
         [NativeTypeName("const GLfloat *")] Ref<float> v
     );
 
@@ -43923,7 +43926,7 @@ public unsafe partial interface IGL
     void NamedFramebufferSampleLocationsfvNV(
         [NativeTypeName("GLuint")] uint framebuffer,
         [NativeTypeName("GLuint")] uint start,
-        [NativeTypeName("GLsizei")] int count,
+        [NativeTypeName("GLsizei")] uint count,
         [NativeTypeName("const GLfloat *")] Ref<float> v
     );
 
@@ -44122,7 +44125,7 @@ public unsafe partial interface IGL
         [NativeTypeName("GLuint")] uint program,
         [NativeTypeName("GLenum")] uint target,
         [NativeTypeName("GLuint")] uint index,
-        [NativeTypeName("GLsizei")] int count,
+        [NativeTypeName("GLsizei")] uint count,
         [NativeTypeName("const GLfloat *")] Ref<float> @params
     );
 
@@ -44133,7 +44136,7 @@ public unsafe partial interface IGL
         [NativeTypeName("GLuint")] uint program,
         [NativeTypeName("GLenum")] uint target,
         [NativeTypeName("GLuint")] uint index,
-        [NativeTypeName("GLsizei")] int count,
+        [NativeTypeName("GLsizei")] uint count,
         [NativeTypeName("const GLint *")] Ref<int> @params
     );
 
@@ -44144,7 +44147,7 @@ public unsafe partial interface IGL
         [NativeTypeName("GLuint")] uint program,
         [NativeTypeName("GLenum")] uint target,
         [NativeTypeName("GLuint")] uint index,
-        [NativeTypeName("GLsizei")] int count,
+        [NativeTypeName("GLsizei")] uint count,
         [NativeTypeName("const GLuint *")] Ref<uint> @params
     );
 
@@ -44155,7 +44158,7 @@ public unsafe partial interface IGL
         [NativeTypeName("GLuint")] uint program,
         [NativeTypeName("GLenum")] uint target,
         [NativeTypeName("GLenum")] uint format,
-        [NativeTypeName("GLsizei")] int len,
+        [NativeTypeName("GLsizei")] uint len,
         [NativeTypeName("const void *")] Ref @string
     );
 
@@ -44165,8 +44168,8 @@ public unsafe partial interface IGL
     void NamedRenderbufferStorage(
         [NativeTypeName("GLuint")] uint renderbuffer,
         [NativeTypeName("GLenum")] uint internalformat,
-        [NativeTypeName("GLsizei")] int width,
-        [NativeTypeName("GLsizei")] int height
+        [NativeTypeName("GLsizei")] uint width,
+        [NativeTypeName("GLsizei")] uint height
     );
 
     [SupportedApiProfile("glcore", MinVersion = "3.2")]
@@ -44175,8 +44178,8 @@ public unsafe partial interface IGL
     void NamedRenderbufferStorageExt(
         [NativeTypeName("GLuint")] uint renderbuffer,
         [NativeTypeName("GLenum")] uint internalformat,
-        [NativeTypeName("GLsizei")] int width,
-        [NativeTypeName("GLsizei")] int height
+        [NativeTypeName("GLsizei")] uint width,
+        [NativeTypeName("GLsizei")] uint height
     );
 
     [SupportedApiProfile("glcore", MinVersion = "3.2")]
@@ -44184,10 +44187,10 @@ public unsafe partial interface IGL
     [NativeFunction("opengl", EntryPoint = "glNamedRenderbufferStorageMultisample")]
     void NamedRenderbufferStorageMultisample(
         [NativeTypeName("GLuint")] uint renderbuffer,
-        [NativeTypeName("GLsizei")] int samples,
+        [NativeTypeName("GLsizei")] uint samples,
         [NativeTypeName("GLenum")] uint internalformat,
-        [NativeTypeName("GLsizei")] int width,
-        [NativeTypeName("GLsizei")] int height
+        [NativeTypeName("GLsizei")] uint width,
+        [NativeTypeName("GLsizei")] uint height
     );
 
     [SupportedApiProfile("glcore", MinVersion = "3.2")]
@@ -44196,11 +44199,11 @@ public unsafe partial interface IGL
     [NativeFunction("opengl", EntryPoint = "glNamedRenderbufferStorageMultisampleAdvancedAMD")]
     void NamedRenderbufferStorageMultisampleAdvancedAmd(
         [NativeTypeName("GLuint")] uint renderbuffer,
-        [NativeTypeName("GLsizei")] int samples,
-        [NativeTypeName("GLsizei")] int storageSamples,
+        [NativeTypeName("GLsizei")] uint samples,
+        [NativeTypeName("GLsizei")] uint storageSamples,
         [NativeTypeName("GLenum")] uint internalformat,
-        [NativeTypeName("GLsizei")] int width,
-        [NativeTypeName("GLsizei")] int height
+        [NativeTypeName("GLsizei")] uint width,
+        [NativeTypeName("GLsizei")] uint height
     );
 
     [SupportedApiProfile("glcore", MinVersion = "3.2")]
@@ -44208,11 +44211,11 @@ public unsafe partial interface IGL
     [NativeFunction("opengl", EntryPoint = "glNamedRenderbufferStorageMultisampleCoverageEXT")]
     void NamedRenderbufferStorageMultisampleCoverageExt(
         [NativeTypeName("GLuint")] uint renderbuffer,
-        [NativeTypeName("GLsizei")] int coverageSamples,
-        [NativeTypeName("GLsizei")] int colorSamples,
+        [NativeTypeName("GLsizei")] uint coverageSamples,
+        [NativeTypeName("GLsizei")] uint colorSamples,
         [NativeTypeName("GLenum")] uint internalformat,
-        [NativeTypeName("GLsizei")] int width,
-        [NativeTypeName("GLsizei")] int height
+        [NativeTypeName("GLsizei")] uint width,
+        [NativeTypeName("GLsizei")] uint height
     );
 
     [SupportedApiProfile("glcore", MinVersion = "3.2")]
@@ -44220,10 +44223,10 @@ public unsafe partial interface IGL
     [NativeFunction("opengl", EntryPoint = "glNamedRenderbufferStorageMultisampleEXT")]
     void NamedRenderbufferStorageMultisampleExt(
         [NativeTypeName("GLuint")] uint renderbuffer,
-        [NativeTypeName("GLsizei")] int samples,
+        [NativeTypeName("GLsizei")] uint samples,
         [NativeTypeName("GLenum")] uint internalformat,
-        [NativeTypeName("GLsizei")] int width,
-        [NativeTypeName("GLsizei")] int height
+        [NativeTypeName("GLsizei")] uint width,
+        [NativeTypeName("GLsizei")] uint height
     );
 
     [SupportedApiProfile("glcore", MinVersion = "3.2")]
@@ -44245,7 +44248,7 @@ public unsafe partial interface IGL
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glNewObjectBufferATI")]
     uint NewObjectBufferAti(
-        [NativeTypeName("GLsizei")] int size,
+        [NativeTypeName("GLsizei")] uint size,
         [NativeTypeName("const void *")] Ref pointer,
         [NativeTypeName("GLenum")] uint usage
     );
@@ -44367,7 +44370,7 @@ public unsafe partial interface IGL
     [NativeFunction("opengl", EntryPoint = "glNormalFormatNV")]
     void NormalFormatNV(
         [NativeTypeName("GLenum")] uint type,
-        [NativeTypeName("GLsizei")] int stride
+        [NativeTypeName("GLsizei")] uint stride
     );
 
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
@@ -44386,7 +44389,7 @@ public unsafe partial interface IGL
     [NativeFunction("opengl", EntryPoint = "glNormalPointer")]
     void NormalPointer(
         [NativeTypeName("GLenum")] uint type,
-        [NativeTypeName("GLsizei")] int stride,
+        [NativeTypeName("GLsizei")] uint stride,
         [NativeTypeName("const void *")] Ref pointer
     );
 
@@ -44394,8 +44397,8 @@ public unsafe partial interface IGL
     [NativeFunction("opengl", EntryPoint = "glNormalPointerEXT")]
     void NormalPointerExt(
         [NativeTypeName("GLenum")] uint type,
-        [NativeTypeName("GLsizei")] int stride,
-        [NativeTypeName("GLsizei")] int count,
+        [NativeTypeName("GLsizei")] uint stride,
+        [NativeTypeName("GLsizei")] uint count,
         [NativeTypeName("const void *")] Ref pointer
     );
 
@@ -44501,7 +44504,7 @@ public unsafe partial interface IGL
     void ObjectLabel(
         [NativeTypeName("GLenum")] uint identifier,
         [NativeTypeName("GLuint")] uint name,
-        [NativeTypeName("GLsizei")] int length,
+        [NativeTypeName("GLsizei")] uint length,
         [NativeTypeName("const GLchar *")] Ref<sbyte> label
     );
 
@@ -44510,7 +44513,7 @@ public unsafe partial interface IGL
     void ObjectLabelKhr(
         [NativeTypeName("GLenum")] uint identifier,
         [NativeTypeName("GLuint")] uint name,
-        [NativeTypeName("GLsizei")] int length,
+        [NativeTypeName("GLsizei")] uint length,
         [NativeTypeName("const GLchar *")] Ref<sbyte> label
     );
 
@@ -44519,7 +44522,7 @@ public unsafe partial interface IGL
     [NativeFunction("opengl", EntryPoint = "glObjectPtrLabel")]
     void ObjectPtrLabel(
         [NativeTypeName("const void *")] Ref ptr,
-        [NativeTypeName("GLsizei")] int length,
+        [NativeTypeName("GLsizei")] uint length,
         [NativeTypeName("const GLchar *")] Ref<sbyte> label
     );
 
@@ -44527,7 +44530,7 @@ public unsafe partial interface IGL
     [NativeFunction("opengl", EntryPoint = "glObjectPtrLabelKHR")]
     void ObjectPtrLabelKhr(
         [NativeTypeName("const void *")] Ref ptr,
-        [NativeTypeName("GLsizei")] int length,
+        [NativeTypeName("GLsizei")] uint length,
         [NativeTypeName("const GLchar *")] Ref<sbyte> label
     );
 
@@ -44664,9 +44667,9 @@ public unsafe partial interface IGL
     [NativeFunction("opengl", EntryPoint = "glPathCommandsNV")]
     void PathCommandsNV(
         [NativeTypeName("GLuint")] uint path,
-        [NativeTypeName("GLsizei")] int numCommands,
+        [NativeTypeName("GLsizei")] uint numCommands,
         [NativeTypeName("const GLubyte *")] Ref<byte> commands,
-        [NativeTypeName("GLsizei")] int numCoords,
+        [NativeTypeName("GLsizei")] uint numCoords,
         [NativeTypeName("GLenum")] uint coordType,
         [NativeTypeName("const void *")] Ref coords
     );
@@ -44677,7 +44680,7 @@ public unsafe partial interface IGL
     [NativeFunction("opengl", EntryPoint = "glPathCoordsNV")]
     void PathCoordsNV(
         [NativeTypeName("GLuint")] uint path,
-        [NativeTypeName("GLsizei")] int numCoords,
+        [NativeTypeName("GLsizei")] uint numCoords,
         [NativeTypeName("GLenum")] uint coordType,
         [NativeTypeName("const void *")] Ref coords
     );
@@ -44694,7 +44697,7 @@ public unsafe partial interface IGL
     [NativeFunction("opengl", EntryPoint = "glPathDashArrayNV")]
     void PathDashArrayNV(
         [NativeTypeName("GLuint")] uint path,
-        [NativeTypeName("GLsizei")] int dashCount,
+        [NativeTypeName("GLsizei")] uint dashCount,
         [NativeTypeName("const GLfloat *")] Ref<float> dashArray
     );
 
@@ -44713,7 +44716,7 @@ public unsafe partial interface IGL
         [NativeTypeName("const void *")] Ref fontName,
         [NativeTypeName("GLbitfield")] uint fontStyle,
         [NativeTypeName("GLuint")] uint firstGlyphIndex,
-        [NativeTypeName("GLsizei")] int numGlyphs,
+        [NativeTypeName("GLsizei")] uint numGlyphs,
         [NativeTypeName("GLuint")] uint pathParameterTemplate,
         [NativeTypeName("GLfloat")] float emScale
     );
@@ -44742,7 +44745,7 @@ public unsafe partial interface IGL
         [NativeTypeName("const void *")] Ref fontName,
         [NativeTypeName("GLbitfield")] uint fontStyle,
         [NativeTypeName("GLuint")] uint firstGlyph,
-        [NativeTypeName("GLsizei")] int numGlyphs,
+        [NativeTypeName("GLsizei")] uint numGlyphs,
         [NativeTypeName("GLenum")] uint handleMissingGlyphs,
         [NativeTypeName("GLuint")] uint pathParameterTemplate,
         [NativeTypeName("GLfloat")] float emScale
@@ -44757,7 +44760,7 @@ public unsafe partial interface IGL
         [NativeTypeName("GLenum")] uint fontTarget,
         [NativeTypeName("const void *")] Ref fontName,
         [NativeTypeName("GLbitfield")] uint fontStyle,
-        [NativeTypeName("GLsizei")] int numGlyphs,
+        [NativeTypeName("GLsizei")] uint numGlyphs,
         [NativeTypeName("GLenum")] uint type,
         [NativeTypeName("const void *")] Ref charcodes,
         [NativeTypeName("GLenum")] uint handleMissingGlyphs,
@@ -44773,11 +44776,11 @@ public unsafe partial interface IGL
     uint PathMemoryGlyphIndexArrayNV(
         [NativeTypeName("GLuint")] uint firstPathName,
         [NativeTypeName("GLenum")] uint fontTarget,
-        [NativeTypeName("GLsizeiptr")] nint fontSize,
+        [NativeTypeName("GLsizeiptr")] nuint fontSize,
         [NativeTypeName("const void *")] Ref fontData,
-        [NativeTypeName("GLsizei")] int faceIndex,
+        [NativeTypeName("GLsizei")] uint faceIndex,
         [NativeTypeName("GLuint")] uint firstGlyphIndex,
-        [NativeTypeName("GLsizei")] int numGlyphs,
+        [NativeTypeName("GLsizei")] uint numGlyphs,
         [NativeTypeName("GLuint")] uint pathParameterTemplate,
         [NativeTypeName("GLfloat")] float emScale
     );
@@ -44848,7 +44851,7 @@ public unsafe partial interface IGL
     void PathStringNV(
         [NativeTypeName("GLuint")] uint path,
         [NativeTypeName("GLenum")] uint format,
-        [NativeTypeName("GLsizei")] int length,
+        [NativeTypeName("GLsizei")] uint length,
         [NativeTypeName("const void *")] Ref pathString
     );
 
@@ -44858,11 +44861,11 @@ public unsafe partial interface IGL
     [NativeFunction("opengl", EntryPoint = "glPathSubCommandsNV")]
     void PathSubCommandsNV(
         [NativeTypeName("GLuint")] uint path,
-        [NativeTypeName("GLsizei")] int commandStart,
-        [NativeTypeName("GLsizei")] int commandsToDelete,
-        [NativeTypeName("GLsizei")] int numCommands,
+        [NativeTypeName("GLsizei")] uint commandStart,
+        [NativeTypeName("GLsizei")] uint commandsToDelete,
+        [NativeTypeName("GLsizei")] uint numCommands,
         [NativeTypeName("const GLubyte *")] Ref<byte> commands,
-        [NativeTypeName("GLsizei")] int numCoords,
+        [NativeTypeName("GLsizei")] uint numCoords,
         [NativeTypeName("GLenum")] uint coordType,
         [NativeTypeName("const void *")] Ref coords
     );
@@ -44873,8 +44876,8 @@ public unsafe partial interface IGL
     [NativeFunction("opengl", EntryPoint = "glPathSubCoordsNV")]
     void PathSubCoordsNV(
         [NativeTypeName("GLuint")] uint path,
-        [NativeTypeName("GLsizei")] int coordStart,
-        [NativeTypeName("GLsizei")] int numCoords,
+        [NativeTypeName("GLsizei")] uint coordStart,
+        [NativeTypeName("GLsizei")] uint numCoords,
         [NativeTypeName("GLenum")] uint coordType,
         [NativeTypeName("const void *")] Ref coords
     );
@@ -44901,7 +44904,7 @@ public unsafe partial interface IGL
     [NativeFunction("opengl", EntryPoint = "glPixelDataRangeNV")]
     void PixelDataRangeNV(
         [NativeTypeName("GLenum")] uint target,
-        [NativeTypeName("GLsizei")] int length,
+        [NativeTypeName("GLsizei")] uint length,
         [NativeTypeName("const void *")] Ref pointer
     );
 
@@ -44909,7 +44912,7 @@ public unsafe partial interface IGL
     [NativeFunction("opengl", EntryPoint = "glPixelMapfv")]
     void PixelMap(
         [NativeTypeName("GLenum")] uint map,
-        [NativeTypeName("GLsizei")] int mapsize,
+        [NativeTypeName("GLsizei")] uint mapsize,
         [NativeTypeName("const GLfloat *")] Ref<float> values
     );
 
@@ -44917,7 +44920,7 @@ public unsafe partial interface IGL
     [NativeFunction("opengl", EntryPoint = "glPixelMapuiv")]
     void PixelMap(
         [NativeTypeName("GLenum")] uint map,
-        [NativeTypeName("GLsizei")] int mapsize,
+        [NativeTypeName("GLsizei")] uint mapsize,
         [NativeTypeName("const GLuint *")] Ref<uint> values
     );
 
@@ -44925,7 +44928,7 @@ public unsafe partial interface IGL
     [NativeFunction("opengl", EntryPoint = "glPixelMapusv")]
     void PixelMap(
         [NativeTypeName("GLenum")] uint map,
-        [NativeTypeName("GLsizei")] int mapsize,
+        [NativeTypeName("GLsizei")] uint mapsize,
         [NativeTypeName("const GLushort *")] Ref<ushort> values
     );
 
@@ -45071,10 +45074,10 @@ public unsafe partial interface IGL
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [SupportedApiProfile("gles2", MinVersion = "2.0")]
     [NativeFunction("opengl", EntryPoint = "glPointAlongPathNV")]
-    byte PointAlongPathNV(
+    uint PointAlongPathNV(
         [NativeTypeName("GLuint")] uint path,
-        [NativeTypeName("GLsizei")] int startSegment,
-        [NativeTypeName("GLsizei")] int numSegments,
+        [NativeTypeName("GLsizei")] uint startSegment,
+        [NativeTypeName("GLsizei")] uint numSegments,
         [NativeTypeName("GLfloat")] float distance,
         [NativeTypeName("GLfloat *")] Ref<float> x,
         [NativeTypeName("GLfloat *")] Ref<float> y,
@@ -45211,7 +45214,7 @@ public unsafe partial interface IGL
     [NativeFunction("opengl", EntryPoint = "glPointSizePointerOES")]
     void PointSizePointerOes(
         [NativeTypeName("GLenum")] uint type,
-        [NativeTypeName("GLsizei")] int stride,
+        [NativeTypeName("GLsizei")] uint stride,
         [NativeTypeName("const void *")] Ref pointer
     );
 
@@ -45421,7 +45424,7 @@ public unsafe partial interface IGL
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glPrioritizeTextures")]
     void PrioritizeTextures(
-        [NativeTypeName("GLsizei")] int n,
+        [NativeTypeName("GLsizei")] uint n,
         [NativeTypeName("const GLuint *")] Ref<uint> textures,
         [NativeTypeName("const GLfloat *")] Ref<float> priorities
     );
@@ -45429,7 +45432,7 @@ public unsafe partial interface IGL
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glPrioritizeTexturesEXT")]
     void PrioritizeTexturesExt(
-        [NativeTypeName("GLsizei")] int n,
+        [NativeTypeName("GLsizei")] uint n,
         [NativeTypeName("const GLuint *")] Ref<uint> textures,
         [NativeTypeName("const GLclampf *")] Ref<float> priorities
     );
@@ -45437,7 +45440,7 @@ public unsafe partial interface IGL
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glPrioritizeTexturesxOES")]
     void PrioritizeTexturesxOes(
-        [NativeTypeName("GLsizei")] int n,
+        [NativeTypeName("GLsizei")] uint n,
         [NativeTypeName("const GLuint *")] Ref<uint> textures,
         [NativeTypeName("const GLfixed *")] Ref<int> priorities
     );
@@ -45449,7 +45452,7 @@ public unsafe partial interface IGL
         [NativeTypeName("GLuint")] uint program,
         [NativeTypeName("GLenum")] uint binaryFormat,
         [NativeTypeName("const void *")] Ref binary,
-        [NativeTypeName("GLsizei")] int length
+        [NativeTypeName("GLsizei")] uint length
     );
 
     [SupportedApiProfile("gles2", MinVersion = "2.0")]
@@ -45467,7 +45470,7 @@ public unsafe partial interface IGL
         [NativeTypeName("GLenum")] uint target,
         [NativeTypeName("GLuint")] uint bindingIndex,
         [NativeTypeName("GLuint")] uint wordIndex,
-        [NativeTypeName("GLsizei")] int count,
+        [NativeTypeName("GLsizei")] uint count,
         [NativeTypeName("const GLfloat *")] Ref<float> @params
     );
 
@@ -45477,7 +45480,7 @@ public unsafe partial interface IGL
         [NativeTypeName("GLenum")] uint target,
         [NativeTypeName("GLuint")] uint bindingIndex,
         [NativeTypeName("GLuint")] uint wordIndex,
-        [NativeTypeName("GLsizei")] int count,
+        [NativeTypeName("GLsizei")] uint count,
         [NativeTypeName("const GLint *")] Ref<int> @params
     );
 
@@ -45487,7 +45490,7 @@ public unsafe partial interface IGL
         [NativeTypeName("GLenum")] uint target,
         [NativeTypeName("GLuint")] uint bindingIndex,
         [NativeTypeName("GLuint")] uint wordIndex,
-        [NativeTypeName("GLsizei")] int count,
+        [NativeTypeName("GLsizei")] uint count,
         [NativeTypeName("const GLuint *")] Ref<uint> @params
     );
 
@@ -45572,7 +45575,7 @@ public unsafe partial interface IGL
     void ProgramEnvParameters4fvExt(
         [NativeTypeName("GLenum")] uint target,
         [NativeTypeName("GLuint")] uint index,
-        [NativeTypeName("GLsizei")] int count,
+        [NativeTypeName("GLsizei")] uint count,
         [NativeTypeName("const GLfloat *")] Ref<float> @params
     );
 
@@ -45581,7 +45584,7 @@ public unsafe partial interface IGL
     void ProgramEnvParametersI4ivNV(
         [NativeTypeName("GLenum")] uint target,
         [NativeTypeName("GLuint")] uint index,
-        [NativeTypeName("GLsizei")] int count,
+        [NativeTypeName("GLsizei")] uint count,
         [NativeTypeName("const GLint *")] Ref<int> @params
     );
 
@@ -45590,7 +45593,7 @@ public unsafe partial interface IGL
     void ProgramEnvParametersI4uivNV(
         [NativeTypeName("GLenum")] uint target,
         [NativeTypeName("GLuint")] uint index,
-        [NativeTypeName("GLsizei")] int count,
+        [NativeTypeName("GLsizei")] uint count,
         [NativeTypeName("const GLuint *")] Ref<uint> @params
     );
 
@@ -45675,7 +45678,7 @@ public unsafe partial interface IGL
     void ProgramLocalParameters4fvExt(
         [NativeTypeName("GLenum")] uint target,
         [NativeTypeName("GLuint")] uint index,
-        [NativeTypeName("GLsizei")] int count,
+        [NativeTypeName("GLsizei")] uint count,
         [NativeTypeName("const GLfloat *")] Ref<float> @params
     );
 
@@ -45684,7 +45687,7 @@ public unsafe partial interface IGL
     void ProgramLocalParametersI4ivNV(
         [NativeTypeName("GLenum")] uint target,
         [NativeTypeName("GLuint")] uint index,
-        [NativeTypeName("GLsizei")] int count,
+        [NativeTypeName("GLsizei")] uint count,
         [NativeTypeName("const GLint *")] Ref<int> @params
     );
 
@@ -45693,7 +45696,7 @@ public unsafe partial interface IGL
     void ProgramLocalParametersI4uivNV(
         [NativeTypeName("GLenum")] uint target,
         [NativeTypeName("GLuint")] uint index,
-        [NativeTypeName("GLsizei")] int count,
+        [NativeTypeName("GLsizei")] uint count,
         [NativeTypeName("const GLuint *")] Ref<uint> @params
     );
 
@@ -45701,7 +45704,7 @@ public unsafe partial interface IGL
     [NativeFunction("opengl", EntryPoint = "glProgramNamedParameter4dNV")]
     void ProgramNamedParameter4dNV(
         [NativeTypeName("GLuint")] uint id,
-        [NativeTypeName("GLsizei")] int len,
+        [NativeTypeName("GLsizei")] uint len,
         [NativeTypeName("const GLubyte *")] Ref<byte> name,
         [NativeTypeName("GLdouble")] double x,
         [NativeTypeName("GLdouble")] double y,
@@ -45713,7 +45716,7 @@ public unsafe partial interface IGL
     [NativeFunction("opengl", EntryPoint = "glProgramNamedParameter4dvNV")]
     void ProgramNamedParameter4dvNV(
         [NativeTypeName("GLuint")] uint id,
-        [NativeTypeName("GLsizei")] int len,
+        [NativeTypeName("GLsizei")] uint len,
         [NativeTypeName("const GLubyte *")] Ref<byte> name,
         [NativeTypeName("const GLdouble *")] Ref<double> v
     );
@@ -45722,7 +45725,7 @@ public unsafe partial interface IGL
     [NativeFunction("opengl", EntryPoint = "glProgramNamedParameter4fNV")]
     void ProgramNamedParameter4fNV(
         [NativeTypeName("GLuint")] uint id,
-        [NativeTypeName("GLsizei")] int len,
+        [NativeTypeName("GLsizei")] uint len,
         [NativeTypeName("const GLubyte *")] Ref<byte> name,
         [NativeTypeName("GLfloat")] float x,
         [NativeTypeName("GLfloat")] float y,
@@ -45734,7 +45737,7 @@ public unsafe partial interface IGL
     [NativeFunction("opengl", EntryPoint = "glProgramNamedParameter4fvNV")]
     void ProgramNamedParameter4fvNV(
         [NativeTypeName("GLuint")] uint id,
-        [NativeTypeName("GLsizei")] int len,
+        [NativeTypeName("GLsizei")] uint len,
         [NativeTypeName("const GLubyte *")] Ref<byte> name,
         [NativeTypeName("const GLfloat *")] Ref<float> v
     );
@@ -45809,7 +45812,7 @@ public unsafe partial interface IGL
     void ProgramParameters4dvNV(
         [NativeTypeName("GLenum")] uint target,
         [NativeTypeName("GLuint")] uint index,
-        [NativeTypeName("GLsizei")] int count,
+        [NativeTypeName("GLsizei")] uint count,
         [NativeTypeName("const GLdouble *")] Ref<double> v
     );
 
@@ -45818,7 +45821,7 @@ public unsafe partial interface IGL
     void ProgramParameters4fvNV(
         [NativeTypeName("GLenum")] uint target,
         [NativeTypeName("GLuint")] uint index,
-        [NativeTypeName("GLsizei")] int count,
+        [NativeTypeName("GLsizei")] uint count,
         [NativeTypeName("const GLfloat *")] Ref<float> v
     );
 
@@ -45839,7 +45842,7 @@ public unsafe partial interface IGL
     void ProgramStringArb(
         [NativeTypeName("GLenum")] uint target,
         [NativeTypeName("GLenum")] uint format,
-        [NativeTypeName("GLsizei")] int len,
+        [NativeTypeName("GLsizei")] uint len,
         [NativeTypeName("const void *")] Ref @string
     );
 
@@ -45847,7 +45850,7 @@ public unsafe partial interface IGL
     [NativeFunction("opengl", EntryPoint = "glProgramSubroutineParametersuivNV")]
     void ProgramSubroutineParametersuivNV(
         [NativeTypeName("GLenum")] uint target,
-        [NativeTypeName("GLsizei")] int count,
+        [NativeTypeName("GLsizei")] uint count,
         [NativeTypeName("const GLuint *")] Ref<uint> @params
     );
 
@@ -45875,7 +45878,7 @@ public unsafe partial interface IGL
     void ProgramUniform1(
         [NativeTypeName("GLuint")] uint program,
         [NativeTypeName("GLint")] int location,
-        [NativeTypeName("GLsizei")] int count,
+        [NativeTypeName("GLsizei")] uint count,
         [NativeTypeName("const GLdouble *")] Ref<double> value
     );
 
@@ -45885,7 +45888,7 @@ public unsafe partial interface IGL
     void ProgramUniform1dvExt(
         [NativeTypeName("GLuint")] uint program,
         [NativeTypeName("GLint")] int location,
-        [NativeTypeName("GLsizei")] int count,
+        [NativeTypeName("GLsizei")] uint count,
         [NativeTypeName("const GLdouble *")] Ref<double> value
     );
 
@@ -45914,7 +45917,7 @@ public unsafe partial interface IGL
     void ProgramUniform1(
         [NativeTypeName("GLuint")] uint program,
         [NativeTypeName("GLint")] int location,
-        [NativeTypeName("GLsizei")] int count,
+        [NativeTypeName("GLsizei")] uint count,
         [NativeTypeName("const GLfloat *")] Ref<float> value
     );
 
@@ -45925,7 +45928,7 @@ public unsafe partial interface IGL
     void ProgramUniform1fvExt(
         [NativeTypeName("GLuint")] uint program,
         [NativeTypeName("GLint")] int location,
-        [NativeTypeName("GLsizei")] int count,
+        [NativeTypeName("GLsizei")] uint count,
         [NativeTypeName("const GLfloat *")] Ref<float> value
     );
 
@@ -45963,7 +45966,7 @@ public unsafe partial interface IGL
     void ProgramUniform1i64vArb(
         [NativeTypeName("GLuint")] uint program,
         [NativeTypeName("GLint")] int location,
-        [NativeTypeName("GLsizei")] int count,
+        [NativeTypeName("GLsizei")] uint count,
         [NativeTypeName("const GLint64 *")] Ref<long> value
     );
 
@@ -45974,7 +45977,7 @@ public unsafe partial interface IGL
     void ProgramUniform1i64vNV(
         [NativeTypeName("GLuint")] uint program,
         [NativeTypeName("GLint")] int location,
-        [NativeTypeName("GLsizei")] int count,
+        [NativeTypeName("GLsizei")] uint count,
         [NativeTypeName("const GLint64EXT *")] Ref<long> value
     );
 
@@ -45994,7 +45997,7 @@ public unsafe partial interface IGL
     void ProgramUniform1(
         [NativeTypeName("GLuint")] uint program,
         [NativeTypeName("GLint")] int location,
-        [NativeTypeName("GLsizei")] int count,
+        [NativeTypeName("GLsizei")] uint count,
         [NativeTypeName("const GLint *")] Ref<int> value
     );
 
@@ -46005,7 +46008,7 @@ public unsafe partial interface IGL
     void ProgramUniform1ivExt(
         [NativeTypeName("GLuint")] uint program,
         [NativeTypeName("GLint")] int location,
-        [NativeTypeName("GLsizei")] int count,
+        [NativeTypeName("GLsizei")] uint count,
         [NativeTypeName("const GLint *")] Ref<int> value
     );
 
@@ -46043,7 +46046,7 @@ public unsafe partial interface IGL
     void ProgramUniform1ui64vArb(
         [NativeTypeName("GLuint")] uint program,
         [NativeTypeName("GLint")] int location,
-        [NativeTypeName("GLsizei")] int count,
+        [NativeTypeName("GLsizei")] uint count,
         [NativeTypeName("const GLuint64 *")] Ref<ulong> value
     );
 
@@ -46054,7 +46057,7 @@ public unsafe partial interface IGL
     void ProgramUniform1ui64vNV(
         [NativeTypeName("GLuint")] uint program,
         [NativeTypeName("GLint")] int location,
-        [NativeTypeName("GLsizei")] int count,
+        [NativeTypeName("GLsizei")] uint count,
         [NativeTypeName("const GLuint64EXT *")] Ref<ulong> value
     );
 
@@ -46074,7 +46077,7 @@ public unsafe partial interface IGL
     void ProgramUniform1(
         [NativeTypeName("GLuint")] uint program,
         [NativeTypeName("GLint")] int location,
-        [NativeTypeName("GLsizei")] int count,
+        [NativeTypeName("GLsizei")] uint count,
         [NativeTypeName("const GLuint *")] Ref<uint> value
     );
 
@@ -46085,7 +46088,7 @@ public unsafe partial interface IGL
     void ProgramUniform1uivExt(
         [NativeTypeName("GLuint")] uint program,
         [NativeTypeName("GLint")] int location,
-        [NativeTypeName("GLsizei")] int count,
+        [NativeTypeName("GLsizei")] uint count,
         [NativeTypeName("const GLuint *")] Ref<uint> value
     );
 
@@ -46115,7 +46118,7 @@ public unsafe partial interface IGL
     void ProgramUniform2(
         [NativeTypeName("GLuint")] uint program,
         [NativeTypeName("GLint")] int location,
-        [NativeTypeName("GLsizei")] int count,
+        [NativeTypeName("GLsizei")] uint count,
         [NativeTypeName("const GLdouble *")] Ref<double> value
     );
 
@@ -46125,7 +46128,7 @@ public unsafe partial interface IGL
     void ProgramUniform2dvExt(
         [NativeTypeName("GLuint")] uint program,
         [NativeTypeName("GLint")] int location,
-        [NativeTypeName("GLsizei")] int count,
+        [NativeTypeName("GLsizei")] uint count,
         [NativeTypeName("const GLdouble *")] Ref<double> value
     );
 
@@ -46156,7 +46159,7 @@ public unsafe partial interface IGL
     void ProgramUniform2(
         [NativeTypeName("GLuint")] uint program,
         [NativeTypeName("GLint")] int location,
-        [NativeTypeName("GLsizei")] int count,
+        [NativeTypeName("GLsizei")] uint count,
         [NativeTypeName("const GLfloat *")] Ref<float> value
     );
 
@@ -46167,7 +46170,7 @@ public unsafe partial interface IGL
     void ProgramUniform2fvExt(
         [NativeTypeName("GLuint")] uint program,
         [NativeTypeName("GLint")] int location,
-        [NativeTypeName("GLsizei")] int count,
+        [NativeTypeName("GLsizei")] uint count,
         [NativeTypeName("const GLfloat *")] Ref<float> value
     );
 
@@ -46208,7 +46211,7 @@ public unsafe partial interface IGL
     void ProgramUniform2i64vArb(
         [NativeTypeName("GLuint")] uint program,
         [NativeTypeName("GLint")] int location,
-        [NativeTypeName("GLsizei")] int count,
+        [NativeTypeName("GLsizei")] uint count,
         [NativeTypeName("const GLint64 *")] Ref<long> value
     );
 
@@ -46219,7 +46222,7 @@ public unsafe partial interface IGL
     void ProgramUniform2i64vNV(
         [NativeTypeName("GLuint")] uint program,
         [NativeTypeName("GLint")] int location,
-        [NativeTypeName("GLsizei")] int count,
+        [NativeTypeName("GLsizei")] uint count,
         [NativeTypeName("const GLint64EXT *")] Ref<long> value
     );
 
@@ -46240,7 +46243,7 @@ public unsafe partial interface IGL
     void ProgramUniform2(
         [NativeTypeName("GLuint")] uint program,
         [NativeTypeName("GLint")] int location,
-        [NativeTypeName("GLsizei")] int count,
+        [NativeTypeName("GLsizei")] uint count,
         [NativeTypeName("const GLint *")] Ref<int> value
     );
 
@@ -46251,7 +46254,7 @@ public unsafe partial interface IGL
     void ProgramUniform2ivExt(
         [NativeTypeName("GLuint")] uint program,
         [NativeTypeName("GLint")] int location,
-        [NativeTypeName("GLsizei")] int count,
+        [NativeTypeName("GLsizei")] uint count,
         [NativeTypeName("const GLint *")] Ref<int> value
     );
 
@@ -46292,7 +46295,7 @@ public unsafe partial interface IGL
     void ProgramUniform2ui64vArb(
         [NativeTypeName("GLuint")] uint program,
         [NativeTypeName("GLint")] int location,
-        [NativeTypeName("GLsizei")] int count,
+        [NativeTypeName("GLsizei")] uint count,
         [NativeTypeName("const GLuint64 *")] Ref<ulong> value
     );
 
@@ -46303,7 +46306,7 @@ public unsafe partial interface IGL
     void ProgramUniform2ui64vNV(
         [NativeTypeName("GLuint")] uint program,
         [NativeTypeName("GLint")] int location,
-        [NativeTypeName("GLsizei")] int count,
+        [NativeTypeName("GLsizei")] uint count,
         [NativeTypeName("const GLuint64EXT *")] Ref<ulong> value
     );
 
@@ -46324,7 +46327,7 @@ public unsafe partial interface IGL
     void ProgramUniform2(
         [NativeTypeName("GLuint")] uint program,
         [NativeTypeName("GLint")] int location,
-        [NativeTypeName("GLsizei")] int count,
+        [NativeTypeName("GLsizei")] uint count,
         [NativeTypeName("const GLuint *")] Ref<uint> value
     );
 
@@ -46335,7 +46338,7 @@ public unsafe partial interface IGL
     void ProgramUniform2uivExt(
         [NativeTypeName("GLuint")] uint program,
         [NativeTypeName("GLint")] int location,
-        [NativeTypeName("GLsizei")] int count,
+        [NativeTypeName("GLsizei")] uint count,
         [NativeTypeName("const GLuint *")] Ref<uint> value
     );
 
@@ -46367,7 +46370,7 @@ public unsafe partial interface IGL
     void ProgramUniform3(
         [NativeTypeName("GLuint")] uint program,
         [NativeTypeName("GLint")] int location,
-        [NativeTypeName("GLsizei")] int count,
+        [NativeTypeName("GLsizei")] uint count,
         [NativeTypeName("const GLdouble *")] Ref<double> value
     );
 
@@ -46377,7 +46380,7 @@ public unsafe partial interface IGL
     void ProgramUniform3dvExt(
         [NativeTypeName("GLuint")] uint program,
         [NativeTypeName("GLint")] int location,
-        [NativeTypeName("GLsizei")] int count,
+        [NativeTypeName("GLsizei")] uint count,
         [NativeTypeName("const GLdouble *")] Ref<double> value
     );
 
@@ -46410,7 +46413,7 @@ public unsafe partial interface IGL
     void ProgramUniform3(
         [NativeTypeName("GLuint")] uint program,
         [NativeTypeName("GLint")] int location,
-        [NativeTypeName("GLsizei")] int count,
+        [NativeTypeName("GLsizei")] uint count,
         [NativeTypeName("const GLfloat *")] Ref<float> value
     );
 
@@ -46421,7 +46424,7 @@ public unsafe partial interface IGL
     void ProgramUniform3fvExt(
         [NativeTypeName("GLuint")] uint program,
         [NativeTypeName("GLint")] int location,
-        [NativeTypeName("GLsizei")] int count,
+        [NativeTypeName("GLsizei")] uint count,
         [NativeTypeName("const GLfloat *")] Ref<float> value
     );
 
@@ -46465,7 +46468,7 @@ public unsafe partial interface IGL
     void ProgramUniform3i64vArb(
         [NativeTypeName("GLuint")] uint program,
         [NativeTypeName("GLint")] int location,
-        [NativeTypeName("GLsizei")] int count,
+        [NativeTypeName("GLsizei")] uint count,
         [NativeTypeName("const GLint64 *")] Ref<long> value
     );
 
@@ -46476,7 +46479,7 @@ public unsafe partial interface IGL
     void ProgramUniform3i64vNV(
         [NativeTypeName("GLuint")] uint program,
         [NativeTypeName("GLint")] int location,
-        [NativeTypeName("GLsizei")] int count,
+        [NativeTypeName("GLsizei")] uint count,
         [NativeTypeName("const GLint64EXT *")] Ref<long> value
     );
 
@@ -46498,7 +46501,7 @@ public unsafe partial interface IGL
     void ProgramUniform3(
         [NativeTypeName("GLuint")] uint program,
         [NativeTypeName("GLint")] int location,
-        [NativeTypeName("GLsizei")] int count,
+        [NativeTypeName("GLsizei")] uint count,
         [NativeTypeName("const GLint *")] Ref<int> value
     );
 
@@ -46509,7 +46512,7 @@ public unsafe partial interface IGL
     void ProgramUniform3ivExt(
         [NativeTypeName("GLuint")] uint program,
         [NativeTypeName("GLint")] int location,
-        [NativeTypeName("GLsizei")] int count,
+        [NativeTypeName("GLsizei")] uint count,
         [NativeTypeName("const GLint *")] Ref<int> value
     );
 
@@ -46553,7 +46556,7 @@ public unsafe partial interface IGL
     void ProgramUniform3ui64vArb(
         [NativeTypeName("GLuint")] uint program,
         [NativeTypeName("GLint")] int location,
-        [NativeTypeName("GLsizei")] int count,
+        [NativeTypeName("GLsizei")] uint count,
         [NativeTypeName("const GLuint64 *")] Ref<ulong> value
     );
 
@@ -46564,7 +46567,7 @@ public unsafe partial interface IGL
     void ProgramUniform3ui64vNV(
         [NativeTypeName("GLuint")] uint program,
         [NativeTypeName("GLint")] int location,
-        [NativeTypeName("GLsizei")] int count,
+        [NativeTypeName("GLsizei")] uint count,
         [NativeTypeName("const GLuint64EXT *")] Ref<ulong> value
     );
 
@@ -46586,7 +46589,7 @@ public unsafe partial interface IGL
     void ProgramUniform3(
         [NativeTypeName("GLuint")] uint program,
         [NativeTypeName("GLint")] int location,
-        [NativeTypeName("GLsizei")] int count,
+        [NativeTypeName("GLsizei")] uint count,
         [NativeTypeName("const GLuint *")] Ref<uint> value
     );
 
@@ -46597,7 +46600,7 @@ public unsafe partial interface IGL
     void ProgramUniform3uivExt(
         [NativeTypeName("GLuint")] uint program,
         [NativeTypeName("GLint")] int location,
-        [NativeTypeName("GLsizei")] int count,
+        [NativeTypeName("GLsizei")] uint count,
         [NativeTypeName("const GLuint *")] Ref<uint> value
     );
 
@@ -46631,7 +46634,7 @@ public unsafe partial interface IGL
     void ProgramUniform4(
         [NativeTypeName("GLuint")] uint program,
         [NativeTypeName("GLint")] int location,
-        [NativeTypeName("GLsizei")] int count,
+        [NativeTypeName("GLsizei")] uint count,
         [NativeTypeName("const GLdouble *")] Ref<double> value
     );
 
@@ -46641,7 +46644,7 @@ public unsafe partial interface IGL
     void ProgramUniform4dvExt(
         [NativeTypeName("GLuint")] uint program,
         [NativeTypeName("GLint")] int location,
-        [NativeTypeName("GLsizei")] int count,
+        [NativeTypeName("GLsizei")] uint count,
         [NativeTypeName("const GLdouble *")] Ref<double> value
     );
 
@@ -46676,7 +46679,7 @@ public unsafe partial interface IGL
     void ProgramUniform4(
         [NativeTypeName("GLuint")] uint program,
         [NativeTypeName("GLint")] int location,
-        [NativeTypeName("GLsizei")] int count,
+        [NativeTypeName("GLsizei")] uint count,
         [NativeTypeName("const GLfloat *")] Ref<float> value
     );
 
@@ -46687,7 +46690,7 @@ public unsafe partial interface IGL
     void ProgramUniform4fvExt(
         [NativeTypeName("GLuint")] uint program,
         [NativeTypeName("GLint")] int location,
-        [NativeTypeName("GLsizei")] int count,
+        [NativeTypeName("GLsizei")] uint count,
         [NativeTypeName("const GLfloat *")] Ref<float> value
     );
 
@@ -46734,7 +46737,7 @@ public unsafe partial interface IGL
     void ProgramUniform4i64vArb(
         [NativeTypeName("GLuint")] uint program,
         [NativeTypeName("GLint")] int location,
-        [NativeTypeName("GLsizei")] int count,
+        [NativeTypeName("GLsizei")] uint count,
         [NativeTypeName("const GLint64 *")] Ref<long> value
     );
 
@@ -46745,7 +46748,7 @@ public unsafe partial interface IGL
     void ProgramUniform4i64vNV(
         [NativeTypeName("GLuint")] uint program,
         [NativeTypeName("GLint")] int location,
-        [NativeTypeName("GLsizei")] int count,
+        [NativeTypeName("GLsizei")] uint count,
         [NativeTypeName("const GLint64EXT *")] Ref<long> value
     );
 
@@ -46768,7 +46771,7 @@ public unsafe partial interface IGL
     void ProgramUniform4(
         [NativeTypeName("GLuint")] uint program,
         [NativeTypeName("GLint")] int location,
-        [NativeTypeName("GLsizei")] int count,
+        [NativeTypeName("GLsizei")] uint count,
         [NativeTypeName("const GLint *")] Ref<int> value
     );
 
@@ -46779,7 +46782,7 @@ public unsafe partial interface IGL
     void ProgramUniform4ivExt(
         [NativeTypeName("GLuint")] uint program,
         [NativeTypeName("GLint")] int location,
-        [NativeTypeName("GLsizei")] int count,
+        [NativeTypeName("GLsizei")] uint count,
         [NativeTypeName("const GLint *")] Ref<int> value
     );
 
@@ -46826,7 +46829,7 @@ public unsafe partial interface IGL
     void ProgramUniform4ui64vArb(
         [NativeTypeName("GLuint")] uint program,
         [NativeTypeName("GLint")] int location,
-        [NativeTypeName("GLsizei")] int count,
+        [NativeTypeName("GLsizei")] uint count,
         [NativeTypeName("const GLuint64 *")] Ref<ulong> value
     );
 
@@ -46837,7 +46840,7 @@ public unsafe partial interface IGL
     void ProgramUniform4ui64vNV(
         [NativeTypeName("GLuint")] uint program,
         [NativeTypeName("GLint")] int location,
-        [NativeTypeName("GLsizei")] int count,
+        [NativeTypeName("GLsizei")] uint count,
         [NativeTypeName("const GLuint64EXT *")] Ref<ulong> value
     );
 
@@ -46860,7 +46863,7 @@ public unsafe partial interface IGL
     void ProgramUniform4(
         [NativeTypeName("GLuint")] uint program,
         [NativeTypeName("GLint")] int location,
-        [NativeTypeName("GLsizei")] int count,
+        [NativeTypeName("GLsizei")] uint count,
         [NativeTypeName("const GLuint *")] Ref<uint> value
     );
 
@@ -46871,7 +46874,7 @@ public unsafe partial interface IGL
     void ProgramUniform4uivExt(
         [NativeTypeName("GLuint")] uint program,
         [NativeTypeName("GLint")] int location,
-        [NativeTypeName("GLsizei")] int count,
+        [NativeTypeName("GLsizei")] uint count,
         [NativeTypeName("const GLuint *")] Ref<uint> value
     );
 
@@ -46908,7 +46911,7 @@ public unsafe partial interface IGL
     void ProgramUniformHandleui64vArb(
         [NativeTypeName("GLuint")] uint program,
         [NativeTypeName("GLint")] int location,
-        [NativeTypeName("GLsizei")] int count,
+        [NativeTypeName("GLsizei")] uint count,
         [NativeTypeName("const GLuint64 *")] Ref<ulong> values
     );
 
@@ -46917,7 +46920,7 @@ public unsafe partial interface IGL
     void ProgramUniformHandleui64vImg(
         [NativeTypeName("GLuint")] uint program,
         [NativeTypeName("GLint")] int location,
-        [NativeTypeName("GLsizei")] int count,
+        [NativeTypeName("GLsizei")] uint count,
         [NativeTypeName("const GLuint64 *")] Ref<ulong> values
     );
 
@@ -46928,7 +46931,7 @@ public unsafe partial interface IGL
     void ProgramUniformHandleui64vNV(
         [NativeTypeName("GLuint")] uint program,
         [NativeTypeName("GLint")] int location,
-        [NativeTypeName("GLsizei")] int count,
+        [NativeTypeName("GLsizei")] uint count,
         [NativeTypeName("const GLuint64 *")] Ref<ulong> values
     );
 
@@ -46938,8 +46941,8 @@ public unsafe partial interface IGL
     void ProgramUniformMatrix2(
         [NativeTypeName("GLuint")] uint program,
         [NativeTypeName("GLint")] int location,
-        [NativeTypeName("GLsizei")] int count,
-        [NativeTypeName("GLboolean")] byte transpose,
+        [NativeTypeName("GLsizei")] uint count,
+        [NativeTypeName("GLboolean")] uint transpose,
         [NativeTypeName("const GLdouble *")] Ref<double> value
     );
 
@@ -46949,8 +46952,8 @@ public unsafe partial interface IGL
     void ProgramUniformMatrix2dvExt(
         [NativeTypeName("GLuint")] uint program,
         [NativeTypeName("GLint")] int location,
-        [NativeTypeName("GLsizei")] int count,
-        [NativeTypeName("GLboolean")] byte transpose,
+        [NativeTypeName("GLsizei")] uint count,
+        [NativeTypeName("GLboolean")] uint transpose,
         [NativeTypeName("const GLdouble *")] Ref<double> value
     );
 
@@ -46960,8 +46963,8 @@ public unsafe partial interface IGL
     void ProgramUniformMatrix2(
         [NativeTypeName("GLuint")] uint program,
         [NativeTypeName("GLint")] int location,
-        [NativeTypeName("GLsizei")] int count,
-        [NativeTypeName("GLboolean")] byte transpose,
+        [NativeTypeName("GLsizei")] uint count,
+        [NativeTypeName("GLboolean")] uint transpose,
         [NativeTypeName("const GLfloat *")] Ref<float> value
     );
 
@@ -46972,8 +46975,8 @@ public unsafe partial interface IGL
     void ProgramUniformMatrix2fvExt(
         [NativeTypeName("GLuint")] uint program,
         [NativeTypeName("GLint")] int location,
-        [NativeTypeName("GLsizei")] int count,
-        [NativeTypeName("GLboolean")] byte transpose,
+        [NativeTypeName("GLsizei")] uint count,
+        [NativeTypeName("GLboolean")] uint transpose,
         [NativeTypeName("const GLfloat *")] Ref<float> value
     );
 
@@ -46983,8 +46986,8 @@ public unsafe partial interface IGL
     void ProgramUniformMatrix2x3(
         [NativeTypeName("GLuint")] uint program,
         [NativeTypeName("GLint")] int location,
-        [NativeTypeName("GLsizei")] int count,
-        [NativeTypeName("GLboolean")] byte transpose,
+        [NativeTypeName("GLsizei")] uint count,
+        [NativeTypeName("GLboolean")] uint transpose,
         [NativeTypeName("const GLdouble *")] Ref<double> value
     );
 
@@ -46994,8 +46997,8 @@ public unsafe partial interface IGL
     void ProgramUniformMatrix2x3dvExt(
         [NativeTypeName("GLuint")] uint program,
         [NativeTypeName("GLint")] int location,
-        [NativeTypeName("GLsizei")] int count,
-        [NativeTypeName("GLboolean")] byte transpose,
+        [NativeTypeName("GLsizei")] uint count,
+        [NativeTypeName("GLboolean")] uint transpose,
         [NativeTypeName("const GLdouble *")] Ref<double> value
     );
 
@@ -47005,8 +47008,8 @@ public unsafe partial interface IGL
     void ProgramUniformMatrix2x3(
         [NativeTypeName("GLuint")] uint program,
         [NativeTypeName("GLint")] int location,
-        [NativeTypeName("GLsizei")] int count,
-        [NativeTypeName("GLboolean")] byte transpose,
+        [NativeTypeName("GLsizei")] uint count,
+        [NativeTypeName("GLboolean")] uint transpose,
         [NativeTypeName("const GLfloat *")] Ref<float> value
     );
 
@@ -47017,8 +47020,8 @@ public unsafe partial interface IGL
     void ProgramUniformMatrix2x3fvExt(
         [NativeTypeName("GLuint")] uint program,
         [NativeTypeName("GLint")] int location,
-        [NativeTypeName("GLsizei")] int count,
-        [NativeTypeName("GLboolean")] byte transpose,
+        [NativeTypeName("GLsizei")] uint count,
+        [NativeTypeName("GLboolean")] uint transpose,
         [NativeTypeName("const GLfloat *")] Ref<float> value
     );
 
@@ -47028,8 +47031,8 @@ public unsafe partial interface IGL
     void ProgramUniformMatrix2x4(
         [NativeTypeName("GLuint")] uint program,
         [NativeTypeName("GLint")] int location,
-        [NativeTypeName("GLsizei")] int count,
-        [NativeTypeName("GLboolean")] byte transpose,
+        [NativeTypeName("GLsizei")] uint count,
+        [NativeTypeName("GLboolean")] uint transpose,
         [NativeTypeName("const GLdouble *")] Ref<double> value
     );
 
@@ -47039,8 +47042,8 @@ public unsafe partial interface IGL
     void ProgramUniformMatrix2x4dvExt(
         [NativeTypeName("GLuint")] uint program,
         [NativeTypeName("GLint")] int location,
-        [NativeTypeName("GLsizei")] int count,
-        [NativeTypeName("GLboolean")] byte transpose,
+        [NativeTypeName("GLsizei")] uint count,
+        [NativeTypeName("GLboolean")] uint transpose,
         [NativeTypeName("const GLdouble *")] Ref<double> value
     );
 
@@ -47050,8 +47053,8 @@ public unsafe partial interface IGL
     void ProgramUniformMatrix2x4(
         [NativeTypeName("GLuint")] uint program,
         [NativeTypeName("GLint")] int location,
-        [NativeTypeName("GLsizei")] int count,
-        [NativeTypeName("GLboolean")] byte transpose,
+        [NativeTypeName("GLsizei")] uint count,
+        [NativeTypeName("GLboolean")] uint transpose,
         [NativeTypeName("const GLfloat *")] Ref<float> value
     );
 
@@ -47062,8 +47065,8 @@ public unsafe partial interface IGL
     void ProgramUniformMatrix2x4fvExt(
         [NativeTypeName("GLuint")] uint program,
         [NativeTypeName("GLint")] int location,
-        [NativeTypeName("GLsizei")] int count,
-        [NativeTypeName("GLboolean")] byte transpose,
+        [NativeTypeName("GLsizei")] uint count,
+        [NativeTypeName("GLboolean")] uint transpose,
         [NativeTypeName("const GLfloat *")] Ref<float> value
     );
 
@@ -47073,8 +47076,8 @@ public unsafe partial interface IGL
     void ProgramUniformMatrix3(
         [NativeTypeName("GLuint")] uint program,
         [NativeTypeName("GLint")] int location,
-        [NativeTypeName("GLsizei")] int count,
-        [NativeTypeName("GLboolean")] byte transpose,
+        [NativeTypeName("GLsizei")] uint count,
+        [NativeTypeName("GLboolean")] uint transpose,
         [NativeTypeName("const GLdouble *")] Ref<double> value
     );
 
@@ -47084,8 +47087,8 @@ public unsafe partial interface IGL
     void ProgramUniformMatrix3dvExt(
         [NativeTypeName("GLuint")] uint program,
         [NativeTypeName("GLint")] int location,
-        [NativeTypeName("GLsizei")] int count,
-        [NativeTypeName("GLboolean")] byte transpose,
+        [NativeTypeName("GLsizei")] uint count,
+        [NativeTypeName("GLboolean")] uint transpose,
         [NativeTypeName("const GLdouble *")] Ref<double> value
     );
 
@@ -47095,8 +47098,8 @@ public unsafe partial interface IGL
     void ProgramUniformMatrix3(
         [NativeTypeName("GLuint")] uint program,
         [NativeTypeName("GLint")] int location,
-        [NativeTypeName("GLsizei")] int count,
-        [NativeTypeName("GLboolean")] byte transpose,
+        [NativeTypeName("GLsizei")] uint count,
+        [NativeTypeName("GLboolean")] uint transpose,
         [NativeTypeName("const GLfloat *")] Ref<float> value
     );
 
@@ -47107,8 +47110,8 @@ public unsafe partial interface IGL
     void ProgramUniformMatrix3fvExt(
         [NativeTypeName("GLuint")] uint program,
         [NativeTypeName("GLint")] int location,
-        [NativeTypeName("GLsizei")] int count,
-        [NativeTypeName("GLboolean")] byte transpose,
+        [NativeTypeName("GLsizei")] uint count,
+        [NativeTypeName("GLboolean")] uint transpose,
         [NativeTypeName("const GLfloat *")] Ref<float> value
     );
 
@@ -47118,8 +47121,8 @@ public unsafe partial interface IGL
     void ProgramUniformMatrix3x2(
         [NativeTypeName("GLuint")] uint program,
         [NativeTypeName("GLint")] int location,
-        [NativeTypeName("GLsizei")] int count,
-        [NativeTypeName("GLboolean")] byte transpose,
+        [NativeTypeName("GLsizei")] uint count,
+        [NativeTypeName("GLboolean")] uint transpose,
         [NativeTypeName("const GLdouble *")] Ref<double> value
     );
 
@@ -47129,8 +47132,8 @@ public unsafe partial interface IGL
     void ProgramUniformMatrix3x2dvExt(
         [NativeTypeName("GLuint")] uint program,
         [NativeTypeName("GLint")] int location,
-        [NativeTypeName("GLsizei")] int count,
-        [NativeTypeName("GLboolean")] byte transpose,
+        [NativeTypeName("GLsizei")] uint count,
+        [NativeTypeName("GLboolean")] uint transpose,
         [NativeTypeName("const GLdouble *")] Ref<double> value
     );
 
@@ -47140,8 +47143,8 @@ public unsafe partial interface IGL
     void ProgramUniformMatrix3x2(
         [NativeTypeName("GLuint")] uint program,
         [NativeTypeName("GLint")] int location,
-        [NativeTypeName("GLsizei")] int count,
-        [NativeTypeName("GLboolean")] byte transpose,
+        [NativeTypeName("GLsizei")] uint count,
+        [NativeTypeName("GLboolean")] uint transpose,
         [NativeTypeName("const GLfloat *")] Ref<float> value
     );
 
@@ -47152,8 +47155,8 @@ public unsafe partial interface IGL
     void ProgramUniformMatrix3x2fvExt(
         [NativeTypeName("GLuint")] uint program,
         [NativeTypeName("GLint")] int location,
-        [NativeTypeName("GLsizei")] int count,
-        [NativeTypeName("GLboolean")] byte transpose,
+        [NativeTypeName("GLsizei")] uint count,
+        [NativeTypeName("GLboolean")] uint transpose,
         [NativeTypeName("const GLfloat *")] Ref<float> value
     );
 
@@ -47163,8 +47166,8 @@ public unsafe partial interface IGL
     void ProgramUniformMatrix3x4(
         [NativeTypeName("GLuint")] uint program,
         [NativeTypeName("GLint")] int location,
-        [NativeTypeName("GLsizei")] int count,
-        [NativeTypeName("GLboolean")] byte transpose,
+        [NativeTypeName("GLsizei")] uint count,
+        [NativeTypeName("GLboolean")] uint transpose,
         [NativeTypeName("const GLdouble *")] Ref<double> value
     );
 
@@ -47174,8 +47177,8 @@ public unsafe partial interface IGL
     void ProgramUniformMatrix3x4dvExt(
         [NativeTypeName("GLuint")] uint program,
         [NativeTypeName("GLint")] int location,
-        [NativeTypeName("GLsizei")] int count,
-        [NativeTypeName("GLboolean")] byte transpose,
+        [NativeTypeName("GLsizei")] uint count,
+        [NativeTypeName("GLboolean")] uint transpose,
         [NativeTypeName("const GLdouble *")] Ref<double> value
     );
 
@@ -47185,8 +47188,8 @@ public unsafe partial interface IGL
     void ProgramUniformMatrix3x4(
         [NativeTypeName("GLuint")] uint program,
         [NativeTypeName("GLint")] int location,
-        [NativeTypeName("GLsizei")] int count,
-        [NativeTypeName("GLboolean")] byte transpose,
+        [NativeTypeName("GLsizei")] uint count,
+        [NativeTypeName("GLboolean")] uint transpose,
         [NativeTypeName("const GLfloat *")] Ref<float> value
     );
 
@@ -47197,8 +47200,8 @@ public unsafe partial interface IGL
     void ProgramUniformMatrix3x4fvExt(
         [NativeTypeName("GLuint")] uint program,
         [NativeTypeName("GLint")] int location,
-        [NativeTypeName("GLsizei")] int count,
-        [NativeTypeName("GLboolean")] byte transpose,
+        [NativeTypeName("GLsizei")] uint count,
+        [NativeTypeName("GLboolean")] uint transpose,
         [NativeTypeName("const GLfloat *")] Ref<float> value
     );
 
@@ -47208,8 +47211,8 @@ public unsafe partial interface IGL
     void ProgramUniformMatrix4(
         [NativeTypeName("GLuint")] uint program,
         [NativeTypeName("GLint")] int location,
-        [NativeTypeName("GLsizei")] int count,
-        [NativeTypeName("GLboolean")] byte transpose,
+        [NativeTypeName("GLsizei")] uint count,
+        [NativeTypeName("GLboolean")] uint transpose,
         [NativeTypeName("const GLdouble *")] Ref<double> value
     );
 
@@ -47219,8 +47222,8 @@ public unsafe partial interface IGL
     void ProgramUniformMatrix4dvExt(
         [NativeTypeName("GLuint")] uint program,
         [NativeTypeName("GLint")] int location,
-        [NativeTypeName("GLsizei")] int count,
-        [NativeTypeName("GLboolean")] byte transpose,
+        [NativeTypeName("GLsizei")] uint count,
+        [NativeTypeName("GLboolean")] uint transpose,
         [NativeTypeName("const GLdouble *")] Ref<double> value
     );
 
@@ -47230,8 +47233,8 @@ public unsafe partial interface IGL
     void ProgramUniformMatrix4(
         [NativeTypeName("GLuint")] uint program,
         [NativeTypeName("GLint")] int location,
-        [NativeTypeName("GLsizei")] int count,
-        [NativeTypeName("GLboolean")] byte transpose,
+        [NativeTypeName("GLsizei")] uint count,
+        [NativeTypeName("GLboolean")] uint transpose,
         [NativeTypeName("const GLfloat *")] Ref<float> value
     );
 
@@ -47242,8 +47245,8 @@ public unsafe partial interface IGL
     void ProgramUniformMatrix4fvExt(
         [NativeTypeName("GLuint")] uint program,
         [NativeTypeName("GLint")] int location,
-        [NativeTypeName("GLsizei")] int count,
-        [NativeTypeName("GLboolean")] byte transpose,
+        [NativeTypeName("GLsizei")] uint count,
+        [NativeTypeName("GLboolean")] uint transpose,
         [NativeTypeName("const GLfloat *")] Ref<float> value
     );
 
@@ -47253,8 +47256,8 @@ public unsafe partial interface IGL
     void ProgramUniformMatrix4x2(
         [NativeTypeName("GLuint")] uint program,
         [NativeTypeName("GLint")] int location,
-        [NativeTypeName("GLsizei")] int count,
-        [NativeTypeName("GLboolean")] byte transpose,
+        [NativeTypeName("GLsizei")] uint count,
+        [NativeTypeName("GLboolean")] uint transpose,
         [NativeTypeName("const GLdouble *")] Ref<double> value
     );
 
@@ -47264,8 +47267,8 @@ public unsafe partial interface IGL
     void ProgramUniformMatrix4x2dvExt(
         [NativeTypeName("GLuint")] uint program,
         [NativeTypeName("GLint")] int location,
-        [NativeTypeName("GLsizei")] int count,
-        [NativeTypeName("GLboolean")] byte transpose,
+        [NativeTypeName("GLsizei")] uint count,
+        [NativeTypeName("GLboolean")] uint transpose,
         [NativeTypeName("const GLdouble *")] Ref<double> value
     );
 
@@ -47275,8 +47278,8 @@ public unsafe partial interface IGL
     void ProgramUniformMatrix4x2(
         [NativeTypeName("GLuint")] uint program,
         [NativeTypeName("GLint")] int location,
-        [NativeTypeName("GLsizei")] int count,
-        [NativeTypeName("GLboolean")] byte transpose,
+        [NativeTypeName("GLsizei")] uint count,
+        [NativeTypeName("GLboolean")] uint transpose,
         [NativeTypeName("const GLfloat *")] Ref<float> value
     );
 
@@ -47287,8 +47290,8 @@ public unsafe partial interface IGL
     void ProgramUniformMatrix4x2fvExt(
         [NativeTypeName("GLuint")] uint program,
         [NativeTypeName("GLint")] int location,
-        [NativeTypeName("GLsizei")] int count,
-        [NativeTypeName("GLboolean")] byte transpose,
+        [NativeTypeName("GLsizei")] uint count,
+        [NativeTypeName("GLboolean")] uint transpose,
         [NativeTypeName("const GLfloat *")] Ref<float> value
     );
 
@@ -47298,8 +47301,8 @@ public unsafe partial interface IGL
     void ProgramUniformMatrix4x3(
         [NativeTypeName("GLuint")] uint program,
         [NativeTypeName("GLint")] int location,
-        [NativeTypeName("GLsizei")] int count,
-        [NativeTypeName("GLboolean")] byte transpose,
+        [NativeTypeName("GLsizei")] uint count,
+        [NativeTypeName("GLboolean")] uint transpose,
         [NativeTypeName("const GLdouble *")] Ref<double> value
     );
 
@@ -47309,8 +47312,8 @@ public unsafe partial interface IGL
     void ProgramUniformMatrix4x3dvExt(
         [NativeTypeName("GLuint")] uint program,
         [NativeTypeName("GLint")] int location,
-        [NativeTypeName("GLsizei")] int count,
-        [NativeTypeName("GLboolean")] byte transpose,
+        [NativeTypeName("GLsizei")] uint count,
+        [NativeTypeName("GLboolean")] uint transpose,
         [NativeTypeName("const GLdouble *")] Ref<double> value
     );
 
@@ -47320,8 +47323,8 @@ public unsafe partial interface IGL
     void ProgramUniformMatrix4x3(
         [NativeTypeName("GLuint")] uint program,
         [NativeTypeName("GLint")] int location,
-        [NativeTypeName("GLsizei")] int count,
-        [NativeTypeName("GLboolean")] byte transpose,
+        [NativeTypeName("GLsizei")] uint count,
+        [NativeTypeName("GLboolean")] uint transpose,
         [NativeTypeName("const GLfloat *")] Ref<float> value
     );
 
@@ -47332,8 +47335,8 @@ public unsafe partial interface IGL
     void ProgramUniformMatrix4x3fvExt(
         [NativeTypeName("GLuint")] uint program,
         [NativeTypeName("GLint")] int location,
-        [NativeTypeName("GLsizei")] int count,
-        [NativeTypeName("GLboolean")] byte transpose,
+        [NativeTypeName("GLsizei")] uint count,
+        [NativeTypeName("GLboolean")] uint transpose,
         [NativeTypeName("const GLfloat *")] Ref<float> value
     );
 
@@ -47352,7 +47355,7 @@ public unsafe partial interface IGL
     void ProgramUniformui64vNV(
         [NativeTypeName("GLuint")] uint program,
         [NativeTypeName("GLint")] int location,
-        [NativeTypeName("GLsizei")] int count,
+        [NativeTypeName("GLsizei")] uint count,
         [NativeTypeName("const GLuint64EXT *")] Ref<ulong> value
     );
 
@@ -47391,7 +47394,7 @@ public unsafe partial interface IGL
     void PushDebugGroup(
         [NativeTypeName("GLenum")] uint source,
         [NativeTypeName("GLuint")] uint id,
-        [NativeTypeName("GLsizei")] int length,
+        [NativeTypeName("GLsizei")] uint length,
         [NativeTypeName("const GLchar *")] Ref<sbyte> message
     );
 
@@ -47400,7 +47403,7 @@ public unsafe partial interface IGL
     void PushDebugGroupKhr(
         [NativeTypeName("GLenum")] uint source,
         [NativeTypeName("GLuint")] uint id,
-        [NativeTypeName("GLsizei")] int length,
+        [NativeTypeName("GLsizei")] uint length,
         [NativeTypeName("const GLchar *")] Ref<sbyte> message
     );
 
@@ -47410,7 +47413,7 @@ public unsafe partial interface IGL
     [SupportedApiProfile("gles2", MinVersion = "2.0")]
     [NativeFunction("opengl", EntryPoint = "glPushGroupMarkerEXT")]
     void PushGroupMarkerExt(
-        [NativeTypeName("GLsizei")] int length,
+        [NativeTypeName("GLsizei")] uint length,
         [NativeTypeName("const GLchar *")] Ref<sbyte> marker
     );
 
@@ -47641,7 +47644,7 @@ public unsafe partial interface IGL
     [NativeFunction("opengl", EntryPoint = "glRasterSamplesEXT")]
     void RasterSamplesExt(
         [NativeTypeName("GLuint")] uint samples,
-        [NativeTypeName("GLboolean")] byte fixedsamplelocations
+        [NativeTypeName("GLboolean")] uint fixedsamplelocations
     );
 
     [SupportedApiProfile("glcore", MinVersion = "3.2")]
@@ -47670,11 +47673,11 @@ public unsafe partial interface IGL
     void ReadnPixels(
         [NativeTypeName("GLint")] int x,
         [NativeTypeName("GLint")] int y,
-        [NativeTypeName("GLsizei")] int width,
-        [NativeTypeName("GLsizei")] int height,
+        [NativeTypeName("GLsizei")] uint width,
+        [NativeTypeName("GLsizei")] uint height,
         [NativeTypeName("GLenum")] uint format,
         [NativeTypeName("GLenum")] uint type,
-        [NativeTypeName("GLsizei")] int bufSize,
+        [NativeTypeName("GLsizei")] uint bufSize,
         Ref data
     );
 
@@ -47684,11 +47687,11 @@ public unsafe partial interface IGL
     void ReadnPixelsArb(
         [NativeTypeName("GLint")] int x,
         [NativeTypeName("GLint")] int y,
-        [NativeTypeName("GLsizei")] int width,
-        [NativeTypeName("GLsizei")] int height,
+        [NativeTypeName("GLsizei")] uint width,
+        [NativeTypeName("GLsizei")] uint height,
         [NativeTypeName("GLenum")] uint format,
         [NativeTypeName("GLenum")] uint type,
-        [NativeTypeName("GLsizei")] int bufSize,
+        [NativeTypeName("GLsizei")] uint bufSize,
         Ref data
     );
 
@@ -47698,11 +47701,11 @@ public unsafe partial interface IGL
     void ReadnPixelsExt(
         [NativeTypeName("GLint")] int x,
         [NativeTypeName("GLint")] int y,
-        [NativeTypeName("GLsizei")] int width,
-        [NativeTypeName("GLsizei")] int height,
+        [NativeTypeName("GLsizei")] uint width,
+        [NativeTypeName("GLsizei")] uint height,
         [NativeTypeName("GLenum")] uint format,
         [NativeTypeName("GLenum")] uint type,
-        [NativeTypeName("GLsizei")] int bufSize,
+        [NativeTypeName("GLsizei")] uint bufSize,
         Ref data
     );
 
@@ -47711,11 +47714,11 @@ public unsafe partial interface IGL
     void ReadnPixelsKhr(
         [NativeTypeName("GLint")] int x,
         [NativeTypeName("GLint")] int y,
-        [NativeTypeName("GLsizei")] int width,
-        [NativeTypeName("GLsizei")] int height,
+        [NativeTypeName("GLsizei")] uint width,
+        [NativeTypeName("GLsizei")] uint height,
         [NativeTypeName("GLenum")] uint format,
         [NativeTypeName("GLenum")] uint type,
-        [NativeTypeName("GLsizei")] int bufSize,
+        [NativeTypeName("GLsizei")] uint bufSize,
         Ref data
     );
 
@@ -47727,8 +47730,8 @@ public unsafe partial interface IGL
     void ReadPixels(
         [NativeTypeName("GLint")] int x,
         [NativeTypeName("GLint")] int y,
-        [NativeTypeName("GLsizei")] int width,
-        [NativeTypeName("GLsizei")] int height,
+        [NativeTypeName("GLsizei")] uint width,
+        [NativeTypeName("GLsizei")] uint height,
         [NativeTypeName("GLenum")] uint format,
         [NativeTypeName("GLenum")] uint type,
         Ref pixels
@@ -47822,7 +47825,7 @@ public unsafe partial interface IGL
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [SupportedApiProfile("gles2", MinVersion = "2.0")]
     [NativeFunction("opengl", EntryPoint = "glReleaseKeyedMutexWin32EXT")]
-    byte ReleaseKeyedMutexWin32ext(
+    uint ReleaseKeyedMutexWin32ext(
         [NativeTypeName("GLuint")] uint memory,
         [NativeTypeName("GLuint64")] ulong key
     );
@@ -47840,8 +47843,8 @@ public unsafe partial interface IGL
     void RenderbufferStorage(
         [NativeTypeName("GLenum")] uint target,
         [NativeTypeName("GLenum")] uint internalformat,
-        [NativeTypeName("GLsizei")] int width,
-        [NativeTypeName("GLsizei")] int height
+        [NativeTypeName("GLsizei")] uint width,
+        [NativeTypeName("GLsizei")] uint height
     );
 
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
@@ -47849,8 +47852,8 @@ public unsafe partial interface IGL
     void RenderbufferStorageExt(
         [NativeTypeName("GLenum")] uint target,
         [NativeTypeName("GLenum")] uint internalformat,
-        [NativeTypeName("GLsizei")] int width,
-        [NativeTypeName("GLsizei")] int height
+        [NativeTypeName("GLsizei")] uint width,
+        [NativeTypeName("GLsizei")] uint height
     );
 
     [SupportedApiProfile("glcore", MinVersion = "3.2")]
@@ -47858,10 +47861,10 @@ public unsafe partial interface IGL
     [NativeFunction("opengl", EntryPoint = "glRenderbufferStorageMultisample")]
     void RenderbufferStorageMultisample(
         [NativeTypeName("GLenum")] uint target,
-        [NativeTypeName("GLsizei")] int samples,
+        [NativeTypeName("GLsizei")] uint samples,
         [NativeTypeName("GLenum")] uint internalformat,
-        [NativeTypeName("GLsizei")] int width,
-        [NativeTypeName("GLsizei")] int height
+        [NativeTypeName("GLsizei")] uint width,
+        [NativeTypeName("GLsizei")] uint height
     );
 
     [SupportedApiProfile("glcore", MinVersion = "3.2")]
@@ -47870,21 +47873,21 @@ public unsafe partial interface IGL
     [NativeFunction("opengl", EntryPoint = "glRenderbufferStorageMultisampleAdvancedAMD")]
     void RenderbufferStorageMultisampleAdvancedAmd(
         [NativeTypeName("GLenum")] uint target,
-        [NativeTypeName("GLsizei")] int samples,
-        [NativeTypeName("GLsizei")] int storageSamples,
+        [NativeTypeName("GLsizei")] uint samples,
+        [NativeTypeName("GLsizei")] uint storageSamples,
         [NativeTypeName("GLenum")] uint internalformat,
-        [NativeTypeName("GLsizei")] int width,
-        [NativeTypeName("GLsizei")] int height
+        [NativeTypeName("GLsizei")] uint width,
+        [NativeTypeName("GLsizei")] uint height
     );
 
     [SupportedApiProfile("gles2", MinVersion = "2.0")]
     [NativeFunction("opengl", EntryPoint = "glRenderbufferStorageMultisampleANGLE")]
     void RenderbufferStorageMultisampleAngle(
         [NativeTypeName("GLenum")] uint target,
-        [NativeTypeName("GLsizei")] int samples,
+        [NativeTypeName("GLsizei")] uint samples,
         [NativeTypeName("GLenum")] uint internalformat,
-        [NativeTypeName("GLsizei")] int width,
-        [NativeTypeName("GLsizei")] int height
+        [NativeTypeName("GLsizei")] uint width,
+        [NativeTypeName("GLsizei")] uint height
     );
 
     [SupportedApiProfile("gles1", MaxVersion = "2.0")]
@@ -47892,10 +47895,10 @@ public unsafe partial interface IGL
     [NativeFunction("opengl", EntryPoint = "glRenderbufferStorageMultisampleAPPLE")]
     void RenderbufferStorageMultisampleApple(
         [NativeTypeName("GLenum")] uint target,
-        [NativeTypeName("GLsizei")] int samples,
+        [NativeTypeName("GLsizei")] uint samples,
         [NativeTypeName("GLenum")] uint internalformat,
-        [NativeTypeName("GLsizei")] int width,
-        [NativeTypeName("GLsizei")] int height
+        [NativeTypeName("GLsizei")] uint width,
+        [NativeTypeName("GLsizei")] uint height
     );
 
     [SupportedApiProfile("glcore", MinVersion = "3.2")]
@@ -47903,11 +47906,11 @@ public unsafe partial interface IGL
     [NativeFunction("opengl", EntryPoint = "glRenderbufferStorageMultisampleCoverageNV")]
     void RenderbufferStorageMultisampleCoverageNV(
         [NativeTypeName("GLenum")] uint target,
-        [NativeTypeName("GLsizei")] int coverageSamples,
-        [NativeTypeName("GLsizei")] int colorSamples,
+        [NativeTypeName("GLsizei")] uint coverageSamples,
+        [NativeTypeName("GLsizei")] uint colorSamples,
         [NativeTypeName("GLenum")] uint internalformat,
-        [NativeTypeName("GLsizei")] int width,
-        [NativeTypeName("GLsizei")] int height
+        [NativeTypeName("GLsizei")] uint width,
+        [NativeTypeName("GLsizei")] uint height
     );
 
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
@@ -47916,10 +47919,10 @@ public unsafe partial interface IGL
     [NativeFunction("opengl", EntryPoint = "glRenderbufferStorageMultisampleEXT")]
     void RenderbufferStorageMultisampleExt(
         [NativeTypeName("GLenum")] uint target,
-        [NativeTypeName("GLsizei")] int samples,
+        [NativeTypeName("GLsizei")] uint samples,
         [NativeTypeName("GLenum")] uint internalformat,
-        [NativeTypeName("GLsizei")] int width,
-        [NativeTypeName("GLsizei")] int height
+        [NativeTypeName("GLsizei")] uint width,
+        [NativeTypeName("GLsizei")] uint height
     );
 
     [SupportedApiProfile("gles1", MaxVersion = "2.0")]
@@ -47927,20 +47930,20 @@ public unsafe partial interface IGL
     [NativeFunction("opengl", EntryPoint = "glRenderbufferStorageMultisampleIMG")]
     void RenderbufferStorageMultisampleImg(
         [NativeTypeName("GLenum")] uint target,
-        [NativeTypeName("GLsizei")] int samples,
+        [NativeTypeName("GLsizei")] uint samples,
         [NativeTypeName("GLenum")] uint internalformat,
-        [NativeTypeName("GLsizei")] int width,
-        [NativeTypeName("GLsizei")] int height
+        [NativeTypeName("GLsizei")] uint width,
+        [NativeTypeName("GLsizei")] uint height
     );
 
     [SupportedApiProfile("gles2", MinVersion = "2.0")]
     [NativeFunction("opengl", EntryPoint = "glRenderbufferStorageMultisampleNV")]
     void RenderbufferStorageMultisampleNV(
         [NativeTypeName("GLenum")] uint target,
-        [NativeTypeName("GLsizei")] int samples,
+        [NativeTypeName("GLsizei")] uint samples,
         [NativeTypeName("GLenum")] uint internalformat,
-        [NativeTypeName("GLsizei")] int width,
-        [NativeTypeName("GLsizei")] int height
+        [NativeTypeName("GLsizei")] uint width,
+        [NativeTypeName("GLsizei")] uint height
     );
 
     [SupportedApiProfile("gles1", MaxVersion = "2.0")]
@@ -47948,8 +47951,8 @@ public unsafe partial interface IGL
     void RenderbufferStorageOes(
         [NativeTypeName("GLenum")] uint target,
         [NativeTypeName("GLenum")] uint internalformat,
-        [NativeTypeName("GLsizei")] int width,
-        [NativeTypeName("GLsizei")] int height
+        [NativeTypeName("GLsizei")] uint width,
+        [NativeTypeName("GLsizei")] uint height
     );
 
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
@@ -47965,7 +47968,7 @@ public unsafe partial interface IGL
     [NativeFunction("opengl", EntryPoint = "glReplacementCodePointerSUN")]
     void ReplacementCodePointerSun(
         [NativeTypeName("GLenum")] uint type,
-        [NativeTypeName("GLsizei")] int stride,
+        [NativeTypeName("GLsizei")] uint stride,
         [NativeTypeName("const void **")] Ref2D pointer
     );
 
@@ -48174,7 +48177,7 @@ public unsafe partial interface IGL
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glRequestResidentProgramsNV")]
     void RequestResidentProgramsNV(
-        [NativeTypeName("GLsizei")] int n,
+        [NativeTypeName("GLsizei")] uint n,
         [NativeTypeName("const GLuint *")] Ref<uint> programs
     );
 
@@ -48272,28 +48275,28 @@ public unsafe partial interface IGL
     [NativeFunction("opengl", EntryPoint = "glSampleCoverage")]
     void SampleCoverage(
         [NativeTypeName("GLfloat")] float value,
-        [NativeTypeName("GLboolean")] byte invert
+        [NativeTypeName("GLboolean")] uint invert
     );
 
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glSampleCoverageARB")]
     void SampleCoverageArb(
         [NativeTypeName("GLfloat")] float value,
-        [NativeTypeName("GLboolean")] byte invert
+        [NativeTypeName("GLboolean")] uint invert
     );
 
     [SupportedApiProfile("gles1", MaxVersion = "2.0")]
     [NativeFunction("opengl", EntryPoint = "glSampleCoveragex")]
     void SampleCoveragex(
         [NativeTypeName("GLclampx")] int value,
-        [NativeTypeName("GLboolean")] byte invert
+        [NativeTypeName("GLboolean")] uint invert
     );
 
     [SupportedApiProfile("gles1", MaxVersion = "2.0")]
     [NativeFunction("opengl", EntryPoint = "glSampleCoveragexOES")]
     void SampleCoveragexOes(
         [NativeTypeName("GLclampx")] int value,
-        [NativeTypeName("GLboolean")] byte invert
+        [NativeTypeName("GLboolean")] uint invert
     );
 
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
@@ -48308,7 +48311,7 @@ public unsafe partial interface IGL
     [NativeFunction("opengl", EntryPoint = "glSampleMaskEXT")]
     void SampleMaskExt(
         [NativeTypeName("GLclampf")] float value,
-        [NativeTypeName("GLboolean")] byte invert
+        [NativeTypeName("GLboolean")] uint invert
     );
 
     [SupportedApiProfile("glcore", MinVersion = "3.2")]
@@ -48330,7 +48333,7 @@ public unsafe partial interface IGL
     [NativeFunction("opengl", EntryPoint = "glSampleMaskSGIS")]
     void SampleMaskSgis(
         [NativeTypeName("GLclampf")] float value,
-        [NativeTypeName("GLboolean")] byte invert
+        [NativeTypeName("GLboolean")] uint invert
     );
 
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
@@ -48473,8 +48476,8 @@ public unsafe partial interface IGL
     void Scissor(
         [NativeTypeName("GLint")] int x,
         [NativeTypeName("GLint")] int y,
-        [NativeTypeName("GLsizei")] int width,
-        [NativeTypeName("GLsizei")] int height
+        [NativeTypeName("GLsizei")] uint width,
+        [NativeTypeName("GLsizei")] uint height
     );
 
     [SupportedApiProfile("glcore", MinVersion = "3.2")]
@@ -48482,7 +48485,7 @@ public unsafe partial interface IGL
     [NativeFunction("opengl", EntryPoint = "glScissorArrayv")]
     void ScissorArray(
         [NativeTypeName("GLuint")] uint first,
-        [NativeTypeName("GLsizei")] int count,
+        [NativeTypeName("GLsizei")] uint count,
         [NativeTypeName("const GLint *")] Ref<int> v
     );
 
@@ -48490,7 +48493,7 @@ public unsafe partial interface IGL
     [NativeFunction("opengl", EntryPoint = "glScissorArrayvNV")]
     void ScissorArrayvNV(
         [NativeTypeName("GLuint")] uint first,
-        [NativeTypeName("GLsizei")] int count,
+        [NativeTypeName("GLsizei")] uint count,
         [NativeTypeName("const GLint *")] Ref<int> v
     );
 
@@ -48498,7 +48501,7 @@ public unsafe partial interface IGL
     [NativeFunction("opengl", EntryPoint = "glScissorArrayvOES")]
     void ScissorArrayvOes(
         [NativeTypeName("GLuint")] uint first,
-        [NativeTypeName("GLsizei")] int count,
+        [NativeTypeName("GLsizei")] uint count,
         [NativeTypeName("const GLint *")] Ref<int> v
     );
 
@@ -48508,7 +48511,7 @@ public unsafe partial interface IGL
     [NativeFunction("opengl", EntryPoint = "glScissorExclusiveArrayvNV")]
     void ScissorExclusiveArrayvNV(
         [NativeTypeName("GLuint")] uint first,
-        [NativeTypeName("GLsizei")] int count,
+        [NativeTypeName("GLsizei")] uint count,
         [NativeTypeName("const GLint *")] Ref<int> v
     );
 
@@ -48519,8 +48522,8 @@ public unsafe partial interface IGL
     void ScissorExclusiveNV(
         [NativeTypeName("GLint")] int x,
         [NativeTypeName("GLint")] int y,
-        [NativeTypeName("GLsizei")] int width,
-        [NativeTypeName("GLsizei")] int height
+        [NativeTypeName("GLsizei")] uint width,
+        [NativeTypeName("GLsizei")] uint height
     );
 
     [SupportedApiProfile("glcore", MinVersion = "3.2")]
@@ -48530,8 +48533,8 @@ public unsafe partial interface IGL
         [NativeTypeName("GLuint")] uint index,
         [NativeTypeName("GLint")] int left,
         [NativeTypeName("GLint")] int bottom,
-        [NativeTypeName("GLsizei")] int width,
-        [NativeTypeName("GLsizei")] int height
+        [NativeTypeName("GLsizei")] uint width,
+        [NativeTypeName("GLsizei")] uint height
     );
 
     [SupportedApiProfile("gles2", MinVersion = "2.0")]
@@ -48540,8 +48543,8 @@ public unsafe partial interface IGL
         [NativeTypeName("GLuint")] uint index,
         [NativeTypeName("GLint")] int left,
         [NativeTypeName("GLint")] int bottom,
-        [NativeTypeName("GLsizei")] int width,
-        [NativeTypeName("GLsizei")] int height
+        [NativeTypeName("GLsizei")] uint width,
+        [NativeTypeName("GLsizei")] uint height
     );
 
     [SupportedApiProfile("gles2", MinVersion = "2.0")]
@@ -48550,8 +48553,8 @@ public unsafe partial interface IGL
         [NativeTypeName("GLuint")] uint index,
         [NativeTypeName("GLint")] int left,
         [NativeTypeName("GLint")] int bottom,
-        [NativeTypeName("GLsizei")] int width,
-        [NativeTypeName("GLsizei")] int height
+        [NativeTypeName("GLsizei")] uint width,
+        [NativeTypeName("GLsizei")] uint height
     );
 
     [SupportedApiProfile("glcore", MinVersion = "3.2")]
@@ -48786,7 +48789,7 @@ public unsafe partial interface IGL
     void SecondaryColorFormatNV(
         [NativeTypeName("GLint")] int size,
         [NativeTypeName("GLenum")] uint type,
-        [NativeTypeName("GLsizei")] int stride
+        [NativeTypeName("GLsizei")] uint stride
     );
 
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
@@ -48808,7 +48811,7 @@ public unsafe partial interface IGL
     void SecondaryColorPointer(
         [NativeTypeName("GLint")] int size,
         [NativeTypeName("GLenum")] uint type,
-        [NativeTypeName("GLsizei")] int stride,
+        [NativeTypeName("GLsizei")] uint stride,
         [NativeTypeName("const void *")] Ref pointer
     );
 
@@ -48817,7 +48820,7 @@ public unsafe partial interface IGL
     void SecondaryColorPointerExt(
         [NativeTypeName("GLint")] int size,
         [NativeTypeName("GLenum")] uint type,
-        [NativeTypeName("GLsizei")] int stride,
+        [NativeTypeName("GLsizei")] uint stride,
         [NativeTypeName("const void *")] Ref pointer
     );
 
@@ -48834,7 +48837,7 @@ public unsafe partial interface IGL
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glSelectBuffer")]
     void SelectBuffer(
-        [NativeTypeName("GLsizei")] int size,
+        [NativeTypeName("GLsizei")] uint size,
         [NativeTypeName("GLuint *")] Ref<uint> buffer
     );
 
@@ -48844,7 +48847,7 @@ public unsafe partial interface IGL
     [NativeFunction("opengl", EntryPoint = "glSelectPerfMonitorCountersAMD")]
     void SelectPerfMonitorCountersAmd(
         [NativeTypeName("GLuint")] uint monitor,
-        [NativeTypeName("GLboolean")] byte enable,
+        [NativeTypeName("GLboolean")] uint enable,
         [NativeTypeName("GLuint")] uint group,
         [NativeTypeName("GLint")] int numCounters,
         [NativeTypeName("GLuint *")] Ref<uint> counterList
@@ -48873,8 +48876,8 @@ public unsafe partial interface IGL
     void SeparableFilter2d(
         [NativeTypeName("GLenum")] uint target,
         [NativeTypeName("GLenum")] uint internalformat,
-        [NativeTypeName("GLsizei")] int width,
-        [NativeTypeName("GLsizei")] int height,
+        [NativeTypeName("GLsizei")] uint width,
+        [NativeTypeName("GLsizei")] uint height,
         [NativeTypeName("GLenum")] uint format,
         [NativeTypeName("GLenum")] uint type,
         [NativeTypeName("const void *")] Ref row,
@@ -48886,8 +48889,8 @@ public unsafe partial interface IGL
     void SeparableFilter2dext(
         [NativeTypeName("GLenum")] uint target,
         [NativeTypeName("GLenum")] uint internalformat,
-        [NativeTypeName("GLsizei")] int width,
-        [NativeTypeName("GLsizei")] int height,
+        [NativeTypeName("GLsizei")] uint width,
+        [NativeTypeName("GLsizei")] uint height,
         [NativeTypeName("GLenum")] uint format,
         [NativeTypeName("GLenum")] uint type,
         [NativeTypeName("const void *")] Ref row,
@@ -48948,11 +48951,11 @@ public unsafe partial interface IGL
     [SupportedApiProfile("gles2", MinVersion = "2.0")]
     [NativeFunction("opengl", EntryPoint = "glShaderBinary")]
     void ShaderBinary(
-        [NativeTypeName("GLsizei")] int count,
+        [NativeTypeName("GLsizei")] uint count,
         [NativeTypeName("const GLuint *")] Ref<uint> shaders,
         [NativeTypeName("GLenum")] uint binaryFormat,
         [NativeTypeName("const void *")] Ref binary,
-        [NativeTypeName("GLsizei")] int length
+        [NativeTypeName("GLsizei")] uint length
     );
 
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
@@ -48988,7 +48991,7 @@ public unsafe partial interface IGL
     [NativeFunction("opengl", EntryPoint = "glShaderSource")]
     void ShaderSource(
         [NativeTypeName("GLuint")] uint shader,
-        [NativeTypeName("GLsizei")] int count,
+        [NativeTypeName("GLsizei")] uint count,
         [NativeTypeName("const GLchar *const *")] Ref2D<sbyte> @string,
         [NativeTypeName("const GLint *")] Ref<int> length
     );
@@ -48996,8 +48999,8 @@ public unsafe partial interface IGL
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glShaderSourceARB")]
     void ShaderSourceArb(
-        [NativeTypeName("GLhandleARB")] Ref shaderObj,
-        [NativeTypeName("GLsizei")] int count,
+        [NativeTypeName("GLhandleARB")] uint shaderObj,
+        [NativeTypeName("GLsizei")] uint count,
         [NativeTypeName("const GLcharARB **")] Ref2D<sbyte> @string,
         [NativeTypeName("const GLint *")] Ref<int> length
     );
@@ -49026,7 +49029,7 @@ public unsafe partial interface IGL
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [SupportedApiProfile("gles2", MinVersion = "2.0")]
     [NativeFunction("opengl", EntryPoint = "glShadingRateImageBarrierNV")]
-    void ShadingRateImageBarrierNV([NativeTypeName("GLboolean")] byte synchronize);
+    void ShadingRateImageBarrierNV([NativeTypeName("GLboolean")] uint synchronize);
 
     [SupportedApiProfile("glcore", MinVersion = "3.2")]
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
@@ -49035,7 +49038,7 @@ public unsafe partial interface IGL
     void ShadingRateImagePaletteNV(
         [NativeTypeName("GLuint")] uint viewport,
         [NativeTypeName("GLuint")] uint first,
-        [NativeTypeName("GLsizei")] int count,
+        [NativeTypeName("GLsizei")] uint count,
         [NativeTypeName("const GLenum *")] Ref<uint> rates
     );
 
@@ -49063,7 +49066,7 @@ public unsafe partial interface IGL
     [NativeFunction("opengl", EntryPoint = "glSharpenTexFuncSGIS")]
     void SharpenTexFuncSgis(
         [NativeTypeName("GLenum")] uint target,
-        [NativeTypeName("GLsizei")] int n,
+        [NativeTypeName("GLsizei")] uint n,
         [NativeTypeName("const GLfloat *")] Ref<float> points
     );
 
@@ -49083,7 +49086,7 @@ public unsafe partial interface IGL
     [NativeFunction("opengl", EntryPoint = "glSignalSemaphoreui64NVX")]
     void SignalSemaphoreui64nvx(
         [NativeTypeName("GLuint")] uint signalGpu,
-        [NativeTypeName("GLsizei")] int fenceObjectCount,
+        [NativeTypeName("GLsizei")] uint fenceObjectCount,
         [NativeTypeName("const GLuint *")] Ref<uint> semaphoreArray,
         [NativeTypeName("const GLuint64 *")] Ref<ulong> fenceValueArray
     );
@@ -49176,7 +49179,7 @@ public unsafe partial interface IGL
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glStencilClearTagEXT")]
     void StencilClearTagExt(
-        [NativeTypeName("GLsizei")] int stencilTagBits,
+        [NativeTypeName("GLsizei")] uint stencilTagBits,
         [NativeTypeName("GLuint")] uint stencilClearTag
     );
 
@@ -49185,7 +49188,7 @@ public unsafe partial interface IGL
     [SupportedApiProfile("gles2", MinVersion = "2.0")]
     [NativeFunction("opengl", EntryPoint = "glStencilFillPathInstancedNV")]
     void StencilFillPathInstancedNV(
-        [NativeTypeName("GLsizei")] int numPaths,
+        [NativeTypeName("GLsizei")] uint numPaths,
         [NativeTypeName("GLenum")] uint pathNameType,
         [NativeTypeName("const void *")] Ref paths,
         [NativeTypeName("GLuint")] uint pathBase,
@@ -49295,7 +49298,7 @@ public unsafe partial interface IGL
     [SupportedApiProfile("gles2", MinVersion = "2.0")]
     [NativeFunction("opengl", EntryPoint = "glStencilStrokePathInstancedNV")]
     void StencilStrokePathInstancedNV(
-        [NativeTypeName("GLsizei")] int numPaths,
+        [NativeTypeName("GLsizei")] uint numPaths,
         [NativeTypeName("GLenum")] uint pathNameType,
         [NativeTypeName("const void *")] Ref paths,
         [NativeTypeName("GLuint")] uint pathBase,
@@ -49320,7 +49323,7 @@ public unsafe partial interface IGL
     [SupportedApiProfile("gles2", MinVersion = "2.0")]
     [NativeFunction("opengl", EntryPoint = "glStencilThenCoverFillPathInstancedNV")]
     void StencilThenCoverFillPathInstancedNV(
-        [NativeTypeName("GLsizei")] int numPaths,
+        [NativeTypeName("GLsizei")] uint numPaths,
         [NativeTypeName("GLenum")] uint pathNameType,
         [NativeTypeName("const void *")] Ref paths,
         [NativeTypeName("GLuint")] uint pathBase,
@@ -49347,7 +49350,7 @@ public unsafe partial interface IGL
     [SupportedApiProfile("gles2", MinVersion = "2.0")]
     [NativeFunction("opengl", EntryPoint = "glStencilThenCoverStrokePathInstancedNV")]
     void StencilThenCoverStrokePathInstancedNV(
-        [NativeTypeName("GLsizei")] int numPaths,
+        [NativeTypeName("GLsizei")] uint numPaths,
         [NativeTypeName("GLenum")] uint pathNameType,
         [NativeTypeName("const void *")] Ref paths,
         [NativeTypeName("GLuint")] uint pathBase,
@@ -49376,7 +49379,7 @@ public unsafe partial interface IGL
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glStringMarkerGREMEDY")]
     void StringMarkerGremedy(
-        [NativeTypeName("GLsizei")] int len,
+        [NativeTypeName("GLsizei")] uint len,
         [NativeTypeName("const void *")] Ref @string
     );
 
@@ -49472,7 +49475,7 @@ public unsafe partial interface IGL
     [NativeFunction("opengl", EntryPoint = "glTangentPointerEXT")]
     void TangentPointerExt(
         [NativeTypeName("GLenum")] uint type,
-        [NativeTypeName("GLsizei")] int stride,
+        [NativeTypeName("GLsizei")] uint stride,
         [NativeTypeName("const void *")] Ref pointer
     );
 
@@ -49491,19 +49494,19 @@ public unsafe partial interface IGL
     [return: NativeTypeName("GLboolean")]
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glTestFenceAPPLE")]
-    byte TestFenceApple([NativeTypeName("GLuint")] uint fence);
+    uint TestFenceApple([NativeTypeName("GLuint")] uint fence);
 
     [return: NativeTypeName("GLboolean")]
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [SupportedApiProfile("gles1", MaxVersion = "2.0")]
     [SupportedApiProfile("gles2", MinVersion = "2.0")]
     [NativeFunction("opengl", EntryPoint = "glTestFenceNV")]
-    byte TestFenceNV([NativeTypeName("GLuint")] uint fence);
+    uint TestFenceNV([NativeTypeName("GLuint")] uint fence);
 
     [return: NativeTypeName("GLboolean")]
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glTestObjectAPPLE")]
-    byte TestObjectApple(
+    uint TestObjectApple(
         [NativeTypeName("GLenum")] uint @object,
         [NativeTypeName("GLuint")] uint name
     );
@@ -49561,7 +49564,7 @@ public unsafe partial interface IGL
         [NativeTypeName("GLenum")] uint internalformat,
         [NativeTypeName("GLuint")] uint buffer,
         [NativeTypeName("GLintptr")] nint offset,
-        [NativeTypeName("GLsizeiptr")] nint size
+        [NativeTypeName("GLsizeiptr")] nuint size
     );
 
     [SupportedApiProfile("gles2", MinVersion = "2.0")]
@@ -49571,7 +49574,7 @@ public unsafe partial interface IGL
         [NativeTypeName("GLenum")] uint internalformat,
         [NativeTypeName("GLuint")] uint buffer,
         [NativeTypeName("GLintptr")] nint offset,
-        [NativeTypeName("GLsizeiptr")] nint size
+        [NativeTypeName("GLsizeiptr")] nuint size
     );
 
     [SupportedApiProfile("gles2", MinVersion = "2.0")]
@@ -49581,7 +49584,7 @@ public unsafe partial interface IGL
         [NativeTypeName("GLenum")] uint internalformat,
         [NativeTypeName("GLuint")] uint buffer,
         [NativeTypeName("GLintptr")] nint offset,
-        [NativeTypeName("GLsizeiptr")] nint size
+        [NativeTypeName("GLsizeiptr")] nuint size
     );
 
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
@@ -50047,7 +50050,7 @@ public unsafe partial interface IGL
     void TexCoordFormatNV(
         [NativeTypeName("GLint")] int size,
         [NativeTypeName("GLenum")] uint type,
-        [NativeTypeName("GLsizei")] int stride
+        [NativeTypeName("GLsizei")] uint stride
     );
 
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
@@ -50100,7 +50103,7 @@ public unsafe partial interface IGL
     void TexCoordPointer(
         [NativeTypeName("GLint")] int size,
         [NativeTypeName("GLenum")] uint type,
-        [NativeTypeName("GLsizei")] int stride,
+        [NativeTypeName("GLsizei")] uint stride,
         [NativeTypeName("const void *")] Ref pointer
     );
 
@@ -50109,8 +50112,8 @@ public unsafe partial interface IGL
     void TexCoordPointerExt(
         [NativeTypeName("GLint")] int size,
         [NativeTypeName("GLenum")] uint type,
-        [NativeTypeName("GLsizei")] int stride,
-        [NativeTypeName("GLsizei")] int count,
+        [NativeTypeName("GLsizei")] uint stride,
+        [NativeTypeName("GLsizei")] uint count,
         [NativeTypeName("const void *")] Ref pointer
     );
 
@@ -50224,7 +50227,7 @@ public unsafe partial interface IGL
     void TexFilterFuncSgis(
         [NativeTypeName("GLenum")] uint target,
         [NativeTypeName("GLenum")] uint filter,
-        [NativeTypeName("GLsizei")] int n,
+        [NativeTypeName("GLsizei")] uint n,
         [NativeTypeName("const GLfloat *")] Ref<float> weights
     );
 
@@ -50333,7 +50336,7 @@ public unsafe partial interface IGL
         [NativeTypeName("GLenum")] uint target,
         [NativeTypeName("GLint")] int level,
         [NativeTypeName("GLint")] int internalformat,
-        [NativeTypeName("GLsizei")] int width,
+        [NativeTypeName("GLsizei")] uint width,
         [NativeTypeName("GLint")] int border,
         [NativeTypeName("GLenum")] uint format,
         [NativeTypeName("GLenum")] uint type,
@@ -50349,8 +50352,8 @@ public unsafe partial interface IGL
         [NativeTypeName("GLenum")] uint target,
         [NativeTypeName("GLint")] int level,
         [NativeTypeName("GLint")] int internalformat,
-        [NativeTypeName("GLsizei")] int width,
-        [NativeTypeName("GLsizei")] int height,
+        [NativeTypeName("GLsizei")] uint width,
+        [NativeTypeName("GLsizei")] uint height,
         [NativeTypeName("GLint")] int border,
         [NativeTypeName("GLenum")] uint format,
         [NativeTypeName("GLenum")] uint type,
@@ -50362,23 +50365,23 @@ public unsafe partial interface IGL
     [NativeFunction("opengl", EntryPoint = "glTexImage2DMultisample")]
     void TexImage2dMultisample(
         [NativeTypeName("GLenum")] uint target,
-        [NativeTypeName("GLsizei")] int samples,
+        [NativeTypeName("GLsizei")] uint samples,
         [NativeTypeName("GLenum")] uint internalformat,
-        [NativeTypeName("GLsizei")] int width,
-        [NativeTypeName("GLsizei")] int height,
-        [NativeTypeName("GLboolean")] byte fixedsamplelocations
+        [NativeTypeName("GLsizei")] uint width,
+        [NativeTypeName("GLsizei")] uint height,
+        [NativeTypeName("GLboolean")] uint fixedsamplelocations
     );
 
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glTexImage2DMultisampleCoverageNV")]
     void TexImage2dMultisampleCoverageNV(
         [NativeTypeName("GLenum")] uint target,
-        [NativeTypeName("GLsizei")] int coverageSamples,
-        [NativeTypeName("GLsizei")] int colorSamples,
+        [NativeTypeName("GLsizei")] uint coverageSamples,
+        [NativeTypeName("GLsizei")] uint colorSamples,
         [NativeTypeName("GLint")] int internalFormat,
-        [NativeTypeName("GLsizei")] int width,
-        [NativeTypeName("GLsizei")] int height,
-        [NativeTypeName("GLboolean")] byte fixedSampleLocations
+        [NativeTypeName("GLsizei")] uint width,
+        [NativeTypeName("GLsizei")] uint height,
+        [NativeTypeName("GLboolean")] uint fixedSampleLocations
     );
 
     [SupportedApiProfile("glcore", MinVersion = "3.2")]
@@ -50388,9 +50391,9 @@ public unsafe partial interface IGL
         [NativeTypeName("GLenum")] uint target,
         [NativeTypeName("GLint")] int level,
         [NativeTypeName("GLint")] int internalformat,
-        [NativeTypeName("GLsizei")] int width,
-        [NativeTypeName("GLsizei")] int height,
-        [NativeTypeName("GLsizei")] int depth,
+        [NativeTypeName("GLsizei")] uint width,
+        [NativeTypeName("GLsizei")] uint height,
+        [NativeTypeName("GLsizei")] uint depth,
         [NativeTypeName("GLint")] int border,
         [NativeTypeName("GLenum")] uint format,
         [NativeTypeName("GLenum")] uint type,
@@ -50403,9 +50406,9 @@ public unsafe partial interface IGL
         [NativeTypeName("GLenum")] uint target,
         [NativeTypeName("GLint")] int level,
         [NativeTypeName("GLenum")] uint internalformat,
-        [NativeTypeName("GLsizei")] int width,
-        [NativeTypeName("GLsizei")] int height,
-        [NativeTypeName("GLsizei")] int depth,
+        [NativeTypeName("GLsizei")] uint width,
+        [NativeTypeName("GLsizei")] uint height,
+        [NativeTypeName("GLsizei")] uint depth,
         [NativeTypeName("GLint")] int border,
         [NativeTypeName("GLenum")] uint format,
         [NativeTypeName("GLenum")] uint type,
@@ -50417,25 +50420,25 @@ public unsafe partial interface IGL
     [NativeFunction("opengl", EntryPoint = "glTexImage3DMultisample")]
     void TexImage3dMultisample(
         [NativeTypeName("GLenum")] uint target,
-        [NativeTypeName("GLsizei")] int samples,
+        [NativeTypeName("GLsizei")] uint samples,
         [NativeTypeName("GLenum")] uint internalformat,
-        [NativeTypeName("GLsizei")] int width,
-        [NativeTypeName("GLsizei")] int height,
-        [NativeTypeName("GLsizei")] int depth,
-        [NativeTypeName("GLboolean")] byte fixedsamplelocations
+        [NativeTypeName("GLsizei")] uint width,
+        [NativeTypeName("GLsizei")] uint height,
+        [NativeTypeName("GLsizei")] uint depth,
+        [NativeTypeName("GLboolean")] uint fixedsamplelocations
     );
 
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glTexImage3DMultisampleCoverageNV")]
     void TexImage3dMultisampleCoverageNV(
         [NativeTypeName("GLenum")] uint target,
-        [NativeTypeName("GLsizei")] int coverageSamples,
-        [NativeTypeName("GLsizei")] int colorSamples,
+        [NativeTypeName("GLsizei")] uint coverageSamples,
+        [NativeTypeName("GLsizei")] uint colorSamples,
         [NativeTypeName("GLint")] int internalFormat,
-        [NativeTypeName("GLsizei")] int width,
-        [NativeTypeName("GLsizei")] int height,
-        [NativeTypeName("GLsizei")] int depth,
-        [NativeTypeName("GLboolean")] byte fixedSampleLocations
+        [NativeTypeName("GLsizei")] uint width,
+        [NativeTypeName("GLsizei")] uint height,
+        [NativeTypeName("GLsizei")] uint depth,
+        [NativeTypeName("GLboolean")] uint fixedSampleLocations
     );
 
     [SupportedApiProfile("gles2", MinVersion = "2.0")]
@@ -50444,9 +50447,9 @@ public unsafe partial interface IGL
         [NativeTypeName("GLenum")] uint target,
         [NativeTypeName("GLint")] int level,
         [NativeTypeName("GLenum")] uint internalformat,
-        [NativeTypeName("GLsizei")] int width,
-        [NativeTypeName("GLsizei")] int height,
-        [NativeTypeName("GLsizei")] int depth,
+        [NativeTypeName("GLsizei")] uint width,
+        [NativeTypeName("GLsizei")] uint height,
+        [NativeTypeName("GLsizei")] uint depth,
         [NativeTypeName("GLint")] int border,
         [NativeTypeName("GLenum")] uint format,
         [NativeTypeName("GLenum")] uint type,
@@ -50459,10 +50462,10 @@ public unsafe partial interface IGL
         [NativeTypeName("GLenum")] uint target,
         [NativeTypeName("GLint")] int level,
         [NativeTypeName("GLenum")] uint internalformat,
-        [NativeTypeName("GLsizei")] int width,
-        [NativeTypeName("GLsizei")] int height,
-        [NativeTypeName("GLsizei")] int depth,
-        [NativeTypeName("GLsizei")] int size4d,
+        [NativeTypeName("GLsizei")] uint width,
+        [NativeTypeName("GLsizei")] uint height,
+        [NativeTypeName("GLsizei")] uint depth,
+        [NativeTypeName("GLsizei")] uint size4d,
         [NativeTypeName("GLint")] int border,
         [NativeTypeName("GLenum")] uint format,
         [NativeTypeName("GLenum")] uint type,
@@ -50478,10 +50481,10 @@ public unsafe partial interface IGL
         [NativeTypeName("GLint")] int xoffset,
         [NativeTypeName("GLint")] int yoffset,
         [NativeTypeName("GLint")] int zoffset,
-        [NativeTypeName("GLsizei")] int width,
-        [NativeTypeName("GLsizei")] int height,
-        [NativeTypeName("GLsizei")] int depth,
-        [NativeTypeName("GLboolean")] byte commit
+        [NativeTypeName("GLsizei")] uint width,
+        [NativeTypeName("GLsizei")] uint height,
+        [NativeTypeName("GLsizei")] uint depth,
+        [NativeTypeName("GLboolean")] uint commit
     );
 
     [SupportedApiProfile("gles2", MinVersion = "2.0")]
@@ -50492,10 +50495,10 @@ public unsafe partial interface IGL
         [NativeTypeName("GLint")] int xoffset,
         [NativeTypeName("GLint")] int yoffset,
         [NativeTypeName("GLint")] int zoffset,
-        [NativeTypeName("GLsizei")] int width,
-        [NativeTypeName("GLsizei")] int height,
-        [NativeTypeName("GLsizei")] int depth,
-        [NativeTypeName("GLboolean")] byte commit
+        [NativeTypeName("GLsizei")] uint width,
+        [NativeTypeName("GLsizei")] uint height,
+        [NativeTypeName("GLsizei")] uint depth,
+        [NativeTypeName("GLboolean")] uint commit
     );
 
     [SupportedApiProfile("glcore", MinVersion = "3.2")]
@@ -50509,12 +50512,12 @@ public unsafe partial interface IGL
         [NativeTypeName("GLint")] int xoffset,
         [NativeTypeName("GLint")] int yoffset,
         [NativeTypeName("GLint")] int zoffset,
-        [NativeTypeName("GLsizei")] int width,
-        [NativeTypeName("GLsizei")] int height,
-        [NativeTypeName("GLsizei")] int depth,
+        [NativeTypeName("GLsizei")] uint width,
+        [NativeTypeName("GLsizei")] uint height,
+        [NativeTypeName("GLsizei")] uint depth,
         [NativeTypeName("GLuint")] uint memory,
         [NativeTypeName("GLuint64")] ulong offset,
-        [NativeTypeName("GLboolean")] byte commit
+        [NativeTypeName("GLboolean")] uint commit
     );
 
     [SupportedApiProfile("glcore", MinVersion = "3.2")]
@@ -50659,9 +50662,9 @@ public unsafe partial interface IGL
     [NativeFunction("opengl", EntryPoint = "glTexStorage1D")]
     void TexStorage1d(
         [NativeTypeName("GLenum")] uint target,
-        [NativeTypeName("GLsizei")] int levels,
+        [NativeTypeName("GLsizei")] uint levels,
         [NativeTypeName("GLenum")] uint internalformat,
-        [NativeTypeName("GLsizei")] int width
+        [NativeTypeName("GLsizei")] uint width
     );
 
     [SupportedApiProfile("glcore", MinVersion = "3.2")]
@@ -50671,9 +50674,9 @@ public unsafe partial interface IGL
     [NativeFunction("opengl", EntryPoint = "glTexStorage1DEXT")]
     void TexStorage1dext(
         [NativeTypeName("GLenum")] uint target,
-        [NativeTypeName("GLsizei")] int levels,
+        [NativeTypeName("GLsizei")] uint levels,
         [NativeTypeName("GLenum")] uint internalformat,
-        [NativeTypeName("GLsizei")] int width
+        [NativeTypeName("GLsizei")] uint width
     );
 
     [SupportedApiProfile("glcore", MinVersion = "3.2")]
@@ -50681,10 +50684,10 @@ public unsafe partial interface IGL
     [NativeFunction("opengl", EntryPoint = "glTexStorage2D")]
     void TexStorage2d(
         [NativeTypeName("GLenum")] uint target,
-        [NativeTypeName("GLsizei")] int levels,
+        [NativeTypeName("GLsizei")] uint levels,
         [NativeTypeName("GLenum")] uint internalformat,
-        [NativeTypeName("GLsizei")] int width,
-        [NativeTypeName("GLsizei")] int height
+        [NativeTypeName("GLsizei")] uint width,
+        [NativeTypeName("GLsizei")] uint height
     );
 
     [SupportedApiProfile("glcore", MinVersion = "3.2")]
@@ -50694,10 +50697,10 @@ public unsafe partial interface IGL
     [NativeFunction("opengl", EntryPoint = "glTexStorage2DEXT")]
     void TexStorage2dext(
         [NativeTypeName("GLenum")] uint target,
-        [NativeTypeName("GLsizei")] int levels,
+        [NativeTypeName("GLsizei")] uint levels,
         [NativeTypeName("GLenum")] uint internalformat,
-        [NativeTypeName("GLsizei")] int width,
-        [NativeTypeName("GLsizei")] int height
+        [NativeTypeName("GLsizei")] uint width,
+        [NativeTypeName("GLsizei")] uint height
     );
 
     [SupportedApiProfile("glcore", MinVersion = "3.2")]
@@ -50705,11 +50708,11 @@ public unsafe partial interface IGL
     [NativeFunction("opengl", EntryPoint = "glTexStorage2DMultisample")]
     void TexStorage2dMultisample(
         [NativeTypeName("GLenum")] uint target,
-        [NativeTypeName("GLsizei")] int samples,
+        [NativeTypeName("GLsizei")] uint samples,
         [NativeTypeName("GLenum")] uint internalformat,
-        [NativeTypeName("GLsizei")] int width,
-        [NativeTypeName("GLsizei")] int height,
-        [NativeTypeName("GLboolean")] byte fixedsamplelocations
+        [NativeTypeName("GLsizei")] uint width,
+        [NativeTypeName("GLsizei")] uint height,
+        [NativeTypeName("GLboolean")] uint fixedsamplelocations
     );
 
     [SupportedApiProfile("glcore", MinVersion = "3.2")]
@@ -50717,11 +50720,11 @@ public unsafe partial interface IGL
     [NativeFunction("opengl", EntryPoint = "glTexStorage3D")]
     void TexStorage3d(
         [NativeTypeName("GLenum")] uint target,
-        [NativeTypeName("GLsizei")] int levels,
+        [NativeTypeName("GLsizei")] uint levels,
         [NativeTypeName("GLenum")] uint internalformat,
-        [NativeTypeName("GLsizei")] int width,
-        [NativeTypeName("GLsizei")] int height,
-        [NativeTypeName("GLsizei")] int depth
+        [NativeTypeName("GLsizei")] uint width,
+        [NativeTypeName("GLsizei")] uint height,
+        [NativeTypeName("GLsizei")] uint depth
     );
 
     [SupportedApiProfile("glcore", MinVersion = "3.2")]
@@ -50731,11 +50734,11 @@ public unsafe partial interface IGL
     [NativeFunction("opengl", EntryPoint = "glTexStorage3DEXT")]
     void TexStorage3dext(
         [NativeTypeName("GLenum")] uint target,
-        [NativeTypeName("GLsizei")] int levels,
+        [NativeTypeName("GLsizei")] uint levels,
         [NativeTypeName("GLenum")] uint internalformat,
-        [NativeTypeName("GLsizei")] int width,
-        [NativeTypeName("GLsizei")] int height,
-        [NativeTypeName("GLsizei")] int depth
+        [NativeTypeName("GLsizei")] uint width,
+        [NativeTypeName("GLsizei")] uint height,
+        [NativeTypeName("GLsizei")] uint depth
     );
 
     [SupportedApiProfile("glcore", MinVersion = "3.2")]
@@ -50743,34 +50746,34 @@ public unsafe partial interface IGL
     [NativeFunction("opengl", EntryPoint = "glTexStorage3DMultisample")]
     void TexStorage3dMultisample(
         [NativeTypeName("GLenum")] uint target,
-        [NativeTypeName("GLsizei")] int samples,
+        [NativeTypeName("GLsizei")] uint samples,
         [NativeTypeName("GLenum")] uint internalformat,
-        [NativeTypeName("GLsizei")] int width,
-        [NativeTypeName("GLsizei")] int height,
-        [NativeTypeName("GLsizei")] int depth,
-        [NativeTypeName("GLboolean")] byte fixedsamplelocations
+        [NativeTypeName("GLsizei")] uint width,
+        [NativeTypeName("GLsizei")] uint height,
+        [NativeTypeName("GLsizei")] uint depth,
+        [NativeTypeName("GLboolean")] uint fixedsamplelocations
     );
 
     [SupportedApiProfile("gles2", MinVersion = "2.0")]
     [NativeFunction("opengl", EntryPoint = "glTexStorage3DMultisampleOES")]
     void TexStorage3dMultisampleOes(
         [NativeTypeName("GLenum")] uint target,
-        [NativeTypeName("GLsizei")] int samples,
+        [NativeTypeName("GLsizei")] uint samples,
         [NativeTypeName("GLenum")] uint internalformat,
-        [NativeTypeName("GLsizei")] int width,
-        [NativeTypeName("GLsizei")] int height,
-        [NativeTypeName("GLsizei")] int depth,
-        [NativeTypeName("GLboolean")] byte fixedsamplelocations
+        [NativeTypeName("GLsizei")] uint width,
+        [NativeTypeName("GLsizei")] uint height,
+        [NativeTypeName("GLsizei")] uint depth,
+        [NativeTypeName("GLboolean")] uint fixedsamplelocations
     );
 
     [SupportedApiProfile("gles2", MinVersion = "2.0")]
     [NativeFunction("opengl", EntryPoint = "glTexStorageAttribs2DEXT")]
     void TexStorageAttribs2dext(
         [NativeTypeName("GLenum")] uint target,
-        [NativeTypeName("GLsizei")] int levels,
+        [NativeTypeName("GLsizei")] uint levels,
         [NativeTypeName("GLenum")] uint internalformat,
-        [NativeTypeName("GLsizei")] int width,
-        [NativeTypeName("GLsizei")] int height,
+        [NativeTypeName("GLsizei")] uint width,
+        [NativeTypeName("GLsizei")] uint height,
         [NativeTypeName("const GLint *")] Ref<int> attrib_list
     );
 
@@ -50778,11 +50781,11 @@ public unsafe partial interface IGL
     [NativeFunction("opengl", EntryPoint = "glTexStorageAttribs3DEXT")]
     void TexStorageAttribs3dext(
         [NativeTypeName("GLenum")] uint target,
-        [NativeTypeName("GLsizei")] int levels,
+        [NativeTypeName("GLsizei")] uint levels,
         [NativeTypeName("GLenum")] uint internalformat,
-        [NativeTypeName("GLsizei")] int width,
-        [NativeTypeName("GLsizei")] int height,
-        [NativeTypeName("GLsizei")] int depth,
+        [NativeTypeName("GLsizei")] uint width,
+        [NativeTypeName("GLsizei")] uint height,
+        [NativeTypeName("GLsizei")] uint depth,
         [NativeTypeName("const GLint *")] Ref<int> attrib_list
     );
 
@@ -50790,9 +50793,9 @@ public unsafe partial interface IGL
     [NativeFunction("opengl", EntryPoint = "glTexStorageMem1DEXT")]
     void TexStorageMem1dext(
         [NativeTypeName("GLenum")] uint target,
-        [NativeTypeName("GLsizei")] int levels,
+        [NativeTypeName("GLsizei")] uint levels,
         [NativeTypeName("GLenum")] uint internalFormat,
-        [NativeTypeName("GLsizei")] int width,
+        [NativeTypeName("GLsizei")] uint width,
         [NativeTypeName("GLuint")] uint memory,
         [NativeTypeName("GLuint64")] ulong offset
     );
@@ -50802,10 +50805,10 @@ public unsafe partial interface IGL
     [NativeFunction("opengl", EntryPoint = "glTexStorageMem2DEXT")]
     void TexStorageMem2dext(
         [NativeTypeName("GLenum")] uint target,
-        [NativeTypeName("GLsizei")] int levels,
+        [NativeTypeName("GLsizei")] uint levels,
         [NativeTypeName("GLenum")] uint internalFormat,
-        [NativeTypeName("GLsizei")] int width,
-        [NativeTypeName("GLsizei")] int height,
+        [NativeTypeName("GLsizei")] uint width,
+        [NativeTypeName("GLsizei")] uint height,
         [NativeTypeName("GLuint")] uint memory,
         [NativeTypeName("GLuint64")] ulong offset
     );
@@ -50815,11 +50818,11 @@ public unsafe partial interface IGL
     [NativeFunction("opengl", EntryPoint = "glTexStorageMem2DMultisampleEXT")]
     void TexStorageMem2dMultisampleExt(
         [NativeTypeName("GLenum")] uint target,
-        [NativeTypeName("GLsizei")] int samples,
+        [NativeTypeName("GLsizei")] uint samples,
         [NativeTypeName("GLenum")] uint internalFormat,
-        [NativeTypeName("GLsizei")] int width,
-        [NativeTypeName("GLsizei")] int height,
-        [NativeTypeName("GLboolean")] byte fixedSampleLocations,
+        [NativeTypeName("GLsizei")] uint width,
+        [NativeTypeName("GLsizei")] uint height,
+        [NativeTypeName("GLboolean")] uint fixedSampleLocations,
         [NativeTypeName("GLuint")] uint memory,
         [NativeTypeName("GLuint64")] ulong offset
     );
@@ -50829,11 +50832,11 @@ public unsafe partial interface IGL
     [NativeFunction("opengl", EntryPoint = "glTexStorageMem3DEXT")]
     void TexStorageMem3dext(
         [NativeTypeName("GLenum")] uint target,
-        [NativeTypeName("GLsizei")] int levels,
+        [NativeTypeName("GLsizei")] uint levels,
         [NativeTypeName("GLenum")] uint internalFormat,
-        [NativeTypeName("GLsizei")] int width,
-        [NativeTypeName("GLsizei")] int height,
-        [NativeTypeName("GLsizei")] int depth,
+        [NativeTypeName("GLsizei")] uint width,
+        [NativeTypeName("GLsizei")] uint height,
+        [NativeTypeName("GLsizei")] uint depth,
         [NativeTypeName("GLuint")] uint memory,
         [NativeTypeName("GLuint64")] ulong offset
     );
@@ -50843,12 +50846,12 @@ public unsafe partial interface IGL
     [NativeFunction("opengl", EntryPoint = "glTexStorageMem3DMultisampleEXT")]
     void TexStorageMem3dMultisampleExt(
         [NativeTypeName("GLenum")] uint target,
-        [NativeTypeName("GLsizei")] int samples,
+        [NativeTypeName("GLsizei")] uint samples,
         [NativeTypeName("GLenum")] uint internalFormat,
-        [NativeTypeName("GLsizei")] int width,
-        [NativeTypeName("GLsizei")] int height,
-        [NativeTypeName("GLsizei")] int depth,
-        [NativeTypeName("GLboolean")] byte fixedSampleLocations,
+        [NativeTypeName("GLsizei")] uint width,
+        [NativeTypeName("GLsizei")] uint height,
+        [NativeTypeName("GLsizei")] uint depth,
+        [NativeTypeName("GLboolean")] uint fixedSampleLocations,
         [NativeTypeName("GLuint")] uint memory,
         [NativeTypeName("GLuint64")] ulong offset
     );
@@ -50858,10 +50861,10 @@ public unsafe partial interface IGL
     void TexStorageSparseAmd(
         [NativeTypeName("GLenum")] uint target,
         [NativeTypeName("GLenum")] uint internalFormat,
-        [NativeTypeName("GLsizei")] int width,
-        [NativeTypeName("GLsizei")] int height,
-        [NativeTypeName("GLsizei")] int depth,
-        [NativeTypeName("GLsizei")] int layers,
+        [NativeTypeName("GLsizei")] uint width,
+        [NativeTypeName("GLsizei")] uint height,
+        [NativeTypeName("GLsizei")] uint depth,
+        [NativeTypeName("GLsizei")] uint layers,
         [NativeTypeName("GLbitfield")] uint flags
     );
 
@@ -50872,7 +50875,7 @@ public unsafe partial interface IGL
         [NativeTypeName("GLenum")] uint target,
         [NativeTypeName("GLint")] int level,
         [NativeTypeName("GLint")] int xoffset,
-        [NativeTypeName("GLsizei")] int width,
+        [NativeTypeName("GLsizei")] uint width,
         [NativeTypeName("GLenum")] uint format,
         [NativeTypeName("GLenum")] uint type,
         [NativeTypeName("const void *")] Ref pixels
@@ -50884,7 +50887,7 @@ public unsafe partial interface IGL
         [NativeTypeName("GLenum")] uint target,
         [NativeTypeName("GLint")] int level,
         [NativeTypeName("GLint")] int xoffset,
-        [NativeTypeName("GLsizei")] int width,
+        [NativeTypeName("GLsizei")] uint width,
         [NativeTypeName("GLenum")] uint format,
         [NativeTypeName("GLenum")] uint type,
         [NativeTypeName("const void *")] Ref pixels
@@ -50900,8 +50903,8 @@ public unsafe partial interface IGL
         [NativeTypeName("GLint")] int level,
         [NativeTypeName("GLint")] int xoffset,
         [NativeTypeName("GLint")] int yoffset,
-        [NativeTypeName("GLsizei")] int width,
-        [NativeTypeName("GLsizei")] int height,
+        [NativeTypeName("GLsizei")] uint width,
+        [NativeTypeName("GLsizei")] uint height,
         [NativeTypeName("GLenum")] uint format,
         [NativeTypeName("GLenum")] uint type,
         [NativeTypeName("const void *")] Ref pixels
@@ -50914,8 +50917,8 @@ public unsafe partial interface IGL
         [NativeTypeName("GLint")] int level,
         [NativeTypeName("GLint")] int xoffset,
         [NativeTypeName("GLint")] int yoffset,
-        [NativeTypeName("GLsizei")] int width,
-        [NativeTypeName("GLsizei")] int height,
+        [NativeTypeName("GLsizei")] uint width,
+        [NativeTypeName("GLsizei")] uint height,
         [NativeTypeName("GLenum")] uint format,
         [NativeTypeName("GLenum")] uint type,
         [NativeTypeName("const void *")] Ref pixels
@@ -50930,9 +50933,9 @@ public unsafe partial interface IGL
         [NativeTypeName("GLint")] int xoffset,
         [NativeTypeName("GLint")] int yoffset,
         [NativeTypeName("GLint")] int zoffset,
-        [NativeTypeName("GLsizei")] int width,
-        [NativeTypeName("GLsizei")] int height,
-        [NativeTypeName("GLsizei")] int depth,
+        [NativeTypeName("GLsizei")] uint width,
+        [NativeTypeName("GLsizei")] uint height,
+        [NativeTypeName("GLsizei")] uint depth,
         [NativeTypeName("GLenum")] uint format,
         [NativeTypeName("GLenum")] uint type,
         [NativeTypeName("const void *")] Ref pixels
@@ -50946,9 +50949,9 @@ public unsafe partial interface IGL
         [NativeTypeName("GLint")] int xoffset,
         [NativeTypeName("GLint")] int yoffset,
         [NativeTypeName("GLint")] int zoffset,
-        [NativeTypeName("GLsizei")] int width,
-        [NativeTypeName("GLsizei")] int height,
-        [NativeTypeName("GLsizei")] int depth,
+        [NativeTypeName("GLsizei")] uint width,
+        [NativeTypeName("GLsizei")] uint height,
+        [NativeTypeName("GLsizei")] uint depth,
         [NativeTypeName("GLenum")] uint format,
         [NativeTypeName("GLenum")] uint type,
         [NativeTypeName("const void *")] Ref pixels
@@ -50962,9 +50965,9 @@ public unsafe partial interface IGL
         [NativeTypeName("GLint")] int xoffset,
         [NativeTypeName("GLint")] int yoffset,
         [NativeTypeName("GLint")] int zoffset,
-        [NativeTypeName("GLsizei")] int width,
-        [NativeTypeName("GLsizei")] int height,
-        [NativeTypeName("GLsizei")] int depth,
+        [NativeTypeName("GLsizei")] uint width,
+        [NativeTypeName("GLsizei")] uint height,
+        [NativeTypeName("GLsizei")] uint depth,
         [NativeTypeName("GLenum")] uint format,
         [NativeTypeName("GLenum")] uint type,
         [NativeTypeName("const void *")] Ref pixels
@@ -50979,10 +50982,10 @@ public unsafe partial interface IGL
         [NativeTypeName("GLint")] int yoffset,
         [NativeTypeName("GLint")] int zoffset,
         [NativeTypeName("GLint")] int woffset,
-        [NativeTypeName("GLsizei")] int width,
-        [NativeTypeName("GLsizei")] int height,
-        [NativeTypeName("GLsizei")] int depth,
-        [NativeTypeName("GLsizei")] int size4d,
+        [NativeTypeName("GLsizei")] uint width,
+        [NativeTypeName("GLsizei")] uint height,
+        [NativeTypeName("GLsizei")] uint depth,
+        [NativeTypeName("GLsizei")] uint size4d,
         [NativeTypeName("GLenum")] uint format,
         [NativeTypeName("GLenum")] uint type,
         [NativeTypeName("const void *")] Ref pixels
@@ -51035,7 +51038,7 @@ public unsafe partial interface IGL
         [NativeTypeName("GLenum")] uint internalformat,
         [NativeTypeName("GLuint")] uint buffer,
         [NativeTypeName("GLintptr")] nint offset,
-        [NativeTypeName("GLsizeiptr")] nint size
+        [NativeTypeName("GLsizeiptr")] nuint size
     );
 
     [SupportedApiProfile("glcore", MinVersion = "3.2")]
@@ -51047,16 +51050,16 @@ public unsafe partial interface IGL
         [NativeTypeName("GLenum")] uint internalformat,
         [NativeTypeName("GLuint")] uint buffer,
         [NativeTypeName("GLintptr")] nint offset,
-        [NativeTypeName("GLsizeiptr")] nint size
+        [NativeTypeName("GLsizeiptr")] nuint size
     );
 
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glTextureColorMaskSGIS")]
     void TextureColorMaskSgis(
-        [NativeTypeName("GLboolean")] byte red,
-        [NativeTypeName("GLboolean")] byte green,
-        [NativeTypeName("GLboolean")] byte blue,
-        [NativeTypeName("GLboolean")] byte alpha
+        [NativeTypeName("GLboolean")] uint red,
+        [NativeTypeName("GLboolean")] uint green,
+        [NativeTypeName("GLboolean")] uint blue,
+        [NativeTypeName("GLboolean")] uint alpha
     );
 
     [SupportedApiProfile("gles2", MinVersion = "2.0")]
@@ -51080,7 +51083,7 @@ public unsafe partial interface IGL
         [NativeTypeName("GLenum")] uint target,
         [NativeTypeName("GLint")] int level,
         [NativeTypeName("GLint")] int internalformat,
-        [NativeTypeName("GLsizei")] int width,
+        [NativeTypeName("GLsizei")] uint width,
         [NativeTypeName("GLint")] int border,
         [NativeTypeName("GLenum")] uint format,
         [NativeTypeName("GLenum")] uint type,
@@ -51095,8 +51098,8 @@ public unsafe partial interface IGL
         [NativeTypeName("GLenum")] uint target,
         [NativeTypeName("GLint")] int level,
         [NativeTypeName("GLint")] int internalformat,
-        [NativeTypeName("GLsizei")] int width,
-        [NativeTypeName("GLsizei")] int height,
+        [NativeTypeName("GLsizei")] uint width,
+        [NativeTypeName("GLsizei")] uint height,
         [NativeTypeName("GLint")] int border,
         [NativeTypeName("GLenum")] uint format,
         [NativeTypeName("GLenum")] uint type,
@@ -51108,12 +51111,12 @@ public unsafe partial interface IGL
     void TextureImage2dMultisampleCoverageNV(
         [NativeTypeName("GLuint")] uint texture,
         [NativeTypeName("GLenum")] uint target,
-        [NativeTypeName("GLsizei")] int coverageSamples,
-        [NativeTypeName("GLsizei")] int colorSamples,
+        [NativeTypeName("GLsizei")] uint coverageSamples,
+        [NativeTypeName("GLsizei")] uint colorSamples,
         [NativeTypeName("GLint")] int internalFormat,
-        [NativeTypeName("GLsizei")] int width,
-        [NativeTypeName("GLsizei")] int height,
-        [NativeTypeName("GLboolean")] byte fixedSampleLocations
+        [NativeTypeName("GLsizei")] uint width,
+        [NativeTypeName("GLsizei")] uint height,
+        [NativeTypeName("GLboolean")] uint fixedSampleLocations
     );
 
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
@@ -51121,11 +51124,11 @@ public unsafe partial interface IGL
     void TextureImage2dMultisampleNV(
         [NativeTypeName("GLuint")] uint texture,
         [NativeTypeName("GLenum")] uint target,
-        [NativeTypeName("GLsizei")] int samples,
+        [NativeTypeName("GLsizei")] uint samples,
         [NativeTypeName("GLint")] int internalFormat,
-        [NativeTypeName("GLsizei")] int width,
-        [NativeTypeName("GLsizei")] int height,
-        [NativeTypeName("GLboolean")] byte fixedSampleLocations
+        [NativeTypeName("GLsizei")] uint width,
+        [NativeTypeName("GLsizei")] uint height,
+        [NativeTypeName("GLboolean")] uint fixedSampleLocations
     );
 
     [SupportedApiProfile("glcore", MinVersion = "3.2")]
@@ -51136,9 +51139,9 @@ public unsafe partial interface IGL
         [NativeTypeName("GLenum")] uint target,
         [NativeTypeName("GLint")] int level,
         [NativeTypeName("GLint")] int internalformat,
-        [NativeTypeName("GLsizei")] int width,
-        [NativeTypeName("GLsizei")] int height,
-        [NativeTypeName("GLsizei")] int depth,
+        [NativeTypeName("GLsizei")] uint width,
+        [NativeTypeName("GLsizei")] uint height,
+        [NativeTypeName("GLsizei")] uint depth,
         [NativeTypeName("GLint")] int border,
         [NativeTypeName("GLenum")] uint format,
         [NativeTypeName("GLenum")] uint type,
@@ -51150,13 +51153,13 @@ public unsafe partial interface IGL
     void TextureImage3dMultisampleCoverageNV(
         [NativeTypeName("GLuint")] uint texture,
         [NativeTypeName("GLenum")] uint target,
-        [NativeTypeName("GLsizei")] int coverageSamples,
-        [NativeTypeName("GLsizei")] int colorSamples,
+        [NativeTypeName("GLsizei")] uint coverageSamples,
+        [NativeTypeName("GLsizei")] uint colorSamples,
         [NativeTypeName("GLint")] int internalFormat,
-        [NativeTypeName("GLsizei")] int width,
-        [NativeTypeName("GLsizei")] int height,
-        [NativeTypeName("GLsizei")] int depth,
-        [NativeTypeName("GLboolean")] byte fixedSampleLocations
+        [NativeTypeName("GLsizei")] uint width,
+        [NativeTypeName("GLsizei")] uint height,
+        [NativeTypeName("GLsizei")] uint depth,
+        [NativeTypeName("GLboolean")] uint fixedSampleLocations
     );
 
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
@@ -51164,12 +51167,12 @@ public unsafe partial interface IGL
     void TextureImage3dMultisampleNV(
         [NativeTypeName("GLuint")] uint texture,
         [NativeTypeName("GLenum")] uint target,
-        [NativeTypeName("GLsizei")] int samples,
+        [NativeTypeName("GLsizei")] uint samples,
         [NativeTypeName("GLint")] int internalFormat,
-        [NativeTypeName("GLsizei")] int width,
-        [NativeTypeName("GLsizei")] int height,
-        [NativeTypeName("GLsizei")] int depth,
-        [NativeTypeName("GLboolean")] byte fixedSampleLocations
+        [NativeTypeName("GLsizei")] uint width,
+        [NativeTypeName("GLsizei")] uint height,
+        [NativeTypeName("GLsizei")] uint depth,
+        [NativeTypeName("GLboolean")] uint fixedSampleLocations
     );
 
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
@@ -51196,10 +51199,10 @@ public unsafe partial interface IGL
         [NativeTypeName("GLint")] int xoffset,
         [NativeTypeName("GLint")] int yoffset,
         [NativeTypeName("GLint")] int zoffset,
-        [NativeTypeName("GLsizei")] int width,
-        [NativeTypeName("GLsizei")] int height,
-        [NativeTypeName("GLsizei")] int depth,
-        [NativeTypeName("GLboolean")] byte commit
+        [NativeTypeName("GLsizei")] uint width,
+        [NativeTypeName("GLsizei")] uint height,
+        [NativeTypeName("GLsizei")] uint depth,
+        [NativeTypeName("GLboolean")] uint commit
     );
 
     [SupportedApiProfile("glcore", MinVersion = "3.2")]
@@ -51213,12 +51216,12 @@ public unsafe partial interface IGL
         [NativeTypeName("GLint")] int xoffset,
         [NativeTypeName("GLint")] int yoffset,
         [NativeTypeName("GLint")] int zoffset,
-        [NativeTypeName("GLsizei")] int width,
-        [NativeTypeName("GLsizei")] int height,
-        [NativeTypeName("GLsizei")] int depth,
+        [NativeTypeName("GLsizei")] uint width,
+        [NativeTypeName("GLsizei")] uint height,
+        [NativeTypeName("GLsizei")] uint depth,
         [NativeTypeName("GLuint")] uint memory,
         [NativeTypeName("GLuint64")] ulong offset,
-        [NativeTypeName("GLboolean")] byte commit
+        [NativeTypeName("GLboolean")] uint commit
     );
 
     [SupportedApiProfile("glcore", MinVersion = "3.2")]
@@ -51339,7 +51342,7 @@ public unsafe partial interface IGL
     [NativeFunction("opengl", EntryPoint = "glTextureRangeAPPLE")]
     void TextureRangeApple(
         [NativeTypeName("GLenum")] uint target,
-        [NativeTypeName("GLsizei")] int length,
+        [NativeTypeName("GLsizei")] uint length,
         [NativeTypeName("const void *")] Ref pointer
     );
 
@@ -51357,9 +51360,9 @@ public unsafe partial interface IGL
     [NativeFunction("opengl", EntryPoint = "glTextureStorage1D")]
     void TextureStorage1d(
         [NativeTypeName("GLuint")] uint texture,
-        [NativeTypeName("GLsizei")] int levels,
+        [NativeTypeName("GLsizei")] uint levels,
         [NativeTypeName("GLenum")] uint internalformat,
-        [NativeTypeName("GLsizei")] int width
+        [NativeTypeName("GLsizei")] uint width
     );
 
     [SupportedApiProfile("glcore", MinVersion = "3.2")]
@@ -51370,9 +51373,9 @@ public unsafe partial interface IGL
     void TextureStorage1dext(
         [NativeTypeName("GLuint")] uint texture,
         [NativeTypeName("GLenum")] uint target,
-        [NativeTypeName("GLsizei")] int levels,
+        [NativeTypeName("GLsizei")] uint levels,
         [NativeTypeName("GLenum")] uint internalformat,
-        [NativeTypeName("GLsizei")] int width
+        [NativeTypeName("GLsizei")] uint width
     );
 
     [SupportedApiProfile("glcore", MinVersion = "3.2")]
@@ -51380,10 +51383,10 @@ public unsafe partial interface IGL
     [NativeFunction("opengl", EntryPoint = "glTextureStorage2D")]
     void TextureStorage2d(
         [NativeTypeName("GLuint")] uint texture,
-        [NativeTypeName("GLsizei")] int levels,
+        [NativeTypeName("GLsizei")] uint levels,
         [NativeTypeName("GLenum")] uint internalformat,
-        [NativeTypeName("GLsizei")] int width,
-        [NativeTypeName("GLsizei")] int height
+        [NativeTypeName("GLsizei")] uint width,
+        [NativeTypeName("GLsizei")] uint height
     );
 
     [SupportedApiProfile("glcore", MinVersion = "3.2")]
@@ -51394,10 +51397,10 @@ public unsafe partial interface IGL
     void TextureStorage2dext(
         [NativeTypeName("GLuint")] uint texture,
         [NativeTypeName("GLenum")] uint target,
-        [NativeTypeName("GLsizei")] int levels,
+        [NativeTypeName("GLsizei")] uint levels,
         [NativeTypeName("GLenum")] uint internalformat,
-        [NativeTypeName("GLsizei")] int width,
-        [NativeTypeName("GLsizei")] int height
+        [NativeTypeName("GLsizei")] uint width,
+        [NativeTypeName("GLsizei")] uint height
     );
 
     [SupportedApiProfile("glcore", MinVersion = "3.2")]
@@ -51405,11 +51408,11 @@ public unsafe partial interface IGL
     [NativeFunction("opengl", EntryPoint = "glTextureStorage2DMultisample")]
     void TextureStorage2dMultisample(
         [NativeTypeName("GLuint")] uint texture,
-        [NativeTypeName("GLsizei")] int samples,
+        [NativeTypeName("GLsizei")] uint samples,
         [NativeTypeName("GLenum")] uint internalformat,
-        [NativeTypeName("GLsizei")] int width,
-        [NativeTypeName("GLsizei")] int height,
-        [NativeTypeName("GLboolean")] byte fixedsamplelocations
+        [NativeTypeName("GLsizei")] uint width,
+        [NativeTypeName("GLsizei")] uint height,
+        [NativeTypeName("GLboolean")] uint fixedsamplelocations
     );
 
     [SupportedApiProfile("glcore", MinVersion = "3.2")]
@@ -51418,11 +51421,11 @@ public unsafe partial interface IGL
     void TextureStorage2dMultisampleExt(
         [NativeTypeName("GLuint")] uint texture,
         [NativeTypeName("GLenum")] uint target,
-        [NativeTypeName("GLsizei")] int samples,
+        [NativeTypeName("GLsizei")] uint samples,
         [NativeTypeName("GLenum")] uint internalformat,
-        [NativeTypeName("GLsizei")] int width,
-        [NativeTypeName("GLsizei")] int height,
-        [NativeTypeName("GLboolean")] byte fixedsamplelocations
+        [NativeTypeName("GLsizei")] uint width,
+        [NativeTypeName("GLsizei")] uint height,
+        [NativeTypeName("GLboolean")] uint fixedsamplelocations
     );
 
     [SupportedApiProfile("glcore", MinVersion = "3.2")]
@@ -51430,11 +51433,11 @@ public unsafe partial interface IGL
     [NativeFunction("opengl", EntryPoint = "glTextureStorage3D")]
     void TextureStorage3d(
         [NativeTypeName("GLuint")] uint texture,
-        [NativeTypeName("GLsizei")] int levels,
+        [NativeTypeName("GLsizei")] uint levels,
         [NativeTypeName("GLenum")] uint internalformat,
-        [NativeTypeName("GLsizei")] int width,
-        [NativeTypeName("GLsizei")] int height,
-        [NativeTypeName("GLsizei")] int depth
+        [NativeTypeName("GLsizei")] uint width,
+        [NativeTypeName("GLsizei")] uint height,
+        [NativeTypeName("GLsizei")] uint depth
     );
 
     [SupportedApiProfile("glcore", MinVersion = "3.2")]
@@ -51445,11 +51448,11 @@ public unsafe partial interface IGL
     void TextureStorage3dext(
         [NativeTypeName("GLuint")] uint texture,
         [NativeTypeName("GLenum")] uint target,
-        [NativeTypeName("GLsizei")] int levels,
+        [NativeTypeName("GLsizei")] uint levels,
         [NativeTypeName("GLenum")] uint internalformat,
-        [NativeTypeName("GLsizei")] int width,
-        [NativeTypeName("GLsizei")] int height,
-        [NativeTypeName("GLsizei")] int depth
+        [NativeTypeName("GLsizei")] uint width,
+        [NativeTypeName("GLsizei")] uint height,
+        [NativeTypeName("GLsizei")] uint depth
     );
 
     [SupportedApiProfile("glcore", MinVersion = "3.2")]
@@ -51457,12 +51460,12 @@ public unsafe partial interface IGL
     [NativeFunction("opengl", EntryPoint = "glTextureStorage3DMultisample")]
     void TextureStorage3dMultisample(
         [NativeTypeName("GLuint")] uint texture,
-        [NativeTypeName("GLsizei")] int samples,
+        [NativeTypeName("GLsizei")] uint samples,
         [NativeTypeName("GLenum")] uint internalformat,
-        [NativeTypeName("GLsizei")] int width,
-        [NativeTypeName("GLsizei")] int height,
-        [NativeTypeName("GLsizei")] int depth,
-        [NativeTypeName("GLboolean")] byte fixedsamplelocations
+        [NativeTypeName("GLsizei")] uint width,
+        [NativeTypeName("GLsizei")] uint height,
+        [NativeTypeName("GLsizei")] uint depth,
+        [NativeTypeName("GLboolean")] uint fixedsamplelocations
     );
 
     [SupportedApiProfile("glcore", MinVersion = "3.2")]
@@ -51471,21 +51474,21 @@ public unsafe partial interface IGL
     void TextureStorage3dMultisampleExt(
         [NativeTypeName("GLuint")] uint texture,
         [NativeTypeName("GLenum")] uint target,
-        [NativeTypeName("GLsizei")] int samples,
+        [NativeTypeName("GLsizei")] uint samples,
         [NativeTypeName("GLenum")] uint internalformat,
-        [NativeTypeName("GLsizei")] int width,
-        [NativeTypeName("GLsizei")] int height,
-        [NativeTypeName("GLsizei")] int depth,
-        [NativeTypeName("GLboolean")] byte fixedsamplelocations
+        [NativeTypeName("GLsizei")] uint width,
+        [NativeTypeName("GLsizei")] uint height,
+        [NativeTypeName("GLsizei")] uint depth,
+        [NativeTypeName("GLboolean")] uint fixedsamplelocations
     );
 
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glTextureStorageMem1DEXT")]
     void TextureStorageMem1dext(
         [NativeTypeName("GLuint")] uint texture,
-        [NativeTypeName("GLsizei")] int levels,
+        [NativeTypeName("GLsizei")] uint levels,
         [NativeTypeName("GLenum")] uint internalFormat,
-        [NativeTypeName("GLsizei")] int width,
+        [NativeTypeName("GLsizei")] uint width,
         [NativeTypeName("GLuint")] uint memory,
         [NativeTypeName("GLuint64")] ulong offset
     );
@@ -51495,10 +51498,10 @@ public unsafe partial interface IGL
     [NativeFunction("opengl", EntryPoint = "glTextureStorageMem2DEXT")]
     void TextureStorageMem2dext(
         [NativeTypeName("GLuint")] uint texture,
-        [NativeTypeName("GLsizei")] int levels,
+        [NativeTypeName("GLsizei")] uint levels,
         [NativeTypeName("GLenum")] uint internalFormat,
-        [NativeTypeName("GLsizei")] int width,
-        [NativeTypeName("GLsizei")] int height,
+        [NativeTypeName("GLsizei")] uint width,
+        [NativeTypeName("GLsizei")] uint height,
         [NativeTypeName("GLuint")] uint memory,
         [NativeTypeName("GLuint64")] ulong offset
     );
@@ -51508,11 +51511,11 @@ public unsafe partial interface IGL
     [NativeFunction("opengl", EntryPoint = "glTextureStorageMem2DMultisampleEXT")]
     void TextureStorageMem2dMultisampleExt(
         [NativeTypeName("GLuint")] uint texture,
-        [NativeTypeName("GLsizei")] int samples,
+        [NativeTypeName("GLsizei")] uint samples,
         [NativeTypeName("GLenum")] uint internalFormat,
-        [NativeTypeName("GLsizei")] int width,
-        [NativeTypeName("GLsizei")] int height,
-        [NativeTypeName("GLboolean")] byte fixedSampleLocations,
+        [NativeTypeName("GLsizei")] uint width,
+        [NativeTypeName("GLsizei")] uint height,
+        [NativeTypeName("GLboolean")] uint fixedSampleLocations,
         [NativeTypeName("GLuint")] uint memory,
         [NativeTypeName("GLuint64")] ulong offset
     );
@@ -51522,11 +51525,11 @@ public unsafe partial interface IGL
     [NativeFunction("opengl", EntryPoint = "glTextureStorageMem3DEXT")]
     void TextureStorageMem3dext(
         [NativeTypeName("GLuint")] uint texture,
-        [NativeTypeName("GLsizei")] int levels,
+        [NativeTypeName("GLsizei")] uint levels,
         [NativeTypeName("GLenum")] uint internalFormat,
-        [NativeTypeName("GLsizei")] int width,
-        [NativeTypeName("GLsizei")] int height,
-        [NativeTypeName("GLsizei")] int depth,
+        [NativeTypeName("GLsizei")] uint width,
+        [NativeTypeName("GLsizei")] uint height,
+        [NativeTypeName("GLsizei")] uint depth,
         [NativeTypeName("GLuint")] uint memory,
         [NativeTypeName("GLuint64")] ulong offset
     );
@@ -51536,12 +51539,12 @@ public unsafe partial interface IGL
     [NativeFunction("opengl", EntryPoint = "glTextureStorageMem3DMultisampleEXT")]
     void TextureStorageMem3dMultisampleExt(
         [NativeTypeName("GLuint")] uint texture,
-        [NativeTypeName("GLsizei")] int samples,
+        [NativeTypeName("GLsizei")] uint samples,
         [NativeTypeName("GLenum")] uint internalFormat,
-        [NativeTypeName("GLsizei")] int width,
-        [NativeTypeName("GLsizei")] int height,
-        [NativeTypeName("GLsizei")] int depth,
-        [NativeTypeName("GLboolean")] byte fixedSampleLocations,
+        [NativeTypeName("GLsizei")] uint width,
+        [NativeTypeName("GLsizei")] uint height,
+        [NativeTypeName("GLsizei")] uint depth,
+        [NativeTypeName("GLboolean")] uint fixedSampleLocations,
         [NativeTypeName("GLuint")] uint memory,
         [NativeTypeName("GLuint64")] ulong offset
     );
@@ -51552,10 +51555,10 @@ public unsafe partial interface IGL
         [NativeTypeName("GLuint")] uint texture,
         [NativeTypeName("GLenum")] uint target,
         [NativeTypeName("GLenum")] uint internalFormat,
-        [NativeTypeName("GLsizei")] int width,
-        [NativeTypeName("GLsizei")] int height,
-        [NativeTypeName("GLsizei")] int depth,
-        [NativeTypeName("GLsizei")] int layers,
+        [NativeTypeName("GLsizei")] uint width,
+        [NativeTypeName("GLsizei")] uint height,
+        [NativeTypeName("GLsizei")] uint depth,
+        [NativeTypeName("GLsizei")] uint layers,
         [NativeTypeName("GLbitfield")] uint flags
     );
 
@@ -51566,7 +51569,7 @@ public unsafe partial interface IGL
         [NativeTypeName("GLuint")] uint texture,
         [NativeTypeName("GLint")] int level,
         [NativeTypeName("GLint")] int xoffset,
-        [NativeTypeName("GLsizei")] int width,
+        [NativeTypeName("GLsizei")] uint width,
         [NativeTypeName("GLenum")] uint format,
         [NativeTypeName("GLenum")] uint type,
         [NativeTypeName("const void *")] Ref pixels
@@ -51580,7 +51583,7 @@ public unsafe partial interface IGL
         [NativeTypeName("GLenum")] uint target,
         [NativeTypeName("GLint")] int level,
         [NativeTypeName("GLint")] int xoffset,
-        [NativeTypeName("GLsizei")] int width,
+        [NativeTypeName("GLsizei")] uint width,
         [NativeTypeName("GLenum")] uint format,
         [NativeTypeName("GLenum")] uint type,
         [NativeTypeName("const void *")] Ref pixels
@@ -51594,8 +51597,8 @@ public unsafe partial interface IGL
         [NativeTypeName("GLint")] int level,
         [NativeTypeName("GLint")] int xoffset,
         [NativeTypeName("GLint")] int yoffset,
-        [NativeTypeName("GLsizei")] int width,
-        [NativeTypeName("GLsizei")] int height,
+        [NativeTypeName("GLsizei")] uint width,
+        [NativeTypeName("GLsizei")] uint height,
         [NativeTypeName("GLenum")] uint format,
         [NativeTypeName("GLenum")] uint type,
         [NativeTypeName("const void *")] Ref pixels
@@ -51610,8 +51613,8 @@ public unsafe partial interface IGL
         [NativeTypeName("GLint")] int level,
         [NativeTypeName("GLint")] int xoffset,
         [NativeTypeName("GLint")] int yoffset,
-        [NativeTypeName("GLsizei")] int width,
-        [NativeTypeName("GLsizei")] int height,
+        [NativeTypeName("GLsizei")] uint width,
+        [NativeTypeName("GLsizei")] uint height,
         [NativeTypeName("GLenum")] uint format,
         [NativeTypeName("GLenum")] uint type,
         [NativeTypeName("const void *")] Ref pixels
@@ -51626,9 +51629,9 @@ public unsafe partial interface IGL
         [NativeTypeName("GLint")] int xoffset,
         [NativeTypeName("GLint")] int yoffset,
         [NativeTypeName("GLint")] int zoffset,
-        [NativeTypeName("GLsizei")] int width,
-        [NativeTypeName("GLsizei")] int height,
-        [NativeTypeName("GLsizei")] int depth,
+        [NativeTypeName("GLsizei")] uint width,
+        [NativeTypeName("GLsizei")] uint height,
+        [NativeTypeName("GLsizei")] uint depth,
         [NativeTypeName("GLenum")] uint format,
         [NativeTypeName("GLenum")] uint type,
         [NativeTypeName("const void *")] Ref pixels
@@ -51644,9 +51647,9 @@ public unsafe partial interface IGL
         [NativeTypeName("GLint")] int xoffset,
         [NativeTypeName("GLint")] int yoffset,
         [NativeTypeName("GLint")] int zoffset,
-        [NativeTypeName("GLsizei")] int width,
-        [NativeTypeName("GLsizei")] int height,
-        [NativeTypeName("GLsizei")] int depth,
+        [NativeTypeName("GLsizei")] uint width,
+        [NativeTypeName("GLsizei")] uint height,
+        [NativeTypeName("GLsizei")] uint depth,
         [NativeTypeName("GLenum")] uint format,
         [NativeTypeName("GLenum")] uint type,
         [NativeTypeName("const void *")] Ref pixels
@@ -51704,7 +51707,7 @@ public unsafe partial interface IGL
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glTransformFeedbackAttribsNV")]
     void TransformFeedbackAttribsNV(
-        [NativeTypeName("GLsizei")] int count,
+        [NativeTypeName("GLsizei")] uint count,
         [NativeTypeName("const GLint *")] Ref<int> attribs,
         [NativeTypeName("GLenum")] uint bufferMode
     );
@@ -51726,15 +51729,15 @@ public unsafe partial interface IGL
         [NativeTypeName("GLuint")] uint index,
         [NativeTypeName("GLuint")] uint buffer,
         [NativeTypeName("GLintptr")] nint offset,
-        [NativeTypeName("GLsizeiptr")] nint size
+        [NativeTypeName("GLsizeiptr")] nuint size
     );
 
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glTransformFeedbackStreamAttribsNV")]
     void TransformFeedbackStreamAttribsNV(
-        [NativeTypeName("GLsizei")] int count,
+        [NativeTypeName("GLsizei")] uint count,
         [NativeTypeName("const GLint *")] Ref<int> attribs,
-        [NativeTypeName("GLsizei")] int nbuffers,
+        [NativeTypeName("GLsizei")] uint nbuffers,
         [NativeTypeName("const GLint *")] Ref<int> bufstreams,
         [NativeTypeName("GLenum")] uint bufferMode
     );
@@ -51744,7 +51747,7 @@ public unsafe partial interface IGL
     [NativeFunction("opengl", EntryPoint = "glTransformFeedbackVaryings")]
     void TransformFeedbackVaryings(
         [NativeTypeName("GLuint")] uint program,
-        [NativeTypeName("GLsizei")] int count,
+        [NativeTypeName("GLsizei")] uint count,
         [NativeTypeName("const GLchar *const *")] Ref2D<sbyte> varyings,
         [NativeTypeName("GLenum")] uint bufferMode
     );
@@ -51753,7 +51756,7 @@ public unsafe partial interface IGL
     [NativeFunction("opengl", EntryPoint = "glTransformFeedbackVaryingsEXT")]
     void TransformFeedbackVaryingsExt(
         [NativeTypeName("GLuint")] uint program,
-        [NativeTypeName("GLsizei")] int count,
+        [NativeTypeName("GLsizei")] uint count,
         [NativeTypeName("const GLchar *const *")] Ref2D<sbyte> varyings,
         [NativeTypeName("GLenum")] uint bufferMode
     );
@@ -51762,7 +51765,7 @@ public unsafe partial interface IGL
     [NativeFunction("opengl", EntryPoint = "glTransformFeedbackVaryingsNV")]
     void TransformFeedbackVaryingsNV(
         [NativeTypeName("GLuint")] uint program,
-        [NativeTypeName("GLsizei")] int count,
+        [NativeTypeName("GLsizei")] uint count,
         [NativeTypeName("const GLint *")] Ref<int> locations,
         [NativeTypeName("GLenum")] uint bufferMode
     );
@@ -51822,7 +51825,7 @@ public unsafe partial interface IGL
     [NativeFunction("opengl", EntryPoint = "glUniform1dv")]
     void Uniform1(
         [NativeTypeName("GLint")] int location,
-        [NativeTypeName("GLsizei")] int count,
+        [NativeTypeName("GLsizei")] uint count,
         [NativeTypeName("const GLdouble *")] Ref<double> value
     );
 
@@ -51842,7 +51845,7 @@ public unsafe partial interface IGL
     [NativeFunction("opengl", EntryPoint = "glUniform1fv")]
     void Uniform1(
         [NativeTypeName("GLint")] int location,
-        [NativeTypeName("GLsizei")] int count,
+        [NativeTypeName("GLsizei")] uint count,
         [NativeTypeName("const GLfloat *")] Ref<float> value
     );
 
@@ -51850,7 +51853,7 @@ public unsafe partial interface IGL
     [NativeFunction("opengl", EntryPoint = "glUniform1fvARB")]
     void Uniform1fvArb(
         [NativeTypeName("GLint")] int location,
-        [NativeTypeName("GLsizei")] int count,
+        [NativeTypeName("GLsizei")] uint count,
         [NativeTypeName("const GLfloat *")] Ref<float> value
     );
 
@@ -51879,7 +51882,7 @@ public unsafe partial interface IGL
     [NativeFunction("opengl", EntryPoint = "glUniform1i64vARB")]
     void Uniform1i64vArb(
         [NativeTypeName("GLint")] int location,
-        [NativeTypeName("GLsizei")] int count,
+        [NativeTypeName("GLsizei")] uint count,
         [NativeTypeName("const GLint64 *")] Ref<long> value
     );
 
@@ -51889,7 +51892,7 @@ public unsafe partial interface IGL
     [NativeFunction("opengl", EntryPoint = "glUniform1i64vNV")]
     void Uniform1i64vNV(
         [NativeTypeName("GLint")] int location,
-        [NativeTypeName("GLsizei")] int count,
+        [NativeTypeName("GLsizei")] uint count,
         [NativeTypeName("const GLint64EXT *")] Ref<long> value
     );
 
@@ -51903,7 +51906,7 @@ public unsafe partial interface IGL
     [NativeFunction("opengl", EntryPoint = "glUniform1iv")]
     void Uniform1(
         [NativeTypeName("GLint")] int location,
-        [NativeTypeName("GLsizei")] int count,
+        [NativeTypeName("GLsizei")] uint count,
         [NativeTypeName("const GLint *")] Ref<int> value
     );
 
@@ -51911,7 +51914,7 @@ public unsafe partial interface IGL
     [NativeFunction("opengl", EntryPoint = "glUniform1ivARB")]
     void Uniform1ivArb(
         [NativeTypeName("GLint")] int location,
-        [NativeTypeName("GLsizei")] int count,
+        [NativeTypeName("GLsizei")] uint count,
         [NativeTypeName("const GLint *")] Ref<int> value
     );
 
@@ -51942,7 +51945,7 @@ public unsafe partial interface IGL
     [NativeFunction("opengl", EntryPoint = "glUniform1ui64vARB")]
     void Uniform1ui64vArb(
         [NativeTypeName("GLint")] int location,
-        [NativeTypeName("GLsizei")] int count,
+        [NativeTypeName("GLsizei")] uint count,
         [NativeTypeName("const GLuint64 *")] Ref<ulong> value
     );
 
@@ -51952,7 +51955,7 @@ public unsafe partial interface IGL
     [NativeFunction("opengl", EntryPoint = "glUniform1ui64vNV")]
     void Uniform1ui64vNV(
         [NativeTypeName("GLint")] int location,
-        [NativeTypeName("GLsizei")] int count,
+        [NativeTypeName("GLsizei")] uint count,
         [NativeTypeName("const GLuint64EXT *")] Ref<ulong> value
     );
 
@@ -51965,7 +51968,7 @@ public unsafe partial interface IGL
     [NativeFunction("opengl", EntryPoint = "glUniform1uiv")]
     void Uniform1(
         [NativeTypeName("GLint")] int location,
-        [NativeTypeName("GLsizei")] int count,
+        [NativeTypeName("GLsizei")] uint count,
         [NativeTypeName("const GLuint *")] Ref<uint> value
     );
 
@@ -51973,7 +51976,7 @@ public unsafe partial interface IGL
     [NativeFunction("opengl", EntryPoint = "glUniform1uivEXT")]
     void Uniform1uivExt(
         [NativeTypeName("GLint")] int location,
-        [NativeTypeName("GLsizei")] int count,
+        [NativeTypeName("GLsizei")] uint count,
         [NativeTypeName("const GLuint *")] Ref<uint> value
     );
 
@@ -51991,7 +51994,7 @@ public unsafe partial interface IGL
     [NativeFunction("opengl", EntryPoint = "glUniform2dv")]
     void Uniform2(
         [NativeTypeName("GLint")] int location,
-        [NativeTypeName("GLsizei")] int count,
+        [NativeTypeName("GLsizei")] uint count,
         [NativeTypeName("const GLdouble *")] Ref<double> value
     );
 
@@ -52019,7 +52022,7 @@ public unsafe partial interface IGL
     [NativeFunction("opengl", EntryPoint = "glUniform2fv")]
     void Uniform2(
         [NativeTypeName("GLint")] int location,
-        [NativeTypeName("GLsizei")] int count,
+        [NativeTypeName("GLsizei")] uint count,
         [NativeTypeName("const GLfloat *")] Ref<float> value
     );
 
@@ -52027,7 +52030,7 @@ public unsafe partial interface IGL
     [NativeFunction("opengl", EntryPoint = "glUniform2fvARB")]
     void Uniform2fvArb(
         [NativeTypeName("GLint")] int location,
-        [NativeTypeName("GLsizei")] int count,
+        [NativeTypeName("GLsizei")] uint count,
         [NativeTypeName("const GLfloat *")] Ref<float> value
     );
 
@@ -52065,7 +52068,7 @@ public unsafe partial interface IGL
     [NativeFunction("opengl", EntryPoint = "glUniform2i64vARB")]
     void Uniform2i64vArb(
         [NativeTypeName("GLint")] int location,
-        [NativeTypeName("GLsizei")] int count,
+        [NativeTypeName("GLsizei")] uint count,
         [NativeTypeName("const GLint64 *")] Ref<long> value
     );
 
@@ -52075,7 +52078,7 @@ public unsafe partial interface IGL
     [NativeFunction("opengl", EntryPoint = "glUniform2i64vNV")]
     void Uniform2i64vNV(
         [NativeTypeName("GLint")] int location,
-        [NativeTypeName("GLsizei")] int count,
+        [NativeTypeName("GLsizei")] uint count,
         [NativeTypeName("const GLint64EXT *")] Ref<long> value
     );
 
@@ -52093,7 +52096,7 @@ public unsafe partial interface IGL
     [NativeFunction("opengl", EntryPoint = "glUniform2iv")]
     void Uniform2(
         [NativeTypeName("GLint")] int location,
-        [NativeTypeName("GLsizei")] int count,
+        [NativeTypeName("GLsizei")] uint count,
         [NativeTypeName("const GLint *")] Ref<int> value
     );
 
@@ -52101,7 +52104,7 @@ public unsafe partial interface IGL
     [NativeFunction("opengl", EntryPoint = "glUniform2ivARB")]
     void Uniform2ivArb(
         [NativeTypeName("GLint")] int location,
-        [NativeTypeName("GLsizei")] int count,
+        [NativeTypeName("GLsizei")] uint count,
         [NativeTypeName("const GLint *")] Ref<int> value
     );
 
@@ -52138,7 +52141,7 @@ public unsafe partial interface IGL
     [NativeFunction("opengl", EntryPoint = "glUniform2ui64vARB")]
     void Uniform2ui64vArb(
         [NativeTypeName("GLint")] int location,
-        [NativeTypeName("GLsizei")] int count,
+        [NativeTypeName("GLsizei")] uint count,
         [NativeTypeName("const GLuint64 *")] Ref<ulong> value
     );
 
@@ -52148,7 +52151,7 @@ public unsafe partial interface IGL
     [NativeFunction("opengl", EntryPoint = "glUniform2ui64vNV")]
     void Uniform2ui64vNV(
         [NativeTypeName("GLint")] int location,
-        [NativeTypeName("GLsizei")] int count,
+        [NativeTypeName("GLsizei")] uint count,
         [NativeTypeName("const GLuint64EXT *")] Ref<ulong> value
     );
 
@@ -52165,7 +52168,7 @@ public unsafe partial interface IGL
     [NativeFunction("opengl", EntryPoint = "glUniform2uiv")]
     void Uniform2(
         [NativeTypeName("GLint")] int location,
-        [NativeTypeName("GLsizei")] int count,
+        [NativeTypeName("GLsizei")] uint count,
         [NativeTypeName("const GLuint *")] Ref<uint> value
     );
 
@@ -52173,7 +52176,7 @@ public unsafe partial interface IGL
     [NativeFunction("opengl", EntryPoint = "glUniform2uivEXT")]
     void Uniform2uivExt(
         [NativeTypeName("GLint")] int location,
-        [NativeTypeName("GLsizei")] int count,
+        [NativeTypeName("GLsizei")] uint count,
         [NativeTypeName("const GLuint *")] Ref<uint> value
     );
 
@@ -52192,7 +52195,7 @@ public unsafe partial interface IGL
     [NativeFunction("opengl", EntryPoint = "glUniform3dv")]
     void Uniform3(
         [NativeTypeName("GLint")] int location,
-        [NativeTypeName("GLsizei")] int count,
+        [NativeTypeName("GLsizei")] uint count,
         [NativeTypeName("const GLdouble *")] Ref<double> value
     );
 
@@ -52222,7 +52225,7 @@ public unsafe partial interface IGL
     [NativeFunction("opengl", EntryPoint = "glUniform3fv")]
     void Uniform3(
         [NativeTypeName("GLint")] int location,
-        [NativeTypeName("GLsizei")] int count,
+        [NativeTypeName("GLsizei")] uint count,
         [NativeTypeName("const GLfloat *")] Ref<float> value
     );
 
@@ -52230,7 +52233,7 @@ public unsafe partial interface IGL
     [NativeFunction("opengl", EntryPoint = "glUniform3fvARB")]
     void Uniform3fvArb(
         [NativeTypeName("GLint")] int location,
-        [NativeTypeName("GLsizei")] int count,
+        [NativeTypeName("GLsizei")] uint count,
         [NativeTypeName("const GLfloat *")] Ref<float> value
     );
 
@@ -52271,7 +52274,7 @@ public unsafe partial interface IGL
     [NativeFunction("opengl", EntryPoint = "glUniform3i64vARB")]
     void Uniform3i64vArb(
         [NativeTypeName("GLint")] int location,
-        [NativeTypeName("GLsizei")] int count,
+        [NativeTypeName("GLsizei")] uint count,
         [NativeTypeName("const GLint64 *")] Ref<long> value
     );
 
@@ -52281,7 +52284,7 @@ public unsafe partial interface IGL
     [NativeFunction("opengl", EntryPoint = "glUniform3i64vNV")]
     void Uniform3i64vNV(
         [NativeTypeName("GLint")] int location,
-        [NativeTypeName("GLsizei")] int count,
+        [NativeTypeName("GLsizei")] uint count,
         [NativeTypeName("const GLint64EXT *")] Ref<long> value
     );
 
@@ -52300,7 +52303,7 @@ public unsafe partial interface IGL
     [NativeFunction("opengl", EntryPoint = "glUniform3iv")]
     void Uniform3(
         [NativeTypeName("GLint")] int location,
-        [NativeTypeName("GLsizei")] int count,
+        [NativeTypeName("GLsizei")] uint count,
         [NativeTypeName("const GLint *")] Ref<int> value
     );
 
@@ -52308,7 +52311,7 @@ public unsafe partial interface IGL
     [NativeFunction("opengl", EntryPoint = "glUniform3ivARB")]
     void Uniform3ivArb(
         [NativeTypeName("GLint")] int location,
-        [NativeTypeName("GLsizei")] int count,
+        [NativeTypeName("GLsizei")] uint count,
         [NativeTypeName("const GLint *")] Ref<int> value
     );
 
@@ -52348,7 +52351,7 @@ public unsafe partial interface IGL
     [NativeFunction("opengl", EntryPoint = "glUniform3ui64vARB")]
     void Uniform3ui64vArb(
         [NativeTypeName("GLint")] int location,
-        [NativeTypeName("GLsizei")] int count,
+        [NativeTypeName("GLsizei")] uint count,
         [NativeTypeName("const GLuint64 *")] Ref<ulong> value
     );
 
@@ -52358,7 +52361,7 @@ public unsafe partial interface IGL
     [NativeFunction("opengl", EntryPoint = "glUniform3ui64vNV")]
     void Uniform3ui64vNV(
         [NativeTypeName("GLint")] int location,
-        [NativeTypeName("GLsizei")] int count,
+        [NativeTypeName("GLsizei")] uint count,
         [NativeTypeName("const GLuint64EXT *")] Ref<ulong> value
     );
 
@@ -52376,7 +52379,7 @@ public unsafe partial interface IGL
     [NativeFunction("opengl", EntryPoint = "glUniform3uiv")]
     void Uniform3(
         [NativeTypeName("GLint")] int location,
-        [NativeTypeName("GLsizei")] int count,
+        [NativeTypeName("GLsizei")] uint count,
         [NativeTypeName("const GLuint *")] Ref<uint> value
     );
 
@@ -52384,7 +52387,7 @@ public unsafe partial interface IGL
     [NativeFunction("opengl", EntryPoint = "glUniform3uivEXT")]
     void Uniform3uivExt(
         [NativeTypeName("GLint")] int location,
-        [NativeTypeName("GLsizei")] int count,
+        [NativeTypeName("GLsizei")] uint count,
         [NativeTypeName("const GLuint *")] Ref<uint> value
     );
 
@@ -52404,7 +52407,7 @@ public unsafe partial interface IGL
     [NativeFunction("opengl", EntryPoint = "glUniform4dv")]
     void Uniform4(
         [NativeTypeName("GLint")] int location,
-        [NativeTypeName("GLsizei")] int count,
+        [NativeTypeName("GLsizei")] uint count,
         [NativeTypeName("const GLdouble *")] Ref<double> value
     );
 
@@ -52436,7 +52439,7 @@ public unsafe partial interface IGL
     [NativeFunction("opengl", EntryPoint = "glUniform4fv")]
     void Uniform4(
         [NativeTypeName("GLint")] int location,
-        [NativeTypeName("GLsizei")] int count,
+        [NativeTypeName("GLsizei")] uint count,
         [NativeTypeName("const GLfloat *")] Ref<float> value
     );
 
@@ -52444,7 +52447,7 @@ public unsafe partial interface IGL
     [NativeFunction("opengl", EntryPoint = "glUniform4fvARB")]
     void Uniform4fvArb(
         [NativeTypeName("GLint")] int location,
-        [NativeTypeName("GLsizei")] int count,
+        [NativeTypeName("GLsizei")] uint count,
         [NativeTypeName("const GLfloat *")] Ref<float> value
     );
 
@@ -52488,7 +52491,7 @@ public unsafe partial interface IGL
     [NativeFunction("opengl", EntryPoint = "glUniform4i64vARB")]
     void Uniform4i64vArb(
         [NativeTypeName("GLint")] int location,
-        [NativeTypeName("GLsizei")] int count,
+        [NativeTypeName("GLsizei")] uint count,
         [NativeTypeName("const GLint64 *")] Ref<long> value
     );
 
@@ -52498,7 +52501,7 @@ public unsafe partial interface IGL
     [NativeFunction("opengl", EntryPoint = "glUniform4i64vNV")]
     void Uniform4i64vNV(
         [NativeTypeName("GLint")] int location,
-        [NativeTypeName("GLsizei")] int count,
+        [NativeTypeName("GLsizei")] uint count,
         [NativeTypeName("const GLint64EXT *")] Ref<long> value
     );
 
@@ -52518,7 +52521,7 @@ public unsafe partial interface IGL
     [NativeFunction("opengl", EntryPoint = "glUniform4iv")]
     void Uniform4(
         [NativeTypeName("GLint")] int location,
-        [NativeTypeName("GLsizei")] int count,
+        [NativeTypeName("GLsizei")] uint count,
         [NativeTypeName("const GLint *")] Ref<int> value
     );
 
@@ -52526,7 +52529,7 @@ public unsafe partial interface IGL
     [NativeFunction("opengl", EntryPoint = "glUniform4ivARB")]
     void Uniform4ivArb(
         [NativeTypeName("GLint")] int location,
-        [NativeTypeName("GLsizei")] int count,
+        [NativeTypeName("GLsizei")] uint count,
         [NativeTypeName("const GLint *")] Ref<int> value
     );
 
@@ -52569,7 +52572,7 @@ public unsafe partial interface IGL
     [NativeFunction("opengl", EntryPoint = "glUniform4ui64vARB")]
     void Uniform4ui64vArb(
         [NativeTypeName("GLint")] int location,
-        [NativeTypeName("GLsizei")] int count,
+        [NativeTypeName("GLsizei")] uint count,
         [NativeTypeName("const GLuint64 *")] Ref<ulong> value
     );
 
@@ -52579,7 +52582,7 @@ public unsafe partial interface IGL
     [NativeFunction("opengl", EntryPoint = "glUniform4ui64vNV")]
     void Uniform4ui64vNV(
         [NativeTypeName("GLint")] int location,
-        [NativeTypeName("GLsizei")] int count,
+        [NativeTypeName("GLsizei")] uint count,
         [NativeTypeName("const GLuint64EXT *")] Ref<ulong> value
     );
 
@@ -52598,7 +52601,7 @@ public unsafe partial interface IGL
     [NativeFunction("opengl", EntryPoint = "glUniform4uiv")]
     void Uniform4(
         [NativeTypeName("GLint")] int location,
-        [NativeTypeName("GLsizei")] int count,
+        [NativeTypeName("GLsizei")] uint count,
         [NativeTypeName("const GLuint *")] Ref<uint> value
     );
 
@@ -52606,7 +52609,7 @@ public unsafe partial interface IGL
     [NativeFunction("opengl", EntryPoint = "glUniform4uivEXT")]
     void Uniform4uivExt(
         [NativeTypeName("GLint")] int location,
-        [NativeTypeName("GLsizei")] int count,
+        [NativeTypeName("GLsizei")] uint count,
         [NativeTypeName("const GLuint *")] Ref<uint> value
     );
 
@@ -52656,7 +52659,7 @@ public unsafe partial interface IGL
     [NativeFunction("opengl", EntryPoint = "glUniformHandleui64vARB")]
     void UniformHandleui64vArb(
         [NativeTypeName("GLint")] int location,
-        [NativeTypeName("GLsizei")] int count,
+        [NativeTypeName("GLsizei")] uint count,
         [NativeTypeName("const GLuint64 *")] Ref<ulong> value
     );
 
@@ -52664,7 +52667,7 @@ public unsafe partial interface IGL
     [NativeFunction("opengl", EntryPoint = "glUniformHandleui64vIMG")]
     void UniformHandleui64vImg(
         [NativeTypeName("GLint")] int location,
-        [NativeTypeName("GLsizei")] int count,
+        [NativeTypeName("GLsizei")] uint count,
         [NativeTypeName("const GLuint64 *")] Ref<ulong> value
     );
 
@@ -52674,7 +52677,7 @@ public unsafe partial interface IGL
     [NativeFunction("opengl", EntryPoint = "glUniformHandleui64vNV")]
     void UniformHandleui64vNV(
         [NativeTypeName("GLint")] int location,
-        [NativeTypeName("GLsizei")] int count,
+        [NativeTypeName("GLsizei")] uint count,
         [NativeTypeName("const GLuint64 *")] Ref<ulong> value
     );
 
@@ -52683,8 +52686,8 @@ public unsafe partial interface IGL
     [NativeFunction("opengl", EntryPoint = "glUniformMatrix2dv")]
     void UniformMatrix2(
         [NativeTypeName("GLint")] int location,
-        [NativeTypeName("GLsizei")] int count,
-        [NativeTypeName("GLboolean")] byte transpose,
+        [NativeTypeName("GLsizei")] uint count,
+        [NativeTypeName("GLboolean")] uint transpose,
         [NativeTypeName("const GLdouble *")] Ref<double> value
     );
 
@@ -52694,8 +52697,8 @@ public unsafe partial interface IGL
     [NativeFunction("opengl", EntryPoint = "glUniformMatrix2fv")]
     void UniformMatrix2(
         [NativeTypeName("GLint")] int location,
-        [NativeTypeName("GLsizei")] int count,
-        [NativeTypeName("GLboolean")] byte transpose,
+        [NativeTypeName("GLsizei")] uint count,
+        [NativeTypeName("GLboolean")] uint transpose,
         [NativeTypeName("const GLfloat *")] Ref<float> value
     );
 
@@ -52703,8 +52706,8 @@ public unsafe partial interface IGL
     [NativeFunction("opengl", EntryPoint = "glUniformMatrix2fvARB")]
     void UniformMatrix2fvArb(
         [NativeTypeName("GLint")] int location,
-        [NativeTypeName("GLsizei")] int count,
-        [NativeTypeName("GLboolean")] byte transpose,
+        [NativeTypeName("GLsizei")] uint count,
+        [NativeTypeName("GLboolean")] uint transpose,
         [NativeTypeName("const GLfloat *")] Ref<float> value
     );
 
@@ -52713,8 +52716,8 @@ public unsafe partial interface IGL
     [NativeFunction("opengl", EntryPoint = "glUniformMatrix2x3dv")]
     void UniformMatrix2x3(
         [NativeTypeName("GLint")] int location,
-        [NativeTypeName("GLsizei")] int count,
-        [NativeTypeName("GLboolean")] byte transpose,
+        [NativeTypeName("GLsizei")] uint count,
+        [NativeTypeName("GLboolean")] uint transpose,
         [NativeTypeName("const GLdouble *")] Ref<double> value
     );
 
@@ -52723,8 +52726,8 @@ public unsafe partial interface IGL
     [NativeFunction("opengl", EntryPoint = "glUniformMatrix2x3fv")]
     void UniformMatrix2x3(
         [NativeTypeName("GLint")] int location,
-        [NativeTypeName("GLsizei")] int count,
-        [NativeTypeName("GLboolean")] byte transpose,
+        [NativeTypeName("GLsizei")] uint count,
+        [NativeTypeName("GLboolean")] uint transpose,
         [NativeTypeName("const GLfloat *")] Ref<float> value
     );
 
@@ -52732,8 +52735,8 @@ public unsafe partial interface IGL
     [NativeFunction("opengl", EntryPoint = "glUniformMatrix2x3fvNV")]
     void UniformMatrix2x3fvNV(
         [NativeTypeName("GLint")] int location,
-        [NativeTypeName("GLsizei")] int count,
-        [NativeTypeName("GLboolean")] byte transpose,
+        [NativeTypeName("GLsizei")] uint count,
+        [NativeTypeName("GLboolean")] uint transpose,
         [NativeTypeName("const GLfloat *")] Ref<float> value
     );
 
@@ -52742,8 +52745,8 @@ public unsafe partial interface IGL
     [NativeFunction("opengl", EntryPoint = "glUniformMatrix2x4dv")]
     void UniformMatrix2x4(
         [NativeTypeName("GLint")] int location,
-        [NativeTypeName("GLsizei")] int count,
-        [NativeTypeName("GLboolean")] byte transpose,
+        [NativeTypeName("GLsizei")] uint count,
+        [NativeTypeName("GLboolean")] uint transpose,
         [NativeTypeName("const GLdouble *")] Ref<double> value
     );
 
@@ -52752,8 +52755,8 @@ public unsafe partial interface IGL
     [NativeFunction("opengl", EntryPoint = "glUniformMatrix2x4fv")]
     void UniformMatrix2x4(
         [NativeTypeName("GLint")] int location,
-        [NativeTypeName("GLsizei")] int count,
-        [NativeTypeName("GLboolean")] byte transpose,
+        [NativeTypeName("GLsizei")] uint count,
+        [NativeTypeName("GLboolean")] uint transpose,
         [NativeTypeName("const GLfloat *")] Ref<float> value
     );
 
@@ -52761,8 +52764,8 @@ public unsafe partial interface IGL
     [NativeFunction("opengl", EntryPoint = "glUniformMatrix2x4fvNV")]
     void UniformMatrix2x4fvNV(
         [NativeTypeName("GLint")] int location,
-        [NativeTypeName("GLsizei")] int count,
-        [NativeTypeName("GLboolean")] byte transpose,
+        [NativeTypeName("GLsizei")] uint count,
+        [NativeTypeName("GLboolean")] uint transpose,
         [NativeTypeName("const GLfloat *")] Ref<float> value
     );
 
@@ -52771,8 +52774,8 @@ public unsafe partial interface IGL
     [NativeFunction("opengl", EntryPoint = "glUniformMatrix3dv")]
     void UniformMatrix3(
         [NativeTypeName("GLint")] int location,
-        [NativeTypeName("GLsizei")] int count,
-        [NativeTypeName("GLboolean")] byte transpose,
+        [NativeTypeName("GLsizei")] uint count,
+        [NativeTypeName("GLboolean")] uint transpose,
         [NativeTypeName("const GLdouble *")] Ref<double> value
     );
 
@@ -52782,8 +52785,8 @@ public unsafe partial interface IGL
     [NativeFunction("opengl", EntryPoint = "glUniformMatrix3fv")]
     void UniformMatrix3(
         [NativeTypeName("GLint")] int location,
-        [NativeTypeName("GLsizei")] int count,
-        [NativeTypeName("GLboolean")] byte transpose,
+        [NativeTypeName("GLsizei")] uint count,
+        [NativeTypeName("GLboolean")] uint transpose,
         [NativeTypeName("const GLfloat *")] Ref<float> value
     );
 
@@ -52791,8 +52794,8 @@ public unsafe partial interface IGL
     [NativeFunction("opengl", EntryPoint = "glUniformMatrix3fvARB")]
     void UniformMatrix3fvArb(
         [NativeTypeName("GLint")] int location,
-        [NativeTypeName("GLsizei")] int count,
-        [NativeTypeName("GLboolean")] byte transpose,
+        [NativeTypeName("GLsizei")] uint count,
+        [NativeTypeName("GLboolean")] uint transpose,
         [NativeTypeName("const GLfloat *")] Ref<float> value
     );
 
@@ -52801,8 +52804,8 @@ public unsafe partial interface IGL
     [NativeFunction("opengl", EntryPoint = "glUniformMatrix3x2dv")]
     void UniformMatrix3x2(
         [NativeTypeName("GLint")] int location,
-        [NativeTypeName("GLsizei")] int count,
-        [NativeTypeName("GLboolean")] byte transpose,
+        [NativeTypeName("GLsizei")] uint count,
+        [NativeTypeName("GLboolean")] uint transpose,
         [NativeTypeName("const GLdouble *")] Ref<double> value
     );
 
@@ -52811,8 +52814,8 @@ public unsafe partial interface IGL
     [NativeFunction("opengl", EntryPoint = "glUniformMatrix3x2fv")]
     void UniformMatrix3x2(
         [NativeTypeName("GLint")] int location,
-        [NativeTypeName("GLsizei")] int count,
-        [NativeTypeName("GLboolean")] byte transpose,
+        [NativeTypeName("GLsizei")] uint count,
+        [NativeTypeName("GLboolean")] uint transpose,
         [NativeTypeName("const GLfloat *")] Ref<float> value
     );
 
@@ -52820,8 +52823,8 @@ public unsafe partial interface IGL
     [NativeFunction("opengl", EntryPoint = "glUniformMatrix3x2fvNV")]
     void UniformMatrix3x2fvNV(
         [NativeTypeName("GLint")] int location,
-        [NativeTypeName("GLsizei")] int count,
-        [NativeTypeName("GLboolean")] byte transpose,
+        [NativeTypeName("GLsizei")] uint count,
+        [NativeTypeName("GLboolean")] uint transpose,
         [NativeTypeName("const GLfloat *")] Ref<float> value
     );
 
@@ -52830,8 +52833,8 @@ public unsafe partial interface IGL
     [NativeFunction("opengl", EntryPoint = "glUniformMatrix3x4dv")]
     void UniformMatrix3x4(
         [NativeTypeName("GLint")] int location,
-        [NativeTypeName("GLsizei")] int count,
-        [NativeTypeName("GLboolean")] byte transpose,
+        [NativeTypeName("GLsizei")] uint count,
+        [NativeTypeName("GLboolean")] uint transpose,
         [NativeTypeName("const GLdouble *")] Ref<double> value
     );
 
@@ -52840,8 +52843,8 @@ public unsafe partial interface IGL
     [NativeFunction("opengl", EntryPoint = "glUniformMatrix3x4fv")]
     void UniformMatrix3x4(
         [NativeTypeName("GLint")] int location,
-        [NativeTypeName("GLsizei")] int count,
-        [NativeTypeName("GLboolean")] byte transpose,
+        [NativeTypeName("GLsizei")] uint count,
+        [NativeTypeName("GLboolean")] uint transpose,
         [NativeTypeName("const GLfloat *")] Ref<float> value
     );
 
@@ -52849,8 +52852,8 @@ public unsafe partial interface IGL
     [NativeFunction("opengl", EntryPoint = "glUniformMatrix3x4fvNV")]
     void UniformMatrix3x4fvNV(
         [NativeTypeName("GLint")] int location,
-        [NativeTypeName("GLsizei")] int count,
-        [NativeTypeName("GLboolean")] byte transpose,
+        [NativeTypeName("GLsizei")] uint count,
+        [NativeTypeName("GLboolean")] uint transpose,
         [NativeTypeName("const GLfloat *")] Ref<float> value
     );
 
@@ -52859,8 +52862,8 @@ public unsafe partial interface IGL
     [NativeFunction("opengl", EntryPoint = "glUniformMatrix4dv")]
     void UniformMatrix4(
         [NativeTypeName("GLint")] int location,
-        [NativeTypeName("GLsizei")] int count,
-        [NativeTypeName("GLboolean")] byte transpose,
+        [NativeTypeName("GLsizei")] uint count,
+        [NativeTypeName("GLboolean")] uint transpose,
         [NativeTypeName("const GLdouble *")] Ref<double> value
     );
 
@@ -52870,8 +52873,8 @@ public unsafe partial interface IGL
     [NativeFunction("opengl", EntryPoint = "glUniformMatrix4fv")]
     void UniformMatrix4(
         [NativeTypeName("GLint")] int location,
-        [NativeTypeName("GLsizei")] int count,
-        [NativeTypeName("GLboolean")] byte transpose,
+        [NativeTypeName("GLsizei")] uint count,
+        [NativeTypeName("GLboolean")] uint transpose,
         [NativeTypeName("const GLfloat *")] Ref<float> value
     );
 
@@ -52879,8 +52882,8 @@ public unsafe partial interface IGL
     [NativeFunction("opengl", EntryPoint = "glUniformMatrix4fvARB")]
     void UniformMatrix4fvArb(
         [NativeTypeName("GLint")] int location,
-        [NativeTypeName("GLsizei")] int count,
-        [NativeTypeName("GLboolean")] byte transpose,
+        [NativeTypeName("GLsizei")] uint count,
+        [NativeTypeName("GLboolean")] uint transpose,
         [NativeTypeName("const GLfloat *")] Ref<float> value
     );
 
@@ -52889,8 +52892,8 @@ public unsafe partial interface IGL
     [NativeFunction("opengl", EntryPoint = "glUniformMatrix4x2dv")]
     void UniformMatrix4x2(
         [NativeTypeName("GLint")] int location,
-        [NativeTypeName("GLsizei")] int count,
-        [NativeTypeName("GLboolean")] byte transpose,
+        [NativeTypeName("GLsizei")] uint count,
+        [NativeTypeName("GLboolean")] uint transpose,
         [NativeTypeName("const GLdouble *")] Ref<double> value
     );
 
@@ -52899,8 +52902,8 @@ public unsafe partial interface IGL
     [NativeFunction("opengl", EntryPoint = "glUniformMatrix4x2fv")]
     void UniformMatrix4x2(
         [NativeTypeName("GLint")] int location,
-        [NativeTypeName("GLsizei")] int count,
-        [NativeTypeName("GLboolean")] byte transpose,
+        [NativeTypeName("GLsizei")] uint count,
+        [NativeTypeName("GLboolean")] uint transpose,
         [NativeTypeName("const GLfloat *")] Ref<float> value
     );
 
@@ -52908,8 +52911,8 @@ public unsafe partial interface IGL
     [NativeFunction("opengl", EntryPoint = "glUniformMatrix4x2fvNV")]
     void UniformMatrix4x2fvNV(
         [NativeTypeName("GLint")] int location,
-        [NativeTypeName("GLsizei")] int count,
-        [NativeTypeName("GLboolean")] byte transpose,
+        [NativeTypeName("GLsizei")] uint count,
+        [NativeTypeName("GLboolean")] uint transpose,
         [NativeTypeName("const GLfloat *")] Ref<float> value
     );
 
@@ -52918,8 +52921,8 @@ public unsafe partial interface IGL
     [NativeFunction("opengl", EntryPoint = "glUniformMatrix4x3dv")]
     void UniformMatrix4x3(
         [NativeTypeName("GLint")] int location,
-        [NativeTypeName("GLsizei")] int count,
-        [NativeTypeName("GLboolean")] byte transpose,
+        [NativeTypeName("GLsizei")] uint count,
+        [NativeTypeName("GLboolean")] uint transpose,
         [NativeTypeName("const GLdouble *")] Ref<double> value
     );
 
@@ -52928,8 +52931,8 @@ public unsafe partial interface IGL
     [NativeFunction("opengl", EntryPoint = "glUniformMatrix4x3fv")]
     void UniformMatrix4x3(
         [NativeTypeName("GLint")] int location,
-        [NativeTypeName("GLsizei")] int count,
-        [NativeTypeName("GLboolean")] byte transpose,
+        [NativeTypeName("GLsizei")] uint count,
+        [NativeTypeName("GLboolean")] uint transpose,
         [NativeTypeName("const GLfloat *")] Ref<float> value
     );
 
@@ -52937,8 +52940,8 @@ public unsafe partial interface IGL
     [NativeFunction("opengl", EntryPoint = "glUniformMatrix4x3fvNV")]
     void UniformMatrix4x3fvNV(
         [NativeTypeName("GLint")] int location,
-        [NativeTypeName("GLsizei")] int count,
-        [NativeTypeName("GLboolean")] byte transpose,
+        [NativeTypeName("GLsizei")] uint count,
+        [NativeTypeName("GLboolean")] uint transpose,
         [NativeTypeName("const GLfloat *")] Ref<float> value
     );
 
@@ -52947,7 +52950,7 @@ public unsafe partial interface IGL
     [NativeFunction("opengl", EntryPoint = "glUniformSubroutinesuiv")]
     void UniformSubroutines(
         [NativeTypeName("GLenum")] uint shadertype,
-        [NativeTypeName("GLsizei")] int count,
+        [NativeTypeName("GLsizei")] uint count,
         [NativeTypeName("const GLuint *")] Ref<uint> indices
     );
 
@@ -52964,7 +52967,7 @@ public unsafe partial interface IGL
     [NativeFunction("opengl", EntryPoint = "glUniformui64vNV")]
     void Uniformui64vNV(
         [NativeTypeName("GLint")] int location,
-        [NativeTypeName("GLsizei")] int count,
+        [NativeTypeName("GLsizei")] uint count,
         [NativeTypeName("const GLuint64EXT *")] Ref<ulong> value
     );
 
@@ -52976,30 +52979,30 @@ public unsafe partial interface IGL
     [SupportedApiProfile("glcore", MinVersion = "3.2")]
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glUnmapBuffer")]
-    byte UnmapBuffer([NativeTypeName("GLenum")] uint target);
+    uint UnmapBuffer([NativeTypeName("GLenum")] uint target);
 
     [return: NativeTypeName("GLboolean")]
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glUnmapBufferARB")]
-    byte UnmapBufferArb([NativeTypeName("GLenum")] uint target);
+    uint UnmapBufferArb([NativeTypeName("GLenum")] uint target);
 
     [return: NativeTypeName("GLboolean")]
     [SupportedApiProfile("gles1", MaxVersion = "2.0")]
     [SupportedApiProfile("gles2", MinVersion = "2.0")]
     [NativeFunction("opengl", EntryPoint = "glUnmapBufferOES")]
-    byte UnmapBufferOes([NativeTypeName("GLenum")] uint target);
+    uint UnmapBufferOes([NativeTypeName("GLenum")] uint target);
 
     [return: NativeTypeName("GLboolean")]
     [SupportedApiProfile("glcore", MinVersion = "3.2")]
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glUnmapNamedBuffer")]
-    byte UnmapNamedBuffer([NativeTypeName("GLuint")] uint buffer);
+    uint UnmapNamedBuffer([NativeTypeName("GLuint")] uint buffer);
 
     [return: NativeTypeName("GLboolean")]
     [SupportedApiProfile("glcore", MinVersion = "3.2")]
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glUnmapNamedBufferEXT")]
-    byte UnmapNamedBufferExt([NativeTypeName("GLuint")] uint buffer);
+    uint UnmapNamedBufferExt([NativeTypeName("GLuint")] uint buffer);
 
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glUnmapObjectBufferATI")]
@@ -53017,7 +53020,7 @@ public unsafe partial interface IGL
     void UpdateObjectBufferAti(
         [NativeTypeName("GLuint")] uint buffer,
         [NativeTypeName("GLuint")] uint offset,
-        [NativeTypeName("GLsizei")] int size,
+        [NativeTypeName("GLsizei")] uint size,
         [NativeTypeName("const void *")] Ref pointer,
         [NativeTypeName("GLenum")] uint preserve
     );
@@ -53034,7 +53037,7 @@ public unsafe partial interface IGL
 
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glUseProgramObjectARB")]
-    void UseProgramObjectArb([NativeTypeName("GLhandleARB")] Ref programObj);
+    void UseProgramObjectArb([NativeTypeName("GLhandleARB")] uint programObj);
 
     [SupportedApiProfile("glcore", MinVersion = "3.2")]
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
@@ -53069,7 +53072,7 @@ public unsafe partial interface IGL
 
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glValidateProgramARB")]
-    void ValidateProgramArb([NativeTypeName("GLhandleARB")] Ref programObj);
+    void ValidateProgramArb([NativeTypeName("GLhandleARB")] uint programObj);
 
     [SupportedApiProfile("glcore", MinVersion = "3.2")]
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
@@ -53085,7 +53088,7 @@ public unsafe partial interface IGL
     void VariantArrayObjectAti(
         [NativeTypeName("GLuint")] uint id,
         [NativeTypeName("GLenum")] uint type,
-        [NativeTypeName("GLsizei")] int stride,
+        [NativeTypeName("GLsizei")] uint stride,
         [NativeTypeName("GLuint")] uint buffer,
         [NativeTypeName("GLuint")] uint offset
     );
@@ -53164,8 +53167,8 @@ public unsafe partial interface IGL
     void VdpauGetSurfaceivNV(
         [NativeTypeName("GLvdpauSurfaceNV")] nint surface,
         [NativeTypeName("GLenum")] uint pname,
-        [NativeTypeName("GLsizei")] int count,
-        [NativeTypeName("GLsizei *")] Ref<int> length,
+        [NativeTypeName("GLsizei")] uint count,
+        [NativeTypeName("GLsizei *")] Ref<uint> length,
         [NativeTypeName("GLint *")] Ref<int> values
     );
 
@@ -53179,12 +53182,12 @@ public unsafe partial interface IGL
     [return: NativeTypeName("GLboolean")]
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glVDPAUIsSurfaceNV")]
-    byte VdpauIsSurfaceNV([NativeTypeName("GLvdpauSurfaceNV")] nint surface);
+    uint VdpauIsSurfaceNV([NativeTypeName("GLvdpauSurfaceNV")] nint surface);
 
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glVDPAUMapSurfacesNV")]
     void VdpauMapSurfacesNV(
-        [NativeTypeName("GLsizei")] int numSurfaces,
+        [NativeTypeName("GLsizei")] uint numSurfaces,
         [NativeTypeName("const GLvdpauSurfaceNV *")] Ref<nint> surfaces
     );
 
@@ -53194,7 +53197,7 @@ public unsafe partial interface IGL
     nint VdpauRegisterOutputSurfaceNV(
         [NativeTypeName("const void *")] Ref vdpSurface,
         [NativeTypeName("GLenum")] uint target,
-        [NativeTypeName("GLsizei")] int numTextureNames,
+        [NativeTypeName("GLsizei")] uint numTextureNames,
         [NativeTypeName("const GLuint *")] Ref<uint> textureNames
     );
 
@@ -53204,7 +53207,7 @@ public unsafe partial interface IGL
     nint VdpauRegisterVideoSurfaceNV(
         [NativeTypeName("const void *")] Ref vdpSurface,
         [NativeTypeName("GLenum")] uint target,
-        [NativeTypeName("GLsizei")] int numTextureNames,
+        [NativeTypeName("GLsizei")] uint numTextureNames,
         [NativeTypeName("const GLuint *")] Ref<uint> textureNames
     );
 
@@ -53214,9 +53217,9 @@ public unsafe partial interface IGL
     nint VdpauRegisterVideoSurfaceWithPictureStructureNV(
         [NativeTypeName("const void *")] Ref vdpSurface,
         [NativeTypeName("GLenum")] uint target,
-        [NativeTypeName("GLsizei")] int numTextureNames,
+        [NativeTypeName("GLsizei")] uint numTextureNames,
         [NativeTypeName("const GLuint *")] Ref<uint> textureNames,
-        [NativeTypeName("GLboolean")] byte isFrameStructure
+        [NativeTypeName("GLboolean")] uint isFrameStructure
     );
 
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
@@ -53229,7 +53232,7 @@ public unsafe partial interface IGL
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glVDPAUUnmapSurfacesNV")]
     void VdpauUnmapSurfacesNV(
-        [NativeTypeName("GLsizei")] int numSurface,
+        [NativeTypeName("GLsizei")] uint numSurface,
         [NativeTypeName("const GLvdpauSurfaceNV *")] Ref<nint> surfaces
     );
 
@@ -53480,7 +53483,7 @@ public unsafe partial interface IGL
         [NativeTypeName("GLuint")] uint attribindex,
         [NativeTypeName("GLint")] int size,
         [NativeTypeName("GLenum")] uint type,
-        [NativeTypeName("GLboolean")] byte normalized,
+        [NativeTypeName("GLboolean")] uint normalized,
         [NativeTypeName("GLuint")] uint relativeoffset
     );
 
@@ -53523,7 +53526,7 @@ public unsafe partial interface IGL
         [NativeTypeName("GLuint")] uint bindingindex,
         [NativeTypeName("GLuint")] uint buffer,
         [NativeTypeName("GLintptr")] nint offset,
-        [NativeTypeName("GLsizei")] int stride
+        [NativeTypeName("GLsizei")] uint stride
     );
 
     [SupportedApiProfile("glcore", MinVersion = "3.2")]
@@ -53534,7 +53537,7 @@ public unsafe partial interface IGL
         [NativeTypeName("GLuint")] uint buffer,
         [NativeTypeName("GLint")] int size,
         [NativeTypeName("GLenum")] uint type,
-        [NativeTypeName("GLsizei")] int stride,
+        [NativeTypeName("GLsizei")] uint stride,
         [NativeTypeName("GLintptr")] nint offset
     );
 
@@ -53544,7 +53547,7 @@ public unsafe partial interface IGL
     void VertexArrayEdgeFlagOffsetExt(
         [NativeTypeName("GLuint")] uint vaobj,
         [NativeTypeName("GLuint")] uint buffer,
-        [NativeTypeName("GLsizei")] int stride,
+        [NativeTypeName("GLsizei")] uint stride,
         [NativeTypeName("GLintptr")] nint offset
     );
 
@@ -53563,7 +53566,7 @@ public unsafe partial interface IGL
         [NativeTypeName("GLuint")] uint vaobj,
         [NativeTypeName("GLuint")] uint buffer,
         [NativeTypeName("GLenum")] uint type,
-        [NativeTypeName("GLsizei")] int stride,
+        [NativeTypeName("GLsizei")] uint stride,
         [NativeTypeName("GLintptr")] nint offset
     );
 
@@ -53574,7 +53577,7 @@ public unsafe partial interface IGL
         [NativeTypeName("GLuint")] uint vaobj,
         [NativeTypeName("GLuint")] uint buffer,
         [NativeTypeName("GLenum")] uint type,
-        [NativeTypeName("GLsizei")] int stride,
+        [NativeTypeName("GLsizei")] uint stride,
         [NativeTypeName("GLintptr")] nint offset
     );
 
@@ -53587,7 +53590,7 @@ public unsafe partial interface IGL
         [NativeTypeName("GLenum")] uint texunit,
         [NativeTypeName("GLint")] int size,
         [NativeTypeName("GLenum")] uint type,
-        [NativeTypeName("GLsizei")] int stride,
+        [NativeTypeName("GLsizei")] uint stride,
         [NativeTypeName("GLintptr")] nint offset
     );
 
@@ -53598,7 +53601,7 @@ public unsafe partial interface IGL
         [NativeTypeName("GLuint")] uint vaobj,
         [NativeTypeName("GLuint")] uint buffer,
         [NativeTypeName("GLenum")] uint type,
-        [NativeTypeName("GLsizei")] int stride,
+        [NativeTypeName("GLsizei")] uint stride,
         [NativeTypeName("GLintptr")] nint offset
     );
 
@@ -53611,12 +53614,12 @@ public unsafe partial interface IGL
 
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glVertexArrayRangeAPPLE")]
-    void VertexArrayRangeApple([NativeTypeName("GLsizei")] int length, Ref pointer);
+    void VertexArrayRangeApple([NativeTypeName("GLsizei")] uint length, Ref pointer);
 
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
     [NativeFunction("opengl", EntryPoint = "glVertexArrayRangeNV")]
     void VertexArrayRangeNV(
-        [NativeTypeName("GLsizei")] int length,
+        [NativeTypeName("GLsizei")] uint length,
         [NativeTypeName("const void *")] Ref pointer
     );
 
@@ -53628,7 +53631,7 @@ public unsafe partial interface IGL
         [NativeTypeName("GLuint")] uint buffer,
         [NativeTypeName("GLint")] int size,
         [NativeTypeName("GLenum")] uint type,
-        [NativeTypeName("GLsizei")] int stride,
+        [NativeTypeName("GLsizei")] uint stride,
         [NativeTypeName("GLintptr")] nint offset
     );
 
@@ -53640,7 +53643,7 @@ public unsafe partial interface IGL
         [NativeTypeName("GLuint")] uint buffer,
         [NativeTypeName("GLint")] int size,
         [NativeTypeName("GLenum")] uint type,
-        [NativeTypeName("GLsizei")] int stride,
+        [NativeTypeName("GLsizei")] uint stride,
         [NativeTypeName("GLintptr")] nint offset
     );
 
@@ -53670,7 +53673,7 @@ public unsafe partial interface IGL
         [NativeTypeName("GLuint")] uint attribindex,
         [NativeTypeName("GLint")] int size,
         [NativeTypeName("GLenum")] uint type,
-        [NativeTypeName("GLboolean")] byte normalized,
+        [NativeTypeName("GLboolean")] uint normalized,
         [NativeTypeName("GLuint")] uint relativeoffset
     );
 
@@ -53694,7 +53697,7 @@ public unsafe partial interface IGL
         [NativeTypeName("GLuint")] uint index,
         [NativeTypeName("GLint")] int size,
         [NativeTypeName("GLenum")] uint type,
-        [NativeTypeName("GLsizei")] int stride,
+        [NativeTypeName("GLsizei")] uint stride,
         [NativeTypeName("GLintptr")] nint offset
     );
 
@@ -53718,7 +53721,7 @@ public unsafe partial interface IGL
         [NativeTypeName("GLuint")] uint index,
         [NativeTypeName("GLint")] int size,
         [NativeTypeName("GLenum")] uint type,
-        [NativeTypeName("GLsizei")] int stride,
+        [NativeTypeName("GLsizei")] uint stride,
         [NativeTypeName("GLintptr")] nint offset
     );
 
@@ -53731,8 +53734,8 @@ public unsafe partial interface IGL
         [NativeTypeName("GLuint")] uint index,
         [NativeTypeName("GLint")] int size,
         [NativeTypeName("GLenum")] uint type,
-        [NativeTypeName("GLboolean")] byte normalized,
-        [NativeTypeName("GLsizei")] int stride,
+        [NativeTypeName("GLboolean")] uint normalized,
+        [NativeTypeName("GLsizei")] uint stride,
         [NativeTypeName("GLintptr")] nint offset
     );
 
@@ -53753,7 +53756,7 @@ public unsafe partial interface IGL
         [NativeTypeName("GLuint")] uint bindingindex,
         [NativeTypeName("GLuint")] uint buffer,
         [NativeTypeName("GLintptr")] nint offset,
-        [NativeTypeName("GLsizei")] int stride
+        [NativeTypeName("GLsizei")] uint stride
     );
 
     [SupportedApiProfile("glcore", MinVersion = "3.2")]
@@ -53762,10 +53765,10 @@ public unsafe partial interface IGL
     void VertexArrayVertexBuffers(
         [NativeTypeName("GLuint")] uint vaobj,
         [NativeTypeName("GLuint")] uint first,
-        [NativeTypeName("GLsizei")] int count,
+        [NativeTypeName("GLsizei")] uint count,
         [NativeTypeName("const GLuint *")] Ref<uint> buffers,
         [NativeTypeName("const GLintptr *")] Ref<nint> offsets,
-        [NativeTypeName("const GLsizei *")] Ref<int> strides
+        [NativeTypeName("const GLsizei *")] Ref<uint> strides
     );
 
     [SupportedApiProfile("glcore", MinVersion = "3.2")]
@@ -53776,7 +53779,7 @@ public unsafe partial interface IGL
         [NativeTypeName("GLuint")] uint buffer,
         [NativeTypeName("GLint")] int size,
         [NativeTypeName("GLenum")] uint type,
-        [NativeTypeName("GLsizei")] int stride,
+        [NativeTypeName("GLsizei")] uint stride,
         [NativeTypeName("GLintptr")] nint offset
     );
 
@@ -54635,8 +54638,8 @@ public unsafe partial interface IGL
         [NativeTypeName("GLuint")] uint index,
         [NativeTypeName("GLint")] int size,
         [NativeTypeName("GLenum")] uint type,
-        [NativeTypeName("GLboolean")] byte normalized,
-        [NativeTypeName("GLsizei")] int stride,
+        [NativeTypeName("GLboolean")] uint normalized,
+        [NativeTypeName("GLsizei")] uint stride,
         [NativeTypeName("GLuint")] uint buffer,
         [NativeTypeName("GLuint")] uint offset
     );
@@ -54693,7 +54696,7 @@ public unsafe partial interface IGL
         [NativeTypeName("GLuint")] uint attribindex,
         [NativeTypeName("GLint")] int size,
         [NativeTypeName("GLenum")] uint type,
-        [NativeTypeName("GLboolean")] byte normalized,
+        [NativeTypeName("GLboolean")] uint normalized,
         [NativeTypeName("GLuint")] uint relativeoffset
     );
 
@@ -54704,8 +54707,8 @@ public unsafe partial interface IGL
         [NativeTypeName("GLuint")] uint index,
         [NativeTypeName("GLint")] int size,
         [NativeTypeName("GLenum")] uint type,
-        [NativeTypeName("GLboolean")] byte normalized,
-        [NativeTypeName("GLsizei")] int stride
+        [NativeTypeName("GLboolean")] uint normalized,
+        [NativeTypeName("GLsizei")] uint stride
     );
 
     [SupportedApiProfile("glcore", MinVersion = "3.2")]
@@ -55040,7 +55043,7 @@ public unsafe partial interface IGL
         [NativeTypeName("GLuint")] uint index,
         [NativeTypeName("GLint")] int size,
         [NativeTypeName("GLenum")] uint type,
-        [NativeTypeName("GLsizei")] int stride
+        [NativeTypeName("GLsizei")] uint stride
     );
 
     [SupportedApiProfile("glcore", MinVersion = "3.2")]
@@ -55050,7 +55053,7 @@ public unsafe partial interface IGL
         [NativeTypeName("GLuint")] uint index,
         [NativeTypeName("GLint")] int size,
         [NativeTypeName("GLenum")] uint type,
-        [NativeTypeName("GLsizei")] int stride,
+        [NativeTypeName("GLsizei")] uint stride,
         [NativeTypeName("const void *")] Ref pointer
     );
 
@@ -55060,7 +55063,7 @@ public unsafe partial interface IGL
         [NativeTypeName("GLuint")] uint index,
         [NativeTypeName("GLint")] int size,
         [NativeTypeName("GLenum")] uint type,
-        [NativeTypeName("GLsizei")] int stride,
+        [NativeTypeName("GLsizei")] uint stride,
         [NativeTypeName("const void *")] Ref pointer
     );
 
@@ -55369,7 +55372,7 @@ public unsafe partial interface IGL
         [NativeTypeName("GLuint")] uint index,
         [NativeTypeName("GLint")] int size,
         [NativeTypeName("GLenum")] uint type,
-        [NativeTypeName("GLsizei")] int stride
+        [NativeTypeName("GLsizei")] uint stride
     );
 
     [SupportedApiProfile("glcore", MinVersion = "3.2")]
@@ -55379,7 +55382,7 @@ public unsafe partial interface IGL
         [NativeTypeName("GLuint")] uint index,
         [NativeTypeName("GLint")] int size,
         [NativeTypeName("GLenum")] uint type,
-        [NativeTypeName("GLsizei")] int stride,
+        [NativeTypeName("GLsizei")] uint stride,
         [NativeTypeName("const void *")] Ref pointer
     );
 
@@ -55389,7 +55392,7 @@ public unsafe partial interface IGL
         [NativeTypeName("GLuint")] uint index,
         [NativeTypeName("GLint")] int size,
         [NativeTypeName("GLenum")] uint type,
-        [NativeTypeName("GLsizei")] int stride,
+        [NativeTypeName("GLsizei")] uint stride,
         [NativeTypeName("const void *")] Ref pointer
     );
 
@@ -55399,7 +55402,7 @@ public unsafe partial interface IGL
     void VertexAttribP1(
         [NativeTypeName("GLuint")] uint index,
         [NativeTypeName("GLenum")] uint type,
-        [NativeTypeName("GLboolean")] byte normalized,
+        [NativeTypeName("GLboolean")] uint normalized,
         [NativeTypeName("GLuint")] uint value
     );
 
@@ -55409,7 +55412,7 @@ public unsafe partial interface IGL
     void VertexAttribP1(
         [NativeTypeName("GLuint")] uint index,
         [NativeTypeName("GLenum")] uint type,
-        [NativeTypeName("GLboolean")] byte normalized,
+        [NativeTypeName("GLboolean")] uint normalized,
         [NativeTypeName("const GLuint *")] Ref<uint> value
     );
 
@@ -55419,7 +55422,7 @@ public unsafe partial interface IGL
     void VertexAttribP2(
         [NativeTypeName("GLuint")] uint index,
         [NativeTypeName("GLenum")] uint type,
-        [NativeTypeName("GLboolean")] byte normalized,
+        [NativeTypeName("GLboolean")] uint normalized,
         [NativeTypeName("GLuint")] uint value
     );
 
@@ -55429,7 +55432,7 @@ public unsafe partial interface IGL
     void VertexAttribP2(
         [NativeTypeName("GLuint")] uint index,
         [NativeTypeName("GLenum")] uint type,
-        [NativeTypeName("GLboolean")] byte normalized,
+        [NativeTypeName("GLboolean")] uint normalized,
         [NativeTypeName("const GLuint *")] Ref<uint> value
     );
 
@@ -55439,7 +55442,7 @@ public unsafe partial interface IGL
     void VertexAttribP3(
         [NativeTypeName("GLuint")] uint index,
         [NativeTypeName("GLenum")] uint type,
-        [NativeTypeName("GLboolean")] byte normalized,
+        [NativeTypeName("GLboolean")] uint normalized,
         [NativeTypeName("GLuint")] uint value
     );
 
@@ -55449,7 +55452,7 @@ public unsafe partial interface IGL
     void VertexAttribP3(
         [NativeTypeName("GLuint")] uint index,
         [NativeTypeName("GLenum")] uint type,
-        [NativeTypeName("GLboolean")] byte normalized,
+        [NativeTypeName("GLboolean")] uint normalized,
         [NativeTypeName("const GLuint *")] Ref<uint> value
     );
 
@@ -55459,7 +55462,7 @@ public unsafe partial interface IGL
     void VertexAttribP4(
         [NativeTypeName("GLuint")] uint index,
         [NativeTypeName("GLenum")] uint type,
-        [NativeTypeName("GLboolean")] byte normalized,
+        [NativeTypeName("GLboolean")] uint normalized,
         [NativeTypeName("GLuint")] uint value
     );
 
@@ -55469,7 +55472,7 @@ public unsafe partial interface IGL
     void VertexAttribP4(
         [NativeTypeName("GLuint")] uint index,
         [NativeTypeName("GLenum")] uint type,
-        [NativeTypeName("GLboolean")] byte normalized,
+        [NativeTypeName("GLboolean")] uint normalized,
         [NativeTypeName("const GLuint *")] Ref<uint> value
     );
 
@@ -55489,8 +55492,8 @@ public unsafe partial interface IGL
         [NativeTypeName("GLuint")] uint index,
         [NativeTypeName("GLint")] int size,
         [NativeTypeName("GLenum")] uint type,
-        [NativeTypeName("GLboolean")] byte normalized,
-        [NativeTypeName("GLsizei")] int stride,
+        [NativeTypeName("GLboolean")] uint normalized,
+        [NativeTypeName("GLsizei")] uint stride,
         [NativeTypeName("const void *")] Ref pointer
     );
 
@@ -55500,8 +55503,8 @@ public unsafe partial interface IGL
         [NativeTypeName("GLuint")] uint index,
         [NativeTypeName("GLint")] int size,
         [NativeTypeName("GLenum")] uint type,
-        [NativeTypeName("GLboolean")] byte normalized,
-        [NativeTypeName("GLsizei")] int stride,
+        [NativeTypeName("GLboolean")] uint normalized,
+        [NativeTypeName("GLsizei")] uint stride,
         [NativeTypeName("const void *")] Ref pointer
     );
 
@@ -55511,7 +55514,7 @@ public unsafe partial interface IGL
         [NativeTypeName("GLuint")] uint index,
         [NativeTypeName("GLint")] int fsize,
         [NativeTypeName("GLenum")] uint type,
-        [NativeTypeName("GLsizei")] int stride,
+        [NativeTypeName("GLsizei")] uint stride,
         [NativeTypeName("const void *")] Ref pointer
     );
 
@@ -55519,7 +55522,7 @@ public unsafe partial interface IGL
     [NativeFunction("opengl", EntryPoint = "glVertexAttribs1dvNV")]
     void VertexAttribs1dvNV(
         [NativeTypeName("GLuint")] uint index,
-        [NativeTypeName("GLsizei")] int count,
+        [NativeTypeName("GLsizei")] uint count,
         [NativeTypeName("const GLdouble *")] Ref<double> v
     );
 
@@ -55527,7 +55530,7 @@ public unsafe partial interface IGL
     [NativeFunction("opengl", EntryPoint = "glVertexAttribs1fvNV")]
     void VertexAttribs1fvNV(
         [NativeTypeName("GLuint")] uint index,
-        [NativeTypeName("GLsizei")] int count,
+        [NativeTypeName("GLsizei")] uint count,
         [NativeTypeName("const GLfloat *")] Ref<float> v
     );
 
@@ -55535,7 +55538,7 @@ public unsafe partial interface IGL
     [NativeFunction("opengl", EntryPoint = "glVertexAttribs1hvNV")]
     void VertexAttribs1hvNV(
         [NativeTypeName("GLuint")] uint index,
-        [NativeTypeName("GLsizei")] int n,
+        [NativeTypeName("GLsizei")] uint n,
         [NativeTypeName("const GLhalfNV *")] Ref<ushort> v
     );
 
@@ -55543,7 +55546,7 @@ public unsafe partial interface IGL
     [NativeFunction("opengl", EntryPoint = "glVertexAttribs1svNV")]
     void VertexAttribs1svNV(
         [NativeTypeName("GLuint")] uint index,
-        [NativeTypeName("GLsizei")] int count,
+        [NativeTypeName("GLsizei")] uint count,
         [NativeTypeName("const GLshort *")] Ref<short> v
     );
 
@@ -55551,7 +55554,7 @@ public unsafe partial interface IGL
     [NativeFunction("opengl", EntryPoint = "glVertexAttribs2dvNV")]
     void VertexAttribs2dvNV(
         [NativeTypeName("GLuint")] uint index,
-        [NativeTypeName("GLsizei")] int count,
+        [NativeTypeName("GLsizei")] uint count,
         [NativeTypeName("const GLdouble *")] Ref<double> v
     );
 
@@ -55559,7 +55562,7 @@ public unsafe partial interface IGL
     [NativeFunction("opengl", EntryPoint = "glVertexAttribs2fvNV")]
     void VertexAttribs2fvNV(
         [NativeTypeName("GLuint")] uint index,
-        [NativeTypeName("GLsizei")] int count,
+        [NativeTypeName("GLsizei")] uint count,
         [NativeTypeName("const GLfloat *")] Ref<float> v
     );
 
@@ -55567,7 +55570,7 @@ public unsafe partial interface IGL
     [NativeFunction("opengl", EntryPoint = "glVertexAttribs2hvNV")]
     void VertexAttribs2hvNV(
         [NativeTypeName("GLuint")] uint index,
-        [NativeTypeName("GLsizei")] int n,
+        [NativeTypeName("GLsizei")] uint n,
         [NativeTypeName("const GLhalfNV *")] Ref<ushort> v
     );
 
@@ -55575,7 +55578,7 @@ public unsafe partial interface IGL
     [NativeFunction("opengl", EntryPoint = "glVertexAttribs2svNV")]
     void VertexAttribs2svNV(
         [NativeTypeName("GLuint")] uint index,
-        [NativeTypeName("GLsizei")] int count,
+        [NativeTypeName("GLsizei")] uint count,
         [NativeTypeName("const GLshort *")] Ref<short> v
     );
 
@@ -55583,7 +55586,7 @@ public unsafe partial interface IGL
     [NativeFunction("opengl", EntryPoint = "glVertexAttribs3dvNV")]
     void VertexAttribs3dvNV(
         [NativeTypeName("GLuint")] uint index,
-        [NativeTypeName("GLsizei")] int count,
+        [NativeTypeName("GLsizei")] uint count,
         [NativeTypeName("const GLdouble *")] Ref<double> v
     );
 
@@ -55591,7 +55594,7 @@ public unsafe partial interface IGL
     [NativeFunction("opengl", EntryPoint = "glVertexAttribs3fvNV")]
     void VertexAttribs3fvNV(
         [NativeTypeName("GLuint")] uint index,
-        [NativeTypeName("GLsizei")] int count,
+        [NativeTypeName("GLsizei")] uint count,
         [NativeTypeName("const GLfloat *")] Ref<float> v
     );
 
@@ -55599,7 +55602,7 @@ public unsafe partial interface IGL
     [NativeFunction("opengl", EntryPoint = "glVertexAttribs3hvNV")]
     void VertexAttribs3hvNV(
         [NativeTypeName("GLuint")] uint index,
-        [NativeTypeName("GLsizei")] int n,
+        [NativeTypeName("GLsizei")] uint n,
         [NativeTypeName("const GLhalfNV *")] Ref<ushort> v
     );
 
@@ -55607,7 +55610,7 @@ public unsafe partial interface IGL
     [NativeFunction("opengl", EntryPoint = "glVertexAttribs3svNV")]
     void VertexAttribs3svNV(
         [NativeTypeName("GLuint")] uint index,
-        [NativeTypeName("GLsizei")] int count,
+        [NativeTypeName("GLsizei")] uint count,
         [NativeTypeName("const GLshort *")] Ref<short> v
     );
 
@@ -55615,7 +55618,7 @@ public unsafe partial interface IGL
     [NativeFunction("opengl", EntryPoint = "glVertexAttribs4dvNV")]
     void VertexAttribs4dvNV(
         [NativeTypeName("GLuint")] uint index,
-        [NativeTypeName("GLsizei")] int count,
+        [NativeTypeName("GLsizei")] uint count,
         [NativeTypeName("const GLdouble *")] Ref<double> v
     );
 
@@ -55623,7 +55626,7 @@ public unsafe partial interface IGL
     [NativeFunction("opengl", EntryPoint = "glVertexAttribs4fvNV")]
     void VertexAttribs4fvNV(
         [NativeTypeName("GLuint")] uint index,
-        [NativeTypeName("GLsizei")] int count,
+        [NativeTypeName("GLsizei")] uint count,
         [NativeTypeName("const GLfloat *")] Ref<float> v
     );
 
@@ -55631,7 +55634,7 @@ public unsafe partial interface IGL
     [NativeFunction("opengl", EntryPoint = "glVertexAttribs4hvNV")]
     void VertexAttribs4hvNV(
         [NativeTypeName("GLuint")] uint index,
-        [NativeTypeName("GLsizei")] int n,
+        [NativeTypeName("GLsizei")] uint n,
         [NativeTypeName("const GLhalfNV *")] Ref<ushort> v
     );
 
@@ -55639,7 +55642,7 @@ public unsafe partial interface IGL
     [NativeFunction("opengl", EntryPoint = "glVertexAttribs4svNV")]
     void VertexAttribs4svNV(
         [NativeTypeName("GLuint")] uint index,
-        [NativeTypeName("GLsizei")] int count,
+        [NativeTypeName("GLsizei")] uint count,
         [NativeTypeName("const GLshort *")] Ref<short> v
     );
 
@@ -55647,7 +55650,7 @@ public unsafe partial interface IGL
     [NativeFunction("opengl", EntryPoint = "glVertexAttribs4ubvNV")]
     void VertexAttribs4ubvNV(
         [NativeTypeName("GLuint")] uint index,
-        [NativeTypeName("GLsizei")] int count,
+        [NativeTypeName("GLsizei")] uint count,
         [NativeTypeName("const GLubyte *")] Ref<byte> v
     );
 
@@ -55683,7 +55686,7 @@ public unsafe partial interface IGL
     void VertexFormatNV(
         [NativeTypeName("GLint")] int size,
         [NativeTypeName("GLenum")] uint type,
-        [NativeTypeName("GLsizei")] int stride
+        [NativeTypeName("GLsizei")] uint stride
     );
 
     [SupportedApiProfile("gl", MaxVersion = "3.2")]
@@ -55725,7 +55728,7 @@ public unsafe partial interface IGL
     void VertexPointer(
         [NativeTypeName("GLint")] int size,
         [NativeTypeName("GLenum")] uint type,
-        [NativeTypeName("GLsizei")] int stride,
+        [NativeTypeName("GLsizei")] uint stride,
         [NativeTypeName("const void *")] Ref pointer
     );
 
@@ -55734,8 +55737,8 @@ public unsafe partial interface IGL
     void VertexPointerExt(
         [NativeTypeName("GLint")] int size,
         [NativeTypeName("GLenum")] uint type,
-        [NativeTypeName("GLsizei")] int stride,
-        [NativeTypeName("GLsizei")] int count,
+        [NativeTypeName("GLsizei")] uint stride,
+        [NativeTypeName("GLsizei")] uint count,
         [NativeTypeName("const void *")] Ref pointer
     );
 
@@ -56023,7 +56026,7 @@ public unsafe partial interface IGL
     void VertexWeightPointerExt(
         [NativeTypeName("GLint")] int size,
         [NativeTypeName("GLenum")] uint type,
-        [NativeTypeName("GLsizei")] int stride,
+        [NativeTypeName("GLsizei")] uint stride,
         [NativeTypeName("const void *")] Ref pointer
     );
 
@@ -56071,8 +56074,8 @@ public unsafe partial interface IGL
     void Viewport(
         [NativeTypeName("GLint")] int x,
         [NativeTypeName("GLint")] int y,
-        [NativeTypeName("GLsizei")] int width,
-        [NativeTypeName("GLsizei")] int height
+        [NativeTypeName("GLsizei")] uint width,
+        [NativeTypeName("GLsizei")] uint height
     );
 
     [SupportedApiProfile("glcore", MinVersion = "3.2")]
@@ -56080,7 +56083,7 @@ public unsafe partial interface IGL
     [NativeFunction("opengl", EntryPoint = "glViewportArrayv")]
     void ViewportArray(
         [NativeTypeName("GLuint")] uint first,
-        [NativeTypeName("GLsizei")] int count,
+        [NativeTypeName("GLsizei")] uint count,
         [NativeTypeName("const GLfloat *")] Ref<float> v
     );
 
@@ -56088,7 +56091,7 @@ public unsafe partial interface IGL
     [NativeFunction("opengl", EntryPoint = "glViewportArrayvNV")]
     void ViewportArrayvNV(
         [NativeTypeName("GLuint")] uint first,
-        [NativeTypeName("GLsizei")] int count,
+        [NativeTypeName("GLsizei")] uint count,
         [NativeTypeName("const GLfloat *")] Ref<float> v
     );
 
@@ -56096,7 +56099,7 @@ public unsafe partial interface IGL
     [NativeFunction("opengl", EntryPoint = "glViewportArrayvOES")]
     void ViewportArrayvOes(
         [NativeTypeName("GLuint")] uint first,
-        [NativeTypeName("GLsizei")] int count,
+        [NativeTypeName("GLsizei")] uint count,
         [NativeTypeName("const GLfloat *")] Ref<float> v
     );
 
@@ -56191,7 +56194,7 @@ public unsafe partial interface IGL
     [NativeFunction("opengl", EntryPoint = "glWaitSemaphoreui64NVX")]
     void WaitSemaphoreui64nvx(
         [NativeTypeName("GLuint")] uint waitGpu,
-        [NativeTypeName("GLsizei")] int fenceObjectCount,
+        [NativeTypeName("GLsizei")] uint fenceObjectCount,
         [NativeTypeName("const GLuint *")] Ref<uint> semaphoreArray,
         [NativeTypeName("const GLuint64 *")] Ref<ulong> fenceValueArray
     );
@@ -56254,7 +56257,7 @@ public unsafe partial interface IGL
     [NativeFunction("opengl", EntryPoint = "glWeightPathsNV")]
     void WeightPathsNV(
         [NativeTypeName("GLuint")] uint resultPath,
-        [NativeTypeName("GLsizei")] int numPaths,
+        [NativeTypeName("GLsizei")] uint numPaths,
         [NativeTypeName("const GLuint *")] Ref<uint> paths,
         [NativeTypeName("const GLfloat *")] Ref<float> weights
     );
@@ -56264,7 +56267,7 @@ public unsafe partial interface IGL
     void WeightPointerArb(
         [NativeTypeName("GLint")] int size,
         [NativeTypeName("GLenum")] uint type,
-        [NativeTypeName("GLsizei")] int stride,
+        [NativeTypeName("GLsizei")] uint stride,
         [NativeTypeName("const void *")] Ref pointer
     );
 
@@ -56273,7 +56276,7 @@ public unsafe partial interface IGL
     void WeightPointerOes(
         [NativeTypeName("GLint")] int size,
         [NativeTypeName("GLenum")] uint type,
-        [NativeTypeName("GLsizei")] int stride,
+        [NativeTypeName("GLsizei")] uint stride,
         [NativeTypeName("const void *")] Ref pointer
     );
 
@@ -56609,7 +56612,7 @@ public unsafe partial interface IGL
     [NativeFunction("opengl", EntryPoint = "glWindowRectanglesEXT")]
     void WindowRectanglesExt(
         [NativeTypeName("GLenum")] uint mode,
-        [NativeTypeName("GLsizei")] int count,
+        [NativeTypeName("GLsizei")] uint count,
         [NativeTypeName("const GLint *")] Ref<int> box
     );
 

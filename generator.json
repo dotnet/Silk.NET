@@ -2,19 +2,19 @@
   "Jobs": {
     "Microsoft": {
       "ClangSharpResponseFiles": [
-        "../../eng/submodules/terrafx.interop.windows/generation/**/generate.rsp"
+        "eng/submodules/terrafx.interop.windows/generation/**/generate.rsp"
       ],
       "ManualOverrides": {
-        "sources/Windows/um/icm/Windows.gen.cs": "../../eng/submodules/terrafx.interop.windows/sources/Interop/Windows/Windows/um/icm/Windows.cs",
-        "sources/Gdiplus/um/gdiplustypes/GpRect.gen.cs": "../../eng/submodules/terrafx.interop.windows/sources/Interop/Windows/Gdiplus/um/gdiplustypes/GpRect.cs",
-        "sources/Gdiplus/um/gdiplustypes/GpRectF.gen.cs": "../../eng/submodules/terrafx.interop.windows/sources/Interop/Windows/Gdiplus/um/gdiplustypes/GpRectF.cs",
-        "sources/Gdiplus/um/gdiplustypes/GpPathData.gen.cs": "../../eng/submodules/terrafx.interop.windows/sources/Interop/Windows/Gdiplus/um/gdiplustypes/GpPathData.cs"
+        "sources/Windows/um/icm/Windows.gen.cs": "eng/submodules/terrafx.interop.windows/sources/Interop/Windows/Windows/um/icm/Windows.cs",
+        "sources/Gdiplus/um/gdiplustypes/GpRect.gen.cs": "eng/submodules/terrafx.interop.windows/sources/Interop/Windows/Gdiplus/um/gdiplustypes/GpRect.cs",
+        "sources/Gdiplus/um/gdiplustypes/GpRectF.gen.cs": "eng/submodules/terrafx.interop.windows/sources/Interop/Windows/Gdiplus/um/gdiplustypes/GpRectF.cs",
+        "sources/Gdiplus/um/gdiplustypes/GpPathData.gen.cs": "eng/submodules/terrafx.interop.windows/sources/Interop/Windows/Gdiplus/um/gdiplustypes/GpPathData.cs"
       },
-      "InputSourceRoot": "../../eng/submodules/terrafx.interop.windows/sources/Interop/Windows",
-      "InputTestRoot": "../../eng/submodules/terrafx.interop.windows/tests/Interop/Windows",
-      "OutputSourceRoot": "../Windows",
-      "OutputTestRoot": "../../tests/Windows",
-      "Solution": "../../Silk.NET.sln",
+      "InputSourceRoot": "eng/submodules/terrafx.interop.windows/sources/Interop/Windows",
+      "InputTestRoot": "eng/submodules/terrafx.interop.windows/tests/Interop/Windows",
+      "OutputSourceRoot": "sources/Windows",
+      "OutputTestRoot": "tests/Windows",
+      "Solution": "Silk.NET.sln",
       "Mods": [
         "AddIncludes",
         "ChangeNamespace"
@@ -30,13 +30,13 @@
     },
     "GLFW": {
       "ClangSharpResponseFiles": [
-        "../../eng/silktouch/glfw/**/generate.rsp"
+        "eng/silktouch/glfw/**/generate.rsp"
       ],
-      "InputSourceRoot": "../GLFW",
-      "InputTestRoot": "../../tests/GLFW",
-      "OutputSourceRoot": "../GLFW",
-      "OutputTestRoot": "../../tests/GLFW",
-      "Solution": "../../Silk.NET.sln",
+      "InputSourceRoot": "sources/GLFW",
+      "InputTestRoot": "tests/GLFW",
+      "OutputSourceRoot": "sources/GLFW",
+      "OutputTestRoot": "tests/GLFW",
+      "Solution": "Silk.NET.sln",
       "Mods": [
         "AddIncludes",
         "AddOpaqueStructs",
@@ -54,13 +54,13 @@
     },
     "OpenGL": {
       "ClangSharpResponseFiles": [
-        "../../eng/silktouch/opengl/**/generate.rsp"
+        "eng/silktouch/opengl/**/generate.rsp"
       ],
-      "InputSourceRoot": "../OpenGL",
-      "InputTestRoot": "../../tests/OpenGL",
-      "OutputSourceRoot": "../OpenGL",
-      "OutputTestRoot": "../../tests/OpenGL",
-      "Solution": "../../Silk.NET.sln",
+      "InputSourceRoot": "sources/OpenGL",
+      "InputTestRoot": "tests/OpenGL",
+      "OutputSourceRoot": "sources/OpenGL",
+      "OutputTestRoot": "tests/OpenGL",
+      "Solution": "Silk.NET.sln",
       "Mods": [
         "AddIncludes",
         "AddApiProfiles",
