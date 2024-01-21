@@ -250,7 +250,6 @@ namespace Silk.NET.Windowing.Sdl
 
         public override void DoEvents()
         {
-            ClearEvents();
             do
             {
                 _platform.DoEvents();
@@ -260,18 +259,23 @@ namespace Silk.NET.Windowing.Sdl
         }
 
         private void ClearEvents()
-        {
-            var c = Events.Count;
-            for (var i = 0; i < c; i++)
+        { 
+            // remove events in reverse order to prevent shuffling in the list
+            for (var i = Events.Count - 1; i >= 0; i--)
             {
-                var @event = Events[0];
-                if (@event.Type == (uint) EventType.Dropfile)
-                {
-                    Sdl.Free(@event.Drop.File);
-                }
-
-                Events.RemoveAt(0);
+                RemoveEvent(i);
             }
+        }
+        
+        internal void RemoveEvent(int index)
+        {
+            var @event = Events[index];
+            if (@event.Type == (uint) EventType.Dropfile)
+            {
+                Sdl.Free(@event.Drop.File);
+            }
+
+            Events.RemoveAt(index);
         }
 
         ~SdlView()
@@ -397,7 +401,7 @@ namespace Silk.NET.Windowing.Sdl
 
                 if (!skipped)
                 {
-                    Events.RemoveAt(i);
+                    RemoveEvent(i);
                 }
             }
             
@@ -431,7 +435,7 @@ namespace Silk.NET.Windowing.Sdl
                     EventType.Mousemotion when @event.Motion.WindowID == _id => true,
                     EventType.Mousebuttondown when @event.Button.WindowID == _id => true,
                     EventType.Mousebuttonup when @event.Button.WindowID == _id => true,
-                    EventType.Mousewheel when @event.Motion.WindowID == _id => true,
+                    EventType.Mousewheel when @event.Wheel.WindowID == _id => true,
                     EventType.Joyaxismotion => true,
                     EventType.Joyballmotion => true,
                     EventType.Joyhatmotion => true,
@@ -471,6 +475,11 @@ namespace Silk.NET.Windowing.Sdl
             }
             
             EndEventProcessing(taken);
+        }
+
+        internal override void AfterProcessingEvents()
+        {
+            ClearEvents();
         }
     }
 }
