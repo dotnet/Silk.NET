@@ -66,16 +66,12 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Silk.NET.Maths.Benchmarks",
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Silk.NET.OpenGL", "sources\OpenGL\Silk.NET.OpenGL.csproj", "{9625C977-25BE-48F3-9B6F-BC94B8B799A6}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Silk.NET.NUKE", "eng\nuke\Silk.NET.NUKE.csproj", "{D0204E35-FC72-41D7-B5CF-2E0F75B3B836}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{D0204E35-FC72-41D7-B5CF-2E0F75B3B836}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{D0204E35-FC72-41D7-B5CF-2E0F75B3B836}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{76F747A6-D971-4162-BF35-A226177FCA08}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{76F747A6-D971-4162-BF35-A226177FCA08}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{76F747A6-D971-4162-BF35-A226177FCA08}.Release|Any CPU.ActiveCfg = Release|Any CPU
