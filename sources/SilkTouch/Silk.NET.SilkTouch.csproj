@@ -30,11 +30,6 @@
     <EmbeddedResource Include="Clang\VisualStudioVarPrint.bat" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Content Include="test.json" />
-
-  </ItemGroup>
-
 
 
 

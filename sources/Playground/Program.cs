@@ -41,7 +41,7 @@ unsafe
     GL.BindBuffer(GL.Constants.ArrayBuffer, vbo);
     GL.BufferData(
         GL.Constants.ArrayBuffer,
-        vertices.Length * sizeof(float),
+        (nuint)(vertices.Length * sizeof(float)),
         vertices[0].AsRef(), // TODO simplify this
         GL.Constants.StaticDraw
     );
