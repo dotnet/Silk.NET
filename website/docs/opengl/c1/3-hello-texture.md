@@ -15,40 +15,35 @@
 # 1.3 - Hello Texture
 <?# Info "You can view the source code for this tutorial [here](../sources/1.3-final-result.html). This tutorial builds on the previous tutorial. If you haven't read it, you can do so [here](1-hello-window.html)." /?>
 
-After a good time of work, we can finally see what we want on the screen, but we need a lot to create a good program!
-
+In the previous tutorial, we've shown you how to open an OpenGL window and draw a colored quad.
+ vh                                                          
 Another very important thing in graphics programming is the ability to draw images. In this tutorial, you'll learn:
 
-* What is a texture.
+* What a texture is.
 * How to send more data to shaders.
 * How to use texture coordinates.
 * How to import images as textures.
 * How shaders handle images.
+* How OpenGL handle transparency.
 * How to use texture parameters.
 * How to allow mipmaps.
 
-Like before, this tutorial will feature a lot of new content and info, so we'll take it slow and explain.
-
-## What is a texture
+## What a texture is
 Technically, textures are multidimensional objects that store color data.
 
-Mainly, textures store 2D data of the pixels of an image like a 2D array (this is just for comparison. Texture objects are a lot more
-complex than just 2D arrays!).
-This data can be used to be sanded to a shader, in an easy way for it can read.
+The most common type of texture is the 2D texture, which stores a 2D grid of pixels of an image (this is just for comparison.
+Texture objects are a lot more complex than just 2D arrays!).
+This data is stored in GPU memory, and can be read a shader.
 
-<?# Info "There's 1D or 3D texture objects, but we will focus on 2D" /?>
+<?# Info "There are multiple different dimensions of texture from 1D through to 3D. For the purposes of this tutorial, we will be focusing on 2D." /?>
 
-But don't think texturing objects is as easy as a simple drag-and-drop! Textures need some information to be drawn.
-The most important information that we need to send to the texture to see it on the screen is the texture coordinates.
-The texture coordinates are the positions of the texture at a particular vertex. Below we will learn how to fill out
-this data and read it from a shader.
-
+Textures are quite finicky to setup, and need quite a bit of information in order to be drawn.
+The most important piece of information that we need to send to the texture to see it on the screen are the texture coordinates.
+The texture coordinates are the positions within the texture for a particular vertex. Below we will learn how to fill out this data and read it from a shader.
 
 ## Sending more data to shaders
-With our new objective, let's learn how to send more data to shaders, and use it as texture coordinates.
-
-texture coordinates are a type of data that can be (and should be) manipulated by the vertex shader before be used by the fragment shader,
-so this is the way that we use to send the coordinates.
+Texture coordinates are a type of data that can be manipulated by the vertex shader before it is used by the fragment shader.
+This means that this data needs to be passed to the vertex shader which, as per the previous tutorials, is once again done using a vertex buffer.
 
 Let's go back to our `OnLoad` function and update our `vertices` array to the following:
 ```c#
@@ -67,28 +62,39 @@ With how we have structured the data, both the vertex and texture coordinates ca
 
 If we try to run our program now...
 
-![A really messed up quad!](../../../images/opengl/chapter1/leasson3/messed-up-quad.png)
+![A really messed up quad!](../../../images/opengl/chapter1/lesson3/messed-up-quad.png)
 
-"Oh no! We messed up with everything!" is what you should be thinking. And in reality, yes, we did. But it's simple to resolve, we just
-forgot to update our vertex layout definition.
+Well, that doesn't like the quad we were expected. This is because we have updated the vertex buffer we're passing to the vertex shader,
+but haven't updated anything else such as our vertex layout definition. Luckily, it's very easy to modify the the example vertex layout
+shown in the previous tutorial to work with our new texture coordinates.
 
-In our `VertexAttribPointer` calls, we declared a size of 3 and a stride of 3 for the `aPosition` attribute.
+In our `VertexAttribPointer` calls, we declared an `aPosition` attribute with a size of 3 floats and a stride of 12 bytes (`3 * sizeof(float)` equals 12).
 Because of this, our buffer is being read like this:
 
-![Buffer reading wrong data](../../../images/opengl/chapter1/leasson3/wrong-pointers.png)
+![Buffer reading wrong data](../../../images/opengl/chapter1/lesson3/wrong-pointers.png)
+
+As you can see, the vertex buffer is being read as if the first vertex was composed of the first three floats in the buffer, then the second
+vertex the next three floats, the third vertex the next three, and so on and so forth. As we can see however, this is now wrong! Since each
+vertex has two UV floats after its three position floats, this means that the first vertex's U and V floats are being read as the second
+vertex X and Y position floats!
+
 
 To fix this, we just need to go back to our `VertexAttribPointer()`, which is below our shader compiling section, and
 change it to:
 ```c#
-//                                        3 position + 2 texture coordinates! \/
+//                       3 floats for position + 2 floats for texture coordinates! \/
 _gl.VertexAttribPointer(positionLoc, 3, VertexAttribPointerType.Float, false, 5 * sizeof(float), (void*)0);
 ```
+The value `3` in the seccond parameter are
 
-This will make the buffer be read like that (including the texture coordinate pointer):
-![Buffer reading right data](../../../images/opengl/chapter1/leasson3/right-pointers.png)
+This will make the buffer be read like this (including the texture coordinate pointer, which we'll add into our code later):
 
+![Buffer reading right data](../../../images/opengl/chapter1/lesson3/right-pointers.png)
 
-And if we run the program now, we can see our quad again!
+Now the positions of each vertex are being read correctly! Each position is still three floats, but by skipping the two floats after each position,
+we skip over the U and V floats in between each XYZ floats, thus reading them correctly.
+
+If we run the program now, we can see our quad again!
 
 ## Using texture coordinates
 Now, we just need to prepare the shader to receive the texture coordinate values. For that, we need to modify both our shaders.
@@ -98,34 +104,41 @@ Vertex Shader:
 #version 330 core
 
 layout (location = 0) in vec3 aPosition;
-layout (location = 1) in vec2 aTextureCoord;    // < Add this
+// Add an new input attribute for the texture coordinates
+layout (location = 1) in vec2 aTextureCoord;
 
-//This line stores the data that we want to be received by the fragment
-out vec2 frag_texCoords;                        // < This
+// Add an output variable to pass the texture coordinate to the fragment shader
+// This line stores the data that we want to be received by the fragment
+out vec2 frag_texCoords;
 
 void main()
 {
     gl_Position = vec4(aPosition, 1.0);
-    frag_texCoords = aTextureCoord;             // < And this too
-    // Remember to assigin the data!
+    // Assigin the texture coordinates without any modification to be recived in the fragment
+    frag_texCoords = aTextureCoord;
 }";
 ```
+in this case, we are putting manually the `location` of `aTextureCoord` as 1, because we already have a attribute in the location 0.
+
 
 Fragment Shader:
 ```
 #version 330 core
 
-// frag_texCoords comes from vertex shader!
-in vec2 frag_texCoords; // < Add this
+// Receive the input from the vertex shader in an attribute
+in vec2 frag_texCoords;
 
 out vec4 out_color;
 
 void main()
 {
     // This will allow us to see the texture coordinates in action!
-    out_color = vec4(frag_texCoords.x, frag_texCoords.y, 0, 1.0);
+    out_color = vec4(frag_texCoords.x, frag_texCoords.y, 0.0, 1.0);
 }
 ```
+As you already know, the Vertex Shader run for every vertex of the mesh and the Fragment Shader run for every pixel inside the mesh.
+This conversion looks weird in first look, but the data comunication between vertex and fragment shader are surely possible because
+OpenGL, automatcally, interpolate the data recived in the Vertex Shader when it's received by the Fragment.
 
 Now we just need to assign the correct layout for `aTextureCoord`. You should add these lines below our first `VertexAttribPointer` call:
 
@@ -135,22 +148,27 @@ _gl.EnableVertexAttribArray(texCoordLoc);
 _gl.VertexAttribPointer(texCoordLoc, 2, VertexAttribPointerType.Float, false, 5 * sizeof(float), (void*)(3 * sizeof(float)));
 ```
 
-Pay attention to the last parameter, the pointer! It represents the size of bytes that should be jumped at the start of
-each stride. It means GL will add 3 indexes after stride and pick the consecutive 2 values.
-if you do everything right, you will see this result!
+Pay attention to the last parameter, the pointer! It represents the number of bytes by which the offset within the vertex buffer
+should be incremented before reading the vertex attribute data. This means that for this attribute OpenGL will advance past first
+3 floats (`3 * sizeof(float)`) worth of data (which are our vertex coordinates) and instead read the next 2 floats after that.
 
-![Quad with UVs](../../../images/opengl/chapter1/leasson3/quad-with-uvs.png)
+If you do everything rightyou will see this result!
+
+![Quad with UVs](../../../images/opengl/chapter1/lesson3/quad-with-uvs.png)
 
 But we aren't there just yet. We can't see any texture in our quad!
 What you are seeing is the texture coordinates we passed displayed as a color!
 
-What does this mean? The colors that you see are the texture coordinate values of that pixel. As a way to demonstrate it, we're converting
-the numeric values to color values to see what we are doing. In the shader, the values are being read like this:
+The Red, Green and mix between these two colors you see are, respectively, the X and Y texture coordinate values of that pixel.
+In the shader, the values are being read like this:
 
-![UV values](../../../images/opengl/chapter1/leasson3/quad-with-uvs-and-numbers.png)
+![UV values](../../../images/opengl/chapter1/lesson3/quad-with-uvs-and-numbers.png)
 
-The neat part is that the fragment shader already interpolates the coordinates! So we don't need to do that ourselves, and can just send a value per
-vertex. It saves a lot of work on our end!
+As you can see, the higher the U coordinate, the redder the pixel, and the higher the V coordinate, the greener the pixel.
+Even though we only specified UV values for each vertex, all pixels in the quad have UV values! That's because, as you read before,
+the fragment shader interpolates the coordinates for us, saving us a lot of work on our end.
+If we follow the diagonal from (0, 0) to (1, 1), we get the red and green colors growing together. The result of adding together
+red and green in the RGB color space is yellow!
 
 ## Importing images as textures
 Now for the fun part: rendering an image!
@@ -160,12 +178,13 @@ To start this section, first download
 We will use this image in this tutorial!
 
 In most cases with OpenGL, textures are uploaded as a sequence of bytes, this is usually done with a layout of 4 bytes per pixel (Red, Green, Blue, and Alpha).
-The hard part is: we can't just upload the bytes of a .png or .jpg file! These formats have a lot of unnecessary data, like headers and most importantly
+The hard part is: we can't just upload the bytes of a `.png` or `.jpg` file! These formats have a lot of unnecessary data, like headers and most importantly
 compression, which the GPU generally cannot understand.
 
 To load an image file as a byte array, we will first need a external library. In our case, we will use StbImageSharp.
 
-First of all, install the library using NuGet. To do so, run the following command:
+First of all, install the library using NuGet. To do so, you can use your IDE's NuGet package manager,
+or you can run the following command inside your project folder:
 ```
 dotnet add package StbImageSharp
 ```
@@ -181,12 +200,13 @@ private static uint _texture;
 ```
 
 Returning to your `OnLoad` method, add this line at the end of the method to create, and bind the texture.
-That `ActiveTexture` call is telling OpenGL that we are wanting to use the first texture slot.
+That `ActiveTexture` call is telling OpenGL that we are wanting to use the first texture unit.
 ```c#
 _texture = _gl.GenTexture();
 _gl.ActiveTexture(TextureUnit.Texture0);
 _gl.BindTexture(TextureTarget.Texture2D, _texture);
 ```
+<?# info "A texture unit is a space in memory that refers to our texture object. Instead bind the texture object to the sampler, we bind the texture unit!" /?>
 
 After that, we need to load the image. You can do it with the following line:
 ```c#
@@ -194,7 +214,7 @@ After that, we need to load the image. You can do it with the following line:
 ImageResult result = ImageResult.FromMemory(File.ReadAllBytes("silk.png"), ColorComponents.RedGreenBlueAlpha);
 ```
 
-Now, with the image in memory, we need to upload the data to the GPU texture. To dot hat, we need a pointer for our bytes, the width, and the height of
+Now, with the image in memory, we need to upload the data to the GPU texture. To dot that, we need a pointer for our bytes, the width, and the height of
 the texture. None of it is hardcoded, you get all this information inside `ImageResult`.
 ```c#
 // Define a pointer to the image data
@@ -204,13 +224,22 @@ fixed (byte* ptr = result.Data)
         (uint)result.Height, 0, PixelFormat.Rgba, PixelType.UnsignedByte, ptr);
 ```
 
-You don't need to understand what all these values mean! The OpenGL documentation explains it all in depth. Right now
-let's just continue with the basics!
+Remember when we talked about the different types of textures (1D, 2D, 3D, etc)? Well, how does OpenGL know what type of texture we want when we call `GenTexture()`?
+The answer is, _it does not!_ So the first thing this call does is tell OpenGL that our texture is a 2D texture (alternatively, if we'd have used TexImage1D or
+TexImage3D, we'd have gotten a 1D or 3D texture respectively).
+
+Then we specify the format of our texture's pixels. Pixels can be represented in a variety of formats; we'll use RGB, but pixels can also be R (just red),
+RG (red and green), or even floating point types! After that we specify the width and height of the 2D texture, and lastly we specify data to upload to the texture.
+
+`TexImage2D` allows us to not only set the texture's type, but also optionally upload its image data. `PixelFormat.Rgba` and `PixelType.UnsignedByte` indicate,
+respectively, that we're uploading raw pixel data organized in RGBA format, with each pixel channel (R, G, B, and A) being an unsigned byte. If we wanted to create
+the texture without setting any data, we would replace `ptr` with a null pointer, `(void*)0`.
 
 Now, with the texture data sent off to the GPU, we need to configure the texture parameters. This is one of the most important steps. It is with these
 parameters that the shader knows how to sample colors from the texture using our provided texture coordinates.
 
-For now, you don't need to understand what these do. We will elaborate on it in the future. Just add these lines after you upload the texture data.
+These will be explained in depth in [the following section on texture parameters](#texture-parameters).
+Briefly, these affect how the texture is sampled when we use it in the shader.
 ```c#
 _gl.TextureParameter(_texture, TextureParameterName.TextureWrapS, (int) TextureWrapMode.Repeat);
 _gl.TextureParameter(_texture, TextureParameterName.TextureWrapT, (int) TextureWrapMode.Repeat);
@@ -218,7 +247,7 @@ _gl.TextureParameter(_texture, TextureParameterName.TextureMinFilter, (int) Text
 _gl.TextureParameter(_texture, TextureParameterName.TextureMagFilter, (int) TextureMagFilter.Linear);
 ```
 
-And now, we just need to unbind the texture.
+And now, as we did with the another resources, let's unbind the texture for clean up!
 ```c#
 _gl.BindTexture(TextureTarget.Texture2D, 0);
 ```
@@ -240,32 +269,66 @@ void main()
 }
 ```
 
-In GLSL, you usually dont work with textures directly. The most common way to access a texture is using a `sampler`.
+In GLSL, you usually don't work with textures directly. The most common way to access a texture is using a `sampler`.
 In our case, we are using `sampler2D` for our 2D texture.
 To read the texture data, the `texture` method is used. It samples the color of the texture at the
 specified texture coordinates and uses the previously set parameters to interpolate that color.
 
 But pay attention! If you have good eyes, you noticed our texture coordinates are between the ranges of `0.0` to `1.0` This is because the `texture` method works
-with normalized values! If you dont understand, think about a 250x500 pixels image. If you want to get the pixel at the position
-(250, 250), we need to send (1, 0.5) as the texture coordinate. You can derive the pixel coordinate from the normalized coordinate by multiplying by the axis' size.
+with normalized values! To better understand this, think about a 250x500 pixels image. If you want to get the pixel at the position
+(250, 250), we need to send (250 / width, 250 / height), or (1, 0.5), as the texture coordinate. This way the size of the texture doesn't matter to the shader!
 
 <?# Info "You can use the equation ` 1/size * pixel_position ` to get the normalized coordinate for a particlar axis!" /?>
 
 Now, if you run the program, you will see just a black quad. It's because we need to bind the texture before the draw call!
-If you don't do it, the last applied texture will be used for this mesh, in our case, since we have no texture bound, no texture is used.
+If you don't do it, the last applied texture will be used for this mesh, in our case, since we have no texture bound after the clean up, no texture is used.
 
-To solve it, go to your `OnRender` method and, below the `_gl.UseProgram()` call, first activate the texture slot that you will use:
+To solve it, go to your `OnRender` method and, below the `_gl.UseProgram()` call, first activate the texture unit that you will use:
 ```c#
 _gl.ActiveTexture(TextureUnit.Texture0);
 ```
-And after, bind the texture!
+As explaned before, a texture unit is a space in memory that refers to the texture object, like a pointer. We need to first active this "pointer" to use it.
+
+After that we bind the texture again. Doing it after activating the texture unit will automatically attatch the texture at the texture unit 0, as a 2D texture.
 ```c#
 _gl.BindTexture(TextureTarget.Texture2D, _texture);
 ```
+With it, the texture in the texture unit 0 should be sampled for the 1° Sampler2D.
+
 
 And now when you run it (drumroll...), you can see the image being drawn inside the quad!
 
-![Quad with texture](../../../images/opengl/chapter1/leasson3/quad-with-texture.png)
+![Quad with texture](../../../images/opengl/chapter1/lesson3/quad-with-texture.png)
+
+you can see the code final result [clicking here](../sources/1.3-final-result.html).
+
+## Transparency in OpenGL
+Well, you must have noticed the black rectangle around the texture. If you used another program to check the used texture, it's completely transparent!
+So why our render are drawing it like it's not?
+Basically because, for OpenGL eyes, it's not!
+
+Transparency is a really expensive task in computer graphics. This is not a reason for you not to use this feature, but is a reason for OpenGL don't enable it
+as default. OpenGL have different ways to handle transparency and it's expected tuser choose for that.
+
+First of all, we need to enable the blend capability. at the end of `onLoad` method, add the following line:
+```c#
+_gl.Enable(EnableCap.Blend);
+```
+Enabling blend, now OpenGL knows it should do something with the alpha value of each pixel. But what will be made?
+For define this, we use the following line:
+```c#
+_gl.BlendFunc(BlendingFactor.SrcAlpha, BlendingFactor.OneMinusSrcAlpha);
+```
+
+The `BlendFunc()` method define the function of blending of each pixel.
+In this case we are difining `BlendingFactor.SrcAlpha` as the source factor and `BlendingFactor.OneMinusSrcAlpha` as the destination blending factor;
+With this, we have a standard transparence function that will work as expected for almost all your renders.
+
+If not, you also have a lot more bledin factors to use. See the complete list in [khronos.org](https://registry.khronos.org/OpenGL-Refpages/gl4/html/glBlendFunc.xhtml).
+
+And when you run the program now, the transparent pixels of the image will not be visible anymore:
+
+![Quad with texture and transparency](../../../images/opengl/chapter1/lesson3/quad-with-transparency.png)
 
 ## Texture parameters
 And now, some extra content to go with this tutorial!
@@ -274,7 +337,7 @@ If you get curious about how the texture parameters work, let's learn it now!
 
 First, let's learn the structure of the command:
 ```c#
-_gl.TextureParameter( [Texture ID] , [Parameter to change] , [Value to change] );
+_gl.TextureParameter( [Texture ID] , [Parameter to change] , [New value for parameter] );
 ```
 
 The texture ID you already know. So let's learn what each parameter means!
@@ -286,20 +349,16 @@ greater than 1. The `S` and `T` refer to X and Y respectively.
 Let's see the most common values for these parameters:
 
 #### `TextureWrapMode.Repeat`:
-Just repeats the image without any change, like the value never got less than 0 or greater than 1.  
-![Repeat](../../../images/opengl/chapter1/leasson3/texParameters/repeat.png)
+Just repeats the image without any change, turning any coordinates outside the [0, 1) range by taking the fractional part of said number.  
+![Repeat](../../../images/opengl/chapter1/lesson3/texParameters/repeat.png)
 
 #### `TextureWrapMode.MirroredRepeat`:
 Mirror the texture for each 1 texture coordinate unit.  
-![Mirrored](../../../images/opengl/chapter1/leasson3/texParameters/repeatMirrored.png)
-
-#### `TextureWrapMode.ClampToBorder`:
-Returns a solid color when the coordinate is less than 0 or greater than 1.  
-![A big border](../../../images/opengl/chapter1/leasson3/texParameters/clampToBorder.png)
+![Mirrored](../../../images/opengl/chapter1/lesson3/texParameters/repeatMirrored.png)
 
 #### `TextureWrapMode.ClampToEdge`:
 Returns the pixel on the respective edge of the image.  
-![A weird border](../../../images/opengl/chapter1/leasson3/texParameters/clampToEdge.png)
+![A weird border](../../../images/opengl/chapter1/lesson3/texParameters/clampToEdge.png)
 
 ### `TextureMinFilter` & `TextureMagFilter`:
 Texture `min` and `mag` filters are the filters used when the texture's final size is, respectively, less than or greater than the original size.
@@ -313,13 +372,13 @@ pixels of the pixel in the center of the texture coordinates and will return a l
 This is an example from [Learn OpenGL](https://learnopengl.com/Getting-started/Textures). See how the neighbor colors are interpolated to return a different
 color:
 
-![linear filter](../../../images/opengl/chapter1/leasson3/texParameters/filter_linear.png)
+![linear filter](../../../images/opengl/chapter1/lesson3/texParameters/filter_linear.png)
 
 
 #### `Texture(Min/Mag)Filter.Nearest`:
 The nearest filter returns the color of the center of the nearest pixel, no interpolation is done.
 
-![Nearest filter](../../../images/opengl/chapter1/leasson3/texParameters/filter_nearest.png)
+![Nearest filter](../../../images/opengl/chapter1/lesson3/texParameters/filter_nearest.png)
 
 ## Mipmaps
 Now for the last part of this tutorial. Mipmaps are an essential resource for making good renders.
@@ -327,7 +386,7 @@ Now for the last part of this tutorial. Mipmaps are an essential resource for ma
 But first, what are Mipmaps?
 
 Mipmaps are a map of tiny versions of the texture. The following is an example of mipmap texture:
-![An example of a Mipmap texture](../../../images/opengl/chapter1/leasson3/example_mipmap.png)
+![An example of a Mipmap texture](../../../images/opengl/chapter1/lesson3/example_mipmap.png)
 
 But what is this used for?
 
@@ -341,7 +400,7 @@ eliminating the moiré effect.
 An example from [Wikipedia](https://en.wikipedia.org/wiki/File:Mipmap_Aliasing_Comparison.png). It's possible to notice weird patterns
 generated far away in the render without mipmaps:
 
-![Mipmap usage example](../../../images/opengl/chapter1/leasson3/mipmap_comparation.png)
+![Mipmap usage example](../../../images/opengl/chapter1/lesson3/mipmap_comparation.png)
 
 But if you think that generating mipmaps by hand for all your textures is really hard work, don't worry! OpenGL provides a special method to
 do this for you.
