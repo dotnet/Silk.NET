@@ -289,7 +289,13 @@ namespace Silk.NET.Windowing.Internals
             _inRenderLoop = true;
             DoEvents();
             ProcessEvents?.Invoke();
+            AfterProcessingEvents();
             _inRenderLoop = false;
+        }
+        
+        internal virtual void AfterProcessingEvents()
+        {
+            // used by sdl2 windows to clear events
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining | (MethodImplOptions) 512)]
