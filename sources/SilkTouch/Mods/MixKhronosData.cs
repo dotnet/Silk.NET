@@ -232,7 +232,7 @@ public partial class MixKhronosData(
                 }
             }
 
-            // Another hack top make sure that extension vendors are preserved as acronyms e.g. glTexImage4DSGIS was
+            // Another hack to make sure that extension vendors are preserved as acronyms e.g. glTexImage4DSGIS was
             // becoming glTexImage4Dsgis instead of glTexImage4DSGIS
             if (current.Any(char.IsLower) && char.IsUpper(newCurrent[^1]) && identifiedVendor is not null)
             {
