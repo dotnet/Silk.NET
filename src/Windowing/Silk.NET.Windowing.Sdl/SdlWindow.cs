@@ -417,7 +417,7 @@ namespace Silk.NET.Windowing.Sdl
 
                 if (!skipped)
                 {
-                    Events.RemoveAt(i);
+                    RemoveEvent(i);
                 }
             }
 
