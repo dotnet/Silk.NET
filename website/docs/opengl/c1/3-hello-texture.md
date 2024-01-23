@@ -16,7 +16,7 @@
 <?# Info "You can view the source code for this tutorial [here](../sources/1.3-final-result.html). This tutorial builds on the previous tutorial. If you haven't read it, you can do so [here](1-hello-window.html)." /?>
 
 In the previous tutorial, we've shown you how to open an OpenGL window and draw a colored quad.
- vh                                                          
+                                                    
 Another very important thing in graphics programming is the ability to draw images. In this tutorial, you'll learn:
 
 * What a texture is.
@@ -104,11 +104,11 @@ Vertex Shader:
 #version 330 core
 
 layout (location = 0) in vec3 aPosition;
-// Add an new input attribute for the texture coordinates
+// Add a new input attribute for the texture coordinates
 layout (location = 1) in vec2 aTextureCoord;
 
 // Add an output variable to pass the texture coordinate to the fragment shader
-// This line stores the data that we want to be received by the fragment
+// This variable stores the data that we want to be received by the fragment
 out vec2 frag_texCoords;
 
 void main()
@@ -136,9 +136,9 @@ void main()
     out_color = vec4(frag_texCoords.x, frag_texCoords.y, 0.0, 1.0);
 }
 ```
-As you already know, the Vertex Shader run for every vertex of the mesh and the Fragment Shader run for every pixel inside the mesh.
-This conversion looks weird in first look, but the data comunication between vertex and fragment shader are surely possible because
-OpenGL, automatcally, interpolate the data recived in the Vertex Shader when it's received by the Fragment.
+As you already know, the Vertex Shader runs for every vertex of the mesh and the Fragment Shader runs for every pixel inside the mesh.
+This conversion looks weird at first glance, but the data communication between vertex and fragment shader are surely possible because
+OpenGL automatically interpolates the data outputted by the Vertex Shader when it's received by the Fragment Shader.
 
 Now we just need to assign the correct layout for `aTextureCoord`. You should add these lines below our first `VertexAttribPointer` call:
 
@@ -147,12 +147,14 @@ const uint texCoordLoc = 1;
 _gl.EnableVertexAttribArray(texCoordLoc);
 _gl.VertexAttribPointer(texCoordLoc, 2, VertexAttribPointerType.Float, false, 5 * sizeof(float), (void*)(3 * sizeof(float)));
 ```
+Here we're specifying a new vertex attribute, which consists of two floats and repeats every 20 bytes (`5 * sizeof(float)` = 20,
+that's the size of one vertex).
 
 Pay attention to the last parameter, the pointer! It represents the number of bytes by which the offset within the vertex buffer
 should be incremented before reading the vertex attribute data. This means that for this attribute OpenGL will advance past first
-3 floats (`3 * sizeof(float)`) worth of data (which are our vertex coordinates) and instead read the next 2 floats after that.
+3 floats (`3 * sizeof(float)`) worth of data (which are our vertex XYZ coordinates) and instead read the next 2 floats after that.
 
-If you do everything rightyou will see this result!
+If you do everything right, you will see this result!
 
 ![Quad with UVs](../../../images/opengl/chapter1/lesson3/quad-with-uvs.png)
 
@@ -178,8 +180,8 @@ To start this section, first download
 We will use this image in this tutorial!
 
 In most cases with OpenGL, textures are uploaded as a sequence of bytes, this is usually done with a layout of 4 bytes per pixel (Red, Green, Blue, and Alpha).
-The hard part is: we can't just upload the bytes of a `.png` or `.jpg` file! These formats have a lot of unnecessary data, like headers and most importantly
-compression, which the GPU generally cannot understand.
+The hard part is: we can't just upload the bytes of a `.png` or `.jpg` file! These formats have a lot of unnecessary data, like headers and, most importantly,
+they're compressed, which the GPU generally cannot understand.
 
 To load an image file as a byte array, we will first need a external library. In our case, we will use StbImageSharp.
 
@@ -206,7 +208,8 @@ _texture = _gl.GenTexture();
 _gl.ActiveTexture(TextureUnit.Texture0);
 _gl.BindTexture(TextureTarget.Texture2D, _texture);
 ```
-<?# info "A texture unit is a space in memory that refers to our texture object. Instead bind the texture object to the sampler, we bind the texture unit!" /?>
+<?# info "Texture units are locations in the OpenGL state where textures can be bound. Instead of textures being specified directly to shader samplers,
+textures are bound to a texture unit, and the texture unit is then specified to the shader sampler." /?>
 
 After that, we need to load the image. You can do it with the following line:
 ```c#
@@ -214,7 +217,7 @@ After that, we need to load the image. You can do it with the following line:
 ImageResult result = ImageResult.FromMemory(File.ReadAllBytes("silk.png"), ColorComponents.RedGreenBlueAlpha);
 ```
 
-Now, with the image in memory, we need to upload the data to the GPU texture. To dot that, we need a pointer for our bytes, the width, and the height of
+Now, with the image in memory, we need to upload the data to the GPU texture. To do that, we need a pointer for our bytes, the width, and the height of
 the texture. None of it is hardcoded, you get all this information inside `ImageResult`.
 ```c#
 // Define a pointer to the image data
@@ -247,7 +250,7 @@ _gl.TextureParameter(_texture, TextureParameterName.TextureMinFilter, (int) Text
 _gl.TextureParameter(_texture, TextureParameterName.TextureMagFilter, (int) TextureMagFilter.Linear);
 ```
 
-And now, as we did with the another resources, let's unbind the texture for clean up!
+And now, as we did with the another resources, let's unbind the texture to clean up!
 ```c#
 _gl.BindTexture(TextureTarget.Texture2D, 0);
 ```
@@ -300,8 +303,6 @@ And now when you run it (drumroll...), you can see the image being drawn inside 
 
 ![Quad with texture](../../../images/opengl/chapter1/lesson3/quad-with-texture.png)
 
-you can see the code final result [clicking here](../sources/1.3-final-result.html).
-
 ## Transparency in OpenGL
 Well, you must have noticed the black rectangle around the texture. If you used another program to check the used texture, it's completely transparent!
 So why our render are drawing it like it's not?
@@ -329,6 +330,8 @@ If not, you also have a lot more bledin factors to use. See the complete list in
 And when you run the program now, the transparent pixels of the image will not be visible anymore:
 
 ![Quad with texture and transparency](../../../images/opengl/chapter1/lesson3/quad-with-transparency.png)
+
+you can see the code final result [clicking here](../sources/1.3-final-result.html).
 
 ## Texture parameters
 And now, some extra content to go with this tutorial!
