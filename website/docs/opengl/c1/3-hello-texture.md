@@ -244,10 +244,10 @@ parameters that the shader knows how to sample colors from the texture using our
 These will be explained in depth in [the following section on texture parameters](#texture-parameters).
 Briefly, these affect how the texture is sampled when we use it in the shader.
 ```c#
-_gl.TextureParameter(_texture, TextureParameterName.TextureWrapS, (int) TextureWrapMode.Repeat);
-_gl.TextureParameter(_texture, TextureParameterName.TextureWrapT, (int) TextureWrapMode.Repeat);
-_gl.TextureParameter(_texture, TextureParameterName.TextureMinFilter, (int) TextureMinFilter.Linear);
-_gl.TextureParameter(_texture, TextureParameterName.TextureMagFilter, (int) TextureMagFilter.Linear);
+_gl.TexParameterI(GLEnum.Texture2D, GLEnum.TextureWrapS, (int)TextureWrapMode.Repeat);
+_gl.TexParameterI(GLEnum.Texture2D, GLEnum.TextureWrapT, (int)TextureWrapMode.Repeat);
+_gl.TexParameterI(GLEnum.Texture2D, GLEnum.TextureMinFilter, (int)TextureMinFilter.Nearest);
+_gl.TexParameterI(GLEnum.Texture2D, GLEnum.TextureMagFilter, (int)TextureMagFilter.Nearest);
 ```
 
 And now, as we did with the another resources, let's unbind the texture to clean up!
@@ -340,13 +340,14 @@ If you get curious about how the texture parameters work, let's learn it now!
 
 First, let's learn the structure of the command:
 ```c#
-_gl.TextureParameter( [Texture ID] , [Parameter to change] , [New value for parameter] );
+_gl.TexParameter( [Texture ID] , [Parameter to change] , [New value for parameter] );
+// The sulfix of TextureParameter will variate depending on the type of the expected value for the parameter
 ```
 
 The texture ID you already know. So let's learn what each parameter means!
 
 ### `TextureWrapS` & `TextureWrapT`:
-`TextureWrap` is the parameter that allows you to say what the `texture` method (in the fragment shader) should do with values less than 0 and
+`TextureWrap` is the parameter that allows you to say what the `texture` method (in the fragment shader) should do with values lesser than 0 and
 greater than 1. The `S` and `T` refer to X and Y respectively.
 
 Let's see the most common values for these parameters:
@@ -364,7 +365,7 @@ Returns the pixel on the respective edge of the image.
 ![A weird border](../../../images/opengl/chapter1/lesson3/texParameters/clampToEdge.png)
 
 ### `TextureMinFilter` & `TextureMagFilter`:
-Texture `min` and `mag` filters are the filters used when the texture's final size is, respectively, less than or greater than the original size.
+Texture `min` and `mag` filters are the filters used when the texture's final size is, respectively, lesser than or greater than the original size.
 For now, we will show just the main two options and in the next section (Mipmaps), some others will be shown.
 
 
@@ -382,6 +383,8 @@ color:
 The nearest filter returns the color of the center of the nearest pixel, no interpolation is done.
 
 ![Nearest filter](../../../images/opengl/chapter1/lesson3/texParameters/filter_nearest.png)
+
+<?# Info "As `TexParameter` functions don't accepts enuns, you will have to do a explicit convertion using `(int)` in a `TexParameterI`, for integer parameters." /?> 
 
 ## Mipmaps
 Now for the last part of this tutorial. Mipmaps are an essential resource for making good renders.
