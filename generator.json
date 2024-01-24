@@ -66,9 +66,9 @@
         "AddApiProfiles",
         "MixKhronosData",
         "AddOpaqueStructs",
-        "TransformFunctions",
         "PrettifyNames",
-        "AddVTables"
+        "AddVTables",
+        "TransformFunctions"
       ],
       "AddApiProfiles": {
         "Profiles": [

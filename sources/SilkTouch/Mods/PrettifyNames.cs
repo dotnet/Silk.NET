@@ -99,7 +99,7 @@ public class PrettifyNames(
                     constNames = new Dictionary<string, (string Primary, List<string>?)>();
                 }
 
-                var functionNames = functions?.ToDictionary(
+                var functionNames = functions?.DistinctBy(x => x.Name).ToDictionary(
                     x => x.Name,
                     x => (Primary: x.Name, (List<string>?)null)
                 );

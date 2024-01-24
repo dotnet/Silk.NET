@@ -39,8 +39,8 @@ public class FunctionTransformer(IEnumerable<IFunctionTransformer> transformers)
         foreach (var function in functions)
         {
             var idx = ret.Count;
-            GetTransformedFunctions(function, transform);
-            if (includeOriginal && !ret.Contains(function))
+            ret.Remove(GetTransformedFunctions(function, transform));
+            if (includeOriginal)
             {
                 ret.Insert(idx, function);
             }
@@ -53,14 +53,14 @@ public class FunctionTransformer(IEnumerable<IFunctionTransformer> transformers)
         return ret;
     }
 
-    private void GetTransformedFunctions(
+    private MethodDeclarationSyntax GetTransformedFunctions(
         MethodDeclarationSyntax function,
         Action<MethodDeclarationSyntax> transform
     )
     {
-        if (function.ExplicitInterfaceSpecifier is null)
+        if (function.ExplicitInterfaceSpecifier is not null)
         {
-            return;
+            return function;
         }
 
         // The Silk DSL can be applied to the following:
@@ -71,7 +71,7 @@ public class FunctionTransformer(IEnumerable<IFunctionTransformer> transformers)
         // - Struct methods
         var staticFn = function.Modifiers.Any(x => x.IsKind(SyntaxKind.StaticKeyword));
         var declTy = function.FirstAncestorOrSelf<BaseTypeDeclarationSyntax>();
-        var aai = FindApiAsInterfaceAttr(
+        var aai = FindNativeMemberContainerAttr(
             declTy?.AttributeLists.Where(x => x.Target is null).SelectMany(x => x.Attributes)
                 ?? Enumerable.Empty<AttributeSyntax>(),
             staticFn
@@ -86,6 +86,10 @@ public class FunctionTransformer(IEnumerable<IFunctionTransformer> transformers)
             && aai.SequenceEqual(declTy.Identifier.ToString())
         )
         {
+            var argList =
+                ArgumentList(
+                    SeparatedList(
+                        function.ParameterList.Parameters.Select(x => Argument(IdentifierName(x.Identifier)))));
             // If it's static, it needs to have TSelf type parameter
             impl =
                 staticFn
@@ -105,19 +109,20 @@ public class FunctionTransformer(IEnumerable<IFunctionTransformer> transformers)
                                 SyntaxKind.SimpleMemberAccessExpression,
                                 IdentifierName(aai.ToString()),
                                 IdentifierName(function.Identifier)
-                            )
+                            ),
+                            argList
                         )
                     )
                     : staticFn
                         ? null
                         : ExpressionStatement(
-                            InvocationExpression(IdentifierName(function.Identifier))
+                            InvocationExpression(IdentifierName(function.Identifier), argList)
                         );
         }
 
         if (impl is null)
         {
-            return;
+            return function;
         }
 
         if (function.ParameterList.ToString() != "void")
@@ -132,70 +137,79 @@ public class FunctionTransformer(IEnumerable<IFunctionTransformer> transformers)
                 // DllImport is ExactSpelling we add an EntryPoint instead (given that we're changing the function
                 // name)
                 List(
-                    function.AttributeLists.GetNativeFunctionInfo(out _, out var ep, out _)
-                        ? function.AttributeLists.Select(
-                            x =>
-                                x.WithAttributes(
-                                    SeparatedList(
-                                        x.Attributes.Select(
-                                            y =>
-                                                y.IsAttribute(
-                                                    "System.Runtime.InteropServices.DllImport"
-                                                )
-                                                    ? y.WithArgumentList(
-                                                        AttributeArgumentList(
-                                                            SeparatedList<AttributeArgumentSyntax>(
-                                                                y.ArgumentList?.Arguments
-                                                                    .Select(
-                                                                        z =>
-                                                                            z.NameEquals?.Name.Identifier.ToString()
-                                                                            == nameof(
-                                                                                DllImportAttribute.EntryPoint
-                                                                            )
-                                                                                ? null
-                                                                                : z
-                                                                    )
-                                                                    .Where(z => z is not null)
-                                                                    .Concat(
-                                                                        Enumerable.Repeat(
-                                                                            AttributeArgument(
-                                                                                    LiteralExpression(
-                                                                                        SyntaxKind.StringLiteralExpression,
-                                                                                        Literal(
-                                                                                            ep
-                                                                                                // ReSharper disable once AccessToModifiedClosure
-                                                                                                ?? function.Identifier.ToString()
-                                                                                        )
-                                                                                    )
+                    (
+                        function.AttributeLists.GetNativeFunctionInfo(out _, out var ep, out _)
+                            ? function.AttributeLists.Select(
+                                x =>
+                                    x.WithAttributes(
+                                        SeparatedList(
+                                            x.Attributes.Select(
+                                                y =>
+                                                    y.IsAttribute(
+                                                        "System.Runtime.InteropServices.DllImport"
+                                                    )
+                                                        ? y.WithArgumentList(
+                                                            AttributeArgumentList(
+                                                                SeparatedList<AttributeArgumentSyntax>(
+                                                                    y.ArgumentList?.Arguments
+                                                                        .Select(
+                                                                            z =>
+                                                                                z.NameEquals?.Name.Identifier.ToString()
+                                                                                == nameof(
+                                                                                    DllImportAttribute.EntryPoint
                                                                                 )
-                                                                                .WithNameEquals(
-                                                                                    NameEquals(
-                                                                                        IdentifierName(
-                                                                                            nameof(
-                                                                                                DllImportAttribute.EntryPoint
+                                                                                    ? null
+                                                                                    : z
+                                                                        )
+                                                                        .Where(z => z is not null)
+                                                                        .Concat(
+                                                                            Enumerable.Repeat(
+                                                                                AttributeArgument(
+                                                                                        LiteralExpression(
+                                                                                            SyntaxKind.StringLiteralExpression,
+                                                                                            Literal(
+                                                                                                ep
+                                                                                                    // ReSharper disable once AccessToModifiedClosure
+                                                                                                    ?? function.Identifier.ToString()
                                                                                             )
                                                                                         )
                                                                                     )
-                                                                                ),
-                                                                            1
-                                                                        )
-                                                                    )!
+                                                                                    .WithNameEquals(
+                                                                                        NameEquals(
+                                                                                            IdentifierName(
+                                                                                                nameof(
+                                                                                                    DllImportAttribute.EntryPoint
+                                                                                                )
+                                                                                            )
+                                                                                        )
+                                                                                    ),
+                                                                                1
+                                                                            )
+                                                                        )!
+                                                                )
                                                             )
                                                         )
-                                                    )
-                                                    : y
+                                                        : y
+                                            )
                                         )
                                     )
-                                )
+                            )
+                            : function.AttributeLists
+                    ).Concat(
+                        Enumerable.Repeat(
+                            AttributeList(
+                                SingletonSeparatedList(Attribute(IdentifierName("Transformed")))
+                            ),
+                            1
                         )
-                        : function.AttributeLists
+                    )
                 )
             )
             .WithExpressionBody(null)
             .WithSemicolonToken(default)
             .WithModifiers(
                 TokenList(
-                    function.Modifiers.Select(
+                    function.Modifiers.Where(x => !x.IsKind(SyntaxKind.ExternKeyword)).Select(
                         x =>
                             x.IsKind(SyntaxKind.AbstractKeyword)
                                 ? Token(SyntaxKind.VirtualKeyword)
@@ -205,16 +219,17 @@ public class FunctionTransformer(IEnumerable<IFunctionTransformer> transformers)
             );
 
         transform(function);
+        return function;
     }
 
-    private static ReadOnlySpan<char> FindApiAsInterfaceAttr(
+    private static ReadOnlySpan<char> FindNativeMemberContainerAttr(
         IEnumerable<AttributeSyntax> attrs,
         bool staticInterface
     )
     {
         foreach (var attr in attrs)
         {
-            if (attr.IsAttribute("Silk.NET.Core.ApiAsInterface"))
+            if (attr.IsAttribute("Silk.NET.Core.NativeMemberContainer"))
             {
                 // If it's a static interface, default to false as we need an explicit Static = true
                 var shouldRet = !staticInterface;

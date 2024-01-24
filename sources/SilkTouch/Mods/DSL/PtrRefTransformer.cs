@@ -202,7 +202,7 @@ public sealed partial class PtrRefTransformer()
                                     VariableDeclaration(
                                         param.Type,
                                         SingletonSeparatedList(
-                                            VariableDeclarator(IdentToInnerIdent(param.Identifier))
+                                            VariableDeclarator(IdentToInnerIdent(param.Identifier)).WithInitializer(EqualsValueClause(IdentifierName(param.Identifier)))
                                         )
                                     ),
                                     s
