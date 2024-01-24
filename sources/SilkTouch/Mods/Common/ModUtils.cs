@@ -246,16 +246,19 @@ public static class ModUtils
             options &= ~PInvokeGeneratorConfigurationOptions.GenerateCompatibleCode;
             options &= ~PInvokeGeneratorConfigurationOptions.GenerateLatestCode;
         }
+
         if ((options & PInvokeGeneratorConfigurationOptions.GenerateLatestCode) != 0)
         {
             options &= ~PInvokeGeneratorConfigurationOptions.GeneratePreviewCode;
             options &= ~PInvokeGeneratorConfigurationOptions.GenerateCompatibleCode;
         }
+
         if ((options & PInvokeGeneratorConfigurationOptions.GenerateCompatibleCode) != 0)
         {
             options &= ~PInvokeGeneratorConfigurationOptions.GeneratePreviewCode;
             options &= ~PInvokeGeneratorConfigurationOptions.GenerateLatestCode;
         }
+
         return options;
     }
 
@@ -267,14 +270,31 @@ public static class ModUtils
     /// The fully-qualified attribute name including the namespace but without the <c>Attribute</c> suffix.
     /// </param>
     /// <returns>Whether it is probably a DllImport.</returns>
-    public static bool IsAttribute(this AttributeSyntax node, string fullNameWithoutSuffix)
+    public static bool IsAttribute(
+        this AttributeSyntax node,
+        ReadOnlySpan<char> fullNameWithoutSuffix
+    )
     {
-        var sep = node.Name.ToString().Split("::").Last();
-        var name = fullNameWithoutSuffix.Split('.').Last();
+        var sep = node.Name.ToString().AsSpan();
+        sep = sep[(sep.LastIndexOf("::") + 1)..];
+        if (sep.IndexOf('<') is > 0 and var idx)
+        {
+            sep = sep[..idx];
+        }
+        var name = fullNameWithoutSuffix[(fullNameWithoutSuffix.LastIndexOf('.') + 1)..];
         return sep == name
-            || sep == $"{name}Attribute"
+            || (
+                sep.Length == name.Length + "Attribute".Length
+                && sep[..name.Length] == name
+                && sep[name.Length..] == "Attribute"
+            )
             || sep.EndsWith(fullNameWithoutSuffix)
-            || sep.EndsWith($"{fullNameWithoutSuffix}Attribute");
+            || (
+                sep.Length > fullNameWithoutSuffix.Length + "Attribute".Length
+                && sep.EndsWith("Attribute")
+                && sep[^(fullNameWithoutSuffix.Length + "Attribute".Length).."Attribute".Length]
+                    == fullNameWithoutSuffix
+            );
     }
 
     /// <summary>

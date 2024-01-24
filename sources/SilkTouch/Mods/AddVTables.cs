@@ -696,6 +696,37 @@ public class AddVTables(IOptionsSnapshot<AddVTables.Configuration> config) : IMo
                                     )
                                 )
                             )
+                    )
+                    .AddAttributeLists(
+                        AttributeList(
+                            SingletonSeparatedList(
+                                Attribute(
+                                    GenericName(
+                                        Identifier("ApiAsInterface"),
+                                        TypeArgumentList(
+                                            SingletonSeparatedList<TypeSyntax>(IdentifierName(key))
+                                        )
+                                    )
+                                )
+                            )
+                        ),
+                        AttributeList(
+                            SingletonSeparatedList(
+                                Attribute(
+                                    GenericName(
+                                        Identifier("ApiAsInterface"),
+                                        TypeArgumentList(
+                                            SingletonSeparatedList<TypeSyntax>(
+                                                QualifiedName(
+                                                    IdentifierName(key),
+                                                    IdentifierName("Static")
+                                                )
+                                            )
+                                        )
+                                    )
+                                )
+                            )
+                        )
                     );
         }
 

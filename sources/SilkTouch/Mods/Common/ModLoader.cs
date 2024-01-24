@@ -17,7 +17,7 @@ public class ModLoader
         {
             nameof(ChangeNamespace) => typeof(ChangeNamespace),
             nameof(AddIncludes) => typeof(AddIncludes),
-            nameof(UseSilkDSL) => typeof(UseSilkDSL),
+            nameof(TransformFunctions) => typeof(TransformFunctions),
             nameof(PrettifyNames) => typeof(PrettifyNames),
             nameof(AddOpaqueStructs) => typeof(AddOpaqueStructs),
             nameof(AddVTables) => typeof(AddVTables),
