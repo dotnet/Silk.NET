@@ -166,11 +166,10 @@ In the shader, the values are being read like this:
 
 ![UV values](../../../images/opengl/chapter1/lesson3/quad-with-uvs-and-numbers.png)
 
-As you can see, the higher the U coordinate, the redder the pixel, and the higher the V coordinate, the greener the pixel.
+As you can see, the higher the X/U coordinate, more reddish is the pixel, and the higher the Y/V coordinate, the more greenish the pixel.
 Even though we only specified UV values for each vertex, all pixels in the quad have UV values! That's because, as you read before,
 the fragment shader interpolates the coordinates for us, saving us a lot of work on our end.
-If we follow the diagonal from (0, 0) to (1, 1), we get the red and green colors growing together. The result of adding together
-red and green in the RGB color space is yellow!
+If we follow the diagonal from (0, 0) to (1, 1), the amount of red and green in the output colour increases at the same rate, resulting in a yellow color.
 
 ## Importing images as textures
 Now for the fun part: rendering an image!
@@ -250,7 +249,8 @@ _gl.TexParameterI(GLEnum.Texture2D, GLEnum.TextureMinFilter, (int)TextureMinFilt
 _gl.TexParameterI(GLEnum.Texture2D, GLEnum.TextureMagFilter, (int)TextureMagFilter.Nearest);
 ```
 
-And now, as we did with the another resources, let's unbind the texture to clean up!
+
+And now, as we did with the another resources, let's unbind the texture to clean up.
 ```c#
 _gl.BindTexture(TextureTarget.Texture2D, 0);
 ```
@@ -277,11 +277,19 @@ In our case, we are using `sampler2D` for our 2D texture.
 To read the texture data, the `texture` method is used. It samples the color of the texture at the
 specified texture coordinates and uses the previously set parameters to interpolate that color.
 
-But pay attention! If you have good eyes, you noticed our texture coordinates are between the ranges of `0.0` to `1.0` This is because the `texture` method works
+But pay attention! Notice that our texture coordinates are between the ranges of `0.0` to `1.0` This is because the `texture` method works
 with normalized values! To better understand this, think about a 250x500 pixels image. If you want to get the pixel at the position
-(250, 250), we need to send (250 / width, 250 / height), or (1, 0.5), as the texture coordinate. This way the size of the texture doesn't matter to the shader!
+(250, 250), we need to send (250 / width, 250 / height), or (1, 0.5), as the texture coordinate. This way the size of the texture doesn't matter to the shader.
 
 <?# Info "You can use the equation ` 1/size * pixel_position ` to get the normalized coordinate for a particlar axis!" /?>
+
+After have configurated our uniform `uTexture`, we need to bind our texture unit to it. To do so, we do it using the following lines:
+```c#
+int location = _gl.GetUniformLocation(_program, "uTexture");
+_gl.Uniform1(location, 0);
+```
+The first line calls `GetUniformLocation` that return the numeric location of the requested uniform. In this case, `"uTexture"`.
+After store the location in `location`, we call `Uniform1` to bind the Texture Unit 0 in the uniform.
 
 Now, if you run the program, you will see just a black quad. It's because we need to bind the texture before the draw call!
 If you don't do it, the last applied texture will be used for this mesh, in our case, since we have no texture bound after the clean up, no texture is used.
@@ -290,7 +298,8 @@ To solve it, go to your `OnRender` method and, below the `_gl.UseProgram()` call
 ```c#
 _gl.ActiveTexture(TextureUnit.Texture0);
 ```
-As explaned before, a texture unit is a space in memory that refers to the texture object, like a pointer. We need to first active this "pointer" to use it.
+Recall that a texture unit is a space in memory that refers to the texture object. We need to first set the texture unit we want to use as active before we can
+bind our texture to it. We're using the first texture unit `Texture0` here.
 
 After that we bind the texture again. Doing it after activating the texture unit will automatically attatch the texture at the texture unit 0, as a 2D texture.
 ```c#
@@ -306,26 +315,26 @@ And now when you run it (drumroll...), you can see the image being drawn inside 
 ## Transparency in OpenGL
 Well, you must have noticed the black rectangle around the texture. If you used another program to check the used texture, it's completely transparent!
 So why our render are drawing it like it's not?
-Basically because, for OpenGL eyes, it's not!
 
-Transparency is a really expensive task in computer graphics. This is not a reason for you not to use this feature, but is a reason for OpenGL don't enable it
-as default. OpenGL have different ways to handle transparency and it's expected tuser choose for that.
+Transparency is a really expensive task in computer graphics. This is not a reason for you to avoid this feature, but is a reason that OpenGL doesn't enable it
+by default. OpenGL has various different ways to handle transparency and it's expected that the user configures them explicitly.
 
 First of all, we need to enable the blend capability. at the end of `onLoad` method, add the following line:
 ```c#
 _gl.Enable(EnableCap.Blend);
 ```
-Enabling blend, now OpenGL knows it should do something with the alpha value of each pixel. But what will be made?
-For define this, we use the following line:
+Enabling blending essentially tells OpenGL to select the output colours from the visible primitives according to some value. This is referred to as blending.
+In our case, we want to blend based on the alpha value.
+To configure this, we use the following line:
 ```c#
 _gl.BlendFunc(BlendingFactor.SrcAlpha, BlendingFactor.OneMinusSrcAlpha);
 ```
 
-The `BlendFunc()` method define the function of blending of each pixel.
-In this case we are difining `BlendingFactor.SrcAlpha` as the source factor and `BlendingFactor.OneMinusSrcAlpha` as the destination blending factor;
-With this, we have a standard transparence function that will work as expected for almost all your renders.
+The `BlendFunc` function configures the calculations that OpenGL does when blending output colours. In this case, we're telling it to use the alpha value of the sources
+being rendered (`BlendingFactor.SrcAlpha`) as the factor and to subtract that value from 1 to get the outpout value. With this, in most cases transparency will work exactly
+as you expect.
 
-If not, you also have a lot more bledin factors to use. See the complete list in [khronos.org](https://registry.khronos.org/OpenGL-Refpages/gl4/html/glBlendFunc.xhtml).
+If this isn't sufficient, there are a large amount of other blending function configurations you can use, viewable at [khronos.org](https://registry.khronos.org/OpenGL-Refpages/gl4/html/glBlendFunc.xhtml).
 
 And when you run the program now, the transparent pixels of the image will not be visible anymore:
 
@@ -366,7 +375,7 @@ Returns the pixel on the respective edge of the image.
 
 ### `TextureMinFilter` & `TextureMagFilter`:
 Texture `min` and `mag` filters are the filters used when the texture's final size is, respectively, lesser than or greater than the original size.
-For now, we will show just the main two options and in the next section (Mipmaps), some others will be shown.
+For now, we will show just the main two options and in the next section [(Mipmaps)](#mipmaps), some others will be shown.
 
 
 #### `Texture(Min/Mag)Filter.Linear`:
