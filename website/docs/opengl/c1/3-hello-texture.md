@@ -26,14 +26,14 @@ Another very important thing in graphics programming is the ability to draw imag
 * How shaders handle images.
 * How OpenGL handle transparency.
 * How to use texture parameters.
-* How to allow mipmaps.
+* What are mipmaps and how to use them.
 
 ## What a texture is
 Technically, textures are multidimensional objects that store color data.
 
 The most common type of texture is the 2D texture, which stores a 2D grid of pixels of an image (this is just for comparison.
 Texture objects are a lot more complex than just 2D arrays!).
-This data is stored in GPU memory, and can be read a shader.
+This data is stored in GPU memory, and can be read by a shader.
 
 <?# Info "There are multiple different dimensions of texture from 1D through to 3D. For the purposes of this tutorial, we will be focusing on 2D." /?>
 
@@ -64,7 +64,7 @@ If we try to run our program now...
 
 ![A really messed up quad!](../../../images/opengl/chapter1/lesson3/messed-up-quad.png)
 
-Well, that doesn't like the quad we were expected. This is because we have updated the vertex buffer we're passing to the vertex shader,
+Well, that doesn't look like the quad we were expecting. This is because we have updated the vertex buffer we're passing to the vertex shader,
 but haven't updated anything else such as our vertex layout definition. Luckily, it's very easy to modify the the example vertex layout
 shown in the previous tutorial to work with our new texture coordinates.
 
@@ -74,7 +74,7 @@ Because of this, our buffer is being read like this:
 ![Buffer reading wrong data](../../../images/opengl/chapter1/lesson3/wrong-pointers.png)
 
 As you can see, the vertex buffer is being read as if the first vertex was composed of the first three floats in the buffer, then the second
-vertex the next three floats, the third vertex the next three, and so on and so forth. As we can see however, this is now wrong! Since each
+vertex the next three floats, the third vertex the next three, and so on and so forth. However, this is now wrong! Since each
 vertex has two UV floats after its three position floats, this means that the first vertex's U and V floats are being read as the second
 vertex X and Y position floats!
 
@@ -85,7 +85,6 @@ change it to:
 //                       3 floats for position + 2 floats for texture coordinates! \/
 _gl.VertexAttribPointer(positionLoc, 3, VertexAttribPointerType.Float, false, 5 * sizeof(float), (void*)0);
 ```
-The value `3` in the seccond parameter are
 
 This will make the buffer be read like this (including the texture coordinate pointer, which we'll add into our code later):
 
@@ -166,10 +165,10 @@ In the shader, the values are being read like this:
 
 ![UV values](../../../images/opengl/chapter1/lesson3/quad-with-uvs-and-numbers.png)
 
-As you can see, the higher the X/U coordinate, more reddish is the pixel, and the higher the Y/V coordinate, the more greenish the pixel.
-Even though we only specified UV values for each vertex, all pixels in the quad have UV values! That's because, as you read before,
+As you can see, as the X/U coordinate increases so does the amount of red in the output pixel, and likewise as the Y/V coordinate increases so does the amount of green.
+Even though we only specified UV values for each vertex, all pixels in the quad have UV values. That's because, as you read before,
 the fragment shader interpolates the coordinates for us, saving us a lot of work on our end.
-If we follow the diagonal from (0, 0) to (1, 1), the amount of red and green in the output colour increases at the same rate, resulting in a yellow color.
+If we follow the diagonal from (0, 0) to (1, 1), the amount of red and green in the output color increases at the same rate, resulting in a yellow color.
 
 ## Importing images as textures
 Now for the fun part: rendering an image!
@@ -200,7 +199,7 @@ At the top of your class, declare a `uint` to store the ID of the OpenGL texture
 private static uint _texture;
 ```
 
-Returning to your `OnLoad` method, add this line at the end of the method to create, and bind the texture.
+Returning to your `OnLoad` method, add these lines at the end of the method to create and bind the texture.
 That `ActiveTexture` call is telling OpenGL that we are wanting to use the first texture unit.
 ```c#
 _texture = _gl.GenTexture();
@@ -250,7 +249,7 @@ _gl.TexParameterI(GLEnum.Texture2D, GLEnum.TextureMagFilter, (int)TextureMagFilt
 ```
 
 
-And now, as we did with the another resources, let's unbind the texture to clean up.
+And now, just as we did with the other resources, let's unbind the texture to clean up.
 ```c#
 _gl.BindTexture(TextureTarget.Texture2D, 0);
 ```
@@ -283,13 +282,13 @@ with normalized values! To better understand this, think about a 250x500 pixels 
 
 <?# Info "You can use the equation ` 1/size * pixel_position ` to get the normalized coordinate for a particlar axis!" /?>
 
-After have configurated our uniform `uTexture`, we need to bind our texture unit to it. To do so, we do it using the following lines:
+After having configured our uniform `uTexture`, we need to bind our texture unit to it. To do so, we do it using the following lines:
 ```c#
 int location = _gl.GetUniformLocation(_program, "uTexture");
 _gl.Uniform1(location, 0);
 ```
 The first line calls `GetUniformLocation` that return the numeric location of the requested uniform. In this case, `"uTexture"`.
-After store the location in `location`, we call `Uniform1` to bind the Texture Unit 0 in the uniform.
+Then, we call `Uniform1` to bind the texture unit 0 in the uniform.
 
 Now, if you run the program, you will see just a black quad. It's because we need to bind the texture before the draw call!
 If you don't do it, the last applied texture will be used for this mesh, in our case, since we have no texture bound after the clean up, no texture is used.
@@ -305,7 +304,7 @@ After that we bind the texture again. Doing it after activating the texture unit
 ```c#
 _gl.BindTexture(TextureTarget.Texture2D, _texture);
 ```
-With it, the texture in the texture unit 0 should be sampled for the 1° Sampler2D.
+With that, the texture in the texture unit 0 should be set for our sampler2D.
 
 
 And now when you run it (drumroll...), you can see the image being drawn inside the quad!
@@ -313,7 +312,7 @@ And now when you run it (drumroll...), you can see the image being drawn inside 
 ![Quad with texture](../../../images/opengl/chapter1/lesson3/quad-with-texture.png)
 
 ## Transparency in OpenGL
-Well, you must have noticed the black rectangle around the texture. If you used another program to check the used texture, it's completely transparent!
+Well, you must have noticed the black corners around the texture. If you use another program to check the texture, it's completely transparent! So why isn't it rendering like so?
 So why our render are drawing it like it's not?
 
 Transparency is a really expensive task in computer graphics. This is not a reason for you to avoid this feature, but is a reason that OpenGL doesn't enable it
@@ -323,18 +322,18 @@ First of all, we need to enable the blend capability. at the end of `onLoad` met
 ```c#
 _gl.Enable(EnableCap.Blend);
 ```
-Enabling blending essentially tells OpenGL to select the output colours from the visible primitives according to some value. This is referred to as blending.
+Enabling blending essentially tells OpenGL to select the output colors from the visible primitives according to some value. This is referred to as blending.
 In our case, we want to blend based on the alpha value.
 To configure this, we use the following line:
 ```c#
 _gl.BlendFunc(BlendingFactor.SrcAlpha, BlendingFactor.OneMinusSrcAlpha);
 ```
 
-The `BlendFunc` function configures the calculations that OpenGL does when blending output colours. In this case, we're telling it to use the alpha value of the sources
-being rendered (`BlendingFactor.SrcAlpha`) as the factor and to subtract that value from 1 to get the outpout value. With this, in most cases transparency will work exactly
+The `BlendFunc` function configures the calculations that OpenGL does when blending output colors. In this case, we're telling it to use the alpha value of the sources
+being rendered (`BlendingFactor.SrcAlpha`) as the factor and to subtract that value from 1 to get the output value. With this, in most cases transparency will work exactly
 as you expect.
 
-If this isn't sufficient, there are a large amount of other blending function configurations you can use, viewable at [khronos.org](https://registry.khronos.org/OpenGL-Refpages/gl4/html/glBlendFunc.xhtml).
+If this isn't sufficient, there are a large amount of other blending function configurations you can use, which you can find in [the Khronos documentation](https://registry.khronos.org/OpenGL-Refpages/gl4/html/glBlendFunc.xhtml).
 
 And when you run the program now, the transparent pixels of the image will not be visible anymore:
 
@@ -349,8 +348,8 @@ If you get curious about how the texture parameters work, let's learn it now!
 
 First, let's learn the structure of the command:
 ```c#
-_gl.TexParameter( [Texture ID] , [Parameter to change] , [New value for parameter] );
-// The sulfix of TextureParameter will variate depending on the type of the expected value for the parameter
+_gl.TexParameter( [Texture target] , [Parameter to change] , [New value for parameter] );
+// The suffix of TexParameter will vary depending on the type of the expected value for the parameter
 ```
 
 The texture ID you already know. So let's learn what each parameter means!
@@ -380,7 +379,7 @@ For now, we will show just the main two options and in the next section [(Mipmap
 
 #### `Texture(Min/Mag)Filter.Linear`:
 The (bi)linear filter is the best for low-quality images. When the pixels are sampled from the texture, this filter will get the color of the nearest
-pixels of the pixel in the center of the texture coordinates and will return a linear interpolation of them.
+pixels to the texture coordinates and will return a linear interpolation of them.
 
 This is an example from [Learn OpenGL](https://learnopengl.com/Getting-started/Textures). See how the neighbor colors are interpolated to return a different
 color:
@@ -409,7 +408,7 @@ At first look, mipmaps may seem very useless. But in reality, they are extremely
 which can cause some weird visual artifacts, even with the use of the linear filter. The most potent visual effect is something called the "moiré effect", which can
 be tiring for the eyes, and generally look quite ugly.
 
-The purpose of a mipmap is to provide an alternative texture to the fragment shader, a one with a more appropriate size for the geometry being drawn, almost completely
+The purpose of a mipmap is to provide an alternative texture to the fragment shader, one with a more appropriate size for the geometry being drawn, almost completely
 eliminating the moiré effect.
 
 An example from [Wikipedia](https://en.wikipedia.org/wiki/File:Mipmap_Aliasing_Comparison.png). It's possible to notice weird patterns
@@ -420,7 +419,7 @@ generated far away in the render without mipmaps:
 But if you think that generating mipmaps by hand for all your textures is really hard work, don't worry! OpenGL provides a special method to
 do this for you.
 
-Just after setting the texture parameters, try to add this line to your code:
+Just after setting the texture parameters, to add this line to your code:
 ```c#
 _gl.GenerateMipmap(TextureTarget.Texture2D);
 ```
@@ -428,27 +427,28 @@ _gl.GenerateMipmap(TextureTarget.Texture2D);
 But this is not everything, we also need to set some parameters to tell the sampler to use the mipmaps:
 
 ### `GL_NEAREST_MIPMAP_NEAREST`, `GL_LINEAR_MIPMAP_NEAREST`, `GL_NEAREST_MIPMAP_LINEAR` & `GL_LINEAR_MIPMAP_LINEAR`:
-These parameters should be used as the Texture Min filter and only with textures that have a mipmap.
-
+These parameters should be used as the texture min filter and only with textures that have mipmaps. All of these options can be categorized in two ways:
+* How does it choose what mipmap level to sample from
+* How does it sample color data from that mipmap
+* 
 #### `TextureMinFilter.GL_NEAREST_MIPMAP_NEAREST`:
-Will get the mip with the closest size of the final image and will return the color of the pixel that matches exactly with the texture coordinates.
+Will choose the mipmap with the closest size to the final image, then sample it with nearest sampling.
 
 #### `TextureMinFilter.GL_LINEAR_MIPMAP_NEAREST`:
-Will get the color of the pixels that match exactly with the texture coordinates of each mipmap and interpolates them.
+Will choose the mipmap with the closest size to the final image, then sample it with linear sampling.
 
 #### `TextureMinFilter.GL_NEAREST_MIPMAP_LINEAR`:
-Will get the mip with the closest size of the final image and will return the interpolated color
-of the pixels surrounding the pixel in the texture coordinate.
+Will sample the two mipmaps whose sizes are closest to the final image with nearest sampling, then linearly interpolate between those two values.
 
 #### `TextureMinFilter.GL_LINEAR_MIPMAP_LINEAR`:
-Will get the interpolated color of the pixels surrounding the pixel that matches exactly with the texture coordinates of each mipmap and interpolates them.
+Will sample the two mipmaps whose sizes are closest to the final image with linear sampling, then linearly interpolate between those two values.
 
 Knowing this, you can change the parameters for:
 ```c#
-_gl.TextureParameter(_texture, TextureParameterName.TextureWrapS, (int)TextureWrapMode.Repeat);
-_gl.TextureParameter(_texture, TextureParameterName.TextureWrapT, (int)TextureWrapMode.Repeat);
-_gl.TextureParameter(_texture, TextureParameterName.TextureMinFilter, (int)TextureMinFilter.NearestMipmapNearest); // <- change here!
-_gl.TextureParameter(_texture, TextureParameterName.TextureMagFilter, (int)TextureMagFilter.Nearest);
+_gl.TexParameter(GLEnum.Texture2D, GLEnum.TextureWrapS, (int)TextureWrapMode.Repeat);
+_gl.TexParameter(GLEnum.Texture2D, GLEnum.TextureWrapT, (int)TextureWrapMode.Repeat);
+_gl.TexParameter(GLEnum.Texture2D, GLEnum.TextureMinFilter, (int)TextureMinFilter.NearestMipmapNearest); // <- change here!
+_gl.TexParameter(GLEnum.Texture2D, GLEnum.TextureMagFilter, (int)TextureMagFilter.Nearest);
 ```
 
 And now the mipmaps will be used.
