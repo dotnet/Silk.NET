@@ -157,7 +157,7 @@ If you do everything right, you will see this result!
 
 ![Quad with UVs](../../../images/opengl/chapter1/lesson3/quad-with-uvs.png)
 
-But we aren't there just yet. We can't see any texture in our quad!
+This gives us a nice visualisation of the texture coordinates, but it's not a textured quad. What exactly are we looking at?
 What you are seeing is the texture coordinates we passed displayed as a color!
 
 The Red, Green and mix between these two colors you see are, respectively, the X and Y texture coordinate values of that pixel.
@@ -373,7 +373,9 @@ Returns the pixel on the respective edge of the image.
 ![A weird border](../../../images/opengl/chapter1/lesson3/texParameters/clampToEdge.png)
 
 ### `TextureMinFilter` & `TextureMagFilter`:
-Texture `min` and `mag` filters are the filters used when the texture's final size is, respectively, lesser than or greater than the original size.
+When we draw a texture, the area on the screen in which we're drawing the texture typically doesn't have the same size or shape as the texture. This means that during rendering we
+usually have to either scale up or down the size of the texture! This process is called _filtering_.
+The texture `min` (minifying) and `mag` (magnifying) filters are the filters used when the texture's final size is, respectively, lesser than or greater than the original size.
 For now, we will show just the main two options and in the next section [(Mipmaps)](#mipmaps), some others will be shown.
 
 
@@ -419,7 +421,7 @@ generated far away in the render without mipmaps:
 But if you think that generating mipmaps by hand for all your textures is really hard work, don't worry! OpenGL provides a special method to
 do this for you.
 
-Just after setting the texture parameters, to add this line to your code:
+Just after setting the texture parameters, add this line to your code:
 ```c#
 _gl.GenerateMipmap(TextureTarget.Texture2D);
 ```
