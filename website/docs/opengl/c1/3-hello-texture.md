@@ -24,15 +24,15 @@ Another very important thing in graphics programming is the ability to draw imag
 * How to use texture coordinates.
 * How to import images as textures.
 * How shaders handle images.
-* How OpenGL handle transparency.
+* How OpenGL handles transparency.
 * How to use texture parameters.
 * What are mipmaps and how to use them.
 
 ## What a texture is
-Technically, textures are multidimensional objects that store color data.
+Textures are multidimensional objects that store color data.
 
-The most common type of texture is the 2D texture, which stores a 2D grid of pixels of an image (this is just for comparison.
-Texture objects are a lot more complex than just 2D arrays!).
+The most common type of texture is the 2D texture, which stores a 2D grid of pixels of an image (This is just for comparison,
+texture objects are a lot more complex than just 2D arrays!).
 This data is stored in GPU memory, and can be read by a shader.
 
 <?# Info "There are multiple different dimensions of texture from 1D through to 3D. For the purposes of this tutorial, we will be focusing on 2D." /?>
