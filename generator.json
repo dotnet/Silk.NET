@@ -121,6 +121,9 @@
             "GenerateMakeCurrentPartial": true
           }
         ]
+      },
+      "PrettifyNames": {
+        "LongAcronymThreshold": 4
       }
     }
   }

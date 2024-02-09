@@ -316,7 +316,7 @@ public unsafe partial class Glfw : IGlfw, IGlfw.Static<Glfw>
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
         [NativeFunction("glfw", EntryPoint = "glfwGetJoystickGUID")]
-        public static Ptr<sbyte> GetJoystickGUID(int jid)
+        public static Ptr<sbyte> GetJoystickGuid(int jid)
         {
             [DllImport("glfw", ExactSpelling = true, EntryPoint = "glfwGetJoystickGUID")]
             [return: NativeTypeName("const char *")]
@@ -1986,7 +1986,7 @@ public unsafe partial class Glfw : IGlfw, IGlfw.Static<Glfw>
 
         [return: NativeTypeName("const char *")]
         [NativeFunction("glfw", EntryPoint = "glfwGetJoystickGUID")]
-        public Ptr<sbyte> GetJoystickGUID(int jid) => T.GetJoystickGUID(jid);
+        public Ptr<sbyte> GetJoystickGuid(int jid) => T.GetJoystickGuid(jid);
 
         [return: NativeTypeName("const unsigned char *")]
         [NativeFunction("glfw", EntryPoint = "glfwGetJoystickHats")]
@@ -2557,7 +2557,7 @@ public unsafe partial class Glfw : IGlfw, IGlfw.Static<Glfw>
 
         [return: NativeTypeName("const char *")]
         [NativeFunction("glfw", EntryPoint = "glfwGetJoystickGUID")]
-        public static Ptr<sbyte> GetJoystickGUID(int jid) => Underlying.Value!.GetJoystickGUID(jid);
+        public static Ptr<sbyte> GetJoystickGuid(int jid) => Underlying.Value!.GetJoystickGuid(jid);
 
         [return: NativeTypeName("const unsigned char *")]
         [NativeFunction("glfw", EntryPoint = "glfwGetJoystickHats")]
@@ -4428,7 +4428,7 @@ public unsafe partial class Glfw : IGlfw, IGlfw.Static<Glfw>
 
     [return: NativeTypeName("const char *")]
     [NativeFunction("glfw", EntryPoint = "glfwGetJoystickGUID")]
-    Ptr<sbyte> IGlfw.GetJoystickGUID(int jid)
+    Ptr<sbyte> IGlfw.GetJoystickGuid(int jid)
     {
         sbyte* __DSL_glfwGetJoystickGUID(int jid) =>
             (
@@ -4440,7 +4440,7 @@ public unsafe partial class Glfw : IGlfw, IGlfw.Static<Glfw>
 
     [return: NativeTypeName("const char *")]
     [NativeFunction("glfw", EntryPoint = "glfwGetJoystickGUID")]
-    public static Ptr<sbyte> GetJoystickGUID(int jid) => DllImport.GetJoystickGUID(jid);
+    public static Ptr<sbyte> GetJoystickGuid(int jid) => DllImport.GetJoystickGuid(jid);
 
     [return: NativeTypeName("const unsigned char *")]
     [NativeFunction("glfw", EntryPoint = "glfwGetJoystickHats")]

@@ -15,20 +15,21 @@ namespace Silk.NET.SilkTouch.Naming;
 [SuppressMessage("ReSharper", "LoopCanBeConvertedToQuery")]
 public static partial class NameUtils
 {
-    private const int LongAcronymThreshold = 4;
-
     /// <summary>
     /// Prettifies the given string.
     /// </summary>
     /// <param name="str">The string to prettify.</param>
+    /// <param name="transformer">
+    /// The transformer that mutates a humanised string before being converted back to pascal case.
+    /// </param>
     /// <returns>The pretty string.</returns>
-    public static string Prettify(this string str)
+    public static string Prettify(this string str, ICulturedStringTransformer transformer)
     {
         var ret = string.Join(
             null,
             str.LenientUnderscore()
                 .Humanize()
-                .Transform(new NameTransformer())
+                .Transform(transformer)
                 .Pascalize()
                 .Where(x => char.IsLetter(x) || char.IsNumber(x))
         );
@@ -172,7 +173,7 @@ public static partial class NameUtils
     [GeneratedRegex(@"([\p{Lu}]+)([\p{Lu}][\p{Ll}])")]
     private static partial Regex LowerUpperLower();
 
-    internal partial class NameTransformer : ICulturedStringTransformer
+    internal partial class NameTransformer(int longAcronymThreshold) : ICulturedStringTransformer
     {
         public string Transform(string input) => Transform(input, null);
 
@@ -189,11 +190,11 @@ public static partial class NameUtils
                     continue;
                 }
                 if (
-                    word.Length > LongAcronymThreshold
+                    word.Length > longAcronymThreshold
                     || !AllCapitals(word)
                     || (
                         AllCapitals(input)
-                        && input.Length > LongAcronymThreshold
+                        && input.Length > longAcronymThreshold
                         && matches.Length > 1
                     )
                 )

@@ -44,6 +44,12 @@ public class PrettifyNames(
         public Version? TrimmerBaseline { get; init; } = new(3, 0);
 
         /// <summary>
+        /// The maximum length of an all capitals string to be treated as a single acronym, rather than as an all
+        /// capitals word.
+        /// </summary>
+        public int? LongAcronymThreshold { get; init; }
+
+        /// <summary>
         /// A hint for a "global prefix".
         /// </summary>
         public string? GlobalPrefixHint { get; init; }
@@ -60,6 +66,7 @@ public class PrettifyNames(
 
         var rewriter = new Rewriter();
         var cfg = config.Get(key);
+        var translator = new NameUtils.NameTransformer(cfg.LongAcronymThreshold ?? 3);
         if (cfg.TrimmerBaseline is not null)
         {
             var trimmers = trimmerProviders
@@ -124,12 +131,12 @@ public class PrettifyNames(
                     : Enumerable.Empty<KeyValuePair<string, (string Primary, List<string>?)>>();
 
                 rewriter.Types[typeName] = (
-                    newTypeName.Prettify(),
+                    newTypeName.Prettify(translator),
                     // TODO deprecate secondaries if they're within the baseline?
                     constNames
                         .Concat(prettifiedOnly)
-                        .ToDictionary(x => x.Key, x => x.Value.Primary.Prettify()),
-                    functionNames?.ToDictionary(x => x.Key, x => x.Value.Primary.Prettify())
+                        .ToDictionary(x => x.Key, x => x.Value.Primary.Prettify(translator)),
+                    functionNames?.ToDictionary(x => x.Key, x => x.Value.Primary.Prettify(translator))
                 );
             }
         }
@@ -138,9 +145,9 @@ public class PrettifyNames(
             foreach (var (name, (nonFunctions, functions)) in visitor.Types)
             {
                 rewriter.Types[name] = (
-                    name.Prettify(),
-                    nonFunctions?.ToDictionary(x => x, x => x.Prettify()),
-                    functions?.ToDictionary(x => x.Name, x => x.Name.Prettify())
+                    name.Prettify(translator),
+                    nonFunctions?.ToDictionary(x => x, x => x.Prettify(translator)),
+                    functions?.ToDictionary(x => x.Name, x => x.Name.Prettify(translator))
                 );
             }
         }

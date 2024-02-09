@@ -9,6 +9,7 @@ using System.Text.RegularExpressions;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Xml.Linq;
+using Humanizer;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 using Silk.NET.SilkTouch.Naming;
@@ -28,6 +29,7 @@ public partial class MixKhronosData(
 {
     private Dictionary<string, HashSet<string>> _vendors = new();
     private Dictionary<string, Configuration> _jobs = new();
+    private static readonly ICulturedStringTransformer Transformer = new NameUtils.NameTransformer(4);
 
     /// <summary>
     /// Khronos mod configuration.
@@ -224,7 +226,7 @@ public partial class MixKhronosData(
             )
             {
                 newPrev ??= previous ?? [];
-                var pretty = newCurrent.Prettify();
+                var pretty = newCurrent.Prettify(Transformer);
 
                 // Hack to ensure extension vendors are preserved as acronyms
                 if (char.IsUpper(pretty[^1]))

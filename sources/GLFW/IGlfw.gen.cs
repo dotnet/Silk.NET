@@ -94,7 +94,7 @@ public unsafe partial interface IGlfw
 
         [return: NativeTypeName("const char *")]
         [NativeFunction("glfw", EntryPoint = "glfwGetJoystickGUID")]
-        static abstract Ptr<sbyte> GetJoystickGUID(int jid);
+        static abstract Ptr<sbyte> GetJoystickGuid(int jid);
 
         [return: NativeTypeName("const unsigned char *")]
         [NativeFunction("glfw", EntryPoint = "glfwGetJoystickHats")]
@@ -634,7 +634,7 @@ public unsafe partial interface IGlfw
 
     [return: NativeTypeName("const char *")]
     [NativeFunction("glfw", EntryPoint = "glfwGetJoystickGUID")]
-    Ptr<sbyte> GetJoystickGUID(int jid);
+    Ptr<sbyte> GetJoystickGuid(int jid);
 
     [return: NativeTypeName("const unsigned char *")]
     [NativeFunction("glfw", EntryPoint = "glfwGetJoystickHats")]
