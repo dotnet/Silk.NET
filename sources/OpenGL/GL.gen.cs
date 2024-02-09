@@ -9,6 +9,8 @@ using System.Reflection;
 
 namespace Silk.NET.OpenGL;
 
+[NativeMemberContainer(typeof(IGL))]
+[NativeMemberContainer(typeof(IGL.Static<>), Static = true)]
 partial class GL(INativeContext nativeContext) : IDisposable
 {
     public partial class DllImport

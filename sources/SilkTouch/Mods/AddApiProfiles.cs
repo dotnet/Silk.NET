@@ -484,18 +484,14 @@ public class AddApiProfiles(
                     {
                         baked.Syntax = nodeToAdd.AddAttributeLists(
                             baked
-                                .Syntax.AttributeLists.Select(
-                                    x =>
-                                        x.WithAttributes(
-                                            SeparatedList(
-                                                x.Attributes.Where(
-                                                    y =>
-                                                        y.IsAttribute(
-                                                            "Silk.NET.Core.SupportedApiAttribute"
-                                                        )
-                                                )
+                                .Syntax.AttributeLists.Select(x =>
+                                    x.WithAttributes(
+                                        SeparatedList(
+                                            x.Attributes.Where(y =>
+                                                y.IsAttribute("Silk.NET.Core.SupportedApiAttribute")
                                             )
                                         )
+                                    )
                                 )
                                 .Where(x => x.Attributes.Count > 0)
                                 .ToArray()
@@ -656,18 +652,16 @@ public class AddApiProfiles(
                     .WithAttributeLists(
                         List(
                             node1
-                                .AttributeLists.SelectMany(
-                                    x =>
-                                        x.Attributes.Select(
-                                            y => x.WithAttributes(SingletonSeparatedList(y))
-                                        )
+                                .AttributeLists.SelectMany(x =>
+                                    x.Attributes.Select(y =>
+                                        x.WithAttributes(SingletonSeparatedList(y))
+                                    )
                                 )
                                 .Concat(
-                                    node2.AttributeLists.SelectMany(
-                                        x =>
-                                            x.Attributes.Select(
-                                                y => x.WithAttributes(SingletonSeparatedList(y))
-                                            )
+                                    node2.AttributeLists.SelectMany(x =>
+                                        x.Attributes.Select(y =>
+                                            x.WithAttributes(SingletonSeparatedList(y))
+                                        )
                                     )
                                 )
                                 .DistinctBy(x => x.ToString())
@@ -717,9 +711,10 @@ public class AddApiProfiles(
                 continue;
             }
 
-            rewriter.Profile = cfg.Profiles?.Where(
-                x => path[8..].StartsWith(x.SourceSubdirectory, StringComparison.OrdinalIgnoreCase)
-            )
+            rewriter.Profile = cfg
+                .Profiles?.Where(x =>
+                    path[8..].StartsWith(x.SourceSubdirectory, StringComparison.OrdinalIgnoreCase)
+                )
                 .MaxBy(x => x.SourceSubdirectory.Length);
             if (rewriter.Profile is null)
             {
@@ -805,8 +800,7 @@ public class AddApiProfiles(
                         List(
                             ty.Members.Concat(
                                 member
-                                    .Inner?.Children
-                                    .Values.OrderBy(x => x.Index)
+                                    .Inner?.Children.Values.OrderBy(x => x.Index)
                                     .Select(x => Bake(x).Syntax)
                                     ?? Enumerable.Empty<MemberDeclarationSyntax>()
                             )
@@ -820,8 +814,7 @@ public class AddApiProfiles(
                         SeparatedList(
                             enumDecl.Members.Concat(
                                 member
-                                    .Inner?.Children
-                                    .Values.OrderBy(x => x.Index)
+                                    .Inner?.Children.Values.OrderBy(x => x.Index)
                                     .Select(x => x.Syntax)
                                     .OfType<EnumMemberDeclarationSyntax>()
                                     ?? Enumerable.Empty<EnumMemberDeclarationSyntax>()

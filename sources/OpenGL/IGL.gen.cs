@@ -7,8 +7,10 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.OpenGL;
 
+[NativeMemberContainer(typeof(IGL))]
 public unsafe partial interface IGL
 {
+    [NativeMemberContainer(typeof(IGL.Static<>), Static = true)]
     public partial interface Static<TSelf>
         where TSelf : Static<TSelf>
     {

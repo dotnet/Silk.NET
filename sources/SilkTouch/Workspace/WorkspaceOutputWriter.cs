@@ -198,12 +198,12 @@ public class WorkspaceOutputWriter : IOutputWriter
         srcRoot = Path.GetFullPath(srcRoot);
 
         // Try and find the project for the source output
-        var srcProj = sln.Projects.Where(x => x.FilePath is not null)
-            .FirstOrDefault(
-                x =>
-                    Path.GetDirectoryName(Path.GetFullPath(x.FilePath!))
-                        ?.Replace('\\', '/')
-                        .TrimEnd('/') == Path.GetFullPath(srcRoot).Replace('\\', '/').TrimEnd('/')
+        var srcProj = sln
+            .Projects.Where(x => x.FilePath is not null)
+            .FirstOrDefault(x =>
+                Path.GetDirectoryName(Path.GetFullPath(x.FilePath!))
+                    ?.Replace('\\', '/')
+                    .TrimEnd('/') == Path.GetFullPath(srcRoot).Replace('\\', '/').TrimEnd('/')
             );
         if (srcProj is null)
         {

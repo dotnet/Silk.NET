@@ -188,8 +188,15 @@ public static partial class NameUtils
                 {
                     continue;
                 }
-                if (word.Length > LongAcronymThreshold || !AllCapitals(word) ||
-                    (AllCapitals(input) && input.Length > LongAcronymThreshold && matches.Length > 1))
+                if (
+                    word.Length > LongAcronymThreshold
+                    || !AllCapitals(word)
+                    || (
+                        AllCapitals(input)
+                        && input.Length > LongAcronymThreshold
+                        && matches.Length > 1
+                    )
+                )
                 {
                     word = MakeFirstLetterUpper(word, culture);
                 }
@@ -224,8 +231,7 @@ public static partial class NameUtils
                 return wordToConvert;
             }
 
-            return
-                culture.TextInfo.ToUpper(wordToConvert[..nextLetter])
+            return culture.TextInfo.ToUpper(wordToConvert[..nextLetter])
                 + culture.TextInfo.ToLower(wordToConvert.Remove(0, nextLetter));
         }
 

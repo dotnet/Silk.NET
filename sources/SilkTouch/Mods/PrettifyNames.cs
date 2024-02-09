@@ -117,9 +117,10 @@ public class PrettifyNames(
                 }
 
                 var prettifiedOnly = visitor.PrettifyOnlyTypes.TryGetValue(typeName, out var val)
-                    ? val.Select(
-                        x => new KeyValuePair<string, (string Primary, List<string>?)>(x, (x, null))
-                    )
+                    ? val.Select(x => new KeyValuePair<string, (string Primary, List<string>?)>(
+                        x,
+                        (x, null)
+                    ))
                     : Enumerable.Empty<KeyValuePair<string, (string Primary, List<string>?)>>();
 
                 rewriter.Types[typeName] = (
@@ -161,18 +162,17 @@ public class PrettifyNames(
             syntax with
             {
                 Files = syntax
-                    .Files.Select(
-                        x =>
-                            (
-                                x.Key.EndsWith(".gen.cs")
-                                && rewriter.Types.TryGetValue(
-                                    x.Key[(x.Key.LastIndexOf('/') + 1)..^7],
-                                    out var info
-                                )
-                                    ? $"{x.Key[..(x.Key.LastIndexOf('/') + 1)]}{info.NewName}.gen.cs"
-                                    : x.Key,
-                                rewriter.Visit(x.Value)
+                    .Files.Select(x =>
+                        (
+                            x.Key.EndsWith(".gen.cs")
+                            && rewriter.Types.TryGetValue(
+                                x.Key[(x.Key.LastIndexOf('/') + 1)..^7],
+                                out var info
                             )
+                                ? $"{x.Key[..(x.Key.LastIndexOf('/') + 1)]}{info.NewName}.gen.cs"
+                                : x.Key,
+                            rewriter.Visit(x.Value)
+                        )
                     )
                     .ToDictionary(x => x.Item1, x => x.Item2)
             }
@@ -193,7 +193,14 @@ public class PrettifyNames(
         string? identifiedPrefix = null;
         foreach (var trimmer in trimmers)
         {
-            trimmer.Trim(container, globalPrefixHint, key, names, prefixOverrides, ref identifiedPrefix);
+            trimmer.Trim(
+                container,
+                globalPrefixHint,
+                key,
+                names,
+                prefixOverrides,
+                ref identifiedPrefix
+            );
         }
 
         // Prefer shorter names
@@ -249,10 +256,7 @@ public class PrettifyNames(
                 {
                     // Micro-opt: do the checks we can ahead of creating the DiscrimStr which isn't the cheapest thing
                     // in the world
-                    if (
-                        conflictingTrimmingName == trimmingName
-                        || conflictingPrimary != primary
-                    )
+                    if (conflictingTrimmingName == trimmingName || conflictingPrimary != primary)
                     {
                         // This is us, we will always conflict with ourselves (or the primary names don't conflict)
                         continue;
@@ -275,8 +279,10 @@ public class PrettifyNames(
 
                     // If we don't have precedence (i.e. it's obvious that it's us that should have the shorter name),
                     // do we have another name for the conflict?
-                    if (conflictingTrimmingName.Length > trimmingName.Length &&
-                        conflictingSecondary?.LastOrDefault() is { } resolvedConflict)
+                    if (
+                        conflictingTrimmingName.Length > trimmingName.Length
+                        && conflictingSecondary?.LastOrDefault() is { } resolvedConflict
+                    )
                     {
                         // Rename the conflicting entry so that we can take precedence.
                         names[conflictingTrimmingName] = (resolvedConflict, conflictingSecondary);
@@ -319,8 +325,12 @@ public class PrettifyNames(
                 {
                     if (primary == nextPrimary)
                     {
-                        logger.LogError("Couldn't resolve conflict automatically: {} is used by both {} and {}",
-                            primary, trimmingName, notRenamedConflict);
+                        logger.LogError(
+                            "Couldn't resolve conflict automatically: {} is used by both {} and {}",
+                            primary,
+                            trimmingName,
+                            notRenamedConflict
+                        );
                         break;
                     }
                     primary = nextPrimary;
@@ -573,39 +583,31 @@ public class PrettifyNames(
                     .WithIdentifier(Identifier(newName))
                     .WithAttributeLists(
                         List(
-                            node.AttributeLists.Select(
-                                x =>
-                                    x.WithAttributes(
-                                        SeparatedList(
-                                            x.Attributes.Select(
-                                                y =>
-                                                    y.IsAttribute(
-                                                        "System.Runtime.InteropServices.DllImport"
-                                                    )
-                                                    && (
-                                                        y.ArgumentList?.Arguments.All(
-                                                            z =>
-                                                                z.NameEquals?.Name.ToString()
-                                                                != "EntryPoint"
-                                                        ) ?? true
-                                                    )
-                                                        ? y.AddArgumentListArguments(
-                                                            AttributeArgument(
-                                                                    LiteralExpression(
-                                                                        SyntaxKind.StringLiteralExpression,
-                                                                        Literal(
-                                                                            node.Identifier.ToString()
-                                                                        )
-                                                                    )
-                                                                )
-                                                                .WithNameEquals(
-                                                                    NameEquals("EntryPoint")
-                                                                )
-                                                        )
-                                                        : y
+                            node.AttributeLists.Select(x =>
+                                x.WithAttributes(
+                                    SeparatedList(
+                                        x.Attributes.Select(y =>
+                                            y.IsAttribute(
+                                                "System.Runtime.InteropServices.DllImport"
                                             )
+                                            && (
+                                                y.ArgumentList?.Arguments.All(z =>
+                                                    z.NameEquals?.Name.ToString() != "EntryPoint"
+                                                ) ?? true
+                                            )
+                                                ? y.AddArgumentListArguments(
+                                                    AttributeArgument(
+                                                            LiteralExpression(
+                                                                SyntaxKind.StringLiteralExpression,
+                                                                Literal(node.Identifier.ToString())
+                                                            )
+                                                        )
+                                                        .WithNameEquals(NameEquals("EntryPoint"))
+                                                )
+                                                : y
                                         )
                                     )
+                                )
                             )
                         )
                     );

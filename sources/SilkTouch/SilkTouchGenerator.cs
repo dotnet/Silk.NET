@@ -117,9 +117,10 @@ public class SilkTouchGenerator(
 
         // Read the response files
         logger.LogInformation("Reading response files for {0}, please wait...", key);
-        var rsps = job.ClangSharpResponseFiles.SelectMany(
-            file => rspHandler.ReadResponseFiles(file, job.ClangSharpResponseFiles)
-        )
+        var rsps = job
+            .ClangSharpResponseFiles.SelectMany(file =>
+                rspHandler.ReadResponseFiles(file, job.ClangSharpResponseFiles)
+            )
             .ToList();
         var cacheKey = (
             string.Join(

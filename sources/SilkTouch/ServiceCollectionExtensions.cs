@@ -166,8 +166,8 @@ public static class ServiceCollectionExtensions
                     loadedMods[m]
                 );
                 services.AddSingleton(provider);
-                services.AddSingleton<INameTrimmerProvider>(
-                    s => (INameTrimmerProvider)s.GetRequiredService(provider)
+                services.AddSingleton<INameTrimmerProvider>(s =>
+                    (INameTrimmerProvider)s.GetRequiredService(provider)
                 );
             }
         }

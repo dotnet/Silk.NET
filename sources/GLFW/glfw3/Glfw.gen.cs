@@ -316,7 +316,7 @@ public unsafe partial class Glfw : IGlfw, IGlfw.Static<Glfw>
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
         [NativeFunction("glfw", EntryPoint = "glfwGetJoystickGUID")]
-        public static Ptr<sbyte> GetJoystickGuid(int jid)
+        public static Ptr<sbyte> GetJoystickGUID(int jid)
         {
             [DllImport("glfw", ExactSpelling = true, EntryPoint = "glfwGetJoystickGUID")]
             [return: NativeTypeName("const char *")]
@@ -1986,7 +1986,7 @@ public unsafe partial class Glfw : IGlfw, IGlfw.Static<Glfw>
 
         [return: NativeTypeName("const char *")]
         [NativeFunction("glfw", EntryPoint = "glfwGetJoystickGUID")]
-        public Ptr<sbyte> GetJoystickGuid(int jid) => T.GetJoystickGuid(jid);
+        public Ptr<sbyte> GetJoystickGUID(int jid) => T.GetJoystickGUID(jid);
 
         [return: NativeTypeName("const unsigned char *")]
         [NativeFunction("glfw", EntryPoint = "glfwGetJoystickHats")]
@@ -2557,7 +2557,7 @@ public unsafe partial class Glfw : IGlfw, IGlfw.Static<Glfw>
 
         [return: NativeTypeName("const char *")]
         [NativeFunction("glfw", EntryPoint = "glfwGetJoystickGUID")]
-        public static Ptr<sbyte> GetJoystickGuid(int jid) => Underlying.Value!.GetJoystickGuid(jid);
+        public static Ptr<sbyte> GetJoystickGUID(int jid) => Underlying.Value!.GetJoystickGUID(jid);
 
         [return: NativeTypeName("const unsigned char *")]
         [NativeFunction("glfw", EntryPoint = "glfwGetJoystickHats")]
@@ -3103,7 +3103,7 @@ public unsafe partial class Glfw : IGlfw, IGlfw.Static<Glfw>
         public const int HatCentered = 0;
 
         [NativeTypeName("#define GLFW_HAT_UP 1")]
-        public const int HatUP = 1;
+        public const int HatUp = 1;
 
         [NativeTypeName("#define GLFW_HAT_RIGHT 2")]
         public const int HatRight = 2;
@@ -3115,13 +3115,13 @@ public unsafe partial class Glfw : IGlfw, IGlfw.Static<Glfw>
         public const int HatLeft = 8;
 
         [NativeTypeName("#define GLFW_HAT_RIGHT_UP (GLFW_HAT_RIGHT | GLFW_HAT_UP)")]
-        public const int HatRightUP = (2 | 1);
+        public const int HatRightUp = (2 | 1);
 
         [NativeTypeName("#define GLFW_HAT_RIGHT_DOWN (GLFW_HAT_RIGHT | GLFW_HAT_DOWN)")]
         public const int HatRightDown = (2 | 4);
 
         [NativeTypeName("#define GLFW_HAT_LEFT_UP (GLFW_HAT_LEFT  | GLFW_HAT_UP)")]
-        public const int HatLeftUP = (8 | 1);
+        public const int HatLeftUp = (8 | 1);
 
         [NativeTypeName("#define GLFW_HAT_LEFT_DOWN (GLFW_HAT_LEFT  | GLFW_HAT_DOWN)")]
         public const int HatLeftDown = (8 | 4);
@@ -3307,10 +3307,10 @@ public unsafe partial class Glfw : IGlfw, IGlfw.Static<Glfw>
         public const int KeyDown = 264;
 
         [NativeTypeName("#define GLFW_KEY_UP 265")]
-        public const int KeyUP = 265;
+        public const int KeyUp = 265;
 
         [NativeTypeName("#define GLFW_KEY_PAGE_UP 266")]
-        public const int KeyPageUP = 266;
+        public const int KeyPageUp = 266;
 
         [NativeTypeName("#define GLFW_KEY_PAGE_DOWN 267")]
         public const int KeyPageDown = 267;
@@ -3412,55 +3412,55 @@ public unsafe partial class Glfw : IGlfw, IGlfw.Static<Glfw>
         public const int KeyF25 = 314;
 
         [NativeTypeName("#define GLFW_KEY_KP_0 320")]
-        public const int KeyKP0 = 320;
+        public const int KeyKp0 = 320;
 
         [NativeTypeName("#define GLFW_KEY_KP_1 321")]
-        public const int KeyKP1 = 321;
+        public const int KeyKp1 = 321;
 
         [NativeTypeName("#define GLFW_KEY_KP_2 322")]
-        public const int KeyKP2 = 322;
+        public const int KeyKp2 = 322;
 
         [NativeTypeName("#define GLFW_KEY_KP_3 323")]
-        public const int KeyKP3 = 323;
+        public const int KeyKp3 = 323;
 
         [NativeTypeName("#define GLFW_KEY_KP_4 324")]
-        public const int KeyKP4 = 324;
+        public const int KeyKp4 = 324;
 
         [NativeTypeName("#define GLFW_KEY_KP_5 325")]
-        public const int KeyKP5 = 325;
+        public const int KeyKp5 = 325;
 
         [NativeTypeName("#define GLFW_KEY_KP_6 326")]
-        public const int KeyKP6 = 326;
+        public const int KeyKp6 = 326;
 
         [NativeTypeName("#define GLFW_KEY_KP_7 327")]
-        public const int KeyKP7 = 327;
+        public const int KeyKp7 = 327;
 
         [NativeTypeName("#define GLFW_KEY_KP_8 328")]
-        public const int KeyKP8 = 328;
+        public const int KeyKp8 = 328;
 
         [NativeTypeName("#define GLFW_KEY_KP_9 329")]
-        public const int KeyKP9 = 329;
+        public const int KeyKp9 = 329;
 
         [NativeTypeName("#define GLFW_KEY_KP_DECIMAL 330")]
-        public const int KeyKPDecimal = 330;
+        public const int KeyKpDecimal = 330;
 
         [NativeTypeName("#define GLFW_KEY_KP_DIVIDE 331")]
-        public const int KeyKPDivide = 331;
+        public const int KeyKpDivide = 331;
 
         [NativeTypeName("#define GLFW_KEY_KP_MULTIPLY 332")]
-        public const int KeyKPMultiply = 332;
+        public const int KeyKpMultiply = 332;
 
         [NativeTypeName("#define GLFW_KEY_KP_SUBTRACT 333")]
-        public const int KeyKPSubtract = 333;
+        public const int KeyKpSubtract = 333;
 
         [NativeTypeName("#define GLFW_KEY_KP_ADD 334")]
-        public const int KeyKPAdd = 334;
+        public const int KeyKpAdd = 334;
 
         [NativeTypeName("#define GLFW_KEY_KP_ENTER 335")]
-        public const int KeyKPEnter = 335;
+        public const int KeyKpEnter = 335;
 
         [NativeTypeName("#define GLFW_KEY_KP_EQUAL 336")]
-        public const int KeyKPEqual = 336;
+        public const int KeyKpEqual = 336;
 
         [NativeTypeName("#define GLFW_KEY_LEFT_SHIFT 340")]
         public const int KeyLeftShift = 340;
@@ -3631,7 +3631,7 @@ public unsafe partial class Glfw : IGlfw, IGlfw.Static<Glfw>
         public const int GamepadButtonRightThumb = 10;
 
         [NativeTypeName("#define GLFW_GAMEPAD_BUTTON_DPAD_UP 11")]
-        public const int GamepadButtonDpadUP = 11;
+        public const int GamepadButtonDpadUp = 11;
 
         [NativeTypeName("#define GLFW_GAMEPAD_BUTTON_DPAD_RIGHT 12")]
         public const int GamepadButtonDpadRight = 12;
@@ -3679,13 +3679,13 @@ public unsafe partial class Glfw : IGlfw, IGlfw.Static<Glfw>
         public const int GamepadAxisLast = 5;
 
         [NativeTypeName("#define GLFW_NO_ERROR 0")]
-        public const int NOError = 0;
+        public const int NoError = 0;
 
         [NativeTypeName("#define GLFW_NOT_INITIALIZED 0x00010001")]
         public const int NotInitialized = 0x00010001;
 
         [NativeTypeName("#define GLFW_NO_CURRENT_CONTEXT 0x00010002")]
-        public const int NOCurrentContext = 0x00010002;
+        public const int NoCurrentContext = 0x00010002;
 
         [NativeTypeName("#define GLFW_INVALID_ENUM 0x00010003")]
         public const int InvalidEnum = 0x00010003;
@@ -3694,7 +3694,7 @@ public unsafe partial class Glfw : IGlfw, IGlfw.Static<Glfw>
         public const int InvalidValue = 0x00010004;
 
         [NativeTypeName("#define GLFW_OUT_OF_MEMORY 0x00010005")]
-        public const int OutOFMemory = 0x00010005;
+        public const int OutOfMemory = 0x00010005;
 
         [NativeTypeName("#define GLFW_API_UNAVAILABLE 0x00010006")]
         public const int ApiUnavailable = 0x00010006;
@@ -3709,7 +3709,7 @@ public unsafe partial class Glfw : IGlfw, IGlfw.Static<Glfw>
         public const int FormatUnavailable = 0x00010009;
 
         [NativeTypeName("#define GLFW_NO_WINDOW_CONTEXT 0x0001000A")]
-        public const int NOWindowContext = 0x0001000A;
+        public const int NoWindowContext = 0x0001000A;
 
         [NativeTypeName("#define GLFW_CURSOR_UNAVAILABLE 0x0001000B")]
         public const int CursorUnavailable = 0x0001000B;
@@ -3757,7 +3757,7 @@ public unsafe partial class Glfw : IGlfw, IGlfw.Static<Glfw>
         public const int Hovered = 0x0002000B;
 
         [NativeTypeName("#define GLFW_FOCUS_ON_SHOW 0x0002000C")]
-        public const int FocusONShow = 0x0002000C;
+        public const int FocusOnShow = 0x0002000C;
 
         [NativeTypeName("#define GLFW_MOUSE_PASSTHROUGH 0x0002000D")]
         public const int MousePassthrough = 0x0002000D;
@@ -3847,13 +3847,13 @@ public unsafe partial class Glfw : IGlfw, IGlfw.Static<Glfw>
         public const int ContextReleaseBehavior = 0x00022009;
 
         [NativeTypeName("#define GLFW_CONTEXT_NO_ERROR 0x0002200A")]
-        public const int ContextNOError = 0x0002200A;
+        public const int ContextNoError = 0x0002200A;
 
         [NativeTypeName("#define GLFW_CONTEXT_CREATION_API 0x0002200B")]
         public const int ContextCreationApi = 0x0002200B;
 
         [NativeTypeName("#define GLFW_SCALE_TO_MONITOR 0x0002200C")]
-        public const int ScaleTOMonitor = 0x0002200C;
+        public const int ScaleToMonitor = 0x0002200C;
 
         [NativeTypeName("#define GLFW_COCOA_RETINA_FRAMEBUFFER 0x00023001")]
         public const int CocoaRetinaFramebuffer = 0x00023001;
@@ -3874,25 +3874,25 @@ public unsafe partial class Glfw : IGlfw, IGlfw.Static<Glfw>
         public const int Win32KeyboardMenu = 0x00025001;
 
         [NativeTypeName("#define GLFW_WAYLAND_APP_ID 0x00026001")]
-        public const int WaylandAppID = 0x00026001;
+        public const int WaylandAppId = 0x00026001;
 
         [NativeTypeName("#define GLFW_NO_API 0")]
-        public const int NOApi = 0;
+        public const int NoApi = 0;
 
         [NativeTypeName("#define GLFW_OPENGL_API 0x00030001")]
         public const int OpenglApi = 0x00030001;
 
         [NativeTypeName("#define GLFW_OPENGL_ES_API 0x00030002")]
-        public const int OpenglESApi = 0x00030002;
+        public const int OpenglEsApi = 0x00030002;
 
         [NativeTypeName("#define GLFW_NO_ROBUSTNESS 0")]
-        public const int NORobustness = 0;
+        public const int NoRobustness = 0;
 
         [NativeTypeName("#define GLFW_NO_RESET_NOTIFICATION 0x00031001")]
-        public const int NOResetNotification = 0x00031001;
+        public const int NoResetNotification = 0x00031001;
 
         [NativeTypeName("#define GLFW_LOSE_CONTEXT_ON_RESET 0x00031002")]
-        public const int LoseContextONReset = 0x00031002;
+        public const int LoseContextOnReset = 0x00031002;
 
         [NativeTypeName("#define GLFW_OPENGL_ANY_PROFILE 0")]
         public const int OpenglAnyProfile = 0;
@@ -3958,10 +3958,10 @@ public unsafe partial class Glfw : IGlfw, IGlfw.Static<Glfw>
         public const int AnglePlatformTypeOpengles = 0x00037003;
 
         [NativeTypeName("#define GLFW_ANGLE_PLATFORM_TYPE_D3D9 0x00037004")]
-        public const int AnglePlatformTypeD3d9 = 0x00037004;
+        public const int AnglePlatformTypeD3D9 = 0x00037004;
 
         [NativeTypeName("#define GLFW_ANGLE_PLATFORM_TYPE_D3D11 0x00037005")]
-        public const int AnglePlatformTypeD3d11 = 0x00037005;
+        public const int AnglePlatformTypeD3D11 = 0x00037005;
 
         [NativeTypeName("#define GLFW_ANGLE_PLATFORM_TYPE_VULKAN 0x00037007")]
         public const int AnglePlatformTypeVulkan = 0x00037007;
@@ -3991,10 +3991,10 @@ public unsafe partial class Glfw : IGlfw, IGlfw.Static<Glfw>
         public const int PointingHandCursor = 0x00036004;
 
         [NativeTypeName("#define GLFW_RESIZE_EW_CURSOR 0x00036005")]
-        public const int ResizeEWCursor = 0x00036005;
+        public const int ResizeEwCursor = 0x00036005;
 
         [NativeTypeName("#define GLFW_RESIZE_NS_CURSOR 0x00036006")]
-        public const int ResizeNSCursor = 0x00036006;
+        public const int ResizeNsCursor = 0x00036006;
 
         [NativeTypeName("#define GLFW_RESIZE_NWSE_CURSOR 0x00036007")]
         public const int ResizeNwseCursor = 0x00036007;
@@ -4428,7 +4428,7 @@ public unsafe partial class Glfw : IGlfw, IGlfw.Static<Glfw>
 
     [return: NativeTypeName("const char *")]
     [NativeFunction("glfw", EntryPoint = "glfwGetJoystickGUID")]
-    Ptr<sbyte> IGlfw.GetJoystickGuid(int jid)
+    Ptr<sbyte> IGlfw.GetJoystickGUID(int jid)
     {
         sbyte* __DSL_glfwGetJoystickGUID(int jid) =>
             (
@@ -4440,7 +4440,7 @@ public unsafe partial class Glfw : IGlfw, IGlfw.Static<Glfw>
 
     [return: NativeTypeName("const char *")]
     [NativeFunction("glfw", EntryPoint = "glfwGetJoystickGUID")]
-    public static Ptr<sbyte> GetJoystickGuid(int jid) => DllImport.GetJoystickGuid(jid);
+    public static Ptr<sbyte> GetJoystickGUID(int jid) => DllImport.GetJoystickGUID(jid);
 
     [return: NativeTypeName("const unsigned char *")]
     [NativeFunction("glfw", EntryPoint = "glfwGetJoystickHats")]

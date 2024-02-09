@@ -59,23 +59,23 @@ unsafe
     var vert = GL.CreateShader(GL.Constants.VertexShader);
     var frag = GL.CreateShader(GL.Constants.FragmentShader);
     const string vertSource = """
-                              #version 330 core
-                              layout(location = 0) in vec3 aPosition;
-                              void main(void)
-                              {
-                                  gl_Position = vec4(aPosition, 1.0);
-                              }
-                              """;
+        #version 330 core
+        layout(location = 0) in vec3 aPosition;
+        void main(void)
+        {
+            gl_Position = vec4(aPosition, 1.0);
+        }
+        """;
     var vertSourceLength = vertSource.Length;
     GL.ShaderSource(vert, 1, new[] { vertSource }, vertSourceLength.AsRef());
     const string fragSource = """
-                              #version 330
-                              out vec4 outputColor;
-                              void main()
-                              {
-                                  outputColor = vec4(1.0, 0.5, 0.2, 1.0);
-                              }
-                              """;
+        #version 330
+        out vec4 outputColor;
+        void main()
+        {
+            outputColor = vec4(1.0, 0.5, 0.2, 1.0);
+        }
+        """;
     var fragSourceLength = fragSource.Length;
     GL.ShaderSource(frag, 1, new[] { fragSource }, fragSourceLength.AsRef());
     GL.CompileShader(vert);

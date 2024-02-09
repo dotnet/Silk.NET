@@ -367,11 +367,8 @@ public class AddVTables(IOptionsSnapshot<AddVTables.Configuration> config) : IMo
                     ctx.StaticDecl.WithModifiers(
                         TokenList(
                             new[] { Token(SyntaxKind.PublicKeyword) }.Concat(
-                                ctx.StaticDecl.Modifiers.Where(
-                                    x =>
-                                        x.Kind()
-                                            is SyntaxKind.StaticKeyword
-                                                or SyntaxKind.UnsafeKeyword
+                                ctx.StaticDecl.Modifiers.Where(x =>
+                                    x.Kind() is SyntaxKind.StaticKeyword or SyntaxKind.UnsafeKeyword
                                 )
                             )
                         )
@@ -393,8 +390,8 @@ public class AddVTables(IOptionsSnapshot<AddVTables.Configuration> config) : IMo
                                     ),
                                     ArgumentList(
                                         SeparatedList(
-                                            ctx.InstanceDecl.ParameterList.Parameters.Select(
-                                                x => Argument(IdentifierName(x.Identifier))
+                                            ctx.InstanceDecl.ParameterList.Parameters.Select(x =>
+                                                Argument(IdentifierName(x.Identifier))
                                             )
                                         )
                                     )
@@ -466,8 +463,8 @@ public class AddVTables(IOptionsSnapshot<AddVTables.Configuration> config) : IMo
                                 ),
                                 ArgumentList(
                                     SeparatedList(
-                                        ctx.InstanceDecl.ParameterList.Parameters.Select(
-                                            x => Argument(IdentifierName(x.Identifier))
+                                        ctx.InstanceDecl.ParameterList.Parameters.Select(x =>
+                                            Argument(IdentifierName(x.Identifier))
                                         )
                                     )
                                 )
@@ -611,14 +608,13 @@ public class AddVTables(IOptionsSnapshot<AddVTables.Configuration> config) : IMo
                 )
                 .WithModifiers(
                     TokenList(
-                        ret.Modifiers.Where(
-                            x =>
-                                x.Kind()
-                                    is SyntaxKind.UnsafeKeyword
-                                        or SyntaxKind.PartialKeyword
-                                        or SyntaxKind.PublicKeyword
-                                        or SyntaxKind.PrivateKeyword
-                                        or SyntaxKind.InternalKeyword
+                        ret.Modifiers.Where(x =>
+                            x.Kind()
+                                is SyntaxKind.UnsafeKeyword
+                                    or SyntaxKind.PartialKeyword
+                                    or SyntaxKind.PublicKeyword
+                                    or SyntaxKind.PrivateKeyword
+                                    or SyntaxKind.InternalKeyword
                         )
                     )
                 )
@@ -654,14 +650,13 @@ public class AddVTables(IOptionsSnapshot<AddVTables.Configuration> config) : IMo
                 InterfaceDeclaration(key)
                     .WithModifiers(
                         TokenList(
-                            node.Modifiers.Where(
-                                x =>
-                                    x.Kind()
-                                        is SyntaxKind.PublicKeyword
-                                            or SyntaxKind.PrivateKeyword
-                                            or SyntaxKind.InternalKeyword
-                                            or SyntaxKind.ProtectedKeyword
-                                            or SyntaxKind.UnsafeKeyword
+                            node.Modifiers.Where(x =>
+                                x.Kind()
+                                    is SyntaxKind.PublicKeyword
+                                        or SyntaxKind.PrivateKeyword
+                                        or SyntaxKind.InternalKeyword
+                                        or SyntaxKind.ProtectedKeyword
+                                        or SyntaxKind.UnsafeKeyword
                             )
                                 .Concat(Enumerable.Repeat(Token(SyntaxKind.PartialKeyword), 1))
                         )
@@ -696,8 +691,58 @@ public class AddVTables(IOptionsSnapshot<AddVTables.Configuration> config) : IMo
                                     )
                                 )
                             )
-                    );
+                            .AddAttributeLists(GetNativeMemberAttribute(key, true))
+                    )
+                    .AddAttributeLists(GetNativeMemberAttribute(key));
         }
+
+        private static AttributeListSyntax GetNativeMemberAttribute(
+            string key,
+            bool @static = false
+        ) =>
+            @static
+                ? AttributeList(
+                    SingletonSeparatedList(
+                        Attribute(
+                            IdentifierName("NativeMemberContainer"),
+                            AttributeArgumentList(
+                                SeparatedList(
+                                    new[]
+                                    {
+                                        AttributeArgument(
+                                            TypeOfExpression(
+                                                QualifiedName(
+                                                    IdentifierName(key),
+                                                    GenericName(Identifier("Static"))
+                                                )
+                                            )
+                                        ),
+                                        AttributeArgument(
+                                            NameEquals("Static"),
+                                            null,
+                                            LiteralExpression(
+                                                SyntaxKind.TrueLiteralExpression,
+                                                Token(SyntaxKind.TrueKeyword)
+                                            )
+                                        )
+                                    }
+                                )
+                            )
+                        )
+                    )
+                )
+                : AttributeList(
+                    SingletonSeparatedList(
+                        Attribute(
+                            IdentifierName("NativeMemberContainer"),
+                            AttributeArgumentList(
+                                SingletonSeparatedList(
+                                    AttributeArgument(TypeOfExpression(IdentifierName(key)))
+                                )
+                            )
+                        )
+                    )
+                );
 
         public override SyntaxNode? VisitMethodDeclaration(MethodDeclarationSyntax node)
         {
@@ -724,22 +769,18 @@ public class AddVTables(IOptionsSnapshot<AddVTables.Configuration> config) : IMo
                 .WithSemicolonToken(Token(SyntaxKind.SemicolonToken))
                 .WithAttributeLists(
                     List(
-                        node.AttributeLists.Select(
-                            x =>
-                                x.WithAttributes(
-                                    SeparatedList(
-                                        x.Attributes.Where(
-                                            y =>
-                                                !y.IsAttribute(
-                                                    "System.Runtime.InteropServices.DllImport"
-                                                )
-                                                && !y.IsAttribute("Silk.NET.Core.NativeFunction")
-                                                && !y.IsAttribute(
-                                                    "System.Runtime.CompilerServices.MethodImpl"
-                                                )
+                        node.AttributeLists.Select(x =>
+                            x.WithAttributes(
+                                SeparatedList(
+                                    x.Attributes.Where(y =>
+                                        !y.IsAttribute("System.Runtime.InteropServices.DllImport")
+                                        && !y.IsAttribute("Silk.NET.Core.NativeFunction")
+                                        && !y.IsAttribute(
+                                            "System.Runtime.CompilerServices.MethodImpl"
                                         )
                                     )
                                 )
+                            )
                         )
                             .Where(x => x.Attributes.Count > 0)
                     )
@@ -748,8 +789,8 @@ public class AddVTables(IOptionsSnapshot<AddVTables.Configuration> config) : IMo
             var staticDecl = baseDecl
                 .WithModifiers(
                     TokenList(
-                        baseDecl.Modifiers.Where(
-                            x => x.Kind() is SyntaxKind.StaticKeyword or SyntaxKind.UnsafeKeyword
+                        baseDecl.Modifiers.Where(x =>
+                            x.Kind() is SyntaxKind.StaticKeyword or SyntaxKind.UnsafeKeyword
                         )
                     )
                 )
@@ -760,39 +801,36 @@ public class AddVTables(IOptionsSnapshot<AddVTables.Configuration> config) : IMo
             _currentInterface = _currentInterface.WithMembers(
                 List(
                     _currentInterface
-                        .Members.Select(
-                            x =>
-                                x == staticInterface
-                                    ? staticInterface = staticInterface.AddMembers(staticDecl)
-                                    : x
+                        .Members.Select(x =>
+                            x == staticInterface
+                                ? staticInterface = staticInterface.AddMembers(staticDecl)
+                                : x
                         )
                         .Concat(Enumerable.Repeat(instanceDecl, 1))
                 )
             );
             for (var i = 0; i < _vTables.Length; i++)
             {
-                _currentVTableOutputs[i] = _vTables[i].AddMethod(
-                    new VTableContext(
-                        _currentVTableOutputs[i],
-                        node,
-                        lib,
-                        entryPoint ?? node.Identifier.ToString(),
-                        staticDecl,
-                        instanceDecl,
-                        parent.Identifier.ToString()
-                    )
-                );
+                _currentVTableOutputs[i] = _vTables[i]
+                    .AddMethod(
+                        new VTableContext(
+                            _currentVTableOutputs[i],
+                            node,
+                            lib,
+                            entryPoint ?? node.Identifier.ToString(),
+                            staticDecl,
+                            instanceDecl,
+                            parent.Identifier.ToString()
+                        )
+                    );
             }
 
             var nativeContextTramp = instanceDecl.WithExplicitInterfaceSpecifier(
                 ExplicitInterfaceSpecifier(IdentifierName(_currentInterface.Identifier.ToString()))
             );
             if (
-                node.AttributeLists.Any(
-                    x =>
-                        x.Attributes.Any(
-                            y => y.IsAttribute("System.Runtime.InteropServices.DllImport")
-                        )
+                node.AttributeLists.Any(x =>
+                    x.Attributes.Any(y => y.IsAttribute("System.Runtime.InteropServices.DllImport"))
                 )
                 && node.AttributeLists.GetNativeFunctionInfo(out lib, out var ep, out var callConv)
             )
@@ -836,8 +874,8 @@ public class AddVTables(IOptionsSnapshot<AddVTables.Configuration> config) : IMo
                             ),
                             ArgumentList(
                                 SeparatedList(
-                                    node.ParameterList.Parameters.Select(
-                                        x => Argument(IdentifierName(x.Identifier))
+                                    node.ParameterList.Parameters.Select(x =>
+                                        Argument(IdentifierName(x.Identifier))
                                     )
                                 )
                             )
@@ -857,11 +895,8 @@ public class AddVTables(IOptionsSnapshot<AddVTables.Configuration> config) : IMo
         {
             if (
                 _rwMode == MethodRewriteMode.NativeContextTrampoline
-                && node.AttributeLists.Any(
-                    x =>
-                        x.Attributes.Any(
-                            y => y.IsAttribute("System.Runtime.InteropServices.DllImport")
-                        )
+                && node.AttributeLists.Any(x =>
+                    x.Attributes.Any(y => y.IsAttribute("System.Runtime.InteropServices.DllImport"))
                 )
                 && node.AttributeLists.GetNativeFunctionInfo(
                     out var lib,
@@ -874,11 +909,10 @@ public class AddVTables(IOptionsSnapshot<AddVTables.Configuration> config) : IMo
                 // pointer.
                 return node.WithModifiers(
                         TokenList(
-                            node.Modifiers.Where(
-                                x =>
-                                    x.Kind()
-                                        is not SyntaxKind.StaticKeyword
-                                            and not SyntaxKind.ExternKeyword
+                            node.Modifiers.Where(x =>
+                                x.Kind()
+                                    is not SyntaxKind.StaticKeyword
+                                        and not SyntaxKind.ExternKeyword
                             )
                         )
                     )
@@ -938,15 +972,14 @@ public class AddVTables(IOptionsSnapshot<AddVTables.Configuration> config) : IMo
                     .WithMembers(
                         List<MemberDeclarationSyntax>(
                             _vTables
-                                .Select(
-                                    x =>
-                                        x.GetBoilerplate(
-                                            new VTableBoilerplateContext(
-                                                nonInterfaceIden,
-                                                _staticDefault,
-                                                _staticDefaultWrapper
-                                            )
+                                .Select(x =>
+                                    x.GetBoilerplate(
+                                        new VTableBoilerplateContext(
+                                            nonInterfaceIden,
+                                            _staticDefault,
+                                            _staticDefaultWrapper
                                         )
+                                    )
                                 )
                                 .Where(x => x is not null)
                                 .Concat(GenerateTopLevelBoilerplate(nonInterfaceIden))!
@@ -966,6 +999,10 @@ public class AddVTables(IOptionsSnapshot<AddVTables.Configuration> config) : IMo
                                 SimpleBaseType(IdentifierName("IDisposable"))
                             )
                         )
+                    )
+                    .AddAttributeLists(
+                        GetNativeMemberAttribute(iface.Identifier.ToString()),
+                        GetNativeMemberAttribute(iface.Identifier.ToString(), true)
                     );
                 AddUsing("Silk.NET.Core.Loader");
                 AddUsing("System.Reflection");
@@ -1111,14 +1148,13 @@ public class AddVTables(IOptionsSnapshot<AddVTables.Configuration> config) : IMo
                                         FunctionPointerParameterList(
                                             SeparatedList(
                                                 parameterList
-                                                    .Parameters.Select(
-                                                        x =>
-                                                            FunctionPointerParameter(
-                                                                x.Type
-                                                                    ?? throw new InvalidOperationException(
-                                                                        "Parameter has no type!"
-                                                                    )
-                                                            )
+                                                    .Parameters.Select(x =>
+                                                        FunctionPointerParameter(
+                                                            x.Type
+                                                                ?? throw new InvalidOperationException(
+                                                                    "Parameter has no type!"
+                                                                )
+                                                        )
                                                     )
                                                     .Concat(
                                                         Enumerable.Repeat(
@@ -1164,8 +1200,8 @@ public class AddVTables(IOptionsSnapshot<AddVTables.Configuration> config) : IMo
                     .WithArgumentList(
                         ArgumentList(
                             SeparatedList(
-                                parameterList.Parameters.Select(
-                                    x => Argument(IdentifierName(x.Identifier.ToString()))
+                                parameterList.Parameters.Select(x =>
+                                    Argument(IdentifierName(x.Identifier.ToString()))
                                 )
                             )
                         )
@@ -1184,18 +1220,19 @@ public class AddVTables(IOptionsSnapshot<AddVTables.Configuration> config) : IMo
             for (var i = 0; i < cfg.VTables.Length; i++)
             {
                 vTables[i] = (VTable)(
-                    cfg.VTables[i].Get(
-                        cfg.VTables[i].GetValue<string>("Kind") switch
-                        {
-                            nameof(DllImport) => typeof(DllImport),
-                            nameof(StaticWrapper) => typeof(StaticWrapper),
-                            nameof(ThisThread) => typeof(ThisThread),
-                            _
-                                => throw new InvalidOperationException(
-                                    "VTable must have valid \"Kind\" property"
-                                )
-                        }
-                    )
+                    cfg.VTables[i]
+                        .Get(
+                            cfg.VTables[i].GetValue<string>("Kind") switch
+                            {
+                                nameof(DllImport) => typeof(DllImport),
+                                nameof(StaticWrapper) => typeof(StaticWrapper),
+                                nameof(ThisThread) => typeof(ThisThread),
+                                _
+                                    => throw new InvalidOperationException(
+                                        "VTable must have valid \"Kind\" property"
+                                    )
+                            }
+                        )
                     ?? throw new InvalidOperationException(
                         "Failed to deserialize VTable configuration properly"
                     )

@@ -7,8 +7,10 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.GLFW;
 
+[NativeMemberContainer(typeof(IGlfw))]
 public unsafe partial interface IGlfw
 {
+    [NativeMemberContainer(typeof(IGlfw.Static<>), Static = true)]
     public partial interface Static<TSelf>
         where TSelf : Static<TSelf>
     {
@@ -92,7 +94,7 @@ public unsafe partial interface IGlfw
 
         [return: NativeTypeName("const char *")]
         [NativeFunction("glfw", EntryPoint = "glfwGetJoystickGUID")]
-        static abstract Ptr<sbyte> GetJoystickGuid(int jid);
+        static abstract Ptr<sbyte> GetJoystickGUID(int jid);
 
         [return: NativeTypeName("const unsigned char *")]
         [NativeFunction("glfw", EntryPoint = "glfwGetJoystickHats")]
@@ -632,7 +634,7 @@ public unsafe partial interface IGlfw
 
     [return: NativeTypeName("const char *")]
     [NativeFunction("glfw", EntryPoint = "glfwGetJoystickGUID")]
-    Ptr<sbyte> GetJoystickGuid(int jid);
+    Ptr<sbyte> GetJoystickGUID(int jid);
 
     [return: NativeTypeName("const unsigned char *")]
     [NativeFunction("glfw", EntryPoint = "glfwGetJoystickHats")]

@@ -9,6 +9,8 @@ using System.Reflection;
 
 namespace Silk.NET.GLFW;
 
+[NativeMemberContainer(typeof(IGlfw))]
+[NativeMemberContainer(typeof(IGlfw.Static<>), Static = true)]
 partial class Glfw(INativeContext nativeContext) : IDisposable
 {
     public partial class DllImport

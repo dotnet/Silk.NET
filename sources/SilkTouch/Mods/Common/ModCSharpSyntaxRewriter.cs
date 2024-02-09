@@ -37,17 +37,15 @@ public abstract class ModCSharpSyntaxRewriter(bool visitIntoStructuredTrivia = f
                 UsingsToAdd.Count == 0
                     ? comp.Members
                     : List(
-                        comp.Members.Select(
-                            x =>
-                                x.WithLeadingTrivia(
-                                    x.GetLeadingTrivia()
-                                        .Where(
-                                            y =>
-                                                y.Kind()
-                                                    is not SyntaxKind.SingleLineCommentTrivia
-                                                        and not SyntaxKind.MultiLineCommentTrivia
-                                        )
-                                )
+                        comp.Members.Select(x =>
+                            x.WithLeadingTrivia(
+                                x.GetLeadingTrivia()
+                                    .Where(y =>
+                                        y.Kind()
+                                            is not SyntaxKind.SingleLineCommentTrivia
+                                                and not SyntaxKind.MultiLineCommentTrivia
+                                    )
+                            )
                         )
                     )
             );
@@ -82,7 +80,8 @@ public abstract class ModCSharpSyntaxRewriter(bool visitIntoStructuredTrivia = f
             usingsToAdd.Select(
                 (x, i) =>
                     i == 0
-                        ? x.Value.WithoutTrailingTrivia()
+                        ? x
+                            .Value.WithoutTrailingTrivia()
                             .WithLeadingTrivia(
                                 usingsToAdd
                                     .Select(y => y.Value.GetLeadingTrivia())
@@ -90,14 +89,12 @@ public abstract class ModCSharpSyntaxRewriter(bool visitIntoStructuredTrivia = f
                                         comp?.Members.Select(y => y.GetLeadingTrivia())
                                             ?? Enumerable.Empty<SyntaxTriviaList>()
                                     )
-                                    .OrderByDescending(
-                                        y =>
-                                            y.Count(
-                                                z =>
-                                                    z.Kind()
-                                                        is SyntaxKind.SingleLineCommentTrivia
-                                                            or SyntaxKind.MultiLineCommentTrivia
-                                            )
+                                    .OrderByDescending(y =>
+                                        y.Count(z =>
+                                            z.Kind()
+                                                is SyntaxKind.SingleLineCommentTrivia
+                                                    or SyntaxKind.MultiLineCommentTrivia
+                                        )
                                     )
                                     .FirstOrDefault()
                             )

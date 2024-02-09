@@ -112,8 +112,8 @@ public class ChangeNamespace : IMod
         _jobs[key] = (
             rsps.Select(x => x.GeneratorConfiguration.DefaultNamespace)
                 .Concat(
-                    rsps.SelectMany(
-                        x => x.GeneratorConfiguration.WithNamespaces.Select(y => y.Value)
+                    rsps.SelectMany(x =>
+                        x.GeneratorConfiguration.WithNamespaces.Select(y => y.Value)
                     )
                 )
                 .Distinct()
@@ -160,9 +160,8 @@ public class ChangeNamespace : IMod
                     => syntax.AddUsings(
                         _usingsToAdd
                             .Select(x => UsingDirective(ModUtils.NamespaceIntoIdentifierName(x)))
-                            .Where(
-                                x =>
-                                    syntax.Usings.All(y => x.Name?.ToString() != y.Name?.ToString())
+                            .Where(x =>
+                                syntax.Usings.All(y => x.Name?.ToString() != y.Name?.ToString())
                             )
                             .ToArray()
                     ),

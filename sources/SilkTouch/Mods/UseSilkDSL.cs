@@ -48,8 +48,8 @@ public class UseSilkDSL : IMod
                 ClassDeclarationSyntax syn
                     => syn.WithMembers(
                         List(
-                            syn.Members.OrderBy(
-                                x => (x as MethodDeclarationSyntax)?.Identifier.ToString()
+                            syn.Members.OrderBy(x =>
+                                (x as MethodDeclarationSyntax)?.Identifier.ToString()
                             )
                         )
                     ),
@@ -73,9 +73,8 @@ public class UseSilkDSL : IMod
             }
 
             // Get the list of DSL applicable parameters
-            var paramsToChange = node.ParameterList.Parameters.Where(
-                x => x.Type is not null && IsDSLApplicable(x.Type)
-            )
+            var paramsToChange = node
+                .ParameterList.Parameters.Where(x => x.Type is not null && IsDSLApplicable(x.Type))
                 .ToArray();
             _parameterIdentifiers = paramsToChange.Select(x => x.Identifier.ToString()).ToHashSet();
             _returnTypeReplaceable = IsDSLApplicable(node.ReturnType);
@@ -113,74 +112,70 @@ public class UseSilkDSL : IMod
                         // DllImport is ExactSpelling we add an EntryPoint instead (given that we're changing the function
                         // name)
                         List(
-                            node.AttributeLists.Select(
-                                x =>
-                                    x.WithAttributes(
-                                        SeparatedList(
-                                            x.Attributes.Select(
-                                                y =>
-                                                    y.IsAttribute(
-                                                        "System.Runtime.InteropServices.DllImport"
-                                                    )
-                                                        ? y.WithArgumentList(
-                                                            AttributeArgumentList(
-                                                                SeparatedList<AttributeArgumentSyntax>(
-                                                                    y.ArgumentList?.Arguments
-                                                                        .Select(
-                                                                            z =>
-                                                                                z.NameEquals?.Name.Identifier.ToString()
-                                                                                == nameof(
-                                                                                    DllImportAttribute.EntryPoint
+                            node.AttributeLists.Select(x =>
+                                x.WithAttributes(
+                                    SeparatedList(
+                                        x.Attributes.Select(y =>
+                                            y.IsAttribute(
+                                                "System.Runtime.InteropServices.DllImport"
+                                            )
+                                                ? y.WithArgumentList(
+                                                    AttributeArgumentList(
+                                                        SeparatedList<AttributeArgumentSyntax>(
+                                                            y
+                                                                .ArgumentList?.Arguments.Select(z =>
+                                                                    z.NameEquals?.Name.Identifier.ToString()
+                                                                    == nameof(
+                                                                        DllImportAttribute.EntryPoint
+                                                                    )
+                                                                        ? null
+                                                                        : z
+                                                                )
+                                                                .Where(z => z is not null)
+                                                                .Concat(
+                                                                    Enumerable.Repeat(
+                                                                        AttributeArgument(
+                                                                                LiteralExpression(
+                                                                                    SyntaxKind.StringLiteralExpression,
+                                                                                    Literal(
+                                                                                        ep
+                                                                                            ?? node.Identifier.ToString()
+                                                                                    )
                                                                                 )
-                                                                                    ? null
-                                                                                    : z
-                                                                        )
-                                                                        .Where(z => z is not null)
-                                                                        .Concat(
-                                                                            Enumerable.Repeat(
-                                                                                AttributeArgument(
-                                                                                        LiteralExpression(
-                                                                                            SyntaxKind.StringLiteralExpression,
-                                                                                            Literal(
-                                                                                                ep
-                                                                                                    ?? node.Identifier.ToString()
-                                                                                            )
+                                                                            )
+                                                                            .WithNameEquals(
+                                                                                NameEquals(
+                                                                                    IdentifierName(
+                                                                                        nameof(
+                                                                                            DllImportAttribute.EntryPoint
                                                                                         )
                                                                                     )
-                                                                                    .WithNameEquals(
-                                                                                        NameEquals(
-                                                                                            IdentifierName(
-                                                                                                nameof(
-                                                                                                    DllImportAttribute.EntryPoint
-                                                                                                )
-                                                                                            )
-                                                                                        )
-                                                                                    ),
-                                                                                1
-                                                                            )
-                                                                        )!
-                                                                )
-                                                            )
+                                                                                )
+                                                                            ),
+                                                                        1
+                                                                    )
+                                                                )!
                                                         )
-                                                        : y
-                                            )
+                                                    )
+                                                )
+                                                : y
                                         )
                                     )
+                                )
                             )
                         ),
                         // Remove any accessibility modifiers - this is a local function
                         TokenList(
-                            node.Modifiers.Where(
-                                x =>
-                                    x.Kind() switch
-                                    {
-                                        SyntaxKind.PublicKeyword
-                                        or SyntaxKind.PrivateKeyword
-                                        or SyntaxKind.InternalKeyword
-                                        or SyntaxKind.ProtectedKeyword
-                                            => false,
-                                        _ => true
-                                    }
+                            node.Modifiers.Where(x =>
+                                x.Kind() switch
+                                {
+                                    SyntaxKind.PublicKeyword
+                                    or SyntaxKind.PrivateKeyword
+                                    or SyntaxKind.InternalKeyword
+                                    or SyntaxKind.ProtectedKeyword
+                                        => false,
+                                    _ => true
+                                }
                             )
                         ),
                         node.ReturnType,
@@ -198,15 +193,14 @@ public class UseSilkDSL : IMod
                     IdentifierName(ident),
                     ArgumentList(
                         SeparatedList(
-                            node.ParameterList.Parameters.Select(
-                                x =>
-                                    Argument(
-                                        IdentifierName(
-                                            x.Type is not null && IsDSLApplicable(x.Type)
-                                                ? IdentToInnerIdent(x.Identifier)
-                                                : x.Identifier
-                                        )
+                            node.ParameterList.Parameters.Select(x =>
+                                Argument(
+                                    IdentifierName(
+                                        x.Type is not null && IsDSLApplicable(x.Type)
+                                            ? IdentToInnerIdent(x.Identifier)
+                                            : x.Identifier
                                     )
+                                )
                             )
                         )
                     )
@@ -217,8 +211,8 @@ public class UseSilkDSL : IMod
                 methWithReplacementsButNoFixed = methWithReplacementsButNoFixed
                     .WithModifiers(
                         TokenList(
-                            methWithReplacementsButNoFixed.Modifiers.Where(
-                                x => !x.IsKind(SyntaxKind.ExternKeyword)
+                            methWithReplacementsButNoFixed.Modifiers.Where(x =>
+                                !x.IsKind(SyntaxKind.ExternKeyword)
                             )
                         )
                     )
@@ -376,11 +370,10 @@ public class UseSilkDSL : IMod
                 target == SyntaxKind.ReturnKeyword
                 || (
                     attrLists is not null
-                    && attrLists.Any(
-                        a =>
-                            a is not null
-                                ? a.Attributes.Any(attr => attr.Name.ToString() == "out")
-                                : false
+                    && attrLists.Any(a =>
+                        a is not null
+                            ? a.Attributes.Any(attr => attr.Name.ToString() == "out")
+                            : false
                     )
                 )
             )

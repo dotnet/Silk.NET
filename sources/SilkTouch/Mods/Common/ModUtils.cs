@@ -91,8 +91,8 @@ public static class ModUtils
     /// <param name="type">The type syntax.</param>
     /// <returns>The discriminator string.</returns>
     public static string DiscrimStr(SyntaxTokenList toks, TypeSyntax? type) =>
-        toks.Any(
-            x => x.Kind() is SyntaxKind.RefKeyword or SyntaxKind.InKeyword or SyntaxKind.OutKeyword
+        toks.Any(x =>
+            x.Kind() is SyntaxKind.RefKeyword or SyntaxKind.InKeyword or SyntaxKind.OutKeyword
         )
             ? $"{type}&"
             : type?.ToString() ?? string.Empty;
@@ -316,28 +316,19 @@ public static class ModUtils
                     .ValueText
                 ?? throw new InvalidOperationException("DllImport was found but was not valid");
             entryPoint = (
-                attr.ArgumentList?.Arguments
-                    .FirstOrDefault(
-                        x =>
-                            x.NameEquals is not null
-                            && x.NameEquals.Name.ToString() == nameof(DllImportAttribute.EntryPoint)
-                    )
-                    ?.Expression as LiteralExpressionSyntax
+                attr.ArgumentList?.Arguments.FirstOrDefault(x =>
+                    x.NameEquals is not null
+                    && x.NameEquals.Name.ToString() == nameof(DllImportAttribute.EntryPoint)
+                )?.Expression as LiteralExpressionSyntax
             )
                 ?.Token
                 .ValueText;
             callConv = (
-                attr.ArgumentList?.Arguments
-                    .FirstOrDefault(
-                        x =>
-                            x.NameEquals is not null
-                            && x.NameEquals.Name.ToString()
-                                == nameof(DllImportAttribute.CallingConvention)
-                    )
-                    ?.Expression as MemberAccessExpressionSyntax
-            )
-                ?.Name
-                .ToString();
+                attr.ArgumentList?.Arguments.FirstOrDefault(x =>
+                    x.NameEquals is not null
+                    && x.NameEquals.Name.ToString() == nameof(DllImportAttribute.CallingConvention)
+                )?.Expression as MemberAccessExpressionSyntax
+            )?.Name.ToString();
             return true;
         }
 
