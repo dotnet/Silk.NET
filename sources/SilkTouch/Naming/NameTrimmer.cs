@@ -49,14 +49,7 @@ public class NameTrimmer : INameTrimmer
         {
             for (var i = 0; i < nPasses; i++) // try with both trimming name and non trimming name
             {
-                var result = GetPrefix(
-                    container,
-                    hint,
-                    names,
-                    prefixOverrides,
-                    i == 0,
-                    naive = i == 2
-                );
+                var result = GetPrefix(container, hint, names, prefixOverrides, i == 0, naive = i == 2);
                 if (result is null || names is null)
                 {
                     // skip outright.
@@ -66,10 +59,7 @@ public class NameTrimmer : INameTrimmer
                 (identifiedPrefix, localNames) = result.Value;
 
                 // If we have found a prefix,
-                if (
-                    identifiedPrefix.Length > 0
-                    && identifiedPrefix.Length < localNames.Keys.Min(x => x.Length)
-                )
+                if (identifiedPrefix.Length > 0 && identifiedPrefix.Length < localNames.Keys.Min(x => x.Length))
                 {
                     // break and use it for trimming!
                     break;
@@ -81,7 +71,7 @@ public class NameTrimmer : INameTrimmer
                     || localNames.Keys.Count(
                         x => x.StartsWith(hint, StringComparison.OrdinalIgnoreCase)
                     )
-                        >= localNames.Keys.Count / 2
+                    >= localNames.Keys.Count / 2
                 )
                 {
                     // Nope, nothing we can do it seems, we've already tried both trimming name and non trimming name...
@@ -101,10 +91,7 @@ public class NameTrimmer : INameTrimmer
                 naive
                 && (
                     identifiedPrefix!.Length >= trimmingName.Length
-                    || !trimmingName.StartsWith(
-                        identifiedPrefix,
-                        StringComparison.OrdinalIgnoreCase
-                    )
+                    || !trimmingName.StartsWith(identifiedPrefix, StringComparison.OrdinalIgnoreCase)
                 )
             )
             {

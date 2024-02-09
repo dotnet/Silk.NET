@@ -696,20 +696,6 @@ public class AddVTables(IOptionsSnapshot<AddVTables.Configuration> config) : IMo
                                     )
                                 )
                             )
-                    )
-                    .AddAttributeLists(
-                        AttributeList(
-                            SingletonSeparatedList(
-                                Attribute(
-                                    IdentifierName("NativeMemberContainer"),
-                                    AttributeArgumentList(
-                                        SingletonSeparatedList(
-                                            AttributeArgument(TypeOfExpression(IdentifierName(key)))
-                                        )
-                                    )
-                                )
-                            )
-                        )
                     );
         }
 

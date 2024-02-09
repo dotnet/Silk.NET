@@ -25,7 +25,7 @@ namespace Silk.NET.SilkTouch.Mods;
 public class PrettifyNames(
     ILogger<PrettifyNames> logger,
     IOptionsSnapshot<PrettifyNames.Configuration> config,
-    IEnumerable<IJobDependency<INameTrimmer>> trimmerProviders
+    IEnumerable<INameTrimmerProvider> trimmerProviders
 ) : IMod
 {
     /// <summary>
@@ -63,8 +63,7 @@ public class PrettifyNames(
         if (cfg.TrimmerBaseline is not null)
         {
             var trimmers = trimmerProviders
-                .SelectMany(x => x.Get(key))
-                .Where(x => x.Version >= cfg.TrimmerBaseline)
+                .SelectMany(x => x.GetTrimmers(key))
                 .OrderBy(x => x.Version)
                 .ToArray();
             var typeNames = visitor.Types.ToDictionary(
@@ -99,7 +98,7 @@ public class PrettifyNames(
                     constNames = new Dictionary<string, (string Primary, List<string>?)>();
                 }
 
-                var functionNames = functions?.DistinctBy(x => x.Name).ToDictionary(
+                var functionNames = functions?.ToDictionary(
                     x => x.Name,
                     x => (Primary: x.Name, (List<string>?)null)
                 );
@@ -194,14 +193,7 @@ public class PrettifyNames(
         string? identifiedPrefix = null;
         foreach (var trimmer in trimmers)
         {
-            trimmer.Trim(
-                container,
-                globalPrefixHint,
-                key,
-                names,
-                prefixOverrides,
-                ref identifiedPrefix
-            );
+            trimmer.Trim(container, globalPrefixHint, key, names, prefixOverrides, ref identifiedPrefix);
         }
 
         // Prefer shorter names
@@ -257,7 +249,10 @@ public class PrettifyNames(
                 {
                     // Micro-opt: do the checks we can ahead of creating the DiscrimStr which isn't the cheapest thing
                     // in the world
-                    if (conflictingTrimmingName == trimmingName || conflictingPrimary != primary)
+                    if (
+                        conflictingTrimmingName == trimmingName
+                        || conflictingPrimary != primary
+                    )
                     {
                         // This is us, we will always conflict with ourselves (or the primary names don't conflict)
                         continue;
@@ -280,10 +275,8 @@ public class PrettifyNames(
 
                     // If we don't have precedence (i.e. it's obvious that it's us that should have the shorter name),
                     // do we have another name for the conflict?
-                    if (
-                        conflictingTrimmingName.Length > trimmingName.Length
-                        && conflictingSecondary?.LastOrDefault() is { } resolvedConflict
-                    )
+                    if (conflictingTrimmingName.Length > trimmingName.Length &&
+                        conflictingSecondary?.LastOrDefault() is { } resolvedConflict)
                     {
                         // Rename the conflicting entry so that we can take precedence.
                         names[conflictingTrimmingName] = (resolvedConflict, conflictingSecondary);
@@ -326,12 +319,8 @@ public class PrettifyNames(
                 {
                     if (primary == nextPrimary)
                     {
-                        logger.LogError(
-                            "Couldn't resolve conflict automatically: {} is used by both {} and {}",
-                            primary,
-                            trimmingName,
-                            notRenamedConflict
-                        );
+                        logger.LogError("Couldn't resolve conflict automatically: {} is used by both {} and {}",
+                            primary, trimmingName, notRenamedConflict);
                         break;
                     }
                     primary = nextPrimary;

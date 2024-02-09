@@ -40,7 +40,7 @@
       "Mods": [
         "AddIncludes",
         "AddOpaqueStructs",
-        "TransformFunctions",
+        "UseSilkDSL",
         "PrettifyNames",
         "AddVTables"
       ],
@@ -66,9 +66,9 @@
         "AddApiProfiles",
         "MixKhronosData",
         "AddOpaqueStructs",
+        "UseSilkDSL",
         "PrettifyNames",
-        "AddVTables",
-        "TransformFunctions"
+        "AddVTables"
       ],
       "AddApiProfiles": {
         "Profiles": [
