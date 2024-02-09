@@ -31,8 +31,8 @@ Another very important thing in graphics programming is the ability to draw imag
 ## What a texture is
 Textures are multidimensional objects that store color data.
 
-The most common type of texture is the 2D texture, which stores a 2D grid of pixels of an image (This is just for comparison,
-texture objects are a lot more complex than just 2D arrays!).
+The most common type of texture is a 2D texture, which stores the 2D grid of pixels that makes up an image. This is just for comparison though,
+as texture objects are a lot more complex than just 2D arrays!
 This data is stored in GPU memory, and can be read by a shader.
 
 <?# Info "There are multiple different dimensions of texture from 1D through to 3D. For the purposes of this tutorial, we will be focusing on 2D." /?>
