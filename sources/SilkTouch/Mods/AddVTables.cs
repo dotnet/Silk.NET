@@ -702,7 +702,11 @@ public class AddVTables(IOptionsSnapshot<AddVTables.Configuration> config) : IMo
                             SingletonSeparatedList(
                                 Attribute(
                                     IdentifierName("NativeMemberContainer"),
-                                    AttributeArgumentList(SingletonSeparatedList(AttributeArgument(TypeOfExpression(IdentifierName(key)))))
+                                    AttributeArgumentList(
+                                        SingletonSeparatedList(
+                                            AttributeArgument(TypeOfExpression(IdentifierName(key)))
+                                        )
+                                    )
                                 )
                             )
                         )

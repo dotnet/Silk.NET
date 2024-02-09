@@ -20,12 +20,14 @@ public class FunctionTransformer(IEnumerable<IFunctionTransformer> transformers)
     /// transformed functions.
     /// </summary>
     /// <param name="functions">The functions.</param>
+    /// <param name="ctx">The wider context for this function transformation operation.</param>
     /// <param name="includeOriginal">
     /// Whether to include the original function in the outputs before the transformed ones.
     /// </param>
     /// <returns>The transformed (and optionally original) functions.</returns>
     public IEnumerable<MethodDeclarationSyntax> GetTransformedFunctions(
         IEnumerable<MethodDeclarationSyntax> functions,
+        ITransformationContext ctx,
         bool includeOriginal = true
     )
     {
@@ -35,12 +37,21 @@ public class FunctionTransformer(IEnumerable<IFunctionTransformer> transformers)
         var transform = transformers.Aggregate<
             IFunctionTransformer,
             Action<MethodDeclarationSyntax>
-        >(meth => ret.Add(meth), (c, t) => meth => t.Transform(meth, c));
+        >(meth => ret.Add(meth), (c, t) => meth => t.Transform(meth, ctx, c));
         foreach (var function in functions)
         {
             var idx = ret.Count;
             ret.Remove(GetTransformedFunctions(function, transform));
-            if (includeOriginal)
+            if (
+                includeOriginal
+                && !ret.Any(
+                    x =>
+                        x.ParameterList.Parameters.Select(y => y.Type?.ToString())
+                            .SequenceEqual(
+                                function.ParameterList.Parameters.Select(y => y.Type?.ToString())
+                            )
+                )
+            )
             {
                 ret.Insert(idx, function);
             }
@@ -86,10 +97,13 @@ public class FunctionTransformer(IEnumerable<IFunctionTransformer> transformers)
             && aai.SequenceEqual(declTy.Identifier.ToString())
         )
         {
-            var argList =
-                ArgumentList(
-                    SeparatedList(
-                        function.ParameterList.Parameters.Select(x => Argument(IdentifierName(x.Identifier)))));
+            var argList = ArgumentList(
+                SeparatedList(
+                    function.ParameterList.Parameters.Select(
+                        x => Argument(IdentifierName(x.Identifier))
+                    )
+                )
+            );
             // If it's static, it needs to have TSelf type parameter
             impl =
                 staticFn
@@ -209,12 +223,14 @@ public class FunctionTransformer(IEnumerable<IFunctionTransformer> transformers)
             .WithSemicolonToken(default)
             .WithModifiers(
                 TokenList(
-                    function.Modifiers.Where(x => !x.IsKind(SyntaxKind.ExternKeyword)).Select(
-                        x =>
-                            x.IsKind(SyntaxKind.AbstractKeyword)
-                                ? Token(SyntaxKind.VirtualKeyword)
-                                : x
-                    )
+                    function
+                        .Modifiers.Where(x => !x.IsKind(SyntaxKind.ExternKeyword))
+                        .Select(
+                            x =>
+                                x.IsKind(SyntaxKind.AbstractKeyword)
+                                    ? Token(SyntaxKind.VirtualKeyword)
+                                    : x
+                        )
                 )
             );
 

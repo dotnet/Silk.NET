@@ -20,9 +20,13 @@ public sealed partial class PtrRefTransformer()
     private const int MaxIndirections = 3;
 
     /// <inheritdoc />
-    public void Transform(MethodDeclarationSyntax current, Action<MethodDeclarationSyntax> next)
+    public void Transform(
+        MethodDeclarationSyntax current,
+        ITransformationContext ctx,
+        Action<MethodDeclarationSyntax> next
+    )
     {
-        if (new Rewriter().Visit(current) is MethodDeclarationSyntax modded)
+        if (new Rewriter(ctx).Visit(current) is MethodDeclarationSyntax modded)
         {
             next(modded);
         }
@@ -119,7 +123,7 @@ public sealed partial class PtrRefTransformer()
                 .WithTypeArgumentList(TypeArgumentList(SingletonSeparatedList(syntax)));
     }
 
-    private partial class Rewriter() : ModCSharpSyntaxRewriter(true)
+    private partial class Rewriter(ITransformationContext ctx) : CSharpSyntaxRewriter
     {
         private Dictionary<string, bool>? _parameterIdentifiers;
         private bool _returnTypeReplaceable;
@@ -180,7 +184,7 @@ public sealed partial class PtrRefTransformer()
                     )
                 )
                 .AddMaxOpt();
-            AddUsing("System.Runtime.CompilerServices");
+            ctx.AddUsing("System.Runtime.CompilerServices");
 
             // Generate the fixed blocks for the "inner idents"
             foreach (var param in paramsToChange)
@@ -202,7 +206,12 @@ public sealed partial class PtrRefTransformer()
                                     VariableDeclaration(
                                         param.Type,
                                         SingletonSeparatedList(
-                                            VariableDeclarator(IdentToInnerIdent(param.Identifier)).WithInitializer(EqualsValueClause(IdentifierName(param.Identifier)))
+                                            VariableDeclarator(IdentToInnerIdent(param.Identifier))
+                                                .WithInitializer(
+                                                    EqualsValueClause(
+                                                        IdentifierName(param.Identifier)
+                                                    )
+                                                )
                                         )
                                     ),
                                     s
