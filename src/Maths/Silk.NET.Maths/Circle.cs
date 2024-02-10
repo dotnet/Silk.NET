@@ -73,7 +73,7 @@ namespace Silk.NET.Maths
         /// <remarks>This does consider a point on the edge contained.</remarks>
         public bool Contains(Vector2D<T> point)
         {
-            return Scalar.LessThanOrEqual(Vector2D.DistanceSquared(point, Center), Radius);
+            return Scalar.LessThanOrEqual(Vector2D.DistanceSquared(point, Center), SquaredRadius);
         }
 
         /// <summary>
