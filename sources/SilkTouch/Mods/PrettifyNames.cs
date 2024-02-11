@@ -25,7 +25,7 @@ namespace Silk.NET.SilkTouch.Mods;
 public class PrettifyNames(
     ILogger<PrettifyNames> logger,
     IOptionsSnapshot<PrettifyNames.Configuration> config,
-    IEnumerable<INameTrimmerProvider> trimmerProviders
+    IEnumerable<IJobDependency<INameTrimmer>> trimmerProviders
 ) : IMod
 {
     /// <summary>
@@ -70,7 +70,7 @@ public class PrettifyNames(
         if (cfg.TrimmerBaseline is not null)
         {
             var trimmers = trimmerProviders
-                .SelectMany(x => x.GetTrimmers(key))
+                .SelectMany(x => x.Get(key))
                 .OrderBy(x => x.Version)
                 .ToArray();
             var typeNames = visitor.Types.ToDictionary(

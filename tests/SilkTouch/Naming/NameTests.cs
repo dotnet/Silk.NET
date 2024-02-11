@@ -38,7 +38,7 @@ public class NameTests : NameTrimmer
         };
         foreach (var (key, (trimmed, _)) in test)
         {
-            Assert.That(trimmed.Prettify(), Is.EqualTo(expected[key]));
+            Assert.That(trimmed.Prettify(new NameUtils.NameTransformer(4)), Is.EqualTo(expected[key]));
         }
     }
 }

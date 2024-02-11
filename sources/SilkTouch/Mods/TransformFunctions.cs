@@ -17,7 +17,7 @@ namespace Silk.NET.SilkTouch.Mods;
 /// <summary>
 /// Mods the bindings to use the Silk.NET.Core pointer types.
 /// </summary>
-public class UseSilkDSL : IMod
+public class TransformFunctions : IMod
 {
     /// <inheritdoc />
     public Task<GeneratedSyntax> AfterScrapeAsync(string key, GeneratedSyntax syntax)

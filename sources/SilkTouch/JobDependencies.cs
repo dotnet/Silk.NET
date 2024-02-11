@@ -22,10 +22,11 @@ internal class JobDependencies(Dictionary<string, Type> loadedMods, IServiceProv
         public IEnumerable<T> Get(string? key) =>
             job.Get(key).Mods is { Length: > 0 } applicable
                 ? applicable
-                    .Select(x =>
-                        deps.Loaded.TryGetValue(x, out var m) && m.IsAssignableTo(typeof(T))
-                            ? deps.Services.GetRequiredService(m)
-                            : null
+                    .Select(
+                        x =>
+                            deps.Loaded.TryGetValue(x, out var m) && m.IsAssignableTo(typeof(T))
+                                ? deps.Services.GetRequiredService(m)
+                                : null
                     )
                     .OfType<T>()
                 : Enumerable.Empty<T>();
