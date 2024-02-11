@@ -117,7 +117,7 @@ void main()
     frag_texCoords = aTextureCoord;
 }";
 ```
-in this case, we are putting manually the `location` of `aTextureCoord` as 1, because we already have a attribute in the location 0.
+In this case, we are manually specifying the `location` of `aTextureCoord` as 1, because we already have an attribute in the location 0.
 
 
 Fragment Shader:
@@ -181,7 +181,7 @@ In most cases with OpenGL, textures are uploaded as a sequence of bytes, this is
 The hard part is: we can't just upload the bytes of a `.png` or `.jpg` file! These formats have a lot of unnecessary data, like headers and, most importantly,
 they're compressed, which the GPU generally cannot understand.
 
-To load an image file as a byte array, we will first need a external library. In our case, we will use StbImageSharp.
+To load an image file as a byte array, we will first need an external library. In our case, we will use StbImageSharp.
 
 First of all, install the library using NuGet. To do so, you can use your IDE's NuGet package manager,
 or you can run the following command inside your project folder:
