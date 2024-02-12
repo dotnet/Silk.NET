@@ -17,14 +17,15 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkPipelineVertexInputDivisorStateCreateInfoEXT")]
+    [NativeName("AliasOf", "VkPipelineVertexInputDivisorStateCreateInfoKHR")]
     public unsafe partial struct PipelineVertexInputDivisorStateCreateInfoEXT : IExtendsChain<PipelineVertexInputStateCreateInfo>
     {
         public PipelineVertexInputDivisorStateCreateInfoEXT
         (
-            StructureType? sType = StructureType.PipelineVertexInputDivisorStateCreateInfoExt,
+            StructureType? sType = StructureType.PipelineVertexInputDivisorStateCreateInfoKhr,
             void* pNext = null,
             uint? vertexBindingDivisorCount = null,
-            VertexInputBindingDivisorDescriptionEXT* pVertexBindingDivisors = null
+            VertexInputBindingDivisorDescriptionKHR* pVertexBindingDivisors = null
         ) : this()
         {
             if (sType is not null)
@@ -64,15 +65,15 @@ namespace Silk.NET.Vulkan
         [NativeName("Name", "vertexBindingDivisorCount")]
         public uint VertexBindingDivisorCount;
 /// <summary></summary>
-        [NativeName("Type", "VkVertexInputBindingDivisorDescriptionEXT*")]
-        [NativeName("Type.Name", "VkVertexInputBindingDivisorDescriptionEXT")]
+        [NativeName("Type", "VkVertexInputBindingDivisorDescriptionKHR*")]
+        [NativeName("Type.Name", "VkVertexInputBindingDivisorDescriptionKHR")]
         [NativeName("Name", "pVertexBindingDivisors")]
-        public VertexInputBindingDivisorDescriptionEXT* PVertexBindingDivisors;
+        public VertexInputBindingDivisorDescriptionKHR* PVertexBindingDivisors;
 
         /// <inheritdoc />
         StructureType IStructuredType.StructureType()
         {
-            return SType = StructureType.PipelineVertexInputDivisorStateCreateInfoExt;
+            return SType = StructureType.PipelineVertexInputDivisorStateCreateInfoKhr;
         }
 
         /// <inheritdoc />

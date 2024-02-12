@@ -31,7 +31,7 @@ namespace Silk.NET.Vulkan.Video
             byte? temporalId = null,
             StdVideoEncodeH265ReferenceListsInfo* pRefLists = null,
             StdVideoH265ShortTermRefPicSet* pShortTermRefPicSet = null,
-            StdVideoEncodeH265SliceSegmentLongTermRefPics* pLongTermRefPics = null
+            StdVideoEncodeH265LongTermRefPics* pLongTermRefPics = null
         ) : this()
         {
             if (flags is not null)
@@ -145,9 +145,9 @@ namespace Silk.NET.Vulkan.Video
         [NativeName("Name", "pShortTermRefPicSet")]
         public StdVideoH265ShortTermRefPicSet* PShortTermRefPicSet;
 
-        [NativeName("Type", "const StdVideoEncodeH265SliceSegmentLongTermRefPics *")]
-        [NativeName("Type.Name", "const StdVideoEncodeH265SliceSegmentLongTermRefPics *")]
+        [NativeName("Type", "const StdVideoEncodeH265LongTermRefPics *")]
+        [NativeName("Type.Name", "const StdVideoEncodeH265LongTermRefPics *")]
         [NativeName("Name", "pLongTermRefPics")]
-        public StdVideoEncodeH265SliceSegmentLongTermRefPics* PLongTermRefPics;
+        public StdVideoEncodeH265LongTermRefPics* PLongTermRefPics;
     }
 }

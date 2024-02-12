@@ -17,7 +17,7 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkPhysicalDeviceClusterCullingShaderFeaturesHUAWEI")]
-    public unsafe partial struct PhysicalDeviceClusterCullingShaderFeaturesHUAWEI : IExtendsChain<PhysicalDeviceFeatures2>, IExtendsChain<PhysicalDeviceFeatures2KHR>, IExtendsChain<DeviceCreateInfo>
+    public unsafe partial struct PhysicalDeviceClusterCullingShaderFeaturesHUAWEI : IChainStart, IExtendsChain<PhysicalDeviceFeatures2>, IExtendsChain<PhysicalDeviceFeatures2KHR>, IExtendsChain<DeviceCreateInfo>
     {
         public PhysicalDeviceClusterCullingShaderFeaturesHUAWEI
         (
@@ -80,6 +80,18 @@ namespace Silk.NET.Vulkan
         {
             get => (BaseInStructure*) PNext;
             set => PNext = value;
+        }
+
+        /// <summary>
+        /// Convenience method to start a chain.
+        /// </summary>
+        /// <param name="capture">The newly created chain root</param>
+        /// <returns>A reference to the newly created chain.</returns>
+        public static unsafe ref PhysicalDeviceClusterCullingShaderFeaturesHUAWEI Chain(
+            out PhysicalDeviceClusterCullingShaderFeaturesHUAWEI capture)
+        {
+            capture = new PhysicalDeviceClusterCullingShaderFeaturesHUAWEI(StructureType.PhysicalDeviceClusterCullingShaderFeaturesHuawei);
+            return ref capture;
         }
     }
 }

@@ -102,6 +102,10 @@ namespace Silk.NET.Vulkan
         IndirectCommandsLayoutNV = 1000277000,
         [NativeName("Name", "VK_OBJECT_TYPE_PRIVATE_DATA_SLOT_EXT")]
         PrivateDataSlotExt = 1000295000,
+        [NativeName("Name", "VK_OBJECT_TYPE_CUDA_MODULE_NV")]
+        CudaModuleNV = 1000307000,
+        [NativeName("Name", "VK_OBJECT_TYPE_CUDA_FUNCTION_NV")]
+        CudaFunctionNV = 1000307001,
         [NativeName("Name", "VK_OBJECT_TYPE_BUFFER_COLLECTION_FUCHSIA")]
         BufferCollectionFuchsia = 1000366000,
         [NativeName("Name", "VK_OBJECT_TYPE_MICROMAP_EXT")]

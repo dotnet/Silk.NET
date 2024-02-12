@@ -31,6 +31,12 @@ public class ExtensionLoadingTests
     [UnmanagedCallersOnly(CallConvs = new []{typeof(CallConvCdecl)})]
     public static unsafe int AlwaysZero(byte* name) => 0;
 
+    [UnmanagedCallersOnly(CallConvs = new[] { typeof(CallConvCdecl) })]
+    public static unsafe Context* GetCurrentContext() => null;
+
+    [UnmanagedCallersOnly(CallConvs = new[] { typeof(CallConvCdecl) })]
+    public static unsafe Device* GetContextsDevice(Context* ctx) => null;
+
     public unsafe delegate nint LoaderDelegate(byte* name);
     public unsafe delegate nint ContextLoaderDelegate(void* device, byte* name);
     
@@ -51,6 +57,8 @@ public class ExtensionLoadingTests
             "alcIsExtensionPresent" or "alIsExtensionPresent" => alwaysPresent
                 ? (nint) (delegate* unmanaged[Cdecl]<byte*, int>) &AlwaysOne
                 : (nint) (delegate* unmanaged[Cdecl]<byte*, int>) &AlwaysZero,
+            "alcGetCurrentContext" => (nint) (delegate* unmanaged[Cdecl]<Context*>) &GetCurrentContext,
+            "alcGetContextsDevice" => (nint) (delegate* unmanaged[Cdecl]<Context*, Device*>) &GetContextsDevice,
             "alGetProcAddress" => wrapper[0],
             "alcGetProcAddress" => wrapper[1],
             "alGetEnumValue" => (nint) (delegate* unmanaged[Cdecl]<byte*, int>) &AlwaysZero,
@@ -79,6 +87,7 @@ public class ExtensionLoadingTests
         Test<CaptureEnumerationEnumeration>();
         Test<EffectExtensionContext>();
         Test<Disconnect>();
+        Test<ReopenDevices>();
 
         SilkMarshal.Free(loaderPtr);
         SilkMarshal.Free(ctxLoaderPtr);

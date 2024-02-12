@@ -23,8 +23,7 @@ namespace Silk.NET.WebGPU
         (
             ChainedStruct* nextInChain = null,
             byte* label = null,
-            nuint? timestampWriteCount = null,
-            ComputePassTimestampWrite* timestampWrites = null
+            ComputePassTimestampWrites* timestampWrites = null
         ) : this()
         {
             if (nextInChain is not null)
@@ -35,11 +34,6 @@ namespace Silk.NET.WebGPU
             if (label is not null)
             {
                 Label = label;
-            }
-
-            if (timestampWriteCount is not null)
-            {
-                TimestampWriteCount = timestampWriteCount.Value;
             }
 
             if (timestampWrites is not null)
@@ -59,14 +53,9 @@ namespace Silk.NET.WebGPU
         [NativeName("Name", "label")]
         public byte* Label;
 
-        [NativeName("Type", "size_t")]
-        [NativeName("Type.Name", "size_t")]
-        [NativeName("Name", "timestampWriteCount")]
-        public nuint TimestampWriteCount;
-
-        [NativeName("Type", "const WGPUComputePassTimestampWrite *")]
-        [NativeName("Type.Name", "const WGPUComputePassTimestampWrite *")]
+        [NativeName("Type", "const WGPUComputePassTimestampWrites *")]
+        [NativeName("Type.Name", "const WGPUComputePassTimestampWrites *")]
         [NativeName("Name", "timestampWrites")]
-        public ComputePassTimestampWrite* TimestampWrites;
+        public ComputePassTimestampWrites* TimestampWrites;
     }
 }

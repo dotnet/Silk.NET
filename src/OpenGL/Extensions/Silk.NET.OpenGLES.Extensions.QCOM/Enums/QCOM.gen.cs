@@ -92,6 +92,8 @@ namespace Silk.NET.OpenGLES.Extensions.QCOM
         FoveationSubsampledLayoutMethodBitQCom = 0x4,
         [NativeName("Name", "GL_MAX_SHADER_SUBSAMPLED_IMAGE_UNITS_QCOM")]
         MaxShaderSubsampledImageUnitsQCom = 0x8FA1,
+        [NativeName("Name", "GL_TEXTURE_LOD_BIAS_QCOM")]
+        TextureLodBiasQCom = 0x8C96,
         [NativeName("Name", "GL_COLOR_BUFFER_BIT0_QCOM")]
         ColorBufferBit0QCom = 0x1,
         [NativeName("Name", "GL_COLOR_BUFFER_BIT1_QCOM")]

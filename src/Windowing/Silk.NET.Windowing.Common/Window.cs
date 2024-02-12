@@ -265,6 +265,34 @@ namespace Silk.NET.Windowing
         }
 
         /// <summary>
+        /// <see cref="Prioritize"/>s the platform of type <typeparamref name="T"/> if it's already been added,
+        /// otherwise it uses <paramref name="factory"/> to create an instance to <see cref="Add"/> the platform. The
+        /// instance used is returned.
+        /// </summary>
+        /// <param name="factory">The factory to use if the platform has not been registered.</param>
+        /// <param name="isFirstParty">If true, first-party reflection-based loading will be disabled.</param>
+        /// <typeparam name="T">The platform type.</typeparam>
+        /// <returns>The platform instance.</returns>
+        public static T PrioritizeOrAdd<T>(Func<T> factory, bool isFirstParty = false) where T: IWindowPlatform
+        {
+            if (isFirstParty)
+            {
+                _initializedFirstPartyPlatforms = true;
+            }
+
+            var platform = (T?)_platformsValues.FirstOrDefault(x => x is T);
+            if (platform is null)
+            {
+                var inst = factory();
+                Add(inst);
+                return inst;
+            }
+
+            Prioritize(platform);
+            return platform;
+        }
+
+        /// <summary>
         /// Adds this window platform to the platform list. Shouldn't be used unless writing your own windowing backend.
         /// </summary>
         /// <param name="platform">The platform to add.</param>

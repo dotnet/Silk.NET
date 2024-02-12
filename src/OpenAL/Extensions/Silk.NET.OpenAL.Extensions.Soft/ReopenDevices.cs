@@ -12,9 +12,9 @@ namespace Silk.NET.OpenAL.Extensions.Soft
     /// </summary>
     [NativeApi(Prefix = "alc")]
     [Extension("ALC_SOFT_reopen_device")]
-    public partial class ReopenDevices : NativeExtension<AL>
+    public partial class ReopenDevices : ContextExtensionBase
     {
-        /// <inheritdoc cref="ExtensionBase" />
+        /// <inheritdoc cref="ContextExtensionBase" />
         public ReopenDevices(INativeContext ctx)
             : base(ctx)
         {

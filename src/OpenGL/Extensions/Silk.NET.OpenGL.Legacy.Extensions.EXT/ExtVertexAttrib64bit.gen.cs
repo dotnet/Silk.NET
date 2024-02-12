@@ -69,10 +69,10 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.EXT
         public partial void VertexAttribL4([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint index, [Count(Count = 4), Flow(Silk.NET.Core.Native.FlowDirection.In)] in double v);
 
         [NativeApi(EntryPoint = "glVertexAttribLPointerEXT", Convention = CallingConvention.Winapi)]
-        public unsafe partial void VertexAttribLPointer([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint index, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int size, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT type, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint stride, [Count(Parameter = "size"), Flow(Silk.NET.Core.Native.FlowDirection.In)] void* pointer);
+        public unsafe partial void VertexAttribLPointer([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint index, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int size, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT type, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint stride, [Flow(Silk.NET.Core.Native.FlowDirection.In)] void* pointer);
 
         [NativeApi(EntryPoint = "glVertexAttribLPointerEXT", Convention = CallingConvention.Winapi)]
-        public unsafe partial void VertexAttribLPointer([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint index, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int size, [Flow(Silk.NET.Core.Native.FlowDirection.In)] VertexAttribLType type, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint stride, [Count(Parameter = "size"), Flow(Silk.NET.Core.Native.FlowDirection.In)] void* pointer);
+        public unsafe partial void VertexAttribLPointer([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint index, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int size, [Flow(Silk.NET.Core.Native.FlowDirection.In)] VertexAttribLType type, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint stride, [Flow(Silk.NET.Core.Native.FlowDirection.In)] void* pointer);
 
         public unsafe double GetVertexAttribL([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint index, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT pname)
         {

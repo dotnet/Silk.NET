@@ -830,7 +830,7 @@ namespace Silk.NET.Vulkan.Extensions.ImGui
                 }
                 for (int n = 0; n < drawData.CmdListsCount; n++)
                 {
-                    ImDrawList* cmd_list = drawData.CmdLists[n];
+                    ImDrawList* cmd_list = drawDataPtr.CmdLists[n];
                     Unsafe.CopyBlock(vtx_dst, cmd_list->VtxBuffer.Data.ToPointer(), (uint)cmd_list->VtxBuffer.Size * (uint)sizeof(ImDrawVert));
                     Unsafe.CopyBlock(idx_dst, cmd_list->IdxBuffer.Data.ToPointer(), (uint)cmd_list->IdxBuffer.Size * (uint)sizeof(ushort));
                     vtx_dst += cmd_list->VtxBuffer.Size;
@@ -896,7 +896,7 @@ namespace Silk.NET.Vulkan.Extensions.ImGui
             int indexOffset = 0;
             for (int n = 0; n < drawData.CmdListsCount; n++)
             {
-                ref ImDrawList* cmd_list = ref drawData.CmdLists[n];
+                ImDrawList* cmd_list = drawDataPtr.CmdLists[n];
                 for (int cmd_i = 0; cmd_i < cmd_list->CmdBuffer.Size; cmd_i++)
                 {
                     ref ImDrawCmd pcmd = ref cmd_list->CmdBuffer.Ref<ImDrawCmd>(cmd_i);

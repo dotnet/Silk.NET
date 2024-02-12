@@ -65,10 +65,6 @@ namespace Silk.NET.OpenCL.Extensions.KHR
         Pending = 0x2,
         [NativeName("Name", "CL_COMMAND_BUFFER_STATE_PENDING_KHR")]
         CommandBufferStatePendingKhr = 0x2,
-        [NativeName("Name", "CL_COMMAND_BUFFER_STATE_INVALID_KHR")]
-        Invalid = 0x3,
-        [NativeName("Name", "CL_COMMAND_BUFFER_STATE_INVALID_KHR")]
-        CommandBufferStateInvalidKhr = 0x3,
         [NativeName("Name", "CL_STRUCTURE_TYPE_MUTABLE_BASE_CONFIG_KHR")]
         BaseConfig = 0x0,
         [NativeName("Name", "CL_STRUCTURE_TYPE_MUTABLE_BASE_CONFIG_KHR")]
@@ -77,6 +73,14 @@ namespace Silk.NET.OpenCL.Extensions.KHR
         DispatchConfig = 0x1,
         [NativeName("Name", "CL_STRUCTURE_TYPE_MUTABLE_DISPATCH_CONFIG_KHR")]
         StructureTypeMutableDispatchConfigKhr = 0x1,
+        [NativeName("Name", "CL_CONTEXT_MEMORY_INITIALIZE_LOCAL_KHR")]
+        Local = 0x1,
+        [NativeName("Name", "CL_CONTEXT_MEMORY_INITIALIZE_LOCAL_KHR")]
+        ContextMemoryInitializeLocalKhr = 0x1,
+        [NativeName("Name", "CL_CONTEXT_MEMORY_INITIALIZE_PRIVATE_KHR")]
+        Private = 0x2,
+        [NativeName("Name", "CL_CONTEXT_MEMORY_INITIALIZE_PRIVATE_KHR")]
+        ContextMemoryInitializePrivateKhr = 0x2,
         [NativeName("Name", "CL_PREFERRED_DEVICES_FOR_D3D10_KHR")]
         PreferredDevicesForD3D10 = 0x4012,
         [NativeName("Name", "CL_PREFERRED_DEVICES_FOR_D3D10_KHR")]
@@ -357,6 +361,10 @@ namespace Silk.NET.OpenCL.Extensions.KHR
         Payload = 0x203C,
         [NativeName("Name", "CL_SEMAPHORE_PAYLOAD_KHR")]
         SemaphorePayloadKhr = 0x203C,
+        [NativeName("Name", "CL_SEMAPHORE_EXPORTABLE_KHR")]
+        Exportable = 0x2054,
+        [NativeName("Name", "CL_SEMAPHORE_EXPORTABLE_KHR")]
+        SemaphoreExportableKhr = 0x2054,
         [NativeName("Name", "CL_SEMAPHORE_EXPORT_HANDLE_TYPES_KHR")]
         ExportHandleTypes = 0x203F,
         [NativeName("Name", "CL_SEMAPHORE_EXPORT_HANDLE_TYPES_KHR")]
@@ -431,6 +439,10 @@ namespace Silk.NET.OpenCL.Extensions.KHR
         ContextAdapterD3D9EXKhr = 0x2026,
         [NativeName("Name", "CL_CONTEXT_ADAPTER_DXVA_KHR")]
         ContextAdapterDxvaKhr = 0x2027,
+        [NativeName("Name", "CL_CONTEXT_MEMORY_INITIALIZE_KHR")]
+        MemoryInitializeKhr = 0x2030,
+        [NativeName("Name", "CL_CONTEXT_MEMORY_INITIALIZE_KHR")]
+        ContextMemoryInitializeKhr = 0x2030,
         [NativeName("Name", "CL_CONTEXT_TERMINATE_KHR")]
         TerminateKhr = 0x2032,
         [NativeName("Name", "CL_CONTEXT_TERMINATE_KHR")]
@@ -523,6 +535,10 @@ namespace Silk.NET.OpenCL.Extensions.KHR
         ExternalMemoryImportHandleTypesKhr = 0x204F,
         [NativeName("Name", "CL_DEVICE_EXTERNAL_MEMORY_IMPORT_HANDLE_TYPES_KHR")]
         DeviceExternalMemoryImportHandleTypesKhr = 0x204F,
+        [NativeName("Name", "CL_DEVICE_EXTERNAL_MEMORY_IMPORT_ASSUME_LINEAR_IMAGES_HANDLE_TYPES_KHR")]
+        ExternalMemoryImportAssumeLinearImagesHandleTypesKhr = 0x2052,
+        [NativeName("Name", "CL_DEVICE_EXTERNAL_MEMORY_IMPORT_ASSUME_LINEAR_IMAGES_HANDLE_TYPES_KHR")]
+        DeviceExternalMemoryImportAssumeLinearImagesHandleTypesKhr = 0x2052,
         [NativeName("Name", "CL_DEVICE_COMMAND_BUFFER_CAPABILITIES_KHR")]
         CommandBufferCapabilitiesKhr = 0x12A9,
         [NativeName("Name", "CL_DEVICE_COMMAND_BUFFER_CAPABILITIES_KHR")]
@@ -623,8 +639,10 @@ namespace Silk.NET.OpenCL.Extensions.KHR
         DX9MediaSurfaceInfoKhr = 0x2029,
         [NativeName("Name", "CL_MEM_DX9_MEDIA_SURFACE_INFO_KHR")]
         MemDX9MediaSurfaceInfoKhr = 0x2029,
-        [NativeName("Name", "CL_DEVICE_HANDLE_LIST_KHR")]
+        [NativeName("Name", "CL_MEM_DEVICE_HANDLE_LIST_KHR")]
         DeviceHandleListKhr = 0x2051,
+        [NativeName("Name", "CL_MEM_DEVICE_HANDLE_LIST_KHR")]
+        MemDeviceHandleListKhr = 0x2051,
         [NativeName("Name", "CL_PLATFORM_ICD_SUFFIX_KHR")]
         IcdSuffixKhr = 0x920,
         [NativeName("Name", "CL_PLATFORM_ICD_SUFFIX_KHR")]
@@ -677,8 +695,6 @@ namespace Silk.NET.OpenCL.Extensions.KHR
         DeviceDoubleFPConfig = 0x1032,
         [NativeName("Name", "CL_DEVICE_HALF_FP_CONFIG")]
         DeviceHalfFPConfig = 0x1033,
-        [NativeName("Name", "CL_CONTEXT_MEMORY_INITIALIZE_KHR")]
-        ContextMemoryInitializeKhr = 0x2030,
         [NativeName("Name", "CL_DEVICE_SPIR_VERSIONS")]
         DeviceSpirVersions = 0x40E0,
         [NativeName("Name", "CL_PROGRAM_BINARY_TYPE_INTERMEDIATE")]
@@ -703,5 +719,7 @@ namespace Silk.NET.OpenCL.Extensions.KHR
         Depth = 0x10BD,
         [NativeName("Name", "CL_SEMAPHORE_TYPE_KHR")]
         SemaphoreTypeKhr = 0x203D,
+        [NativeName("Name", "CL_SEMAPHORE_DEVICE_HANDLE_LIST_KHR")]
+        SemaphoreDeviceHandleListKhr = 0x2053,
     }
 }

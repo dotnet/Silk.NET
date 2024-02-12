@@ -39,7 +39,7 @@ In order to use the experimental feed, you must change this project file slightl
     <OutputType>Exe</OutputType>
     <TargetFramework>net7.0</TargetFramework>
     <!-- Add the experimental feed as a restore source -->
-    <RestoreSources>$(RestoreSources);https://dotnet.github.io/Silk.NET/nuget/experimental/index.json</RestoreSources>
+    <RestoreAdditionalProjectSources>$(RestoreAdditionalProjectSources);https://dotnet.github.io/Silk.NET/nuget/experimental/index.json</RestoreAdditionalProjectSources>
   </PropertyGroup>
 ```
 

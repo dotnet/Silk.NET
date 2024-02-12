@@ -7,6 +7,7 @@ using System.Diagnostics.CodeAnalysis;
 using System.Runtime.CompilerServices;
 using Silk.NET.Core;
 using Silk.NET.Core.Contexts;
+using Silk.NET.Core.Native;
 using Silk.NET.Maths;
 using Silk.NET.SDL;
 using Point = System.Drawing.Point;
@@ -402,7 +403,8 @@ namespace Silk.NET.Windowing.Sdl
                     }
                     case EventType.Dropfile:
                     {
-                        _droppedFiles.Add(new string((sbyte*) @event.Drop.File));
+                        string path = SilkMarshal.PtrToString((nint) @event.Drop.File, NativeStringEncoding.UTF8) ?? "";
+                        _droppedFiles.Add(path);
                         break;
                     }
                     default:
@@ -415,7 +417,7 @@ namespace Silk.NET.Windowing.Sdl
 
                 if (!skipped)
                 {
-                    Events.RemoveAt(i);
+                    RemoveEvent(i);
                 }
             }
 

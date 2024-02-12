@@ -18,7 +18,7 @@ namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkCommandBufferSubmitInfoKHR")]
     [NativeName("AliasOf", "VkCommandBufferSubmitInfo")]
-    public unsafe partial struct CommandBufferSubmitInfoKHR : IChainable
+    public unsafe partial struct CommandBufferSubmitInfoKHR : IChainStart
     {
         public CommandBufferSubmitInfoKHR
         (
@@ -81,6 +81,18 @@ namespace Silk.NET.Vulkan
         {
             get => (BaseInStructure*) PNext;
             set => PNext = value;
+        }
+
+        /// <summary>
+        /// Convenience method to start a chain.
+        /// </summary>
+        /// <param name="capture">The newly created chain root</param>
+        /// <returns>A reference to the newly created chain.</returns>
+        public static unsafe ref CommandBufferSubmitInfoKHR Chain(
+            out CommandBufferSubmitInfoKHR capture)
+        {
+            capture = new CommandBufferSubmitInfoKHR(StructureType.CommandBufferSubmitInfo);
+            return ref capture;
         }
     }
 }

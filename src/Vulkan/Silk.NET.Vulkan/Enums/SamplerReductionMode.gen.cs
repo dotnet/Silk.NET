@@ -18,5 +18,7 @@ namespace Silk.NET.Vulkan
         Min = 1,
         [NativeName("Name", "VK_SAMPLER_REDUCTION_MODE_MAX")]
         Max = 2,
+        [NativeName("Name", "VK_SAMPLER_REDUCTION_MODE_WEIGHTED_AVERAGE_RANGECLAMP_QCOM")]
+        WeightedAverageRangeclampQCom = 1000521000,
     }
 }

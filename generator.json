@@ -290,6 +290,9 @@
                 "CL_PRINTF_CALLBACK_ARM": "CL_CONTEXT_PRINTF_CALLBACK_ARM",
                 "CL_PRINTF_BUFFERSIZE_ARM": "CL_CONTEXT_PRINTF_BUFFERSIZE_ARM"
             },
+            "exclude": [
+                "cl_image_desc"
+            ],
             "bakery": {
                 "profileNames": [
                     "opencl"
@@ -345,7 +348,8 @@
                     "CL_CALLBACK_SetProgramReleaseCallback_pfn_notify*": "ObjectNotifyCallback",
                     "CL_CALLBACK_SetEventCallback_pfn_notify*": "EventNotifyCallback",
                     "CL_CALLBACK_EnqueueNativeKernel_user_func*": "UserFunction",
-                    "CL_CALLBACK_BuildProgram_pfn_notify*": "ObjectNotifyCallback"
+                    "CL_CALLBACK_BuildProgram_pfn_notify*": "ObjectNotifyCallback",
+                    "cl_image_desc": "ImageDesc"
                 },
                 {
                     "$include.commonTypeMap": "build/csharp_typemap.json",
@@ -717,6 +721,9 @@
                     "openxr"
                 ]
             },
+            "prefixOverrides": {
+                "XrPassthroughColorLutChannelsMETA": "XR_PASSTHROUGH_COLOR_LUT_CHANNELS"
+            },
             "output": {
                 "mode": "Default",
                 "path": "src/OpenXR",
@@ -792,7 +799,8 @@
                     "VkFilter": "uint",
                     "XrVector4sFB": "Silk.NET.Maths.Vector4D<short>",
                     "VkImageCreateFlags": "uint",
-                    "VkImageUsageFlags": "uint"
+                    "VkImageUsageFlags": "uint",
+                    "PFN_xrEglGetProcAddressMNDX": "void*"
                 },
                 {
                     "$include.commonTypeMap": "build/csharp_typemap.json",
@@ -2681,7 +2689,9 @@
                 "SpvReflectDescriptorSet": "ReflectDescriptorSet",
                 "SpvReflectShaderModule": "ReflectShaderModule",
                 "__AnonymousEnum_spirv_reflect_L261_C1": "Constants",
-                "__AnonymousEnum_spirv_reflect_L266_C1": "Constants"
+                "__AnonymousEnum_spirv_reflect_L266_C1": "Constants",
+                "__AnonymousEnum_spirv_reflect_L281_C1": "Constants",
+                "__AnonymousEnum_spirv_reflect_L286_C1": "Constants"
             },
             "bakery": {
                 "profileNames": [

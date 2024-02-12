@@ -36,17 +36,17 @@ pub fn build(b: *std.Build) void {
     const target = b.standardTargetOptions(.{});
     const mode = b.standardOptimizeOption(.{});
 
-    const shared_lib_options: std.build.SharedLibraryOptions = .{
+    const shared_lib_options: std.Build.SharedLibraryOptions = .{
         .name = ""spirv-cross"",
         .target = target,
         .optimize = mode,
     };
 
-    const lib: *std.build.LibExeObjStep = b.addSharedLibrary(shared_lib_options);
+    const lib: *std.Build.Step.Compile = b.addSharedLibrary(shared_lib_options);
     lib.linkLibC();
     lib.linkLibCpp();
 
-    var flags = &.{ ""-std=c++11"", ""-fPIC"" };
+    const flags = &.{ ""-std=c++11"", ""-fPIC"" };
 
     //Enable the GLSL, HLSL, MSL, CPP, and Reflect C APIs
     lib.defineCMacro(""SPIRV_CROSS_C_API_GLSL"", ""1"");
@@ -59,8 +59,8 @@ pub fn build(b: *std.Build) void {
     lib.defineCMacro(""SPVC_EXPORT_SYMBOLS"", ""1"");
 
     //On windows, we need to specify `__declspec(dllexport)` ourselves
-    //else SPIRV-Cross knows this is a GNU toolchain and uses the wrong attribute in this case
-    if (target.isWindows()) {
+    //else SPIRV-Cross thinks this is a GNU toolchain and uses the wrong attribute in this case
+    if (target.result.os.tag == .windows) {
         lib.defineCMacro(""SPVC_PUBLIC_API"", ""__declspec(dllexport)"");
     }
 
@@ -68,19 +68,25 @@ pub fn build(b: *std.Build) void {
     if (mode != .Debug)
         lib.defineCMacro(""NDEBUG"", ""1"");
 
-    lib.addCSourceFiles(&.{
-        root_path ++ ""spirv_cross.cpp"",
-        root_path ++ ""spirv_cfg.cpp"",
-        root_path ++ ""spirv_cpp.cpp"",
-        root_path ++ ""spirv_cross_c.cpp"",
-        root_path ++ ""spirv_cross_parsed_ir.cpp"",
-        root_path ++ ""spirv_cross_util.cpp"",
-        root_path ++ ""spirv_glsl.cpp"",
-        root_path ++ ""spirv_hlsl.cpp"",
-        root_path ++ ""spirv_msl.cpp"",
-        root_path ++ ""spirv_parser.cpp"",
-        root_path ++ ""spirv_reflect.cpp"",
-    }, flags);
+    if (mode == .ReleaseSmall)
+        lib.root_module.strip = true;
+
+    lib.addCSourceFiles(.{
+        .files = &.{
+            root_path ++ ""spirv_cross.cpp"",
+            root_path ++ ""spirv_cfg.cpp"",
+            root_path ++ ""spirv_cpp.cpp"",
+            root_path ++ ""spirv_cross_c.cpp"",
+            root_path ++ ""spirv_cross_parsed_ir.cpp"",
+            root_path ++ ""spirv_cross_util.cpp"",
+            root_path ++ ""spirv_glsl.cpp"",
+            root_path ++ ""spirv_hlsl.cpp"",
+            root_path ++ ""spirv_msl.cpp"",
+            root_path ++ ""spirv_parser.cpp"",
+            root_path ++ ""spirv_reflect.cpp"",
+        }, 
+        .flags = flags
+    });
 
     b.installArtifact(lib);
 }
@@ -105,41 +111,43 @@ const root_path = root_dir() ++ ""/"";
                     //Write out the build script to the directory
                     File.WriteAllText(SPIRVCrossPath / "build.zig", SPIRVCrossBuildScript);
 
+                    string releaseMode = "-Doptimize=ReleaseSmall";
+
                     { //Linux
-                        //Build for Linux x86_64 with glibc 2.26 (old version specified for compatibility)
-                        InheritedShell($"zig build -Doptimize=ReleaseSmall -Dtarget=x86_64-linux-gnu.2.16 --verbose", SPIRVCrossPath).AssertZeroExitCode();
+                        //Build for Linux x86_64 with glibc 2.17 (old version specified for compatibility)
+                        InheritedShell($"zig build {releaseMode} -Dtarget=x86_64-linux-gnu.2.17 --verbose", SPIRVCrossPath).AssertZeroExitCode();
                         CopyFile(SPIRVCrossPath / "zig-out" / "lib" / "libspirv-cross.so", runtimes / "linux-x64" / "native" / "libspirv-cross.so", FileExistsPolicy.Overwrite);
 
-                        //Build for Linux x86 with glibc 2.26 (old version specified for compatibility)
-                        InheritedShell($"zig build -Doptimize=ReleaseSmall -Dtarget=x86-linux-gnu.2.16 --verbose", SPIRVCrossPath).AssertZeroExitCode();
+                        //Build for Linux x86 with glibc 2.17 (old version specified for compatibility)
+                        InheritedShell($"zig build {releaseMode} -Dtarget=x86-linux-gnu.2.17 --verbose", SPIRVCrossPath).AssertZeroExitCode();
                         CopyFile(SPIRVCrossPath / "zig-out" / "lib" / "libspirv-cross.so", runtimes / "linux-x86" / "native" / "libspirv-cross.so", FileExistsPolicy.Overwrite);
 
-                        //Build for Linux arm64 with glibc 2.26 (old version specified for compatibility)
-                        InheritedShell($"zig build -Doptimize=ReleaseSmall -Dtarget=aarch64-linux-gnu.2.16 --verbose", SPIRVCrossPath).AssertZeroExitCode();
+                        //Build for Linux arm64 with glibc 2.17 (old version specified for compatibility)
+                        InheritedShell($"zig build {releaseMode} -Dtarget=aarch64-linux-gnu.2.17 --verbose", SPIRVCrossPath).AssertZeroExitCode();
                         CopyFile(SPIRVCrossPath / "zig-out" / "lib" / "libspirv-cross.so", runtimes / "linux-arm64" / "native" / "libspirv-cross.so", FileExistsPolicy.Overwrite);
                     }
 
                     { //Windows
                         //Build for Windows x86_64
-                        InheritedShell($"zig build -Doptimize=ReleaseFast -Dtarget=x86_64-windows --verbose", SPIRVCrossPath).AssertZeroExitCode();
+                        InheritedShell($"zig build {releaseMode} -Dtarget=x86_64-windows --verbose", SPIRVCrossPath).AssertZeroExitCode();
                         CopyFile(SPIRVCrossPath / "zig-out" / "lib" / "spirv-cross.dll", runtimes / "win-x64" / "native" / "spirv-cross.dll", FileExistsPolicy.Overwrite);
 
                         //Build for Windows x86
-                        InheritedShell($"zig build -Doptimize=ReleaseFast -Dtarget=x86-windows --verbose", SPIRVCrossPath).AssertZeroExitCode();
+                        InheritedShell($"zig build {releaseMode} -Dtarget=x86-windows --verbose", SPIRVCrossPath).AssertZeroExitCode();
                         CopyFile(SPIRVCrossPath / "zig-out" / "lib" / "spirv-cross.dll", runtimes / "win-x86" / "native" / "spirv-cross.dll", FileExistsPolicy.Overwrite);
 
                         //Build for Windows arm64
-                        InheritedShell($"zig build -Doptimize=ReleaseFast -Dtarget=aarch64-windows --verbose", SPIRVCrossPath).AssertZeroExitCode();
+                        InheritedShell($"zig build {releaseMode} -Dtarget=aarch64-windows --verbose", SPIRVCrossPath).AssertZeroExitCode();
                         CopyFile(SPIRVCrossPath / "zig-out" / "lib" / "spirv-cross.dll", runtimes / "win-arm64" / "native" / "spirv-cross.dll", FileExistsPolicy.Overwrite);
                     }
 
                     { //MacOS
                         //Build for MacOS x86_64
-                        InheritedShell($"zig build -Doptimize=ReleaseSmall -Dtarget=x86_64-macos --verbose", SPIRVCrossPath).AssertZeroExitCode();
+                        InheritedShell($"zig build {releaseMode} -Dtarget=x86_64-macos --verbose", SPIRVCrossPath).AssertZeroExitCode();
                         CopyFile(SPIRVCrossPath / "zig-out" / "lib" / "libspirv-cross.dylib", runtimes / "osx-x64" / "native" / "libspirv-cross.dylib", FileExistsPolicy.Overwrite);
 
                         //Build for MacOS arm64
-                        InheritedShell($"zig build -Doptimize=ReleaseSmall -Dtarget=aarch64-macos --verbose", SPIRVCrossPath).AssertZeroExitCode();
+                        InheritedShell($"zig build {releaseMode} -Dtarget=aarch64-macos --verbose", SPIRVCrossPath).AssertZeroExitCode();
                         CopyFile(SPIRVCrossPath / "zig-out" / "lib" / "libspirv-cross.dylib", runtimes / "osx-arm64" / "native" / "libspirv-cross.dylib", FileExistsPolicy.Overwrite);
                     }
 

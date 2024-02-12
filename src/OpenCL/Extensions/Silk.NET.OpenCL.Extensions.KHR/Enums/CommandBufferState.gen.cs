@@ -18,7 +18,5 @@ namespace Silk.NET.OpenCL.Extensions.KHR
         Executable = 0x1,
         [NativeName("Name", "CL_COMMAND_BUFFER_STATE_PENDING_KHR")]
         Pending = 0x2,
-        [NativeName("Name", "CL_COMMAND_BUFFER_STATE_INVALID_KHR")]
-        Invalid = 0x3,
     }
 }

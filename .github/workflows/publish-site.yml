@@ -12,8 +12,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
-      with:
-        submodules: 'true'
     - name: Setup .NET 5.0
       uses: actions/setup-dotnet@v1
       with:

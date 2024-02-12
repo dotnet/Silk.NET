@@ -17,7 +17,7 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkImageCompressionPropertiesEXT")]
-    public unsafe partial struct ImageCompressionPropertiesEXT : IExtendsChain<ImageFormatProperties2>, IExtendsChain<ImageFormatProperties2KHR>, IExtendsChain<SurfaceFormat2KHR>, IExtendsChain<SubresourceLayout2EXT>
+    public unsafe partial struct ImageCompressionPropertiesEXT : IExtendsChain<ImageFormatProperties2>, IExtendsChain<ImageFormatProperties2KHR>, IExtendsChain<SurfaceFormat2KHR>, IExtendsChain<SubresourceLayout2KHR>, IExtendsChain<SubresourceLayout2EXT>
     {
         public ImageCompressionPropertiesEXT
         (

@@ -242,6 +242,8 @@ namespace Silk.NET.SPIRV
         Int64imageExt = 0x1398,
         [NativeName("Name", "SpvCapabilityShaderClockKHR")]
         ShaderClockKhr = 0x13BF,
+        [NativeName("Name", "SpvCapabilityShaderEnqueueAMDX")]
+        ShaderEnqueueAmdx = 0x13CB,
         [NativeName("Name", "SpvCapabilitySampleMaskOverrideCoverageNV")]
         SampleMaskOverrideCoverageNV = 0x1481,
         [NativeName("Name", "SpvCapabilityGeometryShaderPassthroughNV")]
@@ -360,6 +362,8 @@ namespace Silk.NET.SPIRV
         DemoteToHelperInvocation = 0x1503,
         [NativeName("Name", "SpvCapabilityDemoteToHelperInvocationEXT")]
         DemoteToHelperInvocationExt = 0x1503,
+        [NativeName("Name", "SpvCapabilityDisplacementMicromapNV")]
+        DisplacementMicromapNV = 0x1504,
         [NativeName("Name", "SpvCapabilityRayTracingOpacityMicromapEXT")]
         RayTracingOpacityMicromapExt = 0x1505,
         [NativeName("Name", "SpvCapabilityShaderInvocationReorderNV")]
@@ -368,6 +372,8 @@ namespace Silk.NET.SPIRV
         BindlessTextureNV = 0x150E,
         [NativeName("Name", "SpvCapabilityRayQueryPositionFetchKHR")]
         RayQueryPositionFetchKhr = 0x150F,
+        [NativeName("Name", "SpvCapabilityRayTracingDisplacementMicromapNV")]
+        RayTracingDisplacementMicromapNV = 0x1521,
         [NativeName("Name", "SpvCapabilitySubgroupShuffleINTEL")]
         SubgroupShuffleIntel = 0x15C0,
         [NativeName("Name", "SpvCapabilitySubgroupBufferBlockIOINTEL")]
@@ -492,14 +498,22 @@ namespace Silk.NET.SPIRV
         BFloat16ConversionIntel = 0x17E3,
         [NativeName("Name", "SpvCapabilitySplitBarrierINTEL")]
         SplitBarrierIntel = 0x17FD,
+        [NativeName("Name", "SpvCapabilityGlobalVariableFPGADecorationsINTEL")]
+        GlobalVariableFpgaDecorationsIntel = 0x1802,
         [NativeName("Name", "SpvCapabilityFPGAKernelAttributesv2INTEL")]
         FpgaKernelAttributesv2intel = 0x1811,
+        [NativeName("Name", "SpvCapabilityGlobalVariableHostAccessINTEL")]
+        GlobalVariableHostAccessIntel = 0x1817,
+        [NativeName("Name", "SpvCapabilityFPMaxErrorINTEL")]
+        FPMaxErrorIntel = 0x1819,
         [NativeName("Name", "SpvCapabilityFPGALatencyControlINTEL")]
         FpgaLatencyControlIntel = 0x181B,
         [NativeName("Name", "SpvCapabilityFPGAArgumentInterfacesINTEL")]
         FpgaArgumentInterfacesIntel = 0x181E,
         [NativeName("Name", "SpvCapabilityGroupUniformArithmeticKHR")]
         GroupUniformArithmeticKhr = 0x1900,
+        [NativeName("Name", "SpvCapabilityCacheControlsINTEL")]
+        CacheControlsIntel = 0x1929,
         [NativeName("Name", "SpvCapabilityMax")]
         Max = 0x7FFFFFFF,
     }

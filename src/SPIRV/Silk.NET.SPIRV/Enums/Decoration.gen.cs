@@ -116,6 +116,14 @@ namespace Silk.NET.SPIRV
         BlockMatchTextureQCom = 0x1188,
         [NativeName("Name", "SpvDecorationExplicitInterpAMD")]
         ExplicitInterpAmd = 0x1387,
+        [NativeName("Name", "SpvDecorationNodeSharesPayloadLimitsWithAMDX")]
+        NodeSharesPayloadLimitsWithAmdx = 0x139B,
+        [NativeName("Name", "SpvDecorationNodeMaxPayloadsAMDX")]
+        NodeMaxPayloadsAmdx = 0x139C,
+        [NativeName("Name", "SpvDecorationTrackFinishWritingAMDX")]
+        TrackFinishWritingAmdx = 0x13D6,
+        [NativeName("Name", "SpvDecorationPayloadNodeNameAMDX")]
+        PayloadNodeNameAmdx = 0x13E3,
         [NativeName("Name", "SpvDecorationOverrideCoverageNV")]
         OverrideCoverageNV = 0x1480,
         [NativeName("Name", "SpvDecorationPassthroughNV")]
@@ -250,6 +258,14 @@ namespace Silk.NET.SPIRV
         VectorComputeCallableFunctionIntel = 0x17C7,
         [NativeName("Name", "SpvDecorationMediaBlockIOINTEL")]
         MediaBlockIointel = 0x17FC,
+        [NativeName("Name", "SpvDecorationInitModeINTEL")]
+        InitModeIntel = 0x1803,
+        [NativeName("Name", "SpvDecorationImplementInRegisterMapINTEL")]
+        ImplementInRegisterMapIntel = 0x1804,
+        [NativeName("Name", "SpvDecorationHostAccessINTEL")]
+        HostAccessIntel = 0x1818,
+        [NativeName("Name", "SpvDecorationFPMaxErrorDecorationINTEL")]
+        FPMaxErrorDecorationIntel = 0x181A,
         [NativeName("Name", "SpvDecorationLatencyControlLabelINTEL")]
         LatencyControlLabelIntel = 0x181C,
         [NativeName("Name", "SpvDecorationLatencyControlConstraintINTEL")]
@@ -272,6 +288,10 @@ namespace Silk.NET.SPIRV
         MMHostInterfaceWaitRequestIntel = 0x1826,
         [NativeName("Name", "SpvDecorationStableKernelArgumentINTEL")]
         StableKernelArgumentIntel = 0x1827,
+        [NativeName("Name", "SpvDecorationCacheControlLoadINTEL")]
+        CacheControlLoadIntel = 0x192A,
+        [NativeName("Name", "SpvDecorationCacheControlStoreINTEL")]
+        CacheControlStoreIntel = 0x192B,
         [NativeName("Name", "SpvDecorationMax")]
         Max = 0x7FFFFFFF,
     }

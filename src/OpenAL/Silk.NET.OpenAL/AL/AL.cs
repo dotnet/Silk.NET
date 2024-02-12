@@ -26,7 +26,28 @@ namespace Silk.NET.OpenAL
         }
 
         /// <inheritdoc />
-        public override partial bool IsExtensionPresent(string name);
+        public override unsafe bool IsExtensionPresent(string name)
+        {
+            if (name.StartsWith("ALC_"))
+            {
+                // extreme hack for ALC_EXT_EFX which does not have a standard AL variant
+                var maxName = SilkMarshal.GetMaxSizeOf(name, NativeStringEncoding.UTF8);
+                var nameNative = name.Length > 256 ? new byte[maxName] : stackalloc byte[maxName];
+                SilkMarshal.StringIntoSpan(name, nameNative, NativeStringEncoding.UTF8);
+                fixed (byte* namePtr = nameNative)
+                {
+                    var currentContext = ((delegate* unmanaged[Cdecl]<Context*>) Context.GetProcAddress("alcGetCurrentContext"))();
+                    var currentDevice = ((delegate* unmanaged[Cdecl]<Context*, Device*>) Context.GetProcAddress("alcGetContextsDevice"))(currentContext);
+                    return ((delegate* unmanaged[Cdecl]<Device*, byte*, char>) Context.GetProcAddress("alcIsExtensionPresent"))
+                        (currentDevice, namePtr) == 1;
+                }
+            }
+
+            return CoreIsExtensionPresent(name);
+        }
+
+        [NativeApi(EntryPoint = nameof(IsExtensionPresent))]
+        private partial bool CoreIsExtensionPresent(string name);
 
         /// <inheritdoc />
         public SearchPathContainer SearchPaths => _searchPaths ??= new OpenALLibraryNameContainer(_soft);

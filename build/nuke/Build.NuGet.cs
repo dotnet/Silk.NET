@@ -70,7 +70,7 @@ partial class Build
                         );
                     }
 
-                    srcSettings = srcSettings.SetUsername(NugetUsername).SetPassword(NugetPassword);
+                    srcSettings = srcSettings.SetUsername(NugetUsername).SetPassword(NugetPassword).SetStorePasswordInClearText(true);
                 }
 
                 outputs = outputs.Concat(DotNetNuGetAddSource(srcSettings));
