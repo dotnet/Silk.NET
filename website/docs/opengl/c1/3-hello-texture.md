@@ -347,7 +347,7 @@ And now, some extra content to go with this tutorial!
 If you get curious about how the texture parameters work, let's learn it now!
 
 First, let's learn the structure of the command:
-```c
+```cs
 _gl.TexParameter( [Texture target] , [Parameter to change] , [New value for parameter] );
 // The suffix of TexParameter will vary depending on the type of the expected value for the parameter
 ```
