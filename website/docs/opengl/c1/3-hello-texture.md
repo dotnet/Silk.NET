@@ -2,7 +2,7 @@
 {
     "TableOfContents": {
         "Name": "1.3 - Hello Texture",
-        "Url": "3-hello-Texture.html",
+        "Url": "3-hello-texture.html",
         "Metadata": {
             "AuthorGitHub": "lumi2021",
             "DateTimeWritten": "11/01/2024 16:00",
@@ -46,7 +46,7 @@ Texture coordinates are a type of data that can be manipulated by the vertex sha
 This means that this data needs to be passed to the vertex shader which, as per the previous tutorials, is once again done using a vertex buffer.
 
 Let's go back to our `OnLoad` function and update our `vertices` array to the following:
-```c#
+```cs
 // The quad vertices data. Now with Texture coordinates!
 float[] vertices =
 {
@@ -81,7 +81,7 @@ vertex X and Y position floats!
 
 To fix this, we just need to go back to our `VertexAttribPointer()`, which is below our shader compiling section, and
 change it to:
-```c#
+```cs
 //                       3 floats for position + 2 floats for texture coordinates! \/
 _gl.VertexAttribPointer(positionLoc, 3, VertexAttribPointerType.Float, false, 5 * sizeof(float), (void*)0);
 ```
@@ -141,7 +141,7 @@ OpenGL automatically interpolates the data outputted by the Vertex Shader when i
 
 Now we just need to assign the correct layout for `aTextureCoord`. You should add these lines below our first `VertexAttribPointer` call:
 
-```c#
+```cs
 const uint texCoordLoc = 1;
 _gl.EnableVertexAttribArray(texCoordLoc);
 _gl.VertexAttribPointer(texCoordLoc, 2, VertexAttribPointerType.Float, false, 5 * sizeof(float), (void*)(3 * sizeof(float)));
@@ -190,18 +190,18 @@ dotnet add package StbImageSharp
 ```
 
 After installing, add the following reference on the top of your code file:
-```c#
+```cs
 using StbImageSharp;
 ```
 
 At the top of your class, declare a `uint` to store the ID of the OpenGL texture object:
-```c#
+```cs
 private static uint _texture;
 ```
 
 Returning to your `OnLoad` method, add these lines at the end of the method to create and bind the texture.
 That `ActiveTexture` call is telling OpenGL that we are wanting to use the first texture unit.
-```c#
+```cs
 _texture = _gl.GenTexture();
 _gl.ActiveTexture(TextureUnit.Texture0);
 _gl.BindTexture(TextureTarget.Texture2D, _texture);
@@ -210,14 +210,14 @@ _gl.BindTexture(TextureTarget.Texture2D, _texture);
 textures are bound to a texture unit, and the texture unit is then specified to the shader sampler." /?>
 
 After that, we need to load the image. You can do it with the following line:
-```c#
+```cs
 // ImageResult.FromMemory reads the bytes of the .png file and returns all its information!
 ImageResult result = ImageResult.FromMemory(File.ReadAllBytes("silk.png"), ColorComponents.RedGreenBlueAlpha);
 ```
 
 Now, with the image in memory, we need to upload the data to the GPU texture. To do that, we need a pointer for our bytes, the width, and the height of
 the texture. None of it is hardcoded, you get all this information inside `ImageResult`.
-```c#
+```cs
 // Define a pointer to the image data
 fixed (byte* ptr = result.Data)
     // Here we use "result.Width" and "result.Height" to tell OpenGL about how big our texture is.
@@ -241,7 +241,7 @@ parameters that the shader knows how to sample colors from the texture using our
 
 These will be explained in depth in [the following section on texture parameters](#texture-parameters).
 Briefly, these affect how the texture is sampled when we use it in the shader.
-```c#
+```cs
 _gl.TexParameterI(GLEnum.Texture2D, GLEnum.TextureWrapS, (int)TextureWrapMode.Repeat);
 _gl.TexParameterI(GLEnum.Texture2D, GLEnum.TextureWrapT, (int)TextureWrapMode.Repeat);
 _gl.TexParameterI(GLEnum.Texture2D, GLEnum.TextureMinFilter, (int)TextureMinFilter.Nearest);
@@ -250,7 +250,7 @@ _gl.TexParameterI(GLEnum.Texture2D, GLEnum.TextureMagFilter, (int)TextureMagFilt
 
 
 And now, just as we did with the other resources, let's unbind the texture to clean up.
-```c#
+```cs
 _gl.BindTexture(TextureTarget.Texture2D, 0);
 ```
 
@@ -283,7 +283,7 @@ with normalized values! To better understand this, think about a 250x500 pixels 
 <?# Info "You can use the equation ` 1/size * pixel_position ` to get the normalized coordinate for a particlar axis!" /?>
 
 After having configured our uniform `uTexture`, we need to bind our texture unit to it. To do so, we do it using the following lines:
-```c#
+```cs
 int location = _gl.GetUniformLocation(_program, "uTexture");
 _gl.Uniform1(location, 0);
 ```
@@ -294,14 +294,14 @@ Now, if you run the program, you will see just a black quad. It's because we nee
 If you don't do it, the last applied texture will be used for this mesh, in our case, since we have no texture bound after the clean up, no texture is used.
 
 To solve it, go to your `OnRender` method and, below the `_gl.UseProgram()` call, first activate the texture unit that you will use:
-```c#
+```cs
 _gl.ActiveTexture(TextureUnit.Texture0);
 ```
 Recall that a texture unit is a space in memory that refers to the texture object. We need to first set the texture unit we want to use as active before we can
 bind our texture to it. We're using the first texture unit `Texture0` here.
 
 After that we bind the texture again. Doing it after activating the texture unit will automatically attatch the texture at the texture unit 0, as a 2D texture.
-```c#
+```cs
 _gl.BindTexture(TextureTarget.Texture2D, _texture);
 ```
 With that, the texture in the texture unit 0 should be set for our sampler2D.
@@ -319,13 +319,13 @@ Transparency is a really expensive task in computer graphics. This is not a reas
 by default. OpenGL has various different ways to handle transparency and it's expected that the user configures them explicitly.
 
 First of all, we need to enable the blend capability. at the end of `onLoad` method, add the following line:
-```c#
+```cs
 _gl.Enable(EnableCap.Blend);
 ```
 Enabling blending essentially tells OpenGL to select the output colors from the visible primitives according to some value. This is referred to as blending.
 In our case, we want to blend based on the alpha value.
 To configure this, we use the following line:
-```c#
+```cs
 _gl.BlendFunc(BlendingFactor.SrcAlpha, BlendingFactor.OneMinusSrcAlpha);
 ```
 
@@ -347,7 +347,7 @@ And now, some extra content to go with this tutorial!
 If you get curious about how the texture parameters work, let's learn it now!
 
 First, let's learn the structure of the command:
-```c#
+```cs
 _gl.TexParameter( [Texture target] , [Parameter to change] , [New value for parameter] );
 // The suffix of TexParameter will vary depending on the type of the expected value for the parameter
 ```
@@ -422,7 +422,7 @@ But if you think that generating mipmaps by hand for all your textures is really
 do this for you.
 
 Just after setting the texture parameters, add this line to your code:
-```c#
+```cs
 _gl.GenerateMipmap(TextureTarget.Texture2D);
 ```
 
@@ -446,7 +446,7 @@ Will sample the two mipmaps whose sizes are closest to the final image with near
 Will sample the two mipmaps whose sizes are closest to the final image with linear sampling, then linearly interpolate between those two values.
 
 Knowing this, you can change the parameters for:
-```c#
+```cs
 _gl.TexParameter(GLEnum.Texture2D, GLEnum.TextureWrapS, (int)TextureWrapMode.Repeat);
 _gl.TexParameter(GLEnum.Texture2D, GLEnum.TextureWrapT, (int)TextureWrapMode.Repeat);
 _gl.TexParameter(GLEnum.Texture2D, GLEnum.TextureMinFilter, (int)TextureMinFilter.NearestMipmapNearest); // <- change here!
