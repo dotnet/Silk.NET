@@ -42,20 +42,30 @@ public class FunctionTransformer(IEnumerable<IJobDependency<IFunctionTransformer
         var transform = transformers
             .SelectMany(x => x.Get(key))
             .Aggregate<IFunctionTransformer, Action<MethodDeclarationSyntax>>(
-                meth => {
+                meth =>
+                {
                     // Get the discriminator string to determine whether it conflicts. Note that we set the return type
                     // to null as overloads that differ only by return type aren't acceptable.
-                    var discrim = ModUtils.DiscrimStr(meth.Modifiers, meth.TypeParameterList,
-                        meth.Identifier.ToString(), meth.ParameterList, returnType: null);
+                    var discrim = ModUtils.DiscrimStr(
+                        meth.Modifiers,
+                        meth.TypeParameterList,
+                        meth.Identifier.ToString(),
+                        meth.ParameterList,
+                        returnType: null
+                    );
 
                     // Only add it if it's an overload that does not conflict.
                     if (discrims.Add(discrim))
                     {
                         // Small fixup to convert to use expression bodies where possible
-                        if (meth.ExpressionBody is null &&
-                            meth.Body?.Statements.FirstOrDefault() is ReturnStatementSyntax {Expression:{} expr})
+                        if (
+                            meth.ExpressionBody is null
+                            && meth.Body?.Statements.FirstOrDefault()
+                                is ReturnStatementSyntax { Expression: { } expr }
+                        )
                         {
-                            meth = meth.WithBody(null).WithExpressionBody(ArrowExpressionClause(expr))
+                            meth = meth.WithBody(null)
+                                .WithExpressionBody(ArrowExpressionClause(expr))
                                 .WithSemicolonToken(Token(SyntaxKind.SemicolonToken));
                         }
                         ret.Add(meth);
@@ -68,8 +78,13 @@ public class FunctionTransformer(IEnumerable<IJobDependency<IFunctionTransformer
         {
             // Get the discriminator string to determine whether it conflicts. Note that we set the return type
             // to null as overloads that differ only by return type aren't acceptable.
-            var discrim = ModUtils.DiscrimStr(function.Modifiers, function.TypeParameterList,
-                function.Identifier.ToString(), function.ParameterList, returnType: null);
+            var discrim = ModUtils.DiscrimStr(
+                function.Modifiers,
+                function.TypeParameterList,
+                function.Identifier.ToString(),
+                function.ParameterList,
+                returnType: null
+            );
             var idx = ret.Count;
             if (TransformFunctions(function, transform) is { } unmodifiedFunction)
             {
@@ -91,7 +106,8 @@ public class FunctionTransformer(IEnumerable<IJobDependency<IFunctionTransformer
                         // Sometimes when functions are transformed they only differ by return type. C# doesn't allow
                         // this, so we add a suffix to the original function to differentiate them.
                         var newIden = $"{function.Identifier}Raw";
-                        var rep = new Dictionary<string, string> {
+                        var rep = new Dictionary<string, string>
+                        {
                             { function.Identifier.ToString(), newIden }
                         };
 
@@ -103,8 +119,13 @@ public class FunctionTransformer(IEnumerable<IJobDependency<IFunctionTransformer
 
                         // Add the suffixed function
                         var newFun = function.WithIdentifierForImport(Identifier(newIden));
-                        discrim = ModUtils.DiscrimStr(function.Modifiers, function.TypeParameterList,
-                            newIden, function.ParameterList, returnType: null);
+                        discrim = ModUtils.DiscrimStr(
+                            function.Modifiers,
+                            function.TypeParameterList,
+                            newIden,
+                            function.ParameterList,
+                            returnType: null
+                        );
                         if (discrims.Add(discrim))
                         {
                             ret.Insert(idx, newFun);
@@ -199,7 +220,9 @@ public class FunctionTransformer(IEnumerable<IJobDependency<IFunctionTransformer
 
         if (function.ReturnType.ToString() != "void")
         {
-            impl = ReturnStatement(CastExpression(function.ReturnType, ((ExpressionStatementSyntax)impl).Expression));
+            impl = ReturnStatement(
+                CastExpression(function.ReturnType, ((ExpressionStatementSyntax)impl).Expression)
+            );
         }
 
         var originalFunction = function;

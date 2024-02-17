@@ -769,7 +769,11 @@ public class AddVTables(IOptionsSnapshot<AddVTables.Configuration> config) : IMo
             var parent = node.FirstAncestorOrSelf<ClassDeclarationSyntax>();
             if (
                 _currentInterface is null
-                || node.AttributeLists.All(x => x.Attributes.All(y => !y.IsAttribute("System.Runtime.InteropServices.DllImport")))
+                || node.AttributeLists.All(x =>
+                    x.Attributes.All(y =>
+                        !y.IsAttribute("System.Runtime.InteropServices.DllImport")
+                    )
+                )
                 || !node.AttributeLists.GetNativeFunctionInfo(
                     out var lib,
                     out var entryPoint,
@@ -938,12 +942,29 @@ public class AddVTables(IOptionsSnapshot<AddVTables.Configuration> config) : IMo
                 return base.VisitInvocationExpression(node);
             }
 
-            var tSelf = _rwMethodCallsForStaticInterface.TypeParameterList?.Parameters.First().Identifier ?? throw new InvalidOperationException("Expected at least one type parameter.");
+            var tSelf =
+                _rwMethodCallsForStaticInterface.TypeParameterList?.Parameters.First().Identifier
+                ?? throw new InvalidOperationException("Expected at least one type parameter.");
             var type = node.FirstAncestorOrSelf<TypeDeclarationSyntax>();
-            if (node.Expression is IdentifierNameSyntax { Identifier: var tok } && (type?.Members.Any(x => x.ChildTokens().First(y => y.IsKind(SyntaxKind.IdentifierToken)).ToString() == tok.ToString()) ?? false))
+            if (
+                node.Expression is IdentifierNameSyntax { Identifier: var tok }
+                && (
+                    type?.Members.Any(x =>
+                        x.ChildTokens().First(y => y.IsKind(SyntaxKind.IdentifierToken)).ToString()
+                        == tok.ToString()
+                    ) ?? false
+                )
+            )
             {
-                return (base.VisitInvocationExpression(node) as InvocationExpressionSyntax)?.WithExpression(
-                    MemberAccessExpression(SyntaxKind.SimpleMemberAccessExpression, IdentifierName(tSelf), IdentifierName(tok)));
+                return (
+                    base.VisitInvocationExpression(node) as InvocationExpressionSyntax
+                )?.WithExpression(
+                    MemberAccessExpression(
+                        SyntaxKind.SimpleMemberAccessExpression,
+                        IdentifierName(tSelf),
+                        IdentifierName(tok)
+                    )
+                );
             }
             return base.VisitInvocationExpression(node);
         }
