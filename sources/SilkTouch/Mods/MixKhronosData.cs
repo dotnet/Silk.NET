@@ -29,7 +29,9 @@ public partial class MixKhronosData(
 {
     private Dictionary<string, HashSet<string>> _vendors = new();
     private Dictionary<string, Configuration> _jobs = new();
-    private static readonly ICulturedStringTransformer Transformer = new NameUtils.NameTransformer(4);
+    private static readonly ICulturedStringTransformer Transformer = new NameUtils.NameTransformer(
+        4
+    );
 
     /// <summary>
     /// Khronos mod configuration.
@@ -318,7 +320,8 @@ public partial class MixKhronosData(
     /// lookbehind workaround for difficult-to-match names. The primary set matches the actual function ending,
     /// while the lookbehind asserts that the ending match will not overreach into the end of a word.
     /// </summary>
-    [GeneratedRegex("(?<!xe)([fdhx]v?|u?[isb](64)?v?|v|i_v|fi|hi|xi)$")]
+    // NOTE: LET THIS BE A LESSON! Do NOT add x (fixed) here, these will frequently conflict with integer overloads.
+    [GeneratedRegex("(?<!xe)([fdh]v?|u?[isb](64)?v?|v|i_v|fi|hi)$")]
     private static partial Regex EndingsToTrim();
 
     /// <summary>

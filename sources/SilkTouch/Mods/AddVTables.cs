@@ -17,6 +17,21 @@ namespace Silk.NET.SilkTouch.Mods;
 /// <summary>
 /// Adds VTables to allow multiple points of entry into the native library.
 /// </summary>
+/// <remarks>
+/// Given a <c>static</c> method either marked as a bodiless <see cref="DllImport"/> or a "transformed"
+/// method (as output from <see cref="TransformFunctions"/>), this mod will create an interface containing API
+/// declarations for an "API object" as well as a <c>"Static"</c> sub-interface containing <c>static abstract</c>s or
+/// <c>static virtual</c>s as appropriate. Where a default interface method is added (i.e. because it's a transformed
+/// method), the original method is removed from the original class (and additional implementations of the VTable
+/// interfaces) to allow the implementations to cascade down without duplicating code. Once the interfaces are created,
+/// the original class shall contain <c>partial class</c>es for each of the configured VTables, implementing one of the
+/// interfaces, depending on which kind of VTable it is. This logic resides in the <see cref="VTable"/> derived classes.
+/// After all of that, the original class is modified to implement both interfaces, with the instance interface proxying
+/// through a "native context" from which function pointers are loaded (and subsequently calling said function
+/// pointers), and the static interface proxying through the configured "static default". In most cases, this is the
+/// <see cref="DllImport"/>-based partial class implementation of the static interface. However, in some cases this
+/// could be any other implementation such as the <see cref="ThisThread"/> implementation.
+/// </remarks>
 [ModConfiguration<Configuration>]
 public class AddVTables(IOptionsSnapshot<AddVTables.Configuration> config) : IMod
 {
@@ -525,13 +540,7 @@ public class AddVTables(IOptionsSnapshot<AddVTables.Configuration> config) : IMo
                 )
             : null;
 
-        private enum MethodRewriteMode
-        {
-            NativeContextTrampoline,
-            StaticDefault
-        }
-
-        private MethodRewriteMode? _rwMode;
+        private InterfaceDeclarationSyntax? _rwMethodCallsForStaticInterface;
 
         private List<MethodDeclarationSyntax> _methods = new();
 
@@ -558,17 +567,22 @@ public class AddVTables(IOptionsSnapshot<AddVTables.Configuration> config) : IMo
                 return node;
             }
 
+            // Get the interface containing the methods
+            // The interface key determines the output file name, which is typically just the interface name, but in the
+            // case where we have multiple interfaces with the same name but in different namespaces then we need to
+            // fully qualify the name.
             var ns = node.NamespaceFromSyntaxNode();
             var key = $"I{node.Identifier}";
             var fullKey = ns.Length == 0 ? node.Identifier.ToString() : $"{ns}.{key}";
             if (_interfaces.TryGetValue(fullKey, out var iface))
             {
-                // already using the full key
+                // We're already using the fully-qualified key.
                 _currentInterface = iface.Syntax;
                 key = fullKey;
             }
             else if (_interfaces.TryGetValue(key, out iface))
             {
+                // There's a key matching our unqualified key, so let's make sure that it's the same namespace.
                 var theirNs = iface.Syntax.NamespaceFromSyntaxNode();
                 var theirFullKey =
                     theirNs.Length == 0
@@ -593,13 +607,17 @@ public class AddVTables(IOptionsSnapshot<AddVTables.Configuration> config) : IMo
             }
             else
             {
+                // A whole new interface!
                 _currentInterface = NewInterface(key, node);
                 _interfaces.Add(key, (_currentInterface, ns));
             }
 
+            // Visit the class - this should record the methods.
             var ret = (ClassDeclarationSyntax)base.VisitClassDeclaration(node)!;
             ret = ret.WithMembers(
                     List<MemberDeclarationSyntax>(
+                        // _currentVTableOutputs contains the partials for the vtable implementations within this
+                        // partial class. It is populated in VisitMethodDeclaration.
                         _currentVTableOutputs
                             .Where(x => x is not null)
                             .Concat(ret.Members)
@@ -638,6 +656,8 @@ public class AddVTables(IOptionsSnapshot<AddVTables.Configuration> config) : IMo
                         )
                     )
                 );
+
+            // Reset for the next partial.
             _currentVTableOutputs = new ClassDeclarationSyntax?[_currentVTableOutputs.Length];
             _interfaces[key] = (_currentInterface, ns);
             _currentInterface = null;
@@ -749,22 +769,32 @@ public class AddVTables(IOptionsSnapshot<AddVTables.Configuration> config) : IMo
             var parent = node.FirstAncestorOrSelf<ClassDeclarationSyntax>();
             if (
                 _currentInterface is null
+                || node.AttributeLists.All(x => x.Attributes.All(y => !y.IsAttribute("System.Runtime.InteropServices.DllImport")))
                 || !node.AttributeLists.GetNativeFunctionInfo(
                     out var lib,
                     out var entryPoint,
-                    out _
+                    out var callConv
                 )
                 || !node.Modifiers.Any(SyntaxKind.StaticKeyword)
+                || (
+                    (node.Body is not null || node.ExpressionBody is not null)
+                    && !node.AttributeLists.Any(x =>
+                        x.Attributes.Any(y => y.IsAttribute("Silk.NET.Core.Transformed"))
+                    )
+                )
                 || parent is null
             )
             {
                 return base.VisitMethodDeclaration(node);
             }
 
+            // Get the static interface within this interface
             var staticInterface = _currentInterface
                 .Members.OfType<InterfaceDeclarationSyntax>()
                 .First();
             node = (MethodDeclarationSyntax)base.VisitMethodDeclaration(node)!;
+
+            // Create the common function declaration for the interfaces.
             var baseDecl = node.WithBody(null)
                 .WithSemicolonToken(Token(SyntaxKind.SemicolonToken))
                 .WithAttributeLists(
@@ -786,6 +816,9 @@ public class AddVTables(IOptionsSnapshot<AddVTables.Configuration> config) : IMo
                     )
                 )
                 .AddNativeFunction(node);
+
+            // Create the static abstract/virtual variant.
+            _rwMethodCallsForStaticInterface = staticInterface;
             var staticDecl = baseDecl
                 .WithModifiers(
                     TokenList(
@@ -794,7 +827,21 @@ public class AddVTables(IOptionsSnapshot<AddVTables.Configuration> config) : IMo
                         )
                     )
                 )
-                .AddModifiers(Token(SyntaxKind.AbstractKeyword));
+                .AddModifiers(
+                    Token(
+                        node.Body is null ? SyntaxKind.AbstractKeyword : SyntaxKind.VirtualKeyword
+                    )
+                )
+                .WithBody(node.Body is null ? null : VisitBlock(node.Body) as BlockSyntax)
+                .WithExpressionBody(
+                    node.ExpressionBody is null
+                        ? null
+                        : VisitArrowExpressionClause(node.ExpressionBody)
+                            as ArrowExpressionClauseSyntax
+                );
+            _rwMethodCallsForStaticInterface = null;
+
+            // Create the instance declaration.
             var instanceDecl = baseDecl.WithModifiers(
                 TokenList(baseDecl.Modifiers.Where(x => x.IsKind(SyntaxKind.UnsafeKeyword)))
             );
@@ -809,6 +856,15 @@ public class AddVTables(IOptionsSnapshot<AddVTables.Configuration> config) : IMo
                         .Concat(Enumerable.Repeat(instanceDecl, 1))
                 )
             );
+
+            // We'll now proceed to add the methods to the implementations of the vtable interface. However, we
+            // shouldn't do that if it's a transformed function that has a body (and thereby a DIM that will cascade
+            // down to the implementations)
+            if (node.Body is not null || node.ExpressionBody is not null)
+            {
+                return null;
+            }
+
             for (var i = 0; i < _vTables.Length; i++)
             {
                 _currentVTableOutputs[i] = _vTables[i]
@@ -825,44 +881,28 @@ public class AddVTables(IOptionsSnapshot<AddVTables.Configuration> config) : IMo
                     );
             }
 
+            // For the instance implementation of the vtable interface, the class contains an INativeContext from which
+            // we'll get function pointers, implementing the interface as a function pointer call. It's an explicit
+            // implementation because otherwise the static and non-static functions will conflict.
             var nativeContextTramp = instanceDecl.WithExplicitInterfaceSpecifier(
                 ExplicitInterfaceSpecifier(IdentifierName(_currentInterface.Identifier.ToString()))
             );
-            if (
-                node.AttributeLists.Any(x =>
-                    x.Attributes.Any(y => y.IsAttribute("System.Runtime.InteropServices.DllImport"))
+            nativeContextTramp = nativeContextTramp
+                .WithAttributeLists(List<AttributeListSyntax>())
+                .WithExpressionBody(
+                    GenerateNativeContextTrampoline(
+                        lib,
+                        entryPoint ?? node.Identifier.ToString(),
+                        callConv,
+                        node.ParameterList,
+                        node.ReturnType
+                    )
                 )
-                && node.AttributeLists.GetNativeFunctionInfo(out lib, out var ep, out var callConv)
-            )
-            {
-                nativeContextTramp = nativeContextTramp
-                    .WithAttributeLists(List<AttributeListSyntax>())
-                    .WithExpressionBody(
-                        GenerateNativeContextTrampoline(
-                            lib,
-                            ep ?? node.Identifier.ToString(),
-                            callConv,
-                            node.ParameterList,
-                            node.ReturnType
-                        )
-                    )
-                    .WithSemicolonToken(Token(SyntaxKind.SemicolonToken));
-            }
-            else
-            {
-                _rwMode = MethodRewriteMode.NativeContextTrampoline;
-                nativeContextTramp = node.Body is null
-                    ? throw new InvalidOperationException(
-                        "Function must have a body if it doesn't have a DllImportAttribute."
-                    )
-                    : nativeContextTramp
-                        .WithBody((BlockSyntax)VisitBlock(node.Body)!)
-                        .WithSemicolonToken(default);
-                _rwMode = null;
-            }
+                .WithSemicolonToken(Token(SyntaxKind.SemicolonToken));
 
             _methods.Add(nativeContextTramp);
 
+            // For the static implementation, we basically forward to whatever is the "static default".
             var staticDefaultProxy = node.WithBody(null)
                 .WithExpressionBody(
                     ArrowExpressionClause(
@@ -891,56 +931,21 @@ public class AddVTables(IOptionsSnapshot<AddVTables.Configuration> config) : IMo
             return null;
         }
 
-        public override SyntaxNode? VisitLocalFunctionStatement(LocalFunctionStatementSyntax node)
+        public override SyntaxNode? VisitInvocationExpression(InvocationExpressionSyntax node)
         {
-            if (
-                _rwMode == MethodRewriteMode.NativeContextTrampoline
-                && node.AttributeLists.Any(x =>
-                    x.Attributes.Any(y => y.IsAttribute("System.Runtime.InteropServices.DllImport"))
-                )
-                && node.AttributeLists.GetNativeFunctionInfo(
-                    out var lib,
-                    out var ep,
-                    out var callConv
-                )
-            )
+            if (_rwMethodCallsForStaticInterface is null)
             {
-                // make the local function non-static and using a function pointer call on the native context returned
-                // pointer.
-                return node.WithModifiers(
-                        TokenList(
-                            node.Modifiers.Where(x =>
-                                x.Kind()
-                                    is not SyntaxKind.StaticKeyword
-                                        and not SyntaxKind.ExternKeyword
-                            )
-                        )
-                    )
-                    .WithAttributeLists(List<AttributeListSyntax>())
-                    .WithExpressionBody(
-                        GenerateNativeContextTrampoline(
-                            lib,
-                            ep ?? node.Identifier.ToString(),
-                            callConv,
-                            node.ParameterList,
-                            node.ReturnType
-                        )
-                    )
-                    .WithSemicolonToken(Token(SyntaxKind.SemicolonToken));
+                return base.VisitInvocationExpression(node);
             }
 
-            var rmModeBefore = _rwMode;
-            var ret = (LocalFunctionStatementSyntax)base.VisitLocalFunctionStatement(node)!;
-            if (rmModeBefore != _rwMode)
+            var tSelf = _rwMethodCallsForStaticInterface.TypeParameterList?.Parameters.First().Identifier ?? throw new InvalidOperationException("Expected at least one type parameter.");
+            var type = node.FirstAncestorOrSelf<TypeDeclarationSyntax>();
+            if (node.Expression is IdentifierNameSyntax { Identifier: var tok } && (type?.Members.Any(x => x.ChildTokens().First(y => y.IsKind(SyntaxKind.IdentifierToken)).ToString() == tok.ToString()) ?? false))
             {
-                // the NativeContextTrampoline if statement has been hit when recursing into a contained local function,
-                // make sure that we're non-static.
-                ret = ret.WithModifiers(
-                    TokenList(ret.Modifiers.Where(x => !x.IsKind(SyntaxKind.StaticKeyword)))
-                );
+                return (base.VisitInvocationExpression(node) as InvocationExpressionSyntax)?.WithExpression(
+                    MemberAccessExpression(SyntaxKind.SimpleMemberAccessExpression, IdentifierName(tSelf), IdentifierName(tok)));
             }
-
-            return ret;
+            return base.VisitInvocationExpression(node);
         }
 
         public IEnumerable<KeyValuePair<string, SyntaxNode>> GetExtraFiles()

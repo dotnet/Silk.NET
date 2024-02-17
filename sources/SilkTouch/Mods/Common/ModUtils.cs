@@ -126,6 +126,47 @@ public static class ModUtils
         DiscrimStr(param.Modifiers, param.Type);
 
     /// <summary>
+    /// Changes the identifier of a method while taking into account any <see cref="DllImportAttribute"/>s the method
+    /// may have.
+    /// </summary>
+    /// <param name="node">The original method.</param>
+    /// <param name="newIdentifier">The new identifier.</param>
+    /// <returns>The modified method.</returns>
+    public static MethodDeclarationSyntax WithIdentifierForImport(this MethodDeclarationSyntax node,
+        SyntaxToken newIdentifier) => node
+        .WithIdentifier(newIdentifier)
+        .WithAttributeLists(
+            List(
+                node.AttributeLists.Select(x =>
+                    x.WithAttributes(
+                        SeparatedList(
+                            x.Attributes.Select(y =>
+                                y.IsAttribute(
+                                    "System.Runtime.InteropServices.DllImport"
+                                )
+                                && (
+                                    y.ArgumentList?.Arguments.All(z =>
+                                        z.NameEquals?.Name.ToString() != "EntryPoint"
+                                    ) ?? true
+                                )
+                                    ? y.AddArgumentListArguments(
+                                        AttributeArgument(
+                                                LiteralExpression(
+                                                    SyntaxKind.StringLiteralExpression,
+                                                    Literal(node.Identifier.ToString())
+                                                )
+                                            )
+                                            .WithNameEquals(NameEquals("EntryPoint"))
+                                    )
+                                    : y
+                            )
+                        )
+                    )
+                )
+            )
+        );
+
+    /// <summary>
     /// Reconstructs the <see cref="PInvokeGeneratorConfigurationOptions"/> from the given
     /// <see cref="PInvokeGeneratorConfiguration"/> because this is a PITA to do manually.
     /// </summary>

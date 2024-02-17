@@ -9,6 +9,7 @@ using Microsoft.Extensions.Options;
 using Silk.NET.SilkTouch.Caching;
 using Silk.NET.SilkTouch.Clang;
 using Silk.NET.SilkTouch.Mods;
+using Silk.NET.SilkTouch.Mods.Transformation;
 using Silk.NET.SilkTouch.Naming;
 using Silk.NET.SilkTouch.Sources;
 using Silk.NET.SilkTouch.Workspace;
@@ -97,6 +98,7 @@ public static class ServiceCollectionExtensions
 
         services.AddSingleton<ClangScraper>();
         services.AddSingleton<ResponseFileHandler>();
+        services.AddSingleton<FunctionTransformer>();
         services.AddSingleton<IWorkspaceSolutionProvider, WorkspaceSolutionProvider>();
         services.AddSingleton<Microsoft.Build.Framework.ILogger, WorkspaceLogger>();
         services.AddSingleton<NameTrimmer>();
@@ -106,6 +108,7 @@ public static class ServiceCollectionExtensions
         services.TryAddSingleton<ICacheProvider, FileSystemCacheProvider>();
         services.AddSingleton<IInputSource, GitInputSource>();
         services.AddSingleton<IInputSource, NuGetInputSource>();
+        services.AddSingleton<IFunctionTransformer, PtrRefTransformer>();
         services.TryAddSingleton<IInputResolver, UriBasedInputResolver>();
         if (OperatingSystem.IsWindows())
         {

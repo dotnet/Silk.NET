@@ -3,6 +3,7 @@ using System.Linq;
 using Microsoft.CodeAnalysis;
 using Microsoft.CodeAnalysis.CSharp;
 using Microsoft.CodeAnalysis.CSharp.Syntax;
+using Silk.NET.SilkTouch.Mods.Transformation;
 using static Microsoft.CodeAnalysis.CSharp.SyntaxFactory;
 
 namespace Silk.NET.SilkTouch.Mods;
@@ -11,7 +12,8 @@ namespace Silk.NET.SilkTouch.Mods;
 /// <see cref="CSharpSyntaxRewriter"/> containing common functionality for mods.
 /// </summary>
 public abstract class ModCSharpSyntaxRewriter(bool visitIntoStructuredTrivia = false)
-    : CSharpSyntaxRewriter(visitIntoStructuredTrivia)
+    : CSharpSyntaxRewriter(visitIntoStructuredTrivia),
+        ITransformationContext
 {
     /// <summary>
     /// <c>using</c>s to add to the appropriate place within the syntax tree.
@@ -115,7 +117,7 @@ public abstract class ModCSharpSyntaxRewriter(bool visitIntoStructuredTrivia = f
     /// </summary>
     /// <param name="use">The directive.</param>
     /// <returns>Whether it was added.</returns>
-    protected bool AddUsing(UsingDirectiveSyntax use) => UsingsToAdd.TryAdd(Discrim(use), use);
+    public bool AddUsing(UsingDirectiveSyntax use) => UsingsToAdd.TryAdd(Discrim(use), use);
 
     /// <summary>
     /// Gets a discriminator for the given using.
