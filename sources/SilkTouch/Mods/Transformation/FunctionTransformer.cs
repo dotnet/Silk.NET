@@ -5,6 +5,7 @@ using System.Runtime.InteropServices;
 using Microsoft.CodeAnalysis;
 using Microsoft.CodeAnalysis.CSharp;
 using Microsoft.CodeAnalysis.CSharp.Syntax;
+using Microsoft.Extensions.Logging;
 using static Microsoft.CodeAnalysis.CSharp.SyntaxFactory;
 
 namespace Silk.NET.SilkTouch.Mods.Transformation;
@@ -13,7 +14,11 @@ namespace Silk.NET.SilkTouch.Mods.Transformation;
 /// Contains utilities for actioning <see cref="IFunctionTransformer"/>s.
 /// </summary>
 /// <param name="transformers">The function transformers.</param>
-public class FunctionTransformer(IEnumerable<IJobDependency<IFunctionTransformer>> transformers)
+/// <param name="logger">The logger.</param>
+public class FunctionTransformer(
+    IEnumerable<IJobDependency<IFunctionTransformer>> transformers,
+    ILogger<FunctionTransformer> logger
+)
 {
     /// <summary>
     /// Transforms all of the given functions, optionally including the original function signatures in the returned
@@ -45,7 +50,9 @@ public class FunctionTransformer(IEnumerable<IJobDependency<IFunctionTransformer
                 meth =>
                 {
                     // Get the discriminator string to determine whether it conflicts. Note that we set the return type
-                    // to null as overloads that differ only by return type aren't acceptable.
+                    // to null as overloads that differ only by return type aren't acceptable. However, we do need a
+                    // discriminator that does include the return type so we can determine whether the function has gone
+                    // through the transformation pipeline completely unmodified.
                     var discrim = ModUtils.DiscrimStr(
                         meth.Modifiers,
                         meth.TypeParameterList,
@@ -53,9 +60,16 @@ public class FunctionTransformer(IEnumerable<IJobDependency<IFunctionTransformer
                         meth.ParameterList,
                         returnType: null
                     );
+                    var discrimWithRet = ModUtils.DiscrimStr(
+                        meth.Modifiers,
+                        meth.TypeParameterList,
+                        meth.Identifier.ToString(),
+                        meth.ParameterList,
+                        meth.ReturnType
+                    );
 
                     // Only add it if it's an overload that does not conflict.
-                    if (discrims.Add(discrim))
+                    if (discrims.Add(discrimWithRet) && discrims.Add(discrim))
                     {
                         // Small fixup to convert to use expression bodies where possible
                         if (
@@ -77,7 +91,9 @@ public class FunctionTransformer(IEnumerable<IJobDependency<IFunctionTransformer
         foreach (var function in functions)
         {
             // Get the discriminator string to determine whether it conflicts. Note that we set the return type
-            // to null as overloads that differ only by return type aren't acceptable.
+            // to null as overloads that differ only by return type aren't acceptable. However, we do need a
+            // discriminator that does include the return type so we can determine whether the function has gone
+            // through the transformation pipeline completely unmodified.
             var discrim = ModUtils.DiscrimStr(
                 function.Modifiers,
                 function.TypeParameterList,
@@ -85,51 +101,57 @@ public class FunctionTransformer(IEnumerable<IJobDependency<IFunctionTransformer
                 function.ParameterList,
                 returnType: null
             );
+            var discrimWithRet = ModUtils.DiscrimStr(
+                function.Modifiers,
+                function.TypeParameterList,
+                function.Identifier.ToString(),
+                function.ParameterList,
+                function.ReturnType
+            );
             var idx = ret.Count;
-            if (TransformFunctions(function, transform) is { } unmodifiedFunction)
-            {
-                // If the function hasn't been transformed at all, then remove it from the output.
-                if (ret.Remove(unmodifiedFunction))
-                {
-                    discrims.Remove(discrim);
-                }
 
-                if (includeOriginal)
+            // Add the discriminator to the hash set to prevent unmodified functions from being output as transformed
+            // ones. We might remove it later.
+            if (!discrims.Add(discrimWithRet))
+            {
+                logger.LogWarning("Failed to add discriminator for original function \"{}\" because a previous transformed or original function conflicts with it. This may cause inconsistencies in outputs.", discrim);
+            }
+
+            if (TransformFunctions(function, transform) is not null && includeOriginal)
+            {
+                // Try to add the original function as-is
+                if (discrims.Add(discrim))
                 {
-                    // Try to add the original function as-is
+                    ret.Insert(idx, function);
+                }
+                else
+                {
+                    // Sometimes when functions are transformed they only differ by return type. C# doesn't allow
+                    // this, so we add a suffix to the original function to differentiate them.
+                    var newIden = $"{function.Identifier}Raw";
+                    var rep = new Dictionary<string, string>
+                    {
+                        { function.Identifier.ToString(), newIden }
+                    };
+
+                    // Any reference to the original function needs to be replaced as well.
+                    foreach (ref var added in CollectionsMarshal.AsSpan(ret)[idx..])
+                    {
+                        added = (MethodDeclarationSyntax)added.ReplaceIdentifiers(rep);
+                    }
+
+                    // Add the suffixed function
+                    var newFun = function.WithIdentifierForImport(Identifier(newIden));
+                    discrim = ModUtils.DiscrimStr(
+                        function.Modifiers,
+                        function.TypeParameterList,
+                        newIden,
+                        function.ParameterList,
+                        returnType: null
+                    );
                     if (discrims.Add(discrim))
                     {
-                        ret.Insert(idx, function);
-                    }
-                    else
-                    {
-                        // Sometimes when functions are transformed they only differ by return type. C# doesn't allow
-                        // this, so we add a suffix to the original function to differentiate them.
-                        var newIden = $"{function.Identifier}Raw";
-                        var rep = new Dictionary<string, string>
-                        {
-                            { function.Identifier.ToString(), newIden }
-                        };
-
-                        // Any reference to the original function needs to be replaced as well.
-                        foreach (ref var added in CollectionsMarshal.AsSpan(ret)[idx..])
-                        {
-                            added = (MethodDeclarationSyntax)added.ReplaceIdentifiers(rep);
-                        }
-
-                        // Add the suffixed function
-                        var newFun = function.WithIdentifierForImport(Identifier(newIden));
-                        discrim = ModUtils.DiscrimStr(
-                            function.Modifiers,
-                            function.TypeParameterList,
-                            newIden,
-                            function.ParameterList,
-                            returnType: null
-                        );
-                        if (discrims.Add(discrim))
-                        {
-                            ret.Insert(idx, newFun);
-                        }
+                        ret.Insert(idx, newFun);
                     }
                 }
             }

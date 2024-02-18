@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text.Json.Serialization;
 using System.Threading.Tasks;
@@ -769,11 +770,6 @@ public class AddVTables(IOptionsSnapshot<AddVTables.Configuration> config) : IMo
             var parent = node.FirstAncestorOrSelf<ClassDeclarationSyntax>();
             if (
                 _currentInterface is null
-                || node.AttributeLists.All(x =>
-                    x.Attributes.All(y =>
-                        !y.IsAttribute("System.Runtime.InteropServices.DllImport")
-                    )
-                )
                 || !node.AttributeLists.GetNativeFunctionInfo(
                     out var lib,
                     out var entryPoint,
@@ -833,10 +829,15 @@ public class AddVTables(IOptionsSnapshot<AddVTables.Configuration> config) : IMo
                 )
                 .AddModifiers(
                     Token(
-                        node.Body is null ? SyntaxKind.AbstractKeyword : SyntaxKind.VirtualKeyword
+                        node.Body is null && node.ExpressionBody is null
+                            ? SyntaxKind.AbstractKeyword
+                            : SyntaxKind.VirtualKeyword
                     )
                 )
                 .WithBody(node.Body is null ? null : VisitBlock(node.Body) as BlockSyntax)
+                .WithSemicolonToken(
+                    node.Body is not null ? default : Token(SyntaxKind.SemicolonToken)
+                )
                 .WithExpressionBody(
                     node.ExpressionBody is null
                         ? null
@@ -846,9 +847,15 @@ public class AddVTables(IOptionsSnapshot<AddVTables.Configuration> config) : IMo
             _rwMethodCallsForStaticInterface = null;
 
             // Create the instance declaration.
-            var instanceDecl = baseDecl.WithModifiers(
-                TokenList(baseDecl.Modifiers.Where(x => x.IsKind(SyntaxKind.UnsafeKeyword)))
-            );
+            var instanceDecl = baseDecl
+                .WithModifiers(
+                    TokenList(baseDecl.Modifiers.Where(x => x.IsKind(SyntaxKind.UnsafeKeyword)))
+                )
+                .WithBody(node.Body)
+                .WithSemicolonToken(
+                    node.Body is not null ? default : Token(SyntaxKind.SemicolonToken)
+                )
+                .WithExpressionBody(node.ExpressionBody);
             _currentInterface = _currentInterface.WithMembers(
                 List(
                     _currentInterface
