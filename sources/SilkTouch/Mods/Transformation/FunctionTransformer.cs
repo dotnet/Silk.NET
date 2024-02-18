@@ -114,7 +114,10 @@ public class FunctionTransformer(
             // ones. We might remove it later.
             if (!discrims.Add(discrimWithRet))
             {
-                logger.LogWarning("Failed to add discriminator for original function \"{}\" because a previous transformed or original function conflicts with it. This may cause inconsistencies in outputs.", discrim);
+                logger.LogWarning(
+                    "Failed to add discriminator for original function \"{}\" because a previous transformed or original function conflicts with it. This may cause inconsistencies in outputs.",
+                    discrim
+                );
             }
 
             if (TransformFunctions(function, transform) is not null && includeOriginal)
@@ -170,75 +173,26 @@ public class FunctionTransformer(
             return null;
         }
 
-        // The Silk DSL can be applied to the following:
-        // - Methods, static or otherwise, where the containing class does not have an API interface
-        //   - This usually means that the UseSilkDSL mods precedes the AddVTables mod and that the transformed
-        //     functions will be extracted out to the interface as part of the latter mod.
-        // - Static and non-static API interface methods
-        // - Struct methods
-        var staticFn = function.Modifiers.Any(x => x.IsKind(SyntaxKind.StaticKeyword));
         var declTy = function.FirstAncestorOrSelf<BaseTypeDeclarationSyntax>();
-        var aai = FindNativeMemberContainerAttr(
-            declTy?.AttributeLists.Where(x => x.Target is null).SelectMany(x => x.Attributes)
-                ?? Enumerable.Empty<AttributeSyntax>(),
-            staticFn
-        );
-        StatementSyntax? impl = null;
-        var argList = ArgumentList(
-            SeparatedList(
-                function.ParameterList.Parameters.Select(x =>
-                    Argument(IdentifierName(x.Identifier))
-                )
-            )
-        );
 
-        // If it's a simple case of transforming a class or struct method, then we can just call into the function
-        // without any extra shenanigans
-        if (declTy is ClassDeclarationSyntax or StructDeclarationSyntax && aai.Length == 0)
-        {
-            impl = ExpressionStatement(
-                InvocationExpression(IdentifierName(function.Identifier), argList)
-            );
-        }
-        else if (
-            declTy is InterfaceDeclarationSyntax ifd
-            && aai.SequenceEqual(declTy.Identifier.ToString())
-        )
-        {
-            // If it's static, it needs to have TSelf type parameter
-            impl =
-                staticFn
-                && ifd.TypeParameterList?.Parameters is { Count: 1 } tPs
-                && ifd.ConstraintClauses.Any(x =>
-                    x.Name.ToString() == tPs[0].Identifier.ToString()
-                    && x.Constraints.Any(y =>
-                        y is TypeConstraintSyntax tc
-                        && tc.Type.ToString() == $"{declTy.Identifier}<{tPs[0].Identifier}>"
-                    )
-                )
-                    // To call static abstracts in DIMs we need to access it through TSelf
-                    ? ExpressionStatement(
-                        InvocationExpression(
-                            MemberAccessExpression(
-                                SyntaxKind.SimpleMemberAccessExpression,
-                                IdentifierName(aai.ToString()),
-                                IdentifierName(function.Identifier)
-                            ),
-                            argList
-                        )
-                    )
-                    // Otherwise, static functions aren't applicable.
-                    : staticFn
-                        ? null
-                        : ExpressionStatement(
-                            InvocationExpression(IdentifierName(function.Identifier), argList)
-                        );
-        }
-
-        if (impl is null)
+        // The Silk DSL can be applied to static and non-static methods in a class or a struct.
+        if (declTy is not (ClassDeclarationSyntax or StructDeclarationSyntax))
         {
             return null;
         }
+
+        StatementSyntax impl = ExpressionStatement(
+            InvocationExpression(
+                IdentifierName(function.Identifier),
+                ArgumentList(
+                    SeparatedList(
+                        function.ParameterList.Parameters.Select(x =>
+                            Argument(IdentifierName(x.Identifier))
+                        )
+                    )
+                )
+            )
+        );
 
         if (function.ReturnType.ToString() != "void")
         {
@@ -281,76 +235,10 @@ public class FunctionTransformer(
             .WithExpressionBody(null)
             .WithSemicolonToken(default)
             .WithModifiers(
-                TokenList(
-                    function
-                        .Modifiers.Where(x => !x.IsKind(SyntaxKind.ExternKeyword))
-                        .Select(x =>
-                            x.IsKind(SyntaxKind.AbstractKeyword)
-                                ? Token(SyntaxKind.VirtualKeyword)
-                                : x
-                        )
-                )
+                TokenList(function.Modifiers.Where(x => !x.IsKind(SyntaxKind.ExternKeyword)))
             );
 
         transform(function);
         return function;
-    }
-
-    private static ReadOnlySpan<char> FindNativeMemberContainerAttr(
-        IEnumerable<AttributeSyntax> attrs,
-        bool staticInterface
-    )
-    {
-        foreach (var attr in attrs)
-        {
-            if (attr.IsAttribute("Silk.NET.Core.NativeMemberContainer"))
-            {
-                // If it's a static interface, default to false as we need an explicit Static = true
-                var shouldRet = !staticInterface;
-                if (attr.ArgumentList is not { Arguments.Count: >= 1 })
-                {
-                    continue;
-                }
-
-                foreach (var arg in attr.ArgumentList.Arguments)
-                {
-                    if (arg.NameEquals?.Name.ToString() == "Static")
-                    {
-                        shouldRet = arg.Expression.IsKind(
-                            staticInterface
-                                ? SyntaxKind.TrueLiteralExpression
-                                : SyntaxKind.FalseLiteralExpression
-                        );
-                        break;
-                    }
-                }
-
-                if (
-                    shouldRet
-                    && attr.ArgumentList!.Arguments[0].Expression
-                        is TypeOfExpressionSyntax { Type: { } ity }
-                )
-                {
-                    var ret = ity.ToString().AsSpan();
-                    if (ret.IndexOf('<') is > 0 and var idx)
-                    {
-                        if (!staticInterface)
-                        {
-                            continue;
-                        }
-
-                        ret = ret[..idx];
-                    }
-                    else if (staticInterface)
-                    {
-                        continue;
-                    }
-
-                    return ret;
-                }
-            }
-        }
-
-        return default;
     }
 }

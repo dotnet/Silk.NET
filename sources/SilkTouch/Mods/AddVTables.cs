@@ -142,14 +142,7 @@ public class AddVTables(IOptionsSnapshot<AddVTables.Configuration> config) : IMo
                     .WithBaseList(
                         BaseList(
                             SingletonSeparatedList<BaseTypeSyntax>(
-                                SimpleBaseType(
-                                    GenericName(
-                                        Identifier($"I{ctx.ClassName}.Static"),
-                                        TypeArgumentList(
-                                            SingletonSeparatedList<TypeSyntax>(IdentifierName(Name))
-                                        )
-                                    )
-                                )
+                                SimpleBaseType(IdentifierName($"I{ctx.ClassName}.Static"))
                             )
                         )
                     )
@@ -226,14 +219,7 @@ public class AddVTables(IOptionsSnapshot<AddVTables.Configuration> config) : IMo
                 .WithBaseList(
                     BaseList(
                         SingletonSeparatedList<BaseTypeSyntax>(
-                            SimpleBaseType(
-                                GenericName(
-                                    Identifier($"I{ctx.ClassName}.Static"),
-                                    TypeArgumentList(
-                                        SingletonSeparatedList<TypeSyntax>(IdentifierName(Name))
-                                    )
-                                )
-                            )
+                            SimpleBaseType(IdentifierName($"I{ctx.ClassName}.Static"))
                         )
                     )
                 )
@@ -452,16 +438,7 @@ public class AddVTables(IOptionsSnapshot<AddVTables.Configuration> config) : IMo
                             TypeParameterConstraintClause(
                                 IdentifierName("T"),
                                 SingletonSeparatedList<TypeParameterConstraintSyntax>(
-                                    TypeConstraint(
-                                        GenericName(
-                                            Identifier($"I{ctx.ClassName}.Static"),
-                                            TypeArgumentList(
-                                                SingletonSeparatedList<TypeSyntax>(
-                                                    IdentifierName("T")
-                                                )
-                                            )
-                                        )
-                                    )
+                                    TypeConstraint(IdentifierName($"I{ctx.ClassName}.Static"))
                                 )
                             )
                         )
@@ -487,6 +464,7 @@ public class AddVTables(IOptionsSnapshot<AddVTables.Configuration> config) : IMo
                             )
                         )
                     )
+                    .WithSemicolonToken(Token(SyntaxKind.SemicolonToken))
             );
     }
 
@@ -541,7 +519,7 @@ public class AddVTables(IOptionsSnapshot<AddVTables.Configuration> config) : IMo
                 )
             : null;
 
-        private InterfaceDeclarationSyntax? _rwMethodCallsForStaticInterface;
+        private InterfaceDeclarationSyntax? _rwMethodCallsForExplicitInterfaceSpecifier;
 
         private List<MethodDeclarationSyntax> _methods = new();
 
@@ -643,16 +621,7 @@ public class AddVTables(IOptionsSnapshot<AddVTables.Configuration> config) : IMo
                             new BaseTypeSyntax[]
                             {
                                 SimpleBaseType(IdentifierName(key)),
-                                SimpleBaseType(
-                                    GenericName(
-                                        Identifier($"{key}.Static"),
-                                        TypeArgumentList(
-                                            SingletonSeparatedList<TypeSyntax>(
-                                                IdentifierName(node.Identifier)
-                                            )
-                                        )
-                                    )
-                                )
+                                SimpleBaseType(IdentifierName($"{key}.Static"))
                             }
                         )
                     )
@@ -690,80 +659,8 @@ public class AddVTables(IOptionsSnapshot<AddVTables.Configuration> config) : IMo
                                     Token(SyntaxKind.PartialKeyword)
                                 )
                             )
-                            .WithTypeParameterList(
-                                TypeParameterList(SingletonSeparatedList(TypeParameter("TSelf")))
-                            )
-                            .WithConstraintClauses(
-                                SingletonList(
-                                    TypeParameterConstraintClause(
-                                        IdentifierName("TSelf"),
-                                        SingletonSeparatedList<TypeParameterConstraintSyntax>(
-                                            TypeConstraint(
-                                                GenericName(
-                                                    Identifier("Static"),
-                                                    TypeArgumentList(
-                                                        SingletonSeparatedList<TypeSyntax>(
-                                                            IdentifierName("TSelf")
-                                                        )
-                                                    )
-                                                )
-                                            )
-                                        )
-                                    )
-                                )
-                            )
-                            .AddAttributeLists(GetNativeMemberAttribute(key, true))
-                    )
-                    .AddAttributeLists(GetNativeMemberAttribute(key));
+                    );
         }
-
-        private static AttributeListSyntax GetNativeMemberAttribute(
-            string key,
-            bool @static = false
-        ) =>
-            @static
-                ? AttributeList(
-                    SingletonSeparatedList(
-                        Attribute(
-                            IdentifierName("NativeMemberContainer"),
-                            AttributeArgumentList(
-                                SeparatedList(
-                                    new[]
-                                    {
-                                        AttributeArgument(
-                                            TypeOfExpression(
-                                                QualifiedName(
-                                                    IdentifierName(key),
-                                                    GenericName(Identifier("Static"))
-                                                )
-                                            )
-                                        ),
-                                        AttributeArgument(
-                                            NameEquals("Static"),
-                                            null,
-                                            LiteralExpression(
-                                                SyntaxKind.TrueLiteralExpression,
-                                                Token(SyntaxKind.TrueKeyword)
-                                            )
-                                        )
-                                    }
-                                )
-                            )
-                        )
-                    )
-                )
-                : AttributeList(
-                    SingletonSeparatedList(
-                        Attribute(
-                            IdentifierName("NativeMemberContainer"),
-                            AttributeArgumentList(
-                                SingletonSeparatedList(
-                                    AttributeArgument(TypeOfExpression(IdentifierName(key)))
-                                )
-                            )
-                        )
-                    )
-                );
 
         public override SyntaxNode? VisitMethodDeclaration(MethodDeclarationSyntax node)
         {
@@ -818,7 +715,6 @@ public class AddVTables(IOptionsSnapshot<AddVTables.Configuration> config) : IMo
                 .AddNativeFunction(node);
 
             // Create the static abstract/virtual variant.
-            _rwMethodCallsForStaticInterface = staticInterface;
             var staticDecl = baseDecl
                 .WithModifiers(
                     TokenList(
@@ -827,24 +723,12 @@ public class AddVTables(IOptionsSnapshot<AddVTables.Configuration> config) : IMo
                         )
                     )
                 )
-                .AddModifiers(
-                    Token(
-                        node.Body is null && node.ExpressionBody is null
-                            ? SyntaxKind.AbstractKeyword
-                            : SyntaxKind.VirtualKeyword
-                    )
-                )
-                .WithBody(node.Body is null ? null : VisitBlock(node.Body) as BlockSyntax)
+                .AddModifiers(Token(SyntaxKind.AbstractKeyword))
+                .WithBody(node.Body)
                 .WithSemicolonToken(
                     node.Body is not null ? default : Token(SyntaxKind.SemicolonToken)
                 )
-                .WithExpressionBody(
-                    node.ExpressionBody is null
-                        ? null
-                        : VisitArrowExpressionClause(node.ExpressionBody)
-                            as ArrowExpressionClauseSyntax
-                );
-            _rwMethodCallsForStaticInterface = null;
+                .WithExpressionBody(node.ExpressionBody);
 
             // Create the instance declaration.
             var instanceDecl = baseDecl
@@ -861,20 +745,25 @@ public class AddVTables(IOptionsSnapshot<AddVTables.Configuration> config) : IMo
                     _currentInterface
                         .Members.Select(x =>
                             x == staticInterface
-                                ? staticInterface = staticInterface.AddMembers(staticDecl)
+                                ? staticInterface = staticInterface.AddMembers(
+                                    staticDecl
+                                        .WithBody(null)
+                                        .WithExpressionBody(null)
+                                        .WithSemicolonToken(Token(SyntaxKind.SemicolonToken))
+                                )
                                 : x
                         )
-                        .Concat(Enumerable.Repeat(instanceDecl, 1))
+                        .Concat(
+                            Enumerable.Repeat(
+                                instanceDecl
+                                    .WithBody(null)
+                                    .WithExpressionBody(null)
+                                    .WithSemicolonToken(Token(SyntaxKind.SemicolonToken)),
+                                1
+                            )
+                        )
                 )
             );
-
-            // We'll now proceed to add the methods to the implementations of the vtable interface. However, we
-            // shouldn't do that if it's a transformed function that has a body (and thereby a DIM that will cascade
-            // down to the implementations)
-            if (node.Body is not null || node.ExpressionBody is not null)
-            {
-                return null;
-            }
 
             for (var i = 0; i < _vTables.Length; i++)
             {
@@ -895,22 +784,31 @@ public class AddVTables(IOptionsSnapshot<AddVTables.Configuration> config) : IMo
             // For the instance implementation of the vtable interface, the class contains an INativeContext from which
             // we'll get function pointers, implementing the interface as a function pointer call. It's an explicit
             // implementation because otherwise the static and non-static functions will conflict.
-            var nativeContextTramp = instanceDecl.WithExplicitInterfaceSpecifier(
-                ExplicitInterfaceSpecifier(IdentifierName(_currentInterface.Identifier.ToString()))
-            );
-            nativeContextTramp = nativeContextTramp
-                .WithAttributeLists(List<AttributeListSyntax>())
-                .WithExpressionBody(
-                    GenerateNativeContextTrampoline(
-                        lib,
-                        entryPoint ?? node.Identifier.ToString(),
-                        callConv,
-                        node.ParameterList,
-                        node.ReturnType
+            _rwMethodCallsForExplicitInterfaceSpecifier = _currentInterface;
+            var nativeContextTramp = instanceDecl
+                .WithExplicitInterfaceSpecifier(
+                    ExplicitInterfaceSpecifier(
+                        IdentifierName(_currentInterface.Identifier.ToString())
                     )
                 )
-                .WithSemicolonToken(Token(SyntaxKind.SemicolonToken));
-
+                .WithAttributeLists(List<AttributeListSyntax>())
+                .WithExpressionBody(
+                    node.Body is null && node.ExpressionBody is null
+                        ? GenerateNativeContextTrampoline(
+                            lib,
+                            entryPoint ?? node.Identifier.ToString(),
+                            callConv,
+                            node.ParameterList,
+                            node.ReturnType
+                        )
+                        : node.ExpressionBody is null
+                            ? null
+                            : VisitArrowExpressionClause(node.ExpressionBody)
+                                as ArrowExpressionClauseSyntax
+                )
+                .WithBody(node.Body is null ? null : VisitBlock(node.Body) as BlockSyntax)
+                .WithSemicolonToken(node.Body is null ? Token(SyntaxKind.SemicolonToken) : default);
+            _rwMethodCallsForExplicitInterfaceSpecifier = null;
             _methods.Add(nativeContextTramp);
 
             // For the static implementation, we basically forward to whatever is the "static default".
@@ -944,14 +842,11 @@ public class AddVTables(IOptionsSnapshot<AddVTables.Configuration> config) : IMo
 
         public override SyntaxNode? VisitInvocationExpression(InvocationExpressionSyntax node)
         {
-            if (_rwMethodCallsForStaticInterface is null)
+            if (_rwMethodCallsForExplicitInterfaceSpecifier is null)
             {
                 return base.VisitInvocationExpression(node);
             }
 
-            var tSelf =
-                _rwMethodCallsForStaticInterface.TypeParameterList?.Parameters.First().Identifier
-                ?? throw new InvalidOperationException("Expected at least one type parameter.");
             var type = node.FirstAncestorOrSelf<TypeDeclarationSyntax>();
             if (
                 node.Expression is IdentifierNameSyntax { Identifier: var tok }
@@ -968,7 +863,14 @@ public class AddVTables(IOptionsSnapshot<AddVTables.Configuration> config) : IMo
                 )?.WithExpression(
                     MemberAccessExpression(
                         SyntaxKind.SimpleMemberAccessExpression,
-                        IdentifierName(tSelf),
+                        ParenthesizedExpression(
+                            CastExpression(
+                                IdentifierName(
+                                    _rwMethodCallsForExplicitInterfaceSpecifier.Identifier
+                                ),
+                                ThisExpression()
+                            )
+                        ),
                         IdentifierName(tok)
                     )
                 );
@@ -1032,10 +934,6 @@ public class AddVTables(IOptionsSnapshot<AddVTables.Configuration> config) : IMo
                                 SimpleBaseType(IdentifierName("IDisposable"))
                             )
                         )
-                    )
-                    .AddAttributeLists(
-                        GetNativeMemberAttribute(iface.Identifier.ToString()),
-                        GetNativeMemberAttribute(iface.Identifier.ToString(), true)
                     );
                 AddUsing("Silk.NET.Core.Loader");
                 AddUsing("System.Reflection");

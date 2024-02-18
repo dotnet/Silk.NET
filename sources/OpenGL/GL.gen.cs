@@ -9,8 +9,6 @@ using System.Reflection;
 
 namespace Silk.NET.OpenGL;
 
-[NativeMemberContainer(typeof(IGL))]
-[NativeMemberContainer(typeof(IGL.Static<>), Static = true)]
 partial class GL(INativeContext nativeContext) : IDisposable
 {
     public partial class DllImport
@@ -18,7 +16,7 @@ partial class GL(INativeContext nativeContext) : IDisposable
         static DllImport() => LoaderInterface.RegisterHook(Assembly.GetExecutingAssembly());
     }
 
-    public partial class ThisThread : IGL.Static<ThisThread>
+    public partial class ThisThread : IGL.Static
     {
         public static ThreadLocal<IGL> Underlying { get; } = new();
 

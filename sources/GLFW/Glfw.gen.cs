@@ -9,8 +9,6 @@ using System.Reflection;
 
 namespace Silk.NET.GLFW;
 
-[NativeMemberContainer(typeof(IGlfw))]
-[NativeMemberContainer(typeof(IGlfw.Static<>), Static = true)]
 partial class Glfw(INativeContext nativeContext) : IDisposable
 {
     public partial class DllImport
@@ -18,7 +16,7 @@ partial class Glfw(INativeContext nativeContext) : IDisposable
         static DllImport() => LoaderInterface.RegisterHook(Assembly.GetExecutingAssembly());
     }
 
-    public partial class ThisThread : IGlfw.Static<ThisThread>
+    public partial class ThisThread : IGlfw.Static
     {
         public static ThreadLocal<IGlfw> Underlying { get; } =
             new(static () => new StaticWrapper<DllImport>());
