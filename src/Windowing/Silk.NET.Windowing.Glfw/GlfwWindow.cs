@@ -666,6 +666,11 @@ namespace Silk.NET.Windowing.Glfw
             return ret;
         }
 
+        public override void SetFocus() 
+        {
+            _glfw.FocusWindow(_glfwWindow);
+        }
+
         public override void Close()
         {
             Closing?.Invoke();
