@@ -178,7 +178,7 @@ public class PrettifyNames(
                         (
                             x.Key.EndsWith(".gen.cs")
                             && rewriter.Types.TryGetValue(
-                                x.Key[(x.Key.LastIndexOf('/') + 1)..^7],
+                                x.Key[(x.Key.LastIndexOf('/') + 1)..^7], // ^7 to strip the .gen.cs
                                 out var info
                             )
                                 ? $"{x.Key[..(x.Key.LastIndexOf('/') + 1)]}{info.NewName}.gen.cs"

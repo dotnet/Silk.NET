@@ -362,44 +362,44 @@ public class AddVTables(IOptionsSnapshot<AddVTables.Configuration> config) : IMo
                     .WithModifiers(
                         TokenList(Token(SyntaxKind.PublicKeyword), Token(SyntaxKind.PartialKeyword))
                     )
-            )
-                .AddMembers(
-                    ctx.StaticDecl.WithModifiers(
-                        TokenList(
-                            new[] { Token(SyntaxKind.PublicKeyword) }.Concat(
-                                ctx.StaticDecl.Modifiers.Where(x =>
-                                    x.Kind() is SyntaxKind.StaticKeyword or SyntaxKind.UnsafeKeyword
-                                )
+            ).AddMembers(
+                ctx.StaticDecl.WithModifiers(
+                    TokenList(
+                        new[] { Token(SyntaxKind.PublicKeyword) }.Concat(
+                            ctx.StaticDecl.Modifiers.Where(x =>
+                                x.Kind() is SyntaxKind.StaticKeyword or SyntaxKind.UnsafeKeyword
                             )
                         )
                     )
-                        .WithExpressionBody(
-                            ArrowExpressionClause(
-                                InvocationExpression(
-                                    MemberAccessExpression(
-                                        SyntaxKind.SimpleMemberAccessExpression,
-                                        PostfixUnaryExpression(
-                                            SyntaxKind.SuppressNullableWarningExpression,
-                                            MemberAccessExpression(
-                                                SyntaxKind.SimpleMemberAccessExpression,
-                                                IdentifierName("Underlying"),
-                                                IdentifierName("Value")
-                                            )
-                                        ),
-                                        IdentifierName(ctx.InstanceDecl.Identifier)
+                )
+                    .WithExpressionBody(
+                        ArrowExpressionClause(
+                            InvocationExpression(
+                                MemberAccessExpression(
+                                    SyntaxKind.SimpleMemberAccessExpression,
+                                    PostfixUnaryExpression(
+                                        SyntaxKind.SuppressNullableWarningExpression,
+                                        MemberAccessExpression(
+                                            SyntaxKind.SimpleMemberAccessExpression,
+                                            IdentifierName("Underlying"),
+                                            IdentifierName("Value")
+                                        )
                                     ),
-                                    ArgumentList(
-                                        SeparatedList(
-                                            ctx.InstanceDecl.ParameterList.Parameters.Select(x =>
-                                                Argument(IdentifierName(x.Identifier))
-                                            )
+                                    IdentifierName(ctx.InstanceDecl.Identifier)
+                                ),
+                                ArgumentList(
+                                    SeparatedList(
+                                        ctx.InstanceDecl.ParameterList.Parameters.Select(x =>
+                                            Argument(IdentifierName(x.Identifier))
                                         )
                                     )
                                 )
                             )
                         )
-                )
-                .WithSemicolonToken(Token(SyntaxKind.SemicolonToken));
+                    )
+                    .WithSemicolonToken(Token(SyntaxKind.SemicolonToken))
+                    .AddMaxOpt()
+            );
     }
 
     /// <summary>
@@ -463,6 +463,7 @@ public class AddVTables(IOptionsSnapshot<AddVTables.Configuration> config) : IMo
                         )
                     )
                     .WithSemicolonToken(Token(SyntaxKind.SemicolonToken))
+                    .AddMaxOpt()
             );
     }
 
@@ -822,7 +823,8 @@ public class AddVTables(IOptionsSnapshot<AddVTables.Configuration> config) : IMo
                                 as ArrowExpressionClauseSyntax
                 )
                 .WithBody(node.Body is null ? null : VisitBlock(node.Body) as BlockSyntax)
-                .WithSemicolonToken(node.Body is null ? Token(SyntaxKind.SemicolonToken) : default);
+                .WithSemicolonToken(node.Body is null ? Token(SyntaxKind.SemicolonToken) : default)
+                .AddMaxOpt();
             _rwMethodCallsForExplicitInterfaceSpecifier = null;
             _methods.Add(nativeContextTramp);
 
@@ -850,7 +852,8 @@ public class AddVTables(IOptionsSnapshot<AddVTables.Configuration> config) : IMo
                     TokenList(node.Modifiers.Where(x => !x.IsKind(SyntaxKind.ExternKeyword)))
                 )
                 .WithAttributeLists(staticDecl.AttributeLists)
-                .WithSemicolonToken(Token(SyntaxKind.SemicolonToken));
+                .WithSemicolonToken(Token(SyntaxKind.SemicolonToken))
+                .AddMaxOpt();
             _methods.Add(staticDefaultProxy);
             return null;
         }
