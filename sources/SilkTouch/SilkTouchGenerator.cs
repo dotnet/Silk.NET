@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using ClangSharp;
+using Microsoft.CodeAnalysis;
 using Microsoft.CodeAnalysis.CSharp;
 using Microsoft.CodeAnalysis.Text;
 using Microsoft.Extensions.Configuration;
@@ -18,6 +19,7 @@ using Silk.NET.SilkTouch.Mods;
 using Silk.NET.SilkTouch.Sources;
 using Silk.NET.SilkTouch.Workspace;
 using Diagnostic = ClangSharp.Diagnostic;
+using static Microsoft.CodeAnalysis.CSharp.SyntaxFactory;
 
 namespace Silk.NET.SilkTouch;
 
@@ -264,6 +266,26 @@ public class SilkTouchGenerator(
                 key
             );
             bindings = await mod.AfterScrapeAsync(key, bindings);
+        }
+
+        // Add a license header to files that don't have one
+        if (job.DefaultLicenseHeader is not null)
+        {
+            var defaultLicenseHeaderTrivia = (await File.ReadAllLinesAsync(job.DefaultLicenseHeader, ct))
+                .Where(x => x.Length == 0 || x.StartsWith("//"))
+                .Select(x => Comment(x.Trim()))
+                .ToArray();
+            foreach (var (file, node) in bindings.Files)
+            {
+                var shouldAddHeader = !node.GetLeadingTrivia().Any(x => x.Kind() is SyntaxKind.SingleLineCommentTrivia) ||
+                    !(node.ChildNodes().FirstOrDefault()?.GetLeadingTrivia()
+                        .Any(x => x.Kind() is SyntaxKind.SingleLineCommentTrivia)).GetValueOrDefault();
+                if (shouldAddHeader)
+                {
+                    bindings.Files[file] =
+                        node.WithLeadingTrivia(defaultLicenseHeaderTrivia.Concat(node.GetLeadingTrivia()));
+                }
+            }
         }
 
         // Output the generated bindings

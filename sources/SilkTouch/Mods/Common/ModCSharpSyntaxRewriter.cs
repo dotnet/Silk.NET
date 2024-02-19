@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
+using System.Threading;
 using Microsoft.CodeAnalysis;
 using Microsoft.CodeAnalysis.CSharp;
 using Microsoft.CodeAnalysis.CSharp.Syntax;
@@ -15,10 +16,17 @@ public abstract class ModCSharpSyntaxRewriter(bool visitIntoStructuredTrivia = f
     : CSharpSyntaxRewriter(visitIntoStructuredTrivia),
         ITransformationContext
 {
+    private ThreadLocal<Dictionary<string, UsingDirectiveSyntax>> _usingsToAdd =
+        new(() => new Dictionary<string, UsingDirectiveSyntax>());
+
     /// <summary>
     /// <c>using</c>s to add to the appropriate place within the syntax tree.
     /// </summary>
-    public Dictionary<string, UsingDirectiveSyntax> UsingsToAdd { get; set; } = new();
+    public Dictionary<string, UsingDirectiveSyntax> UsingsToAdd
+    {
+        get => _usingsToAdd.Value!;
+        set => _usingsToAdd.Value = value;
+    }
 
     /// <inheritdoc />
     public override SyntaxNode? VisitCompilationUnit(CompilationUnitSyntax node)
@@ -96,6 +104,7 @@ public abstract class ModCSharpSyntaxRewriter(bool visitIntoStructuredTrivia = f
                                             z.Kind()
                                                 is SyntaxKind.SingleLineCommentTrivia
                                                     or SyntaxKind.MultiLineCommentTrivia
+                                                    or SyntaxKind.WhitespaceTrivia
                                         )
                                     )
                                     .FirstOrDefault()

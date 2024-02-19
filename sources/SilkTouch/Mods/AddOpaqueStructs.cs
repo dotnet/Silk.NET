@@ -92,7 +92,8 @@ public class AddOpaqueStructs : IMod
                                             .WithModifiers(
                                                 TokenList(
                                                     Token(SyntaxKind.PublicKeyword),
-                                                    Token(SyntaxKind.ReadOnlyKeyword)
+                                                    Token(SyntaxKind.ReadOnlyKeyword),
+                                                    Token(SyntaxKind.PartialKeyword)
                                                 )
                                             )
                                     )

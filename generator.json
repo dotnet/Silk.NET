@@ -14,6 +14,7 @@
       "InputTestRoot": "eng/submodules/terrafx.interop.windows/tests/Interop/Windows",
       "OutputSourceRoot": "sources/Windows",
       "OutputTestRoot": "tests/Windows",
+      "DefaultLicenseHeader": "eng/silktouch/header.txt",
       "Solution": "Silk.NET.sln",
       "Mods": [
         "AddIncludes",
@@ -61,6 +62,7 @@
       "OutputSourceRoot": "sources/OpenGL",
       "OutputTestRoot": "tests/OpenGL",
       "Solution": "Silk.NET.sln",
+      "DefaultLicenseHeader": "eng/silktouch/header.txt",
       "Mods": [
         "AddIncludes",
         "AddApiProfiles",
