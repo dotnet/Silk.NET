@@ -3,7 +3,6 @@ using System.Threading;
 using System.Threading.Tasks;
 using CSharpier;
 using Microsoft.CodeAnalysis;
-using Microsoft.CodeAnalysis.CSharp;
 
 namespace Silk.NET.SilkTouch.Workspace;
 

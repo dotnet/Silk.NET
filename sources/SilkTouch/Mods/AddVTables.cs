@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Diagnostics;
 using System.Linq;
 using System.Text.Json.Serialization;
 using System.Threading.Tasks;
@@ -8,7 +7,6 @@ using Microsoft.CodeAnalysis;
 using Microsoft.CodeAnalysis.CSharp;
 using Microsoft.CodeAnalysis.CSharp.Syntax;
 using Microsoft.Extensions.Configuration;
-using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 using Silk.NET.SilkTouch.Clang;
 using static Microsoft.CodeAnalysis.CSharp.SyntaxFactory;
@@ -481,11 +479,6 @@ public class AddVTables(IOptionsSnapshot<AddVTables.Configuration> config) : IMo
 
     class Rewriter(VTable[] vTables) : ModCSharpSyntaxRewriter
     {
-        private Dictionary<
-            string,
-            (InterfaceDeclarationSyntax Syntax, string? Namespace)
-        > _interfaces = new();
-
         private InterfaceDeclarationSyntax? _currentInterface;
         private VTable[] _vTables = vTables;
 
@@ -493,7 +486,7 @@ public class AddVTables(IOptionsSnapshot<AddVTables.Configuration> config) : IMo
             vTables.Length
         ];
 
-        private Dictionary<string, UsingDirectiveSyntax> _aggregatedUsings = new();
+        public Dictionary<string, UsingDirectiveSyntax> AggregatedUsings { get; } = new();
 
         private string _staticDefault =
             vTables.FirstOrDefault(x => x.IsDefault && x.IsStatic)?.Name
@@ -522,6 +515,31 @@ public class AddVTables(IOptionsSnapshot<AddVTables.Configuration> config) : IMo
         private InterfaceDeclarationSyntax? _rwMethodCallsForExplicitInterfaceSpecifier;
 
         private List<MethodDeclarationSyntax> _methods = new();
+        private bool _multiClass;
+        private string? _className;
+
+        /// <summary>
+        /// The current class name, if a single class is being handled from the current file. Not fully qualified.
+        /// </summary>
+        public string? ClassName
+        {
+            get => _multiClass ? null : _className;
+            set => (_className, _multiClass) = (value, _multiClass && value is not null);
+        }
+
+        /// <summary>
+        /// All interface partials generated from the classes contained in the current file.
+        /// </summary>
+        public List<(
+            string Namespace,
+            InterfaceDeclarationSyntax Interface
+        )> InterfacePartials { get; set; } = [];
+
+        /// <summary>
+        /// All class names this rewriter has encountered. The key may be fully qualified depending on whether a class
+        /// with the same name but different namespace has been encountered, the value is always fully-qualified.
+        /// </summary>
+        public Dictionary<string, string?> FullClassNames { get; set; } = [];
 
         public override SyntaxNode? Visit(SyntaxNode? node)
         {
@@ -530,7 +548,7 @@ public class AddVTables(IOptionsSnapshot<AddVTables.Configuration> config) : IMo
             {
                 foreach (var (k, v) in UsingsToAdd)
                 {
-                    _aggregatedUsings[k] = v;
+                    AggregatedUsings[k] = v;
                 }
 
                 UsingsToAdd.Clear();
@@ -547,49 +565,46 @@ public class AddVTables(IOptionsSnapshot<AddVTables.Configuration> config) : IMo
             }
 
             // Get the interface containing the methods
-            // The interface key determines the output file name, which is typically just the interface name, but in the
-            // case where we have multiple interfaces with the same name but in different namespaces then we need to
-            // fully qualify the name.
             var ns = node.NamespaceFromSyntaxNode();
             var key = $"I{node.Identifier}";
-            var fullKey = ns.Length == 0 ? node.Identifier.ToString() : $"{ns}.{key}";
-            if (_interfaces.TryGetValue(fullKey, out var iface))
+            var className = node.Identifier.ToString();
+            var fullClassName = $"{ns}.{node.Identifier}";
+            if (!_multiClass && _className is null)
             {
-                // We're already using the fully-qualified key.
-                _currentInterface = iface.Syntax;
-                key = fullKey;
+                _className = className;
             }
-            else if (_interfaces.TryGetValue(key, out iface))
+            else
             {
-                // There's a key matching our unqualified key, so let's make sure that it's the same namespace.
-                var theirNs = iface.Syntax.NamespaceFromSyntaxNode();
-                var theirFullKey =
-                    theirNs.Length == 0
-                        ? iface.Syntax.Identifier.ToString()
-                        : $"{theirNs}.{iface.Syntax.Identifier}";
-                if (theirFullKey == fullKey)
-                {
-                    // this is our interface
-                    _currentInterface = iface.Syntax;
-                }
-                else
-                {
-                    // conflict on the non-full key, separate them out.
-                    _interfaces.Remove(key);
-                    _interfaces.Add(theirFullKey, iface);
+                _multiClass = true;
+            }
 
-                    // this also means we need to create the interface with the full key
-                    _currentInterface = NewInterface(key, node);
-                    _interfaces.Add(fullKey, (_currentInterface, ns));
-                    key = fullKey;
+            // The contents of the ClassNames hash set determines the output file name for the VTable boilerplate.
+            // These are output to the source root, so if there's multiple classes with the same name but different
+            // namespaces, then we need to ensure we're tracking that.
+            if (FullClassNames.TryGetValue(fullClassName, out _))
+            {
+                // already using the full class name.
+            }
+            else if (
+                FullClassNames.TryGetValue(className, out var theirFullClassName)
+                && theirFullClassName != fullClassName
+            )
+            {
+                // separate these two and use their full class names as the file name.
+                FullClassNames[className] = null; // <-- keep it in case a third class comes along
+                FullClassNames[fullClassName] = fullClassName;
+                if (theirFullClassName is not null)
+                {
+                    FullClassNames[theirFullClassName] = theirFullClassName;
                 }
             }
             else
             {
-                // A whole new interface!
-                _currentInterface = NewInterface(key, node);
-                _interfaces.Add(key, (_currentInterface, ns));
+                // either it's new or we're not using the full class name and the namespace matches ours
+                FullClassNames[className] = fullClassName;
             }
+
+            _currentInterface = NewInterface(key, node);
 
             // Visit the class - this should record the methods.
             var ret = (ClassDeclarationSyntax)base.VisitClassDeclaration(node)!;
@@ -628,8 +643,8 @@ public class AddVTables(IOptionsSnapshot<AddVTables.Configuration> config) : IMo
                 );
 
             // Reset for the next partial.
-            _currentVTableOutputs = new ClassDeclarationSyntax?[_currentVTableOutputs.Length];
-            _interfaces[key] = (_currentInterface, ns);
+            _currentVTableOutputs.AsSpan().Clear();
+            InterfacePartials.Add((ns, _currentInterface));
             _currentInterface = null;
             return ret;
 
@@ -881,27 +896,16 @@ public class AddVTables(IOptionsSnapshot<AddVTables.Configuration> config) : IMo
         public IEnumerable<KeyValuePair<string, SyntaxNode>> GetExtraFiles()
         {
             var uta = UsingsToAdd;
-            UsingsToAdd = _aggregatedUsings;
-            foreach (var (fqn, (iface, ns)) in _interfaces)
+            UsingsToAdd = AggregatedUsings;
+            foreach (var (outputName, nonInterface) in FullClassNames)
             {
-                yield return new KeyValuePair<string, SyntaxNode>(
-                    $"sources/{fqn}.gen.cs",
-                    CompilationUnit()
-                        .WithUsings(GetUsings(UsingsToAdd, null))
-                        .WithMembers(
-                            string.IsNullOrWhiteSpace(ns)
-                                ? SingletonList<MemberDeclarationSyntax>(iface)
-                                : SingletonList<MemberDeclarationSyntax>(
-                                    FileScopedNamespaceDeclaration(
-                                            ModUtils.NamespaceIntoIdentifierName(ns)
-                                        )
-                                        .WithMembers(SingletonList<MemberDeclarationSyntax>(iface))
-                                )
-                        )
-                );
-                var nonInterface =
-                    $"{fqn[..(fqn.LastIndexOf('.') + 1)]}{fqn[(fqn.LastIndexOf('.') + 2)..]}";
+                if (nonInterface is null)
+                {
+                    continue;
+                }
+
                 var nonInterfaceIden = nonInterface[(nonInterface.LastIndexOf('.') + 1)..];
+                var ns = nonInterface[..nonInterface.LastIndexOf('.')];
                 var boilerplate = ClassDeclaration(nonInterfaceIden)
                     .WithModifiers(TokenList(Token(SyntaxKind.PartialKeyword)))
                     .WithMembers(
@@ -938,7 +942,7 @@ public class AddVTables(IOptionsSnapshot<AddVTables.Configuration> config) : IMo
                 AddUsing("Silk.NET.Core.Loader");
                 AddUsing("System.Reflection");
                 yield return new KeyValuePair<string, SyntaxNode>(
-                    $"sources/{nonInterface}.gen.cs",
+                    $"sources/{outputName}.gen.cs",
                     CompilationUnit()
                         .WithUsings(GetUsings(UsingsToAdd, null))
                         .WithMembers(
@@ -1181,13 +1185,76 @@ public class AddVTables(IOptionsSnapshot<AddVTables.Configuration> config) : IMo
                 }
         );
 
+        var newFiles = new List<(string, SyntaxNode)>(rw.FullClassNames.Count);
         foreach (var (fname, node) in syntax.Files)
         {
             if (fname.StartsWith("sources/"))
             {
+                rw.InterfacePartials.Clear();
+                rw.ClassName = null;
                 syntax.Files[fname] =
                     rw.Visit(node) ?? throw new InvalidOperationException("Visit returned null");
+                if (rw.InterfacePartials.Count == 0)
+                {
+                    continue;
+                }
+
+                var ifname =
+                    rw.ClassName is not null
+                    && fname.Replace(rw.ClassName, $"I{rw.ClassName}") is var ifn
+                    && ifn != fname
+                        ? ifn
+                        : ModUtils.AddEffectiveSuffix(fname, "Interfaces");
+                var nNamespaces = rw.InterfacePartials.Select(x => x.Namespace).Distinct().Count();
+                newFiles.Add(
+                    (
+                        ifname,
+                        CompilationUnit()
+                            .WithUsings(
+                                ModCSharpSyntaxRewriter.GetUsings(rw.AggregatedUsings, null)
+                            )
+                            .WithMembers(
+                                nNamespaces == 1
+                                    ? string.IsNullOrWhiteSpace(rw.InterfacePartials[0].Namespace)
+                                        ? List<MemberDeclarationSyntax>(
+                                            rw.InterfacePartials.Select(x => x.Interface)
+                                        )
+                                        : SingletonList<MemberDeclarationSyntax>(
+                                            FileScopedNamespaceDeclaration(
+                                                    ModUtils.NamespaceIntoIdentifierName(
+                                                        rw.InterfacePartials[0].Namespace
+                                                    )
+                                                )
+                                                .WithMembers(
+                                                    List<MemberDeclarationSyntax>(
+                                                        rw.InterfacePartials.Select(x =>
+                                                            x.Interface
+                                                        )
+                                                    )
+                                                )
+                                        )
+                                    : List<MemberDeclarationSyntax>(
+                                        rw.InterfacePartials.GroupBy(x => x.Namespace)
+                                            .Select(g =>
+                                                NamespaceDeclaration(
+                                                        ModUtils.NamespaceIntoIdentifierName(g.Key)
+                                                    )
+                                                    .WithMembers(
+                                                        List<MemberDeclarationSyntax>(
+                                                            g.Select(x => x.Interface)
+                                                        )
+                                                    )
+                                            )
+                                    )
+                            )
+                    )
+                );
             }
+        }
+
+        foreach (var (fname, node) in newFiles)
+        {
+            syntax.Files[fname] = node;
         }
 
         foreach (var (fname, node) in rw.GetExtraFiles())

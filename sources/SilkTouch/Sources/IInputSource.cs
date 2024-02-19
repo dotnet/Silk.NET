@@ -1,5 +1,3 @@
-using System.Threading.Tasks;
-
 namespace Silk.NET.SilkTouch.Sources;
 
 /// <summary>

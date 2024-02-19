@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;
+using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices;
 using System.Text.RegularExpressions;
@@ -165,6 +166,72 @@ public static class ModUtils
                     )
                 )
             );
+
+    /// <summary>
+    /// Gets the "effective name" of a given file name. That is, the path without its extension but with any dot
+    /// suffixes that begin with a capital letter and therefore are conceivably part of the effective file name.
+    /// </summary>
+    /// <param name="fullKey">The full path.</param>
+    /// <param name="effectiveName">The effective name within <paramref name="fullKey"/>.</param>
+    /// <param name="directory">The directory within <paramref name="fullKey"/>.</param>
+    /// <param name="remainder">The trailing characters after <paramref name="effectiveName"/>.</param>
+    public static void GetEffectiveName(
+        this ReadOnlySpan<char> fullKey,
+        out ReadOnlySpan<char> effectiveName,
+        out ReadOnlySpan<char> directory,
+        out ReadOnlySpan<char> remainder
+    )
+    {
+        directory = Path.GetDirectoryName(fullKey);
+        effectiveName = fullKey[directory.Length..];
+        while (effectiveName[0] is '/' or '\\')
+        {
+            directory = fullKey[..(directory.Length + 1)];
+            effectiveName = effectiveName[1..];
+        }
+
+        // effective name of GL.gen.cs is GL but effective name of something like GL.Manual.cs or GL.Interfaces.gen.cs
+        // is GL.Manual or GL.Interfaces respectively
+        remainder = default;
+        while (effectiveName.LastIndexOf('.') is not -1 and var lastIdx)
+        {
+            if (char.IsUpper(effectiveName[lastIdx + 1]))
+            {
+                break;
+            }
+
+            remainder = fullKey[(directory.Length + lastIdx)..];
+            effectiveName = effectiveName[..lastIdx];
+        }
+    }
+
+    /// <summary>
+    /// Gets the "effective name" of a given file name. That is, the path without its extension but with any dot
+    /// suffixes that begin with a capital letter and therefore are conceivably part of the effective file name.
+    /// </summary>
+    /// <param name="fullKey">The full path.</param>
+    /// <returns>The effective name.</returns>
+    public static ReadOnlySpan<char> GetEffectiveName(this ReadOnlySpan<char> fullKey)
+    {
+        fullKey.GetEffectiveName(out var ret, out _, out _);
+        return ret;
+    }
+
+    /// <summary>
+    /// Adds a suffix to the effective name contained within the given path, and returns the full path with the suffix
+    /// added.
+    /// </summary>
+    /// <param name="fullKey">The full path.</param>
+    /// <param name="suffix">The suffix.</param>
+    /// <returns></returns>
+    public static string AddEffectiveSuffix(
+        this ReadOnlySpan<char> fullKey,
+        ReadOnlySpan<char> suffix
+    )
+    {
+        fullKey.GetEffectiveName(out var effectiveName, out var directory, out var remainder);
+        return $"{directory}{effectiveName}.{suffix}{remainder}";
+    }
 
     /// <summary>
     /// Reconstructs the <see cref="PInvokeGeneratorConfigurationOptions"/> from the given

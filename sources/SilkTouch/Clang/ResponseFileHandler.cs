@@ -8,7 +8,6 @@ using System.Linq;
 using System.Runtime.InteropServices;
 using System.Text;
 using ClangSharp;
-using ClangSharp.Abstractions;
 using Microsoft.Extensions.FileSystemGlobbing;
 using Microsoft.Extensions.Logging;
 using static ClangSharp.Interop.CXTranslationUnit_Flags;
