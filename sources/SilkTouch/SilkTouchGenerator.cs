@@ -13,12 +13,12 @@ using Microsoft.CodeAnalysis.CSharp;
 using Microsoft.CodeAnalysis.Text;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
-using Microsoft.Extensions.Options;
 using Silk.NET.SilkTouch.Caching;
 using Silk.NET.SilkTouch.Clang;
 using Silk.NET.SilkTouch.Mods;
 using Silk.NET.SilkTouch.Sources;
 using Silk.NET.SilkTouch.Workspace;
+using static Microsoft.CodeAnalysis.CSharp.SyntaxFactory;
 using Diagnostic = ClangSharp.Diagnostic;
 
 namespace Silk.NET.SilkTouch;
@@ -117,9 +117,10 @@ public class SilkTouchGenerator(
 
         // Read the response files
         logger.LogInformation("Reading response files for {0}, please wait...", key);
-        var rsps = job.ClangSharpResponseFiles.SelectMany(
-            file => rspHandler.ReadResponseFiles(file, job.ClangSharpResponseFiles)
-        )
+        var rsps = job
+            .ClangSharpResponseFiles.SelectMany(file =>
+                rspHandler.ReadResponseFiles(file, job.ClangSharpResponseFiles)
+            )
             .ToList();
         var cacheKey = (
             string.Join(
@@ -265,6 +266,35 @@ public class SilkTouchGenerator(
                 key
             );
             bindings = await mod.AfterScrapeAsync(key, bindings);
+        }
+
+        // Add a license header to files that don't have one
+        if (job.DefaultLicenseHeader is not null)
+        {
+            var defaultLicenseHeaderTrivia = (
+                await File.ReadAllLinesAsync(job.DefaultLicenseHeader, ct)
+            )
+                .Where(x => x.Length == 0 || x.StartsWith("//"))
+                .Select(x => Comment(x.Trim()))
+                .ToArray();
+            foreach (var (file, node) in bindings.Files)
+            {
+                var shouldAddHeader =
+                    !node.GetLeadingTrivia()
+                        .Any(x => x.Kind() is SyntaxKind.SingleLineCommentTrivia)
+                    || !(
+                        node.ChildNodes()
+                            .FirstOrDefault()
+                            ?.GetLeadingTrivia()
+                            .Any(x => x.Kind() is SyntaxKind.SingleLineCommentTrivia)
+                    ).GetValueOrDefault();
+                if (shouldAddHeader)
+                {
+                    bindings.Files[file] = node.WithLeadingTrivia(
+                        defaultLicenseHeaderTrivia.Concat(node.GetLeadingTrivia())
+                    );
+                }
+            }
         }
 
         // Output the generated bindings

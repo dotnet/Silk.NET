@@ -7,4 +7,4 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.GLFW;
 
-public readonly struct Window { }
+public readonly partial struct Window { }

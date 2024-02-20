@@ -1,14 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Text.Json;
 using System.Text.Json.Serialization;
 using System.Text.RegularExpressions;
-using System.Threading;
 using System.Threading.Tasks;
 using System.Xml.Linq;
+using Humanizer;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 using Silk.NET.SilkTouch.Naming;
@@ -28,6 +27,9 @@ public partial class MixKhronosData(
 {
     private Dictionary<string, HashSet<string>> _vendors = new();
     private Dictionary<string, Configuration> _jobs = new();
+    private static readonly ICulturedStringTransformer Transformer = new NameUtils.NameTransformer(
+        4
+    );
 
     /// <summary>
     /// Khronos mod configuration.
@@ -77,10 +79,14 @@ public partial class MixKhronosData(
         KhronosOnly
     }
 
-    private class ExtensionVendorTrimmingModeJsonConverter : JsonConverter<ExtensionVendorTrimmingMode>
+    private class ExtensionVendorTrimmingModeJsonConverter
+        : JsonConverter<ExtensionVendorTrimmingMode>
     {
-        public override ExtensionVendorTrimmingMode Read(ref Utf8JsonReader reader, Type typeToConvert,
-            JsonSerializerOptions options)
+        public override ExtensionVendorTrimmingMode Read(
+            ref Utf8JsonReader reader,
+            Type typeToConvert,
+            JsonSerializerOptions options
+        )
         {
             if (reader.TokenType == JsonTokenType.True)
             {
@@ -95,8 +101,11 @@ public partial class MixKhronosData(
             return ExtensionVendorTrimmingMode.None;
         }
 
-        public override void Write(Utf8JsonWriter writer, ExtensionVendorTrimmingMode value,
-            JsonSerializerOptions options) => writer.WriteStringValue(value.ToString());
+        public override void Write(
+            Utf8JsonWriter writer,
+            ExtensionVendorTrimmingMode value,
+            JsonSerializerOptions options
+        ) => writer.WriteStringValue(value.ToString());
     }
 
     /// <inheritdoc />
@@ -121,20 +130,19 @@ public partial class MixKhronosData(
 
         // Get all vendor names
         _vendors[key] = (
-                xml.Element("registry")
-                    ?.Element("tags")
-                    ?.Elements("tag")
-                    .Attributes("name")
-                    .Select(x => x.Value) ?? Enumerable.Empty<string>()
-            )
+            xml.Element("registry")
+                ?.Element("tags")
+                ?.Elements("tag")
+                .Attributes("name")
+                .Select(x => x.Value) ?? Enumerable.Empty<string>()
+        )
             .Concat(
                 xml.Element("registry")
                     ?.Element("extensions")
                     ?.Elements("extension")
                     .Attributes("name")
                     .Where(x => !x.Value.StartsWith("cl"))
-                    .Select(x => x.Value.Split('_')[1])
-                ?? Enumerable.Empty<string>()
+                    .Select(x => x.Value.Split('_')[1]) ?? Enumerable.Empty<string>()
             )
             .ToHashSet();
     }
@@ -189,10 +197,16 @@ public partial class MixKhronosData(
                 var newOriginal = original[..^vendor.Length];
                 // Sometimes we should keep the vendor prefix so we prefer the promoted functions.
                 // ----------vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv--------------------------------------
-                trimVendor = !names.ContainsKey(newOriginal) &&
-                             (cfg.UseExtensionVendorTrimmings == ExtensionVendorTrimmingMode.All ||
-                              (cfg.UseExtensionVendorTrimmings == ExtensionVendorTrimmingMode.KhronosOnly &&
-                               vendor is "KHR" or "ARB"));
+                trimVendor =
+                    !names.ContainsKey(newOriginal)
+                    && (
+                        cfg.UseExtensionVendorTrimmings == ExtensionVendorTrimmingMode.All
+                        || (
+                            cfg.UseExtensionVendorTrimmings
+                                == ExtensionVendorTrimmingMode.KhronosOnly
+                            && vendor is "KHR" or "ARB"
+                        )
+                    );
                 if (trimVendor)
                 {
                     newPrev ??= previous ?? [];
@@ -206,10 +220,13 @@ public partial class MixKhronosData(
 
             // Below is a hack to ensure extension vendors are capitalised for enums (which are all caps and therefore
             // will not be treated as an acronym)
-            if (current.All(x => !char.IsLetter(x) || char.IsUpper(x)) && identifiedVendor is not null)
+            if (
+                current.All(x => !char.IsLetter(x) || char.IsUpper(x))
+                && identifiedVendor is not null
+            )
             {
                 newPrev ??= previous ?? [];
-                var pretty = newCurrent.Prettify();
+                var pretty = newCurrent.Prettify(Transformer);
 
                 // Hack to ensure extension vendors are preserved as acronyms
                 if (char.IsUpper(pretty[^1]))
@@ -234,7 +251,11 @@ public partial class MixKhronosData(
 
             // Another hack to make sure that extension vendors are preserved as acronyms e.g. glTexImage4DSGIS was
             // becoming glTexImage4Dsgis instead of glTexImage4DSGIS
-            if (current.Any(char.IsLower) && char.IsUpper(newCurrent[^1]) && identifiedVendor is not null)
+            if (
+                current.Any(char.IsLower)
+                && char.IsUpper(newCurrent[^1])
+                && identifiedVendor is not null
+            )
             {
                 newPrev ??= previous ?? [];
                 if (!trimVendor)
@@ -297,7 +318,8 @@ public partial class MixKhronosData(
     /// lookbehind workaround for difficult-to-match names. The primary set matches the actual function ending,
     /// while the lookbehind asserts that the ending match will not overreach into the end of a word.
     /// </summary>
-    [GeneratedRegex("(?<!xe)([fdhx]v?|u?[isb](64)?v?|v|i_v|fi|hi|xi)$")]
+    // NOTE: LET THIS BE A LESSON! Do NOT add x (fixed) here, these will frequently conflict with integer overloads.
+    [GeneratedRegex("(?<!xe)([fdh]v?|u?[isb](64)?v?|v|i_v|fi|hi)$")]
     private static partial Regex EndingsToTrim();
 
     /// <summary>

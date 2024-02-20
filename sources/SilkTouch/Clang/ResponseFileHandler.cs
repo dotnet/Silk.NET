@@ -8,7 +8,6 @@ using System.Linq;
 using System.Runtime.InteropServices;
 using System.Text;
 using ClangSharp;
-using ClangSharp.Abstractions;
 using Microsoft.Extensions.FileSystemGlobbing;
 using Microsoft.Extensions.Logging;
 using static ClangSharp.Interop.CXTranslationUnit_Flags;
@@ -1480,8 +1479,15 @@ public class ResponseFileHandler
             fileDirectory,
             clangCommandLineArgs,
             translationFlags,
-            XxHash64.HashToUInt64(Encoding.UTF8.GetBytes(string.Join('\n',
-                args.Select(x => x.Trim().ToLower().Replace('\\', '/')).Where(x => x.Length > 0))))
+            XxHash64.HashToUInt64(
+                Encoding.UTF8.GetBytes(
+                    string.Join(
+                        '\n',
+                        args.Select(x => x.Trim().ToLower().Replace('\\', '/'))
+                            .Where(x => x.Length > 0)
+                    )
+                )
+            )
         );
     }
 

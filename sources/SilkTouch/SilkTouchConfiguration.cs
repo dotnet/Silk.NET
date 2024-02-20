@@ -1,5 +1,4 @@
 ﻿using System.Collections.Generic;
-using System.Diagnostics.CodeAnalysis;
 
 namespace Silk.NET.SilkTouch;
 
@@ -54,4 +53,10 @@ public record SilkTouchConfiguration
     /// Skips generation if any of the given strings are in the <see cref="SilkTouchGenerator.ApplicableSkipIfs"/> set.
     /// </summary>
     public string[]? SkipScrapeIf { get; init; }
+
+    /// <summary>
+    /// A path to the license header to use if one wasn't added by other means (e.g. a license header specified in a
+    /// response file)
+    /// </summary>
+    public string? DefaultLicenseHeader { get; init; }
 }

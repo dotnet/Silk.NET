@@ -2,7 +2,6 @@
 using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
-using ClangSharp;
 using Microsoft.Extensions.FileSystemGlobbing;
 using Microsoft.Extensions.Options;
 using Silk.NET.SilkTouch.Clang;

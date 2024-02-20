@@ -18,27 +18,30 @@ var skip = new Option<string[]>(
     new[] { "--skip", "-s" },
     Array.Empty<string>,
     "A list of job names to skip."
-) { Arity = ArgumentArity.ZeroOrMore };
-var configs =
-    new Argument<string[]>("configs", "Path(s) to JSON SilkTouch configuration(s)") { Arity = ArgumentArity.OneOrMore };
+)
+{
+    Arity = ArgumentArity.ZeroOrMore
+};
+var configs = new Argument<string[]>("configs", "Path(s) to JSON SilkTouch configuration(s)")
+{
+    Arity = ArgumentArity.OneOrMore
+};
 var configOverrides = new Argument<string[]>(
     "overrides",
     Array.Empty<string>,
     "Arguments recognisable by Microsoft.Extensions.Configuration.CommandLine to override JSON configuration items."
-) { Arity = ArgumentArity.ZeroOrMore };
+)
+{
+    Arity = ArgumentArity.ZeroOrMore
+};
 var jobs = new Option<int>(
     new[] { "--max-jobs", "-j" },
     () => Environment.ProcessorCount,
     "Maximum number of parallel ClangSharp executions."
 );
-var rootCommand = new RootCommand {
-    logging,
-    skip,
-    configs,
-    configOverrides,
-    jobs
-};
-rootCommand.SetHandler(async ctx => {
+var rootCommand = new RootCommand { logging, skip, configs, configOverrides, jobs };
+rootCommand.SetHandler(async ctx =>
+{
     // Create the ConfigurationBuilder with support for env var & command line overrides
     var cb = new ConfigurationBuilder()
         .AddEnvironmentVariables(source => source.Prefix = "SILKDOTNET_")
@@ -52,7 +55,7 @@ rootCommand.SetHandler(async ctx => {
     {
         FileSystemCacheProvider.CommonDir = Path.GetFullPath(
             (Path.GetDirectoryName(jsons[0]) is (null or not "") and var path ? path : ".")
-            ?? Environment.CurrentDirectory
+                ?? Environment.CurrentDirectory
         );
     }
 
@@ -60,8 +63,10 @@ rootCommand.SetHandler(async ctx => {
     MSBuildLocator.RegisterDefaults();
 
     var sp = new ServiceCollection()
-        .AddLogging(builder => {
-            builder.AddSimpleConsole(opts => {
+        .AddLogging(builder =>
+        {
+            builder.AddSimpleConsole(opts =>
+            {
                 opts.SingleLine = true;
                 opts.ColorBehavior = Console.IsOutputRedirected
                     ? LoggerColorBehavior.Disabled
@@ -81,17 +86,20 @@ rootCommand.SetHandler(async ctx => {
         config
             .GetSection("Jobs")
             .GetChildren()
-            .Where(
-                x => skipped?.All(y => !x.Key.Equals(y, StringComparison.OrdinalIgnoreCase)) ?? true
+            .Where(x =>
+                skipped?.All(y => !x.Key.Equals(y, StringComparison.OrdinalIgnoreCase)) ?? true
             ),
-        async (job, ct) => {
+        async (job, ct) =>
+        {
             var generator = sp.GetRequiredService<SilkTouchGenerator>();
-            foreach (var diagnostic in await generator.OutputBindingsAsync(
-                         job.Key,
-                         config,
-                         ctx.ParseResult.GetValueForOption(jobs),
-                         ct
-                     ))
+            foreach (
+                var diagnostic in await generator.OutputBindingsAsync(
+                    job.Key,
+                    config,
+                    ctx.ParseResult.GetValueForOption(jobs),
+                    ct
+                )
+            )
             {
                 diags.Add(diagnostic);
             }

@@ -9,6 +9,7 @@ using Microsoft.Extensions.Options;
 using Silk.NET.SilkTouch.Caching;
 using Silk.NET.SilkTouch.Clang;
 using Silk.NET.SilkTouch.Mods;
+using Silk.NET.SilkTouch.Mods.Transformation;
 using Silk.NET.SilkTouch.Naming;
 using Silk.NET.SilkTouch.Sources;
 using Silk.NET.SilkTouch.Workspace;
@@ -97,15 +98,17 @@ public static class ServiceCollectionExtensions
 
         services.AddSingleton<ClangScraper>();
         services.AddSingleton<ResponseFileHandler>();
+        services.AddSingleton<FunctionTransformer>();
         services.AddSingleton<IWorkspaceSolutionProvider, WorkspaceSolutionProvider>();
         services.AddSingleton<Microsoft.Build.Framework.ILogger, WorkspaceLogger>();
         services.AddSingleton<NameTrimmer>();
         services.AddSingleton<INameTrimmer>(s => s.GetRequiredService<NameTrimmer>());
-        services.AddSingleton<INameTrimmerProvider, NameTrimmerProviders.Global>();
+        services.AddSingleton(typeof(IJobDependency<>), typeof(JobDependencies.Global<>));
         services.TryAddSingleton<IOutputWriter, DirectOutputWriter>();
         services.TryAddSingleton<ICacheProvider, FileSystemCacheProvider>();
         services.AddSingleton<IInputSource, GitInputSource>();
         services.AddSingleton<IInputSource, NuGetInputSource>();
+        services.AddSingleton<IFunctionTransformer, PtrRefTransformer>();
         services.TryAddSingleton<IInputResolver, UriBasedInputResolver>();
         if (OperatingSystem.IsWindows())
         {
@@ -157,20 +160,15 @@ public static class ServiceCollectionExtensions
             {
                 services.AddSingleton(loadedMods[m]);
                 services.AddSingleton<IMod>(s => (IMod)s.GetRequiredService(loadedMods[m]));
-                if (!NameTrimmerProviders.IsModTrimmerApplicable(loadedMods[m]))
-                {
-                    continue;
-                }
-
-                var provider = typeof(NameTrimmerProviders.ModTrimmer<>).MakeGenericType(
-                    loadedMods[m]
-                );
-                services.AddSingleton(provider);
-                services.AddSingleton<INameTrimmerProvider>(
-                    s => (INameTrimmerProvider)s.GetRequiredService(provider)
-                );
             }
         }
+
+        // Some dependencies being made available are conditional to whether they've been specified in the config file.
+        // We use JobDependencies as indirection so that we can retrieve the service provider and loadedMods from the
+        // Mod subclass. This then allows DI to make a generic instantiation of the Mod subclass without requiring a
+        // factory.
+        services.AddSingleton<JobDependencies>(s => new JobDependencies(loadedMods, s));
+        services.AddSingleton(typeof(IJobDependency<>), typeof(JobDependencies.Mod<>));
 
         // Third pass to add the IConfigureOptions/IConfigureNamedOptions
         foreach (var job in config.GetSection("Jobs").GetChildren())

@@ -1,8 +1,10 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
+using System.Threading;
 using Microsoft.CodeAnalysis;
 using Microsoft.CodeAnalysis.CSharp;
 using Microsoft.CodeAnalysis.CSharp.Syntax;
+using Silk.NET.SilkTouch.Mods.Transformation;
 using static Microsoft.CodeAnalysis.CSharp.SyntaxFactory;
 
 namespace Silk.NET.SilkTouch.Mods;
@@ -11,12 +13,20 @@ namespace Silk.NET.SilkTouch.Mods;
 /// <see cref="CSharpSyntaxRewriter"/> containing common functionality for mods.
 /// </summary>
 public abstract class ModCSharpSyntaxRewriter(bool visitIntoStructuredTrivia = false)
-    : CSharpSyntaxRewriter(visitIntoStructuredTrivia)
+    : CSharpSyntaxRewriter(visitIntoStructuredTrivia),
+        ITransformationContext
 {
+    private ThreadLocal<Dictionary<string, UsingDirectiveSyntax>> _usingsToAdd =
+        new(() => new Dictionary<string, UsingDirectiveSyntax>());
+
     /// <summary>
     /// <c>using</c>s to add to the appropriate place within the syntax tree.
     /// </summary>
-    public Dictionary<string, UsingDirectiveSyntax> UsingsToAdd { get; set; } = new();
+    public Dictionary<string, UsingDirectiveSyntax> UsingsToAdd
+    {
+        get => _usingsToAdd.Value!;
+        set => _usingsToAdd.Value = value;
+    }
 
     /// <inheritdoc />
     public override SyntaxNode? VisitCompilationUnit(CompilationUnitSyntax node)
@@ -37,17 +47,15 @@ public abstract class ModCSharpSyntaxRewriter(bool visitIntoStructuredTrivia = f
                 UsingsToAdd.Count == 0
                     ? comp.Members
                     : List(
-                        comp.Members.Select(
-                            x =>
-                                x.WithLeadingTrivia(
-                                    x.GetLeadingTrivia()
-                                        .Where(
-                                            y =>
-                                                y.Kind()
-                                                    is not SyntaxKind.SingleLineCommentTrivia
-                                                        and not SyntaxKind.MultiLineCommentTrivia
-                                        )
-                                )
+                        comp.Members.Select(x =>
+                            x.WithLeadingTrivia(
+                                x.GetLeadingTrivia()
+                                    .Where(y =>
+                                        y.Kind()
+                                            is not SyntaxKind.SingleLineCommentTrivia
+                                                and not SyntaxKind.MultiLineCommentTrivia
+                                    )
+                            )
                         )
                     )
             );
@@ -82,7 +90,8 @@ public abstract class ModCSharpSyntaxRewriter(bool visitIntoStructuredTrivia = f
             usingsToAdd.Select(
                 (x, i) =>
                     i == 0
-                        ? x.Value.WithoutTrailingTrivia()
+                        ? x
+                            .Value.WithoutTrailingTrivia()
                             .WithLeadingTrivia(
                                 usingsToAdd
                                     .Select(y => y.Value.GetLeadingTrivia())
@@ -90,14 +99,13 @@ public abstract class ModCSharpSyntaxRewriter(bool visitIntoStructuredTrivia = f
                                         comp?.Members.Select(y => y.GetLeadingTrivia())
                                             ?? Enumerable.Empty<SyntaxTriviaList>()
                                     )
-                                    .OrderByDescending(
-                                        y =>
-                                            y.Count(
-                                                z =>
-                                                    z.Kind()
-                                                        is SyntaxKind.SingleLineCommentTrivia
-                                                            or SyntaxKind.MultiLineCommentTrivia
-                                            )
+                                    .OrderByDescending(y =>
+                                        y.Count(z =>
+                                            z.Kind()
+                                                is SyntaxKind.SingleLineCommentTrivia
+                                                    or SyntaxKind.MultiLineCommentTrivia
+                                                    or SyntaxKind.WhitespaceTrivia
+                                        )
                                     )
                                     .FirstOrDefault()
                             )
@@ -118,7 +126,7 @@ public abstract class ModCSharpSyntaxRewriter(bool visitIntoStructuredTrivia = f
     /// </summary>
     /// <param name="use">The directive.</param>
     /// <returns>Whether it was added.</returns>
-    protected bool AddUsing(UsingDirectiveSyntax use) => UsingsToAdd.TryAdd(Discrim(use), use);
+    public bool AddUsing(UsingDirectiveSyntax use) => UsingsToAdd.TryAdd(Discrim(use), use);
 
     /// <summary>
     /// Gets a discriminator for the given using.

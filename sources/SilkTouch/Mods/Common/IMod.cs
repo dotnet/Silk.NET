@@ -1,10 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Diagnostics.CodeAnalysis;
+﻿using System.Collections.Generic;
 using System.Threading.Tasks;
-using Microsoft.CodeAnalysis;
-using Microsoft.Extensions.Configuration;
-using Microsoft.Extensions.DependencyInjection;
 using Silk.NET.SilkTouch.Clang;
 
 namespace Silk.NET.SilkTouch.Mods;

@@ -491,20 +491,20 @@ public sealed class ClangScraper
             ),
             string.Join(
                 "\n    ",
-                cfg.GeneratorConfiguration.WithTransparentStructs.Select(
-                    x => $"{x.Key} = {x.Value}"
+                cfg.GeneratorConfiguration.WithTransparentStructs.Select(x =>
+                    $"{x.Key} = {x.Value}"
                 )
             ),
             string.Join(
                 "\n    ",
-                cfg.GeneratorConfiguration.WithAttributes.Select(
-                    x => $"{x.Key} = {string.Join(", ", x.Value)}"
+                cfg.GeneratorConfiguration.WithAttributes.Select(x =>
+                    $"{x.Key} = {string.Join(", ", x.Value)}"
                 )
             ),
             string.Join(
                 "\n    ",
-                cfg.GeneratorConfiguration.WithUsings.Select(
-                    x => $"{x.Key} = {string.Join(", ", x.Value)}"
+                cfg.GeneratorConfiguration.WithUsings.Select(x =>
+                    $"{x.Key} = {string.Join(", ", x.Value)}"
                 )
             )
         );

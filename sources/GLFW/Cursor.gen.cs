@@ -7,4 +7,4 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.GLFW;
 
-public readonly struct Cursor { }
+public readonly partial struct Cursor { }

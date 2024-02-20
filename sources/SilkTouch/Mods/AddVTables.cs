@@ -7,7 +7,6 @@ using Microsoft.CodeAnalysis;
 using Microsoft.CodeAnalysis.CSharp;
 using Microsoft.CodeAnalysis.CSharp.Syntax;
 using Microsoft.Extensions.Configuration;
-using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 using Silk.NET.SilkTouch.Clang;
 using static Microsoft.CodeAnalysis.CSharp.SyntaxFactory;
@@ -17,6 +16,21 @@ namespace Silk.NET.SilkTouch.Mods;
 /// <summary>
 /// Adds VTables to allow multiple points of entry into the native library.
 /// </summary>
+/// <remarks>
+/// Given a <c>static</c> method either marked as a bodiless <see cref="DllImport"/> or a "transformed"
+/// method (as output from <see cref="TransformFunctions"/>), this mod will create an interface containing API
+/// declarations for an "API object" as well as a <c>"Static"</c> sub-interface containing <c>static abstract</c>s or
+/// <c>static virtual</c>s as appropriate. Where a default interface method is added (i.e. because it's a transformed
+/// method), the original method is removed from the original class (and additional implementations of the VTable
+/// interfaces) to allow the implementations to cascade down without duplicating code. Once the interfaces are created,
+/// the original class shall contain <c>partial class</c>es for each of the configured VTables, implementing one of the
+/// interfaces, depending on which kind of VTable it is. This logic resides in the <see cref="VTable"/> derived classes.
+/// After all of that, the original class is modified to implement both interfaces, with the instance interface proxying
+/// through a "native context" from which function pointers are loaded (and subsequently calling said function
+/// pointers), and the static interface proxying through the configured "static default". In most cases, this is the
+/// <see cref="DllImport"/>-based partial class implementation of the static interface. However, in some cases this
+/// could be any other implementation such as the <see cref="ThisThread"/> implementation.
+/// </remarks>
 [ModConfiguration<Configuration>]
 public class AddVTables(IOptionsSnapshot<AddVTables.Configuration> config) : IMod
 {
@@ -126,14 +140,7 @@ public class AddVTables(IOptionsSnapshot<AddVTables.Configuration> config) : IMo
                     .WithBaseList(
                         BaseList(
                             SingletonSeparatedList<BaseTypeSyntax>(
-                                SimpleBaseType(
-                                    GenericName(
-                                        Identifier($"I{ctx.ClassName}.Static"),
-                                        TypeArgumentList(
-                                            SingletonSeparatedList<TypeSyntax>(IdentifierName(Name))
-                                        )
-                                    )
-                                )
+                                SimpleBaseType(IdentifierName($"I{ctx.ClassName}.Static"))
                             )
                         )
                     )
@@ -210,14 +217,7 @@ public class AddVTables(IOptionsSnapshot<AddVTables.Configuration> config) : IMo
                 .WithBaseList(
                     BaseList(
                         SingletonSeparatedList<BaseTypeSyntax>(
-                            SimpleBaseType(
-                                GenericName(
-                                    Identifier($"I{ctx.ClassName}.Static"),
-                                    TypeArgumentList(
-                                        SingletonSeparatedList<TypeSyntax>(IdentifierName(Name))
-                                    )
-                                )
-                            )
+                            SimpleBaseType(IdentifierName($"I{ctx.ClassName}.Static"))
                         )
                     )
                 )
@@ -362,47 +362,44 @@ public class AddVTables(IOptionsSnapshot<AddVTables.Configuration> config) : IMo
                     .WithModifiers(
                         TokenList(Token(SyntaxKind.PublicKeyword), Token(SyntaxKind.PartialKeyword))
                     )
-            )
-                .AddMembers(
-                    ctx.StaticDecl.WithModifiers(
-                        TokenList(
-                            new[] { Token(SyntaxKind.PublicKeyword) }.Concat(
-                                ctx.StaticDecl.Modifiers.Where(
-                                    x =>
-                                        x.Kind()
-                                            is SyntaxKind.StaticKeyword
-                                                or SyntaxKind.UnsafeKeyword
-                                )
+            ).AddMembers(
+                ctx.StaticDecl.WithModifiers(
+                    TokenList(
+                        new[] { Token(SyntaxKind.PublicKeyword) }.Concat(
+                            ctx.StaticDecl.Modifiers.Where(x =>
+                                x.Kind() is SyntaxKind.StaticKeyword or SyntaxKind.UnsafeKeyword
                             )
                         )
                     )
-                        .WithExpressionBody(
-                            ArrowExpressionClause(
-                                InvocationExpression(
-                                    MemberAccessExpression(
-                                        SyntaxKind.SimpleMemberAccessExpression,
-                                        PostfixUnaryExpression(
-                                            SyntaxKind.SuppressNullableWarningExpression,
-                                            MemberAccessExpression(
-                                                SyntaxKind.SimpleMemberAccessExpression,
-                                                IdentifierName("Underlying"),
-                                                IdentifierName("Value")
-                                            )
-                                        ),
-                                        IdentifierName(ctx.InstanceDecl.Identifier)
+                )
+                    .WithExpressionBody(
+                        ArrowExpressionClause(
+                            InvocationExpression(
+                                MemberAccessExpression(
+                                    SyntaxKind.SimpleMemberAccessExpression,
+                                    PostfixUnaryExpression(
+                                        SyntaxKind.SuppressNullableWarningExpression,
+                                        MemberAccessExpression(
+                                            SyntaxKind.SimpleMemberAccessExpression,
+                                            IdentifierName("Underlying"),
+                                            IdentifierName("Value")
+                                        )
                                     ),
-                                    ArgumentList(
-                                        SeparatedList(
-                                            ctx.InstanceDecl.ParameterList.Parameters.Select(
-                                                x => Argument(IdentifierName(x.Identifier))
-                                            )
+                                    IdentifierName(ctx.InstanceDecl.Identifier)
+                                ),
+                                ArgumentList(
+                                    SeparatedList(
+                                        ctx.InstanceDecl.ParameterList.Parameters.Select(x =>
+                                            Argument(IdentifierName(x.Identifier))
                                         )
                                     )
                                 )
                             )
                         )
-                )
-                .WithSemicolonToken(Token(SyntaxKind.SemicolonToken));
+                    )
+                    .WithSemicolonToken(Token(SyntaxKind.SemicolonToken))
+                    .AddMaxOpt()
+            );
     }
 
     /// <summary>
@@ -439,16 +436,7 @@ public class AddVTables(IOptionsSnapshot<AddVTables.Configuration> config) : IMo
                             TypeParameterConstraintClause(
                                 IdentifierName("T"),
                                 SingletonSeparatedList<TypeParameterConstraintSyntax>(
-                                    TypeConstraint(
-                                        GenericName(
-                                            Identifier($"I{ctx.ClassName}.Static"),
-                                            TypeArgumentList(
-                                                SingletonSeparatedList<TypeSyntax>(
-                                                    IdentifierName("T")
-                                                )
-                                            )
-                                        )
-                                    )
+                                    TypeConstraint(IdentifierName($"I{ctx.ClassName}.Static"))
                                 )
                             )
                         )
@@ -466,14 +454,16 @@ public class AddVTables(IOptionsSnapshot<AddVTables.Configuration> config) : IMo
                                 ),
                                 ArgumentList(
                                     SeparatedList(
-                                        ctx.InstanceDecl.ParameterList.Parameters.Select(
-                                            x => Argument(IdentifierName(x.Identifier))
+                                        ctx.InstanceDecl.ParameterList.Parameters.Select(x =>
+                                            Argument(IdentifierName(x.Identifier))
                                         )
                                     )
                                 )
                             )
                         )
                     )
+                    .WithSemicolonToken(Token(SyntaxKind.SemicolonToken))
+                    .AddMaxOpt()
             );
     }
 
@@ -490,11 +480,6 @@ public class AddVTables(IOptionsSnapshot<AddVTables.Configuration> config) : IMo
 
     class Rewriter(VTable[] vTables) : ModCSharpSyntaxRewriter
     {
-        private Dictionary<
-            string,
-            (InterfaceDeclarationSyntax Syntax, string? Namespace)
-        > _interfaces = new();
-
         private InterfaceDeclarationSyntax? _currentInterface;
         private VTable[] _vTables = vTables;
 
@@ -502,7 +487,7 @@ public class AddVTables(IOptionsSnapshot<AddVTables.Configuration> config) : IMo
             vTables.Length
         ];
 
-        private Dictionary<string, UsingDirectiveSyntax> _aggregatedUsings = new();
+        public Dictionary<string, UsingDirectiveSyntax> AggregatedUsings { get; } = new();
 
         private string _staticDefault =
             vTables.FirstOrDefault(x => x.IsDefault && x.IsStatic)?.Name
@@ -528,15 +513,34 @@ public class AddVTables(IOptionsSnapshot<AddVTables.Configuration> config) : IMo
                 )
             : null;
 
-        private enum MethodRewriteMode
-        {
-            NativeContextTrampoline,
-            StaticDefault
-        }
-
-        private MethodRewriteMode? _rwMode;
+        private InterfaceDeclarationSyntax? _rwMethodCallsForExplicitInterfaceSpecifier;
 
         private List<MethodDeclarationSyntax> _methods = new();
+        private bool _multiClass;
+        private string? _className;
+
+        /// <summary>
+        /// The current class name, if a single class is being handled from the current file. Not fully qualified.
+        /// </summary>
+        public string? ClassName
+        {
+            get => _multiClass ? null : _className;
+            set => (_className, _multiClass) = (value, _multiClass && value is not null);
+        }
+
+        /// <summary>
+        /// All interface partials generated from the classes contained in the current file.
+        /// </summary>
+        public List<(
+            string Namespace,
+            InterfaceDeclarationSyntax Interface
+        )> InterfacePartials { get; set; } = [];
+
+        /// <summary>
+        /// All class names this rewriter has encountered. The key may be fully qualified depending on whether a class
+        /// with the same name but different namespace has been encountered, the value is always fully-qualified.
+        /// </summary>
+        public Dictionary<string, string?> FullClassNames { get; set; } = [];
 
         public override SyntaxNode? Visit(SyntaxNode? node)
         {
@@ -545,7 +549,7 @@ public class AddVTables(IOptionsSnapshot<AddVTables.Configuration> config) : IMo
             {
                 foreach (var (k, v) in UsingsToAdd)
                 {
-                    _aggregatedUsings[k] = v;
+                    AggregatedUsings[k] = v;
                 }
 
                 UsingsToAdd.Clear();
@@ -561,48 +565,54 @@ public class AddVTables(IOptionsSnapshot<AddVTables.Configuration> config) : IMo
                 return node;
             }
 
+            // Get the interface containing the methods
             var ns = node.NamespaceFromSyntaxNode();
             var key = $"I{node.Identifier}";
-            var fullKey = ns.Length == 0 ? node.Identifier.ToString() : $"{ns}.{key}";
-            if (_interfaces.TryGetValue(fullKey, out var iface))
+            var className = node.Identifier.ToString();
+            var fullClassName = $"{ns}.{node.Identifier}";
+            if (!_multiClass && _className is null)
             {
-                // already using the full key
-                _currentInterface = iface.Syntax;
-                key = fullKey;
+                _className = className;
             }
-            else if (_interfaces.TryGetValue(key, out iface))
+            else
             {
-                var theirNs = iface.Syntax.NamespaceFromSyntaxNode();
-                var theirFullKey =
-                    theirNs.Length == 0
-                        ? iface.Syntax.Identifier.ToString()
-                        : $"{theirNs}.{iface.Syntax.Identifier}";
-                if (theirFullKey == fullKey)
-                {
-                    // this is our interface
-                    _currentInterface = iface.Syntax;
-                }
-                else
-                {
-                    // conflict on the non-full key, separate them out.
-                    _interfaces.Remove(key);
-                    _interfaces.Add(theirFullKey, iface);
+                _multiClass = true;
+            }
 
-                    // this also means we need to create the interface with the full key
-                    _currentInterface = NewInterface(key, node);
-                    _interfaces.Add(fullKey, (_currentInterface, ns));
-                    key = fullKey;
+            // The contents of the ClassNames hash set determines the output file name for the VTable boilerplate.
+            // These are output to the source root, so if there's multiple classes with the same name but different
+            // namespaces, then we need to ensure we're tracking that.
+            if (FullClassNames.TryGetValue(fullClassName, out _))
+            {
+                // already using the full class name.
+            }
+            else if (
+                FullClassNames.TryGetValue(className, out var theirFullClassName)
+                && theirFullClassName != fullClassName
+            )
+            {
+                // separate these two and use their full class names as the file name.
+                FullClassNames[className] = null; // <-- keep it in case a third class comes along
+                FullClassNames[fullClassName] = fullClassName;
+                if (theirFullClassName is not null)
+                {
+                    FullClassNames[theirFullClassName] = theirFullClassName;
                 }
             }
             else
             {
-                _currentInterface = NewInterface(key, node);
-                _interfaces.Add(key, (_currentInterface, ns));
+                // either it's new or we're not using the full class name and the namespace matches ours
+                FullClassNames[className] = fullClassName;
             }
 
+            _currentInterface = NewInterface(key, node);
+
+            // Visit the class - this should record the methods.
             var ret = (ClassDeclarationSyntax)base.VisitClassDeclaration(node)!;
             ret = ret.WithMembers(
                     List<MemberDeclarationSyntax>(
+                        // _currentVTableOutputs contains the partials for the vtable implementations within this
+                        // partial class. It is populated in VisitMethodDeclaration.
                         _currentVTableOutputs
                             .Where(x => x is not null)
                             .Concat(ret.Members)
@@ -611,14 +621,13 @@ public class AddVTables(IOptionsSnapshot<AddVTables.Configuration> config) : IMo
                 )
                 .WithModifiers(
                     TokenList(
-                        ret.Modifiers.Where(
-                            x =>
-                                x.Kind()
-                                    is SyntaxKind.UnsafeKeyword
-                                        or SyntaxKind.PartialKeyword
-                                        or SyntaxKind.PublicKeyword
-                                        or SyntaxKind.PrivateKeyword
-                                        or SyntaxKind.InternalKeyword
+                        ret.Modifiers.Where(x =>
+                            x.Kind()
+                                is SyntaxKind.UnsafeKeyword
+                                    or SyntaxKind.PartialKeyword
+                                    or SyntaxKind.PublicKeyword
+                                    or SyntaxKind.PrivateKeyword
+                                    or SyntaxKind.InternalKeyword
                         )
                     )
                 )
@@ -628,22 +637,15 @@ public class AddVTables(IOptionsSnapshot<AddVTables.Configuration> config) : IMo
                             new BaseTypeSyntax[]
                             {
                                 SimpleBaseType(IdentifierName(key)),
-                                SimpleBaseType(
-                                    GenericName(
-                                        Identifier($"{key}.Static"),
-                                        TypeArgumentList(
-                                            SingletonSeparatedList<TypeSyntax>(
-                                                IdentifierName(node.Identifier)
-                                            )
-                                        )
-                                    )
-                                )
+                                SimpleBaseType(IdentifierName($"{key}.Static"))
                             }
                         )
                     )
                 );
-            _currentVTableOutputs = new ClassDeclarationSyntax?[_currentVTableOutputs.Length];
-            _interfaces[key] = (_currentInterface, ns);
+
+            // Reset for the next partial.
+            _currentVTableOutputs.AsSpan().Clear();
+            InterfacePartials.Add((ns, _currentInterface));
             _currentInterface = null;
             return ret;
 
@@ -654,14 +656,13 @@ public class AddVTables(IOptionsSnapshot<AddVTables.Configuration> config) : IMo
                 InterfaceDeclaration(key)
                     .WithModifiers(
                         TokenList(
-                            node.Modifiers.Where(
-                                x =>
-                                    x.Kind()
-                                        is SyntaxKind.PublicKeyword
-                                            or SyntaxKind.PrivateKeyword
-                                            or SyntaxKind.InternalKeyword
-                                            or SyntaxKind.ProtectedKeyword
-                                            or SyntaxKind.UnsafeKeyword
+                            node.Modifiers.Where(x =>
+                                x.Kind()
+                                    is SyntaxKind.PublicKeyword
+                                        or SyntaxKind.PrivateKeyword
+                                        or SyntaxKind.InternalKeyword
+                                        or SyntaxKind.ProtectedKeyword
+                                        or SyntaxKind.UnsafeKeyword
                             )
                                 .Concat(Enumerable.Repeat(Token(SyntaxKind.PartialKeyword), 1))
                         )
@@ -672,28 +673,6 @@ public class AddVTables(IOptionsSnapshot<AddVTables.Configuration> config) : IMo
                                 TokenList(
                                     Token(SyntaxKind.PublicKeyword),
                                     Token(SyntaxKind.PartialKeyword)
-                                )
-                            )
-                            .WithTypeParameterList(
-                                TypeParameterList(SingletonSeparatedList(TypeParameter("TSelf")))
-                            )
-                            .WithConstraintClauses(
-                                SingletonList(
-                                    TypeParameterConstraintClause(
-                                        IdentifierName("TSelf"),
-                                        SingletonSeparatedList<TypeParameterConstraintSyntax>(
-                                            TypeConstraint(
-                                                GenericName(
-                                                    Identifier("Static"),
-                                                    TypeArgumentList(
-                                                        SingletonSeparatedList<TypeSyntax>(
-                                                            IdentifierName("TSelf")
-                                                        )
-                                                    )
-                                                )
-                                            )
-                                        )
-                                    )
                                 )
                             )
                     );
@@ -707,124 +686,149 @@ public class AddVTables(IOptionsSnapshot<AddVTables.Configuration> config) : IMo
                 || !node.AttributeLists.GetNativeFunctionInfo(
                     out var lib,
                     out var entryPoint,
-                    out _
+                    out var callConv
                 )
                 || !node.Modifiers.Any(SyntaxKind.StaticKeyword)
+                || (
+                    (node.Body is not null || node.ExpressionBody is not null)
+                    && !node.AttributeLists.Any(x =>
+                        x.Attributes.Any(y => y.IsAttribute("Silk.NET.Core.Transformed"))
+                    )
+                )
                 || parent is null
             )
             {
                 return base.VisitMethodDeclaration(node);
             }
 
+            // Get the static interface within this interface
             var staticInterface = _currentInterface
                 .Members.OfType<InterfaceDeclarationSyntax>()
                 .First();
             node = (MethodDeclarationSyntax)base.VisitMethodDeclaration(node)!;
+
+            // Create the common function declaration for the interfaces.
             var baseDecl = node.WithBody(null)
                 .WithSemicolonToken(Token(SyntaxKind.SemicolonToken))
                 .WithAttributeLists(
                     List(
-                        node.AttributeLists.Select(
-                            x =>
-                                x.WithAttributes(
-                                    SeparatedList(
-                                        x.Attributes.Where(
-                                            y =>
-                                                !y.IsAttribute(
-                                                    "System.Runtime.InteropServices.DllImport"
-                                                )
-                                                && !y.IsAttribute("Silk.NET.Core.NativeFunction")
-                                                && !y.IsAttribute(
-                                                    "System.Runtime.CompilerServices.MethodImpl"
-                                                )
+                        node.AttributeLists.Select(x =>
+                            x.WithAttributes(
+                                SeparatedList(
+                                    x.Attributes.Where(y =>
+                                        !y.IsAttribute("System.Runtime.InteropServices.DllImport")
+                                        && !y.IsAttribute("Silk.NET.Core.NativeFunction")
+                                        && !y.IsAttribute(
+                                            "System.Runtime.CompilerServices.MethodImpl"
                                         )
                                     )
                                 )
+                            )
                         )
                             .Where(x => x.Attributes.Count > 0)
                     )
                 )
                 .AddNativeFunction(node);
+
+            // Create the static abstract/virtual variant.
             var staticDecl = baseDecl
                 .WithModifiers(
                     TokenList(
-                        baseDecl.Modifiers.Where(
-                            x => x.Kind() is SyntaxKind.StaticKeyword or SyntaxKind.UnsafeKeyword
+                        baseDecl.Modifiers.Where(x =>
+                            x.Kind() is SyntaxKind.StaticKeyword or SyntaxKind.UnsafeKeyword
                         )
                     )
                 )
-                .AddModifiers(Token(SyntaxKind.AbstractKeyword));
-            var instanceDecl = baseDecl.WithModifiers(
-                TokenList(baseDecl.Modifiers.Where(x => x.IsKind(SyntaxKind.UnsafeKeyword)))
-            );
+                .AddModifiers(Token(SyntaxKind.AbstractKeyword))
+                .WithBody(node.Body)
+                .WithSemicolonToken(
+                    node.Body is not null ? default : Token(SyntaxKind.SemicolonToken)
+                )
+                .WithExpressionBody(node.ExpressionBody);
+
+            // Create the instance declaration.
+            var instanceDecl = baseDecl
+                .WithModifiers(
+                    TokenList(baseDecl.Modifiers.Where(x => x.IsKind(SyntaxKind.UnsafeKeyword)))
+                )
+                .WithBody(node.Body)
+                .WithSemicolonToken(
+                    node.Body is not null ? default : Token(SyntaxKind.SemicolonToken)
+                )
+                .WithExpressionBody(node.ExpressionBody);
             _currentInterface = _currentInterface.WithMembers(
                 List(
                     _currentInterface
-                        .Members.Select(
-                            x =>
-                                x == staticInterface
-                                    ? staticInterface = staticInterface.AddMembers(staticDecl)
-                                    : x
+                        .Members.Select(x =>
+                            x == staticInterface
+                                ? staticInterface = staticInterface.AddMembers(
+                                    staticDecl
+                                        .WithBody(null)
+                                        .WithExpressionBody(null)
+                                        .WithSemicolonToken(Token(SyntaxKind.SemicolonToken))
+                                )
+                                : x
                         )
-                        .Concat(Enumerable.Repeat(instanceDecl, 1))
+                        .Concat(
+                            Enumerable.Repeat(
+                                instanceDecl
+                                    .WithBody(null)
+                                    .WithExpressionBody(null)
+                                    .WithSemicolonToken(Token(SyntaxKind.SemicolonToken)),
+                                1
+                            )
+                        )
                 )
             );
+
             for (var i = 0; i < _vTables.Length; i++)
             {
-                _currentVTableOutputs[i] = _vTables[i].AddMethod(
-                    new VTableContext(
-                        _currentVTableOutputs[i],
-                        node,
-                        lib,
-                        entryPoint ?? node.Identifier.ToString(),
-                        staticDecl,
-                        instanceDecl,
-                        parent.Identifier.ToString()
-                    )
-                );
+                _currentVTableOutputs[i] = _vTables[i]
+                    .AddMethod(
+                        new VTableContext(
+                            _currentVTableOutputs[i],
+                            node,
+                            lib,
+                            entryPoint ?? node.Identifier.ToString(),
+                            staticDecl,
+                            instanceDecl,
+                            parent.Identifier.ToString()
+                        )
+                    );
             }
 
-            var nativeContextTramp = instanceDecl.WithExplicitInterfaceSpecifier(
-                ExplicitInterfaceSpecifier(IdentifierName(_currentInterface.Identifier.ToString()))
-            );
-            if (
-                node.AttributeLists.Any(
-                    x =>
-                        x.Attributes.Any(
-                            y => y.IsAttribute("System.Runtime.InteropServices.DllImport")
-                        )
+            // For the instance implementation of the vtable interface, the class contains an INativeContext from which
+            // we'll get function pointers, implementing the interface as a function pointer call. It's an explicit
+            // implementation because otherwise the static and non-static functions will conflict.
+            _rwMethodCallsForExplicitInterfaceSpecifier = _currentInterface;
+            var nativeContextTramp = instanceDecl
+                .WithExplicitInterfaceSpecifier(
+                    ExplicitInterfaceSpecifier(
+                        IdentifierName(_currentInterface.Identifier.ToString())
+                    )
                 )
-                && node.AttributeLists.GetNativeFunctionInfo(out lib, out var ep, out var callConv)
-            )
-            {
-                nativeContextTramp = nativeContextTramp
-                    .WithAttributeLists(List<AttributeListSyntax>())
-                    .WithExpressionBody(
-                        GenerateNativeContextTrampoline(
+                .WithAttributeLists(List<AttributeListSyntax>())
+                .WithExpressionBody(
+                    node.Body is null && node.ExpressionBody is null
+                        ? GenerateNativeContextTrampoline(
                             lib,
-                            ep ?? node.Identifier.ToString(),
+                            entryPoint ?? node.Identifier.ToString(),
                             callConv,
                             node.ParameterList,
                             node.ReturnType
                         )
-                    )
-                    .WithSemicolonToken(Token(SyntaxKind.SemicolonToken));
-            }
-            else
-            {
-                _rwMode = MethodRewriteMode.NativeContextTrampoline;
-                nativeContextTramp = node.Body is null
-                    ? throw new InvalidOperationException(
-                        "Function must have a body if it doesn't have a DllImportAttribute."
-                    )
-                    : nativeContextTramp
-                        .WithBody((BlockSyntax)VisitBlock(node.Body)!)
-                        .WithSemicolonToken(default);
-                _rwMode = null;
-            }
-
+                        : node.ExpressionBody is null
+                            ? null
+                            : VisitArrowExpressionClause(node.ExpressionBody)
+                                as ArrowExpressionClauseSyntax
+                )
+                .WithBody(node.Body is null ? null : VisitBlock(node.Body) as BlockSyntax)
+                .WithSemicolonToken(node.Body is null ? Token(SyntaxKind.SemicolonToken) : default)
+                .AddMaxOpt();
+            _rwMethodCallsForExplicitInterfaceSpecifier = null;
             _methods.Add(nativeContextTramp);
 
+            // For the static implementation, we basically forward to whatever is the "static default".
             var staticDefaultProxy = node.WithBody(null)
                 .WithExpressionBody(
                     ArrowExpressionClause(
@@ -836,8 +840,8 @@ public class AddVTables(IOptionsSnapshot<AddVTables.Configuration> config) : IMo
                             ),
                             ArgumentList(
                                 SeparatedList(
-                                    node.ParameterList.Parameters.Select(
-                                        x => Argument(IdentifierName(x.Identifier))
+                                    node.ParameterList.Parameters.Select(x =>
+                                        Argument(IdentifierName(x.Identifier))
                                     )
                                 )
                             )
@@ -848,105 +852,76 @@ public class AddVTables(IOptionsSnapshot<AddVTables.Configuration> config) : IMo
                     TokenList(node.Modifiers.Where(x => !x.IsKind(SyntaxKind.ExternKeyword)))
                 )
                 .WithAttributeLists(staticDecl.AttributeLists)
-                .WithSemicolonToken(Token(SyntaxKind.SemicolonToken));
+                .WithSemicolonToken(Token(SyntaxKind.SemicolonToken))
+                .AddMaxOpt();
             _methods.Add(staticDefaultProxy);
             return null;
         }
 
-        public override SyntaxNode? VisitLocalFunctionStatement(LocalFunctionStatementSyntax node)
+        public override SyntaxNode? VisitInvocationExpression(InvocationExpressionSyntax node)
         {
+            if (_rwMethodCallsForExplicitInterfaceSpecifier is null)
+            {
+                return base.VisitInvocationExpression(node);
+            }
+
+            var type = node.FirstAncestorOrSelf<TypeDeclarationSyntax>();
             if (
-                _rwMode == MethodRewriteMode.NativeContextTrampoline
-                && node.AttributeLists.Any(
-                    x =>
-                        x.Attributes.Any(
-                            y => y.IsAttribute("System.Runtime.InteropServices.DllImport")
-                        )
-                )
-                && node.AttributeLists.GetNativeFunctionInfo(
-                    out var lib,
-                    out var ep,
-                    out var callConv
+                node.Expression is IdentifierNameSyntax { Identifier: var tok }
+                && (
+                    type?.Members.Any(x =>
+                        x.ChildTokens().First(y => y.IsKind(SyntaxKind.IdentifierToken)).ToString()
+                        == tok.ToString()
+                    ) ?? false
                 )
             )
             {
-                // make the local function non-static and using a function pointer call on the native context returned
-                // pointer.
-                return node.WithModifiers(
-                        TokenList(
-                            node.Modifiers.Where(
-                                x =>
-                                    x.Kind()
-                                        is not SyntaxKind.StaticKeyword
-                                            and not SyntaxKind.ExternKeyword
+                return (
+                    base.VisitInvocationExpression(node) as InvocationExpressionSyntax
+                )?.WithExpression(
+                    MemberAccessExpression(
+                        SyntaxKind.SimpleMemberAccessExpression,
+                        ParenthesizedExpression(
+                            CastExpression(
+                                IdentifierName(
+                                    _rwMethodCallsForExplicitInterfaceSpecifier.Identifier
+                                ),
+                                ThisExpression()
                             )
-                        )
+                        ),
+                        IdentifierName(tok)
                     )
-                    .WithAttributeLists(List<AttributeListSyntax>())
-                    .WithExpressionBody(
-                        GenerateNativeContextTrampoline(
-                            lib,
-                            ep ?? node.Identifier.ToString(),
-                            callConv,
-                            node.ParameterList,
-                            node.ReturnType
-                        )
-                    )
-                    .WithSemicolonToken(Token(SyntaxKind.SemicolonToken));
-            }
-
-            var rmModeBefore = _rwMode;
-            var ret = (LocalFunctionStatementSyntax)base.VisitLocalFunctionStatement(node)!;
-            if (rmModeBefore != _rwMode)
-            {
-                // the NativeContextTrampoline if statement has been hit when recursing into a contained local function,
-                // make sure that we're non-static.
-                ret = ret.WithModifiers(
-                    TokenList(ret.Modifiers.Where(x => !x.IsKind(SyntaxKind.StaticKeyword)))
                 );
             }
-
-            return ret;
+            return base.VisitInvocationExpression(node);
         }
 
         public IEnumerable<KeyValuePair<string, SyntaxNode>> GetExtraFiles()
         {
             var uta = UsingsToAdd;
-            UsingsToAdd = _aggregatedUsings;
-            foreach (var (fqn, (iface, ns)) in _interfaces)
+            UsingsToAdd = AggregatedUsings;
+            foreach (var (outputName, nonInterface) in FullClassNames)
             {
-                yield return new KeyValuePair<string, SyntaxNode>(
-                    $"sources/{fqn}.gen.cs",
-                    CompilationUnit()
-                        .WithUsings(GetUsings(UsingsToAdd, null))
-                        .WithMembers(
-                            string.IsNullOrWhiteSpace(ns)
-                                ? SingletonList<MemberDeclarationSyntax>(iface)
-                                : SingletonList<MemberDeclarationSyntax>(
-                                    FileScopedNamespaceDeclaration(
-                                            ModUtils.NamespaceIntoIdentifierName(ns)
-                                        )
-                                        .WithMembers(SingletonList<MemberDeclarationSyntax>(iface))
-                                )
-                        )
-                );
-                var nonInterface =
-                    $"{fqn[..(fqn.LastIndexOf('.') + 1)]}{fqn[(fqn.LastIndexOf('.') + 2)..]}";
+                if (nonInterface is null)
+                {
+                    continue;
+                }
+
                 var nonInterfaceIden = nonInterface[(nonInterface.LastIndexOf('.') + 1)..];
+                var ns = nonInterface[..nonInterface.LastIndexOf('.')];
                 var boilerplate = ClassDeclaration(nonInterfaceIden)
                     .WithModifiers(TokenList(Token(SyntaxKind.PartialKeyword)))
                     .WithMembers(
                         List<MemberDeclarationSyntax>(
                             _vTables
-                                .Select(
-                                    x =>
-                                        x.GetBoilerplate(
-                                            new VTableBoilerplateContext(
-                                                nonInterfaceIden,
-                                                _staticDefault,
-                                                _staticDefaultWrapper
-                                            )
+                                .Select(x =>
+                                    x.GetBoilerplate(
+                                        new VTableBoilerplateContext(
+                                            nonInterfaceIden,
+                                            _staticDefault,
+                                            _staticDefaultWrapper
                                         )
+                                    )
                                 )
                                 .Where(x => x is not null)
                                 .Concat(GenerateTopLevelBoilerplate(nonInterfaceIden))!
@@ -970,7 +945,7 @@ public class AddVTables(IOptionsSnapshot<AddVTables.Configuration> config) : IMo
                 AddUsing("Silk.NET.Core.Loader");
                 AddUsing("System.Reflection");
                 yield return new KeyValuePair<string, SyntaxNode>(
-                    $"sources/{nonInterface}.gen.cs",
+                    $"sources/{outputName}.gen.cs",
                     CompilationUnit()
                         .WithUsings(GetUsings(UsingsToAdd, null))
                         .WithMembers(
@@ -1111,14 +1086,13 @@ public class AddVTables(IOptionsSnapshot<AddVTables.Configuration> config) : IMo
                                         FunctionPointerParameterList(
                                             SeparatedList(
                                                 parameterList
-                                                    .Parameters.Select(
-                                                        x =>
-                                                            FunctionPointerParameter(
-                                                                x.Type
-                                                                    ?? throw new InvalidOperationException(
-                                                                        "Parameter has no type!"
-                                                                    )
-                                                            )
+                                                    .Parameters.Select(x =>
+                                                        FunctionPointerParameter(
+                                                            x.Type
+                                                                ?? throw new InvalidOperationException(
+                                                                    "Parameter has no type!"
+                                                                )
+                                                        )
                                                     )
                                                     .Concat(
                                                         Enumerable.Repeat(
@@ -1164,8 +1138,8 @@ public class AddVTables(IOptionsSnapshot<AddVTables.Configuration> config) : IMo
                     .WithArgumentList(
                         ArgumentList(
                             SeparatedList(
-                                parameterList.Parameters.Select(
-                                    x => Argument(IdentifierName(x.Identifier.ToString()))
+                                parameterList.Parameters.Select(x =>
+                                    Argument(IdentifierName(x.Identifier.ToString()))
                                 )
                             )
                         )
@@ -1184,18 +1158,19 @@ public class AddVTables(IOptionsSnapshot<AddVTables.Configuration> config) : IMo
             for (var i = 0; i < cfg.VTables.Length; i++)
             {
                 vTables[i] = (VTable)(
-                    cfg.VTables[i].Get(
-                        cfg.VTables[i].GetValue<string>("Kind") switch
-                        {
-                            nameof(DllImport) => typeof(DllImport),
-                            nameof(StaticWrapper) => typeof(StaticWrapper),
-                            nameof(ThisThread) => typeof(ThisThread),
-                            _
-                                => throw new InvalidOperationException(
-                                    "VTable must have valid \"Kind\" property"
-                                )
-                        }
-                    )
+                    cfg.VTables[i]
+                        .Get(
+                            cfg.VTables[i].GetValue<string>("Kind") switch
+                            {
+                                nameof(DllImport) => typeof(DllImport),
+                                nameof(StaticWrapper) => typeof(StaticWrapper),
+                                nameof(ThisThread) => typeof(ThisThread),
+                                _
+                                    => throw new InvalidOperationException(
+                                        "VTable must have valid \"Kind\" property"
+                                    )
+                            }
+                        )
                     ?? throw new InvalidOperationException(
                         "Failed to deserialize VTable configuration properly"
                     )
@@ -1213,13 +1188,76 @@ public class AddVTables(IOptionsSnapshot<AddVTables.Configuration> config) : IMo
                 }
         );
 
+        var newFiles = new List<(string, SyntaxNode)>(rw.FullClassNames.Count);
         foreach (var (fname, node) in syntax.Files)
         {
             if (fname.StartsWith("sources/"))
             {
+                rw.InterfacePartials.Clear();
+                rw.ClassName = null;
                 syntax.Files[fname] =
                     rw.Visit(node) ?? throw new InvalidOperationException("Visit returned null");
+                if (rw.InterfacePartials.Count == 0)
+                {
+                    continue;
+                }
+
+                var ifname =
+                    rw.ClassName is not null
+                    && fname.Replace(rw.ClassName, $"I{rw.ClassName}") is var ifn
+                    && ifn != fname
+                        ? ifn
+                        : ModUtils.AddEffectiveSuffix(fname, "Interfaces");
+                var nNamespaces = rw.InterfacePartials.Select(x => x.Namespace).Distinct().Count();
+                newFiles.Add(
+                    (
+                        ifname,
+                        CompilationUnit()
+                            .WithUsings(
+                                ModCSharpSyntaxRewriter.GetUsings(rw.AggregatedUsings, null)
+                            )
+                            .WithMembers(
+                                nNamespaces == 1
+                                    ? string.IsNullOrWhiteSpace(rw.InterfacePartials[0].Namespace)
+                                        ? List<MemberDeclarationSyntax>(
+                                            rw.InterfacePartials.Select(x => x.Interface)
+                                        )
+                                        : SingletonList<MemberDeclarationSyntax>(
+                                            FileScopedNamespaceDeclaration(
+                                                    ModUtils.NamespaceIntoIdentifierName(
+                                                        rw.InterfacePartials[0].Namespace
+                                                    )
+                                                )
+                                                .WithMembers(
+                                                    List<MemberDeclarationSyntax>(
+                                                        rw.InterfacePartials.Select(x =>
+                                                            x.Interface
+                                                        )
+                                                    )
+                                                )
+                                        )
+                                    : List<MemberDeclarationSyntax>(
+                                        rw.InterfacePartials.GroupBy(x => x.Namespace)
+                                            .Select(g =>
+                                                NamespaceDeclaration(
+                                                        ModUtils.NamespaceIntoIdentifierName(g.Key)
+                                                    )
+                                                    .WithMembers(
+                                                        List<MemberDeclarationSyntax>(
+                                                            g.Select(x => x.Interface)
+                                                        )
+                                                    )
+                                            )
+                                    )
+                            )
+                    )
+                );
             }
+        }
+
+        foreach (var (fname, node) in newFiles)
+        {
+            syntax.Files[fname] = node;
         }
 
         foreach (var (fname, node) in rw.GetExtraFiles())

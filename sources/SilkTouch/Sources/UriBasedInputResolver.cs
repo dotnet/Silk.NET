@@ -19,10 +19,8 @@ public class UriBasedInputResolver(IEnumerable<IInputSource> sources) : IInputRe
             // cop out to ensure we're not parsing the URI twice
             if (
                 path.Length > source.Scheme.Length
-                && path[..source.Scheme.Length].Equals(
-                    source.Scheme,
-                    StringComparison.CurrentCultureIgnoreCase
-                )
+                && path[..source.Scheme.Length]
+                    .Equals(source.Scheme, StringComparison.CurrentCultureIgnoreCase)
                 && path[source.Scheme.Length] == ':'
             )
             {
