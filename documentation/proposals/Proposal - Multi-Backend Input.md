@@ -3,12 +3,11 @@ Proposal API for backend-agnostic, refactored Input via keyboards, mice, and con
 
 # Contributors
 - Dylan Perks (@Perksey)
-- Lumi (@Lumi2021)
 
 # Current Status
 - [x] Proposed
-- [ ] Discussed with Working Group
-- [ ] Approved
+- [x] Discussed with Working Group
+- [x] Approved
 - [ ] Implemented
 
 # Design Decisions
@@ -258,23 +257,23 @@ This will be configurable on `Mice` (i.e. via `InputContext.Mice.ClickConfigurat
 Unlike 1.0 and 2.0, this proposal uses `readonly record struct`s as their only argument for the event action. This allows us to provide more information to the event handlers without breaking in the future. These types are farily simple:
 
 ```cs
-public readonly record struct ConnectionEvent(IInputDevice Device, DateTimeOffset? Timestamp, bool IsConnected);
-public readonly record struct KeyDownEvent(IKeyboard Keyboard, DateTimeOffset? Timestamp, Key Key, bool IsRepeat);
-public readonly record struct KeyUpEvent(IKeyboard Keyboard, DateTimeOffset? Timestamp, Key Key);
-public readonly record struct KeyCharEvent(IKeyboard Keyboard, DateTimeOffset? Timestamp, char Character);
-public readonly record struct MouseDownEvent(IMouse Mouse, DateTimeOffset? Timestamp, Vector2 Position, MouseButton Button);
-public readonly record struct MouseUpEvent(IMouse Mouse, DateTimeOffset? Timestamp, Vector2 Position, MouseButton Button);
-public readonly record struct MouseMoveEvent(IMouse Mouse, DateTimeOffset? Timestamp, Vector2 Position, Vector2 Delta);
-public readonly record struct MouseScrollEvent(IMouse Mouse, DateTimeOffset? Timestamp, Vector2 Position, Vector2 WheelPosition, Vector2 Delta);
-public readonly record struct MouseClickEvent(IMouse Mouse, DateTimeOffset? Timestamp, Vector2 Position, MouseButton Button);
-public readonly record struct JoystickDownEvent(IJoystick Joystick, DateTimeOffset? Timestamp, JoystickButton Button);
-public readonly record struct JoystickUpEvent(IJoystick Joystick, DateTimeOffset? Timestamp, JoystickButton Button);
-public readonly record struct JoystickHatMoveEvent(IJoystick Joystick, DateTimeOffset? Timestamp, Vector2 Value, Vector2 Delta);
-public readonly record struct JoystickAxisMoveEvent(IJoystick Joystick, DateTimeOffset? Timestamp, int Axis, float Value, float Delta);
-public readonly record struct GamepadDownEvent(IGamepad Gamepad, DateTimeOffset? Timestamp, JoystickButton Button);
-public readonly record struct GamepadUpEvent(IGamepad Gamepad, DateTimeOffset? Timestamp, JoystickButton Button);
-public readonly record struct GamepadThumbstickMoveEvent(IJoystick Joystick, DateTimeOffset? Timestamp, Vector2 Value, Vector2 Delta);
-public readonly record struct GamepadTriggerMoveEvent(IJoystick Joystick, DateTimeOffset? Timestamp, int Axis, float Value, float Delta);
+public readonly record struct ConnectionEvent(IInputDevice Device, bool IsConnected);
+public readonly record struct KeyDownEvent(IKeyboard Keyboard, Key Key, bool IsRepeat);
+public readonly record struct KeyUpEvent(IKeyboard Keyboard, Key Key);
+public readonly record struct KeyCharEvent(IKeyboard Keyboard, char Character);
+public readonly record struct MouseDownEvent(IMouse Mouse, Vector2 Position, MouseButton Button);
+public readonly record struct MouseUpEvent(IMouse Mouse, Vector2 Position, MouseButton Button);
+public readonly record struct MouseMoveEvent(IMouse Mouse, Vector2 Position, Vector2 Delta);
+public readonly record struct MouseScrollEvent(IMouse Mouse, Vector2 Position, Vector2 WheelPosition, Vector2 Delta);
+public readonly record struct MouseClickEvent(IMouse Mouse, Vector2 Position, MouseButton Button);
+public readonly record struct JoystickDownEvent(IJoystick Joystick, JoystickButton Button);
+public readonly record struct JoystickUpEvent(IJoystick Joystick, JoystickButton Button);
+public readonly record struct JoystickHatMoveEvent(IJoystick, Vector2 Value, Vector2 Delta);
+public readonly record struct JoystickAxisMoveEvent(IJoystick Joystick, int Axis, float Value, float Delta);
+public readonly record struct GamepadDownEvent(IGamepad Gamepad, JoystickButton Button);
+public readonly record struct GamepadUpEvent(IGamepad Gamepad, JoystickButton Button);
+public readonly record struct GamepadThumbstickMoveEvent(IJoystick, Vector2 Value, Vector2 Delta);
+public readonly record struct GamepadTriggerMoveEvent(IJoystick Joystick, int Axis, float Value, float Delta);
 ```
 
 This is the part of this proposal that incorporates the ideas in Enhanced Input Events, and is why this proposal supersedes that one.
@@ -715,7 +714,7 @@ public readonly record struct GamepadState
 
 `Thumbsticks` contain the two thumbsticks on this gamepad. The X and Y values within this list range from -1 to 1: -1 being leftmost, and 1 being rightmost.
 
-`Triggers` contains the two triggers on this gamepad. The values within this list range from 0 to 1: 0 being unpressed, and 1 being fully pressed.
+`Triggers` contains the two triggers on thsi gamepad. The values within this list range from 0 to 1: 0 being unpressed, and 1 being fully pressed.
 
 Note the use of the `DualReadOnlyList` type. This is basically just:
 ```cs
