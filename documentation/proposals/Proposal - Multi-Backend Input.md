@@ -182,8 +182,6 @@ public partial class InputContext
     public Keyboards Keyboards { get; }
     public Gamepads Gamepads { get; }
     public Joysticks Joysticks { get; }
-    public InputMap? Map { get; set; }
-    public event Action<dynamic>? InputEvent;
     public IReadOnlyList<IInputDevice> Devices { get; }
     public IList<IInputBackend> Backends { get; }
     public event Action<ConnectionEvent>? ConnectionChanged;
@@ -206,13 +204,11 @@ By virtue of the `State` properties not updating until `IInputBackend.Update` is
 ## Custom List Types
 
 These are relatively simple list wrappers with the events fired when state changes.
-All of them have one same event called `InputEvent`. This event is fired for any state changed in the device.
 
 ```cs
 public partial class Mice : IReadOnlyList<IMouse>
 {
     public MouseClickConfiguration ClickConfiguration { get; set; }
-    public event Action<dynamic>? InputEvent;
     public event Action<MouseDownEvent>? ButtonDown;
     public event Action<MouseUpEvent>? ButtonUp;
     public event Action<MouseClickEvent>? Click;
@@ -223,7 +219,6 @@ public partial class Mice : IReadOnlyList<IMouse>
 
 public partial class Keyboards : IReadOnlyList<IKeyboard>
 {
-    public event Action<dynamic>? InputEvent;
     public event Action<KeyDownEvent>? KeyDown;
     public event Action<KeyUpEvent>? KeyUp;
     public event Action<KeyCharEvent>? KeyChar;
@@ -231,7 +226,6 @@ public partial class Keyboards : IReadOnlyList<IKeyboard>
 
 public partial class Gamepads : IReadOnlyList<IGamepad>
 {
-    public event Action<dynamic>? InputEvent;
     public event Action<GamepadDownEvent>? ButtonDown;
     public event Action<GamepadUpEvent>? ButtonUp;
     public event Action<GamepadThumbstickMoveEvent>? ThumbstickMove;
@@ -240,7 +234,6 @@ public partial class Gamepads : IReadOnlyList<IGamepad>
 
 public partial class Joysticks : IReadOnlyList<IJoystick>
 {
-    public event Action<dynamic>? InputEvent;
     public event Action<JoystickDownEvent>? ButtonDown;
     public event Action<JoystickUpEvent>? ButtonUp;
     public event Action<JoystickAxisMoveEvent>? AxisMove;
@@ -265,24 +258,26 @@ This will be configurable on `Mice` (i.e. via `InputContext.Mice.ClickConfigurat
 Unlike 1.0 and 2.0, this proposal uses `readonly record struct`s as their only argument for the event action. This allows us to provide more information to the event handlers without breaking in the future. These types are farily simple:
 
 ```cs
-public readonly record struct ConnectionEvent(IInputDevice Device, DateTime Timestamp, bool IsConnected);
-public readonly record struct KeyDownEvent(IKeyboard Keyboard, DateTime Timestamp, Key Key, bool IsRepeat);
-public readonly record struct KeyUpEvent(IKeyboard Keyboard, DateTime Timestamp, Key Key);
-public readonly record struct KeyCharEvent(IKeyboard Keyboard, DateTime Timestamp, char Character);
-public readonly record struct MouseDownEvent(IMouse Mouse, DateTime Timestamp, Vector2 Position, MouseButton Button);
-public readonly record struct MouseUpEvent(IMouse Mouse, DateTime Timestamp, Vector2 Position, MouseButton Button);
-public readonly record struct MouseMoveEvent(IMouse Mouse, DateTime Timestamp, Vector2 Position, Vector2 Delta);
-public readonly record struct MouseScrollEvent(IMouse Mouse, DateTime Timestamp, Vector2 Position, Vector2 WheelPosition, Vector2 Delta);
-public readonly record struct MouseClickEvent(IMouse Mouse, DateTime Timestamp, Vector2 Position, MouseButton Button);
-public readonly record struct JoystickDownEvent(IJoystick Joystick, DateTime Timestamp, JoystickButton Button);
-public readonly record struct JoystickUpEvent(IJoystick Joystick, DateTime Timestamp, JoystickButton Button);
-public readonly record struct JoystickHatMoveEvent(IJoystick Joystick, DateTime Timestamp, Vector2 Value, Vector2 Delta);
-public readonly record struct JoystickAxisMoveEvent(IJoystick Joystick, DateTime Timestamp, int Axis, float Value, float Delta);
-public readonly record struct GamepadDownEvent(IGamepad Gamepad, DateTime Timestamp, JoystickButton Button);
-public readonly record struct GamepadUpEvent(IGamepad Gamepad, DateTime Timestamp, JoystickButton Button);
-public readonly record struct GamepadThumbstickMoveEvent(IJoystick Joystick, DateTime Timestamp, Vector2 Value, Vector2 Delta);
-public readonly record struct GamepadTriggerMoveEvent(IJoystick Joystick, DateTime Timestamp, int Axis, float Value, float Delta);
+public readonly record struct ConnectionEvent(IInputDevice Device, DateTimeOffset? Timestamp, bool IsConnected);
+public readonly record struct KeyDownEvent(IKeyboard Keyboard, DateTimeOffset? Timestamp, Key Key, bool IsRepeat);
+public readonly record struct KeyUpEvent(IKeyboard Keyboard, DateTimeOffset? Timestamp, Key Key);
+public readonly record struct KeyCharEvent(IKeyboard Keyboard, DateTimeOffset? Timestamp, char Character);
+public readonly record struct MouseDownEvent(IMouse Mouse, DateTimeOffset? Timestamp, Vector2 Position, MouseButton Button);
+public readonly record struct MouseUpEvent(IMouse Mouse, DateTimeOffset? Timestamp, Vector2 Position, MouseButton Button);
+public readonly record struct MouseMoveEvent(IMouse Mouse, DateTimeOffset? Timestamp, Vector2 Position, Vector2 Delta);
+public readonly record struct MouseScrollEvent(IMouse Mouse, DateTimeOffset? Timestamp, Vector2 Position, Vector2 WheelPosition, Vector2 Delta);
+public readonly record struct MouseClickEvent(IMouse Mouse, DateTimeOffset? Timestamp, Vector2 Position, MouseButton Button);
+public readonly record struct JoystickDownEvent(IJoystick Joystick, DateTimeOffset? Timestamp, JoystickButton Button);
+public readonly record struct JoystickUpEvent(IJoystick Joystick, DateTimeOffset? Timestamp, JoystickButton Button);
+public readonly record struct JoystickHatMoveEvent(IJoystick Joystick, DateTimeOffset? Timestamp, Vector2 Value, Vector2 Delta);
+public readonly record struct JoystickAxisMoveEvent(IJoystick Joystick, DateTimeOffset? Timestamp, int Axis, float Value, float Delta);
+public readonly record struct GamepadDownEvent(IGamepad Gamepad, DateTimeOffset? Timestamp, JoystickButton Button);
+public readonly record struct GamepadUpEvent(IGamepad Gamepad, DateTimeOffset? Timestamp, JoystickButton Button);
+public readonly record struct GamepadThumbstickMoveEvent(IJoystick Joystick, DateTimeOffset? Timestamp, Vector2 Value, Vector2 Delta);
+public readonly record struct GamepadTriggerMoveEvent(IJoystick Joystick, DateTimeOffset? Timestamp, int Axis, float Value, float Delta);
 ```
+
+This is the part of this proposal that incorporates the ideas in Enhanced Input Events, and is why this proposal supersedes that one.
 
 One final point to note is that throughout the rest of the proposal the following type will be used:
 
@@ -720,7 +715,16 @@ public readonly record struct GamepadState
 
 `Thumbsticks` contain the two thumbsticks on this gamepad. The X and Y values within this list range from -1 to 1: -1 being leftmost, and 1 being rightmost.
 
-`Triggers` contains the two triggers on thsi gamepad. The values within this list range from 0 to 1: 0 being unpressed, and 1 being fully pressed.
+`Triggers` contains the two triggers on this gamepad. The values within this list range from 0 to 1: 0 being unpressed, and 1 being fully pressed.
+
+Note the use of the `DualReadOnlyList` type. This is basically just:
+```cs
+public readonly struct DualReadOnlyList<T> : IReadOnlyList<T>
+{
+    public readonly T Left;
+    public readonly T Right;
+}
+```
 
 This is used where the list will only ever have exactly two elements, mainly because the "gamepad" form factor is standard and it doesn't make sense to have multiple thumbsticks or triggers given a human only has two thumbs or index fingers. More exotic devices should be exposed using the joystick API.
 
@@ -830,103 +834,6 @@ public interface IJoystickInputHandler : IInputHandler
 `HandleAxisMove` must be called when any value of `JoystickState.Axes` changes.
 
 `HandleHatMove` must be called when any value of `JoystickState.Hats` changes.
-
-# Input Maps
-
-## Presentation
-Input maps are designed to be easyer to the user to handle actions with more than one input.
-At first view it can looks useless and a bad practice, but this is complemtelly useful for cross-plataform programs, being games an example.
-
-This is an pseudocode example of what the Input Map system solves:
-
-Without inputMaps:
-```cs
-inputContext.Update();
-
-private Dictionary<string, bool> pressedKeys = new();
-
-inputContext.Gamepads.ThumbstickMove += @event => {Move(@event.Value)};
-inputContext.Joysticks.AxisMove += @event => {Move(@event.Value)};
-
-private Move(Vector2D<float> value)
-{
-    // Code for movement here
-}
-```
-
-With inputMaps:
-```cs
-inputContext.Update();
-
-// This single line get rid of the two in the example above. TWO ISN'T THE LIMIT!
-inputContext.Map.GetAction("Move").Axis += @event => {Move(@event.Value)};
-
-private Move(Vector2D<float> value)
-{
-    // Code for movement here
-}
-```
-
-## Implementation
-Each InputContext have one reference to an InputMap.
-This is how the InputMap class work:
-```cs
-public partial class InputMap
-{
-    public InputMapAction GetAction(string name);
-    public void AddAction(InputMapAction action, string name);
-    public void RemoveAction(string name);
-    public static InputMap Load(string path);
-    public static void Save(InputMap source, string path);
-    public static string Compile(InputMap source);
-}
-```
-
-`GetAction` method is the main entry point of the system. It allows the use to get an mapped action by it configurated name.
-
-```cs
-public partial class InputMapAction
-{
-    public bool IsPressed { get; }
-    public event Action<AxisInputEvent> Axis;
-}
-```
-
-## Configuration and saving
-The input map system's save system is one of the most important to it working. It helps to make the configuration easyer as faster.
-
-Instead of needing to hardcode all the actions, the user should create a file with a special syntax. This is an example of the sintax of the map system's saved data:
-```
-"move_up":
-    - KeyName.Up
-    - JoystickButton.DPadUp
-
-"move_down":
-- KeyName.Down
-- JoystickButton.DPadDown
-
-"move":
-    - Vector2D [
-        -KeyName.Down
-        -KeyName.Up
-        -KeyName.Left
-        -KeyName.Right
-    ]
-    - Joystick.Axis
-```
-
-The main syntax may somewhat resemble YAML, but it's much more symple and easy to parse.
-
-The main structure is based on a list, with it main feature having the line separation as the main way to separate the information. Also, the parsing is based on an finite-state model. The last data seted will recive the next configurations until a higher level information be setted.
-
-The label are wrote inside quotes ("") and ended with a collom (:). This starts a new `InputMapAction`.
-each new input are declared with a minnus sign (-) and a stace. After that, the name of the correct enum and the correct input.
-
-Input system can easly return vectors. after the minus sign, it's possible choose a vector type to recive (`Vector2D`, `Vector3D` or `Vector4D`) and the inputs that will math witch each axis, respectively.
-
-Comments are not allowed in these files.
-
-To Load an `InputMap` from a file, the static method `Load` should be used. in any case of edition during runtime, it's possible to save the changes using the method `Save`.
 
 # Meeting Notes
 
