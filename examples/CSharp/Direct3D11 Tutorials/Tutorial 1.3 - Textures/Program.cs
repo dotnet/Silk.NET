@@ -21,7 +21,6 @@ using Silk.NET.Maths;
 using Silk.NET.Windowing;
 using SixLabors.ImageSharp;
 using SixLabors.ImageSharp.PixelFormats;
-using SixLabors.ImageSharp.Advanced;
 
 var backgroundColour = new[]{ 0.0f, 0.0f, 0.0f, 1.0f };
 
