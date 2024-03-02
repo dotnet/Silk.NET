@@ -19,6 +19,9 @@
     </ItemGroup>
 
     <ItemGroup>
+      <None Update="cube.model">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </None>
       <None Update="cube.obj">
         <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       </None>
