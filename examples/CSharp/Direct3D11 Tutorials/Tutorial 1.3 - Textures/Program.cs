@@ -19,6 +19,9 @@ using Silk.NET.DXGI;
 using Silk.NET.Input;
 using Silk.NET.Maths;
 using Silk.NET.Windowing;
+using SixLabors.ImageSharp;
+using SixLabors.ImageSharp.PixelFormats;
+using SixLabors.ImageSharp.Advanced;
 
 var backgroundColour = new[]{ 0.0f, 0.0f, 0.0f, 1.0f };
 
@@ -360,7 +363,9 @@ unsafe void OnLoad()
     pixelErrors.Dispose();
     
     // Load the image using any applicable library.
-    using var imgBmp = new System.Drawing.Bitmap("silk.png");
+    Configuration customConfig = Configuration.Default.Clone();
+    customConfig.PreferContiguousImageBuffers = true;
+    using var imgBmp = Image.Load<Bgra32>(customConfig, "silk.png");
     
     var textureDesc = new Texture2DDesc
     {
@@ -376,38 +381,34 @@ unsafe void OnLoad()
         ArraySize = 1
     };
     
-    var bmp = imgBmp.LockBits
-    (
-        new System.Drawing.Rectangle(0, 0, imgBmp.Width, imgBmp.Height),
-        System.Drawing.Imaging.ImageLockMode.ReadOnly,
-        System.Drawing.Imaging.PixelFormat.Format32bppArgb
-    );
-    
-    try
+    if (imgBmp.DangerousTryGetSinglePixelMemory(out var bmp))
     {
-        var subresourceData = new SubresourceData
+        using (var bitmapData = bmp.Pin())
         {
-            PSysMem = (void*) bmp.Scan0,
-            SysMemPitch = (uint) bmp.Stride,
-            SysMemSlicePitch = (uint) (bmp.Stride * bmp.Height)
-        };
+            var subresourceData = new SubresourceData
+            {
+                PSysMem = bitmapData.Pointer,
+                SysMemPitch = (uint) imgBmp.Width * sizeof(int),
+                SysMemSlicePitch = (uint) (imgBmp.Width * sizeof(int) * imgBmp.Height)
+            };
     
-        SilkMarshal.ThrowHResult
-        (
-            device.CreateTexture2D
+            SilkMarshal.ThrowHResult
             (
-                in textureDesc,
-                in subresourceData,
-                ref texture
-            )
-        );
+                device.CreateTexture2D
+                (
+                    in textureDesc,
+                    in subresourceData,
+                    ref texture
+                )
+            );
+        }
     }
-    finally
+    else
     {
-        imgBmp.UnlockBits(bmp);
+        // TODO: Copy pixel data row-by-row, as a contiguous block is not available.
     }
     
-	// Create a view of the texture for the shader.
+    // Create a view of the texture for the shader.
     var srvDesc = new ShaderResourceViewDesc
     {
         Format = textureDesc.Format,
@@ -432,7 +433,7 @@ unsafe void OnLoad()
         )
     );
     
-	// Create a sampler.
+    // Create a sampler.
     var samplerDesc = new SamplerDesc
     {
         Filter = Filter.MinMagMipLinear,
