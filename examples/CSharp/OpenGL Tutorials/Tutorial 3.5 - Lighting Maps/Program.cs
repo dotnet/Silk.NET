@@ -14,9 +14,6 @@ namespace Tutorial
         private static GL Gl;
         private static IKeyboard primaryKeyboard;
 
-        private const int Width = 800;
-        private const int Height = 700;
-
         private static BufferObject<float> Vbo;
         private static BufferObject<uint> Ebo;
         private static VertexArrayObject<float, uint> VaoCube;
@@ -137,7 +134,8 @@ namespace Tutorial
             LampShader = new Shader(Gl, "shader.vert", "shader.frag");
 
             //Start a camera at position 3 on the Z axis, looking at position -1 on the Z axis
-            Camera = new Camera(Vector3.UnitZ * 6, Vector3.UnitZ * -1, Vector3.UnitY, Width / Height);
+            var size = window.FramebufferSize;
+            Camera = new Camera(Vector3.UnitZ * 6, Vector3.UnitZ * -1, Vector3.UnitY, (float)size.X / size.Y);
 
             DiffuseMap = new Texture(Gl, "silkBoxed.png");
             SpecularMap = new Texture(Gl, "silkSpecular.png");
@@ -223,6 +221,7 @@ namespace Tutorial
         private static void OnFramebufferResize(Vector2D<int> newSize)
         {
             Gl.Viewport(newSize);
+            Camera.AspectRatio = (float)newSize.X / newSize.Y;
         }
 
         private static unsafe void OnMouseMove(IMouse mouse, Vector2 position)

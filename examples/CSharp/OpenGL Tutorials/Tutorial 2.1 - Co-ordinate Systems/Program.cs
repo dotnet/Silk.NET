@@ -11,9 +11,6 @@ namespace Tutorial
         private static IWindow window;
         private static GL Gl;
 
-        private const int Width = 800;
-        private const int Height = 700;
-
         private static BufferObject<float> Vbo;
         private static BufferObject<uint> Ebo;
         private static VertexArrayObject<float, uint> Vao;
@@ -131,9 +128,11 @@ namespace Tutorial
             //Use elapsed time to convert to radians to allow our cube to rotate over time
             var difference = (float) (window.Time * 100);
 
+            var size = window.FramebufferSize;
+
             var model = Matrix4x4.CreateRotationY(MathHelper.DegreesToRadians(difference)) * Matrix4x4.CreateRotationX(MathHelper.DegreesToRadians(difference));
             var view = Matrix4x4.CreateLookAt(CameraPosition, CameraTarget, CameraUp);
-            var projection = Matrix4x4.CreatePerspectiveFieldOfView(MathHelper.DegreesToRadians(45.0f), Width / Height, 0.1f, 100.0f);
+            var projection = Matrix4x4.CreatePerspectiveFieldOfView(MathHelper.DegreesToRadians(45.0f), (float)size.X / size.Y, 0.1f, 100.0f);
 
             Shader.SetUniform("uModel", model);
             Shader.SetUniform("uView", view);
