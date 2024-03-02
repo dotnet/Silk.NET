@@ -88,6 +88,7 @@ namespace Tutorial
 
             window.Load += OnLoad;
             window.Render += OnRender;
+            window.FramebufferResize += OnFramebufferResize;
             window.Closing += OnClose;
 
             window.Run();
@@ -140,6 +141,11 @@ namespace Tutorial
 
             //We're drawing with just vertices and no indicies, and it takes 36 verticies to have a six-sided textured cube
             Gl.DrawArrays(PrimitiveType.Triangles, 0, 36);
+        }
+
+        private static void OnFramebufferResize(Vector2D<int> newSize)
+        {
+            Gl.Viewport(newSize);
         }
 
         private static void OnClose()

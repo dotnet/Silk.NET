@@ -170,6 +170,11 @@ namespace Tutorial
             RenderLampCube();
         }
 
+        private static void OnFramebufferResize(Vector2D<int> newSize)
+        {
+            Gl.Viewport(newSize);
+        }
+
         private static unsafe void RenderLitCube()
         {
             //Use the 'lighting shader' that is capable of modifying the cubes colours based on ambient lighting and diffuse lighting

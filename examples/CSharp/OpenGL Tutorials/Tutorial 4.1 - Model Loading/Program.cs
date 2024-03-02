@@ -40,6 +40,7 @@ namespace Tutorial
             window.Load += OnLoad;
             window.Update += OnUpdate;
             window.Render += OnRender;
+            window.FramebufferResize += OnFramebufferResize;
             window.Closing += OnClose;
 
             window.Run();
@@ -125,6 +126,11 @@ namespace Tutorial
 
                 Gl.DrawArrays(PrimitiveType.Triangles, 0, (uint)mesh.Vertices.Length);
             }
+        }
+
+        private static void OnFramebufferResize(Vector2D<int> newSize)
+        {
+            Gl.Viewport(newSize);
         }
 
         private static unsafe void OnMouseMove(IMouse mouse, Vector2 position)

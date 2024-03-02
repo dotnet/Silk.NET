@@ -90,6 +90,7 @@ namespace Tutorial
             window.Load += OnLoad;
             window.Update += OnUpdate;
             window.Render += OnRender;
+            window.FramebufferResize += OnFramebufferResize;
             window.Closing += OnClose;
 
             window.Run();
@@ -188,6 +189,11 @@ namespace Tutorial
             LampShader.SetUniform("uProjection", Camera.GetProjectionMatrix());
 
             Gl.DrawArrays(PrimitiveType.Triangles, 0, 36);
+        }
+
+        private static void OnFramebufferResize(Vector2D<int> newSize)
+        {
+            Gl.Viewport(newSize);
         }
 
         private static unsafe void OnMouseMove(IMouse mouse, Vector2 position)
