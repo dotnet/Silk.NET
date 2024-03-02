@@ -11,6 +11,10 @@
     </PropertyGroup>
 
     <ItemGroup>
+        <PackageReference Include="System.Drawing.Common" Version="6.0.0" />
+    </ItemGroup>
+
+    <ItemGroup>
       <ProjectReference Include="..\..\..\..\src\Input\Silk.NET.Input\Silk.NET.Input.csproj" />
       <ProjectReference Include="..\..\..\..\src\Microsoft\Silk.NET.Direct3D.Compilers\Silk.NET.Direct3D.Compilers.csproj" />
       <ProjectReference Include="..\..\..\..\src\Microsoft\Silk.NET.Direct3D11\Silk.NET.Direct3D11.csproj" />
