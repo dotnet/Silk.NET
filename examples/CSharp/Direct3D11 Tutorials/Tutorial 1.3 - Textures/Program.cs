@@ -1,4 +1,4 @@
-﻿// Licensed to the .NET Foundation under one or more agreements.
+// Licensed to the .NET Foundation under one or more agreements.
 // The .NET Foundation licenses this file to you under the MIT license.
 
 
@@ -19,16 +19,18 @@ using Silk.NET.DXGI;
 using Silk.NET.Input;
 using Silk.NET.Maths;
 using Silk.NET.Windowing;
+using SixLabors.ImageSharp;
+using SixLabors.ImageSharp.PixelFormats;
 
 var backgroundColour = new[]{ 0.0f, 0.0f, 0.0f, 1.0f };
 
 float[] vertices =
 {
-    //  X      Y      Z
-     0.5f,  0.5f,  0.0f,
-     0.5f, -0.5f,  0.0f,
-    -0.5f, -0.5f,  0.0f,
-    -0.5f,  0.5f,  0.5f,
+    //  X      Y      Z, U  V
+     0.5f,  0.5f,  0.0f, 1, 1,
+     0.5f, -0.5f,  0.0f, 1, 0,
+    -0.5f, -0.5f,  0.0f, 0, 0,
+    -0.5f,  0.5f,  0.5f, 0, 1,
 };
 
 uint[] indices =
@@ -37,26 +39,33 @@ uint[] indices =
     1, 2, 3,
 };
 
-var vertexStride = 3U * sizeof(float);
+var vertexStride = 3U * sizeof(float) + 2U * sizeof(float);
 var vertexOffset = 0U;
 
 const string shaderSource = @"
+Texture2D silk_logo: register(t0);
+
+SamplerState LogoSampler: register(s0);
+
 struct vs_in {
     float3 position_local : POS;
+    float2 tex_coord : TEXCOORD0;
 };
 
 struct vs_out {
     float4 position_clip : SV_POSITION;
+    float2 tex_coord : TEXCOORD0;
 };
 
 vs_out vs_main(vs_in input) {
     vs_out output = (vs_out)0;
     output.position_clip = float4(input.position_local, 1.0);
+    output.tex_coord = input.tex_coord;
     return output;
 }
 
 float4 ps_main(vs_out input) : SV_TARGET {
-    return float4( 1.0, 0.5, 0.2, 1.0 );
+    return silk_logo.Sample(LogoSampler, input.tex_coord);
 }
 ";
 
@@ -83,6 +92,9 @@ ComPtr<ID3D11Buffer> indexBuffer = default;
 ComPtr<ID3D11VertexShader> vertexShader = default;
 ComPtr<ID3D11PixelShader> pixelShader = default;
 ComPtr<ID3D11InputLayout> inputLayout = default;
+ComPtr<ID3D11Texture2D> texture = default;
+ComPtr<ID3D11SamplerState> textureSampler = default;
+ComPtr<ID3D11ShaderResourceView> textureResourceView = default;
 
 // Assign events.
 window.Load += OnLoad;
@@ -94,6 +106,9 @@ window.FramebufferResize += OnFramebufferResize;
 window.Run();
 
 // Clean up any resources.
+textureResourceView.Dispose();
+textureSampler.Dispose();
+texture.Dispose();
 factory.Dispose();
 swapchain.Dispose();
 device.Dispose();
@@ -187,7 +202,7 @@ unsafe void OnLoad()
         BindFlags = (uint) BindFlag.VertexBuffer
     };
 
-    fixed (float* vertexData = vertices)
+    fixed (void* vertexData = vertices)
     {
         var subresourceData = new SubresourceData
         {
@@ -300,25 +315,39 @@ unsafe void OnLoad()
     );
     
     // Describe the layout of the input data for the shader.
-    fixed (byte* name = SilkMarshal.StringToMemory("POS"))
+    fixed (byte* pos = SilkMarshal.StringToMemory("POS"))
+    fixed (byte* texcoord = SilkMarshal.StringToMemory("TEXCOORD"))
     {
-        var inputElement = new InputElementDesc
+        var inputElements = new InputElementDesc[]
         {
-            SemanticName = name,
-            SemanticIndex = 0,
-            Format = Format.FormatR32G32B32Float,
-            InputSlot = 0,
-            AlignedByteOffset = 0,
-            InputSlotClass = InputClassification.PerVertexData,
-            InstanceDataStepRate = 0
+            new()
+            {
+                SemanticName = pos,
+                SemanticIndex = 0,
+                Format = Format.FormatR32G32B32Float,
+                InputSlot = 0,
+                AlignedByteOffset = 0,
+                InputSlotClass = InputClassification.PerVertexData,
+                InstanceDataStepRate = 0
+            },
+            new()
+            {
+                SemanticName = texcoord,
+                SemanticIndex = 0, // TEXCOORD0
+                Format = Format.FormatR32G32Float,
+                InputSlot = 0,
+                AlignedByteOffset = uint.MaxValue, // AUTO
+                InputSlotClass = InputClassification.PerVertexData,
+                InstanceDataStepRate = 0
+            }
         };
 
         SilkMarshal.ThrowHResult
         (
             device.CreateInputLayout
             (
-                in inputElement,
-                1,
+                in inputElements[0],
+                (uint) inputElements.Length,
                 vertexCode.GetBufferPointer(),
                 vertexCode.GetBufferSize(),
                 ref inputLayout
@@ -331,6 +360,104 @@ unsafe void OnLoad()
     vertexErrors.Dispose();
     pixelCode.Dispose();
     pixelErrors.Dispose();
+    
+    // Load the image using any applicable library.
+    Configuration customConfig = Configuration.Default.Clone();
+    customConfig.PreferContiguousImageBuffers = true;
+    using var imgBmp = Image.Load<Bgra32>(customConfig, "silk.png");
+    
+    var textureDesc = new Texture2DDesc
+    {
+        Width = (uint) imgBmp.Width,
+        Height = (uint) imgBmp.Height,
+        Format = Format.FormatB8G8R8A8Unorm,
+        MipLevels = 1,
+        BindFlags = (uint) BindFlag.ShaderResource,
+        Usage = Usage.Default,
+        CPUAccessFlags = 0,
+        MiscFlags = (uint) ResourceMiscFlag.None,
+        SampleDesc = new SampleDesc(1, 0),
+        ArraySize = 1
+    };
+    
+    if (imgBmp.DangerousTryGetSinglePixelMemory(out var bmp))
+    {
+        using (var bitmapData = bmp.Pin())
+        {
+            var subresourceData = new SubresourceData
+            {
+                PSysMem = bitmapData.Pointer,
+                SysMemPitch = (uint) imgBmp.Width * sizeof(int),
+                SysMemSlicePitch = (uint) (imgBmp.Width * sizeof(int) * imgBmp.Height)
+            };
+    
+            SilkMarshal.ThrowHResult
+            (
+                device.CreateTexture2D
+                (
+                    in textureDesc,
+                    in subresourceData,
+                    ref texture
+                )
+            );
+        }
+    }
+    else
+    {
+        // TODO: Copy pixel data row-by-row, as a contiguous block is not available.
+    }
+    
+    // Create a view of the texture for the shader.
+    var srvDesc = new ShaderResourceViewDesc
+    {
+        Format = textureDesc.Format,
+        ViewDimension = D3DSrvDimension.D3DSrvDimensionTexture2D,
+        Anonymous = new ShaderResourceViewDescUnion
+        {
+            Texture2D =
+            {
+                MostDetailedMip = 0,
+                MipLevels = 1
+            }
+        }
+    };
+    
+    SilkMarshal.ThrowHResult
+    (
+        device.CreateShaderResourceView
+        (
+            texture,
+            in srvDesc,
+            ref textureResourceView
+        )
+    );
+    
+    // Create a sampler.
+    var samplerDesc = new SamplerDesc
+    {
+        Filter = Filter.MinMagMipLinear,
+        AddressU = TextureAddressMode.Clamp,
+        AddressV = TextureAddressMode.Clamp,
+        AddressW = TextureAddressMode.Clamp,
+        MipLODBias = 0,
+        MaxAnisotropy = 1,
+        MinLOD = float.MinValue,
+        MaxLOD = float.MaxValue,
+    };
+    // Black border color.
+    samplerDesc.BorderColor[0] = 0.0f;
+    samplerDesc.BorderColor[1] = 0.0f;
+    samplerDesc.BorderColor[2] = 0.0f;
+    samplerDesc.BorderColor[3] = 1.0f;
+    
+    SilkMarshal.ThrowHResult
+    (
+        device.CreateSamplerState
+        (
+            in samplerDesc,
+            ref textureSampler
+        )
+    );
 }
 
 void OnUpdate(double deltaSeconds)
@@ -376,6 +503,8 @@ unsafe void OnRender(double deltaSeconds)
     // Bind our shaders.
     deviceContext.VSSetShader(vertexShader, ref Unsafe.NullRef<ComPtr<ID3D11ClassInstance>>(), 0);
     deviceContext.PSSetShader(pixelShader, ref Unsafe.NullRef<ComPtr<ID3D11ClassInstance>>(), 0);
+    deviceContext.PSSetSamplers(0, 1, textureSampler);
+    deviceContext.PSSetShaderResources(0, 1, textureResourceView);
     
     // Draw the quad.
     deviceContext.DrawIndexed(6, 0, 0);
