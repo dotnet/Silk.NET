@@ -661,7 +661,14 @@ namespace Silk.NET.Windowing.Glfw
 
             _onRefresh = (window) =>
             {
-                Refresh?.Invoke();
+                if (!IsClosing)
+                {
+                    DoUpdate();
+                }
+                if (!IsClosing)
+                {
+                    DoRender();
+                }
             };
 
             _onClosing = window => Closing?.Invoke();
@@ -798,7 +805,6 @@ namespace Silk.NET.Windowing.Glfw
 
         public override event Action<Vector2D<int>>? Resize;
         public override event Action<Vector2D<int>>? FramebufferResize;
-        public override event Action? Refresh;
         public override event Action? Closing;
         public override event Action<bool>? FocusChanged;
 

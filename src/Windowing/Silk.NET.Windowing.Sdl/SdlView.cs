@@ -50,7 +50,6 @@ namespace Silk.NET.Windowing.Sdl
         // Events
         public override event System.Action<Vector2D<int>>? Resize;
         public override event System.Action<Vector2D<int>>? FramebufferResize;
-        public override event System.Action? Refresh;
         public override event System.Action? Closing;
         public override event System.Action<bool>? FocusChanged;
 

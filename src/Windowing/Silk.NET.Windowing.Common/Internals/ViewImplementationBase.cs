@@ -79,7 +79,6 @@ namespace Silk.NET.Windowing.Internals
         // Events
         public abstract event Action<Vector2D<int>>? Resize;
         public abstract event Action<Vector2D<int>>? FramebufferResize;
-        public abstract event Action? Refresh;
         public abstract event Action? Closing;
         public abstract event Action<bool>? FocusChanged;
         public event Action? Load;
