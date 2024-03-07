@@ -47,6 +47,7 @@ Silk.NET.Windowing.IView.DoUpdate() -> void
 Silk.NET.Windowing.IView.FocusChanged -> System.Action<bool>?
 Silk.NET.Windowing.IView.FramebufferResize -> System.Action<Silk.NET.Maths.Vector2D<int>>?
 Silk.NET.Windowing.IView.FramebufferSize.get -> Silk.NET.Maths.Vector2D<int>
+Silk.NET.Windowing.IView.Refresh -> System.Action?
 Silk.NET.Windowing.IView.Handle.get -> nint
 Silk.NET.Windowing.IView.Initialize() -> void
 Silk.NET.Windowing.IView.Invoke(System.Delegate! d, params object![]! args) -> object!

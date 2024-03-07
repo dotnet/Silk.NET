@@ -48,6 +48,11 @@ namespace Silk.NET.Windowing
         event Action<Vector2D<int>>? FramebufferResize;
 
         /// <summary>
+        /// Raised when the window is being refreshed.
+        /// </summary>
+        event Action? Refresh;
+
+        /// <summary>
         /// Raised when the window is about to close.
         /// </summary>
         event Action? Closing;

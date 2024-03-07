@@ -23,6 +23,7 @@ namespace Silk.NET.Windowing.Glfw
         private GlfwCallbacks.WindowPosCallback? _onMove;
         private GlfwCallbacks.WindowSizeCallback? _onResize;
         private GlfwCallbacks.FramebufferSizeCallback? _onFramebufferResize;
+        private GlfwCallbacks.WindowRefreshCallback? _onRefresh;
         private GlfwCallbacks.DropCallback? _onFileDrop;
         private GlfwCallbacks.WindowCloseCallback? _onClosing;
         private GlfwCallbacks.WindowFocusCallback? _onFocusChanged;
@@ -658,6 +659,11 @@ namespace Silk.NET.Windowing.Glfw
                 FramebufferResize?.Invoke(new(width, height));
             };
 
+            _onRefresh = (window) =>
+            {
+                Refresh?.Invoke();
+            };
+
             _onClosing = window => Closing?.Invoke();
 
             _onFocusChanged = (window, isFocused) => FocusChanged?.Invoke(isFocused);
@@ -744,6 +750,7 @@ namespace Silk.NET.Windowing.Glfw
             _glfw.SetWindowIconifyCallback(_glfwWindow, _onMinimized);
             _glfw.SetWindowMaximizeCallback(_glfwWindow, _onMaximized);
             _glfw.SetFramebufferSizeCallback(_glfwWindow, _onFramebufferResize);
+            _glfw.SetWindowRefreshCallback(_glfwWindow, _onRefresh);
             _glfw.SetDropCallback(_glfwWindow, _onFileDrop);
             GLFW.Glfw.ThrowExceptions();
         }
@@ -761,6 +768,7 @@ namespace Silk.NET.Windowing.Glfw
                 _glfw.GcUtility.Unpin(_onMove);
                 _glfw.GcUtility.Unpin(_onResize);
                 _glfw.GcUtility.Unpin(_onFramebufferResize);
+                _glfw.GcUtility.Unpin(_onRefresh);
                 _glfw.GcUtility.Unpin(_onFileDrop);
                 _glfw.GcUtility.Unpin(_onFocusChanged);
 
@@ -770,6 +778,7 @@ namespace Silk.NET.Windowing.Glfw
                 _onMove = null;
                 _onResize = null;
                 _onFramebufferResize = null;
+                _onRefresh = null;
                 _onFileDrop = null;
                 _onFocusChanged = null;
             }
@@ -789,6 +798,7 @@ namespace Silk.NET.Windowing.Glfw
 
         public override event Action<Vector2D<int>>? Resize;
         public override event Action<Vector2D<int>>? FramebufferResize;
+        public override event Action? Refresh;
         public override event Action? Closing;
         public override event Action<bool>? FocusChanged;
 

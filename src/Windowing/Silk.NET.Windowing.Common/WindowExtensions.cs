@@ -43,21 +43,29 @@ namespace Silk.NET.Windowing
         public static void Run(this IView view)
         {
             view.Initialize();
-            view.Run
-            (
-                () =>
+
+            void OnFrame()
+            {
+                view.DoEvents();
+                DoFrame();
+            }
+
+            void DoFrame()
+            {
+                if (!view.IsClosing)
                 {
-                    view.DoEvents();
-                    if (!view.IsClosing)
-                    {
-                        view.DoUpdate();
-                    }
-                    if (!view.IsClosing)
-                    {
-                        view.DoRender();
-                    }
+                    view.DoUpdate();
                 }
-            );
+
+                if (!view.IsClosing)
+                {
+                    view.DoRender();
+                }
+            }
+
+            view.Refresh += DoFrame;
+            view.Run(OnFrame);
+            view.Refresh -= DoFrame;
 
             view.DoEvents();
             view.Reset();
