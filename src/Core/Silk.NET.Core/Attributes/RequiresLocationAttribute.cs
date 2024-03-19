@@ -8,5 +8,4 @@ namespace System.Runtime.CompilerServices;
 internal class RequiresLocationAttribute : Attribute
 {
 }
-
 #endif
