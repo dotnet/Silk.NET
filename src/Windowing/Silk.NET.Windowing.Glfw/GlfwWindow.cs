@@ -40,6 +40,15 @@ namespace Silk.NET.Windowing.Glfw
         private string _windowClass;
         private bool _inDoEvents;
 
+        /// <summary>
+        /// The action passed to <see cref="Run"/>.
+        /// </summary>
+        /// <remarks>
+        /// May be called on repaint from within <see cref="DoEvents"/>.
+        /// For example, during modal operations such as resizing on Windows.
+        /// </remarks>
+        protected Action? _onFrame;
+
         public GlfwWindow(WindowOptions optionsCache, GlfwWindow? parent, GlfwMonitor? monitor) : base(optionsCache)
         {
             _glfw = GlfwProvider.GLFW.Value;
@@ -68,6 +77,19 @@ namespace Silk.NET.Windowing.Glfw
         }
 
         protected override nint CoreHandle => (nint) _glfwWindow;
+
+        public override void Run(Action onFrame)
+        {
+            try
+            {
+                _onFrame = onFrame;
+                base.Run(onFrame);
+            }
+            finally
+            {
+                _onFrame = null;
+            }
+        }
 
         protected override void CoreReset()
         {
