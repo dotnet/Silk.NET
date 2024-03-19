@@ -38,6 +38,7 @@ namespace Silk.NET.Windowing.Glfw
         private string _localTitleCache; // glfw doesn't let us get the window title.
         private GlfwContext? _glContext;
         private string _windowClass;
+        private bool _inDoEvents;
 
         public GlfwWindow(WindowOptions optionsCache, GlfwWindow? parent, GlfwMonitor? monitor) : base(optionsCache)
         {
@@ -599,13 +600,24 @@ namespace Silk.NET.Windowing.Glfw
 
         public override void DoEvents()
         {
-            if (IsEventDriven)
+            if (!_inDoEvents)
             {
-                _glfw.WaitEvents();
-            }
-            else
-            {
-                _glfw.PollEvents();
+                try
+                {
+                    _inDoEvents = true;
+                    if (IsEventDriven)
+                    {
+                        _glfw.WaitEvents();
+                    }
+                    else
+                    {
+                        _glfw.PollEvents();
+                    }
+                }
+                finally
+                {
+                    _inDoEvents = false;
+                }
             }
         }
 
@@ -659,17 +671,7 @@ namespace Silk.NET.Windowing.Glfw
                 FramebufferResize?.Invoke(new(width, height));
             };
 
-            _onRefresh = (window) =>
-            {
-                if (!IsClosing)
-                {
-                    DoUpdate();
-                }
-                if (!IsClosing)
-                {
-                    DoRender();
-                }
-            };
+            _onRefresh = (window) => _onFrame?.Invoke();
 
             _onClosing = window => Closing?.Invoke();
 

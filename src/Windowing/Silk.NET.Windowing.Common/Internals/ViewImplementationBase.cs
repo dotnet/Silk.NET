@@ -76,6 +76,15 @@ namespace Silk.NET.Windowing.Internals
         protected abstract void UnregisterCallbacks();
         protected abstract INativeWindow GetNativeWindow();
 
+        /// <summary>
+        /// The action passed to <see cref="Run"/>.
+        /// </summary>
+        /// <remarks>
+        /// May be called on repaint from within <see cref="DoEvents"/>.
+        /// For example, during modal operations such as resizing on Windows.
+        /// </remarks>
+        protected Action? _onFrame;
+
         // Events
         public abstract event Action<Vector2D<int>>? Resize;
         public abstract event Action<Vector2D<int>>? FramebufferResize;
@@ -164,9 +173,18 @@ namespace Silk.NET.Windowing.Internals
         // Game loop implementation
         public virtual void Run(Action onFrame)
         {
-            while (!IsClosing)
+            try
             {
-                onFrame();
+                _onFrame = onFrame;
+
+                while (!IsClosing)
+                {
+                    onFrame();
+                }
+            }
+            finally
+            {
+                _onFrame = null;
             }
         }
 
