@@ -5,5 +5,8 @@
 // ReSharper disable once CheckNamespace
 namespace System.Runtime.CompilerServices;
 
-internal class RequiresLocationAttribute : Attribute;
+internal class RequiresLocationAttribute : Attribute
+{
+}
+
 #endif
