@@ -512,19 +512,43 @@ namespace Silk.NET.Core.Native
             Func<nint, string> customUnmarshaller
         ) => PtrToStringArray(input, input.Length / IntPtr.Size, customUnmarshaller);
 
+        /// <summary>
+        /// Gets the length of the given native string.
+        /// </summary>
+        /// <param name="ptr">The native string pointer.</param>
+        /// <param name="encoding">The encoding.</param>
+        /// <returns>The length of the string.</returns>
+#if NET6_0_OR_GREATER
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static unsafe nuint StringLength(
+            nint ptr,
+            NativeStringEncoding encoding = NativeStringEncoding.Ansi
+        ) =>
+            (nuint)(
+                encoding == NativeStringEncoding.LPWStr
+                    ? MemoryMarshal.CreateReadOnlySpanFromNullTerminated((char*)ptr).Length
+                    : MemoryMarshal.CreateReadOnlySpanFromNullTerminated((byte*)ptr).Length
+            );
+#else
+        public static unsafe nuint StringLength(
+            nint ptr, 
+            NativeStringEncoding encoding = NativeStringEncoding.Ansi
+        )
+        {
+            if (ptr == 0)
+            {
+                return 0;
+            }
+            nuint ret;
+            for (ret = 0; ((byte*) ptr)![ret] != 0; ret++) { }
+            return ret;
+        }
+#endif
+
         private static unsafe string Utf8PtrToString(nint ptr)
         {
-            var span = new Span<byte>((void*) ptr, int.MaxValue);
-            span = span.Slice(0, span.IndexOf(default(byte)));
-            if (span.Length == 0)
-            {
-                return string.Empty;
-            }
-
-            fixed (byte* bytes = span)
-            {
-                return Encoding.UTF8.GetString(bytes, span.Length);
-            }
+            var len = (int)StringLength(ptr, NativeStringEncoding.UTF8);
+            return len == 0 ? string.Empty : Encoding.UTF8.GetString((byte*)ptr, len);
         }
 
         // "Unsafe" methods
