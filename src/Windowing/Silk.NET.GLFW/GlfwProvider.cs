@@ -2,6 +2,7 @@
 // The .NET Foundation licenses this file to you under the MIT license.
 
 using System;
+using Silk.NET.Core.Native;
 
 namespace Silk.NET.GLFW
 {
@@ -26,7 +27,7 @@ namespace Silk.NET.GLFW
             if (!glfw.Init())
             {
                 var code = glfw.GetError(out var pDesc);
-                var len = new ReadOnlySpan<byte>(pDesc, int.MaxValue).IndexOf((byte) '\0');
+                var len = (int)SilkMarshal.StringLength((nint)pDesc);
                 var desc = len <= 0 ? "Unknown" : System.Text.Encoding.UTF8.GetString(pDesc, len);
                 throw new GlfwException($"GLFW Init failed, {code}: {desc}");
             }
