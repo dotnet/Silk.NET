@@ -518,6 +518,10 @@ namespace Silk.NET.Core.Native
         /// <param name="ptr">The native string pointer.</param>
         /// <param name="encoding">The encoding.</param>
         /// <returns>The length of the string.</returns>
+        /// <remarks>
+        /// Note that this returns the length in characters. Namely, if a 16-bit character encoding is used, the actual
+        /// byte count will be double the return value from this function.
+        /// </remarks>
 #if NET6_0_OR_GREATER
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static unsafe nuint StringLength(
@@ -531,7 +535,7 @@ namespace Silk.NET.Core.Native
             );
 #else
         public static unsafe nuint StringLength(
-            nint ptr, 
+            nint ptr,
             NativeStringEncoding encoding = NativeStringEncoding.Ansi
         )
         {
@@ -540,7 +544,13 @@ namespace Silk.NET.Core.Native
                 return 0;
             }
             nuint ret;
-            for (ret = 0; ((byte*) ptr)![ret] != 0; ret++) { }
+            for (
+                ret = 0;
+                encoding == NativeStringEncoding.LPWStr
+                    ? ((char*)ptr)![ret] != 0
+                    : ((byte*)ptr)![ret] != 0;
+                ret++
+            ) { }
             return ret;
         }
 #endif
