@@ -330,7 +330,7 @@ namespace Silk.NET.SPIRV.Cross
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 885, Column 29 in spirv_cross_c.h")]
-        public static unsafe Result ResourcesGetResourceListForType(this Cross thisApi, Resources* resources, ResourceType type, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ReflectedResource* resource_list, Span<nuint> resource_size)
+        public static unsafe Result ResourcesGetResourceListForType(this Cross thisApi, Resources* resources, ResourceType type, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ReflectedResource* resource_list, Span<nuint> resource_size)
         {
             // SpanOverloader
             return thisApi.ResourcesGetResourceListForType(resources, type, in resource_list, ref resource_size.GetPinnableReference());
@@ -346,7 +346,7 @@ namespace Silk.NET.SPIRV.Cross
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 889, Column 29 in spirv_cross_c.h")]
-        public static unsafe Result ResourcesGetBuiltinResourceListForType(this Cross thisApi, Resources* resources, BuiltinResourceType type, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ReflectedBuiltinResource* resource_list, Span<nuint> resource_size)
+        public static unsafe Result ResourcesGetBuiltinResourceListForType(this Cross thisApi, Resources* resources, BuiltinResourceType type, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ReflectedBuiltinResource* resource_list, Span<nuint> resource_size)
         {
             // SpanOverloader
             return thisApi.ResourcesGetBuiltinResourceListForType(resources, type, in resource_list, ref resource_size.GetPinnableReference());
@@ -394,7 +394,7 @@ namespace Silk.NET.SPIRV.Cross
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 931, Column 29 in spirv_cross_c.h")]
-        public static unsafe Result CompilerGetEntryPoints(this Cross thisApi, Compiler* compiler, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in EntryPoint* entry_points, Span<nuint> num_entry_points)
+        public static unsafe Result CompilerGetEntryPoints(this Cross thisApi, Compiler* compiler, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in EntryPoint* entry_points, Span<nuint> num_entry_points)
         {
             // SpanOverloader
             return thisApi.CompilerGetEntryPoints(compiler, in entry_points, ref num_entry_points.GetPinnableReference());
@@ -466,7 +466,7 @@ namespace Silk.NET.SPIRV.Cross
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 944, Column 29 in spirv_cross_c.h")]
-        public static unsafe Result CompilerGetExecutionModes(this Cross thisApi, Compiler* compiler, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.SPIRV.ExecutionMode* modes, Span<nuint> num_modes)
+        public static unsafe Result CompilerGetExecutionModes(this Cross thisApi, Compiler* compiler, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.SPIRV.ExecutionMode* modes, Span<nuint> num_modes)
         {
             // SpanOverloader
             return thisApi.CompilerGetExecutionModes(compiler, in modes, ref num_modes.GetPinnableReference());
@@ -538,7 +538,7 @@ namespace Silk.NET.SPIRV.Cross
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1008, Column 29 in spirv_cross_c.h")]
-        public static unsafe Result CompilerGetCombinedImageSamplers(this Cross thisApi, Compiler* compiler, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in CombinedImageSampler* samplers, Span<nuint> num_samplers)
+        public static unsafe Result CompilerGetCombinedImageSamplers(this Cross thisApi, Compiler* compiler, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in CombinedImageSampler* samplers, Span<nuint> num_samplers)
         {
             // SpanOverloader
             return thisApi.CompilerGetCombinedImageSamplers(compiler, in samplers, ref num_samplers.GetPinnableReference());
@@ -554,7 +554,7 @@ namespace Silk.NET.SPIRV.Cross
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1016, Column 29 in spirv_cross_c.h")]
-        public static unsafe Result CompilerGetSpecializationConstants(this Cross thisApi, Compiler* compiler, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in SpecializationConstant* constants, Span<nuint> num_constants)
+        public static unsafe Result CompilerGetSpecializationConstants(this Cross thisApi, Compiler* compiler, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in SpecializationConstant* constants, Span<nuint> num_constants)
         {
             // SpanOverloader
             return thisApi.CompilerGetSpecializationConstants(compiler, in constants, ref num_constants.GetPinnableReference());
@@ -626,7 +626,7 @@ namespace Silk.NET.SPIRV.Cross
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1031, Column 29 in spirv_cross_c.h")]
-        public static unsafe Result CompilerGetActiveBufferRanges(this Cross thisApi, Compiler* compiler, uint id, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in BufferRange* ranges, Span<nuint> num_ranges)
+        public static unsafe Result CompilerGetActiveBufferRanges(this Cross thisApi, Compiler* compiler, uint id, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in BufferRange* ranges, Span<nuint> num_ranges)
         {
             // SpanOverloader
             return thisApi.CompilerGetActiveBufferRanges(compiler, id, in ranges, ref num_ranges.GetPinnableReference());
@@ -642,7 +642,7 @@ namespace Silk.NET.SPIRV.Cross
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1051, Column 22 in spirv_cross_c.h")]
-        public static unsafe void ConstantGetSubconstants(this Cross thisApi, Constant* constant, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint* constituents, Span<nuint> count)
+        public static unsafe void ConstantGetSubconstants(this Cross thisApi, Constant* constant, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in uint* constituents, Span<nuint> count)
         {
             // SpanOverloader
             thisApi.ConstantGetSubconstants(constant, in constituents, ref count.GetPinnableReference());
@@ -674,7 +674,7 @@ namespace Silk.NET.SPIRV.Cross
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1080, Column 29 in spirv_cross_c.h")]
-        public static unsafe Result CompilerGetDeclaredCapabilities(this Cross thisApi, Compiler* compiler, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.SPIRV.Capability* capabilities, Span<nuint> num_capabilities)
+        public static unsafe Result CompilerGetDeclaredCapabilities(this Cross thisApi, Compiler* compiler, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.SPIRV.Capability* capabilities, Span<nuint> num_capabilities)
         {
             // SpanOverloader
             return thisApi.CompilerGetDeclaredCapabilities(compiler, in capabilities, ref num_capabilities.GetPinnableReference());
@@ -690,7 +690,7 @@ namespace Silk.NET.SPIRV.Cross
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1083, Column 29 in spirv_cross_c.h")]
-        public static unsafe Result CompilerGetDeclaredExtensions(this Cross thisApi, Compiler* compiler, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte** extensions, Span<nuint> num_extensions)
+        public static unsafe Result CompilerGetDeclaredExtensions(this Cross thisApi, Compiler* compiler, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte** extensions, Span<nuint> num_extensions)
         {
             // SpanOverloader
             return thisApi.CompilerGetDeclaredExtensions(compiler, in extensions, ref num_extensions.GetPinnableReference());
@@ -706,7 +706,7 @@ namespace Silk.NET.SPIRV.Cross
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1087, Column 29 in spirv_cross_c.h")]
-        public static unsafe Result CompilerGetBufferBlockDecorations(this Cross thisApi, Compiler* compiler, uint id, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.SPIRV.Decoration* decorations, Span<nuint> num_decorations)
+        public static unsafe Result CompilerGetBufferBlockDecorations(this Cross thisApi, Compiler* compiler, uint id, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.SPIRV.Decoration* decorations, Span<nuint> num_decorations)
         {
             // SpanOverloader
             return thisApi.CompilerGetBufferBlockDecorations(compiler, id, in decorations, ref num_decorations.GetPinnableReference());

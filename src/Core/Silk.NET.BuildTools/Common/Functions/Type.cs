@@ -118,7 +118,7 @@ namespace Silk.NET.BuildTools.Common.Functions
         public string ToString(bool allowFunctionPointers)
         {
             return (IsThis ? "this " : string.Empty) +
-                   (IsIn ? "in " : string.Empty) +
+                   (IsIn ? "[RequiresLocation] in " : string.Empty) +
                    (IsOut ? "out " : string.Empty) +
                    (IsByRef ? "ref " : string.Empty) +
                    (IsFunctionPointer && allowFunctionPointers && Name == "void"

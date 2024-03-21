@@ -478,3 +478,6 @@ src/**/build/
 /docs/
 src/Website/Silk.NET.Statiq/temp
 src/Website/Silk.NET.Statiq/cache
+
+# As much as I love Mac, really not interested in this litter.
+**/.DS_Store

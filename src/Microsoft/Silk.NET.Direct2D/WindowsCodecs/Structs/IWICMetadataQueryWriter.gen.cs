@@ -229,7 +229,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetMetadataByName([Flow(Silk.NET.Core.Native.FlowDirection.In)] in char wzName, void* pvarValue)
+        public readonly unsafe int GetMetadataByName([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char wzName, void* pvarValue)
         {
             var @this = (IWICMetadataQueryWriter*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -241,7 +241,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int GetMetadataByName<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] in char wzName, ref T0 pvarValue) where T0 : unmanaged
+        public readonly int GetMetadataByName<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char wzName, ref T0 pvarValue) where T0 : unmanaged
         {
             var @this = (IWICMetadataQueryWriter*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -311,7 +311,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int SetMetadataByName<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] char* wzName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in T0 pvarValue) where T0 : unmanaged
+        public readonly unsafe int SetMetadataByName<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] char* wzName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in T0 pvarValue) where T0 : unmanaged
         {
             var @this = (IWICMetadataQueryWriter*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -323,7 +323,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int SetMetadataByName([Flow(Silk.NET.Core.Native.FlowDirection.In)] in char wzName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] void* pvarValue)
+        public readonly unsafe int SetMetadataByName([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char wzName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] void* pvarValue)
         {
             var @this = (IWICMetadataQueryWriter*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -335,7 +335,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int SetMetadataByName<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] in char wzName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in T0 pvarValue) where T0 : unmanaged
+        public readonly int SetMetadataByName<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char wzName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in T0 pvarValue) where T0 : unmanaged
         {
             var @this = (IWICMetadataQueryWriter*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -361,7 +361,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int SetMetadataByName<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string wzName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in T0 pvarValue) where T0 : unmanaged
+        public readonly int SetMetadataByName<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string wzName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in T0 pvarValue) where T0 : unmanaged
         {
             var @this = (IWICMetadataQueryWriter*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -384,7 +384,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int RemoveMetadataByName([Flow(Silk.NET.Core.Native.FlowDirection.In)] in char wzName)
+        public readonly int RemoveMetadataByName([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char wzName)
         {
             var @this = (IWICMetadataQueryWriter*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;

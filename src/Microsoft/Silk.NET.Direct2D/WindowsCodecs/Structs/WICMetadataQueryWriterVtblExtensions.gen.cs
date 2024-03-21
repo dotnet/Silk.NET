@@ -200,7 +200,7 @@ public unsafe static class WICMetadataQueryWriterVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetMetadataByName(this ComPtr<IWICMetadataQueryWriter> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in char wzName, void* pvarValue)
+    public static unsafe int GetMetadataByName(this ComPtr<IWICMetadataQueryWriter> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char wzName, void* pvarValue)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -212,7 +212,7 @@ public unsafe static class WICMetadataQueryWriterVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int GetMetadataByName<T0>(this ComPtr<IWICMetadataQueryWriter> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in char wzName, ref T0 pvarValue) where T0 : unmanaged
+    public static int GetMetadataByName<T0>(this ComPtr<IWICMetadataQueryWriter> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char wzName, ref T0 pvarValue) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -282,7 +282,7 @@ public unsafe static class WICMetadataQueryWriterVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int SetMetadataByName<T0>(this ComPtr<IWICMetadataQueryWriter> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* wzName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in T0 pvarValue) where T0 : unmanaged
+    public static unsafe int SetMetadataByName<T0>(this ComPtr<IWICMetadataQueryWriter> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* wzName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in T0 pvarValue) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -294,7 +294,7 @@ public unsafe static class WICMetadataQueryWriterVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int SetMetadataByName(this ComPtr<IWICMetadataQueryWriter> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in char wzName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] void* pvarValue)
+    public static unsafe int SetMetadataByName(this ComPtr<IWICMetadataQueryWriter> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char wzName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] void* pvarValue)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -306,7 +306,7 @@ public unsafe static class WICMetadataQueryWriterVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int SetMetadataByName<T0>(this ComPtr<IWICMetadataQueryWriter> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in char wzName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in T0 pvarValue) where T0 : unmanaged
+    public static int SetMetadataByName<T0>(this ComPtr<IWICMetadataQueryWriter> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char wzName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in T0 pvarValue) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -332,7 +332,7 @@ public unsafe static class WICMetadataQueryWriterVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int SetMetadataByName<T0>(this ComPtr<IWICMetadataQueryWriter> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string wzName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in T0 pvarValue) where T0 : unmanaged
+    public static int SetMetadataByName<T0>(this ComPtr<IWICMetadataQueryWriter> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string wzName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in T0 pvarValue) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -355,7 +355,7 @@ public unsafe static class WICMetadataQueryWriterVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int RemoveMetadataByName(this ComPtr<IWICMetadataQueryWriter> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in char wzName)
+    public static int RemoveMetadataByName(this ComPtr<IWICMetadataQueryWriter> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char wzName)
     {
         var @this = thisVtbl.Handle;
         int ret = default;

@@ -27,7 +27,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.NV
         public unsafe partial nint GetVkProcAddr([Count(Computed = "name"), Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* name);
 
         [NativeApi(EntryPoint = "glGetVkProcAddrNV", Convention = CallingConvention.Winapi)]
-        public partial nint GetVkProcAddr([Count(Computed = "name"), Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte name);
+        public partial nint GetVkProcAddr([Count(Computed = "name"), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte name);
 
         [NativeApi(EntryPoint = "glGetVkProcAddrNV", Convention = CallingConvention.Winapi)]
         public partial nint GetVkProcAddr([Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string name);

@@ -52,7 +52,7 @@ namespace Silk.NET.OpenCL.Extensions.KHR
         public unsafe partial int UpdateMutableCommands([Flow(Silk.NET.Core.Native.FlowDirection.In)] nint command_buffer, [Flow(Silk.NET.Core.Native.FlowDirection.In)] MutableBaseConfigKhr* mutable_config);
 
         [NativeApi(EntryPoint = "clUpdateMutableCommandsKHR", Convention = CallingConvention.Winapi)]
-        public partial int UpdateMutableCommands([Flow(Silk.NET.Core.Native.FlowDirection.In)] nint command_buffer, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in MutableBaseConfigKhr mutable_config);
+        public partial int UpdateMutableCommands([Flow(Silk.NET.Core.Native.FlowDirection.In)] nint command_buffer, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in MutableBaseConfigKhr mutable_config);
 
         public KhrCommandBufferMutableDispatch(INativeContext ctx)
             : base(ctx)
