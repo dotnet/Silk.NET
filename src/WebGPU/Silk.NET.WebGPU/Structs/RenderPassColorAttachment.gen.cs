@@ -23,6 +23,7 @@ namespace Silk.NET.WebGPU
         (
             ChainedStruct* nextInChain = null,
             TextureView* view = null,
+            uint? depthSlice = null,
             TextureView* resolveTarget = null,
             LoadOp? loadOp = null,
             StoreOp? storeOp = null,
@@ -37,6 +38,11 @@ namespace Silk.NET.WebGPU
             if (view is not null)
             {
                 View = view;
+            }
+
+            if (depthSlice is not null)
+            {
+                DepthSlice = depthSlice.Value;
             }
 
             if (resolveTarget is not null)
@@ -70,6 +76,11 @@ namespace Silk.NET.WebGPU
         [NativeName("Type.Name", "WGPUTextureView")]
         [NativeName("Name", "view")]
         public TextureView* View;
+
+        [NativeName("Type", "uint32_t")]
+        [NativeName("Type.Name", "uint32_t")]
+        [NativeName("Name", "depthSlice")]
+        public uint DepthSlice;
 
         [NativeName("Type", "WGPUTextureView")]
         [NativeName("Type.Name", "WGPUTextureView")]

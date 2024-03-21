@@ -17,13 +17,14 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkPipelineRasterizationLineStateCreateInfoEXT")]
+    [NativeName("AliasOf", "VkPipelineRasterizationLineStateCreateInfoKHR")]
     public unsafe partial struct PipelineRasterizationLineStateCreateInfoEXT : IExtendsChain<PipelineRasterizationStateCreateInfo>
     {
         public PipelineRasterizationLineStateCreateInfoEXT
         (
-            StructureType? sType = StructureType.PipelineRasterizationLineStateCreateInfoExt,
+            StructureType? sType = StructureType.PipelineRasterizationLineStateCreateInfoKhr,
             void* pNext = null,
-            LineRasterizationModeEXT? lineRasterizationMode = null,
+            LineRasterizationModeKHR? lineRasterizationMode = null,
             Bool32? stippledLineEnable = null,
             uint? lineStippleFactor = null,
             ushort? lineStipplePattern = null
@@ -71,10 +72,10 @@ namespace Silk.NET.Vulkan
         [NativeName("Name", "pNext")]
         public void* PNext;
 /// <summary></summary>
-        [NativeName("Type", "VkLineRasterizationModeEXT")]
-        [NativeName("Type.Name", "VkLineRasterizationModeEXT")]
+        [NativeName("Type", "VkLineRasterizationModeKHR")]
+        [NativeName("Type.Name", "VkLineRasterizationModeKHR")]
         [NativeName("Name", "lineRasterizationMode")]
-        public LineRasterizationModeEXT LineRasterizationMode;
+        public LineRasterizationModeKHR LineRasterizationMode;
 /// <summary></summary>
         [NativeName("Type", "VkBool32")]
         [NativeName("Type.Name", "VkBool32")]
@@ -94,7 +95,7 @@ namespace Silk.NET.Vulkan
         /// <inheritdoc />
         StructureType IStructuredType.StructureType()
         {
-            return SType = StructureType.PipelineRasterizationLineStateCreateInfoExt;
+            return SType = StructureType.PipelineRasterizationLineStateCreateInfoKhr;
         }
 
         /// <inheritdoc />

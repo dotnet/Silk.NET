@@ -41,5 +41,9 @@ namespace Silk.NET.SPIRV.Reflect
         PerVertex = 0x800,
         [NativeName("Name", "SPV_REFLECT_DECORATION_PER_TASK")]
         PerTask = 0x1000,
+        [NativeName("Name", "SPV_REFLECT_DECORATION_WEIGHT_TEXTURE")]
+        WeightTexture = 0x2000,
+        [NativeName("Name", "SPV_REFLECT_DECORATION_BLOCK_MATCH_TEXTURE")]
+        BlockMatchTexture = 0x4000,
     }
 }

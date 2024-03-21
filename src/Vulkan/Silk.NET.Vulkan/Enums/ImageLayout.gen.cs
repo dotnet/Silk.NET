@@ -50,6 +50,8 @@ namespace Silk.NET.Vulkan
         FragmentDensityMapOptimalExt = 1000218000,
         [NativeName("Name", "VK_IMAGE_LAYOUT_FRAGMENT_SHADING_RATE_ATTACHMENT_OPTIMAL_KHR")]
         FragmentShadingRateAttachmentOptimalKhr = 1000164003,
+        [NativeName("Name", "VK_IMAGE_LAYOUT_RENDERING_LOCAL_READ_KHR")]
+        RenderingLocalReadKhr = 1000232000,
         [NativeName("Name", "VK_IMAGE_LAYOUT_DEPTH_ATTACHMENT_OPTIMAL_KHR")]
         DepthAttachmentOptimalKhr = 1000241000,
         [NativeName("Name", "VK_IMAGE_LAYOUT_DEPTH_READ_ONLY_OPTIMAL_KHR")]

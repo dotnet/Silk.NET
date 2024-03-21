@@ -1,0 +1,53 @@
+// Licensed to the .NET Foundation under one or more agreements.
+// The .NET Foundation licenses this file to you under the MIT license.
+
+
+using System;
+using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
+using System.Text;
+using Silk.NET.Core;
+using Silk.NET.Core.Native;
+using Silk.NET.Core.Attributes;
+using Silk.NET.Core.Contexts;
+using Silk.NET.Core.Loader;
+
+#pragma warning disable 1591
+
+namespace Silk.NET.WebGPU
+{
+    public unsafe readonly struct PfnDeviceCreateComputePipelineAsyncCallback : IDisposable
+    {
+        private readonly void* _handle;
+        public delegate* unmanaged[Cdecl]<CreatePipelineAsyncStatus, ComputePipeline*, byte*, void*, void> Handle => (delegate* unmanaged[Cdecl]<CreatePipelineAsyncStatus, ComputePipeline*, byte*, void*, void>) _handle;
+        public PfnDeviceCreateComputePipelineAsyncCallback
+        (
+            delegate* unmanaged[Cdecl]<CreatePipelineAsyncStatus, ComputePipeline*, byte*, void*, void> ptr
+        ) => _handle = ptr;
+
+        public PfnDeviceCreateComputePipelineAsyncCallback
+        (
+             DeviceCreateComputePipelineAsyncCallback proc
+        ) => _handle = (void*) SilkMarshal.DelegateToPtr(proc);
+
+        public static PfnDeviceCreateComputePipelineAsyncCallback From(DeviceCreateComputePipelineAsyncCallback proc) => new PfnDeviceCreateComputePipelineAsyncCallback(proc);
+        public void Dispose() => SilkMarshal.Free((nint) _handle);
+
+        public static implicit operator nint(PfnDeviceCreateComputePipelineAsyncCallback pfn) => (nint) pfn.Handle;
+        public static explicit operator PfnDeviceCreateComputePipelineAsyncCallback(nint pfn)
+            => new PfnDeviceCreateComputePipelineAsyncCallback((delegate* unmanaged[Cdecl]<CreatePipelineAsyncStatus, ComputePipeline*, byte*, void*, void>) pfn);
+
+        public static implicit operator PfnDeviceCreateComputePipelineAsyncCallback(DeviceCreateComputePipelineAsyncCallback proc)
+            => new PfnDeviceCreateComputePipelineAsyncCallback(proc);
+
+        public static explicit operator DeviceCreateComputePipelineAsyncCallback(PfnDeviceCreateComputePipelineAsyncCallback pfn)
+            => SilkMarshal.PtrToDelegate<DeviceCreateComputePipelineAsyncCallback>(pfn);
+
+        public static implicit operator delegate* unmanaged[Cdecl]<CreatePipelineAsyncStatus, ComputePipeline*, byte*, void*, void>(PfnDeviceCreateComputePipelineAsyncCallback pfn) => pfn.Handle;
+        public static implicit operator PfnDeviceCreateComputePipelineAsyncCallback(delegate* unmanaged[Cdecl]<CreatePipelineAsyncStatus, ComputePipeline*, byte*, void*, void> ptr) => new PfnDeviceCreateComputePipelineAsyncCallback(ptr);
+    }
+
+    [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
+    public unsafe delegate void DeviceCreateComputePipelineAsyncCallback(CreatePipelineAsyncStatus arg0, ComputePipeline* arg1, byte* arg2, void* arg3);
+}
+

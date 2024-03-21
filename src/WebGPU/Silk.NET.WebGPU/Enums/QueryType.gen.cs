@@ -14,10 +14,8 @@ namespace Silk.NET.WebGPU
     {
         [NativeName("Name", "WGPUQueryType_Occlusion")]
         Occlusion = 0x0,
-        [NativeName("Name", "WGPUQueryType_PipelineStatistics")]
-        PipelineStatistics = 0x1,
         [NativeName("Name", "WGPUQueryType_Timestamp")]
-        Timestamp = 0x2,
+        Timestamp = 0x1,
         [NativeName("Name", "WGPUQueryType_Force32")]
         Force32 = 0x7FFFFFFF,
     }
