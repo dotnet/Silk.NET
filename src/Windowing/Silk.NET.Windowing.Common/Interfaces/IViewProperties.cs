@@ -78,7 +78,8 @@ namespace Silk.NET.Windowing
         /// Preferred depth buffer bits of the window's framebuffer.
         /// </summary>
         /// <remarks>
-        /// Pass <c>null</c> or <c>-1</c> to use the system default. 
+        /// Pass <c>-1</c> to always use the system/backend default. Uses <c>24</c> as the default if <c>null</c> and
+        /// <see cref="PreferredStencilBufferBits"/> is also <c>null</c>
         /// </remarks>
         int? PreferredDepthBufferBits { get; }
 
@@ -86,7 +87,8 @@ namespace Silk.NET.Windowing
         /// Preferred stencil buffer bits of the window's framebuffer.
         /// </summary>
         /// <remarks>
-        /// Pass <c>null</c> or <c>-1</c> to use the system default. 
+        /// Pass <c>-1</c> to always use the system/backend default. Uses <c>8</c> as the default if <c>null</c> and
+        /// <see cref="PreferredDepthBufferBits"/> is also <c>null</c>
         /// </remarks>
         int? PreferredStencilBufferBits { get; }
 

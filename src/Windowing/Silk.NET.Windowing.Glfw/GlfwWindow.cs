@@ -376,8 +376,18 @@ namespace Silk.NET.Windowing.Glfw
             // Set video mode (-1 = don't care)
             
             _glfw.WindowHint(WindowHintInt.RefreshRate, opts.VideoMode.RefreshRate      ?? GLFW.Glfw.DontCare);
-            _glfw.WindowHint(WindowHintInt.DepthBits, opts.PreferredDepthBufferBits     ?? GLFW.Glfw.DontCare);
-            _glfw.WindowHint(WindowHintInt.StencilBits, opts.PreferredStencilBufferBits ?? GLFW.Glfw.DontCare);
+            _glfw.WindowHint(WindowHintInt.DepthBits, opts.PreferredDepthBufferBits switch
+            {
+                null when opts.PreferredStencilBufferBits is null => 24,
+                {} x => x,
+                _ => GLFW.Glfw.DontCare
+            });
+            _glfw.WindowHint(WindowHintInt.StencilBits, opts.PreferredStencilBufferBits switch
+            {
+                null when opts.PreferredDepthBufferBits is null => 8,
+                {} x => x,
+                _ => GLFW.Glfw.DontCare
+            });
             
             _glfw.WindowHint(WindowHintInt.RedBits,   opts.PreferredBitDepth?.X ?? GLFW.Glfw.DontCare);
             _glfw.WindowHint(WindowHintInt.GreenBits, opts.PreferredBitDepth?.Y ?? GLFW.Glfw.DontCare);
