@@ -22,8 +22,11 @@ namespace Silk.NET.WebGPU.Extensions.Dawn
         public SharedTextureMemoryOpaqueFDDescriptor
         (
             ChainedStruct? chain = null,
+            void* vkImageCreateInfo = null,
             int? memoryFD = null,
-            ulong? allocationSize = null
+            uint? memoryTypeIndex = null,
+            ulong? allocationSize = null,
+            Silk.NET.Core.Bool32? dedicatedAllocation = null
         ) : this()
         {
             if (chain is not null)
@@ -31,14 +34,29 @@ namespace Silk.NET.WebGPU.Extensions.Dawn
                 Chain = chain.Value;
             }
 
+            if (vkImageCreateInfo is not null)
+            {
+                VkImageCreateInfo = vkImageCreateInfo;
+            }
+
             if (memoryFD is not null)
             {
                 MemoryFD = memoryFD.Value;
             }
 
+            if (memoryTypeIndex is not null)
+            {
+                MemoryTypeIndex = memoryTypeIndex.Value;
+            }
+
             if (allocationSize is not null)
             {
                 AllocationSize = allocationSize.Value;
+            }
+
+            if (dedicatedAllocation is not null)
+            {
+                DedicatedAllocation = dedicatedAllocation.Value;
             }
         }
 
@@ -48,14 +66,29 @@ namespace Silk.NET.WebGPU.Extensions.Dawn
         [NativeName("Name", "chain")]
         public ChainedStruct Chain;
 
+        [NativeName("Type", "const void *")]
+        [NativeName("Type.Name", "const void *")]
+        [NativeName("Name", "vkImageCreateInfo")]
+        public void* VkImageCreateInfo;
+
         [NativeName("Type", "int")]
         [NativeName("Type.Name", "int")]
         [NativeName("Name", "memoryFD")]
         public int MemoryFD;
 
+        [NativeName("Type", "uint32_t")]
+        [NativeName("Type.Name", "uint32_t")]
+        [NativeName("Name", "memoryTypeIndex")]
+        public uint MemoryTypeIndex;
+
         [NativeName("Type", "uint64_t")]
         [NativeName("Type.Name", "uint64_t")]
         [NativeName("Name", "allocationSize")]
         public ulong AllocationSize;
+
+        [NativeName("Type", "WGPUBool")]
+        [NativeName("Type.Name", "WGPUBool")]
+        [NativeName("Name", "dedicatedAllocation")]
+        public Silk.NET.Core.Bool32 DedicatedAllocation;
     }
 }

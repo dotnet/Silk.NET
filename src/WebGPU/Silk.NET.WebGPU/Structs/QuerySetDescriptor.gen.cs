@@ -24,9 +24,7 @@ namespace Silk.NET.WebGPU
             ChainedStruct* nextInChain = null,
             byte* label = null,
             QueryType? type = null,
-            uint? count = null,
-            PipelineStatisticName* pipelineStatistics = null,
-            nuint? pipelineStatisticCount = null
+            uint? count = null
         ) : this()
         {
             if (nextInChain is not null)
@@ -47,16 +45,6 @@ namespace Silk.NET.WebGPU
             if (count is not null)
             {
                 Count = count.Value;
-            }
-
-            if (pipelineStatistics is not null)
-            {
-                PipelineStatistics = pipelineStatistics;
-            }
-
-            if (pipelineStatisticCount is not null)
-            {
-                PipelineStatisticCount = pipelineStatisticCount.Value;
             }
         }
 
@@ -80,15 +68,5 @@ namespace Silk.NET.WebGPU
         [NativeName("Type.Name", "uint32_t")]
         [NativeName("Name", "count")]
         public uint Count;
-
-        [NativeName("Type", "const WGPUPipelineStatisticName *")]
-        [NativeName("Type.Name", "const WGPUPipelineStatisticName *")]
-        [NativeName("Name", "pipelineStatistics")]
-        public PipelineStatisticName* PipelineStatistics;
-
-        [NativeName("Type", "size_t")]
-        [NativeName("Type.Name", "size_t")]
-        [NativeName("Name", "pipelineStatisticCount")]
-        public nuint PipelineStatisticCount;
     }
 }

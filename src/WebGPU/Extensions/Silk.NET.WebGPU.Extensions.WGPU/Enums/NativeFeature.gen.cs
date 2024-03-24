@@ -26,6 +26,12 @@ namespace Silk.NET.WebGPU.Extensions.WGPU
         TextureBindingArray = 0x30006,
         [NativeName("Name", "WGPUNativeFeature_SampledTextureAndStorageBufferArrayNonUniformIndexing")]
         SampledTextureAndStorageBufferArrayNonUniformIndexing = 0x30007,
+        [NativeName("Name", "WGPUNativeFeature_PipelineStatisticsQuery")]
+        PipelineStatisticsQuery = 0x30008,
+        [NativeName("Name", "WGPUNativeFeature_StorageResourceBindingArray")]
+        StorageResourceBindingArray = 0x30009,
+        [NativeName("Name", "WGPUNativeFeature_PartiallyBoundBindingArray")]
+        PartiallyBoundBindingArray = 0x3000A,
         [NativeName("Name", "WGPUNativeFeature_Force32")]
         Force32 = 0x7FFFFFFF,
     }

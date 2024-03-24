@@ -55,6 +55,9 @@ namespace Silk.NET.SDL
         [Obsolete("Deprecated in favour of \"NintendoSwitchJoyconPair\"")]
         [NativeName("Name", "SDL_CONTROLLER_TYPE_NINTENDO_SWITCH_JOYCON_PAIR")]
         ControllerTypeNintendoSwitchJoyconPair = 0xD,
+        [Obsolete("Deprecated in favour of \"Max\"")]
+        [NativeName("Name", "SDL_CONTROLLER_TYPE_MAX")]
+        ControllerTypeMax = 0xE,
         [NativeName("Name", "SDL_CONTROLLER_TYPE_UNKNOWN")]
         Unknown = 0x0,
         [NativeName("Name", "SDL_CONTROLLER_TYPE_XBOX360")]
@@ -83,5 +86,7 @@ namespace Silk.NET.SDL
         NintendoSwitchJoyconRight = 0xC,
         [NativeName("Name", "SDL_CONTROLLER_TYPE_NINTENDO_SWITCH_JOYCON_PAIR")]
         NintendoSwitchJoyconPair = 0xD,
+        [NativeName("Name", "SDL_CONTROLLER_TYPE_MAX")]
+        Max = 0xE,
     }
 }

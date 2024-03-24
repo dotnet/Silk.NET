@@ -17,11 +17,12 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkPhysicalDeviceLineRasterizationFeaturesEXT")]
+    [NativeName("AliasOf", "VkPhysicalDeviceLineRasterizationFeaturesKHR")]
     public unsafe partial struct PhysicalDeviceLineRasterizationFeaturesEXT : IExtendsChain<PhysicalDeviceFeatures2>, IExtendsChain<PhysicalDeviceFeatures2KHR>, IExtendsChain<DeviceCreateInfo>
     {
         public PhysicalDeviceLineRasterizationFeaturesEXT
         (
-            StructureType? sType = StructureType.PhysicalDeviceLineRasterizationFeaturesExt,
+            StructureType? sType = StructureType.PhysicalDeviceLineRasterizationFeaturesKhr,
             void* pNext = null,
             Bool32? rectangularLines = null,
             Bool32? bresenhamLines = null,
@@ -116,7 +117,7 @@ namespace Silk.NET.Vulkan
         /// <inheritdoc />
         StructureType IStructuredType.StructureType()
         {
-            return SType = StructureType.PhysicalDeviceLineRasterizationFeaturesExt;
+            return SType = StructureType.PhysicalDeviceLineRasterizationFeaturesKhr;
         }
 
         /// <inheritdoc />

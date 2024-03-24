@@ -21,12 +21,11 @@ namespace Silk.NET.WebGPU.Extensions.WGPU
     {
         public GlobalReport
         (
-            StorageReport? surfaces = null,
+            RegistryReport? surfaces = null,
             BackendType? backendType = null,
             HubReport? vulkan = null,
             HubReport? metal = null,
             HubReport? dx12 = null,
-            HubReport? dx11 = null,
             HubReport? gl = null
         ) : this()
         {
@@ -55,11 +54,6 @@ namespace Silk.NET.WebGPU.Extensions.WGPU
                 Dx12 = dx12.Value;
             }
 
-            if (dx11 is not null)
-            {
-                Dx11 = dx11.Value;
-            }
-
             if (gl is not null)
             {
                 Gl = gl.Value;
@@ -67,10 +61,10 @@ namespace Silk.NET.WebGPU.Extensions.WGPU
         }
 
 
-        [NativeName("Type", "WGPUStorageReport")]
-        [NativeName("Type.Name", "WGPUStorageReport")]
+        [NativeName("Type", "WGPURegistryReport")]
+        [NativeName("Type.Name", "WGPURegistryReport")]
         [NativeName("Name", "surfaces")]
-        public StorageReport Surfaces;
+        public RegistryReport Surfaces;
 
         [NativeName("Type", "WGPUBackendType")]
         [NativeName("Type.Name", "WGPUBackendType")]
@@ -91,11 +85,6 @@ namespace Silk.NET.WebGPU.Extensions.WGPU
         [NativeName("Type.Name", "WGPUHubReport")]
         [NativeName("Name", "dx12")]
         public HubReport Dx12;
-
-        [NativeName("Type", "WGPUHubReport")]
-        [NativeName("Type.Name", "WGPUHubReport")]
-        [NativeName("Name", "dx11")]
-        public HubReport Dx11;
 
         [NativeName("Type", "WGPUHubReport")]
         [NativeName("Type.Name", "WGPUHubReport")]

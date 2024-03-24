@@ -20,24 +20,22 @@ namespace Silk.NET.WebGPU
         Depth32floatStencil8 = 0x2,
         [NativeName("Name", "WGPUFeatureName_TimestampQuery")]
         TimestampQuery = 0x3,
-        [NativeName("Name", "WGPUFeatureName_PipelineStatisticsQuery")]
-        PipelineStatisticsQuery = 0x4,
         [NativeName("Name", "WGPUFeatureName_TextureCompressionBC")]
-        TextureCompressionBC = 0x5,
+        TextureCompressionBC = 0x4,
         [NativeName("Name", "WGPUFeatureName_TextureCompressionETC2")]
-        TextureCompressionEtc2 = 0x6,
+        TextureCompressionEtc2 = 0x5,
         [NativeName("Name", "WGPUFeatureName_TextureCompressionASTC")]
-        TextureCompressionAstc = 0x7,
+        TextureCompressionAstc = 0x6,
         [NativeName("Name", "WGPUFeatureName_IndirectFirstInstance")]
-        IndirectFirstInstance = 0x8,
+        IndirectFirstInstance = 0x7,
         [NativeName("Name", "WGPUFeatureName_ShaderF16")]
-        ShaderF16 = 0x9,
+        ShaderF16 = 0x8,
         [NativeName("Name", "WGPUFeatureName_RG11B10UfloatRenderable")]
-        RG11B10UfloatRenderable = 0xA,
+        RG11B10UfloatRenderable = 0x9,
         [NativeName("Name", "WGPUFeatureName_BGRA8UnormStorage")]
-        Bgra8UnormStorage = 0xB,
+        Bgra8UnormStorage = 0xA,
         [NativeName("Name", "WGPUFeatureName_Float32Filterable")]
-        Float32filterable = 0xC,
+        Float32filterable = 0xB,
         [NativeName("Name", "WGPUFeatureName_Force32")]
         Force32 = 0x7FFFFFFF,
     }

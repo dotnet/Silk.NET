@@ -22,7 +22,10 @@ namespace Silk.NET.WebGPU.Extensions.Dawn
         public DawnCacheDeviceDescriptor
         (
             ChainedStruct? chain = null,
-            byte* isolationKey = null
+            byte* isolationKey = null,
+            PfnDawnLoadCacheDataFunction? loadDataFunction = null,
+            PfnDawnStoreCacheDataFunction? storeDataFunction = null,
+            void* functionUserdata = null
         ) : this()
         {
             if (chain is not null)
@@ -33,6 +36,21 @@ namespace Silk.NET.WebGPU.Extensions.Dawn
             if (isolationKey is not null)
             {
                 IsolationKey = isolationKey;
+            }
+
+            if (loadDataFunction is not null)
+            {
+                LoadDataFunction = loadDataFunction.Value;
+            }
+
+            if (storeDataFunction is not null)
+            {
+                StoreDataFunction = storeDataFunction.Value;
+            }
+
+            if (functionUserdata is not null)
+            {
+                FunctionUserdata = functionUserdata;
             }
         }
 
@@ -46,5 +64,20 @@ namespace Silk.NET.WebGPU.Extensions.Dawn
         [NativeName("Type.Name", "const char *")]
         [NativeName("Name", "isolationKey")]
         public byte* IsolationKey;
+
+        [NativeName("Type", "WGPUDawnLoadCacheDataFunction")]
+        [NativeName("Type.Name", "WGPUDawnLoadCacheDataFunction")]
+        [NativeName("Name", "loadDataFunction")]
+        public PfnDawnLoadCacheDataFunction LoadDataFunction;
+
+        [NativeName("Type", "WGPUDawnStoreCacheDataFunction")]
+        [NativeName("Type.Name", "WGPUDawnStoreCacheDataFunction")]
+        [NativeName("Name", "storeDataFunction")]
+        public PfnDawnStoreCacheDataFunction StoreDataFunction;
+
+        [NativeName("Type", "void *")]
+        [NativeName("Type.Name", "void *")]
+        [NativeName("Name", "functionUserdata")]
+        public void* FunctionUserdata;
     }
 }

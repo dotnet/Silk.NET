@@ -30,12 +30,12 @@ partial class Build {
 const std = @import(""std"");
 const fs = std.fs;
 
-const spirv_tools_root = root_path ++ ""third_party/spirv-tools/"";
-const root_glslang_path = root_path ++ ""third_party/glslang/"";
+const spirv_tools_root = ""third_party/spirv-tools/"";
+const root_glslang_path = ""third_party/glslang/"";
 
 const grammar_processing_script = spirv_tools_root ++ ""utils/generate_grammar_tables.py"";
 
-const spirv_headers_include_dir = root_path ++ ""third_party/spirv-headers/include/"";
+const spirv_headers_include_dir = ""third_party/spirv-headers/include/"";
 const debuginfo_grammar_json_file = spirv_headers_include_dir ++ ""spirv/unified1/extinst.debuginfo.grammar.json"";
 const glsl_grammar_file = spirv_headers_include_dir ++ ""spirv/unified1/extinst.glsl.std.450.grammar.json"";
 const opencl_grammar_file = spirv_headers_include_dir ++ ""spirv/unified1/extinst.opencl.std.100.grammar.json"";
@@ -158,7 +158,7 @@ fn spvTools(b: *std.Build, target: std.Build.ResolvedTarget, optimize: std.built
     spirv_tools.addIncludePath(.{ .path = spirv_tools_root ++ ""source"" });
     spirv_tools.addIncludePath(.{ .path = spirv_tools_root });
 
-    spirv_tools.addIncludePath(.{ .path = root_path ++ ""third_party/spirv-headers/include/"" });
+    spirv_tools.addIncludePath(.{ .path = ""third_party/spirv-headers/include/"" });
 
     spirv_tools.addCSourceFiles(.{
         .files = &.{
@@ -296,6 +296,7 @@ fn spvTools(b: *std.Build, target: std.Build.ResolvedTarget, optimize: std.built
             spirv_tools_root ++ ""source/opt/ir_loader.cpp"",
             spirv_tools_root ++ ""source/opt/licm_pass.cpp"",
             spirv_tools_root ++ ""source/opt/liveness.cpp"",
+            spirv_tools_root ++ ""source/opt/modify_maximal_reconvergence.cpp"",
             spirv_tools_root ++ ""source/opt/local_access_chain_convert_pass.cpp"",
             spirv_tools_root ++ ""source/opt/local_redundancy_elimination.cpp"",
             spirv_tools_root ++ ""source/opt/local_single_block_elim_pass.cpp"",
@@ -461,8 +462,6 @@ fn glslangLib(b: *std.Build, target: std.Build.ResolvedTarget, optimize: std.bui
         glslang.addCSourceFiles(.{ .files = &.{root_glslang_path ++ ""glslang/OSDependent/Unix/ossource.cpp""}, .flags = flags });
     }
 
-    glslang.addCSourceFiles(.{ .files = &.{root_glslang_path ++ ""OGLCompilersDLL/InitializeDll.cpp""}, .flags = flags });
-
     glslang.addCSourceFiles(.{
         .files = &.{
             root_glslang_path ++ ""SPIRV/GlslangToSpv.cpp"",
@@ -506,26 +505,26 @@ pub fn build(b: *std.Build) void {
     });
     shaderc_util.linkLibC();
     shaderc_util.linkLibCpp();
-    shaderc_util.addIncludePath(.{ .path = root_path ++ ""libshaderc/include"" });
-    shaderc_util.addIncludePath(.{ .path = root_path ++ ""libshaderc_util/include"" });
+    shaderc_util.addIncludePath(.{ .path = ""libshaderc/include"" });
+    shaderc_util.addIncludePath(.{ .path = ""libshaderc_util/include"" });
 
-    shaderc_util.addIncludePath(.{ .path = root_path ++ ""third_party/glslang"" });
-    shaderc_util.addIncludePath(.{ .path = root_path ++ ""third_party/spirv-tools/include"" });
-    shaderc_util.addIncludePath(.{ .path = root_path ++ ""third_party/spirv-headers/include/"" });
+    shaderc_util.addIncludePath(.{ .path = ""third_party/glslang"" });
+    shaderc_util.addIncludePath(.{ .path = ""third_party/spirv-tools/include"" });
+    shaderc_util.addIncludePath(.{ .path = ""third_party/spirv-headers/include/"" });
 
     shaderc_util.defineCMacro(""ENABLE_HLSL"", ""1"");
 
     shaderc_util.addCSourceFiles(.{
         .files = &.{
-            root_path ++ ""libshaderc_util/src/args.cc"",
-            root_path ++ ""libshaderc_util/src/compiler.cc"",
-            root_path ++ ""libshaderc_util/src/file_finder.cc"",
-            root_path ++ ""libshaderc_util/src/io_shaderc.cc"",
-            root_path ++ ""libshaderc_util/src/message.cc"",
-            root_path ++ ""libshaderc_util/src/resources.cc"",
-            root_path ++ ""libshaderc_util/src/shader_stage.cc"",
-            root_path ++ ""libshaderc_util/src/spirv_tools_wrapper.cc"",
-            root_path ++ ""libshaderc_util/src/version_profile.cc"",
+            ""libshaderc_util/src/args.cc"",
+            ""libshaderc_util/src/compiler.cc"",
+            ""libshaderc_util/src/file_finder.cc"",
+            ""libshaderc_util/src/io_shaderc.cc"",
+            ""libshaderc_util/src/message.cc"",
+            ""libshaderc_util/src/resources.cc"",
+            ""libshaderc_util/src/shader_stage.cc"",
+            ""libshaderc_util/src/spirv_tools_wrapper.cc"",
+            ""libshaderc_util/src/version_profile.cc"",
         },
         .flags = flags,
     });
@@ -548,28 +547,22 @@ pub fn build(b: *std.Build) void {
         shaderc.root_module.strip = true;
     }
 
-    shaderc.addIncludePath(.{ .path = root_path ++ ""libshaderc/include"" });
-    shaderc.addIncludePath(.{ .path = root_path ++ ""libshaderc_util/include"" });
+    shaderc.addIncludePath(.{ .path = ""libshaderc/include"" });
+    shaderc.addIncludePath(.{ .path = ""libshaderc_util/include"" });
 
-    shaderc.addIncludePath(.{ .path = root_path ++ ""third_party/glslang"" });
-    shaderc.addIncludePath(.{ .path = root_path ++ ""third_party/spirv-tools/include"" });
-    shaderc.addIncludePath(.{ .path = root_path ++ ""third_party/spirv-headers/include/"" });
+    shaderc.addIncludePath(.{ .path = ""third_party/glslang"" });
+    shaderc.addIncludePath(.{ .path = ""third_party/spirv-tools/include"" });
+    shaderc.addIncludePath(.{ .path = ""third_party/spirv-headers/include/"" });
 
     shaderc.addCSourceFiles(.{
         .files = &.{
-            root_path ++ ""libshaderc/src/shaderc.cc"",
+            ""libshaderc/src/shaderc.cc"",
         },
         .flags = flags,
     });
 
     b.installArtifact(shaderc);
 }
-
-fn rootDir() []const u8 {
-    return std.fs.path.dirname(@src().file) orelse ""."";
-}
-
-const root_path = rootDir() ++ ""/"";
 ";
 
     AbsolutePath ShadercPath => RootDirectory / "build" / "submodules" / "shaderc";

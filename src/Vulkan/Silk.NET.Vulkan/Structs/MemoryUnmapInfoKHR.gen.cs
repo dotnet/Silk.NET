@@ -23,7 +23,7 @@ namespace Silk.NET.Vulkan
         (
             StructureType? sType = StructureType.MemoryUnmapInfoKhr,
             void* pNext = null,
-            uint? flags = null,
+            MemoryUnmapFlagsKHR? flags = null,
             DeviceMemory? memory = null
         ) : this()
         {
@@ -62,7 +62,7 @@ namespace Silk.NET.Vulkan
         [NativeName("Type", "VkMemoryUnmapFlagsKHR")]
         [NativeName("Type.Name", "VkMemoryUnmapFlagsKHR")]
         [NativeName("Name", "flags")]
-        public uint Flags;
+        public MemoryUnmapFlagsKHR Flags;
 /// <summary></summary>
         [NativeName("Type", "VkDeviceMemory")]
         [NativeName("Type.Name", "VkDeviceMemory")]

@@ -16,6 +16,8 @@
         <Content Include="runtimes\iossimulator\native\libMoltenVK.a" PackagePath="runtimes\iossimulator\native\libMoltenVK.a" />
         <Content Include="runtimes\maccatalyst\native\libMoltenVK.a" PackagePath="runtimes\maccatalyst\native\libMoltenVK.a" />
         <Content Include="runtimes\ios\native\libMoltenVK.a" PackagePath="runtimes\ios\native\libMoltenVK.a" />
+        <Content Include="runtimes\osx\native\libMoltenVK.dylib" PackagePath="runtimes\osx\native\libMoltenVK.dylib" />
+        <Content Include="runtimes\osx\native\MoltenVK_icd.json" PackagePath="runtimes\osx\native\MoltenVK_icd.json" />
         <Content Include="build\netstandard2.0\Silk.NET.MoltenVK.Native.targets" PackagePath="build\netstandard2.0\Silk.NET.MoltenVK.Native.targets" />
     </ItemGroup>
 

@@ -93,6 +93,10 @@ namespace Silk.NET.SDL
         Controllertouchpadup = 0x658,
         [NativeName("Name", "SDL_CONTROLLERSENSORUPDATE")]
         Controllersensorupdate = 0x659,
+        [NativeName("Name", "SDL_CONTROLLERUPDATECOMPLETE_RESERVED_FOR_SDL3")]
+        ControllerupdatecompleteReservedForSdl3 = 0x65A,
+        [NativeName("Name", "SDL_CONTROLLERSTEAMHANDLEUPDATED")]
+        Controllersteamhandleupdated = 0x65B,
         [NativeName("Name", "SDL_FINGERDOWN")]
         Fingerdown = 0x700,
         [NativeName("Name", "SDL_FINGERUP")]

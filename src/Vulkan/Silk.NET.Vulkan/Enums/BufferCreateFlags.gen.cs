@@ -33,6 +33,9 @@ namespace Silk.NET.Vulkan
         [Obsolete("Deprecated in favour of \"DescriptorBufferCaptureReplayBitExt\"")]
         [NativeName("Name", "VK_BUFFER_CREATE_DESCRIPTOR_BUFFER_CAPTURE_REPLAY_BIT_EXT")]
         BufferCreateDescriptorBufferCaptureReplayBitExt = 32,
+        [Obsolete("Deprecated in favour of \"VideoProfileIndependentBitKhr\"")]
+        [NativeName("Name", "VK_BUFFER_CREATE_VIDEO_PROFILE_INDEPENDENT_BIT_KHR")]
+        BufferCreateVideoProfileIndependentBitKhr = 64,
         [Obsolete("Deprecated in favour of \"ProtectedBit\"")]
         [NativeName("Name", "VK_BUFFER_CREATE_PROTECTED_BIT")]
         BufferCreateProtectedBit = 8,
@@ -51,6 +54,8 @@ namespace Silk.NET.Vulkan
         DeviceAddressCaptureReplayBitKhr = 16,
         [NativeName("Name", "VK_BUFFER_CREATE_DESCRIPTOR_BUFFER_CAPTURE_REPLAY_BIT_EXT")]
         DescriptorBufferCaptureReplayBitExt = 32,
+        [NativeName("Name", "VK_BUFFER_CREATE_VIDEO_PROFILE_INDEPENDENT_BIT_KHR")]
+        VideoProfileIndependentBitKhr = 64,
         [NativeName("Name", "VK_BUFFER_CREATE_PROTECTED_BIT")]
         ProtectedBit = 8,
         [NativeName("Name", "VK_BUFFER_CREATE_DEVICE_ADDRESS_CAPTURE_REPLAY_BIT")]

@@ -9,7 +9,7 @@ using Silk.NET.Core.Attributes;
 
 namespace Silk.NET.SDL
 {
-    [NativeName("AnonymousName", "__AnonymousEnum_SDL_pixels_L171_C9")]
+    [NativeName("AnonymousName", "__AnonymousEnum_SDL_pixels_L175_C9")]
     [NativeName("Name", "SDL_PixelFormatEnum")]
     public enum PixelFormatEnum : int
     {
@@ -22,6 +22,12 @@ namespace Silk.NET.SDL
         [Obsolete("Deprecated in favour of \"Index1Msb\"")]
         [NativeName("Name", "SDL_PIXELFORMAT_INDEX1MSB")]
         PixelformatIndex1Msb = 0x11200100,
+        [Obsolete("Deprecated in favour of \"Index2Lsb\"")]
+        [NativeName("Name", "SDL_PIXELFORMAT_INDEX2LSB")]
+        PixelformatIndex2Lsb = 0x1C100200,
+        [Obsolete("Deprecated in favour of \"Index2Msb\"")]
+        [NativeName("Name", "SDL_PIXELFORMAT_INDEX2MSB")]
+        PixelformatIndex2Msb = 0x1C200200,
         [Obsolete("Deprecated in favour of \"Index4Lsb\"")]
         [NativeName("Name", "SDL_PIXELFORMAT_INDEX4LSB")]
         PixelformatIndex4Lsb = 0x12100400,
@@ -139,6 +145,18 @@ namespace Silk.NET.SDL
         [Obsolete("Deprecated in favour of \"Abgr32\"")]
         [NativeName("Name", "SDL_PIXELFORMAT_ABGR32")]
         PixelformatAbgr32 = 0x16462004,
+        [Obsolete("Deprecated in favour of \"Rgbx32\"")]
+        [NativeName("Name", "SDL_PIXELFORMAT_RGBX32")]
+        PixelformatRgbx32 = 0x16561804,
+        [Obsolete("Deprecated in favour of \"Xrgb32\"")]
+        [NativeName("Name", "SDL_PIXELFORMAT_XRGB32")]
+        PixelformatXrgb32 = 0x16661804,
+        [Obsolete("Deprecated in favour of \"Bgrx32\"")]
+        [NativeName("Name", "SDL_PIXELFORMAT_BGRX32")]
+        PixelformatBgrx32 = 0x16161804,
+        [Obsolete("Deprecated in favour of \"Xbgr32\"")]
+        [NativeName("Name", "SDL_PIXELFORMAT_XBGR32")]
+        PixelformatXbgr32 = 0x16261804,
         [Obsolete("Deprecated in favour of \"YV12\"")]
         [NativeName("Name", "SDL_PIXELFORMAT_YV12")]
         PixelformatYV12 = 0x32315659,
@@ -169,6 +187,10 @@ namespace Silk.NET.SDL
         Index1Lsb = 0x11100100,
         [NativeName("Name", "SDL_PIXELFORMAT_INDEX1MSB")]
         Index1Msb = 0x11200100,
+        [NativeName("Name", "SDL_PIXELFORMAT_INDEX2LSB")]
+        Index2Lsb = 0x1C100200,
+        [NativeName("Name", "SDL_PIXELFORMAT_INDEX2MSB")]
+        Index2Msb = 0x1C200200,
         [NativeName("Name", "SDL_PIXELFORMAT_INDEX4LSB")]
         Index4Lsb = 0x12100400,
         [NativeName("Name", "SDL_PIXELFORMAT_INDEX4MSB")]
@@ -247,6 +269,14 @@ namespace Silk.NET.SDL
         Bgra32 = 0x16362004,
         [NativeName("Name", "SDL_PIXELFORMAT_ABGR32")]
         Abgr32 = 0x16462004,
+        [NativeName("Name", "SDL_PIXELFORMAT_RGBX32")]
+        Rgbx32 = 0x16561804,
+        [NativeName("Name", "SDL_PIXELFORMAT_XRGB32")]
+        Xrgb32 = 0x16661804,
+        [NativeName("Name", "SDL_PIXELFORMAT_BGRX32")]
+        Bgrx32 = 0x16161804,
+        [NativeName("Name", "SDL_PIXELFORMAT_XBGR32")]
+        Xbgr32 = 0x16261804,
         [NativeName("Name", "SDL_PIXELFORMAT_YV12")]
         YV12 = 0x32315659,
         [NativeName("Name", "SDL_PIXELFORMAT_IYUV")]

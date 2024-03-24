@@ -22,12 +22,11 @@ namespace Silk.NET.WebGPU.Extensions.Dawn
         public SharedTextureMemoryDmaBufDescriptor
         (
             ChainedStruct? chain = null,
-            int? memoryFD = null,
-            ulong? allocationSize = null,
+            Extent3D? size = null,
+            uint? drmFormat = null,
             ulong? drmModifier = null,
             nuint? planeCount = null,
-            ulong* planeOffsets = null,
-            uint* planeStrides = null
+            SharedTextureMemoryDmaBufPlane* planes = null
         ) : this()
         {
             if (chain is not null)
@@ -35,14 +34,14 @@ namespace Silk.NET.WebGPU.Extensions.Dawn
                 Chain = chain.Value;
             }
 
-            if (memoryFD is not null)
+            if (size is not null)
             {
-                MemoryFD = memoryFD.Value;
+                Size = size.Value;
             }
 
-            if (allocationSize is not null)
+            if (drmFormat is not null)
             {
-                AllocationSize = allocationSize.Value;
+                DrmFormat = drmFormat.Value;
             }
 
             if (drmModifier is not null)
@@ -55,14 +54,9 @@ namespace Silk.NET.WebGPU.Extensions.Dawn
                 PlaneCount = planeCount.Value;
             }
 
-            if (planeOffsets is not null)
+            if (planes is not null)
             {
-                PlaneOffsets = planeOffsets;
-            }
-
-            if (planeStrides is not null)
-            {
-                PlaneStrides = planeStrides;
+                Planes = planes;
             }
         }
 
@@ -72,15 +66,15 @@ namespace Silk.NET.WebGPU.Extensions.Dawn
         [NativeName("Name", "chain")]
         public ChainedStruct Chain;
 
-        [NativeName("Type", "int")]
-        [NativeName("Type.Name", "int")]
-        [NativeName("Name", "memoryFD")]
-        public int MemoryFD;
+        [NativeName("Type", "WGPUExtent3D")]
+        [NativeName("Type.Name", "WGPUExtent3D")]
+        [NativeName("Name", "size")]
+        public Extent3D Size;
 
-        [NativeName("Type", "uint64_t")]
-        [NativeName("Type.Name", "uint64_t")]
-        [NativeName("Name", "allocationSize")]
-        public ulong AllocationSize;
+        [NativeName("Type", "uint32_t")]
+        [NativeName("Type.Name", "uint32_t")]
+        [NativeName("Name", "drmFormat")]
+        public uint DrmFormat;
 
         [NativeName("Type", "uint64_t")]
         [NativeName("Type.Name", "uint64_t")]
@@ -92,14 +86,9 @@ namespace Silk.NET.WebGPU.Extensions.Dawn
         [NativeName("Name", "planeCount")]
         public nuint PlaneCount;
 
-        [NativeName("Type", "const uint64_t *")]
-        [NativeName("Type.Name", "const uint64_t *")]
-        [NativeName("Name", "planeOffsets")]
-        public ulong* PlaneOffsets;
-
-        [NativeName("Type", "const uint32_t *")]
-        [NativeName("Type.Name", "const uint32_t *")]
-        [NativeName("Name", "planeStrides")]
-        public uint* PlaneStrides;
+        [NativeName("Type", "const WGPUSharedTextureMemoryDmaBufPlane *")]
+        [NativeName("Type.Name", "const WGPUSharedTextureMemoryDmaBufPlane *")]
+        [NativeName("Name", "planes")]
+        public SharedTextureMemoryDmaBufPlane* Planes;
     }
 }

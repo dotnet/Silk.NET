@@ -14,5 +14,7 @@ namespace Silk.NET.OpenCL.Extensions.KHR
     {
         [NativeName("Name", "CL_COMMAND_BUFFER_FLAGS_KHR")]
         Flags = 0x1293,
+        [NativeName("Name", "CL_COMMAND_BUFFER_MUTABLE_DISPATCH_ASSERTS_KHR")]
+        MutableDispatchAsserts = 0x12B7,
     }
 }
