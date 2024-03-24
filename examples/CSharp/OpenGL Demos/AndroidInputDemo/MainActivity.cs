@@ -34,6 +34,10 @@ namespace AndroidInputDemo
         private static int counter = 0;
 
         private static IInputContext input;
+        private static ITouchDevice currentTouchDevice;
+        private static Gesture trackedGestures = Gesture.All;
+        private static DoubleTapBehavior doubleTapBehavior = DoubleTapBehavior.EmitFirstSingleTap;
+        private static MultiGestureHandling multiGestureHandling = MultiGestureHandling.RecognizeBothGestures;
 
         /// <summary>
         /// This is where the application starts.
@@ -69,6 +73,15 @@ namespace AndroidInputDemo
 
             input.Keyboards[0].KeyChar += KeyChar;
 
+            if (input.PrimaryTouchDevice != null)
+                SetupTouchDevice(input.PrimaryTouchDevice);
+
+            input.ConnectionChanged += (device, connected) =>
+            {
+                if (connected && device is ITouchDevice touchDevice)
+                    SetupTouchDevice(touchDevice);
+            };
+
             Vbo = new BufferObject<float>(Gl, Vertices, BufferTargetARB.ArrayBuffer);
             Vao = new VertexArrayObject<float, uint>(Gl, Vbo, null);
 
@@ -82,12 +95,96 @@ namespace AndroidInputDemo
                 1.0f, 2.0f);
         }
 
+        private static void GestureRecognizer_Rotate(Vector2 position, float angle)
+        {
+            DebugLog($"Rotate gesture at {position} with rotation {angle} degree");
+        }
+
+        private static void GestureRecognizer_Zoom(Vector2 position, float zoom)
+        {
+            DebugLog($"Zoom gesture at {position} with zoom {zoom}");
+        }
+
+        private static void GestureRecognizer_Hold(Vector2 position)
+        {
+            Gl.ClearColor(1.0f, 0.0f, 0.0f, 1.0f);
+            DebugLog($"Hold gesture at {position}");
+        }
+
+        private static void GestureRecognizer_Swipe(Vector2 direction)
+        {
+            DebugLog($"Swipe gesture with direction {direction}");
+        }
+
+        private static void GestureRecognizer_DoubleTap(Vector2 position)
+        {
+            Gl.ClearColor(0.0f, 0.0f, 1.0f, 1.0f);
+            DebugLog($"Double Tap gesture at {position}");
+        }
+
+        private static void GestureRecognizer_Tap(Vector2 position)
+        {
+            Gl.ClearColor(0.0f, 1.0f, 0.0f, 1.0f);
+            DebugLog($"Tap gesture at {position}");
+        }
+
         private static void KeyChar(IKeyboard arg1, char arg2)
         {
             if (arg2 == 'c')
                 Array.Clear(Vertices);
             if (arg2 == 'k')
                 input.Keyboards[0].EndInput();
+            if (arg2 == 't')
+                ToggleGesture(Gesture.Tap);
+            if (arg2 == 'd')
+                ToggleGesture(Gesture.DoubleTap);
+            if (arg2 == 's')
+                ToggleGesture(Gesture.Swipe);
+            if (arg2 == 'h')
+                ToggleGesture(Gesture.Hold);
+            if (arg2 == 'z')
+                ToggleGesture(Gesture.Zoom);
+            if (arg2 == 'r')
+                ToggleGesture(Gesture.Rotate);
+            if (arg2 == '0')
+                SetDoubleTapBehavior(DoubleTapBehavior.WaitForDoubleTapTimeElapse);
+            if (arg2 == '1')
+                SetDoubleTapBehavior(DoubleTapBehavior.EmitFirstSingleTap);
+            if (arg2 == '2')
+                SetDoubleTapBehavior(DoubleTapBehavior.EmitBothSingleTaps);
+            if (arg2 == '7')
+                SetMultiGestureHandling(MultiGestureHandling.RecognizeBothGestures);
+            if (arg2 == '8')
+                SetMultiGestureHandling(MultiGestureHandling.PrioritizeZoomGesture);
+            if (arg2 == '9')
+                SetMultiGestureHandling(MultiGestureHandling.PrioritizeRotateGesture);
+        }
+
+        private static void ToggleGesture(Gesture gesture)
+        {
+            if (trackedGestures.HasFlag(gesture))
+                trackedGestures &= ~gesture;
+            else
+                trackedGestures |= gesture;
+
+            if (currentTouchDevice?.GestureRecognizer != null)
+                currentTouchDevice.GestureRecognizer.TrackedGestures = trackedGestures;
+        }
+
+        private static void SetDoubleTapBehavior(DoubleTapBehavior doubleTapBehavior)
+        {
+            MainActivity.doubleTapBehavior = doubleTapBehavior;
+
+            if (currentTouchDevice?.GestureRecognizer != null)
+                currentTouchDevice.GestureRecognizer.DoubleTapBehavior = doubleTapBehavior;
+        }
+
+        private static void SetMultiGestureHandling(MultiGestureHandling multiGestureHandling)
+        {
+            MainActivity.multiGestureHandling = multiGestureHandling;
+
+            if (currentTouchDevice?.GestureRecognizer != null)
+                currentTouchDevice.GestureRecognizer.MultiGestureHandling = multiGestureHandling;
         }
 
         private static void MouseDown(IMouse arg1, MouseButton arg2)
@@ -130,6 +227,42 @@ namespace AndroidInputDemo
             Vbo.Dispose();
             Vao.Dispose();
             Shader.Dispose();
+        }
+
+        private static void SetupTouchDevice(ITouchDevice touchDevice)
+        {
+            if (currentTouchDevice == touchDevice)
+                return;
+
+            TouchGestureRecognizer gestureRecognizer;
+
+            if (currentTouchDevice != null)
+            {
+                gestureRecognizer = currentTouchDevice.GestureRecognizer;
+                gestureRecognizer.Tap -= GestureRecognizer_Tap;
+                gestureRecognizer.DoubleTap -= GestureRecognizer_DoubleTap;
+                gestureRecognizer.Swipe -= GestureRecognizer_Swipe;
+                gestureRecognizer.Hold -= GestureRecognizer_Hold;
+                gestureRecognizer.Zoom -= GestureRecognizer_Zoom;
+                gestureRecognizer.Rotate -= GestureRecognizer_Rotate;
+            }
+
+            currentTouchDevice = touchDevice;
+            gestureRecognizer = currentTouchDevice.GestureRecognizer;
+            gestureRecognizer.TrackedGestures = trackedGestures;
+            gestureRecognizer.DoubleTapBehavior = doubleTapBehavior;
+            gestureRecognizer.MultiGestureHandling = multiGestureHandling;
+            gestureRecognizer.Tap += GestureRecognizer_Tap;
+            gestureRecognizer.DoubleTap += GestureRecognizer_DoubleTap;
+            gestureRecognizer.Swipe += GestureRecognizer_Swipe;
+            gestureRecognizer.Hold += GestureRecognizer_Hold;
+            gestureRecognizer.Zoom += GestureRecognizer_Zoom;
+            gestureRecognizer.Rotate += GestureRecognizer_Rotate;
+        }
+
+        private static void DebugLog(string message)
+        {
+            Android.Util.Log.Debug(nameof(AndroidInputDemo), message);
         }
     }
 }

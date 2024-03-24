@@ -3,9 +3,9 @@
 
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using Silk.NET.Input.Internals;
 using Silk.NET.SDL;
-using Silk.NET.Windowing;
 using Silk.NET.Windowing.Sdl;
 
 namespace Silk.NET.Input.Sdl
@@ -32,6 +32,14 @@ namespace Silk.NET.Input.Sdl
             );
             Keyboards = new IKeyboard[] {new SdlKeyboard(this)};
             Mice = new IMouse[] {new SdlMouse(this)};
+            int numTouchDevices = Sdl.GetNumTouchDevices();
+            SdlTouchDevices = new Dictionary<long, SdlTouchDevice>(numTouchDevices);
+            for (int i = 0; i < numTouchDevices; ++i)
+            {
+                long touchId = Sdl.GetTouchDevice(i);
+                SdlTouchDevices.Add(touchId, new SdlTouchDevice(this, touchId, Sdl.GetTouchDeviceType(touchId), i));
+            }
+            TouchDevices = new ReadOnlyCollectionListAdapter<SdlTouchDevice>(SdlTouchDevices.Values);
         }
 
         // Public properties
@@ -39,11 +47,14 @@ namespace Silk.NET.Input.Sdl
         public override IReadOnlyList<IJoystick> Joysticks { get; }
         public override IReadOnlyList<IKeyboard> Keyboards { get; }
         public override IReadOnlyList<IMouse> Mice { get; }
+        public override IReadOnlyList<ITouchDevice> TouchDevices { get; }
+        public override ITouchDevice? PrimaryTouchDevice => TouchDevices.FirstOrDefault(td => td.IsConnected) ?? SdlTouchDevices.FirstOrDefault(td => td.Value.TouchId == SdlTouchDevices.Count).Value;
         public override IReadOnlyList<IInputDevice> OtherDevices { get; } = Array.Empty<IInputDevice>();
 
         // Implementation-specific properties
         public Dictionary<int, SdlGamepad> SdlGamepads { get; }
         public Dictionary<int, SdlJoystick> SdlJoysticks { get; }
+        public Dictionary<long, SdlTouchDevice> SdlTouchDevices { get; }
 
         public SDL.Sdl Sdl => _sdlView.Sdl;
         public override nint Handle => Window.Handle;
@@ -238,11 +249,25 @@ namespace Silk.NET.Input.Sdl
                     case EventType.Fingerdown:
                     case EventType.Fingerup:
                     case EventType.Fingermotion:
-                    case EventType.Dollargesture:
-                    case EventType.Dollarrecord:
-                    case EventType.Multigesture:
                     {
-                        // TODO touch input
+                        if (SdlTouchDevices.TryGetValue(@event.Tfinger.TouchId, out var td))
+                        {
+                            if (!td.IsConnected)
+                            {
+                                td.IsConnected = true;
+                                ConnectionChanged?.Invoke(td, true);
+                            }
+
+                            td.DoEvent(@event);
+                        }
+                        else
+                        {
+                            var touchId = @event.Tfinger.TouchId;
+                            var touchDevice = new SdlTouchDevice(this, touchId, Sdl.GetTouchDeviceType(touchId), SdlTouchDevices.Count) { IsConnected = true };
+                            SdlTouchDevices.Add(touchId, touchDevice);
+                            ConnectionChanged?.Invoke(touchDevice, true);
+                            touchDevice.DoEvent(@event);
+                        }
                         break;
                     }
                     default:
@@ -266,6 +291,10 @@ namespace Silk.NET.Input.Sdl
             foreach (var gp in SdlGamepads.Values)
             {
                 gp.Update();
+            }
+            foreach (var td in SdlTouchDevices.Values)
+            {
+                td.Update();
             }
 
             // There's actually nowhere here that will raise an SDL error that we cause.
@@ -312,6 +341,11 @@ namespace Silk.NET.Input.Sdl
             foreach (var joy in SdlJoysticks.Values)
             {
                 joy.Dispose();
+            }
+
+            foreach (var td in SdlTouchDevices.Values)
+            {
+                td.Dispose();
             }
         }
 

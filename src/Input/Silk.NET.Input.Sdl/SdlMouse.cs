@@ -63,6 +63,7 @@ namespace Silk.NET.Input.Sdl
                 _scrollWheels[0] = default;
             }
             _wheelChanged = false;
+            HandleUpdate();
         }
 
         public void DoEvent(Event @event)
