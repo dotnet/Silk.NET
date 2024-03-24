@@ -26,10 +26,9 @@ jobs:
               sudo apt-get update 
 
               wget http://mirrors.kernel.org/ubuntu/pool/main/v/vulkan-loader/libvulkan-dev_1.3.239.0-1_amd64.deb
-              sudo apt install libvulkan-dev_1.3.239.0-1_amd64.deb
+              sudo apt install ./libvulkan-dev_1.3.239.0-1_amd64.deb
               
               sudo apt-get install -y xorg-dev spirv-headers wine64-development-tools cmake build-essential
-              
 
               wget http://mirrors.kernel.org/ubuntu/pool/universe/s/spirv-tools/spirv-tools_2020.1-2_amd64.deb
               sudo apt install ./spirv-tools_2020.1-2_amd64.deb
