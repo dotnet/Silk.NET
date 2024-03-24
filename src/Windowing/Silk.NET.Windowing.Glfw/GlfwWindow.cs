@@ -115,7 +115,7 @@ namespace Silk.NET.Windowing.Glfw
             }
         }
 
-        protected override IGLContext? CoreGLContext => _glContext ??= new(_glfw, _glfwWindow, this);
+        protected override IGLContext CoreGLContext => _glContext ??= new(_glfw, _glfwWindow, this);
 
         protected override IVkSurface? CoreVkSurface
         {
@@ -433,6 +433,8 @@ namespace Silk.NET.Windowing.Glfw
             {
                 _glfw.MakeContextCurrent(_glfwWindow);
             }
+
+            CoreGLContext.SwapInterval(opts.VSync ? 1 : 0);
 
             GLFW.Glfw.ThrowExceptions();
         }
