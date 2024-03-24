@@ -57,17 +57,29 @@ namespace Silk.NET.Input.Glfw
 
             for (var i = 0; i < btnCount; i++)
             {
-                ((Button[]) Buttons)[i] = new Button(ButtonName.Unknown, i, btn[i] == (int) InputAction.Press);
+                var thisBtn = new Button(ButtonName.Unknown, i, btn[i] == (int) InputAction.Press);
+                var shouldInvoke = ((Button[]) Buttons)[i].Pressed != thisBtn.Pressed;
+                ((Button[]) Buttons)[i] = thisBtn;
+                if (shouldInvoke)
+                {
+                    (thisBtn.Pressed ? ButtonDown : ButtonUp)?.Invoke(this, thisBtn);
+                }
             }
 
             for (var i = 0; i < axisCount; i++)
             {
-                ((Axis[]) Axes)[i] = new Axis(i, axes[i]);
+                var thisAxis = new Axis(i, Deadzone.Apply(axes[i]));
+                var shouldInvoke = ((Axis[]) Axes)[i].Position != thisAxis.Position;
+                ((Axis[]) Axes)[i] = thisAxis;
+                if (shouldInvoke)
+                {
+                    AxisMoved?.Invoke(this, thisAxis);
+                }
             }
 
             for (var i = 0; i < hatCount; i++)
             {
-                ((Hat[]) Hats)[i] = new Hat
+                var thisHat = new Hat
                 (
                     i, hats[i] switch
                     {
@@ -83,6 +95,12 @@ namespace Silk.NET.Input.Glfw
                         _ => Position2D.Centered
                     }
                 );
+                var shouldInvoke = ((Hat[]) Hats)[i].Position != thisHat.Position;
+                ((Hat[]) Hats)[i] = thisHat;
+                if (shouldInvoke)
+                {
+                    HatMoved?.Invoke(this, thisHat);
+                }
             }
 
             if (!_connected)
