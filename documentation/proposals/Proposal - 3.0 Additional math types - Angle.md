@@ -58,8 +58,11 @@ public readonly struct Angle<TScalar>
 {
     public Angle(TScalar radians) { }
 
-    /// <summary>Angle in degrees in the range [0, 360].</summary>
+    /// <summary>Angle in degrees in the range [0, 360]. Without fractional component.</summary>
     public TScalar Degrees { get; }
+
+    /// <summary>Angle in degrees in the range [0, 360]. With fractional component.</summary>
+    public TScalar TotalDegrees { get; }
 
     /// <summary>Angle in radians in range [π, -π].</summary>
     public TScalar Radians { get; }
@@ -146,13 +149,9 @@ public static class Angle
         where TScalar : IFloatingPointIeee754<TScalar>
          => default;
 
-    public static Angle<TScalar> FromMinutes<TScalar>(TScalar minutes)
+    public static Angle<TScalar> FromDegrees<TScalar>(TScalar degrees, TScalar minutes, TScalar seconds)
         where TScalar : IFloatingPointIeee754<TScalar>
-         => default;
-
-    public static Angle<TScalar> FromSeconds<TScalar>(TScalar seconds)
-        where TScalar : IFloatingPointIeee754<TScalar>
-         => default;
+        => default;
 
     public static Angle<TScalar> Min<TScalar>(Angle<TScalar> left, Angle<TScalar> right) 
         where TScalar : IFloatingPointIeee754<TScalar>
