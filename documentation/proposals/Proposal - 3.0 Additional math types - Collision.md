@@ -26,7 +26,9 @@ Where it is appropriate for a type in this proposal to have both integer and flo
 
 # Proposed API
 
-`BoundingOrientedBox<T>` is defined with a quaternion as it's orientation. `Quaternion<T>` is constrained by the `IBinaryFloatingPointIeee754<T>` scalar type. Therefore all bounding shapes with be constrained by the `IBinaryFloatingPointIeee754<T>` scalar type.
+`Silk.NET.Math` and the generic math proposal for 3.0 already contain "geometric types that would be suitable to use for collision/intersection types. i.e. Box3F.
+
+This proposal is to add additional APIs for the purpose of intersection tests.
 
 ### PlaneIntersectionType
 
@@ -132,52 +134,39 @@ public interface IColliderShape<TSelf, TScalar>
 }
 ```
 
-### BoundingBox
+### BoxF
 
-Access aligned box
+Additional interfaces/members for BoxF. Interface implementations not included for brevity.
 
 ```csharp
-public struct BoundingBox<TScalar>
-    : IEquatable<BoundingBox<TScalar>>
-    , IEqualityOperators<BoundingBox<TScalar>, BoundingBox<TScalar>, bool>
-    , IIntersectWithRay<BoundingBox<TScalar>, TScalar>
+public struct BoxF<TScalar>
+    : IIntersectWithRay<BoundingBox<TScalar>, TScalar>
     , IIntersectWithPlane<BoundingBox<TScalar>, TScalar>
     , IColliderShape<BoundingBox<TScalar>, TScalar>
     , IContainPoint<BoundingBox<TScalar>, TScalar>
-    , IIntersect<BoundingBox<TScalar>, BoundingBox<TScalar>>
+    , IIntersect<BoxF<TScalar>, BoxF<TScalar>>
     //Implement IIntersect for other shapes
-    , IContain<BoundingBox<TScalar>, BoundingBox<TScalar>>
+    , IContain<BoxF<TScalar>, BoxF<TScalar>>
     //Implement IContain for other shapes
-    , IFormattable
     where TScalar: IBinaryFloatingPointIeee754<TScalar>
 {
 
 }
 ```
 
-### BoundingBoxExtent
+### SphereF
 
-Access aligned box for fast frustum culling.
-
-```csharp
-
-```
-
-### BoundingOrientedBox
-
-Box with orientation
+Additional interfaces/members for SphereF. Interface implementations not included for brevity.
 
 ```csharp
-public struct BoundingOrientedBox<TScalar>
-    : IEquatable<BoundingOrientedBox<TScalar>>
-    , IEqualityOperators<BoundingOrientedBox<TScalar>, BoundingOrientedBox<TScalar>, bool>
-    , IIntersectWithRay<BoundingOrientedBox<TScalar>, TScalar>
-    , IIntersectWithPlane<BoundingOrientedBox<TScalar>, TScalar>
-    , IColliderShape<BoundingOrientedBox<TScalar>, TScalar>
-    , IContainPoint<BoundingOrientedBox<TScalar>, TScalar>
-    , IIntersect<BoundingOrientedBox<TScalar>, BoundingOrientedBox<TScalar>>
+public struct SphereF<TScalar>
+    , IIntersectWithRay<SphereF<TScalar>, TScalar>
+    , IIntersectWithPlane<SphereF<TScalar>, TScalar>
+    , IColliderShape<SphereF<TScalar>, TScalar>
+    , IContainPoint<SphereF<TScalar>, TScalar>
+    , IIntersect<SphereF<TScalar>, SphereF<TScalar>>
     //Implement IIntersect for other shapes
-    , IContain<BoundingOrientedBox<TScalar>, BoundingOrientedBox<TScalar>>
+    , IContain<SphereF<TScalar>, SphereF<TScalar>>
     //Implement IContain for other shapes
     , IFormattable
     where TScalar : IBinaryFloatingPointIeee754<TScalar>
@@ -186,35 +175,43 @@ public struct BoundingOrientedBox<TScalar>
 }
 ```
 
-### BoundingFrustum
+### BoxFExtent
+
+Access aligned box for fast frustum culling. Interface implementations not included for brevity.
+
+```csharp
+
+```
+
+### OrientedBoxF
+
+Box with orientation. Interface implementations not included for brevity.
+
+```csharp
+public struct OrientedBoxF<TScalar>
+    : IEquatable<OrientedBoxF<TScalar>>
+    , IEqualityOperators<OrientedBoxF<TScalar>, OrientedBoxF<TScalar>, bool>
+    , IIntersectWithRay<OrientedBoxF<TScalar>, TScalar>
+    , IIntersectWithPlane<OrientedBoxF<TScalar>, TScalar>
+    , IColliderShape<OrientedBoxF<TScalar>, TScalar>
+    , IContainPoint<OrientedBoxF<TScalar>, TScalar>
+    , IIntersect<OrientedBoxF<TScalar>, OrientedBoxF<TScalar>>
+    //Implement IIntersect for other shapes
+    , IContain<OrientedBoxF<TScalar>, OrientedBoxF<TScalar>>
+    //Implement IContain for other shapes
+    , IFormattable
+    where TScalar : IBinaryFloatingPointIeee754<TScalar>
+{
+
+}
+```
+
+### FrustumF
 
 Frustum
 
 ```csharp
 
-```
-
-### BoundingSphere
-
-Sphere
-
-```csharp
-public struct BoundingSphere<TScalar>
-    : IEquatable<BoundingSphere<TScalar>>
-    , IEqualityOperators<BoundingSphere<TScalar>, BoundingSphere<TScalar>, bool>
-    , IIntersectWithRay<BoundingSphere<TScalar>, TScalar>
-    , IIntersectWithPlane<BoundingSphere<TScalar>, TScalar>
-    , IColliderShape<BoundingSphere<TScalar>, TScalar>
-    , IContainPoint<BoundingSphere<TScalar>, TScalar>
-    , IIntersect<BoundingSphere<TScalar>, BoundingSphere<TScalar>>
-    //Implement IIntersect for other shapes
-    , IContain<BoundingSphere<TScalar>, BoundingSphere<TScalar>>
-    //Implement IContain for other shapes
-    , IFormattable
-    where TScalar : IBinaryFloatingPointIeee754<TScalar>
-{
-
-}
 ```
 
 ### CollisionHelper
