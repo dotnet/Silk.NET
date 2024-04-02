@@ -107,33 +107,37 @@ public class MixKhronosDataTests
 
     [Test, TestCaseSource(nameof(EnumTestCases))]
     public Task EnumsToGroups(string file, object data) =>
-        Verifier.Verify(
-            string.Join(
-                '\n',
-                ((MixKhronosData.JobData)data)
-                    .EnumsToGroups.OrderBy(x => x.Key)
-                    .Select(x => $"{x.Key} = {string.Join(", ", x.Value.Order())}")
+        Verifier
+            .Verify(
+                string.Join(
+                    '\n',
+                    ((MixKhronosData.JobData)data)
+                        .EnumsToGroups.OrderBy(x => x.Key)
+                        .Select(x => $"{x.Key} = {string.Join(", ", x.Value.Order())}")
+                )
             )
-        );
+            .UseFileName($"{nameof(MixKhronosDataTests)}.{nameof(EnumsToGroups)}.{file}");
 
     [Test, TestCaseSource(nameof(TestCases))]
     public Task ApiSets(string file, object data) =>
-        Verifier.Verify(
-            string.Join(
-                '\n',
-                ((MixKhronosData.JobData)data)
-                    .ApiSets.OrderBy(x => x.Key)
-                    .Select(x =>
-                        string.Join(
-                            '\n',
-                            x.Value.Dependencies.Select(y =>
-                                $"[{y.Key}] {(x.Value.IsExtension ? $"{x.Key} (extension)" : x.Key)} = "
-                                + string.Join(", ", y.Value.Order())
+        Verifier
+            .Verify(
+                string.Join(
+                    '\n',
+                    ((MixKhronosData.JobData)data)
+                        .ApiSets.OrderBy(x => x.Key)
+                        .Select(x =>
+                            string.Join(
+                                '\n',
+                                x.Value.Dependencies.Select(y =>
+                                    $"[{y.Key}] {(x.Value.IsExtension ? $"{x.Key} (extension)" : x.Key)} = "
+                                    + string.Join(", ", y.Value.Order())
+                                )
                             )
                         )
-                    )
+                )
             )
-        );
+            .UseFileName($"{nameof(MixKhronosDataTests)}.{nameof(ApiSets)}.{file}");
 
     [Test, TestCaseSource(nameof(RegressionTestCases))]
     public Task EnumGroupRegression(string file, object data, Profile[] profiles)
@@ -248,21 +252,25 @@ public class MixKhronosDataTests
         }
 
         verifyFile.AppendLine($"\nUnchanged: {string.Join(", ", unchanged)}");
-        return Verifier.Verify(verifyFile.ToString());
+        return Verifier
+            .Verify(verifyFile.ToString())
+            .UseFileName($"{nameof(MixKhronosDataTests)}.{nameof(EnumGroupRegression)}.{file}");
     }
 
     [Test, TestCaseSource(nameof(TestCases))]
     public Task SupportedApiProfiles(string file, object data) =>
-        Verifier.Verify(
-            string.Join(
-                '\n',
-                ((MixKhronosData.JobData)data)
-                    .SupportedApiProfiles?.OrderBy(x => x.Key)
-                    .Select(x =>
-                        $"{x.Key}\n{new string('-', x.Key.Length)}\n{string.Join('\n', x.Value.Select(x => x.ToString()).Order())}\n"
-                    ) ?? []
+        Verifier
+            .Verify(
+                string.Join(
+                    '\n',
+                    ((MixKhronosData.JobData)data)
+                        .SupportedApiProfiles?.OrderBy(x => x.Key)
+                        .Select(x =>
+                            $"{x.Key}\n{new string('-', x.Key.Length)}\n{string.Join('\n', x.Value.Select(x => x.ToString()).Order())}\n"
+                        ) ?? []
+                )
             )
-        );
+            .UseFileName($"{nameof(MixKhronosDataTests)}.{nameof(SupportedApiProfiles)}.{file}");
 
     [Test]
     public void DependsStringParsing1() =>

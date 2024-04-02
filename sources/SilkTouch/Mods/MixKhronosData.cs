@@ -38,6 +38,14 @@ public partial class MixKhronosData(
     );
     private static readonly char[] _listSeparators = { ',', '|', '+' };
 
+    private static readonly Dictionary<string, string> _defaultEnumNativeTypeNameMaps =
+        new()
+        {
+            { "GLenum", "GLEnum" },
+            { "EGLenum", "EGLEnum" },
+            { "GLbitfield", "GLEnum" }
+        };
+
     internal class JobData
     {
         /// <summary>
@@ -61,10 +69,7 @@ public partial class MixKhronosData(
         /// This is OpenGL and OpenCL specific.
         /// </remarks>
         // TODO map OpenCL into these concepts
-        public Dictionary<
-            string,
-            (TypeSyntax? Type, List<VariableDeclaratorSyntax> Enums, bool KnownBitmask)
-        > Groups { get; } = [];
+        public Dictionary<string, EnumGroup> Groups { get; } = [];
 
         /// <summary>
         /// A mapping of feature/extension names to whether they're a feature or not and their API set dependencies for
@@ -89,6 +94,15 @@ public partial class MixKhronosData(
         /// The vendors contributing to the specification. This is in extension form e.g. Microsoft is MSFT.
         /// </summary>
         public HashSet<string>? Vendors { get; init; }
+
+        /// <summary>
+        /// A map of containing symbol names (i.e. function or struct) and applicable symbol names (i.e. field name,
+        /// parameter name, or <c>:return</c>)
+        /// </summary>
+        public Dictionary<
+            (string ContainingSymbol, string ApplicableSymbol),
+            string
+        > GroupUsages { get; init; } = [];
     }
 
     /// <summary>
@@ -114,6 +128,12 @@ public partial class MixKhronosData(
         /// Whether the extension vendor suffixes should be trimmed.
         /// </summary>
         public ExtensionVendorTrimmingMode UseExtensionVendorTrimmings { get; init; }
+
+        /// <summary>
+        /// A map of native type names to group names.
+        /// </summary>
+        public Dictionary<string, string> EnumNativeTypeNames { get; init; } =
+            _defaultEnumNativeTypeNameMaps;
     }
 
     /// <summary>
@@ -186,28 +206,38 @@ public partial class MixKhronosData(
         await using var fs = File.OpenRead(specPath);
         var xml = await XDocument.LoadAsync(fs, LoadOptions.None, default);
         var (apiSets, supportedApiProfiles) = EvaluateProfiles(xml);
+        HashSet<string> vendors =
+        [
+            .. xml.Element("registry")
+                ?.Element("tags")
+                ?.Elements("tag")
+                .Attributes("name")
+                .Select(x => x.Value) ?? Enumerable.Empty<string>(),
+            .. xml.Element("registry")
+                ?.Element("extensions")
+                ?.Elements("extension")
+                .Attributes("name")
+                .Select(x => x.Value.Split('_')[1].ToUpper()) ?? Enumerable.Empty<string>()
+        ];
         Jobs[key] = new JobData
         {
             // Get all vendor names
-            Vendors =
-            [
-                ..xml.Element("registry")
-                    ?.Element("tags")
-                    ?.Elements("tag")
-                    .Attributes("name")
-                    .Select(x => x.Value) ?? Enumerable.Empty<string>(),
-                ..xml.Element("registry")
-                    ?.Element("extensions")
-                    ?.Elements("extension")
-                    .Attributes("name")
-                    .Select(x => x.Value.Split('_')[1].ToUpper()) ?? Enumerable.Empty<string>()
-            ],
+            Vendors = vendors,
             ApiSets = apiSets,
             SupportedApiProfiles = supportedApiProfiles,
             Configuration = currentConfig
         };
-        ReadGroups(xml, Jobs[key]);
+        ReadGroups(xml, Jobs[key], vendors);
     }
+
+    internal record EnumGroup(
+        string Name,
+        TypeSyntax? Type,
+        List<VariableDeclaratorSyntax> Enums,
+        bool KnownBitmask,
+        string? ExclusiveVendor,
+        string? Namespace
+    );
 
     private record ProfileEvaluation(
         Version? StartVersion,
@@ -441,15 +471,19 @@ public partial class MixKhronosData(
                 profileVariations[variant] =
                 [
                     variant,
-                    ..profileElement
+                    .. profileElement
                         .Elements()
                         .Attributes("profile")
-                        .SelectMany(x => x.Value.Split(_listSeparators,
-                            StringSplitOptions.RemoveEmptyEntries |
-                            StringSplitOptions.TrimEntries)) // <-- future proofing
+                        .SelectMany(x =>
+                            x.Value.Split(
+                                _listSeparators,
+                                StringSplitOptions.RemoveEmptyEntries
+                                    | StringSplitOptions.TrimEntries
+                            )
+                        ) // <-- future proofing
                         .Where(x => x != "compatibility") // <-- assuming default "gl" is "glcompatibility"
                         .Select(x => $"{variant}{x}"),
-                    ..profileVariations.TryGetValue(variant, out var v) ? v : []
+                    .. profileVariations.TryGetValue(variant, out var v) ? v : []
                 ];
             }
         }
@@ -821,7 +855,7 @@ public partial class MixKhronosData(
                     // Produce the cartesian product of our existing options.
                     if (options is null or { Count: 0 })
                     {
-                        options = innerOptions.Options as List<string> ?? [..innerOptions.Options];
+                        options = innerOptions.Options as List<string> ?? [.. innerOptions.Options];
                     }
                     else
                     {
@@ -1267,7 +1301,7 @@ public partial class MixKhronosData(
     }
 
     [SuppressMessage("ReSharper", "MoveLocalFunctionAfterJumpStatement")]
-    internal void ReadGroups(XDocument doc, JobData data)
+    internal void ReadGroups(XDocument doc, JobData data, HashSet<string> vendors)
     {
         // Designed to be compatible with OpenGL, EGL, WGL, GLX, and OpenCL.
         // This will work for Vulkan as well, but for Vulkan the enums are actually "typedef enum"s in the headers and
@@ -1348,6 +1382,9 @@ public partial class MixKhronosData(
                         StringSplitOptions.TrimEntries | StringSplitOptions.RemoveEmptyEntries
                     );
 
+                // Get the vendor (if the enum name ends with a vendor that is).
+                var thisVendor = VendorFromString(enumName, vendors);
+
                 foreach (
                     var group in (groupName is null ? Enumerable.Empty<string>() : [groupName])
                         .Concat(glGroups ?? [])
@@ -1362,11 +1399,51 @@ public partial class MixKhronosData(
 
                     // Update the group info.
                     data.Groups[group] = data.Groups.TryGetValue(group, out var groupInfo)
-                        ? (groupInfo.Type, groupInfo.Enums, isBitmask && groupInfo.KnownBitmask)
-                        : (null, [], isBitmask);
+                        ? groupInfo with
+                        {
+                            KnownBitmask = isBitmask && groupInfo.KnownBitmask,
+                            ExclusiveVendor =
+                                thisVendor is not null && groupInfo.ExclusiveVendor == thisVendor
+                                    ? thisVendor
+                                    : null,
+                            Namespace =
+                                enumNamespace is not null && groupInfo.Namespace == enumNamespace
+                                    ? enumNamespace
+                                    : null
+                        }
+                        : new EnumGroup(group, null, [], isBitmask, thisVendor, enumNamespace);
 
                     // Mark this enum.
                     enumToGroups.Add(group);
+                }
+            }
+        }
+
+        // Read the group usages from the functions
+        foreach (var func in doc.Elements("registry").Elements().Elements("command"))
+        {
+            var funcName =
+                func.Element("proto")?.Element("name")?.Value
+                ?? throw new InvalidDataException("command with no name");
+            if (
+                func.Element("proto")?.Element("ptype")?.Attribute("group")?.Value
+                    is { Length: > 0 } retGrp
+                && data.Groups.ContainsKey(retGrp)
+            )
+            {
+                data.GroupUsages[(funcName, ":return")] = retGrp;
+            }
+            foreach (var param in func.Elements("param"))
+            {
+                var paramName =
+                    param.Element("name")?.Value
+                    ?? throw new InvalidDataException("param with no name");
+                if (
+                    param.Attribute("group")?.Value is { Length: > 0 } paramGrp
+                    && data.Groups.ContainsKey(paramGrp)
+                )
+                {
+                    data.GroupUsages[(funcName, paramName)] = paramGrp;
                 }
             }
         }
@@ -1384,8 +1461,7 @@ public partial class MixKhronosData(
                 .Elements("types")
                 .Elements("type")
                 .Where(e =>
-                    e.Elements("type").SingleOrDefault()?.Value == "cl_bitfield"
-                    || e.Elements("type").SingleOrDefault()?.Value == "cl_properties"
+                    e.Elements("type").SingleOrDefault()?.Value is "cl_bitfield" or "cl_properties"
                 )
                 .Elements("name")
         )
@@ -1394,11 +1470,14 @@ public partial class MixKhronosData(
             // it's actually correct for once.
             if (!data.Groups.ContainsKey(@enum.Value))
             {
-                data.Groups[@enum.Value] = (
+                data.Groups[@enum.Value] = new EnumGroup(
+                    @enum.Value,
                     // cl_properties and cl_bitfield are both cl_ulong which is ulong
                     PredefinedType(Token(SyntaxKind.ULongKeyword)),
                     [],
-                    @enum.Parent?.Element("type")?.Value == "cl_bitfield"
+                    @enum.Parent?.Element("type")?.Value == "cl_bitfield",
+                    VendorFromString(@enum.Value, vendors),
+                    null
                 );
             }
         }
@@ -1454,6 +1533,8 @@ public partial class MixKhronosData(
                 ?? throw new InvalidDataException(
                     "Expected \"name\" attribute on <enum> in <require> tag."
                 );
+
+            var thisVendor = VendorFromString(enumName, vendors);
 
             // If we've already intentionally excluded this enum, don't change that now. L880
             if (topLevelIntentionalExclusions.Contains(enumName))
@@ -1545,13 +1626,23 @@ public partial class MixKhronosData(
                 FixupGroupNameForOpenCL(ref groupStr, ref likelyOpenCL, ref tempVar);
 
                 // Update the group info if it doesn't exist.
-                if (!data.Groups.ContainsKey(groupStr))
+                if (data.Groups.TryGetValue(groupStr, out var groupInfo))
                 {
-                    data.Groups[groupStr] = (
+                    if (thisVendor is not null && groupInfo.ExclusiveVendor != thisVendor)
+                    {
+                        data.Groups[groupStr] = groupInfo with { ExclusiveVendor = null };
+                    }
+                }
+                else
+                {
+                    data.Groups[groupStr] = new EnumGroup(
+                        groupStr,
                         null,
                         [],
                         (typeStr is not null && typeStr.Contains("bitfield"))
-                            || group.Contains("flags")
+                            || group.Contains("flags"),
+                        thisVendor,
+                        null
                     );
                 }
 
@@ -1566,4 +1657,12 @@ public partial class MixKhronosData(
             }
         }
     }
+
+    private static string? VendorFromString(string str, HashSet<string> vendors) =>
+        str.LastIndexOf('_') is > 0 and var idx
+        && idx < str.Length
+        && str[idx..].ToUpper() is var vend
+        && vendors.Contains(vend)
+            ? vend
+            : null;
 }

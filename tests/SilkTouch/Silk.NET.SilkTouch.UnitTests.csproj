@@ -3,6 +3,7 @@
 
   <PropertyGroup>
     <TargetFramework>net8.0</TargetFramework>
+    <NoWarn>8012;$(NoWarn)</NoWarn>
   </PropertyGroup>
 
   <ItemGroup>
