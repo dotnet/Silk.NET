@@ -33,6 +33,7 @@ public class NameTrimmer : INameTrimmer
         string? jobKey,
         Dictionary<string, (string Primary, List<string>? Secondary)>? names,
         Dictionary<string, string>? prefixOverrides,
+        HashSet<string>? nonDeterminant,
         ref string? identifiedPrefix
     )
     {
@@ -53,6 +54,7 @@ public class NameTrimmer : INameTrimmer
                     hint,
                     names,
                     prefixOverrides,
+                    nonDeterminant,
                     i == 0,
                     naive = i == 2
                 );
@@ -109,7 +111,7 @@ public class NameTrimmer : INameTrimmer
             {
                 continue;
             }
-            var sec = secondary ?? new List<string>();
+            var sec = secondary ?? [];
             sec.Add(oldPrimary);
             // this was trimmingName originally. given that we're using trimming name to determine a prefix but then
             // using that prefix on the old primary, this could cause intended behaviour in some cases. there's probably
@@ -128,6 +130,7 @@ public class NameTrimmer : INameTrimmer
     /// <param name="hint">The global prefix hint if applicable.</param>
     /// <param name="names">The names to get a prefix for.</param>
     /// <param name="prefixOverrides">Prefix overrides.</param>
+    /// <param name="nonDeterminant">List of names that should not be used for prefix determination.</param>
     /// <param name="getTrimmingName">
     /// Whether to use <see cref="GetTrimmingName"/> or to use the native name as-is.
     /// </param>
@@ -147,6 +150,7 @@ public class NameTrimmer : INameTrimmer
         string? hint,
         Dictionary<string, (string Primary, List<string>? Secondary)>? names,
         Dictionary<string, string>? prefixOverrides,
+        HashSet<string>? nonDeterminant,
         bool getTrimmingName,
         bool naive
     )
@@ -185,13 +189,19 @@ public class NameTrimmer : INameTrimmer
                 ? @override
                 : names.Count == 1 && !string.IsNullOrWhiteSpace(containerTrimmingName)
                     ? NameUtils.FindCommonPrefix(
-                        new List<string> { names.Keys.First(), containerTrimmingName },
+                        [
+                            names.Keys.First(x => !(nonDeterminant?.Contains(x) ?? false)),
+                            containerTrimmingName
+                        ],
                         true,
                         false,
                         naive
                     )
                     : NameUtils.FindCommonPrefix(
-                        localNames.Keys.ToList(),
+                        localNames
+                            .Where(x => !(nonDeterminant?.Contains(x.Value.Key) ?? false))
+                            .Select(x => x.Key)
+                            .ToList(),
                         // If naive mode is on and we're trimming type names, allow full matches (method class is
                         // probably the prefix)
                         naive && container is null,
@@ -201,8 +211,9 @@ public class NameTrimmer : INameTrimmer
 
         // If any of the children's trimming name is shorter than the prefix length,
         if (
-            localNames.Keys.Any(x => x.Length <= prefix.Length)
-            && !string.IsNullOrWhiteSpace(containerTrimmingName)
+            localNames.Keys.Any(x =>
+                x.Length <= prefix.Length && !(nonDeterminant?.Contains(x) ?? false)
+            ) && !string.IsNullOrWhiteSpace(containerTrimmingName)
         )
         {
             // Do a second pass, but put the container name in the loop to see if it makes a difference

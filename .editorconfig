@@ -22,6 +22,7 @@ insert_final_newline = true
 indent_style = space
 indent_size = 4
 trim_trailing_whitespace = true
+file_header_template = Licensed to the .NET Foundation under one or more agreements.\nThe .NET Foundation licenses this file to you under the MIT license.
 
 ###############################################################################
 # Set file behavior to:
@@ -68,17 +69,14 @@ dotnet_naming_rule.parameters_should_be_camel_case.severity = suggestion
 dotnet_naming_rule.parameters_should_be_camel_case.style = camel_case
 dotnet_naming_rule.parameters_should_be_camel_case.symbols = parameters
 
-dotnet_naming_rule.private_and_internal_static_fields_should_be_camel_case_prefixed_with_s_and_underscore.severity = suggestion
-dotnet_naming_rule.private_and_internal_static_fields_should_be_camel_case_prefixed_with_s_and_underscore.style = camel_case_prefixed_with_s_and_underscore
-dotnet_naming_rule.private_and_internal_static_fields_should_be_camel_case_prefixed_with_s_and_underscore.symbols = private_and_internal_static_fields
-
 dotnet_naming_rule.private_and_internal_fields_should_be_camel_case_prefixed_with_underscore.severity = suggestion
 dotnet_naming_rule.private_and_internal_fields_should_be_camel_case_prefixed_with_underscore.style = camel_case_prefixed_with_underscore
-dotnet_naming_rule.private_and_internal_fields_should_be_camel_case_prefixed_with_underscore.symbols = private_and_internal_fields
+dotnet_naming_rule.private_and_internal_fields_should_be_camel_case_prefixed_with_underscore.symbols = private_fields
 
 dotnet_naming_rule.public_and_protected_declarations_should_be_pascal_case.severity = suggestion
 dotnet_naming_rule.public_and_protected_declarations_should_be_pascal_case.style = pascal_case
 dotnet_naming_rule.public_and_protected_declarations_should_be_pascal_case.symbols = public_and_protected_declarations
+dotnet_naming_symbols.public_and_protected_declarations.applicable_kinds = method, field, event, property
 
 dotnet_naming_rule.static_readonly_declarations_should_be_pascal_case.severity = suggestion
 dotnet_naming_rule.static_readonly_declarations_should_be_pascal_case.style = pascal_case
@@ -98,7 +96,6 @@ dotnet_naming_rule.type_parameters_should_be_pascal_case_prefixed_with_t.symbols
 #   pascal case prefixed with I
 #   pascal case prefixed with T
 ###############################################################################
-[*.cs]
 dotnet_naming_style.camel_case.capitalization = camel_case
 
 dotnet_naming_style.camel_case_prefixed_with_s_and_underscore.capitalization = camel_case
@@ -129,10 +126,11 @@ dotnet_naming_style.pascal_case_prefixed_with_t.required_prefix = T
 #   static readonly declarations
 #   type parameters
 ###############################################################################
-[*.cs]
 dotnet_naming_symbols.async_members.required_modifiers = async
+dotnet_naming_symbols.async_members.applicable_kinds = method
 
 dotnet_naming_symbols.const_declarations.required_modifiers = const
+dotnet_naming_symbols.const_declarations.applicable_kinds = method
 
 dotnet_naming_symbols.interfaces.applicable_kinds = interface
 
@@ -145,9 +143,14 @@ dotnet_naming_symbols.private_and_internal_static_fields.applicable_accessibilit
 dotnet_naming_symbols.private_and_internal_static_fields.applicable_kinds = field
 dotnet_naming_symbols.private_and_internal_static_fields.required_modifiers = static
 
+dotnet_naming_symbols.private_fields.applicable_accessibilities = private
+dotnet_naming_symbols.private_fields.applicable_kinds = field
+
 dotnet_naming_symbols.public_and_protected_declarations.applicable_accessibilities = public, protected
 
 dotnet_naming_symbols.static_readonly_declarations.required_modifiers = static, readonly
+dotnet_naming_symbols.static_readonly_declarations.applicable_kinds = field
+dotnet_naming_symbols.static_readonly_declarations.applicable_accessibilities = public, protected
 
 dotnet_naming_symbols.type_parameters.applicable_kinds = type_parameter
 
@@ -156,7 +159,6 @@ dotnet_naming_symbols.type_parameters.applicable_kinds = type_parameter
 #   do not separate import directives into groups, and
 #   sort system directives first
 ###############################################################################
-[*.cs]
 dotnet_separate_import_directive_groups = false
 dotnet_sort_system_directives_first = true
 
@@ -187,7 +189,6 @@ dotnet_sort_system_directives_first = true
 #   suggest readonly fields, and
 #   suggest specifying accessibility modifiers
 ###############################################################################
-[*.cs]
 dotnet_style_coalesce_expression = true:suggestion
 dotnet_style_collection_initializer = true:suggestion
 dotnet_style_explicit_tuple_names = true:suggestion
@@ -222,7 +223,6 @@ dotnet_style_require_accessibility_modifiers = always:suggestion
 # Set dotnet style options to:
 #   suggest removing all unused parameters
 ###############################################################################
-[*.cs]
 dotnet_code_quality_unused_parameters = all:suggestion
 
 ###############################################################################
@@ -234,7 +234,6 @@ dotnet_code_quality_unused_parameters = all:suggestion
 #   indent labels one less than the current, and
 #   indent switch labels
 ###############################################################################
-[*.cs]
 csharp_indent_block_contents = true
 csharp_indent_braces = false
 csharp_indent_case_contents = true
@@ -252,7 +251,6 @@ csharp_indent_switch_labels = true
 #   insert a new-line before all open braces except anonymous methods, anonymous types, lambdas, and object collections and
 #   insert a new-line within query expression clauses
 ###############################################################################
-[*.cs]
 csharp_new_line_before_catch = true
 csharp_new_line_before_else = true
 csharp_new_line_before_finally = true
@@ -269,7 +267,6 @@ csharp_new_line_within_query_expression_clauses = true
 #   preserve single-line blocks, and
 #   not preserve single-line statements
 ###############################################################################
-[*.cs]
 csharp_preserve_single_line_blocks = true
 csharp_preserve_single_line_statements = false
 
@@ -298,7 +295,6 @@ csharp_preserve_single_line_statements = false
 #   remove any space between parentheses, and
 #   remove any space between square brackets
 ###############################################################################
-[*.cs]
 csharp_space_after_cast = false
 csharp_space_after_colon_in_inheritance_clause = true
 csharp_space_after_comma = true
@@ -307,7 +303,7 @@ csharp_space_after_keywords_in_control_flow_statements = true
 csharp_space_after_semicolon_in_for_statement = true
 
 csharp_space_around_binary_operators = before_and_after
-csharp_space_around_declaration_statements = do_not_ignore
+csharp_space_around_declaration_statements = false
 
 csharp_space_before_colon_in_inheritance_clause = true
 csharp_space_before_comma = false
@@ -350,7 +346,6 @@ csharp_space_between_square_brackets = false
 #   suggest var when the type is not apparent, and
 #   suggest var when the type is apparent
 ###############################################################################
-[*.cs]
 csharp_prefer_braces = true:suggestion
 csharp_prefer_simple_default_expression = true:suggestion
 csharp_preferred_modifier_order = public,private,protected,internal,static,extern,new,virtual,abstract,sealed,override,readonly,unsafe,volatile,async:suggestion
@@ -381,7 +376,18 @@ csharp_style_var_for_built_in_types = true:suggestion
 csharp_style_var_elsewhere = true:suggestion
 csharp_style_var_when_type_is_apparent = true:suggestion
 
-resharper_foreach_can_be_converted_to_query_using_another_get_enumerator_highlighting = false
-resharper_foreach_can_be_partly_converted_to_query_using_another_get_enumerator_highlighting = false
-resharper_loop_can_be_converted_to_query_highlighting = false
-resharper_loop_can_be_partly_converted_to_query_highlighting = false
+resharper_foreach_can_be_converted_to_query_using_another_get_enumerator_highlighting = none
+resharper_foreach_can_be_partly_converted_to_query_using_another_get_enumerator_highlighting = none
+resharper_loop_can_be_converted_to_query_highlighting = none
+resharper_loop_can_be_partly_converted_to_query_highlighting = none
+resharper_identifier_typo_highlighting = none
+resharper_string_literal_typo_highlighting = none
+resharper_comment_typo_highlighting = true
+
+# Verify settings
+[*.{received,verified}.{txt,xml,json}]
+indent_size = unset
+indent_style = unset
+insert_final_newline = false
+tab_width = unset
+trim_trailing_whitespace = false

@@ -1,0 +1,97 @@
+﻿NOTE: This file lists differences/regressions between 3.0's enum grouping system baselined against 2.21's. If this file is non-empty and verified, it means the regressions have been justified. Justified differences are usually as a result of a discrepancy between the regression baseline JSON and the baseline XML.
+
+Removed Group: cl_intel_device_side_avc_motion_estimation_??
+
+Added Group: cl_arm_device_svm_capabilities_flags
+    Added: CL_DEVICE_SVM_ATOMICS_ARM
+    Added: CL_DEVICE_SVM_COARSE_GRAIN_BUFFER_ARM
+    Added: CL_DEVICE_SVM_FINE_GRAIN_BUFFER_ARM
+    Added: CL_DEVICE_SVM_FINE_GRAIN_SYSTEM_ARM
+
+Added Group: cl_arm_svm_alloc_flags
+    Added: CL_MEM_SVM_ATOMICS_ARM
+    Added: CL_MEM_SVM_FINE_GRAIN_BUFFER_ARM
+
+Existing Group: cl_command_queue_properties
+    Added: CL_QUEUE_RESERVED_QCOM
+
+Added Group: cl_device_command_buffer_capabilities_khr 
+    Added: CL_COMMAND_BUFFER_CAPABILITY_DEVICE_SIDE_ENQUEUE_KHR
+    Added: CL_COMMAND_BUFFER_CAPABILITY_KERNEL_PRINTF_KHR
+    Added: CL_COMMAND_BUFFER_CAPABILITY_MULTIPLE_QUEUE_KHR
+    Added: CL_COMMAND_BUFFER_CAPABILITY_OUT_OF_ORDER_KHR
+    Added: CL_COMMAND_BUFFER_CAPABILITY_SIMULTANEOUS_USE_KHR
+
+Existing Group: cl_device_partition_property_ext
+    Added: CL_AFFINITY_DOMAIN_L1_CACHE_EXT
+    Added: CL_AFFINITY_DOMAIN_L2_CACHE_EXT
+    Added: CL_AFFINITY_DOMAIN_L3_CACHE_EXT
+    Added: CL_AFFINITY_DOMAIN_L4_CACHE_EXT
+    Added: CL_AFFINITY_DOMAIN_NEXT_FISSIONABLE_EXT
+    Added: CL_AFFINITY_DOMAIN_NUMA_EXT
+
+Added Group: cl_intel_device_side_avc_motion_estimation_intra
+    Added: CL_AVC_ME_INTRA_16x16_INTEL
+    Added: CL_AVC_ME_INTRA_4x4_INTEL
+    Added: CL_AVC_ME_INTRA_8x8_INTEL
+
+Added Group: cl_intel_driver_diagnostics
+    Added: CL_CONTEXT_DIAGNOSTICS_LEVEL_ALL_INTEL
+    Added: CL_CONTEXT_DIAGNOSTICS_LEVEL_BAD_INTEL
+    Added: CL_CONTEXT_DIAGNOSTICS_LEVEL_GOOD_INTEL
+    Added: CL_CONTEXT_DIAGNOSTICS_LEVEL_NEUTRAL_INTEL
+
+Existing Group: cl_mem_flags
+    Added: CL_MEM_RESERVED0_ARM
+    Added: CL_MEM_RESERVED0_QCOM
+    Added: CL_MEM_RESERVED1_ARM
+    Added: CL_MEM_RESERVED1_QCOM
+    Added: CL_MEM_RESERVED2_ARM
+    Added: CL_MEM_RESERVED2_QCOM
+    Added: CL_MEM_RESERVED21_INTEL
+    Added: CL_MEM_RESERVED22_INTEL
+    Added: CL_MEM_RESERVED3_ARM
+    Added: CL_MEM_RESERVED3_QCOM
+
+Existing Group: cl_mem_migration_flags
+    Added: CL_MIGRATE_MEM_OBJECT_HOST_EXT
+
+Added Group: cl_platform_command_buffer_capabilities_khr 
+    Added: CL_COMMAND_BUFFER_PLATFORM_AUTOMATIC_REMAP_KHR
+    Added: CL_COMMAND_BUFFER_PLATFORM_REMAP_QUEUES_KHR
+    Added: CL_COMMAND_BUFFER_PLATFORM_UNIVERSAL_SYNC_KHR
+
+Added Group: cl_queue_properties_khr
+
+Added Group: cl_semaphore_type_khr
+    Added: CL_SEMAPHORE_TYPE_BINARY_KHR
+
+Existing Group: cl_svm_mem_flags
+    Added: CL_MEM_ALLOC_HOST_PTR
+    Added: CL_MEM_COPY_HOST_PTR
+    Added: CL_MEM_HOST_NO_ACCESS
+    Added: CL_MEM_HOST_READ_ONLY
+    Added: CL_MEM_HOST_WRITE_ONLY
+    Added: CL_MEM_KERNEL_READ_AND_WRITE
+    Added: CL_MEM_READ_ONLY
+    Added: CL_MEM_READ_WRITE
+    Added: CL_MEM_SVM_ATOMICS
+    Added: CL_MEM_SVM_FINE_GRAIN_BUFFER
+    Added: CL_MEM_USE_HOST_PTR
+    Added: CL_MEM_WRITE_ONLY
+
+Added Group: cl_unified_shared_memory_capabilities_intel
+    Added: CL_UNIFIED_SHARED_MEMORY_ACCESS_INTEL
+    Added: CL_UNIFIED_SHARED_MEMORY_ATOMIC_ACCESS_INTEL
+    Added: CL_UNIFIED_SHARED_MEMORY_CONCURRENT_ACCESS_INTEL
+    Added: CL_UNIFIED_SHARED_MEMORY_CONCURRENT_ATOMIC_ACCESS_INTEL
+
+Existing Group: ErrorCodes
+    Added: CL_ERROR_RESERVED0_IMG
+    Added: CL_ERROR_RESERVED1_IMG
+    Added: CL_ERROR_RESERVED2_IMG
+    Added: CL_ERROR_RESERVED3_IMG
+    Added: CL_PIPE_EMPTY_INTEL
+    Added: CL_PIPE_FULL_INTEL
+
+Unchanged: allocation_type, cl_accelerator_info_intel, cl_accelerator_type_intel, cl_addressing_mode, cl_affinity_domain_ext, cl_bool, cl_buffer_create_type, cl_build_status, cl_channel_order, cl_channel_type, cl_command_buffer_flags_khr, cl_command_buffer_info_khr, cl_command_buffer_properties_khr, cl_command_buffer_state_khr, cl_command_buffer_structure_type_khr, cl_command_queue_capabilities_intel, cl_command_queue_info, cl_command_termination_reason_arm, cl_command_type, cl_context_info, cl_context_memory_initialize_khr, cl_context_properties, cl_d3d10_device_set_khr, cl_d3d10_device_source_khr, cl_d3d11_device_set_khr, cl_d3d11_device_source_khr, cl_device_affinity_domain, cl_device_atomic_capabilities, cl_device_command_buffer_capabilities_khr, cl_device_controlled_termination_capabilities_arm, cl_device_device_enqueue_capabilities, cl_device_exec_capabilities, cl_device_feature_capabilities_intel, cl_device_fp_atomic_capabilities_ext, cl_device_fp_config, cl_device_info, cl_device_integer_dot_product_capabilities_khr, cl_device_local_mem_type, cl_device_mem_cache_type, cl_device_partition_property, cl_device_scheduling_controls_capabilities_arm, cl_device_svm_capabilities, cl_device_svm_capabilities_arm, cl_device_terminate_capability_khr, cl_device_type, cl_device_unified_shared_memory_capabilities_intel, cl_dx9_device_set_intel, cl_dx9_device_source_intel, cl_egl_image_properties_khr, cl_event_info, cl_external_memory_handle_type_khr, cl_external_semaphore_handle_type_khr, cl_filter_mode, cl_gl_context_info, cl_gl_object_type, cl_gl_texture_info, cl_icdl_info, cl_image_info, cl_image_pitch_info_qcom, cl_image_requirements_info_ext, cl_import_properties_arm, cl_intel_advanced_motion_estimation_cl_motion_detect_desc_intel, cl_intel_advanced_motion_estimation_cl_motion_detect_desc_intel_2, cl_intel_advanced_motion_estimation_device_me_version, cl_intel_advanced_motion_estimation_flags, cl_intel_advanced_motion_estimation_intra_search_prediction_modes_buffer_chroma_block, cl_intel_advanced_motion_estimation_intra_search_prediction_modes_buffer_luma_block, cl_intel_advanced_motion_estimation_search_cost_penalty, cl_intel_advanced_motion_estimation_search_cost_precision, cl_intel_advanced_motion_estimation_skip_block_type, cl_intel_device_side_avc_motion_estimation_adjust, cl_intel_device_side_avc_motion_estimation_border, cl_intel_device_side_avc_motion_estimation_cost_precision, cl_intel_device_side_avc_motion_estimation_frame_dir, cl_intel_device_side_avc_motion_estimation_intra_luma, cl_intel_device_side_avc_motion_estimation_intra_neighbor, cl_intel_device_side_avc_motion_estimation_luma_predictor, cl_intel_device_side_avc_motion_estimation_major, cl_intel_device_side_avc_motion_estimation_major_dir, cl_intel_device_side_avc_motion_estimation_minor, cl_intel_device_side_avc_motion_estimation_partition, cl_intel_device_side_avc_motion_estimation_scan_dir, cl_intel_device_side_avc_motion_estimation_skip, cl_intel_device_side_avc_motion_estimation_skip_block_based, cl_intel_device_side_avc_motion_estimation_skip_dir, cl_intel_device_side_avc_motion_estimation_slice, cl_intel_device_side_avc_motion_estimation_subpixel, cl_intel_device_side_avc_motion_estimation_version, cl_intel_device_side_avc_motion_estimation_weight, cl_intel_device_side_avc_motion_estimation_window, cl_kernel_arg_access_qualifier, cl_kernel_arg_address_qualifier, cl_kernel_arg_info, cl_kernel_arg_type_qualifier, cl_kernel_exec_info, cl_kernel_exec_info_arm, cl_kernel_info, cl_kernel_sub_group_info, cl_kernel_work_group_info, cl_khronos_vendor_id, cl_layer_info, cl_map_flags, cl_media_adapter_set_khr, cl_media_adapter_type_khr, cl_mem_alloc_flags_img, cl_mem_alloc_flags_intel, cl_mem_alloc_info_intel, cl_mem_info, cl_mem_migration_flags_ext, cl_mem_object_type, cl_mem_properties, cl_mem_properties_intel, cl_mipmap_filter_mode_img, cl_motion_estimation_desc_intel_mb_block_type, cl_motion_estimation_desc_intel_sad_adjust_mode, cl_motion_estimation_desc_intel_search_path_type, cl_motion_estimation_desc_intel_subpixel_mode, cl_mutable_command_info_khr, cl_mutable_dispatch_asserts_khr, cl_mutable_dispatch_fields_khr, cl_ndrange_kernel_command_properties_khr, cl_pipe_info, cl_platform_command_buffer_capabilities_khr, cl_platform_info, cl_profiling_info, cl_program_binary_type, cl_program_build_info, cl_program_info, cl_queue_priority_khr, cl_queue_properties, cl_queue_throttle_khr, cl_sampler_info, cl_sampler_properties, cl_semaphore_info_khr, cl_semaphore_properties_khr, cl_semaphore_reimport_properties_khr, cl_semaphore_type, cl_svm_mem_flags_arm, cl_unified_shared_memory_type_intel, cl_va_api_device_set_intel, cl_va_api_device_source_intel, clCommandExecutionStatus, host_cache_policy

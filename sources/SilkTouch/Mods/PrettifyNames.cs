@@ -37,6 +37,11 @@ public class PrettifyNames(
         public Dictionary<string, string>? PrefixOverrides { get; init; }
 
         /// <summary>
+        /// Manually renamed native names.
+        /// </summary>
+        public Dictionary<string, string>? NameOverrides { get; init; }
+
+        /// <summary>
         /// The base trimmer version. If null, trimming is disabled.
         /// </summary>
         public Version? TrimmerBaseline { get; init; } = new(3, 0);
@@ -56,37 +61,64 @@ public class PrettifyNames(
     /// <inheritdoc />
     public Task<GeneratedSyntax> AfterScrapeAsync(string key, GeneratedSyntax syntax)
     {
-        var visitor = new Visitor();
+        // First pass to scan the sources and create a dictionary of type/member names.
+        var cfg = config.Get(key);
+        var visitor = new Visitor { NameOverrides = (cfg.NameOverrides?.ToDictionary() ?? [])! };
         foreach (var (_, node) in syntax.Files.Where(x => x.Key.StartsWith("sources/")))
         {
             visitor.Visit(node);
         }
 
         var rewriter = new Rewriter();
-        var cfg = config.Get(key);
         var translator = new NameUtils.NameTransformer(cfg.LongAcronymThreshold ?? 3);
+
+        // If we have a trimmer baseline set, that means the user wants to trim the names as well as prettify them.
         if (cfg.TrimmerBaseline is not null)
         {
+            // Get all the trimmers that are above this baseline. We also sort by the version. Why? Because someone
+            // couldn't be bothered to introduce a weight property. It is also unclear what effect this has on 2.17/2.18
+            // but to be honest those trimmers aren't used and are only included for posterity and understanding of the
+            // old logic.
             var trimmers = trimmerProviders
                 .SelectMany(x => x.Get(key))
                 .OrderBy(x => x.Version)
                 .ToArray();
+
+            // Create a type name dictionary to trim the type names.
             var typeNames = visitor.Types.ToDictionary(
                 x => x.Key,
                 x => (x.Key, (List<string>?)null)
             );
+
+            // If we don't have a prefix hint and don't have more than one type, we can't determine a prefix so don't
+            // trim.
             if (typeNames.Count > 1 || cfg.GlobalPrefixHint is not null)
             {
-                Trim(null, cfg.GlobalPrefixHint, key, typeNames, cfg.PrefixOverrides, trimmers);
+                Trim(
+                    null,
+                    cfg.GlobalPrefixHint,
+                    key,
+                    typeNames,
+                    cfg.PrefixOverrides,
+                    trimmers,
+                    visitor.NameOverrides,
+                    visitor.NonDeterminant
+                );
             }
 
+            // Now rename everything within that type.
             foreach (var (typeName, (newTypeName, _)) in typeNames)
             {
                 var (_, (consts, functions)) = visitor.Types.First(x => x.Key == typeName);
+
+                // Rename the "constants" i.e. all the consts/static readonlys in this type. These are treated
+                // individually because everything that isn't a constant or a function is only prettified instead of prettified & trimmed.
                 var constNames = consts?.ToDictionary(
                     x => x,
                     x => (Primary: x, (List<string>?)null)
                 );
+
+                // Trim the constants if we have any.
                 if (constNames is not null)
                 {
                     Trim(
@@ -95,7 +127,9 @@ public class PrettifyNames(
                         key,
                         constNames,
                         cfg.PrefixOverrides,
-                        trimmers
+                        trimmers,
+                        cfg.NameOverrides!,
+                        visitor.NonDeterminant
                     );
                 }
                 else
@@ -103,15 +137,22 @@ public class PrettifyNames(
                     constNames = new Dictionary<string, (string Primary, List<string>?)>();
                 }
 
+                // Rename the functions. More often that not functions have different nomenclature to constants, so we
+                // treat them separately.
                 var functionNames = functions
                     ?.DistinctBy(x => x.Name)
                     .ToDictionary(x => x.Name, x => (Primary: x.Name, (List<string>?)null));
-                var functionSyntax = functions is null
-                    ? null
-                    : functionNames?.Keys.ToDictionary(
-                        x => x,
-                        x => functions.Where(y => y.Name == x).Select(y => y.Syntax)
-                    );
+
+                // Collect the syntax as this is used for conflict resolution in the Trim function.
+                var functionSyntax =
+                    functions is null || functionNames is null
+                        ? null
+                        : functionNames.Keys.ToDictionary(
+                            x => x,
+                            x => functions.Where(y => y.Name == x).Select(y => y.Syntax)
+                        );
+
+                // Now trim if we have any functions.
                 if (functionNames is not null)
                 {
                     Trim(
@@ -121,10 +162,13 @@ public class PrettifyNames(
                         functionNames,
                         cfg.PrefixOverrides,
                         trimmers,
+                        cfg.NameOverrides!,
+                        visitor.NonDeterminant,
                         functionSyntax
                     );
                 }
 
+                // Add back anything else that isn't a trimming candidate (but should still have a pretty name)
                 var prettifiedOnly = visitor.PrettifyOnlyTypes.TryGetValue(typeName, out var val)
                     ? val.Select(x => new KeyValuePair<string, (string Primary, List<string>?)>(
                         x,
@@ -132,6 +176,7 @@ public class PrettifyNames(
                     ))
                     : Enumerable.Empty<KeyValuePair<string, (string Primary, List<string>?)>>();
 
+                // Add it to the rewriter's list of names to... rewrite...
                 rewriter.Types[typeName] = (
                     newTypeName.Prettify(translator),
                     // TODO deprecate secondaries if they're within the baseline?
@@ -145,8 +190,9 @@ public class PrettifyNames(
                 );
             }
         }
-        else
+        else // (there's no trimming baseline)
         {
+            // Prettify only if the user has not indicated they want to trim.
             foreach (var (name, (nonFunctions, functions)) in visitor.Types)
             {
                 rewriter.Types[name] = (
@@ -157,16 +203,20 @@ public class PrettifyNames(
             }
         }
 
-        foreach (var (name, (newName, nonFunctions, functions)) in rewriter.Types)
+        if (logger.IsEnabled(LogLevel.Debug))
         {
-            logger.LogDebug("{} = {}", name, newName);
-            foreach (var (old, @new) in nonFunctions ?? new())
+            foreach (var (name, (newName, nonFunctions, functions)) in rewriter.Types)
             {
-                logger.LogDebug("{}.{} = {}.{}", name, old, newName, @new);
-            }
-            foreach (var (old, @new) in functions ?? new())
-            {
-                logger.LogDebug("{}.{} = {}.{}", name, old, newName, @new);
+                logger.LogDebug("{} = {}", name, newName);
+                foreach (var (old, @new) in nonFunctions ?? new())
+                {
+                    logger.LogDebug("{}.{} = {}.{}", name, old, newName, @new);
+                }
+
+                foreach (var (old, @new) in functions ?? new())
+                {
+                    logger.LogDebug("{}.{} = {}.{}", name, old, newName, @new);
+                }
             }
         }
 
@@ -198,9 +248,60 @@ public class PrettifyNames(
         Dictionary<string, (string Primary, List<string>? Secondary)> names,
         Dictionary<string, string>? prefixOverrides,
         IEnumerable<INameTrimmer> trimmers,
+        Dictionary<string, string>? nameOverrides,
+        HashSet<string> nonDeterminant,
         Dictionary<string, IEnumerable<MethodDeclarationSyntax>>? functionSyntax = null
     )
     {
+        // Ensure the trimmers don't see names that have been manually overridden, as we don't want them to influence
+        // automatic prefix determination for example
+        var namesToTrim = names;
+        foreach (
+            var (nativeName, overriddenName) in nameOverrides
+                ?? Enumerable.Empty<KeyValuePair<string, string>>()
+        )
+        {
+            var nameToAdd = nativeName;
+            if (nativeName.Contains('.'))
+            {
+                // We're processing a type dictionary, so don't add a member thing.
+                if (container is null)
+                {
+                    continue;
+                }
+
+                // Check whether the override is for this type.
+                var span = container.AsSpan();
+                if (span[..span.IndexOf('.')] == "*" || span[..span.IndexOf('.')] == container)
+                {
+                    nameToAdd = span[(span.IndexOf('.') + 1)..].ToString();
+                }
+                else
+                {
+                    continue;
+                }
+            }
+
+            if (!namesToTrim.TryGetValue(nameToAdd, out var v))
+            {
+                continue;
+            }
+
+            // If we haven't created the differentiated dictionary yet, then do so now. We do want to keep the original
+            // dictionary so we can actually apply the renames; if we have created two different branching dictionaries
+            // they are recombined following trimming.
+            if (namesToTrim == names)
+            {
+                namesToTrim = namesToTrim.ToDictionary();
+            }
+
+            // Don't let the trimmers see the overridden native name.
+            namesToTrim.Remove(nameToAdd);
+
+            // Apply the name override to the dictionary we actually use.
+            names[nameToAdd] = (overriddenName, [..v.Secondary, nameToAdd]);
+        }
+
         // Run each trimmer
         string? identifiedPrefix = null;
         foreach (var trimmer in trimmers)
@@ -211,8 +312,18 @@ public class PrettifyNames(
                 key,
                 names,
                 prefixOverrides,
+                nonDeterminant,
                 ref identifiedPrefix
             );
+        }
+
+        // Apply changes.
+        if (namesToTrim != names)
+        {
+            foreach (var (evalName, result) in namesToTrim)
+            {
+                names[evalName] = result;
+            }
         }
 
         // Prefer shorter names
@@ -469,6 +580,8 @@ public class PrettifyNames(
         > Types = new();
 
         public Dictionary<string, List<string>> PrettifyOnlyTypes = new();
+        public required Dictionary<string, string> NameOverrides { get; init; }
+        public HashSet<string> NonDeterminant { get; } = [];
         private (
             ClassDeclarationSyntax Class,
             List<string> NonFunctions,
@@ -481,13 +594,21 @@ public class PrettifyNames(
         public override void VisitClassDeclaration(ClassDeclarationSyntax node)
         {
             if (
-                _classInProgress is not null
-                || _enumInProgress is not null
-                || node.Ancestors().OfType<BaseTypeDeclarationSyntax>().Any()
+                _classInProgress is not null // nesting is ignored for now
+                || _enumInProgress is not null // class nested in an enum, wtf?
+                || node.Ancestors().OfType<BaseTypeDeclarationSyntax>().Any() // again... nesting is ignored.
             )
             {
-                // ignoring nesting for now
                 return;
+            }
+
+            if (
+                node.AttributeLists.Any(x =>
+                    x.Attributes.Any(y => y.IsAttribute("Silk.NET.Core.Transformed"))
+                )
+            )
+            {
+                NonDeterminant.Add(node.Identifier.ToString());
             }
 
             _classInProgress = (
@@ -495,14 +616,19 @@ public class PrettifyNames(
                 new List<string>(),
                 new List<(string, MethodDeclarationSyntax)>()
             );
+
+            // Recurse into the members.
             base.VisitClassDeclaration(node);
-            var id = _classInProgress.Value.Class.Identifier.ToString();
+            var id = node.Identifier.ToString();
+
+            // Tolerate partial classes.
             if (!Types.TryGetValue(id, out var inner))
             {
                 inner = (new List<string>(), new List<(string, MethodDeclarationSyntax)>());
                 Types.Add(id, inner);
             }
 
+            // Merge with the other partials.
             (inner.NonFunctions ??= new List<string>()).AddRange(
                 _classInProgress.Value.NonFunctions
             );
@@ -514,11 +640,13 @@ public class PrettifyNames(
 
         public override void VisitFieldDeclaration(FieldDeclarationSyntax node)
         {
+            // Can't have a field within a field or an enum. This is basically a "wtf" check.
             if (_visitingField is not null || _enumInProgress is not null)
             {
                 return;
             }
 
+            // If it's not a constant then we only prettify.
             if (
                 !node.Modifiers.Any(SyntaxKind.ConstKeyword)
                 && (
@@ -584,6 +712,15 @@ public class PrettifyNames(
                 return;
             }
 
+            if (
+                node.AttributeLists.Any(x =>
+                    x.Attributes.Any(y => y.IsAttribute("Silk.NET.Core.Transformed"))
+                )
+            )
+            {
+                NonDeterminant.Add(node.Identifier.ToString());
+            }
+
             Types[node.Identifier.ToString()] = (null, null);
             base.VisitStructDeclaration(node);
         }
@@ -597,6 +734,15 @@ public class PrettifyNames(
             )
             {
                 return;
+            }
+
+            if (
+                node.AttributeLists.Any(x =>
+                    x.Attributes.Any(y => y.IsAttribute("Silk.NET.Core.Transformed"))
+                )
+            )
+            {
+                NonDeterminant.Add(node.Identifier.ToString());
             }
 
             _enumInProgress = (node, new List<string>());

@@ -77,8 +77,7 @@
           {
             "Name": "gl",
             "SourceSubdirectory": "glcompat",
-            "BakedOutputSubdirectory": "gl",
-            "MaxVersion": "3.2"
+            "BakedOutputSubdirectory": "gl"
           },
           {
             "Name": "glcore",

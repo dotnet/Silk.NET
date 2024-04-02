@@ -14,7 +14,10 @@ public class Ref2DTests
         Assert.That((string)thingPtr.Ref, Is.EqualTo(STR_1));
         Assert.That((string)thingPtr[0], Is.EqualTo(STR_1));
         Assert.That(thingPtr[0][0], Is.EqualTo(STR_1[0]));
-        Assert.That(Encoding.UTF8.GetString(thingPtr[0].AsSpan(Encoding.UTF8.GetByteCount(STR_1))), Is.EqualTo(STR_1));
+        Assert.That(
+            Encoding.UTF8.GetString(thingPtr[0].AsSpan(Encoding.UTF8.GetByteCount(STR_1))),
+            Is.EqualTo(STR_1)
+        );
         Assert.That(thingPtr.ReadToStringArray(length: 1)?[0], Is.EqualTo(STR_1));
     }
 
@@ -40,8 +43,12 @@ public class Ref2DTests
         Assert.That(thingPtr[0][0], Is.EqualTo(STR_1[0]));
         Assert.That(
             Encoding.UTF32.GetString(
-                MemoryMarshal.Cast<uint, byte>(thingPtr[0].AsSpan(Encoding.UTF32.GetByteCount(STR_1) / 4))),
-            Is.EqualTo(STR_1));
+                MemoryMarshal.Cast<uint, byte>(
+                    thingPtr[0].AsSpan(Encoding.UTF32.GetByteCount(STR_1) / 4)
+                )
+            ),
+            Is.EqualTo(STR_1)
+        );
         Assert.That(thingPtr.ReadToStringArray(length: 1)?[0], Is.EqualTo(STR_1));
     }
 
@@ -54,8 +61,10 @@ public class Ref2DTests
             Assert.That((string)thingPtr.Ref, Is.EqualTo(STR_1));
             Assert.That((string)thingPtr[0], Is.EqualTo(STR_1));
             Assert.That(thingPtr[0][0], Is.EqualTo(STR_1[0]));
-            Assert.That(Encoding.UTF8.GetString(thingPtr[0].AsSpan(Encoding.UTF8.GetByteCount(STR_1))),
-                Is.EqualTo(STR_1));
+            Assert.That(
+                Encoding.UTF8.GetString(thingPtr[0].AsSpan(Encoding.UTF8.GetByteCount(STR_1))),
+                Is.EqualTo(STR_1)
+            );
             Assert.That(thingPtr.ReadToStringArray(length: 1)?[0], Is.EqualTo(STR_1));
         }
     }
@@ -85,8 +94,12 @@ public class Ref2DTests
             Assert.That(thingPtr[0][0], Is.EqualTo(STR_1[0]));
             Assert.That(
                 Encoding.UTF32.GetString(
-                    MemoryMarshal.Cast<uint, byte>(thingPtr[0].AsSpan(Encoding.UTF32.GetByteCount(STR_1) / 4))),
-                Is.EqualTo(STR_1));
+                    MemoryMarshal.Cast<uint, byte>(
+                        thingPtr[0].AsSpan(Encoding.UTF32.GetByteCount(STR_1) / 4)
+                    )
+                ),
+                Is.EqualTo(STR_1)
+            );
             Assert.That(thingPtr.ReadToStringArray(length: 1)?[0], Is.EqualTo(STR_1));
         }
     }
@@ -98,15 +111,18 @@ public class Ref2DTests
         Assert.That((string)thingPtr.Ref, Is.EqualTo(STR_1));
         Assert.That((string)thingPtr[0], Is.EqualTo(STR_1));
         Assert.That(thingPtr[0][0], Is.EqualTo(STR_1[0]));
-        Assert.That(Encoding.UTF8.GetString(thingPtr[0].AsSpan(Encoding.UTF8.GetByteCount(STR_1))),
-            Is.EqualTo(STR_1));
+        Assert.That(
+            Encoding.UTF8.GetString(thingPtr[0].AsSpan(Encoding.UTF8.GetByteCount(STR_1))),
+            Is.EqualTo(STR_1)
+        );
         Assert.That(thingPtr.ReadToStringArray(length: 1)?[0], Is.EqualTo(STR_1));
     }
 
     [Test]
     public unsafe void SingleStringPtrUtf16FromJaggedArray()
     {
-        Ref2D<char> thingPtr = new[] {
+        Ref2D<char> thingPtr = new[]
+        {
             MemoryMarshal.Cast<byte, char>(Encoding.Unicode.GetBytes(STR_1 + "\0")).ToArray()
         };
         Assert.That((string)thingPtr.Ref, Is.EqualTo(STR_1));
@@ -119,15 +135,21 @@ public class Ref2DTests
     [Test]
     public unsafe void SingleStringPtrUtf32FromJaggedArray()
     {
-        Ref2D<uint> thingPtr =
-            new[] { MemoryMarshal.Cast<byte, uint>(Encoding.UTF32.GetBytes(STR_1 + "\0")).ToArray() };
+        Ref2D<uint> thingPtr = new[]
+        {
+            MemoryMarshal.Cast<byte, uint>(Encoding.UTF32.GetBytes(STR_1 + "\0")).ToArray()
+        };
         Assert.That((string)thingPtr.Ref, Is.EqualTo(STR_1));
         Assert.That((string)thingPtr[0], Is.EqualTo(STR_1));
         Assert.That(thingPtr[0][0], Is.EqualTo(STR_1[0]));
         Assert.That(
             Encoding.UTF32.GetString(
-                MemoryMarshal.Cast<uint, byte>(thingPtr[0].AsSpan(Encoding.UTF32.GetByteCount(STR_1) / 4))),
-            Is.EqualTo(STR_1));
+                MemoryMarshal.Cast<uint, byte>(
+                    thingPtr[0].AsSpan(Encoding.UTF32.GetByteCount(STR_1) / 4)
+                )
+            ),
+            Is.EqualTo(STR_1)
+        );
         Assert.That(thingPtr.ReadToStringArray(length: 1)?[0], Is.EqualTo(STR_1));
     }
 
@@ -140,8 +162,10 @@ public class Ref2DTests
             Assert.That((string)thingPtr.Ref, Is.EqualTo(STR_1));
             Assert.That((string)thingPtr[0], Is.EqualTo(STR_1));
             Assert.That(thingPtr[0][0], Is.EqualTo(STR_1[0]));
-            Assert.That(Encoding.UTF8.GetString(thingPtr[0].AsSpan(Encoding.UTF8.GetByteCount(STR_1))),
-                Is.EqualTo(STR_1));
+            Assert.That(
+                Encoding.UTF8.GetString(thingPtr[0].AsSpan(Encoding.UTF8.GetByteCount(STR_1))),
+                Is.EqualTo(STR_1)
+            );
             Assert.That(thingPtr.ReadToStringArray(length: 1)?[0], Is.EqualTo(STR_1));
         }
     }
@@ -171,8 +195,12 @@ public class Ref2DTests
             Assert.That(thingPtr[0][0], Is.EqualTo(STR_1[0]));
             Assert.That(
                 Encoding.UTF32.GetString(
-                    MemoryMarshal.Cast<uint, byte>(thingPtr[0].AsSpan(Encoding.UTF32.GetByteCount(STR_1) / 4))),
-                Is.EqualTo(STR_1));
+                    MemoryMarshal.Cast<uint, byte>(
+                        thingPtr[0].AsSpan(Encoding.UTF32.GetByteCount(STR_1) / 4)
+                    )
+                ),
+                Is.EqualTo(STR_1)
+            );
             Assert.That(thingPtr.ReadToStringArray(length: 1)?[0], Is.EqualTo(STR_1));
         }
     }
@@ -181,16 +209,43 @@ public class Ref2DTests
     public unsafe void NullIsNull()
     {
         Ref2D<nint> ptr = nullptr;
-        Assert.True(((delegate*<ref Ref<nint>, bool>)(delegate*<ref readonly int, bool>)&Unsafe.IsNullRef<int>)(
-            ref ((delegate*<in Ref<nint>, ref Ref<nint>>)(delegate*<ref readonly int, ref int>)&Unsafe.AsRef<int>)(
-                in ptr.Ref)));
-        Assert.True(((delegate*<ref Ref<nint>, bool>)(delegate*<ref readonly int, bool>)&Unsafe.IsNullRef<int>)(
-            ref ((delegate*<in Ref<nint>, ref Ref<nint>>)(delegate*<ref readonly int, ref int>)&Unsafe.AsRef<int>)(
-                in ptr[0])));
-        Assert.True(((delegate*<ref nint*, bool>)(delegate*<ref readonly int, bool>)&Unsafe.IsNullRef<int>)(
-            ref ((delegate*<in nint*, ref nint*>)(delegate*<ref readonly int, ref int>)&Unsafe.AsRef<int>)(
-                in ptr.GetPinnableReference())));
-        Assert.True((nint**) ptr is null);
-        Assert.True((void**) ptr is null);
+        Assert.That(
+            (
+                (delegate* <ref Ref<nint>, bool>)
+                    (delegate* <ref readonly int, bool>)&Unsafe.IsNullRef<int>
+            )(
+                ref (
+                    (delegate* <in Ref<nint>, ref Ref<nint>>)
+                        (delegate* <ref readonly int, ref int>)&Unsafe.AsRef<int>
+                )(in ptr.Ref)
+            ),
+            Is.True
+        );
+        Assert.That(
+            (
+                (delegate* <ref Ref<nint>, bool>)
+                    (delegate* <ref readonly int, bool>)&Unsafe.IsNullRef<int>
+            )(
+                ref (
+                    (delegate* <in Ref<nint>, ref Ref<nint>>)
+                        (delegate* <ref readonly int, ref int>)&Unsafe.AsRef<int>
+                )(in ptr[0])
+            ),
+            Is.True
+        );
+        Assert.That(
+            (
+                (delegate* <ref nint*, bool>)
+                    (delegate* <ref readonly int, bool>)&Unsafe.IsNullRef<int>
+            )(
+                ref (
+                    (delegate* <in nint*, ref nint*>)
+                        (delegate* <ref readonly int, ref int>)&Unsafe.AsRef<int>
+                )(in ptr.GetPinnableReference())
+            ),
+            Is.True
+        );
+        Assert.That((nint**)ptr is null, Is.True);
+        Assert.That((void**)ptr is null, Is.True);
     }
 }
