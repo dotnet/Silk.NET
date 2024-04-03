@@ -30,7 +30,4 @@
     <EmbeddedResource Include="Clang\VisualStudioVarPrint.bat" />
   </ItemGroup>
 
-
-
-
 </Project>

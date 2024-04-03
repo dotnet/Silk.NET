@@ -25,6 +25,7 @@ public interface INameTrimmer
     /// <param name="jobKey">The job key.</param>
     /// <param name="names">The names within the container.</param>
     /// <param name="prefixOverrides">The prefix overrides.</param>
+    /// <param name="nonDeterminant">Names that should not be treated as determinant of the identified prefix.</param>
     /// <param name="identifiedPrefix">The prefix identified that this trimmer is trimming from the functions.</param>
     void Trim(
         string? container,
@@ -32,6 +33,7 @@ public interface INameTrimmer
         string? jobKey,
         Dictionary<string, (string Primary, List<string>? Secondary)>? names,
         Dictionary<string, string>? prefixOverrides,
+        HashSet<string>? nonDeterminant,
         ref string? identifiedPrefix
     );
 }

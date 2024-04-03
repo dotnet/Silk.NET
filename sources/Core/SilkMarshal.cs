@@ -1,5 +1,5 @@
 using System.Buffers;
-using System.Diagnostics.CodeAnalysis;
+using System.Numerics;
 using System.Runtime;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
@@ -582,5 +582,215 @@ public static unsafe class SilkMarshal
             }
         }
         return ret;
+    }
+
+    /// <summary>
+    /// Represents an unsafe constant cast wherein:
+    /// <list type="bullet">
+    /// <item>
+    /// <term>Casts to smaller types truncate the most significant bits.</term>
+    /// <description>
+    /// The return value is obtained by reinterpreting and dereferencing a pointer to <typeparamref name="TFrom"/> as a
+    /// <typeparamref name="TTo"/>, which on a little-endian machine is offset by the absolute byte difference between
+    /// the size of <typeparamref name="TFrom"/> and <typeparamref name="TTo"/> to ensure that only the least
+    /// significant bits are taken; or an equivalent, more optimised methodology for smaller types.
+    /// </description>
+    /// </item>
+    /// <item>
+    /// <term>Casts to larger types fill the most significant bits with zeroes.</term>
+    /// <description>
+    /// Assignment occurs through reinterpretation of a pointer to a zeroed-out <typeparamref name="TTo"/> to a
+    /// <typeparamref name="TFrom"/>, which on a little-endian machine is offset by the absolute byte difference
+    /// between the size of <typeparamref name="TFrom"/> and <typeparamref name="TTo"/>, to obtain the return value;
+    /// or an equivalent, more optimised methodology for smaller types.
+    /// </description>
+    /// </item>
+    /// </list>
+    /// </summary>
+    /// <remarks>
+    /// This is optimised to a <see cref="Unsafe.BitCast{TFrom, TTo}"/> where possible. Namely, where the size of types
+    /// are the same or where <typeparamref name="TFrom"/> and <typeparamref name="TTo"/> both have the same size as a
+    /// primitive type. This often results in a single CPU instruction (on x64) being emitted when inlined.
+    /// </remarks>
+    /// <param name="value">The value to cast.</param>
+    /// <typeparam name="TFrom">The type to cast from.</typeparam>
+    /// <typeparam name="TTo">The type to cast to.</typeparam>
+    /// <returns>The casted constant.</returns>
+    /// <exception cref="NotImplementedException">
+    /// Currently, neither signed numbers that are not primitive-sized nor floating point numbers are supported
+    /// <typeparamref name="TTo"/> types.
+    /// </exception>
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    public static TTo ConstCast<TFrom, TTo>(TFrom value)
+        where TFrom : unmanaged
+        where TTo : unmanaged
+    {
+        [MethodImpl(MethodImplOptions.NoInlining | MethodImplOptions.AggressiveOptimization)]
+        static TTo UnsignedFallback(TFrom value)
+        {
+            if (sizeof(TFrom) > sizeof(TTo))
+            {
+                var valcop = value; // <-- codegen dies otherwise, presumably some pessimism?
+                return *(
+                    (TTo*)&valcop + (BitConverter.IsLittleEndian ? sizeof(TFrom) - sizeof(TTo) : 0)
+                );
+            }
+
+            TTo val = default;
+            *(TFrom*)(&val + (BitConverter.IsLittleEndian ? sizeof(TTo) - sizeof(TFrom) : 0)) =
+                value;
+            return val;
+        }
+
+        // Sadly switch expression codegen is not optimal so we have the below abominations.
+        // I can't wait for the alternatives to Silk.NET to point this out to prospective users and say that this code
+        // is disgusting therefore the entire library is disgusting. Yes, I know it's disgusting. The point is we do
+        // this for perf so you don't have to!
+        //
+        // Oh here's the codegen on x64:
+        // IntEnum -> int: mov eax, ecx; ret        ShortEnum -> int: movzx eax, cx; ret
+        // IntEnum -> uint: mov eax, ecx; ret       ShortEnum -> uint: movzx eax, cx; ret
+        // IntEnum -> long: mov eax, ecx; ret       ShortEnum -> long: movzx eax, cx; ret
+        // IntEnum -> ulong: mov eax, ecx; ret      ShortEnum -> ulong: movzx eax, cx; ret
+        // IntEnum -> short: movsx rax, cx; ret     ShortEnum -> short: movsx rax, cx; ret
+        // IntEnum -> ushort: movzx eax, cx; ret    ShortEnum -> ushort: movzx eax, cx; ret
+        // IntEnum -> byte: movzx eax, cl; ret      ShortEnum -> byte: movzx eax, cl; ret
+        // IntEnum -> sbyte: movsx rax, cl; ret     ShortEnum -> sbyte: movsx rax, cl; ret
+        // UIntEnum -> int: mov eax, ecx; ret       UShortEnum -> int: movzx eax, cx; ret
+        // UIntEnum -> uint: mov eax, ecx; ret      UShortEnum -> uint: movzx eax, cx; ret
+        // UIntEnum -> long: mov eax, ecx; ret      UShortEnum -> long: movzx eax, cx; ret
+        // UIntEnum -> ulong: mov eax, ecx; ret     UShortEnum -> ulong: movzx eax, cx; ret
+        // UIntEnum -> short: movsx rax, cx; ret    UShortEnum -> short: movsx rax, cx; ret
+        // UIntEnum -> ushort: movzx eax, cx; ret   UShortEnum -> ushort: movzx eax, cx; ret
+        // UIntEnum -> byte: movzx eax, cl; ret     UShortEnum -> byte: movzx eax, cl; ret
+        // UIntEnum -> sbyte: movsx rax, cl; ret    UShortEnum -> sbyte: movsx rax, cl; ret
+        // LongEnum -> int: mov eax, ecx; ret       ByteEnum -> int: movzx eax, cl; ret
+        // LongEnum -> uint: mov eax, ecx; ret      ByteEnum -> uint: movzx eax, cl; ret
+        // LongEnum -> long: mov rax, rcx; ret      ByteEnum -> long: movzx eax, cl; ret
+        // LongEnum -> ulong: mov rax, rcx; ret     ByteEnum -> ulong: movzx eax, cl; ret
+        // LongEnum -> short: movsx rax, cx; ret    ByteEnum -> short: movzx eax, cl; ret
+        // LongEnum -> ushort: movzx eax, cx; ret   ByteEnum -> ushort: movzx eax, cl; ret
+        // LongEnum -> byte: movzx eax, cl; ret     ByteEnum -> byte: movzx eax, cl; ret
+        // LongEnum -> sbyte: movsx rax, cl; ret    ByteEnum -> sbyte: movsx rax, cl; ret
+        // ULongEnum -> int: mov eax, ecx; ret      SByteEnum -> int: movzx eax, cl; ret
+        // ULongEnum -> uint: mov eax, ecx; ret     SByteEnum -> uint: movzx eax, cl; ret
+        // ULongEnum -> long: mov rax, rcx; ret     SByteEnum -> long: movzx eax, cl; ret
+        // ULongEnum -> ulong: mov rax, rcx; ret    SByteEnum -> ulong: movzx eax, cl; ret
+        // ULongEnum -> short: movsx rax, cx; ret   SByteEnum -> short: movzx eax, cl; ret
+        // ULongEnum -> ushort: movzx eax, cx; ret  SByteEnum -> ushort: movzx eax, cl; ret
+        // ULongEnum -> byte: movzx eax, cl; ret    SByteEnum -> byte: movzx eax, cl; ret
+        // ULongEnum -> sbyte: movsx rax, cl; ret   SByteEnum -> sbyte: movsx rax, cl; ret
+
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        static TTo UnsignedCast(TFrom value) =>
+            sizeof(TTo) == sizeof(TFrom)
+                ? Unsafe.BitCast<TFrom, TTo>(value)
+                : sizeof(TTo) == 1 && sizeof(TFrom) == 2
+                    ? Unsafe.BitCast<byte, TTo>((byte)Unsafe.BitCast<TFrom, ushort>(value))
+                    : sizeof(TTo) == 1 && sizeof(TFrom) == 4
+                        ? Unsafe.BitCast<byte, TTo>((byte)Unsafe.BitCast<TFrom, uint>(value))
+                        : sizeof(TTo) == 1 && sizeof(TFrom) == 8
+                            ? Unsafe.BitCast<byte, TTo>((byte)Unsafe.BitCast<TFrom, ulong>(value))
+                            : sizeof(TTo) == 2 && sizeof(TFrom) == 1
+                                ? Unsafe.BitCast<ushort, TTo>(Unsafe.BitCast<TFrom, byte>(value))
+                                : sizeof(TTo) == 2 && sizeof(TFrom) == 4
+                                    ? Unsafe.BitCast<ushort, TTo>(
+                                        (ushort)Unsafe.BitCast<TFrom, uint>(value)
+                                    )
+                                    : sizeof(TTo) == 2 && sizeof(TFrom) == 8
+                                        ? Unsafe.BitCast<ushort, TTo>(
+                                            (ushort)Unsafe.BitCast<TFrom, ulong>(value)
+                                        )
+                                        : sizeof(TTo) == 4 && sizeof(TFrom) == 1
+                                            ? Unsafe.BitCast<uint, TTo>(
+                                                Unsafe.BitCast<TFrom, byte>(value)
+                                            )
+                                            : sizeof(TTo) == 4 && sizeof(TFrom) == 2
+                                                ? Unsafe.BitCast<uint, TTo>(
+                                                    Unsafe.BitCast<TFrom, ushort>(value)
+                                                )
+                                                : sizeof(TTo) == 4 && sizeof(TFrom) == 8
+                                                    ? Unsafe.BitCast<uint, TTo>(
+                                                        (uint)Unsafe.BitCast<TFrom, ulong>(value)
+                                                    )
+                                                    : sizeof(TTo) == 8 && sizeof(TFrom) == 1
+                                                        ? Unsafe.BitCast<ulong, TTo>(
+                                                            Unsafe.BitCast<TFrom, byte>(value)
+                                                        )
+                                                        : sizeof(TTo) == 8 && sizeof(TFrom) == 2
+                                                            ? Unsafe.BitCast<ulong, TTo>(
+                                                                Unsafe.BitCast<TFrom, ushort>(value)
+                                                            )
+                                                            : sizeof(TTo) == 8 && sizeof(TFrom) == 4
+                                                                ? Unsafe.BitCast<ulong, TTo>(
+                                                                    Unsafe.BitCast<TFrom, uint>(
+                                                                        value
+                                                                    )
+                                                                )
+                                                                : UnsignedFallback(value);
+
+        [MethodImpl(MethodImplOptions.NoInlining | MethodImplOptions.AggressiveOptimization)]
+        static TTo SignedFallback(TFrom _) =>
+            throw new NotImplementedException(
+                "Non-primitive signed numbers are not supported at this time."
+            );
+
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        static TTo SignedCast(TFrom value) =>
+            sizeof(TTo) == sizeof(TFrom)
+                ? Unsafe.BitCast<TFrom, TTo>(value)
+                : sizeof(TTo) == 1 && sizeof(TFrom) == 2
+                    ? Unsafe.BitCast<sbyte, TTo>((sbyte)Unsafe.BitCast<TFrom, short>(value))
+                    : sizeof(TTo) == 1 && sizeof(TFrom) == 4
+                        ? Unsafe.BitCast<sbyte, TTo>((sbyte)Unsafe.BitCast<TFrom, int>(value))
+                        : sizeof(TTo) == 1 && sizeof(TFrom) == 8
+                            ? Unsafe.BitCast<sbyte, TTo>((sbyte)Unsafe.BitCast<TFrom, long>(value))
+                            : sizeof(TTo) == 2 && sizeof(TFrom) == 1
+                                ? Unsafe.BitCast<short, TTo>(Unsafe.BitCast<TFrom, sbyte>(value))
+                                : sizeof(TTo) == 2 && sizeof(TFrom) == 4
+                                    ? Unsafe.BitCast<short, TTo>(
+                                        (short)Unsafe.BitCast<TFrom, int>(value)
+                                    )
+                                    : sizeof(TTo) == 2 && sizeof(TFrom) == 8
+                                        ? Unsafe.BitCast<short, TTo>(
+                                            (short)Unsafe.BitCast<TFrom, long>(value)
+                                        )
+                                        : sizeof(TTo) == 4 && sizeof(TFrom) == 1
+                                            ? Unsafe.BitCast<int, TTo>(
+                                                Unsafe.BitCast<TFrom, sbyte>(value)
+                                            )
+                                            : sizeof(TTo) == 4 && sizeof(TFrom) == 2
+                                                ? Unsafe.BitCast<int, TTo>(
+                                                    Unsafe.BitCast<TFrom, short>(value)
+                                                )
+                                                : sizeof(TTo) == 4 && sizeof(TFrom) == 8
+                                                    ? Unsafe.BitCast<int, TTo>(
+                                                        (int)Unsafe.BitCast<TFrom, long>(value)
+                                                    )
+                                                    : sizeof(TTo) == 8 && sizeof(TFrom) == 1
+                                                        ? Unsafe.BitCast<long, TTo>(
+                                                            Unsafe.BitCast<TFrom, sbyte>(value)
+                                                        )
+                                                        : sizeof(TTo) == 8 && sizeof(TFrom) == 2
+                                                            ? Unsafe.BitCast<long, TTo>(
+                                                                Unsafe.BitCast<TFrom, short>(value)
+                                                            )
+                                                            : sizeof(TTo) == 8 && sizeof(TFrom) == 4
+                                                                ? Unsafe.BitCast<long, TTo>(
+                                                                    Unsafe.BitCast<TFrom, int>(
+                                                                        value
+                                                                    )
+                                                                )
+                                                                : SignedFallback(value);
+
+        return typeof(TTo).IsAssignableTo(typeof(IFloatingPoint<>))
+            ? throw new NotImplementedException("Floating points are not supported at this time.")
+            : typeof(TTo).IsAssignableTo(typeof(ISignedNumber<>))
+                ? SignedCast(value)
+                : UnsignedCast(value);
     }
 }

@@ -46,7 +46,7 @@ public static partial class NameUtils
     /// </param>
     /// <returns>String that is common between all provided names</returns>
     public static string FindCommonPrefix(
-        List<string> names,
+        IReadOnlyList<string> names,
         bool allowFullMatch,
         bool allowLeadingDigits,
         bool naive = false
@@ -82,7 +82,7 @@ public static partial class NameUtils
     /// </param>
     /// <returns>String that is common between all provided names</returns>
     public static string FindCommonPrefix(
-        List<string> names,
+        IReadOnlyList<string> names,
         bool allowFullMatch,
         int maxLen,
         bool naive = false

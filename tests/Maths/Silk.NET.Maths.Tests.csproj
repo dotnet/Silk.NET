@@ -17,6 +17,7 @@
         <PrivateAssets>all</PrivateAssets>
         <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
       </PackageReference>
+      <PackageReference Update="NUnit" Version="4.1.0" />
     </ItemGroup>
 
 </Project>

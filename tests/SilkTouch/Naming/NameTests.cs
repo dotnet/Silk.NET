@@ -11,7 +11,8 @@ public class NameTests : NameTrimmer
     [Test]
     public void SimpleGlfwTestDetermination()
     {
-        var test = new Dictionary<string, (string, List<string>?)> {
+        var test = new Dictionary<string, (string, List<string>?)>
+        {
             { "GLFWallocator", ("GLFWallocator", null) },
             { "GLFWgammaramp", ("GLFWgammaramp", null) },
             { "GLFWgamepadstate", ("GLFWgamepadstate", null) },
@@ -22,10 +23,14 @@ public class NameTests : NameTrimmer
             { "GLFWmonitor", ("GLFWmonitor", null) },
             { "GLFWwindow", ("GLFWwindow", null) }
         };
-        Assert.That(GetPrefix(null, null, test, null, false, true)?.Prefix, Is.EqualTo("GLFW"));
+        Assert.That(
+            GetPrefix(null, null, test, null, null, false, true)?.Prefix,
+            Is.EqualTo("GLFW")
+        );
         string? identifiedPrefix = null;
-        Trim(null, null, "GLFW", test, null, ref identifiedPrefix);
-        var expected = new Dictionary<string, string> {
+        Trim(null, null, "GLFW", test, null, null, ref identifiedPrefix);
+        var expected = new Dictionary<string, string>
+        {
             { "GLFWallocator", "Allocator" },
             { "GLFWgammaramp", "Gammaramp" },
             { "GLFWgamepadstate", "Gamepadstate" },
@@ -38,7 +43,10 @@ public class NameTests : NameTrimmer
         };
         foreach (var (key, (trimmed, _)) in test)
         {
-            Assert.That(trimmed.Prettify(new NameUtils.NameTransformer(4)), Is.EqualTo(expected[key]));
+            Assert.That(
+                trimmed.Prettify(new NameUtils.NameTransformer(4)),
+                Is.EqualTo(expected[key])
+            );
         }
     }
 }
