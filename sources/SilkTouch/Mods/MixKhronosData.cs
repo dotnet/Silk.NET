@@ -799,7 +799,8 @@ public partial class MixKhronosData(
     internal static (bool RequireAll, IEnumerable<string> Options) ParseDependencyOptions(
         ReadOnlySpan<char> dependencyString,
         string? topLevelAddReq = null,
-        bool allowRequireAll = false
+        bool allowRequireAll = false,
+        string? implicationContext = null
     )
     {
         var bracketDepth = 0;
@@ -939,6 +940,23 @@ public partial class MixKhronosData(
             );
         }
 
+        if (implicationContext is not null && options.All(x => !x.Contains('+')))
+        {
+            // See the ImpliedSets attribute value documentation. ["VK_EXT_one", "VK_EXT_two"] for
+            // "VK_EXT_one,VK_EXT_two" will be interpreted to mean "both VK_EXT_one and VK_EXT_two are implied" instead
+            // of either/or, so we declare a redundant implication to make sure this isn't the case.
+            // You might think that this would just work the same as for the ApiSets attribute, as indeed I did
+            // originally, but after thinking it through we don't get a top-level pre-populated "topLevelAddReq" with
+            // the extension name in the implied sets case, which means that "VK_EXT_one,VK_EXT_two" isn't automatically
+            // prefilled to be ["VK_EXT_dependent+VK_EXT_one", "VK_EXT_dependent+VK_EXT_two"]. Because at this point we
+            // know RequireAll will be returned as false, and we know the implications won't be interpreted as options
+            // (i.e. as "one of" instead of "all"), we need to append the context to make sure this is indeed the case.
+            for (var i = 0; i < options.Count; i++)
+            {
+                options[i] = $"{implicationContext}+{options[i]}";
+            }
+        }
+
         return (false, options);
     }
 
@@ -964,7 +982,7 @@ public partial class MixKhronosData(
             // SupportedApiProfileAttribute documentation - if any one of the reported implications has a +, then you
             // can make only AT LEAST ONE implication. Otherwise, you can imply that all implications are implied.
             var (_, impliedSets) = ext.Attribute("depends")?.Value is { } imp
-                ? ParseDependencyOptions(imp, allowRequireAll: true)
+                ? ParseDependencyOptions(imp, allowRequireAll: true, implicationContext: name)
                 : (false, null);
 
             var supportedApis =
@@ -1418,11 +1436,32 @@ public partial class MixKhronosData(
         }
 
         // Read the group usages from the functions
-        foreach (var func in doc.Elements("registry").Elements().Elements("command"))
+        foreach (var func in doc.Elements("registry").Elements("commands").Elements("command"))
         {
-            var funcName =
-                func.Element("proto")?.Element("name")?.Value
-                ?? throw new InvalidDataException("command with no name");
+            var funcName = func.Element("proto")?.Element("name")?.Value;
+            if (funcName is null)
+            {
+                if (
+                    func.Attribute("alias")?.Value is { Length: > 0 } aliasedFunc
+                    && (funcName = func.Attribute("name")?.Value) is not null
+                )
+                {
+                    // Handle the alias case
+                    foreach (var ((otherFunc, applicable), value) in data.GroupUsages)
+                    {
+                        if (otherFunc == aliasedFunc)
+                        {
+                            data.GroupUsages[(funcName, applicable)] = value;
+                        }
+                    }
+
+                    continue;
+                }
+
+                throw new InvalidDataException("command with no name");
+            }
+
+            // Get the return type group attribute
             if (
                 func.Element("proto")?.Element("ptype")?.Attribute("group")?.Value
                     is { Length: > 0 } retGrp
@@ -1431,6 +1470,8 @@ public partial class MixKhronosData(
             {
                 data.GroupUsages[(funcName, ":return")] = retGrp;
             }
+
+            // Get the parameter group attributes
             foreach (var param in func.Elements("param"))
             {
                 var paramName =
