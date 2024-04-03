@@ -59,7 +59,6 @@ public partial class MixKhronosData(
         /// <remarks>
         /// This is OpenGL and OpenCL specific.
         /// </remarks>
-        // TODO map OpenCL into these concepts
         public Dictionary<string, HashSet<string>> EnumsToGroups { get; } = [];
 
         /// <summary>
@@ -68,7 +67,6 @@ public partial class MixKhronosData(
         /// <remarks>
         /// This is OpenGL and OpenCL specific.
         /// </remarks>
-        // TODO map OpenCL into these concepts
         public Dictionary<string, EnumGroup> Groups { get; } = [];
 
         /// <summary>
