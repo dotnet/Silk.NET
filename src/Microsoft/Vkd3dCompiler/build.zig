@@ -2,6 +2,7 @@ const std = @import("std");
 const fs = std.fs;
 
 const vkd3d_folder = "../../../build/submodules/vkd3d/";
+const vulkan_header_folder = "../../../build/submodules/Vulkan-Headers/";
 
 pub fn build(b: *std.Build) void {
     const target = b.standardTargetOptions(.{});
@@ -25,6 +26,8 @@ pub fn build(b: *std.Build) void {
 
     //Since we statically link with vkd3d-shader, we need to dynamically link against SPIRV-Tools ourselves
     vkd3d_compiler.linkSystemLibrary("SPIRV-Tools-shared");
+
+    vkd3d_compiler.addIncludePath(.{ .path = vulkan_header_folder ++ "include/" });
 
     vkd3d_compiler.addIncludePath(.{ .path = vkd3d_folder ++ "include/" });
     vkd3d_compiler.addIncludePath(.{ .path = vkd3d_folder ++ "include/private/" });
