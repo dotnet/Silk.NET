@@ -8,6 +8,7 @@ on:
     paths:
       - build/submodules/vkd3d
       - build/submodules/SPIRV-Tools
+      - build/submodules/Vulkan-Headers
       - build/submodules/vkd3d-no-ms-abi.patch
       - build/nuke/Native/Core.cs
       - build/nuke/Native/Vkd3d.cs
@@ -45,6 +46,7 @@ jobs:
         run: |
           git submodule update --init --recursive --depth 0 build/submodules/vkd3d
           git submodule update --init --recursive --depth 0 build/submodules/SPIRV-Tools
+          git submodule update --init --recursive --depth 0 build/submodules/Vulkan-Headers
           git config --local user.email "9011267+dotnet-bot@users.noreply.github.com"
           git config --local user.name "The Silk.NET Automaton"
       - name: Extra prerequisites
