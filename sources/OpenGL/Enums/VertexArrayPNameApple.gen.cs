@@ -8,7 +8,7 @@ using System.Runtime.InteropServices;
 [Transformed]
 public enum VertexArrayPNameApple
 {
-    CachedApple = 0x85BE,
-    SharedApple = 0x85BF,
-    ClientApple = 0x85B4
+    Cached = 0x85BE,
+    Shared = 0x85BF,
+    Client = 0x85B4
 }

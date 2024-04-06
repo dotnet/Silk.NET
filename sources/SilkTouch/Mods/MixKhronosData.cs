@@ -1226,7 +1226,6 @@ public partial class MixKhronosData(
                         || !job.Vendors.Contains(vendorSuffix)
                         || !current.EndsWith(vendorSuffix)
                         || !groupInfo.Enums.All(x => x.Identifier.ToString().EndsWith(vendorSuffix))
-                        || notSafeToTrim
                     )
                     {
                         vendorSuffix = null;
@@ -1331,10 +1330,6 @@ public partial class MixKhronosData(
                 if (!current.EndsWith(vendor))
                 {
                     continue;
-                }
-                if (container == "HintTargetPGI")
-                {
-                    Debugger.Break();
                 }
 
                 newCurrent = current[..^vendor.Length];

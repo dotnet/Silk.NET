@@ -8,8 +8,8 @@ using System.Runtime.InteropServices;
 [Transformed]
 public enum HintTargetPGI
 {
-    VertexDataHintPGI = 0x1A22A,
-    VertexConsistentHintPGI = 0x1A22B,
-    MaterialSideHintPGI = 0x1A22C,
-    MaxVertexHintPGI = 0x1A22D
+    VertexDataHint = 0x1A22A,
+    VertexConsistentHint = 0x1A22B,
+    MaterialSideHint = 0x1A22C,
+    MaxVertexHint = 0x1A22D
 }

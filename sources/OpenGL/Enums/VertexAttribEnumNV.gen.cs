@@ -8,5 +8,5 @@ using System.Runtime.InteropServices;
 [Transformed]
 public enum VertexAttribEnumNV
 {
-    ProgramParameterNV = 0x8644
+    ProgramParameter = 0x8644
 }

@@ -8,11 +8,11 @@ using System.Runtime.InteropServices;
 [Transformed]
 public enum SamplePatternEXT
 {
-    PassEXT = 0x80A1,
-    Gl2Pass0EXT = 0x80A2,
-    Gl2Pass1EXT = 0x80A3,
-    Gl4Pass0EXT = 0x80A4,
-    Gl4Pass1EXT = 0x80A5,
-    Gl4Pass2EXT = 0x80A6,
-    Gl4Pass3EXT = 0x80A7
+    Pass = 0x80A1,
+    Gl2Pass0 = 0x80A2,
+    Gl2Pass1 = 0x80A3,
+    Gl4Pass0 = 0x80A4,
+    Gl4Pass1 = 0x80A5,
+    Gl4Pass2 = 0x80A6,
+    Gl4Pass3 = 0x80A7
 }

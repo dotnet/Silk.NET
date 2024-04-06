@@ -8,10 +8,10 @@ using System.Runtime.InteropServices;
 [Transformed]
 public enum ShadingRateQCOM
 {
-    Rate1X1PixelsQCOM = 0x96A6,
-    Rate1X2PixelsQCOM = 0x96A7,
-    Rate2X1PixelsQCOM = 0x96A8,
-    Rate2X2PixelsQCOM = 0x96A9,
-    Rate4X2PixelsQCOM = 0x96AC,
-    Rate4X4PixelsQCOM = 0x96AE
+    Rate1X1Pixels = 0x96A6,
+    Rate1X2Pixels = 0x96A7,
+    Rate2X1Pixels = 0x96A8,
+    Rate2X2Pixels = 0x96A9,
+    Rate4X2Pixels = 0x96AC,
+    Rate4X4Pixels = 0x96AE
 }
