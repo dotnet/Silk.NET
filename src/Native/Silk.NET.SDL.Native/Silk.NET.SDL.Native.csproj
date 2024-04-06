@@ -24,16 +24,18 @@
   <ItemGroup>
     <Content Include="build\net461\$(PackageId).targets" PackagePath="build\net461\$(PackageId).targets" />
     <Content Include="build\netstandard2.0\$(PackageId).targets" PackagePath="build\netstandard2.0\$(PackageId).targets" />
-    <Content Include="runtimes/iossimulator/native/libSDL2.a" PackagePath="runtimes/iossimulator/native/libSDL2.a" />
-    <Content Include="runtimes/osx/native/libSDL2-2.0.dylib" PackagePath="runtimes/osx/native/libSDL2-2.0.dylib" />
-    <Content Include="runtimes/linux-x86/native/libSDL2-2.0.so" PackagePath="runtimes/linux-x86/native/libSDL2-2.0.so" />
-    <Content Include="runtimes/win-x86/native/SDL2.dll" PackagePath="runtimes/win-x86/native/SDL2.dll" />
     <Content Include="runtimes/ios/native/libSDL2.a" PackagePath="runtimes/ios/native/libSDL2.a" />
-    <Content Include="runtimes/win-x64/native/SDL2.dll" PackagePath="runtimes/win-x64/native/SDL2.dll" />
-    <Content Include="runtimes/tvos/native/libSDL2.a" PackagePath="runtimes/tvos/native/libSDL2.a" />
+    <Content Include="runtimes/iossimulator/native/libSDL2.a" PackagePath="runtimes/iossimulator/native/libSDL2.a" />
+    <Content Include="runtimes/linux-arm/native/libSDL2-2.0.so" PackagePath="runtimes/linux-arm/native/libSDL2-2.0.so" />
+    <Content Include="runtimes/linux-arm64/native/libSDL2-2.0.so" PackagePath="runtimes/linux-arm64/native/libSDL2-2.0.so" />
     <Content Include="runtimes/linux-x64/native/libSDL2-2.0.so" PackagePath="runtimes/linux-x64/native/libSDL2-2.0.so" />
+    <Content Include="runtimes/linux-x86/native/libSDL2-2.0.so" PackagePath="runtimes/linux-x86/native/libSDL2-2.0.so" />
+    <Content Include="runtimes/osx/native/libSDL2-2.0.dylib" PackagePath="runtimes/osx/native/libSDL2-2.0.dylib" />
+    <Content Include="runtimes/tvos/native/libSDL2.a" PackagePath="runtimes/tvos/native/libSDL2.a" />
     <Content Include="runtimes/tvossimulator/native/libSDL2.a" PackagePath="runtimes/tvossimulator/native/libSDL2.a" />
     <Content Include="runtimes/win-arm64/native/SDL2.dll" PackagePath="runtimes/win-arm64/native/SDL2.dll" />
+    <Content Include="runtimes/win-x64/native/SDL2.dll" PackagePath="runtimes/win-x64/native/SDL2.dll" />
+    <Content Include="runtimes/win-x86/native/SDL2.dll" PackagePath="runtimes/win-x86/native/SDL2.dll" />
   </ItemGroup>
 
 </Project>
