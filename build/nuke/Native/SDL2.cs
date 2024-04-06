@@ -94,7 +94,7 @@ partial class Build
                     InheritedShell($"make {JobsArg}", SDL2Path).AssertZeroExitCode();
                     InheritedShell($"make install", SDL2Path).AssertZeroExitCode();
 
-                    InheritedShell($"{triple}-strip lib/libSDL2-2.0.so*", buildDir).AssertZeroExitCode();
+                    InheritedShell($"{triple}-strip --strip-unneeded lib/libSDL2-2.0.so*", buildDir).AssertZeroExitCode();
 
                     CopyFile((buildDir / "lib").GlobFiles("libSDL2-2.0.so*").First(), runtimes / rid / "native" / "libSDL2-2.0.so", FileExistsPolicy.Overwrite);
                 }
@@ -127,6 +127,7 @@ partial class Build
 
                     EnsureCleanDirectory(Path.GetDirectoryName(@out));
                     InheritedShell($"lipo -create -output \"{@out}\" \"{@in}\"").AssertZeroExitCode();
+                    InheritedShell($"strip -Sx \"{@out}\"").AssertZeroExitCode();
                 }
             }
 
