@@ -58,97 +58,80 @@ partial class Build
         {
             var runtimes = RootDirectory / "src" / "Native" / "Silk.NET.SDL.Native" / "runtimes";
 
-            var x86BuildDir = SDL2Path / "buildx86";
-            var x64BuildDir = SDL2Path / "buildx64";
-            var ARM64BuildDir = SDL2Path / "buildARM64";
-            EnsureCleanDirectory(x86BuildDir);
-            EnsureCleanDirectory(x64BuildDir);
-            EnsureCleanDirectory(ARM64BuildDir);
-
             if (OperatingSystem.IsWindows())
             {
-                var prepare = "cmake .. -DBUILD_SHARED_LIBS=ON";
-                var build = $"cmake --build . --config Release{JobsArg}";
+                foreach (var (platform, rid) in new[]
+                {
+                    ("Win32", "win-x86"),
+                    ("x64", "win-x64"),
+                    ("ARM64", "win-arm64"),
+                })
+                {
+                    var buildDir = SDL2Path / "build";
 
-                InheritedShell($"{prepare} -A Win32", x86BuildDir).AssertZeroExitCode();
-                InheritedShell(build, x86BuildDir).AssertZeroExitCode();
+                    EnsureCleanDirectory(buildDir);
 
-                InheritedShell($"{prepare} -A X64", x64BuildDir).AssertZeroExitCode();
-                InheritedShell(build, x64BuildDir).AssertZeroExitCode();
+                    InheritedShell($"cmake .. -A {platform} -DCMAKE_BUILD_TYPE=Release -DBUILD_SHARED_LIBS=ON", buildDir).AssertZeroExitCode();
+                    InheritedShell($"cmake --build . --config Release{JobsArg}", buildDir).AssertZeroExitCode();
 
-                InheritedShell($"{prepare} -A arm64", ARM64BuildDir).AssertZeroExitCode();
-                InheritedShell(build, ARM64BuildDir).AssertZeroExitCode();
-
-                CopyFile(x86BuildDir / "Release" / "SDL2.dll", runtimes / "win-x86" / "native" / "SDL2.dll", FileExistsPolicy.Overwrite);
-                CopyFile(x64BuildDir / "Release" / "SDL2.dll", runtimes / "win-x64" / "native" / "SDL2.dll", FileExistsPolicy.Overwrite);
-                CopyFile(ARM64BuildDir / "Release" / "SDL2.dll", runtimes / "win-arm64" / "native" / "SDL2.dll", FileExistsPolicy.Overwrite);
+                    CopyFile(buildDir / "Release" / "SDL2.dll", runtimes / rid / "native" / "SDL2.dll", FileExistsPolicy.Overwrite);
+                }
             }
-
-            if (OperatingSystem.IsLinux())
+            else if (OperatingSystem.IsLinux())
             {
-                if (RuntimeInformation.OSArchitecture == Architecture.Arm64)
+                foreach (var (triple, rid) in new[]
                 {
-                    InheritedShell("cmake ..", x86BuildDir).AssertZeroExitCode();
-                    InheritedShell("cmake --build .", x86BuildDir).AssertZeroExitCode();
-
-                    CopyFile(ARM64BuildDir.GlobFiles("libSDL2-2.0.so*").First(), runtimes / "linux-arm64" / "native" / "libSDL2-2.0.so", FileExistsPolicy.Overwrite);
-                }
-                else if (RuntimeInformation.OSArchitecture == Architecture.X64)
+                    ("i686-linux-gnu", "linux-x86"),
+                    ("x86_64-linux-gnu", "linux-x64"),
+                    ("arm-linux-gnueabihf", "linux-arm"),
+                    ("aarch64-linux-gnu", "linux-arm64"),
+                })
                 {
-                    var envVars32bit = "CFLAGS='-m32 -O2' CXXFLAGS='-m32 -O2' LDFLAGS=-m32";
-                    var envVars64bit = "CFLAGS=-O2 CXXFLAGS=-O2";
+                    var buildDir = SDL2Path / "build";
 
-                    InheritedShell($"{envVars32bit} ./configure --prefix={x86BuildDir}", SDL2Path).AssertZeroExitCode();
-                    InheritedShell($"{envVars32bit} make {JobsArg}", SDL2Path).AssertZeroExitCode();
+                    EnsureCleanDirectory(buildDir);
+
+                    InheritedShell($"./configure --prefix={buildDir} --host={triple}", SDL2Path).AssertZeroExitCode();
+                    InheritedShell($"make {JobsArg}", SDL2Path).AssertZeroExitCode();
                     InheritedShell($"make install", SDL2Path).AssertZeroExitCode();
 
-                    InheritedShell($"{envVars64bit} ./configure --prefix={x64BuildDir}", SDL2Path).AssertZeroExitCode();
-                    InheritedShell($"{envVars64bit} make {JobsArg}", SDL2Path).AssertZeroExitCode();
-                    InheritedShell($"make install", SDL2Path).AssertZeroExitCode();
+                    InheritedShell($"{triple}-strip lib/libSDL2-2.0.so*", buildDir).AssertZeroExitCode();
 
-                    //Strip the libraries
-                    InheritedShell($"strip {x86BuildDir / "lib" / "libSDL2-2.0.so*"}", SDL2Path).AssertZeroExitCode();
-                    InheritedShell($"strip {x64BuildDir / "lib" / "libSDL2-2.0.so*"}", SDL2Path).AssertZeroExitCode();
-
-                    CopyFile((x86BuildDir / "lib").GlobFiles("libSDL2-2.0.so*").First(), runtimes / "linux-x86" / "native" / "libSDL2-2.0.so", FileExistsPolicy.Overwrite);
-                    CopyFile((x64BuildDir / "lib").GlobFiles("libSDL2-2.0.so*").First(), runtimes / "linux-x64" / "native" / "libSDL2-2.0.so", FileExistsPolicy.Overwrite);
-                }
-                else
-                {
-                    throw new Exception($"Unable to build SDL libs on your architecture ({RuntimeInformation.OSArchitecture}).");
+                    CopyFile((buildDir / "lib").GlobFiles("libSDL2-2.0.so*").First(), runtimes / rid / "native" / "libSDL2-2.0.so", FileExistsPolicy.Overwrite);
                 }
             }
-
-            if (OperatingSystem.IsMacOS())
+            else if (OperatingSystem.IsMacOS())
             {
                 // iOS build/hackery ported from https://github.com/Ultz/SDL-Xamarin.iOS
-                var mainH = File.ReadAllText(SDL2Path / "include" / "SDL_main.h");
-                try
+
+                File.WriteAllText(
+                    SDL2Path / "include" / "SDL_main.h",
+                    $"#define SDL_MAIN_HANDLED\n{File.ReadAllText(SDL2Path / "include" / "SDL_main.h")}");
+
+                EnsureCleanDirectory(SDL2Path / "allbuild");
+
+                foreach (var (sdk, arch, rid, args) in iPhoneConfigs)
                 {
-                    File.WriteAllText(SDL2Path / "include" / "SDL_main.h", $"#define SDL_MAIN_HANDLED\n{mainH}");
-                    EnsureCleanDirectory(SDL2Path / "allbuild");
-                    foreach (var (sdk, arch, rid, args) in iPhoneConfigs)
-                    {
-                        InheritedShell($"xcodebuild -project SDL.xcodeproj {args} -sdk {sdk} -arch {arch} -configuration Release clean build -jobs {Jobs}", SDL2Path / "XCode" / "SDL")
-                            .AssertZeroExitCode();
-                        var ext = rid is "maccatalyst" or "osx" ? "dylib" : "a";
-                        var cfg = rid is "maccatalyst" or "osx" ? "Release" : $"Release-{sdk}";
-                        CopyFile(SDL2Path / "XCode" / "SDL" / "build" / cfg / $"libSDL2.{ext}", SDL2Path / "allbuild" / $"libSDL2.{sdk}.{arch}.{rid}.{ext}");
-                    }
-                    foreach (var rid in iPhoneConfigs.GroupBy(x => x.Rid))
-                    {
-                        var ext = rid.Key is "maccatalyst" or "osx" ? "dylib" : "a";
-                        var @in = string.Join("\" \"", rid.Select(x => SDL2Path / "allbuild" / $"libSDL2.{x.Sdk}.{x.Arch}.{rid.Key}.{ext}"));
-                        var @out = runtimes / rid.Key / "native" / (ext is "dylib" ? "libSDL2-2.0.dylib" : "libSDL2.a");
-                        EnsureCleanDirectory(Path.GetDirectoryName(@out));
-                        InheritedShell($"lipo -create -output \"{@out}\" \"{@in}\"").AssertZeroExitCode();
-                    }
+                    InheritedShell($"xcodebuild -project SDL.xcodeproj {args} -sdk {sdk} -arch {arch} -configuration Release clean build -jobs {Jobs}", SDL2Path / "XCode" / "SDL").AssertZeroExitCode();
+
+                    var ext = rid is "maccatalyst" or "osx" ? "dylib" : "a";
+                    var cfg = rid is "maccatalyst" or "osx" ? "Release" : $"Release-{sdk}";
+
+                    CopyFile(SDL2Path / "XCode" / "SDL" / "build" / cfg / $"libSDL2.{ext}", SDL2Path / "allbuild" / $"libSDL2.{sdk}.{arch}.{rid}.{ext}");
                 }
-                finally
+
+                foreach (var rid in iPhoneConfigs.GroupBy(x => x.Rid))
                 {
-                    File.WriteAllText(SDL2Path / "include" / "SDL_main.h", mainH);
+                    var ext = rid.Key is "maccatalyst" or "osx" ? "dylib" : "a";
+                    var @in = string.Join("\" \"", rid.Select(x => SDL2Path / "allbuild" / $"libSDL2.{x.Sdk}.{x.Arch}.{rid.Key}.{ext}"));
+                    var @out = runtimes / rid.Key / "native" / (ext is "dylib" ? "libSDL2-2.0.dylib" : "libSDL2.a");
+
+                    EnsureCleanDirectory(Path.GetDirectoryName(@out));
+                    InheritedShell($"lipo -create -output \"{@out}\" \"{@in}\"").AssertZeroExitCode();
                 }
             }
+
+            Git("checkout HEAD include/", SDL2Path);
 
             PrUpdatedNativeBinary("SDL2");
         }
