@@ -6,7 +6,7 @@ using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
 [Transformed]
-public enum TexStorageAttrib
+public enum TexStorageAttribs
 {
     SurfaceCompressionEXT = 0x96C0,
     SurfaceCompressionFixedRateNoneEXT = 0x96C1,

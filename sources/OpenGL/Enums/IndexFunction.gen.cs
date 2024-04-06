@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 public enum IndexFunction
 {
     Never = 0x0200,
-    LESS = 0x0201,
+    Less = 0x0201,
     Equal = 0x0202,
     Lequal = 0x0203,
     Greater = 0x0204,

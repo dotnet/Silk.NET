@@ -8,5 +8,5 @@ using System.Runtime.InteropServices;
 [Transformed]
 public enum BindTransformFeedbackTarget
 {
-    GlTransformFeedback = 0x8E22
+    TransformFeedback = 0x8E22
 }

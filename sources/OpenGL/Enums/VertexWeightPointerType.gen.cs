@@ -8,5 +8,5 @@ using System.Runtime.InteropServices;
 [Transformed]
 public enum VertexWeightPointerType
 {
-    GlFloat = 0x1406
+    Float = 0x1406
 }

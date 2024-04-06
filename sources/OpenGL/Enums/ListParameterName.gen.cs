@@ -8,5 +8,5 @@ using System.Runtime.InteropServices;
 [Transformed]
 public enum ListParameterName
 {
-    GlListPrioritySGIX = 0x8182
+    ListPrioritySGIX = 0x8182
 }

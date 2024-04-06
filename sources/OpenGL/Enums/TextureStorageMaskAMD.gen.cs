@@ -8,5 +8,5 @@ using System.Runtime.InteropServices;
 [Transformed]
 public enum TextureStorageMaskAMD
 {
-    GlTextureStorageSparseBit = 0x00000001
+    TextureStorageSparseBit = 0x00000001
 }

@@ -8,9 +8,9 @@ using System.Runtime.InteropServices;
 [Transformed]
 public enum FragmentOp3ATI
 {
-    MAD = 0x8968,
+    Mad = 0x8968,
     Lerp = 0x8969,
-    CND = 0x896A,
+    Cnd = 0x896A,
     Cnd0 = 0x896B,
     Dot2Add = 0x896C
 }

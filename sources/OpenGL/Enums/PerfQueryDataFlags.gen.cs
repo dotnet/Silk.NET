@@ -6,7 +6,7 @@ using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
 [Transformed]
-public enum PerfQueryDataFlag
+public enum PerfQueryDataFlags
 {
     WaitIntel = 0x83FB,
     FlushIntel = 0x83FA,

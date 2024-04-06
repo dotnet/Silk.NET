@@ -8,5 +8,5 @@ using System.Runtime.InteropServices;
 [Transformed]
 public enum MapParameterNV
 {
-    GlMapTessellation = 0x86C2
+    MapTessellation = 0x86C2
 }

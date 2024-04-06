@@ -8,7 +8,7 @@ using System.Runtime.InteropServices;
 [Transformed]
 public enum CombinerScale
 {
-    NONE = 0,
+    None = 0,
     ScaleByTwoNV = 0x853E,
     ScaleByFourNV = 0x853F,
     ScaleByOneHalfNV = 0x8540

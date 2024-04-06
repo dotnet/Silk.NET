@@ -9,5 +9,5 @@ using System.Runtime.InteropServices;
 public enum Boolean
 {
     False = 0,
-    TRUE = 1
+    True = 1
 }

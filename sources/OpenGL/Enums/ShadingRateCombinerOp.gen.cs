@@ -10,7 +10,7 @@ public enum ShadingRateCombinerOp
 {
     KeepEXT = 0x96D2,
     ReplaceEXT = 0x96D3,
-    MinExt = 0x96D4,
-    MaxExt = 0x96D5,
-    MulExt = 0x96D6
+    MinEXT = 0x96D4,
+    MaxEXT = 0x96D5,
+    MulEXT = 0x96D6
 }

@@ -8,5 +8,5 @@ using System.Runtime.InteropServices;
 [Transformed]
 public enum TexBumpParameterATI
 {
-    GlBumpRotMatrix = 0x8775
+    BumpRotMatrix = 0x8775
 }

@@ -8,5 +8,5 @@ using System.Runtime.InteropServices;
 [Transformed]
 public enum LightEnvParameterSGIX
 {
-    GlLightEnvMode = 0x8407
+    LightEnvMode = 0x8407
 }

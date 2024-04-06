@@ -8,5 +8,5 @@ using System.Runtime.InteropServices;
 [Transformed]
 public enum TextureNormalModeEXT
 {
-    GlPerturb = 0x85AE
+    Perturb = 0x85AE
 }

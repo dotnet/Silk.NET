@@ -9,6 +9,6 @@ using System.Runtime.InteropServices;
 public enum PolygonMode
 {
     Point = 0x1B00,
-    LINE = 0x1B01,
-    FILL = 0x1B02
+    Line = 0x1B01,
+    Fill = 0x1B02
 }

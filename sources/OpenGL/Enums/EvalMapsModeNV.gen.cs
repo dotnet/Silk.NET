@@ -8,5 +8,5 @@ using System.Runtime.InteropServices;
 [Transformed]
 public enum EvalMapsModeNV
 {
-    GlFill = 0x1B02
+    Fill = 0x1B02
 }

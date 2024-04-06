@@ -8,5 +8,5 @@ using System.Runtime.InteropServices;
 [Transformed]
 public enum ProgramStringProperty
 {
-    GlProgramStringARB = 0x8628
+    ProgramStringARB = 0x8628
 }

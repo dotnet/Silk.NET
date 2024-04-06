@@ -8,5 +8,5 @@ using System.Runtime.InteropServices;
 [Transformed]
 public enum TextureFilterSGIS
 {
-    GlFilter4 = 0x8146
+    Filter4 = 0x8146
 }

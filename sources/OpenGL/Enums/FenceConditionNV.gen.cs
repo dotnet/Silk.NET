@@ -8,5 +8,5 @@ using System.Runtime.InteropServices;
 [Transformed]
 public enum FenceConditionNV
 {
-    GlAllCompleted = 0x84F2
+    AllCompleted = 0x84F2
 }

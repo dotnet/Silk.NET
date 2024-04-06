@@ -8,11 +8,11 @@ using System.Runtime.InteropServices;
 [Transformed]
 public enum CombinerVariableNV
 {
-    VariableA = 0x8523,
-    VariableB = 0x8524,
-    VariableC = 0x8525,
-    VariableD = 0x8526,
-    VariableE = 0x8527,
-    VariableF = 0x8528,
-    VariableG = 0x8529
+    A = 0x8523,
+    B = 0x8524,
+    C = 0x8525,
+    D = 0x8526,
+    E = 0x8527,
+    F = 0x8528,
+    G = 0x8529
 }

@@ -8,5 +8,5 @@ using System.Runtime.InteropServices;
 [Transformed]
 public enum VariantCapEXT
 {
-    GlVariantArray = 0x87E8
+    VariantArray = 0x87E8
 }

@@ -8,5 +8,5 @@ using System.Runtime.InteropServices;
 [Transformed]
 public enum ProgramFormat
 {
-    GlProgramFormatAsciiARB = 0x8875
+    ProgramFormatAsciiARB = 0x8875
 }

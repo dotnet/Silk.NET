@@ -8,6 +8,6 @@ using System.Runtime.InteropServices;
 [Transformed]
 public enum PathStringFormat
 {
-    SvgNv = 0x9070,
+    SvgNV = 0x9070,
     PsNv = 0x9071
 }

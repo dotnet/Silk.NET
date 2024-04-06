@@ -12,12 +12,12 @@ public enum VertexShaderOpEXT
     Negate = 0x8783,
     Dot3 = 0x8784,
     Dot4 = 0x8785,
-    MUL = 0x8786,
-    ADD = 0x8787,
+    Mul = 0x8786,
+    Add = 0x8787,
     Madd = 0x8788,
     Frac = 0x8789,
-    MAX = 0x878A,
-    MIN = 0x878B,
+    Max = 0x878A,
+    Min = 0x878B,
     SetGe = 0x878C,
     SetLt = 0x878D,
     Clamp = 0x878E,
@@ -28,8 +28,8 @@ public enum VertexShaderOpEXT
     Power = 0x8793,
     Recip = 0x8794,
     RecipSqrt = 0x8795,
-    SUB = 0x8796,
+    Sub = 0x8796,
     CrossProduct = 0x8797,
     MultiplyMatrix = 0x8798,
-    MOV = 0x8799
+    Mov = 0x8799
 }

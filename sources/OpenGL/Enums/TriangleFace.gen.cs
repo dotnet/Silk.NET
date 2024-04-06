@@ -9,6 +9,6 @@ using System.Runtime.InteropServices;
 public enum TriangleFace
 {
     Front = 0x0404,
-    BACK = 0x0405,
+    Back = 0x0405,
     FrontAndBack = 0x0408
 }

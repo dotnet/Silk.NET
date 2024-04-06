@@ -8,5 +8,5 @@ using System.Runtime.InteropServices;
 [Transformed]
 public enum PixelTransformTargetEXT
 {
-    GlPixelTransform2D = 0x8330
+    PixelTransform2D = 0x8330
 }

@@ -8,8 +8,8 @@ namespace Silk.NET.SilkTouch.UnitTests.Naming;
 [TestFixture]
 public class NameTests : NameTrimmer
 {
-    [Test]
-    public void SimpleGlfwTestDetermination()
+    [Test, TestCase(null), TestCase("glfw")]
+    public void SimpleGlfwTestDetermination(string? hint)
     {
         var test = new Dictionary<string, (string, List<string>?)>
         {
@@ -24,11 +24,11 @@ public class NameTests : NameTrimmer
             { "GLFWwindow", ("GLFWwindow", null) }
         };
         Assert.That(
-            GetPrefix(null, null, test, null, null, false, true)?.Prefix,
+            GetPrefix(null, hint, test, null, null, false, true)?.Prefix,
             Is.EqualTo("GLFW")
         );
         string? identifiedPrefix = null;
-        Trim(null, null, "GLFW", test, null, null, ref identifiedPrefix);
+        Trim(null, hint, "GLFW", test, null, null, ref identifiedPrefix);
         var expected = new Dictionary<string, string>
         {
             { "GLFWallocator", "Allocator" },

@@ -8,7 +8,7 @@ using System.Runtime.InteropServices;
 [Transformed]
 public enum PathFontStyle
 {
-    NONE = 0,
+    None = 0,
     BoldBitNV = 0x01,
     ItalicBitNV = 0x02
 }

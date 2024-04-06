@@ -1299,6 +1299,29 @@ public partial class MixKhronosData(
         // Trim the extension vendor names
         foreach (var (original, (current, previous)) in names)
         {
+            // GLEnum is obviously trimmed, and we don't really want to do that.
+            if (container is null)
+            {
+                var changed = false;
+                foreach (var name in (IEnumerable<string>)[current, .. previous ?? []])
+                {
+                    if (
+                        job.Groups.TryGetValue(name, out var group)
+                        && name == $"{group.Namespace}Enum"
+                    )
+                    {
+                        names[original] = (name, []);
+                        changed = true;
+                        break;
+                    }
+                }
+
+                if (changed)
+                {
+                    continue;
+                }
+            }
+
             var newCurrent = current;
             List<string>? newPrev = null;
             string? identifiedVendor = null;
@@ -1308,6 +1331,10 @@ public partial class MixKhronosData(
                 if (!current.EndsWith(vendor))
                 {
                     continue;
+                }
+                if (container == "HintTargetPGI")
+                {
+                    Debugger.Break();
                 }
 
                 newCurrent = current[..^vendor.Length];
@@ -1400,6 +1427,7 @@ public partial class MixKhronosData(
 
             if (
                 !job.Configuration.UseDataTypeTrimmings // don't trim data types
+                || container is null // don't trim type names
                 || newCurrent.Count(x => x == '_') > 1 // is probably an enum
                 || EndingsToTrim().Match(newCurrent) is not { Success: true } match // we don't have a data type suffix
                 || EndingsNotToTrim().IsMatch(newCurrent) // we need to keep it

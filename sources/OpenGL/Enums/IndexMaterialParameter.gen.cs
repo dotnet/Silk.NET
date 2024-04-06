@@ -8,5 +8,5 @@ using System.Runtime.InteropServices;
 [Transformed]
 public enum IndexMaterialParameter
 {
-    GlIndexOffset = 0x0D13
+    IndexOffset = 0x0D13
 }

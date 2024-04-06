@@ -8,13 +8,13 @@ using System.Runtime.InteropServices;
 [Transformed]
 public enum UniformPName
 {
-    UniformType = 0x8A37,
-    UniformSize = 0x8A38,
-    UniformNameLength = 0x8A39,
-    UniformBlockIndex = 0x8A3A,
-    UniformOffset = 0x8A3B,
-    UniformArrayStride = 0x8A3C,
-    UniformMatrixStride = 0x8A3D,
-    UniformIsRowMajor = 0x8A3E,
-    UniformAtomicCounterBufferIndex = 0x92DA
+    Type = 0x8A37,
+    Size = 0x8A38,
+    NameLength = 0x8A39,
+    BlockIndex = 0x8A3A,
+    Offset = 0x8A3B,
+    ArrayStride = 0x8A3C,
+    MatrixStride = 0x8A3D,
+    IsRowMajor = 0x8A3E,
+    AtomicCounterBufferIndex = 0x92DA
 }

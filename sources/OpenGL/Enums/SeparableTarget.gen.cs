@@ -8,5 +8,5 @@ using System.Runtime.InteropServices;
 [Transformed]
 public enum SeparableTarget
 {
-    GlSeparable2D = 0x8012
+    Separable2D = 0x8012
 }

@@ -8,5 +8,5 @@ using System.Runtime.InteropServices;
 [Transformed]
 public enum ImageTransformTargetHP
 {
-    GlImageTransform2D = 0x8161
+    ImageTransform2D = 0x8161
 }

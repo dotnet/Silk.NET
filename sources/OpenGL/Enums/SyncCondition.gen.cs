@@ -8,5 +8,5 @@ using System.Runtime.InteropServices;
 [Transformed]
 public enum SyncCondition
 {
-    GlSyncGpuCommandsComplete = 0x9117
+    SyncGpuCommandsComplete = 0x9117
 }

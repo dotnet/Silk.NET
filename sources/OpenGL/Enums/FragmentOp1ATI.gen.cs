@@ -8,5 +8,5 @@ using System.Runtime.InteropServices;
 [Transformed]
 public enum FragmentOp1ATI
 {
-    GlMov = 0x8961
+    Mov = 0x8961
 }

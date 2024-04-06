@@ -8,7 +8,7 @@ using System.Runtime.InteropServices;
 [Transformed]
 public enum FragmentShaderDestMask
 {
-    NONE = 0,
+    None = 0,
     RedBitATI = 0x00000001,
     GreenBitATI = 0x00000002,
     BlueBitATI = 0x00000004

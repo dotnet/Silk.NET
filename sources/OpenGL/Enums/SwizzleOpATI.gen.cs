@@ -8,8 +8,8 @@ using System.Runtime.InteropServices;
 [Transformed]
 public enum SwizzleOpATI
 {
-    STR = 0x8976,
-    STQ = 0x8977,
+    Str = 0x8976,
+    Stq = 0x8977,
     StrDr = 0x8978,
     StqDq = 0x8979
 }

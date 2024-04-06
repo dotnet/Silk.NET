@@ -9,5 +9,5 @@ using System.Runtime.InteropServices;
 public enum MeshMode1
 {
     Point = 0x1B00,
-    LINE = 0x1B01
+    Line = 0x1B01
 }

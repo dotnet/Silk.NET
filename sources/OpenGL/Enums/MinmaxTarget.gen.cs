@@ -8,5 +8,5 @@ using System.Runtime.InteropServices;
 [Transformed]
 public enum MinmaxTarget
 {
-    GlMinmax = 0x802E
+    Minmax = 0x802E
 }

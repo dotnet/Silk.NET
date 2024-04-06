@@ -8,8 +8,8 @@ using System.Runtime.InteropServices;
 [Transformed]
 public enum GetMinmaxParameterPName
 {
-    MinmaxFormat = 0x802F,
-    MinmaxSink = 0x8030,
-    MinmaxFormatEXT = 0x802F,
-    MinmaxSinkEXT = 0x8030
+    Format = 0x802F,
+    Sink = 0x8030,
+    FormatEXT = 0x802F,
+    SinkEXT = 0x8030
 }

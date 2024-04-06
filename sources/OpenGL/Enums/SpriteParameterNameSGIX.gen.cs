@@ -8,5 +8,5 @@ using System.Runtime.InteropServices;
 [Transformed]
 public enum SpriteParameterNameSGIX
 {
-    GlSpriteMode = 0x8149
+    SpriteMode = 0x8149
 }

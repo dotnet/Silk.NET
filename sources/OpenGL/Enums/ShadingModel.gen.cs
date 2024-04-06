@@ -8,6 +8,6 @@ using System.Runtime.InteropServices;
 [Transformed]
 public enum ShadingModel
 {
-    FLAT = 0x1D00,
+    Flat = 0x1D00,
     Smooth = 0x1D01
 }

@@ -124,7 +124,8 @@
         ]
       },
       "PrettifyNames": {
-        "LongAcronymThreshold": 4
+        "LongAcronymThreshold": 4,
+        "GlobalPrefixHint": "gl"
       }
     }
   }

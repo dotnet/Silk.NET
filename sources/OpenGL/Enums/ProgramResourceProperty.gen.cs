@@ -12,7 +12,7 @@ public enum ProgramResourceProperty
     CompatibleSubroutines = 0x8E4B,
     Uniform = 0x92E1,
     NameLength = 0x92F9,
-    TYPE = 0x92FA,
+    Type = 0x92FA,
     ArraySize = 0x92FB,
     Offset = 0x92FC,
     BlockIndex = 0x92FD,

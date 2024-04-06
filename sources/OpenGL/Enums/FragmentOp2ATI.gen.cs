@@ -8,9 +8,9 @@ using System.Runtime.InteropServices;
 [Transformed]
 public enum FragmentOp2ATI
 {
-    ADD = 0x8963,
-    MUL = 0x8964,
-    SUB = 0x8965,
+    Add = 0x8963,
+    Mul = 0x8964,
+    Sub = 0x8965,
     Dot3 = 0x8966,
     Dot4 = 0x8967
 }

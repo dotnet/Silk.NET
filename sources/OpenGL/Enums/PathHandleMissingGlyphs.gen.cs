@@ -6,7 +6,8 @@ using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
 [Transformed]
-public enum SyncBehaviorFlag
+public enum PathHandleMissingGlyphs
 {
-    GlNone = 0
+    SkipMissingGlyphNV = 0x90A9,
+    UseMissingGlyphNV = 0x90AA
 }

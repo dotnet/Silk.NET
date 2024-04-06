@@ -8,7 +8,7 @@ using System.Runtime.InteropServices;
 [Transformed]
 public enum PathGenMode
 {
-    NONE = 0,
+    None = 0,
     PathObjectBoundingBoxNV = 0x908A,
     EyeLinear = 0x2400,
     ObjectLinear = 0x2401,

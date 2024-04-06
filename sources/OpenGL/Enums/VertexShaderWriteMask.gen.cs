@@ -9,5 +9,5 @@ using System.Runtime.InteropServices;
 public enum VertexShaderWriteMask
 {
     False = 0,
-    TRUE = 1
+    True = 1
 }

@@ -8,6 +8,6 @@ using System.Runtime.InteropServices;
 [Transformed]
 public enum CombinerBias
 {
-    NONE = 0,
+    None = 0,
     BiasByNegativeOneHalfNV = 0x8541
 }

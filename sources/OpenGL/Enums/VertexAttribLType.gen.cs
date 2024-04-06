@@ -8,5 +8,5 @@ using System.Runtime.InteropServices;
 [Transformed]
 public enum VertexAttribLType
 {
-    GlDouble = 0x140A
+    Double = 0x140A
 }

@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 public enum ClampColorMode
 {
     False = 0,
-    TRUE = 1,
+    True = 1,
     FixedOnly = 0x891D,
     FixedOnlyARB = 0x891D
 }

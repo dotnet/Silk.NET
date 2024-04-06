@@ -8,17 +8,17 @@ using System.Runtime.InteropServices;
 [Transformed]
 public enum BufferPName
 {
-    BufferSize = 0x8764,
-    BufferUsage = 0x8765,
-    BufferAccess = 0x88BB,
-    BufferMapped = 0x88BC,
-    BufferAccessFlags = 0x911F,
-    BufferMapLength = 0x9120,
-    BufferMapOffset = 0x9121,
-    BufferImmutableStorage = 0x821F,
-    BufferStorageFlags = 0x8220,
-    BufferSizeARB = 0x8764,
-    BufferUsageARB = 0x8765,
-    BufferAccessARB = 0x88BB,
-    BufferMappedARB = 0x88BC
+    Size = 0x8764,
+    Usage = 0x8765,
+    Access = 0x88BB,
+    Mapped = 0x88BC,
+    AccessFlags = 0x911F,
+    MapLength = 0x9120,
+    MapOffset = 0x9121,
+    ImmutableStorage = 0x821F,
+    StorageFlags = 0x8220,
+    SizeARB = 0x8764,
+    UsageARB = 0x8765,
+    AccessARB = 0x88BB,
+    MappedARB = 0x88BC
 }

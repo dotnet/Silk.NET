@@ -8,7 +8,7 @@ using System.Runtime.InteropServices;
 [Transformed]
 public enum PathTransformType
 {
-    NONE = 0,
+    None = 0,
     TranslateXNV = 0x908E,
     TranslateYNV = 0x908F,
     Translate2DNV = 0x9090,

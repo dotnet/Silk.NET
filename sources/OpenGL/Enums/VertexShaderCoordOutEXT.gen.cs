@@ -17,6 +17,6 @@ public enum VertexShaderCoordOutEXT
     NegativeZ = 0x87DB,
     NegativeW = 0x87DC,
     Zero = 0x87DD,
-    ONE = 0x87DE,
+    One = 0x87DE,
     NegativeOne = 0x87DF
 }

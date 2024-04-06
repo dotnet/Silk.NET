@@ -8,7 +8,7 @@ using System.Runtime.InteropServices;
 [Transformed]
 public enum TextureCompareMode
 {
-    NONE = 0,
+    None = 0,
     CompareRefToTexture = 0x884E,
     CompareRToTexture = 0x884E
 }

@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
+using System.Text.Json;
 
 namespace Silk.NET.SilkTouch.Naming;
 
@@ -58,6 +60,7 @@ public class NameTrimmer : INameTrimmer
                     i == 0,
                     naive = i == 2
                 );
+
                 if (result is null || names is null)
                 {
                     // skip outright.
@@ -96,12 +99,29 @@ public class NameTrimmer : INameTrimmer
             }
         }
 
+        // Fall back to the hint. I know we've checked above whether this is the obvious answer for a given pass, but
+        // if we've still got no possible prefix after all of the passes then this is better than nothing - if the name
+        // doesn't start with the prefix we simply won't use the prefix.
+        if (string.IsNullOrWhiteSpace(identifiedPrefix))
+        {
+            if (hint is not null)
+            {
+                identifiedPrefix = hint;
+                naive = true;
+            }
+            else
+            {
+                return;
+            }
+        }
+
+        identifiedPrefix = identifiedPrefix.Trim('_');
         foreach (var (trimmingName, (oldPrimary, secondary, originalName)) in localNames)
         {
             if (
                 naive
                 && (
-                    identifiedPrefix!.Length >= trimmingName.Length
+                    identifiedPrefix.Length >= trimmingName.Length
                     || !trimmingName.StartsWith(
                         identifiedPrefix,
                         StringComparison.OrdinalIgnoreCase
@@ -111,15 +131,22 @@ public class NameTrimmer : INameTrimmer
             {
                 continue;
             }
+
+            var prefixLen = identifiedPrefix
+                .TakeWhile((x, i) => char.ToLower(oldPrimary[i]) == char.ToLower(x))
+                .Count();
+            if (prefixLen >= oldPrimary.Length)
+            {
+                continue;
+            }
+
             var sec = secondary ?? [];
             sec.Add(oldPrimary);
+
             // this was trimmingName originally. given that we're using trimming name to determine a prefix but then
             // using that prefix on the old primary, this could cause intended behaviour in some cases. there's probably
             // a better way to do this. (this is working around glDisablei -> glDisable -> Disablei).
-            names![originalName] = (
-                oldPrimary[identifiedPrefix!.TakeWhile((x, i) => oldPrimary[i] == x).Count()..],
-                sec
-            );
+            names![originalName] = (oldPrimary[prefixLen..], sec);
         }
     }
 
@@ -164,10 +191,10 @@ public class NameTrimmer : INameTrimmer
 
         // Get the trimming names
         var containerTrimmingName = getTrimmingName
-            ? GetTrimmingName(prefixOverrides, container ?? hint ?? string.Empty, true)
+            ? GetTrimmingName(prefixOverrides, container ?? hint ?? string.Empty, true, hint)
             : container ?? hint ?? string.Empty;
         var localNames = names.ToDictionary(
-            x => getTrimmingName ? GetTrimmingName(prefixOverrides, x.Key, false) : x.Key,
+            x => getTrimmingName ? GetTrimmingName(prefixOverrides, x.Key, false, hint) : x.Key,
             x => (x.Value.Primary, x.Value.Secondary, x.Key)
         );
 
@@ -260,11 +287,13 @@ public class NameTrimmer : INameTrimmer
     /// <param name="prefixOverrides">The prefix overrides.</param>
     /// <param name="name">The name to get a trimming name for.</param>
     /// <param name="isContainer">Whether the name passed into <paramref name="name"/> is the container name.</param>
+    /// <param name="hint">The global prefix hint.</param>
     /// <returns>The trimming name.</returns>
     protected virtual string GetTrimmingName(
         Dictionary<string, string>? prefixOverrides,
         string name,
-        bool isContainer
+        bool isContainer,
+        string? hint = null
     )
     {
         // If theres a prefix override for this enum,
@@ -274,6 +303,8 @@ public class NameTrimmer : INameTrimmer
             return name;
         }
 
-        return name.LenientUnderscore();
+        return hint is not null && name.StartsWith(hint, StringComparison.OrdinalIgnoreCase)
+            ? $"{hint}_{name[hint.Length..].Trim('_').LenientUnderscore()}"
+            : name.LenientUnderscore();
     }
 }
