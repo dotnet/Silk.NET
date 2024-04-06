@@ -17,15 +17,15 @@ jobs:
       fail-fast: false
       matrix:
         env:
-          - os: ubuntu-latest
+          - os: ubuntu-22.04
             name: Linux
             nuke_invoke: ./build.sh
-          - os: windows-latest
+          - os: windows-2022
             name: Windows
             nuke_invoke: ./build.cmd
             extras: |
               pwsh build\Install-WindowsSDK.ps1
-          - os: macos-latest
+          - os: macos-14
             name: Darwin
             nuke_invoke: ./build.sh
             extras: ""
@@ -56,8 +56,35 @@ jobs:
         uses: Beyley/run-as-1804@239b211a2ca687388b6251d6dab22cb90ac0391d
         with:
           command: |
+            tee /etc/apt/sources.list << EOF
+            deb [arch=amd64,i386] http://archive.ubuntu.com/ubuntu bionic main multiverse restricted universe
+            deb [arch=amd64,i386] http://archive.ubuntu.com/ubuntu bionic-backports main multiverse restricted universe
+            deb [arch=amd64,i386] http://archive.ubuntu.com/ubuntu bionic-security main multiverse restricted universe
+            deb [arch=amd64,i386] http://archive.ubuntu.com/ubuntu bionic-updates main multiverse restricted universe
+            deb [arch=arm64,armhf] http://ports.ubuntu.com bionic main multiverse restricted universe
+            deb [arch=arm64,armhf] http://ports.ubuntu.com bionic-backports main multiverse restricted universe
+            deb [arch=arm64,armhf] http://ports.ubuntu.com bionic-security main multiverse restricted universe
+            deb [arch=arm64,armhf] http://ports.ubuntu.com bionic-updates main multiverse restricted universe
+            deb [arch=amd64,i386] http://security.ubuntu.com/ubuntu bionic main multiverse restricted universe
+            deb [arch=amd64,i386] http://security.ubuntu.com/ubuntu bionic-backports main multiverse restricted universe
+            deb [arch=amd64,i386] http://security.ubuntu.com/ubuntu bionic-security main multiverse restricted universe
+            deb [arch=amd64,i386] http://security.ubuntu.com/ubuntu bionic-updates main multiverse restricted universe
+            EOF
+            dpkg --add-architecture arm64
+            dpkg --add-architecture armhf
+            dpkg --add-architecture i386
             apt update
-            apt install -y python3 curl wget build-essential git make autoconf gcc-multilib g++-multilib automake libtool pkg-config ninja-build gnome-desktop-testing libasound2-dev libpulse-dev libaudio-dev libjack-dev libsndio-dev libsamplerate0-dev libx11-dev libxext-dev libxrandr-dev libxcursor-dev libxfixes-dev libxi-dev libxss-dev libwayland-dev libxkbcommon-dev libdrm-dev libgbm-dev libgl1-mesa-dev libgles2-mesa-dev libegl1-mesa-dev libdbus-1-dev libibus-1.0-dev libudev-dev fcitx-libs-dev
+            apt install -y gcc gcc-aarch64-linux-gnu gcc-arm-linux-gnueabihf gcc-i686-linux-gnu
+            apt install -y g++ g++-aarch64-linux-gnu g++-arm-linux-gnueabihf gcc-i686-linux-gnu
+            apt install -y automake build-essential curl git libtool pkg-config python3 wget
+            for arch in amd64 arm64 armhf i386; do
+              apt install -y libasound2-dev:$arch libpulse-dev:$arch libaudio-dev:$arch libjack-dev:$arch
+              apt install -y libsndio-dev:$arch libsamplerate0-dev:$arch libx11-dev:$arch libxext-dev:$arch
+              apt install -y libxrandr-dev:$arch libxcursor-dev:$arch libxfixes-dev:$arch libxi-dev:$arch
+              apt install -y libxss-dev:$arch libwayland-dev:$arch libxkbcommon-dev:$arch libdrm-dev:$arch
+              apt install -y libgbm-dev:$arch libgl1-mesa-dev:$arch libgles2-mesa-dev:$arch libegl1-mesa-dev:$arch
+              apt install -y libdbus-1-dev:$arch libibus-1.0-dev:$arch libudev-dev:$arch
+            done
 
             wget https://dot.net/v1/dotnet-install.sh -O dotnet-install.sh
             chmod +x ./dotnet-install.sh
@@ -82,5 +109,5 @@ jobs:
         run: ${{ matrix.env.nuke_invoke }} SDL2
         env:
           PUSHABLE_GITHUB_TOKEN: ${{ secrets.PUSHABLE_GITHUB_TOKEN }}
-      
+
 
