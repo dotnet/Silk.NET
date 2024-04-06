@@ -73,6 +73,8 @@ partial class Build {
                             InheritedShell($"{prepare} {GetCMakeToolchainFlag(triple)}", buildDir).AssertZeroExitCode();
                             InheritedShell(build, buildDir).AssertZeroExitCode();
 
+                            InheritedShell($"{triple}-strip bin/libassimp.so.5", buildDir).AssertZeroExitCode();
+
                             CopyAll((buildDir / "bin").GlobFiles("libassimp.so.5"), runtimes / rid / "native");
                         }
                     }
@@ -88,6 +90,8 @@ partial class Build {
 
                             InheritedShell($"{prepare} -DCMAKE_OSX_ARCHITECTURES={arch}", buildDir).AssertZeroExitCode();
                             InheritedShell(build, buildDir).AssertZeroExitCode();
+
+                            InheritedShell($"strip bin/libassimp.5.dylib", buildDir).AssertZeroExitCode();
 
                             CopyAll((buildDir / "bin").GlobFiles("libassimp.5.dylib"), runtimes / rid / "native");
                         }
