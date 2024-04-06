@@ -73,6 +73,8 @@ partial class Build {
                             InheritedShell($"{prepare} {GetCMakeToolchainFlag(triple)}", buildDir).AssertZeroExitCode();
                             InheritedShell(build, buildDir).AssertZeroExitCode();
 
+                            InheritedShell($"{triple}-strip --strip-unneeded src/libglfw.so", buildDir).AssertZeroExitCode();
+
                             CopyAll((buildDir / "src").GlobFiles("libglfw.so"), runtimes / rid / "native");
                         }
                     }
@@ -88,6 +90,8 @@ partial class Build {
 
                             InheritedShell($"{prepare} -DCMAKE_OSX_ARCHITECTURES={arch}", buildDir).AssertZeroExitCode();
                             InheritedShell(build, buildDir).AssertZeroExitCode();
+
+                            InheritedShell($"strip -Sx src/libglfw.3.dylib", buildDir).AssertZeroExitCode();
 
                             CopyAll((buildDir / "src").GlobFiles("libglfw.3.dylib"), runtimes / rid / "native");
                         }
