@@ -128,6 +128,7 @@ partial class Build
 
                     EnsureCleanDirectory(Path.GetDirectoryName(@out));
                     InheritedShell($"lipo -create -output \"{@out}\" \"{@in}\"").AssertZeroExitCode();
+                    InheritedShell($"strip \"{@out}\"").AssertZeroExitCode();
                 }
             }
 
