@@ -299,7 +299,7 @@ public class PrettifyNames(
             namesToTrim.Remove(nameToAdd);
 
             // Apply the name override to the dictionary we actually use.
-            names[nameToAdd] = (overriddenName, [..v.Secondary, nameToAdd]);
+            names[nameToAdd] = (overriddenName, [.. v.Secondary, nameToAdd]);
         }
 
         // Run each trimmer
@@ -723,6 +723,14 @@ public class PrettifyNames(
 
             Types[node.Identifier.ToString()] = (null, null);
             base.VisitStructDeclaration(node);
+        }
+
+        public override void VisitEnumMemberDeclaration(EnumMemberDeclarationSyntax node)
+        {
+            if (node.Parent == _enumInProgress?.Enum)
+            {
+                _enumInProgress!.Value.EnumMembers.Add(node.Identifier.ToString());
+            }
         }
 
         public override void VisitEnumDeclaration(EnumDeclarationSyntax node)

@@ -16,6 +16,7 @@ using Microsoft.CodeAnalysis.CSharp;
 using Microsoft.CodeAnalysis.CSharp.Syntax;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
+using Silk.NET.SilkTouch.Clang;
 using Silk.NET.SilkTouch.Naming;
 using static Microsoft.CodeAnalysis.CSharp.SyntaxFactory;
 
@@ -101,6 +102,13 @@ public partial class MixKhronosData(
             (string ContainingSymbol, string ApplicableSymbol),
             string
         > GroupUsages { get; init; } = [];
+
+        /// <summary>
+        /// A map of native type names to C# type names. This contains the contents of
+        /// <see cref="Configuration.TypeMap"/> in addition to some default contents i.e. it is a copy to avoid
+        /// modifying the original configuration object. It is used in the same way.
+        /// </summary>
+        public Dictionary<string, string> TypeMap { get; init; } = [];
     }
 
     /// <summary>
@@ -132,6 +140,11 @@ public partial class MixKhronosData(
         /// </summary>
         public Dictionary<string, string> EnumNativeTypeNames { get; init; } =
             _defaultEnumNativeTypeNameMaps;
+
+        /// <summary>
+        /// A map of native type names to C# type names. This is mostly used for determining enum backing types.
+        /// </summary>
+        public Dictionary<string, string>? TypeMap { get; init; }
     }
 
     /// <summary>
@@ -223,9 +236,94 @@ public partial class MixKhronosData(
             Vendors = vendors,
             ApiSets = apiSets,
             SupportedApiProfiles = supportedApiProfiles,
-            Configuration = currentConfig
+            Configuration = currentConfig,
+            TypeMap = currentConfig.TypeMap is not null
+                ? new Dictionary<string, string>(currentConfig.TypeMap)
+                : []
         };
         ReadGroups(xml, Jobs[key], vendors);
+        foreach (var typeElement in xml.Elements("registry").Elements("types").Elements("type"))
+        {
+            var type = typeElement.Element("name")?.Value;
+            var baseType = typeElement.Element("type")?.Value;
+            if (type is null || baseType is null)
+            {
+                continue;
+            }
+
+            Jobs[key].TypeMap.TryAdd(type, baseType);
+        }
+
+        Jobs[key].TypeMap.TryAdd("int8_t", "sbyte");
+        Jobs[key].TypeMap.TryAdd("uint8_t", "byte");
+        Jobs[key].TypeMap.TryAdd("int16_t", "short");
+        Jobs[key].TypeMap.TryAdd("uint16_t", "ushort");
+        Jobs[key].TypeMap.TryAdd("int32_t", "int");
+        Jobs[key].TypeMap.TryAdd("uint32_t", "uint");
+        Jobs[key].TypeMap.TryAdd("int64_t", "long");
+        Jobs[key].TypeMap.TryAdd("uint64_t", "ulong");
+        Jobs[key].TypeMap.TryAdd("GLenum", "uint");
+        Jobs[key].TypeMap.TryAdd("GLbitfield", "uint");
+    }
+
+    /// <inheritdoc />
+    public Task<GeneratedSyntax> AfterScrapeAsync(string key, GeneratedSyntax syntax)
+    {
+        if (!Jobs.TryGetValue(key, out var jobData))
+        {
+            return Task.FromResult(syntax);
+        }
+
+        var rewriter = new Rewriter(jobData);
+        foreach (var (fname, node) in syntax.Files)
+        {
+            syntax.Files[fname] = rewriter.Visit(node);
+        }
+
+        foreach (var (groupName, groupInfo) in jobData.Groups)
+        {
+            if (!rewriter.AlreadyPresentGroups.Contains(groupName))
+            {
+                // TODO base type typemap
+                // TODO autodetermine type
+                // TODO namespace
+                syntax.Files[$"sources/Enums/{groupName}.gen.cs"] = CompilationUnit()
+                    .WithMembers(
+                        SingletonList<MemberDeclarationSyntax>(
+                            EnumDeclaration(groupName)
+                                .WithModifiers(TokenList(Token(SyntaxKind.PublicKeyword)))
+                                .WithAttributeLists(
+                                    SingletonList(
+                                        AttributeList(
+                                            SingletonSeparatedList(
+                                                Attribute(IdentifierName("Transformed"))
+                                            )
+                                        )
+                                    )
+                                )
+                                .WithBaseList(
+                                    groupInfo.Type is not null
+                                        ? BaseList(
+                                            SingletonSeparatedList<BaseTypeSyntax>(
+                                                SimpleBaseType(groupInfo.Type)
+                                            )
+                                        )
+                                        : null
+                                )
+                                .WithMembers(
+                                    SeparatedList(
+                                        groupInfo.Enums.Select(x =>
+                                            EnumMemberDeclaration(x.Identifier.ToString())
+                                                .WithEqualsValue(x.Initializer)
+                                        )
+                                    )
+                                )
+                        )
+                    );
+            }
+        }
+
+        return Task.FromResult(syntax);
     }
 
     internal record EnumGroup(
@@ -1107,6 +1205,97 @@ public partial class MixKhronosData(
             );
         }
 
+        // OpenGL has a problem where an enum starts out as ARB but never gets promoted, and then contains other vendor
+        // enums or even core enums. This removes the vendor suffix where it is not necessary e.g. BufferUsageARB
+        // becomes BufferUsage.
+        if (container is null && job.Vendors is not null)
+        {
+            foreach (var (original, (current, previous)) in names)
+            {
+                if (job.Groups.TryGetValue(current, out var groupInfo))
+                {
+                    var vendorSuffix =
+                        groupInfo.ExclusiveVendor ?? job.Vendors.FirstOrDefault(current.EndsWith);
+                    vendorSuffix = vendorSuffix?[(vendorSuffix.LastIndexOf('_') + 1)..];
+                    var notSafeToTrim =
+                        job.Groups.Count(x =>
+                            x.Key.StartsWith(current[..^(vendorSuffix?.Length ?? 0)])
+                        ) > 1;
+                    if (
+                        vendorSuffix is null
+                        || !job.Vendors.Contains(vendorSuffix)
+                        || !current.EndsWith(vendorSuffix)
+                        || !groupInfo.Enums.All(x => x.Identifier.ToString().EndsWith(vendorSuffix))
+                        || notSafeToTrim
+                    )
+                    {
+                        vendorSuffix = null;
+                    }
+
+                    job.Groups[current] = groupInfo = groupInfo with
+                    {
+                        ExclusiveVendor = vendorSuffix
+                    };
+
+                    if (notSafeToTrim)
+                    {
+                        continue;
+                    }
+
+                    // If the vendor suffix is not equal to our exclusive vendor, then it must not be exclusive
+                    // therefore we should remove the suffix.
+                    foreach (var vendor in job.Vendors)
+                    {
+                        if (current.EndsWith(vendor) && groupInfo.ExclusiveVendor != vendor)
+                        {
+                            var sec = previous ?? [];
+                            sec.Add(current);
+                            names[original] = (current[..^vendor.Length], sec);
+                            break;
+                        }
+                    }
+                }
+            }
+        }
+
+        // Sometimes we get a little overzealous, so let's unwind back to just the GL_ being snipped
+        var rewind = false;
+        if (container is not null && job.Groups.ContainsKey(container))
+        {
+            foreach (var (_, (current, previous)) in names)
+            {
+                var prev = previous?.FirstOrDefault();
+                if (
+                    prev is not null
+                    && current.AsSpan().Count('_') - prev.AsSpan().Count('_') <= 1
+                    && (current.Length <= 4 || (job.Vendors?.Contains(current) ?? false))
+                )
+                {
+                    rewind = true;
+                }
+            }
+        }
+
+        if (rewind)
+        {
+            foreach (var (original, (current, previous)) in names)
+            {
+                var prev = previous?.FirstOrDefault() ?? original;
+                var prevList = previous ?? [];
+                var next = prev[(prev.IndexOf('_') + 1)..];
+                if (next == prev)
+                {
+                    prevList.Remove(prev);
+                }
+                else if (!prevList.Contains(prev))
+                {
+                    prevList.Add(prev);
+                }
+
+                names[original] = (prev[(prev.IndexOf('_') + 1)..], prevList);
+            }
+        }
+
         // Trim the extension vendor names
         foreach (var (original, (current, previous)) in names)
         {
@@ -1134,6 +1323,11 @@ public partial class MixKhronosData(
                             job.Configuration.UseExtensionVendorTrimmings
                                 == ExtensionVendorTrimmingMode.KhronosOnly
                             && vendor is "KHR" or "ARB"
+                        )
+                        || (
+                            container is not null
+                            && job.Groups.TryGetValue(container, out var group)
+                            && group.ExclusiveVendor == vendor
                         )
                     );
                 if (trimVendor)
@@ -1266,10 +1460,30 @@ public partial class MixKhronosData(
 
     private class Rewriter(JobData job) : CSharpSyntaxRewriter(true)
     {
+        public HashSet<string> AlreadyPresentGroups { get; } = [];
+
         public override SyntaxNode? VisitClassDeclaration(ClassDeclarationSyntax node)
         {
             var ret = base.VisitClassDeclaration(node);
             return ret is ClassDeclarationSyntax { Members.Count: 0 } ? null : ret;
+        }
+
+        public override SyntaxNode? VisitEnumDeclaration(EnumDeclarationSyntax node)
+        {
+            var iden = node.Identifier.ToString();
+            if (iden.Contains("FlagBits"))
+            {
+                iden = iden.Replace("FlagBits", "Flags");
+            }
+            if (
+                job.Groups.ContainsKey(iden)
+                && !node.Ancestors().OfType<BaseTypeDeclarationSyntax>().Any()
+            )
+            {
+                AlreadyPresentGroups.Add(iden);
+                return base.VisitEnumDeclaration(node.WithIdentifier(Identifier(iden)));
+            }
+            return base.VisitEnumDeclaration(node);
         }
 
         public override SyntaxNode? VisitFieldDeclaration(FieldDeclarationSyntax node)
@@ -1287,11 +1501,11 @@ public partial class MixKhronosData(
                 .FirstOrDefault(x => x.IsAttribute("Silk.NET.Core.NativeTypeName"))
                 ?.ArgumentList?.Arguments.Select(x =>
                     x.Expression.IsKind(SyntaxKind.StringLiteralExpression)
-                        ? (x.Expression as LiteralExpressionSyntax)?.Token
+                        ? (x.Expression as LiteralExpressionSyntax)?.Token.Value
                         : null
                 )
-                .FirstOrDefault(x => x.HasValue)
-                ?.ToString();
+                .OfType<string>()
+                .FirstOrDefault();
             if (nativeName is null || !nativeName.StartsWith("#define "))
             {
                 return base.VisitFieldDeclaration(node);
@@ -1301,6 +1515,11 @@ public partial class MixKhronosData(
             nativeName = (
                 nnSpan.IndexOf(' ') is >= 0 and var idx ? nnSpan[..idx] : nnSpan
             ).ToString();
+
+            if (job.ApiSets.ContainsKey(nativeName))
+            {
+                return null;
+            }
 
             if (job.EnumsToGroups.TryGetValue(nativeName, out var groups))
             {
@@ -1348,6 +1567,12 @@ public partial class MixKhronosData(
             if (!anyNamespaced)
             {
                 groupName ??= block.Attribute("name")?.Value;
+            }
+
+            // Vulkan/OpenXR enum name
+            if (groupName?.Contains("FlagBits") ?? false)
+            {
+                groupName = groupName.Replace("FlagBits", "Flags");
             }
 
             // Special cases for OpenCL contributed by @Alexx999 for 2.X and ported to 3.0 from:
