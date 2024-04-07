@@ -21,8 +21,10 @@ jobs:
             name: Linux
             nuke_invoke: ./build.sh
             extras: |
-              sudo apt-get update
-              sudo apt-get install -y gcc-multilib
+              sudo dpkg --add-architecture arm64
+              sudo dpkg --add-architecture armhf
+              sudo apt update
+              sudo apt install -y gcc-aarch64-linux-gnu gcc-arm-linux-gnueabihf
           - os: windows-latest
             name: Windows
             nuke_invoke: ./build.cmd
