@@ -6,6 +6,7 @@ using System.IO;
 using System.Linq;
 using Nuke.Common;
 using Nuke.Common.IO;
+using Serilog;
 
 partial class Build
 {
@@ -27,13 +28,13 @@ partial class Build
                 var missedOut = GetNewProjects();
                 if (missedOut.Any())
                 {
-                    Logger.Warn("Commands to add these for your convenience:");
+                    Log.Warning("Commands to add these for your convenience:");
                     foreach (var file in missedOut)
                     {
-                        Logger.Warn($"dotnet sln \"{Path.GetFileName(OriginalSolution.FileName)}\" add \"{file}\"");
+                        Log.Warning($"dotnet sln \"{Path.GetFileName(OriginalSolution.FileName)}\" add \"{file}\"");
                     }
 
-                    ControlFlow.Fail("Action required.");
+                    Assert.Fail("Action required.");
                 }
             }
         )
@@ -46,7 +47,7 @@ partial class Build
             .Concat(RootDirectory.GlobFiles("**/*.csproj"))
             .Where(x => !x.ToString().Contains("submodules"))
             .ToArray();
-        Logger.Info($"Found {files.Length} csproj files in \"{RootDirectory}\"");
+        Log.Information($"Found {files.Length} csproj files in \"{RootDirectory}\"");
         foreach (var file in files)
         {
             var found = false;
@@ -61,7 +62,7 @@ partial class Build
 
             if (!found && !AllowedExclusions.Contains(Path.GetFileNameWithoutExtension(file)))
             {
-                Logger.Error
+                Log.Error
                 (
                     "A project has not been included in the solution and will not be shipped! " +
                     $"\"{file}\" if this is acceptable please add the project name (excluding the path and " +
