@@ -17,6 +17,7 @@ using Nuke.Common.Tools.DotNet;
 using Nuke.Common.Tools.Git;
 using Octokit;
 using Octokit.Internal;
+using Serilog;
 using static Nuke.Common.IO.CompressionTasks;
 using static Nuke.Common.IO.FileSystemTasks;
 using static Nuke.Common.IO.HttpTasks;
@@ -33,7 +34,7 @@ partial class Build {
     static string JobsArg => string.IsNullOrWhiteSpace(GitHubActions.Instance?.Job)
         ? $" -j{Jobs}"
         : string.Empty;
-    
+
     static int Jobs => string.IsNullOrWhiteSpace(GitHubActions.Instance?.Job)
         ? Environment.ProcessorCount - 1
         : 1;
@@ -90,13 +91,13 @@ partial class Build {
             Git("reset --hard", RootDirectory);
             if (GitCurrentCommit(RootDirectory) != curCommit) // might get "nothing to commit", you never know...
             {
-                Logger.Info("Checking for existing branch...");
+                Log.Information("Checking for existing branch...");
                 var exists = StartProcess("git", $"checkout \"{newBranch}\"", RootDirectory)
                     .AssertWaitForExit()
                     .ExitCode == 0;
                 if (!exists)
                 {
-                    Logger.Info("None found, creating a new one...");
+                    Log.Information("None found, creating a new one...");
                     Git($"checkout -b \"{newBranch}\"");
                 }
 
