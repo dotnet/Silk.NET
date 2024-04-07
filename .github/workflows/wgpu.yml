@@ -17,17 +17,34 @@ jobs:
       fail-fast: false
       matrix:
         env:
-          - os: ubuntu-latest
+          - os: ubuntu-22.04
             name: Linux
             nuke_invoke: ./build.sh
             extras: |
-              sudo apt-get update
-              sudo apt-get install -y gcc-multilib
-          - os: windows-latest
+              sudo tee /etc/apt/sources.list << EOF
+              deb [arch=amd64,i386] http://archive.ubuntu.com/ubuntu jammy main multiverse restricted universe
+              deb [arch=amd64,i386] http://archive.ubuntu.com/ubuntu jammy-backports main multiverse restricted universe
+              deb [arch=amd64,i386] http://archive.ubuntu.com/ubuntu jammy-security main multiverse restricted universe
+              deb [arch=amd64,i386] http://archive.ubuntu.com/ubuntu jammy-updates main multiverse restricted universe
+              deb [arch=arm64,armhf] http://ports.ubuntu.com jammy main multiverse restricted universe
+              deb [arch=arm64,armhf] http://ports.ubuntu.com jammy-backports main multiverse restricted universe
+              deb [arch=arm64,armhf] http://ports.ubuntu.com jammy-security main multiverse restricted universe
+              deb [arch=arm64,armhf] http://ports.ubuntu.com jammy-updates main multiverse restricted universe
+              deb [arch=amd64,i386] http://security.ubuntu.com/ubuntu jammy main multiverse restricted universe
+              deb [arch=amd64,i386] http://security.ubuntu.com/ubuntu jammy-backports main multiverse restricted universe
+              deb [arch=amd64,i386] http://security.ubuntu.com/ubuntu jammy-security main multiverse restricted universe
+              deb [arch=amd64,i386] http://security.ubuntu.com/ubuntu jammy-updates main multiverse restricted universe
+              EOF
+              sudo dpkg --add-architecture arm64
+              sudo dpkg --add-architecture armhf
+              sudo dpkg --add-architecture i386
+              sudo apt update
+              sudo apt install -y gcc-aarch64-linux-gnu gcc-arm-linux-gnueabihf gcc-i686-linux-gnu
+          - os: windows-2022
             name: Windows
             nuke_invoke: ./build.cmd
             extras: ""
-          - os: macos-latest
+          - os: macos-14
             name: Darwin
             nuke_invoke: ./build.sh
             extras: ""
