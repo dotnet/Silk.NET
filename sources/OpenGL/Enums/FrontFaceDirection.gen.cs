@@ -5,8 +5,10 @@
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
+namespace Silk.NET.OpenGL;
+
 [Transformed]
-public enum FrontFaceDirection
+public enum FrontFaceDirection : uint
 {
     CW = 0x0900,
     CCW = 0x0901

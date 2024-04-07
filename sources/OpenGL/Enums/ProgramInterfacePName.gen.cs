@@ -5,8 +5,10 @@
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
+namespace Silk.NET.OpenGL;
+
 [Transformed]
-public enum ProgramInterfacePName
+public enum ProgramInterfacePName : uint
 {
     ActiveResources = 0x92F5,
     MaxNameLength = 0x92F6,

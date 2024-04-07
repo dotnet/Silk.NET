@@ -5,8 +5,10 @@
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
+namespace Silk.NET.OpenGL;
+
 [Transformed]
-public enum SyncObjectMask
+public enum SyncObjectMask : uint
 {
     SyncFlushCommandsBit = 0x00000001,
     SyncFlushCommandsBitApple = 0x00000001

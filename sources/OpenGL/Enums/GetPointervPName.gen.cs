@@ -5,8 +5,10 @@
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
+namespace Silk.NET.OpenGL;
+
 [Transformed]
-public enum GetPointervPName
+public enum GetPointervPName : uint
 {
     DebugCallbackFunction = 0x8244,
     DebugCallbackUserParam = 0x8245,

@@ -5,8 +5,10 @@
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
+namespace Silk.NET.OpenGL;
+
 [Transformed]
-public enum ColorTableTargetSGI
+public enum ColorTableTargetSGI : uint
 {
     ColorTable = 0x80D0,
     PostConvolutionColorTable = 0x80D1,

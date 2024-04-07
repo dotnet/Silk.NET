@@ -5,8 +5,10 @@
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
+namespace Silk.NET.OpenGL;
+
 [Transformed]
-public enum FramebufferAttachmentParameterName
+public enum FramebufferAttachmentParameterName : uint
 {
     ColorEncoding = 0x8210,
     ComponentType = 0x8211,

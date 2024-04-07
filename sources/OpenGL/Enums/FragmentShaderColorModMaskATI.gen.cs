@@ -5,8 +5,10 @@
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
+namespace Silk.NET.OpenGL;
+
 [Transformed]
-public enum FragmentShaderColorModMaskATI
+public enum FragmentShaderColorModMaskATI : uint
 {
     XBit = 0x00000001,
     GlCompBit = 0x00000002,

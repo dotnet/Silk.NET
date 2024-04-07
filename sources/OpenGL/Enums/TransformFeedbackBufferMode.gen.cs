@@ -5,8 +5,10 @@
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
+namespace Silk.NET.OpenGL;
+
 [Transformed]
-public enum TransformFeedbackBufferMode
+public enum TransformFeedbackBufferMode : uint
 {
     InterleavedAttribs = 0x8C8C,
     SeparateAttribs = 0x8C8D

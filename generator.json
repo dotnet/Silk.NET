@@ -106,7 +106,10 @@
       },
       "MixKhronosData": {
         "UseDataTypeTrimmings": true,
-        "SpecPath": "eng/submodules/opengl/xml/gl.xml"
+        "SpecPath": "eng/submodules/opengl/xml/gl.xml",
+        "TypeMap": {
+          "TraceMaskMESA": "uint"
+        }
       },
       "AddVTables": {
         "VTables": [

@@ -5,8 +5,10 @@
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
+namespace Silk.NET.OpenGL;
+
 [Transformed]
-public enum VertexAttribEnum
+public enum VertexAttribEnum : uint
 {
     VertexAttribArrayBufferBinding = 0x889F,
     VertexAttribArrayEnabled = 0x8622,

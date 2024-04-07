@@ -5,8 +5,10 @@
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
+namespace Silk.NET.OpenGL;
+
 [Transformed]
-public enum PNTrianglesPNameATI
+public enum PNTrianglesPNameATI : uint
 {
     PointMode = 0x87F2,
     NormalMode = 0x87F3,

@@ -5,8 +5,10 @@
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
+namespace Silk.NET.OpenGL;
+
 [Transformed]
-public enum TextureFilterSGIS
+public enum TextureFilterSGIS : uint
 {
     Filter4 = 0x8146
 }

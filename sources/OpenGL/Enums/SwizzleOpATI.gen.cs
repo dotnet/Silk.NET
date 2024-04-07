@@ -5,8 +5,10 @@
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
+namespace Silk.NET.OpenGL;
+
 [Transformed]
-public enum SwizzleOpATI
+public enum SwizzleOpATI : uint
 {
     Str = 0x8976,
     Stq = 0x8977,

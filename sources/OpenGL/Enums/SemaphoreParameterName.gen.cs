@@ -5,8 +5,10 @@
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
+namespace Silk.NET.OpenGL;
+
 [Transformed]
-public enum SemaphoreParameterName
+public enum SemaphoreParameterName : uint
 {
     D3D12FenceValueEXT = 0x9595,
     TimelineSemaphoreValueNV = 0x9595,

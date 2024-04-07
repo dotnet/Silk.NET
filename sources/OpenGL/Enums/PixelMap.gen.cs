@@ -5,8 +5,10 @@
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
+namespace Silk.NET.OpenGL;
+
 [Transformed]
-public enum PixelMap
+public enum PixelMap : uint
 {
     IToI = 0x0C70,
     SToS = 0x0C71,

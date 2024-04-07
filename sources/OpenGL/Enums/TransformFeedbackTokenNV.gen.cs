@@ -5,8 +5,10 @@
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
+namespace Silk.NET.OpenGL;
+
 [Transformed]
-public enum TransformFeedbackTokenNV
+public enum TransformFeedbackTokenNV : uint
 {
     NextBuffer = -2,
     SkipComponents4 = -3,

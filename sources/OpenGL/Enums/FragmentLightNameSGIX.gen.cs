@@ -5,8 +5,10 @@
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
+namespace Silk.NET.OpenGL;
+
 [Transformed]
-public enum FragmentLightNameSGIX
+public enum FragmentLightNameSGIX : uint
 {
     Light0 = 0x840C,
     Light1 = 0x840D,

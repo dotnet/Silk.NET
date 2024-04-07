@@ -5,8 +5,10 @@
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
+namespace Silk.NET.OpenGL;
+
 [Transformed]
-public enum LightName
+public enum LightName : uint
 {
     Light0 = 0x4000,
     Light1 = 0x4001,

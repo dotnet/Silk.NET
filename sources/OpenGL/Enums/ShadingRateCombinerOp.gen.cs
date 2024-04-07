@@ -5,8 +5,10 @@
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
+namespace Silk.NET.OpenGL;
+
 [Transformed]
-public enum ShadingRateCombinerOp
+public enum ShadingRateCombinerOp : uint
 {
     KeepEXT = 0x96D2,
     ReplaceEXT = 0x96D3,

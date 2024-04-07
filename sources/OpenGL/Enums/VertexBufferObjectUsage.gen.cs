@@ -5,8 +5,10 @@
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
+namespace Silk.NET.OpenGL;
+
 [Transformed]
-public enum VertexBufferObjectUsage
+public enum VertexBufferObjectUsage : uint
 {
     StreamDraw = 0x88E0,
     StreamRead = 0x88E1,

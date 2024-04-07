@@ -5,8 +5,10 @@
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
+namespace Silk.NET.OpenGL;
+
 [Transformed]
-public enum PrecisionType
+public enum PrecisionType : uint
 {
     LowFloat = 0x8DF0,
     MediumFloat = 0x8DF1,

@@ -5,8 +5,10 @@
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
+namespace Silk.NET.OpenGL;
+
 [Transformed]
-public enum TextureWrapMode
+public enum TextureWrapMode : uint
 {
     LinearMipmapLinear = 0x2703,
     Repeat = 0x2901,

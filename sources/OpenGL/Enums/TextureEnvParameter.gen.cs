@@ -5,8 +5,10 @@
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
+namespace Silk.NET.OpenGL;
+
 [Transformed]
-public enum TextureEnvParameter
+public enum TextureEnvParameter : uint
 {
     TextureLodBias = 0x8501,
     Src1Alpha = 0x8589,

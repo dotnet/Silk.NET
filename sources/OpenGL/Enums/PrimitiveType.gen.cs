@@ -5,8 +5,10 @@
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
+namespace Silk.NET.OpenGL;
+
 [Transformed]
-public enum PrimitiveType
+public enum PrimitiveType : uint
 {
     Points = 0x0000,
     Lines = 0x0001,

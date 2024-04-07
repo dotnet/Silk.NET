@@ -5,8 +5,10 @@
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
+namespace Silk.NET.OpenGL;
+
 [Transformed]
-public enum ArrayObjectUsageATI
+public enum ArrayObjectUsageATI : uint
 {
     Static = 0x8760,
     Dynamic = 0x8761

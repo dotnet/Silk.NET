@@ -5,8 +5,10 @@
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
+namespace Silk.NET.OpenGL;
+
 [Transformed]
-public enum PathFontTarget
+public enum PathFontTarget : uint
 {
     StandardFontNameNV = 0x9072,
     SystemFontNameNV = 0x9073,

@@ -5,8 +5,10 @@
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
+namespace Silk.NET.OpenGL;
+
 [Transformed]
-public enum FragmentOp3ATI
+public enum FragmentOp3ATI : uint
 {
     Mad = 0x8968,
     Lerp = 0x8969,

@@ -5,8 +5,10 @@
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
+namespace Silk.NET.OpenGL;
+
 [Transformed]
-public enum GraphicsResetStatus
+public enum GraphicsResetStatus : uint
 {
     NoError = 0,
     GuiltyContextReset = 0x8253,

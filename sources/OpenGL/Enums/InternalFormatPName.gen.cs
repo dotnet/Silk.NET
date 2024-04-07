@@ -5,8 +5,10 @@
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
+namespace Silk.NET.OpenGL;
+
 [Transformed]
-public enum InternalFormatPName
+public enum InternalFormatPName : uint
 {
     Samples = 0x80A9,
     TextureCompressed = 0x86A1,

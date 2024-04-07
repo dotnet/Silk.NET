@@ -5,8 +5,10 @@
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
+namespace Silk.NET.OpenGL;
+
 [Transformed]
-public enum ElementPointerType
+public enum ElementPointerType : uint
 {
     UnsignedByte = 0x1401,
     UnsignedShort = 0x1403,

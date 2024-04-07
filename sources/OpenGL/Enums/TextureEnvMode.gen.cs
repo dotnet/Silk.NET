@@ -5,8 +5,10 @@
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
+namespace Silk.NET.OpenGL;
+
 [Transformed]
-public enum TextureEnvMode
+public enum TextureEnvMode : uint
 {
     Blend = 0x0BE2,
     Replace = 0x1E01,

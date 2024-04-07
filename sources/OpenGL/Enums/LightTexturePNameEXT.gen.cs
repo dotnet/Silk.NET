@@ -5,8 +5,10 @@
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
+namespace Silk.NET.OpenGL;
+
 [Transformed]
-public enum LightTexturePNameEXT
+public enum LightTexturePNameEXT : uint
 {
     Attenuation = 0x834D,
     ShadowAttenuation = 0x834E

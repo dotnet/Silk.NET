@@ -5,8 +5,10 @@
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
+namespace Silk.NET.OpenGL;
+
 [Transformed]
-public enum GetHistogramParameterPName
+public enum GetHistogramParameterPName : uint
 {
     Width = 0x8026,
     Format = 0x8027,

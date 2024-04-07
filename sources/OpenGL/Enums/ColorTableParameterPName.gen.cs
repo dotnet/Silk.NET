@@ -5,8 +5,10 @@
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
+namespace Silk.NET.OpenGL;
+
 [Transformed]
-public enum ColorTableParameterPName
+public enum ColorTableParameterPName : uint
 {
     Scale = 0x80D6,
     Bias = 0x80D7,

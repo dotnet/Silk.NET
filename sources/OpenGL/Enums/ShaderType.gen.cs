@@ -5,8 +5,10 @@
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
+namespace Silk.NET.OpenGL;
+
 [Transformed]
-public enum ShaderType
+public enum ShaderType : uint
 {
     FragmentShader = 0x8B30,
     VertexShader = 0x8B31,

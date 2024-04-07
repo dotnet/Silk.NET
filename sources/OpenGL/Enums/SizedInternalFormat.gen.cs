@@ -5,8 +5,10 @@
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
+namespace Silk.NET.OpenGL;
+
 [Transformed]
-public enum SizedInternalFormat
+public enum SizedInternalFormat : uint
 {
     R3G3B2 = 0x2A10,
     Rgb4 = 0x804F,

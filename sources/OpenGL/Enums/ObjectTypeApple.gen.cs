@@ -5,8 +5,10 @@
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
+namespace Silk.NET.OpenGL;
+
 [Transformed]
-public enum ObjectTypeApple
+public enum ObjectTypeApple : uint
 {
     DrawPixels = 0x8A0A,
     Fence = 0x8A0B

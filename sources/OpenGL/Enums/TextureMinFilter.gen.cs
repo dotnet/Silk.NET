@@ -5,8 +5,10 @@
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
+namespace Silk.NET.OpenGL;
+
 [Transformed]
-public enum TextureMinFilter
+public enum TextureMinFilter : uint
 {
     Nearest = 0x2600,
     Linear = 0x2601,

@@ -5,8 +5,10 @@
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
+namespace Silk.NET.OpenGL;
+
 [Transformed]
-public enum VertexAttribPointerProperty
+public enum VertexAttribPointerProperty : uint
 {
     Pointer = 0x8645,
     PointerARB = 0x8645

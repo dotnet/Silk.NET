@@ -5,8 +5,10 @@
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
+namespace Silk.NET.OpenGL;
+
 [Transformed]
-public enum InterleavedArrayFormat
+public enum InterleavedArrayFormat : uint
 {
     V2F = 0x2A20,
     V3F = 0x2A21,

@@ -5,8 +5,10 @@
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
+namespace Silk.NET.OpenGL;
+
 [Transformed]
-public enum ConvolutionBorderMode
+public enum ConvolutionBorderMode : uint
 {
     Reduce = 0x8016,
     ReduceEXT = 0x8016

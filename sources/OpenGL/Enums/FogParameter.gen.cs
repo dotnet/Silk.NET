@@ -5,8 +5,10 @@
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
+namespace Silk.NET.OpenGL;
+
 [Transformed]
-public enum FogParameter
+public enum FogParameter : uint
 {
     FogIndex = 0x0B61,
     FogDensity = 0x0B62,

@@ -5,8 +5,10 @@
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
+namespace Silk.NET.OpenGL;
+
 [Transformed]
-public enum TextureParameterName
+public enum TextureParameterName : uint
 {
     TextureWidth = 0x1000,
     TextureHeight = 0x1001,

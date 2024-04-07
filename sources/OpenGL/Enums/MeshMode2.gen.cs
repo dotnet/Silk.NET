@@ -5,8 +5,10 @@
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
+namespace Silk.NET.OpenGL;
+
 [Transformed]
-public enum MeshMode2
+public enum MeshMode2 : uint
 {
     Point = 0x1B00,
     Line = 0x1B01,

@@ -5,8 +5,10 @@
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
+namespace Silk.NET.OpenGL;
+
 [Transformed]
-public enum PathColorFormat
+public enum PathColorFormat : uint
 {
     NONE = 0,
     Alpha = 0x1906,

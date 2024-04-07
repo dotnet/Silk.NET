@@ -5,8 +5,10 @@
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
+namespace Silk.NET.OpenGL;
+
 [Transformed]
-public enum ListParameterName
+public enum ListParameterName : uint
 {
     ListPrioritySGIX = 0x8182
 }

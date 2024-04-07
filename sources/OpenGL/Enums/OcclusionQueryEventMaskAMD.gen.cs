@@ -5,8 +5,10 @@
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
+namespace Silk.NET.OpenGL;
+
 [Transformed]
-public enum OcclusionQueryEventMaskAMD
+public enum OcclusionQueryEventMaskAMD : uint
 {
     DepthPassEventBit = 0x00000001,
     DepthFailEventBit = 0x00000002,

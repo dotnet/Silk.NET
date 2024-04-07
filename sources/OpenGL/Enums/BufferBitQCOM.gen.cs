@@ -5,8 +5,10 @@
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
+namespace Silk.NET.OpenGL;
+
 [Transformed]
-public enum BufferBitQCOM
+public enum BufferBitQCOM : uint
 {
     ColorBufferBit0 = 0x00000001,
     ColorBufferBit1 = 0x00000002,

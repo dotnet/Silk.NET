@@ -5,8 +5,10 @@
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
+namespace Silk.NET.OpenGL;
+
 [Transformed]
-public enum MatrixMode
+public enum MatrixMode : uint
 {
     Texture = 0x1702,
     Modelview = 0x1700,

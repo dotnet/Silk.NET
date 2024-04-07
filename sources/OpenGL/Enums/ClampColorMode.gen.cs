@@ -5,8 +5,10 @@
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
+namespace Silk.NET.OpenGL;
+
 [Transformed]
-public enum ClampColorMode
+public enum ClampColorMode : uint
 {
     False = 0,
     True = 1,

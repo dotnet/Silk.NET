@@ -5,8 +5,10 @@
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
+namespace Silk.NET.OpenGL;
+
 [Transformed]
-public enum BufferPointerName
+public enum BufferPointerName : uint
 {
     Pointer = 0x88BD,
     PointerARB = 0x88BD

@@ -5,8 +5,10 @@
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
+namespace Silk.NET.OpenGL;
+
 [Transformed]
-public enum CombinerBias
+public enum CombinerBias : uint
 {
     None = 0,
     BiasByNegativeOneHalfNV = 0x8541

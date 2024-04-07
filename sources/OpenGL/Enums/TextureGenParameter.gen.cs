@@ -5,8 +5,10 @@
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
+namespace Silk.NET.OpenGL;
+
 [Transformed]
-public enum TextureGenParameter
+public enum TextureGenParameter : uint
 {
     TextureGenMode = 0x2500,
     ObjectPlane = 0x2501,

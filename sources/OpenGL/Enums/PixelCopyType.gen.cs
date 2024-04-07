@@ -5,8 +5,10 @@
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
+namespace Silk.NET.OpenGL;
+
 [Transformed]
-public enum PixelCopyType
+public enum PixelCopyType : uint
 {
     Color = 0x1800,
     Depth = 0x1801,

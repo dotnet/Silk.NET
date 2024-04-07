@@ -5,8 +5,10 @@
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
+namespace Silk.NET.OpenGL;
+
 [Transformed]
-public enum ProgramStringProperty
+public enum ProgramStringProperty : uint
 {
     ProgramStringARB = 0x8628
 }

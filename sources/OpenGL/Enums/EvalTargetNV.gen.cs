@@ -5,8 +5,10 @@
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
+namespace Silk.NET.OpenGL;
+
 [Transformed]
-public enum EvalTargetNV
+public enum EvalTargetNV : uint
 {
     Eval2D = 0x86C0,
     EvalTriangular2D = 0x86C1

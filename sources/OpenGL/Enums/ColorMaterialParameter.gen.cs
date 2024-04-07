@@ -5,8 +5,10 @@
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
+namespace Silk.NET.OpenGL;
+
 [Transformed]
-public enum ColorMaterialParameter
+public enum ColorMaterialParameter : uint
 {
     Ambient = 0x1200,
     Diffuse = 0x1201,

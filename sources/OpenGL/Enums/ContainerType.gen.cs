@@ -5,8 +5,10 @@
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
+namespace Silk.NET.OpenGL;
+
 [Transformed]
-public enum ContainerType
+public enum ContainerType : uint
 {
     ProgramObjectEXT = 0x8B40,
     ProgramObjectARB = 0x8B40

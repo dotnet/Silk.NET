@@ -5,8 +5,10 @@
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
+namespace Silk.NET.OpenGL;
+
 [Transformed]
-public enum MapParameterNV
+public enum MapParameterNV : uint
 {
     MapTessellation = 0x86C2
 }

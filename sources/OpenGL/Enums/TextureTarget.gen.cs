@@ -5,8 +5,10 @@
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
+namespace Silk.NET.OpenGL;
+
 [Transformed]
-public enum TextureTarget
+public enum TextureTarget : uint
 {
     Texture1D = 0x0DE0,
     Texture2D = 0x0DE1,

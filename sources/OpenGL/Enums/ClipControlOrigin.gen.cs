@@ -5,8 +5,10 @@
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
+namespace Silk.NET.OpenGL;
+
 [Transformed]
-public enum ClipControlOrigin
+public enum ClipControlOrigin : uint
 {
     LowerLeft = 0x8CA1,
     UpperLeft = 0x8CA2

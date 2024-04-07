@@ -5,8 +5,10 @@
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
+namespace Silk.NET.OpenGL;
+
 [Transformed]
-public enum ShaderParameterName
+public enum ShaderParameterName : uint
 {
     ShaderType = 0x8B4F,
     DeleteStatus = 0x8B80,

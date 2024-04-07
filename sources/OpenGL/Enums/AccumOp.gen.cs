@@ -5,8 +5,10 @@
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
+namespace Silk.NET.OpenGL;
+
 [Transformed]
-public enum AccumOp
+public enum AccumOp : uint
 {
     Accum = 0x0100,
     LOAD = 0x0101,

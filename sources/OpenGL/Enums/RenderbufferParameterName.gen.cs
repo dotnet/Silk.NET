@@ -5,8 +5,10 @@
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
+namespace Silk.NET.OpenGL;
+
 [Transformed]
-public enum RenderbufferParameterName
+public enum RenderbufferParameterName : uint
 {
     Samples = 0x8CAB,
     Width = 0x8D42,

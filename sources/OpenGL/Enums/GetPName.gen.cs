@@ -5,8 +5,10 @@
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
+namespace Silk.NET.OpenGL;
+
 [Transformed]
-public enum GetPName
+public enum GetPName : uint
 {
     PointSize = 0x0B11,
     PointSizeRange = 0x0B12,

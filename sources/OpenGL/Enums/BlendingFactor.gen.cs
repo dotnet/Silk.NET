@@ -5,8 +5,10 @@
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
+namespace Silk.NET.OpenGL;
+
 [Transformed]
-public enum BlendingFactor
+public enum BlendingFactor : uint
 {
     ZERO = 0,
     ONE = 1,

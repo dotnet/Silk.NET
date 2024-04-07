@@ -5,8 +5,10 @@
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
+namespace Silk.NET.OpenGL;
+
 [Transformed]
-public enum FragmentLightModelParameterSGIX
+public enum FragmentLightModelParameterSGIX : uint
 {
     LocalViewer = 0x8408,
     TwoSide = 0x8409,

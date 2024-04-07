@@ -5,8 +5,10 @@
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
+namespace Silk.NET.OpenGL;
+
 [Transformed]
-public enum SamplerParameterF
+public enum SamplerParameterF : uint
 {
     BorderColor = 0x1004,
     MinLod = 0x813A,

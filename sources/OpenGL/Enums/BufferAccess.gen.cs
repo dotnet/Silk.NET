@@ -5,8 +5,10 @@
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
+namespace Silk.NET.OpenGL;
+
 [Transformed]
-public enum BufferAccess
+public enum BufferAccess : uint
 {
     ReadOnly = 0x88B8,
     WriteOnly = 0x88B9,

@@ -5,8 +5,10 @@
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
+namespace Silk.NET.OpenGL;
+
 [Transformed]
-public enum TextureEnvTarget
+public enum TextureEnvTarget : uint
 {
     TextureENV = 0x2300,
     TextureFilterControl = 0x8500,

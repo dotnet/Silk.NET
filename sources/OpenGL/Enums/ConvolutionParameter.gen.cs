@@ -5,8 +5,10 @@
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
+namespace Silk.NET.OpenGL;
+
 [Transformed]
-public enum ConvolutionParameter
+public enum ConvolutionParameter : uint
 {
     ConvolutionBorderMode = 0x8013,
     ConvolutionFilterScale = 0x8014,

@@ -5,8 +5,10 @@
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
+namespace Silk.NET.OpenGL;
+
 [Transformed]
-public enum VertexShaderCoordOutEXT
+public enum VertexShaderCoordOutEXT : uint
 {
     X = 0x87D5,
     Y = 0x87D6,

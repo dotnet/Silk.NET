@@ -5,8 +5,10 @@
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
+namespace Silk.NET.OpenGL;
+
 [Transformed]
-public enum ClientAttribMask
+public enum ClientAttribMask : uint
 {
     PixelStoreBit = 0x00000001,
     VertexArrayBit = 0x00000002,

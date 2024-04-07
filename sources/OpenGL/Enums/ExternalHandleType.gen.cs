@@ -5,8 +5,10 @@
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
+namespace Silk.NET.OpenGL;
+
 [Transformed]
-public enum ExternalHandleType
+public enum ExternalHandleType : uint
 {
     OpaqueFdEXT = 0x9586,
     OpaqueWin32EXT = 0x9587,

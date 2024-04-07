@@ -5,8 +5,10 @@
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
+namespace Silk.NET.OpenGL;
+
 [Transformed]
-public enum SyncStatus
+public enum SyncStatus : uint
 {
     AlreadySignaled = 0x911A,
     TimeoutExpired = 0x911B,

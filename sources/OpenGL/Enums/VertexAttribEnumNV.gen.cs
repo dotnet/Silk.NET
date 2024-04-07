@@ -5,8 +5,10 @@
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
+namespace Silk.NET.OpenGL;
+
 [Transformed]
-public enum VertexAttribEnumNV
+public enum VertexAttribEnumNV : uint
 {
     ProgramParameter = 0x8644
 }

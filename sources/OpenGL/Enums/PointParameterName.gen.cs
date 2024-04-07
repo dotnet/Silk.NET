@@ -5,8 +5,10 @@
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
+namespace Silk.NET.OpenGL;
+
 [Transformed]
-public enum PointParameterName
+public enum PointParameterName : uint
 {
     PointFadeThresholdSize = 0x8128,
     PointSizeMin = 0x8126,

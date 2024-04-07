@@ -5,8 +5,10 @@
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
+namespace Silk.NET.OpenGL;
+
 [Transformed]
-public enum ShaderBinaryFormat
+public enum ShaderBinaryFormat : uint
 {
     ShaderBinaryFormatSpirV = 0x9551,
     MaliShaderBinaryARM = 0x8F60,

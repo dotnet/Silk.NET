@@ -5,8 +5,10 @@
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
+namespace Silk.NET.OpenGL;
+
 [Transformed]
-public enum FoveationConfigBitQCOM
+public enum FoveationConfigBitQCOM : uint
 {
     EnableBit = 0x00000001,
     ScaledBinMethodBit = 0x00000002,

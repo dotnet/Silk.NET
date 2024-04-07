@@ -5,8 +5,10 @@
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
+namespace Silk.NET.OpenGL;
+
 [Transformed]
-public enum TriangleFace
+public enum TriangleFace : uint
 {
     Front = 0x0404,
     Back = 0x0405,

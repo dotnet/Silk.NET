@@ -5,8 +5,10 @@
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
+namespace Silk.NET.OpenGL;
+
 [Transformed]
-public enum HintTarget
+public enum HintTarget : uint
 {
     LineSmoothHint = 0x0C52,
     PolygonSmoothHint = 0x0C53,

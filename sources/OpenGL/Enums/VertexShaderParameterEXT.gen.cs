@@ -5,8 +5,10 @@
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
+namespace Silk.NET.OpenGL;
+
 [Transformed]
-public enum VertexShaderParameterEXT
+public enum VertexShaderParameterEXT : uint
 {
     CurrentVertex = 0x87E2,
     MvpMatrix = 0x87E3

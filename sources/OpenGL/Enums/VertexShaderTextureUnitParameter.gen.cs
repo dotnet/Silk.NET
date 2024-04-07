@@ -5,8 +5,10 @@
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
+namespace Silk.NET.OpenGL;
+
 [Transformed]
-public enum VertexShaderTextureUnitParameter
+public enum VertexShaderTextureUnitParameter : uint
 {
     CurrentTextureCoords = 0x0B03,
     TextureMatrix = 0x0BA8

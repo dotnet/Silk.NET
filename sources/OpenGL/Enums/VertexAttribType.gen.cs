@@ -5,8 +5,10 @@
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
+namespace Silk.NET.OpenGL;
+
 [Transformed]
-public enum VertexAttribType
+public enum VertexAttribType : uint
 {
     BYTE = 0x1400,
     UnsignedByte = 0x1401,

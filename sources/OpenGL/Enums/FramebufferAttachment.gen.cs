@@ -5,8 +5,10 @@
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
+namespace Silk.NET.OpenGL;
+
 [Transformed]
-public enum FramebufferAttachment
+public enum FramebufferAttachment : uint
 {
     DepthStencilAttachment = 0x821A,
     ColorAttachment0 = 0x8CE0,

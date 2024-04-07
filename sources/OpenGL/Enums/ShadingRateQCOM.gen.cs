@@ -5,8 +5,10 @@
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
+namespace Silk.NET.OpenGL;
+
 [Transformed]
-public enum ShadingRateQCOM
+public enum ShadingRateQCOM : uint
 {
     Rate1X1Pixels = 0x96A6,
     Rate1X2Pixels = 0x96A7,

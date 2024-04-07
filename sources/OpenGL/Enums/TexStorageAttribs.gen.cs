@@ -5,8 +5,10 @@
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
+namespace Silk.NET.OpenGL;
+
 [Transformed]
-public enum TexStorageAttribs
+public enum TexStorageAttribs : uint
 {
     SurfaceCompressionEXT = 0x96C0,
     SurfaceCompressionFixedRateNoneEXT = 0x96C1,

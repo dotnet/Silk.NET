@@ -5,8 +5,10 @@
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
+namespace Silk.NET.OpenGL;
+
 [Transformed]
-public enum FenceParameterNameNV
+public enum FenceParameterNameNV : uint
 {
     Status = 0x84F3,
     Condition = 0x84F4

@@ -5,8 +5,10 @@
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
+namespace Silk.NET.OpenGL;
+
 [Transformed]
-public enum FragmentOp2ATI
+public enum FragmentOp2ATI : uint
 {
     Add = 0x8963,
     Mul = 0x8964,

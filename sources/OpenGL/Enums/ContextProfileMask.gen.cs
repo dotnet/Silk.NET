@@ -5,8 +5,10 @@
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
+namespace Silk.NET.OpenGL;
+
 [Transformed]
-public enum ContextProfileMask
+public enum ContextProfileMask : uint
 {
     CoreProfileBit = 0x00000001,
     CompatibilityProfileBit = 0x00000002

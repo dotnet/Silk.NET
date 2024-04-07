@@ -5,8 +5,10 @@
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
+namespace Silk.NET.OpenGL;
+
 [Transformed]
-public enum QueryParameterName
+public enum QueryParameterName : uint
 {
     QueryCounterBits = 0x8864,
     CurrentQuery = 0x8865

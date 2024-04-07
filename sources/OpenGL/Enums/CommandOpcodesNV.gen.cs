@@ -5,8 +5,10 @@
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
+namespace Silk.NET.OpenGL;
+
 [Transformed]
-public enum CommandOpcodesNV
+public enum CommandOpcodesNV : uint
 {
     TerminateSequenceCommand = 0x0000,
     NopCommand = 0x0001,

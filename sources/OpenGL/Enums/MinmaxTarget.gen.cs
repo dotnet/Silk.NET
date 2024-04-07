@@ -5,8 +5,10 @@
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
+namespace Silk.NET.OpenGL;
+
 [Transformed]
-public enum MinmaxTarget
+public enum MinmaxTarget : uint
 {
     Minmax = 0x802E
 }

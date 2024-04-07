@@ -5,8 +5,10 @@
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
+namespace Silk.NET.OpenGL;
+
 [Transformed]
-public enum UniformPName
+public enum UniformPName : uint
 {
     Type = 0x8A37,
     Size = 0x8A38,

@@ -5,8 +5,10 @@
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
+namespace Silk.NET.OpenGL;
+
 [Transformed]
-public enum PathCoordType
+public enum PathCoordType : uint
 {
     ClosePathNV = 0x00,
     MoveToNV = 0x02,

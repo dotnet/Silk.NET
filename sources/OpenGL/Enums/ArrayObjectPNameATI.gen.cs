@@ -5,8 +5,10 @@
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
+namespace Silk.NET.OpenGL;
+
 [Transformed]
-public enum ArrayObjectPNameATI
+public enum ArrayObjectPNameATI : uint
 {
     Size = 0x8764,
     Usage = 0x8765

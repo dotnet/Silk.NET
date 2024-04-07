@@ -5,8 +5,10 @@
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
+namespace Silk.NET.OpenGL;
+
 [Transformed]
-public enum UniformType
+public enum UniformType : uint
 {
     INT = 0x1404,
     UnsignedInt = 0x1405,

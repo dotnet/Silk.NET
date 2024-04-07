@@ -5,8 +5,10 @@
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
+namespace Silk.NET.OpenGL;
+
 [Transformed]
-public enum FragmentShaderConATI
+public enum FragmentShaderConATI : uint
 {
     Con0 = 0x8941,
     Con1 = 0x8942,

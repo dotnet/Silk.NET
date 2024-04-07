@@ -5,8 +5,10 @@
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
+namespace Silk.NET.OpenGL;
+
 [Transformed]
-public enum TextureSwizzle
+public enum TextureSwizzle : uint
 {
     ZERO = 0,
     ONE = 1,

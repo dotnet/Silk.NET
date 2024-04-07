@@ -5,8 +5,10 @@
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
+namespace Silk.NET.OpenGL;
+
 [Transformed]
-public enum PathParameter
+public enum PathParameter : uint
 {
     StrokeWidthNV = 0x9075,
     EndCapsNV = 0x9076,

@@ -5,8 +5,10 @@
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
+namespace Silk.NET.OpenGL;
+
 [Transformed]
-public enum PathFontStyle
+public enum PathFontStyle : uint
 {
     None = 0,
     BoldBitNV = 0x01,

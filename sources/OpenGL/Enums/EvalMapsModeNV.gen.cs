@@ -5,8 +5,10 @@
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
+namespace Silk.NET.OpenGL;
+
 [Transformed]
-public enum EvalMapsModeNV
+public enum EvalMapsModeNV : uint
 {
     Fill = 0x1B02
 }

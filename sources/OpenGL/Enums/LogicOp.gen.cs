@@ -5,8 +5,10 @@
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
+namespace Silk.NET.OpenGL;
+
 [Transformed]
-public enum LogicOp
+public enum LogicOp : uint
 {
     Clear = 0x1500,
     AND = 0x1501,

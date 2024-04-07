@@ -5,8 +5,10 @@
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
+namespace Silk.NET.OpenGL;
+
 [Transformed]
-public enum CombinerVariableNV
+public enum CombinerVariableNV : uint
 {
     A = 0x8523,
     B = 0x8524,

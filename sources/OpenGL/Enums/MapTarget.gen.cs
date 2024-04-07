@@ -5,8 +5,10 @@
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
+namespace Silk.NET.OpenGL;
+
 [Transformed]
-public enum MapTarget
+public enum MapTarget : uint
 {
     Map1Color4 = 0x0D90,
     Map1Index = 0x0D91,

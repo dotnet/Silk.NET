@@ -5,8 +5,10 @@
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
+namespace Silk.NET.OpenGL;
+
 [Transformed]
-public enum FragmentShaderValueRep
+public enum FragmentShaderValueRep : uint
 {
     NONE = 0,
     RED = 0x1903,

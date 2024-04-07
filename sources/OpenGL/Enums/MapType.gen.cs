@@ -5,8 +5,10 @@
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
+namespace Silk.NET.OpenGL;
+
 [Transformed]
-public enum MapType
+public enum MapType : uint
 {
     Float = 0x1406,
     Double = 0x140A

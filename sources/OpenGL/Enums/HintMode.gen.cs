@@ -5,8 +5,10 @@
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
+namespace Silk.NET.OpenGL;
+
 [Transformed]
-public enum HintMode
+public enum HintMode : uint
 {
     DontCare = 0x1100,
     Fastest = 0x1101,

@@ -5,8 +5,10 @@
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
+namespace Silk.NET.OpenGL;
+
 [Transformed]
-public enum QueryTarget
+public enum QueryTarget : uint
 {
     SamplesPassed = 0x8914,
     PrimitivesGenerated = 0x8C87,

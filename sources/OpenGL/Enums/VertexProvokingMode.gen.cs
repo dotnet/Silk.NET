@@ -5,8 +5,10 @@
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
+namespace Silk.NET.OpenGL;
+
 [Transformed]
-public enum VertexProvokingMode
+public enum VertexProvokingMode : uint
 {
     FirstVertexConvention = 0x8E4D,
     LastVertexConvention = 0x8E4E

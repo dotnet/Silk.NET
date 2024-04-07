@@ -5,8 +5,10 @@
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
+namespace Silk.NET.OpenGL;
+
 [Transformed]
-public enum PathHandleMissingGlyphs
+public enum PathHandleMissingGlyphs : uint
 {
     SkipMissingGlyphNV = 0x90A9,
     UseMissingGlyphNV = 0x90AA

@@ -5,8 +5,10 @@
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
+namespace Silk.NET.OpenGL;
+
 [Transformed]
-public enum ProgramResourceProperty
+public enum ProgramResourceProperty : uint
 {
     NumCompatibleSubroutines = 0x8E4A,
     CompatibleSubroutines = 0x8E4B,

@@ -5,8 +5,10 @@
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
+namespace Silk.NET.OpenGL;
+
 [Transformed]
-public enum Buffer
+public enum Buffer : uint
 {
     Color = 0x1800,
     Depth = 0x1801,

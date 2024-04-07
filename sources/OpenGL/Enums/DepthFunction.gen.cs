@@ -5,8 +5,10 @@
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
+namespace Silk.NET.OpenGL;
+
 [Transformed]
-public enum DepthFunction
+public enum DepthFunction : uint
 {
     Never = 0x0200,
     Less = 0x0201,

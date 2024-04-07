@@ -5,8 +5,10 @@
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
+namespace Silk.NET.OpenGL;
+
 [Transformed]
-public enum ProgramParameterPName
+public enum ProgramParameterPName : uint
 {
     BinaryRetrievableHint = 0x8257,
     Separable = 0x8258

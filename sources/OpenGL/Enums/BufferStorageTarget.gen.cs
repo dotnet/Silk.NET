@@ -5,8 +5,10 @@
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
+namespace Silk.NET.OpenGL;
+
 [Transformed]
-public enum BufferStorageTarget
+public enum BufferStorageTarget : uint
 {
     ArrayBuffer = 0x8892,
     ElementArrayBuffer = 0x8893,

@@ -5,8 +5,10 @@
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
+namespace Silk.NET.OpenGL;
+
 [Transformed]
-public enum PixelTransferParameter
+public enum PixelTransferParameter : uint
 {
     MapColor = 0x0D10,
     MapStencil = 0x0D11,

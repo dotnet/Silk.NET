@@ -5,8 +5,10 @@
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
+namespace Silk.NET.OpenGL;
+
 [Transformed]
-public enum FogMode
+public enum FogMode : uint
 {
     Linear = 0x2601,
     EXP = 0x0800,

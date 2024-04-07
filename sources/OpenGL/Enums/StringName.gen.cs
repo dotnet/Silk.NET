@@ -5,8 +5,10 @@
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
+namespace Silk.NET.OpenGL;
+
 [Transformed]
-public enum StringName
+public enum StringName : uint
 {
     Vendor = 0x1F00,
     Renderer = 0x1F01,

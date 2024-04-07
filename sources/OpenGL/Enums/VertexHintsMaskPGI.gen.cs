@@ -5,8 +5,10 @@
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
+namespace Silk.NET.OpenGL;
+
 [Transformed]
-public enum VertexHintsMaskPGI
+public enum VertexHintsMaskPGI : uint
 {
     Color3Bit = 0x00010000,
     Color4Bit = 0x00020000,

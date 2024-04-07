@@ -5,8 +5,10 @@
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
+namespace Silk.NET.OpenGL;
+
 [Transformed]
-public enum QueryObjectParameterName
+public enum QueryObjectParameterName : uint
 {
     Result = 0x8866,
     ResultAvailable = 0x8867,

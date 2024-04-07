@@ -5,8 +5,10 @@
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
+namespace Silk.NET.OpenGL;
+
 [Transformed]
-public enum PixelStoreSubsampleRate
+public enum PixelStoreSubsampleRate : uint
 {
     Subsample4444Sgix = 0x85A2,
     Subsample2424Sgix = 0x85A3,

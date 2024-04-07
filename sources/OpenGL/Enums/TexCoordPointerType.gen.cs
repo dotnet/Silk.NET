@@ -5,8 +5,10 @@
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
+namespace Silk.NET.OpenGL;
+
 [Transformed]
-public enum TexCoordPointerType
+public enum TexCoordPointerType : uint
 {
     Short = 0x1402,
     INT = 0x1404,

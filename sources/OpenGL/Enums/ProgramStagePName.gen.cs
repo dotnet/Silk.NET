@@ -5,8 +5,10 @@
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
+namespace Silk.NET.OpenGL;
+
 [Transformed]
-public enum ProgramStagePName
+public enum ProgramStagePName : uint
 {
     Subroutines = 0x8DE5,
     SubroutineUniforms = 0x8DE6,

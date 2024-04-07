@@ -5,8 +5,10 @@
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
+namespace Silk.NET.OpenGL;
+
 [Transformed]
-public enum PatchParameterName
+public enum PatchParameterName : uint
 {
     Vertices = 0x8E72,
     DefaultInnerLevel = 0x8E73,

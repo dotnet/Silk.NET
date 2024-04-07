@@ -5,8 +5,10 @@
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
+namespace Silk.NET.OpenGL;
+
 [Transformed]
-public enum ObjectIdentifier
+public enum ObjectIdentifier : uint
 {
     Texture = 0x1702,
     VertexArray = 0x8074,

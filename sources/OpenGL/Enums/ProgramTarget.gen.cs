@@ -5,8 +5,10 @@
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
+namespace Silk.NET.OpenGL;
+
 [Transformed]
-public enum ProgramTarget
+public enum ProgramTarget : uint
 {
     FragmentProgramARB = 0x8804,
     VertexProgramARB = 0x8620,

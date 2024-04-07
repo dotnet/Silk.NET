@@ -5,8 +5,10 @@
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
+namespace Silk.NET.OpenGL;
+
 [Transformed]
-public enum ShadingModel
+public enum ShadingModel : uint
 {
     Flat = 0x1D00,
     Smooth = 0x1D01

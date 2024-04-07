@@ -5,8 +5,10 @@
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
+namespace Silk.NET.OpenGL;
+
 [Transformed]
-public enum TextureMagFilter
+public enum TextureMagFilter : uint
 {
     Nearest = 0x2600,
     Linear = 0x2601,

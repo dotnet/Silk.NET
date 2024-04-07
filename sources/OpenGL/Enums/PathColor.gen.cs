@@ -5,8 +5,10 @@
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
+namespace Silk.NET.OpenGL;
+
 [Transformed]
-public enum PathColor
+public enum PathColor : uint
 {
     PrimaryColor = 0x8577,
     PrimaryColorNV = 0x852C,

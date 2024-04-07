@@ -5,8 +5,10 @@
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
+namespace Silk.NET.OpenGL;
+
 [Transformed]
-public enum ConditionalRenderMode
+public enum ConditionalRenderMode : uint
 {
     Wait = 0x8E13,
     NoWait = 0x8E14,

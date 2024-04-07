@@ -5,8 +5,10 @@
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
+namespace Silk.NET.OpenGL;
+
 [Transformed]
-public enum FramebufferStatus
+public enum FramebufferStatus : uint
 {
     Undefined = 0x8219,
     Complete = 0x8CD5,

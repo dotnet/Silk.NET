@@ -5,8 +5,10 @@
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
+namespace Silk.NET.OpenGL;
+
 [Transformed]
-public enum SeparableTargetEXT
+public enum SeparableTargetEXT : uint
 {
     Separable2D = 0x8012,
     Separable2DEXT = 0x8012

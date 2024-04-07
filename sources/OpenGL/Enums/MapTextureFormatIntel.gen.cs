@@ -5,8 +5,10 @@
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
+namespace Silk.NET.OpenGL;
+
 [Transformed]
-public enum MapTextureFormatIntel
+public enum MapTextureFormatIntel : uint
 {
     Default = 0,
     Linear = 1,

@@ -5,8 +5,10 @@
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
+namespace Silk.NET.OpenGL;
+
 [Transformed]
-public enum SubroutineParameterName
+public enum SubroutineParameterName : uint
 {
     UniformSize = 0x8A38,
     UniformNameLength = 0x8A39,

@@ -5,8 +5,10 @@
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
+namespace Silk.NET.OpenGL;
+
 [Transformed]
-public enum ShadingRate
+public enum ShadingRate : uint
 {
     Rate1X1PixelsEXT = 0x96A6,
     Rate1X2PixelsEXT = 0x96A7,

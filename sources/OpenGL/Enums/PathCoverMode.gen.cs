@@ -5,8 +5,10 @@
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
+namespace Silk.NET.OpenGL;
+
 [Transformed]
-public enum PathCoverMode
+public enum PathCoverMode : uint
 {
     PathFillCoverModeNV = 0x9082,
     ConvexHullNV = 0x908B,

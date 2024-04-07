@@ -5,8 +5,10 @@
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
+namespace Silk.NET.OpenGL;
+
 [Transformed]
-public enum ConvolutionTargetEXT
+public enum ConvolutionTargetEXT : uint
 {
     Convolution1D = 0x8010,
     Convolution2D = 0x8011,

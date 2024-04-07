@@ -5,8 +5,10 @@
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
+namespace Silk.NET.OpenGL;
+
 [Transformed]
-public enum VertexArrayPName
+public enum VertexArrayPName : uint
 {
     ArrayEnabled = 0x8622,
     ArraySize = 0x8623,

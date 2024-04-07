@@ -5,8 +5,10 @@
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
+namespace Silk.NET.OpenGL;
+
 [Transformed]
-public enum ReadBufferMode
+public enum ReadBufferMode : uint
 {
     None = 0,
     FrontLeft = 0x0400,

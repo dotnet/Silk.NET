@@ -5,8 +5,10 @@
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
+namespace Silk.NET.OpenGL;
+
 [Transformed]
-public enum FogCoordSrc
+public enum FogCoordSrc : uint
 {
     FogCoordinate = 0x8451,
     FragmentDepth = 0x8452,

@@ -5,8 +5,10 @@
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
+namespace Silk.NET.OpenGL;
+
 [Transformed]
-public enum GetFramebufferParameter
+public enum GetFramebufferParameter : uint
 {
     Doublebuffer = 0x0C32,
     Stereo = 0x0C33,

@@ -5,8 +5,10 @@
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
+namespace Silk.NET.OpenGL;
+
 [Transformed]
-public enum SpriteModeSGIX
+public enum SpriteModeSGIX : uint
 {
     Axial = 0x814C,
     ObjectAligned = 0x814D,

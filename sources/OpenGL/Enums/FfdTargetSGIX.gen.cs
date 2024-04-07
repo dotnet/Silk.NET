@@ -5,8 +5,10 @@
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
+namespace Silk.NET.OpenGL;
+
 [Transformed]
-public enum FfdTargetSGIX
+public enum FfdTargetSGIX : uint
 {
     GeometryDeformation = 0x8194,
     TextureDeformation = 0x8195

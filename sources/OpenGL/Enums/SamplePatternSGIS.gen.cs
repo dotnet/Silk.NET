@@ -5,8 +5,10 @@
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
+namespace Silk.NET.OpenGL;
+
 [Transformed]
-public enum SamplePatternSGIS
+public enum SamplePatternSGIS : uint
 {
     PassEXT = 0x80A1,
     Gl2Pass0EXT = 0x80A2,

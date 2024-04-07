@@ -5,8 +5,10 @@
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
+namespace Silk.NET.OpenGL;
+
 [Transformed]
-public enum CombinerRegister
+public enum CombinerRegister : uint
 {
     Texture0ARB = 0x84C0,
     Texture1ARB = 0x84C1,

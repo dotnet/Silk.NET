@@ -5,8 +5,10 @@
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
+namespace Silk.NET.OpenGL;
+
 [Transformed]
-public enum FramebufferParameterName
+public enum FramebufferParameterName : uint
 {
     Width = 0x9310,
     Height = 0x9311,

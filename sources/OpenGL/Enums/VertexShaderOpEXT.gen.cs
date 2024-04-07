@@ -5,8 +5,10 @@
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
+namespace Silk.NET.OpenGL;
+
 [Transformed]
-public enum VertexShaderOpEXT
+public enum VertexShaderOpEXT : uint
 {
     Index = 0x8782,
     Negate = 0x8783,

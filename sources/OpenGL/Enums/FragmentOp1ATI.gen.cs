@@ -5,8 +5,10 @@
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
+namespace Silk.NET.OpenGL;
+
 [Transformed]
-public enum FragmentOp1ATI
+public enum FragmentOp1ATI : uint
 {
     Mov = 0x8961
 }

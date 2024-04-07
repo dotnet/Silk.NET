@@ -5,8 +5,10 @@
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
+namespace Silk.NET.OpenGL;
+
 [Transformed]
-public enum CombinerComponentUsage
+public enum CombinerComponentUsage : uint
 {
     BLUE = 0x1905,
     Alpha = 0x1906,

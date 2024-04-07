@@ -5,8 +5,10 @@
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
+namespace Silk.NET.OpenGL;
+
 [Transformed]
-public enum CombinerPortion
+public enum CombinerPortion : uint
 {
     Alpha = 0x1906,
     RGB = 0x1907

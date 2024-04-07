@@ -5,8 +5,10 @@
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
+namespace Silk.NET.OpenGL;
+
 [Transformed]
-public enum PathElementType
+public enum PathElementType : uint
 {
     Utf8NV = 0x909A,
     Utf16NV = 0x909B

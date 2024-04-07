@@ -5,8 +5,10 @@
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
+namespace Silk.NET.OpenGL;
+
 [Transformed]
-public enum DebugSeverity
+public enum DebugSeverity : uint
 {
     DontCare = 0x1100,
     DebugSeverityHigh = 0x9146,

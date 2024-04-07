@@ -5,8 +5,10 @@
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
+namespace Silk.NET.OpenGL;
+
 [Transformed]
-public enum SyncCondition
+public enum SyncCondition : uint
 {
     SyncGpuCommandsComplete = 0x9117
 }

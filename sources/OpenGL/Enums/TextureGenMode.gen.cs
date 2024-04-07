@@ -5,8 +5,10 @@
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
+namespace Silk.NET.OpenGL;
+
 [Transformed]
-public enum TextureGenMode
+public enum TextureGenMode : uint
 {
     EyeLinear = 0x2400,
     ObjectLinear = 0x2401,

@@ -5,8 +5,10 @@
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
+namespace Silk.NET.OpenGL;
+
 [Transformed]
-public enum TangentPointerType
+public enum TangentPointerType : uint
 {
     BYTE = 0x1400,
     Short = 0x1402,

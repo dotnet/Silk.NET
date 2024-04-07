@@ -5,8 +5,10 @@
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
+namespace Silk.NET.OpenGL;
+
 [Transformed]
-public enum TextureCoordName
+public enum TextureCoordName : uint
 {
     S = 0x2000,
     T = 0x2001,

@@ -5,8 +5,10 @@
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
+namespace Silk.NET.OpenGL;
+
 [Transformed]
-public enum BindTransformFeedbackTarget
+public enum BindTransformFeedbackTarget : uint
 {
     TransformFeedback = 0x8E22
 }

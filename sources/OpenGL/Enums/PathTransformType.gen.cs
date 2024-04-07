@@ -5,8 +5,10 @@
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
+namespace Silk.NET.OpenGL;
+
 [Transformed]
-public enum PathTransformType
+public enum PathTransformType : uint
 {
     None = 0,
     TranslateXNV = 0x908E,

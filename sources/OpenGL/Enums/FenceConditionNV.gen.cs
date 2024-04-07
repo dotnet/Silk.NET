@@ -5,8 +5,10 @@
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
+namespace Silk.NET.OpenGL;
+
 [Transformed]
-public enum FenceConditionNV
+public enum FenceConditionNV : uint
 {
     AllCompleted = 0x84F2
 }

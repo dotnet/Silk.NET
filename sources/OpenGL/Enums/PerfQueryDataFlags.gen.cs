@@ -5,8 +5,10 @@
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
+namespace Silk.NET.OpenGL;
+
 [Transformed]
-public enum PerfQueryDataFlags
+public enum PerfQueryDataFlags : uint
 {
     WaitIntel = 0x83FB,
     FlushIntel = 0x83FA,

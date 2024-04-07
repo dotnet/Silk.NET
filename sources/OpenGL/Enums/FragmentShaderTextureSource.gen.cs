@@ -5,8 +5,10 @@
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
+namespace Silk.NET.OpenGL;
+
 [Transformed]
-public enum FragmentShaderTextureSource
+public enum FragmentShaderTextureSource : uint
 {
     Texture0 = 0x84C0,
     Texture1 = 0x84C1,

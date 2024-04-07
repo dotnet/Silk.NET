@@ -5,8 +5,10 @@
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
+namespace Silk.NET.OpenGL;
+
 [Transformed]
-public enum VertexShaderStorageTypeEXT
+public enum VertexShaderStorageTypeEXT : uint
 {
     Variant = 0x87C1,
     Invariant = 0x87C2,

@@ -5,8 +5,10 @@
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
+namespace Silk.NET.OpenGL;
+
 [Transformed]
-public enum UniformBlockPName
+public enum UniformBlockPName : uint
 {
     Binding = 0x8A3F,
     DataSize = 0x8A40,

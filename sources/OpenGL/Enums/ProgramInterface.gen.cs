@@ -5,8 +5,10 @@
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
+namespace Silk.NET.OpenGL;
+
 [Transformed]
-public enum ProgramInterface
+public enum ProgramInterface : uint
 {
     TransformFeedbackBuffer = 0x8C8E,
     Uniform = 0x92E1,

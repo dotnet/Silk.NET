@@ -5,8 +5,10 @@
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
+namespace Silk.NET.OpenGL;
+
 [Transformed]
-public enum StencilFunction
+public enum StencilFunction : uint
 {
     Never = 0x0200,
     Less = 0x0201,

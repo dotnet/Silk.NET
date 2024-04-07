@@ -5,8 +5,10 @@
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
+namespace Silk.NET.OpenGL;
+
 [Transformed]
-public enum TextureCompareMode
+public enum TextureCompareMode : uint
 {
     None = 0,
     CompareRefToTexture = 0x884E,

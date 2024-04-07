@@ -5,8 +5,10 @@
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
+namespace Silk.NET.OpenGL;
+
 [Transformed]
-public enum LightEnvMode
+public enum LightEnvMode : uint
 {
     Replace = 0x1E01,
     ADD = 0x0104,

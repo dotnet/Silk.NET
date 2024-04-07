@@ -5,8 +5,10 @@
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
+namespace Silk.NET.OpenGL;
+
 [Transformed]
-public enum CombinerScale
+public enum CombinerScale : uint
 {
     None = 0,
     ScaleByTwoNV = 0x853E,

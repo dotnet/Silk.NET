@@ -5,8 +5,10 @@
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
+namespace Silk.NET.OpenGL;
+
 [Transformed]
-public enum QueryCounterTarget
+public enum QueryCounterTarget : uint
 {
     Timestamp = 0x8E28,
     TimestampEXT = 0x8E28

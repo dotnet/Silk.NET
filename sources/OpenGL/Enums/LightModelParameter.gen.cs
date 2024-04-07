@@ -5,8 +5,10 @@
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
+namespace Silk.NET.OpenGL;
+
 [Transformed]
-public enum LightModelParameter
+public enum LightModelParameter : uint
 {
     LocalViewer = 0x0B51,
     TwoSide = 0x0B52,

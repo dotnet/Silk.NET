@@ -5,8 +5,10 @@
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
+namespace Silk.NET.OpenGL;
+
 [Transformed]
-public enum StencilOp
+public enum StencilOp : uint
 {
     Zero = 0,
     Invert = 0x150A,

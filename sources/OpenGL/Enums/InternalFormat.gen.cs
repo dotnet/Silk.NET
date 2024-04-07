@@ -5,8 +5,10 @@
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
+namespace Silk.NET.OpenGL;
+
 [Transformed]
-public enum InternalFormat
+public enum InternalFormat : uint
 {
     StencilIndex = 0x1901,
     DepthComponent = 0x1902,

@@ -5,8 +5,10 @@
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
+namespace Silk.NET.OpenGL;
+
 [Transformed]
-public enum PathRenderingTokenNV
+public enum PathRenderingTokenNV : uint
 {
     ClosePath = 0x00,
     MoveTo = 0x02,

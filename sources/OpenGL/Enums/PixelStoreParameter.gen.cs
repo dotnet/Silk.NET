@@ -5,8 +5,10 @@
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
+namespace Silk.NET.OpenGL;
+
 [Transformed]
-public enum PixelStoreParameter
+public enum PixelStoreParameter : uint
 {
     UnpackSwapBytes = 0x0CF0,
     UnpackLsbFirst = 0x0CF1,

@@ -5,8 +5,10 @@
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
+namespace Silk.NET.OpenGL;
+
 [Transformed]
-public enum HintTargetPGI
+public enum HintTargetPGI : uint
 {
     VertexDataHint = 0x1A22A,
     VertexConsistentHint = 0x1A22B,

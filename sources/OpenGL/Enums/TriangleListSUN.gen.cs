@@ -5,8 +5,10 @@
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
+namespace Silk.NET.OpenGL;
+
 [Transformed]
-public enum TriangleListSUN
+public enum TriangleListSUN : uint
 {
     Restart = 0x0001,
     ReplaceMiddle = 0x0002,

@@ -5,8 +5,10 @@
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
+namespace Silk.NET.OpenGL;
+
 [Transformed]
-public enum PixelDataRangeTargetNV
+public enum PixelDataRangeTargetNV : uint
 {
     WritePixelDataRange = 0x8878,
     ReadPixelDataRange = 0x8879

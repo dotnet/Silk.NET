@@ -145,6 +145,11 @@ public partial class MixKhronosData(
         /// A map of native type names to C# type names. This is mostly used for determining enum backing types.
         /// </summary>
         public Dictionary<string, string>? TypeMap { get; init; }
+
+        /// <summary>
+        /// Default namespace for enums.
+        /// </summary>
+        public string? Namespace { get; init; }
     }
 
     /// <summary>
@@ -284,38 +289,79 @@ public partial class MixKhronosData(
         {
             if (!rewriter.AlreadyPresentGroups.Contains(groupName))
             {
-                // TODO base type typemap
-                // TODO autodetermine type
-                // TODO namespace
+                var baseType = groupInfo.Type ?? groupName;
+                while (jobData.TypeMap.TryGetValue(baseType, out var ty))
+                {
+                    baseType = ty;
+                }
+
+                if (baseType == groupName)
+                {
+                    logger?.LogError(
+                        "Enum \"{}\" has no base type. Please add TypeMap entry to the configuration. "
+                            + "This enum group will be skipped.",
+                        groupName
+                    );
+                    continue;
+                }
+
+                var ns = groupInfo
+                    .Enums.Select(x => x.NamespaceFromSyntaxNode())
+                    .Distinct()
+                    .Select((x, i) => (x, i))
+                    .LastOrDefault()
+                    is
+                    (var n, 0)
+                    ? n
+                    : null;
+
+                ns ??= jobData.Configuration.Namespace;
+                if (ns is null)
+                {
+                    logger?.LogError(
+                        "Enum \"{}\" has no namespace. Please add Namespace to the configuration. "
+                            + "This enum group will be skipped.",
+                        groupName
+                    );
+                    continue;
+                }
+
                 syntax.Files[$"sources/Enums/{groupName}.gen.cs"] = CompilationUnit()
                     .WithMembers(
                         SingletonList<MemberDeclarationSyntax>(
-                            EnumDeclaration(groupName)
-                                .WithModifiers(TokenList(Token(SyntaxKind.PublicKeyword)))
-                                .WithAttributeLists(
-                                    SingletonList(
-                                        AttributeList(
-                                            SingletonSeparatedList(
-                                                Attribute(IdentifierName("Transformed"))
-                                            )
-                                        )
-                                    )
-                                )
-                                .WithBaseList(
-                                    groupInfo.Type is not null
-                                        ? BaseList(
-                                            SingletonSeparatedList<BaseTypeSyntax>(
-                                                SimpleBaseType(groupInfo.Type)
-                                            )
-                                        )
-                                        : null
-                                )
+                            FileScopedNamespaceDeclaration(ModUtils.NamespaceIntoIdentifierName(ns))
                                 .WithMembers(
-                                    SeparatedList(
-                                        groupInfo.Enums.Select(x =>
-                                            EnumMemberDeclaration(x.Identifier.ToString())
-                                                .WithEqualsValue(x.Initializer)
-                                        )
+                                    SingletonList<MemberDeclarationSyntax>(
+                                        EnumDeclaration(groupName)
+                                            .WithModifiers(
+                                                TokenList(Token(SyntaxKind.PublicKeyword))
+                                            )
+                                            .WithAttributeLists(
+                                                SingletonList(
+                                                    AttributeList(
+                                                        SingletonSeparatedList(
+                                                            Attribute(IdentifierName("Transformed"))
+                                                        )
+                                                    )
+                                                )
+                                            )
+                                            .WithBaseList(
+                                                BaseList(
+                                                    SingletonSeparatedList<BaseTypeSyntax>(
+                                                        SimpleBaseType(IdentifierName(baseType))
+                                                    )
+                                                )
+                                            )
+                                            .WithMembers(
+                                                SeparatedList(
+                                                    groupInfo.Enums.Select(x =>
+                                                        EnumMemberDeclaration(
+                                                                x.Identifier.ToString()
+                                                            )
+                                                            .WithEqualsValue(x.Initializer)
+                                                    )
+                                                )
+                                            )
                                     )
                                 )
                         )
@@ -328,7 +374,7 @@ public partial class MixKhronosData(
 
     internal record EnumGroup(
         string Name,
-        TypeSyntax? Type,
+        string? Type,
         List<VariableDeclaratorSyntax> Enums,
         bool KnownBitmask,
         string? ExclusiveVendor,
@@ -1675,7 +1721,14 @@ public partial class MixKhronosData(
                                     ? enumNamespace
                                     : null
                         }
-                        : new EnumGroup(group, null, [], isBitmask, thisVendor, enumNamespace);
+                        : new EnumGroup(
+                            group,
+                            glGroups?.Length > 0 ? "GLenum" : null,
+                            [],
+                            isBitmask,
+                            thisVendor,
+                            enumNamespace
+                        );
 
                     // Mark this enum.
                     enumToGroups.Add(group);
@@ -1760,7 +1813,7 @@ public partial class MixKhronosData(
                 data.Groups[@enum.Value] = new EnumGroup(
                     @enum.Value,
                     // cl_properties and cl_bitfield are both cl_ulong which is ulong
-                    PredefinedType(Token(SyntaxKind.ULongKeyword)),
+                    "ulong",
                     [],
                     @enum.Parent?.Element("type")?.Value == "cl_bitfield",
                     VendorFromString(@enum.Value, vendors),

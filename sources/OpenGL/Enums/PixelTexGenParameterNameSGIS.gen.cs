@@ -5,8 +5,10 @@
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
+namespace Silk.NET.OpenGL;
+
 [Transformed]
-public enum PixelTexGenParameterNameSGIS
+public enum PixelTexGenParameterNameSGIS : uint
 {
     RgbSource = 0x8354,
     AlphaSource = 0x8355

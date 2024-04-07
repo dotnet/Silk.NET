@@ -5,8 +5,10 @@
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
+namespace Silk.NET.OpenGL;
+
 [Transformed]
-public enum FeedBackToken
+public enum FeedBackToken : uint
 {
     PassThroughToken = 0x0700,
     PointToken = 0x0701,

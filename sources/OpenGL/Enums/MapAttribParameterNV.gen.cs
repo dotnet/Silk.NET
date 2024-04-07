@@ -5,8 +5,10 @@
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
+namespace Silk.NET.OpenGL;
+
 [Transformed]
-public enum MapAttribParameterNV
+public enum MapAttribParameterNV : uint
 {
     UOrder = 0x86C3,
     VOrder = 0x86C4

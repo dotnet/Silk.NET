@@ -5,8 +5,10 @@
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
+namespace Silk.NET.OpenGL;
+
 [Transformed]
-public enum FragmentShaderRegATI
+public enum FragmentShaderRegATI : uint
 {
     Reg0 = 0x8921,
     Reg1 = 0x8922,

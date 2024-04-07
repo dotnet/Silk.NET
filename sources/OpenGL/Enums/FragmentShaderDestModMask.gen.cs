@@ -5,8 +5,10 @@
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
+namespace Silk.NET.OpenGL;
+
 [Transformed]
-public enum FragmentShaderDestModMask
+public enum FragmentShaderDestModMask : uint
 {
     NONE = 0,
     X2XBitATI = 0x00000001,

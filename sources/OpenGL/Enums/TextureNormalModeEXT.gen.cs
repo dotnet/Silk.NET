@@ -5,8 +5,10 @@
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
+namespace Silk.NET.OpenGL;
+
 [Transformed]
-public enum TextureNormalModeEXT
+public enum TextureNormalModeEXT : uint
 {
     Perturb = 0x85AE
 }

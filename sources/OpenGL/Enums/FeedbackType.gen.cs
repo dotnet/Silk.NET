@@ -5,8 +5,10 @@
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
+namespace Silk.NET.OpenGL;
+
 [Transformed]
-public enum FeedbackType
+public enum FeedbackType : uint
 {
     X2D = 0x0600,
     X3D = 0x0601,

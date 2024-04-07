@@ -5,8 +5,10 @@
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
+namespace Silk.NET.OpenGL;
+
 [Transformed]
-public enum MapQuery
+public enum MapQuery : uint
 {
     Coeff = 0x0A00,
     Order = 0x0A01,

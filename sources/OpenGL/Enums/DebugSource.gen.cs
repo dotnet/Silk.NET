@@ -5,8 +5,10 @@
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
+namespace Silk.NET.OpenGL;
+
 [Transformed]
-public enum DebugSource
+public enum DebugSource : uint
 {
     DontCare = 0x1100,
     DebugSourceApi = 0x8246,

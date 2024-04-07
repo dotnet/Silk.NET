@@ -5,8 +5,10 @@
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
+namespace Silk.NET.OpenGL;
+
 [Transformed]
-public enum ParameterRangeEXT
+public enum ParameterRangeEXT : uint
 {
     NormalizedRange = 0x87E0,
     FullRange = 0x87E1

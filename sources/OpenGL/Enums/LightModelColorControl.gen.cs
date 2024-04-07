@@ -5,8 +5,10 @@
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
+namespace Silk.NET.OpenGL;
+
 [Transformed]
-public enum LightModelColorControl
+public enum LightModelColorControl : uint
 {
     SingleColor = 0x81F9,
     SeparateSpecularColor = 0x81FA,

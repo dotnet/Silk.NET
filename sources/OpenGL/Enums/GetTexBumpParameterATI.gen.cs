@@ -5,8 +5,10 @@
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
+namespace Silk.NET.OpenGL;
+
 [Transformed]
-public enum GetTexBumpParameterATI
+public enum GetTexBumpParameterATI : uint
 {
     RotMatrix = 0x8775,
     RotMatrixSize = 0x8776,

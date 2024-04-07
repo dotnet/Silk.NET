@@ -5,8 +5,10 @@
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
+namespace Silk.NET.OpenGL;
+
 [Transformed]
-public enum EnableCap
+public enum EnableCap : uint
 {
     LineSmooth = 0x0B20,
     PolygonSmooth = 0x0B41,

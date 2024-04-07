@@ -5,8 +5,10 @@
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
+namespace Silk.NET.OpenGL;
+
 [Transformed]
-public enum DataTypeEXT
+public enum DataTypeEXT : uint
 {
     Scalar = 0x87BE,
     Vector = 0x87BF,

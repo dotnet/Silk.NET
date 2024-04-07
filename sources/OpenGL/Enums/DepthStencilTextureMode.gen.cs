@@ -5,8 +5,10 @@
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
+namespace Silk.NET.OpenGL;
+
 [Transformed]
-public enum DepthStencilTextureMode
+public enum DepthStencilTextureMode : uint
 {
     StencilIndex = 0x1901,
     DepthComponent = 0x1902

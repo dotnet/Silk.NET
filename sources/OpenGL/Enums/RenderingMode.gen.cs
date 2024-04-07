@@ -5,8 +5,10 @@
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
+namespace Silk.NET.OpenGL;
+
 [Transformed]
-public enum RenderingMode
+public enum RenderingMode : uint
 {
     Render = 0x1C00,
     Feedback = 0x1C01,

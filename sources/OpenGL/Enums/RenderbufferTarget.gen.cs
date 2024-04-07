@@ -5,8 +5,10 @@
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
+namespace Silk.NET.OpenGL;
+
 [Transformed]
-public enum RenderbufferTarget
+public enum RenderbufferTarget : uint
 {
     Renderbuffer = 0x8D41,
     RenderbufferOES = 0x8D41

@@ -5,8 +5,10 @@
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
+namespace Silk.NET.OpenGL;
+
 [Transformed]
-public enum BufferStorageMask
+public enum BufferStorageMask : uint
 {
     MapReadBit = 0x0001,
     MapWriteBit = 0x0002,

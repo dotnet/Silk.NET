@@ -5,8 +5,10 @@
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
+namespace Silk.NET.OpenGL;
+
 [Transformed]
-public enum ClipPlaneName
+public enum ClipPlaneName : uint
 {
     Distance0 = 0x3000,
     Distance1 = 0x3001,

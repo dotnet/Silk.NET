@@ -5,8 +5,10 @@
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
+namespace Silk.NET.OpenGL;
+
 [Transformed]
-public enum HistogramTarget
+public enum HistogramTarget : uint
 {
     Histogram = 0x8024,
     ProxyHistogram = 0x8025
