@@ -52,3 +52,6 @@
 [submodule "build/submodules/MoltenVK"]
 	path = build/submodules/MoltenVK
 	url = https://github.com/KhronosGroup/MoltenVK
+[submodule "build/submodules/openal-soft"]
+	path = build/submodules/openal-soft
+	url = https://github.com/kcat/openal-soft
