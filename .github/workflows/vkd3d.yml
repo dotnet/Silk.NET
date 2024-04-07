@@ -15,6 +15,7 @@ on:
       - src/Microsoft/Vkd3dCompiler/*
 jobs:
   Build:
+    if: github.repository == 'dotnet/Silk.NET'
     strategy:
       fail-fast: false
       matrix:

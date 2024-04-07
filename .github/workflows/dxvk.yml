@@ -12,7 +12,8 @@ on:
         - "main"
 jobs:
   Build:
-    strategy: 
+    if: github.repository == 'dotnet/Silk.NET'
+    strategy:
       fail-fast: false
       matrix:
         env:
