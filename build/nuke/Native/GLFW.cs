@@ -39,7 +39,7 @@ partial class Build {
                     var buildDir = GLFWPath / "build";
                     var runtimes = RootDirectory / "src" / "Native" / "Silk.NET.GLFW.Native" / "runtimes";
 
-                    var prepare = "cmake .. -DCMAKE_BUILD_TYPE=Release -DBUILD_SHARED_LIBS=ON";
+                    var prepare = "cmake .. -DCMAKE_BUILD_TYPE=Release -DBUILD_SHARED_LIBS=ON -DGLFW_BUILD_EXAMPLES=OFF -DGLFW_BUILD_TESTS=OFF -DGLFW_BUILD_DOCS=OFF";
                     var build = $"cmake --build . --config Release{JobsArg}";
 
                     if (OperatingSystem.IsWindows())
