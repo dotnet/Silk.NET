@@ -10,17 +10,17 @@ namespace Silk.NET.OpenGL;
 [Transformed]
 public enum VertexAttribProperty : uint
 {
-    VertexAttribArrayBufferBinding = 0x889F,
-    VertexAttribArrayEnabled = 0x8622,
-    VertexAttribArraySize = 0x8623,
-    VertexAttribArrayStride = 0x8624,
-    VertexAttribArrayType = 0x8625,
-    CurrentVertexAttrib = 0x8626,
-    VertexAttribArrayNormalized = 0x886A,
-    VertexAttribArrayInteger = 0x88FD,
-    VertexAttribArrayDivisor = 0x88FE,
-    VertexAttribArrayLong = 0x874E,
-    VertexAttribBinding = 0x82D4,
-    VertexAttribRelativeOffset = 0x82D5,
-    VertexAttribArrayIntegerEXT = 0x88FD
+    VertexAttribArrayBufferBinding = unchecked((uint)0x889F),
+    VertexAttribArrayEnabled = unchecked((uint)0x8622),
+    VertexAttribArraySize = unchecked((uint)0x8623),
+    VertexAttribArrayStride = unchecked((uint)0x8624),
+    VertexAttribArrayType = unchecked((uint)0x8625),
+    CurrentVertexAttrib = unchecked((uint)0x8626),
+    VertexAttribArrayNormalized = unchecked((uint)0x886A),
+    VertexAttribArrayInteger = unchecked((uint)0x88FD),
+    VertexAttribArrayDivisor = unchecked((uint)0x88FE),
+    VertexAttribArrayLong = unchecked((uint)0x874E),
+    VertexAttribBinding = unchecked((uint)0x82D4),
+    VertexAttribRelativeOffset = unchecked((uint)0x82D5),
+    VertexAttribArrayIntegerEXT = unchecked((uint)0x88FD)
 }

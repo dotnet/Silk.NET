@@ -10,6 +10,6 @@ namespace Silk.NET.OpenGL;
 [Transformed]
 public enum SyncObjectMask : uint
 {
-    SyncFlushCommandsBit = 0x00000001,
-    SyncFlushCommandsBitApple = 0x00000001
+    SyncFlushCommandsBit = unchecked((uint)0x00000001),
+    SyncFlushCommandsBitApple = unchecked((uint)0x00000001)
 }

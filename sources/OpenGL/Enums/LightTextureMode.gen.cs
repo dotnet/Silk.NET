@@ -10,9 +10,9 @@ namespace Silk.NET.OpenGL;
 [Transformed]
 public enum LightTextureMode : uint
 {
-    Depth = 0x8452,
-    DepthEXT = 0x8452,
-    MaterialEXT = 0x8349,
-    NormalEXT = 0x834A,
-    ColorEXT = 0x834C
+    Depth = unchecked((uint)0x8452),
+    DepthEXT = unchecked((uint)0x8452),
+    MaterialEXT = unchecked((uint)0x8349),
+    NormalEXT = unchecked((uint)0x834A),
+    ColorEXT = unchecked((uint)0x834C)
 }

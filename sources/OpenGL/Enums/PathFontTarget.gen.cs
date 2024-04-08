@@ -10,7 +10,7 @@ namespace Silk.NET.OpenGL;
 [Transformed]
 public enum PathFontTarget : uint
 {
-    StandardFontNameNV = 0x9072,
-    SystemFontNameNV = 0x9073,
-    FileNameNV = 0x9074
+    StandardFontNameNV = unchecked((uint)0x9072),
+    SystemFontNameNV = unchecked((uint)0x9073),
+    FileNameNV = unchecked((uint)0x9074)
 }

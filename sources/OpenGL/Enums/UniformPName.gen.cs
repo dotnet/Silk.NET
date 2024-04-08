@@ -10,13 +10,13 @@ namespace Silk.NET.OpenGL;
 [Transformed]
 public enum UniformPName : uint
 {
-    Type = 0x8A37,
-    Size = 0x8A38,
-    NameLength = 0x8A39,
-    BlockIndex = 0x8A3A,
-    Offset = 0x8A3B,
-    ArrayStride = 0x8A3C,
-    MatrixStride = 0x8A3D,
-    IsRowMajor = 0x8A3E,
-    AtomicCounterBufferIndex = 0x92DA
+    Type = unchecked((uint)0x8A37),
+    Size = unchecked((uint)0x8A38),
+    NameLength = unchecked((uint)0x8A39),
+    BlockIndex = unchecked((uint)0x8A3A),
+    Offset = unchecked((uint)0x8A3B),
+    ArrayStride = unchecked((uint)0x8A3C),
+    MatrixStride = unchecked((uint)0x8A3D),
+    IsRowMajor = unchecked((uint)0x8A3E),
+    AtomicCounterBufferIndex = unchecked((uint)0x92DA)
 }

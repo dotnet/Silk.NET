@@ -10,7 +10,7 @@ namespace Silk.NET.OpenGL;
 [Transformed]
 public enum PolygonMode : uint
 {
-    Point = 0x1B00,
-    Line = 0x1B01,
-    Fill = 0x1B02
+    Point = unchecked((uint)0x1B00),
+    Line = unchecked((uint)0x1B01),
+    Fill = unchecked((uint)0x1B02)
 }

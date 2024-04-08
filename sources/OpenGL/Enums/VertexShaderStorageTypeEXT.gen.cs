@@ -10,8 +10,8 @@ namespace Silk.NET.OpenGL;
 [Transformed]
 public enum VertexShaderStorageTypeEXT : uint
 {
-    Variant = 0x87C1,
-    Invariant = 0x87C2,
-    LocalConstant = 0x87C3,
-    Local = 0x87C4
+    Variant = unchecked((uint)0x87C1),
+    Invariant = unchecked((uint)0x87C2),
+    LocalConstant = unchecked((uint)0x87C3),
+    Local = unchecked((uint)0x87C4)
 }

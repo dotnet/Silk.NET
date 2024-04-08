@@ -10,10 +10,10 @@ namespace Silk.NET.OpenGL;
 [Transformed]
 public enum TextureSwizzle : uint
 {
-    ZERO = 0,
-    ONE = 1,
-    RED = 0x1903,
-    Green = 0x1904,
-    BLUE = 0x1905,
-    Alpha = 0x1906
+    ZERO = unchecked((uint)0),
+    ONE = unchecked((uint)1),
+    RED = unchecked((uint)0x1903),
+    Green = unchecked((uint)0x1904),
+    BLUE = unchecked((uint)0x1905),
+    Alpha = unchecked((uint)0x1906)
 }

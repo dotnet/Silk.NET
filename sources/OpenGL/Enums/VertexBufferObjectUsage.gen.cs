@@ -10,13 +10,13 @@ namespace Silk.NET.OpenGL;
 [Transformed]
 public enum VertexBufferObjectUsage : uint
 {
-    StreamDraw = 0x88E0,
-    StreamRead = 0x88E1,
-    StreamCopy = 0x88E2,
-    StaticDraw = 0x88E4,
-    StaticRead = 0x88E5,
-    StaticCopy = 0x88E6,
-    DynamicDraw = 0x88E8,
-    DynamicRead = 0x88E9,
-    DynamicCopy = 0x88EA
+    StreamDraw = unchecked((uint)0x88E0),
+    StreamRead = unchecked((uint)0x88E1),
+    StreamCopy = unchecked((uint)0x88E2),
+    StaticDraw = unchecked((uint)0x88E4),
+    StaticRead = unchecked((uint)0x88E5),
+    StaticCopy = unchecked((uint)0x88E6),
+    DynamicDraw = unchecked((uint)0x88E8),
+    DynamicRead = unchecked((uint)0x88E9),
+    DynamicCopy = unchecked((uint)0x88EA)
 }

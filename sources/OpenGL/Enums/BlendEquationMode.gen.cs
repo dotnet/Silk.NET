@@ -10,16 +10,16 @@ namespace Silk.NET.OpenGL;
 [Transformed]
 public enum BlendEquationMode : uint
 {
-    FuncAdd = 0x8006,
-    FuncReverseSubtract = 0x800B,
-    FuncSubtract = 0x800A,
-    MIN = 0x8007,
-    MAX = 0x8008,
-    MinExt = 0x8007,
-    MaxExt = 0x8008,
-    FuncAddEXT = 0x8006,
-    FuncSubtractEXT = 0x800A,
-    FuncReverseSubtractEXT = 0x800B,
-    AlphaMinSGIX = 0x8320,
-    AlphaMaxSGIX = 0x8321
+    FuncAdd = unchecked((uint)0x8006),
+    FuncReverseSubtract = unchecked((uint)0x800B),
+    FuncSubtract = unchecked((uint)0x800A),
+    MIN = unchecked((uint)0x8007),
+    MAX = unchecked((uint)0x8008),
+    MinExt = unchecked((uint)0x8007),
+    MaxExt = unchecked((uint)0x8008),
+    FuncAddEXT = unchecked((uint)0x8006),
+    FuncSubtractEXT = unchecked((uint)0x800A),
+    FuncReverseSubtractEXT = unchecked((uint)0x800B),
+    AlphaMinSGIX = unchecked((uint)0x8320),
+    AlphaMaxSGIX = unchecked((uint)0x8321)
 }

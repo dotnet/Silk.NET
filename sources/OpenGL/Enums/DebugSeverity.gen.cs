@@ -10,9 +10,9 @@ namespace Silk.NET.OpenGL;
 [Transformed]
 public enum DebugSeverity : uint
 {
-    DontCare = 0x1100,
-    DebugSeverityHigh = 0x9146,
-    DebugSeverityMedium = 0x9147,
-    DebugSeverityLow = 0x9148,
-    DebugSeverityNotification = 0x826B
+    DontCare = unchecked((uint)0x1100),
+    DebugSeverityHigh = unchecked((uint)0x9146),
+    DebugSeverityMedium = unchecked((uint)0x9147),
+    DebugSeverityLow = unchecked((uint)0x9148),
+    DebugSeverityNotification = unchecked((uint)0x826B)
 }

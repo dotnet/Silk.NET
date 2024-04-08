@@ -10,5 +10,5 @@ namespace Silk.NET.OpenGL;
 [Transformed]
 public enum VertexAttribEnumNV : uint
 {
-    ProgramParameter = 0x8644
+    ProgramParameter = unchecked((uint)0x8644)
 }

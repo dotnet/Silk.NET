@@ -10,19 +10,19 @@ namespace Silk.NET.OpenGL;
 [Transformed]
 public enum BufferStorageMask : uint
 {
-    MapReadBit = 0x0001,
-    MapWriteBit = 0x0002,
-    MapPersistentBit = 0x0040,
-    MapCoherentBit = 0x0080,
-    DynamicStorageBit = 0x0100,
-    ClientStorageBit = 0x0200,
-    SparseStorageBitARB = 0x0400,
-    LgpuSeparateStorageBitNVX = 0x0800,
-    PerGpuStorageBitNV = 0x0800,
-    MapReadBitEXT = 0x0001,
-    MapWriteBitEXT = 0x0002,
-    MapPersistentBitEXT = 0x0040,
-    MapCoherentBitEXT = 0x0080,
-    DynamicStorageBitEXT = 0x0100,
-    ClientStorageBitEXT = 0x0200
+    MapReadBit = unchecked((uint)0x0001),
+    MapWriteBit = unchecked((uint)0x0002),
+    MapPersistentBit = unchecked((uint)0x0040),
+    MapCoherentBit = unchecked((uint)0x0080),
+    DynamicStorageBit = unchecked((uint)0x0100),
+    ClientStorageBit = unchecked((uint)0x0200),
+    SparseStorageBitARB = unchecked((uint)0x0400),
+    LgpuSeparateStorageBitNVX = unchecked((uint)0x0800),
+    PerGpuStorageBitNV = unchecked((uint)0x0800),
+    MapReadBitEXT = unchecked((uint)0x0001),
+    MapWriteBitEXT = unchecked((uint)0x0002),
+    MapPersistentBitEXT = unchecked((uint)0x0040),
+    MapCoherentBitEXT = unchecked((uint)0x0080),
+    DynamicStorageBitEXT = unchecked((uint)0x0100),
+    ClientStorageBitEXT = unchecked((uint)0x0200)
 }

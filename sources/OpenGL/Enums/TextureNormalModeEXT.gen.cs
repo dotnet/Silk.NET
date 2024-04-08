@@ -10,5 +10,5 @@ namespace Silk.NET.OpenGL;
 [Transformed]
 public enum TextureNormalModeEXT : uint
 {
-    Perturb = 0x85AE
+    Perturb = unchecked((uint)0x85AE)
 }

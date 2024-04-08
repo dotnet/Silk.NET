@@ -10,7 +10,7 @@ namespace Silk.NET.OpenGL;
 [Transformed]
 public enum MapTextureFormatIntel : uint
 {
-    Default = 0,
-    Linear = 1,
-    LinearCpuCached = 2
+    Default = unchecked((uint)0),
+    Linear = unchecked((uint)1),
+    LinearCpuCached = unchecked((uint)2)
 }

@@ -10,9 +10,9 @@ namespace Silk.NET.OpenGL;
 [Transformed]
 public enum FragmentShaderValueRep : uint
 {
-    NONE = 0,
-    RED = 0x1903,
-    Green = 0x1904,
-    BLUE = 0x1905,
-    Alpha = 0x1906
+    NONE = unchecked((uint)0),
+    RED = unchecked((uint)0x1903),
+    Green = unchecked((uint)0x1904),
+    BLUE = unchecked((uint)0x1905),
+    Alpha = unchecked((uint)0x1906)
 }

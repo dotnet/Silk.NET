@@ -10,6 +10,6 @@ namespace Silk.NET.OpenGL;
 [Transformed]
 public enum ProgramParameterPName : uint
 {
-    BinaryRetrievableHint = 0x8257,
-    Separable = 0x8258
+    BinaryRetrievableHint = unchecked((uint)0x8257),
+    Separable = unchecked((uint)0x8258)
 }

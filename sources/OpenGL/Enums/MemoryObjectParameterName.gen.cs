@@ -10,6 +10,6 @@ namespace Silk.NET.OpenGL;
 [Transformed]
 public enum MemoryObjectParameterName : uint
 {
-    DedicatedMemoryObjectEXT = 0x9581,
-    ProtectedMemoryObjectEXT = 0x959B
+    DedicatedMemoryObjectEXT = unchecked((uint)0x9581),
+    ProtectedMemoryObjectEXT = unchecked((uint)0x959B)
 }

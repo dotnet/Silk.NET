@@ -10,6 +10,6 @@ namespace Silk.NET.OpenGL;
 [Transformed]
 public enum ListMode : uint
 {
-    Compile = 0x1300,
-    CompileAndExecute = 0x1301
+    Compile = unchecked((uint)0x1300),
+    CompileAndExecute = unchecked((uint)0x1301)
 }

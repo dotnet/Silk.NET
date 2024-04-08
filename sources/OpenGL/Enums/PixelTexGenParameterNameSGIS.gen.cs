@@ -10,6 +10,6 @@ namespace Silk.NET.OpenGL;
 [Transformed]
 public enum PixelTexGenParameterNameSGIS : uint
 {
-    RgbSource = 0x8354,
-    AlphaSource = 0x8355
+    RgbSource = unchecked((uint)0x8354),
+    AlphaSource = unchecked((uint)0x8355)
 }

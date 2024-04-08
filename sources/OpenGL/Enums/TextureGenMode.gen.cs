@@ -10,11 +10,11 @@ namespace Silk.NET.OpenGL;
 [Transformed]
 public enum TextureGenMode : uint
 {
-    EyeLinear = 0x2400,
-    ObjectLinear = 0x2401,
-    SphereMap = 0x2402,
-    EyeDistanceToPointSGIS = 0x81F0,
-    ObjectDistanceToPointSGIS = 0x81F1,
-    EyeDistanceToLineSGIS = 0x81F2,
-    ObjectDistanceToLineSGIS = 0x81F3
+    EyeLinear = unchecked((uint)0x2400),
+    ObjectLinear = unchecked((uint)0x2401),
+    SphereMap = unchecked((uint)0x2402),
+    EyeDistanceToPointSGIS = unchecked((uint)0x81F0),
+    ObjectDistanceToPointSGIS = unchecked((uint)0x81F1),
+    EyeDistanceToLineSGIS = unchecked((uint)0x81F2),
+    ObjectDistanceToLineSGIS = unchecked((uint)0x81F3)
 }

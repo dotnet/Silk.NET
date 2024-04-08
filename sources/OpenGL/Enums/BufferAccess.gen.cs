@@ -10,7 +10,7 @@ namespace Silk.NET.OpenGL;
 [Transformed]
 public enum BufferAccess : uint
 {
-    ReadOnly = 0x88B8,
-    WriteOnly = 0x88B9,
-    ReadWrite = 0x88BA
+    ReadOnly = unchecked((uint)0x88B8),
+    WriteOnly = unchecked((uint)0x88B9),
+    ReadWrite = unchecked((uint)0x88BA)
 }

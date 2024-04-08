@@ -10,6 +10,6 @@ namespace Silk.NET.OpenGL;
 [Transformed]
 public enum PixelDataRangeTargetNV : uint
 {
-    WritePixelDataRange = 0x8878,
-    ReadPixelDataRange = 0x8879
+    WritePixelDataRange = unchecked((uint)0x8878),
+    ReadPixelDataRange = unchecked((uint)0x8879)
 }

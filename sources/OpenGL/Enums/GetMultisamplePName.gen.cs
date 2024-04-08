@@ -10,7 +10,7 @@ namespace Silk.NET.OpenGL;
 [Transformed]
 public enum GetMultisamplePName : uint
 {
-    SamplePosition = 0x8E50,
-    SampleLocationARB = 0x8E50,
-    ProgrammableSampleLocationARB = 0x9341
+    SamplePosition = unchecked((uint)0x8E50),
+    SampleLocationARB = unchecked((uint)0x8E50),
+    ProgrammableSampleLocationARB = unchecked((uint)0x9341)
 }

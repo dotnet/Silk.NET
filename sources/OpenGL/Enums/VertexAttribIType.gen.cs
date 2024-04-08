@@ -10,10 +10,10 @@ namespace Silk.NET.OpenGL;
 [Transformed]
 public enum VertexAttribIType : uint
 {
-    BYTE = 0x1400,
-    UnsignedByte = 0x1401,
-    Short = 0x1402,
-    UnsignedShort = 0x1403,
-    INT = 0x1404,
-    UnsignedInt = 0x1405
+    BYTE = unchecked((uint)0x1400),
+    UnsignedByte = unchecked((uint)0x1401),
+    Short = unchecked((uint)0x1402),
+    UnsignedShort = unchecked((uint)0x1403),
+    INT = unchecked((uint)0x1404),
+    UnsignedInt = unchecked((uint)0x1405)
 }

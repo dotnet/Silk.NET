@@ -10,6 +10,6 @@ namespace Silk.NET.OpenGL;
 [Transformed]
 public enum ClipControlDepth : uint
 {
-    NegativeOneToOne = 0x935E,
-    ZeroToOne = 0x935F
+    NegativeOneToOne = unchecked((uint)0x935E),
+    ZeroToOne = unchecked((uint)0x935F)
 }

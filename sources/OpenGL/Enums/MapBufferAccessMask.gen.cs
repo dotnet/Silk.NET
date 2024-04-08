@@ -10,20 +10,20 @@ namespace Silk.NET.OpenGL;
 [Transformed]
 public enum MapBufferAccessMask : uint
 {
-    ReadBit = 0x0001,
-    WriteBit = 0x0002,
-    InvalidateRangeBit = 0x0004,
-    InvalidateBufferBit = 0x0008,
-    FlushExplicitBit = 0x0010,
-    UnsynchronizedBit = 0x0020,
-    PersistentBit = 0x0040,
-    CoherentBit = 0x0080,
-    ReadBitEXT = 0x0001,
-    WriteBitEXT = 0x0002,
-    InvalidateRangeBitEXT = 0x0004,
-    InvalidateBufferBitEXT = 0x0008,
-    FlushExplicitBitEXT = 0x0010,
-    UnsynchronizedBitEXT = 0x0020,
-    PersistentBitEXT = 0x0040,
-    CoherentBitEXT = 0x0080
+    ReadBit = unchecked((uint)0x0001),
+    WriteBit = unchecked((uint)0x0002),
+    InvalidateRangeBit = unchecked((uint)0x0004),
+    InvalidateBufferBit = unchecked((uint)0x0008),
+    FlushExplicitBit = unchecked((uint)0x0010),
+    UnsynchronizedBit = unchecked((uint)0x0020),
+    PersistentBit = unchecked((uint)0x0040),
+    CoherentBit = unchecked((uint)0x0080),
+    ReadBitEXT = unchecked((uint)0x0001),
+    WriteBitEXT = unchecked((uint)0x0002),
+    InvalidateRangeBitEXT = unchecked((uint)0x0004),
+    InvalidateBufferBitEXT = unchecked((uint)0x0008),
+    FlushExplicitBitEXT = unchecked((uint)0x0010),
+    UnsynchronizedBitEXT = unchecked((uint)0x0020),
+    PersistentBitEXT = unchecked((uint)0x0040),
+    CoherentBitEXT = unchecked((uint)0x0080)
 }

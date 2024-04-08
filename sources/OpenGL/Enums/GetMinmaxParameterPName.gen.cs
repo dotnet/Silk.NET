@@ -10,8 +10,8 @@ namespace Silk.NET.OpenGL;
 [Transformed]
 public enum GetMinmaxParameterPName : uint
 {
-    Format = 0x802F,
-    Sink = 0x8030,
-    FormatEXT = 0x802F,
-    SinkEXT = 0x8030
+    Format = unchecked((uint)0x802F),
+    Sink = unchecked((uint)0x8030),
+    FormatEXT = unchecked((uint)0x802F),
+    SinkEXT = unchecked((uint)0x8030)
 }

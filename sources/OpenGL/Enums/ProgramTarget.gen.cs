@@ -10,11 +10,11 @@ namespace Silk.NET.OpenGL;
 [Transformed]
 public enum ProgramTarget : uint
 {
-    FragmentProgramARB = 0x8804,
-    VertexProgramARB = 0x8620,
-    TextFragmentShaderATI = 0x8200,
-    ComputeProgramNV = 0x90FB,
-    GeometryProgramNV = 0x8C26,
-    TessControlProgramNV = 0x891E,
-    TessEvaluationProgramNV = 0x891F
+    FragmentProgramARB = unchecked((uint)0x8804),
+    VertexProgramARB = unchecked((uint)0x8620),
+    TextFragmentShaderATI = unchecked((uint)0x8200),
+    ComputeProgramNV = unchecked((uint)0x90FB),
+    GeometryProgramNV = unchecked((uint)0x8C26),
+    TessControlProgramNV = unchecked((uint)0x891E),
+    TessEvaluationProgramNV = unchecked((uint)0x891F)
 }

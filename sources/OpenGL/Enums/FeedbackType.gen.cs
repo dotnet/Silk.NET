@@ -10,9 +10,9 @@ namespace Silk.NET.OpenGL;
 [Transformed]
 public enum FeedbackType : uint
 {
-    X2D = 0x0600,
-    X3D = 0x0601,
-    X3DColor = 0x0602,
-    X3DColorTexture = 0x0603,
-    X4DColorTexture = 0x0604
+    X2D = unchecked((uint)0x0600),
+    X3D = unchecked((uint)0x0601),
+    X3DColor = unchecked((uint)0x0602),
+    X3DColorTexture = unchecked((uint)0x0603),
+    X4DColorTexture = unchecked((uint)0x0604)
 }

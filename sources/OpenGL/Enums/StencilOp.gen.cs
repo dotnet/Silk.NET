@@ -10,12 +10,12 @@ namespace Silk.NET.OpenGL;
 [Transformed]
 public enum StencilOp : uint
 {
-    Zero = 0,
-    Invert = 0x150A,
-    Keep = 0x1E00,
-    Replace = 0x1E01,
-    Incr = 0x1E02,
-    Decr = 0x1E03,
-    IncrWrap = 0x8507,
-    DecrWrap = 0x8508
+    Zero = unchecked((uint)0),
+    Invert = unchecked((uint)0x150A),
+    Keep = unchecked((uint)0x1E00),
+    Replace = unchecked((uint)0x1E01),
+    Incr = unchecked((uint)0x1E02),
+    Decr = unchecked((uint)0x1E03),
+    IncrWrap = unchecked((uint)0x8507),
+    DecrWrap = unchecked((uint)0x8508)
 }

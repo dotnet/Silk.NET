@@ -10,6 +10,6 @@ namespace Silk.NET.OpenGL;
 [Transformed]
 public enum ConvolutionBorderMode : uint
 {
-    Reduce = 0x8016,
-    ReduceEXT = 0x8016
+    Reduce = unchecked((uint)0x8016),
+    ReduceEXT = unchecked((uint)0x8016)
 }

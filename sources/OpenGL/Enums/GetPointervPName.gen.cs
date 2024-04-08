@@ -10,21 +10,21 @@ namespace Silk.NET.OpenGL;
 [Transformed]
 public enum GetPointervPName : uint
 {
-    DebugCallbackFunction = 0x8244,
-    DebugCallbackUserParam = 0x8245,
-    VertexArrayPointer = 0x808E,
-    NormalArrayPointer = 0x808F,
-    ColorArrayPointer = 0x8090,
-    IndexArrayPointer = 0x8091,
-    TextureCoordArrayPointer = 0x8092,
-    EdgeFlagArrayPointer = 0x8093,
-    FeedbackBufferPointer = 0x0DF0,
-    SelectionBufferPointer = 0x0DF3,
-    VertexArrayPointerEXT = 0x808E,
-    NormalArrayPointerEXT = 0x808F,
-    ColorArrayPointerEXT = 0x8090,
-    IndexArrayPointerEXT = 0x8091,
-    TextureCoordArrayPointerEXT = 0x8092,
-    EdgeFlagArrayPointerEXT = 0x8093,
-    InstrumentBufferPointerSGIX = 0x8180
+    DebugCallbackFunction = unchecked((uint)0x8244),
+    DebugCallbackUserParam = unchecked((uint)0x8245),
+    VertexArrayPointer = unchecked((uint)0x808E),
+    NormalArrayPointer = unchecked((uint)0x808F),
+    ColorArrayPointer = unchecked((uint)0x8090),
+    IndexArrayPointer = unchecked((uint)0x8091),
+    TextureCoordArrayPointer = unchecked((uint)0x8092),
+    EdgeFlagArrayPointer = unchecked((uint)0x8093),
+    FeedbackBufferPointer = unchecked((uint)0x0DF0),
+    SelectionBufferPointer = unchecked((uint)0x0DF3),
+    VertexArrayPointerEXT = unchecked((uint)0x808E),
+    NormalArrayPointerEXT = unchecked((uint)0x808F),
+    ColorArrayPointerEXT = unchecked((uint)0x8090),
+    IndexArrayPointerEXT = unchecked((uint)0x8091),
+    TextureCoordArrayPointerEXT = unchecked((uint)0x8092),
+    EdgeFlagArrayPointerEXT = unchecked((uint)0x8093),
+    InstrumentBufferPointerSGIX = unchecked((uint)0x8180)
 }

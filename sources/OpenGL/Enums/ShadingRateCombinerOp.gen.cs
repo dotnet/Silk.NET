@@ -10,9 +10,9 @@ namespace Silk.NET.OpenGL;
 [Transformed]
 public enum ShadingRateCombinerOp : uint
 {
-    KeepEXT = 0x96D2,
-    ReplaceEXT = 0x96D3,
-    MinEXT = 0x96D4,
-    MaxEXT = 0x96D5,
-    MulEXT = 0x96D6
+    KeepEXT = unchecked((uint)0x96D2),
+    ReplaceEXT = unchecked((uint)0x96D3),
+    MinEXT = unchecked((uint)0x96D4),
+    MaxEXT = unchecked((uint)0x96D5),
+    MulEXT = unchecked((uint)0x96D6)
 }

@@ -10,14 +10,14 @@ namespace Silk.NET.OpenGL;
 [Transformed]
 public enum AtomicCounterBufferPName : uint
 {
-    Binding = 0x92C1,
-    DataSize = 0x92C4,
-    ActiveAtomicCounters = 0x92C5,
-    ActiveAtomicCounterIndices = 0x92C6,
-    ReferencedByVertexShader = 0x92C7,
-    ReferencedByTessControlShader = 0x92C8,
-    ReferencedByTessEvaluationShader = 0x92C9,
-    ReferencedByGeometryShader = 0x92CA,
-    ReferencedByFragmentShader = 0x92CB,
-    ReferencedByComputeShader = 0x90ED
+    Binding = unchecked((uint)0x92C1),
+    DataSize = unchecked((uint)0x92C4),
+    ActiveAtomicCounters = unchecked((uint)0x92C5),
+    ActiveAtomicCounterIndices = unchecked((uint)0x92C6),
+    ReferencedByVertexShader = unchecked((uint)0x92C7),
+    ReferencedByTessControlShader = unchecked((uint)0x92C8),
+    ReferencedByTessEvaluationShader = unchecked((uint)0x92C9),
+    ReferencedByGeometryShader = unchecked((uint)0x92CA),
+    ReferencedByFragmentShader = unchecked((uint)0x92CB),
+    ReferencedByComputeShader = unchecked((uint)0x90ED)
 }

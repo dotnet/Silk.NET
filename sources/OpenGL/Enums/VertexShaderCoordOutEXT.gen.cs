@@ -10,15 +10,15 @@ namespace Silk.NET.OpenGL;
 [Transformed]
 public enum VertexShaderCoordOutEXT : uint
 {
-    X = 0x87D5,
-    Y = 0x87D6,
-    Z = 0x87D7,
-    W = 0x87D8,
-    NegativeX = 0x87D9,
-    NegativeY = 0x87DA,
-    NegativeZ = 0x87DB,
-    NegativeW = 0x87DC,
-    Zero = 0x87DD,
-    One = 0x87DE,
-    NegativeOne = 0x87DF
+    X = unchecked((uint)0x87D5),
+    Y = unchecked((uint)0x87D6),
+    Z = unchecked((uint)0x87D7),
+    W = unchecked((uint)0x87D8),
+    NegativeX = unchecked((uint)0x87D9),
+    NegativeY = unchecked((uint)0x87DA),
+    NegativeZ = unchecked((uint)0x87DB),
+    NegativeW = unchecked((uint)0x87DC),
+    Zero = unchecked((uint)0x87DD),
+    One = unchecked((uint)0x87DE),
+    NegativeOne = unchecked((uint)0x87DF)
 }

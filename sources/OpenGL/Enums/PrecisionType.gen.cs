@@ -10,10 +10,10 @@ namespace Silk.NET.OpenGL;
 [Transformed]
 public enum PrecisionType : uint
 {
-    LowFloat = 0x8DF0,
-    MediumFloat = 0x8DF1,
-    HighFloat = 0x8DF2,
-    LowInt = 0x8DF3,
-    MediumInt = 0x8DF4,
-    HighInt = 0x8DF5
+    LowFloat = unchecked((uint)0x8DF0),
+    MediumFloat = unchecked((uint)0x8DF1),
+    HighFloat = unchecked((uint)0x8DF2),
+    LowInt = unchecked((uint)0x8DF3),
+    MediumInt = unchecked((uint)0x8DF4),
+    HighInt = unchecked((uint)0x8DF5)
 }

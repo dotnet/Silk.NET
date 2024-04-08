@@ -10,9 +10,9 @@ namespace Silk.NET.OpenGL;
 [Transformed]
 public enum OcclusionQueryEventMaskAMD : uint
 {
-    DepthPassEventBit = 0x00000001,
-    DepthFailEventBit = 0x00000002,
-    StencilFailEventBit = 0x00000004,
-    DepthBoundsFailEventBit = 0x00000008,
-    AllEventBits = 0xFFFFFFFF
+    DepthPassEventBit = unchecked((uint)0x00000001),
+    DepthFailEventBit = unchecked((uint)0x00000002),
+    StencilFailEventBit = unchecked((uint)0x00000004),
+    DepthBoundsFailEventBit = unchecked((uint)0x00000008),
+    AllEventBits = unchecked((uint)0xFFFFFFFF)
 }

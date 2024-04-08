@@ -10,11 +10,11 @@ namespace Silk.NET.OpenGL;
 [Transformed]
 public enum CombinerRegister : uint
 {
-    Texture0ARB = 0x84C0,
-    Texture1ARB = 0x84C1,
-    PrimaryColorNV = 0x852C,
-    SecondaryColorNV = 0x852D,
-    Spare0NV = 0x852E,
-    Spare1NV = 0x852F,
-    DiscardNV = 0x8530
+    Texture0ARB = unchecked((uint)0x84C0),
+    Texture1ARB = unchecked((uint)0x84C1),
+    PrimaryColorNV = unchecked((uint)0x852C),
+    SecondaryColorNV = unchecked((uint)0x852D),
+    Spare0NV = unchecked((uint)0x852E),
+    Spare1NV = unchecked((uint)0x852F),
+    DiscardNV = unchecked((uint)0x8530)
 }

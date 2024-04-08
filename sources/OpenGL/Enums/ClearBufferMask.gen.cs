@@ -5,9 +5,9 @@ namespace Silk.NET.OpenGL;
 [Transformed]
 public enum ClearBufferMask : uint
 {
-    DepthBufferBit = 0x00000100,
-    StencilBufferBit = 0x00000400,
-    ColorBufferBit = 0x00004000,
-    AccumBufferBit = 0x00000200,
-    CoverageBufferBitNV = 0x00008000
+    DepthBufferBit = unchecked((uint)0x00000100),
+    StencilBufferBit = unchecked((uint)0x00000400),
+    ColorBufferBit = unchecked((uint)0x00004000),
+    AccumBufferBit = unchecked((uint)0x00000200),
+    CoverageBufferBitNV = unchecked((uint)0x00008000)
 }

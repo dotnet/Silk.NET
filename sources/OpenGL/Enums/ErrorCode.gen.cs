@@ -10,17 +10,17 @@ namespace Silk.NET.OpenGL;
 [Transformed]
 public enum ErrorCode : uint
 {
-    NoError = 0,
-    InvalidEnum = 0x0500,
-    InvalidValue = 0x0501,
-    InvalidOperation = 0x0502,
-    OutOfMemory = 0x0505,
-    StackOverflow = 0x0503,
-    StackUnderflow = 0x0504,
-    InvalidFramebufferOperation = 0x0506,
-    TableTooLarge = 0x8031,
-    InvalidFramebufferOperationEXT = 0x0506,
-    TableTooLargeEXT = 0x8031,
-    TextureTooLargeEXT = 0x8065,
-    InvalidFramebufferOperationOES = 0x0506
+    NoError = unchecked((uint)0),
+    InvalidEnum = unchecked((uint)0x0500),
+    InvalidValue = unchecked((uint)0x0501),
+    InvalidOperation = unchecked((uint)0x0502),
+    OutOfMemory = unchecked((uint)0x0505),
+    StackOverflow = unchecked((uint)0x0503),
+    StackUnderflow = unchecked((uint)0x0504),
+    InvalidFramebufferOperation = unchecked((uint)0x0506),
+    TableTooLarge = unchecked((uint)0x8031),
+    InvalidFramebufferOperationEXT = unchecked((uint)0x0506),
+    TableTooLargeEXT = unchecked((uint)0x8031),
+    TextureTooLargeEXT = unchecked((uint)0x8065),
+    InvalidFramebufferOperationOES = unchecked((uint)0x0506)
 }

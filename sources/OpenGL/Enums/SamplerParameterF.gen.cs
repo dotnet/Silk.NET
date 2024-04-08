@@ -10,10 +10,10 @@ namespace Silk.NET.OpenGL;
 [Transformed]
 public enum SamplerParameterF : uint
 {
-    BorderColor = 0x1004,
-    MinLod = 0x813A,
-    MaxLod = 0x813B,
-    LodBias = 0x8501,
-    MaxAnisotropy = 0x84FE,
-    UnnormalizedCoordinatesARM = 0x8F6A
+    BorderColor = unchecked((uint)0x1004),
+    MinLod = unchecked((uint)0x813A),
+    MaxLod = unchecked((uint)0x813B),
+    LodBias = unchecked((uint)0x8501),
+    MaxAnisotropy = unchecked((uint)0x84FE),
+    UnnormalizedCoordinatesARM = unchecked((uint)0x8F6A)
 }

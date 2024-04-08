@@ -10,7 +10,7 @@ namespace Silk.NET.OpenGL;
 [Transformed]
 public enum GetMapQuery : uint
 {
-    Coeff = 0x0A00,
-    Order = 0x0A01,
-    Domain = 0x0A02
+    Coeff = unchecked((uint)0x0A00),
+    Order = unchecked((uint)0x0A01),
+    Domain = unchecked((uint)0x0A02)
 }

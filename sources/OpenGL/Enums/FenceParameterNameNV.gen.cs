@@ -10,6 +10,6 @@ namespace Silk.NET.OpenGL;
 [Transformed]
 public enum FenceParameterNameNV : uint
 {
-    Status = 0x84F3,
-    Condition = 0x84F4
+    Status = unchecked((uint)0x84F3),
+    Condition = unchecked((uint)0x84F4)
 }

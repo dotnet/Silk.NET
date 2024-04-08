@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text.Json.Serialization;
 using System.Threading.Tasks;
@@ -373,31 +374,35 @@ public class AddVTables(IOptionsSnapshot<AddVTables.Configuration> config) : IMo
                     )
                 )
                     .WithExpressionBody(
-                        ArrowExpressionClause(
-                            InvocationExpression(
-                                MemberAccessExpression(
-                                    SyntaxKind.SimpleMemberAccessExpression,
-                                    PostfixUnaryExpression(
-                                        SyntaxKind.SuppressNullableWarningExpression,
-                                        MemberAccessExpression(
-                                            SyntaxKind.SimpleMemberAccessExpression,
-                                            IdentifierName("Underlying"),
-                                            IdentifierName("Value")
-                                        )
+                        ctx.StaticDecl.Body is not null
+                            ? null
+                            : ArrowExpressionClause(
+                                InvocationExpression(
+                                    MemberAccessExpression(
+                                        SyntaxKind.SimpleMemberAccessExpression,
+                                        PostfixUnaryExpression(
+                                            SyntaxKind.SuppressNullableWarningExpression,
+                                            MemberAccessExpression(
+                                                SyntaxKind.SimpleMemberAccessExpression,
+                                                IdentifierName("Underlying"),
+                                                IdentifierName("Value")
+                                            )
+                                        ),
+                                        IdentifierName(ctx.InstanceDecl.Identifier)
                                     ),
-                                    IdentifierName(ctx.InstanceDecl.Identifier)
-                                ),
-                                ArgumentList(
-                                    SeparatedList(
-                                        ctx.InstanceDecl.ParameterList.Parameters.Select(x =>
-                                            Argument(IdentifierName(x.Identifier))
+                                    ArgumentList(
+                                        SeparatedList(
+                                            ctx.InstanceDecl.ParameterList.Parameters.Select(x =>
+                                                Argument(IdentifierName(x.Identifier))
+                                            )
                                         )
                                     )
                                 )
                             )
-                        )
                     )
-                    .WithSemicolonToken(Token(SyntaxKind.SemicolonToken))
+                    .WithSemicolonToken(
+                        ctx.StaticDecl.Body is not null ? default : Token(SyntaxKind.SemicolonToken)
+                    )
                     .AddMaxOpt()
             );
     }
@@ -680,6 +685,11 @@ public class AddVTables(IOptionsSnapshot<AddVTables.Configuration> config) : IMo
 
         public override SyntaxNode? VisitMethodDeclaration(MethodDeclarationSyntax node)
         {
+            if (node.Identifier.ToString() == "ActiveVaryingNV")
+            {
+                Debugger.Break();
+            }
+
             var parent = node.FirstAncestorOrSelf<ClassDeclarationSyntax>();
             if (
                 _currentInterface is null

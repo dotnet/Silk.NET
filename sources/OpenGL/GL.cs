@@ -4,6 +4,9 @@ namespace Silk.NET.OpenGL;
 
 public partial class GL
 {
+    public const ulong TimeoutIgnored = 0xFFFFFFFFFFFFFFFFUL;
+    public const ulong TimeoutIgnoredApple = TimeoutIgnored;
+
     private INativeContext Context => nativeContext;
 
     public partial class ThisThread

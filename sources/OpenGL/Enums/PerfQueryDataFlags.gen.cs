@@ -10,7 +10,7 @@ namespace Silk.NET.OpenGL;
 [Transformed]
 public enum PerfQueryDataFlags : uint
 {
-    WaitIntel = 0x83FB,
-    FlushIntel = 0x83FA,
-    DonotFlushIntel = 0x83F9
+    WaitIntel = unchecked((uint)0x83FB),
+    FlushIntel = unchecked((uint)0x83FA),
+    DonotFlushIntel = unchecked((uint)0x83F9)
 }

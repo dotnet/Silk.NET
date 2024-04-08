@@ -10,8 +10,8 @@ namespace Silk.NET.OpenGL;
 [Transformed]
 public enum ClampColorTarget : uint
 {
-    ReadColor = 0x891C,
-    VertexColorARB = 0x891A,
-    FragmentColorARB = 0x891B,
-    ReadColorARB = 0x891C
+    ReadColor = unchecked((uint)0x891C),
+    VertexColorARB = unchecked((uint)0x891A),
+    FragmentColorARB = unchecked((uint)0x891B),
+    ReadColorARB = unchecked((uint)0x891C)
 }

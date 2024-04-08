@@ -10,19 +10,19 @@ namespace Silk.NET.OpenGL;
 [Transformed]
 public enum TexStorageAttribs : uint
 {
-    SurfaceCompressionEXT = 0x96C0,
-    SurfaceCompressionFixedRateNoneEXT = 0x96C1,
-    SurfaceCompressionFixedRateDefaultEXT = 0x96C2,
-    SurfaceCompressionFixedRate1BpcEXT = 0x96C4,
-    SurfaceCompressionFixedRate2BpcEXT = 0x96C5,
-    SurfaceCompressionFixedRate3BpcEXT = 0x96C6,
-    SurfaceCompressionFixedRate4BpcEXT = 0x96C7,
-    SurfaceCompressionFixedRate5BpcEXT = 0x96C8,
-    SurfaceCompressionFixedRate6BpcEXT = 0x96C9,
-    SurfaceCompressionFixedRate7BpcEXT = 0x96CA,
-    SurfaceCompressionFixedRate8BpcEXT = 0x96CB,
-    SurfaceCompressionFixedRate9BpcEXT = 0x96CC,
-    SurfaceCompressionFixedRate10BpcEXT = 0x96CD,
-    SurfaceCompressionFixedRate11BpcEXT = 0x96CE,
-    SurfaceCompressionFixedRate12BpcEXT = 0x96CF
+    SurfaceCompressionEXT = unchecked((uint)0x96C0),
+    SurfaceCompressionFixedRateNoneEXT = unchecked((uint)0x96C1),
+    SurfaceCompressionFixedRateDefaultEXT = unchecked((uint)0x96C2),
+    SurfaceCompressionFixedRate1BpcEXT = unchecked((uint)0x96C4),
+    SurfaceCompressionFixedRate2BpcEXT = unchecked((uint)0x96C5),
+    SurfaceCompressionFixedRate3BpcEXT = unchecked((uint)0x96C6),
+    SurfaceCompressionFixedRate4BpcEXT = unchecked((uint)0x96C7),
+    SurfaceCompressionFixedRate5BpcEXT = unchecked((uint)0x96C8),
+    SurfaceCompressionFixedRate6BpcEXT = unchecked((uint)0x96C9),
+    SurfaceCompressionFixedRate7BpcEXT = unchecked((uint)0x96CA),
+    SurfaceCompressionFixedRate8BpcEXT = unchecked((uint)0x96CB),
+    SurfaceCompressionFixedRate9BpcEXT = unchecked((uint)0x96CC),
+    SurfaceCompressionFixedRate10BpcEXT = unchecked((uint)0x96CD),
+    SurfaceCompressionFixedRate11BpcEXT = unchecked((uint)0x96CE),
+    SurfaceCompressionFixedRate12BpcEXT = unchecked((uint)0x96CF)
 }

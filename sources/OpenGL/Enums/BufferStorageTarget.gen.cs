@@ -10,18 +10,18 @@ namespace Silk.NET.OpenGL;
 [Transformed]
 public enum BufferStorageTarget : uint
 {
-    ArrayBuffer = 0x8892,
-    ElementArrayBuffer = 0x8893,
-    PixelPackBuffer = 0x88EB,
-    PixelUnpackBuffer = 0x88EC,
-    TransformFeedbackBuffer = 0x8C8E,
-    TextureBuffer = 0x8C2A,
-    CopyReadBuffer = 0x8F36,
-    CopyWriteBuffer = 0x8F37,
-    UniformBuffer = 0x8A11,
-    DrawIndirectBuffer = 0x8F3F,
-    AtomicCounterBuffer = 0x92C0,
-    DispatchIndirectBuffer = 0x90EE,
-    ShaderStorageBuffer = 0x90D2,
-    QueryBuffer = 0x9192
+    ArrayBuffer = unchecked((uint)0x8892),
+    ElementArrayBuffer = unchecked((uint)0x8893),
+    PixelPackBuffer = unchecked((uint)0x88EB),
+    PixelUnpackBuffer = unchecked((uint)0x88EC),
+    TransformFeedbackBuffer = unchecked((uint)0x8C8E),
+    TextureBuffer = unchecked((uint)0x8C2A),
+    CopyReadBuffer = unchecked((uint)0x8F36),
+    CopyWriteBuffer = unchecked((uint)0x8F37),
+    UniformBuffer = unchecked((uint)0x8A11),
+    DrawIndirectBuffer = unchecked((uint)0x8F3F),
+    AtomicCounterBuffer = unchecked((uint)0x92C0),
+    DispatchIndirectBuffer = unchecked((uint)0x90EE),
+    ShaderStorageBuffer = unchecked((uint)0x90D2),
+    QueryBuffer = unchecked((uint)0x9192)
 }

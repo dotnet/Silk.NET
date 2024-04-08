@@ -10,6 +10,6 @@ namespace Silk.NET.OpenGL;
 [Transformed]
 public enum QueryParameterName : uint
 {
-    QueryCounterBits = 0x8864,
-    CurrentQuery = 0x8865
+    QueryCounterBits = unchecked((uint)0x8864),
+    CurrentQuery = unchecked((uint)0x8865)
 }

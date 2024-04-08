@@ -10,13 +10,13 @@ namespace Silk.NET.OpenGL;
 [Transformed]
 public enum SubgroupSupportedFeatures : uint
 {
-    BasicBitKHR = 0x00000001,
-    VoteBitKHR = 0x00000002,
-    ArithmeticBitKHR = 0x00000004,
-    BallotBitKHR = 0x00000008,
-    ShuffleBitKHR = 0x00000010,
-    ShuffleRelativeBitKHR = 0x00000020,
-    ClusteredBitKHR = 0x00000040,
-    QuadBitKHR = 0x00000080,
-    PartitionedBitNV = 0x00000100
+    BasicBitKHR = unchecked((uint)0x00000001),
+    VoteBitKHR = unchecked((uint)0x00000002),
+    ArithmeticBitKHR = unchecked((uint)0x00000004),
+    BallotBitKHR = unchecked((uint)0x00000008),
+    ShuffleBitKHR = unchecked((uint)0x00000010),
+    ShuffleRelativeBitKHR = unchecked((uint)0x00000020),
+    ClusteredBitKHR = unchecked((uint)0x00000040),
+    QuadBitKHR = unchecked((uint)0x00000080),
+    PartitionedBitNV = unchecked((uint)0x00000100)
 }

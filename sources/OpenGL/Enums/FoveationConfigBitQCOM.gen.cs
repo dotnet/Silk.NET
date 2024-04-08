@@ -10,7 +10,7 @@ namespace Silk.NET.OpenGL;
 [Transformed]
 public enum FoveationConfigBitQCOM : uint
 {
-    EnableBit = 0x00000001,
-    ScaledBinMethodBit = 0x00000002,
-    SubsampledLayoutMethodBit = 0x00000004
+    EnableBit = unchecked((uint)0x00000001),
+    ScaledBinMethodBit = unchecked((uint)0x00000002),
+    SubsampledLayoutMethodBit = unchecked((uint)0x00000004)
 }

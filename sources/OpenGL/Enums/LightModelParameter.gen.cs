@@ -10,9 +10,9 @@ namespace Silk.NET.OpenGL;
 [Transformed]
 public enum LightModelParameter : uint
 {
-    LocalViewer = 0x0B51,
-    TwoSide = 0x0B52,
-    Ambient = 0x0B53,
-    ColorControl = 0x81F8,
-    ColorControlEXT = 0x81F8
+    LocalViewer = unchecked((uint)0x0B51),
+    TwoSide = unchecked((uint)0x0B52),
+    Ambient = unchecked((uint)0x0B53),
+    ColorControl = unchecked((uint)0x81F8),
+    ColorControlEXT = unchecked((uint)0x81F8)
 }

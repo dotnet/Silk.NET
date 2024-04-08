@@ -10,7 +10,7 @@ namespace Silk.NET.OpenGL;
 [Transformed]
 public enum ClientAttribMask : uint
 {
-    PixelStoreBit = 0x00000001,
-    VertexArrayBit = 0x00000002,
-    AllAttribBits = 0xFFFFFFFF
+    PixelStoreBit = unchecked((uint)0x00000001),
+    VertexArrayBit = unchecked((uint)0x00000002),
+    AllAttribBits = unchecked((uint)0xFFFFFFFF)
 }

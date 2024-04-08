@@ -10,13 +10,13 @@ namespace Silk.NET.OpenGL;
 [Transformed]
 public enum TextureLayout : uint
 {
-    GeneralEXT = 0x958D,
-    ColorAttachmentEXT = 0x958E,
-    DepthStencilAttachmentEXT = 0x958F,
-    DepthStencilReadOnlyEXT = 0x9590,
-    ShaderReadOnlyEXT = 0x9591,
-    TransferSrcEXT = 0x9592,
-    TransferDstEXT = 0x9593,
-    DepthReadOnlyStencilAttachmentEXT = 0x9530,
-    DepthAttachmentStencilReadOnlyEXT = 0x9531
+    GeneralEXT = unchecked((uint)0x958D),
+    ColorAttachmentEXT = unchecked((uint)0x958E),
+    DepthStencilAttachmentEXT = unchecked((uint)0x958F),
+    DepthStencilReadOnlyEXT = unchecked((uint)0x9590),
+    ShaderReadOnlyEXT = unchecked((uint)0x9591),
+    TransferSrcEXT = unchecked((uint)0x9592),
+    TransferDstEXT = unchecked((uint)0x9593),
+    DepthReadOnlyStencilAttachmentEXT = unchecked((uint)0x9530),
+    DepthAttachmentStencilReadOnlyEXT = unchecked((uint)0x9531)
 }

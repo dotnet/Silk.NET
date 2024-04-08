@@ -10,8 +10,8 @@ namespace Silk.NET.OpenGL;
 [Transformed]
 public enum SwizzleOpATI : uint
 {
-    Str = 0x8976,
-    Stq = 0x8977,
-    StrDr = 0x8978,
-    StqDq = 0x8979
+    Str = unchecked((uint)0x8976),
+    Stq = unchecked((uint)0x8977),
+    StrDr = unchecked((uint)0x8978),
+    StqDq = unchecked((uint)0x8979)
 }

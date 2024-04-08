@@ -10,11 +10,11 @@ namespace Silk.NET.OpenGL;
 [Transformed]
 public enum CombinerVariableNV : uint
 {
-    A = 0x8523,
-    B = 0x8524,
-    C = 0x8525,
-    D = 0x8526,
-    E = 0x8527,
-    F = 0x8528,
-    G = 0x8529
+    A = unchecked((uint)0x8523),
+    B = unchecked((uint)0x8524),
+    C = unchecked((uint)0x8525),
+    D = unchecked((uint)0x8526),
+    E = unchecked((uint)0x8527),
+    F = unchecked((uint)0x8528),
+    G = unchecked((uint)0x8529)
 }

@@ -10,8 +10,8 @@ namespace Silk.NET.OpenGL;
 [Transformed]
 public enum FragmentLightModelParameterSGIX : uint
 {
-    LocalViewer = 0x8408,
-    TwoSide = 0x8409,
-    Ambient = 0x840A,
-    NormalInterpolation = 0x840B
+    LocalViewer = unchecked((uint)0x8408),
+    TwoSide = unchecked((uint)0x8409),
+    Ambient = unchecked((uint)0x840A),
+    NormalInterpolation = unchecked((uint)0x840B)
 }

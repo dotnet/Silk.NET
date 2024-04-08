@@ -10,7 +10,7 @@ namespace Silk.NET.OpenGL;
 [Transformed]
 public enum PixelStoreResampleMode : uint
 {
-    ReplicateSGIX = 0x8433,
-    ZeroFillSGIX = 0x8434,
-    DecimateSGIX = 0x8430
+    ReplicateSGIX = unchecked((uint)0x8433),
+    ZeroFillSGIX = unchecked((uint)0x8434),
+    DecimateSGIX = unchecked((uint)0x8430)
 }

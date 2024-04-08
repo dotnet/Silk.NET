@@ -10,7 +10,7 @@ namespace Silk.NET.OpenGL;
 [Transformed]
 public enum PathListMode : uint
 {
-    AccumAdjacentPairsNV = 0x90AD,
-    AdjacentPairsNV = 0x90AE,
-    FirstToRestNV = 0x90AF
+    AccumAdjacentPairsNV = unchecked((uint)0x90AD),
+    AdjacentPairsNV = unchecked((uint)0x90AE),
+    FirstToRestNV = unchecked((uint)0x90AF)
 }

@@ -358,7 +358,20 @@ public partial class MixKhronosData(
                                                         EnumMemberDeclaration(
                                                                 x.Identifier.ToString()
                                                             )
-                                                            .WithEqualsValue(x.Initializer)
+                                                            // TODO actually eval the expression to see if necessary?
+                                                            .WithEqualsValue(
+                                                                x.Initializer?.WithValue(
+                                                                    CheckedExpression(
+                                                                        SyntaxKind.UncheckedExpression,
+                                                                        CastExpression(
+                                                                            IdentifierName(
+                                                                                baseType
+                                                                            ),
+                                                                            x.Initializer.Value
+                                                                        )
+                                                                    )
+                                                                )
+                                                            )
                                                     )
                                                 )
                                             )

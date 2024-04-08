@@ -10,14 +10,14 @@ namespace Silk.NET.OpenGL;
 [Transformed]
 public enum LightParameter : uint
 {
-    Ambient = 0x1200,
-    Diffuse = 0x1201,
-    Specular = 0x1202,
-    Position = 0x1203,
-    SpotDirection = 0x1204,
-    SpotExponent = 0x1205,
-    SpotCutoff = 0x1206,
-    ConstantAttenuation = 0x1207,
-    LinearAttenuation = 0x1208,
-    QuadraticAttenuation = 0x1209
+    Ambient = unchecked((uint)0x1200),
+    Diffuse = unchecked((uint)0x1201),
+    Specular = unchecked((uint)0x1202),
+    Position = unchecked((uint)0x1203),
+    SpotDirection = unchecked((uint)0x1204),
+    SpotExponent = unchecked((uint)0x1205),
+    SpotCutoff = unchecked((uint)0x1206),
+    ConstantAttenuation = unchecked((uint)0x1207),
+    LinearAttenuation = unchecked((uint)0x1208),
+    QuadraticAttenuation = unchecked((uint)0x1209)
 }

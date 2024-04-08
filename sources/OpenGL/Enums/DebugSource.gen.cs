@@ -10,11 +10,11 @@ namespace Silk.NET.OpenGL;
 [Transformed]
 public enum DebugSource : uint
 {
-    DontCare = 0x1100,
-    DebugSourceApi = 0x8246,
-    DebugSourceWindowSystem = 0x8247,
-    DebugSourceShaderCompiler = 0x8248,
-    DebugSourceThirdParty = 0x8249,
-    DebugSourceApplication = 0x824A,
-    DebugSourceOther = 0x824B
+    DontCare = unchecked((uint)0x1100),
+    DebugSourceApi = unchecked((uint)0x8246),
+    DebugSourceWindowSystem = unchecked((uint)0x8247),
+    DebugSourceShaderCompiler = unchecked((uint)0x8248),
+    DebugSourceThirdParty = unchecked((uint)0x8249),
+    DebugSourceApplication = unchecked((uint)0x824A),
+    DebugSourceOther = unchecked((uint)0x824B)
 }

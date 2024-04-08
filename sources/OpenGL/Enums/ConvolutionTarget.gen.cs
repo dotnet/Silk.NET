@@ -10,6 +10,6 @@ namespace Silk.NET.OpenGL;
 [Transformed]
 public enum ConvolutionTarget : uint
 {
-    Convolution1D = 0x8010,
-    Convolution2D = 0x8011
+    Convolution1D = unchecked((uint)0x8010),
+    Convolution2D = unchecked((uint)0x8011)
 }

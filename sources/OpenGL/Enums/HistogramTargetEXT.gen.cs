@@ -10,8 +10,8 @@ namespace Silk.NET.OpenGL;
 [Transformed]
 public enum HistogramTargetEXT : uint
 {
-    Histogram = 0x8024,
-    ProxyHistogram = 0x8025,
-    HistogramEXT = 0x8024,
-    ProxyHistogramEXT = 0x8025
+    Histogram = unchecked((uint)0x8024),
+    ProxyHistogram = unchecked((uint)0x8025),
+    HistogramEXT = unchecked((uint)0x8024),
+    ProxyHistogramEXT = unchecked((uint)0x8025)
 }

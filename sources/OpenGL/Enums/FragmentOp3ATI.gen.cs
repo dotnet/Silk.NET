@@ -10,9 +10,9 @@ namespace Silk.NET.OpenGL;
 [Transformed]
 public enum FragmentOp3ATI : uint
 {
-    Mad = 0x8968,
-    Lerp = 0x8969,
-    Cnd = 0x896A,
-    Cnd0 = 0x896B,
-    Dot2Add = 0x896C
+    Mad = unchecked((uint)0x8968),
+    Lerp = unchecked((uint)0x8969),
+    Cnd = unchecked((uint)0x896A),
+    Cnd0 = unchecked((uint)0x896B),
+    Dot2Add = unchecked((uint)0x896C)
 }

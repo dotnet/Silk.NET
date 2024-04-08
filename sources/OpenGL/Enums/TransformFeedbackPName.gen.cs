@@ -10,9 +10,9 @@ namespace Silk.NET.OpenGL;
 [Transformed]
 public enum TransformFeedbackPName : uint
 {
-    BufferStart = 0x8C84,
-    BufferSize = 0x8C85,
-    BufferBinding = 0x8C8F,
-    Active = 0x8E24,
-    Paused = 0x8E23
+    BufferStart = unchecked((uint)0x8C84),
+    BufferSize = unchecked((uint)0x8C85),
+    BufferBinding = unchecked((uint)0x8C8F),
+    Active = unchecked((uint)0x8E24),
+    Paused = unchecked((uint)0x8E23)
 }

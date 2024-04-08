@@ -10,8 +10,8 @@ namespace Silk.NET.OpenGL;
 [Transformed]
 public enum InstancedPathCoverMode : uint
 {
-    PathFillCoverModeNV = 0x9082,
-    ConvexHullNV = 0x908B,
-    BoundingBoxNV = 0x908D,
-    BoundingBoxOfBoundingBoxesNV = 0x909C
+    PathFillCoverModeNV = unchecked((uint)0x9082),
+    ConvexHullNV = unchecked((uint)0x908B),
+    BoundingBoxNV = unchecked((uint)0x908D),
+    BoundingBoxOfBoundingBoxesNV = unchecked((uint)0x909C)
 }

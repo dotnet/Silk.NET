@@ -10,7 +10,7 @@ namespace Silk.NET.OpenGL;
 [Transformed]
 public enum PathFontStyle : uint
 {
-    None = 0,
-    BoldBitNV = 0x01,
-    ItalicBitNV = 0x02
+    None = unchecked((uint)0),
+    BoldBitNV = unchecked((uint)0x01),
+    ItalicBitNV = unchecked((uint)0x02)
 }

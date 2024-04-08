@@ -10,6 +10,6 @@ namespace Silk.NET.OpenGL;
 [Transformed]
 public enum FfdMaskSGIX : uint
 {
-    TextureDeformationBit = 0x00000001,
-    GeometryDeformationBit = 0x00000002
+    TextureDeformationBit = unchecked((uint)0x00000001),
+    GeometryDeformationBit = unchecked((uint)0x00000002)
 }

@@ -10,14 +10,14 @@ namespace Silk.NET.OpenGL;
 [Transformed]
 public enum ListNameType : uint
 {
-    BYTE = 0x1400,
-    UnsignedByte = 0x1401,
-    Short = 0x1402,
-    UnsignedShort = 0x1403,
-    INT = 0x1404,
-    UnsignedInt = 0x1405,
-    Float = 0x1406,
-    X2Bytes = 0x1407,
-    X3Bytes = 0x1408,
-    X4Bytes = 0x1409
+    BYTE = unchecked((uint)0x1400),
+    UnsignedByte = unchecked((uint)0x1401),
+    Short = unchecked((uint)0x1402),
+    UnsignedShort = unchecked((uint)0x1403),
+    INT = unchecked((uint)0x1404),
+    UnsignedInt = unchecked((uint)0x1405),
+    Float = unchecked((uint)0x1406),
+    X2Bytes = unchecked((uint)0x1407),
+    X3Bytes = unchecked((uint)0x1408),
+    X4Bytes = unchecked((uint)0x1409)
 }

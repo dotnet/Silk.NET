@@ -10,12 +10,12 @@ namespace Silk.NET.OpenGL;
 [Transformed]
 public enum CombinerMappingNV : uint
 {
-    UnsignedIdentity = 0x8536,
-    UnsignedInvert = 0x8537,
-    ExpandNormal = 0x8538,
-    ExpandNegate = 0x8539,
-    HalfBiasNormal = 0x853A,
-    HalfBiasNegate = 0x853B,
-    SignedIdentity = 0x853C,
-    SignedNegate = 0x853D
+    UnsignedIdentity = unchecked((uint)0x8536),
+    UnsignedInvert = unchecked((uint)0x8537),
+    ExpandNormal = unchecked((uint)0x8538),
+    ExpandNegate = unchecked((uint)0x8539),
+    HalfBiasNormal = unchecked((uint)0x853A),
+    HalfBiasNegate = unchecked((uint)0x853B),
+    SignedIdentity = unchecked((uint)0x853C),
+    SignedNegate = unchecked((uint)0x853D)
 }

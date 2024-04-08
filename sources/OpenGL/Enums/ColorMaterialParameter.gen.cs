@@ -10,9 +10,9 @@ namespace Silk.NET.OpenGL;
 [Transformed]
 public enum ColorMaterialParameter : uint
 {
-    Ambient = 0x1200,
-    Diffuse = 0x1201,
-    Specular = 0x1202,
-    Emission = 0x1600,
-    AmbientAndDiffuse = 0x1602
+    Ambient = unchecked((uint)0x1200),
+    Diffuse = unchecked((uint)0x1201),
+    Specular = unchecked((uint)0x1202),
+    Emission = unchecked((uint)0x1600),
+    AmbientAndDiffuse = unchecked((uint)0x1602)
 }

@@ -10,6 +10,6 @@ namespace Silk.NET.OpenGL;
 [Transformed]
 public enum MeshMode1 : uint
 {
-    Point = 0x1B00,
-    Line = 0x1B01
+    Point = unchecked((uint)0x1B00),
+    Line = unchecked((uint)0x1B01)
 }

@@ -10,13 +10,13 @@ namespace Silk.NET.OpenGL;
 [Transformed]
 public enum PathTransformType : uint
 {
-    None = 0,
-    TranslateXNV = 0x908E,
-    TranslateYNV = 0x908F,
-    Translate2DNV = 0x9090,
-    Translate3DNV = 0x9091,
-    Affine2DNV = 0x9092,
-    Affine3DNV = 0x9094,
-    TransposeAffine2DNV = 0x9096,
-    TransposeAffine3DNV = 0x9098
+    None = unchecked((uint)0),
+    TranslateXNV = unchecked((uint)0x908E),
+    TranslateYNV = unchecked((uint)0x908F),
+    Translate2DNV = unchecked((uint)0x9090),
+    Translate3DNV = unchecked((uint)0x9091),
+    Affine2DNV = unchecked((uint)0x9092),
+    Affine3DNV = unchecked((uint)0x9094),
+    TransposeAffine2DNV = unchecked((uint)0x9096),
+    TransposeAffine3DNV = unchecked((uint)0x9098)
 }

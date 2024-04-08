@@ -10,6 +10,6 @@ namespace Silk.NET.OpenGL;
 [Transformed]
 public enum VertexProvokingMode : uint
 {
-    FirstVertexConvention = 0x8E4D,
-    LastVertexConvention = 0x8E4E
+    FirstVertexConvention = unchecked((uint)0x8E4D),
+    LastVertexConvention = unchecked((uint)0x8E4E)
 }

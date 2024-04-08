@@ -10,7 +10,7 @@ namespace Silk.NET.OpenGL;
 [Transformed]
 public enum CombinerParameterNV : uint
 {
-    Input = 0x8542,
-    Mapping = 0x8543,
-    ComponentUsage = 0x8544
+    Input = unchecked((uint)0x8542),
+    Mapping = unchecked((uint)0x8543),
+    ComponentUsage = unchecked((uint)0x8544)
 }

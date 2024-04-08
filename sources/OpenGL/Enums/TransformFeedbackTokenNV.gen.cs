@@ -10,9 +10,9 @@ namespace Silk.NET.OpenGL;
 [Transformed]
 public enum TransformFeedbackTokenNV : uint
 {
-    NextBuffer = -2,
-    SkipComponents4 = -3,
-    SkipComponents3 = -4,
-    SkipComponents2 = -5,
-    SkipComponents1 = -6
+    NextBuffer = unchecked((uint)-2),
+    SkipComponents4 = unchecked((uint)-3),
+    SkipComponents3 = unchecked((uint)-4),
+    SkipComponents2 = unchecked((uint)-5),
+    SkipComponents1 = unchecked((uint)-6)
 }

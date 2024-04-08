@@ -10,17 +10,17 @@ namespace Silk.NET.OpenGL;
 [Transformed]
 public enum BufferPName : uint
 {
-    Size = 0x8764,
-    Usage = 0x8765,
-    Access = 0x88BB,
-    Mapped = 0x88BC,
-    AccessFlags = 0x911F,
-    MapLength = 0x9120,
-    MapOffset = 0x9121,
-    ImmutableStorage = 0x821F,
-    StorageFlags = 0x8220,
-    SizeARB = 0x8764,
-    UsageARB = 0x8765,
-    AccessARB = 0x88BB,
-    MappedARB = 0x88BC
+    Size = unchecked((uint)0x8764),
+    Usage = unchecked((uint)0x8765),
+    Access = unchecked((uint)0x88BB),
+    Mapped = unchecked((uint)0x88BC),
+    AccessFlags = unchecked((uint)0x911F),
+    MapLength = unchecked((uint)0x9120),
+    MapOffset = unchecked((uint)0x9121),
+    ImmutableStorage = unchecked((uint)0x821F),
+    StorageFlags = unchecked((uint)0x8220),
+    SizeARB = unchecked((uint)0x8764),
+    UsageARB = unchecked((uint)0x8765),
+    AccessARB = unchecked((uint)0x88BB),
+    MappedARB = unchecked((uint)0x88BC)
 }

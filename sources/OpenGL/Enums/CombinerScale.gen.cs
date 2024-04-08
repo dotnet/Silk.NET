@@ -10,8 +10,8 @@ namespace Silk.NET.OpenGL;
 [Transformed]
 public enum CombinerScale : uint
 {
-    None = 0,
-    ScaleByTwoNV = 0x853E,
-    ScaleByFourNV = 0x853F,
-    ScaleByOneHalfNV = 0x8540
+    None = unchecked((uint)0),
+    ScaleByTwoNV = unchecked((uint)0x853E),
+    ScaleByFourNV = unchecked((uint)0x853F),
+    ScaleByOneHalfNV = unchecked((uint)0x8540)
 }

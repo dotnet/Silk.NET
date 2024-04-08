@@ -10,13 +10,13 @@ namespace Silk.NET.OpenGL;
 [Transformed]
 public enum TextureMagFilter : uint
 {
-    Nearest = 0x2600,
-    Linear = 0x2601,
-    LinearDetailSGIS = 0x8097,
-    LinearDetailAlphaSGIS = 0x8098,
-    LinearDetailColorSGIS = 0x8099,
-    LinearSharpenSGIS = 0x80AD,
-    LinearSharpenAlphaSGIS = 0x80AE,
-    LinearSharpenColorSGIS = 0x80AF,
-    Filter4Sgis = 0x8146
+    Nearest = unchecked((uint)0x2600),
+    Linear = unchecked((uint)0x2601),
+    LinearDetailSGIS = unchecked((uint)0x8097),
+    LinearDetailAlphaSGIS = unchecked((uint)0x8098),
+    LinearDetailColorSGIS = unchecked((uint)0x8099),
+    LinearSharpenSGIS = unchecked((uint)0x80AD),
+    LinearSharpenAlphaSGIS = unchecked((uint)0x80AE),
+    LinearSharpenColorSGIS = unchecked((uint)0x80AF),
+    Filter4Sgis = unchecked((uint)0x8146)
 }

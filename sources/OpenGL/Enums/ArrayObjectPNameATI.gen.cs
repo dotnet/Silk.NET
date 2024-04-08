@@ -10,6 +10,6 @@ namespace Silk.NET.OpenGL;
 [Transformed]
 public enum ArrayObjectPNameATI : uint
 {
-    Size = 0x8764,
-    Usage = 0x8765
+    Size = unchecked((uint)0x8764),
+    Usage = unchecked((uint)0x8765)
 }

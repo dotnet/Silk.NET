@@ -10,7 +10,7 @@ namespace Silk.NET.OpenGL;
 [Transformed]
 public enum TriangleListSUN : uint
 {
-    Restart = 0x0001,
-    ReplaceMiddle = 0x0002,
-    ReplaceOldest = 0x0003
+    Restart = unchecked((uint)0x0001),
+    ReplaceMiddle = unchecked((uint)0x0002),
+    ReplaceOldest = unchecked((uint)0x0003)
 }

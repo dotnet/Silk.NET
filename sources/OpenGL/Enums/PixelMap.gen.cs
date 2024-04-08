@@ -10,14 +10,14 @@ namespace Silk.NET.OpenGL;
 [Transformed]
 public enum PixelMap : uint
 {
-    IToI = 0x0C70,
-    SToS = 0x0C71,
-    IToR = 0x0C72,
-    IToG = 0x0C73,
-    IToB = 0x0C74,
-    IToA = 0x0C75,
-    RToR = 0x0C76,
-    GToG = 0x0C77,
-    BToB = 0x0C78,
-    AToA = 0x0C79
+    IToI = unchecked((uint)0x0C70),
+    SToS = unchecked((uint)0x0C71),
+    IToR = unchecked((uint)0x0C72),
+    IToG = unchecked((uint)0x0C73),
+    IToB = unchecked((uint)0x0C74),
+    IToA = unchecked((uint)0x0C75),
+    RToR = unchecked((uint)0x0C76),
+    GToG = unchecked((uint)0x0C77),
+    BToB = unchecked((uint)0x0C78),
+    AToA = unchecked((uint)0x0C79)
 }

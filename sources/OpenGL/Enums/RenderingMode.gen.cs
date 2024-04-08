@@ -10,7 +10,7 @@ namespace Silk.NET.OpenGL;
 [Transformed]
 public enum RenderingMode : uint
 {
-    Render = 0x1C00,
-    Feedback = 0x1C01,
-    Select = 0x1C02
+    Render = unchecked((uint)0x1C00),
+    Feedback = unchecked((uint)0x1C01),
+    Select = unchecked((uint)0x1C02)
 }

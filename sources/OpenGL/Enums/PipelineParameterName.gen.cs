@@ -10,11 +10,11 @@ namespace Silk.NET.OpenGL;
 [Transformed]
 public enum PipelineParameterName : uint
 {
-    FragmentShader = 0x8B30,
-    VertexShader = 0x8B31,
-    InfoLogLength = 0x8B84,
-    GeometryShader = 0x8DD9,
-    TessEvaluationShader = 0x8E87,
-    TessControlShader = 0x8E88,
-    ActiveProgram = 0x8259
+    FragmentShader = unchecked((uint)0x8B30),
+    VertexShader = unchecked((uint)0x8B31),
+    InfoLogLength = unchecked((uint)0x8B84),
+    GeometryShader = unchecked((uint)0x8DD9),
+    TessEvaluationShader = unchecked((uint)0x8E87),
+    TessControlShader = unchecked((uint)0x8E88),
+    ActiveProgram = unchecked((uint)0x8259)
 }

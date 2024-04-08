@@ -10,9 +10,9 @@ namespace Silk.NET.OpenGL;
 [Transformed]
 public enum TextureCoordName : uint
 {
-    S = 0x2000,
-    T = 0x2001,
-    R = 0x2002,
-    Q = 0x2003,
-    TextureGenStrOES = 0x8D60
+    S = unchecked((uint)0x2000),
+    T = unchecked((uint)0x2001),
+    R = unchecked((uint)0x2002),
+    Q = unchecked((uint)0x2003),
+    TextureGenStrOES = unchecked((uint)0x8D60)
 }

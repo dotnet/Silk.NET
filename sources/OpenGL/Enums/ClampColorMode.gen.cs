@@ -10,8 +10,8 @@ namespace Silk.NET.OpenGL;
 [Transformed]
 public enum ClampColorMode : uint
 {
-    False = 0,
-    True = 1,
-    FixedOnly = 0x891D,
-    FixedOnlyARB = 0x891D
+    False = unchecked((uint)0),
+    True = unchecked((uint)1),
+    FixedOnly = unchecked((uint)0x891D),
+    FixedOnlyARB = unchecked((uint)0x891D)
 }

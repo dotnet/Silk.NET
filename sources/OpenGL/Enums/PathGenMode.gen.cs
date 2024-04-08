@@ -10,9 +10,9 @@ namespace Silk.NET.OpenGL;
 [Transformed]
 public enum PathGenMode : uint
 {
-    None = 0,
-    PathObjectBoundingBoxNV = 0x908A,
-    EyeLinear = 0x2400,
-    ObjectLinear = 0x2401,
-    Constant = 0x8576
+    None = unchecked((uint)0),
+    PathObjectBoundingBoxNV = unchecked((uint)0x908A),
+    EyeLinear = unchecked((uint)0x2400),
+    ObjectLinear = unchecked((uint)0x2401),
+    Constant = unchecked((uint)0x8576)
 }

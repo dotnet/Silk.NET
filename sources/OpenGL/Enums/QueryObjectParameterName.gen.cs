@@ -10,8 +10,8 @@ namespace Silk.NET.OpenGL;
 [Transformed]
 public enum QueryObjectParameterName : uint
 {
-    Result = 0x8866,
-    ResultAvailable = 0x8867,
-    ResultNoWait = 0x9194,
-    Target = 0x82EA
+    Result = unchecked((uint)0x8866),
+    ResultAvailable = unchecked((uint)0x8867),
+    ResultNoWait = unchecked((uint)0x9194),
+    Target = unchecked((uint)0x82EA)
 }

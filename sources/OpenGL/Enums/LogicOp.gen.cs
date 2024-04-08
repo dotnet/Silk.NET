@@ -10,20 +10,20 @@ namespace Silk.NET.OpenGL;
 [Transformed]
 public enum LogicOp : uint
 {
-    Clear = 0x1500,
-    AND = 0x1501,
-    AndReverse = 0x1502,
-    COPY = 0x1503,
-    AndInverted = 0x1504,
-    NOOP = 0x1505,
-    XOR = 0x1506,
-    OR = 0x1507,
-    NOR = 0x1508,
-    Equiv = 0x1509,
-    Invert = 0x150A,
-    OrReverse = 0x150B,
-    CopyInverted = 0x150C,
-    OrInverted = 0x150D,
-    NAND = 0x150E,
-    SET = 0x150F
+    Clear = unchecked((uint)0x1500),
+    AND = unchecked((uint)0x1501),
+    AndReverse = unchecked((uint)0x1502),
+    COPY = unchecked((uint)0x1503),
+    AndInverted = unchecked((uint)0x1504),
+    NOOP = unchecked((uint)0x1505),
+    XOR = unchecked((uint)0x1506),
+    OR = unchecked((uint)0x1507),
+    NOR = unchecked((uint)0x1508),
+    Equiv = unchecked((uint)0x1509),
+    Invert = unchecked((uint)0x150A),
+    OrReverse = unchecked((uint)0x150B),
+    CopyInverted = unchecked((uint)0x150C),
+    OrInverted = unchecked((uint)0x150D),
+    NAND = unchecked((uint)0x150E),
+    SET = unchecked((uint)0x150F)
 }

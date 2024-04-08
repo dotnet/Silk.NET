@@ -10,6 +10,6 @@ namespace Silk.NET.OpenGL;
 [Transformed]
 public enum ObjectTypeApple : uint
 {
-    DrawPixels = 0x8A0A,
-    Fence = 0x8A0B
+    DrawPixels = unchecked((uint)0x8A0A),
+    Fence = unchecked((uint)0x8A0B)
 }

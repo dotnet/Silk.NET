@@ -10,14 +10,14 @@ namespace Silk.NET.OpenGL;
 [Transformed]
 public enum TextureWrapMode : uint
 {
-    LinearMipmapLinear = 0x2703,
-    Repeat = 0x2901,
-    ClampToEdge = 0x812F,
-    ClampToBorder = 0x812D,
-    MirroredRepeat = 0x8370,
-    ClampToBorderARB = 0x812D,
-    Clamp = 0x2900,
-    ClampToBorderSGIS = 0x812D,
-    ClampToEdgeSGIS = 0x812F,
-    ClampToBorderNV = 0x812D
+    LinearMipmapLinear = unchecked((uint)0x2703),
+    Repeat = unchecked((uint)0x2901),
+    ClampToEdge = unchecked((uint)0x812F),
+    ClampToBorder = unchecked((uint)0x812D),
+    MirroredRepeat = unchecked((uint)0x8370),
+    ClampToBorderARB = unchecked((uint)0x812D),
+    Clamp = unchecked((uint)0x2900),
+    ClampToBorderSGIS = unchecked((uint)0x812D),
+    ClampToEdgeSGIS = unchecked((uint)0x812F),
+    ClampToBorderNV = unchecked((uint)0x812D)
 }

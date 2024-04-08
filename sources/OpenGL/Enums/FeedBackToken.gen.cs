@@ -10,12 +10,12 @@ namespace Silk.NET.OpenGL;
 [Transformed]
 public enum FeedBackToken : uint
 {
-    PassThroughToken = 0x0700,
-    PointToken = 0x0701,
-    LineToken = 0x0702,
-    PolygonToken = 0x0703,
-    BitmapToken = 0x0704,
-    DrawPixelToken = 0x0705,
-    CopyPixelToken = 0x0706,
-    LineResetToken = 0x0707
+    PassThroughToken = unchecked((uint)0x0700),
+    PointToken = unchecked((uint)0x0701),
+    LineToken = unchecked((uint)0x0702),
+    PolygonToken = unchecked((uint)0x0703),
+    BitmapToken = unchecked((uint)0x0704),
+    DrawPixelToken = unchecked((uint)0x0705),
+    CopyPixelToken = unchecked((uint)0x0706),
+    LineResetToken = unchecked((uint)0x0707)
 }

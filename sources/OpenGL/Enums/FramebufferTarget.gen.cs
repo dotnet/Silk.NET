@@ -10,8 +10,8 @@ namespace Silk.NET.OpenGL;
 [Transformed]
 public enum FramebufferTarget : uint
 {
-    ReadFramebuffer = 0x8CA8,
-    DrawFramebuffer = 0x8CA9,
-    Framebuffer = 0x8D40,
-    FramebufferOES = 0x8D40
+    ReadFramebuffer = unchecked((uint)0x8CA8),
+    DrawFramebuffer = unchecked((uint)0x8CA9),
+    Framebuffer = unchecked((uint)0x8D40),
+    FramebufferOES = unchecked((uint)0x8D40)
 }

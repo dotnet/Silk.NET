@@ -10,6 +10,6 @@ namespace Silk.NET.OpenGL;
 [Transformed]
 public enum BufferPointerName : uint
 {
-    Pointer = 0x88BD,
-    PointerARB = 0x88BD
+    Pointer = unchecked((uint)0x88BD),
+    PointerARB = unchecked((uint)0x88BD)
 }

@@ -10,12 +10,12 @@ namespace Silk.NET.OpenGL;
 [Transformed]
 public enum FragmentShaderDestModMask : uint
 {
-    NONE = 0,
-    X2XBitATI = 0x00000001,
-    X4XBitATI = 0x00000002,
-    X8XBitATI = 0x00000004,
-    HalfBitATI = 0x00000008,
-    QuarterBitATI = 0x00000010,
-    EighthBitATI = 0x00000020,
-    SaturateBitATI = 0x00000040
+    NONE = unchecked((uint)0),
+    X2XBitATI = unchecked((uint)0x00000001),
+    X4XBitATI = unchecked((uint)0x00000002),
+    X8XBitATI = unchecked((uint)0x00000004),
+    HalfBitATI = unchecked((uint)0x00000008),
+    QuarterBitATI = unchecked((uint)0x00000010),
+    EighthBitATI = unchecked((uint)0x00000020),
+    SaturateBitATI = unchecked((uint)0x00000040)
 }

@@ -10,8 +10,8 @@ namespace Silk.NET.OpenGL;
 [Transformed]
 public enum GetVariantValueEXT : uint
 {
-    Value = 0x87E4,
-    Datatype = 0x87E5,
-    ArrayStride = 0x87E6,
-    ArrayType = 0x87E7
+    Value = unchecked((uint)0x87E4),
+    Datatype = unchecked((uint)0x87E5),
+    ArrayStride = unchecked((uint)0x87E6),
+    ArrayType = unchecked((uint)0x87E7)
 }

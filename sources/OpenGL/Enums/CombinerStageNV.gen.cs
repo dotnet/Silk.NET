@@ -10,12 +10,12 @@ namespace Silk.NET.OpenGL;
 [Transformed]
 public enum CombinerStageNV : uint
 {
-    Combiner0 = 0x8550,
-    Combiner1 = 0x8551,
-    Combiner2 = 0x8552,
-    Combiner3 = 0x8553,
-    Combiner4 = 0x8554,
-    Combiner5 = 0x8555,
-    Combiner6 = 0x8556,
-    Combiner7 = 0x8557
+    Combiner0 = unchecked((uint)0x8550),
+    Combiner1 = unchecked((uint)0x8551),
+    Combiner2 = unchecked((uint)0x8552),
+    Combiner3 = unchecked((uint)0x8553),
+    Combiner4 = unchecked((uint)0x8554),
+    Combiner5 = unchecked((uint)0x8555),
+    Combiner6 = unchecked((uint)0x8556),
+    Combiner7 = unchecked((uint)0x8557)
 }

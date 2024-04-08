@@ -10,6 +10,6 @@ namespace Silk.NET.OpenGL;
 [Transformed]
 public enum FogPointerTypeIBM : uint
 {
-    Float = 0x1406,
-    Double = 0x140A
+    Float = unchecked((uint)0x1406),
+    Double = unchecked((uint)0x140A)
 }

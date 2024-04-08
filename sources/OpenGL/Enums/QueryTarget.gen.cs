@@ -10,14 +10,14 @@ namespace Silk.NET.OpenGL;
 [Transformed]
 public enum QueryTarget : uint
 {
-    SamplesPassed = 0x8914,
-    PrimitivesGenerated = 0x8C87,
-    TransformFeedbackPrimitivesWritten = 0x8C88,
-    AnySamplesPassed = 0x8C2F,
-    TimeElapsed = 0x88BF,
-    AnySamplesPassedConservative = 0x8D6A,
-    VerticesSubmitted = 0x82EE,
-    PrimitivesSubmitted = 0x82EF,
-    VertexShaderInvocations = 0x82F0,
-    TransformFeedbackOverflow = 0x82EC
+    SamplesPassed = unchecked((uint)0x8914),
+    PrimitivesGenerated = unchecked((uint)0x8C87),
+    TransformFeedbackPrimitivesWritten = unchecked((uint)0x8C88),
+    AnySamplesPassed = unchecked((uint)0x8C2F),
+    TimeElapsed = unchecked((uint)0x88BF),
+    AnySamplesPassedConservative = unchecked((uint)0x8D6A),
+    VerticesSubmitted = unchecked((uint)0x82EE),
+    PrimitivesSubmitted = unchecked((uint)0x82EF),
+    VertexShaderInvocations = unchecked((uint)0x82F0),
+    TransformFeedbackOverflow = unchecked((uint)0x82EC)
 }

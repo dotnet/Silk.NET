@@ -10,6 +10,6 @@ namespace Silk.NET.OpenGL;
 [Transformed]
 public enum PathStringFormat : uint
 {
-    SvgNV = 0x9070,
-    PsNv = 0x9071
+    SvgNV = unchecked((uint)0x9070),
+    PsNv = unchecked((uint)0x9071)
 }

@@ -10,15 +10,15 @@ namespace Silk.NET.OpenGL;
 [Transformed]
 public enum TextureMinFilter : uint
 {
-    Nearest = 0x2600,
-    Linear = 0x2601,
-    NearestMipmapNearest = 0x2700,
-    LinearMipmapNearest = 0x2701,
-    NearestMipmapLinear = 0x2702,
-    LinearMipmapLinear = 0x2703,
-    Filter4Sgis = 0x8146,
-    LinearClipmapLinearSGIX = 0x8170,
-    NearestClipmapNearestSGIX = 0x844D,
-    NearestClipmapLinearSGIX = 0x844E,
-    LinearClipmapNearestSGIX = 0x844F
+    Nearest = unchecked((uint)0x2600),
+    Linear = unchecked((uint)0x2601),
+    NearestMipmapNearest = unchecked((uint)0x2700),
+    LinearMipmapNearest = unchecked((uint)0x2701),
+    NearestMipmapLinear = unchecked((uint)0x2702),
+    LinearMipmapLinear = unchecked((uint)0x2703),
+    Filter4Sgis = unchecked((uint)0x8146),
+    LinearClipmapLinearSGIX = unchecked((uint)0x8170),
+    NearestClipmapNearestSGIX = unchecked((uint)0x844D),
+    NearestClipmapLinearSGIX = unchecked((uint)0x844E),
+    LinearClipmapNearestSGIX = unchecked((uint)0x844F)
 }

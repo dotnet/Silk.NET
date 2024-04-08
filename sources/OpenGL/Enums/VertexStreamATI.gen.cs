@@ -10,12 +10,12 @@ namespace Silk.NET.OpenGL;
 [Transformed]
 public enum VertexStreamATI : uint
 {
-    Stream0 = 0x876C,
-    Stream1 = 0x876D,
-    Stream2 = 0x876E,
-    Stream3 = 0x876F,
-    Stream4 = 0x8770,
-    Stream5 = 0x8771,
-    Stream6 = 0x8772,
-    Stream7 = 0x8773
+    Stream0 = unchecked((uint)0x876C),
+    Stream1 = unchecked((uint)0x876D),
+    Stream2 = unchecked((uint)0x876E),
+    Stream3 = unchecked((uint)0x876F),
+    Stream4 = unchecked((uint)0x8770),
+    Stream5 = unchecked((uint)0x8771),
+    Stream6 = unchecked((uint)0x8772),
+    Stream7 = unchecked((uint)0x8773)
 }

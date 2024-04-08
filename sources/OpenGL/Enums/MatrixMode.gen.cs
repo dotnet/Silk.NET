@@ -10,8 +10,8 @@ namespace Silk.NET.OpenGL;
 [Transformed]
 public enum MatrixMode : uint
 {
-    Texture = 0x1702,
-    Modelview = 0x1700,
-    Projection = 0x1701,
-    Modelview0EXT = 0x1700
+    Texture = unchecked((uint)0x1702),
+    Modelview = unchecked((uint)0x1700),
+    Projection = unchecked((uint)0x1701),
+    Modelview0EXT = unchecked((uint)0x1700)
 }

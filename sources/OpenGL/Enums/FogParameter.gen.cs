@@ -10,11 +10,11 @@ namespace Silk.NET.OpenGL;
 [Transformed]
 public enum FogParameter : uint
 {
-    FogIndex = 0x0B61,
-    FogDensity = 0x0B62,
-    FogStart = 0x0B63,
-    FogEnd = 0x0B64,
-    FogMode = 0x0B65,
-    FogColor = 0x0B66,
-    FogOffsetValueSGIX = 0x8199
+    FogIndex = unchecked((uint)0x0B61),
+    FogDensity = unchecked((uint)0x0B62),
+    FogStart = unchecked((uint)0x0B63),
+    FogEnd = unchecked((uint)0x0B64),
+    FogMode = unchecked((uint)0x0B65),
+    FogColor = unchecked((uint)0x0B66),
+    FogOffsetValueSGIX = unchecked((uint)0x8199)
 }

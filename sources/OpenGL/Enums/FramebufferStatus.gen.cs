@@ -10,13 +10,13 @@ namespace Silk.NET.OpenGL;
 [Transformed]
 public enum FramebufferStatus : uint
 {
-    Undefined = 0x8219,
-    Complete = 0x8CD5,
-    IncompleteAttachment = 0x8CD6,
-    IncompleteMissingAttachment = 0x8CD7,
-    IncompleteDrawBuffer = 0x8CDB,
-    IncompleteReadBuffer = 0x8CDC,
-    Unsupported = 0x8CDD,
-    IncompleteMultisample = 0x8D56,
-    IncompleteLayerTargets = 0x8DA8
+    Undefined = unchecked((uint)0x8219),
+    Complete = unchecked((uint)0x8CD5),
+    IncompleteAttachment = unchecked((uint)0x8CD6),
+    IncompleteMissingAttachment = unchecked((uint)0x8CD7),
+    IncompleteDrawBuffer = unchecked((uint)0x8CDB),
+    IncompleteReadBuffer = unchecked((uint)0x8CDC),
+    Unsupported = unchecked((uint)0x8CDD),
+    IncompleteMultisample = unchecked((uint)0x8D56),
+    IncompleteLayerTargets = unchecked((uint)0x8DA8)
 }

@@ -10,12 +10,12 @@ namespace Silk.NET.OpenGL;
 [Transformed]
 public enum ContextFlagMask : uint
 {
-    ForwardCompatibleBit = 0x00000001,
-    DebugBit = 0x00000002,
-    RobustAccessBit = 0x00000004,
-    NoErrorBit = 0x00000008,
-    RobustAccessBitARB = 0x00000004,
-    NoErrorBitKHR = 0x00000008,
-    DebugBitKHR = 0x00000002,
-    ProtectedContentBitEXT = 0x00000010
+    ForwardCompatibleBit = unchecked((uint)0x00000001),
+    DebugBit = unchecked((uint)0x00000002),
+    RobustAccessBit = unchecked((uint)0x00000004),
+    NoErrorBit = unchecked((uint)0x00000008),
+    RobustAccessBitARB = unchecked((uint)0x00000004),
+    NoErrorBitKHR = unchecked((uint)0x00000008),
+    DebugBitKHR = unchecked((uint)0x00000002),
+    ProtectedContentBitEXT = unchecked((uint)0x00000010)
 }

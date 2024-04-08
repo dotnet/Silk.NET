@@ -10,7 +10,7 @@ namespace Silk.NET.OpenGL;
 [Transformed]
 public enum LightEnvMode : uint
 {
-    Replace = 0x1E01,
-    ADD = 0x0104,
-    Modulate = 0x2100
+    Replace = unchecked((uint)0x1E01),
+    ADD = unchecked((uint)0x0104),
+    Modulate = unchecked((uint)0x2100)
 }

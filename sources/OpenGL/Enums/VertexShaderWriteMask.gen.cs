@@ -10,6 +10,6 @@ namespace Silk.NET.OpenGL;
 [Transformed]
 public enum VertexShaderWriteMask : uint
 {
-    False = 0,
-    True = 1
+    False = unchecked((uint)0),
+    True = unchecked((uint)1)
 }

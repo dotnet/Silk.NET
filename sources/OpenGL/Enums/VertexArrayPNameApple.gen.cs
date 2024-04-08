@@ -10,7 +10,7 @@ namespace Silk.NET.OpenGL;
 [Transformed]
 public enum VertexArrayPNameApple : uint
 {
-    Cached = 0x85BE,
-    Shared = 0x85BF,
-    Client = 0x85B4
+    Cached = unchecked((uint)0x85BE),
+    Shared = unchecked((uint)0x85BF),
+    Client = unchecked((uint)0x85B4)
 }

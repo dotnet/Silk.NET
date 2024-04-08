@@ -10,8 +10,8 @@ namespace Silk.NET.OpenGL;
 [Transformed]
 public enum HintTargetPGI : uint
 {
-    VertexDataHint = 0x1A22A,
-    VertexConsistentHint = 0x1A22B,
-    MaterialSideHint = 0x1A22C,
-    MaxVertexHint = 0x1A22D
+    VertexDataHint = unchecked((uint)0x1A22A),
+    VertexConsistentHint = unchecked((uint)0x1A22B),
+    MaterialSideHint = unchecked((uint)0x1A22C),
+    MaxVertexHint = unchecked((uint)0x1A22D)
 }

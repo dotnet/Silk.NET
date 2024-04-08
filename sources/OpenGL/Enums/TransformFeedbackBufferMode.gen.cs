@@ -10,6 +10,6 @@ namespace Silk.NET.OpenGL;
 [Transformed]
 public enum TransformFeedbackBufferMode : uint
 {
-    InterleavedAttribs = 0x8C8C,
-    SeparateAttribs = 0x8C8D
+    InterleavedAttribs = unchecked((uint)0x8C8C),
+    SeparateAttribs = unchecked((uint)0x8C8D)
 }

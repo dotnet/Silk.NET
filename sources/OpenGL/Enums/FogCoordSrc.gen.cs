@@ -10,9 +10,9 @@ namespace Silk.NET.OpenGL;
 [Transformed]
 public enum FogCoordSrc : uint
 {
-    FogCoordinate = 0x8451,
-    FragmentDepth = 0x8452,
-    FogCoord = 0x8451,
-    FogCoordinateEXT = 0x8451,
-    FragmentDepthEXT = 0x8452
+    FogCoordinate = unchecked((uint)0x8451),
+    FragmentDepth = unchecked((uint)0x8452),
+    FogCoord = unchecked((uint)0x8451),
+    FogCoordinateEXT = unchecked((uint)0x8451),
+    FragmentDepthEXT = unchecked((uint)0x8452)
 }

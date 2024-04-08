@@ -10,6 +10,6 @@ namespace Silk.NET.OpenGL;
 [Transformed]
 public enum BlitFramebufferFilter : uint
 {
-    Nearest = 0x2600,
-    Linear = 0x2601
+    Nearest = unchecked((uint)0x2600),
+    Linear = unchecked((uint)0x2601)
 }

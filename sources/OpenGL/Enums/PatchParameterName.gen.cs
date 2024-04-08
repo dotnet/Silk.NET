@@ -10,7 +10,7 @@ namespace Silk.NET.OpenGL;
 [Transformed]
 public enum PatchParameterName : uint
 {
-    Vertices = 0x8E72,
-    DefaultInnerLevel = 0x8E73,
-    DefaultOuterLevel = 0x8E74
+    Vertices = unchecked((uint)0x8E72),
+    DefaultInnerLevel = unchecked((uint)0x8E73),
+    DefaultOuterLevel = unchecked((uint)0x8E74)
 }

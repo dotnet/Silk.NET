@@ -10,8 +10,8 @@ namespace Silk.NET.OpenGL;
 [Transformed]
 public enum PathFillMode : uint
 {
-    Invert = 0x150A,
-    PathFillModeNV = 0x9080,
-    CountUpNV = 0x9088,
-    CountDownNV = 0x9089
+    Invert = unchecked((uint)0x150A),
+    PathFillModeNV = unchecked((uint)0x9080),
+    CountUpNV = unchecked((uint)0x9088),
+    CountDownNV = unchecked((uint)0x9089)
 }

@@ -10,14 +10,14 @@ namespace Silk.NET.OpenGL;
 [Transformed]
 public enum ImageTransformPNameHP : uint
 {
-    ScaleX = 0x8155,
-    ScaleY = 0x8156,
-    TranslateX = 0x8157,
-    TranslateY = 0x8158,
-    RotateAngle = 0x8159,
-    RotateOriginX = 0x815A,
-    RotateOriginY = 0x815B,
-    MagFilter = 0x815C,
-    MinFilter = 0x815D,
-    CubicWeight = 0x815E
+    ScaleX = unchecked((uint)0x8155),
+    ScaleY = unchecked((uint)0x8156),
+    TranslateX = unchecked((uint)0x8157),
+    TranslateY = unchecked((uint)0x8158),
+    RotateAngle = unchecked((uint)0x8159),
+    RotateOriginX = unchecked((uint)0x815A),
+    RotateOriginY = unchecked((uint)0x815B),
+    MagFilter = unchecked((uint)0x815C),
+    MinFilter = unchecked((uint)0x815D),
+    CubicWeight = unchecked((uint)0x815E)
 }

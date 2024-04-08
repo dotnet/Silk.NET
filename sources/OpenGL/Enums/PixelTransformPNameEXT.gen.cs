@@ -10,7 +10,7 @@ namespace Silk.NET.OpenGL;
 [Transformed]
 public enum PixelTransformPNameEXT : uint
 {
-    MagFilter = 0x8331,
-    MinFilter = 0x8332,
-    CubicWeight = 0x8333
+    MagFilter = unchecked((uint)0x8331),
+    MinFilter = unchecked((uint)0x8332),
+    CubicWeight = unchecked((uint)0x8333)
 }

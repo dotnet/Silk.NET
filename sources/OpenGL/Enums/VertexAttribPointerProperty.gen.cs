@@ -10,6 +10,6 @@ namespace Silk.NET.OpenGL;
 [Transformed]
 public enum VertexAttribPointerProperty : uint
 {
-    Pointer = 0x8645,
-    PointerARB = 0x8645
+    Pointer = unchecked((uint)0x8645),
+    PointerARB = unchecked((uint)0x8645)
 }

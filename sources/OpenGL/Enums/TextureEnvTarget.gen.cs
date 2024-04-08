@@ -10,7 +10,7 @@ namespace Silk.NET.OpenGL;
 [Transformed]
 public enum TextureEnvTarget : uint
 {
-    TextureENV = 0x2300,
-    TextureFilterControl = 0x8500,
-    PointSprite = 0x8861
+    TextureENV = unchecked((uint)0x2300),
+    TextureFilterControl = unchecked((uint)0x8500),
+    PointSprite = unchecked((uint)0x8861)
 }

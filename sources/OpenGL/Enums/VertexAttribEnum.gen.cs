@@ -10,13 +10,13 @@ namespace Silk.NET.OpenGL;
 [Transformed]
 public enum VertexAttribEnum : uint
 {
-    VertexAttribArrayBufferBinding = 0x889F,
-    VertexAttribArrayEnabled = 0x8622,
-    VertexAttribArraySize = 0x8623,
-    VertexAttribArrayStride = 0x8624,
-    VertexAttribArrayType = 0x8625,
-    CurrentVertexAttrib = 0x8626,
-    VertexAttribArrayNormalized = 0x886A,
-    VertexAttribArrayInteger = 0x88FD,
-    VertexAttribArrayDivisor = 0x88FE
+    VertexAttribArrayBufferBinding = unchecked((uint)0x889F),
+    VertexAttribArrayEnabled = unchecked((uint)0x8622),
+    VertexAttribArraySize = unchecked((uint)0x8623),
+    VertexAttribArrayStride = unchecked((uint)0x8624),
+    VertexAttribArrayType = unchecked((uint)0x8625),
+    CurrentVertexAttrib = unchecked((uint)0x8626),
+    VertexAttribArrayNormalized = unchecked((uint)0x886A),
+    VertexAttribArrayInteger = unchecked((uint)0x88FD),
+    VertexAttribArrayDivisor = unchecked((uint)0x88FE)
 }

@@ -20,7 +20,7 @@
     AllowMultiple = true,
     Inherited = false
 )]
-public class SupportedApiProfileAttribute(string profile, string[] apiSets) : Attribute
+public class SupportedApiProfileAttribute(string profile, string[]? apiSets = null) : Attribute
 {
     /// <summary>
     /// The API profile supported e.g. gl, glcore, gles2, vulkan, vulkansc, etc.

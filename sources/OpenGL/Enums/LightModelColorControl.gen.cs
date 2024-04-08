@@ -10,8 +10,8 @@ namespace Silk.NET.OpenGL;
 [Transformed]
 public enum LightModelColorControl : uint
 {
-    SingleColor = 0x81F9,
-    SeparateSpecularColor = 0x81FA,
-    SingleColorEXT = 0x81F9,
-    SeparateSpecularColorEXT = 0x81FA
+    SingleColor = unchecked((uint)0x81F9),
+    SeparateSpecularColor = unchecked((uint)0x81FA),
+    SingleColorEXT = unchecked((uint)0x81F9),
+    SeparateSpecularColorEXT = unchecked((uint)0x81FA)
 }

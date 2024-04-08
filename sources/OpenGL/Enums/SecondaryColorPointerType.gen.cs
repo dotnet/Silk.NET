@@ -10,8 +10,8 @@ namespace Silk.NET.OpenGL;
 [Transformed]
 public enum SecondaryColorPointerType : uint
 {
-    Short = 0x1402,
-    INT = 0x1404,
-    Float = 0x1406,
-    Double = 0x140A
+    Short = unchecked((uint)0x1402),
+    INT = unchecked((uint)0x1404),
+    Float = unchecked((uint)0x1406),
+    Double = unchecked((uint)0x140A)
 }

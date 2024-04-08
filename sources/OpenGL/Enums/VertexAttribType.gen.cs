@@ -10,18 +10,18 @@ namespace Silk.NET.OpenGL;
 [Transformed]
 public enum VertexAttribType : uint
 {
-    BYTE = 0x1400,
-    UnsignedByte = 0x1401,
-    Short = 0x1402,
-    UnsignedShort = 0x1403,
-    INT = 0x1404,
-    UnsignedInt = 0x1405,
-    Float = 0x1406,
-    Double = 0x140A,
-    UnsignedInt2X10X10X10Rev = 0x8368,
-    UnsignedInt10F11F11FRev = 0x8C3B,
-    HalfFloat = 0x140B,
-    Int2X10X10X10Rev = 0x8D9F,
-    Fixed = 0x140C,
-    UnsignedInt2X10X10X10RevEXT = 0x8368
+    BYTE = unchecked((uint)0x1400),
+    UnsignedByte = unchecked((uint)0x1401),
+    Short = unchecked((uint)0x1402),
+    UnsignedShort = unchecked((uint)0x1403),
+    INT = unchecked((uint)0x1404),
+    UnsignedInt = unchecked((uint)0x1405),
+    Float = unchecked((uint)0x1406),
+    Double = unchecked((uint)0x140A),
+    UnsignedInt2X10X10X10Rev = unchecked((uint)0x8368),
+    UnsignedInt10F11F11FRev = unchecked((uint)0x8C3B),
+    HalfFloat = unchecked((uint)0x140B),
+    Int2X10X10X10Rev = unchecked((uint)0x8D9F),
+    Fixed = unchecked((uint)0x140C),
+    UnsignedInt2X10X10X10RevEXT = unchecked((uint)0x8368)
 }

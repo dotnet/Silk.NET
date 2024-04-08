@@ -10,6 +10,6 @@ namespace Silk.NET.OpenGL;
 [Transformed]
 public enum RenderbufferTarget : uint
 {
-    Renderbuffer = 0x8D41,
-    RenderbufferOES = 0x8D41
+    Renderbuffer = unchecked((uint)0x8D41),
+    RenderbufferOES = unchecked((uint)0x8D41)
 }

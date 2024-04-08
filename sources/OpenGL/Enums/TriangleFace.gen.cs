@@ -10,7 +10,7 @@ namespace Silk.NET.OpenGL;
 [Transformed]
 public enum TriangleFace : uint
 {
-    Front = 0x0404,
-    Back = 0x0405,
-    FrontAndBack = 0x0408
+    Front = unchecked((uint)0x0404),
+    Back = unchecked((uint)0x0405),
+    FrontAndBack = unchecked((uint)0x0408)
 }

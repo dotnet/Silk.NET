@@ -10,7 +10,7 @@ namespace Silk.NET.OpenGL;
 [Transformed]
 public enum DataTypeEXT : uint
 {
-    Scalar = 0x87BE,
-    Vector = 0x87BF,
-    Matrix = 0x87C0
+    Scalar = unchecked((uint)0x87BE),
+    Vector = unchecked((uint)0x87BF),
+    Matrix = unchecked((uint)0x87C0)
 }

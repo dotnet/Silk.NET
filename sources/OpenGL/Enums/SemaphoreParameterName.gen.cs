@@ -10,9 +10,9 @@ namespace Silk.NET.OpenGL;
 [Transformed]
 public enum SemaphoreParameterName : uint
 {
-    D3D12FenceValueEXT = 0x9595,
-    TimelineSemaphoreValueNV = 0x9595,
-    SemaphoreTypeNV = 0x95B3,
-    SemaphoreTypeBinaryNV = 0x95B4,
-    SemaphoreTypeTimelineNV = 0x95B5
+    D3D12FenceValueEXT = unchecked((uint)0x9595),
+    TimelineSemaphoreValueNV = unchecked((uint)0x9595),
+    SemaphoreTypeNV = unchecked((uint)0x95B3),
+    SemaphoreTypeBinaryNV = unchecked((uint)0x95B4),
+    SemaphoreTypeTimelineNV = unchecked((uint)0x95B5)
 }

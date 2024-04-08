@@ -10,7 +10,7 @@ namespace Silk.NET.OpenGL;
 [Transformed]
 public enum PathColor : uint
 {
-    PrimaryColor = 0x8577,
-    PrimaryColorNV = 0x852C,
-    SecondaryColorNV = 0x852D
+    PrimaryColor = unchecked((uint)0x8577),
+    PrimaryColorNV = unchecked((uint)0x852C),
+    SecondaryColorNV = unchecked((uint)0x852D)
 }

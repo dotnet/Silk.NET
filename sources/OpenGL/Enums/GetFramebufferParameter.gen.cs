@@ -10,15 +10,15 @@ namespace Silk.NET.OpenGL;
 [Transformed]
 public enum GetFramebufferParameter : uint
 {
-    Doublebuffer = 0x0C32,
-    Stereo = 0x0C33,
-    SampleBuffers = 0x80A8,
-    Samples = 0x80A9,
-    ImplementationColorReadType = 0x8B9A,
-    ImplementationColorReadFormat = 0x8B9B,
-    FramebufferDefaultWidth = 0x9310,
-    FramebufferDefaultHeight = 0x9311,
-    FramebufferDefaultLayers = 0x9312,
-    FramebufferDefaultSamples = 0x9313,
-    FramebufferDefaultFixedSampleLocations = 0x9314
+    Doublebuffer = unchecked((uint)0x0C32),
+    Stereo = unchecked((uint)0x0C33),
+    SampleBuffers = unchecked((uint)0x80A8),
+    Samples = unchecked((uint)0x80A9),
+    ImplementationColorReadType = unchecked((uint)0x8B9A),
+    ImplementationColorReadFormat = unchecked((uint)0x8B9B),
+    FramebufferDefaultWidth = unchecked((uint)0x9310),
+    FramebufferDefaultHeight = unchecked((uint)0x9311),
+    FramebufferDefaultLayers = unchecked((uint)0x9312),
+    FramebufferDefaultSamples = unchecked((uint)0x9313),
+    FramebufferDefaultFixedSampleLocations = unchecked((uint)0x9314)
 }

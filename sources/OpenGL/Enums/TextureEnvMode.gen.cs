@@ -10,12 +10,12 @@ namespace Silk.NET.OpenGL;
 [Transformed]
 public enum TextureEnvMode : uint
 {
-    Blend = 0x0BE2,
-    Replace = 0x1E01,
-    ADD = 0x0104,
-    Modulate = 0x2100,
-    Decal = 0x2101,
-    Combine = 0x8570,
-    ReplaceEXT = 0x8062,
-    TextureEnvBiasSGIX = 0x80BE
+    Blend = unchecked((uint)0x0BE2),
+    Replace = unchecked((uint)0x1E01),
+    ADD = unchecked((uint)0x0104),
+    Modulate = unchecked((uint)0x2100),
+    Decal = unchecked((uint)0x2101),
+    Combine = unchecked((uint)0x8570),
+    ReplaceEXT = unchecked((uint)0x8062),
+    TextureEnvBiasSGIX = unchecked((uint)0x80BE)
 }

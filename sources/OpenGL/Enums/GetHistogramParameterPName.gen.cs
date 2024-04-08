@@ -10,20 +10,20 @@ namespace Silk.NET.OpenGL;
 [Transformed]
 public enum GetHistogramParameterPName : uint
 {
-    Width = 0x8026,
-    Format = 0x8027,
-    RedSize = 0x8028,
-    GreenSize = 0x8029,
-    BlueSize = 0x802A,
-    AlphaSize = 0x802B,
-    LuminanceSize = 0x802C,
-    Sink = 0x802D,
-    WidthEXT = 0x8026,
-    FormatEXT = 0x8027,
-    RedSizeEXT = 0x8028,
-    GreenSizeEXT = 0x8029,
-    BlueSizeEXT = 0x802A,
-    AlphaSizeEXT = 0x802B,
-    LuminanceSizeEXT = 0x802C,
-    SinkEXT = 0x802D
+    Width = unchecked((uint)0x8026),
+    Format = unchecked((uint)0x8027),
+    RedSize = unchecked((uint)0x8028),
+    GreenSize = unchecked((uint)0x8029),
+    BlueSize = unchecked((uint)0x802A),
+    AlphaSize = unchecked((uint)0x802B),
+    LuminanceSize = unchecked((uint)0x802C),
+    Sink = unchecked((uint)0x802D),
+    WidthEXT = unchecked((uint)0x8026),
+    FormatEXT = unchecked((uint)0x8027),
+    RedSizeEXT = unchecked((uint)0x8028),
+    GreenSizeEXT = unchecked((uint)0x8029),
+    BlueSizeEXT = unchecked((uint)0x802A),
+    AlphaSizeEXT = unchecked((uint)0x802B),
+    LuminanceSizeEXT = unchecked((uint)0x802C),
+    SinkEXT = unchecked((uint)0x802D)
 }
