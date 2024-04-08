@@ -71,7 +71,7 @@ partial class Build
 
                     EnsureCleanDirectory(buildDir);
 
-                    InheritedShell($"cmake .. -A {platform} -DCMAKE_BUILD_TYPE=Release -DBUILD_SHARED_LIBS=ON", buildDir).AssertZeroExitCode();
+                    InheritedShell($"cmake .. -A {platform} -DCMAKE_BUILD_TYPE=Release -DBUILD_SHARED_LIBS=ON -DSDL_ASSERTIONS=disabled", buildDir).AssertZeroExitCode();
                     InheritedShell($"cmake --build . --config Release{JobsArg}", buildDir).AssertZeroExitCode();
 
                     CopyFile(buildDir / "Release" / "SDL2.dll", runtimes / rid / "native" / "SDL2.dll", FileExistsPolicy.Overwrite);
@@ -90,7 +90,7 @@ partial class Build
 
                     EnsureCleanDirectory(buildDir);
 
-                    InheritedShell($"./configure --prefix={buildDir} --host={triple} --enable-wayland-shared --enable-x11-shared", SDL2Path).AssertZeroExitCode();
+                    InheritedShell($"./configure --prefix={buildDir} --host={triple} --enable-assertions=disabled --enable-wayland-shared --enable-x11-shared", SDL2Path).AssertZeroExitCode();
                     InheritedShell($"make {JobsArg}", SDL2Path).AssertZeroExitCode();
                     InheritedShell($"make install", SDL2Path).AssertZeroExitCode();
 
