@@ -39,7 +39,7 @@ partial class Build {
                     var buildDir = SwiftShaderPath / "build";
                     var runtimes = RootDirectory / "src" / "Native" / "Silk.NET.Vulkan.SwiftShader.Native" / "runtimes";
 
-                    var prepare = "cmake .. -DSWIFTSHADER_WARNINGS_AS_ERRORS=FALSE";
+                    var prepare = "cmake .. -DSWIFTSHADER_WARNINGS_AS_ERRORS=FALSE -DSWIFTSHADER_BUILD_TESTS=FALSE";
                     var build = $"cmake --build . --config Release{JobsArg}";
 
                     // Work around SwiftShader's silly Git hook installation logic that fails as a submodule.
