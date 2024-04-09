@@ -17,17 +17,37 @@ jobs:
       fail-fast: false
       matrix:
         env:
-          - os: ubuntu-latest
+          - os: ubuntu-22.04
             name: Linux
             nuke_invoke: ./build.sh
             extras: |
-              sudo apt-get update
-              sudo apt-get install -y build-essential libx11-xcb-dev libxkbcommon-dev libwayland-dev libxrandr-dev
-          - os: windows-latest
+              sudo tee /etc/apt/sources.list << EOF
+              deb [arch=amd64] http://archive.ubuntu.com/ubuntu jammy main multiverse restricted universe
+              deb [arch=amd64] http://archive.ubuntu.com/ubuntu jammy-backports main multiverse restricted universe
+              deb [arch=amd64] http://archive.ubuntu.com/ubuntu jammy-security main multiverse restricted universe
+              deb [arch=amd64] http://archive.ubuntu.com/ubuntu jammy-updates main multiverse restricted universe
+              deb [arch=arm64,armhf] http://ports.ubuntu.com jammy main multiverse restricted universe
+              deb [arch=arm64,armhf] http://ports.ubuntu.com jammy-backports main multiverse restricted universe
+              deb [arch=arm64,armhf] http://ports.ubuntu.com jammy-security main multiverse restricted universe
+              deb [arch=arm64,armhf] http://ports.ubuntu.com jammy-updates main multiverse restricted universe
+              deb [arch=amd64] http://security.ubuntu.com/ubuntu jammy main multiverse restricted universe
+              deb [arch=amd64] http://security.ubuntu.com/ubuntu jammy-backports main multiverse restricted universe
+              deb [arch=amd64] http://security.ubuntu.com/ubuntu jammy-security main multiverse restricted universe
+              deb [arch=amd64] http://security.ubuntu.com/ubuntu jammy-updates main multiverse restricted universe
+              EOF
+              sudo dpkg --add-architecture arm64
+              sudo dpkg --add-architecture armhf
+              sudo apt update
+              sudo apt install -y gcc-aarch64-linux-gnu gcc-arm-linux-gnueabihf
+              sudo apt install -y pkgconf
+              for arch in amd64 arm64 armhf; do
+                sudo apt install -y libx11-xcb-dev:$arch libxkbcommon-dev:$arch libwayland-dev:$arch libxrandr-dev:$arch
+              done
+          - os: windows-2022
             name: Windows
             nuke_invoke: ./build.cmd
             extras: ""
-          - os: macos-latest
+          - os: macos-14
             name: Darwin
             nuke_invoke: ./build.sh
             extras: ""
@@ -41,7 +61,7 @@ jobs:
         run: |
           git -c submodule.third_party/git-hooks.update=none submodule update --init --recursive --depth 0 build/submodules/Vulkan-Loader
           git config --local user.email "9011267+dotnet-bot@users.noreply.github.com"
-          git config --local user.name "The Silk.NET Automaton" 
+          git config --local user.name "The Silk.NET Automaton"
       - name: Extra prerequisites
         run: |
           echo running extras
