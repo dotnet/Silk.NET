@@ -91,7 +91,7 @@ partial class Build
 
                     EnsureCleanDirectory(buildDir);
 
-                    InheritedShell($"./configure --prefix={buildDir} --host={triple} --enable-assertions=disabled --enable-wayland-shared --enable-x11-shared", SDL2Path).AssertZeroExitCode();
+                    InheritedShell($"./configure --prefix={buildDir} --disable-static --host={triple} --enable-assertions=disabled --enable-wayland-shared --enable-x11-shared", SDL2Path).AssertZeroExitCode();
                     InheritedShell($"make {JobsArg}", SDL2Path).AssertZeroExitCode();
                     InheritedShell($"make install", SDL2Path).AssertZeroExitCode();
 
