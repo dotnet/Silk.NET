@@ -72,6 +72,8 @@ partial class Build {
                             InheritedShell($"{prepare} {GetCMakeToolchainFlag(triple)}", buildDir).AssertZeroExitCode();
                             InheritedShell(build, buildDir).AssertZeroExitCode();
 
+                            InheritedShell($"{triple}-strip loader/libvulkan.so", buildDir).AssertZeroExitCode();
+
                             CopyAll((buildDir / "loader").GlobFiles("libvulkan.so"), runtimes / rid / "native");
                         }
                     }
@@ -87,6 +89,8 @@ partial class Build {
 
                             InheritedShell($"{prepare} -DCMAKE_OSX_ARCHITECTURES={arch}", buildDir).AssertZeroExitCode();
                             InheritedShell(build, buildDir).AssertZeroExitCode();
+
+                            InheritedShell($"strip loader/libvulkan.dylib", buildDir).AssertZeroExitCode();
 
                             CopyAll((buildDir / "loader").GlobFiles("libvulkan.dylib"), runtimes / rid / "native");
                         }
