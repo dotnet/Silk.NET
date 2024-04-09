@@ -80,6 +80,8 @@ partial class Build {
                             InheritedShell($"{prepare} {GetCMakeToolchainFlag(triple)}", buildDir).AssertZeroExitCode();
                             InheritedShell(build, buildDir).AssertZeroExitCode();
 
+                            InheritedShell($"{triple}-strip Linux/libvk_swiftshader.so", buildDir).AssertZeroExitCode();
+
                             CopyFile(buildDir / "Linux" / "libvk_swiftshader.so", runtimes / rid / "native" / "libvk_swiftshader.so", FileExistsPolicy.Overwrite);
                             CopyFile(buildDir / "Linux" / "vk_swiftshader_icd.json", runtimes / rid / "native" / "vk_swiftshader_icd.json", FileExistsPolicy.Overwrite);
                         }
@@ -96,6 +98,8 @@ partial class Build {
 
                             InheritedShell($"{prepare} -DCMAKE_OSX_ARCHITECTURES={arch}", buildDir).AssertZeroExitCode();
                             InheritedShell(build, buildDir).AssertZeroExitCode();
+
+                            InheritedShell($"-strip Darwin/libvk_swiftshader.dylib", buildDir).AssertZeroExitCode();
 
                             CopyFile(buildDir / "Darwin" / "libvk_swiftshader.dylib", runtimes / rid / "native" / "libvk_swiftshader.dylib", FileExistsPolicy.Overwrite);
                             CopyFile(buildDir / "Darwin" / "vk_swiftshader_icd.json", runtimes / rid / "native" / "vk_swiftshader_icd.json", FileExistsPolicy.Overwrite);
