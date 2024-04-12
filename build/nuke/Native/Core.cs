@@ -63,7 +63,7 @@ partial class Build {
             }
             else if (OperatingSystem.IsMacOS())
             {
-                glob ??= "src/Native/**/libMoltenVK.a src/Native/**/*.dylib";
+                glob ??= "src/Native/**/*.a src/Native/**/*.dylib";
             }
             else if (OperatingSystem.IsLinux())
             {
