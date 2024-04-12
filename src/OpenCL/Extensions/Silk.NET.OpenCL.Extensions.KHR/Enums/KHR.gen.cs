@@ -53,6 +53,10 @@ namespace Silk.NET.OpenCL.Extensions.KHR
         Flags = 0x1293,
         [NativeName("Name", "CL_COMMAND_BUFFER_FLAGS_KHR")]
         CommandBufferFlagsKhr = 0x1293,
+        [NativeName("Name", "CL_COMMAND_BUFFER_MUTABLE_DISPATCH_ASSERTS_KHR")]
+        MutableDispatchAsserts = 0x12B7,
+        [NativeName("Name", "CL_COMMAND_BUFFER_MUTABLE_DISPATCH_ASSERTS_KHR")]
+        CommandBufferMutableDispatchAssertsKhr = 0x12B7,
         [NativeName("Name", "CL_COMMAND_BUFFER_STATE_RECORDING_KHR")]
         Recording = 0x0,
         [NativeName("Name", "CL_COMMAND_BUFFER_STATE_RECORDING_KHR")]
@@ -295,6 +299,10 @@ namespace Silk.NET.OpenCL.Extensions.KHR
         DispatchLocalWorkSize = 0x12A7,
         [NativeName("Name", "CL_MUTABLE_DISPATCH_LOCAL_WORK_SIZE_KHR")]
         MutableDispatchLocalWorkSizeKhr = 0x12A7,
+        [NativeName("Name", "CL_MUTABLE_DISPATCH_ASSERT_NO_ADDITIONAL_WORK_GROUPS_KHR")]
+        NoAdditionalWorkGroups = 0x1,
+        [NativeName("Name", "CL_MUTABLE_DISPATCH_ASSERT_NO_ADDITIONAL_WORK_GROUPS_KHR")]
+        MutableDispatchAssertNoAdditionalWorkGroupsKhr = 0x1,
         [NativeName("Name", "CL_MUTABLE_DISPATCH_GLOBAL_OFFSET_KHR")]
         GlobalOffset = 0x1,
         [NativeName("Name", "CL_MUTABLE_DISPATCH_GLOBAL_OFFSET_KHR")]
@@ -316,9 +324,13 @@ namespace Silk.NET.OpenCL.Extensions.KHR
         [NativeName("Name", "CL_MUTABLE_DISPATCH_EXEC_INFO_KHR")]
         MutableDispatchExecInfoKhr = 0x10,
         [NativeName("Name", "CL_MUTABLE_DISPATCH_UPDATABLE_FIELDS_KHR")]
-        MutableDispatchUpdatableFields = 0x12B1,
+        UpdatableFields = 0x12B1,
         [NativeName("Name", "CL_MUTABLE_DISPATCH_UPDATABLE_FIELDS_KHR")]
         MutableDispatchUpdatableFieldsKhr = 0x12B1,
+        [NativeName("Name", "CL_MUTABLE_DISPATCH_ASSERTS_KHR")]
+        Asserts = 0x12B8,
+        [NativeName("Name", "CL_MUTABLE_DISPATCH_ASSERTS_KHR")]
+        MutableDispatchAssertsKhr = 0x12B8,
         [NativeName("Name", "CL_COMMAND_BUFFER_PLATFORM_UNIVERSAL_SYNC_KHR")]
         UniversalSync = 0x1,
         [NativeName("Name", "CL_COMMAND_BUFFER_PLATFORM_UNIVERSAL_SYNC_KHR")]

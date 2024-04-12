@@ -74,6 +74,9 @@ namespace Silk.NET.Vulkan
         [NativeName("Name", "VK_MAX_SHADER_MODULE_IDENTIFIER_SIZE_EXT")]
         public const uint MaxShaderModuleIdentifierSizeExt = unchecked((uint) 32);
         [NativeName("Type", "")]
+        [NativeName("Name", "VK_MAX_VIDEO_AV1_REFERENCES_PER_FRAME_KHR")]
+        public const uint MaxVideoAV1ReferencesPerFrameKhr = unchecked((uint) 7);
+        [NativeName("Type", "")]
         [NativeName("Name", "VK_QUEUE_FAMILY_EXTERNAL")]
         public const uint QueueFamilyExternal = unchecked((uint) (~1U));
         [NativeName("Type", "")]
@@ -2740,11 +2743,11 @@ namespace Silk.NET.Vulkan
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkMapMemory", Convention = CallingConvention.Winapi)]
-        public unsafe partial Result MapMemory([Count(Count = 0)] Device device, [Count(Count = 0)] DeviceMemory memory, [Count(Count = 0)] ulong offset, [Count(Count = 0)] ulong size, [Count(Count = 0)] uint flags, [Count(Count = 0)] void** ppData);
+        public unsafe partial Result MapMemory([Count(Count = 0)] Device device, [Count(Count = 0)] DeviceMemory memory, [Count(Count = 0)] ulong offset, [Count(Count = 0)] ulong size, [Count(Count = 0)] MemoryMapFlags flags, [Count(Count = 0)] void** ppData);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkMapMemory", Convention = CallingConvention.Winapi)]
-        public unsafe partial Result MapMemory([Count(Count = 0)] Device device, [Count(Count = 0)] DeviceMemory memory, [Count(Count = 0)] ulong offset, [Count(Count = 0)] ulong size, [Count(Count = 0)] uint flags, [Count(Count = 0)] ref void* ppData);
+        public unsafe partial Result MapMemory([Count(Count = 0)] Device device, [Count(Count = 0)] DeviceMemory memory, [Count(Count = 0)] ulong offset, [Count(Count = 0)] ulong size, [Count(Count = 0)] MemoryMapFlags flags, [Count(Count = 0)] ref void* ppData);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkMergePipelineCaches", Convention = CallingConvention.Winapi)]

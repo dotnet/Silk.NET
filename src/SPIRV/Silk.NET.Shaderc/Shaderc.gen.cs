@@ -463,559 +463,564 @@ namespace Silk.NET.Shaderc
         public unsafe partial void CompileOptionsSetHlsl16bitTypes(CompileOptions* options, Silk.NET.Core.Bool32 enable);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 493, Column 21 in shaderc.h")]
+        [NativeName("Src", "Line 495, Column 21 in shaderc.h")]
+        [NativeApi(EntryPoint = "shaderc_compile_options_set_vulkan_rules_relaxed")]
+        public unsafe partial void CompileOptionsSetVulkanRulesRelaxed(CompileOptions* options, Silk.NET.Core.Bool32 enable);
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 499, Column 21 in shaderc.h")]
         [NativeApi(EntryPoint = "shaderc_compile_options_set_invert_y")]
         public unsafe partial void CompileOptionsSetInvertY(CompileOptions* options, Silk.NET.Core.Bool32 enable);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 500, Column 21 in shaderc.h")]
+        [NativeName("Src", "Line 506, Column 21 in shaderc.h")]
         [NativeApi(EntryPoint = "shaderc_compile_options_set_nan_clamp")]
         public unsafe partial void CompileOptionsSetNanClamp(CompileOptions* options, Silk.NET.Core.Bool32 enable);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 526, Column 45 in shaderc.h")]
+        [NativeName("Src", "Line 532, Column 45 in shaderc.h")]
         [NativeApi(EntryPoint = "shaderc_compile_into_spv")]
         public unsafe partial CompilationResult* CompileIntoSpv(Compiler* compiler, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* source_text, nuint source_text_size, ShaderKind shader_kind, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* input_file_name, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* entry_point_name, CompileOptions* additional_options);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 526, Column 45 in shaderc.h")]
+        [NativeName("Src", "Line 532, Column 45 in shaderc.h")]
         [NativeApi(EntryPoint = "shaderc_compile_into_spv")]
         public unsafe partial CompilationResult* CompileIntoSpv(Compiler* compiler, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* source_text, nuint source_text_size, ShaderKind shader_kind, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* input_file_name, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte entry_point_name, CompileOptions* additional_options);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 526, Column 45 in shaderc.h")]
+        [NativeName("Src", "Line 532, Column 45 in shaderc.h")]
         [NativeApi(EntryPoint = "shaderc_compile_into_spv")]
         public unsafe partial CompilationResult* CompileIntoSpv(Compiler* compiler, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* source_text, nuint source_text_size, ShaderKind shader_kind, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* input_file_name, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string entry_point_name, CompileOptions* additional_options);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 526, Column 45 in shaderc.h")]
+        [NativeName("Src", "Line 532, Column 45 in shaderc.h")]
         [NativeApi(EntryPoint = "shaderc_compile_into_spv")]
         public unsafe partial CompilationResult* CompileIntoSpv(Compiler* compiler, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* source_text, nuint source_text_size, ShaderKind shader_kind, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte input_file_name, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* entry_point_name, CompileOptions* additional_options);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 526, Column 45 in shaderc.h")]
+        [NativeName("Src", "Line 532, Column 45 in shaderc.h")]
         [NativeApi(EntryPoint = "shaderc_compile_into_spv")]
         public unsafe partial CompilationResult* CompileIntoSpv(Compiler* compiler, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* source_text, nuint source_text_size, ShaderKind shader_kind, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte input_file_name, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte entry_point_name, CompileOptions* additional_options);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 526, Column 45 in shaderc.h")]
+        [NativeName("Src", "Line 532, Column 45 in shaderc.h")]
         [NativeApi(EntryPoint = "shaderc_compile_into_spv")]
         public unsafe partial CompilationResult* CompileIntoSpv(Compiler* compiler, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* source_text, nuint source_text_size, ShaderKind shader_kind, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte input_file_name, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string entry_point_name, CompileOptions* additional_options);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 526, Column 45 in shaderc.h")]
+        [NativeName("Src", "Line 532, Column 45 in shaderc.h")]
         [NativeApi(EntryPoint = "shaderc_compile_into_spv")]
         public unsafe partial CompilationResult* CompileIntoSpv(Compiler* compiler, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* source_text, nuint source_text_size, ShaderKind shader_kind, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string input_file_name, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* entry_point_name, CompileOptions* additional_options);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 526, Column 45 in shaderc.h")]
+        [NativeName("Src", "Line 532, Column 45 in shaderc.h")]
         [NativeApi(EntryPoint = "shaderc_compile_into_spv")]
         public unsafe partial CompilationResult* CompileIntoSpv(Compiler* compiler, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* source_text, nuint source_text_size, ShaderKind shader_kind, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string input_file_name, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte entry_point_name, CompileOptions* additional_options);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 526, Column 45 in shaderc.h")]
+        [NativeName("Src", "Line 532, Column 45 in shaderc.h")]
         [NativeApi(EntryPoint = "shaderc_compile_into_spv")]
         public unsafe partial CompilationResult* CompileIntoSpv(Compiler* compiler, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* source_text, nuint source_text_size, ShaderKind shader_kind, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string input_file_name, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string entry_point_name, CompileOptions* additional_options);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 526, Column 45 in shaderc.h")]
+        [NativeName("Src", "Line 532, Column 45 in shaderc.h")]
         [NativeApi(EntryPoint = "shaderc_compile_into_spv")]
         public unsafe partial CompilationResult* CompileIntoSpv(Compiler* compiler, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte source_text, nuint source_text_size, ShaderKind shader_kind, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* input_file_name, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* entry_point_name, CompileOptions* additional_options);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 526, Column 45 in shaderc.h")]
+        [NativeName("Src", "Line 532, Column 45 in shaderc.h")]
         [NativeApi(EntryPoint = "shaderc_compile_into_spv")]
         public unsafe partial CompilationResult* CompileIntoSpv(Compiler* compiler, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte source_text, nuint source_text_size, ShaderKind shader_kind, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* input_file_name, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte entry_point_name, CompileOptions* additional_options);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 526, Column 45 in shaderc.h")]
+        [NativeName("Src", "Line 532, Column 45 in shaderc.h")]
         [NativeApi(EntryPoint = "shaderc_compile_into_spv")]
         public unsafe partial CompilationResult* CompileIntoSpv(Compiler* compiler, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte source_text, nuint source_text_size, ShaderKind shader_kind, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* input_file_name, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string entry_point_name, CompileOptions* additional_options);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 526, Column 45 in shaderc.h")]
+        [NativeName("Src", "Line 532, Column 45 in shaderc.h")]
         [NativeApi(EntryPoint = "shaderc_compile_into_spv")]
         public unsafe partial CompilationResult* CompileIntoSpv(Compiler* compiler, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte source_text, nuint source_text_size, ShaderKind shader_kind, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte input_file_name, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* entry_point_name, CompileOptions* additional_options);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 526, Column 45 in shaderc.h")]
+        [NativeName("Src", "Line 532, Column 45 in shaderc.h")]
         [NativeApi(EntryPoint = "shaderc_compile_into_spv")]
         public unsafe partial CompilationResult* CompileIntoSpv(Compiler* compiler, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte source_text, nuint source_text_size, ShaderKind shader_kind, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte input_file_name, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte entry_point_name, CompileOptions* additional_options);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 526, Column 45 in shaderc.h")]
+        [NativeName("Src", "Line 532, Column 45 in shaderc.h")]
         [NativeApi(EntryPoint = "shaderc_compile_into_spv")]
         public unsafe partial CompilationResult* CompileIntoSpv(Compiler* compiler, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte source_text, nuint source_text_size, ShaderKind shader_kind, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte input_file_name, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string entry_point_name, CompileOptions* additional_options);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 526, Column 45 in shaderc.h")]
+        [NativeName("Src", "Line 532, Column 45 in shaderc.h")]
         [NativeApi(EntryPoint = "shaderc_compile_into_spv")]
         public unsafe partial CompilationResult* CompileIntoSpv(Compiler* compiler, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte source_text, nuint source_text_size, ShaderKind shader_kind, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string input_file_name, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* entry_point_name, CompileOptions* additional_options);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 526, Column 45 in shaderc.h")]
+        [NativeName("Src", "Line 532, Column 45 in shaderc.h")]
         [NativeApi(EntryPoint = "shaderc_compile_into_spv")]
         public unsafe partial CompilationResult* CompileIntoSpv(Compiler* compiler, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte source_text, nuint source_text_size, ShaderKind shader_kind, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string input_file_name, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte entry_point_name, CompileOptions* additional_options);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 526, Column 45 in shaderc.h")]
+        [NativeName("Src", "Line 532, Column 45 in shaderc.h")]
         [NativeApi(EntryPoint = "shaderc_compile_into_spv")]
         public unsafe partial CompilationResult* CompileIntoSpv(Compiler* compiler, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte source_text, nuint source_text_size, ShaderKind shader_kind, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string input_file_name, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string entry_point_name, CompileOptions* additional_options);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 526, Column 45 in shaderc.h")]
+        [NativeName("Src", "Line 532, Column 45 in shaderc.h")]
         [NativeApi(EntryPoint = "shaderc_compile_into_spv")]
         public unsafe partial CompilationResult* CompileIntoSpv(Compiler* compiler, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string source_text, nuint source_text_size, ShaderKind shader_kind, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* input_file_name, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* entry_point_name, CompileOptions* additional_options);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 526, Column 45 in shaderc.h")]
+        [NativeName("Src", "Line 532, Column 45 in shaderc.h")]
         [NativeApi(EntryPoint = "shaderc_compile_into_spv")]
         public unsafe partial CompilationResult* CompileIntoSpv(Compiler* compiler, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string source_text, nuint source_text_size, ShaderKind shader_kind, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* input_file_name, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte entry_point_name, CompileOptions* additional_options);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 526, Column 45 in shaderc.h")]
+        [NativeName("Src", "Line 532, Column 45 in shaderc.h")]
         [NativeApi(EntryPoint = "shaderc_compile_into_spv")]
         public unsafe partial CompilationResult* CompileIntoSpv(Compiler* compiler, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string source_text, nuint source_text_size, ShaderKind shader_kind, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* input_file_name, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string entry_point_name, CompileOptions* additional_options);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 526, Column 45 in shaderc.h")]
+        [NativeName("Src", "Line 532, Column 45 in shaderc.h")]
         [NativeApi(EntryPoint = "shaderc_compile_into_spv")]
         public unsafe partial CompilationResult* CompileIntoSpv(Compiler* compiler, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string source_text, nuint source_text_size, ShaderKind shader_kind, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte input_file_name, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* entry_point_name, CompileOptions* additional_options);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 526, Column 45 in shaderc.h")]
+        [NativeName("Src", "Line 532, Column 45 in shaderc.h")]
         [NativeApi(EntryPoint = "shaderc_compile_into_spv")]
         public unsafe partial CompilationResult* CompileIntoSpv(Compiler* compiler, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string source_text, nuint source_text_size, ShaderKind shader_kind, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte input_file_name, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte entry_point_name, CompileOptions* additional_options);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 526, Column 45 in shaderc.h")]
+        [NativeName("Src", "Line 532, Column 45 in shaderc.h")]
         [NativeApi(EntryPoint = "shaderc_compile_into_spv")]
         public unsafe partial CompilationResult* CompileIntoSpv(Compiler* compiler, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string source_text, nuint source_text_size, ShaderKind shader_kind, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte input_file_name, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string entry_point_name, CompileOptions* additional_options);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 526, Column 45 in shaderc.h")]
+        [NativeName("Src", "Line 532, Column 45 in shaderc.h")]
         [NativeApi(EntryPoint = "shaderc_compile_into_spv")]
         public unsafe partial CompilationResult* CompileIntoSpv(Compiler* compiler, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string source_text, nuint source_text_size, ShaderKind shader_kind, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string input_file_name, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* entry_point_name, CompileOptions* additional_options);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 526, Column 45 in shaderc.h")]
+        [NativeName("Src", "Line 532, Column 45 in shaderc.h")]
         [NativeApi(EntryPoint = "shaderc_compile_into_spv")]
         public unsafe partial CompilationResult* CompileIntoSpv(Compiler* compiler, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string source_text, nuint source_text_size, ShaderKind shader_kind, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string input_file_name, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte entry_point_name, CompileOptions* additional_options);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 526, Column 45 in shaderc.h")]
+        [NativeName("Src", "Line 532, Column 45 in shaderc.h")]
         [NativeApi(EntryPoint = "shaderc_compile_into_spv")]
         public unsafe partial CompilationResult* CompileIntoSpv(Compiler* compiler, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string source_text, nuint source_text_size, ShaderKind shader_kind, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string input_file_name, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string entry_point_name, CompileOptions* additional_options);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 535, Column 45 in shaderc.h")]
+        [NativeName("Src", "Line 541, Column 45 in shaderc.h")]
         [NativeApi(EntryPoint = "shaderc_compile_into_spv_assembly")]
         public unsafe partial CompilationResult* CompileIntoSpvAssembly(Compiler* compiler, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* source_text, nuint source_text_size, ShaderKind shader_kind, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* input_file_name, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* entry_point_name, CompileOptions* additional_options);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 535, Column 45 in shaderc.h")]
+        [NativeName("Src", "Line 541, Column 45 in shaderc.h")]
         [NativeApi(EntryPoint = "shaderc_compile_into_spv_assembly")]
         public unsafe partial CompilationResult* CompileIntoSpvAssembly(Compiler* compiler, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* source_text, nuint source_text_size, ShaderKind shader_kind, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* input_file_name, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte entry_point_name, CompileOptions* additional_options);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 535, Column 45 in shaderc.h")]
+        [NativeName("Src", "Line 541, Column 45 in shaderc.h")]
         [NativeApi(EntryPoint = "shaderc_compile_into_spv_assembly")]
         public unsafe partial CompilationResult* CompileIntoSpvAssembly(Compiler* compiler, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* source_text, nuint source_text_size, ShaderKind shader_kind, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* input_file_name, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string entry_point_name, CompileOptions* additional_options);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 535, Column 45 in shaderc.h")]
+        [NativeName("Src", "Line 541, Column 45 in shaderc.h")]
         [NativeApi(EntryPoint = "shaderc_compile_into_spv_assembly")]
         public unsafe partial CompilationResult* CompileIntoSpvAssembly(Compiler* compiler, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* source_text, nuint source_text_size, ShaderKind shader_kind, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte input_file_name, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* entry_point_name, CompileOptions* additional_options);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 535, Column 45 in shaderc.h")]
+        [NativeName("Src", "Line 541, Column 45 in shaderc.h")]
         [NativeApi(EntryPoint = "shaderc_compile_into_spv_assembly")]
         public unsafe partial CompilationResult* CompileIntoSpvAssembly(Compiler* compiler, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* source_text, nuint source_text_size, ShaderKind shader_kind, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte input_file_name, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte entry_point_name, CompileOptions* additional_options);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 535, Column 45 in shaderc.h")]
+        [NativeName("Src", "Line 541, Column 45 in shaderc.h")]
         [NativeApi(EntryPoint = "shaderc_compile_into_spv_assembly")]
         public unsafe partial CompilationResult* CompileIntoSpvAssembly(Compiler* compiler, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* source_text, nuint source_text_size, ShaderKind shader_kind, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte input_file_name, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string entry_point_name, CompileOptions* additional_options);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 535, Column 45 in shaderc.h")]
+        [NativeName("Src", "Line 541, Column 45 in shaderc.h")]
         [NativeApi(EntryPoint = "shaderc_compile_into_spv_assembly")]
         public unsafe partial CompilationResult* CompileIntoSpvAssembly(Compiler* compiler, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* source_text, nuint source_text_size, ShaderKind shader_kind, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string input_file_name, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* entry_point_name, CompileOptions* additional_options);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 535, Column 45 in shaderc.h")]
+        [NativeName("Src", "Line 541, Column 45 in shaderc.h")]
         [NativeApi(EntryPoint = "shaderc_compile_into_spv_assembly")]
         public unsafe partial CompilationResult* CompileIntoSpvAssembly(Compiler* compiler, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* source_text, nuint source_text_size, ShaderKind shader_kind, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string input_file_name, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte entry_point_name, CompileOptions* additional_options);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 535, Column 45 in shaderc.h")]
+        [NativeName("Src", "Line 541, Column 45 in shaderc.h")]
         [NativeApi(EntryPoint = "shaderc_compile_into_spv_assembly")]
         public unsafe partial CompilationResult* CompileIntoSpvAssembly(Compiler* compiler, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* source_text, nuint source_text_size, ShaderKind shader_kind, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string input_file_name, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string entry_point_name, CompileOptions* additional_options);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 535, Column 45 in shaderc.h")]
+        [NativeName("Src", "Line 541, Column 45 in shaderc.h")]
         [NativeApi(EntryPoint = "shaderc_compile_into_spv_assembly")]
         public unsafe partial CompilationResult* CompileIntoSpvAssembly(Compiler* compiler, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte source_text, nuint source_text_size, ShaderKind shader_kind, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* input_file_name, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* entry_point_name, CompileOptions* additional_options);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 535, Column 45 in shaderc.h")]
+        [NativeName("Src", "Line 541, Column 45 in shaderc.h")]
         [NativeApi(EntryPoint = "shaderc_compile_into_spv_assembly")]
         public unsafe partial CompilationResult* CompileIntoSpvAssembly(Compiler* compiler, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte source_text, nuint source_text_size, ShaderKind shader_kind, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* input_file_name, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte entry_point_name, CompileOptions* additional_options);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 535, Column 45 in shaderc.h")]
+        [NativeName("Src", "Line 541, Column 45 in shaderc.h")]
         [NativeApi(EntryPoint = "shaderc_compile_into_spv_assembly")]
         public unsafe partial CompilationResult* CompileIntoSpvAssembly(Compiler* compiler, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte source_text, nuint source_text_size, ShaderKind shader_kind, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* input_file_name, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string entry_point_name, CompileOptions* additional_options);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 535, Column 45 in shaderc.h")]
+        [NativeName("Src", "Line 541, Column 45 in shaderc.h")]
         [NativeApi(EntryPoint = "shaderc_compile_into_spv_assembly")]
         public unsafe partial CompilationResult* CompileIntoSpvAssembly(Compiler* compiler, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte source_text, nuint source_text_size, ShaderKind shader_kind, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte input_file_name, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* entry_point_name, CompileOptions* additional_options);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 535, Column 45 in shaderc.h")]
+        [NativeName("Src", "Line 541, Column 45 in shaderc.h")]
         [NativeApi(EntryPoint = "shaderc_compile_into_spv_assembly")]
         public unsafe partial CompilationResult* CompileIntoSpvAssembly(Compiler* compiler, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte source_text, nuint source_text_size, ShaderKind shader_kind, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte input_file_name, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte entry_point_name, CompileOptions* additional_options);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 535, Column 45 in shaderc.h")]
+        [NativeName("Src", "Line 541, Column 45 in shaderc.h")]
         [NativeApi(EntryPoint = "shaderc_compile_into_spv_assembly")]
         public unsafe partial CompilationResult* CompileIntoSpvAssembly(Compiler* compiler, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte source_text, nuint source_text_size, ShaderKind shader_kind, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte input_file_name, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string entry_point_name, CompileOptions* additional_options);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 535, Column 45 in shaderc.h")]
+        [NativeName("Src", "Line 541, Column 45 in shaderc.h")]
         [NativeApi(EntryPoint = "shaderc_compile_into_spv_assembly")]
         public unsafe partial CompilationResult* CompileIntoSpvAssembly(Compiler* compiler, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte source_text, nuint source_text_size, ShaderKind shader_kind, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string input_file_name, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* entry_point_name, CompileOptions* additional_options);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 535, Column 45 in shaderc.h")]
+        [NativeName("Src", "Line 541, Column 45 in shaderc.h")]
         [NativeApi(EntryPoint = "shaderc_compile_into_spv_assembly")]
         public unsafe partial CompilationResult* CompileIntoSpvAssembly(Compiler* compiler, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte source_text, nuint source_text_size, ShaderKind shader_kind, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string input_file_name, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte entry_point_name, CompileOptions* additional_options);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 535, Column 45 in shaderc.h")]
+        [NativeName("Src", "Line 541, Column 45 in shaderc.h")]
         [NativeApi(EntryPoint = "shaderc_compile_into_spv_assembly")]
         public unsafe partial CompilationResult* CompileIntoSpvAssembly(Compiler* compiler, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte source_text, nuint source_text_size, ShaderKind shader_kind, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string input_file_name, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string entry_point_name, CompileOptions* additional_options);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 535, Column 45 in shaderc.h")]
+        [NativeName("Src", "Line 541, Column 45 in shaderc.h")]
         [NativeApi(EntryPoint = "shaderc_compile_into_spv_assembly")]
         public unsafe partial CompilationResult* CompileIntoSpvAssembly(Compiler* compiler, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string source_text, nuint source_text_size, ShaderKind shader_kind, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* input_file_name, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* entry_point_name, CompileOptions* additional_options);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 535, Column 45 in shaderc.h")]
+        [NativeName("Src", "Line 541, Column 45 in shaderc.h")]
         [NativeApi(EntryPoint = "shaderc_compile_into_spv_assembly")]
         public unsafe partial CompilationResult* CompileIntoSpvAssembly(Compiler* compiler, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string source_text, nuint source_text_size, ShaderKind shader_kind, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* input_file_name, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte entry_point_name, CompileOptions* additional_options);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 535, Column 45 in shaderc.h")]
+        [NativeName("Src", "Line 541, Column 45 in shaderc.h")]
         [NativeApi(EntryPoint = "shaderc_compile_into_spv_assembly")]
         public unsafe partial CompilationResult* CompileIntoSpvAssembly(Compiler* compiler, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string source_text, nuint source_text_size, ShaderKind shader_kind, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* input_file_name, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string entry_point_name, CompileOptions* additional_options);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 535, Column 45 in shaderc.h")]
+        [NativeName("Src", "Line 541, Column 45 in shaderc.h")]
         [NativeApi(EntryPoint = "shaderc_compile_into_spv_assembly")]
         public unsafe partial CompilationResult* CompileIntoSpvAssembly(Compiler* compiler, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string source_text, nuint source_text_size, ShaderKind shader_kind, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte input_file_name, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* entry_point_name, CompileOptions* additional_options);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 535, Column 45 in shaderc.h")]
+        [NativeName("Src", "Line 541, Column 45 in shaderc.h")]
         [NativeApi(EntryPoint = "shaderc_compile_into_spv_assembly")]
         public unsafe partial CompilationResult* CompileIntoSpvAssembly(Compiler* compiler, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string source_text, nuint source_text_size, ShaderKind shader_kind, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte input_file_name, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte entry_point_name, CompileOptions* additional_options);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 535, Column 45 in shaderc.h")]
+        [NativeName("Src", "Line 541, Column 45 in shaderc.h")]
         [NativeApi(EntryPoint = "shaderc_compile_into_spv_assembly")]
         public unsafe partial CompilationResult* CompileIntoSpvAssembly(Compiler* compiler, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string source_text, nuint source_text_size, ShaderKind shader_kind, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte input_file_name, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string entry_point_name, CompileOptions* additional_options);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 535, Column 45 in shaderc.h")]
+        [NativeName("Src", "Line 541, Column 45 in shaderc.h")]
         [NativeApi(EntryPoint = "shaderc_compile_into_spv_assembly")]
         public unsafe partial CompilationResult* CompileIntoSpvAssembly(Compiler* compiler, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string source_text, nuint source_text_size, ShaderKind shader_kind, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string input_file_name, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* entry_point_name, CompileOptions* additional_options);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 535, Column 45 in shaderc.h")]
+        [NativeName("Src", "Line 541, Column 45 in shaderc.h")]
         [NativeApi(EntryPoint = "shaderc_compile_into_spv_assembly")]
         public unsafe partial CompilationResult* CompileIntoSpvAssembly(Compiler* compiler, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string source_text, nuint source_text_size, ShaderKind shader_kind, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string input_file_name, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte entry_point_name, CompileOptions* additional_options);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 535, Column 45 in shaderc.h")]
+        [NativeName("Src", "Line 541, Column 45 in shaderc.h")]
         [NativeApi(EntryPoint = "shaderc_compile_into_spv_assembly")]
         public unsafe partial CompilationResult* CompileIntoSpvAssembly(Compiler* compiler, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string source_text, nuint source_text_size, ShaderKind shader_kind, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string input_file_name, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string entry_point_name, CompileOptions* additional_options);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 543, Column 45 in shaderc.h")]
+        [NativeName("Src", "Line 549, Column 45 in shaderc.h")]
         [NativeApi(EntryPoint = "shaderc_compile_into_preprocessed_text")]
         public unsafe partial CompilationResult* CompileIntoPreprocessedText(Compiler* compiler, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* source_text, nuint source_text_size, ShaderKind shader_kind, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* input_file_name, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* entry_point_name, CompileOptions* additional_options);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 543, Column 45 in shaderc.h")]
+        [NativeName("Src", "Line 549, Column 45 in shaderc.h")]
         [NativeApi(EntryPoint = "shaderc_compile_into_preprocessed_text")]
         public unsafe partial CompilationResult* CompileIntoPreprocessedText(Compiler* compiler, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* source_text, nuint source_text_size, ShaderKind shader_kind, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* input_file_name, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte entry_point_name, CompileOptions* additional_options);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 543, Column 45 in shaderc.h")]
+        [NativeName("Src", "Line 549, Column 45 in shaderc.h")]
         [NativeApi(EntryPoint = "shaderc_compile_into_preprocessed_text")]
         public unsafe partial CompilationResult* CompileIntoPreprocessedText(Compiler* compiler, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* source_text, nuint source_text_size, ShaderKind shader_kind, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* input_file_name, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string entry_point_name, CompileOptions* additional_options);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 543, Column 45 in shaderc.h")]
+        [NativeName("Src", "Line 549, Column 45 in shaderc.h")]
         [NativeApi(EntryPoint = "shaderc_compile_into_preprocessed_text")]
         public unsafe partial CompilationResult* CompileIntoPreprocessedText(Compiler* compiler, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* source_text, nuint source_text_size, ShaderKind shader_kind, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte input_file_name, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* entry_point_name, CompileOptions* additional_options);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 543, Column 45 in shaderc.h")]
+        [NativeName("Src", "Line 549, Column 45 in shaderc.h")]
         [NativeApi(EntryPoint = "shaderc_compile_into_preprocessed_text")]
         public unsafe partial CompilationResult* CompileIntoPreprocessedText(Compiler* compiler, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* source_text, nuint source_text_size, ShaderKind shader_kind, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte input_file_name, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte entry_point_name, CompileOptions* additional_options);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 543, Column 45 in shaderc.h")]
+        [NativeName("Src", "Line 549, Column 45 in shaderc.h")]
         [NativeApi(EntryPoint = "shaderc_compile_into_preprocessed_text")]
         public unsafe partial CompilationResult* CompileIntoPreprocessedText(Compiler* compiler, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* source_text, nuint source_text_size, ShaderKind shader_kind, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte input_file_name, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string entry_point_name, CompileOptions* additional_options);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 543, Column 45 in shaderc.h")]
+        [NativeName("Src", "Line 549, Column 45 in shaderc.h")]
         [NativeApi(EntryPoint = "shaderc_compile_into_preprocessed_text")]
         public unsafe partial CompilationResult* CompileIntoPreprocessedText(Compiler* compiler, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* source_text, nuint source_text_size, ShaderKind shader_kind, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string input_file_name, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* entry_point_name, CompileOptions* additional_options);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 543, Column 45 in shaderc.h")]
+        [NativeName("Src", "Line 549, Column 45 in shaderc.h")]
         [NativeApi(EntryPoint = "shaderc_compile_into_preprocessed_text")]
         public unsafe partial CompilationResult* CompileIntoPreprocessedText(Compiler* compiler, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* source_text, nuint source_text_size, ShaderKind shader_kind, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string input_file_name, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte entry_point_name, CompileOptions* additional_options);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 543, Column 45 in shaderc.h")]
+        [NativeName("Src", "Line 549, Column 45 in shaderc.h")]
         [NativeApi(EntryPoint = "shaderc_compile_into_preprocessed_text")]
         public unsafe partial CompilationResult* CompileIntoPreprocessedText(Compiler* compiler, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* source_text, nuint source_text_size, ShaderKind shader_kind, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string input_file_name, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string entry_point_name, CompileOptions* additional_options);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 543, Column 45 in shaderc.h")]
+        [NativeName("Src", "Line 549, Column 45 in shaderc.h")]
         [NativeApi(EntryPoint = "shaderc_compile_into_preprocessed_text")]
         public unsafe partial CompilationResult* CompileIntoPreprocessedText(Compiler* compiler, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte source_text, nuint source_text_size, ShaderKind shader_kind, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* input_file_name, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* entry_point_name, CompileOptions* additional_options);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 543, Column 45 in shaderc.h")]
+        [NativeName("Src", "Line 549, Column 45 in shaderc.h")]
         [NativeApi(EntryPoint = "shaderc_compile_into_preprocessed_text")]
         public unsafe partial CompilationResult* CompileIntoPreprocessedText(Compiler* compiler, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte source_text, nuint source_text_size, ShaderKind shader_kind, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* input_file_name, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte entry_point_name, CompileOptions* additional_options);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 543, Column 45 in shaderc.h")]
+        [NativeName("Src", "Line 549, Column 45 in shaderc.h")]
         [NativeApi(EntryPoint = "shaderc_compile_into_preprocessed_text")]
         public unsafe partial CompilationResult* CompileIntoPreprocessedText(Compiler* compiler, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte source_text, nuint source_text_size, ShaderKind shader_kind, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* input_file_name, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string entry_point_name, CompileOptions* additional_options);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 543, Column 45 in shaderc.h")]
+        [NativeName("Src", "Line 549, Column 45 in shaderc.h")]
         [NativeApi(EntryPoint = "shaderc_compile_into_preprocessed_text")]
         public unsafe partial CompilationResult* CompileIntoPreprocessedText(Compiler* compiler, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte source_text, nuint source_text_size, ShaderKind shader_kind, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte input_file_name, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* entry_point_name, CompileOptions* additional_options);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 543, Column 45 in shaderc.h")]
+        [NativeName("Src", "Line 549, Column 45 in shaderc.h")]
         [NativeApi(EntryPoint = "shaderc_compile_into_preprocessed_text")]
         public unsafe partial CompilationResult* CompileIntoPreprocessedText(Compiler* compiler, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte source_text, nuint source_text_size, ShaderKind shader_kind, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte input_file_name, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte entry_point_name, CompileOptions* additional_options);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 543, Column 45 in shaderc.h")]
+        [NativeName("Src", "Line 549, Column 45 in shaderc.h")]
         [NativeApi(EntryPoint = "shaderc_compile_into_preprocessed_text")]
         public unsafe partial CompilationResult* CompileIntoPreprocessedText(Compiler* compiler, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte source_text, nuint source_text_size, ShaderKind shader_kind, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte input_file_name, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string entry_point_name, CompileOptions* additional_options);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 543, Column 45 in shaderc.h")]
+        [NativeName("Src", "Line 549, Column 45 in shaderc.h")]
         [NativeApi(EntryPoint = "shaderc_compile_into_preprocessed_text")]
         public unsafe partial CompilationResult* CompileIntoPreprocessedText(Compiler* compiler, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte source_text, nuint source_text_size, ShaderKind shader_kind, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string input_file_name, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* entry_point_name, CompileOptions* additional_options);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 543, Column 45 in shaderc.h")]
+        [NativeName("Src", "Line 549, Column 45 in shaderc.h")]
         [NativeApi(EntryPoint = "shaderc_compile_into_preprocessed_text")]
         public unsafe partial CompilationResult* CompileIntoPreprocessedText(Compiler* compiler, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte source_text, nuint source_text_size, ShaderKind shader_kind, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string input_file_name, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte entry_point_name, CompileOptions* additional_options);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 543, Column 45 in shaderc.h")]
+        [NativeName("Src", "Line 549, Column 45 in shaderc.h")]
         [NativeApi(EntryPoint = "shaderc_compile_into_preprocessed_text")]
         public unsafe partial CompilationResult* CompileIntoPreprocessedText(Compiler* compiler, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte source_text, nuint source_text_size, ShaderKind shader_kind, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string input_file_name, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string entry_point_name, CompileOptions* additional_options);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 543, Column 45 in shaderc.h")]
+        [NativeName("Src", "Line 549, Column 45 in shaderc.h")]
         [NativeApi(EntryPoint = "shaderc_compile_into_preprocessed_text")]
         public unsafe partial CompilationResult* CompileIntoPreprocessedText(Compiler* compiler, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string source_text, nuint source_text_size, ShaderKind shader_kind, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* input_file_name, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* entry_point_name, CompileOptions* additional_options);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 543, Column 45 in shaderc.h")]
+        [NativeName("Src", "Line 549, Column 45 in shaderc.h")]
         [NativeApi(EntryPoint = "shaderc_compile_into_preprocessed_text")]
         public unsafe partial CompilationResult* CompileIntoPreprocessedText(Compiler* compiler, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string source_text, nuint source_text_size, ShaderKind shader_kind, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* input_file_name, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte entry_point_name, CompileOptions* additional_options);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 543, Column 45 in shaderc.h")]
+        [NativeName("Src", "Line 549, Column 45 in shaderc.h")]
         [NativeApi(EntryPoint = "shaderc_compile_into_preprocessed_text")]
         public unsafe partial CompilationResult* CompileIntoPreprocessedText(Compiler* compiler, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string source_text, nuint source_text_size, ShaderKind shader_kind, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* input_file_name, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string entry_point_name, CompileOptions* additional_options);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 543, Column 45 in shaderc.h")]
+        [NativeName("Src", "Line 549, Column 45 in shaderc.h")]
         [NativeApi(EntryPoint = "shaderc_compile_into_preprocessed_text")]
         public unsafe partial CompilationResult* CompileIntoPreprocessedText(Compiler* compiler, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string source_text, nuint source_text_size, ShaderKind shader_kind, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte input_file_name, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* entry_point_name, CompileOptions* additional_options);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 543, Column 45 in shaderc.h")]
+        [NativeName("Src", "Line 549, Column 45 in shaderc.h")]
         [NativeApi(EntryPoint = "shaderc_compile_into_preprocessed_text")]
         public unsafe partial CompilationResult* CompileIntoPreprocessedText(Compiler* compiler, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string source_text, nuint source_text_size, ShaderKind shader_kind, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte input_file_name, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte entry_point_name, CompileOptions* additional_options);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 543, Column 45 in shaderc.h")]
+        [NativeName("Src", "Line 549, Column 45 in shaderc.h")]
         [NativeApi(EntryPoint = "shaderc_compile_into_preprocessed_text")]
         public unsafe partial CompilationResult* CompileIntoPreprocessedText(Compiler* compiler, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string source_text, nuint source_text_size, ShaderKind shader_kind, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte input_file_name, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string entry_point_name, CompileOptions* additional_options);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 543, Column 45 in shaderc.h")]
+        [NativeName("Src", "Line 549, Column 45 in shaderc.h")]
         [NativeApi(EntryPoint = "shaderc_compile_into_preprocessed_text")]
         public unsafe partial CompilationResult* CompileIntoPreprocessedText(Compiler* compiler, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string source_text, nuint source_text_size, ShaderKind shader_kind, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string input_file_name, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* entry_point_name, CompileOptions* additional_options);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 543, Column 45 in shaderc.h")]
+        [NativeName("Src", "Line 549, Column 45 in shaderc.h")]
         [NativeApi(EntryPoint = "shaderc_compile_into_preprocessed_text")]
         public unsafe partial CompilationResult* CompileIntoPreprocessedText(Compiler* compiler, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string source_text, nuint source_text_size, ShaderKind shader_kind, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string input_file_name, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte entry_point_name, CompileOptions* additional_options);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 543, Column 45 in shaderc.h")]
+        [NativeName("Src", "Line 549, Column 45 in shaderc.h")]
         [NativeApi(EntryPoint = "shaderc_compile_into_preprocessed_text")]
         public unsafe partial CompilationResult* CompileIntoPreprocessedText(Compiler* compiler, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string source_text, nuint source_text_size, ShaderKind shader_kind, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string input_file_name, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string entry_point_name, CompileOptions* additional_options);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 558, Column 45 in shaderc.h")]
+        [NativeName("Src", "Line 564, Column 45 in shaderc.h")]
         [NativeApi(EntryPoint = "shaderc_assemble_into_spv")]
         public unsafe partial CompilationResult* AssembleIntoSpv(Compiler* compiler, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* source_assembly, nuint source_assembly_size, CompileOptions* additional_options);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 558, Column 45 in shaderc.h")]
+        [NativeName("Src", "Line 564, Column 45 in shaderc.h")]
         [NativeApi(EntryPoint = "shaderc_assemble_into_spv")]
         public unsafe partial CompilationResult* AssembleIntoSpv(Compiler* compiler, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte source_assembly, nuint source_assembly_size, CompileOptions* additional_options);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 558, Column 45 in shaderc.h")]
+        [NativeName("Src", "Line 564, Column 45 in shaderc.h")]
         [NativeApi(EntryPoint = "shaderc_assemble_into_spv")]
         public unsafe partial CompilationResult* AssembleIntoSpv(Compiler* compiler, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string source_assembly, nuint source_assembly_size, CompileOptions* additional_options);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 568, Column 21 in shaderc.h")]
+        [NativeName("Src", "Line 574, Column 21 in shaderc.h")]
         [NativeApi(EntryPoint = "shaderc_result_release")]
         public unsafe partial void ResultRelease(CompilationResult* result);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 572, Column 23 in shaderc.h")]
+        [NativeName("Src", "Line 578, Column 23 in shaderc.h")]
         [NativeApi(EntryPoint = "shaderc_result_get_length")]
         public unsafe partial nuint ResultGetLength(CompilationResult* result);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 575, Column 23 in shaderc.h")]
+        [NativeName("Src", "Line 581, Column 23 in shaderc.h")]
         [NativeApi(EntryPoint = "shaderc_result_get_num_warnings")]
         public unsafe partial nuint ResultGetNumWarnings(CompilationResult* result);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 579, Column 23 in shaderc.h")]
+        [NativeName("Src", "Line 585, Column 23 in shaderc.h")]
         [NativeApi(EntryPoint = "shaderc_result_get_num_errors")]
         public unsafe partial nuint ResultGetNumErrors(CompilationResult* result);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 584, Column 43 in shaderc.h")]
+        [NativeName("Src", "Line 590, Column 43 in shaderc.h")]
         [NativeApi(EntryPoint = "shaderc_result_get_compilation_status")]
         public unsafe partial CompilationStatus ResultGetCompilationStatus(CompilationResult* arg0);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 592, Column 28 in shaderc.h")]
+        [NativeName("Src", "Line 598, Column 28 in shaderc.h")]
         [NativeApi(EntryPoint = "shaderc_result_get_bytes")]
         public unsafe partial byte* ResultGetBytes(CompilationResult* result);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 592, Column 28 in shaderc.h")]
+        [NativeName("Src", "Line 598, Column 28 in shaderc.h")]
         [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
         [NativeApi(EntryPoint = "shaderc_result_get_bytes")]
         public unsafe partial string ResultGetBytesS(CompilationResult* result);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 596, Column 28 in shaderc.h")]
+        [NativeName("Src", "Line 602, Column 28 in shaderc.h")]
         [NativeApi(EntryPoint = "shaderc_result_get_error_message")]
         public unsafe partial byte* ResultGetErrorMessage(CompilationResult* result);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 596, Column 28 in shaderc.h")]
+        [NativeName("Src", "Line 602, Column 28 in shaderc.h")]
         [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
         [NativeApi(EntryPoint = "shaderc_result_get_error_message")]
         public unsafe partial string ResultGetErrorMessageS(CompilationResult* result);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 600, Column 21 in shaderc.h")]
+        [NativeName("Src", "Line 606, Column 21 in shaderc.h")]
         [NativeApi(EntryPoint = "shaderc_get_spv_version")]
         public unsafe partial void GetSpvVersion(uint* version, uint* revision);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 600, Column 21 in shaderc.h")]
+        [NativeName("Src", "Line 606, Column 21 in shaderc.h")]
         [NativeApi(EntryPoint = "shaderc_get_spv_version")]
         public unsafe partial void GetSpvVersion(uint* version, ref uint revision);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 600, Column 21 in shaderc.h")]
+        [NativeName("Src", "Line 606, Column 21 in shaderc.h")]
         [NativeApi(EntryPoint = "shaderc_get_spv_version")]
         public unsafe partial void GetSpvVersion(ref uint version, uint* revision);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 600, Column 21 in shaderc.h")]
+        [NativeName("Src", "Line 606, Column 21 in shaderc.h")]
         [NativeApi(EntryPoint = "shaderc_get_spv_version")]
         public partial void GetSpvVersion(ref uint version, ref uint revision);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 606, Column 21 in shaderc.h")]
+        [NativeName("Src", "Line 612, Column 21 in shaderc.h")]
         [NativeApi(EntryPoint = "shaderc_parse_version_profile")]
         public unsafe partial Silk.NET.Core.Bool32 ParseVersionProfile([Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* str, int* version, Profile* profile);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 606, Column 21 in shaderc.h")]
+        [NativeName("Src", "Line 612, Column 21 in shaderc.h")]
         [NativeApi(EntryPoint = "shaderc_parse_version_profile")]
         public unsafe partial Silk.NET.Core.Bool32 ParseVersionProfile([Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* str, int* version, ref Profile profile);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 606, Column 21 in shaderc.h")]
+        [NativeName("Src", "Line 612, Column 21 in shaderc.h")]
         [NativeApi(EntryPoint = "shaderc_parse_version_profile")]
         public unsafe partial Silk.NET.Core.Bool32 ParseVersionProfile([Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* str, ref int version, Profile* profile);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 606, Column 21 in shaderc.h")]
+        [NativeName("Src", "Line 612, Column 21 in shaderc.h")]
         [NativeApi(EntryPoint = "shaderc_parse_version_profile")]
         public unsafe partial Silk.NET.Core.Bool32 ParseVersionProfile([Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* str, ref int version, ref Profile profile);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 606, Column 21 in shaderc.h")]
+        [NativeName("Src", "Line 612, Column 21 in shaderc.h")]
         [NativeApi(EntryPoint = "shaderc_parse_version_profile")]
         public unsafe partial Silk.NET.Core.Bool32 ParseVersionProfile([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte str, int* version, Profile* profile);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 606, Column 21 in shaderc.h")]
+        [NativeName("Src", "Line 612, Column 21 in shaderc.h")]
         [NativeApi(EntryPoint = "shaderc_parse_version_profile")]
         public unsafe partial Silk.NET.Core.Bool32 ParseVersionProfile([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte str, int* version, ref Profile profile);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 606, Column 21 in shaderc.h")]
+        [NativeName("Src", "Line 612, Column 21 in shaderc.h")]
         [NativeApi(EntryPoint = "shaderc_parse_version_profile")]
         public unsafe partial Silk.NET.Core.Bool32 ParseVersionProfile([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte str, ref int version, Profile* profile);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 606, Column 21 in shaderc.h")]
+        [NativeName("Src", "Line 612, Column 21 in shaderc.h")]
         [NativeApi(EntryPoint = "shaderc_parse_version_profile")]
         public partial Silk.NET.Core.Bool32 ParseVersionProfile([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte str, ref int version, ref Profile profile);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 606, Column 21 in shaderc.h")]
+        [NativeName("Src", "Line 612, Column 21 in shaderc.h")]
         [NativeApi(EntryPoint = "shaderc_parse_version_profile")]
         public unsafe partial Silk.NET.Core.Bool32 ParseVersionProfile([Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string str, int* version, Profile* profile);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 606, Column 21 in shaderc.h")]
+        [NativeName("Src", "Line 612, Column 21 in shaderc.h")]
         [NativeApi(EntryPoint = "shaderc_parse_version_profile")]
         public unsafe partial Silk.NET.Core.Bool32 ParseVersionProfile([Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string str, int* version, ref Profile profile);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 606, Column 21 in shaderc.h")]
+        [NativeName("Src", "Line 612, Column 21 in shaderc.h")]
         [NativeApi(EntryPoint = "shaderc_parse_version_profile")]
         public unsafe partial Silk.NET.Core.Bool32 ParseVersionProfile([Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string str, ref int version, Profile* profile);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 606, Column 21 in shaderc.h")]
+        [NativeName("Src", "Line 612, Column 21 in shaderc.h")]
         [NativeApi(EntryPoint = "shaderc_parse_version_profile")]
         public partial Silk.NET.Core.Bool32 ParseVersionProfile([Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string str, ref int version, ref Profile profile);
 

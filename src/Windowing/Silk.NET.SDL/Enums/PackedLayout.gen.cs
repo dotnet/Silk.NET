@@ -9,7 +9,7 @@ using Silk.NET.Core.Attributes;
 
 namespace Silk.NET.SDL
 {
-    [NativeName("AnonymousName", "__AnonymousEnum_SDL_pixels_L104_C9")]
+    [NativeName("AnonymousName", "__AnonymousEnum_SDL_pixels_L107_C9")]
     [NativeName("Name", "SDL_PackedLayout")]
     public enum PackedLayout : int
     {

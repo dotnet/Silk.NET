@@ -1742,6 +1742,8 @@ namespace Silk.NET.OpenCL
         IncompatibleCommandQueueKhr = unchecked((int) 0xFFFFFFFFFFFFFB8C),
         [NativeName("Name", "CL_INVALID_MUTABLE_COMMAND_KHR")]
         InvalidMutableCommandKhr = unchecked((int) 0xFFFFFFFFFFFFFB8B),
+        [NativeName("Name", "CL_CANCELLED_IMG")]
+        CancelledImg = unchecked((int) 0xFFFFFFFFFFFFFB9A),
         [NativeName("Name", "CL_EVENT_COMMAND_QUEUE")]
         CommandQueue = 0x11D0,
         [NativeName("Name", "CL_EVENT_COMMAND_QUEUE")]
