@@ -23,7 +23,7 @@ namespace Silk.NET.Vulkan
         (
             StructureType? sType = StructureType.VideoDecodeAV1CapabilitiesKhr,
             void* pNext = null,
-            StdVideoAV1Level? maxLevel = null
+            Video.StdVideoAV1Level? maxLevel = null
         ) : this()
         {
             if (sType is not null)
@@ -56,7 +56,7 @@ namespace Silk.NET.Vulkan
         [NativeName("Type", "StdVideoAV1Level")]
         [NativeName("Type.Name", "StdVideoAV1Level")]
         [NativeName("Name", "maxLevel")]
-        public StdVideoAV1Level MaxLevel;
+        public Video.StdVideoAV1Level MaxLevel;
 
         /// <inheritdoc />
         StructureType IStructuredType.StructureType()

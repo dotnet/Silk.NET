@@ -23,7 +23,7 @@ namespace Silk.NET.Vulkan
         (
             StructureType? sType = StructureType.VideoDecodeAV1PictureInfoKhr,
             void* pNext = null,
-            StdVideoDecodeAV1PictureInfo* pStdPictureInfo = null,
+            Video.StdVideoDecodeAV1PictureInfo* pStdPictureInfo = null,
             uint? frameHeaderOffset = null,
             uint? tileCount = null,
             uint* pTileOffsets = null,
@@ -80,7 +80,7 @@ namespace Silk.NET.Vulkan
         [NativeName("Type", "StdVideoDecodeAV1PictureInfo*")]
         [NativeName("Type.Name", "StdVideoDecodeAV1PictureInfo")]
         [NativeName("Name", "pStdPictureInfo")]
-        public StdVideoDecodeAV1PictureInfo* PStdPictureInfo;
+        public Video.StdVideoDecodeAV1PictureInfo* PStdPictureInfo;
         /// <summary></summary>
         [NativeName("Type", "int32_t")]
         [NativeName("Type.Name", "int32_t")]

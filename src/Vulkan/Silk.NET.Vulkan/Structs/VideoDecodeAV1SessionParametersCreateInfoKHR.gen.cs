@@ -23,7 +23,7 @@ namespace Silk.NET.Vulkan
         (
             StructureType? sType = StructureType.VideoDecodeAV1SessionParametersCreateInfoKhr,
             void* pNext = null,
-            StdVideoAV1SequenceHeader* pStdSequenceHeader = null
+            Video.StdVideoAV1SequenceHeader* pStdSequenceHeader = null
         ) : this()
         {
             if (sType is not null)
@@ -56,7 +56,7 @@ namespace Silk.NET.Vulkan
         [NativeName("Type", "StdVideoAV1SequenceHeader*")]
         [NativeName("Type.Name", "StdVideoAV1SequenceHeader")]
         [NativeName("Name", "pStdSequenceHeader")]
-        public StdVideoAV1SequenceHeader* PStdSequenceHeader;
+        public Video.StdVideoAV1SequenceHeader* PStdSequenceHeader;
 
         /// <inheritdoc />
         StructureType IStructuredType.StructureType()

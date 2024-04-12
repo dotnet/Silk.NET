@@ -23,7 +23,7 @@ namespace Silk.NET.Vulkan
         (
             StructureType? sType = StructureType.VideoDecodeAV1ProfileInfoKhr,
             void* pNext = null,
-            StdVideoAV1Profile? stdProfile = null,
+            Video.StdVideoAV1Profile? stdProfile = null,
             Bool32? filmGrainSupport = null
         ) : this()
         {
@@ -62,7 +62,7 @@ namespace Silk.NET.Vulkan
         [NativeName("Type", "StdVideoAV1Profile")]
         [NativeName("Type.Name", "StdVideoAV1Profile")]
         [NativeName("Name", "stdProfile")]
-        public StdVideoAV1Profile StdProfile;
+        public Video.StdVideoAV1Profile StdProfile;
 /// <summary></summary>
         [NativeName("Type", "VkBool32")]
         [NativeName("Type.Name", "VkBool32")]
