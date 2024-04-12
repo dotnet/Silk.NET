@@ -907,11 +907,14 @@ namespace Silk.NET.BuildTools.Cpp
                                 // rename the struct as we've found a typedef for it, and we haven't found a better name
                                 // already.
                                 pfns[wrapper].NativeName = typedefType.Decl.Name;
-                                var name = Naming.TranslateVariable
-                                    (Naming.TrimName(pfns[wrapper].NativeName, task), task.FunctionPrefix);
-                                if (name.ToLower().StartsWith("pfn"))
+                                if (!task.RenamedNativeNames.TryGetValue(typedefType.Decl.Name, out var name))
                                 {
-                                    name = name.Substring(3);
+                                    name = Naming.TranslateVariable
+                                        (Naming.TrimName(pfns[wrapper].NativeName, task), task.FunctionPrefix);
+                                    if (name.ToLower().StartsWith("pfn"))
+                                    {
+                                        name = name.Substring(3);
+                                    }
                                 }
 
                                 var intrinsic = pfns[wrapper].Attributes.First(x => x.Name == "BuildToolsIntrinsic");

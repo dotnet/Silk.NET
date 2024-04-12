@@ -66,7 +66,7 @@ namespace Silk.NET.WebGPU
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1571, Column 18 in webgpu.h")]
-        public static unsafe void AdapterRequestDevice<T0>(this WebGPU thisApi, Adapter* adapter, [Flow(Silk.NET.Core.Native.FlowDirection.In)] DeviceDescriptor* descriptor, PfnAdapterRequestDeviceCallback callback, Span<T0> userdata) where T0 : unmanaged
+        public static unsafe void AdapterRequestDevice<T0>(this WebGPU thisApi, Adapter* adapter, [Flow(Silk.NET.Core.Native.FlowDirection.In)] DeviceDescriptor* descriptor, PfnRequestDeviceCallback callback, Span<T0> userdata) where T0 : unmanaged
         {
             // SpanOverloader
             thisApi.AdapterRequestDevice(adapter, descriptor, callback, ref userdata.GetPinnableReference());
@@ -74,7 +74,7 @@ namespace Silk.NET.WebGPU
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1571, Column 18 in webgpu.h")]
-        public static unsafe void AdapterRequestDevice(this WebGPU thisApi, Adapter* adapter, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<DeviceDescriptor> descriptor, PfnAdapterRequestDeviceCallback callback, void* userdata)
+        public static unsafe void AdapterRequestDevice(this WebGPU thisApi, Adapter* adapter, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<DeviceDescriptor> descriptor, PfnRequestDeviceCallback callback, void* userdata)
         {
             // SpanOverloader
             thisApi.AdapterRequestDevice(adapter, in descriptor.GetPinnableReference(), callback, userdata);
@@ -82,7 +82,7 @@ namespace Silk.NET.WebGPU
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1571, Column 18 in webgpu.h")]
-        public static unsafe void AdapterRequestDevice<T0>(this WebGPU thisApi, Adapter* adapter, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<DeviceDescriptor> descriptor, PfnAdapterRequestDeviceCallback callback, Span<T0> userdata) where T0 : unmanaged
+        public static unsafe void AdapterRequestDevice<T0>(this WebGPU thisApi, Adapter* adapter, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<DeviceDescriptor> descriptor, PfnRequestDeviceCallback callback, Span<T0> userdata) where T0 : unmanaged
         {
             // SpanOverloader
             thisApi.AdapterRequestDevice(adapter, in descriptor.GetPinnableReference(), callback, ref userdata.GetPinnableReference());
@@ -106,7 +106,7 @@ namespace Silk.NET.WebGPU
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1592, Column 18 in webgpu.h")]
-        public static unsafe void BufferMapAsync<T0>(this WebGPU thisApi, Buffer* buffer, Silk.NET.WebGPU.MapMode mode, nuint offset, nuint size, PfnBufferMapAsyncCallback callback, Span<T0> userdata) where T0 : unmanaged
+        public static unsafe void BufferMapAsync<T0>(this WebGPU thisApi, Buffer* buffer, Silk.NET.WebGPU.MapMode mode, nuint offset, nuint size, PfnBufferMapCallback callback, Span<T0> userdata) where T0 : unmanaged
         {
             // SpanOverloader
             thisApi.BufferMapAsync(buffer, mode, offset, size, callback, ref userdata.GetPinnableReference());
@@ -426,7 +426,7 @@ namespace Silk.NET.WebGPU
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1646, Column 18 in webgpu.h")]
-        public static unsafe void DeviceCreateComputePipelineAsync<T0>(this WebGPU thisApi, Device* device, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ComputePipelineDescriptor* descriptor, PfnDeviceCreateComputePipelineAsyncCallback callback, Span<T0> userdata) where T0 : unmanaged
+        public static unsafe void DeviceCreateComputePipelineAsync<T0>(this WebGPU thisApi, Device* device, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ComputePipelineDescriptor* descriptor, PfnCreateComputePipelineAsyncCallback callback, Span<T0> userdata) where T0 : unmanaged
         {
             // SpanOverloader
             thisApi.DeviceCreateComputePipelineAsync(device, descriptor, callback, ref userdata.GetPinnableReference());
@@ -434,7 +434,7 @@ namespace Silk.NET.WebGPU
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1646, Column 18 in webgpu.h")]
-        public static unsafe void DeviceCreateComputePipelineAsync(this WebGPU thisApi, Device* device, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ComputePipelineDescriptor> descriptor, PfnDeviceCreateComputePipelineAsyncCallback callback, void* userdata)
+        public static unsafe void DeviceCreateComputePipelineAsync(this WebGPU thisApi, Device* device, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ComputePipelineDescriptor> descriptor, PfnCreateComputePipelineAsyncCallback callback, void* userdata)
         {
             // SpanOverloader
             thisApi.DeviceCreateComputePipelineAsync(device, in descriptor.GetPinnableReference(), callback, userdata);
@@ -442,7 +442,7 @@ namespace Silk.NET.WebGPU
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1646, Column 18 in webgpu.h")]
-        public static unsafe void DeviceCreateComputePipelineAsync<T0>(this WebGPU thisApi, Device* device, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ComputePipelineDescriptor> descriptor, PfnDeviceCreateComputePipelineAsyncCallback callback, Span<T0> userdata) where T0 : unmanaged
+        public static unsafe void DeviceCreateComputePipelineAsync<T0>(this WebGPU thisApi, Device* device, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ComputePipelineDescriptor> descriptor, PfnCreateComputePipelineAsyncCallback callback, Span<T0> userdata) where T0 : unmanaged
         {
             // SpanOverloader
             thisApi.DeviceCreateComputePipelineAsync(device, in descriptor.GetPinnableReference(), callback, ref userdata.GetPinnableReference());
@@ -482,7 +482,7 @@ namespace Silk.NET.WebGPU
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1651, Column 18 in webgpu.h")]
-        public static unsafe void DeviceCreateRenderPipelineAsync<T0>(this WebGPU thisApi, Device* device, [Flow(Silk.NET.Core.Native.FlowDirection.In)] RenderPipelineDescriptor* descriptor, PfnDeviceCreateRenderPipelineAsyncCallback callback, Span<T0> userdata) where T0 : unmanaged
+        public static unsafe void DeviceCreateRenderPipelineAsync<T0>(this WebGPU thisApi, Device* device, [Flow(Silk.NET.Core.Native.FlowDirection.In)] RenderPipelineDescriptor* descriptor, PfnCreateRenderPipelineAsyncCallback callback, Span<T0> userdata) where T0 : unmanaged
         {
             // SpanOverloader
             thisApi.DeviceCreateRenderPipelineAsync(device, descriptor, callback, ref userdata.GetPinnableReference());
@@ -490,7 +490,7 @@ namespace Silk.NET.WebGPU
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1651, Column 18 in webgpu.h")]
-        public static unsafe void DeviceCreateRenderPipelineAsync(this WebGPU thisApi, Device* device, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<RenderPipelineDescriptor> descriptor, PfnDeviceCreateRenderPipelineAsyncCallback callback, void* userdata)
+        public static unsafe void DeviceCreateRenderPipelineAsync(this WebGPU thisApi, Device* device, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<RenderPipelineDescriptor> descriptor, PfnCreateRenderPipelineAsyncCallback callback, void* userdata)
         {
             // SpanOverloader
             thisApi.DeviceCreateRenderPipelineAsync(device, in descriptor.GetPinnableReference(), callback, userdata);
@@ -498,7 +498,7 @@ namespace Silk.NET.WebGPU
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1651, Column 18 in webgpu.h")]
-        public static unsafe void DeviceCreateRenderPipelineAsync<T0>(this WebGPU thisApi, Device* device, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<RenderPipelineDescriptor> descriptor, PfnDeviceCreateRenderPipelineAsyncCallback callback, Span<T0> userdata) where T0 : unmanaged
+        public static unsafe void DeviceCreateRenderPipelineAsync<T0>(this WebGPU thisApi, Device* device, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<RenderPipelineDescriptor> descriptor, PfnCreateRenderPipelineAsyncCallback callback, Span<T0> userdata) where T0 : unmanaged
         {
             // SpanOverloader
             thisApi.DeviceCreateRenderPipelineAsync(device, in descriptor.GetPinnableReference(), callback, ref userdata.GetPinnableReference());
@@ -578,7 +578,7 @@ namespace Silk.NET.WebGPU
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1671, Column 18 in webgpu.h")]
-        public static unsafe void InstanceRequestAdapter<T0>(this WebGPU thisApi, Instance* instance, [Flow(Silk.NET.Core.Native.FlowDirection.In)] RequestAdapterOptions* options, PfnInstanceRequestAdapterCallback callback, Span<T0> userdata) where T0 : unmanaged
+        public static unsafe void InstanceRequestAdapter<T0>(this WebGPU thisApi, Instance* instance, [Flow(Silk.NET.Core.Native.FlowDirection.In)] RequestAdapterOptions* options, PfnRequestAdapterCallback callback, Span<T0> userdata) where T0 : unmanaged
         {
             // SpanOverloader
             thisApi.InstanceRequestAdapter(instance, options, callback, ref userdata.GetPinnableReference());
@@ -586,7 +586,7 @@ namespace Silk.NET.WebGPU
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1671, Column 18 in webgpu.h")]
-        public static unsafe void InstanceRequestAdapter(this WebGPU thisApi, Instance* instance, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<RequestAdapterOptions> options, PfnInstanceRequestAdapterCallback callback, void* userdata)
+        public static unsafe void InstanceRequestAdapter(this WebGPU thisApi, Instance* instance, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<RequestAdapterOptions> options, PfnRequestAdapterCallback callback, void* userdata)
         {
             // SpanOverloader
             thisApi.InstanceRequestAdapter(instance, in options.GetPinnableReference(), callback, userdata);
@@ -594,7 +594,7 @@ namespace Silk.NET.WebGPU
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1671, Column 18 in webgpu.h")]
-        public static unsafe void InstanceRequestAdapter<T0>(this WebGPU thisApi, Instance* instance, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<RequestAdapterOptions> options, PfnInstanceRequestAdapterCallback callback, Span<T0> userdata) where T0 : unmanaged
+        public static unsafe void InstanceRequestAdapter<T0>(this WebGPU thisApi, Instance* instance, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<RequestAdapterOptions> options, PfnRequestAdapterCallback callback, Span<T0> userdata) where T0 : unmanaged
         {
             // SpanOverloader
             thisApi.InstanceRequestAdapter(instance, in options.GetPinnableReference(), callback, ref userdata.GetPinnableReference());
@@ -618,7 +618,7 @@ namespace Silk.NET.WebGPU
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1689, Column 18 in webgpu.h")]
-        public static unsafe void QueueOnSubmittedWorkDone<T0>(this WebGPU thisApi, Queue* queue, PfnQueueOnSubmittedWorkDoneCallback callback, Span<T0> userdata) where T0 : unmanaged
+        public static unsafe void QueueOnSubmittedWorkDone<T0>(this WebGPU thisApi, Queue* queue, PfnQueueWorkDoneCallback callback, Span<T0> userdata) where T0 : unmanaged
         {
             // SpanOverloader
             thisApi.QueueOnSubmittedWorkDone(queue, callback, ref userdata.GetPinnableReference());
@@ -866,7 +866,7 @@ namespace Silk.NET.WebGPU
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1755, Column 18 in webgpu.h")]
-        public static unsafe void ShaderModuleGetCompilationInfo<T0>(this WebGPU thisApi, ShaderModule* shaderModule, PfnShaderModuleGetCompilationInfoCallback callback, Span<T0> userdata) where T0 : unmanaged
+        public static unsafe void ShaderModuleGetCompilationInfo<T0>(this WebGPU thisApi, ShaderModule* shaderModule, PfnCompilationInfoCallback callback, Span<T0> userdata) where T0 : unmanaged
         {
             // SpanOverloader
             thisApi.ShaderModuleGetCompilationInfo(shaderModule, callback, ref userdata.GetPinnableReference());
