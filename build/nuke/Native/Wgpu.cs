@@ -58,7 +58,6 @@ partial class Build {
             {
                 targets = new[]
                 {
-                    ("i686-unknown-linux-gnu", "linux-x86"),
                     ("x86_64-unknown-linux-gnu", "linux-x64"),
                     ("arm-unknown-linux-gnueabihf", "linux-arm"),
                     ("aarch64-unknown-linux-gnu", "linux-arm64"),
