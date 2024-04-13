@@ -22,25 +22,24 @@ jobs:
             nuke_invoke: ./build.sh
             extras: |
               sudo tee /etc/apt/sources.list << EOF
-              deb [arch=amd64,i386] http://archive.ubuntu.com/ubuntu jammy main multiverse restricted universe
-              deb [arch=amd64,i386] http://archive.ubuntu.com/ubuntu jammy-backports main multiverse restricted universe
-              deb [arch=amd64,i386] http://archive.ubuntu.com/ubuntu jammy-security main multiverse restricted universe
-              deb [arch=amd64,i386] http://archive.ubuntu.com/ubuntu jammy-updates main multiverse restricted universe
+              deb [arch=amd64] http://archive.ubuntu.com/ubuntu jammy main multiverse restricted universe
+              deb [arch=amd64] http://archive.ubuntu.com/ubuntu jammy-backports main multiverse restricted universe
+              deb [arch=amd64] http://archive.ubuntu.com/ubuntu jammy-security main multiverse restricted universe
+              deb [arch=amd64] http://archive.ubuntu.com/ubuntu jammy-updates main multiverse restricted universe
               deb [arch=arm64,armhf] http://ports.ubuntu.com jammy main multiverse restricted universe
               deb [arch=arm64,armhf] http://ports.ubuntu.com jammy-backports main multiverse restricted universe
               deb [arch=arm64,armhf] http://ports.ubuntu.com jammy-security main multiverse restricted universe
               deb [arch=arm64,armhf] http://ports.ubuntu.com jammy-updates main multiverse restricted universe
-              deb [arch=amd64,i386] http://security.ubuntu.com/ubuntu jammy main multiverse restricted universe
-              deb [arch=amd64,i386] http://security.ubuntu.com/ubuntu jammy-backports main multiverse restricted universe
-              deb [arch=amd64,i386] http://security.ubuntu.com/ubuntu jammy-security main multiverse restricted universe
-              deb [arch=amd64,i386] http://security.ubuntu.com/ubuntu jammy-updates main multiverse restricted universe
+              deb [arch=amd64] http://security.ubuntu.com/ubuntu jammy main multiverse restricted universe
+              deb [arch=amd64] http://security.ubuntu.com/ubuntu jammy-backports main multiverse restricted universe
+              deb [arch=amd64] http://security.ubuntu.com/ubuntu jammy-security main multiverse restricted universe
+              deb [arch=amd64] http://security.ubuntu.com/ubuntu jammy-updates main multiverse restricted universe
               EOF
               sudo dpkg --add-architecture arm64
               sudo dpkg --add-architecture armhf
-              sudo dpkg --add-architecture i386
               sudo apt update
-              sudo apt install -y gcc-aarch64-linux-gnu gcc-arm-linux-gnueabihf gcc-i686-linux-gnu
-              sudo apt install -y libgcc-11-dev libgcc-11-dev:i386 libgcc-11-dev-arm64-cross libgcc-11-dev-armhf-cross libgcc-11-dev-i386-cross
+              sudo apt install -y gcc-aarch64-linux-gnu gcc-arm-linux-gnueabihf
+              sudo apt install -y libgcc-11-dev libgcc-11-dev-arm64-cross libgcc-11-dev-armhf-cross
           - os: windows-2022
             name: Windows
             nuke_invoke: ./build.cmd
@@ -76,7 +75,6 @@ jobs:
       - name: Add targets
         if: runner.os == 'Linux'
         run: |
-          rustup target add i686-unknown-linux-gnu
           rustup target add aarch64-unknown-linux-gnu
           rustup target add arm-unknown-linux-gnueabihf
 
