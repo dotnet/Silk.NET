@@ -2,8 +2,8 @@ name: GLFW
 on:
   push:
     branches-ignore:
-      - "ci/*"
-      - "develop/*"
+      - "ci/**"
+      - "develop/**"
       - "main"
     paths:
       - "build/submodules/GLFW"

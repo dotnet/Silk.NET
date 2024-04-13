@@ -2,8 +2,8 @@ name: MoltenVK
 on:
     push:
         branches-ignore:
-            - "ci/*"
-            - "develop/*"
+            - "ci/**"
+            - "develop/**"
             - "main"
         paths:
             - build/submodules/MoltenVK

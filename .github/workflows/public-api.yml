@@ -2,10 +2,10 @@ name: Public API
 on:
     push:
         branches:
-            - "*"
+            - "**"
     create:
         tags:
-            - "*"
+            - "**"
     pull_request_target:
 permissions:
     issues: write

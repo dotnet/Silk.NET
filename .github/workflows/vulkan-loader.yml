@@ -2,8 +2,8 @@ name: Vulkan Loader
 on:
   push:
     branches-ignore:
-      - "ci/*"
-      - "develop/*"
+      - "ci/**"
+      - "develop/**"
       - "main"
     paths:
       - build/submodules/Vulkan-Loader

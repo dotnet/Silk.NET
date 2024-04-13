@@ -7,8 +7,8 @@ on:
       - build/nuke/Native/Dxvk.cs
       - .github/workflows/dxvk.yml
     branches-ignore:
-        - "ci/*"
-        - "develop/*"
+        - "ci/**"
+        - "develop/**"
         - "main"
 jobs:
   Build:
