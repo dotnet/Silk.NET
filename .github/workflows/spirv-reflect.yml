@@ -2,8 +2,8 @@ name: SPIRV-Reflect
 on:
   push:
     branches-ignore:
-      - "ci/*"
-      - "develop/*"
+      - "ci/**"
+      - "develop/**"
       - "main"
     paths:
       - build/submodules/SPIRV-Reflect

@@ -2,8 +2,8 @@ name: SPIRV-Cross
 on:
   push:
     branches-ignore:
-      - "ci/*"
-      - "develop/*"
+      - "ci/**"
+      - "develop/**"
       - "main"
     paths:
       - build/submodules/SPIRV-Cross
