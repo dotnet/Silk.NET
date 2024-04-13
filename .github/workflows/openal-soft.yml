@@ -17,10 +17,24 @@ jobs:
       fail-fast: false
       matrix:
         env:
-          - os: ubuntu-latest
+          - os: ubuntu-22.04
             name: Linux
             nuke_invoke: ./build.sh
             extras: |
+              sudo tee /etc/apt/sources.list << EOF
+              deb [arch=amd64] http://archive.ubuntu.com/ubuntu jammy main multiverse restricted universe
+              deb [arch=amd64] http://archive.ubuntu.com/ubuntu jammy-backports main multiverse restricted universe
+              deb [arch=amd64] http://archive.ubuntu.com/ubuntu jammy-security main multiverse restricted universe
+              deb [arch=amd64] http://archive.ubuntu.com/ubuntu jammy-updates main multiverse restricted universe
+              deb [arch=arm64,armhf] http://ports.ubuntu.com jammy main multiverse restricted universe
+              deb [arch=arm64,armhf] http://ports.ubuntu.com jammy-backports main multiverse restricted universe
+              deb [arch=arm64,armhf] http://ports.ubuntu.com jammy-security main multiverse restricted universe
+              deb [arch=arm64,armhf] http://ports.ubuntu.com jammy-updates main multiverse restricted universe
+              deb [arch=amd64] http://security.ubuntu.com/ubuntu jammy main multiverse restricted universe
+              deb [arch=amd64] http://security.ubuntu.com/ubuntu jammy-backports main multiverse restricted universe
+              deb [arch=amd64] http://security.ubuntu.com/ubuntu jammy-security main multiverse restricted universe
+              deb [arch=amd64] http://security.ubuntu.com/ubuntu jammy-updates main multiverse restricted universe
+              EOF
               sudo dpkg --add-architecture arm64
               sudo dpkg --add-architecture armhf
               sudo apt update
@@ -30,11 +44,11 @@ jobs:
                 sudo apt install -y libasound2-dev:$arch libpulse-dev:$arch libjack-dev:$arch libsoundio-dev:$arch
                 sudo apt install -y portaudio19-dev:$arch libsndfile1-dev:$arch libmysofa-dev:$arch qtbase5-dev:$arch
               done
-          - os: windows-latest
+          - os: windows-2022
             name: Windows
             nuke_invoke: ./build.cmd
             extras: ""
-          - os: macos-latest
+          - os: macos-14
             name: Darwin
             nuke_invoke: ./build.sh
             extras: ""
