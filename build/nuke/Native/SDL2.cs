@@ -81,7 +81,6 @@ partial class Build
             {
                 foreach (var (triple, rid) in new[]
                 {
-                    ("i686-linux-gnu", "linux-x86"),
                     ("x86_64-linux-gnu", "linux-x64"),
                     ("arm-linux-gnueabihf", "linux-arm"),
                     ("aarch64-linux-gnu", "linux-arm64"),
