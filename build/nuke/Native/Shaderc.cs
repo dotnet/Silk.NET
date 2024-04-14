@@ -542,8 +542,8 @@ pub fn build(b: *std.Build) void {
     shaderc.linkLibrary(spirv_tools);
     shaderc.linkLibrary(glslang);
 
-    //On ReleaseSmall, lets strip the binary to reduce size further
-    if (optimize == .ReleaseSmall) {
+    //On release builds, lets strip the binary to reduce size further
+    if (optimize != .Debug) {
         shaderc.root_module.strip = true;
     }
 
@@ -584,7 +584,7 @@ pub fn build(b: *std.Build) void {
 
             const string libname = "shaderc_shared";
 
-            const string optimizeMode = "-Doptimize=ReleaseSmall";
+            const string optimizeMode = "-Doptimize=ReleaseFast";
 
             //Build shaderc for Linux x86_64
             InheritedShell($"zig build -Dtarget=x86_64-linux-gnu.2.17 {optimizeMode}", ShadercPath).AssertZeroExitCode();
