@@ -55,7 +55,7 @@ partial class Build {
 
                             // Vulkan Loader only supports Windows Arm64 by using clang-cl to build the assembly.
                             var extra = platform == "ARM64"
-                                ? "-T ClangCL -DUSE_GAS=ON"
+                                ? " -T ClangCL -DUSE_GAS=ON"
                                 : string.Empty;
 
                             InheritedShell($"{prepare} -A {platform}{extra}", buildDir).AssertZeroExitCode();
