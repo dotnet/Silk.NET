@@ -70,7 +70,7 @@ partial class Build {
                         {
                             EnsureCleanDirectory(buildDir);
 
-                            InheritedShell($"{prepare} {GetCMakeToolchainFlag(triple)}", buildDir).AssertZeroExitCode();
+                            InheritedShell($"{prepare} -DALSOFT_BACKEND_SNDIO=OFF {GetCMakeToolchainFlag(triple)}", buildDir).AssertZeroExitCode();
                             InheritedShell(build, buildDir).AssertZeroExitCode();
 
                             InheritedShell($"{triple}-strip --strip-unneeded libopenal.so", buildDir).AssertZeroExitCode();
