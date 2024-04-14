@@ -72,10 +72,6 @@ pub fn build(b: *std.Build) void {
                         InheritedShell($"zig build {buildMode} -Dtarget=x86_64-linux-gnu.2.17 --verbose", SPIRVReflectPath).AssertZeroExitCode();
                         CopyFile(SPIRVReflectPath / "zig-out" / "lib" / "libspirv-reflect.so", runtimes / "linux-x64" / "native" / "libspirv-reflect.so", FileExistsPolicy.Overwrite);
 
-                        //Build for Linux x86 with glibc 2.17 (old version specified for compatibility)
-                        InheritedShell($"zig build {buildMode} -Dtarget=x86-linux-gnu.2.17 --verbose", SPIRVReflectPath).AssertZeroExitCode();
-                        CopyFile(SPIRVReflectPath / "zig-out" / "lib" / "libspirv-reflect.so", runtimes / "linux-x86" / "native" / "libspirv-reflect.so", FileExistsPolicy.Overwrite);
-
                         //Build for Linux arm with glibc 2.17 (old version specified for compatibility)
                         InheritedShell($"zig build {buildMode} -Dtarget=arm-linux-gnueabihf.2.17 --verbose", SPIRVReflectPath).AssertZeroExitCode();
                         CopyFile(SPIRVReflectPath / "zig-out" / "lib" / "libspirv-reflect.so", runtimes / "linux-arm" / "native" / "libspirv-reflect.so", FileExistsPolicy.Overwrite);
@@ -115,7 +111,6 @@ pub fn build(b: *std.Build) void {
                         .Concat((runtimes / "osx-x64" / "native").GlobFiles("*.dylib"))
                         .Concat((runtimes / "osx-arm64" / "native").GlobFiles("*.dylib"))
                         .Concat((runtimes / "linux-x64" / "native").GlobFiles("*.so"))
-                        .Concat((runtimes / "linux-x86" / "native").GlobFiles("*.so"))
                         .Concat((runtimes / "linux-arm" / "native").GlobFiles("*.so"))
                         .Concat((runtimes / "linux-arm64" / "native").GlobFiles("*.so"));
 
