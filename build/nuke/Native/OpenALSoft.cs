@@ -99,7 +99,7 @@ partial class Build {
 
                     Git("checkout HEAD build/", OpenALSoftPath);
 
-                    PrUpdatedNativeBinary("GLFW");
+                    PrUpdatedNativeBinary("OpenALSoft");
                 }
             )
     );
