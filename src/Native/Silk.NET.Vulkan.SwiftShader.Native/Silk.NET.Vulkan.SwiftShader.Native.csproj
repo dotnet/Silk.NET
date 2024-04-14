@@ -24,6 +24,7 @@
     <Content Include="runtimes\win-x86\native\vk_swiftshader.dll" PackagePath="runtimes\win-x86\native\vk_swiftshader.dll" />
     <Content Include="runtimes\linux-x64\native\vk_swiftshader_icd.json" PackagePath="runtimes\linux-x64\native\vk_swiftshader_icd.json" />
     <Content Include="runtimes\osx-x64\native\vk_swiftshader_icd.json" PackagePath="runtimes\osx-x64\native\vk_swiftshader_icd.json" />
+    <Content Include="runtimes\win-arm64\native\vk_swiftshader_icd.json" PackagePath="runtimes\win-arm64\native\vk_swiftshader_icd.json" />
     <Content Include="runtimes\win-x64\native\vk_swiftshader_icd.json" PackagePath="runtimes\win-x64\native\vk_swiftshader_icd.json" />
     <Content Include="runtimes\win-x86\native\vk_swiftshader_icd.json" PackagePath="runtimes\win-x86\native\vk_swiftshader_icd.json" />
   </ItemGroup>
