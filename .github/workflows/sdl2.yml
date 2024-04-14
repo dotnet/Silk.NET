@@ -77,13 +77,15 @@ jobs:
             apt install -y g++ g++-aarch64-linux-gnu g++-arm-linux-gnueabihf
             apt install -y automake build-essential curl git libtool pkg-config python3 wget
             for arch in amd64 arm64 armhf; do
-              apt install -y libasound2-dev:$arch libpulse-dev:$arch libaudio-dev:$arch libjack-dev:$arch
+              apt install -y libasound2-dev:$arch libpulse-dev:$arch libaudio-dev:$arch
               apt install -y libsndio-dev:$arch libsamplerate0-dev:$arch libx11-dev:$arch libxext-dev:$arch
               apt install -y libxrandr-dev:$arch libxcursor-dev:$arch libxfixes-dev:$arch libxi-dev:$arch
               apt install -y libxss-dev:$arch libwayland-dev:$arch libxkbcommon-dev:$arch libdrm-dev:$arch
               apt install -y libgbm-dev:$arch libgl1-mesa-dev:$arch libgles2-mesa-dev:$arch libegl1-mesa-dev:$arch
               apt install -y libdbus-1-dev:$arch libibus-1.0-dev:$arch libudev-dev:$arch
             done
+            # This package isn't multiarch-compatible in 22.04, so we prioritize amd64 for this.
+            apt install -y libjack-dev
 
             wget https://dot.net/v1/dotnet-install.sh -O dotnet-install.sh
             chmod +x ./dotnet-install.sh
