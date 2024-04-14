@@ -26,7 +26,6 @@
         <Content Include="runtimes\linux-arm\native\libshaderc_shared.so" PackagePath="runtimes\linux-arm\native\libshaderc_shared.so" />
         <Content Include="runtimes\linux-arm64\native\libshaderc_shared.so" PackagePath="runtimes\linux-arm64\native\libshaderc_shared.so" />
         <Content Include="runtimes\linux-x64\native\libshaderc_shared.so" PackagePath="runtimes\linux-x64\native\libshaderc_shared.so" />
-        <Content Include="runtimes\linux-x86\native\libshaderc_shared.so" PackagePath="runtimes\linux-x86\native\libshaderc_shared.so" />
 
         <Content Include="runtimes\win-arm64\native\shaderc_shared.dll" PackagePath="runtimes\win-arm64\native\shaderc_shared.dll" />
         <Content Include="runtimes\win-x64\native\shaderc_shared.dll" PackagePath="runtimes\win-x64\native\shaderc_shared.dll" />
