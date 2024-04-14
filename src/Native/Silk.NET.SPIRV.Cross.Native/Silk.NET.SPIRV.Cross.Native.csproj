@@ -26,7 +26,6 @@
         <Content Include="runtimes\linux-arm\native\libspirv-cross.so" PackagePath="runtimes\linux-arm\native\libspirv-cross.so" />
         <Content Include="runtimes\linux-arm64\native\libspirv-cross.so" PackagePath="runtimes\linux-arm64\native\libspirv-cross.so" />
         <Content Include="runtimes\linux-x64\native\libspirv-cross.so" PackagePath="runtimes\linux-x64\native\libspirv-cross.so" />
-        <Content Include="runtimes\linux-x86\native\libspirv-cross.so" PackagePath="runtimes\linux-x86\native\libspirv-cross.so" />
 
         <Content Include="runtimes\win-arm64\native\spirv-cross.dll" PackagePath="runtimes\win-arm64\native\spirv-cross.dll" />
         <Content Include="runtimes\win-x64\native\spirv-cross.dll" PackagePath="runtimes\win-x64\native\spirv-cross.dll" />
