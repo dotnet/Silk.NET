@@ -586,10 +586,6 @@ pub fn build(b: *std.Build) void {
 
             const string optimizeMode = "-Doptimize=ReleaseSmall";
 
-            //Build shaderc for Linux x86
-            InheritedShell($"zig build -Dtarget=x86-linux-gnu.2.17 {optimizeMode}", ShadercPath).AssertZeroExitCode();
-            CopyFile(ShadercPath / "zig-out" / "lib" / $"lib{libname}.so", runtimes / "linux-x86" / "native" / $"lib{libname}.so", FileExistsPolicy.Overwrite);
-
             //Build shaderc for Linux x86_64
             InheritedShell($"zig build -Dtarget=x86_64-linux-gnu.2.17 {optimizeMode}", ShadercPath).AssertZeroExitCode();
             CopyFile(ShadercPath / "zig-out" / "lib" / $"lib{libname}.so", runtimes / "linux-x64" / "native" / $"lib{libname}.so", FileExistsPolicy.Overwrite);
@@ -628,7 +624,6 @@ pub fn build(b: *std.Build) void {
                 .Concat((runtimes / "osx-x64" / "native").GlobFiles("*.dylib"))
                 .Concat((runtimes / "osx-arm64" / "native").GlobFiles("*.dylib"))
                 .Concat((runtimes / "linux-x64" / "native").GlobFiles("*.so"))
-                .Concat((runtimes / "linux-x86" / "native").GlobFiles("*.so"))
                 .Concat((runtimes / "linux-arm" / "native").GlobFiles("*.so"))
                 .Concat((runtimes / "linux-arm64" / "native").GlobFiles("*.so"));
 
