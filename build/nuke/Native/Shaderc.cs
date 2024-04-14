@@ -594,6 +594,10 @@ pub fn build(b: *std.Build) void {
             InheritedShell($"zig build -Dtarget=x86_64-linux-gnu.2.17 {optimizeMode}", ShadercPath).AssertZeroExitCode();
             CopyFile(ShadercPath / "zig-out" / "lib" / $"lib{libname}.so", runtimes / "linux-x64" / "native" / $"lib{libname}.so", FileExistsPolicy.Overwrite);
 
+            //Build shaderc for Linux ARM
+            InheritedShell($"zig build -Dtarget=arm-linux-gnueabihf.2.17 {optimizeMode}", ShadercPath).AssertZeroExitCode();
+            CopyFile(ShadercPath / "zig-out" / "lib" / $"lib{libname}.so", runtimes / "linux-arm" / "native" / $"lib{libname}.so", FileExistsPolicy.Overwrite);
+
             //Build shaderc for Linux ARM64
             InheritedShell($"zig build -Dtarget=aarch64-linux-gnu.2.17 {optimizeMode}", ShadercPath).AssertZeroExitCode();
             CopyFile(ShadercPath / "zig-out" / "lib" / $"lib{libname}.so", runtimes / "linux-arm64" / "native" / $"lib{libname}.so", FileExistsPolicy.Overwrite);
@@ -625,6 +629,7 @@ pub fn build(b: *std.Build) void {
                 .Concat((runtimes / "osx-arm64" / "native").GlobFiles("*.dylib"))
                 .Concat((runtimes / "linux-x64" / "native").GlobFiles("*.so"))
                 .Concat((runtimes / "linux-x86" / "native").GlobFiles("*.so"))
+                .Concat((runtimes / "linux-arm" / "native").GlobFiles("*.so"))
                 .Concat((runtimes / "linux-arm64" / "native").GlobFiles("*.so"));
 
             var glob = string.Empty;
