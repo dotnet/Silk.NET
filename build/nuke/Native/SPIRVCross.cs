@@ -64,12 +64,12 @@ pub fn build(b: *std.Build) void {
         lib.defineCMacro(""SPVC_PUBLIC_API"", ""__declspec(dllexport)"");
     }
 
-    //If we arent in debug, defined NDEBUG
-    if (mode != .Debug)
+    //If we arent in debug, defined NDEBUG and strip symbols
+    if (mode != .Debug) {
         lib.defineCMacro(""NDEBUG"", ""1"");
 
-    if (mode == .ReleaseSmall)
         lib.root_module.strip = true;
+    }
 
     lib.addCSourceFiles(.{
         .files = &.{
@@ -104,7 +104,7 @@ pub fn build(b: *std.Build) void {
                     //Write out the build script to the directory
                     File.WriteAllText(SPIRVCrossPath / "build.zig", SPIRVCrossBuildScript);
 
-                    string releaseMode = "-Doptimize=ReleaseSmall";
+                    string releaseMode = "-Doptimize=ReleaseFast";
 
                     { //Linux
                         //Build for Linux x86_64 with glibc 2.17 (old version specified for compatibility)
