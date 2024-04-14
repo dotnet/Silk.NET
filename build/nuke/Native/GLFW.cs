@@ -75,7 +75,7 @@ partial class Build {
 
                             InheritedShell($"{triple}-strip --strip-unneeded src/libglfw.so", buildDir).AssertZeroExitCode();
 
-                            CopyAll((buildDir / "src").GlobFiles("libglfw.so"), runtimes / rid / "native");
+                            CopyAll((buildDir / "src").GlobFiles("libglfw.so.3.3"), runtimes / rid / "native");
                         }
                     }
                     else if (OperatingSystem.IsMacOS())
