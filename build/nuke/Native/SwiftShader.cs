@@ -54,8 +54,21 @@ partial class Build {
                         {
                             ("Win32", "win-x86"),
                             ("x64", "win-x64"),
+                            ("ARM64", "win-arm64"),
                         })
                         {
+                            var configPath = SwiftShaderPath / "third_party" / "llvm-10.0" / "configs" / "windows" / "include" / "llvm" / "Config" / "llvm-config.h";
+
+                            // Work around https://github.com/dotnet/Silk.NET/issues/2066.
+                            if (platform == "ARM64")
+                                File.WriteAllText(
+                                    configPath,
+                                    "#if !defined(__aarch64__) && (defined(_M_ARM64) || defined (_M_ARM64EC))" + Environment.NewLine +
+                                    "#define __aarch64__ 1" + Environment.NewLine +
+                                    "#endif" + Environment.NewLine +
+                                    Environment.NewLine +
+                                    File.ReadAllText(configPath));
+
                             EnsureCleanDirectory(buildDir);
 
                             InheritedShell($"{prepare} -A {platform}", buildDir).AssertZeroExitCode();
