@@ -43,6 +43,7 @@ jobs:
               for arch in amd64 arm64 armhf; do
                 sudo apt install -y libasound2-dev:$arch libpulse-dev:$arch libjack-dev:$arch libsoundio-dev:$arch
                 sudo apt install -y portaudio19-dev:$arch libsndfile1-dev:$arch libmysofa-dev:$arch qtbase5-dev:$arch
+                sudo apt install -y libdbus-1-dev:$arch
               done
           - os: windows-2022
             name: Windows
