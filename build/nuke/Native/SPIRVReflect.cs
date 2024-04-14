@@ -45,7 +45,7 @@ pub fn build(b: *std.Build) void {
     const lib: *std.Build.Step.Compile = b.addSharedLibrary(shared_lib_options);
     lib.linkLibC();
 
-    if(optimize == .ReleaseSmall)
+    if(optimize != .Debug)
         lib.root_module.strip = true;
 
     lib.addCSourceFiles(.{ .files = &.{""spirv_reflect.c""}, .flags = &.{ ""-std=c99"", ""-fPIC"" } });
@@ -65,7 +65,7 @@ pub fn build(b: *std.Build) void {
                     //Write out the build script to the directory
                     File.WriteAllText(SPIRVReflectPath / "build.zig", SPIRVReflectBuildScript);
 
-                    string buildMode = "-Doptimize=ReleaseSmall";
+                    string buildMode = "-Doptimize=ReleaseFast";
 
                     { //Linux
                         //Build for Linux x86_64 with glibc 2.17 (old version specified for compatibility)
