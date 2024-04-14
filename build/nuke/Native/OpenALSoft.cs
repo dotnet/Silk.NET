@@ -56,7 +56,7 @@ partial class Build {
                             InheritedShell($"{prepare} -A {platform}", buildDir).AssertZeroExitCode();
                             InheritedShell(build, buildDir).AssertZeroExitCode();
 
-                            CopyFile(buildDir / "Release" / "soft_oal.dll", runtimes / rid / "native" / "soft_oal.dll", FileExistsPolicy.Overwrite);
+                            CopyFile(buildDir / "Release" / "OpenAL32.dll", runtimes / rid / "native" / "soft_oal.dll", FileExistsPolicy.Overwrite);
                         }
                     }
                     else if (OperatingSystem.IsLinux())

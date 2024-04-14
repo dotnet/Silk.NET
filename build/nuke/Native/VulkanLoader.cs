@@ -48,11 +48,17 @@ partial class Build {
                         {
                             ("Win32", "win-x86"),
                             ("x64", "win-x64"),
+                            ("ARM64", "win-arm64"),
                         })
                         {
                             EnsureCleanDirectory(buildDir);
 
-                            InheritedShell($"{prepare} -A {platform}", buildDir).AssertZeroExitCode();
+                            // Vulkan Loader only supports Windows Arm64 by using clang-cl to build the assembly.
+                            var extra = platform == "ARM64"
+                                ? "-T ClangCL -DUSE_GAS=ON"
+                                : string.Empty;
+
+                            InheritedShell($"{prepare} -A {platform}{extra}", buildDir).AssertZeroExitCode();
                             InheritedShell(build, buildDir).AssertZeroExitCode();
 
                             CopyAll((buildDir / "loader" / "Release").GlobFiles("vulkan-1.dll"), runtimes / rid / "native");
