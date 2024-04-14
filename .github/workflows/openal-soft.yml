@@ -41,10 +41,12 @@ jobs:
               sudo apt install -y gcc-aarch64-linux-gnu gcc-arm-linux-gnueabihf
               sudo apt install -y g++-aarch64-linux-gnu g++-arm-linux-gnueabihf
               for arch in amd64 arm64 armhf; do
-                sudo apt install -y libasound2-dev:$arch libpulse-dev:$arch libjack-dev:$arch libsoundio-dev:$arch
-                sudo apt install -y portaudio19-dev:$arch libsndfile1-dev:$arch libmysofa-dev:$arch qtbase5-dev:$arch
+                sudo apt install -y libasound2-dev:$arch libpulse-dev:$arch libsoundio-dev:$arch
+                sudo apt install -y libsndfile1-dev:$arch libmysofa-dev:$arch qtbase5-dev:$arch
                 sudo apt install -y libdbus-1-dev:$arch
               done
+              # These packages aren't multiarch-compatible in 22.04, so we prioritize amd64 for these.
+              sudo apt install -y libjack-dev portaudio19-dev
           - os: windows-2022
             name: Windows
             nuke_invoke: ./build.cmd
