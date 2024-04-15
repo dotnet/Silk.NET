@@ -3,12 +3,9 @@
     <!-- .NET properties -->
     <PropertyGroup>
         <OutputType>Exe</OutputType>
-        <TargetFramework>net7.0</TargetFramework>
+        <TargetFramework>net5.0</TargetFramework>
         <RootNamespace>Tutorial</RootNamespace>
         <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
-        <PublishAot>true</PublishAot>
-        <PublishTrimmed>true</PublishTrimmed>
-        <TrimMode>full</TrimMode>
     </PropertyGroup>
 
     <!-- Some tutorials need ImageSharp -->
@@ -19,7 +16,6 @@
     <!-- Reference Silk.NET -->
     <ItemGroup>
         <ProjectReference Include="..\..\..\Core\Silk.NET\Silk.NET.csproj" />
-        <ProjectReference Include="..\..\..\OpenGL\Extensions\Silk.NET.OpenGL.Extensions.ARB\Silk.NET.OpenGL.Extensions.ARB.csproj" />
     </ItemGroup>
 
     <ItemGroup>
@@ -38,6 +34,26 @@
         <None Update="silkBoxed.png">
             <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
         </None>
+    </ItemGroup>
+
+    <!-- CoreRT settings -->
+    <PropertyGroup>
+        <IlcOptimizationPreference>Speed</IlcOptimizationPreference>
+        <RootAllApplicationAssemblies>false</RootAllApplicationAssemblies>
+        <IlcGenerateCompleteTypeMetadata>false</IlcGenerateCompleteTypeMetadata>
+        <IlcDisableReflection>false</IlcDisableReflection>
+        <IlcGenerateStackTraceData Condition="'$(Configuration)' == 'Release' ">false</IlcGenerateStackTraceData>
+        <IlcFoldIdenticalMethodBodies Condition="'$(Configuration)' == 'Release' ">false</IlcFoldIdenticalMethodBodies>
+        <IlcDisableUnhandledExceptionExperience Condition="'$(Configuration)' == 'Release' ">true</IlcDisableUnhandledExceptionExperience>
+    </PropertyGroup>
+    
+    <!-- Reference the CoreRT toolchain -->
+    <PropertyGroup>
+        <RestoreAdditionalProjectSources>https://pkgs.dev.azure.com/dnceng/public/_packaging/dotnet-experimental/nuget/v3/index.json;$(RestoreAdditionalProjectSources)</RestoreAdditionalProjectSources>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <PackageReference Include="Microsoft.DotNet.ILCompiler" Version="8.0.0-*" />
     </ItemGroup>
 
 </Project>
