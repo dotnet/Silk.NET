@@ -69,7 +69,13 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.EXT
         public unsafe partial void BinormalPointer([Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT type, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint stride, [Count(Computed = "type, stride"), Flow(Silk.NET.Core.Native.FlowDirection.In)] void* pointer);
 
         [NativeApi(EntryPoint = "glBinormalPointerEXT", Convention = CallingConvention.Winapi)]
+        public partial void BinormalPointer([Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT type, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint stride, [Count(Computed = "type, stride"), Flow(Silk.NET.Core.Native.FlowDirection.In)] nint pointer);
+
+        [NativeApi(EntryPoint = "glBinormalPointerEXT", Convention = CallingConvention.Winapi)]
         public unsafe partial void BinormalPointer([Flow(Silk.NET.Core.Native.FlowDirection.In)] BinormalPointerTypeEXT type, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint stride, [Count(Computed = "type, stride"), Flow(Silk.NET.Core.Native.FlowDirection.In)] void* pointer);
+
+        [NativeApi(EntryPoint = "glBinormalPointerEXT", Convention = CallingConvention.Winapi)]
+        public partial void BinormalPointer([Flow(Silk.NET.Core.Native.FlowDirection.In)] BinormalPointerTypeEXT type, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint stride, [Count(Computed = "type, stride"), Flow(Silk.NET.Core.Native.FlowDirection.In)] nint pointer);
 
         [NativeApi(EntryPoint = "glTangent3bEXT", Convention = CallingConvention.Winapi)]
         public partial void Tangent3([Flow(Silk.NET.Core.Native.FlowDirection.In)] sbyte tx, [Flow(Silk.NET.Core.Native.FlowDirection.In)] sbyte ty, [Flow(Silk.NET.Core.Native.FlowDirection.In)] sbyte tz);
@@ -120,7 +126,13 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.EXT
         public unsafe partial void TangentPointer([Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT type, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint stride, [Count(Computed = "type, stride"), Flow(Silk.NET.Core.Native.FlowDirection.In)] void* pointer);
 
         [NativeApi(EntryPoint = "glTangentPointerEXT", Convention = CallingConvention.Winapi)]
+        public partial void TangentPointer([Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT type, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint stride, [Count(Computed = "type, stride"), Flow(Silk.NET.Core.Native.FlowDirection.In)] nint pointer);
+
+        [NativeApi(EntryPoint = "glTangentPointerEXT", Convention = CallingConvention.Winapi)]
         public unsafe partial void TangentPointer([Flow(Silk.NET.Core.Native.FlowDirection.In)] TangentPointerTypeEXT type, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint stride, [Count(Computed = "type, stride"), Flow(Silk.NET.Core.Native.FlowDirection.In)] void* pointer);
+
+        [NativeApi(EntryPoint = "glTangentPointerEXT", Convention = CallingConvention.Winapi)]
+        public partial void TangentPointer([Flow(Silk.NET.Core.Native.FlowDirection.In)] TangentPointerTypeEXT type, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint stride, [Count(Computed = "type, stride"), Flow(Silk.NET.Core.Native.FlowDirection.In)] nint pointer);
 
         public ExtCoordinateFrame(INativeContext ctx)
             : base(ctx)
