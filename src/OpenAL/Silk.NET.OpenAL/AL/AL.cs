@@ -377,10 +377,17 @@ namespace Silk.NET.OpenAL
         /// <param name="ext">The loaded extension.</param>
         /// <typeparam name="T">Type of <see cref="NativeExtension{T}" /> to load.</typeparam>
         /// <returns><c>true</c> if the extension was loaded, otherwise <c>false</c>.</returns>
+#if NET5_0_OR_GREATER
+        public bool TryGetExtension<[DynamicallyAccessedMembers(DynamicallyAccessedMemberTypes.PublicConstructors | DynamicallyAccessedMemberTypes.NonPublicConstructors)] T>(out T ext)
+#else
         public bool TryGetExtension<T>(out T ext)
+#endif
             where T : NativeExtension<AL>
         {
-            throw new NotImplementedException();
+            ext = IsExtensionPresent(ExtensionAttribute.GetExtensionAttribute(typeof(T)).Name)
+                ? (T) Activator.CreateInstance(typeof(T), Context)
+                : null;
+            return ext is not null;
         }
 
         /// <summary>

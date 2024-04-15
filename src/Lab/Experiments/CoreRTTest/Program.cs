@@ -6,6 +6,7 @@ using System.Drawing;
 using System.Linq;
 using System.Numerics;
 using Silk.NET.Maths;
+using Silk.NET.OpenGL.Extensions.ARB;
 
 namespace Tutorial
 {
@@ -131,6 +132,11 @@ namespace Tutorial
             }
 
             Gl = GL.GetApi(window);
+
+            if (!Gl.TryGetExtension(out ArbDebugOutput ado))
+            {
+                throw new("Extension loading failed!");
+            }
 
             Ebo = new BufferObject<uint>(Gl, Indices, BufferTargetARB.ElementArrayBuffer);
             Vbo = new BufferObject<float>(Gl, Vertices, BufferTargetARB.ArrayBuffer);
