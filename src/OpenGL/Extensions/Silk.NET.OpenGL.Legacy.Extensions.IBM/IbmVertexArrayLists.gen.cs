@@ -23,7 +23,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.IBM
         [NativeApi(EntryPoint = "glColorPointerListIBM", Convention = CallingConvention.Winapi)]
         public unsafe partial void ColorPointerList([Flow(Silk.NET.Core.Native.FlowDirection.In)] int size, [Flow(Silk.NET.Core.Native.FlowDirection.In)] IBM type, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int stride, [Count(Computed = "size, type, stride"), Flow(Silk.NET.Core.Native.FlowDirection.In)] void** pointer, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int ptrstride);
 
-        [Obsolete("This overload exposes native-sized integer parameters (which are expressed as pointers in the original C function) as C# references due to a historical error, please consider using overloads that expose the following parameters as raw pointers or native integers instead: pointer)]
+        [Obsolete("This overload exposes native-sized integer parameters (which are expressed as pointers in the original C function) as C# references due to a historical error, please consider using overloads that expose the following parameters as raw pointers or native integers instead: pointer")]
         [NativeApi(EntryPoint = "glColorPointerListIBM", Convention = CallingConvention.Winapi)]
         public unsafe partial void ColorPointerList([Flow(Silk.NET.Core.Native.FlowDirection.In)] int size, [Flow(Silk.NET.Core.Native.FlowDirection.In)] IBM type, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int stride, [Count(Computed = "size, type, stride"), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in void* pointer, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int ptrstride);
 
@@ -36,7 +36,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.IBM
         [NativeApi(EntryPoint = "glColorPointerListIBM", Convention = CallingConvention.Winapi)]
         public unsafe partial void ColorPointerList([Flow(Silk.NET.Core.Native.FlowDirection.In)] int size, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ColorPointerType type, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int stride, [Count(Computed = "size, type, stride"), Flow(Silk.NET.Core.Native.FlowDirection.In)] void** pointer, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int ptrstride);
 
-        [Obsolete("This overload exposes native-sized integer parameters (which are expressed as pointers in the original C function) as C# references due to a historical error, please consider using overloads that expose the following parameters as raw pointers or native integers instead: pointer)]
+        [Obsolete("This overload exposes native-sized integer parameters (which are expressed as pointers in the original C function) as C# references due to a historical error, please consider using overloads that expose the following parameters as raw pointers or native integers instead: pointer")]
         [NativeApi(EntryPoint = "glColorPointerListIBM", Convention = CallingConvention.Winapi)]
         public unsafe partial void ColorPointerList([Flow(Silk.NET.Core.Native.FlowDirection.In)] int size, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ColorPointerType type, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int stride, [Count(Computed = "size, type, stride"), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in void* pointer, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int ptrstride);
 
@@ -49,7 +49,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.IBM
         [NativeApi(EntryPoint = "glEdgeFlagPointerListIBM", Convention = CallingConvention.Winapi)]
         public unsafe partial void EdgeFlagPointerList([Flow(Silk.NET.Core.Native.FlowDirection.In)] int stride, [Count(Computed = "stride"), Flow(Silk.NET.Core.Native.FlowDirection.In)] bool** pointer, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int ptrstride);
 
-        [Obsolete("This overload exposes native-sized integer parameters (which are expressed as pointers in the original C function) as C# references due to a historical error, please consider using overloads that expose the following parameters as raw pointers or native integers instead: pointer)]
+        [Obsolete("This overload exposes native-sized integer parameters (which are expressed as pointers in the original C function) as C# references due to a historical error, please consider using overloads that expose the following parameters as raw pointers or native integers instead: pointer")]
         [NativeApi(EntryPoint = "glEdgeFlagPointerListIBM", Convention = CallingConvention.Winapi)]
         public unsafe partial void EdgeFlagPointerList([Flow(Silk.NET.Core.Native.FlowDirection.In)] int stride, [Count(Computed = "stride"), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in bool* pointer, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int ptrstride);
 
@@ -62,7 +62,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.IBM
         [NativeApi(EntryPoint = "glFogCoordPointerListIBM", Convention = CallingConvention.Winapi)]
         public unsafe partial void FogCoordPointerList([Flow(Silk.NET.Core.Native.FlowDirection.In)] IBM type, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int stride, [Count(Computed = "type, stride"), Flow(Silk.NET.Core.Native.FlowDirection.In)] void** pointer, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int ptrstride);
 
-        [Obsolete("This overload exposes native-sized integer parameters (which are expressed as pointers in the original C function) as C# references due to a historical error, please consider using overloads that expose the following parameters as raw pointers or native integers instead: pointer)]
+        [Obsolete("This overload exposes native-sized integer parameters (which are expressed as pointers in the original C function) as C# references due to a historical error, please consider using overloads that expose the following parameters as raw pointers or native integers instead: pointer")]
         [NativeApi(EntryPoint = "glFogCoordPointerListIBM", Convention = CallingConvention.Winapi)]
         public unsafe partial void FogCoordPointerList([Flow(Silk.NET.Core.Native.FlowDirection.In)] IBM type, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int stride, [Count(Computed = "type, stride"), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in void* pointer, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int ptrstride);
 
@@ -75,7 +75,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.IBM
         [NativeApi(EntryPoint = "glFogCoordPointerListIBM", Convention = CallingConvention.Winapi)]
         public unsafe partial void FogCoordPointerList([Flow(Silk.NET.Core.Native.FlowDirection.In)] FogPointerTypeIBM type, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int stride, [Count(Computed = "type, stride"), Flow(Silk.NET.Core.Native.FlowDirection.In)] void** pointer, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int ptrstride);
 
-        [Obsolete("This overload exposes native-sized integer parameters (which are expressed as pointers in the original C function) as C# references due to a historical error, please consider using overloads that expose the following parameters as raw pointers or native integers instead: pointer)]
+        [Obsolete("This overload exposes native-sized integer parameters (which are expressed as pointers in the original C function) as C# references due to a historical error, please consider using overloads that expose the following parameters as raw pointers or native integers instead: pointer")]
         [NativeApi(EntryPoint = "glFogCoordPointerListIBM", Convention = CallingConvention.Winapi)]
         public unsafe partial void FogCoordPointerList([Flow(Silk.NET.Core.Native.FlowDirection.In)] FogPointerTypeIBM type, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int stride, [Count(Computed = "type, stride"), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in void* pointer, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int ptrstride);
 
@@ -88,7 +88,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.IBM
         [NativeApi(EntryPoint = "glIndexPointerListIBM", Convention = CallingConvention.Winapi)]
         public unsafe partial void IndexPointerList([Flow(Silk.NET.Core.Native.FlowDirection.In)] IBM type, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int stride, [Count(Computed = "type, stride"), Flow(Silk.NET.Core.Native.FlowDirection.In)] void** pointer, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int ptrstride);
 
-        [Obsolete("This overload exposes native-sized integer parameters (which are expressed as pointers in the original C function) as C# references due to a historical error, please consider using overloads that expose the following parameters as raw pointers or native integers instead: pointer)]
+        [Obsolete("This overload exposes native-sized integer parameters (which are expressed as pointers in the original C function) as C# references due to a historical error, please consider using overloads that expose the following parameters as raw pointers or native integers instead: pointer")]
         [NativeApi(EntryPoint = "glIndexPointerListIBM", Convention = CallingConvention.Winapi)]
         public unsafe partial void IndexPointerList([Flow(Silk.NET.Core.Native.FlowDirection.In)] IBM type, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int stride, [Count(Computed = "type, stride"), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in void* pointer, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int ptrstride);
 
@@ -101,7 +101,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.IBM
         [NativeApi(EntryPoint = "glIndexPointerListIBM", Convention = CallingConvention.Winapi)]
         public unsafe partial void IndexPointerList([Flow(Silk.NET.Core.Native.FlowDirection.In)] IndexPointerType type, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int stride, [Count(Computed = "type, stride"), Flow(Silk.NET.Core.Native.FlowDirection.In)] void** pointer, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int ptrstride);
 
-        [Obsolete("This overload exposes native-sized integer parameters (which are expressed as pointers in the original C function) as C# references due to a historical error, please consider using overloads that expose the following parameters as raw pointers or native integers instead: pointer)]
+        [Obsolete("This overload exposes native-sized integer parameters (which are expressed as pointers in the original C function) as C# references due to a historical error, please consider using overloads that expose the following parameters as raw pointers or native integers instead: pointer")]
         [NativeApi(EntryPoint = "glIndexPointerListIBM", Convention = CallingConvention.Winapi)]
         public unsafe partial void IndexPointerList([Flow(Silk.NET.Core.Native.FlowDirection.In)] IndexPointerType type, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int stride, [Count(Computed = "type, stride"), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in void* pointer, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int ptrstride);
 
@@ -114,7 +114,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.IBM
         [NativeApi(EntryPoint = "glNormalPointerListIBM", Convention = CallingConvention.Winapi)]
         public unsafe partial void NormalPointerList([Flow(Silk.NET.Core.Native.FlowDirection.In)] IBM type, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int stride, [Count(Computed = "type, stride"), Flow(Silk.NET.Core.Native.FlowDirection.In)] void** pointer, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int ptrstride);
 
-        [Obsolete("This overload exposes native-sized integer parameters (which are expressed as pointers in the original C function) as C# references due to a historical error, please consider using overloads that expose the following parameters as raw pointers or native integers instead: pointer)]
+        [Obsolete("This overload exposes native-sized integer parameters (which are expressed as pointers in the original C function) as C# references due to a historical error, please consider using overloads that expose the following parameters as raw pointers or native integers instead: pointer")]
         [NativeApi(EntryPoint = "glNormalPointerListIBM", Convention = CallingConvention.Winapi)]
         public unsafe partial void NormalPointerList([Flow(Silk.NET.Core.Native.FlowDirection.In)] IBM type, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int stride, [Count(Computed = "type, stride"), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in void* pointer, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int ptrstride);
 
@@ -127,7 +127,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.IBM
         [NativeApi(EntryPoint = "glNormalPointerListIBM", Convention = CallingConvention.Winapi)]
         public unsafe partial void NormalPointerList([Flow(Silk.NET.Core.Native.FlowDirection.In)] NormalPointerType type, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int stride, [Count(Computed = "type, stride"), Flow(Silk.NET.Core.Native.FlowDirection.In)] void** pointer, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int ptrstride);
 
-        [Obsolete("This overload exposes native-sized integer parameters (which are expressed as pointers in the original C function) as C# references due to a historical error, please consider using overloads that expose the following parameters as raw pointers or native integers instead: pointer)]
+        [Obsolete("This overload exposes native-sized integer parameters (which are expressed as pointers in the original C function) as C# references due to a historical error, please consider using overloads that expose the following parameters as raw pointers or native integers instead: pointer")]
         [NativeApi(EntryPoint = "glNormalPointerListIBM", Convention = CallingConvention.Winapi)]
         public unsafe partial void NormalPointerList([Flow(Silk.NET.Core.Native.FlowDirection.In)] NormalPointerType type, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int stride, [Count(Computed = "type, stride"), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in void* pointer, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int ptrstride);
 
@@ -140,7 +140,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.IBM
         [NativeApi(EntryPoint = "glSecondaryColorPointerListIBM", Convention = CallingConvention.Winapi)]
         public unsafe partial void SecondaryColorPointerList([Flow(Silk.NET.Core.Native.FlowDirection.In)] int size, [Flow(Silk.NET.Core.Native.FlowDirection.In)] IBM type, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int stride, [Count(Computed = "size, type, stride"), Flow(Silk.NET.Core.Native.FlowDirection.In)] void** pointer, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int ptrstride);
 
-        [Obsolete("This overload exposes native-sized integer parameters (which are expressed as pointers in the original C function) as C# references due to a historical error, please consider using overloads that expose the following parameters as raw pointers or native integers instead: pointer)]
+        [Obsolete("This overload exposes native-sized integer parameters (which are expressed as pointers in the original C function) as C# references due to a historical error, please consider using overloads that expose the following parameters as raw pointers or native integers instead: pointer")]
         [NativeApi(EntryPoint = "glSecondaryColorPointerListIBM", Convention = CallingConvention.Winapi)]
         public unsafe partial void SecondaryColorPointerList([Flow(Silk.NET.Core.Native.FlowDirection.In)] int size, [Flow(Silk.NET.Core.Native.FlowDirection.In)] IBM type, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int stride, [Count(Computed = "size, type, stride"), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in void* pointer, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int ptrstride);
 
@@ -153,7 +153,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.IBM
         [NativeApi(EntryPoint = "glSecondaryColorPointerListIBM", Convention = CallingConvention.Winapi)]
         public unsafe partial void SecondaryColorPointerList([Flow(Silk.NET.Core.Native.FlowDirection.In)] int size, [Flow(Silk.NET.Core.Native.FlowDirection.In)] SecondaryColorPointerTypeIBM type, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int stride, [Count(Computed = "size, type, stride"), Flow(Silk.NET.Core.Native.FlowDirection.In)] void** pointer, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int ptrstride);
 
-        [Obsolete("This overload exposes native-sized integer parameters (which are expressed as pointers in the original C function) as C# references due to a historical error, please consider using overloads that expose the following parameters as raw pointers or native integers instead: pointer)]
+        [Obsolete("This overload exposes native-sized integer parameters (which are expressed as pointers in the original C function) as C# references due to a historical error, please consider using overloads that expose the following parameters as raw pointers or native integers instead: pointer")]
         [NativeApi(EntryPoint = "glSecondaryColorPointerListIBM", Convention = CallingConvention.Winapi)]
         public unsafe partial void SecondaryColorPointerList([Flow(Silk.NET.Core.Native.FlowDirection.In)] int size, [Flow(Silk.NET.Core.Native.FlowDirection.In)] SecondaryColorPointerTypeIBM type, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int stride, [Count(Computed = "size, type, stride"), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in void* pointer, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int ptrstride);
 
@@ -166,7 +166,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.IBM
         [NativeApi(EntryPoint = "glTexCoordPointerListIBM", Convention = CallingConvention.Winapi)]
         public unsafe partial void TexCoordPointerList([Flow(Silk.NET.Core.Native.FlowDirection.In)] int size, [Flow(Silk.NET.Core.Native.FlowDirection.In)] IBM type, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int stride, [Count(Computed = "size, type, stride"), Flow(Silk.NET.Core.Native.FlowDirection.In)] void** pointer, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int ptrstride);
 
-        [Obsolete("This overload exposes native-sized integer parameters (which are expressed as pointers in the original C function) as C# references due to a historical error, please consider using overloads that expose the following parameters as raw pointers or native integers instead: pointer)]
+        [Obsolete("This overload exposes native-sized integer parameters (which are expressed as pointers in the original C function) as C# references due to a historical error, please consider using overloads that expose the following parameters as raw pointers or native integers instead: pointer")]
         [NativeApi(EntryPoint = "glTexCoordPointerListIBM", Convention = CallingConvention.Winapi)]
         public unsafe partial void TexCoordPointerList([Flow(Silk.NET.Core.Native.FlowDirection.In)] int size, [Flow(Silk.NET.Core.Native.FlowDirection.In)] IBM type, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int stride, [Count(Computed = "size, type, stride"), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in void* pointer, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int ptrstride);
 
@@ -179,7 +179,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.IBM
         [NativeApi(EntryPoint = "glTexCoordPointerListIBM", Convention = CallingConvention.Winapi)]
         public unsafe partial void TexCoordPointerList([Flow(Silk.NET.Core.Native.FlowDirection.In)] int size, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TexCoordPointerType type, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int stride, [Count(Computed = "size, type, stride"), Flow(Silk.NET.Core.Native.FlowDirection.In)] void** pointer, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int ptrstride);
 
-        [Obsolete("This overload exposes native-sized integer parameters (which are expressed as pointers in the original C function) as C# references due to a historical error, please consider using overloads that expose the following parameters as raw pointers or native integers instead: pointer)]
+        [Obsolete("This overload exposes native-sized integer parameters (which are expressed as pointers in the original C function) as C# references due to a historical error, please consider using overloads that expose the following parameters as raw pointers or native integers instead: pointer")]
         [NativeApi(EntryPoint = "glTexCoordPointerListIBM", Convention = CallingConvention.Winapi)]
         public unsafe partial void TexCoordPointerList([Flow(Silk.NET.Core.Native.FlowDirection.In)] int size, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TexCoordPointerType type, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int stride, [Count(Computed = "size, type, stride"), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in void* pointer, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int ptrstride);
 
@@ -192,7 +192,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.IBM
         [NativeApi(EntryPoint = "glVertexPointerListIBM", Convention = CallingConvention.Winapi)]
         public unsafe partial void VertexPointerList([Flow(Silk.NET.Core.Native.FlowDirection.In)] int size, [Flow(Silk.NET.Core.Native.FlowDirection.In)] IBM type, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int stride, [Count(Computed = "size, type, stride"), Flow(Silk.NET.Core.Native.FlowDirection.In)] void** pointer, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int ptrstride);
 
-        [Obsolete("This overload exposes native-sized integer parameters (which are expressed as pointers in the original C function) as C# references due to a historical error, please consider using overloads that expose the following parameters as raw pointers or native integers instead: pointer)]
+        [Obsolete("This overload exposes native-sized integer parameters (which are expressed as pointers in the original C function) as C# references due to a historical error, please consider using overloads that expose the following parameters as raw pointers or native integers instead: pointer")]
         [NativeApi(EntryPoint = "glVertexPointerListIBM", Convention = CallingConvention.Winapi)]
         public unsafe partial void VertexPointerList([Flow(Silk.NET.Core.Native.FlowDirection.In)] int size, [Flow(Silk.NET.Core.Native.FlowDirection.In)] IBM type, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int stride, [Count(Computed = "size, type, stride"), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in void* pointer, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int ptrstride);
 
@@ -205,7 +205,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.IBM
         [NativeApi(EntryPoint = "glVertexPointerListIBM", Convention = CallingConvention.Winapi)]
         public unsafe partial void VertexPointerList([Flow(Silk.NET.Core.Native.FlowDirection.In)] int size, [Flow(Silk.NET.Core.Native.FlowDirection.In)] VertexPointerType type, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int stride, [Count(Computed = "size, type, stride"), Flow(Silk.NET.Core.Native.FlowDirection.In)] void** pointer, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int ptrstride);
 
-        [Obsolete("This overload exposes native-sized integer parameters (which are expressed as pointers in the original C function) as C# references due to a historical error, please consider using overloads that expose the following parameters as raw pointers or native integers instead: pointer)]
+        [Obsolete("This overload exposes native-sized integer parameters (which are expressed as pointers in the original C function) as C# references due to a historical error, please consider using overloads that expose the following parameters as raw pointers or native integers instead: pointer")]
         [NativeApi(EntryPoint = "glVertexPointerListIBM", Convention = CallingConvention.Winapi)]
         public unsafe partial void VertexPointerList([Flow(Silk.NET.Core.Native.FlowDirection.In)] int size, [Flow(Silk.NET.Core.Native.FlowDirection.In)] VertexPointerType type, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int stride, [Count(Computed = "size, type, stride"), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in void* pointer, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int ptrstride);
 

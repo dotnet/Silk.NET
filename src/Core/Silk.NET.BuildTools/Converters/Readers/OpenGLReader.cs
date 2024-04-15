@@ -470,7 +470,6 @@ namespace Silk.NET.BuildTools.Converters.Readers
                     out _
                 );
 
-                Console.WriteLine(functionElement.Attribute("name")?.Value);
                 if ((intAsPtr?.TryGetValue(
                         functionElement.Attribute("name")!.Value,
                         out var intAsPtrParams

@@ -104,7 +104,7 @@ namespace Silk.NET.BuildTools.Overloading
                                         "\"This overload exposes native-sized integer parameters (which are " +
                                         "expressed as pointers in the original C function) as C# references due to a " +
                                         "historical error, please consider using overloads that expose the following " +
-                                        $"parameters as raw pointers or native integers instead: {paramStr}"
+                                        $"parameters as raw pointers or native integers instead: {paramStr}\""
                                     }
                                 }
                             );
