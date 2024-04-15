@@ -1,4 +1,5 @@
 using System;
+using System.Diagnostics.CodeAnalysis;
 using Microsoft.Extensions.DependencyModel;
 using Silk.NET.Core.Attributes;
 using Silk.NET.Core.Contexts;
@@ -14,7 +15,11 @@ namespace Silk.NET.OpenCL
              return new CL(CreateDefaultContext(new OpenCLLibraryNameContainer().GetLibraryNames()));
         }
 
+#if NET5_0_OR_GREATER
+        public bool TryGetExtension<[DynamicallyAccessedMembers(DynamicallyAccessedMemberTypes.PublicConstructors | DynamicallyAccessedMemberTypes.NonPublicConstructors)] T>(out T ext)
+#else
         public bool TryGetExtension<T>(out T ext)
+#endif
             where T : NativeExtension<CL>
         {
             ext = IsExtensionPresent(ExtensionAttribute.GetExtensionAttribute(typeof(T)).Name)

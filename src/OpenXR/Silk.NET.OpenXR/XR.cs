@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Concurrent;
 using System.Collections.Generic;
+using System.Diagnostics.CodeAnalysis;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using System.Threading;
@@ -44,7 +45,12 @@ namespace Silk.NET.OpenXR
         /// to call an extension function from an extension that isn't loaded.
         /// </remarks>
         /// <returns>Whether the extension is available and loaded.</returns>
+#if NET5_0_OR_GREATER
+
+        public bool TryGetInstanceExtension<[DynamicallyAccessedMembers(DynamicallyAccessedMemberTypes.PublicConstructors | DynamicallyAccessedMemberTypes.NonPublicConstructors)] T>(string? layer, Instance instance, out T ext) where T : NativeExtension<XR> =>
+#else
         public bool TryGetInstanceExtension<T>(string? layer, Instance instance, out T ext) where T : NativeExtension<XR> =>
+#endif
             !((ext = IsInstanceExtensionPresent(layer, ExtensionAttribute.GetExtensionAttribute(typeof(T)).Name)
                 ? (T) Activator.CreateInstance
                     (typeof(T), new LamdaNativeContext(

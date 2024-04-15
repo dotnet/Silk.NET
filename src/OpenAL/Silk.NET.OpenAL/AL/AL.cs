@@ -2,6 +2,7 @@
 // The .NET Foundation licenses this file to you under the MIT license.
 
 using System;
+using System.Diagnostics.CodeAnalysis;
 using System.Numerics;
 using Silk.NET.Core.Attributes;
 using Silk.NET.Core.Contexts;
@@ -379,10 +380,7 @@ namespace Silk.NET.OpenAL
         public bool TryGetExtension<T>(out T ext)
             where T : NativeExtension<AL>
         {
-            ext = IsExtensionPresent(ExtensionAttribute.GetExtensionAttribute(typeof(T)).Name)
-                ? (T) Activator.CreateInstance(typeof(T), Context)
-                : null;
-            return ext is not null;
+            throw new NotImplementedException();
         }
 
         /// <summary>
@@ -395,7 +393,11 @@ namespace Silk.NET.OpenAL
             "This method has been deprecated and will be removed in Silk.NET 3.0. " +
             "Please use TryGetExtension instead."
         )]
+#if NET5_0_OR_GREATER
+        public TExtension GetExtension<[DynamicallyAccessedMembers(DynamicallyAccessedMemberTypes.PublicConstructors | DynamicallyAccessedMemberTypes.NonPublicConstructors)] TExtension>()
+#else
         public TExtension GetExtension<TExtension>()
+#endif
             where TExtension : NativeExtension<AL>
         {
             return IsExtensionPresent(ExtensionAttribute.GetExtensionAttribute(typeof(TExtension)).Name)

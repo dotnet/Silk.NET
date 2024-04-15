@@ -1,4 +1,5 @@
 using System;
+using System.Diagnostics.CodeAnalysis;
 using System.Runtime.InteropServices;
 using System.Runtime.CompilerServices;
 using System.Text;
@@ -20,7 +21,11 @@ namespace Silk.NET.WGL
             return new(CreateDefaultContext(new string[] {"Opengl32.dll"}));
         }
 
+#if NET5_0_OR_GREATER
+        public bool TryGetExtension<[DynamicallyAccessedMembers(DynamicallyAccessedMemberTypes.PublicConstructors | DynamicallyAccessedMemberTypes.NonPublicConstructors)] T>(out T ext)
+#else
         public bool TryGetExtension<T>(out T ext)
+#endif
             where T:NativeExtension<WGL>
         {
              ext = IsExtensionPresent(GetExtensionAttribute(typeof(T)).Name)
