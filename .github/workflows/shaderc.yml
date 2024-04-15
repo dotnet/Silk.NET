@@ -2,8 +2,8 @@ name: Shaderc
 on:
   push:
     branches-ignore:
-      - "ci/*"
-      - "develop/*"
+      - "ci/**"
+      - "develop/**"
       - "main"
     paths:
       - build/submodules/shaderc
@@ -12,6 +12,7 @@ on:
       - .github/workflows/shaderc.yml
 jobs:
   Build:
+    if: github.repository == 'dotnet/Silk.NET'
     strategy:
       fail-fast: false
       matrix:

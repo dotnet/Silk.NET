@@ -2,10 +2,10 @@ name: Public API
 on:
     push:
         branches:
-            - "*"
+            - "**"
     create:
         tags:
-            - "*"
+            - "**"
     pull_request_target:
 permissions:
     issues: write
@@ -42,7 +42,7 @@ jobs:
                     7.0.*
             - name: Install Workloads for Restore
               # TODO: This is slow. Maybe we can make a docker container with this already done?
-              run: dotnet workload install android ios maccatalyst maui
+              run: dotnet workload install android ios maccatalyst
             - name: Ensure Public API Declared
               run: ./build.sh EnsureApiDeclared
               env:

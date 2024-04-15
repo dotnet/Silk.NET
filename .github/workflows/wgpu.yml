@@ -2,8 +2,8 @@ name: WGPU
 on:
   push:
     branches-ignore:
-      - "ci/*"
-      - "develop/*"
+      - "ci/**"
+      - "develop/**"
       - "main"
     paths:
       - build/submodules/wgpu-native
@@ -12,6 +12,7 @@ on:
       - .github/workflows/wgpu.yml
 jobs:
   Build:
+    if: github.repository == 'dotnet/Silk.NET'
     strategy:
       fail-fast: false
       matrix:

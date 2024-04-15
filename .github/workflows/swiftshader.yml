@@ -7,12 +7,13 @@ on:
       - build/nuke/Native/SwiftShader.cs
       - .github/workflows/swiftshader.yml
     branches-ignore:
-      - "ci/*"
-      - "develop/*"
+      - "ci/**"
+      - "develop/**"
       - "main"
 jobs:
   Build:
-    strategy: 
+    if: github.repository == 'dotnet/Silk.NET'
+    strategy:
       fail-fast: false
       matrix:
         env:

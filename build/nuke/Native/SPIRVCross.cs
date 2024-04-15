@@ -73,30 +73,23 @@ pub fn build(b: *std.Build) void {
 
     lib.addCSourceFiles(.{
         .files = &.{
-            root_path ++ ""spirv_cross.cpp"",
-            root_path ++ ""spirv_cfg.cpp"",
-            root_path ++ ""spirv_cpp.cpp"",
-            root_path ++ ""spirv_cross_c.cpp"",
-            root_path ++ ""spirv_cross_parsed_ir.cpp"",
-            root_path ++ ""spirv_cross_util.cpp"",
-            root_path ++ ""spirv_glsl.cpp"",
-            root_path ++ ""spirv_hlsl.cpp"",
-            root_path ++ ""spirv_msl.cpp"",
-            root_path ++ ""spirv_parser.cpp"",
-            root_path ++ ""spirv_reflect.cpp"",
+            ""spirv_cross.cpp"",
+            ""spirv_cfg.cpp"",
+            ""spirv_cpp.cpp"",
+            ""spirv_cross_c.cpp"",
+            ""spirv_cross_parsed_ir.cpp"",
+            ""spirv_cross_util.cpp"",
+            ""spirv_glsl.cpp"",
+            ""spirv_hlsl.cpp"",
+            ""spirv_msl.cpp"",
+            ""spirv_parser.cpp"",
+            ""spirv_reflect.cpp"",
         }, 
         .flags = flags
     });
 
     b.installArtifact(lib);
-}
-
-fn root_dir() []const u8 {
-    return std.fs.path.dirname(@src().file) orelse ""."";
-}
-
-const root_path = root_dir() ++ ""/"";
-";
+}";
 
     Target SPIRVCross => CommonTarget
         (

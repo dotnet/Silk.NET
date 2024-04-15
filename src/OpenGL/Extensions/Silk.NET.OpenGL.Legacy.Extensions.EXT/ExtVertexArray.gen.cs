@@ -39,7 +39,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.EXT
         public unsafe partial void EdgeFlagPointer([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint stride, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint count, [Count(Computed = "stride, count"), Flow(Silk.NET.Core.Native.FlowDirection.In)] bool* pointer);
 
         [NativeApi(EntryPoint = "glEdgeFlagPointerEXT", Convention = CallingConvention.Winapi)]
-        public partial void EdgeFlagPointer([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint stride, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint count, [Count(Computed = "stride, count"), Flow(Silk.NET.Core.Native.FlowDirection.In)] in bool pointer);
+        public partial void EdgeFlagPointer([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint stride, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint count, [Count(Computed = "stride, count"), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in bool pointer);
 
         [NativeApi(EntryPoint = "glGetPointervEXT", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetPointer([Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT pname, [Count(Count = 1), Flow(Silk.NET.Core.Native.FlowDirection.Out)] void** @params);

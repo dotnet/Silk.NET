@@ -519,7 +519,12 @@
                     "StdVideoH265LevelIdc": "Video.StdVideoH265LevelIdc",
                     "StdVideoH265PictureType": "Video.StdVideoH265PictureType",
                     "StdVideoH265ProfileIdc": "Video.StdVideoH265ProfileIdc",
-                    "StdVideoH265SliceType": "Video.StdVideoH265SliceType"
+                    "StdVideoH265SliceType": "Video.StdVideoH265SliceType",
+                    "StdVideoAV1Level": "Video.StdVideoAV1Level",
+                    "StdVideoAV1SequenceHeader": "Video.StdVideoAV1SequenceHeader",
+                    "StdVideoDecodeAV1PictureInfo": "Video.StdVideoDecodeAV1PictureInfo",
+                    "StdVideoAV1Profile": "Video.StdVideoAV1Profile",
+                    "StdVideoDecodeAV1ReferenceInfo": "Video.StdVideoDecodeAV1ReferenceInfo"
                 },
                 {
                     "$include.commonTypeMap": "build/csharp_typemap.json",
@@ -2486,7 +2491,7 @@
                     "-Wno-nonportable-include-path",
                     "-Wno-pragma-pack",
                     "-I$windowsSdkIncludes",
-                    "-Ibuild/submodules/wgpu-native/ffi"
+                    "-Ibuild/submodules/wgpu-native/ffi/webgpu-headers"
                 ],
                 "traverse": [
                     "build/submodules/webgpu-headers/*.h",
@@ -2500,6 +2505,20 @@
             },
             "exclude": [],
             "rename": {
+                "WGPUInstanceRequestAdapterCallback": "RequestAdapterCallback",
+                "WGPUAdapterRequestDeviceCallback": "RequestDeviceCallback",
+                "WGPURequestAdapterCallback": "RequestAdapterCallback",
+                "WGPURequestDeviceCallback": "RequestDeviceCallback",
+                "WGPUBufferMapAsyncCallback": "BufferMapCallback",
+                "WGPUBufferMapCallback": "BufferMapCallback",
+                "WGPUCompilationInfoCallback": "CompilationInfoCallback",
+                "WGPUShaderModuleGetCompilationInfoCallback": "CompilationInfoCallback",
+                "WGPUQueueWorkDoneCallback": "QueueWorkDoneCallback",
+                "WGPUQueueOnSubmittedWorkDoneCallback": "QueueWorkDoneCallback",
+                "WGPUDeviceCreateRenderPipelineAsyncCallback": "CreateRenderPipelineAsyncCallback",
+                "WGPUCreateRenderPipelineAsyncCallback": "CreateRenderPipelineAsyncCallback",
+                "WGPUDeviceCreateComputePipelineAsyncCallback": "CreateComputePipelineAsyncCallback",
+                "WGPUCreateComputePipelineAsyncCallback": "CreateComputePipelineAsyncCallback",
                 "WGPUComputePipelineImpl": "ComputePipeline",
                 "WGPUAdapterImpl": "Adapter",
                 "WGPUBindGroupImpl": "BindGroup",

@@ -451,8 +451,8 @@ namespace Silk.NET.Windowing.Sdl
             };
             CoreInitialize
             (
-                opts, flags, InitialMonitor?.Bounds.Origin.X + Position.X,
-                InitialMonitor?.Bounds.Origin.Y + Position.Y, Size.X, Size.Y, Title, SharedContext
+                opts, flags, (InitialMonitor?.Bounds.Origin.X ?? 0) + _extendedOptionsCache.Position.X,
+                (InitialMonitor?.Bounds.Origin.Y ?? 0) + _extendedOptionsCache.Position.Y, Size.X, Size.Y, Title, SharedContext
             );
         }
     }

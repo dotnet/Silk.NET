@@ -12,7 +12,7 @@
 
 </div>
 
-<div> 
+<div>
 <!-- End exclude from NuGet readme. -->
 <!-- Begin include in NuGet readme.
 ![Silk.NET Logo](https://raw.githubusercontent.com/dotnet/Silk.NET/main/documentation/readme/silkdotnet_v3_horizontal_96.svg)
@@ -73,22 +73,26 @@ In addition, the Silk.NET working group help drive larger user-facing changes pr
 
 <h1 align="center">Building from source</h1>
 
-Prerequisites
-- **Must**: .NET 6 SDK
-- **Should**: [NUKE](https://nuke.build) (build system). Install using `dotnet tool install Nuke.GlobalTool --global`
-- **Should**: Android, iOS, and MAUI .NET 6 workloads (use `dotnet workload install android ios maccatalyst maui` to install them)
-- **Should**: Android SDK version 30 with NDK tools installed. On Windows, for best results this should be installed into `C:\ProgramData\Android\android-sdk`.
-- **Could**: Java JDK (for gradle)
-- **Could**: Visual Studio 2022 Community version 17.0 or later
+**Prerequisites**
 
-Instructions
-- Clone the repository (recursively)
-- Run build.sh, build.cmd, build.ps1, or `nuke compile`.
-- Use the DLLs. To get nupkgs you can use with NuGet instead, use `nuke pack`.
+- .NET 6 SDK and .NET 7 SDK
+- Android, iOS, and Mac Catalyst workloads (use `dotnet workload install android ios maccatalyst` to install them)
+    - On Linux, `ios` and `maccatalyst` should be omitted as they are not available
+- Android SDK versions 31, 33, and 34 with NDK tools installed
+    - On Windows, for best results, this should be installed into `C:\ProgramData\Android\android-sdk`
+- Java JDK 11+
+- Visual Studio 2022 Community version 17.0 or later (optional)
 
-There are more advanced build actions you can do too, such as FullBuild, Pack, FullPack, among others which you can view by doing `nuke --plan`.
+**Instructions**
 
-Note: Some .NET 6 workloads are only supported on Windows and macOS today.
+- Clone the repository
+    - Note: Avoid performing a recursive clone as the submodules are not necessary for a normal build
+- Run `build.sh`, `build.cmd`, `build.ps1`, or `nuke compile`
+    - On Linux, you may need to pass `--msbuild-properties AndroidSdkDirectory=/path/to/android/sdk`
+- Use the built assemblies
+    - To get `.nupkg`s that you can use with NuGet instead, use `nuke pack`
+
+There are more advanced build actions you can do too, such as `FullBuild`, `Pack`, `FullPack`, among others which you can view by doing `nuke --plan`.
 
 <h1 align="center">Contributing</h1>
 
@@ -127,7 +131,7 @@ Silk.NET is a [.NET Foundation](https://www.dotnetfoundation.org/projects) proje
 <div>
     <a href="https://www.jetbrains.com/?from=Silk.NET" align="right"><img src="https://raw.githubusercontent.com/dotnet/Silk.NET/main/documentation/readme/jetbrains.svg" alt="JetBrains" class="logo-footer" width="72" align="left">
     <a><br/>
-        
+
 Special thanks to [JetBrains](https://www.jetbrains.com/?from=Silk.NET) for supporting us with open-source licenses for their IDEs. </a>
 </div>
 

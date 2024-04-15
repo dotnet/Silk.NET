@@ -7,6 +7,7 @@ using System.Runtime.InteropServices;
 using Nuke.Common;
 using Nuke.Common.Tooling;
 using Nuke.Common.Tools.DotNet;
+using Serilog;
 using static Nuke.Common.IO.FileSystemTasks;
 using static Nuke.Common.Tools.DotNet.DotNetTasks;
 using static Nuke.Common.Tooling.ProcessTasks;
@@ -57,7 +58,7 @@ partial class Build
                     }
                     else
                     {
-                        Logger.Warn("Skipping gradlew clean as the \"native\" feature-set has not been specified.");
+                        Log.Warning("Skipping gradlew clean as the \"native\" feature-set has not been specified.");
                     }
 
                     return outputs;

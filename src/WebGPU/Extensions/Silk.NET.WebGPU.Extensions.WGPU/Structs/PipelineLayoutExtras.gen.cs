@@ -22,7 +22,7 @@ namespace Silk.NET.WebGPU.Extensions.WGPU
         public PipelineLayoutExtras
         (
             ChainedStruct? chain = null,
-            uint? pushConstantRangeCount = null,
+            nuint? pushConstantRangeCount = null,
             PushConstantRange* pushConstantRanges = null
         ) : this()
         {
@@ -48,13 +48,13 @@ namespace Silk.NET.WebGPU.Extensions.WGPU
         [NativeName("Name", "chain")]
         public ChainedStruct Chain;
 
-        [NativeName("Type", "uint32_t")]
-        [NativeName("Type.Name", "uint32_t")]
+        [NativeName("Type", "size_t")]
+        [NativeName("Type.Name", "size_t")]
         [NativeName("Name", "pushConstantRangeCount")]
-        public uint PushConstantRangeCount;
+        public nuint PushConstantRangeCount;
 
-        [NativeName("Type", "WGPUPushConstantRange *")]
-        [NativeName("Type.Name", "WGPUPushConstantRange *")]
+        [NativeName("Type", "const WGPUPushConstantRange *")]
+        [NativeName("Type.Name", "const WGPUPushConstantRange *")]
         [NativeName("Name", "pushConstantRanges")]
         public PushConstantRange* PushConstantRanges;
     }

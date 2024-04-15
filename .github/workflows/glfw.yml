@@ -2,8 +2,8 @@ name: GLFW
 on:
   push:
     branches-ignore:
-      - "ci/*"
-      - "develop/*"
+      - "ci/**"
+      - "develop/**"
       - "main"
     paths:
       - "build/submodules/GLFW"
@@ -12,7 +12,8 @@ on:
       - .github/workflows/glfw.yml
 jobs:
   Build:
-    strategy: 
+    if: github.repository == 'dotnet/Silk.NET'
+    strategy:
       fail-fast: false
       matrix:
         env:
@@ -21,7 +22,7 @@ jobs:
             nuke_invoke: ./build.sh
             extras: |
               sudo apt-get update
-              sudo apt-get install -y xorg-dev 
+              sudo apt-get install -y xorg-dev libwayland-dev libxkbcommon-dev
           - os: windows-latest
             name: Windows
             nuke_invoke: ./build.cmd

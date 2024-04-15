@@ -26,7 +26,7 @@ namespace Silk.NET.Vulkan.Extensions.EXT
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkCopyImageToImageEXT", Convention = CallingConvention.Winapi)]
-        public partial Result CopyImageToImage([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] in CopyImageToImageInfoEXT pCopyImageToImageInfo);
+        public partial Result CopyImageToImage([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in CopyImageToImageInfoEXT pCopyImageToImageInfo);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkCopyImageToMemoryEXT", Convention = CallingConvention.Winapi)]
@@ -34,7 +34,7 @@ namespace Silk.NET.Vulkan.Extensions.EXT
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkCopyImageToMemoryEXT", Convention = CallingConvention.Winapi)]
-        public partial Result CopyImageToMemory([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] in CopyImageToMemoryInfoEXT pCopyImageToMemoryInfo);
+        public partial Result CopyImageToMemory([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in CopyImageToMemoryInfoEXT pCopyImageToMemoryInfo);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkCopyMemoryToImageEXT", Convention = CallingConvention.Winapi)]
@@ -42,7 +42,7 @@ namespace Silk.NET.Vulkan.Extensions.EXT
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkCopyMemoryToImageEXT", Convention = CallingConvention.Winapi)]
-        public partial Result CopyMemoryToImage([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] in CopyMemoryToImageInfoEXT pCopyMemoryToImageInfo);
+        public partial Result CopyMemoryToImage([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in CopyMemoryToImageInfoEXT pCopyMemoryToImageInfo);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkGetImageSubresourceLayout2EXT", Convention = CallingConvention.Winapi)]
@@ -55,12 +55,12 @@ namespace Silk.NET.Vulkan.Extensions.EXT
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkGetImageSubresourceLayout2EXT", Convention = CallingConvention.Winapi)]
-        public unsafe partial void GetImageSubresourceLayout2([Count(Count = 0)] Device device, [Count(Count = 0)] Image image, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] in ImageSubresource2KHR pSubresource, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] SubresourceLayout2KHR* pLayout);
+        public unsafe partial void GetImageSubresourceLayout2([Count(Count = 0)] Device device, [Count(Count = 0)] Image image, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ImageSubresource2KHR pSubresource, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] SubresourceLayout2KHR* pLayout);
 
         /// <summary>To be documented.</summary>
         [Inject(SilkTouchStage.Begin, "pLayout = new(StructureType.SubresourceLayout2Khr);")]
         [NativeApi(EntryPoint = "vkGetImageSubresourceLayout2EXT", Convention = CallingConvention.Winapi)]
-        public partial void GetImageSubresourceLayout2([Count(Count = 0)] Device device, [Count(Count = 0)] Image image, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] in ImageSubresource2KHR pSubresource, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] out SubresourceLayout2KHR pLayout);
+        public partial void GetImageSubresourceLayout2([Count(Count = 0)] Device device, [Count(Count = 0)] Image image, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ImageSubresource2KHR pSubresource, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] out SubresourceLayout2KHR pLayout);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkTransitionImageLayoutEXT", Convention = CallingConvention.Winapi)]
@@ -68,7 +68,7 @@ namespace Silk.NET.Vulkan.Extensions.EXT
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkTransitionImageLayoutEXT", Convention = CallingConvention.Winapi)]
-        public partial Result TransitionImageLayout([Count(Count = 0)] Device device, [Count(Count = 0)] uint transitionCount, [Count(Parameter = "transitionCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] in HostImageLayoutTransitionInfoEXT pTransitions);
+        public partial Result TransitionImageLayout([Count(Count = 0)] Device device, [Count(Count = 0)] uint transitionCount, [Count(Parameter = "transitionCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in HostImageLayoutTransitionInfoEXT pTransitions);
 
         /// <summary>To be documented.</summary>
         public unsafe Result TransitionImageLayout([Count(Count = 0)] Device device, [Count(Parameter = "transitionCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<HostImageLayoutTransitionInfoEXT> pTransitions)
@@ -88,7 +88,7 @@ namespace Silk.NET.Vulkan.Extensions.EXT
 
         /// <summary>To be documented.</summary>
         [Inject(SilkTouchStage.Begin, "pLayout = new(StructureType.SubresourceLayout2Khr);")]
-        public unsafe SubresourceLayout2KHR GetImageSubresourceLayout2([Count(Count = 0)] Device device, [Count(Count = 0)] Image image, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] in ImageSubresource2KHR pSubresource)
+        public unsafe SubresourceLayout2KHR GetImageSubresourceLayout2([Count(Count = 0)] Device device, [Count(Count = 0)] Image image, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ImageSubresource2KHR pSubresource)
         {
             // NonKhrReturnTypeOverloader
             GetImageSubresourceLayout2(device, image, in pSubresource, out SubresourceLayout2KHR silkRet);

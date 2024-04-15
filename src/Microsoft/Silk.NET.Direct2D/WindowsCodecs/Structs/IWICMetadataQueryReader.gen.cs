@@ -226,7 +226,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetMetadataByName([Flow(Silk.NET.Core.Native.FlowDirection.In)] in char wzName, void* pvarValue)
+        public readonly unsafe int GetMetadataByName([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char wzName, void* pvarValue)
         {
             var @this = (IWICMetadataQueryReader*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -238,7 +238,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int GetMetadataByName<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] in char wzName, ref T0 pvarValue) where T0 : unmanaged
+        public readonly int GetMetadataByName<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char wzName, ref T0 pvarValue) where T0 : unmanaged
         {
             var @this = (IWICMetadataQueryReader*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;

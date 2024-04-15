@@ -2,8 +2,8 @@ name: SPIRV-Cross
 on:
   push:
     branches-ignore:
-      - "ci/*"
-      - "develop/*"
+      - "ci/**"
+      - "develop/**"
       - "main"
     paths:
       - build/submodules/SPIRV-Cross
@@ -12,6 +12,7 @@ on:
       - .github/workflows/spirv-cross.yml
 jobs:
   Build:
+    if: github.repository == 'dotnet/Silk.NET'
     strategy:
       fail-fast: false
       matrix:

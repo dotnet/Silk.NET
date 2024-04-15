@@ -14,7 +14,5 @@ namespace Silk.NET.SPIRV.Reflect
     {
         [NativeName("Name", "SPV_REFLECT_ARRAY_DIM_RUNTIME")]
         Runtime = 0x0,
-        [NativeName("Name", "SPV_REFLECT_ARRAY_DIM_SPEC_CONSTANT")]
-        SpecConstant = unchecked((int) 0xFFFFFFFFFFFFFFFF),
     }
 }

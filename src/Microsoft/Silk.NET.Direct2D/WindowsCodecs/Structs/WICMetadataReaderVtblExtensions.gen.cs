@@ -277,7 +277,7 @@ public unsafe static class WICMetadataReaderVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetValue<T0>(this ComPtr<IWICMetadataReader> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] void* pvarSchema, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in T0 pvarId, void* pvarValue) where T0 : unmanaged
+    public static unsafe int GetValue<T0>(this ComPtr<IWICMetadataReader> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] void* pvarSchema, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in T0 pvarId, void* pvarValue) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -289,7 +289,7 @@ public unsafe static class WICMetadataReaderVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetValue<T0, T1>(this ComPtr<IWICMetadataReader> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] void* pvarSchema, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in T0 pvarId, ref T1 pvarValue) where T0 : unmanaged where T1 : unmanaged
+    public static unsafe int GetValue<T0, T1>(this ComPtr<IWICMetadataReader> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] void* pvarSchema, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in T0 pvarId, ref T1 pvarValue) where T0 : unmanaged where T1 : unmanaged
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -304,7 +304,7 @@ public unsafe static class WICMetadataReaderVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetValue<T0>(this ComPtr<IWICMetadataReader> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in T0 pvarSchema, [Flow(Silk.NET.Core.Native.FlowDirection.In)] void* pvarId, void* pvarValue) where T0 : unmanaged
+    public static unsafe int GetValue<T0>(this ComPtr<IWICMetadataReader> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in T0 pvarSchema, [Flow(Silk.NET.Core.Native.FlowDirection.In)] void* pvarId, void* pvarValue) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -316,7 +316,7 @@ public unsafe static class WICMetadataReaderVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetValue<T0, T1>(this ComPtr<IWICMetadataReader> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in T0 pvarSchema, [Flow(Silk.NET.Core.Native.FlowDirection.In)] void* pvarId, ref T1 pvarValue) where T0 : unmanaged where T1 : unmanaged
+    public static unsafe int GetValue<T0, T1>(this ComPtr<IWICMetadataReader> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in T0 pvarSchema, [Flow(Silk.NET.Core.Native.FlowDirection.In)] void* pvarId, ref T1 pvarValue) where T0 : unmanaged where T1 : unmanaged
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -331,7 +331,7 @@ public unsafe static class WICMetadataReaderVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetValue<T0, T1>(this ComPtr<IWICMetadataReader> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in T0 pvarSchema, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in T1 pvarId, void* pvarValue) where T0 : unmanaged where T1 : unmanaged
+    public static unsafe int GetValue<T0, T1>(this ComPtr<IWICMetadataReader> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in T0 pvarSchema, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in T1 pvarId, void* pvarValue) where T0 : unmanaged where T1 : unmanaged
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -346,7 +346,7 @@ public unsafe static class WICMetadataReaderVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int GetValue<T0, T1, T2>(this ComPtr<IWICMetadataReader> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in T0 pvarSchema, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in T1 pvarId, ref T2 pvarValue) where T0 : unmanaged where T1 : unmanaged where T2 : unmanaged
+    public static int GetValue<T0, T1, T2>(this ComPtr<IWICMetadataReader> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in T0 pvarSchema, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in T1 pvarId, ref T2 pvarValue) where T0 : unmanaged where T1 : unmanaged where T2 : unmanaged
     {
         var @this = thisVtbl.Handle;
         int ret = default;

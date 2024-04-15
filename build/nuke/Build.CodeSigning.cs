@@ -35,7 +35,7 @@ partial class Build
                 {
                     if (!CanCodeSign)
                     {
-                        ControlFlow.Fail("SignClient username and/or password not specified.");
+                        Assert.Fail("SignClient username and/or password not specified.");
                     }
 
                     var outputs = Enumerable.Empty<Output>();

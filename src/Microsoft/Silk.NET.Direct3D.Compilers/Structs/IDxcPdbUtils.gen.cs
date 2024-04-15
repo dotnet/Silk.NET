@@ -618,7 +618,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int OverrideRootSignature([Flow(Silk.NET.Core.Native.FlowDirection.In)] in char pRootSignature)
+        public readonly int OverrideRootSignature([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pRootSignature)
         {
             var @this = (IDxcPdbUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
