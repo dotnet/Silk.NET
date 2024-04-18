@@ -14,8 +14,7 @@ pub fn build(b: *std.Build) void {
         .optimize = optimize,
     });
 
-    //In ReleaseSmall builds, strip the code
-    if (optimize == .ReleaseSmall)
+    if (optimize != .Debug)
         vkd3d_compiler.root_module.strip = true;
 
     vkd3d_compiler.addLibraryPath(.{ .path = "." });

@@ -39,6 +39,11 @@ partial class Build {
         ? Environment.ProcessorCount - 1
         : 1;
 
+    public string GetCMakeToolchainFlag(string target)
+    {
+        return $"-DCMAKE_TOOLCHAIN_FILE={RootDirectory / "build" / "cmake" / target}.cmake";
+    }
+
     public void CopyAs(AbsolutePath @out, string from, string to)
     {
         var file = @out.GlobFiles(from).First();

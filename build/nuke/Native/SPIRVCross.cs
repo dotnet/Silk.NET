@@ -64,12 +64,12 @@ pub fn build(b: *std.Build) void {
         lib.defineCMacro(""SPVC_PUBLIC_API"", ""__declspec(dllexport)"");
     }
 
-    //If we arent in debug, defined NDEBUG
-    if (mode != .Debug)
+    //If we arent in debug, defined NDEBUG and strip symbols
+    if (mode != .Debug) {
         lib.defineCMacro(""NDEBUG"", ""1"");
 
-    if (mode == .ReleaseSmall)
         lib.root_module.strip = true;
+    }
 
     lib.addCSourceFiles(.{
         .files = &.{
@@ -84,7 +84,7 @@ pub fn build(b: *std.Build) void {
             ""spirv_msl.cpp"",
             ""spirv_parser.cpp"",
             ""spirv_reflect.cpp"",
-        }, 
+        },
         .flags = flags
     });
 
@@ -104,16 +104,16 @@ pub fn build(b: *std.Build) void {
                     //Write out the build script to the directory
                     File.WriteAllText(SPIRVCrossPath / "build.zig", SPIRVCrossBuildScript);
 
-                    string releaseMode = "-Doptimize=ReleaseSmall";
+                    string releaseMode = "-Doptimize=ReleaseFast";
 
                     { //Linux
                         //Build for Linux x86_64 with glibc 2.17 (old version specified for compatibility)
                         InheritedShell($"zig build {releaseMode} -Dtarget=x86_64-linux-gnu.2.17 --verbose", SPIRVCrossPath).AssertZeroExitCode();
                         CopyFile(SPIRVCrossPath / "zig-out" / "lib" / "libspirv-cross.so", runtimes / "linux-x64" / "native" / "libspirv-cross.so", FileExistsPolicy.Overwrite);
 
-                        //Build for Linux x86 with glibc 2.17 (old version specified for compatibility)
-                        InheritedShell($"zig build {releaseMode} -Dtarget=x86-linux-gnu.2.17 --verbose", SPIRVCrossPath).AssertZeroExitCode();
-                        CopyFile(SPIRVCrossPath / "zig-out" / "lib" / "libspirv-cross.so", runtimes / "linux-x86" / "native" / "libspirv-cross.so", FileExistsPolicy.Overwrite);
+                        //Build for Linux arm with glibc 2.17 (old version specified for compatibility)
+                        InheritedShell($"zig build {releaseMode} -Dtarget=arm-linux-gnueabihf.2.17 --verbose", SPIRVCrossPath).AssertZeroExitCode();
+                        CopyFile(SPIRVCrossPath / "zig-out" / "lib" / "libspirv-cross.so", runtimes / "linux-arm" / "native" / "libspirv-cross.so", FileExistsPolicy.Overwrite);
 
                         //Build for Linux arm64 with glibc 2.17 (old version specified for compatibility)
                         InheritedShell($"zig build {releaseMode} -Dtarget=aarch64-linux-gnu.2.17 --verbose", SPIRVCrossPath).AssertZeroExitCode();
@@ -150,7 +150,7 @@ pub fn build(b: *std.Build) void {
                         .Concat((runtimes / "osx-x64" / "native").GlobFiles("*.dylib"))
                         .Concat((runtimes / "osx-arm64" / "native").GlobFiles("*.dylib"))
                         .Concat((runtimes / "linux-x64" / "native").GlobFiles("*.so"))
-                        .Concat((runtimes / "linux-x86" / "native").GlobFiles("*.so"))
+                        .Concat((runtimes / "linux-arm" / "native").GlobFiles("*.so"))
                         .Concat((runtimes / "linux-arm64" / "native").GlobFiles("*.so"));
 
                     var glob = string.Empty;

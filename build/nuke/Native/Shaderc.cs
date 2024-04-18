@@ -542,8 +542,8 @@ pub fn build(b: *std.Build) void {
     shaderc.linkLibrary(spirv_tools);
     shaderc.linkLibrary(glslang);
 
-    //On ReleaseSmall, lets strip the binary to reduce size further
-    if (optimize == .ReleaseSmall) {
+    //On release builds, lets strip the binary to reduce size further
+    if (optimize != .Debug) {
         shaderc.root_module.strip = true;
     }
 
@@ -584,15 +584,15 @@ pub fn build(b: *std.Build) void {
 
             const string libname = "shaderc_shared";
 
-            const string optimizeMode = "-Doptimize=ReleaseSmall";
-
-            //Build shaderc for Linux x86
-            InheritedShell($"zig build -Dtarget=x86-linux-gnu.2.17 {optimizeMode}", ShadercPath).AssertZeroExitCode();
-            CopyFile(ShadercPath / "zig-out" / "lib" / $"lib{libname}.so", runtimes / "linux-x86" / "native" / $"lib{libname}.so", FileExistsPolicy.Overwrite);
+            const string optimizeMode = "-Doptimize=ReleaseFast";
 
             //Build shaderc for Linux x86_64
             InheritedShell($"zig build -Dtarget=x86_64-linux-gnu.2.17 {optimizeMode}", ShadercPath).AssertZeroExitCode();
             CopyFile(ShadercPath / "zig-out" / "lib" / $"lib{libname}.so", runtimes / "linux-x64" / "native" / $"lib{libname}.so", FileExistsPolicy.Overwrite);
+
+            //Build shaderc for Linux ARM
+            InheritedShell($"zig build -Dtarget=arm-linux-gnueabihf.2.17 {optimizeMode}", ShadercPath).AssertZeroExitCode();
+            CopyFile(ShadercPath / "zig-out" / "lib" / $"lib{libname}.so", runtimes / "linux-arm" / "native" / $"lib{libname}.so", FileExistsPolicy.Overwrite);
 
             //Build shaderc for Linux ARM64
             InheritedShell($"zig build -Dtarget=aarch64-linux-gnu.2.17 {optimizeMode}", ShadercPath).AssertZeroExitCode();
@@ -624,7 +624,7 @@ pub fn build(b: *std.Build) void {
                 .Concat((runtimes / "osx-x64" / "native").GlobFiles("*.dylib"))
                 .Concat((runtimes / "osx-arm64" / "native").GlobFiles("*.dylib"))
                 .Concat((runtimes / "linux-x64" / "native").GlobFiles("*.so"))
-                .Concat((runtimes / "linux-x86" / "native").GlobFiles("*.so"))
+                .Concat((runtimes / "linux-arm" / "native").GlobFiles("*.so"))
                 .Concat((runtimes / "linux-arm64" / "native").GlobFiles("*.so"));
 
             var glob = string.Empty;
