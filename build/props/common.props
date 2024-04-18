@@ -29,8 +29,8 @@
             - Updated to SDL 2.30.1.
             - Updated to latest OpenCL specifications.
             - Updated to latest SPIR-V Reflect.
-            - Updated Vkd3d native binaries.
             - Updated to latest WebGPU/Dawn/WGPU headers.
+            - Updated Vkd3d native binaries.
             - Fixed string marshalling occasionally resulting in memory access violations on newer .NET 8 versions.
             - Fixed Windowing crashing on .NET Framework builds with prefer 32-bit set using GLFW.
             - Fixed extension loading generic type usage issues with full IL trimming enabled.
