@@ -42,7 +42,8 @@ partial class Build {
                     var prepare = "cmake .. -DSWIFTSHADER_WARNINGS_AS_ERRORS=FALSE -DSWIFTSHADER_BUILD_TESTS=FALSE";
                     var build = $"cmake --build . --config Release{JobsArg}";
 
-                    // Work around SwiftShader's silly Git hook installation logic that fails as a submodule.
+                    // Work around SwiftShader's silly Git hook installation logic that fails as a submodule
+                    // since `.git` is just a file containing a `gitdir` directive.
                     File.WriteAllText(
                         SwiftShaderPath / "CMakeLists.txt",
                         File.ReadAllText(SwiftShaderPath / "CMakeLists.txt")
