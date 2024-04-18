@@ -85,7 +85,7 @@ partial class Build {
                             InheritedShell($"{prepare} -DUSE_GAS=ON {GetCMakeToolchainFlag("aarch64-w64-mingw32")}", buildDir).AssertZeroExitCode();
                             InheritedShell(build, buildDir).AssertZeroExitCode();
 
-                            CopyAll((buildDir / "loader").GlobFiles("libvulkan-1.dll"), runtimes / "win-arm64" / "native");
+                            CopyAll((buildDir / "loader").GlobFiles("vulkan-1.dll"), runtimes / "win-arm64" / "native");
 
                             glob = runtimes / "win-arm64" / "native" / "libvulkan-1.dll";
                         }
