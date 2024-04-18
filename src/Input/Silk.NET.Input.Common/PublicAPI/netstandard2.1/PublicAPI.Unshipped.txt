@@ -1,4 +1,70 @@
 #nullable enable
+Silk.NET.Input.DoubleTapBehavior
+Silk.NET.Input.DoubleTapBehavior.EmitBothSingleTaps = 1 -> Silk.NET.Input.DoubleTapBehavior
+Silk.NET.Input.DoubleTapBehavior.EmitFirstSingleTap = 0 -> Silk.NET.Input.DoubleTapBehavior
+Silk.NET.Input.DoubleTapBehavior.WaitForDoubleTapTimeElapse = 2 -> Silk.NET.Input.DoubleTapBehavior
+Silk.NET.Input.Gesture
+Silk.NET.Input.Gesture.All = Silk.NET.Input.Gesture.Tap | Silk.NET.Input.Gesture.DoubleTap | Silk.NET.Input.Gesture.Swipe | Silk.NET.Input.Gesture.Hold | Silk.NET.Input.Gesture.Zoom | Silk.NET.Input.Gesture.Rotate -> Silk.NET.Input.Gesture
+Silk.NET.Input.Gesture.DoubleTap = 2 -> Silk.NET.Input.Gesture
+Silk.NET.Input.Gesture.Hold = 8 -> Silk.NET.Input.Gesture
+Silk.NET.Input.Gesture.None = 0 -> Silk.NET.Input.Gesture
+Silk.NET.Input.Gesture.Rotate = 32 -> Silk.NET.Input.Gesture
+Silk.NET.Input.Gesture.Swipe = 4 -> Silk.NET.Input.Gesture
+Silk.NET.Input.Gesture.Tap = 1 -> Silk.NET.Input.Gesture
+Silk.NET.Input.Gesture.Zoom = 16 -> Silk.NET.Input.Gesture
+Silk.NET.Input.IInputContext.PrimaryTouchDevice.get -> Silk.NET.Input.ITouchDevice?
+Silk.NET.Input.IInputContext.TouchDevices.get -> System.Collections.Generic.IReadOnlyList<Silk.NET.Input.ITouchDevice!>!
+Silk.NET.Input.ITouchDevice
+Silk.NET.Input.ITouchDevice.FingerDown -> System.Action<Silk.NET.Input.ITouchDevice!, Silk.NET.Input.TouchFinger>?
+Silk.NET.Input.ITouchDevice.FingerMove -> System.Action<Silk.NET.Input.ITouchDevice!, Silk.NET.Input.TouchFinger, System.Numerics.Vector2>?
+Silk.NET.Input.ITouchDevice.Fingers.get -> System.Collections.Generic.IReadOnlyDictionary<long, Silk.NET.Input.TouchFinger>!
+Silk.NET.Input.ITouchDevice.FingerUp -> System.Action<Silk.NET.Input.ITouchDevice!, Silk.NET.Input.TouchFinger>?
+Silk.NET.Input.ITouchDevice.GestureRecognizer.get -> Silk.NET.Input.TouchGestureRecognizer!
+Silk.NET.Input.ITouchDevice.IsFingerDown(long index) -> bool
+Silk.NET.Input.MultiGestureHandling
+Silk.NET.Input.MultiGestureHandling.PrioritizeRotateGesture = 1 -> Silk.NET.Input.MultiGestureHandling
+Silk.NET.Input.MultiGestureHandling.PrioritizeZoomGesture = 0 -> Silk.NET.Input.MultiGestureHandling
+Silk.NET.Input.MultiGestureHandling.RecognizeBothGestures = 2 -> Silk.NET.Input.MultiGestureHandling
+Silk.NET.Input.TouchFinger
+Silk.NET.Input.TouchFinger.Down.get -> bool
+Silk.NET.Input.TouchFinger.Index.get -> long
+Silk.NET.Input.TouchFinger.NormalizedPosition.get -> System.Numerics.Vector2
+Silk.NET.Input.TouchFinger.NormalizedSpeed.get -> System.Numerics.Vector2
+Silk.NET.Input.TouchFinger.Position.get -> System.Numerics.Vector2
+Silk.NET.Input.TouchFinger.Speed.get -> System.Numerics.Vector2
+Silk.NET.Input.TouchFinger.TouchFinger() -> void
+Silk.NET.Input.TouchFinger.TouchFinger(long index, System.Numerics.Vector2 position, System.Numerics.Vector2 normalizedPosition, System.Numerics.Vector2 speed, System.Numerics.Vector2 normalizedSpeed, bool down) -> void
+Silk.NET.Input.TouchGestureRecognizer
+Silk.NET.Input.TouchGestureRecognizer.Dispose() -> void
+Silk.NET.Input.TouchGestureRecognizer.DoubleTap -> System.Action<System.Numerics.Vector2>?
+Silk.NET.Input.TouchGestureRecognizer.DoubleTapBehavior.get -> Silk.NET.Input.DoubleTapBehavior
+Silk.NET.Input.TouchGestureRecognizer.DoubleTapBehavior.set -> void
+Silk.NET.Input.TouchGestureRecognizer.DoubleTapRange.get -> float
+Silk.NET.Input.TouchGestureRecognizer.DoubleTapRange.set -> void
+Silk.NET.Input.TouchGestureRecognizer.DoubleTapTime.get -> int
+Silk.NET.Input.TouchGestureRecognizer.DoubleTapTime.set -> void
+Silk.NET.Input.TouchGestureRecognizer.Hold -> System.Action<System.Numerics.Vector2>?
+Silk.NET.Input.TouchGestureRecognizer.HoldTime.get -> int
+Silk.NET.Input.TouchGestureRecognizer.HoldTime.set -> void
+Silk.NET.Input.TouchGestureRecognizer.MultiGestureHandling.get -> Silk.NET.Input.MultiGestureHandling
+Silk.NET.Input.TouchGestureRecognizer.MultiGestureHandling.set -> void
+Silk.NET.Input.TouchGestureRecognizer.Rotate -> System.Action<System.Numerics.Vector2, float>?
+Silk.NET.Input.TouchGestureRecognizer.RotateAngleThreshold.get -> float
+Silk.NET.Input.TouchGestureRecognizer.RotateAngleThreshold.set -> void
+Silk.NET.Input.TouchGestureRecognizer.Swipe -> System.Action<System.Numerics.Vector2>?
+Silk.NET.Input.TouchGestureRecognizer.SwipeMaxSpeed.get -> float
+Silk.NET.Input.TouchGestureRecognizer.SwipeMaxSpeed.set -> void
+Silk.NET.Input.TouchGestureRecognizer.SwipeMinSpeed.get -> float
+Silk.NET.Input.TouchGestureRecognizer.SwipeMinSpeed.set -> void
+Silk.NET.Input.TouchGestureRecognizer.Tap -> System.Action<System.Numerics.Vector2>?
+Silk.NET.Input.TouchGestureRecognizer.TrackedGestures.get -> Silk.NET.Input.Gesture
+Silk.NET.Input.TouchGestureRecognizer.TrackedGestures.set -> void
+Silk.NET.Input.TouchGestureRecognizer.Update() -> void
+Silk.NET.Input.TouchGestureRecognizer.Zoom -> System.Action<System.Numerics.Vector2, float>?
+Silk.NET.Input.TouchGestureRecognizer.ZoomInDistanceThreshold.get -> float
+Silk.NET.Input.TouchGestureRecognizer.ZoomInDistanceThreshold.set -> void
+Silk.NET.Input.TouchGestureRecognizer.ZoomOutDistanceThreshold.get -> float
+Silk.NET.Input.TouchGestureRecognizer.ZoomOutDistanceThreshold.set -> void
 static Silk.NET.Input.GamepadExtensions.LeftThumbstick(this Silk.NET.Input.IGamepad! gamepad) -> Silk.NET.Input.Thumbstick
 static Silk.NET.Input.GamepadExtensions.LeftThumbstickButton(this Silk.NET.Input.IGamepad! gamepad) -> Silk.NET.Input.Button
 static Silk.NET.Input.GamepadExtensions.RightThumbstick(this Silk.NET.Input.IGamepad! gamepad) -> Silk.NET.Input.Thumbstick

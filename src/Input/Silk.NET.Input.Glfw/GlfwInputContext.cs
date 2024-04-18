@@ -7,7 +7,6 @@ using Silk.NET.GLFW;
 using Silk.NET.Input.Internals;
 using Silk.NET.Windowing;
 using Silk.NET.Windowing.Glfw;
-using Silk.NET.Windowing.Internals;
 
 namespace Silk.NET.Input.Glfw
 {
@@ -94,6 +93,9 @@ namespace Silk.NET.Input.Glfw
         public override IReadOnlyList<IKeyboard> Keyboards { get; }
         public override IReadOnlyList<IMouse> Mice { get; }
         public override IReadOnlyList<IInputDevice> OtherDevices { get; } = Array.Empty<IInputDevice>();
+        public override IReadOnlyList<ITouchDevice> TouchDevices { get; } = Array.Empty<ITouchDevice>();
+        public override ITouchDevice? PrimaryTouchDevice { get; } = null;
+
         public override event Action<IInputDevice, bool>? ConnectionChanged;
     }
 }
