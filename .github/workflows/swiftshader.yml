@@ -3,6 +3,7 @@ on:
   push:
     paths:
       - build/submodules/SwiftShader
+      - "build/cmake/*"
       - build/nuke/Native/Core.cs
       - build/nuke/Native/SwiftShader.cs
       - .github/workflows/swiftshader.yml

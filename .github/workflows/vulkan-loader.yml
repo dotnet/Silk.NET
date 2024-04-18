@@ -7,6 +7,7 @@ on:
       - "main"
     paths:
       - build/submodules/Vulkan-Loader
+      - "build/cmake/*"
       - build/nuke/Native/Core.cs
       - build/nuke/Native/VulkanLoader.cs
       - .github/workflows/vulkan-loader.yml
