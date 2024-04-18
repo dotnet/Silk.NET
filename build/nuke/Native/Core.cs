@@ -65,15 +65,15 @@ partial class Build {
             // it's assumed that the pushable token was used to checkout the repo
             if (OperatingSystem.IsWindows())
             {
-                glob ??= "src/Native/**/*.dll";
+                glob ??= "src/Native/**/*.dll src/Native/**/*.json";
             }
             else if (OperatingSystem.IsMacOS())
             {
-                glob ??= "src/Native/**/*.a src/Native/**/*.dylib";
+                glob ??= "src/Native/**/*.a src/Native/**/*.dylib src/Native/**/*.json";
             }
             else if (OperatingSystem.IsLinux())
             {
-                glob ??= "src/Native/**/*.so*";
+                glob ??= "src/Native/**/*.so* src/Native/**/*.json";
             }
 
             Git("fetch --all", RootDirectory);
