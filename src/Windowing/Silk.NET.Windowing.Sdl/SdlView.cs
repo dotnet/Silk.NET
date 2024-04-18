@@ -149,29 +149,59 @@ namespace Silk.NET.Windowing.Sdl
             IsClosingVal = false;
 
             // Set window GL attributes
-            Sdl.GLSetAttribute(GLattr.DepthSize,
-                    opts.PreferredDepthBufferBits is null || opts.PreferredDepthBufferBits == -1
-                        ? 24 : opts.PreferredDepthBufferBits.Value);
+            if (opts.PreferredDepthBufferBits != -1)
+            {
+                Sdl.GLSetAttribute
+                (
+                    GLattr.DepthSize,
+                    opts.PreferredDepthBufferBits ?? 24
+                );
+            }
 
-            Sdl.GLSetAttribute(GLattr.StencilSize,
-                    opts.PreferredStencilBufferBits is null || opts.PreferredStencilBufferBits == -1
-                        ? 8 : opts.PreferredStencilBufferBits.Value);
+            if (opts.PreferredStencilBufferBits != -1)
+            {
+                Sdl.GLSetAttribute
+                (
+                    GLattr.StencilSize,
+                    opts.PreferredStencilBufferBits ?? 8
+                );
+            }
 
-            Sdl.GLSetAttribute(GLattr.RedSize,
-                    opts.PreferredBitDepth is null || opts.PreferredBitDepth.Value.X == -1
-                        ? 8 : opts.PreferredBitDepth.Value.X);
+            if (opts.PreferredBitDepth?.X != -1)
+            {
+                Sdl.GLSetAttribute
+                (
+                    GLattr.RedSize,
+                    opts.PreferredBitDepth?.X ?? 8
+                );
+            }
 
-            Sdl.GLSetAttribute(GLattr.GreenSize,
-                    opts.PreferredBitDepth is null || opts.PreferredBitDepth.Value.Y == -1
-                        ? 8 : opts.PreferredBitDepth.Value.Y);
+            if (opts.PreferredBitDepth?.Y != -1)
+            {
+                Sdl.GLSetAttribute
+                (
+                    GLattr.GreenSize,
+                    opts.PreferredBitDepth?.Y ?? 8
+                );
+            }
 
-            Sdl.GLSetAttribute(GLattr.BlueSize,
-                    opts.PreferredBitDepth is null || opts.PreferredBitDepth.Value.Z == -1
-                        ? 8 : opts.PreferredBitDepth.Value.Z);
-
-            Sdl.GLSetAttribute(GLattr.AlphaSize,
-                    opts.PreferredBitDepth is null || opts.PreferredBitDepth.Value.W == -1
-                        ? 8 : opts.PreferredBitDepth.Value.W);
+            if (opts.PreferredBitDepth?.Z != -1)
+            {
+                Sdl.GLSetAttribute
+                (
+                    GLattr.BlueSize,
+                    opts.PreferredBitDepth?.Z ?? 8
+                );
+            }
+            
+            if (opts.PreferredBitDepth?.W != -1)
+            {
+                Sdl.GLSetAttribute
+                (
+                    GLattr.AlphaSize,
+                    opts.PreferredBitDepth?.W ?? 8
+                );
+            }
 
             Sdl.GLSetAttribute(GLattr.Multisamplebuffers, (opts.Samples == null || opts.Samples == -1) ? 0 : 1);
             Sdl.GLSetAttribute(GLattr.Multisamplesamples, (opts.Samples == null || opts.Samples == -1) ? 0 : opts.Samples.Value);
