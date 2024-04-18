@@ -46,6 +46,9 @@ jobs:
               for arch in amd64 arm64 armhf; do
                 sudo apt install -y libx11-xcb-dev:$arch libxkbcommon-dev:$arch libwayland-dev:$arch libxrandr-dev:$arch
               done
+              wget https://github.com/mstorsjo/llvm-mingw/releases/download/20240417/llvm-mingw-20240417-msvcrt-ubuntu-20.04-x86_64.tar.xz
+              sudo mkdir /opt/llvm-mingw-msvcrt
+              sudo tar xf llvm-mingw-20240417-msvcrt-ubuntu-20.04-x86_64.tar.xz --strip-components 1 -C /opt/llvm-mingw-msvcrt
           - os: windows-2022
             name: Windows
             nuke_invoke: ./build.cmd
