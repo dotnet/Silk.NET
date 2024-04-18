@@ -54,6 +54,7 @@ partial class Build {
                         {
                             ("Win32", "win-x86"),
                             ("x64", "win-x64"),
+                            ("ARM64", "win-arm64"),
                         })
                         {
                             EnsureCleanDirectory(buildDir);
