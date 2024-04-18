@@ -36,41 +36,62 @@ partial class Build {
         (
         () =>
         {
+            var target = WgpuPath / "target";
             var runtimes = RootDirectory / "src" / "Native" / "Silk.NET.WebGPU.Native.WGPU" / "runtimes";
 
-            var target = WgpuPath / "target";
             EnsureCleanDirectory(target);
 
-            if(OperatingSystem.IsWindows())
-            {
-                //Compile Windows libraries
-                InheritedShell("cargo build --release --target=i686-pc-windows-msvc", WgpuPath).AssertZeroExitCode();
-                InheritedShell("cargo build --release --target=x86_64-pc-windows-msvc", WgpuPath).AssertZeroExitCode();
-                InheritedShell("cargo build --release --target=aarch64-pc-windows-msvc", WgpuPath).AssertZeroExitCode();
+            (string Triple, string Rid)[] targets;
+            string library;
 
-                CopyFile(target / "i686-pc-windows-msvc" / "release" / "wgpu_native.dll", runtimes / "win-x86" / "native" / "wgpu_native.dll", FileExistsPolicy.Overwrite);
-                CopyFile(target / "x86_64-pc-windows-msvc" / "release" / "wgpu_native.dll", runtimes / "win-x64" / "native" / "wgpu_native.dll", FileExistsPolicy.Overwrite);
-                CopyFile(target / "aarch64-pc-windows-msvc" / "release" / "wgpu_native.dll", runtimes / "win-arm64" / "native" / "wgpu_native.dll", FileExistsPolicy.Overwrite);
+            if (OperatingSystem.IsWindows())
+            {
+                targets = new[]
+                {
+                    ("i686-pc-windows-msvc", "win-x86"),
+                    ("x86_64-pc-windows-msvc", "win-x64"),
+                    ("aarch64-pc-windows-msvc", "win-arm64"),
+                };
+                library = "wgpu_native.dll";
             }
-
-            if(OperatingSystem.IsLinux())
+            else if (OperatingSystem.IsLinux())
             {
-                //Compile Linux libraries
-                InheritedShell("cargo build --release --target=i686-unknown-linux-gnu", WgpuPath).AssertZeroExitCode();
-                InheritedShell("cargo build --release --target=x86_64-unknown-linux-gnu", WgpuPath).AssertZeroExitCode();
-
-                CopyFile(target / "i686-unknown-linux-gnu" / "release" / "libwgpu_native.so", runtimes / "linux-x86" / "native" / "libwgpu_native.so", FileExistsPolicy.Overwrite);
-                CopyFile(target / "x86_64-unknown-linux-gnu" / "release" / "libwgpu_native.so", runtimes / "linux-x64" / "native" / "libwgpu_native.so", FileExistsPolicy.Overwrite);
+                targets = new[]
+                {
+                    ("x86_64-unknown-linux-gnu", "linux-x64"),
+                    ("arm-unknown-linux-gnueabihf", "linux-arm"),
+                    ("aarch64-unknown-linux-gnu", "linux-arm64"),
+                };
+                library = "libwgpu_native.so";
             }
-
-            if(OperatingSystem.IsMacOS())
+            else if (OperatingSystem.IsMacOS())
             {
-                //Compile MacOS libraries
-                InheritedShell("cargo build --release --target=aarch64-apple-darwin", WgpuPath).AssertZeroExitCode();
-                InheritedShell("cargo build --release --target=x86_64-apple-darwin", WgpuPath).AssertZeroExitCode();
+                targets = new[]
+                {
+                    ("x86_64-apple-darwin", "osx-x64"),
+                    ("aarch64-apple-darwin", "osx-arm64"),
+                };
+                library = "libwgpu_native.dylib";
+            }
+            else
+                throw new Exception("Unsupported OS!");
 
-                CopyFile(target / "x86_64-apple-darwin" / "release" / "libwgpu_native.dylib", runtimes / "osx-x64" / "native" / "libwgpu_native.dylib", FileExistsPolicy.Overwrite);
-                CopyFile(target / "aarch64-apple-darwin" / "release" / "libwgpu_native.dylib", runtimes / "osx-arm64" / "native" / "libwgpu_native.dylib", FileExistsPolicy.Overwrite);
+            foreach (var (triple, rid) in targets)
+            {
+                // Cross-compiling to these targets on linux-x64 will fail if a proper linker is not set.
+                var linker = rid switch
+                {
+                    "linux-arm" => "arm-linux-gnueabihf-gcc",
+                    "linux-arm64" => "aarch64-linux-gnu-gcc",
+                    _ => null,
+                };
+
+                if (linker != null)
+                    linker = $" --config \"target.{triple}.linker = '{linker}'\"";
+
+                InheritedShell($"cargo build --release --target {triple}{linker}", WgpuPath).AssertZeroExitCode();
+
+                CopyFile(target / triple / "release" / library, runtimes / rid / "native" / library, FileExistsPolicy.Overwrite);
             }
 
             PrUpdatedNativeBinary("Wgpu");
