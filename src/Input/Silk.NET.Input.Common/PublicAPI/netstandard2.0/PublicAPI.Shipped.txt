@@ -341,3 +341,7 @@ static Silk.NET.Input.InputWindowExtensions.ShouldLoadFirstPartyPlatforms(bool s
 static Silk.NET.Input.InputWindowExtensions.TryAdd(string! assemblyName) -> bool
 static Silk.NET.Input.ScrollWheel.operator !=(Silk.NET.Input.ScrollWheel left, Silk.NET.Input.ScrollWheel right) -> bool
 static Silk.NET.Input.ScrollWheel.operator ==(Silk.NET.Input.ScrollWheel left, Silk.NET.Input.ScrollWheel right) -> bool
+static Silk.NET.Input.GamepadExtensions.LeftThumbstick(this Silk.NET.Input.IGamepad! gamepad) -> Silk.NET.Input.Thumbstick
+static Silk.NET.Input.GamepadExtensions.LeftThumbstickButton(this Silk.NET.Input.IGamepad! gamepad) -> Silk.NET.Input.Button
+static Silk.NET.Input.GamepadExtensions.RightThumbstick(this Silk.NET.Input.IGamepad! gamepad) -> Silk.NET.Input.Thumbstick
+static Silk.NET.Input.GamepadExtensions.RightThumbstickButton(this Silk.NET.Input.IGamepad! gamepad) -> Silk.NET.Input.Button
