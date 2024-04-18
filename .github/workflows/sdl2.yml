@@ -56,6 +56,9 @@ jobs:
         uses: Beyley/run-as-1804@239b211a2ca687388b6251d6dab22cb90ac0391d
         with:
           command: |
+            # We need to adjust APT sources for multiarch. Use the ones corresponding to
+            # Ubuntu 18.04 with appropriate `arch` values. ports.ubuntu.com is required
+            # for armhf and arm64.
             tee /etc/apt/sources.list << EOF
             deb [arch=amd64] http://archive.ubuntu.com/ubuntu bionic main multiverse restricted universe
             deb [arch=amd64] http://archive.ubuntu.com/ubuntu bionic-backports main multiverse restricted universe
