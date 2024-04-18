@@ -87,7 +87,7 @@ partial class Build {
 
                             CopyAll((buildDir / "loader").GlobFiles("vulkan-1.dll"), runtimes / "win-arm64" / "native");
 
-                            glob = runtimes / "win-arm64" / "native" / "libvulkan-1.dll";
+                            glob = runtimes / "win-arm64" / "native" / "vulkan-1.dll";
                         }
                     }
                     else if (OperatingSystem.IsMacOS())
