@@ -42,6 +42,8 @@ partial class Build {
                     var prepare = "cmake .. -DCMAKE_BUILD_TYPE=Release -DUPDATE_DEPS=ON";
                     var build = $"cmake --build . --config Release{JobsArg}";
 
+                    string? glob = null;
+
                     if (OperatingSystem.IsWindows())
                     {
                         foreach (var (platform, rid) in new[]
@@ -84,6 +86,8 @@ partial class Build {
                             InheritedShell(build, buildDir).AssertZeroExitCode();
 
                             CopyAll((buildDir / "loader").GlobFiles("libvulkan-1.dll"), runtimes / "win-arm64" / "native");
+
+                            glob = runtimes / "win-arm64" / "native" / "libvulkan-1.dll";
                         }
                     }
                     else if (OperatingSystem.IsMacOS())
@@ -109,7 +113,7 @@ partial class Build {
                         }
                     }
 
-                    PrUpdatedNativeBinary("Vulkan Loader");
+                    PrUpdatedNativeBinary("Vulkan Loader", glob);
                 }
             )
     );
