@@ -1,9 +1,5 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
-    <PropertyGroup>
-        <SilkNativePackage>true</SilkNativePackage>
-    </PropertyGroup>
-
     <Import Project="..\..\..\build\props\common.props" />
 
     <PropertyGroup>
@@ -16,58 +12,6 @@
         <Description>Multi-platform native library for DXVK.</Description>
         <RepositoryType>git</RepositoryType>
         <RepositoryUrl>https://github.com/doitsujin/dxvk</RepositoryUrl>
-        <IncludeBuildOutput>false</IncludeBuildOutput>
-        <IncludeContentInPack>true</IncludeContentInPack>
     </PropertyGroup>
-
-    <ItemGroup>
-        <Content Include="build\net461\$(PackageId).props" PackagePath="build\net461\$(PackageId).props" />
-
-        <Content Include="runtimes\linux-x64\native\glfw-libdxvk_d3d9.so"
-                 PackagePath="runtimes\linux-x64\native\glfw-libdxvk_d3d9.so" />
-        <Content Include="runtimes\linux-x64\native\glfw-libdxvk_d3d10core.so"
-                 PackagePath="runtimes\linux-x64\native\glfw-libdxvk_d3d10core.so" />
-        <Content Include="runtimes\linux-x64\native\glfw-libdxvk_d3d11.so"
-                 PackagePath="runtimes\linux-x64\native\glfw-libdxvk_d3d11.so" />
-        <Content Include="runtimes\linux-x64\native\glfw-libdxvk_dxgi.so"
-                 PackagePath="runtimes\linux-x64\native\glfw-libdxvk_dxgi.so" />
-
-        <Content Include="runtimes\linux-x64\native\sdl2-libdxvk_d3d9.so"
-                 PackagePath="runtimes\linux-x64\native\sdl2-libdxvk_d3d9.so" />
-        <Content Include="runtimes\linux-x64\native\sdl2-libdxvk_d3d10core.so"
-                 PackagePath="runtimes\linux-x64\native\sdl2-libdxvk_d3d10core.so" />
-        <Content Include="runtimes\linux-x64\native\sdl2-libdxvk_d3d11.so"
-                 PackagePath="runtimes\linux-x64\native\sdl2-libdxvk_d3d11.so" />
-        <Content Include="runtimes\linux-x64\native\sdl2-libdxvk_dxgi.so"
-                 PackagePath="runtimes\linux-x64\native\sdl2-libdxvk_dxgi.so" />
-
-        <Content Include="runtimes\linux-x86\native\glfw-libdxvk_d3d9.so" 
-                 PackagePath="runtimes\linux-x86\native\glfw-libdxvk_d3d9.so" />
-        <Content Include="runtimes\linux-x86\native\glfw-libdxvk_d3d10core.so" 
-                 PackagePath="runtimes\linux-x86\native\glfw-libdxvk_d3d10core.so" />
-        <Content Include="runtimes\linux-x86\native\glfw-libdxvk_d3d11.so" 
-                 PackagePath="runtimes\linux-x86\native\glfw-libdxvk_d3d11.so" />
-        <Content Include="runtimes\linux-x86\native\glfw-libdxvk_dxgi.so" 
-                 PackagePath="runtimes\linux-x86\native\glfw-libdxvk_dxgi.so" />
-
-        <Content Include="runtimes\linux-x86\native\sdl2-libdxvk_d3d9.so"
-                 PackagePath="runtimes\linux-x86\native\sdl2-libdxvk_d3d9.so" />
-        <Content Include="runtimes\linux-x86\native\sdl2-libdxvk_d3d10core.so"
-                 PackagePath="runtimes\linux-x86\native\sdl2-libdxvk_d3d10core.so" />
-        <Content Include="runtimes\linux-x86\native\sdl2-libdxvk_d3d11.so"
-                 PackagePath="runtimes\linux-x86\native\sdl2-libdxvk_d3d11.so" />
-        <Content Include="runtimes\linux-x86\native\sdl2-libdxvk_dxgi.so"
-                 PackagePath="runtimes\linux-x86\native\sdl2-libdxvk_dxgi.so" />
-
-        <Content Include="runtimes\win-x64\native\dxvk-d3d11.dll" PackagePath="runtimes\win-x64\native\dxvk-d3d11.dll" />
-        <Content Include="runtimes\win-x64\native\dxvk-dxgi.dll" PackagePath="runtimes\win-x64\native\dxvk-dxgi.dll" />
-        <Content Include="runtimes\win-x64\native\dxvk-d3d9.dll" PackagePath="runtimes\win-x64\native\dxvk-d3d9.dll" />
-        <Content Include="runtimes\win-x64\native\dxvk-d3d10core.dll" PackagePath="runtimes\win-x64\native\dxvk-d3d10core.dll" />
-
-        <Content Include="runtimes\win-x86\native\dxvk-d3d11.dll" PackagePath="runtimes\win-x86\native\dxvk-d3d11.dll" />
-        <Content Include="runtimes\win-x86\native\dxvk-dxgi.dll" PackagePath="runtimes\win-x86\native\dxvk-dxgi.dll" />
-        <Content Include="runtimes\win-x86\native\dxvk-d3d9.dll" PackagePath="runtimes\win-x86\native\dxvk-d3d9.dll" />
-        <Content Include="runtimes\win-x86\native\dxvk-d3d10core.dll" PackagePath="runtimes\win-x86\native\dxvk-d3d10core.dll" />
-    </ItemGroup>
 
 </Project>
