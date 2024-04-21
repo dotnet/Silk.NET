@@ -877,6 +877,9 @@
             "typeMaps": [
                 {
                     "$typemapPrecedesInjections": "true",
+                    "XrFutureEXT": "FutureEXT",
+                    "PFN_xrGetInstanceProcAddr": "PfnGetInstanceProcAddr",
+                    "PFN_xrCreateApiLayerInstance": "PfnCreateApiLayerInstance",
                     "char": "byte",
                     "XR_DEFINE_ATOM": "uint64_t",
                     "LUID": "ulong",
