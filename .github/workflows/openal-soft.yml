@@ -7,6 +7,7 @@ on:
       - "main"
     paths:
       - build/submodules/openal-soft
+      - "build/cmake/*"
       - build/nuke/Native/Core.cs
       - build/nuke/Native/OpenALSoft.cs
       - .github/workflows/openal-soft.yml

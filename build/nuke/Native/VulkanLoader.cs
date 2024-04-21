@@ -60,7 +60,6 @@ partial class Build {
                     }
                     else if (OperatingSystem.IsLinux())
                     {
-
                         foreach (var (triple, rid) in new[]
                         {
                             ("x86_64-linux-gnu", "linux-x64"),
@@ -75,6 +74,16 @@ partial class Build {
                             InheritedShell($"{triple}-strip --strip-unneeded loader/libvulkan.so", buildDir).AssertZeroExitCode();
 
                             CopyAll((buildDir / "loader").GlobFiles("libvulkan.so"), runtimes / rid / "native");
+                        }
+
+                        // Build for win-arm64 with llvm-mingw.
+                        {
+                            EnsureCleanDirectory(buildDir);
+
+                            InheritedShell($"{prepare} -DUSE_GAS=ON {GetCMakeToolchainFlag("aarch64-w64-mingw32")}", buildDir).AssertZeroExitCode();
+                            InheritedShell(build, buildDir).AssertZeroExitCode();
+
+                            CopyAll((buildDir / "loader").GlobFiles("vulkan-1.dll"), runtimes / "win-arm64" / "native");
                         }
                     }
                     else if (OperatingSystem.IsMacOS())

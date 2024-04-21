@@ -50,7 +50,7 @@ partial class Build {
         CopyFile(file, to, FileExistsPolicy.Overwrite);
     }
 
-    public void PrUpdatedNativeBinary(string name, [CanBeNull] string glob = null)
+    public void PrUpdatedNativeBinary(string name)
     {
         var pushableToken = EnvironmentInfo.GetVariable<string>("PUSHABLE_GITHUB_TOKEN");
         var curBranch = GitCurrentBranch(RootDirectory);
@@ -63,22 +63,10 @@ partial class Build {
             !curBranch.StartsWith("develop/", StringComparison.OrdinalIgnoreCase))
         {
             // it's assumed that the pushable token was used to checkout the repo
-            if (OperatingSystem.IsWindows())
-            {
-                glob ??= "src/Native/**/*.dll";
-            }
-            else if (OperatingSystem.IsMacOS())
-            {
-                glob ??= "src/Native/**/*.a src/Native/**/*.dylib";
-            }
-            else if (OperatingSystem.IsLinux())
-            {
-                glob ??= "src/Native/**/*.so*";
-            }
 
             Git("fetch --all", RootDirectory);
             Git("pull");
-            Git($"add -f {glob}", RootDirectory);
+            Git($"add -f src/Native/*/runtimes/*/native/*", RootDirectory);
             var newBranch = $"ci/{curBranch}/{name.ToLower().Replace(' ', '_')}_bins";
             var curCommit = GitCurrentCommit(RootDirectory);
             var commitCmd = InheritedShell

@@ -1,5 +1,6 @@
 set(CMAKE_SYSTEM_NAME Linux)
 set(CMAKE_SYSTEM_PROCESSOR armv7l)
+set(CMAKE_ASM_COMPILER "/usr/bin/arm-linux-gnueabihf-as")
 set(CMAKE_C_COMPILER "/usr/bin/arm-linux-gnueabihf-gcc")
 set(CMAKE_CXX_COMPILER "/usr/bin/arm-linux-gnueabihf-g++")
 set(CMAKE_LINKER "/usr/bin/arm-linux-gnueabihf-ld")

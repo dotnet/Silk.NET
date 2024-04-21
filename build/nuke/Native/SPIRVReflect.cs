@@ -105,19 +105,7 @@ pub fn build(b: *std.Build) void {
                         CopyFile(SPIRVReflectPath / "zig-out" / "lib" / "libspirv-reflect.dylib", runtimes / "osx-arm64" / "native" / "libspirv-reflect.dylib", FileExistsPolicy.Overwrite);
                     }
 
-                    var files = (runtimes / "win-x64" / "native").GlobFiles("*.dll")
-                        .Concat((runtimes / "win-x86" / "native").GlobFiles("*.dll"))
-                        .Concat((runtimes / "win-arm64" / "native").GlobFiles("*.dll"))
-                        .Concat((runtimes / "osx-x64" / "native").GlobFiles("*.dylib"))
-                        .Concat((runtimes / "osx-arm64" / "native").GlobFiles("*.dylib"))
-                        .Concat((runtimes / "linux-x64" / "native").GlobFiles("*.so"))
-                        .Concat((runtimes / "linux-arm" / "native").GlobFiles("*.so"))
-                        .Concat((runtimes / "linux-arm64" / "native").GlobFiles("*.so"));
-
-                    var glob = string.Empty;
-                    glob = files.Aggregate(glob, (current, path) => current + $"\"{path}\" ");
-
-                    PrUpdatedNativeBinary("SPIRV-Reflect", glob);
+                    PrUpdatedNativeBinary("SPIRV-Reflect");
                 }
             )
         );

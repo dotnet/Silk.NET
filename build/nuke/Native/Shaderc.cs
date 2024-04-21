@@ -618,19 +618,7 @@ pub fn build(b: *std.Build) void {
             InheritedShell($"zig build -Dtarget=aarch64-macos {optimizeMode}", ShadercPath).AssertZeroExitCode();
             CopyFile(ShadercPath / "zig-out" / "lib" / $"lib{libname}.dylib", runtimes / "osx-arm64" / "native" / $"lib{libname}.dylib", FileExistsPolicy.Overwrite);
 
-            var files = (runtimes / "win-x64" / "native").GlobFiles("*.dll")
-                .Concat((runtimes / "win-x86" / "native").GlobFiles("*.dll"))
-                .Concat((runtimes / "win-arm64" / "native").GlobFiles("*.dll"))
-                .Concat((runtimes / "osx-x64" / "native").GlobFiles("*.dylib"))
-                .Concat((runtimes / "osx-arm64" / "native").GlobFiles("*.dylib"))
-                .Concat((runtimes / "linux-x64" / "native").GlobFiles("*.so"))
-                .Concat((runtimes / "linux-arm" / "native").GlobFiles("*.so"))
-                .Concat((runtimes / "linux-arm64" / "native").GlobFiles("*.so"));
-
-            var glob = string.Empty;
-            glob = files.Aggregate(glob, (current, path) => current + $"\"{path}\" ");
-
-            PrUpdatedNativeBinary("Shaderc", glob);
+            PrUpdatedNativeBinary("Shaderc");
         }
         )
     );
