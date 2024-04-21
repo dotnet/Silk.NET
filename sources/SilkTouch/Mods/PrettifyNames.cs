@@ -299,7 +299,10 @@ public class PrettifyNames(
             namesToTrim.Remove(nameToAdd);
 
             // Apply the name override to the dictionary we actually use.
-            names[nameToAdd] = (overriddenName, [.. v.Secondary, nameToAdd]);
+            names[nameToAdd] = (
+                overriddenName,
+                [.. v.Secondary ?? Enumerable.Empty<string>(), nameToAdd]
+            );
         }
 
         // Run each trimmer

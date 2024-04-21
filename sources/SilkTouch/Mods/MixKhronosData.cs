@@ -17,6 +17,7 @@ using Microsoft.CodeAnalysis.CSharp.Syntax;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 using Silk.NET.SilkTouch.Clang;
+using Silk.NET.SilkTouch.Mods.Transformation;
 using Silk.NET.SilkTouch.Naming;
 using static Microsoft.CodeAnalysis.CSharp.SyntaxFactory;
 
@@ -31,7 +32,7 @@ namespace Silk.NET.SilkTouch.Mods;
 public partial class MixKhronosData(
     ILogger<MixKhronosData> logger,
     IOptionsSnapshot<MixKhronosData.Configuration> cfg
-) : IMod, INameTrimmer
+) : IMod, INameTrimmer, IFunctionTransformer
 {
     internal Dictionary<string, JobData> Jobs = new();
     private static readonly ICulturedStringTransformer _transformer = new NameUtils.NameTransformer(
@@ -1517,6 +1518,215 @@ public partial class MixKhronosData(
         }
     }
 
+    /// <inheritdoc />
+    public void Transform(
+        MethodDeclarationSyntax current,
+        ITransformationContext ctx,
+        Action<MethodDeclarationSyntax> next
+    )
+    {
+        if (ctx.JobKey is null)
+        {
+            next(current);
+            return;
+        }
+
+        current.AttributeLists.GetNativeFunctionInfo(out _, out var entryPoint, out _);
+        entryPoint = current.Identifier.ToString();
+        foreach (var meth in TransformToConstants(current, ctx, entryPoint))
+        {
+            // TODO more transformations
+            next(meth);
+        }
+    }
+
+    private IEnumerable<MethodDeclarationSyntax> TransformToConstants(
+        MethodDeclarationSyntax current,
+        ITransformationContext ctx,
+        string entryPoint
+    )
+    {
+        Debug.Assert(ctx.JobKey is not null);
+
+        // This will contain the changed parameters. Note that the changes from the previous passes (see below) are kept
+        // in this list so that we don't create differences between fully grouped pointer overloads vs partially grouped
+        // pointer overloads. In addition, we want to keep things like the Constant DSL type even if we're overloading
+        // pointer types.
+        var @params = new List<ParameterSyntax>(current.ParameterList.Parameters);
+
+        // We may generate up to three transformations if there are any non-trivial types (e.g. group pointers).
+        // These are: native type, ungrouped enum, and grouped enum. Each transformation transforms the trivial types.
+        var anyNonTrivialParameters = false;
+        for (var pass = 0; pass < 3; pass++)
+        {
+            var ret = current.ReturnType;
+            var anyChange = false;
+
+            // Is the return type transformable?
+            if (
+                GetTypeTransformation(
+                    entryPoint,
+                    ":return",
+                    Jobs[ctx.JobKey],
+                    ret,
+                    pass,
+                    ref anyNonTrivialParameters
+                ) is
+                { } newRet
+            )
+            {
+                ret = newRet;
+                anyChange = true;
+            }
+
+            // Are the parameters transformable?
+            for (var i = 0; i < @params.Count; i++)
+            {
+                var param = current.ParameterList!.Parameters[i];
+                if (
+                    param.Type is null
+                    || GetTypeTransformation(
+                        entryPoint,
+                        param.Identifier.ToString(),
+                        Jobs[ctx.JobKey],
+                        param.Type,
+                        pass,
+                        ref anyNonTrivialParameters
+                    )
+                        is not { } newType
+                )
+                {
+                    continue;
+                }
+
+                if (
+                    logger.IsEnabled(LogLevel.Debug)
+                    && !param
+                        .Type.DescendantTokens()
+                        .Any(x => x.Kind() is SyntaxKind.IntKeyword or SyntaxKind.UIntKeyword)
+                )
+                {
+                    logger.LogDebug(
+                        "Transforming {}'s non-(u)int parameter {} from {} to {} (pass = {})",
+                        current.Identifier,
+                        param.Identifier,
+                        param.Type,
+                        newType,
+                        pass
+                    );
+                }
+                @params[i] = param.WithType(newType);
+                anyChange = true;
+            }
+
+            if (!anyChange)
+            {
+                // We can't transform ANYTHING! pass it through the pipeline as is.
+                if (pass == 0)
+                {
+                    yield return current;
+                }
+
+                // !anyNonTrivialParameters = No pointers to transform in the next pass(es).
+                // pass > 0 = We're trying to transform pointers, but we didn't transform anything. Usually this happens
+                // on pass == 2 if there are no otherGroups.
+                if (!anyNonTrivialParameters || pass > 0)
+                {
+                    yield break;
+                }
+
+                continue;
+            }
+
+            var retMeth = current
+                .WithReturnType(ret)
+                .WithParameterList(ParameterList(SeparatedList(@params)));
+            yield return retMeth
+                .WithBody(current.Body?.CastTransformeeCalls(current, retMeth) as BlockSyntax)
+                .WithExpressionBody(
+                    current.ExpressionBody?.CastTransformeeCalls(current, retMeth)
+                        as ArrowExpressionClauseSyntax
+                );
+        }
+
+        static TypeSyntax PointerToGroupPointer(TypeSyntax original, string group) =>
+            original switch
+            {
+                PointerTypeSyntax ptr
+                    => ptr.WithElementType(PointerToGroupPointer(ptr.ElementType, group)),
+                PredefinedTypeSyntax or IdentifierNameSyntax => IdentifierName(group),
+                _ => throw new ArgumentOutOfRangeException(nameof(original))
+            };
+
+        TypeSyntax? GetTypeTransformation(
+            string symbolName,
+            string paramName,
+            JobData job,
+            TypeSyntax type,
+            int pass,
+            ref bool anyNonTrivialParams
+        )
+        {
+            if (!job.GroupUsages.TryGetValue((symbolName, paramName), out var group))
+            {
+                return null;
+            }
+
+            var otherGroup =
+                type.ToString().Contains("int") && job.Groups[group].Namespace is { Length: > 0 } ns
+                    ? $"{ns}Enum"
+                    : null;
+            if (otherGroup == group)
+            {
+                // Nevermind then.
+                otherGroup = null;
+            }
+
+            if (type is PointerTypeSyntax)
+            {
+                if (paramName == ":return" && pass > 0 && !anyNonTrivialParams)
+                {
+                    logger.LogWarning(
+                        "Cannot transform return type for \"{}\" as it is a pointer, and there are no "
+                            + "other \"group pointer\" transformations to be made meaning that the return type would "
+                            + "be the only transformation, which is illegal in C#. No Khronos-specific transformations "
+                            + "shall be applied to the return type for this function.",
+                        symbolName
+                    );
+                    return null;
+                }
+
+                anyNonTrivialParams = paramName != ":return";
+                return pass switch
+                {
+                    // Note: we flip so the more general group comes first. that way if we have parameters that are only
+                    // general, you can use general groups throughout the whole function.
+                    2 when otherGroup is not null => PointerToGroupPointer(type, group),
+                    1 when otherGroup is not null => PointerToGroupPointer(type, otherGroup),
+                    1 => PointerToGroupPointer(type, group),
+                    _ => null
+                };
+            }
+
+            return pass == 0
+                ? GenericName(
+                    Identifier("Constant"),
+                    TypeArgumentList(
+                        SeparatedList(
+                            otherGroup is not null
+                                // ReSharper disable once RedundantCast <-- false positive
+                                // Note: we apply the same flip as above here too. It makes no difference for the
+                                // constant type, but is done for consistency.
+                                ? (IEnumerable<TypeSyntax>)
+                                    [type, IdentifierName(otherGroup), IdentifierName(group)]
+                                : [type, IdentifierName(group)]
+                        )
+                    )
+                )
+                : null;
+        }
+    }
+
     /// <summary>
     /// This regex matches against known OpenGL function endings, picking them out from function names.
     /// It is comprised of two parts - the main matching set (here, the main capturing group), and a negative
@@ -1578,16 +1788,7 @@ public partial class MixKhronosData(
                 return base.VisitFieldDeclaration(node);
             }
 
-            var nativeName = node
-                .AttributeLists.SelectMany(x => x.Attributes)
-                .FirstOrDefault(x => x.IsAttribute("Silk.NET.Core.NativeTypeName"))
-                ?.ArgumentList?.Arguments.Select(x =>
-                    x.Expression.IsKind(SyntaxKind.StringLiteralExpression)
-                        ? (x.Expression as LiteralExpressionSyntax)?.Token.Value
-                        : null
-                )
-                .OfType<string>()
-                .FirstOrDefault();
+            var nativeName = node.AttributeLists.GetNativeTypeName();
             if (nativeName is null || !nativeName.StartsWith("#define "))
             {
                 return base.VisitFieldDeclaration(node);
@@ -1777,8 +1978,7 @@ public partial class MixKhronosData(
 
             // Get the return type group attribute
             if (
-                func.Element("proto")?.Element("ptype")?.Attribute("group")?.Value
-                    is { Length: > 0 } retGrp
+                func.Element("proto")?.Attribute("group")?.Value is { Length: > 0 } retGrp
                 && data.Groups.ContainsKey(retGrp)
             )
             {

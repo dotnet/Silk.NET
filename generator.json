@@ -108,8 +108,11 @@
         "UseDataTypeTrimmings": true,
         "SpecPath": "eng/submodules/opengl/xml/gl.xml",
         "TypeMap": {
-          "TraceMaskMESA": "uint"
-        }
+          "TraceMaskMESA": "uint",
+          "PathRenderingTokenNV": "byte",
+          "PathCoordType": "byte"
+        },
+        "Namespace": "Silk.NET.OpenGL"
       },
       "AddVTables": {
         "VTables": [
@@ -129,6 +132,11 @@
       "PrettifyNames": {
         "LongAcronymThreshold": 4,
         "GlobalPrefixHint": "gl"
+      },
+      "TransformFunctions": {
+        "BoolTypes": {
+          "GLboolean": null
+        }
       }
     }
   }

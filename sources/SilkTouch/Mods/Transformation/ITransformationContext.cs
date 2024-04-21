@@ -10,6 +10,11 @@ namespace Silk.NET.SilkTouch.Mods.Transformation;
 public interface ITransformationContext
 {
     /// <summary>
+    /// The job key.
+    /// </summary>
+    string? JobKey { get; set; }
+
+    /// <summary>
     /// Adds a namespace import to the resultant syntax tree.
     /// </summary>
     /// <param name="str">The dot-separated namespace.</param>
