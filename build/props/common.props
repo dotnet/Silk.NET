@@ -24,6 +24,7 @@
             - Added native library support for glibc versions as old as 2.17 on Linux platforms.
             - Added support for new standard cursor shapes in Input and GLFW.
             - Updated to use `ref readonly` instead of `in`.
+            - Updated to OpenXR 1.1.36.
             - Updated to DirectStorage 1.2.2.
             - Updated to Vulkan 1.3.281.
             - Updated to SDL 2.30.1.
