@@ -52,7 +52,7 @@ namespace Silk.NET.WGL
         public bool IsExtensionPresent(string extension, nint hdc) => _extensions.GetOrAdd
             (
                 hdc, hdc => !(_hasGetExtensionsString =
-                    _hasGetExtensionsString || GetProcAddress("wglGetExtensionsStringARB") > 0)
+                    _hasGetExtensionsString || GetProcAddress("wglGetExtensionsStringARB") != 0)
                     ? _empty ??= new HashSet<string>()
                     : new HashSet<string>(GetExtensionsString(hdc).Split(' ')) 
             )
