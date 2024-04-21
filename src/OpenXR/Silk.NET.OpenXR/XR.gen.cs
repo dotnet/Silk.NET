@@ -24,7 +24,7 @@ namespace Silk.NET.OpenXR
         public const uint ApiLayerInfoStructVersion = unchecked((uint) 1);
         [NativeName("Type", "")]
         [NativeName("Name", "XR_API_LAYER_MAX_SETTINGS_PATH_SIZE")]
-        public const uint ApiLayerMaxSettingsPathSize = unchecked((uint) 1298);
+        public const uint ApiLayerMaxSettingsPathSize = unchecked((uint) 512);
         [NativeName("Type", "")]
         [NativeName("Name", "XR_API_LAYER_NEXT_INFO_STRUCT_VERSION")]
         public const uint ApiLayerNextInfoStructVersion = unchecked((uint) 1);
@@ -36,16 +36,16 @@ namespace Silk.NET.OpenXR
         public const uint CurrentLoaderRuntimeVersion = unchecked((uint) 1);
         [NativeName("Type", "")]
         [NativeName("Name", "XR_EXTENSION_ENUM_BASE")]
-        public const uint ExtensionEnumBase = unchecked((uint) 68719476736);
+        public const uint ExtensionEnumBase = unchecked((uint) 1000000000);
         [NativeName("Type", "")]
         [NativeName("Name", "XR_EXTENSION_ENUM_STRIDE")]
-        public const uint ExtensionEnumStride = unchecked((uint) 4096);
+        public const uint ExtensionEnumStride = unchecked((uint) 1000);
         [NativeName("Type", "")]
         [NativeName("Name", "XR_FACIAL_EXPRESSION_EYE_COUNT_HTC")]
-        public const uint FacialExpressionEyeCountHtc = unchecked((uint) 20);
+        public const uint FacialExpressionEyeCountHtc = unchecked((uint) 14);
         [NativeName("Type", "")]
         [NativeName("Name", "XR_FACIAL_EXPRESSION_LIP_COUNT_HTC")]
-        public const uint FacialExpressionLipCountHtc = unchecked((uint) 55);
+        public const uint FacialExpressionLipCountHtc = unchecked((uint) 37);
         [NativeName("Type", "")]
         [NativeName("Name", "XR_FALSE")]
         public const uint False = unchecked((uint) 0);
@@ -54,10 +54,10 @@ namespace Silk.NET.OpenXR
         public const uint FrequencyUnspecified = unchecked((uint) 0);
         [NativeName("Type", "")]
         [NativeName("Name", "XR_HAND_FOREARM_JOINT_COUNT_ULTRALEAP")]
-        public const uint HandForearmJointCountUltraleap = unchecked((uint) 39);
+        public const uint HandForearmJointCountUltraleap = unchecked((uint) 27);
         [NativeName("Type", "")]
         [NativeName("Name", "XR_HAND_JOINT_COUNT_EXT")]
-        public const uint HandJointCountExt = unchecked((uint) 38);
+        public const uint HandJointCountExt = unchecked((uint) 26);
         [NativeName("Type", "")]
         [NativeName("Name", "XR_LOADER_INFO_STRUCT_VERSION")]
         public const uint LoaderInfoStructVersion = unchecked((uint) 1);
@@ -87,7 +87,7 @@ namespace Silk.NET.OpenXR
         public const uint MaxGraphicsApisSupported = unchecked((uint) 32);
         [NativeName("Type", "")]
         [NativeName("Name", "XR_MAX_HAPTIC_PCM_BUFFER_SIZE_FB")]
-        public const uint MaxHapticPcmBufferSizeFB = unchecked((uint) 16384);
+        public const uint MaxHapticPcmBufferSizeFB = unchecked((uint) 4000);
         [NativeName("Type", "")]
         [NativeName("Name", "XR_MAX_LOCALIZED_ACTION_NAME_SIZE")]
         public const uint MaxLocalizedActionNameSize = unchecked((uint) 128);
@@ -111,7 +111,7 @@ namespace Silk.NET.OpenXR
         public const uint MaxSystemNameSize = unchecked((uint) 256);
         [NativeName("Type", "")]
         [NativeName("Name", "XR_MIN_COMPOSITION_LAYERS_SUPPORTED")]
-        public const uint MinCompositionLayersSupported = unchecked((uint) 22);
+        public const uint MinCompositionLayersSupported = unchecked((uint) 16);
         [NativeName("Type", "")]
         [NativeName("Name", "XR_MIN_HAPTIC_DURATION")]
         public const uint MinHapticDuration = unchecked((uint) -1);

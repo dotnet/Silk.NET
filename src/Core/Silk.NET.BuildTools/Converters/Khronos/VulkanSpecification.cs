@@ -51,16 +51,11 @@ namespace Silk.NET.BuildTools.Converters.Khronos
 
         static long? ParseLong(string token)
         {
-            var tokenHex = token.StartsWith("0x") ? token.Substring(2) : token;
-
-            if (!long.TryParse(tokenHex, NumberStyles.HexNumber, CultureInfo.InvariantCulture, out var value))
-            {
-                if (!long.TryParse(tokenHex, out value))
-                {
-                    return null;
-                }
-            }
-            return value;
+            return token.StartsWith("0x")
+                ? long.TryParse(token[2..], NumberStyles.HexNumber, null, out var result) ? result : null
+                : long.TryParse(token, out var result2)
+                    ? result2
+                    : null;
         }
         
         public static VulkanSpecification LoadFromXmlStream(Stream specFileStream)

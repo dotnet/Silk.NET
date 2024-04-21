@@ -78,7 +78,7 @@ namespace Silk.NET.OpenXR
         [NativeName("Type", "char")]
         [NativeName("Type.Name", "char")]
         [NativeName("Name", "settings_file_location")]
-        public fixed byte SettingsFileLocation[1298];
+        public fixed byte SettingsFileLocation[512];
 /// <summary></summary>
         [NativeName("Type", "XrApiLayerNextInfo*")]
         [NativeName("Type.Name", "XrApiLayerNextInfo")]
