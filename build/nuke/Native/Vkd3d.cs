@@ -44,18 +44,19 @@ partial class Build {
                     }
 
                     InheritedShell($"./git-sync-deps", SPIRVToolsPath / "utils").AssertZeroExitCode();
-                    InheritedShell($"./autogen.sh", Vkd3dPath).AssertZeroExitCode();
-
-                    var spirvToolsBuild = SPIRVToolsPath / "build";
-                    var vkd3dBuild = Vkd3dPath / "build";
-                    var vkd3dShaderCompiler = RootDirectory / "src" / "Microsoft" / "Vkd3dCompiler";
-                    var runtimes = RootDirectory / "src" / "Native" / "Silk.NET.Vkd3d.Native" / "runtimes";
 
                     // Get rid of the Vulkan library check since we will not be needing it.
                     File.WriteAllText(
                         Vkd3dPath / "configure.ac",
                         File.ReadAllText(Vkd3dPath / "configure.ac")
                             .Replace("[VKD3D_CHECK_VULKAN]", "[]"));
+
+                    InheritedShell($"./autogen.sh", Vkd3dPath).AssertZeroExitCode();
+
+                    var spirvToolsBuild = SPIRVToolsPath / "build";
+                    var vkd3dBuild = Vkd3dPath / "build";
+                    var vkd3dShaderCompiler = RootDirectory / "src" / "Microsoft" / "Vkd3dCompiler";
+                    var runtimes = RootDirectory / "src" / "Native" / "Silk.NET.Vkd3d.Native" / "runtimes";
 
                     foreach (var (triple, rid) in new[]
                     {
