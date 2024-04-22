@@ -47,7 +47,7 @@ jobs:
               sudo apt update
               sudo apt install -y gcc-aarch64-linux-gnu gcc-arm-linux-gnueabihf
               sudo apt install -y g++-aarch64-linux-gnu g++-arm-linux-gnueabihf
-              sudo apt install -y wine64-development-tools
+              sudo apt install -y mingw-w64-tools
     name: ${{ matrix.env.name }} Build
     runs-on: ${{ matrix.env.os }}
     steps:

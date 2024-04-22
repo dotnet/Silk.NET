@@ -76,7 +76,7 @@ partial class Build {
                             EnsureCleanDirectory(vkd3dBuild);
 
                             // We only need to configure Vkd3d; we include its sources directly.
-                            InheritedShell($"./configure --prefix={vkd3dBuild} --disable-static --host={triple} --disable-tests --disable-doxygen-doc --with-spirv-tools CPPFLAGS=\"-I {VulkanHeadersPath / "include"} -I {SPIRVToolsPath / "external" / "spirv-headers" / "include"} -DNDEBUG -DVKD3D_NO_DEBUG_MESSAGES -DVKD3D_NO_TRACE_MESSAGES\" PKG_CONFIG_PATH={spirvToolsBuild}", Vkd3dPath).AssertZeroExitCode();
+                            InheritedShell($"./configure --prefix={vkd3dBuild} --disable-static --host={triple} --disable-tests --disable-doxygen-doc --with-spirv-tools WIDL=x86_64-w64-mingw32-widl CPPFLAGS=\"-I {VulkanHeadersPath / "include"} -I {SPIRVToolsPath / "external" / "spirv-headers" / "include"} -DNDEBUG -DVKD3D_NO_DEBUG_MESSAGES -DVKD3D_NO_TRACE_MESSAGES\" PKG_CONFIG_PATH={spirvToolsBuild}", Vkd3dPath).AssertZeroExitCode();
 
                             // Invoke widl for some headers that we need.
                             foreach (var name in new[]
