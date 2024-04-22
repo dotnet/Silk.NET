@@ -9,7 +9,7 @@ on:
       - build/submodules/vkd3d
       - build/submodules/SPIRV-Tools
       - build/submodules/Vulkan-Headers
-      - build/submodules/vkd3d-no-ms-abi.patch
+      - "build/cmake/*"
       - build/nuke/Native/Core.cs
       - build/nuke/Native/Vkd3d.cs
       - .github/workflows/vkd3d.yml
@@ -21,22 +21,33 @@ jobs:
       fail-fast: false
       matrix:
         env:
-          - os: ubuntu-latest
+          - os: ubuntu-22.04
             name: Linux
             nuke_invoke: ./build.sh
             extras: |
-              sudo apt-get update 
-
-              wget http://mirrors.kernel.org/ubuntu/pool/main/v/vulkan-loader/libvulkan1_1.3.239.0-1_amd64.deb
-              sudo apt install ./libvulkan1_1.3.239.0-1_amd64.deb
-
-              wget http://mirrors.kernel.org/ubuntu/pool/main/v/vulkan-loader/libvulkan-dev_1.3.239.0-1_amd64.deb
-              sudo apt install ./libvulkan-dev_1.3.239.0-1_amd64.deb
-              
-              sudo apt-get install -y xorg-dev spirv-headers wine64-development-tools cmake build-essential
-
-              wget http://mirrors.kernel.org/ubuntu/pool/universe/s/spirv-tools/spirv-tools_2020.1-2_amd64.deb
-              sudo apt install ./spirv-tools_2020.1-2_amd64.deb
+              # We need to adjust APT sources for multiarch. Use the ones corresponding to
+              # Ubuntu 22.04 with appropriate `arch` values. ports.ubuntu.com is required
+              # for armhf and arm64.
+              sudo tee /etc/apt/sources.list << EOF
+              deb [arch=amd64] http://archive.ubuntu.com/ubuntu jammy main universe
+              deb [arch=amd64] http://archive.ubuntu.com/ubuntu jammy-backports main universe
+              deb [arch=amd64] http://archive.ubuntu.com/ubuntu jammy-security main universe
+              deb [arch=amd64] http://archive.ubuntu.com/ubuntu jammy-updates main universe
+              deb [arch=arm64,armhf] http://ports.ubuntu.com jammy main universe
+              deb [arch=arm64,armhf] http://ports.ubuntu.com jammy-backports main universe
+              deb [arch=arm64,armhf] http://ports.ubuntu.com jammy-security main universe
+              deb [arch=arm64,armhf] http://ports.ubuntu.com jammy-updates main universe
+              deb [arch=amd64] http://security.ubuntu.com/ubuntu jammy main universe
+              deb [arch=amd64] http://security.ubuntu.com/ubuntu jammy-backports main universe
+              deb [arch=amd64] http://security.ubuntu.com/ubuntu jammy-security main universe
+              deb [arch=amd64] http://security.ubuntu.com/ubuntu jammy-updates main universe
+              EOF
+              sudo dpkg --add-architecture arm64
+              sudo dpkg --add-architecture armhf
+              sudo apt update
+              sudo apt install -y gcc-aarch64-linux-gnu gcc-arm-linux-gnueabihf
+              sudo apt install -y g++-aarch64-linux-gnu g++-arm-linux-gnueabihf
+              sudo apt install -y wine64-development-tools
     name: ${{ matrix.env.name }} Build
     runs-on: ${{ matrix.env.os }}
     steps:

@@ -21,9 +21,7 @@ pub fn build(b: *std.Build) void {
 
     vkd3d_compiler.linkLibC();
 
-    // vkd3d_compiler.linkSystemLibrary2("vkd3d-shader", .{ .preferred_link_mode = .static });
-
-    //Since we statically link with vkd3d-shader, we need to dynamically link against SPIRV-Tools ourselves
+    //Since we include vkd3d-shader sources, we need to dynamically link against SPIRV-Tools ourselves
     vkd3d_compiler.linkSystemLibrary("SPIRV-Tools-shared");
 
     vkd3d_compiler.addIncludePath(.{ .path = vulkan_header_folder ++ "include/" });
