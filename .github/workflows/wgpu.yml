@@ -42,6 +42,7 @@ jobs:
               sudo dpkg --add-architecture armhf
               sudo apt update
               sudo apt install -y gcc-aarch64-linux-gnu gcc-arm-linux-gnueabihf
+              # These are needed because Rust tooling is weird about cross-linking.
               sudo apt install -y libgcc-11-dev libgcc-11-dev-arm64-cross libgcc-11-dev-armhf-cross
           - os: windows-2022
             name: Windows
