@@ -51,6 +51,12 @@ partial class Build {
                     var vkd3dShaderCompiler = RootDirectory / "src" / "Microsoft" / "Vkd3dCompiler";
                     var runtimes = RootDirectory / "src" / "Native" / "Silk.NET.Vkd3d.Native" / "runtimes";
 
+                    // Get rid of the Vulkan library check since we will not be needing it.
+                    File.WriteAllText(
+                        Vkd3dPath / "configure.ac",
+                        File.ReadAllText(Vkd3dPath / "configure.ac")
+                            .Replace("[VKD3D_CHECK_VULKAN]", "[]"));
+
                     foreach (var (triple, rid) in new[]
                     {
                         ("x86_64-linux-gnu", "linux-x64"),
@@ -101,6 +107,8 @@ partial class Build {
                             CopyFile(vkd3dShaderCompiler / "zig-out" / "lib" / "libd3dcompile_vkd3d.so", runtimes / rid / "native" / "libd3dcompile_vkd3d.so", FileExistsPolicy.Overwrite);
                         }
                     }
+
+                    Git("checkout HEAD configure.ac", Vkd3dPath);
 
                     PrUpdatedNativeBinary("Vkd3d");
                 }
