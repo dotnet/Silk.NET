@@ -43,7 +43,6 @@ jobs:
               sudo dpkg --add-architecture armhf
               sudo apt update
               sudo apt install -y gcc-aarch64-linux-gnu gcc-arm-linux-gnueabihf
-              sudo apt install -y pkg-config
               for arch in amd64 arm64 armhf; do
                 sudo apt install -y libx11-xcb-dev:$arch libxkbcommon-dev:$arch libwayland-dev:$arch libxrandr-dev:$arch
               done

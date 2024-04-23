@@ -43,7 +43,7 @@ jobs:
               sudo dpkg --add-architecture armhf
               sudo apt update
               sudo apt install -y gcc-aarch64-linux-gnu gcc-arm-linux-gnueabihf
-              sudo apt install -y extra-cmake-modules pkg-config wayland-protocols
+              sudo apt install -y extra-cmake-modules wayland-protocols
               for arch in amd64 arm64 armhf; do
                 sudo apt install -y libwayland-dev:$arch libxcursor-dev:$arch libxi-dev:$arch
                 sudo apt install -y libxinerama-dev:$arch libxrandr-dev:$arch libxkbcommon-dev:$arch
