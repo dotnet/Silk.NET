@@ -17,9 +17,9 @@
             - Added nint overloads for the cases where OpenGL represents a native-sized integer as a void pointer.
             - Added support for executing Windowing loops during repaint and drag events on GLFW in some cases. (thanks @otac0n)
             - Added a distinction between "unset" (-1) and "default" (null) for Windowing depth/stencil buffer bits, defaulting to 24/8 on all platforms unless overridden.
-            - Added support for 64-bit Arm Linux for Assimp, GLFW (+ Windowing &amp; Input), OpenAL Soft, SDL, Vulkan Loader, SwiftShader, and WGPU. (thanks @alexrp)
+            - Added support for 64-bit Arm Linux for Assimp, GLFW (+ Windowing &amp; Input), OpenAL Soft, SDL, Vkd3d, Vulkan Loader, SwiftShader, and WGPU. (thanks @alexrp)
             - Added support for Apple Silicon Macs for OpenAL Soft, Vulkan Loader, and SwiftShader. (thanks @alexrp)
-            - Added support for 32-bit Arm Linux for Assimp, GLFW, OpenAL Soft, SDL, Shaderc, SPIR-V Cross, SPIR-V Reflect, SwiftShader, and WGPU. (thanks @alexrp)
+            - Added support for 32-bit Arm Linux for Assimp, GLFW, OpenAL Soft, SDL, Shaderc, SPIR-V Cross, SPIR-V Reflect, Vkd3d, SwiftShader, and WGPU. (thanks @alexrp)
             - Added support for 64-bit Windows on Arm for Assimp, OpenAL Soft, VulkanLoader, and SwiftShader. (thanks @alexrp)
             - Added native library support for glibc versions as old as 2.17 on Linux platforms.
             - Added support for new standard cursor shapes in Input and GLFW.
@@ -45,7 +45,7 @@
 
             After this update:
             - Apple Silicon support is complete except for missing ANGLE binaries.
-            - Arm Linux support is complete except for missing DXVK, ANGLE, Vkd3d, and Vulkan Loader (missing on 32-bit only) binaries.
+            - Arm Linux support is complete except for missing DXVK, ANGLE, and Vulkan Loader (missing on 32-bit only) binaries.
             - 64-bit Windows on Arm support is complete except for missing DXVK and ANGLE binaries.
             - 32-bit Windows on Arm remains unsupported except for DirectStorage.
         </PackageReleaseNotes>
