@@ -220,6 +220,8 @@ namespace Silk.NET.OpenXR
         ErrorSpaceCloudStorageDisabledFB = unchecked((int) -1000169004),
         [NativeName("Name", "XR_ERROR_PASSTHROUGH_COLOR_LUT_BUFFER_SIZE_MISMATCH_META")]
         ErrorPassthroughColorLutBufferSizeMismatchMeta = unchecked((int) -1000266000),
+        [NativeName("Name", "XR_ENVIRONMENT_DEPTH_NOT_AVAILABLE_META")]
+        EnvironmentDepthNotAvailableMeta = 1000291000,
         [NativeName("Name", "XR_ERROR_HINT_ALREADY_SET_QCOM")]
         ErrorHintAlreadySetQCom = unchecked((int) -1000306000),
         [NativeName("Name", "XR_ERROR_NOT_AN_ANCHOR_HTC")]
@@ -228,5 +230,17 @@ namespace Silk.NET.OpenXR
         ErrorSpaceNotLocatableExt = unchecked((int) -1000429000),
         [NativeName("Name", "XR_ERROR_PLANE_DETECTION_PERMISSION_DENIED_EXT")]
         ErrorPlaneDetectionPermissionDeniedExt = unchecked((int) -1000429001),
+        [NativeName("Name", "XR_ERROR_FUTURE_PENDING_EXT")]
+        ErrorFuturePendingExt = unchecked((int) -1000469001),
+        [NativeName("Name", "XR_ERROR_FUTURE_INVALID_EXT")]
+        ErrorFutureInvalidExt = unchecked((int) -1000469002),
+        [NativeName("Name", "XR_ERROR_EXTENSION_DEPENDENCY_NOT_ENABLED_KHR")]
+        ErrorExtensionDependencyNotEnabledKhr = unchecked((int) -1000710001),
+        [NativeName("Name", "XR_ERROR_PERMISSION_INSUFFICIENT_KHR")]
+        ErrorPermissionInsufficientKhr = unchecked((int) -1000710000),
+        [NativeName("Name", "XR_ERROR_EXTENSION_DEPENDENCY_NOT_ENABLED")]
+        ErrorExtensionDependencyNotEnabled = unchecked((int) -1000710001),
+        [NativeName("Name", "XR_ERROR_PERMISSION_INSUFFICIENT")]
+        ErrorPermissionInsufficient = unchecked((int) -1000710000),
     }
 }

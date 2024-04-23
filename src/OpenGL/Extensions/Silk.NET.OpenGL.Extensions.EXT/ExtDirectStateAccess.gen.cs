@@ -2175,13 +2175,25 @@ namespace Silk.NET.OpenGL.Extensions.EXT
         public unsafe partial void MultiTexCoordPointer([Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT texunit, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int size, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT type, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint stride, [Count(Computed = "size, type, stride"), Flow(Silk.NET.Core.Native.FlowDirection.In)] void* pointer);
 
         [NativeApi(EntryPoint = "glMultiTexCoordPointerEXT", Convention = CallingConvention.Winapi)]
+        public partial void MultiTexCoordPointer([Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT texunit, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int size, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT type, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint stride, [Count(Computed = "size, type, stride"), Flow(Silk.NET.Core.Native.FlowDirection.In)] nint pointer);
+
+        [NativeApi(EntryPoint = "glMultiTexCoordPointerEXT", Convention = CallingConvention.Winapi)]
         public unsafe partial void MultiTexCoordPointer([Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT texunit, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int size, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TexCoordPointerType type, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint stride, [Count(Computed = "size, type, stride"), Flow(Silk.NET.Core.Native.FlowDirection.In)] void* pointer);
+
+        [NativeApi(EntryPoint = "glMultiTexCoordPointerEXT", Convention = CallingConvention.Winapi)]
+        public partial void MultiTexCoordPointer([Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT texunit, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int size, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TexCoordPointerType type, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint stride, [Count(Computed = "size, type, stride"), Flow(Silk.NET.Core.Native.FlowDirection.In)] nint pointer);
 
         [NativeApi(EntryPoint = "glMultiTexCoordPointerEXT", Convention = CallingConvention.Winapi)]
         public unsafe partial void MultiTexCoordPointer([Flow(Silk.NET.Core.Native.FlowDirection.In)] TextureUnit texunit, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int size, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT type, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint stride, [Count(Computed = "size, type, stride"), Flow(Silk.NET.Core.Native.FlowDirection.In)] void* pointer);
 
         [NativeApi(EntryPoint = "glMultiTexCoordPointerEXT", Convention = CallingConvention.Winapi)]
+        public partial void MultiTexCoordPointer([Flow(Silk.NET.Core.Native.FlowDirection.In)] TextureUnit texunit, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int size, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT type, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint stride, [Count(Computed = "size, type, stride"), Flow(Silk.NET.Core.Native.FlowDirection.In)] nint pointer);
+
+        [NativeApi(EntryPoint = "glMultiTexCoordPointerEXT", Convention = CallingConvention.Winapi)]
         public unsafe partial void MultiTexCoordPointer([Flow(Silk.NET.Core.Native.FlowDirection.In)] TextureUnit texunit, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int size, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TexCoordPointerType type, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint stride, [Count(Computed = "size, type, stride"), Flow(Silk.NET.Core.Native.FlowDirection.In)] void* pointer);
+
+        [NativeApi(EntryPoint = "glMultiTexCoordPointerEXT", Convention = CallingConvention.Winapi)]
+        public partial void MultiTexCoordPointer([Flow(Silk.NET.Core.Native.FlowDirection.In)] TextureUnit texunit, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int size, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TexCoordPointerType type, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint stride, [Count(Computed = "size, type, stride"), Flow(Silk.NET.Core.Native.FlowDirection.In)] nint pointer);
 
         [NativeApi(EntryPoint = "glMultiTexEnvfEXT", Convention = CallingConvention.Winapi)]
         public partial void MultiTexEnv([Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT texunit, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT pname, [Flow(Silk.NET.Core.Native.FlowDirection.In)] float param);

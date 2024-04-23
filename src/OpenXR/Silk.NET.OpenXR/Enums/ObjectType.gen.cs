@@ -68,6 +68,12 @@ namespace Silk.NET.OpenXR
         SpaceUserFB = 1000241000,
         [NativeName("Name", "XR_OBJECT_TYPE_PASSTHROUGH_COLOR_LUT_META")]
         PassthroughColorLutMeta = 1000266000,
+        [NativeName("Name", "XR_OBJECT_TYPE_FACE_TRACKER2_FB")]
+        FaceTracker2FB = 1000287012,
+        [NativeName("Name", "XR_OBJECT_TYPE_ENVIRONMENT_DEPTH_PROVIDER_META")]
+        EnvironmentDepthProviderMeta = 1000291000,
+        [NativeName("Name", "XR_OBJECT_TYPE_ENVIRONMENT_DEPTH_SWAPCHAIN_META")]
+        EnvironmentDepthSwapchainMeta = 1000291001,
         [NativeName("Name", "XR_OBJECT_TYPE_PASSTHROUGH_HTC")]
         PassthroughHtc = 1000317000,
         [NativeName("Name", "XR_OBJECT_TYPE_PLANE_DETECTOR_EXT")]

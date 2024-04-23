@@ -168,7 +168,7 @@ namespace Silk.NET.BuildTools.Converters.Readers
                                                 ), task.FunctionPrefix
                                         ),
                                     NativeName = function,
-                                    Parameters = ParseParameters(xf),
+                                    Parameters = ParseParameters(xf, task.IntAsPtr),
                                     ProfileName = name,
                                     ProfileVersion = apiVersion,
                                     ReturnType = ParseTypeSignature
@@ -448,7 +448,7 @@ namespace Silk.NET.BuildTools.Converters.Readers
             throw new InvalidDataException("No valid count could be parsed from the input.");
         }
         
-        private static List<Parameter> ParseParameters(XElement functionElement)
+        private static List<Parameter> ParseParameters(XElement functionElement, Dictionary<string, string[]>? intAsPtr)
         {
             var parameterElements = functionElement.Elements().Where(e => e.Name == "param");
             var parametersWithComputedCounts =
@@ -469,6 +469,16 @@ namespace Silk.NET.BuildTools.Converters.Readers
                     out var valueReferenceName,
                     out _
                 );
+
+                if ((intAsPtr?.TryGetValue(
+                        functionElement.Attribute("name")!.Value,
+                        out var intAsPtrParams
+                    ) ?? false) &&
+                    intAsPtrParams.Contains(parameter.Name)
+                )
+                {
+                    parameter.Type.IsIntAsPtr = true;
+                }
 
                 if (hasComputedCount)
                 {

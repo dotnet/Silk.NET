@@ -39,7 +39,7 @@ namespace Silk.NET.Windowing.Internals
         private int _rented;
 
         // Ensure we keep SwapInterval up-to-date
-        private bool _swapIntervalChanged = true;
+        protected bool _swapIntervalChanged = true;
 
         /// <summary>
         /// Creates a base view with the given options.

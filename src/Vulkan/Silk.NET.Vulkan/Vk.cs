@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Concurrent;
 using System.Collections.Generic;
+using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 using System.Runtime.InteropServices;
 using System.Text;
@@ -119,7 +120,11 @@ namespace Silk.NET.Vulkan
         /// to call an extension function from an extension that isn't loaded.
         /// </remarks>
         /// <returns>Whether the extension is available and loaded.</returns>
+#if NET5_0_OR_GREATER
+        public bool TryGetInstanceExtension<[DynamicallyAccessedMembers(DynamicallyAccessedMemberTypes.PublicConstructors | DynamicallyAccessedMemberTypes.NonPublicConstructors)] T>(Instance instance, out T ext, string layer = null) where T : NativeExtension<Vk> =>
+#else
         public bool TryGetInstanceExtension<T>(Instance instance, out T ext, string layer = null) where T : NativeExtension<Vk> =>
+#endif
             !((ext = IsInstanceExtensionPresent(ExtensionAttribute.GetExtensionAttribute(typeof(T)).Name, layer)
                 ? (T)Activator.CreateInstance
                 (typeof(T), new LamdaNativeContext(x => GetInstanceProcAddr(instance, x)))
@@ -138,7 +143,11 @@ namespace Silk.NET.Vulkan
         /// to call an extension function from an extension that isn't loaded.
         /// </remarks>
         /// <returns>Whether the extension is available and loaded.</returns>
+#if NET5_0_OR_GREATER
+        public bool TryGetDeviceExtension<[DynamicallyAccessedMembers(DynamicallyAccessedMemberTypes.PublicConstructors | DynamicallyAccessedMemberTypes.NonPublicConstructors)] T>
+#else
         public bool TryGetDeviceExtension<T>
+#endif
             (Instance instance, Device device, out T ext, string layer = null) where T : NativeExtension<Vk> =>
             !((ext = IsDeviceExtensionPresent(instance, ExtensionAttribute.GetExtensionAttribute(typeof(T)).Name, layer)
                 ? (T)Activator.CreateInstance

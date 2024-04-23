@@ -7,6 +7,7 @@ using System.Collections.Generic;
 using System.Linq;
 using Silk.NET.BuildTools.Common;
 using Silk.NET.BuildTools.Common.Functions;
+using Attribute = Silk.NET.BuildTools.Common.Attribute;
 
 namespace Silk.NET.BuildTools.Overloading
 {
@@ -18,7 +19,8 @@ namespace Silk.NET.BuildTools.Overloading
             {
                 new GroupOverloader(),
                 new ClassOverloader(),
-                new OpenCLUngroupCompatOverloader()
+                new OpenCLUngroupCompatOverloader(),
+                new UndoIntAsPtrOverloader()
             },
             new ISimpleParameterOverloader[]
             {
@@ -84,6 +86,30 @@ namespace Silk.NET.BuildTools.Overloading
                     foreach (var overload in SimpleParameterOverloader.GetWithOverloads
                         (function, profile, overloaders.Filter(function, overloadExcludedFunctions)))
                     {
+                        if (!overload.Attributes.Any(x => x.Name.Contains("Obsolete")) &&
+                            overload.Parameters
+                                .Where(x => x.Type.IsIntAsPtr && (x.Type.IsByRef || x.Type.IsIn || x.Type.IsOut))
+                                .Select(x => x.Name)
+                                .ToArray() is { Length: > 0 } intAsPtrParams
+                        )
+                        {
+                            var paramStr = string.Join(", ", intAsPtrParams);
+                            overload.Attributes.Add
+                            (
+                                new Attribute
+                                {
+                                    Name = "Obsolete",
+                                    Arguments = new List<string>
+                                    {
+                                        "\"This overload exposes native-sized integer parameters (which are " +
+                                        "expressed as pointers in the original C function) as C# references due to a " +
+                                        "historical error, please consider using overloads that expose the following " +
+                                        $"parameters as raw pointers or native integers instead: {paramStr}\""
+                                    }
+                                }
+                            );
+                        }
+                        
                         yield return overload;
                     }
                 }

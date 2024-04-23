@@ -17,6 +17,27 @@ namespace Silk.NET.OpenXR
     public static class XROverloads
     {
         /// <summary>To be documented.</summary>
+        public static unsafe Result LocateSpaces(this XR thisApi, [Count(Count = 0)] Session session, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] SpacesLocateInfo* locateInfo, [Count(Count = 0)] Span<SpaceLocations> spaceLocations)
+        {
+            // SpanOverloader
+            return thisApi.LocateSpaces(session, locateInfo, ref spaceLocations.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        public static unsafe Result LocateSpaces(this XR thisApi, [Count(Count = 0)] Session session, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<SpacesLocateInfo> locateInfo, [Count(Count = 0)] SpaceLocations* spaceLocations)
+        {
+            // SpanOverloader
+            return thisApi.LocateSpaces(session, in locateInfo.GetPinnableReference(), spaceLocations);
+        }
+
+        /// <summary>To be documented.</summary>
+        public static unsafe Result LocateSpaces(this XR thisApi, [Count(Count = 0)] Session session, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<SpacesLocateInfo> locateInfo, [Count(Count = 0)] Span<SpaceLocations> spaceLocations)
+        {
+            // SpanOverloader
+            return thisApi.LocateSpaces(session, in locateInfo.GetPinnableReference(), ref spaceLocations.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
         public static unsafe Result AcquireSwapchainImage(this XR thisApi, [Count(Count = 0)] Swapchain swapchain, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] SwapchainImageAcquireInfo* acquireInfo, [Count(Count = 0)] Span<uint> index)
         {
             // SpanOverloader
@@ -983,6 +1004,146 @@ namespace Silk.NET.OpenXR
         {
             // SpanOverloader
             return thisApi.WaitSwapchainImage(swapchain, in waitInfo.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        public static unsafe Result CreateApiLayerInstance(this XR thisApi, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] InstanceCreateInfo* info, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ApiLayerCreateInfo* layerInfo, [Count(Count = 0)] Span<Instance> instance)
+        {
+            // SpanOverloader
+            return thisApi.CreateApiLayerInstance(info, layerInfo, ref instance.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        public static unsafe Result CreateApiLayerInstance(this XR thisApi, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] InstanceCreateInfo* info, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ApiLayerCreateInfo> layerInfo, [Count(Count = 0)] Instance* instance)
+        {
+            // SpanOverloader
+            return thisApi.CreateApiLayerInstance(info, in layerInfo.GetPinnableReference(), instance);
+        }
+
+        /// <summary>To be documented.</summary>
+        public static unsafe Result CreateApiLayerInstance(this XR thisApi, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] InstanceCreateInfo* info, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ApiLayerCreateInfo> layerInfo, [Count(Count = 0)] Span<Instance> instance)
+        {
+            // SpanOverloader
+            return thisApi.CreateApiLayerInstance(info, in layerInfo.GetPinnableReference(), ref instance.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        public static unsafe Result CreateApiLayerInstance(this XR thisApi, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<InstanceCreateInfo> info, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ApiLayerCreateInfo* layerInfo, [Count(Count = 0)] Instance* instance)
+        {
+            // SpanOverloader
+            return thisApi.CreateApiLayerInstance(in info.GetPinnableReference(), layerInfo, instance);
+        }
+
+        /// <summary>To be documented.</summary>
+        public static unsafe Result CreateApiLayerInstance(this XR thisApi, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<InstanceCreateInfo> info, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ApiLayerCreateInfo* layerInfo, [Count(Count = 0)] Span<Instance> instance)
+        {
+            // SpanOverloader
+            return thisApi.CreateApiLayerInstance(in info.GetPinnableReference(), layerInfo, ref instance.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        public static unsafe Result CreateApiLayerInstance(this XR thisApi, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<InstanceCreateInfo> info, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ApiLayerCreateInfo> layerInfo, [Count(Count = 0)] Instance* instance)
+        {
+            // SpanOverloader
+            return thisApi.CreateApiLayerInstance(in info.GetPinnableReference(), in layerInfo.GetPinnableReference(), instance);
+        }
+
+        /// <summary>To be documented.</summary>
+        public static unsafe Result CreateApiLayerInstance(this XR thisApi, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<InstanceCreateInfo> info, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ApiLayerCreateInfo> layerInfo, [Count(Count = 0)] Span<Instance> instance)
+        {
+            // SpanOverloader
+            return thisApi.CreateApiLayerInstance(in info.GetPinnableReference(), in layerInfo.GetPinnableReference(), ref instance.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        public static unsafe Result NegotiateLoaderApiLayerInterface(this XR thisApi, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] NegotiateLoaderInfo* loaderInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* layerName, [Count(Count = 0)] Span<NegotiateApiLayerRequest> apiLayerRequest)
+        {
+            // SpanOverloader
+            return thisApi.NegotiateLoaderApiLayerInterface(loaderInfo, layerName, ref apiLayerRequest.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        public static unsafe Result NegotiateLoaderApiLayerInterface(this XR thisApi, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] NegotiateLoaderInfo* loaderInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> layerName, [Count(Count = 0)] NegotiateApiLayerRequest* apiLayerRequest)
+        {
+            // SpanOverloader
+            return thisApi.NegotiateLoaderApiLayerInterface(loaderInfo, in layerName.GetPinnableReference(), apiLayerRequest);
+        }
+
+        /// <summary>To be documented.</summary>
+        public static unsafe Result NegotiateLoaderApiLayerInterface(this XR thisApi, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] NegotiateLoaderInfo* loaderInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> layerName, [Count(Count = 0)] Span<NegotiateApiLayerRequest> apiLayerRequest)
+        {
+            // SpanOverloader
+            return thisApi.NegotiateLoaderApiLayerInterface(loaderInfo, in layerName.GetPinnableReference(), ref apiLayerRequest.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        public static unsafe Result NegotiateLoaderApiLayerInterface(this XR thisApi, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] NegotiateLoaderInfo* loaderInfo, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string layerName, [Count(Count = 0)] Span<NegotiateApiLayerRequest> apiLayerRequest)
+        {
+            // SpanOverloader
+            return thisApi.NegotiateLoaderApiLayerInterface(loaderInfo, layerName, ref apiLayerRequest.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        public static unsafe Result NegotiateLoaderApiLayerInterface(this XR thisApi, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<NegotiateLoaderInfo> loaderInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* layerName, [Count(Count = 0)] NegotiateApiLayerRequest* apiLayerRequest)
+        {
+            // SpanOverloader
+            return thisApi.NegotiateLoaderApiLayerInterface(in loaderInfo.GetPinnableReference(), layerName, apiLayerRequest);
+        }
+
+        /// <summary>To be documented.</summary>
+        public static unsafe Result NegotiateLoaderApiLayerInterface(this XR thisApi, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<NegotiateLoaderInfo> loaderInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* layerName, [Count(Count = 0)] Span<NegotiateApiLayerRequest> apiLayerRequest)
+        {
+            // SpanOverloader
+            return thisApi.NegotiateLoaderApiLayerInterface(in loaderInfo.GetPinnableReference(), layerName, ref apiLayerRequest.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        public static unsafe Result NegotiateLoaderApiLayerInterface(this XR thisApi, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<NegotiateLoaderInfo> loaderInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> layerName, [Count(Count = 0)] NegotiateApiLayerRequest* apiLayerRequest)
+        {
+            // SpanOverloader
+            return thisApi.NegotiateLoaderApiLayerInterface(in loaderInfo.GetPinnableReference(), in layerName.GetPinnableReference(), apiLayerRequest);
+        }
+
+        /// <summary>To be documented.</summary>
+        public static unsafe Result NegotiateLoaderApiLayerInterface(this XR thisApi, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<NegotiateLoaderInfo> loaderInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> layerName, [Count(Count = 0)] Span<NegotiateApiLayerRequest> apiLayerRequest)
+        {
+            // SpanOverloader
+            return thisApi.NegotiateLoaderApiLayerInterface(in loaderInfo.GetPinnableReference(), in layerName.GetPinnableReference(), ref apiLayerRequest.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        public static unsafe Result NegotiateLoaderApiLayerInterface(this XR thisApi, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<NegotiateLoaderInfo> loaderInfo, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string layerName, [Count(Count = 0)] NegotiateApiLayerRequest* apiLayerRequest)
+        {
+            // SpanOverloader
+            return thisApi.NegotiateLoaderApiLayerInterface(in loaderInfo.GetPinnableReference(), layerName, apiLayerRequest);
+        }
+
+        /// <summary>To be documented.</summary>
+        public static unsafe Result NegotiateLoaderApiLayerInterface(this XR thisApi, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<NegotiateLoaderInfo> loaderInfo, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string layerName, [Count(Count = 0)] Span<NegotiateApiLayerRequest> apiLayerRequest)
+        {
+            // SpanOverloader
+            return thisApi.NegotiateLoaderApiLayerInterface(in loaderInfo.GetPinnableReference(), layerName, ref apiLayerRequest.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        public static unsafe Result NegotiateLoaderRuntimeInterface(this XR thisApi, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] NegotiateLoaderInfo* loaderInfo, [Count(Count = 0)] Span<NegotiateRuntimeRequest> runtimeRequest)
+        {
+            // SpanOverloader
+            return thisApi.NegotiateLoaderRuntimeInterface(loaderInfo, ref runtimeRequest.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        public static unsafe Result NegotiateLoaderRuntimeInterface(this XR thisApi, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<NegotiateLoaderInfo> loaderInfo, [Count(Count = 0)] NegotiateRuntimeRequest* runtimeRequest)
+        {
+            // SpanOverloader
+            return thisApi.NegotiateLoaderRuntimeInterface(in loaderInfo.GetPinnableReference(), runtimeRequest);
+        }
+
+        /// <summary>To be documented.</summary>
+        public static unsafe Result NegotiateLoaderRuntimeInterface(this XR thisApi, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<NegotiateLoaderInfo> loaderInfo, [Count(Count = 0)] Span<NegotiateRuntimeRequest> runtimeRequest)
+        {
+            // SpanOverloader
+            return thisApi.NegotiateLoaderRuntimeInterface(in loaderInfo.GetPinnableReference(), ref runtimeRequest.GetPinnableReference());
         }
 
     }

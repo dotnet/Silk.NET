@@ -562,6 +562,7 @@ namespace Silk.NET.Windowing.Glfw
             }
             set
             {
+                _swapIntervalChanged = true;
                 if (!IsInitialized)
                 {
                     throw new InvalidOperationException("Window is not running.");
