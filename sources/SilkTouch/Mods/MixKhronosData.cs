@@ -83,17 +83,17 @@ public partial class MixKhronosData(
         public Dictionary<
             string,
             (bool IsExtension, Dictionary<string, HashSet<string>> Dependencies)
-        > ApiSets { get; init; } = [];
+        > ApiSets { get; set; } = [];
 
         /// <summary>
         /// A mapping of native names to their supported API profile attributes.
         /// </summary>
-        public Dictionary<string, List<AttributeListSyntax>>? SupportedApiProfiles { get; init; }
+        public Dictionary<string, List<AttributeListSyntax>>? SupportedApiProfiles { get; set; }
 
         /// <summary>
         /// The vendors contributing to the specification. This is in extension form e.g. Microsoft is MSFT.
         /// </summary>
-        public HashSet<string>? Vendors { get; init; }
+        public HashSet<string>? Vendors { get; set; }
 
         /// <summary>
         /// A map of containing symbol names (i.e. function or struct) and applicable symbol names (i.e. field name,
@@ -102,7 +102,7 @@ public partial class MixKhronosData(
         public Dictionary<
             (string ContainingSymbol, string ApplicableSymbol),
             string
-        > GroupUsages { get; init; } = [];
+        > GroupUsages { get; set; } = [];
 
         /// <summary>
         /// A map of native type names to C# type names. This contains the contents of
@@ -214,8 +214,26 @@ public partial class MixKhronosData(
     {
         var currentConfig = cfg.Get(key);
         var specPath = currentConfig.SpecPath;
+        var job = Jobs[key] = new JobData
+        {
+            Configuration = currentConfig,
+            TypeMap = currentConfig.TypeMap is not null
+                ? new Dictionary<string, string>(currentConfig.TypeMap)
+                : []
+        };
+        job.TypeMap.TryAdd("int8_t", "sbyte");
+        job.TypeMap.TryAdd("uint8_t", "byte");
+        job.TypeMap.TryAdd("int16_t", "short");
+        job.TypeMap.TryAdd("uint16_t", "ushort");
+        job.TypeMap.TryAdd("int32_t", "int");
+        job.TypeMap.TryAdd("uint32_t", "uint");
+        job.TypeMap.TryAdd("int64_t", "long");
+        job.TypeMap.TryAdd("uint64_t", "ulong");
+        job.TypeMap.TryAdd("GLenum", "uint");
+        job.TypeMap.TryAdd("GLbitfield", "uint");
         if (specPath is null)
         {
+            // There is act
             return;
         }
 
@@ -223,7 +241,7 @@ public partial class MixKhronosData(
         await using var fs = File.OpenRead(specPath);
         var xml = await XDocument.LoadAsync(fs, LoadOptions.None, default);
         var (apiSets, supportedApiProfiles) = EvaluateProfiles(xml);
-        HashSet<string> vendors =
+        job.Vendors =
         [
             .. xml.Element("registry")
                 ?.Element("tags")
@@ -236,18 +254,9 @@ public partial class MixKhronosData(
                 .Attributes("name")
                 .Select(x => x.Value.Split('_')[1].ToUpper()) ?? Enumerable.Empty<string>()
         ];
-        Jobs[key] = new JobData
-        {
-            // Get all vendor names
-            Vendors = vendors,
-            ApiSets = apiSets,
-            SupportedApiProfiles = supportedApiProfiles,
-            Configuration = currentConfig,
-            TypeMap = currentConfig.TypeMap is not null
-                ? new Dictionary<string, string>(currentConfig.TypeMap)
-                : []
-        };
-        ReadGroups(xml, Jobs[key], vendors);
+        job.ApiSets = apiSets;
+        job.SupportedApiProfiles = supportedApiProfiles;
+        ReadGroups(xml, Jobs[key], job.Vendors);
         foreach (var typeElement in xml.Elements("registry").Elements("types").Elements("type"))
         {
             var type = typeElement.Element("name")?.Value;
@@ -259,17 +268,6 @@ public partial class MixKhronosData(
 
             Jobs[key].TypeMap.TryAdd(type, baseType);
         }
-
-        Jobs[key].TypeMap.TryAdd("int8_t", "sbyte");
-        Jobs[key].TypeMap.TryAdd("uint8_t", "byte");
-        Jobs[key].TypeMap.TryAdd("int16_t", "short");
-        Jobs[key].TypeMap.TryAdd("uint16_t", "ushort");
-        Jobs[key].TypeMap.TryAdd("int32_t", "int");
-        Jobs[key].TypeMap.TryAdd("uint32_t", "uint");
-        Jobs[key].TypeMap.TryAdd("int64_t", "long");
-        Jobs[key].TypeMap.TryAdd("uint64_t", "ulong");
-        Jobs[key].TypeMap.TryAdd("GLenum", "uint");
-        Jobs[key].TypeMap.TryAdd("GLbitfield", "uint");
     }
 
     /// <inheritdoc />
@@ -1532,7 +1530,12 @@ public partial class MixKhronosData(
         }
 
         current.AttributeLists.GetNativeFunctionInfo(out _, out var entryPoint, out _);
-        entryPoint = current.Identifier.ToString();
+        entryPoint ??= current.Identifier.ToString();
+        if (TransformArrayParameter(current, entryPoint) is { } arrayParamTransform)
+        {
+            next(arrayParamTransform);
+        }
+
         foreach (var meth in TransformToConstants(current, ctx, entryPoint))
         {
             // TODO more transformations
@@ -1725,6 +1728,84 @@ public partial class MixKhronosData(
                 )
                 : null;
         }
+    }
+
+    private MethodDeclarationSyntax? TransformArrayParameter(
+        MethodDeclarationSyntax decl,
+        ReadOnlySpan<char> name
+    )
+    {
+        // Ported from https://github.com/dotnet/Silk.NET/blob/0e8e0398/src/Core/Silk.NET.BuildTools/Overloading/Complex/ArrayParameterOverloader.cs#L32
+        // function has exactly two parameters
+        if (decl.ParameterList.Parameters.Count != 2)
+        {
+            return null;
+        }
+
+        // function's name starts with Delete
+        if (
+            name.IndexOfAnyInRange('A', 'Z') is not (> 0 and var firstCap)
+            || name.Length - firstCap <= 6
+            || name[firstCap..(firstCap + 6)] is not "Delete"
+        )
+        {
+            return null;
+        }
+
+        // returns void and the first parameter is an integer
+        if (
+            decl.ReturnType is not PredefinedTypeSyntax pt
+            || !pt.Keyword.IsKind(SyntaxKind.VoidKeyword)
+            || decl.ParameterList.Parameters[0].Type is not PredefinedTypeSyntax ptp0
+            || !ptp0.IsInteger()
+        )
+        {
+            return null;
+        }
+
+        // last parameter is a single dimensional pointer
+        if (decl.ParameterList.Parameters[1].Type?.GetPointerLikeElementType() is not { } element)
+        {
+            return null;
+        }
+
+        // rewrite the method
+        var rw = new TransformArrayParameterRewriter(
+            decl.ParameterList.Parameters[0].Identifier.ToString(),
+            decl.ParameterList.Parameters[1].Identifier.ToString(),
+            element
+        );
+        return decl.WithIdentifier(Identifier(decl.Identifier.ToString().Singularize(false)))
+            .WithBody(rw.Visit(decl.Body) as BlockSyntax)
+            .WithExpressionBody(rw.Visit(decl.ExpressionBody) as ArrowExpressionClauseSyntax)
+            .WithParameterList(
+                decl.ParameterList.WithParameters(
+                    SingletonSeparatedList(decl.ParameterList.Parameters[1].WithType(element))
+                )
+            );
+    }
+
+    class TransformArrayParameterRewriter(
+        string firstParam,
+        string secondParam,
+        TypeSyntax secondParamType
+    ) : CSharpSyntaxRewriter
+    {
+        public override SyntaxNode? VisitIdentifierName(IdentifierNameSyntax node) =>
+            node.Identifier.ToString() == secondParam
+                ? secondParamType is GenericNameSyntax gn
+                && gn.Identifier.ToString().StartsWith("Ref")
+                    ? InvocationExpression(
+                        MemberAccessExpression(
+                            SyntaxKind.SimpleMemberAccessExpression,
+                            node,
+                            IdentifierName($"As{gn.Identifier}")
+                        )
+                    )
+                    : PrefixUnaryExpression(SyntaxKind.AddressOfExpression, node)
+                : node.Identifier.ToString() == firstParam
+                    ? LiteralExpression(SyntaxKind.NumericLiteralExpression, Literal(1))
+                    : base.VisitIdentifierName(node);
     }
 
     /// <summary>

@@ -74,8 +74,19 @@ public class FunctionTransformer(
                         // Small fixup to convert to use expression bodies where possible
                         if (
                             meth.ExpressionBody is null
-                            && meth.Body?.Statements.FirstOrDefault()
-                                is ReturnStatementSyntax { Expression: { } expr }
+                            && meth.Body?.Statements.Count == 1
+                            && (
+                                (meth.Body.Statements[0] as ReturnStatementSyntax)?.Expression
+                                ?? (
+                                    meth.ReturnType is PredefinedTypeSyntax pt
+                                    && pt.Keyword.IsKind(SyntaxKind.VoidKeyword)
+                                        ? (
+                                            meth.Body.Statements[0] as ExpressionStatementSyntax
+                                        )?.Expression
+                                        : null
+                                )
+                            )
+                                is { } expr
                         )
                         {
                             meth = meth.WithBody(null)

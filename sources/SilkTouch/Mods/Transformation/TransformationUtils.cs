@@ -88,6 +88,7 @@ public static class TransformationUtils
             {
                 return CastExpression(_castTo, expr);
             }
+
             return ret;
         }
 
@@ -144,4 +145,34 @@ public static class TransformationUtils
             return inv;
         }
     }
+
+    /// <summary>
+    /// Get the element type for the given "pointer-like" type. That is (for example):
+    /// <list type="bullet">
+    /// <item><term>For <c>sbyte***</c>: </term><description><c>sbyte**</c></description></item>
+    /// <item><term>For <c>Ptr2D&lt;sbyte&gt;</c>: </term><description><c>Ptr&lt;sbyte&gt;</c></description></item>
+    /// <item><term>For <c>Ref&lt;sbyte&gt;</c>: </term><description><c>sbyte</c></description></item>
+    /// </list>
+    /// </summary>
+    /// <param name="syn">The type syntax.</param>
+    /// <returns>The element type. Null if the type is not a pointer.</returns>
+    public static TypeSyntax? GetPointerLikeElementType(this TypeSyntax syn) =>
+        syn switch
+        {
+            PointerTypeSyntax ptr => ptr.ElementType,
+            GenericNameSyntax { TypeArgumentList.Arguments.Count: 1 } gn
+                when gn.Identifier.ToString().AsSpan() is { Length: >= 3 } span
+                    && span[..3] is "Ref" or "Ptr"
+                    && (span.Length == 3 || span[^1] is 'D')
+                => span.Length == 3
+                    ? gn.TypeArgumentList.Arguments[0]
+                    : byte.TryParse(span[3..^1], out var nd)
+                        ? gn.WithIdentifier(
+                            nd <= 2
+                                ? Identifier(span[..3].ToString())
+                                : Identifier($"{span[..3]}{nd - 1}")
+                        )
+                        : null,
+            _ => null
+        };
 }
