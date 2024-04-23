@@ -12,7 +12,7 @@
         <PackageProjectUrl>https://github.com/dotnet/Silk.NET</PackageProjectUrl>
         <Description>Native library for Vkd3d.</Description>
         <RepositoryType>git</RepositoryType>
-        <RepositoryUrl>https://github.com/Beyley/vkd3d</RepositoryUrl>
+        <RepositoryUrl>https://gitlab.winehq.org/wine/vkd3d</RepositoryUrl>
     </PropertyGroup>
 
 </Project>
