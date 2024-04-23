@@ -21,7 +21,7 @@
             - Added support for Apple Silicon Macs for OpenAL Soft, Vulkan Loader, and SwiftShader. (thanks @alexrp)
             - Added support for 32-bit Arm Linux for Assimp, GLFW, OpenAL Soft, SDL, Shaderc, SPIR-V Cross, SPIR-V Reflect, Vkd3d, SwiftShader, and WGPU. (thanks @alexrp)
             - Added support for 64-bit Windows on Arm for Assimp, OpenAL Soft, VulkanLoader, and SwiftShader. (thanks @alexrp)
-            - Added native library support for glibc versions as old as 2.17 on Linux platforms.
+            - Added limited native library support (SPIR-V Tools and Shaderc) for glibc versions as old as 2.17 on Linux platforms.
             - Added support for new standard cursor shapes in Input and GLFW.
             - Updated to use `ref readonly` instead of `in`.
             - Updated to OpenXR 1.1.36.
