@@ -15,6 +15,11 @@ public interface ITransformationContext
     string? JobKey { get; set; }
 
     /// <summary>
+    /// The original method signature.
+    /// </summary>
+    MethodDeclarationSyntax? Original { get; set; }
+
+    /// <summary>
     /// Adds a namespace import to the resultant syntax tree.
     /// </summary>
     /// <param name="str">The dot-separated namespace.</param>

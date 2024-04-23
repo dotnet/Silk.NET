@@ -98,7 +98,11 @@ public class BoolTransformer(IOptionsSnapshot<TransformFunctions.Configuration> 
         if (!ReferenceEquals(current, ogCurrent))
         {
             current =
-                current.CastTransformeeCalls(ogCurrent, current) as MethodDeclarationSyntax
+                current.CastTransformeeCalls(
+                    ctx.Original
+                        ?? throw new InvalidOperationException("Original signature missing."),
+                    current
+                ) as MethodDeclarationSyntax
                 ?? current;
         }
 

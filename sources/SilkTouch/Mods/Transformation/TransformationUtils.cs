@@ -77,6 +77,20 @@ public static class TransformationUtils
     class MethodCallRewriter(MethodDeclarationSyntax caller, MethodDeclarationSyntax callee)
         : CSharpSyntaxRewriter
     {
+        private int _castDepth;
+        private TypeSyntax? _castTo;
+
+        public override SyntaxNode? VisitCastExpression(CastExpressionSyntax node)
+        {
+            _castDepth++;
+            var ret = base.VisitCastExpression(node);
+            if (--_castDepth == 0 && _castTo is not null && ret is ExpressionSyntax expr)
+            {
+                return CastExpression(_castTo, expr);
+            }
+            return ret;
+        }
+
         public override SyntaxNode? VisitInvocationExpression(InvocationExpressionSyntax node)
         {
             var ret = base.VisitInvocationExpression(node);
@@ -102,8 +116,12 @@ public static class TransformationUtils
                             inv.ArgumentList.Arguments.Select(
                                 (x, i) =>
                                     callee.ParameterList.Parameters[i].Type is { } ty
-                                    && ty.ToString()
-                                        != caller.ParameterList.Parameters[i].Type?.ToString()
+                                    && ty.ToString() is { Length: > 0 } tyStr
+                                    && tyStr != caller.ParameterList.Parameters[i].Type?.ToString()
+                                    && (
+                                        x.Expression is not CastExpressionSyntax ce
+                                        || ce.Type.ToString() != tyStr
+                                    )
                                         ? x.WithExpression(CastExpression(ty, x.Expression))
                                         : x
                             )
@@ -113,7 +131,13 @@ public static class TransformationUtils
 
                 if (callee.ReturnType.ToString() != caller.ReturnType.ToString())
                 {
-                    return CastExpression(caller.ReturnType, inv);
+                    // Preserve cast order - lazily apply the cast if we have to.
+                    if (_castDepth == 0)
+                    {
+                        return CastExpression(caller.ReturnType, inv);
+                    }
+
+                    _castTo = caller.ReturnType;
                 }
             }
 

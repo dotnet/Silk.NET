@@ -120,6 +120,7 @@ public class FunctionTransformer(
                 );
             }
 
+            ctx.Original = function;
             if (TransformFunctions(function, transform) is not null && includeOriginal)
             {
                 // Try to add the original function as-is
@@ -158,6 +159,8 @@ public class FunctionTransformer(
                     }
                 }
             }
+
+            ctx.Original = null;
         }
 
         return ret;
