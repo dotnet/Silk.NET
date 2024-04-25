@@ -106,7 +106,7 @@ namespace Silk.NET.Windowing
         /// <summary>
         /// Sets focus to current window.
         /// </summary>
-        void SetFocus();
+        void Focus();
 
         /// <summary>
         /// Close this window.

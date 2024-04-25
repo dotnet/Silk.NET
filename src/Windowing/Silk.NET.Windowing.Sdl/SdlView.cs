@@ -313,7 +313,7 @@ namespace Silk.NET.Windowing.Sdl
             Reset();
         }
 
-        public override void SetFocus()
+        public override void Focus()
         {
             Sdl.RaiseWindow(SdlWindow);
         }
