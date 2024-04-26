@@ -60,6 +60,7 @@ Silk.NET.Windowing.IView.Render -> System.Action<double>?
 Silk.NET.Windowing.IView.Reset() -> void
 Silk.NET.Windowing.IView.Resize -> System.Action<Silk.NET.Maths.Vector2D<int>>?
 Silk.NET.Windowing.IView.Run(System.Action! onFrame) -> void
+Silk.NET.Windowing.IView.Focus() -> void
 Silk.NET.Windowing.IView.Time.get -> double
 Silk.NET.Windowing.IView.Update -> System.Action<double>?
 Silk.NET.Windowing.IViewProperties

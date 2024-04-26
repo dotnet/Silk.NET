@@ -71,6 +71,7 @@ namespace Silk.NET.Windowing.Internals
         public abstract void ContinueEvents();
         public abstract Vector2D<int> PointToClient(Vector2D<int> point);
         public abstract Vector2D<int> PointToScreen(Vector2D<int> point);
+        public abstract void Focus();
         public abstract void Close();
         protected abstract void RegisterCallbacks();
         protected abstract void UnregisterCallbacks();
