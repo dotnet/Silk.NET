@@ -20,7 +20,7 @@ jobs:
                 dotnet-version: '8.0.x'
                 dotnet-quality: 'preview'
             - name: Restore
-              run: dotnet restore --runtime ${{ matrix.rid }}
+              run: dotnet restore
             - name: Pack
               run: dotnet pack -c Release
     Test:
