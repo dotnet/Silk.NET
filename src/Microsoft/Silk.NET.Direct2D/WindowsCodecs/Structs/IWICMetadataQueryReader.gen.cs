@@ -205,73 +205,73 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetMetadataByName([Flow(Silk.NET.Core.Native.FlowDirection.In)] char* wzName, void* pvarValue)
+        public readonly unsafe int GetMetadataByName([Flow(Silk.NET.Core.Native.FlowDirection.In)] char* wzName, Silk.NET.Core.Win32Extras.PropVariant* pvarValue)
         {
             var @this = (IWICMetadataQueryReader*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<IWICMetadataQueryReader*, char*, void*, int>)@this->LpVtbl[5])(@this, wzName, pvarValue);
+            ret = ((delegate* unmanaged[Stdcall]<IWICMetadataQueryReader*, char*, Silk.NET.Core.Win32Extras.PropVariant*, int>)@this->LpVtbl[5])(@this, wzName, pvarValue);
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetMetadataByName<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] char* wzName, ref T0 pvarValue) where T0 : unmanaged
+        public readonly unsafe int GetMetadataByName([Flow(Silk.NET.Core.Native.FlowDirection.In)] char* wzName, ref Silk.NET.Core.Win32Extras.PropVariant pvarValue)
         {
             var @this = (IWICMetadataQueryReader*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            fixed (void* pvarValuePtr = &pvarValue)
+            fixed (Silk.NET.Core.Win32Extras.PropVariant* pvarValuePtr = &pvarValue)
             {
-                ret = ((delegate* unmanaged[Stdcall]<IWICMetadataQueryReader*, char*, void*, int>)@this->LpVtbl[5])(@this, wzName, pvarValuePtr);
+                ret = ((delegate* unmanaged[Stdcall]<IWICMetadataQueryReader*, char*, Silk.NET.Core.Win32Extras.PropVariant*, int>)@this->LpVtbl[5])(@this, wzName, pvarValuePtr);
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetMetadataByName([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char wzName, void* pvarValue)
+        public readonly unsafe int GetMetadataByName([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char wzName, Silk.NET.Core.Win32Extras.PropVariant* pvarValue)
         {
             var @this = (IWICMetadataQueryReader*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
             fixed (char* wzNamePtr = &wzName)
             {
-                ret = ((delegate* unmanaged[Stdcall]<IWICMetadataQueryReader*, char*, void*, int>)@this->LpVtbl[5])(@this, wzNamePtr, pvarValue);
+                ret = ((delegate* unmanaged[Stdcall]<IWICMetadataQueryReader*, char*, Silk.NET.Core.Win32Extras.PropVariant*, int>)@this->LpVtbl[5])(@this, wzNamePtr, pvarValue);
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int GetMetadataByName<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char wzName, ref T0 pvarValue) where T0 : unmanaged
+        public readonly int GetMetadataByName([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char wzName, ref Silk.NET.Core.Win32Extras.PropVariant pvarValue)
         {
             var @this = (IWICMetadataQueryReader*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
             fixed (char* wzNamePtr = &wzName)
             {
-                fixed (void* pvarValuePtr = &pvarValue)
+                fixed (Silk.NET.Core.Win32Extras.PropVariant* pvarValuePtr = &pvarValue)
                 {
-                    ret = ((delegate* unmanaged[Stdcall]<IWICMetadataQueryReader*, char*, void*, int>)@this->LpVtbl[5])(@this, wzNamePtr, pvarValuePtr);
+                    ret = ((delegate* unmanaged[Stdcall]<IWICMetadataQueryReader*, char*, Silk.NET.Core.Win32Extras.PropVariant*, int>)@this->LpVtbl[5])(@this, wzNamePtr, pvarValuePtr);
                 }
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetMetadataByName([Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string wzName, void* pvarValue)
+        public readonly unsafe int GetMetadataByName([Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string wzName, Silk.NET.Core.Win32Extras.PropVariant* pvarValue)
         {
             var @this = (IWICMetadataQueryReader*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
             var wzNamePtr = (byte*) SilkMarshal.StringToPtr(wzName, NativeStringEncoding.LPWStr);
-            ret = ((delegate* unmanaged[Stdcall]<IWICMetadataQueryReader*, byte*, void*, int>)@this->LpVtbl[5])(@this, wzNamePtr, pvarValue);
+            ret = ((delegate* unmanaged[Stdcall]<IWICMetadataQueryReader*, byte*, Silk.NET.Core.Win32Extras.PropVariant*, int>)@this->LpVtbl[5])(@this, wzNamePtr, pvarValue);
             SilkMarshal.Free((nint)wzNamePtr);
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int GetMetadataByName<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string wzName, ref T0 pvarValue) where T0 : unmanaged
+        public readonly int GetMetadataByName([Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string wzName, ref Silk.NET.Core.Win32Extras.PropVariant pvarValue)
         {
             var @this = (IWICMetadataQueryReader*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
             var wzNamePtr = (byte*) SilkMarshal.StringToPtr(wzName, NativeStringEncoding.LPWStr);
-            fixed (void* pvarValuePtr = &pvarValue)
+            fixed (Silk.NET.Core.Win32Extras.PropVariant* pvarValuePtr = &pvarValue)
             {
-                ret = ((delegate* unmanaged[Stdcall]<IWICMetadataQueryReader*, byte*, void*, int>)@this->LpVtbl[5])(@this, wzNamePtr, pvarValuePtr);
+                ret = ((delegate* unmanaged[Stdcall]<IWICMetadataQueryReader*, byte*, Silk.NET.Core.Win32Extras.PropVariant*, int>)@this->LpVtbl[5])(@this, wzNamePtr, pvarValuePtr);
             }
             SilkMarshal.Free((nint)wzNamePtr);
             return ret;

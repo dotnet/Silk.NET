@@ -1174,107 +1174,107 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateBitmapFromHBITMAP(void* hBitmap, void* hPalette, BitmapAlphaChannelOption options, IWICBitmap** ppIBitmap)
+        public readonly unsafe int CreateBitmapFromHBITMAP(void** hBitmap, void** hPalette, BitmapAlphaChannelOption options, IWICBitmap** ppIBitmap)
         {
             var @this = (IWICComponentFactory*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<IWICComponentFactory*, void*, void*, BitmapAlphaChannelOption, IWICBitmap**, int>)@this->LpVtbl[21])(@this, hBitmap, hPalette, options, ppIBitmap);
+            ret = ((delegate* unmanaged[Stdcall]<IWICComponentFactory*, void**, void**, BitmapAlphaChannelOption, IWICBitmap**, int>)@this->LpVtbl[21])(@this, hBitmap, hPalette, options, ppIBitmap);
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateBitmapFromHBITMAP(void* hBitmap, void* hPalette, BitmapAlphaChannelOption options, ref IWICBitmap* ppIBitmap)
+        public readonly unsafe int CreateBitmapFromHBITMAP(void** hBitmap, void** hPalette, BitmapAlphaChannelOption options, ref IWICBitmap* ppIBitmap)
         {
             var @this = (IWICComponentFactory*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
             fixed (IWICBitmap** ppIBitmapPtr = &ppIBitmap)
             {
-                ret = ((delegate* unmanaged[Stdcall]<IWICComponentFactory*, void*, void*, BitmapAlphaChannelOption, IWICBitmap**, int>)@this->LpVtbl[21])(@this, hBitmap, hPalette, options, ppIBitmapPtr);
+                ret = ((delegate* unmanaged[Stdcall]<IWICComponentFactory*, void**, void**, BitmapAlphaChannelOption, IWICBitmap**, int>)@this->LpVtbl[21])(@this, hBitmap, hPalette, options, ppIBitmapPtr);
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateBitmapFromHBITMAP<T0>(void* hBitmap, ref T0 hPalette, BitmapAlphaChannelOption options, IWICBitmap** ppIBitmap) where T0 : unmanaged
+        public readonly unsafe int CreateBitmapFromHBITMAP(void** hBitmap, ref void* hPalette, BitmapAlphaChannelOption options, IWICBitmap** ppIBitmap)
         {
             var @this = (IWICComponentFactory*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            fixed (void* hPalettePtr = &hPalette)
+            fixed (void** hPalettePtr = &hPalette)
             {
-                ret = ((delegate* unmanaged[Stdcall]<IWICComponentFactory*, void*, void*, BitmapAlphaChannelOption, IWICBitmap**, int>)@this->LpVtbl[21])(@this, hBitmap, hPalettePtr, options, ppIBitmap);
+                ret = ((delegate* unmanaged[Stdcall]<IWICComponentFactory*, void**, void**, BitmapAlphaChannelOption, IWICBitmap**, int>)@this->LpVtbl[21])(@this, hBitmap, hPalettePtr, options, ppIBitmap);
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateBitmapFromHBITMAP<T0>(void* hBitmap, ref T0 hPalette, BitmapAlphaChannelOption options, ref IWICBitmap* ppIBitmap) where T0 : unmanaged
+        public readonly unsafe int CreateBitmapFromHBITMAP(void** hBitmap, ref void* hPalette, BitmapAlphaChannelOption options, ref IWICBitmap* ppIBitmap)
         {
             var @this = (IWICComponentFactory*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            fixed (void* hPalettePtr = &hPalette)
-            {
-                fixed (IWICBitmap** ppIBitmapPtr = &ppIBitmap)
-                {
-                    ret = ((delegate* unmanaged[Stdcall]<IWICComponentFactory*, void*, void*, BitmapAlphaChannelOption, IWICBitmap**, int>)@this->LpVtbl[21])(@this, hBitmap, hPalettePtr, options, ppIBitmapPtr);
-                }
-            }
-            return ret;
-        }
-
-        /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateBitmapFromHBITMAP<T0>(ref T0 hBitmap, void* hPalette, BitmapAlphaChannelOption options, IWICBitmap** ppIBitmap) where T0 : unmanaged
-        {
-            var @this = (IWICComponentFactory*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            int ret = default;
-            fixed (void* hBitmapPtr = &hBitmap)
-            {
-                ret = ((delegate* unmanaged[Stdcall]<IWICComponentFactory*, void*, void*, BitmapAlphaChannelOption, IWICBitmap**, int>)@this->LpVtbl[21])(@this, hBitmapPtr, hPalette, options, ppIBitmap);
-            }
-            return ret;
-        }
-
-        /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateBitmapFromHBITMAP<T0>(ref T0 hBitmap, void* hPalette, BitmapAlphaChannelOption options, ref IWICBitmap* ppIBitmap) where T0 : unmanaged
-        {
-            var @this = (IWICComponentFactory*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            int ret = default;
-            fixed (void* hBitmapPtr = &hBitmap)
+            fixed (void** hPalettePtr = &hPalette)
             {
                 fixed (IWICBitmap** ppIBitmapPtr = &ppIBitmap)
                 {
-                    ret = ((delegate* unmanaged[Stdcall]<IWICComponentFactory*, void*, void*, BitmapAlphaChannelOption, IWICBitmap**, int>)@this->LpVtbl[21])(@this, hBitmapPtr, hPalette, options, ppIBitmapPtr);
+                    ret = ((delegate* unmanaged[Stdcall]<IWICComponentFactory*, void**, void**, BitmapAlphaChannelOption, IWICBitmap**, int>)@this->LpVtbl[21])(@this, hBitmap, hPalettePtr, options, ppIBitmapPtr);
                 }
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateBitmapFromHBITMAP<T0, T1>(ref T0 hBitmap, ref T1 hPalette, BitmapAlphaChannelOption options, IWICBitmap** ppIBitmap) where T0 : unmanaged where T1 : unmanaged
+        public readonly unsafe int CreateBitmapFromHBITMAP(ref void* hBitmap, void** hPalette, BitmapAlphaChannelOption options, IWICBitmap** ppIBitmap)
         {
             var @this = (IWICComponentFactory*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            fixed (void* hBitmapPtr = &hBitmap)
+            fixed (void** hBitmapPtr = &hBitmap)
             {
-                fixed (void* hPalettePtr = &hPalette)
+                ret = ((delegate* unmanaged[Stdcall]<IWICComponentFactory*, void**, void**, BitmapAlphaChannelOption, IWICBitmap**, int>)@this->LpVtbl[21])(@this, hBitmapPtr, hPalette, options, ppIBitmap);
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CreateBitmapFromHBITMAP(ref void* hBitmap, void** hPalette, BitmapAlphaChannelOption options, ref IWICBitmap* ppIBitmap)
+        {
+            var @this = (IWICComponentFactory*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (void** hBitmapPtr = &hBitmap)
+            {
+                fixed (IWICBitmap** ppIBitmapPtr = &ppIBitmap)
                 {
-                    ret = ((delegate* unmanaged[Stdcall]<IWICComponentFactory*, void*, void*, BitmapAlphaChannelOption, IWICBitmap**, int>)@this->LpVtbl[21])(@this, hBitmapPtr, hPalettePtr, options, ppIBitmap);
+                    ret = ((delegate* unmanaged[Stdcall]<IWICComponentFactory*, void**, void**, BitmapAlphaChannelOption, IWICBitmap**, int>)@this->LpVtbl[21])(@this, hBitmapPtr, hPalette, options, ppIBitmapPtr);
                 }
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateBitmapFromHBITMAP<T0, T1>(ref T0 hBitmap, ref T1 hPalette, BitmapAlphaChannelOption options, ref IWICBitmap* ppIBitmap) where T0 : unmanaged where T1 : unmanaged
+        public readonly unsafe int CreateBitmapFromHBITMAP(ref void* hBitmap, ref void* hPalette, BitmapAlphaChannelOption options, IWICBitmap** ppIBitmap)
         {
             var @this = (IWICComponentFactory*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            fixed (void* hBitmapPtr = &hBitmap)
+            fixed (void** hBitmapPtr = &hBitmap)
             {
-                fixed (void* hPalettePtr = &hPalette)
+                fixed (void** hPalettePtr = &hPalette)
+                {
+                    ret = ((delegate* unmanaged[Stdcall]<IWICComponentFactory*, void**, void**, BitmapAlphaChannelOption, IWICBitmap**, int>)@this->LpVtbl[21])(@this, hBitmapPtr, hPalettePtr, options, ppIBitmap);
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CreateBitmapFromHBITMAP(ref void* hBitmap, ref void* hPalette, BitmapAlphaChannelOption options, ref IWICBitmap* ppIBitmap)
+        {
+            var @this = (IWICComponentFactory*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (void** hBitmapPtr = &hBitmap)
+            {
+                fixed (void** hPalettePtr = &hPalette)
                 {
                     fixed (IWICBitmap** ppIBitmapPtr = &ppIBitmap)
                     {
-                        ret = ((delegate* unmanaged[Stdcall]<IWICComponentFactory*, void*, void*, BitmapAlphaChannelOption, IWICBitmap**, int>)@this->LpVtbl[21])(@this, hBitmapPtr, hPalettePtr, options, ppIBitmapPtr);
+                        ret = ((delegate* unmanaged[Stdcall]<IWICComponentFactory*, void**, void**, BitmapAlphaChannelOption, IWICBitmap**, int>)@this->LpVtbl[21])(@this, hBitmapPtr, hPalettePtr, options, ppIBitmapPtr);
                     }
                 }
             }
@@ -1282,48 +1282,48 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateBitmapFromHICON(void* hIcon, IWICBitmap** ppIBitmap)
+        public readonly unsafe int CreateBitmapFromHICON(void** hIcon, IWICBitmap** ppIBitmap)
         {
             var @this = (IWICComponentFactory*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<IWICComponentFactory*, void*, IWICBitmap**, int>)@this->LpVtbl[22])(@this, hIcon, ppIBitmap);
+            ret = ((delegate* unmanaged[Stdcall]<IWICComponentFactory*, void**, IWICBitmap**, int>)@this->LpVtbl[22])(@this, hIcon, ppIBitmap);
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateBitmapFromHICON(void* hIcon, ref IWICBitmap* ppIBitmap)
+        public readonly unsafe int CreateBitmapFromHICON(void** hIcon, ref IWICBitmap* ppIBitmap)
         {
             var @this = (IWICComponentFactory*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
             fixed (IWICBitmap** ppIBitmapPtr = &ppIBitmap)
             {
-                ret = ((delegate* unmanaged[Stdcall]<IWICComponentFactory*, void*, IWICBitmap**, int>)@this->LpVtbl[22])(@this, hIcon, ppIBitmapPtr);
+                ret = ((delegate* unmanaged[Stdcall]<IWICComponentFactory*, void**, IWICBitmap**, int>)@this->LpVtbl[22])(@this, hIcon, ppIBitmapPtr);
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateBitmapFromHICON<T0>(ref T0 hIcon, IWICBitmap** ppIBitmap) where T0 : unmanaged
+        public readonly unsafe int CreateBitmapFromHICON(ref void* hIcon, IWICBitmap** ppIBitmap)
         {
             var @this = (IWICComponentFactory*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            fixed (void* hIconPtr = &hIcon)
+            fixed (void** hIconPtr = &hIcon)
             {
-                ret = ((delegate* unmanaged[Stdcall]<IWICComponentFactory*, void*, IWICBitmap**, int>)@this->LpVtbl[22])(@this, hIconPtr, ppIBitmap);
+                ret = ((delegate* unmanaged[Stdcall]<IWICComponentFactory*, void**, IWICBitmap**, int>)@this->LpVtbl[22])(@this, hIconPtr, ppIBitmap);
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateBitmapFromHICON<T0>(ref T0 hIcon, ref IWICBitmap* ppIBitmap) where T0 : unmanaged
+        public readonly unsafe int CreateBitmapFromHICON(ref void* hIcon, ref IWICBitmap* ppIBitmap)
         {
             var @this = (IWICComponentFactory*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            fixed (void* hIconPtr = &hIcon)
+            fixed (void** hIconPtr = &hIcon)
             {
                 fixed (IWICBitmap** ppIBitmapPtr = &ppIBitmap)
                 {
-                    ret = ((delegate* unmanaged[Stdcall]<IWICComponentFactory*, void*, IWICBitmap**, int>)@this->LpVtbl[22])(@this, hIconPtr, ppIBitmapPtr);
+                    ret = ((delegate* unmanaged[Stdcall]<IWICComponentFactory*, void**, IWICBitmap**, int>)@this->LpVtbl[22])(@this, hIconPtr, ppIBitmapPtr);
                 }
             }
             return ret;
@@ -2455,48 +2455,48 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateEncoderPropertyBag(void* ppropOptions, uint cCount, Silk.NET.Core.Native.IUnknown** ppIPropertyBag)
+        public readonly unsafe int CreateEncoderPropertyBag(Silk.NET.Core.Win32Extras.PropBag2* ppropOptions, uint cCount, Silk.NET.Core.Win32Extras.IPropertyBag2** ppIPropertyBag)
         {
             var @this = (IWICComponentFactory*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<IWICComponentFactory*, void*, uint, Silk.NET.Core.Native.IUnknown**, int>)@this->LpVtbl[34])(@this, ppropOptions, cCount, ppIPropertyBag);
+            ret = ((delegate* unmanaged[Stdcall]<IWICComponentFactory*, Silk.NET.Core.Win32Extras.PropBag2*, uint, Silk.NET.Core.Win32Extras.IPropertyBag2**, int>)@this->LpVtbl[34])(@this, ppropOptions, cCount, ppIPropertyBag);
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateEncoderPropertyBag(void* ppropOptions, uint cCount, ref Silk.NET.Core.Native.IUnknown* ppIPropertyBag)
+        public readonly unsafe int CreateEncoderPropertyBag(Silk.NET.Core.Win32Extras.PropBag2* ppropOptions, uint cCount, ref Silk.NET.Core.Win32Extras.IPropertyBag2* ppIPropertyBag)
         {
             var @this = (IWICComponentFactory*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            fixed (Silk.NET.Core.Native.IUnknown** ppIPropertyBagPtr = &ppIPropertyBag)
+            fixed (Silk.NET.Core.Win32Extras.IPropertyBag2** ppIPropertyBagPtr = &ppIPropertyBag)
             {
-                ret = ((delegate* unmanaged[Stdcall]<IWICComponentFactory*, void*, uint, Silk.NET.Core.Native.IUnknown**, int>)@this->LpVtbl[34])(@this, ppropOptions, cCount, ppIPropertyBagPtr);
+                ret = ((delegate* unmanaged[Stdcall]<IWICComponentFactory*, Silk.NET.Core.Win32Extras.PropBag2*, uint, Silk.NET.Core.Win32Extras.IPropertyBag2**, int>)@this->LpVtbl[34])(@this, ppropOptions, cCount, ppIPropertyBagPtr);
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateEncoderPropertyBag<T0>(ref T0 ppropOptions, uint cCount, Silk.NET.Core.Native.IUnknown** ppIPropertyBag) where T0 : unmanaged
+        public readonly unsafe int CreateEncoderPropertyBag(ref Silk.NET.Core.Win32Extras.PropBag2 ppropOptions, uint cCount, Silk.NET.Core.Win32Extras.IPropertyBag2** ppIPropertyBag)
         {
             var @this = (IWICComponentFactory*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            fixed (void* ppropOptionsPtr = &ppropOptions)
+            fixed (Silk.NET.Core.Win32Extras.PropBag2* ppropOptionsPtr = &ppropOptions)
             {
-                ret = ((delegate* unmanaged[Stdcall]<IWICComponentFactory*, void*, uint, Silk.NET.Core.Native.IUnknown**, int>)@this->LpVtbl[34])(@this, ppropOptionsPtr, cCount, ppIPropertyBag);
+                ret = ((delegate* unmanaged[Stdcall]<IWICComponentFactory*, Silk.NET.Core.Win32Extras.PropBag2*, uint, Silk.NET.Core.Win32Extras.IPropertyBag2**, int>)@this->LpVtbl[34])(@this, ppropOptionsPtr, cCount, ppIPropertyBag);
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateEncoderPropertyBag<T0>(ref T0 ppropOptions, uint cCount, ref Silk.NET.Core.Native.IUnknown* ppIPropertyBag) where T0 : unmanaged
+        public readonly unsafe int CreateEncoderPropertyBag(ref Silk.NET.Core.Win32Extras.PropBag2 ppropOptions, uint cCount, ref Silk.NET.Core.Win32Extras.IPropertyBag2* ppIPropertyBag)
         {
             var @this = (IWICComponentFactory*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            fixed (void* ppropOptionsPtr = &ppropOptions)
+            fixed (Silk.NET.Core.Win32Extras.PropBag2* ppropOptionsPtr = &ppropOptions)
             {
-                fixed (Silk.NET.Core.Native.IUnknown** ppIPropertyBagPtr = &ppIPropertyBag)
+                fixed (Silk.NET.Core.Win32Extras.IPropertyBag2** ppIPropertyBagPtr = &ppIPropertyBag)
                 {
-                    ret = ((delegate* unmanaged[Stdcall]<IWICComponentFactory*, void*, uint, Silk.NET.Core.Native.IUnknown**, int>)@this->LpVtbl[34])(@this, ppropOptionsPtr, cCount, ppIPropertyBagPtr);
+                    ret = ((delegate* unmanaged[Stdcall]<IWICComponentFactory*, Silk.NET.Core.Win32Extras.PropBag2*, uint, Silk.NET.Core.Win32Extras.IPropertyBag2**, int>)@this->LpVtbl[34])(@this, ppropOptionsPtr, cCount, ppIPropertyBagPtr);
                 }
             }
             return ret;
@@ -2885,7 +2885,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateBitmapFromHBITMAP<TI0>(void* hBitmap, void* hPalette, BitmapAlphaChannelOption options, ref ComPtr<TI0> ppIBitmap) where TI0 : unmanaged, IComVtbl<IWICBitmap>, IComVtbl<TI0>
+        public readonly unsafe int CreateBitmapFromHBITMAP<TI0>(void** hBitmap, void** hPalette, BitmapAlphaChannelOption options, ref ComPtr<TI0> ppIBitmap) where TI0 : unmanaged, IComVtbl<IWICBitmap>, IComVtbl<TI0>
         {
             var @this = (IWICComponentFactory*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -2893,7 +2893,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateBitmapFromHBITMAP<T0, TI0>(void* hBitmap, ref T0 hPalette, BitmapAlphaChannelOption options, ref ComPtr<TI0> ppIBitmap) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<IWICBitmap>, IComVtbl<TI0>
+        public readonly unsafe int CreateBitmapFromHBITMAP<TI0>(void** hBitmap, ref void* hPalette, BitmapAlphaChannelOption options, ref ComPtr<TI0> ppIBitmap) where TI0 : unmanaged, IComVtbl<IWICBitmap>, IComVtbl<TI0>
         {
             var @this = (IWICComponentFactory*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -2901,7 +2901,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateBitmapFromHBITMAP<T0, TI0>(ref T0 hBitmap, void* hPalette, BitmapAlphaChannelOption options, ref ComPtr<TI0> ppIBitmap) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<IWICBitmap>, IComVtbl<TI0>
+        public readonly unsafe int CreateBitmapFromHBITMAP<TI0>(ref void* hBitmap, void** hPalette, BitmapAlphaChannelOption options, ref ComPtr<TI0> ppIBitmap) where TI0 : unmanaged, IComVtbl<IWICBitmap>, IComVtbl<TI0>
         {
             var @this = (IWICComponentFactory*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -2909,7 +2909,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int CreateBitmapFromHBITMAP<T0, T1, TI0>(ref T0 hBitmap, ref T1 hPalette, BitmapAlphaChannelOption options, ref ComPtr<TI0> ppIBitmap) where T0 : unmanaged where T1 : unmanaged where TI0 : unmanaged, IComVtbl<IWICBitmap>, IComVtbl<TI0>
+        public readonly int CreateBitmapFromHBITMAP<TI0>(ref void* hBitmap, ref void* hPalette, BitmapAlphaChannelOption options, ref ComPtr<TI0> ppIBitmap) where TI0 : unmanaged, IComVtbl<IWICBitmap>, IComVtbl<TI0>
         {
             var @this = (IWICComponentFactory*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -2917,7 +2917,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateBitmapFromHICON<TI0>(void* hIcon, ref ComPtr<TI0> ppIBitmap) where TI0 : unmanaged, IComVtbl<IWICBitmap>, IComVtbl<TI0>
+        public readonly unsafe int CreateBitmapFromHICON<TI0>(void** hIcon, ref ComPtr<TI0> ppIBitmap) where TI0 : unmanaged, IComVtbl<IWICBitmap>, IComVtbl<TI0>
         {
             var @this = (IWICComponentFactory*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -2925,7 +2925,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int CreateBitmapFromHICON<T0, TI0>(ref T0 hIcon, ref ComPtr<TI0> ppIBitmap) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<IWICBitmap>, IComVtbl<TI0>
+        public readonly int CreateBitmapFromHICON<TI0>(ref void* hIcon, ref ComPtr<TI0> ppIBitmap) where TI0 : unmanaged, IComVtbl<IWICBitmap>, IComVtbl<TI0>
         {
             var @this = (IWICComponentFactory*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -3384,22 +3384,6 @@ namespace Silk.NET.WindowsCodecs
             var @this = (IWICComponentFactory*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
             return @this->CreateQueryWriterFromBlockWriter(ref pIBlockWriter, (IWICMetadataQueryWriter**) ppIQueryWriter.GetAddressOf());
-        }
-
-        /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateEncoderPropertyBag<TI0>(void* ppropOptions, uint cCount, ref ComPtr<TI0> ppIPropertyBag) where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Native.IUnknown>, IComVtbl<TI0>
-        {
-            var @this = (IWICComponentFactory*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            // ComPtrOverloader
-            return @this->CreateEncoderPropertyBag(ppropOptions, cCount, (Silk.NET.Core.Native.IUnknown**) ppIPropertyBag.GetAddressOf());
-        }
-
-        /// <summary>To be documented.</summary>
-        public readonly int CreateEncoderPropertyBag<T0, TI0>(ref T0 ppropOptions, uint cCount, ref ComPtr<TI0> ppIPropertyBag) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Native.IUnknown>, IComVtbl<TI0>
-        {
-            var @this = (IWICComponentFactory*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            // ComPtrOverloader
-            return @this->CreateEncoderPropertyBag(ref ppropOptions, cCount, (Silk.NET.Core.Native.IUnknown**) ppIPropertyBag.GetAddressOf());
         }
 
         /// <summary>To be documented.</summary>

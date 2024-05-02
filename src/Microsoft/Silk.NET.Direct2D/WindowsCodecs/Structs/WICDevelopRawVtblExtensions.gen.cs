@@ -416,22 +416,22 @@ public unsafe static class WICDevelopRawVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetCurrentParameterSet(this ComPtr<IWICDevelopRaw> thisVtbl, Silk.NET.Core.Native.IUnknown** ppCurrentParameterSet)
+    public static unsafe int GetCurrentParameterSet(this ComPtr<IWICDevelopRaw> thisVtbl, Silk.NET.Core.Win32Extras.IPropertyBag2** ppCurrentParameterSet)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
-        ret = ((delegate* unmanaged[Stdcall]<IWICDevelopRaw*, Silk.NET.Core.Native.IUnknown**, int>)@this->LpVtbl[13])(@this, ppCurrentParameterSet);
+        ret = ((delegate* unmanaged[Stdcall]<IWICDevelopRaw*, Silk.NET.Core.Win32Extras.IPropertyBag2**, int>)@this->LpVtbl[13])(@this, ppCurrentParameterSet);
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetCurrentParameterSet(this ComPtr<IWICDevelopRaw> thisVtbl, ref Silk.NET.Core.Native.IUnknown* ppCurrentParameterSet)
+    public static unsafe int GetCurrentParameterSet(this ComPtr<IWICDevelopRaw> thisVtbl, ref Silk.NET.Core.Win32Extras.IPropertyBag2* ppCurrentParameterSet)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
-        fixed (Silk.NET.Core.Native.IUnknown** ppCurrentParameterSetPtr = &ppCurrentParameterSet)
+        fixed (Silk.NET.Core.Win32Extras.IPropertyBag2** ppCurrentParameterSetPtr = &ppCurrentParameterSet)
         {
-            ret = ((delegate* unmanaged[Stdcall]<IWICDevelopRaw*, Silk.NET.Core.Native.IUnknown**, int>)@this->LpVtbl[13])(@this, ppCurrentParameterSetPtr);
+            ret = ((delegate* unmanaged[Stdcall]<IWICDevelopRaw*, Silk.NET.Core.Win32Extras.IPropertyBag2**, int>)@this->LpVtbl[13])(@this, ppCurrentParameterSetPtr);
         }
         return ret;
     }
@@ -1285,14 +1285,6 @@ public unsafe static class WICDevelopRawVtblExtensions
         var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->QueryRawCapabilitiesInfo(ref pInfo.GetPinnableReference());
-    }
-
-    /// <summary>To be documented.</summary>
-    public static int GetCurrentParameterSet<TI0>(this ComPtr<IWICDevelopRaw> thisVtbl, ref ComPtr<TI0> ppCurrentParameterSet) where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Native.IUnknown>, IComVtbl<TI0>
-    {
-        var @this = thisVtbl.Handle;
-        // ComPtrOverloader
-        return @this->GetCurrentParameterSet((Silk.NET.Core.Native.IUnknown**) ppCurrentParameterSet.GetAddressOf());
     }
 
     /// <summary>To be documented.</summary>

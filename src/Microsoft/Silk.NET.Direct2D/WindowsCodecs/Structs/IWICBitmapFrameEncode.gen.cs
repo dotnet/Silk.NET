@@ -111,22 +111,22 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Initialize(Silk.NET.Core.Native.IUnknown* pIEncoderOptions)
+        public readonly unsafe int Initialize(Silk.NET.Core.Win32Extras.IPropertyBag2* pIEncoderOptions)
         {
             var @this = (IWICBitmapFrameEncode*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<IWICBitmapFrameEncode*, Silk.NET.Core.Native.IUnknown*, int>)@this->LpVtbl[3])(@this, pIEncoderOptions);
+            ret = ((delegate* unmanaged[Stdcall]<IWICBitmapFrameEncode*, Silk.NET.Core.Win32Extras.IPropertyBag2*, int>)@this->LpVtbl[3])(@this, pIEncoderOptions);
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int Initialize(ref Silk.NET.Core.Native.IUnknown pIEncoderOptions)
+        public readonly int Initialize(ref Silk.NET.Core.Win32Extras.IPropertyBag2 pIEncoderOptions)
         {
             var @this = (IWICBitmapFrameEncode*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            fixed (Silk.NET.Core.Native.IUnknown* pIEncoderOptionsPtr = &pIEncoderOptions)
+            fixed (Silk.NET.Core.Win32Extras.IPropertyBag2* pIEncoderOptionsPtr = &pIEncoderOptions)
             {
-                ret = ((delegate* unmanaged[Stdcall]<IWICBitmapFrameEncode*, Silk.NET.Core.Native.IUnknown*, int>)@this->LpVtbl[3])(@this, pIEncoderOptionsPtr);
+                ret = ((delegate* unmanaged[Stdcall]<IWICBitmapFrameEncode*, Silk.NET.Core.Win32Extras.IPropertyBag2*, int>)@this->LpVtbl[3])(@this, pIEncoderOptionsPtr);
             }
             return ret;
         }
@@ -350,14 +350,6 @@ namespace Silk.NET.WindowsCodecs
             // ComPtrOverloader
             ppvObject = default;
             return @this->QueryInterface(SilkMarshal.GuidPtrOf<TI0>(), (void**) ppvObject.GetAddressOf());
-        }
-
-        /// <summary>To be documented.</summary>
-        public readonly int Initialize<TI0>(ComPtr<TI0> pIEncoderOptions) where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Native.IUnknown>, IComVtbl<TI0>
-        {
-            var @this = (IWICBitmapFrameEncode*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            // ComPtrOverloader
-            return @this->Initialize((Silk.NET.Core.Native.IUnknown*) pIEncoderOptions.Handle);
         }
 
         /// <summary>To be documented.</summary>
