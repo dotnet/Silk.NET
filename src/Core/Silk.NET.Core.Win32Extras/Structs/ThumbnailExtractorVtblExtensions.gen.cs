@@ -85,82 +85,82 @@ public unsafe static class ThumbnailExtractorVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int ExtractThumbnail(this ComPtr<IThumbnailExtractor> thisVtbl, IStorage* pStg, uint ulLength, uint ulHeight, uint* pulOutputLength, uint* pulOutputHeight, void** phOutputBitmap)
+    public static unsafe int ExtractThumbnail(this ComPtr<IThumbnailExtractor> thisVtbl, IStorage* pStg, uint ulLength, uint ulHeight, uint* pulOutputLength, uint* pulOutputHeight, IntPtr** phOutputBitmap)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
-        ret = ((delegate* unmanaged[Cdecl]<IThumbnailExtractor*, IStorage*, uint, uint, uint*, uint*, void**, int>)@this->LpVtbl[3])(@this, pStg, ulLength, ulHeight, pulOutputLength, pulOutputHeight, phOutputBitmap);
+        ret = ((delegate* unmanaged[Cdecl]<IThumbnailExtractor*, IStorage*, uint, uint, uint*, uint*, IntPtr**, int>)@this->LpVtbl[3])(@this, pStg, ulLength, ulHeight, pulOutputLength, pulOutputHeight, phOutputBitmap);
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int ExtractThumbnail(this ComPtr<IThumbnailExtractor> thisVtbl, IStorage* pStg, uint ulLength, uint ulHeight, uint* pulOutputLength, uint* pulOutputHeight, ref void* phOutputBitmap)
+    public static unsafe int ExtractThumbnail(this ComPtr<IThumbnailExtractor> thisVtbl, IStorage* pStg, uint ulLength, uint ulHeight, uint* pulOutputLength, uint* pulOutputHeight, ref IntPtr* phOutputBitmap)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
-        fixed (void** phOutputBitmapPtr = &phOutputBitmap)
+        fixed (IntPtr** phOutputBitmapPtr = &phOutputBitmap)
         {
-            ret = ((delegate* unmanaged[Cdecl]<IThumbnailExtractor*, IStorage*, uint, uint, uint*, uint*, void**, int>)@this->LpVtbl[3])(@this, pStg, ulLength, ulHeight, pulOutputLength, pulOutputHeight, phOutputBitmapPtr);
+            ret = ((delegate* unmanaged[Cdecl]<IThumbnailExtractor*, IStorage*, uint, uint, uint*, uint*, IntPtr**, int>)@this->LpVtbl[3])(@this, pStg, ulLength, ulHeight, pulOutputLength, pulOutputHeight, phOutputBitmapPtr);
         }
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int ExtractThumbnail(this ComPtr<IThumbnailExtractor> thisVtbl, IStorage* pStg, uint ulLength, uint ulHeight, uint* pulOutputLength, ref uint pulOutputHeight, void** phOutputBitmap)
+    public static unsafe int ExtractThumbnail(this ComPtr<IThumbnailExtractor> thisVtbl, IStorage* pStg, uint ulLength, uint ulHeight, uint* pulOutputLength, ref uint pulOutputHeight, IntPtr** phOutputBitmap)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
         fixed (uint* pulOutputHeightPtr = &pulOutputHeight)
         {
-            ret = ((delegate* unmanaged[Cdecl]<IThumbnailExtractor*, IStorage*, uint, uint, uint*, uint*, void**, int>)@this->LpVtbl[3])(@this, pStg, ulLength, ulHeight, pulOutputLength, pulOutputHeightPtr, phOutputBitmap);
+            ret = ((delegate* unmanaged[Cdecl]<IThumbnailExtractor*, IStorage*, uint, uint, uint*, uint*, IntPtr**, int>)@this->LpVtbl[3])(@this, pStg, ulLength, ulHeight, pulOutputLength, pulOutputHeightPtr, phOutputBitmap);
         }
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int ExtractThumbnail(this ComPtr<IThumbnailExtractor> thisVtbl, IStorage* pStg, uint ulLength, uint ulHeight, uint* pulOutputLength, ref uint pulOutputHeight, ref void* phOutputBitmap)
+    public static unsafe int ExtractThumbnail(this ComPtr<IThumbnailExtractor> thisVtbl, IStorage* pStg, uint ulLength, uint ulHeight, uint* pulOutputLength, ref uint pulOutputHeight, ref IntPtr* phOutputBitmap)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
         fixed (uint* pulOutputHeightPtr = &pulOutputHeight)
         {
-            fixed (void** phOutputBitmapPtr = &phOutputBitmap)
+            fixed (IntPtr** phOutputBitmapPtr = &phOutputBitmap)
             {
-                ret = ((delegate* unmanaged[Cdecl]<IThumbnailExtractor*, IStorage*, uint, uint, uint*, uint*, void**, int>)@this->LpVtbl[3])(@this, pStg, ulLength, ulHeight, pulOutputLength, pulOutputHeightPtr, phOutputBitmapPtr);
+                ret = ((delegate* unmanaged[Cdecl]<IThumbnailExtractor*, IStorage*, uint, uint, uint*, uint*, IntPtr**, int>)@this->LpVtbl[3])(@this, pStg, ulLength, ulHeight, pulOutputLength, pulOutputHeightPtr, phOutputBitmapPtr);
             }
         }
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int ExtractThumbnail(this ComPtr<IThumbnailExtractor> thisVtbl, IStorage* pStg, uint ulLength, uint ulHeight, ref uint pulOutputLength, uint* pulOutputHeight, void** phOutputBitmap)
+    public static unsafe int ExtractThumbnail(this ComPtr<IThumbnailExtractor> thisVtbl, IStorage* pStg, uint ulLength, uint ulHeight, ref uint pulOutputLength, uint* pulOutputHeight, IntPtr** phOutputBitmap)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
         fixed (uint* pulOutputLengthPtr = &pulOutputLength)
         {
-            ret = ((delegate* unmanaged[Cdecl]<IThumbnailExtractor*, IStorage*, uint, uint, uint*, uint*, void**, int>)@this->LpVtbl[3])(@this, pStg, ulLength, ulHeight, pulOutputLengthPtr, pulOutputHeight, phOutputBitmap);
+            ret = ((delegate* unmanaged[Cdecl]<IThumbnailExtractor*, IStorage*, uint, uint, uint*, uint*, IntPtr**, int>)@this->LpVtbl[3])(@this, pStg, ulLength, ulHeight, pulOutputLengthPtr, pulOutputHeight, phOutputBitmap);
         }
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int ExtractThumbnail(this ComPtr<IThumbnailExtractor> thisVtbl, IStorage* pStg, uint ulLength, uint ulHeight, ref uint pulOutputLength, uint* pulOutputHeight, ref void* phOutputBitmap)
+    public static unsafe int ExtractThumbnail(this ComPtr<IThumbnailExtractor> thisVtbl, IStorage* pStg, uint ulLength, uint ulHeight, ref uint pulOutputLength, uint* pulOutputHeight, ref IntPtr* phOutputBitmap)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
         fixed (uint* pulOutputLengthPtr = &pulOutputLength)
         {
-            fixed (void** phOutputBitmapPtr = &phOutputBitmap)
+            fixed (IntPtr** phOutputBitmapPtr = &phOutputBitmap)
             {
-                ret = ((delegate* unmanaged[Cdecl]<IThumbnailExtractor*, IStorage*, uint, uint, uint*, uint*, void**, int>)@this->LpVtbl[3])(@this, pStg, ulLength, ulHeight, pulOutputLengthPtr, pulOutputHeight, phOutputBitmapPtr);
+                ret = ((delegate* unmanaged[Cdecl]<IThumbnailExtractor*, IStorage*, uint, uint, uint*, uint*, IntPtr**, int>)@this->LpVtbl[3])(@this, pStg, ulLength, ulHeight, pulOutputLengthPtr, pulOutputHeight, phOutputBitmapPtr);
             }
         }
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int ExtractThumbnail(this ComPtr<IThumbnailExtractor> thisVtbl, IStorage* pStg, uint ulLength, uint ulHeight, ref uint pulOutputLength, ref uint pulOutputHeight, void** phOutputBitmap)
+    public static unsafe int ExtractThumbnail(this ComPtr<IThumbnailExtractor> thisVtbl, IStorage* pStg, uint ulLength, uint ulHeight, ref uint pulOutputLength, ref uint pulOutputHeight, IntPtr** phOutputBitmap)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -168,14 +168,14 @@ public unsafe static class ThumbnailExtractorVtblExtensions
         {
             fixed (uint* pulOutputHeightPtr = &pulOutputHeight)
             {
-                ret = ((delegate* unmanaged[Cdecl]<IThumbnailExtractor*, IStorage*, uint, uint, uint*, uint*, void**, int>)@this->LpVtbl[3])(@this, pStg, ulLength, ulHeight, pulOutputLengthPtr, pulOutputHeightPtr, phOutputBitmap);
+                ret = ((delegate* unmanaged[Cdecl]<IThumbnailExtractor*, IStorage*, uint, uint, uint*, uint*, IntPtr**, int>)@this->LpVtbl[3])(@this, pStg, ulLength, ulHeight, pulOutputLengthPtr, pulOutputHeightPtr, phOutputBitmap);
             }
         }
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int ExtractThumbnail(this ComPtr<IThumbnailExtractor> thisVtbl, IStorage* pStg, uint ulLength, uint ulHeight, ref uint pulOutputLength, ref uint pulOutputHeight, ref void* phOutputBitmap)
+    public static unsafe int ExtractThumbnail(this ComPtr<IThumbnailExtractor> thisVtbl, IStorage* pStg, uint ulLength, uint ulHeight, ref uint pulOutputLength, ref uint pulOutputHeight, ref IntPtr* phOutputBitmap)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -183,9 +183,9 @@ public unsafe static class ThumbnailExtractorVtblExtensions
         {
             fixed (uint* pulOutputHeightPtr = &pulOutputHeight)
             {
-                fixed (void** phOutputBitmapPtr = &phOutputBitmap)
+                fixed (IntPtr** phOutputBitmapPtr = &phOutputBitmap)
                 {
-                    ret = ((delegate* unmanaged[Cdecl]<IThumbnailExtractor*, IStorage*, uint, uint, uint*, uint*, void**, int>)@this->LpVtbl[3])(@this, pStg, ulLength, ulHeight, pulOutputLengthPtr, pulOutputHeightPtr, phOutputBitmapPtr);
+                    ret = ((delegate* unmanaged[Cdecl]<IThumbnailExtractor*, IStorage*, uint, uint, uint*, uint*, IntPtr**, int>)@this->LpVtbl[3])(@this, pStg, ulLength, ulHeight, pulOutputLengthPtr, pulOutputHeightPtr, phOutputBitmapPtr);
                 }
             }
         }
@@ -193,34 +193,34 @@ public unsafe static class ThumbnailExtractorVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int ExtractThumbnail(this ComPtr<IThumbnailExtractor> thisVtbl, ref IStorage pStg, uint ulLength, uint ulHeight, uint* pulOutputLength, uint* pulOutputHeight, void** phOutputBitmap)
+    public static unsafe int ExtractThumbnail(this ComPtr<IThumbnailExtractor> thisVtbl, ref IStorage pStg, uint ulLength, uint ulHeight, uint* pulOutputLength, uint* pulOutputHeight, IntPtr** phOutputBitmap)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
         fixed (IStorage* pStgPtr = &pStg)
         {
-            ret = ((delegate* unmanaged[Cdecl]<IThumbnailExtractor*, IStorage*, uint, uint, uint*, uint*, void**, int>)@this->LpVtbl[3])(@this, pStgPtr, ulLength, ulHeight, pulOutputLength, pulOutputHeight, phOutputBitmap);
+            ret = ((delegate* unmanaged[Cdecl]<IThumbnailExtractor*, IStorage*, uint, uint, uint*, uint*, IntPtr**, int>)@this->LpVtbl[3])(@this, pStgPtr, ulLength, ulHeight, pulOutputLength, pulOutputHeight, phOutputBitmap);
         }
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int ExtractThumbnail(this ComPtr<IThumbnailExtractor> thisVtbl, ref IStorage pStg, uint ulLength, uint ulHeight, uint* pulOutputLength, uint* pulOutputHeight, ref void* phOutputBitmap)
+    public static unsafe int ExtractThumbnail(this ComPtr<IThumbnailExtractor> thisVtbl, ref IStorage pStg, uint ulLength, uint ulHeight, uint* pulOutputLength, uint* pulOutputHeight, ref IntPtr* phOutputBitmap)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
         fixed (IStorage* pStgPtr = &pStg)
         {
-            fixed (void** phOutputBitmapPtr = &phOutputBitmap)
+            fixed (IntPtr** phOutputBitmapPtr = &phOutputBitmap)
             {
-                ret = ((delegate* unmanaged[Cdecl]<IThumbnailExtractor*, IStorage*, uint, uint, uint*, uint*, void**, int>)@this->LpVtbl[3])(@this, pStgPtr, ulLength, ulHeight, pulOutputLength, pulOutputHeight, phOutputBitmapPtr);
+                ret = ((delegate* unmanaged[Cdecl]<IThumbnailExtractor*, IStorage*, uint, uint, uint*, uint*, IntPtr**, int>)@this->LpVtbl[3])(@this, pStgPtr, ulLength, ulHeight, pulOutputLength, pulOutputHeight, phOutputBitmapPtr);
             }
         }
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int ExtractThumbnail(this ComPtr<IThumbnailExtractor> thisVtbl, ref IStorage pStg, uint ulLength, uint ulHeight, uint* pulOutputLength, ref uint pulOutputHeight, void** phOutputBitmap)
+    public static unsafe int ExtractThumbnail(this ComPtr<IThumbnailExtractor> thisVtbl, ref IStorage pStg, uint ulLength, uint ulHeight, uint* pulOutputLength, ref uint pulOutputHeight, IntPtr** phOutputBitmap)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -228,14 +228,14 @@ public unsafe static class ThumbnailExtractorVtblExtensions
         {
             fixed (uint* pulOutputHeightPtr = &pulOutputHeight)
             {
-                ret = ((delegate* unmanaged[Cdecl]<IThumbnailExtractor*, IStorage*, uint, uint, uint*, uint*, void**, int>)@this->LpVtbl[3])(@this, pStgPtr, ulLength, ulHeight, pulOutputLength, pulOutputHeightPtr, phOutputBitmap);
+                ret = ((delegate* unmanaged[Cdecl]<IThumbnailExtractor*, IStorage*, uint, uint, uint*, uint*, IntPtr**, int>)@this->LpVtbl[3])(@this, pStgPtr, ulLength, ulHeight, pulOutputLength, pulOutputHeightPtr, phOutputBitmap);
             }
         }
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int ExtractThumbnail(this ComPtr<IThumbnailExtractor> thisVtbl, ref IStorage pStg, uint ulLength, uint ulHeight, uint* pulOutputLength, ref uint pulOutputHeight, ref void* phOutputBitmap)
+    public static unsafe int ExtractThumbnail(this ComPtr<IThumbnailExtractor> thisVtbl, ref IStorage pStg, uint ulLength, uint ulHeight, uint* pulOutputLength, ref uint pulOutputHeight, ref IntPtr* phOutputBitmap)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -243,9 +243,9 @@ public unsafe static class ThumbnailExtractorVtblExtensions
         {
             fixed (uint* pulOutputHeightPtr = &pulOutputHeight)
             {
-                fixed (void** phOutputBitmapPtr = &phOutputBitmap)
+                fixed (IntPtr** phOutputBitmapPtr = &phOutputBitmap)
                 {
-                    ret = ((delegate* unmanaged[Cdecl]<IThumbnailExtractor*, IStorage*, uint, uint, uint*, uint*, void**, int>)@this->LpVtbl[3])(@this, pStgPtr, ulLength, ulHeight, pulOutputLength, pulOutputHeightPtr, phOutputBitmapPtr);
+                    ret = ((delegate* unmanaged[Cdecl]<IThumbnailExtractor*, IStorage*, uint, uint, uint*, uint*, IntPtr**, int>)@this->LpVtbl[3])(@this, pStgPtr, ulLength, ulHeight, pulOutputLength, pulOutputHeightPtr, phOutputBitmapPtr);
                 }
             }
         }
@@ -253,7 +253,7 @@ public unsafe static class ThumbnailExtractorVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int ExtractThumbnail(this ComPtr<IThumbnailExtractor> thisVtbl, ref IStorage pStg, uint ulLength, uint ulHeight, ref uint pulOutputLength, uint* pulOutputHeight, void** phOutputBitmap)
+    public static unsafe int ExtractThumbnail(this ComPtr<IThumbnailExtractor> thisVtbl, ref IStorage pStg, uint ulLength, uint ulHeight, ref uint pulOutputLength, uint* pulOutputHeight, IntPtr** phOutputBitmap)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -261,14 +261,14 @@ public unsafe static class ThumbnailExtractorVtblExtensions
         {
             fixed (uint* pulOutputLengthPtr = &pulOutputLength)
             {
-                ret = ((delegate* unmanaged[Cdecl]<IThumbnailExtractor*, IStorage*, uint, uint, uint*, uint*, void**, int>)@this->LpVtbl[3])(@this, pStgPtr, ulLength, ulHeight, pulOutputLengthPtr, pulOutputHeight, phOutputBitmap);
+                ret = ((delegate* unmanaged[Cdecl]<IThumbnailExtractor*, IStorage*, uint, uint, uint*, uint*, IntPtr**, int>)@this->LpVtbl[3])(@this, pStgPtr, ulLength, ulHeight, pulOutputLengthPtr, pulOutputHeight, phOutputBitmap);
             }
         }
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int ExtractThumbnail(this ComPtr<IThumbnailExtractor> thisVtbl, ref IStorage pStg, uint ulLength, uint ulHeight, ref uint pulOutputLength, uint* pulOutputHeight, ref void* phOutputBitmap)
+    public static unsafe int ExtractThumbnail(this ComPtr<IThumbnailExtractor> thisVtbl, ref IStorage pStg, uint ulLength, uint ulHeight, ref uint pulOutputLength, uint* pulOutputHeight, ref IntPtr* phOutputBitmap)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -276,9 +276,9 @@ public unsafe static class ThumbnailExtractorVtblExtensions
         {
             fixed (uint* pulOutputLengthPtr = &pulOutputLength)
             {
-                fixed (void** phOutputBitmapPtr = &phOutputBitmap)
+                fixed (IntPtr** phOutputBitmapPtr = &phOutputBitmap)
                 {
-                    ret = ((delegate* unmanaged[Cdecl]<IThumbnailExtractor*, IStorage*, uint, uint, uint*, uint*, void**, int>)@this->LpVtbl[3])(@this, pStgPtr, ulLength, ulHeight, pulOutputLengthPtr, pulOutputHeight, phOutputBitmapPtr);
+                    ret = ((delegate* unmanaged[Cdecl]<IThumbnailExtractor*, IStorage*, uint, uint, uint*, uint*, IntPtr**, int>)@this->LpVtbl[3])(@this, pStgPtr, ulLength, ulHeight, pulOutputLengthPtr, pulOutputHeight, phOutputBitmapPtr);
                 }
             }
         }
@@ -286,7 +286,7 @@ public unsafe static class ThumbnailExtractorVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int ExtractThumbnail(this ComPtr<IThumbnailExtractor> thisVtbl, ref IStorage pStg, uint ulLength, uint ulHeight, ref uint pulOutputLength, ref uint pulOutputHeight, void** phOutputBitmap)
+    public static unsafe int ExtractThumbnail(this ComPtr<IThumbnailExtractor> thisVtbl, ref IStorage pStg, uint ulLength, uint ulHeight, ref uint pulOutputLength, ref uint pulOutputHeight, IntPtr** phOutputBitmap)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -296,7 +296,7 @@ public unsafe static class ThumbnailExtractorVtblExtensions
             {
                 fixed (uint* pulOutputHeightPtr = &pulOutputHeight)
                 {
-                    ret = ((delegate* unmanaged[Cdecl]<IThumbnailExtractor*, IStorage*, uint, uint, uint*, uint*, void**, int>)@this->LpVtbl[3])(@this, pStgPtr, ulLength, ulHeight, pulOutputLengthPtr, pulOutputHeightPtr, phOutputBitmap);
+                    ret = ((delegate* unmanaged[Cdecl]<IThumbnailExtractor*, IStorage*, uint, uint, uint*, uint*, IntPtr**, int>)@this->LpVtbl[3])(@this, pStgPtr, ulLength, ulHeight, pulOutputLengthPtr, pulOutputHeightPtr, phOutputBitmap);
                 }
             }
         }
@@ -304,7 +304,7 @@ public unsafe static class ThumbnailExtractorVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int ExtractThumbnail(this ComPtr<IThumbnailExtractor> thisVtbl, ref IStorage pStg, uint ulLength, uint ulHeight, ref uint pulOutputLength, ref uint pulOutputHeight, ref void* phOutputBitmap)
+    public static unsafe int ExtractThumbnail(this ComPtr<IThumbnailExtractor> thisVtbl, ref IStorage pStg, uint ulLength, uint ulHeight, ref uint pulOutputLength, ref uint pulOutputHeight, ref IntPtr* phOutputBitmap)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -314,9 +314,9 @@ public unsafe static class ThumbnailExtractorVtblExtensions
             {
                 fixed (uint* pulOutputHeightPtr = &pulOutputHeight)
                 {
-                    fixed (void** phOutputBitmapPtr = &phOutputBitmap)
+                    fixed (IntPtr** phOutputBitmapPtr = &phOutputBitmap)
                     {
-                        ret = ((delegate* unmanaged[Cdecl]<IThumbnailExtractor*, IStorage*, uint, uint, uint*, uint*, void**, int>)@this->LpVtbl[3])(@this, pStgPtr, ulLength, ulHeight, pulOutputLengthPtr, pulOutputHeightPtr, phOutputBitmapPtr);
+                        ret = ((delegate* unmanaged[Cdecl]<IThumbnailExtractor*, IStorage*, uint, uint, uint*, uint*, IntPtr**, int>)@this->LpVtbl[3])(@this, pStgPtr, ulLength, ulHeight, pulOutputLengthPtr, pulOutputHeightPtr, phOutputBitmapPtr);
                     }
                 }
             }
@@ -371,7 +371,7 @@ public unsafe static class ThumbnailExtractorVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int ExtractThumbnail<TI0>(this ComPtr<IThumbnailExtractor> thisVtbl, ComPtr<TI0> pStg, uint ulLength, uint ulHeight, uint* pulOutputLength, uint* pulOutputHeight, void** phOutputBitmap) where TI0 : unmanaged, IComVtbl<IStorage>, IComVtbl<TI0>
+    public static unsafe int ExtractThumbnail<TI0>(this ComPtr<IThumbnailExtractor> thisVtbl, ComPtr<TI0> pStg, uint ulLength, uint ulHeight, uint* pulOutputLength, uint* pulOutputHeight, IntPtr** phOutputBitmap) where TI0 : unmanaged, IComVtbl<IStorage>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -379,7 +379,7 @@ public unsafe static class ThumbnailExtractorVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int ExtractThumbnail<TI0>(this ComPtr<IThumbnailExtractor> thisVtbl, ComPtr<TI0> pStg, uint ulLength, uint ulHeight, uint* pulOutputLength, uint* pulOutputHeight, ref void* phOutputBitmap) where TI0 : unmanaged, IComVtbl<IStorage>, IComVtbl<TI0>
+    public static unsafe int ExtractThumbnail<TI0>(this ComPtr<IThumbnailExtractor> thisVtbl, ComPtr<TI0> pStg, uint ulLength, uint ulHeight, uint* pulOutputLength, uint* pulOutputHeight, ref IntPtr* phOutputBitmap) where TI0 : unmanaged, IComVtbl<IStorage>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -387,7 +387,7 @@ public unsafe static class ThumbnailExtractorVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int ExtractThumbnail(this ComPtr<IThumbnailExtractor> thisVtbl, IStorage* pStg, uint ulLength, uint ulHeight, uint* pulOutputLength, Span<uint> pulOutputHeight, void** phOutputBitmap)
+    public static unsafe int ExtractThumbnail(this ComPtr<IThumbnailExtractor> thisVtbl, IStorage* pStg, uint ulLength, uint ulHeight, uint* pulOutputLength, Span<uint> pulOutputHeight, IntPtr** phOutputBitmap)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -395,7 +395,7 @@ public unsafe static class ThumbnailExtractorVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int ExtractThumbnail<TI0>(this ComPtr<IThumbnailExtractor> thisVtbl, ComPtr<TI0> pStg, uint ulLength, uint ulHeight, uint* pulOutputLength, ref uint pulOutputHeight, void** phOutputBitmap) where TI0 : unmanaged, IComVtbl<IStorage>, IComVtbl<TI0>
+    public static unsafe int ExtractThumbnail<TI0>(this ComPtr<IThumbnailExtractor> thisVtbl, ComPtr<TI0> pStg, uint ulLength, uint ulHeight, uint* pulOutputLength, ref uint pulOutputHeight, IntPtr** phOutputBitmap) where TI0 : unmanaged, IComVtbl<IStorage>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -403,7 +403,7 @@ public unsafe static class ThumbnailExtractorVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int ExtractThumbnail(this ComPtr<IThumbnailExtractor> thisVtbl, IStorage* pStg, uint ulLength, uint ulHeight, uint* pulOutputLength, Span<uint> pulOutputHeight, ref void* phOutputBitmap)
+    public static unsafe int ExtractThumbnail(this ComPtr<IThumbnailExtractor> thisVtbl, IStorage* pStg, uint ulLength, uint ulHeight, uint* pulOutputLength, Span<uint> pulOutputHeight, ref IntPtr* phOutputBitmap)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -411,7 +411,7 @@ public unsafe static class ThumbnailExtractorVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int ExtractThumbnail<TI0>(this ComPtr<IThumbnailExtractor> thisVtbl, ComPtr<TI0> pStg, uint ulLength, uint ulHeight, uint* pulOutputLength, ref uint pulOutputHeight, ref void* phOutputBitmap) where TI0 : unmanaged, IComVtbl<IStorage>, IComVtbl<TI0>
+    public static unsafe int ExtractThumbnail<TI0>(this ComPtr<IThumbnailExtractor> thisVtbl, ComPtr<TI0> pStg, uint ulLength, uint ulHeight, uint* pulOutputLength, ref uint pulOutputHeight, ref IntPtr* phOutputBitmap) where TI0 : unmanaged, IComVtbl<IStorage>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -419,7 +419,7 @@ public unsafe static class ThumbnailExtractorVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int ExtractThumbnail(this ComPtr<IThumbnailExtractor> thisVtbl, IStorage* pStg, uint ulLength, uint ulHeight, Span<uint> pulOutputLength, uint* pulOutputHeight, void** phOutputBitmap)
+    public static unsafe int ExtractThumbnail(this ComPtr<IThumbnailExtractor> thisVtbl, IStorage* pStg, uint ulLength, uint ulHeight, Span<uint> pulOutputLength, uint* pulOutputHeight, IntPtr** phOutputBitmap)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -427,7 +427,7 @@ public unsafe static class ThumbnailExtractorVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int ExtractThumbnail<TI0>(this ComPtr<IThumbnailExtractor> thisVtbl, ComPtr<TI0> pStg, uint ulLength, uint ulHeight, ref uint pulOutputLength, uint* pulOutputHeight, void** phOutputBitmap) where TI0 : unmanaged, IComVtbl<IStorage>, IComVtbl<TI0>
+    public static unsafe int ExtractThumbnail<TI0>(this ComPtr<IThumbnailExtractor> thisVtbl, ComPtr<TI0> pStg, uint ulLength, uint ulHeight, ref uint pulOutputLength, uint* pulOutputHeight, IntPtr** phOutputBitmap) where TI0 : unmanaged, IComVtbl<IStorage>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -435,7 +435,7 @@ public unsafe static class ThumbnailExtractorVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int ExtractThumbnail(this ComPtr<IThumbnailExtractor> thisVtbl, IStorage* pStg, uint ulLength, uint ulHeight, Span<uint> pulOutputLength, uint* pulOutputHeight, ref void* phOutputBitmap)
+    public static unsafe int ExtractThumbnail(this ComPtr<IThumbnailExtractor> thisVtbl, IStorage* pStg, uint ulLength, uint ulHeight, Span<uint> pulOutputLength, uint* pulOutputHeight, ref IntPtr* phOutputBitmap)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -443,7 +443,7 @@ public unsafe static class ThumbnailExtractorVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int ExtractThumbnail<TI0>(this ComPtr<IThumbnailExtractor> thisVtbl, ComPtr<TI0> pStg, uint ulLength, uint ulHeight, ref uint pulOutputLength, uint* pulOutputHeight, ref void* phOutputBitmap) where TI0 : unmanaged, IComVtbl<IStorage>, IComVtbl<TI0>
+    public static unsafe int ExtractThumbnail<TI0>(this ComPtr<IThumbnailExtractor> thisVtbl, ComPtr<TI0> pStg, uint ulLength, uint ulHeight, ref uint pulOutputLength, uint* pulOutputHeight, ref IntPtr* phOutputBitmap) where TI0 : unmanaged, IComVtbl<IStorage>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -451,7 +451,7 @@ public unsafe static class ThumbnailExtractorVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int ExtractThumbnail(this ComPtr<IThumbnailExtractor> thisVtbl, IStorage* pStg, uint ulLength, uint ulHeight, Span<uint> pulOutputLength, Span<uint> pulOutputHeight, void** phOutputBitmap)
+    public static unsafe int ExtractThumbnail(this ComPtr<IThumbnailExtractor> thisVtbl, IStorage* pStg, uint ulLength, uint ulHeight, Span<uint> pulOutputLength, Span<uint> pulOutputHeight, IntPtr** phOutputBitmap)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -459,7 +459,7 @@ public unsafe static class ThumbnailExtractorVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int ExtractThumbnail<TI0>(this ComPtr<IThumbnailExtractor> thisVtbl, ComPtr<TI0> pStg, uint ulLength, uint ulHeight, ref uint pulOutputLength, ref uint pulOutputHeight, void** phOutputBitmap) where TI0 : unmanaged, IComVtbl<IStorage>, IComVtbl<TI0>
+    public static unsafe int ExtractThumbnail<TI0>(this ComPtr<IThumbnailExtractor> thisVtbl, ComPtr<TI0> pStg, uint ulLength, uint ulHeight, ref uint pulOutputLength, ref uint pulOutputHeight, IntPtr** phOutputBitmap) where TI0 : unmanaged, IComVtbl<IStorage>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -467,7 +467,7 @@ public unsafe static class ThumbnailExtractorVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int ExtractThumbnail(this ComPtr<IThumbnailExtractor> thisVtbl, IStorage* pStg, uint ulLength, uint ulHeight, Span<uint> pulOutputLength, Span<uint> pulOutputHeight, ref void* phOutputBitmap)
+    public static unsafe int ExtractThumbnail(this ComPtr<IThumbnailExtractor> thisVtbl, IStorage* pStg, uint ulLength, uint ulHeight, Span<uint> pulOutputLength, Span<uint> pulOutputHeight, ref IntPtr* phOutputBitmap)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -475,7 +475,7 @@ public unsafe static class ThumbnailExtractorVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int ExtractThumbnail<TI0>(this ComPtr<IThumbnailExtractor> thisVtbl, ComPtr<TI0> pStg, uint ulLength, uint ulHeight, ref uint pulOutputLength, ref uint pulOutputHeight, ref void* phOutputBitmap) where TI0 : unmanaged, IComVtbl<IStorage>, IComVtbl<TI0>
+    public static unsafe int ExtractThumbnail<TI0>(this ComPtr<IThumbnailExtractor> thisVtbl, ComPtr<TI0> pStg, uint ulLength, uint ulHeight, ref uint pulOutputLength, ref uint pulOutputHeight, ref IntPtr* phOutputBitmap) where TI0 : unmanaged, IComVtbl<IStorage>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -483,7 +483,7 @@ public unsafe static class ThumbnailExtractorVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int ExtractThumbnail(this ComPtr<IThumbnailExtractor> thisVtbl, Span<IStorage> pStg, uint ulLength, uint ulHeight, uint* pulOutputLength, uint* pulOutputHeight, void** phOutputBitmap)
+    public static unsafe int ExtractThumbnail(this ComPtr<IThumbnailExtractor> thisVtbl, Span<IStorage> pStg, uint ulLength, uint ulHeight, uint* pulOutputLength, uint* pulOutputHeight, IntPtr** phOutputBitmap)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -491,7 +491,7 @@ public unsafe static class ThumbnailExtractorVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int ExtractThumbnail(this ComPtr<IThumbnailExtractor> thisVtbl, Span<IStorage> pStg, uint ulLength, uint ulHeight, uint* pulOutputLength, uint* pulOutputHeight, ref void* phOutputBitmap)
+    public static unsafe int ExtractThumbnail(this ComPtr<IThumbnailExtractor> thisVtbl, Span<IStorage> pStg, uint ulLength, uint ulHeight, uint* pulOutputLength, uint* pulOutputHeight, ref IntPtr* phOutputBitmap)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -499,7 +499,7 @@ public unsafe static class ThumbnailExtractorVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int ExtractThumbnail(this ComPtr<IThumbnailExtractor> thisVtbl, Span<IStorage> pStg, uint ulLength, uint ulHeight, uint* pulOutputLength, Span<uint> pulOutputHeight, void** phOutputBitmap)
+    public static unsafe int ExtractThumbnail(this ComPtr<IThumbnailExtractor> thisVtbl, Span<IStorage> pStg, uint ulLength, uint ulHeight, uint* pulOutputLength, Span<uint> pulOutputHeight, IntPtr** phOutputBitmap)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -507,7 +507,7 @@ public unsafe static class ThumbnailExtractorVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int ExtractThumbnail(this ComPtr<IThumbnailExtractor> thisVtbl, Span<IStorage> pStg, uint ulLength, uint ulHeight, uint* pulOutputLength, Span<uint> pulOutputHeight, ref void* phOutputBitmap)
+    public static unsafe int ExtractThumbnail(this ComPtr<IThumbnailExtractor> thisVtbl, Span<IStorage> pStg, uint ulLength, uint ulHeight, uint* pulOutputLength, Span<uint> pulOutputHeight, ref IntPtr* phOutputBitmap)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -515,7 +515,7 @@ public unsafe static class ThumbnailExtractorVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int ExtractThumbnail(this ComPtr<IThumbnailExtractor> thisVtbl, Span<IStorage> pStg, uint ulLength, uint ulHeight, Span<uint> pulOutputLength, uint* pulOutputHeight, void** phOutputBitmap)
+    public static unsafe int ExtractThumbnail(this ComPtr<IThumbnailExtractor> thisVtbl, Span<IStorage> pStg, uint ulLength, uint ulHeight, Span<uint> pulOutputLength, uint* pulOutputHeight, IntPtr** phOutputBitmap)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -523,7 +523,7 @@ public unsafe static class ThumbnailExtractorVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int ExtractThumbnail(this ComPtr<IThumbnailExtractor> thisVtbl, Span<IStorage> pStg, uint ulLength, uint ulHeight, Span<uint> pulOutputLength, uint* pulOutputHeight, ref void* phOutputBitmap)
+    public static unsafe int ExtractThumbnail(this ComPtr<IThumbnailExtractor> thisVtbl, Span<IStorage> pStg, uint ulLength, uint ulHeight, Span<uint> pulOutputLength, uint* pulOutputHeight, ref IntPtr* phOutputBitmap)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -531,7 +531,7 @@ public unsafe static class ThumbnailExtractorVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int ExtractThumbnail(this ComPtr<IThumbnailExtractor> thisVtbl, Span<IStorage> pStg, uint ulLength, uint ulHeight, Span<uint> pulOutputLength, Span<uint> pulOutputHeight, void** phOutputBitmap)
+    public static unsafe int ExtractThumbnail(this ComPtr<IThumbnailExtractor> thisVtbl, Span<IStorage> pStg, uint ulLength, uint ulHeight, Span<uint> pulOutputLength, Span<uint> pulOutputHeight, IntPtr** phOutputBitmap)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -539,7 +539,7 @@ public unsafe static class ThumbnailExtractorVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int ExtractThumbnail(this ComPtr<IThumbnailExtractor> thisVtbl, Span<IStorage> pStg, uint ulLength, uint ulHeight, Span<uint> pulOutputLength, Span<uint> pulOutputHeight, ref void* phOutputBitmap)
+    public static unsafe int ExtractThumbnail(this ComPtr<IThumbnailExtractor> thisVtbl, Span<IStorage> pStg, uint ulLength, uint ulHeight, Span<uint> pulOutputLength, Span<uint> pulOutputHeight, ref IntPtr* phOutputBitmap)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader

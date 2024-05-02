@@ -17,9 +17,9 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Core.Win32Extras
 {
     [NativeName("Name", "__MIDL___MIDL_itf_documenttarget_0000_0002_0001")]
-    public unsafe partial struct MIDLMIDLItfDocumenttarget000000020001
+    public unsafe partial struct MIDLMIDLItfDocumentTarget000000020001
     {
-        public MIDLMIDLItfDocumenttarget000000020001
+        public MIDLMIDLItfDocumentTarget000000020001
         (
             uint? jobId = null,
             int? currentDocument = null,

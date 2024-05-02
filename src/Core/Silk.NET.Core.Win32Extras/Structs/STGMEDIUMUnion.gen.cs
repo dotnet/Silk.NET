@@ -22,7 +22,7 @@ namespace Silk.NET.Core.Win32Extras
     {
         public STGMEDIUMUnion
         (
-            void* hBitmap = null,
+            IntPtr* hBitmap = null,
             void* hMetaFilePict = null,
             nint* hEnhMetaFile = null,
             void* hGlobal = null,
@@ -72,7 +72,7 @@ namespace Silk.NET.Core.Win32Extras
         [NativeName("Type", "HBITMAP")]
         [NativeName("Type.Name", "HBITMAP")]
         [NativeName("Name", "hBitmap")]
-        public void* HBitmap;
+        public IntPtr* HBitmap;
 
         [FieldOffset(0)]
         [NativeName("Type", "HMETAFILEPICT")]

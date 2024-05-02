@@ -25,7 +25,7 @@ namespace Silk.NET.Core.Win32Extras
             uint? tymed = null,
             STGMEDIUMUnion? anonymous = null,
             Silk.NET.Core.Native.IUnknown* pUnkForRelease = null,
-            void* hBitmap = null,
+            IntPtr* hBitmap = null,
             void* hMetaFilePict = null,
             nint* hEnhMetaFile = null,
             void* hGlobal = null,
@@ -101,13 +101,13 @@ namespace Silk.NET.Core.Win32Extras
         [NativeName("Name", "pUnkForRelease")]
         public Silk.NET.Core.Native.IUnknown* PUnkForRelease;
 #if NETSTANDARD2_1 || NETCOREAPP3_1 || NET5_0 || NET5_0_OR_GREATER
-        public ref void* HBitmap
+        public ref IntPtr* HBitmap
         {
             [MethodImpl((MethodImplOptions) 768)]
             get => ref MemoryMarshal.CreateSpan(ref Anonymous, 1)[0].HBitmap;
         }
 #else
-        public void* HBitmap
+        public IntPtr* HBitmap
         {
             get => Anonymous.HBitmap;
             set => Anonymous.HBitmap = value;
