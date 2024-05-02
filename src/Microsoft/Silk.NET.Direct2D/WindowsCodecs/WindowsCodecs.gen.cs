@@ -1344,914 +1344,914 @@ namespace Silk.NET.WindowsCodecs
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 8994, Column 39 in wincodec.h")]
         [NativeApi(EntryPoint = "HBITMAP_UserSize", Convention = CallingConvention.StdCall)]
-        public unsafe partial uint HBITMAPUserSize(uint* arg0, uint arg1, void*** arg2);
+        public unsafe partial uint HBITMAPUserSize(uint* arg0, uint arg1, IntPtr** arg2);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 8994, Column 39 in wincodec.h")]
         [NativeApi(EntryPoint = "HBITMAP_UserSize", Convention = CallingConvention.StdCall)]
-        public unsafe partial uint HBITMAPUserSize(uint* arg0, uint arg1, ref void** arg2);
+        public unsafe partial uint HBITMAPUserSize(uint* arg0, uint arg1, ref IntPtr* arg2);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 8994, Column 39 in wincodec.h")]
         [NativeApi(EntryPoint = "HBITMAP_UserSize", Convention = CallingConvention.StdCall)]
-        public unsafe partial uint HBITMAPUserSize(ref uint arg0, uint arg1, void*** arg2);
+        public unsafe partial uint HBITMAPUserSize(ref uint arg0, uint arg1, IntPtr** arg2);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 8994, Column 39 in wincodec.h")]
         [NativeApi(EntryPoint = "HBITMAP_UserSize", Convention = CallingConvention.StdCall)]
-        public unsafe partial uint HBITMAPUserSize(ref uint arg0, uint arg1, ref void** arg2);
+        public unsafe partial uint HBITMAPUserSize(ref uint arg0, uint arg1, ref IntPtr* arg2);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 8995, Column 29 in wincodec.h")]
         [NativeApi(EntryPoint = "HBITMAP_UserMarshal", Convention = CallingConvention.StdCall)]
-        public unsafe partial byte* HBITMAPUserMarshal(uint* arg0, byte* arg1, void*** arg2);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 8995, Column 29 in wincodec.h")]
-        [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
-        [NativeApi(EntryPoint = "HBITMAP_UserMarshal", Convention = CallingConvention.StdCall)]
-        public unsafe partial string HBITMAPUserMarshalS(uint* arg0, byte* arg1, void*** arg2);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 8995, Column 29 in wincodec.h")]
-        [NativeApi(EntryPoint = "HBITMAP_UserMarshal", Convention = CallingConvention.StdCall)]
-        public unsafe partial byte* HBITMAPUserMarshal(uint* arg0, byte* arg1, ref void** arg2);
+        public unsafe partial byte* HBITMAPUserMarshal(uint* arg0, byte* arg1, IntPtr** arg2);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 8995, Column 29 in wincodec.h")]
         [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
         [NativeApi(EntryPoint = "HBITMAP_UserMarshal", Convention = CallingConvention.StdCall)]
-        public unsafe partial string HBITMAPUserMarshalS(uint* arg0, byte* arg1, ref void** arg2);
+        public unsafe partial string HBITMAPUserMarshalS(uint* arg0, byte* arg1, IntPtr** arg2);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 8995, Column 29 in wincodec.h")]
         [NativeApi(EntryPoint = "HBITMAP_UserMarshal", Convention = CallingConvention.StdCall)]
-        public unsafe partial byte* HBITMAPUserMarshal(uint* arg0, ref byte arg1, void*** arg2);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 8995, Column 29 in wincodec.h")]
-        [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
-        [NativeApi(EntryPoint = "HBITMAP_UserMarshal", Convention = CallingConvention.StdCall)]
-        public unsafe partial string HBITMAPUserMarshalS(uint* arg0, ref byte arg1, void*** arg2);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 8995, Column 29 in wincodec.h")]
-        [NativeApi(EntryPoint = "HBITMAP_UserMarshal", Convention = CallingConvention.StdCall)]
-        public unsafe partial byte* HBITMAPUserMarshal(uint* arg0, ref byte arg1, ref void** arg2);
+        public unsafe partial byte* HBITMAPUserMarshal(uint* arg0, byte* arg1, ref IntPtr* arg2);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 8995, Column 29 in wincodec.h")]
         [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
         [NativeApi(EntryPoint = "HBITMAP_UserMarshal", Convention = CallingConvention.StdCall)]
-        public unsafe partial string HBITMAPUserMarshalS(uint* arg0, ref byte arg1, ref void** arg2);
+        public unsafe partial string HBITMAPUserMarshalS(uint* arg0, byte* arg1, ref IntPtr* arg2);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 8995, Column 29 in wincodec.h")]
         [NativeApi(EntryPoint = "HBITMAP_UserMarshal", Convention = CallingConvention.StdCall)]
-        public unsafe partial byte* HBITMAPUserMarshal(uint* arg0, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, void*** arg2);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 8995, Column 29 in wincodec.h")]
-        [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
-        [NativeApi(EntryPoint = "HBITMAP_UserMarshal", Convention = CallingConvention.StdCall)]
-        public unsafe partial string HBITMAPUserMarshalS(uint* arg0, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, void*** arg2);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 8995, Column 29 in wincodec.h")]
-        [NativeApi(EntryPoint = "HBITMAP_UserMarshal", Convention = CallingConvention.StdCall)]
-        public unsafe partial byte* HBITMAPUserMarshal(uint* arg0, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, ref void** arg2);
+        public unsafe partial byte* HBITMAPUserMarshal(uint* arg0, ref byte arg1, IntPtr** arg2);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 8995, Column 29 in wincodec.h")]
         [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
         [NativeApi(EntryPoint = "HBITMAP_UserMarshal", Convention = CallingConvention.StdCall)]
-        public unsafe partial string HBITMAPUserMarshalS(uint* arg0, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, ref void** arg2);
+        public unsafe partial string HBITMAPUserMarshalS(uint* arg0, ref byte arg1, IntPtr** arg2);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 8995, Column 29 in wincodec.h")]
         [NativeApi(EntryPoint = "HBITMAP_UserMarshal", Convention = CallingConvention.StdCall)]
-        public unsafe partial byte* HBITMAPUserMarshal(ref uint arg0, byte* arg1, void*** arg2);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 8995, Column 29 in wincodec.h")]
-        [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
-        [NativeApi(EntryPoint = "HBITMAP_UserMarshal", Convention = CallingConvention.StdCall)]
-        public unsafe partial string HBITMAPUserMarshalS(ref uint arg0, byte* arg1, void*** arg2);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 8995, Column 29 in wincodec.h")]
-        [NativeApi(EntryPoint = "HBITMAP_UserMarshal", Convention = CallingConvention.StdCall)]
-        public unsafe partial byte* HBITMAPUserMarshal(ref uint arg0, byte* arg1, ref void** arg2);
+        public unsafe partial byte* HBITMAPUserMarshal(uint* arg0, ref byte arg1, ref IntPtr* arg2);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 8995, Column 29 in wincodec.h")]
         [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
         [NativeApi(EntryPoint = "HBITMAP_UserMarshal", Convention = CallingConvention.StdCall)]
-        public unsafe partial string HBITMAPUserMarshalS(ref uint arg0, byte* arg1, ref void** arg2);
+        public unsafe partial string HBITMAPUserMarshalS(uint* arg0, ref byte arg1, ref IntPtr* arg2);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 8995, Column 29 in wincodec.h")]
         [NativeApi(EntryPoint = "HBITMAP_UserMarshal", Convention = CallingConvention.StdCall)]
-        public unsafe partial byte* HBITMAPUserMarshal(ref uint arg0, ref byte arg1, void*** arg2);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 8995, Column 29 in wincodec.h")]
-        [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
-        [NativeApi(EntryPoint = "HBITMAP_UserMarshal", Convention = CallingConvention.StdCall)]
-        public unsafe partial string HBITMAPUserMarshalS(ref uint arg0, ref byte arg1, void*** arg2);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 8995, Column 29 in wincodec.h")]
-        [NativeApi(EntryPoint = "HBITMAP_UserMarshal", Convention = CallingConvention.StdCall)]
-        public unsafe partial byte* HBITMAPUserMarshal(ref uint arg0, ref byte arg1, ref void** arg2);
+        public unsafe partial byte* HBITMAPUserMarshal(uint* arg0, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, IntPtr** arg2);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 8995, Column 29 in wincodec.h")]
         [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
         [NativeApi(EntryPoint = "HBITMAP_UserMarshal", Convention = CallingConvention.StdCall)]
-        public unsafe partial string HBITMAPUserMarshalS(ref uint arg0, ref byte arg1, ref void** arg2);
+        public unsafe partial string HBITMAPUserMarshalS(uint* arg0, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, IntPtr** arg2);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 8995, Column 29 in wincodec.h")]
         [NativeApi(EntryPoint = "HBITMAP_UserMarshal", Convention = CallingConvention.StdCall)]
-        public unsafe partial byte* HBITMAPUserMarshal(ref uint arg0, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, void*** arg2);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 8995, Column 29 in wincodec.h")]
-        [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
-        [NativeApi(EntryPoint = "HBITMAP_UserMarshal", Convention = CallingConvention.StdCall)]
-        public unsafe partial string HBITMAPUserMarshalS(ref uint arg0, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, void*** arg2);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 8995, Column 29 in wincodec.h")]
-        [NativeApi(EntryPoint = "HBITMAP_UserMarshal", Convention = CallingConvention.StdCall)]
-        public unsafe partial byte* HBITMAPUserMarshal(ref uint arg0, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, ref void** arg2);
+        public unsafe partial byte* HBITMAPUserMarshal(uint* arg0, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, ref IntPtr* arg2);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 8995, Column 29 in wincodec.h")]
         [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
         [NativeApi(EntryPoint = "HBITMAP_UserMarshal", Convention = CallingConvention.StdCall)]
-        public unsafe partial string HBITMAPUserMarshalS(ref uint arg0, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, ref void** arg2);
+        public unsafe partial string HBITMAPUserMarshalS(uint* arg0, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, ref IntPtr* arg2);
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 8995, Column 29 in wincodec.h")]
+        [NativeApi(EntryPoint = "HBITMAP_UserMarshal", Convention = CallingConvention.StdCall)]
+        public unsafe partial byte* HBITMAPUserMarshal(ref uint arg0, byte* arg1, IntPtr** arg2);
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 8995, Column 29 in wincodec.h")]
+        [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
+        [NativeApi(EntryPoint = "HBITMAP_UserMarshal", Convention = CallingConvention.StdCall)]
+        public unsafe partial string HBITMAPUserMarshalS(ref uint arg0, byte* arg1, IntPtr** arg2);
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 8995, Column 29 in wincodec.h")]
+        [NativeApi(EntryPoint = "HBITMAP_UserMarshal", Convention = CallingConvention.StdCall)]
+        public unsafe partial byte* HBITMAPUserMarshal(ref uint arg0, byte* arg1, ref IntPtr* arg2);
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 8995, Column 29 in wincodec.h")]
+        [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
+        [NativeApi(EntryPoint = "HBITMAP_UserMarshal", Convention = CallingConvention.StdCall)]
+        public unsafe partial string HBITMAPUserMarshalS(ref uint arg0, byte* arg1, ref IntPtr* arg2);
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 8995, Column 29 in wincodec.h")]
+        [NativeApi(EntryPoint = "HBITMAP_UserMarshal", Convention = CallingConvention.StdCall)]
+        public unsafe partial byte* HBITMAPUserMarshal(ref uint arg0, ref byte arg1, IntPtr** arg2);
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 8995, Column 29 in wincodec.h")]
+        [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
+        [NativeApi(EntryPoint = "HBITMAP_UserMarshal", Convention = CallingConvention.StdCall)]
+        public unsafe partial string HBITMAPUserMarshalS(ref uint arg0, ref byte arg1, IntPtr** arg2);
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 8995, Column 29 in wincodec.h")]
+        [NativeApi(EntryPoint = "HBITMAP_UserMarshal", Convention = CallingConvention.StdCall)]
+        public unsafe partial byte* HBITMAPUserMarshal(ref uint arg0, ref byte arg1, ref IntPtr* arg2);
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 8995, Column 29 in wincodec.h")]
+        [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
+        [NativeApi(EntryPoint = "HBITMAP_UserMarshal", Convention = CallingConvention.StdCall)]
+        public unsafe partial string HBITMAPUserMarshalS(ref uint arg0, ref byte arg1, ref IntPtr* arg2);
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 8995, Column 29 in wincodec.h")]
+        [NativeApi(EntryPoint = "HBITMAP_UserMarshal", Convention = CallingConvention.StdCall)]
+        public unsafe partial byte* HBITMAPUserMarshal(ref uint arg0, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, IntPtr** arg2);
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 8995, Column 29 in wincodec.h")]
+        [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
+        [NativeApi(EntryPoint = "HBITMAP_UserMarshal", Convention = CallingConvention.StdCall)]
+        public unsafe partial string HBITMAPUserMarshalS(ref uint arg0, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, IntPtr** arg2);
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 8995, Column 29 in wincodec.h")]
+        [NativeApi(EntryPoint = "HBITMAP_UserMarshal", Convention = CallingConvention.StdCall)]
+        public unsafe partial byte* HBITMAPUserMarshal(ref uint arg0, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, ref IntPtr* arg2);
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 8995, Column 29 in wincodec.h")]
+        [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
+        [NativeApi(EntryPoint = "HBITMAP_UserMarshal", Convention = CallingConvention.StdCall)]
+        public unsafe partial string HBITMAPUserMarshalS(ref uint arg0, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, ref IntPtr* arg2);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 8996, Column 29 in wincodec.h")]
         [NativeApi(EntryPoint = "HBITMAP_UserUnmarshal", Convention = CallingConvention.StdCall)]
-        public unsafe partial byte* HBITMAPUserUnmarshal(uint* arg0, byte* arg1, void*** arg2);
+        public unsafe partial byte* HBITMAPUserUnmarshal(uint* arg0, byte* arg1, IntPtr** arg2);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 8996, Column 29 in wincodec.h")]
         [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
         [NativeApi(EntryPoint = "HBITMAP_UserUnmarshal", Convention = CallingConvention.StdCall)]
-        public unsafe partial string HBITMAPUserUnmarshalS(uint* arg0, byte* arg1, void*** arg2);
+        public unsafe partial string HBITMAPUserUnmarshalS(uint* arg0, byte* arg1, IntPtr** arg2);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 8996, Column 29 in wincodec.h")]
         [NativeApi(EntryPoint = "HBITMAP_UserUnmarshal", Convention = CallingConvention.StdCall)]
-        public unsafe partial byte* HBITMAPUserUnmarshal(uint* arg0, byte* arg1, ref void** arg2);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 8996, Column 29 in wincodec.h")]
-        [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
-        [NativeApi(EntryPoint = "HBITMAP_UserUnmarshal", Convention = CallingConvention.StdCall)]
-        public unsafe partial string HBITMAPUserUnmarshalS(uint* arg0, byte* arg1, ref void** arg2);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 8996, Column 29 in wincodec.h")]
-        [NativeApi(EntryPoint = "HBITMAP_UserUnmarshal", Convention = CallingConvention.StdCall)]
-        public unsafe partial byte* HBITMAPUserUnmarshal(uint* arg0, ref byte arg1, void*** arg2);
+        public unsafe partial byte* HBITMAPUserUnmarshal(uint* arg0, byte* arg1, ref IntPtr* arg2);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 8996, Column 29 in wincodec.h")]
         [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
         [NativeApi(EntryPoint = "HBITMAP_UserUnmarshal", Convention = CallingConvention.StdCall)]
-        public unsafe partial string HBITMAPUserUnmarshalS(uint* arg0, ref byte arg1, void*** arg2);
+        public unsafe partial string HBITMAPUserUnmarshalS(uint* arg0, byte* arg1, ref IntPtr* arg2);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 8996, Column 29 in wincodec.h")]
         [NativeApi(EntryPoint = "HBITMAP_UserUnmarshal", Convention = CallingConvention.StdCall)]
-        public unsafe partial byte* HBITMAPUserUnmarshal(uint* arg0, ref byte arg1, ref void** arg2);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 8996, Column 29 in wincodec.h")]
-        [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
-        [NativeApi(EntryPoint = "HBITMAP_UserUnmarshal", Convention = CallingConvention.StdCall)]
-        public unsafe partial string HBITMAPUserUnmarshalS(uint* arg0, ref byte arg1, ref void** arg2);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 8996, Column 29 in wincodec.h")]
-        [NativeApi(EntryPoint = "HBITMAP_UserUnmarshal", Convention = CallingConvention.StdCall)]
-        public unsafe partial byte* HBITMAPUserUnmarshal(uint* arg0, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, void*** arg2);
+        public unsafe partial byte* HBITMAPUserUnmarshal(uint* arg0, ref byte arg1, IntPtr** arg2);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 8996, Column 29 in wincodec.h")]
         [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
         [NativeApi(EntryPoint = "HBITMAP_UserUnmarshal", Convention = CallingConvention.StdCall)]
-        public unsafe partial string HBITMAPUserUnmarshalS(uint* arg0, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, void*** arg2);
+        public unsafe partial string HBITMAPUserUnmarshalS(uint* arg0, ref byte arg1, IntPtr** arg2);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 8996, Column 29 in wincodec.h")]
         [NativeApi(EntryPoint = "HBITMAP_UserUnmarshal", Convention = CallingConvention.StdCall)]
-        public unsafe partial byte* HBITMAPUserUnmarshal(uint* arg0, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, ref void** arg2);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 8996, Column 29 in wincodec.h")]
-        [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
-        [NativeApi(EntryPoint = "HBITMAP_UserUnmarshal", Convention = CallingConvention.StdCall)]
-        public unsafe partial string HBITMAPUserUnmarshalS(uint* arg0, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, ref void** arg2);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 8996, Column 29 in wincodec.h")]
-        [NativeApi(EntryPoint = "HBITMAP_UserUnmarshal", Convention = CallingConvention.StdCall)]
-        public unsafe partial byte* HBITMAPUserUnmarshal(ref uint arg0, byte* arg1, void*** arg2);
+        public unsafe partial byte* HBITMAPUserUnmarshal(uint* arg0, ref byte arg1, ref IntPtr* arg2);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 8996, Column 29 in wincodec.h")]
         [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
         [NativeApi(EntryPoint = "HBITMAP_UserUnmarshal", Convention = CallingConvention.StdCall)]
-        public unsafe partial string HBITMAPUserUnmarshalS(ref uint arg0, byte* arg1, void*** arg2);
+        public unsafe partial string HBITMAPUserUnmarshalS(uint* arg0, ref byte arg1, ref IntPtr* arg2);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 8996, Column 29 in wincodec.h")]
         [NativeApi(EntryPoint = "HBITMAP_UserUnmarshal", Convention = CallingConvention.StdCall)]
-        public unsafe partial byte* HBITMAPUserUnmarshal(ref uint arg0, byte* arg1, ref void** arg2);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 8996, Column 29 in wincodec.h")]
-        [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
-        [NativeApi(EntryPoint = "HBITMAP_UserUnmarshal", Convention = CallingConvention.StdCall)]
-        public unsafe partial string HBITMAPUserUnmarshalS(ref uint arg0, byte* arg1, ref void** arg2);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 8996, Column 29 in wincodec.h")]
-        [NativeApi(EntryPoint = "HBITMAP_UserUnmarshal", Convention = CallingConvention.StdCall)]
-        public unsafe partial byte* HBITMAPUserUnmarshal(ref uint arg0, ref byte arg1, void*** arg2);
+        public unsafe partial byte* HBITMAPUserUnmarshal(uint* arg0, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, IntPtr** arg2);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 8996, Column 29 in wincodec.h")]
         [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
         [NativeApi(EntryPoint = "HBITMAP_UserUnmarshal", Convention = CallingConvention.StdCall)]
-        public unsafe partial string HBITMAPUserUnmarshalS(ref uint arg0, ref byte arg1, void*** arg2);
+        public unsafe partial string HBITMAPUserUnmarshalS(uint* arg0, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, IntPtr** arg2);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 8996, Column 29 in wincodec.h")]
         [NativeApi(EntryPoint = "HBITMAP_UserUnmarshal", Convention = CallingConvention.StdCall)]
-        public unsafe partial byte* HBITMAPUserUnmarshal(ref uint arg0, ref byte arg1, ref void** arg2);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 8996, Column 29 in wincodec.h")]
-        [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
-        [NativeApi(EntryPoint = "HBITMAP_UserUnmarshal", Convention = CallingConvention.StdCall)]
-        public unsafe partial string HBITMAPUserUnmarshalS(ref uint arg0, ref byte arg1, ref void** arg2);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 8996, Column 29 in wincodec.h")]
-        [NativeApi(EntryPoint = "HBITMAP_UserUnmarshal", Convention = CallingConvention.StdCall)]
-        public unsafe partial byte* HBITMAPUserUnmarshal(ref uint arg0, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, void*** arg2);
+        public unsafe partial byte* HBITMAPUserUnmarshal(uint* arg0, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, ref IntPtr* arg2);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 8996, Column 29 in wincodec.h")]
         [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
         [NativeApi(EntryPoint = "HBITMAP_UserUnmarshal", Convention = CallingConvention.StdCall)]
-        public unsafe partial string HBITMAPUserUnmarshalS(ref uint arg0, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, void*** arg2);
+        public unsafe partial string HBITMAPUserUnmarshalS(uint* arg0, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, ref IntPtr* arg2);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 8996, Column 29 in wincodec.h")]
         [NativeApi(EntryPoint = "HBITMAP_UserUnmarshal", Convention = CallingConvention.StdCall)]
-        public unsafe partial byte* HBITMAPUserUnmarshal(ref uint arg0, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, ref void** arg2);
+        public unsafe partial byte* HBITMAPUserUnmarshal(ref uint arg0, byte* arg1, IntPtr** arg2);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 8996, Column 29 in wincodec.h")]
         [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
         [NativeApi(EntryPoint = "HBITMAP_UserUnmarshal", Convention = CallingConvention.StdCall)]
-        public unsafe partial string HBITMAPUserUnmarshalS(ref uint arg0, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, ref void** arg2);
+        public unsafe partial string HBITMAPUserUnmarshalS(ref uint arg0, byte* arg1, IntPtr** arg2);
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 8996, Column 29 in wincodec.h")]
+        [NativeApi(EntryPoint = "HBITMAP_UserUnmarshal", Convention = CallingConvention.StdCall)]
+        public unsafe partial byte* HBITMAPUserUnmarshal(ref uint arg0, byte* arg1, ref IntPtr* arg2);
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 8996, Column 29 in wincodec.h")]
+        [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
+        [NativeApi(EntryPoint = "HBITMAP_UserUnmarshal", Convention = CallingConvention.StdCall)]
+        public unsafe partial string HBITMAPUserUnmarshalS(ref uint arg0, byte* arg1, ref IntPtr* arg2);
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 8996, Column 29 in wincodec.h")]
+        [NativeApi(EntryPoint = "HBITMAP_UserUnmarshal", Convention = CallingConvention.StdCall)]
+        public unsafe partial byte* HBITMAPUserUnmarshal(ref uint arg0, ref byte arg1, IntPtr** arg2);
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 8996, Column 29 in wincodec.h")]
+        [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
+        [NativeApi(EntryPoint = "HBITMAP_UserUnmarshal", Convention = CallingConvention.StdCall)]
+        public unsafe partial string HBITMAPUserUnmarshalS(ref uint arg0, ref byte arg1, IntPtr** arg2);
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 8996, Column 29 in wincodec.h")]
+        [NativeApi(EntryPoint = "HBITMAP_UserUnmarshal", Convention = CallingConvention.StdCall)]
+        public unsafe partial byte* HBITMAPUserUnmarshal(ref uint arg0, ref byte arg1, ref IntPtr* arg2);
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 8996, Column 29 in wincodec.h")]
+        [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
+        [NativeApi(EntryPoint = "HBITMAP_UserUnmarshal", Convention = CallingConvention.StdCall)]
+        public unsafe partial string HBITMAPUserUnmarshalS(ref uint arg0, ref byte arg1, ref IntPtr* arg2);
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 8996, Column 29 in wincodec.h")]
+        [NativeApi(EntryPoint = "HBITMAP_UserUnmarshal", Convention = CallingConvention.StdCall)]
+        public unsafe partial byte* HBITMAPUserUnmarshal(ref uint arg0, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, IntPtr** arg2);
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 8996, Column 29 in wincodec.h")]
+        [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
+        [NativeApi(EntryPoint = "HBITMAP_UserUnmarshal", Convention = CallingConvention.StdCall)]
+        public unsafe partial string HBITMAPUserUnmarshalS(ref uint arg0, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, IntPtr** arg2);
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 8996, Column 29 in wincodec.h")]
+        [NativeApi(EntryPoint = "HBITMAP_UserUnmarshal", Convention = CallingConvention.StdCall)]
+        public unsafe partial byte* HBITMAPUserUnmarshal(ref uint arg0, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, ref IntPtr* arg2);
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 8996, Column 29 in wincodec.h")]
+        [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
+        [NativeApi(EntryPoint = "HBITMAP_UserUnmarshal", Convention = CallingConvention.StdCall)]
+        public unsafe partial string HBITMAPUserUnmarshalS(ref uint arg0, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, ref IntPtr* arg2);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 8997, Column 39 in wincodec.h")]
         [NativeApi(EntryPoint = "HBITMAP_UserFree", Convention = CallingConvention.StdCall)]
-        public unsafe partial void HBITMAPUserFree(uint* arg0, void*** arg1);
+        public unsafe partial void HBITMAPUserFree(uint* arg0, IntPtr** arg1);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 8997, Column 39 in wincodec.h")]
         [NativeApi(EntryPoint = "HBITMAP_UserFree", Convention = CallingConvention.StdCall)]
-        public unsafe partial void HBITMAPUserFree(uint* arg0, ref void** arg1);
+        public unsafe partial void HBITMAPUserFree(uint* arg0, ref IntPtr* arg1);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 8997, Column 39 in wincodec.h")]
         [NativeApi(EntryPoint = "HBITMAP_UserFree", Convention = CallingConvention.StdCall)]
-        public unsafe partial void HBITMAPUserFree(ref uint arg0, void*** arg1);
+        public unsafe partial void HBITMAPUserFree(ref uint arg0, IntPtr** arg1);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 8997, Column 39 in wincodec.h")]
         [NativeApi(EntryPoint = "HBITMAP_UserFree", Convention = CallingConvention.StdCall)]
-        public unsafe partial void HBITMAPUserFree(ref uint arg0, ref void** arg1);
+        public unsafe partial void HBITMAPUserFree(ref uint arg0, ref IntPtr* arg1);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 8999, Column 39 in wincodec.h")]
         [NativeApi(EntryPoint = "HICON_UserSize", Convention = CallingConvention.StdCall)]
-        public unsafe partial uint HICONUserSize(uint* arg0, uint arg1, void*** arg2);
+        public unsafe partial uint HICONUserSize(uint* arg0, uint arg1, IntPtr** arg2);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 8999, Column 39 in wincodec.h")]
         [NativeApi(EntryPoint = "HICON_UserSize", Convention = CallingConvention.StdCall)]
-        public unsafe partial uint HICONUserSize(uint* arg0, uint arg1, ref void** arg2);
+        public unsafe partial uint HICONUserSize(uint* arg0, uint arg1, ref IntPtr* arg2);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 8999, Column 39 in wincodec.h")]
         [NativeApi(EntryPoint = "HICON_UserSize", Convention = CallingConvention.StdCall)]
-        public unsafe partial uint HICONUserSize(ref uint arg0, uint arg1, void*** arg2);
+        public unsafe partial uint HICONUserSize(ref uint arg0, uint arg1, IntPtr** arg2);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 8999, Column 39 in wincodec.h")]
         [NativeApi(EntryPoint = "HICON_UserSize", Convention = CallingConvention.StdCall)]
-        public unsafe partial uint HICONUserSize(ref uint arg0, uint arg1, ref void** arg2);
+        public unsafe partial uint HICONUserSize(ref uint arg0, uint arg1, ref IntPtr* arg2);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 9000, Column 29 in wincodec.h")]
         [NativeApi(EntryPoint = "HICON_UserMarshal", Convention = CallingConvention.StdCall)]
-        public unsafe partial byte* HICONUserMarshal(uint* arg0, byte* arg1, void*** arg2);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 9000, Column 29 in wincodec.h")]
-        [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
-        [NativeApi(EntryPoint = "HICON_UserMarshal", Convention = CallingConvention.StdCall)]
-        public unsafe partial string HICONUserMarshalS(uint* arg0, byte* arg1, void*** arg2);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 9000, Column 29 in wincodec.h")]
-        [NativeApi(EntryPoint = "HICON_UserMarshal", Convention = CallingConvention.StdCall)]
-        public unsafe partial byte* HICONUserMarshal(uint* arg0, byte* arg1, ref void** arg2);
+        public unsafe partial byte* HICONUserMarshal(uint* arg0, byte* arg1, IntPtr** arg2);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 9000, Column 29 in wincodec.h")]
         [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
         [NativeApi(EntryPoint = "HICON_UserMarshal", Convention = CallingConvention.StdCall)]
-        public unsafe partial string HICONUserMarshalS(uint* arg0, byte* arg1, ref void** arg2);
+        public unsafe partial string HICONUserMarshalS(uint* arg0, byte* arg1, IntPtr** arg2);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 9000, Column 29 in wincodec.h")]
         [NativeApi(EntryPoint = "HICON_UserMarshal", Convention = CallingConvention.StdCall)]
-        public unsafe partial byte* HICONUserMarshal(uint* arg0, ref byte arg1, void*** arg2);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 9000, Column 29 in wincodec.h")]
-        [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
-        [NativeApi(EntryPoint = "HICON_UserMarshal", Convention = CallingConvention.StdCall)]
-        public unsafe partial string HICONUserMarshalS(uint* arg0, ref byte arg1, void*** arg2);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 9000, Column 29 in wincodec.h")]
-        [NativeApi(EntryPoint = "HICON_UserMarshal", Convention = CallingConvention.StdCall)]
-        public unsafe partial byte* HICONUserMarshal(uint* arg0, ref byte arg1, ref void** arg2);
+        public unsafe partial byte* HICONUserMarshal(uint* arg0, byte* arg1, ref IntPtr* arg2);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 9000, Column 29 in wincodec.h")]
         [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
         [NativeApi(EntryPoint = "HICON_UserMarshal", Convention = CallingConvention.StdCall)]
-        public unsafe partial string HICONUserMarshalS(uint* arg0, ref byte arg1, ref void** arg2);
+        public unsafe partial string HICONUserMarshalS(uint* arg0, byte* arg1, ref IntPtr* arg2);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 9000, Column 29 in wincodec.h")]
         [NativeApi(EntryPoint = "HICON_UserMarshal", Convention = CallingConvention.StdCall)]
-        public unsafe partial byte* HICONUserMarshal(uint* arg0, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, void*** arg2);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 9000, Column 29 in wincodec.h")]
-        [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
-        [NativeApi(EntryPoint = "HICON_UserMarshal", Convention = CallingConvention.StdCall)]
-        public unsafe partial string HICONUserMarshalS(uint* arg0, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, void*** arg2);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 9000, Column 29 in wincodec.h")]
-        [NativeApi(EntryPoint = "HICON_UserMarshal", Convention = CallingConvention.StdCall)]
-        public unsafe partial byte* HICONUserMarshal(uint* arg0, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, ref void** arg2);
+        public unsafe partial byte* HICONUserMarshal(uint* arg0, ref byte arg1, IntPtr** arg2);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 9000, Column 29 in wincodec.h")]
         [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
         [NativeApi(EntryPoint = "HICON_UserMarshal", Convention = CallingConvention.StdCall)]
-        public unsafe partial string HICONUserMarshalS(uint* arg0, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, ref void** arg2);
+        public unsafe partial string HICONUserMarshalS(uint* arg0, ref byte arg1, IntPtr** arg2);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 9000, Column 29 in wincodec.h")]
         [NativeApi(EntryPoint = "HICON_UserMarshal", Convention = CallingConvention.StdCall)]
-        public unsafe partial byte* HICONUserMarshal(ref uint arg0, byte* arg1, void*** arg2);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 9000, Column 29 in wincodec.h")]
-        [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
-        [NativeApi(EntryPoint = "HICON_UserMarshal", Convention = CallingConvention.StdCall)]
-        public unsafe partial string HICONUserMarshalS(ref uint arg0, byte* arg1, void*** arg2);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 9000, Column 29 in wincodec.h")]
-        [NativeApi(EntryPoint = "HICON_UserMarshal", Convention = CallingConvention.StdCall)]
-        public unsafe partial byte* HICONUserMarshal(ref uint arg0, byte* arg1, ref void** arg2);
+        public unsafe partial byte* HICONUserMarshal(uint* arg0, ref byte arg1, ref IntPtr* arg2);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 9000, Column 29 in wincodec.h")]
         [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
         [NativeApi(EntryPoint = "HICON_UserMarshal", Convention = CallingConvention.StdCall)]
-        public unsafe partial string HICONUserMarshalS(ref uint arg0, byte* arg1, ref void** arg2);
+        public unsafe partial string HICONUserMarshalS(uint* arg0, ref byte arg1, ref IntPtr* arg2);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 9000, Column 29 in wincodec.h")]
         [NativeApi(EntryPoint = "HICON_UserMarshal", Convention = CallingConvention.StdCall)]
-        public unsafe partial byte* HICONUserMarshal(ref uint arg0, ref byte arg1, void*** arg2);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 9000, Column 29 in wincodec.h")]
-        [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
-        [NativeApi(EntryPoint = "HICON_UserMarshal", Convention = CallingConvention.StdCall)]
-        public unsafe partial string HICONUserMarshalS(ref uint arg0, ref byte arg1, void*** arg2);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 9000, Column 29 in wincodec.h")]
-        [NativeApi(EntryPoint = "HICON_UserMarshal", Convention = CallingConvention.StdCall)]
-        public unsafe partial byte* HICONUserMarshal(ref uint arg0, ref byte arg1, ref void** arg2);
+        public unsafe partial byte* HICONUserMarshal(uint* arg0, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, IntPtr** arg2);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 9000, Column 29 in wincodec.h")]
         [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
         [NativeApi(EntryPoint = "HICON_UserMarshal", Convention = CallingConvention.StdCall)]
-        public unsafe partial string HICONUserMarshalS(ref uint arg0, ref byte arg1, ref void** arg2);
+        public unsafe partial string HICONUserMarshalS(uint* arg0, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, IntPtr** arg2);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 9000, Column 29 in wincodec.h")]
         [NativeApi(EntryPoint = "HICON_UserMarshal", Convention = CallingConvention.StdCall)]
-        public unsafe partial byte* HICONUserMarshal(ref uint arg0, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, void*** arg2);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 9000, Column 29 in wincodec.h")]
-        [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
-        [NativeApi(EntryPoint = "HICON_UserMarshal", Convention = CallingConvention.StdCall)]
-        public unsafe partial string HICONUserMarshalS(ref uint arg0, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, void*** arg2);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 9000, Column 29 in wincodec.h")]
-        [NativeApi(EntryPoint = "HICON_UserMarshal", Convention = CallingConvention.StdCall)]
-        public unsafe partial byte* HICONUserMarshal(ref uint arg0, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, ref void** arg2);
+        public unsafe partial byte* HICONUserMarshal(uint* arg0, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, ref IntPtr* arg2);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 9000, Column 29 in wincodec.h")]
         [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
         [NativeApi(EntryPoint = "HICON_UserMarshal", Convention = CallingConvention.StdCall)]
-        public unsafe partial string HICONUserMarshalS(ref uint arg0, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, ref void** arg2);
+        public unsafe partial string HICONUserMarshalS(uint* arg0, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, ref IntPtr* arg2);
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 9000, Column 29 in wincodec.h")]
+        [NativeApi(EntryPoint = "HICON_UserMarshal", Convention = CallingConvention.StdCall)]
+        public unsafe partial byte* HICONUserMarshal(ref uint arg0, byte* arg1, IntPtr** arg2);
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 9000, Column 29 in wincodec.h")]
+        [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
+        [NativeApi(EntryPoint = "HICON_UserMarshal", Convention = CallingConvention.StdCall)]
+        public unsafe partial string HICONUserMarshalS(ref uint arg0, byte* arg1, IntPtr** arg2);
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 9000, Column 29 in wincodec.h")]
+        [NativeApi(EntryPoint = "HICON_UserMarshal", Convention = CallingConvention.StdCall)]
+        public unsafe partial byte* HICONUserMarshal(ref uint arg0, byte* arg1, ref IntPtr* arg2);
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 9000, Column 29 in wincodec.h")]
+        [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
+        [NativeApi(EntryPoint = "HICON_UserMarshal", Convention = CallingConvention.StdCall)]
+        public unsafe partial string HICONUserMarshalS(ref uint arg0, byte* arg1, ref IntPtr* arg2);
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 9000, Column 29 in wincodec.h")]
+        [NativeApi(EntryPoint = "HICON_UserMarshal", Convention = CallingConvention.StdCall)]
+        public unsafe partial byte* HICONUserMarshal(ref uint arg0, ref byte arg1, IntPtr** arg2);
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 9000, Column 29 in wincodec.h")]
+        [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
+        [NativeApi(EntryPoint = "HICON_UserMarshal", Convention = CallingConvention.StdCall)]
+        public unsafe partial string HICONUserMarshalS(ref uint arg0, ref byte arg1, IntPtr** arg2);
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 9000, Column 29 in wincodec.h")]
+        [NativeApi(EntryPoint = "HICON_UserMarshal", Convention = CallingConvention.StdCall)]
+        public unsafe partial byte* HICONUserMarshal(ref uint arg0, ref byte arg1, ref IntPtr* arg2);
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 9000, Column 29 in wincodec.h")]
+        [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
+        [NativeApi(EntryPoint = "HICON_UserMarshal", Convention = CallingConvention.StdCall)]
+        public unsafe partial string HICONUserMarshalS(ref uint arg0, ref byte arg1, ref IntPtr* arg2);
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 9000, Column 29 in wincodec.h")]
+        [NativeApi(EntryPoint = "HICON_UserMarshal", Convention = CallingConvention.StdCall)]
+        public unsafe partial byte* HICONUserMarshal(ref uint arg0, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, IntPtr** arg2);
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 9000, Column 29 in wincodec.h")]
+        [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
+        [NativeApi(EntryPoint = "HICON_UserMarshal", Convention = CallingConvention.StdCall)]
+        public unsafe partial string HICONUserMarshalS(ref uint arg0, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, IntPtr** arg2);
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 9000, Column 29 in wincodec.h")]
+        [NativeApi(EntryPoint = "HICON_UserMarshal", Convention = CallingConvention.StdCall)]
+        public unsafe partial byte* HICONUserMarshal(ref uint arg0, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, ref IntPtr* arg2);
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 9000, Column 29 in wincodec.h")]
+        [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
+        [NativeApi(EntryPoint = "HICON_UserMarshal", Convention = CallingConvention.StdCall)]
+        public unsafe partial string HICONUserMarshalS(ref uint arg0, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, ref IntPtr* arg2);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 9001, Column 29 in wincodec.h")]
         [NativeApi(EntryPoint = "HICON_UserUnmarshal", Convention = CallingConvention.StdCall)]
-        public unsafe partial byte* HICONUserUnmarshal(uint* arg0, byte* arg1, void*** arg2);
+        public unsafe partial byte* HICONUserUnmarshal(uint* arg0, byte* arg1, IntPtr** arg2);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 9001, Column 29 in wincodec.h")]
         [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
         [NativeApi(EntryPoint = "HICON_UserUnmarshal", Convention = CallingConvention.StdCall)]
-        public unsafe partial string HICONUserUnmarshalS(uint* arg0, byte* arg1, void*** arg2);
+        public unsafe partial string HICONUserUnmarshalS(uint* arg0, byte* arg1, IntPtr** arg2);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 9001, Column 29 in wincodec.h")]
         [NativeApi(EntryPoint = "HICON_UserUnmarshal", Convention = CallingConvention.StdCall)]
-        public unsafe partial byte* HICONUserUnmarshal(uint* arg0, byte* arg1, ref void** arg2);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 9001, Column 29 in wincodec.h")]
-        [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
-        [NativeApi(EntryPoint = "HICON_UserUnmarshal", Convention = CallingConvention.StdCall)]
-        public unsafe partial string HICONUserUnmarshalS(uint* arg0, byte* arg1, ref void** arg2);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 9001, Column 29 in wincodec.h")]
-        [NativeApi(EntryPoint = "HICON_UserUnmarshal", Convention = CallingConvention.StdCall)]
-        public unsafe partial byte* HICONUserUnmarshal(uint* arg0, ref byte arg1, void*** arg2);
+        public unsafe partial byte* HICONUserUnmarshal(uint* arg0, byte* arg1, ref IntPtr* arg2);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 9001, Column 29 in wincodec.h")]
         [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
         [NativeApi(EntryPoint = "HICON_UserUnmarshal", Convention = CallingConvention.StdCall)]
-        public unsafe partial string HICONUserUnmarshalS(uint* arg0, ref byte arg1, void*** arg2);
+        public unsafe partial string HICONUserUnmarshalS(uint* arg0, byte* arg1, ref IntPtr* arg2);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 9001, Column 29 in wincodec.h")]
         [NativeApi(EntryPoint = "HICON_UserUnmarshal", Convention = CallingConvention.StdCall)]
-        public unsafe partial byte* HICONUserUnmarshal(uint* arg0, ref byte arg1, ref void** arg2);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 9001, Column 29 in wincodec.h")]
-        [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
-        [NativeApi(EntryPoint = "HICON_UserUnmarshal", Convention = CallingConvention.StdCall)]
-        public unsafe partial string HICONUserUnmarshalS(uint* arg0, ref byte arg1, ref void** arg2);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 9001, Column 29 in wincodec.h")]
-        [NativeApi(EntryPoint = "HICON_UserUnmarshal", Convention = CallingConvention.StdCall)]
-        public unsafe partial byte* HICONUserUnmarshal(uint* arg0, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, void*** arg2);
+        public unsafe partial byte* HICONUserUnmarshal(uint* arg0, ref byte arg1, IntPtr** arg2);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 9001, Column 29 in wincodec.h")]
         [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
         [NativeApi(EntryPoint = "HICON_UserUnmarshal", Convention = CallingConvention.StdCall)]
-        public unsafe partial string HICONUserUnmarshalS(uint* arg0, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, void*** arg2);
+        public unsafe partial string HICONUserUnmarshalS(uint* arg0, ref byte arg1, IntPtr** arg2);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 9001, Column 29 in wincodec.h")]
         [NativeApi(EntryPoint = "HICON_UserUnmarshal", Convention = CallingConvention.StdCall)]
-        public unsafe partial byte* HICONUserUnmarshal(uint* arg0, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, ref void** arg2);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 9001, Column 29 in wincodec.h")]
-        [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
-        [NativeApi(EntryPoint = "HICON_UserUnmarshal", Convention = CallingConvention.StdCall)]
-        public unsafe partial string HICONUserUnmarshalS(uint* arg0, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, ref void** arg2);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 9001, Column 29 in wincodec.h")]
-        [NativeApi(EntryPoint = "HICON_UserUnmarshal", Convention = CallingConvention.StdCall)]
-        public unsafe partial byte* HICONUserUnmarshal(ref uint arg0, byte* arg1, void*** arg2);
+        public unsafe partial byte* HICONUserUnmarshal(uint* arg0, ref byte arg1, ref IntPtr* arg2);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 9001, Column 29 in wincodec.h")]
         [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
         [NativeApi(EntryPoint = "HICON_UserUnmarshal", Convention = CallingConvention.StdCall)]
-        public unsafe partial string HICONUserUnmarshalS(ref uint arg0, byte* arg1, void*** arg2);
+        public unsafe partial string HICONUserUnmarshalS(uint* arg0, ref byte arg1, ref IntPtr* arg2);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 9001, Column 29 in wincodec.h")]
         [NativeApi(EntryPoint = "HICON_UserUnmarshal", Convention = CallingConvention.StdCall)]
-        public unsafe partial byte* HICONUserUnmarshal(ref uint arg0, byte* arg1, ref void** arg2);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 9001, Column 29 in wincodec.h")]
-        [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
-        [NativeApi(EntryPoint = "HICON_UserUnmarshal", Convention = CallingConvention.StdCall)]
-        public unsafe partial string HICONUserUnmarshalS(ref uint arg0, byte* arg1, ref void** arg2);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 9001, Column 29 in wincodec.h")]
-        [NativeApi(EntryPoint = "HICON_UserUnmarshal", Convention = CallingConvention.StdCall)]
-        public unsafe partial byte* HICONUserUnmarshal(ref uint arg0, ref byte arg1, void*** arg2);
+        public unsafe partial byte* HICONUserUnmarshal(uint* arg0, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, IntPtr** arg2);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 9001, Column 29 in wincodec.h")]
         [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
         [NativeApi(EntryPoint = "HICON_UserUnmarshal", Convention = CallingConvention.StdCall)]
-        public unsafe partial string HICONUserUnmarshalS(ref uint arg0, ref byte arg1, void*** arg2);
+        public unsafe partial string HICONUserUnmarshalS(uint* arg0, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, IntPtr** arg2);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 9001, Column 29 in wincodec.h")]
         [NativeApi(EntryPoint = "HICON_UserUnmarshal", Convention = CallingConvention.StdCall)]
-        public unsafe partial byte* HICONUserUnmarshal(ref uint arg0, ref byte arg1, ref void** arg2);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 9001, Column 29 in wincodec.h")]
-        [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
-        [NativeApi(EntryPoint = "HICON_UserUnmarshal", Convention = CallingConvention.StdCall)]
-        public unsafe partial string HICONUserUnmarshalS(ref uint arg0, ref byte arg1, ref void** arg2);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 9001, Column 29 in wincodec.h")]
-        [NativeApi(EntryPoint = "HICON_UserUnmarshal", Convention = CallingConvention.StdCall)]
-        public unsafe partial byte* HICONUserUnmarshal(ref uint arg0, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, void*** arg2);
+        public unsafe partial byte* HICONUserUnmarshal(uint* arg0, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, ref IntPtr* arg2);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 9001, Column 29 in wincodec.h")]
         [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
         [NativeApi(EntryPoint = "HICON_UserUnmarshal", Convention = CallingConvention.StdCall)]
-        public unsafe partial string HICONUserUnmarshalS(ref uint arg0, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, void*** arg2);
+        public unsafe partial string HICONUserUnmarshalS(uint* arg0, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, ref IntPtr* arg2);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 9001, Column 29 in wincodec.h")]
         [NativeApi(EntryPoint = "HICON_UserUnmarshal", Convention = CallingConvention.StdCall)]
-        public unsafe partial byte* HICONUserUnmarshal(ref uint arg0, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, ref void** arg2);
+        public unsafe partial byte* HICONUserUnmarshal(ref uint arg0, byte* arg1, IntPtr** arg2);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 9001, Column 29 in wincodec.h")]
         [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
         [NativeApi(EntryPoint = "HICON_UserUnmarshal", Convention = CallingConvention.StdCall)]
-        public unsafe partial string HICONUserUnmarshalS(ref uint arg0, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, ref void** arg2);
+        public unsafe partial string HICONUserUnmarshalS(ref uint arg0, byte* arg1, IntPtr** arg2);
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 9001, Column 29 in wincodec.h")]
+        [NativeApi(EntryPoint = "HICON_UserUnmarshal", Convention = CallingConvention.StdCall)]
+        public unsafe partial byte* HICONUserUnmarshal(ref uint arg0, byte* arg1, ref IntPtr* arg2);
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 9001, Column 29 in wincodec.h")]
+        [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
+        [NativeApi(EntryPoint = "HICON_UserUnmarshal", Convention = CallingConvention.StdCall)]
+        public unsafe partial string HICONUserUnmarshalS(ref uint arg0, byte* arg1, ref IntPtr* arg2);
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 9001, Column 29 in wincodec.h")]
+        [NativeApi(EntryPoint = "HICON_UserUnmarshal", Convention = CallingConvention.StdCall)]
+        public unsafe partial byte* HICONUserUnmarshal(ref uint arg0, ref byte arg1, IntPtr** arg2);
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 9001, Column 29 in wincodec.h")]
+        [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
+        [NativeApi(EntryPoint = "HICON_UserUnmarshal", Convention = CallingConvention.StdCall)]
+        public unsafe partial string HICONUserUnmarshalS(ref uint arg0, ref byte arg1, IntPtr** arg2);
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 9001, Column 29 in wincodec.h")]
+        [NativeApi(EntryPoint = "HICON_UserUnmarshal", Convention = CallingConvention.StdCall)]
+        public unsafe partial byte* HICONUserUnmarshal(ref uint arg0, ref byte arg1, ref IntPtr* arg2);
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 9001, Column 29 in wincodec.h")]
+        [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
+        [NativeApi(EntryPoint = "HICON_UserUnmarshal", Convention = CallingConvention.StdCall)]
+        public unsafe partial string HICONUserUnmarshalS(ref uint arg0, ref byte arg1, ref IntPtr* arg2);
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 9001, Column 29 in wincodec.h")]
+        [NativeApi(EntryPoint = "HICON_UserUnmarshal", Convention = CallingConvention.StdCall)]
+        public unsafe partial byte* HICONUserUnmarshal(ref uint arg0, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, IntPtr** arg2);
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 9001, Column 29 in wincodec.h")]
+        [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
+        [NativeApi(EntryPoint = "HICON_UserUnmarshal", Convention = CallingConvention.StdCall)]
+        public unsafe partial string HICONUserUnmarshalS(ref uint arg0, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, IntPtr** arg2);
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 9001, Column 29 in wincodec.h")]
+        [NativeApi(EntryPoint = "HICON_UserUnmarshal", Convention = CallingConvention.StdCall)]
+        public unsafe partial byte* HICONUserUnmarshal(ref uint arg0, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, ref IntPtr* arg2);
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 9001, Column 29 in wincodec.h")]
+        [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
+        [NativeApi(EntryPoint = "HICON_UserUnmarshal", Convention = CallingConvention.StdCall)]
+        public unsafe partial string HICONUserUnmarshalS(ref uint arg0, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, ref IntPtr* arg2);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 9002, Column 39 in wincodec.h")]
         [NativeApi(EntryPoint = "HICON_UserFree", Convention = CallingConvention.StdCall)]
-        public unsafe partial void HICONUserFree(uint* arg0, void*** arg1);
+        public unsafe partial void HICONUserFree(uint* arg0, IntPtr** arg1);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 9002, Column 39 in wincodec.h")]
         [NativeApi(EntryPoint = "HICON_UserFree", Convention = CallingConvention.StdCall)]
-        public unsafe partial void HICONUserFree(uint* arg0, ref void** arg1);
+        public unsafe partial void HICONUserFree(uint* arg0, ref IntPtr* arg1);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 9002, Column 39 in wincodec.h")]
         [NativeApi(EntryPoint = "HICON_UserFree", Convention = CallingConvention.StdCall)]
-        public unsafe partial void HICONUserFree(ref uint arg0, void*** arg1);
+        public unsafe partial void HICONUserFree(ref uint arg0, IntPtr** arg1);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 9002, Column 39 in wincodec.h")]
         [NativeApi(EntryPoint = "HICON_UserFree", Convention = CallingConvention.StdCall)]
-        public unsafe partial void HICONUserFree(ref uint arg0, ref void** arg1);
+        public unsafe partial void HICONUserFree(ref uint arg0, ref IntPtr* arg1);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 9004, Column 39 in wincodec.h")]
         [NativeApi(EntryPoint = "HPALETTE_UserSize", Convention = CallingConvention.StdCall)]
-        public unsafe partial uint HPALETTEUserSize(uint* arg0, uint arg1, void*** arg2);
+        public unsafe partial uint HPALETTEUserSize(uint* arg0, uint arg1, IntPtr** arg2);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 9004, Column 39 in wincodec.h")]
         [NativeApi(EntryPoint = "HPALETTE_UserSize", Convention = CallingConvention.StdCall)]
-        public unsafe partial uint HPALETTEUserSize(uint* arg0, uint arg1, ref void** arg2);
+        public unsafe partial uint HPALETTEUserSize(uint* arg0, uint arg1, ref IntPtr* arg2);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 9004, Column 39 in wincodec.h")]
         [NativeApi(EntryPoint = "HPALETTE_UserSize", Convention = CallingConvention.StdCall)]
-        public unsafe partial uint HPALETTEUserSize(ref uint arg0, uint arg1, void*** arg2);
+        public unsafe partial uint HPALETTEUserSize(ref uint arg0, uint arg1, IntPtr** arg2);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 9004, Column 39 in wincodec.h")]
         [NativeApi(EntryPoint = "HPALETTE_UserSize", Convention = CallingConvention.StdCall)]
-        public unsafe partial uint HPALETTEUserSize(ref uint arg0, uint arg1, ref void** arg2);
+        public unsafe partial uint HPALETTEUserSize(ref uint arg0, uint arg1, ref IntPtr* arg2);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 9005, Column 29 in wincodec.h")]
         [NativeApi(EntryPoint = "HPALETTE_UserMarshal", Convention = CallingConvention.StdCall)]
-        public unsafe partial byte* HPALETTEUserMarshal(uint* arg0, byte* arg1, void*** arg2);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 9005, Column 29 in wincodec.h")]
-        [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
-        [NativeApi(EntryPoint = "HPALETTE_UserMarshal", Convention = CallingConvention.StdCall)]
-        public unsafe partial string HPALETTEUserMarshalS(uint* arg0, byte* arg1, void*** arg2);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 9005, Column 29 in wincodec.h")]
-        [NativeApi(EntryPoint = "HPALETTE_UserMarshal", Convention = CallingConvention.StdCall)]
-        public unsafe partial byte* HPALETTEUserMarshal(uint* arg0, byte* arg1, ref void** arg2);
+        public unsafe partial byte* HPALETTEUserMarshal(uint* arg0, byte* arg1, IntPtr** arg2);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 9005, Column 29 in wincodec.h")]
         [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
         [NativeApi(EntryPoint = "HPALETTE_UserMarshal", Convention = CallingConvention.StdCall)]
-        public unsafe partial string HPALETTEUserMarshalS(uint* arg0, byte* arg1, ref void** arg2);
+        public unsafe partial string HPALETTEUserMarshalS(uint* arg0, byte* arg1, IntPtr** arg2);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 9005, Column 29 in wincodec.h")]
         [NativeApi(EntryPoint = "HPALETTE_UserMarshal", Convention = CallingConvention.StdCall)]
-        public unsafe partial byte* HPALETTEUserMarshal(uint* arg0, ref byte arg1, void*** arg2);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 9005, Column 29 in wincodec.h")]
-        [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
-        [NativeApi(EntryPoint = "HPALETTE_UserMarshal", Convention = CallingConvention.StdCall)]
-        public unsafe partial string HPALETTEUserMarshalS(uint* arg0, ref byte arg1, void*** arg2);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 9005, Column 29 in wincodec.h")]
-        [NativeApi(EntryPoint = "HPALETTE_UserMarshal", Convention = CallingConvention.StdCall)]
-        public unsafe partial byte* HPALETTEUserMarshal(uint* arg0, ref byte arg1, ref void** arg2);
+        public unsafe partial byte* HPALETTEUserMarshal(uint* arg0, byte* arg1, ref IntPtr* arg2);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 9005, Column 29 in wincodec.h")]
         [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
         [NativeApi(EntryPoint = "HPALETTE_UserMarshal", Convention = CallingConvention.StdCall)]
-        public unsafe partial string HPALETTEUserMarshalS(uint* arg0, ref byte arg1, ref void** arg2);
+        public unsafe partial string HPALETTEUserMarshalS(uint* arg0, byte* arg1, ref IntPtr* arg2);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 9005, Column 29 in wincodec.h")]
         [NativeApi(EntryPoint = "HPALETTE_UserMarshal", Convention = CallingConvention.StdCall)]
-        public unsafe partial byte* HPALETTEUserMarshal(uint* arg0, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, void*** arg2);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 9005, Column 29 in wincodec.h")]
-        [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
-        [NativeApi(EntryPoint = "HPALETTE_UserMarshal", Convention = CallingConvention.StdCall)]
-        public unsafe partial string HPALETTEUserMarshalS(uint* arg0, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, void*** arg2);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 9005, Column 29 in wincodec.h")]
-        [NativeApi(EntryPoint = "HPALETTE_UserMarshal", Convention = CallingConvention.StdCall)]
-        public unsafe partial byte* HPALETTEUserMarshal(uint* arg0, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, ref void** arg2);
+        public unsafe partial byte* HPALETTEUserMarshal(uint* arg0, ref byte arg1, IntPtr** arg2);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 9005, Column 29 in wincodec.h")]
         [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
         [NativeApi(EntryPoint = "HPALETTE_UserMarshal", Convention = CallingConvention.StdCall)]
-        public unsafe partial string HPALETTEUserMarshalS(uint* arg0, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, ref void** arg2);
+        public unsafe partial string HPALETTEUserMarshalS(uint* arg0, ref byte arg1, IntPtr** arg2);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 9005, Column 29 in wincodec.h")]
         [NativeApi(EntryPoint = "HPALETTE_UserMarshal", Convention = CallingConvention.StdCall)]
-        public unsafe partial byte* HPALETTEUserMarshal(ref uint arg0, byte* arg1, void*** arg2);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 9005, Column 29 in wincodec.h")]
-        [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
-        [NativeApi(EntryPoint = "HPALETTE_UserMarshal", Convention = CallingConvention.StdCall)]
-        public unsafe partial string HPALETTEUserMarshalS(ref uint arg0, byte* arg1, void*** arg2);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 9005, Column 29 in wincodec.h")]
-        [NativeApi(EntryPoint = "HPALETTE_UserMarshal", Convention = CallingConvention.StdCall)]
-        public unsafe partial byte* HPALETTEUserMarshal(ref uint arg0, byte* arg1, ref void** arg2);
+        public unsafe partial byte* HPALETTEUserMarshal(uint* arg0, ref byte arg1, ref IntPtr* arg2);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 9005, Column 29 in wincodec.h")]
         [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
         [NativeApi(EntryPoint = "HPALETTE_UserMarshal", Convention = CallingConvention.StdCall)]
-        public unsafe partial string HPALETTEUserMarshalS(ref uint arg0, byte* arg1, ref void** arg2);
+        public unsafe partial string HPALETTEUserMarshalS(uint* arg0, ref byte arg1, ref IntPtr* arg2);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 9005, Column 29 in wincodec.h")]
         [NativeApi(EntryPoint = "HPALETTE_UserMarshal", Convention = CallingConvention.StdCall)]
-        public unsafe partial byte* HPALETTEUserMarshal(ref uint arg0, ref byte arg1, void*** arg2);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 9005, Column 29 in wincodec.h")]
-        [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
-        [NativeApi(EntryPoint = "HPALETTE_UserMarshal", Convention = CallingConvention.StdCall)]
-        public unsafe partial string HPALETTEUserMarshalS(ref uint arg0, ref byte arg1, void*** arg2);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 9005, Column 29 in wincodec.h")]
-        [NativeApi(EntryPoint = "HPALETTE_UserMarshal", Convention = CallingConvention.StdCall)]
-        public unsafe partial byte* HPALETTEUserMarshal(ref uint arg0, ref byte arg1, ref void** arg2);
+        public unsafe partial byte* HPALETTEUserMarshal(uint* arg0, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, IntPtr** arg2);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 9005, Column 29 in wincodec.h")]
         [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
         [NativeApi(EntryPoint = "HPALETTE_UserMarshal", Convention = CallingConvention.StdCall)]
-        public unsafe partial string HPALETTEUserMarshalS(ref uint arg0, ref byte arg1, ref void** arg2);
+        public unsafe partial string HPALETTEUserMarshalS(uint* arg0, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, IntPtr** arg2);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 9005, Column 29 in wincodec.h")]
         [NativeApi(EntryPoint = "HPALETTE_UserMarshal", Convention = CallingConvention.StdCall)]
-        public unsafe partial byte* HPALETTEUserMarshal(ref uint arg0, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, void*** arg2);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 9005, Column 29 in wincodec.h")]
-        [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
-        [NativeApi(EntryPoint = "HPALETTE_UserMarshal", Convention = CallingConvention.StdCall)]
-        public unsafe partial string HPALETTEUserMarshalS(ref uint arg0, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, void*** arg2);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 9005, Column 29 in wincodec.h")]
-        [NativeApi(EntryPoint = "HPALETTE_UserMarshal", Convention = CallingConvention.StdCall)]
-        public unsafe partial byte* HPALETTEUserMarshal(ref uint arg0, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, ref void** arg2);
+        public unsafe partial byte* HPALETTEUserMarshal(uint* arg0, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, ref IntPtr* arg2);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 9005, Column 29 in wincodec.h")]
         [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
         [NativeApi(EntryPoint = "HPALETTE_UserMarshal", Convention = CallingConvention.StdCall)]
-        public unsafe partial string HPALETTEUserMarshalS(ref uint arg0, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, ref void** arg2);
+        public unsafe partial string HPALETTEUserMarshalS(uint* arg0, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, ref IntPtr* arg2);
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 9005, Column 29 in wincodec.h")]
+        [NativeApi(EntryPoint = "HPALETTE_UserMarshal", Convention = CallingConvention.StdCall)]
+        public unsafe partial byte* HPALETTEUserMarshal(ref uint arg0, byte* arg1, IntPtr** arg2);
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 9005, Column 29 in wincodec.h")]
+        [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
+        [NativeApi(EntryPoint = "HPALETTE_UserMarshal", Convention = CallingConvention.StdCall)]
+        public unsafe partial string HPALETTEUserMarshalS(ref uint arg0, byte* arg1, IntPtr** arg2);
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 9005, Column 29 in wincodec.h")]
+        [NativeApi(EntryPoint = "HPALETTE_UserMarshal", Convention = CallingConvention.StdCall)]
+        public unsafe partial byte* HPALETTEUserMarshal(ref uint arg0, byte* arg1, ref IntPtr* arg2);
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 9005, Column 29 in wincodec.h")]
+        [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
+        [NativeApi(EntryPoint = "HPALETTE_UserMarshal", Convention = CallingConvention.StdCall)]
+        public unsafe partial string HPALETTEUserMarshalS(ref uint arg0, byte* arg1, ref IntPtr* arg2);
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 9005, Column 29 in wincodec.h")]
+        [NativeApi(EntryPoint = "HPALETTE_UserMarshal", Convention = CallingConvention.StdCall)]
+        public unsafe partial byte* HPALETTEUserMarshal(ref uint arg0, ref byte arg1, IntPtr** arg2);
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 9005, Column 29 in wincodec.h")]
+        [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
+        [NativeApi(EntryPoint = "HPALETTE_UserMarshal", Convention = CallingConvention.StdCall)]
+        public unsafe partial string HPALETTEUserMarshalS(ref uint arg0, ref byte arg1, IntPtr** arg2);
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 9005, Column 29 in wincodec.h")]
+        [NativeApi(EntryPoint = "HPALETTE_UserMarshal", Convention = CallingConvention.StdCall)]
+        public unsafe partial byte* HPALETTEUserMarshal(ref uint arg0, ref byte arg1, ref IntPtr* arg2);
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 9005, Column 29 in wincodec.h")]
+        [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
+        [NativeApi(EntryPoint = "HPALETTE_UserMarshal", Convention = CallingConvention.StdCall)]
+        public unsafe partial string HPALETTEUserMarshalS(ref uint arg0, ref byte arg1, ref IntPtr* arg2);
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 9005, Column 29 in wincodec.h")]
+        [NativeApi(EntryPoint = "HPALETTE_UserMarshal", Convention = CallingConvention.StdCall)]
+        public unsafe partial byte* HPALETTEUserMarshal(ref uint arg0, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, IntPtr** arg2);
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 9005, Column 29 in wincodec.h")]
+        [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
+        [NativeApi(EntryPoint = "HPALETTE_UserMarshal", Convention = CallingConvention.StdCall)]
+        public unsafe partial string HPALETTEUserMarshalS(ref uint arg0, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, IntPtr** arg2);
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 9005, Column 29 in wincodec.h")]
+        [NativeApi(EntryPoint = "HPALETTE_UserMarshal", Convention = CallingConvention.StdCall)]
+        public unsafe partial byte* HPALETTEUserMarshal(ref uint arg0, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, ref IntPtr* arg2);
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 9005, Column 29 in wincodec.h")]
+        [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
+        [NativeApi(EntryPoint = "HPALETTE_UserMarshal", Convention = CallingConvention.StdCall)]
+        public unsafe partial string HPALETTEUserMarshalS(ref uint arg0, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, ref IntPtr* arg2);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 9006, Column 29 in wincodec.h")]
         [NativeApi(EntryPoint = "HPALETTE_UserUnmarshal", Convention = CallingConvention.StdCall)]
-        public unsafe partial byte* HPALETTEUserUnmarshal(uint* arg0, byte* arg1, void*** arg2);
+        public unsafe partial byte* HPALETTEUserUnmarshal(uint* arg0, byte* arg1, IntPtr** arg2);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 9006, Column 29 in wincodec.h")]
         [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
         [NativeApi(EntryPoint = "HPALETTE_UserUnmarshal", Convention = CallingConvention.StdCall)]
-        public unsafe partial string HPALETTEUserUnmarshalS(uint* arg0, byte* arg1, void*** arg2);
+        public unsafe partial string HPALETTEUserUnmarshalS(uint* arg0, byte* arg1, IntPtr** arg2);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 9006, Column 29 in wincodec.h")]
         [NativeApi(EntryPoint = "HPALETTE_UserUnmarshal", Convention = CallingConvention.StdCall)]
-        public unsafe partial byte* HPALETTEUserUnmarshal(uint* arg0, byte* arg1, ref void** arg2);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 9006, Column 29 in wincodec.h")]
-        [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
-        [NativeApi(EntryPoint = "HPALETTE_UserUnmarshal", Convention = CallingConvention.StdCall)]
-        public unsafe partial string HPALETTEUserUnmarshalS(uint* arg0, byte* arg1, ref void** arg2);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 9006, Column 29 in wincodec.h")]
-        [NativeApi(EntryPoint = "HPALETTE_UserUnmarshal", Convention = CallingConvention.StdCall)]
-        public unsafe partial byte* HPALETTEUserUnmarshal(uint* arg0, ref byte arg1, void*** arg2);
+        public unsafe partial byte* HPALETTEUserUnmarshal(uint* arg0, byte* arg1, ref IntPtr* arg2);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 9006, Column 29 in wincodec.h")]
         [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
         [NativeApi(EntryPoint = "HPALETTE_UserUnmarshal", Convention = CallingConvention.StdCall)]
-        public unsafe partial string HPALETTEUserUnmarshalS(uint* arg0, ref byte arg1, void*** arg2);
+        public unsafe partial string HPALETTEUserUnmarshalS(uint* arg0, byte* arg1, ref IntPtr* arg2);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 9006, Column 29 in wincodec.h")]
         [NativeApi(EntryPoint = "HPALETTE_UserUnmarshal", Convention = CallingConvention.StdCall)]
-        public unsafe partial byte* HPALETTEUserUnmarshal(uint* arg0, ref byte arg1, ref void** arg2);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 9006, Column 29 in wincodec.h")]
-        [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
-        [NativeApi(EntryPoint = "HPALETTE_UserUnmarshal", Convention = CallingConvention.StdCall)]
-        public unsafe partial string HPALETTEUserUnmarshalS(uint* arg0, ref byte arg1, ref void** arg2);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 9006, Column 29 in wincodec.h")]
-        [NativeApi(EntryPoint = "HPALETTE_UserUnmarshal", Convention = CallingConvention.StdCall)]
-        public unsafe partial byte* HPALETTEUserUnmarshal(uint* arg0, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, void*** arg2);
+        public unsafe partial byte* HPALETTEUserUnmarshal(uint* arg0, ref byte arg1, IntPtr** arg2);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 9006, Column 29 in wincodec.h")]
         [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
         [NativeApi(EntryPoint = "HPALETTE_UserUnmarshal", Convention = CallingConvention.StdCall)]
-        public unsafe partial string HPALETTEUserUnmarshalS(uint* arg0, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, void*** arg2);
+        public unsafe partial string HPALETTEUserUnmarshalS(uint* arg0, ref byte arg1, IntPtr** arg2);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 9006, Column 29 in wincodec.h")]
         [NativeApi(EntryPoint = "HPALETTE_UserUnmarshal", Convention = CallingConvention.StdCall)]
-        public unsafe partial byte* HPALETTEUserUnmarshal(uint* arg0, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, ref void** arg2);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 9006, Column 29 in wincodec.h")]
-        [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
-        [NativeApi(EntryPoint = "HPALETTE_UserUnmarshal", Convention = CallingConvention.StdCall)]
-        public unsafe partial string HPALETTEUserUnmarshalS(uint* arg0, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, ref void** arg2);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 9006, Column 29 in wincodec.h")]
-        [NativeApi(EntryPoint = "HPALETTE_UserUnmarshal", Convention = CallingConvention.StdCall)]
-        public unsafe partial byte* HPALETTEUserUnmarshal(ref uint arg0, byte* arg1, void*** arg2);
+        public unsafe partial byte* HPALETTEUserUnmarshal(uint* arg0, ref byte arg1, ref IntPtr* arg2);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 9006, Column 29 in wincodec.h")]
         [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
         [NativeApi(EntryPoint = "HPALETTE_UserUnmarshal", Convention = CallingConvention.StdCall)]
-        public unsafe partial string HPALETTEUserUnmarshalS(ref uint arg0, byte* arg1, void*** arg2);
+        public unsafe partial string HPALETTEUserUnmarshalS(uint* arg0, ref byte arg1, ref IntPtr* arg2);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 9006, Column 29 in wincodec.h")]
         [NativeApi(EntryPoint = "HPALETTE_UserUnmarshal", Convention = CallingConvention.StdCall)]
-        public unsafe partial byte* HPALETTEUserUnmarshal(ref uint arg0, byte* arg1, ref void** arg2);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 9006, Column 29 in wincodec.h")]
-        [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
-        [NativeApi(EntryPoint = "HPALETTE_UserUnmarshal", Convention = CallingConvention.StdCall)]
-        public unsafe partial string HPALETTEUserUnmarshalS(ref uint arg0, byte* arg1, ref void** arg2);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 9006, Column 29 in wincodec.h")]
-        [NativeApi(EntryPoint = "HPALETTE_UserUnmarshal", Convention = CallingConvention.StdCall)]
-        public unsafe partial byte* HPALETTEUserUnmarshal(ref uint arg0, ref byte arg1, void*** arg2);
+        public unsafe partial byte* HPALETTEUserUnmarshal(uint* arg0, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, IntPtr** arg2);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 9006, Column 29 in wincodec.h")]
         [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
         [NativeApi(EntryPoint = "HPALETTE_UserUnmarshal", Convention = CallingConvention.StdCall)]
-        public unsafe partial string HPALETTEUserUnmarshalS(ref uint arg0, ref byte arg1, void*** arg2);
+        public unsafe partial string HPALETTEUserUnmarshalS(uint* arg0, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, IntPtr** arg2);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 9006, Column 29 in wincodec.h")]
         [NativeApi(EntryPoint = "HPALETTE_UserUnmarshal", Convention = CallingConvention.StdCall)]
-        public unsafe partial byte* HPALETTEUserUnmarshal(ref uint arg0, ref byte arg1, ref void** arg2);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 9006, Column 29 in wincodec.h")]
-        [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
-        [NativeApi(EntryPoint = "HPALETTE_UserUnmarshal", Convention = CallingConvention.StdCall)]
-        public unsafe partial string HPALETTEUserUnmarshalS(ref uint arg0, ref byte arg1, ref void** arg2);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 9006, Column 29 in wincodec.h")]
-        [NativeApi(EntryPoint = "HPALETTE_UserUnmarshal", Convention = CallingConvention.StdCall)]
-        public unsafe partial byte* HPALETTEUserUnmarshal(ref uint arg0, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, void*** arg2);
+        public unsafe partial byte* HPALETTEUserUnmarshal(uint* arg0, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, ref IntPtr* arg2);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 9006, Column 29 in wincodec.h")]
         [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
         [NativeApi(EntryPoint = "HPALETTE_UserUnmarshal", Convention = CallingConvention.StdCall)]
-        public unsafe partial string HPALETTEUserUnmarshalS(ref uint arg0, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, void*** arg2);
+        public unsafe partial string HPALETTEUserUnmarshalS(uint* arg0, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, ref IntPtr* arg2);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 9006, Column 29 in wincodec.h")]
         [NativeApi(EntryPoint = "HPALETTE_UserUnmarshal", Convention = CallingConvention.StdCall)]
-        public unsafe partial byte* HPALETTEUserUnmarshal(ref uint arg0, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, ref void** arg2);
+        public unsafe partial byte* HPALETTEUserUnmarshal(ref uint arg0, byte* arg1, IntPtr** arg2);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 9006, Column 29 in wincodec.h")]
         [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
         [NativeApi(EntryPoint = "HPALETTE_UserUnmarshal", Convention = CallingConvention.StdCall)]
-        public unsafe partial string HPALETTEUserUnmarshalS(ref uint arg0, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, ref void** arg2);
+        public unsafe partial string HPALETTEUserUnmarshalS(ref uint arg0, byte* arg1, IntPtr** arg2);
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 9006, Column 29 in wincodec.h")]
+        [NativeApi(EntryPoint = "HPALETTE_UserUnmarshal", Convention = CallingConvention.StdCall)]
+        public unsafe partial byte* HPALETTEUserUnmarshal(ref uint arg0, byte* arg1, ref IntPtr* arg2);
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 9006, Column 29 in wincodec.h")]
+        [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
+        [NativeApi(EntryPoint = "HPALETTE_UserUnmarshal", Convention = CallingConvention.StdCall)]
+        public unsafe partial string HPALETTEUserUnmarshalS(ref uint arg0, byte* arg1, ref IntPtr* arg2);
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 9006, Column 29 in wincodec.h")]
+        [NativeApi(EntryPoint = "HPALETTE_UserUnmarshal", Convention = CallingConvention.StdCall)]
+        public unsafe partial byte* HPALETTEUserUnmarshal(ref uint arg0, ref byte arg1, IntPtr** arg2);
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 9006, Column 29 in wincodec.h")]
+        [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
+        [NativeApi(EntryPoint = "HPALETTE_UserUnmarshal", Convention = CallingConvention.StdCall)]
+        public unsafe partial string HPALETTEUserUnmarshalS(ref uint arg0, ref byte arg1, IntPtr** arg2);
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 9006, Column 29 in wincodec.h")]
+        [NativeApi(EntryPoint = "HPALETTE_UserUnmarshal", Convention = CallingConvention.StdCall)]
+        public unsafe partial byte* HPALETTEUserUnmarshal(ref uint arg0, ref byte arg1, ref IntPtr* arg2);
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 9006, Column 29 in wincodec.h")]
+        [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
+        [NativeApi(EntryPoint = "HPALETTE_UserUnmarshal", Convention = CallingConvention.StdCall)]
+        public unsafe partial string HPALETTEUserUnmarshalS(ref uint arg0, ref byte arg1, ref IntPtr* arg2);
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 9006, Column 29 in wincodec.h")]
+        [NativeApi(EntryPoint = "HPALETTE_UserUnmarshal", Convention = CallingConvention.StdCall)]
+        public unsafe partial byte* HPALETTEUserUnmarshal(ref uint arg0, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, IntPtr** arg2);
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 9006, Column 29 in wincodec.h")]
+        [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
+        [NativeApi(EntryPoint = "HPALETTE_UserUnmarshal", Convention = CallingConvention.StdCall)]
+        public unsafe partial string HPALETTEUserUnmarshalS(ref uint arg0, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, IntPtr** arg2);
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 9006, Column 29 in wincodec.h")]
+        [NativeApi(EntryPoint = "HPALETTE_UserUnmarshal", Convention = CallingConvention.StdCall)]
+        public unsafe partial byte* HPALETTEUserUnmarshal(ref uint arg0, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, ref IntPtr* arg2);
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 9006, Column 29 in wincodec.h")]
+        [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
+        [NativeApi(EntryPoint = "HPALETTE_UserUnmarshal", Convention = CallingConvention.StdCall)]
+        public unsafe partial string HPALETTEUserUnmarshalS(ref uint arg0, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, ref IntPtr* arg2);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 9007, Column 39 in wincodec.h")]
         [NativeApi(EntryPoint = "HPALETTE_UserFree", Convention = CallingConvention.StdCall)]
-        public unsafe partial void HPALETTEUserFree(uint* arg0, void*** arg1);
+        public unsafe partial void HPALETTEUserFree(uint* arg0, IntPtr** arg1);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 9007, Column 39 in wincodec.h")]
         [NativeApi(EntryPoint = "HPALETTE_UserFree", Convention = CallingConvention.StdCall)]
-        public unsafe partial void HPALETTEUserFree(uint* arg0, ref void** arg1);
+        public unsafe partial void HPALETTEUserFree(uint* arg0, ref IntPtr* arg1);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 9007, Column 39 in wincodec.h")]
         [NativeApi(EntryPoint = "HPALETTE_UserFree", Convention = CallingConvention.StdCall)]
-        public unsafe partial void HPALETTEUserFree(ref uint arg0, void*** arg1);
+        public unsafe partial void HPALETTEUserFree(ref uint arg0, IntPtr** arg1);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 9007, Column 39 in wincodec.h")]
         [NativeApi(EntryPoint = "HPALETTE_UserFree", Convention = CallingConvention.StdCall)]
-        public unsafe partial void HPALETTEUserFree(ref uint arg0, ref void** arg1);
+        public unsafe partial void HPALETTEUserFree(ref uint arg0, ref IntPtr* arg1);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 9009, Column 39 in wincodec.h")]

@@ -1458,7 +1458,7 @@ namespace Silk.NET.WindowsCodecs
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 8994, Column 39 in wincodec.h")]
-        public static unsafe uint HBITMAPUserSize(this WindowsCodecs thisApi, Span<uint> arg0, uint arg1, void*** arg2)
+        public static unsafe uint HBITMAPUserSize(this WindowsCodecs thisApi, Span<uint> arg0, uint arg1, IntPtr** arg2)
         {
             // SpanOverloader
             return thisApi.HBITMAPUserSize(ref arg0.GetPinnableReference(), arg1, arg2);
@@ -1466,7 +1466,7 @@ namespace Silk.NET.WindowsCodecs
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 8994, Column 39 in wincodec.h")]
-        public static unsafe uint HBITMAPUserSize(this WindowsCodecs thisApi, Span<uint> arg0, uint arg1, ref void** arg2)
+        public static unsafe uint HBITMAPUserSize(this WindowsCodecs thisApi, Span<uint> arg0, uint arg1, ref IntPtr* arg2)
         {
             // SpanOverloader
             return thisApi.HBITMAPUserSize(ref arg0.GetPinnableReference(), arg1, ref arg2);
@@ -1474,7 +1474,7 @@ namespace Silk.NET.WindowsCodecs
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 8995, Column 29 in wincodec.h")]
-        public static unsafe byte* HBITMAPUserMarshal(this WindowsCodecs thisApi, uint* arg0, Span<byte> arg1, void*** arg2)
+        public static unsafe byte* HBITMAPUserMarshal(this WindowsCodecs thisApi, uint* arg0, Span<byte> arg1, IntPtr** arg2)
         {
             // SpanOverloader
             return thisApi.HBITMAPUserMarshal(arg0, ref arg1.GetPinnableReference(), arg2);
@@ -1482,7 +1482,7 @@ namespace Silk.NET.WindowsCodecs
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 8995, Column 29 in wincodec.h")]
-        public static unsafe byte* HBITMAPUserMarshal(this WindowsCodecs thisApi, uint* arg0, Span<byte> arg1, ref void** arg2)
+        public static unsafe byte* HBITMAPUserMarshal(this WindowsCodecs thisApi, uint* arg0, Span<byte> arg1, ref IntPtr* arg2)
         {
             // SpanOverloader
             return thisApi.HBITMAPUserMarshal(arg0, ref arg1.GetPinnableReference(), ref arg2);
@@ -1490,7 +1490,7 @@ namespace Silk.NET.WindowsCodecs
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 8995, Column 29 in wincodec.h")]
-        public static unsafe byte* HBITMAPUserMarshal(this WindowsCodecs thisApi, Span<uint> arg0, byte* arg1, void*** arg2)
+        public static unsafe byte* HBITMAPUserMarshal(this WindowsCodecs thisApi, Span<uint> arg0, byte* arg1, IntPtr** arg2)
         {
             // SpanOverloader
             return thisApi.HBITMAPUserMarshal(ref arg0.GetPinnableReference(), arg1, arg2);
@@ -1498,7 +1498,7 @@ namespace Silk.NET.WindowsCodecs
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 8995, Column 29 in wincodec.h")]
-        public static unsafe byte* HBITMAPUserMarshal(this WindowsCodecs thisApi, Span<uint> arg0, byte* arg1, ref void** arg2)
+        public static unsafe byte* HBITMAPUserMarshal(this WindowsCodecs thisApi, Span<uint> arg0, byte* arg1, ref IntPtr* arg2)
         {
             // SpanOverloader
             return thisApi.HBITMAPUserMarshal(ref arg0.GetPinnableReference(), arg1, ref arg2);
@@ -1506,7 +1506,7 @@ namespace Silk.NET.WindowsCodecs
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 8995, Column 29 in wincodec.h")]
-        public static unsafe byte* HBITMAPUserMarshal(this WindowsCodecs thisApi, Span<uint> arg0, Span<byte> arg1, void*** arg2)
+        public static unsafe byte* HBITMAPUserMarshal(this WindowsCodecs thisApi, Span<uint> arg0, Span<byte> arg1, IntPtr** arg2)
         {
             // SpanOverloader
             return thisApi.HBITMAPUserMarshal(ref arg0.GetPinnableReference(), ref arg1.GetPinnableReference(), arg2);
@@ -1514,7 +1514,7 @@ namespace Silk.NET.WindowsCodecs
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 8995, Column 29 in wincodec.h")]
-        public static unsafe byte* HBITMAPUserMarshal(this WindowsCodecs thisApi, Span<uint> arg0, Span<byte> arg1, ref void** arg2)
+        public static unsafe byte* HBITMAPUserMarshal(this WindowsCodecs thisApi, Span<uint> arg0, Span<byte> arg1, ref IntPtr* arg2)
         {
             // SpanOverloader
             return thisApi.HBITMAPUserMarshal(ref arg0.GetPinnableReference(), ref arg1.GetPinnableReference(), ref arg2);
@@ -1522,7 +1522,7 @@ namespace Silk.NET.WindowsCodecs
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 8995, Column 29 in wincodec.h")]
-        public static unsafe byte* HBITMAPUserMarshal(this WindowsCodecs thisApi, Span<uint> arg0, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, void*** arg2)
+        public static unsafe byte* HBITMAPUserMarshal(this WindowsCodecs thisApi, Span<uint> arg0, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, IntPtr** arg2)
         {
             // SpanOverloader
             return thisApi.HBITMAPUserMarshal(ref arg0.GetPinnableReference(), arg1, arg2);
@@ -1530,7 +1530,7 @@ namespace Silk.NET.WindowsCodecs
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 8995, Column 29 in wincodec.h")]
-        public static unsafe byte* HBITMAPUserMarshal(this WindowsCodecs thisApi, Span<uint> arg0, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, ref void** arg2)
+        public static unsafe byte* HBITMAPUserMarshal(this WindowsCodecs thisApi, Span<uint> arg0, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, ref IntPtr* arg2)
         {
             // SpanOverloader
             return thisApi.HBITMAPUserMarshal(ref arg0.GetPinnableReference(), arg1, ref arg2);
@@ -1538,7 +1538,7 @@ namespace Silk.NET.WindowsCodecs
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 8996, Column 29 in wincodec.h")]
-        public static unsafe byte* HBITMAPUserUnmarshal(this WindowsCodecs thisApi, uint* arg0, Span<byte> arg1, void*** arg2)
+        public static unsafe byte* HBITMAPUserUnmarshal(this WindowsCodecs thisApi, uint* arg0, Span<byte> arg1, IntPtr** arg2)
         {
             // SpanOverloader
             return thisApi.HBITMAPUserUnmarshal(arg0, ref arg1.GetPinnableReference(), arg2);
@@ -1546,7 +1546,7 @@ namespace Silk.NET.WindowsCodecs
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 8996, Column 29 in wincodec.h")]
-        public static unsafe byte* HBITMAPUserUnmarshal(this WindowsCodecs thisApi, uint* arg0, Span<byte> arg1, ref void** arg2)
+        public static unsafe byte* HBITMAPUserUnmarshal(this WindowsCodecs thisApi, uint* arg0, Span<byte> arg1, ref IntPtr* arg2)
         {
             // SpanOverloader
             return thisApi.HBITMAPUserUnmarshal(arg0, ref arg1.GetPinnableReference(), ref arg2);
@@ -1554,7 +1554,7 @@ namespace Silk.NET.WindowsCodecs
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 8996, Column 29 in wincodec.h")]
-        public static unsafe byte* HBITMAPUserUnmarshal(this WindowsCodecs thisApi, Span<uint> arg0, byte* arg1, void*** arg2)
+        public static unsafe byte* HBITMAPUserUnmarshal(this WindowsCodecs thisApi, Span<uint> arg0, byte* arg1, IntPtr** arg2)
         {
             // SpanOverloader
             return thisApi.HBITMAPUserUnmarshal(ref arg0.GetPinnableReference(), arg1, arg2);
@@ -1562,7 +1562,7 @@ namespace Silk.NET.WindowsCodecs
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 8996, Column 29 in wincodec.h")]
-        public static unsafe byte* HBITMAPUserUnmarshal(this WindowsCodecs thisApi, Span<uint> arg0, byte* arg1, ref void** arg2)
+        public static unsafe byte* HBITMAPUserUnmarshal(this WindowsCodecs thisApi, Span<uint> arg0, byte* arg1, ref IntPtr* arg2)
         {
             // SpanOverloader
             return thisApi.HBITMAPUserUnmarshal(ref arg0.GetPinnableReference(), arg1, ref arg2);
@@ -1570,7 +1570,7 @@ namespace Silk.NET.WindowsCodecs
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 8996, Column 29 in wincodec.h")]
-        public static unsafe byte* HBITMAPUserUnmarshal(this WindowsCodecs thisApi, Span<uint> arg0, Span<byte> arg1, void*** arg2)
+        public static unsafe byte* HBITMAPUserUnmarshal(this WindowsCodecs thisApi, Span<uint> arg0, Span<byte> arg1, IntPtr** arg2)
         {
             // SpanOverloader
             return thisApi.HBITMAPUserUnmarshal(ref arg0.GetPinnableReference(), ref arg1.GetPinnableReference(), arg2);
@@ -1578,7 +1578,7 @@ namespace Silk.NET.WindowsCodecs
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 8996, Column 29 in wincodec.h")]
-        public static unsafe byte* HBITMAPUserUnmarshal(this WindowsCodecs thisApi, Span<uint> arg0, Span<byte> arg1, ref void** arg2)
+        public static unsafe byte* HBITMAPUserUnmarshal(this WindowsCodecs thisApi, Span<uint> arg0, Span<byte> arg1, ref IntPtr* arg2)
         {
             // SpanOverloader
             return thisApi.HBITMAPUserUnmarshal(ref arg0.GetPinnableReference(), ref arg1.GetPinnableReference(), ref arg2);
@@ -1586,7 +1586,7 @@ namespace Silk.NET.WindowsCodecs
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 8996, Column 29 in wincodec.h")]
-        public static unsafe byte* HBITMAPUserUnmarshal(this WindowsCodecs thisApi, Span<uint> arg0, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, void*** arg2)
+        public static unsafe byte* HBITMAPUserUnmarshal(this WindowsCodecs thisApi, Span<uint> arg0, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, IntPtr** arg2)
         {
             // SpanOverloader
             return thisApi.HBITMAPUserUnmarshal(ref arg0.GetPinnableReference(), arg1, arg2);
@@ -1594,7 +1594,7 @@ namespace Silk.NET.WindowsCodecs
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 8996, Column 29 in wincodec.h")]
-        public static unsafe byte* HBITMAPUserUnmarshal(this WindowsCodecs thisApi, Span<uint> arg0, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, ref void** arg2)
+        public static unsafe byte* HBITMAPUserUnmarshal(this WindowsCodecs thisApi, Span<uint> arg0, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, ref IntPtr* arg2)
         {
             // SpanOverloader
             return thisApi.HBITMAPUserUnmarshal(ref arg0.GetPinnableReference(), arg1, ref arg2);
@@ -1602,7 +1602,7 @@ namespace Silk.NET.WindowsCodecs
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 8997, Column 39 in wincodec.h")]
-        public static unsafe void HBITMAPUserFree(this WindowsCodecs thisApi, Span<uint> arg0, void*** arg1)
+        public static unsafe void HBITMAPUserFree(this WindowsCodecs thisApi, Span<uint> arg0, IntPtr** arg1)
         {
             // SpanOverloader
             thisApi.HBITMAPUserFree(ref arg0.GetPinnableReference(), arg1);
@@ -1610,7 +1610,7 @@ namespace Silk.NET.WindowsCodecs
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 8997, Column 39 in wincodec.h")]
-        public static unsafe void HBITMAPUserFree(this WindowsCodecs thisApi, Span<uint> arg0, ref void** arg1)
+        public static unsafe void HBITMAPUserFree(this WindowsCodecs thisApi, Span<uint> arg0, ref IntPtr* arg1)
         {
             // SpanOverloader
             thisApi.HBITMAPUserFree(ref arg0.GetPinnableReference(), ref arg1);
@@ -1618,7 +1618,7 @@ namespace Silk.NET.WindowsCodecs
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 8999, Column 39 in wincodec.h")]
-        public static unsafe uint HICONUserSize(this WindowsCodecs thisApi, Span<uint> arg0, uint arg1, void*** arg2)
+        public static unsafe uint HICONUserSize(this WindowsCodecs thisApi, Span<uint> arg0, uint arg1, IntPtr** arg2)
         {
             // SpanOverloader
             return thisApi.HICONUserSize(ref arg0.GetPinnableReference(), arg1, arg2);
@@ -1626,7 +1626,7 @@ namespace Silk.NET.WindowsCodecs
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 8999, Column 39 in wincodec.h")]
-        public static unsafe uint HICONUserSize(this WindowsCodecs thisApi, Span<uint> arg0, uint arg1, ref void** arg2)
+        public static unsafe uint HICONUserSize(this WindowsCodecs thisApi, Span<uint> arg0, uint arg1, ref IntPtr* arg2)
         {
             // SpanOverloader
             return thisApi.HICONUserSize(ref arg0.GetPinnableReference(), arg1, ref arg2);
@@ -1634,7 +1634,7 @@ namespace Silk.NET.WindowsCodecs
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 9000, Column 29 in wincodec.h")]
-        public static unsafe byte* HICONUserMarshal(this WindowsCodecs thisApi, uint* arg0, Span<byte> arg1, void*** arg2)
+        public static unsafe byte* HICONUserMarshal(this WindowsCodecs thisApi, uint* arg0, Span<byte> arg1, IntPtr** arg2)
         {
             // SpanOverloader
             return thisApi.HICONUserMarshal(arg0, ref arg1.GetPinnableReference(), arg2);
@@ -1642,7 +1642,7 @@ namespace Silk.NET.WindowsCodecs
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 9000, Column 29 in wincodec.h")]
-        public static unsafe byte* HICONUserMarshal(this WindowsCodecs thisApi, uint* arg0, Span<byte> arg1, ref void** arg2)
+        public static unsafe byte* HICONUserMarshal(this WindowsCodecs thisApi, uint* arg0, Span<byte> arg1, ref IntPtr* arg2)
         {
             // SpanOverloader
             return thisApi.HICONUserMarshal(arg0, ref arg1.GetPinnableReference(), ref arg2);
@@ -1650,7 +1650,7 @@ namespace Silk.NET.WindowsCodecs
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 9000, Column 29 in wincodec.h")]
-        public static unsafe byte* HICONUserMarshal(this WindowsCodecs thisApi, Span<uint> arg0, byte* arg1, void*** arg2)
+        public static unsafe byte* HICONUserMarshal(this WindowsCodecs thisApi, Span<uint> arg0, byte* arg1, IntPtr** arg2)
         {
             // SpanOverloader
             return thisApi.HICONUserMarshal(ref arg0.GetPinnableReference(), arg1, arg2);
@@ -1658,7 +1658,7 @@ namespace Silk.NET.WindowsCodecs
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 9000, Column 29 in wincodec.h")]
-        public static unsafe byte* HICONUserMarshal(this WindowsCodecs thisApi, Span<uint> arg0, byte* arg1, ref void** arg2)
+        public static unsafe byte* HICONUserMarshal(this WindowsCodecs thisApi, Span<uint> arg0, byte* arg1, ref IntPtr* arg2)
         {
             // SpanOverloader
             return thisApi.HICONUserMarshal(ref arg0.GetPinnableReference(), arg1, ref arg2);
@@ -1666,7 +1666,7 @@ namespace Silk.NET.WindowsCodecs
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 9000, Column 29 in wincodec.h")]
-        public static unsafe byte* HICONUserMarshal(this WindowsCodecs thisApi, Span<uint> arg0, Span<byte> arg1, void*** arg2)
+        public static unsafe byte* HICONUserMarshal(this WindowsCodecs thisApi, Span<uint> arg0, Span<byte> arg1, IntPtr** arg2)
         {
             // SpanOverloader
             return thisApi.HICONUserMarshal(ref arg0.GetPinnableReference(), ref arg1.GetPinnableReference(), arg2);
@@ -1674,7 +1674,7 @@ namespace Silk.NET.WindowsCodecs
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 9000, Column 29 in wincodec.h")]
-        public static unsafe byte* HICONUserMarshal(this WindowsCodecs thisApi, Span<uint> arg0, Span<byte> arg1, ref void** arg2)
+        public static unsafe byte* HICONUserMarshal(this WindowsCodecs thisApi, Span<uint> arg0, Span<byte> arg1, ref IntPtr* arg2)
         {
             // SpanOverloader
             return thisApi.HICONUserMarshal(ref arg0.GetPinnableReference(), ref arg1.GetPinnableReference(), ref arg2);
@@ -1682,7 +1682,7 @@ namespace Silk.NET.WindowsCodecs
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 9000, Column 29 in wincodec.h")]
-        public static unsafe byte* HICONUserMarshal(this WindowsCodecs thisApi, Span<uint> arg0, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, void*** arg2)
+        public static unsafe byte* HICONUserMarshal(this WindowsCodecs thisApi, Span<uint> arg0, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, IntPtr** arg2)
         {
             // SpanOverloader
             return thisApi.HICONUserMarshal(ref arg0.GetPinnableReference(), arg1, arg2);
@@ -1690,7 +1690,7 @@ namespace Silk.NET.WindowsCodecs
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 9000, Column 29 in wincodec.h")]
-        public static unsafe byte* HICONUserMarshal(this WindowsCodecs thisApi, Span<uint> arg0, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, ref void** arg2)
+        public static unsafe byte* HICONUserMarshal(this WindowsCodecs thisApi, Span<uint> arg0, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, ref IntPtr* arg2)
         {
             // SpanOverloader
             return thisApi.HICONUserMarshal(ref arg0.GetPinnableReference(), arg1, ref arg2);
@@ -1698,7 +1698,7 @@ namespace Silk.NET.WindowsCodecs
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 9001, Column 29 in wincodec.h")]
-        public static unsafe byte* HICONUserUnmarshal(this WindowsCodecs thisApi, uint* arg0, Span<byte> arg1, void*** arg2)
+        public static unsafe byte* HICONUserUnmarshal(this WindowsCodecs thisApi, uint* arg0, Span<byte> arg1, IntPtr** arg2)
         {
             // SpanOverloader
             return thisApi.HICONUserUnmarshal(arg0, ref arg1.GetPinnableReference(), arg2);
@@ -1706,7 +1706,7 @@ namespace Silk.NET.WindowsCodecs
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 9001, Column 29 in wincodec.h")]
-        public static unsafe byte* HICONUserUnmarshal(this WindowsCodecs thisApi, uint* arg0, Span<byte> arg1, ref void** arg2)
+        public static unsafe byte* HICONUserUnmarshal(this WindowsCodecs thisApi, uint* arg0, Span<byte> arg1, ref IntPtr* arg2)
         {
             // SpanOverloader
             return thisApi.HICONUserUnmarshal(arg0, ref arg1.GetPinnableReference(), ref arg2);
@@ -1714,7 +1714,7 @@ namespace Silk.NET.WindowsCodecs
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 9001, Column 29 in wincodec.h")]
-        public static unsafe byte* HICONUserUnmarshal(this WindowsCodecs thisApi, Span<uint> arg0, byte* arg1, void*** arg2)
+        public static unsafe byte* HICONUserUnmarshal(this WindowsCodecs thisApi, Span<uint> arg0, byte* arg1, IntPtr** arg2)
         {
             // SpanOverloader
             return thisApi.HICONUserUnmarshal(ref arg0.GetPinnableReference(), arg1, arg2);
@@ -1722,7 +1722,7 @@ namespace Silk.NET.WindowsCodecs
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 9001, Column 29 in wincodec.h")]
-        public static unsafe byte* HICONUserUnmarshal(this WindowsCodecs thisApi, Span<uint> arg0, byte* arg1, ref void** arg2)
+        public static unsafe byte* HICONUserUnmarshal(this WindowsCodecs thisApi, Span<uint> arg0, byte* arg1, ref IntPtr* arg2)
         {
             // SpanOverloader
             return thisApi.HICONUserUnmarshal(ref arg0.GetPinnableReference(), arg1, ref arg2);
@@ -1730,7 +1730,7 @@ namespace Silk.NET.WindowsCodecs
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 9001, Column 29 in wincodec.h")]
-        public static unsafe byte* HICONUserUnmarshal(this WindowsCodecs thisApi, Span<uint> arg0, Span<byte> arg1, void*** arg2)
+        public static unsafe byte* HICONUserUnmarshal(this WindowsCodecs thisApi, Span<uint> arg0, Span<byte> arg1, IntPtr** arg2)
         {
             // SpanOverloader
             return thisApi.HICONUserUnmarshal(ref arg0.GetPinnableReference(), ref arg1.GetPinnableReference(), arg2);
@@ -1738,7 +1738,7 @@ namespace Silk.NET.WindowsCodecs
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 9001, Column 29 in wincodec.h")]
-        public static unsafe byte* HICONUserUnmarshal(this WindowsCodecs thisApi, Span<uint> arg0, Span<byte> arg1, ref void** arg2)
+        public static unsafe byte* HICONUserUnmarshal(this WindowsCodecs thisApi, Span<uint> arg0, Span<byte> arg1, ref IntPtr* arg2)
         {
             // SpanOverloader
             return thisApi.HICONUserUnmarshal(ref arg0.GetPinnableReference(), ref arg1.GetPinnableReference(), ref arg2);
@@ -1746,7 +1746,7 @@ namespace Silk.NET.WindowsCodecs
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 9001, Column 29 in wincodec.h")]
-        public static unsafe byte* HICONUserUnmarshal(this WindowsCodecs thisApi, Span<uint> arg0, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, void*** arg2)
+        public static unsafe byte* HICONUserUnmarshal(this WindowsCodecs thisApi, Span<uint> arg0, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, IntPtr** arg2)
         {
             // SpanOverloader
             return thisApi.HICONUserUnmarshal(ref arg0.GetPinnableReference(), arg1, arg2);
@@ -1754,7 +1754,7 @@ namespace Silk.NET.WindowsCodecs
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 9001, Column 29 in wincodec.h")]
-        public static unsafe byte* HICONUserUnmarshal(this WindowsCodecs thisApi, Span<uint> arg0, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, ref void** arg2)
+        public static unsafe byte* HICONUserUnmarshal(this WindowsCodecs thisApi, Span<uint> arg0, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, ref IntPtr* arg2)
         {
             // SpanOverloader
             return thisApi.HICONUserUnmarshal(ref arg0.GetPinnableReference(), arg1, ref arg2);
@@ -1762,7 +1762,7 @@ namespace Silk.NET.WindowsCodecs
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 9002, Column 39 in wincodec.h")]
-        public static unsafe void HICONUserFree(this WindowsCodecs thisApi, Span<uint> arg0, void*** arg1)
+        public static unsafe void HICONUserFree(this WindowsCodecs thisApi, Span<uint> arg0, IntPtr** arg1)
         {
             // SpanOverloader
             thisApi.HICONUserFree(ref arg0.GetPinnableReference(), arg1);
@@ -1770,7 +1770,7 @@ namespace Silk.NET.WindowsCodecs
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 9002, Column 39 in wincodec.h")]
-        public static unsafe void HICONUserFree(this WindowsCodecs thisApi, Span<uint> arg0, ref void** arg1)
+        public static unsafe void HICONUserFree(this WindowsCodecs thisApi, Span<uint> arg0, ref IntPtr* arg1)
         {
             // SpanOverloader
             thisApi.HICONUserFree(ref arg0.GetPinnableReference(), ref arg1);
@@ -1778,7 +1778,7 @@ namespace Silk.NET.WindowsCodecs
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 9004, Column 39 in wincodec.h")]
-        public static unsafe uint HPALETTEUserSize(this WindowsCodecs thisApi, Span<uint> arg0, uint arg1, void*** arg2)
+        public static unsafe uint HPALETTEUserSize(this WindowsCodecs thisApi, Span<uint> arg0, uint arg1, IntPtr** arg2)
         {
             // SpanOverloader
             return thisApi.HPALETTEUserSize(ref arg0.GetPinnableReference(), arg1, arg2);
@@ -1786,7 +1786,7 @@ namespace Silk.NET.WindowsCodecs
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 9004, Column 39 in wincodec.h")]
-        public static unsafe uint HPALETTEUserSize(this WindowsCodecs thisApi, Span<uint> arg0, uint arg1, ref void** arg2)
+        public static unsafe uint HPALETTEUserSize(this WindowsCodecs thisApi, Span<uint> arg0, uint arg1, ref IntPtr* arg2)
         {
             // SpanOverloader
             return thisApi.HPALETTEUserSize(ref arg0.GetPinnableReference(), arg1, ref arg2);
@@ -1794,7 +1794,7 @@ namespace Silk.NET.WindowsCodecs
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 9005, Column 29 in wincodec.h")]
-        public static unsafe byte* HPALETTEUserMarshal(this WindowsCodecs thisApi, uint* arg0, Span<byte> arg1, void*** arg2)
+        public static unsafe byte* HPALETTEUserMarshal(this WindowsCodecs thisApi, uint* arg0, Span<byte> arg1, IntPtr** arg2)
         {
             // SpanOverloader
             return thisApi.HPALETTEUserMarshal(arg0, ref arg1.GetPinnableReference(), arg2);
@@ -1802,7 +1802,7 @@ namespace Silk.NET.WindowsCodecs
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 9005, Column 29 in wincodec.h")]
-        public static unsafe byte* HPALETTEUserMarshal(this WindowsCodecs thisApi, uint* arg0, Span<byte> arg1, ref void** arg2)
+        public static unsafe byte* HPALETTEUserMarshal(this WindowsCodecs thisApi, uint* arg0, Span<byte> arg1, ref IntPtr* arg2)
         {
             // SpanOverloader
             return thisApi.HPALETTEUserMarshal(arg0, ref arg1.GetPinnableReference(), ref arg2);
@@ -1810,7 +1810,7 @@ namespace Silk.NET.WindowsCodecs
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 9005, Column 29 in wincodec.h")]
-        public static unsafe byte* HPALETTEUserMarshal(this WindowsCodecs thisApi, Span<uint> arg0, byte* arg1, void*** arg2)
+        public static unsafe byte* HPALETTEUserMarshal(this WindowsCodecs thisApi, Span<uint> arg0, byte* arg1, IntPtr** arg2)
         {
             // SpanOverloader
             return thisApi.HPALETTEUserMarshal(ref arg0.GetPinnableReference(), arg1, arg2);
@@ -1818,7 +1818,7 @@ namespace Silk.NET.WindowsCodecs
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 9005, Column 29 in wincodec.h")]
-        public static unsafe byte* HPALETTEUserMarshal(this WindowsCodecs thisApi, Span<uint> arg0, byte* arg1, ref void** arg2)
+        public static unsafe byte* HPALETTEUserMarshal(this WindowsCodecs thisApi, Span<uint> arg0, byte* arg1, ref IntPtr* arg2)
         {
             // SpanOverloader
             return thisApi.HPALETTEUserMarshal(ref arg0.GetPinnableReference(), arg1, ref arg2);
@@ -1826,7 +1826,7 @@ namespace Silk.NET.WindowsCodecs
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 9005, Column 29 in wincodec.h")]
-        public static unsafe byte* HPALETTEUserMarshal(this WindowsCodecs thisApi, Span<uint> arg0, Span<byte> arg1, void*** arg2)
+        public static unsafe byte* HPALETTEUserMarshal(this WindowsCodecs thisApi, Span<uint> arg0, Span<byte> arg1, IntPtr** arg2)
         {
             // SpanOverloader
             return thisApi.HPALETTEUserMarshal(ref arg0.GetPinnableReference(), ref arg1.GetPinnableReference(), arg2);
@@ -1834,7 +1834,7 @@ namespace Silk.NET.WindowsCodecs
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 9005, Column 29 in wincodec.h")]
-        public static unsafe byte* HPALETTEUserMarshal(this WindowsCodecs thisApi, Span<uint> arg0, Span<byte> arg1, ref void** arg2)
+        public static unsafe byte* HPALETTEUserMarshal(this WindowsCodecs thisApi, Span<uint> arg0, Span<byte> arg1, ref IntPtr* arg2)
         {
             // SpanOverloader
             return thisApi.HPALETTEUserMarshal(ref arg0.GetPinnableReference(), ref arg1.GetPinnableReference(), ref arg2);
@@ -1842,7 +1842,7 @@ namespace Silk.NET.WindowsCodecs
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 9005, Column 29 in wincodec.h")]
-        public static unsafe byte* HPALETTEUserMarshal(this WindowsCodecs thisApi, Span<uint> arg0, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, void*** arg2)
+        public static unsafe byte* HPALETTEUserMarshal(this WindowsCodecs thisApi, Span<uint> arg0, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, IntPtr** arg2)
         {
             // SpanOverloader
             return thisApi.HPALETTEUserMarshal(ref arg0.GetPinnableReference(), arg1, arg2);
@@ -1850,7 +1850,7 @@ namespace Silk.NET.WindowsCodecs
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 9005, Column 29 in wincodec.h")]
-        public static unsafe byte* HPALETTEUserMarshal(this WindowsCodecs thisApi, Span<uint> arg0, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, ref void** arg2)
+        public static unsafe byte* HPALETTEUserMarshal(this WindowsCodecs thisApi, Span<uint> arg0, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, ref IntPtr* arg2)
         {
             // SpanOverloader
             return thisApi.HPALETTEUserMarshal(ref arg0.GetPinnableReference(), arg1, ref arg2);
@@ -1858,7 +1858,7 @@ namespace Silk.NET.WindowsCodecs
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 9006, Column 29 in wincodec.h")]
-        public static unsafe byte* HPALETTEUserUnmarshal(this WindowsCodecs thisApi, uint* arg0, Span<byte> arg1, void*** arg2)
+        public static unsafe byte* HPALETTEUserUnmarshal(this WindowsCodecs thisApi, uint* arg0, Span<byte> arg1, IntPtr** arg2)
         {
             // SpanOverloader
             return thisApi.HPALETTEUserUnmarshal(arg0, ref arg1.GetPinnableReference(), arg2);
@@ -1866,7 +1866,7 @@ namespace Silk.NET.WindowsCodecs
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 9006, Column 29 in wincodec.h")]
-        public static unsafe byte* HPALETTEUserUnmarshal(this WindowsCodecs thisApi, uint* arg0, Span<byte> arg1, ref void** arg2)
+        public static unsafe byte* HPALETTEUserUnmarshal(this WindowsCodecs thisApi, uint* arg0, Span<byte> arg1, ref IntPtr* arg2)
         {
             // SpanOverloader
             return thisApi.HPALETTEUserUnmarshal(arg0, ref arg1.GetPinnableReference(), ref arg2);
@@ -1874,7 +1874,7 @@ namespace Silk.NET.WindowsCodecs
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 9006, Column 29 in wincodec.h")]
-        public static unsafe byte* HPALETTEUserUnmarshal(this WindowsCodecs thisApi, Span<uint> arg0, byte* arg1, void*** arg2)
+        public static unsafe byte* HPALETTEUserUnmarshal(this WindowsCodecs thisApi, Span<uint> arg0, byte* arg1, IntPtr** arg2)
         {
             // SpanOverloader
             return thisApi.HPALETTEUserUnmarshal(ref arg0.GetPinnableReference(), arg1, arg2);
@@ -1882,7 +1882,7 @@ namespace Silk.NET.WindowsCodecs
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 9006, Column 29 in wincodec.h")]
-        public static unsafe byte* HPALETTEUserUnmarshal(this WindowsCodecs thisApi, Span<uint> arg0, byte* arg1, ref void** arg2)
+        public static unsafe byte* HPALETTEUserUnmarshal(this WindowsCodecs thisApi, Span<uint> arg0, byte* arg1, ref IntPtr* arg2)
         {
             // SpanOverloader
             return thisApi.HPALETTEUserUnmarshal(ref arg0.GetPinnableReference(), arg1, ref arg2);
@@ -1890,7 +1890,7 @@ namespace Silk.NET.WindowsCodecs
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 9006, Column 29 in wincodec.h")]
-        public static unsafe byte* HPALETTEUserUnmarshal(this WindowsCodecs thisApi, Span<uint> arg0, Span<byte> arg1, void*** arg2)
+        public static unsafe byte* HPALETTEUserUnmarshal(this WindowsCodecs thisApi, Span<uint> arg0, Span<byte> arg1, IntPtr** arg2)
         {
             // SpanOverloader
             return thisApi.HPALETTEUserUnmarshal(ref arg0.GetPinnableReference(), ref arg1.GetPinnableReference(), arg2);
@@ -1898,7 +1898,7 @@ namespace Silk.NET.WindowsCodecs
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 9006, Column 29 in wincodec.h")]
-        public static unsafe byte* HPALETTEUserUnmarshal(this WindowsCodecs thisApi, Span<uint> arg0, Span<byte> arg1, ref void** arg2)
+        public static unsafe byte* HPALETTEUserUnmarshal(this WindowsCodecs thisApi, Span<uint> arg0, Span<byte> arg1, ref IntPtr* arg2)
         {
             // SpanOverloader
             return thisApi.HPALETTEUserUnmarshal(ref arg0.GetPinnableReference(), ref arg1.GetPinnableReference(), ref arg2);
@@ -1906,7 +1906,7 @@ namespace Silk.NET.WindowsCodecs
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 9006, Column 29 in wincodec.h")]
-        public static unsafe byte* HPALETTEUserUnmarshal(this WindowsCodecs thisApi, Span<uint> arg0, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, void*** arg2)
+        public static unsafe byte* HPALETTEUserUnmarshal(this WindowsCodecs thisApi, Span<uint> arg0, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, IntPtr** arg2)
         {
             // SpanOverloader
             return thisApi.HPALETTEUserUnmarshal(ref arg0.GetPinnableReference(), arg1, arg2);
@@ -1914,7 +1914,7 @@ namespace Silk.NET.WindowsCodecs
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 9006, Column 29 in wincodec.h")]
-        public static unsafe byte* HPALETTEUserUnmarshal(this WindowsCodecs thisApi, Span<uint> arg0, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, ref void** arg2)
+        public static unsafe byte* HPALETTEUserUnmarshal(this WindowsCodecs thisApi, Span<uint> arg0, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, ref IntPtr* arg2)
         {
             // SpanOverloader
             return thisApi.HPALETTEUserUnmarshal(ref arg0.GetPinnableReference(), arg1, ref arg2);
@@ -1922,7 +1922,7 @@ namespace Silk.NET.WindowsCodecs
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 9007, Column 39 in wincodec.h")]
-        public static unsafe void HPALETTEUserFree(this WindowsCodecs thisApi, Span<uint> arg0, void*** arg1)
+        public static unsafe void HPALETTEUserFree(this WindowsCodecs thisApi, Span<uint> arg0, IntPtr** arg1)
         {
             // SpanOverloader
             thisApi.HPALETTEUserFree(ref arg0.GetPinnableReference(), arg1);
@@ -1930,7 +1930,7 @@ namespace Silk.NET.WindowsCodecs
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 9007, Column 39 in wincodec.h")]
-        public static unsafe void HPALETTEUserFree(this WindowsCodecs thisApi, Span<uint> arg0, ref void** arg1)
+        public static unsafe void HPALETTEUserFree(this WindowsCodecs thisApi, Span<uint> arg0, ref IntPtr* arg1)
         {
             // SpanOverloader
             thisApi.HPALETTEUserFree(ref arg0.GetPinnableReference(), ref arg1);
