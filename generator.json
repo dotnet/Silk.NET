@@ -1219,7 +1219,6 @@
                 "IOleControlSite",
                 "IOleInPlaceObjectWindowless",
                 "IDummyHICONIncluder",
-                "IMessageFilter",
                 "tagVARIANT",
                 "tagVARIANTUnion",
                 "tagVARIANTUnionUnion",
@@ -1470,7 +1469,8 @@
                     "HICON__": "IntPtr",
                     "HFONT__": "IntPtr",
                     "HRGN__": "IntPtr",
-                    "HACCEL__": "IntPtr"
+                    "HACCEL__": "IntPtr",
+                    "HTASK__": "IntPtr"
                 },
                 {
                     "$include.dxTypemap": "build/dx_typemap.json",
