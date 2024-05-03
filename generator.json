@@ -2027,9 +2027,9 @@
                     "tagSTATSTG": "Silk.NET.Core.Win32Extras.STATSTG",
                     "tagPROPVARIANT": "Silk.NET.Core.Win32Extras.PropVariant",
                     "tagPROPBAG2": "Silk.NET.Core.Win32Extras.PropBag2",
-                    "HPALETTE__": "IntPtr",
-                    "HBITMAP__": "IntPtr",
-                    "HICON__": "IntPtr",
+                    "HPALETTE__": "void",
+                    "HBITMAP__": "void",
+                    "HICON__": "void",
                     "WICRect": "Silk.NET.Maths.Rectangle<int>"
                 },
                 {

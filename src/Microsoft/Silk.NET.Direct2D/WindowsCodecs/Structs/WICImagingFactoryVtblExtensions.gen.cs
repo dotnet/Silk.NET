@@ -1145,107 +1145,107 @@ public unsafe static class WICImagingFactoryVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateBitmapFromHBITMAP(this ComPtr<IWICImagingFactory> thisVtbl, IntPtr* hBitmap, IntPtr* hPalette, BitmapAlphaChannelOption options, IWICBitmap** ppIBitmap)
+    public static unsafe int CreateBitmapFromHBITMAP(this ComPtr<IWICImagingFactory> thisVtbl, void* hBitmap, void* hPalette, BitmapAlphaChannelOption options, IWICBitmap** ppIBitmap)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
-        ret = ((delegate* unmanaged[Stdcall]<IWICImagingFactory*, IntPtr*, IntPtr*, BitmapAlphaChannelOption, IWICBitmap**, int>)@this->LpVtbl[21])(@this, hBitmap, hPalette, options, ppIBitmap);
+        ret = ((delegate* unmanaged[Stdcall]<IWICImagingFactory*, void*, void*, BitmapAlphaChannelOption, IWICBitmap**, int>)@this->LpVtbl[21])(@this, hBitmap, hPalette, options, ppIBitmap);
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateBitmapFromHBITMAP(this ComPtr<IWICImagingFactory> thisVtbl, IntPtr* hBitmap, IntPtr* hPalette, BitmapAlphaChannelOption options, ref IWICBitmap* ppIBitmap)
+    public static unsafe int CreateBitmapFromHBITMAP(this ComPtr<IWICImagingFactory> thisVtbl, void* hBitmap, void* hPalette, BitmapAlphaChannelOption options, ref IWICBitmap* ppIBitmap)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
         fixed (IWICBitmap** ppIBitmapPtr = &ppIBitmap)
         {
-            ret = ((delegate* unmanaged[Stdcall]<IWICImagingFactory*, IntPtr*, IntPtr*, BitmapAlphaChannelOption, IWICBitmap**, int>)@this->LpVtbl[21])(@this, hBitmap, hPalette, options, ppIBitmapPtr);
+            ret = ((delegate* unmanaged[Stdcall]<IWICImagingFactory*, void*, void*, BitmapAlphaChannelOption, IWICBitmap**, int>)@this->LpVtbl[21])(@this, hBitmap, hPalette, options, ppIBitmapPtr);
         }
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateBitmapFromHBITMAP(this ComPtr<IWICImagingFactory> thisVtbl, IntPtr* hBitmap, ref IntPtr hPalette, BitmapAlphaChannelOption options, IWICBitmap** ppIBitmap)
+    public static unsafe int CreateBitmapFromHBITMAP<T0>(this ComPtr<IWICImagingFactory> thisVtbl, void* hBitmap, ref T0 hPalette, BitmapAlphaChannelOption options, IWICBitmap** ppIBitmap) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         int ret = default;
-        fixed (IntPtr* hPalettePtr = &hPalette)
+        fixed (void* hPalettePtr = &hPalette)
         {
-            ret = ((delegate* unmanaged[Stdcall]<IWICImagingFactory*, IntPtr*, IntPtr*, BitmapAlphaChannelOption, IWICBitmap**, int>)@this->LpVtbl[21])(@this, hBitmap, hPalettePtr, options, ppIBitmap);
+            ret = ((delegate* unmanaged[Stdcall]<IWICImagingFactory*, void*, void*, BitmapAlphaChannelOption, IWICBitmap**, int>)@this->LpVtbl[21])(@this, hBitmap, hPalettePtr, options, ppIBitmap);
         }
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateBitmapFromHBITMAP(this ComPtr<IWICImagingFactory> thisVtbl, IntPtr* hBitmap, ref IntPtr hPalette, BitmapAlphaChannelOption options, ref IWICBitmap* ppIBitmap)
+    public static unsafe int CreateBitmapFromHBITMAP<T0>(this ComPtr<IWICImagingFactory> thisVtbl, void* hBitmap, ref T0 hPalette, BitmapAlphaChannelOption options, ref IWICBitmap* ppIBitmap) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         int ret = default;
-        fixed (IntPtr* hPalettePtr = &hPalette)
-        {
-            fixed (IWICBitmap** ppIBitmapPtr = &ppIBitmap)
-            {
-                ret = ((delegate* unmanaged[Stdcall]<IWICImagingFactory*, IntPtr*, IntPtr*, BitmapAlphaChannelOption, IWICBitmap**, int>)@this->LpVtbl[21])(@this, hBitmap, hPalettePtr, options, ppIBitmapPtr);
-            }
-        }
-        return ret;
-    }
-
-    /// <summary>To be documented.</summary>
-    public static unsafe int CreateBitmapFromHBITMAP(this ComPtr<IWICImagingFactory> thisVtbl, ref IntPtr hBitmap, IntPtr* hPalette, BitmapAlphaChannelOption options, IWICBitmap** ppIBitmap)
-    {
-        var @this = thisVtbl.Handle;
-        int ret = default;
-        fixed (IntPtr* hBitmapPtr = &hBitmap)
-        {
-            ret = ((delegate* unmanaged[Stdcall]<IWICImagingFactory*, IntPtr*, IntPtr*, BitmapAlphaChannelOption, IWICBitmap**, int>)@this->LpVtbl[21])(@this, hBitmapPtr, hPalette, options, ppIBitmap);
-        }
-        return ret;
-    }
-
-    /// <summary>To be documented.</summary>
-    public static unsafe int CreateBitmapFromHBITMAP(this ComPtr<IWICImagingFactory> thisVtbl, ref IntPtr hBitmap, IntPtr* hPalette, BitmapAlphaChannelOption options, ref IWICBitmap* ppIBitmap)
-    {
-        var @this = thisVtbl.Handle;
-        int ret = default;
-        fixed (IntPtr* hBitmapPtr = &hBitmap)
+        fixed (void* hPalettePtr = &hPalette)
         {
             fixed (IWICBitmap** ppIBitmapPtr = &ppIBitmap)
             {
-                ret = ((delegate* unmanaged[Stdcall]<IWICImagingFactory*, IntPtr*, IntPtr*, BitmapAlphaChannelOption, IWICBitmap**, int>)@this->LpVtbl[21])(@this, hBitmapPtr, hPalette, options, ppIBitmapPtr);
+                ret = ((delegate* unmanaged[Stdcall]<IWICImagingFactory*, void*, void*, BitmapAlphaChannelOption, IWICBitmap**, int>)@this->LpVtbl[21])(@this, hBitmap, hPalettePtr, options, ppIBitmapPtr);
             }
         }
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateBitmapFromHBITMAP(this ComPtr<IWICImagingFactory> thisVtbl, ref IntPtr hBitmap, ref IntPtr hPalette, BitmapAlphaChannelOption options, IWICBitmap** ppIBitmap)
+    public static unsafe int CreateBitmapFromHBITMAP<T0>(this ComPtr<IWICImagingFactory> thisVtbl, ref T0 hBitmap, void* hPalette, BitmapAlphaChannelOption options, IWICBitmap** ppIBitmap) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         int ret = default;
-        fixed (IntPtr* hBitmapPtr = &hBitmap)
+        fixed (void* hBitmapPtr = &hBitmap)
         {
-            fixed (IntPtr* hPalettePtr = &hPalette)
+            ret = ((delegate* unmanaged[Stdcall]<IWICImagingFactory*, void*, void*, BitmapAlphaChannelOption, IWICBitmap**, int>)@this->LpVtbl[21])(@this, hBitmapPtr, hPalette, options, ppIBitmap);
+        }
+        return ret;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateBitmapFromHBITMAP<T0>(this ComPtr<IWICImagingFactory> thisVtbl, ref T0 hBitmap, void* hPalette, BitmapAlphaChannelOption options, ref IWICBitmap* ppIBitmap) where T0 : unmanaged
+    {
+        var @this = thisVtbl.Handle;
+        int ret = default;
+        fixed (void* hBitmapPtr = &hBitmap)
+        {
+            fixed (IWICBitmap** ppIBitmapPtr = &ppIBitmap)
             {
-                ret = ((delegate* unmanaged[Stdcall]<IWICImagingFactory*, IntPtr*, IntPtr*, BitmapAlphaChannelOption, IWICBitmap**, int>)@this->LpVtbl[21])(@this, hBitmapPtr, hPalettePtr, options, ppIBitmap);
+                ret = ((delegate* unmanaged[Stdcall]<IWICImagingFactory*, void*, void*, BitmapAlphaChannelOption, IWICBitmap**, int>)@this->LpVtbl[21])(@this, hBitmapPtr, hPalette, options, ppIBitmapPtr);
             }
         }
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateBitmapFromHBITMAP(this ComPtr<IWICImagingFactory> thisVtbl, ref IntPtr hBitmap, ref IntPtr hPalette, BitmapAlphaChannelOption options, ref IWICBitmap* ppIBitmap)
+    public static unsafe int CreateBitmapFromHBITMAP<T0, T1>(this ComPtr<IWICImagingFactory> thisVtbl, ref T0 hBitmap, ref T1 hPalette, BitmapAlphaChannelOption options, IWICBitmap** ppIBitmap) where T0 : unmanaged where T1 : unmanaged
     {
         var @this = thisVtbl.Handle;
         int ret = default;
-        fixed (IntPtr* hBitmapPtr = &hBitmap)
+        fixed (void* hBitmapPtr = &hBitmap)
         {
-            fixed (IntPtr* hPalettePtr = &hPalette)
+            fixed (void* hPalettePtr = &hPalette)
+            {
+                ret = ((delegate* unmanaged[Stdcall]<IWICImagingFactory*, void*, void*, BitmapAlphaChannelOption, IWICBitmap**, int>)@this->LpVtbl[21])(@this, hBitmapPtr, hPalettePtr, options, ppIBitmap);
+            }
+        }
+        return ret;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateBitmapFromHBITMAP<T0, T1>(this ComPtr<IWICImagingFactory> thisVtbl, ref T0 hBitmap, ref T1 hPalette, BitmapAlphaChannelOption options, ref IWICBitmap* ppIBitmap) where T0 : unmanaged where T1 : unmanaged
+    {
+        var @this = thisVtbl.Handle;
+        int ret = default;
+        fixed (void* hBitmapPtr = &hBitmap)
+        {
+            fixed (void* hPalettePtr = &hPalette)
             {
                 fixed (IWICBitmap** ppIBitmapPtr = &ppIBitmap)
                 {
-                    ret = ((delegate* unmanaged[Stdcall]<IWICImagingFactory*, IntPtr*, IntPtr*, BitmapAlphaChannelOption, IWICBitmap**, int>)@this->LpVtbl[21])(@this, hBitmapPtr, hPalettePtr, options, ppIBitmapPtr);
+                    ret = ((delegate* unmanaged[Stdcall]<IWICImagingFactory*, void*, void*, BitmapAlphaChannelOption, IWICBitmap**, int>)@this->LpVtbl[21])(@this, hBitmapPtr, hPalettePtr, options, ppIBitmapPtr);
                 }
             }
         }
@@ -1253,48 +1253,48 @@ public unsafe static class WICImagingFactoryVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateBitmapFromHICON(this ComPtr<IWICImagingFactory> thisVtbl, IntPtr* hIcon, IWICBitmap** ppIBitmap)
+    public static unsafe int CreateBitmapFromHICON(this ComPtr<IWICImagingFactory> thisVtbl, void* hIcon, IWICBitmap** ppIBitmap)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
-        ret = ((delegate* unmanaged[Stdcall]<IWICImagingFactory*, IntPtr*, IWICBitmap**, int>)@this->LpVtbl[22])(@this, hIcon, ppIBitmap);
+        ret = ((delegate* unmanaged[Stdcall]<IWICImagingFactory*, void*, IWICBitmap**, int>)@this->LpVtbl[22])(@this, hIcon, ppIBitmap);
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateBitmapFromHICON(this ComPtr<IWICImagingFactory> thisVtbl, IntPtr* hIcon, ref IWICBitmap* ppIBitmap)
+    public static unsafe int CreateBitmapFromHICON(this ComPtr<IWICImagingFactory> thisVtbl, void* hIcon, ref IWICBitmap* ppIBitmap)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
         fixed (IWICBitmap** ppIBitmapPtr = &ppIBitmap)
         {
-            ret = ((delegate* unmanaged[Stdcall]<IWICImagingFactory*, IntPtr*, IWICBitmap**, int>)@this->LpVtbl[22])(@this, hIcon, ppIBitmapPtr);
+            ret = ((delegate* unmanaged[Stdcall]<IWICImagingFactory*, void*, IWICBitmap**, int>)@this->LpVtbl[22])(@this, hIcon, ppIBitmapPtr);
         }
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateBitmapFromHICON(this ComPtr<IWICImagingFactory> thisVtbl, ref IntPtr hIcon, IWICBitmap** ppIBitmap)
+    public static unsafe int CreateBitmapFromHICON<T0>(this ComPtr<IWICImagingFactory> thisVtbl, ref T0 hIcon, IWICBitmap** ppIBitmap) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         int ret = default;
-        fixed (IntPtr* hIconPtr = &hIcon)
+        fixed (void* hIconPtr = &hIcon)
         {
-            ret = ((delegate* unmanaged[Stdcall]<IWICImagingFactory*, IntPtr*, IWICBitmap**, int>)@this->LpVtbl[22])(@this, hIconPtr, ppIBitmap);
+            ret = ((delegate* unmanaged[Stdcall]<IWICImagingFactory*, void*, IWICBitmap**, int>)@this->LpVtbl[22])(@this, hIconPtr, ppIBitmap);
         }
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateBitmapFromHICON(this ComPtr<IWICImagingFactory> thisVtbl, ref IntPtr hIcon, ref IWICBitmap* ppIBitmap)
+    public static unsafe int CreateBitmapFromHICON<T0>(this ComPtr<IWICImagingFactory> thisVtbl, ref T0 hIcon, ref IWICBitmap* ppIBitmap) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         int ret = default;
-        fixed (IntPtr* hIconPtr = &hIcon)
+        fixed (void* hIconPtr = &hIcon)
         {
             fixed (IWICBitmap** ppIBitmapPtr = &ppIBitmap)
             {
-                ret = ((delegate* unmanaged[Stdcall]<IWICImagingFactory*, IntPtr*, IWICBitmap**, int>)@this->LpVtbl[22])(@this, hIconPtr, ppIBitmapPtr);
+                ret = ((delegate* unmanaged[Stdcall]<IWICImagingFactory*, void*, IWICBitmap**, int>)@this->LpVtbl[22])(@this, hIconPtr, ppIBitmapPtr);
             }
         }
         return ret;
@@ -2384,7 +2384,7 @@ public unsafe static class WICImagingFactoryVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateBitmapFromHBITMAP<TI0>(this ComPtr<IWICImagingFactory> thisVtbl, IntPtr* hBitmap, IntPtr* hPalette, BitmapAlphaChannelOption options, ref ComPtr<TI0> ppIBitmap) where TI0 : unmanaged, IComVtbl<IWICBitmap>, IComVtbl<TI0>
+    public static unsafe int CreateBitmapFromHBITMAP<TI0>(this ComPtr<IWICImagingFactory> thisVtbl, void* hBitmap, void* hPalette, BitmapAlphaChannelOption options, ref ComPtr<TI0> ppIBitmap) where TI0 : unmanaged, IComVtbl<IWICBitmap>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -2392,7 +2392,7 @@ public unsafe static class WICImagingFactoryVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateBitmapFromHBITMAP(this ComPtr<IWICImagingFactory> thisVtbl, IntPtr* hBitmap, Span<IntPtr> hPalette, BitmapAlphaChannelOption options, IWICBitmap** ppIBitmap)
+    public static unsafe int CreateBitmapFromHBITMAP<T0>(this ComPtr<IWICImagingFactory> thisVtbl, void* hBitmap, Span<T0> hPalette, BitmapAlphaChannelOption options, IWICBitmap** ppIBitmap) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -2400,7 +2400,7 @@ public unsafe static class WICImagingFactoryVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateBitmapFromHBITMAP<TI0>(this ComPtr<IWICImagingFactory> thisVtbl, IntPtr* hBitmap, ref IntPtr hPalette, BitmapAlphaChannelOption options, ref ComPtr<TI0> ppIBitmap) where TI0 : unmanaged, IComVtbl<IWICBitmap>, IComVtbl<TI0>
+    public static unsafe int CreateBitmapFromHBITMAP<T0, TI0>(this ComPtr<IWICImagingFactory> thisVtbl, void* hBitmap, ref T0 hPalette, BitmapAlphaChannelOption options, ref ComPtr<TI0> ppIBitmap) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<IWICBitmap>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -2408,7 +2408,7 @@ public unsafe static class WICImagingFactoryVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateBitmapFromHBITMAP(this ComPtr<IWICImagingFactory> thisVtbl, IntPtr* hBitmap, Span<IntPtr> hPalette, BitmapAlphaChannelOption options, ref IWICBitmap* ppIBitmap)
+    public static unsafe int CreateBitmapFromHBITMAP<T0>(this ComPtr<IWICImagingFactory> thisVtbl, void* hBitmap, Span<T0> hPalette, BitmapAlphaChannelOption options, ref IWICBitmap* ppIBitmap) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -2416,7 +2416,7 @@ public unsafe static class WICImagingFactoryVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateBitmapFromHBITMAP(this ComPtr<IWICImagingFactory> thisVtbl, Span<IntPtr> hBitmap, IntPtr* hPalette, BitmapAlphaChannelOption options, IWICBitmap** ppIBitmap)
+    public static unsafe int CreateBitmapFromHBITMAP<T0>(this ComPtr<IWICImagingFactory> thisVtbl, Span<T0> hBitmap, void* hPalette, BitmapAlphaChannelOption options, IWICBitmap** ppIBitmap) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -2424,7 +2424,7 @@ public unsafe static class WICImagingFactoryVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateBitmapFromHBITMAP<TI0>(this ComPtr<IWICImagingFactory> thisVtbl, ref IntPtr hBitmap, IntPtr* hPalette, BitmapAlphaChannelOption options, ref ComPtr<TI0> ppIBitmap) where TI0 : unmanaged, IComVtbl<IWICBitmap>, IComVtbl<TI0>
+    public static unsafe int CreateBitmapFromHBITMAP<T0, TI0>(this ComPtr<IWICImagingFactory> thisVtbl, ref T0 hBitmap, void* hPalette, BitmapAlphaChannelOption options, ref ComPtr<TI0> ppIBitmap) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<IWICBitmap>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -2432,7 +2432,7 @@ public unsafe static class WICImagingFactoryVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateBitmapFromHBITMAP(this ComPtr<IWICImagingFactory> thisVtbl, Span<IntPtr> hBitmap, IntPtr* hPalette, BitmapAlphaChannelOption options, ref IWICBitmap* ppIBitmap)
+    public static unsafe int CreateBitmapFromHBITMAP<T0>(this ComPtr<IWICImagingFactory> thisVtbl, Span<T0> hBitmap, void* hPalette, BitmapAlphaChannelOption options, ref IWICBitmap* ppIBitmap) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -2440,7 +2440,7 @@ public unsafe static class WICImagingFactoryVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateBitmapFromHBITMAP(this ComPtr<IWICImagingFactory> thisVtbl, Span<IntPtr> hBitmap, Span<IntPtr> hPalette, BitmapAlphaChannelOption options, IWICBitmap** ppIBitmap)
+    public static unsafe int CreateBitmapFromHBITMAP<T0, T1>(this ComPtr<IWICImagingFactory> thisVtbl, Span<T0> hBitmap, Span<T1> hPalette, BitmapAlphaChannelOption options, IWICBitmap** ppIBitmap) where T0 : unmanaged where T1 : unmanaged
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -2448,7 +2448,7 @@ public unsafe static class WICImagingFactoryVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int CreateBitmapFromHBITMAP<TI0>(this ComPtr<IWICImagingFactory> thisVtbl, ref IntPtr hBitmap, ref IntPtr hPalette, BitmapAlphaChannelOption options, ref ComPtr<TI0> ppIBitmap) where TI0 : unmanaged, IComVtbl<IWICBitmap>, IComVtbl<TI0>
+    public static int CreateBitmapFromHBITMAP<T0, T1, TI0>(this ComPtr<IWICImagingFactory> thisVtbl, ref T0 hBitmap, ref T1 hPalette, BitmapAlphaChannelOption options, ref ComPtr<TI0> ppIBitmap) where T0 : unmanaged where T1 : unmanaged where TI0 : unmanaged, IComVtbl<IWICBitmap>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -2456,7 +2456,7 @@ public unsafe static class WICImagingFactoryVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateBitmapFromHBITMAP(this ComPtr<IWICImagingFactory> thisVtbl, Span<IntPtr> hBitmap, Span<IntPtr> hPalette, BitmapAlphaChannelOption options, ref IWICBitmap* ppIBitmap)
+    public static unsafe int CreateBitmapFromHBITMAP<T0, T1>(this ComPtr<IWICImagingFactory> thisVtbl, Span<T0> hBitmap, Span<T1> hPalette, BitmapAlphaChannelOption options, ref IWICBitmap* ppIBitmap) where T0 : unmanaged where T1 : unmanaged
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -2464,7 +2464,7 @@ public unsafe static class WICImagingFactoryVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateBitmapFromHICON<TI0>(this ComPtr<IWICImagingFactory> thisVtbl, IntPtr* hIcon, ref ComPtr<TI0> ppIBitmap) where TI0 : unmanaged, IComVtbl<IWICBitmap>, IComVtbl<TI0>
+    public static unsafe int CreateBitmapFromHICON<TI0>(this ComPtr<IWICImagingFactory> thisVtbl, void* hIcon, ref ComPtr<TI0> ppIBitmap) where TI0 : unmanaged, IComVtbl<IWICBitmap>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -2472,7 +2472,7 @@ public unsafe static class WICImagingFactoryVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateBitmapFromHICON(this ComPtr<IWICImagingFactory> thisVtbl, Span<IntPtr> hIcon, IWICBitmap** ppIBitmap)
+    public static unsafe int CreateBitmapFromHICON<T0>(this ComPtr<IWICImagingFactory> thisVtbl, Span<T0> hIcon, IWICBitmap** ppIBitmap) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -2480,7 +2480,7 @@ public unsafe static class WICImagingFactoryVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int CreateBitmapFromHICON<TI0>(this ComPtr<IWICImagingFactory> thisVtbl, ref IntPtr hIcon, ref ComPtr<TI0> ppIBitmap) where TI0 : unmanaged, IComVtbl<IWICBitmap>, IComVtbl<TI0>
+    public static int CreateBitmapFromHICON<T0, TI0>(this ComPtr<IWICImagingFactory> thisVtbl, ref T0 hIcon, ref ComPtr<TI0> ppIBitmap) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<IWICBitmap>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -2488,7 +2488,7 @@ public unsafe static class WICImagingFactoryVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateBitmapFromHICON(this ComPtr<IWICImagingFactory> thisVtbl, Span<IntPtr> hIcon, ref IWICBitmap* ppIBitmap)
+    public static unsafe int CreateBitmapFromHICON<T0>(this ComPtr<IWICImagingFactory> thisVtbl, Span<T0> hIcon, ref IWICBitmap* ppIBitmap) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
