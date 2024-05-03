@@ -20,6 +20,11 @@ public interface ITransformationContext
     MethodDeclarationSyntax? Original { get; set; }
 
     /// <summary>
+    /// The transformers in use.
+    /// </summary>
+    IFunctionTransformer[]? Transformers { get; set; }
+
+    /// <summary>
     /// Adds a namespace import to the resultant syntax tree.
     /// </summary>
     /// <param name="str">The dot-separated namespace.</param>

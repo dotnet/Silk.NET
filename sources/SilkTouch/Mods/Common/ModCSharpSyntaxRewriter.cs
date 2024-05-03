@@ -119,6 +119,9 @@ public abstract class ModCSharpSyntaxRewriter(bool visitIntoStructuredTrivia = f
     /// <inheritdoc />
     public MethodDeclarationSyntax? Original { get; set; }
 
+    /// <inheritdoc />
+    public IFunctionTransformer[]? Transformers { get; set; }
+
     /// <summary>
     /// Adds a namespace import to the resultant syntax tree.
     /// </summary>

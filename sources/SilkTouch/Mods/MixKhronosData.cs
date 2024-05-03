@@ -17,6 +17,7 @@ using Microsoft.CodeAnalysis.CSharp.Syntax;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 using Silk.NET.SilkTouch.Clang;
+using Silk.NET.SilkTouch.Mods.Metadata;
 using Silk.NET.SilkTouch.Mods.Transformation;
 using Silk.NET.SilkTouch.Naming;
 using static Microsoft.CodeAnalysis.CSharp.SyntaxFactory;
@@ -32,7 +33,7 @@ namespace Silk.NET.SilkTouch.Mods;
 public partial class MixKhronosData(
     ILogger<MixKhronosData> logger,
     IOptionsSnapshot<MixKhronosData.Configuration> cfg
-) : IMod, INameTrimmer, IFunctionTransformer
+) : IMod, INameTrimmer, IFunctionTransformer, IApiMetadataProvider
 {
     internal Dictionary<string, JobData> Jobs = new();
     private static readonly ICulturedStringTransformer _transformer = new NameUtils.NameTransformer(
@@ -101,8 +102,8 @@ public partial class MixKhronosData(
         /// </summary>
         public Dictionary<
             (string ContainingSymbol, string ApplicableSymbol),
-            string
-        > GroupUsages { get; set; } = [];
+            (string? Group, string? Handle, SymbolConstraints? Usage)
+        > Annotations { get; set; } = [];
 
         /// <summary>
         /// A map of native type names to C# type names. This contains the contents of
@@ -1670,7 +1671,10 @@ public partial class MixKhronosData(
             ref bool anyNonTrivialParams
         )
         {
-            if (!job.GroupUsages.TryGetValue((symbolName, paramName), out var group))
+            if (
+                !job.Annotations.TryGetValue((symbolName, paramName), out var annotes)
+                || annotes.Group is not { Length: > 0 } group
+            )
             {
                 return null;
             }
@@ -1768,6 +1772,8 @@ public partial class MixKhronosData(
         {
             return null;
         }
+
+        // TODO validate count
 
         // rewrite the method
         var rw = new TransformArrayParameterRewriter(
@@ -2031,7 +2037,18 @@ public partial class MixKhronosData(
             }
         }
 
-        // Read the group usages from the functions
+        var allHandles = doc.Elements("registry")
+            .Elements("types")
+            .Elements("type")
+            .Where(x => x.Attribute("category")?.Value is "handle")
+            .SelectMany(x =>
+                x.Elements("name")
+                    .Select(y => y.Value)
+                    .Concat(x.Attribute("name")?.Value is { Length: > 0 } alias ? [alias] : [])
+            )
+            .ToHashSet();
+
+        // Read the annotations from the functions
         foreach (var func in doc.Elements("registry").Elements("commands").Elements("command"))
         {
             var funcName = func.Element("proto")?.Element("name")?.Value;
@@ -2043,12 +2060,13 @@ public partial class MixKhronosData(
                 )
                 {
                     // Handle the alias case
-                    foreach (var ((otherFunc, applicable), value) in data.GroupUsages)
+                    foreach (
+                        var ((_, applicable), value) in data
+                            .Annotations.Where(x => x.Key.ContainingSymbol == aliasedFunc)
+                            .ToArray()
+                    )
                     {
-                        if (otherFunc == aliasedFunc)
-                        {
-                            data.GroupUsages[(funcName, applicable)] = value;
-                        }
+                        data.Annotations[(funcName, applicable)] = value;
                     }
 
                     continue;
@@ -2057,28 +2075,74 @@ public partial class MixKhronosData(
                 throw new InvalidDataException("command with no name");
             }
 
-            // Get the return type group attribute
-            if (
-                func.Element("proto")?.Attribute("group")?.Value is { Length: > 0 } retGrp
-                && data.Groups.ContainsKey(retGrp)
-            )
+            void AddData(XElement? element, string applicableSymbol)
             {
-                data.GroupUsages[(funcName, ":return")] = retGrp;
+                // Get the group attribute
+                var grp = element?.Attribute("group")?.Value;
+                var handle =
+                    element?.Attribute("class")?.Value
+                    ?? (
+                        element?.Element("type")?.Value is { Length: > 0 } pty
+                        && allHandles.Contains(pty)
+                            ? pty
+                            : null
+                    );
+                var lenStr =
+                    element?.Attribute("len")?.Value
+                    ?? (element?.Attribute("kind")?.Value is "String" ? "null-terminated" : null);
+                var compSize = lenStr?.StartsWith("COMPSIZE(") ?? false;
+                var len = compSize
+                    ? lenStr!
+                        [9..^1]
+                        .Split(
+                            ',',
+                            StringSplitOptions.TrimEntries | StringSplitOptions.RemoveEmptyEntries
+                        )
+                    : lenStr?.Split(
+                        ',',
+                        StringSplitOptions.TrimEntries | StringSplitOptions.RemoveEmptyEntries
+                    );
+
+                // Get information from the type signature
+                var indirection = element?.Value.AsSpan().GetIndirectionLevels() ?? 0;
+                Span<bool> mutability = stackalloc bool[indirection + 1];
+                var outerCount = 0;
+                element?.Value.AsSpan().GetTypeDetails(mutability, out outerCount);
+                if (
+                    (grp is not null && data.Groups.ContainsKey(grp))
+                    || handle is not null
+                    || len is not null
+                    || outerCount != 0
+                )
+                {
+                    data.Annotations[(funcName, applicableSymbol)] = (
+                        grp,
+                        handle,
+                        MetadataUtils.CreateBasicSymbolConstraints(
+                            len,
+                            mutability,
+                            compSize,
+                            element?.Attribute("optional")?.Value is "true",
+                            outerCount
+                        )
+                    );
+                }
+            }
+
+            // Add the return type annotations
+            if (func.Element("proto") is { } proto)
+            {
+                AddData(proto, ":return");
             }
 
             // Get the parameter group attributes
             foreach (var param in func.Elements("param"))
             {
-                var paramName =
+                AddData(
+                    param,
                     param.Element("name")?.Value
-                    ?? throw new InvalidDataException("param with no name");
-                if (
-                    param.Attribute("group")?.Value is { Length: > 0 } paramGrp
-                    && data.Groups.ContainsKey(paramGrp)
-                )
-                {
-                    data.GroupUsages[(funcName, paramName)] = paramGrp;
-                }
+                        ?? throw new InvalidDataException("param with no name")
+                );
             }
         }
 

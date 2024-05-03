@@ -44,61 +44,63 @@ public class FunctionTransformer(
         var discrims = new HashSet<string>();
 
         // Aggregate all the transformers into one delegate
-        var transform = transformers
-            .SelectMany(x => x.Get(key))
-            .Aggregate<IFunctionTransformer, Action<MethodDeclarationSyntax>>(
-                meth =>
-                {
-                    // Get the discriminator string to determine whether it conflicts. Note that we set the return type
-                    // to null as overloads that differ only by return type aren't acceptable. However, we do need a
-                    // discriminator that does include the return type so we can determine whether the function has gone
-                    // through the transformation pipeline completely unmodified.
-                    var discrim = ModUtils.DiscrimStr(
-                        meth.Modifiers,
-                        meth.TypeParameterList,
-                        meth.Identifier.ToString(),
-                        meth.ParameterList,
-                        returnType: null
-                    );
-                    var discrimWithRet = ModUtils.DiscrimStr(
-                        meth.Modifiers,
-                        meth.TypeParameterList,
-                        meth.Identifier.ToString(),
-                        meth.ParameterList,
-                        meth.ReturnType
-                    );
+        ctx.Transformers = transformers.SelectMany(x => x.Get(key)).ToArray();
+        var transform = ctx.Transformers.Aggregate<
+            IFunctionTransformer,
+            Action<MethodDeclarationSyntax>
+        >(
+            meth =>
+            {
+                // Get the discriminator string to determine whether it conflicts. Note that we set the return type
+                // to null as overloads that differ only by return type aren't acceptable. However, we do need a
+                // discriminator that does include the return type so we can determine whether the function has gone
+                // through the transformation pipeline completely unmodified.
+                var discrim = ModUtils.DiscrimStr(
+                    meth.Modifiers,
+                    meth.TypeParameterList,
+                    meth.Identifier.ToString(),
+                    meth.ParameterList,
+                    returnType: null
+                );
+                var discrimWithRet = ModUtils.DiscrimStr(
+                    meth.Modifiers,
+                    meth.TypeParameterList,
+                    meth.Identifier.ToString(),
+                    meth.ParameterList,
+                    meth.ReturnType
+                );
 
-                    // Only add it if it's an overload that does not conflict.
-                    if (discrims.Add(discrimWithRet) && discrims.Add(discrim))
-                    {
-                        // Small fixup to convert to use expression bodies where possible
-                        if (
-                            meth.ExpressionBody is null
-                            && meth.Body?.Statements.Count == 1
-                            && (
-                                (meth.Body.Statements[0] as ReturnStatementSyntax)?.Expression
-                                ?? (
-                                    meth.ReturnType is PredefinedTypeSyntax pt
-                                    && pt.Keyword.IsKind(SyntaxKind.VoidKeyword)
-                                        ? (
-                                            meth.Body.Statements[0] as ExpressionStatementSyntax
-                                        )?.Expression
-                                        : null
-                                )
+                // Only add it if it's an overload that does not conflict.
+                if (discrims.Add(discrimWithRet) && discrims.Add(discrim))
+                {
+                    // Small fixup to convert to use expression bodies where possible
+                    if (
+                        meth.ExpressionBody is null
+                        && meth.Body?.Statements.Count == 1
+                        && (
+                            (meth.Body.Statements[0] as ReturnStatementSyntax)?.Expression
+                            ?? (
+                                meth.ReturnType is PredefinedTypeSyntax pt
+                                && pt.Keyword.IsKind(SyntaxKind.VoidKeyword)
+                                    ? (
+                                        meth.Body.Statements[0] as ExpressionStatementSyntax
+                                    )?.Expression
+                                    : null
                             )
-                                is { } expr
                         )
-                        {
-                            meth = meth.WithBody(null)
-                                .WithExpressionBody(ArrowExpressionClause(expr))
-                                .WithSemicolonToken(Token(SyntaxKind.SemicolonToken));
-                        }
-                        ret.Add(meth);
+                            is { } expr
+                    )
+                    {
+                        meth = meth.WithBody(null)
+                            .WithExpressionBody(ArrowExpressionClause(expr))
+                            .WithSemicolonToken(Token(SyntaxKind.SemicolonToken));
                     }
-                    // TODO else warn maybe?
-                },
-                (c, t) => meth => t.Transform(meth, ctx, c)
-            );
+                    ret.Add(meth);
+                }
+                // TODO else warn maybe?
+            },
+            (c, t) => meth => t.Transform(meth, ctx, c)
+        );
         foreach (var function in functions)
         {
             // Get the discriminator string to determine whether it conflicts. Note that we set the return type
@@ -174,6 +176,7 @@ public class FunctionTransformer(
             ctx.Original = null;
         }
 
+        ctx.Transformers = null;
         return ret;
     }
 
