@@ -17914,7 +17914,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 15478, Column 39 in objidl.h")]
-        public static unsafe uint HBITMAPUserSize(this Windows thisApi, Span<uint> arg0, uint arg1, IntPtr** arg2)
+        public static unsafe uint HBITMAPUserSize(this Windows thisApi, Span<uint> arg0, uint arg1, void** arg2)
         {
             // SpanOverloader
             return thisApi.HBITMAPUserSize(ref arg0.GetPinnableReference(), arg1, arg2);
@@ -17922,7 +17922,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 15478, Column 39 in objidl.h")]
-        public static unsafe uint HBITMAPUserSize(this Windows thisApi, Span<uint> arg0, uint arg1, ref IntPtr* arg2)
+        public static unsafe uint HBITMAPUserSize(this Windows thisApi, Span<uint> arg0, uint arg1, ref void* arg2)
         {
             // SpanOverloader
             return thisApi.HBITMAPUserSize(ref arg0.GetPinnableReference(), arg1, ref arg2);
@@ -17930,7 +17930,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 15479, Column 29 in objidl.h")]
-        public static unsafe byte* HBITMAPUserMarshal(this Windows thisApi, uint* arg0, Span<byte> arg1, IntPtr** arg2)
+        public static unsafe byte* HBITMAPUserMarshal(this Windows thisApi, uint* arg0, Span<byte> arg1, void** arg2)
         {
             // SpanOverloader
             return thisApi.HBITMAPUserMarshal(arg0, ref arg1.GetPinnableReference(), arg2);
@@ -17938,7 +17938,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 15479, Column 29 in objidl.h")]
-        public static unsafe byte* HBITMAPUserMarshal(this Windows thisApi, uint* arg0, Span<byte> arg1, ref IntPtr* arg2)
+        public static unsafe byte* HBITMAPUserMarshal(this Windows thisApi, uint* arg0, Span<byte> arg1, ref void* arg2)
         {
             // SpanOverloader
             return thisApi.HBITMAPUserMarshal(arg0, ref arg1.GetPinnableReference(), ref arg2);
@@ -17946,7 +17946,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 15479, Column 29 in objidl.h")]
-        public static unsafe byte* HBITMAPUserMarshal(this Windows thisApi, Span<uint> arg0, byte* arg1, IntPtr** arg2)
+        public static unsafe byte* HBITMAPUserMarshal(this Windows thisApi, Span<uint> arg0, byte* arg1, void** arg2)
         {
             // SpanOverloader
             return thisApi.HBITMAPUserMarshal(ref arg0.GetPinnableReference(), arg1, arg2);
@@ -17954,7 +17954,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 15479, Column 29 in objidl.h")]
-        public static unsafe byte* HBITMAPUserMarshal(this Windows thisApi, Span<uint> arg0, byte* arg1, ref IntPtr* arg2)
+        public static unsafe byte* HBITMAPUserMarshal(this Windows thisApi, Span<uint> arg0, byte* arg1, ref void* arg2)
         {
             // SpanOverloader
             return thisApi.HBITMAPUserMarshal(ref arg0.GetPinnableReference(), arg1, ref arg2);
@@ -17962,7 +17962,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 15479, Column 29 in objidl.h")]
-        public static unsafe byte* HBITMAPUserMarshal(this Windows thisApi, Span<uint> arg0, Span<byte> arg1, IntPtr** arg2)
+        public static unsafe byte* HBITMAPUserMarshal(this Windows thisApi, Span<uint> arg0, Span<byte> arg1, void** arg2)
         {
             // SpanOverloader
             return thisApi.HBITMAPUserMarshal(ref arg0.GetPinnableReference(), ref arg1.GetPinnableReference(), arg2);
@@ -17970,7 +17970,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 15479, Column 29 in objidl.h")]
-        public static unsafe byte* HBITMAPUserMarshal(this Windows thisApi, Span<uint> arg0, Span<byte> arg1, ref IntPtr* arg2)
+        public static unsafe byte* HBITMAPUserMarshal(this Windows thisApi, Span<uint> arg0, Span<byte> arg1, ref void* arg2)
         {
             // SpanOverloader
             return thisApi.HBITMAPUserMarshal(ref arg0.GetPinnableReference(), ref arg1.GetPinnableReference(), ref arg2);
@@ -17978,7 +17978,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 15479, Column 29 in objidl.h")]
-        public static unsafe byte* HBITMAPUserMarshal(this Windows thisApi, Span<uint> arg0, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, IntPtr** arg2)
+        public static unsafe byte* HBITMAPUserMarshal(this Windows thisApi, Span<uint> arg0, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, void** arg2)
         {
             // SpanOverloader
             return thisApi.HBITMAPUserMarshal(ref arg0.GetPinnableReference(), arg1, arg2);
@@ -17986,7 +17986,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 15479, Column 29 in objidl.h")]
-        public static unsafe byte* HBITMAPUserMarshal(this Windows thisApi, Span<uint> arg0, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, ref IntPtr* arg2)
+        public static unsafe byte* HBITMAPUserMarshal(this Windows thisApi, Span<uint> arg0, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, ref void* arg2)
         {
             // SpanOverloader
             return thisApi.HBITMAPUserMarshal(ref arg0.GetPinnableReference(), arg1, ref arg2);
@@ -17994,7 +17994,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 15480, Column 29 in objidl.h")]
-        public static unsafe byte* HBITMAPUserUnmarshal(this Windows thisApi, uint* arg0, Span<byte> arg1, IntPtr** arg2)
+        public static unsafe byte* HBITMAPUserUnmarshal(this Windows thisApi, uint* arg0, Span<byte> arg1, void** arg2)
         {
             // SpanOverloader
             return thisApi.HBITMAPUserUnmarshal(arg0, ref arg1.GetPinnableReference(), arg2);
@@ -18002,7 +18002,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 15480, Column 29 in objidl.h")]
-        public static unsafe byte* HBITMAPUserUnmarshal(this Windows thisApi, uint* arg0, Span<byte> arg1, ref IntPtr* arg2)
+        public static unsafe byte* HBITMAPUserUnmarshal(this Windows thisApi, uint* arg0, Span<byte> arg1, ref void* arg2)
         {
             // SpanOverloader
             return thisApi.HBITMAPUserUnmarshal(arg0, ref arg1.GetPinnableReference(), ref arg2);
@@ -18010,7 +18010,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 15480, Column 29 in objidl.h")]
-        public static unsafe byte* HBITMAPUserUnmarshal(this Windows thisApi, Span<uint> arg0, byte* arg1, IntPtr** arg2)
+        public static unsafe byte* HBITMAPUserUnmarshal(this Windows thisApi, Span<uint> arg0, byte* arg1, void** arg2)
         {
             // SpanOverloader
             return thisApi.HBITMAPUserUnmarshal(ref arg0.GetPinnableReference(), arg1, arg2);
@@ -18018,7 +18018,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 15480, Column 29 in objidl.h")]
-        public static unsafe byte* HBITMAPUserUnmarshal(this Windows thisApi, Span<uint> arg0, byte* arg1, ref IntPtr* arg2)
+        public static unsafe byte* HBITMAPUserUnmarshal(this Windows thisApi, Span<uint> arg0, byte* arg1, ref void* arg2)
         {
             // SpanOverloader
             return thisApi.HBITMAPUserUnmarshal(ref arg0.GetPinnableReference(), arg1, ref arg2);
@@ -18026,7 +18026,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 15480, Column 29 in objidl.h")]
-        public static unsafe byte* HBITMAPUserUnmarshal(this Windows thisApi, Span<uint> arg0, Span<byte> arg1, IntPtr** arg2)
+        public static unsafe byte* HBITMAPUserUnmarshal(this Windows thisApi, Span<uint> arg0, Span<byte> arg1, void** arg2)
         {
             // SpanOverloader
             return thisApi.HBITMAPUserUnmarshal(ref arg0.GetPinnableReference(), ref arg1.GetPinnableReference(), arg2);
@@ -18034,7 +18034,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 15480, Column 29 in objidl.h")]
-        public static unsafe byte* HBITMAPUserUnmarshal(this Windows thisApi, Span<uint> arg0, Span<byte> arg1, ref IntPtr* arg2)
+        public static unsafe byte* HBITMAPUserUnmarshal(this Windows thisApi, Span<uint> arg0, Span<byte> arg1, ref void* arg2)
         {
             // SpanOverloader
             return thisApi.HBITMAPUserUnmarshal(ref arg0.GetPinnableReference(), ref arg1.GetPinnableReference(), ref arg2);
@@ -18042,7 +18042,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 15480, Column 29 in objidl.h")]
-        public static unsafe byte* HBITMAPUserUnmarshal(this Windows thisApi, Span<uint> arg0, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, IntPtr** arg2)
+        public static unsafe byte* HBITMAPUserUnmarshal(this Windows thisApi, Span<uint> arg0, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, void** arg2)
         {
             // SpanOverloader
             return thisApi.HBITMAPUserUnmarshal(ref arg0.GetPinnableReference(), arg1, arg2);
@@ -18050,7 +18050,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 15480, Column 29 in objidl.h")]
-        public static unsafe byte* HBITMAPUserUnmarshal(this Windows thisApi, Span<uint> arg0, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, ref IntPtr* arg2)
+        public static unsafe byte* HBITMAPUserUnmarshal(this Windows thisApi, Span<uint> arg0, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, ref void* arg2)
         {
             // SpanOverloader
             return thisApi.HBITMAPUserUnmarshal(ref arg0.GetPinnableReference(), arg1, ref arg2);
@@ -18058,7 +18058,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 15481, Column 39 in objidl.h")]
-        public static unsafe void HBITMAPUserFree(this Windows thisApi, Span<uint> arg0, IntPtr** arg1)
+        public static unsafe void HBITMAPUserFree(this Windows thisApi, Span<uint> arg0, void** arg1)
         {
             // SpanOverloader
             thisApi.HBITMAPUserFree(ref arg0.GetPinnableReference(), arg1);
@@ -18066,7 +18066,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 15481, Column 39 in objidl.h")]
-        public static unsafe void HBITMAPUserFree(this Windows thisApi, Span<uint> arg0, ref IntPtr* arg1)
+        public static unsafe void HBITMAPUserFree(this Windows thisApi, Span<uint> arg0, ref void* arg1)
         {
             // SpanOverloader
             thisApi.HBITMAPUserFree(ref arg0.GetPinnableReference(), ref arg1);
@@ -18282,7 +18282,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 15488, Column 39 in objidl.h")]
-        public static unsafe uint HICONUserSize(this Windows thisApi, Span<uint> arg0, uint arg1, IntPtr** arg2)
+        public static unsafe uint HICONUserSize(this Windows thisApi, Span<uint> arg0, uint arg1, void** arg2)
         {
             // SpanOverloader
             return thisApi.HICONUserSize(ref arg0.GetPinnableReference(), arg1, arg2);
@@ -18290,7 +18290,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 15488, Column 39 in objidl.h")]
-        public static unsafe uint HICONUserSize(this Windows thisApi, Span<uint> arg0, uint arg1, ref IntPtr* arg2)
+        public static unsafe uint HICONUserSize(this Windows thisApi, Span<uint> arg0, uint arg1, ref void* arg2)
         {
             // SpanOverloader
             return thisApi.HICONUserSize(ref arg0.GetPinnableReference(), arg1, ref arg2);
@@ -18298,7 +18298,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 15489, Column 29 in objidl.h")]
-        public static unsafe byte* HICONUserMarshal(this Windows thisApi, uint* arg0, Span<byte> arg1, IntPtr** arg2)
+        public static unsafe byte* HICONUserMarshal(this Windows thisApi, uint* arg0, Span<byte> arg1, void** arg2)
         {
             // SpanOverloader
             return thisApi.HICONUserMarshal(arg0, ref arg1.GetPinnableReference(), arg2);
@@ -18306,7 +18306,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 15489, Column 29 in objidl.h")]
-        public static unsafe byte* HICONUserMarshal(this Windows thisApi, uint* arg0, Span<byte> arg1, ref IntPtr* arg2)
+        public static unsafe byte* HICONUserMarshal(this Windows thisApi, uint* arg0, Span<byte> arg1, ref void* arg2)
         {
             // SpanOverloader
             return thisApi.HICONUserMarshal(arg0, ref arg1.GetPinnableReference(), ref arg2);
@@ -18314,7 +18314,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 15489, Column 29 in objidl.h")]
-        public static unsafe byte* HICONUserMarshal(this Windows thisApi, Span<uint> arg0, byte* arg1, IntPtr** arg2)
+        public static unsafe byte* HICONUserMarshal(this Windows thisApi, Span<uint> arg0, byte* arg1, void** arg2)
         {
             // SpanOverloader
             return thisApi.HICONUserMarshal(ref arg0.GetPinnableReference(), arg1, arg2);
@@ -18322,7 +18322,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 15489, Column 29 in objidl.h")]
-        public static unsafe byte* HICONUserMarshal(this Windows thisApi, Span<uint> arg0, byte* arg1, ref IntPtr* arg2)
+        public static unsafe byte* HICONUserMarshal(this Windows thisApi, Span<uint> arg0, byte* arg1, ref void* arg2)
         {
             // SpanOverloader
             return thisApi.HICONUserMarshal(ref arg0.GetPinnableReference(), arg1, ref arg2);
@@ -18330,7 +18330,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 15489, Column 29 in objidl.h")]
-        public static unsafe byte* HICONUserMarshal(this Windows thisApi, Span<uint> arg0, Span<byte> arg1, IntPtr** arg2)
+        public static unsafe byte* HICONUserMarshal(this Windows thisApi, Span<uint> arg0, Span<byte> arg1, void** arg2)
         {
             // SpanOverloader
             return thisApi.HICONUserMarshal(ref arg0.GetPinnableReference(), ref arg1.GetPinnableReference(), arg2);
@@ -18338,7 +18338,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 15489, Column 29 in objidl.h")]
-        public static unsafe byte* HICONUserMarshal(this Windows thisApi, Span<uint> arg0, Span<byte> arg1, ref IntPtr* arg2)
+        public static unsafe byte* HICONUserMarshal(this Windows thisApi, Span<uint> arg0, Span<byte> arg1, ref void* arg2)
         {
             // SpanOverloader
             return thisApi.HICONUserMarshal(ref arg0.GetPinnableReference(), ref arg1.GetPinnableReference(), ref arg2);
@@ -18346,7 +18346,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 15489, Column 29 in objidl.h")]
-        public static unsafe byte* HICONUserMarshal(this Windows thisApi, Span<uint> arg0, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, IntPtr** arg2)
+        public static unsafe byte* HICONUserMarshal(this Windows thisApi, Span<uint> arg0, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, void** arg2)
         {
             // SpanOverloader
             return thisApi.HICONUserMarshal(ref arg0.GetPinnableReference(), arg1, arg2);
@@ -18354,7 +18354,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 15489, Column 29 in objidl.h")]
-        public static unsafe byte* HICONUserMarshal(this Windows thisApi, Span<uint> arg0, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, ref IntPtr* arg2)
+        public static unsafe byte* HICONUserMarshal(this Windows thisApi, Span<uint> arg0, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, ref void* arg2)
         {
             // SpanOverloader
             return thisApi.HICONUserMarshal(ref arg0.GetPinnableReference(), arg1, ref arg2);
@@ -18362,7 +18362,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 15490, Column 29 in objidl.h")]
-        public static unsafe byte* HICONUserUnmarshal(this Windows thisApi, uint* arg0, Span<byte> arg1, IntPtr** arg2)
+        public static unsafe byte* HICONUserUnmarshal(this Windows thisApi, uint* arg0, Span<byte> arg1, void** arg2)
         {
             // SpanOverloader
             return thisApi.HICONUserUnmarshal(arg0, ref arg1.GetPinnableReference(), arg2);
@@ -18370,7 +18370,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 15490, Column 29 in objidl.h")]
-        public static unsafe byte* HICONUserUnmarshal(this Windows thisApi, uint* arg0, Span<byte> arg1, ref IntPtr* arg2)
+        public static unsafe byte* HICONUserUnmarshal(this Windows thisApi, uint* arg0, Span<byte> arg1, ref void* arg2)
         {
             // SpanOverloader
             return thisApi.HICONUserUnmarshal(arg0, ref arg1.GetPinnableReference(), ref arg2);
@@ -18378,7 +18378,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 15490, Column 29 in objidl.h")]
-        public static unsafe byte* HICONUserUnmarshal(this Windows thisApi, Span<uint> arg0, byte* arg1, IntPtr** arg2)
+        public static unsafe byte* HICONUserUnmarshal(this Windows thisApi, Span<uint> arg0, byte* arg1, void** arg2)
         {
             // SpanOverloader
             return thisApi.HICONUserUnmarshal(ref arg0.GetPinnableReference(), arg1, arg2);
@@ -18386,7 +18386,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 15490, Column 29 in objidl.h")]
-        public static unsafe byte* HICONUserUnmarshal(this Windows thisApi, Span<uint> arg0, byte* arg1, ref IntPtr* arg2)
+        public static unsafe byte* HICONUserUnmarshal(this Windows thisApi, Span<uint> arg0, byte* arg1, ref void* arg2)
         {
             // SpanOverloader
             return thisApi.HICONUserUnmarshal(ref arg0.GetPinnableReference(), arg1, ref arg2);
@@ -18394,7 +18394,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 15490, Column 29 in objidl.h")]
-        public static unsafe byte* HICONUserUnmarshal(this Windows thisApi, Span<uint> arg0, Span<byte> arg1, IntPtr** arg2)
+        public static unsafe byte* HICONUserUnmarshal(this Windows thisApi, Span<uint> arg0, Span<byte> arg1, void** arg2)
         {
             // SpanOverloader
             return thisApi.HICONUserUnmarshal(ref arg0.GetPinnableReference(), ref arg1.GetPinnableReference(), arg2);
@@ -18402,7 +18402,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 15490, Column 29 in objidl.h")]
-        public static unsafe byte* HICONUserUnmarshal(this Windows thisApi, Span<uint> arg0, Span<byte> arg1, ref IntPtr* arg2)
+        public static unsafe byte* HICONUserUnmarshal(this Windows thisApi, Span<uint> arg0, Span<byte> arg1, ref void* arg2)
         {
             // SpanOverloader
             return thisApi.HICONUserUnmarshal(ref arg0.GetPinnableReference(), ref arg1.GetPinnableReference(), ref arg2);
@@ -18410,7 +18410,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 15490, Column 29 in objidl.h")]
-        public static unsafe byte* HICONUserUnmarshal(this Windows thisApi, Span<uint> arg0, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, IntPtr** arg2)
+        public static unsafe byte* HICONUserUnmarshal(this Windows thisApi, Span<uint> arg0, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, void** arg2)
         {
             // SpanOverloader
             return thisApi.HICONUserUnmarshal(ref arg0.GetPinnableReference(), arg1, arg2);
@@ -18418,7 +18418,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 15490, Column 29 in objidl.h")]
-        public static unsafe byte* HICONUserUnmarshal(this Windows thisApi, Span<uint> arg0, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, ref IntPtr* arg2)
+        public static unsafe byte* HICONUserUnmarshal(this Windows thisApi, Span<uint> arg0, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, ref void* arg2)
         {
             // SpanOverloader
             return thisApi.HICONUserUnmarshal(ref arg0.GetPinnableReference(), arg1, ref arg2);
@@ -18426,7 +18426,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 15491, Column 39 in objidl.h")]
-        public static unsafe void HICONUserFree(this Windows thisApi, Span<uint> arg0, IntPtr** arg1)
+        public static unsafe void HICONUserFree(this Windows thisApi, Span<uint> arg0, void** arg1)
         {
             // SpanOverloader
             thisApi.HICONUserFree(ref arg0.GetPinnableReference(), arg1);
@@ -18434,7 +18434,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 15491, Column 39 in objidl.h")]
-        public static unsafe void HICONUserFree(this Windows thisApi, Span<uint> arg0, ref IntPtr* arg1)
+        public static unsafe void HICONUserFree(this Windows thisApi, Span<uint> arg0, ref void* arg1)
         {
             // SpanOverloader
             thisApi.HICONUserFree(ref arg0.GetPinnableReference(), ref arg1);
@@ -19434,7 +19434,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 15518, Column 39 in objidl.h")]
-        public static unsafe uint HBITMAPUserSize64(this Windows thisApi, Span<uint> arg0, uint arg1, IntPtr** arg2)
+        public static unsafe uint HBITMAPUserSize64(this Windows thisApi, Span<uint> arg0, uint arg1, void** arg2)
         {
             // SpanOverloader
             return thisApi.HBITMAPUserSize64(ref arg0.GetPinnableReference(), arg1, arg2);
@@ -19442,7 +19442,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 15518, Column 39 in objidl.h")]
-        public static unsafe uint HBITMAPUserSize64(this Windows thisApi, Span<uint> arg0, uint arg1, ref IntPtr* arg2)
+        public static unsafe uint HBITMAPUserSize64(this Windows thisApi, Span<uint> arg0, uint arg1, ref void* arg2)
         {
             // SpanOverloader
             return thisApi.HBITMAPUserSize64(ref arg0.GetPinnableReference(), arg1, ref arg2);
@@ -19450,7 +19450,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 15519, Column 29 in objidl.h")]
-        public static unsafe byte* HBITMAPUserMarshal64(this Windows thisApi, uint* arg0, Span<byte> arg1, IntPtr** arg2)
+        public static unsafe byte* HBITMAPUserMarshal64(this Windows thisApi, uint* arg0, Span<byte> arg1, void** arg2)
         {
             // SpanOverloader
             return thisApi.HBITMAPUserMarshal64(arg0, ref arg1.GetPinnableReference(), arg2);
@@ -19458,7 +19458,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 15519, Column 29 in objidl.h")]
-        public static unsafe byte* HBITMAPUserMarshal64(this Windows thisApi, uint* arg0, Span<byte> arg1, ref IntPtr* arg2)
+        public static unsafe byte* HBITMAPUserMarshal64(this Windows thisApi, uint* arg0, Span<byte> arg1, ref void* arg2)
         {
             // SpanOverloader
             return thisApi.HBITMAPUserMarshal64(arg0, ref arg1.GetPinnableReference(), ref arg2);
@@ -19466,7 +19466,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 15519, Column 29 in objidl.h")]
-        public static unsafe byte* HBITMAPUserMarshal64(this Windows thisApi, Span<uint> arg0, byte* arg1, IntPtr** arg2)
+        public static unsafe byte* HBITMAPUserMarshal64(this Windows thisApi, Span<uint> arg0, byte* arg1, void** arg2)
         {
             // SpanOverloader
             return thisApi.HBITMAPUserMarshal64(ref arg0.GetPinnableReference(), arg1, arg2);
@@ -19474,7 +19474,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 15519, Column 29 in objidl.h")]
-        public static unsafe byte* HBITMAPUserMarshal64(this Windows thisApi, Span<uint> arg0, byte* arg1, ref IntPtr* arg2)
+        public static unsafe byte* HBITMAPUserMarshal64(this Windows thisApi, Span<uint> arg0, byte* arg1, ref void* arg2)
         {
             // SpanOverloader
             return thisApi.HBITMAPUserMarshal64(ref arg0.GetPinnableReference(), arg1, ref arg2);
@@ -19482,7 +19482,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 15519, Column 29 in objidl.h")]
-        public static unsafe byte* HBITMAPUserMarshal64(this Windows thisApi, Span<uint> arg0, Span<byte> arg1, IntPtr** arg2)
+        public static unsafe byte* HBITMAPUserMarshal64(this Windows thisApi, Span<uint> arg0, Span<byte> arg1, void** arg2)
         {
             // SpanOverloader
             return thisApi.HBITMAPUserMarshal64(ref arg0.GetPinnableReference(), ref arg1.GetPinnableReference(), arg2);
@@ -19490,7 +19490,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 15519, Column 29 in objidl.h")]
-        public static unsafe byte* HBITMAPUserMarshal64(this Windows thisApi, Span<uint> arg0, Span<byte> arg1, ref IntPtr* arg2)
+        public static unsafe byte* HBITMAPUserMarshal64(this Windows thisApi, Span<uint> arg0, Span<byte> arg1, ref void* arg2)
         {
             // SpanOverloader
             return thisApi.HBITMAPUserMarshal64(ref arg0.GetPinnableReference(), ref arg1.GetPinnableReference(), ref arg2);
@@ -19498,7 +19498,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 15519, Column 29 in objidl.h")]
-        public static unsafe byte* HBITMAPUserMarshal64(this Windows thisApi, Span<uint> arg0, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, IntPtr** arg2)
+        public static unsafe byte* HBITMAPUserMarshal64(this Windows thisApi, Span<uint> arg0, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, void** arg2)
         {
             // SpanOverloader
             return thisApi.HBITMAPUserMarshal64(ref arg0.GetPinnableReference(), arg1, arg2);
@@ -19506,7 +19506,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 15519, Column 29 in objidl.h")]
-        public static unsafe byte* HBITMAPUserMarshal64(this Windows thisApi, Span<uint> arg0, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, ref IntPtr* arg2)
+        public static unsafe byte* HBITMAPUserMarshal64(this Windows thisApi, Span<uint> arg0, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, ref void* arg2)
         {
             // SpanOverloader
             return thisApi.HBITMAPUserMarshal64(ref arg0.GetPinnableReference(), arg1, ref arg2);
@@ -19514,7 +19514,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 15520, Column 29 in objidl.h")]
-        public static unsafe byte* HBITMAPUserUnmarshal64(this Windows thisApi, uint* arg0, Span<byte> arg1, IntPtr** arg2)
+        public static unsafe byte* HBITMAPUserUnmarshal64(this Windows thisApi, uint* arg0, Span<byte> arg1, void** arg2)
         {
             // SpanOverloader
             return thisApi.HBITMAPUserUnmarshal64(arg0, ref arg1.GetPinnableReference(), arg2);
@@ -19522,7 +19522,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 15520, Column 29 in objidl.h")]
-        public static unsafe byte* HBITMAPUserUnmarshal64(this Windows thisApi, uint* arg0, Span<byte> arg1, ref IntPtr* arg2)
+        public static unsafe byte* HBITMAPUserUnmarshal64(this Windows thisApi, uint* arg0, Span<byte> arg1, ref void* arg2)
         {
             // SpanOverloader
             return thisApi.HBITMAPUserUnmarshal64(arg0, ref arg1.GetPinnableReference(), ref arg2);
@@ -19530,7 +19530,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 15520, Column 29 in objidl.h")]
-        public static unsafe byte* HBITMAPUserUnmarshal64(this Windows thisApi, Span<uint> arg0, byte* arg1, IntPtr** arg2)
+        public static unsafe byte* HBITMAPUserUnmarshal64(this Windows thisApi, Span<uint> arg0, byte* arg1, void** arg2)
         {
             // SpanOverloader
             return thisApi.HBITMAPUserUnmarshal64(ref arg0.GetPinnableReference(), arg1, arg2);
@@ -19538,7 +19538,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 15520, Column 29 in objidl.h")]
-        public static unsafe byte* HBITMAPUserUnmarshal64(this Windows thisApi, Span<uint> arg0, byte* arg1, ref IntPtr* arg2)
+        public static unsafe byte* HBITMAPUserUnmarshal64(this Windows thisApi, Span<uint> arg0, byte* arg1, ref void* arg2)
         {
             // SpanOverloader
             return thisApi.HBITMAPUserUnmarshal64(ref arg0.GetPinnableReference(), arg1, ref arg2);
@@ -19546,7 +19546,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 15520, Column 29 in objidl.h")]
-        public static unsafe byte* HBITMAPUserUnmarshal64(this Windows thisApi, Span<uint> arg0, Span<byte> arg1, IntPtr** arg2)
+        public static unsafe byte* HBITMAPUserUnmarshal64(this Windows thisApi, Span<uint> arg0, Span<byte> arg1, void** arg2)
         {
             // SpanOverloader
             return thisApi.HBITMAPUserUnmarshal64(ref arg0.GetPinnableReference(), ref arg1.GetPinnableReference(), arg2);
@@ -19554,7 +19554,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 15520, Column 29 in objidl.h")]
-        public static unsafe byte* HBITMAPUserUnmarshal64(this Windows thisApi, Span<uint> arg0, Span<byte> arg1, ref IntPtr* arg2)
+        public static unsafe byte* HBITMAPUserUnmarshal64(this Windows thisApi, Span<uint> arg0, Span<byte> arg1, ref void* arg2)
         {
             // SpanOverloader
             return thisApi.HBITMAPUserUnmarshal64(ref arg0.GetPinnableReference(), ref arg1.GetPinnableReference(), ref arg2);
@@ -19562,7 +19562,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 15520, Column 29 in objidl.h")]
-        public static unsafe byte* HBITMAPUserUnmarshal64(this Windows thisApi, Span<uint> arg0, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, IntPtr** arg2)
+        public static unsafe byte* HBITMAPUserUnmarshal64(this Windows thisApi, Span<uint> arg0, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, void** arg2)
         {
             // SpanOverloader
             return thisApi.HBITMAPUserUnmarshal64(ref arg0.GetPinnableReference(), arg1, arg2);
@@ -19570,7 +19570,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 15520, Column 29 in objidl.h")]
-        public static unsafe byte* HBITMAPUserUnmarshal64(this Windows thisApi, Span<uint> arg0, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, ref IntPtr* arg2)
+        public static unsafe byte* HBITMAPUserUnmarshal64(this Windows thisApi, Span<uint> arg0, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, ref void* arg2)
         {
             // SpanOverloader
             return thisApi.HBITMAPUserUnmarshal64(ref arg0.GetPinnableReference(), arg1, ref arg2);
@@ -19578,7 +19578,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 15521, Column 39 in objidl.h")]
-        public static unsafe void HBITMAPUserFree64(this Windows thisApi, Span<uint> arg0, IntPtr** arg1)
+        public static unsafe void HBITMAPUserFree64(this Windows thisApi, Span<uint> arg0, void** arg1)
         {
             // SpanOverloader
             thisApi.HBITMAPUserFree64(ref arg0.GetPinnableReference(), arg1);
@@ -19586,7 +19586,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 15521, Column 39 in objidl.h")]
-        public static unsafe void HBITMAPUserFree64(this Windows thisApi, Span<uint> arg0, ref IntPtr* arg1)
+        public static unsafe void HBITMAPUserFree64(this Windows thisApi, Span<uint> arg0, ref void* arg1)
         {
             // SpanOverloader
             thisApi.HBITMAPUserFree64(ref arg0.GetPinnableReference(), ref arg1);
@@ -19802,7 +19802,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 15528, Column 39 in objidl.h")]
-        public static unsafe uint HICONUserSize64(this Windows thisApi, Span<uint> arg0, uint arg1, IntPtr** arg2)
+        public static unsafe uint HICONUserSize64(this Windows thisApi, Span<uint> arg0, uint arg1, void** arg2)
         {
             // SpanOverloader
             return thisApi.HICONUserSize64(ref arg0.GetPinnableReference(), arg1, arg2);
@@ -19810,7 +19810,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 15528, Column 39 in objidl.h")]
-        public static unsafe uint HICONUserSize64(this Windows thisApi, Span<uint> arg0, uint arg1, ref IntPtr* arg2)
+        public static unsafe uint HICONUserSize64(this Windows thisApi, Span<uint> arg0, uint arg1, ref void* arg2)
         {
             // SpanOverloader
             return thisApi.HICONUserSize64(ref arg0.GetPinnableReference(), arg1, ref arg2);
@@ -19818,7 +19818,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 15529, Column 29 in objidl.h")]
-        public static unsafe byte* HICONUserMarshal64(this Windows thisApi, uint* arg0, Span<byte> arg1, IntPtr** arg2)
+        public static unsafe byte* HICONUserMarshal64(this Windows thisApi, uint* arg0, Span<byte> arg1, void** arg2)
         {
             // SpanOverloader
             return thisApi.HICONUserMarshal64(arg0, ref arg1.GetPinnableReference(), arg2);
@@ -19826,7 +19826,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 15529, Column 29 in objidl.h")]
-        public static unsafe byte* HICONUserMarshal64(this Windows thisApi, uint* arg0, Span<byte> arg1, ref IntPtr* arg2)
+        public static unsafe byte* HICONUserMarshal64(this Windows thisApi, uint* arg0, Span<byte> arg1, ref void* arg2)
         {
             // SpanOverloader
             return thisApi.HICONUserMarshal64(arg0, ref arg1.GetPinnableReference(), ref arg2);
@@ -19834,7 +19834,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 15529, Column 29 in objidl.h")]
-        public static unsafe byte* HICONUserMarshal64(this Windows thisApi, Span<uint> arg0, byte* arg1, IntPtr** arg2)
+        public static unsafe byte* HICONUserMarshal64(this Windows thisApi, Span<uint> arg0, byte* arg1, void** arg2)
         {
             // SpanOverloader
             return thisApi.HICONUserMarshal64(ref arg0.GetPinnableReference(), arg1, arg2);
@@ -19842,7 +19842,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 15529, Column 29 in objidl.h")]
-        public static unsafe byte* HICONUserMarshal64(this Windows thisApi, Span<uint> arg0, byte* arg1, ref IntPtr* arg2)
+        public static unsafe byte* HICONUserMarshal64(this Windows thisApi, Span<uint> arg0, byte* arg1, ref void* arg2)
         {
             // SpanOverloader
             return thisApi.HICONUserMarshal64(ref arg0.GetPinnableReference(), arg1, ref arg2);
@@ -19850,7 +19850,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 15529, Column 29 in objidl.h")]
-        public static unsafe byte* HICONUserMarshal64(this Windows thisApi, Span<uint> arg0, Span<byte> arg1, IntPtr** arg2)
+        public static unsafe byte* HICONUserMarshal64(this Windows thisApi, Span<uint> arg0, Span<byte> arg1, void** arg2)
         {
             // SpanOverloader
             return thisApi.HICONUserMarshal64(ref arg0.GetPinnableReference(), ref arg1.GetPinnableReference(), arg2);
@@ -19858,7 +19858,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 15529, Column 29 in objidl.h")]
-        public static unsafe byte* HICONUserMarshal64(this Windows thisApi, Span<uint> arg0, Span<byte> arg1, ref IntPtr* arg2)
+        public static unsafe byte* HICONUserMarshal64(this Windows thisApi, Span<uint> arg0, Span<byte> arg1, ref void* arg2)
         {
             // SpanOverloader
             return thisApi.HICONUserMarshal64(ref arg0.GetPinnableReference(), ref arg1.GetPinnableReference(), ref arg2);
@@ -19866,7 +19866,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 15529, Column 29 in objidl.h")]
-        public static unsafe byte* HICONUserMarshal64(this Windows thisApi, Span<uint> arg0, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, IntPtr** arg2)
+        public static unsafe byte* HICONUserMarshal64(this Windows thisApi, Span<uint> arg0, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, void** arg2)
         {
             // SpanOverloader
             return thisApi.HICONUserMarshal64(ref arg0.GetPinnableReference(), arg1, arg2);
@@ -19874,7 +19874,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 15529, Column 29 in objidl.h")]
-        public static unsafe byte* HICONUserMarshal64(this Windows thisApi, Span<uint> arg0, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, ref IntPtr* arg2)
+        public static unsafe byte* HICONUserMarshal64(this Windows thisApi, Span<uint> arg0, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, ref void* arg2)
         {
             // SpanOverloader
             return thisApi.HICONUserMarshal64(ref arg0.GetPinnableReference(), arg1, ref arg2);
@@ -19882,7 +19882,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 15530, Column 29 in objidl.h")]
-        public static unsafe byte* HICONUserUnmarshal64(this Windows thisApi, uint* arg0, Span<byte> arg1, IntPtr** arg2)
+        public static unsafe byte* HICONUserUnmarshal64(this Windows thisApi, uint* arg0, Span<byte> arg1, void** arg2)
         {
             // SpanOverloader
             return thisApi.HICONUserUnmarshal64(arg0, ref arg1.GetPinnableReference(), arg2);
@@ -19890,7 +19890,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 15530, Column 29 in objidl.h")]
-        public static unsafe byte* HICONUserUnmarshal64(this Windows thisApi, uint* arg0, Span<byte> arg1, ref IntPtr* arg2)
+        public static unsafe byte* HICONUserUnmarshal64(this Windows thisApi, uint* arg0, Span<byte> arg1, ref void* arg2)
         {
             // SpanOverloader
             return thisApi.HICONUserUnmarshal64(arg0, ref arg1.GetPinnableReference(), ref arg2);
@@ -19898,7 +19898,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 15530, Column 29 in objidl.h")]
-        public static unsafe byte* HICONUserUnmarshal64(this Windows thisApi, Span<uint> arg0, byte* arg1, IntPtr** arg2)
+        public static unsafe byte* HICONUserUnmarshal64(this Windows thisApi, Span<uint> arg0, byte* arg1, void** arg2)
         {
             // SpanOverloader
             return thisApi.HICONUserUnmarshal64(ref arg0.GetPinnableReference(), arg1, arg2);
@@ -19906,7 +19906,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 15530, Column 29 in objidl.h")]
-        public static unsafe byte* HICONUserUnmarshal64(this Windows thisApi, Span<uint> arg0, byte* arg1, ref IntPtr* arg2)
+        public static unsafe byte* HICONUserUnmarshal64(this Windows thisApi, Span<uint> arg0, byte* arg1, ref void* arg2)
         {
             // SpanOverloader
             return thisApi.HICONUserUnmarshal64(ref arg0.GetPinnableReference(), arg1, ref arg2);
@@ -19914,7 +19914,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 15530, Column 29 in objidl.h")]
-        public static unsafe byte* HICONUserUnmarshal64(this Windows thisApi, Span<uint> arg0, Span<byte> arg1, IntPtr** arg2)
+        public static unsafe byte* HICONUserUnmarshal64(this Windows thisApi, Span<uint> arg0, Span<byte> arg1, void** arg2)
         {
             // SpanOverloader
             return thisApi.HICONUserUnmarshal64(ref arg0.GetPinnableReference(), ref arg1.GetPinnableReference(), arg2);
@@ -19922,7 +19922,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 15530, Column 29 in objidl.h")]
-        public static unsafe byte* HICONUserUnmarshal64(this Windows thisApi, Span<uint> arg0, Span<byte> arg1, ref IntPtr* arg2)
+        public static unsafe byte* HICONUserUnmarshal64(this Windows thisApi, Span<uint> arg0, Span<byte> arg1, ref void* arg2)
         {
             // SpanOverloader
             return thisApi.HICONUserUnmarshal64(ref arg0.GetPinnableReference(), ref arg1.GetPinnableReference(), ref arg2);
@@ -19930,7 +19930,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 15530, Column 29 in objidl.h")]
-        public static unsafe byte* HICONUserUnmarshal64(this Windows thisApi, Span<uint> arg0, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, IntPtr** arg2)
+        public static unsafe byte* HICONUserUnmarshal64(this Windows thisApi, Span<uint> arg0, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, void** arg2)
         {
             // SpanOverloader
             return thisApi.HICONUserUnmarshal64(ref arg0.GetPinnableReference(), arg1, arg2);
@@ -19938,7 +19938,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 15530, Column 29 in objidl.h")]
-        public static unsafe byte* HICONUserUnmarshal64(this Windows thisApi, Span<uint> arg0, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, ref IntPtr* arg2)
+        public static unsafe byte* HICONUserUnmarshal64(this Windows thisApi, Span<uint> arg0, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, ref void* arg2)
         {
             // SpanOverloader
             return thisApi.HICONUserUnmarshal64(ref arg0.GetPinnableReference(), arg1, ref arg2);
@@ -19946,7 +19946,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 15531, Column 39 in objidl.h")]
-        public static unsafe void HICONUserFree64(this Windows thisApi, Span<uint> arg0, IntPtr** arg1)
+        public static unsafe void HICONUserFree64(this Windows thisApi, Span<uint> arg0, void** arg1)
         {
             // SpanOverloader
             thisApi.HICONUserFree64(ref arg0.GetPinnableReference(), arg1);
@@ -19954,7 +19954,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 15531, Column 39 in objidl.h")]
-        public static unsafe void HICONUserFree64(this Windows thisApi, Span<uint> arg0, ref IntPtr* arg1)
+        public static unsafe void HICONUserFree64(this Windows thisApi, Span<uint> arg0, ref void* arg1)
         {
             // SpanOverloader
             thisApi.HICONUserFree64(ref arg0.GetPinnableReference(), ref arg1);
@@ -24042,7 +24042,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2449, Column 43 in oaidl.h")]
-        public static unsafe int IDispatchRemoteInvokeProxy(this Windows thisApi, IDispatch* This, int dispIdMember, Guid* riid, uint lcid, uint dwFlags, DispatchParams* pDispParams, Variant* pVarResult, ExcepInfo* pExcepInfo, uint* pArgErr, uint cVarRef, uint* rgVarRefIdx, Span<Variant> rgVarRef)
+        public static unsafe int IDispatchRemoteInvokeProxy(this Windows thisApi, IDispatch* This, int dispIdMember, Guid* riid, uint lcid, uint dwFlags, DispatchParams* pDispParams, Variant* pVarResult, ExceptionInfo* pExcepInfo, uint* pArgErr, uint cVarRef, uint* rgVarRefIdx, Span<Variant> rgVarRef)
         {
             // SpanOverloader
             return thisApi.IDispatchRemoteInvokeProxy(This, dispIdMember, riid, lcid, dwFlags, pDispParams, pVarResult, pExcepInfo, pArgErr, cVarRef, rgVarRefIdx, ref rgVarRef.GetPinnableReference());
@@ -24050,7 +24050,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2449, Column 43 in oaidl.h")]
-        public static unsafe int IDispatchRemoteInvokeProxy(this Windows thisApi, IDispatch* This, int dispIdMember, Guid* riid, uint lcid, uint dwFlags, DispatchParams* pDispParams, Variant* pVarResult, ExcepInfo* pExcepInfo, uint* pArgErr, uint cVarRef, Span<uint> rgVarRefIdx, Variant* rgVarRef)
+        public static unsafe int IDispatchRemoteInvokeProxy(this Windows thisApi, IDispatch* This, int dispIdMember, Guid* riid, uint lcid, uint dwFlags, DispatchParams* pDispParams, Variant* pVarResult, ExceptionInfo* pExcepInfo, uint* pArgErr, uint cVarRef, Span<uint> rgVarRefIdx, Variant* rgVarRef)
         {
             // SpanOverloader
             return thisApi.IDispatchRemoteInvokeProxy(This, dispIdMember, riid, lcid, dwFlags, pDispParams, pVarResult, pExcepInfo, pArgErr, cVarRef, ref rgVarRefIdx.GetPinnableReference(), rgVarRef);
@@ -24058,7 +24058,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2449, Column 43 in oaidl.h")]
-        public static unsafe int IDispatchRemoteInvokeProxy(this Windows thisApi, IDispatch* This, int dispIdMember, Guid* riid, uint lcid, uint dwFlags, DispatchParams* pDispParams, Variant* pVarResult, ExcepInfo* pExcepInfo, uint* pArgErr, uint cVarRef, Span<uint> rgVarRefIdx, Span<Variant> rgVarRef)
+        public static unsafe int IDispatchRemoteInvokeProxy(this Windows thisApi, IDispatch* This, int dispIdMember, Guid* riid, uint lcid, uint dwFlags, DispatchParams* pDispParams, Variant* pVarResult, ExceptionInfo* pExcepInfo, uint* pArgErr, uint cVarRef, Span<uint> rgVarRefIdx, Span<Variant> rgVarRef)
         {
             // SpanOverloader
             return thisApi.IDispatchRemoteInvokeProxy(This, dispIdMember, riid, lcid, dwFlags, pDispParams, pVarResult, pExcepInfo, pArgErr, cVarRef, ref rgVarRefIdx.GetPinnableReference(), ref rgVarRef.GetPinnableReference());
@@ -24066,7 +24066,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2449, Column 43 in oaidl.h")]
-        public static unsafe int IDispatchRemoteInvokeProxy(this Windows thisApi, IDispatch* This, int dispIdMember, Guid* riid, uint lcid, uint dwFlags, DispatchParams* pDispParams, Variant* pVarResult, ExcepInfo* pExcepInfo, Span<uint> pArgErr, uint cVarRef, uint* rgVarRefIdx, Variant* rgVarRef)
+        public static unsafe int IDispatchRemoteInvokeProxy(this Windows thisApi, IDispatch* This, int dispIdMember, Guid* riid, uint lcid, uint dwFlags, DispatchParams* pDispParams, Variant* pVarResult, ExceptionInfo* pExcepInfo, Span<uint> pArgErr, uint cVarRef, uint* rgVarRefIdx, Variant* rgVarRef)
         {
             // SpanOverloader
             return thisApi.IDispatchRemoteInvokeProxy(This, dispIdMember, riid, lcid, dwFlags, pDispParams, pVarResult, pExcepInfo, ref pArgErr.GetPinnableReference(), cVarRef, rgVarRefIdx, rgVarRef);
@@ -24074,7 +24074,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2449, Column 43 in oaidl.h")]
-        public static unsafe int IDispatchRemoteInvokeProxy(this Windows thisApi, IDispatch* This, int dispIdMember, Guid* riid, uint lcid, uint dwFlags, DispatchParams* pDispParams, Variant* pVarResult, ExcepInfo* pExcepInfo, Span<uint> pArgErr, uint cVarRef, uint* rgVarRefIdx, Span<Variant> rgVarRef)
+        public static unsafe int IDispatchRemoteInvokeProxy(this Windows thisApi, IDispatch* This, int dispIdMember, Guid* riid, uint lcid, uint dwFlags, DispatchParams* pDispParams, Variant* pVarResult, ExceptionInfo* pExcepInfo, Span<uint> pArgErr, uint cVarRef, uint* rgVarRefIdx, Span<Variant> rgVarRef)
         {
             // SpanOverloader
             return thisApi.IDispatchRemoteInvokeProxy(This, dispIdMember, riid, lcid, dwFlags, pDispParams, pVarResult, pExcepInfo, ref pArgErr.GetPinnableReference(), cVarRef, rgVarRefIdx, ref rgVarRef.GetPinnableReference());
@@ -24082,7 +24082,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2449, Column 43 in oaidl.h")]
-        public static unsafe int IDispatchRemoteInvokeProxy(this Windows thisApi, IDispatch* This, int dispIdMember, Guid* riid, uint lcid, uint dwFlags, DispatchParams* pDispParams, Variant* pVarResult, ExcepInfo* pExcepInfo, Span<uint> pArgErr, uint cVarRef, Span<uint> rgVarRefIdx, Variant* rgVarRef)
+        public static unsafe int IDispatchRemoteInvokeProxy(this Windows thisApi, IDispatch* This, int dispIdMember, Guid* riid, uint lcid, uint dwFlags, DispatchParams* pDispParams, Variant* pVarResult, ExceptionInfo* pExcepInfo, Span<uint> pArgErr, uint cVarRef, Span<uint> rgVarRefIdx, Variant* rgVarRef)
         {
             // SpanOverloader
             return thisApi.IDispatchRemoteInvokeProxy(This, dispIdMember, riid, lcid, dwFlags, pDispParams, pVarResult, pExcepInfo, ref pArgErr.GetPinnableReference(), cVarRef, ref rgVarRefIdx.GetPinnableReference(), rgVarRef);
@@ -24090,7 +24090,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2449, Column 43 in oaidl.h")]
-        public static unsafe int IDispatchRemoteInvokeProxy(this Windows thisApi, IDispatch* This, int dispIdMember, Guid* riid, uint lcid, uint dwFlags, DispatchParams* pDispParams, Variant* pVarResult, ExcepInfo* pExcepInfo, Span<uint> pArgErr, uint cVarRef, Span<uint> rgVarRefIdx, Span<Variant> rgVarRef)
+        public static unsafe int IDispatchRemoteInvokeProxy(this Windows thisApi, IDispatch* This, int dispIdMember, Guid* riid, uint lcid, uint dwFlags, DispatchParams* pDispParams, Variant* pVarResult, ExceptionInfo* pExcepInfo, Span<uint> pArgErr, uint cVarRef, Span<uint> rgVarRefIdx, Span<Variant> rgVarRef)
         {
             // SpanOverloader
             return thisApi.IDispatchRemoteInvokeProxy(This, dispIdMember, riid, lcid, dwFlags, pDispParams, pVarResult, pExcepInfo, ref pArgErr.GetPinnableReference(), cVarRef, ref rgVarRefIdx.GetPinnableReference(), ref rgVarRef.GetPinnableReference());
@@ -24098,7 +24098,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2449, Column 43 in oaidl.h")]
-        public static unsafe int IDispatchRemoteInvokeProxy(this Windows thisApi, IDispatch* This, int dispIdMember, Guid* riid, uint lcid, uint dwFlags, DispatchParams* pDispParams, Variant* pVarResult, Span<ExcepInfo> pExcepInfo, uint* pArgErr, uint cVarRef, uint* rgVarRefIdx, Variant* rgVarRef)
+        public static unsafe int IDispatchRemoteInvokeProxy(this Windows thisApi, IDispatch* This, int dispIdMember, Guid* riid, uint lcid, uint dwFlags, DispatchParams* pDispParams, Variant* pVarResult, Span<ExceptionInfo> pExcepInfo, uint* pArgErr, uint cVarRef, uint* rgVarRefIdx, Variant* rgVarRef)
         {
             // SpanOverloader
             return thisApi.IDispatchRemoteInvokeProxy(This, dispIdMember, riid, lcid, dwFlags, pDispParams, pVarResult, ref pExcepInfo.GetPinnableReference(), pArgErr, cVarRef, rgVarRefIdx, rgVarRef);
@@ -24106,7 +24106,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2449, Column 43 in oaidl.h")]
-        public static unsafe int IDispatchRemoteInvokeProxy(this Windows thisApi, IDispatch* This, int dispIdMember, Guid* riid, uint lcid, uint dwFlags, DispatchParams* pDispParams, Variant* pVarResult, Span<ExcepInfo> pExcepInfo, uint* pArgErr, uint cVarRef, uint* rgVarRefIdx, Span<Variant> rgVarRef)
+        public static unsafe int IDispatchRemoteInvokeProxy(this Windows thisApi, IDispatch* This, int dispIdMember, Guid* riid, uint lcid, uint dwFlags, DispatchParams* pDispParams, Variant* pVarResult, Span<ExceptionInfo> pExcepInfo, uint* pArgErr, uint cVarRef, uint* rgVarRefIdx, Span<Variant> rgVarRef)
         {
             // SpanOverloader
             return thisApi.IDispatchRemoteInvokeProxy(This, dispIdMember, riid, lcid, dwFlags, pDispParams, pVarResult, ref pExcepInfo.GetPinnableReference(), pArgErr, cVarRef, rgVarRefIdx, ref rgVarRef.GetPinnableReference());
@@ -24114,7 +24114,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2449, Column 43 in oaidl.h")]
-        public static unsafe int IDispatchRemoteInvokeProxy(this Windows thisApi, IDispatch* This, int dispIdMember, Guid* riid, uint lcid, uint dwFlags, DispatchParams* pDispParams, Variant* pVarResult, Span<ExcepInfo> pExcepInfo, uint* pArgErr, uint cVarRef, Span<uint> rgVarRefIdx, Variant* rgVarRef)
+        public static unsafe int IDispatchRemoteInvokeProxy(this Windows thisApi, IDispatch* This, int dispIdMember, Guid* riid, uint lcid, uint dwFlags, DispatchParams* pDispParams, Variant* pVarResult, Span<ExceptionInfo> pExcepInfo, uint* pArgErr, uint cVarRef, Span<uint> rgVarRefIdx, Variant* rgVarRef)
         {
             // SpanOverloader
             return thisApi.IDispatchRemoteInvokeProxy(This, dispIdMember, riid, lcid, dwFlags, pDispParams, pVarResult, ref pExcepInfo.GetPinnableReference(), pArgErr, cVarRef, ref rgVarRefIdx.GetPinnableReference(), rgVarRef);
@@ -24122,7 +24122,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2449, Column 43 in oaidl.h")]
-        public static unsafe int IDispatchRemoteInvokeProxy(this Windows thisApi, IDispatch* This, int dispIdMember, Guid* riid, uint lcid, uint dwFlags, DispatchParams* pDispParams, Variant* pVarResult, Span<ExcepInfo> pExcepInfo, uint* pArgErr, uint cVarRef, Span<uint> rgVarRefIdx, Span<Variant> rgVarRef)
+        public static unsafe int IDispatchRemoteInvokeProxy(this Windows thisApi, IDispatch* This, int dispIdMember, Guid* riid, uint lcid, uint dwFlags, DispatchParams* pDispParams, Variant* pVarResult, Span<ExceptionInfo> pExcepInfo, uint* pArgErr, uint cVarRef, Span<uint> rgVarRefIdx, Span<Variant> rgVarRef)
         {
             // SpanOverloader
             return thisApi.IDispatchRemoteInvokeProxy(This, dispIdMember, riid, lcid, dwFlags, pDispParams, pVarResult, ref pExcepInfo.GetPinnableReference(), pArgErr, cVarRef, ref rgVarRefIdx.GetPinnableReference(), ref rgVarRef.GetPinnableReference());
@@ -24130,7 +24130,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2449, Column 43 in oaidl.h")]
-        public static unsafe int IDispatchRemoteInvokeProxy(this Windows thisApi, IDispatch* This, int dispIdMember, Guid* riid, uint lcid, uint dwFlags, DispatchParams* pDispParams, Variant* pVarResult, Span<ExcepInfo> pExcepInfo, Span<uint> pArgErr, uint cVarRef, uint* rgVarRefIdx, Variant* rgVarRef)
+        public static unsafe int IDispatchRemoteInvokeProxy(this Windows thisApi, IDispatch* This, int dispIdMember, Guid* riid, uint lcid, uint dwFlags, DispatchParams* pDispParams, Variant* pVarResult, Span<ExceptionInfo> pExcepInfo, Span<uint> pArgErr, uint cVarRef, uint* rgVarRefIdx, Variant* rgVarRef)
         {
             // SpanOverloader
             return thisApi.IDispatchRemoteInvokeProxy(This, dispIdMember, riid, lcid, dwFlags, pDispParams, pVarResult, ref pExcepInfo.GetPinnableReference(), ref pArgErr.GetPinnableReference(), cVarRef, rgVarRefIdx, rgVarRef);
@@ -24138,7 +24138,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2449, Column 43 in oaidl.h")]
-        public static unsafe int IDispatchRemoteInvokeProxy(this Windows thisApi, IDispatch* This, int dispIdMember, Guid* riid, uint lcid, uint dwFlags, DispatchParams* pDispParams, Variant* pVarResult, Span<ExcepInfo> pExcepInfo, Span<uint> pArgErr, uint cVarRef, uint* rgVarRefIdx, Span<Variant> rgVarRef)
+        public static unsafe int IDispatchRemoteInvokeProxy(this Windows thisApi, IDispatch* This, int dispIdMember, Guid* riid, uint lcid, uint dwFlags, DispatchParams* pDispParams, Variant* pVarResult, Span<ExceptionInfo> pExcepInfo, Span<uint> pArgErr, uint cVarRef, uint* rgVarRefIdx, Span<Variant> rgVarRef)
         {
             // SpanOverloader
             return thisApi.IDispatchRemoteInvokeProxy(This, dispIdMember, riid, lcid, dwFlags, pDispParams, pVarResult, ref pExcepInfo.GetPinnableReference(), ref pArgErr.GetPinnableReference(), cVarRef, rgVarRefIdx, ref rgVarRef.GetPinnableReference());
@@ -24146,7 +24146,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2449, Column 43 in oaidl.h")]
-        public static unsafe int IDispatchRemoteInvokeProxy(this Windows thisApi, IDispatch* This, int dispIdMember, Guid* riid, uint lcid, uint dwFlags, DispatchParams* pDispParams, Variant* pVarResult, Span<ExcepInfo> pExcepInfo, Span<uint> pArgErr, uint cVarRef, Span<uint> rgVarRefIdx, Variant* rgVarRef)
+        public static unsafe int IDispatchRemoteInvokeProxy(this Windows thisApi, IDispatch* This, int dispIdMember, Guid* riid, uint lcid, uint dwFlags, DispatchParams* pDispParams, Variant* pVarResult, Span<ExceptionInfo> pExcepInfo, Span<uint> pArgErr, uint cVarRef, Span<uint> rgVarRefIdx, Variant* rgVarRef)
         {
             // SpanOverloader
             return thisApi.IDispatchRemoteInvokeProxy(This, dispIdMember, riid, lcid, dwFlags, pDispParams, pVarResult, ref pExcepInfo.GetPinnableReference(), ref pArgErr.GetPinnableReference(), cVarRef, ref rgVarRefIdx.GetPinnableReference(), rgVarRef);
@@ -24154,7 +24154,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2449, Column 43 in oaidl.h")]
-        public static unsafe int IDispatchRemoteInvokeProxy(this Windows thisApi, IDispatch* This, int dispIdMember, Guid* riid, uint lcid, uint dwFlags, DispatchParams* pDispParams, Variant* pVarResult, Span<ExcepInfo> pExcepInfo, Span<uint> pArgErr, uint cVarRef, Span<uint> rgVarRefIdx, Span<Variant> rgVarRef)
+        public static unsafe int IDispatchRemoteInvokeProxy(this Windows thisApi, IDispatch* This, int dispIdMember, Guid* riid, uint lcid, uint dwFlags, DispatchParams* pDispParams, Variant* pVarResult, Span<ExceptionInfo> pExcepInfo, Span<uint> pArgErr, uint cVarRef, Span<uint> rgVarRefIdx, Span<Variant> rgVarRef)
         {
             // SpanOverloader
             return thisApi.IDispatchRemoteInvokeProxy(This, dispIdMember, riid, lcid, dwFlags, pDispParams, pVarResult, ref pExcepInfo.GetPinnableReference(), ref pArgErr.GetPinnableReference(), cVarRef, ref rgVarRefIdx.GetPinnableReference(), ref rgVarRef.GetPinnableReference());
@@ -24162,7 +24162,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2449, Column 43 in oaidl.h")]
-        public static unsafe int IDispatchRemoteInvokeProxy(this Windows thisApi, IDispatch* This, int dispIdMember, Guid* riid, uint lcid, uint dwFlags, DispatchParams* pDispParams, Span<Variant> pVarResult, ExcepInfo* pExcepInfo, uint* pArgErr, uint cVarRef, uint* rgVarRefIdx, Variant* rgVarRef)
+        public static unsafe int IDispatchRemoteInvokeProxy(this Windows thisApi, IDispatch* This, int dispIdMember, Guid* riid, uint lcid, uint dwFlags, DispatchParams* pDispParams, Span<Variant> pVarResult, ExceptionInfo* pExcepInfo, uint* pArgErr, uint cVarRef, uint* rgVarRefIdx, Variant* rgVarRef)
         {
             // SpanOverloader
             return thisApi.IDispatchRemoteInvokeProxy(This, dispIdMember, riid, lcid, dwFlags, pDispParams, ref pVarResult.GetPinnableReference(), pExcepInfo, pArgErr, cVarRef, rgVarRefIdx, rgVarRef);
@@ -24170,7 +24170,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2449, Column 43 in oaidl.h")]
-        public static unsafe int IDispatchRemoteInvokeProxy(this Windows thisApi, IDispatch* This, int dispIdMember, Guid* riid, uint lcid, uint dwFlags, DispatchParams* pDispParams, Span<Variant> pVarResult, ExcepInfo* pExcepInfo, uint* pArgErr, uint cVarRef, uint* rgVarRefIdx, Span<Variant> rgVarRef)
+        public static unsafe int IDispatchRemoteInvokeProxy(this Windows thisApi, IDispatch* This, int dispIdMember, Guid* riid, uint lcid, uint dwFlags, DispatchParams* pDispParams, Span<Variant> pVarResult, ExceptionInfo* pExcepInfo, uint* pArgErr, uint cVarRef, uint* rgVarRefIdx, Span<Variant> rgVarRef)
         {
             // SpanOverloader
             return thisApi.IDispatchRemoteInvokeProxy(This, dispIdMember, riid, lcid, dwFlags, pDispParams, ref pVarResult.GetPinnableReference(), pExcepInfo, pArgErr, cVarRef, rgVarRefIdx, ref rgVarRef.GetPinnableReference());
@@ -24178,7 +24178,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2449, Column 43 in oaidl.h")]
-        public static unsafe int IDispatchRemoteInvokeProxy(this Windows thisApi, IDispatch* This, int dispIdMember, Guid* riid, uint lcid, uint dwFlags, DispatchParams* pDispParams, Span<Variant> pVarResult, ExcepInfo* pExcepInfo, uint* pArgErr, uint cVarRef, Span<uint> rgVarRefIdx, Variant* rgVarRef)
+        public static unsafe int IDispatchRemoteInvokeProxy(this Windows thisApi, IDispatch* This, int dispIdMember, Guid* riid, uint lcid, uint dwFlags, DispatchParams* pDispParams, Span<Variant> pVarResult, ExceptionInfo* pExcepInfo, uint* pArgErr, uint cVarRef, Span<uint> rgVarRefIdx, Variant* rgVarRef)
         {
             // SpanOverloader
             return thisApi.IDispatchRemoteInvokeProxy(This, dispIdMember, riid, lcid, dwFlags, pDispParams, ref pVarResult.GetPinnableReference(), pExcepInfo, pArgErr, cVarRef, ref rgVarRefIdx.GetPinnableReference(), rgVarRef);
@@ -24186,7 +24186,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2449, Column 43 in oaidl.h")]
-        public static unsafe int IDispatchRemoteInvokeProxy(this Windows thisApi, IDispatch* This, int dispIdMember, Guid* riid, uint lcid, uint dwFlags, DispatchParams* pDispParams, Span<Variant> pVarResult, ExcepInfo* pExcepInfo, uint* pArgErr, uint cVarRef, Span<uint> rgVarRefIdx, Span<Variant> rgVarRef)
+        public static unsafe int IDispatchRemoteInvokeProxy(this Windows thisApi, IDispatch* This, int dispIdMember, Guid* riid, uint lcid, uint dwFlags, DispatchParams* pDispParams, Span<Variant> pVarResult, ExceptionInfo* pExcepInfo, uint* pArgErr, uint cVarRef, Span<uint> rgVarRefIdx, Span<Variant> rgVarRef)
         {
             // SpanOverloader
             return thisApi.IDispatchRemoteInvokeProxy(This, dispIdMember, riid, lcid, dwFlags, pDispParams, ref pVarResult.GetPinnableReference(), pExcepInfo, pArgErr, cVarRef, ref rgVarRefIdx.GetPinnableReference(), ref rgVarRef.GetPinnableReference());
@@ -24194,7 +24194,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2449, Column 43 in oaidl.h")]
-        public static unsafe int IDispatchRemoteInvokeProxy(this Windows thisApi, IDispatch* This, int dispIdMember, Guid* riid, uint lcid, uint dwFlags, DispatchParams* pDispParams, Span<Variant> pVarResult, ExcepInfo* pExcepInfo, Span<uint> pArgErr, uint cVarRef, uint* rgVarRefIdx, Variant* rgVarRef)
+        public static unsafe int IDispatchRemoteInvokeProxy(this Windows thisApi, IDispatch* This, int dispIdMember, Guid* riid, uint lcid, uint dwFlags, DispatchParams* pDispParams, Span<Variant> pVarResult, ExceptionInfo* pExcepInfo, Span<uint> pArgErr, uint cVarRef, uint* rgVarRefIdx, Variant* rgVarRef)
         {
             // SpanOverloader
             return thisApi.IDispatchRemoteInvokeProxy(This, dispIdMember, riid, lcid, dwFlags, pDispParams, ref pVarResult.GetPinnableReference(), pExcepInfo, ref pArgErr.GetPinnableReference(), cVarRef, rgVarRefIdx, rgVarRef);
@@ -24202,7 +24202,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2449, Column 43 in oaidl.h")]
-        public static unsafe int IDispatchRemoteInvokeProxy(this Windows thisApi, IDispatch* This, int dispIdMember, Guid* riid, uint lcid, uint dwFlags, DispatchParams* pDispParams, Span<Variant> pVarResult, ExcepInfo* pExcepInfo, Span<uint> pArgErr, uint cVarRef, uint* rgVarRefIdx, Span<Variant> rgVarRef)
+        public static unsafe int IDispatchRemoteInvokeProxy(this Windows thisApi, IDispatch* This, int dispIdMember, Guid* riid, uint lcid, uint dwFlags, DispatchParams* pDispParams, Span<Variant> pVarResult, ExceptionInfo* pExcepInfo, Span<uint> pArgErr, uint cVarRef, uint* rgVarRefIdx, Span<Variant> rgVarRef)
         {
             // SpanOverloader
             return thisApi.IDispatchRemoteInvokeProxy(This, dispIdMember, riid, lcid, dwFlags, pDispParams, ref pVarResult.GetPinnableReference(), pExcepInfo, ref pArgErr.GetPinnableReference(), cVarRef, rgVarRefIdx, ref rgVarRef.GetPinnableReference());
@@ -24210,7 +24210,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2449, Column 43 in oaidl.h")]
-        public static unsafe int IDispatchRemoteInvokeProxy(this Windows thisApi, IDispatch* This, int dispIdMember, Guid* riid, uint lcid, uint dwFlags, DispatchParams* pDispParams, Span<Variant> pVarResult, ExcepInfo* pExcepInfo, Span<uint> pArgErr, uint cVarRef, Span<uint> rgVarRefIdx, Variant* rgVarRef)
+        public static unsafe int IDispatchRemoteInvokeProxy(this Windows thisApi, IDispatch* This, int dispIdMember, Guid* riid, uint lcid, uint dwFlags, DispatchParams* pDispParams, Span<Variant> pVarResult, ExceptionInfo* pExcepInfo, Span<uint> pArgErr, uint cVarRef, Span<uint> rgVarRefIdx, Variant* rgVarRef)
         {
             // SpanOverloader
             return thisApi.IDispatchRemoteInvokeProxy(This, dispIdMember, riid, lcid, dwFlags, pDispParams, ref pVarResult.GetPinnableReference(), pExcepInfo, ref pArgErr.GetPinnableReference(), cVarRef, ref rgVarRefIdx.GetPinnableReference(), rgVarRef);
@@ -24218,7 +24218,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2449, Column 43 in oaidl.h")]
-        public static unsafe int IDispatchRemoteInvokeProxy(this Windows thisApi, IDispatch* This, int dispIdMember, Guid* riid, uint lcid, uint dwFlags, DispatchParams* pDispParams, Span<Variant> pVarResult, ExcepInfo* pExcepInfo, Span<uint> pArgErr, uint cVarRef, Span<uint> rgVarRefIdx, Span<Variant> rgVarRef)
+        public static unsafe int IDispatchRemoteInvokeProxy(this Windows thisApi, IDispatch* This, int dispIdMember, Guid* riid, uint lcid, uint dwFlags, DispatchParams* pDispParams, Span<Variant> pVarResult, ExceptionInfo* pExcepInfo, Span<uint> pArgErr, uint cVarRef, Span<uint> rgVarRefIdx, Span<Variant> rgVarRef)
         {
             // SpanOverloader
             return thisApi.IDispatchRemoteInvokeProxy(This, dispIdMember, riid, lcid, dwFlags, pDispParams, ref pVarResult.GetPinnableReference(), pExcepInfo, ref pArgErr.GetPinnableReference(), cVarRef, ref rgVarRefIdx.GetPinnableReference(), ref rgVarRef.GetPinnableReference());
@@ -24226,7 +24226,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2449, Column 43 in oaidl.h")]
-        public static unsafe int IDispatchRemoteInvokeProxy(this Windows thisApi, IDispatch* This, int dispIdMember, Guid* riid, uint lcid, uint dwFlags, DispatchParams* pDispParams, Span<Variant> pVarResult, Span<ExcepInfo> pExcepInfo, uint* pArgErr, uint cVarRef, uint* rgVarRefIdx, Variant* rgVarRef)
+        public static unsafe int IDispatchRemoteInvokeProxy(this Windows thisApi, IDispatch* This, int dispIdMember, Guid* riid, uint lcid, uint dwFlags, DispatchParams* pDispParams, Span<Variant> pVarResult, Span<ExceptionInfo> pExcepInfo, uint* pArgErr, uint cVarRef, uint* rgVarRefIdx, Variant* rgVarRef)
         {
             // SpanOverloader
             return thisApi.IDispatchRemoteInvokeProxy(This, dispIdMember, riid, lcid, dwFlags, pDispParams, ref pVarResult.GetPinnableReference(), ref pExcepInfo.GetPinnableReference(), pArgErr, cVarRef, rgVarRefIdx, rgVarRef);
@@ -24234,7 +24234,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2449, Column 43 in oaidl.h")]
-        public static unsafe int IDispatchRemoteInvokeProxy(this Windows thisApi, IDispatch* This, int dispIdMember, Guid* riid, uint lcid, uint dwFlags, DispatchParams* pDispParams, Span<Variant> pVarResult, Span<ExcepInfo> pExcepInfo, uint* pArgErr, uint cVarRef, uint* rgVarRefIdx, Span<Variant> rgVarRef)
+        public static unsafe int IDispatchRemoteInvokeProxy(this Windows thisApi, IDispatch* This, int dispIdMember, Guid* riid, uint lcid, uint dwFlags, DispatchParams* pDispParams, Span<Variant> pVarResult, Span<ExceptionInfo> pExcepInfo, uint* pArgErr, uint cVarRef, uint* rgVarRefIdx, Span<Variant> rgVarRef)
         {
             // SpanOverloader
             return thisApi.IDispatchRemoteInvokeProxy(This, dispIdMember, riid, lcid, dwFlags, pDispParams, ref pVarResult.GetPinnableReference(), ref pExcepInfo.GetPinnableReference(), pArgErr, cVarRef, rgVarRefIdx, ref rgVarRef.GetPinnableReference());
@@ -24242,7 +24242,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2449, Column 43 in oaidl.h")]
-        public static unsafe int IDispatchRemoteInvokeProxy(this Windows thisApi, IDispatch* This, int dispIdMember, Guid* riid, uint lcid, uint dwFlags, DispatchParams* pDispParams, Span<Variant> pVarResult, Span<ExcepInfo> pExcepInfo, uint* pArgErr, uint cVarRef, Span<uint> rgVarRefIdx, Variant* rgVarRef)
+        public static unsafe int IDispatchRemoteInvokeProxy(this Windows thisApi, IDispatch* This, int dispIdMember, Guid* riid, uint lcid, uint dwFlags, DispatchParams* pDispParams, Span<Variant> pVarResult, Span<ExceptionInfo> pExcepInfo, uint* pArgErr, uint cVarRef, Span<uint> rgVarRefIdx, Variant* rgVarRef)
         {
             // SpanOverloader
             return thisApi.IDispatchRemoteInvokeProxy(This, dispIdMember, riid, lcid, dwFlags, pDispParams, ref pVarResult.GetPinnableReference(), ref pExcepInfo.GetPinnableReference(), pArgErr, cVarRef, ref rgVarRefIdx.GetPinnableReference(), rgVarRef);
@@ -24250,7 +24250,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2449, Column 43 in oaidl.h")]
-        public static unsafe int IDispatchRemoteInvokeProxy(this Windows thisApi, IDispatch* This, int dispIdMember, Guid* riid, uint lcid, uint dwFlags, DispatchParams* pDispParams, Span<Variant> pVarResult, Span<ExcepInfo> pExcepInfo, uint* pArgErr, uint cVarRef, Span<uint> rgVarRefIdx, Span<Variant> rgVarRef)
+        public static unsafe int IDispatchRemoteInvokeProxy(this Windows thisApi, IDispatch* This, int dispIdMember, Guid* riid, uint lcid, uint dwFlags, DispatchParams* pDispParams, Span<Variant> pVarResult, Span<ExceptionInfo> pExcepInfo, uint* pArgErr, uint cVarRef, Span<uint> rgVarRefIdx, Span<Variant> rgVarRef)
         {
             // SpanOverloader
             return thisApi.IDispatchRemoteInvokeProxy(This, dispIdMember, riid, lcid, dwFlags, pDispParams, ref pVarResult.GetPinnableReference(), ref pExcepInfo.GetPinnableReference(), pArgErr, cVarRef, ref rgVarRefIdx.GetPinnableReference(), ref rgVarRef.GetPinnableReference());
@@ -24258,7 +24258,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2449, Column 43 in oaidl.h")]
-        public static unsafe int IDispatchRemoteInvokeProxy(this Windows thisApi, IDispatch* This, int dispIdMember, Guid* riid, uint lcid, uint dwFlags, DispatchParams* pDispParams, Span<Variant> pVarResult, Span<ExcepInfo> pExcepInfo, Span<uint> pArgErr, uint cVarRef, uint* rgVarRefIdx, Variant* rgVarRef)
+        public static unsafe int IDispatchRemoteInvokeProxy(this Windows thisApi, IDispatch* This, int dispIdMember, Guid* riid, uint lcid, uint dwFlags, DispatchParams* pDispParams, Span<Variant> pVarResult, Span<ExceptionInfo> pExcepInfo, Span<uint> pArgErr, uint cVarRef, uint* rgVarRefIdx, Variant* rgVarRef)
         {
             // SpanOverloader
             return thisApi.IDispatchRemoteInvokeProxy(This, dispIdMember, riid, lcid, dwFlags, pDispParams, ref pVarResult.GetPinnableReference(), ref pExcepInfo.GetPinnableReference(), ref pArgErr.GetPinnableReference(), cVarRef, rgVarRefIdx, rgVarRef);
@@ -24266,7 +24266,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2449, Column 43 in oaidl.h")]
-        public static unsafe int IDispatchRemoteInvokeProxy(this Windows thisApi, IDispatch* This, int dispIdMember, Guid* riid, uint lcid, uint dwFlags, DispatchParams* pDispParams, Span<Variant> pVarResult, Span<ExcepInfo> pExcepInfo, Span<uint> pArgErr, uint cVarRef, uint* rgVarRefIdx, Span<Variant> rgVarRef)
+        public static unsafe int IDispatchRemoteInvokeProxy(this Windows thisApi, IDispatch* This, int dispIdMember, Guid* riid, uint lcid, uint dwFlags, DispatchParams* pDispParams, Span<Variant> pVarResult, Span<ExceptionInfo> pExcepInfo, Span<uint> pArgErr, uint cVarRef, uint* rgVarRefIdx, Span<Variant> rgVarRef)
         {
             // SpanOverloader
             return thisApi.IDispatchRemoteInvokeProxy(This, dispIdMember, riid, lcid, dwFlags, pDispParams, ref pVarResult.GetPinnableReference(), ref pExcepInfo.GetPinnableReference(), ref pArgErr.GetPinnableReference(), cVarRef, rgVarRefIdx, ref rgVarRef.GetPinnableReference());
@@ -24274,7 +24274,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2449, Column 43 in oaidl.h")]
-        public static unsafe int IDispatchRemoteInvokeProxy(this Windows thisApi, IDispatch* This, int dispIdMember, Guid* riid, uint lcid, uint dwFlags, DispatchParams* pDispParams, Span<Variant> pVarResult, Span<ExcepInfo> pExcepInfo, Span<uint> pArgErr, uint cVarRef, Span<uint> rgVarRefIdx, Variant* rgVarRef)
+        public static unsafe int IDispatchRemoteInvokeProxy(this Windows thisApi, IDispatch* This, int dispIdMember, Guid* riid, uint lcid, uint dwFlags, DispatchParams* pDispParams, Span<Variant> pVarResult, Span<ExceptionInfo> pExcepInfo, Span<uint> pArgErr, uint cVarRef, Span<uint> rgVarRefIdx, Variant* rgVarRef)
         {
             // SpanOverloader
             return thisApi.IDispatchRemoteInvokeProxy(This, dispIdMember, riid, lcid, dwFlags, pDispParams, ref pVarResult.GetPinnableReference(), ref pExcepInfo.GetPinnableReference(), ref pArgErr.GetPinnableReference(), cVarRef, ref rgVarRefIdx.GetPinnableReference(), rgVarRef);
@@ -24282,7 +24282,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2449, Column 43 in oaidl.h")]
-        public static unsafe int IDispatchRemoteInvokeProxy(this Windows thisApi, IDispatch* This, int dispIdMember, Guid* riid, uint lcid, uint dwFlags, DispatchParams* pDispParams, Span<Variant> pVarResult, Span<ExcepInfo> pExcepInfo, Span<uint> pArgErr, uint cVarRef, Span<uint> rgVarRefIdx, Span<Variant> rgVarRef)
+        public static unsafe int IDispatchRemoteInvokeProxy(this Windows thisApi, IDispatch* This, int dispIdMember, Guid* riid, uint lcid, uint dwFlags, DispatchParams* pDispParams, Span<Variant> pVarResult, Span<ExceptionInfo> pExcepInfo, Span<uint> pArgErr, uint cVarRef, Span<uint> rgVarRefIdx, Span<Variant> rgVarRef)
         {
             // SpanOverloader
             return thisApi.IDispatchRemoteInvokeProxy(This, dispIdMember, riid, lcid, dwFlags, pDispParams, ref pVarResult.GetPinnableReference(), ref pExcepInfo.GetPinnableReference(), ref pArgErr.GetPinnableReference(), cVarRef, ref rgVarRefIdx.GetPinnableReference(), ref rgVarRef.GetPinnableReference());
@@ -24290,7 +24290,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2449, Column 43 in oaidl.h")]
-        public static unsafe int IDispatchRemoteInvokeProxy(this Windows thisApi, IDispatch* This, int dispIdMember, Guid* riid, uint lcid, uint dwFlags, Span<DispatchParams> pDispParams, Variant* pVarResult, ExcepInfo* pExcepInfo, uint* pArgErr, uint cVarRef, uint* rgVarRefIdx, Variant* rgVarRef)
+        public static unsafe int IDispatchRemoteInvokeProxy(this Windows thisApi, IDispatch* This, int dispIdMember, Guid* riid, uint lcid, uint dwFlags, Span<DispatchParams> pDispParams, Variant* pVarResult, ExceptionInfo* pExcepInfo, uint* pArgErr, uint cVarRef, uint* rgVarRefIdx, Variant* rgVarRef)
         {
             // SpanOverloader
             return thisApi.IDispatchRemoteInvokeProxy(This, dispIdMember, riid, lcid, dwFlags, ref pDispParams.GetPinnableReference(), pVarResult, pExcepInfo, pArgErr, cVarRef, rgVarRefIdx, rgVarRef);
@@ -24298,7 +24298,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2449, Column 43 in oaidl.h")]
-        public static unsafe int IDispatchRemoteInvokeProxy(this Windows thisApi, IDispatch* This, int dispIdMember, Guid* riid, uint lcid, uint dwFlags, Span<DispatchParams> pDispParams, Variant* pVarResult, ExcepInfo* pExcepInfo, uint* pArgErr, uint cVarRef, uint* rgVarRefIdx, Span<Variant> rgVarRef)
+        public static unsafe int IDispatchRemoteInvokeProxy(this Windows thisApi, IDispatch* This, int dispIdMember, Guid* riid, uint lcid, uint dwFlags, Span<DispatchParams> pDispParams, Variant* pVarResult, ExceptionInfo* pExcepInfo, uint* pArgErr, uint cVarRef, uint* rgVarRefIdx, Span<Variant> rgVarRef)
         {
             // SpanOverloader
             return thisApi.IDispatchRemoteInvokeProxy(This, dispIdMember, riid, lcid, dwFlags, ref pDispParams.GetPinnableReference(), pVarResult, pExcepInfo, pArgErr, cVarRef, rgVarRefIdx, ref rgVarRef.GetPinnableReference());
@@ -24306,7 +24306,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2449, Column 43 in oaidl.h")]
-        public static unsafe int IDispatchRemoteInvokeProxy(this Windows thisApi, IDispatch* This, int dispIdMember, Guid* riid, uint lcid, uint dwFlags, Span<DispatchParams> pDispParams, Variant* pVarResult, ExcepInfo* pExcepInfo, uint* pArgErr, uint cVarRef, Span<uint> rgVarRefIdx, Variant* rgVarRef)
+        public static unsafe int IDispatchRemoteInvokeProxy(this Windows thisApi, IDispatch* This, int dispIdMember, Guid* riid, uint lcid, uint dwFlags, Span<DispatchParams> pDispParams, Variant* pVarResult, ExceptionInfo* pExcepInfo, uint* pArgErr, uint cVarRef, Span<uint> rgVarRefIdx, Variant* rgVarRef)
         {
             // SpanOverloader
             return thisApi.IDispatchRemoteInvokeProxy(This, dispIdMember, riid, lcid, dwFlags, ref pDispParams.GetPinnableReference(), pVarResult, pExcepInfo, pArgErr, cVarRef, ref rgVarRefIdx.GetPinnableReference(), rgVarRef);
@@ -24314,7 +24314,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2449, Column 43 in oaidl.h")]
-        public static unsafe int IDispatchRemoteInvokeProxy(this Windows thisApi, IDispatch* This, int dispIdMember, Guid* riid, uint lcid, uint dwFlags, Span<DispatchParams> pDispParams, Variant* pVarResult, ExcepInfo* pExcepInfo, uint* pArgErr, uint cVarRef, Span<uint> rgVarRefIdx, Span<Variant> rgVarRef)
+        public static unsafe int IDispatchRemoteInvokeProxy(this Windows thisApi, IDispatch* This, int dispIdMember, Guid* riid, uint lcid, uint dwFlags, Span<DispatchParams> pDispParams, Variant* pVarResult, ExceptionInfo* pExcepInfo, uint* pArgErr, uint cVarRef, Span<uint> rgVarRefIdx, Span<Variant> rgVarRef)
         {
             // SpanOverloader
             return thisApi.IDispatchRemoteInvokeProxy(This, dispIdMember, riid, lcid, dwFlags, ref pDispParams.GetPinnableReference(), pVarResult, pExcepInfo, pArgErr, cVarRef, ref rgVarRefIdx.GetPinnableReference(), ref rgVarRef.GetPinnableReference());
@@ -24322,7 +24322,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2449, Column 43 in oaidl.h")]
-        public static unsafe int IDispatchRemoteInvokeProxy(this Windows thisApi, IDispatch* This, int dispIdMember, Guid* riid, uint lcid, uint dwFlags, Span<DispatchParams> pDispParams, Variant* pVarResult, ExcepInfo* pExcepInfo, Span<uint> pArgErr, uint cVarRef, uint* rgVarRefIdx, Variant* rgVarRef)
+        public static unsafe int IDispatchRemoteInvokeProxy(this Windows thisApi, IDispatch* This, int dispIdMember, Guid* riid, uint lcid, uint dwFlags, Span<DispatchParams> pDispParams, Variant* pVarResult, ExceptionInfo* pExcepInfo, Span<uint> pArgErr, uint cVarRef, uint* rgVarRefIdx, Variant* rgVarRef)
         {
             // SpanOverloader
             return thisApi.IDispatchRemoteInvokeProxy(This, dispIdMember, riid, lcid, dwFlags, ref pDispParams.GetPinnableReference(), pVarResult, pExcepInfo, ref pArgErr.GetPinnableReference(), cVarRef, rgVarRefIdx, rgVarRef);
@@ -24330,7 +24330,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2449, Column 43 in oaidl.h")]
-        public static unsafe int IDispatchRemoteInvokeProxy(this Windows thisApi, IDispatch* This, int dispIdMember, Guid* riid, uint lcid, uint dwFlags, Span<DispatchParams> pDispParams, Variant* pVarResult, ExcepInfo* pExcepInfo, Span<uint> pArgErr, uint cVarRef, uint* rgVarRefIdx, Span<Variant> rgVarRef)
+        public static unsafe int IDispatchRemoteInvokeProxy(this Windows thisApi, IDispatch* This, int dispIdMember, Guid* riid, uint lcid, uint dwFlags, Span<DispatchParams> pDispParams, Variant* pVarResult, ExceptionInfo* pExcepInfo, Span<uint> pArgErr, uint cVarRef, uint* rgVarRefIdx, Span<Variant> rgVarRef)
         {
             // SpanOverloader
             return thisApi.IDispatchRemoteInvokeProxy(This, dispIdMember, riid, lcid, dwFlags, ref pDispParams.GetPinnableReference(), pVarResult, pExcepInfo, ref pArgErr.GetPinnableReference(), cVarRef, rgVarRefIdx, ref rgVarRef.GetPinnableReference());
@@ -24338,7 +24338,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2449, Column 43 in oaidl.h")]
-        public static unsafe int IDispatchRemoteInvokeProxy(this Windows thisApi, IDispatch* This, int dispIdMember, Guid* riid, uint lcid, uint dwFlags, Span<DispatchParams> pDispParams, Variant* pVarResult, ExcepInfo* pExcepInfo, Span<uint> pArgErr, uint cVarRef, Span<uint> rgVarRefIdx, Variant* rgVarRef)
+        public static unsafe int IDispatchRemoteInvokeProxy(this Windows thisApi, IDispatch* This, int dispIdMember, Guid* riid, uint lcid, uint dwFlags, Span<DispatchParams> pDispParams, Variant* pVarResult, ExceptionInfo* pExcepInfo, Span<uint> pArgErr, uint cVarRef, Span<uint> rgVarRefIdx, Variant* rgVarRef)
         {
             // SpanOverloader
             return thisApi.IDispatchRemoteInvokeProxy(This, dispIdMember, riid, lcid, dwFlags, ref pDispParams.GetPinnableReference(), pVarResult, pExcepInfo, ref pArgErr.GetPinnableReference(), cVarRef, ref rgVarRefIdx.GetPinnableReference(), rgVarRef);
@@ -24346,7 +24346,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2449, Column 43 in oaidl.h")]
-        public static unsafe int IDispatchRemoteInvokeProxy(this Windows thisApi, IDispatch* This, int dispIdMember, Guid* riid, uint lcid, uint dwFlags, Span<DispatchParams> pDispParams, Variant* pVarResult, ExcepInfo* pExcepInfo, Span<uint> pArgErr, uint cVarRef, Span<uint> rgVarRefIdx, Span<Variant> rgVarRef)
+        public static unsafe int IDispatchRemoteInvokeProxy(this Windows thisApi, IDispatch* This, int dispIdMember, Guid* riid, uint lcid, uint dwFlags, Span<DispatchParams> pDispParams, Variant* pVarResult, ExceptionInfo* pExcepInfo, Span<uint> pArgErr, uint cVarRef, Span<uint> rgVarRefIdx, Span<Variant> rgVarRef)
         {
             // SpanOverloader
             return thisApi.IDispatchRemoteInvokeProxy(This, dispIdMember, riid, lcid, dwFlags, ref pDispParams.GetPinnableReference(), pVarResult, pExcepInfo, ref pArgErr.GetPinnableReference(), cVarRef, ref rgVarRefIdx.GetPinnableReference(), ref rgVarRef.GetPinnableReference());
@@ -24354,7 +24354,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2449, Column 43 in oaidl.h")]
-        public static unsafe int IDispatchRemoteInvokeProxy(this Windows thisApi, IDispatch* This, int dispIdMember, Guid* riid, uint lcid, uint dwFlags, Span<DispatchParams> pDispParams, Variant* pVarResult, Span<ExcepInfo> pExcepInfo, uint* pArgErr, uint cVarRef, uint* rgVarRefIdx, Variant* rgVarRef)
+        public static unsafe int IDispatchRemoteInvokeProxy(this Windows thisApi, IDispatch* This, int dispIdMember, Guid* riid, uint lcid, uint dwFlags, Span<DispatchParams> pDispParams, Variant* pVarResult, Span<ExceptionInfo> pExcepInfo, uint* pArgErr, uint cVarRef, uint* rgVarRefIdx, Variant* rgVarRef)
         {
             // SpanOverloader
             return thisApi.IDispatchRemoteInvokeProxy(This, dispIdMember, riid, lcid, dwFlags, ref pDispParams.GetPinnableReference(), pVarResult, ref pExcepInfo.GetPinnableReference(), pArgErr, cVarRef, rgVarRefIdx, rgVarRef);
@@ -24362,7 +24362,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2449, Column 43 in oaidl.h")]
-        public static unsafe int IDispatchRemoteInvokeProxy(this Windows thisApi, IDispatch* This, int dispIdMember, Guid* riid, uint lcid, uint dwFlags, Span<DispatchParams> pDispParams, Variant* pVarResult, Span<ExcepInfo> pExcepInfo, uint* pArgErr, uint cVarRef, uint* rgVarRefIdx, Span<Variant> rgVarRef)
+        public static unsafe int IDispatchRemoteInvokeProxy(this Windows thisApi, IDispatch* This, int dispIdMember, Guid* riid, uint lcid, uint dwFlags, Span<DispatchParams> pDispParams, Variant* pVarResult, Span<ExceptionInfo> pExcepInfo, uint* pArgErr, uint cVarRef, uint* rgVarRefIdx, Span<Variant> rgVarRef)
         {
             // SpanOverloader
             return thisApi.IDispatchRemoteInvokeProxy(This, dispIdMember, riid, lcid, dwFlags, ref pDispParams.GetPinnableReference(), pVarResult, ref pExcepInfo.GetPinnableReference(), pArgErr, cVarRef, rgVarRefIdx, ref rgVarRef.GetPinnableReference());
@@ -24370,7 +24370,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2449, Column 43 in oaidl.h")]
-        public static unsafe int IDispatchRemoteInvokeProxy(this Windows thisApi, IDispatch* This, int dispIdMember, Guid* riid, uint lcid, uint dwFlags, Span<DispatchParams> pDispParams, Variant* pVarResult, Span<ExcepInfo> pExcepInfo, uint* pArgErr, uint cVarRef, Span<uint> rgVarRefIdx, Variant* rgVarRef)
+        public static unsafe int IDispatchRemoteInvokeProxy(this Windows thisApi, IDispatch* This, int dispIdMember, Guid* riid, uint lcid, uint dwFlags, Span<DispatchParams> pDispParams, Variant* pVarResult, Span<ExceptionInfo> pExcepInfo, uint* pArgErr, uint cVarRef, Span<uint> rgVarRefIdx, Variant* rgVarRef)
         {
             // SpanOverloader
             return thisApi.IDispatchRemoteInvokeProxy(This, dispIdMember, riid, lcid, dwFlags, ref pDispParams.GetPinnableReference(), pVarResult, ref pExcepInfo.GetPinnableReference(), pArgErr, cVarRef, ref rgVarRefIdx.GetPinnableReference(), rgVarRef);
@@ -24378,7 +24378,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2449, Column 43 in oaidl.h")]
-        public static unsafe int IDispatchRemoteInvokeProxy(this Windows thisApi, IDispatch* This, int dispIdMember, Guid* riid, uint lcid, uint dwFlags, Span<DispatchParams> pDispParams, Variant* pVarResult, Span<ExcepInfo> pExcepInfo, uint* pArgErr, uint cVarRef, Span<uint> rgVarRefIdx, Span<Variant> rgVarRef)
+        public static unsafe int IDispatchRemoteInvokeProxy(this Windows thisApi, IDispatch* This, int dispIdMember, Guid* riid, uint lcid, uint dwFlags, Span<DispatchParams> pDispParams, Variant* pVarResult, Span<ExceptionInfo> pExcepInfo, uint* pArgErr, uint cVarRef, Span<uint> rgVarRefIdx, Span<Variant> rgVarRef)
         {
             // SpanOverloader
             return thisApi.IDispatchRemoteInvokeProxy(This, dispIdMember, riid, lcid, dwFlags, ref pDispParams.GetPinnableReference(), pVarResult, ref pExcepInfo.GetPinnableReference(), pArgErr, cVarRef, ref rgVarRefIdx.GetPinnableReference(), ref rgVarRef.GetPinnableReference());
@@ -24386,7 +24386,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2449, Column 43 in oaidl.h")]
-        public static unsafe int IDispatchRemoteInvokeProxy(this Windows thisApi, IDispatch* This, int dispIdMember, Guid* riid, uint lcid, uint dwFlags, Span<DispatchParams> pDispParams, Variant* pVarResult, Span<ExcepInfo> pExcepInfo, Span<uint> pArgErr, uint cVarRef, uint* rgVarRefIdx, Variant* rgVarRef)
+        public static unsafe int IDispatchRemoteInvokeProxy(this Windows thisApi, IDispatch* This, int dispIdMember, Guid* riid, uint lcid, uint dwFlags, Span<DispatchParams> pDispParams, Variant* pVarResult, Span<ExceptionInfo> pExcepInfo, Span<uint> pArgErr, uint cVarRef, uint* rgVarRefIdx, Variant* rgVarRef)
         {
             // SpanOverloader
             return thisApi.IDispatchRemoteInvokeProxy(This, dispIdMember, riid, lcid, dwFlags, ref pDispParams.GetPinnableReference(), pVarResult, ref pExcepInfo.GetPinnableReference(), ref pArgErr.GetPinnableReference(), cVarRef, rgVarRefIdx, rgVarRef);
@@ -24394,7 +24394,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2449, Column 43 in oaidl.h")]
-        public static unsafe int IDispatchRemoteInvokeProxy(this Windows thisApi, IDispatch* This, int dispIdMember, Guid* riid, uint lcid, uint dwFlags, Span<DispatchParams> pDispParams, Variant* pVarResult, Span<ExcepInfo> pExcepInfo, Span<uint> pArgErr, uint cVarRef, uint* rgVarRefIdx, Span<Variant> rgVarRef)
+        public static unsafe int IDispatchRemoteInvokeProxy(this Windows thisApi, IDispatch* This, int dispIdMember, Guid* riid, uint lcid, uint dwFlags, Span<DispatchParams> pDispParams, Variant* pVarResult, Span<ExceptionInfo> pExcepInfo, Span<uint> pArgErr, uint cVarRef, uint* rgVarRefIdx, Span<Variant> rgVarRef)
         {
             // SpanOverloader
             return thisApi.IDispatchRemoteInvokeProxy(This, dispIdMember, riid, lcid, dwFlags, ref pDispParams.GetPinnableReference(), pVarResult, ref pExcepInfo.GetPinnableReference(), ref pArgErr.GetPinnableReference(), cVarRef, rgVarRefIdx, ref rgVarRef.GetPinnableReference());
@@ -24402,7 +24402,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2449, Column 43 in oaidl.h")]
-        public static unsafe int IDispatchRemoteInvokeProxy(this Windows thisApi, IDispatch* This, int dispIdMember, Guid* riid, uint lcid, uint dwFlags, Span<DispatchParams> pDispParams, Variant* pVarResult, Span<ExcepInfo> pExcepInfo, Span<uint> pArgErr, uint cVarRef, Span<uint> rgVarRefIdx, Variant* rgVarRef)
+        public static unsafe int IDispatchRemoteInvokeProxy(this Windows thisApi, IDispatch* This, int dispIdMember, Guid* riid, uint lcid, uint dwFlags, Span<DispatchParams> pDispParams, Variant* pVarResult, Span<ExceptionInfo> pExcepInfo, Span<uint> pArgErr, uint cVarRef, Span<uint> rgVarRefIdx, Variant* rgVarRef)
         {
             // SpanOverloader
             return thisApi.IDispatchRemoteInvokeProxy(This, dispIdMember, riid, lcid, dwFlags, ref pDispParams.GetPinnableReference(), pVarResult, ref pExcepInfo.GetPinnableReference(), ref pArgErr.GetPinnableReference(), cVarRef, ref rgVarRefIdx.GetPinnableReference(), rgVarRef);
@@ -24410,7 +24410,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2449, Column 43 in oaidl.h")]
-        public static unsafe int IDispatchRemoteInvokeProxy(this Windows thisApi, IDispatch* This, int dispIdMember, Guid* riid, uint lcid, uint dwFlags, Span<DispatchParams> pDispParams, Variant* pVarResult, Span<ExcepInfo> pExcepInfo, Span<uint> pArgErr, uint cVarRef, Span<uint> rgVarRefIdx, Span<Variant> rgVarRef)
+        public static unsafe int IDispatchRemoteInvokeProxy(this Windows thisApi, IDispatch* This, int dispIdMember, Guid* riid, uint lcid, uint dwFlags, Span<DispatchParams> pDispParams, Variant* pVarResult, Span<ExceptionInfo> pExcepInfo, Span<uint> pArgErr, uint cVarRef, Span<uint> rgVarRefIdx, Span<Variant> rgVarRef)
         {
             // SpanOverloader
             return thisApi.IDispatchRemoteInvokeProxy(This, dispIdMember, riid, lcid, dwFlags, ref pDispParams.GetPinnableReference(), pVarResult, ref pExcepInfo.GetPinnableReference(), ref pArgErr.GetPinnableReference(), cVarRef, ref rgVarRefIdx.GetPinnableReference(), ref rgVarRef.GetPinnableReference());
@@ -24418,7 +24418,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2449, Column 43 in oaidl.h")]
-        public static unsafe int IDispatchRemoteInvokeProxy(this Windows thisApi, IDispatch* This, int dispIdMember, Guid* riid, uint lcid, uint dwFlags, Span<DispatchParams> pDispParams, Span<Variant> pVarResult, ExcepInfo* pExcepInfo, uint* pArgErr, uint cVarRef, uint* rgVarRefIdx, Variant* rgVarRef)
+        public static unsafe int IDispatchRemoteInvokeProxy(this Windows thisApi, IDispatch* This, int dispIdMember, Guid* riid, uint lcid, uint dwFlags, Span<DispatchParams> pDispParams, Span<Variant> pVarResult, ExceptionInfo* pExcepInfo, uint* pArgErr, uint cVarRef, uint* rgVarRefIdx, Variant* rgVarRef)
         {
             // SpanOverloader
             return thisApi.IDispatchRemoteInvokeProxy(This, dispIdMember, riid, lcid, dwFlags, ref pDispParams.GetPinnableReference(), ref pVarResult.GetPinnableReference(), pExcepInfo, pArgErr, cVarRef, rgVarRefIdx, rgVarRef);
@@ -24426,7 +24426,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2449, Column 43 in oaidl.h")]
-        public static unsafe int IDispatchRemoteInvokeProxy(this Windows thisApi, IDispatch* This, int dispIdMember, Guid* riid, uint lcid, uint dwFlags, Span<DispatchParams> pDispParams, Span<Variant> pVarResult, ExcepInfo* pExcepInfo, uint* pArgErr, uint cVarRef, uint* rgVarRefIdx, Span<Variant> rgVarRef)
+        public static unsafe int IDispatchRemoteInvokeProxy(this Windows thisApi, IDispatch* This, int dispIdMember, Guid* riid, uint lcid, uint dwFlags, Span<DispatchParams> pDispParams, Span<Variant> pVarResult, ExceptionInfo* pExcepInfo, uint* pArgErr, uint cVarRef, uint* rgVarRefIdx, Span<Variant> rgVarRef)
         {
             // SpanOverloader
             return thisApi.IDispatchRemoteInvokeProxy(This, dispIdMember, riid, lcid, dwFlags, ref pDispParams.GetPinnableReference(), ref pVarResult.GetPinnableReference(), pExcepInfo, pArgErr, cVarRef, rgVarRefIdx, ref rgVarRef.GetPinnableReference());
@@ -24434,7 +24434,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2449, Column 43 in oaidl.h")]
-        public static unsafe int IDispatchRemoteInvokeProxy(this Windows thisApi, IDispatch* This, int dispIdMember, Guid* riid, uint lcid, uint dwFlags, Span<DispatchParams> pDispParams, Span<Variant> pVarResult, ExcepInfo* pExcepInfo, uint* pArgErr, uint cVarRef, Span<uint> rgVarRefIdx, Variant* rgVarRef)
+        public static unsafe int IDispatchRemoteInvokeProxy(this Windows thisApi, IDispatch* This, int dispIdMember, Guid* riid, uint lcid, uint dwFlags, Span<DispatchParams> pDispParams, Span<Variant> pVarResult, ExceptionInfo* pExcepInfo, uint* pArgErr, uint cVarRef, Span<uint> rgVarRefIdx, Variant* rgVarRef)
         {
             // SpanOverloader
             return thisApi.IDispatchRemoteInvokeProxy(This, dispIdMember, riid, lcid, dwFlags, ref pDispParams.GetPinnableReference(), ref pVarResult.GetPinnableReference(), pExcepInfo, pArgErr, cVarRef, ref rgVarRefIdx.GetPinnableReference(), rgVarRef);
@@ -24442,7 +24442,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2449, Column 43 in oaidl.h")]
-        public static unsafe int IDispatchRemoteInvokeProxy(this Windows thisApi, IDispatch* This, int dispIdMember, Guid* riid, uint lcid, uint dwFlags, Span<DispatchParams> pDispParams, Span<Variant> pVarResult, ExcepInfo* pExcepInfo, uint* pArgErr, uint cVarRef, Span<uint> rgVarRefIdx, Span<Variant> rgVarRef)
+        public static unsafe int IDispatchRemoteInvokeProxy(this Windows thisApi, IDispatch* This, int dispIdMember, Guid* riid, uint lcid, uint dwFlags, Span<DispatchParams> pDispParams, Span<Variant> pVarResult, ExceptionInfo* pExcepInfo, uint* pArgErr, uint cVarRef, Span<uint> rgVarRefIdx, Span<Variant> rgVarRef)
         {
             // SpanOverloader
             return thisApi.IDispatchRemoteInvokeProxy(This, dispIdMember, riid, lcid, dwFlags, ref pDispParams.GetPinnableReference(), ref pVarResult.GetPinnableReference(), pExcepInfo, pArgErr, cVarRef, ref rgVarRefIdx.GetPinnableReference(), ref rgVarRef.GetPinnableReference());
@@ -24450,7 +24450,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2449, Column 43 in oaidl.h")]
-        public static unsafe int IDispatchRemoteInvokeProxy(this Windows thisApi, IDispatch* This, int dispIdMember, Guid* riid, uint lcid, uint dwFlags, Span<DispatchParams> pDispParams, Span<Variant> pVarResult, ExcepInfo* pExcepInfo, Span<uint> pArgErr, uint cVarRef, uint* rgVarRefIdx, Variant* rgVarRef)
+        public static unsafe int IDispatchRemoteInvokeProxy(this Windows thisApi, IDispatch* This, int dispIdMember, Guid* riid, uint lcid, uint dwFlags, Span<DispatchParams> pDispParams, Span<Variant> pVarResult, ExceptionInfo* pExcepInfo, Span<uint> pArgErr, uint cVarRef, uint* rgVarRefIdx, Variant* rgVarRef)
         {
             // SpanOverloader
             return thisApi.IDispatchRemoteInvokeProxy(This, dispIdMember, riid, lcid, dwFlags, ref pDispParams.GetPinnableReference(), ref pVarResult.GetPinnableReference(), pExcepInfo, ref pArgErr.GetPinnableReference(), cVarRef, rgVarRefIdx, rgVarRef);
@@ -24458,7 +24458,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2449, Column 43 in oaidl.h")]
-        public static unsafe int IDispatchRemoteInvokeProxy(this Windows thisApi, IDispatch* This, int dispIdMember, Guid* riid, uint lcid, uint dwFlags, Span<DispatchParams> pDispParams, Span<Variant> pVarResult, ExcepInfo* pExcepInfo, Span<uint> pArgErr, uint cVarRef, uint* rgVarRefIdx, Span<Variant> rgVarRef)
+        public static unsafe int IDispatchRemoteInvokeProxy(this Windows thisApi, IDispatch* This, int dispIdMember, Guid* riid, uint lcid, uint dwFlags, Span<DispatchParams> pDispParams, Span<Variant> pVarResult, ExceptionInfo* pExcepInfo, Span<uint> pArgErr, uint cVarRef, uint* rgVarRefIdx, Span<Variant> rgVarRef)
         {
             // SpanOverloader
             return thisApi.IDispatchRemoteInvokeProxy(This, dispIdMember, riid, lcid, dwFlags, ref pDispParams.GetPinnableReference(), ref pVarResult.GetPinnableReference(), pExcepInfo, ref pArgErr.GetPinnableReference(), cVarRef, rgVarRefIdx, ref rgVarRef.GetPinnableReference());
@@ -24466,7 +24466,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2449, Column 43 in oaidl.h")]
-        public static unsafe int IDispatchRemoteInvokeProxy(this Windows thisApi, IDispatch* This, int dispIdMember, Guid* riid, uint lcid, uint dwFlags, Span<DispatchParams> pDispParams, Span<Variant> pVarResult, ExcepInfo* pExcepInfo, Span<uint> pArgErr, uint cVarRef, Span<uint> rgVarRefIdx, Variant* rgVarRef)
+        public static unsafe int IDispatchRemoteInvokeProxy(this Windows thisApi, IDispatch* This, int dispIdMember, Guid* riid, uint lcid, uint dwFlags, Span<DispatchParams> pDispParams, Span<Variant> pVarResult, ExceptionInfo* pExcepInfo, Span<uint> pArgErr, uint cVarRef, Span<uint> rgVarRefIdx, Variant* rgVarRef)
         {
             // SpanOverloader
             return thisApi.IDispatchRemoteInvokeProxy(This, dispIdMember, riid, lcid, dwFlags, ref pDispParams.GetPinnableReference(), ref pVarResult.GetPinnableReference(), pExcepInfo, ref pArgErr.GetPinnableReference(), cVarRef, ref rgVarRefIdx.GetPinnableReference(), rgVarRef);
@@ -24474,7 +24474,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2449, Column 43 in oaidl.h")]
-        public static unsafe int IDispatchRemoteInvokeProxy(this Windows thisApi, IDispatch* This, int dispIdMember, Guid* riid, uint lcid, uint dwFlags, Span<DispatchParams> pDispParams, Span<Variant> pVarResult, ExcepInfo* pExcepInfo, Span<uint> pArgErr, uint cVarRef, Span<uint> rgVarRefIdx, Span<Variant> rgVarRef)
+        public static unsafe int IDispatchRemoteInvokeProxy(this Windows thisApi, IDispatch* This, int dispIdMember, Guid* riid, uint lcid, uint dwFlags, Span<DispatchParams> pDispParams, Span<Variant> pVarResult, ExceptionInfo* pExcepInfo, Span<uint> pArgErr, uint cVarRef, Span<uint> rgVarRefIdx, Span<Variant> rgVarRef)
         {
             // SpanOverloader
             return thisApi.IDispatchRemoteInvokeProxy(This, dispIdMember, riid, lcid, dwFlags, ref pDispParams.GetPinnableReference(), ref pVarResult.GetPinnableReference(), pExcepInfo, ref pArgErr.GetPinnableReference(), cVarRef, ref rgVarRefIdx.GetPinnableReference(), ref rgVarRef.GetPinnableReference());
@@ -24482,7 +24482,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2449, Column 43 in oaidl.h")]
-        public static unsafe int IDispatchRemoteInvokeProxy(this Windows thisApi, IDispatch* This, int dispIdMember, Guid* riid, uint lcid, uint dwFlags, Span<DispatchParams> pDispParams, Span<Variant> pVarResult, Span<ExcepInfo> pExcepInfo, uint* pArgErr, uint cVarRef, uint* rgVarRefIdx, Variant* rgVarRef)
+        public static unsafe int IDispatchRemoteInvokeProxy(this Windows thisApi, IDispatch* This, int dispIdMember, Guid* riid, uint lcid, uint dwFlags, Span<DispatchParams> pDispParams, Span<Variant> pVarResult, Span<ExceptionInfo> pExcepInfo, uint* pArgErr, uint cVarRef, uint* rgVarRefIdx, Variant* rgVarRef)
         {
             // SpanOverloader
             return thisApi.IDispatchRemoteInvokeProxy(This, dispIdMember, riid, lcid, dwFlags, ref pDispParams.GetPinnableReference(), ref pVarResult.GetPinnableReference(), ref pExcepInfo.GetPinnableReference(), pArgErr, cVarRef, rgVarRefIdx, rgVarRef);
@@ -24490,7 +24490,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2449, Column 43 in oaidl.h")]
-        public static unsafe int IDispatchRemoteInvokeProxy(this Windows thisApi, IDispatch* This, int dispIdMember, Guid* riid, uint lcid, uint dwFlags, Span<DispatchParams> pDispParams, Span<Variant> pVarResult, Span<ExcepInfo> pExcepInfo, uint* pArgErr, uint cVarRef, uint* rgVarRefIdx, Span<Variant> rgVarRef)
+        public static unsafe int IDispatchRemoteInvokeProxy(this Windows thisApi, IDispatch* This, int dispIdMember, Guid* riid, uint lcid, uint dwFlags, Span<DispatchParams> pDispParams, Span<Variant> pVarResult, Span<ExceptionInfo> pExcepInfo, uint* pArgErr, uint cVarRef, uint* rgVarRefIdx, Span<Variant> rgVarRef)
         {
             // SpanOverloader
             return thisApi.IDispatchRemoteInvokeProxy(This, dispIdMember, riid, lcid, dwFlags, ref pDispParams.GetPinnableReference(), ref pVarResult.GetPinnableReference(), ref pExcepInfo.GetPinnableReference(), pArgErr, cVarRef, rgVarRefIdx, ref rgVarRef.GetPinnableReference());
@@ -24498,7 +24498,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2449, Column 43 in oaidl.h")]
-        public static unsafe int IDispatchRemoteInvokeProxy(this Windows thisApi, IDispatch* This, int dispIdMember, Guid* riid, uint lcid, uint dwFlags, Span<DispatchParams> pDispParams, Span<Variant> pVarResult, Span<ExcepInfo> pExcepInfo, uint* pArgErr, uint cVarRef, Span<uint> rgVarRefIdx, Variant* rgVarRef)
+        public static unsafe int IDispatchRemoteInvokeProxy(this Windows thisApi, IDispatch* This, int dispIdMember, Guid* riid, uint lcid, uint dwFlags, Span<DispatchParams> pDispParams, Span<Variant> pVarResult, Span<ExceptionInfo> pExcepInfo, uint* pArgErr, uint cVarRef, Span<uint> rgVarRefIdx, Variant* rgVarRef)
         {
             // SpanOverloader
             return thisApi.IDispatchRemoteInvokeProxy(This, dispIdMember, riid, lcid, dwFlags, ref pDispParams.GetPinnableReference(), ref pVarResult.GetPinnableReference(), ref pExcepInfo.GetPinnableReference(), pArgErr, cVarRef, ref rgVarRefIdx.GetPinnableReference(), rgVarRef);
@@ -24506,7 +24506,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2449, Column 43 in oaidl.h")]
-        public static unsafe int IDispatchRemoteInvokeProxy(this Windows thisApi, IDispatch* This, int dispIdMember, Guid* riid, uint lcid, uint dwFlags, Span<DispatchParams> pDispParams, Span<Variant> pVarResult, Span<ExcepInfo> pExcepInfo, uint* pArgErr, uint cVarRef, Span<uint> rgVarRefIdx, Span<Variant> rgVarRef)
+        public static unsafe int IDispatchRemoteInvokeProxy(this Windows thisApi, IDispatch* This, int dispIdMember, Guid* riid, uint lcid, uint dwFlags, Span<DispatchParams> pDispParams, Span<Variant> pVarResult, Span<ExceptionInfo> pExcepInfo, uint* pArgErr, uint cVarRef, Span<uint> rgVarRefIdx, Span<Variant> rgVarRef)
         {
             // SpanOverloader
             return thisApi.IDispatchRemoteInvokeProxy(This, dispIdMember, riid, lcid, dwFlags, ref pDispParams.GetPinnableReference(), ref pVarResult.GetPinnableReference(), ref pExcepInfo.GetPinnableReference(), pArgErr, cVarRef, ref rgVarRefIdx.GetPinnableReference(), ref rgVarRef.GetPinnableReference());
@@ -24514,7 +24514,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2449, Column 43 in oaidl.h")]
-        public static unsafe int IDispatchRemoteInvokeProxy(this Windows thisApi, IDispatch* This, int dispIdMember, Guid* riid, uint lcid, uint dwFlags, Span<DispatchParams> pDispParams, Span<Variant> pVarResult, Span<ExcepInfo> pExcepInfo, Span<uint> pArgErr, uint cVarRef, uint* rgVarRefIdx, Variant* rgVarRef)
+        public static unsafe int IDispatchRemoteInvokeProxy(this Windows thisApi, IDispatch* This, int dispIdMember, Guid* riid, uint lcid, uint dwFlags, Span<DispatchParams> pDispParams, Span<Variant> pVarResult, Span<ExceptionInfo> pExcepInfo, Span<uint> pArgErr, uint cVarRef, uint* rgVarRefIdx, Variant* rgVarRef)
         {
             // SpanOverloader
             return thisApi.IDispatchRemoteInvokeProxy(This, dispIdMember, riid, lcid, dwFlags, ref pDispParams.GetPinnableReference(), ref pVarResult.GetPinnableReference(), ref pExcepInfo.GetPinnableReference(), ref pArgErr.GetPinnableReference(), cVarRef, rgVarRefIdx, rgVarRef);
@@ -24522,7 +24522,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2449, Column 43 in oaidl.h")]
-        public static unsafe int IDispatchRemoteInvokeProxy(this Windows thisApi, IDispatch* This, int dispIdMember, Guid* riid, uint lcid, uint dwFlags, Span<DispatchParams> pDispParams, Span<Variant> pVarResult, Span<ExcepInfo> pExcepInfo, Span<uint> pArgErr, uint cVarRef, uint* rgVarRefIdx, Span<Variant> rgVarRef)
+        public static unsafe int IDispatchRemoteInvokeProxy(this Windows thisApi, IDispatch* This, int dispIdMember, Guid* riid, uint lcid, uint dwFlags, Span<DispatchParams> pDispParams, Span<Variant> pVarResult, Span<ExceptionInfo> pExcepInfo, Span<uint> pArgErr, uint cVarRef, uint* rgVarRefIdx, Span<Variant> rgVarRef)
         {
             // SpanOverloader
             return thisApi.IDispatchRemoteInvokeProxy(This, dispIdMember, riid, lcid, dwFlags, ref pDispParams.GetPinnableReference(), ref pVarResult.GetPinnableReference(), ref pExcepInfo.GetPinnableReference(), ref pArgErr.GetPinnableReference(), cVarRef, rgVarRefIdx, ref rgVarRef.GetPinnableReference());
@@ -24530,7 +24530,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2449, Column 43 in oaidl.h")]
-        public static unsafe int IDispatchRemoteInvokeProxy(this Windows thisApi, IDispatch* This, int dispIdMember, Guid* riid, uint lcid, uint dwFlags, Span<DispatchParams> pDispParams, Span<Variant> pVarResult, Span<ExcepInfo> pExcepInfo, Span<uint> pArgErr, uint cVarRef, Span<uint> rgVarRefIdx, Variant* rgVarRef)
+        public static unsafe int IDispatchRemoteInvokeProxy(this Windows thisApi, IDispatch* This, int dispIdMember, Guid* riid, uint lcid, uint dwFlags, Span<DispatchParams> pDispParams, Span<Variant> pVarResult, Span<ExceptionInfo> pExcepInfo, Span<uint> pArgErr, uint cVarRef, Span<uint> rgVarRefIdx, Variant* rgVarRef)
         {
             // SpanOverloader
             return thisApi.IDispatchRemoteInvokeProxy(This, dispIdMember, riid, lcid, dwFlags, ref pDispParams.GetPinnableReference(), ref pVarResult.GetPinnableReference(), ref pExcepInfo.GetPinnableReference(), ref pArgErr.GetPinnableReference(), cVarRef, ref rgVarRefIdx.GetPinnableReference(), rgVarRef);
@@ -24538,7 +24538,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2449, Column 43 in oaidl.h")]
-        public static unsafe int IDispatchRemoteInvokeProxy(this Windows thisApi, IDispatch* This, int dispIdMember, Guid* riid, uint lcid, uint dwFlags, Span<DispatchParams> pDispParams, Span<Variant> pVarResult, Span<ExcepInfo> pExcepInfo, Span<uint> pArgErr, uint cVarRef, Span<uint> rgVarRefIdx, Span<Variant> rgVarRef)
+        public static unsafe int IDispatchRemoteInvokeProxy(this Windows thisApi, IDispatch* This, int dispIdMember, Guid* riid, uint lcid, uint dwFlags, Span<DispatchParams> pDispParams, Span<Variant> pVarResult, Span<ExceptionInfo> pExcepInfo, Span<uint> pArgErr, uint cVarRef, Span<uint> rgVarRefIdx, Span<Variant> rgVarRef)
         {
             // SpanOverloader
             return thisApi.IDispatchRemoteInvokeProxy(This, dispIdMember, riid, lcid, dwFlags, ref pDispParams.GetPinnableReference(), ref pVarResult.GetPinnableReference(), ref pExcepInfo.GetPinnableReference(), ref pArgErr.GetPinnableReference(), cVarRef, ref rgVarRefIdx.GetPinnableReference(), ref rgVarRef.GetPinnableReference());
@@ -24546,7 +24546,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2449, Column 43 in oaidl.h")]
-        public static unsafe int IDispatchRemoteInvokeProxy(this Windows thisApi, IDispatch* This, int dispIdMember, Span<Guid> riid, uint lcid, uint dwFlags, DispatchParams* pDispParams, Variant* pVarResult, ExcepInfo* pExcepInfo, uint* pArgErr, uint cVarRef, uint* rgVarRefIdx, Variant* rgVarRef)
+        public static unsafe int IDispatchRemoteInvokeProxy(this Windows thisApi, IDispatch* This, int dispIdMember, Span<Guid> riid, uint lcid, uint dwFlags, DispatchParams* pDispParams, Variant* pVarResult, ExceptionInfo* pExcepInfo, uint* pArgErr, uint cVarRef, uint* rgVarRefIdx, Variant* rgVarRef)
         {
             // SpanOverloader
             return thisApi.IDispatchRemoteInvokeProxy(This, dispIdMember, ref riid.GetPinnableReference(), lcid, dwFlags, pDispParams, pVarResult, pExcepInfo, pArgErr, cVarRef, rgVarRefIdx, rgVarRef);
@@ -24554,7 +24554,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2449, Column 43 in oaidl.h")]
-        public static unsafe int IDispatchRemoteInvokeProxy(this Windows thisApi, IDispatch* This, int dispIdMember, Span<Guid> riid, uint lcid, uint dwFlags, DispatchParams* pDispParams, Variant* pVarResult, ExcepInfo* pExcepInfo, uint* pArgErr, uint cVarRef, uint* rgVarRefIdx, Span<Variant> rgVarRef)
+        public static unsafe int IDispatchRemoteInvokeProxy(this Windows thisApi, IDispatch* This, int dispIdMember, Span<Guid> riid, uint lcid, uint dwFlags, DispatchParams* pDispParams, Variant* pVarResult, ExceptionInfo* pExcepInfo, uint* pArgErr, uint cVarRef, uint* rgVarRefIdx, Span<Variant> rgVarRef)
         {
             // SpanOverloader
             return thisApi.IDispatchRemoteInvokeProxy(This, dispIdMember, ref riid.GetPinnableReference(), lcid, dwFlags, pDispParams, pVarResult, pExcepInfo, pArgErr, cVarRef, rgVarRefIdx, ref rgVarRef.GetPinnableReference());
@@ -24562,7 +24562,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2449, Column 43 in oaidl.h")]
-        public static unsafe int IDispatchRemoteInvokeProxy(this Windows thisApi, IDispatch* This, int dispIdMember, Span<Guid> riid, uint lcid, uint dwFlags, DispatchParams* pDispParams, Variant* pVarResult, ExcepInfo* pExcepInfo, uint* pArgErr, uint cVarRef, Span<uint> rgVarRefIdx, Variant* rgVarRef)
+        public static unsafe int IDispatchRemoteInvokeProxy(this Windows thisApi, IDispatch* This, int dispIdMember, Span<Guid> riid, uint lcid, uint dwFlags, DispatchParams* pDispParams, Variant* pVarResult, ExceptionInfo* pExcepInfo, uint* pArgErr, uint cVarRef, Span<uint> rgVarRefIdx, Variant* rgVarRef)
         {
             // SpanOverloader
             return thisApi.IDispatchRemoteInvokeProxy(This, dispIdMember, ref riid.GetPinnableReference(), lcid, dwFlags, pDispParams, pVarResult, pExcepInfo, pArgErr, cVarRef, ref rgVarRefIdx.GetPinnableReference(), rgVarRef);
@@ -24570,7 +24570,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2449, Column 43 in oaidl.h")]
-        public static unsafe int IDispatchRemoteInvokeProxy(this Windows thisApi, IDispatch* This, int dispIdMember, Span<Guid> riid, uint lcid, uint dwFlags, DispatchParams* pDispParams, Variant* pVarResult, ExcepInfo* pExcepInfo, uint* pArgErr, uint cVarRef, Span<uint> rgVarRefIdx, Span<Variant> rgVarRef)
+        public static unsafe int IDispatchRemoteInvokeProxy(this Windows thisApi, IDispatch* This, int dispIdMember, Span<Guid> riid, uint lcid, uint dwFlags, DispatchParams* pDispParams, Variant* pVarResult, ExceptionInfo* pExcepInfo, uint* pArgErr, uint cVarRef, Span<uint> rgVarRefIdx, Span<Variant> rgVarRef)
         {
             // SpanOverloader
             return thisApi.IDispatchRemoteInvokeProxy(This, dispIdMember, ref riid.GetPinnableReference(), lcid, dwFlags, pDispParams, pVarResult, pExcepInfo, pArgErr, cVarRef, ref rgVarRefIdx.GetPinnableReference(), ref rgVarRef.GetPinnableReference());
@@ -24578,7 +24578,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2449, Column 43 in oaidl.h")]
-        public static unsafe int IDispatchRemoteInvokeProxy(this Windows thisApi, IDispatch* This, int dispIdMember, Span<Guid> riid, uint lcid, uint dwFlags, DispatchParams* pDispParams, Variant* pVarResult, ExcepInfo* pExcepInfo, Span<uint> pArgErr, uint cVarRef, uint* rgVarRefIdx, Variant* rgVarRef)
+        public static unsafe int IDispatchRemoteInvokeProxy(this Windows thisApi, IDispatch* This, int dispIdMember, Span<Guid> riid, uint lcid, uint dwFlags, DispatchParams* pDispParams, Variant* pVarResult, ExceptionInfo* pExcepInfo, Span<uint> pArgErr, uint cVarRef, uint* rgVarRefIdx, Variant* rgVarRef)
         {
             // SpanOverloader
             return thisApi.IDispatchRemoteInvokeProxy(This, dispIdMember, ref riid.GetPinnableReference(), lcid, dwFlags, pDispParams, pVarResult, pExcepInfo, ref pArgErr.GetPinnableReference(), cVarRef, rgVarRefIdx, rgVarRef);
@@ -24586,7 +24586,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2449, Column 43 in oaidl.h")]
-        public static unsafe int IDispatchRemoteInvokeProxy(this Windows thisApi, IDispatch* This, int dispIdMember, Span<Guid> riid, uint lcid, uint dwFlags, DispatchParams* pDispParams, Variant* pVarResult, ExcepInfo* pExcepInfo, Span<uint> pArgErr, uint cVarRef, uint* rgVarRefIdx, Span<Variant> rgVarRef)
+        public static unsafe int IDispatchRemoteInvokeProxy(this Windows thisApi, IDispatch* This, int dispIdMember, Span<Guid> riid, uint lcid, uint dwFlags, DispatchParams* pDispParams, Variant* pVarResult, ExceptionInfo* pExcepInfo, Span<uint> pArgErr, uint cVarRef, uint* rgVarRefIdx, Span<Variant> rgVarRef)
         {
             // SpanOverloader
             return thisApi.IDispatchRemoteInvokeProxy(This, dispIdMember, ref riid.GetPinnableReference(), lcid, dwFlags, pDispParams, pVarResult, pExcepInfo, ref pArgErr.GetPinnableReference(), cVarRef, rgVarRefIdx, ref rgVarRef.GetPinnableReference());
@@ -24594,7 +24594,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2449, Column 43 in oaidl.h")]
-        public static unsafe int IDispatchRemoteInvokeProxy(this Windows thisApi, IDispatch* This, int dispIdMember, Span<Guid> riid, uint lcid, uint dwFlags, DispatchParams* pDispParams, Variant* pVarResult, ExcepInfo* pExcepInfo, Span<uint> pArgErr, uint cVarRef, Span<uint> rgVarRefIdx, Variant* rgVarRef)
+        public static unsafe int IDispatchRemoteInvokeProxy(this Windows thisApi, IDispatch* This, int dispIdMember, Span<Guid> riid, uint lcid, uint dwFlags, DispatchParams* pDispParams, Variant* pVarResult, ExceptionInfo* pExcepInfo, Span<uint> pArgErr, uint cVarRef, Span<uint> rgVarRefIdx, Variant* rgVarRef)
         {
             // SpanOverloader
             return thisApi.IDispatchRemoteInvokeProxy(This, dispIdMember, ref riid.GetPinnableReference(), lcid, dwFlags, pDispParams, pVarResult, pExcepInfo, ref pArgErr.GetPinnableReference(), cVarRef, ref rgVarRefIdx.GetPinnableReference(), rgVarRef);
@@ -24602,7 +24602,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2449, Column 43 in oaidl.h")]
-        public static unsafe int IDispatchRemoteInvokeProxy(this Windows thisApi, IDispatch* This, int dispIdMember, Span<Guid> riid, uint lcid, uint dwFlags, DispatchParams* pDispParams, Variant* pVarResult, ExcepInfo* pExcepInfo, Span<uint> pArgErr, uint cVarRef, Span<uint> rgVarRefIdx, Span<Variant> rgVarRef)
+        public static unsafe int IDispatchRemoteInvokeProxy(this Windows thisApi, IDispatch* This, int dispIdMember, Span<Guid> riid, uint lcid, uint dwFlags, DispatchParams* pDispParams, Variant* pVarResult, ExceptionInfo* pExcepInfo, Span<uint> pArgErr, uint cVarRef, Span<uint> rgVarRefIdx, Span<Variant> rgVarRef)
         {
             // SpanOverloader
             return thisApi.IDispatchRemoteInvokeProxy(This, dispIdMember, ref riid.GetPinnableReference(), lcid, dwFlags, pDispParams, pVarResult, pExcepInfo, ref pArgErr.GetPinnableReference(), cVarRef, ref rgVarRefIdx.GetPinnableReference(), ref rgVarRef.GetPinnableReference());
@@ -24610,7 +24610,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2449, Column 43 in oaidl.h")]
-        public static unsafe int IDispatchRemoteInvokeProxy(this Windows thisApi, IDispatch* This, int dispIdMember, Span<Guid> riid, uint lcid, uint dwFlags, DispatchParams* pDispParams, Variant* pVarResult, Span<ExcepInfo> pExcepInfo, uint* pArgErr, uint cVarRef, uint* rgVarRefIdx, Variant* rgVarRef)
+        public static unsafe int IDispatchRemoteInvokeProxy(this Windows thisApi, IDispatch* This, int dispIdMember, Span<Guid> riid, uint lcid, uint dwFlags, DispatchParams* pDispParams, Variant* pVarResult, Span<ExceptionInfo> pExcepInfo, uint* pArgErr, uint cVarRef, uint* rgVarRefIdx, Variant* rgVarRef)
         {
             // SpanOverloader
             return thisApi.IDispatchRemoteInvokeProxy(This, dispIdMember, ref riid.GetPinnableReference(), lcid, dwFlags, pDispParams, pVarResult, ref pExcepInfo.GetPinnableReference(), pArgErr, cVarRef, rgVarRefIdx, rgVarRef);
@@ -24618,7 +24618,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2449, Column 43 in oaidl.h")]
-        public static unsafe int IDispatchRemoteInvokeProxy(this Windows thisApi, IDispatch* This, int dispIdMember, Span<Guid> riid, uint lcid, uint dwFlags, DispatchParams* pDispParams, Variant* pVarResult, Span<ExcepInfo> pExcepInfo, uint* pArgErr, uint cVarRef, uint* rgVarRefIdx, Span<Variant> rgVarRef)
+        public static unsafe int IDispatchRemoteInvokeProxy(this Windows thisApi, IDispatch* This, int dispIdMember, Span<Guid> riid, uint lcid, uint dwFlags, DispatchParams* pDispParams, Variant* pVarResult, Span<ExceptionInfo> pExcepInfo, uint* pArgErr, uint cVarRef, uint* rgVarRefIdx, Span<Variant> rgVarRef)
         {
             // SpanOverloader
             return thisApi.IDispatchRemoteInvokeProxy(This, dispIdMember, ref riid.GetPinnableReference(), lcid, dwFlags, pDispParams, pVarResult, ref pExcepInfo.GetPinnableReference(), pArgErr, cVarRef, rgVarRefIdx, ref rgVarRef.GetPinnableReference());
@@ -24626,7 +24626,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2449, Column 43 in oaidl.h")]
-        public static unsafe int IDispatchRemoteInvokeProxy(this Windows thisApi, IDispatch* This, int dispIdMember, Span<Guid> riid, uint lcid, uint dwFlags, DispatchParams* pDispParams, Variant* pVarResult, Span<ExcepInfo> pExcepInfo, uint* pArgErr, uint cVarRef, Span<uint> rgVarRefIdx, Variant* rgVarRef)
+        public static unsafe int IDispatchRemoteInvokeProxy(this Windows thisApi, IDispatch* This, int dispIdMember, Span<Guid> riid, uint lcid, uint dwFlags, DispatchParams* pDispParams, Variant* pVarResult, Span<ExceptionInfo> pExcepInfo, uint* pArgErr, uint cVarRef, Span<uint> rgVarRefIdx, Variant* rgVarRef)
         {
             // SpanOverloader
             return thisApi.IDispatchRemoteInvokeProxy(This, dispIdMember, ref riid.GetPinnableReference(), lcid, dwFlags, pDispParams, pVarResult, ref pExcepInfo.GetPinnableReference(), pArgErr, cVarRef, ref rgVarRefIdx.GetPinnableReference(), rgVarRef);
@@ -24634,7 +24634,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2449, Column 43 in oaidl.h")]
-        public static unsafe int IDispatchRemoteInvokeProxy(this Windows thisApi, IDispatch* This, int dispIdMember, Span<Guid> riid, uint lcid, uint dwFlags, DispatchParams* pDispParams, Variant* pVarResult, Span<ExcepInfo> pExcepInfo, uint* pArgErr, uint cVarRef, Span<uint> rgVarRefIdx, Span<Variant> rgVarRef)
+        public static unsafe int IDispatchRemoteInvokeProxy(this Windows thisApi, IDispatch* This, int dispIdMember, Span<Guid> riid, uint lcid, uint dwFlags, DispatchParams* pDispParams, Variant* pVarResult, Span<ExceptionInfo> pExcepInfo, uint* pArgErr, uint cVarRef, Span<uint> rgVarRefIdx, Span<Variant> rgVarRef)
         {
             // SpanOverloader
             return thisApi.IDispatchRemoteInvokeProxy(This, dispIdMember, ref riid.GetPinnableReference(), lcid, dwFlags, pDispParams, pVarResult, ref pExcepInfo.GetPinnableReference(), pArgErr, cVarRef, ref rgVarRefIdx.GetPinnableReference(), ref rgVarRef.GetPinnableReference());
@@ -24642,7 +24642,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2449, Column 43 in oaidl.h")]
-        public static unsafe int IDispatchRemoteInvokeProxy(this Windows thisApi, IDispatch* This, int dispIdMember, Span<Guid> riid, uint lcid, uint dwFlags, DispatchParams* pDispParams, Variant* pVarResult, Span<ExcepInfo> pExcepInfo, Span<uint> pArgErr, uint cVarRef, uint* rgVarRefIdx, Variant* rgVarRef)
+        public static unsafe int IDispatchRemoteInvokeProxy(this Windows thisApi, IDispatch* This, int dispIdMember, Span<Guid> riid, uint lcid, uint dwFlags, DispatchParams* pDispParams, Variant* pVarResult, Span<ExceptionInfo> pExcepInfo, Span<uint> pArgErr, uint cVarRef, uint* rgVarRefIdx, Variant* rgVarRef)
         {
             // SpanOverloader
             return thisApi.IDispatchRemoteInvokeProxy(This, dispIdMember, ref riid.GetPinnableReference(), lcid, dwFlags, pDispParams, pVarResult, ref pExcepInfo.GetPinnableReference(), ref pArgErr.GetPinnableReference(), cVarRef, rgVarRefIdx, rgVarRef);
@@ -24650,7 +24650,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2449, Column 43 in oaidl.h")]
-        public static unsafe int IDispatchRemoteInvokeProxy(this Windows thisApi, IDispatch* This, int dispIdMember, Span<Guid> riid, uint lcid, uint dwFlags, DispatchParams* pDispParams, Variant* pVarResult, Span<ExcepInfo> pExcepInfo, Span<uint> pArgErr, uint cVarRef, uint* rgVarRefIdx, Span<Variant> rgVarRef)
+        public static unsafe int IDispatchRemoteInvokeProxy(this Windows thisApi, IDispatch* This, int dispIdMember, Span<Guid> riid, uint lcid, uint dwFlags, DispatchParams* pDispParams, Variant* pVarResult, Span<ExceptionInfo> pExcepInfo, Span<uint> pArgErr, uint cVarRef, uint* rgVarRefIdx, Span<Variant> rgVarRef)
         {
             // SpanOverloader
             return thisApi.IDispatchRemoteInvokeProxy(This, dispIdMember, ref riid.GetPinnableReference(), lcid, dwFlags, pDispParams, pVarResult, ref pExcepInfo.GetPinnableReference(), ref pArgErr.GetPinnableReference(), cVarRef, rgVarRefIdx, ref rgVarRef.GetPinnableReference());
@@ -24658,7 +24658,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2449, Column 43 in oaidl.h")]
-        public static unsafe int IDispatchRemoteInvokeProxy(this Windows thisApi, IDispatch* This, int dispIdMember, Span<Guid> riid, uint lcid, uint dwFlags, DispatchParams* pDispParams, Variant* pVarResult, Span<ExcepInfo> pExcepInfo, Span<uint> pArgErr, uint cVarRef, Span<uint> rgVarRefIdx, Variant* rgVarRef)
+        public static unsafe int IDispatchRemoteInvokeProxy(this Windows thisApi, IDispatch* This, int dispIdMember, Span<Guid> riid, uint lcid, uint dwFlags, DispatchParams* pDispParams, Variant* pVarResult, Span<ExceptionInfo> pExcepInfo, Span<uint> pArgErr, uint cVarRef, Span<uint> rgVarRefIdx, Variant* rgVarRef)
         {
             // SpanOverloader
             return thisApi.IDispatchRemoteInvokeProxy(This, dispIdMember, ref riid.GetPinnableReference(), lcid, dwFlags, pDispParams, pVarResult, ref pExcepInfo.GetPinnableReference(), ref pArgErr.GetPinnableReference(), cVarRef, ref rgVarRefIdx.GetPinnableReference(), rgVarRef);
@@ -24666,7 +24666,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2449, Column 43 in oaidl.h")]
-        public static unsafe int IDispatchRemoteInvokeProxy(this Windows thisApi, IDispatch* This, int dispIdMember, Span<Guid> riid, uint lcid, uint dwFlags, DispatchParams* pDispParams, Variant* pVarResult, Span<ExcepInfo> pExcepInfo, Span<uint> pArgErr, uint cVarRef, Span<uint> rgVarRefIdx, Span<Variant> rgVarRef)
+        public static unsafe int IDispatchRemoteInvokeProxy(this Windows thisApi, IDispatch* This, int dispIdMember, Span<Guid> riid, uint lcid, uint dwFlags, DispatchParams* pDispParams, Variant* pVarResult, Span<ExceptionInfo> pExcepInfo, Span<uint> pArgErr, uint cVarRef, Span<uint> rgVarRefIdx, Span<Variant> rgVarRef)
         {
             // SpanOverloader
             return thisApi.IDispatchRemoteInvokeProxy(This, dispIdMember, ref riid.GetPinnableReference(), lcid, dwFlags, pDispParams, pVarResult, ref pExcepInfo.GetPinnableReference(), ref pArgErr.GetPinnableReference(), cVarRef, ref rgVarRefIdx.GetPinnableReference(), ref rgVarRef.GetPinnableReference());
@@ -24674,7 +24674,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2449, Column 43 in oaidl.h")]
-        public static unsafe int IDispatchRemoteInvokeProxy(this Windows thisApi, IDispatch* This, int dispIdMember, Span<Guid> riid, uint lcid, uint dwFlags, DispatchParams* pDispParams, Span<Variant> pVarResult, ExcepInfo* pExcepInfo, uint* pArgErr, uint cVarRef, uint* rgVarRefIdx, Variant* rgVarRef)
+        public static unsafe int IDispatchRemoteInvokeProxy(this Windows thisApi, IDispatch* This, int dispIdMember, Span<Guid> riid, uint lcid, uint dwFlags, DispatchParams* pDispParams, Span<Variant> pVarResult, ExceptionInfo* pExcepInfo, uint* pArgErr, uint cVarRef, uint* rgVarRefIdx, Variant* rgVarRef)
         {
             // SpanOverloader
             return thisApi.IDispatchRemoteInvokeProxy(This, dispIdMember, ref riid.GetPinnableReference(), lcid, dwFlags, pDispParams, ref pVarResult.GetPinnableReference(), pExcepInfo, pArgErr, cVarRef, rgVarRefIdx, rgVarRef);
@@ -24682,7 +24682,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2449, Column 43 in oaidl.h")]
-        public static unsafe int IDispatchRemoteInvokeProxy(this Windows thisApi, IDispatch* This, int dispIdMember, Span<Guid> riid, uint lcid, uint dwFlags, DispatchParams* pDispParams, Span<Variant> pVarResult, ExcepInfo* pExcepInfo, uint* pArgErr, uint cVarRef, uint* rgVarRefIdx, Span<Variant> rgVarRef)
+        public static unsafe int IDispatchRemoteInvokeProxy(this Windows thisApi, IDispatch* This, int dispIdMember, Span<Guid> riid, uint lcid, uint dwFlags, DispatchParams* pDispParams, Span<Variant> pVarResult, ExceptionInfo* pExcepInfo, uint* pArgErr, uint cVarRef, uint* rgVarRefIdx, Span<Variant> rgVarRef)
         {
             // SpanOverloader
             return thisApi.IDispatchRemoteInvokeProxy(This, dispIdMember, ref riid.GetPinnableReference(), lcid, dwFlags, pDispParams, ref pVarResult.GetPinnableReference(), pExcepInfo, pArgErr, cVarRef, rgVarRefIdx, ref rgVarRef.GetPinnableReference());
@@ -24690,7 +24690,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2449, Column 43 in oaidl.h")]
-        public static unsafe int IDispatchRemoteInvokeProxy(this Windows thisApi, IDispatch* This, int dispIdMember, Span<Guid> riid, uint lcid, uint dwFlags, DispatchParams* pDispParams, Span<Variant> pVarResult, ExcepInfo* pExcepInfo, uint* pArgErr, uint cVarRef, Span<uint> rgVarRefIdx, Variant* rgVarRef)
+        public static unsafe int IDispatchRemoteInvokeProxy(this Windows thisApi, IDispatch* This, int dispIdMember, Span<Guid> riid, uint lcid, uint dwFlags, DispatchParams* pDispParams, Span<Variant> pVarResult, ExceptionInfo* pExcepInfo, uint* pArgErr, uint cVarRef, Span<uint> rgVarRefIdx, Variant* rgVarRef)
         {
             // SpanOverloader
             return thisApi.IDispatchRemoteInvokeProxy(This, dispIdMember, ref riid.GetPinnableReference(), lcid, dwFlags, pDispParams, ref pVarResult.GetPinnableReference(), pExcepInfo, pArgErr, cVarRef, ref rgVarRefIdx.GetPinnableReference(), rgVarRef);
@@ -24698,7 +24698,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2449, Column 43 in oaidl.h")]
-        public static unsafe int IDispatchRemoteInvokeProxy(this Windows thisApi, IDispatch* This, int dispIdMember, Span<Guid> riid, uint lcid, uint dwFlags, DispatchParams* pDispParams, Span<Variant> pVarResult, ExcepInfo* pExcepInfo, uint* pArgErr, uint cVarRef, Span<uint> rgVarRefIdx, Span<Variant> rgVarRef)
+        public static unsafe int IDispatchRemoteInvokeProxy(this Windows thisApi, IDispatch* This, int dispIdMember, Span<Guid> riid, uint lcid, uint dwFlags, DispatchParams* pDispParams, Span<Variant> pVarResult, ExceptionInfo* pExcepInfo, uint* pArgErr, uint cVarRef, Span<uint> rgVarRefIdx, Span<Variant> rgVarRef)
         {
             // SpanOverloader
             return thisApi.IDispatchRemoteInvokeProxy(This, dispIdMember, ref riid.GetPinnableReference(), lcid, dwFlags, pDispParams, ref pVarResult.GetPinnableReference(), pExcepInfo, pArgErr, cVarRef, ref rgVarRefIdx.GetPinnableReference(), ref rgVarRef.GetPinnableReference());
@@ -24706,7 +24706,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2449, Column 43 in oaidl.h")]
-        public static unsafe int IDispatchRemoteInvokeProxy(this Windows thisApi, IDispatch* This, int dispIdMember, Span<Guid> riid, uint lcid, uint dwFlags, DispatchParams* pDispParams, Span<Variant> pVarResult, ExcepInfo* pExcepInfo, Span<uint> pArgErr, uint cVarRef, uint* rgVarRefIdx, Variant* rgVarRef)
+        public static unsafe int IDispatchRemoteInvokeProxy(this Windows thisApi, IDispatch* This, int dispIdMember, Span<Guid> riid, uint lcid, uint dwFlags, DispatchParams* pDispParams, Span<Variant> pVarResult, ExceptionInfo* pExcepInfo, Span<uint> pArgErr, uint cVarRef, uint* rgVarRefIdx, Variant* rgVarRef)
         {
             // SpanOverloader
             return thisApi.IDispatchRemoteInvokeProxy(This, dispIdMember, ref riid.GetPinnableReference(), lcid, dwFlags, pDispParams, ref pVarResult.GetPinnableReference(), pExcepInfo, ref pArgErr.GetPinnableReference(), cVarRef, rgVarRefIdx, rgVarRef);
@@ -24714,7 +24714,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2449, Column 43 in oaidl.h")]
-        public static unsafe int IDispatchRemoteInvokeProxy(this Windows thisApi, IDispatch* This, int dispIdMember, Span<Guid> riid, uint lcid, uint dwFlags, DispatchParams* pDispParams, Span<Variant> pVarResult, ExcepInfo* pExcepInfo, Span<uint> pArgErr, uint cVarRef, uint* rgVarRefIdx, Span<Variant> rgVarRef)
+        public static unsafe int IDispatchRemoteInvokeProxy(this Windows thisApi, IDispatch* This, int dispIdMember, Span<Guid> riid, uint lcid, uint dwFlags, DispatchParams* pDispParams, Span<Variant> pVarResult, ExceptionInfo* pExcepInfo, Span<uint> pArgErr, uint cVarRef, uint* rgVarRefIdx, Span<Variant> rgVarRef)
         {
             // SpanOverloader
             return thisApi.IDispatchRemoteInvokeProxy(This, dispIdMember, ref riid.GetPinnableReference(), lcid, dwFlags, pDispParams, ref pVarResult.GetPinnableReference(), pExcepInfo, ref pArgErr.GetPinnableReference(), cVarRef, rgVarRefIdx, ref rgVarRef.GetPinnableReference());
@@ -24722,7 +24722,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2449, Column 43 in oaidl.h")]
-        public static unsafe int IDispatchRemoteInvokeProxy(this Windows thisApi, IDispatch* This, int dispIdMember, Span<Guid> riid, uint lcid, uint dwFlags, DispatchParams* pDispParams, Span<Variant> pVarResult, ExcepInfo* pExcepInfo, Span<uint> pArgErr, uint cVarRef, Span<uint> rgVarRefIdx, Variant* rgVarRef)
+        public static unsafe int IDispatchRemoteInvokeProxy(this Windows thisApi, IDispatch* This, int dispIdMember, Span<Guid> riid, uint lcid, uint dwFlags, DispatchParams* pDispParams, Span<Variant> pVarResult, ExceptionInfo* pExcepInfo, Span<uint> pArgErr, uint cVarRef, Span<uint> rgVarRefIdx, Variant* rgVarRef)
         {
             // SpanOverloader
             return thisApi.IDispatchRemoteInvokeProxy(This, dispIdMember, ref riid.GetPinnableReference(), lcid, dwFlags, pDispParams, ref pVarResult.GetPinnableReference(), pExcepInfo, ref pArgErr.GetPinnableReference(), cVarRef, ref rgVarRefIdx.GetPinnableReference(), rgVarRef);
@@ -24730,7 +24730,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2449, Column 43 in oaidl.h")]
-        public static unsafe int IDispatchRemoteInvokeProxy(this Windows thisApi, IDispatch* This, int dispIdMember, Span<Guid> riid, uint lcid, uint dwFlags, DispatchParams* pDispParams, Span<Variant> pVarResult, ExcepInfo* pExcepInfo, Span<uint> pArgErr, uint cVarRef, Span<uint> rgVarRefIdx, Span<Variant> rgVarRef)
+        public static unsafe int IDispatchRemoteInvokeProxy(this Windows thisApi, IDispatch* This, int dispIdMember, Span<Guid> riid, uint lcid, uint dwFlags, DispatchParams* pDispParams, Span<Variant> pVarResult, ExceptionInfo* pExcepInfo, Span<uint> pArgErr, uint cVarRef, Span<uint> rgVarRefIdx, Span<Variant> rgVarRef)
         {
             // SpanOverloader
             return thisApi.IDispatchRemoteInvokeProxy(This, dispIdMember, ref riid.GetPinnableReference(), lcid, dwFlags, pDispParams, ref pVarResult.GetPinnableReference(), pExcepInfo, ref pArgErr.GetPinnableReference(), cVarRef, ref rgVarRefIdx.GetPinnableReference(), ref rgVarRef.GetPinnableReference());
@@ -24738,7 +24738,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2449, Column 43 in oaidl.h")]
-        public static unsafe int IDispatchRemoteInvokeProxy(this Windows thisApi, IDispatch* This, int dispIdMember, Span<Guid> riid, uint lcid, uint dwFlags, DispatchParams* pDispParams, Span<Variant> pVarResult, Span<ExcepInfo> pExcepInfo, uint* pArgErr, uint cVarRef, uint* rgVarRefIdx, Variant* rgVarRef)
+        public static unsafe int IDispatchRemoteInvokeProxy(this Windows thisApi, IDispatch* This, int dispIdMember, Span<Guid> riid, uint lcid, uint dwFlags, DispatchParams* pDispParams, Span<Variant> pVarResult, Span<ExceptionInfo> pExcepInfo, uint* pArgErr, uint cVarRef, uint* rgVarRefIdx, Variant* rgVarRef)
         {
             // SpanOverloader
             return thisApi.IDispatchRemoteInvokeProxy(This, dispIdMember, ref riid.GetPinnableReference(), lcid, dwFlags, pDispParams, ref pVarResult.GetPinnableReference(), ref pExcepInfo.GetPinnableReference(), pArgErr, cVarRef, rgVarRefIdx, rgVarRef);
@@ -24746,7 +24746,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2449, Column 43 in oaidl.h")]
-        public static unsafe int IDispatchRemoteInvokeProxy(this Windows thisApi, IDispatch* This, int dispIdMember, Span<Guid> riid, uint lcid, uint dwFlags, DispatchParams* pDispParams, Span<Variant> pVarResult, Span<ExcepInfo> pExcepInfo, uint* pArgErr, uint cVarRef, uint* rgVarRefIdx, Span<Variant> rgVarRef)
+        public static unsafe int IDispatchRemoteInvokeProxy(this Windows thisApi, IDispatch* This, int dispIdMember, Span<Guid> riid, uint lcid, uint dwFlags, DispatchParams* pDispParams, Span<Variant> pVarResult, Span<ExceptionInfo> pExcepInfo, uint* pArgErr, uint cVarRef, uint* rgVarRefIdx, Span<Variant> rgVarRef)
         {
             // SpanOverloader
             return thisApi.IDispatchRemoteInvokeProxy(This, dispIdMember, ref riid.GetPinnableReference(), lcid, dwFlags, pDispParams, ref pVarResult.GetPinnableReference(), ref pExcepInfo.GetPinnableReference(), pArgErr, cVarRef, rgVarRefIdx, ref rgVarRef.GetPinnableReference());
@@ -24754,7 +24754,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2449, Column 43 in oaidl.h")]
-        public static unsafe int IDispatchRemoteInvokeProxy(this Windows thisApi, IDispatch* This, int dispIdMember, Span<Guid> riid, uint lcid, uint dwFlags, DispatchParams* pDispParams, Span<Variant> pVarResult, Span<ExcepInfo> pExcepInfo, uint* pArgErr, uint cVarRef, Span<uint> rgVarRefIdx, Variant* rgVarRef)
+        public static unsafe int IDispatchRemoteInvokeProxy(this Windows thisApi, IDispatch* This, int dispIdMember, Span<Guid> riid, uint lcid, uint dwFlags, DispatchParams* pDispParams, Span<Variant> pVarResult, Span<ExceptionInfo> pExcepInfo, uint* pArgErr, uint cVarRef, Span<uint> rgVarRefIdx, Variant* rgVarRef)
         {
             // SpanOverloader
             return thisApi.IDispatchRemoteInvokeProxy(This, dispIdMember, ref riid.GetPinnableReference(), lcid, dwFlags, pDispParams, ref pVarResult.GetPinnableReference(), ref pExcepInfo.GetPinnableReference(), pArgErr, cVarRef, ref rgVarRefIdx.GetPinnableReference(), rgVarRef);
@@ -24762,7 +24762,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2449, Column 43 in oaidl.h")]
-        public static unsafe int IDispatchRemoteInvokeProxy(this Windows thisApi, IDispatch* This, int dispIdMember, Span<Guid> riid, uint lcid, uint dwFlags, DispatchParams* pDispParams, Span<Variant> pVarResult, Span<ExcepInfo> pExcepInfo, uint* pArgErr, uint cVarRef, Span<uint> rgVarRefIdx, Span<Variant> rgVarRef)
+        public static unsafe int IDispatchRemoteInvokeProxy(this Windows thisApi, IDispatch* This, int dispIdMember, Span<Guid> riid, uint lcid, uint dwFlags, DispatchParams* pDispParams, Span<Variant> pVarResult, Span<ExceptionInfo> pExcepInfo, uint* pArgErr, uint cVarRef, Span<uint> rgVarRefIdx, Span<Variant> rgVarRef)
         {
             // SpanOverloader
             return thisApi.IDispatchRemoteInvokeProxy(This, dispIdMember, ref riid.GetPinnableReference(), lcid, dwFlags, pDispParams, ref pVarResult.GetPinnableReference(), ref pExcepInfo.GetPinnableReference(), pArgErr, cVarRef, ref rgVarRefIdx.GetPinnableReference(), ref rgVarRef.GetPinnableReference());
@@ -24770,7 +24770,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2449, Column 43 in oaidl.h")]
-        public static unsafe int IDispatchRemoteInvokeProxy(this Windows thisApi, IDispatch* This, int dispIdMember, Span<Guid> riid, uint lcid, uint dwFlags, DispatchParams* pDispParams, Span<Variant> pVarResult, Span<ExcepInfo> pExcepInfo, Span<uint> pArgErr, uint cVarRef, uint* rgVarRefIdx, Variant* rgVarRef)
+        public static unsafe int IDispatchRemoteInvokeProxy(this Windows thisApi, IDispatch* This, int dispIdMember, Span<Guid> riid, uint lcid, uint dwFlags, DispatchParams* pDispParams, Span<Variant> pVarResult, Span<ExceptionInfo> pExcepInfo, Span<uint> pArgErr, uint cVarRef, uint* rgVarRefIdx, Variant* rgVarRef)
         {
             // SpanOverloader
             return thisApi.IDispatchRemoteInvokeProxy(This, dispIdMember, ref riid.GetPinnableReference(), lcid, dwFlags, pDispParams, ref pVarResult.GetPinnableReference(), ref pExcepInfo.GetPinnableReference(), ref pArgErr.GetPinnableReference(), cVarRef, rgVarRefIdx, rgVarRef);
@@ -24778,7 +24778,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2449, Column 43 in oaidl.h")]
-        public static unsafe int IDispatchRemoteInvokeProxy(this Windows thisApi, IDispatch* This, int dispIdMember, Span<Guid> riid, uint lcid, uint dwFlags, DispatchParams* pDispParams, Span<Variant> pVarResult, Span<ExcepInfo> pExcepInfo, Span<uint> pArgErr, uint cVarRef, uint* rgVarRefIdx, Span<Variant> rgVarRef)
+        public static unsafe int IDispatchRemoteInvokeProxy(this Windows thisApi, IDispatch* This, int dispIdMember, Span<Guid> riid, uint lcid, uint dwFlags, DispatchParams* pDispParams, Span<Variant> pVarResult, Span<ExceptionInfo> pExcepInfo, Span<uint> pArgErr, uint cVarRef, uint* rgVarRefIdx, Span<Variant> rgVarRef)
         {
             // SpanOverloader
             return thisApi.IDispatchRemoteInvokeProxy(This, dispIdMember, ref riid.GetPinnableReference(), lcid, dwFlags, pDispParams, ref pVarResult.GetPinnableReference(), ref pExcepInfo.GetPinnableReference(), ref pArgErr.GetPinnableReference(), cVarRef, rgVarRefIdx, ref rgVarRef.GetPinnableReference());
@@ -24786,7 +24786,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2449, Column 43 in oaidl.h")]
-        public static unsafe int IDispatchRemoteInvokeProxy(this Windows thisApi, IDispatch* This, int dispIdMember, Span<Guid> riid, uint lcid, uint dwFlags, DispatchParams* pDispParams, Span<Variant> pVarResult, Span<ExcepInfo> pExcepInfo, Span<uint> pArgErr, uint cVarRef, Span<uint> rgVarRefIdx, Variant* rgVarRef)
+        public static unsafe int IDispatchRemoteInvokeProxy(this Windows thisApi, IDispatch* This, int dispIdMember, Span<Guid> riid, uint lcid, uint dwFlags, DispatchParams* pDispParams, Span<Variant> pVarResult, Span<ExceptionInfo> pExcepInfo, Span<uint> pArgErr, uint cVarRef, Span<uint> rgVarRefIdx, Variant* rgVarRef)
         {
             // SpanOverloader
             return thisApi.IDispatchRemoteInvokeProxy(This, dispIdMember, ref riid.GetPinnableReference(), lcid, dwFlags, pDispParams, ref pVarResult.GetPinnableReference(), ref pExcepInfo.GetPinnableReference(), ref pArgErr.GetPinnableReference(), cVarRef, ref rgVarRefIdx.GetPinnableReference(), rgVarRef);
@@ -24794,7 +24794,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2449, Column 43 in oaidl.h")]
-        public static unsafe int IDispatchRemoteInvokeProxy(this Windows thisApi, IDispatch* This, int dispIdMember, Span<Guid> riid, uint lcid, uint dwFlags, DispatchParams* pDispParams, Span<Variant> pVarResult, Span<ExcepInfo> pExcepInfo, Span<uint> pArgErr, uint cVarRef, Span<uint> rgVarRefIdx, Span<Variant> rgVarRef)
+        public static unsafe int IDispatchRemoteInvokeProxy(this Windows thisApi, IDispatch* This, int dispIdMember, Span<Guid> riid, uint lcid, uint dwFlags, DispatchParams* pDispParams, Span<Variant> pVarResult, Span<ExceptionInfo> pExcepInfo, Span<uint> pArgErr, uint cVarRef, Span<uint> rgVarRefIdx, Span<Variant> rgVarRef)
         {
             // SpanOverloader
             return thisApi.IDispatchRemoteInvokeProxy(This, dispIdMember, ref riid.GetPinnableReference(), lcid, dwFlags, pDispParams, ref pVarResult.GetPinnableReference(), ref pExcepInfo.GetPinnableReference(), ref pArgErr.GetPinnableReference(), cVarRef, ref rgVarRefIdx.GetPinnableReference(), ref rgVarRef.GetPinnableReference());
@@ -24802,7 +24802,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2449, Column 43 in oaidl.h")]
-        public static unsafe int IDispatchRemoteInvokeProxy(this Windows thisApi, IDispatch* This, int dispIdMember, Span<Guid> riid, uint lcid, uint dwFlags, Span<DispatchParams> pDispParams, Variant* pVarResult, ExcepInfo* pExcepInfo, uint* pArgErr, uint cVarRef, uint* rgVarRefIdx, Variant* rgVarRef)
+        public static unsafe int IDispatchRemoteInvokeProxy(this Windows thisApi, IDispatch* This, int dispIdMember, Span<Guid> riid, uint lcid, uint dwFlags, Span<DispatchParams> pDispParams, Variant* pVarResult, ExceptionInfo* pExcepInfo, uint* pArgErr, uint cVarRef, uint* rgVarRefIdx, Variant* rgVarRef)
         {
             // SpanOverloader
             return thisApi.IDispatchRemoteInvokeProxy(This, dispIdMember, ref riid.GetPinnableReference(), lcid, dwFlags, ref pDispParams.GetPinnableReference(), pVarResult, pExcepInfo, pArgErr, cVarRef, rgVarRefIdx, rgVarRef);
@@ -24810,7 +24810,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2449, Column 43 in oaidl.h")]
-        public static unsafe int IDispatchRemoteInvokeProxy(this Windows thisApi, IDispatch* This, int dispIdMember, Span<Guid> riid, uint lcid, uint dwFlags, Span<DispatchParams> pDispParams, Variant* pVarResult, ExcepInfo* pExcepInfo, uint* pArgErr, uint cVarRef, uint* rgVarRefIdx, Span<Variant> rgVarRef)
+        public static unsafe int IDispatchRemoteInvokeProxy(this Windows thisApi, IDispatch* This, int dispIdMember, Span<Guid> riid, uint lcid, uint dwFlags, Span<DispatchParams> pDispParams, Variant* pVarResult, ExceptionInfo* pExcepInfo, uint* pArgErr, uint cVarRef, uint* rgVarRefIdx, Span<Variant> rgVarRef)
         {
             // SpanOverloader
             return thisApi.IDispatchRemoteInvokeProxy(This, dispIdMember, ref riid.GetPinnableReference(), lcid, dwFlags, ref pDispParams.GetPinnableReference(), pVarResult, pExcepInfo, pArgErr, cVarRef, rgVarRefIdx, ref rgVarRef.GetPinnableReference());
@@ -24818,7 +24818,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2449, Column 43 in oaidl.h")]
-        public static unsafe int IDispatchRemoteInvokeProxy(this Windows thisApi, IDispatch* This, int dispIdMember, Span<Guid> riid, uint lcid, uint dwFlags, Span<DispatchParams> pDispParams, Variant* pVarResult, ExcepInfo* pExcepInfo, uint* pArgErr, uint cVarRef, Span<uint> rgVarRefIdx, Variant* rgVarRef)
+        public static unsafe int IDispatchRemoteInvokeProxy(this Windows thisApi, IDispatch* This, int dispIdMember, Span<Guid> riid, uint lcid, uint dwFlags, Span<DispatchParams> pDispParams, Variant* pVarResult, ExceptionInfo* pExcepInfo, uint* pArgErr, uint cVarRef, Span<uint> rgVarRefIdx, Variant* rgVarRef)
         {
             // SpanOverloader
             return thisApi.IDispatchRemoteInvokeProxy(This, dispIdMember, ref riid.GetPinnableReference(), lcid, dwFlags, ref pDispParams.GetPinnableReference(), pVarResult, pExcepInfo, pArgErr, cVarRef, ref rgVarRefIdx.GetPinnableReference(), rgVarRef);
@@ -24826,7 +24826,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2449, Column 43 in oaidl.h")]
-        public static unsafe int IDispatchRemoteInvokeProxy(this Windows thisApi, IDispatch* This, int dispIdMember, Span<Guid> riid, uint lcid, uint dwFlags, Span<DispatchParams> pDispParams, Variant* pVarResult, ExcepInfo* pExcepInfo, uint* pArgErr, uint cVarRef, Span<uint> rgVarRefIdx, Span<Variant> rgVarRef)
+        public static unsafe int IDispatchRemoteInvokeProxy(this Windows thisApi, IDispatch* This, int dispIdMember, Span<Guid> riid, uint lcid, uint dwFlags, Span<DispatchParams> pDispParams, Variant* pVarResult, ExceptionInfo* pExcepInfo, uint* pArgErr, uint cVarRef, Span<uint> rgVarRefIdx, Span<Variant> rgVarRef)
         {
             // SpanOverloader
             return thisApi.IDispatchRemoteInvokeProxy(This, dispIdMember, ref riid.GetPinnableReference(), lcid, dwFlags, ref pDispParams.GetPinnableReference(), pVarResult, pExcepInfo, pArgErr, cVarRef, ref rgVarRefIdx.GetPinnableReference(), ref rgVarRef.GetPinnableReference());
@@ -24834,7 +24834,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2449, Column 43 in oaidl.h")]
-        public static unsafe int IDispatchRemoteInvokeProxy(this Windows thisApi, IDispatch* This, int dispIdMember, Span<Guid> riid, uint lcid, uint dwFlags, Span<DispatchParams> pDispParams, Variant* pVarResult, ExcepInfo* pExcepInfo, Span<uint> pArgErr, uint cVarRef, uint* rgVarRefIdx, Variant* rgVarRef)
+        public static unsafe int IDispatchRemoteInvokeProxy(this Windows thisApi, IDispatch* This, int dispIdMember, Span<Guid> riid, uint lcid, uint dwFlags, Span<DispatchParams> pDispParams, Variant* pVarResult, ExceptionInfo* pExcepInfo, Span<uint> pArgErr, uint cVarRef, uint* rgVarRefIdx, Variant* rgVarRef)
         {
             // SpanOverloader
             return thisApi.IDispatchRemoteInvokeProxy(This, dispIdMember, ref riid.GetPinnableReference(), lcid, dwFlags, ref pDispParams.GetPinnableReference(), pVarResult, pExcepInfo, ref pArgErr.GetPinnableReference(), cVarRef, rgVarRefIdx, rgVarRef);
@@ -24842,7 +24842,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2449, Column 43 in oaidl.h")]
-        public static unsafe int IDispatchRemoteInvokeProxy(this Windows thisApi, IDispatch* This, int dispIdMember, Span<Guid> riid, uint lcid, uint dwFlags, Span<DispatchParams> pDispParams, Variant* pVarResult, ExcepInfo* pExcepInfo, Span<uint> pArgErr, uint cVarRef, uint* rgVarRefIdx, Span<Variant> rgVarRef)
+        public static unsafe int IDispatchRemoteInvokeProxy(this Windows thisApi, IDispatch* This, int dispIdMember, Span<Guid> riid, uint lcid, uint dwFlags, Span<DispatchParams> pDispParams, Variant* pVarResult, ExceptionInfo* pExcepInfo, Span<uint> pArgErr, uint cVarRef, uint* rgVarRefIdx, Span<Variant> rgVarRef)
         {
             // SpanOverloader
             return thisApi.IDispatchRemoteInvokeProxy(This, dispIdMember, ref riid.GetPinnableReference(), lcid, dwFlags, ref pDispParams.GetPinnableReference(), pVarResult, pExcepInfo, ref pArgErr.GetPinnableReference(), cVarRef, rgVarRefIdx, ref rgVarRef.GetPinnableReference());
@@ -24850,7 +24850,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2449, Column 43 in oaidl.h")]
-        public static unsafe int IDispatchRemoteInvokeProxy(this Windows thisApi, IDispatch* This, int dispIdMember, Span<Guid> riid, uint lcid, uint dwFlags, Span<DispatchParams> pDispParams, Variant* pVarResult, ExcepInfo* pExcepInfo, Span<uint> pArgErr, uint cVarRef, Span<uint> rgVarRefIdx, Variant* rgVarRef)
+        public static unsafe int IDispatchRemoteInvokeProxy(this Windows thisApi, IDispatch* This, int dispIdMember, Span<Guid> riid, uint lcid, uint dwFlags, Span<DispatchParams> pDispParams, Variant* pVarResult, ExceptionInfo* pExcepInfo, Span<uint> pArgErr, uint cVarRef, Span<uint> rgVarRefIdx, Variant* rgVarRef)
         {
             // SpanOverloader
             return thisApi.IDispatchRemoteInvokeProxy(This, dispIdMember, ref riid.GetPinnableReference(), lcid, dwFlags, ref pDispParams.GetPinnableReference(), pVarResult, pExcepInfo, ref pArgErr.GetPinnableReference(), cVarRef, ref rgVarRefIdx.GetPinnableReference(), rgVarRef);
@@ -24858,7 +24858,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2449, Column 43 in oaidl.h")]
-        public static unsafe int IDispatchRemoteInvokeProxy(this Windows thisApi, IDispatch* This, int dispIdMember, Span<Guid> riid, uint lcid, uint dwFlags, Span<DispatchParams> pDispParams, Variant* pVarResult, ExcepInfo* pExcepInfo, Span<uint> pArgErr, uint cVarRef, Span<uint> rgVarRefIdx, Span<Variant> rgVarRef)
+        public static unsafe int IDispatchRemoteInvokeProxy(this Windows thisApi, IDispatch* This, int dispIdMember, Span<Guid> riid, uint lcid, uint dwFlags, Span<DispatchParams> pDispParams, Variant* pVarResult, ExceptionInfo* pExcepInfo, Span<uint> pArgErr, uint cVarRef, Span<uint> rgVarRefIdx, Span<Variant> rgVarRef)
         {
             // SpanOverloader
             return thisApi.IDispatchRemoteInvokeProxy(This, dispIdMember, ref riid.GetPinnableReference(), lcid, dwFlags, ref pDispParams.GetPinnableReference(), pVarResult, pExcepInfo, ref pArgErr.GetPinnableReference(), cVarRef, ref rgVarRefIdx.GetPinnableReference(), ref rgVarRef.GetPinnableReference());
@@ -24866,7 +24866,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2449, Column 43 in oaidl.h")]
-        public static unsafe int IDispatchRemoteInvokeProxy(this Windows thisApi, IDispatch* This, int dispIdMember, Span<Guid> riid, uint lcid, uint dwFlags, Span<DispatchParams> pDispParams, Variant* pVarResult, Span<ExcepInfo> pExcepInfo, uint* pArgErr, uint cVarRef, uint* rgVarRefIdx, Variant* rgVarRef)
+        public static unsafe int IDispatchRemoteInvokeProxy(this Windows thisApi, IDispatch* This, int dispIdMember, Span<Guid> riid, uint lcid, uint dwFlags, Span<DispatchParams> pDispParams, Variant* pVarResult, Span<ExceptionInfo> pExcepInfo, uint* pArgErr, uint cVarRef, uint* rgVarRefIdx, Variant* rgVarRef)
         {
             // SpanOverloader
             return thisApi.IDispatchRemoteInvokeProxy(This, dispIdMember, ref riid.GetPinnableReference(), lcid, dwFlags, ref pDispParams.GetPinnableReference(), pVarResult, ref pExcepInfo.GetPinnableReference(), pArgErr, cVarRef, rgVarRefIdx, rgVarRef);
@@ -24874,7 +24874,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2449, Column 43 in oaidl.h")]
-        public static unsafe int IDispatchRemoteInvokeProxy(this Windows thisApi, IDispatch* This, int dispIdMember, Span<Guid> riid, uint lcid, uint dwFlags, Span<DispatchParams> pDispParams, Variant* pVarResult, Span<ExcepInfo> pExcepInfo, uint* pArgErr, uint cVarRef, uint* rgVarRefIdx, Span<Variant> rgVarRef)
+        public static unsafe int IDispatchRemoteInvokeProxy(this Windows thisApi, IDispatch* This, int dispIdMember, Span<Guid> riid, uint lcid, uint dwFlags, Span<DispatchParams> pDispParams, Variant* pVarResult, Span<ExceptionInfo> pExcepInfo, uint* pArgErr, uint cVarRef, uint* rgVarRefIdx, Span<Variant> rgVarRef)
         {
             // SpanOverloader
             return thisApi.IDispatchRemoteInvokeProxy(This, dispIdMember, ref riid.GetPinnableReference(), lcid, dwFlags, ref pDispParams.GetPinnableReference(), pVarResult, ref pExcepInfo.GetPinnableReference(), pArgErr, cVarRef, rgVarRefIdx, ref rgVarRef.GetPinnableReference());
@@ -24882,7 +24882,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2449, Column 43 in oaidl.h")]
-        public static unsafe int IDispatchRemoteInvokeProxy(this Windows thisApi, IDispatch* This, int dispIdMember, Span<Guid> riid, uint lcid, uint dwFlags, Span<DispatchParams> pDispParams, Variant* pVarResult, Span<ExcepInfo> pExcepInfo, uint* pArgErr, uint cVarRef, Span<uint> rgVarRefIdx, Variant* rgVarRef)
+        public static unsafe int IDispatchRemoteInvokeProxy(this Windows thisApi, IDispatch* This, int dispIdMember, Span<Guid> riid, uint lcid, uint dwFlags, Span<DispatchParams> pDispParams, Variant* pVarResult, Span<ExceptionInfo> pExcepInfo, uint* pArgErr, uint cVarRef, Span<uint> rgVarRefIdx, Variant* rgVarRef)
         {
             // SpanOverloader
             return thisApi.IDispatchRemoteInvokeProxy(This, dispIdMember, ref riid.GetPinnableReference(), lcid, dwFlags, ref pDispParams.GetPinnableReference(), pVarResult, ref pExcepInfo.GetPinnableReference(), pArgErr, cVarRef, ref rgVarRefIdx.GetPinnableReference(), rgVarRef);
@@ -24890,7 +24890,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2449, Column 43 in oaidl.h")]
-        public static unsafe int IDispatchRemoteInvokeProxy(this Windows thisApi, IDispatch* This, int dispIdMember, Span<Guid> riid, uint lcid, uint dwFlags, Span<DispatchParams> pDispParams, Variant* pVarResult, Span<ExcepInfo> pExcepInfo, uint* pArgErr, uint cVarRef, Span<uint> rgVarRefIdx, Span<Variant> rgVarRef)
+        public static unsafe int IDispatchRemoteInvokeProxy(this Windows thisApi, IDispatch* This, int dispIdMember, Span<Guid> riid, uint lcid, uint dwFlags, Span<DispatchParams> pDispParams, Variant* pVarResult, Span<ExceptionInfo> pExcepInfo, uint* pArgErr, uint cVarRef, Span<uint> rgVarRefIdx, Span<Variant> rgVarRef)
         {
             // SpanOverloader
             return thisApi.IDispatchRemoteInvokeProxy(This, dispIdMember, ref riid.GetPinnableReference(), lcid, dwFlags, ref pDispParams.GetPinnableReference(), pVarResult, ref pExcepInfo.GetPinnableReference(), pArgErr, cVarRef, ref rgVarRefIdx.GetPinnableReference(), ref rgVarRef.GetPinnableReference());
@@ -24898,7 +24898,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2449, Column 43 in oaidl.h")]
-        public static unsafe int IDispatchRemoteInvokeProxy(this Windows thisApi, IDispatch* This, int dispIdMember, Span<Guid> riid, uint lcid, uint dwFlags, Span<DispatchParams> pDispParams, Variant* pVarResult, Span<ExcepInfo> pExcepInfo, Span<uint> pArgErr, uint cVarRef, uint* rgVarRefIdx, Variant* rgVarRef)
+        public static unsafe int IDispatchRemoteInvokeProxy(this Windows thisApi, IDispatch* This, int dispIdMember, Span<Guid> riid, uint lcid, uint dwFlags, Span<DispatchParams> pDispParams, Variant* pVarResult, Span<ExceptionInfo> pExcepInfo, Span<uint> pArgErr, uint cVarRef, uint* rgVarRefIdx, Variant* rgVarRef)
         {
             // SpanOverloader
             return thisApi.IDispatchRemoteInvokeProxy(This, dispIdMember, ref riid.GetPinnableReference(), lcid, dwFlags, ref pDispParams.GetPinnableReference(), pVarResult, ref pExcepInfo.GetPinnableReference(), ref pArgErr.GetPinnableReference(), cVarRef, rgVarRefIdx, rgVarRef);
@@ -24906,7 +24906,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2449, Column 43 in oaidl.h")]
-        public static unsafe int IDispatchRemoteInvokeProxy(this Windows thisApi, IDispatch* This, int dispIdMember, Span<Guid> riid, uint lcid, uint dwFlags, Span<DispatchParams> pDispParams, Variant* pVarResult, Span<ExcepInfo> pExcepInfo, Span<uint> pArgErr, uint cVarRef, uint* rgVarRefIdx, Span<Variant> rgVarRef)
+        public static unsafe int IDispatchRemoteInvokeProxy(this Windows thisApi, IDispatch* This, int dispIdMember, Span<Guid> riid, uint lcid, uint dwFlags, Span<DispatchParams> pDispParams, Variant* pVarResult, Span<ExceptionInfo> pExcepInfo, Span<uint> pArgErr, uint cVarRef, uint* rgVarRefIdx, Span<Variant> rgVarRef)
         {
             // SpanOverloader
             return thisApi.IDispatchRemoteInvokeProxy(This, dispIdMember, ref riid.GetPinnableReference(), lcid, dwFlags, ref pDispParams.GetPinnableReference(), pVarResult, ref pExcepInfo.GetPinnableReference(), ref pArgErr.GetPinnableReference(), cVarRef, rgVarRefIdx, ref rgVarRef.GetPinnableReference());
@@ -24914,7 +24914,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2449, Column 43 in oaidl.h")]
-        public static unsafe int IDispatchRemoteInvokeProxy(this Windows thisApi, IDispatch* This, int dispIdMember, Span<Guid> riid, uint lcid, uint dwFlags, Span<DispatchParams> pDispParams, Variant* pVarResult, Span<ExcepInfo> pExcepInfo, Span<uint> pArgErr, uint cVarRef, Span<uint> rgVarRefIdx, Variant* rgVarRef)
+        public static unsafe int IDispatchRemoteInvokeProxy(this Windows thisApi, IDispatch* This, int dispIdMember, Span<Guid> riid, uint lcid, uint dwFlags, Span<DispatchParams> pDispParams, Variant* pVarResult, Span<ExceptionInfo> pExcepInfo, Span<uint> pArgErr, uint cVarRef, Span<uint> rgVarRefIdx, Variant* rgVarRef)
         {
             // SpanOverloader
             return thisApi.IDispatchRemoteInvokeProxy(This, dispIdMember, ref riid.GetPinnableReference(), lcid, dwFlags, ref pDispParams.GetPinnableReference(), pVarResult, ref pExcepInfo.GetPinnableReference(), ref pArgErr.GetPinnableReference(), cVarRef, ref rgVarRefIdx.GetPinnableReference(), rgVarRef);
@@ -24922,7 +24922,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2449, Column 43 in oaidl.h")]
-        public static unsafe int IDispatchRemoteInvokeProxy(this Windows thisApi, IDispatch* This, int dispIdMember, Span<Guid> riid, uint lcid, uint dwFlags, Span<DispatchParams> pDispParams, Variant* pVarResult, Span<ExcepInfo> pExcepInfo, Span<uint> pArgErr, uint cVarRef, Span<uint> rgVarRefIdx, Span<Variant> rgVarRef)
+        public static unsafe int IDispatchRemoteInvokeProxy(this Windows thisApi, IDispatch* This, int dispIdMember, Span<Guid> riid, uint lcid, uint dwFlags, Span<DispatchParams> pDispParams, Variant* pVarResult, Span<ExceptionInfo> pExcepInfo, Span<uint> pArgErr, uint cVarRef, Span<uint> rgVarRefIdx, Span<Variant> rgVarRef)
         {
             // SpanOverloader
             return thisApi.IDispatchRemoteInvokeProxy(This, dispIdMember, ref riid.GetPinnableReference(), lcid, dwFlags, ref pDispParams.GetPinnableReference(), pVarResult, ref pExcepInfo.GetPinnableReference(), ref pArgErr.GetPinnableReference(), cVarRef, ref rgVarRefIdx.GetPinnableReference(), ref rgVarRef.GetPinnableReference());
@@ -24930,7 +24930,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2449, Column 43 in oaidl.h")]
-        public static unsafe int IDispatchRemoteInvokeProxy(this Windows thisApi, IDispatch* This, int dispIdMember, Span<Guid> riid, uint lcid, uint dwFlags, Span<DispatchParams> pDispParams, Span<Variant> pVarResult, ExcepInfo* pExcepInfo, uint* pArgErr, uint cVarRef, uint* rgVarRefIdx, Variant* rgVarRef)
+        public static unsafe int IDispatchRemoteInvokeProxy(this Windows thisApi, IDispatch* This, int dispIdMember, Span<Guid> riid, uint lcid, uint dwFlags, Span<DispatchParams> pDispParams, Span<Variant> pVarResult, ExceptionInfo* pExcepInfo, uint* pArgErr, uint cVarRef, uint* rgVarRefIdx, Variant* rgVarRef)
         {
             // SpanOverloader
             return thisApi.IDispatchRemoteInvokeProxy(This, dispIdMember, ref riid.GetPinnableReference(), lcid, dwFlags, ref pDispParams.GetPinnableReference(), ref pVarResult.GetPinnableReference(), pExcepInfo, pArgErr, cVarRef, rgVarRefIdx, rgVarRef);
@@ -24938,7 +24938,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2449, Column 43 in oaidl.h")]
-        public static unsafe int IDispatchRemoteInvokeProxy(this Windows thisApi, IDispatch* This, int dispIdMember, Span<Guid> riid, uint lcid, uint dwFlags, Span<DispatchParams> pDispParams, Span<Variant> pVarResult, ExcepInfo* pExcepInfo, uint* pArgErr, uint cVarRef, uint* rgVarRefIdx, Span<Variant> rgVarRef)
+        public static unsafe int IDispatchRemoteInvokeProxy(this Windows thisApi, IDispatch* This, int dispIdMember, Span<Guid> riid, uint lcid, uint dwFlags, Span<DispatchParams> pDispParams, Span<Variant> pVarResult, ExceptionInfo* pExcepInfo, uint* pArgErr, uint cVarRef, uint* rgVarRefIdx, Span<Variant> rgVarRef)
         {
             // SpanOverloader
             return thisApi.IDispatchRemoteInvokeProxy(This, dispIdMember, ref riid.GetPinnableReference(), lcid, dwFlags, ref pDispParams.GetPinnableReference(), ref pVarResult.GetPinnableReference(), pExcepInfo, pArgErr, cVarRef, rgVarRefIdx, ref rgVarRef.GetPinnableReference());
@@ -24946,7 +24946,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2449, Column 43 in oaidl.h")]
-        public static unsafe int IDispatchRemoteInvokeProxy(this Windows thisApi, IDispatch* This, int dispIdMember, Span<Guid> riid, uint lcid, uint dwFlags, Span<DispatchParams> pDispParams, Span<Variant> pVarResult, ExcepInfo* pExcepInfo, uint* pArgErr, uint cVarRef, Span<uint> rgVarRefIdx, Variant* rgVarRef)
+        public static unsafe int IDispatchRemoteInvokeProxy(this Windows thisApi, IDispatch* This, int dispIdMember, Span<Guid> riid, uint lcid, uint dwFlags, Span<DispatchParams> pDispParams, Span<Variant> pVarResult, ExceptionInfo* pExcepInfo, uint* pArgErr, uint cVarRef, Span<uint> rgVarRefIdx, Variant* rgVarRef)
         {
             // SpanOverloader
             return thisApi.IDispatchRemoteInvokeProxy(This, dispIdMember, ref riid.GetPinnableReference(), lcid, dwFlags, ref pDispParams.GetPinnableReference(), ref pVarResult.GetPinnableReference(), pExcepInfo, pArgErr, cVarRef, ref rgVarRefIdx.GetPinnableReference(), rgVarRef);
@@ -24954,7 +24954,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2449, Column 43 in oaidl.h")]
-        public static unsafe int IDispatchRemoteInvokeProxy(this Windows thisApi, IDispatch* This, int dispIdMember, Span<Guid> riid, uint lcid, uint dwFlags, Span<DispatchParams> pDispParams, Span<Variant> pVarResult, ExcepInfo* pExcepInfo, uint* pArgErr, uint cVarRef, Span<uint> rgVarRefIdx, Span<Variant> rgVarRef)
+        public static unsafe int IDispatchRemoteInvokeProxy(this Windows thisApi, IDispatch* This, int dispIdMember, Span<Guid> riid, uint lcid, uint dwFlags, Span<DispatchParams> pDispParams, Span<Variant> pVarResult, ExceptionInfo* pExcepInfo, uint* pArgErr, uint cVarRef, Span<uint> rgVarRefIdx, Span<Variant> rgVarRef)
         {
             // SpanOverloader
             return thisApi.IDispatchRemoteInvokeProxy(This, dispIdMember, ref riid.GetPinnableReference(), lcid, dwFlags, ref pDispParams.GetPinnableReference(), ref pVarResult.GetPinnableReference(), pExcepInfo, pArgErr, cVarRef, ref rgVarRefIdx.GetPinnableReference(), ref rgVarRef.GetPinnableReference());
@@ -24962,7 +24962,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2449, Column 43 in oaidl.h")]
-        public static unsafe int IDispatchRemoteInvokeProxy(this Windows thisApi, IDispatch* This, int dispIdMember, Span<Guid> riid, uint lcid, uint dwFlags, Span<DispatchParams> pDispParams, Span<Variant> pVarResult, ExcepInfo* pExcepInfo, Span<uint> pArgErr, uint cVarRef, uint* rgVarRefIdx, Variant* rgVarRef)
+        public static unsafe int IDispatchRemoteInvokeProxy(this Windows thisApi, IDispatch* This, int dispIdMember, Span<Guid> riid, uint lcid, uint dwFlags, Span<DispatchParams> pDispParams, Span<Variant> pVarResult, ExceptionInfo* pExcepInfo, Span<uint> pArgErr, uint cVarRef, uint* rgVarRefIdx, Variant* rgVarRef)
         {
             // SpanOverloader
             return thisApi.IDispatchRemoteInvokeProxy(This, dispIdMember, ref riid.GetPinnableReference(), lcid, dwFlags, ref pDispParams.GetPinnableReference(), ref pVarResult.GetPinnableReference(), pExcepInfo, ref pArgErr.GetPinnableReference(), cVarRef, rgVarRefIdx, rgVarRef);
@@ -24970,7 +24970,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2449, Column 43 in oaidl.h")]
-        public static unsafe int IDispatchRemoteInvokeProxy(this Windows thisApi, IDispatch* This, int dispIdMember, Span<Guid> riid, uint lcid, uint dwFlags, Span<DispatchParams> pDispParams, Span<Variant> pVarResult, ExcepInfo* pExcepInfo, Span<uint> pArgErr, uint cVarRef, uint* rgVarRefIdx, Span<Variant> rgVarRef)
+        public static unsafe int IDispatchRemoteInvokeProxy(this Windows thisApi, IDispatch* This, int dispIdMember, Span<Guid> riid, uint lcid, uint dwFlags, Span<DispatchParams> pDispParams, Span<Variant> pVarResult, ExceptionInfo* pExcepInfo, Span<uint> pArgErr, uint cVarRef, uint* rgVarRefIdx, Span<Variant> rgVarRef)
         {
             // SpanOverloader
             return thisApi.IDispatchRemoteInvokeProxy(This, dispIdMember, ref riid.GetPinnableReference(), lcid, dwFlags, ref pDispParams.GetPinnableReference(), ref pVarResult.GetPinnableReference(), pExcepInfo, ref pArgErr.GetPinnableReference(), cVarRef, rgVarRefIdx, ref rgVarRef.GetPinnableReference());
@@ -24978,7 +24978,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2449, Column 43 in oaidl.h")]
-        public static unsafe int IDispatchRemoteInvokeProxy(this Windows thisApi, IDispatch* This, int dispIdMember, Span<Guid> riid, uint lcid, uint dwFlags, Span<DispatchParams> pDispParams, Span<Variant> pVarResult, ExcepInfo* pExcepInfo, Span<uint> pArgErr, uint cVarRef, Span<uint> rgVarRefIdx, Variant* rgVarRef)
+        public static unsafe int IDispatchRemoteInvokeProxy(this Windows thisApi, IDispatch* This, int dispIdMember, Span<Guid> riid, uint lcid, uint dwFlags, Span<DispatchParams> pDispParams, Span<Variant> pVarResult, ExceptionInfo* pExcepInfo, Span<uint> pArgErr, uint cVarRef, Span<uint> rgVarRefIdx, Variant* rgVarRef)
         {
             // SpanOverloader
             return thisApi.IDispatchRemoteInvokeProxy(This, dispIdMember, ref riid.GetPinnableReference(), lcid, dwFlags, ref pDispParams.GetPinnableReference(), ref pVarResult.GetPinnableReference(), pExcepInfo, ref pArgErr.GetPinnableReference(), cVarRef, ref rgVarRefIdx.GetPinnableReference(), rgVarRef);
@@ -24986,7 +24986,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2449, Column 43 in oaidl.h")]
-        public static unsafe int IDispatchRemoteInvokeProxy(this Windows thisApi, IDispatch* This, int dispIdMember, Span<Guid> riid, uint lcid, uint dwFlags, Span<DispatchParams> pDispParams, Span<Variant> pVarResult, ExcepInfo* pExcepInfo, Span<uint> pArgErr, uint cVarRef, Span<uint> rgVarRefIdx, Span<Variant> rgVarRef)
+        public static unsafe int IDispatchRemoteInvokeProxy(this Windows thisApi, IDispatch* This, int dispIdMember, Span<Guid> riid, uint lcid, uint dwFlags, Span<DispatchParams> pDispParams, Span<Variant> pVarResult, ExceptionInfo* pExcepInfo, Span<uint> pArgErr, uint cVarRef, Span<uint> rgVarRefIdx, Span<Variant> rgVarRef)
         {
             // SpanOverloader
             return thisApi.IDispatchRemoteInvokeProxy(This, dispIdMember, ref riid.GetPinnableReference(), lcid, dwFlags, ref pDispParams.GetPinnableReference(), ref pVarResult.GetPinnableReference(), pExcepInfo, ref pArgErr.GetPinnableReference(), cVarRef, ref rgVarRefIdx.GetPinnableReference(), ref rgVarRef.GetPinnableReference());
@@ -24994,7 +24994,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2449, Column 43 in oaidl.h")]
-        public static unsafe int IDispatchRemoteInvokeProxy(this Windows thisApi, IDispatch* This, int dispIdMember, Span<Guid> riid, uint lcid, uint dwFlags, Span<DispatchParams> pDispParams, Span<Variant> pVarResult, Span<ExcepInfo> pExcepInfo, uint* pArgErr, uint cVarRef, uint* rgVarRefIdx, Variant* rgVarRef)
+        public static unsafe int IDispatchRemoteInvokeProxy(this Windows thisApi, IDispatch* This, int dispIdMember, Span<Guid> riid, uint lcid, uint dwFlags, Span<DispatchParams> pDispParams, Span<Variant> pVarResult, Span<ExceptionInfo> pExcepInfo, uint* pArgErr, uint cVarRef, uint* rgVarRefIdx, Variant* rgVarRef)
         {
             // SpanOverloader
             return thisApi.IDispatchRemoteInvokeProxy(This, dispIdMember, ref riid.GetPinnableReference(), lcid, dwFlags, ref pDispParams.GetPinnableReference(), ref pVarResult.GetPinnableReference(), ref pExcepInfo.GetPinnableReference(), pArgErr, cVarRef, rgVarRefIdx, rgVarRef);
@@ -25002,7 +25002,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2449, Column 43 in oaidl.h")]
-        public static unsafe int IDispatchRemoteInvokeProxy(this Windows thisApi, IDispatch* This, int dispIdMember, Span<Guid> riid, uint lcid, uint dwFlags, Span<DispatchParams> pDispParams, Span<Variant> pVarResult, Span<ExcepInfo> pExcepInfo, uint* pArgErr, uint cVarRef, uint* rgVarRefIdx, Span<Variant> rgVarRef)
+        public static unsafe int IDispatchRemoteInvokeProxy(this Windows thisApi, IDispatch* This, int dispIdMember, Span<Guid> riid, uint lcid, uint dwFlags, Span<DispatchParams> pDispParams, Span<Variant> pVarResult, Span<ExceptionInfo> pExcepInfo, uint* pArgErr, uint cVarRef, uint* rgVarRefIdx, Span<Variant> rgVarRef)
         {
             // SpanOverloader
             return thisApi.IDispatchRemoteInvokeProxy(This, dispIdMember, ref riid.GetPinnableReference(), lcid, dwFlags, ref pDispParams.GetPinnableReference(), ref pVarResult.GetPinnableReference(), ref pExcepInfo.GetPinnableReference(), pArgErr, cVarRef, rgVarRefIdx, ref rgVarRef.GetPinnableReference());
@@ -25010,7 +25010,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2449, Column 43 in oaidl.h")]
-        public static unsafe int IDispatchRemoteInvokeProxy(this Windows thisApi, IDispatch* This, int dispIdMember, Span<Guid> riid, uint lcid, uint dwFlags, Span<DispatchParams> pDispParams, Span<Variant> pVarResult, Span<ExcepInfo> pExcepInfo, uint* pArgErr, uint cVarRef, Span<uint> rgVarRefIdx, Variant* rgVarRef)
+        public static unsafe int IDispatchRemoteInvokeProxy(this Windows thisApi, IDispatch* This, int dispIdMember, Span<Guid> riid, uint lcid, uint dwFlags, Span<DispatchParams> pDispParams, Span<Variant> pVarResult, Span<ExceptionInfo> pExcepInfo, uint* pArgErr, uint cVarRef, Span<uint> rgVarRefIdx, Variant* rgVarRef)
         {
             // SpanOverloader
             return thisApi.IDispatchRemoteInvokeProxy(This, dispIdMember, ref riid.GetPinnableReference(), lcid, dwFlags, ref pDispParams.GetPinnableReference(), ref pVarResult.GetPinnableReference(), ref pExcepInfo.GetPinnableReference(), pArgErr, cVarRef, ref rgVarRefIdx.GetPinnableReference(), rgVarRef);
@@ -25018,7 +25018,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2449, Column 43 in oaidl.h")]
-        public static unsafe int IDispatchRemoteInvokeProxy(this Windows thisApi, IDispatch* This, int dispIdMember, Span<Guid> riid, uint lcid, uint dwFlags, Span<DispatchParams> pDispParams, Span<Variant> pVarResult, Span<ExcepInfo> pExcepInfo, uint* pArgErr, uint cVarRef, Span<uint> rgVarRefIdx, Span<Variant> rgVarRef)
+        public static unsafe int IDispatchRemoteInvokeProxy(this Windows thisApi, IDispatch* This, int dispIdMember, Span<Guid> riid, uint lcid, uint dwFlags, Span<DispatchParams> pDispParams, Span<Variant> pVarResult, Span<ExceptionInfo> pExcepInfo, uint* pArgErr, uint cVarRef, Span<uint> rgVarRefIdx, Span<Variant> rgVarRef)
         {
             // SpanOverloader
             return thisApi.IDispatchRemoteInvokeProxy(This, dispIdMember, ref riid.GetPinnableReference(), lcid, dwFlags, ref pDispParams.GetPinnableReference(), ref pVarResult.GetPinnableReference(), ref pExcepInfo.GetPinnableReference(), pArgErr, cVarRef, ref rgVarRefIdx.GetPinnableReference(), ref rgVarRef.GetPinnableReference());
@@ -25026,7 +25026,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2449, Column 43 in oaidl.h")]
-        public static unsafe int IDispatchRemoteInvokeProxy(this Windows thisApi, IDispatch* This, int dispIdMember, Span<Guid> riid, uint lcid, uint dwFlags, Span<DispatchParams> pDispParams, Span<Variant> pVarResult, Span<ExcepInfo> pExcepInfo, Span<uint> pArgErr, uint cVarRef, uint* rgVarRefIdx, Variant* rgVarRef)
+        public static unsafe int IDispatchRemoteInvokeProxy(this Windows thisApi, IDispatch* This, int dispIdMember, Span<Guid> riid, uint lcid, uint dwFlags, Span<DispatchParams> pDispParams, Span<Variant> pVarResult, Span<ExceptionInfo> pExcepInfo, Span<uint> pArgErr, uint cVarRef, uint* rgVarRefIdx, Variant* rgVarRef)
         {
             // SpanOverloader
             return thisApi.IDispatchRemoteInvokeProxy(This, dispIdMember, ref riid.GetPinnableReference(), lcid, dwFlags, ref pDispParams.GetPinnableReference(), ref pVarResult.GetPinnableReference(), ref pExcepInfo.GetPinnableReference(), ref pArgErr.GetPinnableReference(), cVarRef, rgVarRefIdx, rgVarRef);
@@ -25034,7 +25034,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2449, Column 43 in oaidl.h")]
-        public static unsafe int IDispatchRemoteInvokeProxy(this Windows thisApi, IDispatch* This, int dispIdMember, Span<Guid> riid, uint lcid, uint dwFlags, Span<DispatchParams> pDispParams, Span<Variant> pVarResult, Span<ExcepInfo> pExcepInfo, Span<uint> pArgErr, uint cVarRef, uint* rgVarRefIdx, Span<Variant> rgVarRef)
+        public static unsafe int IDispatchRemoteInvokeProxy(this Windows thisApi, IDispatch* This, int dispIdMember, Span<Guid> riid, uint lcid, uint dwFlags, Span<DispatchParams> pDispParams, Span<Variant> pVarResult, Span<ExceptionInfo> pExcepInfo, Span<uint> pArgErr, uint cVarRef, uint* rgVarRefIdx, Span<Variant> rgVarRef)
         {
             // SpanOverloader
             return thisApi.IDispatchRemoteInvokeProxy(This, dispIdMember, ref riid.GetPinnableReference(), lcid, dwFlags, ref pDispParams.GetPinnableReference(), ref pVarResult.GetPinnableReference(), ref pExcepInfo.GetPinnableReference(), ref pArgErr.GetPinnableReference(), cVarRef, rgVarRefIdx, ref rgVarRef.GetPinnableReference());
@@ -25042,7 +25042,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2449, Column 43 in oaidl.h")]
-        public static unsafe int IDispatchRemoteInvokeProxy(this Windows thisApi, IDispatch* This, int dispIdMember, Span<Guid> riid, uint lcid, uint dwFlags, Span<DispatchParams> pDispParams, Span<Variant> pVarResult, Span<ExcepInfo> pExcepInfo, Span<uint> pArgErr, uint cVarRef, Span<uint> rgVarRefIdx, Variant* rgVarRef)
+        public static unsafe int IDispatchRemoteInvokeProxy(this Windows thisApi, IDispatch* This, int dispIdMember, Span<Guid> riid, uint lcid, uint dwFlags, Span<DispatchParams> pDispParams, Span<Variant> pVarResult, Span<ExceptionInfo> pExcepInfo, Span<uint> pArgErr, uint cVarRef, Span<uint> rgVarRefIdx, Variant* rgVarRef)
         {
             // SpanOverloader
             return thisApi.IDispatchRemoteInvokeProxy(This, dispIdMember, ref riid.GetPinnableReference(), lcid, dwFlags, ref pDispParams.GetPinnableReference(), ref pVarResult.GetPinnableReference(), ref pExcepInfo.GetPinnableReference(), ref pArgErr.GetPinnableReference(), cVarRef, ref rgVarRefIdx.GetPinnableReference(), rgVarRef);
@@ -25050,7 +25050,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2449, Column 43 in oaidl.h")]
-        public static unsafe int IDispatchRemoteInvokeProxy(this Windows thisApi, IDispatch* This, int dispIdMember, Span<Guid> riid, uint lcid, uint dwFlags, Span<DispatchParams> pDispParams, Span<Variant> pVarResult, Span<ExcepInfo> pExcepInfo, Span<uint> pArgErr, uint cVarRef, Span<uint> rgVarRefIdx, Span<Variant> rgVarRef)
+        public static unsafe int IDispatchRemoteInvokeProxy(this Windows thisApi, IDispatch* This, int dispIdMember, Span<Guid> riid, uint lcid, uint dwFlags, Span<DispatchParams> pDispParams, Span<Variant> pVarResult, Span<ExceptionInfo> pExcepInfo, Span<uint> pArgErr, uint cVarRef, Span<uint> rgVarRefIdx, Span<Variant> rgVarRef)
         {
             // SpanOverloader
             return thisApi.IDispatchRemoteInvokeProxy(This, dispIdMember, ref riid.GetPinnableReference(), lcid, dwFlags, ref pDispParams.GetPinnableReference(), ref pVarResult.GetPinnableReference(), ref pExcepInfo.GetPinnableReference(), ref pArgErr.GetPinnableReference(), cVarRef, ref rgVarRefIdx.GetPinnableReference(), ref rgVarRef.GetPinnableReference());
@@ -25058,7 +25058,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2449, Column 43 in oaidl.h")]
-        public static unsafe int IDispatchRemoteInvokeProxy(this Windows thisApi, Span<IDispatch> This, int dispIdMember, Guid* riid, uint lcid, uint dwFlags, DispatchParams* pDispParams, Variant* pVarResult, ExcepInfo* pExcepInfo, uint* pArgErr, uint cVarRef, uint* rgVarRefIdx, Variant* rgVarRef)
+        public static unsafe int IDispatchRemoteInvokeProxy(this Windows thisApi, Span<IDispatch> This, int dispIdMember, Guid* riid, uint lcid, uint dwFlags, DispatchParams* pDispParams, Variant* pVarResult, ExceptionInfo* pExcepInfo, uint* pArgErr, uint cVarRef, uint* rgVarRefIdx, Variant* rgVarRef)
         {
             // SpanOverloader
             return thisApi.IDispatchRemoteInvokeProxy(ref This.GetPinnableReference(), dispIdMember, riid, lcid, dwFlags, pDispParams, pVarResult, pExcepInfo, pArgErr, cVarRef, rgVarRefIdx, rgVarRef);
@@ -25066,7 +25066,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2449, Column 43 in oaidl.h")]
-        public static unsafe int IDispatchRemoteInvokeProxy(this Windows thisApi, Span<IDispatch> This, int dispIdMember, Guid* riid, uint lcid, uint dwFlags, DispatchParams* pDispParams, Variant* pVarResult, ExcepInfo* pExcepInfo, uint* pArgErr, uint cVarRef, uint* rgVarRefIdx, Span<Variant> rgVarRef)
+        public static unsafe int IDispatchRemoteInvokeProxy(this Windows thisApi, Span<IDispatch> This, int dispIdMember, Guid* riid, uint lcid, uint dwFlags, DispatchParams* pDispParams, Variant* pVarResult, ExceptionInfo* pExcepInfo, uint* pArgErr, uint cVarRef, uint* rgVarRefIdx, Span<Variant> rgVarRef)
         {
             // SpanOverloader
             return thisApi.IDispatchRemoteInvokeProxy(ref This.GetPinnableReference(), dispIdMember, riid, lcid, dwFlags, pDispParams, pVarResult, pExcepInfo, pArgErr, cVarRef, rgVarRefIdx, ref rgVarRef.GetPinnableReference());
@@ -25074,7 +25074,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2449, Column 43 in oaidl.h")]
-        public static unsafe int IDispatchRemoteInvokeProxy(this Windows thisApi, Span<IDispatch> This, int dispIdMember, Guid* riid, uint lcid, uint dwFlags, DispatchParams* pDispParams, Variant* pVarResult, ExcepInfo* pExcepInfo, uint* pArgErr, uint cVarRef, Span<uint> rgVarRefIdx, Variant* rgVarRef)
+        public static unsafe int IDispatchRemoteInvokeProxy(this Windows thisApi, Span<IDispatch> This, int dispIdMember, Guid* riid, uint lcid, uint dwFlags, DispatchParams* pDispParams, Variant* pVarResult, ExceptionInfo* pExcepInfo, uint* pArgErr, uint cVarRef, Span<uint> rgVarRefIdx, Variant* rgVarRef)
         {
             // SpanOverloader
             return thisApi.IDispatchRemoteInvokeProxy(ref This.GetPinnableReference(), dispIdMember, riid, lcid, dwFlags, pDispParams, pVarResult, pExcepInfo, pArgErr, cVarRef, ref rgVarRefIdx.GetPinnableReference(), rgVarRef);
@@ -25082,7 +25082,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2449, Column 43 in oaidl.h")]
-        public static unsafe int IDispatchRemoteInvokeProxy(this Windows thisApi, Span<IDispatch> This, int dispIdMember, Guid* riid, uint lcid, uint dwFlags, DispatchParams* pDispParams, Variant* pVarResult, ExcepInfo* pExcepInfo, uint* pArgErr, uint cVarRef, Span<uint> rgVarRefIdx, Span<Variant> rgVarRef)
+        public static unsafe int IDispatchRemoteInvokeProxy(this Windows thisApi, Span<IDispatch> This, int dispIdMember, Guid* riid, uint lcid, uint dwFlags, DispatchParams* pDispParams, Variant* pVarResult, ExceptionInfo* pExcepInfo, uint* pArgErr, uint cVarRef, Span<uint> rgVarRefIdx, Span<Variant> rgVarRef)
         {
             // SpanOverloader
             return thisApi.IDispatchRemoteInvokeProxy(ref This.GetPinnableReference(), dispIdMember, riid, lcid, dwFlags, pDispParams, pVarResult, pExcepInfo, pArgErr, cVarRef, ref rgVarRefIdx.GetPinnableReference(), ref rgVarRef.GetPinnableReference());
@@ -25090,7 +25090,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2449, Column 43 in oaidl.h")]
-        public static unsafe int IDispatchRemoteInvokeProxy(this Windows thisApi, Span<IDispatch> This, int dispIdMember, Guid* riid, uint lcid, uint dwFlags, DispatchParams* pDispParams, Variant* pVarResult, ExcepInfo* pExcepInfo, Span<uint> pArgErr, uint cVarRef, uint* rgVarRefIdx, Variant* rgVarRef)
+        public static unsafe int IDispatchRemoteInvokeProxy(this Windows thisApi, Span<IDispatch> This, int dispIdMember, Guid* riid, uint lcid, uint dwFlags, DispatchParams* pDispParams, Variant* pVarResult, ExceptionInfo* pExcepInfo, Span<uint> pArgErr, uint cVarRef, uint* rgVarRefIdx, Variant* rgVarRef)
         {
             // SpanOverloader
             return thisApi.IDispatchRemoteInvokeProxy(ref This.GetPinnableReference(), dispIdMember, riid, lcid, dwFlags, pDispParams, pVarResult, pExcepInfo, ref pArgErr.GetPinnableReference(), cVarRef, rgVarRefIdx, rgVarRef);
@@ -25098,7 +25098,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2449, Column 43 in oaidl.h")]
-        public static unsafe int IDispatchRemoteInvokeProxy(this Windows thisApi, Span<IDispatch> This, int dispIdMember, Guid* riid, uint lcid, uint dwFlags, DispatchParams* pDispParams, Variant* pVarResult, ExcepInfo* pExcepInfo, Span<uint> pArgErr, uint cVarRef, uint* rgVarRefIdx, Span<Variant> rgVarRef)
+        public static unsafe int IDispatchRemoteInvokeProxy(this Windows thisApi, Span<IDispatch> This, int dispIdMember, Guid* riid, uint lcid, uint dwFlags, DispatchParams* pDispParams, Variant* pVarResult, ExceptionInfo* pExcepInfo, Span<uint> pArgErr, uint cVarRef, uint* rgVarRefIdx, Span<Variant> rgVarRef)
         {
             // SpanOverloader
             return thisApi.IDispatchRemoteInvokeProxy(ref This.GetPinnableReference(), dispIdMember, riid, lcid, dwFlags, pDispParams, pVarResult, pExcepInfo, ref pArgErr.GetPinnableReference(), cVarRef, rgVarRefIdx, ref rgVarRef.GetPinnableReference());
@@ -25106,7 +25106,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2449, Column 43 in oaidl.h")]
-        public static unsafe int IDispatchRemoteInvokeProxy(this Windows thisApi, Span<IDispatch> This, int dispIdMember, Guid* riid, uint lcid, uint dwFlags, DispatchParams* pDispParams, Variant* pVarResult, ExcepInfo* pExcepInfo, Span<uint> pArgErr, uint cVarRef, Span<uint> rgVarRefIdx, Variant* rgVarRef)
+        public static unsafe int IDispatchRemoteInvokeProxy(this Windows thisApi, Span<IDispatch> This, int dispIdMember, Guid* riid, uint lcid, uint dwFlags, DispatchParams* pDispParams, Variant* pVarResult, ExceptionInfo* pExcepInfo, Span<uint> pArgErr, uint cVarRef, Span<uint> rgVarRefIdx, Variant* rgVarRef)
         {
             // SpanOverloader
             return thisApi.IDispatchRemoteInvokeProxy(ref This.GetPinnableReference(), dispIdMember, riid, lcid, dwFlags, pDispParams, pVarResult, pExcepInfo, ref pArgErr.GetPinnableReference(), cVarRef, ref rgVarRefIdx.GetPinnableReference(), rgVarRef);
@@ -25114,7 +25114,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2449, Column 43 in oaidl.h")]
-        public static unsafe int IDispatchRemoteInvokeProxy(this Windows thisApi, Span<IDispatch> This, int dispIdMember, Guid* riid, uint lcid, uint dwFlags, DispatchParams* pDispParams, Variant* pVarResult, ExcepInfo* pExcepInfo, Span<uint> pArgErr, uint cVarRef, Span<uint> rgVarRefIdx, Span<Variant> rgVarRef)
+        public static unsafe int IDispatchRemoteInvokeProxy(this Windows thisApi, Span<IDispatch> This, int dispIdMember, Guid* riid, uint lcid, uint dwFlags, DispatchParams* pDispParams, Variant* pVarResult, ExceptionInfo* pExcepInfo, Span<uint> pArgErr, uint cVarRef, Span<uint> rgVarRefIdx, Span<Variant> rgVarRef)
         {
             // SpanOverloader
             return thisApi.IDispatchRemoteInvokeProxy(ref This.GetPinnableReference(), dispIdMember, riid, lcid, dwFlags, pDispParams, pVarResult, pExcepInfo, ref pArgErr.GetPinnableReference(), cVarRef, ref rgVarRefIdx.GetPinnableReference(), ref rgVarRef.GetPinnableReference());
@@ -25122,7 +25122,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2449, Column 43 in oaidl.h")]
-        public static unsafe int IDispatchRemoteInvokeProxy(this Windows thisApi, Span<IDispatch> This, int dispIdMember, Guid* riid, uint lcid, uint dwFlags, DispatchParams* pDispParams, Variant* pVarResult, Span<ExcepInfo> pExcepInfo, uint* pArgErr, uint cVarRef, uint* rgVarRefIdx, Variant* rgVarRef)
+        public static unsafe int IDispatchRemoteInvokeProxy(this Windows thisApi, Span<IDispatch> This, int dispIdMember, Guid* riid, uint lcid, uint dwFlags, DispatchParams* pDispParams, Variant* pVarResult, Span<ExceptionInfo> pExcepInfo, uint* pArgErr, uint cVarRef, uint* rgVarRefIdx, Variant* rgVarRef)
         {
             // SpanOverloader
             return thisApi.IDispatchRemoteInvokeProxy(ref This.GetPinnableReference(), dispIdMember, riid, lcid, dwFlags, pDispParams, pVarResult, ref pExcepInfo.GetPinnableReference(), pArgErr, cVarRef, rgVarRefIdx, rgVarRef);
@@ -25130,7 +25130,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2449, Column 43 in oaidl.h")]
-        public static unsafe int IDispatchRemoteInvokeProxy(this Windows thisApi, Span<IDispatch> This, int dispIdMember, Guid* riid, uint lcid, uint dwFlags, DispatchParams* pDispParams, Variant* pVarResult, Span<ExcepInfo> pExcepInfo, uint* pArgErr, uint cVarRef, uint* rgVarRefIdx, Span<Variant> rgVarRef)
+        public static unsafe int IDispatchRemoteInvokeProxy(this Windows thisApi, Span<IDispatch> This, int dispIdMember, Guid* riid, uint lcid, uint dwFlags, DispatchParams* pDispParams, Variant* pVarResult, Span<ExceptionInfo> pExcepInfo, uint* pArgErr, uint cVarRef, uint* rgVarRefIdx, Span<Variant> rgVarRef)
         {
             // SpanOverloader
             return thisApi.IDispatchRemoteInvokeProxy(ref This.GetPinnableReference(), dispIdMember, riid, lcid, dwFlags, pDispParams, pVarResult, ref pExcepInfo.GetPinnableReference(), pArgErr, cVarRef, rgVarRefIdx, ref rgVarRef.GetPinnableReference());
@@ -25138,7 +25138,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2449, Column 43 in oaidl.h")]
-        public static unsafe int IDispatchRemoteInvokeProxy(this Windows thisApi, Span<IDispatch> This, int dispIdMember, Guid* riid, uint lcid, uint dwFlags, DispatchParams* pDispParams, Variant* pVarResult, Span<ExcepInfo> pExcepInfo, uint* pArgErr, uint cVarRef, Span<uint> rgVarRefIdx, Variant* rgVarRef)
+        public static unsafe int IDispatchRemoteInvokeProxy(this Windows thisApi, Span<IDispatch> This, int dispIdMember, Guid* riid, uint lcid, uint dwFlags, DispatchParams* pDispParams, Variant* pVarResult, Span<ExceptionInfo> pExcepInfo, uint* pArgErr, uint cVarRef, Span<uint> rgVarRefIdx, Variant* rgVarRef)
         {
             // SpanOverloader
             return thisApi.IDispatchRemoteInvokeProxy(ref This.GetPinnableReference(), dispIdMember, riid, lcid, dwFlags, pDispParams, pVarResult, ref pExcepInfo.GetPinnableReference(), pArgErr, cVarRef, ref rgVarRefIdx.GetPinnableReference(), rgVarRef);
@@ -25146,7 +25146,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2449, Column 43 in oaidl.h")]
-        public static unsafe int IDispatchRemoteInvokeProxy(this Windows thisApi, Span<IDispatch> This, int dispIdMember, Guid* riid, uint lcid, uint dwFlags, DispatchParams* pDispParams, Variant* pVarResult, Span<ExcepInfo> pExcepInfo, uint* pArgErr, uint cVarRef, Span<uint> rgVarRefIdx, Span<Variant> rgVarRef)
+        public static unsafe int IDispatchRemoteInvokeProxy(this Windows thisApi, Span<IDispatch> This, int dispIdMember, Guid* riid, uint lcid, uint dwFlags, DispatchParams* pDispParams, Variant* pVarResult, Span<ExceptionInfo> pExcepInfo, uint* pArgErr, uint cVarRef, Span<uint> rgVarRefIdx, Span<Variant> rgVarRef)
         {
             // SpanOverloader
             return thisApi.IDispatchRemoteInvokeProxy(ref This.GetPinnableReference(), dispIdMember, riid, lcid, dwFlags, pDispParams, pVarResult, ref pExcepInfo.GetPinnableReference(), pArgErr, cVarRef, ref rgVarRefIdx.GetPinnableReference(), ref rgVarRef.GetPinnableReference());
@@ -25154,7 +25154,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2449, Column 43 in oaidl.h")]
-        public static unsafe int IDispatchRemoteInvokeProxy(this Windows thisApi, Span<IDispatch> This, int dispIdMember, Guid* riid, uint lcid, uint dwFlags, DispatchParams* pDispParams, Variant* pVarResult, Span<ExcepInfo> pExcepInfo, Span<uint> pArgErr, uint cVarRef, uint* rgVarRefIdx, Variant* rgVarRef)
+        public static unsafe int IDispatchRemoteInvokeProxy(this Windows thisApi, Span<IDispatch> This, int dispIdMember, Guid* riid, uint lcid, uint dwFlags, DispatchParams* pDispParams, Variant* pVarResult, Span<ExceptionInfo> pExcepInfo, Span<uint> pArgErr, uint cVarRef, uint* rgVarRefIdx, Variant* rgVarRef)
         {
             // SpanOverloader
             return thisApi.IDispatchRemoteInvokeProxy(ref This.GetPinnableReference(), dispIdMember, riid, lcid, dwFlags, pDispParams, pVarResult, ref pExcepInfo.GetPinnableReference(), ref pArgErr.GetPinnableReference(), cVarRef, rgVarRefIdx, rgVarRef);
@@ -25162,7 +25162,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2449, Column 43 in oaidl.h")]
-        public static unsafe int IDispatchRemoteInvokeProxy(this Windows thisApi, Span<IDispatch> This, int dispIdMember, Guid* riid, uint lcid, uint dwFlags, DispatchParams* pDispParams, Variant* pVarResult, Span<ExcepInfo> pExcepInfo, Span<uint> pArgErr, uint cVarRef, uint* rgVarRefIdx, Span<Variant> rgVarRef)
+        public static unsafe int IDispatchRemoteInvokeProxy(this Windows thisApi, Span<IDispatch> This, int dispIdMember, Guid* riid, uint lcid, uint dwFlags, DispatchParams* pDispParams, Variant* pVarResult, Span<ExceptionInfo> pExcepInfo, Span<uint> pArgErr, uint cVarRef, uint* rgVarRefIdx, Span<Variant> rgVarRef)
         {
             // SpanOverloader
             return thisApi.IDispatchRemoteInvokeProxy(ref This.GetPinnableReference(), dispIdMember, riid, lcid, dwFlags, pDispParams, pVarResult, ref pExcepInfo.GetPinnableReference(), ref pArgErr.GetPinnableReference(), cVarRef, rgVarRefIdx, ref rgVarRef.GetPinnableReference());
@@ -25170,7 +25170,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2449, Column 43 in oaidl.h")]
-        public static unsafe int IDispatchRemoteInvokeProxy(this Windows thisApi, Span<IDispatch> This, int dispIdMember, Guid* riid, uint lcid, uint dwFlags, DispatchParams* pDispParams, Variant* pVarResult, Span<ExcepInfo> pExcepInfo, Span<uint> pArgErr, uint cVarRef, Span<uint> rgVarRefIdx, Variant* rgVarRef)
+        public static unsafe int IDispatchRemoteInvokeProxy(this Windows thisApi, Span<IDispatch> This, int dispIdMember, Guid* riid, uint lcid, uint dwFlags, DispatchParams* pDispParams, Variant* pVarResult, Span<ExceptionInfo> pExcepInfo, Span<uint> pArgErr, uint cVarRef, Span<uint> rgVarRefIdx, Variant* rgVarRef)
         {
             // SpanOverloader
             return thisApi.IDispatchRemoteInvokeProxy(ref This.GetPinnableReference(), dispIdMember, riid, lcid, dwFlags, pDispParams, pVarResult, ref pExcepInfo.GetPinnableReference(), ref pArgErr.GetPinnableReference(), cVarRef, ref rgVarRefIdx.GetPinnableReference(), rgVarRef);
@@ -25178,7 +25178,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2449, Column 43 in oaidl.h")]
-        public static unsafe int IDispatchRemoteInvokeProxy(this Windows thisApi, Span<IDispatch> This, int dispIdMember, Guid* riid, uint lcid, uint dwFlags, DispatchParams* pDispParams, Variant* pVarResult, Span<ExcepInfo> pExcepInfo, Span<uint> pArgErr, uint cVarRef, Span<uint> rgVarRefIdx, Span<Variant> rgVarRef)
+        public static unsafe int IDispatchRemoteInvokeProxy(this Windows thisApi, Span<IDispatch> This, int dispIdMember, Guid* riid, uint lcid, uint dwFlags, DispatchParams* pDispParams, Variant* pVarResult, Span<ExceptionInfo> pExcepInfo, Span<uint> pArgErr, uint cVarRef, Span<uint> rgVarRefIdx, Span<Variant> rgVarRef)
         {
             // SpanOverloader
             return thisApi.IDispatchRemoteInvokeProxy(ref This.GetPinnableReference(), dispIdMember, riid, lcid, dwFlags, pDispParams, pVarResult, ref pExcepInfo.GetPinnableReference(), ref pArgErr.GetPinnableReference(), cVarRef, ref rgVarRefIdx.GetPinnableReference(), ref rgVarRef.GetPinnableReference());
@@ -25186,7 +25186,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2449, Column 43 in oaidl.h")]
-        public static unsafe int IDispatchRemoteInvokeProxy(this Windows thisApi, Span<IDispatch> This, int dispIdMember, Guid* riid, uint lcid, uint dwFlags, DispatchParams* pDispParams, Span<Variant> pVarResult, ExcepInfo* pExcepInfo, uint* pArgErr, uint cVarRef, uint* rgVarRefIdx, Variant* rgVarRef)
+        public static unsafe int IDispatchRemoteInvokeProxy(this Windows thisApi, Span<IDispatch> This, int dispIdMember, Guid* riid, uint lcid, uint dwFlags, DispatchParams* pDispParams, Span<Variant> pVarResult, ExceptionInfo* pExcepInfo, uint* pArgErr, uint cVarRef, uint* rgVarRefIdx, Variant* rgVarRef)
         {
             // SpanOverloader
             return thisApi.IDispatchRemoteInvokeProxy(ref This.GetPinnableReference(), dispIdMember, riid, lcid, dwFlags, pDispParams, ref pVarResult.GetPinnableReference(), pExcepInfo, pArgErr, cVarRef, rgVarRefIdx, rgVarRef);
@@ -25194,7 +25194,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2449, Column 43 in oaidl.h")]
-        public static unsafe int IDispatchRemoteInvokeProxy(this Windows thisApi, Span<IDispatch> This, int dispIdMember, Guid* riid, uint lcid, uint dwFlags, DispatchParams* pDispParams, Span<Variant> pVarResult, ExcepInfo* pExcepInfo, uint* pArgErr, uint cVarRef, uint* rgVarRefIdx, Span<Variant> rgVarRef)
+        public static unsafe int IDispatchRemoteInvokeProxy(this Windows thisApi, Span<IDispatch> This, int dispIdMember, Guid* riid, uint lcid, uint dwFlags, DispatchParams* pDispParams, Span<Variant> pVarResult, ExceptionInfo* pExcepInfo, uint* pArgErr, uint cVarRef, uint* rgVarRefIdx, Span<Variant> rgVarRef)
         {
             // SpanOverloader
             return thisApi.IDispatchRemoteInvokeProxy(ref This.GetPinnableReference(), dispIdMember, riid, lcid, dwFlags, pDispParams, ref pVarResult.GetPinnableReference(), pExcepInfo, pArgErr, cVarRef, rgVarRefIdx, ref rgVarRef.GetPinnableReference());
@@ -25202,7 +25202,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2449, Column 43 in oaidl.h")]
-        public static unsafe int IDispatchRemoteInvokeProxy(this Windows thisApi, Span<IDispatch> This, int dispIdMember, Guid* riid, uint lcid, uint dwFlags, DispatchParams* pDispParams, Span<Variant> pVarResult, ExcepInfo* pExcepInfo, uint* pArgErr, uint cVarRef, Span<uint> rgVarRefIdx, Variant* rgVarRef)
+        public static unsafe int IDispatchRemoteInvokeProxy(this Windows thisApi, Span<IDispatch> This, int dispIdMember, Guid* riid, uint lcid, uint dwFlags, DispatchParams* pDispParams, Span<Variant> pVarResult, ExceptionInfo* pExcepInfo, uint* pArgErr, uint cVarRef, Span<uint> rgVarRefIdx, Variant* rgVarRef)
         {
             // SpanOverloader
             return thisApi.IDispatchRemoteInvokeProxy(ref This.GetPinnableReference(), dispIdMember, riid, lcid, dwFlags, pDispParams, ref pVarResult.GetPinnableReference(), pExcepInfo, pArgErr, cVarRef, ref rgVarRefIdx.GetPinnableReference(), rgVarRef);
@@ -25210,7 +25210,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2449, Column 43 in oaidl.h")]
-        public static unsafe int IDispatchRemoteInvokeProxy(this Windows thisApi, Span<IDispatch> This, int dispIdMember, Guid* riid, uint lcid, uint dwFlags, DispatchParams* pDispParams, Span<Variant> pVarResult, ExcepInfo* pExcepInfo, uint* pArgErr, uint cVarRef, Span<uint> rgVarRefIdx, Span<Variant> rgVarRef)
+        public static unsafe int IDispatchRemoteInvokeProxy(this Windows thisApi, Span<IDispatch> This, int dispIdMember, Guid* riid, uint lcid, uint dwFlags, DispatchParams* pDispParams, Span<Variant> pVarResult, ExceptionInfo* pExcepInfo, uint* pArgErr, uint cVarRef, Span<uint> rgVarRefIdx, Span<Variant> rgVarRef)
         {
             // SpanOverloader
             return thisApi.IDispatchRemoteInvokeProxy(ref This.GetPinnableReference(), dispIdMember, riid, lcid, dwFlags, pDispParams, ref pVarResult.GetPinnableReference(), pExcepInfo, pArgErr, cVarRef, ref rgVarRefIdx.GetPinnableReference(), ref rgVarRef.GetPinnableReference());
@@ -25218,7 +25218,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2449, Column 43 in oaidl.h")]
-        public static unsafe int IDispatchRemoteInvokeProxy(this Windows thisApi, Span<IDispatch> This, int dispIdMember, Guid* riid, uint lcid, uint dwFlags, DispatchParams* pDispParams, Span<Variant> pVarResult, ExcepInfo* pExcepInfo, Span<uint> pArgErr, uint cVarRef, uint* rgVarRefIdx, Variant* rgVarRef)
+        public static unsafe int IDispatchRemoteInvokeProxy(this Windows thisApi, Span<IDispatch> This, int dispIdMember, Guid* riid, uint lcid, uint dwFlags, DispatchParams* pDispParams, Span<Variant> pVarResult, ExceptionInfo* pExcepInfo, Span<uint> pArgErr, uint cVarRef, uint* rgVarRefIdx, Variant* rgVarRef)
         {
             // SpanOverloader
             return thisApi.IDispatchRemoteInvokeProxy(ref This.GetPinnableReference(), dispIdMember, riid, lcid, dwFlags, pDispParams, ref pVarResult.GetPinnableReference(), pExcepInfo, ref pArgErr.GetPinnableReference(), cVarRef, rgVarRefIdx, rgVarRef);
@@ -25226,7 +25226,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2449, Column 43 in oaidl.h")]
-        public static unsafe int IDispatchRemoteInvokeProxy(this Windows thisApi, Span<IDispatch> This, int dispIdMember, Guid* riid, uint lcid, uint dwFlags, DispatchParams* pDispParams, Span<Variant> pVarResult, ExcepInfo* pExcepInfo, Span<uint> pArgErr, uint cVarRef, uint* rgVarRefIdx, Span<Variant> rgVarRef)
+        public static unsafe int IDispatchRemoteInvokeProxy(this Windows thisApi, Span<IDispatch> This, int dispIdMember, Guid* riid, uint lcid, uint dwFlags, DispatchParams* pDispParams, Span<Variant> pVarResult, ExceptionInfo* pExcepInfo, Span<uint> pArgErr, uint cVarRef, uint* rgVarRefIdx, Span<Variant> rgVarRef)
         {
             // SpanOverloader
             return thisApi.IDispatchRemoteInvokeProxy(ref This.GetPinnableReference(), dispIdMember, riid, lcid, dwFlags, pDispParams, ref pVarResult.GetPinnableReference(), pExcepInfo, ref pArgErr.GetPinnableReference(), cVarRef, rgVarRefIdx, ref rgVarRef.GetPinnableReference());
@@ -25234,7 +25234,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2449, Column 43 in oaidl.h")]
-        public static unsafe int IDispatchRemoteInvokeProxy(this Windows thisApi, Span<IDispatch> This, int dispIdMember, Guid* riid, uint lcid, uint dwFlags, DispatchParams* pDispParams, Span<Variant> pVarResult, ExcepInfo* pExcepInfo, Span<uint> pArgErr, uint cVarRef, Span<uint> rgVarRefIdx, Variant* rgVarRef)
+        public static unsafe int IDispatchRemoteInvokeProxy(this Windows thisApi, Span<IDispatch> This, int dispIdMember, Guid* riid, uint lcid, uint dwFlags, DispatchParams* pDispParams, Span<Variant> pVarResult, ExceptionInfo* pExcepInfo, Span<uint> pArgErr, uint cVarRef, Span<uint> rgVarRefIdx, Variant* rgVarRef)
         {
             // SpanOverloader
             return thisApi.IDispatchRemoteInvokeProxy(ref This.GetPinnableReference(), dispIdMember, riid, lcid, dwFlags, pDispParams, ref pVarResult.GetPinnableReference(), pExcepInfo, ref pArgErr.GetPinnableReference(), cVarRef, ref rgVarRefIdx.GetPinnableReference(), rgVarRef);
@@ -25242,7 +25242,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2449, Column 43 in oaidl.h")]
-        public static unsafe int IDispatchRemoteInvokeProxy(this Windows thisApi, Span<IDispatch> This, int dispIdMember, Guid* riid, uint lcid, uint dwFlags, DispatchParams* pDispParams, Span<Variant> pVarResult, ExcepInfo* pExcepInfo, Span<uint> pArgErr, uint cVarRef, Span<uint> rgVarRefIdx, Span<Variant> rgVarRef)
+        public static unsafe int IDispatchRemoteInvokeProxy(this Windows thisApi, Span<IDispatch> This, int dispIdMember, Guid* riid, uint lcid, uint dwFlags, DispatchParams* pDispParams, Span<Variant> pVarResult, ExceptionInfo* pExcepInfo, Span<uint> pArgErr, uint cVarRef, Span<uint> rgVarRefIdx, Span<Variant> rgVarRef)
         {
             // SpanOverloader
             return thisApi.IDispatchRemoteInvokeProxy(ref This.GetPinnableReference(), dispIdMember, riid, lcid, dwFlags, pDispParams, ref pVarResult.GetPinnableReference(), pExcepInfo, ref pArgErr.GetPinnableReference(), cVarRef, ref rgVarRefIdx.GetPinnableReference(), ref rgVarRef.GetPinnableReference());
@@ -25250,7 +25250,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2449, Column 43 in oaidl.h")]
-        public static unsafe int IDispatchRemoteInvokeProxy(this Windows thisApi, Span<IDispatch> This, int dispIdMember, Guid* riid, uint lcid, uint dwFlags, DispatchParams* pDispParams, Span<Variant> pVarResult, Span<ExcepInfo> pExcepInfo, uint* pArgErr, uint cVarRef, uint* rgVarRefIdx, Variant* rgVarRef)
+        public static unsafe int IDispatchRemoteInvokeProxy(this Windows thisApi, Span<IDispatch> This, int dispIdMember, Guid* riid, uint lcid, uint dwFlags, DispatchParams* pDispParams, Span<Variant> pVarResult, Span<ExceptionInfo> pExcepInfo, uint* pArgErr, uint cVarRef, uint* rgVarRefIdx, Variant* rgVarRef)
         {
             // SpanOverloader
             return thisApi.IDispatchRemoteInvokeProxy(ref This.GetPinnableReference(), dispIdMember, riid, lcid, dwFlags, pDispParams, ref pVarResult.GetPinnableReference(), ref pExcepInfo.GetPinnableReference(), pArgErr, cVarRef, rgVarRefIdx, rgVarRef);
@@ -25258,7 +25258,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2449, Column 43 in oaidl.h")]
-        public static unsafe int IDispatchRemoteInvokeProxy(this Windows thisApi, Span<IDispatch> This, int dispIdMember, Guid* riid, uint lcid, uint dwFlags, DispatchParams* pDispParams, Span<Variant> pVarResult, Span<ExcepInfo> pExcepInfo, uint* pArgErr, uint cVarRef, uint* rgVarRefIdx, Span<Variant> rgVarRef)
+        public static unsafe int IDispatchRemoteInvokeProxy(this Windows thisApi, Span<IDispatch> This, int dispIdMember, Guid* riid, uint lcid, uint dwFlags, DispatchParams* pDispParams, Span<Variant> pVarResult, Span<ExceptionInfo> pExcepInfo, uint* pArgErr, uint cVarRef, uint* rgVarRefIdx, Span<Variant> rgVarRef)
         {
             // SpanOverloader
             return thisApi.IDispatchRemoteInvokeProxy(ref This.GetPinnableReference(), dispIdMember, riid, lcid, dwFlags, pDispParams, ref pVarResult.GetPinnableReference(), ref pExcepInfo.GetPinnableReference(), pArgErr, cVarRef, rgVarRefIdx, ref rgVarRef.GetPinnableReference());
@@ -25266,7 +25266,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2449, Column 43 in oaidl.h")]
-        public static unsafe int IDispatchRemoteInvokeProxy(this Windows thisApi, Span<IDispatch> This, int dispIdMember, Guid* riid, uint lcid, uint dwFlags, DispatchParams* pDispParams, Span<Variant> pVarResult, Span<ExcepInfo> pExcepInfo, uint* pArgErr, uint cVarRef, Span<uint> rgVarRefIdx, Variant* rgVarRef)
+        public static unsafe int IDispatchRemoteInvokeProxy(this Windows thisApi, Span<IDispatch> This, int dispIdMember, Guid* riid, uint lcid, uint dwFlags, DispatchParams* pDispParams, Span<Variant> pVarResult, Span<ExceptionInfo> pExcepInfo, uint* pArgErr, uint cVarRef, Span<uint> rgVarRefIdx, Variant* rgVarRef)
         {
             // SpanOverloader
             return thisApi.IDispatchRemoteInvokeProxy(ref This.GetPinnableReference(), dispIdMember, riid, lcid, dwFlags, pDispParams, ref pVarResult.GetPinnableReference(), ref pExcepInfo.GetPinnableReference(), pArgErr, cVarRef, ref rgVarRefIdx.GetPinnableReference(), rgVarRef);
@@ -25274,7 +25274,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2449, Column 43 in oaidl.h")]
-        public static unsafe int IDispatchRemoteInvokeProxy(this Windows thisApi, Span<IDispatch> This, int dispIdMember, Guid* riid, uint lcid, uint dwFlags, DispatchParams* pDispParams, Span<Variant> pVarResult, Span<ExcepInfo> pExcepInfo, uint* pArgErr, uint cVarRef, Span<uint> rgVarRefIdx, Span<Variant> rgVarRef)
+        public static unsafe int IDispatchRemoteInvokeProxy(this Windows thisApi, Span<IDispatch> This, int dispIdMember, Guid* riid, uint lcid, uint dwFlags, DispatchParams* pDispParams, Span<Variant> pVarResult, Span<ExceptionInfo> pExcepInfo, uint* pArgErr, uint cVarRef, Span<uint> rgVarRefIdx, Span<Variant> rgVarRef)
         {
             // SpanOverloader
             return thisApi.IDispatchRemoteInvokeProxy(ref This.GetPinnableReference(), dispIdMember, riid, lcid, dwFlags, pDispParams, ref pVarResult.GetPinnableReference(), ref pExcepInfo.GetPinnableReference(), pArgErr, cVarRef, ref rgVarRefIdx.GetPinnableReference(), ref rgVarRef.GetPinnableReference());
@@ -25282,7 +25282,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2449, Column 43 in oaidl.h")]
-        public static unsafe int IDispatchRemoteInvokeProxy(this Windows thisApi, Span<IDispatch> This, int dispIdMember, Guid* riid, uint lcid, uint dwFlags, DispatchParams* pDispParams, Span<Variant> pVarResult, Span<ExcepInfo> pExcepInfo, Span<uint> pArgErr, uint cVarRef, uint* rgVarRefIdx, Variant* rgVarRef)
+        public static unsafe int IDispatchRemoteInvokeProxy(this Windows thisApi, Span<IDispatch> This, int dispIdMember, Guid* riid, uint lcid, uint dwFlags, DispatchParams* pDispParams, Span<Variant> pVarResult, Span<ExceptionInfo> pExcepInfo, Span<uint> pArgErr, uint cVarRef, uint* rgVarRefIdx, Variant* rgVarRef)
         {
             // SpanOverloader
             return thisApi.IDispatchRemoteInvokeProxy(ref This.GetPinnableReference(), dispIdMember, riid, lcid, dwFlags, pDispParams, ref pVarResult.GetPinnableReference(), ref pExcepInfo.GetPinnableReference(), ref pArgErr.GetPinnableReference(), cVarRef, rgVarRefIdx, rgVarRef);
@@ -25290,7 +25290,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2449, Column 43 in oaidl.h")]
-        public static unsafe int IDispatchRemoteInvokeProxy(this Windows thisApi, Span<IDispatch> This, int dispIdMember, Guid* riid, uint lcid, uint dwFlags, DispatchParams* pDispParams, Span<Variant> pVarResult, Span<ExcepInfo> pExcepInfo, Span<uint> pArgErr, uint cVarRef, uint* rgVarRefIdx, Span<Variant> rgVarRef)
+        public static unsafe int IDispatchRemoteInvokeProxy(this Windows thisApi, Span<IDispatch> This, int dispIdMember, Guid* riid, uint lcid, uint dwFlags, DispatchParams* pDispParams, Span<Variant> pVarResult, Span<ExceptionInfo> pExcepInfo, Span<uint> pArgErr, uint cVarRef, uint* rgVarRefIdx, Span<Variant> rgVarRef)
         {
             // SpanOverloader
             return thisApi.IDispatchRemoteInvokeProxy(ref This.GetPinnableReference(), dispIdMember, riid, lcid, dwFlags, pDispParams, ref pVarResult.GetPinnableReference(), ref pExcepInfo.GetPinnableReference(), ref pArgErr.GetPinnableReference(), cVarRef, rgVarRefIdx, ref rgVarRef.GetPinnableReference());
@@ -25298,7 +25298,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2449, Column 43 in oaidl.h")]
-        public static unsafe int IDispatchRemoteInvokeProxy(this Windows thisApi, Span<IDispatch> This, int dispIdMember, Guid* riid, uint lcid, uint dwFlags, DispatchParams* pDispParams, Span<Variant> pVarResult, Span<ExcepInfo> pExcepInfo, Span<uint> pArgErr, uint cVarRef, Span<uint> rgVarRefIdx, Variant* rgVarRef)
+        public static unsafe int IDispatchRemoteInvokeProxy(this Windows thisApi, Span<IDispatch> This, int dispIdMember, Guid* riid, uint lcid, uint dwFlags, DispatchParams* pDispParams, Span<Variant> pVarResult, Span<ExceptionInfo> pExcepInfo, Span<uint> pArgErr, uint cVarRef, Span<uint> rgVarRefIdx, Variant* rgVarRef)
         {
             // SpanOverloader
             return thisApi.IDispatchRemoteInvokeProxy(ref This.GetPinnableReference(), dispIdMember, riid, lcid, dwFlags, pDispParams, ref pVarResult.GetPinnableReference(), ref pExcepInfo.GetPinnableReference(), ref pArgErr.GetPinnableReference(), cVarRef, ref rgVarRefIdx.GetPinnableReference(), rgVarRef);
@@ -25306,7 +25306,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2449, Column 43 in oaidl.h")]
-        public static unsafe int IDispatchRemoteInvokeProxy(this Windows thisApi, Span<IDispatch> This, int dispIdMember, Guid* riid, uint lcid, uint dwFlags, DispatchParams* pDispParams, Span<Variant> pVarResult, Span<ExcepInfo> pExcepInfo, Span<uint> pArgErr, uint cVarRef, Span<uint> rgVarRefIdx, Span<Variant> rgVarRef)
+        public static unsafe int IDispatchRemoteInvokeProxy(this Windows thisApi, Span<IDispatch> This, int dispIdMember, Guid* riid, uint lcid, uint dwFlags, DispatchParams* pDispParams, Span<Variant> pVarResult, Span<ExceptionInfo> pExcepInfo, Span<uint> pArgErr, uint cVarRef, Span<uint> rgVarRefIdx, Span<Variant> rgVarRef)
         {
             // SpanOverloader
             return thisApi.IDispatchRemoteInvokeProxy(ref This.GetPinnableReference(), dispIdMember, riid, lcid, dwFlags, pDispParams, ref pVarResult.GetPinnableReference(), ref pExcepInfo.GetPinnableReference(), ref pArgErr.GetPinnableReference(), cVarRef, ref rgVarRefIdx.GetPinnableReference(), ref rgVarRef.GetPinnableReference());
@@ -25314,7 +25314,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2449, Column 43 in oaidl.h")]
-        public static unsafe int IDispatchRemoteInvokeProxy(this Windows thisApi, Span<IDispatch> This, int dispIdMember, Guid* riid, uint lcid, uint dwFlags, Span<DispatchParams> pDispParams, Variant* pVarResult, ExcepInfo* pExcepInfo, uint* pArgErr, uint cVarRef, uint* rgVarRefIdx, Variant* rgVarRef)
+        public static unsafe int IDispatchRemoteInvokeProxy(this Windows thisApi, Span<IDispatch> This, int dispIdMember, Guid* riid, uint lcid, uint dwFlags, Span<DispatchParams> pDispParams, Variant* pVarResult, ExceptionInfo* pExcepInfo, uint* pArgErr, uint cVarRef, uint* rgVarRefIdx, Variant* rgVarRef)
         {
             // SpanOverloader
             return thisApi.IDispatchRemoteInvokeProxy(ref This.GetPinnableReference(), dispIdMember, riid, lcid, dwFlags, ref pDispParams.GetPinnableReference(), pVarResult, pExcepInfo, pArgErr, cVarRef, rgVarRefIdx, rgVarRef);
@@ -25322,7 +25322,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2449, Column 43 in oaidl.h")]
-        public static unsafe int IDispatchRemoteInvokeProxy(this Windows thisApi, Span<IDispatch> This, int dispIdMember, Guid* riid, uint lcid, uint dwFlags, Span<DispatchParams> pDispParams, Variant* pVarResult, ExcepInfo* pExcepInfo, uint* pArgErr, uint cVarRef, uint* rgVarRefIdx, Span<Variant> rgVarRef)
+        public static unsafe int IDispatchRemoteInvokeProxy(this Windows thisApi, Span<IDispatch> This, int dispIdMember, Guid* riid, uint lcid, uint dwFlags, Span<DispatchParams> pDispParams, Variant* pVarResult, ExceptionInfo* pExcepInfo, uint* pArgErr, uint cVarRef, uint* rgVarRefIdx, Span<Variant> rgVarRef)
         {
             // SpanOverloader
             return thisApi.IDispatchRemoteInvokeProxy(ref This.GetPinnableReference(), dispIdMember, riid, lcid, dwFlags, ref pDispParams.GetPinnableReference(), pVarResult, pExcepInfo, pArgErr, cVarRef, rgVarRefIdx, ref rgVarRef.GetPinnableReference());
@@ -25330,7 +25330,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2449, Column 43 in oaidl.h")]
-        public static unsafe int IDispatchRemoteInvokeProxy(this Windows thisApi, Span<IDispatch> This, int dispIdMember, Guid* riid, uint lcid, uint dwFlags, Span<DispatchParams> pDispParams, Variant* pVarResult, ExcepInfo* pExcepInfo, uint* pArgErr, uint cVarRef, Span<uint> rgVarRefIdx, Variant* rgVarRef)
+        public static unsafe int IDispatchRemoteInvokeProxy(this Windows thisApi, Span<IDispatch> This, int dispIdMember, Guid* riid, uint lcid, uint dwFlags, Span<DispatchParams> pDispParams, Variant* pVarResult, ExceptionInfo* pExcepInfo, uint* pArgErr, uint cVarRef, Span<uint> rgVarRefIdx, Variant* rgVarRef)
         {
             // SpanOverloader
             return thisApi.IDispatchRemoteInvokeProxy(ref This.GetPinnableReference(), dispIdMember, riid, lcid, dwFlags, ref pDispParams.GetPinnableReference(), pVarResult, pExcepInfo, pArgErr, cVarRef, ref rgVarRefIdx.GetPinnableReference(), rgVarRef);
@@ -25338,7 +25338,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2449, Column 43 in oaidl.h")]
-        public static unsafe int IDispatchRemoteInvokeProxy(this Windows thisApi, Span<IDispatch> This, int dispIdMember, Guid* riid, uint lcid, uint dwFlags, Span<DispatchParams> pDispParams, Variant* pVarResult, ExcepInfo* pExcepInfo, uint* pArgErr, uint cVarRef, Span<uint> rgVarRefIdx, Span<Variant> rgVarRef)
+        public static unsafe int IDispatchRemoteInvokeProxy(this Windows thisApi, Span<IDispatch> This, int dispIdMember, Guid* riid, uint lcid, uint dwFlags, Span<DispatchParams> pDispParams, Variant* pVarResult, ExceptionInfo* pExcepInfo, uint* pArgErr, uint cVarRef, Span<uint> rgVarRefIdx, Span<Variant> rgVarRef)
         {
             // SpanOverloader
             return thisApi.IDispatchRemoteInvokeProxy(ref This.GetPinnableReference(), dispIdMember, riid, lcid, dwFlags, ref pDispParams.GetPinnableReference(), pVarResult, pExcepInfo, pArgErr, cVarRef, ref rgVarRefIdx.GetPinnableReference(), ref rgVarRef.GetPinnableReference());
@@ -25346,7 +25346,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2449, Column 43 in oaidl.h")]
-        public static unsafe int IDispatchRemoteInvokeProxy(this Windows thisApi, Span<IDispatch> This, int dispIdMember, Guid* riid, uint lcid, uint dwFlags, Span<DispatchParams> pDispParams, Variant* pVarResult, ExcepInfo* pExcepInfo, Span<uint> pArgErr, uint cVarRef, uint* rgVarRefIdx, Variant* rgVarRef)
+        public static unsafe int IDispatchRemoteInvokeProxy(this Windows thisApi, Span<IDispatch> This, int dispIdMember, Guid* riid, uint lcid, uint dwFlags, Span<DispatchParams> pDispParams, Variant* pVarResult, ExceptionInfo* pExcepInfo, Span<uint> pArgErr, uint cVarRef, uint* rgVarRefIdx, Variant* rgVarRef)
         {
             // SpanOverloader
             return thisApi.IDispatchRemoteInvokeProxy(ref This.GetPinnableReference(), dispIdMember, riid, lcid, dwFlags, ref pDispParams.GetPinnableReference(), pVarResult, pExcepInfo, ref pArgErr.GetPinnableReference(), cVarRef, rgVarRefIdx, rgVarRef);
@@ -25354,7 +25354,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2449, Column 43 in oaidl.h")]
-        public static unsafe int IDispatchRemoteInvokeProxy(this Windows thisApi, Span<IDispatch> This, int dispIdMember, Guid* riid, uint lcid, uint dwFlags, Span<DispatchParams> pDispParams, Variant* pVarResult, ExcepInfo* pExcepInfo, Span<uint> pArgErr, uint cVarRef, uint* rgVarRefIdx, Span<Variant> rgVarRef)
+        public static unsafe int IDispatchRemoteInvokeProxy(this Windows thisApi, Span<IDispatch> This, int dispIdMember, Guid* riid, uint lcid, uint dwFlags, Span<DispatchParams> pDispParams, Variant* pVarResult, ExceptionInfo* pExcepInfo, Span<uint> pArgErr, uint cVarRef, uint* rgVarRefIdx, Span<Variant> rgVarRef)
         {
             // SpanOverloader
             return thisApi.IDispatchRemoteInvokeProxy(ref This.GetPinnableReference(), dispIdMember, riid, lcid, dwFlags, ref pDispParams.GetPinnableReference(), pVarResult, pExcepInfo, ref pArgErr.GetPinnableReference(), cVarRef, rgVarRefIdx, ref rgVarRef.GetPinnableReference());
@@ -25362,7 +25362,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2449, Column 43 in oaidl.h")]
-        public static unsafe int IDispatchRemoteInvokeProxy(this Windows thisApi, Span<IDispatch> This, int dispIdMember, Guid* riid, uint lcid, uint dwFlags, Span<DispatchParams> pDispParams, Variant* pVarResult, ExcepInfo* pExcepInfo, Span<uint> pArgErr, uint cVarRef, Span<uint> rgVarRefIdx, Variant* rgVarRef)
+        public static unsafe int IDispatchRemoteInvokeProxy(this Windows thisApi, Span<IDispatch> This, int dispIdMember, Guid* riid, uint lcid, uint dwFlags, Span<DispatchParams> pDispParams, Variant* pVarResult, ExceptionInfo* pExcepInfo, Span<uint> pArgErr, uint cVarRef, Span<uint> rgVarRefIdx, Variant* rgVarRef)
         {
             // SpanOverloader
             return thisApi.IDispatchRemoteInvokeProxy(ref This.GetPinnableReference(), dispIdMember, riid, lcid, dwFlags, ref pDispParams.GetPinnableReference(), pVarResult, pExcepInfo, ref pArgErr.GetPinnableReference(), cVarRef, ref rgVarRefIdx.GetPinnableReference(), rgVarRef);
@@ -25370,7 +25370,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2449, Column 43 in oaidl.h")]
-        public static unsafe int IDispatchRemoteInvokeProxy(this Windows thisApi, Span<IDispatch> This, int dispIdMember, Guid* riid, uint lcid, uint dwFlags, Span<DispatchParams> pDispParams, Variant* pVarResult, ExcepInfo* pExcepInfo, Span<uint> pArgErr, uint cVarRef, Span<uint> rgVarRefIdx, Span<Variant> rgVarRef)
+        public static unsafe int IDispatchRemoteInvokeProxy(this Windows thisApi, Span<IDispatch> This, int dispIdMember, Guid* riid, uint lcid, uint dwFlags, Span<DispatchParams> pDispParams, Variant* pVarResult, ExceptionInfo* pExcepInfo, Span<uint> pArgErr, uint cVarRef, Span<uint> rgVarRefIdx, Span<Variant> rgVarRef)
         {
             // SpanOverloader
             return thisApi.IDispatchRemoteInvokeProxy(ref This.GetPinnableReference(), dispIdMember, riid, lcid, dwFlags, ref pDispParams.GetPinnableReference(), pVarResult, pExcepInfo, ref pArgErr.GetPinnableReference(), cVarRef, ref rgVarRefIdx.GetPinnableReference(), ref rgVarRef.GetPinnableReference());
@@ -25378,7 +25378,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2449, Column 43 in oaidl.h")]
-        public static unsafe int IDispatchRemoteInvokeProxy(this Windows thisApi, Span<IDispatch> This, int dispIdMember, Guid* riid, uint lcid, uint dwFlags, Span<DispatchParams> pDispParams, Variant* pVarResult, Span<ExcepInfo> pExcepInfo, uint* pArgErr, uint cVarRef, uint* rgVarRefIdx, Variant* rgVarRef)
+        public static unsafe int IDispatchRemoteInvokeProxy(this Windows thisApi, Span<IDispatch> This, int dispIdMember, Guid* riid, uint lcid, uint dwFlags, Span<DispatchParams> pDispParams, Variant* pVarResult, Span<ExceptionInfo> pExcepInfo, uint* pArgErr, uint cVarRef, uint* rgVarRefIdx, Variant* rgVarRef)
         {
             // SpanOverloader
             return thisApi.IDispatchRemoteInvokeProxy(ref This.GetPinnableReference(), dispIdMember, riid, lcid, dwFlags, ref pDispParams.GetPinnableReference(), pVarResult, ref pExcepInfo.GetPinnableReference(), pArgErr, cVarRef, rgVarRefIdx, rgVarRef);
@@ -25386,7 +25386,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2449, Column 43 in oaidl.h")]
-        public static unsafe int IDispatchRemoteInvokeProxy(this Windows thisApi, Span<IDispatch> This, int dispIdMember, Guid* riid, uint lcid, uint dwFlags, Span<DispatchParams> pDispParams, Variant* pVarResult, Span<ExcepInfo> pExcepInfo, uint* pArgErr, uint cVarRef, uint* rgVarRefIdx, Span<Variant> rgVarRef)
+        public static unsafe int IDispatchRemoteInvokeProxy(this Windows thisApi, Span<IDispatch> This, int dispIdMember, Guid* riid, uint lcid, uint dwFlags, Span<DispatchParams> pDispParams, Variant* pVarResult, Span<ExceptionInfo> pExcepInfo, uint* pArgErr, uint cVarRef, uint* rgVarRefIdx, Span<Variant> rgVarRef)
         {
             // SpanOverloader
             return thisApi.IDispatchRemoteInvokeProxy(ref This.GetPinnableReference(), dispIdMember, riid, lcid, dwFlags, ref pDispParams.GetPinnableReference(), pVarResult, ref pExcepInfo.GetPinnableReference(), pArgErr, cVarRef, rgVarRefIdx, ref rgVarRef.GetPinnableReference());
@@ -25394,7 +25394,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2449, Column 43 in oaidl.h")]
-        public static unsafe int IDispatchRemoteInvokeProxy(this Windows thisApi, Span<IDispatch> This, int dispIdMember, Guid* riid, uint lcid, uint dwFlags, Span<DispatchParams> pDispParams, Variant* pVarResult, Span<ExcepInfo> pExcepInfo, uint* pArgErr, uint cVarRef, Span<uint> rgVarRefIdx, Variant* rgVarRef)
+        public static unsafe int IDispatchRemoteInvokeProxy(this Windows thisApi, Span<IDispatch> This, int dispIdMember, Guid* riid, uint lcid, uint dwFlags, Span<DispatchParams> pDispParams, Variant* pVarResult, Span<ExceptionInfo> pExcepInfo, uint* pArgErr, uint cVarRef, Span<uint> rgVarRefIdx, Variant* rgVarRef)
         {
             // SpanOverloader
             return thisApi.IDispatchRemoteInvokeProxy(ref This.GetPinnableReference(), dispIdMember, riid, lcid, dwFlags, ref pDispParams.GetPinnableReference(), pVarResult, ref pExcepInfo.GetPinnableReference(), pArgErr, cVarRef, ref rgVarRefIdx.GetPinnableReference(), rgVarRef);
@@ -25402,7 +25402,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2449, Column 43 in oaidl.h")]
-        public static unsafe int IDispatchRemoteInvokeProxy(this Windows thisApi, Span<IDispatch> This, int dispIdMember, Guid* riid, uint lcid, uint dwFlags, Span<DispatchParams> pDispParams, Variant* pVarResult, Span<ExcepInfo> pExcepInfo, uint* pArgErr, uint cVarRef, Span<uint> rgVarRefIdx, Span<Variant> rgVarRef)
+        public static unsafe int IDispatchRemoteInvokeProxy(this Windows thisApi, Span<IDispatch> This, int dispIdMember, Guid* riid, uint lcid, uint dwFlags, Span<DispatchParams> pDispParams, Variant* pVarResult, Span<ExceptionInfo> pExcepInfo, uint* pArgErr, uint cVarRef, Span<uint> rgVarRefIdx, Span<Variant> rgVarRef)
         {
             // SpanOverloader
             return thisApi.IDispatchRemoteInvokeProxy(ref This.GetPinnableReference(), dispIdMember, riid, lcid, dwFlags, ref pDispParams.GetPinnableReference(), pVarResult, ref pExcepInfo.GetPinnableReference(), pArgErr, cVarRef, ref rgVarRefIdx.GetPinnableReference(), ref rgVarRef.GetPinnableReference());
@@ -25410,7 +25410,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2449, Column 43 in oaidl.h")]
-        public static unsafe int IDispatchRemoteInvokeProxy(this Windows thisApi, Span<IDispatch> This, int dispIdMember, Guid* riid, uint lcid, uint dwFlags, Span<DispatchParams> pDispParams, Variant* pVarResult, Span<ExcepInfo> pExcepInfo, Span<uint> pArgErr, uint cVarRef, uint* rgVarRefIdx, Variant* rgVarRef)
+        public static unsafe int IDispatchRemoteInvokeProxy(this Windows thisApi, Span<IDispatch> This, int dispIdMember, Guid* riid, uint lcid, uint dwFlags, Span<DispatchParams> pDispParams, Variant* pVarResult, Span<ExceptionInfo> pExcepInfo, Span<uint> pArgErr, uint cVarRef, uint* rgVarRefIdx, Variant* rgVarRef)
         {
             // SpanOverloader
             return thisApi.IDispatchRemoteInvokeProxy(ref This.GetPinnableReference(), dispIdMember, riid, lcid, dwFlags, ref pDispParams.GetPinnableReference(), pVarResult, ref pExcepInfo.GetPinnableReference(), ref pArgErr.GetPinnableReference(), cVarRef, rgVarRefIdx, rgVarRef);
@@ -25418,7 +25418,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2449, Column 43 in oaidl.h")]
-        public static unsafe int IDispatchRemoteInvokeProxy(this Windows thisApi, Span<IDispatch> This, int dispIdMember, Guid* riid, uint lcid, uint dwFlags, Span<DispatchParams> pDispParams, Variant* pVarResult, Span<ExcepInfo> pExcepInfo, Span<uint> pArgErr, uint cVarRef, uint* rgVarRefIdx, Span<Variant> rgVarRef)
+        public static unsafe int IDispatchRemoteInvokeProxy(this Windows thisApi, Span<IDispatch> This, int dispIdMember, Guid* riid, uint lcid, uint dwFlags, Span<DispatchParams> pDispParams, Variant* pVarResult, Span<ExceptionInfo> pExcepInfo, Span<uint> pArgErr, uint cVarRef, uint* rgVarRefIdx, Span<Variant> rgVarRef)
         {
             // SpanOverloader
             return thisApi.IDispatchRemoteInvokeProxy(ref This.GetPinnableReference(), dispIdMember, riid, lcid, dwFlags, ref pDispParams.GetPinnableReference(), pVarResult, ref pExcepInfo.GetPinnableReference(), ref pArgErr.GetPinnableReference(), cVarRef, rgVarRefIdx, ref rgVarRef.GetPinnableReference());
@@ -25426,7 +25426,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2449, Column 43 in oaidl.h")]
-        public static unsafe int IDispatchRemoteInvokeProxy(this Windows thisApi, Span<IDispatch> This, int dispIdMember, Guid* riid, uint lcid, uint dwFlags, Span<DispatchParams> pDispParams, Variant* pVarResult, Span<ExcepInfo> pExcepInfo, Span<uint> pArgErr, uint cVarRef, Span<uint> rgVarRefIdx, Variant* rgVarRef)
+        public static unsafe int IDispatchRemoteInvokeProxy(this Windows thisApi, Span<IDispatch> This, int dispIdMember, Guid* riid, uint lcid, uint dwFlags, Span<DispatchParams> pDispParams, Variant* pVarResult, Span<ExceptionInfo> pExcepInfo, Span<uint> pArgErr, uint cVarRef, Span<uint> rgVarRefIdx, Variant* rgVarRef)
         {
             // SpanOverloader
             return thisApi.IDispatchRemoteInvokeProxy(ref This.GetPinnableReference(), dispIdMember, riid, lcid, dwFlags, ref pDispParams.GetPinnableReference(), pVarResult, ref pExcepInfo.GetPinnableReference(), ref pArgErr.GetPinnableReference(), cVarRef, ref rgVarRefIdx.GetPinnableReference(), rgVarRef);
@@ -25434,7 +25434,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2449, Column 43 in oaidl.h")]
-        public static unsafe int IDispatchRemoteInvokeProxy(this Windows thisApi, Span<IDispatch> This, int dispIdMember, Guid* riid, uint lcid, uint dwFlags, Span<DispatchParams> pDispParams, Variant* pVarResult, Span<ExcepInfo> pExcepInfo, Span<uint> pArgErr, uint cVarRef, Span<uint> rgVarRefIdx, Span<Variant> rgVarRef)
+        public static unsafe int IDispatchRemoteInvokeProxy(this Windows thisApi, Span<IDispatch> This, int dispIdMember, Guid* riid, uint lcid, uint dwFlags, Span<DispatchParams> pDispParams, Variant* pVarResult, Span<ExceptionInfo> pExcepInfo, Span<uint> pArgErr, uint cVarRef, Span<uint> rgVarRefIdx, Span<Variant> rgVarRef)
         {
             // SpanOverloader
             return thisApi.IDispatchRemoteInvokeProxy(ref This.GetPinnableReference(), dispIdMember, riid, lcid, dwFlags, ref pDispParams.GetPinnableReference(), pVarResult, ref pExcepInfo.GetPinnableReference(), ref pArgErr.GetPinnableReference(), cVarRef, ref rgVarRefIdx.GetPinnableReference(), ref rgVarRef.GetPinnableReference());
@@ -25442,7 +25442,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2449, Column 43 in oaidl.h")]
-        public static unsafe int IDispatchRemoteInvokeProxy(this Windows thisApi, Span<IDispatch> This, int dispIdMember, Guid* riid, uint lcid, uint dwFlags, Span<DispatchParams> pDispParams, Span<Variant> pVarResult, ExcepInfo* pExcepInfo, uint* pArgErr, uint cVarRef, uint* rgVarRefIdx, Variant* rgVarRef)
+        public static unsafe int IDispatchRemoteInvokeProxy(this Windows thisApi, Span<IDispatch> This, int dispIdMember, Guid* riid, uint lcid, uint dwFlags, Span<DispatchParams> pDispParams, Span<Variant> pVarResult, ExceptionInfo* pExcepInfo, uint* pArgErr, uint cVarRef, uint* rgVarRefIdx, Variant* rgVarRef)
         {
             // SpanOverloader
             return thisApi.IDispatchRemoteInvokeProxy(ref This.GetPinnableReference(), dispIdMember, riid, lcid, dwFlags, ref pDispParams.GetPinnableReference(), ref pVarResult.GetPinnableReference(), pExcepInfo, pArgErr, cVarRef, rgVarRefIdx, rgVarRef);
@@ -25450,7 +25450,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2449, Column 43 in oaidl.h")]
-        public static unsafe int IDispatchRemoteInvokeProxy(this Windows thisApi, Span<IDispatch> This, int dispIdMember, Guid* riid, uint lcid, uint dwFlags, Span<DispatchParams> pDispParams, Span<Variant> pVarResult, ExcepInfo* pExcepInfo, uint* pArgErr, uint cVarRef, uint* rgVarRefIdx, Span<Variant> rgVarRef)
+        public static unsafe int IDispatchRemoteInvokeProxy(this Windows thisApi, Span<IDispatch> This, int dispIdMember, Guid* riid, uint lcid, uint dwFlags, Span<DispatchParams> pDispParams, Span<Variant> pVarResult, ExceptionInfo* pExcepInfo, uint* pArgErr, uint cVarRef, uint* rgVarRefIdx, Span<Variant> rgVarRef)
         {
             // SpanOverloader
             return thisApi.IDispatchRemoteInvokeProxy(ref This.GetPinnableReference(), dispIdMember, riid, lcid, dwFlags, ref pDispParams.GetPinnableReference(), ref pVarResult.GetPinnableReference(), pExcepInfo, pArgErr, cVarRef, rgVarRefIdx, ref rgVarRef.GetPinnableReference());
@@ -25458,7 +25458,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2449, Column 43 in oaidl.h")]
-        public static unsafe int IDispatchRemoteInvokeProxy(this Windows thisApi, Span<IDispatch> This, int dispIdMember, Guid* riid, uint lcid, uint dwFlags, Span<DispatchParams> pDispParams, Span<Variant> pVarResult, ExcepInfo* pExcepInfo, uint* pArgErr, uint cVarRef, Span<uint> rgVarRefIdx, Variant* rgVarRef)
+        public static unsafe int IDispatchRemoteInvokeProxy(this Windows thisApi, Span<IDispatch> This, int dispIdMember, Guid* riid, uint lcid, uint dwFlags, Span<DispatchParams> pDispParams, Span<Variant> pVarResult, ExceptionInfo* pExcepInfo, uint* pArgErr, uint cVarRef, Span<uint> rgVarRefIdx, Variant* rgVarRef)
         {
             // SpanOverloader
             return thisApi.IDispatchRemoteInvokeProxy(ref This.GetPinnableReference(), dispIdMember, riid, lcid, dwFlags, ref pDispParams.GetPinnableReference(), ref pVarResult.GetPinnableReference(), pExcepInfo, pArgErr, cVarRef, ref rgVarRefIdx.GetPinnableReference(), rgVarRef);
@@ -25466,7 +25466,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2449, Column 43 in oaidl.h")]
-        public static unsafe int IDispatchRemoteInvokeProxy(this Windows thisApi, Span<IDispatch> This, int dispIdMember, Guid* riid, uint lcid, uint dwFlags, Span<DispatchParams> pDispParams, Span<Variant> pVarResult, ExcepInfo* pExcepInfo, uint* pArgErr, uint cVarRef, Span<uint> rgVarRefIdx, Span<Variant> rgVarRef)
+        public static unsafe int IDispatchRemoteInvokeProxy(this Windows thisApi, Span<IDispatch> This, int dispIdMember, Guid* riid, uint lcid, uint dwFlags, Span<DispatchParams> pDispParams, Span<Variant> pVarResult, ExceptionInfo* pExcepInfo, uint* pArgErr, uint cVarRef, Span<uint> rgVarRefIdx, Span<Variant> rgVarRef)
         {
             // SpanOverloader
             return thisApi.IDispatchRemoteInvokeProxy(ref This.GetPinnableReference(), dispIdMember, riid, lcid, dwFlags, ref pDispParams.GetPinnableReference(), ref pVarResult.GetPinnableReference(), pExcepInfo, pArgErr, cVarRef, ref rgVarRefIdx.GetPinnableReference(), ref rgVarRef.GetPinnableReference());
@@ -25474,7 +25474,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2449, Column 43 in oaidl.h")]
-        public static unsafe int IDispatchRemoteInvokeProxy(this Windows thisApi, Span<IDispatch> This, int dispIdMember, Guid* riid, uint lcid, uint dwFlags, Span<DispatchParams> pDispParams, Span<Variant> pVarResult, ExcepInfo* pExcepInfo, Span<uint> pArgErr, uint cVarRef, uint* rgVarRefIdx, Variant* rgVarRef)
+        public static unsafe int IDispatchRemoteInvokeProxy(this Windows thisApi, Span<IDispatch> This, int dispIdMember, Guid* riid, uint lcid, uint dwFlags, Span<DispatchParams> pDispParams, Span<Variant> pVarResult, ExceptionInfo* pExcepInfo, Span<uint> pArgErr, uint cVarRef, uint* rgVarRefIdx, Variant* rgVarRef)
         {
             // SpanOverloader
             return thisApi.IDispatchRemoteInvokeProxy(ref This.GetPinnableReference(), dispIdMember, riid, lcid, dwFlags, ref pDispParams.GetPinnableReference(), ref pVarResult.GetPinnableReference(), pExcepInfo, ref pArgErr.GetPinnableReference(), cVarRef, rgVarRefIdx, rgVarRef);
@@ -25482,7 +25482,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2449, Column 43 in oaidl.h")]
-        public static unsafe int IDispatchRemoteInvokeProxy(this Windows thisApi, Span<IDispatch> This, int dispIdMember, Guid* riid, uint lcid, uint dwFlags, Span<DispatchParams> pDispParams, Span<Variant> pVarResult, ExcepInfo* pExcepInfo, Span<uint> pArgErr, uint cVarRef, uint* rgVarRefIdx, Span<Variant> rgVarRef)
+        public static unsafe int IDispatchRemoteInvokeProxy(this Windows thisApi, Span<IDispatch> This, int dispIdMember, Guid* riid, uint lcid, uint dwFlags, Span<DispatchParams> pDispParams, Span<Variant> pVarResult, ExceptionInfo* pExcepInfo, Span<uint> pArgErr, uint cVarRef, uint* rgVarRefIdx, Span<Variant> rgVarRef)
         {
             // SpanOverloader
             return thisApi.IDispatchRemoteInvokeProxy(ref This.GetPinnableReference(), dispIdMember, riid, lcid, dwFlags, ref pDispParams.GetPinnableReference(), ref pVarResult.GetPinnableReference(), pExcepInfo, ref pArgErr.GetPinnableReference(), cVarRef, rgVarRefIdx, ref rgVarRef.GetPinnableReference());
@@ -25490,7 +25490,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2449, Column 43 in oaidl.h")]
-        public static unsafe int IDispatchRemoteInvokeProxy(this Windows thisApi, Span<IDispatch> This, int dispIdMember, Guid* riid, uint lcid, uint dwFlags, Span<DispatchParams> pDispParams, Span<Variant> pVarResult, ExcepInfo* pExcepInfo, Span<uint> pArgErr, uint cVarRef, Span<uint> rgVarRefIdx, Variant* rgVarRef)
+        public static unsafe int IDispatchRemoteInvokeProxy(this Windows thisApi, Span<IDispatch> This, int dispIdMember, Guid* riid, uint lcid, uint dwFlags, Span<DispatchParams> pDispParams, Span<Variant> pVarResult, ExceptionInfo* pExcepInfo, Span<uint> pArgErr, uint cVarRef, Span<uint> rgVarRefIdx, Variant* rgVarRef)
         {
             // SpanOverloader
             return thisApi.IDispatchRemoteInvokeProxy(ref This.GetPinnableReference(), dispIdMember, riid, lcid, dwFlags, ref pDispParams.GetPinnableReference(), ref pVarResult.GetPinnableReference(), pExcepInfo, ref pArgErr.GetPinnableReference(), cVarRef, ref rgVarRefIdx.GetPinnableReference(), rgVarRef);
@@ -25498,7 +25498,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2449, Column 43 in oaidl.h")]
-        public static unsafe int IDispatchRemoteInvokeProxy(this Windows thisApi, Span<IDispatch> This, int dispIdMember, Guid* riid, uint lcid, uint dwFlags, Span<DispatchParams> pDispParams, Span<Variant> pVarResult, ExcepInfo* pExcepInfo, Span<uint> pArgErr, uint cVarRef, Span<uint> rgVarRefIdx, Span<Variant> rgVarRef)
+        public static unsafe int IDispatchRemoteInvokeProxy(this Windows thisApi, Span<IDispatch> This, int dispIdMember, Guid* riid, uint lcid, uint dwFlags, Span<DispatchParams> pDispParams, Span<Variant> pVarResult, ExceptionInfo* pExcepInfo, Span<uint> pArgErr, uint cVarRef, Span<uint> rgVarRefIdx, Span<Variant> rgVarRef)
         {
             // SpanOverloader
             return thisApi.IDispatchRemoteInvokeProxy(ref This.GetPinnableReference(), dispIdMember, riid, lcid, dwFlags, ref pDispParams.GetPinnableReference(), ref pVarResult.GetPinnableReference(), pExcepInfo, ref pArgErr.GetPinnableReference(), cVarRef, ref rgVarRefIdx.GetPinnableReference(), ref rgVarRef.GetPinnableReference());
@@ -25506,7 +25506,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2449, Column 43 in oaidl.h")]
-        public static unsafe int IDispatchRemoteInvokeProxy(this Windows thisApi, Span<IDispatch> This, int dispIdMember, Guid* riid, uint lcid, uint dwFlags, Span<DispatchParams> pDispParams, Span<Variant> pVarResult, Span<ExcepInfo> pExcepInfo, uint* pArgErr, uint cVarRef, uint* rgVarRefIdx, Variant* rgVarRef)
+        public static unsafe int IDispatchRemoteInvokeProxy(this Windows thisApi, Span<IDispatch> This, int dispIdMember, Guid* riid, uint lcid, uint dwFlags, Span<DispatchParams> pDispParams, Span<Variant> pVarResult, Span<ExceptionInfo> pExcepInfo, uint* pArgErr, uint cVarRef, uint* rgVarRefIdx, Variant* rgVarRef)
         {
             // SpanOverloader
             return thisApi.IDispatchRemoteInvokeProxy(ref This.GetPinnableReference(), dispIdMember, riid, lcid, dwFlags, ref pDispParams.GetPinnableReference(), ref pVarResult.GetPinnableReference(), ref pExcepInfo.GetPinnableReference(), pArgErr, cVarRef, rgVarRefIdx, rgVarRef);
@@ -25514,7 +25514,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2449, Column 43 in oaidl.h")]
-        public static unsafe int IDispatchRemoteInvokeProxy(this Windows thisApi, Span<IDispatch> This, int dispIdMember, Guid* riid, uint lcid, uint dwFlags, Span<DispatchParams> pDispParams, Span<Variant> pVarResult, Span<ExcepInfo> pExcepInfo, uint* pArgErr, uint cVarRef, uint* rgVarRefIdx, Span<Variant> rgVarRef)
+        public static unsafe int IDispatchRemoteInvokeProxy(this Windows thisApi, Span<IDispatch> This, int dispIdMember, Guid* riid, uint lcid, uint dwFlags, Span<DispatchParams> pDispParams, Span<Variant> pVarResult, Span<ExceptionInfo> pExcepInfo, uint* pArgErr, uint cVarRef, uint* rgVarRefIdx, Span<Variant> rgVarRef)
         {
             // SpanOverloader
             return thisApi.IDispatchRemoteInvokeProxy(ref This.GetPinnableReference(), dispIdMember, riid, lcid, dwFlags, ref pDispParams.GetPinnableReference(), ref pVarResult.GetPinnableReference(), ref pExcepInfo.GetPinnableReference(), pArgErr, cVarRef, rgVarRefIdx, ref rgVarRef.GetPinnableReference());
@@ -25522,7 +25522,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2449, Column 43 in oaidl.h")]
-        public static unsafe int IDispatchRemoteInvokeProxy(this Windows thisApi, Span<IDispatch> This, int dispIdMember, Guid* riid, uint lcid, uint dwFlags, Span<DispatchParams> pDispParams, Span<Variant> pVarResult, Span<ExcepInfo> pExcepInfo, uint* pArgErr, uint cVarRef, Span<uint> rgVarRefIdx, Variant* rgVarRef)
+        public static unsafe int IDispatchRemoteInvokeProxy(this Windows thisApi, Span<IDispatch> This, int dispIdMember, Guid* riid, uint lcid, uint dwFlags, Span<DispatchParams> pDispParams, Span<Variant> pVarResult, Span<ExceptionInfo> pExcepInfo, uint* pArgErr, uint cVarRef, Span<uint> rgVarRefIdx, Variant* rgVarRef)
         {
             // SpanOverloader
             return thisApi.IDispatchRemoteInvokeProxy(ref This.GetPinnableReference(), dispIdMember, riid, lcid, dwFlags, ref pDispParams.GetPinnableReference(), ref pVarResult.GetPinnableReference(), ref pExcepInfo.GetPinnableReference(), pArgErr, cVarRef, ref rgVarRefIdx.GetPinnableReference(), rgVarRef);
@@ -25530,7 +25530,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2449, Column 43 in oaidl.h")]
-        public static unsafe int IDispatchRemoteInvokeProxy(this Windows thisApi, Span<IDispatch> This, int dispIdMember, Guid* riid, uint lcid, uint dwFlags, Span<DispatchParams> pDispParams, Span<Variant> pVarResult, Span<ExcepInfo> pExcepInfo, uint* pArgErr, uint cVarRef, Span<uint> rgVarRefIdx, Span<Variant> rgVarRef)
+        public static unsafe int IDispatchRemoteInvokeProxy(this Windows thisApi, Span<IDispatch> This, int dispIdMember, Guid* riid, uint lcid, uint dwFlags, Span<DispatchParams> pDispParams, Span<Variant> pVarResult, Span<ExceptionInfo> pExcepInfo, uint* pArgErr, uint cVarRef, Span<uint> rgVarRefIdx, Span<Variant> rgVarRef)
         {
             // SpanOverloader
             return thisApi.IDispatchRemoteInvokeProxy(ref This.GetPinnableReference(), dispIdMember, riid, lcid, dwFlags, ref pDispParams.GetPinnableReference(), ref pVarResult.GetPinnableReference(), ref pExcepInfo.GetPinnableReference(), pArgErr, cVarRef, ref rgVarRefIdx.GetPinnableReference(), ref rgVarRef.GetPinnableReference());
@@ -25538,7 +25538,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2449, Column 43 in oaidl.h")]
-        public static unsafe int IDispatchRemoteInvokeProxy(this Windows thisApi, Span<IDispatch> This, int dispIdMember, Guid* riid, uint lcid, uint dwFlags, Span<DispatchParams> pDispParams, Span<Variant> pVarResult, Span<ExcepInfo> pExcepInfo, Span<uint> pArgErr, uint cVarRef, uint* rgVarRefIdx, Variant* rgVarRef)
+        public static unsafe int IDispatchRemoteInvokeProxy(this Windows thisApi, Span<IDispatch> This, int dispIdMember, Guid* riid, uint lcid, uint dwFlags, Span<DispatchParams> pDispParams, Span<Variant> pVarResult, Span<ExceptionInfo> pExcepInfo, Span<uint> pArgErr, uint cVarRef, uint* rgVarRefIdx, Variant* rgVarRef)
         {
             // SpanOverloader
             return thisApi.IDispatchRemoteInvokeProxy(ref This.GetPinnableReference(), dispIdMember, riid, lcid, dwFlags, ref pDispParams.GetPinnableReference(), ref pVarResult.GetPinnableReference(), ref pExcepInfo.GetPinnableReference(), ref pArgErr.GetPinnableReference(), cVarRef, rgVarRefIdx, rgVarRef);
@@ -25546,7 +25546,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2449, Column 43 in oaidl.h")]
-        public static unsafe int IDispatchRemoteInvokeProxy(this Windows thisApi, Span<IDispatch> This, int dispIdMember, Guid* riid, uint lcid, uint dwFlags, Span<DispatchParams> pDispParams, Span<Variant> pVarResult, Span<ExcepInfo> pExcepInfo, Span<uint> pArgErr, uint cVarRef, uint* rgVarRefIdx, Span<Variant> rgVarRef)
+        public static unsafe int IDispatchRemoteInvokeProxy(this Windows thisApi, Span<IDispatch> This, int dispIdMember, Guid* riid, uint lcid, uint dwFlags, Span<DispatchParams> pDispParams, Span<Variant> pVarResult, Span<ExceptionInfo> pExcepInfo, Span<uint> pArgErr, uint cVarRef, uint* rgVarRefIdx, Span<Variant> rgVarRef)
         {
             // SpanOverloader
             return thisApi.IDispatchRemoteInvokeProxy(ref This.GetPinnableReference(), dispIdMember, riid, lcid, dwFlags, ref pDispParams.GetPinnableReference(), ref pVarResult.GetPinnableReference(), ref pExcepInfo.GetPinnableReference(), ref pArgErr.GetPinnableReference(), cVarRef, rgVarRefIdx, ref rgVarRef.GetPinnableReference());
@@ -25554,7 +25554,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2449, Column 43 in oaidl.h")]
-        public static unsafe int IDispatchRemoteInvokeProxy(this Windows thisApi, Span<IDispatch> This, int dispIdMember, Guid* riid, uint lcid, uint dwFlags, Span<DispatchParams> pDispParams, Span<Variant> pVarResult, Span<ExcepInfo> pExcepInfo, Span<uint> pArgErr, uint cVarRef, Span<uint> rgVarRefIdx, Variant* rgVarRef)
+        public static unsafe int IDispatchRemoteInvokeProxy(this Windows thisApi, Span<IDispatch> This, int dispIdMember, Guid* riid, uint lcid, uint dwFlags, Span<DispatchParams> pDispParams, Span<Variant> pVarResult, Span<ExceptionInfo> pExcepInfo, Span<uint> pArgErr, uint cVarRef, Span<uint> rgVarRefIdx, Variant* rgVarRef)
         {
             // SpanOverloader
             return thisApi.IDispatchRemoteInvokeProxy(ref This.GetPinnableReference(), dispIdMember, riid, lcid, dwFlags, ref pDispParams.GetPinnableReference(), ref pVarResult.GetPinnableReference(), ref pExcepInfo.GetPinnableReference(), ref pArgErr.GetPinnableReference(), cVarRef, ref rgVarRefIdx.GetPinnableReference(), rgVarRef);
@@ -25562,7 +25562,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2449, Column 43 in oaidl.h")]
-        public static unsafe int IDispatchRemoteInvokeProxy(this Windows thisApi, Span<IDispatch> This, int dispIdMember, Guid* riid, uint lcid, uint dwFlags, Span<DispatchParams> pDispParams, Span<Variant> pVarResult, Span<ExcepInfo> pExcepInfo, Span<uint> pArgErr, uint cVarRef, Span<uint> rgVarRefIdx, Span<Variant> rgVarRef)
+        public static unsafe int IDispatchRemoteInvokeProxy(this Windows thisApi, Span<IDispatch> This, int dispIdMember, Guid* riid, uint lcid, uint dwFlags, Span<DispatchParams> pDispParams, Span<Variant> pVarResult, Span<ExceptionInfo> pExcepInfo, Span<uint> pArgErr, uint cVarRef, Span<uint> rgVarRefIdx, Span<Variant> rgVarRef)
         {
             // SpanOverloader
             return thisApi.IDispatchRemoteInvokeProxy(ref This.GetPinnableReference(), dispIdMember, riid, lcid, dwFlags, ref pDispParams.GetPinnableReference(), ref pVarResult.GetPinnableReference(), ref pExcepInfo.GetPinnableReference(), ref pArgErr.GetPinnableReference(), cVarRef, ref rgVarRefIdx.GetPinnableReference(), ref rgVarRef.GetPinnableReference());
@@ -25570,7 +25570,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2449, Column 43 in oaidl.h")]
-        public static unsafe int IDispatchRemoteInvokeProxy(this Windows thisApi, Span<IDispatch> This, int dispIdMember, Span<Guid> riid, uint lcid, uint dwFlags, DispatchParams* pDispParams, Variant* pVarResult, ExcepInfo* pExcepInfo, uint* pArgErr, uint cVarRef, uint* rgVarRefIdx, Variant* rgVarRef)
+        public static unsafe int IDispatchRemoteInvokeProxy(this Windows thisApi, Span<IDispatch> This, int dispIdMember, Span<Guid> riid, uint lcid, uint dwFlags, DispatchParams* pDispParams, Variant* pVarResult, ExceptionInfo* pExcepInfo, uint* pArgErr, uint cVarRef, uint* rgVarRefIdx, Variant* rgVarRef)
         {
             // SpanOverloader
             return thisApi.IDispatchRemoteInvokeProxy(ref This.GetPinnableReference(), dispIdMember, ref riid.GetPinnableReference(), lcid, dwFlags, pDispParams, pVarResult, pExcepInfo, pArgErr, cVarRef, rgVarRefIdx, rgVarRef);
@@ -25578,7 +25578,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2449, Column 43 in oaidl.h")]
-        public static unsafe int IDispatchRemoteInvokeProxy(this Windows thisApi, Span<IDispatch> This, int dispIdMember, Span<Guid> riid, uint lcid, uint dwFlags, DispatchParams* pDispParams, Variant* pVarResult, ExcepInfo* pExcepInfo, uint* pArgErr, uint cVarRef, uint* rgVarRefIdx, Span<Variant> rgVarRef)
+        public static unsafe int IDispatchRemoteInvokeProxy(this Windows thisApi, Span<IDispatch> This, int dispIdMember, Span<Guid> riid, uint lcid, uint dwFlags, DispatchParams* pDispParams, Variant* pVarResult, ExceptionInfo* pExcepInfo, uint* pArgErr, uint cVarRef, uint* rgVarRefIdx, Span<Variant> rgVarRef)
         {
             // SpanOverloader
             return thisApi.IDispatchRemoteInvokeProxy(ref This.GetPinnableReference(), dispIdMember, ref riid.GetPinnableReference(), lcid, dwFlags, pDispParams, pVarResult, pExcepInfo, pArgErr, cVarRef, rgVarRefIdx, ref rgVarRef.GetPinnableReference());
@@ -25586,7 +25586,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2449, Column 43 in oaidl.h")]
-        public static unsafe int IDispatchRemoteInvokeProxy(this Windows thisApi, Span<IDispatch> This, int dispIdMember, Span<Guid> riid, uint lcid, uint dwFlags, DispatchParams* pDispParams, Variant* pVarResult, ExcepInfo* pExcepInfo, uint* pArgErr, uint cVarRef, Span<uint> rgVarRefIdx, Variant* rgVarRef)
+        public static unsafe int IDispatchRemoteInvokeProxy(this Windows thisApi, Span<IDispatch> This, int dispIdMember, Span<Guid> riid, uint lcid, uint dwFlags, DispatchParams* pDispParams, Variant* pVarResult, ExceptionInfo* pExcepInfo, uint* pArgErr, uint cVarRef, Span<uint> rgVarRefIdx, Variant* rgVarRef)
         {
             // SpanOverloader
             return thisApi.IDispatchRemoteInvokeProxy(ref This.GetPinnableReference(), dispIdMember, ref riid.GetPinnableReference(), lcid, dwFlags, pDispParams, pVarResult, pExcepInfo, pArgErr, cVarRef, ref rgVarRefIdx.GetPinnableReference(), rgVarRef);
@@ -25594,7 +25594,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2449, Column 43 in oaidl.h")]
-        public static unsafe int IDispatchRemoteInvokeProxy(this Windows thisApi, Span<IDispatch> This, int dispIdMember, Span<Guid> riid, uint lcid, uint dwFlags, DispatchParams* pDispParams, Variant* pVarResult, ExcepInfo* pExcepInfo, uint* pArgErr, uint cVarRef, Span<uint> rgVarRefIdx, Span<Variant> rgVarRef)
+        public static unsafe int IDispatchRemoteInvokeProxy(this Windows thisApi, Span<IDispatch> This, int dispIdMember, Span<Guid> riid, uint lcid, uint dwFlags, DispatchParams* pDispParams, Variant* pVarResult, ExceptionInfo* pExcepInfo, uint* pArgErr, uint cVarRef, Span<uint> rgVarRefIdx, Span<Variant> rgVarRef)
         {
             // SpanOverloader
             return thisApi.IDispatchRemoteInvokeProxy(ref This.GetPinnableReference(), dispIdMember, ref riid.GetPinnableReference(), lcid, dwFlags, pDispParams, pVarResult, pExcepInfo, pArgErr, cVarRef, ref rgVarRefIdx.GetPinnableReference(), ref rgVarRef.GetPinnableReference());
@@ -25602,7 +25602,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2449, Column 43 in oaidl.h")]
-        public static unsafe int IDispatchRemoteInvokeProxy(this Windows thisApi, Span<IDispatch> This, int dispIdMember, Span<Guid> riid, uint lcid, uint dwFlags, DispatchParams* pDispParams, Variant* pVarResult, ExcepInfo* pExcepInfo, Span<uint> pArgErr, uint cVarRef, uint* rgVarRefIdx, Variant* rgVarRef)
+        public static unsafe int IDispatchRemoteInvokeProxy(this Windows thisApi, Span<IDispatch> This, int dispIdMember, Span<Guid> riid, uint lcid, uint dwFlags, DispatchParams* pDispParams, Variant* pVarResult, ExceptionInfo* pExcepInfo, Span<uint> pArgErr, uint cVarRef, uint* rgVarRefIdx, Variant* rgVarRef)
         {
             // SpanOverloader
             return thisApi.IDispatchRemoteInvokeProxy(ref This.GetPinnableReference(), dispIdMember, ref riid.GetPinnableReference(), lcid, dwFlags, pDispParams, pVarResult, pExcepInfo, ref pArgErr.GetPinnableReference(), cVarRef, rgVarRefIdx, rgVarRef);
@@ -25610,7 +25610,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2449, Column 43 in oaidl.h")]
-        public static unsafe int IDispatchRemoteInvokeProxy(this Windows thisApi, Span<IDispatch> This, int dispIdMember, Span<Guid> riid, uint lcid, uint dwFlags, DispatchParams* pDispParams, Variant* pVarResult, ExcepInfo* pExcepInfo, Span<uint> pArgErr, uint cVarRef, uint* rgVarRefIdx, Span<Variant> rgVarRef)
+        public static unsafe int IDispatchRemoteInvokeProxy(this Windows thisApi, Span<IDispatch> This, int dispIdMember, Span<Guid> riid, uint lcid, uint dwFlags, DispatchParams* pDispParams, Variant* pVarResult, ExceptionInfo* pExcepInfo, Span<uint> pArgErr, uint cVarRef, uint* rgVarRefIdx, Span<Variant> rgVarRef)
         {
             // SpanOverloader
             return thisApi.IDispatchRemoteInvokeProxy(ref This.GetPinnableReference(), dispIdMember, ref riid.GetPinnableReference(), lcid, dwFlags, pDispParams, pVarResult, pExcepInfo, ref pArgErr.GetPinnableReference(), cVarRef, rgVarRefIdx, ref rgVarRef.GetPinnableReference());
@@ -25618,7 +25618,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2449, Column 43 in oaidl.h")]
-        public static unsafe int IDispatchRemoteInvokeProxy(this Windows thisApi, Span<IDispatch> This, int dispIdMember, Span<Guid> riid, uint lcid, uint dwFlags, DispatchParams* pDispParams, Variant* pVarResult, ExcepInfo* pExcepInfo, Span<uint> pArgErr, uint cVarRef, Span<uint> rgVarRefIdx, Variant* rgVarRef)
+        public static unsafe int IDispatchRemoteInvokeProxy(this Windows thisApi, Span<IDispatch> This, int dispIdMember, Span<Guid> riid, uint lcid, uint dwFlags, DispatchParams* pDispParams, Variant* pVarResult, ExceptionInfo* pExcepInfo, Span<uint> pArgErr, uint cVarRef, Span<uint> rgVarRefIdx, Variant* rgVarRef)
         {
             // SpanOverloader
             return thisApi.IDispatchRemoteInvokeProxy(ref This.GetPinnableReference(), dispIdMember, ref riid.GetPinnableReference(), lcid, dwFlags, pDispParams, pVarResult, pExcepInfo, ref pArgErr.GetPinnableReference(), cVarRef, ref rgVarRefIdx.GetPinnableReference(), rgVarRef);
@@ -25626,7 +25626,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2449, Column 43 in oaidl.h")]
-        public static unsafe int IDispatchRemoteInvokeProxy(this Windows thisApi, Span<IDispatch> This, int dispIdMember, Span<Guid> riid, uint lcid, uint dwFlags, DispatchParams* pDispParams, Variant* pVarResult, ExcepInfo* pExcepInfo, Span<uint> pArgErr, uint cVarRef, Span<uint> rgVarRefIdx, Span<Variant> rgVarRef)
+        public static unsafe int IDispatchRemoteInvokeProxy(this Windows thisApi, Span<IDispatch> This, int dispIdMember, Span<Guid> riid, uint lcid, uint dwFlags, DispatchParams* pDispParams, Variant* pVarResult, ExceptionInfo* pExcepInfo, Span<uint> pArgErr, uint cVarRef, Span<uint> rgVarRefIdx, Span<Variant> rgVarRef)
         {
             // SpanOverloader
             return thisApi.IDispatchRemoteInvokeProxy(ref This.GetPinnableReference(), dispIdMember, ref riid.GetPinnableReference(), lcid, dwFlags, pDispParams, pVarResult, pExcepInfo, ref pArgErr.GetPinnableReference(), cVarRef, ref rgVarRefIdx.GetPinnableReference(), ref rgVarRef.GetPinnableReference());
@@ -25634,7 +25634,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2449, Column 43 in oaidl.h")]
-        public static unsafe int IDispatchRemoteInvokeProxy(this Windows thisApi, Span<IDispatch> This, int dispIdMember, Span<Guid> riid, uint lcid, uint dwFlags, DispatchParams* pDispParams, Variant* pVarResult, Span<ExcepInfo> pExcepInfo, uint* pArgErr, uint cVarRef, uint* rgVarRefIdx, Variant* rgVarRef)
+        public static unsafe int IDispatchRemoteInvokeProxy(this Windows thisApi, Span<IDispatch> This, int dispIdMember, Span<Guid> riid, uint lcid, uint dwFlags, DispatchParams* pDispParams, Variant* pVarResult, Span<ExceptionInfo> pExcepInfo, uint* pArgErr, uint cVarRef, uint* rgVarRefIdx, Variant* rgVarRef)
         {
             // SpanOverloader
             return thisApi.IDispatchRemoteInvokeProxy(ref This.GetPinnableReference(), dispIdMember, ref riid.GetPinnableReference(), lcid, dwFlags, pDispParams, pVarResult, ref pExcepInfo.GetPinnableReference(), pArgErr, cVarRef, rgVarRefIdx, rgVarRef);
@@ -25642,7 +25642,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2449, Column 43 in oaidl.h")]
-        public static unsafe int IDispatchRemoteInvokeProxy(this Windows thisApi, Span<IDispatch> This, int dispIdMember, Span<Guid> riid, uint lcid, uint dwFlags, DispatchParams* pDispParams, Variant* pVarResult, Span<ExcepInfo> pExcepInfo, uint* pArgErr, uint cVarRef, uint* rgVarRefIdx, Span<Variant> rgVarRef)
+        public static unsafe int IDispatchRemoteInvokeProxy(this Windows thisApi, Span<IDispatch> This, int dispIdMember, Span<Guid> riid, uint lcid, uint dwFlags, DispatchParams* pDispParams, Variant* pVarResult, Span<ExceptionInfo> pExcepInfo, uint* pArgErr, uint cVarRef, uint* rgVarRefIdx, Span<Variant> rgVarRef)
         {
             // SpanOverloader
             return thisApi.IDispatchRemoteInvokeProxy(ref This.GetPinnableReference(), dispIdMember, ref riid.GetPinnableReference(), lcid, dwFlags, pDispParams, pVarResult, ref pExcepInfo.GetPinnableReference(), pArgErr, cVarRef, rgVarRefIdx, ref rgVarRef.GetPinnableReference());
@@ -25650,7 +25650,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2449, Column 43 in oaidl.h")]
-        public static unsafe int IDispatchRemoteInvokeProxy(this Windows thisApi, Span<IDispatch> This, int dispIdMember, Span<Guid> riid, uint lcid, uint dwFlags, DispatchParams* pDispParams, Variant* pVarResult, Span<ExcepInfo> pExcepInfo, uint* pArgErr, uint cVarRef, Span<uint> rgVarRefIdx, Variant* rgVarRef)
+        public static unsafe int IDispatchRemoteInvokeProxy(this Windows thisApi, Span<IDispatch> This, int dispIdMember, Span<Guid> riid, uint lcid, uint dwFlags, DispatchParams* pDispParams, Variant* pVarResult, Span<ExceptionInfo> pExcepInfo, uint* pArgErr, uint cVarRef, Span<uint> rgVarRefIdx, Variant* rgVarRef)
         {
             // SpanOverloader
             return thisApi.IDispatchRemoteInvokeProxy(ref This.GetPinnableReference(), dispIdMember, ref riid.GetPinnableReference(), lcid, dwFlags, pDispParams, pVarResult, ref pExcepInfo.GetPinnableReference(), pArgErr, cVarRef, ref rgVarRefIdx.GetPinnableReference(), rgVarRef);
@@ -25658,7 +25658,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2449, Column 43 in oaidl.h")]
-        public static unsafe int IDispatchRemoteInvokeProxy(this Windows thisApi, Span<IDispatch> This, int dispIdMember, Span<Guid> riid, uint lcid, uint dwFlags, DispatchParams* pDispParams, Variant* pVarResult, Span<ExcepInfo> pExcepInfo, uint* pArgErr, uint cVarRef, Span<uint> rgVarRefIdx, Span<Variant> rgVarRef)
+        public static unsafe int IDispatchRemoteInvokeProxy(this Windows thisApi, Span<IDispatch> This, int dispIdMember, Span<Guid> riid, uint lcid, uint dwFlags, DispatchParams* pDispParams, Variant* pVarResult, Span<ExceptionInfo> pExcepInfo, uint* pArgErr, uint cVarRef, Span<uint> rgVarRefIdx, Span<Variant> rgVarRef)
         {
             // SpanOverloader
             return thisApi.IDispatchRemoteInvokeProxy(ref This.GetPinnableReference(), dispIdMember, ref riid.GetPinnableReference(), lcid, dwFlags, pDispParams, pVarResult, ref pExcepInfo.GetPinnableReference(), pArgErr, cVarRef, ref rgVarRefIdx.GetPinnableReference(), ref rgVarRef.GetPinnableReference());
@@ -25666,7 +25666,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2449, Column 43 in oaidl.h")]
-        public static unsafe int IDispatchRemoteInvokeProxy(this Windows thisApi, Span<IDispatch> This, int dispIdMember, Span<Guid> riid, uint lcid, uint dwFlags, DispatchParams* pDispParams, Variant* pVarResult, Span<ExcepInfo> pExcepInfo, Span<uint> pArgErr, uint cVarRef, uint* rgVarRefIdx, Variant* rgVarRef)
+        public static unsafe int IDispatchRemoteInvokeProxy(this Windows thisApi, Span<IDispatch> This, int dispIdMember, Span<Guid> riid, uint lcid, uint dwFlags, DispatchParams* pDispParams, Variant* pVarResult, Span<ExceptionInfo> pExcepInfo, Span<uint> pArgErr, uint cVarRef, uint* rgVarRefIdx, Variant* rgVarRef)
         {
             // SpanOverloader
             return thisApi.IDispatchRemoteInvokeProxy(ref This.GetPinnableReference(), dispIdMember, ref riid.GetPinnableReference(), lcid, dwFlags, pDispParams, pVarResult, ref pExcepInfo.GetPinnableReference(), ref pArgErr.GetPinnableReference(), cVarRef, rgVarRefIdx, rgVarRef);
@@ -25674,7 +25674,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2449, Column 43 in oaidl.h")]
-        public static unsafe int IDispatchRemoteInvokeProxy(this Windows thisApi, Span<IDispatch> This, int dispIdMember, Span<Guid> riid, uint lcid, uint dwFlags, DispatchParams* pDispParams, Variant* pVarResult, Span<ExcepInfo> pExcepInfo, Span<uint> pArgErr, uint cVarRef, uint* rgVarRefIdx, Span<Variant> rgVarRef)
+        public static unsafe int IDispatchRemoteInvokeProxy(this Windows thisApi, Span<IDispatch> This, int dispIdMember, Span<Guid> riid, uint lcid, uint dwFlags, DispatchParams* pDispParams, Variant* pVarResult, Span<ExceptionInfo> pExcepInfo, Span<uint> pArgErr, uint cVarRef, uint* rgVarRefIdx, Span<Variant> rgVarRef)
         {
             // SpanOverloader
             return thisApi.IDispatchRemoteInvokeProxy(ref This.GetPinnableReference(), dispIdMember, ref riid.GetPinnableReference(), lcid, dwFlags, pDispParams, pVarResult, ref pExcepInfo.GetPinnableReference(), ref pArgErr.GetPinnableReference(), cVarRef, rgVarRefIdx, ref rgVarRef.GetPinnableReference());
@@ -25682,7 +25682,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2449, Column 43 in oaidl.h")]
-        public static unsafe int IDispatchRemoteInvokeProxy(this Windows thisApi, Span<IDispatch> This, int dispIdMember, Span<Guid> riid, uint lcid, uint dwFlags, DispatchParams* pDispParams, Variant* pVarResult, Span<ExcepInfo> pExcepInfo, Span<uint> pArgErr, uint cVarRef, Span<uint> rgVarRefIdx, Variant* rgVarRef)
+        public static unsafe int IDispatchRemoteInvokeProxy(this Windows thisApi, Span<IDispatch> This, int dispIdMember, Span<Guid> riid, uint lcid, uint dwFlags, DispatchParams* pDispParams, Variant* pVarResult, Span<ExceptionInfo> pExcepInfo, Span<uint> pArgErr, uint cVarRef, Span<uint> rgVarRefIdx, Variant* rgVarRef)
         {
             // SpanOverloader
             return thisApi.IDispatchRemoteInvokeProxy(ref This.GetPinnableReference(), dispIdMember, ref riid.GetPinnableReference(), lcid, dwFlags, pDispParams, pVarResult, ref pExcepInfo.GetPinnableReference(), ref pArgErr.GetPinnableReference(), cVarRef, ref rgVarRefIdx.GetPinnableReference(), rgVarRef);
@@ -25690,7 +25690,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2449, Column 43 in oaidl.h")]
-        public static unsafe int IDispatchRemoteInvokeProxy(this Windows thisApi, Span<IDispatch> This, int dispIdMember, Span<Guid> riid, uint lcid, uint dwFlags, DispatchParams* pDispParams, Variant* pVarResult, Span<ExcepInfo> pExcepInfo, Span<uint> pArgErr, uint cVarRef, Span<uint> rgVarRefIdx, Span<Variant> rgVarRef)
+        public static unsafe int IDispatchRemoteInvokeProxy(this Windows thisApi, Span<IDispatch> This, int dispIdMember, Span<Guid> riid, uint lcid, uint dwFlags, DispatchParams* pDispParams, Variant* pVarResult, Span<ExceptionInfo> pExcepInfo, Span<uint> pArgErr, uint cVarRef, Span<uint> rgVarRefIdx, Span<Variant> rgVarRef)
         {
             // SpanOverloader
             return thisApi.IDispatchRemoteInvokeProxy(ref This.GetPinnableReference(), dispIdMember, ref riid.GetPinnableReference(), lcid, dwFlags, pDispParams, pVarResult, ref pExcepInfo.GetPinnableReference(), ref pArgErr.GetPinnableReference(), cVarRef, ref rgVarRefIdx.GetPinnableReference(), ref rgVarRef.GetPinnableReference());
@@ -25698,7 +25698,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2449, Column 43 in oaidl.h")]
-        public static unsafe int IDispatchRemoteInvokeProxy(this Windows thisApi, Span<IDispatch> This, int dispIdMember, Span<Guid> riid, uint lcid, uint dwFlags, DispatchParams* pDispParams, Span<Variant> pVarResult, ExcepInfo* pExcepInfo, uint* pArgErr, uint cVarRef, uint* rgVarRefIdx, Variant* rgVarRef)
+        public static unsafe int IDispatchRemoteInvokeProxy(this Windows thisApi, Span<IDispatch> This, int dispIdMember, Span<Guid> riid, uint lcid, uint dwFlags, DispatchParams* pDispParams, Span<Variant> pVarResult, ExceptionInfo* pExcepInfo, uint* pArgErr, uint cVarRef, uint* rgVarRefIdx, Variant* rgVarRef)
         {
             // SpanOverloader
             return thisApi.IDispatchRemoteInvokeProxy(ref This.GetPinnableReference(), dispIdMember, ref riid.GetPinnableReference(), lcid, dwFlags, pDispParams, ref pVarResult.GetPinnableReference(), pExcepInfo, pArgErr, cVarRef, rgVarRefIdx, rgVarRef);
@@ -25706,7 +25706,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2449, Column 43 in oaidl.h")]
-        public static unsafe int IDispatchRemoteInvokeProxy(this Windows thisApi, Span<IDispatch> This, int dispIdMember, Span<Guid> riid, uint lcid, uint dwFlags, DispatchParams* pDispParams, Span<Variant> pVarResult, ExcepInfo* pExcepInfo, uint* pArgErr, uint cVarRef, uint* rgVarRefIdx, Span<Variant> rgVarRef)
+        public static unsafe int IDispatchRemoteInvokeProxy(this Windows thisApi, Span<IDispatch> This, int dispIdMember, Span<Guid> riid, uint lcid, uint dwFlags, DispatchParams* pDispParams, Span<Variant> pVarResult, ExceptionInfo* pExcepInfo, uint* pArgErr, uint cVarRef, uint* rgVarRefIdx, Span<Variant> rgVarRef)
         {
             // SpanOverloader
             return thisApi.IDispatchRemoteInvokeProxy(ref This.GetPinnableReference(), dispIdMember, ref riid.GetPinnableReference(), lcid, dwFlags, pDispParams, ref pVarResult.GetPinnableReference(), pExcepInfo, pArgErr, cVarRef, rgVarRefIdx, ref rgVarRef.GetPinnableReference());
@@ -25714,7 +25714,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2449, Column 43 in oaidl.h")]
-        public static unsafe int IDispatchRemoteInvokeProxy(this Windows thisApi, Span<IDispatch> This, int dispIdMember, Span<Guid> riid, uint lcid, uint dwFlags, DispatchParams* pDispParams, Span<Variant> pVarResult, ExcepInfo* pExcepInfo, uint* pArgErr, uint cVarRef, Span<uint> rgVarRefIdx, Variant* rgVarRef)
+        public static unsafe int IDispatchRemoteInvokeProxy(this Windows thisApi, Span<IDispatch> This, int dispIdMember, Span<Guid> riid, uint lcid, uint dwFlags, DispatchParams* pDispParams, Span<Variant> pVarResult, ExceptionInfo* pExcepInfo, uint* pArgErr, uint cVarRef, Span<uint> rgVarRefIdx, Variant* rgVarRef)
         {
             // SpanOverloader
             return thisApi.IDispatchRemoteInvokeProxy(ref This.GetPinnableReference(), dispIdMember, ref riid.GetPinnableReference(), lcid, dwFlags, pDispParams, ref pVarResult.GetPinnableReference(), pExcepInfo, pArgErr, cVarRef, ref rgVarRefIdx.GetPinnableReference(), rgVarRef);
@@ -25722,7 +25722,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2449, Column 43 in oaidl.h")]
-        public static unsafe int IDispatchRemoteInvokeProxy(this Windows thisApi, Span<IDispatch> This, int dispIdMember, Span<Guid> riid, uint lcid, uint dwFlags, DispatchParams* pDispParams, Span<Variant> pVarResult, ExcepInfo* pExcepInfo, uint* pArgErr, uint cVarRef, Span<uint> rgVarRefIdx, Span<Variant> rgVarRef)
+        public static unsafe int IDispatchRemoteInvokeProxy(this Windows thisApi, Span<IDispatch> This, int dispIdMember, Span<Guid> riid, uint lcid, uint dwFlags, DispatchParams* pDispParams, Span<Variant> pVarResult, ExceptionInfo* pExcepInfo, uint* pArgErr, uint cVarRef, Span<uint> rgVarRefIdx, Span<Variant> rgVarRef)
         {
             // SpanOverloader
             return thisApi.IDispatchRemoteInvokeProxy(ref This.GetPinnableReference(), dispIdMember, ref riid.GetPinnableReference(), lcid, dwFlags, pDispParams, ref pVarResult.GetPinnableReference(), pExcepInfo, pArgErr, cVarRef, ref rgVarRefIdx.GetPinnableReference(), ref rgVarRef.GetPinnableReference());
@@ -25730,7 +25730,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2449, Column 43 in oaidl.h")]
-        public static unsafe int IDispatchRemoteInvokeProxy(this Windows thisApi, Span<IDispatch> This, int dispIdMember, Span<Guid> riid, uint lcid, uint dwFlags, DispatchParams* pDispParams, Span<Variant> pVarResult, ExcepInfo* pExcepInfo, Span<uint> pArgErr, uint cVarRef, uint* rgVarRefIdx, Variant* rgVarRef)
+        public static unsafe int IDispatchRemoteInvokeProxy(this Windows thisApi, Span<IDispatch> This, int dispIdMember, Span<Guid> riid, uint lcid, uint dwFlags, DispatchParams* pDispParams, Span<Variant> pVarResult, ExceptionInfo* pExcepInfo, Span<uint> pArgErr, uint cVarRef, uint* rgVarRefIdx, Variant* rgVarRef)
         {
             // SpanOverloader
             return thisApi.IDispatchRemoteInvokeProxy(ref This.GetPinnableReference(), dispIdMember, ref riid.GetPinnableReference(), lcid, dwFlags, pDispParams, ref pVarResult.GetPinnableReference(), pExcepInfo, ref pArgErr.GetPinnableReference(), cVarRef, rgVarRefIdx, rgVarRef);
@@ -25738,7 +25738,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2449, Column 43 in oaidl.h")]
-        public static unsafe int IDispatchRemoteInvokeProxy(this Windows thisApi, Span<IDispatch> This, int dispIdMember, Span<Guid> riid, uint lcid, uint dwFlags, DispatchParams* pDispParams, Span<Variant> pVarResult, ExcepInfo* pExcepInfo, Span<uint> pArgErr, uint cVarRef, uint* rgVarRefIdx, Span<Variant> rgVarRef)
+        public static unsafe int IDispatchRemoteInvokeProxy(this Windows thisApi, Span<IDispatch> This, int dispIdMember, Span<Guid> riid, uint lcid, uint dwFlags, DispatchParams* pDispParams, Span<Variant> pVarResult, ExceptionInfo* pExcepInfo, Span<uint> pArgErr, uint cVarRef, uint* rgVarRefIdx, Span<Variant> rgVarRef)
         {
             // SpanOverloader
             return thisApi.IDispatchRemoteInvokeProxy(ref This.GetPinnableReference(), dispIdMember, ref riid.GetPinnableReference(), lcid, dwFlags, pDispParams, ref pVarResult.GetPinnableReference(), pExcepInfo, ref pArgErr.GetPinnableReference(), cVarRef, rgVarRefIdx, ref rgVarRef.GetPinnableReference());
@@ -25746,7 +25746,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2449, Column 43 in oaidl.h")]
-        public static unsafe int IDispatchRemoteInvokeProxy(this Windows thisApi, Span<IDispatch> This, int dispIdMember, Span<Guid> riid, uint lcid, uint dwFlags, DispatchParams* pDispParams, Span<Variant> pVarResult, ExcepInfo* pExcepInfo, Span<uint> pArgErr, uint cVarRef, Span<uint> rgVarRefIdx, Variant* rgVarRef)
+        public static unsafe int IDispatchRemoteInvokeProxy(this Windows thisApi, Span<IDispatch> This, int dispIdMember, Span<Guid> riid, uint lcid, uint dwFlags, DispatchParams* pDispParams, Span<Variant> pVarResult, ExceptionInfo* pExcepInfo, Span<uint> pArgErr, uint cVarRef, Span<uint> rgVarRefIdx, Variant* rgVarRef)
         {
             // SpanOverloader
             return thisApi.IDispatchRemoteInvokeProxy(ref This.GetPinnableReference(), dispIdMember, ref riid.GetPinnableReference(), lcid, dwFlags, pDispParams, ref pVarResult.GetPinnableReference(), pExcepInfo, ref pArgErr.GetPinnableReference(), cVarRef, ref rgVarRefIdx.GetPinnableReference(), rgVarRef);
@@ -25754,7 +25754,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2449, Column 43 in oaidl.h")]
-        public static unsafe int IDispatchRemoteInvokeProxy(this Windows thisApi, Span<IDispatch> This, int dispIdMember, Span<Guid> riid, uint lcid, uint dwFlags, DispatchParams* pDispParams, Span<Variant> pVarResult, ExcepInfo* pExcepInfo, Span<uint> pArgErr, uint cVarRef, Span<uint> rgVarRefIdx, Span<Variant> rgVarRef)
+        public static unsafe int IDispatchRemoteInvokeProxy(this Windows thisApi, Span<IDispatch> This, int dispIdMember, Span<Guid> riid, uint lcid, uint dwFlags, DispatchParams* pDispParams, Span<Variant> pVarResult, ExceptionInfo* pExcepInfo, Span<uint> pArgErr, uint cVarRef, Span<uint> rgVarRefIdx, Span<Variant> rgVarRef)
         {
             // SpanOverloader
             return thisApi.IDispatchRemoteInvokeProxy(ref This.GetPinnableReference(), dispIdMember, ref riid.GetPinnableReference(), lcid, dwFlags, pDispParams, ref pVarResult.GetPinnableReference(), pExcepInfo, ref pArgErr.GetPinnableReference(), cVarRef, ref rgVarRefIdx.GetPinnableReference(), ref rgVarRef.GetPinnableReference());
@@ -25762,7 +25762,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2449, Column 43 in oaidl.h")]
-        public static unsafe int IDispatchRemoteInvokeProxy(this Windows thisApi, Span<IDispatch> This, int dispIdMember, Span<Guid> riid, uint lcid, uint dwFlags, DispatchParams* pDispParams, Span<Variant> pVarResult, Span<ExcepInfo> pExcepInfo, uint* pArgErr, uint cVarRef, uint* rgVarRefIdx, Variant* rgVarRef)
+        public static unsafe int IDispatchRemoteInvokeProxy(this Windows thisApi, Span<IDispatch> This, int dispIdMember, Span<Guid> riid, uint lcid, uint dwFlags, DispatchParams* pDispParams, Span<Variant> pVarResult, Span<ExceptionInfo> pExcepInfo, uint* pArgErr, uint cVarRef, uint* rgVarRefIdx, Variant* rgVarRef)
         {
             // SpanOverloader
             return thisApi.IDispatchRemoteInvokeProxy(ref This.GetPinnableReference(), dispIdMember, ref riid.GetPinnableReference(), lcid, dwFlags, pDispParams, ref pVarResult.GetPinnableReference(), ref pExcepInfo.GetPinnableReference(), pArgErr, cVarRef, rgVarRefIdx, rgVarRef);
@@ -25770,7 +25770,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2449, Column 43 in oaidl.h")]
-        public static unsafe int IDispatchRemoteInvokeProxy(this Windows thisApi, Span<IDispatch> This, int dispIdMember, Span<Guid> riid, uint lcid, uint dwFlags, DispatchParams* pDispParams, Span<Variant> pVarResult, Span<ExcepInfo> pExcepInfo, uint* pArgErr, uint cVarRef, uint* rgVarRefIdx, Span<Variant> rgVarRef)
+        public static unsafe int IDispatchRemoteInvokeProxy(this Windows thisApi, Span<IDispatch> This, int dispIdMember, Span<Guid> riid, uint lcid, uint dwFlags, DispatchParams* pDispParams, Span<Variant> pVarResult, Span<ExceptionInfo> pExcepInfo, uint* pArgErr, uint cVarRef, uint* rgVarRefIdx, Span<Variant> rgVarRef)
         {
             // SpanOverloader
             return thisApi.IDispatchRemoteInvokeProxy(ref This.GetPinnableReference(), dispIdMember, ref riid.GetPinnableReference(), lcid, dwFlags, pDispParams, ref pVarResult.GetPinnableReference(), ref pExcepInfo.GetPinnableReference(), pArgErr, cVarRef, rgVarRefIdx, ref rgVarRef.GetPinnableReference());
@@ -25778,7 +25778,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2449, Column 43 in oaidl.h")]
-        public static unsafe int IDispatchRemoteInvokeProxy(this Windows thisApi, Span<IDispatch> This, int dispIdMember, Span<Guid> riid, uint lcid, uint dwFlags, DispatchParams* pDispParams, Span<Variant> pVarResult, Span<ExcepInfo> pExcepInfo, uint* pArgErr, uint cVarRef, Span<uint> rgVarRefIdx, Variant* rgVarRef)
+        public static unsafe int IDispatchRemoteInvokeProxy(this Windows thisApi, Span<IDispatch> This, int dispIdMember, Span<Guid> riid, uint lcid, uint dwFlags, DispatchParams* pDispParams, Span<Variant> pVarResult, Span<ExceptionInfo> pExcepInfo, uint* pArgErr, uint cVarRef, Span<uint> rgVarRefIdx, Variant* rgVarRef)
         {
             // SpanOverloader
             return thisApi.IDispatchRemoteInvokeProxy(ref This.GetPinnableReference(), dispIdMember, ref riid.GetPinnableReference(), lcid, dwFlags, pDispParams, ref pVarResult.GetPinnableReference(), ref pExcepInfo.GetPinnableReference(), pArgErr, cVarRef, ref rgVarRefIdx.GetPinnableReference(), rgVarRef);
@@ -25786,7 +25786,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2449, Column 43 in oaidl.h")]
-        public static unsafe int IDispatchRemoteInvokeProxy(this Windows thisApi, Span<IDispatch> This, int dispIdMember, Span<Guid> riid, uint lcid, uint dwFlags, DispatchParams* pDispParams, Span<Variant> pVarResult, Span<ExcepInfo> pExcepInfo, uint* pArgErr, uint cVarRef, Span<uint> rgVarRefIdx, Span<Variant> rgVarRef)
+        public static unsafe int IDispatchRemoteInvokeProxy(this Windows thisApi, Span<IDispatch> This, int dispIdMember, Span<Guid> riid, uint lcid, uint dwFlags, DispatchParams* pDispParams, Span<Variant> pVarResult, Span<ExceptionInfo> pExcepInfo, uint* pArgErr, uint cVarRef, Span<uint> rgVarRefIdx, Span<Variant> rgVarRef)
         {
             // SpanOverloader
             return thisApi.IDispatchRemoteInvokeProxy(ref This.GetPinnableReference(), dispIdMember, ref riid.GetPinnableReference(), lcid, dwFlags, pDispParams, ref pVarResult.GetPinnableReference(), ref pExcepInfo.GetPinnableReference(), pArgErr, cVarRef, ref rgVarRefIdx.GetPinnableReference(), ref rgVarRef.GetPinnableReference());
@@ -25794,7 +25794,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2449, Column 43 in oaidl.h")]
-        public static unsafe int IDispatchRemoteInvokeProxy(this Windows thisApi, Span<IDispatch> This, int dispIdMember, Span<Guid> riid, uint lcid, uint dwFlags, DispatchParams* pDispParams, Span<Variant> pVarResult, Span<ExcepInfo> pExcepInfo, Span<uint> pArgErr, uint cVarRef, uint* rgVarRefIdx, Variant* rgVarRef)
+        public static unsafe int IDispatchRemoteInvokeProxy(this Windows thisApi, Span<IDispatch> This, int dispIdMember, Span<Guid> riid, uint lcid, uint dwFlags, DispatchParams* pDispParams, Span<Variant> pVarResult, Span<ExceptionInfo> pExcepInfo, Span<uint> pArgErr, uint cVarRef, uint* rgVarRefIdx, Variant* rgVarRef)
         {
             // SpanOverloader
             return thisApi.IDispatchRemoteInvokeProxy(ref This.GetPinnableReference(), dispIdMember, ref riid.GetPinnableReference(), lcid, dwFlags, pDispParams, ref pVarResult.GetPinnableReference(), ref pExcepInfo.GetPinnableReference(), ref pArgErr.GetPinnableReference(), cVarRef, rgVarRefIdx, rgVarRef);
@@ -25802,7 +25802,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2449, Column 43 in oaidl.h")]
-        public static unsafe int IDispatchRemoteInvokeProxy(this Windows thisApi, Span<IDispatch> This, int dispIdMember, Span<Guid> riid, uint lcid, uint dwFlags, DispatchParams* pDispParams, Span<Variant> pVarResult, Span<ExcepInfo> pExcepInfo, Span<uint> pArgErr, uint cVarRef, uint* rgVarRefIdx, Span<Variant> rgVarRef)
+        public static unsafe int IDispatchRemoteInvokeProxy(this Windows thisApi, Span<IDispatch> This, int dispIdMember, Span<Guid> riid, uint lcid, uint dwFlags, DispatchParams* pDispParams, Span<Variant> pVarResult, Span<ExceptionInfo> pExcepInfo, Span<uint> pArgErr, uint cVarRef, uint* rgVarRefIdx, Span<Variant> rgVarRef)
         {
             // SpanOverloader
             return thisApi.IDispatchRemoteInvokeProxy(ref This.GetPinnableReference(), dispIdMember, ref riid.GetPinnableReference(), lcid, dwFlags, pDispParams, ref pVarResult.GetPinnableReference(), ref pExcepInfo.GetPinnableReference(), ref pArgErr.GetPinnableReference(), cVarRef, rgVarRefIdx, ref rgVarRef.GetPinnableReference());
@@ -25810,7 +25810,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2449, Column 43 in oaidl.h")]
-        public static unsafe int IDispatchRemoteInvokeProxy(this Windows thisApi, Span<IDispatch> This, int dispIdMember, Span<Guid> riid, uint lcid, uint dwFlags, DispatchParams* pDispParams, Span<Variant> pVarResult, Span<ExcepInfo> pExcepInfo, Span<uint> pArgErr, uint cVarRef, Span<uint> rgVarRefIdx, Variant* rgVarRef)
+        public static unsafe int IDispatchRemoteInvokeProxy(this Windows thisApi, Span<IDispatch> This, int dispIdMember, Span<Guid> riid, uint lcid, uint dwFlags, DispatchParams* pDispParams, Span<Variant> pVarResult, Span<ExceptionInfo> pExcepInfo, Span<uint> pArgErr, uint cVarRef, Span<uint> rgVarRefIdx, Variant* rgVarRef)
         {
             // SpanOverloader
             return thisApi.IDispatchRemoteInvokeProxy(ref This.GetPinnableReference(), dispIdMember, ref riid.GetPinnableReference(), lcid, dwFlags, pDispParams, ref pVarResult.GetPinnableReference(), ref pExcepInfo.GetPinnableReference(), ref pArgErr.GetPinnableReference(), cVarRef, ref rgVarRefIdx.GetPinnableReference(), rgVarRef);
@@ -25818,7 +25818,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2449, Column 43 in oaidl.h")]
-        public static unsafe int IDispatchRemoteInvokeProxy(this Windows thisApi, Span<IDispatch> This, int dispIdMember, Span<Guid> riid, uint lcid, uint dwFlags, DispatchParams* pDispParams, Span<Variant> pVarResult, Span<ExcepInfo> pExcepInfo, Span<uint> pArgErr, uint cVarRef, Span<uint> rgVarRefIdx, Span<Variant> rgVarRef)
+        public static unsafe int IDispatchRemoteInvokeProxy(this Windows thisApi, Span<IDispatch> This, int dispIdMember, Span<Guid> riid, uint lcid, uint dwFlags, DispatchParams* pDispParams, Span<Variant> pVarResult, Span<ExceptionInfo> pExcepInfo, Span<uint> pArgErr, uint cVarRef, Span<uint> rgVarRefIdx, Span<Variant> rgVarRef)
         {
             // SpanOverloader
             return thisApi.IDispatchRemoteInvokeProxy(ref This.GetPinnableReference(), dispIdMember, ref riid.GetPinnableReference(), lcid, dwFlags, pDispParams, ref pVarResult.GetPinnableReference(), ref pExcepInfo.GetPinnableReference(), ref pArgErr.GetPinnableReference(), cVarRef, ref rgVarRefIdx.GetPinnableReference(), ref rgVarRef.GetPinnableReference());
@@ -25826,7 +25826,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2449, Column 43 in oaidl.h")]
-        public static unsafe int IDispatchRemoteInvokeProxy(this Windows thisApi, Span<IDispatch> This, int dispIdMember, Span<Guid> riid, uint lcid, uint dwFlags, Span<DispatchParams> pDispParams, Variant* pVarResult, ExcepInfo* pExcepInfo, uint* pArgErr, uint cVarRef, uint* rgVarRefIdx, Variant* rgVarRef)
+        public static unsafe int IDispatchRemoteInvokeProxy(this Windows thisApi, Span<IDispatch> This, int dispIdMember, Span<Guid> riid, uint lcid, uint dwFlags, Span<DispatchParams> pDispParams, Variant* pVarResult, ExceptionInfo* pExcepInfo, uint* pArgErr, uint cVarRef, uint* rgVarRefIdx, Variant* rgVarRef)
         {
             // SpanOverloader
             return thisApi.IDispatchRemoteInvokeProxy(ref This.GetPinnableReference(), dispIdMember, ref riid.GetPinnableReference(), lcid, dwFlags, ref pDispParams.GetPinnableReference(), pVarResult, pExcepInfo, pArgErr, cVarRef, rgVarRefIdx, rgVarRef);
@@ -25834,7 +25834,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2449, Column 43 in oaidl.h")]
-        public static unsafe int IDispatchRemoteInvokeProxy(this Windows thisApi, Span<IDispatch> This, int dispIdMember, Span<Guid> riid, uint lcid, uint dwFlags, Span<DispatchParams> pDispParams, Variant* pVarResult, ExcepInfo* pExcepInfo, uint* pArgErr, uint cVarRef, uint* rgVarRefIdx, Span<Variant> rgVarRef)
+        public static unsafe int IDispatchRemoteInvokeProxy(this Windows thisApi, Span<IDispatch> This, int dispIdMember, Span<Guid> riid, uint lcid, uint dwFlags, Span<DispatchParams> pDispParams, Variant* pVarResult, ExceptionInfo* pExcepInfo, uint* pArgErr, uint cVarRef, uint* rgVarRefIdx, Span<Variant> rgVarRef)
         {
             // SpanOverloader
             return thisApi.IDispatchRemoteInvokeProxy(ref This.GetPinnableReference(), dispIdMember, ref riid.GetPinnableReference(), lcid, dwFlags, ref pDispParams.GetPinnableReference(), pVarResult, pExcepInfo, pArgErr, cVarRef, rgVarRefIdx, ref rgVarRef.GetPinnableReference());
@@ -25842,7 +25842,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2449, Column 43 in oaidl.h")]
-        public static unsafe int IDispatchRemoteInvokeProxy(this Windows thisApi, Span<IDispatch> This, int dispIdMember, Span<Guid> riid, uint lcid, uint dwFlags, Span<DispatchParams> pDispParams, Variant* pVarResult, ExcepInfo* pExcepInfo, uint* pArgErr, uint cVarRef, Span<uint> rgVarRefIdx, Variant* rgVarRef)
+        public static unsafe int IDispatchRemoteInvokeProxy(this Windows thisApi, Span<IDispatch> This, int dispIdMember, Span<Guid> riid, uint lcid, uint dwFlags, Span<DispatchParams> pDispParams, Variant* pVarResult, ExceptionInfo* pExcepInfo, uint* pArgErr, uint cVarRef, Span<uint> rgVarRefIdx, Variant* rgVarRef)
         {
             // SpanOverloader
             return thisApi.IDispatchRemoteInvokeProxy(ref This.GetPinnableReference(), dispIdMember, ref riid.GetPinnableReference(), lcid, dwFlags, ref pDispParams.GetPinnableReference(), pVarResult, pExcepInfo, pArgErr, cVarRef, ref rgVarRefIdx.GetPinnableReference(), rgVarRef);
@@ -25850,7 +25850,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2449, Column 43 in oaidl.h")]
-        public static unsafe int IDispatchRemoteInvokeProxy(this Windows thisApi, Span<IDispatch> This, int dispIdMember, Span<Guid> riid, uint lcid, uint dwFlags, Span<DispatchParams> pDispParams, Variant* pVarResult, ExcepInfo* pExcepInfo, uint* pArgErr, uint cVarRef, Span<uint> rgVarRefIdx, Span<Variant> rgVarRef)
+        public static unsafe int IDispatchRemoteInvokeProxy(this Windows thisApi, Span<IDispatch> This, int dispIdMember, Span<Guid> riid, uint lcid, uint dwFlags, Span<DispatchParams> pDispParams, Variant* pVarResult, ExceptionInfo* pExcepInfo, uint* pArgErr, uint cVarRef, Span<uint> rgVarRefIdx, Span<Variant> rgVarRef)
         {
             // SpanOverloader
             return thisApi.IDispatchRemoteInvokeProxy(ref This.GetPinnableReference(), dispIdMember, ref riid.GetPinnableReference(), lcid, dwFlags, ref pDispParams.GetPinnableReference(), pVarResult, pExcepInfo, pArgErr, cVarRef, ref rgVarRefIdx.GetPinnableReference(), ref rgVarRef.GetPinnableReference());
@@ -25858,7 +25858,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2449, Column 43 in oaidl.h")]
-        public static unsafe int IDispatchRemoteInvokeProxy(this Windows thisApi, Span<IDispatch> This, int dispIdMember, Span<Guid> riid, uint lcid, uint dwFlags, Span<DispatchParams> pDispParams, Variant* pVarResult, ExcepInfo* pExcepInfo, Span<uint> pArgErr, uint cVarRef, uint* rgVarRefIdx, Variant* rgVarRef)
+        public static unsafe int IDispatchRemoteInvokeProxy(this Windows thisApi, Span<IDispatch> This, int dispIdMember, Span<Guid> riid, uint lcid, uint dwFlags, Span<DispatchParams> pDispParams, Variant* pVarResult, ExceptionInfo* pExcepInfo, Span<uint> pArgErr, uint cVarRef, uint* rgVarRefIdx, Variant* rgVarRef)
         {
             // SpanOverloader
             return thisApi.IDispatchRemoteInvokeProxy(ref This.GetPinnableReference(), dispIdMember, ref riid.GetPinnableReference(), lcid, dwFlags, ref pDispParams.GetPinnableReference(), pVarResult, pExcepInfo, ref pArgErr.GetPinnableReference(), cVarRef, rgVarRefIdx, rgVarRef);
@@ -25866,7 +25866,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2449, Column 43 in oaidl.h")]
-        public static unsafe int IDispatchRemoteInvokeProxy(this Windows thisApi, Span<IDispatch> This, int dispIdMember, Span<Guid> riid, uint lcid, uint dwFlags, Span<DispatchParams> pDispParams, Variant* pVarResult, ExcepInfo* pExcepInfo, Span<uint> pArgErr, uint cVarRef, uint* rgVarRefIdx, Span<Variant> rgVarRef)
+        public static unsafe int IDispatchRemoteInvokeProxy(this Windows thisApi, Span<IDispatch> This, int dispIdMember, Span<Guid> riid, uint lcid, uint dwFlags, Span<DispatchParams> pDispParams, Variant* pVarResult, ExceptionInfo* pExcepInfo, Span<uint> pArgErr, uint cVarRef, uint* rgVarRefIdx, Span<Variant> rgVarRef)
         {
             // SpanOverloader
             return thisApi.IDispatchRemoteInvokeProxy(ref This.GetPinnableReference(), dispIdMember, ref riid.GetPinnableReference(), lcid, dwFlags, ref pDispParams.GetPinnableReference(), pVarResult, pExcepInfo, ref pArgErr.GetPinnableReference(), cVarRef, rgVarRefIdx, ref rgVarRef.GetPinnableReference());
@@ -25874,7 +25874,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2449, Column 43 in oaidl.h")]
-        public static unsafe int IDispatchRemoteInvokeProxy(this Windows thisApi, Span<IDispatch> This, int dispIdMember, Span<Guid> riid, uint lcid, uint dwFlags, Span<DispatchParams> pDispParams, Variant* pVarResult, ExcepInfo* pExcepInfo, Span<uint> pArgErr, uint cVarRef, Span<uint> rgVarRefIdx, Variant* rgVarRef)
+        public static unsafe int IDispatchRemoteInvokeProxy(this Windows thisApi, Span<IDispatch> This, int dispIdMember, Span<Guid> riid, uint lcid, uint dwFlags, Span<DispatchParams> pDispParams, Variant* pVarResult, ExceptionInfo* pExcepInfo, Span<uint> pArgErr, uint cVarRef, Span<uint> rgVarRefIdx, Variant* rgVarRef)
         {
             // SpanOverloader
             return thisApi.IDispatchRemoteInvokeProxy(ref This.GetPinnableReference(), dispIdMember, ref riid.GetPinnableReference(), lcid, dwFlags, ref pDispParams.GetPinnableReference(), pVarResult, pExcepInfo, ref pArgErr.GetPinnableReference(), cVarRef, ref rgVarRefIdx.GetPinnableReference(), rgVarRef);
@@ -25882,7 +25882,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2449, Column 43 in oaidl.h")]
-        public static unsafe int IDispatchRemoteInvokeProxy(this Windows thisApi, Span<IDispatch> This, int dispIdMember, Span<Guid> riid, uint lcid, uint dwFlags, Span<DispatchParams> pDispParams, Variant* pVarResult, ExcepInfo* pExcepInfo, Span<uint> pArgErr, uint cVarRef, Span<uint> rgVarRefIdx, Span<Variant> rgVarRef)
+        public static unsafe int IDispatchRemoteInvokeProxy(this Windows thisApi, Span<IDispatch> This, int dispIdMember, Span<Guid> riid, uint lcid, uint dwFlags, Span<DispatchParams> pDispParams, Variant* pVarResult, ExceptionInfo* pExcepInfo, Span<uint> pArgErr, uint cVarRef, Span<uint> rgVarRefIdx, Span<Variant> rgVarRef)
         {
             // SpanOverloader
             return thisApi.IDispatchRemoteInvokeProxy(ref This.GetPinnableReference(), dispIdMember, ref riid.GetPinnableReference(), lcid, dwFlags, ref pDispParams.GetPinnableReference(), pVarResult, pExcepInfo, ref pArgErr.GetPinnableReference(), cVarRef, ref rgVarRefIdx.GetPinnableReference(), ref rgVarRef.GetPinnableReference());
@@ -25890,7 +25890,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2449, Column 43 in oaidl.h")]
-        public static unsafe int IDispatchRemoteInvokeProxy(this Windows thisApi, Span<IDispatch> This, int dispIdMember, Span<Guid> riid, uint lcid, uint dwFlags, Span<DispatchParams> pDispParams, Variant* pVarResult, Span<ExcepInfo> pExcepInfo, uint* pArgErr, uint cVarRef, uint* rgVarRefIdx, Variant* rgVarRef)
+        public static unsafe int IDispatchRemoteInvokeProxy(this Windows thisApi, Span<IDispatch> This, int dispIdMember, Span<Guid> riid, uint lcid, uint dwFlags, Span<DispatchParams> pDispParams, Variant* pVarResult, Span<ExceptionInfo> pExcepInfo, uint* pArgErr, uint cVarRef, uint* rgVarRefIdx, Variant* rgVarRef)
         {
             // SpanOverloader
             return thisApi.IDispatchRemoteInvokeProxy(ref This.GetPinnableReference(), dispIdMember, ref riid.GetPinnableReference(), lcid, dwFlags, ref pDispParams.GetPinnableReference(), pVarResult, ref pExcepInfo.GetPinnableReference(), pArgErr, cVarRef, rgVarRefIdx, rgVarRef);
@@ -25898,7 +25898,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2449, Column 43 in oaidl.h")]
-        public static unsafe int IDispatchRemoteInvokeProxy(this Windows thisApi, Span<IDispatch> This, int dispIdMember, Span<Guid> riid, uint lcid, uint dwFlags, Span<DispatchParams> pDispParams, Variant* pVarResult, Span<ExcepInfo> pExcepInfo, uint* pArgErr, uint cVarRef, uint* rgVarRefIdx, Span<Variant> rgVarRef)
+        public static unsafe int IDispatchRemoteInvokeProxy(this Windows thisApi, Span<IDispatch> This, int dispIdMember, Span<Guid> riid, uint lcid, uint dwFlags, Span<DispatchParams> pDispParams, Variant* pVarResult, Span<ExceptionInfo> pExcepInfo, uint* pArgErr, uint cVarRef, uint* rgVarRefIdx, Span<Variant> rgVarRef)
         {
             // SpanOverloader
             return thisApi.IDispatchRemoteInvokeProxy(ref This.GetPinnableReference(), dispIdMember, ref riid.GetPinnableReference(), lcid, dwFlags, ref pDispParams.GetPinnableReference(), pVarResult, ref pExcepInfo.GetPinnableReference(), pArgErr, cVarRef, rgVarRefIdx, ref rgVarRef.GetPinnableReference());
@@ -25906,7 +25906,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2449, Column 43 in oaidl.h")]
-        public static unsafe int IDispatchRemoteInvokeProxy(this Windows thisApi, Span<IDispatch> This, int dispIdMember, Span<Guid> riid, uint lcid, uint dwFlags, Span<DispatchParams> pDispParams, Variant* pVarResult, Span<ExcepInfo> pExcepInfo, uint* pArgErr, uint cVarRef, Span<uint> rgVarRefIdx, Variant* rgVarRef)
+        public static unsafe int IDispatchRemoteInvokeProxy(this Windows thisApi, Span<IDispatch> This, int dispIdMember, Span<Guid> riid, uint lcid, uint dwFlags, Span<DispatchParams> pDispParams, Variant* pVarResult, Span<ExceptionInfo> pExcepInfo, uint* pArgErr, uint cVarRef, Span<uint> rgVarRefIdx, Variant* rgVarRef)
         {
             // SpanOverloader
             return thisApi.IDispatchRemoteInvokeProxy(ref This.GetPinnableReference(), dispIdMember, ref riid.GetPinnableReference(), lcid, dwFlags, ref pDispParams.GetPinnableReference(), pVarResult, ref pExcepInfo.GetPinnableReference(), pArgErr, cVarRef, ref rgVarRefIdx.GetPinnableReference(), rgVarRef);
@@ -25914,7 +25914,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2449, Column 43 in oaidl.h")]
-        public static unsafe int IDispatchRemoteInvokeProxy(this Windows thisApi, Span<IDispatch> This, int dispIdMember, Span<Guid> riid, uint lcid, uint dwFlags, Span<DispatchParams> pDispParams, Variant* pVarResult, Span<ExcepInfo> pExcepInfo, uint* pArgErr, uint cVarRef, Span<uint> rgVarRefIdx, Span<Variant> rgVarRef)
+        public static unsafe int IDispatchRemoteInvokeProxy(this Windows thisApi, Span<IDispatch> This, int dispIdMember, Span<Guid> riid, uint lcid, uint dwFlags, Span<DispatchParams> pDispParams, Variant* pVarResult, Span<ExceptionInfo> pExcepInfo, uint* pArgErr, uint cVarRef, Span<uint> rgVarRefIdx, Span<Variant> rgVarRef)
         {
             // SpanOverloader
             return thisApi.IDispatchRemoteInvokeProxy(ref This.GetPinnableReference(), dispIdMember, ref riid.GetPinnableReference(), lcid, dwFlags, ref pDispParams.GetPinnableReference(), pVarResult, ref pExcepInfo.GetPinnableReference(), pArgErr, cVarRef, ref rgVarRefIdx.GetPinnableReference(), ref rgVarRef.GetPinnableReference());
@@ -25922,7 +25922,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2449, Column 43 in oaidl.h")]
-        public static unsafe int IDispatchRemoteInvokeProxy(this Windows thisApi, Span<IDispatch> This, int dispIdMember, Span<Guid> riid, uint lcid, uint dwFlags, Span<DispatchParams> pDispParams, Variant* pVarResult, Span<ExcepInfo> pExcepInfo, Span<uint> pArgErr, uint cVarRef, uint* rgVarRefIdx, Variant* rgVarRef)
+        public static unsafe int IDispatchRemoteInvokeProxy(this Windows thisApi, Span<IDispatch> This, int dispIdMember, Span<Guid> riid, uint lcid, uint dwFlags, Span<DispatchParams> pDispParams, Variant* pVarResult, Span<ExceptionInfo> pExcepInfo, Span<uint> pArgErr, uint cVarRef, uint* rgVarRefIdx, Variant* rgVarRef)
         {
             // SpanOverloader
             return thisApi.IDispatchRemoteInvokeProxy(ref This.GetPinnableReference(), dispIdMember, ref riid.GetPinnableReference(), lcid, dwFlags, ref pDispParams.GetPinnableReference(), pVarResult, ref pExcepInfo.GetPinnableReference(), ref pArgErr.GetPinnableReference(), cVarRef, rgVarRefIdx, rgVarRef);
@@ -25930,7 +25930,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2449, Column 43 in oaidl.h")]
-        public static unsafe int IDispatchRemoteInvokeProxy(this Windows thisApi, Span<IDispatch> This, int dispIdMember, Span<Guid> riid, uint lcid, uint dwFlags, Span<DispatchParams> pDispParams, Variant* pVarResult, Span<ExcepInfo> pExcepInfo, Span<uint> pArgErr, uint cVarRef, uint* rgVarRefIdx, Span<Variant> rgVarRef)
+        public static unsafe int IDispatchRemoteInvokeProxy(this Windows thisApi, Span<IDispatch> This, int dispIdMember, Span<Guid> riid, uint lcid, uint dwFlags, Span<DispatchParams> pDispParams, Variant* pVarResult, Span<ExceptionInfo> pExcepInfo, Span<uint> pArgErr, uint cVarRef, uint* rgVarRefIdx, Span<Variant> rgVarRef)
         {
             // SpanOverloader
             return thisApi.IDispatchRemoteInvokeProxy(ref This.GetPinnableReference(), dispIdMember, ref riid.GetPinnableReference(), lcid, dwFlags, ref pDispParams.GetPinnableReference(), pVarResult, ref pExcepInfo.GetPinnableReference(), ref pArgErr.GetPinnableReference(), cVarRef, rgVarRefIdx, ref rgVarRef.GetPinnableReference());
@@ -25938,7 +25938,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2449, Column 43 in oaidl.h")]
-        public static unsafe int IDispatchRemoteInvokeProxy(this Windows thisApi, Span<IDispatch> This, int dispIdMember, Span<Guid> riid, uint lcid, uint dwFlags, Span<DispatchParams> pDispParams, Variant* pVarResult, Span<ExcepInfo> pExcepInfo, Span<uint> pArgErr, uint cVarRef, Span<uint> rgVarRefIdx, Variant* rgVarRef)
+        public static unsafe int IDispatchRemoteInvokeProxy(this Windows thisApi, Span<IDispatch> This, int dispIdMember, Span<Guid> riid, uint lcid, uint dwFlags, Span<DispatchParams> pDispParams, Variant* pVarResult, Span<ExceptionInfo> pExcepInfo, Span<uint> pArgErr, uint cVarRef, Span<uint> rgVarRefIdx, Variant* rgVarRef)
         {
             // SpanOverloader
             return thisApi.IDispatchRemoteInvokeProxy(ref This.GetPinnableReference(), dispIdMember, ref riid.GetPinnableReference(), lcid, dwFlags, ref pDispParams.GetPinnableReference(), pVarResult, ref pExcepInfo.GetPinnableReference(), ref pArgErr.GetPinnableReference(), cVarRef, ref rgVarRefIdx.GetPinnableReference(), rgVarRef);
@@ -25946,7 +25946,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2449, Column 43 in oaidl.h")]
-        public static unsafe int IDispatchRemoteInvokeProxy(this Windows thisApi, Span<IDispatch> This, int dispIdMember, Span<Guid> riid, uint lcid, uint dwFlags, Span<DispatchParams> pDispParams, Variant* pVarResult, Span<ExcepInfo> pExcepInfo, Span<uint> pArgErr, uint cVarRef, Span<uint> rgVarRefIdx, Span<Variant> rgVarRef)
+        public static unsafe int IDispatchRemoteInvokeProxy(this Windows thisApi, Span<IDispatch> This, int dispIdMember, Span<Guid> riid, uint lcid, uint dwFlags, Span<DispatchParams> pDispParams, Variant* pVarResult, Span<ExceptionInfo> pExcepInfo, Span<uint> pArgErr, uint cVarRef, Span<uint> rgVarRefIdx, Span<Variant> rgVarRef)
         {
             // SpanOverloader
             return thisApi.IDispatchRemoteInvokeProxy(ref This.GetPinnableReference(), dispIdMember, ref riid.GetPinnableReference(), lcid, dwFlags, ref pDispParams.GetPinnableReference(), pVarResult, ref pExcepInfo.GetPinnableReference(), ref pArgErr.GetPinnableReference(), cVarRef, ref rgVarRefIdx.GetPinnableReference(), ref rgVarRef.GetPinnableReference());
@@ -25954,7 +25954,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2449, Column 43 in oaidl.h")]
-        public static unsafe int IDispatchRemoteInvokeProxy(this Windows thisApi, Span<IDispatch> This, int dispIdMember, Span<Guid> riid, uint lcid, uint dwFlags, Span<DispatchParams> pDispParams, Span<Variant> pVarResult, ExcepInfo* pExcepInfo, uint* pArgErr, uint cVarRef, uint* rgVarRefIdx, Variant* rgVarRef)
+        public static unsafe int IDispatchRemoteInvokeProxy(this Windows thisApi, Span<IDispatch> This, int dispIdMember, Span<Guid> riid, uint lcid, uint dwFlags, Span<DispatchParams> pDispParams, Span<Variant> pVarResult, ExceptionInfo* pExcepInfo, uint* pArgErr, uint cVarRef, uint* rgVarRefIdx, Variant* rgVarRef)
         {
             // SpanOverloader
             return thisApi.IDispatchRemoteInvokeProxy(ref This.GetPinnableReference(), dispIdMember, ref riid.GetPinnableReference(), lcid, dwFlags, ref pDispParams.GetPinnableReference(), ref pVarResult.GetPinnableReference(), pExcepInfo, pArgErr, cVarRef, rgVarRefIdx, rgVarRef);
@@ -25962,7 +25962,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2449, Column 43 in oaidl.h")]
-        public static unsafe int IDispatchRemoteInvokeProxy(this Windows thisApi, Span<IDispatch> This, int dispIdMember, Span<Guid> riid, uint lcid, uint dwFlags, Span<DispatchParams> pDispParams, Span<Variant> pVarResult, ExcepInfo* pExcepInfo, uint* pArgErr, uint cVarRef, uint* rgVarRefIdx, Span<Variant> rgVarRef)
+        public static unsafe int IDispatchRemoteInvokeProxy(this Windows thisApi, Span<IDispatch> This, int dispIdMember, Span<Guid> riid, uint lcid, uint dwFlags, Span<DispatchParams> pDispParams, Span<Variant> pVarResult, ExceptionInfo* pExcepInfo, uint* pArgErr, uint cVarRef, uint* rgVarRefIdx, Span<Variant> rgVarRef)
         {
             // SpanOverloader
             return thisApi.IDispatchRemoteInvokeProxy(ref This.GetPinnableReference(), dispIdMember, ref riid.GetPinnableReference(), lcid, dwFlags, ref pDispParams.GetPinnableReference(), ref pVarResult.GetPinnableReference(), pExcepInfo, pArgErr, cVarRef, rgVarRefIdx, ref rgVarRef.GetPinnableReference());
@@ -25970,7 +25970,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2449, Column 43 in oaidl.h")]
-        public static unsafe int IDispatchRemoteInvokeProxy(this Windows thisApi, Span<IDispatch> This, int dispIdMember, Span<Guid> riid, uint lcid, uint dwFlags, Span<DispatchParams> pDispParams, Span<Variant> pVarResult, ExcepInfo* pExcepInfo, uint* pArgErr, uint cVarRef, Span<uint> rgVarRefIdx, Variant* rgVarRef)
+        public static unsafe int IDispatchRemoteInvokeProxy(this Windows thisApi, Span<IDispatch> This, int dispIdMember, Span<Guid> riid, uint lcid, uint dwFlags, Span<DispatchParams> pDispParams, Span<Variant> pVarResult, ExceptionInfo* pExcepInfo, uint* pArgErr, uint cVarRef, Span<uint> rgVarRefIdx, Variant* rgVarRef)
         {
             // SpanOverloader
             return thisApi.IDispatchRemoteInvokeProxy(ref This.GetPinnableReference(), dispIdMember, ref riid.GetPinnableReference(), lcid, dwFlags, ref pDispParams.GetPinnableReference(), ref pVarResult.GetPinnableReference(), pExcepInfo, pArgErr, cVarRef, ref rgVarRefIdx.GetPinnableReference(), rgVarRef);
@@ -25978,7 +25978,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2449, Column 43 in oaidl.h")]
-        public static unsafe int IDispatchRemoteInvokeProxy(this Windows thisApi, Span<IDispatch> This, int dispIdMember, Span<Guid> riid, uint lcid, uint dwFlags, Span<DispatchParams> pDispParams, Span<Variant> pVarResult, ExcepInfo* pExcepInfo, uint* pArgErr, uint cVarRef, Span<uint> rgVarRefIdx, Span<Variant> rgVarRef)
+        public static unsafe int IDispatchRemoteInvokeProxy(this Windows thisApi, Span<IDispatch> This, int dispIdMember, Span<Guid> riid, uint lcid, uint dwFlags, Span<DispatchParams> pDispParams, Span<Variant> pVarResult, ExceptionInfo* pExcepInfo, uint* pArgErr, uint cVarRef, Span<uint> rgVarRefIdx, Span<Variant> rgVarRef)
         {
             // SpanOverloader
             return thisApi.IDispatchRemoteInvokeProxy(ref This.GetPinnableReference(), dispIdMember, ref riid.GetPinnableReference(), lcid, dwFlags, ref pDispParams.GetPinnableReference(), ref pVarResult.GetPinnableReference(), pExcepInfo, pArgErr, cVarRef, ref rgVarRefIdx.GetPinnableReference(), ref rgVarRef.GetPinnableReference());
@@ -25986,7 +25986,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2449, Column 43 in oaidl.h")]
-        public static unsafe int IDispatchRemoteInvokeProxy(this Windows thisApi, Span<IDispatch> This, int dispIdMember, Span<Guid> riid, uint lcid, uint dwFlags, Span<DispatchParams> pDispParams, Span<Variant> pVarResult, ExcepInfo* pExcepInfo, Span<uint> pArgErr, uint cVarRef, uint* rgVarRefIdx, Variant* rgVarRef)
+        public static unsafe int IDispatchRemoteInvokeProxy(this Windows thisApi, Span<IDispatch> This, int dispIdMember, Span<Guid> riid, uint lcid, uint dwFlags, Span<DispatchParams> pDispParams, Span<Variant> pVarResult, ExceptionInfo* pExcepInfo, Span<uint> pArgErr, uint cVarRef, uint* rgVarRefIdx, Variant* rgVarRef)
         {
             // SpanOverloader
             return thisApi.IDispatchRemoteInvokeProxy(ref This.GetPinnableReference(), dispIdMember, ref riid.GetPinnableReference(), lcid, dwFlags, ref pDispParams.GetPinnableReference(), ref pVarResult.GetPinnableReference(), pExcepInfo, ref pArgErr.GetPinnableReference(), cVarRef, rgVarRefIdx, rgVarRef);
@@ -25994,7 +25994,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2449, Column 43 in oaidl.h")]
-        public static unsafe int IDispatchRemoteInvokeProxy(this Windows thisApi, Span<IDispatch> This, int dispIdMember, Span<Guid> riid, uint lcid, uint dwFlags, Span<DispatchParams> pDispParams, Span<Variant> pVarResult, ExcepInfo* pExcepInfo, Span<uint> pArgErr, uint cVarRef, uint* rgVarRefIdx, Span<Variant> rgVarRef)
+        public static unsafe int IDispatchRemoteInvokeProxy(this Windows thisApi, Span<IDispatch> This, int dispIdMember, Span<Guid> riid, uint lcid, uint dwFlags, Span<DispatchParams> pDispParams, Span<Variant> pVarResult, ExceptionInfo* pExcepInfo, Span<uint> pArgErr, uint cVarRef, uint* rgVarRefIdx, Span<Variant> rgVarRef)
         {
             // SpanOverloader
             return thisApi.IDispatchRemoteInvokeProxy(ref This.GetPinnableReference(), dispIdMember, ref riid.GetPinnableReference(), lcid, dwFlags, ref pDispParams.GetPinnableReference(), ref pVarResult.GetPinnableReference(), pExcepInfo, ref pArgErr.GetPinnableReference(), cVarRef, rgVarRefIdx, ref rgVarRef.GetPinnableReference());
@@ -26002,7 +26002,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2449, Column 43 in oaidl.h")]
-        public static unsafe int IDispatchRemoteInvokeProxy(this Windows thisApi, Span<IDispatch> This, int dispIdMember, Span<Guid> riid, uint lcid, uint dwFlags, Span<DispatchParams> pDispParams, Span<Variant> pVarResult, ExcepInfo* pExcepInfo, Span<uint> pArgErr, uint cVarRef, Span<uint> rgVarRefIdx, Variant* rgVarRef)
+        public static unsafe int IDispatchRemoteInvokeProxy(this Windows thisApi, Span<IDispatch> This, int dispIdMember, Span<Guid> riid, uint lcid, uint dwFlags, Span<DispatchParams> pDispParams, Span<Variant> pVarResult, ExceptionInfo* pExcepInfo, Span<uint> pArgErr, uint cVarRef, Span<uint> rgVarRefIdx, Variant* rgVarRef)
         {
             // SpanOverloader
             return thisApi.IDispatchRemoteInvokeProxy(ref This.GetPinnableReference(), dispIdMember, ref riid.GetPinnableReference(), lcid, dwFlags, ref pDispParams.GetPinnableReference(), ref pVarResult.GetPinnableReference(), pExcepInfo, ref pArgErr.GetPinnableReference(), cVarRef, ref rgVarRefIdx.GetPinnableReference(), rgVarRef);
@@ -26010,7 +26010,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2449, Column 43 in oaidl.h")]
-        public static unsafe int IDispatchRemoteInvokeProxy(this Windows thisApi, Span<IDispatch> This, int dispIdMember, Span<Guid> riid, uint lcid, uint dwFlags, Span<DispatchParams> pDispParams, Span<Variant> pVarResult, ExcepInfo* pExcepInfo, Span<uint> pArgErr, uint cVarRef, Span<uint> rgVarRefIdx, Span<Variant> rgVarRef)
+        public static unsafe int IDispatchRemoteInvokeProxy(this Windows thisApi, Span<IDispatch> This, int dispIdMember, Span<Guid> riid, uint lcid, uint dwFlags, Span<DispatchParams> pDispParams, Span<Variant> pVarResult, ExceptionInfo* pExcepInfo, Span<uint> pArgErr, uint cVarRef, Span<uint> rgVarRefIdx, Span<Variant> rgVarRef)
         {
             // SpanOverloader
             return thisApi.IDispatchRemoteInvokeProxy(ref This.GetPinnableReference(), dispIdMember, ref riid.GetPinnableReference(), lcid, dwFlags, ref pDispParams.GetPinnableReference(), ref pVarResult.GetPinnableReference(), pExcepInfo, ref pArgErr.GetPinnableReference(), cVarRef, ref rgVarRefIdx.GetPinnableReference(), ref rgVarRef.GetPinnableReference());
@@ -26018,7 +26018,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2449, Column 43 in oaidl.h")]
-        public static unsafe int IDispatchRemoteInvokeProxy(this Windows thisApi, Span<IDispatch> This, int dispIdMember, Span<Guid> riid, uint lcid, uint dwFlags, Span<DispatchParams> pDispParams, Span<Variant> pVarResult, Span<ExcepInfo> pExcepInfo, uint* pArgErr, uint cVarRef, uint* rgVarRefIdx, Variant* rgVarRef)
+        public static unsafe int IDispatchRemoteInvokeProxy(this Windows thisApi, Span<IDispatch> This, int dispIdMember, Span<Guid> riid, uint lcid, uint dwFlags, Span<DispatchParams> pDispParams, Span<Variant> pVarResult, Span<ExceptionInfo> pExcepInfo, uint* pArgErr, uint cVarRef, uint* rgVarRefIdx, Variant* rgVarRef)
         {
             // SpanOverloader
             return thisApi.IDispatchRemoteInvokeProxy(ref This.GetPinnableReference(), dispIdMember, ref riid.GetPinnableReference(), lcid, dwFlags, ref pDispParams.GetPinnableReference(), ref pVarResult.GetPinnableReference(), ref pExcepInfo.GetPinnableReference(), pArgErr, cVarRef, rgVarRefIdx, rgVarRef);
@@ -26026,7 +26026,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2449, Column 43 in oaidl.h")]
-        public static unsafe int IDispatchRemoteInvokeProxy(this Windows thisApi, Span<IDispatch> This, int dispIdMember, Span<Guid> riid, uint lcid, uint dwFlags, Span<DispatchParams> pDispParams, Span<Variant> pVarResult, Span<ExcepInfo> pExcepInfo, uint* pArgErr, uint cVarRef, uint* rgVarRefIdx, Span<Variant> rgVarRef)
+        public static unsafe int IDispatchRemoteInvokeProxy(this Windows thisApi, Span<IDispatch> This, int dispIdMember, Span<Guid> riid, uint lcid, uint dwFlags, Span<DispatchParams> pDispParams, Span<Variant> pVarResult, Span<ExceptionInfo> pExcepInfo, uint* pArgErr, uint cVarRef, uint* rgVarRefIdx, Span<Variant> rgVarRef)
         {
             // SpanOverloader
             return thisApi.IDispatchRemoteInvokeProxy(ref This.GetPinnableReference(), dispIdMember, ref riid.GetPinnableReference(), lcid, dwFlags, ref pDispParams.GetPinnableReference(), ref pVarResult.GetPinnableReference(), ref pExcepInfo.GetPinnableReference(), pArgErr, cVarRef, rgVarRefIdx, ref rgVarRef.GetPinnableReference());
@@ -26034,7 +26034,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2449, Column 43 in oaidl.h")]
-        public static unsafe int IDispatchRemoteInvokeProxy(this Windows thisApi, Span<IDispatch> This, int dispIdMember, Span<Guid> riid, uint lcid, uint dwFlags, Span<DispatchParams> pDispParams, Span<Variant> pVarResult, Span<ExcepInfo> pExcepInfo, uint* pArgErr, uint cVarRef, Span<uint> rgVarRefIdx, Variant* rgVarRef)
+        public static unsafe int IDispatchRemoteInvokeProxy(this Windows thisApi, Span<IDispatch> This, int dispIdMember, Span<Guid> riid, uint lcid, uint dwFlags, Span<DispatchParams> pDispParams, Span<Variant> pVarResult, Span<ExceptionInfo> pExcepInfo, uint* pArgErr, uint cVarRef, Span<uint> rgVarRefIdx, Variant* rgVarRef)
         {
             // SpanOverloader
             return thisApi.IDispatchRemoteInvokeProxy(ref This.GetPinnableReference(), dispIdMember, ref riid.GetPinnableReference(), lcid, dwFlags, ref pDispParams.GetPinnableReference(), ref pVarResult.GetPinnableReference(), ref pExcepInfo.GetPinnableReference(), pArgErr, cVarRef, ref rgVarRefIdx.GetPinnableReference(), rgVarRef);
@@ -26042,7 +26042,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2449, Column 43 in oaidl.h")]
-        public static unsafe int IDispatchRemoteInvokeProxy(this Windows thisApi, Span<IDispatch> This, int dispIdMember, Span<Guid> riid, uint lcid, uint dwFlags, Span<DispatchParams> pDispParams, Span<Variant> pVarResult, Span<ExcepInfo> pExcepInfo, uint* pArgErr, uint cVarRef, Span<uint> rgVarRefIdx, Span<Variant> rgVarRef)
+        public static unsafe int IDispatchRemoteInvokeProxy(this Windows thisApi, Span<IDispatch> This, int dispIdMember, Span<Guid> riid, uint lcid, uint dwFlags, Span<DispatchParams> pDispParams, Span<Variant> pVarResult, Span<ExceptionInfo> pExcepInfo, uint* pArgErr, uint cVarRef, Span<uint> rgVarRefIdx, Span<Variant> rgVarRef)
         {
             // SpanOverloader
             return thisApi.IDispatchRemoteInvokeProxy(ref This.GetPinnableReference(), dispIdMember, ref riid.GetPinnableReference(), lcid, dwFlags, ref pDispParams.GetPinnableReference(), ref pVarResult.GetPinnableReference(), ref pExcepInfo.GetPinnableReference(), pArgErr, cVarRef, ref rgVarRefIdx.GetPinnableReference(), ref rgVarRef.GetPinnableReference());
@@ -26050,7 +26050,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2449, Column 43 in oaidl.h")]
-        public static unsafe int IDispatchRemoteInvokeProxy(this Windows thisApi, Span<IDispatch> This, int dispIdMember, Span<Guid> riid, uint lcid, uint dwFlags, Span<DispatchParams> pDispParams, Span<Variant> pVarResult, Span<ExcepInfo> pExcepInfo, Span<uint> pArgErr, uint cVarRef, uint* rgVarRefIdx, Variant* rgVarRef)
+        public static unsafe int IDispatchRemoteInvokeProxy(this Windows thisApi, Span<IDispatch> This, int dispIdMember, Span<Guid> riid, uint lcid, uint dwFlags, Span<DispatchParams> pDispParams, Span<Variant> pVarResult, Span<ExceptionInfo> pExcepInfo, Span<uint> pArgErr, uint cVarRef, uint* rgVarRefIdx, Variant* rgVarRef)
         {
             // SpanOverloader
             return thisApi.IDispatchRemoteInvokeProxy(ref This.GetPinnableReference(), dispIdMember, ref riid.GetPinnableReference(), lcid, dwFlags, ref pDispParams.GetPinnableReference(), ref pVarResult.GetPinnableReference(), ref pExcepInfo.GetPinnableReference(), ref pArgErr.GetPinnableReference(), cVarRef, rgVarRefIdx, rgVarRef);
@@ -26058,7 +26058,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2449, Column 43 in oaidl.h")]
-        public static unsafe int IDispatchRemoteInvokeProxy(this Windows thisApi, Span<IDispatch> This, int dispIdMember, Span<Guid> riid, uint lcid, uint dwFlags, Span<DispatchParams> pDispParams, Span<Variant> pVarResult, Span<ExcepInfo> pExcepInfo, Span<uint> pArgErr, uint cVarRef, uint* rgVarRefIdx, Span<Variant> rgVarRef)
+        public static unsafe int IDispatchRemoteInvokeProxy(this Windows thisApi, Span<IDispatch> This, int dispIdMember, Span<Guid> riid, uint lcid, uint dwFlags, Span<DispatchParams> pDispParams, Span<Variant> pVarResult, Span<ExceptionInfo> pExcepInfo, Span<uint> pArgErr, uint cVarRef, uint* rgVarRefIdx, Span<Variant> rgVarRef)
         {
             // SpanOverloader
             return thisApi.IDispatchRemoteInvokeProxy(ref This.GetPinnableReference(), dispIdMember, ref riid.GetPinnableReference(), lcid, dwFlags, ref pDispParams.GetPinnableReference(), ref pVarResult.GetPinnableReference(), ref pExcepInfo.GetPinnableReference(), ref pArgErr.GetPinnableReference(), cVarRef, rgVarRefIdx, ref rgVarRef.GetPinnableReference());
@@ -26066,7 +26066,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2449, Column 43 in oaidl.h")]
-        public static unsafe int IDispatchRemoteInvokeProxy(this Windows thisApi, Span<IDispatch> This, int dispIdMember, Span<Guid> riid, uint lcid, uint dwFlags, Span<DispatchParams> pDispParams, Span<Variant> pVarResult, Span<ExcepInfo> pExcepInfo, Span<uint> pArgErr, uint cVarRef, Span<uint> rgVarRefIdx, Variant* rgVarRef)
+        public static unsafe int IDispatchRemoteInvokeProxy(this Windows thisApi, Span<IDispatch> This, int dispIdMember, Span<Guid> riid, uint lcid, uint dwFlags, Span<DispatchParams> pDispParams, Span<Variant> pVarResult, Span<ExceptionInfo> pExcepInfo, Span<uint> pArgErr, uint cVarRef, Span<uint> rgVarRefIdx, Variant* rgVarRef)
         {
             // SpanOverloader
             return thisApi.IDispatchRemoteInvokeProxy(ref This.GetPinnableReference(), dispIdMember, ref riid.GetPinnableReference(), lcid, dwFlags, ref pDispParams.GetPinnableReference(), ref pVarResult.GetPinnableReference(), ref pExcepInfo.GetPinnableReference(), ref pArgErr.GetPinnableReference(), cVarRef, ref rgVarRefIdx.GetPinnableReference(), rgVarRef);
@@ -26074,7 +26074,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2449, Column 43 in oaidl.h")]
-        public static unsafe int IDispatchRemoteInvokeProxy(this Windows thisApi, Span<IDispatch> This, int dispIdMember, Span<Guid> riid, uint lcid, uint dwFlags, Span<DispatchParams> pDispParams, Span<Variant> pVarResult, Span<ExcepInfo> pExcepInfo, Span<uint> pArgErr, uint cVarRef, Span<uint> rgVarRefIdx, Span<Variant> rgVarRef)
+        public static unsafe int IDispatchRemoteInvokeProxy(this Windows thisApi, Span<IDispatch> This, int dispIdMember, Span<Guid> riid, uint lcid, uint dwFlags, Span<DispatchParams> pDispParams, Span<Variant> pVarResult, Span<ExceptionInfo> pExcepInfo, Span<uint> pArgErr, uint cVarRef, Span<uint> rgVarRefIdx, Span<Variant> rgVarRef)
         {
             // SpanOverloader
             return thisApi.IDispatchRemoteInvokeProxy(ref This.GetPinnableReference(), dispIdMember, ref riid.GetPinnableReference(), lcid, dwFlags, ref pDispParams.GetPinnableReference(), ref pVarResult.GetPinnableReference(), ref pExcepInfo.GetPinnableReference(), ref pArgErr.GetPinnableReference(), cVarRef, ref rgVarRefIdx.GetPinnableReference(), ref rgVarRef.GetPinnableReference());
@@ -35906,7 +35906,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 5942, Column 41 in oaidl.h")]
-        public static unsafe int IDispatchInvokeProxy(this Windows thisApi, IDispatch* This, int dispIdMember, Guid* riid, uint lcid, ushort wFlags, DispatchParams* pDispParams, Variant* pVarResult, ExcepInfo* pExcepInfo, Span<uint> puArgErr)
+        public static unsafe int IDispatchInvokeProxy(this Windows thisApi, IDispatch* This, int dispIdMember, Guid* riid, uint lcid, ushort wFlags, DispatchParams* pDispParams, Variant* pVarResult, ExceptionInfo* pExcepInfo, Span<uint> puArgErr)
         {
             // SpanOverloader
             return thisApi.IDispatchInvokeProxy(This, dispIdMember, riid, lcid, wFlags, pDispParams, pVarResult, pExcepInfo, ref puArgErr.GetPinnableReference());
@@ -35914,7 +35914,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 5942, Column 41 in oaidl.h")]
-        public static unsafe int IDispatchInvokeProxy(this Windows thisApi, IDispatch* This, int dispIdMember, Guid* riid, uint lcid, ushort wFlags, DispatchParams* pDispParams, Variant* pVarResult, Span<ExcepInfo> pExcepInfo, uint* puArgErr)
+        public static unsafe int IDispatchInvokeProxy(this Windows thisApi, IDispatch* This, int dispIdMember, Guid* riid, uint lcid, ushort wFlags, DispatchParams* pDispParams, Variant* pVarResult, Span<ExceptionInfo> pExcepInfo, uint* puArgErr)
         {
             // SpanOverloader
             return thisApi.IDispatchInvokeProxy(This, dispIdMember, riid, lcid, wFlags, pDispParams, pVarResult, ref pExcepInfo.GetPinnableReference(), puArgErr);
@@ -35922,7 +35922,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 5942, Column 41 in oaidl.h")]
-        public static unsafe int IDispatchInvokeProxy(this Windows thisApi, IDispatch* This, int dispIdMember, Guid* riid, uint lcid, ushort wFlags, DispatchParams* pDispParams, Variant* pVarResult, Span<ExcepInfo> pExcepInfo, Span<uint> puArgErr)
+        public static unsafe int IDispatchInvokeProxy(this Windows thisApi, IDispatch* This, int dispIdMember, Guid* riid, uint lcid, ushort wFlags, DispatchParams* pDispParams, Variant* pVarResult, Span<ExceptionInfo> pExcepInfo, Span<uint> puArgErr)
         {
             // SpanOverloader
             return thisApi.IDispatchInvokeProxy(This, dispIdMember, riid, lcid, wFlags, pDispParams, pVarResult, ref pExcepInfo.GetPinnableReference(), ref puArgErr.GetPinnableReference());
@@ -35930,7 +35930,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 5942, Column 41 in oaidl.h")]
-        public static unsafe int IDispatchInvokeProxy(this Windows thisApi, IDispatch* This, int dispIdMember, Guid* riid, uint lcid, ushort wFlags, DispatchParams* pDispParams, Span<Variant> pVarResult, ExcepInfo* pExcepInfo, uint* puArgErr)
+        public static unsafe int IDispatchInvokeProxy(this Windows thisApi, IDispatch* This, int dispIdMember, Guid* riid, uint lcid, ushort wFlags, DispatchParams* pDispParams, Span<Variant> pVarResult, ExceptionInfo* pExcepInfo, uint* puArgErr)
         {
             // SpanOverloader
             return thisApi.IDispatchInvokeProxy(This, dispIdMember, riid, lcid, wFlags, pDispParams, ref pVarResult.GetPinnableReference(), pExcepInfo, puArgErr);
@@ -35938,7 +35938,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 5942, Column 41 in oaidl.h")]
-        public static unsafe int IDispatchInvokeProxy(this Windows thisApi, IDispatch* This, int dispIdMember, Guid* riid, uint lcid, ushort wFlags, DispatchParams* pDispParams, Span<Variant> pVarResult, ExcepInfo* pExcepInfo, Span<uint> puArgErr)
+        public static unsafe int IDispatchInvokeProxy(this Windows thisApi, IDispatch* This, int dispIdMember, Guid* riid, uint lcid, ushort wFlags, DispatchParams* pDispParams, Span<Variant> pVarResult, ExceptionInfo* pExcepInfo, Span<uint> puArgErr)
         {
             // SpanOverloader
             return thisApi.IDispatchInvokeProxy(This, dispIdMember, riid, lcid, wFlags, pDispParams, ref pVarResult.GetPinnableReference(), pExcepInfo, ref puArgErr.GetPinnableReference());
@@ -35946,7 +35946,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 5942, Column 41 in oaidl.h")]
-        public static unsafe int IDispatchInvokeProxy(this Windows thisApi, IDispatch* This, int dispIdMember, Guid* riid, uint lcid, ushort wFlags, DispatchParams* pDispParams, Span<Variant> pVarResult, Span<ExcepInfo> pExcepInfo, uint* puArgErr)
+        public static unsafe int IDispatchInvokeProxy(this Windows thisApi, IDispatch* This, int dispIdMember, Guid* riid, uint lcid, ushort wFlags, DispatchParams* pDispParams, Span<Variant> pVarResult, Span<ExceptionInfo> pExcepInfo, uint* puArgErr)
         {
             // SpanOverloader
             return thisApi.IDispatchInvokeProxy(This, dispIdMember, riid, lcid, wFlags, pDispParams, ref pVarResult.GetPinnableReference(), ref pExcepInfo.GetPinnableReference(), puArgErr);
@@ -35954,7 +35954,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 5942, Column 41 in oaidl.h")]
-        public static unsafe int IDispatchInvokeProxy(this Windows thisApi, IDispatch* This, int dispIdMember, Guid* riid, uint lcid, ushort wFlags, DispatchParams* pDispParams, Span<Variant> pVarResult, Span<ExcepInfo> pExcepInfo, Span<uint> puArgErr)
+        public static unsafe int IDispatchInvokeProxy(this Windows thisApi, IDispatch* This, int dispIdMember, Guid* riid, uint lcid, ushort wFlags, DispatchParams* pDispParams, Span<Variant> pVarResult, Span<ExceptionInfo> pExcepInfo, Span<uint> puArgErr)
         {
             // SpanOverloader
             return thisApi.IDispatchInvokeProxy(This, dispIdMember, riid, lcid, wFlags, pDispParams, ref pVarResult.GetPinnableReference(), ref pExcepInfo.GetPinnableReference(), ref puArgErr.GetPinnableReference());
@@ -35962,7 +35962,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 5942, Column 41 in oaidl.h")]
-        public static unsafe int IDispatchInvokeProxy(this Windows thisApi, IDispatch* This, int dispIdMember, Guid* riid, uint lcid, ushort wFlags, Span<DispatchParams> pDispParams, Variant* pVarResult, ExcepInfo* pExcepInfo, uint* puArgErr)
+        public static unsafe int IDispatchInvokeProxy(this Windows thisApi, IDispatch* This, int dispIdMember, Guid* riid, uint lcid, ushort wFlags, Span<DispatchParams> pDispParams, Variant* pVarResult, ExceptionInfo* pExcepInfo, uint* puArgErr)
         {
             // SpanOverloader
             return thisApi.IDispatchInvokeProxy(This, dispIdMember, riid, lcid, wFlags, ref pDispParams.GetPinnableReference(), pVarResult, pExcepInfo, puArgErr);
@@ -35970,7 +35970,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 5942, Column 41 in oaidl.h")]
-        public static unsafe int IDispatchInvokeProxy(this Windows thisApi, IDispatch* This, int dispIdMember, Guid* riid, uint lcid, ushort wFlags, Span<DispatchParams> pDispParams, Variant* pVarResult, ExcepInfo* pExcepInfo, Span<uint> puArgErr)
+        public static unsafe int IDispatchInvokeProxy(this Windows thisApi, IDispatch* This, int dispIdMember, Guid* riid, uint lcid, ushort wFlags, Span<DispatchParams> pDispParams, Variant* pVarResult, ExceptionInfo* pExcepInfo, Span<uint> puArgErr)
         {
             // SpanOverloader
             return thisApi.IDispatchInvokeProxy(This, dispIdMember, riid, lcid, wFlags, ref pDispParams.GetPinnableReference(), pVarResult, pExcepInfo, ref puArgErr.GetPinnableReference());
@@ -35978,7 +35978,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 5942, Column 41 in oaidl.h")]
-        public static unsafe int IDispatchInvokeProxy(this Windows thisApi, IDispatch* This, int dispIdMember, Guid* riid, uint lcid, ushort wFlags, Span<DispatchParams> pDispParams, Variant* pVarResult, Span<ExcepInfo> pExcepInfo, uint* puArgErr)
+        public static unsafe int IDispatchInvokeProxy(this Windows thisApi, IDispatch* This, int dispIdMember, Guid* riid, uint lcid, ushort wFlags, Span<DispatchParams> pDispParams, Variant* pVarResult, Span<ExceptionInfo> pExcepInfo, uint* puArgErr)
         {
             // SpanOverloader
             return thisApi.IDispatchInvokeProxy(This, dispIdMember, riid, lcid, wFlags, ref pDispParams.GetPinnableReference(), pVarResult, ref pExcepInfo.GetPinnableReference(), puArgErr);
@@ -35986,7 +35986,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 5942, Column 41 in oaidl.h")]
-        public static unsafe int IDispatchInvokeProxy(this Windows thisApi, IDispatch* This, int dispIdMember, Guid* riid, uint lcid, ushort wFlags, Span<DispatchParams> pDispParams, Variant* pVarResult, Span<ExcepInfo> pExcepInfo, Span<uint> puArgErr)
+        public static unsafe int IDispatchInvokeProxy(this Windows thisApi, IDispatch* This, int dispIdMember, Guid* riid, uint lcid, ushort wFlags, Span<DispatchParams> pDispParams, Variant* pVarResult, Span<ExceptionInfo> pExcepInfo, Span<uint> puArgErr)
         {
             // SpanOverloader
             return thisApi.IDispatchInvokeProxy(This, dispIdMember, riid, lcid, wFlags, ref pDispParams.GetPinnableReference(), pVarResult, ref pExcepInfo.GetPinnableReference(), ref puArgErr.GetPinnableReference());
@@ -35994,7 +35994,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 5942, Column 41 in oaidl.h")]
-        public static unsafe int IDispatchInvokeProxy(this Windows thisApi, IDispatch* This, int dispIdMember, Guid* riid, uint lcid, ushort wFlags, Span<DispatchParams> pDispParams, Span<Variant> pVarResult, ExcepInfo* pExcepInfo, uint* puArgErr)
+        public static unsafe int IDispatchInvokeProxy(this Windows thisApi, IDispatch* This, int dispIdMember, Guid* riid, uint lcid, ushort wFlags, Span<DispatchParams> pDispParams, Span<Variant> pVarResult, ExceptionInfo* pExcepInfo, uint* puArgErr)
         {
             // SpanOverloader
             return thisApi.IDispatchInvokeProxy(This, dispIdMember, riid, lcid, wFlags, ref pDispParams.GetPinnableReference(), ref pVarResult.GetPinnableReference(), pExcepInfo, puArgErr);
@@ -36002,7 +36002,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 5942, Column 41 in oaidl.h")]
-        public static unsafe int IDispatchInvokeProxy(this Windows thisApi, IDispatch* This, int dispIdMember, Guid* riid, uint lcid, ushort wFlags, Span<DispatchParams> pDispParams, Span<Variant> pVarResult, ExcepInfo* pExcepInfo, Span<uint> puArgErr)
+        public static unsafe int IDispatchInvokeProxy(this Windows thisApi, IDispatch* This, int dispIdMember, Guid* riid, uint lcid, ushort wFlags, Span<DispatchParams> pDispParams, Span<Variant> pVarResult, ExceptionInfo* pExcepInfo, Span<uint> puArgErr)
         {
             // SpanOverloader
             return thisApi.IDispatchInvokeProxy(This, dispIdMember, riid, lcid, wFlags, ref pDispParams.GetPinnableReference(), ref pVarResult.GetPinnableReference(), pExcepInfo, ref puArgErr.GetPinnableReference());
@@ -36010,7 +36010,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 5942, Column 41 in oaidl.h")]
-        public static unsafe int IDispatchInvokeProxy(this Windows thisApi, IDispatch* This, int dispIdMember, Guid* riid, uint lcid, ushort wFlags, Span<DispatchParams> pDispParams, Span<Variant> pVarResult, Span<ExcepInfo> pExcepInfo, uint* puArgErr)
+        public static unsafe int IDispatchInvokeProxy(this Windows thisApi, IDispatch* This, int dispIdMember, Guid* riid, uint lcid, ushort wFlags, Span<DispatchParams> pDispParams, Span<Variant> pVarResult, Span<ExceptionInfo> pExcepInfo, uint* puArgErr)
         {
             // SpanOverloader
             return thisApi.IDispatchInvokeProxy(This, dispIdMember, riid, lcid, wFlags, ref pDispParams.GetPinnableReference(), ref pVarResult.GetPinnableReference(), ref pExcepInfo.GetPinnableReference(), puArgErr);
@@ -36018,7 +36018,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 5942, Column 41 in oaidl.h")]
-        public static unsafe int IDispatchInvokeProxy(this Windows thisApi, IDispatch* This, int dispIdMember, Guid* riid, uint lcid, ushort wFlags, Span<DispatchParams> pDispParams, Span<Variant> pVarResult, Span<ExcepInfo> pExcepInfo, Span<uint> puArgErr)
+        public static unsafe int IDispatchInvokeProxy(this Windows thisApi, IDispatch* This, int dispIdMember, Guid* riid, uint lcid, ushort wFlags, Span<DispatchParams> pDispParams, Span<Variant> pVarResult, Span<ExceptionInfo> pExcepInfo, Span<uint> puArgErr)
         {
             // SpanOverloader
             return thisApi.IDispatchInvokeProxy(This, dispIdMember, riid, lcid, wFlags, ref pDispParams.GetPinnableReference(), ref pVarResult.GetPinnableReference(), ref pExcepInfo.GetPinnableReference(), ref puArgErr.GetPinnableReference());
@@ -36026,7 +36026,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 5942, Column 41 in oaidl.h")]
-        public static unsafe int IDispatchInvokeProxy(this Windows thisApi, IDispatch* This, int dispIdMember, Span<Guid> riid, uint lcid, ushort wFlags, DispatchParams* pDispParams, Variant* pVarResult, ExcepInfo* pExcepInfo, uint* puArgErr)
+        public static unsafe int IDispatchInvokeProxy(this Windows thisApi, IDispatch* This, int dispIdMember, Span<Guid> riid, uint lcid, ushort wFlags, DispatchParams* pDispParams, Variant* pVarResult, ExceptionInfo* pExcepInfo, uint* puArgErr)
         {
             // SpanOverloader
             return thisApi.IDispatchInvokeProxy(This, dispIdMember, ref riid.GetPinnableReference(), lcid, wFlags, pDispParams, pVarResult, pExcepInfo, puArgErr);
@@ -36034,7 +36034,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 5942, Column 41 in oaidl.h")]
-        public static unsafe int IDispatchInvokeProxy(this Windows thisApi, IDispatch* This, int dispIdMember, Span<Guid> riid, uint lcid, ushort wFlags, DispatchParams* pDispParams, Variant* pVarResult, ExcepInfo* pExcepInfo, Span<uint> puArgErr)
+        public static unsafe int IDispatchInvokeProxy(this Windows thisApi, IDispatch* This, int dispIdMember, Span<Guid> riid, uint lcid, ushort wFlags, DispatchParams* pDispParams, Variant* pVarResult, ExceptionInfo* pExcepInfo, Span<uint> puArgErr)
         {
             // SpanOverloader
             return thisApi.IDispatchInvokeProxy(This, dispIdMember, ref riid.GetPinnableReference(), lcid, wFlags, pDispParams, pVarResult, pExcepInfo, ref puArgErr.GetPinnableReference());
@@ -36042,7 +36042,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 5942, Column 41 in oaidl.h")]
-        public static unsafe int IDispatchInvokeProxy(this Windows thisApi, IDispatch* This, int dispIdMember, Span<Guid> riid, uint lcid, ushort wFlags, DispatchParams* pDispParams, Variant* pVarResult, Span<ExcepInfo> pExcepInfo, uint* puArgErr)
+        public static unsafe int IDispatchInvokeProxy(this Windows thisApi, IDispatch* This, int dispIdMember, Span<Guid> riid, uint lcid, ushort wFlags, DispatchParams* pDispParams, Variant* pVarResult, Span<ExceptionInfo> pExcepInfo, uint* puArgErr)
         {
             // SpanOverloader
             return thisApi.IDispatchInvokeProxy(This, dispIdMember, ref riid.GetPinnableReference(), lcid, wFlags, pDispParams, pVarResult, ref pExcepInfo.GetPinnableReference(), puArgErr);
@@ -36050,7 +36050,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 5942, Column 41 in oaidl.h")]
-        public static unsafe int IDispatchInvokeProxy(this Windows thisApi, IDispatch* This, int dispIdMember, Span<Guid> riid, uint lcid, ushort wFlags, DispatchParams* pDispParams, Variant* pVarResult, Span<ExcepInfo> pExcepInfo, Span<uint> puArgErr)
+        public static unsafe int IDispatchInvokeProxy(this Windows thisApi, IDispatch* This, int dispIdMember, Span<Guid> riid, uint lcid, ushort wFlags, DispatchParams* pDispParams, Variant* pVarResult, Span<ExceptionInfo> pExcepInfo, Span<uint> puArgErr)
         {
             // SpanOverloader
             return thisApi.IDispatchInvokeProxy(This, dispIdMember, ref riid.GetPinnableReference(), lcid, wFlags, pDispParams, pVarResult, ref pExcepInfo.GetPinnableReference(), ref puArgErr.GetPinnableReference());
@@ -36058,7 +36058,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 5942, Column 41 in oaidl.h")]
-        public static unsafe int IDispatchInvokeProxy(this Windows thisApi, IDispatch* This, int dispIdMember, Span<Guid> riid, uint lcid, ushort wFlags, DispatchParams* pDispParams, Span<Variant> pVarResult, ExcepInfo* pExcepInfo, uint* puArgErr)
+        public static unsafe int IDispatchInvokeProxy(this Windows thisApi, IDispatch* This, int dispIdMember, Span<Guid> riid, uint lcid, ushort wFlags, DispatchParams* pDispParams, Span<Variant> pVarResult, ExceptionInfo* pExcepInfo, uint* puArgErr)
         {
             // SpanOverloader
             return thisApi.IDispatchInvokeProxy(This, dispIdMember, ref riid.GetPinnableReference(), lcid, wFlags, pDispParams, ref pVarResult.GetPinnableReference(), pExcepInfo, puArgErr);
@@ -36066,7 +36066,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 5942, Column 41 in oaidl.h")]
-        public static unsafe int IDispatchInvokeProxy(this Windows thisApi, IDispatch* This, int dispIdMember, Span<Guid> riid, uint lcid, ushort wFlags, DispatchParams* pDispParams, Span<Variant> pVarResult, ExcepInfo* pExcepInfo, Span<uint> puArgErr)
+        public static unsafe int IDispatchInvokeProxy(this Windows thisApi, IDispatch* This, int dispIdMember, Span<Guid> riid, uint lcid, ushort wFlags, DispatchParams* pDispParams, Span<Variant> pVarResult, ExceptionInfo* pExcepInfo, Span<uint> puArgErr)
         {
             // SpanOverloader
             return thisApi.IDispatchInvokeProxy(This, dispIdMember, ref riid.GetPinnableReference(), lcid, wFlags, pDispParams, ref pVarResult.GetPinnableReference(), pExcepInfo, ref puArgErr.GetPinnableReference());
@@ -36074,7 +36074,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 5942, Column 41 in oaidl.h")]
-        public static unsafe int IDispatchInvokeProxy(this Windows thisApi, IDispatch* This, int dispIdMember, Span<Guid> riid, uint lcid, ushort wFlags, DispatchParams* pDispParams, Span<Variant> pVarResult, Span<ExcepInfo> pExcepInfo, uint* puArgErr)
+        public static unsafe int IDispatchInvokeProxy(this Windows thisApi, IDispatch* This, int dispIdMember, Span<Guid> riid, uint lcid, ushort wFlags, DispatchParams* pDispParams, Span<Variant> pVarResult, Span<ExceptionInfo> pExcepInfo, uint* puArgErr)
         {
             // SpanOverloader
             return thisApi.IDispatchInvokeProxy(This, dispIdMember, ref riid.GetPinnableReference(), lcid, wFlags, pDispParams, ref pVarResult.GetPinnableReference(), ref pExcepInfo.GetPinnableReference(), puArgErr);
@@ -36082,7 +36082,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 5942, Column 41 in oaidl.h")]
-        public static unsafe int IDispatchInvokeProxy(this Windows thisApi, IDispatch* This, int dispIdMember, Span<Guid> riid, uint lcid, ushort wFlags, DispatchParams* pDispParams, Span<Variant> pVarResult, Span<ExcepInfo> pExcepInfo, Span<uint> puArgErr)
+        public static unsafe int IDispatchInvokeProxy(this Windows thisApi, IDispatch* This, int dispIdMember, Span<Guid> riid, uint lcid, ushort wFlags, DispatchParams* pDispParams, Span<Variant> pVarResult, Span<ExceptionInfo> pExcepInfo, Span<uint> puArgErr)
         {
             // SpanOverloader
             return thisApi.IDispatchInvokeProxy(This, dispIdMember, ref riid.GetPinnableReference(), lcid, wFlags, pDispParams, ref pVarResult.GetPinnableReference(), ref pExcepInfo.GetPinnableReference(), ref puArgErr.GetPinnableReference());
@@ -36090,7 +36090,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 5942, Column 41 in oaidl.h")]
-        public static unsafe int IDispatchInvokeProxy(this Windows thisApi, IDispatch* This, int dispIdMember, Span<Guid> riid, uint lcid, ushort wFlags, Span<DispatchParams> pDispParams, Variant* pVarResult, ExcepInfo* pExcepInfo, uint* puArgErr)
+        public static unsafe int IDispatchInvokeProxy(this Windows thisApi, IDispatch* This, int dispIdMember, Span<Guid> riid, uint lcid, ushort wFlags, Span<DispatchParams> pDispParams, Variant* pVarResult, ExceptionInfo* pExcepInfo, uint* puArgErr)
         {
             // SpanOverloader
             return thisApi.IDispatchInvokeProxy(This, dispIdMember, ref riid.GetPinnableReference(), lcid, wFlags, ref pDispParams.GetPinnableReference(), pVarResult, pExcepInfo, puArgErr);
@@ -36098,7 +36098,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 5942, Column 41 in oaidl.h")]
-        public static unsafe int IDispatchInvokeProxy(this Windows thisApi, IDispatch* This, int dispIdMember, Span<Guid> riid, uint lcid, ushort wFlags, Span<DispatchParams> pDispParams, Variant* pVarResult, ExcepInfo* pExcepInfo, Span<uint> puArgErr)
+        public static unsafe int IDispatchInvokeProxy(this Windows thisApi, IDispatch* This, int dispIdMember, Span<Guid> riid, uint lcid, ushort wFlags, Span<DispatchParams> pDispParams, Variant* pVarResult, ExceptionInfo* pExcepInfo, Span<uint> puArgErr)
         {
             // SpanOverloader
             return thisApi.IDispatchInvokeProxy(This, dispIdMember, ref riid.GetPinnableReference(), lcid, wFlags, ref pDispParams.GetPinnableReference(), pVarResult, pExcepInfo, ref puArgErr.GetPinnableReference());
@@ -36106,7 +36106,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 5942, Column 41 in oaidl.h")]
-        public static unsafe int IDispatchInvokeProxy(this Windows thisApi, IDispatch* This, int dispIdMember, Span<Guid> riid, uint lcid, ushort wFlags, Span<DispatchParams> pDispParams, Variant* pVarResult, Span<ExcepInfo> pExcepInfo, uint* puArgErr)
+        public static unsafe int IDispatchInvokeProxy(this Windows thisApi, IDispatch* This, int dispIdMember, Span<Guid> riid, uint lcid, ushort wFlags, Span<DispatchParams> pDispParams, Variant* pVarResult, Span<ExceptionInfo> pExcepInfo, uint* puArgErr)
         {
             // SpanOverloader
             return thisApi.IDispatchInvokeProxy(This, dispIdMember, ref riid.GetPinnableReference(), lcid, wFlags, ref pDispParams.GetPinnableReference(), pVarResult, ref pExcepInfo.GetPinnableReference(), puArgErr);
@@ -36114,7 +36114,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 5942, Column 41 in oaidl.h")]
-        public static unsafe int IDispatchInvokeProxy(this Windows thisApi, IDispatch* This, int dispIdMember, Span<Guid> riid, uint lcid, ushort wFlags, Span<DispatchParams> pDispParams, Variant* pVarResult, Span<ExcepInfo> pExcepInfo, Span<uint> puArgErr)
+        public static unsafe int IDispatchInvokeProxy(this Windows thisApi, IDispatch* This, int dispIdMember, Span<Guid> riid, uint lcid, ushort wFlags, Span<DispatchParams> pDispParams, Variant* pVarResult, Span<ExceptionInfo> pExcepInfo, Span<uint> puArgErr)
         {
             // SpanOverloader
             return thisApi.IDispatchInvokeProxy(This, dispIdMember, ref riid.GetPinnableReference(), lcid, wFlags, ref pDispParams.GetPinnableReference(), pVarResult, ref pExcepInfo.GetPinnableReference(), ref puArgErr.GetPinnableReference());
@@ -36122,7 +36122,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 5942, Column 41 in oaidl.h")]
-        public static unsafe int IDispatchInvokeProxy(this Windows thisApi, IDispatch* This, int dispIdMember, Span<Guid> riid, uint lcid, ushort wFlags, Span<DispatchParams> pDispParams, Span<Variant> pVarResult, ExcepInfo* pExcepInfo, uint* puArgErr)
+        public static unsafe int IDispatchInvokeProxy(this Windows thisApi, IDispatch* This, int dispIdMember, Span<Guid> riid, uint lcid, ushort wFlags, Span<DispatchParams> pDispParams, Span<Variant> pVarResult, ExceptionInfo* pExcepInfo, uint* puArgErr)
         {
             // SpanOverloader
             return thisApi.IDispatchInvokeProxy(This, dispIdMember, ref riid.GetPinnableReference(), lcid, wFlags, ref pDispParams.GetPinnableReference(), ref pVarResult.GetPinnableReference(), pExcepInfo, puArgErr);
@@ -36130,7 +36130,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 5942, Column 41 in oaidl.h")]
-        public static unsafe int IDispatchInvokeProxy(this Windows thisApi, IDispatch* This, int dispIdMember, Span<Guid> riid, uint lcid, ushort wFlags, Span<DispatchParams> pDispParams, Span<Variant> pVarResult, ExcepInfo* pExcepInfo, Span<uint> puArgErr)
+        public static unsafe int IDispatchInvokeProxy(this Windows thisApi, IDispatch* This, int dispIdMember, Span<Guid> riid, uint lcid, ushort wFlags, Span<DispatchParams> pDispParams, Span<Variant> pVarResult, ExceptionInfo* pExcepInfo, Span<uint> puArgErr)
         {
             // SpanOverloader
             return thisApi.IDispatchInvokeProxy(This, dispIdMember, ref riid.GetPinnableReference(), lcid, wFlags, ref pDispParams.GetPinnableReference(), ref pVarResult.GetPinnableReference(), pExcepInfo, ref puArgErr.GetPinnableReference());
@@ -36138,7 +36138,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 5942, Column 41 in oaidl.h")]
-        public static unsafe int IDispatchInvokeProxy(this Windows thisApi, IDispatch* This, int dispIdMember, Span<Guid> riid, uint lcid, ushort wFlags, Span<DispatchParams> pDispParams, Span<Variant> pVarResult, Span<ExcepInfo> pExcepInfo, uint* puArgErr)
+        public static unsafe int IDispatchInvokeProxy(this Windows thisApi, IDispatch* This, int dispIdMember, Span<Guid> riid, uint lcid, ushort wFlags, Span<DispatchParams> pDispParams, Span<Variant> pVarResult, Span<ExceptionInfo> pExcepInfo, uint* puArgErr)
         {
             // SpanOverloader
             return thisApi.IDispatchInvokeProxy(This, dispIdMember, ref riid.GetPinnableReference(), lcid, wFlags, ref pDispParams.GetPinnableReference(), ref pVarResult.GetPinnableReference(), ref pExcepInfo.GetPinnableReference(), puArgErr);
@@ -36146,7 +36146,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 5942, Column 41 in oaidl.h")]
-        public static unsafe int IDispatchInvokeProxy(this Windows thisApi, IDispatch* This, int dispIdMember, Span<Guid> riid, uint lcid, ushort wFlags, Span<DispatchParams> pDispParams, Span<Variant> pVarResult, Span<ExcepInfo> pExcepInfo, Span<uint> puArgErr)
+        public static unsafe int IDispatchInvokeProxy(this Windows thisApi, IDispatch* This, int dispIdMember, Span<Guid> riid, uint lcid, ushort wFlags, Span<DispatchParams> pDispParams, Span<Variant> pVarResult, Span<ExceptionInfo> pExcepInfo, Span<uint> puArgErr)
         {
             // SpanOverloader
             return thisApi.IDispatchInvokeProxy(This, dispIdMember, ref riid.GetPinnableReference(), lcid, wFlags, ref pDispParams.GetPinnableReference(), ref pVarResult.GetPinnableReference(), ref pExcepInfo.GetPinnableReference(), ref puArgErr.GetPinnableReference());
@@ -36154,7 +36154,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 5942, Column 41 in oaidl.h")]
-        public static unsafe int IDispatchInvokeProxy(this Windows thisApi, Span<IDispatch> This, int dispIdMember, Guid* riid, uint lcid, ushort wFlags, DispatchParams* pDispParams, Variant* pVarResult, ExcepInfo* pExcepInfo, uint* puArgErr)
+        public static unsafe int IDispatchInvokeProxy(this Windows thisApi, Span<IDispatch> This, int dispIdMember, Guid* riid, uint lcid, ushort wFlags, DispatchParams* pDispParams, Variant* pVarResult, ExceptionInfo* pExcepInfo, uint* puArgErr)
         {
             // SpanOverloader
             return thisApi.IDispatchInvokeProxy(ref This.GetPinnableReference(), dispIdMember, riid, lcid, wFlags, pDispParams, pVarResult, pExcepInfo, puArgErr);
@@ -36162,7 +36162,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 5942, Column 41 in oaidl.h")]
-        public static unsafe int IDispatchInvokeProxy(this Windows thisApi, Span<IDispatch> This, int dispIdMember, Guid* riid, uint lcid, ushort wFlags, DispatchParams* pDispParams, Variant* pVarResult, ExcepInfo* pExcepInfo, Span<uint> puArgErr)
+        public static unsafe int IDispatchInvokeProxy(this Windows thisApi, Span<IDispatch> This, int dispIdMember, Guid* riid, uint lcid, ushort wFlags, DispatchParams* pDispParams, Variant* pVarResult, ExceptionInfo* pExcepInfo, Span<uint> puArgErr)
         {
             // SpanOverloader
             return thisApi.IDispatchInvokeProxy(ref This.GetPinnableReference(), dispIdMember, riid, lcid, wFlags, pDispParams, pVarResult, pExcepInfo, ref puArgErr.GetPinnableReference());
@@ -36170,7 +36170,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 5942, Column 41 in oaidl.h")]
-        public static unsafe int IDispatchInvokeProxy(this Windows thisApi, Span<IDispatch> This, int dispIdMember, Guid* riid, uint lcid, ushort wFlags, DispatchParams* pDispParams, Variant* pVarResult, Span<ExcepInfo> pExcepInfo, uint* puArgErr)
+        public static unsafe int IDispatchInvokeProxy(this Windows thisApi, Span<IDispatch> This, int dispIdMember, Guid* riid, uint lcid, ushort wFlags, DispatchParams* pDispParams, Variant* pVarResult, Span<ExceptionInfo> pExcepInfo, uint* puArgErr)
         {
             // SpanOverloader
             return thisApi.IDispatchInvokeProxy(ref This.GetPinnableReference(), dispIdMember, riid, lcid, wFlags, pDispParams, pVarResult, ref pExcepInfo.GetPinnableReference(), puArgErr);
@@ -36178,7 +36178,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 5942, Column 41 in oaidl.h")]
-        public static unsafe int IDispatchInvokeProxy(this Windows thisApi, Span<IDispatch> This, int dispIdMember, Guid* riid, uint lcid, ushort wFlags, DispatchParams* pDispParams, Variant* pVarResult, Span<ExcepInfo> pExcepInfo, Span<uint> puArgErr)
+        public static unsafe int IDispatchInvokeProxy(this Windows thisApi, Span<IDispatch> This, int dispIdMember, Guid* riid, uint lcid, ushort wFlags, DispatchParams* pDispParams, Variant* pVarResult, Span<ExceptionInfo> pExcepInfo, Span<uint> puArgErr)
         {
             // SpanOverloader
             return thisApi.IDispatchInvokeProxy(ref This.GetPinnableReference(), dispIdMember, riid, lcid, wFlags, pDispParams, pVarResult, ref pExcepInfo.GetPinnableReference(), ref puArgErr.GetPinnableReference());
@@ -36186,7 +36186,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 5942, Column 41 in oaidl.h")]
-        public static unsafe int IDispatchInvokeProxy(this Windows thisApi, Span<IDispatch> This, int dispIdMember, Guid* riid, uint lcid, ushort wFlags, DispatchParams* pDispParams, Span<Variant> pVarResult, ExcepInfo* pExcepInfo, uint* puArgErr)
+        public static unsafe int IDispatchInvokeProxy(this Windows thisApi, Span<IDispatch> This, int dispIdMember, Guid* riid, uint lcid, ushort wFlags, DispatchParams* pDispParams, Span<Variant> pVarResult, ExceptionInfo* pExcepInfo, uint* puArgErr)
         {
             // SpanOverloader
             return thisApi.IDispatchInvokeProxy(ref This.GetPinnableReference(), dispIdMember, riid, lcid, wFlags, pDispParams, ref pVarResult.GetPinnableReference(), pExcepInfo, puArgErr);
@@ -36194,7 +36194,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 5942, Column 41 in oaidl.h")]
-        public static unsafe int IDispatchInvokeProxy(this Windows thisApi, Span<IDispatch> This, int dispIdMember, Guid* riid, uint lcid, ushort wFlags, DispatchParams* pDispParams, Span<Variant> pVarResult, ExcepInfo* pExcepInfo, Span<uint> puArgErr)
+        public static unsafe int IDispatchInvokeProxy(this Windows thisApi, Span<IDispatch> This, int dispIdMember, Guid* riid, uint lcid, ushort wFlags, DispatchParams* pDispParams, Span<Variant> pVarResult, ExceptionInfo* pExcepInfo, Span<uint> puArgErr)
         {
             // SpanOverloader
             return thisApi.IDispatchInvokeProxy(ref This.GetPinnableReference(), dispIdMember, riid, lcid, wFlags, pDispParams, ref pVarResult.GetPinnableReference(), pExcepInfo, ref puArgErr.GetPinnableReference());
@@ -36202,7 +36202,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 5942, Column 41 in oaidl.h")]
-        public static unsafe int IDispatchInvokeProxy(this Windows thisApi, Span<IDispatch> This, int dispIdMember, Guid* riid, uint lcid, ushort wFlags, DispatchParams* pDispParams, Span<Variant> pVarResult, Span<ExcepInfo> pExcepInfo, uint* puArgErr)
+        public static unsafe int IDispatchInvokeProxy(this Windows thisApi, Span<IDispatch> This, int dispIdMember, Guid* riid, uint lcid, ushort wFlags, DispatchParams* pDispParams, Span<Variant> pVarResult, Span<ExceptionInfo> pExcepInfo, uint* puArgErr)
         {
             // SpanOverloader
             return thisApi.IDispatchInvokeProxy(ref This.GetPinnableReference(), dispIdMember, riid, lcid, wFlags, pDispParams, ref pVarResult.GetPinnableReference(), ref pExcepInfo.GetPinnableReference(), puArgErr);
@@ -36210,7 +36210,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 5942, Column 41 in oaidl.h")]
-        public static unsafe int IDispatchInvokeProxy(this Windows thisApi, Span<IDispatch> This, int dispIdMember, Guid* riid, uint lcid, ushort wFlags, DispatchParams* pDispParams, Span<Variant> pVarResult, Span<ExcepInfo> pExcepInfo, Span<uint> puArgErr)
+        public static unsafe int IDispatchInvokeProxy(this Windows thisApi, Span<IDispatch> This, int dispIdMember, Guid* riid, uint lcid, ushort wFlags, DispatchParams* pDispParams, Span<Variant> pVarResult, Span<ExceptionInfo> pExcepInfo, Span<uint> puArgErr)
         {
             // SpanOverloader
             return thisApi.IDispatchInvokeProxy(ref This.GetPinnableReference(), dispIdMember, riid, lcid, wFlags, pDispParams, ref pVarResult.GetPinnableReference(), ref pExcepInfo.GetPinnableReference(), ref puArgErr.GetPinnableReference());
@@ -36218,7 +36218,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 5942, Column 41 in oaidl.h")]
-        public static unsafe int IDispatchInvokeProxy(this Windows thisApi, Span<IDispatch> This, int dispIdMember, Guid* riid, uint lcid, ushort wFlags, Span<DispatchParams> pDispParams, Variant* pVarResult, ExcepInfo* pExcepInfo, uint* puArgErr)
+        public static unsafe int IDispatchInvokeProxy(this Windows thisApi, Span<IDispatch> This, int dispIdMember, Guid* riid, uint lcid, ushort wFlags, Span<DispatchParams> pDispParams, Variant* pVarResult, ExceptionInfo* pExcepInfo, uint* puArgErr)
         {
             // SpanOverloader
             return thisApi.IDispatchInvokeProxy(ref This.GetPinnableReference(), dispIdMember, riid, lcid, wFlags, ref pDispParams.GetPinnableReference(), pVarResult, pExcepInfo, puArgErr);
@@ -36226,7 +36226,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 5942, Column 41 in oaidl.h")]
-        public static unsafe int IDispatchInvokeProxy(this Windows thisApi, Span<IDispatch> This, int dispIdMember, Guid* riid, uint lcid, ushort wFlags, Span<DispatchParams> pDispParams, Variant* pVarResult, ExcepInfo* pExcepInfo, Span<uint> puArgErr)
+        public static unsafe int IDispatchInvokeProxy(this Windows thisApi, Span<IDispatch> This, int dispIdMember, Guid* riid, uint lcid, ushort wFlags, Span<DispatchParams> pDispParams, Variant* pVarResult, ExceptionInfo* pExcepInfo, Span<uint> puArgErr)
         {
             // SpanOverloader
             return thisApi.IDispatchInvokeProxy(ref This.GetPinnableReference(), dispIdMember, riid, lcid, wFlags, ref pDispParams.GetPinnableReference(), pVarResult, pExcepInfo, ref puArgErr.GetPinnableReference());
@@ -36234,7 +36234,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 5942, Column 41 in oaidl.h")]
-        public static unsafe int IDispatchInvokeProxy(this Windows thisApi, Span<IDispatch> This, int dispIdMember, Guid* riid, uint lcid, ushort wFlags, Span<DispatchParams> pDispParams, Variant* pVarResult, Span<ExcepInfo> pExcepInfo, uint* puArgErr)
+        public static unsafe int IDispatchInvokeProxy(this Windows thisApi, Span<IDispatch> This, int dispIdMember, Guid* riid, uint lcid, ushort wFlags, Span<DispatchParams> pDispParams, Variant* pVarResult, Span<ExceptionInfo> pExcepInfo, uint* puArgErr)
         {
             // SpanOverloader
             return thisApi.IDispatchInvokeProxy(ref This.GetPinnableReference(), dispIdMember, riid, lcid, wFlags, ref pDispParams.GetPinnableReference(), pVarResult, ref pExcepInfo.GetPinnableReference(), puArgErr);
@@ -36242,7 +36242,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 5942, Column 41 in oaidl.h")]
-        public static unsafe int IDispatchInvokeProxy(this Windows thisApi, Span<IDispatch> This, int dispIdMember, Guid* riid, uint lcid, ushort wFlags, Span<DispatchParams> pDispParams, Variant* pVarResult, Span<ExcepInfo> pExcepInfo, Span<uint> puArgErr)
+        public static unsafe int IDispatchInvokeProxy(this Windows thisApi, Span<IDispatch> This, int dispIdMember, Guid* riid, uint lcid, ushort wFlags, Span<DispatchParams> pDispParams, Variant* pVarResult, Span<ExceptionInfo> pExcepInfo, Span<uint> puArgErr)
         {
             // SpanOverloader
             return thisApi.IDispatchInvokeProxy(ref This.GetPinnableReference(), dispIdMember, riid, lcid, wFlags, ref pDispParams.GetPinnableReference(), pVarResult, ref pExcepInfo.GetPinnableReference(), ref puArgErr.GetPinnableReference());
@@ -36250,7 +36250,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 5942, Column 41 in oaidl.h")]
-        public static unsafe int IDispatchInvokeProxy(this Windows thisApi, Span<IDispatch> This, int dispIdMember, Guid* riid, uint lcid, ushort wFlags, Span<DispatchParams> pDispParams, Span<Variant> pVarResult, ExcepInfo* pExcepInfo, uint* puArgErr)
+        public static unsafe int IDispatchInvokeProxy(this Windows thisApi, Span<IDispatch> This, int dispIdMember, Guid* riid, uint lcid, ushort wFlags, Span<DispatchParams> pDispParams, Span<Variant> pVarResult, ExceptionInfo* pExcepInfo, uint* puArgErr)
         {
             // SpanOverloader
             return thisApi.IDispatchInvokeProxy(ref This.GetPinnableReference(), dispIdMember, riid, lcid, wFlags, ref pDispParams.GetPinnableReference(), ref pVarResult.GetPinnableReference(), pExcepInfo, puArgErr);
@@ -36258,7 +36258,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 5942, Column 41 in oaidl.h")]
-        public static unsafe int IDispatchInvokeProxy(this Windows thisApi, Span<IDispatch> This, int dispIdMember, Guid* riid, uint lcid, ushort wFlags, Span<DispatchParams> pDispParams, Span<Variant> pVarResult, ExcepInfo* pExcepInfo, Span<uint> puArgErr)
+        public static unsafe int IDispatchInvokeProxy(this Windows thisApi, Span<IDispatch> This, int dispIdMember, Guid* riid, uint lcid, ushort wFlags, Span<DispatchParams> pDispParams, Span<Variant> pVarResult, ExceptionInfo* pExcepInfo, Span<uint> puArgErr)
         {
             // SpanOverloader
             return thisApi.IDispatchInvokeProxy(ref This.GetPinnableReference(), dispIdMember, riid, lcid, wFlags, ref pDispParams.GetPinnableReference(), ref pVarResult.GetPinnableReference(), pExcepInfo, ref puArgErr.GetPinnableReference());
@@ -36266,7 +36266,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 5942, Column 41 in oaidl.h")]
-        public static unsafe int IDispatchInvokeProxy(this Windows thisApi, Span<IDispatch> This, int dispIdMember, Guid* riid, uint lcid, ushort wFlags, Span<DispatchParams> pDispParams, Span<Variant> pVarResult, Span<ExcepInfo> pExcepInfo, uint* puArgErr)
+        public static unsafe int IDispatchInvokeProxy(this Windows thisApi, Span<IDispatch> This, int dispIdMember, Guid* riid, uint lcid, ushort wFlags, Span<DispatchParams> pDispParams, Span<Variant> pVarResult, Span<ExceptionInfo> pExcepInfo, uint* puArgErr)
         {
             // SpanOverloader
             return thisApi.IDispatchInvokeProxy(ref This.GetPinnableReference(), dispIdMember, riid, lcid, wFlags, ref pDispParams.GetPinnableReference(), ref pVarResult.GetPinnableReference(), ref pExcepInfo.GetPinnableReference(), puArgErr);
@@ -36274,7 +36274,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 5942, Column 41 in oaidl.h")]
-        public static unsafe int IDispatchInvokeProxy(this Windows thisApi, Span<IDispatch> This, int dispIdMember, Guid* riid, uint lcid, ushort wFlags, Span<DispatchParams> pDispParams, Span<Variant> pVarResult, Span<ExcepInfo> pExcepInfo, Span<uint> puArgErr)
+        public static unsafe int IDispatchInvokeProxy(this Windows thisApi, Span<IDispatch> This, int dispIdMember, Guid* riid, uint lcid, ushort wFlags, Span<DispatchParams> pDispParams, Span<Variant> pVarResult, Span<ExceptionInfo> pExcepInfo, Span<uint> puArgErr)
         {
             // SpanOverloader
             return thisApi.IDispatchInvokeProxy(ref This.GetPinnableReference(), dispIdMember, riid, lcid, wFlags, ref pDispParams.GetPinnableReference(), ref pVarResult.GetPinnableReference(), ref pExcepInfo.GetPinnableReference(), ref puArgErr.GetPinnableReference());
@@ -36282,7 +36282,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 5942, Column 41 in oaidl.h")]
-        public static unsafe int IDispatchInvokeProxy(this Windows thisApi, Span<IDispatch> This, int dispIdMember, Span<Guid> riid, uint lcid, ushort wFlags, DispatchParams* pDispParams, Variant* pVarResult, ExcepInfo* pExcepInfo, uint* puArgErr)
+        public static unsafe int IDispatchInvokeProxy(this Windows thisApi, Span<IDispatch> This, int dispIdMember, Span<Guid> riid, uint lcid, ushort wFlags, DispatchParams* pDispParams, Variant* pVarResult, ExceptionInfo* pExcepInfo, uint* puArgErr)
         {
             // SpanOverloader
             return thisApi.IDispatchInvokeProxy(ref This.GetPinnableReference(), dispIdMember, ref riid.GetPinnableReference(), lcid, wFlags, pDispParams, pVarResult, pExcepInfo, puArgErr);
@@ -36290,7 +36290,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 5942, Column 41 in oaidl.h")]
-        public static unsafe int IDispatchInvokeProxy(this Windows thisApi, Span<IDispatch> This, int dispIdMember, Span<Guid> riid, uint lcid, ushort wFlags, DispatchParams* pDispParams, Variant* pVarResult, ExcepInfo* pExcepInfo, Span<uint> puArgErr)
+        public static unsafe int IDispatchInvokeProxy(this Windows thisApi, Span<IDispatch> This, int dispIdMember, Span<Guid> riid, uint lcid, ushort wFlags, DispatchParams* pDispParams, Variant* pVarResult, ExceptionInfo* pExcepInfo, Span<uint> puArgErr)
         {
             // SpanOverloader
             return thisApi.IDispatchInvokeProxy(ref This.GetPinnableReference(), dispIdMember, ref riid.GetPinnableReference(), lcid, wFlags, pDispParams, pVarResult, pExcepInfo, ref puArgErr.GetPinnableReference());
@@ -36298,7 +36298,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 5942, Column 41 in oaidl.h")]
-        public static unsafe int IDispatchInvokeProxy(this Windows thisApi, Span<IDispatch> This, int dispIdMember, Span<Guid> riid, uint lcid, ushort wFlags, DispatchParams* pDispParams, Variant* pVarResult, Span<ExcepInfo> pExcepInfo, uint* puArgErr)
+        public static unsafe int IDispatchInvokeProxy(this Windows thisApi, Span<IDispatch> This, int dispIdMember, Span<Guid> riid, uint lcid, ushort wFlags, DispatchParams* pDispParams, Variant* pVarResult, Span<ExceptionInfo> pExcepInfo, uint* puArgErr)
         {
             // SpanOverloader
             return thisApi.IDispatchInvokeProxy(ref This.GetPinnableReference(), dispIdMember, ref riid.GetPinnableReference(), lcid, wFlags, pDispParams, pVarResult, ref pExcepInfo.GetPinnableReference(), puArgErr);
@@ -36306,7 +36306,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 5942, Column 41 in oaidl.h")]
-        public static unsafe int IDispatchInvokeProxy(this Windows thisApi, Span<IDispatch> This, int dispIdMember, Span<Guid> riid, uint lcid, ushort wFlags, DispatchParams* pDispParams, Variant* pVarResult, Span<ExcepInfo> pExcepInfo, Span<uint> puArgErr)
+        public static unsafe int IDispatchInvokeProxy(this Windows thisApi, Span<IDispatch> This, int dispIdMember, Span<Guid> riid, uint lcid, ushort wFlags, DispatchParams* pDispParams, Variant* pVarResult, Span<ExceptionInfo> pExcepInfo, Span<uint> puArgErr)
         {
             // SpanOverloader
             return thisApi.IDispatchInvokeProxy(ref This.GetPinnableReference(), dispIdMember, ref riid.GetPinnableReference(), lcid, wFlags, pDispParams, pVarResult, ref pExcepInfo.GetPinnableReference(), ref puArgErr.GetPinnableReference());
@@ -36314,7 +36314,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 5942, Column 41 in oaidl.h")]
-        public static unsafe int IDispatchInvokeProxy(this Windows thisApi, Span<IDispatch> This, int dispIdMember, Span<Guid> riid, uint lcid, ushort wFlags, DispatchParams* pDispParams, Span<Variant> pVarResult, ExcepInfo* pExcepInfo, uint* puArgErr)
+        public static unsafe int IDispatchInvokeProxy(this Windows thisApi, Span<IDispatch> This, int dispIdMember, Span<Guid> riid, uint lcid, ushort wFlags, DispatchParams* pDispParams, Span<Variant> pVarResult, ExceptionInfo* pExcepInfo, uint* puArgErr)
         {
             // SpanOverloader
             return thisApi.IDispatchInvokeProxy(ref This.GetPinnableReference(), dispIdMember, ref riid.GetPinnableReference(), lcid, wFlags, pDispParams, ref pVarResult.GetPinnableReference(), pExcepInfo, puArgErr);
@@ -36322,7 +36322,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 5942, Column 41 in oaidl.h")]
-        public static unsafe int IDispatchInvokeProxy(this Windows thisApi, Span<IDispatch> This, int dispIdMember, Span<Guid> riid, uint lcid, ushort wFlags, DispatchParams* pDispParams, Span<Variant> pVarResult, ExcepInfo* pExcepInfo, Span<uint> puArgErr)
+        public static unsafe int IDispatchInvokeProxy(this Windows thisApi, Span<IDispatch> This, int dispIdMember, Span<Guid> riid, uint lcid, ushort wFlags, DispatchParams* pDispParams, Span<Variant> pVarResult, ExceptionInfo* pExcepInfo, Span<uint> puArgErr)
         {
             // SpanOverloader
             return thisApi.IDispatchInvokeProxy(ref This.GetPinnableReference(), dispIdMember, ref riid.GetPinnableReference(), lcid, wFlags, pDispParams, ref pVarResult.GetPinnableReference(), pExcepInfo, ref puArgErr.GetPinnableReference());
@@ -36330,7 +36330,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 5942, Column 41 in oaidl.h")]
-        public static unsafe int IDispatchInvokeProxy(this Windows thisApi, Span<IDispatch> This, int dispIdMember, Span<Guid> riid, uint lcid, ushort wFlags, DispatchParams* pDispParams, Span<Variant> pVarResult, Span<ExcepInfo> pExcepInfo, uint* puArgErr)
+        public static unsafe int IDispatchInvokeProxy(this Windows thisApi, Span<IDispatch> This, int dispIdMember, Span<Guid> riid, uint lcid, ushort wFlags, DispatchParams* pDispParams, Span<Variant> pVarResult, Span<ExceptionInfo> pExcepInfo, uint* puArgErr)
         {
             // SpanOverloader
             return thisApi.IDispatchInvokeProxy(ref This.GetPinnableReference(), dispIdMember, ref riid.GetPinnableReference(), lcid, wFlags, pDispParams, ref pVarResult.GetPinnableReference(), ref pExcepInfo.GetPinnableReference(), puArgErr);
@@ -36338,7 +36338,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 5942, Column 41 in oaidl.h")]
-        public static unsafe int IDispatchInvokeProxy(this Windows thisApi, Span<IDispatch> This, int dispIdMember, Span<Guid> riid, uint lcid, ushort wFlags, DispatchParams* pDispParams, Span<Variant> pVarResult, Span<ExcepInfo> pExcepInfo, Span<uint> puArgErr)
+        public static unsafe int IDispatchInvokeProxy(this Windows thisApi, Span<IDispatch> This, int dispIdMember, Span<Guid> riid, uint lcid, ushort wFlags, DispatchParams* pDispParams, Span<Variant> pVarResult, Span<ExceptionInfo> pExcepInfo, Span<uint> puArgErr)
         {
             // SpanOverloader
             return thisApi.IDispatchInvokeProxy(ref This.GetPinnableReference(), dispIdMember, ref riid.GetPinnableReference(), lcid, wFlags, pDispParams, ref pVarResult.GetPinnableReference(), ref pExcepInfo.GetPinnableReference(), ref puArgErr.GetPinnableReference());
@@ -36346,7 +36346,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 5942, Column 41 in oaidl.h")]
-        public static unsafe int IDispatchInvokeProxy(this Windows thisApi, Span<IDispatch> This, int dispIdMember, Span<Guid> riid, uint lcid, ushort wFlags, Span<DispatchParams> pDispParams, Variant* pVarResult, ExcepInfo* pExcepInfo, uint* puArgErr)
+        public static unsafe int IDispatchInvokeProxy(this Windows thisApi, Span<IDispatch> This, int dispIdMember, Span<Guid> riid, uint lcid, ushort wFlags, Span<DispatchParams> pDispParams, Variant* pVarResult, ExceptionInfo* pExcepInfo, uint* puArgErr)
         {
             // SpanOverloader
             return thisApi.IDispatchInvokeProxy(ref This.GetPinnableReference(), dispIdMember, ref riid.GetPinnableReference(), lcid, wFlags, ref pDispParams.GetPinnableReference(), pVarResult, pExcepInfo, puArgErr);
@@ -36354,7 +36354,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 5942, Column 41 in oaidl.h")]
-        public static unsafe int IDispatchInvokeProxy(this Windows thisApi, Span<IDispatch> This, int dispIdMember, Span<Guid> riid, uint lcid, ushort wFlags, Span<DispatchParams> pDispParams, Variant* pVarResult, ExcepInfo* pExcepInfo, Span<uint> puArgErr)
+        public static unsafe int IDispatchInvokeProxy(this Windows thisApi, Span<IDispatch> This, int dispIdMember, Span<Guid> riid, uint lcid, ushort wFlags, Span<DispatchParams> pDispParams, Variant* pVarResult, ExceptionInfo* pExcepInfo, Span<uint> puArgErr)
         {
             // SpanOverloader
             return thisApi.IDispatchInvokeProxy(ref This.GetPinnableReference(), dispIdMember, ref riid.GetPinnableReference(), lcid, wFlags, ref pDispParams.GetPinnableReference(), pVarResult, pExcepInfo, ref puArgErr.GetPinnableReference());
@@ -36362,7 +36362,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 5942, Column 41 in oaidl.h")]
-        public static unsafe int IDispatchInvokeProxy(this Windows thisApi, Span<IDispatch> This, int dispIdMember, Span<Guid> riid, uint lcid, ushort wFlags, Span<DispatchParams> pDispParams, Variant* pVarResult, Span<ExcepInfo> pExcepInfo, uint* puArgErr)
+        public static unsafe int IDispatchInvokeProxy(this Windows thisApi, Span<IDispatch> This, int dispIdMember, Span<Guid> riid, uint lcid, ushort wFlags, Span<DispatchParams> pDispParams, Variant* pVarResult, Span<ExceptionInfo> pExcepInfo, uint* puArgErr)
         {
             // SpanOverloader
             return thisApi.IDispatchInvokeProxy(ref This.GetPinnableReference(), dispIdMember, ref riid.GetPinnableReference(), lcid, wFlags, ref pDispParams.GetPinnableReference(), pVarResult, ref pExcepInfo.GetPinnableReference(), puArgErr);
@@ -36370,7 +36370,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 5942, Column 41 in oaidl.h")]
-        public static unsafe int IDispatchInvokeProxy(this Windows thisApi, Span<IDispatch> This, int dispIdMember, Span<Guid> riid, uint lcid, ushort wFlags, Span<DispatchParams> pDispParams, Variant* pVarResult, Span<ExcepInfo> pExcepInfo, Span<uint> puArgErr)
+        public static unsafe int IDispatchInvokeProxy(this Windows thisApi, Span<IDispatch> This, int dispIdMember, Span<Guid> riid, uint lcid, ushort wFlags, Span<DispatchParams> pDispParams, Variant* pVarResult, Span<ExceptionInfo> pExcepInfo, Span<uint> puArgErr)
         {
             // SpanOverloader
             return thisApi.IDispatchInvokeProxy(ref This.GetPinnableReference(), dispIdMember, ref riid.GetPinnableReference(), lcid, wFlags, ref pDispParams.GetPinnableReference(), pVarResult, ref pExcepInfo.GetPinnableReference(), ref puArgErr.GetPinnableReference());
@@ -36378,7 +36378,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 5942, Column 41 in oaidl.h")]
-        public static unsafe int IDispatchInvokeProxy(this Windows thisApi, Span<IDispatch> This, int dispIdMember, Span<Guid> riid, uint lcid, ushort wFlags, Span<DispatchParams> pDispParams, Span<Variant> pVarResult, ExcepInfo* pExcepInfo, uint* puArgErr)
+        public static unsafe int IDispatchInvokeProxy(this Windows thisApi, Span<IDispatch> This, int dispIdMember, Span<Guid> riid, uint lcid, ushort wFlags, Span<DispatchParams> pDispParams, Span<Variant> pVarResult, ExceptionInfo* pExcepInfo, uint* puArgErr)
         {
             // SpanOverloader
             return thisApi.IDispatchInvokeProxy(ref This.GetPinnableReference(), dispIdMember, ref riid.GetPinnableReference(), lcid, wFlags, ref pDispParams.GetPinnableReference(), ref pVarResult.GetPinnableReference(), pExcepInfo, puArgErr);
@@ -36386,7 +36386,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 5942, Column 41 in oaidl.h")]
-        public static unsafe int IDispatchInvokeProxy(this Windows thisApi, Span<IDispatch> This, int dispIdMember, Span<Guid> riid, uint lcid, ushort wFlags, Span<DispatchParams> pDispParams, Span<Variant> pVarResult, ExcepInfo* pExcepInfo, Span<uint> puArgErr)
+        public static unsafe int IDispatchInvokeProxy(this Windows thisApi, Span<IDispatch> This, int dispIdMember, Span<Guid> riid, uint lcid, ushort wFlags, Span<DispatchParams> pDispParams, Span<Variant> pVarResult, ExceptionInfo* pExcepInfo, Span<uint> puArgErr)
         {
             // SpanOverloader
             return thisApi.IDispatchInvokeProxy(ref This.GetPinnableReference(), dispIdMember, ref riid.GetPinnableReference(), lcid, wFlags, ref pDispParams.GetPinnableReference(), ref pVarResult.GetPinnableReference(), pExcepInfo, ref puArgErr.GetPinnableReference());
@@ -36394,7 +36394,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 5942, Column 41 in oaidl.h")]
-        public static unsafe int IDispatchInvokeProxy(this Windows thisApi, Span<IDispatch> This, int dispIdMember, Span<Guid> riid, uint lcid, ushort wFlags, Span<DispatchParams> pDispParams, Span<Variant> pVarResult, Span<ExcepInfo> pExcepInfo, uint* puArgErr)
+        public static unsafe int IDispatchInvokeProxy(this Windows thisApi, Span<IDispatch> This, int dispIdMember, Span<Guid> riid, uint lcid, ushort wFlags, Span<DispatchParams> pDispParams, Span<Variant> pVarResult, Span<ExceptionInfo> pExcepInfo, uint* puArgErr)
         {
             // SpanOverloader
             return thisApi.IDispatchInvokeProxy(ref This.GetPinnableReference(), dispIdMember, ref riid.GetPinnableReference(), lcid, wFlags, ref pDispParams.GetPinnableReference(), ref pVarResult.GetPinnableReference(), ref pExcepInfo.GetPinnableReference(), puArgErr);
@@ -36402,7 +36402,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 5942, Column 41 in oaidl.h")]
-        public static unsafe int IDispatchInvokeProxy(this Windows thisApi, Span<IDispatch> This, int dispIdMember, Span<Guid> riid, uint lcid, ushort wFlags, Span<DispatchParams> pDispParams, Span<Variant> pVarResult, Span<ExcepInfo> pExcepInfo, Span<uint> puArgErr)
+        public static unsafe int IDispatchInvokeProxy(this Windows thisApi, Span<IDispatch> This, int dispIdMember, Span<Guid> riid, uint lcid, ushort wFlags, Span<DispatchParams> pDispParams, Span<Variant> pVarResult, Span<ExceptionInfo> pExcepInfo, Span<uint> puArgErr)
         {
             // SpanOverloader
             return thisApi.IDispatchInvokeProxy(ref This.GetPinnableReference(), dispIdMember, ref riid.GetPinnableReference(), lcid, wFlags, ref pDispParams.GetPinnableReference(), ref pVarResult.GetPinnableReference(), ref pExcepInfo.GetPinnableReference(), ref puArgErr.GetPinnableReference());
@@ -36410,7 +36410,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 5962, Column 43 in oaidl.h")]
-        public static unsafe int IDispatchInvokeStub(this Windows thisApi, IDispatch* This, int dispIdMember, Guid* riid, uint lcid, uint dwFlags, DispatchParams* pDispParams, Variant* pVarResult, ExcepInfo* pExcepInfo, uint* pArgErr, uint cVarRef, uint* rgVarRefIdx, Span<Variant> rgVarRef)
+        public static unsafe int IDispatchInvokeStub(this Windows thisApi, IDispatch* This, int dispIdMember, Guid* riid, uint lcid, uint dwFlags, DispatchParams* pDispParams, Variant* pVarResult, ExceptionInfo* pExcepInfo, uint* pArgErr, uint cVarRef, uint* rgVarRefIdx, Span<Variant> rgVarRef)
         {
             // SpanOverloader
             return thisApi.IDispatchInvokeStub(This, dispIdMember, riid, lcid, dwFlags, pDispParams, pVarResult, pExcepInfo, pArgErr, cVarRef, rgVarRefIdx, ref rgVarRef.GetPinnableReference());
@@ -36418,7 +36418,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 5962, Column 43 in oaidl.h")]
-        public static unsafe int IDispatchInvokeStub(this Windows thisApi, IDispatch* This, int dispIdMember, Guid* riid, uint lcid, uint dwFlags, DispatchParams* pDispParams, Variant* pVarResult, ExcepInfo* pExcepInfo, uint* pArgErr, uint cVarRef, Span<uint> rgVarRefIdx, Variant* rgVarRef)
+        public static unsafe int IDispatchInvokeStub(this Windows thisApi, IDispatch* This, int dispIdMember, Guid* riid, uint lcid, uint dwFlags, DispatchParams* pDispParams, Variant* pVarResult, ExceptionInfo* pExcepInfo, uint* pArgErr, uint cVarRef, Span<uint> rgVarRefIdx, Variant* rgVarRef)
         {
             // SpanOverloader
             return thisApi.IDispatchInvokeStub(This, dispIdMember, riid, lcid, dwFlags, pDispParams, pVarResult, pExcepInfo, pArgErr, cVarRef, ref rgVarRefIdx.GetPinnableReference(), rgVarRef);
@@ -36426,7 +36426,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 5962, Column 43 in oaidl.h")]
-        public static unsafe int IDispatchInvokeStub(this Windows thisApi, IDispatch* This, int dispIdMember, Guid* riid, uint lcid, uint dwFlags, DispatchParams* pDispParams, Variant* pVarResult, ExcepInfo* pExcepInfo, uint* pArgErr, uint cVarRef, Span<uint> rgVarRefIdx, Span<Variant> rgVarRef)
+        public static unsafe int IDispatchInvokeStub(this Windows thisApi, IDispatch* This, int dispIdMember, Guid* riid, uint lcid, uint dwFlags, DispatchParams* pDispParams, Variant* pVarResult, ExceptionInfo* pExcepInfo, uint* pArgErr, uint cVarRef, Span<uint> rgVarRefIdx, Span<Variant> rgVarRef)
         {
             // SpanOverloader
             return thisApi.IDispatchInvokeStub(This, dispIdMember, riid, lcid, dwFlags, pDispParams, pVarResult, pExcepInfo, pArgErr, cVarRef, ref rgVarRefIdx.GetPinnableReference(), ref rgVarRef.GetPinnableReference());
@@ -36434,7 +36434,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 5962, Column 43 in oaidl.h")]
-        public static unsafe int IDispatchInvokeStub(this Windows thisApi, IDispatch* This, int dispIdMember, Guid* riid, uint lcid, uint dwFlags, DispatchParams* pDispParams, Variant* pVarResult, ExcepInfo* pExcepInfo, Span<uint> pArgErr, uint cVarRef, uint* rgVarRefIdx, Variant* rgVarRef)
+        public static unsafe int IDispatchInvokeStub(this Windows thisApi, IDispatch* This, int dispIdMember, Guid* riid, uint lcid, uint dwFlags, DispatchParams* pDispParams, Variant* pVarResult, ExceptionInfo* pExcepInfo, Span<uint> pArgErr, uint cVarRef, uint* rgVarRefIdx, Variant* rgVarRef)
         {
             // SpanOverloader
             return thisApi.IDispatchInvokeStub(This, dispIdMember, riid, lcid, dwFlags, pDispParams, pVarResult, pExcepInfo, ref pArgErr.GetPinnableReference(), cVarRef, rgVarRefIdx, rgVarRef);
@@ -36442,7 +36442,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 5962, Column 43 in oaidl.h")]
-        public static unsafe int IDispatchInvokeStub(this Windows thisApi, IDispatch* This, int dispIdMember, Guid* riid, uint lcid, uint dwFlags, DispatchParams* pDispParams, Variant* pVarResult, ExcepInfo* pExcepInfo, Span<uint> pArgErr, uint cVarRef, uint* rgVarRefIdx, Span<Variant> rgVarRef)
+        public static unsafe int IDispatchInvokeStub(this Windows thisApi, IDispatch* This, int dispIdMember, Guid* riid, uint lcid, uint dwFlags, DispatchParams* pDispParams, Variant* pVarResult, ExceptionInfo* pExcepInfo, Span<uint> pArgErr, uint cVarRef, uint* rgVarRefIdx, Span<Variant> rgVarRef)
         {
             // SpanOverloader
             return thisApi.IDispatchInvokeStub(This, dispIdMember, riid, lcid, dwFlags, pDispParams, pVarResult, pExcepInfo, ref pArgErr.GetPinnableReference(), cVarRef, rgVarRefIdx, ref rgVarRef.GetPinnableReference());
@@ -36450,7 +36450,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 5962, Column 43 in oaidl.h")]
-        public static unsafe int IDispatchInvokeStub(this Windows thisApi, IDispatch* This, int dispIdMember, Guid* riid, uint lcid, uint dwFlags, DispatchParams* pDispParams, Variant* pVarResult, ExcepInfo* pExcepInfo, Span<uint> pArgErr, uint cVarRef, Span<uint> rgVarRefIdx, Variant* rgVarRef)
+        public static unsafe int IDispatchInvokeStub(this Windows thisApi, IDispatch* This, int dispIdMember, Guid* riid, uint lcid, uint dwFlags, DispatchParams* pDispParams, Variant* pVarResult, ExceptionInfo* pExcepInfo, Span<uint> pArgErr, uint cVarRef, Span<uint> rgVarRefIdx, Variant* rgVarRef)
         {
             // SpanOverloader
             return thisApi.IDispatchInvokeStub(This, dispIdMember, riid, lcid, dwFlags, pDispParams, pVarResult, pExcepInfo, ref pArgErr.GetPinnableReference(), cVarRef, ref rgVarRefIdx.GetPinnableReference(), rgVarRef);
@@ -36458,7 +36458,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 5962, Column 43 in oaidl.h")]
-        public static unsafe int IDispatchInvokeStub(this Windows thisApi, IDispatch* This, int dispIdMember, Guid* riid, uint lcid, uint dwFlags, DispatchParams* pDispParams, Variant* pVarResult, ExcepInfo* pExcepInfo, Span<uint> pArgErr, uint cVarRef, Span<uint> rgVarRefIdx, Span<Variant> rgVarRef)
+        public static unsafe int IDispatchInvokeStub(this Windows thisApi, IDispatch* This, int dispIdMember, Guid* riid, uint lcid, uint dwFlags, DispatchParams* pDispParams, Variant* pVarResult, ExceptionInfo* pExcepInfo, Span<uint> pArgErr, uint cVarRef, Span<uint> rgVarRefIdx, Span<Variant> rgVarRef)
         {
             // SpanOverloader
             return thisApi.IDispatchInvokeStub(This, dispIdMember, riid, lcid, dwFlags, pDispParams, pVarResult, pExcepInfo, ref pArgErr.GetPinnableReference(), cVarRef, ref rgVarRefIdx.GetPinnableReference(), ref rgVarRef.GetPinnableReference());
@@ -36466,7 +36466,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 5962, Column 43 in oaidl.h")]
-        public static unsafe int IDispatchInvokeStub(this Windows thisApi, IDispatch* This, int dispIdMember, Guid* riid, uint lcid, uint dwFlags, DispatchParams* pDispParams, Variant* pVarResult, Span<ExcepInfo> pExcepInfo, uint* pArgErr, uint cVarRef, uint* rgVarRefIdx, Variant* rgVarRef)
+        public static unsafe int IDispatchInvokeStub(this Windows thisApi, IDispatch* This, int dispIdMember, Guid* riid, uint lcid, uint dwFlags, DispatchParams* pDispParams, Variant* pVarResult, Span<ExceptionInfo> pExcepInfo, uint* pArgErr, uint cVarRef, uint* rgVarRefIdx, Variant* rgVarRef)
         {
             // SpanOverloader
             return thisApi.IDispatchInvokeStub(This, dispIdMember, riid, lcid, dwFlags, pDispParams, pVarResult, ref pExcepInfo.GetPinnableReference(), pArgErr, cVarRef, rgVarRefIdx, rgVarRef);
@@ -36474,7 +36474,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 5962, Column 43 in oaidl.h")]
-        public static unsafe int IDispatchInvokeStub(this Windows thisApi, IDispatch* This, int dispIdMember, Guid* riid, uint lcid, uint dwFlags, DispatchParams* pDispParams, Variant* pVarResult, Span<ExcepInfo> pExcepInfo, uint* pArgErr, uint cVarRef, uint* rgVarRefIdx, Span<Variant> rgVarRef)
+        public static unsafe int IDispatchInvokeStub(this Windows thisApi, IDispatch* This, int dispIdMember, Guid* riid, uint lcid, uint dwFlags, DispatchParams* pDispParams, Variant* pVarResult, Span<ExceptionInfo> pExcepInfo, uint* pArgErr, uint cVarRef, uint* rgVarRefIdx, Span<Variant> rgVarRef)
         {
             // SpanOverloader
             return thisApi.IDispatchInvokeStub(This, dispIdMember, riid, lcid, dwFlags, pDispParams, pVarResult, ref pExcepInfo.GetPinnableReference(), pArgErr, cVarRef, rgVarRefIdx, ref rgVarRef.GetPinnableReference());
@@ -36482,7 +36482,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 5962, Column 43 in oaidl.h")]
-        public static unsafe int IDispatchInvokeStub(this Windows thisApi, IDispatch* This, int dispIdMember, Guid* riid, uint lcid, uint dwFlags, DispatchParams* pDispParams, Variant* pVarResult, Span<ExcepInfo> pExcepInfo, uint* pArgErr, uint cVarRef, Span<uint> rgVarRefIdx, Variant* rgVarRef)
+        public static unsafe int IDispatchInvokeStub(this Windows thisApi, IDispatch* This, int dispIdMember, Guid* riid, uint lcid, uint dwFlags, DispatchParams* pDispParams, Variant* pVarResult, Span<ExceptionInfo> pExcepInfo, uint* pArgErr, uint cVarRef, Span<uint> rgVarRefIdx, Variant* rgVarRef)
         {
             // SpanOverloader
             return thisApi.IDispatchInvokeStub(This, dispIdMember, riid, lcid, dwFlags, pDispParams, pVarResult, ref pExcepInfo.GetPinnableReference(), pArgErr, cVarRef, ref rgVarRefIdx.GetPinnableReference(), rgVarRef);
@@ -36490,7 +36490,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 5962, Column 43 in oaidl.h")]
-        public static unsafe int IDispatchInvokeStub(this Windows thisApi, IDispatch* This, int dispIdMember, Guid* riid, uint lcid, uint dwFlags, DispatchParams* pDispParams, Variant* pVarResult, Span<ExcepInfo> pExcepInfo, uint* pArgErr, uint cVarRef, Span<uint> rgVarRefIdx, Span<Variant> rgVarRef)
+        public static unsafe int IDispatchInvokeStub(this Windows thisApi, IDispatch* This, int dispIdMember, Guid* riid, uint lcid, uint dwFlags, DispatchParams* pDispParams, Variant* pVarResult, Span<ExceptionInfo> pExcepInfo, uint* pArgErr, uint cVarRef, Span<uint> rgVarRefIdx, Span<Variant> rgVarRef)
         {
             // SpanOverloader
             return thisApi.IDispatchInvokeStub(This, dispIdMember, riid, lcid, dwFlags, pDispParams, pVarResult, ref pExcepInfo.GetPinnableReference(), pArgErr, cVarRef, ref rgVarRefIdx.GetPinnableReference(), ref rgVarRef.GetPinnableReference());
@@ -36498,7 +36498,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 5962, Column 43 in oaidl.h")]
-        public static unsafe int IDispatchInvokeStub(this Windows thisApi, IDispatch* This, int dispIdMember, Guid* riid, uint lcid, uint dwFlags, DispatchParams* pDispParams, Variant* pVarResult, Span<ExcepInfo> pExcepInfo, Span<uint> pArgErr, uint cVarRef, uint* rgVarRefIdx, Variant* rgVarRef)
+        public static unsafe int IDispatchInvokeStub(this Windows thisApi, IDispatch* This, int dispIdMember, Guid* riid, uint lcid, uint dwFlags, DispatchParams* pDispParams, Variant* pVarResult, Span<ExceptionInfo> pExcepInfo, Span<uint> pArgErr, uint cVarRef, uint* rgVarRefIdx, Variant* rgVarRef)
         {
             // SpanOverloader
             return thisApi.IDispatchInvokeStub(This, dispIdMember, riid, lcid, dwFlags, pDispParams, pVarResult, ref pExcepInfo.GetPinnableReference(), ref pArgErr.GetPinnableReference(), cVarRef, rgVarRefIdx, rgVarRef);
@@ -36506,7 +36506,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 5962, Column 43 in oaidl.h")]
-        public static unsafe int IDispatchInvokeStub(this Windows thisApi, IDispatch* This, int dispIdMember, Guid* riid, uint lcid, uint dwFlags, DispatchParams* pDispParams, Variant* pVarResult, Span<ExcepInfo> pExcepInfo, Span<uint> pArgErr, uint cVarRef, uint* rgVarRefIdx, Span<Variant> rgVarRef)
+        public static unsafe int IDispatchInvokeStub(this Windows thisApi, IDispatch* This, int dispIdMember, Guid* riid, uint lcid, uint dwFlags, DispatchParams* pDispParams, Variant* pVarResult, Span<ExceptionInfo> pExcepInfo, Span<uint> pArgErr, uint cVarRef, uint* rgVarRefIdx, Span<Variant> rgVarRef)
         {
             // SpanOverloader
             return thisApi.IDispatchInvokeStub(This, dispIdMember, riid, lcid, dwFlags, pDispParams, pVarResult, ref pExcepInfo.GetPinnableReference(), ref pArgErr.GetPinnableReference(), cVarRef, rgVarRefIdx, ref rgVarRef.GetPinnableReference());
@@ -36514,7 +36514,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 5962, Column 43 in oaidl.h")]
-        public static unsafe int IDispatchInvokeStub(this Windows thisApi, IDispatch* This, int dispIdMember, Guid* riid, uint lcid, uint dwFlags, DispatchParams* pDispParams, Variant* pVarResult, Span<ExcepInfo> pExcepInfo, Span<uint> pArgErr, uint cVarRef, Span<uint> rgVarRefIdx, Variant* rgVarRef)
+        public static unsafe int IDispatchInvokeStub(this Windows thisApi, IDispatch* This, int dispIdMember, Guid* riid, uint lcid, uint dwFlags, DispatchParams* pDispParams, Variant* pVarResult, Span<ExceptionInfo> pExcepInfo, Span<uint> pArgErr, uint cVarRef, Span<uint> rgVarRefIdx, Variant* rgVarRef)
         {
             // SpanOverloader
             return thisApi.IDispatchInvokeStub(This, dispIdMember, riid, lcid, dwFlags, pDispParams, pVarResult, ref pExcepInfo.GetPinnableReference(), ref pArgErr.GetPinnableReference(), cVarRef, ref rgVarRefIdx.GetPinnableReference(), rgVarRef);
@@ -36522,7 +36522,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 5962, Column 43 in oaidl.h")]
-        public static unsafe int IDispatchInvokeStub(this Windows thisApi, IDispatch* This, int dispIdMember, Guid* riid, uint lcid, uint dwFlags, DispatchParams* pDispParams, Variant* pVarResult, Span<ExcepInfo> pExcepInfo, Span<uint> pArgErr, uint cVarRef, Span<uint> rgVarRefIdx, Span<Variant> rgVarRef)
+        public static unsafe int IDispatchInvokeStub(this Windows thisApi, IDispatch* This, int dispIdMember, Guid* riid, uint lcid, uint dwFlags, DispatchParams* pDispParams, Variant* pVarResult, Span<ExceptionInfo> pExcepInfo, Span<uint> pArgErr, uint cVarRef, Span<uint> rgVarRefIdx, Span<Variant> rgVarRef)
         {
             // SpanOverloader
             return thisApi.IDispatchInvokeStub(This, dispIdMember, riid, lcid, dwFlags, pDispParams, pVarResult, ref pExcepInfo.GetPinnableReference(), ref pArgErr.GetPinnableReference(), cVarRef, ref rgVarRefIdx.GetPinnableReference(), ref rgVarRef.GetPinnableReference());
@@ -36530,7 +36530,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 5962, Column 43 in oaidl.h")]
-        public static unsafe int IDispatchInvokeStub(this Windows thisApi, IDispatch* This, int dispIdMember, Guid* riid, uint lcid, uint dwFlags, DispatchParams* pDispParams, Span<Variant> pVarResult, ExcepInfo* pExcepInfo, uint* pArgErr, uint cVarRef, uint* rgVarRefIdx, Variant* rgVarRef)
+        public static unsafe int IDispatchInvokeStub(this Windows thisApi, IDispatch* This, int dispIdMember, Guid* riid, uint lcid, uint dwFlags, DispatchParams* pDispParams, Span<Variant> pVarResult, ExceptionInfo* pExcepInfo, uint* pArgErr, uint cVarRef, uint* rgVarRefIdx, Variant* rgVarRef)
         {
             // SpanOverloader
             return thisApi.IDispatchInvokeStub(This, dispIdMember, riid, lcid, dwFlags, pDispParams, ref pVarResult.GetPinnableReference(), pExcepInfo, pArgErr, cVarRef, rgVarRefIdx, rgVarRef);
@@ -36538,7 +36538,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 5962, Column 43 in oaidl.h")]
-        public static unsafe int IDispatchInvokeStub(this Windows thisApi, IDispatch* This, int dispIdMember, Guid* riid, uint lcid, uint dwFlags, DispatchParams* pDispParams, Span<Variant> pVarResult, ExcepInfo* pExcepInfo, uint* pArgErr, uint cVarRef, uint* rgVarRefIdx, Span<Variant> rgVarRef)
+        public static unsafe int IDispatchInvokeStub(this Windows thisApi, IDispatch* This, int dispIdMember, Guid* riid, uint lcid, uint dwFlags, DispatchParams* pDispParams, Span<Variant> pVarResult, ExceptionInfo* pExcepInfo, uint* pArgErr, uint cVarRef, uint* rgVarRefIdx, Span<Variant> rgVarRef)
         {
             // SpanOverloader
             return thisApi.IDispatchInvokeStub(This, dispIdMember, riid, lcid, dwFlags, pDispParams, ref pVarResult.GetPinnableReference(), pExcepInfo, pArgErr, cVarRef, rgVarRefIdx, ref rgVarRef.GetPinnableReference());
@@ -36546,7 +36546,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 5962, Column 43 in oaidl.h")]
-        public static unsafe int IDispatchInvokeStub(this Windows thisApi, IDispatch* This, int dispIdMember, Guid* riid, uint lcid, uint dwFlags, DispatchParams* pDispParams, Span<Variant> pVarResult, ExcepInfo* pExcepInfo, uint* pArgErr, uint cVarRef, Span<uint> rgVarRefIdx, Variant* rgVarRef)
+        public static unsafe int IDispatchInvokeStub(this Windows thisApi, IDispatch* This, int dispIdMember, Guid* riid, uint lcid, uint dwFlags, DispatchParams* pDispParams, Span<Variant> pVarResult, ExceptionInfo* pExcepInfo, uint* pArgErr, uint cVarRef, Span<uint> rgVarRefIdx, Variant* rgVarRef)
         {
             // SpanOverloader
             return thisApi.IDispatchInvokeStub(This, dispIdMember, riid, lcid, dwFlags, pDispParams, ref pVarResult.GetPinnableReference(), pExcepInfo, pArgErr, cVarRef, ref rgVarRefIdx.GetPinnableReference(), rgVarRef);
@@ -36554,7 +36554,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 5962, Column 43 in oaidl.h")]
-        public static unsafe int IDispatchInvokeStub(this Windows thisApi, IDispatch* This, int dispIdMember, Guid* riid, uint lcid, uint dwFlags, DispatchParams* pDispParams, Span<Variant> pVarResult, ExcepInfo* pExcepInfo, uint* pArgErr, uint cVarRef, Span<uint> rgVarRefIdx, Span<Variant> rgVarRef)
+        public static unsafe int IDispatchInvokeStub(this Windows thisApi, IDispatch* This, int dispIdMember, Guid* riid, uint lcid, uint dwFlags, DispatchParams* pDispParams, Span<Variant> pVarResult, ExceptionInfo* pExcepInfo, uint* pArgErr, uint cVarRef, Span<uint> rgVarRefIdx, Span<Variant> rgVarRef)
         {
             // SpanOverloader
             return thisApi.IDispatchInvokeStub(This, dispIdMember, riid, lcid, dwFlags, pDispParams, ref pVarResult.GetPinnableReference(), pExcepInfo, pArgErr, cVarRef, ref rgVarRefIdx.GetPinnableReference(), ref rgVarRef.GetPinnableReference());
@@ -36562,7 +36562,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 5962, Column 43 in oaidl.h")]
-        public static unsafe int IDispatchInvokeStub(this Windows thisApi, IDispatch* This, int dispIdMember, Guid* riid, uint lcid, uint dwFlags, DispatchParams* pDispParams, Span<Variant> pVarResult, ExcepInfo* pExcepInfo, Span<uint> pArgErr, uint cVarRef, uint* rgVarRefIdx, Variant* rgVarRef)
+        public static unsafe int IDispatchInvokeStub(this Windows thisApi, IDispatch* This, int dispIdMember, Guid* riid, uint lcid, uint dwFlags, DispatchParams* pDispParams, Span<Variant> pVarResult, ExceptionInfo* pExcepInfo, Span<uint> pArgErr, uint cVarRef, uint* rgVarRefIdx, Variant* rgVarRef)
         {
             // SpanOverloader
             return thisApi.IDispatchInvokeStub(This, dispIdMember, riid, lcid, dwFlags, pDispParams, ref pVarResult.GetPinnableReference(), pExcepInfo, ref pArgErr.GetPinnableReference(), cVarRef, rgVarRefIdx, rgVarRef);
@@ -36570,7 +36570,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 5962, Column 43 in oaidl.h")]
-        public static unsafe int IDispatchInvokeStub(this Windows thisApi, IDispatch* This, int dispIdMember, Guid* riid, uint lcid, uint dwFlags, DispatchParams* pDispParams, Span<Variant> pVarResult, ExcepInfo* pExcepInfo, Span<uint> pArgErr, uint cVarRef, uint* rgVarRefIdx, Span<Variant> rgVarRef)
+        public static unsafe int IDispatchInvokeStub(this Windows thisApi, IDispatch* This, int dispIdMember, Guid* riid, uint lcid, uint dwFlags, DispatchParams* pDispParams, Span<Variant> pVarResult, ExceptionInfo* pExcepInfo, Span<uint> pArgErr, uint cVarRef, uint* rgVarRefIdx, Span<Variant> rgVarRef)
         {
             // SpanOverloader
             return thisApi.IDispatchInvokeStub(This, dispIdMember, riid, lcid, dwFlags, pDispParams, ref pVarResult.GetPinnableReference(), pExcepInfo, ref pArgErr.GetPinnableReference(), cVarRef, rgVarRefIdx, ref rgVarRef.GetPinnableReference());
@@ -36578,7 +36578,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 5962, Column 43 in oaidl.h")]
-        public static unsafe int IDispatchInvokeStub(this Windows thisApi, IDispatch* This, int dispIdMember, Guid* riid, uint lcid, uint dwFlags, DispatchParams* pDispParams, Span<Variant> pVarResult, ExcepInfo* pExcepInfo, Span<uint> pArgErr, uint cVarRef, Span<uint> rgVarRefIdx, Variant* rgVarRef)
+        public static unsafe int IDispatchInvokeStub(this Windows thisApi, IDispatch* This, int dispIdMember, Guid* riid, uint lcid, uint dwFlags, DispatchParams* pDispParams, Span<Variant> pVarResult, ExceptionInfo* pExcepInfo, Span<uint> pArgErr, uint cVarRef, Span<uint> rgVarRefIdx, Variant* rgVarRef)
         {
             // SpanOverloader
             return thisApi.IDispatchInvokeStub(This, dispIdMember, riid, lcid, dwFlags, pDispParams, ref pVarResult.GetPinnableReference(), pExcepInfo, ref pArgErr.GetPinnableReference(), cVarRef, ref rgVarRefIdx.GetPinnableReference(), rgVarRef);
@@ -36586,7 +36586,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 5962, Column 43 in oaidl.h")]
-        public static unsafe int IDispatchInvokeStub(this Windows thisApi, IDispatch* This, int dispIdMember, Guid* riid, uint lcid, uint dwFlags, DispatchParams* pDispParams, Span<Variant> pVarResult, ExcepInfo* pExcepInfo, Span<uint> pArgErr, uint cVarRef, Span<uint> rgVarRefIdx, Span<Variant> rgVarRef)
+        public static unsafe int IDispatchInvokeStub(this Windows thisApi, IDispatch* This, int dispIdMember, Guid* riid, uint lcid, uint dwFlags, DispatchParams* pDispParams, Span<Variant> pVarResult, ExceptionInfo* pExcepInfo, Span<uint> pArgErr, uint cVarRef, Span<uint> rgVarRefIdx, Span<Variant> rgVarRef)
         {
             // SpanOverloader
             return thisApi.IDispatchInvokeStub(This, dispIdMember, riid, lcid, dwFlags, pDispParams, ref pVarResult.GetPinnableReference(), pExcepInfo, ref pArgErr.GetPinnableReference(), cVarRef, ref rgVarRefIdx.GetPinnableReference(), ref rgVarRef.GetPinnableReference());
@@ -36594,7 +36594,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 5962, Column 43 in oaidl.h")]
-        public static unsafe int IDispatchInvokeStub(this Windows thisApi, IDispatch* This, int dispIdMember, Guid* riid, uint lcid, uint dwFlags, DispatchParams* pDispParams, Span<Variant> pVarResult, Span<ExcepInfo> pExcepInfo, uint* pArgErr, uint cVarRef, uint* rgVarRefIdx, Variant* rgVarRef)
+        public static unsafe int IDispatchInvokeStub(this Windows thisApi, IDispatch* This, int dispIdMember, Guid* riid, uint lcid, uint dwFlags, DispatchParams* pDispParams, Span<Variant> pVarResult, Span<ExceptionInfo> pExcepInfo, uint* pArgErr, uint cVarRef, uint* rgVarRefIdx, Variant* rgVarRef)
         {
             // SpanOverloader
             return thisApi.IDispatchInvokeStub(This, dispIdMember, riid, lcid, dwFlags, pDispParams, ref pVarResult.GetPinnableReference(), ref pExcepInfo.GetPinnableReference(), pArgErr, cVarRef, rgVarRefIdx, rgVarRef);
@@ -36602,7 +36602,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 5962, Column 43 in oaidl.h")]
-        public static unsafe int IDispatchInvokeStub(this Windows thisApi, IDispatch* This, int dispIdMember, Guid* riid, uint lcid, uint dwFlags, DispatchParams* pDispParams, Span<Variant> pVarResult, Span<ExcepInfo> pExcepInfo, uint* pArgErr, uint cVarRef, uint* rgVarRefIdx, Span<Variant> rgVarRef)
+        public static unsafe int IDispatchInvokeStub(this Windows thisApi, IDispatch* This, int dispIdMember, Guid* riid, uint lcid, uint dwFlags, DispatchParams* pDispParams, Span<Variant> pVarResult, Span<ExceptionInfo> pExcepInfo, uint* pArgErr, uint cVarRef, uint* rgVarRefIdx, Span<Variant> rgVarRef)
         {
             // SpanOverloader
             return thisApi.IDispatchInvokeStub(This, dispIdMember, riid, lcid, dwFlags, pDispParams, ref pVarResult.GetPinnableReference(), ref pExcepInfo.GetPinnableReference(), pArgErr, cVarRef, rgVarRefIdx, ref rgVarRef.GetPinnableReference());
@@ -36610,7 +36610,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 5962, Column 43 in oaidl.h")]
-        public static unsafe int IDispatchInvokeStub(this Windows thisApi, IDispatch* This, int dispIdMember, Guid* riid, uint lcid, uint dwFlags, DispatchParams* pDispParams, Span<Variant> pVarResult, Span<ExcepInfo> pExcepInfo, uint* pArgErr, uint cVarRef, Span<uint> rgVarRefIdx, Variant* rgVarRef)
+        public static unsafe int IDispatchInvokeStub(this Windows thisApi, IDispatch* This, int dispIdMember, Guid* riid, uint lcid, uint dwFlags, DispatchParams* pDispParams, Span<Variant> pVarResult, Span<ExceptionInfo> pExcepInfo, uint* pArgErr, uint cVarRef, Span<uint> rgVarRefIdx, Variant* rgVarRef)
         {
             // SpanOverloader
             return thisApi.IDispatchInvokeStub(This, dispIdMember, riid, lcid, dwFlags, pDispParams, ref pVarResult.GetPinnableReference(), ref pExcepInfo.GetPinnableReference(), pArgErr, cVarRef, ref rgVarRefIdx.GetPinnableReference(), rgVarRef);
@@ -36618,7 +36618,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 5962, Column 43 in oaidl.h")]
-        public static unsafe int IDispatchInvokeStub(this Windows thisApi, IDispatch* This, int dispIdMember, Guid* riid, uint lcid, uint dwFlags, DispatchParams* pDispParams, Span<Variant> pVarResult, Span<ExcepInfo> pExcepInfo, uint* pArgErr, uint cVarRef, Span<uint> rgVarRefIdx, Span<Variant> rgVarRef)
+        public static unsafe int IDispatchInvokeStub(this Windows thisApi, IDispatch* This, int dispIdMember, Guid* riid, uint lcid, uint dwFlags, DispatchParams* pDispParams, Span<Variant> pVarResult, Span<ExceptionInfo> pExcepInfo, uint* pArgErr, uint cVarRef, Span<uint> rgVarRefIdx, Span<Variant> rgVarRef)
         {
             // SpanOverloader
             return thisApi.IDispatchInvokeStub(This, dispIdMember, riid, lcid, dwFlags, pDispParams, ref pVarResult.GetPinnableReference(), ref pExcepInfo.GetPinnableReference(), pArgErr, cVarRef, ref rgVarRefIdx.GetPinnableReference(), ref rgVarRef.GetPinnableReference());
@@ -36626,7 +36626,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 5962, Column 43 in oaidl.h")]
-        public static unsafe int IDispatchInvokeStub(this Windows thisApi, IDispatch* This, int dispIdMember, Guid* riid, uint lcid, uint dwFlags, DispatchParams* pDispParams, Span<Variant> pVarResult, Span<ExcepInfo> pExcepInfo, Span<uint> pArgErr, uint cVarRef, uint* rgVarRefIdx, Variant* rgVarRef)
+        public static unsafe int IDispatchInvokeStub(this Windows thisApi, IDispatch* This, int dispIdMember, Guid* riid, uint lcid, uint dwFlags, DispatchParams* pDispParams, Span<Variant> pVarResult, Span<ExceptionInfo> pExcepInfo, Span<uint> pArgErr, uint cVarRef, uint* rgVarRefIdx, Variant* rgVarRef)
         {
             // SpanOverloader
             return thisApi.IDispatchInvokeStub(This, dispIdMember, riid, lcid, dwFlags, pDispParams, ref pVarResult.GetPinnableReference(), ref pExcepInfo.GetPinnableReference(), ref pArgErr.GetPinnableReference(), cVarRef, rgVarRefIdx, rgVarRef);
@@ -36634,7 +36634,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 5962, Column 43 in oaidl.h")]
-        public static unsafe int IDispatchInvokeStub(this Windows thisApi, IDispatch* This, int dispIdMember, Guid* riid, uint lcid, uint dwFlags, DispatchParams* pDispParams, Span<Variant> pVarResult, Span<ExcepInfo> pExcepInfo, Span<uint> pArgErr, uint cVarRef, uint* rgVarRefIdx, Span<Variant> rgVarRef)
+        public static unsafe int IDispatchInvokeStub(this Windows thisApi, IDispatch* This, int dispIdMember, Guid* riid, uint lcid, uint dwFlags, DispatchParams* pDispParams, Span<Variant> pVarResult, Span<ExceptionInfo> pExcepInfo, Span<uint> pArgErr, uint cVarRef, uint* rgVarRefIdx, Span<Variant> rgVarRef)
         {
             // SpanOverloader
             return thisApi.IDispatchInvokeStub(This, dispIdMember, riid, lcid, dwFlags, pDispParams, ref pVarResult.GetPinnableReference(), ref pExcepInfo.GetPinnableReference(), ref pArgErr.GetPinnableReference(), cVarRef, rgVarRefIdx, ref rgVarRef.GetPinnableReference());
@@ -36642,7 +36642,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 5962, Column 43 in oaidl.h")]
-        public static unsafe int IDispatchInvokeStub(this Windows thisApi, IDispatch* This, int dispIdMember, Guid* riid, uint lcid, uint dwFlags, DispatchParams* pDispParams, Span<Variant> pVarResult, Span<ExcepInfo> pExcepInfo, Span<uint> pArgErr, uint cVarRef, Span<uint> rgVarRefIdx, Variant* rgVarRef)
+        public static unsafe int IDispatchInvokeStub(this Windows thisApi, IDispatch* This, int dispIdMember, Guid* riid, uint lcid, uint dwFlags, DispatchParams* pDispParams, Span<Variant> pVarResult, Span<ExceptionInfo> pExcepInfo, Span<uint> pArgErr, uint cVarRef, Span<uint> rgVarRefIdx, Variant* rgVarRef)
         {
             // SpanOverloader
             return thisApi.IDispatchInvokeStub(This, dispIdMember, riid, lcid, dwFlags, pDispParams, ref pVarResult.GetPinnableReference(), ref pExcepInfo.GetPinnableReference(), ref pArgErr.GetPinnableReference(), cVarRef, ref rgVarRefIdx.GetPinnableReference(), rgVarRef);
@@ -36650,7 +36650,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 5962, Column 43 in oaidl.h")]
-        public static unsafe int IDispatchInvokeStub(this Windows thisApi, IDispatch* This, int dispIdMember, Guid* riid, uint lcid, uint dwFlags, DispatchParams* pDispParams, Span<Variant> pVarResult, Span<ExcepInfo> pExcepInfo, Span<uint> pArgErr, uint cVarRef, Span<uint> rgVarRefIdx, Span<Variant> rgVarRef)
+        public static unsafe int IDispatchInvokeStub(this Windows thisApi, IDispatch* This, int dispIdMember, Guid* riid, uint lcid, uint dwFlags, DispatchParams* pDispParams, Span<Variant> pVarResult, Span<ExceptionInfo> pExcepInfo, Span<uint> pArgErr, uint cVarRef, Span<uint> rgVarRefIdx, Span<Variant> rgVarRef)
         {
             // SpanOverloader
             return thisApi.IDispatchInvokeStub(This, dispIdMember, riid, lcid, dwFlags, pDispParams, ref pVarResult.GetPinnableReference(), ref pExcepInfo.GetPinnableReference(), ref pArgErr.GetPinnableReference(), cVarRef, ref rgVarRefIdx.GetPinnableReference(), ref rgVarRef.GetPinnableReference());
@@ -36658,7 +36658,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 5962, Column 43 in oaidl.h")]
-        public static unsafe int IDispatchInvokeStub(this Windows thisApi, IDispatch* This, int dispIdMember, Guid* riid, uint lcid, uint dwFlags, Span<DispatchParams> pDispParams, Variant* pVarResult, ExcepInfo* pExcepInfo, uint* pArgErr, uint cVarRef, uint* rgVarRefIdx, Variant* rgVarRef)
+        public static unsafe int IDispatchInvokeStub(this Windows thisApi, IDispatch* This, int dispIdMember, Guid* riid, uint lcid, uint dwFlags, Span<DispatchParams> pDispParams, Variant* pVarResult, ExceptionInfo* pExcepInfo, uint* pArgErr, uint cVarRef, uint* rgVarRefIdx, Variant* rgVarRef)
         {
             // SpanOverloader
             return thisApi.IDispatchInvokeStub(This, dispIdMember, riid, lcid, dwFlags, ref pDispParams.GetPinnableReference(), pVarResult, pExcepInfo, pArgErr, cVarRef, rgVarRefIdx, rgVarRef);
@@ -36666,7 +36666,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 5962, Column 43 in oaidl.h")]
-        public static unsafe int IDispatchInvokeStub(this Windows thisApi, IDispatch* This, int dispIdMember, Guid* riid, uint lcid, uint dwFlags, Span<DispatchParams> pDispParams, Variant* pVarResult, ExcepInfo* pExcepInfo, uint* pArgErr, uint cVarRef, uint* rgVarRefIdx, Span<Variant> rgVarRef)
+        public static unsafe int IDispatchInvokeStub(this Windows thisApi, IDispatch* This, int dispIdMember, Guid* riid, uint lcid, uint dwFlags, Span<DispatchParams> pDispParams, Variant* pVarResult, ExceptionInfo* pExcepInfo, uint* pArgErr, uint cVarRef, uint* rgVarRefIdx, Span<Variant> rgVarRef)
         {
             // SpanOverloader
             return thisApi.IDispatchInvokeStub(This, dispIdMember, riid, lcid, dwFlags, ref pDispParams.GetPinnableReference(), pVarResult, pExcepInfo, pArgErr, cVarRef, rgVarRefIdx, ref rgVarRef.GetPinnableReference());
@@ -36674,7 +36674,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 5962, Column 43 in oaidl.h")]
-        public static unsafe int IDispatchInvokeStub(this Windows thisApi, IDispatch* This, int dispIdMember, Guid* riid, uint lcid, uint dwFlags, Span<DispatchParams> pDispParams, Variant* pVarResult, ExcepInfo* pExcepInfo, uint* pArgErr, uint cVarRef, Span<uint> rgVarRefIdx, Variant* rgVarRef)
+        public static unsafe int IDispatchInvokeStub(this Windows thisApi, IDispatch* This, int dispIdMember, Guid* riid, uint lcid, uint dwFlags, Span<DispatchParams> pDispParams, Variant* pVarResult, ExceptionInfo* pExcepInfo, uint* pArgErr, uint cVarRef, Span<uint> rgVarRefIdx, Variant* rgVarRef)
         {
             // SpanOverloader
             return thisApi.IDispatchInvokeStub(This, dispIdMember, riid, lcid, dwFlags, ref pDispParams.GetPinnableReference(), pVarResult, pExcepInfo, pArgErr, cVarRef, ref rgVarRefIdx.GetPinnableReference(), rgVarRef);
@@ -36682,7 +36682,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 5962, Column 43 in oaidl.h")]
-        public static unsafe int IDispatchInvokeStub(this Windows thisApi, IDispatch* This, int dispIdMember, Guid* riid, uint lcid, uint dwFlags, Span<DispatchParams> pDispParams, Variant* pVarResult, ExcepInfo* pExcepInfo, uint* pArgErr, uint cVarRef, Span<uint> rgVarRefIdx, Span<Variant> rgVarRef)
+        public static unsafe int IDispatchInvokeStub(this Windows thisApi, IDispatch* This, int dispIdMember, Guid* riid, uint lcid, uint dwFlags, Span<DispatchParams> pDispParams, Variant* pVarResult, ExceptionInfo* pExcepInfo, uint* pArgErr, uint cVarRef, Span<uint> rgVarRefIdx, Span<Variant> rgVarRef)
         {
             // SpanOverloader
             return thisApi.IDispatchInvokeStub(This, dispIdMember, riid, lcid, dwFlags, ref pDispParams.GetPinnableReference(), pVarResult, pExcepInfo, pArgErr, cVarRef, ref rgVarRefIdx.GetPinnableReference(), ref rgVarRef.GetPinnableReference());
@@ -36690,7 +36690,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 5962, Column 43 in oaidl.h")]
-        public static unsafe int IDispatchInvokeStub(this Windows thisApi, IDispatch* This, int dispIdMember, Guid* riid, uint lcid, uint dwFlags, Span<DispatchParams> pDispParams, Variant* pVarResult, ExcepInfo* pExcepInfo, Span<uint> pArgErr, uint cVarRef, uint* rgVarRefIdx, Variant* rgVarRef)
+        public static unsafe int IDispatchInvokeStub(this Windows thisApi, IDispatch* This, int dispIdMember, Guid* riid, uint lcid, uint dwFlags, Span<DispatchParams> pDispParams, Variant* pVarResult, ExceptionInfo* pExcepInfo, Span<uint> pArgErr, uint cVarRef, uint* rgVarRefIdx, Variant* rgVarRef)
         {
             // SpanOverloader
             return thisApi.IDispatchInvokeStub(This, dispIdMember, riid, lcid, dwFlags, ref pDispParams.GetPinnableReference(), pVarResult, pExcepInfo, ref pArgErr.GetPinnableReference(), cVarRef, rgVarRefIdx, rgVarRef);
@@ -36698,7 +36698,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 5962, Column 43 in oaidl.h")]
-        public static unsafe int IDispatchInvokeStub(this Windows thisApi, IDispatch* This, int dispIdMember, Guid* riid, uint lcid, uint dwFlags, Span<DispatchParams> pDispParams, Variant* pVarResult, ExcepInfo* pExcepInfo, Span<uint> pArgErr, uint cVarRef, uint* rgVarRefIdx, Span<Variant> rgVarRef)
+        public static unsafe int IDispatchInvokeStub(this Windows thisApi, IDispatch* This, int dispIdMember, Guid* riid, uint lcid, uint dwFlags, Span<DispatchParams> pDispParams, Variant* pVarResult, ExceptionInfo* pExcepInfo, Span<uint> pArgErr, uint cVarRef, uint* rgVarRefIdx, Span<Variant> rgVarRef)
         {
             // SpanOverloader
             return thisApi.IDispatchInvokeStub(This, dispIdMember, riid, lcid, dwFlags, ref pDispParams.GetPinnableReference(), pVarResult, pExcepInfo, ref pArgErr.GetPinnableReference(), cVarRef, rgVarRefIdx, ref rgVarRef.GetPinnableReference());
@@ -36706,7 +36706,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 5962, Column 43 in oaidl.h")]
-        public static unsafe int IDispatchInvokeStub(this Windows thisApi, IDispatch* This, int dispIdMember, Guid* riid, uint lcid, uint dwFlags, Span<DispatchParams> pDispParams, Variant* pVarResult, ExcepInfo* pExcepInfo, Span<uint> pArgErr, uint cVarRef, Span<uint> rgVarRefIdx, Variant* rgVarRef)
+        public static unsafe int IDispatchInvokeStub(this Windows thisApi, IDispatch* This, int dispIdMember, Guid* riid, uint lcid, uint dwFlags, Span<DispatchParams> pDispParams, Variant* pVarResult, ExceptionInfo* pExcepInfo, Span<uint> pArgErr, uint cVarRef, Span<uint> rgVarRefIdx, Variant* rgVarRef)
         {
             // SpanOverloader
             return thisApi.IDispatchInvokeStub(This, dispIdMember, riid, lcid, dwFlags, ref pDispParams.GetPinnableReference(), pVarResult, pExcepInfo, ref pArgErr.GetPinnableReference(), cVarRef, ref rgVarRefIdx.GetPinnableReference(), rgVarRef);
@@ -36714,7 +36714,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 5962, Column 43 in oaidl.h")]
-        public static unsafe int IDispatchInvokeStub(this Windows thisApi, IDispatch* This, int dispIdMember, Guid* riid, uint lcid, uint dwFlags, Span<DispatchParams> pDispParams, Variant* pVarResult, ExcepInfo* pExcepInfo, Span<uint> pArgErr, uint cVarRef, Span<uint> rgVarRefIdx, Span<Variant> rgVarRef)
+        public static unsafe int IDispatchInvokeStub(this Windows thisApi, IDispatch* This, int dispIdMember, Guid* riid, uint lcid, uint dwFlags, Span<DispatchParams> pDispParams, Variant* pVarResult, ExceptionInfo* pExcepInfo, Span<uint> pArgErr, uint cVarRef, Span<uint> rgVarRefIdx, Span<Variant> rgVarRef)
         {
             // SpanOverloader
             return thisApi.IDispatchInvokeStub(This, dispIdMember, riid, lcid, dwFlags, ref pDispParams.GetPinnableReference(), pVarResult, pExcepInfo, ref pArgErr.GetPinnableReference(), cVarRef, ref rgVarRefIdx.GetPinnableReference(), ref rgVarRef.GetPinnableReference());
@@ -36722,7 +36722,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 5962, Column 43 in oaidl.h")]
-        public static unsafe int IDispatchInvokeStub(this Windows thisApi, IDispatch* This, int dispIdMember, Guid* riid, uint lcid, uint dwFlags, Span<DispatchParams> pDispParams, Variant* pVarResult, Span<ExcepInfo> pExcepInfo, uint* pArgErr, uint cVarRef, uint* rgVarRefIdx, Variant* rgVarRef)
+        public static unsafe int IDispatchInvokeStub(this Windows thisApi, IDispatch* This, int dispIdMember, Guid* riid, uint lcid, uint dwFlags, Span<DispatchParams> pDispParams, Variant* pVarResult, Span<ExceptionInfo> pExcepInfo, uint* pArgErr, uint cVarRef, uint* rgVarRefIdx, Variant* rgVarRef)
         {
             // SpanOverloader
             return thisApi.IDispatchInvokeStub(This, dispIdMember, riid, lcid, dwFlags, ref pDispParams.GetPinnableReference(), pVarResult, ref pExcepInfo.GetPinnableReference(), pArgErr, cVarRef, rgVarRefIdx, rgVarRef);
@@ -36730,7 +36730,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 5962, Column 43 in oaidl.h")]
-        public static unsafe int IDispatchInvokeStub(this Windows thisApi, IDispatch* This, int dispIdMember, Guid* riid, uint lcid, uint dwFlags, Span<DispatchParams> pDispParams, Variant* pVarResult, Span<ExcepInfo> pExcepInfo, uint* pArgErr, uint cVarRef, uint* rgVarRefIdx, Span<Variant> rgVarRef)
+        public static unsafe int IDispatchInvokeStub(this Windows thisApi, IDispatch* This, int dispIdMember, Guid* riid, uint lcid, uint dwFlags, Span<DispatchParams> pDispParams, Variant* pVarResult, Span<ExceptionInfo> pExcepInfo, uint* pArgErr, uint cVarRef, uint* rgVarRefIdx, Span<Variant> rgVarRef)
         {
             // SpanOverloader
             return thisApi.IDispatchInvokeStub(This, dispIdMember, riid, lcid, dwFlags, ref pDispParams.GetPinnableReference(), pVarResult, ref pExcepInfo.GetPinnableReference(), pArgErr, cVarRef, rgVarRefIdx, ref rgVarRef.GetPinnableReference());
@@ -36738,7 +36738,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 5962, Column 43 in oaidl.h")]
-        public static unsafe int IDispatchInvokeStub(this Windows thisApi, IDispatch* This, int dispIdMember, Guid* riid, uint lcid, uint dwFlags, Span<DispatchParams> pDispParams, Variant* pVarResult, Span<ExcepInfo> pExcepInfo, uint* pArgErr, uint cVarRef, Span<uint> rgVarRefIdx, Variant* rgVarRef)
+        public static unsafe int IDispatchInvokeStub(this Windows thisApi, IDispatch* This, int dispIdMember, Guid* riid, uint lcid, uint dwFlags, Span<DispatchParams> pDispParams, Variant* pVarResult, Span<ExceptionInfo> pExcepInfo, uint* pArgErr, uint cVarRef, Span<uint> rgVarRefIdx, Variant* rgVarRef)
         {
             // SpanOverloader
             return thisApi.IDispatchInvokeStub(This, dispIdMember, riid, lcid, dwFlags, ref pDispParams.GetPinnableReference(), pVarResult, ref pExcepInfo.GetPinnableReference(), pArgErr, cVarRef, ref rgVarRefIdx.GetPinnableReference(), rgVarRef);
@@ -36746,7 +36746,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 5962, Column 43 in oaidl.h")]
-        public static unsafe int IDispatchInvokeStub(this Windows thisApi, IDispatch* This, int dispIdMember, Guid* riid, uint lcid, uint dwFlags, Span<DispatchParams> pDispParams, Variant* pVarResult, Span<ExcepInfo> pExcepInfo, uint* pArgErr, uint cVarRef, Span<uint> rgVarRefIdx, Span<Variant> rgVarRef)
+        public static unsafe int IDispatchInvokeStub(this Windows thisApi, IDispatch* This, int dispIdMember, Guid* riid, uint lcid, uint dwFlags, Span<DispatchParams> pDispParams, Variant* pVarResult, Span<ExceptionInfo> pExcepInfo, uint* pArgErr, uint cVarRef, Span<uint> rgVarRefIdx, Span<Variant> rgVarRef)
         {
             // SpanOverloader
             return thisApi.IDispatchInvokeStub(This, dispIdMember, riid, lcid, dwFlags, ref pDispParams.GetPinnableReference(), pVarResult, ref pExcepInfo.GetPinnableReference(), pArgErr, cVarRef, ref rgVarRefIdx.GetPinnableReference(), ref rgVarRef.GetPinnableReference());
@@ -36754,7 +36754,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 5962, Column 43 in oaidl.h")]
-        public static unsafe int IDispatchInvokeStub(this Windows thisApi, IDispatch* This, int dispIdMember, Guid* riid, uint lcid, uint dwFlags, Span<DispatchParams> pDispParams, Variant* pVarResult, Span<ExcepInfo> pExcepInfo, Span<uint> pArgErr, uint cVarRef, uint* rgVarRefIdx, Variant* rgVarRef)
+        public static unsafe int IDispatchInvokeStub(this Windows thisApi, IDispatch* This, int dispIdMember, Guid* riid, uint lcid, uint dwFlags, Span<DispatchParams> pDispParams, Variant* pVarResult, Span<ExceptionInfo> pExcepInfo, Span<uint> pArgErr, uint cVarRef, uint* rgVarRefIdx, Variant* rgVarRef)
         {
             // SpanOverloader
             return thisApi.IDispatchInvokeStub(This, dispIdMember, riid, lcid, dwFlags, ref pDispParams.GetPinnableReference(), pVarResult, ref pExcepInfo.GetPinnableReference(), ref pArgErr.GetPinnableReference(), cVarRef, rgVarRefIdx, rgVarRef);
@@ -36762,7 +36762,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 5962, Column 43 in oaidl.h")]
-        public static unsafe int IDispatchInvokeStub(this Windows thisApi, IDispatch* This, int dispIdMember, Guid* riid, uint lcid, uint dwFlags, Span<DispatchParams> pDispParams, Variant* pVarResult, Span<ExcepInfo> pExcepInfo, Span<uint> pArgErr, uint cVarRef, uint* rgVarRefIdx, Span<Variant> rgVarRef)
+        public static unsafe int IDispatchInvokeStub(this Windows thisApi, IDispatch* This, int dispIdMember, Guid* riid, uint lcid, uint dwFlags, Span<DispatchParams> pDispParams, Variant* pVarResult, Span<ExceptionInfo> pExcepInfo, Span<uint> pArgErr, uint cVarRef, uint* rgVarRefIdx, Span<Variant> rgVarRef)
         {
             // SpanOverloader
             return thisApi.IDispatchInvokeStub(This, dispIdMember, riid, lcid, dwFlags, ref pDispParams.GetPinnableReference(), pVarResult, ref pExcepInfo.GetPinnableReference(), ref pArgErr.GetPinnableReference(), cVarRef, rgVarRefIdx, ref rgVarRef.GetPinnableReference());
@@ -36770,7 +36770,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 5962, Column 43 in oaidl.h")]
-        public static unsafe int IDispatchInvokeStub(this Windows thisApi, IDispatch* This, int dispIdMember, Guid* riid, uint lcid, uint dwFlags, Span<DispatchParams> pDispParams, Variant* pVarResult, Span<ExcepInfo> pExcepInfo, Span<uint> pArgErr, uint cVarRef, Span<uint> rgVarRefIdx, Variant* rgVarRef)
+        public static unsafe int IDispatchInvokeStub(this Windows thisApi, IDispatch* This, int dispIdMember, Guid* riid, uint lcid, uint dwFlags, Span<DispatchParams> pDispParams, Variant* pVarResult, Span<ExceptionInfo> pExcepInfo, Span<uint> pArgErr, uint cVarRef, Span<uint> rgVarRefIdx, Variant* rgVarRef)
         {
             // SpanOverloader
             return thisApi.IDispatchInvokeStub(This, dispIdMember, riid, lcid, dwFlags, ref pDispParams.GetPinnableReference(), pVarResult, ref pExcepInfo.GetPinnableReference(), ref pArgErr.GetPinnableReference(), cVarRef, ref rgVarRefIdx.GetPinnableReference(), rgVarRef);
@@ -36778,7 +36778,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 5962, Column 43 in oaidl.h")]
-        public static unsafe int IDispatchInvokeStub(this Windows thisApi, IDispatch* This, int dispIdMember, Guid* riid, uint lcid, uint dwFlags, Span<DispatchParams> pDispParams, Variant* pVarResult, Span<ExcepInfo> pExcepInfo, Span<uint> pArgErr, uint cVarRef, Span<uint> rgVarRefIdx, Span<Variant> rgVarRef)
+        public static unsafe int IDispatchInvokeStub(this Windows thisApi, IDispatch* This, int dispIdMember, Guid* riid, uint lcid, uint dwFlags, Span<DispatchParams> pDispParams, Variant* pVarResult, Span<ExceptionInfo> pExcepInfo, Span<uint> pArgErr, uint cVarRef, Span<uint> rgVarRefIdx, Span<Variant> rgVarRef)
         {
             // SpanOverloader
             return thisApi.IDispatchInvokeStub(This, dispIdMember, riid, lcid, dwFlags, ref pDispParams.GetPinnableReference(), pVarResult, ref pExcepInfo.GetPinnableReference(), ref pArgErr.GetPinnableReference(), cVarRef, ref rgVarRefIdx.GetPinnableReference(), ref rgVarRef.GetPinnableReference());
@@ -36786,7 +36786,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 5962, Column 43 in oaidl.h")]
-        public static unsafe int IDispatchInvokeStub(this Windows thisApi, IDispatch* This, int dispIdMember, Guid* riid, uint lcid, uint dwFlags, Span<DispatchParams> pDispParams, Span<Variant> pVarResult, ExcepInfo* pExcepInfo, uint* pArgErr, uint cVarRef, uint* rgVarRefIdx, Variant* rgVarRef)
+        public static unsafe int IDispatchInvokeStub(this Windows thisApi, IDispatch* This, int dispIdMember, Guid* riid, uint lcid, uint dwFlags, Span<DispatchParams> pDispParams, Span<Variant> pVarResult, ExceptionInfo* pExcepInfo, uint* pArgErr, uint cVarRef, uint* rgVarRefIdx, Variant* rgVarRef)
         {
             // SpanOverloader
             return thisApi.IDispatchInvokeStub(This, dispIdMember, riid, lcid, dwFlags, ref pDispParams.GetPinnableReference(), ref pVarResult.GetPinnableReference(), pExcepInfo, pArgErr, cVarRef, rgVarRefIdx, rgVarRef);
@@ -36794,7 +36794,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 5962, Column 43 in oaidl.h")]
-        public static unsafe int IDispatchInvokeStub(this Windows thisApi, IDispatch* This, int dispIdMember, Guid* riid, uint lcid, uint dwFlags, Span<DispatchParams> pDispParams, Span<Variant> pVarResult, ExcepInfo* pExcepInfo, uint* pArgErr, uint cVarRef, uint* rgVarRefIdx, Span<Variant> rgVarRef)
+        public static unsafe int IDispatchInvokeStub(this Windows thisApi, IDispatch* This, int dispIdMember, Guid* riid, uint lcid, uint dwFlags, Span<DispatchParams> pDispParams, Span<Variant> pVarResult, ExceptionInfo* pExcepInfo, uint* pArgErr, uint cVarRef, uint* rgVarRefIdx, Span<Variant> rgVarRef)
         {
             // SpanOverloader
             return thisApi.IDispatchInvokeStub(This, dispIdMember, riid, lcid, dwFlags, ref pDispParams.GetPinnableReference(), ref pVarResult.GetPinnableReference(), pExcepInfo, pArgErr, cVarRef, rgVarRefIdx, ref rgVarRef.GetPinnableReference());
@@ -36802,7 +36802,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 5962, Column 43 in oaidl.h")]
-        public static unsafe int IDispatchInvokeStub(this Windows thisApi, IDispatch* This, int dispIdMember, Guid* riid, uint lcid, uint dwFlags, Span<DispatchParams> pDispParams, Span<Variant> pVarResult, ExcepInfo* pExcepInfo, uint* pArgErr, uint cVarRef, Span<uint> rgVarRefIdx, Variant* rgVarRef)
+        public static unsafe int IDispatchInvokeStub(this Windows thisApi, IDispatch* This, int dispIdMember, Guid* riid, uint lcid, uint dwFlags, Span<DispatchParams> pDispParams, Span<Variant> pVarResult, ExceptionInfo* pExcepInfo, uint* pArgErr, uint cVarRef, Span<uint> rgVarRefIdx, Variant* rgVarRef)
         {
             // SpanOverloader
             return thisApi.IDispatchInvokeStub(This, dispIdMember, riid, lcid, dwFlags, ref pDispParams.GetPinnableReference(), ref pVarResult.GetPinnableReference(), pExcepInfo, pArgErr, cVarRef, ref rgVarRefIdx.GetPinnableReference(), rgVarRef);
@@ -36810,7 +36810,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 5962, Column 43 in oaidl.h")]
-        public static unsafe int IDispatchInvokeStub(this Windows thisApi, IDispatch* This, int dispIdMember, Guid* riid, uint lcid, uint dwFlags, Span<DispatchParams> pDispParams, Span<Variant> pVarResult, ExcepInfo* pExcepInfo, uint* pArgErr, uint cVarRef, Span<uint> rgVarRefIdx, Span<Variant> rgVarRef)
+        public static unsafe int IDispatchInvokeStub(this Windows thisApi, IDispatch* This, int dispIdMember, Guid* riid, uint lcid, uint dwFlags, Span<DispatchParams> pDispParams, Span<Variant> pVarResult, ExceptionInfo* pExcepInfo, uint* pArgErr, uint cVarRef, Span<uint> rgVarRefIdx, Span<Variant> rgVarRef)
         {
             // SpanOverloader
             return thisApi.IDispatchInvokeStub(This, dispIdMember, riid, lcid, dwFlags, ref pDispParams.GetPinnableReference(), ref pVarResult.GetPinnableReference(), pExcepInfo, pArgErr, cVarRef, ref rgVarRefIdx.GetPinnableReference(), ref rgVarRef.GetPinnableReference());
@@ -36818,7 +36818,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 5962, Column 43 in oaidl.h")]
-        public static unsafe int IDispatchInvokeStub(this Windows thisApi, IDispatch* This, int dispIdMember, Guid* riid, uint lcid, uint dwFlags, Span<DispatchParams> pDispParams, Span<Variant> pVarResult, ExcepInfo* pExcepInfo, Span<uint> pArgErr, uint cVarRef, uint* rgVarRefIdx, Variant* rgVarRef)
+        public static unsafe int IDispatchInvokeStub(this Windows thisApi, IDispatch* This, int dispIdMember, Guid* riid, uint lcid, uint dwFlags, Span<DispatchParams> pDispParams, Span<Variant> pVarResult, ExceptionInfo* pExcepInfo, Span<uint> pArgErr, uint cVarRef, uint* rgVarRefIdx, Variant* rgVarRef)
         {
             // SpanOverloader
             return thisApi.IDispatchInvokeStub(This, dispIdMember, riid, lcid, dwFlags, ref pDispParams.GetPinnableReference(), ref pVarResult.GetPinnableReference(), pExcepInfo, ref pArgErr.GetPinnableReference(), cVarRef, rgVarRefIdx, rgVarRef);
@@ -36826,7 +36826,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 5962, Column 43 in oaidl.h")]
-        public static unsafe int IDispatchInvokeStub(this Windows thisApi, IDispatch* This, int dispIdMember, Guid* riid, uint lcid, uint dwFlags, Span<DispatchParams> pDispParams, Span<Variant> pVarResult, ExcepInfo* pExcepInfo, Span<uint> pArgErr, uint cVarRef, uint* rgVarRefIdx, Span<Variant> rgVarRef)
+        public static unsafe int IDispatchInvokeStub(this Windows thisApi, IDispatch* This, int dispIdMember, Guid* riid, uint lcid, uint dwFlags, Span<DispatchParams> pDispParams, Span<Variant> pVarResult, ExceptionInfo* pExcepInfo, Span<uint> pArgErr, uint cVarRef, uint* rgVarRefIdx, Span<Variant> rgVarRef)
         {
             // SpanOverloader
             return thisApi.IDispatchInvokeStub(This, dispIdMember, riid, lcid, dwFlags, ref pDispParams.GetPinnableReference(), ref pVarResult.GetPinnableReference(), pExcepInfo, ref pArgErr.GetPinnableReference(), cVarRef, rgVarRefIdx, ref rgVarRef.GetPinnableReference());
@@ -36834,7 +36834,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 5962, Column 43 in oaidl.h")]
-        public static unsafe int IDispatchInvokeStub(this Windows thisApi, IDispatch* This, int dispIdMember, Guid* riid, uint lcid, uint dwFlags, Span<DispatchParams> pDispParams, Span<Variant> pVarResult, ExcepInfo* pExcepInfo, Span<uint> pArgErr, uint cVarRef, Span<uint> rgVarRefIdx, Variant* rgVarRef)
+        public static unsafe int IDispatchInvokeStub(this Windows thisApi, IDispatch* This, int dispIdMember, Guid* riid, uint lcid, uint dwFlags, Span<DispatchParams> pDispParams, Span<Variant> pVarResult, ExceptionInfo* pExcepInfo, Span<uint> pArgErr, uint cVarRef, Span<uint> rgVarRefIdx, Variant* rgVarRef)
         {
             // SpanOverloader
             return thisApi.IDispatchInvokeStub(This, dispIdMember, riid, lcid, dwFlags, ref pDispParams.GetPinnableReference(), ref pVarResult.GetPinnableReference(), pExcepInfo, ref pArgErr.GetPinnableReference(), cVarRef, ref rgVarRefIdx.GetPinnableReference(), rgVarRef);
@@ -36842,7 +36842,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 5962, Column 43 in oaidl.h")]
-        public static unsafe int IDispatchInvokeStub(this Windows thisApi, IDispatch* This, int dispIdMember, Guid* riid, uint lcid, uint dwFlags, Span<DispatchParams> pDispParams, Span<Variant> pVarResult, ExcepInfo* pExcepInfo, Span<uint> pArgErr, uint cVarRef, Span<uint> rgVarRefIdx, Span<Variant> rgVarRef)
+        public static unsafe int IDispatchInvokeStub(this Windows thisApi, IDispatch* This, int dispIdMember, Guid* riid, uint lcid, uint dwFlags, Span<DispatchParams> pDispParams, Span<Variant> pVarResult, ExceptionInfo* pExcepInfo, Span<uint> pArgErr, uint cVarRef, Span<uint> rgVarRefIdx, Span<Variant> rgVarRef)
         {
             // SpanOverloader
             return thisApi.IDispatchInvokeStub(This, dispIdMember, riid, lcid, dwFlags, ref pDispParams.GetPinnableReference(), ref pVarResult.GetPinnableReference(), pExcepInfo, ref pArgErr.GetPinnableReference(), cVarRef, ref rgVarRefIdx.GetPinnableReference(), ref rgVarRef.GetPinnableReference());
@@ -36850,7 +36850,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 5962, Column 43 in oaidl.h")]
-        public static unsafe int IDispatchInvokeStub(this Windows thisApi, IDispatch* This, int dispIdMember, Guid* riid, uint lcid, uint dwFlags, Span<DispatchParams> pDispParams, Span<Variant> pVarResult, Span<ExcepInfo> pExcepInfo, uint* pArgErr, uint cVarRef, uint* rgVarRefIdx, Variant* rgVarRef)
+        public static unsafe int IDispatchInvokeStub(this Windows thisApi, IDispatch* This, int dispIdMember, Guid* riid, uint lcid, uint dwFlags, Span<DispatchParams> pDispParams, Span<Variant> pVarResult, Span<ExceptionInfo> pExcepInfo, uint* pArgErr, uint cVarRef, uint* rgVarRefIdx, Variant* rgVarRef)
         {
             // SpanOverloader
             return thisApi.IDispatchInvokeStub(This, dispIdMember, riid, lcid, dwFlags, ref pDispParams.GetPinnableReference(), ref pVarResult.GetPinnableReference(), ref pExcepInfo.GetPinnableReference(), pArgErr, cVarRef, rgVarRefIdx, rgVarRef);
@@ -36858,7 +36858,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 5962, Column 43 in oaidl.h")]
-        public static unsafe int IDispatchInvokeStub(this Windows thisApi, IDispatch* This, int dispIdMember, Guid* riid, uint lcid, uint dwFlags, Span<DispatchParams> pDispParams, Span<Variant> pVarResult, Span<ExcepInfo> pExcepInfo, uint* pArgErr, uint cVarRef, uint* rgVarRefIdx, Span<Variant> rgVarRef)
+        public static unsafe int IDispatchInvokeStub(this Windows thisApi, IDispatch* This, int dispIdMember, Guid* riid, uint lcid, uint dwFlags, Span<DispatchParams> pDispParams, Span<Variant> pVarResult, Span<ExceptionInfo> pExcepInfo, uint* pArgErr, uint cVarRef, uint* rgVarRefIdx, Span<Variant> rgVarRef)
         {
             // SpanOverloader
             return thisApi.IDispatchInvokeStub(This, dispIdMember, riid, lcid, dwFlags, ref pDispParams.GetPinnableReference(), ref pVarResult.GetPinnableReference(), ref pExcepInfo.GetPinnableReference(), pArgErr, cVarRef, rgVarRefIdx, ref rgVarRef.GetPinnableReference());
@@ -36866,7 +36866,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 5962, Column 43 in oaidl.h")]
-        public static unsafe int IDispatchInvokeStub(this Windows thisApi, IDispatch* This, int dispIdMember, Guid* riid, uint lcid, uint dwFlags, Span<DispatchParams> pDispParams, Span<Variant> pVarResult, Span<ExcepInfo> pExcepInfo, uint* pArgErr, uint cVarRef, Span<uint> rgVarRefIdx, Variant* rgVarRef)
+        public static unsafe int IDispatchInvokeStub(this Windows thisApi, IDispatch* This, int dispIdMember, Guid* riid, uint lcid, uint dwFlags, Span<DispatchParams> pDispParams, Span<Variant> pVarResult, Span<ExceptionInfo> pExcepInfo, uint* pArgErr, uint cVarRef, Span<uint> rgVarRefIdx, Variant* rgVarRef)
         {
             // SpanOverloader
             return thisApi.IDispatchInvokeStub(This, dispIdMember, riid, lcid, dwFlags, ref pDispParams.GetPinnableReference(), ref pVarResult.GetPinnableReference(), ref pExcepInfo.GetPinnableReference(), pArgErr, cVarRef, ref rgVarRefIdx.GetPinnableReference(), rgVarRef);
@@ -36874,7 +36874,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 5962, Column 43 in oaidl.h")]
-        public static unsafe int IDispatchInvokeStub(this Windows thisApi, IDispatch* This, int dispIdMember, Guid* riid, uint lcid, uint dwFlags, Span<DispatchParams> pDispParams, Span<Variant> pVarResult, Span<ExcepInfo> pExcepInfo, uint* pArgErr, uint cVarRef, Span<uint> rgVarRefIdx, Span<Variant> rgVarRef)
+        public static unsafe int IDispatchInvokeStub(this Windows thisApi, IDispatch* This, int dispIdMember, Guid* riid, uint lcid, uint dwFlags, Span<DispatchParams> pDispParams, Span<Variant> pVarResult, Span<ExceptionInfo> pExcepInfo, uint* pArgErr, uint cVarRef, Span<uint> rgVarRefIdx, Span<Variant> rgVarRef)
         {
             // SpanOverloader
             return thisApi.IDispatchInvokeStub(This, dispIdMember, riid, lcid, dwFlags, ref pDispParams.GetPinnableReference(), ref pVarResult.GetPinnableReference(), ref pExcepInfo.GetPinnableReference(), pArgErr, cVarRef, ref rgVarRefIdx.GetPinnableReference(), ref rgVarRef.GetPinnableReference());
@@ -36882,7 +36882,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 5962, Column 43 in oaidl.h")]
-        public static unsafe int IDispatchInvokeStub(this Windows thisApi, IDispatch* This, int dispIdMember, Guid* riid, uint lcid, uint dwFlags, Span<DispatchParams> pDispParams, Span<Variant> pVarResult, Span<ExcepInfo> pExcepInfo, Span<uint> pArgErr, uint cVarRef, uint* rgVarRefIdx, Variant* rgVarRef)
+        public static unsafe int IDispatchInvokeStub(this Windows thisApi, IDispatch* This, int dispIdMember, Guid* riid, uint lcid, uint dwFlags, Span<DispatchParams> pDispParams, Span<Variant> pVarResult, Span<ExceptionInfo> pExcepInfo, Span<uint> pArgErr, uint cVarRef, uint* rgVarRefIdx, Variant* rgVarRef)
         {
             // SpanOverloader
             return thisApi.IDispatchInvokeStub(This, dispIdMember, riid, lcid, dwFlags, ref pDispParams.GetPinnableReference(), ref pVarResult.GetPinnableReference(), ref pExcepInfo.GetPinnableReference(), ref pArgErr.GetPinnableReference(), cVarRef, rgVarRefIdx, rgVarRef);
@@ -36890,7 +36890,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 5962, Column 43 in oaidl.h")]
-        public static unsafe int IDispatchInvokeStub(this Windows thisApi, IDispatch* This, int dispIdMember, Guid* riid, uint lcid, uint dwFlags, Span<DispatchParams> pDispParams, Span<Variant> pVarResult, Span<ExcepInfo> pExcepInfo, Span<uint> pArgErr, uint cVarRef, uint* rgVarRefIdx, Span<Variant> rgVarRef)
+        public static unsafe int IDispatchInvokeStub(this Windows thisApi, IDispatch* This, int dispIdMember, Guid* riid, uint lcid, uint dwFlags, Span<DispatchParams> pDispParams, Span<Variant> pVarResult, Span<ExceptionInfo> pExcepInfo, Span<uint> pArgErr, uint cVarRef, uint* rgVarRefIdx, Span<Variant> rgVarRef)
         {
             // SpanOverloader
             return thisApi.IDispatchInvokeStub(This, dispIdMember, riid, lcid, dwFlags, ref pDispParams.GetPinnableReference(), ref pVarResult.GetPinnableReference(), ref pExcepInfo.GetPinnableReference(), ref pArgErr.GetPinnableReference(), cVarRef, rgVarRefIdx, ref rgVarRef.GetPinnableReference());
@@ -36898,7 +36898,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 5962, Column 43 in oaidl.h")]
-        public static unsafe int IDispatchInvokeStub(this Windows thisApi, IDispatch* This, int dispIdMember, Guid* riid, uint lcid, uint dwFlags, Span<DispatchParams> pDispParams, Span<Variant> pVarResult, Span<ExcepInfo> pExcepInfo, Span<uint> pArgErr, uint cVarRef, Span<uint> rgVarRefIdx, Variant* rgVarRef)
+        public static unsafe int IDispatchInvokeStub(this Windows thisApi, IDispatch* This, int dispIdMember, Guid* riid, uint lcid, uint dwFlags, Span<DispatchParams> pDispParams, Span<Variant> pVarResult, Span<ExceptionInfo> pExcepInfo, Span<uint> pArgErr, uint cVarRef, Span<uint> rgVarRefIdx, Variant* rgVarRef)
         {
             // SpanOverloader
             return thisApi.IDispatchInvokeStub(This, dispIdMember, riid, lcid, dwFlags, ref pDispParams.GetPinnableReference(), ref pVarResult.GetPinnableReference(), ref pExcepInfo.GetPinnableReference(), ref pArgErr.GetPinnableReference(), cVarRef, ref rgVarRefIdx.GetPinnableReference(), rgVarRef);
@@ -36906,7 +36906,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 5962, Column 43 in oaidl.h")]
-        public static unsafe int IDispatchInvokeStub(this Windows thisApi, IDispatch* This, int dispIdMember, Guid* riid, uint lcid, uint dwFlags, Span<DispatchParams> pDispParams, Span<Variant> pVarResult, Span<ExcepInfo> pExcepInfo, Span<uint> pArgErr, uint cVarRef, Span<uint> rgVarRefIdx, Span<Variant> rgVarRef)
+        public static unsafe int IDispatchInvokeStub(this Windows thisApi, IDispatch* This, int dispIdMember, Guid* riid, uint lcid, uint dwFlags, Span<DispatchParams> pDispParams, Span<Variant> pVarResult, Span<ExceptionInfo> pExcepInfo, Span<uint> pArgErr, uint cVarRef, Span<uint> rgVarRefIdx, Span<Variant> rgVarRef)
         {
             // SpanOverloader
             return thisApi.IDispatchInvokeStub(This, dispIdMember, riid, lcid, dwFlags, ref pDispParams.GetPinnableReference(), ref pVarResult.GetPinnableReference(), ref pExcepInfo.GetPinnableReference(), ref pArgErr.GetPinnableReference(), cVarRef, ref rgVarRefIdx.GetPinnableReference(), ref rgVarRef.GetPinnableReference());
@@ -36914,7 +36914,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 5962, Column 43 in oaidl.h")]
-        public static unsafe int IDispatchInvokeStub(this Windows thisApi, IDispatch* This, int dispIdMember, Span<Guid> riid, uint lcid, uint dwFlags, DispatchParams* pDispParams, Variant* pVarResult, ExcepInfo* pExcepInfo, uint* pArgErr, uint cVarRef, uint* rgVarRefIdx, Variant* rgVarRef)
+        public static unsafe int IDispatchInvokeStub(this Windows thisApi, IDispatch* This, int dispIdMember, Span<Guid> riid, uint lcid, uint dwFlags, DispatchParams* pDispParams, Variant* pVarResult, ExceptionInfo* pExcepInfo, uint* pArgErr, uint cVarRef, uint* rgVarRefIdx, Variant* rgVarRef)
         {
             // SpanOverloader
             return thisApi.IDispatchInvokeStub(This, dispIdMember, ref riid.GetPinnableReference(), lcid, dwFlags, pDispParams, pVarResult, pExcepInfo, pArgErr, cVarRef, rgVarRefIdx, rgVarRef);
@@ -36922,7 +36922,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 5962, Column 43 in oaidl.h")]
-        public static unsafe int IDispatchInvokeStub(this Windows thisApi, IDispatch* This, int dispIdMember, Span<Guid> riid, uint lcid, uint dwFlags, DispatchParams* pDispParams, Variant* pVarResult, ExcepInfo* pExcepInfo, uint* pArgErr, uint cVarRef, uint* rgVarRefIdx, Span<Variant> rgVarRef)
+        public static unsafe int IDispatchInvokeStub(this Windows thisApi, IDispatch* This, int dispIdMember, Span<Guid> riid, uint lcid, uint dwFlags, DispatchParams* pDispParams, Variant* pVarResult, ExceptionInfo* pExcepInfo, uint* pArgErr, uint cVarRef, uint* rgVarRefIdx, Span<Variant> rgVarRef)
         {
             // SpanOverloader
             return thisApi.IDispatchInvokeStub(This, dispIdMember, ref riid.GetPinnableReference(), lcid, dwFlags, pDispParams, pVarResult, pExcepInfo, pArgErr, cVarRef, rgVarRefIdx, ref rgVarRef.GetPinnableReference());
@@ -36930,7 +36930,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 5962, Column 43 in oaidl.h")]
-        public static unsafe int IDispatchInvokeStub(this Windows thisApi, IDispatch* This, int dispIdMember, Span<Guid> riid, uint lcid, uint dwFlags, DispatchParams* pDispParams, Variant* pVarResult, ExcepInfo* pExcepInfo, uint* pArgErr, uint cVarRef, Span<uint> rgVarRefIdx, Variant* rgVarRef)
+        public static unsafe int IDispatchInvokeStub(this Windows thisApi, IDispatch* This, int dispIdMember, Span<Guid> riid, uint lcid, uint dwFlags, DispatchParams* pDispParams, Variant* pVarResult, ExceptionInfo* pExcepInfo, uint* pArgErr, uint cVarRef, Span<uint> rgVarRefIdx, Variant* rgVarRef)
         {
             // SpanOverloader
             return thisApi.IDispatchInvokeStub(This, dispIdMember, ref riid.GetPinnableReference(), lcid, dwFlags, pDispParams, pVarResult, pExcepInfo, pArgErr, cVarRef, ref rgVarRefIdx.GetPinnableReference(), rgVarRef);
@@ -36938,7 +36938,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 5962, Column 43 in oaidl.h")]
-        public static unsafe int IDispatchInvokeStub(this Windows thisApi, IDispatch* This, int dispIdMember, Span<Guid> riid, uint lcid, uint dwFlags, DispatchParams* pDispParams, Variant* pVarResult, ExcepInfo* pExcepInfo, uint* pArgErr, uint cVarRef, Span<uint> rgVarRefIdx, Span<Variant> rgVarRef)
+        public static unsafe int IDispatchInvokeStub(this Windows thisApi, IDispatch* This, int dispIdMember, Span<Guid> riid, uint lcid, uint dwFlags, DispatchParams* pDispParams, Variant* pVarResult, ExceptionInfo* pExcepInfo, uint* pArgErr, uint cVarRef, Span<uint> rgVarRefIdx, Span<Variant> rgVarRef)
         {
             // SpanOverloader
             return thisApi.IDispatchInvokeStub(This, dispIdMember, ref riid.GetPinnableReference(), lcid, dwFlags, pDispParams, pVarResult, pExcepInfo, pArgErr, cVarRef, ref rgVarRefIdx.GetPinnableReference(), ref rgVarRef.GetPinnableReference());
@@ -36946,7 +36946,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 5962, Column 43 in oaidl.h")]
-        public static unsafe int IDispatchInvokeStub(this Windows thisApi, IDispatch* This, int dispIdMember, Span<Guid> riid, uint lcid, uint dwFlags, DispatchParams* pDispParams, Variant* pVarResult, ExcepInfo* pExcepInfo, Span<uint> pArgErr, uint cVarRef, uint* rgVarRefIdx, Variant* rgVarRef)
+        public static unsafe int IDispatchInvokeStub(this Windows thisApi, IDispatch* This, int dispIdMember, Span<Guid> riid, uint lcid, uint dwFlags, DispatchParams* pDispParams, Variant* pVarResult, ExceptionInfo* pExcepInfo, Span<uint> pArgErr, uint cVarRef, uint* rgVarRefIdx, Variant* rgVarRef)
         {
             // SpanOverloader
             return thisApi.IDispatchInvokeStub(This, dispIdMember, ref riid.GetPinnableReference(), lcid, dwFlags, pDispParams, pVarResult, pExcepInfo, ref pArgErr.GetPinnableReference(), cVarRef, rgVarRefIdx, rgVarRef);
@@ -36954,7 +36954,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 5962, Column 43 in oaidl.h")]
-        public static unsafe int IDispatchInvokeStub(this Windows thisApi, IDispatch* This, int dispIdMember, Span<Guid> riid, uint lcid, uint dwFlags, DispatchParams* pDispParams, Variant* pVarResult, ExcepInfo* pExcepInfo, Span<uint> pArgErr, uint cVarRef, uint* rgVarRefIdx, Span<Variant> rgVarRef)
+        public static unsafe int IDispatchInvokeStub(this Windows thisApi, IDispatch* This, int dispIdMember, Span<Guid> riid, uint lcid, uint dwFlags, DispatchParams* pDispParams, Variant* pVarResult, ExceptionInfo* pExcepInfo, Span<uint> pArgErr, uint cVarRef, uint* rgVarRefIdx, Span<Variant> rgVarRef)
         {
             // SpanOverloader
             return thisApi.IDispatchInvokeStub(This, dispIdMember, ref riid.GetPinnableReference(), lcid, dwFlags, pDispParams, pVarResult, pExcepInfo, ref pArgErr.GetPinnableReference(), cVarRef, rgVarRefIdx, ref rgVarRef.GetPinnableReference());
@@ -36962,7 +36962,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 5962, Column 43 in oaidl.h")]
-        public static unsafe int IDispatchInvokeStub(this Windows thisApi, IDispatch* This, int dispIdMember, Span<Guid> riid, uint lcid, uint dwFlags, DispatchParams* pDispParams, Variant* pVarResult, ExcepInfo* pExcepInfo, Span<uint> pArgErr, uint cVarRef, Span<uint> rgVarRefIdx, Variant* rgVarRef)
+        public static unsafe int IDispatchInvokeStub(this Windows thisApi, IDispatch* This, int dispIdMember, Span<Guid> riid, uint lcid, uint dwFlags, DispatchParams* pDispParams, Variant* pVarResult, ExceptionInfo* pExcepInfo, Span<uint> pArgErr, uint cVarRef, Span<uint> rgVarRefIdx, Variant* rgVarRef)
         {
             // SpanOverloader
             return thisApi.IDispatchInvokeStub(This, dispIdMember, ref riid.GetPinnableReference(), lcid, dwFlags, pDispParams, pVarResult, pExcepInfo, ref pArgErr.GetPinnableReference(), cVarRef, ref rgVarRefIdx.GetPinnableReference(), rgVarRef);
@@ -36970,7 +36970,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 5962, Column 43 in oaidl.h")]
-        public static unsafe int IDispatchInvokeStub(this Windows thisApi, IDispatch* This, int dispIdMember, Span<Guid> riid, uint lcid, uint dwFlags, DispatchParams* pDispParams, Variant* pVarResult, ExcepInfo* pExcepInfo, Span<uint> pArgErr, uint cVarRef, Span<uint> rgVarRefIdx, Span<Variant> rgVarRef)
+        public static unsafe int IDispatchInvokeStub(this Windows thisApi, IDispatch* This, int dispIdMember, Span<Guid> riid, uint lcid, uint dwFlags, DispatchParams* pDispParams, Variant* pVarResult, ExceptionInfo* pExcepInfo, Span<uint> pArgErr, uint cVarRef, Span<uint> rgVarRefIdx, Span<Variant> rgVarRef)
         {
             // SpanOverloader
             return thisApi.IDispatchInvokeStub(This, dispIdMember, ref riid.GetPinnableReference(), lcid, dwFlags, pDispParams, pVarResult, pExcepInfo, ref pArgErr.GetPinnableReference(), cVarRef, ref rgVarRefIdx.GetPinnableReference(), ref rgVarRef.GetPinnableReference());
@@ -36978,7 +36978,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 5962, Column 43 in oaidl.h")]
-        public static unsafe int IDispatchInvokeStub(this Windows thisApi, IDispatch* This, int dispIdMember, Span<Guid> riid, uint lcid, uint dwFlags, DispatchParams* pDispParams, Variant* pVarResult, Span<ExcepInfo> pExcepInfo, uint* pArgErr, uint cVarRef, uint* rgVarRefIdx, Variant* rgVarRef)
+        public static unsafe int IDispatchInvokeStub(this Windows thisApi, IDispatch* This, int dispIdMember, Span<Guid> riid, uint lcid, uint dwFlags, DispatchParams* pDispParams, Variant* pVarResult, Span<ExceptionInfo> pExcepInfo, uint* pArgErr, uint cVarRef, uint* rgVarRefIdx, Variant* rgVarRef)
         {
             // SpanOverloader
             return thisApi.IDispatchInvokeStub(This, dispIdMember, ref riid.GetPinnableReference(), lcid, dwFlags, pDispParams, pVarResult, ref pExcepInfo.GetPinnableReference(), pArgErr, cVarRef, rgVarRefIdx, rgVarRef);
@@ -36986,7 +36986,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 5962, Column 43 in oaidl.h")]
-        public static unsafe int IDispatchInvokeStub(this Windows thisApi, IDispatch* This, int dispIdMember, Span<Guid> riid, uint lcid, uint dwFlags, DispatchParams* pDispParams, Variant* pVarResult, Span<ExcepInfo> pExcepInfo, uint* pArgErr, uint cVarRef, uint* rgVarRefIdx, Span<Variant> rgVarRef)
+        public static unsafe int IDispatchInvokeStub(this Windows thisApi, IDispatch* This, int dispIdMember, Span<Guid> riid, uint lcid, uint dwFlags, DispatchParams* pDispParams, Variant* pVarResult, Span<ExceptionInfo> pExcepInfo, uint* pArgErr, uint cVarRef, uint* rgVarRefIdx, Span<Variant> rgVarRef)
         {
             // SpanOverloader
             return thisApi.IDispatchInvokeStub(This, dispIdMember, ref riid.GetPinnableReference(), lcid, dwFlags, pDispParams, pVarResult, ref pExcepInfo.GetPinnableReference(), pArgErr, cVarRef, rgVarRefIdx, ref rgVarRef.GetPinnableReference());
@@ -36994,7 +36994,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 5962, Column 43 in oaidl.h")]
-        public static unsafe int IDispatchInvokeStub(this Windows thisApi, IDispatch* This, int dispIdMember, Span<Guid> riid, uint lcid, uint dwFlags, DispatchParams* pDispParams, Variant* pVarResult, Span<ExcepInfo> pExcepInfo, uint* pArgErr, uint cVarRef, Span<uint> rgVarRefIdx, Variant* rgVarRef)
+        public static unsafe int IDispatchInvokeStub(this Windows thisApi, IDispatch* This, int dispIdMember, Span<Guid> riid, uint lcid, uint dwFlags, DispatchParams* pDispParams, Variant* pVarResult, Span<ExceptionInfo> pExcepInfo, uint* pArgErr, uint cVarRef, Span<uint> rgVarRefIdx, Variant* rgVarRef)
         {
             // SpanOverloader
             return thisApi.IDispatchInvokeStub(This, dispIdMember, ref riid.GetPinnableReference(), lcid, dwFlags, pDispParams, pVarResult, ref pExcepInfo.GetPinnableReference(), pArgErr, cVarRef, ref rgVarRefIdx.GetPinnableReference(), rgVarRef);
@@ -37002,7 +37002,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 5962, Column 43 in oaidl.h")]
-        public static unsafe int IDispatchInvokeStub(this Windows thisApi, IDispatch* This, int dispIdMember, Span<Guid> riid, uint lcid, uint dwFlags, DispatchParams* pDispParams, Variant* pVarResult, Span<ExcepInfo> pExcepInfo, uint* pArgErr, uint cVarRef, Span<uint> rgVarRefIdx, Span<Variant> rgVarRef)
+        public static unsafe int IDispatchInvokeStub(this Windows thisApi, IDispatch* This, int dispIdMember, Span<Guid> riid, uint lcid, uint dwFlags, DispatchParams* pDispParams, Variant* pVarResult, Span<ExceptionInfo> pExcepInfo, uint* pArgErr, uint cVarRef, Span<uint> rgVarRefIdx, Span<Variant> rgVarRef)
         {
             // SpanOverloader
             return thisApi.IDispatchInvokeStub(This, dispIdMember, ref riid.GetPinnableReference(), lcid, dwFlags, pDispParams, pVarResult, ref pExcepInfo.GetPinnableReference(), pArgErr, cVarRef, ref rgVarRefIdx.GetPinnableReference(), ref rgVarRef.GetPinnableReference());
@@ -37010,7 +37010,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 5962, Column 43 in oaidl.h")]
-        public static unsafe int IDispatchInvokeStub(this Windows thisApi, IDispatch* This, int dispIdMember, Span<Guid> riid, uint lcid, uint dwFlags, DispatchParams* pDispParams, Variant* pVarResult, Span<ExcepInfo> pExcepInfo, Span<uint> pArgErr, uint cVarRef, uint* rgVarRefIdx, Variant* rgVarRef)
+        public static unsafe int IDispatchInvokeStub(this Windows thisApi, IDispatch* This, int dispIdMember, Span<Guid> riid, uint lcid, uint dwFlags, DispatchParams* pDispParams, Variant* pVarResult, Span<ExceptionInfo> pExcepInfo, Span<uint> pArgErr, uint cVarRef, uint* rgVarRefIdx, Variant* rgVarRef)
         {
             // SpanOverloader
             return thisApi.IDispatchInvokeStub(This, dispIdMember, ref riid.GetPinnableReference(), lcid, dwFlags, pDispParams, pVarResult, ref pExcepInfo.GetPinnableReference(), ref pArgErr.GetPinnableReference(), cVarRef, rgVarRefIdx, rgVarRef);
@@ -37018,7 +37018,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 5962, Column 43 in oaidl.h")]
-        public static unsafe int IDispatchInvokeStub(this Windows thisApi, IDispatch* This, int dispIdMember, Span<Guid> riid, uint lcid, uint dwFlags, DispatchParams* pDispParams, Variant* pVarResult, Span<ExcepInfo> pExcepInfo, Span<uint> pArgErr, uint cVarRef, uint* rgVarRefIdx, Span<Variant> rgVarRef)
+        public static unsafe int IDispatchInvokeStub(this Windows thisApi, IDispatch* This, int dispIdMember, Span<Guid> riid, uint lcid, uint dwFlags, DispatchParams* pDispParams, Variant* pVarResult, Span<ExceptionInfo> pExcepInfo, Span<uint> pArgErr, uint cVarRef, uint* rgVarRefIdx, Span<Variant> rgVarRef)
         {
             // SpanOverloader
             return thisApi.IDispatchInvokeStub(This, dispIdMember, ref riid.GetPinnableReference(), lcid, dwFlags, pDispParams, pVarResult, ref pExcepInfo.GetPinnableReference(), ref pArgErr.GetPinnableReference(), cVarRef, rgVarRefIdx, ref rgVarRef.GetPinnableReference());
@@ -37026,7 +37026,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 5962, Column 43 in oaidl.h")]
-        public static unsafe int IDispatchInvokeStub(this Windows thisApi, IDispatch* This, int dispIdMember, Span<Guid> riid, uint lcid, uint dwFlags, DispatchParams* pDispParams, Variant* pVarResult, Span<ExcepInfo> pExcepInfo, Span<uint> pArgErr, uint cVarRef, Span<uint> rgVarRefIdx, Variant* rgVarRef)
+        public static unsafe int IDispatchInvokeStub(this Windows thisApi, IDispatch* This, int dispIdMember, Span<Guid> riid, uint lcid, uint dwFlags, DispatchParams* pDispParams, Variant* pVarResult, Span<ExceptionInfo> pExcepInfo, Span<uint> pArgErr, uint cVarRef, Span<uint> rgVarRefIdx, Variant* rgVarRef)
         {
             // SpanOverloader
             return thisApi.IDispatchInvokeStub(This, dispIdMember, ref riid.GetPinnableReference(), lcid, dwFlags, pDispParams, pVarResult, ref pExcepInfo.GetPinnableReference(), ref pArgErr.GetPinnableReference(), cVarRef, ref rgVarRefIdx.GetPinnableReference(), rgVarRef);
@@ -37034,7 +37034,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 5962, Column 43 in oaidl.h")]
-        public static unsafe int IDispatchInvokeStub(this Windows thisApi, IDispatch* This, int dispIdMember, Span<Guid> riid, uint lcid, uint dwFlags, DispatchParams* pDispParams, Variant* pVarResult, Span<ExcepInfo> pExcepInfo, Span<uint> pArgErr, uint cVarRef, Span<uint> rgVarRefIdx, Span<Variant> rgVarRef)
+        public static unsafe int IDispatchInvokeStub(this Windows thisApi, IDispatch* This, int dispIdMember, Span<Guid> riid, uint lcid, uint dwFlags, DispatchParams* pDispParams, Variant* pVarResult, Span<ExceptionInfo> pExcepInfo, Span<uint> pArgErr, uint cVarRef, Span<uint> rgVarRefIdx, Span<Variant> rgVarRef)
         {
             // SpanOverloader
             return thisApi.IDispatchInvokeStub(This, dispIdMember, ref riid.GetPinnableReference(), lcid, dwFlags, pDispParams, pVarResult, ref pExcepInfo.GetPinnableReference(), ref pArgErr.GetPinnableReference(), cVarRef, ref rgVarRefIdx.GetPinnableReference(), ref rgVarRef.GetPinnableReference());
@@ -37042,7 +37042,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 5962, Column 43 in oaidl.h")]
-        public static unsafe int IDispatchInvokeStub(this Windows thisApi, IDispatch* This, int dispIdMember, Span<Guid> riid, uint lcid, uint dwFlags, DispatchParams* pDispParams, Span<Variant> pVarResult, ExcepInfo* pExcepInfo, uint* pArgErr, uint cVarRef, uint* rgVarRefIdx, Variant* rgVarRef)
+        public static unsafe int IDispatchInvokeStub(this Windows thisApi, IDispatch* This, int dispIdMember, Span<Guid> riid, uint lcid, uint dwFlags, DispatchParams* pDispParams, Span<Variant> pVarResult, ExceptionInfo* pExcepInfo, uint* pArgErr, uint cVarRef, uint* rgVarRefIdx, Variant* rgVarRef)
         {
             // SpanOverloader
             return thisApi.IDispatchInvokeStub(This, dispIdMember, ref riid.GetPinnableReference(), lcid, dwFlags, pDispParams, ref pVarResult.GetPinnableReference(), pExcepInfo, pArgErr, cVarRef, rgVarRefIdx, rgVarRef);
@@ -37050,7 +37050,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 5962, Column 43 in oaidl.h")]
-        public static unsafe int IDispatchInvokeStub(this Windows thisApi, IDispatch* This, int dispIdMember, Span<Guid> riid, uint lcid, uint dwFlags, DispatchParams* pDispParams, Span<Variant> pVarResult, ExcepInfo* pExcepInfo, uint* pArgErr, uint cVarRef, uint* rgVarRefIdx, Span<Variant> rgVarRef)
+        public static unsafe int IDispatchInvokeStub(this Windows thisApi, IDispatch* This, int dispIdMember, Span<Guid> riid, uint lcid, uint dwFlags, DispatchParams* pDispParams, Span<Variant> pVarResult, ExceptionInfo* pExcepInfo, uint* pArgErr, uint cVarRef, uint* rgVarRefIdx, Span<Variant> rgVarRef)
         {
             // SpanOverloader
             return thisApi.IDispatchInvokeStub(This, dispIdMember, ref riid.GetPinnableReference(), lcid, dwFlags, pDispParams, ref pVarResult.GetPinnableReference(), pExcepInfo, pArgErr, cVarRef, rgVarRefIdx, ref rgVarRef.GetPinnableReference());
@@ -37058,7 +37058,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 5962, Column 43 in oaidl.h")]
-        public static unsafe int IDispatchInvokeStub(this Windows thisApi, IDispatch* This, int dispIdMember, Span<Guid> riid, uint lcid, uint dwFlags, DispatchParams* pDispParams, Span<Variant> pVarResult, ExcepInfo* pExcepInfo, uint* pArgErr, uint cVarRef, Span<uint> rgVarRefIdx, Variant* rgVarRef)
+        public static unsafe int IDispatchInvokeStub(this Windows thisApi, IDispatch* This, int dispIdMember, Span<Guid> riid, uint lcid, uint dwFlags, DispatchParams* pDispParams, Span<Variant> pVarResult, ExceptionInfo* pExcepInfo, uint* pArgErr, uint cVarRef, Span<uint> rgVarRefIdx, Variant* rgVarRef)
         {
             // SpanOverloader
             return thisApi.IDispatchInvokeStub(This, dispIdMember, ref riid.GetPinnableReference(), lcid, dwFlags, pDispParams, ref pVarResult.GetPinnableReference(), pExcepInfo, pArgErr, cVarRef, ref rgVarRefIdx.GetPinnableReference(), rgVarRef);
@@ -37066,7 +37066,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 5962, Column 43 in oaidl.h")]
-        public static unsafe int IDispatchInvokeStub(this Windows thisApi, IDispatch* This, int dispIdMember, Span<Guid> riid, uint lcid, uint dwFlags, DispatchParams* pDispParams, Span<Variant> pVarResult, ExcepInfo* pExcepInfo, uint* pArgErr, uint cVarRef, Span<uint> rgVarRefIdx, Span<Variant> rgVarRef)
+        public static unsafe int IDispatchInvokeStub(this Windows thisApi, IDispatch* This, int dispIdMember, Span<Guid> riid, uint lcid, uint dwFlags, DispatchParams* pDispParams, Span<Variant> pVarResult, ExceptionInfo* pExcepInfo, uint* pArgErr, uint cVarRef, Span<uint> rgVarRefIdx, Span<Variant> rgVarRef)
         {
             // SpanOverloader
             return thisApi.IDispatchInvokeStub(This, dispIdMember, ref riid.GetPinnableReference(), lcid, dwFlags, pDispParams, ref pVarResult.GetPinnableReference(), pExcepInfo, pArgErr, cVarRef, ref rgVarRefIdx.GetPinnableReference(), ref rgVarRef.GetPinnableReference());
@@ -37074,7 +37074,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 5962, Column 43 in oaidl.h")]
-        public static unsafe int IDispatchInvokeStub(this Windows thisApi, IDispatch* This, int dispIdMember, Span<Guid> riid, uint lcid, uint dwFlags, DispatchParams* pDispParams, Span<Variant> pVarResult, ExcepInfo* pExcepInfo, Span<uint> pArgErr, uint cVarRef, uint* rgVarRefIdx, Variant* rgVarRef)
+        public static unsafe int IDispatchInvokeStub(this Windows thisApi, IDispatch* This, int dispIdMember, Span<Guid> riid, uint lcid, uint dwFlags, DispatchParams* pDispParams, Span<Variant> pVarResult, ExceptionInfo* pExcepInfo, Span<uint> pArgErr, uint cVarRef, uint* rgVarRefIdx, Variant* rgVarRef)
         {
             // SpanOverloader
             return thisApi.IDispatchInvokeStub(This, dispIdMember, ref riid.GetPinnableReference(), lcid, dwFlags, pDispParams, ref pVarResult.GetPinnableReference(), pExcepInfo, ref pArgErr.GetPinnableReference(), cVarRef, rgVarRefIdx, rgVarRef);
@@ -37082,7 +37082,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 5962, Column 43 in oaidl.h")]
-        public static unsafe int IDispatchInvokeStub(this Windows thisApi, IDispatch* This, int dispIdMember, Span<Guid> riid, uint lcid, uint dwFlags, DispatchParams* pDispParams, Span<Variant> pVarResult, ExcepInfo* pExcepInfo, Span<uint> pArgErr, uint cVarRef, uint* rgVarRefIdx, Span<Variant> rgVarRef)
+        public static unsafe int IDispatchInvokeStub(this Windows thisApi, IDispatch* This, int dispIdMember, Span<Guid> riid, uint lcid, uint dwFlags, DispatchParams* pDispParams, Span<Variant> pVarResult, ExceptionInfo* pExcepInfo, Span<uint> pArgErr, uint cVarRef, uint* rgVarRefIdx, Span<Variant> rgVarRef)
         {
             // SpanOverloader
             return thisApi.IDispatchInvokeStub(This, dispIdMember, ref riid.GetPinnableReference(), lcid, dwFlags, pDispParams, ref pVarResult.GetPinnableReference(), pExcepInfo, ref pArgErr.GetPinnableReference(), cVarRef, rgVarRefIdx, ref rgVarRef.GetPinnableReference());
@@ -37090,7 +37090,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 5962, Column 43 in oaidl.h")]
-        public static unsafe int IDispatchInvokeStub(this Windows thisApi, IDispatch* This, int dispIdMember, Span<Guid> riid, uint lcid, uint dwFlags, DispatchParams* pDispParams, Span<Variant> pVarResult, ExcepInfo* pExcepInfo, Span<uint> pArgErr, uint cVarRef, Span<uint> rgVarRefIdx, Variant* rgVarRef)
+        public static unsafe int IDispatchInvokeStub(this Windows thisApi, IDispatch* This, int dispIdMember, Span<Guid> riid, uint lcid, uint dwFlags, DispatchParams* pDispParams, Span<Variant> pVarResult, ExceptionInfo* pExcepInfo, Span<uint> pArgErr, uint cVarRef, Span<uint> rgVarRefIdx, Variant* rgVarRef)
         {
             // SpanOverloader
             return thisApi.IDispatchInvokeStub(This, dispIdMember, ref riid.GetPinnableReference(), lcid, dwFlags, pDispParams, ref pVarResult.GetPinnableReference(), pExcepInfo, ref pArgErr.GetPinnableReference(), cVarRef, ref rgVarRefIdx.GetPinnableReference(), rgVarRef);
@@ -37098,7 +37098,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 5962, Column 43 in oaidl.h")]
-        public static unsafe int IDispatchInvokeStub(this Windows thisApi, IDispatch* This, int dispIdMember, Span<Guid> riid, uint lcid, uint dwFlags, DispatchParams* pDispParams, Span<Variant> pVarResult, ExcepInfo* pExcepInfo, Span<uint> pArgErr, uint cVarRef, Span<uint> rgVarRefIdx, Span<Variant> rgVarRef)
+        public static unsafe int IDispatchInvokeStub(this Windows thisApi, IDispatch* This, int dispIdMember, Span<Guid> riid, uint lcid, uint dwFlags, DispatchParams* pDispParams, Span<Variant> pVarResult, ExceptionInfo* pExcepInfo, Span<uint> pArgErr, uint cVarRef, Span<uint> rgVarRefIdx, Span<Variant> rgVarRef)
         {
             // SpanOverloader
             return thisApi.IDispatchInvokeStub(This, dispIdMember, ref riid.GetPinnableReference(), lcid, dwFlags, pDispParams, ref pVarResult.GetPinnableReference(), pExcepInfo, ref pArgErr.GetPinnableReference(), cVarRef, ref rgVarRefIdx.GetPinnableReference(), ref rgVarRef.GetPinnableReference());
@@ -37106,7 +37106,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 5962, Column 43 in oaidl.h")]
-        public static unsafe int IDispatchInvokeStub(this Windows thisApi, IDispatch* This, int dispIdMember, Span<Guid> riid, uint lcid, uint dwFlags, DispatchParams* pDispParams, Span<Variant> pVarResult, Span<ExcepInfo> pExcepInfo, uint* pArgErr, uint cVarRef, uint* rgVarRefIdx, Variant* rgVarRef)
+        public static unsafe int IDispatchInvokeStub(this Windows thisApi, IDispatch* This, int dispIdMember, Span<Guid> riid, uint lcid, uint dwFlags, DispatchParams* pDispParams, Span<Variant> pVarResult, Span<ExceptionInfo> pExcepInfo, uint* pArgErr, uint cVarRef, uint* rgVarRefIdx, Variant* rgVarRef)
         {
             // SpanOverloader
             return thisApi.IDispatchInvokeStub(This, dispIdMember, ref riid.GetPinnableReference(), lcid, dwFlags, pDispParams, ref pVarResult.GetPinnableReference(), ref pExcepInfo.GetPinnableReference(), pArgErr, cVarRef, rgVarRefIdx, rgVarRef);
@@ -37114,7 +37114,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 5962, Column 43 in oaidl.h")]
-        public static unsafe int IDispatchInvokeStub(this Windows thisApi, IDispatch* This, int dispIdMember, Span<Guid> riid, uint lcid, uint dwFlags, DispatchParams* pDispParams, Span<Variant> pVarResult, Span<ExcepInfo> pExcepInfo, uint* pArgErr, uint cVarRef, uint* rgVarRefIdx, Span<Variant> rgVarRef)
+        public static unsafe int IDispatchInvokeStub(this Windows thisApi, IDispatch* This, int dispIdMember, Span<Guid> riid, uint lcid, uint dwFlags, DispatchParams* pDispParams, Span<Variant> pVarResult, Span<ExceptionInfo> pExcepInfo, uint* pArgErr, uint cVarRef, uint* rgVarRefIdx, Span<Variant> rgVarRef)
         {
             // SpanOverloader
             return thisApi.IDispatchInvokeStub(This, dispIdMember, ref riid.GetPinnableReference(), lcid, dwFlags, pDispParams, ref pVarResult.GetPinnableReference(), ref pExcepInfo.GetPinnableReference(), pArgErr, cVarRef, rgVarRefIdx, ref rgVarRef.GetPinnableReference());
@@ -37122,7 +37122,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 5962, Column 43 in oaidl.h")]
-        public static unsafe int IDispatchInvokeStub(this Windows thisApi, IDispatch* This, int dispIdMember, Span<Guid> riid, uint lcid, uint dwFlags, DispatchParams* pDispParams, Span<Variant> pVarResult, Span<ExcepInfo> pExcepInfo, uint* pArgErr, uint cVarRef, Span<uint> rgVarRefIdx, Variant* rgVarRef)
+        public static unsafe int IDispatchInvokeStub(this Windows thisApi, IDispatch* This, int dispIdMember, Span<Guid> riid, uint lcid, uint dwFlags, DispatchParams* pDispParams, Span<Variant> pVarResult, Span<ExceptionInfo> pExcepInfo, uint* pArgErr, uint cVarRef, Span<uint> rgVarRefIdx, Variant* rgVarRef)
         {
             // SpanOverloader
             return thisApi.IDispatchInvokeStub(This, dispIdMember, ref riid.GetPinnableReference(), lcid, dwFlags, pDispParams, ref pVarResult.GetPinnableReference(), ref pExcepInfo.GetPinnableReference(), pArgErr, cVarRef, ref rgVarRefIdx.GetPinnableReference(), rgVarRef);
@@ -37130,7 +37130,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 5962, Column 43 in oaidl.h")]
-        public static unsafe int IDispatchInvokeStub(this Windows thisApi, IDispatch* This, int dispIdMember, Span<Guid> riid, uint lcid, uint dwFlags, DispatchParams* pDispParams, Span<Variant> pVarResult, Span<ExcepInfo> pExcepInfo, uint* pArgErr, uint cVarRef, Span<uint> rgVarRefIdx, Span<Variant> rgVarRef)
+        public static unsafe int IDispatchInvokeStub(this Windows thisApi, IDispatch* This, int dispIdMember, Span<Guid> riid, uint lcid, uint dwFlags, DispatchParams* pDispParams, Span<Variant> pVarResult, Span<ExceptionInfo> pExcepInfo, uint* pArgErr, uint cVarRef, Span<uint> rgVarRefIdx, Span<Variant> rgVarRef)
         {
             // SpanOverloader
             return thisApi.IDispatchInvokeStub(This, dispIdMember, ref riid.GetPinnableReference(), lcid, dwFlags, pDispParams, ref pVarResult.GetPinnableReference(), ref pExcepInfo.GetPinnableReference(), pArgErr, cVarRef, ref rgVarRefIdx.GetPinnableReference(), ref rgVarRef.GetPinnableReference());
@@ -37138,7 +37138,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 5962, Column 43 in oaidl.h")]
-        public static unsafe int IDispatchInvokeStub(this Windows thisApi, IDispatch* This, int dispIdMember, Span<Guid> riid, uint lcid, uint dwFlags, DispatchParams* pDispParams, Span<Variant> pVarResult, Span<ExcepInfo> pExcepInfo, Span<uint> pArgErr, uint cVarRef, uint* rgVarRefIdx, Variant* rgVarRef)
+        public static unsafe int IDispatchInvokeStub(this Windows thisApi, IDispatch* This, int dispIdMember, Span<Guid> riid, uint lcid, uint dwFlags, DispatchParams* pDispParams, Span<Variant> pVarResult, Span<ExceptionInfo> pExcepInfo, Span<uint> pArgErr, uint cVarRef, uint* rgVarRefIdx, Variant* rgVarRef)
         {
             // SpanOverloader
             return thisApi.IDispatchInvokeStub(This, dispIdMember, ref riid.GetPinnableReference(), lcid, dwFlags, pDispParams, ref pVarResult.GetPinnableReference(), ref pExcepInfo.GetPinnableReference(), ref pArgErr.GetPinnableReference(), cVarRef, rgVarRefIdx, rgVarRef);
@@ -37146,7 +37146,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 5962, Column 43 in oaidl.h")]
-        public static unsafe int IDispatchInvokeStub(this Windows thisApi, IDispatch* This, int dispIdMember, Span<Guid> riid, uint lcid, uint dwFlags, DispatchParams* pDispParams, Span<Variant> pVarResult, Span<ExcepInfo> pExcepInfo, Span<uint> pArgErr, uint cVarRef, uint* rgVarRefIdx, Span<Variant> rgVarRef)
+        public static unsafe int IDispatchInvokeStub(this Windows thisApi, IDispatch* This, int dispIdMember, Span<Guid> riid, uint lcid, uint dwFlags, DispatchParams* pDispParams, Span<Variant> pVarResult, Span<ExceptionInfo> pExcepInfo, Span<uint> pArgErr, uint cVarRef, uint* rgVarRefIdx, Span<Variant> rgVarRef)
         {
             // SpanOverloader
             return thisApi.IDispatchInvokeStub(This, dispIdMember, ref riid.GetPinnableReference(), lcid, dwFlags, pDispParams, ref pVarResult.GetPinnableReference(), ref pExcepInfo.GetPinnableReference(), ref pArgErr.GetPinnableReference(), cVarRef, rgVarRefIdx, ref rgVarRef.GetPinnableReference());
@@ -37154,7 +37154,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 5962, Column 43 in oaidl.h")]
-        public static unsafe int IDispatchInvokeStub(this Windows thisApi, IDispatch* This, int dispIdMember, Span<Guid> riid, uint lcid, uint dwFlags, DispatchParams* pDispParams, Span<Variant> pVarResult, Span<ExcepInfo> pExcepInfo, Span<uint> pArgErr, uint cVarRef, Span<uint> rgVarRefIdx, Variant* rgVarRef)
+        public static unsafe int IDispatchInvokeStub(this Windows thisApi, IDispatch* This, int dispIdMember, Span<Guid> riid, uint lcid, uint dwFlags, DispatchParams* pDispParams, Span<Variant> pVarResult, Span<ExceptionInfo> pExcepInfo, Span<uint> pArgErr, uint cVarRef, Span<uint> rgVarRefIdx, Variant* rgVarRef)
         {
             // SpanOverloader
             return thisApi.IDispatchInvokeStub(This, dispIdMember, ref riid.GetPinnableReference(), lcid, dwFlags, pDispParams, ref pVarResult.GetPinnableReference(), ref pExcepInfo.GetPinnableReference(), ref pArgErr.GetPinnableReference(), cVarRef, ref rgVarRefIdx.GetPinnableReference(), rgVarRef);
@@ -37162,7 +37162,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 5962, Column 43 in oaidl.h")]
-        public static unsafe int IDispatchInvokeStub(this Windows thisApi, IDispatch* This, int dispIdMember, Span<Guid> riid, uint lcid, uint dwFlags, DispatchParams* pDispParams, Span<Variant> pVarResult, Span<ExcepInfo> pExcepInfo, Span<uint> pArgErr, uint cVarRef, Span<uint> rgVarRefIdx, Span<Variant> rgVarRef)
+        public static unsafe int IDispatchInvokeStub(this Windows thisApi, IDispatch* This, int dispIdMember, Span<Guid> riid, uint lcid, uint dwFlags, DispatchParams* pDispParams, Span<Variant> pVarResult, Span<ExceptionInfo> pExcepInfo, Span<uint> pArgErr, uint cVarRef, Span<uint> rgVarRefIdx, Span<Variant> rgVarRef)
         {
             // SpanOverloader
             return thisApi.IDispatchInvokeStub(This, dispIdMember, ref riid.GetPinnableReference(), lcid, dwFlags, pDispParams, ref pVarResult.GetPinnableReference(), ref pExcepInfo.GetPinnableReference(), ref pArgErr.GetPinnableReference(), cVarRef, ref rgVarRefIdx.GetPinnableReference(), ref rgVarRef.GetPinnableReference());
@@ -37170,7 +37170,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 5962, Column 43 in oaidl.h")]
-        public static unsafe int IDispatchInvokeStub(this Windows thisApi, IDispatch* This, int dispIdMember, Span<Guid> riid, uint lcid, uint dwFlags, Span<DispatchParams> pDispParams, Variant* pVarResult, ExcepInfo* pExcepInfo, uint* pArgErr, uint cVarRef, uint* rgVarRefIdx, Variant* rgVarRef)
+        public static unsafe int IDispatchInvokeStub(this Windows thisApi, IDispatch* This, int dispIdMember, Span<Guid> riid, uint lcid, uint dwFlags, Span<DispatchParams> pDispParams, Variant* pVarResult, ExceptionInfo* pExcepInfo, uint* pArgErr, uint cVarRef, uint* rgVarRefIdx, Variant* rgVarRef)
         {
             // SpanOverloader
             return thisApi.IDispatchInvokeStub(This, dispIdMember, ref riid.GetPinnableReference(), lcid, dwFlags, ref pDispParams.GetPinnableReference(), pVarResult, pExcepInfo, pArgErr, cVarRef, rgVarRefIdx, rgVarRef);
@@ -37178,7 +37178,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 5962, Column 43 in oaidl.h")]
-        public static unsafe int IDispatchInvokeStub(this Windows thisApi, IDispatch* This, int dispIdMember, Span<Guid> riid, uint lcid, uint dwFlags, Span<DispatchParams> pDispParams, Variant* pVarResult, ExcepInfo* pExcepInfo, uint* pArgErr, uint cVarRef, uint* rgVarRefIdx, Span<Variant> rgVarRef)
+        public static unsafe int IDispatchInvokeStub(this Windows thisApi, IDispatch* This, int dispIdMember, Span<Guid> riid, uint lcid, uint dwFlags, Span<DispatchParams> pDispParams, Variant* pVarResult, ExceptionInfo* pExcepInfo, uint* pArgErr, uint cVarRef, uint* rgVarRefIdx, Span<Variant> rgVarRef)
         {
             // SpanOverloader
             return thisApi.IDispatchInvokeStub(This, dispIdMember, ref riid.GetPinnableReference(), lcid, dwFlags, ref pDispParams.GetPinnableReference(), pVarResult, pExcepInfo, pArgErr, cVarRef, rgVarRefIdx, ref rgVarRef.GetPinnableReference());
@@ -37186,7 +37186,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 5962, Column 43 in oaidl.h")]
-        public static unsafe int IDispatchInvokeStub(this Windows thisApi, IDispatch* This, int dispIdMember, Span<Guid> riid, uint lcid, uint dwFlags, Span<DispatchParams> pDispParams, Variant* pVarResult, ExcepInfo* pExcepInfo, uint* pArgErr, uint cVarRef, Span<uint> rgVarRefIdx, Variant* rgVarRef)
+        public static unsafe int IDispatchInvokeStub(this Windows thisApi, IDispatch* This, int dispIdMember, Span<Guid> riid, uint lcid, uint dwFlags, Span<DispatchParams> pDispParams, Variant* pVarResult, ExceptionInfo* pExcepInfo, uint* pArgErr, uint cVarRef, Span<uint> rgVarRefIdx, Variant* rgVarRef)
         {
             // SpanOverloader
             return thisApi.IDispatchInvokeStub(This, dispIdMember, ref riid.GetPinnableReference(), lcid, dwFlags, ref pDispParams.GetPinnableReference(), pVarResult, pExcepInfo, pArgErr, cVarRef, ref rgVarRefIdx.GetPinnableReference(), rgVarRef);
@@ -37194,7 +37194,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 5962, Column 43 in oaidl.h")]
-        public static unsafe int IDispatchInvokeStub(this Windows thisApi, IDispatch* This, int dispIdMember, Span<Guid> riid, uint lcid, uint dwFlags, Span<DispatchParams> pDispParams, Variant* pVarResult, ExcepInfo* pExcepInfo, uint* pArgErr, uint cVarRef, Span<uint> rgVarRefIdx, Span<Variant> rgVarRef)
+        public static unsafe int IDispatchInvokeStub(this Windows thisApi, IDispatch* This, int dispIdMember, Span<Guid> riid, uint lcid, uint dwFlags, Span<DispatchParams> pDispParams, Variant* pVarResult, ExceptionInfo* pExcepInfo, uint* pArgErr, uint cVarRef, Span<uint> rgVarRefIdx, Span<Variant> rgVarRef)
         {
             // SpanOverloader
             return thisApi.IDispatchInvokeStub(This, dispIdMember, ref riid.GetPinnableReference(), lcid, dwFlags, ref pDispParams.GetPinnableReference(), pVarResult, pExcepInfo, pArgErr, cVarRef, ref rgVarRefIdx.GetPinnableReference(), ref rgVarRef.GetPinnableReference());
@@ -37202,7 +37202,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 5962, Column 43 in oaidl.h")]
-        public static unsafe int IDispatchInvokeStub(this Windows thisApi, IDispatch* This, int dispIdMember, Span<Guid> riid, uint lcid, uint dwFlags, Span<DispatchParams> pDispParams, Variant* pVarResult, ExcepInfo* pExcepInfo, Span<uint> pArgErr, uint cVarRef, uint* rgVarRefIdx, Variant* rgVarRef)
+        public static unsafe int IDispatchInvokeStub(this Windows thisApi, IDispatch* This, int dispIdMember, Span<Guid> riid, uint lcid, uint dwFlags, Span<DispatchParams> pDispParams, Variant* pVarResult, ExceptionInfo* pExcepInfo, Span<uint> pArgErr, uint cVarRef, uint* rgVarRefIdx, Variant* rgVarRef)
         {
             // SpanOverloader
             return thisApi.IDispatchInvokeStub(This, dispIdMember, ref riid.GetPinnableReference(), lcid, dwFlags, ref pDispParams.GetPinnableReference(), pVarResult, pExcepInfo, ref pArgErr.GetPinnableReference(), cVarRef, rgVarRefIdx, rgVarRef);
@@ -37210,7 +37210,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 5962, Column 43 in oaidl.h")]
-        public static unsafe int IDispatchInvokeStub(this Windows thisApi, IDispatch* This, int dispIdMember, Span<Guid> riid, uint lcid, uint dwFlags, Span<DispatchParams> pDispParams, Variant* pVarResult, ExcepInfo* pExcepInfo, Span<uint> pArgErr, uint cVarRef, uint* rgVarRefIdx, Span<Variant> rgVarRef)
+        public static unsafe int IDispatchInvokeStub(this Windows thisApi, IDispatch* This, int dispIdMember, Span<Guid> riid, uint lcid, uint dwFlags, Span<DispatchParams> pDispParams, Variant* pVarResult, ExceptionInfo* pExcepInfo, Span<uint> pArgErr, uint cVarRef, uint* rgVarRefIdx, Span<Variant> rgVarRef)
         {
             // SpanOverloader
             return thisApi.IDispatchInvokeStub(This, dispIdMember, ref riid.GetPinnableReference(), lcid, dwFlags, ref pDispParams.GetPinnableReference(), pVarResult, pExcepInfo, ref pArgErr.GetPinnableReference(), cVarRef, rgVarRefIdx, ref rgVarRef.GetPinnableReference());
@@ -37218,7 +37218,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 5962, Column 43 in oaidl.h")]
-        public static unsafe int IDispatchInvokeStub(this Windows thisApi, IDispatch* This, int dispIdMember, Span<Guid> riid, uint lcid, uint dwFlags, Span<DispatchParams> pDispParams, Variant* pVarResult, ExcepInfo* pExcepInfo, Span<uint> pArgErr, uint cVarRef, Span<uint> rgVarRefIdx, Variant* rgVarRef)
+        public static unsafe int IDispatchInvokeStub(this Windows thisApi, IDispatch* This, int dispIdMember, Span<Guid> riid, uint lcid, uint dwFlags, Span<DispatchParams> pDispParams, Variant* pVarResult, ExceptionInfo* pExcepInfo, Span<uint> pArgErr, uint cVarRef, Span<uint> rgVarRefIdx, Variant* rgVarRef)
         {
             // SpanOverloader
             return thisApi.IDispatchInvokeStub(This, dispIdMember, ref riid.GetPinnableReference(), lcid, dwFlags, ref pDispParams.GetPinnableReference(), pVarResult, pExcepInfo, ref pArgErr.GetPinnableReference(), cVarRef, ref rgVarRefIdx.GetPinnableReference(), rgVarRef);
@@ -37226,7 +37226,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 5962, Column 43 in oaidl.h")]
-        public static unsafe int IDispatchInvokeStub(this Windows thisApi, IDispatch* This, int dispIdMember, Span<Guid> riid, uint lcid, uint dwFlags, Span<DispatchParams> pDispParams, Variant* pVarResult, ExcepInfo* pExcepInfo, Span<uint> pArgErr, uint cVarRef, Span<uint> rgVarRefIdx, Span<Variant> rgVarRef)
+        public static unsafe int IDispatchInvokeStub(this Windows thisApi, IDispatch* This, int dispIdMember, Span<Guid> riid, uint lcid, uint dwFlags, Span<DispatchParams> pDispParams, Variant* pVarResult, ExceptionInfo* pExcepInfo, Span<uint> pArgErr, uint cVarRef, Span<uint> rgVarRefIdx, Span<Variant> rgVarRef)
         {
             // SpanOverloader
             return thisApi.IDispatchInvokeStub(This, dispIdMember, ref riid.GetPinnableReference(), lcid, dwFlags, ref pDispParams.GetPinnableReference(), pVarResult, pExcepInfo, ref pArgErr.GetPinnableReference(), cVarRef, ref rgVarRefIdx.GetPinnableReference(), ref rgVarRef.GetPinnableReference());
@@ -37234,7 +37234,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 5962, Column 43 in oaidl.h")]
-        public static unsafe int IDispatchInvokeStub(this Windows thisApi, IDispatch* This, int dispIdMember, Span<Guid> riid, uint lcid, uint dwFlags, Span<DispatchParams> pDispParams, Variant* pVarResult, Span<ExcepInfo> pExcepInfo, uint* pArgErr, uint cVarRef, uint* rgVarRefIdx, Variant* rgVarRef)
+        public static unsafe int IDispatchInvokeStub(this Windows thisApi, IDispatch* This, int dispIdMember, Span<Guid> riid, uint lcid, uint dwFlags, Span<DispatchParams> pDispParams, Variant* pVarResult, Span<ExceptionInfo> pExcepInfo, uint* pArgErr, uint cVarRef, uint* rgVarRefIdx, Variant* rgVarRef)
         {
             // SpanOverloader
             return thisApi.IDispatchInvokeStub(This, dispIdMember, ref riid.GetPinnableReference(), lcid, dwFlags, ref pDispParams.GetPinnableReference(), pVarResult, ref pExcepInfo.GetPinnableReference(), pArgErr, cVarRef, rgVarRefIdx, rgVarRef);
@@ -37242,7 +37242,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 5962, Column 43 in oaidl.h")]
-        public static unsafe int IDispatchInvokeStub(this Windows thisApi, IDispatch* This, int dispIdMember, Span<Guid> riid, uint lcid, uint dwFlags, Span<DispatchParams> pDispParams, Variant* pVarResult, Span<ExcepInfo> pExcepInfo, uint* pArgErr, uint cVarRef, uint* rgVarRefIdx, Span<Variant> rgVarRef)
+        public static unsafe int IDispatchInvokeStub(this Windows thisApi, IDispatch* This, int dispIdMember, Span<Guid> riid, uint lcid, uint dwFlags, Span<DispatchParams> pDispParams, Variant* pVarResult, Span<ExceptionInfo> pExcepInfo, uint* pArgErr, uint cVarRef, uint* rgVarRefIdx, Span<Variant> rgVarRef)
         {
             // SpanOverloader
             return thisApi.IDispatchInvokeStub(This, dispIdMember, ref riid.GetPinnableReference(), lcid, dwFlags, ref pDispParams.GetPinnableReference(), pVarResult, ref pExcepInfo.GetPinnableReference(), pArgErr, cVarRef, rgVarRefIdx, ref rgVarRef.GetPinnableReference());
@@ -37250,7 +37250,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 5962, Column 43 in oaidl.h")]
-        public static unsafe int IDispatchInvokeStub(this Windows thisApi, IDispatch* This, int dispIdMember, Span<Guid> riid, uint lcid, uint dwFlags, Span<DispatchParams> pDispParams, Variant* pVarResult, Span<ExcepInfo> pExcepInfo, uint* pArgErr, uint cVarRef, Span<uint> rgVarRefIdx, Variant* rgVarRef)
+        public static unsafe int IDispatchInvokeStub(this Windows thisApi, IDispatch* This, int dispIdMember, Span<Guid> riid, uint lcid, uint dwFlags, Span<DispatchParams> pDispParams, Variant* pVarResult, Span<ExceptionInfo> pExcepInfo, uint* pArgErr, uint cVarRef, Span<uint> rgVarRefIdx, Variant* rgVarRef)
         {
             // SpanOverloader
             return thisApi.IDispatchInvokeStub(This, dispIdMember, ref riid.GetPinnableReference(), lcid, dwFlags, ref pDispParams.GetPinnableReference(), pVarResult, ref pExcepInfo.GetPinnableReference(), pArgErr, cVarRef, ref rgVarRefIdx.GetPinnableReference(), rgVarRef);
@@ -37258,7 +37258,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 5962, Column 43 in oaidl.h")]
-        public static unsafe int IDispatchInvokeStub(this Windows thisApi, IDispatch* This, int dispIdMember, Span<Guid> riid, uint lcid, uint dwFlags, Span<DispatchParams> pDispParams, Variant* pVarResult, Span<ExcepInfo> pExcepInfo, uint* pArgErr, uint cVarRef, Span<uint> rgVarRefIdx, Span<Variant> rgVarRef)
+        public static unsafe int IDispatchInvokeStub(this Windows thisApi, IDispatch* This, int dispIdMember, Span<Guid> riid, uint lcid, uint dwFlags, Span<DispatchParams> pDispParams, Variant* pVarResult, Span<ExceptionInfo> pExcepInfo, uint* pArgErr, uint cVarRef, Span<uint> rgVarRefIdx, Span<Variant> rgVarRef)
         {
             // SpanOverloader
             return thisApi.IDispatchInvokeStub(This, dispIdMember, ref riid.GetPinnableReference(), lcid, dwFlags, ref pDispParams.GetPinnableReference(), pVarResult, ref pExcepInfo.GetPinnableReference(), pArgErr, cVarRef, ref rgVarRefIdx.GetPinnableReference(), ref rgVarRef.GetPinnableReference());
@@ -37266,7 +37266,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 5962, Column 43 in oaidl.h")]
-        public static unsafe int IDispatchInvokeStub(this Windows thisApi, IDispatch* This, int dispIdMember, Span<Guid> riid, uint lcid, uint dwFlags, Span<DispatchParams> pDispParams, Variant* pVarResult, Span<ExcepInfo> pExcepInfo, Span<uint> pArgErr, uint cVarRef, uint* rgVarRefIdx, Variant* rgVarRef)
+        public static unsafe int IDispatchInvokeStub(this Windows thisApi, IDispatch* This, int dispIdMember, Span<Guid> riid, uint lcid, uint dwFlags, Span<DispatchParams> pDispParams, Variant* pVarResult, Span<ExceptionInfo> pExcepInfo, Span<uint> pArgErr, uint cVarRef, uint* rgVarRefIdx, Variant* rgVarRef)
         {
             // SpanOverloader
             return thisApi.IDispatchInvokeStub(This, dispIdMember, ref riid.GetPinnableReference(), lcid, dwFlags, ref pDispParams.GetPinnableReference(), pVarResult, ref pExcepInfo.GetPinnableReference(), ref pArgErr.GetPinnableReference(), cVarRef, rgVarRefIdx, rgVarRef);
@@ -37274,7 +37274,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 5962, Column 43 in oaidl.h")]
-        public static unsafe int IDispatchInvokeStub(this Windows thisApi, IDispatch* This, int dispIdMember, Span<Guid> riid, uint lcid, uint dwFlags, Span<DispatchParams> pDispParams, Variant* pVarResult, Span<ExcepInfo> pExcepInfo, Span<uint> pArgErr, uint cVarRef, uint* rgVarRefIdx, Span<Variant> rgVarRef)
+        public static unsafe int IDispatchInvokeStub(this Windows thisApi, IDispatch* This, int dispIdMember, Span<Guid> riid, uint lcid, uint dwFlags, Span<DispatchParams> pDispParams, Variant* pVarResult, Span<ExceptionInfo> pExcepInfo, Span<uint> pArgErr, uint cVarRef, uint* rgVarRefIdx, Span<Variant> rgVarRef)
         {
             // SpanOverloader
             return thisApi.IDispatchInvokeStub(This, dispIdMember, ref riid.GetPinnableReference(), lcid, dwFlags, ref pDispParams.GetPinnableReference(), pVarResult, ref pExcepInfo.GetPinnableReference(), ref pArgErr.GetPinnableReference(), cVarRef, rgVarRefIdx, ref rgVarRef.GetPinnableReference());
@@ -37282,7 +37282,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 5962, Column 43 in oaidl.h")]
-        public static unsafe int IDispatchInvokeStub(this Windows thisApi, IDispatch* This, int dispIdMember, Span<Guid> riid, uint lcid, uint dwFlags, Span<DispatchParams> pDispParams, Variant* pVarResult, Span<ExcepInfo> pExcepInfo, Span<uint> pArgErr, uint cVarRef, Span<uint> rgVarRefIdx, Variant* rgVarRef)
+        public static unsafe int IDispatchInvokeStub(this Windows thisApi, IDispatch* This, int dispIdMember, Span<Guid> riid, uint lcid, uint dwFlags, Span<DispatchParams> pDispParams, Variant* pVarResult, Span<ExceptionInfo> pExcepInfo, Span<uint> pArgErr, uint cVarRef, Span<uint> rgVarRefIdx, Variant* rgVarRef)
         {
             // SpanOverloader
             return thisApi.IDispatchInvokeStub(This, dispIdMember, ref riid.GetPinnableReference(), lcid, dwFlags, ref pDispParams.GetPinnableReference(), pVarResult, ref pExcepInfo.GetPinnableReference(), ref pArgErr.GetPinnableReference(), cVarRef, ref rgVarRefIdx.GetPinnableReference(), rgVarRef);
@@ -37290,7 +37290,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 5962, Column 43 in oaidl.h")]
-        public static unsafe int IDispatchInvokeStub(this Windows thisApi, IDispatch* This, int dispIdMember, Span<Guid> riid, uint lcid, uint dwFlags, Span<DispatchParams> pDispParams, Variant* pVarResult, Span<ExcepInfo> pExcepInfo, Span<uint> pArgErr, uint cVarRef, Span<uint> rgVarRefIdx, Span<Variant> rgVarRef)
+        public static unsafe int IDispatchInvokeStub(this Windows thisApi, IDispatch* This, int dispIdMember, Span<Guid> riid, uint lcid, uint dwFlags, Span<DispatchParams> pDispParams, Variant* pVarResult, Span<ExceptionInfo> pExcepInfo, Span<uint> pArgErr, uint cVarRef, Span<uint> rgVarRefIdx, Span<Variant> rgVarRef)
         {
             // SpanOverloader
             return thisApi.IDispatchInvokeStub(This, dispIdMember, ref riid.GetPinnableReference(), lcid, dwFlags, ref pDispParams.GetPinnableReference(), pVarResult, ref pExcepInfo.GetPinnableReference(), ref pArgErr.GetPinnableReference(), cVarRef, ref rgVarRefIdx.GetPinnableReference(), ref rgVarRef.GetPinnableReference());
@@ -37298,7 +37298,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 5962, Column 43 in oaidl.h")]
-        public static unsafe int IDispatchInvokeStub(this Windows thisApi, IDispatch* This, int dispIdMember, Span<Guid> riid, uint lcid, uint dwFlags, Span<DispatchParams> pDispParams, Span<Variant> pVarResult, ExcepInfo* pExcepInfo, uint* pArgErr, uint cVarRef, uint* rgVarRefIdx, Variant* rgVarRef)
+        public static unsafe int IDispatchInvokeStub(this Windows thisApi, IDispatch* This, int dispIdMember, Span<Guid> riid, uint lcid, uint dwFlags, Span<DispatchParams> pDispParams, Span<Variant> pVarResult, ExceptionInfo* pExcepInfo, uint* pArgErr, uint cVarRef, uint* rgVarRefIdx, Variant* rgVarRef)
         {
             // SpanOverloader
             return thisApi.IDispatchInvokeStub(This, dispIdMember, ref riid.GetPinnableReference(), lcid, dwFlags, ref pDispParams.GetPinnableReference(), ref pVarResult.GetPinnableReference(), pExcepInfo, pArgErr, cVarRef, rgVarRefIdx, rgVarRef);
@@ -37306,7 +37306,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 5962, Column 43 in oaidl.h")]
-        public static unsafe int IDispatchInvokeStub(this Windows thisApi, IDispatch* This, int dispIdMember, Span<Guid> riid, uint lcid, uint dwFlags, Span<DispatchParams> pDispParams, Span<Variant> pVarResult, ExcepInfo* pExcepInfo, uint* pArgErr, uint cVarRef, uint* rgVarRefIdx, Span<Variant> rgVarRef)
+        public static unsafe int IDispatchInvokeStub(this Windows thisApi, IDispatch* This, int dispIdMember, Span<Guid> riid, uint lcid, uint dwFlags, Span<DispatchParams> pDispParams, Span<Variant> pVarResult, ExceptionInfo* pExcepInfo, uint* pArgErr, uint cVarRef, uint* rgVarRefIdx, Span<Variant> rgVarRef)
         {
             // SpanOverloader
             return thisApi.IDispatchInvokeStub(This, dispIdMember, ref riid.GetPinnableReference(), lcid, dwFlags, ref pDispParams.GetPinnableReference(), ref pVarResult.GetPinnableReference(), pExcepInfo, pArgErr, cVarRef, rgVarRefIdx, ref rgVarRef.GetPinnableReference());
@@ -37314,7 +37314,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 5962, Column 43 in oaidl.h")]
-        public static unsafe int IDispatchInvokeStub(this Windows thisApi, IDispatch* This, int dispIdMember, Span<Guid> riid, uint lcid, uint dwFlags, Span<DispatchParams> pDispParams, Span<Variant> pVarResult, ExcepInfo* pExcepInfo, uint* pArgErr, uint cVarRef, Span<uint> rgVarRefIdx, Variant* rgVarRef)
+        public static unsafe int IDispatchInvokeStub(this Windows thisApi, IDispatch* This, int dispIdMember, Span<Guid> riid, uint lcid, uint dwFlags, Span<DispatchParams> pDispParams, Span<Variant> pVarResult, ExceptionInfo* pExcepInfo, uint* pArgErr, uint cVarRef, Span<uint> rgVarRefIdx, Variant* rgVarRef)
         {
             // SpanOverloader
             return thisApi.IDispatchInvokeStub(This, dispIdMember, ref riid.GetPinnableReference(), lcid, dwFlags, ref pDispParams.GetPinnableReference(), ref pVarResult.GetPinnableReference(), pExcepInfo, pArgErr, cVarRef, ref rgVarRefIdx.GetPinnableReference(), rgVarRef);
@@ -37322,7 +37322,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 5962, Column 43 in oaidl.h")]
-        public static unsafe int IDispatchInvokeStub(this Windows thisApi, IDispatch* This, int dispIdMember, Span<Guid> riid, uint lcid, uint dwFlags, Span<DispatchParams> pDispParams, Span<Variant> pVarResult, ExcepInfo* pExcepInfo, uint* pArgErr, uint cVarRef, Span<uint> rgVarRefIdx, Span<Variant> rgVarRef)
+        public static unsafe int IDispatchInvokeStub(this Windows thisApi, IDispatch* This, int dispIdMember, Span<Guid> riid, uint lcid, uint dwFlags, Span<DispatchParams> pDispParams, Span<Variant> pVarResult, ExceptionInfo* pExcepInfo, uint* pArgErr, uint cVarRef, Span<uint> rgVarRefIdx, Span<Variant> rgVarRef)
         {
             // SpanOverloader
             return thisApi.IDispatchInvokeStub(This, dispIdMember, ref riid.GetPinnableReference(), lcid, dwFlags, ref pDispParams.GetPinnableReference(), ref pVarResult.GetPinnableReference(), pExcepInfo, pArgErr, cVarRef, ref rgVarRefIdx.GetPinnableReference(), ref rgVarRef.GetPinnableReference());
@@ -37330,7 +37330,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 5962, Column 43 in oaidl.h")]
-        public static unsafe int IDispatchInvokeStub(this Windows thisApi, IDispatch* This, int dispIdMember, Span<Guid> riid, uint lcid, uint dwFlags, Span<DispatchParams> pDispParams, Span<Variant> pVarResult, ExcepInfo* pExcepInfo, Span<uint> pArgErr, uint cVarRef, uint* rgVarRefIdx, Variant* rgVarRef)
+        public static unsafe int IDispatchInvokeStub(this Windows thisApi, IDispatch* This, int dispIdMember, Span<Guid> riid, uint lcid, uint dwFlags, Span<DispatchParams> pDispParams, Span<Variant> pVarResult, ExceptionInfo* pExcepInfo, Span<uint> pArgErr, uint cVarRef, uint* rgVarRefIdx, Variant* rgVarRef)
         {
             // SpanOverloader
             return thisApi.IDispatchInvokeStub(This, dispIdMember, ref riid.GetPinnableReference(), lcid, dwFlags, ref pDispParams.GetPinnableReference(), ref pVarResult.GetPinnableReference(), pExcepInfo, ref pArgErr.GetPinnableReference(), cVarRef, rgVarRefIdx, rgVarRef);
@@ -37338,7 +37338,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 5962, Column 43 in oaidl.h")]
-        public static unsafe int IDispatchInvokeStub(this Windows thisApi, IDispatch* This, int dispIdMember, Span<Guid> riid, uint lcid, uint dwFlags, Span<DispatchParams> pDispParams, Span<Variant> pVarResult, ExcepInfo* pExcepInfo, Span<uint> pArgErr, uint cVarRef, uint* rgVarRefIdx, Span<Variant> rgVarRef)
+        public static unsafe int IDispatchInvokeStub(this Windows thisApi, IDispatch* This, int dispIdMember, Span<Guid> riid, uint lcid, uint dwFlags, Span<DispatchParams> pDispParams, Span<Variant> pVarResult, ExceptionInfo* pExcepInfo, Span<uint> pArgErr, uint cVarRef, uint* rgVarRefIdx, Span<Variant> rgVarRef)
         {
             // SpanOverloader
             return thisApi.IDispatchInvokeStub(This, dispIdMember, ref riid.GetPinnableReference(), lcid, dwFlags, ref pDispParams.GetPinnableReference(), ref pVarResult.GetPinnableReference(), pExcepInfo, ref pArgErr.GetPinnableReference(), cVarRef, rgVarRefIdx, ref rgVarRef.GetPinnableReference());
@@ -37346,7 +37346,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 5962, Column 43 in oaidl.h")]
-        public static unsafe int IDispatchInvokeStub(this Windows thisApi, IDispatch* This, int dispIdMember, Span<Guid> riid, uint lcid, uint dwFlags, Span<DispatchParams> pDispParams, Span<Variant> pVarResult, ExcepInfo* pExcepInfo, Span<uint> pArgErr, uint cVarRef, Span<uint> rgVarRefIdx, Variant* rgVarRef)
+        public static unsafe int IDispatchInvokeStub(this Windows thisApi, IDispatch* This, int dispIdMember, Span<Guid> riid, uint lcid, uint dwFlags, Span<DispatchParams> pDispParams, Span<Variant> pVarResult, ExceptionInfo* pExcepInfo, Span<uint> pArgErr, uint cVarRef, Span<uint> rgVarRefIdx, Variant* rgVarRef)
         {
             // SpanOverloader
             return thisApi.IDispatchInvokeStub(This, dispIdMember, ref riid.GetPinnableReference(), lcid, dwFlags, ref pDispParams.GetPinnableReference(), ref pVarResult.GetPinnableReference(), pExcepInfo, ref pArgErr.GetPinnableReference(), cVarRef, ref rgVarRefIdx.GetPinnableReference(), rgVarRef);
@@ -37354,7 +37354,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 5962, Column 43 in oaidl.h")]
-        public static unsafe int IDispatchInvokeStub(this Windows thisApi, IDispatch* This, int dispIdMember, Span<Guid> riid, uint lcid, uint dwFlags, Span<DispatchParams> pDispParams, Span<Variant> pVarResult, ExcepInfo* pExcepInfo, Span<uint> pArgErr, uint cVarRef, Span<uint> rgVarRefIdx, Span<Variant> rgVarRef)
+        public static unsafe int IDispatchInvokeStub(this Windows thisApi, IDispatch* This, int dispIdMember, Span<Guid> riid, uint lcid, uint dwFlags, Span<DispatchParams> pDispParams, Span<Variant> pVarResult, ExceptionInfo* pExcepInfo, Span<uint> pArgErr, uint cVarRef, Span<uint> rgVarRefIdx, Span<Variant> rgVarRef)
         {
             // SpanOverloader
             return thisApi.IDispatchInvokeStub(This, dispIdMember, ref riid.GetPinnableReference(), lcid, dwFlags, ref pDispParams.GetPinnableReference(), ref pVarResult.GetPinnableReference(), pExcepInfo, ref pArgErr.GetPinnableReference(), cVarRef, ref rgVarRefIdx.GetPinnableReference(), ref rgVarRef.GetPinnableReference());
@@ -37362,7 +37362,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 5962, Column 43 in oaidl.h")]
-        public static unsafe int IDispatchInvokeStub(this Windows thisApi, IDispatch* This, int dispIdMember, Span<Guid> riid, uint lcid, uint dwFlags, Span<DispatchParams> pDispParams, Span<Variant> pVarResult, Span<ExcepInfo> pExcepInfo, uint* pArgErr, uint cVarRef, uint* rgVarRefIdx, Variant* rgVarRef)
+        public static unsafe int IDispatchInvokeStub(this Windows thisApi, IDispatch* This, int dispIdMember, Span<Guid> riid, uint lcid, uint dwFlags, Span<DispatchParams> pDispParams, Span<Variant> pVarResult, Span<ExceptionInfo> pExcepInfo, uint* pArgErr, uint cVarRef, uint* rgVarRefIdx, Variant* rgVarRef)
         {
             // SpanOverloader
             return thisApi.IDispatchInvokeStub(This, dispIdMember, ref riid.GetPinnableReference(), lcid, dwFlags, ref pDispParams.GetPinnableReference(), ref pVarResult.GetPinnableReference(), ref pExcepInfo.GetPinnableReference(), pArgErr, cVarRef, rgVarRefIdx, rgVarRef);
@@ -37370,7 +37370,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 5962, Column 43 in oaidl.h")]
-        public static unsafe int IDispatchInvokeStub(this Windows thisApi, IDispatch* This, int dispIdMember, Span<Guid> riid, uint lcid, uint dwFlags, Span<DispatchParams> pDispParams, Span<Variant> pVarResult, Span<ExcepInfo> pExcepInfo, uint* pArgErr, uint cVarRef, uint* rgVarRefIdx, Span<Variant> rgVarRef)
+        public static unsafe int IDispatchInvokeStub(this Windows thisApi, IDispatch* This, int dispIdMember, Span<Guid> riid, uint lcid, uint dwFlags, Span<DispatchParams> pDispParams, Span<Variant> pVarResult, Span<ExceptionInfo> pExcepInfo, uint* pArgErr, uint cVarRef, uint* rgVarRefIdx, Span<Variant> rgVarRef)
         {
             // SpanOverloader
             return thisApi.IDispatchInvokeStub(This, dispIdMember, ref riid.GetPinnableReference(), lcid, dwFlags, ref pDispParams.GetPinnableReference(), ref pVarResult.GetPinnableReference(), ref pExcepInfo.GetPinnableReference(), pArgErr, cVarRef, rgVarRefIdx, ref rgVarRef.GetPinnableReference());
@@ -37378,7 +37378,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 5962, Column 43 in oaidl.h")]
-        public static unsafe int IDispatchInvokeStub(this Windows thisApi, IDispatch* This, int dispIdMember, Span<Guid> riid, uint lcid, uint dwFlags, Span<DispatchParams> pDispParams, Span<Variant> pVarResult, Span<ExcepInfo> pExcepInfo, uint* pArgErr, uint cVarRef, Span<uint> rgVarRefIdx, Variant* rgVarRef)
+        public static unsafe int IDispatchInvokeStub(this Windows thisApi, IDispatch* This, int dispIdMember, Span<Guid> riid, uint lcid, uint dwFlags, Span<DispatchParams> pDispParams, Span<Variant> pVarResult, Span<ExceptionInfo> pExcepInfo, uint* pArgErr, uint cVarRef, Span<uint> rgVarRefIdx, Variant* rgVarRef)
         {
             // SpanOverloader
             return thisApi.IDispatchInvokeStub(This, dispIdMember, ref riid.GetPinnableReference(), lcid, dwFlags, ref pDispParams.GetPinnableReference(), ref pVarResult.GetPinnableReference(), ref pExcepInfo.GetPinnableReference(), pArgErr, cVarRef, ref rgVarRefIdx.GetPinnableReference(), rgVarRef);
@@ -37386,7 +37386,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 5962, Column 43 in oaidl.h")]
-        public static unsafe int IDispatchInvokeStub(this Windows thisApi, IDispatch* This, int dispIdMember, Span<Guid> riid, uint lcid, uint dwFlags, Span<DispatchParams> pDispParams, Span<Variant> pVarResult, Span<ExcepInfo> pExcepInfo, uint* pArgErr, uint cVarRef, Span<uint> rgVarRefIdx, Span<Variant> rgVarRef)
+        public static unsafe int IDispatchInvokeStub(this Windows thisApi, IDispatch* This, int dispIdMember, Span<Guid> riid, uint lcid, uint dwFlags, Span<DispatchParams> pDispParams, Span<Variant> pVarResult, Span<ExceptionInfo> pExcepInfo, uint* pArgErr, uint cVarRef, Span<uint> rgVarRefIdx, Span<Variant> rgVarRef)
         {
             // SpanOverloader
             return thisApi.IDispatchInvokeStub(This, dispIdMember, ref riid.GetPinnableReference(), lcid, dwFlags, ref pDispParams.GetPinnableReference(), ref pVarResult.GetPinnableReference(), ref pExcepInfo.GetPinnableReference(), pArgErr, cVarRef, ref rgVarRefIdx.GetPinnableReference(), ref rgVarRef.GetPinnableReference());
@@ -37394,7 +37394,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 5962, Column 43 in oaidl.h")]
-        public static unsafe int IDispatchInvokeStub(this Windows thisApi, IDispatch* This, int dispIdMember, Span<Guid> riid, uint lcid, uint dwFlags, Span<DispatchParams> pDispParams, Span<Variant> pVarResult, Span<ExcepInfo> pExcepInfo, Span<uint> pArgErr, uint cVarRef, uint* rgVarRefIdx, Variant* rgVarRef)
+        public static unsafe int IDispatchInvokeStub(this Windows thisApi, IDispatch* This, int dispIdMember, Span<Guid> riid, uint lcid, uint dwFlags, Span<DispatchParams> pDispParams, Span<Variant> pVarResult, Span<ExceptionInfo> pExcepInfo, Span<uint> pArgErr, uint cVarRef, uint* rgVarRefIdx, Variant* rgVarRef)
         {
             // SpanOverloader
             return thisApi.IDispatchInvokeStub(This, dispIdMember, ref riid.GetPinnableReference(), lcid, dwFlags, ref pDispParams.GetPinnableReference(), ref pVarResult.GetPinnableReference(), ref pExcepInfo.GetPinnableReference(), ref pArgErr.GetPinnableReference(), cVarRef, rgVarRefIdx, rgVarRef);
@@ -37402,7 +37402,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 5962, Column 43 in oaidl.h")]
-        public static unsafe int IDispatchInvokeStub(this Windows thisApi, IDispatch* This, int dispIdMember, Span<Guid> riid, uint lcid, uint dwFlags, Span<DispatchParams> pDispParams, Span<Variant> pVarResult, Span<ExcepInfo> pExcepInfo, Span<uint> pArgErr, uint cVarRef, uint* rgVarRefIdx, Span<Variant> rgVarRef)
+        public static unsafe int IDispatchInvokeStub(this Windows thisApi, IDispatch* This, int dispIdMember, Span<Guid> riid, uint lcid, uint dwFlags, Span<DispatchParams> pDispParams, Span<Variant> pVarResult, Span<ExceptionInfo> pExcepInfo, Span<uint> pArgErr, uint cVarRef, uint* rgVarRefIdx, Span<Variant> rgVarRef)
         {
             // SpanOverloader
             return thisApi.IDispatchInvokeStub(This, dispIdMember, ref riid.GetPinnableReference(), lcid, dwFlags, ref pDispParams.GetPinnableReference(), ref pVarResult.GetPinnableReference(), ref pExcepInfo.GetPinnableReference(), ref pArgErr.GetPinnableReference(), cVarRef, rgVarRefIdx, ref rgVarRef.GetPinnableReference());
@@ -37410,7 +37410,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 5962, Column 43 in oaidl.h")]
-        public static unsafe int IDispatchInvokeStub(this Windows thisApi, IDispatch* This, int dispIdMember, Span<Guid> riid, uint lcid, uint dwFlags, Span<DispatchParams> pDispParams, Span<Variant> pVarResult, Span<ExcepInfo> pExcepInfo, Span<uint> pArgErr, uint cVarRef, Span<uint> rgVarRefIdx, Variant* rgVarRef)
+        public static unsafe int IDispatchInvokeStub(this Windows thisApi, IDispatch* This, int dispIdMember, Span<Guid> riid, uint lcid, uint dwFlags, Span<DispatchParams> pDispParams, Span<Variant> pVarResult, Span<ExceptionInfo> pExcepInfo, Span<uint> pArgErr, uint cVarRef, Span<uint> rgVarRefIdx, Variant* rgVarRef)
         {
             // SpanOverloader
             return thisApi.IDispatchInvokeStub(This, dispIdMember, ref riid.GetPinnableReference(), lcid, dwFlags, ref pDispParams.GetPinnableReference(), ref pVarResult.GetPinnableReference(), ref pExcepInfo.GetPinnableReference(), ref pArgErr.GetPinnableReference(), cVarRef, ref rgVarRefIdx.GetPinnableReference(), rgVarRef);
@@ -37418,7 +37418,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 5962, Column 43 in oaidl.h")]
-        public static unsafe int IDispatchInvokeStub(this Windows thisApi, IDispatch* This, int dispIdMember, Span<Guid> riid, uint lcid, uint dwFlags, Span<DispatchParams> pDispParams, Span<Variant> pVarResult, Span<ExcepInfo> pExcepInfo, Span<uint> pArgErr, uint cVarRef, Span<uint> rgVarRefIdx, Span<Variant> rgVarRef)
+        public static unsafe int IDispatchInvokeStub(this Windows thisApi, IDispatch* This, int dispIdMember, Span<Guid> riid, uint lcid, uint dwFlags, Span<DispatchParams> pDispParams, Span<Variant> pVarResult, Span<ExceptionInfo> pExcepInfo, Span<uint> pArgErr, uint cVarRef, Span<uint> rgVarRefIdx, Span<Variant> rgVarRef)
         {
             // SpanOverloader
             return thisApi.IDispatchInvokeStub(This, dispIdMember, ref riid.GetPinnableReference(), lcid, dwFlags, ref pDispParams.GetPinnableReference(), ref pVarResult.GetPinnableReference(), ref pExcepInfo.GetPinnableReference(), ref pArgErr.GetPinnableReference(), cVarRef, ref rgVarRefIdx.GetPinnableReference(), ref rgVarRef.GetPinnableReference());
@@ -37426,7 +37426,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 5962, Column 43 in oaidl.h")]
-        public static unsafe int IDispatchInvokeStub(this Windows thisApi, Span<IDispatch> This, int dispIdMember, Guid* riid, uint lcid, uint dwFlags, DispatchParams* pDispParams, Variant* pVarResult, ExcepInfo* pExcepInfo, uint* pArgErr, uint cVarRef, uint* rgVarRefIdx, Variant* rgVarRef)
+        public static unsafe int IDispatchInvokeStub(this Windows thisApi, Span<IDispatch> This, int dispIdMember, Guid* riid, uint lcid, uint dwFlags, DispatchParams* pDispParams, Variant* pVarResult, ExceptionInfo* pExcepInfo, uint* pArgErr, uint cVarRef, uint* rgVarRefIdx, Variant* rgVarRef)
         {
             // SpanOverloader
             return thisApi.IDispatchInvokeStub(ref This.GetPinnableReference(), dispIdMember, riid, lcid, dwFlags, pDispParams, pVarResult, pExcepInfo, pArgErr, cVarRef, rgVarRefIdx, rgVarRef);
@@ -37434,7 +37434,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 5962, Column 43 in oaidl.h")]
-        public static unsafe int IDispatchInvokeStub(this Windows thisApi, Span<IDispatch> This, int dispIdMember, Guid* riid, uint lcid, uint dwFlags, DispatchParams* pDispParams, Variant* pVarResult, ExcepInfo* pExcepInfo, uint* pArgErr, uint cVarRef, uint* rgVarRefIdx, Span<Variant> rgVarRef)
+        public static unsafe int IDispatchInvokeStub(this Windows thisApi, Span<IDispatch> This, int dispIdMember, Guid* riid, uint lcid, uint dwFlags, DispatchParams* pDispParams, Variant* pVarResult, ExceptionInfo* pExcepInfo, uint* pArgErr, uint cVarRef, uint* rgVarRefIdx, Span<Variant> rgVarRef)
         {
             // SpanOverloader
             return thisApi.IDispatchInvokeStub(ref This.GetPinnableReference(), dispIdMember, riid, lcid, dwFlags, pDispParams, pVarResult, pExcepInfo, pArgErr, cVarRef, rgVarRefIdx, ref rgVarRef.GetPinnableReference());
@@ -37442,7 +37442,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 5962, Column 43 in oaidl.h")]
-        public static unsafe int IDispatchInvokeStub(this Windows thisApi, Span<IDispatch> This, int dispIdMember, Guid* riid, uint lcid, uint dwFlags, DispatchParams* pDispParams, Variant* pVarResult, ExcepInfo* pExcepInfo, uint* pArgErr, uint cVarRef, Span<uint> rgVarRefIdx, Variant* rgVarRef)
+        public static unsafe int IDispatchInvokeStub(this Windows thisApi, Span<IDispatch> This, int dispIdMember, Guid* riid, uint lcid, uint dwFlags, DispatchParams* pDispParams, Variant* pVarResult, ExceptionInfo* pExcepInfo, uint* pArgErr, uint cVarRef, Span<uint> rgVarRefIdx, Variant* rgVarRef)
         {
             // SpanOverloader
             return thisApi.IDispatchInvokeStub(ref This.GetPinnableReference(), dispIdMember, riid, lcid, dwFlags, pDispParams, pVarResult, pExcepInfo, pArgErr, cVarRef, ref rgVarRefIdx.GetPinnableReference(), rgVarRef);
@@ -37450,7 +37450,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 5962, Column 43 in oaidl.h")]
-        public static unsafe int IDispatchInvokeStub(this Windows thisApi, Span<IDispatch> This, int dispIdMember, Guid* riid, uint lcid, uint dwFlags, DispatchParams* pDispParams, Variant* pVarResult, ExcepInfo* pExcepInfo, uint* pArgErr, uint cVarRef, Span<uint> rgVarRefIdx, Span<Variant> rgVarRef)
+        public static unsafe int IDispatchInvokeStub(this Windows thisApi, Span<IDispatch> This, int dispIdMember, Guid* riid, uint lcid, uint dwFlags, DispatchParams* pDispParams, Variant* pVarResult, ExceptionInfo* pExcepInfo, uint* pArgErr, uint cVarRef, Span<uint> rgVarRefIdx, Span<Variant> rgVarRef)
         {
             // SpanOverloader
             return thisApi.IDispatchInvokeStub(ref This.GetPinnableReference(), dispIdMember, riid, lcid, dwFlags, pDispParams, pVarResult, pExcepInfo, pArgErr, cVarRef, ref rgVarRefIdx.GetPinnableReference(), ref rgVarRef.GetPinnableReference());
@@ -37458,7 +37458,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 5962, Column 43 in oaidl.h")]
-        public static unsafe int IDispatchInvokeStub(this Windows thisApi, Span<IDispatch> This, int dispIdMember, Guid* riid, uint lcid, uint dwFlags, DispatchParams* pDispParams, Variant* pVarResult, ExcepInfo* pExcepInfo, Span<uint> pArgErr, uint cVarRef, uint* rgVarRefIdx, Variant* rgVarRef)
+        public static unsafe int IDispatchInvokeStub(this Windows thisApi, Span<IDispatch> This, int dispIdMember, Guid* riid, uint lcid, uint dwFlags, DispatchParams* pDispParams, Variant* pVarResult, ExceptionInfo* pExcepInfo, Span<uint> pArgErr, uint cVarRef, uint* rgVarRefIdx, Variant* rgVarRef)
         {
             // SpanOverloader
             return thisApi.IDispatchInvokeStub(ref This.GetPinnableReference(), dispIdMember, riid, lcid, dwFlags, pDispParams, pVarResult, pExcepInfo, ref pArgErr.GetPinnableReference(), cVarRef, rgVarRefIdx, rgVarRef);
@@ -37466,7 +37466,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 5962, Column 43 in oaidl.h")]
-        public static unsafe int IDispatchInvokeStub(this Windows thisApi, Span<IDispatch> This, int dispIdMember, Guid* riid, uint lcid, uint dwFlags, DispatchParams* pDispParams, Variant* pVarResult, ExcepInfo* pExcepInfo, Span<uint> pArgErr, uint cVarRef, uint* rgVarRefIdx, Span<Variant> rgVarRef)
+        public static unsafe int IDispatchInvokeStub(this Windows thisApi, Span<IDispatch> This, int dispIdMember, Guid* riid, uint lcid, uint dwFlags, DispatchParams* pDispParams, Variant* pVarResult, ExceptionInfo* pExcepInfo, Span<uint> pArgErr, uint cVarRef, uint* rgVarRefIdx, Span<Variant> rgVarRef)
         {
             // SpanOverloader
             return thisApi.IDispatchInvokeStub(ref This.GetPinnableReference(), dispIdMember, riid, lcid, dwFlags, pDispParams, pVarResult, pExcepInfo, ref pArgErr.GetPinnableReference(), cVarRef, rgVarRefIdx, ref rgVarRef.GetPinnableReference());
@@ -37474,7 +37474,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 5962, Column 43 in oaidl.h")]
-        public static unsafe int IDispatchInvokeStub(this Windows thisApi, Span<IDispatch> This, int dispIdMember, Guid* riid, uint lcid, uint dwFlags, DispatchParams* pDispParams, Variant* pVarResult, ExcepInfo* pExcepInfo, Span<uint> pArgErr, uint cVarRef, Span<uint> rgVarRefIdx, Variant* rgVarRef)
+        public static unsafe int IDispatchInvokeStub(this Windows thisApi, Span<IDispatch> This, int dispIdMember, Guid* riid, uint lcid, uint dwFlags, DispatchParams* pDispParams, Variant* pVarResult, ExceptionInfo* pExcepInfo, Span<uint> pArgErr, uint cVarRef, Span<uint> rgVarRefIdx, Variant* rgVarRef)
         {
             // SpanOverloader
             return thisApi.IDispatchInvokeStub(ref This.GetPinnableReference(), dispIdMember, riid, lcid, dwFlags, pDispParams, pVarResult, pExcepInfo, ref pArgErr.GetPinnableReference(), cVarRef, ref rgVarRefIdx.GetPinnableReference(), rgVarRef);
@@ -37482,7 +37482,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 5962, Column 43 in oaidl.h")]
-        public static unsafe int IDispatchInvokeStub(this Windows thisApi, Span<IDispatch> This, int dispIdMember, Guid* riid, uint lcid, uint dwFlags, DispatchParams* pDispParams, Variant* pVarResult, ExcepInfo* pExcepInfo, Span<uint> pArgErr, uint cVarRef, Span<uint> rgVarRefIdx, Span<Variant> rgVarRef)
+        public static unsafe int IDispatchInvokeStub(this Windows thisApi, Span<IDispatch> This, int dispIdMember, Guid* riid, uint lcid, uint dwFlags, DispatchParams* pDispParams, Variant* pVarResult, ExceptionInfo* pExcepInfo, Span<uint> pArgErr, uint cVarRef, Span<uint> rgVarRefIdx, Span<Variant> rgVarRef)
         {
             // SpanOverloader
             return thisApi.IDispatchInvokeStub(ref This.GetPinnableReference(), dispIdMember, riid, lcid, dwFlags, pDispParams, pVarResult, pExcepInfo, ref pArgErr.GetPinnableReference(), cVarRef, ref rgVarRefIdx.GetPinnableReference(), ref rgVarRef.GetPinnableReference());
@@ -37490,7 +37490,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 5962, Column 43 in oaidl.h")]
-        public static unsafe int IDispatchInvokeStub(this Windows thisApi, Span<IDispatch> This, int dispIdMember, Guid* riid, uint lcid, uint dwFlags, DispatchParams* pDispParams, Variant* pVarResult, Span<ExcepInfo> pExcepInfo, uint* pArgErr, uint cVarRef, uint* rgVarRefIdx, Variant* rgVarRef)
+        public static unsafe int IDispatchInvokeStub(this Windows thisApi, Span<IDispatch> This, int dispIdMember, Guid* riid, uint lcid, uint dwFlags, DispatchParams* pDispParams, Variant* pVarResult, Span<ExceptionInfo> pExcepInfo, uint* pArgErr, uint cVarRef, uint* rgVarRefIdx, Variant* rgVarRef)
         {
             // SpanOverloader
             return thisApi.IDispatchInvokeStub(ref This.GetPinnableReference(), dispIdMember, riid, lcid, dwFlags, pDispParams, pVarResult, ref pExcepInfo.GetPinnableReference(), pArgErr, cVarRef, rgVarRefIdx, rgVarRef);
@@ -37498,7 +37498,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 5962, Column 43 in oaidl.h")]
-        public static unsafe int IDispatchInvokeStub(this Windows thisApi, Span<IDispatch> This, int dispIdMember, Guid* riid, uint lcid, uint dwFlags, DispatchParams* pDispParams, Variant* pVarResult, Span<ExcepInfo> pExcepInfo, uint* pArgErr, uint cVarRef, uint* rgVarRefIdx, Span<Variant> rgVarRef)
+        public static unsafe int IDispatchInvokeStub(this Windows thisApi, Span<IDispatch> This, int dispIdMember, Guid* riid, uint lcid, uint dwFlags, DispatchParams* pDispParams, Variant* pVarResult, Span<ExceptionInfo> pExcepInfo, uint* pArgErr, uint cVarRef, uint* rgVarRefIdx, Span<Variant> rgVarRef)
         {
             // SpanOverloader
             return thisApi.IDispatchInvokeStub(ref This.GetPinnableReference(), dispIdMember, riid, lcid, dwFlags, pDispParams, pVarResult, ref pExcepInfo.GetPinnableReference(), pArgErr, cVarRef, rgVarRefIdx, ref rgVarRef.GetPinnableReference());
@@ -37506,7 +37506,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 5962, Column 43 in oaidl.h")]
-        public static unsafe int IDispatchInvokeStub(this Windows thisApi, Span<IDispatch> This, int dispIdMember, Guid* riid, uint lcid, uint dwFlags, DispatchParams* pDispParams, Variant* pVarResult, Span<ExcepInfo> pExcepInfo, uint* pArgErr, uint cVarRef, Span<uint> rgVarRefIdx, Variant* rgVarRef)
+        public static unsafe int IDispatchInvokeStub(this Windows thisApi, Span<IDispatch> This, int dispIdMember, Guid* riid, uint lcid, uint dwFlags, DispatchParams* pDispParams, Variant* pVarResult, Span<ExceptionInfo> pExcepInfo, uint* pArgErr, uint cVarRef, Span<uint> rgVarRefIdx, Variant* rgVarRef)
         {
             // SpanOverloader
             return thisApi.IDispatchInvokeStub(ref This.GetPinnableReference(), dispIdMember, riid, lcid, dwFlags, pDispParams, pVarResult, ref pExcepInfo.GetPinnableReference(), pArgErr, cVarRef, ref rgVarRefIdx.GetPinnableReference(), rgVarRef);
@@ -37514,7 +37514,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 5962, Column 43 in oaidl.h")]
-        public static unsafe int IDispatchInvokeStub(this Windows thisApi, Span<IDispatch> This, int dispIdMember, Guid* riid, uint lcid, uint dwFlags, DispatchParams* pDispParams, Variant* pVarResult, Span<ExcepInfo> pExcepInfo, uint* pArgErr, uint cVarRef, Span<uint> rgVarRefIdx, Span<Variant> rgVarRef)
+        public static unsafe int IDispatchInvokeStub(this Windows thisApi, Span<IDispatch> This, int dispIdMember, Guid* riid, uint lcid, uint dwFlags, DispatchParams* pDispParams, Variant* pVarResult, Span<ExceptionInfo> pExcepInfo, uint* pArgErr, uint cVarRef, Span<uint> rgVarRefIdx, Span<Variant> rgVarRef)
         {
             // SpanOverloader
             return thisApi.IDispatchInvokeStub(ref This.GetPinnableReference(), dispIdMember, riid, lcid, dwFlags, pDispParams, pVarResult, ref pExcepInfo.GetPinnableReference(), pArgErr, cVarRef, ref rgVarRefIdx.GetPinnableReference(), ref rgVarRef.GetPinnableReference());
@@ -37522,7 +37522,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 5962, Column 43 in oaidl.h")]
-        public static unsafe int IDispatchInvokeStub(this Windows thisApi, Span<IDispatch> This, int dispIdMember, Guid* riid, uint lcid, uint dwFlags, DispatchParams* pDispParams, Variant* pVarResult, Span<ExcepInfo> pExcepInfo, Span<uint> pArgErr, uint cVarRef, uint* rgVarRefIdx, Variant* rgVarRef)
+        public static unsafe int IDispatchInvokeStub(this Windows thisApi, Span<IDispatch> This, int dispIdMember, Guid* riid, uint lcid, uint dwFlags, DispatchParams* pDispParams, Variant* pVarResult, Span<ExceptionInfo> pExcepInfo, Span<uint> pArgErr, uint cVarRef, uint* rgVarRefIdx, Variant* rgVarRef)
         {
             // SpanOverloader
             return thisApi.IDispatchInvokeStub(ref This.GetPinnableReference(), dispIdMember, riid, lcid, dwFlags, pDispParams, pVarResult, ref pExcepInfo.GetPinnableReference(), ref pArgErr.GetPinnableReference(), cVarRef, rgVarRefIdx, rgVarRef);
@@ -37530,7 +37530,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 5962, Column 43 in oaidl.h")]
-        public static unsafe int IDispatchInvokeStub(this Windows thisApi, Span<IDispatch> This, int dispIdMember, Guid* riid, uint lcid, uint dwFlags, DispatchParams* pDispParams, Variant* pVarResult, Span<ExcepInfo> pExcepInfo, Span<uint> pArgErr, uint cVarRef, uint* rgVarRefIdx, Span<Variant> rgVarRef)
+        public static unsafe int IDispatchInvokeStub(this Windows thisApi, Span<IDispatch> This, int dispIdMember, Guid* riid, uint lcid, uint dwFlags, DispatchParams* pDispParams, Variant* pVarResult, Span<ExceptionInfo> pExcepInfo, Span<uint> pArgErr, uint cVarRef, uint* rgVarRefIdx, Span<Variant> rgVarRef)
         {
             // SpanOverloader
             return thisApi.IDispatchInvokeStub(ref This.GetPinnableReference(), dispIdMember, riid, lcid, dwFlags, pDispParams, pVarResult, ref pExcepInfo.GetPinnableReference(), ref pArgErr.GetPinnableReference(), cVarRef, rgVarRefIdx, ref rgVarRef.GetPinnableReference());
@@ -37538,7 +37538,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 5962, Column 43 in oaidl.h")]
-        public static unsafe int IDispatchInvokeStub(this Windows thisApi, Span<IDispatch> This, int dispIdMember, Guid* riid, uint lcid, uint dwFlags, DispatchParams* pDispParams, Variant* pVarResult, Span<ExcepInfo> pExcepInfo, Span<uint> pArgErr, uint cVarRef, Span<uint> rgVarRefIdx, Variant* rgVarRef)
+        public static unsafe int IDispatchInvokeStub(this Windows thisApi, Span<IDispatch> This, int dispIdMember, Guid* riid, uint lcid, uint dwFlags, DispatchParams* pDispParams, Variant* pVarResult, Span<ExceptionInfo> pExcepInfo, Span<uint> pArgErr, uint cVarRef, Span<uint> rgVarRefIdx, Variant* rgVarRef)
         {
             // SpanOverloader
             return thisApi.IDispatchInvokeStub(ref This.GetPinnableReference(), dispIdMember, riid, lcid, dwFlags, pDispParams, pVarResult, ref pExcepInfo.GetPinnableReference(), ref pArgErr.GetPinnableReference(), cVarRef, ref rgVarRefIdx.GetPinnableReference(), rgVarRef);
@@ -37546,7 +37546,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 5962, Column 43 in oaidl.h")]
-        public static unsafe int IDispatchInvokeStub(this Windows thisApi, Span<IDispatch> This, int dispIdMember, Guid* riid, uint lcid, uint dwFlags, DispatchParams* pDispParams, Variant* pVarResult, Span<ExcepInfo> pExcepInfo, Span<uint> pArgErr, uint cVarRef, Span<uint> rgVarRefIdx, Span<Variant> rgVarRef)
+        public static unsafe int IDispatchInvokeStub(this Windows thisApi, Span<IDispatch> This, int dispIdMember, Guid* riid, uint lcid, uint dwFlags, DispatchParams* pDispParams, Variant* pVarResult, Span<ExceptionInfo> pExcepInfo, Span<uint> pArgErr, uint cVarRef, Span<uint> rgVarRefIdx, Span<Variant> rgVarRef)
         {
             // SpanOverloader
             return thisApi.IDispatchInvokeStub(ref This.GetPinnableReference(), dispIdMember, riid, lcid, dwFlags, pDispParams, pVarResult, ref pExcepInfo.GetPinnableReference(), ref pArgErr.GetPinnableReference(), cVarRef, ref rgVarRefIdx.GetPinnableReference(), ref rgVarRef.GetPinnableReference());
@@ -37554,7 +37554,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 5962, Column 43 in oaidl.h")]
-        public static unsafe int IDispatchInvokeStub(this Windows thisApi, Span<IDispatch> This, int dispIdMember, Guid* riid, uint lcid, uint dwFlags, DispatchParams* pDispParams, Span<Variant> pVarResult, ExcepInfo* pExcepInfo, uint* pArgErr, uint cVarRef, uint* rgVarRefIdx, Variant* rgVarRef)
+        public static unsafe int IDispatchInvokeStub(this Windows thisApi, Span<IDispatch> This, int dispIdMember, Guid* riid, uint lcid, uint dwFlags, DispatchParams* pDispParams, Span<Variant> pVarResult, ExceptionInfo* pExcepInfo, uint* pArgErr, uint cVarRef, uint* rgVarRefIdx, Variant* rgVarRef)
         {
             // SpanOverloader
             return thisApi.IDispatchInvokeStub(ref This.GetPinnableReference(), dispIdMember, riid, lcid, dwFlags, pDispParams, ref pVarResult.GetPinnableReference(), pExcepInfo, pArgErr, cVarRef, rgVarRefIdx, rgVarRef);
@@ -37562,7 +37562,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 5962, Column 43 in oaidl.h")]
-        public static unsafe int IDispatchInvokeStub(this Windows thisApi, Span<IDispatch> This, int dispIdMember, Guid* riid, uint lcid, uint dwFlags, DispatchParams* pDispParams, Span<Variant> pVarResult, ExcepInfo* pExcepInfo, uint* pArgErr, uint cVarRef, uint* rgVarRefIdx, Span<Variant> rgVarRef)
+        public static unsafe int IDispatchInvokeStub(this Windows thisApi, Span<IDispatch> This, int dispIdMember, Guid* riid, uint lcid, uint dwFlags, DispatchParams* pDispParams, Span<Variant> pVarResult, ExceptionInfo* pExcepInfo, uint* pArgErr, uint cVarRef, uint* rgVarRefIdx, Span<Variant> rgVarRef)
         {
             // SpanOverloader
             return thisApi.IDispatchInvokeStub(ref This.GetPinnableReference(), dispIdMember, riid, lcid, dwFlags, pDispParams, ref pVarResult.GetPinnableReference(), pExcepInfo, pArgErr, cVarRef, rgVarRefIdx, ref rgVarRef.GetPinnableReference());
@@ -37570,7 +37570,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 5962, Column 43 in oaidl.h")]
-        public static unsafe int IDispatchInvokeStub(this Windows thisApi, Span<IDispatch> This, int dispIdMember, Guid* riid, uint lcid, uint dwFlags, DispatchParams* pDispParams, Span<Variant> pVarResult, ExcepInfo* pExcepInfo, uint* pArgErr, uint cVarRef, Span<uint> rgVarRefIdx, Variant* rgVarRef)
+        public static unsafe int IDispatchInvokeStub(this Windows thisApi, Span<IDispatch> This, int dispIdMember, Guid* riid, uint lcid, uint dwFlags, DispatchParams* pDispParams, Span<Variant> pVarResult, ExceptionInfo* pExcepInfo, uint* pArgErr, uint cVarRef, Span<uint> rgVarRefIdx, Variant* rgVarRef)
         {
             // SpanOverloader
             return thisApi.IDispatchInvokeStub(ref This.GetPinnableReference(), dispIdMember, riid, lcid, dwFlags, pDispParams, ref pVarResult.GetPinnableReference(), pExcepInfo, pArgErr, cVarRef, ref rgVarRefIdx.GetPinnableReference(), rgVarRef);
@@ -37578,7 +37578,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 5962, Column 43 in oaidl.h")]
-        public static unsafe int IDispatchInvokeStub(this Windows thisApi, Span<IDispatch> This, int dispIdMember, Guid* riid, uint lcid, uint dwFlags, DispatchParams* pDispParams, Span<Variant> pVarResult, ExcepInfo* pExcepInfo, uint* pArgErr, uint cVarRef, Span<uint> rgVarRefIdx, Span<Variant> rgVarRef)
+        public static unsafe int IDispatchInvokeStub(this Windows thisApi, Span<IDispatch> This, int dispIdMember, Guid* riid, uint lcid, uint dwFlags, DispatchParams* pDispParams, Span<Variant> pVarResult, ExceptionInfo* pExcepInfo, uint* pArgErr, uint cVarRef, Span<uint> rgVarRefIdx, Span<Variant> rgVarRef)
         {
             // SpanOverloader
             return thisApi.IDispatchInvokeStub(ref This.GetPinnableReference(), dispIdMember, riid, lcid, dwFlags, pDispParams, ref pVarResult.GetPinnableReference(), pExcepInfo, pArgErr, cVarRef, ref rgVarRefIdx.GetPinnableReference(), ref rgVarRef.GetPinnableReference());
@@ -37586,7 +37586,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 5962, Column 43 in oaidl.h")]
-        public static unsafe int IDispatchInvokeStub(this Windows thisApi, Span<IDispatch> This, int dispIdMember, Guid* riid, uint lcid, uint dwFlags, DispatchParams* pDispParams, Span<Variant> pVarResult, ExcepInfo* pExcepInfo, Span<uint> pArgErr, uint cVarRef, uint* rgVarRefIdx, Variant* rgVarRef)
+        public static unsafe int IDispatchInvokeStub(this Windows thisApi, Span<IDispatch> This, int dispIdMember, Guid* riid, uint lcid, uint dwFlags, DispatchParams* pDispParams, Span<Variant> pVarResult, ExceptionInfo* pExcepInfo, Span<uint> pArgErr, uint cVarRef, uint* rgVarRefIdx, Variant* rgVarRef)
         {
             // SpanOverloader
             return thisApi.IDispatchInvokeStub(ref This.GetPinnableReference(), dispIdMember, riid, lcid, dwFlags, pDispParams, ref pVarResult.GetPinnableReference(), pExcepInfo, ref pArgErr.GetPinnableReference(), cVarRef, rgVarRefIdx, rgVarRef);
@@ -37594,7 +37594,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 5962, Column 43 in oaidl.h")]
-        public static unsafe int IDispatchInvokeStub(this Windows thisApi, Span<IDispatch> This, int dispIdMember, Guid* riid, uint lcid, uint dwFlags, DispatchParams* pDispParams, Span<Variant> pVarResult, ExcepInfo* pExcepInfo, Span<uint> pArgErr, uint cVarRef, uint* rgVarRefIdx, Span<Variant> rgVarRef)
+        public static unsafe int IDispatchInvokeStub(this Windows thisApi, Span<IDispatch> This, int dispIdMember, Guid* riid, uint lcid, uint dwFlags, DispatchParams* pDispParams, Span<Variant> pVarResult, ExceptionInfo* pExcepInfo, Span<uint> pArgErr, uint cVarRef, uint* rgVarRefIdx, Span<Variant> rgVarRef)
         {
             // SpanOverloader
             return thisApi.IDispatchInvokeStub(ref This.GetPinnableReference(), dispIdMember, riid, lcid, dwFlags, pDispParams, ref pVarResult.GetPinnableReference(), pExcepInfo, ref pArgErr.GetPinnableReference(), cVarRef, rgVarRefIdx, ref rgVarRef.GetPinnableReference());
@@ -37602,7 +37602,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 5962, Column 43 in oaidl.h")]
-        public static unsafe int IDispatchInvokeStub(this Windows thisApi, Span<IDispatch> This, int dispIdMember, Guid* riid, uint lcid, uint dwFlags, DispatchParams* pDispParams, Span<Variant> pVarResult, ExcepInfo* pExcepInfo, Span<uint> pArgErr, uint cVarRef, Span<uint> rgVarRefIdx, Variant* rgVarRef)
+        public static unsafe int IDispatchInvokeStub(this Windows thisApi, Span<IDispatch> This, int dispIdMember, Guid* riid, uint lcid, uint dwFlags, DispatchParams* pDispParams, Span<Variant> pVarResult, ExceptionInfo* pExcepInfo, Span<uint> pArgErr, uint cVarRef, Span<uint> rgVarRefIdx, Variant* rgVarRef)
         {
             // SpanOverloader
             return thisApi.IDispatchInvokeStub(ref This.GetPinnableReference(), dispIdMember, riid, lcid, dwFlags, pDispParams, ref pVarResult.GetPinnableReference(), pExcepInfo, ref pArgErr.GetPinnableReference(), cVarRef, ref rgVarRefIdx.GetPinnableReference(), rgVarRef);
@@ -37610,7 +37610,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 5962, Column 43 in oaidl.h")]
-        public static unsafe int IDispatchInvokeStub(this Windows thisApi, Span<IDispatch> This, int dispIdMember, Guid* riid, uint lcid, uint dwFlags, DispatchParams* pDispParams, Span<Variant> pVarResult, ExcepInfo* pExcepInfo, Span<uint> pArgErr, uint cVarRef, Span<uint> rgVarRefIdx, Span<Variant> rgVarRef)
+        public static unsafe int IDispatchInvokeStub(this Windows thisApi, Span<IDispatch> This, int dispIdMember, Guid* riid, uint lcid, uint dwFlags, DispatchParams* pDispParams, Span<Variant> pVarResult, ExceptionInfo* pExcepInfo, Span<uint> pArgErr, uint cVarRef, Span<uint> rgVarRefIdx, Span<Variant> rgVarRef)
         {
             // SpanOverloader
             return thisApi.IDispatchInvokeStub(ref This.GetPinnableReference(), dispIdMember, riid, lcid, dwFlags, pDispParams, ref pVarResult.GetPinnableReference(), pExcepInfo, ref pArgErr.GetPinnableReference(), cVarRef, ref rgVarRefIdx.GetPinnableReference(), ref rgVarRef.GetPinnableReference());
@@ -37618,7 +37618,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 5962, Column 43 in oaidl.h")]
-        public static unsafe int IDispatchInvokeStub(this Windows thisApi, Span<IDispatch> This, int dispIdMember, Guid* riid, uint lcid, uint dwFlags, DispatchParams* pDispParams, Span<Variant> pVarResult, Span<ExcepInfo> pExcepInfo, uint* pArgErr, uint cVarRef, uint* rgVarRefIdx, Variant* rgVarRef)
+        public static unsafe int IDispatchInvokeStub(this Windows thisApi, Span<IDispatch> This, int dispIdMember, Guid* riid, uint lcid, uint dwFlags, DispatchParams* pDispParams, Span<Variant> pVarResult, Span<ExceptionInfo> pExcepInfo, uint* pArgErr, uint cVarRef, uint* rgVarRefIdx, Variant* rgVarRef)
         {
             // SpanOverloader
             return thisApi.IDispatchInvokeStub(ref This.GetPinnableReference(), dispIdMember, riid, lcid, dwFlags, pDispParams, ref pVarResult.GetPinnableReference(), ref pExcepInfo.GetPinnableReference(), pArgErr, cVarRef, rgVarRefIdx, rgVarRef);
@@ -37626,7 +37626,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 5962, Column 43 in oaidl.h")]
-        public static unsafe int IDispatchInvokeStub(this Windows thisApi, Span<IDispatch> This, int dispIdMember, Guid* riid, uint lcid, uint dwFlags, DispatchParams* pDispParams, Span<Variant> pVarResult, Span<ExcepInfo> pExcepInfo, uint* pArgErr, uint cVarRef, uint* rgVarRefIdx, Span<Variant> rgVarRef)
+        public static unsafe int IDispatchInvokeStub(this Windows thisApi, Span<IDispatch> This, int dispIdMember, Guid* riid, uint lcid, uint dwFlags, DispatchParams* pDispParams, Span<Variant> pVarResult, Span<ExceptionInfo> pExcepInfo, uint* pArgErr, uint cVarRef, uint* rgVarRefIdx, Span<Variant> rgVarRef)
         {
             // SpanOverloader
             return thisApi.IDispatchInvokeStub(ref This.GetPinnableReference(), dispIdMember, riid, lcid, dwFlags, pDispParams, ref pVarResult.GetPinnableReference(), ref pExcepInfo.GetPinnableReference(), pArgErr, cVarRef, rgVarRefIdx, ref rgVarRef.GetPinnableReference());
@@ -37634,7 +37634,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 5962, Column 43 in oaidl.h")]
-        public static unsafe int IDispatchInvokeStub(this Windows thisApi, Span<IDispatch> This, int dispIdMember, Guid* riid, uint lcid, uint dwFlags, DispatchParams* pDispParams, Span<Variant> pVarResult, Span<ExcepInfo> pExcepInfo, uint* pArgErr, uint cVarRef, Span<uint> rgVarRefIdx, Variant* rgVarRef)
+        public static unsafe int IDispatchInvokeStub(this Windows thisApi, Span<IDispatch> This, int dispIdMember, Guid* riid, uint lcid, uint dwFlags, DispatchParams* pDispParams, Span<Variant> pVarResult, Span<ExceptionInfo> pExcepInfo, uint* pArgErr, uint cVarRef, Span<uint> rgVarRefIdx, Variant* rgVarRef)
         {
             // SpanOverloader
             return thisApi.IDispatchInvokeStub(ref This.GetPinnableReference(), dispIdMember, riid, lcid, dwFlags, pDispParams, ref pVarResult.GetPinnableReference(), ref pExcepInfo.GetPinnableReference(), pArgErr, cVarRef, ref rgVarRefIdx.GetPinnableReference(), rgVarRef);
@@ -37642,7 +37642,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 5962, Column 43 in oaidl.h")]
-        public static unsafe int IDispatchInvokeStub(this Windows thisApi, Span<IDispatch> This, int dispIdMember, Guid* riid, uint lcid, uint dwFlags, DispatchParams* pDispParams, Span<Variant> pVarResult, Span<ExcepInfo> pExcepInfo, uint* pArgErr, uint cVarRef, Span<uint> rgVarRefIdx, Span<Variant> rgVarRef)
+        public static unsafe int IDispatchInvokeStub(this Windows thisApi, Span<IDispatch> This, int dispIdMember, Guid* riid, uint lcid, uint dwFlags, DispatchParams* pDispParams, Span<Variant> pVarResult, Span<ExceptionInfo> pExcepInfo, uint* pArgErr, uint cVarRef, Span<uint> rgVarRefIdx, Span<Variant> rgVarRef)
         {
             // SpanOverloader
             return thisApi.IDispatchInvokeStub(ref This.GetPinnableReference(), dispIdMember, riid, lcid, dwFlags, pDispParams, ref pVarResult.GetPinnableReference(), ref pExcepInfo.GetPinnableReference(), pArgErr, cVarRef, ref rgVarRefIdx.GetPinnableReference(), ref rgVarRef.GetPinnableReference());
@@ -37650,7 +37650,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 5962, Column 43 in oaidl.h")]
-        public static unsafe int IDispatchInvokeStub(this Windows thisApi, Span<IDispatch> This, int dispIdMember, Guid* riid, uint lcid, uint dwFlags, DispatchParams* pDispParams, Span<Variant> pVarResult, Span<ExcepInfo> pExcepInfo, Span<uint> pArgErr, uint cVarRef, uint* rgVarRefIdx, Variant* rgVarRef)
+        public static unsafe int IDispatchInvokeStub(this Windows thisApi, Span<IDispatch> This, int dispIdMember, Guid* riid, uint lcid, uint dwFlags, DispatchParams* pDispParams, Span<Variant> pVarResult, Span<ExceptionInfo> pExcepInfo, Span<uint> pArgErr, uint cVarRef, uint* rgVarRefIdx, Variant* rgVarRef)
         {
             // SpanOverloader
             return thisApi.IDispatchInvokeStub(ref This.GetPinnableReference(), dispIdMember, riid, lcid, dwFlags, pDispParams, ref pVarResult.GetPinnableReference(), ref pExcepInfo.GetPinnableReference(), ref pArgErr.GetPinnableReference(), cVarRef, rgVarRefIdx, rgVarRef);
@@ -37658,7 +37658,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 5962, Column 43 in oaidl.h")]
-        public static unsafe int IDispatchInvokeStub(this Windows thisApi, Span<IDispatch> This, int dispIdMember, Guid* riid, uint lcid, uint dwFlags, DispatchParams* pDispParams, Span<Variant> pVarResult, Span<ExcepInfo> pExcepInfo, Span<uint> pArgErr, uint cVarRef, uint* rgVarRefIdx, Span<Variant> rgVarRef)
+        public static unsafe int IDispatchInvokeStub(this Windows thisApi, Span<IDispatch> This, int dispIdMember, Guid* riid, uint lcid, uint dwFlags, DispatchParams* pDispParams, Span<Variant> pVarResult, Span<ExceptionInfo> pExcepInfo, Span<uint> pArgErr, uint cVarRef, uint* rgVarRefIdx, Span<Variant> rgVarRef)
         {
             // SpanOverloader
             return thisApi.IDispatchInvokeStub(ref This.GetPinnableReference(), dispIdMember, riid, lcid, dwFlags, pDispParams, ref pVarResult.GetPinnableReference(), ref pExcepInfo.GetPinnableReference(), ref pArgErr.GetPinnableReference(), cVarRef, rgVarRefIdx, ref rgVarRef.GetPinnableReference());
@@ -37666,7 +37666,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 5962, Column 43 in oaidl.h")]
-        public static unsafe int IDispatchInvokeStub(this Windows thisApi, Span<IDispatch> This, int dispIdMember, Guid* riid, uint lcid, uint dwFlags, DispatchParams* pDispParams, Span<Variant> pVarResult, Span<ExcepInfo> pExcepInfo, Span<uint> pArgErr, uint cVarRef, Span<uint> rgVarRefIdx, Variant* rgVarRef)
+        public static unsafe int IDispatchInvokeStub(this Windows thisApi, Span<IDispatch> This, int dispIdMember, Guid* riid, uint lcid, uint dwFlags, DispatchParams* pDispParams, Span<Variant> pVarResult, Span<ExceptionInfo> pExcepInfo, Span<uint> pArgErr, uint cVarRef, Span<uint> rgVarRefIdx, Variant* rgVarRef)
         {
             // SpanOverloader
             return thisApi.IDispatchInvokeStub(ref This.GetPinnableReference(), dispIdMember, riid, lcid, dwFlags, pDispParams, ref pVarResult.GetPinnableReference(), ref pExcepInfo.GetPinnableReference(), ref pArgErr.GetPinnableReference(), cVarRef, ref rgVarRefIdx.GetPinnableReference(), rgVarRef);
@@ -37674,7 +37674,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 5962, Column 43 in oaidl.h")]
-        public static unsafe int IDispatchInvokeStub(this Windows thisApi, Span<IDispatch> This, int dispIdMember, Guid* riid, uint lcid, uint dwFlags, DispatchParams* pDispParams, Span<Variant> pVarResult, Span<ExcepInfo> pExcepInfo, Span<uint> pArgErr, uint cVarRef, Span<uint> rgVarRefIdx, Span<Variant> rgVarRef)
+        public static unsafe int IDispatchInvokeStub(this Windows thisApi, Span<IDispatch> This, int dispIdMember, Guid* riid, uint lcid, uint dwFlags, DispatchParams* pDispParams, Span<Variant> pVarResult, Span<ExceptionInfo> pExcepInfo, Span<uint> pArgErr, uint cVarRef, Span<uint> rgVarRefIdx, Span<Variant> rgVarRef)
         {
             // SpanOverloader
             return thisApi.IDispatchInvokeStub(ref This.GetPinnableReference(), dispIdMember, riid, lcid, dwFlags, pDispParams, ref pVarResult.GetPinnableReference(), ref pExcepInfo.GetPinnableReference(), ref pArgErr.GetPinnableReference(), cVarRef, ref rgVarRefIdx.GetPinnableReference(), ref rgVarRef.GetPinnableReference());
@@ -37682,7 +37682,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 5962, Column 43 in oaidl.h")]
-        public static unsafe int IDispatchInvokeStub(this Windows thisApi, Span<IDispatch> This, int dispIdMember, Guid* riid, uint lcid, uint dwFlags, Span<DispatchParams> pDispParams, Variant* pVarResult, ExcepInfo* pExcepInfo, uint* pArgErr, uint cVarRef, uint* rgVarRefIdx, Variant* rgVarRef)
+        public static unsafe int IDispatchInvokeStub(this Windows thisApi, Span<IDispatch> This, int dispIdMember, Guid* riid, uint lcid, uint dwFlags, Span<DispatchParams> pDispParams, Variant* pVarResult, ExceptionInfo* pExcepInfo, uint* pArgErr, uint cVarRef, uint* rgVarRefIdx, Variant* rgVarRef)
         {
             // SpanOverloader
             return thisApi.IDispatchInvokeStub(ref This.GetPinnableReference(), dispIdMember, riid, lcid, dwFlags, ref pDispParams.GetPinnableReference(), pVarResult, pExcepInfo, pArgErr, cVarRef, rgVarRefIdx, rgVarRef);
@@ -37690,7 +37690,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 5962, Column 43 in oaidl.h")]
-        public static unsafe int IDispatchInvokeStub(this Windows thisApi, Span<IDispatch> This, int dispIdMember, Guid* riid, uint lcid, uint dwFlags, Span<DispatchParams> pDispParams, Variant* pVarResult, ExcepInfo* pExcepInfo, uint* pArgErr, uint cVarRef, uint* rgVarRefIdx, Span<Variant> rgVarRef)
+        public static unsafe int IDispatchInvokeStub(this Windows thisApi, Span<IDispatch> This, int dispIdMember, Guid* riid, uint lcid, uint dwFlags, Span<DispatchParams> pDispParams, Variant* pVarResult, ExceptionInfo* pExcepInfo, uint* pArgErr, uint cVarRef, uint* rgVarRefIdx, Span<Variant> rgVarRef)
         {
             // SpanOverloader
             return thisApi.IDispatchInvokeStub(ref This.GetPinnableReference(), dispIdMember, riid, lcid, dwFlags, ref pDispParams.GetPinnableReference(), pVarResult, pExcepInfo, pArgErr, cVarRef, rgVarRefIdx, ref rgVarRef.GetPinnableReference());
@@ -37698,7 +37698,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 5962, Column 43 in oaidl.h")]
-        public static unsafe int IDispatchInvokeStub(this Windows thisApi, Span<IDispatch> This, int dispIdMember, Guid* riid, uint lcid, uint dwFlags, Span<DispatchParams> pDispParams, Variant* pVarResult, ExcepInfo* pExcepInfo, uint* pArgErr, uint cVarRef, Span<uint> rgVarRefIdx, Variant* rgVarRef)
+        public static unsafe int IDispatchInvokeStub(this Windows thisApi, Span<IDispatch> This, int dispIdMember, Guid* riid, uint lcid, uint dwFlags, Span<DispatchParams> pDispParams, Variant* pVarResult, ExceptionInfo* pExcepInfo, uint* pArgErr, uint cVarRef, Span<uint> rgVarRefIdx, Variant* rgVarRef)
         {
             // SpanOverloader
             return thisApi.IDispatchInvokeStub(ref This.GetPinnableReference(), dispIdMember, riid, lcid, dwFlags, ref pDispParams.GetPinnableReference(), pVarResult, pExcepInfo, pArgErr, cVarRef, ref rgVarRefIdx.GetPinnableReference(), rgVarRef);
@@ -37706,7 +37706,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 5962, Column 43 in oaidl.h")]
-        public static unsafe int IDispatchInvokeStub(this Windows thisApi, Span<IDispatch> This, int dispIdMember, Guid* riid, uint lcid, uint dwFlags, Span<DispatchParams> pDispParams, Variant* pVarResult, ExcepInfo* pExcepInfo, uint* pArgErr, uint cVarRef, Span<uint> rgVarRefIdx, Span<Variant> rgVarRef)
+        public static unsafe int IDispatchInvokeStub(this Windows thisApi, Span<IDispatch> This, int dispIdMember, Guid* riid, uint lcid, uint dwFlags, Span<DispatchParams> pDispParams, Variant* pVarResult, ExceptionInfo* pExcepInfo, uint* pArgErr, uint cVarRef, Span<uint> rgVarRefIdx, Span<Variant> rgVarRef)
         {
             // SpanOverloader
             return thisApi.IDispatchInvokeStub(ref This.GetPinnableReference(), dispIdMember, riid, lcid, dwFlags, ref pDispParams.GetPinnableReference(), pVarResult, pExcepInfo, pArgErr, cVarRef, ref rgVarRefIdx.GetPinnableReference(), ref rgVarRef.GetPinnableReference());
@@ -37714,7 +37714,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 5962, Column 43 in oaidl.h")]
-        public static unsafe int IDispatchInvokeStub(this Windows thisApi, Span<IDispatch> This, int dispIdMember, Guid* riid, uint lcid, uint dwFlags, Span<DispatchParams> pDispParams, Variant* pVarResult, ExcepInfo* pExcepInfo, Span<uint> pArgErr, uint cVarRef, uint* rgVarRefIdx, Variant* rgVarRef)
+        public static unsafe int IDispatchInvokeStub(this Windows thisApi, Span<IDispatch> This, int dispIdMember, Guid* riid, uint lcid, uint dwFlags, Span<DispatchParams> pDispParams, Variant* pVarResult, ExceptionInfo* pExcepInfo, Span<uint> pArgErr, uint cVarRef, uint* rgVarRefIdx, Variant* rgVarRef)
         {
             // SpanOverloader
             return thisApi.IDispatchInvokeStub(ref This.GetPinnableReference(), dispIdMember, riid, lcid, dwFlags, ref pDispParams.GetPinnableReference(), pVarResult, pExcepInfo, ref pArgErr.GetPinnableReference(), cVarRef, rgVarRefIdx, rgVarRef);
@@ -37722,7 +37722,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 5962, Column 43 in oaidl.h")]
-        public static unsafe int IDispatchInvokeStub(this Windows thisApi, Span<IDispatch> This, int dispIdMember, Guid* riid, uint lcid, uint dwFlags, Span<DispatchParams> pDispParams, Variant* pVarResult, ExcepInfo* pExcepInfo, Span<uint> pArgErr, uint cVarRef, uint* rgVarRefIdx, Span<Variant> rgVarRef)
+        public static unsafe int IDispatchInvokeStub(this Windows thisApi, Span<IDispatch> This, int dispIdMember, Guid* riid, uint lcid, uint dwFlags, Span<DispatchParams> pDispParams, Variant* pVarResult, ExceptionInfo* pExcepInfo, Span<uint> pArgErr, uint cVarRef, uint* rgVarRefIdx, Span<Variant> rgVarRef)
         {
             // SpanOverloader
             return thisApi.IDispatchInvokeStub(ref This.GetPinnableReference(), dispIdMember, riid, lcid, dwFlags, ref pDispParams.GetPinnableReference(), pVarResult, pExcepInfo, ref pArgErr.GetPinnableReference(), cVarRef, rgVarRefIdx, ref rgVarRef.GetPinnableReference());
@@ -37730,7 +37730,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 5962, Column 43 in oaidl.h")]
-        public static unsafe int IDispatchInvokeStub(this Windows thisApi, Span<IDispatch> This, int dispIdMember, Guid* riid, uint lcid, uint dwFlags, Span<DispatchParams> pDispParams, Variant* pVarResult, ExcepInfo* pExcepInfo, Span<uint> pArgErr, uint cVarRef, Span<uint> rgVarRefIdx, Variant* rgVarRef)
+        public static unsafe int IDispatchInvokeStub(this Windows thisApi, Span<IDispatch> This, int dispIdMember, Guid* riid, uint lcid, uint dwFlags, Span<DispatchParams> pDispParams, Variant* pVarResult, ExceptionInfo* pExcepInfo, Span<uint> pArgErr, uint cVarRef, Span<uint> rgVarRefIdx, Variant* rgVarRef)
         {
             // SpanOverloader
             return thisApi.IDispatchInvokeStub(ref This.GetPinnableReference(), dispIdMember, riid, lcid, dwFlags, ref pDispParams.GetPinnableReference(), pVarResult, pExcepInfo, ref pArgErr.GetPinnableReference(), cVarRef, ref rgVarRefIdx.GetPinnableReference(), rgVarRef);
@@ -37738,7 +37738,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 5962, Column 43 in oaidl.h")]
-        public static unsafe int IDispatchInvokeStub(this Windows thisApi, Span<IDispatch> This, int dispIdMember, Guid* riid, uint lcid, uint dwFlags, Span<DispatchParams> pDispParams, Variant* pVarResult, ExcepInfo* pExcepInfo, Span<uint> pArgErr, uint cVarRef, Span<uint> rgVarRefIdx, Span<Variant> rgVarRef)
+        public static unsafe int IDispatchInvokeStub(this Windows thisApi, Span<IDispatch> This, int dispIdMember, Guid* riid, uint lcid, uint dwFlags, Span<DispatchParams> pDispParams, Variant* pVarResult, ExceptionInfo* pExcepInfo, Span<uint> pArgErr, uint cVarRef, Span<uint> rgVarRefIdx, Span<Variant> rgVarRef)
         {
             // SpanOverloader
             return thisApi.IDispatchInvokeStub(ref This.GetPinnableReference(), dispIdMember, riid, lcid, dwFlags, ref pDispParams.GetPinnableReference(), pVarResult, pExcepInfo, ref pArgErr.GetPinnableReference(), cVarRef, ref rgVarRefIdx.GetPinnableReference(), ref rgVarRef.GetPinnableReference());
@@ -37746,7 +37746,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 5962, Column 43 in oaidl.h")]
-        public static unsafe int IDispatchInvokeStub(this Windows thisApi, Span<IDispatch> This, int dispIdMember, Guid* riid, uint lcid, uint dwFlags, Span<DispatchParams> pDispParams, Variant* pVarResult, Span<ExcepInfo> pExcepInfo, uint* pArgErr, uint cVarRef, uint* rgVarRefIdx, Variant* rgVarRef)
+        public static unsafe int IDispatchInvokeStub(this Windows thisApi, Span<IDispatch> This, int dispIdMember, Guid* riid, uint lcid, uint dwFlags, Span<DispatchParams> pDispParams, Variant* pVarResult, Span<ExceptionInfo> pExcepInfo, uint* pArgErr, uint cVarRef, uint* rgVarRefIdx, Variant* rgVarRef)
         {
             // SpanOverloader
             return thisApi.IDispatchInvokeStub(ref This.GetPinnableReference(), dispIdMember, riid, lcid, dwFlags, ref pDispParams.GetPinnableReference(), pVarResult, ref pExcepInfo.GetPinnableReference(), pArgErr, cVarRef, rgVarRefIdx, rgVarRef);
@@ -37754,7 +37754,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 5962, Column 43 in oaidl.h")]
-        public static unsafe int IDispatchInvokeStub(this Windows thisApi, Span<IDispatch> This, int dispIdMember, Guid* riid, uint lcid, uint dwFlags, Span<DispatchParams> pDispParams, Variant* pVarResult, Span<ExcepInfo> pExcepInfo, uint* pArgErr, uint cVarRef, uint* rgVarRefIdx, Span<Variant> rgVarRef)
+        public static unsafe int IDispatchInvokeStub(this Windows thisApi, Span<IDispatch> This, int dispIdMember, Guid* riid, uint lcid, uint dwFlags, Span<DispatchParams> pDispParams, Variant* pVarResult, Span<ExceptionInfo> pExcepInfo, uint* pArgErr, uint cVarRef, uint* rgVarRefIdx, Span<Variant> rgVarRef)
         {
             // SpanOverloader
             return thisApi.IDispatchInvokeStub(ref This.GetPinnableReference(), dispIdMember, riid, lcid, dwFlags, ref pDispParams.GetPinnableReference(), pVarResult, ref pExcepInfo.GetPinnableReference(), pArgErr, cVarRef, rgVarRefIdx, ref rgVarRef.GetPinnableReference());
@@ -37762,7 +37762,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 5962, Column 43 in oaidl.h")]
-        public static unsafe int IDispatchInvokeStub(this Windows thisApi, Span<IDispatch> This, int dispIdMember, Guid* riid, uint lcid, uint dwFlags, Span<DispatchParams> pDispParams, Variant* pVarResult, Span<ExcepInfo> pExcepInfo, uint* pArgErr, uint cVarRef, Span<uint> rgVarRefIdx, Variant* rgVarRef)
+        public static unsafe int IDispatchInvokeStub(this Windows thisApi, Span<IDispatch> This, int dispIdMember, Guid* riid, uint lcid, uint dwFlags, Span<DispatchParams> pDispParams, Variant* pVarResult, Span<ExceptionInfo> pExcepInfo, uint* pArgErr, uint cVarRef, Span<uint> rgVarRefIdx, Variant* rgVarRef)
         {
             // SpanOverloader
             return thisApi.IDispatchInvokeStub(ref This.GetPinnableReference(), dispIdMember, riid, lcid, dwFlags, ref pDispParams.GetPinnableReference(), pVarResult, ref pExcepInfo.GetPinnableReference(), pArgErr, cVarRef, ref rgVarRefIdx.GetPinnableReference(), rgVarRef);
@@ -37770,7 +37770,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 5962, Column 43 in oaidl.h")]
-        public static unsafe int IDispatchInvokeStub(this Windows thisApi, Span<IDispatch> This, int dispIdMember, Guid* riid, uint lcid, uint dwFlags, Span<DispatchParams> pDispParams, Variant* pVarResult, Span<ExcepInfo> pExcepInfo, uint* pArgErr, uint cVarRef, Span<uint> rgVarRefIdx, Span<Variant> rgVarRef)
+        public static unsafe int IDispatchInvokeStub(this Windows thisApi, Span<IDispatch> This, int dispIdMember, Guid* riid, uint lcid, uint dwFlags, Span<DispatchParams> pDispParams, Variant* pVarResult, Span<ExceptionInfo> pExcepInfo, uint* pArgErr, uint cVarRef, Span<uint> rgVarRefIdx, Span<Variant> rgVarRef)
         {
             // SpanOverloader
             return thisApi.IDispatchInvokeStub(ref This.GetPinnableReference(), dispIdMember, riid, lcid, dwFlags, ref pDispParams.GetPinnableReference(), pVarResult, ref pExcepInfo.GetPinnableReference(), pArgErr, cVarRef, ref rgVarRefIdx.GetPinnableReference(), ref rgVarRef.GetPinnableReference());
@@ -37778,7 +37778,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 5962, Column 43 in oaidl.h")]
-        public static unsafe int IDispatchInvokeStub(this Windows thisApi, Span<IDispatch> This, int dispIdMember, Guid* riid, uint lcid, uint dwFlags, Span<DispatchParams> pDispParams, Variant* pVarResult, Span<ExcepInfo> pExcepInfo, Span<uint> pArgErr, uint cVarRef, uint* rgVarRefIdx, Variant* rgVarRef)
+        public static unsafe int IDispatchInvokeStub(this Windows thisApi, Span<IDispatch> This, int dispIdMember, Guid* riid, uint lcid, uint dwFlags, Span<DispatchParams> pDispParams, Variant* pVarResult, Span<ExceptionInfo> pExcepInfo, Span<uint> pArgErr, uint cVarRef, uint* rgVarRefIdx, Variant* rgVarRef)
         {
             // SpanOverloader
             return thisApi.IDispatchInvokeStub(ref This.GetPinnableReference(), dispIdMember, riid, lcid, dwFlags, ref pDispParams.GetPinnableReference(), pVarResult, ref pExcepInfo.GetPinnableReference(), ref pArgErr.GetPinnableReference(), cVarRef, rgVarRefIdx, rgVarRef);
@@ -37786,7 +37786,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 5962, Column 43 in oaidl.h")]
-        public static unsafe int IDispatchInvokeStub(this Windows thisApi, Span<IDispatch> This, int dispIdMember, Guid* riid, uint lcid, uint dwFlags, Span<DispatchParams> pDispParams, Variant* pVarResult, Span<ExcepInfo> pExcepInfo, Span<uint> pArgErr, uint cVarRef, uint* rgVarRefIdx, Span<Variant> rgVarRef)
+        public static unsafe int IDispatchInvokeStub(this Windows thisApi, Span<IDispatch> This, int dispIdMember, Guid* riid, uint lcid, uint dwFlags, Span<DispatchParams> pDispParams, Variant* pVarResult, Span<ExceptionInfo> pExcepInfo, Span<uint> pArgErr, uint cVarRef, uint* rgVarRefIdx, Span<Variant> rgVarRef)
         {
             // SpanOverloader
             return thisApi.IDispatchInvokeStub(ref This.GetPinnableReference(), dispIdMember, riid, lcid, dwFlags, ref pDispParams.GetPinnableReference(), pVarResult, ref pExcepInfo.GetPinnableReference(), ref pArgErr.GetPinnableReference(), cVarRef, rgVarRefIdx, ref rgVarRef.GetPinnableReference());
@@ -37794,7 +37794,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 5962, Column 43 in oaidl.h")]
-        public static unsafe int IDispatchInvokeStub(this Windows thisApi, Span<IDispatch> This, int dispIdMember, Guid* riid, uint lcid, uint dwFlags, Span<DispatchParams> pDispParams, Variant* pVarResult, Span<ExcepInfo> pExcepInfo, Span<uint> pArgErr, uint cVarRef, Span<uint> rgVarRefIdx, Variant* rgVarRef)
+        public static unsafe int IDispatchInvokeStub(this Windows thisApi, Span<IDispatch> This, int dispIdMember, Guid* riid, uint lcid, uint dwFlags, Span<DispatchParams> pDispParams, Variant* pVarResult, Span<ExceptionInfo> pExcepInfo, Span<uint> pArgErr, uint cVarRef, Span<uint> rgVarRefIdx, Variant* rgVarRef)
         {
             // SpanOverloader
             return thisApi.IDispatchInvokeStub(ref This.GetPinnableReference(), dispIdMember, riid, lcid, dwFlags, ref pDispParams.GetPinnableReference(), pVarResult, ref pExcepInfo.GetPinnableReference(), ref pArgErr.GetPinnableReference(), cVarRef, ref rgVarRefIdx.GetPinnableReference(), rgVarRef);
@@ -37802,7 +37802,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 5962, Column 43 in oaidl.h")]
-        public static unsafe int IDispatchInvokeStub(this Windows thisApi, Span<IDispatch> This, int dispIdMember, Guid* riid, uint lcid, uint dwFlags, Span<DispatchParams> pDispParams, Variant* pVarResult, Span<ExcepInfo> pExcepInfo, Span<uint> pArgErr, uint cVarRef, Span<uint> rgVarRefIdx, Span<Variant> rgVarRef)
+        public static unsafe int IDispatchInvokeStub(this Windows thisApi, Span<IDispatch> This, int dispIdMember, Guid* riid, uint lcid, uint dwFlags, Span<DispatchParams> pDispParams, Variant* pVarResult, Span<ExceptionInfo> pExcepInfo, Span<uint> pArgErr, uint cVarRef, Span<uint> rgVarRefIdx, Span<Variant> rgVarRef)
         {
             // SpanOverloader
             return thisApi.IDispatchInvokeStub(ref This.GetPinnableReference(), dispIdMember, riid, lcid, dwFlags, ref pDispParams.GetPinnableReference(), pVarResult, ref pExcepInfo.GetPinnableReference(), ref pArgErr.GetPinnableReference(), cVarRef, ref rgVarRefIdx.GetPinnableReference(), ref rgVarRef.GetPinnableReference());
@@ -37810,7 +37810,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 5962, Column 43 in oaidl.h")]
-        public static unsafe int IDispatchInvokeStub(this Windows thisApi, Span<IDispatch> This, int dispIdMember, Guid* riid, uint lcid, uint dwFlags, Span<DispatchParams> pDispParams, Span<Variant> pVarResult, ExcepInfo* pExcepInfo, uint* pArgErr, uint cVarRef, uint* rgVarRefIdx, Variant* rgVarRef)
+        public static unsafe int IDispatchInvokeStub(this Windows thisApi, Span<IDispatch> This, int dispIdMember, Guid* riid, uint lcid, uint dwFlags, Span<DispatchParams> pDispParams, Span<Variant> pVarResult, ExceptionInfo* pExcepInfo, uint* pArgErr, uint cVarRef, uint* rgVarRefIdx, Variant* rgVarRef)
         {
             // SpanOverloader
             return thisApi.IDispatchInvokeStub(ref This.GetPinnableReference(), dispIdMember, riid, lcid, dwFlags, ref pDispParams.GetPinnableReference(), ref pVarResult.GetPinnableReference(), pExcepInfo, pArgErr, cVarRef, rgVarRefIdx, rgVarRef);
@@ -37818,7 +37818,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 5962, Column 43 in oaidl.h")]
-        public static unsafe int IDispatchInvokeStub(this Windows thisApi, Span<IDispatch> This, int dispIdMember, Guid* riid, uint lcid, uint dwFlags, Span<DispatchParams> pDispParams, Span<Variant> pVarResult, ExcepInfo* pExcepInfo, uint* pArgErr, uint cVarRef, uint* rgVarRefIdx, Span<Variant> rgVarRef)
+        public static unsafe int IDispatchInvokeStub(this Windows thisApi, Span<IDispatch> This, int dispIdMember, Guid* riid, uint lcid, uint dwFlags, Span<DispatchParams> pDispParams, Span<Variant> pVarResult, ExceptionInfo* pExcepInfo, uint* pArgErr, uint cVarRef, uint* rgVarRefIdx, Span<Variant> rgVarRef)
         {
             // SpanOverloader
             return thisApi.IDispatchInvokeStub(ref This.GetPinnableReference(), dispIdMember, riid, lcid, dwFlags, ref pDispParams.GetPinnableReference(), ref pVarResult.GetPinnableReference(), pExcepInfo, pArgErr, cVarRef, rgVarRefIdx, ref rgVarRef.GetPinnableReference());
@@ -37826,7 +37826,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 5962, Column 43 in oaidl.h")]
-        public static unsafe int IDispatchInvokeStub(this Windows thisApi, Span<IDispatch> This, int dispIdMember, Guid* riid, uint lcid, uint dwFlags, Span<DispatchParams> pDispParams, Span<Variant> pVarResult, ExcepInfo* pExcepInfo, uint* pArgErr, uint cVarRef, Span<uint> rgVarRefIdx, Variant* rgVarRef)
+        public static unsafe int IDispatchInvokeStub(this Windows thisApi, Span<IDispatch> This, int dispIdMember, Guid* riid, uint lcid, uint dwFlags, Span<DispatchParams> pDispParams, Span<Variant> pVarResult, ExceptionInfo* pExcepInfo, uint* pArgErr, uint cVarRef, Span<uint> rgVarRefIdx, Variant* rgVarRef)
         {
             // SpanOverloader
             return thisApi.IDispatchInvokeStub(ref This.GetPinnableReference(), dispIdMember, riid, lcid, dwFlags, ref pDispParams.GetPinnableReference(), ref pVarResult.GetPinnableReference(), pExcepInfo, pArgErr, cVarRef, ref rgVarRefIdx.GetPinnableReference(), rgVarRef);
@@ -37834,7 +37834,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 5962, Column 43 in oaidl.h")]
-        public static unsafe int IDispatchInvokeStub(this Windows thisApi, Span<IDispatch> This, int dispIdMember, Guid* riid, uint lcid, uint dwFlags, Span<DispatchParams> pDispParams, Span<Variant> pVarResult, ExcepInfo* pExcepInfo, uint* pArgErr, uint cVarRef, Span<uint> rgVarRefIdx, Span<Variant> rgVarRef)
+        public static unsafe int IDispatchInvokeStub(this Windows thisApi, Span<IDispatch> This, int dispIdMember, Guid* riid, uint lcid, uint dwFlags, Span<DispatchParams> pDispParams, Span<Variant> pVarResult, ExceptionInfo* pExcepInfo, uint* pArgErr, uint cVarRef, Span<uint> rgVarRefIdx, Span<Variant> rgVarRef)
         {
             // SpanOverloader
             return thisApi.IDispatchInvokeStub(ref This.GetPinnableReference(), dispIdMember, riid, lcid, dwFlags, ref pDispParams.GetPinnableReference(), ref pVarResult.GetPinnableReference(), pExcepInfo, pArgErr, cVarRef, ref rgVarRefIdx.GetPinnableReference(), ref rgVarRef.GetPinnableReference());
@@ -37842,7 +37842,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 5962, Column 43 in oaidl.h")]
-        public static unsafe int IDispatchInvokeStub(this Windows thisApi, Span<IDispatch> This, int dispIdMember, Guid* riid, uint lcid, uint dwFlags, Span<DispatchParams> pDispParams, Span<Variant> pVarResult, ExcepInfo* pExcepInfo, Span<uint> pArgErr, uint cVarRef, uint* rgVarRefIdx, Variant* rgVarRef)
+        public static unsafe int IDispatchInvokeStub(this Windows thisApi, Span<IDispatch> This, int dispIdMember, Guid* riid, uint lcid, uint dwFlags, Span<DispatchParams> pDispParams, Span<Variant> pVarResult, ExceptionInfo* pExcepInfo, Span<uint> pArgErr, uint cVarRef, uint* rgVarRefIdx, Variant* rgVarRef)
         {
             // SpanOverloader
             return thisApi.IDispatchInvokeStub(ref This.GetPinnableReference(), dispIdMember, riid, lcid, dwFlags, ref pDispParams.GetPinnableReference(), ref pVarResult.GetPinnableReference(), pExcepInfo, ref pArgErr.GetPinnableReference(), cVarRef, rgVarRefIdx, rgVarRef);
@@ -37850,7 +37850,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 5962, Column 43 in oaidl.h")]
-        public static unsafe int IDispatchInvokeStub(this Windows thisApi, Span<IDispatch> This, int dispIdMember, Guid* riid, uint lcid, uint dwFlags, Span<DispatchParams> pDispParams, Span<Variant> pVarResult, ExcepInfo* pExcepInfo, Span<uint> pArgErr, uint cVarRef, uint* rgVarRefIdx, Span<Variant> rgVarRef)
+        public static unsafe int IDispatchInvokeStub(this Windows thisApi, Span<IDispatch> This, int dispIdMember, Guid* riid, uint lcid, uint dwFlags, Span<DispatchParams> pDispParams, Span<Variant> pVarResult, ExceptionInfo* pExcepInfo, Span<uint> pArgErr, uint cVarRef, uint* rgVarRefIdx, Span<Variant> rgVarRef)
         {
             // SpanOverloader
             return thisApi.IDispatchInvokeStub(ref This.GetPinnableReference(), dispIdMember, riid, lcid, dwFlags, ref pDispParams.GetPinnableReference(), ref pVarResult.GetPinnableReference(), pExcepInfo, ref pArgErr.GetPinnableReference(), cVarRef, rgVarRefIdx, ref rgVarRef.GetPinnableReference());
@@ -37858,7 +37858,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 5962, Column 43 in oaidl.h")]
-        public static unsafe int IDispatchInvokeStub(this Windows thisApi, Span<IDispatch> This, int dispIdMember, Guid* riid, uint lcid, uint dwFlags, Span<DispatchParams> pDispParams, Span<Variant> pVarResult, ExcepInfo* pExcepInfo, Span<uint> pArgErr, uint cVarRef, Span<uint> rgVarRefIdx, Variant* rgVarRef)
+        public static unsafe int IDispatchInvokeStub(this Windows thisApi, Span<IDispatch> This, int dispIdMember, Guid* riid, uint lcid, uint dwFlags, Span<DispatchParams> pDispParams, Span<Variant> pVarResult, ExceptionInfo* pExcepInfo, Span<uint> pArgErr, uint cVarRef, Span<uint> rgVarRefIdx, Variant* rgVarRef)
         {
             // SpanOverloader
             return thisApi.IDispatchInvokeStub(ref This.GetPinnableReference(), dispIdMember, riid, lcid, dwFlags, ref pDispParams.GetPinnableReference(), ref pVarResult.GetPinnableReference(), pExcepInfo, ref pArgErr.GetPinnableReference(), cVarRef, ref rgVarRefIdx.GetPinnableReference(), rgVarRef);
@@ -37866,7 +37866,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 5962, Column 43 in oaidl.h")]
-        public static unsafe int IDispatchInvokeStub(this Windows thisApi, Span<IDispatch> This, int dispIdMember, Guid* riid, uint lcid, uint dwFlags, Span<DispatchParams> pDispParams, Span<Variant> pVarResult, ExcepInfo* pExcepInfo, Span<uint> pArgErr, uint cVarRef, Span<uint> rgVarRefIdx, Span<Variant> rgVarRef)
+        public static unsafe int IDispatchInvokeStub(this Windows thisApi, Span<IDispatch> This, int dispIdMember, Guid* riid, uint lcid, uint dwFlags, Span<DispatchParams> pDispParams, Span<Variant> pVarResult, ExceptionInfo* pExcepInfo, Span<uint> pArgErr, uint cVarRef, Span<uint> rgVarRefIdx, Span<Variant> rgVarRef)
         {
             // SpanOverloader
             return thisApi.IDispatchInvokeStub(ref This.GetPinnableReference(), dispIdMember, riid, lcid, dwFlags, ref pDispParams.GetPinnableReference(), ref pVarResult.GetPinnableReference(), pExcepInfo, ref pArgErr.GetPinnableReference(), cVarRef, ref rgVarRefIdx.GetPinnableReference(), ref rgVarRef.GetPinnableReference());
@@ -37874,7 +37874,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 5962, Column 43 in oaidl.h")]
-        public static unsafe int IDispatchInvokeStub(this Windows thisApi, Span<IDispatch> This, int dispIdMember, Guid* riid, uint lcid, uint dwFlags, Span<DispatchParams> pDispParams, Span<Variant> pVarResult, Span<ExcepInfo> pExcepInfo, uint* pArgErr, uint cVarRef, uint* rgVarRefIdx, Variant* rgVarRef)
+        public static unsafe int IDispatchInvokeStub(this Windows thisApi, Span<IDispatch> This, int dispIdMember, Guid* riid, uint lcid, uint dwFlags, Span<DispatchParams> pDispParams, Span<Variant> pVarResult, Span<ExceptionInfo> pExcepInfo, uint* pArgErr, uint cVarRef, uint* rgVarRefIdx, Variant* rgVarRef)
         {
             // SpanOverloader
             return thisApi.IDispatchInvokeStub(ref This.GetPinnableReference(), dispIdMember, riid, lcid, dwFlags, ref pDispParams.GetPinnableReference(), ref pVarResult.GetPinnableReference(), ref pExcepInfo.GetPinnableReference(), pArgErr, cVarRef, rgVarRefIdx, rgVarRef);
@@ -37882,7 +37882,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 5962, Column 43 in oaidl.h")]
-        public static unsafe int IDispatchInvokeStub(this Windows thisApi, Span<IDispatch> This, int dispIdMember, Guid* riid, uint lcid, uint dwFlags, Span<DispatchParams> pDispParams, Span<Variant> pVarResult, Span<ExcepInfo> pExcepInfo, uint* pArgErr, uint cVarRef, uint* rgVarRefIdx, Span<Variant> rgVarRef)
+        public static unsafe int IDispatchInvokeStub(this Windows thisApi, Span<IDispatch> This, int dispIdMember, Guid* riid, uint lcid, uint dwFlags, Span<DispatchParams> pDispParams, Span<Variant> pVarResult, Span<ExceptionInfo> pExcepInfo, uint* pArgErr, uint cVarRef, uint* rgVarRefIdx, Span<Variant> rgVarRef)
         {
             // SpanOverloader
             return thisApi.IDispatchInvokeStub(ref This.GetPinnableReference(), dispIdMember, riid, lcid, dwFlags, ref pDispParams.GetPinnableReference(), ref pVarResult.GetPinnableReference(), ref pExcepInfo.GetPinnableReference(), pArgErr, cVarRef, rgVarRefIdx, ref rgVarRef.GetPinnableReference());
@@ -37890,7 +37890,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 5962, Column 43 in oaidl.h")]
-        public static unsafe int IDispatchInvokeStub(this Windows thisApi, Span<IDispatch> This, int dispIdMember, Guid* riid, uint lcid, uint dwFlags, Span<DispatchParams> pDispParams, Span<Variant> pVarResult, Span<ExcepInfo> pExcepInfo, uint* pArgErr, uint cVarRef, Span<uint> rgVarRefIdx, Variant* rgVarRef)
+        public static unsafe int IDispatchInvokeStub(this Windows thisApi, Span<IDispatch> This, int dispIdMember, Guid* riid, uint lcid, uint dwFlags, Span<DispatchParams> pDispParams, Span<Variant> pVarResult, Span<ExceptionInfo> pExcepInfo, uint* pArgErr, uint cVarRef, Span<uint> rgVarRefIdx, Variant* rgVarRef)
         {
             // SpanOverloader
             return thisApi.IDispatchInvokeStub(ref This.GetPinnableReference(), dispIdMember, riid, lcid, dwFlags, ref pDispParams.GetPinnableReference(), ref pVarResult.GetPinnableReference(), ref pExcepInfo.GetPinnableReference(), pArgErr, cVarRef, ref rgVarRefIdx.GetPinnableReference(), rgVarRef);
@@ -37898,7 +37898,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 5962, Column 43 in oaidl.h")]
-        public static unsafe int IDispatchInvokeStub(this Windows thisApi, Span<IDispatch> This, int dispIdMember, Guid* riid, uint lcid, uint dwFlags, Span<DispatchParams> pDispParams, Span<Variant> pVarResult, Span<ExcepInfo> pExcepInfo, uint* pArgErr, uint cVarRef, Span<uint> rgVarRefIdx, Span<Variant> rgVarRef)
+        public static unsafe int IDispatchInvokeStub(this Windows thisApi, Span<IDispatch> This, int dispIdMember, Guid* riid, uint lcid, uint dwFlags, Span<DispatchParams> pDispParams, Span<Variant> pVarResult, Span<ExceptionInfo> pExcepInfo, uint* pArgErr, uint cVarRef, Span<uint> rgVarRefIdx, Span<Variant> rgVarRef)
         {
             // SpanOverloader
             return thisApi.IDispatchInvokeStub(ref This.GetPinnableReference(), dispIdMember, riid, lcid, dwFlags, ref pDispParams.GetPinnableReference(), ref pVarResult.GetPinnableReference(), ref pExcepInfo.GetPinnableReference(), pArgErr, cVarRef, ref rgVarRefIdx.GetPinnableReference(), ref rgVarRef.GetPinnableReference());
@@ -37906,7 +37906,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 5962, Column 43 in oaidl.h")]
-        public static unsafe int IDispatchInvokeStub(this Windows thisApi, Span<IDispatch> This, int dispIdMember, Guid* riid, uint lcid, uint dwFlags, Span<DispatchParams> pDispParams, Span<Variant> pVarResult, Span<ExcepInfo> pExcepInfo, Span<uint> pArgErr, uint cVarRef, uint* rgVarRefIdx, Variant* rgVarRef)
+        public static unsafe int IDispatchInvokeStub(this Windows thisApi, Span<IDispatch> This, int dispIdMember, Guid* riid, uint lcid, uint dwFlags, Span<DispatchParams> pDispParams, Span<Variant> pVarResult, Span<ExceptionInfo> pExcepInfo, Span<uint> pArgErr, uint cVarRef, uint* rgVarRefIdx, Variant* rgVarRef)
         {
             // SpanOverloader
             return thisApi.IDispatchInvokeStub(ref This.GetPinnableReference(), dispIdMember, riid, lcid, dwFlags, ref pDispParams.GetPinnableReference(), ref pVarResult.GetPinnableReference(), ref pExcepInfo.GetPinnableReference(), ref pArgErr.GetPinnableReference(), cVarRef, rgVarRefIdx, rgVarRef);
@@ -37914,7 +37914,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 5962, Column 43 in oaidl.h")]
-        public static unsafe int IDispatchInvokeStub(this Windows thisApi, Span<IDispatch> This, int dispIdMember, Guid* riid, uint lcid, uint dwFlags, Span<DispatchParams> pDispParams, Span<Variant> pVarResult, Span<ExcepInfo> pExcepInfo, Span<uint> pArgErr, uint cVarRef, uint* rgVarRefIdx, Span<Variant> rgVarRef)
+        public static unsafe int IDispatchInvokeStub(this Windows thisApi, Span<IDispatch> This, int dispIdMember, Guid* riid, uint lcid, uint dwFlags, Span<DispatchParams> pDispParams, Span<Variant> pVarResult, Span<ExceptionInfo> pExcepInfo, Span<uint> pArgErr, uint cVarRef, uint* rgVarRefIdx, Span<Variant> rgVarRef)
         {
             // SpanOverloader
             return thisApi.IDispatchInvokeStub(ref This.GetPinnableReference(), dispIdMember, riid, lcid, dwFlags, ref pDispParams.GetPinnableReference(), ref pVarResult.GetPinnableReference(), ref pExcepInfo.GetPinnableReference(), ref pArgErr.GetPinnableReference(), cVarRef, rgVarRefIdx, ref rgVarRef.GetPinnableReference());
@@ -37922,7 +37922,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 5962, Column 43 in oaidl.h")]
-        public static unsafe int IDispatchInvokeStub(this Windows thisApi, Span<IDispatch> This, int dispIdMember, Guid* riid, uint lcid, uint dwFlags, Span<DispatchParams> pDispParams, Span<Variant> pVarResult, Span<ExcepInfo> pExcepInfo, Span<uint> pArgErr, uint cVarRef, Span<uint> rgVarRefIdx, Variant* rgVarRef)
+        public static unsafe int IDispatchInvokeStub(this Windows thisApi, Span<IDispatch> This, int dispIdMember, Guid* riid, uint lcid, uint dwFlags, Span<DispatchParams> pDispParams, Span<Variant> pVarResult, Span<ExceptionInfo> pExcepInfo, Span<uint> pArgErr, uint cVarRef, Span<uint> rgVarRefIdx, Variant* rgVarRef)
         {
             // SpanOverloader
             return thisApi.IDispatchInvokeStub(ref This.GetPinnableReference(), dispIdMember, riid, lcid, dwFlags, ref pDispParams.GetPinnableReference(), ref pVarResult.GetPinnableReference(), ref pExcepInfo.GetPinnableReference(), ref pArgErr.GetPinnableReference(), cVarRef, ref rgVarRefIdx.GetPinnableReference(), rgVarRef);
@@ -37930,7 +37930,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 5962, Column 43 in oaidl.h")]
-        public static unsafe int IDispatchInvokeStub(this Windows thisApi, Span<IDispatch> This, int dispIdMember, Guid* riid, uint lcid, uint dwFlags, Span<DispatchParams> pDispParams, Span<Variant> pVarResult, Span<ExcepInfo> pExcepInfo, Span<uint> pArgErr, uint cVarRef, Span<uint> rgVarRefIdx, Span<Variant> rgVarRef)
+        public static unsafe int IDispatchInvokeStub(this Windows thisApi, Span<IDispatch> This, int dispIdMember, Guid* riid, uint lcid, uint dwFlags, Span<DispatchParams> pDispParams, Span<Variant> pVarResult, Span<ExceptionInfo> pExcepInfo, Span<uint> pArgErr, uint cVarRef, Span<uint> rgVarRefIdx, Span<Variant> rgVarRef)
         {
             // SpanOverloader
             return thisApi.IDispatchInvokeStub(ref This.GetPinnableReference(), dispIdMember, riid, lcid, dwFlags, ref pDispParams.GetPinnableReference(), ref pVarResult.GetPinnableReference(), ref pExcepInfo.GetPinnableReference(), ref pArgErr.GetPinnableReference(), cVarRef, ref rgVarRefIdx.GetPinnableReference(), ref rgVarRef.GetPinnableReference());
@@ -37938,7 +37938,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 5962, Column 43 in oaidl.h")]
-        public static unsafe int IDispatchInvokeStub(this Windows thisApi, Span<IDispatch> This, int dispIdMember, Span<Guid> riid, uint lcid, uint dwFlags, DispatchParams* pDispParams, Variant* pVarResult, ExcepInfo* pExcepInfo, uint* pArgErr, uint cVarRef, uint* rgVarRefIdx, Variant* rgVarRef)
+        public static unsafe int IDispatchInvokeStub(this Windows thisApi, Span<IDispatch> This, int dispIdMember, Span<Guid> riid, uint lcid, uint dwFlags, DispatchParams* pDispParams, Variant* pVarResult, ExceptionInfo* pExcepInfo, uint* pArgErr, uint cVarRef, uint* rgVarRefIdx, Variant* rgVarRef)
         {
             // SpanOverloader
             return thisApi.IDispatchInvokeStub(ref This.GetPinnableReference(), dispIdMember, ref riid.GetPinnableReference(), lcid, dwFlags, pDispParams, pVarResult, pExcepInfo, pArgErr, cVarRef, rgVarRefIdx, rgVarRef);
@@ -37946,7 +37946,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 5962, Column 43 in oaidl.h")]
-        public static unsafe int IDispatchInvokeStub(this Windows thisApi, Span<IDispatch> This, int dispIdMember, Span<Guid> riid, uint lcid, uint dwFlags, DispatchParams* pDispParams, Variant* pVarResult, ExcepInfo* pExcepInfo, uint* pArgErr, uint cVarRef, uint* rgVarRefIdx, Span<Variant> rgVarRef)
+        public static unsafe int IDispatchInvokeStub(this Windows thisApi, Span<IDispatch> This, int dispIdMember, Span<Guid> riid, uint lcid, uint dwFlags, DispatchParams* pDispParams, Variant* pVarResult, ExceptionInfo* pExcepInfo, uint* pArgErr, uint cVarRef, uint* rgVarRefIdx, Span<Variant> rgVarRef)
         {
             // SpanOverloader
             return thisApi.IDispatchInvokeStub(ref This.GetPinnableReference(), dispIdMember, ref riid.GetPinnableReference(), lcid, dwFlags, pDispParams, pVarResult, pExcepInfo, pArgErr, cVarRef, rgVarRefIdx, ref rgVarRef.GetPinnableReference());
@@ -37954,7 +37954,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 5962, Column 43 in oaidl.h")]
-        public static unsafe int IDispatchInvokeStub(this Windows thisApi, Span<IDispatch> This, int dispIdMember, Span<Guid> riid, uint lcid, uint dwFlags, DispatchParams* pDispParams, Variant* pVarResult, ExcepInfo* pExcepInfo, uint* pArgErr, uint cVarRef, Span<uint> rgVarRefIdx, Variant* rgVarRef)
+        public static unsafe int IDispatchInvokeStub(this Windows thisApi, Span<IDispatch> This, int dispIdMember, Span<Guid> riid, uint lcid, uint dwFlags, DispatchParams* pDispParams, Variant* pVarResult, ExceptionInfo* pExcepInfo, uint* pArgErr, uint cVarRef, Span<uint> rgVarRefIdx, Variant* rgVarRef)
         {
             // SpanOverloader
             return thisApi.IDispatchInvokeStub(ref This.GetPinnableReference(), dispIdMember, ref riid.GetPinnableReference(), lcid, dwFlags, pDispParams, pVarResult, pExcepInfo, pArgErr, cVarRef, ref rgVarRefIdx.GetPinnableReference(), rgVarRef);
@@ -37962,7 +37962,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 5962, Column 43 in oaidl.h")]
-        public static unsafe int IDispatchInvokeStub(this Windows thisApi, Span<IDispatch> This, int dispIdMember, Span<Guid> riid, uint lcid, uint dwFlags, DispatchParams* pDispParams, Variant* pVarResult, ExcepInfo* pExcepInfo, uint* pArgErr, uint cVarRef, Span<uint> rgVarRefIdx, Span<Variant> rgVarRef)
+        public static unsafe int IDispatchInvokeStub(this Windows thisApi, Span<IDispatch> This, int dispIdMember, Span<Guid> riid, uint lcid, uint dwFlags, DispatchParams* pDispParams, Variant* pVarResult, ExceptionInfo* pExcepInfo, uint* pArgErr, uint cVarRef, Span<uint> rgVarRefIdx, Span<Variant> rgVarRef)
         {
             // SpanOverloader
             return thisApi.IDispatchInvokeStub(ref This.GetPinnableReference(), dispIdMember, ref riid.GetPinnableReference(), lcid, dwFlags, pDispParams, pVarResult, pExcepInfo, pArgErr, cVarRef, ref rgVarRefIdx.GetPinnableReference(), ref rgVarRef.GetPinnableReference());
@@ -37970,7 +37970,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 5962, Column 43 in oaidl.h")]
-        public static unsafe int IDispatchInvokeStub(this Windows thisApi, Span<IDispatch> This, int dispIdMember, Span<Guid> riid, uint lcid, uint dwFlags, DispatchParams* pDispParams, Variant* pVarResult, ExcepInfo* pExcepInfo, Span<uint> pArgErr, uint cVarRef, uint* rgVarRefIdx, Variant* rgVarRef)
+        public static unsafe int IDispatchInvokeStub(this Windows thisApi, Span<IDispatch> This, int dispIdMember, Span<Guid> riid, uint lcid, uint dwFlags, DispatchParams* pDispParams, Variant* pVarResult, ExceptionInfo* pExcepInfo, Span<uint> pArgErr, uint cVarRef, uint* rgVarRefIdx, Variant* rgVarRef)
         {
             // SpanOverloader
             return thisApi.IDispatchInvokeStub(ref This.GetPinnableReference(), dispIdMember, ref riid.GetPinnableReference(), lcid, dwFlags, pDispParams, pVarResult, pExcepInfo, ref pArgErr.GetPinnableReference(), cVarRef, rgVarRefIdx, rgVarRef);
@@ -37978,7 +37978,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 5962, Column 43 in oaidl.h")]
-        public static unsafe int IDispatchInvokeStub(this Windows thisApi, Span<IDispatch> This, int dispIdMember, Span<Guid> riid, uint lcid, uint dwFlags, DispatchParams* pDispParams, Variant* pVarResult, ExcepInfo* pExcepInfo, Span<uint> pArgErr, uint cVarRef, uint* rgVarRefIdx, Span<Variant> rgVarRef)
+        public static unsafe int IDispatchInvokeStub(this Windows thisApi, Span<IDispatch> This, int dispIdMember, Span<Guid> riid, uint lcid, uint dwFlags, DispatchParams* pDispParams, Variant* pVarResult, ExceptionInfo* pExcepInfo, Span<uint> pArgErr, uint cVarRef, uint* rgVarRefIdx, Span<Variant> rgVarRef)
         {
             // SpanOverloader
             return thisApi.IDispatchInvokeStub(ref This.GetPinnableReference(), dispIdMember, ref riid.GetPinnableReference(), lcid, dwFlags, pDispParams, pVarResult, pExcepInfo, ref pArgErr.GetPinnableReference(), cVarRef, rgVarRefIdx, ref rgVarRef.GetPinnableReference());
@@ -37986,7 +37986,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 5962, Column 43 in oaidl.h")]
-        public static unsafe int IDispatchInvokeStub(this Windows thisApi, Span<IDispatch> This, int dispIdMember, Span<Guid> riid, uint lcid, uint dwFlags, DispatchParams* pDispParams, Variant* pVarResult, ExcepInfo* pExcepInfo, Span<uint> pArgErr, uint cVarRef, Span<uint> rgVarRefIdx, Variant* rgVarRef)
+        public static unsafe int IDispatchInvokeStub(this Windows thisApi, Span<IDispatch> This, int dispIdMember, Span<Guid> riid, uint lcid, uint dwFlags, DispatchParams* pDispParams, Variant* pVarResult, ExceptionInfo* pExcepInfo, Span<uint> pArgErr, uint cVarRef, Span<uint> rgVarRefIdx, Variant* rgVarRef)
         {
             // SpanOverloader
             return thisApi.IDispatchInvokeStub(ref This.GetPinnableReference(), dispIdMember, ref riid.GetPinnableReference(), lcid, dwFlags, pDispParams, pVarResult, pExcepInfo, ref pArgErr.GetPinnableReference(), cVarRef, ref rgVarRefIdx.GetPinnableReference(), rgVarRef);
@@ -37994,7 +37994,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 5962, Column 43 in oaidl.h")]
-        public static unsafe int IDispatchInvokeStub(this Windows thisApi, Span<IDispatch> This, int dispIdMember, Span<Guid> riid, uint lcid, uint dwFlags, DispatchParams* pDispParams, Variant* pVarResult, ExcepInfo* pExcepInfo, Span<uint> pArgErr, uint cVarRef, Span<uint> rgVarRefIdx, Span<Variant> rgVarRef)
+        public static unsafe int IDispatchInvokeStub(this Windows thisApi, Span<IDispatch> This, int dispIdMember, Span<Guid> riid, uint lcid, uint dwFlags, DispatchParams* pDispParams, Variant* pVarResult, ExceptionInfo* pExcepInfo, Span<uint> pArgErr, uint cVarRef, Span<uint> rgVarRefIdx, Span<Variant> rgVarRef)
         {
             // SpanOverloader
             return thisApi.IDispatchInvokeStub(ref This.GetPinnableReference(), dispIdMember, ref riid.GetPinnableReference(), lcid, dwFlags, pDispParams, pVarResult, pExcepInfo, ref pArgErr.GetPinnableReference(), cVarRef, ref rgVarRefIdx.GetPinnableReference(), ref rgVarRef.GetPinnableReference());
@@ -38002,7 +38002,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 5962, Column 43 in oaidl.h")]
-        public static unsafe int IDispatchInvokeStub(this Windows thisApi, Span<IDispatch> This, int dispIdMember, Span<Guid> riid, uint lcid, uint dwFlags, DispatchParams* pDispParams, Variant* pVarResult, Span<ExcepInfo> pExcepInfo, uint* pArgErr, uint cVarRef, uint* rgVarRefIdx, Variant* rgVarRef)
+        public static unsafe int IDispatchInvokeStub(this Windows thisApi, Span<IDispatch> This, int dispIdMember, Span<Guid> riid, uint lcid, uint dwFlags, DispatchParams* pDispParams, Variant* pVarResult, Span<ExceptionInfo> pExcepInfo, uint* pArgErr, uint cVarRef, uint* rgVarRefIdx, Variant* rgVarRef)
         {
             // SpanOverloader
             return thisApi.IDispatchInvokeStub(ref This.GetPinnableReference(), dispIdMember, ref riid.GetPinnableReference(), lcid, dwFlags, pDispParams, pVarResult, ref pExcepInfo.GetPinnableReference(), pArgErr, cVarRef, rgVarRefIdx, rgVarRef);
@@ -38010,7 +38010,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 5962, Column 43 in oaidl.h")]
-        public static unsafe int IDispatchInvokeStub(this Windows thisApi, Span<IDispatch> This, int dispIdMember, Span<Guid> riid, uint lcid, uint dwFlags, DispatchParams* pDispParams, Variant* pVarResult, Span<ExcepInfo> pExcepInfo, uint* pArgErr, uint cVarRef, uint* rgVarRefIdx, Span<Variant> rgVarRef)
+        public static unsafe int IDispatchInvokeStub(this Windows thisApi, Span<IDispatch> This, int dispIdMember, Span<Guid> riid, uint lcid, uint dwFlags, DispatchParams* pDispParams, Variant* pVarResult, Span<ExceptionInfo> pExcepInfo, uint* pArgErr, uint cVarRef, uint* rgVarRefIdx, Span<Variant> rgVarRef)
         {
             // SpanOverloader
             return thisApi.IDispatchInvokeStub(ref This.GetPinnableReference(), dispIdMember, ref riid.GetPinnableReference(), lcid, dwFlags, pDispParams, pVarResult, ref pExcepInfo.GetPinnableReference(), pArgErr, cVarRef, rgVarRefIdx, ref rgVarRef.GetPinnableReference());
@@ -38018,7 +38018,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 5962, Column 43 in oaidl.h")]
-        public static unsafe int IDispatchInvokeStub(this Windows thisApi, Span<IDispatch> This, int dispIdMember, Span<Guid> riid, uint lcid, uint dwFlags, DispatchParams* pDispParams, Variant* pVarResult, Span<ExcepInfo> pExcepInfo, uint* pArgErr, uint cVarRef, Span<uint> rgVarRefIdx, Variant* rgVarRef)
+        public static unsafe int IDispatchInvokeStub(this Windows thisApi, Span<IDispatch> This, int dispIdMember, Span<Guid> riid, uint lcid, uint dwFlags, DispatchParams* pDispParams, Variant* pVarResult, Span<ExceptionInfo> pExcepInfo, uint* pArgErr, uint cVarRef, Span<uint> rgVarRefIdx, Variant* rgVarRef)
         {
             // SpanOverloader
             return thisApi.IDispatchInvokeStub(ref This.GetPinnableReference(), dispIdMember, ref riid.GetPinnableReference(), lcid, dwFlags, pDispParams, pVarResult, ref pExcepInfo.GetPinnableReference(), pArgErr, cVarRef, ref rgVarRefIdx.GetPinnableReference(), rgVarRef);
@@ -38026,7 +38026,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 5962, Column 43 in oaidl.h")]
-        public static unsafe int IDispatchInvokeStub(this Windows thisApi, Span<IDispatch> This, int dispIdMember, Span<Guid> riid, uint lcid, uint dwFlags, DispatchParams* pDispParams, Variant* pVarResult, Span<ExcepInfo> pExcepInfo, uint* pArgErr, uint cVarRef, Span<uint> rgVarRefIdx, Span<Variant> rgVarRef)
+        public static unsafe int IDispatchInvokeStub(this Windows thisApi, Span<IDispatch> This, int dispIdMember, Span<Guid> riid, uint lcid, uint dwFlags, DispatchParams* pDispParams, Variant* pVarResult, Span<ExceptionInfo> pExcepInfo, uint* pArgErr, uint cVarRef, Span<uint> rgVarRefIdx, Span<Variant> rgVarRef)
         {
             // SpanOverloader
             return thisApi.IDispatchInvokeStub(ref This.GetPinnableReference(), dispIdMember, ref riid.GetPinnableReference(), lcid, dwFlags, pDispParams, pVarResult, ref pExcepInfo.GetPinnableReference(), pArgErr, cVarRef, ref rgVarRefIdx.GetPinnableReference(), ref rgVarRef.GetPinnableReference());
@@ -38034,7 +38034,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 5962, Column 43 in oaidl.h")]
-        public static unsafe int IDispatchInvokeStub(this Windows thisApi, Span<IDispatch> This, int dispIdMember, Span<Guid> riid, uint lcid, uint dwFlags, DispatchParams* pDispParams, Variant* pVarResult, Span<ExcepInfo> pExcepInfo, Span<uint> pArgErr, uint cVarRef, uint* rgVarRefIdx, Variant* rgVarRef)
+        public static unsafe int IDispatchInvokeStub(this Windows thisApi, Span<IDispatch> This, int dispIdMember, Span<Guid> riid, uint lcid, uint dwFlags, DispatchParams* pDispParams, Variant* pVarResult, Span<ExceptionInfo> pExcepInfo, Span<uint> pArgErr, uint cVarRef, uint* rgVarRefIdx, Variant* rgVarRef)
         {
             // SpanOverloader
             return thisApi.IDispatchInvokeStub(ref This.GetPinnableReference(), dispIdMember, ref riid.GetPinnableReference(), lcid, dwFlags, pDispParams, pVarResult, ref pExcepInfo.GetPinnableReference(), ref pArgErr.GetPinnableReference(), cVarRef, rgVarRefIdx, rgVarRef);
@@ -38042,7 +38042,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 5962, Column 43 in oaidl.h")]
-        public static unsafe int IDispatchInvokeStub(this Windows thisApi, Span<IDispatch> This, int dispIdMember, Span<Guid> riid, uint lcid, uint dwFlags, DispatchParams* pDispParams, Variant* pVarResult, Span<ExcepInfo> pExcepInfo, Span<uint> pArgErr, uint cVarRef, uint* rgVarRefIdx, Span<Variant> rgVarRef)
+        public static unsafe int IDispatchInvokeStub(this Windows thisApi, Span<IDispatch> This, int dispIdMember, Span<Guid> riid, uint lcid, uint dwFlags, DispatchParams* pDispParams, Variant* pVarResult, Span<ExceptionInfo> pExcepInfo, Span<uint> pArgErr, uint cVarRef, uint* rgVarRefIdx, Span<Variant> rgVarRef)
         {
             // SpanOverloader
             return thisApi.IDispatchInvokeStub(ref This.GetPinnableReference(), dispIdMember, ref riid.GetPinnableReference(), lcid, dwFlags, pDispParams, pVarResult, ref pExcepInfo.GetPinnableReference(), ref pArgErr.GetPinnableReference(), cVarRef, rgVarRefIdx, ref rgVarRef.GetPinnableReference());
@@ -38050,7 +38050,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 5962, Column 43 in oaidl.h")]
-        public static unsafe int IDispatchInvokeStub(this Windows thisApi, Span<IDispatch> This, int dispIdMember, Span<Guid> riid, uint lcid, uint dwFlags, DispatchParams* pDispParams, Variant* pVarResult, Span<ExcepInfo> pExcepInfo, Span<uint> pArgErr, uint cVarRef, Span<uint> rgVarRefIdx, Variant* rgVarRef)
+        public static unsafe int IDispatchInvokeStub(this Windows thisApi, Span<IDispatch> This, int dispIdMember, Span<Guid> riid, uint lcid, uint dwFlags, DispatchParams* pDispParams, Variant* pVarResult, Span<ExceptionInfo> pExcepInfo, Span<uint> pArgErr, uint cVarRef, Span<uint> rgVarRefIdx, Variant* rgVarRef)
         {
             // SpanOverloader
             return thisApi.IDispatchInvokeStub(ref This.GetPinnableReference(), dispIdMember, ref riid.GetPinnableReference(), lcid, dwFlags, pDispParams, pVarResult, ref pExcepInfo.GetPinnableReference(), ref pArgErr.GetPinnableReference(), cVarRef, ref rgVarRefIdx.GetPinnableReference(), rgVarRef);
@@ -38058,7 +38058,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 5962, Column 43 in oaidl.h")]
-        public static unsafe int IDispatchInvokeStub(this Windows thisApi, Span<IDispatch> This, int dispIdMember, Span<Guid> riid, uint lcid, uint dwFlags, DispatchParams* pDispParams, Variant* pVarResult, Span<ExcepInfo> pExcepInfo, Span<uint> pArgErr, uint cVarRef, Span<uint> rgVarRefIdx, Span<Variant> rgVarRef)
+        public static unsafe int IDispatchInvokeStub(this Windows thisApi, Span<IDispatch> This, int dispIdMember, Span<Guid> riid, uint lcid, uint dwFlags, DispatchParams* pDispParams, Variant* pVarResult, Span<ExceptionInfo> pExcepInfo, Span<uint> pArgErr, uint cVarRef, Span<uint> rgVarRefIdx, Span<Variant> rgVarRef)
         {
             // SpanOverloader
             return thisApi.IDispatchInvokeStub(ref This.GetPinnableReference(), dispIdMember, ref riid.GetPinnableReference(), lcid, dwFlags, pDispParams, pVarResult, ref pExcepInfo.GetPinnableReference(), ref pArgErr.GetPinnableReference(), cVarRef, ref rgVarRefIdx.GetPinnableReference(), ref rgVarRef.GetPinnableReference());
@@ -38066,7 +38066,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 5962, Column 43 in oaidl.h")]
-        public static unsafe int IDispatchInvokeStub(this Windows thisApi, Span<IDispatch> This, int dispIdMember, Span<Guid> riid, uint lcid, uint dwFlags, DispatchParams* pDispParams, Span<Variant> pVarResult, ExcepInfo* pExcepInfo, uint* pArgErr, uint cVarRef, uint* rgVarRefIdx, Variant* rgVarRef)
+        public static unsafe int IDispatchInvokeStub(this Windows thisApi, Span<IDispatch> This, int dispIdMember, Span<Guid> riid, uint lcid, uint dwFlags, DispatchParams* pDispParams, Span<Variant> pVarResult, ExceptionInfo* pExcepInfo, uint* pArgErr, uint cVarRef, uint* rgVarRefIdx, Variant* rgVarRef)
         {
             // SpanOverloader
             return thisApi.IDispatchInvokeStub(ref This.GetPinnableReference(), dispIdMember, ref riid.GetPinnableReference(), lcid, dwFlags, pDispParams, ref pVarResult.GetPinnableReference(), pExcepInfo, pArgErr, cVarRef, rgVarRefIdx, rgVarRef);
@@ -38074,7 +38074,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 5962, Column 43 in oaidl.h")]
-        public static unsafe int IDispatchInvokeStub(this Windows thisApi, Span<IDispatch> This, int dispIdMember, Span<Guid> riid, uint lcid, uint dwFlags, DispatchParams* pDispParams, Span<Variant> pVarResult, ExcepInfo* pExcepInfo, uint* pArgErr, uint cVarRef, uint* rgVarRefIdx, Span<Variant> rgVarRef)
+        public static unsafe int IDispatchInvokeStub(this Windows thisApi, Span<IDispatch> This, int dispIdMember, Span<Guid> riid, uint lcid, uint dwFlags, DispatchParams* pDispParams, Span<Variant> pVarResult, ExceptionInfo* pExcepInfo, uint* pArgErr, uint cVarRef, uint* rgVarRefIdx, Span<Variant> rgVarRef)
         {
             // SpanOverloader
             return thisApi.IDispatchInvokeStub(ref This.GetPinnableReference(), dispIdMember, ref riid.GetPinnableReference(), lcid, dwFlags, pDispParams, ref pVarResult.GetPinnableReference(), pExcepInfo, pArgErr, cVarRef, rgVarRefIdx, ref rgVarRef.GetPinnableReference());
@@ -38082,7 +38082,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 5962, Column 43 in oaidl.h")]
-        public static unsafe int IDispatchInvokeStub(this Windows thisApi, Span<IDispatch> This, int dispIdMember, Span<Guid> riid, uint lcid, uint dwFlags, DispatchParams* pDispParams, Span<Variant> pVarResult, ExcepInfo* pExcepInfo, uint* pArgErr, uint cVarRef, Span<uint> rgVarRefIdx, Variant* rgVarRef)
+        public static unsafe int IDispatchInvokeStub(this Windows thisApi, Span<IDispatch> This, int dispIdMember, Span<Guid> riid, uint lcid, uint dwFlags, DispatchParams* pDispParams, Span<Variant> pVarResult, ExceptionInfo* pExcepInfo, uint* pArgErr, uint cVarRef, Span<uint> rgVarRefIdx, Variant* rgVarRef)
         {
             // SpanOverloader
             return thisApi.IDispatchInvokeStub(ref This.GetPinnableReference(), dispIdMember, ref riid.GetPinnableReference(), lcid, dwFlags, pDispParams, ref pVarResult.GetPinnableReference(), pExcepInfo, pArgErr, cVarRef, ref rgVarRefIdx.GetPinnableReference(), rgVarRef);
@@ -38090,7 +38090,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 5962, Column 43 in oaidl.h")]
-        public static unsafe int IDispatchInvokeStub(this Windows thisApi, Span<IDispatch> This, int dispIdMember, Span<Guid> riid, uint lcid, uint dwFlags, DispatchParams* pDispParams, Span<Variant> pVarResult, ExcepInfo* pExcepInfo, uint* pArgErr, uint cVarRef, Span<uint> rgVarRefIdx, Span<Variant> rgVarRef)
+        public static unsafe int IDispatchInvokeStub(this Windows thisApi, Span<IDispatch> This, int dispIdMember, Span<Guid> riid, uint lcid, uint dwFlags, DispatchParams* pDispParams, Span<Variant> pVarResult, ExceptionInfo* pExcepInfo, uint* pArgErr, uint cVarRef, Span<uint> rgVarRefIdx, Span<Variant> rgVarRef)
         {
             // SpanOverloader
             return thisApi.IDispatchInvokeStub(ref This.GetPinnableReference(), dispIdMember, ref riid.GetPinnableReference(), lcid, dwFlags, pDispParams, ref pVarResult.GetPinnableReference(), pExcepInfo, pArgErr, cVarRef, ref rgVarRefIdx.GetPinnableReference(), ref rgVarRef.GetPinnableReference());
@@ -38098,7 +38098,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 5962, Column 43 in oaidl.h")]
-        public static unsafe int IDispatchInvokeStub(this Windows thisApi, Span<IDispatch> This, int dispIdMember, Span<Guid> riid, uint lcid, uint dwFlags, DispatchParams* pDispParams, Span<Variant> pVarResult, ExcepInfo* pExcepInfo, Span<uint> pArgErr, uint cVarRef, uint* rgVarRefIdx, Variant* rgVarRef)
+        public static unsafe int IDispatchInvokeStub(this Windows thisApi, Span<IDispatch> This, int dispIdMember, Span<Guid> riid, uint lcid, uint dwFlags, DispatchParams* pDispParams, Span<Variant> pVarResult, ExceptionInfo* pExcepInfo, Span<uint> pArgErr, uint cVarRef, uint* rgVarRefIdx, Variant* rgVarRef)
         {
             // SpanOverloader
             return thisApi.IDispatchInvokeStub(ref This.GetPinnableReference(), dispIdMember, ref riid.GetPinnableReference(), lcid, dwFlags, pDispParams, ref pVarResult.GetPinnableReference(), pExcepInfo, ref pArgErr.GetPinnableReference(), cVarRef, rgVarRefIdx, rgVarRef);
@@ -38106,7 +38106,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 5962, Column 43 in oaidl.h")]
-        public static unsafe int IDispatchInvokeStub(this Windows thisApi, Span<IDispatch> This, int dispIdMember, Span<Guid> riid, uint lcid, uint dwFlags, DispatchParams* pDispParams, Span<Variant> pVarResult, ExcepInfo* pExcepInfo, Span<uint> pArgErr, uint cVarRef, uint* rgVarRefIdx, Span<Variant> rgVarRef)
+        public static unsafe int IDispatchInvokeStub(this Windows thisApi, Span<IDispatch> This, int dispIdMember, Span<Guid> riid, uint lcid, uint dwFlags, DispatchParams* pDispParams, Span<Variant> pVarResult, ExceptionInfo* pExcepInfo, Span<uint> pArgErr, uint cVarRef, uint* rgVarRefIdx, Span<Variant> rgVarRef)
         {
             // SpanOverloader
             return thisApi.IDispatchInvokeStub(ref This.GetPinnableReference(), dispIdMember, ref riid.GetPinnableReference(), lcid, dwFlags, pDispParams, ref pVarResult.GetPinnableReference(), pExcepInfo, ref pArgErr.GetPinnableReference(), cVarRef, rgVarRefIdx, ref rgVarRef.GetPinnableReference());
@@ -38114,7 +38114,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 5962, Column 43 in oaidl.h")]
-        public static unsafe int IDispatchInvokeStub(this Windows thisApi, Span<IDispatch> This, int dispIdMember, Span<Guid> riid, uint lcid, uint dwFlags, DispatchParams* pDispParams, Span<Variant> pVarResult, ExcepInfo* pExcepInfo, Span<uint> pArgErr, uint cVarRef, Span<uint> rgVarRefIdx, Variant* rgVarRef)
+        public static unsafe int IDispatchInvokeStub(this Windows thisApi, Span<IDispatch> This, int dispIdMember, Span<Guid> riid, uint lcid, uint dwFlags, DispatchParams* pDispParams, Span<Variant> pVarResult, ExceptionInfo* pExcepInfo, Span<uint> pArgErr, uint cVarRef, Span<uint> rgVarRefIdx, Variant* rgVarRef)
         {
             // SpanOverloader
             return thisApi.IDispatchInvokeStub(ref This.GetPinnableReference(), dispIdMember, ref riid.GetPinnableReference(), lcid, dwFlags, pDispParams, ref pVarResult.GetPinnableReference(), pExcepInfo, ref pArgErr.GetPinnableReference(), cVarRef, ref rgVarRefIdx.GetPinnableReference(), rgVarRef);
@@ -38122,7 +38122,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 5962, Column 43 in oaidl.h")]
-        public static unsafe int IDispatchInvokeStub(this Windows thisApi, Span<IDispatch> This, int dispIdMember, Span<Guid> riid, uint lcid, uint dwFlags, DispatchParams* pDispParams, Span<Variant> pVarResult, ExcepInfo* pExcepInfo, Span<uint> pArgErr, uint cVarRef, Span<uint> rgVarRefIdx, Span<Variant> rgVarRef)
+        public static unsafe int IDispatchInvokeStub(this Windows thisApi, Span<IDispatch> This, int dispIdMember, Span<Guid> riid, uint lcid, uint dwFlags, DispatchParams* pDispParams, Span<Variant> pVarResult, ExceptionInfo* pExcepInfo, Span<uint> pArgErr, uint cVarRef, Span<uint> rgVarRefIdx, Span<Variant> rgVarRef)
         {
             // SpanOverloader
             return thisApi.IDispatchInvokeStub(ref This.GetPinnableReference(), dispIdMember, ref riid.GetPinnableReference(), lcid, dwFlags, pDispParams, ref pVarResult.GetPinnableReference(), pExcepInfo, ref pArgErr.GetPinnableReference(), cVarRef, ref rgVarRefIdx.GetPinnableReference(), ref rgVarRef.GetPinnableReference());
@@ -38130,7 +38130,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 5962, Column 43 in oaidl.h")]
-        public static unsafe int IDispatchInvokeStub(this Windows thisApi, Span<IDispatch> This, int dispIdMember, Span<Guid> riid, uint lcid, uint dwFlags, DispatchParams* pDispParams, Span<Variant> pVarResult, Span<ExcepInfo> pExcepInfo, uint* pArgErr, uint cVarRef, uint* rgVarRefIdx, Variant* rgVarRef)
+        public static unsafe int IDispatchInvokeStub(this Windows thisApi, Span<IDispatch> This, int dispIdMember, Span<Guid> riid, uint lcid, uint dwFlags, DispatchParams* pDispParams, Span<Variant> pVarResult, Span<ExceptionInfo> pExcepInfo, uint* pArgErr, uint cVarRef, uint* rgVarRefIdx, Variant* rgVarRef)
         {
             // SpanOverloader
             return thisApi.IDispatchInvokeStub(ref This.GetPinnableReference(), dispIdMember, ref riid.GetPinnableReference(), lcid, dwFlags, pDispParams, ref pVarResult.GetPinnableReference(), ref pExcepInfo.GetPinnableReference(), pArgErr, cVarRef, rgVarRefIdx, rgVarRef);
@@ -38138,7 +38138,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 5962, Column 43 in oaidl.h")]
-        public static unsafe int IDispatchInvokeStub(this Windows thisApi, Span<IDispatch> This, int dispIdMember, Span<Guid> riid, uint lcid, uint dwFlags, DispatchParams* pDispParams, Span<Variant> pVarResult, Span<ExcepInfo> pExcepInfo, uint* pArgErr, uint cVarRef, uint* rgVarRefIdx, Span<Variant> rgVarRef)
+        public static unsafe int IDispatchInvokeStub(this Windows thisApi, Span<IDispatch> This, int dispIdMember, Span<Guid> riid, uint lcid, uint dwFlags, DispatchParams* pDispParams, Span<Variant> pVarResult, Span<ExceptionInfo> pExcepInfo, uint* pArgErr, uint cVarRef, uint* rgVarRefIdx, Span<Variant> rgVarRef)
         {
             // SpanOverloader
             return thisApi.IDispatchInvokeStub(ref This.GetPinnableReference(), dispIdMember, ref riid.GetPinnableReference(), lcid, dwFlags, pDispParams, ref pVarResult.GetPinnableReference(), ref pExcepInfo.GetPinnableReference(), pArgErr, cVarRef, rgVarRefIdx, ref rgVarRef.GetPinnableReference());
@@ -38146,7 +38146,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 5962, Column 43 in oaidl.h")]
-        public static unsafe int IDispatchInvokeStub(this Windows thisApi, Span<IDispatch> This, int dispIdMember, Span<Guid> riid, uint lcid, uint dwFlags, DispatchParams* pDispParams, Span<Variant> pVarResult, Span<ExcepInfo> pExcepInfo, uint* pArgErr, uint cVarRef, Span<uint> rgVarRefIdx, Variant* rgVarRef)
+        public static unsafe int IDispatchInvokeStub(this Windows thisApi, Span<IDispatch> This, int dispIdMember, Span<Guid> riid, uint lcid, uint dwFlags, DispatchParams* pDispParams, Span<Variant> pVarResult, Span<ExceptionInfo> pExcepInfo, uint* pArgErr, uint cVarRef, Span<uint> rgVarRefIdx, Variant* rgVarRef)
         {
             // SpanOverloader
             return thisApi.IDispatchInvokeStub(ref This.GetPinnableReference(), dispIdMember, ref riid.GetPinnableReference(), lcid, dwFlags, pDispParams, ref pVarResult.GetPinnableReference(), ref pExcepInfo.GetPinnableReference(), pArgErr, cVarRef, ref rgVarRefIdx.GetPinnableReference(), rgVarRef);
@@ -38154,7 +38154,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 5962, Column 43 in oaidl.h")]
-        public static unsafe int IDispatchInvokeStub(this Windows thisApi, Span<IDispatch> This, int dispIdMember, Span<Guid> riid, uint lcid, uint dwFlags, DispatchParams* pDispParams, Span<Variant> pVarResult, Span<ExcepInfo> pExcepInfo, uint* pArgErr, uint cVarRef, Span<uint> rgVarRefIdx, Span<Variant> rgVarRef)
+        public static unsafe int IDispatchInvokeStub(this Windows thisApi, Span<IDispatch> This, int dispIdMember, Span<Guid> riid, uint lcid, uint dwFlags, DispatchParams* pDispParams, Span<Variant> pVarResult, Span<ExceptionInfo> pExcepInfo, uint* pArgErr, uint cVarRef, Span<uint> rgVarRefIdx, Span<Variant> rgVarRef)
         {
             // SpanOverloader
             return thisApi.IDispatchInvokeStub(ref This.GetPinnableReference(), dispIdMember, ref riid.GetPinnableReference(), lcid, dwFlags, pDispParams, ref pVarResult.GetPinnableReference(), ref pExcepInfo.GetPinnableReference(), pArgErr, cVarRef, ref rgVarRefIdx.GetPinnableReference(), ref rgVarRef.GetPinnableReference());
@@ -38162,7 +38162,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 5962, Column 43 in oaidl.h")]
-        public static unsafe int IDispatchInvokeStub(this Windows thisApi, Span<IDispatch> This, int dispIdMember, Span<Guid> riid, uint lcid, uint dwFlags, DispatchParams* pDispParams, Span<Variant> pVarResult, Span<ExcepInfo> pExcepInfo, Span<uint> pArgErr, uint cVarRef, uint* rgVarRefIdx, Variant* rgVarRef)
+        public static unsafe int IDispatchInvokeStub(this Windows thisApi, Span<IDispatch> This, int dispIdMember, Span<Guid> riid, uint lcid, uint dwFlags, DispatchParams* pDispParams, Span<Variant> pVarResult, Span<ExceptionInfo> pExcepInfo, Span<uint> pArgErr, uint cVarRef, uint* rgVarRefIdx, Variant* rgVarRef)
         {
             // SpanOverloader
             return thisApi.IDispatchInvokeStub(ref This.GetPinnableReference(), dispIdMember, ref riid.GetPinnableReference(), lcid, dwFlags, pDispParams, ref pVarResult.GetPinnableReference(), ref pExcepInfo.GetPinnableReference(), ref pArgErr.GetPinnableReference(), cVarRef, rgVarRefIdx, rgVarRef);
@@ -38170,7 +38170,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 5962, Column 43 in oaidl.h")]
-        public static unsafe int IDispatchInvokeStub(this Windows thisApi, Span<IDispatch> This, int dispIdMember, Span<Guid> riid, uint lcid, uint dwFlags, DispatchParams* pDispParams, Span<Variant> pVarResult, Span<ExcepInfo> pExcepInfo, Span<uint> pArgErr, uint cVarRef, uint* rgVarRefIdx, Span<Variant> rgVarRef)
+        public static unsafe int IDispatchInvokeStub(this Windows thisApi, Span<IDispatch> This, int dispIdMember, Span<Guid> riid, uint lcid, uint dwFlags, DispatchParams* pDispParams, Span<Variant> pVarResult, Span<ExceptionInfo> pExcepInfo, Span<uint> pArgErr, uint cVarRef, uint* rgVarRefIdx, Span<Variant> rgVarRef)
         {
             // SpanOverloader
             return thisApi.IDispatchInvokeStub(ref This.GetPinnableReference(), dispIdMember, ref riid.GetPinnableReference(), lcid, dwFlags, pDispParams, ref pVarResult.GetPinnableReference(), ref pExcepInfo.GetPinnableReference(), ref pArgErr.GetPinnableReference(), cVarRef, rgVarRefIdx, ref rgVarRef.GetPinnableReference());
@@ -38178,7 +38178,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 5962, Column 43 in oaidl.h")]
-        public static unsafe int IDispatchInvokeStub(this Windows thisApi, Span<IDispatch> This, int dispIdMember, Span<Guid> riid, uint lcid, uint dwFlags, DispatchParams* pDispParams, Span<Variant> pVarResult, Span<ExcepInfo> pExcepInfo, Span<uint> pArgErr, uint cVarRef, Span<uint> rgVarRefIdx, Variant* rgVarRef)
+        public static unsafe int IDispatchInvokeStub(this Windows thisApi, Span<IDispatch> This, int dispIdMember, Span<Guid> riid, uint lcid, uint dwFlags, DispatchParams* pDispParams, Span<Variant> pVarResult, Span<ExceptionInfo> pExcepInfo, Span<uint> pArgErr, uint cVarRef, Span<uint> rgVarRefIdx, Variant* rgVarRef)
         {
             // SpanOverloader
             return thisApi.IDispatchInvokeStub(ref This.GetPinnableReference(), dispIdMember, ref riid.GetPinnableReference(), lcid, dwFlags, pDispParams, ref pVarResult.GetPinnableReference(), ref pExcepInfo.GetPinnableReference(), ref pArgErr.GetPinnableReference(), cVarRef, ref rgVarRefIdx.GetPinnableReference(), rgVarRef);
@@ -38186,7 +38186,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 5962, Column 43 in oaidl.h")]
-        public static unsafe int IDispatchInvokeStub(this Windows thisApi, Span<IDispatch> This, int dispIdMember, Span<Guid> riid, uint lcid, uint dwFlags, DispatchParams* pDispParams, Span<Variant> pVarResult, Span<ExcepInfo> pExcepInfo, Span<uint> pArgErr, uint cVarRef, Span<uint> rgVarRefIdx, Span<Variant> rgVarRef)
+        public static unsafe int IDispatchInvokeStub(this Windows thisApi, Span<IDispatch> This, int dispIdMember, Span<Guid> riid, uint lcid, uint dwFlags, DispatchParams* pDispParams, Span<Variant> pVarResult, Span<ExceptionInfo> pExcepInfo, Span<uint> pArgErr, uint cVarRef, Span<uint> rgVarRefIdx, Span<Variant> rgVarRef)
         {
             // SpanOverloader
             return thisApi.IDispatchInvokeStub(ref This.GetPinnableReference(), dispIdMember, ref riid.GetPinnableReference(), lcid, dwFlags, pDispParams, ref pVarResult.GetPinnableReference(), ref pExcepInfo.GetPinnableReference(), ref pArgErr.GetPinnableReference(), cVarRef, ref rgVarRefIdx.GetPinnableReference(), ref rgVarRef.GetPinnableReference());
@@ -38194,7 +38194,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 5962, Column 43 in oaidl.h")]
-        public static unsafe int IDispatchInvokeStub(this Windows thisApi, Span<IDispatch> This, int dispIdMember, Span<Guid> riid, uint lcid, uint dwFlags, Span<DispatchParams> pDispParams, Variant* pVarResult, ExcepInfo* pExcepInfo, uint* pArgErr, uint cVarRef, uint* rgVarRefIdx, Variant* rgVarRef)
+        public static unsafe int IDispatchInvokeStub(this Windows thisApi, Span<IDispatch> This, int dispIdMember, Span<Guid> riid, uint lcid, uint dwFlags, Span<DispatchParams> pDispParams, Variant* pVarResult, ExceptionInfo* pExcepInfo, uint* pArgErr, uint cVarRef, uint* rgVarRefIdx, Variant* rgVarRef)
         {
             // SpanOverloader
             return thisApi.IDispatchInvokeStub(ref This.GetPinnableReference(), dispIdMember, ref riid.GetPinnableReference(), lcid, dwFlags, ref pDispParams.GetPinnableReference(), pVarResult, pExcepInfo, pArgErr, cVarRef, rgVarRefIdx, rgVarRef);
@@ -38202,7 +38202,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 5962, Column 43 in oaidl.h")]
-        public static unsafe int IDispatchInvokeStub(this Windows thisApi, Span<IDispatch> This, int dispIdMember, Span<Guid> riid, uint lcid, uint dwFlags, Span<DispatchParams> pDispParams, Variant* pVarResult, ExcepInfo* pExcepInfo, uint* pArgErr, uint cVarRef, uint* rgVarRefIdx, Span<Variant> rgVarRef)
+        public static unsafe int IDispatchInvokeStub(this Windows thisApi, Span<IDispatch> This, int dispIdMember, Span<Guid> riid, uint lcid, uint dwFlags, Span<DispatchParams> pDispParams, Variant* pVarResult, ExceptionInfo* pExcepInfo, uint* pArgErr, uint cVarRef, uint* rgVarRefIdx, Span<Variant> rgVarRef)
         {
             // SpanOverloader
             return thisApi.IDispatchInvokeStub(ref This.GetPinnableReference(), dispIdMember, ref riid.GetPinnableReference(), lcid, dwFlags, ref pDispParams.GetPinnableReference(), pVarResult, pExcepInfo, pArgErr, cVarRef, rgVarRefIdx, ref rgVarRef.GetPinnableReference());
@@ -38210,7 +38210,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 5962, Column 43 in oaidl.h")]
-        public static unsafe int IDispatchInvokeStub(this Windows thisApi, Span<IDispatch> This, int dispIdMember, Span<Guid> riid, uint lcid, uint dwFlags, Span<DispatchParams> pDispParams, Variant* pVarResult, ExcepInfo* pExcepInfo, uint* pArgErr, uint cVarRef, Span<uint> rgVarRefIdx, Variant* rgVarRef)
+        public static unsafe int IDispatchInvokeStub(this Windows thisApi, Span<IDispatch> This, int dispIdMember, Span<Guid> riid, uint lcid, uint dwFlags, Span<DispatchParams> pDispParams, Variant* pVarResult, ExceptionInfo* pExcepInfo, uint* pArgErr, uint cVarRef, Span<uint> rgVarRefIdx, Variant* rgVarRef)
         {
             // SpanOverloader
             return thisApi.IDispatchInvokeStub(ref This.GetPinnableReference(), dispIdMember, ref riid.GetPinnableReference(), lcid, dwFlags, ref pDispParams.GetPinnableReference(), pVarResult, pExcepInfo, pArgErr, cVarRef, ref rgVarRefIdx.GetPinnableReference(), rgVarRef);
@@ -38218,7 +38218,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 5962, Column 43 in oaidl.h")]
-        public static unsafe int IDispatchInvokeStub(this Windows thisApi, Span<IDispatch> This, int dispIdMember, Span<Guid> riid, uint lcid, uint dwFlags, Span<DispatchParams> pDispParams, Variant* pVarResult, ExcepInfo* pExcepInfo, uint* pArgErr, uint cVarRef, Span<uint> rgVarRefIdx, Span<Variant> rgVarRef)
+        public static unsafe int IDispatchInvokeStub(this Windows thisApi, Span<IDispatch> This, int dispIdMember, Span<Guid> riid, uint lcid, uint dwFlags, Span<DispatchParams> pDispParams, Variant* pVarResult, ExceptionInfo* pExcepInfo, uint* pArgErr, uint cVarRef, Span<uint> rgVarRefIdx, Span<Variant> rgVarRef)
         {
             // SpanOverloader
             return thisApi.IDispatchInvokeStub(ref This.GetPinnableReference(), dispIdMember, ref riid.GetPinnableReference(), lcid, dwFlags, ref pDispParams.GetPinnableReference(), pVarResult, pExcepInfo, pArgErr, cVarRef, ref rgVarRefIdx.GetPinnableReference(), ref rgVarRef.GetPinnableReference());
@@ -38226,7 +38226,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 5962, Column 43 in oaidl.h")]
-        public static unsafe int IDispatchInvokeStub(this Windows thisApi, Span<IDispatch> This, int dispIdMember, Span<Guid> riid, uint lcid, uint dwFlags, Span<DispatchParams> pDispParams, Variant* pVarResult, ExcepInfo* pExcepInfo, Span<uint> pArgErr, uint cVarRef, uint* rgVarRefIdx, Variant* rgVarRef)
+        public static unsafe int IDispatchInvokeStub(this Windows thisApi, Span<IDispatch> This, int dispIdMember, Span<Guid> riid, uint lcid, uint dwFlags, Span<DispatchParams> pDispParams, Variant* pVarResult, ExceptionInfo* pExcepInfo, Span<uint> pArgErr, uint cVarRef, uint* rgVarRefIdx, Variant* rgVarRef)
         {
             // SpanOverloader
             return thisApi.IDispatchInvokeStub(ref This.GetPinnableReference(), dispIdMember, ref riid.GetPinnableReference(), lcid, dwFlags, ref pDispParams.GetPinnableReference(), pVarResult, pExcepInfo, ref pArgErr.GetPinnableReference(), cVarRef, rgVarRefIdx, rgVarRef);
@@ -38234,7 +38234,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 5962, Column 43 in oaidl.h")]
-        public static unsafe int IDispatchInvokeStub(this Windows thisApi, Span<IDispatch> This, int dispIdMember, Span<Guid> riid, uint lcid, uint dwFlags, Span<DispatchParams> pDispParams, Variant* pVarResult, ExcepInfo* pExcepInfo, Span<uint> pArgErr, uint cVarRef, uint* rgVarRefIdx, Span<Variant> rgVarRef)
+        public static unsafe int IDispatchInvokeStub(this Windows thisApi, Span<IDispatch> This, int dispIdMember, Span<Guid> riid, uint lcid, uint dwFlags, Span<DispatchParams> pDispParams, Variant* pVarResult, ExceptionInfo* pExcepInfo, Span<uint> pArgErr, uint cVarRef, uint* rgVarRefIdx, Span<Variant> rgVarRef)
         {
             // SpanOverloader
             return thisApi.IDispatchInvokeStub(ref This.GetPinnableReference(), dispIdMember, ref riid.GetPinnableReference(), lcid, dwFlags, ref pDispParams.GetPinnableReference(), pVarResult, pExcepInfo, ref pArgErr.GetPinnableReference(), cVarRef, rgVarRefIdx, ref rgVarRef.GetPinnableReference());
@@ -38242,7 +38242,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 5962, Column 43 in oaidl.h")]
-        public static unsafe int IDispatchInvokeStub(this Windows thisApi, Span<IDispatch> This, int dispIdMember, Span<Guid> riid, uint lcid, uint dwFlags, Span<DispatchParams> pDispParams, Variant* pVarResult, ExcepInfo* pExcepInfo, Span<uint> pArgErr, uint cVarRef, Span<uint> rgVarRefIdx, Variant* rgVarRef)
+        public static unsafe int IDispatchInvokeStub(this Windows thisApi, Span<IDispatch> This, int dispIdMember, Span<Guid> riid, uint lcid, uint dwFlags, Span<DispatchParams> pDispParams, Variant* pVarResult, ExceptionInfo* pExcepInfo, Span<uint> pArgErr, uint cVarRef, Span<uint> rgVarRefIdx, Variant* rgVarRef)
         {
             // SpanOverloader
             return thisApi.IDispatchInvokeStub(ref This.GetPinnableReference(), dispIdMember, ref riid.GetPinnableReference(), lcid, dwFlags, ref pDispParams.GetPinnableReference(), pVarResult, pExcepInfo, ref pArgErr.GetPinnableReference(), cVarRef, ref rgVarRefIdx.GetPinnableReference(), rgVarRef);
@@ -38250,7 +38250,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 5962, Column 43 in oaidl.h")]
-        public static unsafe int IDispatchInvokeStub(this Windows thisApi, Span<IDispatch> This, int dispIdMember, Span<Guid> riid, uint lcid, uint dwFlags, Span<DispatchParams> pDispParams, Variant* pVarResult, ExcepInfo* pExcepInfo, Span<uint> pArgErr, uint cVarRef, Span<uint> rgVarRefIdx, Span<Variant> rgVarRef)
+        public static unsafe int IDispatchInvokeStub(this Windows thisApi, Span<IDispatch> This, int dispIdMember, Span<Guid> riid, uint lcid, uint dwFlags, Span<DispatchParams> pDispParams, Variant* pVarResult, ExceptionInfo* pExcepInfo, Span<uint> pArgErr, uint cVarRef, Span<uint> rgVarRefIdx, Span<Variant> rgVarRef)
         {
             // SpanOverloader
             return thisApi.IDispatchInvokeStub(ref This.GetPinnableReference(), dispIdMember, ref riid.GetPinnableReference(), lcid, dwFlags, ref pDispParams.GetPinnableReference(), pVarResult, pExcepInfo, ref pArgErr.GetPinnableReference(), cVarRef, ref rgVarRefIdx.GetPinnableReference(), ref rgVarRef.GetPinnableReference());
@@ -38258,7 +38258,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 5962, Column 43 in oaidl.h")]
-        public static unsafe int IDispatchInvokeStub(this Windows thisApi, Span<IDispatch> This, int dispIdMember, Span<Guid> riid, uint lcid, uint dwFlags, Span<DispatchParams> pDispParams, Variant* pVarResult, Span<ExcepInfo> pExcepInfo, uint* pArgErr, uint cVarRef, uint* rgVarRefIdx, Variant* rgVarRef)
+        public static unsafe int IDispatchInvokeStub(this Windows thisApi, Span<IDispatch> This, int dispIdMember, Span<Guid> riid, uint lcid, uint dwFlags, Span<DispatchParams> pDispParams, Variant* pVarResult, Span<ExceptionInfo> pExcepInfo, uint* pArgErr, uint cVarRef, uint* rgVarRefIdx, Variant* rgVarRef)
         {
             // SpanOverloader
             return thisApi.IDispatchInvokeStub(ref This.GetPinnableReference(), dispIdMember, ref riid.GetPinnableReference(), lcid, dwFlags, ref pDispParams.GetPinnableReference(), pVarResult, ref pExcepInfo.GetPinnableReference(), pArgErr, cVarRef, rgVarRefIdx, rgVarRef);
@@ -38266,7 +38266,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 5962, Column 43 in oaidl.h")]
-        public static unsafe int IDispatchInvokeStub(this Windows thisApi, Span<IDispatch> This, int dispIdMember, Span<Guid> riid, uint lcid, uint dwFlags, Span<DispatchParams> pDispParams, Variant* pVarResult, Span<ExcepInfo> pExcepInfo, uint* pArgErr, uint cVarRef, uint* rgVarRefIdx, Span<Variant> rgVarRef)
+        public static unsafe int IDispatchInvokeStub(this Windows thisApi, Span<IDispatch> This, int dispIdMember, Span<Guid> riid, uint lcid, uint dwFlags, Span<DispatchParams> pDispParams, Variant* pVarResult, Span<ExceptionInfo> pExcepInfo, uint* pArgErr, uint cVarRef, uint* rgVarRefIdx, Span<Variant> rgVarRef)
         {
             // SpanOverloader
             return thisApi.IDispatchInvokeStub(ref This.GetPinnableReference(), dispIdMember, ref riid.GetPinnableReference(), lcid, dwFlags, ref pDispParams.GetPinnableReference(), pVarResult, ref pExcepInfo.GetPinnableReference(), pArgErr, cVarRef, rgVarRefIdx, ref rgVarRef.GetPinnableReference());
@@ -38274,7 +38274,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 5962, Column 43 in oaidl.h")]
-        public static unsafe int IDispatchInvokeStub(this Windows thisApi, Span<IDispatch> This, int dispIdMember, Span<Guid> riid, uint lcid, uint dwFlags, Span<DispatchParams> pDispParams, Variant* pVarResult, Span<ExcepInfo> pExcepInfo, uint* pArgErr, uint cVarRef, Span<uint> rgVarRefIdx, Variant* rgVarRef)
+        public static unsafe int IDispatchInvokeStub(this Windows thisApi, Span<IDispatch> This, int dispIdMember, Span<Guid> riid, uint lcid, uint dwFlags, Span<DispatchParams> pDispParams, Variant* pVarResult, Span<ExceptionInfo> pExcepInfo, uint* pArgErr, uint cVarRef, Span<uint> rgVarRefIdx, Variant* rgVarRef)
         {
             // SpanOverloader
             return thisApi.IDispatchInvokeStub(ref This.GetPinnableReference(), dispIdMember, ref riid.GetPinnableReference(), lcid, dwFlags, ref pDispParams.GetPinnableReference(), pVarResult, ref pExcepInfo.GetPinnableReference(), pArgErr, cVarRef, ref rgVarRefIdx.GetPinnableReference(), rgVarRef);
@@ -38282,7 +38282,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 5962, Column 43 in oaidl.h")]
-        public static unsafe int IDispatchInvokeStub(this Windows thisApi, Span<IDispatch> This, int dispIdMember, Span<Guid> riid, uint lcid, uint dwFlags, Span<DispatchParams> pDispParams, Variant* pVarResult, Span<ExcepInfo> pExcepInfo, uint* pArgErr, uint cVarRef, Span<uint> rgVarRefIdx, Span<Variant> rgVarRef)
+        public static unsafe int IDispatchInvokeStub(this Windows thisApi, Span<IDispatch> This, int dispIdMember, Span<Guid> riid, uint lcid, uint dwFlags, Span<DispatchParams> pDispParams, Variant* pVarResult, Span<ExceptionInfo> pExcepInfo, uint* pArgErr, uint cVarRef, Span<uint> rgVarRefIdx, Span<Variant> rgVarRef)
         {
             // SpanOverloader
             return thisApi.IDispatchInvokeStub(ref This.GetPinnableReference(), dispIdMember, ref riid.GetPinnableReference(), lcid, dwFlags, ref pDispParams.GetPinnableReference(), pVarResult, ref pExcepInfo.GetPinnableReference(), pArgErr, cVarRef, ref rgVarRefIdx.GetPinnableReference(), ref rgVarRef.GetPinnableReference());
@@ -38290,7 +38290,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 5962, Column 43 in oaidl.h")]
-        public static unsafe int IDispatchInvokeStub(this Windows thisApi, Span<IDispatch> This, int dispIdMember, Span<Guid> riid, uint lcid, uint dwFlags, Span<DispatchParams> pDispParams, Variant* pVarResult, Span<ExcepInfo> pExcepInfo, Span<uint> pArgErr, uint cVarRef, uint* rgVarRefIdx, Variant* rgVarRef)
+        public static unsafe int IDispatchInvokeStub(this Windows thisApi, Span<IDispatch> This, int dispIdMember, Span<Guid> riid, uint lcid, uint dwFlags, Span<DispatchParams> pDispParams, Variant* pVarResult, Span<ExceptionInfo> pExcepInfo, Span<uint> pArgErr, uint cVarRef, uint* rgVarRefIdx, Variant* rgVarRef)
         {
             // SpanOverloader
             return thisApi.IDispatchInvokeStub(ref This.GetPinnableReference(), dispIdMember, ref riid.GetPinnableReference(), lcid, dwFlags, ref pDispParams.GetPinnableReference(), pVarResult, ref pExcepInfo.GetPinnableReference(), ref pArgErr.GetPinnableReference(), cVarRef, rgVarRefIdx, rgVarRef);
@@ -38298,7 +38298,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 5962, Column 43 in oaidl.h")]
-        public static unsafe int IDispatchInvokeStub(this Windows thisApi, Span<IDispatch> This, int dispIdMember, Span<Guid> riid, uint lcid, uint dwFlags, Span<DispatchParams> pDispParams, Variant* pVarResult, Span<ExcepInfo> pExcepInfo, Span<uint> pArgErr, uint cVarRef, uint* rgVarRefIdx, Span<Variant> rgVarRef)
+        public static unsafe int IDispatchInvokeStub(this Windows thisApi, Span<IDispatch> This, int dispIdMember, Span<Guid> riid, uint lcid, uint dwFlags, Span<DispatchParams> pDispParams, Variant* pVarResult, Span<ExceptionInfo> pExcepInfo, Span<uint> pArgErr, uint cVarRef, uint* rgVarRefIdx, Span<Variant> rgVarRef)
         {
             // SpanOverloader
             return thisApi.IDispatchInvokeStub(ref This.GetPinnableReference(), dispIdMember, ref riid.GetPinnableReference(), lcid, dwFlags, ref pDispParams.GetPinnableReference(), pVarResult, ref pExcepInfo.GetPinnableReference(), ref pArgErr.GetPinnableReference(), cVarRef, rgVarRefIdx, ref rgVarRef.GetPinnableReference());
@@ -38306,7 +38306,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 5962, Column 43 in oaidl.h")]
-        public static unsafe int IDispatchInvokeStub(this Windows thisApi, Span<IDispatch> This, int dispIdMember, Span<Guid> riid, uint lcid, uint dwFlags, Span<DispatchParams> pDispParams, Variant* pVarResult, Span<ExcepInfo> pExcepInfo, Span<uint> pArgErr, uint cVarRef, Span<uint> rgVarRefIdx, Variant* rgVarRef)
+        public static unsafe int IDispatchInvokeStub(this Windows thisApi, Span<IDispatch> This, int dispIdMember, Span<Guid> riid, uint lcid, uint dwFlags, Span<DispatchParams> pDispParams, Variant* pVarResult, Span<ExceptionInfo> pExcepInfo, Span<uint> pArgErr, uint cVarRef, Span<uint> rgVarRefIdx, Variant* rgVarRef)
         {
             // SpanOverloader
             return thisApi.IDispatchInvokeStub(ref This.GetPinnableReference(), dispIdMember, ref riid.GetPinnableReference(), lcid, dwFlags, ref pDispParams.GetPinnableReference(), pVarResult, ref pExcepInfo.GetPinnableReference(), ref pArgErr.GetPinnableReference(), cVarRef, ref rgVarRefIdx.GetPinnableReference(), rgVarRef);
@@ -38314,7 +38314,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 5962, Column 43 in oaidl.h")]
-        public static unsafe int IDispatchInvokeStub(this Windows thisApi, Span<IDispatch> This, int dispIdMember, Span<Guid> riid, uint lcid, uint dwFlags, Span<DispatchParams> pDispParams, Variant* pVarResult, Span<ExcepInfo> pExcepInfo, Span<uint> pArgErr, uint cVarRef, Span<uint> rgVarRefIdx, Span<Variant> rgVarRef)
+        public static unsafe int IDispatchInvokeStub(this Windows thisApi, Span<IDispatch> This, int dispIdMember, Span<Guid> riid, uint lcid, uint dwFlags, Span<DispatchParams> pDispParams, Variant* pVarResult, Span<ExceptionInfo> pExcepInfo, Span<uint> pArgErr, uint cVarRef, Span<uint> rgVarRefIdx, Span<Variant> rgVarRef)
         {
             // SpanOverloader
             return thisApi.IDispatchInvokeStub(ref This.GetPinnableReference(), dispIdMember, ref riid.GetPinnableReference(), lcid, dwFlags, ref pDispParams.GetPinnableReference(), pVarResult, ref pExcepInfo.GetPinnableReference(), ref pArgErr.GetPinnableReference(), cVarRef, ref rgVarRefIdx.GetPinnableReference(), ref rgVarRef.GetPinnableReference());
@@ -38322,7 +38322,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 5962, Column 43 in oaidl.h")]
-        public static unsafe int IDispatchInvokeStub(this Windows thisApi, Span<IDispatch> This, int dispIdMember, Span<Guid> riid, uint lcid, uint dwFlags, Span<DispatchParams> pDispParams, Span<Variant> pVarResult, ExcepInfo* pExcepInfo, uint* pArgErr, uint cVarRef, uint* rgVarRefIdx, Variant* rgVarRef)
+        public static unsafe int IDispatchInvokeStub(this Windows thisApi, Span<IDispatch> This, int dispIdMember, Span<Guid> riid, uint lcid, uint dwFlags, Span<DispatchParams> pDispParams, Span<Variant> pVarResult, ExceptionInfo* pExcepInfo, uint* pArgErr, uint cVarRef, uint* rgVarRefIdx, Variant* rgVarRef)
         {
             // SpanOverloader
             return thisApi.IDispatchInvokeStub(ref This.GetPinnableReference(), dispIdMember, ref riid.GetPinnableReference(), lcid, dwFlags, ref pDispParams.GetPinnableReference(), ref pVarResult.GetPinnableReference(), pExcepInfo, pArgErr, cVarRef, rgVarRefIdx, rgVarRef);
@@ -38330,7 +38330,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 5962, Column 43 in oaidl.h")]
-        public static unsafe int IDispatchInvokeStub(this Windows thisApi, Span<IDispatch> This, int dispIdMember, Span<Guid> riid, uint lcid, uint dwFlags, Span<DispatchParams> pDispParams, Span<Variant> pVarResult, ExcepInfo* pExcepInfo, uint* pArgErr, uint cVarRef, uint* rgVarRefIdx, Span<Variant> rgVarRef)
+        public static unsafe int IDispatchInvokeStub(this Windows thisApi, Span<IDispatch> This, int dispIdMember, Span<Guid> riid, uint lcid, uint dwFlags, Span<DispatchParams> pDispParams, Span<Variant> pVarResult, ExceptionInfo* pExcepInfo, uint* pArgErr, uint cVarRef, uint* rgVarRefIdx, Span<Variant> rgVarRef)
         {
             // SpanOverloader
             return thisApi.IDispatchInvokeStub(ref This.GetPinnableReference(), dispIdMember, ref riid.GetPinnableReference(), lcid, dwFlags, ref pDispParams.GetPinnableReference(), ref pVarResult.GetPinnableReference(), pExcepInfo, pArgErr, cVarRef, rgVarRefIdx, ref rgVarRef.GetPinnableReference());
@@ -38338,7 +38338,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 5962, Column 43 in oaidl.h")]
-        public static unsafe int IDispatchInvokeStub(this Windows thisApi, Span<IDispatch> This, int dispIdMember, Span<Guid> riid, uint lcid, uint dwFlags, Span<DispatchParams> pDispParams, Span<Variant> pVarResult, ExcepInfo* pExcepInfo, uint* pArgErr, uint cVarRef, Span<uint> rgVarRefIdx, Variant* rgVarRef)
+        public static unsafe int IDispatchInvokeStub(this Windows thisApi, Span<IDispatch> This, int dispIdMember, Span<Guid> riid, uint lcid, uint dwFlags, Span<DispatchParams> pDispParams, Span<Variant> pVarResult, ExceptionInfo* pExcepInfo, uint* pArgErr, uint cVarRef, Span<uint> rgVarRefIdx, Variant* rgVarRef)
         {
             // SpanOverloader
             return thisApi.IDispatchInvokeStub(ref This.GetPinnableReference(), dispIdMember, ref riid.GetPinnableReference(), lcid, dwFlags, ref pDispParams.GetPinnableReference(), ref pVarResult.GetPinnableReference(), pExcepInfo, pArgErr, cVarRef, ref rgVarRefIdx.GetPinnableReference(), rgVarRef);
@@ -38346,7 +38346,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 5962, Column 43 in oaidl.h")]
-        public static unsafe int IDispatchInvokeStub(this Windows thisApi, Span<IDispatch> This, int dispIdMember, Span<Guid> riid, uint lcid, uint dwFlags, Span<DispatchParams> pDispParams, Span<Variant> pVarResult, ExcepInfo* pExcepInfo, uint* pArgErr, uint cVarRef, Span<uint> rgVarRefIdx, Span<Variant> rgVarRef)
+        public static unsafe int IDispatchInvokeStub(this Windows thisApi, Span<IDispatch> This, int dispIdMember, Span<Guid> riid, uint lcid, uint dwFlags, Span<DispatchParams> pDispParams, Span<Variant> pVarResult, ExceptionInfo* pExcepInfo, uint* pArgErr, uint cVarRef, Span<uint> rgVarRefIdx, Span<Variant> rgVarRef)
         {
             // SpanOverloader
             return thisApi.IDispatchInvokeStub(ref This.GetPinnableReference(), dispIdMember, ref riid.GetPinnableReference(), lcid, dwFlags, ref pDispParams.GetPinnableReference(), ref pVarResult.GetPinnableReference(), pExcepInfo, pArgErr, cVarRef, ref rgVarRefIdx.GetPinnableReference(), ref rgVarRef.GetPinnableReference());
@@ -38354,7 +38354,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 5962, Column 43 in oaidl.h")]
-        public static unsafe int IDispatchInvokeStub(this Windows thisApi, Span<IDispatch> This, int dispIdMember, Span<Guid> riid, uint lcid, uint dwFlags, Span<DispatchParams> pDispParams, Span<Variant> pVarResult, ExcepInfo* pExcepInfo, Span<uint> pArgErr, uint cVarRef, uint* rgVarRefIdx, Variant* rgVarRef)
+        public static unsafe int IDispatchInvokeStub(this Windows thisApi, Span<IDispatch> This, int dispIdMember, Span<Guid> riid, uint lcid, uint dwFlags, Span<DispatchParams> pDispParams, Span<Variant> pVarResult, ExceptionInfo* pExcepInfo, Span<uint> pArgErr, uint cVarRef, uint* rgVarRefIdx, Variant* rgVarRef)
         {
             // SpanOverloader
             return thisApi.IDispatchInvokeStub(ref This.GetPinnableReference(), dispIdMember, ref riid.GetPinnableReference(), lcid, dwFlags, ref pDispParams.GetPinnableReference(), ref pVarResult.GetPinnableReference(), pExcepInfo, ref pArgErr.GetPinnableReference(), cVarRef, rgVarRefIdx, rgVarRef);
@@ -38362,7 +38362,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 5962, Column 43 in oaidl.h")]
-        public static unsafe int IDispatchInvokeStub(this Windows thisApi, Span<IDispatch> This, int dispIdMember, Span<Guid> riid, uint lcid, uint dwFlags, Span<DispatchParams> pDispParams, Span<Variant> pVarResult, ExcepInfo* pExcepInfo, Span<uint> pArgErr, uint cVarRef, uint* rgVarRefIdx, Span<Variant> rgVarRef)
+        public static unsafe int IDispatchInvokeStub(this Windows thisApi, Span<IDispatch> This, int dispIdMember, Span<Guid> riid, uint lcid, uint dwFlags, Span<DispatchParams> pDispParams, Span<Variant> pVarResult, ExceptionInfo* pExcepInfo, Span<uint> pArgErr, uint cVarRef, uint* rgVarRefIdx, Span<Variant> rgVarRef)
         {
             // SpanOverloader
             return thisApi.IDispatchInvokeStub(ref This.GetPinnableReference(), dispIdMember, ref riid.GetPinnableReference(), lcid, dwFlags, ref pDispParams.GetPinnableReference(), ref pVarResult.GetPinnableReference(), pExcepInfo, ref pArgErr.GetPinnableReference(), cVarRef, rgVarRefIdx, ref rgVarRef.GetPinnableReference());
@@ -38370,7 +38370,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 5962, Column 43 in oaidl.h")]
-        public static unsafe int IDispatchInvokeStub(this Windows thisApi, Span<IDispatch> This, int dispIdMember, Span<Guid> riid, uint lcid, uint dwFlags, Span<DispatchParams> pDispParams, Span<Variant> pVarResult, ExcepInfo* pExcepInfo, Span<uint> pArgErr, uint cVarRef, Span<uint> rgVarRefIdx, Variant* rgVarRef)
+        public static unsafe int IDispatchInvokeStub(this Windows thisApi, Span<IDispatch> This, int dispIdMember, Span<Guid> riid, uint lcid, uint dwFlags, Span<DispatchParams> pDispParams, Span<Variant> pVarResult, ExceptionInfo* pExcepInfo, Span<uint> pArgErr, uint cVarRef, Span<uint> rgVarRefIdx, Variant* rgVarRef)
         {
             // SpanOverloader
             return thisApi.IDispatchInvokeStub(ref This.GetPinnableReference(), dispIdMember, ref riid.GetPinnableReference(), lcid, dwFlags, ref pDispParams.GetPinnableReference(), ref pVarResult.GetPinnableReference(), pExcepInfo, ref pArgErr.GetPinnableReference(), cVarRef, ref rgVarRefIdx.GetPinnableReference(), rgVarRef);
@@ -38378,7 +38378,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 5962, Column 43 in oaidl.h")]
-        public static unsafe int IDispatchInvokeStub(this Windows thisApi, Span<IDispatch> This, int dispIdMember, Span<Guid> riid, uint lcid, uint dwFlags, Span<DispatchParams> pDispParams, Span<Variant> pVarResult, ExcepInfo* pExcepInfo, Span<uint> pArgErr, uint cVarRef, Span<uint> rgVarRefIdx, Span<Variant> rgVarRef)
+        public static unsafe int IDispatchInvokeStub(this Windows thisApi, Span<IDispatch> This, int dispIdMember, Span<Guid> riid, uint lcid, uint dwFlags, Span<DispatchParams> pDispParams, Span<Variant> pVarResult, ExceptionInfo* pExcepInfo, Span<uint> pArgErr, uint cVarRef, Span<uint> rgVarRefIdx, Span<Variant> rgVarRef)
         {
             // SpanOverloader
             return thisApi.IDispatchInvokeStub(ref This.GetPinnableReference(), dispIdMember, ref riid.GetPinnableReference(), lcid, dwFlags, ref pDispParams.GetPinnableReference(), ref pVarResult.GetPinnableReference(), pExcepInfo, ref pArgErr.GetPinnableReference(), cVarRef, ref rgVarRefIdx.GetPinnableReference(), ref rgVarRef.GetPinnableReference());
@@ -38386,7 +38386,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 5962, Column 43 in oaidl.h")]
-        public static unsafe int IDispatchInvokeStub(this Windows thisApi, Span<IDispatch> This, int dispIdMember, Span<Guid> riid, uint lcid, uint dwFlags, Span<DispatchParams> pDispParams, Span<Variant> pVarResult, Span<ExcepInfo> pExcepInfo, uint* pArgErr, uint cVarRef, uint* rgVarRefIdx, Variant* rgVarRef)
+        public static unsafe int IDispatchInvokeStub(this Windows thisApi, Span<IDispatch> This, int dispIdMember, Span<Guid> riid, uint lcid, uint dwFlags, Span<DispatchParams> pDispParams, Span<Variant> pVarResult, Span<ExceptionInfo> pExcepInfo, uint* pArgErr, uint cVarRef, uint* rgVarRefIdx, Variant* rgVarRef)
         {
             // SpanOverloader
             return thisApi.IDispatchInvokeStub(ref This.GetPinnableReference(), dispIdMember, ref riid.GetPinnableReference(), lcid, dwFlags, ref pDispParams.GetPinnableReference(), ref pVarResult.GetPinnableReference(), ref pExcepInfo.GetPinnableReference(), pArgErr, cVarRef, rgVarRefIdx, rgVarRef);
@@ -38394,7 +38394,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 5962, Column 43 in oaidl.h")]
-        public static unsafe int IDispatchInvokeStub(this Windows thisApi, Span<IDispatch> This, int dispIdMember, Span<Guid> riid, uint lcid, uint dwFlags, Span<DispatchParams> pDispParams, Span<Variant> pVarResult, Span<ExcepInfo> pExcepInfo, uint* pArgErr, uint cVarRef, uint* rgVarRefIdx, Span<Variant> rgVarRef)
+        public static unsafe int IDispatchInvokeStub(this Windows thisApi, Span<IDispatch> This, int dispIdMember, Span<Guid> riid, uint lcid, uint dwFlags, Span<DispatchParams> pDispParams, Span<Variant> pVarResult, Span<ExceptionInfo> pExcepInfo, uint* pArgErr, uint cVarRef, uint* rgVarRefIdx, Span<Variant> rgVarRef)
         {
             // SpanOverloader
             return thisApi.IDispatchInvokeStub(ref This.GetPinnableReference(), dispIdMember, ref riid.GetPinnableReference(), lcid, dwFlags, ref pDispParams.GetPinnableReference(), ref pVarResult.GetPinnableReference(), ref pExcepInfo.GetPinnableReference(), pArgErr, cVarRef, rgVarRefIdx, ref rgVarRef.GetPinnableReference());
@@ -38402,7 +38402,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 5962, Column 43 in oaidl.h")]
-        public static unsafe int IDispatchInvokeStub(this Windows thisApi, Span<IDispatch> This, int dispIdMember, Span<Guid> riid, uint lcid, uint dwFlags, Span<DispatchParams> pDispParams, Span<Variant> pVarResult, Span<ExcepInfo> pExcepInfo, uint* pArgErr, uint cVarRef, Span<uint> rgVarRefIdx, Variant* rgVarRef)
+        public static unsafe int IDispatchInvokeStub(this Windows thisApi, Span<IDispatch> This, int dispIdMember, Span<Guid> riid, uint lcid, uint dwFlags, Span<DispatchParams> pDispParams, Span<Variant> pVarResult, Span<ExceptionInfo> pExcepInfo, uint* pArgErr, uint cVarRef, Span<uint> rgVarRefIdx, Variant* rgVarRef)
         {
             // SpanOverloader
             return thisApi.IDispatchInvokeStub(ref This.GetPinnableReference(), dispIdMember, ref riid.GetPinnableReference(), lcid, dwFlags, ref pDispParams.GetPinnableReference(), ref pVarResult.GetPinnableReference(), ref pExcepInfo.GetPinnableReference(), pArgErr, cVarRef, ref rgVarRefIdx.GetPinnableReference(), rgVarRef);
@@ -38410,7 +38410,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 5962, Column 43 in oaidl.h")]
-        public static unsafe int IDispatchInvokeStub(this Windows thisApi, Span<IDispatch> This, int dispIdMember, Span<Guid> riid, uint lcid, uint dwFlags, Span<DispatchParams> pDispParams, Span<Variant> pVarResult, Span<ExcepInfo> pExcepInfo, uint* pArgErr, uint cVarRef, Span<uint> rgVarRefIdx, Span<Variant> rgVarRef)
+        public static unsafe int IDispatchInvokeStub(this Windows thisApi, Span<IDispatch> This, int dispIdMember, Span<Guid> riid, uint lcid, uint dwFlags, Span<DispatchParams> pDispParams, Span<Variant> pVarResult, Span<ExceptionInfo> pExcepInfo, uint* pArgErr, uint cVarRef, Span<uint> rgVarRefIdx, Span<Variant> rgVarRef)
         {
             // SpanOverloader
             return thisApi.IDispatchInvokeStub(ref This.GetPinnableReference(), dispIdMember, ref riid.GetPinnableReference(), lcid, dwFlags, ref pDispParams.GetPinnableReference(), ref pVarResult.GetPinnableReference(), ref pExcepInfo.GetPinnableReference(), pArgErr, cVarRef, ref rgVarRefIdx.GetPinnableReference(), ref rgVarRef.GetPinnableReference());
@@ -38418,7 +38418,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 5962, Column 43 in oaidl.h")]
-        public static unsafe int IDispatchInvokeStub(this Windows thisApi, Span<IDispatch> This, int dispIdMember, Span<Guid> riid, uint lcid, uint dwFlags, Span<DispatchParams> pDispParams, Span<Variant> pVarResult, Span<ExcepInfo> pExcepInfo, Span<uint> pArgErr, uint cVarRef, uint* rgVarRefIdx, Variant* rgVarRef)
+        public static unsafe int IDispatchInvokeStub(this Windows thisApi, Span<IDispatch> This, int dispIdMember, Span<Guid> riid, uint lcid, uint dwFlags, Span<DispatchParams> pDispParams, Span<Variant> pVarResult, Span<ExceptionInfo> pExcepInfo, Span<uint> pArgErr, uint cVarRef, uint* rgVarRefIdx, Variant* rgVarRef)
         {
             // SpanOverloader
             return thisApi.IDispatchInvokeStub(ref This.GetPinnableReference(), dispIdMember, ref riid.GetPinnableReference(), lcid, dwFlags, ref pDispParams.GetPinnableReference(), ref pVarResult.GetPinnableReference(), ref pExcepInfo.GetPinnableReference(), ref pArgErr.GetPinnableReference(), cVarRef, rgVarRefIdx, rgVarRef);
@@ -38426,7 +38426,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 5962, Column 43 in oaidl.h")]
-        public static unsafe int IDispatchInvokeStub(this Windows thisApi, Span<IDispatch> This, int dispIdMember, Span<Guid> riid, uint lcid, uint dwFlags, Span<DispatchParams> pDispParams, Span<Variant> pVarResult, Span<ExcepInfo> pExcepInfo, Span<uint> pArgErr, uint cVarRef, uint* rgVarRefIdx, Span<Variant> rgVarRef)
+        public static unsafe int IDispatchInvokeStub(this Windows thisApi, Span<IDispatch> This, int dispIdMember, Span<Guid> riid, uint lcid, uint dwFlags, Span<DispatchParams> pDispParams, Span<Variant> pVarResult, Span<ExceptionInfo> pExcepInfo, Span<uint> pArgErr, uint cVarRef, uint* rgVarRefIdx, Span<Variant> rgVarRef)
         {
             // SpanOverloader
             return thisApi.IDispatchInvokeStub(ref This.GetPinnableReference(), dispIdMember, ref riid.GetPinnableReference(), lcid, dwFlags, ref pDispParams.GetPinnableReference(), ref pVarResult.GetPinnableReference(), ref pExcepInfo.GetPinnableReference(), ref pArgErr.GetPinnableReference(), cVarRef, rgVarRefIdx, ref rgVarRef.GetPinnableReference());
@@ -38434,7 +38434,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 5962, Column 43 in oaidl.h")]
-        public static unsafe int IDispatchInvokeStub(this Windows thisApi, Span<IDispatch> This, int dispIdMember, Span<Guid> riid, uint lcid, uint dwFlags, Span<DispatchParams> pDispParams, Span<Variant> pVarResult, Span<ExcepInfo> pExcepInfo, Span<uint> pArgErr, uint cVarRef, Span<uint> rgVarRefIdx, Variant* rgVarRef)
+        public static unsafe int IDispatchInvokeStub(this Windows thisApi, Span<IDispatch> This, int dispIdMember, Span<Guid> riid, uint lcid, uint dwFlags, Span<DispatchParams> pDispParams, Span<Variant> pVarResult, Span<ExceptionInfo> pExcepInfo, Span<uint> pArgErr, uint cVarRef, Span<uint> rgVarRefIdx, Variant* rgVarRef)
         {
             // SpanOverloader
             return thisApi.IDispatchInvokeStub(ref This.GetPinnableReference(), dispIdMember, ref riid.GetPinnableReference(), lcid, dwFlags, ref pDispParams.GetPinnableReference(), ref pVarResult.GetPinnableReference(), ref pExcepInfo.GetPinnableReference(), ref pArgErr.GetPinnableReference(), cVarRef, ref rgVarRefIdx.GetPinnableReference(), rgVarRef);
@@ -38442,7 +38442,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 5962, Column 43 in oaidl.h")]
-        public static unsafe int IDispatchInvokeStub(this Windows thisApi, Span<IDispatch> This, int dispIdMember, Span<Guid> riid, uint lcid, uint dwFlags, Span<DispatchParams> pDispParams, Span<Variant> pVarResult, Span<ExcepInfo> pExcepInfo, Span<uint> pArgErr, uint cVarRef, Span<uint> rgVarRefIdx, Span<Variant> rgVarRef)
+        public static unsafe int IDispatchInvokeStub(this Windows thisApi, Span<IDispatch> This, int dispIdMember, Span<Guid> riid, uint lcid, uint dwFlags, Span<DispatchParams> pDispParams, Span<Variant> pVarResult, Span<ExceptionInfo> pExcepInfo, Span<uint> pArgErr, uint cVarRef, Span<uint> rgVarRefIdx, Span<Variant> rgVarRef)
         {
             // SpanOverloader
             return thisApi.IDispatchInvokeStub(ref This.GetPinnableReference(), dispIdMember, ref riid.GetPinnableReference(), lcid, dwFlags, ref pDispParams.GetPinnableReference(), ref pVarResult.GetPinnableReference(), ref pExcepInfo.GetPinnableReference(), ref pArgErr.GetPinnableReference(), cVarRef, ref rgVarRefIdx.GetPinnableReference(), ref rgVarRef.GetPinnableReference());
@@ -42266,7 +42266,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 6089, Column 41 in oaidl.h")]
-        public static unsafe int ITypeInfoInvokeProxy(this Windows thisApi, ITypeInfo* This, void* pvInstance, int memid, ushort wFlags, DispatchParams* pDispParams, Variant* pVarResult, ExcepInfo* pExcepInfo, Span<uint> puArgErr)
+        public static unsafe int ITypeInfoInvokeProxy(this Windows thisApi, ITypeInfo* This, void* pvInstance, int memid, ushort wFlags, DispatchParams* pDispParams, Variant* pVarResult, ExceptionInfo* pExcepInfo, Span<uint> puArgErr)
         {
             // SpanOverloader
             return thisApi.ITypeInfoInvokeProxy(This, pvInstance, memid, wFlags, pDispParams, pVarResult, pExcepInfo, ref puArgErr.GetPinnableReference());
@@ -42274,7 +42274,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 6089, Column 41 in oaidl.h")]
-        public static unsafe int ITypeInfoInvokeProxy(this Windows thisApi, ITypeInfo* This, void* pvInstance, int memid, ushort wFlags, DispatchParams* pDispParams, Variant* pVarResult, Span<ExcepInfo> pExcepInfo, uint* puArgErr)
+        public static unsafe int ITypeInfoInvokeProxy(this Windows thisApi, ITypeInfo* This, void* pvInstance, int memid, ushort wFlags, DispatchParams* pDispParams, Variant* pVarResult, Span<ExceptionInfo> pExcepInfo, uint* puArgErr)
         {
             // SpanOverloader
             return thisApi.ITypeInfoInvokeProxy(This, pvInstance, memid, wFlags, pDispParams, pVarResult, ref pExcepInfo.GetPinnableReference(), puArgErr);
@@ -42282,7 +42282,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 6089, Column 41 in oaidl.h")]
-        public static unsafe int ITypeInfoInvokeProxy(this Windows thisApi, ITypeInfo* This, void* pvInstance, int memid, ushort wFlags, DispatchParams* pDispParams, Variant* pVarResult, Span<ExcepInfo> pExcepInfo, Span<uint> puArgErr)
+        public static unsafe int ITypeInfoInvokeProxy(this Windows thisApi, ITypeInfo* This, void* pvInstance, int memid, ushort wFlags, DispatchParams* pDispParams, Variant* pVarResult, Span<ExceptionInfo> pExcepInfo, Span<uint> puArgErr)
         {
             // SpanOverloader
             return thisApi.ITypeInfoInvokeProxy(This, pvInstance, memid, wFlags, pDispParams, pVarResult, ref pExcepInfo.GetPinnableReference(), ref puArgErr.GetPinnableReference());
@@ -42290,7 +42290,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 6089, Column 41 in oaidl.h")]
-        public static unsafe int ITypeInfoInvokeProxy(this Windows thisApi, ITypeInfo* This, void* pvInstance, int memid, ushort wFlags, DispatchParams* pDispParams, Span<Variant> pVarResult, ExcepInfo* pExcepInfo, uint* puArgErr)
+        public static unsafe int ITypeInfoInvokeProxy(this Windows thisApi, ITypeInfo* This, void* pvInstance, int memid, ushort wFlags, DispatchParams* pDispParams, Span<Variant> pVarResult, ExceptionInfo* pExcepInfo, uint* puArgErr)
         {
             // SpanOverloader
             return thisApi.ITypeInfoInvokeProxy(This, pvInstance, memid, wFlags, pDispParams, ref pVarResult.GetPinnableReference(), pExcepInfo, puArgErr);
@@ -42298,7 +42298,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 6089, Column 41 in oaidl.h")]
-        public static unsafe int ITypeInfoInvokeProxy(this Windows thisApi, ITypeInfo* This, void* pvInstance, int memid, ushort wFlags, DispatchParams* pDispParams, Span<Variant> pVarResult, ExcepInfo* pExcepInfo, Span<uint> puArgErr)
+        public static unsafe int ITypeInfoInvokeProxy(this Windows thisApi, ITypeInfo* This, void* pvInstance, int memid, ushort wFlags, DispatchParams* pDispParams, Span<Variant> pVarResult, ExceptionInfo* pExcepInfo, Span<uint> puArgErr)
         {
             // SpanOverloader
             return thisApi.ITypeInfoInvokeProxy(This, pvInstance, memid, wFlags, pDispParams, ref pVarResult.GetPinnableReference(), pExcepInfo, ref puArgErr.GetPinnableReference());
@@ -42306,7 +42306,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 6089, Column 41 in oaidl.h")]
-        public static unsafe int ITypeInfoInvokeProxy(this Windows thisApi, ITypeInfo* This, void* pvInstance, int memid, ushort wFlags, DispatchParams* pDispParams, Span<Variant> pVarResult, Span<ExcepInfo> pExcepInfo, uint* puArgErr)
+        public static unsafe int ITypeInfoInvokeProxy(this Windows thisApi, ITypeInfo* This, void* pvInstance, int memid, ushort wFlags, DispatchParams* pDispParams, Span<Variant> pVarResult, Span<ExceptionInfo> pExcepInfo, uint* puArgErr)
         {
             // SpanOverloader
             return thisApi.ITypeInfoInvokeProxy(This, pvInstance, memid, wFlags, pDispParams, ref pVarResult.GetPinnableReference(), ref pExcepInfo.GetPinnableReference(), puArgErr);
@@ -42314,7 +42314,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 6089, Column 41 in oaidl.h")]
-        public static unsafe int ITypeInfoInvokeProxy(this Windows thisApi, ITypeInfo* This, void* pvInstance, int memid, ushort wFlags, DispatchParams* pDispParams, Span<Variant> pVarResult, Span<ExcepInfo> pExcepInfo, Span<uint> puArgErr)
+        public static unsafe int ITypeInfoInvokeProxy(this Windows thisApi, ITypeInfo* This, void* pvInstance, int memid, ushort wFlags, DispatchParams* pDispParams, Span<Variant> pVarResult, Span<ExceptionInfo> pExcepInfo, Span<uint> puArgErr)
         {
             // SpanOverloader
             return thisApi.ITypeInfoInvokeProxy(This, pvInstance, memid, wFlags, pDispParams, ref pVarResult.GetPinnableReference(), ref pExcepInfo.GetPinnableReference(), ref puArgErr.GetPinnableReference());
@@ -42322,7 +42322,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 6089, Column 41 in oaidl.h")]
-        public static unsafe int ITypeInfoInvokeProxy(this Windows thisApi, ITypeInfo* This, void* pvInstance, int memid, ushort wFlags, Span<DispatchParams> pDispParams, Variant* pVarResult, ExcepInfo* pExcepInfo, uint* puArgErr)
+        public static unsafe int ITypeInfoInvokeProxy(this Windows thisApi, ITypeInfo* This, void* pvInstance, int memid, ushort wFlags, Span<DispatchParams> pDispParams, Variant* pVarResult, ExceptionInfo* pExcepInfo, uint* puArgErr)
         {
             // SpanOverloader
             return thisApi.ITypeInfoInvokeProxy(This, pvInstance, memid, wFlags, ref pDispParams.GetPinnableReference(), pVarResult, pExcepInfo, puArgErr);
@@ -42330,7 +42330,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 6089, Column 41 in oaidl.h")]
-        public static unsafe int ITypeInfoInvokeProxy(this Windows thisApi, ITypeInfo* This, void* pvInstance, int memid, ushort wFlags, Span<DispatchParams> pDispParams, Variant* pVarResult, ExcepInfo* pExcepInfo, Span<uint> puArgErr)
+        public static unsafe int ITypeInfoInvokeProxy(this Windows thisApi, ITypeInfo* This, void* pvInstance, int memid, ushort wFlags, Span<DispatchParams> pDispParams, Variant* pVarResult, ExceptionInfo* pExcepInfo, Span<uint> puArgErr)
         {
             // SpanOverloader
             return thisApi.ITypeInfoInvokeProxy(This, pvInstance, memid, wFlags, ref pDispParams.GetPinnableReference(), pVarResult, pExcepInfo, ref puArgErr.GetPinnableReference());
@@ -42338,7 +42338,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 6089, Column 41 in oaidl.h")]
-        public static unsafe int ITypeInfoInvokeProxy(this Windows thisApi, ITypeInfo* This, void* pvInstance, int memid, ushort wFlags, Span<DispatchParams> pDispParams, Variant* pVarResult, Span<ExcepInfo> pExcepInfo, uint* puArgErr)
+        public static unsafe int ITypeInfoInvokeProxy(this Windows thisApi, ITypeInfo* This, void* pvInstance, int memid, ushort wFlags, Span<DispatchParams> pDispParams, Variant* pVarResult, Span<ExceptionInfo> pExcepInfo, uint* puArgErr)
         {
             // SpanOverloader
             return thisApi.ITypeInfoInvokeProxy(This, pvInstance, memid, wFlags, ref pDispParams.GetPinnableReference(), pVarResult, ref pExcepInfo.GetPinnableReference(), puArgErr);
@@ -42346,7 +42346,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 6089, Column 41 in oaidl.h")]
-        public static unsafe int ITypeInfoInvokeProxy(this Windows thisApi, ITypeInfo* This, void* pvInstance, int memid, ushort wFlags, Span<DispatchParams> pDispParams, Variant* pVarResult, Span<ExcepInfo> pExcepInfo, Span<uint> puArgErr)
+        public static unsafe int ITypeInfoInvokeProxy(this Windows thisApi, ITypeInfo* This, void* pvInstance, int memid, ushort wFlags, Span<DispatchParams> pDispParams, Variant* pVarResult, Span<ExceptionInfo> pExcepInfo, Span<uint> puArgErr)
         {
             // SpanOverloader
             return thisApi.ITypeInfoInvokeProxy(This, pvInstance, memid, wFlags, ref pDispParams.GetPinnableReference(), pVarResult, ref pExcepInfo.GetPinnableReference(), ref puArgErr.GetPinnableReference());
@@ -42354,7 +42354,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 6089, Column 41 in oaidl.h")]
-        public static unsafe int ITypeInfoInvokeProxy(this Windows thisApi, ITypeInfo* This, void* pvInstance, int memid, ushort wFlags, Span<DispatchParams> pDispParams, Span<Variant> pVarResult, ExcepInfo* pExcepInfo, uint* puArgErr)
+        public static unsafe int ITypeInfoInvokeProxy(this Windows thisApi, ITypeInfo* This, void* pvInstance, int memid, ushort wFlags, Span<DispatchParams> pDispParams, Span<Variant> pVarResult, ExceptionInfo* pExcepInfo, uint* puArgErr)
         {
             // SpanOverloader
             return thisApi.ITypeInfoInvokeProxy(This, pvInstance, memid, wFlags, ref pDispParams.GetPinnableReference(), ref pVarResult.GetPinnableReference(), pExcepInfo, puArgErr);
@@ -42362,7 +42362,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 6089, Column 41 in oaidl.h")]
-        public static unsafe int ITypeInfoInvokeProxy(this Windows thisApi, ITypeInfo* This, void* pvInstance, int memid, ushort wFlags, Span<DispatchParams> pDispParams, Span<Variant> pVarResult, ExcepInfo* pExcepInfo, Span<uint> puArgErr)
+        public static unsafe int ITypeInfoInvokeProxy(this Windows thisApi, ITypeInfo* This, void* pvInstance, int memid, ushort wFlags, Span<DispatchParams> pDispParams, Span<Variant> pVarResult, ExceptionInfo* pExcepInfo, Span<uint> puArgErr)
         {
             // SpanOverloader
             return thisApi.ITypeInfoInvokeProxy(This, pvInstance, memid, wFlags, ref pDispParams.GetPinnableReference(), ref pVarResult.GetPinnableReference(), pExcepInfo, ref puArgErr.GetPinnableReference());
@@ -42370,7 +42370,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 6089, Column 41 in oaidl.h")]
-        public static unsafe int ITypeInfoInvokeProxy(this Windows thisApi, ITypeInfo* This, void* pvInstance, int memid, ushort wFlags, Span<DispatchParams> pDispParams, Span<Variant> pVarResult, Span<ExcepInfo> pExcepInfo, uint* puArgErr)
+        public static unsafe int ITypeInfoInvokeProxy(this Windows thisApi, ITypeInfo* This, void* pvInstance, int memid, ushort wFlags, Span<DispatchParams> pDispParams, Span<Variant> pVarResult, Span<ExceptionInfo> pExcepInfo, uint* puArgErr)
         {
             // SpanOverloader
             return thisApi.ITypeInfoInvokeProxy(This, pvInstance, memid, wFlags, ref pDispParams.GetPinnableReference(), ref pVarResult.GetPinnableReference(), ref pExcepInfo.GetPinnableReference(), puArgErr);
@@ -42378,7 +42378,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 6089, Column 41 in oaidl.h")]
-        public static unsafe int ITypeInfoInvokeProxy(this Windows thisApi, ITypeInfo* This, void* pvInstance, int memid, ushort wFlags, Span<DispatchParams> pDispParams, Span<Variant> pVarResult, Span<ExcepInfo> pExcepInfo, Span<uint> puArgErr)
+        public static unsafe int ITypeInfoInvokeProxy(this Windows thisApi, ITypeInfo* This, void* pvInstance, int memid, ushort wFlags, Span<DispatchParams> pDispParams, Span<Variant> pVarResult, Span<ExceptionInfo> pExcepInfo, Span<uint> puArgErr)
         {
             // SpanOverloader
             return thisApi.ITypeInfoInvokeProxy(This, pvInstance, memid, wFlags, ref pDispParams.GetPinnableReference(), ref pVarResult.GetPinnableReference(), ref pExcepInfo.GetPinnableReference(), ref puArgErr.GetPinnableReference());
@@ -42386,7 +42386,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 6089, Column 41 in oaidl.h")]
-        public static unsafe int ITypeInfoInvokeProxy<T0>(this Windows thisApi, ITypeInfo* This, Span<T0> pvInstance, int memid, ushort wFlags, DispatchParams* pDispParams, Variant* pVarResult, ExcepInfo* pExcepInfo, uint* puArgErr) where T0 : unmanaged
+        public static unsafe int ITypeInfoInvokeProxy<T0>(this Windows thisApi, ITypeInfo* This, Span<T0> pvInstance, int memid, ushort wFlags, DispatchParams* pDispParams, Variant* pVarResult, ExceptionInfo* pExcepInfo, uint* puArgErr) where T0 : unmanaged
         {
             // SpanOverloader
             return thisApi.ITypeInfoInvokeProxy(This, ref pvInstance.GetPinnableReference(), memid, wFlags, pDispParams, pVarResult, pExcepInfo, puArgErr);
@@ -42394,7 +42394,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 6089, Column 41 in oaidl.h")]
-        public static unsafe int ITypeInfoInvokeProxy<T0>(this Windows thisApi, ITypeInfo* This, Span<T0> pvInstance, int memid, ushort wFlags, DispatchParams* pDispParams, Variant* pVarResult, ExcepInfo* pExcepInfo, Span<uint> puArgErr) where T0 : unmanaged
+        public static unsafe int ITypeInfoInvokeProxy<T0>(this Windows thisApi, ITypeInfo* This, Span<T0> pvInstance, int memid, ushort wFlags, DispatchParams* pDispParams, Variant* pVarResult, ExceptionInfo* pExcepInfo, Span<uint> puArgErr) where T0 : unmanaged
         {
             // SpanOverloader
             return thisApi.ITypeInfoInvokeProxy(This, ref pvInstance.GetPinnableReference(), memid, wFlags, pDispParams, pVarResult, pExcepInfo, ref puArgErr.GetPinnableReference());
@@ -42402,7 +42402,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 6089, Column 41 in oaidl.h")]
-        public static unsafe int ITypeInfoInvokeProxy<T0>(this Windows thisApi, ITypeInfo* This, Span<T0> pvInstance, int memid, ushort wFlags, DispatchParams* pDispParams, Variant* pVarResult, Span<ExcepInfo> pExcepInfo, uint* puArgErr) where T0 : unmanaged
+        public static unsafe int ITypeInfoInvokeProxy<T0>(this Windows thisApi, ITypeInfo* This, Span<T0> pvInstance, int memid, ushort wFlags, DispatchParams* pDispParams, Variant* pVarResult, Span<ExceptionInfo> pExcepInfo, uint* puArgErr) where T0 : unmanaged
         {
             // SpanOverloader
             return thisApi.ITypeInfoInvokeProxy(This, ref pvInstance.GetPinnableReference(), memid, wFlags, pDispParams, pVarResult, ref pExcepInfo.GetPinnableReference(), puArgErr);
@@ -42410,7 +42410,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 6089, Column 41 in oaidl.h")]
-        public static unsafe int ITypeInfoInvokeProxy<T0>(this Windows thisApi, ITypeInfo* This, Span<T0> pvInstance, int memid, ushort wFlags, DispatchParams* pDispParams, Variant* pVarResult, Span<ExcepInfo> pExcepInfo, Span<uint> puArgErr) where T0 : unmanaged
+        public static unsafe int ITypeInfoInvokeProxy<T0>(this Windows thisApi, ITypeInfo* This, Span<T0> pvInstance, int memid, ushort wFlags, DispatchParams* pDispParams, Variant* pVarResult, Span<ExceptionInfo> pExcepInfo, Span<uint> puArgErr) where T0 : unmanaged
         {
             // SpanOverloader
             return thisApi.ITypeInfoInvokeProxy(This, ref pvInstance.GetPinnableReference(), memid, wFlags, pDispParams, pVarResult, ref pExcepInfo.GetPinnableReference(), ref puArgErr.GetPinnableReference());
@@ -42418,7 +42418,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 6089, Column 41 in oaidl.h")]
-        public static unsafe int ITypeInfoInvokeProxy<T0>(this Windows thisApi, ITypeInfo* This, Span<T0> pvInstance, int memid, ushort wFlags, DispatchParams* pDispParams, Span<Variant> pVarResult, ExcepInfo* pExcepInfo, uint* puArgErr) where T0 : unmanaged
+        public static unsafe int ITypeInfoInvokeProxy<T0>(this Windows thisApi, ITypeInfo* This, Span<T0> pvInstance, int memid, ushort wFlags, DispatchParams* pDispParams, Span<Variant> pVarResult, ExceptionInfo* pExcepInfo, uint* puArgErr) where T0 : unmanaged
         {
             // SpanOverloader
             return thisApi.ITypeInfoInvokeProxy(This, ref pvInstance.GetPinnableReference(), memid, wFlags, pDispParams, ref pVarResult.GetPinnableReference(), pExcepInfo, puArgErr);
@@ -42426,7 +42426,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 6089, Column 41 in oaidl.h")]
-        public static unsafe int ITypeInfoInvokeProxy<T0>(this Windows thisApi, ITypeInfo* This, Span<T0> pvInstance, int memid, ushort wFlags, DispatchParams* pDispParams, Span<Variant> pVarResult, ExcepInfo* pExcepInfo, Span<uint> puArgErr) where T0 : unmanaged
+        public static unsafe int ITypeInfoInvokeProxy<T0>(this Windows thisApi, ITypeInfo* This, Span<T0> pvInstance, int memid, ushort wFlags, DispatchParams* pDispParams, Span<Variant> pVarResult, ExceptionInfo* pExcepInfo, Span<uint> puArgErr) where T0 : unmanaged
         {
             // SpanOverloader
             return thisApi.ITypeInfoInvokeProxy(This, ref pvInstance.GetPinnableReference(), memid, wFlags, pDispParams, ref pVarResult.GetPinnableReference(), pExcepInfo, ref puArgErr.GetPinnableReference());
@@ -42434,7 +42434,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 6089, Column 41 in oaidl.h")]
-        public static unsafe int ITypeInfoInvokeProxy<T0>(this Windows thisApi, ITypeInfo* This, Span<T0> pvInstance, int memid, ushort wFlags, DispatchParams* pDispParams, Span<Variant> pVarResult, Span<ExcepInfo> pExcepInfo, uint* puArgErr) where T0 : unmanaged
+        public static unsafe int ITypeInfoInvokeProxy<T0>(this Windows thisApi, ITypeInfo* This, Span<T0> pvInstance, int memid, ushort wFlags, DispatchParams* pDispParams, Span<Variant> pVarResult, Span<ExceptionInfo> pExcepInfo, uint* puArgErr) where T0 : unmanaged
         {
             // SpanOverloader
             return thisApi.ITypeInfoInvokeProxy(This, ref pvInstance.GetPinnableReference(), memid, wFlags, pDispParams, ref pVarResult.GetPinnableReference(), ref pExcepInfo.GetPinnableReference(), puArgErr);
@@ -42442,7 +42442,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 6089, Column 41 in oaidl.h")]
-        public static unsafe int ITypeInfoInvokeProxy<T0>(this Windows thisApi, ITypeInfo* This, Span<T0> pvInstance, int memid, ushort wFlags, DispatchParams* pDispParams, Span<Variant> pVarResult, Span<ExcepInfo> pExcepInfo, Span<uint> puArgErr) where T0 : unmanaged
+        public static unsafe int ITypeInfoInvokeProxy<T0>(this Windows thisApi, ITypeInfo* This, Span<T0> pvInstance, int memid, ushort wFlags, DispatchParams* pDispParams, Span<Variant> pVarResult, Span<ExceptionInfo> pExcepInfo, Span<uint> puArgErr) where T0 : unmanaged
         {
             // SpanOverloader
             return thisApi.ITypeInfoInvokeProxy(This, ref pvInstance.GetPinnableReference(), memid, wFlags, pDispParams, ref pVarResult.GetPinnableReference(), ref pExcepInfo.GetPinnableReference(), ref puArgErr.GetPinnableReference());
@@ -42450,7 +42450,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 6089, Column 41 in oaidl.h")]
-        public static unsafe int ITypeInfoInvokeProxy<T0>(this Windows thisApi, ITypeInfo* This, Span<T0> pvInstance, int memid, ushort wFlags, Span<DispatchParams> pDispParams, Variant* pVarResult, ExcepInfo* pExcepInfo, uint* puArgErr) where T0 : unmanaged
+        public static unsafe int ITypeInfoInvokeProxy<T0>(this Windows thisApi, ITypeInfo* This, Span<T0> pvInstance, int memid, ushort wFlags, Span<DispatchParams> pDispParams, Variant* pVarResult, ExceptionInfo* pExcepInfo, uint* puArgErr) where T0 : unmanaged
         {
             // SpanOverloader
             return thisApi.ITypeInfoInvokeProxy(This, ref pvInstance.GetPinnableReference(), memid, wFlags, ref pDispParams.GetPinnableReference(), pVarResult, pExcepInfo, puArgErr);
@@ -42458,7 +42458,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 6089, Column 41 in oaidl.h")]
-        public static unsafe int ITypeInfoInvokeProxy<T0>(this Windows thisApi, ITypeInfo* This, Span<T0> pvInstance, int memid, ushort wFlags, Span<DispatchParams> pDispParams, Variant* pVarResult, ExcepInfo* pExcepInfo, Span<uint> puArgErr) where T0 : unmanaged
+        public static unsafe int ITypeInfoInvokeProxy<T0>(this Windows thisApi, ITypeInfo* This, Span<T0> pvInstance, int memid, ushort wFlags, Span<DispatchParams> pDispParams, Variant* pVarResult, ExceptionInfo* pExcepInfo, Span<uint> puArgErr) where T0 : unmanaged
         {
             // SpanOverloader
             return thisApi.ITypeInfoInvokeProxy(This, ref pvInstance.GetPinnableReference(), memid, wFlags, ref pDispParams.GetPinnableReference(), pVarResult, pExcepInfo, ref puArgErr.GetPinnableReference());
@@ -42466,7 +42466,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 6089, Column 41 in oaidl.h")]
-        public static unsafe int ITypeInfoInvokeProxy<T0>(this Windows thisApi, ITypeInfo* This, Span<T0> pvInstance, int memid, ushort wFlags, Span<DispatchParams> pDispParams, Variant* pVarResult, Span<ExcepInfo> pExcepInfo, uint* puArgErr) where T0 : unmanaged
+        public static unsafe int ITypeInfoInvokeProxy<T0>(this Windows thisApi, ITypeInfo* This, Span<T0> pvInstance, int memid, ushort wFlags, Span<DispatchParams> pDispParams, Variant* pVarResult, Span<ExceptionInfo> pExcepInfo, uint* puArgErr) where T0 : unmanaged
         {
             // SpanOverloader
             return thisApi.ITypeInfoInvokeProxy(This, ref pvInstance.GetPinnableReference(), memid, wFlags, ref pDispParams.GetPinnableReference(), pVarResult, ref pExcepInfo.GetPinnableReference(), puArgErr);
@@ -42474,7 +42474,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 6089, Column 41 in oaidl.h")]
-        public static unsafe int ITypeInfoInvokeProxy<T0>(this Windows thisApi, ITypeInfo* This, Span<T0> pvInstance, int memid, ushort wFlags, Span<DispatchParams> pDispParams, Variant* pVarResult, Span<ExcepInfo> pExcepInfo, Span<uint> puArgErr) where T0 : unmanaged
+        public static unsafe int ITypeInfoInvokeProxy<T0>(this Windows thisApi, ITypeInfo* This, Span<T0> pvInstance, int memid, ushort wFlags, Span<DispatchParams> pDispParams, Variant* pVarResult, Span<ExceptionInfo> pExcepInfo, Span<uint> puArgErr) where T0 : unmanaged
         {
             // SpanOverloader
             return thisApi.ITypeInfoInvokeProxy(This, ref pvInstance.GetPinnableReference(), memid, wFlags, ref pDispParams.GetPinnableReference(), pVarResult, ref pExcepInfo.GetPinnableReference(), ref puArgErr.GetPinnableReference());
@@ -42482,7 +42482,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 6089, Column 41 in oaidl.h")]
-        public static unsafe int ITypeInfoInvokeProxy<T0>(this Windows thisApi, ITypeInfo* This, Span<T0> pvInstance, int memid, ushort wFlags, Span<DispatchParams> pDispParams, Span<Variant> pVarResult, ExcepInfo* pExcepInfo, uint* puArgErr) where T0 : unmanaged
+        public static unsafe int ITypeInfoInvokeProxy<T0>(this Windows thisApi, ITypeInfo* This, Span<T0> pvInstance, int memid, ushort wFlags, Span<DispatchParams> pDispParams, Span<Variant> pVarResult, ExceptionInfo* pExcepInfo, uint* puArgErr) where T0 : unmanaged
         {
             // SpanOverloader
             return thisApi.ITypeInfoInvokeProxy(This, ref pvInstance.GetPinnableReference(), memid, wFlags, ref pDispParams.GetPinnableReference(), ref pVarResult.GetPinnableReference(), pExcepInfo, puArgErr);
@@ -42490,7 +42490,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 6089, Column 41 in oaidl.h")]
-        public static unsafe int ITypeInfoInvokeProxy<T0>(this Windows thisApi, ITypeInfo* This, Span<T0> pvInstance, int memid, ushort wFlags, Span<DispatchParams> pDispParams, Span<Variant> pVarResult, ExcepInfo* pExcepInfo, Span<uint> puArgErr) where T0 : unmanaged
+        public static unsafe int ITypeInfoInvokeProxy<T0>(this Windows thisApi, ITypeInfo* This, Span<T0> pvInstance, int memid, ushort wFlags, Span<DispatchParams> pDispParams, Span<Variant> pVarResult, ExceptionInfo* pExcepInfo, Span<uint> puArgErr) where T0 : unmanaged
         {
             // SpanOverloader
             return thisApi.ITypeInfoInvokeProxy(This, ref pvInstance.GetPinnableReference(), memid, wFlags, ref pDispParams.GetPinnableReference(), ref pVarResult.GetPinnableReference(), pExcepInfo, ref puArgErr.GetPinnableReference());
@@ -42498,7 +42498,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 6089, Column 41 in oaidl.h")]
-        public static unsafe int ITypeInfoInvokeProxy<T0>(this Windows thisApi, ITypeInfo* This, Span<T0> pvInstance, int memid, ushort wFlags, Span<DispatchParams> pDispParams, Span<Variant> pVarResult, Span<ExcepInfo> pExcepInfo, uint* puArgErr) where T0 : unmanaged
+        public static unsafe int ITypeInfoInvokeProxy<T0>(this Windows thisApi, ITypeInfo* This, Span<T0> pvInstance, int memid, ushort wFlags, Span<DispatchParams> pDispParams, Span<Variant> pVarResult, Span<ExceptionInfo> pExcepInfo, uint* puArgErr) where T0 : unmanaged
         {
             // SpanOverloader
             return thisApi.ITypeInfoInvokeProxy(This, ref pvInstance.GetPinnableReference(), memid, wFlags, ref pDispParams.GetPinnableReference(), ref pVarResult.GetPinnableReference(), ref pExcepInfo.GetPinnableReference(), puArgErr);
@@ -42506,7 +42506,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 6089, Column 41 in oaidl.h")]
-        public static unsafe int ITypeInfoInvokeProxy<T0>(this Windows thisApi, ITypeInfo* This, Span<T0> pvInstance, int memid, ushort wFlags, Span<DispatchParams> pDispParams, Span<Variant> pVarResult, Span<ExcepInfo> pExcepInfo, Span<uint> puArgErr) where T0 : unmanaged
+        public static unsafe int ITypeInfoInvokeProxy<T0>(this Windows thisApi, ITypeInfo* This, Span<T0> pvInstance, int memid, ushort wFlags, Span<DispatchParams> pDispParams, Span<Variant> pVarResult, Span<ExceptionInfo> pExcepInfo, Span<uint> puArgErr) where T0 : unmanaged
         {
             // SpanOverloader
             return thisApi.ITypeInfoInvokeProxy(This, ref pvInstance.GetPinnableReference(), memid, wFlags, ref pDispParams.GetPinnableReference(), ref pVarResult.GetPinnableReference(), ref pExcepInfo.GetPinnableReference(), ref puArgErr.GetPinnableReference());
@@ -42514,7 +42514,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 6089, Column 41 in oaidl.h")]
-        public static unsafe int ITypeInfoInvokeProxy(this Windows thisApi, Span<ITypeInfo> This, void* pvInstance, int memid, ushort wFlags, DispatchParams* pDispParams, Variant* pVarResult, ExcepInfo* pExcepInfo, uint* puArgErr)
+        public static unsafe int ITypeInfoInvokeProxy(this Windows thisApi, Span<ITypeInfo> This, void* pvInstance, int memid, ushort wFlags, DispatchParams* pDispParams, Variant* pVarResult, ExceptionInfo* pExcepInfo, uint* puArgErr)
         {
             // SpanOverloader
             return thisApi.ITypeInfoInvokeProxy(ref This.GetPinnableReference(), pvInstance, memid, wFlags, pDispParams, pVarResult, pExcepInfo, puArgErr);
@@ -42522,7 +42522,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 6089, Column 41 in oaidl.h")]
-        public static unsafe int ITypeInfoInvokeProxy(this Windows thisApi, Span<ITypeInfo> This, void* pvInstance, int memid, ushort wFlags, DispatchParams* pDispParams, Variant* pVarResult, ExcepInfo* pExcepInfo, Span<uint> puArgErr)
+        public static unsafe int ITypeInfoInvokeProxy(this Windows thisApi, Span<ITypeInfo> This, void* pvInstance, int memid, ushort wFlags, DispatchParams* pDispParams, Variant* pVarResult, ExceptionInfo* pExcepInfo, Span<uint> puArgErr)
         {
             // SpanOverloader
             return thisApi.ITypeInfoInvokeProxy(ref This.GetPinnableReference(), pvInstance, memid, wFlags, pDispParams, pVarResult, pExcepInfo, ref puArgErr.GetPinnableReference());
@@ -42530,7 +42530,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 6089, Column 41 in oaidl.h")]
-        public static unsafe int ITypeInfoInvokeProxy(this Windows thisApi, Span<ITypeInfo> This, void* pvInstance, int memid, ushort wFlags, DispatchParams* pDispParams, Variant* pVarResult, Span<ExcepInfo> pExcepInfo, uint* puArgErr)
+        public static unsafe int ITypeInfoInvokeProxy(this Windows thisApi, Span<ITypeInfo> This, void* pvInstance, int memid, ushort wFlags, DispatchParams* pDispParams, Variant* pVarResult, Span<ExceptionInfo> pExcepInfo, uint* puArgErr)
         {
             // SpanOverloader
             return thisApi.ITypeInfoInvokeProxy(ref This.GetPinnableReference(), pvInstance, memid, wFlags, pDispParams, pVarResult, ref pExcepInfo.GetPinnableReference(), puArgErr);
@@ -42538,7 +42538,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 6089, Column 41 in oaidl.h")]
-        public static unsafe int ITypeInfoInvokeProxy(this Windows thisApi, Span<ITypeInfo> This, void* pvInstance, int memid, ushort wFlags, DispatchParams* pDispParams, Variant* pVarResult, Span<ExcepInfo> pExcepInfo, Span<uint> puArgErr)
+        public static unsafe int ITypeInfoInvokeProxy(this Windows thisApi, Span<ITypeInfo> This, void* pvInstance, int memid, ushort wFlags, DispatchParams* pDispParams, Variant* pVarResult, Span<ExceptionInfo> pExcepInfo, Span<uint> puArgErr)
         {
             // SpanOverloader
             return thisApi.ITypeInfoInvokeProxy(ref This.GetPinnableReference(), pvInstance, memid, wFlags, pDispParams, pVarResult, ref pExcepInfo.GetPinnableReference(), ref puArgErr.GetPinnableReference());
@@ -42546,7 +42546,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 6089, Column 41 in oaidl.h")]
-        public static unsafe int ITypeInfoInvokeProxy(this Windows thisApi, Span<ITypeInfo> This, void* pvInstance, int memid, ushort wFlags, DispatchParams* pDispParams, Span<Variant> pVarResult, ExcepInfo* pExcepInfo, uint* puArgErr)
+        public static unsafe int ITypeInfoInvokeProxy(this Windows thisApi, Span<ITypeInfo> This, void* pvInstance, int memid, ushort wFlags, DispatchParams* pDispParams, Span<Variant> pVarResult, ExceptionInfo* pExcepInfo, uint* puArgErr)
         {
             // SpanOverloader
             return thisApi.ITypeInfoInvokeProxy(ref This.GetPinnableReference(), pvInstance, memid, wFlags, pDispParams, ref pVarResult.GetPinnableReference(), pExcepInfo, puArgErr);
@@ -42554,7 +42554,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 6089, Column 41 in oaidl.h")]
-        public static unsafe int ITypeInfoInvokeProxy(this Windows thisApi, Span<ITypeInfo> This, void* pvInstance, int memid, ushort wFlags, DispatchParams* pDispParams, Span<Variant> pVarResult, ExcepInfo* pExcepInfo, Span<uint> puArgErr)
+        public static unsafe int ITypeInfoInvokeProxy(this Windows thisApi, Span<ITypeInfo> This, void* pvInstance, int memid, ushort wFlags, DispatchParams* pDispParams, Span<Variant> pVarResult, ExceptionInfo* pExcepInfo, Span<uint> puArgErr)
         {
             // SpanOverloader
             return thisApi.ITypeInfoInvokeProxy(ref This.GetPinnableReference(), pvInstance, memid, wFlags, pDispParams, ref pVarResult.GetPinnableReference(), pExcepInfo, ref puArgErr.GetPinnableReference());
@@ -42562,7 +42562,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 6089, Column 41 in oaidl.h")]
-        public static unsafe int ITypeInfoInvokeProxy(this Windows thisApi, Span<ITypeInfo> This, void* pvInstance, int memid, ushort wFlags, DispatchParams* pDispParams, Span<Variant> pVarResult, Span<ExcepInfo> pExcepInfo, uint* puArgErr)
+        public static unsafe int ITypeInfoInvokeProxy(this Windows thisApi, Span<ITypeInfo> This, void* pvInstance, int memid, ushort wFlags, DispatchParams* pDispParams, Span<Variant> pVarResult, Span<ExceptionInfo> pExcepInfo, uint* puArgErr)
         {
             // SpanOverloader
             return thisApi.ITypeInfoInvokeProxy(ref This.GetPinnableReference(), pvInstance, memid, wFlags, pDispParams, ref pVarResult.GetPinnableReference(), ref pExcepInfo.GetPinnableReference(), puArgErr);
@@ -42570,7 +42570,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 6089, Column 41 in oaidl.h")]
-        public static unsafe int ITypeInfoInvokeProxy(this Windows thisApi, Span<ITypeInfo> This, void* pvInstance, int memid, ushort wFlags, DispatchParams* pDispParams, Span<Variant> pVarResult, Span<ExcepInfo> pExcepInfo, Span<uint> puArgErr)
+        public static unsafe int ITypeInfoInvokeProxy(this Windows thisApi, Span<ITypeInfo> This, void* pvInstance, int memid, ushort wFlags, DispatchParams* pDispParams, Span<Variant> pVarResult, Span<ExceptionInfo> pExcepInfo, Span<uint> puArgErr)
         {
             // SpanOverloader
             return thisApi.ITypeInfoInvokeProxy(ref This.GetPinnableReference(), pvInstance, memid, wFlags, pDispParams, ref pVarResult.GetPinnableReference(), ref pExcepInfo.GetPinnableReference(), ref puArgErr.GetPinnableReference());
@@ -42578,7 +42578,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 6089, Column 41 in oaidl.h")]
-        public static unsafe int ITypeInfoInvokeProxy(this Windows thisApi, Span<ITypeInfo> This, void* pvInstance, int memid, ushort wFlags, Span<DispatchParams> pDispParams, Variant* pVarResult, ExcepInfo* pExcepInfo, uint* puArgErr)
+        public static unsafe int ITypeInfoInvokeProxy(this Windows thisApi, Span<ITypeInfo> This, void* pvInstance, int memid, ushort wFlags, Span<DispatchParams> pDispParams, Variant* pVarResult, ExceptionInfo* pExcepInfo, uint* puArgErr)
         {
             // SpanOverloader
             return thisApi.ITypeInfoInvokeProxy(ref This.GetPinnableReference(), pvInstance, memid, wFlags, ref pDispParams.GetPinnableReference(), pVarResult, pExcepInfo, puArgErr);
@@ -42586,7 +42586,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 6089, Column 41 in oaidl.h")]
-        public static unsafe int ITypeInfoInvokeProxy(this Windows thisApi, Span<ITypeInfo> This, void* pvInstance, int memid, ushort wFlags, Span<DispatchParams> pDispParams, Variant* pVarResult, ExcepInfo* pExcepInfo, Span<uint> puArgErr)
+        public static unsafe int ITypeInfoInvokeProxy(this Windows thisApi, Span<ITypeInfo> This, void* pvInstance, int memid, ushort wFlags, Span<DispatchParams> pDispParams, Variant* pVarResult, ExceptionInfo* pExcepInfo, Span<uint> puArgErr)
         {
             // SpanOverloader
             return thisApi.ITypeInfoInvokeProxy(ref This.GetPinnableReference(), pvInstance, memid, wFlags, ref pDispParams.GetPinnableReference(), pVarResult, pExcepInfo, ref puArgErr.GetPinnableReference());
@@ -42594,7 +42594,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 6089, Column 41 in oaidl.h")]
-        public static unsafe int ITypeInfoInvokeProxy(this Windows thisApi, Span<ITypeInfo> This, void* pvInstance, int memid, ushort wFlags, Span<DispatchParams> pDispParams, Variant* pVarResult, Span<ExcepInfo> pExcepInfo, uint* puArgErr)
+        public static unsafe int ITypeInfoInvokeProxy(this Windows thisApi, Span<ITypeInfo> This, void* pvInstance, int memid, ushort wFlags, Span<DispatchParams> pDispParams, Variant* pVarResult, Span<ExceptionInfo> pExcepInfo, uint* puArgErr)
         {
             // SpanOverloader
             return thisApi.ITypeInfoInvokeProxy(ref This.GetPinnableReference(), pvInstance, memid, wFlags, ref pDispParams.GetPinnableReference(), pVarResult, ref pExcepInfo.GetPinnableReference(), puArgErr);
@@ -42602,7 +42602,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 6089, Column 41 in oaidl.h")]
-        public static unsafe int ITypeInfoInvokeProxy(this Windows thisApi, Span<ITypeInfo> This, void* pvInstance, int memid, ushort wFlags, Span<DispatchParams> pDispParams, Variant* pVarResult, Span<ExcepInfo> pExcepInfo, Span<uint> puArgErr)
+        public static unsafe int ITypeInfoInvokeProxy(this Windows thisApi, Span<ITypeInfo> This, void* pvInstance, int memid, ushort wFlags, Span<DispatchParams> pDispParams, Variant* pVarResult, Span<ExceptionInfo> pExcepInfo, Span<uint> puArgErr)
         {
             // SpanOverloader
             return thisApi.ITypeInfoInvokeProxy(ref This.GetPinnableReference(), pvInstance, memid, wFlags, ref pDispParams.GetPinnableReference(), pVarResult, ref pExcepInfo.GetPinnableReference(), ref puArgErr.GetPinnableReference());
@@ -42610,7 +42610,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 6089, Column 41 in oaidl.h")]
-        public static unsafe int ITypeInfoInvokeProxy(this Windows thisApi, Span<ITypeInfo> This, void* pvInstance, int memid, ushort wFlags, Span<DispatchParams> pDispParams, Span<Variant> pVarResult, ExcepInfo* pExcepInfo, uint* puArgErr)
+        public static unsafe int ITypeInfoInvokeProxy(this Windows thisApi, Span<ITypeInfo> This, void* pvInstance, int memid, ushort wFlags, Span<DispatchParams> pDispParams, Span<Variant> pVarResult, ExceptionInfo* pExcepInfo, uint* puArgErr)
         {
             // SpanOverloader
             return thisApi.ITypeInfoInvokeProxy(ref This.GetPinnableReference(), pvInstance, memid, wFlags, ref pDispParams.GetPinnableReference(), ref pVarResult.GetPinnableReference(), pExcepInfo, puArgErr);
@@ -42618,7 +42618,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 6089, Column 41 in oaidl.h")]
-        public static unsafe int ITypeInfoInvokeProxy(this Windows thisApi, Span<ITypeInfo> This, void* pvInstance, int memid, ushort wFlags, Span<DispatchParams> pDispParams, Span<Variant> pVarResult, ExcepInfo* pExcepInfo, Span<uint> puArgErr)
+        public static unsafe int ITypeInfoInvokeProxy(this Windows thisApi, Span<ITypeInfo> This, void* pvInstance, int memid, ushort wFlags, Span<DispatchParams> pDispParams, Span<Variant> pVarResult, ExceptionInfo* pExcepInfo, Span<uint> puArgErr)
         {
             // SpanOverloader
             return thisApi.ITypeInfoInvokeProxy(ref This.GetPinnableReference(), pvInstance, memid, wFlags, ref pDispParams.GetPinnableReference(), ref pVarResult.GetPinnableReference(), pExcepInfo, ref puArgErr.GetPinnableReference());
@@ -42626,7 +42626,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 6089, Column 41 in oaidl.h")]
-        public static unsafe int ITypeInfoInvokeProxy(this Windows thisApi, Span<ITypeInfo> This, void* pvInstance, int memid, ushort wFlags, Span<DispatchParams> pDispParams, Span<Variant> pVarResult, Span<ExcepInfo> pExcepInfo, uint* puArgErr)
+        public static unsafe int ITypeInfoInvokeProxy(this Windows thisApi, Span<ITypeInfo> This, void* pvInstance, int memid, ushort wFlags, Span<DispatchParams> pDispParams, Span<Variant> pVarResult, Span<ExceptionInfo> pExcepInfo, uint* puArgErr)
         {
             // SpanOverloader
             return thisApi.ITypeInfoInvokeProxy(ref This.GetPinnableReference(), pvInstance, memid, wFlags, ref pDispParams.GetPinnableReference(), ref pVarResult.GetPinnableReference(), ref pExcepInfo.GetPinnableReference(), puArgErr);
@@ -42634,7 +42634,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 6089, Column 41 in oaidl.h")]
-        public static unsafe int ITypeInfoInvokeProxy(this Windows thisApi, Span<ITypeInfo> This, void* pvInstance, int memid, ushort wFlags, Span<DispatchParams> pDispParams, Span<Variant> pVarResult, Span<ExcepInfo> pExcepInfo, Span<uint> puArgErr)
+        public static unsafe int ITypeInfoInvokeProxy(this Windows thisApi, Span<ITypeInfo> This, void* pvInstance, int memid, ushort wFlags, Span<DispatchParams> pDispParams, Span<Variant> pVarResult, Span<ExceptionInfo> pExcepInfo, Span<uint> puArgErr)
         {
             // SpanOverloader
             return thisApi.ITypeInfoInvokeProxy(ref This.GetPinnableReference(), pvInstance, memid, wFlags, ref pDispParams.GetPinnableReference(), ref pVarResult.GetPinnableReference(), ref pExcepInfo.GetPinnableReference(), ref puArgErr.GetPinnableReference());
@@ -42642,7 +42642,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 6089, Column 41 in oaidl.h")]
-        public static unsafe int ITypeInfoInvokeProxy<T0>(this Windows thisApi, Span<ITypeInfo> This, Span<T0> pvInstance, int memid, ushort wFlags, DispatchParams* pDispParams, Variant* pVarResult, ExcepInfo* pExcepInfo, uint* puArgErr) where T0 : unmanaged
+        public static unsafe int ITypeInfoInvokeProxy<T0>(this Windows thisApi, Span<ITypeInfo> This, Span<T0> pvInstance, int memid, ushort wFlags, DispatchParams* pDispParams, Variant* pVarResult, ExceptionInfo* pExcepInfo, uint* puArgErr) where T0 : unmanaged
         {
             // SpanOverloader
             return thisApi.ITypeInfoInvokeProxy(ref This.GetPinnableReference(), ref pvInstance.GetPinnableReference(), memid, wFlags, pDispParams, pVarResult, pExcepInfo, puArgErr);
@@ -42650,7 +42650,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 6089, Column 41 in oaidl.h")]
-        public static unsafe int ITypeInfoInvokeProxy<T0>(this Windows thisApi, Span<ITypeInfo> This, Span<T0> pvInstance, int memid, ushort wFlags, DispatchParams* pDispParams, Variant* pVarResult, ExcepInfo* pExcepInfo, Span<uint> puArgErr) where T0 : unmanaged
+        public static unsafe int ITypeInfoInvokeProxy<T0>(this Windows thisApi, Span<ITypeInfo> This, Span<T0> pvInstance, int memid, ushort wFlags, DispatchParams* pDispParams, Variant* pVarResult, ExceptionInfo* pExcepInfo, Span<uint> puArgErr) where T0 : unmanaged
         {
             // SpanOverloader
             return thisApi.ITypeInfoInvokeProxy(ref This.GetPinnableReference(), ref pvInstance.GetPinnableReference(), memid, wFlags, pDispParams, pVarResult, pExcepInfo, ref puArgErr.GetPinnableReference());
@@ -42658,7 +42658,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 6089, Column 41 in oaidl.h")]
-        public static unsafe int ITypeInfoInvokeProxy<T0>(this Windows thisApi, Span<ITypeInfo> This, Span<T0> pvInstance, int memid, ushort wFlags, DispatchParams* pDispParams, Variant* pVarResult, Span<ExcepInfo> pExcepInfo, uint* puArgErr) where T0 : unmanaged
+        public static unsafe int ITypeInfoInvokeProxy<T0>(this Windows thisApi, Span<ITypeInfo> This, Span<T0> pvInstance, int memid, ushort wFlags, DispatchParams* pDispParams, Variant* pVarResult, Span<ExceptionInfo> pExcepInfo, uint* puArgErr) where T0 : unmanaged
         {
             // SpanOverloader
             return thisApi.ITypeInfoInvokeProxy(ref This.GetPinnableReference(), ref pvInstance.GetPinnableReference(), memid, wFlags, pDispParams, pVarResult, ref pExcepInfo.GetPinnableReference(), puArgErr);
@@ -42666,7 +42666,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 6089, Column 41 in oaidl.h")]
-        public static unsafe int ITypeInfoInvokeProxy<T0>(this Windows thisApi, Span<ITypeInfo> This, Span<T0> pvInstance, int memid, ushort wFlags, DispatchParams* pDispParams, Variant* pVarResult, Span<ExcepInfo> pExcepInfo, Span<uint> puArgErr) where T0 : unmanaged
+        public static unsafe int ITypeInfoInvokeProxy<T0>(this Windows thisApi, Span<ITypeInfo> This, Span<T0> pvInstance, int memid, ushort wFlags, DispatchParams* pDispParams, Variant* pVarResult, Span<ExceptionInfo> pExcepInfo, Span<uint> puArgErr) where T0 : unmanaged
         {
             // SpanOverloader
             return thisApi.ITypeInfoInvokeProxy(ref This.GetPinnableReference(), ref pvInstance.GetPinnableReference(), memid, wFlags, pDispParams, pVarResult, ref pExcepInfo.GetPinnableReference(), ref puArgErr.GetPinnableReference());
@@ -42674,7 +42674,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 6089, Column 41 in oaidl.h")]
-        public static unsafe int ITypeInfoInvokeProxy<T0>(this Windows thisApi, Span<ITypeInfo> This, Span<T0> pvInstance, int memid, ushort wFlags, DispatchParams* pDispParams, Span<Variant> pVarResult, ExcepInfo* pExcepInfo, uint* puArgErr) where T0 : unmanaged
+        public static unsafe int ITypeInfoInvokeProxy<T0>(this Windows thisApi, Span<ITypeInfo> This, Span<T0> pvInstance, int memid, ushort wFlags, DispatchParams* pDispParams, Span<Variant> pVarResult, ExceptionInfo* pExcepInfo, uint* puArgErr) where T0 : unmanaged
         {
             // SpanOverloader
             return thisApi.ITypeInfoInvokeProxy(ref This.GetPinnableReference(), ref pvInstance.GetPinnableReference(), memid, wFlags, pDispParams, ref pVarResult.GetPinnableReference(), pExcepInfo, puArgErr);
@@ -42682,7 +42682,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 6089, Column 41 in oaidl.h")]
-        public static unsafe int ITypeInfoInvokeProxy<T0>(this Windows thisApi, Span<ITypeInfo> This, Span<T0> pvInstance, int memid, ushort wFlags, DispatchParams* pDispParams, Span<Variant> pVarResult, ExcepInfo* pExcepInfo, Span<uint> puArgErr) where T0 : unmanaged
+        public static unsafe int ITypeInfoInvokeProxy<T0>(this Windows thisApi, Span<ITypeInfo> This, Span<T0> pvInstance, int memid, ushort wFlags, DispatchParams* pDispParams, Span<Variant> pVarResult, ExceptionInfo* pExcepInfo, Span<uint> puArgErr) where T0 : unmanaged
         {
             // SpanOverloader
             return thisApi.ITypeInfoInvokeProxy(ref This.GetPinnableReference(), ref pvInstance.GetPinnableReference(), memid, wFlags, pDispParams, ref pVarResult.GetPinnableReference(), pExcepInfo, ref puArgErr.GetPinnableReference());
@@ -42690,7 +42690,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 6089, Column 41 in oaidl.h")]
-        public static unsafe int ITypeInfoInvokeProxy<T0>(this Windows thisApi, Span<ITypeInfo> This, Span<T0> pvInstance, int memid, ushort wFlags, DispatchParams* pDispParams, Span<Variant> pVarResult, Span<ExcepInfo> pExcepInfo, uint* puArgErr) where T0 : unmanaged
+        public static unsafe int ITypeInfoInvokeProxy<T0>(this Windows thisApi, Span<ITypeInfo> This, Span<T0> pvInstance, int memid, ushort wFlags, DispatchParams* pDispParams, Span<Variant> pVarResult, Span<ExceptionInfo> pExcepInfo, uint* puArgErr) where T0 : unmanaged
         {
             // SpanOverloader
             return thisApi.ITypeInfoInvokeProxy(ref This.GetPinnableReference(), ref pvInstance.GetPinnableReference(), memid, wFlags, pDispParams, ref pVarResult.GetPinnableReference(), ref pExcepInfo.GetPinnableReference(), puArgErr);
@@ -42698,7 +42698,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 6089, Column 41 in oaidl.h")]
-        public static unsafe int ITypeInfoInvokeProxy<T0>(this Windows thisApi, Span<ITypeInfo> This, Span<T0> pvInstance, int memid, ushort wFlags, DispatchParams* pDispParams, Span<Variant> pVarResult, Span<ExcepInfo> pExcepInfo, Span<uint> puArgErr) where T0 : unmanaged
+        public static unsafe int ITypeInfoInvokeProxy<T0>(this Windows thisApi, Span<ITypeInfo> This, Span<T0> pvInstance, int memid, ushort wFlags, DispatchParams* pDispParams, Span<Variant> pVarResult, Span<ExceptionInfo> pExcepInfo, Span<uint> puArgErr) where T0 : unmanaged
         {
             // SpanOverloader
             return thisApi.ITypeInfoInvokeProxy(ref This.GetPinnableReference(), ref pvInstance.GetPinnableReference(), memid, wFlags, pDispParams, ref pVarResult.GetPinnableReference(), ref pExcepInfo.GetPinnableReference(), ref puArgErr.GetPinnableReference());
@@ -42706,7 +42706,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 6089, Column 41 in oaidl.h")]
-        public static unsafe int ITypeInfoInvokeProxy<T0>(this Windows thisApi, Span<ITypeInfo> This, Span<T0> pvInstance, int memid, ushort wFlags, Span<DispatchParams> pDispParams, Variant* pVarResult, ExcepInfo* pExcepInfo, uint* puArgErr) where T0 : unmanaged
+        public static unsafe int ITypeInfoInvokeProxy<T0>(this Windows thisApi, Span<ITypeInfo> This, Span<T0> pvInstance, int memid, ushort wFlags, Span<DispatchParams> pDispParams, Variant* pVarResult, ExceptionInfo* pExcepInfo, uint* puArgErr) where T0 : unmanaged
         {
             // SpanOverloader
             return thisApi.ITypeInfoInvokeProxy(ref This.GetPinnableReference(), ref pvInstance.GetPinnableReference(), memid, wFlags, ref pDispParams.GetPinnableReference(), pVarResult, pExcepInfo, puArgErr);
@@ -42714,7 +42714,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 6089, Column 41 in oaidl.h")]
-        public static unsafe int ITypeInfoInvokeProxy<T0>(this Windows thisApi, Span<ITypeInfo> This, Span<T0> pvInstance, int memid, ushort wFlags, Span<DispatchParams> pDispParams, Variant* pVarResult, ExcepInfo* pExcepInfo, Span<uint> puArgErr) where T0 : unmanaged
+        public static unsafe int ITypeInfoInvokeProxy<T0>(this Windows thisApi, Span<ITypeInfo> This, Span<T0> pvInstance, int memid, ushort wFlags, Span<DispatchParams> pDispParams, Variant* pVarResult, ExceptionInfo* pExcepInfo, Span<uint> puArgErr) where T0 : unmanaged
         {
             // SpanOverloader
             return thisApi.ITypeInfoInvokeProxy(ref This.GetPinnableReference(), ref pvInstance.GetPinnableReference(), memid, wFlags, ref pDispParams.GetPinnableReference(), pVarResult, pExcepInfo, ref puArgErr.GetPinnableReference());
@@ -42722,7 +42722,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 6089, Column 41 in oaidl.h")]
-        public static unsafe int ITypeInfoInvokeProxy<T0>(this Windows thisApi, Span<ITypeInfo> This, Span<T0> pvInstance, int memid, ushort wFlags, Span<DispatchParams> pDispParams, Variant* pVarResult, Span<ExcepInfo> pExcepInfo, uint* puArgErr) where T0 : unmanaged
+        public static unsafe int ITypeInfoInvokeProxy<T0>(this Windows thisApi, Span<ITypeInfo> This, Span<T0> pvInstance, int memid, ushort wFlags, Span<DispatchParams> pDispParams, Variant* pVarResult, Span<ExceptionInfo> pExcepInfo, uint* puArgErr) where T0 : unmanaged
         {
             // SpanOverloader
             return thisApi.ITypeInfoInvokeProxy(ref This.GetPinnableReference(), ref pvInstance.GetPinnableReference(), memid, wFlags, ref pDispParams.GetPinnableReference(), pVarResult, ref pExcepInfo.GetPinnableReference(), puArgErr);
@@ -42730,7 +42730,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 6089, Column 41 in oaidl.h")]
-        public static unsafe int ITypeInfoInvokeProxy<T0>(this Windows thisApi, Span<ITypeInfo> This, Span<T0> pvInstance, int memid, ushort wFlags, Span<DispatchParams> pDispParams, Variant* pVarResult, Span<ExcepInfo> pExcepInfo, Span<uint> puArgErr) where T0 : unmanaged
+        public static unsafe int ITypeInfoInvokeProxy<T0>(this Windows thisApi, Span<ITypeInfo> This, Span<T0> pvInstance, int memid, ushort wFlags, Span<DispatchParams> pDispParams, Variant* pVarResult, Span<ExceptionInfo> pExcepInfo, Span<uint> puArgErr) where T0 : unmanaged
         {
             // SpanOverloader
             return thisApi.ITypeInfoInvokeProxy(ref This.GetPinnableReference(), ref pvInstance.GetPinnableReference(), memid, wFlags, ref pDispParams.GetPinnableReference(), pVarResult, ref pExcepInfo.GetPinnableReference(), ref puArgErr.GetPinnableReference());
@@ -42738,7 +42738,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 6089, Column 41 in oaidl.h")]
-        public static unsafe int ITypeInfoInvokeProxy<T0>(this Windows thisApi, Span<ITypeInfo> This, Span<T0> pvInstance, int memid, ushort wFlags, Span<DispatchParams> pDispParams, Span<Variant> pVarResult, ExcepInfo* pExcepInfo, uint* puArgErr) where T0 : unmanaged
+        public static unsafe int ITypeInfoInvokeProxy<T0>(this Windows thisApi, Span<ITypeInfo> This, Span<T0> pvInstance, int memid, ushort wFlags, Span<DispatchParams> pDispParams, Span<Variant> pVarResult, ExceptionInfo* pExcepInfo, uint* puArgErr) where T0 : unmanaged
         {
             // SpanOverloader
             return thisApi.ITypeInfoInvokeProxy(ref This.GetPinnableReference(), ref pvInstance.GetPinnableReference(), memid, wFlags, ref pDispParams.GetPinnableReference(), ref pVarResult.GetPinnableReference(), pExcepInfo, puArgErr);
@@ -42746,7 +42746,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 6089, Column 41 in oaidl.h")]
-        public static unsafe int ITypeInfoInvokeProxy<T0>(this Windows thisApi, Span<ITypeInfo> This, Span<T0> pvInstance, int memid, ushort wFlags, Span<DispatchParams> pDispParams, Span<Variant> pVarResult, ExcepInfo* pExcepInfo, Span<uint> puArgErr) where T0 : unmanaged
+        public static unsafe int ITypeInfoInvokeProxy<T0>(this Windows thisApi, Span<ITypeInfo> This, Span<T0> pvInstance, int memid, ushort wFlags, Span<DispatchParams> pDispParams, Span<Variant> pVarResult, ExceptionInfo* pExcepInfo, Span<uint> puArgErr) where T0 : unmanaged
         {
             // SpanOverloader
             return thisApi.ITypeInfoInvokeProxy(ref This.GetPinnableReference(), ref pvInstance.GetPinnableReference(), memid, wFlags, ref pDispParams.GetPinnableReference(), ref pVarResult.GetPinnableReference(), pExcepInfo, ref puArgErr.GetPinnableReference());
@@ -42754,7 +42754,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 6089, Column 41 in oaidl.h")]
-        public static unsafe int ITypeInfoInvokeProxy<T0>(this Windows thisApi, Span<ITypeInfo> This, Span<T0> pvInstance, int memid, ushort wFlags, Span<DispatchParams> pDispParams, Span<Variant> pVarResult, Span<ExcepInfo> pExcepInfo, uint* puArgErr) where T0 : unmanaged
+        public static unsafe int ITypeInfoInvokeProxy<T0>(this Windows thisApi, Span<ITypeInfo> This, Span<T0> pvInstance, int memid, ushort wFlags, Span<DispatchParams> pDispParams, Span<Variant> pVarResult, Span<ExceptionInfo> pExcepInfo, uint* puArgErr) where T0 : unmanaged
         {
             // SpanOverloader
             return thisApi.ITypeInfoInvokeProxy(ref This.GetPinnableReference(), ref pvInstance.GetPinnableReference(), memid, wFlags, ref pDispParams.GetPinnableReference(), ref pVarResult.GetPinnableReference(), ref pExcepInfo.GetPinnableReference(), puArgErr);
@@ -42762,7 +42762,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 6089, Column 41 in oaidl.h")]
-        public static unsafe int ITypeInfoInvokeProxy<T0>(this Windows thisApi, Span<ITypeInfo> This, Span<T0> pvInstance, int memid, ushort wFlags, Span<DispatchParams> pDispParams, Span<Variant> pVarResult, Span<ExcepInfo> pExcepInfo, Span<uint> puArgErr) where T0 : unmanaged
+        public static unsafe int ITypeInfoInvokeProxy<T0>(this Windows thisApi, Span<ITypeInfo> This, Span<T0> pvInstance, int memid, ushort wFlags, Span<DispatchParams> pDispParams, Span<Variant> pVarResult, Span<ExceptionInfo> pExcepInfo, Span<uint> puArgErr) where T0 : unmanaged
         {
             // SpanOverloader
             return thisApi.ITypeInfoInvokeProxy(ref This.GetPinnableReference(), ref pvInstance.GetPinnableReference(), memid, wFlags, ref pDispParams.GetPinnableReference(), ref pVarResult.GetPinnableReference(), ref pExcepInfo.GetPinnableReference(), ref puArgErr.GetPinnableReference());
@@ -49058,7 +49058,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 7040, Column 39 in ocidl.h")]
-        public static unsafe uint HACCELUserSize(this Windows thisApi, Span<uint> arg0, uint arg1, IntPtr** arg2)
+        public static unsafe uint HACCELUserSize(this Windows thisApi, Span<uint> arg0, uint arg1, void** arg2)
         {
             // SpanOverloader
             return thisApi.HACCELUserSize(ref arg0.GetPinnableReference(), arg1, arg2);
@@ -49066,7 +49066,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 7040, Column 39 in ocidl.h")]
-        public static unsafe uint HACCELUserSize(this Windows thisApi, Span<uint> arg0, uint arg1, ref IntPtr* arg2)
+        public static unsafe uint HACCELUserSize(this Windows thisApi, Span<uint> arg0, uint arg1, ref void* arg2)
         {
             // SpanOverloader
             return thisApi.HACCELUserSize(ref arg0.GetPinnableReference(), arg1, ref arg2);
@@ -49074,7 +49074,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 7041, Column 29 in ocidl.h")]
-        public static unsafe byte* HACCELUserMarshal(this Windows thisApi, uint* arg0, Span<byte> arg1, IntPtr** arg2)
+        public static unsafe byte* HACCELUserMarshal(this Windows thisApi, uint* arg0, Span<byte> arg1, void** arg2)
         {
             // SpanOverloader
             return thisApi.HACCELUserMarshal(arg0, ref arg1.GetPinnableReference(), arg2);
@@ -49082,7 +49082,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 7041, Column 29 in ocidl.h")]
-        public static unsafe byte* HACCELUserMarshal(this Windows thisApi, uint* arg0, Span<byte> arg1, ref IntPtr* arg2)
+        public static unsafe byte* HACCELUserMarshal(this Windows thisApi, uint* arg0, Span<byte> arg1, ref void* arg2)
         {
             // SpanOverloader
             return thisApi.HACCELUserMarshal(arg0, ref arg1.GetPinnableReference(), ref arg2);
@@ -49090,7 +49090,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 7041, Column 29 in ocidl.h")]
-        public static unsafe byte* HACCELUserMarshal(this Windows thisApi, Span<uint> arg0, byte* arg1, IntPtr** arg2)
+        public static unsafe byte* HACCELUserMarshal(this Windows thisApi, Span<uint> arg0, byte* arg1, void** arg2)
         {
             // SpanOverloader
             return thisApi.HACCELUserMarshal(ref arg0.GetPinnableReference(), arg1, arg2);
@@ -49098,7 +49098,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 7041, Column 29 in ocidl.h")]
-        public static unsafe byte* HACCELUserMarshal(this Windows thisApi, Span<uint> arg0, byte* arg1, ref IntPtr* arg2)
+        public static unsafe byte* HACCELUserMarshal(this Windows thisApi, Span<uint> arg0, byte* arg1, ref void* arg2)
         {
             // SpanOverloader
             return thisApi.HACCELUserMarshal(ref arg0.GetPinnableReference(), arg1, ref arg2);
@@ -49106,7 +49106,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 7041, Column 29 in ocidl.h")]
-        public static unsafe byte* HACCELUserMarshal(this Windows thisApi, Span<uint> arg0, Span<byte> arg1, IntPtr** arg2)
+        public static unsafe byte* HACCELUserMarshal(this Windows thisApi, Span<uint> arg0, Span<byte> arg1, void** arg2)
         {
             // SpanOverloader
             return thisApi.HACCELUserMarshal(ref arg0.GetPinnableReference(), ref arg1.GetPinnableReference(), arg2);
@@ -49114,7 +49114,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 7041, Column 29 in ocidl.h")]
-        public static unsafe byte* HACCELUserMarshal(this Windows thisApi, Span<uint> arg0, Span<byte> arg1, ref IntPtr* arg2)
+        public static unsafe byte* HACCELUserMarshal(this Windows thisApi, Span<uint> arg0, Span<byte> arg1, ref void* arg2)
         {
             // SpanOverloader
             return thisApi.HACCELUserMarshal(ref arg0.GetPinnableReference(), ref arg1.GetPinnableReference(), ref arg2);
@@ -49122,7 +49122,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 7041, Column 29 in ocidl.h")]
-        public static unsafe byte* HACCELUserMarshal(this Windows thisApi, Span<uint> arg0, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, IntPtr** arg2)
+        public static unsafe byte* HACCELUserMarshal(this Windows thisApi, Span<uint> arg0, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, void** arg2)
         {
             // SpanOverloader
             return thisApi.HACCELUserMarshal(ref arg0.GetPinnableReference(), arg1, arg2);
@@ -49130,7 +49130,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 7041, Column 29 in ocidl.h")]
-        public static unsafe byte* HACCELUserMarshal(this Windows thisApi, Span<uint> arg0, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, ref IntPtr* arg2)
+        public static unsafe byte* HACCELUserMarshal(this Windows thisApi, Span<uint> arg0, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, ref void* arg2)
         {
             // SpanOverloader
             return thisApi.HACCELUserMarshal(ref arg0.GetPinnableReference(), arg1, ref arg2);
@@ -49138,7 +49138,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 7042, Column 29 in ocidl.h")]
-        public static unsafe byte* HACCELUserUnmarshal(this Windows thisApi, uint* arg0, Span<byte> arg1, IntPtr** arg2)
+        public static unsafe byte* HACCELUserUnmarshal(this Windows thisApi, uint* arg0, Span<byte> arg1, void** arg2)
         {
             // SpanOverloader
             return thisApi.HACCELUserUnmarshal(arg0, ref arg1.GetPinnableReference(), arg2);
@@ -49146,7 +49146,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 7042, Column 29 in ocidl.h")]
-        public static unsafe byte* HACCELUserUnmarshal(this Windows thisApi, uint* arg0, Span<byte> arg1, ref IntPtr* arg2)
+        public static unsafe byte* HACCELUserUnmarshal(this Windows thisApi, uint* arg0, Span<byte> arg1, ref void* arg2)
         {
             // SpanOverloader
             return thisApi.HACCELUserUnmarshal(arg0, ref arg1.GetPinnableReference(), ref arg2);
@@ -49154,7 +49154,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 7042, Column 29 in ocidl.h")]
-        public static unsafe byte* HACCELUserUnmarshal(this Windows thisApi, Span<uint> arg0, byte* arg1, IntPtr** arg2)
+        public static unsafe byte* HACCELUserUnmarshal(this Windows thisApi, Span<uint> arg0, byte* arg1, void** arg2)
         {
             // SpanOverloader
             return thisApi.HACCELUserUnmarshal(ref arg0.GetPinnableReference(), arg1, arg2);
@@ -49162,7 +49162,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 7042, Column 29 in ocidl.h")]
-        public static unsafe byte* HACCELUserUnmarshal(this Windows thisApi, Span<uint> arg0, byte* arg1, ref IntPtr* arg2)
+        public static unsafe byte* HACCELUserUnmarshal(this Windows thisApi, Span<uint> arg0, byte* arg1, ref void* arg2)
         {
             // SpanOverloader
             return thisApi.HACCELUserUnmarshal(ref arg0.GetPinnableReference(), arg1, ref arg2);
@@ -49170,7 +49170,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 7042, Column 29 in ocidl.h")]
-        public static unsafe byte* HACCELUserUnmarshal(this Windows thisApi, Span<uint> arg0, Span<byte> arg1, IntPtr** arg2)
+        public static unsafe byte* HACCELUserUnmarshal(this Windows thisApi, Span<uint> arg0, Span<byte> arg1, void** arg2)
         {
             // SpanOverloader
             return thisApi.HACCELUserUnmarshal(ref arg0.GetPinnableReference(), ref arg1.GetPinnableReference(), arg2);
@@ -49178,7 +49178,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 7042, Column 29 in ocidl.h")]
-        public static unsafe byte* HACCELUserUnmarshal(this Windows thisApi, Span<uint> arg0, Span<byte> arg1, ref IntPtr* arg2)
+        public static unsafe byte* HACCELUserUnmarshal(this Windows thisApi, Span<uint> arg0, Span<byte> arg1, ref void* arg2)
         {
             // SpanOverloader
             return thisApi.HACCELUserUnmarshal(ref arg0.GetPinnableReference(), ref arg1.GetPinnableReference(), ref arg2);
@@ -49186,7 +49186,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 7042, Column 29 in ocidl.h")]
-        public static unsafe byte* HACCELUserUnmarshal(this Windows thisApi, Span<uint> arg0, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, IntPtr** arg2)
+        public static unsafe byte* HACCELUserUnmarshal(this Windows thisApi, Span<uint> arg0, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, void** arg2)
         {
             // SpanOverloader
             return thisApi.HACCELUserUnmarshal(ref arg0.GetPinnableReference(), arg1, arg2);
@@ -49194,7 +49194,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 7042, Column 29 in ocidl.h")]
-        public static unsafe byte* HACCELUserUnmarshal(this Windows thisApi, Span<uint> arg0, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, ref IntPtr* arg2)
+        public static unsafe byte* HACCELUserUnmarshal(this Windows thisApi, Span<uint> arg0, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, ref void* arg2)
         {
             // SpanOverloader
             return thisApi.HACCELUserUnmarshal(ref arg0.GetPinnableReference(), arg1, ref arg2);
@@ -49202,7 +49202,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 7043, Column 39 in ocidl.h")]
-        public static unsafe void HACCELUserFree(this Windows thisApi, Span<uint> arg0, IntPtr** arg1)
+        public static unsafe void HACCELUserFree(this Windows thisApi, Span<uint> arg0, void** arg1)
         {
             // SpanOverloader
             thisApi.HACCELUserFree(ref arg0.GetPinnableReference(), arg1);
@@ -49210,7 +49210,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 7043, Column 39 in ocidl.h")]
-        public static unsafe void HACCELUserFree(this Windows thisApi, Span<uint> arg0, ref IntPtr* arg1)
+        public static unsafe void HACCELUserFree(this Windows thisApi, Span<uint> arg0, ref void* arg1)
         {
             // SpanOverloader
             thisApi.HACCELUserFree(ref arg0.GetPinnableReference(), ref arg1);
@@ -49218,7 +49218,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 7050, Column 39 in ocidl.h")]
-        public static unsafe uint HFONTUserSize(this Windows thisApi, Span<uint> arg0, uint arg1, IntPtr** arg2)
+        public static unsafe uint HFONTUserSize(this Windows thisApi, Span<uint> arg0, uint arg1, void** arg2)
         {
             // SpanOverloader
             return thisApi.HFONTUserSize(ref arg0.GetPinnableReference(), arg1, arg2);
@@ -49226,7 +49226,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 7050, Column 39 in ocidl.h")]
-        public static unsafe uint HFONTUserSize(this Windows thisApi, Span<uint> arg0, uint arg1, ref IntPtr* arg2)
+        public static unsafe uint HFONTUserSize(this Windows thisApi, Span<uint> arg0, uint arg1, ref void* arg2)
         {
             // SpanOverloader
             return thisApi.HFONTUserSize(ref arg0.GetPinnableReference(), arg1, ref arg2);
@@ -49234,7 +49234,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 7051, Column 29 in ocidl.h")]
-        public static unsafe byte* HFONTUserMarshal(this Windows thisApi, uint* arg0, Span<byte> arg1, IntPtr** arg2)
+        public static unsafe byte* HFONTUserMarshal(this Windows thisApi, uint* arg0, Span<byte> arg1, void** arg2)
         {
             // SpanOverloader
             return thisApi.HFONTUserMarshal(arg0, ref arg1.GetPinnableReference(), arg2);
@@ -49242,7 +49242,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 7051, Column 29 in ocidl.h")]
-        public static unsafe byte* HFONTUserMarshal(this Windows thisApi, uint* arg0, Span<byte> arg1, ref IntPtr* arg2)
+        public static unsafe byte* HFONTUserMarshal(this Windows thisApi, uint* arg0, Span<byte> arg1, ref void* arg2)
         {
             // SpanOverloader
             return thisApi.HFONTUserMarshal(arg0, ref arg1.GetPinnableReference(), ref arg2);
@@ -49250,7 +49250,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 7051, Column 29 in ocidl.h")]
-        public static unsafe byte* HFONTUserMarshal(this Windows thisApi, Span<uint> arg0, byte* arg1, IntPtr** arg2)
+        public static unsafe byte* HFONTUserMarshal(this Windows thisApi, Span<uint> arg0, byte* arg1, void** arg2)
         {
             // SpanOverloader
             return thisApi.HFONTUserMarshal(ref arg0.GetPinnableReference(), arg1, arg2);
@@ -49258,7 +49258,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 7051, Column 29 in ocidl.h")]
-        public static unsafe byte* HFONTUserMarshal(this Windows thisApi, Span<uint> arg0, byte* arg1, ref IntPtr* arg2)
+        public static unsafe byte* HFONTUserMarshal(this Windows thisApi, Span<uint> arg0, byte* arg1, ref void* arg2)
         {
             // SpanOverloader
             return thisApi.HFONTUserMarshal(ref arg0.GetPinnableReference(), arg1, ref arg2);
@@ -49266,7 +49266,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 7051, Column 29 in ocidl.h")]
-        public static unsafe byte* HFONTUserMarshal(this Windows thisApi, Span<uint> arg0, Span<byte> arg1, IntPtr** arg2)
+        public static unsafe byte* HFONTUserMarshal(this Windows thisApi, Span<uint> arg0, Span<byte> arg1, void** arg2)
         {
             // SpanOverloader
             return thisApi.HFONTUserMarshal(ref arg0.GetPinnableReference(), ref arg1.GetPinnableReference(), arg2);
@@ -49274,7 +49274,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 7051, Column 29 in ocidl.h")]
-        public static unsafe byte* HFONTUserMarshal(this Windows thisApi, Span<uint> arg0, Span<byte> arg1, ref IntPtr* arg2)
+        public static unsafe byte* HFONTUserMarshal(this Windows thisApi, Span<uint> arg0, Span<byte> arg1, ref void* arg2)
         {
             // SpanOverloader
             return thisApi.HFONTUserMarshal(ref arg0.GetPinnableReference(), ref arg1.GetPinnableReference(), ref arg2);
@@ -49282,7 +49282,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 7051, Column 29 in ocidl.h")]
-        public static unsafe byte* HFONTUserMarshal(this Windows thisApi, Span<uint> arg0, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, IntPtr** arg2)
+        public static unsafe byte* HFONTUserMarshal(this Windows thisApi, Span<uint> arg0, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, void** arg2)
         {
             // SpanOverloader
             return thisApi.HFONTUserMarshal(ref arg0.GetPinnableReference(), arg1, arg2);
@@ -49290,7 +49290,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 7051, Column 29 in ocidl.h")]
-        public static unsafe byte* HFONTUserMarshal(this Windows thisApi, Span<uint> arg0, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, ref IntPtr* arg2)
+        public static unsafe byte* HFONTUserMarshal(this Windows thisApi, Span<uint> arg0, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, ref void* arg2)
         {
             // SpanOverloader
             return thisApi.HFONTUserMarshal(ref arg0.GetPinnableReference(), arg1, ref arg2);
@@ -49298,7 +49298,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 7052, Column 29 in ocidl.h")]
-        public static unsafe byte* HFONTUserUnmarshal(this Windows thisApi, uint* arg0, Span<byte> arg1, IntPtr** arg2)
+        public static unsafe byte* HFONTUserUnmarshal(this Windows thisApi, uint* arg0, Span<byte> arg1, void** arg2)
         {
             // SpanOverloader
             return thisApi.HFONTUserUnmarshal(arg0, ref arg1.GetPinnableReference(), arg2);
@@ -49306,7 +49306,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 7052, Column 29 in ocidl.h")]
-        public static unsafe byte* HFONTUserUnmarshal(this Windows thisApi, uint* arg0, Span<byte> arg1, ref IntPtr* arg2)
+        public static unsafe byte* HFONTUserUnmarshal(this Windows thisApi, uint* arg0, Span<byte> arg1, ref void* arg2)
         {
             // SpanOverloader
             return thisApi.HFONTUserUnmarshal(arg0, ref arg1.GetPinnableReference(), ref arg2);
@@ -49314,7 +49314,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 7052, Column 29 in ocidl.h")]
-        public static unsafe byte* HFONTUserUnmarshal(this Windows thisApi, Span<uint> arg0, byte* arg1, IntPtr** arg2)
+        public static unsafe byte* HFONTUserUnmarshal(this Windows thisApi, Span<uint> arg0, byte* arg1, void** arg2)
         {
             // SpanOverloader
             return thisApi.HFONTUserUnmarshal(ref arg0.GetPinnableReference(), arg1, arg2);
@@ -49322,7 +49322,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 7052, Column 29 in ocidl.h")]
-        public static unsafe byte* HFONTUserUnmarshal(this Windows thisApi, Span<uint> arg0, byte* arg1, ref IntPtr* arg2)
+        public static unsafe byte* HFONTUserUnmarshal(this Windows thisApi, Span<uint> arg0, byte* arg1, ref void* arg2)
         {
             // SpanOverloader
             return thisApi.HFONTUserUnmarshal(ref arg0.GetPinnableReference(), arg1, ref arg2);
@@ -49330,7 +49330,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 7052, Column 29 in ocidl.h")]
-        public static unsafe byte* HFONTUserUnmarshal(this Windows thisApi, Span<uint> arg0, Span<byte> arg1, IntPtr** arg2)
+        public static unsafe byte* HFONTUserUnmarshal(this Windows thisApi, Span<uint> arg0, Span<byte> arg1, void** arg2)
         {
             // SpanOverloader
             return thisApi.HFONTUserUnmarshal(ref arg0.GetPinnableReference(), ref arg1.GetPinnableReference(), arg2);
@@ -49338,7 +49338,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 7052, Column 29 in ocidl.h")]
-        public static unsafe byte* HFONTUserUnmarshal(this Windows thisApi, Span<uint> arg0, Span<byte> arg1, ref IntPtr* arg2)
+        public static unsafe byte* HFONTUserUnmarshal(this Windows thisApi, Span<uint> arg0, Span<byte> arg1, ref void* arg2)
         {
             // SpanOverloader
             return thisApi.HFONTUserUnmarshal(ref arg0.GetPinnableReference(), ref arg1.GetPinnableReference(), ref arg2);
@@ -49346,7 +49346,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 7052, Column 29 in ocidl.h")]
-        public static unsafe byte* HFONTUserUnmarshal(this Windows thisApi, Span<uint> arg0, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, IntPtr** arg2)
+        public static unsafe byte* HFONTUserUnmarshal(this Windows thisApi, Span<uint> arg0, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, void** arg2)
         {
             // SpanOverloader
             return thisApi.HFONTUserUnmarshal(ref arg0.GetPinnableReference(), arg1, arg2);
@@ -49354,7 +49354,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 7052, Column 29 in ocidl.h")]
-        public static unsafe byte* HFONTUserUnmarshal(this Windows thisApi, Span<uint> arg0, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, ref IntPtr* arg2)
+        public static unsafe byte* HFONTUserUnmarshal(this Windows thisApi, Span<uint> arg0, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, ref void* arg2)
         {
             // SpanOverloader
             return thisApi.HFONTUserUnmarshal(ref arg0.GetPinnableReference(), arg1, ref arg2);
@@ -49362,7 +49362,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 7053, Column 39 in ocidl.h")]
-        public static unsafe void HFONTUserFree(this Windows thisApi, Span<uint> arg0, IntPtr** arg1)
+        public static unsafe void HFONTUserFree(this Windows thisApi, Span<uint> arg0, void** arg1)
         {
             // SpanOverloader
             thisApi.HFONTUserFree(ref arg0.GetPinnableReference(), arg1);
@@ -49370,7 +49370,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 7053, Column 39 in ocidl.h")]
-        public static unsafe void HFONTUserFree(this Windows thisApi, Span<uint> arg0, ref IntPtr* arg1)
+        public static unsafe void HFONTUserFree(this Windows thisApi, Span<uint> arg0, ref void* arg1)
         {
             // SpanOverloader
             thisApi.HFONTUserFree(ref arg0.GetPinnableReference(), ref arg1);
@@ -49378,7 +49378,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 7055, Column 39 in ocidl.h")]
-        public static unsafe uint HPALETTEUserSize(this Windows thisApi, Span<uint> arg0, uint arg1, IntPtr** arg2)
+        public static unsafe uint HPALETTEUserSize(this Windows thisApi, Span<uint> arg0, uint arg1, void** arg2)
         {
             // SpanOverloader
             return thisApi.HPALETTEUserSize(ref arg0.GetPinnableReference(), arg1, arg2);
@@ -49386,7 +49386,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 7055, Column 39 in ocidl.h")]
-        public static unsafe uint HPALETTEUserSize(this Windows thisApi, Span<uint> arg0, uint arg1, ref IntPtr* arg2)
+        public static unsafe uint HPALETTEUserSize(this Windows thisApi, Span<uint> arg0, uint arg1, ref void* arg2)
         {
             // SpanOverloader
             return thisApi.HPALETTEUserSize(ref arg0.GetPinnableReference(), arg1, ref arg2);
@@ -49394,7 +49394,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 7056, Column 29 in ocidl.h")]
-        public static unsafe byte* HPALETTEUserMarshal(this Windows thisApi, uint* arg0, Span<byte> arg1, IntPtr** arg2)
+        public static unsafe byte* HPALETTEUserMarshal(this Windows thisApi, uint* arg0, Span<byte> arg1, void** arg2)
         {
             // SpanOverloader
             return thisApi.HPALETTEUserMarshal(arg0, ref arg1.GetPinnableReference(), arg2);
@@ -49402,7 +49402,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 7056, Column 29 in ocidl.h")]
-        public static unsafe byte* HPALETTEUserMarshal(this Windows thisApi, uint* arg0, Span<byte> arg1, ref IntPtr* arg2)
+        public static unsafe byte* HPALETTEUserMarshal(this Windows thisApi, uint* arg0, Span<byte> arg1, ref void* arg2)
         {
             // SpanOverloader
             return thisApi.HPALETTEUserMarshal(arg0, ref arg1.GetPinnableReference(), ref arg2);
@@ -49410,7 +49410,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 7056, Column 29 in ocidl.h")]
-        public static unsafe byte* HPALETTEUserMarshal(this Windows thisApi, Span<uint> arg0, byte* arg1, IntPtr** arg2)
+        public static unsafe byte* HPALETTEUserMarshal(this Windows thisApi, Span<uint> arg0, byte* arg1, void** arg2)
         {
             // SpanOverloader
             return thisApi.HPALETTEUserMarshal(ref arg0.GetPinnableReference(), arg1, arg2);
@@ -49418,7 +49418,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 7056, Column 29 in ocidl.h")]
-        public static unsafe byte* HPALETTEUserMarshal(this Windows thisApi, Span<uint> arg0, byte* arg1, ref IntPtr* arg2)
+        public static unsafe byte* HPALETTEUserMarshal(this Windows thisApi, Span<uint> arg0, byte* arg1, ref void* arg2)
         {
             // SpanOverloader
             return thisApi.HPALETTEUserMarshal(ref arg0.GetPinnableReference(), arg1, ref arg2);
@@ -49426,7 +49426,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 7056, Column 29 in ocidl.h")]
-        public static unsafe byte* HPALETTEUserMarshal(this Windows thisApi, Span<uint> arg0, Span<byte> arg1, IntPtr** arg2)
+        public static unsafe byte* HPALETTEUserMarshal(this Windows thisApi, Span<uint> arg0, Span<byte> arg1, void** arg2)
         {
             // SpanOverloader
             return thisApi.HPALETTEUserMarshal(ref arg0.GetPinnableReference(), ref arg1.GetPinnableReference(), arg2);
@@ -49434,7 +49434,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 7056, Column 29 in ocidl.h")]
-        public static unsafe byte* HPALETTEUserMarshal(this Windows thisApi, Span<uint> arg0, Span<byte> arg1, ref IntPtr* arg2)
+        public static unsafe byte* HPALETTEUserMarshal(this Windows thisApi, Span<uint> arg0, Span<byte> arg1, ref void* arg2)
         {
             // SpanOverloader
             return thisApi.HPALETTEUserMarshal(ref arg0.GetPinnableReference(), ref arg1.GetPinnableReference(), ref arg2);
@@ -49442,7 +49442,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 7056, Column 29 in ocidl.h")]
-        public static unsafe byte* HPALETTEUserMarshal(this Windows thisApi, Span<uint> arg0, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, IntPtr** arg2)
+        public static unsafe byte* HPALETTEUserMarshal(this Windows thisApi, Span<uint> arg0, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, void** arg2)
         {
             // SpanOverloader
             return thisApi.HPALETTEUserMarshal(ref arg0.GetPinnableReference(), arg1, arg2);
@@ -49450,7 +49450,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 7056, Column 29 in ocidl.h")]
-        public static unsafe byte* HPALETTEUserMarshal(this Windows thisApi, Span<uint> arg0, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, ref IntPtr* arg2)
+        public static unsafe byte* HPALETTEUserMarshal(this Windows thisApi, Span<uint> arg0, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, ref void* arg2)
         {
             // SpanOverloader
             return thisApi.HPALETTEUserMarshal(ref arg0.GetPinnableReference(), arg1, ref arg2);
@@ -49458,7 +49458,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 7057, Column 29 in ocidl.h")]
-        public static unsafe byte* HPALETTEUserUnmarshal(this Windows thisApi, uint* arg0, Span<byte> arg1, IntPtr** arg2)
+        public static unsafe byte* HPALETTEUserUnmarshal(this Windows thisApi, uint* arg0, Span<byte> arg1, void** arg2)
         {
             // SpanOverloader
             return thisApi.HPALETTEUserUnmarshal(arg0, ref arg1.GetPinnableReference(), arg2);
@@ -49466,7 +49466,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 7057, Column 29 in ocidl.h")]
-        public static unsafe byte* HPALETTEUserUnmarshal(this Windows thisApi, uint* arg0, Span<byte> arg1, ref IntPtr* arg2)
+        public static unsafe byte* HPALETTEUserUnmarshal(this Windows thisApi, uint* arg0, Span<byte> arg1, ref void* arg2)
         {
             // SpanOverloader
             return thisApi.HPALETTEUserUnmarshal(arg0, ref arg1.GetPinnableReference(), ref arg2);
@@ -49474,7 +49474,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 7057, Column 29 in ocidl.h")]
-        public static unsafe byte* HPALETTEUserUnmarshal(this Windows thisApi, Span<uint> arg0, byte* arg1, IntPtr** arg2)
+        public static unsafe byte* HPALETTEUserUnmarshal(this Windows thisApi, Span<uint> arg0, byte* arg1, void** arg2)
         {
             // SpanOverloader
             return thisApi.HPALETTEUserUnmarshal(ref arg0.GetPinnableReference(), arg1, arg2);
@@ -49482,7 +49482,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 7057, Column 29 in ocidl.h")]
-        public static unsafe byte* HPALETTEUserUnmarshal(this Windows thisApi, Span<uint> arg0, byte* arg1, ref IntPtr* arg2)
+        public static unsafe byte* HPALETTEUserUnmarshal(this Windows thisApi, Span<uint> arg0, byte* arg1, ref void* arg2)
         {
             // SpanOverloader
             return thisApi.HPALETTEUserUnmarshal(ref arg0.GetPinnableReference(), arg1, ref arg2);
@@ -49490,7 +49490,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 7057, Column 29 in ocidl.h")]
-        public static unsafe byte* HPALETTEUserUnmarshal(this Windows thisApi, Span<uint> arg0, Span<byte> arg1, IntPtr** arg2)
+        public static unsafe byte* HPALETTEUserUnmarshal(this Windows thisApi, Span<uint> arg0, Span<byte> arg1, void** arg2)
         {
             // SpanOverloader
             return thisApi.HPALETTEUserUnmarshal(ref arg0.GetPinnableReference(), ref arg1.GetPinnableReference(), arg2);
@@ -49498,7 +49498,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 7057, Column 29 in ocidl.h")]
-        public static unsafe byte* HPALETTEUserUnmarshal(this Windows thisApi, Span<uint> arg0, Span<byte> arg1, ref IntPtr* arg2)
+        public static unsafe byte* HPALETTEUserUnmarshal(this Windows thisApi, Span<uint> arg0, Span<byte> arg1, ref void* arg2)
         {
             // SpanOverloader
             return thisApi.HPALETTEUserUnmarshal(ref arg0.GetPinnableReference(), ref arg1.GetPinnableReference(), ref arg2);
@@ -49506,7 +49506,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 7057, Column 29 in ocidl.h")]
-        public static unsafe byte* HPALETTEUserUnmarshal(this Windows thisApi, Span<uint> arg0, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, IntPtr** arg2)
+        public static unsafe byte* HPALETTEUserUnmarshal(this Windows thisApi, Span<uint> arg0, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, void** arg2)
         {
             // SpanOverloader
             return thisApi.HPALETTEUserUnmarshal(ref arg0.GetPinnableReference(), arg1, arg2);
@@ -49514,7 +49514,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 7057, Column 29 in ocidl.h")]
-        public static unsafe byte* HPALETTEUserUnmarshal(this Windows thisApi, Span<uint> arg0, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, ref IntPtr* arg2)
+        public static unsafe byte* HPALETTEUserUnmarshal(this Windows thisApi, Span<uint> arg0, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, ref void* arg2)
         {
             // SpanOverloader
             return thisApi.HPALETTEUserUnmarshal(ref arg0.GetPinnableReference(), arg1, ref arg2);
@@ -49522,7 +49522,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 7058, Column 39 in ocidl.h")]
-        public static unsafe void HPALETTEUserFree(this Windows thisApi, Span<uint> arg0, IntPtr** arg1)
+        public static unsafe void HPALETTEUserFree(this Windows thisApi, Span<uint> arg0, void** arg1)
         {
             // SpanOverloader
             thisApi.HPALETTEUserFree(ref arg0.GetPinnableReference(), arg1);
@@ -49530,7 +49530,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 7058, Column 39 in ocidl.h")]
-        public static unsafe void HPALETTEUserFree(this Windows thisApi, Span<uint> arg0, ref IntPtr* arg1)
+        public static unsafe void HPALETTEUserFree(this Windows thisApi, Span<uint> arg0, ref void* arg1)
         {
             // SpanOverloader
             thisApi.HPALETTEUserFree(ref arg0.GetPinnableReference(), ref arg1);
@@ -49538,7 +49538,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 7060, Column 39 in ocidl.h")]
-        public static unsafe uint HRGNUserSize(this Windows thisApi, Span<uint> arg0, uint arg1, IntPtr** arg2)
+        public static unsafe uint HRGNUserSize(this Windows thisApi, Span<uint> arg0, uint arg1, void** arg2)
         {
             // SpanOverloader
             return thisApi.HRGNUserSize(ref arg0.GetPinnableReference(), arg1, arg2);
@@ -49546,7 +49546,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 7060, Column 39 in ocidl.h")]
-        public static unsafe uint HRGNUserSize(this Windows thisApi, Span<uint> arg0, uint arg1, ref IntPtr* arg2)
+        public static unsafe uint HRGNUserSize(this Windows thisApi, Span<uint> arg0, uint arg1, ref void* arg2)
         {
             // SpanOverloader
             return thisApi.HRGNUserSize(ref arg0.GetPinnableReference(), arg1, ref arg2);
@@ -49554,7 +49554,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 7061, Column 29 in ocidl.h")]
-        public static unsafe byte* HRGNUserMarshal(this Windows thisApi, uint* arg0, Span<byte> arg1, IntPtr** arg2)
+        public static unsafe byte* HRGNUserMarshal(this Windows thisApi, uint* arg0, Span<byte> arg1, void** arg2)
         {
             // SpanOverloader
             return thisApi.HRGNUserMarshal(arg0, ref arg1.GetPinnableReference(), arg2);
@@ -49562,7 +49562,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 7061, Column 29 in ocidl.h")]
-        public static unsafe byte* HRGNUserMarshal(this Windows thisApi, uint* arg0, Span<byte> arg1, ref IntPtr* arg2)
+        public static unsafe byte* HRGNUserMarshal(this Windows thisApi, uint* arg0, Span<byte> arg1, ref void* arg2)
         {
             // SpanOverloader
             return thisApi.HRGNUserMarshal(arg0, ref arg1.GetPinnableReference(), ref arg2);
@@ -49570,7 +49570,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 7061, Column 29 in ocidl.h")]
-        public static unsafe byte* HRGNUserMarshal(this Windows thisApi, Span<uint> arg0, byte* arg1, IntPtr** arg2)
+        public static unsafe byte* HRGNUserMarshal(this Windows thisApi, Span<uint> arg0, byte* arg1, void** arg2)
         {
             // SpanOverloader
             return thisApi.HRGNUserMarshal(ref arg0.GetPinnableReference(), arg1, arg2);
@@ -49578,7 +49578,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 7061, Column 29 in ocidl.h")]
-        public static unsafe byte* HRGNUserMarshal(this Windows thisApi, Span<uint> arg0, byte* arg1, ref IntPtr* arg2)
+        public static unsafe byte* HRGNUserMarshal(this Windows thisApi, Span<uint> arg0, byte* arg1, ref void* arg2)
         {
             // SpanOverloader
             return thisApi.HRGNUserMarshal(ref arg0.GetPinnableReference(), arg1, ref arg2);
@@ -49586,7 +49586,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 7061, Column 29 in ocidl.h")]
-        public static unsafe byte* HRGNUserMarshal(this Windows thisApi, Span<uint> arg0, Span<byte> arg1, IntPtr** arg2)
+        public static unsafe byte* HRGNUserMarshal(this Windows thisApi, Span<uint> arg0, Span<byte> arg1, void** arg2)
         {
             // SpanOverloader
             return thisApi.HRGNUserMarshal(ref arg0.GetPinnableReference(), ref arg1.GetPinnableReference(), arg2);
@@ -49594,7 +49594,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 7061, Column 29 in ocidl.h")]
-        public static unsafe byte* HRGNUserMarshal(this Windows thisApi, Span<uint> arg0, Span<byte> arg1, ref IntPtr* arg2)
+        public static unsafe byte* HRGNUserMarshal(this Windows thisApi, Span<uint> arg0, Span<byte> arg1, ref void* arg2)
         {
             // SpanOverloader
             return thisApi.HRGNUserMarshal(ref arg0.GetPinnableReference(), ref arg1.GetPinnableReference(), ref arg2);
@@ -49602,7 +49602,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 7061, Column 29 in ocidl.h")]
-        public static unsafe byte* HRGNUserMarshal(this Windows thisApi, Span<uint> arg0, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, IntPtr** arg2)
+        public static unsafe byte* HRGNUserMarshal(this Windows thisApi, Span<uint> arg0, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, void** arg2)
         {
             // SpanOverloader
             return thisApi.HRGNUserMarshal(ref arg0.GetPinnableReference(), arg1, arg2);
@@ -49610,7 +49610,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 7061, Column 29 in ocidl.h")]
-        public static unsafe byte* HRGNUserMarshal(this Windows thisApi, Span<uint> arg0, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, ref IntPtr* arg2)
+        public static unsafe byte* HRGNUserMarshal(this Windows thisApi, Span<uint> arg0, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, ref void* arg2)
         {
             // SpanOverloader
             return thisApi.HRGNUserMarshal(ref arg0.GetPinnableReference(), arg1, ref arg2);
@@ -49618,7 +49618,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 7062, Column 29 in ocidl.h")]
-        public static unsafe byte* HRGNUserUnmarshal(this Windows thisApi, uint* arg0, Span<byte> arg1, IntPtr** arg2)
+        public static unsafe byte* HRGNUserUnmarshal(this Windows thisApi, uint* arg0, Span<byte> arg1, void** arg2)
         {
             // SpanOverloader
             return thisApi.HRGNUserUnmarshal(arg0, ref arg1.GetPinnableReference(), arg2);
@@ -49626,7 +49626,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 7062, Column 29 in ocidl.h")]
-        public static unsafe byte* HRGNUserUnmarshal(this Windows thisApi, uint* arg0, Span<byte> arg1, ref IntPtr* arg2)
+        public static unsafe byte* HRGNUserUnmarshal(this Windows thisApi, uint* arg0, Span<byte> arg1, ref void* arg2)
         {
             // SpanOverloader
             return thisApi.HRGNUserUnmarshal(arg0, ref arg1.GetPinnableReference(), ref arg2);
@@ -49634,7 +49634,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 7062, Column 29 in ocidl.h")]
-        public static unsafe byte* HRGNUserUnmarshal(this Windows thisApi, Span<uint> arg0, byte* arg1, IntPtr** arg2)
+        public static unsafe byte* HRGNUserUnmarshal(this Windows thisApi, Span<uint> arg0, byte* arg1, void** arg2)
         {
             // SpanOverloader
             return thisApi.HRGNUserUnmarshal(ref arg0.GetPinnableReference(), arg1, arg2);
@@ -49642,7 +49642,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 7062, Column 29 in ocidl.h")]
-        public static unsafe byte* HRGNUserUnmarshal(this Windows thisApi, Span<uint> arg0, byte* arg1, ref IntPtr* arg2)
+        public static unsafe byte* HRGNUserUnmarshal(this Windows thisApi, Span<uint> arg0, byte* arg1, ref void* arg2)
         {
             // SpanOverloader
             return thisApi.HRGNUserUnmarshal(ref arg0.GetPinnableReference(), arg1, ref arg2);
@@ -49650,7 +49650,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 7062, Column 29 in ocidl.h")]
-        public static unsafe byte* HRGNUserUnmarshal(this Windows thisApi, Span<uint> arg0, Span<byte> arg1, IntPtr** arg2)
+        public static unsafe byte* HRGNUserUnmarshal(this Windows thisApi, Span<uint> arg0, Span<byte> arg1, void** arg2)
         {
             // SpanOverloader
             return thisApi.HRGNUserUnmarshal(ref arg0.GetPinnableReference(), ref arg1.GetPinnableReference(), arg2);
@@ -49658,7 +49658,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 7062, Column 29 in ocidl.h")]
-        public static unsafe byte* HRGNUserUnmarshal(this Windows thisApi, Span<uint> arg0, Span<byte> arg1, ref IntPtr* arg2)
+        public static unsafe byte* HRGNUserUnmarshal(this Windows thisApi, Span<uint> arg0, Span<byte> arg1, ref void* arg2)
         {
             // SpanOverloader
             return thisApi.HRGNUserUnmarshal(ref arg0.GetPinnableReference(), ref arg1.GetPinnableReference(), ref arg2);
@@ -49666,7 +49666,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 7062, Column 29 in ocidl.h")]
-        public static unsafe byte* HRGNUserUnmarshal(this Windows thisApi, Span<uint> arg0, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, IntPtr** arg2)
+        public static unsafe byte* HRGNUserUnmarshal(this Windows thisApi, Span<uint> arg0, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, void** arg2)
         {
             // SpanOverloader
             return thisApi.HRGNUserUnmarshal(ref arg0.GetPinnableReference(), arg1, arg2);
@@ -49674,7 +49674,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 7062, Column 29 in ocidl.h")]
-        public static unsafe byte* HRGNUserUnmarshal(this Windows thisApi, Span<uint> arg0, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, ref IntPtr* arg2)
+        public static unsafe byte* HRGNUserUnmarshal(this Windows thisApi, Span<uint> arg0, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, ref void* arg2)
         {
             // SpanOverloader
             return thisApi.HRGNUserUnmarshal(ref arg0.GetPinnableReference(), arg1, ref arg2);
@@ -49682,7 +49682,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 7063, Column 39 in ocidl.h")]
-        public static unsafe void HRGNUserFree(this Windows thisApi, Span<uint> arg0, IntPtr** arg1)
+        public static unsafe void HRGNUserFree(this Windows thisApi, Span<uint> arg0, void** arg1)
         {
             // SpanOverloader
             thisApi.HRGNUserFree(ref arg0.GetPinnableReference(), arg1);
@@ -49690,7 +49690,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 7063, Column 39 in ocidl.h")]
-        public static unsafe void HRGNUserFree(this Windows thisApi, Span<uint> arg0, ref IntPtr* arg1)
+        public static unsafe void HRGNUserFree(this Windows thisApi, Span<uint> arg0, ref void* arg1)
         {
             // SpanOverloader
             thisApi.HRGNUserFree(ref arg0.GetPinnableReference(), ref arg1);
@@ -49906,7 +49906,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 7085, Column 39 in ocidl.h")]
-        public static unsafe uint HACCELUserSize64(this Windows thisApi, Span<uint> arg0, uint arg1, IntPtr** arg2)
+        public static unsafe uint HACCELUserSize64(this Windows thisApi, Span<uint> arg0, uint arg1, void** arg2)
         {
             // SpanOverloader
             return thisApi.HACCELUserSize64(ref arg0.GetPinnableReference(), arg1, arg2);
@@ -49914,7 +49914,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 7085, Column 39 in ocidl.h")]
-        public static unsafe uint HACCELUserSize64(this Windows thisApi, Span<uint> arg0, uint arg1, ref IntPtr* arg2)
+        public static unsafe uint HACCELUserSize64(this Windows thisApi, Span<uint> arg0, uint arg1, ref void* arg2)
         {
             // SpanOverloader
             return thisApi.HACCELUserSize64(ref arg0.GetPinnableReference(), arg1, ref arg2);
@@ -49922,7 +49922,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 7086, Column 29 in ocidl.h")]
-        public static unsafe byte* HACCELUserMarshal64(this Windows thisApi, uint* arg0, Span<byte> arg1, IntPtr** arg2)
+        public static unsafe byte* HACCELUserMarshal64(this Windows thisApi, uint* arg0, Span<byte> arg1, void** arg2)
         {
             // SpanOverloader
             return thisApi.HACCELUserMarshal64(arg0, ref arg1.GetPinnableReference(), arg2);
@@ -49930,7 +49930,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 7086, Column 29 in ocidl.h")]
-        public static unsafe byte* HACCELUserMarshal64(this Windows thisApi, uint* arg0, Span<byte> arg1, ref IntPtr* arg2)
+        public static unsafe byte* HACCELUserMarshal64(this Windows thisApi, uint* arg0, Span<byte> arg1, ref void* arg2)
         {
             // SpanOverloader
             return thisApi.HACCELUserMarshal64(arg0, ref arg1.GetPinnableReference(), ref arg2);
@@ -49938,7 +49938,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 7086, Column 29 in ocidl.h")]
-        public static unsafe byte* HACCELUserMarshal64(this Windows thisApi, Span<uint> arg0, byte* arg1, IntPtr** arg2)
+        public static unsafe byte* HACCELUserMarshal64(this Windows thisApi, Span<uint> arg0, byte* arg1, void** arg2)
         {
             // SpanOverloader
             return thisApi.HACCELUserMarshal64(ref arg0.GetPinnableReference(), arg1, arg2);
@@ -49946,7 +49946,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 7086, Column 29 in ocidl.h")]
-        public static unsafe byte* HACCELUserMarshal64(this Windows thisApi, Span<uint> arg0, byte* arg1, ref IntPtr* arg2)
+        public static unsafe byte* HACCELUserMarshal64(this Windows thisApi, Span<uint> arg0, byte* arg1, ref void* arg2)
         {
             // SpanOverloader
             return thisApi.HACCELUserMarshal64(ref arg0.GetPinnableReference(), arg1, ref arg2);
@@ -49954,7 +49954,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 7086, Column 29 in ocidl.h")]
-        public static unsafe byte* HACCELUserMarshal64(this Windows thisApi, Span<uint> arg0, Span<byte> arg1, IntPtr** arg2)
+        public static unsafe byte* HACCELUserMarshal64(this Windows thisApi, Span<uint> arg0, Span<byte> arg1, void** arg2)
         {
             // SpanOverloader
             return thisApi.HACCELUserMarshal64(ref arg0.GetPinnableReference(), ref arg1.GetPinnableReference(), arg2);
@@ -49962,7 +49962,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 7086, Column 29 in ocidl.h")]
-        public static unsafe byte* HACCELUserMarshal64(this Windows thisApi, Span<uint> arg0, Span<byte> arg1, ref IntPtr* arg2)
+        public static unsafe byte* HACCELUserMarshal64(this Windows thisApi, Span<uint> arg0, Span<byte> arg1, ref void* arg2)
         {
             // SpanOverloader
             return thisApi.HACCELUserMarshal64(ref arg0.GetPinnableReference(), ref arg1.GetPinnableReference(), ref arg2);
@@ -49970,7 +49970,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 7086, Column 29 in ocidl.h")]
-        public static unsafe byte* HACCELUserMarshal64(this Windows thisApi, Span<uint> arg0, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, IntPtr** arg2)
+        public static unsafe byte* HACCELUserMarshal64(this Windows thisApi, Span<uint> arg0, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, void** arg2)
         {
             // SpanOverloader
             return thisApi.HACCELUserMarshal64(ref arg0.GetPinnableReference(), arg1, arg2);
@@ -49978,7 +49978,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 7086, Column 29 in ocidl.h")]
-        public static unsafe byte* HACCELUserMarshal64(this Windows thisApi, Span<uint> arg0, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, ref IntPtr* arg2)
+        public static unsafe byte* HACCELUserMarshal64(this Windows thisApi, Span<uint> arg0, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, ref void* arg2)
         {
             // SpanOverloader
             return thisApi.HACCELUserMarshal64(ref arg0.GetPinnableReference(), arg1, ref arg2);
@@ -49986,7 +49986,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 7087, Column 29 in ocidl.h")]
-        public static unsafe byte* HACCELUserUnmarshal64(this Windows thisApi, uint* arg0, Span<byte> arg1, IntPtr** arg2)
+        public static unsafe byte* HACCELUserUnmarshal64(this Windows thisApi, uint* arg0, Span<byte> arg1, void** arg2)
         {
             // SpanOverloader
             return thisApi.HACCELUserUnmarshal64(arg0, ref arg1.GetPinnableReference(), arg2);
@@ -49994,7 +49994,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 7087, Column 29 in ocidl.h")]
-        public static unsafe byte* HACCELUserUnmarshal64(this Windows thisApi, uint* arg0, Span<byte> arg1, ref IntPtr* arg2)
+        public static unsafe byte* HACCELUserUnmarshal64(this Windows thisApi, uint* arg0, Span<byte> arg1, ref void* arg2)
         {
             // SpanOverloader
             return thisApi.HACCELUserUnmarshal64(arg0, ref arg1.GetPinnableReference(), ref arg2);
@@ -50002,7 +50002,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 7087, Column 29 in ocidl.h")]
-        public static unsafe byte* HACCELUserUnmarshal64(this Windows thisApi, Span<uint> arg0, byte* arg1, IntPtr** arg2)
+        public static unsafe byte* HACCELUserUnmarshal64(this Windows thisApi, Span<uint> arg0, byte* arg1, void** arg2)
         {
             // SpanOverloader
             return thisApi.HACCELUserUnmarshal64(ref arg0.GetPinnableReference(), arg1, arg2);
@@ -50010,7 +50010,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 7087, Column 29 in ocidl.h")]
-        public static unsafe byte* HACCELUserUnmarshal64(this Windows thisApi, Span<uint> arg0, byte* arg1, ref IntPtr* arg2)
+        public static unsafe byte* HACCELUserUnmarshal64(this Windows thisApi, Span<uint> arg0, byte* arg1, ref void* arg2)
         {
             // SpanOverloader
             return thisApi.HACCELUserUnmarshal64(ref arg0.GetPinnableReference(), arg1, ref arg2);
@@ -50018,7 +50018,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 7087, Column 29 in ocidl.h")]
-        public static unsafe byte* HACCELUserUnmarshal64(this Windows thisApi, Span<uint> arg0, Span<byte> arg1, IntPtr** arg2)
+        public static unsafe byte* HACCELUserUnmarshal64(this Windows thisApi, Span<uint> arg0, Span<byte> arg1, void** arg2)
         {
             // SpanOverloader
             return thisApi.HACCELUserUnmarshal64(ref arg0.GetPinnableReference(), ref arg1.GetPinnableReference(), arg2);
@@ -50026,7 +50026,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 7087, Column 29 in ocidl.h")]
-        public static unsafe byte* HACCELUserUnmarshal64(this Windows thisApi, Span<uint> arg0, Span<byte> arg1, ref IntPtr* arg2)
+        public static unsafe byte* HACCELUserUnmarshal64(this Windows thisApi, Span<uint> arg0, Span<byte> arg1, ref void* arg2)
         {
             // SpanOverloader
             return thisApi.HACCELUserUnmarshal64(ref arg0.GetPinnableReference(), ref arg1.GetPinnableReference(), ref arg2);
@@ -50034,7 +50034,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 7087, Column 29 in ocidl.h")]
-        public static unsafe byte* HACCELUserUnmarshal64(this Windows thisApi, Span<uint> arg0, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, IntPtr** arg2)
+        public static unsafe byte* HACCELUserUnmarshal64(this Windows thisApi, Span<uint> arg0, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, void** arg2)
         {
             // SpanOverloader
             return thisApi.HACCELUserUnmarshal64(ref arg0.GetPinnableReference(), arg1, arg2);
@@ -50042,7 +50042,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 7087, Column 29 in ocidl.h")]
-        public static unsafe byte* HACCELUserUnmarshal64(this Windows thisApi, Span<uint> arg0, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, ref IntPtr* arg2)
+        public static unsafe byte* HACCELUserUnmarshal64(this Windows thisApi, Span<uint> arg0, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, ref void* arg2)
         {
             // SpanOverloader
             return thisApi.HACCELUserUnmarshal64(ref arg0.GetPinnableReference(), arg1, ref arg2);
@@ -50050,7 +50050,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 7088, Column 39 in ocidl.h")]
-        public static unsafe void HACCELUserFree64(this Windows thisApi, Span<uint> arg0, IntPtr** arg1)
+        public static unsafe void HACCELUserFree64(this Windows thisApi, Span<uint> arg0, void** arg1)
         {
             // SpanOverloader
             thisApi.HACCELUserFree64(ref arg0.GetPinnableReference(), arg1);
@@ -50058,7 +50058,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 7088, Column 39 in ocidl.h")]
-        public static unsafe void HACCELUserFree64(this Windows thisApi, Span<uint> arg0, ref IntPtr* arg1)
+        public static unsafe void HACCELUserFree64(this Windows thisApi, Span<uint> arg0, ref void* arg1)
         {
             // SpanOverloader
             thisApi.HACCELUserFree64(ref arg0.GetPinnableReference(), ref arg1);
@@ -50066,7 +50066,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 7095, Column 39 in ocidl.h")]
-        public static unsafe uint HFONTUserSize64(this Windows thisApi, Span<uint> arg0, uint arg1, IntPtr** arg2)
+        public static unsafe uint HFONTUserSize64(this Windows thisApi, Span<uint> arg0, uint arg1, void** arg2)
         {
             // SpanOverloader
             return thisApi.HFONTUserSize64(ref arg0.GetPinnableReference(), arg1, arg2);
@@ -50074,7 +50074,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 7095, Column 39 in ocidl.h")]
-        public static unsafe uint HFONTUserSize64(this Windows thisApi, Span<uint> arg0, uint arg1, ref IntPtr* arg2)
+        public static unsafe uint HFONTUserSize64(this Windows thisApi, Span<uint> arg0, uint arg1, ref void* arg2)
         {
             // SpanOverloader
             return thisApi.HFONTUserSize64(ref arg0.GetPinnableReference(), arg1, ref arg2);
@@ -50082,7 +50082,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 7096, Column 29 in ocidl.h")]
-        public static unsafe byte* HFONTUserMarshal64(this Windows thisApi, uint* arg0, Span<byte> arg1, IntPtr** arg2)
+        public static unsafe byte* HFONTUserMarshal64(this Windows thisApi, uint* arg0, Span<byte> arg1, void** arg2)
         {
             // SpanOverloader
             return thisApi.HFONTUserMarshal64(arg0, ref arg1.GetPinnableReference(), arg2);
@@ -50090,7 +50090,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 7096, Column 29 in ocidl.h")]
-        public static unsafe byte* HFONTUserMarshal64(this Windows thisApi, uint* arg0, Span<byte> arg1, ref IntPtr* arg2)
+        public static unsafe byte* HFONTUserMarshal64(this Windows thisApi, uint* arg0, Span<byte> arg1, ref void* arg2)
         {
             // SpanOverloader
             return thisApi.HFONTUserMarshal64(arg0, ref arg1.GetPinnableReference(), ref arg2);
@@ -50098,7 +50098,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 7096, Column 29 in ocidl.h")]
-        public static unsafe byte* HFONTUserMarshal64(this Windows thisApi, Span<uint> arg0, byte* arg1, IntPtr** arg2)
+        public static unsafe byte* HFONTUserMarshal64(this Windows thisApi, Span<uint> arg0, byte* arg1, void** arg2)
         {
             // SpanOverloader
             return thisApi.HFONTUserMarshal64(ref arg0.GetPinnableReference(), arg1, arg2);
@@ -50106,7 +50106,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 7096, Column 29 in ocidl.h")]
-        public static unsafe byte* HFONTUserMarshal64(this Windows thisApi, Span<uint> arg0, byte* arg1, ref IntPtr* arg2)
+        public static unsafe byte* HFONTUserMarshal64(this Windows thisApi, Span<uint> arg0, byte* arg1, ref void* arg2)
         {
             // SpanOverloader
             return thisApi.HFONTUserMarshal64(ref arg0.GetPinnableReference(), arg1, ref arg2);
@@ -50114,7 +50114,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 7096, Column 29 in ocidl.h")]
-        public static unsafe byte* HFONTUserMarshal64(this Windows thisApi, Span<uint> arg0, Span<byte> arg1, IntPtr** arg2)
+        public static unsafe byte* HFONTUserMarshal64(this Windows thisApi, Span<uint> arg0, Span<byte> arg1, void** arg2)
         {
             // SpanOverloader
             return thisApi.HFONTUserMarshal64(ref arg0.GetPinnableReference(), ref arg1.GetPinnableReference(), arg2);
@@ -50122,7 +50122,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 7096, Column 29 in ocidl.h")]
-        public static unsafe byte* HFONTUserMarshal64(this Windows thisApi, Span<uint> arg0, Span<byte> arg1, ref IntPtr* arg2)
+        public static unsafe byte* HFONTUserMarshal64(this Windows thisApi, Span<uint> arg0, Span<byte> arg1, ref void* arg2)
         {
             // SpanOverloader
             return thisApi.HFONTUserMarshal64(ref arg0.GetPinnableReference(), ref arg1.GetPinnableReference(), ref arg2);
@@ -50130,7 +50130,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 7096, Column 29 in ocidl.h")]
-        public static unsafe byte* HFONTUserMarshal64(this Windows thisApi, Span<uint> arg0, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, IntPtr** arg2)
+        public static unsafe byte* HFONTUserMarshal64(this Windows thisApi, Span<uint> arg0, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, void** arg2)
         {
             // SpanOverloader
             return thisApi.HFONTUserMarshal64(ref arg0.GetPinnableReference(), arg1, arg2);
@@ -50138,7 +50138,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 7096, Column 29 in ocidl.h")]
-        public static unsafe byte* HFONTUserMarshal64(this Windows thisApi, Span<uint> arg0, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, ref IntPtr* arg2)
+        public static unsafe byte* HFONTUserMarshal64(this Windows thisApi, Span<uint> arg0, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, ref void* arg2)
         {
             // SpanOverloader
             return thisApi.HFONTUserMarshal64(ref arg0.GetPinnableReference(), arg1, ref arg2);
@@ -50146,7 +50146,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 7097, Column 29 in ocidl.h")]
-        public static unsafe byte* HFONTUserUnmarshal64(this Windows thisApi, uint* arg0, Span<byte> arg1, IntPtr** arg2)
+        public static unsafe byte* HFONTUserUnmarshal64(this Windows thisApi, uint* arg0, Span<byte> arg1, void** arg2)
         {
             // SpanOverloader
             return thisApi.HFONTUserUnmarshal64(arg0, ref arg1.GetPinnableReference(), arg2);
@@ -50154,7 +50154,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 7097, Column 29 in ocidl.h")]
-        public static unsafe byte* HFONTUserUnmarshal64(this Windows thisApi, uint* arg0, Span<byte> arg1, ref IntPtr* arg2)
+        public static unsafe byte* HFONTUserUnmarshal64(this Windows thisApi, uint* arg0, Span<byte> arg1, ref void* arg2)
         {
             // SpanOverloader
             return thisApi.HFONTUserUnmarshal64(arg0, ref arg1.GetPinnableReference(), ref arg2);
@@ -50162,7 +50162,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 7097, Column 29 in ocidl.h")]
-        public static unsafe byte* HFONTUserUnmarshal64(this Windows thisApi, Span<uint> arg0, byte* arg1, IntPtr** arg2)
+        public static unsafe byte* HFONTUserUnmarshal64(this Windows thisApi, Span<uint> arg0, byte* arg1, void** arg2)
         {
             // SpanOverloader
             return thisApi.HFONTUserUnmarshal64(ref arg0.GetPinnableReference(), arg1, arg2);
@@ -50170,7 +50170,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 7097, Column 29 in ocidl.h")]
-        public static unsafe byte* HFONTUserUnmarshal64(this Windows thisApi, Span<uint> arg0, byte* arg1, ref IntPtr* arg2)
+        public static unsafe byte* HFONTUserUnmarshal64(this Windows thisApi, Span<uint> arg0, byte* arg1, ref void* arg2)
         {
             // SpanOverloader
             return thisApi.HFONTUserUnmarshal64(ref arg0.GetPinnableReference(), arg1, ref arg2);
@@ -50178,7 +50178,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 7097, Column 29 in ocidl.h")]
-        public static unsafe byte* HFONTUserUnmarshal64(this Windows thisApi, Span<uint> arg0, Span<byte> arg1, IntPtr** arg2)
+        public static unsafe byte* HFONTUserUnmarshal64(this Windows thisApi, Span<uint> arg0, Span<byte> arg1, void** arg2)
         {
             // SpanOverloader
             return thisApi.HFONTUserUnmarshal64(ref arg0.GetPinnableReference(), ref arg1.GetPinnableReference(), arg2);
@@ -50186,7 +50186,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 7097, Column 29 in ocidl.h")]
-        public static unsafe byte* HFONTUserUnmarshal64(this Windows thisApi, Span<uint> arg0, Span<byte> arg1, ref IntPtr* arg2)
+        public static unsafe byte* HFONTUserUnmarshal64(this Windows thisApi, Span<uint> arg0, Span<byte> arg1, ref void* arg2)
         {
             // SpanOverloader
             return thisApi.HFONTUserUnmarshal64(ref arg0.GetPinnableReference(), ref arg1.GetPinnableReference(), ref arg2);
@@ -50194,7 +50194,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 7097, Column 29 in ocidl.h")]
-        public static unsafe byte* HFONTUserUnmarshal64(this Windows thisApi, Span<uint> arg0, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, IntPtr** arg2)
+        public static unsafe byte* HFONTUserUnmarshal64(this Windows thisApi, Span<uint> arg0, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, void** arg2)
         {
             // SpanOverloader
             return thisApi.HFONTUserUnmarshal64(ref arg0.GetPinnableReference(), arg1, arg2);
@@ -50202,7 +50202,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 7097, Column 29 in ocidl.h")]
-        public static unsafe byte* HFONTUserUnmarshal64(this Windows thisApi, Span<uint> arg0, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, ref IntPtr* arg2)
+        public static unsafe byte* HFONTUserUnmarshal64(this Windows thisApi, Span<uint> arg0, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, ref void* arg2)
         {
             // SpanOverloader
             return thisApi.HFONTUserUnmarshal64(ref arg0.GetPinnableReference(), arg1, ref arg2);
@@ -50210,7 +50210,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 7098, Column 39 in ocidl.h")]
-        public static unsafe void HFONTUserFree64(this Windows thisApi, Span<uint> arg0, IntPtr** arg1)
+        public static unsafe void HFONTUserFree64(this Windows thisApi, Span<uint> arg0, void** arg1)
         {
             // SpanOverloader
             thisApi.HFONTUserFree64(ref arg0.GetPinnableReference(), arg1);
@@ -50218,7 +50218,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 7098, Column 39 in ocidl.h")]
-        public static unsafe void HFONTUserFree64(this Windows thisApi, Span<uint> arg0, ref IntPtr* arg1)
+        public static unsafe void HFONTUserFree64(this Windows thisApi, Span<uint> arg0, ref void* arg1)
         {
             // SpanOverloader
             thisApi.HFONTUserFree64(ref arg0.GetPinnableReference(), ref arg1);
@@ -50226,7 +50226,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 7100, Column 39 in ocidl.h")]
-        public static unsafe uint HPALETTEUserSize64(this Windows thisApi, Span<uint> arg0, uint arg1, IntPtr** arg2)
+        public static unsafe uint HPALETTEUserSize64(this Windows thisApi, Span<uint> arg0, uint arg1, void** arg2)
         {
             // SpanOverloader
             return thisApi.HPALETTEUserSize64(ref arg0.GetPinnableReference(), arg1, arg2);
@@ -50234,7 +50234,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 7100, Column 39 in ocidl.h")]
-        public static unsafe uint HPALETTEUserSize64(this Windows thisApi, Span<uint> arg0, uint arg1, ref IntPtr* arg2)
+        public static unsafe uint HPALETTEUserSize64(this Windows thisApi, Span<uint> arg0, uint arg1, ref void* arg2)
         {
             // SpanOverloader
             return thisApi.HPALETTEUserSize64(ref arg0.GetPinnableReference(), arg1, ref arg2);
@@ -50242,7 +50242,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 7101, Column 29 in ocidl.h")]
-        public static unsafe byte* HPALETTEUserMarshal64(this Windows thisApi, uint* arg0, Span<byte> arg1, IntPtr** arg2)
+        public static unsafe byte* HPALETTEUserMarshal64(this Windows thisApi, uint* arg0, Span<byte> arg1, void** arg2)
         {
             // SpanOverloader
             return thisApi.HPALETTEUserMarshal64(arg0, ref arg1.GetPinnableReference(), arg2);
@@ -50250,7 +50250,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 7101, Column 29 in ocidl.h")]
-        public static unsafe byte* HPALETTEUserMarshal64(this Windows thisApi, uint* arg0, Span<byte> arg1, ref IntPtr* arg2)
+        public static unsafe byte* HPALETTEUserMarshal64(this Windows thisApi, uint* arg0, Span<byte> arg1, ref void* arg2)
         {
             // SpanOverloader
             return thisApi.HPALETTEUserMarshal64(arg0, ref arg1.GetPinnableReference(), ref arg2);
@@ -50258,7 +50258,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 7101, Column 29 in ocidl.h")]
-        public static unsafe byte* HPALETTEUserMarshal64(this Windows thisApi, Span<uint> arg0, byte* arg1, IntPtr** arg2)
+        public static unsafe byte* HPALETTEUserMarshal64(this Windows thisApi, Span<uint> arg0, byte* arg1, void** arg2)
         {
             // SpanOverloader
             return thisApi.HPALETTEUserMarshal64(ref arg0.GetPinnableReference(), arg1, arg2);
@@ -50266,7 +50266,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 7101, Column 29 in ocidl.h")]
-        public static unsafe byte* HPALETTEUserMarshal64(this Windows thisApi, Span<uint> arg0, byte* arg1, ref IntPtr* arg2)
+        public static unsafe byte* HPALETTEUserMarshal64(this Windows thisApi, Span<uint> arg0, byte* arg1, ref void* arg2)
         {
             // SpanOverloader
             return thisApi.HPALETTEUserMarshal64(ref arg0.GetPinnableReference(), arg1, ref arg2);
@@ -50274,7 +50274,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 7101, Column 29 in ocidl.h")]
-        public static unsafe byte* HPALETTEUserMarshal64(this Windows thisApi, Span<uint> arg0, Span<byte> arg1, IntPtr** arg2)
+        public static unsafe byte* HPALETTEUserMarshal64(this Windows thisApi, Span<uint> arg0, Span<byte> arg1, void** arg2)
         {
             // SpanOverloader
             return thisApi.HPALETTEUserMarshal64(ref arg0.GetPinnableReference(), ref arg1.GetPinnableReference(), arg2);
@@ -50282,7 +50282,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 7101, Column 29 in ocidl.h")]
-        public static unsafe byte* HPALETTEUserMarshal64(this Windows thisApi, Span<uint> arg0, Span<byte> arg1, ref IntPtr* arg2)
+        public static unsafe byte* HPALETTEUserMarshal64(this Windows thisApi, Span<uint> arg0, Span<byte> arg1, ref void* arg2)
         {
             // SpanOverloader
             return thisApi.HPALETTEUserMarshal64(ref arg0.GetPinnableReference(), ref arg1.GetPinnableReference(), ref arg2);
@@ -50290,7 +50290,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 7101, Column 29 in ocidl.h")]
-        public static unsafe byte* HPALETTEUserMarshal64(this Windows thisApi, Span<uint> arg0, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, IntPtr** arg2)
+        public static unsafe byte* HPALETTEUserMarshal64(this Windows thisApi, Span<uint> arg0, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, void** arg2)
         {
             // SpanOverloader
             return thisApi.HPALETTEUserMarshal64(ref arg0.GetPinnableReference(), arg1, arg2);
@@ -50298,7 +50298,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 7101, Column 29 in ocidl.h")]
-        public static unsafe byte* HPALETTEUserMarshal64(this Windows thisApi, Span<uint> arg0, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, ref IntPtr* arg2)
+        public static unsafe byte* HPALETTEUserMarshal64(this Windows thisApi, Span<uint> arg0, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, ref void* arg2)
         {
             // SpanOverloader
             return thisApi.HPALETTEUserMarshal64(ref arg0.GetPinnableReference(), arg1, ref arg2);
@@ -50306,7 +50306,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 7102, Column 29 in ocidl.h")]
-        public static unsafe byte* HPALETTEUserUnmarshal64(this Windows thisApi, uint* arg0, Span<byte> arg1, IntPtr** arg2)
+        public static unsafe byte* HPALETTEUserUnmarshal64(this Windows thisApi, uint* arg0, Span<byte> arg1, void** arg2)
         {
             // SpanOverloader
             return thisApi.HPALETTEUserUnmarshal64(arg0, ref arg1.GetPinnableReference(), arg2);
@@ -50314,7 +50314,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 7102, Column 29 in ocidl.h")]
-        public static unsafe byte* HPALETTEUserUnmarshal64(this Windows thisApi, uint* arg0, Span<byte> arg1, ref IntPtr* arg2)
+        public static unsafe byte* HPALETTEUserUnmarshal64(this Windows thisApi, uint* arg0, Span<byte> arg1, ref void* arg2)
         {
             // SpanOverloader
             return thisApi.HPALETTEUserUnmarshal64(arg0, ref arg1.GetPinnableReference(), ref arg2);
@@ -50322,7 +50322,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 7102, Column 29 in ocidl.h")]
-        public static unsafe byte* HPALETTEUserUnmarshal64(this Windows thisApi, Span<uint> arg0, byte* arg1, IntPtr** arg2)
+        public static unsafe byte* HPALETTEUserUnmarshal64(this Windows thisApi, Span<uint> arg0, byte* arg1, void** arg2)
         {
             // SpanOverloader
             return thisApi.HPALETTEUserUnmarshal64(ref arg0.GetPinnableReference(), arg1, arg2);
@@ -50330,7 +50330,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 7102, Column 29 in ocidl.h")]
-        public static unsafe byte* HPALETTEUserUnmarshal64(this Windows thisApi, Span<uint> arg0, byte* arg1, ref IntPtr* arg2)
+        public static unsafe byte* HPALETTEUserUnmarshal64(this Windows thisApi, Span<uint> arg0, byte* arg1, ref void* arg2)
         {
             // SpanOverloader
             return thisApi.HPALETTEUserUnmarshal64(ref arg0.GetPinnableReference(), arg1, ref arg2);
@@ -50338,7 +50338,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 7102, Column 29 in ocidl.h")]
-        public static unsafe byte* HPALETTEUserUnmarshal64(this Windows thisApi, Span<uint> arg0, Span<byte> arg1, IntPtr** arg2)
+        public static unsafe byte* HPALETTEUserUnmarshal64(this Windows thisApi, Span<uint> arg0, Span<byte> arg1, void** arg2)
         {
             // SpanOverloader
             return thisApi.HPALETTEUserUnmarshal64(ref arg0.GetPinnableReference(), ref arg1.GetPinnableReference(), arg2);
@@ -50346,7 +50346,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 7102, Column 29 in ocidl.h")]
-        public static unsafe byte* HPALETTEUserUnmarshal64(this Windows thisApi, Span<uint> arg0, Span<byte> arg1, ref IntPtr* arg2)
+        public static unsafe byte* HPALETTEUserUnmarshal64(this Windows thisApi, Span<uint> arg0, Span<byte> arg1, ref void* arg2)
         {
             // SpanOverloader
             return thisApi.HPALETTEUserUnmarshal64(ref arg0.GetPinnableReference(), ref arg1.GetPinnableReference(), ref arg2);
@@ -50354,7 +50354,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 7102, Column 29 in ocidl.h")]
-        public static unsafe byte* HPALETTEUserUnmarshal64(this Windows thisApi, Span<uint> arg0, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, IntPtr** arg2)
+        public static unsafe byte* HPALETTEUserUnmarshal64(this Windows thisApi, Span<uint> arg0, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, void** arg2)
         {
             // SpanOverloader
             return thisApi.HPALETTEUserUnmarshal64(ref arg0.GetPinnableReference(), arg1, arg2);
@@ -50362,7 +50362,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 7102, Column 29 in ocidl.h")]
-        public static unsafe byte* HPALETTEUserUnmarshal64(this Windows thisApi, Span<uint> arg0, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, ref IntPtr* arg2)
+        public static unsafe byte* HPALETTEUserUnmarshal64(this Windows thisApi, Span<uint> arg0, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, ref void* arg2)
         {
             // SpanOverloader
             return thisApi.HPALETTEUserUnmarshal64(ref arg0.GetPinnableReference(), arg1, ref arg2);
@@ -50370,7 +50370,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 7103, Column 39 in ocidl.h")]
-        public static unsafe void HPALETTEUserFree64(this Windows thisApi, Span<uint> arg0, IntPtr** arg1)
+        public static unsafe void HPALETTEUserFree64(this Windows thisApi, Span<uint> arg0, void** arg1)
         {
             // SpanOverloader
             thisApi.HPALETTEUserFree64(ref arg0.GetPinnableReference(), arg1);
@@ -50378,7 +50378,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 7103, Column 39 in ocidl.h")]
-        public static unsafe void HPALETTEUserFree64(this Windows thisApi, Span<uint> arg0, ref IntPtr* arg1)
+        public static unsafe void HPALETTEUserFree64(this Windows thisApi, Span<uint> arg0, ref void* arg1)
         {
             // SpanOverloader
             thisApi.HPALETTEUserFree64(ref arg0.GetPinnableReference(), ref arg1);
@@ -50386,7 +50386,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 7105, Column 39 in ocidl.h")]
-        public static unsafe uint HRGNUserSize64(this Windows thisApi, Span<uint> arg0, uint arg1, IntPtr** arg2)
+        public static unsafe uint HRGNUserSize64(this Windows thisApi, Span<uint> arg0, uint arg1, void** arg2)
         {
             // SpanOverloader
             return thisApi.HRGNUserSize64(ref arg0.GetPinnableReference(), arg1, arg2);
@@ -50394,7 +50394,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 7105, Column 39 in ocidl.h")]
-        public static unsafe uint HRGNUserSize64(this Windows thisApi, Span<uint> arg0, uint arg1, ref IntPtr* arg2)
+        public static unsafe uint HRGNUserSize64(this Windows thisApi, Span<uint> arg0, uint arg1, ref void* arg2)
         {
             // SpanOverloader
             return thisApi.HRGNUserSize64(ref arg0.GetPinnableReference(), arg1, ref arg2);
@@ -50402,7 +50402,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 7106, Column 29 in ocidl.h")]
-        public static unsafe byte* HRGNUserMarshal64(this Windows thisApi, uint* arg0, Span<byte> arg1, IntPtr** arg2)
+        public static unsafe byte* HRGNUserMarshal64(this Windows thisApi, uint* arg0, Span<byte> arg1, void** arg2)
         {
             // SpanOverloader
             return thisApi.HRGNUserMarshal64(arg0, ref arg1.GetPinnableReference(), arg2);
@@ -50410,7 +50410,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 7106, Column 29 in ocidl.h")]
-        public static unsafe byte* HRGNUserMarshal64(this Windows thisApi, uint* arg0, Span<byte> arg1, ref IntPtr* arg2)
+        public static unsafe byte* HRGNUserMarshal64(this Windows thisApi, uint* arg0, Span<byte> arg1, ref void* arg2)
         {
             // SpanOverloader
             return thisApi.HRGNUserMarshal64(arg0, ref arg1.GetPinnableReference(), ref arg2);
@@ -50418,7 +50418,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 7106, Column 29 in ocidl.h")]
-        public static unsafe byte* HRGNUserMarshal64(this Windows thisApi, Span<uint> arg0, byte* arg1, IntPtr** arg2)
+        public static unsafe byte* HRGNUserMarshal64(this Windows thisApi, Span<uint> arg0, byte* arg1, void** arg2)
         {
             // SpanOverloader
             return thisApi.HRGNUserMarshal64(ref arg0.GetPinnableReference(), arg1, arg2);
@@ -50426,7 +50426,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 7106, Column 29 in ocidl.h")]
-        public static unsafe byte* HRGNUserMarshal64(this Windows thisApi, Span<uint> arg0, byte* arg1, ref IntPtr* arg2)
+        public static unsafe byte* HRGNUserMarshal64(this Windows thisApi, Span<uint> arg0, byte* arg1, ref void* arg2)
         {
             // SpanOverloader
             return thisApi.HRGNUserMarshal64(ref arg0.GetPinnableReference(), arg1, ref arg2);
@@ -50434,7 +50434,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 7106, Column 29 in ocidl.h")]
-        public static unsafe byte* HRGNUserMarshal64(this Windows thisApi, Span<uint> arg0, Span<byte> arg1, IntPtr** arg2)
+        public static unsafe byte* HRGNUserMarshal64(this Windows thisApi, Span<uint> arg0, Span<byte> arg1, void** arg2)
         {
             // SpanOverloader
             return thisApi.HRGNUserMarshal64(ref arg0.GetPinnableReference(), ref arg1.GetPinnableReference(), arg2);
@@ -50442,7 +50442,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 7106, Column 29 in ocidl.h")]
-        public static unsafe byte* HRGNUserMarshal64(this Windows thisApi, Span<uint> arg0, Span<byte> arg1, ref IntPtr* arg2)
+        public static unsafe byte* HRGNUserMarshal64(this Windows thisApi, Span<uint> arg0, Span<byte> arg1, ref void* arg2)
         {
             // SpanOverloader
             return thisApi.HRGNUserMarshal64(ref arg0.GetPinnableReference(), ref arg1.GetPinnableReference(), ref arg2);
@@ -50450,7 +50450,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 7106, Column 29 in ocidl.h")]
-        public static unsafe byte* HRGNUserMarshal64(this Windows thisApi, Span<uint> arg0, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, IntPtr** arg2)
+        public static unsafe byte* HRGNUserMarshal64(this Windows thisApi, Span<uint> arg0, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, void** arg2)
         {
             // SpanOverloader
             return thisApi.HRGNUserMarshal64(ref arg0.GetPinnableReference(), arg1, arg2);
@@ -50458,7 +50458,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 7106, Column 29 in ocidl.h")]
-        public static unsafe byte* HRGNUserMarshal64(this Windows thisApi, Span<uint> arg0, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, ref IntPtr* arg2)
+        public static unsafe byte* HRGNUserMarshal64(this Windows thisApi, Span<uint> arg0, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, ref void* arg2)
         {
             // SpanOverloader
             return thisApi.HRGNUserMarshal64(ref arg0.GetPinnableReference(), arg1, ref arg2);
@@ -50466,7 +50466,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 7107, Column 29 in ocidl.h")]
-        public static unsafe byte* HRGNUserUnmarshal64(this Windows thisApi, uint* arg0, Span<byte> arg1, IntPtr** arg2)
+        public static unsafe byte* HRGNUserUnmarshal64(this Windows thisApi, uint* arg0, Span<byte> arg1, void** arg2)
         {
             // SpanOverloader
             return thisApi.HRGNUserUnmarshal64(arg0, ref arg1.GetPinnableReference(), arg2);
@@ -50474,7 +50474,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 7107, Column 29 in ocidl.h")]
-        public static unsafe byte* HRGNUserUnmarshal64(this Windows thisApi, uint* arg0, Span<byte> arg1, ref IntPtr* arg2)
+        public static unsafe byte* HRGNUserUnmarshal64(this Windows thisApi, uint* arg0, Span<byte> arg1, ref void* arg2)
         {
             // SpanOverloader
             return thisApi.HRGNUserUnmarshal64(arg0, ref arg1.GetPinnableReference(), ref arg2);
@@ -50482,7 +50482,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 7107, Column 29 in ocidl.h")]
-        public static unsafe byte* HRGNUserUnmarshal64(this Windows thisApi, Span<uint> arg0, byte* arg1, IntPtr** arg2)
+        public static unsafe byte* HRGNUserUnmarshal64(this Windows thisApi, Span<uint> arg0, byte* arg1, void** arg2)
         {
             // SpanOverloader
             return thisApi.HRGNUserUnmarshal64(ref arg0.GetPinnableReference(), arg1, arg2);
@@ -50490,7 +50490,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 7107, Column 29 in ocidl.h")]
-        public static unsafe byte* HRGNUserUnmarshal64(this Windows thisApi, Span<uint> arg0, byte* arg1, ref IntPtr* arg2)
+        public static unsafe byte* HRGNUserUnmarshal64(this Windows thisApi, Span<uint> arg0, byte* arg1, ref void* arg2)
         {
             // SpanOverloader
             return thisApi.HRGNUserUnmarshal64(ref arg0.GetPinnableReference(), arg1, ref arg2);
@@ -50498,7 +50498,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 7107, Column 29 in ocidl.h")]
-        public static unsafe byte* HRGNUserUnmarshal64(this Windows thisApi, Span<uint> arg0, Span<byte> arg1, IntPtr** arg2)
+        public static unsafe byte* HRGNUserUnmarshal64(this Windows thisApi, Span<uint> arg0, Span<byte> arg1, void** arg2)
         {
             // SpanOverloader
             return thisApi.HRGNUserUnmarshal64(ref arg0.GetPinnableReference(), ref arg1.GetPinnableReference(), arg2);
@@ -50506,7 +50506,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 7107, Column 29 in ocidl.h")]
-        public static unsafe byte* HRGNUserUnmarshal64(this Windows thisApi, Span<uint> arg0, Span<byte> arg1, ref IntPtr* arg2)
+        public static unsafe byte* HRGNUserUnmarshal64(this Windows thisApi, Span<uint> arg0, Span<byte> arg1, ref void* arg2)
         {
             // SpanOverloader
             return thisApi.HRGNUserUnmarshal64(ref arg0.GetPinnableReference(), ref arg1.GetPinnableReference(), ref arg2);
@@ -50514,7 +50514,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 7107, Column 29 in ocidl.h")]
-        public static unsafe byte* HRGNUserUnmarshal64(this Windows thisApi, Span<uint> arg0, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, IntPtr** arg2)
+        public static unsafe byte* HRGNUserUnmarshal64(this Windows thisApi, Span<uint> arg0, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, void** arg2)
         {
             // SpanOverloader
             return thisApi.HRGNUserUnmarshal64(ref arg0.GetPinnableReference(), arg1, arg2);
@@ -50522,7 +50522,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 7107, Column 29 in ocidl.h")]
-        public static unsafe byte* HRGNUserUnmarshal64(this Windows thisApi, Span<uint> arg0, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, ref IntPtr* arg2)
+        public static unsafe byte* HRGNUserUnmarshal64(this Windows thisApi, Span<uint> arg0, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, ref void* arg2)
         {
             // SpanOverloader
             return thisApi.HRGNUserUnmarshal64(ref arg0.GetPinnableReference(), arg1, ref arg2);
@@ -50530,7 +50530,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 7108, Column 39 in ocidl.h")]
-        public static unsafe void HRGNUserFree64(this Windows thisApi, Span<uint> arg0, IntPtr** arg1)
+        public static unsafe void HRGNUserFree64(this Windows thisApi, Span<uint> arg0, void** arg1)
         {
             // SpanOverloader
             thisApi.HRGNUserFree64(ref arg0.GetPinnableReference(), arg1);
@@ -50538,7 +50538,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 7108, Column 39 in ocidl.h")]
-        public static unsafe void HRGNUserFree64(this Windows thisApi, Span<uint> arg0, ref IntPtr* arg1)
+        public static unsafe void HRGNUserFree64(this Windows thisApi, Span<uint> arg0, ref void* arg1)
         {
             // SpanOverloader
             thisApi.HRGNUserFree64(ref arg0.GetPinnableReference(), ref arg1);

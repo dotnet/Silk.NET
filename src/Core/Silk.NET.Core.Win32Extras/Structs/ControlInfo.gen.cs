@@ -22,7 +22,7 @@ namespace Silk.NET.Core.Win32Extras
         public ControlInfo
         (
             uint? cb = null,
-            IntPtr* hAccel = null,
+            void* hAccel = null,
             ushort? cAccel = null,
             uint? dwFlags = null
         ) : this()
@@ -57,7 +57,7 @@ namespace Silk.NET.Core.Win32Extras
         [NativeName("Type", "HACCEL")]
         [NativeName("Type.Name", "HACCEL")]
         [NativeName("Name", "hAccel")]
-        public IntPtr* HAccel;
+        public void* HAccel;
 
         [NativeName("Type", "USHORT")]
         [NativeName("Type.Name", "USHORT")]

@@ -85,73 +85,73 @@ public unsafe static class ErrorLogVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int AddError(this ComPtr<IErrorLog> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszPropName, ExcepInfo* pExcepInfo)
+    public static unsafe int AddError(this ComPtr<IErrorLog> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszPropName, ExceptionInfo* pExcepInfo)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
-        ret = ((delegate* unmanaged[Cdecl]<IErrorLog*, char*, ExcepInfo*, int>)@this->LpVtbl[3])(@this, pszPropName, pExcepInfo);
+        ret = ((delegate* unmanaged[Cdecl]<IErrorLog*, char*, ExceptionInfo*, int>)@this->LpVtbl[3])(@this, pszPropName, pExcepInfo);
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int AddError(this ComPtr<IErrorLog> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszPropName, ref ExcepInfo pExcepInfo)
+    public static unsafe int AddError(this ComPtr<IErrorLog> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszPropName, ref ExceptionInfo pExcepInfo)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
-        fixed (ExcepInfo* pExcepInfoPtr = &pExcepInfo)
+        fixed (ExceptionInfo* pExcepInfoPtr = &pExcepInfo)
         {
-            ret = ((delegate* unmanaged[Cdecl]<IErrorLog*, char*, ExcepInfo*, int>)@this->LpVtbl[3])(@this, pszPropName, pExcepInfoPtr);
+            ret = ((delegate* unmanaged[Cdecl]<IErrorLog*, char*, ExceptionInfo*, int>)@this->LpVtbl[3])(@this, pszPropName, pExcepInfoPtr);
         }
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int AddError(this ComPtr<IErrorLog> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszPropName, ExcepInfo* pExcepInfo)
+    public static unsafe int AddError(this ComPtr<IErrorLog> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszPropName, ExceptionInfo* pExcepInfo)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
         fixed (char* pszPropNamePtr = &pszPropName)
         {
-            ret = ((delegate* unmanaged[Cdecl]<IErrorLog*, char*, ExcepInfo*, int>)@this->LpVtbl[3])(@this, pszPropNamePtr, pExcepInfo);
+            ret = ((delegate* unmanaged[Cdecl]<IErrorLog*, char*, ExceptionInfo*, int>)@this->LpVtbl[3])(@this, pszPropNamePtr, pExcepInfo);
         }
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static int AddError(this ComPtr<IErrorLog> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszPropName, ref ExcepInfo pExcepInfo)
+    public static int AddError(this ComPtr<IErrorLog> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszPropName, ref ExceptionInfo pExcepInfo)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
         fixed (char* pszPropNamePtr = &pszPropName)
         {
-            fixed (ExcepInfo* pExcepInfoPtr = &pExcepInfo)
+            fixed (ExceptionInfo* pExcepInfoPtr = &pExcepInfo)
             {
-                ret = ((delegate* unmanaged[Cdecl]<IErrorLog*, char*, ExcepInfo*, int>)@this->LpVtbl[3])(@this, pszPropNamePtr, pExcepInfoPtr);
+                ret = ((delegate* unmanaged[Cdecl]<IErrorLog*, char*, ExceptionInfo*, int>)@this->LpVtbl[3])(@this, pszPropNamePtr, pExcepInfoPtr);
             }
         }
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int AddError(this ComPtr<IErrorLog> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pszPropName, ExcepInfo* pExcepInfo)
+    public static unsafe int AddError(this ComPtr<IErrorLog> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pszPropName, ExceptionInfo* pExcepInfo)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
         var pszPropNamePtr = (byte*) SilkMarshal.StringToPtr(pszPropName, NativeStringEncoding.UTF8);
-        ret = ((delegate* unmanaged[Cdecl]<IErrorLog*, byte*, ExcepInfo*, int>)@this->LpVtbl[3])(@this, pszPropNamePtr, pExcepInfo);
+        ret = ((delegate* unmanaged[Cdecl]<IErrorLog*, byte*, ExceptionInfo*, int>)@this->LpVtbl[3])(@this, pszPropNamePtr, pExcepInfo);
         SilkMarshal.Free((nint)pszPropNamePtr);
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static int AddError(this ComPtr<IErrorLog> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pszPropName, ref ExcepInfo pExcepInfo)
+    public static int AddError(this ComPtr<IErrorLog> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pszPropName, ref ExceptionInfo pExcepInfo)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
         var pszPropNamePtr = (byte*) SilkMarshal.StringToPtr(pszPropName, NativeStringEncoding.UTF8);
-        fixed (ExcepInfo* pExcepInfoPtr = &pExcepInfo)
+        fixed (ExceptionInfo* pExcepInfoPtr = &pExcepInfo)
         {
-            ret = ((delegate* unmanaged[Cdecl]<IErrorLog*, byte*, ExcepInfo*, int>)@this->LpVtbl[3])(@this, pszPropNamePtr, pExcepInfoPtr);
+            ret = ((delegate* unmanaged[Cdecl]<IErrorLog*, byte*, ExceptionInfo*, int>)@this->LpVtbl[3])(@this, pszPropNamePtr, pExcepInfoPtr);
         }
         SilkMarshal.Free((nint)pszPropNamePtr);
         return ret;
@@ -183,7 +183,7 @@ public unsafe static class ErrorLogVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int AddError(this ComPtr<IErrorLog> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszPropName, Span<ExcepInfo> pExcepInfo)
+    public static unsafe int AddError(this ComPtr<IErrorLog> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszPropName, Span<ExceptionInfo> pExcepInfo)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -191,7 +191,7 @@ public unsafe static class ErrorLogVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int AddError(this ComPtr<IErrorLog> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<char> pszPropName, ExcepInfo* pExcepInfo)
+    public static unsafe int AddError(this ComPtr<IErrorLog> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<char> pszPropName, ExceptionInfo* pExcepInfo)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -199,7 +199,7 @@ public unsafe static class ErrorLogVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int AddError(this ComPtr<IErrorLog> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<char> pszPropName, Span<ExcepInfo> pExcepInfo)
+    public static int AddError(this ComPtr<IErrorLog> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<char> pszPropName, Span<ExceptionInfo> pExcepInfo)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -207,7 +207,7 @@ public unsafe static class ErrorLogVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int AddError(this ComPtr<IErrorLog> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pszPropName, Span<ExcepInfo> pExcepInfo)
+    public static int AddError(this ComPtr<IErrorLog> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pszPropName, Span<ExceptionInfo> pExcepInfo)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader

@@ -85,91 +85,91 @@ public unsafe static class MessageFilterVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe uint HandleInComingCall(this ComPtr<IMessageFilter> thisVtbl, uint dwCallType, IntPtr* htaskCaller, uint dwTickCount, InterfaceInfo* lpInterfaceInfo)
+    public static unsafe uint HandleInComingCall(this ComPtr<IMessageFilter> thisVtbl, uint dwCallType, void* htaskCaller, uint dwTickCount, InterfaceInfo* lpInterfaceInfo)
     {
         var @this = thisVtbl.Handle;
         uint ret = default;
-        ret = ((delegate* unmanaged[Cdecl]<IMessageFilter*, uint, IntPtr*, uint, InterfaceInfo*, uint>)@this->LpVtbl[3])(@this, dwCallType, htaskCaller, dwTickCount, lpInterfaceInfo);
+        ret = ((delegate* unmanaged[Cdecl]<IMessageFilter*, uint, void*, uint, InterfaceInfo*, uint>)@this->LpVtbl[3])(@this, dwCallType, htaskCaller, dwTickCount, lpInterfaceInfo);
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe uint HandleInComingCall(this ComPtr<IMessageFilter> thisVtbl, uint dwCallType, IntPtr* htaskCaller, uint dwTickCount, ref InterfaceInfo lpInterfaceInfo)
+    public static unsafe uint HandleInComingCall(this ComPtr<IMessageFilter> thisVtbl, uint dwCallType, void* htaskCaller, uint dwTickCount, ref InterfaceInfo lpInterfaceInfo)
     {
         var @this = thisVtbl.Handle;
         uint ret = default;
         fixed (InterfaceInfo* lpInterfaceInfoPtr = &lpInterfaceInfo)
         {
-            ret = ((delegate* unmanaged[Cdecl]<IMessageFilter*, uint, IntPtr*, uint, InterfaceInfo*, uint>)@this->LpVtbl[3])(@this, dwCallType, htaskCaller, dwTickCount, lpInterfaceInfoPtr);
+            ret = ((delegate* unmanaged[Cdecl]<IMessageFilter*, uint, void*, uint, InterfaceInfo*, uint>)@this->LpVtbl[3])(@this, dwCallType, htaskCaller, dwTickCount, lpInterfaceInfoPtr);
         }
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe uint HandleInComingCall(this ComPtr<IMessageFilter> thisVtbl, uint dwCallType, ref IntPtr htaskCaller, uint dwTickCount, InterfaceInfo* lpInterfaceInfo)
+    public static unsafe uint HandleInComingCall<T0>(this ComPtr<IMessageFilter> thisVtbl, uint dwCallType, ref T0 htaskCaller, uint dwTickCount, InterfaceInfo* lpInterfaceInfo) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         uint ret = default;
-        fixed (IntPtr* htaskCallerPtr = &htaskCaller)
+        fixed (void* htaskCallerPtr = &htaskCaller)
         {
-            ret = ((delegate* unmanaged[Cdecl]<IMessageFilter*, uint, IntPtr*, uint, InterfaceInfo*, uint>)@this->LpVtbl[3])(@this, dwCallType, htaskCallerPtr, dwTickCount, lpInterfaceInfo);
+            ret = ((delegate* unmanaged[Cdecl]<IMessageFilter*, uint, void*, uint, InterfaceInfo*, uint>)@this->LpVtbl[3])(@this, dwCallType, htaskCallerPtr, dwTickCount, lpInterfaceInfo);
         }
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static uint HandleInComingCall(this ComPtr<IMessageFilter> thisVtbl, uint dwCallType, ref IntPtr htaskCaller, uint dwTickCount, ref InterfaceInfo lpInterfaceInfo)
+    public static uint HandleInComingCall<T0>(this ComPtr<IMessageFilter> thisVtbl, uint dwCallType, ref T0 htaskCaller, uint dwTickCount, ref InterfaceInfo lpInterfaceInfo) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         uint ret = default;
-        fixed (IntPtr* htaskCallerPtr = &htaskCaller)
+        fixed (void* htaskCallerPtr = &htaskCaller)
         {
             fixed (InterfaceInfo* lpInterfaceInfoPtr = &lpInterfaceInfo)
             {
-                ret = ((delegate* unmanaged[Cdecl]<IMessageFilter*, uint, IntPtr*, uint, InterfaceInfo*, uint>)@this->LpVtbl[3])(@this, dwCallType, htaskCallerPtr, dwTickCount, lpInterfaceInfoPtr);
+                ret = ((delegate* unmanaged[Cdecl]<IMessageFilter*, uint, void*, uint, InterfaceInfo*, uint>)@this->LpVtbl[3])(@this, dwCallType, htaskCallerPtr, dwTickCount, lpInterfaceInfoPtr);
             }
         }
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe uint RetryRejectedCall(this ComPtr<IMessageFilter> thisVtbl, IntPtr* htaskCallee, uint dwTickCount, uint dwRejectType)
+    public static unsafe uint RetryRejectedCall(this ComPtr<IMessageFilter> thisVtbl, void* htaskCallee, uint dwTickCount, uint dwRejectType)
     {
         var @this = thisVtbl.Handle;
         uint ret = default;
-        ret = ((delegate* unmanaged[Cdecl]<IMessageFilter*, IntPtr*, uint, uint, uint>)@this->LpVtbl[4])(@this, htaskCallee, dwTickCount, dwRejectType);
+        ret = ((delegate* unmanaged[Cdecl]<IMessageFilter*, void*, uint, uint, uint>)@this->LpVtbl[4])(@this, htaskCallee, dwTickCount, dwRejectType);
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static uint RetryRejectedCall(this ComPtr<IMessageFilter> thisVtbl, ref IntPtr htaskCallee, uint dwTickCount, uint dwRejectType)
+    public static uint RetryRejectedCall<T0>(this ComPtr<IMessageFilter> thisVtbl, ref T0 htaskCallee, uint dwTickCount, uint dwRejectType) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         uint ret = default;
-        fixed (IntPtr* htaskCalleePtr = &htaskCallee)
+        fixed (void* htaskCalleePtr = &htaskCallee)
         {
-            ret = ((delegate* unmanaged[Cdecl]<IMessageFilter*, IntPtr*, uint, uint, uint>)@this->LpVtbl[4])(@this, htaskCalleePtr, dwTickCount, dwRejectType);
+            ret = ((delegate* unmanaged[Cdecl]<IMessageFilter*, void*, uint, uint, uint>)@this->LpVtbl[4])(@this, htaskCalleePtr, dwTickCount, dwRejectType);
         }
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe uint MessagePending(this ComPtr<IMessageFilter> thisVtbl, IntPtr* htaskCallee, uint dwTickCount, uint dwPendingType)
+    public static unsafe uint MessagePending(this ComPtr<IMessageFilter> thisVtbl, void* htaskCallee, uint dwTickCount, uint dwPendingType)
     {
         var @this = thisVtbl.Handle;
         uint ret = default;
-        ret = ((delegate* unmanaged[Cdecl]<IMessageFilter*, IntPtr*, uint, uint, uint>)@this->LpVtbl[5])(@this, htaskCallee, dwTickCount, dwPendingType);
+        ret = ((delegate* unmanaged[Cdecl]<IMessageFilter*, void*, uint, uint, uint>)@this->LpVtbl[5])(@this, htaskCallee, dwTickCount, dwPendingType);
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static uint MessagePending(this ComPtr<IMessageFilter> thisVtbl, ref IntPtr htaskCallee, uint dwTickCount, uint dwPendingType)
+    public static uint MessagePending<T0>(this ComPtr<IMessageFilter> thisVtbl, ref T0 htaskCallee, uint dwTickCount, uint dwPendingType) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         uint ret = default;
-        fixed (IntPtr* htaskCalleePtr = &htaskCallee)
+        fixed (void* htaskCalleePtr = &htaskCallee)
         {
-            ret = ((delegate* unmanaged[Cdecl]<IMessageFilter*, IntPtr*, uint, uint, uint>)@this->LpVtbl[5])(@this, htaskCalleePtr, dwTickCount, dwPendingType);
+            ret = ((delegate* unmanaged[Cdecl]<IMessageFilter*, void*, uint, uint, uint>)@this->LpVtbl[5])(@this, htaskCalleePtr, dwTickCount, dwPendingType);
         }
         return ret;
     }
@@ -200,7 +200,7 @@ public unsafe static class MessageFilterVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe uint HandleInComingCall(this ComPtr<IMessageFilter> thisVtbl, uint dwCallType, IntPtr* htaskCaller, uint dwTickCount, Span<InterfaceInfo> lpInterfaceInfo)
+    public static unsafe uint HandleInComingCall(this ComPtr<IMessageFilter> thisVtbl, uint dwCallType, void* htaskCaller, uint dwTickCount, Span<InterfaceInfo> lpInterfaceInfo)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -208,7 +208,7 @@ public unsafe static class MessageFilterVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe uint HandleInComingCall(this ComPtr<IMessageFilter> thisVtbl, uint dwCallType, Span<IntPtr> htaskCaller, uint dwTickCount, InterfaceInfo* lpInterfaceInfo)
+    public static unsafe uint HandleInComingCall<T0>(this ComPtr<IMessageFilter> thisVtbl, uint dwCallType, Span<T0> htaskCaller, uint dwTickCount, InterfaceInfo* lpInterfaceInfo) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -216,7 +216,7 @@ public unsafe static class MessageFilterVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static uint HandleInComingCall(this ComPtr<IMessageFilter> thisVtbl, uint dwCallType, Span<IntPtr> htaskCaller, uint dwTickCount, Span<InterfaceInfo> lpInterfaceInfo)
+    public static uint HandleInComingCall<T0>(this ComPtr<IMessageFilter> thisVtbl, uint dwCallType, Span<T0> htaskCaller, uint dwTickCount, Span<InterfaceInfo> lpInterfaceInfo) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -224,7 +224,7 @@ public unsafe static class MessageFilterVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static uint RetryRejectedCall(this ComPtr<IMessageFilter> thisVtbl, Span<IntPtr> htaskCallee, uint dwTickCount, uint dwRejectType)
+    public static uint RetryRejectedCall<T0>(this ComPtr<IMessageFilter> thisVtbl, Span<T0> htaskCallee, uint dwTickCount, uint dwRejectType) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -232,7 +232,7 @@ public unsafe static class MessageFilterVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static uint MessagePending(this ComPtr<IMessageFilter> thisVtbl, Span<IntPtr> htaskCallee, uint dwTickCount, uint dwPendingType)
+    public static uint MessagePending<T0>(this ComPtr<IMessageFilter> thisVtbl, Span<T0> htaskCallee, uint dwTickCount, uint dwPendingType) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader

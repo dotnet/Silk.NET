@@ -261,107 +261,107 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Invoke(int dispIdMember, Guid* riid, uint lcid, ushort wFlags, DispatchParams* pDispParams, Variant* pVarResult, ExcepInfo* pExcepInfo, uint* puArgErr)
+        public readonly unsafe int Invoke(int dispIdMember, Guid* riid, uint lcid, ushort wFlags, DispatchParams* pDispParams, Variant* pVarResult, ExceptionInfo* pExcepInfo, uint* puArgErr)
         {
             var @this = (IDispatch*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Cdecl]<IDispatch*, int, Guid*, uint, ushort, DispatchParams*, Variant*, ExcepInfo*, uint*, int>)@this->LpVtbl[6])(@this, dispIdMember, riid, lcid, wFlags, pDispParams, pVarResult, pExcepInfo, puArgErr);
+            ret = ((delegate* unmanaged[Cdecl]<IDispatch*, int, Guid*, uint, ushort, DispatchParams*, Variant*, ExceptionInfo*, uint*, int>)@this->LpVtbl[6])(@this, dispIdMember, riid, lcid, wFlags, pDispParams, pVarResult, pExcepInfo, puArgErr);
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Invoke(int dispIdMember, Guid* riid, uint lcid, ushort wFlags, DispatchParams* pDispParams, Variant* pVarResult, ExcepInfo* pExcepInfo, ref uint puArgErr)
+        public readonly unsafe int Invoke(int dispIdMember, Guid* riid, uint lcid, ushort wFlags, DispatchParams* pDispParams, Variant* pVarResult, ExceptionInfo* pExcepInfo, ref uint puArgErr)
         {
             var @this = (IDispatch*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
             fixed (uint* puArgErrPtr = &puArgErr)
             {
-                ret = ((delegate* unmanaged[Cdecl]<IDispatch*, int, Guid*, uint, ushort, DispatchParams*, Variant*, ExcepInfo*, uint*, int>)@this->LpVtbl[6])(@this, dispIdMember, riid, lcid, wFlags, pDispParams, pVarResult, pExcepInfo, puArgErrPtr);
+                ret = ((delegate* unmanaged[Cdecl]<IDispatch*, int, Guid*, uint, ushort, DispatchParams*, Variant*, ExceptionInfo*, uint*, int>)@this->LpVtbl[6])(@this, dispIdMember, riid, lcid, wFlags, pDispParams, pVarResult, pExcepInfo, puArgErrPtr);
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Invoke(int dispIdMember, Guid* riid, uint lcid, ushort wFlags, DispatchParams* pDispParams, Variant* pVarResult, ref ExcepInfo pExcepInfo, uint* puArgErr)
+        public readonly unsafe int Invoke(int dispIdMember, Guid* riid, uint lcid, ushort wFlags, DispatchParams* pDispParams, Variant* pVarResult, ref ExceptionInfo pExcepInfo, uint* puArgErr)
         {
             var @this = (IDispatch*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            fixed (ExcepInfo* pExcepInfoPtr = &pExcepInfo)
+            fixed (ExceptionInfo* pExcepInfoPtr = &pExcepInfo)
             {
-                ret = ((delegate* unmanaged[Cdecl]<IDispatch*, int, Guid*, uint, ushort, DispatchParams*, Variant*, ExcepInfo*, uint*, int>)@this->LpVtbl[6])(@this, dispIdMember, riid, lcid, wFlags, pDispParams, pVarResult, pExcepInfoPtr, puArgErr);
+                ret = ((delegate* unmanaged[Cdecl]<IDispatch*, int, Guid*, uint, ushort, DispatchParams*, Variant*, ExceptionInfo*, uint*, int>)@this->LpVtbl[6])(@this, dispIdMember, riid, lcid, wFlags, pDispParams, pVarResult, pExcepInfoPtr, puArgErr);
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Invoke(int dispIdMember, Guid* riid, uint lcid, ushort wFlags, DispatchParams* pDispParams, Variant* pVarResult, ref ExcepInfo pExcepInfo, ref uint puArgErr)
+        public readonly unsafe int Invoke(int dispIdMember, Guid* riid, uint lcid, ushort wFlags, DispatchParams* pDispParams, Variant* pVarResult, ref ExceptionInfo pExcepInfo, ref uint puArgErr)
         {
             var @this = (IDispatch*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            fixed (ExcepInfo* pExcepInfoPtr = &pExcepInfo)
-            {
-                fixed (uint* puArgErrPtr = &puArgErr)
-                {
-                    ret = ((delegate* unmanaged[Cdecl]<IDispatch*, int, Guid*, uint, ushort, DispatchParams*, Variant*, ExcepInfo*, uint*, int>)@this->LpVtbl[6])(@this, dispIdMember, riid, lcid, wFlags, pDispParams, pVarResult, pExcepInfoPtr, puArgErrPtr);
-                }
-            }
-            return ret;
-        }
-
-        /// <summary>To be documented.</summary>
-        public readonly unsafe int Invoke(int dispIdMember, Guid* riid, uint lcid, ushort wFlags, DispatchParams* pDispParams, ref Variant pVarResult, ExcepInfo* pExcepInfo, uint* puArgErr)
-        {
-            var @this = (IDispatch*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            int ret = default;
-            fixed (Variant* pVarResultPtr = &pVarResult)
-            {
-                ret = ((delegate* unmanaged[Cdecl]<IDispatch*, int, Guid*, uint, ushort, DispatchParams*, Variant*, ExcepInfo*, uint*, int>)@this->LpVtbl[6])(@this, dispIdMember, riid, lcid, wFlags, pDispParams, pVarResultPtr, pExcepInfo, puArgErr);
-            }
-            return ret;
-        }
-
-        /// <summary>To be documented.</summary>
-        public readonly unsafe int Invoke(int dispIdMember, Guid* riid, uint lcid, ushort wFlags, DispatchParams* pDispParams, ref Variant pVarResult, ExcepInfo* pExcepInfo, ref uint puArgErr)
-        {
-            var @this = (IDispatch*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            int ret = default;
-            fixed (Variant* pVarResultPtr = &pVarResult)
+            fixed (ExceptionInfo* pExcepInfoPtr = &pExcepInfo)
             {
                 fixed (uint* puArgErrPtr = &puArgErr)
                 {
-                    ret = ((delegate* unmanaged[Cdecl]<IDispatch*, int, Guid*, uint, ushort, DispatchParams*, Variant*, ExcepInfo*, uint*, int>)@this->LpVtbl[6])(@this, dispIdMember, riid, lcid, wFlags, pDispParams, pVarResultPtr, pExcepInfo, puArgErrPtr);
+                    ret = ((delegate* unmanaged[Cdecl]<IDispatch*, int, Guid*, uint, ushort, DispatchParams*, Variant*, ExceptionInfo*, uint*, int>)@this->LpVtbl[6])(@this, dispIdMember, riid, lcid, wFlags, pDispParams, pVarResult, pExcepInfoPtr, puArgErrPtr);
                 }
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Invoke(int dispIdMember, Guid* riid, uint lcid, ushort wFlags, DispatchParams* pDispParams, ref Variant pVarResult, ref ExcepInfo pExcepInfo, uint* puArgErr)
+        public readonly unsafe int Invoke(int dispIdMember, Guid* riid, uint lcid, ushort wFlags, DispatchParams* pDispParams, ref Variant pVarResult, ExceptionInfo* pExcepInfo, uint* puArgErr)
         {
             var @this = (IDispatch*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
             fixed (Variant* pVarResultPtr = &pVarResult)
             {
-                fixed (ExcepInfo* pExcepInfoPtr = &pExcepInfo)
+                ret = ((delegate* unmanaged[Cdecl]<IDispatch*, int, Guid*, uint, ushort, DispatchParams*, Variant*, ExceptionInfo*, uint*, int>)@this->LpVtbl[6])(@this, dispIdMember, riid, lcid, wFlags, pDispParams, pVarResultPtr, pExcepInfo, puArgErr);
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int Invoke(int dispIdMember, Guid* riid, uint lcid, ushort wFlags, DispatchParams* pDispParams, ref Variant pVarResult, ExceptionInfo* pExcepInfo, ref uint puArgErr)
+        {
+            var @this = (IDispatch*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (Variant* pVarResultPtr = &pVarResult)
+            {
+                fixed (uint* puArgErrPtr = &puArgErr)
                 {
-                    ret = ((delegate* unmanaged[Cdecl]<IDispatch*, int, Guid*, uint, ushort, DispatchParams*, Variant*, ExcepInfo*, uint*, int>)@this->LpVtbl[6])(@this, dispIdMember, riid, lcid, wFlags, pDispParams, pVarResultPtr, pExcepInfoPtr, puArgErr);
+                    ret = ((delegate* unmanaged[Cdecl]<IDispatch*, int, Guid*, uint, ushort, DispatchParams*, Variant*, ExceptionInfo*, uint*, int>)@this->LpVtbl[6])(@this, dispIdMember, riid, lcid, wFlags, pDispParams, pVarResultPtr, pExcepInfo, puArgErrPtr);
                 }
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Invoke(int dispIdMember, Guid* riid, uint lcid, ushort wFlags, DispatchParams* pDispParams, ref Variant pVarResult, ref ExcepInfo pExcepInfo, ref uint puArgErr)
+        public readonly unsafe int Invoke(int dispIdMember, Guid* riid, uint lcid, ushort wFlags, DispatchParams* pDispParams, ref Variant pVarResult, ref ExceptionInfo pExcepInfo, uint* puArgErr)
         {
             var @this = (IDispatch*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
             fixed (Variant* pVarResultPtr = &pVarResult)
             {
-                fixed (ExcepInfo* pExcepInfoPtr = &pExcepInfo)
+                fixed (ExceptionInfo* pExcepInfoPtr = &pExcepInfo)
+                {
+                    ret = ((delegate* unmanaged[Cdecl]<IDispatch*, int, Guid*, uint, ushort, DispatchParams*, Variant*, ExceptionInfo*, uint*, int>)@this->LpVtbl[6])(@this, dispIdMember, riid, lcid, wFlags, pDispParams, pVarResultPtr, pExcepInfoPtr, puArgErr);
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int Invoke(int dispIdMember, Guid* riid, uint lcid, ushort wFlags, DispatchParams* pDispParams, ref Variant pVarResult, ref ExceptionInfo pExcepInfo, ref uint puArgErr)
+        {
+            var @this = (IDispatch*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (Variant* pVarResultPtr = &pVarResult)
+            {
+                fixed (ExceptionInfo* pExcepInfoPtr = &pExcepInfo)
                 {
                     fixed (uint* puArgErrPtr = &puArgErr)
                     {
-                        ret = ((delegate* unmanaged[Cdecl]<IDispatch*, int, Guid*, uint, ushort, DispatchParams*, Variant*, ExcepInfo*, uint*, int>)@this->LpVtbl[6])(@this, dispIdMember, riid, lcid, wFlags, pDispParams, pVarResultPtr, pExcepInfoPtr, puArgErrPtr);
+                        ret = ((delegate* unmanaged[Cdecl]<IDispatch*, int, Guid*, uint, ushort, DispatchParams*, Variant*, ExceptionInfo*, uint*, int>)@this->LpVtbl[6])(@this, dispIdMember, riid, lcid, wFlags, pDispParams, pVarResultPtr, pExcepInfoPtr, puArgErrPtr);
                     }
                 }
             }
@@ -369,19 +369,19 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Invoke(int dispIdMember, Guid* riid, uint lcid, ushort wFlags, ref DispatchParams pDispParams, Variant* pVarResult, ExcepInfo* pExcepInfo, uint* puArgErr)
+        public readonly unsafe int Invoke(int dispIdMember, Guid* riid, uint lcid, ushort wFlags, ref DispatchParams pDispParams, Variant* pVarResult, ExceptionInfo* pExcepInfo, uint* puArgErr)
         {
             var @this = (IDispatch*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
             fixed (DispatchParams* pDispParamsPtr = &pDispParams)
             {
-                ret = ((delegate* unmanaged[Cdecl]<IDispatch*, int, Guid*, uint, ushort, DispatchParams*, Variant*, ExcepInfo*, uint*, int>)@this->LpVtbl[6])(@this, dispIdMember, riid, lcid, wFlags, pDispParamsPtr, pVarResult, pExcepInfo, puArgErr);
+                ret = ((delegate* unmanaged[Cdecl]<IDispatch*, int, Guid*, uint, ushort, DispatchParams*, Variant*, ExceptionInfo*, uint*, int>)@this->LpVtbl[6])(@this, dispIdMember, riid, lcid, wFlags, pDispParamsPtr, pVarResult, pExcepInfo, puArgErr);
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Invoke(int dispIdMember, Guid* riid, uint lcid, ushort wFlags, ref DispatchParams pDispParams, Variant* pVarResult, ExcepInfo* pExcepInfo, ref uint puArgErr)
+        public readonly unsafe int Invoke(int dispIdMember, Guid* riid, uint lcid, ushort wFlags, ref DispatchParams pDispParams, Variant* pVarResult, ExceptionInfo* pExcepInfo, ref uint puArgErr)
         {
             var @this = (IDispatch*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -389,72 +389,39 @@ namespace Silk.NET.Core.Win32Extras
             {
                 fixed (uint* puArgErrPtr = &puArgErr)
                 {
-                    ret = ((delegate* unmanaged[Cdecl]<IDispatch*, int, Guid*, uint, ushort, DispatchParams*, Variant*, ExcepInfo*, uint*, int>)@this->LpVtbl[6])(@this, dispIdMember, riid, lcid, wFlags, pDispParamsPtr, pVarResult, pExcepInfo, puArgErrPtr);
+                    ret = ((delegate* unmanaged[Cdecl]<IDispatch*, int, Guid*, uint, ushort, DispatchParams*, Variant*, ExceptionInfo*, uint*, int>)@this->LpVtbl[6])(@this, dispIdMember, riid, lcid, wFlags, pDispParamsPtr, pVarResult, pExcepInfo, puArgErrPtr);
                 }
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Invoke(int dispIdMember, Guid* riid, uint lcid, ushort wFlags, ref DispatchParams pDispParams, Variant* pVarResult, ref ExcepInfo pExcepInfo, uint* puArgErr)
+        public readonly unsafe int Invoke(int dispIdMember, Guid* riid, uint lcid, ushort wFlags, ref DispatchParams pDispParams, Variant* pVarResult, ref ExceptionInfo pExcepInfo, uint* puArgErr)
         {
             var @this = (IDispatch*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
             fixed (DispatchParams* pDispParamsPtr = &pDispParams)
             {
-                fixed (ExcepInfo* pExcepInfoPtr = &pExcepInfo)
+                fixed (ExceptionInfo* pExcepInfoPtr = &pExcepInfo)
                 {
-                    ret = ((delegate* unmanaged[Cdecl]<IDispatch*, int, Guid*, uint, ushort, DispatchParams*, Variant*, ExcepInfo*, uint*, int>)@this->LpVtbl[6])(@this, dispIdMember, riid, lcid, wFlags, pDispParamsPtr, pVarResult, pExcepInfoPtr, puArgErr);
+                    ret = ((delegate* unmanaged[Cdecl]<IDispatch*, int, Guid*, uint, ushort, DispatchParams*, Variant*, ExceptionInfo*, uint*, int>)@this->LpVtbl[6])(@this, dispIdMember, riid, lcid, wFlags, pDispParamsPtr, pVarResult, pExcepInfoPtr, puArgErr);
                 }
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Invoke(int dispIdMember, Guid* riid, uint lcid, ushort wFlags, ref DispatchParams pDispParams, Variant* pVarResult, ref ExcepInfo pExcepInfo, ref uint puArgErr)
+        public readonly unsafe int Invoke(int dispIdMember, Guid* riid, uint lcid, ushort wFlags, ref DispatchParams pDispParams, Variant* pVarResult, ref ExceptionInfo pExcepInfo, ref uint puArgErr)
         {
             var @this = (IDispatch*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
             fixed (DispatchParams* pDispParamsPtr = &pDispParams)
             {
-                fixed (ExcepInfo* pExcepInfoPtr = &pExcepInfo)
-                {
-                    fixed (uint* puArgErrPtr = &puArgErr)
-                    {
-                        ret = ((delegate* unmanaged[Cdecl]<IDispatch*, int, Guid*, uint, ushort, DispatchParams*, Variant*, ExcepInfo*, uint*, int>)@this->LpVtbl[6])(@this, dispIdMember, riid, lcid, wFlags, pDispParamsPtr, pVarResult, pExcepInfoPtr, puArgErrPtr);
-                    }
-                }
-            }
-            return ret;
-        }
-
-        /// <summary>To be documented.</summary>
-        public readonly unsafe int Invoke(int dispIdMember, Guid* riid, uint lcid, ushort wFlags, ref DispatchParams pDispParams, ref Variant pVarResult, ExcepInfo* pExcepInfo, uint* puArgErr)
-        {
-            var @this = (IDispatch*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            int ret = default;
-            fixed (DispatchParams* pDispParamsPtr = &pDispParams)
-            {
-                fixed (Variant* pVarResultPtr = &pVarResult)
-                {
-                    ret = ((delegate* unmanaged[Cdecl]<IDispatch*, int, Guid*, uint, ushort, DispatchParams*, Variant*, ExcepInfo*, uint*, int>)@this->LpVtbl[6])(@this, dispIdMember, riid, lcid, wFlags, pDispParamsPtr, pVarResultPtr, pExcepInfo, puArgErr);
-                }
-            }
-            return ret;
-        }
-
-        /// <summary>To be documented.</summary>
-        public readonly unsafe int Invoke(int dispIdMember, Guid* riid, uint lcid, ushort wFlags, ref DispatchParams pDispParams, ref Variant pVarResult, ExcepInfo* pExcepInfo, ref uint puArgErr)
-        {
-            var @this = (IDispatch*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            int ret = default;
-            fixed (DispatchParams* pDispParamsPtr = &pDispParams)
-            {
-                fixed (Variant* pVarResultPtr = &pVarResult)
+                fixed (ExceptionInfo* pExcepInfoPtr = &pExcepInfo)
                 {
                     fixed (uint* puArgErrPtr = &puArgErr)
                     {
-                        ret = ((delegate* unmanaged[Cdecl]<IDispatch*, int, Guid*, uint, ushort, DispatchParams*, Variant*, ExcepInfo*, uint*, int>)@this->LpVtbl[6])(@this, dispIdMember, riid, lcid, wFlags, pDispParamsPtr, pVarResultPtr, pExcepInfo, puArgErrPtr);
+                        ret = ((delegate* unmanaged[Cdecl]<IDispatch*, int, Guid*, uint, ushort, DispatchParams*, Variant*, ExceptionInfo*, uint*, int>)@this->LpVtbl[6])(@this, dispIdMember, riid, lcid, wFlags, pDispParamsPtr, pVarResult, pExcepInfoPtr, puArgErrPtr);
                     }
                 }
             }
@@ -462,7 +429,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Invoke(int dispIdMember, Guid* riid, uint lcid, ushort wFlags, ref DispatchParams pDispParams, ref Variant pVarResult, ref ExcepInfo pExcepInfo, uint* puArgErr)
+        public readonly unsafe int Invoke(int dispIdMember, Guid* riid, uint lcid, ushort wFlags, ref DispatchParams pDispParams, ref Variant pVarResult, ExceptionInfo* pExcepInfo, uint* puArgErr)
         {
             var @this = (IDispatch*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -470,9 +437,24 @@ namespace Silk.NET.Core.Win32Extras
             {
                 fixed (Variant* pVarResultPtr = &pVarResult)
                 {
-                    fixed (ExcepInfo* pExcepInfoPtr = &pExcepInfo)
+                    ret = ((delegate* unmanaged[Cdecl]<IDispatch*, int, Guid*, uint, ushort, DispatchParams*, Variant*, ExceptionInfo*, uint*, int>)@this->LpVtbl[6])(@this, dispIdMember, riid, lcid, wFlags, pDispParamsPtr, pVarResultPtr, pExcepInfo, puArgErr);
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int Invoke(int dispIdMember, Guid* riid, uint lcid, ushort wFlags, ref DispatchParams pDispParams, ref Variant pVarResult, ExceptionInfo* pExcepInfo, ref uint puArgErr)
+        {
+            var @this = (IDispatch*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (DispatchParams* pDispParamsPtr = &pDispParams)
+            {
+                fixed (Variant* pVarResultPtr = &pVarResult)
+                {
+                    fixed (uint* puArgErrPtr = &puArgErr)
                     {
-                        ret = ((delegate* unmanaged[Cdecl]<IDispatch*, int, Guid*, uint, ushort, DispatchParams*, Variant*, ExcepInfo*, uint*, int>)@this->LpVtbl[6])(@this, dispIdMember, riid, lcid, wFlags, pDispParamsPtr, pVarResultPtr, pExcepInfoPtr, puArgErr);
+                        ret = ((delegate* unmanaged[Cdecl]<IDispatch*, int, Guid*, uint, ushort, DispatchParams*, Variant*, ExceptionInfo*, uint*, int>)@this->LpVtbl[6])(@this, dispIdMember, riid, lcid, wFlags, pDispParamsPtr, pVarResultPtr, pExcepInfo, puArgErrPtr);
                     }
                 }
             }
@@ -480,7 +462,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Invoke(int dispIdMember, Guid* riid, uint lcid, ushort wFlags, ref DispatchParams pDispParams, ref Variant pVarResult, ref ExcepInfo pExcepInfo, ref uint puArgErr)
+        public readonly unsafe int Invoke(int dispIdMember, Guid* riid, uint lcid, ushort wFlags, ref DispatchParams pDispParams, ref Variant pVarResult, ref ExceptionInfo pExcepInfo, uint* puArgErr)
         {
             var @this = (IDispatch*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -488,11 +470,29 @@ namespace Silk.NET.Core.Win32Extras
             {
                 fixed (Variant* pVarResultPtr = &pVarResult)
                 {
-                    fixed (ExcepInfo* pExcepInfoPtr = &pExcepInfo)
+                    fixed (ExceptionInfo* pExcepInfoPtr = &pExcepInfo)
+                    {
+                        ret = ((delegate* unmanaged[Cdecl]<IDispatch*, int, Guid*, uint, ushort, DispatchParams*, Variant*, ExceptionInfo*, uint*, int>)@this->LpVtbl[6])(@this, dispIdMember, riid, lcid, wFlags, pDispParamsPtr, pVarResultPtr, pExcepInfoPtr, puArgErr);
+                    }
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int Invoke(int dispIdMember, Guid* riid, uint lcid, ushort wFlags, ref DispatchParams pDispParams, ref Variant pVarResult, ref ExceptionInfo pExcepInfo, ref uint puArgErr)
+        {
+            var @this = (IDispatch*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (DispatchParams* pDispParamsPtr = &pDispParams)
+            {
+                fixed (Variant* pVarResultPtr = &pVarResult)
+                {
+                    fixed (ExceptionInfo* pExcepInfoPtr = &pExcepInfo)
                     {
                         fixed (uint* puArgErrPtr = &puArgErr)
                         {
-                            ret = ((delegate* unmanaged[Cdecl]<IDispatch*, int, Guid*, uint, ushort, DispatchParams*, Variant*, ExcepInfo*, uint*, int>)@this->LpVtbl[6])(@this, dispIdMember, riid, lcid, wFlags, pDispParamsPtr, pVarResultPtr, pExcepInfoPtr, puArgErrPtr);
+                            ret = ((delegate* unmanaged[Cdecl]<IDispatch*, int, Guid*, uint, ushort, DispatchParams*, Variant*, ExceptionInfo*, uint*, int>)@this->LpVtbl[6])(@this, dispIdMember, riid, lcid, wFlags, pDispParamsPtr, pVarResultPtr, pExcepInfoPtr, puArgErrPtr);
                         }
                     }
                 }
@@ -501,19 +501,19 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Invoke(int dispIdMember, ref Guid riid, uint lcid, ushort wFlags, DispatchParams* pDispParams, Variant* pVarResult, ExcepInfo* pExcepInfo, uint* puArgErr)
+        public readonly unsafe int Invoke(int dispIdMember, ref Guid riid, uint lcid, ushort wFlags, DispatchParams* pDispParams, Variant* pVarResult, ExceptionInfo* pExcepInfo, uint* puArgErr)
         {
             var @this = (IDispatch*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
             fixed (Guid* riidPtr = &riid)
             {
-                ret = ((delegate* unmanaged[Cdecl]<IDispatch*, int, Guid*, uint, ushort, DispatchParams*, Variant*, ExcepInfo*, uint*, int>)@this->LpVtbl[6])(@this, dispIdMember, riidPtr, lcid, wFlags, pDispParams, pVarResult, pExcepInfo, puArgErr);
+                ret = ((delegate* unmanaged[Cdecl]<IDispatch*, int, Guid*, uint, ushort, DispatchParams*, Variant*, ExceptionInfo*, uint*, int>)@this->LpVtbl[6])(@this, dispIdMember, riidPtr, lcid, wFlags, pDispParams, pVarResult, pExcepInfo, puArgErr);
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Invoke(int dispIdMember, ref Guid riid, uint lcid, ushort wFlags, DispatchParams* pDispParams, Variant* pVarResult, ExcepInfo* pExcepInfo, ref uint puArgErr)
+        public readonly unsafe int Invoke(int dispIdMember, ref Guid riid, uint lcid, ushort wFlags, DispatchParams* pDispParams, Variant* pVarResult, ExceptionInfo* pExcepInfo, ref uint puArgErr)
         {
             var @this = (IDispatch*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -521,72 +521,39 @@ namespace Silk.NET.Core.Win32Extras
             {
                 fixed (uint* puArgErrPtr = &puArgErr)
                 {
-                    ret = ((delegate* unmanaged[Cdecl]<IDispatch*, int, Guid*, uint, ushort, DispatchParams*, Variant*, ExcepInfo*, uint*, int>)@this->LpVtbl[6])(@this, dispIdMember, riidPtr, lcid, wFlags, pDispParams, pVarResult, pExcepInfo, puArgErrPtr);
+                    ret = ((delegate* unmanaged[Cdecl]<IDispatch*, int, Guid*, uint, ushort, DispatchParams*, Variant*, ExceptionInfo*, uint*, int>)@this->LpVtbl[6])(@this, dispIdMember, riidPtr, lcid, wFlags, pDispParams, pVarResult, pExcepInfo, puArgErrPtr);
                 }
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Invoke(int dispIdMember, ref Guid riid, uint lcid, ushort wFlags, DispatchParams* pDispParams, Variant* pVarResult, ref ExcepInfo pExcepInfo, uint* puArgErr)
+        public readonly unsafe int Invoke(int dispIdMember, ref Guid riid, uint lcid, ushort wFlags, DispatchParams* pDispParams, Variant* pVarResult, ref ExceptionInfo pExcepInfo, uint* puArgErr)
         {
             var @this = (IDispatch*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
             fixed (Guid* riidPtr = &riid)
             {
-                fixed (ExcepInfo* pExcepInfoPtr = &pExcepInfo)
+                fixed (ExceptionInfo* pExcepInfoPtr = &pExcepInfo)
                 {
-                    ret = ((delegate* unmanaged[Cdecl]<IDispatch*, int, Guid*, uint, ushort, DispatchParams*, Variant*, ExcepInfo*, uint*, int>)@this->LpVtbl[6])(@this, dispIdMember, riidPtr, lcid, wFlags, pDispParams, pVarResult, pExcepInfoPtr, puArgErr);
+                    ret = ((delegate* unmanaged[Cdecl]<IDispatch*, int, Guid*, uint, ushort, DispatchParams*, Variant*, ExceptionInfo*, uint*, int>)@this->LpVtbl[6])(@this, dispIdMember, riidPtr, lcid, wFlags, pDispParams, pVarResult, pExcepInfoPtr, puArgErr);
                 }
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Invoke(int dispIdMember, ref Guid riid, uint lcid, ushort wFlags, DispatchParams* pDispParams, Variant* pVarResult, ref ExcepInfo pExcepInfo, ref uint puArgErr)
+        public readonly unsafe int Invoke(int dispIdMember, ref Guid riid, uint lcid, ushort wFlags, DispatchParams* pDispParams, Variant* pVarResult, ref ExceptionInfo pExcepInfo, ref uint puArgErr)
         {
             var @this = (IDispatch*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
             fixed (Guid* riidPtr = &riid)
             {
-                fixed (ExcepInfo* pExcepInfoPtr = &pExcepInfo)
-                {
-                    fixed (uint* puArgErrPtr = &puArgErr)
-                    {
-                        ret = ((delegate* unmanaged[Cdecl]<IDispatch*, int, Guid*, uint, ushort, DispatchParams*, Variant*, ExcepInfo*, uint*, int>)@this->LpVtbl[6])(@this, dispIdMember, riidPtr, lcid, wFlags, pDispParams, pVarResult, pExcepInfoPtr, puArgErrPtr);
-                    }
-                }
-            }
-            return ret;
-        }
-
-        /// <summary>To be documented.</summary>
-        public readonly unsafe int Invoke(int dispIdMember, ref Guid riid, uint lcid, ushort wFlags, DispatchParams* pDispParams, ref Variant pVarResult, ExcepInfo* pExcepInfo, uint* puArgErr)
-        {
-            var @this = (IDispatch*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            int ret = default;
-            fixed (Guid* riidPtr = &riid)
-            {
-                fixed (Variant* pVarResultPtr = &pVarResult)
-                {
-                    ret = ((delegate* unmanaged[Cdecl]<IDispatch*, int, Guid*, uint, ushort, DispatchParams*, Variant*, ExcepInfo*, uint*, int>)@this->LpVtbl[6])(@this, dispIdMember, riidPtr, lcid, wFlags, pDispParams, pVarResultPtr, pExcepInfo, puArgErr);
-                }
-            }
-            return ret;
-        }
-
-        /// <summary>To be documented.</summary>
-        public readonly unsafe int Invoke(int dispIdMember, ref Guid riid, uint lcid, ushort wFlags, DispatchParams* pDispParams, ref Variant pVarResult, ExcepInfo* pExcepInfo, ref uint puArgErr)
-        {
-            var @this = (IDispatch*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            int ret = default;
-            fixed (Guid* riidPtr = &riid)
-            {
-                fixed (Variant* pVarResultPtr = &pVarResult)
+                fixed (ExceptionInfo* pExcepInfoPtr = &pExcepInfo)
                 {
                     fixed (uint* puArgErrPtr = &puArgErr)
                     {
-                        ret = ((delegate* unmanaged[Cdecl]<IDispatch*, int, Guid*, uint, ushort, DispatchParams*, Variant*, ExcepInfo*, uint*, int>)@this->LpVtbl[6])(@this, dispIdMember, riidPtr, lcid, wFlags, pDispParams, pVarResultPtr, pExcepInfo, puArgErrPtr);
+                        ret = ((delegate* unmanaged[Cdecl]<IDispatch*, int, Guid*, uint, ushort, DispatchParams*, Variant*, ExceptionInfo*, uint*, int>)@this->LpVtbl[6])(@this, dispIdMember, riidPtr, lcid, wFlags, pDispParams, pVarResult, pExcepInfoPtr, puArgErrPtr);
                     }
                 }
             }
@@ -594,7 +561,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Invoke(int dispIdMember, ref Guid riid, uint lcid, ushort wFlags, DispatchParams* pDispParams, ref Variant pVarResult, ref ExcepInfo pExcepInfo, uint* puArgErr)
+        public readonly unsafe int Invoke(int dispIdMember, ref Guid riid, uint lcid, ushort wFlags, DispatchParams* pDispParams, ref Variant pVarResult, ExceptionInfo* pExcepInfo, uint* puArgErr)
         {
             var @this = (IDispatch*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -602,9 +569,24 @@ namespace Silk.NET.Core.Win32Extras
             {
                 fixed (Variant* pVarResultPtr = &pVarResult)
                 {
-                    fixed (ExcepInfo* pExcepInfoPtr = &pExcepInfo)
+                    ret = ((delegate* unmanaged[Cdecl]<IDispatch*, int, Guid*, uint, ushort, DispatchParams*, Variant*, ExceptionInfo*, uint*, int>)@this->LpVtbl[6])(@this, dispIdMember, riidPtr, lcid, wFlags, pDispParams, pVarResultPtr, pExcepInfo, puArgErr);
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int Invoke(int dispIdMember, ref Guid riid, uint lcid, ushort wFlags, DispatchParams* pDispParams, ref Variant pVarResult, ExceptionInfo* pExcepInfo, ref uint puArgErr)
+        {
+            var @this = (IDispatch*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (Guid* riidPtr = &riid)
+            {
+                fixed (Variant* pVarResultPtr = &pVarResult)
+                {
+                    fixed (uint* puArgErrPtr = &puArgErr)
                     {
-                        ret = ((delegate* unmanaged[Cdecl]<IDispatch*, int, Guid*, uint, ushort, DispatchParams*, Variant*, ExcepInfo*, uint*, int>)@this->LpVtbl[6])(@this, dispIdMember, riidPtr, lcid, wFlags, pDispParams, pVarResultPtr, pExcepInfoPtr, puArgErr);
+                        ret = ((delegate* unmanaged[Cdecl]<IDispatch*, int, Guid*, uint, ushort, DispatchParams*, Variant*, ExceptionInfo*, uint*, int>)@this->LpVtbl[6])(@this, dispIdMember, riidPtr, lcid, wFlags, pDispParams, pVarResultPtr, pExcepInfo, puArgErrPtr);
                     }
                 }
             }
@@ -612,7 +594,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Invoke(int dispIdMember, ref Guid riid, uint lcid, ushort wFlags, DispatchParams* pDispParams, ref Variant pVarResult, ref ExcepInfo pExcepInfo, ref uint puArgErr)
+        public readonly unsafe int Invoke(int dispIdMember, ref Guid riid, uint lcid, ushort wFlags, DispatchParams* pDispParams, ref Variant pVarResult, ref ExceptionInfo pExcepInfo, uint* puArgErr)
         {
             var @this = (IDispatch*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -620,11 +602,29 @@ namespace Silk.NET.Core.Win32Extras
             {
                 fixed (Variant* pVarResultPtr = &pVarResult)
                 {
-                    fixed (ExcepInfo* pExcepInfoPtr = &pExcepInfo)
+                    fixed (ExceptionInfo* pExcepInfoPtr = &pExcepInfo)
+                    {
+                        ret = ((delegate* unmanaged[Cdecl]<IDispatch*, int, Guid*, uint, ushort, DispatchParams*, Variant*, ExceptionInfo*, uint*, int>)@this->LpVtbl[6])(@this, dispIdMember, riidPtr, lcid, wFlags, pDispParams, pVarResultPtr, pExcepInfoPtr, puArgErr);
+                    }
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int Invoke(int dispIdMember, ref Guid riid, uint lcid, ushort wFlags, DispatchParams* pDispParams, ref Variant pVarResult, ref ExceptionInfo pExcepInfo, ref uint puArgErr)
+        {
+            var @this = (IDispatch*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (Guid* riidPtr = &riid)
+            {
+                fixed (Variant* pVarResultPtr = &pVarResult)
+                {
+                    fixed (ExceptionInfo* pExcepInfoPtr = &pExcepInfo)
                     {
                         fixed (uint* puArgErrPtr = &puArgErr)
                         {
-                            ret = ((delegate* unmanaged[Cdecl]<IDispatch*, int, Guid*, uint, ushort, DispatchParams*, Variant*, ExcepInfo*, uint*, int>)@this->LpVtbl[6])(@this, dispIdMember, riidPtr, lcid, wFlags, pDispParams, pVarResultPtr, pExcepInfoPtr, puArgErrPtr);
+                            ret = ((delegate* unmanaged[Cdecl]<IDispatch*, int, Guid*, uint, ushort, DispatchParams*, Variant*, ExceptionInfo*, uint*, int>)@this->LpVtbl[6])(@this, dispIdMember, riidPtr, lcid, wFlags, pDispParams, pVarResultPtr, pExcepInfoPtr, puArgErrPtr);
                         }
                     }
                 }
@@ -633,7 +633,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Invoke(int dispIdMember, ref Guid riid, uint lcid, ushort wFlags, ref DispatchParams pDispParams, Variant* pVarResult, ExcepInfo* pExcepInfo, uint* puArgErr)
+        public readonly unsafe int Invoke(int dispIdMember, ref Guid riid, uint lcid, ushort wFlags, ref DispatchParams pDispParams, Variant* pVarResult, ExceptionInfo* pExcepInfo, uint* puArgErr)
         {
             var @this = (IDispatch*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -641,14 +641,14 @@ namespace Silk.NET.Core.Win32Extras
             {
                 fixed (DispatchParams* pDispParamsPtr = &pDispParams)
                 {
-                    ret = ((delegate* unmanaged[Cdecl]<IDispatch*, int, Guid*, uint, ushort, DispatchParams*, Variant*, ExcepInfo*, uint*, int>)@this->LpVtbl[6])(@this, dispIdMember, riidPtr, lcid, wFlags, pDispParamsPtr, pVarResult, pExcepInfo, puArgErr);
+                    ret = ((delegate* unmanaged[Cdecl]<IDispatch*, int, Guid*, uint, ushort, DispatchParams*, Variant*, ExceptionInfo*, uint*, int>)@this->LpVtbl[6])(@this, dispIdMember, riidPtr, lcid, wFlags, pDispParamsPtr, pVarResult, pExcepInfo, puArgErr);
                 }
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Invoke(int dispIdMember, ref Guid riid, uint lcid, ushort wFlags, ref DispatchParams pDispParams, Variant* pVarResult, ExcepInfo* pExcepInfo, ref uint puArgErr)
+        public readonly unsafe int Invoke(int dispIdMember, ref Guid riid, uint lcid, ushort wFlags, ref DispatchParams pDispParams, Variant* pVarResult, ExceptionInfo* pExcepInfo, ref uint puArgErr)
         {
             var @this = (IDispatch*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -658,7 +658,7 @@ namespace Silk.NET.Core.Win32Extras
                 {
                     fixed (uint* puArgErrPtr = &puArgErr)
                     {
-                        ret = ((delegate* unmanaged[Cdecl]<IDispatch*, int, Guid*, uint, ushort, DispatchParams*, Variant*, ExcepInfo*, uint*, int>)@this->LpVtbl[6])(@this, dispIdMember, riidPtr, lcid, wFlags, pDispParamsPtr, pVarResult, pExcepInfo, puArgErrPtr);
+                        ret = ((delegate* unmanaged[Cdecl]<IDispatch*, int, Guid*, uint, ushort, DispatchParams*, Variant*, ExceptionInfo*, uint*, int>)@this->LpVtbl[6])(@this, dispIdMember, riidPtr, lcid, wFlags, pDispParamsPtr, pVarResult, pExcepInfo, puArgErrPtr);
                     }
                 }
             }
@@ -666,7 +666,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Invoke(int dispIdMember, ref Guid riid, uint lcid, ushort wFlags, ref DispatchParams pDispParams, Variant* pVarResult, ref ExcepInfo pExcepInfo, uint* puArgErr)
+        public readonly unsafe int Invoke(int dispIdMember, ref Guid riid, uint lcid, ushort wFlags, ref DispatchParams pDispParams, Variant* pVarResult, ref ExceptionInfo pExcepInfo, uint* puArgErr)
         {
             var @this = (IDispatch*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -674,9 +674,9 @@ namespace Silk.NET.Core.Win32Extras
             {
                 fixed (DispatchParams* pDispParamsPtr = &pDispParams)
                 {
-                    fixed (ExcepInfo* pExcepInfoPtr = &pExcepInfo)
+                    fixed (ExceptionInfo* pExcepInfoPtr = &pExcepInfo)
                     {
-                        ret = ((delegate* unmanaged[Cdecl]<IDispatch*, int, Guid*, uint, ushort, DispatchParams*, Variant*, ExcepInfo*, uint*, int>)@this->LpVtbl[6])(@this, dispIdMember, riidPtr, lcid, wFlags, pDispParamsPtr, pVarResult, pExcepInfoPtr, puArgErr);
+                        ret = ((delegate* unmanaged[Cdecl]<IDispatch*, int, Guid*, uint, ushort, DispatchParams*, Variant*, ExceptionInfo*, uint*, int>)@this->LpVtbl[6])(@this, dispIdMember, riidPtr, lcid, wFlags, pDispParamsPtr, pVarResult, pExcepInfoPtr, puArgErr);
                     }
                 }
             }
@@ -684,7 +684,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Invoke(int dispIdMember, ref Guid riid, uint lcid, ushort wFlags, ref DispatchParams pDispParams, Variant* pVarResult, ref ExcepInfo pExcepInfo, ref uint puArgErr)
+        public readonly unsafe int Invoke(int dispIdMember, ref Guid riid, uint lcid, ushort wFlags, ref DispatchParams pDispParams, Variant* pVarResult, ref ExceptionInfo pExcepInfo, ref uint puArgErr)
         {
             var @this = (IDispatch*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -692,11 +692,11 @@ namespace Silk.NET.Core.Win32Extras
             {
                 fixed (DispatchParams* pDispParamsPtr = &pDispParams)
                 {
-                    fixed (ExcepInfo* pExcepInfoPtr = &pExcepInfo)
+                    fixed (ExceptionInfo* pExcepInfoPtr = &pExcepInfo)
                     {
                         fixed (uint* puArgErrPtr = &puArgErr)
                         {
-                            ret = ((delegate* unmanaged[Cdecl]<IDispatch*, int, Guid*, uint, ushort, DispatchParams*, Variant*, ExcepInfo*, uint*, int>)@this->LpVtbl[6])(@this, dispIdMember, riidPtr, lcid, wFlags, pDispParamsPtr, pVarResult, pExcepInfoPtr, puArgErrPtr);
+                            ret = ((delegate* unmanaged[Cdecl]<IDispatch*, int, Guid*, uint, ushort, DispatchParams*, Variant*, ExceptionInfo*, uint*, int>)@this->LpVtbl[6])(@this, dispIdMember, riidPtr, lcid, wFlags, pDispParamsPtr, pVarResult, pExcepInfoPtr, puArgErrPtr);
                         }
                     }
                 }
@@ -705,7 +705,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Invoke(int dispIdMember, ref Guid riid, uint lcid, ushort wFlags, ref DispatchParams pDispParams, ref Variant pVarResult, ExcepInfo* pExcepInfo, uint* puArgErr)
+        public readonly unsafe int Invoke(int dispIdMember, ref Guid riid, uint lcid, ushort wFlags, ref DispatchParams pDispParams, ref Variant pVarResult, ExceptionInfo* pExcepInfo, uint* puArgErr)
         {
             var @this = (IDispatch*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -715,7 +715,7 @@ namespace Silk.NET.Core.Win32Extras
                 {
                     fixed (Variant* pVarResultPtr = &pVarResult)
                     {
-                        ret = ((delegate* unmanaged[Cdecl]<IDispatch*, int, Guid*, uint, ushort, DispatchParams*, Variant*, ExcepInfo*, uint*, int>)@this->LpVtbl[6])(@this, dispIdMember, riidPtr, lcid, wFlags, pDispParamsPtr, pVarResultPtr, pExcepInfo, puArgErr);
+                        ret = ((delegate* unmanaged[Cdecl]<IDispatch*, int, Guid*, uint, ushort, DispatchParams*, Variant*, ExceptionInfo*, uint*, int>)@this->LpVtbl[6])(@this, dispIdMember, riidPtr, lcid, wFlags, pDispParamsPtr, pVarResultPtr, pExcepInfo, puArgErr);
                     }
                 }
             }
@@ -723,7 +723,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Invoke(int dispIdMember, ref Guid riid, uint lcid, ushort wFlags, ref DispatchParams pDispParams, ref Variant pVarResult, ExcepInfo* pExcepInfo, ref uint puArgErr)
+        public readonly unsafe int Invoke(int dispIdMember, ref Guid riid, uint lcid, ushort wFlags, ref DispatchParams pDispParams, ref Variant pVarResult, ExceptionInfo* pExcepInfo, ref uint puArgErr)
         {
             var @this = (IDispatch*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -735,7 +735,7 @@ namespace Silk.NET.Core.Win32Extras
                     {
                         fixed (uint* puArgErrPtr = &puArgErr)
                         {
-                            ret = ((delegate* unmanaged[Cdecl]<IDispatch*, int, Guid*, uint, ushort, DispatchParams*, Variant*, ExcepInfo*, uint*, int>)@this->LpVtbl[6])(@this, dispIdMember, riidPtr, lcid, wFlags, pDispParamsPtr, pVarResultPtr, pExcepInfo, puArgErrPtr);
+                            ret = ((delegate* unmanaged[Cdecl]<IDispatch*, int, Guid*, uint, ushort, DispatchParams*, Variant*, ExceptionInfo*, uint*, int>)@this->LpVtbl[6])(@this, dispIdMember, riidPtr, lcid, wFlags, pDispParamsPtr, pVarResultPtr, pExcepInfo, puArgErrPtr);
                         }
                     }
                 }
@@ -744,7 +744,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Invoke(int dispIdMember, ref Guid riid, uint lcid, ushort wFlags, ref DispatchParams pDispParams, ref Variant pVarResult, ref ExcepInfo pExcepInfo, uint* puArgErr)
+        public readonly unsafe int Invoke(int dispIdMember, ref Guid riid, uint lcid, ushort wFlags, ref DispatchParams pDispParams, ref Variant pVarResult, ref ExceptionInfo pExcepInfo, uint* puArgErr)
         {
             var @this = (IDispatch*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -754,9 +754,9 @@ namespace Silk.NET.Core.Win32Extras
                 {
                     fixed (Variant* pVarResultPtr = &pVarResult)
                     {
-                        fixed (ExcepInfo* pExcepInfoPtr = &pExcepInfo)
+                        fixed (ExceptionInfo* pExcepInfoPtr = &pExcepInfo)
                         {
-                            ret = ((delegate* unmanaged[Cdecl]<IDispatch*, int, Guid*, uint, ushort, DispatchParams*, Variant*, ExcepInfo*, uint*, int>)@this->LpVtbl[6])(@this, dispIdMember, riidPtr, lcid, wFlags, pDispParamsPtr, pVarResultPtr, pExcepInfoPtr, puArgErr);
+                            ret = ((delegate* unmanaged[Cdecl]<IDispatch*, int, Guid*, uint, ushort, DispatchParams*, Variant*, ExceptionInfo*, uint*, int>)@this->LpVtbl[6])(@this, dispIdMember, riidPtr, lcid, wFlags, pDispParamsPtr, pVarResultPtr, pExcepInfoPtr, puArgErr);
                         }
                     }
                 }
@@ -765,7 +765,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int Invoke(int dispIdMember, ref Guid riid, uint lcid, ushort wFlags, ref DispatchParams pDispParams, ref Variant pVarResult, ref ExcepInfo pExcepInfo, ref uint puArgErr)
+        public readonly int Invoke(int dispIdMember, ref Guid riid, uint lcid, ushort wFlags, ref DispatchParams pDispParams, ref Variant pVarResult, ref ExceptionInfo pExcepInfo, ref uint puArgErr)
         {
             var @this = (IDispatch*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -775,11 +775,11 @@ namespace Silk.NET.Core.Win32Extras
                 {
                     fixed (Variant* pVarResultPtr = &pVarResult)
                     {
-                        fixed (ExcepInfo* pExcepInfoPtr = &pExcepInfo)
+                        fixed (ExceptionInfo* pExcepInfoPtr = &pExcepInfo)
                         {
                             fixed (uint* puArgErrPtr = &puArgErr)
                             {
-                                ret = ((delegate* unmanaged[Cdecl]<IDispatch*, int, Guid*, uint, ushort, DispatchParams*, Variant*, ExcepInfo*, uint*, int>)@this->LpVtbl[6])(@this, dispIdMember, riidPtr, lcid, wFlags, pDispParamsPtr, pVarResultPtr, pExcepInfoPtr, puArgErrPtr);
+                                ret = ((delegate* unmanaged[Cdecl]<IDispatch*, int, Guid*, uint, ushort, DispatchParams*, Variant*, ExceptionInfo*, uint*, int>)@this->LpVtbl[6])(@this, dispIdMember, riidPtr, lcid, wFlags, pDispParamsPtr, pVarResultPtr, pExcepInfoPtr, puArgErrPtr);
                             }
                         }
                     }

@@ -111,91 +111,91 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe uint HandleInComingCall(uint dwCallType, IntPtr* htaskCaller, uint dwTickCount, InterfaceInfo* lpInterfaceInfo)
+        public readonly unsafe uint HandleInComingCall(uint dwCallType, void* htaskCaller, uint dwTickCount, InterfaceInfo* lpInterfaceInfo)
         {
             var @this = (IMessageFilter*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             uint ret = default;
-            ret = ((delegate* unmanaged[Cdecl]<IMessageFilter*, uint, IntPtr*, uint, InterfaceInfo*, uint>)@this->LpVtbl[3])(@this, dwCallType, htaskCaller, dwTickCount, lpInterfaceInfo);
+            ret = ((delegate* unmanaged[Cdecl]<IMessageFilter*, uint, void*, uint, InterfaceInfo*, uint>)@this->LpVtbl[3])(@this, dwCallType, htaskCaller, dwTickCount, lpInterfaceInfo);
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe uint HandleInComingCall(uint dwCallType, IntPtr* htaskCaller, uint dwTickCount, ref InterfaceInfo lpInterfaceInfo)
+        public readonly unsafe uint HandleInComingCall(uint dwCallType, void* htaskCaller, uint dwTickCount, ref InterfaceInfo lpInterfaceInfo)
         {
             var @this = (IMessageFilter*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             uint ret = default;
             fixed (InterfaceInfo* lpInterfaceInfoPtr = &lpInterfaceInfo)
             {
-                ret = ((delegate* unmanaged[Cdecl]<IMessageFilter*, uint, IntPtr*, uint, InterfaceInfo*, uint>)@this->LpVtbl[3])(@this, dwCallType, htaskCaller, dwTickCount, lpInterfaceInfoPtr);
+                ret = ((delegate* unmanaged[Cdecl]<IMessageFilter*, uint, void*, uint, InterfaceInfo*, uint>)@this->LpVtbl[3])(@this, dwCallType, htaskCaller, dwTickCount, lpInterfaceInfoPtr);
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe uint HandleInComingCall(uint dwCallType, ref IntPtr htaskCaller, uint dwTickCount, InterfaceInfo* lpInterfaceInfo)
+        public readonly unsafe uint HandleInComingCall<T0>(uint dwCallType, ref T0 htaskCaller, uint dwTickCount, InterfaceInfo* lpInterfaceInfo) where T0 : unmanaged
         {
             var @this = (IMessageFilter*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             uint ret = default;
-            fixed (IntPtr* htaskCallerPtr = &htaskCaller)
+            fixed (void* htaskCallerPtr = &htaskCaller)
             {
-                ret = ((delegate* unmanaged[Cdecl]<IMessageFilter*, uint, IntPtr*, uint, InterfaceInfo*, uint>)@this->LpVtbl[3])(@this, dwCallType, htaskCallerPtr, dwTickCount, lpInterfaceInfo);
+                ret = ((delegate* unmanaged[Cdecl]<IMessageFilter*, uint, void*, uint, InterfaceInfo*, uint>)@this->LpVtbl[3])(@this, dwCallType, htaskCallerPtr, dwTickCount, lpInterfaceInfo);
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly uint HandleInComingCall(uint dwCallType, ref IntPtr htaskCaller, uint dwTickCount, ref InterfaceInfo lpInterfaceInfo)
+        public readonly uint HandleInComingCall<T0>(uint dwCallType, ref T0 htaskCaller, uint dwTickCount, ref InterfaceInfo lpInterfaceInfo) where T0 : unmanaged
         {
             var @this = (IMessageFilter*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             uint ret = default;
-            fixed (IntPtr* htaskCallerPtr = &htaskCaller)
+            fixed (void* htaskCallerPtr = &htaskCaller)
             {
                 fixed (InterfaceInfo* lpInterfaceInfoPtr = &lpInterfaceInfo)
                 {
-                    ret = ((delegate* unmanaged[Cdecl]<IMessageFilter*, uint, IntPtr*, uint, InterfaceInfo*, uint>)@this->LpVtbl[3])(@this, dwCallType, htaskCallerPtr, dwTickCount, lpInterfaceInfoPtr);
+                    ret = ((delegate* unmanaged[Cdecl]<IMessageFilter*, uint, void*, uint, InterfaceInfo*, uint>)@this->LpVtbl[3])(@this, dwCallType, htaskCallerPtr, dwTickCount, lpInterfaceInfoPtr);
                 }
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe uint RetryRejectedCall(IntPtr* htaskCallee, uint dwTickCount, uint dwRejectType)
+        public readonly unsafe uint RetryRejectedCall(void* htaskCallee, uint dwTickCount, uint dwRejectType)
         {
             var @this = (IMessageFilter*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             uint ret = default;
-            ret = ((delegate* unmanaged[Cdecl]<IMessageFilter*, IntPtr*, uint, uint, uint>)@this->LpVtbl[4])(@this, htaskCallee, dwTickCount, dwRejectType);
+            ret = ((delegate* unmanaged[Cdecl]<IMessageFilter*, void*, uint, uint, uint>)@this->LpVtbl[4])(@this, htaskCallee, dwTickCount, dwRejectType);
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly uint RetryRejectedCall(ref IntPtr htaskCallee, uint dwTickCount, uint dwRejectType)
+        public readonly uint RetryRejectedCall<T0>(ref T0 htaskCallee, uint dwTickCount, uint dwRejectType) where T0 : unmanaged
         {
             var @this = (IMessageFilter*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             uint ret = default;
-            fixed (IntPtr* htaskCalleePtr = &htaskCallee)
+            fixed (void* htaskCalleePtr = &htaskCallee)
             {
-                ret = ((delegate* unmanaged[Cdecl]<IMessageFilter*, IntPtr*, uint, uint, uint>)@this->LpVtbl[4])(@this, htaskCalleePtr, dwTickCount, dwRejectType);
+                ret = ((delegate* unmanaged[Cdecl]<IMessageFilter*, void*, uint, uint, uint>)@this->LpVtbl[4])(@this, htaskCalleePtr, dwTickCount, dwRejectType);
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe uint MessagePending(IntPtr* htaskCallee, uint dwTickCount, uint dwPendingType)
+        public readonly unsafe uint MessagePending(void* htaskCallee, uint dwTickCount, uint dwPendingType)
         {
             var @this = (IMessageFilter*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             uint ret = default;
-            ret = ((delegate* unmanaged[Cdecl]<IMessageFilter*, IntPtr*, uint, uint, uint>)@this->LpVtbl[5])(@this, htaskCallee, dwTickCount, dwPendingType);
+            ret = ((delegate* unmanaged[Cdecl]<IMessageFilter*, void*, uint, uint, uint>)@this->LpVtbl[5])(@this, htaskCallee, dwTickCount, dwPendingType);
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly uint MessagePending(ref IntPtr htaskCallee, uint dwTickCount, uint dwPendingType)
+        public readonly uint MessagePending<T0>(ref T0 htaskCallee, uint dwTickCount, uint dwPendingType) where T0 : unmanaged
         {
             var @this = (IMessageFilter*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             uint ret = default;
-            fixed (IntPtr* htaskCalleePtr = &htaskCallee)
+            fixed (void* htaskCalleePtr = &htaskCallee)
             {
-                ret = ((delegate* unmanaged[Cdecl]<IMessageFilter*, IntPtr*, uint, uint, uint>)@this->LpVtbl[5])(@this, htaskCalleePtr, dwTickCount, dwPendingType);
+                ret = ((delegate* unmanaged[Cdecl]<IMessageFilter*, void*, uint, uint, uint>)@this->LpVtbl[5])(@this, htaskCalleePtr, dwTickCount, dwPendingType);
             }
             return ret;
         }

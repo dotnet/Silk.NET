@@ -111,82 +111,82 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int ExtractThumbnail(IStorage* pStg, uint ulLength, uint ulHeight, uint* pulOutputLength, uint* pulOutputHeight, IntPtr** phOutputBitmap)
+        public readonly unsafe int ExtractThumbnail(IStorage* pStg, uint ulLength, uint ulHeight, uint* pulOutputLength, uint* pulOutputHeight, void** phOutputBitmap)
         {
             var @this = (IThumbnailExtractor*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Cdecl]<IThumbnailExtractor*, IStorage*, uint, uint, uint*, uint*, IntPtr**, int>)@this->LpVtbl[3])(@this, pStg, ulLength, ulHeight, pulOutputLength, pulOutputHeight, phOutputBitmap);
+            ret = ((delegate* unmanaged[Cdecl]<IThumbnailExtractor*, IStorage*, uint, uint, uint*, uint*, void**, int>)@this->LpVtbl[3])(@this, pStg, ulLength, ulHeight, pulOutputLength, pulOutputHeight, phOutputBitmap);
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int ExtractThumbnail(IStorage* pStg, uint ulLength, uint ulHeight, uint* pulOutputLength, uint* pulOutputHeight, ref IntPtr* phOutputBitmap)
+        public readonly unsafe int ExtractThumbnail(IStorage* pStg, uint ulLength, uint ulHeight, uint* pulOutputLength, uint* pulOutputHeight, ref void* phOutputBitmap)
         {
             var @this = (IThumbnailExtractor*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            fixed (IntPtr** phOutputBitmapPtr = &phOutputBitmap)
+            fixed (void** phOutputBitmapPtr = &phOutputBitmap)
             {
-                ret = ((delegate* unmanaged[Cdecl]<IThumbnailExtractor*, IStorage*, uint, uint, uint*, uint*, IntPtr**, int>)@this->LpVtbl[3])(@this, pStg, ulLength, ulHeight, pulOutputLength, pulOutputHeight, phOutputBitmapPtr);
+                ret = ((delegate* unmanaged[Cdecl]<IThumbnailExtractor*, IStorage*, uint, uint, uint*, uint*, void**, int>)@this->LpVtbl[3])(@this, pStg, ulLength, ulHeight, pulOutputLength, pulOutputHeight, phOutputBitmapPtr);
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int ExtractThumbnail(IStorage* pStg, uint ulLength, uint ulHeight, uint* pulOutputLength, ref uint pulOutputHeight, IntPtr** phOutputBitmap)
+        public readonly unsafe int ExtractThumbnail(IStorage* pStg, uint ulLength, uint ulHeight, uint* pulOutputLength, ref uint pulOutputHeight, void** phOutputBitmap)
         {
             var @this = (IThumbnailExtractor*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
             fixed (uint* pulOutputHeightPtr = &pulOutputHeight)
             {
-                ret = ((delegate* unmanaged[Cdecl]<IThumbnailExtractor*, IStorage*, uint, uint, uint*, uint*, IntPtr**, int>)@this->LpVtbl[3])(@this, pStg, ulLength, ulHeight, pulOutputLength, pulOutputHeightPtr, phOutputBitmap);
+                ret = ((delegate* unmanaged[Cdecl]<IThumbnailExtractor*, IStorage*, uint, uint, uint*, uint*, void**, int>)@this->LpVtbl[3])(@this, pStg, ulLength, ulHeight, pulOutputLength, pulOutputHeightPtr, phOutputBitmap);
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int ExtractThumbnail(IStorage* pStg, uint ulLength, uint ulHeight, uint* pulOutputLength, ref uint pulOutputHeight, ref IntPtr* phOutputBitmap)
+        public readonly unsafe int ExtractThumbnail(IStorage* pStg, uint ulLength, uint ulHeight, uint* pulOutputLength, ref uint pulOutputHeight, ref void* phOutputBitmap)
         {
             var @this = (IThumbnailExtractor*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
             fixed (uint* pulOutputHeightPtr = &pulOutputHeight)
             {
-                fixed (IntPtr** phOutputBitmapPtr = &phOutputBitmap)
+                fixed (void** phOutputBitmapPtr = &phOutputBitmap)
                 {
-                    ret = ((delegate* unmanaged[Cdecl]<IThumbnailExtractor*, IStorage*, uint, uint, uint*, uint*, IntPtr**, int>)@this->LpVtbl[3])(@this, pStg, ulLength, ulHeight, pulOutputLength, pulOutputHeightPtr, phOutputBitmapPtr);
+                    ret = ((delegate* unmanaged[Cdecl]<IThumbnailExtractor*, IStorage*, uint, uint, uint*, uint*, void**, int>)@this->LpVtbl[3])(@this, pStg, ulLength, ulHeight, pulOutputLength, pulOutputHeightPtr, phOutputBitmapPtr);
                 }
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int ExtractThumbnail(IStorage* pStg, uint ulLength, uint ulHeight, ref uint pulOutputLength, uint* pulOutputHeight, IntPtr** phOutputBitmap)
+        public readonly unsafe int ExtractThumbnail(IStorage* pStg, uint ulLength, uint ulHeight, ref uint pulOutputLength, uint* pulOutputHeight, void** phOutputBitmap)
         {
             var @this = (IThumbnailExtractor*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
             fixed (uint* pulOutputLengthPtr = &pulOutputLength)
             {
-                ret = ((delegate* unmanaged[Cdecl]<IThumbnailExtractor*, IStorage*, uint, uint, uint*, uint*, IntPtr**, int>)@this->LpVtbl[3])(@this, pStg, ulLength, ulHeight, pulOutputLengthPtr, pulOutputHeight, phOutputBitmap);
+                ret = ((delegate* unmanaged[Cdecl]<IThumbnailExtractor*, IStorage*, uint, uint, uint*, uint*, void**, int>)@this->LpVtbl[3])(@this, pStg, ulLength, ulHeight, pulOutputLengthPtr, pulOutputHeight, phOutputBitmap);
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int ExtractThumbnail(IStorage* pStg, uint ulLength, uint ulHeight, ref uint pulOutputLength, uint* pulOutputHeight, ref IntPtr* phOutputBitmap)
+        public readonly unsafe int ExtractThumbnail(IStorage* pStg, uint ulLength, uint ulHeight, ref uint pulOutputLength, uint* pulOutputHeight, ref void* phOutputBitmap)
         {
             var @this = (IThumbnailExtractor*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
             fixed (uint* pulOutputLengthPtr = &pulOutputLength)
             {
-                fixed (IntPtr** phOutputBitmapPtr = &phOutputBitmap)
+                fixed (void** phOutputBitmapPtr = &phOutputBitmap)
                 {
-                    ret = ((delegate* unmanaged[Cdecl]<IThumbnailExtractor*, IStorage*, uint, uint, uint*, uint*, IntPtr**, int>)@this->LpVtbl[3])(@this, pStg, ulLength, ulHeight, pulOutputLengthPtr, pulOutputHeight, phOutputBitmapPtr);
+                    ret = ((delegate* unmanaged[Cdecl]<IThumbnailExtractor*, IStorage*, uint, uint, uint*, uint*, void**, int>)@this->LpVtbl[3])(@this, pStg, ulLength, ulHeight, pulOutputLengthPtr, pulOutputHeight, phOutputBitmapPtr);
                 }
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int ExtractThumbnail(IStorage* pStg, uint ulLength, uint ulHeight, ref uint pulOutputLength, ref uint pulOutputHeight, IntPtr** phOutputBitmap)
+        public readonly unsafe int ExtractThumbnail(IStorage* pStg, uint ulLength, uint ulHeight, ref uint pulOutputLength, ref uint pulOutputHeight, void** phOutputBitmap)
         {
             var @this = (IThumbnailExtractor*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -194,14 +194,14 @@ namespace Silk.NET.Core.Win32Extras
             {
                 fixed (uint* pulOutputHeightPtr = &pulOutputHeight)
                 {
-                    ret = ((delegate* unmanaged[Cdecl]<IThumbnailExtractor*, IStorage*, uint, uint, uint*, uint*, IntPtr**, int>)@this->LpVtbl[3])(@this, pStg, ulLength, ulHeight, pulOutputLengthPtr, pulOutputHeightPtr, phOutputBitmap);
+                    ret = ((delegate* unmanaged[Cdecl]<IThumbnailExtractor*, IStorage*, uint, uint, uint*, uint*, void**, int>)@this->LpVtbl[3])(@this, pStg, ulLength, ulHeight, pulOutputLengthPtr, pulOutputHeightPtr, phOutputBitmap);
                 }
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int ExtractThumbnail(IStorage* pStg, uint ulLength, uint ulHeight, ref uint pulOutputLength, ref uint pulOutputHeight, ref IntPtr* phOutputBitmap)
+        public readonly unsafe int ExtractThumbnail(IStorage* pStg, uint ulLength, uint ulHeight, ref uint pulOutputLength, ref uint pulOutputHeight, ref void* phOutputBitmap)
         {
             var @this = (IThumbnailExtractor*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -209,9 +209,9 @@ namespace Silk.NET.Core.Win32Extras
             {
                 fixed (uint* pulOutputHeightPtr = &pulOutputHeight)
                 {
-                    fixed (IntPtr** phOutputBitmapPtr = &phOutputBitmap)
+                    fixed (void** phOutputBitmapPtr = &phOutputBitmap)
                     {
-                        ret = ((delegate* unmanaged[Cdecl]<IThumbnailExtractor*, IStorage*, uint, uint, uint*, uint*, IntPtr**, int>)@this->LpVtbl[3])(@this, pStg, ulLength, ulHeight, pulOutputLengthPtr, pulOutputHeightPtr, phOutputBitmapPtr);
+                        ret = ((delegate* unmanaged[Cdecl]<IThumbnailExtractor*, IStorage*, uint, uint, uint*, uint*, void**, int>)@this->LpVtbl[3])(@this, pStg, ulLength, ulHeight, pulOutputLengthPtr, pulOutputHeightPtr, phOutputBitmapPtr);
                     }
                 }
             }
@@ -219,34 +219,34 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int ExtractThumbnail(ref IStorage pStg, uint ulLength, uint ulHeight, uint* pulOutputLength, uint* pulOutputHeight, IntPtr** phOutputBitmap)
+        public readonly unsafe int ExtractThumbnail(ref IStorage pStg, uint ulLength, uint ulHeight, uint* pulOutputLength, uint* pulOutputHeight, void** phOutputBitmap)
         {
             var @this = (IThumbnailExtractor*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
             fixed (IStorage* pStgPtr = &pStg)
             {
-                ret = ((delegate* unmanaged[Cdecl]<IThumbnailExtractor*, IStorage*, uint, uint, uint*, uint*, IntPtr**, int>)@this->LpVtbl[3])(@this, pStgPtr, ulLength, ulHeight, pulOutputLength, pulOutputHeight, phOutputBitmap);
+                ret = ((delegate* unmanaged[Cdecl]<IThumbnailExtractor*, IStorage*, uint, uint, uint*, uint*, void**, int>)@this->LpVtbl[3])(@this, pStgPtr, ulLength, ulHeight, pulOutputLength, pulOutputHeight, phOutputBitmap);
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int ExtractThumbnail(ref IStorage pStg, uint ulLength, uint ulHeight, uint* pulOutputLength, uint* pulOutputHeight, ref IntPtr* phOutputBitmap)
+        public readonly unsafe int ExtractThumbnail(ref IStorage pStg, uint ulLength, uint ulHeight, uint* pulOutputLength, uint* pulOutputHeight, ref void* phOutputBitmap)
         {
             var @this = (IThumbnailExtractor*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
             fixed (IStorage* pStgPtr = &pStg)
             {
-                fixed (IntPtr** phOutputBitmapPtr = &phOutputBitmap)
+                fixed (void** phOutputBitmapPtr = &phOutputBitmap)
                 {
-                    ret = ((delegate* unmanaged[Cdecl]<IThumbnailExtractor*, IStorage*, uint, uint, uint*, uint*, IntPtr**, int>)@this->LpVtbl[3])(@this, pStgPtr, ulLength, ulHeight, pulOutputLength, pulOutputHeight, phOutputBitmapPtr);
+                    ret = ((delegate* unmanaged[Cdecl]<IThumbnailExtractor*, IStorage*, uint, uint, uint*, uint*, void**, int>)@this->LpVtbl[3])(@this, pStgPtr, ulLength, ulHeight, pulOutputLength, pulOutputHeight, phOutputBitmapPtr);
                 }
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int ExtractThumbnail(ref IStorage pStg, uint ulLength, uint ulHeight, uint* pulOutputLength, ref uint pulOutputHeight, IntPtr** phOutputBitmap)
+        public readonly unsafe int ExtractThumbnail(ref IStorage pStg, uint ulLength, uint ulHeight, uint* pulOutputLength, ref uint pulOutputHeight, void** phOutputBitmap)
         {
             var @this = (IThumbnailExtractor*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -254,14 +254,14 @@ namespace Silk.NET.Core.Win32Extras
             {
                 fixed (uint* pulOutputHeightPtr = &pulOutputHeight)
                 {
-                    ret = ((delegate* unmanaged[Cdecl]<IThumbnailExtractor*, IStorage*, uint, uint, uint*, uint*, IntPtr**, int>)@this->LpVtbl[3])(@this, pStgPtr, ulLength, ulHeight, pulOutputLength, pulOutputHeightPtr, phOutputBitmap);
+                    ret = ((delegate* unmanaged[Cdecl]<IThumbnailExtractor*, IStorage*, uint, uint, uint*, uint*, void**, int>)@this->LpVtbl[3])(@this, pStgPtr, ulLength, ulHeight, pulOutputLength, pulOutputHeightPtr, phOutputBitmap);
                 }
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int ExtractThumbnail(ref IStorage pStg, uint ulLength, uint ulHeight, uint* pulOutputLength, ref uint pulOutputHeight, ref IntPtr* phOutputBitmap)
+        public readonly unsafe int ExtractThumbnail(ref IStorage pStg, uint ulLength, uint ulHeight, uint* pulOutputLength, ref uint pulOutputHeight, ref void* phOutputBitmap)
         {
             var @this = (IThumbnailExtractor*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -269,9 +269,9 @@ namespace Silk.NET.Core.Win32Extras
             {
                 fixed (uint* pulOutputHeightPtr = &pulOutputHeight)
                 {
-                    fixed (IntPtr** phOutputBitmapPtr = &phOutputBitmap)
+                    fixed (void** phOutputBitmapPtr = &phOutputBitmap)
                     {
-                        ret = ((delegate* unmanaged[Cdecl]<IThumbnailExtractor*, IStorage*, uint, uint, uint*, uint*, IntPtr**, int>)@this->LpVtbl[3])(@this, pStgPtr, ulLength, ulHeight, pulOutputLength, pulOutputHeightPtr, phOutputBitmapPtr);
+                        ret = ((delegate* unmanaged[Cdecl]<IThumbnailExtractor*, IStorage*, uint, uint, uint*, uint*, void**, int>)@this->LpVtbl[3])(@this, pStgPtr, ulLength, ulHeight, pulOutputLength, pulOutputHeightPtr, phOutputBitmapPtr);
                     }
                 }
             }
@@ -279,7 +279,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int ExtractThumbnail(ref IStorage pStg, uint ulLength, uint ulHeight, ref uint pulOutputLength, uint* pulOutputHeight, IntPtr** phOutputBitmap)
+        public readonly unsafe int ExtractThumbnail(ref IStorage pStg, uint ulLength, uint ulHeight, ref uint pulOutputLength, uint* pulOutputHeight, void** phOutputBitmap)
         {
             var @this = (IThumbnailExtractor*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -287,14 +287,14 @@ namespace Silk.NET.Core.Win32Extras
             {
                 fixed (uint* pulOutputLengthPtr = &pulOutputLength)
                 {
-                    ret = ((delegate* unmanaged[Cdecl]<IThumbnailExtractor*, IStorage*, uint, uint, uint*, uint*, IntPtr**, int>)@this->LpVtbl[3])(@this, pStgPtr, ulLength, ulHeight, pulOutputLengthPtr, pulOutputHeight, phOutputBitmap);
+                    ret = ((delegate* unmanaged[Cdecl]<IThumbnailExtractor*, IStorage*, uint, uint, uint*, uint*, void**, int>)@this->LpVtbl[3])(@this, pStgPtr, ulLength, ulHeight, pulOutputLengthPtr, pulOutputHeight, phOutputBitmap);
                 }
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int ExtractThumbnail(ref IStorage pStg, uint ulLength, uint ulHeight, ref uint pulOutputLength, uint* pulOutputHeight, ref IntPtr* phOutputBitmap)
+        public readonly unsafe int ExtractThumbnail(ref IStorage pStg, uint ulLength, uint ulHeight, ref uint pulOutputLength, uint* pulOutputHeight, ref void* phOutputBitmap)
         {
             var @this = (IThumbnailExtractor*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -302,9 +302,9 @@ namespace Silk.NET.Core.Win32Extras
             {
                 fixed (uint* pulOutputLengthPtr = &pulOutputLength)
                 {
-                    fixed (IntPtr** phOutputBitmapPtr = &phOutputBitmap)
+                    fixed (void** phOutputBitmapPtr = &phOutputBitmap)
                     {
-                        ret = ((delegate* unmanaged[Cdecl]<IThumbnailExtractor*, IStorage*, uint, uint, uint*, uint*, IntPtr**, int>)@this->LpVtbl[3])(@this, pStgPtr, ulLength, ulHeight, pulOutputLengthPtr, pulOutputHeight, phOutputBitmapPtr);
+                        ret = ((delegate* unmanaged[Cdecl]<IThumbnailExtractor*, IStorage*, uint, uint, uint*, uint*, void**, int>)@this->LpVtbl[3])(@this, pStgPtr, ulLength, ulHeight, pulOutputLengthPtr, pulOutputHeight, phOutputBitmapPtr);
                     }
                 }
             }
@@ -312,7 +312,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int ExtractThumbnail(ref IStorage pStg, uint ulLength, uint ulHeight, ref uint pulOutputLength, ref uint pulOutputHeight, IntPtr** phOutputBitmap)
+        public readonly unsafe int ExtractThumbnail(ref IStorage pStg, uint ulLength, uint ulHeight, ref uint pulOutputLength, ref uint pulOutputHeight, void** phOutputBitmap)
         {
             var @this = (IThumbnailExtractor*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -322,7 +322,7 @@ namespace Silk.NET.Core.Win32Extras
                 {
                     fixed (uint* pulOutputHeightPtr = &pulOutputHeight)
                     {
-                        ret = ((delegate* unmanaged[Cdecl]<IThumbnailExtractor*, IStorage*, uint, uint, uint*, uint*, IntPtr**, int>)@this->LpVtbl[3])(@this, pStgPtr, ulLength, ulHeight, pulOutputLengthPtr, pulOutputHeightPtr, phOutputBitmap);
+                        ret = ((delegate* unmanaged[Cdecl]<IThumbnailExtractor*, IStorage*, uint, uint, uint*, uint*, void**, int>)@this->LpVtbl[3])(@this, pStgPtr, ulLength, ulHeight, pulOutputLengthPtr, pulOutputHeightPtr, phOutputBitmap);
                     }
                 }
             }
@@ -330,7 +330,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int ExtractThumbnail(ref IStorage pStg, uint ulLength, uint ulHeight, ref uint pulOutputLength, ref uint pulOutputHeight, ref IntPtr* phOutputBitmap)
+        public readonly unsafe int ExtractThumbnail(ref IStorage pStg, uint ulLength, uint ulHeight, ref uint pulOutputLength, ref uint pulOutputHeight, ref void* phOutputBitmap)
         {
             var @this = (IThumbnailExtractor*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -340,9 +340,9 @@ namespace Silk.NET.Core.Win32Extras
                 {
                     fixed (uint* pulOutputHeightPtr = &pulOutputHeight)
                     {
-                        fixed (IntPtr** phOutputBitmapPtr = &phOutputBitmap)
+                        fixed (void** phOutputBitmapPtr = &phOutputBitmap)
                         {
-                            ret = ((delegate* unmanaged[Cdecl]<IThumbnailExtractor*, IStorage*, uint, uint, uint*, uint*, IntPtr**, int>)@this->LpVtbl[3])(@this, pStgPtr, ulLength, ulHeight, pulOutputLengthPtr, pulOutputHeightPtr, phOutputBitmapPtr);
+                            ret = ((delegate* unmanaged[Cdecl]<IThumbnailExtractor*, IStorage*, uint, uint, uint*, uint*, void**, int>)@this->LpVtbl[3])(@this, pStgPtr, ulLength, ulHeight, pulOutputLengthPtr, pulOutputHeightPtr, phOutputBitmapPtr);
                         }
                     }
                 }
@@ -381,7 +381,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int ExtractThumbnail<TI0>(ComPtr<TI0> pStg, uint ulLength, uint ulHeight, uint* pulOutputLength, uint* pulOutputHeight, IntPtr** phOutputBitmap) where TI0 : unmanaged, IComVtbl<IStorage>, IComVtbl<TI0>
+        public readonly unsafe int ExtractThumbnail<TI0>(ComPtr<TI0> pStg, uint ulLength, uint ulHeight, uint* pulOutputLength, uint* pulOutputHeight, void** phOutputBitmap) where TI0 : unmanaged, IComVtbl<IStorage>, IComVtbl<TI0>
         {
             var @this = (IThumbnailExtractor*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -389,7 +389,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int ExtractThumbnail<TI0>(ComPtr<TI0> pStg, uint ulLength, uint ulHeight, uint* pulOutputLength, uint* pulOutputHeight, ref IntPtr* phOutputBitmap) where TI0 : unmanaged, IComVtbl<IStorage>, IComVtbl<TI0>
+        public readonly unsafe int ExtractThumbnail<TI0>(ComPtr<TI0> pStg, uint ulLength, uint ulHeight, uint* pulOutputLength, uint* pulOutputHeight, ref void* phOutputBitmap) where TI0 : unmanaged, IComVtbl<IStorage>, IComVtbl<TI0>
         {
             var @this = (IThumbnailExtractor*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -397,7 +397,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int ExtractThumbnail<TI0>(ComPtr<TI0> pStg, uint ulLength, uint ulHeight, uint* pulOutputLength, ref uint pulOutputHeight, IntPtr** phOutputBitmap) where TI0 : unmanaged, IComVtbl<IStorage>, IComVtbl<TI0>
+        public readonly unsafe int ExtractThumbnail<TI0>(ComPtr<TI0> pStg, uint ulLength, uint ulHeight, uint* pulOutputLength, ref uint pulOutputHeight, void** phOutputBitmap) where TI0 : unmanaged, IComVtbl<IStorage>, IComVtbl<TI0>
         {
             var @this = (IThumbnailExtractor*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -405,7 +405,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int ExtractThumbnail<TI0>(ComPtr<TI0> pStg, uint ulLength, uint ulHeight, uint* pulOutputLength, ref uint pulOutputHeight, ref IntPtr* phOutputBitmap) where TI0 : unmanaged, IComVtbl<IStorage>, IComVtbl<TI0>
+        public readonly unsafe int ExtractThumbnail<TI0>(ComPtr<TI0> pStg, uint ulLength, uint ulHeight, uint* pulOutputLength, ref uint pulOutputHeight, ref void* phOutputBitmap) where TI0 : unmanaged, IComVtbl<IStorage>, IComVtbl<TI0>
         {
             var @this = (IThumbnailExtractor*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -413,7 +413,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int ExtractThumbnail<TI0>(ComPtr<TI0> pStg, uint ulLength, uint ulHeight, ref uint pulOutputLength, uint* pulOutputHeight, IntPtr** phOutputBitmap) where TI0 : unmanaged, IComVtbl<IStorage>, IComVtbl<TI0>
+        public readonly unsafe int ExtractThumbnail<TI0>(ComPtr<TI0> pStg, uint ulLength, uint ulHeight, ref uint pulOutputLength, uint* pulOutputHeight, void** phOutputBitmap) where TI0 : unmanaged, IComVtbl<IStorage>, IComVtbl<TI0>
         {
             var @this = (IThumbnailExtractor*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -421,7 +421,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int ExtractThumbnail<TI0>(ComPtr<TI0> pStg, uint ulLength, uint ulHeight, ref uint pulOutputLength, uint* pulOutputHeight, ref IntPtr* phOutputBitmap) where TI0 : unmanaged, IComVtbl<IStorage>, IComVtbl<TI0>
+        public readonly unsafe int ExtractThumbnail<TI0>(ComPtr<TI0> pStg, uint ulLength, uint ulHeight, ref uint pulOutputLength, uint* pulOutputHeight, ref void* phOutputBitmap) where TI0 : unmanaged, IComVtbl<IStorage>, IComVtbl<TI0>
         {
             var @this = (IThumbnailExtractor*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -429,7 +429,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int ExtractThumbnail<TI0>(ComPtr<TI0> pStg, uint ulLength, uint ulHeight, ref uint pulOutputLength, ref uint pulOutputHeight, IntPtr** phOutputBitmap) where TI0 : unmanaged, IComVtbl<IStorage>, IComVtbl<TI0>
+        public readonly unsafe int ExtractThumbnail<TI0>(ComPtr<TI0> pStg, uint ulLength, uint ulHeight, ref uint pulOutputLength, ref uint pulOutputHeight, void** phOutputBitmap) where TI0 : unmanaged, IComVtbl<IStorage>, IComVtbl<TI0>
         {
             var @this = (IThumbnailExtractor*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -437,7 +437,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int ExtractThumbnail<TI0>(ComPtr<TI0> pStg, uint ulLength, uint ulHeight, ref uint pulOutputLength, ref uint pulOutputHeight, ref IntPtr* phOutputBitmap) where TI0 : unmanaged, IComVtbl<IStorage>, IComVtbl<TI0>
+        public readonly unsafe int ExtractThumbnail<TI0>(ComPtr<TI0> pStg, uint ulLength, uint ulHeight, ref uint pulOutputLength, ref uint pulOutputHeight, ref void* phOutputBitmap) where TI0 : unmanaged, IComVtbl<IStorage>, IComVtbl<TI0>
         {
             var @this = (IThumbnailExtractor*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
