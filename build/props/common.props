@@ -90,7 +90,7 @@
     <PropertyGroup Condition="'$(SilkSourceLinkExempt)' == ''">
         <DebugType>portable</DebugType>
         <EmbedAllSources>true</EmbedAllSources>
-        <EmbedUntrackedSource>true</EmbedUntrackedSources>
+        <EmbedUntrackedSources>true</EmbedUntrackedSources>
         <IncludeSymbols>true</IncludeSymbols>
         <SymbolPackageFormat>snupkg</SymbolPackageFormat>
     </PropertyGroup>
@@ -139,9 +139,9 @@
             <SilkReadmeLines Include="$(SilkReadme)" />
             <SilkReadmeGenerated Include="$(SilkReadmePath)" />
         </ItemGroup>
-        <WriteLinesToFile File="@(SilkReadmeGenerated)" 
-                          Lines="@(SilkReadmeLines)" 
-                          Overwrite="true" 
+        <WriteLinesToFile File="@(SilkReadmeGenerated)"
+                          Lines="@(SilkReadmeLines)"
+                          Overwrite="true"
                           Encoding="UTF-8" />
         <PropertyGroup>
             <PackageReadmeFile>README.md</PackageReadmeFile>
