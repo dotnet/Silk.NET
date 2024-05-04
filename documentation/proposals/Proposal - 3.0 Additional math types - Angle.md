@@ -224,3 +224,14 @@ public static class Angle
 ```
 
 # Meeting Agenda/Notes
+## TDB
+* Degrees, minutes and seconds are not fractional. Should they be changed to an integer type (`int`)?
+    *   ```csharp
+        public int Degrees { get; }
+        public int Minutes { get; }
+        public int Seconds { get; }
+
+        public static Angle<TScalar> FromDegrees<TScalar>(int degrees, int minutes, int seconds)
+            where TScalar : IFloatingPointIeee754<TScalar>
+            => default;
+        ```
