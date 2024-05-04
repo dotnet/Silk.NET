@@ -211,6 +211,36 @@ public struct OrientedBoxF<TScalar>
 Frustum
 
 ```csharp
+public struct FrustumF<TScalar>
+    , IIntersectWithRay<FrustumF<TScalar>, TScalar>
+    , IIntersectWithPlane<FrustumF<TScalar>, TScalar>
+    , IColliderShape<FrustumF<TScalar>, TScalar>
+    , IContainPoint<FrustumF<TScalar>, TScalar>
+    , IIntersect<FrustumF<TScalar>, FrustumF<TScalar>>
+    //Implement IIntersect for other shapes
+    , IContain<FrustumF<TScalar>, FrustumF<TScalar>>
+    //Implement IContain for other shapes
+    , IFormattable
+    , IEquatable<FrustumF<TScalar>>
+    where TScalar : IBinaryFloatingPointIeee754<TScalar>
+{
+    public PlaneF<TScaler> LeftPlane;
+    public PlaneF<TScaler> RightPlane;
+    public PlaneF<TScaler> TopPlane;
+    public PlaneF<TScaler> BottomPlane;
+    public PlaneF<TScaler> NearPlane;
+    public PlaneF<TScaler> FarPlane;
+}
+
+```
+
+```csharp
+public static class Frustum
+{
+    public static FrustumF<TScalar> FromMatrix(Matrix4x4F<TScaler>)
+        where TScalar : IBinaryFloatingPointIeee754<TScalar>
+        => default;
+}
 
 ```
 
