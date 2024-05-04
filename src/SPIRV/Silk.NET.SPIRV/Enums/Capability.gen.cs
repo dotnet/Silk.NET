@@ -228,6 +228,8 @@ namespace Silk.NET.SPIRV
         TextureBoxFilterQCom = 0x1185,
         [NativeName("Name", "SpvCapabilityTextureBlockMatchQCOM")]
         TextureBlockMatchQCom = 0x1186,
+        [NativeName("Name", "SpvCapabilityTextureBlockMatch2QCOM")]
+        TextureBlockMatch2QCom = 0x1192,
         [NativeName("Name", "SpvCapabilityFloat16ImageAMD")]
         Float16imageAmd = 0x1390,
         [NativeName("Name", "SpvCapabilityImageGatherBiasLodAMD")]
@@ -242,6 +244,10 @@ namespace Silk.NET.SPIRV
         Int64imageExt = 0x1398,
         [NativeName("Name", "SpvCapabilityShaderClockKHR")]
         ShaderClockKhr = 0x13BF,
+        [NativeName("Name", "SpvCapabilityShaderEnqueueAMDX")]
+        ShaderEnqueueAmdx = 0x13CB,
+        [NativeName("Name", "SpvCapabilityQuadControlKHR")]
+        QuadControlKhr = 0x13DF,
         [NativeName("Name", "SpvCapabilitySampleMaskOverrideCoverageNV")]
         SampleMaskOverrideCoverageNV = 0x1481,
         [NativeName("Name", "SpvCapabilityGeometryShaderPassthroughNV")]
@@ -360,6 +366,8 @@ namespace Silk.NET.SPIRV
         DemoteToHelperInvocation = 0x1503,
         [NativeName("Name", "SpvCapabilityDemoteToHelperInvocationEXT")]
         DemoteToHelperInvocationExt = 0x1503,
+        [NativeName("Name", "SpvCapabilityDisplacementMicromapNV")]
+        DisplacementMicromapNV = 0x1504,
         [NativeName("Name", "SpvCapabilityRayTracingOpacityMicromapEXT")]
         RayTracingOpacityMicromapExt = 0x1505,
         [NativeName("Name", "SpvCapabilityShaderInvocationReorderNV")]
@@ -368,6 +376,12 @@ namespace Silk.NET.SPIRV
         BindlessTextureNV = 0x150E,
         [NativeName("Name", "SpvCapabilityRayQueryPositionFetchKHR")]
         RayQueryPositionFetchKhr = 0x150F,
+        [NativeName("Name", "SpvCapabilityAtomicFloat16VectorNV")]
+        AtomicFloat16VectorNV = 0x151C,
+        [NativeName("Name", "SpvCapabilityRayTracingDisplacementMicromapNV")]
+        RayTracingDisplacementMicromapNV = 0x1521,
+        [NativeName("Name", "SpvCapabilityRawAccessChainsNV")]
+        RawAccessChainsNV = 0x1526,
         [NativeName("Name", "SpvCapabilitySubgroupShuffleINTEL")]
         SubgroupShuffleIntel = 0x15C0,
         [NativeName("Name", "SpvCapabilitySubgroupBufferBlockIOINTEL")]
@@ -476,12 +490,14 @@ namespace Silk.NET.SPIRV
         BitInstructions = 0x1789,
         [NativeName("Name", "SpvCapabilityGroupNonUniformRotateKHR")]
         GroupNonUniformRotateKhr = 0x178A,
+        [NativeName("Name", "SpvCapabilityFloatControls2")]
+        FloatControls2 = 0x178D,
         [NativeName("Name", "SpvCapabilityAtomicFloat32AddEXT")]
         AtomicFloat32AddExt = 0x1791,
         [NativeName("Name", "SpvCapabilityAtomicFloat64AddEXT")]
         AtomicFloat64AddExt = 0x1792,
-        [NativeName("Name", "SpvCapabilityLongConstantCompositeINTEL")]
-        LongConstantCompositeIntel = 0x17C9,
+        [NativeName("Name", "SpvCapabilityLongCompositesINTEL")]
+        LongCompositesIntel = 0x17C9,
         [NativeName("Name", "SpvCapabilityOptNoneINTEL")]
         OptNoneIntel = 0x17CE,
         [NativeName("Name", "SpvCapabilityAtomicFloat16AddEXT")]
@@ -492,6 +508,8 @@ namespace Silk.NET.SPIRV
         BFloat16ConversionIntel = 0x17E3,
         [NativeName("Name", "SpvCapabilitySplitBarrierINTEL")]
         SplitBarrierIntel = 0x17FD,
+        [NativeName("Name", "SpvCapabilityFPGAClusterAttributesV2INTEL")]
+        FpgaClusterAttributesV2intel = 0x1806,
         [NativeName("Name", "SpvCapabilityFPGAKernelAttributesv2INTEL")]
         FpgaKernelAttributesv2intel = 0x1811,
         [NativeName("Name", "SpvCapabilityFPMaxErrorINTEL")]
@@ -500,8 +518,18 @@ namespace Silk.NET.SPIRV
         FpgaLatencyControlIntel = 0x181B,
         [NativeName("Name", "SpvCapabilityFPGAArgumentInterfacesINTEL")]
         FpgaArgumentInterfacesIntel = 0x181E,
+        [NativeName("Name", "SpvCapabilityGlobalVariableHostAccessINTEL")]
+        GlobalVariableHostAccessIntel = 0x182B,
+        [NativeName("Name", "SpvCapabilityGlobalVariableFPGADecorationsINTEL")]
+        GlobalVariableFpgaDecorationsIntel = 0x182D,
         [NativeName("Name", "SpvCapabilityGroupUniformArithmeticKHR")]
         GroupUniformArithmeticKhr = 0x1900,
+        [NativeName("Name", "SpvCapabilityMaskedGatherScatterINTEL")]
+        MaskedGatherScatterIntel = 0x191B,
+        [NativeName("Name", "SpvCapabilityCacheControlsINTEL")]
+        CacheControlsIntel = 0x1929,
+        [NativeName("Name", "SpvCapabilityRegisterLimitsINTEL")]
+        RegisterLimitsIntel = 0x193C,
         [NativeName("Name", "SpvCapabilityMax")]
         Max = 0x7FFFFFFF,
     }

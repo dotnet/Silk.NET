@@ -149,29 +149,59 @@ namespace Silk.NET.Windowing.Sdl
             IsClosingVal = false;
 
             // Set window GL attributes
-            Sdl.GLSetAttribute(GLattr.DepthSize,
-                    opts.PreferredDepthBufferBits is null || opts.PreferredDepthBufferBits == -1
-                        ? 24 : opts.PreferredDepthBufferBits.Value);
+            if (opts.PreferredDepthBufferBits != -1)
+            {
+                Sdl.GLSetAttribute
+                (
+                    GLattr.DepthSize,
+                    opts.PreferredDepthBufferBits ?? 24
+                );
+            }
 
-            Sdl.GLSetAttribute(GLattr.StencilSize,
-                    opts.PreferredStencilBufferBits is null || opts.PreferredStencilBufferBits == -1
-                        ? 8 : opts.PreferredStencilBufferBits.Value);
+            if (opts.PreferredStencilBufferBits != -1)
+            {
+                Sdl.GLSetAttribute
+                (
+                    GLattr.StencilSize,
+                    opts.PreferredStencilBufferBits ?? 8
+                );
+            }
 
-            Sdl.GLSetAttribute(GLattr.RedSize,
-                    opts.PreferredBitDepth is null || opts.PreferredBitDepth.Value.X == -1
-                        ? 8 : opts.PreferredBitDepth.Value.X);
+            if (opts.PreferredBitDepth?.X != -1)
+            {
+                Sdl.GLSetAttribute
+                (
+                    GLattr.RedSize,
+                    opts.PreferredBitDepth?.X ?? 8
+                );
+            }
 
-            Sdl.GLSetAttribute(GLattr.GreenSize,
-                    opts.PreferredBitDepth is null || opts.PreferredBitDepth.Value.Y == -1
-                        ? 8 : opts.PreferredBitDepth.Value.Y);
+            if (opts.PreferredBitDepth?.Y != -1)
+            {
+                Sdl.GLSetAttribute
+                (
+                    GLattr.GreenSize,
+                    opts.PreferredBitDepth?.Y ?? 8
+                );
+            }
 
-            Sdl.GLSetAttribute(GLattr.BlueSize,
-                    opts.PreferredBitDepth is null || opts.PreferredBitDepth.Value.Z == -1
-                        ? 8 : opts.PreferredBitDepth.Value.Z);
-
-            Sdl.GLSetAttribute(GLattr.AlphaSize,
-                    opts.PreferredBitDepth is null || opts.PreferredBitDepth.Value.W == -1
-                        ? 8 : opts.PreferredBitDepth.Value.W);
+            if (opts.PreferredBitDepth?.Z != -1)
+            {
+                Sdl.GLSetAttribute
+                (
+                    GLattr.BlueSize,
+                    opts.PreferredBitDepth?.Z ?? 8
+                );
+            }
+            
+            if (opts.PreferredBitDepth?.W != -1)
+            {
+                Sdl.GLSetAttribute
+                (
+                    GLattr.AlphaSize,
+                    opts.PreferredBitDepth?.W ?? 8
+                );
+            }
 
             Sdl.GLSetAttribute(GLattr.Multisamplebuffers, (opts.Samples == null || opts.Samples == -1) ? 0 : 1);
             Sdl.GLSetAttribute(GLattr.Multisamplesamples, (opts.Samples == null || opts.Samples == -1) ? 0 : opts.Samples.Value);
@@ -250,7 +280,6 @@ namespace Silk.NET.Windowing.Sdl
 
         public override void DoEvents()
         {
-            ClearEvents();
             do
             {
                 _platform.DoEvents();
@@ -260,23 +289,33 @@ namespace Silk.NET.Windowing.Sdl
         }
 
         private void ClearEvents()
-        {
-            var c = Events.Count;
-            for (var i = 0; i < c; i++)
+        { 
+            // remove events in reverse order to prevent shuffling in the list
+            for (var i = Events.Count - 1; i >= 0; i--)
             {
-                var @event = Events[0];
-                if (@event.Type == (uint) EventType.Dropfile)
-                {
-                    Sdl.Free(@event.Drop.File);
-                }
-
-                Events.RemoveAt(0);
+                RemoveEvent(i);
             }
+        }
+        
+        internal void RemoveEvent(int index)
+        {
+            var @event = Events[index];
+            if (@event.Type == (uint) EventType.Dropfile)
+            {
+                Sdl.Free(@event.Drop.File);
+            }
+
+            Events.RemoveAt(index);
         }
 
         ~SdlView()
         {
             Reset();
+        }
+
+        public override void Focus()
+        {
+            Sdl.RaiseWindow(SdlWindow);
         }
 
         public override void Close()
@@ -397,7 +436,7 @@ namespace Silk.NET.Windowing.Sdl
 
                 if (!skipped)
                 {
-                    Events.RemoveAt(i);
+                    RemoveEvent(i);
                 }
             }
             
@@ -431,7 +470,7 @@ namespace Silk.NET.Windowing.Sdl
                     EventType.Mousemotion when @event.Motion.WindowID == _id => true,
                     EventType.Mousebuttondown when @event.Button.WindowID == _id => true,
                     EventType.Mousebuttonup when @event.Button.WindowID == _id => true,
-                    EventType.Mousewheel when @event.Motion.WindowID == _id => true,
+                    EventType.Mousewheel when @event.Wheel.WindowID == _id => true,
                     EventType.Joyaxismotion => true,
                     EventType.Joyballmotion => true,
                     EventType.Joyhatmotion => true,
@@ -471,6 +510,11 @@ namespace Silk.NET.Windowing.Sdl
             }
             
             EndEventProcessing(taken);
+        }
+
+        internal override void AfterProcessingEvents()
+        {
+            ClearEvents();
         }
     }
 }

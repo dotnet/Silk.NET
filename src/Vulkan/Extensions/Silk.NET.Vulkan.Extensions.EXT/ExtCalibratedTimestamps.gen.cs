@@ -22,89 +22,89 @@ namespace Silk.NET.Vulkan.Extensions.EXT
         public const string ExtensionName = "VK_EXT_calibrated_timestamps";
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkGetCalibratedTimestampsEXT", Convention = CallingConvention.Winapi)]
-        public unsafe partial Result GetCalibratedTimestamp([Count(Count = 0)] Device device, [Count(Count = 0)] uint timestampCount, [Count(Parameter = "timestampCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] CalibratedTimestampInfoEXT* pTimestampInfos, [Count(Parameter = "timestampCount")] ulong* pTimestamps, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] ulong* pMaxDeviation);
+        public unsafe partial Result GetCalibratedTimestamp([Count(Count = 0)] Device device, [Count(Count = 0)] uint timestampCount, [Count(Parameter = "timestampCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] CalibratedTimestampInfoKHR* pTimestampInfos, [Count(Parameter = "timestampCount")] ulong* pTimestamps, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] ulong* pMaxDeviation);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkGetCalibratedTimestampsEXT", Convention = CallingConvention.Winapi)]
-        public unsafe partial Result GetCalibratedTimestamp([Count(Count = 0)] Device device, [Count(Count = 0)] uint timestampCount, [Count(Parameter = "timestampCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] CalibratedTimestampInfoEXT* pTimestampInfos, [Count(Parameter = "timestampCount")] ulong* pTimestamps, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] out ulong pMaxDeviation);
+        public unsafe partial Result GetCalibratedTimestamp([Count(Count = 0)] Device device, [Count(Count = 0)] uint timestampCount, [Count(Parameter = "timestampCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] CalibratedTimestampInfoKHR* pTimestampInfos, [Count(Parameter = "timestampCount")] ulong* pTimestamps, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] out ulong pMaxDeviation);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkGetCalibratedTimestampsEXT", Convention = CallingConvention.Winapi)]
-        public unsafe partial Result GetCalibratedTimestamp([Count(Count = 0)] Device device, [Count(Count = 0)] uint timestampCount, [Count(Parameter = "timestampCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] CalibratedTimestampInfoEXT* pTimestampInfos, [Count(Parameter = "timestampCount")] ref ulong pTimestamps, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] ulong* pMaxDeviation);
+        public unsafe partial Result GetCalibratedTimestamp([Count(Count = 0)] Device device, [Count(Count = 0)] uint timestampCount, [Count(Parameter = "timestampCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] CalibratedTimestampInfoKHR* pTimestampInfos, [Count(Parameter = "timestampCount")] ref ulong pTimestamps, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] ulong* pMaxDeviation);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkGetCalibratedTimestampsEXT", Convention = CallingConvention.Winapi)]
-        public unsafe partial Result GetCalibratedTimestamp([Count(Count = 0)] Device device, [Count(Count = 0)] uint timestampCount, [Count(Parameter = "timestampCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] CalibratedTimestampInfoEXT* pTimestampInfos, [Count(Parameter = "timestampCount")] ref ulong pTimestamps, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] out ulong pMaxDeviation);
+        public unsafe partial Result GetCalibratedTimestamp([Count(Count = 0)] Device device, [Count(Count = 0)] uint timestampCount, [Count(Parameter = "timestampCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] CalibratedTimestampInfoKHR* pTimestampInfos, [Count(Parameter = "timestampCount")] ref ulong pTimestamps, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] out ulong pMaxDeviation);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkGetCalibratedTimestampsEXT", Convention = CallingConvention.Winapi)]
-        public unsafe partial Result GetCalibratedTimestamp([Count(Count = 0)] Device device, [Count(Count = 0)] uint timestampCount, [Count(Parameter = "timestampCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] in CalibratedTimestampInfoEXT pTimestampInfos, [Count(Parameter = "timestampCount")] ulong* pTimestamps, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] ulong* pMaxDeviation);
+        public unsafe partial Result GetCalibratedTimestamp([Count(Count = 0)] Device device, [Count(Count = 0)] uint timestampCount, [Count(Parameter = "timestampCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in CalibratedTimestampInfoKHR pTimestampInfos, [Count(Parameter = "timestampCount")] ulong* pTimestamps, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] ulong* pMaxDeviation);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkGetCalibratedTimestampsEXT", Convention = CallingConvention.Winapi)]
-        public unsafe partial Result GetCalibratedTimestamp([Count(Count = 0)] Device device, [Count(Count = 0)] uint timestampCount, [Count(Parameter = "timestampCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] in CalibratedTimestampInfoEXT pTimestampInfos, [Count(Parameter = "timestampCount")] ulong* pTimestamps, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] out ulong pMaxDeviation);
+        public unsafe partial Result GetCalibratedTimestamp([Count(Count = 0)] Device device, [Count(Count = 0)] uint timestampCount, [Count(Parameter = "timestampCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in CalibratedTimestampInfoKHR pTimestampInfos, [Count(Parameter = "timestampCount")] ulong* pTimestamps, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] out ulong pMaxDeviation);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkGetCalibratedTimestampsEXT", Convention = CallingConvention.Winapi)]
-        public unsafe partial Result GetCalibratedTimestamp([Count(Count = 0)] Device device, [Count(Count = 0)] uint timestampCount, [Count(Parameter = "timestampCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] in CalibratedTimestampInfoEXT pTimestampInfos, [Count(Parameter = "timestampCount")] ref ulong pTimestamps, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] ulong* pMaxDeviation);
+        public unsafe partial Result GetCalibratedTimestamp([Count(Count = 0)] Device device, [Count(Count = 0)] uint timestampCount, [Count(Parameter = "timestampCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in CalibratedTimestampInfoKHR pTimestampInfos, [Count(Parameter = "timestampCount")] ref ulong pTimestamps, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] ulong* pMaxDeviation);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkGetCalibratedTimestampsEXT", Convention = CallingConvention.Winapi)]
-        public partial Result GetCalibratedTimestamp([Count(Count = 0)] Device device, [Count(Count = 0)] uint timestampCount, [Count(Parameter = "timestampCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] in CalibratedTimestampInfoEXT pTimestampInfos, [Count(Parameter = "timestampCount")] ref ulong pTimestamps, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] out ulong pMaxDeviation);
+        public partial Result GetCalibratedTimestamp([Count(Count = 0)] Device device, [Count(Count = 0)] uint timestampCount, [Count(Parameter = "timestampCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in CalibratedTimestampInfoKHR pTimestampInfos, [Count(Parameter = "timestampCount")] ref ulong pTimestamps, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] out ulong pMaxDeviation);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkGetPhysicalDeviceCalibrateableTimeDomainsEXT", Convention = CallingConvention.Winapi)]
-        public unsafe partial Result GetPhysicalDeviceCalibrateableTimeDomain([Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0)] uint* pTimeDomainCount, [Count(Parameter = "pTimeDomainCount"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] TimeDomainEXT* pTimeDomains);
+        public unsafe partial Result GetPhysicalDeviceCalibrateableTimeDomain([Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0)] uint* pTimeDomainCount, [Count(Parameter = "pTimeDomainCount"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] TimeDomainKHR* pTimeDomains);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkGetPhysicalDeviceCalibrateableTimeDomainsEXT", Convention = CallingConvention.Winapi)]
-        public unsafe partial Result GetPhysicalDeviceCalibrateableTimeDomain([Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0)] uint* pTimeDomainCount, [Count(Parameter = "pTimeDomainCount"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] out TimeDomainEXT pTimeDomains);
+        public unsafe partial Result GetPhysicalDeviceCalibrateableTimeDomain([Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0)] uint* pTimeDomainCount, [Count(Parameter = "pTimeDomainCount"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] out TimeDomainKHR pTimeDomains);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkGetPhysicalDeviceCalibrateableTimeDomainsEXT", Convention = CallingConvention.Winapi)]
-        public unsafe partial Result GetPhysicalDeviceCalibrateableTimeDomain([Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0)] ref uint pTimeDomainCount, [Count(Parameter = "pTimeDomainCount"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] TimeDomainEXT* pTimeDomains);
+        public unsafe partial Result GetPhysicalDeviceCalibrateableTimeDomain([Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0)] ref uint pTimeDomainCount, [Count(Parameter = "pTimeDomainCount"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] TimeDomainKHR* pTimeDomains);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkGetPhysicalDeviceCalibrateableTimeDomainsEXT", Convention = CallingConvention.Winapi)]
-        public partial Result GetPhysicalDeviceCalibrateableTimeDomain([Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0)] ref uint pTimeDomainCount, [Count(Parameter = "pTimeDomainCount"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] out TimeDomainEXT pTimeDomains);
+        public partial Result GetPhysicalDeviceCalibrateableTimeDomain([Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0)] ref uint pTimeDomainCount, [Count(Parameter = "pTimeDomainCount"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] out TimeDomainKHR pTimeDomains);
 
         /// <summary>To be documented.</summary>
-        public unsafe Result GetCalibratedTimestamp([Count(Count = 0)] Device device, [Count(Parameter = "timestampCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] CalibratedTimestampInfoEXT* pTimestampInfos, [Count(Parameter = "timestampCount")] Span<ulong> pTimestamps, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] ulong* pMaxDeviation)
+        public unsafe Result GetCalibratedTimestamp([Count(Count = 0)] Device device, [Count(Parameter = "timestampCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] CalibratedTimestampInfoKHR* pTimestampInfos, [Count(Parameter = "timestampCount")] Span<ulong> pTimestamps, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] ulong* pMaxDeviation)
         {
             // ImplicitCountSpanOverloader
             return GetCalibratedTimestamp(device, (uint) pTimestamps.Length, pTimestampInfos, ref pTimestamps.GetPinnableReference(), pMaxDeviation);
         }
 
         /// <summary>To be documented.</summary>
-        public unsafe Result GetCalibratedTimestamp([Count(Count = 0)] Device device, [Count(Parameter = "timestampCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] CalibratedTimestampInfoEXT* pTimestampInfos, [Count(Parameter = "timestampCount")] Span<ulong> pTimestamps, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] out ulong pMaxDeviation)
+        public unsafe Result GetCalibratedTimestamp([Count(Count = 0)] Device device, [Count(Parameter = "timestampCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] CalibratedTimestampInfoKHR* pTimestampInfos, [Count(Parameter = "timestampCount")] Span<ulong> pTimestamps, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] out ulong pMaxDeviation)
         {
             // ImplicitCountSpanOverloader
             return GetCalibratedTimestamp(device, (uint) pTimestamps.Length, pTimestampInfos, ref pTimestamps.GetPinnableReference(), out pMaxDeviation);
         }
 
         /// <summary>To be documented.</summary>
-        public unsafe Result GetCalibratedTimestamp([Count(Count = 0)] Device device, [Count(Parameter = "timestampCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<CalibratedTimestampInfoEXT> pTimestampInfos, [Count(Parameter = "timestampCount")] ulong* pTimestamps, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] ulong* pMaxDeviation)
+        public unsafe Result GetCalibratedTimestamp([Count(Count = 0)] Device device, [Count(Parameter = "timestampCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<CalibratedTimestampInfoKHR> pTimestampInfos, [Count(Parameter = "timestampCount")] ulong* pTimestamps, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] ulong* pMaxDeviation)
         {
             // ImplicitCountSpanOverloader
             return GetCalibratedTimestamp(device, (uint) pTimestampInfos.Length, in pTimestampInfos.GetPinnableReference(), pTimestamps, pMaxDeviation);
         }
 
         /// <summary>To be documented.</summary>
-        public unsafe Result GetCalibratedTimestamp([Count(Count = 0)] Device device, [Count(Parameter = "timestampCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<CalibratedTimestampInfoEXT> pTimestampInfos, [Count(Parameter = "timestampCount")] ulong* pTimestamps, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] out ulong pMaxDeviation)
+        public unsafe Result GetCalibratedTimestamp([Count(Count = 0)] Device device, [Count(Parameter = "timestampCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<CalibratedTimestampInfoKHR> pTimestampInfos, [Count(Parameter = "timestampCount")] ulong* pTimestamps, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] out ulong pMaxDeviation)
         {
             // ImplicitCountSpanOverloader
             return GetCalibratedTimestamp(device, (uint) pTimestampInfos.Length, in pTimestampInfos.GetPinnableReference(), pTimestamps, out pMaxDeviation);
         }
 
         /// <summary>To be documented.</summary>
-        public unsafe Result GetCalibratedTimestamp([Count(Count = 0)] Device device, [Count(Parameter = "timestampCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<CalibratedTimestampInfoEXT> pTimestampInfos, [Count(Parameter = "timestampCount")] Span<ulong> pTimestamps, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] ulong* pMaxDeviation)
+        public unsafe Result GetCalibratedTimestamp([Count(Count = 0)] Device device, [Count(Parameter = "timestampCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<CalibratedTimestampInfoKHR> pTimestampInfos, [Count(Parameter = "timestampCount")] Span<ulong> pTimestamps, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] ulong* pMaxDeviation)
         {
             // ImplicitCountSpanOverloader
             return GetCalibratedTimestamp(device, (uint) pTimestamps.Length, in pTimestampInfos.GetPinnableReference(), ref pTimestamps.GetPinnableReference(), pMaxDeviation);
         }
 
         /// <summary>To be documented.</summary>
-        public unsafe Result GetCalibratedTimestamp([Count(Count = 0)] Device device, [Count(Parameter = "timestampCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<CalibratedTimestampInfoEXT> pTimestampInfos, [Count(Parameter = "timestampCount")] Span<ulong> pTimestamps, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] out ulong pMaxDeviation)
+        public unsafe Result GetCalibratedTimestamp([Count(Count = 0)] Device device, [Count(Parameter = "timestampCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<CalibratedTimestampInfoKHR> pTimestampInfos, [Count(Parameter = "timestampCount")] Span<ulong> pTimestamps, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] out ulong pMaxDeviation)
         {
             // ImplicitCountSpanOverloader
             return GetCalibratedTimestamp(device, (uint) pTimestamps.Length, in pTimestampInfos.GetPinnableReference(), ref pTimestamps.GetPinnableReference(), out pMaxDeviation);

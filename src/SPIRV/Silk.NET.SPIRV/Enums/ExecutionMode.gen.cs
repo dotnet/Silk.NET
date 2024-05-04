@@ -112,6 +112,16 @@ namespace Silk.NET.SPIRV
         EarlyAndLateFragmentTestsAmd = 0x1399,
         [NativeName("Name", "SpvExecutionModeStencilRefReplacingEXT")]
         StencilRefReplacingExt = 0x13A3,
+        [NativeName("Name", "SpvExecutionModeCoalescingAMDX")]
+        CoalescingAmdx = 0x13CD,
+        [NativeName("Name", "SpvExecutionModeMaxNodeRecursionAMDX")]
+        MaxNodeRecursionAmdx = 0x13CF,
+        [NativeName("Name", "SpvExecutionModeStaticNumWorkgroupsAMDX")]
+        StaticNumWorkgroupsAmdx = 0x13D0,
+        [NativeName("Name", "SpvExecutionModeShaderIndexAMDX")]
+        ShaderIndexAmdx = 0x13D1,
+        [NativeName("Name", "SpvExecutionModeMaxNumWorkgroupsAMDX")]
+        MaxNumWorkgroupsAmdx = 0x13D5,
         [NativeName("Name", "SpvExecutionModeStencilRefUnchangedFrontAMD")]
         StencilRefUnchangedFrontAmd = 0x13D7,
         [NativeName("Name", "SpvExecutionModeStencilRefGreaterFrontAMD")]
@@ -124,6 +134,10 @@ namespace Silk.NET.SPIRV
         StencilRefGreaterBackAmd = 0x13DB,
         [NativeName("Name", "SpvExecutionModeStencilRefLessBackAMD")]
         StencilRefLessBackAmd = 0x13DC,
+        [NativeName("Name", "SpvExecutionModeQuadDerivativesKHR")]
+        QuadDerivativesKhr = 0x13E0,
+        [NativeName("Name", "SpvExecutionModeRequireFullQuadsKHR")]
+        RequireFullQuadsKhr = 0x13E1,
         [NativeName("Name", "SpvExecutionModeOutputLinesEXT")]
         OutputLinesExt = 0x1495,
         [NativeName("Name", "SpvExecutionModeOutputLinesNV")]
@@ -172,12 +186,22 @@ namespace Silk.NET.SPIRV
         NumSimdWorkitemsIntel = 0x1708,
         [NativeName("Name", "SpvExecutionModeSchedulerTargetFmaxMhzINTEL")]
         SchedulerTargetFmaxMhzIntel = 0x170F,
+        [NativeName("Name", "SpvExecutionModeMaximallyReconvergesKHR")]
+        MaximallyReconvergesKhr = 0x1787,
+        [NativeName("Name", "SpvExecutionModeFPFastMathDefault")]
+        FPFastMathDefault = 0x178C,
         [NativeName("Name", "SpvExecutionModeStreamingInterfaceINTEL")]
         StreamingInterfaceIntel = 0x180A,
         [NativeName("Name", "SpvExecutionModeRegisterMapInterfaceINTEL")]
         RegisterMapInterfaceIntel = 0x1810,
         [NativeName("Name", "SpvExecutionModeNamedBarrierCountINTEL")]
         NamedBarrierCountIntel = 0x1911,
+        [NativeName("Name", "SpvExecutionModeMaximumRegistersINTEL")]
+        MaximumRegistersIntel = 0x193D,
+        [NativeName("Name", "SpvExecutionModeMaximumRegistersIdINTEL")]
+        MaximumRegistersIdIntel = 0x193E,
+        [NativeName("Name", "SpvExecutionModeNamedMaximumRegistersINTEL")]
+        NamedMaximumRegistersIntel = 0x193F,
         [NativeName("Name", "SpvExecutionModeMax")]
         Max = 0x7FFFFFFF,
     }

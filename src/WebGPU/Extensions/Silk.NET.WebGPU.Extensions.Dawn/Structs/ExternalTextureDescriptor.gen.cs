@@ -33,6 +33,7 @@ namespace Silk.NET.WebGPU.Extensions.Dawn
             float* dstTransferFunctionParameters = null,
             float* gamutConversionMatrix = null,
             Silk.NET.Core.Bool32? flipY = null,
+            Silk.NET.Core.Bool32? mirrored = null,
             ExternalTextureRotation? rotation = null
         ) : this()
         {
@@ -94,6 +95,11 @@ namespace Silk.NET.WebGPU.Extensions.Dawn
             if (flipY is not null)
             {
                 FlipY = flipY.Value;
+            }
+
+            if (mirrored is not null)
+            {
+                Mirrored = mirrored.Value;
             }
 
             if (rotation is not null)
@@ -162,6 +168,11 @@ namespace Silk.NET.WebGPU.Extensions.Dawn
         [NativeName("Type.Name", "WGPUBool")]
         [NativeName("Name", "flipY")]
         public Silk.NET.Core.Bool32 FlipY;
+
+        [NativeName("Type", "WGPUBool")]
+        [NativeName("Type.Name", "WGPUBool")]
+        [NativeName("Name", "mirrored")]
+        public Silk.NET.Core.Bool32 Mirrored;
 
         [NativeName("Type", "WGPUExternalTextureRotation")]
         [NativeName("Type.Name", "WGPUExternalTextureRotation")]

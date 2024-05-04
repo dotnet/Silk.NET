@@ -44,6 +44,7 @@ namespace Silk.NET.BuildTools
         [JsonProperty("exclude")] public List<string> ExcludedNativeNames { get; set; } = new();
         [JsonProperty("rename")] public Dictionary<string, string> RenamedNativeNames { get; set; } = new();
         [JsonProperty("copy")] public Dictionary<string, string> CopyFiles { get; set; } = new();
+        [JsonProperty("glIntAsPtr")] public Dictionary<string, string[]> IntAsPtr { get; set; } = new();
 
         public void InjectTypeMap(Dictionary<string, string> map)
             => TypeMaps.Insert

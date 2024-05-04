@@ -35,5 +35,15 @@ namespace Silk.NET.SPIRV.Reflect
         RelaxedPrecision = 0x100,
         [NativeName("Name", "SPV_REFLECT_DECORATION_NON_READABLE")]
         NonReadable = 0x200,
+        [NativeName("Name", "SPV_REFLECT_DECORATION_PATCH")]
+        Patch = 0x400,
+        [NativeName("Name", "SPV_REFLECT_DECORATION_PER_VERTEX")]
+        PerVertex = 0x800,
+        [NativeName("Name", "SPV_REFLECT_DECORATION_PER_TASK")]
+        PerTask = 0x1000,
+        [NativeName("Name", "SPV_REFLECT_DECORATION_WEIGHT_TEXTURE")]
+        WeightTexture = 0x2000,
+        [NativeName("Name", "SPV_REFLECT_DECORATION_BLOCK_MATCH_TEXTURE")]
+        BlockMatchTexture = 0x4000,
     }
 }

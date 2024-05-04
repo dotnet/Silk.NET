@@ -78,7 +78,7 @@ namespace Silk.NET.Core
         public void Enter(ref bool taken)
         {
             // while acquired == 1, loop, then when it == 0, exit and set it to 1
-            while (TryAcquire())
+            while (!TryAcquire())
             {
                 // NOP
             }
@@ -96,7 +96,6 @@ namespace Silk.NET.Core
         [MethodImpl(MaxOpt)]
         public void TryEnter(ref bool taken)
         {
-            // if it acquired == 0, change it to 1 and return true, else return false
             taken = TryAcquire();
         }
 
@@ -114,7 +113,7 @@ namespace Silk.NET.Core
         public void TryEnter(ref bool taken, uint iterations)
         {
             // if it acquired == 0, change it to 1 and return true, else return false
-            while (TryAcquire())
+            while (!TryAcquire())
             {
                 if (unchecked(iterations--) == 0) // postfix decrement, so no issue if iterations == 0 at first
                 {
@@ -142,7 +141,7 @@ namespace Silk.NET.Core
             long end = unchecked((long)timeout.TotalMilliseconds * Stopwatch.Frequency + start);
 
             // if it acquired == 0, change it to 1 and return true, else return false
-            while (TryAcquire())
+            while (!TryAcquire())
             {
                 if (Stopwatch.GetTimestamp() >= end)
                 {
@@ -190,6 +189,10 @@ namespace Silk.NET.Core
         }
 
         [MethodImpl(MaxOpt)]
-        private bool TryAcquire() => Interlocked.CompareExchange(ref _acquired, True, False) != False;
+        private bool TryAcquire()
+        {
+            // if it acquired == 0, change it to 1 and return true, else return false
+            return Interlocked.CompareExchange(ref _acquired, True, False) == False;
+        }
     }
 }

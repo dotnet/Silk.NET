@@ -3,6 +3,7 @@
 
 using System;
 using System.Collections.Generic;
+using System.Diagnostics.CodeAnalysis;
 using System.Drawing;
 using System.Linq;
 using System.Numerics;
@@ -84,7 +85,11 @@ namespace Silk.NET.OpenGL
         /// <returns>
         ///     <c>True</c> if the extension was loaded, otherwise <c>False</c>.
         /// </returns>
+#if NET5_0_OR_GREATER
+        public bool TryGetExtension<[DynamicallyAccessedMembers(DynamicallyAccessedMemberTypes.PublicConstructors | DynamicallyAccessedMemberTypes.NonPublicConstructors)] T>(out T ext)
+#else
         public bool TryGetExtension<T>(out T ext)
+#endif
             where T : NativeExtension<GL>
         {
             ext = IsExtensionPresent(ExtensionAttribute.GetExtensionAttribute(typeof(T)).Name)

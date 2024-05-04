@@ -1,8 +1,8 @@
 name: Bindings Regeneration
 
 on:
-  schedule:
-    - cron: '0 0 * * Fri'
+  #schedule: - disabled for now
+  #  - cron: '0 0 * * Fri'
   workflow_dispatch:
 
 jobs:
@@ -48,7 +48,7 @@ jobs:
       run: dotnet tool install Nuke.GlobalTool --global
     - name: Install Workloads
       # TODO: This is slow. Maybe we can make a docker container with this already done?
-      run: dotnet workload install android ios maccatalyst maui
+      run: dotnet workload install android ios maccatalyst
     - uses: GuillaumeFalourd/setup-windows10-sdk-action@v1.9
       name: Setup Windows 11 SDK
       with:

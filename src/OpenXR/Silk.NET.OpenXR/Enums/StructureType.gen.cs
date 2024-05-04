@@ -654,6 +654,48 @@ namespace Silk.NET.OpenXR
         [Obsolete("Deprecated in favour of \"CoordinateSpaceCreateInfoML\"")]
         [NativeName("Name", "XR_TYPE_COORDINATE_SPACE_CREATE_INFO_ML")]
         TypeCoordinateSpaceCreateInfoML = 1000137000,
+        [Obsolete("Deprecated in favour of \"SystemMarkerUnderstandingPropertiesML\"")]
+        [NativeName("Name", "XR_TYPE_SYSTEM_MARKER_UNDERSTANDING_PROPERTIES_ML")]
+        TypeSystemMarkerUnderstandingPropertiesML = 1000138000,
+        [Obsolete("Deprecated in favour of \"MarkerDetectorCreateInfoML\"")]
+        [NativeName("Name", "XR_TYPE_MARKER_DETECTOR_CREATE_INFO_ML")]
+        TypeMarkerDetectorCreateInfoML = 1000138001,
+        [Obsolete("Deprecated in favour of \"MarkerDetectorArucoInfoML\"")]
+        [NativeName("Name", "XR_TYPE_MARKER_DETECTOR_ARUCO_INFO_ML")]
+        TypeMarkerDetectorArucoInfoML = 1000138002,
+        [Obsolete("Deprecated in favour of \"MarkerDetectorSizeInfoML\"")]
+        [NativeName("Name", "XR_TYPE_MARKER_DETECTOR_SIZE_INFO_ML")]
+        TypeMarkerDetectorSizeInfoML = 1000138003,
+        [Obsolete("Deprecated in favour of \"MarkerDetectorAprilTagInfoML\"")]
+        [NativeName("Name", "XR_TYPE_MARKER_DETECTOR_APRIL_TAG_INFO_ML")]
+        TypeMarkerDetectorAprilTagInfoML = 1000138004,
+        [Obsolete("Deprecated in favour of \"MarkerDetectorCustomProfileInfoML\"")]
+        [NativeName("Name", "XR_TYPE_MARKER_DETECTOR_CUSTOM_PROFILE_INFO_ML")]
+        TypeMarkerDetectorCustomProfileInfoML = 1000138005,
+        [Obsolete("Deprecated in favour of \"MarkerDetectorSnapshotInfoML\"")]
+        [NativeName("Name", "XR_TYPE_MARKER_DETECTOR_SNAPSHOT_INFO_ML")]
+        TypeMarkerDetectorSnapshotInfoML = 1000138006,
+        [Obsolete("Deprecated in favour of \"MarkerDetectorStateML\"")]
+        [NativeName("Name", "XR_TYPE_MARKER_DETECTOR_STATE_ML")]
+        TypeMarkerDetectorStateML = 1000138007,
+        [Obsolete("Deprecated in favour of \"MarkerSpaceCreateInfoML\"")]
+        [NativeName("Name", "XR_TYPE_MARKER_SPACE_CREATE_INFO_ML")]
+        TypeMarkerSpaceCreateInfoML = 1000138008,
+        [Obsolete("Deprecated in favour of \"LocalizationMapML\"")]
+        [NativeName("Name", "XR_TYPE_LOCALIZATION_MAP_ML")]
+        TypeLocalizationMapML = 1000139000,
+        [Obsolete("Deprecated in favour of \"EventDataLocalizationChangedML\"")]
+        [NativeName("Name", "XR_TYPE_EVENT_DATA_LOCALIZATION_CHANGED_ML")]
+        TypeEventDataLocalizationChangedML = 1000139001,
+        [Obsolete("Deprecated in favour of \"MapLocalizationRequestInfoML\"")]
+        [NativeName("Name", "XR_TYPE_MAP_LOCALIZATION_REQUEST_INFO_ML")]
+        TypeMapLocalizationRequestInfoML = 1000139002,
+        [Obsolete("Deprecated in favour of \"LocalizationMapImportInfoML\"")]
+        [NativeName("Name", "XR_TYPE_LOCALIZATION_MAP_IMPORT_INFO_ML")]
+        TypeLocalizationMapImportInfoML = 1000139003,
+        [Obsolete("Deprecated in favour of \"LocalizationEnableEventsInfoML\"")]
+        [NativeName("Name", "XR_TYPE_LOCALIZATION_ENABLE_EVENTS_INFO_ML")]
+        TypeLocalizationEnableEventsInfoML = 1000139004,
         [Obsolete("Deprecated in favour of \"EventDataHeadsetFitChangedML\"")]
         [NativeName("Name", "XR_TYPE_EVENT_DATA_HEADSET_FIT_CHANGED_ML")]
         TypeEventDataHeadsetFitChangedML = 1000472000,
@@ -888,6 +930,12 @@ namespace Silk.NET.OpenXR
         [Obsolete("Deprecated in favour of \"SystemHeadsetIDPropertiesMeta\"")]
         [NativeName("Name", "XR_TYPE_SYSTEM_HEADSET_ID_PROPERTIES_META")]
         TypeSystemHeadsetIDPropertiesMeta = 1000245000,
+        [Obsolete("Deprecated in favour of \"RecommendedLayerResolutionMeta\"")]
+        [NativeName("Name", "XR_TYPE_RECOMMENDED_LAYER_RESOLUTION_META")]
+        TypeRecommendedLayerResolutionMeta = 1000254000,
+        [Obsolete("Deprecated in favour of \"RecommendedLayerResolutionGetInfoMeta\"")]
+        [NativeName("Name", "XR_TYPE_RECOMMENDED_LAYER_RESOLUTION_GET_INFO_META")]
+        TypeRecommendedLayerResolutionGetInfoMeta = 1000254001,
         [Obsolete("Deprecated in favour of \"SystemPassthroughColorLutPropertiesMeta\"")]
         [NativeName("Name", "XR_TYPE_SYSTEM_PASSTHROUGH_COLOR_LUT_PROPERTIES_META")]
         TypeSystemPassthroughColorLutPropertiesMeta = 1000266000,
@@ -903,6 +951,48 @@ namespace Silk.NET.OpenXR
         [Obsolete("Deprecated in favour of \"PassthroughColorMapInterpolatedLutMeta\"")]
         [NativeName("Name", "XR_TYPE_PASSTHROUGH_COLOR_MAP_INTERPOLATED_LUT_META")]
         TypePassthroughColorMapInterpolatedLutMeta = 1000266101,
+        [Obsolete("Deprecated in favour of \"SpaceTriangleMeshGetInfoMeta\"")]
+        [NativeName("Name", "XR_TYPE_SPACE_TRIANGLE_MESH_GET_INFO_META")]
+        TypeSpaceTriangleMeshGetInfoMeta = 1000269001,
+        [Obsolete("Deprecated in favour of \"SpaceTriangleMeshMeta\"")]
+        [NativeName("Name", "XR_TYPE_SPACE_TRIANGLE_MESH_META")]
+        TypeSpaceTriangleMeshMeta = 1000269002,
+        [Obsolete("Deprecated in favour of \"SystemFaceTrackingProperties2FB\"")]
+        [NativeName("Name", "XR_TYPE_SYSTEM_FACE_TRACKING_PROPERTIES2_FB")]
+        TypeSystemFaceTrackingProperties2FB = 1000287013,
+        [Obsolete("Deprecated in favour of \"FaceTrackerCreateInfo2FB\"")]
+        [NativeName("Name", "XR_TYPE_FACE_TRACKER_CREATE_INFO2_FB")]
+        TypeFaceTrackerCreateInfo2FB = 1000287014,
+        [Obsolete("Deprecated in favour of \"FaceExpressionInfo2FB\"")]
+        [NativeName("Name", "XR_TYPE_FACE_EXPRESSION_INFO2_FB")]
+        TypeFaceExpressionInfo2FB = 1000287015,
+        [Obsolete("Deprecated in favour of \"FaceExpressionWeights2FB\"")]
+        [NativeName("Name", "XR_TYPE_FACE_EXPRESSION_WEIGHTS2_FB")]
+        TypeFaceExpressionWeights2FB = 1000287016,
+        [Obsolete("Deprecated in favour of \"EnvironmentDepthProviderCreateInfoMeta\"")]
+        [NativeName("Name", "XR_TYPE_ENVIRONMENT_DEPTH_PROVIDER_CREATE_INFO_META")]
+        TypeEnvironmentDepthProviderCreateInfoMeta = 1000291000,
+        [Obsolete("Deprecated in favour of \"EnvironmentDepthSwapchainCreateInfoMeta\"")]
+        [NativeName("Name", "XR_TYPE_ENVIRONMENT_DEPTH_SWAPCHAIN_CREATE_INFO_META")]
+        TypeEnvironmentDepthSwapchainCreateInfoMeta = 1000291001,
+        [Obsolete("Deprecated in favour of \"EnvironmentDepthSwapchainStateMeta\"")]
+        [NativeName("Name", "XR_TYPE_ENVIRONMENT_DEPTH_SWAPCHAIN_STATE_META")]
+        TypeEnvironmentDepthSwapchainStateMeta = 1000291002,
+        [Obsolete("Deprecated in favour of \"EnvironmentDepthImageAcquireInfoMeta\"")]
+        [NativeName("Name", "XR_TYPE_ENVIRONMENT_DEPTH_IMAGE_ACQUIRE_INFO_META")]
+        TypeEnvironmentDepthImageAcquireInfoMeta = 1000291003,
+        [Obsolete("Deprecated in favour of \"EnvironmentDepthImageViewMeta\"")]
+        [NativeName("Name", "XR_TYPE_ENVIRONMENT_DEPTH_IMAGE_VIEW_META")]
+        TypeEnvironmentDepthImageViewMeta = 1000291004,
+        [Obsolete("Deprecated in favour of \"EnvironmentDepthImageMeta\"")]
+        [NativeName("Name", "XR_TYPE_ENVIRONMENT_DEPTH_IMAGE_META")]
+        TypeEnvironmentDepthImageMeta = 1000291005,
+        [Obsolete("Deprecated in favour of \"EnvironmentDepthHandRemovalSetInfoMeta\"")]
+        [NativeName("Name", "XR_TYPE_ENVIRONMENT_DEPTH_HAND_REMOVAL_SET_INFO_META")]
+        TypeEnvironmentDepthHandRemovalSetInfoMeta = 1000291006,
+        [Obsolete("Deprecated in favour of \"SystemEnvironmentDepthPropertiesMeta\"")]
+        [NativeName("Name", "XR_TYPE_SYSTEM_ENVIRONMENT_DEPTH_PROPERTIES_META")]
+        TypeSystemEnvironmentDepthPropertiesMeta = 1000291007,
         [Obsolete("Deprecated in favour of \"PassthroughCreateInfoHtc\"")]
         [NativeName("Name", "XR_TYPE_PASSTHROUGH_CREATE_INFO_HTC")]
         TypePassthroughCreateInfoHtc = 1000317001,
@@ -924,6 +1014,12 @@ namespace Silk.NET.OpenXR
         [Obsolete("Deprecated in favour of \"FoveationCustomModeInfoHtc\"")]
         [NativeName("Name", "XR_TYPE_FOVEATION_CUSTOM_MODE_INFO_HTC")]
         TypeFoveationCustomModeInfoHtc = 1000318002,
+        [Obsolete("Deprecated in favour of \"SystemAnchorPropertiesHtc\"")]
+        [NativeName("Name", "XR_TYPE_SYSTEM_ANCHOR_PROPERTIES_HTC")]
+        TypeSystemAnchorPropertiesHtc = 1000319000,
+        [Obsolete("Deprecated in favour of \"SpatialAnchorCreateInfoHtc\"")]
+        [NativeName("Name", "XR_TYPE_SPATIAL_ANCHOR_CREATE_INFO_HTC")]
+        TypeSpatialAnchorCreateInfoHtc = 1000319001,
         [Obsolete("Deprecated in favour of \"ActiveActionSetPrioritiesExt\"")]
         [NativeName("Name", "XR_TYPE_ACTIVE_ACTION_SET_PRIORITIES_EXT")]
         TypeActiveActionSetPrioritiesExt = 1000373000,
@@ -960,6 +1056,42 @@ namespace Silk.NET.OpenXR
         [Obsolete("Deprecated in favour of \"SystemPlaneDetectionPropertiesExt\"")]
         [NativeName("Name", "XR_TYPE_SYSTEM_PLANE_DETECTION_PROPERTIES_EXT")]
         TypeSystemPlaneDetectionPropertiesExt = 1000429007,
+        [Obsolete("Deprecated in favour of \"FutureCancelInfoExt\"")]
+        [NativeName("Name", "XR_TYPE_FUTURE_CANCEL_INFO_EXT")]
+        TypeFutureCancelInfoExt = 1000469000,
+        [Obsolete("Deprecated in favour of \"FuturePollInfoExt\"")]
+        [NativeName("Name", "XR_TYPE_FUTURE_POLL_INFO_EXT")]
+        TypeFuturePollInfoExt = 1000469001,
+        [Obsolete("Deprecated in favour of \"FutureCompletionExt\"")]
+        [NativeName("Name", "XR_TYPE_FUTURE_COMPLETION_EXT")]
+        TypeFutureCompletionExt = 1000469002,
+        [Obsolete("Deprecated in favour of \"FuturePollResultExt\"")]
+        [NativeName("Name", "XR_TYPE_FUTURE_POLL_RESULT_EXT")]
+        TypeFuturePollResultExt = 1000469003,
+        [Obsolete("Deprecated in favour of \"EventDataUserPresenceChangedExt\"")]
+        [NativeName("Name", "XR_TYPE_EVENT_DATA_USER_PRESENCE_CHANGED_EXT")]
+        TypeEventDataUserPresenceChangedExt = 1000470000,
+        [Obsolete("Deprecated in favour of \"SystemUserPresencePropertiesExt\"")]
+        [NativeName("Name", "XR_TYPE_SYSTEM_USER_PRESENCE_PROPERTIES_EXT")]
+        TypeSystemUserPresencePropertiesExt = 1000470001,
+        [Obsolete("Deprecated in favour of \"SpacesLocateInfoKhr\"")]
+        [NativeName("Name", "XR_TYPE_SPACES_LOCATE_INFO_KHR")]
+        TypeSpacesLocateInfoKhr = 1000471000,
+        [Obsolete("Deprecated in favour of \"SpaceLocationsKhr\"")]
+        [NativeName("Name", "XR_TYPE_SPACE_LOCATIONS_KHR")]
+        TypeSpaceLocationsKhr = 1000471001,
+        [Obsolete("Deprecated in favour of \"SpaceVelocitiesKhr\"")]
+        [NativeName("Name", "XR_TYPE_SPACE_VELOCITIES_KHR")]
+        TypeSpaceVelocitiesKhr = 1000471002,
+        [Obsolete("Deprecated in favour of \"SpacesLocateInfo\"")]
+        [NativeName("Name", "XR_TYPE_SPACES_LOCATE_INFO")]
+        TypeSpacesLocateInfo = 1000471000,
+        [Obsolete("Deprecated in favour of \"SpaceLocations\"")]
+        [NativeName("Name", "XR_TYPE_SPACE_LOCATIONS")]
+        TypeSpaceLocations = 1000471001,
+        [Obsolete("Deprecated in favour of \"SpaceVelocities\"")]
+        [NativeName("Name", "XR_TYPE_SPACE_VELOCITIES")]
+        TypeSpaceVelocities = 1000471002,
         [NativeName("Name", "XR_TYPE_UNKNOWN")]
         Unknown = 0,
         [NativeName("Name", "XR_TYPE_API_LAYER_PROPERTIES")]
@@ -1388,6 +1520,34 @@ namespace Silk.NET.OpenXR
         GlobalDimmerFrameEndInfoML = 1000136000,
         [NativeName("Name", "XR_TYPE_COORDINATE_SPACE_CREATE_INFO_ML")]
         CoordinateSpaceCreateInfoML = 1000137000,
+        [NativeName("Name", "XR_TYPE_SYSTEM_MARKER_UNDERSTANDING_PROPERTIES_ML")]
+        SystemMarkerUnderstandingPropertiesML = 1000138000,
+        [NativeName("Name", "XR_TYPE_MARKER_DETECTOR_CREATE_INFO_ML")]
+        MarkerDetectorCreateInfoML = 1000138001,
+        [NativeName("Name", "XR_TYPE_MARKER_DETECTOR_ARUCO_INFO_ML")]
+        MarkerDetectorArucoInfoML = 1000138002,
+        [NativeName("Name", "XR_TYPE_MARKER_DETECTOR_SIZE_INFO_ML")]
+        MarkerDetectorSizeInfoML = 1000138003,
+        [NativeName("Name", "XR_TYPE_MARKER_DETECTOR_APRIL_TAG_INFO_ML")]
+        MarkerDetectorAprilTagInfoML = 1000138004,
+        [NativeName("Name", "XR_TYPE_MARKER_DETECTOR_CUSTOM_PROFILE_INFO_ML")]
+        MarkerDetectorCustomProfileInfoML = 1000138005,
+        [NativeName("Name", "XR_TYPE_MARKER_DETECTOR_SNAPSHOT_INFO_ML")]
+        MarkerDetectorSnapshotInfoML = 1000138006,
+        [NativeName("Name", "XR_TYPE_MARKER_DETECTOR_STATE_ML")]
+        MarkerDetectorStateML = 1000138007,
+        [NativeName("Name", "XR_TYPE_MARKER_SPACE_CREATE_INFO_ML")]
+        MarkerSpaceCreateInfoML = 1000138008,
+        [NativeName("Name", "XR_TYPE_LOCALIZATION_MAP_ML")]
+        LocalizationMapML = 1000139000,
+        [NativeName("Name", "XR_TYPE_EVENT_DATA_LOCALIZATION_CHANGED_ML")]
+        EventDataLocalizationChangedML = 1000139001,
+        [NativeName("Name", "XR_TYPE_MAP_LOCALIZATION_REQUEST_INFO_ML")]
+        MapLocalizationRequestInfoML = 1000139002,
+        [NativeName("Name", "XR_TYPE_LOCALIZATION_MAP_IMPORT_INFO_ML")]
+        LocalizationMapImportInfoML = 1000139003,
+        [NativeName("Name", "XR_TYPE_LOCALIZATION_ENABLE_EVENTS_INFO_ML")]
+        LocalizationEnableEventsInfoML = 1000139004,
         [NativeName("Name", "XR_TYPE_EVENT_DATA_HEADSET_FIT_CHANGED_ML")]
         EventDataHeadsetFitChangedML = 1000472000,
         [NativeName("Name", "XR_TYPE_EVENT_DATA_EYE_CALIBRATION_CHANGED_ML")]
@@ -1544,6 +1704,10 @@ namespace Silk.NET.OpenXR
         SpaceUserCreateInfoFB = 1000241001,
         [NativeName("Name", "XR_TYPE_SYSTEM_HEADSET_ID_PROPERTIES_META")]
         SystemHeadsetIDPropertiesMeta = 1000245000,
+        [NativeName("Name", "XR_TYPE_RECOMMENDED_LAYER_RESOLUTION_META")]
+        RecommendedLayerResolutionMeta = 1000254000,
+        [NativeName("Name", "XR_TYPE_RECOMMENDED_LAYER_RESOLUTION_GET_INFO_META")]
+        RecommendedLayerResolutionGetInfoMeta = 1000254001,
         [NativeName("Name", "XR_TYPE_SYSTEM_PASSTHROUGH_COLOR_LUT_PROPERTIES_META")]
         SystemPassthroughColorLutPropertiesMeta = 1000266000,
         [NativeName("Name", "XR_TYPE_PASSTHROUGH_COLOR_LUT_CREATE_INFO_META")]
@@ -1554,6 +1718,34 @@ namespace Silk.NET.OpenXR
         PassthroughColorMapLutMeta = 1000266100,
         [NativeName("Name", "XR_TYPE_PASSTHROUGH_COLOR_MAP_INTERPOLATED_LUT_META")]
         PassthroughColorMapInterpolatedLutMeta = 1000266101,
+        [NativeName("Name", "XR_TYPE_SPACE_TRIANGLE_MESH_GET_INFO_META")]
+        SpaceTriangleMeshGetInfoMeta = 1000269001,
+        [NativeName("Name", "XR_TYPE_SPACE_TRIANGLE_MESH_META")]
+        SpaceTriangleMeshMeta = 1000269002,
+        [NativeName("Name", "XR_TYPE_SYSTEM_FACE_TRACKING_PROPERTIES2_FB")]
+        SystemFaceTrackingProperties2FB = 1000287013,
+        [NativeName("Name", "XR_TYPE_FACE_TRACKER_CREATE_INFO2_FB")]
+        FaceTrackerCreateInfo2FB = 1000287014,
+        [NativeName("Name", "XR_TYPE_FACE_EXPRESSION_INFO2_FB")]
+        FaceExpressionInfo2FB = 1000287015,
+        [NativeName("Name", "XR_TYPE_FACE_EXPRESSION_WEIGHTS2_FB")]
+        FaceExpressionWeights2FB = 1000287016,
+        [NativeName("Name", "XR_TYPE_ENVIRONMENT_DEPTH_PROVIDER_CREATE_INFO_META")]
+        EnvironmentDepthProviderCreateInfoMeta = 1000291000,
+        [NativeName("Name", "XR_TYPE_ENVIRONMENT_DEPTH_SWAPCHAIN_CREATE_INFO_META")]
+        EnvironmentDepthSwapchainCreateInfoMeta = 1000291001,
+        [NativeName("Name", "XR_TYPE_ENVIRONMENT_DEPTH_SWAPCHAIN_STATE_META")]
+        EnvironmentDepthSwapchainStateMeta = 1000291002,
+        [NativeName("Name", "XR_TYPE_ENVIRONMENT_DEPTH_IMAGE_ACQUIRE_INFO_META")]
+        EnvironmentDepthImageAcquireInfoMeta = 1000291003,
+        [NativeName("Name", "XR_TYPE_ENVIRONMENT_DEPTH_IMAGE_VIEW_META")]
+        EnvironmentDepthImageViewMeta = 1000291004,
+        [NativeName("Name", "XR_TYPE_ENVIRONMENT_DEPTH_IMAGE_META")]
+        EnvironmentDepthImageMeta = 1000291005,
+        [NativeName("Name", "XR_TYPE_ENVIRONMENT_DEPTH_HAND_REMOVAL_SET_INFO_META")]
+        EnvironmentDepthHandRemovalSetInfoMeta = 1000291006,
+        [NativeName("Name", "XR_TYPE_SYSTEM_ENVIRONMENT_DEPTH_PROPERTIES_META")]
+        SystemEnvironmentDepthPropertiesMeta = 1000291007,
         [NativeName("Name", "XR_TYPE_PASSTHROUGH_CREATE_INFO_HTC")]
         PassthroughCreateInfoHtc = 1000317001,
         [NativeName("Name", "XR_TYPE_PASSTHROUGH_COLOR_HTC")]
@@ -1568,6 +1760,10 @@ namespace Silk.NET.OpenXR
         FoveationDynamicModeInfoHtc = 1000318001,
         [NativeName("Name", "XR_TYPE_FOVEATION_CUSTOM_MODE_INFO_HTC")]
         FoveationCustomModeInfoHtc = 1000318002,
+        [NativeName("Name", "XR_TYPE_SYSTEM_ANCHOR_PROPERTIES_HTC")]
+        SystemAnchorPropertiesHtc = 1000319000,
+        [NativeName("Name", "XR_TYPE_SPATIAL_ANCHOR_CREATE_INFO_HTC")]
+        SpatialAnchorCreateInfoHtc = 1000319001,
         [NativeName("Name", "XR_TYPE_ACTIVE_ACTION_SET_PRIORITIES_EXT")]
         ActiveActionSetPrioritiesExt = 1000373000,
         [NativeName("Name", "XR_TYPE_SYSTEM_FORCE_FEEDBACK_CURL_PROPERTIES_MNDX")]
@@ -1592,5 +1788,29 @@ namespace Silk.NET.OpenXR
         PlaneDetectorPolygonBufferExt = 1000429006,
         [NativeName("Name", "XR_TYPE_SYSTEM_PLANE_DETECTION_PROPERTIES_EXT")]
         SystemPlaneDetectionPropertiesExt = 1000429007,
+        [NativeName("Name", "XR_TYPE_FUTURE_CANCEL_INFO_EXT")]
+        FutureCancelInfoExt = 1000469000,
+        [NativeName("Name", "XR_TYPE_FUTURE_POLL_INFO_EXT")]
+        FuturePollInfoExt = 1000469001,
+        [NativeName("Name", "XR_TYPE_FUTURE_COMPLETION_EXT")]
+        FutureCompletionExt = 1000469002,
+        [NativeName("Name", "XR_TYPE_FUTURE_POLL_RESULT_EXT")]
+        FuturePollResultExt = 1000469003,
+        [NativeName("Name", "XR_TYPE_EVENT_DATA_USER_PRESENCE_CHANGED_EXT")]
+        EventDataUserPresenceChangedExt = 1000470000,
+        [NativeName("Name", "XR_TYPE_SYSTEM_USER_PRESENCE_PROPERTIES_EXT")]
+        SystemUserPresencePropertiesExt = 1000470001,
+        [NativeName("Name", "XR_TYPE_SPACES_LOCATE_INFO_KHR")]
+        SpacesLocateInfoKhr = 1000471000,
+        [NativeName("Name", "XR_TYPE_SPACE_LOCATIONS_KHR")]
+        SpaceLocationsKhr = 1000471001,
+        [NativeName("Name", "XR_TYPE_SPACE_VELOCITIES_KHR")]
+        SpaceVelocitiesKhr = 1000471002,
+        [NativeName("Name", "XR_TYPE_SPACES_LOCATE_INFO")]
+        SpacesLocateInfo = 1000471000,
+        [NativeName("Name", "XR_TYPE_SPACE_LOCATIONS")]
+        SpaceLocations = 1000471001,
+        [NativeName("Name", "XR_TYPE_SPACE_VELOCITIES")]
+        SpaceVelocities = 1000471002,
     }
 }

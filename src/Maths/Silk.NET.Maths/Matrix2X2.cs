@@ -262,7 +262,7 @@ namespace Silk.NET.Maths
             //   | c d | = ad - bc
 
             T a = M11, b = M12;
-            T d = M21, c = M22;
+            T c = M21, d = M22;
 
             return Scalar.Subtract(Scalar.Multiply(a, d), Scalar.Multiply(b, c));
         }

@@ -2,6 +2,7 @@
 // The .NET Foundation licenses this file to you under the MIT license.
 
 using System;
+using System.Runtime.InteropServices;
 
 namespace Silk.NET.GLFW
 {
@@ -16,6 +17,7 @@ namespace Silk.NET.GLFW
         /// <param name="window">The window that received the event.</param>
         /// <param name="codepoint">The Unicode code point of the character.</param>
         /// <seealso cref="IGlfw.SetCharCallback" />
+        [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
         public delegate void CharCallback(WindowHandle* window, uint codepoint);
 
         /// <summary>
@@ -26,6 +28,7 @@ namespace Silk.NET.GLFW
         /// <param name="codepoint">The Unicode code point of the character.</param>
         /// <param name="modifiers">Bit field describing which modifier keys were held down.</param>
         /// <seealso cref="IGlfw.SetCharModsCallback" />
+        [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
         public delegate void CharModsCallback(WindowHandle* window, uint codepoint, KeyModifiers modifiers);
 
         /// <summary>
@@ -34,6 +37,7 @@ namespace Silk.NET.GLFW
         /// <param name="window">The window that received the event.</param>
         /// <param name="entered"><c>true</c> if the cursor entered the window's client area, or <c>false</c> if it left it.</param>
         /// <seealso cref="IGlfw.SetCursorEnterCallback" />
+        [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
         public delegate void CursorEnterCallback(WindowHandle* window, bool entered);
 
         /// <summary>
@@ -43,6 +47,7 @@ namespace Silk.NET.GLFW
         /// <param name="x">The new cursor x-coordinate, relative to the left edge of the client area.</param>
         /// <param name="y">The new cursor y-coordinate, relative to the top edge of the client area.</param>
         /// <seealso cref="IGlfw.SetCursorPosCallback" />
+        [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
         public delegate void CursorPosCallback(WindowHandle* window, double x, double y);
 
         /// <summary>
@@ -52,6 +57,7 @@ namespace Silk.NET.GLFW
         /// <param name="count">The number of dropped files.</param>
         /// <param name="paths">The UTF-8 encoded file and/or directory path names.</param>
         /// <seealso cref="IGlfw.SetDropCallback" />
+        [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
         public delegate void DropCallback(WindowHandle* window, int count, nint paths);
 
         /// <summary>
@@ -59,6 +65,7 @@ namespace Silk.NET.GLFW
         /// </summary>
         /// <param name="error">An error code.</param>
         /// <param name="description">A UTF-8 encoded string describing the error.</param>
+        [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
         public delegate void ErrorCallback(ErrorCode error, string description);
 
         /// <summary>
@@ -69,6 +76,7 @@ namespace Silk.NET.GLFW
         /// One of <see cref="ConnectedState.Connected" /> or <see cref="ConnectedState.Disconnected" />.
         /// </param>
         /// <seealso cref="IGlfw.SetJoystickCallback" />
+        [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
         public delegate void JoystickCallback(int joystick, ConnectedState state);
 
         /// <summary>
@@ -80,6 +88,7 @@ namespace Silk.NET.GLFW
         /// <param name="action">The <see cref="InputAction" /> for that <paramref name="key" />.</param>
         /// <param name="mods">Bit field describing which modifier keys were held down.</param>
         /// <seealso cref="IGlfw.SetKeyCallback" />
+        [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
         public delegate void KeyCallback(WindowHandle* window, Keys key, int scanCode, InputAction action,
             KeyModifiers mods);
 
@@ -91,6 +100,7 @@ namespace Silk.NET.GLFW
         /// One <see cref="ConnectedState.Connected" /> of  or <see cref="ConnectedState.Disconnected" />.
         /// </param>
         /// <seealso cref="IGlfw.SetMonitorCallback" />
+        [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
         public delegate void MonitorCallback(Monitor* monitor, ConnectedState state);
 
         /// <summary>
@@ -101,6 +111,7 @@ namespace Silk.NET.GLFW
         /// <param name="action">One of <see cref="InputAction.Press" /> or <see cref="InputAction.Release" />.</param>
         /// <param name="mods">Bit field describing which modifier keys were held down.</param>
         /// <seealso cref="IGlfw.SetMouseButtonCallback" />
+        [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
         public delegate void
             MouseButtonCallback(WindowHandle* window, MouseButton button, InputAction action,
                 KeyModifiers mods);
@@ -112,6 +123,7 @@ namespace Silk.NET.GLFW
         /// <param name="offsetX">The scroll offset along the x-axis.</param>
         /// <param name="offsetY">The scroll offset along the y-axis.</param>
         /// <seealso cref="IGlfw.SetScrollCallback" />
+        [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
         public delegate void ScrollCallback(WindowHandle* window, double offsetX, double offsetY);
 
         /// <summary>
@@ -119,6 +131,7 @@ namespace Silk.NET.GLFW
         /// </summary>
         /// <param name="window">The window that the user attempted to close.</param>
         /// <seealso cref="IGlfw.SetWindowCloseCallback" />
+        [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
         public delegate void WindowCloseCallback(WindowHandle* window);
 
         /// <summary>
@@ -127,6 +140,7 @@ namespace Silk.NET.GLFW
         /// <param name="window">The window that gained or lost input focus.</param>
         /// <param name="focused"><c>true</c> if the window was given input focus, or <c>false</c> if it lost it.</param>
         /// <seealso cref="IGlfw.SetWindowFocusCallback" />
+        [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
         public delegate void WindowFocusCallback(WindowHandle* window, bool focused);
 
         /// <summary>
@@ -135,6 +149,7 @@ namespace Silk.NET.GLFW
         /// <param name="window">The window that was iconified or restored.</param>
         /// <param name="iconified"><c>true</c> if the window was iconified(minimized), or <c>false</c> if it was restored.</param>
         /// <seealso cref="IGlfw.SetWindowIconifyCallback" />
+        [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
         public delegate void WindowIconifyCallback(WindowHandle* window, bool iconified);
 
         /// <summary>
@@ -142,6 +157,7 @@ namespace Silk.NET.GLFW
         /// </summary>
         /// <param name="window">The window that was maximized or restored.</param>
         /// <param name="maximized"><c>true</c> if the window was maximized, or <c>false</c> if it was restored.</param>
+        [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
         public delegate void WindowMaximizeCallback(WindowHandle* window, bool maximized);
 
         /// <summary>
@@ -155,12 +171,14 @@ namespace Silk.NET.GLFW
         /// The new y-coordinate, in screen coordinates, of the upper-left corner of the client area of the window.
         /// </param>
         /// <seealso cref="IGlfw.SetWindowPosCallback" />
+        [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
         public delegate void WindowPosCallback(WindowHandle* window, int x, int y);
 
         /// <summary>
         /// The function signature for window refresh functions.
         /// </summary>
         /// <param name="window">The window that needs to be refreshed.</param>
+        [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
         public delegate void WindowRefreshCallback(WindowHandle* window);
 
         /// <summary>
@@ -170,6 +188,7 @@ namespace Silk.NET.GLFW
         /// <param name="width">The new width, in screen coordinates, of the window.</param>
         /// <param name="height">The new height, in screen coordinates, of the window.</param>
         /// <seealso cref="IGlfw.SetWindowSizeCallback" />
+        [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
         public delegate void WindowSizeCallback(WindowHandle* window, int width, int height);
 
         /// <summary>
@@ -178,6 +197,7 @@ namespace Silk.NET.GLFW
         /// <param name="window">The window whose framebuffer was resized.</param>
         /// <param name="width">The new width, in pixels, of the framebuffer.</param>
         /// <param name="height">The new height, in pixels, of the framebuffer.</param>
+        [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
         public delegate void FramebufferSizeCallback(WindowHandle* window, int width, int height);
     }
 }

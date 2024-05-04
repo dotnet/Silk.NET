@@ -1,0 +1,87 @@
+name: OpenAL Soft
+on:
+  push:
+    branches-ignore:
+      - "ci/**"
+      - "develop/**"
+      - "main"
+    paths:
+      - build/submodules/openal-soft
+      - "build/cmake/*"
+      - build/nuke/Native/Core.cs
+      - build/nuke/Native/OpenALSoft.cs
+      - .github/workflows/openal-soft.yml
+jobs:
+  Build:
+    if: github.repository == 'dotnet/Silk.NET'
+    strategy:
+      fail-fast: false
+      matrix:
+        env:
+          - os: ubuntu-22.04
+            name: Linux
+            nuke_invoke: ./build.sh
+            extras: |
+              # We need to adjust APT sources for multiarch. Use the ones corresponding to
+              # Ubuntu 22.04 with appropriate `arch` values. ports.ubuntu.com is required
+              # for armhf and arm64.
+              sudo tee /etc/apt/sources.list << EOF
+              deb [arch=amd64] http://archive.ubuntu.com/ubuntu jammy main multiverse restricted universe
+              deb [arch=amd64] http://archive.ubuntu.com/ubuntu jammy-backports main multiverse restricted universe
+              deb [arch=amd64] http://archive.ubuntu.com/ubuntu jammy-security main multiverse restricted universe
+              deb [arch=amd64] http://archive.ubuntu.com/ubuntu jammy-updates main multiverse restricted universe
+              deb [arch=arm64,armhf] http://ports.ubuntu.com jammy main multiverse restricted universe
+              deb [arch=arm64,armhf] http://ports.ubuntu.com jammy-backports main multiverse restricted universe
+              deb [arch=arm64,armhf] http://ports.ubuntu.com jammy-security main multiverse restricted universe
+              deb [arch=arm64,armhf] http://ports.ubuntu.com jammy-updates main multiverse restricted universe
+              deb [arch=amd64] http://security.ubuntu.com/ubuntu jammy main multiverse restricted universe
+              deb [arch=amd64] http://security.ubuntu.com/ubuntu jammy-backports main multiverse restricted universe
+              deb [arch=amd64] http://security.ubuntu.com/ubuntu jammy-security main multiverse restricted universe
+              deb [arch=amd64] http://security.ubuntu.com/ubuntu jammy-updates main multiverse restricted universe
+              EOF
+              sudo dpkg --add-architecture arm64
+              sudo dpkg --add-architecture armhf
+              sudo apt update
+              sudo apt install -y gcc-aarch64-linux-gnu gcc-arm-linux-gnueabihf
+              sudo apt install -y g++-aarch64-linux-gnu g++-arm-linux-gnueabihf
+              for arch in amd64 arm64 armhf; do
+                sudo apt install -y libasound2-dev:$arch libpulse-dev:$arch libsoundio-dev:$arch
+                sudo apt install -y libsndfile1-dev:$arch libmysofa-dev:$arch qtbase5-dev:$arch
+                sudo apt install -y libdbus-1-dev:$arch
+              done
+              # These packages aren't multiarch-compatible in 22.04, so we prioritize amd64 for these.
+              sudo apt install -y libjack-dev portaudio19-dev
+          - os: windows-2022
+            name: Windows
+            nuke_invoke: ./build.cmd
+            extras: ""
+          - os: macos-14
+            name: Darwin
+            nuke_invoke: ./build.sh
+            extras: ""
+    name: ${{ matrix.env.name }} Build
+    runs-on: ${{ matrix.env.os }}
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          token: ${{ secrets.PUSHABLE_GITHUB_TOKEN }}
+      - name: Checkout submodules, configure git.
+        run: |
+          git -c submodule.third_party/git-hooks.update=none submodule update --init --recursive --depth 0 build/submodules/openal-soft
+          git config --local user.email "9011267+dotnet-bot@users.noreply.github.com"
+          git config --local user.name "The Silk.NET Automaton"
+      - name: Extra prerequisites
+        run: |
+          echo running extras
+          ${{ matrix.env.extras }}
+      - name: Setup .NET 6.0 and .NET 7.0
+        uses: actions/setup-dotnet@v1
+        with:
+          dotnet-version: |
+            6.0.201
+            7.0.*
+      - name: Build OpenAL Soft
+        run: ${{ matrix.env.nuke_invoke }} openalsoft
+        env:
+          PUSHABLE_GITHUB_TOKEN: ${{ secrets.PUSHABLE_GITHUB_TOKEN }}
+

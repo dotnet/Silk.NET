@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Globalization;
 using System.IO;
 using System.Linq;
 using System.Xml.Linq;
@@ -48,18 +49,37 @@ namespace Silk.NET.BuildTools.Converters.Khronos
             Enums = enums.ToArray();
         }
 
+        static long? ParseLong(string token)
+        {
+            return token.StartsWith("0x")
+                ? long.TryParse(token[2..], NumberStyles.HexNumber, null, out var result) ? result : null
+                : long.TryParse(token, out var result2)
+                    ? result2
+                    : null;
+        }
+        
         public static VulkanSpecification LoadFromXmlStream(Stream specFileStream)
         {
             var spec = XDocument.Load(specFileStream);
             var registry = spec.Element("registry");
-            var commands = registry.Element("commands");
-            var commandDefinitions = commands.Elements("command")
+            var commandDefinitions = registry.Elements("commands").Elements("command")
                 .Select(commandx => CommandDefinition.CreateFromXml(commandx)).ToArray();
 
             var constantDefinitions = registry.Elements("enums")
                 .Where(enumx => enumx.Attribute("name").Value == "API Constants")
                 .SelectMany(enumx => enumx.Elements("enum"))
-                .Select(enumxx => ConstantDefinition.CreateFromXml(enumxx)).ToArray();
+                .Select(enumxx => ConstantDefinition.CreateFromXml(enumxx))
+                .Concat(
+                    registry.Elements("types")
+                        .Elements("type") 
+                        .Where(x => x.HasCategoryAttribute("define"))
+                        .Select(x => x.Element("name")?.Value is { Length: > 0 } nm &&
+                            ParseLong(x.Value.Replace("#define", "").Replace(nm, "").Trim()) is {} val
+                                ? new ConstantDefinition(nm, val.ToString(), "", null)
+                                : null
+                        )
+                        .OfType<ConstantDefinition>()
+                 ).ToArray();
 
             var types = registry.Elements("types");
             var typedefDefinitions = types.Elements("type").Where(xe => xe.Value.Contains("typedef") && xe.HasCategoryAttribute("bitmask"))

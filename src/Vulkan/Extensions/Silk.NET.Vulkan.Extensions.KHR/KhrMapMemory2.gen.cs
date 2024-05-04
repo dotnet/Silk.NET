@@ -30,11 +30,11 @@ namespace Silk.NET.Vulkan.Extensions.KHR
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkMapMemory2KHR", Convention = CallingConvention.Winapi)]
-        public unsafe partial Result MapMemory2([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] in MemoryMapInfoKHR pMemoryMapInfo, [Count(Count = 0)] void** ppData);
+        public unsafe partial Result MapMemory2([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in MemoryMapInfoKHR pMemoryMapInfo, [Count(Count = 0)] void** ppData);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkMapMemory2KHR", Convention = CallingConvention.Winapi)]
-        public unsafe partial Result MapMemory2([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] in MemoryMapInfoKHR pMemoryMapInfo, [Count(Count = 0)] ref void* ppData);
+        public unsafe partial Result MapMemory2([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in MemoryMapInfoKHR pMemoryMapInfo, [Count(Count = 0)] ref void* ppData);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkUnmapMemory2KHR", Convention = CallingConvention.Winapi)]
@@ -42,7 +42,7 @@ namespace Silk.NET.Vulkan.Extensions.KHR
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkUnmapMemory2KHR", Convention = CallingConvention.Winapi)]
-        public partial Result UnmapMemory2([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] in MemoryUnmapInfoKHR pMemoryUnmapInfo);
+        public partial Result UnmapMemory2([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in MemoryUnmapInfoKHR pMemoryUnmapInfo);
 
         public KhrMapMemory2(INativeContext ctx)
             : base(ctx)

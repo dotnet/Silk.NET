@@ -35,9 +35,12 @@ namespace Silk.NET.SPIRV.Reflect
             uint? accessed = null,
             uint? uavCounterId = null,
             DescriptorBinding* uavCounterBinding = null,
+            uint? byteAddressBufferOffsetCount = null,
+            uint* byteAddressBufferOffsets = null,
             TypeDescription* typeDescription = null,
             DescriptorBindingWordOffset? wordOffset = null,
-            uint? decorationFlags = null
+            uint? decorationFlags = null,
+            UserType? userType = null
         ) : this()
         {
             if (spirvId is not null)
@@ -110,6 +113,16 @@ namespace Silk.NET.SPIRV.Reflect
                 UavCounterBinding = uavCounterBinding;
             }
 
+            if (byteAddressBufferOffsetCount is not null)
+            {
+                ByteAddressBufferOffsetCount = byteAddressBufferOffsetCount.Value;
+            }
+
+            if (byteAddressBufferOffsets is not null)
+            {
+                ByteAddressBufferOffsets = byteAddressBufferOffsets;
+            }
+
             if (typeDescription is not null)
             {
                 TypeDescription = typeDescription;
@@ -123,6 +136,11 @@ namespace Silk.NET.SPIRV.Reflect
             if (decorationFlags is not null)
             {
                 DecorationFlags = decorationFlags.Value;
+            }
+
+            if (userType is not null)
+            {
+                UserType = userType.Value;
             }
         }
 
@@ -197,13 +215,23 @@ namespace Silk.NET.SPIRV.Reflect
         [NativeName("Name", "uav_counter_binding")]
         public DescriptorBinding* UavCounterBinding;
 
+        [NativeName("Type", "uint32_t")]
+        [NativeName("Type.Name", "uint32_t")]
+        [NativeName("Name", "byte_address_buffer_offset_count")]
+        public uint ByteAddressBufferOffsetCount;
+
+        [NativeName("Type", "uint32_t *")]
+        [NativeName("Type.Name", "uint32_t *")]
+        [NativeName("Name", "byte_address_buffer_offsets")]
+        public uint* ByteAddressBufferOffsets;
+
         [NativeName("Type", "SpvReflectTypeDescription *")]
         [NativeName("Type.Name", "SpvReflectTypeDescription *")]
         [NativeName("Name", "type_description")]
         public TypeDescription* TypeDescription;
 
-        [NativeName("Type", "struct (unnamed struct at spirv_reflect.h:442:3)")]
-        [NativeName("Type.Name", "struct (unnamed struct at spirv_reflect.h:442:3)")]
+        [NativeName("Type", "struct (unnamed struct at spirv_reflect.h:502:3)")]
+        [NativeName("Type.Name", "struct (unnamed struct at spirv_reflect.h:502:3)")]
         [NativeName("Name", "word_offset")]
         public DescriptorBindingWordOffset WordOffset;
 
@@ -211,5 +239,10 @@ namespace Silk.NET.SPIRV.Reflect
         [NativeName("Type.Name", "SpvReflectDecorationFlags")]
         [NativeName("Name", "decoration_flags")]
         public uint DecorationFlags;
+
+        [NativeName("Type", "SpvReflectUserType")]
+        [NativeName("Type.Name", "SpvReflectUserType")]
+        [NativeName("Name", "user_type")]
+        public UserType UserType;
     }
 }

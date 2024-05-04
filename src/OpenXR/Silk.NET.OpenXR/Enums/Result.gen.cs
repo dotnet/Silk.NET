@@ -178,6 +178,30 @@ namespace Silk.NET.OpenXR
         ErrorMarkerNotTrackedVarjo = unchecked((int) -1000124000),
         [NativeName("Name", "XR_ERROR_MARKER_ID_INVALID_VARJO")]
         ErrorMarkerIDInvalidVarjo = unchecked((int) -1000124001),
+        [NativeName("Name", "XR_ERROR_MARKER_DETECTOR_PERMISSION_DENIED_ML")]
+        ErrorMarkerDetectorPermissionDeniedML = unchecked((int) -1000138000),
+        [NativeName("Name", "XR_ERROR_MARKER_DETECTOR_LOCATE_FAILED_ML")]
+        ErrorMarkerDetectorLocateFailedML = unchecked((int) -1000138001),
+        [NativeName("Name", "XR_ERROR_MARKER_DETECTOR_INVALID_DATA_QUERY_ML")]
+        ErrorMarkerDetectorInvalidDataQueryML = unchecked((int) -1000138002),
+        [NativeName("Name", "XR_ERROR_MARKER_DETECTOR_INVALID_CREATE_INFO_ML")]
+        ErrorMarkerDetectorInvalidCreateInfoML = unchecked((int) -1000138003),
+        [NativeName("Name", "XR_ERROR_MARKER_INVALID_ML")]
+        ErrorMarkerInvalidML = unchecked((int) -1000138004),
+        [NativeName("Name", "XR_ERROR_LOCALIZATION_MAP_INCOMPATIBLE_ML")]
+        ErrorLocalizationMapIncompatibleML = unchecked((int) -1000139000),
+        [NativeName("Name", "XR_ERROR_LOCALIZATION_MAP_UNAVAILABLE_ML")]
+        ErrorLocalizationMapUnavailableML = unchecked((int) -1000139001),
+        [NativeName("Name", "XR_ERROR_LOCALIZATION_MAP_FAIL_ML")]
+        ErrorLocalizationMapFailML = unchecked((int) -1000139002),
+        [NativeName("Name", "XR_ERROR_LOCALIZATION_MAP_IMPORT_EXPORT_PERMISSION_DENIED_ML")]
+        ErrorLocalizationMapImportExportPermissionDeniedML = unchecked((int) -1000139003),
+        [NativeName("Name", "XR_ERROR_LOCALIZATION_MAP_PERMISSION_DENIED_ML")]
+        ErrorLocalizationMapPermissionDeniedML = unchecked((int) -1000139004),
+        [NativeName("Name", "XR_ERROR_LOCALIZATION_MAP_ALREADY_EXISTS_ML")]
+        ErrorLocalizationMapAlreadyExistsML = unchecked((int) -1000139005),
+        [NativeName("Name", "XR_ERROR_LOCALIZATION_MAP_CANNOT_EXPORT_CLOUD_MAP_ML")]
+        ErrorLocalizationMapCannotExportCloudMapML = unchecked((int) -1000139006),
         [NativeName("Name", "XR_ERROR_SPATIAL_ANCHOR_NAME_NOT_FOUND_MSFT")]
         ErrorSpatialAnchorNameNotFoundMsft = unchecked((int) -1000142001),
         [NativeName("Name", "XR_ERROR_SPATIAL_ANCHOR_NAME_INVALID_MSFT")]
@@ -196,11 +220,27 @@ namespace Silk.NET.OpenXR
         ErrorSpaceCloudStorageDisabledFB = unchecked((int) -1000169004),
         [NativeName("Name", "XR_ERROR_PASSTHROUGH_COLOR_LUT_BUFFER_SIZE_MISMATCH_META")]
         ErrorPassthroughColorLutBufferSizeMismatchMeta = unchecked((int) -1000266000),
+        [NativeName("Name", "XR_ENVIRONMENT_DEPTH_NOT_AVAILABLE_META")]
+        EnvironmentDepthNotAvailableMeta = 1000291000,
         [NativeName("Name", "XR_ERROR_HINT_ALREADY_SET_QCOM")]
         ErrorHintAlreadySetQCom = unchecked((int) -1000306000),
+        [NativeName("Name", "XR_ERROR_NOT_AN_ANCHOR_HTC")]
+        ErrorNotANAnchorHtc = unchecked((int) -1000319000),
         [NativeName("Name", "XR_ERROR_SPACE_NOT_LOCATABLE_EXT")]
         ErrorSpaceNotLocatableExt = unchecked((int) -1000429000),
         [NativeName("Name", "XR_ERROR_PLANE_DETECTION_PERMISSION_DENIED_EXT")]
         ErrorPlaneDetectionPermissionDeniedExt = unchecked((int) -1000429001),
+        [NativeName("Name", "XR_ERROR_FUTURE_PENDING_EXT")]
+        ErrorFuturePendingExt = unchecked((int) -1000469001),
+        [NativeName("Name", "XR_ERROR_FUTURE_INVALID_EXT")]
+        ErrorFutureInvalidExt = unchecked((int) -1000469002),
+        [NativeName("Name", "XR_ERROR_EXTENSION_DEPENDENCY_NOT_ENABLED_KHR")]
+        ErrorExtensionDependencyNotEnabledKhr = unchecked((int) -1000710001),
+        [NativeName("Name", "XR_ERROR_PERMISSION_INSUFFICIENT_KHR")]
+        ErrorPermissionInsufficientKhr = unchecked((int) -1000710000),
+        [NativeName("Name", "XR_ERROR_EXTENSION_DEPENDENCY_NOT_ENABLED")]
+        ErrorExtensionDependencyNotEnabled = unchecked((int) -1000710001),
+        [NativeName("Name", "XR_ERROR_PERMISSION_INSUFFICIENT")]
+        ErrorPermissionInsufficient = unchecked((int) -1000710000),
     }
 }

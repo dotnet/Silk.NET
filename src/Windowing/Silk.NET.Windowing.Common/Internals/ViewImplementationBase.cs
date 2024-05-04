@@ -39,7 +39,7 @@ namespace Silk.NET.Windowing.Internals
         private int _rented;
 
         // Ensure we keep SwapInterval up-to-date
-        private bool _swapIntervalChanged = true;
+        protected bool _swapIntervalChanged = true;
 
         /// <summary>
         /// Creates a base view with the given options.
@@ -71,6 +71,7 @@ namespace Silk.NET.Windowing.Internals
         public abstract void ContinueEvents();
         public abstract Vector2D<int> PointToClient(Vector2D<int> point);
         public abstract Vector2D<int> PointToScreen(Vector2D<int> point);
+        public abstract void Focus();
         public abstract void Close();
         protected abstract void RegisterCallbacks();
         protected abstract void UnregisterCallbacks();
@@ -289,7 +290,13 @@ namespace Silk.NET.Windowing.Internals
             _inRenderLoop = true;
             DoEvents();
             ProcessEvents?.Invoke();
+            AfterProcessingEvents();
             _inRenderLoop = false;
+        }
+        
+        internal virtual void AfterProcessingEvents()
+        {
+            // used by sdl2 windows to clear events
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining | (MethodImplOptions) 512)]

@@ -52,6 +52,10 @@ namespace Silk.NET.OpenXR
         PassthroughLayerFB = 1000118002,
         [NativeName("Name", "XR_OBJECT_TYPE_GEOMETRY_INSTANCE_FB")]
         GeometryInstanceFB = 1000118004,
+        [NativeName("Name", "XR_OBJECT_TYPE_MARKER_DETECTOR_ML")]
+        MarkerDetectorML = 1000138000,
+        [NativeName("Name", "XR_OBJECT_TYPE_EXPORTED_LOCALIZATION_MAP_ML")]
+        ExportedLocalizationMapML = 1000139000,
         [NativeName("Name", "XR_OBJECT_TYPE_SPATIAL_ANCHOR_STORE_CONNECTION_MSFT")]
         SpatialAnchorStoreConnectionMsft = 1000142000,
         [NativeName("Name", "XR_OBJECT_TYPE_FACE_TRACKER_FB")]
@@ -64,6 +68,12 @@ namespace Silk.NET.OpenXR
         SpaceUserFB = 1000241000,
         [NativeName("Name", "XR_OBJECT_TYPE_PASSTHROUGH_COLOR_LUT_META")]
         PassthroughColorLutMeta = 1000266000,
+        [NativeName("Name", "XR_OBJECT_TYPE_FACE_TRACKER2_FB")]
+        FaceTracker2FB = 1000287012,
+        [NativeName("Name", "XR_OBJECT_TYPE_ENVIRONMENT_DEPTH_PROVIDER_META")]
+        EnvironmentDepthProviderMeta = 1000291000,
+        [NativeName("Name", "XR_OBJECT_TYPE_ENVIRONMENT_DEPTH_SWAPCHAIN_META")]
+        EnvironmentDepthSwapchainMeta = 1000291001,
         [NativeName("Name", "XR_OBJECT_TYPE_PASSTHROUGH_HTC")]
         PassthroughHtc = 1000317000,
         [NativeName("Name", "XR_OBJECT_TYPE_PLANE_DETECTOR_EXT")]

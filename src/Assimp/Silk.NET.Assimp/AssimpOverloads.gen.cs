@@ -3122,7 +3122,7 @@ namespace Silk.NET.Assimp
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1477, Column 28 in material.h")]
-        public static unsafe Return GetMaterialProperty(this Assimp thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Material* pMat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> pKey, uint type, uint index, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in MaterialProperty* pPropOut)
+        public static unsafe Return GetMaterialProperty(this Assimp thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Material* pMat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> pKey, uint type, uint index, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in MaterialProperty* pPropOut)
         {
             // SpanOverloader
             return thisApi.GetMaterialProperty(pMat, in pKey.GetPinnableReference(), type, index, in pPropOut);
@@ -3138,7 +3138,7 @@ namespace Silk.NET.Assimp
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1477, Column 28 in material.h")]
-        public static unsafe Return GetMaterialProperty(this Assimp thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Material> pMat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* pKey, uint type, uint index, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in MaterialProperty* pPropOut)
+        public static unsafe Return GetMaterialProperty(this Assimp thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Material> pMat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* pKey, uint type, uint index, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in MaterialProperty* pPropOut)
         {
             // SpanOverloader
             return thisApi.GetMaterialProperty(in pMat.GetPinnableReference(), pKey, type, index, in pPropOut);
@@ -3154,7 +3154,7 @@ namespace Silk.NET.Assimp
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1477, Column 28 in material.h")]
-        public static unsafe Return GetMaterialProperty(this Assimp thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Material> pMat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> pKey, uint type, uint index, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in MaterialProperty* pPropOut)
+        public static unsafe Return GetMaterialProperty(this Assimp thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Material> pMat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> pKey, uint type, uint index, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in MaterialProperty* pPropOut)
         {
             // SpanOverloader
             return thisApi.GetMaterialProperty(in pMat.GetPinnableReference(), in pKey.GetPinnableReference(), type, index, in pPropOut);
@@ -3170,7 +3170,7 @@ namespace Silk.NET.Assimp
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1477, Column 28 in material.h")]
-        public static unsafe Return GetMaterialProperty(this Assimp thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Material> pMat, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pKey, uint type, uint index, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in MaterialProperty* pPropOut)
+        public static unsafe Return GetMaterialProperty(this Assimp thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Material> pMat, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pKey, uint type, uint index, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in MaterialProperty* pPropOut)
         {
             // SpanOverloader
             return thisApi.GetMaterialProperty(in pMat.GetPinnableReference(), pKey, type, index, in pPropOut);

@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using Nuke.Common;
 using Nuke.Common.Tooling;
 using Nuke.Common.Tools.DotNet;
+using Serilog;
 using static Nuke.Common.Tools.DotNet.DotNetTasks;
 
 partial class Build
@@ -44,7 +45,7 @@ partial class Build
             .Select(x => x.Select(v => v.Value).ToList())
             .ToList();
         var first = true;
-        Logger.Info($"Searching for packages in \"{RootDirectory / "build" / "output_packages"}\"...");
+        Log.Information($"Searching for packages in \"{RootDirectory / "build" / "output_packages"}\"...");
         foreach (var files in allFiles)
         {
             if (first)
@@ -64,7 +65,7 @@ partial class Build
                 {
                     if (NugetUsername is null || NugetPassword is null)
                     {
-                        ControlFlow.Fail
+                        Assert.Fail
                         (
                             "Both \"NugetUsername\" and \"NugetPassword\" must be specified if either are used."
                         );

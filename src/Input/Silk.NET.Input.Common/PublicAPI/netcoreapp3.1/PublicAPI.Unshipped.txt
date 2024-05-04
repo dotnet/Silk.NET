@@ -1,5 +1,7 @@
 #nullable enable
-static Silk.NET.Input.GamepadExtensions.LeftThumbstick(this Silk.NET.Input.IGamepad! gamepad) -> Silk.NET.Input.Thumbstick
-static Silk.NET.Input.GamepadExtensions.LeftThumbstickButton(this Silk.NET.Input.IGamepad! gamepad) -> Silk.NET.Input.Button
-static Silk.NET.Input.GamepadExtensions.RightThumbstick(this Silk.NET.Input.IGamepad! gamepad) -> Silk.NET.Input.Thumbstick
-static Silk.NET.Input.GamepadExtensions.RightThumbstickButton(this Silk.NET.Input.IGamepad! gamepad) -> Silk.NET.Input.Button
+Silk.NET.Input.StandardCursor.ResizeAll = 9 -> Silk.NET.Input.StandardCursor
+Silk.NET.Input.StandardCursor.NeswResize = 8 -> Silk.NET.Input.StandardCursor
+Silk.NET.Input.StandardCursor.NotAllowed = 10 -> Silk.NET.Input.StandardCursor
+Silk.NET.Input.StandardCursor.NwseResize = 7 -> Silk.NET.Input.StandardCursor
+Silk.NET.Input.StandardCursor.Wait = 11 -> Silk.NET.Input.StandardCursor
+Silk.NET.Input.StandardCursor.WaitArrow = 12 -> Silk.NET.Input.StandardCursor

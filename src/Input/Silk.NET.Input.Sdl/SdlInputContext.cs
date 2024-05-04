@@ -254,7 +254,7 @@ namespace Silk.NET.Input.Sdl
 
                 if (!skipped)
                 {
-                    _sdlView.Events.RemoveAt(i);
+                    _sdlView.RemoveEvent(i);
                 }
                 else
                 {

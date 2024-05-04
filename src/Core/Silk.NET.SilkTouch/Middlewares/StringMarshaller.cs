@@ -119,10 +119,13 @@ namespace Silk.NET.SilkTouch
                                 )
                             )
                         );
-                        ctx.DeclareExtraRef(id); // readback
+                        if (ctx.MethodSymbol.Parameters[index].RefKind is RefKind.Ref)
+                        {
+                            ctx.DeclareExtraRef(id); // readback
+                            ctx.DeclareExtraRef(ctx.ParameterVariables[index]); // ptrToString
+                        }
                         ctx.DeclareExtraRef(id); // free
                         ctx.SetParameterToVariable(index, id);
-                        ctx.DeclareExtraRef(ctx.ParameterVariables[index]); // ptrToString
                         break;
                     case RefKind.Out:
                     {
@@ -263,8 +266,7 @@ namespace Silk.NET.SilkTouch
                 
                 var marshalAs = ctx.ParameterMarshalOptions[index]?.UnmanagedType ?? Default;
 
-                if (ctx.MethodSymbol.Parameters[index].RefKind == RefKind.None ||
-                    ctx.MethodSymbol.Parameters[index].RefKind == RefKind.Ref ||
+                if (ctx.MethodSymbol.Parameters[index].RefKind == RefKind.Ref ||
                     ctx.MethodSymbol.Parameters[index].RefKind == RefKind.Out)
                 {
                     var p2 = ctx.ResolveVariable(ctx.ParameterVariables[index]);

@@ -27,15 +27,15 @@ using static Nuke.Common.Tools.GitHub.GitHubTasks;
 
 partial class Build {
     const string ShadercBuildScript = @"
-    const std = @import(""std"");
+const std = @import(""std"");
 const fs = std.fs;
 
-const spirv_tools_root = root_path ++ ""third_party/spirv-tools/"";
-const root_glslang_path = root_path ++ ""third_party/glslang/"";
+const spirv_tools_root = ""third_party/spirv-tools/"";
+const root_glslang_path = ""third_party/glslang/"";
 
 const grammar_processing_script = spirv_tools_root ++ ""utils/generate_grammar_tables.py"";
 
-const spirv_headers_include_dir = root_path ++ ""third_party/spirv-headers/include/"";
+const spirv_headers_include_dir = ""third_party/spirv-headers/include/"";
 const debuginfo_grammar_json_file = spirv_headers_include_dir ++ ""spirv/unified1/extinst.debuginfo.grammar.json"";
 const glsl_grammar_file = spirv_headers_include_dir ++ ""spirv/unified1/extinst.glsl.std.450.grammar.json"";
 const opencl_grammar_file = spirv_headers_include_dir ++ ""spirv/unified1/extinst.opencl.std.100.grammar.json"";
@@ -67,7 +67,7 @@ fn spvtoolsVendorTables(
     });
 }
 
-fn spvTools(b: *std.Build, target: std.zig.CrossTarget, optimize: std.builtin.OptimizeMode) *std.Build.Step.Compile {
+fn spvTools(b: *std.Build, target: std.Build.ResolvedTarget, optimize: std.builtin.OptimizeMode) *std.Build.Step.Compile {
     const generate_grammar_files_step = b.addSystemCommand(&.{
         ""python3"",
         grammar_processing_script,
@@ -123,7 +123,7 @@ fn spvTools(b: *std.Build, target: std.zig.CrossTarget, optimize: std.builtin.Op
     const cl_debug_info_header_100 = spvtoolsExtinstLangHeaders(b, ""OpenCLDebugInfo100"", cldebuginfo100_grammar_json_file);
     const non_semantic_shader_debug_info_100 = spvtoolsExtinstLangHeaders(b, ""NonSemanticShaderDebugInfo100"", vkdebuginfo100_grammar_json_file);
 
-    const spirv_tools: *std.build.Step.Compile = b.addStaticLibrary(.{
+    const spirv_tools: *std.Build.Step.Compile = b.addStaticLibrary(.{
         .name = ""spirv_tools"",
         .target = target,
         .optimize = optimize,
@@ -154,11 +154,11 @@ fn spvTools(b: *std.Build, target: std.zig.CrossTarget, optimize: std.builtin.Op
     spirv_tools.step.dependOn(&cl_debug_info_header_100.step);
     spirv_tools.step.dependOn(&non_semantic_shader_debug_info_100.step);
 
-    spirv_tools.addIncludePath(.{.path = spirv_tools_root ++ ""include""});
-    spirv_tools.addIncludePath(.{.path = spirv_tools_root ++ ""source""});
-    spirv_tools.addIncludePath(.{.path = spirv_tools_root});
+    spirv_tools.addIncludePath(.{ .path = spirv_tools_root ++ ""include"" });
+    spirv_tools.addIncludePath(.{ .path = spirv_tools_root ++ ""source"" });
+    spirv_tools.addIncludePath(.{ .path = spirv_tools_root });
 
-    spirv_tools.addIncludePath(.{.path = root_path ++ ""third_party/spirv-headers/include/""});
+    spirv_tools.addIncludePath(.{ .path = ""third_party/spirv-headers/include/"" });
 
     spirv_tools.addCSourceFiles(.{
         .files = &.{
@@ -296,6 +296,7 @@ fn spvTools(b: *std.Build, target: std.zig.CrossTarget, optimize: std.builtin.Op
             spirv_tools_root ++ ""source/opt/ir_loader.cpp"",
             spirv_tools_root ++ ""source/opt/licm_pass.cpp"",
             spirv_tools_root ++ ""source/opt/liveness.cpp"",
+            spirv_tools_root ++ ""source/opt/modify_maximal_reconvergence.cpp"",
             spirv_tools_root ++ ""source/opt/local_access_chain_convert_pass.cpp"",
             spirv_tools_root ++ ""source/opt/local_redundancy_elimination.cpp"",
             spirv_tools_root ++ ""source/opt/local_single_block_elim_pass.cpp"",
@@ -347,6 +348,8 @@ fn spvTools(b: *std.Build, target: std.zig.CrossTarget, optimize: std.builtin.Op
             spirv_tools_root ++ ""source/opt/workaround1209.cpp"",
             spirv_tools_root ++ ""source/opt/wrap_opkill.cpp"",
             spirv_tools_root ++ ""source/opt/trim_capabilities_pass.cpp"",
+            spirv_tools_root ++ ""source/opt/switch_descriptorset_pass.cpp"",
+            spirv_tools_root ++ ""source/opt/invocation_interlock_placement_pass.cpp"",
             //reduce
             spirv_tools_root ++ ""source/reduce/change_operand_reduction_opportunity.cpp"",
             spirv_tools_root ++ ""source/reduce/change_operand_to_undef_reduction_opportunity.cpp"",
@@ -387,15 +390,15 @@ fn spvTools(b: *std.Build, target: std.zig.CrossTarget, optimize: std.builtin.Op
             spirv_tools_root ++ ""source/lint/divergence_analysis.cpp"",
             //diff
             spirv_tools_root ++ ""source/diff/diff.cpp"",
-        }, 
-        .flags = flags
+        },
+        .flags = flags,
     });
 
     return spirv_tools;
 }
 
-fn glslang_lib(b: *std.Build, target: std.zig.CrossTarget, optimize: std.builtin.OptimizeMode) *std.Build.Step.Compile {
-    const glslang: *std.build.Step.Compile = b.addStaticLibrary(.{
+fn glslangLib(b: *std.Build, target: std.Build.ResolvedTarget, optimize: std.builtin.OptimizeMode) *std.Build.Step.Compile {
+    const glslang: *std.Build.Step.Compile = b.addStaticLibrary(.{
         .name = ""glslang"",
         .target = target,
         .optimize = optimize,
@@ -403,8 +406,8 @@ fn glslang_lib(b: *std.Build, target: std.zig.CrossTarget, optimize: std.builtin
     glslang.linkLibC();
     glslang.linkLibCpp();
 
-    glslang.addIncludePath(.{.path = root_glslang_path ++ ""Include""});
-    glslang.addIncludePath(.{.path = root_glslang_path});
+    glslang.addIncludePath(.{ .path = root_glslang_path ++ ""Include"" });
+    glslang.addIncludePath(.{ .path = root_glslang_path });
 
     glslang.defineCMacro(""ENABLE_HLSL"", ""1"");
 
@@ -447,19 +450,17 @@ fn glslang_lib(b: *std.Build, target: std.zig.CrossTarget, optimize: std.builtin
             root_glslang_path ++ ""glslang/HLSL/hlslParseables.cpp"",
             root_glslang_path ++ ""glslang/GenericCodeGen/CodeGen.cpp"",
             root_glslang_path ++ ""glslang/GenericCodeGen/Link.cpp"",
-        }, 
+        },
         .flags = flags,
     });
 
-    if (target.isWindows()) {
-        glslang.addCSourceFiles(.{.files = &.{root_glslang_path ++ ""glslang/OSDependent/Windows/ossource.cpp""}, .flags = flags});
+    if (target.result.os.tag == .windows) {
+        glslang.addCSourceFiles(.{ .files = &.{root_glslang_path ++ ""glslang/OSDependent/Windows/ossource.cpp""}, .flags = flags });
     }
     //This assumption is wrong, but anything that isnt windows is basically unix :^)
     else {
-        glslang.addCSourceFiles(.{.files = &.{root_glslang_path ++ ""glslang/OSDependent/Unix/ossource.cpp""}, .flags = flags});
+        glslang.addCSourceFiles(.{ .files = &.{root_glslang_path ++ ""glslang/OSDependent/Unix/ossource.cpp""}, .flags = flags });
     }
-
-    glslang.addCSourceFiles(.{.files = &.{root_glslang_path ++ ""OGLCompilersDLL/InitializeDll.cpp""}, .flags = flags});
 
     glslang.addCSourceFiles(.{
         .files = &.{
@@ -472,7 +473,7 @@ fn glslang_lib(b: *std.Build, target: std.zig.CrossTarget, optimize: std.builtin
             root_glslang_path ++ ""SPIRV/SpvTools.cpp"",
             root_glslang_path ++ ""SPIRV/disassemble.cpp"",
             root_glslang_path ++ ""SPIRV/CInterface/spirv_c_interface.cpp"",
-        }, 
+        },
         .flags = flags,
     });
 
@@ -493,42 +494,42 @@ pub fn build(b: *std.Build) void {
     const target = b.standardTargetOptions(.{});
     const optimize = b.standardOptimizeOption(.{});
 
-    const glslang = glslang_lib(b, target, optimize);
+    const glslang = glslangLib(b, target, optimize);
 
     const spirv_tools = spvTools(b, target, optimize);
 
-    const shaderc_util: *std.build.Step.Compile = b.addStaticLibrary(.{
+    const shaderc_util: *std.Build.Step.Compile = b.addStaticLibrary(.{
         .name = ""shaderc_shared"",
         .target = target,
         .optimize = optimize,
     });
     shaderc_util.linkLibC();
     shaderc_util.linkLibCpp();
-    shaderc_util.addIncludePath(.{.path = root_path ++ ""libshaderc/include""});
-    shaderc_util.addIncludePath(.{.path = root_path ++ ""libshaderc_util/include""});
+    shaderc_util.addIncludePath(.{ .path = ""libshaderc/include"" });
+    shaderc_util.addIncludePath(.{ .path = ""libshaderc_util/include"" });
 
-    shaderc_util.addIncludePath(.{.path = root_path ++ ""third_party/glslang""});
-    shaderc_util.addIncludePath(.{.path = root_path ++ ""third_party/spirv-tools/include""});
-    shaderc_util.addIncludePath(.{.path = root_path ++ ""third_party/spirv-headers/include/""});
+    shaderc_util.addIncludePath(.{ .path = ""third_party/glslang"" });
+    shaderc_util.addIncludePath(.{ .path = ""third_party/spirv-tools/include"" });
+    shaderc_util.addIncludePath(.{ .path = ""third_party/spirv-headers/include/"" });
 
     shaderc_util.defineCMacro(""ENABLE_HLSL"", ""1"");
 
     shaderc_util.addCSourceFiles(.{
         .files = &.{
-            root_path ++ ""libshaderc_util/src/args.cc"",
-            root_path ++ ""libshaderc_util/src/compiler.cc"",
-            root_path ++ ""libshaderc_util/src/file_finder.cc"",
-            root_path ++ ""libshaderc_util/src/io_shaderc.cc"",
-            root_path ++ ""libshaderc_util/src/message.cc"",
-            root_path ++ ""libshaderc_util/src/resources.cc"",
-            root_path ++ ""libshaderc_util/src/shader_stage.cc"",
-            root_path ++ ""libshaderc_util/src/spirv_tools_wrapper.cc"",
-            root_path ++ ""libshaderc_util/src/version_profile.cc"",
-        }, 
+            ""libshaderc_util/src/args.cc"",
+            ""libshaderc_util/src/compiler.cc"",
+            ""libshaderc_util/src/file_finder.cc"",
+            ""libshaderc_util/src/io_shaderc.cc"",
+            ""libshaderc_util/src/message.cc"",
+            ""libshaderc_util/src/resources.cc"",
+            ""libshaderc_util/src/shader_stage.cc"",
+            ""libshaderc_util/src/spirv_tools_wrapper.cc"",
+            ""libshaderc_util/src/version_profile.cc"",
+        },
         .flags = flags,
     });
 
-    const shaderc: *std.build.Step.Compile = b.addSharedLibrary(.{
+    const shaderc: *std.Build.Step.Compile = b.addSharedLibrary(.{
         .name = ""shaderc_shared"",
         .target = target,
         .optimize = optimize,
@@ -541,30 +542,27 @@ pub fn build(b: *std.Build) void {
     shaderc.linkLibrary(spirv_tools);
     shaderc.linkLibrary(glslang);
 
-    shaderc.strip = true;
+    //On release builds, lets strip the binary to reduce size further
+    if (optimize != .Debug) {
+        shaderc.root_module.strip = true;
+    }
 
-    shaderc.addIncludePath(.{.path = root_path ++ ""libshaderc/include""});
-    shaderc.addIncludePath(.{.path = root_path ++ ""libshaderc_util/include""});
+    shaderc.addIncludePath(.{ .path = ""libshaderc/include"" });
+    shaderc.addIncludePath(.{ .path = ""libshaderc_util/include"" });
 
-    shaderc.addIncludePath(.{.path = root_path ++ ""third_party/glslang""});
-    shaderc.addIncludePath(.{.path = root_path ++ ""third_party/spirv-tools/include""});
-    shaderc.addIncludePath(.{.path = root_path ++ ""third_party/spirv-headers/include/""});
+    shaderc.addIncludePath(.{ .path = ""third_party/glslang"" });
+    shaderc.addIncludePath(.{ .path = ""third_party/spirv-tools/include"" });
+    shaderc.addIncludePath(.{ .path = ""third_party/spirv-headers/include/"" });
 
     shaderc.addCSourceFiles(.{
         .files = &.{
-            root_path ++ ""libshaderc/src/shaderc.cc"",
-        }, 
+            ""libshaderc/src/shaderc.cc"",
+        },
         .flags = flags,
     });
 
     b.installArtifact(shaderc);
 }
-
-fn root_dir() []const u8 {
-    return std.fs.path.dirname(@src().file) orelse ""."";
-}
-
-const root_path = root_dir() ++ ""/"";
 ";
 
     AbsolutePath ShadercPath => RootDirectory / "build" / "submodules" / "shaderc";
@@ -588,16 +586,16 @@ const root_path = root_dir() ++ ""/"";
 
             const string optimizeMode = "-Doptimize=ReleaseFast";
 
-            //Build shaderc for Linux x86
-            InheritedShell($"zig build -Dtarget=x86-linux-gnu.2.16 {optimizeMode}", ShadercPath).AssertZeroExitCode();
-            CopyFile(ShadercPath / "zig-out" / "lib" / $"lib{libname}.so", runtimes / "linux-x86" / "native" / $"lib{libname}.so", FileExistsPolicy.Overwrite);
-
             //Build shaderc for Linux x86_64
-            InheritedShell($"zig build -Dtarget=x86_64-linux-gnu.2.16 {optimizeMode}", ShadercPath).AssertZeroExitCode();
+            InheritedShell($"zig build -Dtarget=x86_64-linux-gnu.2.17 {optimizeMode}", ShadercPath).AssertZeroExitCode();
             CopyFile(ShadercPath / "zig-out" / "lib" / $"lib{libname}.so", runtimes / "linux-x64" / "native" / $"lib{libname}.so", FileExistsPolicy.Overwrite);
 
+            //Build shaderc for Linux ARM
+            InheritedShell($"zig build -Dtarget=arm-linux-gnueabihf.2.17 {optimizeMode}", ShadercPath).AssertZeroExitCode();
+            CopyFile(ShadercPath / "zig-out" / "lib" / $"lib{libname}.so", runtimes / "linux-arm" / "native" / $"lib{libname}.so", FileExistsPolicy.Overwrite);
+
             //Build shaderc for Linux ARM64
-            InheritedShell($"zig build -Dtarget=aarch64-linux-gnu.2.16 {optimizeMode}", ShadercPath).AssertZeroExitCode();
+            InheritedShell($"zig build -Dtarget=aarch64-linux-gnu.2.17 {optimizeMode}", ShadercPath).AssertZeroExitCode();
             CopyFile(ShadercPath / "zig-out" / "lib" / $"lib{libname}.so", runtimes / "linux-arm64" / "native" / $"lib{libname}.so", FileExistsPolicy.Overwrite);
 
             //Build shaderc for Windows x86
@@ -620,19 +618,7 @@ const root_path = root_dir() ++ ""/"";
             InheritedShell($"zig build -Dtarget=aarch64-macos {optimizeMode}", ShadercPath).AssertZeroExitCode();
             CopyFile(ShadercPath / "zig-out" / "lib" / $"lib{libname}.dylib", runtimes / "osx-arm64" / "native" / $"lib{libname}.dylib", FileExistsPolicy.Overwrite);
 
-            var files = (runtimes / "win-x64" / "native").GlobFiles("*.dll")
-                .Concat((runtimes / "win-x86" / "native").GlobFiles("*.dll"))
-                .Concat((runtimes / "win-arm64" / "native").GlobFiles("*.dll"))
-                .Concat((runtimes / "osx-x64" / "native").GlobFiles("*.dylib"))
-                .Concat((runtimes / "osx-arm64" / "native").GlobFiles("*.dylib"))
-                .Concat((runtimes / "linux-x64" / "native").GlobFiles("*.so"))
-                .Concat((runtimes / "linux-x86" / "native").GlobFiles("*.so"))
-                .Concat((runtimes / "linux-arm64" / "native").GlobFiles("*.so"));
-
-            var glob = string.Empty;
-            glob = files.Aggregate(glob, (current, path) => current + $"\"{path}\" ");
-
-            PrUpdatedNativeBinary("Shaderc", glob);
+            PrUpdatedNativeBinary("Shaderc");
         }
         )
     );
