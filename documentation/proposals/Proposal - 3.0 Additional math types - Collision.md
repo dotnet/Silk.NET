@@ -122,6 +122,8 @@ public interface IContain<TSelf, TOther>
 public interface IColliderShape<TSelf, TScalar>
     where TScalar : IFloatingPointIeee754<TScalar>
 {
+    public static abstract TSelf Empty { get; }
+
     public static abstract void FromPoints(ReadOnlySpan<Vector3F<TScalar>> points, out TSelf result);
     public static abstract TSelf FromPoints(ReadOnlySpan<Vector3F<TScalar>> points);
 
