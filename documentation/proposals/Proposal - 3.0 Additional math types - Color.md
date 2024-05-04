@@ -35,3 +35,5 @@ Where it is appropriate for a type in this proposal to have both integer and flo
 ### Color3
 
 ### Color4
+
+# Meeting Agenda/Notes
