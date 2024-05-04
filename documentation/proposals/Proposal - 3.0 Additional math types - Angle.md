@@ -56,7 +56,7 @@ public readonly struct Angle<TScalar>
     , IUtf8SpanFormattable
     where TScalar : IFloatingPointIeee754<TScalar>
 {
-    public Angle(TScalar radians) { }
+    internal Angle(TScalar radians) { }
 
     /// <summary>Angle in degrees in the range [0, 360]. Without fractional component.</summary>
     public TScalar Degrees { get; }
