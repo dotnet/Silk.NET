@@ -72,7 +72,7 @@ jobs:
       uses: actions/upload-artifact@v2.2.4
       with:
         name: unsigned_nupkgs
-        path: "build/output_packages/*.nupkg"
+        path: "build/output_packages/*nupkg"
         if-no-files-found: warn
         retention-days: 1
     - name: Push to Experimental Feed
@@ -100,7 +100,7 @@ jobs:
       uses: actions/upload-artifact@v2.2.4
       with:
         name: signed_nupkgs
-        path: "build/output_packages/*.nupkg"
+        path: "build/output_packages/*nupkg"
         if-no-files-found: warn
     - name: Push to NuGet
       run: .\build.cmd PushToNuGet --skip Clean Restore Pack --nuget-api-key ${{ secrets.NUGET_TOKEN }}
