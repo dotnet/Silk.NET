@@ -1,0 +1,285 @@
+.body {
+    margin: 30px 0;
+}
+
+.title {
+    text-align: center;
+}
+
+.wigdgetsContainer {
+    display: flex;
+    justify-content: space-evenly;
+    margin: 10px 5px 30px 5px;
+}
+
+.discordWigdget {
+    position: relative;
+    width: calc(50% - 100px);
+    min-height: 250px;
+
+    background: #424549;
+    border: 2px solid #1e2124;
+    border-radius: 20px;
+
+    color: white;
+
+    overflow: hidden;
+}
+
+.discordWigdget .topBar {
+    background: #36393e;
+    height: calc(40px + 30px);
+}
+
+.discordWigdget .icon {
+    position: absolute;
+
+    top: 30px;
+    left: 30px;
+
+    height: 70px;
+    width: 70px;
+    background:white url('/img/silkdotnet_v3.svg');
+    background-size: 80%;
+    background-repeat: no-repeat;
+    background-position: center;
+    border: 2px solid #282b30;
+    border-radius: 10px;
+}
+
+.discordWigdget .discordLogo {
+    position: absolute;
+
+    top: 20px;
+    right: 20px;
+
+    height: 30px;
+    width: 150px;
+    background: url('/img/others/discord-logo-white.svg');
+    background-size: 80%;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.discordWigdget .content {
+    margin: 20px 20px 20px 150px;
+}
+
+.discordWigdget .content p {
+    margin: 0;
+}
+
+.discordWigdget .content p::before {
+    display:inline-block;
+    content: "";
+    height: 20px;
+    width: 20px;
+    margin-top: 4px;
+    margin-bottom: -4px;
+    margin-right: 5px;
+    background: url('/img/others/discord-star.png');
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+.discordWigdget .content p {
+
+    .channelLink {
+        background-color: rgba(17, 121, 156, 0.8);
+        border-radius: 5px;
+        padding: 0 5px;
+    }
+
+    .channelLink::before {
+        content: "#";
+        font-family: 'Arial Narrow', Arial, sans-serif;
+        margin-right: 5px;
+    }
+
+}
+
+.discordWigdget .joinButton {
+    position: absolute;
+    background-color: #7289da;
+
+    color: white;
+    text-decoration: none;
+
+    padding: 10px 20px;
+    border-radius: 5px;
+
+    left: 20px;
+    bottom: 20px;
+}
+
+html[data-theme='dark'] .githubWigdget {
+    --gh-background-hard-color: #0d1117;
+    --gh-background-soft-color: #24292d;
+    --gh-main-color: #4078c0;
+    --gh-border-color: #848d97;
+
+    --gh-transparent-bg-color-hover: #b1bac41f;
+}
+html[data-theme='light'] .githubWigdget {
+    --gh-background-hard-color: #ffffff;
+    --gh-background-soft-color: #ffffff;
+    --gh-main-color: #4078c0;
+    --gh-border-color: #d0d7de;
+
+    --gh-transparent-bg-color-hover: #d0d7de33;
+}
+
+.githubWigdget {
+    position: relative;
+
+    background: var(--gh-background-soft-color);
+    border: 1px solid var(--gh-border-color);
+    border-radius: 20px;
+    width: calc(50% - 100px);
+    min-height: 250px;
+
+    overflow: hidden;
+}
+
+.githubWigdget .header {
+    background: var(--gh-background-hard-color);
+    height: 60px;
+    border-bottom: max(1px, 0.0625rem) solid var(--gh-border-color);
+}
+
+.githubWigdget .header .githubLogo {
+    display: block;
+    position: absolute;
+    height: 40px;
+    width: 40px;
+    margin: 10px;
+    background: url('/img/others/github-logo.png');
+    background-size: 80%;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+html[data-theme='dark'] .githubWigdget .header .githubLogo {
+    filter: invert(100%);
+}
+
+.githubWigdget .header .breadcrumb {
+    position: absolute;
+
+    left: 60px;
+    top: 16px;
+
+    color: white;
+    display: flex;
+
+    p {
+        color: #848d97;
+    }
+
+    a {
+        padding: 2px 10px 2px 10px;
+        text-decoration: none;
+        color: var(--ifm-font-color-base);
+        height: 30px;
+    }
+    a:hover {
+        background: var(--gh-transparent-bg-color-hover);
+        border-radius: 5px;
+    }
+    a:last-child {
+        font-weight: bold;
+    }
+}
+
+.githubWigdget .header .discussionsTitle {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+
+    display: flex;
+    align-items: center;
+
+    svg {
+        margin-right: 5px;
+        margin-top: 2px;
+    }
+}
+html[data-theme='dark'] .githubWigdget .header .discussionsTitle svg {
+    filter: invert(100%);
+}
+
+.githubWigdget .content {
+    position: relative;
+    margin: 5px 35px 50px 35px;
+    p {
+        margin: 0;
+    }
+
+    .list {
+        border-left: 1px solid rgba(0,0,0, 0.5);
+        padding-left: 20px;
+    }
+}
+
+.githubWigdget .joinButton {
+    position: absolute;
+    padding: 5px 20px;
+
+    color: white;
+    font-weight: bold;
+    text-decoration: none;
+
+    background: #238636;
+    border-radius: 6px;
+
+    left: 10px;
+    bottom: 10px;
+}
+.githubWigdget .joinButton:hover {
+    background: #29903b;
+}
+.githubWigdget .joinButton:active {
+    background: #2e9a40;
+}
+
+@media screen and (max-width: 1120px)
+{
+    .wigdgetsContainer {
+        flex-direction: column;
+    }
+
+    .discordWigdget {
+        width: calc(80%);
+        margin: 20px 10%;
+    }
+
+    .githubWigdget {
+        width: calc(80%);
+        margin: 20px 10%;
+    }
+    
+}
+
+@media screen and (max-width: 470px)
+{
+    .wigdgetsContainer {
+        margin: 0;
+    }
+
+
+    .discordWigdget {
+        width: 100%;
+        margin: 20px 0;
+        border-left: none;
+        border-right: none;
+        border-radius: 0;
+    }
+
+    .githubWigdget {
+        width: 100%;
+        margin: 20px 0;
+        border-left: none;
+        border-right: none;
+        border-radius: 0;
+    }
+    
+}
