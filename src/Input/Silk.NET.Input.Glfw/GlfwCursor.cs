@@ -80,8 +80,8 @@ namespace Silk.NET.Input.Glfw
             {
                 if (_standardCursor != value)
                 {
-                    UpdateStandardCursor();
                     _standardCursor = value;
+                    UpdateStandardCursor();
                 }
             }
         }
