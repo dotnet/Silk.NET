@@ -127,7 +127,11 @@ partial class Build
 
                     EnsureCleanDirectory(Path.GetDirectoryName(@out));
                     InheritedShell($"lipo -create -output \"{@out}\" \"{@in}\"").AssertZeroExitCode();
-                    InheritedShell($"strip -Sx \"{@out}\"").AssertZeroExitCode();
+                    InheritedShell($"strip -Sx -no_code_signature_warning \"{@out}\"").AssertZeroExitCode();
+
+                    // Re-sign, as lipo and stripping invalidates the signature
+                    InheritedShell($"codesign --remove-signature \"{@out}\"").AssertZeroExitCode();
+                    InheritedShell($"codesign --sign - \"{@out}\"").AssertZeroExitCode();
                 }
             }
 
