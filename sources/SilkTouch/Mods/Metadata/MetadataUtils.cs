@@ -3,6 +3,8 @@
 
 using System;
 using System.Collections.Generic;
+using System.Linq;
+using Microsoft.CodeAnalysis.CSharp.Syntax;
 
 namespace Silk.NET.SilkTouch.Mods.Metadata;
 
@@ -132,5 +134,91 @@ public static class MetadataUtils
                     0
                 )
                 : null
+        );
+
+    /// <summary>
+    /// Enumerates the symbol constraints for each parameter.
+    /// </summary>
+    /// <param name="decl">The method with the parameters to enumerate.</param>
+    /// <param name="providers">The metadata providers.</param>
+    /// <param name="entryPoint"></param>
+    /// <param name="jobKey"></param>
+    /// <returns></returns>
+    public static IEnumerable<(
+        ParameterSyntax Param,
+        int ParamIdx,
+        SymbolConstraints? ParamConstraints
+    )> EnumerateSymbolConstraints(
+        this MethodDeclarationSyntax decl,
+        IEnumerable<IApiMetadataProvider> providers,
+        string? entryPoint = null,
+        string? jobKey = null
+    )
+    {
+        if (entryPoint is null)
+        {
+            decl.AttributeLists.GetNativeFunctionInfo(out _, out entryPoint, out _);
+            entryPoint ??= decl.Identifier.ToString();
+        }
+        return decl
+            .ParameterList.Parameters.Select((y, j) => (PtrParam: y, PtrParamIdx: j))
+            .Select(y =>
+                (
+                    y.PtrParam,
+                    y.PtrParamIdx,
+                    PtrParamConstraints: providers
+                        .Select(z =>
+                            z.TryGetParameterMetadata(
+                                jobKey,
+                                entryPoint,
+                                y.PtrParam.Identifier.ToString(),
+                                out SymbolConstraints? md
+                            )
+                                ? md
+                                : null
+                        )
+                        .FirstOrDefault()
+                )
+            );
+    }
+
+    /// <summary>
+    /// Enumerates over each parameter in the given method declaration and gets the other parameters for which the
+    /// parameter determines the element count.
+    /// </summary>
+    /// <param name="decl">The method declaration.</param>
+    /// <param name="providers">The metadata providers.</param>
+    /// <param name="entryPoint">The entry point. Determined from the declaration if not provided.</param>
+    /// <param name="jobKey">The job key to use when looking up metadata.</param>
+    /// <returns>
+    /// An enumerable over the declaration's parameters, where the parameter syntax and indices are given along with an
+    /// enumerable of the other parameter syntaxes (along with the indices and constraints) for which the parameter
+    /// provides the element count.
+    /// </returns>
+    public static IEnumerable<(
+        ParameterSyntax CountParam,
+        int CountParamIdx,
+        IEnumerable<(
+            ParameterSyntax PtrParam,
+            int PtrParamIdx,
+            SymbolConstraints? PtrParamConstraints
+        )> ParamsForCount
+    )> EnumerateCountParameterInfo(
+        this MethodDeclarationSyntax decl,
+        IEnumerable<IApiMetadataProvider> providers,
+        string? entryPoint = null,
+        string? jobKey = null
+    ) =>
+        decl.ParameterList.Parameters.Select(
+            (x, i) =>
+                (
+                    CountParam: x,
+                    CountParamIdx: i,
+                    ParamsForCount: decl.EnumerateSymbolConstraints(providers, entryPoint, jobKey)
+                        .Where(y =>
+                            y.ParamConstraints?.CommonUsage?.CountExpression
+                            == x.Identifier.ToString()
+                        )
+                )
         );
 }

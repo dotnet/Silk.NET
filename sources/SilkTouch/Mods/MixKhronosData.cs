@@ -1532,11 +1532,6 @@ public partial class MixKhronosData(
 
         current.AttributeLists.GetNativeFunctionInfo(out _, out var entryPoint, out _);
         entryPoint ??= current.Identifier.ToString();
-        if (TransformArrayParameter(current, entryPoint) is { } arrayParamTransform)
-        {
-            next(arrayParamTransform);
-        }
-
         foreach (var meth in TransformToConstants(current, ctx, entryPoint))
         {
             // TODO more transformations
@@ -1732,86 +1727,6 @@ public partial class MixKhronosData(
                 )
                 : null;
         }
-    }
-
-    private MethodDeclarationSyntax? TransformArrayParameter(
-        MethodDeclarationSyntax decl,
-        ReadOnlySpan<char> name
-    )
-    {
-        // Ported from https://github.com/dotnet/Silk.NET/blob/0e8e0398/src/Core/Silk.NET.BuildTools/Overloading/Complex/ArrayParameterOverloader.cs#L32
-        // function has exactly two parameters
-        if (decl.ParameterList.Parameters.Count != 2)
-        {
-            return null;
-        }
-
-        // function's name starts with Delete
-        if (
-            name.IndexOfAnyInRange('A', 'Z') is not (> 0 and var firstCap)
-            || name.Length - firstCap <= 6
-            || name[firstCap..(firstCap + 6)] is not "Delete"
-        )
-        {
-            return null;
-        }
-
-        // returns void and the first parameter is an integer
-        if (
-            decl.ReturnType is not PredefinedTypeSyntax pt
-            || !pt.Keyword.IsKind(SyntaxKind.VoidKeyword)
-            || decl.ParameterList.Parameters[0].Type is not PredefinedTypeSyntax ptp0
-            || !ptp0.IsInteger()
-        )
-        {
-            return null;
-        }
-
-        // last parameter is a single dimensional pointer
-        if (decl.ParameterList.Parameters[1].Type?.GetPointerLikeElementType() is not { } element)
-        {
-            return null;
-        }
-
-        // TODO validate count
-
-        // rewrite the method
-        var rw = new TransformArrayParameterRewriter(
-            decl.ParameterList.Parameters[0].Identifier.ToString(),
-            decl.ParameterList.Parameters[1].Identifier.ToString(),
-            element
-        );
-        return decl.WithIdentifier(Identifier(decl.Identifier.ToString().Singularize(false)))
-            .WithBody(rw.Visit(decl.Body) as BlockSyntax)
-            .WithExpressionBody(rw.Visit(decl.ExpressionBody) as ArrowExpressionClauseSyntax)
-            .WithParameterList(
-                decl.ParameterList.WithParameters(
-                    SingletonSeparatedList(decl.ParameterList.Parameters[1].WithType(element))
-                )
-            );
-    }
-
-    class TransformArrayParameterRewriter(
-        string firstParam,
-        string secondParam,
-        TypeSyntax secondParamType
-    ) : CSharpSyntaxRewriter
-    {
-        public override SyntaxNode? VisitIdentifierName(IdentifierNameSyntax node) =>
-            node.Identifier.ToString() == secondParam
-                ? secondParamType is GenericNameSyntax gn
-                && gn.Identifier.ToString().StartsWith("Ref")
-                    ? InvocationExpression(
-                        MemberAccessExpression(
-                            SyntaxKind.SimpleMemberAccessExpression,
-                            node,
-                            IdentifierName($"As{gn.Identifier}")
-                        )
-                    )
-                    : PrefixUnaryExpression(SyntaxKind.AddressOfExpression, node)
-                : node.Identifier.ToString() == firstParam
-                    ? LiteralExpression(SyntaxKind.NumericLiteralExpression, Literal(1))
-                    : base.VisitIdentifierName(node);
     }
 
     /// <summary>
