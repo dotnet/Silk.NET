@@ -33,10 +33,8 @@ unsafe
 
     float[] vertices = { -0.5f, -0.5f, 0.0f, 0.5f, -0.5f, 0.0f, 0.0f, 0.5f, 0.0f };
 
-    uint vao = 0;
-    uint vbo = 0;
+    var vbo = GL.GenBuffer();
     GL.ClearColor(0.2f, 0.3f, 0.3f, 1.0f);
-    GL.GenBuffers(1, vbo.AsRef());
     GL.BindBuffer(BufferTarget.ArrayBuffer, vbo);
     GL.BufferData(
         BufferTarget.ArrayBuffer,
@@ -44,7 +42,8 @@ unsafe
         vertices[0].AsRef(), // TODO simplify this
         BufferUsage.StaticDraw
     );
-    GL.GenVertexArrays(1, vao.AsRef());
+
+    var vao = GL.GenVertexArray();
     GL.BindVertexArray(vao);
     GL.VertexAttribPointer(0, 3, VertexAttribPointerType.Float, false, 3 * sizeof(float), nullptr);
     GL.EnableVertexAttribArray(0);
@@ -88,6 +87,8 @@ unsafe
         Glfw.PollEvents();
     }
 
+    GL.DeleteVertexArray(vao);
+    GL.DeleteBuffer(vbo);
     Glfw.DestroyWindow(window);
     Glfw.Terminate();
 }

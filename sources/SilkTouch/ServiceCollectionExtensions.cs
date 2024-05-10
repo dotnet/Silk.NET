@@ -110,6 +110,7 @@ public static class ServiceCollectionExtensions
         services.AddSingleton<IInputSource, NuGetInputSource>();
         services.AddSingleton<IFunctionTransformer, PtrRefTransformer>();
         services.AddSingleton<IFunctionTransformer, BoolTransformer>();
+        services.AddSingleton<IFunctionTransformer, ArrayParameterTransformer>();
         services.TryAddSingleton<IInputResolver, UriBasedInputResolver>();
         if (OperatingSystem.IsWindows())
         {
