@@ -30,8 +30,19 @@ partial class Build {
                         CopyFile(xcFrameworkDir / "ios-arm64" / "libMoltenVK.a", runtimes / "ios" / "native" / "libMoltenVK.a", FileExistsPolicy.Overwrite);
                         CopyFile(xcFrameworkDir / "ios-arm64_x86_64-simulator" / "libMoltenVK.a", runtimes / "iossimulator" / "native"  / "libMoltenVK.a", FileExistsPolicy.Overwrite);
                         CopyFile(xcFrameworkDir / "ios-arm64_x86_64-maccatalyst" / "libMoltenVK.a", runtimes / "maccatalyst" / "native" / "libMoltenVK.a", FileExistsPolicy.Overwrite);
-                        CopyFile(MoltenVKPath / "Package" / "Release" / "MoltenVK" / "dynamic" / "dylib" / "macOS" / "libMoltenVK.dylib", runtimes / "osx" / "native" / "libMoltenVK.dylib", FileExistsPolicy.Overwrite);
+
+                        var macOsDylib = runtimes / "osx" / "native" / "libMoltenVK.dylib";
+
+                        CopyFile(MoltenVKPath / "Package" / "Release" / "MoltenVK" / "dynamic" / "dylib" / "macOS" / "libMoltenVK.dylib", macOsDylib, FileExistsPolicy.Overwrite);
                         CopyFile(MoltenVKPath / "Package" / "Release" / "MoltenVK" / "dynamic" / "dylib" / "macOS" / "MoltenVK_icd.json", runtimes / "osx" / "native" / "MoltenVK_icd.json", FileExistsPolicy.Overwrite);
+
+                        // Only strip the macOS binary since stripping static libraries is too involved, and
+                        // the final AOT'd binary can be stripped anyway.
+                        InheritedShell($"strip -Sx -no_code_signature_warning {macOsDylib}").AssertZeroExitCode();
+
+                        // Re-sign, as stripping a universal binary invalidates the signature.
+                        InheritedShell($"codesign --remove-signature {macOsDylib}").AssertZeroExitCode();
+                        InheritedShell($"codesign --sign - {macOsDylib}").AssertZeroExitCode();
                     }
 
                     PrUpdatedNativeBinary("MoltenVK");
