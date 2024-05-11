@@ -22,14 +22,16 @@ partial class Build {
                     {
                         var runtimes = RootDirectory / "src" / "Native" / "Silk.NET.MoltenVK.Native" / "runtimes";
 
-                        InheritedShell($"./fetchDependencies --ios --iossim --maccat --macos", MoltenVKPath).AssertZeroExitCode();
-                        InheritedShell($"make ios iossim maccat macos", MoltenVKPath).AssertZeroExitCode();
+                        InheritedShell($"./fetchDependencies --all", MoltenVKPath).AssertZeroExitCode();
+                        InheritedShell($"make", MoltenVKPath).AssertZeroExitCode();
 
                         var xcFrameworkDir = MoltenVKPath / "Package" / "Release" / "MoltenVK" / "static" / "MoltenVK.xcframework";
 
                         CopyFile(xcFrameworkDir / "ios-arm64" / "libMoltenVK.a", runtimes / "ios" / "native" / "libMoltenVK.a", FileExistsPolicy.Overwrite);
                         CopyFile(xcFrameworkDir / "ios-arm64_x86_64-simulator" / "libMoltenVK.a", runtimes / "iossimulator" / "native"  / "libMoltenVK.a", FileExistsPolicy.Overwrite);
                         CopyFile(xcFrameworkDir / "ios-arm64_x86_64-maccatalyst" / "libMoltenVK.a", runtimes / "maccatalyst" / "native" / "libMoltenVK.a", FileExistsPolicy.Overwrite);
+                        CopyFile(xcFrameworkDir / "tvos-arm64_arm64e" / "libMoltenVK.a", runtimes / "tvos" / "native" / "libMoltenVK.a", FileExistsPolicy.Overwrite);
+                        CopyFile(xcFrameworkDir / "tvos-arm64_x86_64-simulator" / "libMoltenVK.a", runtimes / "tvossimulator" / "native"  / "libMoltenVK.a", FileExistsPolicy.Overwrite);
 
                         var macOsDylib = runtimes / "osx" / "native" / "libMoltenVK.dylib";
 
