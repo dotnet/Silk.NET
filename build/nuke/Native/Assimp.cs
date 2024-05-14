@@ -39,7 +39,7 @@ partial class Build {
                     var buildDir = AssimpPath / "build";
                     var runtimes = RootDirectory / "src" / "Native" / "Silk.NET.Assimp.Native" / "runtimes";
 
-                    var prepare = "cmake .. -DCMAKE_BUILD_TYPE=Release -DBUILD_SHARED_LIBS=ON -DASSIMP_BUILD_DRACO_STATIC=ON -DASSIMP_WARNINGS_AS_ERRORS=OFF -DASSIMP_BUILD_TESTS=OFF";
+                    var prepare = "cmake .. -DCMAKE_BUILD_TYPE=Release -DBUILD_SHARED_LIBS=ON -DASSIMP_BUILD_DRACO_STATIC=ON -DASSIMP_BUILD_ZLIB=ON -DASSIMP_WARNINGS_AS_ERRORS=OFF -DASSIMP_BUILD_TESTS=OFF";
                     var build = $"cmake --build . --config Release{JobsArg}";
 
                     if (OperatingSystem.IsWindows())
