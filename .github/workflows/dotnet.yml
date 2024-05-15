@@ -10,6 +10,19 @@ permissions:
     pull-requests: write
     actions: write
 jobs:
+    Build:
+        runs-on: macos-latest
+        steps:
+            - uses: actions/checkout@v3
+            - name: Setup .NET
+              uses: actions/setup-dotnet@v3
+              with:
+                dotnet-version: '8.0.x'
+                dotnet-quality: 'preview'
+            - name: Restore
+              run: dotnet restore
+            - name: Pack
+              run: dotnet pack -c Release
     Test:
         strategy:
             fail-fast: false
@@ -21,9 +34,9 @@ jobs:
                     - rid: linux-x64
                       os: ubuntu-20.04
                       name: linux-x64
-                    - rid: osx-x64
+                    - rid: osx-arm64
                       os: macos-latest
-                      name: osx-x64
+                      name: osx-arm64
         runs-on: ${{ matrix.os }}
         steps:
             - uses: actions/checkout@v3
