@@ -111,200 +111,107 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Next(uint celt, void* rgeltSchema, void* rgeltId, void* rgeltValue, uint* pceltFetched)
+        public readonly unsafe int Next(uint celt, Silk.NET.Core.Win32Extras.PropVariant* rgeltSchema, Silk.NET.Core.Win32Extras.PropVariant* rgeltId, Silk.NET.Core.Win32Extras.PropVariant* rgeltValue, uint* pceltFetched)
         {
             var @this = (IWICEnumMetadataItem*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<IWICEnumMetadataItem*, uint, void*, void*, void*, uint*, int>)@this->LpVtbl[3])(@this, celt, rgeltSchema, rgeltId, rgeltValue, pceltFetched);
+            ret = ((delegate* unmanaged[Stdcall]<IWICEnumMetadataItem*, uint, Silk.NET.Core.Win32Extras.PropVariant*, Silk.NET.Core.Win32Extras.PropVariant*, Silk.NET.Core.Win32Extras.PropVariant*, uint*, int>)@this->LpVtbl[3])(@this, celt, rgeltSchema, rgeltId, rgeltValue, pceltFetched);
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Next(uint celt, void* rgeltSchema, void* rgeltId, void* rgeltValue, ref uint pceltFetched)
+        public readonly unsafe int Next(uint celt, Silk.NET.Core.Win32Extras.PropVariant* rgeltSchema, Silk.NET.Core.Win32Extras.PropVariant* rgeltId, Silk.NET.Core.Win32Extras.PropVariant* rgeltValue, ref uint pceltFetched)
         {
             var @this = (IWICEnumMetadataItem*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
             fixed (uint* pceltFetchedPtr = &pceltFetched)
             {
-                ret = ((delegate* unmanaged[Stdcall]<IWICEnumMetadataItem*, uint, void*, void*, void*, uint*, int>)@this->LpVtbl[3])(@this, celt, rgeltSchema, rgeltId, rgeltValue, pceltFetchedPtr);
+                ret = ((delegate* unmanaged[Stdcall]<IWICEnumMetadataItem*, uint, Silk.NET.Core.Win32Extras.PropVariant*, Silk.NET.Core.Win32Extras.PropVariant*, Silk.NET.Core.Win32Extras.PropVariant*, uint*, int>)@this->LpVtbl[3])(@this, celt, rgeltSchema, rgeltId, rgeltValue, pceltFetchedPtr);
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Next<T0>(uint celt, void* rgeltSchema, void* rgeltId, ref T0 rgeltValue, uint* pceltFetched) where T0 : unmanaged
+        public readonly unsafe int Next(uint celt, Silk.NET.Core.Win32Extras.PropVariant* rgeltSchema, Silk.NET.Core.Win32Extras.PropVariant* rgeltId, ref Silk.NET.Core.Win32Extras.PropVariant rgeltValue, uint* pceltFetched)
         {
             var @this = (IWICEnumMetadataItem*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            fixed (void* rgeltValuePtr = &rgeltValue)
+            fixed (Silk.NET.Core.Win32Extras.PropVariant* rgeltValuePtr = &rgeltValue)
             {
-                ret = ((delegate* unmanaged[Stdcall]<IWICEnumMetadataItem*, uint, void*, void*, void*, uint*, int>)@this->LpVtbl[3])(@this, celt, rgeltSchema, rgeltId, rgeltValuePtr, pceltFetched);
+                ret = ((delegate* unmanaged[Stdcall]<IWICEnumMetadataItem*, uint, Silk.NET.Core.Win32Extras.PropVariant*, Silk.NET.Core.Win32Extras.PropVariant*, Silk.NET.Core.Win32Extras.PropVariant*, uint*, int>)@this->LpVtbl[3])(@this, celt, rgeltSchema, rgeltId, rgeltValuePtr, pceltFetched);
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Next<T0>(uint celt, void* rgeltSchema, void* rgeltId, ref T0 rgeltValue, ref uint pceltFetched) where T0 : unmanaged
+        public readonly unsafe int Next(uint celt, Silk.NET.Core.Win32Extras.PropVariant* rgeltSchema, Silk.NET.Core.Win32Extras.PropVariant* rgeltId, ref Silk.NET.Core.Win32Extras.PropVariant rgeltValue, ref uint pceltFetched)
         {
             var @this = (IWICEnumMetadataItem*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            fixed (void* rgeltValuePtr = &rgeltValue)
-            {
-                fixed (uint* pceltFetchedPtr = &pceltFetched)
-                {
-                    ret = ((delegate* unmanaged[Stdcall]<IWICEnumMetadataItem*, uint, void*, void*, void*, uint*, int>)@this->LpVtbl[3])(@this, celt, rgeltSchema, rgeltId, rgeltValuePtr, pceltFetchedPtr);
-                }
-            }
-            return ret;
-        }
-
-        /// <summary>To be documented.</summary>
-        public readonly unsafe int Next<T0>(uint celt, void* rgeltSchema, ref T0 rgeltId, void* rgeltValue, uint* pceltFetched) where T0 : unmanaged
-        {
-            var @this = (IWICEnumMetadataItem*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            int ret = default;
-            fixed (void* rgeltIdPtr = &rgeltId)
-            {
-                ret = ((delegate* unmanaged[Stdcall]<IWICEnumMetadataItem*, uint, void*, void*, void*, uint*, int>)@this->LpVtbl[3])(@this, celt, rgeltSchema, rgeltIdPtr, rgeltValue, pceltFetched);
-            }
-            return ret;
-        }
-
-        /// <summary>To be documented.</summary>
-        public readonly unsafe int Next<T0>(uint celt, void* rgeltSchema, ref T0 rgeltId, void* rgeltValue, ref uint pceltFetched) where T0 : unmanaged
-        {
-            var @this = (IWICEnumMetadataItem*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            int ret = default;
-            fixed (void* rgeltIdPtr = &rgeltId)
+            fixed (Silk.NET.Core.Win32Extras.PropVariant* rgeltValuePtr = &rgeltValue)
             {
                 fixed (uint* pceltFetchedPtr = &pceltFetched)
                 {
-                    ret = ((delegate* unmanaged[Stdcall]<IWICEnumMetadataItem*, uint, void*, void*, void*, uint*, int>)@this->LpVtbl[3])(@this, celt, rgeltSchema, rgeltIdPtr, rgeltValue, pceltFetchedPtr);
+                    ret = ((delegate* unmanaged[Stdcall]<IWICEnumMetadataItem*, uint, Silk.NET.Core.Win32Extras.PropVariant*, Silk.NET.Core.Win32Extras.PropVariant*, Silk.NET.Core.Win32Extras.PropVariant*, uint*, int>)@this->LpVtbl[3])(@this, celt, rgeltSchema, rgeltId, rgeltValuePtr, pceltFetchedPtr);
                 }
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Next<T0, T1>(uint celt, void* rgeltSchema, ref T0 rgeltId, ref T1 rgeltValue, uint* pceltFetched) where T0 : unmanaged where T1 : unmanaged
+        public readonly unsafe int Next(uint celt, Silk.NET.Core.Win32Extras.PropVariant* rgeltSchema, ref Silk.NET.Core.Win32Extras.PropVariant rgeltId, Silk.NET.Core.Win32Extras.PropVariant* rgeltValue, uint* pceltFetched)
         {
             var @this = (IWICEnumMetadataItem*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            fixed (void* rgeltIdPtr = &rgeltId)
+            fixed (Silk.NET.Core.Win32Extras.PropVariant* rgeltIdPtr = &rgeltId)
             {
-                fixed (void* rgeltValuePtr = &rgeltValue)
-                {
-                    ret = ((delegate* unmanaged[Stdcall]<IWICEnumMetadataItem*, uint, void*, void*, void*, uint*, int>)@this->LpVtbl[3])(@this, celt, rgeltSchema, rgeltIdPtr, rgeltValuePtr, pceltFetched);
-                }
+                ret = ((delegate* unmanaged[Stdcall]<IWICEnumMetadataItem*, uint, Silk.NET.Core.Win32Extras.PropVariant*, Silk.NET.Core.Win32Extras.PropVariant*, Silk.NET.Core.Win32Extras.PropVariant*, uint*, int>)@this->LpVtbl[3])(@this, celt, rgeltSchema, rgeltIdPtr, rgeltValue, pceltFetched);
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Next<T0, T1>(uint celt, void* rgeltSchema, ref T0 rgeltId, ref T1 rgeltValue, ref uint pceltFetched) where T0 : unmanaged where T1 : unmanaged
+        public readonly unsafe int Next(uint celt, Silk.NET.Core.Win32Extras.PropVariant* rgeltSchema, ref Silk.NET.Core.Win32Extras.PropVariant rgeltId, Silk.NET.Core.Win32Extras.PropVariant* rgeltValue, ref uint pceltFetched)
         {
             var @this = (IWICEnumMetadataItem*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            fixed (void* rgeltIdPtr = &rgeltId)
-            {
-                fixed (void* rgeltValuePtr = &rgeltValue)
-                {
-                    fixed (uint* pceltFetchedPtr = &pceltFetched)
-                    {
-                        ret = ((delegate* unmanaged[Stdcall]<IWICEnumMetadataItem*, uint, void*, void*, void*, uint*, int>)@this->LpVtbl[3])(@this, celt, rgeltSchema, rgeltIdPtr, rgeltValuePtr, pceltFetchedPtr);
-                    }
-                }
-            }
-            return ret;
-        }
-
-        /// <summary>To be documented.</summary>
-        public readonly unsafe int Next<T0>(uint celt, ref T0 rgeltSchema, void* rgeltId, void* rgeltValue, uint* pceltFetched) where T0 : unmanaged
-        {
-            var @this = (IWICEnumMetadataItem*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            int ret = default;
-            fixed (void* rgeltSchemaPtr = &rgeltSchema)
-            {
-                ret = ((delegate* unmanaged[Stdcall]<IWICEnumMetadataItem*, uint, void*, void*, void*, uint*, int>)@this->LpVtbl[3])(@this, celt, rgeltSchemaPtr, rgeltId, rgeltValue, pceltFetched);
-            }
-            return ret;
-        }
-
-        /// <summary>To be documented.</summary>
-        public readonly unsafe int Next<T0>(uint celt, ref T0 rgeltSchema, void* rgeltId, void* rgeltValue, ref uint pceltFetched) where T0 : unmanaged
-        {
-            var @this = (IWICEnumMetadataItem*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            int ret = default;
-            fixed (void* rgeltSchemaPtr = &rgeltSchema)
+            fixed (Silk.NET.Core.Win32Extras.PropVariant* rgeltIdPtr = &rgeltId)
             {
                 fixed (uint* pceltFetchedPtr = &pceltFetched)
                 {
-                    ret = ((delegate* unmanaged[Stdcall]<IWICEnumMetadataItem*, uint, void*, void*, void*, uint*, int>)@this->LpVtbl[3])(@this, celt, rgeltSchemaPtr, rgeltId, rgeltValue, pceltFetchedPtr);
+                    ret = ((delegate* unmanaged[Stdcall]<IWICEnumMetadataItem*, uint, Silk.NET.Core.Win32Extras.PropVariant*, Silk.NET.Core.Win32Extras.PropVariant*, Silk.NET.Core.Win32Extras.PropVariant*, uint*, int>)@this->LpVtbl[3])(@this, celt, rgeltSchema, rgeltIdPtr, rgeltValue, pceltFetchedPtr);
                 }
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Next<T0, T1>(uint celt, ref T0 rgeltSchema, void* rgeltId, ref T1 rgeltValue, uint* pceltFetched) where T0 : unmanaged where T1 : unmanaged
+        public readonly unsafe int Next(uint celt, Silk.NET.Core.Win32Extras.PropVariant* rgeltSchema, ref Silk.NET.Core.Win32Extras.PropVariant rgeltId, ref Silk.NET.Core.Win32Extras.PropVariant rgeltValue, uint* pceltFetched)
         {
             var @this = (IWICEnumMetadataItem*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            fixed (void* rgeltSchemaPtr = &rgeltSchema)
+            fixed (Silk.NET.Core.Win32Extras.PropVariant* rgeltIdPtr = &rgeltId)
             {
-                fixed (void* rgeltValuePtr = &rgeltValue)
+                fixed (Silk.NET.Core.Win32Extras.PropVariant* rgeltValuePtr = &rgeltValue)
                 {
-                    ret = ((delegate* unmanaged[Stdcall]<IWICEnumMetadataItem*, uint, void*, void*, void*, uint*, int>)@this->LpVtbl[3])(@this, celt, rgeltSchemaPtr, rgeltId, rgeltValuePtr, pceltFetched);
+                    ret = ((delegate* unmanaged[Stdcall]<IWICEnumMetadataItem*, uint, Silk.NET.Core.Win32Extras.PropVariant*, Silk.NET.Core.Win32Extras.PropVariant*, Silk.NET.Core.Win32Extras.PropVariant*, uint*, int>)@this->LpVtbl[3])(@this, celt, rgeltSchema, rgeltIdPtr, rgeltValuePtr, pceltFetched);
                 }
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Next<T0, T1>(uint celt, ref T0 rgeltSchema, void* rgeltId, ref T1 rgeltValue, ref uint pceltFetched) where T0 : unmanaged where T1 : unmanaged
+        public readonly unsafe int Next(uint celt, Silk.NET.Core.Win32Extras.PropVariant* rgeltSchema, ref Silk.NET.Core.Win32Extras.PropVariant rgeltId, ref Silk.NET.Core.Win32Extras.PropVariant rgeltValue, ref uint pceltFetched)
         {
             var @this = (IWICEnumMetadataItem*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            fixed (void* rgeltSchemaPtr = &rgeltSchema)
+            fixed (Silk.NET.Core.Win32Extras.PropVariant* rgeltIdPtr = &rgeltId)
             {
-                fixed (void* rgeltValuePtr = &rgeltValue)
-                {
-                    fixed (uint* pceltFetchedPtr = &pceltFetched)
-                    {
-                        ret = ((delegate* unmanaged[Stdcall]<IWICEnumMetadataItem*, uint, void*, void*, void*, uint*, int>)@this->LpVtbl[3])(@this, celt, rgeltSchemaPtr, rgeltId, rgeltValuePtr, pceltFetchedPtr);
-                    }
-                }
-            }
-            return ret;
-        }
-
-        /// <summary>To be documented.</summary>
-        public readonly unsafe int Next<T0, T1>(uint celt, ref T0 rgeltSchema, ref T1 rgeltId, void* rgeltValue, uint* pceltFetched) where T0 : unmanaged where T1 : unmanaged
-        {
-            var @this = (IWICEnumMetadataItem*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            int ret = default;
-            fixed (void* rgeltSchemaPtr = &rgeltSchema)
-            {
-                fixed (void* rgeltIdPtr = &rgeltId)
-                {
-                    ret = ((delegate* unmanaged[Stdcall]<IWICEnumMetadataItem*, uint, void*, void*, void*, uint*, int>)@this->LpVtbl[3])(@this, celt, rgeltSchemaPtr, rgeltIdPtr, rgeltValue, pceltFetched);
-                }
-            }
-            return ret;
-        }
-
-        /// <summary>To be documented.</summary>
-        public readonly unsafe int Next<T0, T1>(uint celt, ref T0 rgeltSchema, ref T1 rgeltId, void* rgeltValue, ref uint pceltFetched) where T0 : unmanaged where T1 : unmanaged
-        {
-            var @this = (IWICEnumMetadataItem*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            int ret = default;
-            fixed (void* rgeltSchemaPtr = &rgeltSchema)
-            {
-                fixed (void* rgeltIdPtr = &rgeltId)
+                fixed (Silk.NET.Core.Win32Extras.PropVariant* rgeltValuePtr = &rgeltValue)
                 {
                     fixed (uint* pceltFetchedPtr = &pceltFetched)
                     {
-                        ret = ((delegate* unmanaged[Stdcall]<IWICEnumMetadataItem*, uint, void*, void*, void*, uint*, int>)@this->LpVtbl[3])(@this, celt, rgeltSchemaPtr, rgeltIdPtr, rgeltValue, pceltFetchedPtr);
+                        ret = ((delegate* unmanaged[Stdcall]<IWICEnumMetadataItem*, uint, Silk.NET.Core.Win32Extras.PropVariant*, Silk.NET.Core.Win32Extras.PropVariant*, Silk.NET.Core.Win32Extras.PropVariant*, uint*, int>)@this->LpVtbl[3])(@this, celt, rgeltSchema, rgeltIdPtr, rgeltValuePtr, pceltFetchedPtr);
                     }
                 }
             }
@@ -312,17 +219,59 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Next<T0, T1, T2>(uint celt, ref T0 rgeltSchema, ref T1 rgeltId, ref T2 rgeltValue, uint* pceltFetched) where T0 : unmanaged where T1 : unmanaged where T2 : unmanaged
+        public readonly unsafe int Next(uint celt, ref Silk.NET.Core.Win32Extras.PropVariant rgeltSchema, Silk.NET.Core.Win32Extras.PropVariant* rgeltId, Silk.NET.Core.Win32Extras.PropVariant* rgeltValue, uint* pceltFetched)
         {
             var @this = (IWICEnumMetadataItem*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            fixed (void* rgeltSchemaPtr = &rgeltSchema)
+            fixed (Silk.NET.Core.Win32Extras.PropVariant* rgeltSchemaPtr = &rgeltSchema)
             {
-                fixed (void* rgeltIdPtr = &rgeltId)
+                ret = ((delegate* unmanaged[Stdcall]<IWICEnumMetadataItem*, uint, Silk.NET.Core.Win32Extras.PropVariant*, Silk.NET.Core.Win32Extras.PropVariant*, Silk.NET.Core.Win32Extras.PropVariant*, uint*, int>)@this->LpVtbl[3])(@this, celt, rgeltSchemaPtr, rgeltId, rgeltValue, pceltFetched);
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int Next(uint celt, ref Silk.NET.Core.Win32Extras.PropVariant rgeltSchema, Silk.NET.Core.Win32Extras.PropVariant* rgeltId, Silk.NET.Core.Win32Extras.PropVariant* rgeltValue, ref uint pceltFetched)
+        {
+            var @this = (IWICEnumMetadataItem*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (Silk.NET.Core.Win32Extras.PropVariant* rgeltSchemaPtr = &rgeltSchema)
+            {
+                fixed (uint* pceltFetchedPtr = &pceltFetched)
                 {
-                    fixed (void* rgeltValuePtr = &rgeltValue)
+                    ret = ((delegate* unmanaged[Stdcall]<IWICEnumMetadataItem*, uint, Silk.NET.Core.Win32Extras.PropVariant*, Silk.NET.Core.Win32Extras.PropVariant*, Silk.NET.Core.Win32Extras.PropVariant*, uint*, int>)@this->LpVtbl[3])(@this, celt, rgeltSchemaPtr, rgeltId, rgeltValue, pceltFetchedPtr);
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int Next(uint celt, ref Silk.NET.Core.Win32Extras.PropVariant rgeltSchema, Silk.NET.Core.Win32Extras.PropVariant* rgeltId, ref Silk.NET.Core.Win32Extras.PropVariant rgeltValue, uint* pceltFetched)
+        {
+            var @this = (IWICEnumMetadataItem*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (Silk.NET.Core.Win32Extras.PropVariant* rgeltSchemaPtr = &rgeltSchema)
+            {
+                fixed (Silk.NET.Core.Win32Extras.PropVariant* rgeltValuePtr = &rgeltValue)
+                {
+                    ret = ((delegate* unmanaged[Stdcall]<IWICEnumMetadataItem*, uint, Silk.NET.Core.Win32Extras.PropVariant*, Silk.NET.Core.Win32Extras.PropVariant*, Silk.NET.Core.Win32Extras.PropVariant*, uint*, int>)@this->LpVtbl[3])(@this, celt, rgeltSchemaPtr, rgeltId, rgeltValuePtr, pceltFetched);
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int Next(uint celt, ref Silk.NET.Core.Win32Extras.PropVariant rgeltSchema, Silk.NET.Core.Win32Extras.PropVariant* rgeltId, ref Silk.NET.Core.Win32Extras.PropVariant rgeltValue, ref uint pceltFetched)
+        {
+            var @this = (IWICEnumMetadataItem*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (Silk.NET.Core.Win32Extras.PropVariant* rgeltSchemaPtr = &rgeltSchema)
+            {
+                fixed (Silk.NET.Core.Win32Extras.PropVariant* rgeltValuePtr = &rgeltValue)
+                {
+                    fixed (uint* pceltFetchedPtr = &pceltFetched)
                     {
-                        ret = ((delegate* unmanaged[Stdcall]<IWICEnumMetadataItem*, uint, void*, void*, void*, uint*, int>)@this->LpVtbl[3])(@this, celt, rgeltSchemaPtr, rgeltIdPtr, rgeltValuePtr, pceltFetched);
+                        ret = ((delegate* unmanaged[Stdcall]<IWICEnumMetadataItem*, uint, Silk.NET.Core.Win32Extras.PropVariant*, Silk.NET.Core.Win32Extras.PropVariant*, Silk.NET.Core.Win32Extras.PropVariant*, uint*, int>)@this->LpVtbl[3])(@this, celt, rgeltSchemaPtr, rgeltId, rgeltValuePtr, pceltFetchedPtr);
                     }
                 }
             }
@@ -330,19 +279,70 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int Next<T0, T1, T2>(uint celt, ref T0 rgeltSchema, ref T1 rgeltId, ref T2 rgeltValue, ref uint pceltFetched) where T0 : unmanaged where T1 : unmanaged where T2 : unmanaged
+        public readonly unsafe int Next(uint celt, ref Silk.NET.Core.Win32Extras.PropVariant rgeltSchema, ref Silk.NET.Core.Win32Extras.PropVariant rgeltId, Silk.NET.Core.Win32Extras.PropVariant* rgeltValue, uint* pceltFetched)
         {
             var @this = (IWICEnumMetadataItem*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            fixed (void* rgeltSchemaPtr = &rgeltSchema)
+            fixed (Silk.NET.Core.Win32Extras.PropVariant* rgeltSchemaPtr = &rgeltSchema)
             {
-                fixed (void* rgeltIdPtr = &rgeltId)
+                fixed (Silk.NET.Core.Win32Extras.PropVariant* rgeltIdPtr = &rgeltId)
                 {
-                    fixed (void* rgeltValuePtr = &rgeltValue)
+                    ret = ((delegate* unmanaged[Stdcall]<IWICEnumMetadataItem*, uint, Silk.NET.Core.Win32Extras.PropVariant*, Silk.NET.Core.Win32Extras.PropVariant*, Silk.NET.Core.Win32Extras.PropVariant*, uint*, int>)@this->LpVtbl[3])(@this, celt, rgeltSchemaPtr, rgeltIdPtr, rgeltValue, pceltFetched);
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int Next(uint celt, ref Silk.NET.Core.Win32Extras.PropVariant rgeltSchema, ref Silk.NET.Core.Win32Extras.PropVariant rgeltId, Silk.NET.Core.Win32Extras.PropVariant* rgeltValue, ref uint pceltFetched)
+        {
+            var @this = (IWICEnumMetadataItem*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (Silk.NET.Core.Win32Extras.PropVariant* rgeltSchemaPtr = &rgeltSchema)
+            {
+                fixed (Silk.NET.Core.Win32Extras.PropVariant* rgeltIdPtr = &rgeltId)
+                {
+                    fixed (uint* pceltFetchedPtr = &pceltFetched)
+                    {
+                        ret = ((delegate* unmanaged[Stdcall]<IWICEnumMetadataItem*, uint, Silk.NET.Core.Win32Extras.PropVariant*, Silk.NET.Core.Win32Extras.PropVariant*, Silk.NET.Core.Win32Extras.PropVariant*, uint*, int>)@this->LpVtbl[3])(@this, celt, rgeltSchemaPtr, rgeltIdPtr, rgeltValue, pceltFetchedPtr);
+                    }
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int Next(uint celt, ref Silk.NET.Core.Win32Extras.PropVariant rgeltSchema, ref Silk.NET.Core.Win32Extras.PropVariant rgeltId, ref Silk.NET.Core.Win32Extras.PropVariant rgeltValue, uint* pceltFetched)
+        {
+            var @this = (IWICEnumMetadataItem*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (Silk.NET.Core.Win32Extras.PropVariant* rgeltSchemaPtr = &rgeltSchema)
+            {
+                fixed (Silk.NET.Core.Win32Extras.PropVariant* rgeltIdPtr = &rgeltId)
+                {
+                    fixed (Silk.NET.Core.Win32Extras.PropVariant* rgeltValuePtr = &rgeltValue)
+                    {
+                        ret = ((delegate* unmanaged[Stdcall]<IWICEnumMetadataItem*, uint, Silk.NET.Core.Win32Extras.PropVariant*, Silk.NET.Core.Win32Extras.PropVariant*, Silk.NET.Core.Win32Extras.PropVariant*, uint*, int>)@this->LpVtbl[3])(@this, celt, rgeltSchemaPtr, rgeltIdPtr, rgeltValuePtr, pceltFetched);
+                    }
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly int Next(uint celt, ref Silk.NET.Core.Win32Extras.PropVariant rgeltSchema, ref Silk.NET.Core.Win32Extras.PropVariant rgeltId, ref Silk.NET.Core.Win32Extras.PropVariant rgeltValue, ref uint pceltFetched)
+        {
+            var @this = (IWICEnumMetadataItem*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (Silk.NET.Core.Win32Extras.PropVariant* rgeltSchemaPtr = &rgeltSchema)
+            {
+                fixed (Silk.NET.Core.Win32Extras.PropVariant* rgeltIdPtr = &rgeltId)
+                {
+                    fixed (Silk.NET.Core.Win32Extras.PropVariant* rgeltValuePtr = &rgeltValue)
                     {
                         fixed (uint* pceltFetchedPtr = &pceltFetched)
                         {
-                            ret = ((delegate* unmanaged[Stdcall]<IWICEnumMetadataItem*, uint, void*, void*, void*, uint*, int>)@this->LpVtbl[3])(@this, celt, rgeltSchemaPtr, rgeltIdPtr, rgeltValuePtr, pceltFetchedPtr);
+                            ret = ((delegate* unmanaged[Stdcall]<IWICEnumMetadataItem*, uint, Silk.NET.Core.Win32Extras.PropVariant*, Silk.NET.Core.Win32Extras.PropVariant*, Silk.NET.Core.Win32Extras.PropVariant*, uint*, int>)@this->LpVtbl[3])(@this, celt, rgeltSchemaPtr, rgeltIdPtr, rgeltValuePtr, pceltFetchedPtr);
                         }
                     }
                 }

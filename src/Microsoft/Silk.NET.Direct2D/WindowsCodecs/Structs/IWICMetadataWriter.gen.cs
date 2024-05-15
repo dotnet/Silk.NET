@@ -177,107 +177,107 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetValueByIndex(uint nIndex, void* pvarSchema, void* pvarId, void* pvarValue)
+        public readonly unsafe int GetValueByIndex(uint nIndex, Silk.NET.Core.Win32Extras.PropVariant* pvarSchema, Silk.NET.Core.Win32Extras.PropVariant* pvarId, Silk.NET.Core.Win32Extras.PropVariant* pvarValue)
         {
             var @this = (IWICMetadataWriter*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<IWICMetadataWriter*, uint, void*, void*, void*, int>)@this->LpVtbl[6])(@this, nIndex, pvarSchema, pvarId, pvarValue);
+            ret = ((delegate* unmanaged[Stdcall]<IWICMetadataWriter*, uint, Silk.NET.Core.Win32Extras.PropVariant*, Silk.NET.Core.Win32Extras.PropVariant*, Silk.NET.Core.Win32Extras.PropVariant*, int>)@this->LpVtbl[6])(@this, nIndex, pvarSchema, pvarId, pvarValue);
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetValueByIndex<T0>(uint nIndex, void* pvarSchema, void* pvarId, ref T0 pvarValue) where T0 : unmanaged
+        public readonly unsafe int GetValueByIndex(uint nIndex, Silk.NET.Core.Win32Extras.PropVariant* pvarSchema, Silk.NET.Core.Win32Extras.PropVariant* pvarId, ref Silk.NET.Core.Win32Extras.PropVariant pvarValue)
         {
             var @this = (IWICMetadataWriter*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            fixed (void* pvarValuePtr = &pvarValue)
+            fixed (Silk.NET.Core.Win32Extras.PropVariant* pvarValuePtr = &pvarValue)
             {
-                ret = ((delegate* unmanaged[Stdcall]<IWICMetadataWriter*, uint, void*, void*, void*, int>)@this->LpVtbl[6])(@this, nIndex, pvarSchema, pvarId, pvarValuePtr);
+                ret = ((delegate* unmanaged[Stdcall]<IWICMetadataWriter*, uint, Silk.NET.Core.Win32Extras.PropVariant*, Silk.NET.Core.Win32Extras.PropVariant*, Silk.NET.Core.Win32Extras.PropVariant*, int>)@this->LpVtbl[6])(@this, nIndex, pvarSchema, pvarId, pvarValuePtr);
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetValueByIndex<T0>(uint nIndex, void* pvarSchema, ref T0 pvarId, void* pvarValue) where T0 : unmanaged
+        public readonly unsafe int GetValueByIndex(uint nIndex, Silk.NET.Core.Win32Extras.PropVariant* pvarSchema, ref Silk.NET.Core.Win32Extras.PropVariant pvarId, Silk.NET.Core.Win32Extras.PropVariant* pvarValue)
         {
             var @this = (IWICMetadataWriter*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            fixed (void* pvarIdPtr = &pvarId)
+            fixed (Silk.NET.Core.Win32Extras.PropVariant* pvarIdPtr = &pvarId)
             {
-                ret = ((delegate* unmanaged[Stdcall]<IWICMetadataWriter*, uint, void*, void*, void*, int>)@this->LpVtbl[6])(@this, nIndex, pvarSchema, pvarIdPtr, pvarValue);
+                ret = ((delegate* unmanaged[Stdcall]<IWICMetadataWriter*, uint, Silk.NET.Core.Win32Extras.PropVariant*, Silk.NET.Core.Win32Extras.PropVariant*, Silk.NET.Core.Win32Extras.PropVariant*, int>)@this->LpVtbl[6])(@this, nIndex, pvarSchema, pvarIdPtr, pvarValue);
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetValueByIndex<T0, T1>(uint nIndex, void* pvarSchema, ref T0 pvarId, ref T1 pvarValue) where T0 : unmanaged where T1 : unmanaged
+        public readonly unsafe int GetValueByIndex(uint nIndex, Silk.NET.Core.Win32Extras.PropVariant* pvarSchema, ref Silk.NET.Core.Win32Extras.PropVariant pvarId, ref Silk.NET.Core.Win32Extras.PropVariant pvarValue)
         {
             var @this = (IWICMetadataWriter*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            fixed (void* pvarIdPtr = &pvarId)
+            fixed (Silk.NET.Core.Win32Extras.PropVariant* pvarIdPtr = &pvarId)
             {
-                fixed (void* pvarValuePtr = &pvarValue)
+                fixed (Silk.NET.Core.Win32Extras.PropVariant* pvarValuePtr = &pvarValue)
                 {
-                    ret = ((delegate* unmanaged[Stdcall]<IWICMetadataWriter*, uint, void*, void*, void*, int>)@this->LpVtbl[6])(@this, nIndex, pvarSchema, pvarIdPtr, pvarValuePtr);
+                    ret = ((delegate* unmanaged[Stdcall]<IWICMetadataWriter*, uint, Silk.NET.Core.Win32Extras.PropVariant*, Silk.NET.Core.Win32Extras.PropVariant*, Silk.NET.Core.Win32Extras.PropVariant*, int>)@this->LpVtbl[6])(@this, nIndex, pvarSchema, pvarIdPtr, pvarValuePtr);
                 }
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetValueByIndex<T0>(uint nIndex, ref T0 pvarSchema, void* pvarId, void* pvarValue) where T0 : unmanaged
+        public readonly unsafe int GetValueByIndex(uint nIndex, ref Silk.NET.Core.Win32Extras.PropVariant pvarSchema, Silk.NET.Core.Win32Extras.PropVariant* pvarId, Silk.NET.Core.Win32Extras.PropVariant* pvarValue)
         {
             var @this = (IWICMetadataWriter*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            fixed (void* pvarSchemaPtr = &pvarSchema)
+            fixed (Silk.NET.Core.Win32Extras.PropVariant* pvarSchemaPtr = &pvarSchema)
             {
-                ret = ((delegate* unmanaged[Stdcall]<IWICMetadataWriter*, uint, void*, void*, void*, int>)@this->LpVtbl[6])(@this, nIndex, pvarSchemaPtr, pvarId, pvarValue);
+                ret = ((delegate* unmanaged[Stdcall]<IWICMetadataWriter*, uint, Silk.NET.Core.Win32Extras.PropVariant*, Silk.NET.Core.Win32Extras.PropVariant*, Silk.NET.Core.Win32Extras.PropVariant*, int>)@this->LpVtbl[6])(@this, nIndex, pvarSchemaPtr, pvarId, pvarValue);
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetValueByIndex<T0, T1>(uint nIndex, ref T0 pvarSchema, void* pvarId, ref T1 pvarValue) where T0 : unmanaged where T1 : unmanaged
+        public readonly unsafe int GetValueByIndex(uint nIndex, ref Silk.NET.Core.Win32Extras.PropVariant pvarSchema, Silk.NET.Core.Win32Extras.PropVariant* pvarId, ref Silk.NET.Core.Win32Extras.PropVariant pvarValue)
         {
             var @this = (IWICMetadataWriter*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            fixed (void* pvarSchemaPtr = &pvarSchema)
+            fixed (Silk.NET.Core.Win32Extras.PropVariant* pvarSchemaPtr = &pvarSchema)
             {
-                fixed (void* pvarValuePtr = &pvarValue)
+                fixed (Silk.NET.Core.Win32Extras.PropVariant* pvarValuePtr = &pvarValue)
                 {
-                    ret = ((delegate* unmanaged[Stdcall]<IWICMetadataWriter*, uint, void*, void*, void*, int>)@this->LpVtbl[6])(@this, nIndex, pvarSchemaPtr, pvarId, pvarValuePtr);
+                    ret = ((delegate* unmanaged[Stdcall]<IWICMetadataWriter*, uint, Silk.NET.Core.Win32Extras.PropVariant*, Silk.NET.Core.Win32Extras.PropVariant*, Silk.NET.Core.Win32Extras.PropVariant*, int>)@this->LpVtbl[6])(@this, nIndex, pvarSchemaPtr, pvarId, pvarValuePtr);
                 }
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetValueByIndex<T0, T1>(uint nIndex, ref T0 pvarSchema, ref T1 pvarId, void* pvarValue) where T0 : unmanaged where T1 : unmanaged
+        public readonly unsafe int GetValueByIndex(uint nIndex, ref Silk.NET.Core.Win32Extras.PropVariant pvarSchema, ref Silk.NET.Core.Win32Extras.PropVariant pvarId, Silk.NET.Core.Win32Extras.PropVariant* pvarValue)
         {
             var @this = (IWICMetadataWriter*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            fixed (void* pvarSchemaPtr = &pvarSchema)
+            fixed (Silk.NET.Core.Win32Extras.PropVariant* pvarSchemaPtr = &pvarSchema)
             {
-                fixed (void* pvarIdPtr = &pvarId)
+                fixed (Silk.NET.Core.Win32Extras.PropVariant* pvarIdPtr = &pvarId)
                 {
-                    ret = ((delegate* unmanaged[Stdcall]<IWICMetadataWriter*, uint, void*, void*, void*, int>)@this->LpVtbl[6])(@this, nIndex, pvarSchemaPtr, pvarIdPtr, pvarValue);
+                    ret = ((delegate* unmanaged[Stdcall]<IWICMetadataWriter*, uint, Silk.NET.Core.Win32Extras.PropVariant*, Silk.NET.Core.Win32Extras.PropVariant*, Silk.NET.Core.Win32Extras.PropVariant*, int>)@this->LpVtbl[6])(@this, nIndex, pvarSchemaPtr, pvarIdPtr, pvarValue);
                 }
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int GetValueByIndex<T0, T1, T2>(uint nIndex, ref T0 pvarSchema, ref T1 pvarId, ref T2 pvarValue) where T0 : unmanaged where T1 : unmanaged where T2 : unmanaged
+        public readonly int GetValueByIndex(uint nIndex, ref Silk.NET.Core.Win32Extras.PropVariant pvarSchema, ref Silk.NET.Core.Win32Extras.PropVariant pvarId, ref Silk.NET.Core.Win32Extras.PropVariant pvarValue)
         {
             var @this = (IWICMetadataWriter*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            fixed (void* pvarSchemaPtr = &pvarSchema)
+            fixed (Silk.NET.Core.Win32Extras.PropVariant* pvarSchemaPtr = &pvarSchema)
             {
-                fixed (void* pvarIdPtr = &pvarId)
+                fixed (Silk.NET.Core.Win32Extras.PropVariant* pvarIdPtr = &pvarId)
                 {
-                    fixed (void* pvarValuePtr = &pvarValue)
+                    fixed (Silk.NET.Core.Win32Extras.PropVariant* pvarValuePtr = &pvarValue)
                     {
-                        ret = ((delegate* unmanaged[Stdcall]<IWICMetadataWriter*, uint, void*, void*, void*, int>)@this->LpVtbl[6])(@this, nIndex, pvarSchemaPtr, pvarIdPtr, pvarValuePtr);
+                        ret = ((delegate* unmanaged[Stdcall]<IWICMetadataWriter*, uint, Silk.NET.Core.Win32Extras.PropVariant*, Silk.NET.Core.Win32Extras.PropVariant*, Silk.NET.Core.Win32Extras.PropVariant*, int>)@this->LpVtbl[6])(@this, nIndex, pvarSchemaPtr, pvarIdPtr, pvarValuePtr);
                     }
                 }
             }
@@ -285,107 +285,107 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetValue([Flow(Silk.NET.Core.Native.FlowDirection.In)] void* pvarSchema, [Flow(Silk.NET.Core.Native.FlowDirection.In)] void* pvarId, void* pvarValue)
+        public readonly unsafe int GetValue([Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Core.Win32Extras.PropVariant* pvarSchema, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Core.Win32Extras.PropVariant* pvarId, Silk.NET.Core.Win32Extras.PropVariant* pvarValue)
         {
             var @this = (IWICMetadataWriter*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<IWICMetadataWriter*, void*, void*, void*, int>)@this->LpVtbl[7])(@this, pvarSchema, pvarId, pvarValue);
+            ret = ((delegate* unmanaged[Stdcall]<IWICMetadataWriter*, Silk.NET.Core.Win32Extras.PropVariant*, Silk.NET.Core.Win32Extras.PropVariant*, Silk.NET.Core.Win32Extras.PropVariant*, int>)@this->LpVtbl[7])(@this, pvarSchema, pvarId, pvarValue);
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetValue<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] void* pvarSchema, [Flow(Silk.NET.Core.Native.FlowDirection.In)] void* pvarId, ref T0 pvarValue) where T0 : unmanaged
+        public readonly unsafe int GetValue([Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Core.Win32Extras.PropVariant* pvarSchema, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Core.Win32Extras.PropVariant* pvarId, ref Silk.NET.Core.Win32Extras.PropVariant pvarValue)
         {
             var @this = (IWICMetadataWriter*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            fixed (void* pvarValuePtr = &pvarValue)
+            fixed (Silk.NET.Core.Win32Extras.PropVariant* pvarValuePtr = &pvarValue)
             {
-                ret = ((delegate* unmanaged[Stdcall]<IWICMetadataWriter*, void*, void*, void*, int>)@this->LpVtbl[7])(@this, pvarSchema, pvarId, pvarValuePtr);
+                ret = ((delegate* unmanaged[Stdcall]<IWICMetadataWriter*, Silk.NET.Core.Win32Extras.PropVariant*, Silk.NET.Core.Win32Extras.PropVariant*, Silk.NET.Core.Win32Extras.PropVariant*, int>)@this->LpVtbl[7])(@this, pvarSchema, pvarId, pvarValuePtr);
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetValue<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] void* pvarSchema, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in T0 pvarId, void* pvarValue) where T0 : unmanaged
+        public readonly unsafe int GetValue([Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Core.Win32Extras.PropVariant* pvarSchema, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Core.Win32Extras.PropVariant pvarId, Silk.NET.Core.Win32Extras.PropVariant* pvarValue)
         {
             var @this = (IWICMetadataWriter*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            fixed (void* pvarIdPtr = &pvarId)
+            fixed (Silk.NET.Core.Win32Extras.PropVariant* pvarIdPtr = &pvarId)
             {
-                ret = ((delegate* unmanaged[Stdcall]<IWICMetadataWriter*, void*, void*, void*, int>)@this->LpVtbl[7])(@this, pvarSchema, pvarIdPtr, pvarValue);
+                ret = ((delegate* unmanaged[Stdcall]<IWICMetadataWriter*, Silk.NET.Core.Win32Extras.PropVariant*, Silk.NET.Core.Win32Extras.PropVariant*, Silk.NET.Core.Win32Extras.PropVariant*, int>)@this->LpVtbl[7])(@this, pvarSchema, pvarIdPtr, pvarValue);
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetValue<T0, T1>([Flow(Silk.NET.Core.Native.FlowDirection.In)] void* pvarSchema, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in T0 pvarId, ref T1 pvarValue) where T0 : unmanaged where T1 : unmanaged
+        public readonly unsafe int GetValue([Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Core.Win32Extras.PropVariant* pvarSchema, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Core.Win32Extras.PropVariant pvarId, ref Silk.NET.Core.Win32Extras.PropVariant pvarValue)
         {
             var @this = (IWICMetadataWriter*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            fixed (void* pvarIdPtr = &pvarId)
+            fixed (Silk.NET.Core.Win32Extras.PropVariant* pvarIdPtr = &pvarId)
             {
-                fixed (void* pvarValuePtr = &pvarValue)
+                fixed (Silk.NET.Core.Win32Extras.PropVariant* pvarValuePtr = &pvarValue)
                 {
-                    ret = ((delegate* unmanaged[Stdcall]<IWICMetadataWriter*, void*, void*, void*, int>)@this->LpVtbl[7])(@this, pvarSchema, pvarIdPtr, pvarValuePtr);
+                    ret = ((delegate* unmanaged[Stdcall]<IWICMetadataWriter*, Silk.NET.Core.Win32Extras.PropVariant*, Silk.NET.Core.Win32Extras.PropVariant*, Silk.NET.Core.Win32Extras.PropVariant*, int>)@this->LpVtbl[7])(@this, pvarSchema, pvarIdPtr, pvarValuePtr);
                 }
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetValue<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in T0 pvarSchema, [Flow(Silk.NET.Core.Native.FlowDirection.In)] void* pvarId, void* pvarValue) where T0 : unmanaged
+        public readonly unsafe int GetValue([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Core.Win32Extras.PropVariant pvarSchema, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Core.Win32Extras.PropVariant* pvarId, Silk.NET.Core.Win32Extras.PropVariant* pvarValue)
         {
             var @this = (IWICMetadataWriter*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            fixed (void* pvarSchemaPtr = &pvarSchema)
+            fixed (Silk.NET.Core.Win32Extras.PropVariant* pvarSchemaPtr = &pvarSchema)
             {
-                ret = ((delegate* unmanaged[Stdcall]<IWICMetadataWriter*, void*, void*, void*, int>)@this->LpVtbl[7])(@this, pvarSchemaPtr, pvarId, pvarValue);
+                ret = ((delegate* unmanaged[Stdcall]<IWICMetadataWriter*, Silk.NET.Core.Win32Extras.PropVariant*, Silk.NET.Core.Win32Extras.PropVariant*, Silk.NET.Core.Win32Extras.PropVariant*, int>)@this->LpVtbl[7])(@this, pvarSchemaPtr, pvarId, pvarValue);
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetValue<T0, T1>([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in T0 pvarSchema, [Flow(Silk.NET.Core.Native.FlowDirection.In)] void* pvarId, ref T1 pvarValue) where T0 : unmanaged where T1 : unmanaged
+        public readonly unsafe int GetValue([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Core.Win32Extras.PropVariant pvarSchema, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Core.Win32Extras.PropVariant* pvarId, ref Silk.NET.Core.Win32Extras.PropVariant pvarValue)
         {
             var @this = (IWICMetadataWriter*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            fixed (void* pvarSchemaPtr = &pvarSchema)
+            fixed (Silk.NET.Core.Win32Extras.PropVariant* pvarSchemaPtr = &pvarSchema)
             {
-                fixed (void* pvarValuePtr = &pvarValue)
+                fixed (Silk.NET.Core.Win32Extras.PropVariant* pvarValuePtr = &pvarValue)
                 {
-                    ret = ((delegate* unmanaged[Stdcall]<IWICMetadataWriter*, void*, void*, void*, int>)@this->LpVtbl[7])(@this, pvarSchemaPtr, pvarId, pvarValuePtr);
+                    ret = ((delegate* unmanaged[Stdcall]<IWICMetadataWriter*, Silk.NET.Core.Win32Extras.PropVariant*, Silk.NET.Core.Win32Extras.PropVariant*, Silk.NET.Core.Win32Extras.PropVariant*, int>)@this->LpVtbl[7])(@this, pvarSchemaPtr, pvarId, pvarValuePtr);
                 }
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetValue<T0, T1>([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in T0 pvarSchema, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in T1 pvarId, void* pvarValue) where T0 : unmanaged where T1 : unmanaged
+        public readonly unsafe int GetValue([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Core.Win32Extras.PropVariant pvarSchema, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Core.Win32Extras.PropVariant pvarId, Silk.NET.Core.Win32Extras.PropVariant* pvarValue)
         {
             var @this = (IWICMetadataWriter*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            fixed (void* pvarSchemaPtr = &pvarSchema)
+            fixed (Silk.NET.Core.Win32Extras.PropVariant* pvarSchemaPtr = &pvarSchema)
             {
-                fixed (void* pvarIdPtr = &pvarId)
+                fixed (Silk.NET.Core.Win32Extras.PropVariant* pvarIdPtr = &pvarId)
                 {
-                    ret = ((delegate* unmanaged[Stdcall]<IWICMetadataWriter*, void*, void*, void*, int>)@this->LpVtbl[7])(@this, pvarSchemaPtr, pvarIdPtr, pvarValue);
+                    ret = ((delegate* unmanaged[Stdcall]<IWICMetadataWriter*, Silk.NET.Core.Win32Extras.PropVariant*, Silk.NET.Core.Win32Extras.PropVariant*, Silk.NET.Core.Win32Extras.PropVariant*, int>)@this->LpVtbl[7])(@this, pvarSchemaPtr, pvarIdPtr, pvarValue);
                 }
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int GetValue<T0, T1, T2>([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in T0 pvarSchema, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in T1 pvarId, ref T2 pvarValue) where T0 : unmanaged where T1 : unmanaged where T2 : unmanaged
+        public readonly int GetValue([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Core.Win32Extras.PropVariant pvarSchema, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Core.Win32Extras.PropVariant pvarId, ref Silk.NET.Core.Win32Extras.PropVariant pvarValue)
         {
             var @this = (IWICMetadataWriter*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            fixed (void* pvarSchemaPtr = &pvarSchema)
+            fixed (Silk.NET.Core.Win32Extras.PropVariant* pvarSchemaPtr = &pvarSchema)
             {
-                fixed (void* pvarIdPtr = &pvarId)
+                fixed (Silk.NET.Core.Win32Extras.PropVariant* pvarIdPtr = &pvarId)
                 {
-                    fixed (void* pvarValuePtr = &pvarValue)
+                    fixed (Silk.NET.Core.Win32Extras.PropVariant* pvarValuePtr = &pvarValue)
                     {
-                        ret = ((delegate* unmanaged[Stdcall]<IWICMetadataWriter*, void*, void*, void*, int>)@this->LpVtbl[7])(@this, pvarSchemaPtr, pvarIdPtr, pvarValuePtr);
+                        ret = ((delegate* unmanaged[Stdcall]<IWICMetadataWriter*, Silk.NET.Core.Win32Extras.PropVariant*, Silk.NET.Core.Win32Extras.PropVariant*, Silk.NET.Core.Win32Extras.PropVariant*, int>)@this->LpVtbl[7])(@this, pvarSchemaPtr, pvarIdPtr, pvarValuePtr);
                     }
                 }
             }
@@ -414,107 +414,107 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int SetValue([Flow(Silk.NET.Core.Native.FlowDirection.In)] void* pvarSchema, [Flow(Silk.NET.Core.Native.FlowDirection.In)] void* pvarId, [Flow(Silk.NET.Core.Native.FlowDirection.In)] void* pvarValue)
+        public readonly unsafe int SetValue([Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Core.Win32Extras.PropVariant* pvarSchema, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Core.Win32Extras.PropVariant* pvarId, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Core.Win32Extras.PropVariant* pvarValue)
         {
             var @this = (IWICMetadataWriter*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<IWICMetadataWriter*, void*, void*, void*, int>)@this->LpVtbl[9])(@this, pvarSchema, pvarId, pvarValue);
+            ret = ((delegate* unmanaged[Stdcall]<IWICMetadataWriter*, Silk.NET.Core.Win32Extras.PropVariant*, Silk.NET.Core.Win32Extras.PropVariant*, Silk.NET.Core.Win32Extras.PropVariant*, int>)@this->LpVtbl[9])(@this, pvarSchema, pvarId, pvarValue);
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int SetValue<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] void* pvarSchema, [Flow(Silk.NET.Core.Native.FlowDirection.In)] void* pvarId, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in T0 pvarValue) where T0 : unmanaged
+        public readonly unsafe int SetValue([Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Core.Win32Extras.PropVariant* pvarSchema, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Core.Win32Extras.PropVariant* pvarId, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Core.Win32Extras.PropVariant pvarValue)
         {
             var @this = (IWICMetadataWriter*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            fixed (void* pvarValuePtr = &pvarValue)
+            fixed (Silk.NET.Core.Win32Extras.PropVariant* pvarValuePtr = &pvarValue)
             {
-                ret = ((delegate* unmanaged[Stdcall]<IWICMetadataWriter*, void*, void*, void*, int>)@this->LpVtbl[9])(@this, pvarSchema, pvarId, pvarValuePtr);
+                ret = ((delegate* unmanaged[Stdcall]<IWICMetadataWriter*, Silk.NET.Core.Win32Extras.PropVariant*, Silk.NET.Core.Win32Extras.PropVariant*, Silk.NET.Core.Win32Extras.PropVariant*, int>)@this->LpVtbl[9])(@this, pvarSchema, pvarId, pvarValuePtr);
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int SetValue<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] void* pvarSchema, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in T0 pvarId, [Flow(Silk.NET.Core.Native.FlowDirection.In)] void* pvarValue) where T0 : unmanaged
+        public readonly unsafe int SetValue([Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Core.Win32Extras.PropVariant* pvarSchema, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Core.Win32Extras.PropVariant pvarId, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Core.Win32Extras.PropVariant* pvarValue)
         {
             var @this = (IWICMetadataWriter*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            fixed (void* pvarIdPtr = &pvarId)
+            fixed (Silk.NET.Core.Win32Extras.PropVariant* pvarIdPtr = &pvarId)
             {
-                ret = ((delegate* unmanaged[Stdcall]<IWICMetadataWriter*, void*, void*, void*, int>)@this->LpVtbl[9])(@this, pvarSchema, pvarIdPtr, pvarValue);
+                ret = ((delegate* unmanaged[Stdcall]<IWICMetadataWriter*, Silk.NET.Core.Win32Extras.PropVariant*, Silk.NET.Core.Win32Extras.PropVariant*, Silk.NET.Core.Win32Extras.PropVariant*, int>)@this->LpVtbl[9])(@this, pvarSchema, pvarIdPtr, pvarValue);
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int SetValue<T0, T1>([Flow(Silk.NET.Core.Native.FlowDirection.In)] void* pvarSchema, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in T0 pvarId, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in T1 pvarValue) where T0 : unmanaged where T1 : unmanaged
+        public readonly unsafe int SetValue([Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Core.Win32Extras.PropVariant* pvarSchema, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Core.Win32Extras.PropVariant pvarId, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Core.Win32Extras.PropVariant pvarValue)
         {
             var @this = (IWICMetadataWriter*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            fixed (void* pvarIdPtr = &pvarId)
+            fixed (Silk.NET.Core.Win32Extras.PropVariant* pvarIdPtr = &pvarId)
             {
-                fixed (void* pvarValuePtr = &pvarValue)
+                fixed (Silk.NET.Core.Win32Extras.PropVariant* pvarValuePtr = &pvarValue)
                 {
-                    ret = ((delegate* unmanaged[Stdcall]<IWICMetadataWriter*, void*, void*, void*, int>)@this->LpVtbl[9])(@this, pvarSchema, pvarIdPtr, pvarValuePtr);
+                    ret = ((delegate* unmanaged[Stdcall]<IWICMetadataWriter*, Silk.NET.Core.Win32Extras.PropVariant*, Silk.NET.Core.Win32Extras.PropVariant*, Silk.NET.Core.Win32Extras.PropVariant*, int>)@this->LpVtbl[9])(@this, pvarSchema, pvarIdPtr, pvarValuePtr);
                 }
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int SetValue<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in T0 pvarSchema, [Flow(Silk.NET.Core.Native.FlowDirection.In)] void* pvarId, [Flow(Silk.NET.Core.Native.FlowDirection.In)] void* pvarValue) where T0 : unmanaged
+        public readonly unsafe int SetValue([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Core.Win32Extras.PropVariant pvarSchema, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Core.Win32Extras.PropVariant* pvarId, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Core.Win32Extras.PropVariant* pvarValue)
         {
             var @this = (IWICMetadataWriter*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            fixed (void* pvarSchemaPtr = &pvarSchema)
+            fixed (Silk.NET.Core.Win32Extras.PropVariant* pvarSchemaPtr = &pvarSchema)
             {
-                ret = ((delegate* unmanaged[Stdcall]<IWICMetadataWriter*, void*, void*, void*, int>)@this->LpVtbl[9])(@this, pvarSchemaPtr, pvarId, pvarValue);
+                ret = ((delegate* unmanaged[Stdcall]<IWICMetadataWriter*, Silk.NET.Core.Win32Extras.PropVariant*, Silk.NET.Core.Win32Extras.PropVariant*, Silk.NET.Core.Win32Extras.PropVariant*, int>)@this->LpVtbl[9])(@this, pvarSchemaPtr, pvarId, pvarValue);
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int SetValue<T0, T1>([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in T0 pvarSchema, [Flow(Silk.NET.Core.Native.FlowDirection.In)] void* pvarId, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in T1 pvarValue) where T0 : unmanaged where T1 : unmanaged
+        public readonly unsafe int SetValue([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Core.Win32Extras.PropVariant pvarSchema, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Core.Win32Extras.PropVariant* pvarId, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Core.Win32Extras.PropVariant pvarValue)
         {
             var @this = (IWICMetadataWriter*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            fixed (void* pvarSchemaPtr = &pvarSchema)
+            fixed (Silk.NET.Core.Win32Extras.PropVariant* pvarSchemaPtr = &pvarSchema)
             {
-                fixed (void* pvarValuePtr = &pvarValue)
+                fixed (Silk.NET.Core.Win32Extras.PropVariant* pvarValuePtr = &pvarValue)
                 {
-                    ret = ((delegate* unmanaged[Stdcall]<IWICMetadataWriter*, void*, void*, void*, int>)@this->LpVtbl[9])(@this, pvarSchemaPtr, pvarId, pvarValuePtr);
+                    ret = ((delegate* unmanaged[Stdcall]<IWICMetadataWriter*, Silk.NET.Core.Win32Extras.PropVariant*, Silk.NET.Core.Win32Extras.PropVariant*, Silk.NET.Core.Win32Extras.PropVariant*, int>)@this->LpVtbl[9])(@this, pvarSchemaPtr, pvarId, pvarValuePtr);
                 }
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int SetValue<T0, T1>([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in T0 pvarSchema, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in T1 pvarId, [Flow(Silk.NET.Core.Native.FlowDirection.In)] void* pvarValue) where T0 : unmanaged where T1 : unmanaged
+        public readonly unsafe int SetValue([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Core.Win32Extras.PropVariant pvarSchema, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Core.Win32Extras.PropVariant pvarId, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Core.Win32Extras.PropVariant* pvarValue)
         {
             var @this = (IWICMetadataWriter*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            fixed (void* pvarSchemaPtr = &pvarSchema)
+            fixed (Silk.NET.Core.Win32Extras.PropVariant* pvarSchemaPtr = &pvarSchema)
             {
-                fixed (void* pvarIdPtr = &pvarId)
+                fixed (Silk.NET.Core.Win32Extras.PropVariant* pvarIdPtr = &pvarId)
                 {
-                    ret = ((delegate* unmanaged[Stdcall]<IWICMetadataWriter*, void*, void*, void*, int>)@this->LpVtbl[9])(@this, pvarSchemaPtr, pvarIdPtr, pvarValue);
+                    ret = ((delegate* unmanaged[Stdcall]<IWICMetadataWriter*, Silk.NET.Core.Win32Extras.PropVariant*, Silk.NET.Core.Win32Extras.PropVariant*, Silk.NET.Core.Win32Extras.PropVariant*, int>)@this->LpVtbl[9])(@this, pvarSchemaPtr, pvarIdPtr, pvarValue);
                 }
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int SetValue<T0, T1, T2>([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in T0 pvarSchema, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in T1 pvarId, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in T2 pvarValue) where T0 : unmanaged where T1 : unmanaged where T2 : unmanaged
+        public readonly int SetValue([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Core.Win32Extras.PropVariant pvarSchema, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Core.Win32Extras.PropVariant pvarId, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Core.Win32Extras.PropVariant pvarValue)
         {
             var @this = (IWICMetadataWriter*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            fixed (void* pvarSchemaPtr = &pvarSchema)
+            fixed (Silk.NET.Core.Win32Extras.PropVariant* pvarSchemaPtr = &pvarSchema)
             {
-                fixed (void* pvarIdPtr = &pvarId)
+                fixed (Silk.NET.Core.Win32Extras.PropVariant* pvarIdPtr = &pvarId)
                 {
-                    fixed (void* pvarValuePtr = &pvarValue)
+                    fixed (Silk.NET.Core.Win32Extras.PropVariant* pvarValuePtr = &pvarValue)
                     {
-                        ret = ((delegate* unmanaged[Stdcall]<IWICMetadataWriter*, void*, void*, void*, int>)@this->LpVtbl[9])(@this, pvarSchemaPtr, pvarIdPtr, pvarValuePtr);
+                        ret = ((delegate* unmanaged[Stdcall]<IWICMetadataWriter*, Silk.NET.Core.Win32Extras.PropVariant*, Silk.NET.Core.Win32Extras.PropVariant*, Silk.NET.Core.Win32Extras.PropVariant*, int>)@this->LpVtbl[9])(@this, pvarSchemaPtr, pvarIdPtr, pvarValuePtr);
                     }
                 }
             }
@@ -522,107 +522,107 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int SetValueByIndex(uint nIndex, [Flow(Silk.NET.Core.Native.FlowDirection.In)] void* pvarSchema, [Flow(Silk.NET.Core.Native.FlowDirection.In)] void* pvarId, [Flow(Silk.NET.Core.Native.FlowDirection.In)] void* pvarValue)
+        public readonly unsafe int SetValueByIndex(uint nIndex, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Core.Win32Extras.PropVariant* pvarSchema, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Core.Win32Extras.PropVariant* pvarId, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Core.Win32Extras.PropVariant* pvarValue)
         {
             var @this = (IWICMetadataWriter*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<IWICMetadataWriter*, uint, void*, void*, void*, int>)@this->LpVtbl[10])(@this, nIndex, pvarSchema, pvarId, pvarValue);
+            ret = ((delegate* unmanaged[Stdcall]<IWICMetadataWriter*, uint, Silk.NET.Core.Win32Extras.PropVariant*, Silk.NET.Core.Win32Extras.PropVariant*, Silk.NET.Core.Win32Extras.PropVariant*, int>)@this->LpVtbl[10])(@this, nIndex, pvarSchema, pvarId, pvarValue);
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int SetValueByIndex<T0>(uint nIndex, [Flow(Silk.NET.Core.Native.FlowDirection.In)] void* pvarSchema, [Flow(Silk.NET.Core.Native.FlowDirection.In)] void* pvarId, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in T0 pvarValue) where T0 : unmanaged
+        public readonly unsafe int SetValueByIndex(uint nIndex, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Core.Win32Extras.PropVariant* pvarSchema, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Core.Win32Extras.PropVariant* pvarId, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Core.Win32Extras.PropVariant pvarValue)
         {
             var @this = (IWICMetadataWriter*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            fixed (void* pvarValuePtr = &pvarValue)
+            fixed (Silk.NET.Core.Win32Extras.PropVariant* pvarValuePtr = &pvarValue)
             {
-                ret = ((delegate* unmanaged[Stdcall]<IWICMetadataWriter*, uint, void*, void*, void*, int>)@this->LpVtbl[10])(@this, nIndex, pvarSchema, pvarId, pvarValuePtr);
+                ret = ((delegate* unmanaged[Stdcall]<IWICMetadataWriter*, uint, Silk.NET.Core.Win32Extras.PropVariant*, Silk.NET.Core.Win32Extras.PropVariant*, Silk.NET.Core.Win32Extras.PropVariant*, int>)@this->LpVtbl[10])(@this, nIndex, pvarSchema, pvarId, pvarValuePtr);
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int SetValueByIndex<T0>(uint nIndex, [Flow(Silk.NET.Core.Native.FlowDirection.In)] void* pvarSchema, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in T0 pvarId, [Flow(Silk.NET.Core.Native.FlowDirection.In)] void* pvarValue) where T0 : unmanaged
+        public readonly unsafe int SetValueByIndex(uint nIndex, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Core.Win32Extras.PropVariant* pvarSchema, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Core.Win32Extras.PropVariant pvarId, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Core.Win32Extras.PropVariant* pvarValue)
         {
             var @this = (IWICMetadataWriter*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            fixed (void* pvarIdPtr = &pvarId)
+            fixed (Silk.NET.Core.Win32Extras.PropVariant* pvarIdPtr = &pvarId)
             {
-                ret = ((delegate* unmanaged[Stdcall]<IWICMetadataWriter*, uint, void*, void*, void*, int>)@this->LpVtbl[10])(@this, nIndex, pvarSchema, pvarIdPtr, pvarValue);
+                ret = ((delegate* unmanaged[Stdcall]<IWICMetadataWriter*, uint, Silk.NET.Core.Win32Extras.PropVariant*, Silk.NET.Core.Win32Extras.PropVariant*, Silk.NET.Core.Win32Extras.PropVariant*, int>)@this->LpVtbl[10])(@this, nIndex, pvarSchema, pvarIdPtr, pvarValue);
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int SetValueByIndex<T0, T1>(uint nIndex, [Flow(Silk.NET.Core.Native.FlowDirection.In)] void* pvarSchema, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in T0 pvarId, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in T1 pvarValue) where T0 : unmanaged where T1 : unmanaged
+        public readonly unsafe int SetValueByIndex(uint nIndex, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Core.Win32Extras.PropVariant* pvarSchema, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Core.Win32Extras.PropVariant pvarId, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Core.Win32Extras.PropVariant pvarValue)
         {
             var @this = (IWICMetadataWriter*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            fixed (void* pvarIdPtr = &pvarId)
+            fixed (Silk.NET.Core.Win32Extras.PropVariant* pvarIdPtr = &pvarId)
             {
-                fixed (void* pvarValuePtr = &pvarValue)
+                fixed (Silk.NET.Core.Win32Extras.PropVariant* pvarValuePtr = &pvarValue)
                 {
-                    ret = ((delegate* unmanaged[Stdcall]<IWICMetadataWriter*, uint, void*, void*, void*, int>)@this->LpVtbl[10])(@this, nIndex, pvarSchema, pvarIdPtr, pvarValuePtr);
+                    ret = ((delegate* unmanaged[Stdcall]<IWICMetadataWriter*, uint, Silk.NET.Core.Win32Extras.PropVariant*, Silk.NET.Core.Win32Extras.PropVariant*, Silk.NET.Core.Win32Extras.PropVariant*, int>)@this->LpVtbl[10])(@this, nIndex, pvarSchema, pvarIdPtr, pvarValuePtr);
                 }
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int SetValueByIndex<T0>(uint nIndex, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in T0 pvarSchema, [Flow(Silk.NET.Core.Native.FlowDirection.In)] void* pvarId, [Flow(Silk.NET.Core.Native.FlowDirection.In)] void* pvarValue) where T0 : unmanaged
+        public readonly unsafe int SetValueByIndex(uint nIndex, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Core.Win32Extras.PropVariant pvarSchema, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Core.Win32Extras.PropVariant* pvarId, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Core.Win32Extras.PropVariant* pvarValue)
         {
             var @this = (IWICMetadataWriter*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            fixed (void* pvarSchemaPtr = &pvarSchema)
+            fixed (Silk.NET.Core.Win32Extras.PropVariant* pvarSchemaPtr = &pvarSchema)
             {
-                ret = ((delegate* unmanaged[Stdcall]<IWICMetadataWriter*, uint, void*, void*, void*, int>)@this->LpVtbl[10])(@this, nIndex, pvarSchemaPtr, pvarId, pvarValue);
+                ret = ((delegate* unmanaged[Stdcall]<IWICMetadataWriter*, uint, Silk.NET.Core.Win32Extras.PropVariant*, Silk.NET.Core.Win32Extras.PropVariant*, Silk.NET.Core.Win32Extras.PropVariant*, int>)@this->LpVtbl[10])(@this, nIndex, pvarSchemaPtr, pvarId, pvarValue);
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int SetValueByIndex<T0, T1>(uint nIndex, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in T0 pvarSchema, [Flow(Silk.NET.Core.Native.FlowDirection.In)] void* pvarId, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in T1 pvarValue) where T0 : unmanaged where T1 : unmanaged
+        public readonly unsafe int SetValueByIndex(uint nIndex, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Core.Win32Extras.PropVariant pvarSchema, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Core.Win32Extras.PropVariant* pvarId, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Core.Win32Extras.PropVariant pvarValue)
         {
             var @this = (IWICMetadataWriter*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            fixed (void* pvarSchemaPtr = &pvarSchema)
+            fixed (Silk.NET.Core.Win32Extras.PropVariant* pvarSchemaPtr = &pvarSchema)
             {
-                fixed (void* pvarValuePtr = &pvarValue)
+                fixed (Silk.NET.Core.Win32Extras.PropVariant* pvarValuePtr = &pvarValue)
                 {
-                    ret = ((delegate* unmanaged[Stdcall]<IWICMetadataWriter*, uint, void*, void*, void*, int>)@this->LpVtbl[10])(@this, nIndex, pvarSchemaPtr, pvarId, pvarValuePtr);
+                    ret = ((delegate* unmanaged[Stdcall]<IWICMetadataWriter*, uint, Silk.NET.Core.Win32Extras.PropVariant*, Silk.NET.Core.Win32Extras.PropVariant*, Silk.NET.Core.Win32Extras.PropVariant*, int>)@this->LpVtbl[10])(@this, nIndex, pvarSchemaPtr, pvarId, pvarValuePtr);
                 }
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int SetValueByIndex<T0, T1>(uint nIndex, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in T0 pvarSchema, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in T1 pvarId, [Flow(Silk.NET.Core.Native.FlowDirection.In)] void* pvarValue) where T0 : unmanaged where T1 : unmanaged
+        public readonly unsafe int SetValueByIndex(uint nIndex, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Core.Win32Extras.PropVariant pvarSchema, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Core.Win32Extras.PropVariant pvarId, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Core.Win32Extras.PropVariant* pvarValue)
         {
             var @this = (IWICMetadataWriter*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            fixed (void* pvarSchemaPtr = &pvarSchema)
+            fixed (Silk.NET.Core.Win32Extras.PropVariant* pvarSchemaPtr = &pvarSchema)
             {
-                fixed (void* pvarIdPtr = &pvarId)
+                fixed (Silk.NET.Core.Win32Extras.PropVariant* pvarIdPtr = &pvarId)
                 {
-                    ret = ((delegate* unmanaged[Stdcall]<IWICMetadataWriter*, uint, void*, void*, void*, int>)@this->LpVtbl[10])(@this, nIndex, pvarSchemaPtr, pvarIdPtr, pvarValue);
+                    ret = ((delegate* unmanaged[Stdcall]<IWICMetadataWriter*, uint, Silk.NET.Core.Win32Extras.PropVariant*, Silk.NET.Core.Win32Extras.PropVariant*, Silk.NET.Core.Win32Extras.PropVariant*, int>)@this->LpVtbl[10])(@this, nIndex, pvarSchemaPtr, pvarIdPtr, pvarValue);
                 }
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int SetValueByIndex<T0, T1, T2>(uint nIndex, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in T0 pvarSchema, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in T1 pvarId, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in T2 pvarValue) where T0 : unmanaged where T1 : unmanaged where T2 : unmanaged
+        public readonly int SetValueByIndex(uint nIndex, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Core.Win32Extras.PropVariant pvarSchema, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Core.Win32Extras.PropVariant pvarId, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Core.Win32Extras.PropVariant pvarValue)
         {
             var @this = (IWICMetadataWriter*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            fixed (void* pvarSchemaPtr = &pvarSchema)
+            fixed (Silk.NET.Core.Win32Extras.PropVariant* pvarSchemaPtr = &pvarSchema)
             {
-                fixed (void* pvarIdPtr = &pvarId)
+                fixed (Silk.NET.Core.Win32Extras.PropVariant* pvarIdPtr = &pvarId)
                 {
-                    fixed (void* pvarValuePtr = &pvarValue)
+                    fixed (Silk.NET.Core.Win32Extras.PropVariant* pvarValuePtr = &pvarValue)
                     {
-                        ret = ((delegate* unmanaged[Stdcall]<IWICMetadataWriter*, uint, void*, void*, void*, int>)@this->LpVtbl[10])(@this, nIndex, pvarSchemaPtr, pvarIdPtr, pvarValuePtr);
+                        ret = ((delegate* unmanaged[Stdcall]<IWICMetadataWriter*, uint, Silk.NET.Core.Win32Extras.PropVariant*, Silk.NET.Core.Win32Extras.PropVariant*, Silk.NET.Core.Win32Extras.PropVariant*, int>)@this->LpVtbl[10])(@this, nIndex, pvarSchemaPtr, pvarIdPtr, pvarValuePtr);
                     }
                 }
             }
@@ -630,48 +630,48 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int RemoveValue([Flow(Silk.NET.Core.Native.FlowDirection.In)] void* pvarSchema, [Flow(Silk.NET.Core.Native.FlowDirection.In)] void* pvarId)
+        public readonly unsafe int RemoveValue([Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Core.Win32Extras.PropVariant* pvarSchema, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Core.Win32Extras.PropVariant* pvarId)
         {
             var @this = (IWICMetadataWriter*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<IWICMetadataWriter*, void*, void*, int>)@this->LpVtbl[11])(@this, pvarSchema, pvarId);
+            ret = ((delegate* unmanaged[Stdcall]<IWICMetadataWriter*, Silk.NET.Core.Win32Extras.PropVariant*, Silk.NET.Core.Win32Extras.PropVariant*, int>)@this->LpVtbl[11])(@this, pvarSchema, pvarId);
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int RemoveValue<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] void* pvarSchema, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in T0 pvarId) where T0 : unmanaged
+        public readonly unsafe int RemoveValue([Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Core.Win32Extras.PropVariant* pvarSchema, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Core.Win32Extras.PropVariant pvarId)
         {
             var @this = (IWICMetadataWriter*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            fixed (void* pvarIdPtr = &pvarId)
+            fixed (Silk.NET.Core.Win32Extras.PropVariant* pvarIdPtr = &pvarId)
             {
-                ret = ((delegate* unmanaged[Stdcall]<IWICMetadataWriter*, void*, void*, int>)@this->LpVtbl[11])(@this, pvarSchema, pvarIdPtr);
+                ret = ((delegate* unmanaged[Stdcall]<IWICMetadataWriter*, Silk.NET.Core.Win32Extras.PropVariant*, Silk.NET.Core.Win32Extras.PropVariant*, int>)@this->LpVtbl[11])(@this, pvarSchema, pvarIdPtr);
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int RemoveValue<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in T0 pvarSchema, [Flow(Silk.NET.Core.Native.FlowDirection.In)] void* pvarId) where T0 : unmanaged
+        public readonly unsafe int RemoveValue([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Core.Win32Extras.PropVariant pvarSchema, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Core.Win32Extras.PropVariant* pvarId)
         {
             var @this = (IWICMetadataWriter*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            fixed (void* pvarSchemaPtr = &pvarSchema)
+            fixed (Silk.NET.Core.Win32Extras.PropVariant* pvarSchemaPtr = &pvarSchema)
             {
-                ret = ((delegate* unmanaged[Stdcall]<IWICMetadataWriter*, void*, void*, int>)@this->LpVtbl[11])(@this, pvarSchemaPtr, pvarId);
+                ret = ((delegate* unmanaged[Stdcall]<IWICMetadataWriter*, Silk.NET.Core.Win32Extras.PropVariant*, Silk.NET.Core.Win32Extras.PropVariant*, int>)@this->LpVtbl[11])(@this, pvarSchemaPtr, pvarId);
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int RemoveValue<T0, T1>([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in T0 pvarSchema, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in T1 pvarId) where T0 : unmanaged where T1 : unmanaged
+        public readonly int RemoveValue([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Core.Win32Extras.PropVariant pvarSchema, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Core.Win32Extras.PropVariant pvarId)
         {
             var @this = (IWICMetadataWriter*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            fixed (void* pvarSchemaPtr = &pvarSchema)
+            fixed (Silk.NET.Core.Win32Extras.PropVariant* pvarSchemaPtr = &pvarSchema)
             {
-                fixed (void* pvarIdPtr = &pvarId)
+                fixed (Silk.NET.Core.Win32Extras.PropVariant* pvarIdPtr = &pvarId)
                 {
-                    ret = ((delegate* unmanaged[Stdcall]<IWICMetadataWriter*, void*, void*, int>)@this->LpVtbl[11])(@this, pvarSchemaPtr, pvarIdPtr);
+                    ret = ((delegate* unmanaged[Stdcall]<IWICMetadataWriter*, Silk.NET.Core.Win32Extras.PropVariant*, Silk.NET.Core.Win32Extras.PropVariant*, int>)@this->LpVtbl[11])(@this, pvarSchemaPtr, pvarIdPtr);
                 }
             }
             return ret;
