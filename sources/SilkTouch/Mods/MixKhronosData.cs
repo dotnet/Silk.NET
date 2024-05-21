@@ -16,6 +16,7 @@ using Microsoft.CodeAnalysis.CSharp;
 using Microsoft.CodeAnalysis.CSharp.Syntax;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
+using Silk.NET.Core;
 using Silk.NET.SilkTouch.Clang;
 using Silk.NET.SilkTouch.Mods.Metadata;
 using Silk.NET.SilkTouch.Mods.Transformation;
@@ -33,7 +34,12 @@ namespace Silk.NET.SilkTouch.Mods;
 public partial class MixKhronosData(
     ILogger<MixKhronosData> logger,
     IOptionsSnapshot<MixKhronosData.Configuration> cfg
-) : IMod, INameTrimmer, IFunctionTransformer, IApiMetadataProvider
+)
+    : IMod,
+        INameTrimmer,
+        IFunctionTransformer,
+        IApiMetadataProvider<SymbolConstraints>,
+        IApiMetadataProvider<IEnumerable<SupportedApiProfileAttribute>>
 {
     internal Dictionary<string, JobData> Jobs = new();
     private static readonly ICulturedStringTransformer _transformer = new NameUtils.NameTransformer(
@@ -89,7 +95,10 @@ public partial class MixKhronosData(
         /// <summary>
         /// A mapping of native names to their supported API profile attributes.
         /// </summary>
-        public Dictionary<string, List<AttributeListSyntax>>? SupportedApiProfiles { get; set; }
+        public Dictionary<
+            string,
+            List<SupportedApiProfileAttribute>
+        >? SupportedApiProfiles { get; set; }
 
         /// <summary>
         /// The vendors contributing to the specification. This is in extension form e.g. Microsoft is MSFT.
@@ -402,94 +411,14 @@ public partial class MixKhronosData(
         bool RequireAll = false
     )
     {
-        public AttributeSyntax ToAttribute(string profile)
-        {
-            List<AttributeArgumentSyntax> args =
-            [
-                AttributeArgument(
-                    LiteralExpression(SyntaxKind.StringLiteralExpression, Literal(profile))
-                ),
-                AttributeArgument(
-                    CollectionExpression(
-                        SeparatedList<CollectionElementSyntax>(
-                            ApiSets
-                                .Order()
-                                .Select(x =>
-                                    ExpressionElement(
-                                        LiteralExpression(
-                                            SyntaxKind.StringLiteralExpression,
-                                            Literal(x)
-                                        )
-                                    )
-                                )
-                        )
-                    )
-                )
-            ];
-            if (StartVersion is not null)
+        public SupportedApiProfileAttribute ToAttribute(string profile) =>
+            new(profile, ApiSets.ToArray())
             {
-                args.Add(
-                    AttributeArgument(
-                        NameEquals(IdentifierName("StartVersion")),
-                        null,
-                        LiteralExpression(
-                            SyntaxKind.StringLiteralExpression,
-                            Literal(StartVersion.ToString())
-                        )
-                    )
-                );
-            }
-            if (EndVersion is not null)
-            {
-                args.Add(
-                    AttributeArgument(
-                        NameEquals(IdentifierName("EndVersion")),
-                        null,
-                        LiteralExpression(
-                            SyntaxKind.StringLiteralExpression,
-                            Literal(EndVersion.ToString())
-                        )
-                    )
-                );
-            }
-            if (ImpliedSets is { Count: > 0 })
-            {
-                args.Add(
-                    AttributeArgument(
-                        NameEquals(IdentifierName("ImpliedSets")),
-                        null,
-                        CollectionExpression(
-                            SeparatedList<CollectionElementSyntax>(
-                                ImpliedSets
-                                    .Order()
-                                    .Select(x =>
-                                        ExpressionElement(
-                                            LiteralExpression(
-                                                SyntaxKind.StringLiteralExpression,
-                                                Literal(x)
-                                            )
-                                        )
-                                    )
-                            )
-                        )
-                    )
-                );
-            }
-            if (RequireAll)
-            {
-                args.Add(
-                    AttributeArgument(
-                        NameEquals(IdentifierName("RequireAll")),
-                        null,
-                        LiteralExpression(SyntaxKind.TrueLiteralExpression)
-                    )
-                );
-            }
-            return Attribute(
-                IdentifierName("SupportedApiProfile"),
-                AttributeArgumentList(SeparatedList(args))
-            );
-        }
+                ImpliesSets = ImpliedSets?.ToArray(),
+                MaxVersion = EndVersion?.ToString(),
+                MinVersion = StartVersion?.ToString(),
+                RequireAll = RequireAll
+            };
     }
 
     private (
@@ -497,7 +426,7 @@ public partial class MixKhronosData(
             string,
             (bool IsExtension, Dictionary<string, HashSet<string>> Dependencies)
         > ApiSets,
-        Dictionary<string, List<AttributeListSyntax>> SupportedApiProfiles
+        Dictionary<string, List<SupportedApiProfileAttribute>> SupportedApiProfiles
     ) EvaluateProfiles(XDocument xml)
     {
         // A map of native names to profile names to versions
@@ -519,13 +448,7 @@ public partial class MixKhronosData(
             apiSets,
             profile.ToDictionary(
                 x => x.Key,
-                x =>
-                    x.Value.SelectMany(y =>
-                        y.Value.Select(z =>
-                            AttributeList(SingletonSeparatedList(z.ToAttribute(y.Key)))
-                        )
-                    )
-                        .ToList()
+                x => x.Value.SelectMany(y => y.Value.Select(z => z.ToAttribute(y.Key))).ToList()
             )
         );
     }
@@ -1728,6 +1651,53 @@ public partial class MixKhronosData(
                 : null;
         }
     }
+
+    /// <inheritdoc />
+    public bool TryGetChildSymbolMetadata(
+        string? jobKey,
+        string nativeName,
+        string childNativeName,
+        [NotNullWhen(true)] out SymbolConstraints? metadata
+    )
+    {
+        if (
+            jobKey is not null
+            && Jobs[jobKey]
+                .Annotations.TryGetValue((nativeName, childNativeName), out var annotation)
+            && annotation.Usage is not null
+        )
+        {
+            metadata = annotation.Usage;
+            return true;
+        }
+
+        metadata = null;
+        return false;
+    }
+
+    /// <inheritdoc />
+    public bool TryGetChildSymbolMetadata(
+        string? jobKey,
+        string nativeName,
+        string childNativeName,
+        [NotNullWhen(true)] out IEnumerable<SupportedApiProfileAttribute>? metadata
+    ) => TryGetSymbolMetadata(jobKey, childNativeName, out metadata);
+
+    /// <inheritdoc />
+    public bool TryGetSymbolMetadata(
+        string? jobKey,
+        string nativeName,
+        [NotNullWhen(true)] out IEnumerable<SupportedApiProfileAttribute>? metadata
+    ) =>
+        (
+            metadata =
+                jobKey is null
+                || !Jobs.TryGetValue(jobKey, out var job)
+                || !(job.SupportedApiProfiles?.TryGetValue(nativeName, out var mdList) ?? false)
+                    ? null
+                    : mdList
+        )
+            is not null;
 
     /// <summary>
     /// This regex matches against known OpenGL function endings, picking them out from function names.

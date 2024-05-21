@@ -4,7 +4,10 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using Microsoft.CodeAnalysis.CSharp;
 using Microsoft.CodeAnalysis.CSharp.Syntax;
+using Silk.NET.Core;
+using static Microsoft.CodeAnalysis.CSharp.SyntaxFactory;
 
 namespace Silk.NET.SilkTouch.Mods.Metadata;
 
@@ -150,7 +153,7 @@ public static class MetadataUtils
         SymbolConstraints? ParamConstraints
     )> EnumerateSymbolConstraints(
         this MethodDeclarationSyntax decl,
-        IEnumerable<IApiMetadataProvider> providers,
+        IEnumerable<IApiMetadataProvider<SymbolConstraints>> providers,
         string? entryPoint = null,
         string? jobKey = null
     )
@@ -168,11 +171,11 @@ public static class MetadataUtils
                     y.PtrParamIdx,
                     PtrParamConstraints: providers
                         .Select(z =>
-                            z.TryGetParameterMetadata(
+                            z.TryGetChildSymbolMetadata(
                                 jobKey,
                                 entryPoint,
                                 y.PtrParam.Identifier.ToString(),
-                                out SymbolConstraints? md
+                                out var md
                             )
                                 ? md
                                 : null
@@ -205,7 +208,7 @@ public static class MetadataUtils
         )> ParamsForCount
     )> EnumerateCountParameterInfo(
         this MethodDeclarationSyntax decl,
-        IEnumerable<IApiMetadataProvider> providers,
+        IEnumerable<IApiMetadataProvider<SymbolConstraints>> providers,
         string? entryPoint = null,
         string? jobKey = null
     ) =>
@@ -220,5 +223,89 @@ public static class MetadataUtils
                             == x.Identifier.ToString()
                         )
                 )
+        );
+
+    internal static IEnumerable<AttributeArgumentSyntax> GetSupportedApiProfileAttributeArgs(
+        this SupportedApiProfileAttribute args
+    )
+    {
+        yield return AttributeArgument(
+            LiteralExpression(SyntaxKind.StringLiteralExpression, Literal(args.Profile))
+        );
+
+        if (args.ApiSets is not null)
+        {
+            yield return AttributeArgument(
+                CollectionExpression(
+                    SeparatedList<CollectionElementSyntax>(
+                        args.ApiSets.Order()
+                            .Select(x =>
+                                ExpressionElement(
+                                    LiteralExpression(
+                                        SyntaxKind.StringLiteralExpression,
+                                        Literal(x)
+                                    )
+                                )
+                            )
+                    )
+                )
+            );
+        }
+
+        if (args.MinVersion is not null)
+        {
+            yield return AttributeArgument(
+                NameEquals(IdentifierName(nameof(args.MinVersion))),
+                null,
+                LiteralExpression(SyntaxKind.StringLiteralExpression, Literal(args.MinVersion))
+            );
+        }
+
+        if (args.MaxVersion is not null)
+        {
+            yield return AttributeArgument(
+                NameEquals(IdentifierName(nameof(args.MaxVersion))),
+                null,
+                LiteralExpression(SyntaxKind.StringLiteralExpression, Literal(args.MaxVersion))
+            );
+        }
+
+        if (args.ImpliesSets is { Length: > 0 })
+        {
+            yield return AttributeArgument(
+                NameEquals(IdentifierName(nameof(args.ImpliesSets))),
+                null,
+                CollectionExpression(
+                    SeparatedList<CollectionElementSyntax>(
+                        args.ImpliesSets.Order()
+                            .Select(x =>
+                                ExpressionElement(
+                                    LiteralExpression(
+                                        SyntaxKind.StringLiteralExpression,
+                                        Literal(x)
+                                    )
+                                )
+                            )
+                    )
+                )
+            );
+        }
+
+        if (args.RequireAll)
+        {
+            yield return AttributeArgument(
+                NameEquals(IdentifierName(nameof(args.RequireAll))),
+                null,
+                LiteralExpression(SyntaxKind.TrueLiteralExpression)
+            );
+        }
+    }
+
+    internal static AttributeSyntax GetSupportedApiProfileAttribute(
+        this SupportedApiProfileAttribute args
+    ) =>
+        Attribute(
+            IdentifierName("SupportedApiProfile"),
+            AttributeArgumentList(SeparatedList(args.GetSupportedApiProfileAttributeArgs()))
         );
 }

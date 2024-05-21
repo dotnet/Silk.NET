@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
 using Humanizer;
@@ -8,7 +9,9 @@ using Microsoft.CodeAnalysis.CSharp;
 using Microsoft.CodeAnalysis.CSharp.Syntax;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
+using Silk.NET.Core;
 using Silk.NET.SilkTouch.Clang;
+using Silk.NET.SilkTouch.Mods.Metadata;
 using static Microsoft.CodeAnalysis.CSharp.SyntaxFactory;
 
 namespace Silk.NET.SilkTouch.Mods;
@@ -18,10 +21,12 @@ namespace Silk.NET.SilkTouch.Mods;
 /// </summary>
 /// <param name="logger">The logger to use.</param>
 /// <param name="config">The configuration snapshot.</param>
+/// <param name="versionProviders">The version providers.</param>
 [ModConfiguration<Configuration>]
 public class AddApiProfiles(
     ILogger<AddApiProfiles> logger,
-    IOptionsSnapshot<AddApiProfiles.Configuration> config
+    IOptionsSnapshot<AddApiProfiles.Configuration> config,
+    IJobDependency<IApiMetadataProvider<IEnumerable<SupportedApiProfileAttribute>>> versionProviders
 ) : Mod
 {
     /// <summary>
@@ -38,7 +43,7 @@ public class AddApiProfiles(
     /// <summary>
     /// An API profile.
     /// </summary>
-    public record ApiProfileDecl
+    public class ApiProfileDecl() : SupportedApiProfileAttribute(string.Empty) // <-- required for serialization
     {
         /// <summary>
         /// APIs declared in this relative source root are part of this profile.
@@ -46,85 +51,74 @@ public class AddApiProfiles(
         public required string SourceSubdirectory { get; init; }
 
         /// <summary>
-        /// The name of the API profile.
-        /// </summary>
-        public required string Name { get; init; }
-
-        /// <summary>
-        /// The extension that this specific profile declaration represents.
-        /// </summary>
-        public string? Extension { get; init; }
-
-        /// <summary>
-        /// The minimum version that this specific profile declaration represents.
-        /// </summary>
-        public string? MinVersion { get; init; }
-
-        /// <summary>
-        /// The minimum version that this specific profile declaration rpresents.
-        /// </summary>
-        public string? MaxVersion { get; init; }
-
-        /// <summary>
         /// If provided, merge and deduplicate ("bake") the APIs contained in the <see cref="SourceSubdirectory"/> into
         /// this root with any other profiles being baked into this root.
         /// </summary>
         public string? BakedOutputSubdirectory { get; init; }
-
-        internal IEnumerable<AttributeArgumentSyntax> GetSupportedApiProfileAttributeArgs()
-        {
-            yield return AttributeArgument(
-                LiteralExpression(SyntaxKind.StringLiteralExpression, Literal(Name))
-            );
-
-            if (Extension is not null)
-            {
-                yield return AttributeArgument(
-                    NameEquals(nameof(Extension)),
-                    null,
-                    LiteralExpression(SyntaxKind.StringLiteralExpression, Literal(Extension))
-                );
-            }
-
-            if (MinVersion is not null)
-            {
-                yield return AttributeArgument(
-                    NameEquals(nameof(MinVersion)),
-                    null,
-                    LiteralExpression(
-                        SyntaxKind.StringLiteralExpression,
-                        Literal(MinVersion.ToString())
-                    )
-                );
-            }
-
-            if (MaxVersion is not null)
-            {
-                yield return AttributeArgument(
-                    NameEquals(nameof(MaxVersion)),
-                    null,
-                    LiteralExpression(
-                        SyntaxKind.StringLiteralExpression,
-                        Literal(MaxVersion.ToString())
-                    )
-                );
-            }
-        }
-
-        internal AttributeSyntax GetSupportedApiProfileAttribute() =>
-            Attribute(
-                IdentifierName("SupportedApiProfile"),
-                AttributeArgumentList(SeparatedList(GetSupportedApiProfileAttributeArgs()))
-            );
     }
 
-    class Rewriter : ModCSharpSyntaxRewriter
+    class Rewriter(
+        string? jobKey,
+        IEnumerable<
+            IApiMetadataProvider<IEnumerable<SupportedApiProfileAttribute>>
+        > versionProviders
+    ) : ModCSharpSyntaxRewriter
     {
         public BakeSet? Baked { get; set; }
 
         public ApiProfileDecl? Profile { get; set; }
 
         public ILogger? Logger { get; set; }
+
+        private SupportedApiProfileAttribute GetVersionInfo(
+            string? parentSymbol = null,
+            string? childSymbol = null
+        )
+        {
+            Debug.Assert(Profile is not null);
+            if (parentSymbol is null)
+            {
+                return Profile;
+            }
+
+            SupportedApiProfileAttribute? parent = null;
+            foreach (var apimd in versionProviders)
+            {
+                if (
+                    childSymbol is not null
+                    && apimd.TryGetChildSymbolMetadata(
+                        jobKey,
+                        parentSymbol,
+                        childSymbol,
+                        out var vers
+                    )
+                    && vers.FirstOrDefault(x => x.Profile == Profile.Profile) is { } ver
+                )
+                {
+                    return ver;
+                }
+
+                if (
+                    apimd.TryGetSymbolMetadata(jobKey, parentSymbol, out var parentVers)
+                    && (
+                        parent =
+                            parentVers.FirstOrDefault(x => x.Profile == Profile.Profile) ?? parent
+                    )
+                        is not null
+                    && childSymbol is null
+                )
+                {
+                    break;
+                }
+            }
+
+            return parent ?? Profile;
+        }
+
+        private string? _currentParentSymbol;
+
+        private AttributeSyntax GetProfileAttribute(string? childSymbol) =>
+            GetVersionInfo(_currentParentSymbol, childSymbol).GetSupportedApiProfileAttribute();
 
         // Allowable type members for baking (we need to override these):
         // - [x] FieldDeclarationSyntax (VariableDeclarator)
@@ -151,6 +145,7 @@ public class AddApiProfiles(
         public override SyntaxNode? VisitDelegateDeclaration(DelegateDeclarationSyntax node) =>
             Visit(
                 node,
+                node.Identifier.ToString(),
                 node.Identifier
                     + (
                         node is { TypeParameterList.Parameters.Count: > 0 and var cnt }
@@ -161,17 +156,33 @@ public class AddApiProfiles(
             );
 
         public override SyntaxNode? VisitEventDeclaration(EventDeclarationSyntax node) =>
-            Visit(node, node.Identifier.ToString(), base.VisitEventDeclaration);
+            Visit(
+                node,
+                node.Identifier.ToString(),
+                node.Identifier.ToString(),
+                base.VisitEventDeclaration
+            );
 
         public override SyntaxNode? VisitPropertyDeclaration(PropertyDeclarationSyntax node) =>
-            Visit(node, node.Identifier.ToString(), base.VisitPropertyDeclaration);
+            Visit(
+                node,
+                node.Identifier.ToString(),
+                node.Identifier.ToString(),
+                base.VisitPropertyDeclaration
+            );
 
         public override SyntaxNode? VisitEnumMemberDeclaration(EnumMemberDeclarationSyntax node) =>
-            Visit(node, node.Identifier.ToString(), base.VisitEnumMemberDeclaration);
+            Visit(
+                node,
+                node.Identifier.ToString(),
+                node.Identifier.ToString(),
+                base.VisitEnumMemberDeclaration
+            );
 
         public override SyntaxNode? VisitIndexerDeclaration(IndexerDeclarationSyntax node) =>
             Visit(
                 node,
+                null,
                 $"this[{string.Join(", ", node.ParameterList.Parameters.Select(ModUtils.DiscrimStr))}]",
                 base.VisitIndexerDeclaration
             );
@@ -193,6 +204,7 @@ public class AddApiProfiles(
                     // So we discriminate using the identifier of the field's declarator (which should be guaranteed to
                     // be unique as you can't have differing fields with the same name)
                     node.Identifier.ToString(),
+                    node.Identifier.ToString(),
                     // And if for whatever reason we can't continue on with the baking logic, we carry on to the base
                     // inner declarator visitation logic as usual.
                     base.VisitVariableDeclarator
@@ -204,16 +216,18 @@ public class AddApiProfiles(
         ) =>
             Visit(
                 node,
+                null,
                 ModUtils.DiscrimStr(node.Modifiers, null, string.Empty, node.ParameterList, null),
                 base.VisitConstructorDeclaration
             );
 
         public override SyntaxNode? VisitDestructorDeclaration(DestructorDeclarationSyntax node) =>
-            Visit(node, "~", base.VisitDestructorDeclaration);
+            Visit(node, null, "~", base.VisitDestructorDeclaration);
 
         public override SyntaxNode? VisitOperatorDeclaration(OperatorDeclarationSyntax node) =>
             Visit(
                 node,
+                null,
                 ModUtils.DiscrimStr(
                     node.Modifiers,
                     null,
@@ -229,6 +243,7 @@ public class AddApiProfiles(
         ) =>
             Visit(
                 node,
+                null,
                 ModUtils.DiscrimStr(
                     node.Modifiers,
                     null,
@@ -242,6 +257,7 @@ public class AddApiProfiles(
         public override SyntaxNode? VisitMethodDeclaration(MethodDeclarationSyntax node) =>
             Visit(
                 node,
+                node.Identifier.ToString(),
                 ModUtils.DiscrimStr(
                     node.Modifiers,
                     node.TypeParameterList,
@@ -276,7 +292,15 @@ public class AddApiProfiles(
                 // When we're in baking mode, all of the baking logic is done in VisitVariableDeclarator. However this
                 // does nothing in the non-baking case, where we should add the attribute to the field as a marker.
                 return ret.AddAttributeLists(
-                    AttributeList(SingletonSeparatedList(Profile.GetSupportedApiProfileAttribute()))
+                    AttributeList(
+                        SingletonSeparatedList(
+                            GetProfileAttribute(
+                                ret.Declaration.Variables.Count == 1
+                                    ? ret.Declaration.Variables[0].Identifier.ToString()
+                                    : null
+                            )
+                        )
+                    )
                 );
             }
 
@@ -286,7 +310,12 @@ public class AddApiProfiles(
         private SyntaxNode? VisitType<T>(T node, Func<T, SyntaxNode?> @base)
             where T : BaseTypeDeclarationSyntax
         {
+            var parentSymbolBefore = _currentParentSymbol;
+            _currentParentSymbol = parentSymbolBefore is not null
+                ? $"{_currentParentSymbol}.{node.Identifier}"
+                : node.Identifier.ToString();
             var retNode = @base(node);
+            _currentParentSymbol = parentSymbolBefore;
             if (Profile is null)
             {
                 return retNode;
@@ -296,9 +325,7 @@ public class AddApiProfiles(
             {
                 return retNode is T ret
                     ? ret.AddAttributeLists(
-                        AttributeList(
-                            SingletonSeparatedList(Profile.GetSupportedApiProfileAttribute())
-                        )
+                        AttributeList(SingletonSeparatedList(GetProfileAttribute(null)))
                     )
                     : retNode;
             }
@@ -365,8 +392,13 @@ public class AddApiProfiles(
             return null; // baking erases, but the caller should know that.
         }
 
-        private SyntaxNode? Visit<T>(T node, string discrim, Func<T, SyntaxNode?> @base)
-            where T : MemberDeclarationSyntax => Visit(node, node, discrim, @base);
+        private SyntaxNode? Visit<T>(
+            T node,
+            string? name,
+            string discrim,
+            Func<T, SyntaxNode?> @base
+        )
+            where T : MemberDeclarationSyntax => Visit(node, node, name, discrim, @base);
 
         // This is super convoluted but to deduplicate the member handling code for fields (wherein one field decl may
         // have many declarators of logically independent fields) we separate nodeToAdd vs nodeVisiting. Most of the
@@ -376,6 +408,7 @@ public class AddApiProfiles(
         private SyntaxNode? Visit<TSeparated, TVisiting>(
             TSeparated nodeToAdd,
             TVisiting nodeVisiting,
+            string? name,
             string discrim,
             Func<TVisiting, SyntaxNode?> @base
         )
@@ -408,13 +441,13 @@ public class AddApiProfiles(
 
                 // Add the attribute if this is the node we are visiting.
                 return ret.AddAttributeLists(
-                    AttributeList(SingletonSeparatedList(Profile.GetSupportedApiProfileAttribute()))
+                    AttributeList(SingletonSeparatedList(GetProfileAttribute(name)))
                 );
             }
 
             Logger?.LogTrace(
                 "Baking item for \"{}\" with discriminator \"{}\": {}",
-                Profile.Name,
+                Profile.Profile,
                 discrim,
                 nodeToAdd
             );
@@ -552,7 +585,7 @@ public class AddApiProfiles(
             // existing declaration by adding our attribute list.
             parent.Children[discrim] = (
                 (baked.Syntax ?? nodeToAdd).AddAttributeLists(
-                    AttributeList(SingletonSeparatedList(Profile.GetSupportedApiProfileAttribute()))
+                    AttributeList(SingletonSeparatedList(GetProfileAttribute(name)))
                 ),
                 null,
                 baked.Syntax is null ? parent.Children.Count : baked.Index
@@ -669,7 +702,7 @@ public class AddApiProfiles(
                     );
             }
 
-            static BaseTypeDeclarationSyntax WithProfile(
+            BaseTypeDeclarationSyntax WithProfile(
                 BaseTypeDeclarationSyntax decl,
                 ApiProfileDecl? profile
             ) =>
@@ -677,7 +710,7 @@ public class AddApiProfiles(
                     ? decl
                     : decl.AddAttributeLists(
                         AttributeList(
-                            SingletonSeparatedList(profile.GetSupportedApiProfileAttribute())
+                            SingletonSeparatedList(GetProfileAttribute(decl.Identifier.ToString()))
                         )
                     );
         }
@@ -700,7 +733,7 @@ public class AddApiProfiles(
     public override Task<GeneratedSyntax> AfterScrapeAsync(string key, GeneratedSyntax syntax)
     {
         var cfg = config.Get(key);
-        var rewriter = new Rewriter { Logger = logger };
+        var rewriter = new Rewriter(key, versionProviders.Get(key).ToArray()) { Logger = logger };
         var bakery = new Dictionary<string, BakeSet>();
         var baked = new List<string>();
         var aggregatedUsings = new Dictionary<string, UsingDirectiveSyntax>();

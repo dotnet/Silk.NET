@@ -207,7 +207,10 @@ public class ArrayParameterTransformerTests
         );
     }
 
-    class TestApiMetadata : IFunctionTransformer, ITransformationContext, IApiMetadataProvider
+    class TestApiMetadata
+        : IFunctionTransformer,
+            ITransformationContext,
+            IApiMetadataProvider<SymbolConstraints>
     {
         public TestApiMetadata() => Transformers = [this];
 
@@ -223,78 +226,74 @@ public class ArrayParameterTransformerTests
 
         public bool AddUsing(UsingDirectiveSyntax use) => throw new NotImplementedException();
 
-        public bool TryGetParameterMetadata<T>(
+        public bool TryGetChildSymbolMetadata(
             string? jobKey,
             string nativeName,
-            string parameterName,
-            [NotNullWhen(true)] out T? metadata
+            string childNativeName,
+            [NotNullWhen(true)] out SymbolConstraints? metadata
         )
         {
-            if (parameterName.StartsWith("test1") && typeof(T) == typeof(SymbolConstraints))
+            if (childNativeName.StartsWith("test1"))
             {
-                metadata = (T)
-                    (object)
-                        new SymbolConstraints(
-                            [
-                                new LogicalAnnotation<UsageConstraints>(
-                                    LogicalRequirement.Always,
-                                    null,
-                                    null,
-                                    null,
-                                    new UsageConstraints(
-                                        StaticCount: 1,
-                                        IsOut: parameterName.Contains('o'),
-                                        IsIn: parameterName.Contains('i')
-                                    )
-                                )
-                            ],
-                            ElementTypeConstraints: new SymbolConstraints(
-                                [
-                                    new LogicalAnnotation<UsageConstraints>(
-                                        LogicalRequirement.Always,
-                                        null,
-                                        null,
-                                        null,
-                                        new UsageConstraints()
-                                    )
-                                ]
-                            ),
-                            IsMutable: parameterName.Contains('m')
-                        );
+                metadata = new SymbolConstraints(
+                    [
+                        new LogicalAnnotation<UsageConstraints>(
+                            LogicalRequirement.Always,
+                            null,
+                            null,
+                            null,
+                            new UsageConstraints(
+                                StaticCount: 1,
+                                IsOut: childNativeName.Contains('o'),
+                                IsIn: childNativeName.Contains('i')
+                            )
+                        )
+                    ],
+                    ElementTypeConstraints: new SymbolConstraints(
+                        [
+                            new LogicalAnnotation<UsageConstraints>(
+                                LogicalRequirement.Always,
+                                null,
+                                null,
+                                null,
+                                new UsageConstraints()
+                            )
+                        ]
+                    ),
+                    IsMutable: childNativeName.Contains('m')
+                );
                 return true;
             }
 
-            if (parameterName.StartsWith("test") && typeof(T) == typeof(SymbolConstraints))
+            if (childNativeName.StartsWith("test"))
             {
-                metadata = (T)
-                    (object)
-                        new SymbolConstraints(
-                            [
-                                new LogicalAnnotation<UsageConstraints>(
-                                    LogicalRequirement.Always,
-                                    null,
-                                    null,
-                                    null,
-                                    new UsageConstraints(
-                                        CountExpression: "cnt",
-                                        IsOut: parameterName.Contains('o'),
-                                        IsIn: parameterName.Contains('i')
-                                    )
-                                )
-                            ],
-                            ElementTypeConstraints: new SymbolConstraints(
-                                [
-                                    new LogicalAnnotation<UsageConstraints>(
-                                        LogicalRequirement.Always,
-                                        null,
-                                        null,
-                                        null,
-                                        new UsageConstraints()
-                                    )
-                                ]
-                            ),
-                            IsMutable: parameterName.Contains('m')
-                        );
+                metadata = new SymbolConstraints(
+                    [
+                        new LogicalAnnotation<UsageConstraints>(
+                            LogicalRequirement.Always,
+                            null,
+                            null,
+                            null,
+                            new UsageConstraints(
+                                CountExpression: "cnt",
+                                IsOut: childNativeName.Contains('o'),
+                                IsIn: childNativeName.Contains('i')
+                            )
+                        )
+                    ],
+                    ElementTypeConstraints: new SymbolConstraints(
+                        [
+                            new LogicalAnnotation<UsageConstraints>(
+                                LogicalRequirement.Always,
+                                null,
+                                null,
+                                null,
+                                new UsageConstraints()
+                            )
+                        ]
+                    ),
+                    IsMutable: childNativeName.Contains('m')
+                );
                 return true;
             }
 

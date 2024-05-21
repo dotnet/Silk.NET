@@ -80,7 +80,7 @@ public class ArrayParameterTransformer : IFunctionTransformer
         var ((countParam, _, ((ptrParam, _, ptrCount), _)), countParamNo) =
             // 1. Get all count parameters
             decl.EnumerateCountParameterInfo(
-                    ctx.Transformers.OfType<IApiMetadataProvider>(),
+                    ctx.Transformers.OfType<IApiMetadataProvider<SymbolConstraints>>(),
                     entryPoint,
                     ctx.JobKey
                 )
@@ -111,7 +111,7 @@ public class ArrayParameterTransformer : IFunctionTransformer
         if (countParam is null)
         {
             ((ptrParam, _, ptrCount), countParamNo) = decl.EnumerateSymbolConstraints(
-                    ctx.Transformers.OfType<IApiMetadataProvider>(),
+                    ctx.Transformers.OfType<IApiMetadataProvider<SymbolConstraints>>(),
                     entryPoint,
                     ctx.JobKey
                 )

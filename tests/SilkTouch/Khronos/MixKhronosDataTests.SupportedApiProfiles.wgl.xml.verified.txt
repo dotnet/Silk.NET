@@ -1,10 +1,10 @@
 ﻿ChoosePixelFormat
 -----------------
-[SupportedApiProfile("wgl",["WGL_VERSION_1_0"],StartVersion="1.0")]
+[SupportedApiProfile("wgl",["WGL_VERSION_1_0"],MinVersion="1.0")]
 
 DescribePixelFormat
 -------------------
-[SupportedApiProfile("wgl",["WGL_VERSION_1_0"],StartVersion="1.0")]
+[SupportedApiProfile("wgl",["WGL_VERSION_1_0"],MinVersion="1.0")]
 
 ERROR_INCOMPATIBLE_AFFINITY_MASKS_NV
 ------------------------------------
@@ -36,19 +36,19 @@ ERROR_MISSING_AFFINITY_MASK_NV
 
 GetEnhMetaFilePixelFormat
 -------------------------
-[SupportedApiProfile("wgl",["WGL_VERSION_1_0"],StartVersion="1.0")]
+[SupportedApiProfile("wgl",["WGL_VERSION_1_0"],MinVersion="1.0")]
 
 GetPixelFormat
 --------------
-[SupportedApiProfile("wgl",["WGL_VERSION_1_0"],StartVersion="1.0")]
+[SupportedApiProfile("wgl",["WGL_VERSION_1_0"],MinVersion="1.0")]
 
 SetPixelFormat
 --------------
-[SupportedApiProfile("wgl",["WGL_VERSION_1_0"],StartVersion="1.0")]
+[SupportedApiProfile("wgl",["WGL_VERSION_1_0"],MinVersion="1.0")]
 
 SwapBuffers
 -----------
-[SupportedApiProfile("wgl",["WGL_VERSION_1_0"],StartVersion="1.0")]
+[SupportedApiProfile("wgl",["WGL_VERSION_1_0"],MinVersion="1.0")]
 
 WGL_ACCELERATION_ARB
 --------------------
@@ -456,11 +456,11 @@ WGL_FLOAT_COMPONENTS_NV
 
 WGL_FONT_LINES
 --------------
-[SupportedApiProfile("wgl",["WGL_VERSION_1_0"],StartVersion="1.0")]
+[SupportedApiProfile("wgl",["WGL_VERSION_1_0"],MinVersion="1.0")]
 
 WGL_FONT_POLYGONS
 -----------------
-[SupportedApiProfile("wgl",["WGL_VERSION_1_0"],StartVersion="1.0")]
+[SupportedApiProfile("wgl",["WGL_VERSION_1_0"],MinVersion="1.0")]
 
 WGL_FRAMEBUFFER_SRGB_CAPABLE_ARB
 --------------------------------
@@ -892,7 +892,7 @@ WGL_SWAP_LAYER_BUFFERS_EXT
 
 WGL_SWAP_MAIN_PLANE
 -------------------
-[SupportedApiProfile("wgl",["WGL_VERSION_1_0"],StartVersion="1.0")]
+[SupportedApiProfile("wgl",["WGL_VERSION_1_0"],MinVersion="1.0")]
 
 WGL_SWAP_METHOD_ARB
 -------------------
@@ -904,63 +904,63 @@ WGL_SWAP_METHOD_EXT
 
 WGL_SWAP_OVERLAY1
 -----------------
-[SupportedApiProfile("wgl",["WGL_VERSION_1_0"],StartVersion="1.0")]
+[SupportedApiProfile("wgl",["WGL_VERSION_1_0"],MinVersion="1.0")]
 
 WGL_SWAP_OVERLAY10
 ------------------
-[SupportedApiProfile("wgl",["WGL_VERSION_1_0"],StartVersion="1.0")]
+[SupportedApiProfile("wgl",["WGL_VERSION_1_0"],MinVersion="1.0")]
 
 WGL_SWAP_OVERLAY11
 ------------------
-[SupportedApiProfile("wgl",["WGL_VERSION_1_0"],StartVersion="1.0")]
+[SupportedApiProfile("wgl",["WGL_VERSION_1_0"],MinVersion="1.0")]
 
 WGL_SWAP_OVERLAY12
 ------------------
-[SupportedApiProfile("wgl",["WGL_VERSION_1_0"],StartVersion="1.0")]
+[SupportedApiProfile("wgl",["WGL_VERSION_1_0"],MinVersion="1.0")]
 
 WGL_SWAP_OVERLAY13
 ------------------
-[SupportedApiProfile("wgl",["WGL_VERSION_1_0"],StartVersion="1.0")]
+[SupportedApiProfile("wgl",["WGL_VERSION_1_0"],MinVersion="1.0")]
 
 WGL_SWAP_OVERLAY14
 ------------------
-[SupportedApiProfile("wgl",["WGL_VERSION_1_0"],StartVersion="1.0")]
+[SupportedApiProfile("wgl",["WGL_VERSION_1_0"],MinVersion="1.0")]
 
 WGL_SWAP_OVERLAY15
 ------------------
-[SupportedApiProfile("wgl",["WGL_VERSION_1_0"],StartVersion="1.0")]
+[SupportedApiProfile("wgl",["WGL_VERSION_1_0"],MinVersion="1.0")]
 
 WGL_SWAP_OVERLAY2
 -----------------
-[SupportedApiProfile("wgl",["WGL_VERSION_1_0"],StartVersion="1.0")]
+[SupportedApiProfile("wgl",["WGL_VERSION_1_0"],MinVersion="1.0")]
 
 WGL_SWAP_OVERLAY3
 -----------------
-[SupportedApiProfile("wgl",["WGL_VERSION_1_0"],StartVersion="1.0")]
+[SupportedApiProfile("wgl",["WGL_VERSION_1_0"],MinVersion="1.0")]
 
 WGL_SWAP_OVERLAY4
 -----------------
-[SupportedApiProfile("wgl",["WGL_VERSION_1_0"],StartVersion="1.0")]
+[SupportedApiProfile("wgl",["WGL_VERSION_1_0"],MinVersion="1.0")]
 
 WGL_SWAP_OVERLAY5
 -----------------
-[SupportedApiProfile("wgl",["WGL_VERSION_1_0"],StartVersion="1.0")]
+[SupportedApiProfile("wgl",["WGL_VERSION_1_0"],MinVersion="1.0")]
 
 WGL_SWAP_OVERLAY6
 -----------------
-[SupportedApiProfile("wgl",["WGL_VERSION_1_0"],StartVersion="1.0")]
+[SupportedApiProfile("wgl",["WGL_VERSION_1_0"],MinVersion="1.0")]
 
 WGL_SWAP_OVERLAY7
 -----------------
-[SupportedApiProfile("wgl",["WGL_VERSION_1_0"],StartVersion="1.0")]
+[SupportedApiProfile("wgl",["WGL_VERSION_1_0"],MinVersion="1.0")]
 
 WGL_SWAP_OVERLAY8
 -----------------
-[SupportedApiProfile("wgl",["WGL_VERSION_1_0"],StartVersion="1.0")]
+[SupportedApiProfile("wgl",["WGL_VERSION_1_0"],MinVersion="1.0")]
 
 WGL_SWAP_OVERLAY9
 -----------------
-[SupportedApiProfile("wgl",["WGL_VERSION_1_0"],StartVersion="1.0")]
+[SupportedApiProfile("wgl",["WGL_VERSION_1_0"],MinVersion="1.0")]
 
 WGL_SWAP_UNDEFINED_ARB
 ----------------------
@@ -972,63 +972,63 @@ WGL_SWAP_UNDEFINED_EXT
 
 WGL_SWAP_UNDERLAY1
 ------------------
-[SupportedApiProfile("wgl",["WGL_VERSION_1_0"],StartVersion="1.0")]
+[SupportedApiProfile("wgl",["WGL_VERSION_1_0"],MinVersion="1.0")]
 
 WGL_SWAP_UNDERLAY10
 -------------------
-[SupportedApiProfile("wgl",["WGL_VERSION_1_0"],StartVersion="1.0")]
+[SupportedApiProfile("wgl",["WGL_VERSION_1_0"],MinVersion="1.0")]
 
 WGL_SWAP_UNDERLAY11
 -------------------
-[SupportedApiProfile("wgl",["WGL_VERSION_1_0"],StartVersion="1.0")]
+[SupportedApiProfile("wgl",["WGL_VERSION_1_0"],MinVersion="1.0")]
 
 WGL_SWAP_UNDERLAY12
 -------------------
-[SupportedApiProfile("wgl",["WGL_VERSION_1_0"],StartVersion="1.0")]
+[SupportedApiProfile("wgl",["WGL_VERSION_1_0"],MinVersion="1.0")]
 
 WGL_SWAP_UNDERLAY13
 -------------------
-[SupportedApiProfile("wgl",["WGL_VERSION_1_0"],StartVersion="1.0")]
+[SupportedApiProfile("wgl",["WGL_VERSION_1_0"],MinVersion="1.0")]
 
 WGL_SWAP_UNDERLAY14
 -------------------
-[SupportedApiProfile("wgl",["WGL_VERSION_1_0"],StartVersion="1.0")]
+[SupportedApiProfile("wgl",["WGL_VERSION_1_0"],MinVersion="1.0")]
 
 WGL_SWAP_UNDERLAY15
 -------------------
-[SupportedApiProfile("wgl",["WGL_VERSION_1_0"],StartVersion="1.0")]
+[SupportedApiProfile("wgl",["WGL_VERSION_1_0"],MinVersion="1.0")]
 
 WGL_SWAP_UNDERLAY2
 ------------------
-[SupportedApiProfile("wgl",["WGL_VERSION_1_0"],StartVersion="1.0")]
+[SupportedApiProfile("wgl",["WGL_VERSION_1_0"],MinVersion="1.0")]
 
 WGL_SWAP_UNDERLAY3
 ------------------
-[SupportedApiProfile("wgl",["WGL_VERSION_1_0"],StartVersion="1.0")]
+[SupportedApiProfile("wgl",["WGL_VERSION_1_0"],MinVersion="1.0")]
 
 WGL_SWAP_UNDERLAY4
 ------------------
-[SupportedApiProfile("wgl",["WGL_VERSION_1_0"],StartVersion="1.0")]
+[SupportedApiProfile("wgl",["WGL_VERSION_1_0"],MinVersion="1.0")]
 
 WGL_SWAP_UNDERLAY5
 ------------------
-[SupportedApiProfile("wgl",["WGL_VERSION_1_0"],StartVersion="1.0")]
+[SupportedApiProfile("wgl",["WGL_VERSION_1_0"],MinVersion="1.0")]
 
 WGL_SWAP_UNDERLAY6
 ------------------
-[SupportedApiProfile("wgl",["WGL_VERSION_1_0"],StartVersion="1.0")]
+[SupportedApiProfile("wgl",["WGL_VERSION_1_0"],MinVersion="1.0")]
 
 WGL_SWAP_UNDERLAY7
 ------------------
-[SupportedApiProfile("wgl",["WGL_VERSION_1_0"],StartVersion="1.0")]
+[SupportedApiProfile("wgl",["WGL_VERSION_1_0"],MinVersion="1.0")]
 
 WGL_SWAP_UNDERLAY8
 ------------------
-[SupportedApiProfile("wgl",["WGL_VERSION_1_0"],StartVersion="1.0")]
+[SupportedApiProfile("wgl",["WGL_VERSION_1_0"],MinVersion="1.0")]
 
 WGL_SWAP_UNDERLAY9
 ------------------
-[SupportedApiProfile("wgl",["WGL_VERSION_1_0"],StartVersion="1.0")]
+[SupportedApiProfile("wgl",["WGL_VERSION_1_0"],MinVersion="1.0")]
 
 WGL_TEXTURE_1D_ARB
 ------------------
@@ -1264,7 +1264,7 @@ wglChoosePixelFormatEXT
 
 wglCopyContext
 --------------
-[SupportedApiProfile("wgl",["WGL_VERSION_1_0"],StartVersion="1.0")]
+[SupportedApiProfile("wgl",["WGL_VERSION_1_0"],MinVersion="1.0")]
 
 wglCopyImageSubDataNV
 ---------------------
@@ -1288,7 +1288,7 @@ wglCreateBufferRegionARB
 
 wglCreateContext
 ----------------
-[SupportedApiProfile("wgl",["WGL_VERSION_1_0"],StartVersion="1.0")]
+[SupportedApiProfile("wgl",["WGL_VERSION_1_0"],MinVersion="1.0")]
 
 wglCreateContextAttribsARB
 --------------------------
@@ -1304,7 +1304,7 @@ wglCreateImageBufferI3D
 
 wglCreateLayerContext
 ---------------------
-[SupportedApiProfile("wgl",["WGL_VERSION_1_0"],StartVersion="1.0")]
+[SupportedApiProfile("wgl",["WGL_VERSION_1_0"],MinVersion="1.0")]
 
 wglCreatePbufferARB
 -------------------
@@ -1328,7 +1328,7 @@ wglDeleteBufferRegionARB
 
 wglDeleteContext
 ----------------
-[SupportedApiProfile("wgl",["WGL_VERSION_1_0"],StartVersion="1.0")]
+[SupportedApiProfile("wgl",["WGL_VERSION_1_0"],MinVersion="1.0")]
 
 wglDeleteDCNV
 -------------
@@ -1336,7 +1336,7 @@ wglDeleteDCNV
 
 wglDescribeLayerPlane
 ---------------------
-[SupportedApiProfile("wgl",["WGL_VERSION_1_0"],StartVersion="1.0")]
+[SupportedApiProfile("wgl",["WGL_VERSION_1_0"],MinVersion="1.0")]
 
 wglDestroyDisplayColorTableEXT
 ------------------------------
@@ -1456,11 +1456,11 @@ wglGetCurrentAssociatedContextAMD
 
 wglGetCurrentContext
 --------------------
-[SupportedApiProfile("wgl",["WGL_VERSION_1_0"],StartVersion="1.0")]
+[SupportedApiProfile("wgl",["WGL_VERSION_1_0"],MinVersion="1.0")]
 
 wglGetCurrentDC
 ---------------
-[SupportedApiProfile("wgl",["WGL_VERSION_1_0"],StartVersion="1.0")]
+[SupportedApiProfile("wgl",["WGL_VERSION_1_0"],MinVersion="1.0")]
 
 wglGetCurrentReadDCARB
 ----------------------
@@ -1520,7 +1520,7 @@ wglGetGPUInfoAMD
 
 wglGetLayerPaletteEntries
 -------------------------
-[SupportedApiProfile("wgl",["WGL_VERSION_1_0"],StartVersion="1.0")]
+[SupportedApiProfile("wgl",["WGL_VERSION_1_0"],MinVersion="1.0")]
 
 wglGetMscRateOML
 ----------------
@@ -1552,7 +1552,7 @@ wglGetPixelFormatAttribivEXT
 
 wglGetProcAddress
 -----------------
-[SupportedApiProfile("wgl",["WGL_VERSION_1_0"],StartVersion="1.0")]
+[SupportedApiProfile("wgl",["WGL_VERSION_1_0"],MinVersion="1.0")]
 
 wglGetSwapIntervalEXT
 ---------------------
@@ -1604,7 +1604,7 @@ wglMakeContextCurrentEXT
 
 wglMakeCurrent
 --------------
-[SupportedApiProfile("wgl",["WGL_VERSION_1_0"],StartVersion="1.0")]
+[SupportedApiProfile("wgl",["WGL_VERSION_1_0"],MinVersion="1.0")]
 
 wglQueryCurrentContextNV
 ------------------------
@@ -1648,7 +1648,7 @@ wglQueryVideoCaptureDeviceNV
 
 wglRealizeLayerPalette
 ----------------------
-[SupportedApiProfile("wgl",["WGL_VERSION_1_0"],StartVersion="1.0")]
+[SupportedApiProfile("wgl",["WGL_VERSION_1_0"],MinVersion="1.0")]
 
 wglReleaseImageBufferEventsI3D
 ------------------------------
@@ -1708,7 +1708,7 @@ wglSetGammaTableParametersI3D
 
 wglSetLayerPaletteEntries
 -------------------------
-[SupportedApiProfile("wgl",["WGL_VERSION_1_0"],StartVersion="1.0")]
+[SupportedApiProfile("wgl",["WGL_VERSION_1_0"],MinVersion="1.0")]
 
 wglSetPbufferAttribARB
 ----------------------
@@ -1720,7 +1720,7 @@ wglSetStereoEmitterState3DL
 
 wglShareLists
 -------------
-[SupportedApiProfile("wgl",["WGL_VERSION_1_0"],StartVersion="1.0")]
+[SupportedApiProfile("wgl",["WGL_VERSION_1_0"],MinVersion="1.0")]
 
 wglSwapBuffersMscOML
 --------------------
@@ -1732,7 +1732,7 @@ wglSwapIntervalEXT
 
 wglSwapLayerBuffers
 -------------------
-[SupportedApiProfile("wgl",["WGL_VERSION_1_0"],StartVersion="1.0")]
+[SupportedApiProfile("wgl",["WGL_VERSION_1_0"],MinVersion="1.0")]
 
 wglSwapLayerBuffersMscOML
 -------------------------
@@ -1740,27 +1740,27 @@ wglSwapLayerBuffersMscOML
 
 wglUseFontBitmaps
 -----------------
-[SupportedApiProfile("wgl",["WGL_VERSION_1_0"],StartVersion="1.0")]
+[SupportedApiProfile("wgl",["WGL_VERSION_1_0"],MinVersion="1.0")]
 
 wglUseFontBitmapsA
 ------------------
-[SupportedApiProfile("wgl",["WGL_VERSION_1_0"],StartVersion="1.0")]
+[SupportedApiProfile("wgl",["WGL_VERSION_1_0"],MinVersion="1.0")]
 
 wglUseFontBitmapsW
 ------------------
-[SupportedApiProfile("wgl",["WGL_VERSION_1_0"],StartVersion="1.0")]
+[SupportedApiProfile("wgl",["WGL_VERSION_1_0"],MinVersion="1.0")]
 
 wglUseFontOutlines
 ------------------
-[SupportedApiProfile("wgl",["WGL_VERSION_1_0"],StartVersion="1.0")]
+[SupportedApiProfile("wgl",["WGL_VERSION_1_0"],MinVersion="1.0")]
 
 wglUseFontOutlinesA
 -------------------
-[SupportedApiProfile("wgl",["WGL_VERSION_1_0"],StartVersion="1.0")]
+[SupportedApiProfile("wgl",["WGL_VERSION_1_0"],MinVersion="1.0")]
 
 wglUseFontOutlinesW
 -------------------
-[SupportedApiProfile("wgl",["WGL_VERSION_1_0"],StartVersion="1.0")]
+[SupportedApiProfile("wgl",["WGL_VERSION_1_0"],MinVersion="1.0")]
 
 wglWaitForMscOML
 ----------------

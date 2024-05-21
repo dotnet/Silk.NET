@@ -13,8 +13,10 @@ using Newtonsoft.Json;
 using NUnit.Framework;
 using Silk.NET.BuildTools.Common;
 using Silk.NET.SilkTouch.Mods;
+using Silk.NET.SilkTouch.Mods.Metadata;
 using VerifyNUnit;
 using VerifyTests;
+using static Microsoft.CodeAnalysis.CSharp.SyntaxFactory;
 
 namespace Silk.NET.SilkTouch.UnitTests.Khronos;
 
@@ -266,7 +268,7 @@ public class MixKhronosDataTests
                     ((MixKhronosData.JobData)data)
                         .SupportedApiProfiles?.OrderBy(x => x.Key)
                         .Select(x =>
-                            $"{x.Key}\n{new string('-', x.Key.Length)}\n{string.Join('\n', x.Value.Select(x => x.ToString()).Order())}\n"
+                            $"{x.Key}\n{new string('-', x.Key.Length)}\n{string.Join('\n', x.Value.Select(y => AttributeList(SingletonSeparatedList(y.GetSupportedApiProfileAttribute())).ToString()).Order())}\n"
                         ) ?? []
                 )
             )

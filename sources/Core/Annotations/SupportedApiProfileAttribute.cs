@@ -1,4 +1,6 @@
-﻿namespace Silk.NET.Core;
+﻿using System.Text.Json.Serialization;
+
+namespace Silk.NET.Core;
 
 /// <summary>
 /// Indicates that the annotated API is supported using a specific API profile.
@@ -25,7 +27,7 @@ public class SupportedApiProfileAttribute(string profile, string[]? apiSets = nu
     /// <summary>
     /// The API profile supported e.g. gl, glcore, gles2, vulkan, vulkansc, etc.
     /// </summary>
-    public string Profile { get; } = profile;
+    public string Profile { get; init; } = profile;
 
     /// <summary>
     /// A list of API sets (i.e. feature or extension names) in which the API is supported. If any of the elements
@@ -37,7 +39,7 @@ public class SupportedApiProfileAttribute(string profile, string[]? apiSets = nu
     /// By default, the API is deemed supported if any of the sets in this array are supported. However, this can be
     /// changed using <see cref="RequireAll"/>.
     /// </remarks>
-    public string[]? ApiSets { get; } = apiSets;
+    public string[]? ApiSets { get; init; } = apiSets;
 
     /// <summary>
     /// The minimum (inclusive) version number (for illustration purposes only) wherein the API is supported by default.

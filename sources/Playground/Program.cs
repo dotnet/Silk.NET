@@ -19,7 +19,6 @@ unsafe
     var window = Glfw.CreateWindow(1000, 800, "Hello Window!", nullptr, nullptr);
     if (window == nullptr)
     {
-        // TODO const correctness
         Ref<sbyte> error = nullptr;
         if (Glfw.GetError(error.AsRef2D()) == 0 || error == nullptr)
         {

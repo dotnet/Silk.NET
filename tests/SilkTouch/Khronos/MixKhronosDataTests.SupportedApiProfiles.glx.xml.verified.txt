@@ -1,6 +1,6 @@
 ﻿__GLX_NUMBER_EVENTS
 -------------------
-[SupportedApiProfile("glx",["GLX_VERSION_1_0","GLX_VERSION_1_1","GLX_VERSION_1_2","GLX_VERSION_1_3","GLX_VERSION_1_4"],StartVersion="1.0")]
+[SupportedApiProfile("glx",["GLX_VERSION_1_0","GLX_VERSION_1_1","GLX_VERSION_1_2","GLX_VERSION_1_3","GLX_VERSION_1_4"],MinVersion="1.0")]
 
 GLX_3DFX_FULLSCREEN_MODE_MESA
 -----------------------------
@@ -12,15 +12,15 @@ GLX_3DFX_WINDOW_MODE_MESA
 
 GLX_ACCUM_ALPHA_SIZE
 --------------------
-[SupportedApiProfile("glx",["GLX_VERSION_1_0","GLX_VERSION_1_1","GLX_VERSION_1_2","GLX_VERSION_1_3","GLX_VERSION_1_4"],StartVersion="1.0")]
+[SupportedApiProfile("glx",["GLX_VERSION_1_0","GLX_VERSION_1_1","GLX_VERSION_1_2","GLX_VERSION_1_3","GLX_VERSION_1_4"],MinVersion="1.0")]
 
 GLX_ACCUM_BLUE_SIZE
 -------------------
-[SupportedApiProfile("glx",["GLX_VERSION_1_0","GLX_VERSION_1_1","GLX_VERSION_1_2","GLX_VERSION_1_3","GLX_VERSION_1_4"],StartVersion="1.0")]
+[SupportedApiProfile("glx",["GLX_VERSION_1_0","GLX_VERSION_1_1","GLX_VERSION_1_2","GLX_VERSION_1_3","GLX_VERSION_1_4"],MinVersion="1.0")]
 
 GLX_ACCUM_BUFFER_BIT
 --------------------
-[SupportedApiProfile("glx",["GLX_VERSION_1_3","GLX_VERSION_1_4"],StartVersion="1.3")]
+[SupportedApiProfile("glx",["GLX_VERSION_1_3","GLX_VERSION_1_4"],MinVersion="1.3")]
 
 GLX_ACCUM_BUFFER_BIT_SGIX
 -------------------------
@@ -28,23 +28,23 @@ GLX_ACCUM_BUFFER_BIT_SGIX
 
 GLX_ACCUM_GREEN_SIZE
 --------------------
-[SupportedApiProfile("glx",["GLX_VERSION_1_0","GLX_VERSION_1_1","GLX_VERSION_1_2","GLX_VERSION_1_3","GLX_VERSION_1_4"],StartVersion="1.0")]
+[SupportedApiProfile("glx",["GLX_VERSION_1_0","GLX_VERSION_1_1","GLX_VERSION_1_2","GLX_VERSION_1_3","GLX_VERSION_1_4"],MinVersion="1.0")]
 
 GLX_ACCUM_RED_SIZE
 ------------------
-[SupportedApiProfile("glx",["GLX_VERSION_1_0","GLX_VERSION_1_1","GLX_VERSION_1_2","GLX_VERSION_1_3","GLX_VERSION_1_4"],StartVersion="1.0")]
+[SupportedApiProfile("glx",["GLX_VERSION_1_0","GLX_VERSION_1_1","GLX_VERSION_1_2","GLX_VERSION_1_3","GLX_VERSION_1_4"],MinVersion="1.0")]
 
 GLX_ALPHA_SIZE
 --------------
-[SupportedApiProfile("glx",["GLX_VERSION_1_0","GLX_VERSION_1_1","GLX_VERSION_1_2","GLX_VERSION_1_3","GLX_VERSION_1_4"],StartVersion="1.0")]
+[SupportedApiProfile("glx",["GLX_VERSION_1_0","GLX_VERSION_1_1","GLX_VERSION_1_2","GLX_VERSION_1_3","GLX_VERSION_1_4"],MinVersion="1.0")]
 
 GLX_AUX_BUFFERS
 ---------------
-[SupportedApiProfile("glx",["GLX_VERSION_1_0","GLX_VERSION_1_1","GLX_VERSION_1_2","GLX_VERSION_1_3","GLX_VERSION_1_4"],StartVersion="1.0")]
+[SupportedApiProfile("glx",["GLX_VERSION_1_0","GLX_VERSION_1_1","GLX_VERSION_1_2","GLX_VERSION_1_3","GLX_VERSION_1_4"],MinVersion="1.0")]
 
 GLX_AUX_BUFFERS_BIT
 -------------------
-[SupportedApiProfile("glx",["GLX_VERSION_1_3","GLX_VERSION_1_4"],StartVersion="1.3")]
+[SupportedApiProfile("glx",["GLX_VERSION_1_3","GLX_VERSION_1_4"],MinVersion="1.3")]
 
 GLX_AUX_BUFFERS_BIT_SGIX
 ------------------------
@@ -100,7 +100,7 @@ GLX_BACK_EXT
 
 GLX_BACK_LEFT_BUFFER_BIT
 ------------------------
-[SupportedApiProfile("glx",["GLX_VERSION_1_3","GLX_VERSION_1_4"],StartVersion="1.3")]
+[SupportedApiProfile("glx",["GLX_VERSION_1_3","GLX_VERSION_1_4"],MinVersion="1.3")]
 
 GLX_BACK_LEFT_BUFFER_BIT_SGIX
 -----------------------------
@@ -112,7 +112,7 @@ GLX_BACK_LEFT_EXT
 
 GLX_BACK_RIGHT_BUFFER_BIT
 -------------------------
-[SupportedApiProfile("glx",["GLX_VERSION_1_3","GLX_VERSION_1_4"],StartVersion="1.3")]
+[SupportedApiProfile("glx",["GLX_VERSION_1_3","GLX_VERSION_1_4"],MinVersion="1.3")]
 
 GLX_BACK_RIGHT_BUFFER_BIT_SGIX
 ------------------------------
@@ -124,15 +124,15 @@ GLX_BACK_RIGHT_EXT
 
 GLX_BAD_ATTRIBUTE
 -----------------
-[SupportedApiProfile("glx",["GLX_VERSION_1_0","GLX_VERSION_1_1","GLX_VERSION_1_2","GLX_VERSION_1_3","GLX_VERSION_1_4"],StartVersion="1.0")]
+[SupportedApiProfile("glx",["GLX_VERSION_1_0","GLX_VERSION_1_1","GLX_VERSION_1_2","GLX_VERSION_1_3","GLX_VERSION_1_4"],MinVersion="1.0")]
 
 GLX_BAD_CONTEXT
 ---------------
-[SupportedApiProfile("glx",["GLX_VERSION_1_0","GLX_VERSION_1_1","GLX_VERSION_1_2","GLX_VERSION_1_3","GLX_VERSION_1_4"],StartVersion="1.0")]
+[SupportedApiProfile("glx",["GLX_VERSION_1_0","GLX_VERSION_1_1","GLX_VERSION_1_2","GLX_VERSION_1_3","GLX_VERSION_1_4"],MinVersion="1.0")]
 
 GLX_BAD_ENUM
 ------------
-[SupportedApiProfile("glx",["GLX_VERSION_1_0","GLX_VERSION_1_1","GLX_VERSION_1_2","GLX_VERSION_1_3","GLX_VERSION_1_4"],StartVersion="1.0")]
+[SupportedApiProfile("glx",["GLX_VERSION_1_0","GLX_VERSION_1_1","GLX_VERSION_1_2","GLX_VERSION_1_3","GLX_VERSION_1_4"],MinVersion="1.0")]
 
 GLX_BAD_HYPERPIPE_CONFIG_SGIX
 -----------------------------
@@ -144,15 +144,15 @@ GLX_BAD_HYPERPIPE_SGIX
 
 GLX_BAD_SCREEN
 --------------
-[SupportedApiProfile("glx",["GLX_VERSION_1_0","GLX_VERSION_1_1","GLX_VERSION_1_2","GLX_VERSION_1_3","GLX_VERSION_1_4"],StartVersion="1.0")]
+[SupportedApiProfile("glx",["GLX_VERSION_1_0","GLX_VERSION_1_1","GLX_VERSION_1_2","GLX_VERSION_1_3","GLX_VERSION_1_4"],MinVersion="1.0")]
 
 GLX_BAD_VALUE
 -------------
-[SupportedApiProfile("glx",["GLX_VERSION_1_0","GLX_VERSION_1_1","GLX_VERSION_1_2","GLX_VERSION_1_3","GLX_VERSION_1_4"],StartVersion="1.0")]
+[SupportedApiProfile("glx",["GLX_VERSION_1_0","GLX_VERSION_1_1","GLX_VERSION_1_2","GLX_VERSION_1_3","GLX_VERSION_1_4"],MinVersion="1.0")]
 
 GLX_BAD_VISUAL
 --------------
-[SupportedApiProfile("glx",["GLX_VERSION_1_0","GLX_VERSION_1_1","GLX_VERSION_1_2","GLX_VERSION_1_3","GLX_VERSION_1_4"],StartVersion="1.0")]
+[SupportedApiProfile("glx",["GLX_VERSION_1_0","GLX_VERSION_1_1","GLX_VERSION_1_2","GLX_VERSION_1_3","GLX_VERSION_1_4"],MinVersion="1.0")]
 
 GLX_BIND_TO_MIPMAP_TEXTURE_EXT
 ------------------------------
@@ -176,7 +176,7 @@ GLX_BLENDED_RGBA_SGIS
 
 GLX_BLUE_SIZE
 -------------
-[SupportedApiProfile("glx",["GLX_VERSION_1_0","GLX_VERSION_1_1","GLX_VERSION_1_2","GLX_VERSION_1_3","GLX_VERSION_1_4"],StartVersion="1.0")]
+[SupportedApiProfile("glx",["GLX_VERSION_1_0","GLX_VERSION_1_1","GLX_VERSION_1_2","GLX_VERSION_1_3","GLX_VERSION_1_4"],MinVersion="1.0")]
 
 GLX_BUFFER_CLOBBER_MASK_SGIX
 ----------------------------
@@ -184,7 +184,7 @@ GLX_BUFFER_CLOBBER_MASK_SGIX
 
 GLX_BUFFER_SIZE
 ---------------
-[SupportedApiProfile("glx",["GLX_VERSION_1_0","GLX_VERSION_1_1","GLX_VERSION_1_2","GLX_VERSION_1_3","GLX_VERSION_1_4"],StartVersion="1.0")]
+[SupportedApiProfile("glx",["GLX_VERSION_1_0","GLX_VERSION_1_1","GLX_VERSION_1_2","GLX_VERSION_1_3","GLX_VERSION_1_4"],MinVersion="1.0")]
 
 GLX_BUFFER_SWAP_COMPLETE_INTEL_MASK
 -----------------------------------
@@ -192,11 +192,11 @@ GLX_BUFFER_SWAP_COMPLETE_INTEL_MASK
 
 GLX_BufferSwapComplete
 ----------------------
-[SupportedApiProfile("glx",["GLX_VERSION_1_0","GLX_VERSION_1_1","GLX_VERSION_1_2","GLX_VERSION_1_3","GLX_VERSION_1_4"],StartVersion="1.0")]
+[SupportedApiProfile("glx",["GLX_VERSION_1_0","GLX_VERSION_1_1","GLX_VERSION_1_2","GLX_VERSION_1_3","GLX_VERSION_1_4"],MinVersion="1.0")]
 
 GLX_COLOR_INDEX_BIT
 -------------------
-[SupportedApiProfile("glx",["GLX_VERSION_1_3","GLX_VERSION_1_4"],StartVersion="1.3")]
+[SupportedApiProfile("glx",["GLX_VERSION_1_3","GLX_VERSION_1_4"],MinVersion="1.3")]
 
 GLX_COLOR_INDEX_BIT_SGIX
 ------------------------
@@ -204,7 +204,7 @@ GLX_COLOR_INDEX_BIT_SGIX
 
 GLX_COLOR_INDEX_TYPE
 --------------------
-[SupportedApiProfile("glx",["GLX_VERSION_1_3","GLX_VERSION_1_4"],StartVersion="1.3")]
+[SupportedApiProfile("glx",["GLX_VERSION_1_3","GLX_VERSION_1_4"],MinVersion="1.3")]
 
 GLX_COLOR_INDEX_TYPE_SGIX
 -------------------------
@@ -216,7 +216,7 @@ GLX_COLOR_SAMPLES_NV
 
 GLX_CONFIG_CAVEAT
 -----------------
-[SupportedApiProfile("glx",["GLX_VERSION_1_3","GLX_VERSION_1_4"],StartVersion="1.3")]
+[SupportedApiProfile("glx",["GLX_VERSION_1_3","GLX_VERSION_1_4"],MinVersion="1.3")]
 
 GLX_CONTEXT_ALLOW_BUFFER_BYTE_ORDER_MISMATCH_ARB
 ------------------------------------------------
@@ -336,7 +336,7 @@ GLX_COVERAGE_SAMPLES_NV
 
 GLX_DAMAGED
 -----------
-[SupportedApiProfile("glx",["GLX_VERSION_1_3","GLX_VERSION_1_4"],StartVersion="1.3")]
+[SupportedApiProfile("glx",["GLX_VERSION_1_3","GLX_VERSION_1_4"],MinVersion="1.3")]
 
 GLX_DAMAGED_SGIX
 ----------------
@@ -344,7 +344,7 @@ GLX_DAMAGED_SGIX
 
 GLX_DEPTH_BUFFER_BIT
 --------------------
-[SupportedApiProfile("glx",["GLX_VERSION_1_3","GLX_VERSION_1_4"],StartVersion="1.3")]
+[SupportedApiProfile("glx",["GLX_VERSION_1_3","GLX_VERSION_1_4"],MinVersion="1.3")]
 
 GLX_DEPTH_BUFFER_BIT_SGIX
 -------------------------
@@ -352,7 +352,7 @@ GLX_DEPTH_BUFFER_BIT_SGIX
 
 GLX_DEPTH_SIZE
 --------------
-[SupportedApiProfile("glx",["GLX_VERSION_1_0","GLX_VERSION_1_1","GLX_VERSION_1_2","GLX_VERSION_1_3","GLX_VERSION_1_4"],StartVersion="1.0")]
+[SupportedApiProfile("glx",["GLX_VERSION_1_0","GLX_VERSION_1_1","GLX_VERSION_1_2","GLX_VERSION_1_3","GLX_VERSION_1_4"],MinVersion="1.0")]
 
 GLX_DEVICE_ID_NV
 ----------------
@@ -364,7 +364,7 @@ GLX_DIGITAL_MEDIA_PBUFFER_SGIX
 
 GLX_DIRECT_COLOR
 ----------------
-[SupportedApiProfile("glx",["GLX_VERSION_1_3","GLX_VERSION_1_4"],StartVersion="1.3")]
+[SupportedApiProfile("glx",["GLX_VERSION_1_3","GLX_VERSION_1_4"],MinVersion="1.3")]
 
 GLX_DIRECT_COLOR_EXT
 --------------------
@@ -372,15 +372,15 @@ GLX_DIRECT_COLOR_EXT
 
 GLX_DONT_CARE
 -------------
-[SupportedApiProfile("glx",["GLX_VERSION_1_3","GLX_VERSION_1_4"],StartVersion="1.3")]
+[SupportedApiProfile("glx",["GLX_VERSION_1_3","GLX_VERSION_1_4"],MinVersion="1.3")]
 
 GLX_DOUBLEBUFFER
 ----------------
-[SupportedApiProfile("glx",["GLX_VERSION_1_0","GLX_VERSION_1_1","GLX_VERSION_1_2","GLX_VERSION_1_3","GLX_VERSION_1_4"],StartVersion="1.0")]
+[SupportedApiProfile("glx",["GLX_VERSION_1_0","GLX_VERSION_1_1","GLX_VERSION_1_2","GLX_VERSION_1_3","GLX_VERSION_1_4"],MinVersion="1.0")]
 
 GLX_DRAWABLE_TYPE
 -----------------
-[SupportedApiProfile("glx",["GLX_EXT_get_drawable_type","GLX_VERSION_1_3","GLX_VERSION_1_4"],StartVersion="1.3")]
+[SupportedApiProfile("glx",["GLX_EXT_get_drawable_type","GLX_VERSION_1_3","GLX_VERSION_1_4"],MinVersion="1.3")]
 
 GLX_DRAWABLE_TYPE_SGIX
 ----------------------
@@ -388,7 +388,7 @@ GLX_DRAWABLE_TYPE_SGIX
 
 GLX_EVENT_MASK
 --------------
-[SupportedApiProfile("glx",["GLX_VERSION_1_3","GLX_VERSION_1_4"],StartVersion="1.3")]
+[SupportedApiProfile("glx",["GLX_VERSION_1_3","GLX_VERSION_1_4"],MinVersion="1.3")]
 
 GLX_EVENT_MASK_SGIX
 -------------------
@@ -400,15 +400,15 @@ GLX_EXCHANGE_COMPLETE_INTEL
 
 GLX_EXTENSION_NAME
 ------------------
-[SupportedApiProfile("glx",["GLX_VERSION_1_0","GLX_VERSION_1_1","GLX_VERSION_1_2","GLX_VERSION_1_3","GLX_VERSION_1_4"],StartVersion="1.0")]
+[SupportedApiProfile("glx",["GLX_VERSION_1_0","GLX_VERSION_1_1","GLX_VERSION_1_2","GLX_VERSION_1_3","GLX_VERSION_1_4"],MinVersion="1.0")]
 
 GLX_EXTENSIONS
 --------------
-[SupportedApiProfile("glx",["GLX_VERSION_1_1","GLX_VERSION_1_2","GLX_VERSION_1_3","GLX_VERSION_1_4"],StartVersion="1.1")]
+[SupportedApiProfile("glx",["GLX_VERSION_1_1","GLX_VERSION_1_2","GLX_VERSION_1_3","GLX_VERSION_1_4"],MinVersion="1.1")]
 
 GLX_FBCONFIG_ID
 ---------------
-[SupportedApiProfile("glx",["GLX_VERSION_1_3","GLX_VERSION_1_4"],StartVersion="1.3")]
+[SupportedApiProfile("glx",["GLX_VERSION_1_3","GLX_VERSION_1_4"],MinVersion="1.3")]
 
 GLX_FBCONFIG_ID_SGIX
 --------------------
@@ -436,7 +436,7 @@ GLX_FRONT_EXT
 
 GLX_FRONT_LEFT_BUFFER_BIT
 -------------------------
-[SupportedApiProfile("glx",["GLX_VERSION_1_3","GLX_VERSION_1_4"],StartVersion="1.3")]
+[SupportedApiProfile("glx",["GLX_VERSION_1_3","GLX_VERSION_1_4"],MinVersion="1.3")]
 
 GLX_FRONT_LEFT_BUFFER_BIT_SGIX
 ------------------------------
@@ -448,7 +448,7 @@ GLX_FRONT_LEFT_EXT
 
 GLX_FRONT_RIGHT_BUFFER_BIT
 --------------------------
-[SupportedApiProfile("glx",["GLX_VERSION_1_3","GLX_VERSION_1_4"],StartVersion="1.3")]
+[SupportedApiProfile("glx",["GLX_VERSION_1_3","GLX_VERSION_1_4"],MinVersion="1.3")]
 
 GLX_FRONT_RIGHT_BUFFER_BIT_SGIX
 -------------------------------
@@ -504,7 +504,7 @@ GLX_GPU_VENDOR_AMD
 
 GLX_GRAY_SCALE
 --------------
-[SupportedApiProfile("glx",["GLX_VERSION_1_3","GLX_VERSION_1_4"],StartVersion="1.3")]
+[SupportedApiProfile("glx",["GLX_VERSION_1_3","GLX_VERSION_1_4"],MinVersion="1.3")]
 
 GLX_GRAY_SCALE_EXT
 ------------------
@@ -512,11 +512,11 @@ GLX_GRAY_SCALE_EXT
 
 GLX_GREEN_SIZE
 --------------
-[SupportedApiProfile("glx",["GLX_VERSION_1_0","GLX_VERSION_1_1","GLX_VERSION_1_2","GLX_VERSION_1_3","GLX_VERSION_1_4"],StartVersion="1.0")]
+[SupportedApiProfile("glx",["GLX_VERSION_1_0","GLX_VERSION_1_1","GLX_VERSION_1_2","GLX_VERSION_1_3","GLX_VERSION_1_4"],MinVersion="1.0")]
 
 GLX_HEIGHT
 ----------
-[SupportedApiProfile("glx",["GLX_VERSION_1_3","GLX_VERSION_1_4"],StartVersion="1.3")]
+[SupportedApiProfile("glx",["GLX_VERSION_1_3","GLX_VERSION_1_4"],MinVersion="1.3")]
 
 GLX_HEIGHT_SGIX
 ---------------
@@ -548,7 +548,7 @@ GLX_HYPERPIPE_STEREO_SGIX
 
 GLX_LARGEST_PBUFFER
 -------------------
-[SupportedApiProfile("glx",["GLX_VERSION_1_3","GLX_VERSION_1_4"],StartVersion="1.3")]
+[SupportedApiProfile("glx",["GLX_VERSION_1_3","GLX_VERSION_1_4"],MinVersion="1.3")]
 
 GLX_LARGEST_PBUFFER_SGIX
 ------------------------
@@ -560,7 +560,7 @@ GLX_LATE_SWAPS_TEAR_EXT
 
 GLX_LEVEL
 ---------
-[SupportedApiProfile("glx",["GLX_VERSION_1_0","GLX_VERSION_1_1","GLX_VERSION_1_2","GLX_VERSION_1_3","GLX_VERSION_1_4"],StartVersion="1.0")]
+[SupportedApiProfile("glx",["GLX_VERSION_1_0","GLX_VERSION_1_1","GLX_VERSION_1_2","GLX_VERSION_1_3","GLX_VERSION_1_4"],MinVersion="1.0")]
 
 GLX_LOSE_CONTEXT_ON_RESET_ARB
 -----------------------------
@@ -568,7 +568,7 @@ GLX_LOSE_CONTEXT_ON_RESET_ARB
 
 GLX_MAX_PBUFFER_HEIGHT
 ----------------------
-[SupportedApiProfile("glx",["GLX_VERSION_1_3","GLX_VERSION_1_4"],StartVersion="1.3")]
+[SupportedApiProfile("glx",["GLX_VERSION_1_3","GLX_VERSION_1_4"],MinVersion="1.3")]
 
 GLX_MAX_PBUFFER_HEIGHT_SGIX
 ---------------------------
@@ -576,7 +576,7 @@ GLX_MAX_PBUFFER_HEIGHT_SGIX
 
 GLX_MAX_PBUFFER_PIXELS
 ----------------------
-[SupportedApiProfile("glx",["GLX_VERSION_1_3","GLX_VERSION_1_4"],StartVersion="1.3")]
+[SupportedApiProfile("glx",["GLX_VERSION_1_3","GLX_VERSION_1_4"],MinVersion="1.3")]
 
 GLX_MAX_PBUFFER_PIXELS_SGIX
 ---------------------------
@@ -584,7 +584,7 @@ GLX_MAX_PBUFFER_PIXELS_SGIX
 
 GLX_MAX_PBUFFER_WIDTH
 ---------------------
-[SupportedApiProfile("glx",["GLX_VERSION_1_3","GLX_VERSION_1_4"],StartVersion="1.3")]
+[SupportedApiProfile("glx",["GLX_VERSION_1_3","GLX_VERSION_1_4"],MinVersion="1.3")]
 
 GLX_MAX_PBUFFER_WIDTH_SGIX
 --------------------------
@@ -608,7 +608,7 @@ GLX_MULTISAMPLE_SUB_RECT_WIDTH_SGIS
 
 GLX_NO_EXTENSION
 ----------------
-[SupportedApiProfile("glx",["GLX_VERSION_1_0","GLX_VERSION_1_1","GLX_VERSION_1_2","GLX_VERSION_1_3","GLX_VERSION_1_4"],StartVersion="1.0")]
+[SupportedApiProfile("glx",["GLX_VERSION_1_0","GLX_VERSION_1_1","GLX_VERSION_1_2","GLX_VERSION_1_3","GLX_VERSION_1_4"],MinVersion="1.0")]
 
 GLX_NO_RESET_NOTIFICATION_ARB
 -----------------------------
@@ -616,7 +616,7 @@ GLX_NO_RESET_NOTIFICATION_ARB
 
 GLX_NON_CONFORMANT_CONFIG
 -------------------------
-[SupportedApiProfile("glx",["GLX_VERSION_1_3","GLX_VERSION_1_4"],StartVersion="1.3")]
+[SupportedApiProfile("glx",["GLX_VERSION_1_3","GLX_VERSION_1_4"],MinVersion="1.3")]
 
 GLX_NON_CONFORMANT_VISUAL_EXT
 -----------------------------
@@ -624,7 +624,7 @@ GLX_NON_CONFORMANT_VISUAL_EXT
 
 GLX_NONE
 --------
-[SupportedApiProfile("glx",["GLX_VERSION_1_3","GLX_VERSION_1_4"],StartVersion="1.3")]
+[SupportedApiProfile("glx",["GLX_VERSION_1_3","GLX_VERSION_1_4"],MinVersion="1.3")]
 
 GLX_NONE_EXT
 ------------
@@ -648,11 +648,11 @@ GLX_OPTIMAL_PBUFFER_WIDTH_SGIX
 
 GLX_PBUFFER
 -----------
-[SupportedApiProfile("glx",["GLX_VERSION_1_3","GLX_VERSION_1_4"],StartVersion="1.3")]
+[SupportedApiProfile("glx",["GLX_VERSION_1_3","GLX_VERSION_1_4"],MinVersion="1.3")]
 
 GLX_PBUFFER_BIT
 ---------------
-[SupportedApiProfile("glx",["GLX_VERSION_1_3","GLX_VERSION_1_4"],StartVersion="1.3")]
+[SupportedApiProfile("glx",["GLX_VERSION_1_3","GLX_VERSION_1_4"],MinVersion="1.3")]
 
 GLX_PBUFFER_BIT_SGIX
 --------------------
@@ -660,11 +660,11 @@ GLX_PBUFFER_BIT_SGIX
 
 GLX_PBUFFER_CLOBBER_MASK
 ------------------------
-[SupportedApiProfile("glx",["GLX_VERSION_1_3","GLX_VERSION_1_4"],StartVersion="1.3")]
+[SupportedApiProfile("glx",["GLX_VERSION_1_3","GLX_VERSION_1_4"],MinVersion="1.3")]
 
 GLX_PBUFFER_HEIGHT
 ------------------
-[SupportedApiProfile("glx",["GLX_VERSION_1_3","GLX_VERSION_1_4"],StartVersion="1.3")]
+[SupportedApiProfile("glx",["GLX_VERSION_1_3","GLX_VERSION_1_4"],MinVersion="1.3")]
 
 GLX_PBUFFER_SGIX
 ----------------
@@ -672,11 +672,11 @@ GLX_PBUFFER_SGIX
 
 GLX_PBUFFER_WIDTH
 -----------------
-[SupportedApiProfile("glx",["GLX_VERSION_1_3","GLX_VERSION_1_4"],StartVersion="1.3")]
+[SupportedApiProfile("glx",["GLX_VERSION_1_3","GLX_VERSION_1_4"],MinVersion="1.3")]
 
 GLX_PbufferClobber
 ------------------
-[SupportedApiProfile("glx",["GLX_VERSION_1_0","GLX_VERSION_1_1","GLX_VERSION_1_2","GLX_VERSION_1_3","GLX_VERSION_1_4"],StartVersion="1.0")]
+[SupportedApiProfile("glx",["GLX_VERSION_1_0","GLX_VERSION_1_1","GLX_VERSION_1_2","GLX_VERSION_1_3","GLX_VERSION_1_4"],MinVersion="1.0")]
 
 GLX_PIPE_RECT_LIMITS_SGIX
 -------------------------
@@ -688,7 +688,7 @@ GLX_PIPE_RECT_SGIX
 
 GLX_PIXMAP_BIT
 --------------
-[SupportedApiProfile("glx",["GLX_VERSION_1_3","GLX_VERSION_1_4"],StartVersion="1.3")]
+[SupportedApiProfile("glx",["GLX_VERSION_1_3","GLX_VERSION_1_4"],MinVersion="1.3")]
 
 GLX_PIXMAP_BIT_SGIX
 -------------------
@@ -696,7 +696,7 @@ GLX_PIXMAP_BIT_SGIX
 
 GLX_PRESERVED_CONTENTS
 ----------------------
-[SupportedApiProfile("glx",["GLX_VERSION_1_3","GLX_VERSION_1_4"],StartVersion="1.3")]
+[SupportedApiProfile("glx",["GLX_VERSION_1_3","GLX_VERSION_1_4"],MinVersion="1.3")]
 
 GLX_PRESERVED_CONTENTS_SGIX
 ---------------------------
@@ -704,7 +704,7 @@ GLX_PRESERVED_CONTENTS_SGIX
 
 GLX_PSEUDO_COLOR
 ----------------
-[SupportedApiProfile("glx",["GLX_VERSION_1_3","GLX_VERSION_1_4"],StartVersion="1.3")]
+[SupportedApiProfile("glx",["GLX_VERSION_1_3","GLX_VERSION_1_4"],MinVersion="1.3")]
 
 GLX_PSEUDO_COLOR_EXT
 --------------------
@@ -712,11 +712,11 @@ GLX_PSEUDO_COLOR_EXT
 
 GLX_RED_SIZE
 ------------
-[SupportedApiProfile("glx",["GLX_VERSION_1_0","GLX_VERSION_1_1","GLX_VERSION_1_2","GLX_VERSION_1_3","GLX_VERSION_1_4"],StartVersion="1.0")]
+[SupportedApiProfile("glx",["GLX_VERSION_1_0","GLX_VERSION_1_1","GLX_VERSION_1_2","GLX_VERSION_1_3","GLX_VERSION_1_4"],MinVersion="1.0")]
 
 GLX_RENDER_TYPE
 ---------------
-[SupportedApiProfile("glx",["GLX_VERSION_1_3","GLX_VERSION_1_4"],StartVersion="1.3")]
+[SupportedApiProfile("glx",["GLX_VERSION_1_3","GLX_VERSION_1_4"],MinVersion="1.3")]
 
 GLX_RENDER_TYPE_SGIX
 --------------------
@@ -768,11 +768,11 @@ GLX_RENDERER_VIDEO_MEMORY_MESA
 
 GLX_RGBA
 --------
-[SupportedApiProfile("glx",["GLX_VERSION_1_0","GLX_VERSION_1_1","GLX_VERSION_1_2","GLX_VERSION_1_3","GLX_VERSION_1_4"],StartVersion="1.0")]
+[SupportedApiProfile("glx",["GLX_VERSION_1_0","GLX_VERSION_1_1","GLX_VERSION_1_2","GLX_VERSION_1_3","GLX_VERSION_1_4"],MinVersion="1.0")]
 
 GLX_RGBA_BIT
 ------------
-[SupportedApiProfile("glx",["GLX_VERSION_1_3","GLX_VERSION_1_4"],StartVersion="1.3")]
+[SupportedApiProfile("glx",["GLX_VERSION_1_3","GLX_VERSION_1_4"],MinVersion="1.3")]
 
 GLX_RGBA_BIT_SGIX
 -----------------
@@ -788,7 +788,7 @@ GLX_RGBA_FLOAT_TYPE_ARB
 
 GLX_RGBA_TYPE
 -------------
-[SupportedApiProfile("glx",["GLX_VERSION_1_3","GLX_VERSION_1_4"],StartVersion="1.3")]
+[SupportedApiProfile("glx",["GLX_VERSION_1_3","GLX_VERSION_1_4"],MinVersion="1.3")]
 
 GLX_RGBA_TYPE_SGIX
 ------------------
@@ -804,7 +804,7 @@ GLX_RGBA_UNSIGNED_FLOAT_TYPE_EXT
 
 GLX_SAMPLE_BUFFERS
 ------------------
-[SupportedApiProfile("glx",["GLX_VERSION_1_4"],StartVersion="1.4")]
+[SupportedApiProfile("glx",["GLX_VERSION_1_4"],MinVersion="1.4")]
 
 GLX_SAMPLE_BUFFERS_3DFX
 -----------------------
@@ -824,7 +824,7 @@ GLX_SAMPLE_BUFFERS_SGIS
 
 GLX_SAMPLES
 -----------
-[SupportedApiProfile("glx",["GLX_VERSION_1_4"],StartVersion="1.4")]
+[SupportedApiProfile("glx",["GLX_VERSION_1_4"],MinVersion="1.4")]
 
 GLX_SAMPLES_3DFX
 ----------------
@@ -840,7 +840,7 @@ GLX_SAMPLES_SGIS
 
 GLX_SAVED
 ---------
-[SupportedApiProfile("glx",["GLX_VERSION_1_3","GLX_VERSION_1_4"],StartVersion="1.3")]
+[SupportedApiProfile("glx",["GLX_VERSION_1_3","GLX_VERSION_1_4"],MinVersion="1.3")]
 
 GLX_SAVED_SGIX
 --------------
@@ -848,7 +848,7 @@ GLX_SAVED_SGIX
 
 GLX_SCREEN
 ----------
-[SupportedApiProfile("glx",["GLX_VERSION_1_3","GLX_VERSION_1_4"],StartVersion="1.3")]
+[SupportedApiProfile("glx",["GLX_VERSION_1_3","GLX_VERSION_1_4"],MinVersion="1.3")]
 
 GLX_SCREEN_EXT
 --------------
@@ -860,7 +860,7 @@ GLX_SHARE_CONTEXT_EXT
 
 GLX_SLOW_CONFIG
 ---------------
-[SupportedApiProfile("glx",["GLX_VERSION_1_3","GLX_VERSION_1_4"],StartVersion="1.3")]
+[SupportedApiProfile("glx",["GLX_VERSION_1_3","GLX_VERSION_1_4"],MinVersion="1.3")]
 
 GLX_SLOW_VISUAL_EXT
 -------------------
@@ -868,7 +868,7 @@ GLX_SLOW_VISUAL_EXT
 
 GLX_STATIC_COLOR
 ----------------
-[SupportedApiProfile("glx",["GLX_VERSION_1_3","GLX_VERSION_1_4"],StartVersion="1.3")]
+[SupportedApiProfile("glx",["GLX_VERSION_1_3","GLX_VERSION_1_4"],MinVersion="1.3")]
 
 GLX_STATIC_COLOR_EXT
 --------------------
@@ -876,7 +876,7 @@ GLX_STATIC_COLOR_EXT
 
 GLX_STATIC_GRAY
 ---------------
-[SupportedApiProfile("glx",["GLX_VERSION_1_3","GLX_VERSION_1_4"],StartVersion="1.3")]
+[SupportedApiProfile("glx",["GLX_VERSION_1_3","GLX_VERSION_1_4"],MinVersion="1.3")]
 
 GLX_STATIC_GRAY_EXT
 -------------------
@@ -884,7 +884,7 @@ GLX_STATIC_GRAY_EXT
 
 GLX_STENCIL_BUFFER_BIT
 ----------------------
-[SupportedApiProfile("glx",["GLX_VERSION_1_3","GLX_VERSION_1_4"],StartVersion="1.3")]
+[SupportedApiProfile("glx",["GLX_VERSION_1_3","GLX_VERSION_1_4"],MinVersion="1.3")]
 
 GLX_STENCIL_BUFFER_BIT_SGIX
 ---------------------------
@@ -892,11 +892,11 @@ GLX_STENCIL_BUFFER_BIT_SGIX
 
 GLX_STENCIL_SIZE
 ----------------
-[SupportedApiProfile("glx",["GLX_VERSION_1_0","GLX_VERSION_1_1","GLX_VERSION_1_2","GLX_VERSION_1_3","GLX_VERSION_1_4"],StartVersion="1.0")]
+[SupportedApiProfile("glx",["GLX_VERSION_1_0","GLX_VERSION_1_1","GLX_VERSION_1_2","GLX_VERSION_1_3","GLX_VERSION_1_4"],MinVersion="1.0")]
 
 GLX_STEREO
 ----------
-[SupportedApiProfile("glx",["GLX_VERSION_1_0","GLX_VERSION_1_1","GLX_VERSION_1_2","GLX_VERSION_1_3","GLX_VERSION_1_4"],StartVersion="1.0")]
+[SupportedApiProfile("glx",["GLX_VERSION_1_0","GLX_VERSION_1_1","GLX_VERSION_1_2","GLX_VERSION_1_3","GLX_VERSION_1_4"],MinVersion="1.0")]
 
 GLX_STEREO_NOTIFY_EXT
 ---------------------
@@ -984,7 +984,7 @@ GLX_TEXTURE_TARGET_EXT
 
 GLX_TRANSPARENT_ALPHA_VALUE
 ---------------------------
-[SupportedApiProfile("glx",["GLX_VERSION_1_3","GLX_VERSION_1_4"],StartVersion="1.3")]
+[SupportedApiProfile("glx",["GLX_VERSION_1_3","GLX_VERSION_1_4"],MinVersion="1.3")]
 
 GLX_TRANSPARENT_ALPHA_VALUE_EXT
 -------------------------------
@@ -992,7 +992,7 @@ GLX_TRANSPARENT_ALPHA_VALUE_EXT
 
 GLX_TRANSPARENT_BLUE_VALUE
 --------------------------
-[SupportedApiProfile("glx",["GLX_VERSION_1_3","GLX_VERSION_1_4"],StartVersion="1.3")]
+[SupportedApiProfile("glx",["GLX_VERSION_1_3","GLX_VERSION_1_4"],MinVersion="1.3")]
 
 GLX_TRANSPARENT_BLUE_VALUE_EXT
 ------------------------------
@@ -1000,7 +1000,7 @@ GLX_TRANSPARENT_BLUE_VALUE_EXT
 
 GLX_TRANSPARENT_GREEN_VALUE
 ---------------------------
-[SupportedApiProfile("glx",["GLX_VERSION_1_3","GLX_VERSION_1_4"],StartVersion="1.3")]
+[SupportedApiProfile("glx",["GLX_VERSION_1_3","GLX_VERSION_1_4"],MinVersion="1.3")]
 
 GLX_TRANSPARENT_GREEN_VALUE_EXT
 -------------------------------
@@ -1008,7 +1008,7 @@ GLX_TRANSPARENT_GREEN_VALUE_EXT
 
 GLX_TRANSPARENT_INDEX
 ---------------------
-[SupportedApiProfile("glx",["GLX_VERSION_1_3","GLX_VERSION_1_4"],StartVersion="1.3")]
+[SupportedApiProfile("glx",["GLX_VERSION_1_3","GLX_VERSION_1_4"],MinVersion="1.3")]
 
 GLX_TRANSPARENT_INDEX_EXT
 -------------------------
@@ -1016,7 +1016,7 @@ GLX_TRANSPARENT_INDEX_EXT
 
 GLX_TRANSPARENT_INDEX_VALUE
 ---------------------------
-[SupportedApiProfile("glx",["GLX_VERSION_1_3","GLX_VERSION_1_4"],StartVersion="1.3")]
+[SupportedApiProfile("glx",["GLX_VERSION_1_3","GLX_VERSION_1_4"],MinVersion="1.3")]
 
 GLX_TRANSPARENT_INDEX_VALUE_EXT
 -------------------------------
@@ -1024,7 +1024,7 @@ GLX_TRANSPARENT_INDEX_VALUE_EXT
 
 GLX_TRANSPARENT_RED_VALUE
 -------------------------
-[SupportedApiProfile("glx",["GLX_VERSION_1_3","GLX_VERSION_1_4"],StartVersion="1.3")]
+[SupportedApiProfile("glx",["GLX_VERSION_1_3","GLX_VERSION_1_4"],MinVersion="1.3")]
 
 GLX_TRANSPARENT_RED_VALUE_EXT
 -----------------------------
@@ -1032,7 +1032,7 @@ GLX_TRANSPARENT_RED_VALUE_EXT
 
 GLX_TRANSPARENT_RGB
 -------------------
-[SupportedApiProfile("glx",["GLX_VERSION_1_3","GLX_VERSION_1_4"],StartVersion="1.3")]
+[SupportedApiProfile("glx",["GLX_VERSION_1_3","GLX_VERSION_1_4"],MinVersion="1.3")]
 
 GLX_TRANSPARENT_RGB_EXT
 -----------------------
@@ -1040,7 +1040,7 @@ GLX_TRANSPARENT_RGB_EXT
 
 GLX_TRANSPARENT_TYPE
 --------------------
-[SupportedApiProfile("glx",["GLX_VERSION_1_3","GLX_VERSION_1_4"],StartVersion="1.3")]
+[SupportedApiProfile("glx",["GLX_VERSION_1_3","GLX_VERSION_1_4"],MinVersion="1.3")]
 
 GLX_TRANSPARENT_TYPE_EXT
 ------------------------
@@ -1048,7 +1048,7 @@ GLX_TRANSPARENT_TYPE_EXT
 
 GLX_TRUE_COLOR
 --------------
-[SupportedApiProfile("glx",["GLX_VERSION_1_3","GLX_VERSION_1_4"],StartVersion="1.3")]
+[SupportedApiProfile("glx",["GLX_VERSION_1_3","GLX_VERSION_1_4"],MinVersion="1.3")]
 
 GLX_TRUE_COLOR_EXT
 ------------------
@@ -1060,11 +1060,11 @@ GLX_UNIQUE_ID_NV
 
 GLX_USE_GL
 ----------
-[SupportedApiProfile("glx",["GLX_VERSION_1_0","GLX_VERSION_1_1","GLX_VERSION_1_2","GLX_VERSION_1_3","GLX_VERSION_1_4"],StartVersion="1.0")]
+[SupportedApiProfile("glx",["GLX_VERSION_1_0","GLX_VERSION_1_1","GLX_VERSION_1_2","GLX_VERSION_1_3","GLX_VERSION_1_4"],MinVersion="1.0")]
 
 GLX_VENDOR
 ----------
-[SupportedApiProfile("glx",["GLX_VERSION_1_1","GLX_VERSION_1_2","GLX_VERSION_1_3","GLX_VERSION_1_4"],StartVersion="1.1")]
+[SupportedApiProfile("glx",["GLX_VERSION_1_1","GLX_VERSION_1_2","GLX_VERSION_1_3","GLX_VERSION_1_4"],MinVersion="1.1")]
 
 GLX_VENDOR_NAMES_EXT
 --------------------
@@ -1072,7 +1072,7 @@ GLX_VENDOR_NAMES_EXT
 
 GLX_VERSION
 -----------
-[SupportedApiProfile("glx",["GLX_VERSION_1_1","GLX_VERSION_1_2","GLX_VERSION_1_3","GLX_VERSION_1_4"],StartVersion="1.1")]
+[SupportedApiProfile("glx",["GLX_VERSION_1_1","GLX_VERSION_1_2","GLX_VERSION_1_3","GLX_VERSION_1_4"],MinVersion="1.1")]
 
 GLX_VIDEO_OUT_ALPHA_NV
 ----------------------
@@ -1120,7 +1120,7 @@ GLX_VISUAL_CAVEAT_EXT
 
 GLX_VISUAL_ID
 -------------
-[SupportedApiProfile("glx",["GLX_VERSION_1_3","GLX_VERSION_1_4"],StartVersion="1.3")]
+[SupportedApiProfile("glx",["GLX_VERSION_1_3","GLX_VERSION_1_4"],MinVersion="1.3")]
 
 GLX_VISUAL_ID_EXT
 -----------------
@@ -1132,7 +1132,7 @@ GLX_VISUAL_SELECT_GROUP_SGIX
 
 GLX_WIDTH
 ---------
-[SupportedApiProfile("glx",["GLX_VERSION_1_3","GLX_VERSION_1_4"],StartVersion="1.3")]
+[SupportedApiProfile("glx",["GLX_VERSION_1_3","GLX_VERSION_1_4"],MinVersion="1.3")]
 
 GLX_WIDTH_SGIX
 --------------
@@ -1140,11 +1140,11 @@ GLX_WIDTH_SGIX
 
 GLX_WINDOW
 ----------
-[SupportedApiProfile("glx",["GLX_VERSION_1_3","GLX_VERSION_1_4"],StartVersion="1.3")]
+[SupportedApiProfile("glx",["GLX_VERSION_1_3","GLX_VERSION_1_4"],MinVersion="1.3")]
 
 GLX_WINDOW_BIT
 --------------
-[SupportedApiProfile("glx",["GLX_VERSION_1_3","GLX_VERSION_1_4"],StartVersion="1.3")]
+[SupportedApiProfile("glx",["GLX_VERSION_1_3","GLX_VERSION_1_4"],MinVersion="1.3")]
 
 GLX_WINDOW_BIT_SGIX
 -------------------
@@ -1156,7 +1156,7 @@ GLX_WINDOW_SGIX
 
 GLX_X_RENDERABLE
 ----------------
-[SupportedApiProfile("glx",["GLX_VERSION_1_3","GLX_VERSION_1_4"],StartVersion="1.3")]
+[SupportedApiProfile("glx",["GLX_VERSION_1_3","GLX_VERSION_1_4"],MinVersion="1.3")]
 
 GLX_X_RENDERABLE_SGIX
 ---------------------
@@ -1164,7 +1164,7 @@ GLX_X_RENDERABLE_SGIX
 
 GLX_X_VISUAL_TYPE
 -----------------
-[SupportedApiProfile("glx",["GLX_VERSION_1_3","GLX_VERSION_1_4"],StartVersion="1.3")]
+[SupportedApiProfile("glx",["GLX_VERSION_1_3","GLX_VERSION_1_4"],MinVersion="1.3")]
 
 GLX_X_VISUAL_TYPE_EXT
 ---------------------
@@ -1224,7 +1224,7 @@ glXChannelRectSyncSGIX
 
 glXChooseFBConfig
 -----------------
-[SupportedApiProfile("glx",["GLX_VERSION_1_3","GLX_VERSION_1_4"],StartVersion="1.3")]
+[SupportedApiProfile("glx",["GLX_VERSION_1_3","GLX_VERSION_1_4"],MinVersion="1.3")]
 
 glXChooseFBConfigSGIX
 ---------------------
@@ -1232,11 +1232,11 @@ glXChooseFBConfigSGIX
 
 glXChooseVisual
 ---------------
-[SupportedApiProfile("glx",["GLX_VERSION_1_0","GLX_VERSION_1_1","GLX_VERSION_1_2","GLX_VERSION_1_3","GLX_VERSION_1_4"],StartVersion="1.0")]
+[SupportedApiProfile("glx",["GLX_VERSION_1_0","GLX_VERSION_1_1","GLX_VERSION_1_2","GLX_VERSION_1_3","GLX_VERSION_1_4"],MinVersion="1.0")]
 
 GLXContextID
 ------------
-[SupportedApiProfile("glx",["GLX_VERSION_1_3","GLX_VERSION_1_4"],StartVersion="1.3")]
+[SupportedApiProfile("glx",["GLX_VERSION_1_3","GLX_VERSION_1_4"],MinVersion="1.3")]
 
 glXCopyBufferSubDataNV
 ----------------------
@@ -1244,7 +1244,7 @@ glXCopyBufferSubDataNV
 
 glXCopyContext
 --------------
-[SupportedApiProfile("glx",["GLX_VERSION_1_0","GLX_VERSION_1_1","GLX_VERSION_1_2","GLX_VERSION_1_3","GLX_VERSION_1_4"],StartVersion="1.0")]
+[SupportedApiProfile("glx",["GLX_VERSION_1_0","GLX_VERSION_1_1","GLX_VERSION_1_2","GLX_VERSION_1_3","GLX_VERSION_1_4"],MinVersion="1.0")]
 
 glXCopyImageSubDataNV
 ---------------------
@@ -1264,7 +1264,7 @@ glXCreateAssociatedContextAttribsAMD
 
 glXCreateContext
 ----------------
-[SupportedApiProfile("glx",["GLX_VERSION_1_0","GLX_VERSION_1_1","GLX_VERSION_1_2","GLX_VERSION_1_3","GLX_VERSION_1_4"],StartVersion="1.0")]
+[SupportedApiProfile("glx",["GLX_VERSION_1_0","GLX_VERSION_1_1","GLX_VERSION_1_2","GLX_VERSION_1_3","GLX_VERSION_1_4"],MinVersion="1.0")]
 
 glXCreateContextAttribsARB
 --------------------------
@@ -1280,7 +1280,7 @@ glXCreateGLXPbufferSGIX
 
 glXCreateGLXPixmap
 ------------------
-[SupportedApiProfile("glx",["GLX_VERSION_1_0","GLX_VERSION_1_1","GLX_VERSION_1_2","GLX_VERSION_1_3","GLX_VERSION_1_4"],StartVersion="1.0")]
+[SupportedApiProfile("glx",["GLX_VERSION_1_0","GLX_VERSION_1_1","GLX_VERSION_1_2","GLX_VERSION_1_3","GLX_VERSION_1_4"],MinVersion="1.0")]
 
 glXCreateGLXPixmapMESA
 ----------------------
@@ -1296,19 +1296,19 @@ glXCreateGLXVideoSourceSGIX
 
 glXCreateNewContext
 -------------------
-[SupportedApiProfile("glx",["GLX_VERSION_1_3","GLX_VERSION_1_4"],StartVersion="1.3")]
+[SupportedApiProfile("glx",["GLX_VERSION_1_3","GLX_VERSION_1_4"],MinVersion="1.3")]
 
 glXCreatePbuffer
 ----------------
-[SupportedApiProfile("glx",["GLX_VERSION_1_3","GLX_VERSION_1_4"],StartVersion="1.3")]
+[SupportedApiProfile("glx",["GLX_VERSION_1_3","GLX_VERSION_1_4"],MinVersion="1.3")]
 
 glXCreatePixmap
 ---------------
-[SupportedApiProfile("glx",["GLX_VERSION_1_3","GLX_VERSION_1_4"],StartVersion="1.3")]
+[SupportedApiProfile("glx",["GLX_VERSION_1_3","GLX_VERSION_1_4"],MinVersion="1.3")]
 
 glXCreateWindow
 ---------------
-[SupportedApiProfile("glx",["GLX_VERSION_1_3","GLX_VERSION_1_4"],StartVersion="1.3")]
+[SupportedApiProfile("glx",["GLX_VERSION_1_3","GLX_VERSION_1_4"],MinVersion="1.3")]
 
 glXCushionSGI
 -------------
@@ -1324,7 +1324,7 @@ glXDeleteAssociatedContextAMD
 
 glXDestroyContext
 -----------------
-[SupportedApiProfile("glx",["GLX_VERSION_1_0","GLX_VERSION_1_1","GLX_VERSION_1_2","GLX_VERSION_1_3","GLX_VERSION_1_4"],StartVersion="1.0")]
+[SupportedApiProfile("glx",["GLX_VERSION_1_0","GLX_VERSION_1_1","GLX_VERSION_1_2","GLX_VERSION_1_3","GLX_VERSION_1_4"],MinVersion="1.0")]
 
 glXDestroyGLXPbufferSGIX
 ------------------------
@@ -1332,7 +1332,7 @@ glXDestroyGLXPbufferSGIX
 
 glXDestroyGLXPixmap
 -------------------
-[SupportedApiProfile("glx",["GLX_VERSION_1_0","GLX_VERSION_1_1","GLX_VERSION_1_2","GLX_VERSION_1_3","GLX_VERSION_1_4"],StartVersion="1.0")]
+[SupportedApiProfile("glx",["GLX_VERSION_1_0","GLX_VERSION_1_1","GLX_VERSION_1_2","GLX_VERSION_1_3","GLX_VERSION_1_4"],MinVersion="1.0")]
 
 glXDestroyGLXVideoSourceSGIX
 ----------------------------
@@ -1344,15 +1344,15 @@ glXDestroyHyperpipeConfigSGIX
 
 glXDestroyPbuffer
 -----------------
-[SupportedApiProfile("glx",["GLX_VERSION_1_3","GLX_VERSION_1_4"],StartVersion="1.3")]
+[SupportedApiProfile("glx",["GLX_VERSION_1_3","GLX_VERSION_1_4"],MinVersion="1.3")]
 
 glXDestroyPixmap
 ----------------
-[SupportedApiProfile("glx",["GLX_VERSION_1_3","GLX_VERSION_1_4"],StartVersion="1.3")]
+[SupportedApiProfile("glx",["GLX_VERSION_1_3","GLX_VERSION_1_4"],MinVersion="1.3")]
 
 glXDestroyWindow
 ----------------
-[SupportedApiProfile("glx",["GLX_VERSION_1_3","GLX_VERSION_1_4"],StartVersion="1.3")]
+[SupportedApiProfile("glx",["GLX_VERSION_1_3","GLX_VERSION_1_4"],MinVersion="1.3")]
 
 glXEnumerateVideoCaptureDevicesNV
 ---------------------------------
@@ -1372,11 +1372,11 @@ glXGetAGPOffsetMESA
 
 glXGetClientString
 ------------------
-[SupportedApiProfile("glx",["GLX_VERSION_1_1","GLX_VERSION_1_2","GLX_VERSION_1_3","GLX_VERSION_1_4"],StartVersion="1.1")]
+[SupportedApiProfile("glx",["GLX_VERSION_1_1","GLX_VERSION_1_2","GLX_VERSION_1_3","GLX_VERSION_1_4"],MinVersion="1.1")]
 
 glXGetConfig
 ------------
-[SupportedApiProfile("glx",["GLX_VERSION_1_0","GLX_VERSION_1_1","GLX_VERSION_1_2","GLX_VERSION_1_3","GLX_VERSION_1_4"],StartVersion="1.0")]
+[SupportedApiProfile("glx",["GLX_VERSION_1_0","GLX_VERSION_1_1","GLX_VERSION_1_2","GLX_VERSION_1_3","GLX_VERSION_1_4"],MinVersion="1.0")]
 
 glXGetContextGPUIDAMD
 ---------------------
@@ -1392,11 +1392,11 @@ glXGetCurrentAssociatedContextAMD
 
 glXGetCurrentContext
 --------------------
-[SupportedApiProfile("glx",["GLX_VERSION_1_0","GLX_VERSION_1_1","GLX_VERSION_1_2","GLX_VERSION_1_3","GLX_VERSION_1_4"],StartVersion="1.0")]
+[SupportedApiProfile("glx",["GLX_VERSION_1_0","GLX_VERSION_1_1","GLX_VERSION_1_2","GLX_VERSION_1_3","GLX_VERSION_1_4"],MinVersion="1.0")]
 
 glXGetCurrentDisplay
 --------------------
-[SupportedApiProfile("glx",["GLX_VERSION_1_2","GLX_VERSION_1_3","GLX_VERSION_1_4"],StartVersion="1.2")]
+[SupportedApiProfile("glx",["GLX_VERSION_1_2","GLX_VERSION_1_3","GLX_VERSION_1_4"],MinVersion="1.2")]
 
 glXGetCurrentDisplayEXT
 -----------------------
@@ -1404,11 +1404,11 @@ glXGetCurrentDisplayEXT
 
 glXGetCurrentDrawable
 ---------------------
-[SupportedApiProfile("glx",["GLX_VERSION_1_0","GLX_VERSION_1_1","GLX_VERSION_1_2","GLX_VERSION_1_3","GLX_VERSION_1_4"],StartVersion="1.0")]
+[SupportedApiProfile("glx",["GLX_VERSION_1_0","GLX_VERSION_1_1","GLX_VERSION_1_2","GLX_VERSION_1_3","GLX_VERSION_1_4"],MinVersion="1.0")]
 
 glXGetCurrentReadDrawable
 -------------------------
-[SupportedApiProfile("glx",["GLX_VERSION_1_3","GLX_VERSION_1_4"],StartVersion="1.3")]
+[SupportedApiProfile("glx",["GLX_VERSION_1_3","GLX_VERSION_1_4"],MinVersion="1.3")]
 
 glXGetCurrentReadDrawableSGI
 ----------------------------
@@ -1416,7 +1416,7 @@ glXGetCurrentReadDrawableSGI
 
 glXGetFBConfigAttrib
 --------------------
-[SupportedApiProfile("glx",["GLX_VERSION_1_3","GLX_VERSION_1_4"],StartVersion="1.3")]
+[SupportedApiProfile("glx",["GLX_VERSION_1_3","GLX_VERSION_1_4"],MinVersion="1.3")]
 
 glXGetFBConfigAttribSGIX
 ------------------------
@@ -1428,7 +1428,7 @@ glXGetFBConfigFromVisualSGIX
 
 glXGetFBConfigs
 ---------------
-[SupportedApiProfile("glx",["GLX_VERSION_1_3","GLX_VERSION_1_4"],StartVersion="1.3")]
+[SupportedApiProfile("glx",["GLX_VERSION_1_3","GLX_VERSION_1_4"],MinVersion="1.3")]
 
 glXGetGPUIDsAMD
 ---------------
@@ -1444,7 +1444,7 @@ glXGetMscRateOML
 
 glXGetProcAddress
 -----------------
-[SupportedApiProfile("glx",["GLX_VERSION_1_4"],StartVersion="1.4")]
+[SupportedApiProfile("glx",["GLX_VERSION_1_4"],MinVersion="1.4")]
 
 glXGetProcAddressARB
 --------------------
@@ -1452,7 +1452,7 @@ glXGetProcAddressARB
 
 glXGetSelectedEvent
 -------------------
-[SupportedApiProfile("glx",["GLX_VERSION_1_3","GLX_VERSION_1_4"],StartVersion="1.3")]
+[SupportedApiProfile("glx",["GLX_VERSION_1_3","GLX_VERSION_1_4"],MinVersion="1.3")]
 
 glXGetSelectedEventSGIX
 -----------------------
@@ -1484,7 +1484,7 @@ glXGetVideoSyncSGI
 
 glXGetVisualFromFBConfig
 ------------------------
-[SupportedApiProfile("glx",["GLX_VERSION_1_3","GLX_VERSION_1_4"],StartVersion="1.3")]
+[SupportedApiProfile("glx",["GLX_VERSION_1_3","GLX_VERSION_1_4"],MinVersion="1.3")]
 
 glXGetVisualFromFBConfigSGIX
 ----------------------------
@@ -1512,7 +1512,7 @@ glXImportContextEXT
 
 glXIsDirect
 -----------
-[SupportedApiProfile("glx",["GLX_VERSION_1_0","GLX_VERSION_1_1","GLX_VERSION_1_2","GLX_VERSION_1_3","GLX_VERSION_1_4"],StartVersion="1.0")]
+[SupportedApiProfile("glx",["GLX_VERSION_1_0","GLX_VERSION_1_1","GLX_VERSION_1_2","GLX_VERSION_1_3","GLX_VERSION_1_4"],MinVersion="1.0")]
 
 glXJoinSwapGroupNV
 ------------------
@@ -1532,11 +1532,11 @@ glXMakeAssociatedContextCurrentAMD
 
 glXMakeContextCurrent
 ---------------------
-[SupportedApiProfile("glx",["GLX_VERSION_1_3","GLX_VERSION_1_4"],StartVersion="1.3")]
+[SupportedApiProfile("glx",["GLX_VERSION_1_3","GLX_VERSION_1_4"],MinVersion="1.3")]
 
 glXMakeCurrent
 --------------
-[SupportedApiProfile("glx",["GLX_VERSION_1_0","GLX_VERSION_1_1","GLX_VERSION_1_2","GLX_VERSION_1_3","GLX_VERSION_1_4"],StartVersion="1.0")]
+[SupportedApiProfile("glx",["GLX_VERSION_1_0","GLX_VERSION_1_1","GLX_VERSION_1_2","GLX_VERSION_1_3","GLX_VERSION_1_4"],MinVersion="1.0")]
 
 glXMakeCurrentReadSGI
 ---------------------
@@ -1564,7 +1564,7 @@ glXQueryChannelRectSGIX
 
 glXQueryContext
 ---------------
-[SupportedApiProfile("glx",["GLX_VERSION_1_3","GLX_VERSION_1_4"],StartVersion="1.3")]
+[SupportedApiProfile("glx",["GLX_VERSION_1_3","GLX_VERSION_1_4"],MinVersion="1.3")]
 
 glXQueryContextInfoEXT
 ----------------------
@@ -1580,15 +1580,15 @@ glXQueryCurrentRendererStringMESA
 
 glXQueryDrawable
 ----------------
-[SupportedApiProfile("glx",["GLX_VERSION_1_3","GLX_VERSION_1_4"],StartVersion="1.3")]
+[SupportedApiProfile("glx",["GLX_VERSION_1_3","GLX_VERSION_1_4"],MinVersion="1.3")]
 
 glXQueryExtension
 -----------------
-[SupportedApiProfile("glx",["GLX_VERSION_1_0","GLX_VERSION_1_1","GLX_VERSION_1_2","GLX_VERSION_1_3","GLX_VERSION_1_4"],StartVersion="1.0")]
+[SupportedApiProfile("glx",["GLX_VERSION_1_0","GLX_VERSION_1_1","GLX_VERSION_1_2","GLX_VERSION_1_3","GLX_VERSION_1_4"],MinVersion="1.0")]
 
 glXQueryExtensionsString
 ------------------------
-[SupportedApiProfile("glx",["GLX_VERSION_1_1","GLX_VERSION_1_2","GLX_VERSION_1_3","GLX_VERSION_1_4"],StartVersion="1.1")]
+[SupportedApiProfile("glx",["GLX_VERSION_1_1","GLX_VERSION_1_2","GLX_VERSION_1_3","GLX_VERSION_1_4"],MinVersion="1.1")]
 
 glXQueryFrameCountNV
 --------------------
@@ -1632,7 +1632,7 @@ glXQueryRendererStringMESA
 
 glXQueryServerString
 --------------------
-[SupportedApiProfile("glx",["GLX_VERSION_1_1","GLX_VERSION_1_2","GLX_VERSION_1_3","GLX_VERSION_1_4"],StartVersion="1.1")]
+[SupportedApiProfile("glx",["GLX_VERSION_1_1","GLX_VERSION_1_2","GLX_VERSION_1_3","GLX_VERSION_1_4"],MinVersion="1.1")]
 
 glXQuerySwapGroupNV
 -------------------
@@ -1640,7 +1640,7 @@ glXQuerySwapGroupNV
 
 glXQueryVersion
 ---------------
-[SupportedApiProfile("glx",["GLX_VERSION_1_0","GLX_VERSION_1_1","GLX_VERSION_1_2","GLX_VERSION_1_3","GLX_VERSION_1_4"],StartVersion="1.0")]
+[SupportedApiProfile("glx",["GLX_VERSION_1_0","GLX_VERSION_1_1","GLX_VERSION_1_2","GLX_VERSION_1_3","GLX_VERSION_1_4"],MinVersion="1.0")]
 
 glXQueryVideoCaptureDeviceNV
 ----------------------------
@@ -1672,7 +1672,7 @@ glXResetFrameCountNV
 
 glXSelectEvent
 --------------
-[SupportedApiProfile("glx",["GLX_VERSION_1_3","GLX_VERSION_1_4"],StartVersion="1.3")]
+[SupportedApiProfile("glx",["GLX_VERSION_1_3","GLX_VERSION_1_4"],MinVersion="1.3")]
 
 glXSelectEventSGIX
 ------------------
@@ -1692,7 +1692,7 @@ GLXStereoNotifyEventEXT
 
 glXSwapBuffers
 --------------
-[SupportedApiProfile("glx",["GLX_VERSION_1_0","GLX_VERSION_1_1","GLX_VERSION_1_2","GLX_VERSION_1_3","GLX_VERSION_1_4"],StartVersion="1.0")]
+[SupportedApiProfile("glx",["GLX_VERSION_1_0","GLX_VERSION_1_1","GLX_VERSION_1_2","GLX_VERSION_1_3","GLX_VERSION_1_4"],MinVersion="1.0")]
 
 glXSwapBuffersMscOML
 --------------------
@@ -1712,7 +1712,7 @@ glXSwapIntervalSGI
 
 glXUseXFont
 -----------
-[SupportedApiProfile("glx",["GLX_VERSION_1_0","GLX_VERSION_1_1","GLX_VERSION_1_2","GLX_VERSION_1_3","GLX_VERSION_1_4"],StartVersion="1.0")]
+[SupportedApiProfile("glx",["GLX_VERSION_1_0","GLX_VERSION_1_1","GLX_VERSION_1_2","GLX_VERSION_1_3","GLX_VERSION_1_4"],MinVersion="1.0")]
 
 glXWaitForMscOML
 ----------------
@@ -1724,7 +1724,7 @@ glXWaitForSbcOML
 
 glXWaitGL
 ---------
-[SupportedApiProfile("glx",["GLX_VERSION_1_0","GLX_VERSION_1_1","GLX_VERSION_1_2","GLX_VERSION_1_3","GLX_VERSION_1_4"],StartVersion="1.0")]
+[SupportedApiProfile("glx",["GLX_VERSION_1_0","GLX_VERSION_1_1","GLX_VERSION_1_2","GLX_VERSION_1_3","GLX_VERSION_1_4"],MinVersion="1.0")]
 
 glXWaitVideoSyncSGI
 -------------------
@@ -1732,4 +1732,4 @@ glXWaitVideoSyncSGI
 
 glXWaitX
 --------
-[SupportedApiProfile("glx",["GLX_VERSION_1_0","GLX_VERSION_1_1","GLX_VERSION_1_2","GLX_VERSION_1_3","GLX_VERSION_1_4"],StartVersion="1.0")]
+[SupportedApiProfile("glx",["GLX_VERSION_1_0","GLX_VERSION_1_1","GLX_VERSION_1_2","GLX_VERSION_1_3","GLX_VERSION_1_4"],MinVersion="1.0")]
