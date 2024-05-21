@@ -685,11 +685,6 @@ public class AddVTables(IOptionsSnapshot<AddVTables.Configuration> config) : IMo
 
         public override SyntaxNode? VisitMethodDeclaration(MethodDeclarationSyntax node)
         {
-            if (node.Identifier.ToString() == "ActiveVaryingNV")
-            {
-                Debugger.Break();
-            }
-
             var parent = node.FirstAncestorOrSelf<ClassDeclarationSyntax>();
             if (
                 _currentInterface is null

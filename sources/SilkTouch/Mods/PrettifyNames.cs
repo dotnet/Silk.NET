@@ -370,6 +370,11 @@ public class PrettifyNames(
             conflictingTrimmingNames.Clear();
             var trimmingNamesForOldPrimary = primaries[primary];
 
+            if (primary == "NormalP3")
+            {
+                System.Diagnostics.Debugger.Break();
+            }
+
             // Function-specific logic where some conflicts are okay, so we have to evaluate each signature to see if
             // we can discriminate each one such that there are no conflicts.
             var nMethConflicts = 0;
@@ -419,6 +424,11 @@ public class PrettifyNames(
                         if (discrimMatches.Count == 2 && ogTrimmingName is not null)
                         {
                             conflictingTrimmingNames.Add(ogTrimmingName);
+                        }
+
+                        if (discrimMatches.Count > 1)
+                        {
+                            conflictingTrimmingNames.Add(trimmingNameToEval);
                         }
                     }
                 }
