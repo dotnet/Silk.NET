@@ -16,35 +16,35 @@ using Silk.NET.Core.Loader;
 
 namespace Silk.NET.WebGPU.Extensions.WGPU
 {
-    [NativeName("Name", "WGPUDeviceExtras")]
-    public unsafe partial struct DeviceExtras
+    [NativeName("Name", "WGPUShaderDefine")]
+    public unsafe partial struct ShaderDefine
     {
-        public DeviceExtras
+        public ShaderDefine
         (
-            ChainedStruct? chain = null,
-            byte* tracePath = null
+            byte* name = null,
+            byte* value = null
         ) : this()
         {
-            if (chain is not null)
+            if (name is not null)
             {
-                Chain = chain.Value;
+                Name = name;
             }
 
-            if (tracePath is not null)
+            if (value is not null)
             {
-                TracePath = tracePath;
+                Value = value;
             }
         }
 
 
-        [NativeName("Type", "WGPUChainedStruct")]
-        [NativeName("Type.Name", "WGPUChainedStruct")]
-        [NativeName("Name", "chain")]
-        public ChainedStruct Chain;
+        [NativeName("Type", "const char *")]
+        [NativeName("Type.Name", "const char *")]
+        [NativeName("Name", "name")]
+        public byte* Name;
 
         [NativeName("Type", "const char *")]
         [NativeName("Type.Name", "const char *")]
-        [NativeName("Name", "tracePath")]
-        public byte* TracePath;
+        [NativeName("Name", "value")]
+        public byte* Value;
     }
 }

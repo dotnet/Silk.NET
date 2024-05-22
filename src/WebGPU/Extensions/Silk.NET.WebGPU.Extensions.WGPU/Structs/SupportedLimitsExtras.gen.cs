@@ -16,13 +16,13 @@ using Silk.NET.Core.Loader;
 
 namespace Silk.NET.WebGPU.Extensions.WGPU
 {
-    [NativeName("Name", "WGPUDeviceExtras")]
-    public unsafe partial struct DeviceExtras
+    [NativeName("Name", "WGPUSupportedLimitsExtras")]
+    public unsafe partial struct SupportedLimitsExtras
     {
-        public DeviceExtras
+        public SupportedLimitsExtras
         (
-            ChainedStruct? chain = null,
-            byte* tracePath = null
+            ChainedStructOut? chain = null,
+            NativeLimits? limits = null
         ) : this()
         {
             if (chain is not null)
@@ -30,21 +30,21 @@ namespace Silk.NET.WebGPU.Extensions.WGPU
                 Chain = chain.Value;
             }
 
-            if (tracePath is not null)
+            if (limits is not null)
             {
-                TracePath = tracePath;
+                Limits = limits.Value;
             }
         }
 
 
-        [NativeName("Type", "WGPUChainedStruct")]
-        [NativeName("Type.Name", "WGPUChainedStruct")]
+        [NativeName("Type", "WGPUChainedStructOut")]
+        [NativeName("Type.Name", "WGPUChainedStructOut")]
         [NativeName("Name", "chain")]
-        public ChainedStruct Chain;
+        public ChainedStructOut Chain;
 
-        [NativeName("Type", "const char *")]
-        [NativeName("Type.Name", "const char *")]
-        [NativeName("Name", "tracePath")]
-        public byte* TracePath;
+        [NativeName("Type", "WGPUNativeLimits")]
+        [NativeName("Type.Name", "WGPUNativeLimits")]
+        [NativeName("Name", "limits")]
+        public NativeLimits Limits;
     }
 }

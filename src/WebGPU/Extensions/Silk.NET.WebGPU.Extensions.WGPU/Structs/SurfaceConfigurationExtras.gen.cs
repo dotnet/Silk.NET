@@ -16,13 +16,13 @@ using Silk.NET.Core.Loader;
 
 namespace Silk.NET.WebGPU.Extensions.WGPU
 {
-    [NativeName("Name", "WGPUAdapterExtras")]
-    public unsafe partial struct AdapterExtras
+    [NativeName("Name", "WGPUSurfaceConfigurationExtras")]
+    public unsafe partial struct SurfaceConfigurationExtras
     {
-        public AdapterExtras
+        public SurfaceConfigurationExtras
         (
             ChainedStruct? chain = null,
-            BackendType? backend = null
+            Silk.NET.Core.Bool32? desiredMaximumFrameLatency = null
         ) : this()
         {
             if (chain is not null)
@@ -30,9 +30,9 @@ namespace Silk.NET.WebGPU.Extensions.WGPU
                 Chain = chain.Value;
             }
 
-            if (backend is not null)
+            if (desiredMaximumFrameLatency is not null)
             {
-                Backend = backend.Value;
+                DesiredMaximumFrameLatency = desiredMaximumFrameLatency.Value;
             }
         }
 
@@ -42,9 +42,9 @@ namespace Silk.NET.WebGPU.Extensions.WGPU
         [NativeName("Name", "chain")]
         public ChainedStruct Chain;
 
-        [NativeName("Type", "WGPUBackendType")]
-        [NativeName("Type.Name", "WGPUBackendType")]
-        [NativeName("Name", "backend")]
-        public BackendType Backend;
+        [NativeName("Type", "WGPUBool")]
+        [NativeName("Type.Name", "WGPUBool")]
+        [NativeName("Name", "desiredMaximumFrameLatency")]
+        public Silk.NET.Core.Bool32 DesiredMaximumFrameLatency;
     }
 }

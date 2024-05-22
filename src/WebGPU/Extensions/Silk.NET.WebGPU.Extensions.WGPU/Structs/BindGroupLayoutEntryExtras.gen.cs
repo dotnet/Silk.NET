@@ -16,13 +16,13 @@ using Silk.NET.Core.Loader;
 
 namespace Silk.NET.WebGPU.Extensions.WGPU
 {
-    [NativeName("Name", "WGPUDeviceExtras")]
-    public unsafe partial struct DeviceExtras
+    [NativeName("Name", "WGPUBindGroupLayoutEntryExtras")]
+    public unsafe partial struct BindGroupLayoutEntryExtras
     {
-        public DeviceExtras
+        public BindGroupLayoutEntryExtras
         (
             ChainedStruct? chain = null,
-            byte* tracePath = null
+            uint? count = null
         ) : this()
         {
             if (chain is not null)
@@ -30,9 +30,9 @@ namespace Silk.NET.WebGPU.Extensions.WGPU
                 Chain = chain.Value;
             }
 
-            if (tracePath is not null)
+            if (count is not null)
             {
-                TracePath = tracePath;
+                Count = count.Value;
             }
         }
 
@@ -42,9 +42,9 @@ namespace Silk.NET.WebGPU.Extensions.WGPU
         [NativeName("Name", "chain")]
         public ChainedStruct Chain;
 
-        [NativeName("Type", "const char *")]
-        [NativeName("Type.Name", "const char *")]
-        [NativeName("Name", "tracePath")]
-        public byte* TracePath;
+        [NativeName("Type", "uint32_t")]
+        [NativeName("Type.Name", "uint32_t")]
+        [NativeName("Name", "count")]
+        public uint Count;
     }
 }
