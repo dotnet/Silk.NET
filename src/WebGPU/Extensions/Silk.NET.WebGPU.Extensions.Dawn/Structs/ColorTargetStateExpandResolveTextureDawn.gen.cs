@@ -14,15 +14,15 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.WebGPU.Extensions.WGPU
+namespace Silk.NET.WebGPU.Extensions.Dawn
 {
-    [NativeName("Name", "WGPUSurfaceConfigurationExtras")]
-    public unsafe partial struct SurfaceConfigurationExtras
+    [NativeName("Name", "WGPUColorTargetStateExpandResolveTextureDawn")]
+    public unsafe partial struct ColorTargetStateExpandResolveTextureDawn
     {
-        public SurfaceConfigurationExtras
+        public ColorTargetStateExpandResolveTextureDawn
         (
             ChainedStruct? chain = null,
-            Silk.NET.Core.Bool32? desiredMaximumFrameLatency = null
+            Silk.NET.Core.Bool32? enabled = null
         ) : this()
         {
             if (chain is not null)
@@ -30,9 +30,9 @@ namespace Silk.NET.WebGPU.Extensions.WGPU
                 Chain = chain.Value;
             }
 
-            if (desiredMaximumFrameLatency is not null)
+            if (enabled is not null)
             {
-                DesiredMaximumFrameLatency = desiredMaximumFrameLatency.Value;
+                Enabled = enabled.Value;
             }
         }
 
@@ -44,7 +44,7 @@ namespace Silk.NET.WebGPU.Extensions.WGPU
 
         [NativeName("Type", "WGPUBool")]
         [NativeName("Type.Name", "WGPUBool")]
-        [NativeName("Name", "desiredMaximumFrameLatency")]
-        public Silk.NET.Core.Bool32 DesiredMaximumFrameLatency;
+        [NativeName("Name", "enabled")]
+        public Silk.NET.Core.Bool32 Enabled;
     }
 }

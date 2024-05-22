@@ -14,15 +14,15 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.WebGPU.Extensions.WGPU
+namespace Silk.NET.WebGPU.Extensions.Dawn
 {
-    [NativeName("Name", "WGPUBindGroupLayoutEntryExtras")]
-    public unsafe partial struct BindGroupLayoutEntryExtras
+    [NativeName("Name", "WGPUShaderModuleCompilationOptions")]
+    public unsafe partial struct ShaderModuleCompilationOptions
     {
-        public BindGroupLayoutEntryExtras
+        public ShaderModuleCompilationOptions
         (
             ChainedStruct? chain = null,
-            uint? count = null
+            Silk.NET.Core.Bool32? strictMath = null
         ) : this()
         {
             if (chain is not null)
@@ -30,9 +30,9 @@ namespace Silk.NET.WebGPU.Extensions.WGPU
                 Chain = chain.Value;
             }
 
-            if (count is not null)
+            if (strictMath is not null)
             {
-                Count = count.Value;
+                StrictMath = strictMath.Value;
             }
         }
 
@@ -42,9 +42,9 @@ namespace Silk.NET.WebGPU.Extensions.WGPU
         [NativeName("Name", "chain")]
         public ChainedStruct Chain;
 
-        [NativeName("Type", "uint32_t")]
-        [NativeName("Type.Name", "uint32_t")]
-        [NativeName("Name", "count")]
-        public uint Count;
+        [NativeName("Type", "WGPUBool")]
+        [NativeName("Type.Name", "WGPUBool")]
+        [NativeName("Name", "strictMath")]
+        public Silk.NET.Core.Bool32 StrictMath;
     }
 }

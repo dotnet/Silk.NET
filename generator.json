@@ -2811,7 +2811,7 @@
                     "-Wno-nonportable-include-path",
                     "-Wno-pragma-pack",
                     "-I$windowsSdkIncludes",
-                    "-Ibuild/submodules/wgpu-native/ffi/webgpu-headers"
+                    "-Ibuild/submodules/wgpu-native/ffi"
                 ],
                 "traverse": [
                     "build/submodules/webgpu-headers/*.h",

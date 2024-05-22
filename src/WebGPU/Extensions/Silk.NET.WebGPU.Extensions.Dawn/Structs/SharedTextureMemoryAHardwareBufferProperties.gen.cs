@@ -14,15 +14,15 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.WebGPU.Extensions.WGPU
+namespace Silk.NET.WebGPU.Extensions.Dawn
 {
-    [NativeName("Name", "WGPUSupportedLimitsExtras")]
-    public unsafe partial struct SupportedLimitsExtras
+    [NativeName("Name", "WGPUSharedTextureMemoryAHardwareBufferProperties")]
+    public unsafe partial struct SharedTextureMemoryAHardwareBufferProperties
     {
-        public SupportedLimitsExtras
+        public SharedTextureMemoryAHardwareBufferProperties
         (
             ChainedStructOut? chain = null,
-            NativeLimits? limits = null
+            YCbCrVkDescriptor? yCbCrInfo = null
         ) : this()
         {
             if (chain is not null)
@@ -30,9 +30,9 @@ namespace Silk.NET.WebGPU.Extensions.WGPU
                 Chain = chain.Value;
             }
 
-            if (limits is not null)
+            if (yCbCrInfo is not null)
             {
-                Limits = limits.Value;
+                YCbCrInfo = yCbCrInfo.Value;
             }
         }
 
@@ -42,9 +42,9 @@ namespace Silk.NET.WebGPU.Extensions.WGPU
         [NativeName("Name", "chain")]
         public ChainedStructOut Chain;
 
-        [NativeName("Type", "WGPUNativeLimits")]
-        [NativeName("Type.Name", "WGPUNativeLimits")]
-        [NativeName("Name", "limits")]
-        public NativeLimits Limits;
+        [NativeName("Type", "WGPUYCbCrVkDescriptor")]
+        [NativeName("Type.Name", "WGPUYCbCrVkDescriptor")]
+        [NativeName("Name", "yCbCrInfo")]
+        public YCbCrVkDescriptor YCbCrInfo;
     }
 }

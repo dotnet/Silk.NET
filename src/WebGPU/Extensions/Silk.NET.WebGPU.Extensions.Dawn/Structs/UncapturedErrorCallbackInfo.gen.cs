@@ -14,15 +14,16 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.WebGPU.Extensions.WGPU
+namespace Silk.NET.WebGPU.Extensions.Dawn
 {
-    [NativeName("Name", "WGPUInstanceEnumerateAdapterOptions")]
-    public unsafe partial struct InstanceEnumerateAdapterOptions
+    [NativeName("Name", "WGPUUncapturedErrorCallbackInfo")]
+    public unsafe partial struct UncapturedErrorCallbackInfo
     {
-        public InstanceEnumerateAdapterOptions
+        public UncapturedErrorCallbackInfo
         (
             ChainedStruct* nextInChain = null,
-            Silk.NET.WebGPU.Extensions.WGPU.InstanceBackend? backends = null
+            PfnErrorCallback? callback = null,
+            void* userdata = null
         ) : this()
         {
             if (nextInChain is not null)
@@ -30,9 +31,14 @@ namespace Silk.NET.WebGPU.Extensions.WGPU
                 NextInChain = nextInChain;
             }
 
-            if (backends is not null)
+            if (callback is not null)
             {
-                Backends = backends.Value;
+                Callback = callback.Value;
+            }
+
+            if (userdata is not null)
+            {
+                Userdata = userdata;
             }
         }
 
@@ -42,9 +48,14 @@ namespace Silk.NET.WebGPU.Extensions.WGPU
         [NativeName("Name", "nextInChain")]
         public ChainedStruct* NextInChain;
 
-        [NativeName("Type", "WGPUInstanceBackendFlags")]
-        [NativeName("Type.Name", "WGPUInstanceBackendFlags")]
-        [NativeName("Name", "backends")]
-        public Silk.NET.WebGPU.Extensions.WGPU.InstanceBackend Backends;
+        [NativeName("Type", "WGPUErrorCallback")]
+        [NativeName("Type.Name", "WGPUErrorCallback")]
+        [NativeName("Name", "callback")]
+        public PfnErrorCallback Callback;
+
+        [NativeName("Type", "void *")]
+        [NativeName("Type.Name", "void *")]
+        [NativeName("Name", "userdata")]
+        public void* Userdata;
     }
 }

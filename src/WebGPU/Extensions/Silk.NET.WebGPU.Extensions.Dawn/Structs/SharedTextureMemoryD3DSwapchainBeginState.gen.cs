@@ -14,15 +14,15 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.WebGPU.Extensions.WGPU
+namespace Silk.NET.WebGPU.Extensions.Dawn
 {
-    [NativeName("Name", "WGPURequiredLimitsExtras")]
-    public unsafe partial struct RequiredLimitsExtras
+    [NativeName("Name", "WGPUSharedTextureMemoryD3DSwapchainBeginState")]
+    public unsafe partial struct SharedTextureMemoryD3DSwapchainBeginState
     {
-        public RequiredLimitsExtras
+        public SharedTextureMemoryD3DSwapchainBeginState
         (
             ChainedStruct? chain = null,
-            NativeLimits? limits = null
+            Silk.NET.Core.Bool32? isSwapchain = null
         ) : this()
         {
             if (chain is not null)
@@ -30,9 +30,9 @@ namespace Silk.NET.WebGPU.Extensions.WGPU
                 Chain = chain.Value;
             }
 
-            if (limits is not null)
+            if (isSwapchain is not null)
             {
-                Limits = limits.Value;
+                IsSwapchain = isSwapchain.Value;
             }
         }
 
@@ -42,9 +42,9 @@ namespace Silk.NET.WebGPU.Extensions.WGPU
         [NativeName("Name", "chain")]
         public ChainedStruct Chain;
 
-        [NativeName("Type", "WGPUNativeLimits")]
-        [NativeName("Type.Name", "WGPUNativeLimits")]
-        [NativeName("Name", "limits")]
-        public NativeLimits Limits;
+        [NativeName("Type", "WGPUBool")]
+        [NativeName("Type.Name", "WGPUBool")]
+        [NativeName("Name", "isSwapchain")]
+        public Silk.NET.Core.Bool32 IsSwapchain;
     }
 }

@@ -12,27 +12,10 @@ namespace Silk.NET.WebGPU.Extensions.WGPU
     [NativeName("Name", "WGPUNativeFeature")]
     public enum NativeFeature : int
     {
-        [NativeName("Name", "WGPUNativeFeature_PushConstants")]
-        PushConstants = 0x30001,
-        [NativeName("Name", "WGPUNativeFeature_TextureAdapterSpecificFormatFeatures")]
-        TextureAdapterSpecificFormatFeatures = 0x30002,
-        [NativeName("Name", "WGPUNativeFeature_MultiDrawIndirect")]
-        MultiDrawIndirect = 0x30003,
-        [NativeName("Name", "WGPUNativeFeature_MultiDrawIndirectCount")]
-        MultiDrawIndirectCount = 0x30004,
-        [NativeName("Name", "WGPUNativeFeature_VertexWritableStorage")]
-        VertexWritableStorage = 0x30005,
-        [NativeName("Name", "WGPUNativeFeature_TextureBindingArray")]
-        TextureBindingArray = 0x30006,
-        [NativeName("Name", "WGPUNativeFeature_SampledTextureAndStorageBufferArrayNonUniformIndexing")]
-        SampledTextureAndStorageBufferArrayNonUniformIndexing = 0x30007,
-        [NativeName("Name", "WGPUNativeFeature_PipelineStatisticsQuery")]
-        PipelineStatisticsQuery = 0x30008,
-        [NativeName("Name", "WGPUNativeFeature_StorageResourceBindingArray")]
-        StorageResourceBindingArray = 0x30009,
-        [NativeName("Name", "WGPUNativeFeature_PartiallyBoundBindingArray")]
-        PartiallyBoundBindingArray = 0x3000A,
-        [NativeName("Name", "WGPUNativeFeature_Force32")]
-        Force32 = 0x7FFFFFFF,
+        [Obsolete("Deprecated in favour of \"TextureAdapterSpecificFormatFeatures\"")]
+        [NativeName("Name", "WGPUNativeFeature_TEXTURE_ADAPTER_SPECIFIC_FORMAT_FEATURES")]
+        NativeFeatureTextureAdapterSpecificFormatFeatures = 0x10000000,
+        [NativeName("Name", "WGPUNativeFeature_TEXTURE_ADAPTER_SPECIFIC_FORMAT_FEATURES")]
+        TextureAdapterSpecificFormatFeatures = 0x10000000,
     }
 }
