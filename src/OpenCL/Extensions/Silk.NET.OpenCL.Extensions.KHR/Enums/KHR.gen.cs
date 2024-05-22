@@ -139,6 +139,16 @@ namespace Silk.NET.OpenCL.Extensions.KHR
         Packed = 0x1,
         [NativeName("Name", "CL_DEVICE_INTEGER_DOT_PRODUCT_INPUT_4x8BIT_PACKED_KHR")]
         DeviceIntegerDotProductInput4x8BitPackedKhr = 0x1,
+        [NativeName("Name", "CL_DEVICE_KERNEL_CLOCK_SCOPE_DEVICE_KHR")]
+        DeviceKernelClockScopeDeviceKhr = 0x1,
+        [NativeName("Name", "CL_DEVICE_KERNEL_CLOCK_SCOPE_WORK_GROUP_KHR")]
+        WorkGroup = 0x2,
+        [NativeName("Name", "CL_DEVICE_KERNEL_CLOCK_SCOPE_WORK_GROUP_KHR")]
+        DeviceKernelClockScopeWorkGroupKhr = 0x2,
+        [NativeName("Name", "CL_DEVICE_KERNEL_CLOCK_SCOPE_SUB_GROUP_KHR")]
+        SubGroup = 0x4,
+        [NativeName("Name", "CL_DEVICE_KERNEL_CLOCK_SCOPE_SUB_GROUP_KHR")]
+        DeviceKernelClockScopeSubGroupKhr = 0x4,
         [NativeName("Name", "CL_DEVICE_TERMINATE_CAPABILITY_CONTEXT_KHR")]
         DeviceTerminateCapabilityContextKhr = 0x1,
         [NativeName("Name", "CL_EGL_YUV_PLANE_INTEL")]
@@ -149,22 +159,6 @@ namespace Silk.NET.OpenCL.Extensions.KHR
         DmaBuf = 0x2067,
         [NativeName("Name", "CL_EXTERNAL_MEMORY_HANDLE_DMA_BUF_KHR")]
         ExternalMemoryHandleDmaBufKhr = 0x2067,
-        [NativeName("Name", "CL_EXTERNAL_MEMORY_HANDLE_D3D11_TEXTURE_KHR")]
-        D3D11Texture = 0x2063,
-        [NativeName("Name", "CL_EXTERNAL_MEMORY_HANDLE_D3D11_TEXTURE_KHR")]
-        ExternalMemoryHandleD3D11TextureKhr = 0x2063,
-        [NativeName("Name", "CL_EXTERNAL_MEMORY_HANDLE_D3D11_TEXTURE_KMT_KHR")]
-        D3D11TextureKmt = 0x2064,
-        [NativeName("Name", "CL_EXTERNAL_MEMORY_HANDLE_D3D11_TEXTURE_KMT_KHR")]
-        ExternalMemoryHandleD3D11TextureKmtKhr = 0x2064,
-        [NativeName("Name", "CL_EXTERNAL_MEMORY_HANDLE_D3D12_HEAP_KHR")]
-        D3D12Heap = 0x2065,
-        [NativeName("Name", "CL_EXTERNAL_MEMORY_HANDLE_D3D12_HEAP_KHR")]
-        ExternalMemoryHandleD3D12HeapKhr = 0x2065,
-        [NativeName("Name", "CL_EXTERNAL_MEMORY_HANDLE_D3D12_RESOURCE_KHR")]
-        D3D12Resource = 0x2066,
-        [NativeName("Name", "CL_EXTERNAL_MEMORY_HANDLE_D3D12_RESOURCE_KHR")]
-        ExternalMemoryHandleD3D12ResourceKhr = 0x2066,
         [NativeName("Name", "CL_EXTERNAL_MEMORY_HANDLE_OPAQUE_FD_KHR")]
         OpaqueFD = 0x2060,
         [NativeName("Name", "CL_EXTERNAL_MEMORY_HANDLE_OPAQUE_FD_KHR")]
@@ -177,10 +171,6 @@ namespace Silk.NET.OpenCL.Extensions.KHR
         OpaqueWin32Kmt = 0x2062,
         [NativeName("Name", "CL_EXTERNAL_MEMORY_HANDLE_OPAQUE_WIN32_KMT_KHR")]
         ExternalMemoryHandleOpaqueWin32KmtKhr = 0x2062,
-        [NativeName("Name", "CL_SEMAPHORE_HANDLE_D3D12_FENCE_KHR")]
-        D3D12Fence = 0x2059,
-        [NativeName("Name", "CL_SEMAPHORE_HANDLE_D3D12_FENCE_KHR")]
-        SemaphoreHandleD3D12FenceKhr = 0x2059,
         [NativeName("Name", "CL_SEMAPHORE_HANDLE_OPAQUE_FD_KHR")]
         SemaphoreHandleOpaqueFDKhr = 0x2055,
         [NativeName("Name", "CL_SEMAPHORE_HANDLE_SYNC_FD_KHR")]
@@ -571,6 +561,10 @@ namespace Silk.NET.OpenCL.Extensions.KHR
         CommandBufferSyncDevicesKhr = 0x12AC,
         [NativeName("Name", "CL_DEVICE_COMMAND_BUFFER_SYNC_DEVICES_KHR")]
         DeviceCommandBufferSyncDevicesKhr = 0x12AC,
+        [NativeName("Name", "CL_DEVICE_KERNEL_CLOCK_CAPABILITIES_KHR")]
+        KernelClockCapabilitiesKhr = 0x1076,
+        [NativeName("Name", "CL_DEVICE_KERNEL_CLOCK_CAPABILITIES_KHR")]
+        DeviceKernelClockCapabilitiesKhr = 0x1076,
         [NativeName("Name", "CL_INVALID_D3D10_DEVICE_KHR")]
         InvalidD3D10DeviceKhr = unchecked((int) 0xFFFFFFFFFFFFFC16),
         [NativeName("Name", "CL_INVALID_D3D10_RESOURCE_KHR")]
