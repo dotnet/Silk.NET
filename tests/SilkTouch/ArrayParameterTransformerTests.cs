@@ -27,7 +27,7 @@ public class ArrayParameterTransformerTests
             """
                 public static void DeleteTest([NativeTypeName("const uint*")] uint testi)
                 {
-                    InnerDeleteTest(1, &testi);
+                    InnerDeleteTest(1, (uint*)&testi);
                 }
                 """
         ),
@@ -42,7 +42,7 @@ public class ArrayParameterTransformerTests
                 public static uint CreateTest()
                 {
                     uint testmo = default;
-                    InnerCreateTest(1, &testmo);
+                    InnerCreateTest(1, (uint*)&testmo);
                     return testmo;
                 }
                 """
@@ -57,7 +57,7 @@ public class ArrayParameterTransformerTests
             """
                 public static void DeleteTest([NativeTypeName("const uint*")] uint test1i)
                 {
-                    InnerDeleteTest(&test1i);
+                    InnerDeleteTest((uint*)&test1i);
                 }
                 """
         ),
@@ -72,7 +72,7 @@ public class ArrayParameterTransformerTests
                 public static uint CreateTest()
                 {
                     uint test1mo = default;
-                    InnerCreateTest(&test1mo);
+                    InnerCreateTest((uint*)&test1mo);
                     return test1mo;
                 }
                 """
@@ -88,7 +88,7 @@ public class ArrayParameterTransformerTests
                 public static uint CreateTest()
                 {
                     uint testm = default;
-                    InnerCreateTest(1, &testm);
+                    InnerCreateTest(1, (uint*)&testm);
                     return testm;
                 }
                 """
@@ -103,7 +103,7 @@ public class ArrayParameterTransformerTests
             """
                 public static void DeleteTest([NativeTypeName("const uint*")] uint test)
                 {
-                    InnerDeleteTest(1, &test);
+                    InnerDeleteTest(1, (uint*)&test);
                 }
                 """
         ),
@@ -118,7 +118,7 @@ public class ArrayParameterTransformerTests
                 public static uint CreateTest()
                 {
                     uint tst = default;
-                    InnerCreateTest(1, &tst);
+                    InnerCreateTest(1, (uint*)&tst);
                     return tst;
                 }
                 """
@@ -133,7 +133,7 @@ public class ArrayParameterTransformerTests
             """
                 public static void DeleteTest([NativeTypeName("const uint*")] uint tst)
                 {
-                    InnerDeleteTest(1, &tst);
+                    InnerDeleteTest(1, (uint*)&tst);
                 }
                 """
         ),
