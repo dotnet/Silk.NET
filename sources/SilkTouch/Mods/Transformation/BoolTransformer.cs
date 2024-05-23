@@ -23,11 +23,6 @@ public class BoolTransformer(IOptionsSnapshot<TransformFunctions.Configuration> 
         Action<MethodDeclarationSyntax> next
     )
     {
-        if (current.Identifier.ToString() == "glDebugMessageControlARB")
-        {
-            Debugger.Break();
-        }
-
         var ogCurrent = current;
         var cfg = options.Get(ctx.JobKey);
         string? retBoolScheme = null;

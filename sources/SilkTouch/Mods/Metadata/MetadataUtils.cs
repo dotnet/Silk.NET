@@ -174,7 +174,7 @@ public static class MetadataUtils
                             z.TryGetChildSymbolMetadata(
                                 jobKey,
                                 entryPoint,
-                                y.PtrParam.Identifier.ToString(),
+                                y.PtrParam.Identifier.ToString().TrimStart('@'),
                                 out var md
                             )
                                 ? md
@@ -219,8 +219,10 @@ public static class MetadataUtils
                     CountParamIdx: i,
                     ParamsForCount: decl.EnumerateSymbolConstraints(providers, entryPoint, jobKey)
                         .Where(y =>
-                            y.ParamConstraints?.CommonUsage?.CountExpression
-                            == x.Identifier.ToString()
+                            y.ParamConstraints?.CommonUsage?.CountExpression.AsSpan()
+                                .TrimStart('@')
+                                .SequenceEqual(x.Identifier.ToString().AsSpan().TrimStart('@'))
+                            ?? false
                         )
                 )
         );

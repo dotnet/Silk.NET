@@ -370,11 +370,6 @@ public class PrettifyNames(
             conflictingTrimmingNames.Clear();
             var trimmingNamesForOldPrimary = primaries[primary];
 
-            if (primary == "NormalP3")
-            {
-                System.Diagnostics.Debugger.Break();
-            }
-
             // Function-specific logic where some conflicts are okay, so we have to evaluate each signature to see if
             // we can discriminate each one such that there are no conflicts.
             var nMethConflicts = 0;
