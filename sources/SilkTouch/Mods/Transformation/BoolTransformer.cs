@@ -3,6 +3,7 @@
 
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using Microsoft.CodeAnalysis.CSharp.Syntax;
 using Microsoft.Extensions.Options;
 using static Microsoft.CodeAnalysis.CSharp.SyntaxFactory;
@@ -22,9 +23,15 @@ public class BoolTransformer(IOptionsSnapshot<TransformFunctions.Configuration> 
         Action<MethodDeclarationSyntax> next
     )
     {
+        if (current.Identifier.ToString() == "glDebugMessageControlARB")
+        {
+            Debugger.Break();
+        }
+
         var ogCurrent = current;
         var cfg = options.Get(ctx.JobKey);
         string? retBoolScheme = null;
+        TypeSyntax? newRetType = null;
         if (
             (current.ReturnType.IsInteger() && cfg.IntReturnsMaybeBool)
             || (
@@ -36,7 +43,7 @@ public class BoolTransformer(IOptionsSnapshot<TransformFunctions.Configuration> 
         )
         {
             current = current.WithReturnType(
-                string.IsNullOrWhiteSpace(retBoolScheme)
+                newRetType = string.IsNullOrWhiteSpace(retBoolScheme)
                     ? GenericName(
                         Identifier("MaybeBool"),
                         TypeArgumentList(SingletonSeparatedList(current.ReturnType))
@@ -98,7 +105,11 @@ public class BoolTransformer(IOptionsSnapshot<TransformFunctions.Configuration> 
         if (!ReferenceEquals(current, ogCurrent))
         {
             current =
-                current.CastTransformeeCalls(ogCurrent, current) as MethodDeclarationSyntax
+                current.CastFunctionCalls(
+                    ctx.Original!,
+                    newRetType,
+                    current.ParameterList.Parameters
+                ) as MethodDeclarationSyntax
                 ?? current;
         }
 

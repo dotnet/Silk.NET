@@ -336,7 +336,10 @@ public class ArrayParameterTransformer : IFunctionTransformer
                             IdentifierName($"As{gn.Identifier}")
                         )
                     )
-                    : PrefixUnaryExpression(SyntaxKind.AddressOfExpression, node)
+                    : CastExpression(
+                        ptrParamType,
+                        PrefixUnaryExpression(SyntaxKind.AddressOfExpression, node)
+                    )
                 : node.Identifier.ToString() == countParam
                     ? LiteralExpression(SyntaxKind.NumericLiteralExpression, Literal(1))
                     : base.VisitIdentifierName(node);

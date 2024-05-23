@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using Microsoft.CodeAnalysis;
 using Microsoft.CodeAnalysis.CSharp;
@@ -46,103 +47,198 @@ public static class TransformationUtils
     }
 
     /// <summary>
-    /// Casts the parameters of calls to the given callee to the callee's parameter types where the caller type differs.
+    /// Casts the arguments and return type of calls to the given function within the given node.
     /// </summary>
-    /// <param name="node">The syntax node to replace calls in.</param>
-    /// <param name="callee">The original function signature.</param>
-    /// <param name="caller">The calling method signature.</param>
-    /// <returns>The modified node.</returns>
-    /// <remarks>
-    /// The caller and callee must have an identical number of parameters and identical identifiers.
-    /// </remarks>
-    public static SyntaxNode CastTransformeeCalls(
+    /// <param name="node">The node in which to search for function calls.</param>
+    /// <param name="callee">The callee.</param>
+    /// <param name="castReturnType">The type to cast the return type of invocations to.</param>
+    /// <param name="castParameterTypes">The types to cast each parameter with the given index to.</param>
+    /// <returns>The rewritten syntax node.</returns>
+    public static SyntaxNode CastFunctionCalls(
         this SyntaxNode node,
         MethodDeclarationSyntax callee,
-        MethodDeclarationSyntax caller
+        TypeSyntax? castReturnType = null,
+        IReadOnlyList<(int Index, TypeSyntax CastType)>? castParameterTypes = null
+    ) => new MethodCallRewriter(callee, castReturnType, castParameterTypes).Visit(node);
+
+    /// <summary>
+    /// Casts the arguments and return type of calls to the given function within the given node.
+    /// </summary>
+    /// <param name="node">The node in which to search for function calls.</param>
+    /// <param name="callee">The callee.</param>
+    /// <param name="newReturnType">The type to cast the return type of invocations to.</param>
+    /// <param name="newParameters">
+    /// The new parameters for which invocations will be cast to the parameter type where they differ.
+    /// </param>
+    /// <returns>The rewritten syntax node.</returns>
+    public static SyntaxNode CastFunctionCalls(
+        this SyntaxNode node,
+        MethodDeclarationSyntax callee,
+        TypeSyntax? newReturnType,
+        IReadOnlyList<ParameterSyntax> newParameters
     )
     {
-        if (
-            caller.Identifier.ToString() != callee.Identifier.ToString()
-            || caller.ParameterList.Parameters.Count != callee.ParameterList.Parameters.Count
-        )
+        var toRw = new List<(int, TypeSyntax)>();
+        foreach (var newParam in newParameters)
         {
-            throw new ArgumentException(
-                "Caller and callee must share the same identifier and number of parameters."
-            );
+            for (var i = 0; i < callee.ParameterList.Parameters.Count; i++)
+            {
+                var param = callee.ParameterList.Parameters[i];
+                if (
+                    param.Identifier.ToString() == newParam.Identifier.ToString()
+                    && param.Type?.ToString() != newParam.Type?.ToString()
+                )
+                {
+                    toRw.Add(
+                        (
+                            i,
+                            param.Type
+                                ?? throw new InvalidOperationException("Parameter has no type.")
+                        )
+                    );
+                }
+            }
         }
 
-        return new MethodCallRewriter(caller, callee).Visit(node);
+        return node.CastFunctionCalls(callee, newReturnType, toRw);
     }
 
-    class MethodCallRewriter(MethodDeclarationSyntax caller, MethodDeclarationSyntax callee)
-        : CSharpSyntaxRewriter
+    class MethodCallRewriter(
+        MethodDeclarationSyntax callee,
+        TypeSyntax? castReturnType = null,
+        IReadOnlyList<(int Index, TypeSyntax CastType)>? castParameterTypes = null
+    ) : CSharpSyntaxRewriter
     {
         private int _castDepth;
         private TypeSyntax? _castTo;
+        private int _argNo;
 
         public override SyntaxNode? VisitCastExpression(CastExpressionSyntax node)
         {
             _castDepth++;
             var ret = base.VisitCastExpression(node);
-            if (--_castDepth == 0 && _castTo is not null && ret is ExpressionSyntax expr)
+            if (
+                --_castDepth == 0
+                && _castTo is not null
+                && ret is ExpressionSyntax expr
+                && (expr is not CastExpressionSyntax ce || ce.Type.ToString() != _castTo.ToString())
+            )
             {
-                return CastExpression(_castTo, expr);
+                ret = CastExpression(_castTo, expr);
+                _castTo = null;
             }
 
             return ret;
         }
 
+        public override SyntaxNode? VisitArgument(ArgumentSyntax node)
+        {
+            var ret = base.VisitArgument(node);
+            var argNo = _argNo++;
+            if (ret is not ArgumentSyntax arg || castParameterTypes is null)
+            {
+                return ret;
+            }
+
+            foreach (var (idx, castTo) in castParameterTypes)
+            {
+                if (
+                    idx == argNo
+                    && (
+                        arg.Expression is not CastExpressionSyntax ce
+                        || ce.Type.ToString() != castTo.ToString()
+                    )
+                )
+                {
+                    return arg.WithExpression(CastExpression(castTo, arg.Expression));
+                }
+            }
+
+            return ret;
+        }
+
+        public override SyntaxNode? VisitArgumentList(ArgumentListSyntax node)
+        {
+            // This is to handle patterns like Call(x, Call(y, z))
+            // See the comment in VisitInvocationExpression for more
+            var castDepthBefore = _castDepth;
+            var argNoBefore = _argNo;
+            _castDepth = 0;
+            _argNo = 0;
+            var ret = base.VisitArgumentList(node);
+            _castDepth = castDepthBefore;
+            _argNo = argNoBefore;
+            return ret;
+        }
+
         public override SyntaxNode? VisitInvocationExpression(InvocationExpressionSyntax node)
         {
+            if (
+                (
+                    node.Expression is MemberAccessExpressionSyntax mae
+                        ? mae.Name as IdentifierNameSyntax
+                        : node.Expression as IdentifierNameSyntax
+                )
+                    is not { } idn
+                || idn.Identifier.ToString() != callee.Identifier.ToString()
+                || node.ArgumentList.Arguments.Count != callee.ParameterList.Parameters.Count
+            )
+            {
+                return base.VisitInvocationExpression(node);
+            }
+
+            // == CAST ORDER PRESERVATION ==
+            // If the argument expression already contains casts, we assume that the desired argument cast applies after
+            // any other existing expression. In the case of (ABC)Call(1, 2), we visit the ABC cast which increments the
+            // _castDepth to 1, then we recurse into the invocation. We set _castTo to the return type cast we want on
+            // exit in this function, and then that is evaluated on exit from VisitCastExpression. Lovely recursion.
+            //
+            // == CALLS WITHIN CALLS ==
+            //
+            // It is expected that casts are only applied after an entire invocation expression has been visited. That
+            // is:
+            //
+            //                | reset when recursing into arguments
+            //                v
+            // 1    2    3    0     <-- _castDepth
+            // v--- v--- v--- v----
+            // (ABC)(XYZ)Call(x, y)
+            //               ------^
+            //               we do not set _castTo until we have finished evaluating the arguments
+            //
+            // Meaning that in the nesting case:
+            //
+            // 1    2    3    0  1    2    3    0    3 <-- _castDepth
+            // v--- v--- v--- v- v--- v--- v--- v--- v
+            // (ABC)(XYZ)Call(x, (ABC)(XYZ)Call(y, z))
+            //                  ^                   |^-----------------------------------------------------+
+            //                  |                   | (1) _castTo is set after arguments is evaluated      |
+            //                  +-----<<<<<<<<<-----+                                                      |
+            //              (2) applied and set to null                                                    |
+            //              by the time we eval outer arg                                                  |
+            //                                                                                             |
+            //              (3) _castTo, still null here, -------------------------------------------------+
+            //              will be set to the outer cast
+            //
+            // Note that the state is pushed onto the stack in VisitArgumentList, but the _castTo contract is expected
+            // to be respected here and in VisitCastExpression.
+            Debug.Assert(_castTo is null);
             var ret = base.VisitInvocationExpression(node);
             if (ret is not InvocationExpressionSyntax inv)
             {
                 return ret;
             }
 
-            if (
-                (
-                    inv.Expression is MemberAccessExpressionSyntax mae
-                        ? mae.Name as IdentifierNameSyntax
-                        : inv.Expression as IdentifierNameSyntax
-                )
-                    is { } idn
-                && idn.Identifier.ToString() == callee.Identifier.ToString()
-                && inv.ArgumentList.Arguments.Count == callee.ParameterList.Parameters.Count
-            )
+            if (_castDepth == 0 && castReturnType is not null)
             {
-                inv = inv.WithArgumentList(
-                    inv.ArgumentList.WithArguments(
-                        SeparatedList(
-                            inv.ArgumentList.Arguments.Select(
-                                (x, i) =>
-                                    callee.ParameterList.Parameters[i].Type is { } ty
-                                    && ty.ToString() is { Length: > 0 } tyStr
-                                    && tyStr != caller.ParameterList.Parameters[i].Type?.ToString()
-                                    && (
-                                        x.Expression is not CastExpressionSyntax ce
-                                        || ce.Type.ToString() != tyStr
-                                    )
-                                        ? x.WithExpression(CastExpression(ty, x.Expression))
-                                        : x
-                            )
-                        )
-                    )
-                );
-
-                if (callee.ReturnType.ToString() != caller.ReturnType.ToString())
-                {
-                    // Preserve cast order - lazily apply the cast if we have to.
-                    if (_castDepth == 0)
-                    {
-                        return CastExpression(caller.ReturnType, inv);
-                    }
-
-                    _castTo = caller.ReturnType;
-                }
+                ret = CastExpression(castReturnType, inv);
+            }
+            else
+            {
+                _castTo = castReturnType;
             }
 
-            return inv;
+            return ret;
         }
     }
 

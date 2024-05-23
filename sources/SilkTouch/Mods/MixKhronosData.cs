@@ -1485,17 +1485,15 @@ public partial class MixKhronosData(
             var anyChange = false;
 
             // Is the return type transformable?
-            if (
-                GetTypeTransformation(
-                    entryPoint,
-                    ":return",
-                    Jobs[ctx.JobKey],
-                    ret,
-                    pass,
-                    ref anyNonTrivialParameters
-                ) is
-                { } newRet
-            )
+            var newRet = GetTypeTransformation(
+                entryPoint,
+                ":return",
+                Jobs[ctx.JobKey],
+                ret,
+                pass,
+                ref anyNonTrivialParameters
+            );
+            if (newRet is not null)
             {
                 ret = newRet;
                 anyChange = true;
@@ -1564,10 +1562,19 @@ public partial class MixKhronosData(
                 .WithReturnType(ret)
                 .WithParameterList(ParameterList(SeparatedList(@params)));
             yield return retMeth
-                .WithBody(current.Body?.CastTransformeeCalls(current, retMeth) as BlockSyntax)
+                .WithBody(
+                    current.Body?.CastFunctionCalls(
+                        ctx.Original!,
+                        newRet,
+                        retMeth.ParameterList.Parameters
+                    ) as BlockSyntax
+                )
                 .WithExpressionBody(
-                    current.ExpressionBody?.CastTransformeeCalls(current, retMeth)
-                        as ArrowExpressionClauseSyntax
+                    current.ExpressionBody?.CastFunctionCalls(
+                        ctx.Original!,
+                        newRet,
+                        retMeth.ParameterList.Parameters
+                    ) as ArrowExpressionClauseSyntax
                 );
         }
 
