@@ -148,17 +148,18 @@ fn spvTools(b: *std.Build, target: std.Build.ResolvedTarget, optimize: std.built
     spirv_tools.step.dependOn(&spvtoolsVendorTables(b, ""opencl.debuginfo.100"", ""CLDEBUG100_"").step);
     spirv_tools.step.dependOn(&spvtoolsVendorTables(b, ""nonsemantic.shader.debuginfo.100"", ""SHDEBUG100_"").step);
     spirv_tools.step.dependOn(&spvtoolsVendorTables(b, ""nonsemantic.clspvreflection"", """").step);
+    spirv_tools.step.dependOn(&spvtoolsVendorTables(b, ""nonsemantic.vkspreflection"", """").step);
 
     //them headers
     spirv_tools.step.dependOn(&debug_info_header.step);
     spirv_tools.step.dependOn(&cl_debug_info_header_100.step);
     spirv_tools.step.dependOn(&non_semantic_shader_debug_info_100.step);
 
-    spirv_tools.addIncludePath(.{ .path = spirv_tools_root ++ ""include"" });
-    spirv_tools.addIncludePath(.{ .path = spirv_tools_root ++ ""source"" });
-    spirv_tools.addIncludePath(.{ .path = spirv_tools_root });
+    spirv_tools.addIncludePath(b.path(spirv_tools_root ++ ""include""));
+    spirv_tools.addIncludePath(b.path(spirv_tools_root ++ ""source""));
+    spirv_tools.addIncludePath(b.path(spirv_tools_root));
 
-    spirv_tools.addIncludePath(.{ .path = ""third_party/spirv-headers/include/"" });
+    spirv_tools.addIncludePath(b.path(""third_party/spirv-headers/include/""));
 
     spirv_tools.addCSourceFiles(.{
         .files = &.{
@@ -406,8 +407,8 @@ fn glslangLib(b: *std.Build, target: std.Build.ResolvedTarget, optimize: std.bui
     glslang.linkLibC();
     glslang.linkLibCpp();
 
-    glslang.addIncludePath(.{ .path = root_glslang_path ++ ""Include"" });
-    glslang.addIncludePath(.{ .path = root_glslang_path });
+    glslang.addIncludePath(b.path(root_glslang_path ++ ""Include""));
+    glslang.addIncludePath(b.path(root_glslang_path));
 
     glslang.defineCMacro(""ENABLE_HLSL"", ""1"");
 
@@ -505,12 +506,12 @@ pub fn build(b: *std.Build) void {
     });
     shaderc_util.linkLibC();
     shaderc_util.linkLibCpp();
-    shaderc_util.addIncludePath(.{ .path = ""libshaderc/include"" });
-    shaderc_util.addIncludePath(.{ .path = ""libshaderc_util/include"" });
+    shaderc_util.addIncludePath(b.path(""libshaderc/include""));
+    shaderc_util.addIncludePath(b.path(""libshaderc_util/include""));
 
-    shaderc_util.addIncludePath(.{ .path = ""third_party/glslang"" });
-    shaderc_util.addIncludePath(.{ .path = ""third_party/spirv-tools/include"" });
-    shaderc_util.addIncludePath(.{ .path = ""third_party/spirv-headers/include/"" });
+    shaderc_util.addIncludePath(b.path(""third_party/glslang""));
+    shaderc_util.addIncludePath(b.path(""third_party/spirv-tools/include""));
+    shaderc_util.addIncludePath(b.path(""third_party/spirv-headers/include/""));
 
     shaderc_util.defineCMacro(""ENABLE_HLSL"", ""1"");
 
@@ -547,12 +548,12 @@ pub fn build(b: *std.Build) void {
         shaderc.root_module.strip = true;
     }
 
-    shaderc.addIncludePath(.{ .path = ""libshaderc/include"" });
-    shaderc.addIncludePath(.{ .path = ""libshaderc_util/include"" });
+    shaderc.addIncludePath(b.path(""libshaderc/include""));
+    shaderc.addIncludePath(b.path(""libshaderc_util/include""));
 
-    shaderc.addIncludePath(.{ .path = ""third_party/glslang"" });
-    shaderc.addIncludePath(.{ .path = ""third_party/spirv-tools/include"" });
-    shaderc.addIncludePath(.{ .path = ""third_party/spirv-headers/include/"" });
+    shaderc.addIncludePath(b.path(""third_party/glslang""));
+    shaderc.addIncludePath(b.path(""third_party/spirv-tools/include""));
+    shaderc.addIncludePath(b.path(""third_party/spirv-headers/include/""));
 
     shaderc.addCSourceFiles(.{
         .files = &.{
@@ -600,15 +601,15 @@ pub fn build(b: *std.Build) void {
 
             //Build shaderc for Windows x86
             InheritedShell($"zig build -Dtarget=x86-windows-gnu {optimizeMode}", ShadercPath).AssertZeroExitCode();
-            CopyFile(ShadercPath / "zig-out" / "lib" / $"{libname}.dll", runtimes / "win-x86" / "native" / $"{libname}.dll", FileExistsPolicy.Overwrite);
+            CopyFile(ShadercPath / "zig-out" / "bin" / $"{libname}.dll", runtimes / "win-x86" / "native" / $"{libname}.dll", FileExistsPolicy.Overwrite);
 
             //Build shaderc for Windows x86_64
             InheritedShell($"zig build -Dtarget=x86_64-windows-gnu {optimizeMode}", ShadercPath).AssertZeroExitCode();
-            CopyFile(ShadercPath / "zig-out" / "lib" / $"{libname}.dll", runtimes / "win-x64" / "native" / $"{libname}.dll", FileExistsPolicy.Overwrite);
+            CopyFile(ShadercPath / "zig-out" / "bin" / $"{libname}.dll", runtimes / "win-x64" / "native" / $"{libname}.dll", FileExistsPolicy.Overwrite);
 
             //Build shaderc for Windows ARM64
             InheritedShell($"zig build -Dtarget=aarch64-windows-gnu {optimizeMode}", ShadercPath).AssertZeroExitCode();
-            CopyFile(ShadercPath / "zig-out" / "lib" / $"{libname}.dll", runtimes / "win-arm64" / "native" / $"{libname}.dll", FileExistsPolicy.Overwrite);
+            CopyFile(ShadercPath / "zig-out" / "bin" / $"{libname}.dll", runtimes / "win-arm64" / "native" / $"{libname}.dll", FileExistsPolicy.Overwrite);
 
             //Build shaderc for MacOS x86_64
             InheritedShell($"zig build -Dtarget=x86_64-macos {optimizeMode}", ShadercPath).AssertZeroExitCode();
