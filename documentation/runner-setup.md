@@ -191,3 +191,12 @@ Invoke-WebRequest -Uri https://download.visualstudio.microsoft.com/download/pr/9
 .\dotnet8.exe /install /quiet /norestart
 dotnet workload install android ios maccatalyst ios tvos wasm-tools wasm-experimental wasi-experimental maui
 ```
+
+### Installing Git
+
+Totally didn't forget about this one.
+
+```powershell
+Invoke-WebRequest -Uri https://github.com/git-for-windows/git/releases/download/v2.45.1.windows.1/Git-2.45.1-64-bit.exe -OutFile gitinstall.exe
+.\gitinstall.exe /install /verysilent /norestart
+```
