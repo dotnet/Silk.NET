@@ -10,7 +10,7 @@ namespace Silk.NET.OpenGL;
 [Transformed]
 public enum CombinerComponentUsage : uint
 {
-    BLUE = unchecked((uint)0x1905),
+    Blue = unchecked((uint)0x1905),
     Alpha = unchecked((uint)0x1906),
-    RGB = unchecked((uint)0x1907)
+    Rgb = unchecked((uint)0x1907)
 }

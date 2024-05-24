@@ -48,5 +48,5 @@ public readonly record struct MaybeBool<T, TScheme>(T Value)
     /// <returns>The boolean value.</returns>
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     public static implicit operator bool(MaybeBool<T, TScheme> value) =>
-        !value.Value.Equals(TScheme.False<T>());
+        TScheme.IsTrue(value.Value);
 }

@@ -56,7 +56,7 @@ public enum EnableCap : uint
     PolygonStipple = unchecked((uint)0x0B42),
     Lighting = unchecked((uint)0x0B50),
     ColorMaterial = unchecked((uint)0x0B57),
-    FOG = unchecked((uint)0x0B60),
+    Fog = unchecked((uint)0x0B60),
     Normalize = unchecked((uint)0x0BA1),
     AlphaTest = unchecked((uint)0x0BC0),
     TextureGenS = unchecked((uint)0x0C60),

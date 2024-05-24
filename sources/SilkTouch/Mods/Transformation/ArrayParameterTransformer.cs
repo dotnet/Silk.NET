@@ -10,6 +10,7 @@ using Microsoft.CodeAnalysis;
 using Microsoft.CodeAnalysis.CSharp;
 using Microsoft.CodeAnalysis.CSharp.Syntax;
 using Silk.NET.SilkTouch.Mods.Metadata;
+using Silk.NET.SilkTouch.Naming;
 using static Microsoft.CodeAnalysis.CSharp.SyntaxFactory;
 
 namespace Silk.NET.SilkTouch.Mods.Transformation;
@@ -19,10 +20,6 @@ namespace Silk.NET.SilkTouch.Mods.Transformation;
 /// </summary>
 public class ArrayParameterTransformer : IFunctionTransformer
 {
-    private static readonly SearchValues<char> _caps = SearchValues.Create(
-        "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
-    );
-
     /// <inheritdoc />
     public void Transform(
         MethodDeclarationSyntax decl,
@@ -134,8 +131,8 @@ public class ArrayParameterTransformer : IFunctionTransformer
         // Get information from the function name for benefit-of-doubt overloading i.e. if the function matches a very
         // well-known function style then let's just go ahead and overload it. (Mainly for OpenAL)
         var epSpan = entryPoint.AsSpan();
-        var verb = epSpan[int.Max(epSpan.IndexOfAny(_caps), 0)..];
-        verb = verb[..(verb[1..].IndexOfAny(_caps) + 1)];
+        var verb = epSpan[int.Max(epSpan.IndexOfAny(NameUtils.Uppercase), 0)..];
+        verb = verb[..(verb[1..].IndexOfAny(NameUtils.Uppercase) + 1)];
         var benefitOfDoubt = false;
         if (
             countParam is null

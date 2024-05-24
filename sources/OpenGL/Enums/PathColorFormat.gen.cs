@@ -10,10 +10,10 @@ namespace Silk.NET.OpenGL;
 [Transformed]
 public enum PathColorFormat : uint
 {
-    NONE = unchecked((uint)0),
+    None = unchecked((uint)0),
     Alpha = unchecked((uint)0x1906),
-    RGB = unchecked((uint)0x1907),
-    RGBA = unchecked((uint)0x1908),
+    Rgb = unchecked((uint)0x1907),
+    Rgba = unchecked((uint)0x1908),
     Luminance = unchecked((uint)0x1909),
     LuminanceAlpha = unchecked((uint)0x190A),
     Intensity = unchecked((uint)0x8049)

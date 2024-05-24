@@ -281,7 +281,7 @@ public enum GetPName : uint
     ColorMaterialFace = unchecked((uint)0x0B55),
     ColorMaterialParameter = unchecked((uint)0x0B56),
     ColorMaterial = unchecked((uint)0x0B57),
-    FOG = unchecked((uint)0x0B60),
+    Fog = unchecked((uint)0x0B60),
     FogIndex = unchecked((uint)0x0B61),
     FogDensity = unchecked((uint)0x0B62),
     FogStart = unchecked((uint)0x0B63),

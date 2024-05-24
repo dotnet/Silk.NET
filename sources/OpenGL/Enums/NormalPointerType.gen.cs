@@ -10,9 +10,9 @@ namespace Silk.NET.OpenGL;
 [Transformed]
 public enum NormalPointerType : uint
 {
-    BYTE = unchecked((uint)0x1400),
+    Byte = unchecked((uint)0x1400),
     Short = unchecked((uint)0x1402),
-    INT = unchecked((uint)0x1404),
+    Int = unchecked((uint)0x1404),
     Float = unchecked((uint)0x1406),
     Double = unchecked((uint)0x140A)
 }

@@ -10,8 +10,8 @@ namespace Silk.NET.OpenGL;
 [Transformed]
 public enum PixelTexGenMode : uint
 {
-    NONE = unchecked((uint)0),
+    None = unchecked((uint)0),
     Alpha = unchecked((uint)0x1906),
-    RGB = unchecked((uint)0x1907),
-    RGBA = unchecked((uint)0x1908)
+    Rgb = unchecked((uint)0x1907),
+    Rgba = unchecked((uint)0x1908)
 }

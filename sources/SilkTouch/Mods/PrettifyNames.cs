@@ -178,7 +178,7 @@ public class PrettifyNames(
 
                 // Add it to the rewriter's list of names to... rewrite...
                 rewriter.Types[typeName] = (
-                    newTypeName.Prettify(translator),
+                    newTypeName.Prettify(translator, allowAllCaps: true), // <-- lenient about caps for type names
                     // TODO deprecate secondaries if they're within the baseline?
                     constNames
                         .Concat(prettifiedOnly)
@@ -196,7 +196,7 @@ public class PrettifyNames(
             foreach (var (name, (nonFunctions, functions)) in visitor.Types)
             {
                 rewriter.Types[name] = (
-                    name.Prettify(translator),
+                    name.Prettify(translator, allowAllCaps: true), // <-- lenient about caps for type names (e.g. GL)
                     nonFunctions?.ToDictionary(x => x, x => x.Prettify(translator)),
                     functions?.ToDictionary(x => x.Name, x => x.Name.Prettify(translator))
                 );

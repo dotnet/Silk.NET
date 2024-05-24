@@ -10,11 +10,11 @@ namespace Silk.NET.OpenGL;
 [Transformed]
 public enum VertexAttribPointerType : uint
 {
-    BYTE = unchecked((uint)0x1400),
+    Byte = unchecked((uint)0x1400),
     UnsignedByte = unchecked((uint)0x1401),
     Short = unchecked((uint)0x1402),
     UnsignedShort = unchecked((uint)0x1403),
-    INT = unchecked((uint)0x1404),
+    Int = unchecked((uint)0x1404),
     UnsignedInt = unchecked((uint)0x1405),
     Float = unchecked((uint)0x1406),
     Double = unchecked((uint)0x140A),

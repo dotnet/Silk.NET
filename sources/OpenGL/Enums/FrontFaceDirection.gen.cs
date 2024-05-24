@@ -10,6 +10,6 @@ namespace Silk.NET.OpenGL;
 [Transformed]
 public enum FrontFaceDirection : uint
 {
-    CW = unchecked((uint)0x0900),
-    CCW = unchecked((uint)0x0901)
+    Cw = unchecked((uint)0x0900),
+    Ccw = unchecked((uint)0x0901)
 }

@@ -10,8 +10,8 @@ namespace Silk.NET.OpenGL;
 [Transformed]
 public enum FragmentShaderGenericSource : uint
 {
-    ZERO = unchecked((uint)0),
-    ONE = unchecked((uint)1),
+    Zero = unchecked((uint)0),
+    One = unchecked((uint)1),
     PrimaryColor = unchecked((uint)0x8577),
     PrimaryColorARB = unchecked((uint)0x8577),
     Reg0ATI = unchecked((uint)0x8921),

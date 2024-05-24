@@ -10,7 +10,7 @@ namespace Silk.NET.OpenGL;
 [Transformed]
 public enum FragmentShaderDestModMask : uint
 {
-    NONE = unchecked((uint)0),
+    None = unchecked((uint)0),
     X2XBitATI = unchecked((uint)0x00000001),
     X4XBitATI = unchecked((uint)0x00000002),
     X8XBitATI = unchecked((uint)0x00000004),

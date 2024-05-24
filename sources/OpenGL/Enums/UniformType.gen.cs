@@ -10,7 +10,7 @@ namespace Silk.NET.OpenGL;
 [Transformed]
 public enum UniformType : uint
 {
-    INT = unchecked((uint)0x1404),
+    Int = unchecked((uint)0x1404),
     UnsignedInt = unchecked((uint)0x1405),
     Float = unchecked((uint)0x1406),
     Double = unchecked((uint)0x140A),
@@ -20,7 +20,7 @@ public enum UniformType : uint
     IntVec2 = unchecked((uint)0x8B53),
     IntVec3 = unchecked((uint)0x8B54),
     IntVec4 = unchecked((uint)0x8B55),
-    BOOL = unchecked((uint)0x8B56),
+    Bool = unchecked((uint)0x8B56),
     BoolVec2 = unchecked((uint)0x8B57),
     BoolVec3 = unchecked((uint)0x8B58),
     BoolVec4 = unchecked((uint)0x8B59),

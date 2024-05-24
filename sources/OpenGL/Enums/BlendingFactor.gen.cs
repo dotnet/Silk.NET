@@ -10,8 +10,8 @@ namespace Silk.NET.OpenGL;
 [Transformed]
 public enum BlendingFactor : uint
 {
-    ZERO = unchecked((uint)0),
-    ONE = unchecked((uint)1),
+    Zero = unchecked((uint)0),
+    One = unchecked((uint)1),
     SrcColor = unchecked((uint)0x0300),
     OneMinusSrcColor = unchecked((uint)0x0301),
     SrcAlpha = unchecked((uint)0x0302),

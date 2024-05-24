@@ -11,7 +11,7 @@ namespace Silk.NET.OpenGL;
 public enum FogMode : uint
 {
     Linear = unchecked((uint)0x2601),
-    EXP = unchecked((uint)0x0800),
+    Exp = unchecked((uint)0x0800),
     Exp2 = unchecked((uint)0x0801),
     FogFuncSGIS = unchecked((uint)0x812A)
 }

@@ -11,7 +11,7 @@ namespace Silk.NET.OpenGL;
 public enum IndexPointerType : uint
 {
     Short = unchecked((uint)0x1402),
-    INT = unchecked((uint)0x1404),
+    Int = unchecked((uint)0x1404),
     Float = unchecked((uint)0x1406),
     Double = unchecked((uint)0x140A)
 }
