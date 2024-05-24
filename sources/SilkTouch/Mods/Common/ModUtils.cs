@@ -544,10 +544,10 @@ public static class ModUtils
         syntax.AttributeLists.GetNativeTypeName(SyntaxKind.ReturnKeyword);
 
     /// <summary>
-    ///
+    /// Determines whether this is a <see cref="PredefinedTypeSyntax"/> representing an integral type.
     /// </summary>
-    /// <param name="syn"></param>
-    /// <returns></returns>
+    /// <param name="syn">The type to check.</param>
+    /// <returns>Whether it's an integer.</returns>
     public static bool IsInteger(this TypeSyntax syn) =>
         (syn as PredefinedTypeSyntax)?.Keyword.Kind()
             is SyntaxKind.ULongKeyword

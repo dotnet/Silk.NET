@@ -243,7 +243,9 @@ public partial class MixKhronosData(
         job.TypeMap.TryAdd("GLbitfield", "uint");
         if (specPath is null)
         {
-            // There is act
+            // No metadata, can't continue. It'd be odd if the Khronos mod is being used in this case. There was once
+            // actually a use case for it, but the ArrayParameterTransformer (once Khronos-specific) is no longer
+            // Khronos-specific.
             return;
         }
 
