@@ -70,11 +70,6 @@ public class ArrayParameterTransformer : IFunctionTransformer
             return;
         }
 
-        if (decl.Identifier.ToString() == "glShaderSource")
-        {
-            Debugger.Break();
-        }
-
         // has a single pointer parameter that has either:
         // - a parameter-based count
         // - a count of 1

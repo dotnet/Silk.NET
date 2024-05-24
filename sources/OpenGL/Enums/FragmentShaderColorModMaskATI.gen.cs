@@ -10,8 +10,8 @@ namespace Silk.NET.OpenGL;
 [Transformed]
 public enum FragmentShaderColorModMaskATI : uint
 {
-    XBit = unchecked((uint)0x00000001),
-    GlCompBit = unchecked((uint)0x00000002),
-    GlNegateBit = unchecked((uint)0x00000004),
-    GlBiasBit = unchecked((uint)0x00000008)
+    X2XBit = unchecked((uint)0x00000001),
+    CompBit = unchecked((uint)0x00000002),
+    NegateBit = unchecked((uint)0x00000004),
+    BiasBit = unchecked((uint)0x00000008)
 }

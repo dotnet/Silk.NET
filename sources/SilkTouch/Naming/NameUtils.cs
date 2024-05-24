@@ -155,7 +155,13 @@ public static partial class NameUtils
             return foundPrefix;
         }
 
-        return foundPrefix[..(naive ? foundPrefix.Length : foundPrefix.LastIndexOf('_') + 1)];
+        // @Perksey says: I added a -1 here in the naive case in #2020 because it felt like it was wrong (why would we
+        // want the prefix to be equal to something we *know* isn't applicable to all names?) and was producing one
+        // specific bad result for which there is now a regression test. If this is having catastrophic impacts on other
+        // bindings then please reverse this change and find a smarter fix.
+        return foundPrefix[
+            ..(naive ? int.Max(foundPrefix.Length - 1, 0) : foundPrefix.LastIndexOf('_') + 1)
+        ];
     }
 
     /// <summary>

@@ -10,11 +10,11 @@ namespace Silk.NET.OpenGL;
 [Transformed]
 public enum SamplePatternEXT : uint
 {
-    Pass = unchecked((uint)0x80A1),
-    Gl2Pass0 = unchecked((uint)0x80A2),
-    Gl2Pass1 = unchecked((uint)0x80A3),
-    Gl4Pass0 = unchecked((uint)0x80A4),
-    Gl4Pass1 = unchecked((uint)0x80A5),
-    Gl4Pass2 = unchecked((uint)0x80A6),
-    Gl4Pass3 = unchecked((uint)0x80A7)
+    X1Pass = unchecked((uint)0x80A1),
+    X2Pass0 = unchecked((uint)0x80A2),
+    X2Pass1 = unchecked((uint)0x80A3),
+    X4Pass0 = unchecked((uint)0x80A4),
+    X4Pass1 = unchecked((uint)0x80A5),
+    X4Pass2 = unchecked((uint)0x80A6),
+    X4Pass3 = unchecked((uint)0x80A7)
 }

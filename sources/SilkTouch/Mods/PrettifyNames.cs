@@ -305,6 +305,11 @@ public class PrettifyNames(
             );
         }
 
+        if (container == "FragmentShaderColorModMaskATI")
+        {
+            System.Diagnostics.Debugger.Break();
+        }
+
         // Run each trimmer
         string? identifiedPrefix = null;
         foreach (var trimmer in trimmers)
