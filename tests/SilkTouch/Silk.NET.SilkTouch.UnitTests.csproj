@@ -12,7 +12,7 @@
 
   <ItemGroup>
     <PackageReference Update="NUnit" Version="4.1.0" />
-    <PackageReference Include="Silk.NET.BuildTools" Version="2.20.0" />
+    <PackageReference Include="Silk.NET.BuildTools" Version="2.21.0" />
     <PackageReference Include="System.Linq.Async" Version="6.0.1" />
     <PackageReference Include="Verify.DiffPlex" Version="3.0.0" />
     <PackageReference Include="Verify.NUnit" Version="23.7.1" />
