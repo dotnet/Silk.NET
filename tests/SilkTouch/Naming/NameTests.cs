@@ -8,8 +8,8 @@ namespace Silk.NET.SilkTouch.UnitTests.Naming;
 [TestFixture]
 public class NameTests : NameTrimmer
 {
-    [Test]
-    public void SimpleGlfwTestDetermination()
+    [Test, TestCase(null), TestCase("glfw")]
+    public void SimpleGlfwTestDetermination(string? hint)
     {
         var test = new Dictionary<string, (string, List<string>?)>
         {
@@ -24,11 +24,11 @@ public class NameTests : NameTrimmer
             { "GLFWwindow", ("GLFWwindow", null) }
         };
         Assert.That(
-            GetPrefix(null, null, test, null, null, false, true)?.Prefix,
+            GetPrefix(null, hint, test, null, null, false, true)?.Prefix,
             Is.EqualTo("GLFW")
         );
         string? identifiedPrefix = null;
-        Trim(null, null, "GLFW", test, null, null, ref identifiedPrefix);
+        Trim(null, hint, "GLFW", test, null, null, ref identifiedPrefix);
         var expected = new Dictionary<string, string>
         {
             { "GLFWallocator", "Allocator" },
@@ -40,6 +40,42 @@ public class NameTests : NameTrimmer
             { "GLFWcursor", "Cursor" },
             { "GLFWmonitor", "Monitor" },
             { "GLFWwindow", "Window" }
+        };
+        foreach (var (key, (trimmed, _)) in test)
+        {
+            Assert.That(
+                trimmed.Prettify(new NameUtils.NameTransformer(4)),
+                Is.EqualTo(expected[key])
+            );
+        }
+    }
+
+    [Test]
+    public void RegressionFragmentShaderColorModMaskATI()
+    {
+        var test = new Dictionary<string, (string, List<string>?)>
+        {
+            { "GL_2X_BIT_ATI", ("GL_2X_BIT_ATI", null) },
+            { "GL_COMP_BIT_ATI", ("GL_COMP_BIT_ATI", null) },
+            { "GL_NEGATE_BIT_ATI", ("GL_NEGATE_BIT_ATI", null) },
+            { "GL_BIAS_BIT_ATI", ("GL_BIAS_BIT_ATI", null) }
+        };
+        string? identifiedPrefix = null;
+        Trim(
+            "FragmentShaderColorModMaskATI",
+            "gl",
+            "OpenGL",
+            test,
+            null,
+            null,
+            ref identifiedPrefix
+        );
+        var expected = new Dictionary<string, string>
+        {
+            { "GL_2X_BIT_ATI", "X2XBitAti" },
+            { "GL_COMP_BIT_ATI", "CompBitAti" },
+            { "GL_NEGATE_BIT_ATI", "NegateBitAti" },
+            { "GL_BIAS_BIT_ATI", "BiasBitAti" }
         };
         foreach (var (key, (trimmed, _)) in test)
         {

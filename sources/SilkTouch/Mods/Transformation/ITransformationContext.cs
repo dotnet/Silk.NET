@@ -10,6 +10,21 @@ namespace Silk.NET.SilkTouch.Mods.Transformation;
 public interface ITransformationContext
 {
     /// <summary>
+    /// The job key.
+    /// </summary>
+    string? JobKey { get; set; }
+
+    /// <summary>
+    /// The original method signature.
+    /// </summary>
+    MethodDeclarationSyntax? Original { get; set; }
+
+    /// <summary>
+    /// The transformers in use.
+    /// </summary>
+    IFunctionTransformer[]? Transformers { get; set; }
+
+    /// <summary>
     /// Adds a namespace import to the resultant syntax tree.
     /// </summary>
     /// <param name="str">The dot-separated namespace.</param>

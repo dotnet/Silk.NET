@@ -30,4 +30,8 @@
     <EmbeddedResource Include="Clang\VisualStudioVarPrint.bat" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\Core\Silk.NET.Core.csproj" />
+  </ItemGroup>
+
 </Project>

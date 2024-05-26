@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Buffers;
 using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;
 using System.Globalization;
@@ -15,14 +16,33 @@ namespace Silk.NET.SilkTouch.Naming;
 public static partial class NameUtils
 {
     /// <summary>
+    /// An instance of <see cref="SearchValues{T}"/> matching ASCII capital letters.
+    /// </summary>
+    public static readonly SearchValues<char> Uppercase = SearchValues.Create(
+        "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+    );
+
+    /// <summary>
+    /// An instance of <see cref="SearchValues{T}"/> matching ASCII lowercase letters and numbers.
+    /// </summary>
+    public static readonly SearchValues<char> NotUppercase = SearchValues.Create(
+        "abcdefghijklmnopqrstuvwxyz0123456789"
+    );
+
+    /// <summary>
     /// Prettifies the given string.
     /// </summary>
     /// <param name="str">The string to prettify.</param>
     /// <param name="transformer">
     /// The transformer that mutates a humanised string before being converted back to pascal case.
     /// </param>
+    /// <param name="allowAllCaps">Whether the output is allowed to be fully capitalised ("all caps").</param>
     /// <returns>The pretty string.</returns>
-    public static string Prettify(this string str, ICulturedStringTransformer transformer)
+    public static string Prettify(
+        this string str,
+        ICulturedStringTransformer transformer,
+        bool allowAllCaps = false
+    )
     {
         var ret = string.Join(
             null,
@@ -32,6 +52,13 @@ public static partial class NameUtils
                 .Pascalize()
                 .Where(x => char.IsLetter(x) || char.IsNumber(x))
         );
+        var retSpan = ret.AsSpan();
+        if (!allowAllCaps && retSpan.IndexOfAny(NotUppercase) == -1)
+        {
+            Span<char> caps = stackalloc char[retSpan.Length - 1];
+            retSpan[1..].ToLower(caps, CultureInfo.InvariantCulture);
+            ret = $"{ret[0]}{caps}";
+        }
         return !char.IsLetter(ret[0]) ? $"X{ret}" : ret;
     }
 
@@ -128,7 +155,13 @@ public static partial class NameUtils
             return foundPrefix;
         }
 
-        return foundPrefix[..(naive ? foundPrefix.Length : foundPrefix.LastIndexOf('_') + 1)];
+        // @Perksey says: I added a -1 here in the naive case in #2020 because it felt like it was wrong (why would we
+        // want the prefix to be equal to something we *know* isn't applicable to all names?) and was producing one
+        // specific bad result for which there is now a regression test. If this is having catastrophic impacts on other
+        // bindings then please reverse this change and find a smarter fix.
+        return foundPrefix[
+            ..(naive ? int.Max(foundPrefix.Length - 1, 0) : foundPrefix.LastIndexOf('_') + 1)
+        ];
     }
 
     /// <summary>

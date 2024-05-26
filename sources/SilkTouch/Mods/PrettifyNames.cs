@@ -178,7 +178,7 @@ public class PrettifyNames(
 
                 // Add it to the rewriter's list of names to... rewrite...
                 rewriter.Types[typeName] = (
-                    newTypeName.Prettify(translator),
+                    newTypeName.Prettify(translator, allowAllCaps: true), // <-- lenient about caps for type names
                     // TODO deprecate secondaries if they're within the baseline?
                     constNames
                         .Concat(prettifiedOnly)
@@ -196,7 +196,7 @@ public class PrettifyNames(
             foreach (var (name, (nonFunctions, functions)) in visitor.Types)
             {
                 rewriter.Types[name] = (
-                    name.Prettify(translator),
+                    name.Prettify(translator, allowAllCaps: true), // <-- lenient about caps for type names (e.g. GL)
                     nonFunctions?.ToDictionary(x => x, x => x.Prettify(translator)),
                     functions?.ToDictionary(x => x.Name, x => x.Name.Prettify(translator))
                 );
@@ -299,7 +299,15 @@ public class PrettifyNames(
             namesToTrim.Remove(nameToAdd);
 
             // Apply the name override to the dictionary we actually use.
-            names[nameToAdd] = (overriddenName, [..v.Secondary, nameToAdd]);
+            names[nameToAdd] = (
+                overriddenName,
+                [.. v.Secondary ?? Enumerable.Empty<string>(), nameToAdd]
+            );
+        }
+
+        if (container == "FragmentShaderColorModMaskATI")
+        {
+            System.Diagnostics.Debugger.Break();
         }
 
         // Run each trimmer
@@ -416,6 +424,11 @@ public class PrettifyNames(
                         if (discrimMatches.Count == 2 && ogTrimmingName is not null)
                         {
                             conflictingTrimmingNames.Add(ogTrimmingName);
+                        }
+
+                        if (discrimMatches.Count > 1)
+                        {
+                            conflictingTrimmingNames.Add(trimmingNameToEval);
                         }
                     }
                 }
@@ -723,6 +736,14 @@ public class PrettifyNames(
 
             Types[node.Identifier.ToString()] = (null, null);
             base.VisitStructDeclaration(node);
+        }
+
+        public override void VisitEnumMemberDeclaration(EnumMemberDeclarationSyntax node)
+        {
+            if (node.Parent == _enumInProgress?.Enum)
+            {
+                _enumInProgress!.Value.EnumMembers.Add(node.Identifier.ToString());
+            }
         }
 
         public override void VisitEnumDeclaration(EnumDeclarationSyntax node)

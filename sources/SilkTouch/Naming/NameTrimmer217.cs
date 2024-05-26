@@ -23,7 +23,8 @@ public class NameTrimmer217 : NameTrimmer
     protected override string GetTrimmingName(
         Dictionary<string, string>? prefixOverrides,
         string name,
-        bool isContainer
+        bool isContainer,
+        string? hint = null
     )
     {
         if (!isContainer)

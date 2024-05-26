@@ -75,24 +75,24 @@
       "AddApiProfiles": {
         "Profiles": [
           {
-            "Name": "gl",
+            "Profile": "gl",
             "SourceSubdirectory": "glcompat",
             "BakedOutputSubdirectory": "gl"
           },
           {
-            "Name": "glcore",
+            "Profile": "glcore",
             "SourceSubdirectory": "glcore",
             "BakedOutputSubdirectory": "gl",
             "MinVersion": "3.2"
           },
           {
-            "Name": "gles1",
+            "Profile": "gles1",
             "SourceSubdirectory": "gles1",
             "BakedOutputSubdirectory": "gl",
             "MaxVersion": "2.0"
           },
           {
-            "Name": "gles2",
+            "Profile": "gles2",
             "SourceSubdirectory": "gles2",
             "BakedOutputSubdirectory": "gl",
             "MinVersion": "2.0"
@@ -106,7 +106,13 @@
       },
       "MixKhronosData": {
         "UseDataTypeTrimmings": true,
-        "SpecPath": "eng/submodules/opengl/xml/gl.xml"
+        "SpecPath": "eng/submodules/opengl/xml/gl.xml",
+        "TypeMap": {
+          "TraceMaskMESA": "uint",
+          "PathRenderingTokenNV": "byte",
+          "PathCoordType": "byte"
+        },
+        "Namespace": "Silk.NET.OpenGL"
       },
       "AddVTables": {
         "VTables": [
@@ -124,7 +130,13 @@
         ]
       },
       "PrettifyNames": {
-        "LongAcronymThreshold": 4
+        "LongAcronymThreshold": 4,
+        "GlobalPrefixHint": "gl"
+      },
+      "TransformFunctions": {
+        "BoolTypes": {
+          "GLboolean": null
+        }
       }
     }
   }

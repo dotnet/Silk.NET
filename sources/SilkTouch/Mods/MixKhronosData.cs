@@ -16,6 +16,10 @@ using Microsoft.CodeAnalysis.CSharp;
 using Microsoft.CodeAnalysis.CSharp.Syntax;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
+using Silk.NET.Core;
+using Silk.NET.SilkTouch.Clang;
+using Silk.NET.SilkTouch.Mods.Metadata;
+using Silk.NET.SilkTouch.Mods.Transformation;
 using Silk.NET.SilkTouch.Naming;
 using static Microsoft.CodeAnalysis.CSharp.SyntaxFactory;
 
@@ -30,7 +34,12 @@ namespace Silk.NET.SilkTouch.Mods;
 public partial class MixKhronosData(
     ILogger<MixKhronosData> logger,
     IOptionsSnapshot<MixKhronosData.Configuration> cfg
-) : IMod, INameTrimmer
+)
+    : IMod,
+        INameTrimmer,
+        IFunctionTransformer,
+        IApiMetadataProvider<SymbolConstraints>,
+        IApiMetadataProvider<IEnumerable<SupportedApiProfileAttribute>>
 {
     internal Dictionary<string, JobData> Jobs = new();
     private static readonly ICulturedStringTransformer _transformer = new NameUtils.NameTransformer(
@@ -81,17 +90,20 @@ public partial class MixKhronosData(
         public Dictionary<
             string,
             (bool IsExtension, Dictionary<string, HashSet<string>> Dependencies)
-        > ApiSets { get; init; } = [];
+        > ApiSets { get; set; } = [];
 
         /// <summary>
         /// A mapping of native names to their supported API profile attributes.
         /// </summary>
-        public Dictionary<string, List<AttributeListSyntax>>? SupportedApiProfiles { get; init; }
+        public Dictionary<
+            string,
+            List<SupportedApiProfileAttribute>
+        >? SupportedApiProfiles { get; set; }
 
         /// <summary>
         /// The vendors contributing to the specification. This is in extension form e.g. Microsoft is MSFT.
         /// </summary>
-        public HashSet<string>? Vendors { get; init; }
+        public HashSet<string>? Vendors { get; set; }
 
         /// <summary>
         /// A map of containing symbol names (i.e. function or struct) and applicable symbol names (i.e. field name,
@@ -99,8 +111,15 @@ public partial class MixKhronosData(
         /// </summary>
         public Dictionary<
             (string ContainingSymbol, string ApplicableSymbol),
-            string
-        > GroupUsages { get; init; } = [];
+            (string? Group, string? Handle, SymbolConstraints? Usage)
+        > Annotations { get; set; } = [];
+
+        /// <summary>
+        /// A map of native type names to C# type names. This contains the contents of
+        /// <see cref="Configuration.TypeMap"/> in addition to some default contents i.e. it is a copy to avoid
+        /// modifying the original configuration object. It is used in the same way.
+        /// </summary>
+        public Dictionary<string, string> TypeMap { get; init; } = [];
     }
 
     /// <summary>
@@ -132,6 +151,16 @@ public partial class MixKhronosData(
         /// </summary>
         public Dictionary<string, string> EnumNativeTypeNames { get; init; } =
             _defaultEnumNativeTypeNameMaps;
+
+        /// <summary>
+        /// A map of native type names to C# type names. This is mostly used for determining enum backing types.
+        /// </summary>
+        public Dictionary<string, string>? TypeMap { get; init; }
+
+        /// <summary>
+        /// Default namespace for enums.
+        /// </summary>
+        public string? Namespace { get; init; }
     }
 
     /// <summary>
@@ -195,8 +224,28 @@ public partial class MixKhronosData(
     {
         var currentConfig = cfg.Get(key);
         var specPath = currentConfig.SpecPath;
+        var job = Jobs[key] = new JobData
+        {
+            Configuration = currentConfig,
+            TypeMap = currentConfig.TypeMap is not null
+                ? new Dictionary<string, string>(currentConfig.TypeMap)
+                : []
+        };
+        job.TypeMap.TryAdd("int8_t", "sbyte");
+        job.TypeMap.TryAdd("uint8_t", "byte");
+        job.TypeMap.TryAdd("int16_t", "short");
+        job.TypeMap.TryAdd("uint16_t", "ushort");
+        job.TypeMap.TryAdd("int32_t", "int");
+        job.TypeMap.TryAdd("uint32_t", "uint");
+        job.TypeMap.TryAdd("int64_t", "long");
+        job.TypeMap.TryAdd("uint64_t", "ulong");
+        job.TypeMap.TryAdd("GLenum", "uint");
+        job.TypeMap.TryAdd("GLbitfield", "uint");
         if (specPath is null)
         {
+            // No metadata, can't continue. It'd be odd if the Khronos mod is being used in this case. There was once
+            // actually a use case for it, but the ArrayParameterTransformer (once Khronos-specific) is no longer
+            // Khronos-specific.
             return;
         }
 
@@ -204,7 +253,7 @@ public partial class MixKhronosData(
         await using var fs = File.OpenRead(specPath);
         var xml = await XDocument.LoadAsync(fs, LoadOptions.None, default);
         var (apiSets, supportedApiProfiles) = EvaluateProfiles(xml);
-        HashSet<string> vendors =
+        job.Vendors =
         [
             .. xml.Element("registry")
                 ?.Element("tags")
@@ -217,20 +266,139 @@ public partial class MixKhronosData(
                 .Attributes("name")
                 .Select(x => x.Value.Split('_')[1].ToUpper()) ?? Enumerable.Empty<string>()
         ];
-        Jobs[key] = new JobData
+        job.ApiSets = apiSets;
+        job.SupportedApiProfiles = supportedApiProfiles;
+        ReadGroups(xml, Jobs[key], job.Vendors);
+        foreach (var typeElement in xml.Elements("registry").Elements("types").Elements("type"))
         {
-            // Get all vendor names
-            Vendors = vendors,
-            ApiSets = apiSets,
-            SupportedApiProfiles = supportedApiProfiles,
-            Configuration = currentConfig
-        };
-        ReadGroups(xml, Jobs[key], vendors);
+            var type = typeElement.Element("name")?.Value;
+            var baseType = typeElement.Element("type")?.Value;
+            if (type is null || baseType is null)
+            {
+                continue;
+            }
+
+            Jobs[key].TypeMap.TryAdd(type, baseType);
+        }
+    }
+
+    /// <inheritdoc />
+    public Task<GeneratedSyntax> AfterScrapeAsync(string key, GeneratedSyntax syntax)
+    {
+        if (!Jobs.TryGetValue(key, out var jobData))
+        {
+            return Task.FromResult(syntax);
+        }
+
+        var rewriter = new Rewriter(jobData);
+        foreach (var (fname, node) in syntax.Files)
+        {
+            syntax.Files[fname] = rewriter.Visit(node);
+        }
+
+        foreach (var (groupName, groupInfo) in jobData.Groups)
+        {
+            if (!rewriter.AlreadyPresentGroups.Contains(groupName))
+            {
+                var baseType = groupInfo.Type ?? groupName;
+                while (jobData.TypeMap.TryGetValue(baseType, out var ty))
+                {
+                    baseType = ty;
+                }
+
+                if (baseType == groupName)
+                {
+                    logger?.LogError(
+                        "Enum \"{}\" has no base type. Please add TypeMap entry to the configuration. "
+                            + "This enum group will be skipped.",
+                        groupName
+                    );
+                    continue;
+                }
+
+                var ns = groupInfo
+                    .Enums.Select(x => x.NamespaceFromSyntaxNode())
+                    .Distinct()
+                    .Select((x, i) => (x, i))
+                    .LastOrDefault()
+                    is
+                    (var n, 0)
+                    ? n
+                    : null;
+
+                ns ??= jobData.Configuration.Namespace;
+                if (ns is null)
+                {
+                    logger?.LogError(
+                        "Enum \"{}\" has no namespace. Please add Namespace to the configuration. "
+                            + "This enum group will be skipped.",
+                        groupName
+                    );
+                    continue;
+                }
+
+                syntax.Files[$"sources/Enums/{groupName}.gen.cs"] = CompilationUnit()
+                    .WithMembers(
+                        SingletonList<MemberDeclarationSyntax>(
+                            FileScopedNamespaceDeclaration(ModUtils.NamespaceIntoIdentifierName(ns))
+                                .WithMembers(
+                                    SingletonList<MemberDeclarationSyntax>(
+                                        EnumDeclaration(groupName)
+                                            .WithModifiers(
+                                                TokenList(Token(SyntaxKind.PublicKeyword))
+                                            )
+                                            .WithAttributeLists(
+                                                SingletonList(
+                                                    AttributeList(
+                                                        SingletonSeparatedList(
+                                                            Attribute(IdentifierName("Transformed"))
+                                                        )
+                                                    )
+                                                )
+                                            )
+                                            .WithBaseList(
+                                                BaseList(
+                                                    SingletonSeparatedList<BaseTypeSyntax>(
+                                                        SimpleBaseType(IdentifierName(baseType))
+                                                    )
+                                                )
+                                            )
+                                            .WithMembers(
+                                                SeparatedList(
+                                                    groupInfo.Enums.Select(x =>
+                                                        EnumMemberDeclaration(
+                                                                x.Identifier.ToString()
+                                                            )
+                                                            // TODO actually eval the expression to see if necessary?
+                                                            .WithEqualsValue(
+                                                                x.Initializer?.WithValue(
+                                                                    CheckedExpression(
+                                                                        SyntaxKind.UncheckedExpression,
+                                                                        CastExpression(
+                                                                            IdentifierName(
+                                                                                baseType
+                                                                            ),
+                                                                            x.Initializer.Value
+                                                                        )
+                                                                    )
+                                                                )
+                                                            )
+                                                    )
+                                                )
+                                            )
+                                    )
+                                )
+                        )
+                    );
+            }
+        }
+
+        return Task.FromResult(syntax);
     }
 
     internal record EnumGroup(
         string Name,
-        TypeSyntax? Type,
+        string? Type,
         List<VariableDeclaratorSyntax> Enums,
         bool KnownBitmask,
         string? ExclusiveVendor,
@@ -245,94 +413,14 @@ public partial class MixKhronosData(
         bool RequireAll = false
     )
     {
-        public AttributeSyntax ToAttribute(string profile)
-        {
-            List<AttributeArgumentSyntax> args =
-            [
-                AttributeArgument(
-                    LiteralExpression(SyntaxKind.StringLiteralExpression, Literal(profile))
-                ),
-                AttributeArgument(
-                    CollectionExpression(
-                        SeparatedList<CollectionElementSyntax>(
-                            ApiSets
-                                .Order()
-                                .Select(x =>
-                                    ExpressionElement(
-                                        LiteralExpression(
-                                            SyntaxKind.StringLiteralExpression,
-                                            Literal(x)
-                                        )
-                                    )
-                                )
-                        )
-                    )
-                )
-            ];
-            if (StartVersion is not null)
+        public SupportedApiProfileAttribute ToAttribute(string profile) =>
+            new(profile, ApiSets.ToArray())
             {
-                args.Add(
-                    AttributeArgument(
-                        NameEquals(IdentifierName("StartVersion")),
-                        null,
-                        LiteralExpression(
-                            SyntaxKind.StringLiteralExpression,
-                            Literal(StartVersion.ToString())
-                        )
-                    )
-                );
-            }
-            if (EndVersion is not null)
-            {
-                args.Add(
-                    AttributeArgument(
-                        NameEquals(IdentifierName("EndVersion")),
-                        null,
-                        LiteralExpression(
-                            SyntaxKind.StringLiteralExpression,
-                            Literal(EndVersion.ToString())
-                        )
-                    )
-                );
-            }
-            if (ImpliedSets is { Count: > 0 })
-            {
-                args.Add(
-                    AttributeArgument(
-                        NameEquals(IdentifierName("ImpliedSets")),
-                        null,
-                        CollectionExpression(
-                            SeparatedList<CollectionElementSyntax>(
-                                ImpliedSets
-                                    .Order()
-                                    .Select(x =>
-                                        ExpressionElement(
-                                            LiteralExpression(
-                                                SyntaxKind.StringLiteralExpression,
-                                                Literal(x)
-                                            )
-                                        )
-                                    )
-                            )
-                        )
-                    )
-                );
-            }
-            if (RequireAll)
-            {
-                args.Add(
-                    AttributeArgument(
-                        NameEquals(IdentifierName("RequireAll")),
-                        null,
-                        LiteralExpression(SyntaxKind.TrueLiteralExpression)
-                    )
-                );
-            }
-            return Attribute(
-                IdentifierName("SupportedApiProfile"),
-                AttributeArgumentList(SeparatedList(args))
-            );
-        }
+                ImpliesSets = ImpliedSets?.ToArray(),
+                MaxVersion = EndVersion?.ToString(),
+                MinVersion = StartVersion?.ToString(),
+                RequireAll = RequireAll
+            };
     }
 
     private (
@@ -340,7 +428,7 @@ public partial class MixKhronosData(
             string,
             (bool IsExtension, Dictionary<string, HashSet<string>> Dependencies)
         > ApiSets,
-        Dictionary<string, List<AttributeListSyntax>> SupportedApiProfiles
+        Dictionary<string, List<SupportedApiProfileAttribute>> SupportedApiProfiles
     ) EvaluateProfiles(XDocument xml)
     {
         // A map of native names to profile names to versions
@@ -362,13 +450,7 @@ public partial class MixKhronosData(
             apiSets,
             profile.ToDictionary(
                 x => x.Key,
-                x =>
-                    x.Value.SelectMany(y =>
-                        y.Value.Select(z =>
-                            AttributeList(SingletonSeparatedList(z.ToAttribute(y.Key)))
-                        )
-                    )
-                        .ToList()
+                x => x.Value.SelectMany(y => y.Value.Select(z => z.ToAttribute(y.Key))).ToList()
             )
         );
     }
@@ -1107,9 +1189,122 @@ public partial class MixKhronosData(
             );
         }
 
+        // OpenGL has a problem where an enum starts out as ARB but never gets promoted, and then contains other vendor
+        // enums or even core enums. This removes the vendor suffix where it is not necessary e.g. BufferUsageARB
+        // becomes BufferUsage.
+        if (container is null && job.Vendors is not null)
+        {
+            foreach (var (original, (current, previous)) in names)
+            {
+                if (job.Groups.TryGetValue(current, out var groupInfo))
+                {
+                    var vendorSuffix =
+                        groupInfo.ExclusiveVendor ?? job.Vendors.FirstOrDefault(current.EndsWith);
+                    vendorSuffix = vendorSuffix?[(vendorSuffix.LastIndexOf('_') + 1)..];
+                    var notSafeToTrim =
+                        job.Groups.Count(x =>
+                            x.Key.StartsWith(current[..^(vendorSuffix?.Length ?? 0)])
+                        ) > 1;
+                    if (
+                        vendorSuffix is null
+                        || !job.Vendors.Contains(vendorSuffix)
+                        || !current.EndsWith(vendorSuffix)
+                        || !groupInfo.Enums.All(x => x.Identifier.ToString().EndsWith(vendorSuffix))
+                    )
+                    {
+                        vendorSuffix = null;
+                    }
+
+                    job.Groups[current] = groupInfo = groupInfo with
+                    {
+                        ExclusiveVendor = vendorSuffix
+                    };
+
+                    if (notSafeToTrim)
+                    {
+                        continue;
+                    }
+
+                    // If the vendor suffix is not equal to our exclusive vendor, then it must not be exclusive
+                    // therefore we should remove the suffix.
+                    foreach (var vendor in job.Vendors)
+                    {
+                        if (current.EndsWith(vendor) && groupInfo.ExclusiveVendor != vendor)
+                        {
+                            var sec = previous ?? [];
+                            sec.Add(current);
+                            names[original] = (current[..^vendor.Length], sec);
+                            break;
+                        }
+                    }
+                }
+            }
+        }
+
+        // Sometimes we get a little overzealous, so let's unwind back to just the GL_ being snipped
+        var rewind = false;
+        if (container is not null && job.Groups.ContainsKey(container))
+        {
+            foreach (var (_, (current, previous)) in names)
+            {
+                var prev = previous?.FirstOrDefault();
+                if (
+                    prev is not null
+                    && current.AsSpan().Count('_') - prev.AsSpan().Count('_') <= 1
+                    && (current.Length <= 4 || (job.Vendors?.Contains(current) ?? false))
+                )
+                {
+                    rewind = true;
+                }
+            }
+        }
+
+        if (rewind)
+        {
+            foreach (var (original, (current, previous)) in names)
+            {
+                var prev = previous?.FirstOrDefault() ?? original;
+                var prevList = previous ?? [];
+                var next = prev[(prev.IndexOf('_') + 1)..];
+                if (next == prev)
+                {
+                    prevList.Remove(prev);
+                }
+                else if (!prevList.Contains(prev))
+                {
+                    prevList.Add(prev);
+                }
+
+                names[original] = (prev[(prev.IndexOf('_') + 1)..], prevList);
+            }
+        }
+
         // Trim the extension vendor names
         foreach (var (original, (current, previous)) in names)
         {
+            // GLEnum is obviously trimmed, and we don't really want to do that.
+            if (container is null)
+            {
+                var changed = false;
+                foreach (var name in (IEnumerable<string>)[current, .. previous ?? []])
+                {
+                    if (
+                        job.Groups.TryGetValue(name, out var group)
+                        && name == $"{group.Namespace}Enum"
+                    )
+                    {
+                        names[original] = (name, []);
+                        changed = true;
+                        break;
+                    }
+                }
+
+                if (changed)
+                {
+                    continue;
+                }
+            }
+
             var newCurrent = current;
             List<string>? newPrev = null;
             string? identifiedVendor = null;
@@ -1134,6 +1329,11 @@ public partial class MixKhronosData(
                             job.Configuration.UseExtensionVendorTrimmings
                                 == ExtensionVendorTrimmingMode.KhronosOnly
                             && vendor is "KHR" or "ARB"
+                        )
+                        || (
+                            container is not null
+                            && job.Groups.TryGetValue(container, out var group)
+                            && group.ExclusiveVendor == vendor
                         )
                     );
                 if (trimVendor)
@@ -1206,6 +1406,7 @@ public partial class MixKhronosData(
 
             if (
                 !job.Configuration.UseDataTypeTrimmings // don't trim data types
+                || container is null // don't trim type names
                 || newCurrent.Count(x => x == '_') > 1 // is probably an enum
                 || EndingsToTrim().Match(newCurrent) is not { Success: true } match // we don't have a data type suffix
                 || EndingsNotToTrim().IsMatch(newCurrent) // we need to keep it
@@ -1241,6 +1442,272 @@ public partial class MixKhronosData(
         }
     }
 
+    /// <inheritdoc />
+    public void Transform(
+        MethodDeclarationSyntax current,
+        ITransformationContext ctx,
+        Action<MethodDeclarationSyntax> next
+    )
+    {
+        if (ctx.JobKey is null)
+        {
+            next(current);
+            return;
+        }
+
+        current.AttributeLists.GetNativeFunctionInfo(out _, out var entryPoint, out _);
+        entryPoint ??= current.Identifier.ToString();
+        foreach (var meth in TransformToConstants(current, ctx, entryPoint))
+        {
+            // TODO more transformations
+            next(meth);
+        }
+    }
+
+    private IEnumerable<MethodDeclarationSyntax> TransformToConstants(
+        MethodDeclarationSyntax current,
+        ITransformationContext ctx,
+        string entryPoint
+    )
+    {
+        Debug.Assert(ctx.JobKey is not null);
+
+        // This will contain the changed parameters. Note that the changes from the previous passes (see below) are kept
+        // in this list so that we don't create differences between fully grouped pointer overloads vs partially grouped
+        // pointer overloads. In addition, we want to keep things like the Constant DSL type even if we're overloading
+        // pointer types.
+        var @params = new List<ParameterSyntax>(current.ParameterList.Parameters);
+
+        // We may generate up to three transformations if there are any non-trivial types (e.g. group pointers).
+        // These are: native type, ungrouped enum, and grouped enum. Each transformation transforms the trivial types.
+        var anyNonTrivialParameters = false;
+        for (var pass = 0; pass < 3; pass++)
+        {
+            var ret = current.ReturnType;
+            var anyChange = false;
+
+            // Is the return type transformable?
+            var newRet = GetTypeTransformation(
+                entryPoint,
+                ":return",
+                Jobs[ctx.JobKey],
+                ret,
+                pass,
+                ref anyNonTrivialParameters
+            );
+            if (newRet is not null)
+            {
+                ret = newRet;
+                anyChange = true;
+            }
+
+            // Are the parameters transformable?
+            for (var i = 0; i < @params.Count; i++)
+            {
+                var param = current.ParameterList!.Parameters[i];
+                if (
+                    param.Type is null
+                    || GetTypeTransformation(
+                        entryPoint,
+                        param.Identifier.ToString(),
+                        Jobs[ctx.JobKey],
+                        param.Type,
+                        pass,
+                        ref anyNonTrivialParameters
+                    )
+                        is not { } newType
+                )
+                {
+                    continue;
+                }
+
+                if (
+                    logger.IsEnabled(LogLevel.Debug)
+                    && !param
+                        .Type.DescendantTokens()
+                        .Any(x => x.Kind() is SyntaxKind.IntKeyword or SyntaxKind.UIntKeyword)
+                )
+                {
+                    logger.LogDebug(
+                        "Transforming {}'s non-(u)int parameter {} from {} to {} (pass = {})",
+                        current.Identifier,
+                        param.Identifier,
+                        param.Type,
+                        newType,
+                        pass
+                    );
+                }
+                @params[i] = param.WithType(newType);
+                anyChange = true;
+            }
+
+            if (!anyChange)
+            {
+                // We can't transform ANYTHING! pass it through the pipeline as is.
+                if (pass == 0)
+                {
+                    yield return current;
+                }
+
+                // !anyNonTrivialParameters = No pointers to transform in the next pass(es).
+                // pass > 0 = We're trying to transform pointers, but we didn't transform anything. Usually this happens
+                // on pass == 2 if there are no otherGroups.
+                if (!anyNonTrivialParameters || pass > 0)
+                {
+                    yield break;
+                }
+
+                continue;
+            }
+
+            var retMeth = current
+                .WithReturnType(ret)
+                .WithParameterList(ParameterList(SeparatedList(@params)));
+            yield return retMeth
+                .WithBody(
+                    current.Body?.CastFunctionCalls(
+                        ctx.Original!,
+                        newRet,
+                        retMeth.ParameterList.Parameters
+                    ) as BlockSyntax
+                )
+                .WithExpressionBody(
+                    current.ExpressionBody?.CastFunctionCalls(
+                        ctx.Original!,
+                        newRet,
+                        retMeth.ParameterList.Parameters
+                    ) as ArrowExpressionClauseSyntax
+                );
+        }
+
+        static TypeSyntax PointerToGroupPointer(TypeSyntax original, string group) =>
+            original switch
+            {
+                PointerTypeSyntax ptr
+                    => ptr.WithElementType(PointerToGroupPointer(ptr.ElementType, group)),
+                PredefinedTypeSyntax or IdentifierNameSyntax => IdentifierName(group),
+                _ => throw new ArgumentOutOfRangeException(nameof(original))
+            };
+
+        TypeSyntax? GetTypeTransformation(
+            string symbolName,
+            string paramName,
+            JobData job,
+            TypeSyntax type,
+            int pass,
+            ref bool anyNonTrivialParams
+        )
+        {
+            if (
+                !job.Annotations.TryGetValue((symbolName, paramName), out var annotes)
+                || annotes.Group is not { Length: > 0 } group
+            )
+            {
+                return null;
+            }
+
+            var otherGroup =
+                type.ToString().Contains("int") && job.Groups[group].Namespace is { Length: > 0 } ns
+                    ? $"{ns}Enum"
+                    : null;
+            if (otherGroup == group)
+            {
+                // Nevermind then.
+                otherGroup = null;
+            }
+
+            if (type is PointerTypeSyntax)
+            {
+                if (paramName == ":return" && pass > 0 && !anyNonTrivialParams)
+                {
+                    logger.LogWarning(
+                        "Cannot transform return type for \"{}\" as it is a pointer, and there are no "
+                            + "other \"group pointer\" transformations to be made meaning that the return type would "
+                            + "be the only transformation, which is illegal in C#. No Khronos-specific transformations "
+                            + "shall be applied to the return type for this function.",
+                        symbolName
+                    );
+                    return null;
+                }
+
+                anyNonTrivialParams = paramName != ":return";
+                return pass switch
+                {
+                    // Note: we flip so the more general group comes first. that way if we have parameters that are only
+                    // general, you can use general groups throughout the whole function.
+                    2 when otherGroup is not null => PointerToGroupPointer(type, group),
+                    1 when otherGroup is not null => PointerToGroupPointer(type, otherGroup),
+                    1 => PointerToGroupPointer(type, group),
+                    _ => null
+                };
+            }
+
+            return pass == 0
+                ? GenericName(
+                    Identifier("Constant"),
+                    TypeArgumentList(
+                        SeparatedList(
+                            otherGroup is not null
+                                // ReSharper disable once RedundantCast <-- false positive
+                                // Note: we apply the same flip as above here too. It makes no difference for the
+                                // constant type, but is done for consistency.
+                                ? (IEnumerable<TypeSyntax>)
+                                    [type, IdentifierName(otherGroup), IdentifierName(group)]
+                                : [type, IdentifierName(group)]
+                        )
+                    )
+                )
+                : null;
+        }
+    }
+
+    /// <inheritdoc />
+    public bool TryGetChildSymbolMetadata(
+        string? jobKey,
+        string nativeName,
+        string childNativeName,
+        [NotNullWhen(true)] out SymbolConstraints? metadata
+    )
+    {
+        if (
+            jobKey is not null
+            && Jobs[jobKey]
+                .Annotations.TryGetValue((nativeName, childNativeName), out var annotation)
+            && annotation.Usage is not null
+        )
+        {
+            metadata = annotation.Usage;
+            return true;
+        }
+
+        metadata = null;
+        return false;
+    }
+
+    /// <inheritdoc />
+    public bool TryGetChildSymbolMetadata(
+        string? jobKey,
+        string nativeName,
+        string childNativeName,
+        [NotNullWhen(true)] out IEnumerable<SupportedApiProfileAttribute>? metadata
+    ) => TryGetSymbolMetadata(jobKey, childNativeName, out metadata);
+
+    /// <inheritdoc />
+    public bool TryGetSymbolMetadata(
+        string? jobKey,
+        string nativeName,
+        [NotNullWhen(true)] out IEnumerable<SupportedApiProfileAttribute>? metadata
+    ) =>
+        (
+            metadata =
+                jobKey is null
+                || !Jobs.TryGetValue(jobKey, out var job)
+                || !(job.SupportedApiProfiles?.TryGetValue(nativeName, out var mdList) ?? false)
+                    ? null
+                    : mdList
+        )
+            is not null;
+
     /// <summary>
     /// This regex matches against known OpenGL function endings, picking them out from function names.
     /// It is comprised of two parts - the main matching set (here, the main capturing group), and a negative
@@ -1266,10 +1733,30 @@ public partial class MixKhronosData(
 
     private class Rewriter(JobData job) : CSharpSyntaxRewriter(true)
     {
+        public HashSet<string> AlreadyPresentGroups { get; } = [];
+
         public override SyntaxNode? VisitClassDeclaration(ClassDeclarationSyntax node)
         {
             var ret = base.VisitClassDeclaration(node);
             return ret is ClassDeclarationSyntax { Members.Count: 0 } ? null : ret;
+        }
+
+        public override SyntaxNode? VisitEnumDeclaration(EnumDeclarationSyntax node)
+        {
+            var iden = node.Identifier.ToString();
+            if (iden.Contains("FlagBits"))
+            {
+                iden = iden.Replace("FlagBits", "Flags");
+            }
+            if (
+                job.Groups.ContainsKey(iden)
+                && !node.Ancestors().OfType<BaseTypeDeclarationSyntax>().Any()
+            )
+            {
+                AlreadyPresentGroups.Add(iden);
+                return base.VisitEnumDeclaration(node.WithIdentifier(Identifier(iden)));
+            }
+            return base.VisitEnumDeclaration(node);
         }
 
         public override SyntaxNode? VisitFieldDeclaration(FieldDeclarationSyntax node)
@@ -1282,16 +1769,7 @@ public partial class MixKhronosData(
                 return base.VisitFieldDeclaration(node);
             }
 
-            var nativeName = node
-                .AttributeLists.SelectMany(x => x.Attributes)
-                .FirstOrDefault(x => x.IsAttribute("Silk.NET.Core.NativeTypeName"))
-                ?.ArgumentList?.Arguments.Select(x =>
-                    x.Expression.IsKind(SyntaxKind.StringLiteralExpression)
-                        ? (x.Expression as LiteralExpressionSyntax)?.Token
-                        : null
-                )
-                .FirstOrDefault(x => x.HasValue)
-                ?.ToString();
+            var nativeName = node.AttributeLists.GetNativeTypeName();
             if (nativeName is null || !nativeName.StartsWith("#define "))
             {
                 return base.VisitFieldDeclaration(node);
@@ -1301,6 +1779,11 @@ public partial class MixKhronosData(
             nativeName = (
                 nnSpan.IndexOf(' ') is >= 0 and var idx ? nnSpan[..idx] : nnSpan
             ).ToString();
+
+            if (job.ApiSets.ContainsKey(nativeName))
+            {
+                return null;
+            }
 
             if (job.EnumsToGroups.TryGetValue(nativeName, out var groups))
             {
@@ -1348,6 +1831,12 @@ public partial class MixKhronosData(
             if (!anyNamespaced)
             {
                 groupName ??= block.Attribute("name")?.Value;
+            }
+
+            // Vulkan/OpenXR enum name
+            if (groupName?.Contains("FlagBits") ?? false)
+            {
+                groupName = groupName.Replace("FlagBits", "Flags");
             }
 
             // Special cases for OpenCL contributed by @Alexx999 for 2.X and ported to 3.0 from:
@@ -1427,7 +1916,14 @@ public partial class MixKhronosData(
                                     ? enumNamespace
                                     : null
                         }
-                        : new EnumGroup(group, null, [], isBitmask, thisVendor, enumNamespace);
+                        : new EnumGroup(
+                            group,
+                            glGroups?.Length > 0 ? "GLenum" : null,
+                            [],
+                            isBitmask,
+                            thisVendor,
+                            enumNamespace
+                        );
 
                     // Mark this enum.
                     enumToGroups.Add(group);
@@ -1435,7 +1931,18 @@ public partial class MixKhronosData(
             }
         }
 
-        // Read the group usages from the functions
+        var allHandles = doc.Elements("registry")
+            .Elements("types")
+            .Elements("type")
+            .Where(x => x.Attribute("category")?.Value is "handle")
+            .SelectMany(x =>
+                x.Elements("name")
+                    .Select(y => y.Value)
+                    .Concat(x.Attribute("name")?.Value is { Length: > 0 } alias ? [alias] : [])
+            )
+            .ToHashSet();
+
+        // Read the annotations from the functions
         foreach (var func in doc.Elements("registry").Elements("commands").Elements("command"))
         {
             var funcName = func.Element("proto")?.Element("name")?.Value;
@@ -1447,12 +1954,13 @@ public partial class MixKhronosData(
                 )
                 {
                     // Handle the alias case
-                    foreach (var ((otherFunc, applicable), value) in data.GroupUsages)
+                    foreach (
+                        var ((_, applicable), value) in data
+                            .Annotations.Where(x => x.Key.ContainingSymbol == aliasedFunc)
+                            .ToArray()
+                    )
                     {
-                        if (otherFunc == aliasedFunc)
-                        {
-                            data.GroupUsages[(funcName, applicable)] = value;
-                        }
+                        data.Annotations[(funcName, applicable)] = value;
                     }
 
                     continue;
@@ -1461,29 +1969,74 @@ public partial class MixKhronosData(
                 throw new InvalidDataException("command with no name");
             }
 
-            // Get the return type group attribute
-            if (
-                func.Element("proto")?.Element("ptype")?.Attribute("group")?.Value
-                    is { Length: > 0 } retGrp
-                && data.Groups.ContainsKey(retGrp)
-            )
+            void AddData(XElement? element, string applicableSymbol)
             {
-                data.GroupUsages[(funcName, ":return")] = retGrp;
+                // Get the group attribute
+                var grp = element?.Attribute("group")?.Value;
+                var handle =
+                    element?.Attribute("class")?.Value
+                    ?? (
+                        element?.Element("type")?.Value is { Length: > 0 } pty
+                        && allHandles.Contains(pty)
+                            ? pty
+                            : null
+                    );
+                var lenStr =
+                    element?.Attribute("len")?.Value
+                    ?? (element?.Attribute("kind")?.Value is "String" ? "null-terminated" : null);
+                var compSize = lenStr?.StartsWith("COMPSIZE(") ?? false;
+                var len = compSize
+                    ? lenStr!
+                        [9..^1]
+                        .Split(
+                            ',',
+                            StringSplitOptions.TrimEntries | StringSplitOptions.RemoveEmptyEntries
+                        )
+                    : lenStr?.Split(
+                        ',',
+                        StringSplitOptions.TrimEntries | StringSplitOptions.RemoveEmptyEntries
+                    );
+
+                // Get information from the type signature
+                var indirection = element?.Value.AsSpan().GetIndirectionLevels() ?? 0;
+                Span<bool> mutability = stackalloc bool[indirection + 1];
+                var outerCount = 0;
+                element?.Value.AsSpan().GetTypeDetails(mutability, out outerCount);
+                if (
+                    (grp is not null && data.Groups.ContainsKey(grp))
+                    || handle is not null
+                    || len is not null
+                    || outerCount != 0
+                )
+                {
+                    data.Annotations[(funcName, applicableSymbol)] = (
+                        grp,
+                        handle,
+                        MetadataUtils.CreateBasicSymbolConstraints(
+                            len,
+                            mutability,
+                            compSize,
+                            element?.Attribute("optional")?.Value is "true",
+                            outerCount
+                        )
+                    );
+                }
+            }
+
+            // Add the return type annotations
+            if (func.Element("proto") is { } proto)
+            {
+                AddData(proto, ":return");
             }
 
             // Get the parameter group attributes
             foreach (var param in func.Elements("param"))
             {
-                var paramName =
+                AddData(
+                    param,
                     param.Element("name")?.Value
-                    ?? throw new InvalidDataException("param with no name");
-                if (
-                    param.Attribute("group")?.Value is { Length: > 0 } paramGrp
-                    && data.Groups.ContainsKey(paramGrp)
-                )
-                {
-                    data.GroupUsages[(funcName, paramName)] = paramGrp;
-                }
+                        ?? throw new InvalidDataException("param with no name")
+                );
             }
         }
 
@@ -1512,7 +2065,7 @@ public partial class MixKhronosData(
                 data.Groups[@enum.Value] = new EnumGroup(
                     @enum.Value,
                     // cl_properties and cl_bitfield are both cl_ulong which is ulong
-                    PredefinedType(Token(SyntaxKind.ULongKeyword)),
+                    "ulong",
                     [],
                     @enum.Parent?.Element("type")?.Value == "cl_bitfield",
                     VendorFromString(@enum.Value, vendors),

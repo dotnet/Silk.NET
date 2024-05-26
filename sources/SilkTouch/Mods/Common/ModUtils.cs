@@ -502,6 +502,64 @@ public static class ModUtils
     }
 
     /// <summary>
+    /// Retrieves the native type name within the given attribute list.
+    /// </summary>
+    /// <param name="attrs">The attributes.</param>
+    /// <param name="requireContext">The required attribute target/context.</param>
+    /// <returns>The native type name.</returns>
+    public static string? GetNativeTypeName(
+        this IEnumerable<AttributeListSyntax> attrs,
+        SyntaxKind? requireContext = null
+    ) =>
+        attrs
+            .SelectMany(x =>
+                (x.Target is null && requireContext is null)
+                || (requireContext is { } rc && (x.Target?.Identifier.IsKind(rc) ?? false))
+                    ? x.Attributes
+                    : Enumerable.Empty<AttributeSyntax>()
+            )
+            .FirstOrDefault(x => x.IsAttribute("Silk.NET.Core.NativeTypeName"))
+            ?.ArgumentList?.Arguments.Select(x =>
+                x.Expression.IsKind(SyntaxKind.StringLiteralExpression)
+                    ? (x.Expression as LiteralExpressionSyntax)?.Token.Value
+                    : null
+            )
+            .OfType<string>()
+            .FirstOrDefault();
+
+    /// <summary>
+    /// Gets a native type name for a parameter.
+    /// </summary>
+    /// <param name="syntax">The parameter.</param>
+    /// <returns>The native type name.</returns>
+    public static string? GetNativeTypeName(this ParameterSyntax syntax) =>
+        syntax.AttributeLists.GetNativeTypeName();
+
+    /// <summary>
+    /// Gets a native type name for the return type of a method.
+    /// </summary>
+    /// <param name="syntax">The method.</param>
+    /// <returns>The native type name.</returns>
+    public static string? GetNativeReturnTypeName(this BaseMethodDeclarationSyntax syntax) =>
+        syntax.AttributeLists.GetNativeTypeName(SyntaxKind.ReturnKeyword);
+
+    /// <summary>
+    /// Determines whether this is a <see cref="PredefinedTypeSyntax"/> representing an integral type.
+    /// </summary>
+    /// <param name="syn">The type to check.</param>
+    /// <returns>Whether it's an integer.</returns>
+    public static bool IsInteger(this TypeSyntax syn) =>
+        (syn as PredefinedTypeSyntax)?.Keyword.Kind()
+            is SyntaxKind.ULongKeyword
+                or SyntaxKind.LongKeyword
+                or SyntaxKind.UIntKeyword
+                or SyntaxKind.IntKeyword
+                or SyntaxKind.UShortKeyword
+                or SyntaxKind.ShortKeyword
+                or SyntaxKind.ByteKeyword
+                or SyntaxKind.SByteKeyword;
+
+    /// <summary>
     /// Gets an attribute list representing a <see cref="System.Runtime.CompilerServices.MethodImplAttribute"/> with
     /// <see cref="System.Runtime.CompilerServices.MethodImplOptions.AggressiveInlining"/> and
     /// <see cref="System.Runtime.CompilerServices.MethodImplOptions.AggressiveOptimization"/> set.

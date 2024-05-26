@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
@@ -12,9 +13,40 @@ namespace Silk.NET.SilkTouch.Mods;
 /// <summary>
 /// Mods the bindings to use the Silk.NET.Core pointer types.
 /// </summary>
+[ModConfiguration<Configuration>]
 public class TransformFunctions(FunctionTransformer ft) : ModCSharpSyntaxRewriter, IMod
 {
     private ThreadLocal<string> _jobKey = new();
+
+    /// <summary>
+    /// Configuration for the <see cref="TransformFunctions"/> and related code.
+    /// </summary>
+    public class Configuration
+    {
+        /// <summary>
+        /// Whether all integer return types should be treated as potentially boolean.
+        /// </summary>
+        public required bool IntReturnsMaybeBool { get; init; }
+
+        /// <summary>
+        /// Types to treat as boolean and their boolean schemes if different to default.
+        /// </summary>
+        public Dictionary<string, string?>? BoolTypes { get; init; }
+    }
+
+    /// <inheritdoc />
+    public override string? JobKey
+    {
+        get => _jobKey.Value;
+        set
+        {
+            if (value is null)
+            {
+                return;
+            }
+            _jobKey.Value = value;
+        }
+    }
 
     /// <inheritdoc />
     public Task<GeneratedSyntax> AfterScrapeAsync(string key, GeneratedSyntax syntax)

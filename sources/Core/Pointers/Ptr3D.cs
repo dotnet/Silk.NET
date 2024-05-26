@@ -429,5 +429,12 @@ namespace Silk.NET.Core
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
         public override int GetHashCode() => base.GetHashCode();
+
+        /// <summary>
+        /// Creates a <see cref="Ptr3D"/> from a <see cref="Ptr2D"/> pointer.
+        /// </summary>
+        /// <param name="ptr">The pointer.</param>
+        /// <returns>The wrapped pointer.</returns>
+        public static implicit operator Ptr3D(Ptr2D* ptr) => (byte***)ptr;
     }
 }

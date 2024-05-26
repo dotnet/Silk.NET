@@ -1,9 +1,8 @@
 // See https://aka.ms/new-console-template for more information
 
-// TODO bool-like
-
 using Silk.NET.GLFW;
 using Silk.NET.OpenGL;
+using Buffer = Silk.NET.OpenGL.Buffer;
 
 unsafe
 {
@@ -20,7 +19,6 @@ unsafe
     var window = Glfw.CreateWindow(1000, 800, "Hello Window!", nullptr, nullptr);
     if (window == nullptr)
     {
-        // TODO const correctness
         Ref<sbyte> error = nullptr;
         if (Glfw.GetError(error.AsRef2D()) == 0 || error == nullptr)
         {
@@ -34,30 +32,22 @@ unsafe
 
     float[] vertices = { -0.5f, -0.5f, 0.0f, 0.5f, -0.5f, 0.0f, 0.0f, 0.5f, 0.0f };
 
-    uint vao = 0;
-    uint vbo = 0;
+    var vbo = GL.GenBuffer();
     GL.ClearColor(0.2f, 0.3f, 0.3f, 1.0f);
-    GL.GenBuffers(1, vbo.AsRef());
-    GL.BindBuffer(GL.Constants.ArrayBuffer, vbo);
+    GL.BindBuffer(BufferTarget.ArrayBuffer, vbo);
     GL.BufferData(
-        GL.Constants.ArrayBuffer,
+        BufferTarget.ArrayBuffer,
         (nuint)(vertices.Length * sizeof(float)),
         vertices[0].AsRef(), // TODO simplify this
-        GL.Constants.StaticDraw
+        BufferUsage.StaticDraw
     );
-    GL.GenVertexArrays(1, vao.AsRef());
+
+    var vao = GL.GenVertexArray();
     GL.BindVertexArray(vao);
-    GL.VertexAttribPointer(
-        0,
-        3,
-        GL.Constants.Float,
-        0, // TODO bool
-        3 * sizeof(float),
-        nullptr
-    );
+    GL.VertexAttribPointer(0, 3, VertexAttribPointerType.Float, false, 3 * sizeof(float), nullptr);
     GL.EnableVertexAttribArray(0);
-    var vert = GL.CreateShader(GL.Constants.VertexShader);
-    var frag = GL.CreateShader(GL.Constants.FragmentShader);
+    var vert = GL.CreateShader(ShaderType.VertexShader);
+    var frag = GL.CreateShader(ShaderType.FragmentShader);
     const string vertSource = """
         #version 330 core
         layout(location = 0) in vec3 aPosition;
@@ -90,12 +80,14 @@ unsafe
 
     while (Glfw.WindowShouldClose(window) == 0)
     {
-        GL.Clear(GL.Constants.ColorBufferBit);
-        GL.DrawArrays(GL.Constants.Triangles, 0, 3);
+        GL.Clear(ClearBufferMask.ColorBufferBit);
+        GL.DrawArrays(PrimitiveType.Triangles, 0, 3);
         Glfw.SwapBuffers(window);
         Glfw.PollEvents();
     }
 
+    GL.DeleteVertexArray(vao);
+    GL.DeleteBuffer(vbo);
     Glfw.DestroyWindow(window);
     Glfw.Terminate();
 }

@@ -3807,7 +3807,7 @@ public unsafe partial class Glfw : IGlfw, IGlfw.Static
             {
                 return (Cursor*)CreateCursor(__dsl_image, xhot, yhot);
             }
-        };
+        }
 
         [Transformed]
         [NativeFunction("glfw", EntryPoint = "glfwCreateStandardCursor")]
@@ -3861,7 +3861,7 @@ public unsafe partial class Glfw : IGlfw, IGlfw.Static
                     __dsl_share
                 );
             }
-        };
+        }
 
         [NativeFunction("glfw", EntryPoint = "glfwDefaultWindowHints")]
         [MethodImpl(
@@ -3886,7 +3886,7 @@ public unsafe partial class Glfw : IGlfw, IGlfw.Static
             {
                 DestroyCursor(__dsl_cursor);
             }
-        };
+        }
 
         [NativeFunction("glfw", EntryPoint = "glfwDestroyWindow")]
         [MethodImpl(
@@ -3905,7 +3905,7 @@ public unsafe partial class Glfw : IGlfw, IGlfw.Static
             {
                 DestroyWindow(__dsl_window);
             }
-        };
+        }
 
         [NativeFunction("glfw", EntryPoint = "glfwExtensionSupported")]
         [MethodImpl(
@@ -3925,7 +3925,7 @@ public unsafe partial class Glfw : IGlfw, IGlfw.Static
             {
                 return (int)ExtensionSupported(__dsl_extension);
             }
-        };
+        }
 
         [NativeFunction("glfw", EntryPoint = "glfwFocusWindow")]
         [MethodImpl(
@@ -3944,7 +3944,7 @@ public unsafe partial class Glfw : IGlfw, IGlfw.Static
             {
                 FocusWindow(__dsl_window);
             }
-        };
+        }
 
         [return: NativeTypeName("const char *")]
         [NativeFunction("glfw", EntryPoint = "glfwGetClipboardString")]
@@ -3966,7 +3966,7 @@ public unsafe partial class Glfw : IGlfw, IGlfw.Static
             {
                 return (sbyte*)GetClipboardString(__dsl_window);
             }
-        };
+        }
 
         [Transformed]
         [NativeFunction("glfw", EntryPoint = "glfwGetCurrentContext")]
@@ -4001,7 +4001,7 @@ public unsafe partial class Glfw : IGlfw, IGlfw.Static
             {
                 GetCursorPos(__dsl_window, __dsl_xpos, __dsl_ypos);
             }
-        };
+        }
 
         [NativeFunction("glfw", EntryPoint = "glfwGetError")]
         [MethodImpl(
@@ -4021,7 +4021,7 @@ public unsafe partial class Glfw : IGlfw, IGlfw.Static
             {
                 return (int)GetError(__dsl_description);
             }
-        };
+        }
 
         [NativeFunction("glfw", EntryPoint = "glfwGetFramebufferSize")]
         [MethodImpl(
@@ -4043,7 +4043,7 @@ public unsafe partial class Glfw : IGlfw, IGlfw.Static
             {
                 GetFramebufferSize(__dsl_window, __dsl_width, __dsl_height);
             }
-        };
+        }
 
         [return: NativeTypeName("const char *")]
         [Transformed]
@@ -4078,7 +4078,7 @@ public unsafe partial class Glfw : IGlfw, IGlfw.Static
             {
                 return (int)GetGamepadState(jid, __dsl_state);
             }
-        };
+        }
 
         [return: NativeTypeName("const GLFWgammaramp *")]
         [NativeFunction("glfw", EntryPoint = "glfwGetGammaRamp")]
@@ -4100,7 +4100,7 @@ public unsafe partial class Glfw : IGlfw, IGlfw.Static
             {
                 return (Gammaramp*)GetGammaRamp(__dsl_monitor);
             }
-        };
+        }
 
         [NativeFunction("glfw", EntryPoint = "glfwGetInputMode")]
         [MethodImpl(
@@ -4120,7 +4120,7 @@ public unsafe partial class Glfw : IGlfw, IGlfw.Static
             {
                 return (int)GetInputMode(__dsl_window, mode);
             }
-        };
+        }
 
         [return: NativeTypeName("const float *")]
         [NativeFunction("glfw", EntryPoint = "glfwGetJoystickAxes")]
@@ -4142,7 +4142,7 @@ public unsafe partial class Glfw : IGlfw, IGlfw.Static
             {
                 return (float*)GetJoystickAxes(jid, __dsl_count);
             }
-        };
+        }
 
         [return: NativeTypeName("const unsigned char *")]
         [NativeFunction("glfw", EntryPoint = "glfwGetJoystickButtons")]
@@ -4164,7 +4164,7 @@ public unsafe partial class Glfw : IGlfw, IGlfw.Static
             {
                 return (byte*)GetJoystickButtons(jid, __dsl_count);
             }
-        };
+        }
 
         [return: NativeTypeName("const char *")]
         [Transformed]
@@ -4202,7 +4202,7 @@ public unsafe partial class Glfw : IGlfw, IGlfw.Static
             {
                 return (byte*)GetJoystickHats(jid, __dsl_count);
             }
-        };
+        }
 
         [return: NativeTypeName("const char *")]
         [Transformed]
@@ -4252,7 +4252,7 @@ public unsafe partial class Glfw : IGlfw, IGlfw.Static
             {
                 return (int)GetKey(__dsl_window, key);
             }
-        };
+        }
 
         [return: NativeTypeName("const char *")]
         [Transformed]
@@ -4301,7 +4301,7 @@ public unsafe partial class Glfw : IGlfw, IGlfw.Static
             {
                 GetMonitorContentScale(__dsl_monitor, __dsl_xscale, __dsl_yscale);
             }
-        };
+        }
 
         [return: NativeTypeName("const char *")]
         [NativeFunction("glfw", EntryPoint = "glfwGetMonitorName")]
@@ -4323,7 +4323,7 @@ public unsafe partial class Glfw : IGlfw, IGlfw.Static
             {
                 return (sbyte*)GetMonitorName(__dsl_monitor);
             }
-        };
+        }
 
         [NativeFunction("glfw", EntryPoint = "glfwGetMonitorPhysicalSize")]
         [MethodImpl(
@@ -4349,7 +4349,7 @@ public unsafe partial class Glfw : IGlfw, IGlfw.Static
             {
                 GetMonitorPhysicalSize(__dsl_monitor, __dsl_widthMM, __dsl_heightMM);
             }
-        };
+        }
 
         [NativeFunction("glfw", EntryPoint = "glfwGetMonitorPos")]
         [MethodImpl(
@@ -4371,7 +4371,7 @@ public unsafe partial class Glfw : IGlfw, IGlfw.Static
             {
                 GetMonitorPos(__dsl_monitor, __dsl_xpos, __dsl_ypos);
             }
-        };
+        }
 
         [NativeFunction("glfw", EntryPoint = "glfwGetMonitors")]
         [MethodImpl(
@@ -4390,7 +4390,7 @@ public unsafe partial class Glfw : IGlfw, IGlfw.Static
             {
                 return (Monitor**)GetMonitors(__dsl_count);
             }
-        };
+        }
 
         [NativeFunction("glfw", EntryPoint = "glfwGetMonitorUserPointer")]
         [MethodImpl(
@@ -4410,7 +4410,7 @@ public unsafe partial class Glfw : IGlfw, IGlfw.Static
             {
                 return (void*)GetMonitorUserPointer(__dsl_monitor);
             }
-        };
+        }
 
         [NativeFunction("glfw", EntryPoint = "glfwGetMonitorWorkarea")]
         [MethodImpl(
@@ -4451,7 +4451,7 @@ public unsafe partial class Glfw : IGlfw, IGlfw.Static
                     __dsl_height
                 );
             }
-        };
+        }
 
         [NativeFunction("glfw", EntryPoint = "glfwGetMouseButton")]
         [MethodImpl(
@@ -4471,7 +4471,7 @@ public unsafe partial class Glfw : IGlfw, IGlfw.Static
             {
                 return (int)GetMouseButton(__dsl_window, button);
             }
-        };
+        }
 
         [NativeFunction("glfw", EntryPoint = "glfwGetPlatform")]
         [MethodImpl(
@@ -4515,7 +4515,7 @@ public unsafe partial class Glfw : IGlfw, IGlfw.Static
             {
                 return (delegate* unmanaged<void>)GetProcAddress(__dsl_procname);
             }
-        };
+        }
 
         [return: NativeTypeName("const char **")]
         [NativeFunction("glfw", EntryPoint = "glfwGetRequiredInstanceExtensions")]
@@ -4540,7 +4540,7 @@ public unsafe partial class Glfw : IGlfw, IGlfw.Static
             {
                 return (sbyte**)GetRequiredInstanceExtensions(__dsl_count);
             }
-        };
+        }
 
         [NativeFunction("glfw", EntryPoint = "glfwGetTime")]
         [MethodImpl(
@@ -4582,7 +4582,7 @@ public unsafe partial class Glfw : IGlfw, IGlfw.Static
             {
                 GetVersion(__dsl_major, __dsl_minor, __dsl_rev);
             }
-        };
+        }
 
         [return: NativeTypeName("const char *")]
         [Transformed]
@@ -4619,7 +4619,7 @@ public unsafe partial class Glfw : IGlfw, IGlfw.Static
             {
                 return (Vidmode*)GetVideoMode(__dsl_monitor);
             }
-        };
+        }
 
         [return: NativeTypeName("const GLFWvidmode *")]
         [NativeFunction("glfw", EntryPoint = "glfwGetVideoModes")]
@@ -4642,7 +4642,7 @@ public unsafe partial class Glfw : IGlfw, IGlfw.Static
             {
                 return (Vidmode*)GetVideoModes(__dsl_monitor, __dsl_count);
             }
-        };
+        }
 
         [NativeFunction("glfw", EntryPoint = "glfwGetWindowAttrib")]
         [MethodImpl(
@@ -4662,7 +4662,7 @@ public unsafe partial class Glfw : IGlfw, IGlfw.Static
             {
                 return (int)GetWindowAttrib(__dsl_window, attrib);
             }
-        };
+        }
 
         [NativeFunction("glfw", EntryPoint = "glfwGetWindowContentScale")]
         [MethodImpl(
@@ -4688,7 +4688,7 @@ public unsafe partial class Glfw : IGlfw, IGlfw.Static
             {
                 GetWindowContentScale(__dsl_window, __dsl_xscale, __dsl_yscale);
             }
-        };
+        }
 
         [NativeFunction("glfw", EntryPoint = "glfwGetWindowFrameSize")]
         [MethodImpl(
@@ -4723,7 +4723,7 @@ public unsafe partial class Glfw : IGlfw, IGlfw.Static
             {
                 GetWindowFrameSize(__dsl_window, __dsl_left, __dsl_top, __dsl_right, __dsl_bottom);
             }
-        };
+        }
 
         [NativeFunction("glfw", EntryPoint = "glfwGetWindowMonitor")]
         [MethodImpl(
@@ -4743,7 +4743,7 @@ public unsafe partial class Glfw : IGlfw, IGlfw.Static
             {
                 return (Monitor*)GetWindowMonitor(__dsl_window);
             }
-        };
+        }
 
         [NativeFunction("glfw", EntryPoint = "glfwGetWindowOpacity")]
         [MethodImpl(
@@ -4763,7 +4763,7 @@ public unsafe partial class Glfw : IGlfw, IGlfw.Static
             {
                 return (float)GetWindowOpacity(__dsl_window);
             }
-        };
+        }
 
         [NativeFunction("glfw", EntryPoint = "glfwGetWindowPos")]
         [MethodImpl(
@@ -4785,7 +4785,7 @@ public unsafe partial class Glfw : IGlfw, IGlfw.Static
             {
                 GetWindowPos(__dsl_window, __dsl_xpos, __dsl_ypos);
             }
-        };
+        }
 
         [NativeFunction("glfw", EntryPoint = "glfwGetWindowSize")]
         [MethodImpl(
@@ -4807,7 +4807,7 @@ public unsafe partial class Glfw : IGlfw, IGlfw.Static
             {
                 GetWindowSize(__dsl_window, __dsl_width, __dsl_height);
             }
-        };
+        }
 
         [NativeFunction("glfw", EntryPoint = "glfwGetWindowUserPointer")]
         [MethodImpl(
@@ -4827,7 +4827,7 @@ public unsafe partial class Glfw : IGlfw, IGlfw.Static
             {
                 return (void*)GetWindowUserPointer(__dsl_window);
             }
-        };
+        }
 
         [NativeFunction("glfw", EntryPoint = "glfwHideWindow")]
         [MethodImpl(
@@ -4846,7 +4846,7 @@ public unsafe partial class Glfw : IGlfw, IGlfw.Static
             {
                 HideWindow(__dsl_window);
             }
-        };
+        }
 
         [NativeFunction("glfw", EntryPoint = "glfwIconifyWindow")]
         [MethodImpl(
@@ -4865,7 +4865,7 @@ public unsafe partial class Glfw : IGlfw, IGlfw.Static
             {
                 IconifyWindow(__dsl_window);
             }
-        };
+        }
 
         [NativeFunction("glfw", EntryPoint = "glfwInit")]
         [MethodImpl(
@@ -4894,7 +4894,7 @@ public unsafe partial class Glfw : IGlfw, IGlfw.Static
             {
                 InitAllocator(__dsl_allocator);
             }
-        };
+        }
 
         [NativeFunction("glfw", EntryPoint = "glfwInitHint")]
         [MethodImpl(
@@ -4932,7 +4932,7 @@ public unsafe partial class Glfw : IGlfw, IGlfw.Static
             {
                 MakeContextCurrent(__dsl_window);
             }
-        };
+        }
 
         [NativeFunction("glfw", EntryPoint = "glfwMaximizeWindow")]
         [MethodImpl(
@@ -4952,7 +4952,7 @@ public unsafe partial class Glfw : IGlfw, IGlfw.Static
             {
                 MaximizeWindow(__dsl_window);
             }
-        };
+        }
 
         [NativeFunction("glfw", EntryPoint = "glfwPlatformSupported")]
         [MethodImpl(
@@ -4997,7 +4997,7 @@ public unsafe partial class Glfw : IGlfw, IGlfw.Static
             {
                 RequestWindowAttention(__dsl_window);
             }
-        };
+        }
 
         [NativeFunction("glfw", EntryPoint = "glfwRestoreWindow")]
         [MethodImpl(
@@ -5016,7 +5016,7 @@ public unsafe partial class Glfw : IGlfw, IGlfw.Static
             {
                 RestoreWindow(__dsl_window);
             }
-        };
+        }
 
         [return: NativeTypeName("GLFWcharfun")]
         [NativeFunction("glfw", EntryPoint = "glfwSetCharCallback")]
@@ -5046,7 +5046,7 @@ public unsafe partial class Glfw : IGlfw, IGlfw.Static
                     callback
                 );
             }
-        };
+        }
 
         [return: NativeTypeName("GLFWcharmodsfun")]
         [NativeFunction("glfw", EntryPoint = "glfwSetCharModsCallback")]
@@ -5078,7 +5078,7 @@ public unsafe partial class Glfw : IGlfw, IGlfw.Static
                     callback
                 );
             }
-        };
+        }
 
         [NativeFunction("glfw", EntryPoint = "glfwSetClipboardString")]
         [MethodImpl(
@@ -5104,7 +5104,7 @@ public unsafe partial class Glfw : IGlfw, IGlfw.Static
             {
                 SetClipboardString(__dsl_window, __dsl_string);
             }
-        };
+        }
 
         [NativeFunction("glfw", EntryPoint = "glfwSetCursor")]
         [MethodImpl(
@@ -5125,7 +5125,7 @@ public unsafe partial class Glfw : IGlfw, IGlfw.Static
             {
                 SetCursor(__dsl_window, __dsl_cursor);
             }
-        };
+        }
 
         [return: NativeTypeName("GLFWcursorenterfun")]
         [NativeFunction("glfw", EntryPoint = "glfwSetCursorEnterCallback")]
@@ -5155,7 +5155,7 @@ public unsafe partial class Glfw : IGlfw, IGlfw.Static
                     callback
                 );
             }
-        };
+        }
 
         [NativeFunction("glfw", EntryPoint = "glfwSetCursorPos")]
         [MethodImpl(
@@ -5175,7 +5175,7 @@ public unsafe partial class Glfw : IGlfw, IGlfw.Static
             {
                 SetCursorPos(__dsl_window, xpos, ypos);
             }
-        };
+        }
 
         [return: NativeTypeName("GLFWcursorposfun")]
         [NativeFunction("glfw", EntryPoint = "glfwSetCursorPosCallback")]
@@ -5207,7 +5207,7 @@ public unsafe partial class Glfw : IGlfw, IGlfw.Static
                     callback
                 );
             }
-        };
+        }
 
         [return: NativeTypeName("GLFWdropfun")]
         [NativeFunction("glfw", EntryPoint = "glfwSetDropCallback")]
@@ -5239,7 +5239,7 @@ public unsafe partial class Glfw : IGlfw, IGlfw.Static
                     callback
                 );
             }
-        };
+        }
 
         [return: NativeTypeName("GLFWerrorfun")]
         [NativeFunction("glfw", EntryPoint = "glfwSetErrorCallback")]
@@ -5280,7 +5280,7 @@ public unsafe partial class Glfw : IGlfw, IGlfw.Static
                     callback
                 );
             }
-        };
+        }
 
         [NativeFunction("glfw", EntryPoint = "glfwSetGamma")]
         [MethodImpl(
@@ -5300,7 +5300,7 @@ public unsafe partial class Glfw : IGlfw, IGlfw.Static
             {
                 SetGamma(__dsl_monitor, gamma);
             }
-        };
+        }
 
         [NativeFunction("glfw", EntryPoint = "glfwSetGammaRamp")]
         [MethodImpl(
@@ -5326,7 +5326,7 @@ public unsafe partial class Glfw : IGlfw, IGlfw.Static
             {
                 SetGammaRamp(__dsl_monitor, __dsl_ramp);
             }
-        };
+        }
 
         [NativeFunction("glfw", EntryPoint = "glfwSetInputMode")]
         [MethodImpl(
@@ -5346,7 +5346,7 @@ public unsafe partial class Glfw : IGlfw, IGlfw.Static
             {
                 SetInputMode(__dsl_window, mode, value);
             }
-        };
+        }
 
         [return: NativeTypeName("GLFWjoystickfun")]
         [NativeFunction("glfw", EntryPoint = "glfwSetJoystickCallback")]
@@ -5375,7 +5375,7 @@ public unsafe partial class Glfw : IGlfw, IGlfw.Static
             {
                 SetJoystickUserPointer(jid, __dsl_pointer);
             }
-        };
+        }
 
         [return: NativeTypeName("GLFWkeyfun")]
         [NativeFunction("glfw", EntryPoint = "glfwSetKeyCallback")]
@@ -5407,7 +5407,7 @@ public unsafe partial class Glfw : IGlfw, IGlfw.Static
                     callback
                 );
             }
-        };
+        }
 
         [return: NativeTypeName("GLFWmonitorfun")]
         [NativeFunction("glfw", EntryPoint = "glfwSetMonitorCallback")]
@@ -5437,7 +5437,7 @@ public unsafe partial class Glfw : IGlfw, IGlfw.Static
             {
                 SetMonitorUserPointer(__dsl_monitor, __dsl_pointer);
             }
-        };
+        }
 
         [return: NativeTypeName("GLFWmousebuttonfun")]
         [NativeFunction("glfw", EntryPoint = "glfwSetMouseButtonCallback")]
@@ -5469,7 +5469,7 @@ public unsafe partial class Glfw : IGlfw, IGlfw.Static
                     callback
                 );
             }
-        };
+        }
 
         [return: NativeTypeName("GLFWscrollfun")]
         [NativeFunction("glfw", EntryPoint = "glfwSetScrollCallback")]
@@ -5501,7 +5501,7 @@ public unsafe partial class Glfw : IGlfw, IGlfw.Static
                     callback
                 );
             }
-        };
+        }
 
         [NativeFunction("glfw", EntryPoint = "glfwSetTime")]
         [MethodImpl(
@@ -5527,7 +5527,7 @@ public unsafe partial class Glfw : IGlfw, IGlfw.Static
             {
                 SetWindowAspectRatio(__dsl_window, numer, denom);
             }
-        };
+        }
 
         [NativeFunction("glfw", EntryPoint = "glfwSetWindowAttrib")]
         [MethodImpl(
@@ -5547,7 +5547,7 @@ public unsafe partial class Glfw : IGlfw, IGlfw.Static
             {
                 SetWindowAttrib(__dsl_window, attrib, value);
             }
-        };
+        }
 
         [return: NativeTypeName("GLFWwindowclosefun")]
         [NativeFunction("glfw", EntryPoint = "glfwSetWindowCloseCallback")]
@@ -5577,7 +5577,7 @@ public unsafe partial class Glfw : IGlfw, IGlfw.Static
                     callback
                 );
             }
-        };
+        }
 
         [return: NativeTypeName("GLFWwindowcontentscalefun")]
         [NativeFunction("glfw", EntryPoint = "glfwSetWindowContentScaleCallback")]
@@ -5618,7 +5618,7 @@ public unsafe partial class Glfw : IGlfw, IGlfw.Static
                     float,
                     void>)SetWindowContentScaleCallback(__dsl_window, callback);
             }
-        };
+        }
 
         [return: NativeTypeName("GLFWwindowfocusfun")]
         [NativeFunction("glfw", EntryPoint = "glfwSetWindowFocusCallback")]
@@ -5648,7 +5648,7 @@ public unsafe partial class Glfw : IGlfw, IGlfw.Static
                     callback
                 );
             }
-        };
+        }
 
         [NativeFunction("glfw", EntryPoint = "glfwSetWindowIcon")]
         [MethodImpl(
@@ -5676,7 +5676,7 @@ public unsafe partial class Glfw : IGlfw, IGlfw.Static
             {
                 SetWindowIcon(__dsl_window, count, __dsl_images);
             }
-        };
+        }
 
         [return: NativeTypeName("GLFWwindowiconifyfun")]
         [NativeFunction("glfw", EntryPoint = "glfwSetWindowIconifyCallback")]
@@ -5708,7 +5708,7 @@ public unsafe partial class Glfw : IGlfw, IGlfw.Static
                     callback
                 );
             }
-        };
+        }
 
         [return: NativeTypeName("GLFWwindowmaximizefun")]
         [NativeFunction("glfw", EntryPoint = "glfwSetWindowMaximizeCallback")]
@@ -5740,7 +5740,7 @@ public unsafe partial class Glfw : IGlfw, IGlfw.Static
                     callback
                 );
             }
-        };
+        }
 
         [NativeFunction("glfw", EntryPoint = "glfwSetWindowMonitor")]
         [MethodImpl(
@@ -5793,7 +5793,7 @@ public unsafe partial class Glfw : IGlfw, IGlfw.Static
                     refreshRate
                 );
             }
-        };
+        }
 
         [NativeFunction("glfw", EntryPoint = "glfwSetWindowOpacity")]
         [MethodImpl(
@@ -5813,7 +5813,7 @@ public unsafe partial class Glfw : IGlfw, IGlfw.Static
             {
                 SetWindowOpacity(__dsl_window, opacity);
             }
-        };
+        }
 
         [NativeFunction("glfw", EntryPoint = "glfwSetWindowPos")]
         [MethodImpl(
@@ -5833,7 +5833,7 @@ public unsafe partial class Glfw : IGlfw, IGlfw.Static
             {
                 SetWindowPos(__dsl_window, xpos, ypos);
             }
-        };
+        }
 
         [return: NativeTypeName("GLFWwindowposfun")]
         [NativeFunction("glfw", EntryPoint = "glfwSetWindowPosCallback")]
@@ -5865,7 +5865,7 @@ public unsafe partial class Glfw : IGlfw, IGlfw.Static
                     callback
                 );
             }
-        };
+        }
 
         [return: NativeTypeName("GLFWwindowrefreshfun")]
         [NativeFunction("glfw", EntryPoint = "glfwSetWindowRefreshCallback")]
@@ -5895,7 +5895,7 @@ public unsafe partial class Glfw : IGlfw, IGlfw.Static
                     callback
                 );
             }
-        };
+        }
 
         [NativeFunction("glfw", EntryPoint = "glfwSetWindowShouldClose")]
         [MethodImpl(
@@ -5915,7 +5915,7 @@ public unsafe partial class Glfw : IGlfw, IGlfw.Static
             {
                 SetWindowShouldClose(__dsl_window, value);
             }
-        };
+        }
 
         [NativeFunction("glfw", EntryPoint = "glfwSetWindowSize")]
         [MethodImpl(
@@ -5935,7 +5935,7 @@ public unsafe partial class Glfw : IGlfw, IGlfw.Static
             {
                 SetWindowSize(__dsl_window, width, height);
             }
-        };
+        }
 
         [return: NativeTypeName("GLFWwindowsizefun")]
         [NativeFunction("glfw", EntryPoint = "glfwSetWindowSizeCallback")]
@@ -5967,7 +5967,7 @@ public unsafe partial class Glfw : IGlfw, IGlfw.Static
                     callback
                 );
             }
-        };
+        }
 
         [NativeFunction("glfw", EntryPoint = "glfwSetWindowSizeLimits")]
         [MethodImpl(
@@ -5999,7 +5999,7 @@ public unsafe partial class Glfw : IGlfw, IGlfw.Static
             {
                 SetWindowSizeLimits(__dsl_window, minwidth, minheight, maxwidth, maxheight);
             }
-        };
+        }
 
         [NativeFunction("glfw", EntryPoint = "glfwSetWindowTitle")]
         [MethodImpl(
@@ -6025,7 +6025,7 @@ public unsafe partial class Glfw : IGlfw, IGlfw.Static
             {
                 SetWindowTitle(__dsl_window, __dsl_title);
             }
-        };
+        }
 
         [NativeFunction("glfw", EntryPoint = "glfwSetWindowUserPointer")]
         [MethodImpl(
@@ -6046,7 +6046,7 @@ public unsafe partial class Glfw : IGlfw, IGlfw.Static
             {
                 SetWindowUserPointer(__dsl_window, __dsl_pointer);
             }
-        };
+        }
 
         [NativeFunction("glfw", EntryPoint = "glfwShowWindow")]
         [MethodImpl(
@@ -6065,7 +6065,7 @@ public unsafe partial class Glfw : IGlfw, IGlfw.Static
             {
                 ShowWindow(__dsl_window);
             }
-        };
+        }
 
         [NativeFunction("glfw", EntryPoint = "glfwSwapBuffers")]
         [MethodImpl(
@@ -6084,7 +6084,7 @@ public unsafe partial class Glfw : IGlfw, IGlfw.Static
             {
                 SwapBuffers(__dsl_window);
             }
-        };
+        }
 
         [NativeFunction("glfw", EntryPoint = "glfwSwapInterval")]
         [MethodImpl(
@@ -6116,7 +6116,7 @@ public unsafe partial class Glfw : IGlfw, IGlfw.Static
             {
                 return (int)UpdateGamepadMappings(__dsl_string);
             }
-        };
+        }
 
         [NativeFunction("glfw", EntryPoint = "glfwVulkanSupported")]
         [MethodImpl(
@@ -6167,7 +6167,7 @@ public unsafe partial class Glfw : IGlfw, IGlfw.Static
             {
                 WindowHintString(hint, __dsl_value);
             }
-        };
+        }
 
         [NativeFunction("glfw", EntryPoint = "glfwWindowShouldClose")]
         [MethodImpl(
@@ -6187,7 +6187,7 @@ public unsafe partial class Glfw : IGlfw, IGlfw.Static
             {
                 return (int)WindowShouldClose(__dsl_window);
             }
-        };
+        }
     }
 
     public static partial class Constants
