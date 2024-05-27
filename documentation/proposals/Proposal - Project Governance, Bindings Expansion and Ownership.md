@@ -98,7 +98,9 @@ A "core binding" **shall** be defined as follows:
     1. An API existing in the multimedia and/or compute space, or aiding in the creation of applications making use of such APIs.
     2. Used as a dependency by a Working Group approved HLU, Silk.NET core functionality, or a Silk.NET core binding.
     3. An API developed by a multi-vendor standards team/body, or an API with notable industry presence otherwise implemented by multiple vendors and/or developed in collaboration with those vendors. 
-2. The C API being bound to **must** have open-source headers that do not preclude the automated transformation to C# bindings without undue licensing provisions inflicted on users of such transformations.
+2. The C API being bound to **must** have headers licensed such that the automated transformation to C# bindings is allowed without undue licensing provisions inflicted on users of such transformations.
+
+A Core Binding **shall** retain its Core Binding status for the entire lifetime of a major version cycle as defined in [4].
 
 All Khronos and DirectX APIs meet both requirements 1.1 and 1.3. OpenAL also meets this requirement based on its historical development. GLFW and SDL both meet these rqeuirements today given that the Windowing HLU requires both of them in 2.X, their continued status as "core binding" is dependent on what the final implementation of the Windowing 3.0 proposal [5] uses. 
 
@@ -120,7 +122,14 @@ Additional Bindings to retain their eligibility as Additional Bindings **shall**
 
 The Silk.NET maintainers **must** ensure that Additional Bindings and Bindings Owners are in compliance with these requirements on an ongoing basis and, if arrangements cannot be made to bring the Additional Binding into compliance with these requirements, the Additional Binding **must** be excluded as a Silk.NET artifact as published to NuGet. An Additional Binding that is not compliant **should** only be removed from the repository if it poses a maintenance concern for the maintainers. 
 
-Additional Bindings **may** define additional APIs that do not deviate noticeably from the API being bound to or that do not target wider applicability outside of the context of that specific Additional Binding. This could include C#-friendly wrappers for instance, provided these do not attempt to abstract the original API in any noticeable way (small utility functions are acceptable however). If compliance with this requirement is in doubt, a Bindings Owner **should** contact the Silk.NET maintainers team. Bindings Owners **shall not** introduce larger-scale HLUs (i.e. that abstract away the original API or target wider applicability beyond the scope of the Additional Binding) without Working Group approval.
+Additional Bindings **may** define additional APIs that do not deviate noticeably from the API being bound to or that do not target wider applicability outside of the context of that specific Additional Binding. This could include C#-friendly wrappers for instance, provided these do not attempt to abstract the original API in any noticeable way (small utility functions are acceptable however). If compliance with this requirement is in doubt, a Bindings Owner **should** contact the Silk.NET maintainers team. Bindings Owners **may** introduce larger-scale HLUs (i.e. that abstract away the original API or target wider applicability beyond the scope of the Additional Binding), but such APIs **must** be held to the same standard of scrutiny as all other APIs approved by the Working Group and use a review process similar to the Working Group's policy. Namely, such reviews **must**:
+1. Require proposal documents to be submitted to the main GitHub repository
+2. Be hosted in a public forum (Discord and/or YouTube)
+3. Accept comments from anyone as per the Working Group meetings
+4. Be recorded so prior decisionmaking can be readily accessed for influencing future decisionmaking
+5. Require a majority approval from Bindings Owners of the Additional Binding in question, no unaddressed objections from any participants in the review process (an objection may be deemed irrelevant by a Bindings Owner majority, but this must be formally addressed, documented, and agreed by the original objector), and one Silk.NET Maintainer approval _only_ to attest that proper process has been followed.
+
+Silk.NET Maintainers **shall not** raise any objections outside of a Community Meeting/API Review for an Additional Binding (as defined above) - maintainers are an equal participant in such meetings and do not have special veto rights. Provided the process defined above is followed, such vetos would not be required.
 
 Bindings Owners **shall** review and merge pull requests to their assigned Additional Bindings. Bindings Owners **shall** be granted limited write access to the Silk.NET repo, and given a branch prefix they can use by the maintainers. The maintainers **shall** maintain a CODEOWNERS file and branch protection rules to allow Bindings Owners to merge pull requests independently of the Silk.NET maintainers.
 
