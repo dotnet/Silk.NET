@@ -129,6 +129,8 @@ Additional Bindings **may** define additional APIs that do not deviate noticeabl
 4. Be recorded so prior decisionmaking can be readily accessed for influencing future decisionmaking
 5. Require a majority approval from Bindings Owners of the Additional Binding in question, no unaddressed objections from any participants in the review process (an objection may be deemed irrelevant by a Bindings Owner majority, but this must be formally addressed, documented, and agreed by the original objector), and one Silk.NET Maintainer approval _only_ to attest that proper process has been followed.
 
+In addition, if the proposed HLU overlaps with another Additional Binding's problem space, Bindings Owners of such bindings must also approve proposals using the above process. If the proposed HLU overlaps with a Core Binding, then the HLU must undergo the same scrutiny as core HLUs such as Windowing, Input, and Maths i.e. through the project-wide Working Group.
+
 Silk.NET Maintainers **shall not** raise any objections outside of a Community Meeting/API Review for an Additional Binding (as defined above) - maintainers are an equal participant in such meetings and do not have special veto rights. Provided the process defined above is followed, such vetos would not be required.
 
 Bindings Owners **shall** review and merge pull requests to their assigned Additional Bindings. Bindings Owners **shall** be granted limited write access to the Silk.NET repo, and given a branch prefix they can use by the maintainers. The maintainers **shall** maintain a CODEOWNERS file and branch protection rules to allow Bindings Owners to merge pull requests independently of the Silk.NET maintainers.
