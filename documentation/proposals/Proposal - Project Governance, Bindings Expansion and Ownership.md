@@ -102,7 +102,7 @@ A "core binding" **shall** be defined as follows:
 
 A Core Binding **shall** retain its Core Binding status for the entire lifetime of a major version cycle as defined in [4].
 
-All Khronos and DirectX APIs meet both requirements 1.1 and 1.3. OpenAL also meets this requirement based on its historical development. GLFW and SDL both meet these rqeuirements today given that the Windowing HLU requires both of them in 2.X, their continued status as "core binding" is dependent on what the final implementation of the Windowing 3.0 proposal [5] uses. 
+All Khronos and DirectX APIs meet both requirements 1.1 and 1.3. OpenAL also meets this requirement based on its historical development. GLFW and SDL both meet these requirements today given that the Windowing HLU requires both of them in 2.X, their continued status as "core binding" is dependent on what the final implementation of the Windowing 3.0 proposal [5] uses. 
 
 Based on these definitions, Assimp and Shaderc would no longer carry "core binding" status.
 
