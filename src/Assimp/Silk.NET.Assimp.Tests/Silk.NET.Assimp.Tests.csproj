@@ -33,6 +33,7 @@
       <None Remove="Model.zip" />
       <EmbeddedResource Include="Model.zip" />
       <Content Include="../../Native/Silk.NET.Assimp.Native/runtimes/$(RuntimeIdentifier)/native/*" CopyToPublishDirectory="PreserveNewest" CopyToOutputDirectory="PreserveNewest" />
+      <Using Include="Xunit" />
     </ItemGroup>
 
 </Project>
