@@ -29,7 +29,7 @@ public enum PixelFormatEnum : uint
         (
             (1 << 28)
             | ((PixelType.Index1) << 24)
-            | ((BitmapOrder.X4321) << 20)
+            | ((BitmapOrder.Bitmaporder4321) << 20)
             | ((0) << 16)
             | ((1) << 8)
             | ((0) << 0)
@@ -38,7 +38,7 @@ public enum PixelFormatEnum : uint
         (
             (1 << 28)
             | ((PixelType.Index1) << 24)
-            | ((BitmapOrder.X1234) << 20)
+            | ((BitmapOrder.Bitmaporder1234) << 20)
             | ((0) << 16)
             | ((1) << 8)
             | ((0) << 0)
@@ -47,7 +47,7 @@ public enum PixelFormatEnum : uint
         (
             (1 << 28)
             | ((PixelType.Index2) << 24)
-            | ((BitmapOrder.X4321) << 20)
+            | ((BitmapOrder.Bitmaporder4321) << 20)
             | ((0) << 16)
             | ((2) << 8)
             | ((0) << 0)
@@ -56,7 +56,7 @@ public enum PixelFormatEnum : uint
         (
             (1 << 28)
             | ((PixelType.Index2) << 24)
-            | ((BitmapOrder.X1234) << 20)
+            | ((BitmapOrder.Bitmaporder1234) << 20)
             | ((0) << 16)
             | ((2) << 8)
             | ((0) << 0)
@@ -65,7 +65,7 @@ public enum PixelFormatEnum : uint
         (
             (1 << 28)
             | ((PixelType.Index4) << 24)
-            | ((BitmapOrder.X4321) << 20)
+            | ((BitmapOrder.Bitmaporder4321) << 20)
             | ((0) << 16)
             | ((4) << 8)
             | ((0) << 0)
@@ -74,7 +74,7 @@ public enum PixelFormatEnum : uint
         (
             (1 << 28)
             | ((PixelType.Index4) << 24)
-            | ((BitmapOrder.X1234) << 20)
+            | ((BitmapOrder.Bitmaporder1234) << 20)
             | ((0) << 16)
             | ((4) << 8)
             | ((0) << 0)
@@ -93,7 +93,7 @@ public enum PixelFormatEnum : uint
             (1 << 28)
             | ((PixelType.Packed8) << 24)
             | ((PackedOrder.Xrgb) << 20)
-            | ((PackedLayout.X332) << 16)
+            | ((PackedLayout.Packedlayout332) << 16)
             | ((8) << 8)
             | ((1) << 0)
         ),
@@ -102,7 +102,7 @@ public enum PixelFormatEnum : uint
             (1 << 28)
             | ((PixelType.Packed16) << 24)
             | ((PackedOrder.Xrgb) << 20)
-            | ((PackedLayout.X4444) << 16)
+            | ((PackedLayout.Packedlayout4444) << 16)
             | ((12) << 8)
             | ((2) << 0)
         ),
@@ -112,7 +112,7 @@ public enum PixelFormatEnum : uint
             (1 << 28)
             | ((PixelType.Packed16) << 24)
             | ((PackedOrder.Xbgr) << 20)
-            | ((PackedLayout.X4444) << 16)
+            | ((PackedLayout.Packedlayout4444) << 16)
             | ((12) << 8)
             | ((2) << 0)
         ),
@@ -122,7 +122,7 @@ public enum PixelFormatEnum : uint
             (1 << 28)
             | ((PixelType.Packed16) << 24)
             | ((PackedOrder.Xrgb) << 20)
-            | ((PackedLayout.X1555) << 16)
+            | ((PackedLayout.Packedlayout1555) << 16)
             | ((15) << 8)
             | ((2) << 0)
         ),
@@ -132,7 +132,7 @@ public enum PixelFormatEnum : uint
             (1 << 28)
             | ((PixelType.Packed16) << 24)
             | ((PackedOrder.Xbgr) << 20)
-            | ((PackedLayout.X1555) << 16)
+            | ((PackedLayout.Packedlayout1555) << 16)
             | ((15) << 8)
             | ((2) << 0)
         ),
@@ -142,7 +142,7 @@ public enum PixelFormatEnum : uint
             (1 << 28)
             | ((PixelType.Packed16) << 24)
             | ((PackedOrder.Argb) << 20)
-            | ((PackedLayout.X4444) << 16)
+            | ((PackedLayout.Packedlayout4444) << 16)
             | ((16) << 8)
             | ((2) << 0)
         ),
@@ -151,7 +151,7 @@ public enum PixelFormatEnum : uint
             (1 << 28)
             | ((PixelType.Packed16) << 24)
             | ((PackedOrder.Rgba) << 20)
-            | ((PackedLayout.X4444) << 16)
+            | ((PackedLayout.Packedlayout4444) << 16)
             | ((16) << 8)
             | ((2) << 0)
         ),
@@ -160,7 +160,7 @@ public enum PixelFormatEnum : uint
             (1 << 28)
             | ((PixelType.Packed16) << 24)
             | ((PackedOrder.Abgr) << 20)
-            | ((PackedLayout.X4444) << 16)
+            | ((PackedLayout.Packedlayout4444) << 16)
             | ((16) << 8)
             | ((2) << 0)
         ),
@@ -169,7 +169,7 @@ public enum PixelFormatEnum : uint
             (1 << 28)
             | ((PixelType.Packed16) << 24)
             | ((PackedOrder.Bgra) << 20)
-            | ((PackedLayout.X4444) << 16)
+            | ((PackedLayout.Packedlayout4444) << 16)
             | ((16) << 8)
             | ((2) << 0)
         ),
@@ -178,7 +178,7 @@ public enum PixelFormatEnum : uint
             (1 << 28)
             | ((PixelType.Packed16) << 24)
             | ((PackedOrder.Argb) << 20)
-            | ((PackedLayout.X1555) << 16)
+            | ((PackedLayout.Packedlayout1555) << 16)
             | ((16) << 8)
             | ((2) << 0)
         ),
@@ -187,7 +187,7 @@ public enum PixelFormatEnum : uint
             (1 << 28)
             | ((PixelType.Packed16) << 24)
             | ((PackedOrder.Rgba) << 20)
-            | ((PackedLayout.X5551) << 16)
+            | ((PackedLayout.Packedlayout5551) << 16)
             | ((16) << 8)
             | ((2) << 0)
         ),
@@ -196,7 +196,7 @@ public enum PixelFormatEnum : uint
             (1 << 28)
             | ((PixelType.Packed16) << 24)
             | ((PackedOrder.Abgr) << 20)
-            | ((PackedLayout.X1555) << 16)
+            | ((PackedLayout.Packedlayout1555) << 16)
             | ((16) << 8)
             | ((2) << 0)
         ),
@@ -205,7 +205,7 @@ public enum PixelFormatEnum : uint
             (1 << 28)
             | ((PixelType.Packed16) << 24)
             | ((PackedOrder.Bgra) << 20)
-            | ((PackedLayout.X5551) << 16)
+            | ((PackedLayout.Packedlayout5551) << 16)
             | ((16) << 8)
             | ((2) << 0)
         ),
@@ -214,7 +214,7 @@ public enum PixelFormatEnum : uint
             (1 << 28)
             | ((PixelType.Packed16) << 24)
             | ((PackedOrder.Xrgb) << 20)
-            | ((PackedLayout.X565) << 16)
+            | ((PackedLayout.Packedlayout565) << 16)
             | ((16) << 8)
             | ((2) << 0)
         ),
@@ -223,7 +223,7 @@ public enum PixelFormatEnum : uint
             (1 << 28)
             | ((PixelType.Packed16) << 24)
             | ((PackedOrder.Xbgr) << 20)
-            | ((PackedLayout.X565) << 16)
+            | ((PackedLayout.Packedlayout565) << 16)
             | ((16) << 8)
             | ((2) << 0)
         ),
@@ -250,7 +250,7 @@ public enum PixelFormatEnum : uint
             (1 << 28)
             | ((PixelType.Packed32) << 24)
             | ((PackedOrder.Xrgb) << 20)
-            | ((PackedLayout.X8888) << 16)
+            | ((PackedLayout.Packedlayout8888) << 16)
             | ((24) << 8)
             | ((4) << 0)
         ),
@@ -259,7 +259,7 @@ public enum PixelFormatEnum : uint
             (1 << 28)
             | ((PixelType.Packed32) << 24)
             | ((PackedOrder.Rgbx) << 20)
-            | ((PackedLayout.X8888) << 16)
+            | ((PackedLayout.Packedlayout8888) << 16)
             | ((24) << 8)
             | ((4) << 0)
         ),
@@ -268,7 +268,7 @@ public enum PixelFormatEnum : uint
             (1 << 28)
             | ((PixelType.Packed32) << 24)
             | ((PackedOrder.Xbgr) << 20)
-            | ((PackedLayout.X8888) << 16)
+            | ((PackedLayout.Packedlayout8888) << 16)
             | ((24) << 8)
             | ((4) << 0)
         ),
@@ -277,7 +277,7 @@ public enum PixelFormatEnum : uint
             (1 << 28)
             | ((PixelType.Packed32) << 24)
             | ((PackedOrder.Bgrx) << 20)
-            | ((PackedLayout.X8888) << 16)
+            | ((PackedLayout.Packedlayout8888) << 16)
             | ((24) << 8)
             | ((4) << 0)
         ),
@@ -286,7 +286,7 @@ public enum PixelFormatEnum : uint
             (1 << 28)
             | ((PixelType.Packed32) << 24)
             | ((PackedOrder.Argb) << 20)
-            | ((PackedLayout.X8888) << 16)
+            | ((PackedLayout.Packedlayout8888) << 16)
             | ((32) << 8)
             | ((4) << 0)
         ),
@@ -295,7 +295,7 @@ public enum PixelFormatEnum : uint
             (1 << 28)
             | ((PixelType.Packed32) << 24)
             | ((PackedOrder.Rgba) << 20)
-            | ((PackedLayout.X8888) << 16)
+            | ((PackedLayout.Packedlayout8888) << 16)
             | ((32) << 8)
             | ((4) << 0)
         ),
@@ -304,7 +304,7 @@ public enum PixelFormatEnum : uint
             (1 << 28)
             | ((PixelType.Packed32) << 24)
             | ((PackedOrder.Abgr) << 20)
-            | ((PackedLayout.X8888) << 16)
+            | ((PackedLayout.Packedlayout8888) << 16)
             | ((32) << 8)
             | ((4) << 0)
         ),
@@ -313,7 +313,7 @@ public enum PixelFormatEnum : uint
             (1 << 28)
             | ((PixelType.Packed32) << 24)
             | ((PackedOrder.Bgra) << 20)
-            | ((PackedLayout.X8888) << 16)
+            | ((PackedLayout.Packedlayout8888) << 16)
             | ((32) << 8)
             | ((4) << 0)
         ),
@@ -322,7 +322,7 @@ public enum PixelFormatEnum : uint
             (1 << 28)
             | ((PixelType.Packed32) << 24)
             | ((PackedOrder.Xrgb) << 20)
-            | ((PackedLayout.X2101010) << 16)
+            | ((PackedLayout.Packedlayout2101010) << 16)
             | ((32) << 8)
             | ((4) << 0)
         ),
@@ -331,7 +331,7 @@ public enum PixelFormatEnum : uint
             (1 << 28)
             | ((PixelType.Packed32) << 24)
             | ((PackedOrder.Xbgr) << 20)
-            | ((PackedLayout.X2101010) << 16)
+            | ((PackedLayout.Packedlayout2101010) << 16)
             | ((32) << 8)
             | ((4) << 0)
         ),
@@ -340,7 +340,7 @@ public enum PixelFormatEnum : uint
             (1 << 28)
             | ((PixelType.Packed32) << 24)
             | ((PackedOrder.Argb) << 20)
-            | ((PackedLayout.X2101010) << 16)
+            | ((PackedLayout.Packedlayout2101010) << 16)
             | ((32) << 8)
             | ((4) << 0)
         ),
@@ -349,7 +349,7 @@ public enum PixelFormatEnum : uint
             (1 << 28)
             | ((PixelType.Packed32) << 24)
             | ((PackedOrder.Abgr) << 20)
-            | ((PackedLayout.X2101010) << 16)
+            | ((PackedLayout.Packedlayout2101010) << 16)
             | ((32) << 8)
             | ((4) << 0)
         ),

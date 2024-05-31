@@ -128,7 +128,7 @@ public static partial class NameUtils
         while (!found)
         {
             pos++;
-            if (pos > (naive ? maxLen : maxLen + 1) || pos > (naive ? minLen : firstName.Length))
+            if (pos > (naive ? maxLen : maxLen - 1) || pos > (naive ? minLen : firstName.Length))
             {
                 break;
             }
@@ -145,7 +145,7 @@ public static partial class NameUtils
                 break;
             }
 
-            if (pos > 1) // if pos is smaller, that means we haven't even done a full loop yet and already tripped up.
+            if (pos > 1 && !found) // if pos is smaller, that means we haven't even done a full loop yet and already tripped up.
             {
                 foundPrefix = prefix;
             }
@@ -170,8 +170,8 @@ public static partial class NameUtils
         // It turns out however there were other cases where this wasn't doing what it should, for instance finding the
         // prefix between Silk.NET.SDL and Silk.NET.SDL with allowFullMatch set (i.e. the result should be Silk.NET.SDL)
         // so instead a naive case was added in the while loop itself, changing to
-        // `if (pos > (naive ? maxLen : maxLen + 1)...` so that it should hopefully have the same effect and then some.
-        // This was done in #TODO. I guess this was the smarter fix my previous comment was talking about.
+        // `if (pos > (naive ? maxLen : maxLen - 1)...` so that it should hopefully have the same effect and then some.
+        // This was done in #2207. I guess this was the smarter fix my previous comment was talking about.
         return foundPrefix[..(naive ? foundPrefix.Length : foundPrefix.LastIndexOf('_') + 1)];
     }
 

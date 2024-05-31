@@ -10,7 +10,7 @@ namespace Silk.NET.OpenGL;
 [Transformed]
 public enum PixelStoreSubsampleRate : uint
 {
-    X4444Sgix = unchecked((uint)0x85A2),
-    X2424Sgix = unchecked((uint)0x85A3),
-    X4242Sgix = unchecked((uint)0x85A4)
+    Subsample4444Sgix = unchecked((uint)0x85A2),
+    Subsample2424Sgix = unchecked((uint)0x85A3),
+    Subsample4242Sgix = unchecked((uint)0x85A4)
 }

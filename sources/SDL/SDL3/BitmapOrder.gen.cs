@@ -16,7 +16,7 @@ namespace Silk.NET.SDL;
 [NativeTypeName("unsigned int")]
 public enum BitmapOrder : uint
 {
-    None,
-    X4321,
-    X1234,
+    BitmaporderNone,
+    Bitmaporder4321,
+    Bitmaporder1234,
 }

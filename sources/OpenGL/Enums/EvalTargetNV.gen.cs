@@ -10,6 +10,6 @@ namespace Silk.NET.OpenGL;
 [Transformed]
 public enum EvalTargetNV : uint
 {
-    X2D = unchecked((uint)0x86C0),
-    Triangular2D = unchecked((uint)0x86C1)
+    Eval2D = unchecked((uint)0x86C0),
+    EvalTriangular2D = unchecked((uint)0x86C1)
 }

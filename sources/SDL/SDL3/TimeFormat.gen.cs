@@ -16,6 +16,6 @@ namespace Silk.NET.SDL;
 [NativeTypeName("unsigned int")]
 public enum TimeFormat : uint
 {
-    X24Hr = 0,
-    X12Hr = 1,
+    Format24Hr = 0,
+    Format12Hr = 1,
 }

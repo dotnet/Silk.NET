@@ -10,13 +10,13 @@ namespace Silk.NET.SDL;
 [NativeTypeName("unsigned int")]
 public enum PackedLayout : uint
 {
-    None,
-    X332,
-    X4444,
-    X1555,
-    X5551,
-    X565,
-    X8888,
-    X2101010,
-    X1010102,
+    PackedlayoutNone,
+    Packedlayout332,
+    Packedlayout4444,
+    Packedlayout1555,
+    Packedlayout5551,
+    Packedlayout565,
+    Packedlayout8888,
+    Packedlayout2101010,
+    Packedlayout1010102,
 }
