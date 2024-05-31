@@ -371,7 +371,6 @@ public class AddVTables(IOptionsSnapshot<AddVTables.Configuration> config) : IMo
                                     x.Kind() is SyntaxKind.StaticKeyword or SyntaxKind.UnsafeKeyword
                                 )
                             )
-                        )
                     )
                     .WithExpressionBody(
                         ctx.StaticDecl.Body is not null
