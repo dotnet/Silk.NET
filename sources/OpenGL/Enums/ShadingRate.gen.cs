@@ -10,13 +10,13 @@ namespace Silk.NET.OpenGL;
 [Transformed]
 public enum ShadingRate : uint
 {
-    Rate1X1PixelsEXT = unchecked((uint)0x96A6),
-    Rate1X2PixelsEXT = unchecked((uint)0x96A7),
-    Rate2X1PixelsEXT = unchecked((uint)0x96A8),
-    Rate2X2PixelsEXT = unchecked((uint)0x96A9),
-    Rate1X4PixelsEXT = unchecked((uint)0x96AA),
-    Rate4X1PixelsEXT = unchecked((uint)0x96AB),
-    Rate4X2PixelsEXT = unchecked((uint)0x96AC),
-    Rate2X4PixelsEXT = unchecked((uint)0x96AD),
-    Rate4X4PixelsEXT = unchecked((uint)0x96AE)
+    X1X1PixelsEXT = unchecked((uint)0x96A6),
+    X1X2PixelsEXT = unchecked((uint)0x96A7),
+    X2X1PixelsEXT = unchecked((uint)0x96A8),
+    X2X2PixelsEXT = unchecked((uint)0x96A9),
+    X1X4PixelsEXT = unchecked((uint)0x96AA),
+    X4X1PixelsEXT = unchecked((uint)0x96AB),
+    X4X2PixelsEXT = unchecked((uint)0x96AC),
+    X2X4PixelsEXT = unchecked((uint)0x96AD),
+    X4X4PixelsEXT = unchecked((uint)0x96AE)
 }

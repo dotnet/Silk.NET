@@ -298,8 +298,9 @@ public class SilkTouchGenerator(
         }
 
         // Output the generated bindings
-        logger.LogDebug(
-            "Bindings generation completed in {} seconds, writing to disk...",
+        logger.LogInformation(
+            "Bindings generation for {} completed in {} seconds, writing to disk...",
+            key,
             sw.Elapsed.TotalSeconds
         );
         return bindings;
@@ -333,7 +334,8 @@ public class SilkTouchGenerator(
             ?? throw new InvalidOperationException("Config was null");
         await outputWriter.OutputAsync(key, job, result, ct);
         logger.LogInformation(
-            "Wrote generated bindings to disk, generation completed in {} seconds.",
+            "Wrote generated bindings to disk for {}, generation completed in {} seconds.",
+            key,
             sw.Elapsed.TotalSeconds
         );
         return result.Diagnostics;

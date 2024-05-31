@@ -103,6 +103,25 @@ public class FunctionTransformer(
         );
         foreach (var function in functions)
         {
+            // We can't handle varargs right now
+            if (
+                function.ParameterList.Parameters.Any(x =>
+                    x.Identifier.IsKind(SyntaxKind.ArgListKeyword)
+                )
+            )
+            {
+                logger.LogWarning(
+                    "Varargs are not supported yet, excluding function: {}",
+                    function
+                        .WithBody(null)
+                        .WithExpressionBody(null)
+                        .WithSemicolonToken(Token(SyntaxKind.SemicolonToken))
+                        .NormalizeWhitespace(eol: "\n")
+                        .ToFullString()
+                );
+                continue;
+            }
+
             // Get the discriminator string to determine whether it conflicts. Note that we set the return type
             // to null as overloads that differ only by return type aren't acceptable. However, we do need a
             // discriminator that does include the return type so we can determine whether the function has gone

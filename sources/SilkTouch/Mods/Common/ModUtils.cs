@@ -560,6 +560,26 @@ public static class ModUtils
                 or SyntaxKind.SByteKeyword;
 
     /// <summary>
+    /// Gets all of the identifiers within the given identifiable member syntax.
+    /// </summary>
+    /// <param name="syn">The member with the identifiers.</param>
+    /// <returns>The identifiers.</returns>
+    public static IEnumerable<string> MemberIdentifiers(this MemberDeclarationSyntax syn) =>
+        syn switch
+        {
+            BaseFieldDeclarationSyntax fld
+                => fld.Declaration.Variables.Select(x => x.Identifier.ToString()),
+            MethodDeclarationSyntax meth => [meth.Identifier.ToString()],
+            BaseNamespaceDeclarationSyntax nsd => [nsd.Name.ToString()],
+            EventDeclarationSyntax ev => [ev.Identifier.ToString()],
+            PropertyDeclarationSyntax prop => [prop.Identifier.ToString()],
+            BaseTypeDeclarationSyntax typ => [typ.Identifier.ToString()],
+            DelegateDeclarationSyntax del => [del.Identifier.ToString()],
+            EnumMemberDeclarationSyntax em => [em.Identifier.ToString()],
+            _ => []
+        };
+
+    /// <summary>
     /// Gets an attribute list representing a <see cref="System.Runtime.CompilerServices.MethodImplAttribute"/> with
     /// <see cref="System.Runtime.CompilerServices.MethodImplOptions.AggressiveInlining"/> and
     /// <see cref="System.Runtime.CompilerServices.MethodImplOptions.AggressiveOptimization"/> set.

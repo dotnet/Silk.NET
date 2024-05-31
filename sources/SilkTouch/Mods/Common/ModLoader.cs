@@ -23,6 +23,7 @@ public class ModLoader
             nameof(AddVTables) => typeof(AddVTables),
             nameof(AddApiProfiles) => typeof(AddApiProfiles),
             nameof(MixKhronosData) => typeof(MixKhronosData),
+            nameof(TransformHandles) => typeof(TransformHandles),
             _ => null
         };
 }

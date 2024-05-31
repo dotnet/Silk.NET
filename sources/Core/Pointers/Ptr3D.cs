@@ -376,7 +376,7 @@ namespace Silk.NET.Core
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
-        public static implicit operator Ref2D(Ptr3D ptr) => ptr;
+        public static implicit operator Ref2D(Ptr3D ptr) => ptr.Native;
 
         /// <summary>
         /// Creates a <see cref="Ptr3D"/> from a <see cref="Ref2D"/>

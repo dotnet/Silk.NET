@@ -18,7 +18,7 @@ public class UnixStdIncludeResolver : IStdIncludeResolver
     /// <inheritdoc cref="GetStandardIncludes" />
     protected virtual IEnumerable<string> CoreGetStandardIncludes()
     {
-        yield return "/usr/include";
-        yield return "/usr/local/include";
+        yield return "-I/usr/include";
+        yield return "-I/usr/local/include";
     }
 }

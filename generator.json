@@ -29,28 +29,30 @@
         "!win"
       ]
     },
-    "GLFW": {
+    "SDL": {
       "ClangSharpResponseFiles": [
-        "eng/silktouch/glfw/**/generate.rsp"
+        "eng/silktouch/sdl/**/generate.rsp"
       ],
-      "InputSourceRoot": "sources/GLFW",
-      "InputTestRoot": "tests/GLFW",
-      "OutputSourceRoot": "sources/GLFW",
-      "OutputTestRoot": "tests/GLFW",
+      "InputSourceRoot": "sources/SDL",
+      "InputTestRoot": "tests/SDL",
+      "OutputSourceRoot": "sources/SDL",
+      "OutputTestRoot": "tests/SDL",
       "Solution": "Silk.NET.sln",
       "Mods": [
         "AddIncludes",
-        "AddOpaqueStructs",
+        "TransformHandles",
         "TransformFunctions",
         "PrettifyNames",
         "AddVTables"
       ],
-      "AddOpaqueStructs": {
-        "Names": [
-          "GLFWcursor",
-          "GLFWmonitor",
-          "GLFWwindow"
-        ]
+      "TransformHandles": {
+        "AssumeMissingTypesOpaque": true,
+        "UseDSL": true
+      },
+      "TransformFunctions": {
+        "BoolTypes": {
+          "SDL_bool": null
+        }
       }
     },
     "OpenGL": {

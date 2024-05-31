@@ -85,4 +85,11 @@ public class NameTests : NameTrimmer
             );
         }
     }
+
+    [Test]
+    public void RegressionNamespacePrefixDetermination() =>
+        Assert.That(
+            NameUtils.FindCommonPrefix(["Silk.NET.SDL", "Silk.NET.SDL"], true, false, true),
+            Is.EqualTo("Silk.NET.SDL")
+        );
 }
