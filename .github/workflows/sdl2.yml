@@ -106,13 +106,13 @@ jobs:
             git config --global --add safe.directory /github/workspace
             git config --global --add safe.directory /github/workspace/build/submodules/SDL
 
-            ${{ matrix.env.nuke_invoke }} SDL2
+            ${{ matrix.env.nuke_invoke }} BuildLibSilkDroid SDL2
         env:
           PUSHABLE_GITHUB_TOKEN: ${{ secrets.PUSHABLE_GITHUB_TOKEN }}
 
       - name: Build SDL2
         if: runner.os != 'Linux'
-        run: ${{ matrix.env.nuke_invoke }} SDL2
+        run: ${{ matrix.env.nuke_invoke }} BuildLibSilkDroid SDL2
         env:
           PUSHABLE_GITHUB_TOKEN: ${{ secrets.PUSHABLE_GITHUB_TOKEN }}
 
