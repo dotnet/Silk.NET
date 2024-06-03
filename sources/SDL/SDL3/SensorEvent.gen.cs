@@ -21,14 +21,8 @@ public partial struct SensorEvent
     public uint Which;
 
     [NativeTypeName("float[6]")]
-    public _data_e__FixedBuffer Data;
+    public SensorEventData Data;
 
     [NativeTypeName("Uint64")]
     public ulong SensorTimestamp;
-
-    [InlineArray(6)]
-    public partial struct _data_e__FixedBuffer
-    {
-        public float e0;
-    }
 }

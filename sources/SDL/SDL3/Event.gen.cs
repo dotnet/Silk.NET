@@ -115,11 +115,5 @@ public partial struct Event
 
     [FieldOffset(0)]
     [NativeTypeName("Uint8[128]")]
-    public _padding_e__FixedBuffer Padding;
-
-    [InlineArray(128)]
-    public partial struct _padding_e__FixedBuffer
-    {
-        public byte e0;
-    }
+    public EventPadding Padding;
 }

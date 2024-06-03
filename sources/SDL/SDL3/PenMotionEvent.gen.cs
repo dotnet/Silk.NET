@@ -35,11 +35,5 @@ public partial struct PenMotionEvent
     public float Y;
 
     [NativeTypeName("float[6]")]
-    public _axes_e__FixedBuffer Axes;
-
-    [InlineArray(6)]
-    public partial struct _axes_e__FixedBuffer
-    {
-        public float e0;
-    }
+    public PenMotionEventAxes Axes;
 }

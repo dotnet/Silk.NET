@@ -13,11 +13,8 @@ using static Silk.NET.SDL.TransferCharacteristics;
 
 namespace Silk.NET.SDL;
 
-public partial struct HapticDirection
+[InlineArray(6)]
+public partial struct PenButtonEventAxes
 {
-    [NativeTypeName("Uint8")]
-    public byte Type;
-
-    [NativeTypeName("Sint32[3]")]
-    public HapticDirectionDir Dir;
+    public float E0;
 }

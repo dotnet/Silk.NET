@@ -4,17 +4,12 @@
 // Original source is Copyright (C) 1997-2024 Sam Lantinga. Licensed under the zlib license.
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static Silk.NET.SDL.ChromaLocation;
-using static Silk.NET.SDL.ColorPrimaries;
-using static Silk.NET.SDL.ColorRange;
-using static Silk.NET.SDL.ColorType;
-using static Silk.NET.SDL.MatrixCoefficients;
-using static Silk.NET.SDL.TransferCharacteristics;
 
 namespace Silk.NET.SDL;
 
-public partial struct Guid
+public partial struct GamepadBindingInputAxis
 {
-    [NativeTypeName("Uint8[16]")]
-    public GuidData Data;
+    public int Axis;
+    public int AxisMin;
+    public int AxisMax;
 }

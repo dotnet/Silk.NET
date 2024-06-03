@@ -17,13 +17,7 @@ public unsafe partial struct RendererInfo
     public int NumTextureFormats;
 
     [NativeTypeName("SDL_PixelFormatEnum[16]")]
-    public _texture_formats_e__FixedBuffer TextureFormats;
+    public RendererInfoTextureFormats TextureFormats;
     public int MaxTextureWidth;
     public int MaxTextureHeight;
-
-    [InlineArray(16)]
-    public partial struct _texture_formats_e__FixedBuffer
-    {
-        public PixelFormatEnum e0;
-    }
 }

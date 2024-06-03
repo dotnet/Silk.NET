@@ -3,6 +3,7 @@
 
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.CodeAnalysis;
@@ -115,6 +116,11 @@ public class TransformHandles(IOptionsSnapshot<TransformHandles.Config> config) 
             if (!_declaredTypes.TryGetValue(_currentScope, out var v))
             {
                 _declaredTypes[_currentScope] = v = [];
+            }
+
+            if (identifier.ToString() == "SDL_MessageBoxColorScheme_colors")
+            {
+                Debugger.Break();
             }
 
             v.Add(

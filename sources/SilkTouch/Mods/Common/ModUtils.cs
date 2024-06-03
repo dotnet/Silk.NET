@@ -111,7 +111,7 @@ public static class ModUtils
         SyntaxTokenList modifiers,
         TypeParameterListSyntax? tParams,
         string identifier,
-        ParameterListSyntax? @params,
+        BaseParameterListSyntax? @params,
         TypeSyntax? returnType
     ) =>
         (modifiers.Any(SyntaxKind.StaticKeyword) ? "static " : string.Empty)
@@ -123,7 +123,7 @@ public static class ModUtils
     /// </summary>
     /// <param name="param">The parameter.</param>
     /// <returns>The discriminator string.</returns>
-    public static string DiscrimStr(ParameterSyntax param) =>
+    public static string DiscrimStr(BaseParameterSyntax param) =>
         DiscrimStr(param.Modifiers, param.Type);
 
     /// <summary>

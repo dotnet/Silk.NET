@@ -10,11 +10,5 @@ namespace Silk.NET.SDL;
 public partial struct MessageBoxColorScheme
 {
     [NativeTypeName("SDL_MessageBoxColor[5]")]
-    public _colors_e__FixedBuffer Colors;
-
-    [InlineArray(5)]
-    public partial struct _colors_e__FixedBuffer
-    {
-        public MessageBoxColor e0;
-    }
+    public MessageBoxColorSchemeColors Colors;
 }

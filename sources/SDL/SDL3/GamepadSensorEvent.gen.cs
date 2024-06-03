@@ -38,14 +38,8 @@ public partial struct GamepadSensorEvent
     public int Sensor;
 
     [NativeTypeName("float[3]")]
-    public _data_e__FixedBuffer Data;
+    public GamepadSensorEventData Data;
 
     [NativeTypeName("Uint64")]
     public ulong SensorTimestamp;
-
-    [InlineArray(3)]
-    public partial struct _data_e__FixedBuffer
-    {
-        public float e0;
-    }
 }

@@ -24,6 +24,7 @@ public class ModLoader
             nameof(AddApiProfiles) => typeof(AddApiProfiles),
             nameof(MixKhronosData) => typeof(MixKhronosData),
             nameof(TransformHandles) => typeof(TransformHandles),
+            nameof(ExtractNestedTyping) => typeof(ExtractNestedTyping),
             _ => null
         };
 }

@@ -26,56 +26,20 @@ public partial struct HapticCondition
     public ushort Interval;
 
     [NativeTypeName("Uint16[3]")]
-    public _right_sat_e__FixedBuffer RightSat;
+    public HapticConditionRightSat RightSat;
 
     [NativeTypeName("Uint16[3]")]
-    public _left_sat_e__FixedBuffer LeftSat;
+    public HapticConditionLeftSat LeftSat;
 
     [NativeTypeName("Sint16[3]")]
-    public _right_coeff_e__FixedBuffer RightCoeff;
+    public HapticConditionRightCoeff RightCoeff;
 
     [NativeTypeName("Sint16[3]")]
-    public _left_coeff_e__FixedBuffer LeftCoeff;
+    public HapticConditionLeftCoeff LeftCoeff;
 
     [NativeTypeName("Uint16[3]")]
-    public _deadband_e__FixedBuffer Deadband;
+    public HapticConditionDeadband Deadband;
 
     [NativeTypeName("Sint16[3]")]
-    public _center_e__FixedBuffer Center;
-
-    [InlineArray(3)]
-    public partial struct _right_sat_e__FixedBuffer
-    {
-        public ushort e0;
-    }
-
-    [InlineArray(3)]
-    public partial struct _left_sat_e__FixedBuffer
-    {
-        public ushort e0;
-    }
-
-    [InlineArray(3)]
-    public partial struct _right_coeff_e__FixedBuffer
-    {
-        public short e0;
-    }
-
-    [InlineArray(3)]
-    public partial struct _left_coeff_e__FixedBuffer
-    {
-        public short e0;
-    }
-
-    [InlineArray(3)]
-    public partial struct _deadband_e__FixedBuffer
-    {
-        public ushort e0;
-    }
-
-    [InlineArray(3)]
-    public partial struct _center_e__FixedBuffer
-    {
-        public short e0;
-    }
+    public HapticConditionCenter Center;
 }

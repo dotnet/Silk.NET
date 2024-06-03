@@ -25,7 +25,7 @@ public unsafe partial struct PixelFormat
     public byte BytesPerPixel;
 
     [NativeTypeName("Uint8[2]")]
-    public _padding_e__FixedBuffer Padding;
+    public PixelFormatPadding Padding;
 
     [NativeTypeName("Uint32")]
     public uint Rmask;
@@ -66,10 +66,4 @@ public unsafe partial struct PixelFormat
 
     [NativeTypeName("struct SDL_PixelFormat *")]
     public PixelFormat* Next;
-
-    [InlineArray(2)]
-    public partial struct _padding_e__FixedBuffer
-    {
-        public byte e0;
-    }
 }
