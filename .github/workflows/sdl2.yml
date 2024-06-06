@@ -24,7 +24,7 @@ jobs:
             nuke_invoke: ./build.sh
           - os: windows-2022
             name: Windows
-            nuke_invoke: ./build.cmd --native BuildLibSilkDroid
+            nuke_invoke: ./build.cmd --native=true BuildLibSilkDroid
           - os: macos-14
             name: Darwin
             nuke_invoke: ./build.sh
