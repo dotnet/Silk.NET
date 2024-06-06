@@ -87,7 +87,7 @@ partial class Build {
                         envVars["ANDROID_NDK_HOME"] = ndk;
                     }
 
-                    using var process = StartShell($".{Path.PathSeparator}gradlew build", silkDroid, envVars);
+                    using var process = StartShell($".{Path.DirectorySeparatorChar}gradlew build", silkDroid, envVars);
                     process.AssertZeroExitCode();
                     var ret = process.Output;
                     CopyFile
