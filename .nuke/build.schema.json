@@ -30,6 +30,10 @@
           "type": "boolean",
           "description": "If specified, ignores any generated solution present and builds the entire project"
         },
+        "AndroidHomeOverride": {
+          "type": "string",
+          "description": "Android home. Will be determined from dotnet if not provided"
+        },
         "Configuration": {
           "type": "string",
           "description": "Configuration to build - Default is 'Debug' (local) or 'Release' (server)"
