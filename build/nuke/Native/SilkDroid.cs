@@ -42,6 +42,12 @@ partial class Build {
                 return AndroidHomeValue;
             }
 
+            if ((Environment.GetEnvironmentVariable("ANDROID_HOME") ?? Environment.GetEnvironmentVariable("ANDROID_SDK_ROOT")) is {} sdk)
+            {
+                AndroidHomeOverride = sdk;
+                return sdk;
+            }
+
             var utils = RootDirectory / "build" / "utilities";
             DotNet($"build \"{utils / "android_probe.proj"}\" /t:GetAndroidJar");
             AndroidHomeValue = (AbsolutePath) File.ReadAllText(utils / "android.jar.gen.txt") / ".." / ".." / "..";
@@ -86,6 +92,7 @@ partial class Build {
 
                     var envVars = CreateEnvVarDictionary();
                     envVars["ANDROID_HOME"] = AndroidHome;
+                    envVars["ANDROID_SDK_ROOT"] = AndroidHome;
 
                     foreach (var ndk in Directory.GetDirectories((AbsolutePath) AndroidHome / "ndk")
                                  .OrderByDescending(x => Version.Parse(Path.GetFileName(x))))
