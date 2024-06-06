@@ -29,9 +29,7 @@ using static Nuke.Common.Tools.GitHub.GitHubTasks;
 partial class Build {
     [Nuke.Common.Parameter("Build native code")] readonly bool Native;
 
-    [CanBeNull] string AndroidHomeValue;
-
-    [Nuke.Common.Parameter("Android home. Will be determined from dotnet if not provided.")] readonly string AndroidHomeOverride;
+    [Nuke.Common.Parameter("Android home. Will be determined from dotnet if not provided.")] [CanBeNull] string AndroidHomeValue;
 
     static string JobsArg => string.IsNullOrWhiteSpace(GitHubActions.Instance?.Job)
         ? $" -j{Jobs}"
