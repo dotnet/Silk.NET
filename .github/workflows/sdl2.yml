@@ -47,7 +47,7 @@ jobs:
           java-version: 21
           distribution: "temurin"
       - name: Setup Android Environment
-        uses: android-actions/setup-android@v2
+        uses: android-actions/setup-android@v3
         if: runner.os == 'Windows'
       - name: Install Android Platforms
         if: runner.os == 'Windows'
