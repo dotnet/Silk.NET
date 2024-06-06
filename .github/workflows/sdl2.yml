@@ -10,6 +10,7 @@ on:
       - "build/cmake/*"
       - build/nuke/Native/Core.cs
       - build/nuke/Native/SDL2.cs
+      - build/nuke/Native/SilkDroid.cs
       - .github/workflows/sdl2.yml
 jobs:
   Build:
