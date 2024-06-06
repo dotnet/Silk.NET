@@ -15,26 +15,26 @@ public unsafe partial struct StorageInterface
     public ThreadFunction Ready;
 
     [NativeTypeName("int (*)(void *, const char *, SDL_EnumerateDirectoryCallback, void *)")]
-    public PfnVvBvSDLEnumerateDirectoryCallbackVvI Enumerate;
+    public StorageInterfaceEnumerate Enumerate;
 
     [NativeTypeName("int (*)(void *, const char *, SDL_PathInfo *)")]
-    public PfnVvBvSDLPathInfovI Info;
+    public StorageInterfaceInfo Info;
 
     [NativeTypeName("int (*)(void *, const char *, void *, Uint64)")]
-    public PfnVvBvVvUi64I ReadFile;
+    public StorageInterfaceFunction1 ReadFile;
 
     [NativeTypeName("int (*)(void *, const char *, const void *, Uint64)")]
-    public PfnVvBvVvUi64I WriteFile;
+    public StorageInterfaceFunction1 WriteFile;
 
     [NativeTypeName("int (*)(void *, const char *)")]
-    public PfnVvBvI Mkdir;
+    public StorageInterfaceFunction2 Mkdir;
 
     [NativeTypeName("int (*)(void *, const char *)")]
-    public PfnVvBvI Remove;
+    public StorageInterfaceFunction2 Remove;
 
     [NativeTypeName("int (*)(void *, const char *, const char *)")]
     public EnumerateDirectoryCallback Rename;
 
     [NativeTypeName("Uint64 (*)(void *)")]
-    public PfnVvUi64 SpaceRemaining;
+    public StorageInterfaceSpaceRemaining SpaceRemaining;
 }

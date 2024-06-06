@@ -1,22 +1,21 @@
 namespace Silk.NET.SDL;
 
-[Transformed]
-public readonly unsafe struct PfnVvBvSDLEnumerateDirectoryCallbackVvI : IDisposable
+public readonly unsafe struct StorageInterfaceEnumerate : IDisposable
 {
     private readonly void* Pointer;
     public delegate* unmanaged<void*, sbyte*, EnumerateDirectoryCallback, void*, int> Handle =>
         (delegate* unmanaged<void*, sbyte*, EnumerateDirectoryCallback, void*, int>)Pointer;
 
-    public PfnVvBvSDLEnumerateDirectoryCallbackVvI(
+    public StorageInterfaceEnumerate(
         delegate* unmanaged<void*, sbyte*, EnumerateDirectoryCallback, void*, int> ptr
     ) => Pointer = ptr;
 
-    public PfnVvBvSDLEnumerateDirectoryCallbackVvI(VvBvSDLEnumerateDirectoryCallbackVvIProc proc) =>
+    public StorageInterfaceEnumerate(StorageInterfaceEnumerateDelegate proc) =>
         Pointer = SilkMarshal.DelegateToPtr(proc);
 
     public void Dispose() => SilkMarshal.Free(Pointer);
 
-    public static implicit operator PfnVvBvSDLEnumerateDirectoryCallbackVvI(
+    public static implicit operator StorageInterfaceEnumerate(
         delegate* unmanaged<void*, sbyte*, EnumerateDirectoryCallback, void*, int> pfn
     ) => new(pfn);
 
@@ -25,6 +24,6 @@ public readonly unsafe struct PfnVvBvSDLEnumerateDirectoryCallbackVvI : IDisposa
         sbyte*,
         EnumerateDirectoryCallback,
         void*,
-        int>(PfnVvBvSDLEnumerateDirectoryCallbackVvI pfn) =>
+        int>(StorageInterfaceEnumerate pfn) =>
         (delegate* unmanaged<void*, sbyte*, EnumerateDirectoryCallback, void*, int>)pfn.Pointer;
 }

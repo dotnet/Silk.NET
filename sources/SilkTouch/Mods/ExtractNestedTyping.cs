@@ -216,7 +216,8 @@ public partial class ExtractNestedTyping : Mod
                 FunctionPointerTypeSyntax Pfn,
                 List<string> Names,
                 HashSet<string> ReferencingFileDirs,
-                HashSet<string> ReferencingNamespaces
+                HashSet<string> ReferencingNamespaces,
+                List<(string ParentSymbol, string Symbol, int? SymbolIndex)>? UsageHints
             )
         > _fnPtrs = new();
         public string? File { get; set; }
@@ -263,12 +264,51 @@ public partial class ExtractNestedTyping : Mod
             );
             if (!_fnPtrs.TryGetValue(discrim, out var info))
             {
-                _fnPtrs[discrim] = info = (node, [], [], []);
+                _fnPtrs[discrim] = info = (node, [], [], [], null);
             }
 
             if (identifier is not null)
             {
                 info.Names.Add(identifier);
+            }
+            else if (info.Names.Count == 0)
+            {
+                var declarator = ogNode.Ancestors().First(x => x is not TypeSyntax);
+                (string, string, int?)? addUsage = declarator switch
+                {
+                    ParameterSyntax { Parent.Parent: MethodDeclarationSyntax useMeth } psyn
+                        when useMeth.AttributeLists.GetNativeFunctionInfo(out _, out var ep, out _)
+                        => (
+                            ep ?? useMeth.Identifier.ToString(),
+                            psyn.Identifier.ToString(),
+                            useMeth.ParameterList.Parameters.IndexOf(psyn)
+                        ),
+                    VariableDeclarationSyntax
+                    {
+                        Parent: FieldDeclarationSyntax { Parent: BaseTypeDeclarationSyntax tdecl },
+                        Variables.Count: 1
+                    } vardec
+                        => (
+                            tdecl.Identifier.ToString(),
+                            vardec.Variables[0].Identifier.ToString(),
+                            tdecl
+                                .DescendantNodes()
+                                .OfType<FieldDeclarationSyntax>()
+                                .Select((x, i) => (x.Declaration, i))
+                                .First(x => x.Declaration == vardec)
+                                .i
+                        ),
+                    _ => null
+                };
+
+                if (addUsage is { } v)
+                {
+                    if (info.UsageHints is null)
+                    {
+                        _fnPtrs[discrim] = info = (node, [], [], [], []);
+                    }
+                    info.UsageHints.Add((v.Item1, v.Item2, v.Item3));
+                }
             }
 
             info.ReferencingNamespaces.Add(ogNode.NamespaceFromSyntaxNode());
@@ -322,7 +362,8 @@ public partial class ExtractNestedTyping : Mod
                 FunctionPointerTypeSyntax Pfn,
                 List<string> Names,
                 HashSet<string> ReferencingFileDirs,
-                HashSet<string> ReferencingNamespaces
+                HashSet<string> ReferencingNamespaces,
+                List<(string ParentSymbol, string Symbol, int? SymbolIdx)>? UsageHints
             ) info
         )
         {
@@ -331,6 +372,7 @@ public partial class ExtractNestedTyping : Mod
                 return;
             }
 
+            // 1. Try to find an identifier for this function pointer.
             string? identifier = null;
             foreach (var iden in info.Names.Distinct().Order())
             {
@@ -351,6 +393,63 @@ public partial class ExtractNestedTyping : Mod
                 }
             }
 
+            // 2. If there's no identifier, do we have usage hints that we can use to infer a member name?
+            var transformed = identifier is null; // <-- generated names need to be non-determinant for PrettifyNames
+            if (identifier is null)
+            {
+                if (
+                    info.UsageHints?.Select((x, i) => (x, i)).Distinct().LastOrDefault() is
+
+                    ({ Item1: not null, Item2: not null } kvp, 0)
+                )
+                {
+                    transformed = false;
+                    identifier = $"{kvp.Item1}_{kvp.Item2}";
+                }
+                else if (
+                    info
+                        .UsageHints?.DistinctBy(x => x.Item2)
+                        .Select((x, i) => (x.Item2, i))
+                        .LastOrDefault() is
+
+                    ({ } fieldOrParam, 0)
+                )
+                {
+                    identifier = $"{fieldOrParam} function".Pascalize();
+                }
+                else if (
+                    info.UsageHints?.DistinctBy(x => x.Item1).Count(x => x.SymbolIdx is not null)
+                    == 1
+                )
+                {
+                    // So this is essentially so that any function pointer signature that is reused throughout a struct
+                    // and is only present in that struct, we name the function as SomeStructFunctionN where N is the
+                    // index of that function pointer signature amongst all the unique function pointer signatures
+                    // declared in that struct. This is the only way I could think of to make us maximally resistant to
+                    // breaking changes - if we did alphabetical ordering, introducing a new field at the end of a
+                    // struct (which technically is ABI safe to do so long as that struct is only accessed through a
+                    // pointer) could change N. This isn't completely fool-proof either, but I'm just trying to mitigate
+                    // as many potential user complaints as possible.
+                    var functionNumber =
+                        _fnPtrs
+                            .Where(x =>
+                                // 1. For each function pointer signature that is uniquely defined by this struct
+                                x.Value.UsageHints?[0].ParentSymbol
+                                    == info.UsageHints[0].ParentSymbol
+                                && x.Value.UsageHints?.DistinctBy(y => y.Item2).Count() != 1
+                                && x.Value.UsageHints?.DistinctBy(y => y.Item1)
+                                    .Count(y => y.SymbolIndex is not null) == 1
+                            )
+                            // 2. Order them by the order in which they're declared by a field
+                            .OrderBy(x => x.Value.UsageHints?.Min(y => y.SymbolIndex))
+                            // 3. And get the index of our function pointer signature amongst that list
+                            .Select((x, i) => (x, i))
+                            .First(x => x.x.Key == discrim)
+                            .i + 1;
+                    identifier = $"{info.UsageHints[0].ParentSymbol} function {functionNumber}";
+                }
+            }
+
             var rawPfn = info.Pfn;
             Dictionary<string, string>? replacements = null;
             foreach (
@@ -366,15 +465,6 @@ public partial class ExtractNestedTyping : Mod
                 {
                     AddFunctionPointerType(dst, id, v);
                     (replacements ??= []).Add(id, dst[id].Pfn.Identifier.ToString());
-                    foreach (var ns in dst[id].ReferencingNamespaces)
-                    {
-                        info.ReferencingNamespaces.Add(ns);
-                    }
-
-                    foreach (var dir in dst[id].ReferencingFileDirs)
-                    {
-                        info.ReferencingFileDirs.Add(dir);
-                    }
                 }
             }
 
@@ -394,8 +484,8 @@ public partial class ExtractNestedTyping : Mod
 
             var (newName, delegateName) = identifier is null
                 ? GetGeneratedPfnName(rawPfn, dst)
-                : (identifier, $"{identifier}_delegate");
-            var attrLists = identifier is null
+                : (identifier, transformed ? $"{identifier}Delegate" : $"{identifier}_delegate");
+            var attrLists = transformed
                 ? SingletonList(
                     AttributeList(
                         // non-determinant identifier

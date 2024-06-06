@@ -16,16 +16,16 @@ namespace Silk.NET.SDL;
 public unsafe partial struct IOStreamInterface
 {
     [NativeTypeName("Sint64 (*)(void *)")]
-    public PfnVvI64 Size;
+    public IOStreamInterfaceSize Size;
 
     [NativeTypeName("Sint64 (*)(void *, Sint64, int)")]
-    public PfnVvI64II64 Seek;
+    public IOStreamInterfaceSeek Seek;
 
     [NativeTypeName("size_t (*)(void *, void *, size_t, SDL_IOStatus *)")]
-    public PfnVvVvNuintSdlioStatusvNuint Read;
+    public IOStreamInterfaceFunction1 Read;
 
     [NativeTypeName("size_t (*)(void *, const void *, size_t, SDL_IOStatus *)")]
-    public PfnVvVvNuintSdlioStatusvNuint Write;
+    public IOStreamInterfaceFunction1 Write;
 
     [NativeTypeName("int (*)(void *)")]
     public ThreadFunction Close;

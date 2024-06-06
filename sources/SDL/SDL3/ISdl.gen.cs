@@ -6189,7 +6189,7 @@ public unsafe partial interface ISdl
             [NativeTypeName("SDL_PropertiesID")] uint props,
             [NativeTypeName("const char *")] sbyte* name,
             void* value,
-            [NativeTypeName("void (*)(void *, void *)")] PfnVvVvV cleanup,
+            [NativeTypeName("void (*)(void *, void *)")] SetPropertyWithCleanupCleanup cleanup,
             void* userdata
         );
 
@@ -6199,7 +6199,7 @@ public unsafe partial interface ISdl
             [NativeTypeName("SDL_PropertiesID")] uint props,
             [NativeTypeName("const char *")] Ref<sbyte> name,
             Ref value,
-            [NativeTypeName("void (*)(void *, void *)")] PfnVvVvV cleanup,
+            [NativeTypeName("void (*)(void *, void *)")] SetPropertyWithCleanupCleanup cleanup,
             Ref userdata
         );
 
@@ -12997,7 +12997,7 @@ public unsafe partial interface ISdl
         [NativeTypeName("SDL_PropertiesID")] uint props,
         [NativeTypeName("const char *")] sbyte* name,
         void* value,
-        [NativeTypeName("void (*)(void *, void *)")] PfnVvVvV cleanup,
+        [NativeTypeName("void (*)(void *, void *)")] SetPropertyWithCleanupCleanup cleanup,
         void* userdata
     );
 
@@ -13007,7 +13007,7 @@ public unsafe partial interface ISdl
         [NativeTypeName("SDL_PropertiesID")] uint props,
         [NativeTypeName("const char *")] Ref<sbyte> name,
         Ref value,
-        [NativeTypeName("void (*)(void *, void *)")] PfnVvVvV cleanup,
+        [NativeTypeName("void (*)(void *, void *)")] SetPropertyWithCleanupCleanup cleanup,
         Ref userdata
     );
 

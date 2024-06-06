@@ -50,17 +50,17 @@ public unsafe partial struct VirtualJoystickDesc
     public ClipboardCleanupCallback Update;
 
     [NativeTypeName("void (*)(void *, int)")]
-    public PfnVvIV SetPlayerIndex;
+    public VirtualJoystickDescSetPlayerIndex SetPlayerIndex;
 
     [NativeTypeName("int (*)(void *, Uint16, Uint16)")]
-    public PfnVvUsUsI Rumble;
+    public VirtualJoystickDescFunction1 Rumble;
 
     [NativeTypeName("int (*)(void *, Uint16, Uint16)")]
-    public PfnVvUsUsI RumbleTriggers;
+    public VirtualJoystickDescFunction1 RumbleTriggers;
 
     [NativeTypeName("int (*)(void *, Uint8, Uint8, Uint8)")]
-    public PfnVvUbUbUbI SetLED;
+    public VirtualJoystickDescSetLED SetLED;
 
     [NativeTypeName("int (*)(void *, const void *, int)")]
-    public PfnVvVvII SendEffect;
+    public VirtualJoystickDescSendEffect SendEffect;
 }
