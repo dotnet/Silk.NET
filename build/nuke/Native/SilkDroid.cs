@@ -36,6 +36,12 @@ partial class Build {
                 return AndroidHomeValue;
             }
 
+            if (AndroidHomeOverride is not null)
+            {
+                AndroidHomeValue = AndroidHomeOverride;
+                return AndroidHomeValue;
+            }
+
             var utils = RootDirectory / "build" / "utilities";
             DotNet($"build \"{utils / "android_probe.proj"}\" /t:GetAndroidJar");
             AndroidHomeValue = (AbsolutePath) File.ReadAllText(utils / "android.jar.gen.txt") / ".." / ".." / "..";
