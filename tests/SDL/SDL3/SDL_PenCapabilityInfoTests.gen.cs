@@ -15,7 +15,7 @@ public static unsafe partial class SDL_PenCapabilityInfoTests
     [Test]
     public static void IsBlittableTest()
     {
-        Assert.That(Marshal.SizeOf<SDL_PenCapabilityInfo>(), Is.EqualTo(sizeof(PenCapabilityInfo)));
+        Assert.That(Marshal.SizeOf<PenCapabilityInfo>(), Is.EqualTo(sizeof(PenCapabilityInfo)));
     }
 
     /// <summary>Validates that the <see cref = "SDL_PenCapabilityInfo"/> struct has the right <see cref = "LayoutKind"/>.</summary>

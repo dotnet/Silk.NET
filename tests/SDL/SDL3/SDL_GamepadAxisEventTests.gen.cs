@@ -15,7 +15,7 @@ public static unsafe partial class SDL_GamepadAxisEventTests
     [Test]
     public static void IsBlittableTest()
     {
-        Assert.That(Marshal.SizeOf<SDL_GamepadAxisEvent>(), Is.EqualTo(sizeof(GamepadAxisEvent)));
+        Assert.That(Marshal.SizeOf<GamepadAxisEvent>(), Is.EqualTo(sizeof(GamepadAxisEvent)));
     }
 
     /// <summary>Validates that the <see cref = "SDL_GamepadAxisEvent"/> struct has the right <see cref = "LayoutKind"/>.</summary>

@@ -15,7 +15,7 @@ public static unsafe partial class SDL_HapticLeftRightTests
     [Test]
     public static void IsBlittableTest()
     {
-        Assert.That(Marshal.SizeOf<SDL_HapticLeftRight>(), Is.EqualTo(sizeof(HapticLeftRight)));
+        Assert.That(Marshal.SizeOf<HapticLeftRight>(), Is.EqualTo(sizeof(HapticLeftRight)));
     }
 
     /// <summary>Validates that the <see cref = "SDL_HapticLeftRight"/> struct has the right <see cref = "LayoutKind"/>.</summary>

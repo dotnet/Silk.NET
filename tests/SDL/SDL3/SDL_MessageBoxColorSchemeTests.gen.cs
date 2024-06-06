@@ -16,7 +16,7 @@ public static unsafe partial class SDL_MessageBoxColorSchemeTests
     public static void IsBlittableTest()
     {
         Assert.That(
-            Marshal.SizeOf<SDL_MessageBoxColorScheme>(),
+            Marshal.SizeOf<MessageBoxColorScheme>(),
             Is.EqualTo(sizeof(MessageBoxColorScheme))
         );
     }

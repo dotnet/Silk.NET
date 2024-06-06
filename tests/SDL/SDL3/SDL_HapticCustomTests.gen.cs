@@ -16,7 +16,7 @@ public static unsafe partial class SDL_HapticCustomTests
     [Test]
     public static void IsBlittableTest()
     {
-        Assert.That(Marshal.SizeOf<SDL_HapticCustom>(), Is.EqualTo(sizeof(HapticCustom)));
+        Assert.That(Marshal.SizeOf<HapticCustom>(), Is.EqualTo(sizeof(HapticCustom)));
     }
 
     /// <summary>Validates that the <see cref = "SDL_HapticCustom"/> struct has the right <see cref = "LayoutKind"/>.</summary>

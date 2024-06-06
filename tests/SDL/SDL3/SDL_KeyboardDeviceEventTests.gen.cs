@@ -15,10 +15,7 @@ public static unsafe partial class SDL_KeyboardDeviceEventTests
     [Test]
     public static void IsBlittableTest()
     {
-        Assert.That(
-            Marshal.SizeOf<SDL_KeyboardDeviceEvent>(),
-            Is.EqualTo(sizeof(KeyboardDeviceEvent))
-        );
+        Assert.That(Marshal.SizeOf<KeyboardDeviceEvent>(), Is.EqualTo(sizeof(KeyboardDeviceEvent)));
     }
 
     /// <summary>Validates that the <see cref = "SDL_KeyboardDeviceEvent"/> struct has the right <see cref = "LayoutKind"/>.</summary>

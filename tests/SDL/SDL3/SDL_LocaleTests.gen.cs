@@ -16,7 +16,7 @@ public static unsafe partial class SDL_LocaleTests
     [Test]
     public static void IsBlittableTest()
     {
-        Assert.That(Marshal.SizeOf<SDL_Locale>(), Is.EqualTo(sizeof(Locale)));
+        Assert.That(Marshal.SizeOf<Locale>(), Is.EqualTo(sizeof(Locale)));
     }
 
     /// <summary>Validates that the <see cref = "SDL_Locale"/> struct has the right <see cref = "LayoutKind"/>.</summary>

@@ -44,7 +44,7 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
 
         [DllImport("SDL3", ExactSpelling = true, EntryPoint = "SDL_AddEventWatch")]
         public static extern int AddEventWatch(
-            [NativeTypeName("SDL_EventFilter")] delegate* unmanaged<void*, Event*, int> filter,
+            [NativeTypeName("SDL_EventFilter")] EventFilter filter,
             void* userdata
         );
 
@@ -54,7 +54,7 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
         public static int AddEventWatch(
-            [NativeTypeName("SDL_EventFilter")] delegate* unmanaged<void*, Event*, int> filter,
+            [NativeTypeName("SDL_EventFilter")] EventFilter filter,
             Ref userdata
         )
         {
@@ -116,8 +116,7 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
         [DllImport("SDL3", ExactSpelling = true, EntryPoint = "SDL_AddHintCallback")]
         public static extern int AddHintCallback(
             [NativeTypeName("const char *")] sbyte* name,
-            [NativeTypeName("SDL_HintCallback")]
-                delegate* unmanaged<void*, sbyte*, sbyte*, sbyte*, void> callback,
+            [NativeTypeName("SDL_HintCallback")] HintCallback callback,
             void* userdata
         );
 
@@ -128,8 +127,7 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
         )]
         public static int AddHintCallback(
             [NativeTypeName("const char *")] Ref<sbyte> name,
-            [NativeTypeName("SDL_HintCallback")]
-                delegate* unmanaged<void*, sbyte*, sbyte*, sbyte*, void> callback,
+            [NativeTypeName("SDL_HintCallback")] HintCallback callback,
             Ref userdata
         )
         {
@@ -144,7 +142,7 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
         [return: NativeTypeName("SDL_TimerID")]
         public static extern uint AddTimer(
             [NativeTypeName("Uint32")] uint interval,
-            [NativeTypeName("SDL_TimerCallback")] delegate* unmanaged<uint, void*, uint> callback,
+            [NativeTypeName("SDL_TimerCallback")] TimerCallback callback,
             void* param2
         );
 
@@ -156,7 +154,7 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
         )]
         public static uint AddTimer(
             [NativeTypeName("Uint32")] uint interval,
-            [NativeTypeName("SDL_TimerCallback")] delegate* unmanaged<uint, void*, uint> callback,
+            [NativeTypeName("SDL_TimerCallback")] TimerCallback callback,
             Ref param2
         )
         {
@@ -1163,7 +1161,7 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
 
         [DllImport("SDL3", ExactSpelling = true, EntryPoint = "SDL_CreateThread")]
         public static extern ThreadHandle CreateThread(
-            [NativeTypeName("SDL_ThreadFunction")] delegate* unmanaged<void*, int> fn,
+            [NativeTypeName("SDL_ThreadFunction")] ThreadFunction fn,
             [NativeTypeName("const char *")] sbyte* name,
             void* data
         );
@@ -1174,7 +1172,7 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
         public static ThreadHandle CreateThread(
-            [NativeTypeName("SDL_ThreadFunction")] delegate* unmanaged<void*, int> fn,
+            [NativeTypeName("SDL_ThreadFunction")] ThreadFunction fn,
             [NativeTypeName("const char *")] Ref<sbyte> name,
             Ref data
         )
@@ -1188,7 +1186,7 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
 
         [DllImport("SDL3", ExactSpelling = true, EntryPoint = "SDL_CreateThreadWithStackSize")]
         public static extern ThreadHandle CreateThreadWithStackSize(
-            [NativeTypeName("SDL_ThreadFunction")] delegate* unmanaged<void*, int> fn,
+            [NativeTypeName("SDL_ThreadFunction")] ThreadFunction fn,
             [NativeTypeName("const char *")] sbyte* name,
             [NativeTypeName("const size_t")] nuint stacksize,
             void* data
@@ -1200,7 +1198,7 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
         public static ThreadHandle CreateThreadWithStackSize(
-            [NativeTypeName("SDL_ThreadFunction")] delegate* unmanaged<void*, int> fn,
+            [NativeTypeName("SDL_ThreadFunction")] ThreadFunction fn,
             [NativeTypeName("const char *")] Ref<sbyte> name,
             [NativeTypeName("const size_t")] nuint stacksize,
             Ref data
@@ -1332,7 +1330,7 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
 
         [DllImport("SDL3", ExactSpelling = true, EntryPoint = "SDL_DelEventWatch")]
         public static extern void DelEventWatch(
-            [NativeTypeName("SDL_EventFilter")] delegate* unmanaged<void*, Event*, int> filter,
+            [NativeTypeName("SDL_EventFilter")] EventFilter filter,
             void* userdata
         );
 
@@ -1342,7 +1340,7 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
         public static void DelEventWatch(
-            [NativeTypeName("SDL_EventFilter")] delegate* unmanaged<void*, Event*, int> filter,
+            [NativeTypeName("SDL_EventFilter")] EventFilter filter,
             Ref userdata
         )
         {
@@ -1355,8 +1353,7 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
         [DllImport("SDL3", ExactSpelling = true, EntryPoint = "SDL_DelHintCallback")]
         public static extern void DelHintCallback(
             [NativeTypeName("const char *")] sbyte* name,
-            [NativeTypeName("SDL_HintCallback")]
-                delegate* unmanaged<void*, sbyte*, sbyte*, sbyte*, void> callback,
+            [NativeTypeName("SDL_HintCallback")] HintCallback callback,
             void* userdata
         );
 
@@ -1367,8 +1364,7 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
         )]
         public static void DelHintCallback(
             [NativeTypeName("const char *")] Ref<sbyte> name,
-            [NativeTypeName("SDL_HintCallback")]
-                delegate* unmanaged<void*, sbyte*, sbyte*, sbyte*, void> callback,
+            [NativeTypeName("SDL_HintCallback")] HintCallback callback,
             Ref userdata
         )
         {
@@ -1518,7 +1514,7 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
 
         [DllImport("SDL3", ExactSpelling = true, EntryPoint = "SDL_EGL_GetProcAddress")]
         [return: NativeTypeName("SDL_FunctionPointer")]
-        public static extern delegate* unmanaged<void> EGLGetProcAddress(
+        public static extern FunctionPointer EGLGetProcAddress(
             [NativeTypeName("const char *")] sbyte* proc
         );
 
@@ -1528,13 +1524,13 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
-        public static delegate* unmanaged<void> EGLGetProcAddress(
+        public static FunctionPointer EGLGetProcAddress(
             [NativeTypeName("const char *")] Ref<sbyte> proc
         )
         {
             fixed (sbyte* __dsl_proc = proc)
             {
-                return (delegate* unmanaged<void>)EGLGetProcAddress(__dsl_proc);
+                return (FunctionPointer)EGLGetProcAddress(__dsl_proc);
             }
         }
 
@@ -1554,11 +1550,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
         [DllImport("SDL3", ExactSpelling = true, EntryPoint = "SDL_EGL_SetEGLAttributeCallbacks")]
         public static extern void EGLSetEGLAttributeCallbacks(
             [NativeTypeName("SDL_EGLAttribArrayCallback")]
-                delegate* unmanaged<nint*> platformAttribCallback,
-            [NativeTypeName("SDL_EGLIntArrayCallback")]
-                delegate* unmanaged<int*> surfaceAttribCallback,
-            [NativeTypeName("SDL_EGLIntArrayCallback")]
-                delegate* unmanaged<int*> contextAttribCallback
+                EGLAttribArrayCallback platformAttribCallback,
+            [NativeTypeName("SDL_EGLIntArrayCallback")] EGLIntArrayCallback surfaceAttribCallback,
+            [NativeTypeName("SDL_EGLIntArrayCallback")] EGLIntArrayCallback contextAttribCallback
         );
 
         [DllImport("SDL3", ExactSpelling = true, EntryPoint = "SDL_EnableScreenSaver")]
@@ -1567,8 +1561,7 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
         [DllImport("SDL3", ExactSpelling = true, EntryPoint = "SDL_EnumerateDirectory")]
         public static extern int EnumerateDirectory(
             [NativeTypeName("const char *")] sbyte* path,
-            [NativeTypeName("SDL_EnumerateDirectoryCallback")]
-                delegate* unmanaged<void*, sbyte*, sbyte*, int> callback,
+            [NativeTypeName("SDL_EnumerateDirectoryCallback")] EnumerateDirectoryCallback callback,
             void* userdata
         );
 
@@ -1579,8 +1572,7 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
         )]
         public static int EnumerateDirectory(
             [NativeTypeName("const char *")] Ref<sbyte> path,
-            [NativeTypeName("SDL_EnumerateDirectoryCallback")]
-                delegate* unmanaged<void*, sbyte*, sbyte*, int> callback,
+            [NativeTypeName("SDL_EnumerateDirectoryCallback")] EnumerateDirectoryCallback callback,
             Ref userdata
         )
         {
@@ -1595,7 +1587,7 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
         public static extern int EnumerateProperties(
             [NativeTypeName("SDL_PropertiesID")] uint props,
             [NativeTypeName("SDL_EnumeratePropertiesCallback")]
-                delegate* unmanaged<void*, uint, sbyte*, void> callback,
+                EnumeratePropertiesCallback callback,
             void* userdata
         );
 
@@ -1607,7 +1599,7 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
         public static int EnumerateProperties(
             [NativeTypeName("SDL_PropertiesID")] uint props,
             [NativeTypeName("SDL_EnumeratePropertiesCallback")]
-                delegate* unmanaged<void*, uint, sbyte*, void> callback,
+                EnumeratePropertiesCallback callback,
             Ref userdata
         )
         {
@@ -1621,8 +1613,7 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
         public static extern int EnumerateStorageDirectory(
             StorageHandle storage,
             [NativeTypeName("const char *")] sbyte* path,
-            [NativeTypeName("SDL_EnumerateDirectoryCallback")]
-                delegate* unmanaged<void*, sbyte*, sbyte*, int> callback,
+            [NativeTypeName("SDL_EnumerateDirectoryCallback")] EnumerateDirectoryCallback callback,
             void* userdata
         );
 
@@ -1634,8 +1625,7 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
         public static int EnumerateStorageDirectory(
             StorageHandle storage,
             [NativeTypeName("const char *")] Ref<sbyte> path,
-            [NativeTypeName("SDL_EnumerateDirectoryCallback")]
-                delegate* unmanaged<void*, sbyte*, sbyte*, int> callback,
+            [NativeTypeName("SDL_EnumerateDirectoryCallback")] EnumerateDirectoryCallback callback,
             Ref userdata
         )
         {
@@ -1718,7 +1708,7 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
 
         [DllImport("SDL3", ExactSpelling = true, EntryPoint = "SDL_FilterEvents")]
         public static extern void FilterEvents(
-            [NativeTypeName("SDL_EventFilter")] delegate* unmanaged<void*, Event*, int> filter,
+            [NativeTypeName("SDL_EventFilter")] EventFilter filter,
             void* userdata
         );
 
@@ -1728,7 +1718,7 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
         public static void FilterEvents(
-            [NativeTypeName("SDL_EventFilter")] delegate* unmanaged<void*, Event*, int> filter,
+            [NativeTypeName("SDL_EventFilter")] EventFilter filter,
             Ref userdata
         )
         {
@@ -1836,10 +1826,7 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
 
         [DllImport("SDL3", ExactSpelling = true, EntryPoint = "SDL_GetAssertionHandler")]
         [return: NativeTypeName("SDL_AssertionHandler")]
-        public static extern delegate* unmanaged<
-            AssertData*,
-            void*,
-            AssertState> GetAssertionHandler(void** puserdata);
+        public static extern AssertionHandler GetAssertionHandler(void** puserdata);
 
         [return: NativeTypeName("SDL_AssertionHandler")]
         [Transformed]
@@ -1847,15 +1834,11 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
-        public static delegate* unmanaged<AssertData*, void*, AssertState> GetAssertionHandler(
-            Ref2D puserdata
-        )
+        public static AssertionHandler GetAssertionHandler(Ref2D puserdata)
         {
             fixed (void** __dsl_puserdata = puserdata)
             {
-                return (delegate* unmanaged<AssertData*, void*, AssertState>)GetAssertionHandler(
-                    __dsl_puserdata
-                );
+                return (AssertionHandler)GetAssertionHandler(__dsl_puserdata);
             }
         }
 
@@ -2353,10 +2336,7 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
 
         [DllImport("SDL3", ExactSpelling = true, EntryPoint = "SDL_GetDefaultAssertionHandler")]
         [return: NativeTypeName("SDL_AssertionHandler")]
-        public static extern delegate* unmanaged<
-            AssertData*,
-            void*,
-            AssertState> GetDefaultAssertionHandler();
+        public static extern AssertionHandler GetDefaultAssertionHandler();
 
         [DllImport("SDL3", ExactSpelling = true, EntryPoint = "SDL_GetDefaultCursor")]
         public static extern CursorHandle GetDefaultCursor();
@@ -2526,7 +2506,7 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
         [DllImport("SDL3", ExactSpelling = true, EntryPoint = "SDL_GetEventFilter")]
         [return: NativeTypeName("SDL_bool")]
         public static extern int GetEventFilter(
-            [NativeTypeName("SDL_EventFilter *")] delegate* unmanaged<void*, Event*, int>* filter,
+            [NativeTypeName("SDL_EventFilter *")] EventFilter* filter,
             void** userdata
         );
 
@@ -2537,13 +2517,14 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
         public static MaybeBool<int> GetEventFilter(
-            [NativeTypeName("SDL_EventFilter *")] delegate* unmanaged<void*, Event*, int>* filter,
+            [NativeTypeName("SDL_EventFilter *")] Ref<EventFilter> filter,
             Ref2D userdata
         )
         {
             fixed (void** __dsl_userdata = userdata)
+            fixed (EventFilter* __dsl_filter = filter)
             {
-                return (MaybeBool<int>)(int)GetEventFilter(filter, __dsl_userdata);
+                return (MaybeBool<int>)(int)GetEventFilter(__dsl_filter, __dsl_userdata);
             }
         }
 
@@ -3672,8 +3653,7 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
 
         [DllImport("SDL3", ExactSpelling = true, EntryPoint = "SDL_GetLogOutputFunction")]
         public static extern void GetLogOutputFunction(
-            [NativeTypeName("SDL_LogOutputFunction *")]
-                delegate* unmanaged<void*, int, LogPriority, sbyte*, void>* callback,
+            [NativeTypeName("SDL_LogOutputFunction *")] LogOutputFunction* callback,
             void** userdata
         );
 
@@ -3683,14 +3663,14 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
         public static void GetLogOutputFunction(
-            [NativeTypeName("SDL_LogOutputFunction *")]
-                delegate* unmanaged<void*, int, LogPriority, sbyte*, void>* callback,
+            [NativeTypeName("SDL_LogOutputFunction *")] Ref<LogOutputFunction> callback,
             Ref2D userdata
         )
         {
             fixed (void** __dsl_userdata = userdata)
+            fixed (LogOutputFunction* __dsl_callback = callback)
             {
-                GetLogOutputFunction(callback, __dsl_userdata);
+                GetLogOutputFunction(__dsl_callback, __dsl_userdata);
             }
         }
 
@@ -5782,7 +5762,7 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
 
         [DllImport("SDL3", ExactSpelling = true, EntryPoint = "SDL_GL_GetProcAddress")]
         [return: NativeTypeName("SDL_FunctionPointer")]
-        public static extern delegate* unmanaged<void> GLGetProcAddress(
+        public static extern FunctionPointer GLGetProcAddress(
             [NativeTypeName("const char *")] sbyte* proc
         );
 
@@ -5792,13 +5772,13 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
-        public static delegate* unmanaged<void> GLGetProcAddress(
+        public static FunctionPointer GLGetProcAddress(
             [NativeTypeName("const char *")] Ref<sbyte> proc
         )
         {
             fixed (sbyte* __dsl_proc = proc)
             {
-                return (delegate* unmanaged<void>)GLGetProcAddress(__dsl_proc);
+                return (FunctionPointer)GLGetProcAddress(__dsl_proc);
             }
         }
 
@@ -6965,7 +6945,7 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
 
         [DllImport("SDL3", ExactSpelling = true, EntryPoint = "SDL_LoadFunction")]
         [return: NativeTypeName("SDL_FunctionPointer")]
-        public static extern delegate* unmanaged<void> LoadFunction(
+        public static extern FunctionPointer LoadFunction(
             void* handle,
             [NativeTypeName("const char *")] sbyte* name
         );
@@ -6976,7 +6956,7 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
-        public static delegate* unmanaged<void> LoadFunction(
+        public static FunctionPointer LoadFunction(
             Ref handle,
             [NativeTypeName("const char *")] Ref<sbyte> name
         )
@@ -6984,7 +6964,7 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
             fixed (sbyte* __dsl_name = name)
             fixed (void* __dsl_handle = handle)
             {
-                return (delegate* unmanaged<void>)LoadFunction(__dsl_handle, __dsl_name);
+                return (FunctionPointer)LoadFunction(__dsl_handle, __dsl_name);
             }
         }
 
@@ -7412,8 +7392,7 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
         public static extern AudioStreamHandle OpenAudioDeviceStream(
             [NativeTypeName("SDL_AudioDeviceID")] uint devid,
             [NativeTypeName("const SDL_AudioSpec *")] AudioSpec* spec,
-            [NativeTypeName("SDL_AudioStreamCallback")]
-                delegate* unmanaged<void*, AudioStreamHandle, int, int, void> callback,
+            [NativeTypeName("SDL_AudioStreamCallback")] AudioStreamCallback callback,
             void* userdata
         );
 
@@ -7425,8 +7404,7 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
         public static AudioStreamHandle OpenAudioDeviceStream(
             [NativeTypeName("SDL_AudioDeviceID")] uint devid,
             [NativeTypeName("const SDL_AudioSpec *")] Ref<AudioSpec> spec,
-            [NativeTypeName("SDL_AudioStreamCallback")]
-                delegate* unmanaged<void*, AudioStreamHandle, int, int, void> callback,
+            [NativeTypeName("SDL_AudioStreamCallback")] AudioStreamCallback callback,
             Ref userdata
         )
         {
@@ -9067,8 +9045,7 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
 
         [DllImport("SDL3", ExactSpelling = true, EntryPoint = "SDL_SetAssertionHandler")]
         public static extern void SetAssertionHandler(
-            [NativeTypeName("SDL_AssertionHandler")]
-                delegate* unmanaged<AssertData*, void*, AssertState> handler,
+            [NativeTypeName("SDL_AssertionHandler")] AssertionHandler handler,
             void* userdata
         );
 
@@ -9078,8 +9055,7 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
         public static void SetAssertionHandler(
-            [NativeTypeName("SDL_AssertionHandler")]
-                delegate* unmanaged<AssertData*, void*, AssertState> handler,
+            [NativeTypeName("SDL_AssertionHandler")] AssertionHandler handler,
             Ref userdata
         )
         {
@@ -9092,8 +9068,7 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
         [DllImport("SDL3", ExactSpelling = true, EntryPoint = "SDL_SetAudioPostmixCallback")]
         public static extern int SetAudioPostmixCallback(
             [NativeTypeName("SDL_AudioDeviceID")] uint devid,
-            [NativeTypeName("SDL_AudioPostmixCallback")]
-                delegate* unmanaged<void*, AudioSpec*, float*, int, void> callback,
+            [NativeTypeName("SDL_AudioPostmixCallback")] AudioPostmixCallback callback,
             void* userdata
         );
 
@@ -9104,8 +9079,7 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
         )]
         public static int SetAudioPostmixCallback(
             [NativeTypeName("SDL_AudioDeviceID")] uint devid,
-            [NativeTypeName("SDL_AudioPostmixCallback")]
-                delegate* unmanaged<void*, AudioSpec*, float*, int, void> callback,
+            [NativeTypeName("SDL_AudioPostmixCallback")] AudioPostmixCallback callback,
             Ref userdata
         )
         {
@@ -9149,8 +9123,7 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
         [DllImport("SDL3", ExactSpelling = true, EntryPoint = "SDL_SetAudioStreamGetCallback")]
         public static extern int SetAudioStreamGetCallback(
             AudioStreamHandle stream,
-            [NativeTypeName("SDL_AudioStreamCallback")]
-                delegate* unmanaged<void*, AudioStreamHandle, int, int, void> callback,
+            [NativeTypeName("SDL_AudioStreamCallback")] AudioStreamCallback callback,
             void* userdata
         );
 
@@ -9161,8 +9134,7 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
         )]
         public static int SetAudioStreamGetCallback(
             AudioStreamHandle stream,
-            [NativeTypeName("SDL_AudioStreamCallback")]
-                delegate* unmanaged<void*, AudioStreamHandle, int, int, void> callback,
+            [NativeTypeName("SDL_AudioStreamCallback")] AudioStreamCallback callback,
             Ref userdata
         )
         {
@@ -9175,8 +9147,7 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
         [DllImport("SDL3", ExactSpelling = true, EntryPoint = "SDL_SetAudioStreamPutCallback")]
         public static extern int SetAudioStreamPutCallback(
             AudioStreamHandle stream,
-            [NativeTypeName("SDL_AudioStreamCallback")]
-                delegate* unmanaged<void*, AudioStreamHandle, int, int, void> callback,
+            [NativeTypeName("SDL_AudioStreamCallback")] AudioStreamCallback callback,
             void* userdata
         );
 
@@ -9187,8 +9158,7 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
         )]
         public static int SetAudioStreamPutCallback(
             AudioStreamHandle stream,
-            [NativeTypeName("SDL_AudioStreamCallback")]
-                delegate* unmanaged<void*, AudioStreamHandle, int, int, void> callback,
+            [NativeTypeName("SDL_AudioStreamCallback")] AudioStreamCallback callback,
             Ref userdata
         )
         {
@@ -9224,10 +9194,8 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
 
         [DllImport("SDL3", ExactSpelling = true, EntryPoint = "SDL_SetClipboardData")]
         public static extern int SetClipboardData(
-            [NativeTypeName("SDL_ClipboardDataCallback")]
-                delegate* unmanaged<void*, sbyte*, nuint*, void*> callback,
-            [NativeTypeName("SDL_ClipboardCleanupCallback")]
-                delegate* unmanaged<void*, void> cleanup,
+            [NativeTypeName("SDL_ClipboardDataCallback")] ClipboardDataCallback callback,
+            [NativeTypeName("SDL_ClipboardCleanupCallback")] ClipboardCleanupCallback cleanup,
             void* userdata,
             [NativeTypeName("const char **")] sbyte** mime_types,
             [NativeTypeName("size_t")] nuint num_mime_types
@@ -9239,10 +9207,8 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
         public static int SetClipboardData(
-            [NativeTypeName("SDL_ClipboardDataCallback")]
-                delegate* unmanaged<void*, sbyte*, nuint*, void*> callback,
-            [NativeTypeName("SDL_ClipboardCleanupCallback")]
-                delegate* unmanaged<void*, void> cleanup,
+            [NativeTypeName("SDL_ClipboardDataCallback")] ClipboardDataCallback callback,
+            [NativeTypeName("SDL_ClipboardCleanupCallback")] ClipboardCleanupCallback cleanup,
             Ref userdata,
             [NativeTypeName("const char **")] Ref2D<sbyte> mime_types,
             [NativeTypeName("size_t")] nuint num_mime_types
@@ -9295,7 +9261,7 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
 
         [DllImport("SDL3", ExactSpelling = true, EntryPoint = "SDL_SetEventFilter")]
         public static extern void SetEventFilter(
-            [NativeTypeName("SDL_EventFilter")] delegate* unmanaged<void*, Event*, int> filter,
+            [NativeTypeName("SDL_EventFilter")] EventFilter filter,
             void* userdata
         );
 
@@ -9305,7 +9271,7 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
         public static void SetEventFilter(
-            [NativeTypeName("SDL_EventFilter")] delegate* unmanaged<void*, Event*, int> filter,
+            [NativeTypeName("SDL_EventFilter")] EventFilter filter,
             Ref userdata
         )
         {
@@ -9499,8 +9465,7 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
 
         [DllImport("SDL3", ExactSpelling = true, EntryPoint = "SDL_SetLogOutputFunction")]
         public static extern void SetLogOutputFunction(
-            [NativeTypeName("SDL_LogOutputFunction")]
-                delegate* unmanaged<void*, int, LogPriority, sbyte*, void> callback,
+            [NativeTypeName("SDL_LogOutputFunction")] LogOutputFunction callback,
             void* userdata
         );
 
@@ -9510,8 +9475,7 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
         public static void SetLogOutputFunction(
-            [NativeTypeName("SDL_LogOutputFunction")]
-                delegate* unmanaged<void*, int, LogPriority, sbyte*, void> callback,
+            [NativeTypeName("SDL_LogOutputFunction")] LogOutputFunction callback,
             Ref userdata
         )
         {
@@ -9640,8 +9604,7 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
             [NativeTypeName("SDL_PropertiesID")] uint props,
             [NativeTypeName("const char *")] sbyte* name,
             void* value,
-            [NativeTypeName("void (*)(void *, void *)")]
-                delegate* unmanaged<void*, void*, void> cleanup,
+            [NativeTypeName("void (*)(void *, void *)")] PfnVvVvV cleanup,
             void* userdata
         );
 
@@ -9654,8 +9617,7 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
             [NativeTypeName("SDL_PropertiesID")] uint props,
             [NativeTypeName("const char *")] Ref<sbyte> name,
             Ref value,
-            [NativeTypeName("void (*)(void *, void *)")]
-                delegate* unmanaged<void*, void*, void> cleanup,
+            [NativeTypeName("void (*)(void *, void *)")] PfnVvVvV cleanup,
             Ref userdata
         )
         {
@@ -10016,7 +9978,7 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
         public static extern int SetTLS(
             [NativeTypeName("SDL_TLSID")] uint id,
             [NativeTypeName("const void *")] void* value,
-            [NativeTypeName("void (*)(void *)")] delegate* unmanaged<void*, void> destructor
+            [NativeTypeName("void (*)(void *)")] ClipboardCleanupCallback destructor
         );
 
         [Transformed]
@@ -10027,7 +9989,7 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
         public static int SetTLS(
             [NativeTypeName("SDL_TLSID")] uint id,
             [NativeTypeName("const void *")] Ref value,
-            [NativeTypeName("void (*)(void *)")] delegate* unmanaged<void*, void> destructor
+            [NativeTypeName("void (*)(void *)")] ClipboardCleanupCallback destructor
         )
         {
             fixed (void* __dsl_value = value)
@@ -10113,8 +10075,7 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
         [DllImport("SDL3", ExactSpelling = true, EntryPoint = "SDL_SetWindowHitTest")]
         public static extern int SetWindowHitTest(
             WindowHandle window,
-            [NativeTypeName("SDL_HitTest")]
-                delegate* unmanaged<WindowHandle, Point*, void*, HitTestResult> callback,
+            [NativeTypeName("SDL_HitTest")] HitTest callback,
             void* callback_data
         );
 
@@ -10125,8 +10086,7 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
         )]
         public static int SetWindowHitTest(
             WindowHandle window,
-            [NativeTypeName("SDL_HitTest")]
-                delegate* unmanaged<WindowHandle, Point*, void*, HitTestResult> callback,
+            [NativeTypeName("SDL_HitTest")] HitTest callback,
             Ref callback_data
         )
         {
@@ -10303,8 +10263,7 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
 
         [DllImport("SDL3", ExactSpelling = true, EntryPoint = "SDL_ShowOpenFileDialog")]
         public static extern void ShowOpenFileDialog(
-            [NativeTypeName("SDL_DialogFileCallback")]
-                delegate* unmanaged<void*, sbyte**, int, void> callback,
+            [NativeTypeName("SDL_DialogFileCallback")] DialogFileCallback callback,
             void* userdata,
             WindowHandle window,
             [NativeTypeName("const SDL_DialogFileFilter *")] DialogFileFilter* filters,
@@ -10318,8 +10277,7 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
         public static void ShowOpenFileDialog(
-            [NativeTypeName("SDL_DialogFileCallback")]
-                delegate* unmanaged<void*, sbyte**, int, void> callback,
+            [NativeTypeName("SDL_DialogFileCallback")] DialogFileCallback callback,
             Ref userdata,
             WindowHandle window,
             [NativeTypeName("const SDL_DialogFileFilter *")] Ref<DialogFileFilter> filters,
@@ -10344,8 +10302,7 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
 
         [DllImport("SDL3", ExactSpelling = true, EntryPoint = "SDL_ShowOpenFolderDialog")]
         public static extern void ShowOpenFolderDialog(
-            [NativeTypeName("SDL_DialogFileCallback")]
-                delegate* unmanaged<void*, sbyte**, int, void> callback,
+            [NativeTypeName("SDL_DialogFileCallback")] DialogFileCallback callback,
             void* userdata,
             WindowHandle window,
             [NativeTypeName("const char *")] sbyte* default_location,
@@ -10358,8 +10315,7 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
         public static void ShowOpenFolderDialog(
-            [NativeTypeName("SDL_DialogFileCallback")]
-                delegate* unmanaged<void*, sbyte**, int, void> callback,
+            [NativeTypeName("SDL_DialogFileCallback")] DialogFileCallback callback,
             Ref userdata,
             WindowHandle window,
             [NativeTypeName("const char *")] Ref<sbyte> default_location,
@@ -10381,8 +10337,7 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
 
         [DllImport("SDL3", ExactSpelling = true, EntryPoint = "SDL_ShowSaveFileDialog")]
         public static extern void ShowSaveFileDialog(
-            [NativeTypeName("SDL_DialogFileCallback")]
-                delegate* unmanaged<void*, sbyte**, int, void> callback,
+            [NativeTypeName("SDL_DialogFileCallback")] DialogFileCallback callback,
             void* userdata,
             WindowHandle window,
             [NativeTypeName("const SDL_DialogFileFilter *")] DialogFileFilter* filters,
@@ -10395,8 +10350,7 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
         public static void ShowSaveFileDialog(
-            [NativeTypeName("SDL_DialogFileCallback")]
-                delegate* unmanaged<void*, sbyte**, int, void> callback,
+            [NativeTypeName("SDL_DialogFileCallback")] DialogFileCallback callback,
             Ref userdata,
             WindowHandle window,
             [NativeTypeName("const SDL_DialogFileFilter *")] Ref<DialogFileFilter> filters,
@@ -11289,7 +11243,7 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
         public int AddEventWatch(
-            [NativeTypeName("SDL_EventFilter")] delegate* unmanaged<void*, Event*, int> filter,
+            [NativeTypeName("SDL_EventFilter")] EventFilter filter,
             void* userdata
         ) => T.AddEventWatch(filter, userdata);
 
@@ -11299,7 +11253,7 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
         public int AddEventWatch(
-            [NativeTypeName("SDL_EventFilter")] delegate* unmanaged<void*, Event*, int> filter,
+            [NativeTypeName("SDL_EventFilter")] EventFilter filter,
             Ref userdata
         ) => T.AddEventWatch(filter, userdata);
 
@@ -11358,8 +11312,7 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
         )]
         public int AddHintCallback(
             [NativeTypeName("const char *")] sbyte* name,
-            [NativeTypeName("SDL_HintCallback")]
-                delegate* unmanaged<void*, sbyte*, sbyte*, sbyte*, void> callback,
+            [NativeTypeName("SDL_HintCallback")] HintCallback callback,
             void* userdata
         ) => T.AddHintCallback(name, callback, userdata);
 
@@ -11370,8 +11323,7 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
         )]
         public int AddHintCallback(
             [NativeTypeName("const char *")] Ref<sbyte> name,
-            [NativeTypeName("SDL_HintCallback")]
-                delegate* unmanaged<void*, sbyte*, sbyte*, sbyte*, void> callback,
+            [NativeTypeName("SDL_HintCallback")] HintCallback callback,
             Ref userdata
         ) => T.AddHintCallback(name, callback, userdata);
 
@@ -11382,7 +11334,7 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
         )]
         public uint AddTimer(
             [NativeTypeName("Uint32")] uint interval,
-            [NativeTypeName("SDL_TimerCallback")] delegate* unmanaged<uint, void*, uint> callback,
+            [NativeTypeName("SDL_TimerCallback")] TimerCallback callback,
             void* param2
         ) => T.AddTimer(interval, callback, param2);
 
@@ -11394,7 +11346,7 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
         )]
         public uint AddTimer(
             [NativeTypeName("Uint32")] uint interval,
-            [NativeTypeName("SDL_TimerCallback")] delegate* unmanaged<uint, void*, uint> callback,
+            [NativeTypeName("SDL_TimerCallback")] TimerCallback callback,
             Ref param2
         ) => T.AddTimer(interval, callback, param2);
 
@@ -12367,7 +12319,7 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
         public ThreadHandle CreateThread(
-            [NativeTypeName("SDL_ThreadFunction")] delegate* unmanaged<void*, int> fn,
+            [NativeTypeName("SDL_ThreadFunction")] ThreadFunction fn,
             [NativeTypeName("const char *")] sbyte* name,
             void* data
         ) => T.CreateThread(fn, name, data);
@@ -12378,7 +12330,7 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
         public ThreadHandle CreateThread(
-            [NativeTypeName("SDL_ThreadFunction")] delegate* unmanaged<void*, int> fn,
+            [NativeTypeName("SDL_ThreadFunction")] ThreadFunction fn,
             [NativeTypeName("const char *")] Ref<sbyte> name,
             Ref data
         ) => T.CreateThread(fn, name, data);
@@ -12388,7 +12340,7 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
         public ThreadHandle CreateThreadWithStackSize(
-            [NativeTypeName("SDL_ThreadFunction")] delegate* unmanaged<void*, int> fn,
+            [NativeTypeName("SDL_ThreadFunction")] ThreadFunction fn,
             [NativeTypeName("const char *")] sbyte* name,
             [NativeTypeName("const size_t")] nuint stacksize,
             void* data
@@ -12400,7 +12352,7 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
         public ThreadHandle CreateThreadWithStackSize(
-            [NativeTypeName("SDL_ThreadFunction")] delegate* unmanaged<void*, int> fn,
+            [NativeTypeName("SDL_ThreadFunction")] ThreadFunction fn,
             [NativeTypeName("const char *")] Ref<sbyte> name,
             [NativeTypeName("const size_t")] nuint stacksize,
             Ref data
@@ -12522,7 +12474,7 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
         public void DelEventWatch(
-            [NativeTypeName("SDL_EventFilter")] delegate* unmanaged<void*, Event*, int> filter,
+            [NativeTypeName("SDL_EventFilter")] EventFilter filter,
             void* userdata
         ) => T.DelEventWatch(filter, userdata);
 
@@ -12532,7 +12484,7 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
         public void DelEventWatch(
-            [NativeTypeName("SDL_EventFilter")] delegate* unmanaged<void*, Event*, int> filter,
+            [NativeTypeName("SDL_EventFilter")] EventFilter filter,
             Ref userdata
         ) => T.DelEventWatch(filter, userdata);
 
@@ -12542,8 +12494,7 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
         )]
         public void DelHintCallback(
             [NativeTypeName("const char *")] sbyte* name,
-            [NativeTypeName("SDL_HintCallback")]
-                delegate* unmanaged<void*, sbyte*, sbyte*, sbyte*, void> callback,
+            [NativeTypeName("SDL_HintCallback")] HintCallback callback,
             void* userdata
         ) => T.DelHintCallback(name, callback, userdata);
 
@@ -12554,8 +12505,7 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
         )]
         public void DelHintCallback(
             [NativeTypeName("const char *")] Ref<sbyte> name,
-            [NativeTypeName("SDL_HintCallback")]
-                delegate* unmanaged<void*, sbyte*, sbyte*, sbyte*, void> callback,
+            [NativeTypeName("SDL_HintCallback")] HintCallback callback,
             Ref userdata
         ) => T.DelHintCallback(name, callback, userdata);
 
@@ -12739,9 +12689,8 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
-        public delegate* unmanaged<void> EGLGetProcAddress(
-            [NativeTypeName("const char *")] sbyte* proc
-        ) => T.EGLGetProcAddress(proc);
+        public FunctionPointer EGLGetProcAddress([NativeTypeName("const char *")] sbyte* proc) =>
+            T.EGLGetProcAddress(proc);
 
         [return: NativeTypeName("SDL_FunctionPointer")]
         [Transformed]
@@ -12749,7 +12698,7 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
-        public delegate* unmanaged<void> EGLGetProcAddress(
+        public FunctionPointer EGLGetProcAddress(
             [NativeTypeName("const char *")] Ref<sbyte> proc
         ) => T.EGLGetProcAddress(proc);
 
@@ -12775,11 +12724,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
         )]
         public void EGLSetEGLAttributeCallbacks(
             [NativeTypeName("SDL_EGLAttribArrayCallback")]
-                delegate* unmanaged<nint*> platformAttribCallback,
-            [NativeTypeName("SDL_EGLIntArrayCallback")]
-                delegate* unmanaged<int*> surfaceAttribCallback,
-            [NativeTypeName("SDL_EGLIntArrayCallback")]
-                delegate* unmanaged<int*> contextAttribCallback
+                EGLAttribArrayCallback platformAttribCallback,
+            [NativeTypeName("SDL_EGLIntArrayCallback")] EGLIntArrayCallback surfaceAttribCallback,
+            [NativeTypeName("SDL_EGLIntArrayCallback")] EGLIntArrayCallback contextAttribCallback
         ) =>
             T.EGLSetEGLAttributeCallbacks(
                 platformAttribCallback,
@@ -12799,8 +12746,7 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
         )]
         public int EnumerateDirectory(
             [NativeTypeName("const char *")] sbyte* path,
-            [NativeTypeName("SDL_EnumerateDirectoryCallback")]
-                delegate* unmanaged<void*, sbyte*, sbyte*, int> callback,
+            [NativeTypeName("SDL_EnumerateDirectoryCallback")] EnumerateDirectoryCallback callback,
             void* userdata
         ) => T.EnumerateDirectory(path, callback, userdata);
 
@@ -12811,8 +12757,7 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
         )]
         public int EnumerateDirectory(
             [NativeTypeName("const char *")] Ref<sbyte> path,
-            [NativeTypeName("SDL_EnumerateDirectoryCallback")]
-                delegate* unmanaged<void*, sbyte*, sbyte*, int> callback,
+            [NativeTypeName("SDL_EnumerateDirectoryCallback")] EnumerateDirectoryCallback callback,
             Ref userdata
         ) => T.EnumerateDirectory(path, callback, userdata);
 
@@ -12823,7 +12768,7 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
         public int EnumerateProperties(
             [NativeTypeName("SDL_PropertiesID")] uint props,
             [NativeTypeName("SDL_EnumeratePropertiesCallback")]
-                delegate* unmanaged<void*, uint, sbyte*, void> callback,
+                EnumeratePropertiesCallback callback,
             void* userdata
         ) => T.EnumerateProperties(props, callback, userdata);
 
@@ -12835,7 +12780,7 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
         public int EnumerateProperties(
             [NativeTypeName("SDL_PropertiesID")] uint props,
             [NativeTypeName("SDL_EnumeratePropertiesCallback")]
-                delegate* unmanaged<void*, uint, sbyte*, void> callback,
+                EnumeratePropertiesCallback callback,
             Ref userdata
         ) => T.EnumerateProperties(props, callback, userdata);
 
@@ -12846,8 +12791,7 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
         public int EnumerateStorageDirectory(
             StorageHandle storage,
             [NativeTypeName("const char *")] sbyte* path,
-            [NativeTypeName("SDL_EnumerateDirectoryCallback")]
-                delegate* unmanaged<void*, sbyte*, sbyte*, int> callback,
+            [NativeTypeName("SDL_EnumerateDirectoryCallback")] EnumerateDirectoryCallback callback,
             void* userdata
         ) => T.EnumerateStorageDirectory(storage, path, callback, userdata);
 
@@ -12859,8 +12803,7 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
         public int EnumerateStorageDirectory(
             StorageHandle storage,
             [NativeTypeName("const char *")] Ref<sbyte> path,
-            [NativeTypeName("SDL_EnumerateDirectoryCallback")]
-                delegate* unmanaged<void*, sbyte*, sbyte*, int> callback,
+            [NativeTypeName("SDL_EnumerateDirectoryCallback")] EnumerateDirectoryCallback callback,
             Ref userdata
         ) => T.EnumerateStorageDirectory(storage, path, callback, userdata);
 
@@ -12935,7 +12878,7 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
         public void FilterEvents(
-            [NativeTypeName("SDL_EventFilter")] delegate* unmanaged<void*, Event*, int> filter,
+            [NativeTypeName("SDL_EventFilter")] EventFilter filter,
             void* userdata
         ) => T.FilterEvents(filter, userdata);
 
@@ -12945,7 +12888,7 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
         public void FilterEvents(
-            [NativeTypeName("SDL_EventFilter")] delegate* unmanaged<void*, Event*, int> filter,
+            [NativeTypeName("SDL_EventFilter")] EventFilter filter,
             Ref userdata
         ) => T.FilterEvents(filter, userdata);
 
@@ -13100,9 +13043,8 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
-        public delegate* unmanaged<AssertData*, void*, AssertState> GetAssertionHandler(
-            void** puserdata
-        ) => T.GetAssertionHandler(puserdata);
+        public AssertionHandler GetAssertionHandler(void** puserdata) =>
+            T.GetAssertionHandler(puserdata);
 
         [return: NativeTypeName("SDL_AssertionHandler")]
         [Transformed]
@@ -13110,9 +13052,8 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
-        public delegate* unmanaged<AssertData*, void*, AssertState> GetAssertionHandler(
-            Ref2D puserdata
-        ) => T.GetAssertionHandler(puserdata);
+        public AssertionHandler GetAssertionHandler(Ref2D puserdata) =>
+            T.GetAssertionHandler(puserdata);
 
         [return: NativeTypeName("const SDL_AssertData *")]
         [Transformed]
@@ -13659,8 +13600,7 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
-        public delegate* unmanaged<AssertData*, void*, AssertState> GetDefaultAssertionHandler() =>
-            T.GetDefaultAssertionHandler();
+        public AssertionHandler GetDefaultAssertionHandler() => T.GetDefaultAssertionHandler();
 
         [NativeFunction("SDL3", EntryPoint = "SDL_GetDefaultCursor")]
         [MethodImpl(
@@ -13832,7 +13772,7 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
         public int GetEventFilter(
-            [NativeTypeName("SDL_EventFilter *")] delegate* unmanaged<void*, Event*, int>* filter,
+            [NativeTypeName("SDL_EventFilter *")] EventFilter* filter,
             void** userdata
         ) => T.GetEventFilter(filter, userdata);
 
@@ -13843,7 +13783,7 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
         public MaybeBool<int> GetEventFilter(
-            [NativeTypeName("SDL_EventFilter *")] delegate* unmanaged<void*, Event*, int>* filter,
+            [NativeTypeName("SDL_EventFilter *")] Ref<EventFilter> filter,
             Ref2D userdata
         ) => T.GetEventFilter(filter, userdata);
 
@@ -15106,8 +15046,7 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
         public void GetLogOutputFunction(
-            [NativeTypeName("SDL_LogOutputFunction *")]
-                delegate* unmanaged<void*, int, LogPriority, sbyte*, void>* callback,
+            [NativeTypeName("SDL_LogOutputFunction *")] LogOutputFunction* callback,
             void** userdata
         ) => T.GetLogOutputFunction(callback, userdata);
 
@@ -15117,8 +15056,7 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
         public void GetLogOutputFunction(
-            [NativeTypeName("SDL_LogOutputFunction *")]
-                delegate* unmanaged<void*, int, LogPriority, sbyte*, void>* callback,
+            [NativeTypeName("SDL_LogOutputFunction *")] Ref<LogOutputFunction> callback,
             Ref2D userdata
         ) => T.GetLogOutputFunction(callback, userdata);
 
@@ -17185,9 +17123,8 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
-        public delegate* unmanaged<void> GLGetProcAddress(
-            [NativeTypeName("const char *")] sbyte* proc
-        ) => T.GLGetProcAddress(proc);
+        public FunctionPointer GLGetProcAddress([NativeTypeName("const char *")] sbyte* proc) =>
+            T.GLGetProcAddress(proc);
 
         [return: NativeTypeName("SDL_FunctionPointer")]
         [Transformed]
@@ -17195,9 +17132,8 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
-        public delegate* unmanaged<void> GLGetProcAddress(
-            [NativeTypeName("const char *")] Ref<sbyte> proc
-        ) => T.GLGetProcAddress(proc);
+        public FunctionPointer GLGetProcAddress([NativeTypeName("const char *")] Ref<sbyte> proc) =>
+            T.GLGetProcAddress(proc);
 
         [NativeFunction("SDL3", EntryPoint = "SDL_GL_GetSwapInterval")]
         [MethodImpl(
@@ -18495,7 +18431,7 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
-        public delegate* unmanaged<void> LoadFunction(
+        public FunctionPointer LoadFunction(
             void* handle,
             [NativeTypeName("const char *")] sbyte* name
         ) => T.LoadFunction(handle, name);
@@ -18506,7 +18442,7 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
-        public delegate* unmanaged<void> LoadFunction(
+        public FunctionPointer LoadFunction(
             Ref handle,
             [NativeTypeName("const char *")] Ref<sbyte> name
         ) => T.LoadFunction(handle, name);
@@ -18942,8 +18878,7 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
         public AudioStreamHandle OpenAudioDeviceStream(
             [NativeTypeName("SDL_AudioDeviceID")] uint devid,
             [NativeTypeName("const SDL_AudioSpec *")] AudioSpec* spec,
-            [NativeTypeName("SDL_AudioStreamCallback")]
-                delegate* unmanaged<void*, AudioStreamHandle, int, int, void> callback,
+            [NativeTypeName("SDL_AudioStreamCallback")] AudioStreamCallback callback,
             void* userdata
         ) => T.OpenAudioDeviceStream(devid, spec, callback, userdata);
 
@@ -18955,8 +18890,7 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
         public AudioStreamHandle OpenAudioDeviceStream(
             [NativeTypeName("SDL_AudioDeviceID")] uint devid,
             [NativeTypeName("const SDL_AudioSpec *")] Ref<AudioSpec> spec,
-            [NativeTypeName("SDL_AudioStreamCallback")]
-                delegate* unmanaged<void*, AudioStreamHandle, int, int, void> callback,
+            [NativeTypeName("SDL_AudioStreamCallback")] AudioStreamCallback callback,
             Ref userdata
         ) => T.OpenAudioDeviceStream(devid, spec, callback, userdata);
 
@@ -20506,8 +20440,7 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
         public void SetAssertionHandler(
-            [NativeTypeName("SDL_AssertionHandler")]
-                delegate* unmanaged<AssertData*, void*, AssertState> handler,
+            [NativeTypeName("SDL_AssertionHandler")] AssertionHandler handler,
             void* userdata
         ) => T.SetAssertionHandler(handler, userdata);
 
@@ -20517,8 +20450,7 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
         public void SetAssertionHandler(
-            [NativeTypeName("SDL_AssertionHandler")]
-                delegate* unmanaged<AssertData*, void*, AssertState> handler,
+            [NativeTypeName("SDL_AssertionHandler")] AssertionHandler handler,
             Ref userdata
         ) => T.SetAssertionHandler(handler, userdata);
 
@@ -20528,8 +20460,7 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
         )]
         public int SetAudioPostmixCallback(
             [NativeTypeName("SDL_AudioDeviceID")] uint devid,
-            [NativeTypeName("SDL_AudioPostmixCallback")]
-                delegate* unmanaged<void*, AudioSpec*, float*, int, void> callback,
+            [NativeTypeName("SDL_AudioPostmixCallback")] AudioPostmixCallback callback,
             void* userdata
         ) => T.SetAudioPostmixCallback(devid, callback, userdata);
 
@@ -20540,8 +20471,7 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
         )]
         public int SetAudioPostmixCallback(
             [NativeTypeName("SDL_AudioDeviceID")] uint devid,
-            [NativeTypeName("SDL_AudioPostmixCallback")]
-                delegate* unmanaged<void*, AudioSpec*, float*, int, void> callback,
+            [NativeTypeName("SDL_AudioPostmixCallback")] AudioPostmixCallback callback,
             Ref userdata
         ) => T.SetAudioPostmixCallback(devid, callback, userdata);
 
@@ -20579,8 +20509,7 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
         )]
         public int SetAudioStreamGetCallback(
             AudioStreamHandle stream,
-            [NativeTypeName("SDL_AudioStreamCallback")]
-                delegate* unmanaged<void*, AudioStreamHandle, int, int, void> callback,
+            [NativeTypeName("SDL_AudioStreamCallback")] AudioStreamCallback callback,
             void* userdata
         ) => T.SetAudioStreamGetCallback(stream, callback, userdata);
 
@@ -20591,8 +20520,7 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
         )]
         public int SetAudioStreamGetCallback(
             AudioStreamHandle stream,
-            [NativeTypeName("SDL_AudioStreamCallback")]
-                delegate* unmanaged<void*, AudioStreamHandle, int, int, void> callback,
+            [NativeTypeName("SDL_AudioStreamCallback")] AudioStreamCallback callback,
             Ref userdata
         ) => T.SetAudioStreamGetCallback(stream, callback, userdata);
 
@@ -20602,8 +20530,7 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
         )]
         public int SetAudioStreamPutCallback(
             AudioStreamHandle stream,
-            [NativeTypeName("SDL_AudioStreamCallback")]
-                delegate* unmanaged<void*, AudioStreamHandle, int, int, void> callback,
+            [NativeTypeName("SDL_AudioStreamCallback")] AudioStreamCallback callback,
             void* userdata
         ) => T.SetAudioStreamPutCallback(stream, callback, userdata);
 
@@ -20614,8 +20541,7 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
         )]
         public int SetAudioStreamPutCallback(
             AudioStreamHandle stream,
-            [NativeTypeName("SDL_AudioStreamCallback")]
-                delegate* unmanaged<void*, AudioStreamHandle, int, int, void> callback,
+            [NativeTypeName("SDL_AudioStreamCallback")] AudioStreamCallback callback,
             Ref userdata
         ) => T.SetAudioStreamPutCallback(stream, callback, userdata);
 
@@ -20645,10 +20571,8 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
         public int SetClipboardData(
-            [NativeTypeName("SDL_ClipboardDataCallback")]
-                delegate* unmanaged<void*, sbyte*, nuint*, void*> callback,
-            [NativeTypeName("SDL_ClipboardCleanupCallback")]
-                delegate* unmanaged<void*, void> cleanup,
+            [NativeTypeName("SDL_ClipboardDataCallback")] ClipboardDataCallback callback,
+            [NativeTypeName("SDL_ClipboardCleanupCallback")] ClipboardCleanupCallback cleanup,
             void* userdata,
             [NativeTypeName("const char **")] sbyte** mime_types,
             [NativeTypeName("size_t")] nuint num_mime_types
@@ -20660,10 +20584,8 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
         public int SetClipboardData(
-            [NativeTypeName("SDL_ClipboardDataCallback")]
-                delegate* unmanaged<void*, sbyte*, nuint*, void*> callback,
-            [NativeTypeName("SDL_ClipboardCleanupCallback")]
-                delegate* unmanaged<void*, void> cleanup,
+            [NativeTypeName("SDL_ClipboardDataCallback")] ClipboardDataCallback callback,
+            [NativeTypeName("SDL_ClipboardCleanupCallback")] ClipboardCleanupCallback cleanup,
             Ref userdata,
             [NativeTypeName("const char **")] Ref2D<sbyte> mime_types,
             [NativeTypeName("size_t")] nuint num_mime_types
@@ -20714,7 +20636,7 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
         public void SetEventFilter(
-            [NativeTypeName("SDL_EventFilter")] delegate* unmanaged<void*, Event*, int> filter,
+            [NativeTypeName("SDL_EventFilter")] EventFilter filter,
             void* userdata
         ) => T.SetEventFilter(filter, userdata);
 
@@ -20724,7 +20646,7 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
         public void SetEventFilter(
-            [NativeTypeName("SDL_EventFilter")] delegate* unmanaged<void*, Event*, int> filter,
+            [NativeTypeName("SDL_EventFilter")] EventFilter filter,
             Ref userdata
         ) => T.SetEventFilter(filter, userdata);
 
@@ -20947,8 +20869,7 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
         public void SetLogOutputFunction(
-            [NativeTypeName("SDL_LogOutputFunction")]
-                delegate* unmanaged<void*, int, LogPriority, sbyte*, void> callback,
+            [NativeTypeName("SDL_LogOutputFunction")] LogOutputFunction callback,
             void* userdata
         ) => T.SetLogOutputFunction(callback, userdata);
 
@@ -20958,8 +20879,7 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
         public void SetLogOutputFunction(
-            [NativeTypeName("SDL_LogOutputFunction")]
-                delegate* unmanaged<void*, int, LogPriority, sbyte*, void> callback,
+            [NativeTypeName("SDL_LogOutputFunction")] LogOutputFunction callback,
             Ref userdata
         ) => T.SetLogOutputFunction(callback, userdata);
 
@@ -21072,8 +20992,7 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
             [NativeTypeName("SDL_PropertiesID")] uint props,
             [NativeTypeName("const char *")] sbyte* name,
             void* value,
-            [NativeTypeName("void (*)(void *, void *)")]
-                delegate* unmanaged<void*, void*, void> cleanup,
+            [NativeTypeName("void (*)(void *, void *)")] PfnVvVvV cleanup,
             void* userdata
         ) => T.SetPropertyWithCleanup(props, name, value, cleanup, userdata);
 
@@ -21086,8 +21005,7 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
             [NativeTypeName("SDL_PropertiesID")] uint props,
             [NativeTypeName("const char *")] Ref<sbyte> name,
             Ref value,
-            [NativeTypeName("void (*)(void *, void *)")]
-                delegate* unmanaged<void*, void*, void> cleanup,
+            [NativeTypeName("void (*)(void *, void *)")] PfnVvVvV cleanup,
             Ref userdata
         ) => T.SetPropertyWithCleanup(props, name, value, cleanup, userdata);
 
@@ -21450,7 +21368,7 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
         public int SetTLS(
             [NativeTypeName("SDL_TLSID")] uint id,
             [NativeTypeName("const void *")] void* value,
-            [NativeTypeName("void (*)(void *)")] delegate* unmanaged<void*, void> destructor
+            [NativeTypeName("void (*)(void *)")] ClipboardCleanupCallback destructor
         ) => T.SetTLS(id, value, destructor);
 
         [Transformed]
@@ -21461,7 +21379,7 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
         public int SetTLS(
             [NativeTypeName("SDL_TLSID")] uint id,
             [NativeTypeName("const void *")] Ref value,
-            [NativeTypeName("void (*)(void *)")] delegate* unmanaged<void*, void> destructor
+            [NativeTypeName("void (*)(void *)")] ClipboardCleanupCallback destructor
         ) => T.SetTLS(id, value, destructor);
 
         [NativeFunction("SDL3", EntryPoint = "SDL_SetWindowAlwaysOnTop")]
@@ -21565,8 +21483,7 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
         )]
         public int SetWindowHitTest(
             WindowHandle window,
-            [NativeTypeName("SDL_HitTest")]
-                delegate* unmanaged<WindowHandle, Point*, void*, HitTestResult> callback,
+            [NativeTypeName("SDL_HitTest")] HitTest callback,
             void* callback_data
         ) => T.SetWindowHitTest(window, callback, callback_data);
 
@@ -21577,8 +21494,7 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
         )]
         public int SetWindowHitTest(
             WindowHandle window,
-            [NativeTypeName("SDL_HitTest")]
-                delegate* unmanaged<WindowHandle, Point*, void*, HitTestResult> callback,
+            [NativeTypeName("SDL_HitTest")] HitTest callback,
             Ref callback_data
         ) => T.SetWindowHitTest(window, callback, callback_data);
 
@@ -21785,8 +21701,7 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
         public void ShowOpenFileDialog(
-            [NativeTypeName("SDL_DialogFileCallback")]
-                delegate* unmanaged<void*, sbyte**, int, void> callback,
+            [NativeTypeName("SDL_DialogFileCallback")] DialogFileCallback callback,
             void* userdata,
             WindowHandle window,
             [NativeTypeName("const SDL_DialogFileFilter *")] DialogFileFilter* filters,
@@ -21801,8 +21716,7 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
         public void ShowOpenFileDialog(
-            [NativeTypeName("SDL_DialogFileCallback")]
-                delegate* unmanaged<void*, sbyte**, int, void> callback,
+            [NativeTypeName("SDL_DialogFileCallback")] DialogFileCallback callback,
             Ref userdata,
             WindowHandle window,
             [NativeTypeName("const SDL_DialogFileFilter *")] Ref<DialogFileFilter> filters,
@@ -21816,8 +21730,7 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
         public void ShowOpenFolderDialog(
-            [NativeTypeName("SDL_DialogFileCallback")]
-                delegate* unmanaged<void*, sbyte**, int, void> callback,
+            [NativeTypeName("SDL_DialogFileCallback")] DialogFileCallback callback,
             void* userdata,
             WindowHandle window,
             [NativeTypeName("const char *")] sbyte* default_location,
@@ -21830,8 +21743,7 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
         public void ShowOpenFolderDialog(
-            [NativeTypeName("SDL_DialogFileCallback")]
-                delegate* unmanaged<void*, sbyte**, int, void> callback,
+            [NativeTypeName("SDL_DialogFileCallback")] DialogFileCallback callback,
             Ref userdata,
             WindowHandle window,
             [NativeTypeName("const char *")] Ref<sbyte> default_location,
@@ -21843,8 +21755,7 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
         public void ShowSaveFileDialog(
-            [NativeTypeName("SDL_DialogFileCallback")]
-                delegate* unmanaged<void*, sbyte**, int, void> callback,
+            [NativeTypeName("SDL_DialogFileCallback")] DialogFileCallback callback,
             void* userdata,
             WindowHandle window,
             [NativeTypeName("const SDL_DialogFileFilter *")] DialogFileFilter* filters,
@@ -21857,8 +21768,7 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
         public void ShowSaveFileDialog(
-            [NativeTypeName("SDL_DialogFileCallback")]
-                delegate* unmanaged<void*, sbyte**, int, void> callback,
+            [NativeTypeName("SDL_DialogFileCallback")] DialogFileCallback callback,
             Ref userdata,
             WindowHandle window,
             [NativeTypeName("const SDL_DialogFileFilter *")] Ref<DialogFileFilter> filters,
@@ -22824,7 +22734,7 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
         public static int AddEventWatch(
-            [NativeTypeName("SDL_EventFilter")] delegate* unmanaged<void*, Event*, int> filter,
+            [NativeTypeName("SDL_EventFilter")] EventFilter filter,
             void* userdata
         ) => Underlying.Value!.AddEventWatch(filter, userdata);
 
@@ -22834,7 +22744,7 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
         public static int AddEventWatch(
-            [NativeTypeName("SDL_EventFilter")] delegate* unmanaged<void*, Event*, int> filter,
+            [NativeTypeName("SDL_EventFilter")] EventFilter filter,
             Ref userdata
         )
         {
@@ -22912,8 +22822,7 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
         )]
         public static int AddHintCallback(
             [NativeTypeName("const char *")] sbyte* name,
-            [NativeTypeName("SDL_HintCallback")]
-                delegate* unmanaged<void*, sbyte*, sbyte*, sbyte*, void> callback,
+            [NativeTypeName("SDL_HintCallback")] HintCallback callback,
             void* userdata
         ) => Underlying.Value!.AddHintCallback(name, callback, userdata);
 
@@ -22924,8 +22833,7 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
         )]
         public static int AddHintCallback(
             [NativeTypeName("const char *")] Ref<sbyte> name,
-            [NativeTypeName("SDL_HintCallback")]
-                delegate* unmanaged<void*, sbyte*, sbyte*, sbyte*, void> callback,
+            [NativeTypeName("SDL_HintCallback")] HintCallback callback,
             Ref userdata
         )
         {
@@ -22943,7 +22851,7 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
         )]
         public static uint AddTimer(
             [NativeTypeName("Uint32")] uint interval,
-            [NativeTypeName("SDL_TimerCallback")] delegate* unmanaged<uint, void*, uint> callback,
+            [NativeTypeName("SDL_TimerCallback")] TimerCallback callback,
             void* param2
         ) => Underlying.Value!.AddTimer(interval, callback, param2);
 
@@ -22955,7 +22863,7 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
         )]
         public static uint AddTimer(
             [NativeTypeName("Uint32")] uint interval,
-            [NativeTypeName("SDL_TimerCallback")] delegate* unmanaged<uint, void*, uint> callback,
+            [NativeTypeName("SDL_TimerCallback")] TimerCallback callback,
             Ref param2
         )
         {
@@ -24224,7 +24132,7 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
         public static ThreadHandle CreateThread(
-            [NativeTypeName("SDL_ThreadFunction")] delegate* unmanaged<void*, int> fn,
+            [NativeTypeName("SDL_ThreadFunction")] ThreadFunction fn,
             [NativeTypeName("const char *")] sbyte* name,
             void* data
         ) => Underlying.Value!.CreateThread(fn, name, data);
@@ -24235,7 +24143,7 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
         public static ThreadHandle CreateThread(
-            [NativeTypeName("SDL_ThreadFunction")] delegate* unmanaged<void*, int> fn,
+            [NativeTypeName("SDL_ThreadFunction")] ThreadFunction fn,
             [NativeTypeName("const char *")] Ref<sbyte> name,
             Ref data
         )
@@ -24252,7 +24160,7 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
         public static ThreadHandle CreateThreadWithStackSize(
-            [NativeTypeName("SDL_ThreadFunction")] delegate* unmanaged<void*, int> fn,
+            [NativeTypeName("SDL_ThreadFunction")] ThreadFunction fn,
             [NativeTypeName("const char *")] sbyte* name,
             [NativeTypeName("const size_t")] nuint stacksize,
             void* data
@@ -24264,7 +24172,7 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
         public static ThreadHandle CreateThreadWithStackSize(
-            [NativeTypeName("SDL_ThreadFunction")] delegate* unmanaged<void*, int> fn,
+            [NativeTypeName("SDL_ThreadFunction")] ThreadFunction fn,
             [NativeTypeName("const char *")] Ref<sbyte> name,
             [NativeTypeName("const size_t")] nuint stacksize,
             Ref data
@@ -24435,7 +24343,7 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
         public static void DelEventWatch(
-            [NativeTypeName("SDL_EventFilter")] delegate* unmanaged<void*, Event*, int> filter,
+            [NativeTypeName("SDL_EventFilter")] EventFilter filter,
             void* userdata
         ) => Underlying.Value!.DelEventWatch(filter, userdata);
 
@@ -24445,7 +24353,7 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
         public static void DelEventWatch(
-            [NativeTypeName("SDL_EventFilter")] delegate* unmanaged<void*, Event*, int> filter,
+            [NativeTypeName("SDL_EventFilter")] EventFilter filter,
             Ref userdata
         )
         {
@@ -24461,8 +24369,7 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
         )]
         public static void DelHintCallback(
             [NativeTypeName("const char *")] sbyte* name,
-            [NativeTypeName("SDL_HintCallback")]
-                delegate* unmanaged<void*, sbyte*, sbyte*, sbyte*, void> callback,
+            [NativeTypeName("SDL_HintCallback")] HintCallback callback,
             void* userdata
         ) => Underlying.Value!.DelHintCallback(name, callback, userdata);
 
@@ -24473,8 +24380,7 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
         )]
         public static void DelHintCallback(
             [NativeTypeName("const char *")] Ref<sbyte> name,
-            [NativeTypeName("SDL_HintCallback")]
-                delegate* unmanaged<void*, sbyte*, sbyte*, sbyte*, void> callback,
+            [NativeTypeName("SDL_HintCallback")] HintCallback callback,
             Ref userdata
         )
         {
@@ -24706,7 +24612,7 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
-        public static delegate* unmanaged<void> EGLGetProcAddress(
+        public static FunctionPointer EGLGetProcAddress(
             [NativeTypeName("const char *")] sbyte* proc
         ) => Underlying.Value!.EGLGetProcAddress(proc);
 
@@ -24716,13 +24622,13 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
-        public static delegate* unmanaged<void> EGLGetProcAddress(
+        public static FunctionPointer EGLGetProcAddress(
             [NativeTypeName("const char *")] Ref<sbyte> proc
         )
         {
             fixed (sbyte* __dsl_proc = proc)
             {
-                return (delegate* unmanaged<void>)EGLGetProcAddress(__dsl_proc);
+                return (FunctionPointer)EGLGetProcAddress(__dsl_proc);
             }
         }
 
@@ -24749,11 +24655,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
         )]
         public static void EGLSetEGLAttributeCallbacks(
             [NativeTypeName("SDL_EGLAttribArrayCallback")]
-                delegate* unmanaged<nint*> platformAttribCallback,
-            [NativeTypeName("SDL_EGLIntArrayCallback")]
-                delegate* unmanaged<int*> surfaceAttribCallback,
-            [NativeTypeName("SDL_EGLIntArrayCallback")]
-                delegate* unmanaged<int*> contextAttribCallback
+                EGLAttribArrayCallback platformAttribCallback,
+            [NativeTypeName("SDL_EGLIntArrayCallback")] EGLIntArrayCallback surfaceAttribCallback,
+            [NativeTypeName("SDL_EGLIntArrayCallback")] EGLIntArrayCallback contextAttribCallback
         ) =>
             Underlying.Value!.EGLSetEGLAttributeCallbacks(
                 platformAttribCallback,
@@ -24773,8 +24677,7 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
         )]
         public static int EnumerateDirectory(
             [NativeTypeName("const char *")] sbyte* path,
-            [NativeTypeName("SDL_EnumerateDirectoryCallback")]
-                delegate* unmanaged<void*, sbyte*, sbyte*, int> callback,
+            [NativeTypeName("SDL_EnumerateDirectoryCallback")] EnumerateDirectoryCallback callback,
             void* userdata
         ) => Underlying.Value!.EnumerateDirectory(path, callback, userdata);
 
@@ -24785,8 +24688,7 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
         )]
         public static int EnumerateDirectory(
             [NativeTypeName("const char *")] Ref<sbyte> path,
-            [NativeTypeName("SDL_EnumerateDirectoryCallback")]
-                delegate* unmanaged<void*, sbyte*, sbyte*, int> callback,
+            [NativeTypeName("SDL_EnumerateDirectoryCallback")] EnumerateDirectoryCallback callback,
             Ref userdata
         )
         {
@@ -24804,7 +24706,7 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
         public static int EnumerateProperties(
             [NativeTypeName("SDL_PropertiesID")] uint props,
             [NativeTypeName("SDL_EnumeratePropertiesCallback")]
-                delegate* unmanaged<void*, uint, sbyte*, void> callback,
+                EnumeratePropertiesCallback callback,
             void* userdata
         ) => Underlying.Value!.EnumerateProperties(props, callback, userdata);
 
@@ -24816,7 +24718,7 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
         public static int EnumerateProperties(
             [NativeTypeName("SDL_PropertiesID")] uint props,
             [NativeTypeName("SDL_EnumeratePropertiesCallback")]
-                delegate* unmanaged<void*, uint, sbyte*, void> callback,
+                EnumeratePropertiesCallback callback,
             Ref userdata
         )
         {
@@ -24833,8 +24735,7 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
         public static int EnumerateStorageDirectory(
             StorageHandle storage,
             [NativeTypeName("const char *")] sbyte* path,
-            [NativeTypeName("SDL_EnumerateDirectoryCallback")]
-                delegate* unmanaged<void*, sbyte*, sbyte*, int> callback,
+            [NativeTypeName("SDL_EnumerateDirectoryCallback")] EnumerateDirectoryCallback callback,
             void* userdata
         ) => Underlying.Value!.EnumerateStorageDirectory(storage, path, callback, userdata);
 
@@ -24846,8 +24747,7 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
         public static int EnumerateStorageDirectory(
             StorageHandle storage,
             [NativeTypeName("const char *")] Ref<sbyte> path,
-            [NativeTypeName("SDL_EnumerateDirectoryCallback")]
-                delegate* unmanaged<void*, sbyte*, sbyte*, int> callback,
+            [NativeTypeName("SDL_EnumerateDirectoryCallback")] EnumerateDirectoryCallback callback,
             Ref userdata
         )
         {
@@ -24949,7 +24849,7 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
         public static void FilterEvents(
-            [NativeTypeName("SDL_EventFilter")] delegate* unmanaged<void*, Event*, int> filter,
+            [NativeTypeName("SDL_EventFilter")] EventFilter filter,
             void* userdata
         ) => Underlying.Value!.FilterEvents(filter, userdata);
 
@@ -24959,7 +24859,7 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
         public static void FilterEvents(
-            [NativeTypeName("SDL_EventFilter")] delegate* unmanaged<void*, Event*, int> filter,
+            [NativeTypeName("SDL_EventFilter")] EventFilter filter,
             Ref userdata
         )
         {
@@ -25134,9 +25034,8 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
-        public static delegate* unmanaged<AssertData*, void*, AssertState> GetAssertionHandler(
-            void** puserdata
-        ) => Underlying.Value!.GetAssertionHandler(puserdata);
+        public static AssertionHandler GetAssertionHandler(void** puserdata) =>
+            Underlying.Value!.GetAssertionHandler(puserdata);
 
         [return: NativeTypeName("SDL_AssertionHandler")]
         [Transformed]
@@ -25144,15 +25043,11 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
-        public static delegate* unmanaged<AssertData*, void*, AssertState> GetAssertionHandler(
-            Ref2D puserdata
-        )
+        public static AssertionHandler GetAssertionHandler(Ref2D puserdata)
         {
             fixed (void** __dsl_puserdata = puserdata)
             {
-                return (delegate* unmanaged<AssertData*, void*, AssertState>)GetAssertionHandler(
-                    __dsl_puserdata
-                );
+                return (AssertionHandler)GetAssertionHandler(__dsl_puserdata);
             }
         }
 
@@ -25801,10 +25696,7 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
-        public static delegate* unmanaged<
-            AssertData*,
-            void*,
-            AssertState> GetDefaultAssertionHandler() =>
+        public static AssertionHandler GetDefaultAssertionHandler() =>
             Underlying.Value!.GetDefaultAssertionHandler();
 
         [NativeFunction("SDL3", EntryPoint = "SDL_GetDefaultCursor")]
@@ -26011,7 +25903,7 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
         public static int GetEventFilter(
-            [NativeTypeName("SDL_EventFilter *")] delegate* unmanaged<void*, Event*, int>* filter,
+            [NativeTypeName("SDL_EventFilter *")] EventFilter* filter,
             void** userdata
         ) => Underlying.Value!.GetEventFilter(filter, userdata);
 
@@ -26022,13 +25914,14 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
         public static MaybeBool<int> GetEventFilter(
-            [NativeTypeName("SDL_EventFilter *")] delegate* unmanaged<void*, Event*, int>* filter,
+            [NativeTypeName("SDL_EventFilter *")] Ref<EventFilter> filter,
             Ref2D userdata
         )
         {
             fixed (void** __dsl_userdata = userdata)
+            fixed (EventFilter* __dsl_filter = filter)
             {
-                return (MaybeBool<int>)(int)GetEventFilter(filter, __dsl_userdata);
+                return (MaybeBool<int>)(int)GetEventFilter(__dsl_filter, __dsl_userdata);
             }
         }
 
@@ -27510,8 +27403,7 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
         public static void GetLogOutputFunction(
-            [NativeTypeName("SDL_LogOutputFunction *")]
-                delegate* unmanaged<void*, int, LogPriority, sbyte*, void>* callback,
+            [NativeTypeName("SDL_LogOutputFunction *")] LogOutputFunction* callback,
             void** userdata
         ) => Underlying.Value!.GetLogOutputFunction(callback, userdata);
 
@@ -27521,14 +27413,14 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
         public static void GetLogOutputFunction(
-            [NativeTypeName("SDL_LogOutputFunction *")]
-                delegate* unmanaged<void*, int, LogPriority, sbyte*, void>* callback,
+            [NativeTypeName("SDL_LogOutputFunction *")] Ref<LogOutputFunction> callback,
             Ref2D userdata
         )
         {
             fixed (void** __dsl_userdata = userdata)
+            fixed (LogOutputFunction* __dsl_callback = callback)
             {
-                GetLogOutputFunction(callback, __dsl_userdata);
+                GetLogOutputFunction(__dsl_callback, __dsl_userdata);
             }
         }
 
@@ -30156,7 +30048,7 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
-        public static delegate* unmanaged<void> GLGetProcAddress(
+        public static FunctionPointer GLGetProcAddress(
             [NativeTypeName("const char *")] sbyte* proc
         ) => Underlying.Value!.GLGetProcAddress(proc);
 
@@ -30166,13 +30058,13 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
-        public static delegate* unmanaged<void> GLGetProcAddress(
+        public static FunctionPointer GLGetProcAddress(
             [NativeTypeName("const char *")] Ref<sbyte> proc
         )
         {
             fixed (sbyte* __dsl_proc = proc)
             {
-                return (delegate* unmanaged<void>)GLGetProcAddress(__dsl_proc);
+                return (FunctionPointer)GLGetProcAddress(__dsl_proc);
             }
         }
 
@@ -31707,7 +31599,7 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
-        public static delegate* unmanaged<void> LoadFunction(
+        public static FunctionPointer LoadFunction(
             void* handle,
             [NativeTypeName("const char *")] sbyte* name
         ) => Underlying.Value!.LoadFunction(handle, name);
@@ -31718,7 +31610,7 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
-        public static delegate* unmanaged<void> LoadFunction(
+        public static FunctionPointer LoadFunction(
             Ref handle,
             [NativeTypeName("const char *")] Ref<sbyte> name
         )
@@ -31726,7 +31618,7 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
             fixed (sbyte* __dsl_name = name)
             fixed (void* __dsl_handle = handle)
             {
-                return (delegate* unmanaged<void>)LoadFunction(__dsl_handle, __dsl_name);
+                return (FunctionPointer)LoadFunction(__dsl_handle, __dsl_name);
             }
         }
 
@@ -32273,8 +32165,7 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
         public static AudioStreamHandle OpenAudioDeviceStream(
             [NativeTypeName("SDL_AudioDeviceID")] uint devid,
             [NativeTypeName("const SDL_AudioSpec *")] AudioSpec* spec,
-            [NativeTypeName("SDL_AudioStreamCallback")]
-                delegate* unmanaged<void*, AudioStreamHandle, int, int, void> callback,
+            [NativeTypeName("SDL_AudioStreamCallback")] AudioStreamCallback callback,
             void* userdata
         ) => Underlying.Value!.OpenAudioDeviceStream(devid, spec, callback, userdata);
 
@@ -32286,8 +32177,7 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
         public static AudioStreamHandle OpenAudioDeviceStream(
             [NativeTypeName("SDL_AudioDeviceID")] uint devid,
             [NativeTypeName("const SDL_AudioSpec *")] Ref<AudioSpec> spec,
-            [NativeTypeName("SDL_AudioStreamCallback")]
-                delegate* unmanaged<void*, AudioStreamHandle, int, int, void> callback,
+            [NativeTypeName("SDL_AudioStreamCallback")] AudioStreamCallback callback,
             Ref userdata
         )
         {
@@ -34304,8 +34194,7 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
         public static void SetAssertionHandler(
-            [NativeTypeName("SDL_AssertionHandler")]
-                delegate* unmanaged<AssertData*, void*, AssertState> handler,
+            [NativeTypeName("SDL_AssertionHandler")] AssertionHandler handler,
             void* userdata
         ) => Underlying.Value!.SetAssertionHandler(handler, userdata);
 
@@ -34315,8 +34204,7 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
         public static void SetAssertionHandler(
-            [NativeTypeName("SDL_AssertionHandler")]
-                delegate* unmanaged<AssertData*, void*, AssertState> handler,
+            [NativeTypeName("SDL_AssertionHandler")] AssertionHandler handler,
             Ref userdata
         )
         {
@@ -34332,8 +34220,7 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
         )]
         public static int SetAudioPostmixCallback(
             [NativeTypeName("SDL_AudioDeviceID")] uint devid,
-            [NativeTypeName("SDL_AudioPostmixCallback")]
-                delegate* unmanaged<void*, AudioSpec*, float*, int, void> callback,
+            [NativeTypeName("SDL_AudioPostmixCallback")] AudioPostmixCallback callback,
             void* userdata
         ) => Underlying.Value!.SetAudioPostmixCallback(devid, callback, userdata);
 
@@ -34344,8 +34231,7 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
         )]
         public static int SetAudioPostmixCallback(
             [NativeTypeName("SDL_AudioDeviceID")] uint devid,
-            [NativeTypeName("SDL_AudioPostmixCallback")]
-                delegate* unmanaged<void*, AudioSpec*, float*, int, void> callback,
+            [NativeTypeName("SDL_AudioPostmixCallback")] AudioPostmixCallback callback,
             Ref userdata
         )
         {
@@ -34396,8 +34282,7 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
         )]
         public static int SetAudioStreamGetCallback(
             AudioStreamHandle stream,
-            [NativeTypeName("SDL_AudioStreamCallback")]
-                delegate* unmanaged<void*, AudioStreamHandle, int, int, void> callback,
+            [NativeTypeName("SDL_AudioStreamCallback")] AudioStreamCallback callback,
             void* userdata
         ) => Underlying.Value!.SetAudioStreamGetCallback(stream, callback, userdata);
 
@@ -34408,8 +34293,7 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
         )]
         public static int SetAudioStreamGetCallback(
             AudioStreamHandle stream,
-            [NativeTypeName("SDL_AudioStreamCallback")]
-                delegate* unmanaged<void*, AudioStreamHandle, int, int, void> callback,
+            [NativeTypeName("SDL_AudioStreamCallback")] AudioStreamCallback callback,
             Ref userdata
         )
         {
@@ -34425,8 +34309,7 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
         )]
         public static int SetAudioStreamPutCallback(
             AudioStreamHandle stream,
-            [NativeTypeName("SDL_AudioStreamCallback")]
-                delegate* unmanaged<void*, AudioStreamHandle, int, int, void> callback,
+            [NativeTypeName("SDL_AudioStreamCallback")] AudioStreamCallback callback,
             void* userdata
         ) => Underlying.Value!.SetAudioStreamPutCallback(stream, callback, userdata);
 
@@ -34437,8 +34320,7 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
         )]
         public static int SetAudioStreamPutCallback(
             AudioStreamHandle stream,
-            [NativeTypeName("SDL_AudioStreamCallback")]
-                delegate* unmanaged<void*, AudioStreamHandle, int, int, void> callback,
+            [NativeTypeName("SDL_AudioStreamCallback")] AudioStreamCallback callback,
             Ref userdata
         )
         {
@@ -34480,10 +34362,8 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
         public static int SetClipboardData(
-            [NativeTypeName("SDL_ClipboardDataCallback")]
-                delegate* unmanaged<void*, sbyte*, nuint*, void*> callback,
-            [NativeTypeName("SDL_ClipboardCleanupCallback")]
-                delegate* unmanaged<void*, void> cleanup,
+            [NativeTypeName("SDL_ClipboardDataCallback")] ClipboardDataCallback callback,
+            [NativeTypeName("SDL_ClipboardCleanupCallback")] ClipboardCleanupCallback cleanup,
             void* userdata,
             [NativeTypeName("const char **")] sbyte** mime_types,
             [NativeTypeName("size_t")] nuint num_mime_types
@@ -34502,10 +34382,8 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
         public static int SetClipboardData(
-            [NativeTypeName("SDL_ClipboardDataCallback")]
-                delegate* unmanaged<void*, sbyte*, nuint*, void*> callback,
-            [NativeTypeName("SDL_ClipboardCleanupCallback")]
-                delegate* unmanaged<void*, void> cleanup,
+            [NativeTypeName("SDL_ClipboardDataCallback")] ClipboardDataCallback callback,
+            [NativeTypeName("SDL_ClipboardCleanupCallback")] ClipboardCleanupCallback cleanup,
             Ref userdata,
             [NativeTypeName("const char **")] Ref2D<sbyte> mime_types,
             [NativeTypeName("size_t")] nuint num_mime_types
@@ -34574,7 +34452,7 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
         public static void SetEventFilter(
-            [NativeTypeName("SDL_EventFilter")] delegate* unmanaged<void*, Event*, int> filter,
+            [NativeTypeName("SDL_EventFilter")] EventFilter filter,
             void* userdata
         ) => Underlying.Value!.SetEventFilter(filter, userdata);
 
@@ -34584,7 +34462,7 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
         public static void SetEventFilter(
-            [NativeTypeName("SDL_EventFilter")] delegate* unmanaged<void*, Event*, int> filter,
+            [NativeTypeName("SDL_EventFilter")] EventFilter filter,
             Ref userdata
         )
         {
@@ -34842,8 +34720,7 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
         public static void SetLogOutputFunction(
-            [NativeTypeName("SDL_LogOutputFunction")]
-                delegate* unmanaged<void*, int, LogPriority, sbyte*, void> callback,
+            [NativeTypeName("SDL_LogOutputFunction")] LogOutputFunction callback,
             void* userdata
         ) => Underlying.Value!.SetLogOutputFunction(callback, userdata);
 
@@ -34853,8 +34730,7 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
         public static void SetLogOutputFunction(
-            [NativeTypeName("SDL_LogOutputFunction")]
-                delegate* unmanaged<void*, int, LogPriority, sbyte*, void> callback,
+            [NativeTypeName("SDL_LogOutputFunction")] LogOutputFunction callback,
             Ref userdata
         )
         {
@@ -35004,8 +34880,7 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
             [NativeTypeName("SDL_PropertiesID")] uint props,
             [NativeTypeName("const char *")] sbyte* name,
             void* value,
-            [NativeTypeName("void (*)(void *, void *)")]
-                delegate* unmanaged<void*, void*, void> cleanup,
+            [NativeTypeName("void (*)(void *, void *)")] PfnVvVvV cleanup,
             void* userdata
         ) => Underlying.Value!.SetPropertyWithCleanup(props, name, value, cleanup, userdata);
 
@@ -35018,8 +34893,7 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
             [NativeTypeName("SDL_PropertiesID")] uint props,
             [NativeTypeName("const char *")] Ref<sbyte> name,
             Ref value,
-            [NativeTypeName("void (*)(void *, void *)")]
-                delegate* unmanaged<void*, void*, void> cleanup,
+            [NativeTypeName("void (*)(void *, void *)")] PfnVvVvV cleanup,
             Ref userdata
         )
         {
@@ -35478,7 +35352,7 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
         public static int SetTLS(
             [NativeTypeName("SDL_TLSID")] uint id,
             [NativeTypeName("const void *")] void* value,
-            [NativeTypeName("void (*)(void *)")] delegate* unmanaged<void*, void> destructor
+            [NativeTypeName("void (*)(void *)")] ClipboardCleanupCallback destructor
         ) => Underlying.Value!.SetTLS(id, value, destructor);
 
         [Transformed]
@@ -35489,7 +35363,7 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
         public static int SetTLS(
             [NativeTypeName("SDL_TLSID")] uint id,
             [NativeTypeName("const void *")] Ref value,
-            [NativeTypeName("void (*)(void *)")] delegate* unmanaged<void*, void> destructor
+            [NativeTypeName("void (*)(void *)")] ClipboardCleanupCallback destructor
         )
         {
             fixed (void* __dsl_value = value)
@@ -35605,8 +35479,7 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
         )]
         public static int SetWindowHitTest(
             WindowHandle window,
-            [NativeTypeName("SDL_HitTest")]
-                delegate* unmanaged<WindowHandle, Point*, void*, HitTestResult> callback,
+            [NativeTypeName("SDL_HitTest")] HitTest callback,
             void* callback_data
         ) => Underlying.Value!.SetWindowHitTest(window, callback, callback_data);
 
@@ -35617,8 +35490,7 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
         )]
         public static int SetWindowHitTest(
             WindowHandle window,
-            [NativeTypeName("SDL_HitTest")]
-                delegate* unmanaged<WindowHandle, Point*, void*, HitTestResult> callback,
+            [NativeTypeName("SDL_HitTest")] HitTest callback,
             Ref callback_data
         )
         {
@@ -35863,8 +35735,7 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
         public static void ShowOpenFileDialog(
-            [NativeTypeName("SDL_DialogFileCallback")]
-                delegate* unmanaged<void*, sbyte**, int, void> callback,
+            [NativeTypeName("SDL_DialogFileCallback")] DialogFileCallback callback,
             void* userdata,
             WindowHandle window,
             [NativeTypeName("const SDL_DialogFileFilter *")] DialogFileFilter* filters,
@@ -35886,8 +35757,7 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
         public static void ShowOpenFileDialog(
-            [NativeTypeName("SDL_DialogFileCallback")]
-                delegate* unmanaged<void*, sbyte**, int, void> callback,
+            [NativeTypeName("SDL_DialogFileCallback")] DialogFileCallback callback,
             Ref userdata,
             WindowHandle window,
             [NativeTypeName("const SDL_DialogFileFilter *")] Ref<DialogFileFilter> filters,
@@ -35915,8 +35785,7 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
         public static void ShowOpenFolderDialog(
-            [NativeTypeName("SDL_DialogFileCallback")]
-                delegate* unmanaged<void*, sbyte**, int, void> callback,
+            [NativeTypeName("SDL_DialogFileCallback")] DialogFileCallback callback,
             void* userdata,
             WindowHandle window,
             [NativeTypeName("const char *")] sbyte* default_location,
@@ -35936,8 +35805,7 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
         public static void ShowOpenFolderDialog(
-            [NativeTypeName("SDL_DialogFileCallback")]
-                delegate* unmanaged<void*, sbyte**, int, void> callback,
+            [NativeTypeName("SDL_DialogFileCallback")] DialogFileCallback callback,
             Ref userdata,
             WindowHandle window,
             [NativeTypeName("const char *")] Ref<sbyte> default_location,
@@ -35962,8 +35830,7 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
         public static void ShowSaveFileDialog(
-            [NativeTypeName("SDL_DialogFileCallback")]
-                delegate* unmanaged<void*, sbyte**, int, void> callback,
+            [NativeTypeName("SDL_DialogFileCallback")] DialogFileCallback callback,
             void* userdata,
             WindowHandle window,
             [NativeTypeName("const SDL_DialogFileFilter *")] DialogFileFilter* filters,
@@ -35983,8 +35850,7 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
         public static void ShowSaveFileDialog(
-            [NativeTypeName("SDL_DialogFileCallback")]
-                delegate* unmanaged<void*, sbyte**, int, void> callback,
+            [NativeTypeName("SDL_DialogFileCallback")] DialogFileCallback callback,
             Ref userdata,
             WindowHandle window,
             [NativeTypeName("const SDL_DialogFileFilter *")] Ref<DialogFileFilter> filters,
@@ -40124,26 +39990,23 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     int ISdl.AddEventWatch(
-        [NativeTypeName("SDL_EventFilter")] delegate* unmanaged<void*, Event*, int> filter,
+        [NativeTypeName("SDL_EventFilter")] EventFilter filter,
         void* userdata
     ) =>
         (
-            (delegate* unmanaged<delegate* unmanaged<void*, Event*, int>, void*, int>)
+            (delegate* unmanaged<EventFilter, void*, int>)
                 nativeContext.LoadFunction("SDL_AddEventWatch", "SDL3")
         )(filter, userdata);
 
     [NativeFunction("SDL3", EntryPoint = "SDL_AddEventWatch")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     public static int AddEventWatch(
-        [NativeTypeName("SDL_EventFilter")] delegate* unmanaged<void*, Event*, int> filter,
+        [NativeTypeName("SDL_EventFilter")] EventFilter filter,
         void* userdata
     ) => DllImport.AddEventWatch(filter, userdata);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    int ISdl.AddEventWatch(
-        [NativeTypeName("SDL_EventFilter")] delegate* unmanaged<void*, Event*, int> filter,
-        Ref userdata
-    )
+    int ISdl.AddEventWatch([NativeTypeName("SDL_EventFilter")] EventFilter filter, Ref userdata)
     {
         fixed (void* __dsl_userdata = userdata)
         {
@@ -40155,7 +40018,7 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     [NativeFunction("SDL3", EntryPoint = "SDL_AddEventWatch")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     public static int AddEventWatch(
-        [NativeTypeName("SDL_EventFilter")] delegate* unmanaged<void*, Event*, int> filter,
+        [NativeTypeName("SDL_EventFilter")] EventFilter filter,
         Ref userdata
     ) => DllImport.AddEventWatch(filter, userdata);
 
@@ -40248,16 +40111,11 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     int ISdl.AddHintCallback(
         [NativeTypeName("const char *")] sbyte* name,
-        [NativeTypeName("SDL_HintCallback")]
-            delegate* unmanaged<void*, sbyte*, sbyte*, sbyte*, void> callback,
+        [NativeTypeName("SDL_HintCallback")] HintCallback callback,
         void* userdata
     ) =>
         (
-            (delegate* unmanaged<
-                sbyte*,
-                delegate* unmanaged<void*, sbyte*, sbyte*, sbyte*, void>,
-                void*,
-                int>)
+            (delegate* unmanaged<sbyte*, HintCallback, void*, int>)
                 nativeContext.LoadFunction("SDL_AddHintCallback", "SDL3")
         )(name, callback, userdata);
 
@@ -40265,16 +40123,14 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     public static int AddHintCallback(
         [NativeTypeName("const char *")] sbyte* name,
-        [NativeTypeName("SDL_HintCallback")]
-            delegate* unmanaged<void*, sbyte*, sbyte*, sbyte*, void> callback,
+        [NativeTypeName("SDL_HintCallback")] HintCallback callback,
         void* userdata
     ) => DllImport.AddHintCallback(name, callback, userdata);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     int ISdl.AddHintCallback(
         [NativeTypeName("const char *")] Ref<sbyte> name,
-        [NativeTypeName("SDL_HintCallback")]
-            delegate* unmanaged<void*, sbyte*, sbyte*, sbyte*, void> callback,
+        [NativeTypeName("SDL_HintCallback")] HintCallback callback,
         Ref userdata
     )
     {
@@ -40290,19 +40146,18 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     public static int AddHintCallback(
         [NativeTypeName("const char *")] Ref<sbyte> name,
-        [NativeTypeName("SDL_HintCallback")]
-            delegate* unmanaged<void*, sbyte*, sbyte*, sbyte*, void> callback,
+        [NativeTypeName("SDL_HintCallback")] HintCallback callback,
         Ref userdata
     ) => DllImport.AddHintCallback(name, callback, userdata);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     uint ISdl.AddTimer(
         [NativeTypeName("Uint32")] uint interval,
-        [NativeTypeName("SDL_TimerCallback")] delegate* unmanaged<uint, void*, uint> callback,
+        [NativeTypeName("SDL_TimerCallback")] TimerCallback callback,
         void* param2
     ) =>
         (
-            (delegate* unmanaged<uint, delegate* unmanaged<uint, void*, uint>, void*, uint>)
+            (delegate* unmanaged<uint, TimerCallback, void*, uint>)
                 nativeContext.LoadFunction("SDL_AddTimer", "SDL3")
         )(interval, callback, param2);
 
@@ -40311,14 +40166,14 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     public static uint AddTimer(
         [NativeTypeName("Uint32")] uint interval,
-        [NativeTypeName("SDL_TimerCallback")] delegate* unmanaged<uint, void*, uint> callback,
+        [NativeTypeName("SDL_TimerCallback")] TimerCallback callback,
         void* param2
     ) => DllImport.AddTimer(interval, callback, param2);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     uint ISdl.AddTimer(
         [NativeTypeName("Uint32")] uint interval,
-        [NativeTypeName("SDL_TimerCallback")] delegate* unmanaged<uint, void*, uint> callback,
+        [NativeTypeName("SDL_TimerCallback")] TimerCallback callback,
         Ref param2
     )
     {
@@ -40334,7 +40189,7 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     public static uint AddTimer(
         [NativeTypeName("Uint32")] uint interval,
-        [NativeTypeName("SDL_TimerCallback")] delegate* unmanaged<uint, void*, uint> callback,
+        [NativeTypeName("SDL_TimerCallback")] TimerCallback callback,
         Ref param2
     ) => DllImport.AddTimer(interval, callback, param2);
 
@@ -42233,26 +42088,26 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     ThreadHandle ISdl.CreateThread(
-        [NativeTypeName("SDL_ThreadFunction")] delegate* unmanaged<void*, int> fn,
+        [NativeTypeName("SDL_ThreadFunction")] ThreadFunction fn,
         [NativeTypeName("const char *")] sbyte* name,
         void* data
     ) =>
         (
-            (delegate* unmanaged<delegate* unmanaged<void*, int>, sbyte*, void*, ThreadHandle>)
+            (delegate* unmanaged<ThreadFunction, sbyte*, void*, ThreadHandle>)
                 nativeContext.LoadFunction("SDL_CreateThread", "SDL3")
         )(fn, name, data);
 
     [NativeFunction("SDL3", EntryPoint = "SDL_CreateThread")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     public static ThreadHandle CreateThread(
-        [NativeTypeName("SDL_ThreadFunction")] delegate* unmanaged<void*, int> fn,
+        [NativeTypeName("SDL_ThreadFunction")] ThreadFunction fn,
         [NativeTypeName("const char *")] sbyte* name,
         void* data
     ) => DllImport.CreateThread(fn, name, data);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     ThreadHandle ISdl.CreateThread(
-        [NativeTypeName("SDL_ThreadFunction")] delegate* unmanaged<void*, int> fn,
+        [NativeTypeName("SDL_ThreadFunction")] ThreadFunction fn,
         [NativeTypeName("const char *")] Ref<sbyte> name,
         Ref data
     )
@@ -42268,32 +42123,27 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     [NativeFunction("SDL3", EntryPoint = "SDL_CreateThread")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     public static ThreadHandle CreateThread(
-        [NativeTypeName("SDL_ThreadFunction")] delegate* unmanaged<void*, int> fn,
+        [NativeTypeName("SDL_ThreadFunction")] ThreadFunction fn,
         [NativeTypeName("const char *")] Ref<sbyte> name,
         Ref data
     ) => DllImport.CreateThread(fn, name, data);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     ThreadHandle ISdl.CreateThreadWithStackSize(
-        [NativeTypeName("SDL_ThreadFunction")] delegate* unmanaged<void*, int> fn,
+        [NativeTypeName("SDL_ThreadFunction")] ThreadFunction fn,
         [NativeTypeName("const char *")] sbyte* name,
         [NativeTypeName("const size_t")] nuint stacksize,
         void* data
     ) =>
         (
-            (delegate* unmanaged<
-                delegate* unmanaged<void*, int>,
-                sbyte*,
-                nuint,
-                void*,
-                ThreadHandle>)
+            (delegate* unmanaged<ThreadFunction, sbyte*, nuint, void*, ThreadHandle>)
                 nativeContext.LoadFunction("SDL_CreateThreadWithStackSize", "SDL3")
         )(fn, name, stacksize, data);
 
     [NativeFunction("SDL3", EntryPoint = "SDL_CreateThreadWithStackSize")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     public static ThreadHandle CreateThreadWithStackSize(
-        [NativeTypeName("SDL_ThreadFunction")] delegate* unmanaged<void*, int> fn,
+        [NativeTypeName("SDL_ThreadFunction")] ThreadFunction fn,
         [NativeTypeName("const char *")] sbyte* name,
         [NativeTypeName("const size_t")] nuint stacksize,
         void* data
@@ -42301,7 +42151,7 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     ThreadHandle ISdl.CreateThreadWithStackSize(
-        [NativeTypeName("SDL_ThreadFunction")] delegate* unmanaged<void*, int> fn,
+        [NativeTypeName("SDL_ThreadFunction")] ThreadFunction fn,
         [NativeTypeName("const char *")] Ref<sbyte> name,
         [NativeTypeName("const size_t")] nuint stacksize,
         Ref data
@@ -42319,7 +42169,7 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     [NativeFunction("SDL3", EntryPoint = "SDL_CreateThreadWithStackSize")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     public static ThreadHandle CreateThreadWithStackSize(
-        [NativeTypeName("SDL_ThreadFunction")] delegate* unmanaged<void*, int> fn,
+        [NativeTypeName("SDL_ThreadFunction")] ThreadFunction fn,
         [NativeTypeName("const char *")] Ref<sbyte> name,
         [NativeTypeName("const size_t")] nuint stacksize,
         Ref data
@@ -42529,26 +42379,23 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     void ISdl.DelEventWatch(
-        [NativeTypeName("SDL_EventFilter")] delegate* unmanaged<void*, Event*, int> filter,
+        [NativeTypeName("SDL_EventFilter")] EventFilter filter,
         void* userdata
     ) =>
         (
-            (delegate* unmanaged<delegate* unmanaged<void*, Event*, int>, void*, void>)
+            (delegate* unmanaged<EventFilter, void*, void>)
                 nativeContext.LoadFunction("SDL_DelEventWatch", "SDL3")
         )(filter, userdata);
 
     [NativeFunction("SDL3", EntryPoint = "SDL_DelEventWatch")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     public static void DelEventWatch(
-        [NativeTypeName("SDL_EventFilter")] delegate* unmanaged<void*, Event*, int> filter,
+        [NativeTypeName("SDL_EventFilter")] EventFilter filter,
         void* userdata
     ) => DllImport.DelEventWatch(filter, userdata);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void ISdl.DelEventWatch(
-        [NativeTypeName("SDL_EventFilter")] delegate* unmanaged<void*, Event*, int> filter,
-        Ref userdata
-    )
+    void ISdl.DelEventWatch([NativeTypeName("SDL_EventFilter")] EventFilter filter, Ref userdata)
     {
         fixed (void* __dsl_userdata = userdata)
         {
@@ -42560,23 +42407,18 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     [NativeFunction("SDL3", EntryPoint = "SDL_DelEventWatch")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     public static void DelEventWatch(
-        [NativeTypeName("SDL_EventFilter")] delegate* unmanaged<void*, Event*, int> filter,
+        [NativeTypeName("SDL_EventFilter")] EventFilter filter,
         Ref userdata
     ) => DllImport.DelEventWatch(filter, userdata);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     void ISdl.DelHintCallback(
         [NativeTypeName("const char *")] sbyte* name,
-        [NativeTypeName("SDL_HintCallback")]
-            delegate* unmanaged<void*, sbyte*, sbyte*, sbyte*, void> callback,
+        [NativeTypeName("SDL_HintCallback")] HintCallback callback,
         void* userdata
     ) =>
         (
-            (delegate* unmanaged<
-                sbyte*,
-                delegate* unmanaged<void*, sbyte*, sbyte*, sbyte*, void>,
-                void*,
-                void>)
+            (delegate* unmanaged<sbyte*, HintCallback, void*, void>)
                 nativeContext.LoadFunction("SDL_DelHintCallback", "SDL3")
         )(name, callback, userdata);
 
@@ -42584,16 +42426,14 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     public static void DelHintCallback(
         [NativeTypeName("const char *")] sbyte* name,
-        [NativeTypeName("SDL_HintCallback")]
-            delegate* unmanaged<void*, sbyte*, sbyte*, sbyte*, void> callback,
+        [NativeTypeName("SDL_HintCallback")] HintCallback callback,
         void* userdata
     ) => DllImport.DelHintCallback(name, callback, userdata);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     void ISdl.DelHintCallback(
         [NativeTypeName("const char *")] Ref<sbyte> name,
-        [NativeTypeName("SDL_HintCallback")]
-            delegate* unmanaged<void*, sbyte*, sbyte*, sbyte*, void> callback,
+        [NativeTypeName("SDL_HintCallback")] HintCallback callback,
         Ref userdata
     )
     {
@@ -42609,8 +42449,7 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     public static void DelHintCallback(
         [NativeTypeName("const char *")] Ref<sbyte> name,
-        [NativeTypeName("SDL_HintCallback")]
-            delegate* unmanaged<void*, sbyte*, sbyte*, sbyte*, void> callback,
+        [NativeTypeName("SDL_HintCallback")] HintCallback callback,
         Ref userdata
     ) => DllImport.DelHintCallback(name, callback, userdata);
 
@@ -42929,29 +42768,24 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     public static void* EGLGetCurrentEGLDisplayRaw() => DllImport.EGLGetCurrentEGLDisplayRaw();
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    delegate* unmanaged<void> ISdl.EGLGetProcAddress(
-        [NativeTypeName("const char *")] sbyte* proc
-    ) =>
+    FunctionPointer ISdl.EGLGetProcAddress([NativeTypeName("const char *")] sbyte* proc) =>
         (
-            (delegate* unmanaged<sbyte*, delegate* unmanaged<void>>)
+            (delegate* unmanaged<sbyte*, FunctionPointer>)
                 nativeContext.LoadFunction("SDL_EGL_GetProcAddress", "SDL3")
         )(proc);
 
     [return: NativeTypeName("SDL_FunctionPointer")]
     [NativeFunction("SDL3", EntryPoint = "SDL_EGL_GetProcAddress")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    public static delegate* unmanaged<void> EGLGetProcAddress(
-        [NativeTypeName("const char *")] sbyte* proc
-    ) => DllImport.EGLGetProcAddress(proc);
+    public static FunctionPointer EGLGetProcAddress([NativeTypeName("const char *")] sbyte* proc) =>
+        DllImport.EGLGetProcAddress(proc);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    delegate* unmanaged<void> ISdl.EGLGetProcAddress(
-        [NativeTypeName("const char *")] Ref<sbyte> proc
-    )
+    FunctionPointer ISdl.EGLGetProcAddress([NativeTypeName("const char *")] Ref<sbyte> proc)
     {
         fixed (sbyte* __dsl_proc = proc)
         {
-            return (delegate* unmanaged<void>)((ISdl)this).EGLGetProcAddress(__dsl_proc);
+            return (FunctionPointer)((ISdl)this).EGLGetProcAddress(__dsl_proc);
         }
     }
 
@@ -42959,7 +42793,7 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     [Transformed]
     [NativeFunction("SDL3", EntryPoint = "SDL_EGL_GetProcAddress")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    public static delegate* unmanaged<void> EGLGetProcAddress(
+    public static FunctionPointer EGLGetProcAddress(
         [NativeTypeName("const char *")] Ref<sbyte> proc
     ) => DllImport.EGLGetProcAddress(proc);
 
@@ -42990,15 +42824,15 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     void ISdl.EGLSetEGLAttributeCallbacks(
         [NativeTypeName("SDL_EGLAttribArrayCallback")]
-            delegate* unmanaged<nint*> platformAttribCallback,
-        [NativeTypeName("SDL_EGLIntArrayCallback")] delegate* unmanaged<int*> surfaceAttribCallback,
-        [NativeTypeName("SDL_EGLIntArrayCallback")] delegate* unmanaged<int*> contextAttribCallback
+            EGLAttribArrayCallback platformAttribCallback,
+        [NativeTypeName("SDL_EGLIntArrayCallback")] EGLIntArrayCallback surfaceAttribCallback,
+        [NativeTypeName("SDL_EGLIntArrayCallback")] EGLIntArrayCallback contextAttribCallback
     ) =>
         (
             (delegate* unmanaged<
-                delegate* unmanaged<nint*>,
-                delegate* unmanaged<int*>,
-                delegate* unmanaged<int*>,
+                EGLAttribArrayCallback,
+                EGLIntArrayCallback,
+                EGLIntArrayCallback,
                 void>)
                 nativeContext.LoadFunction("SDL_EGL_SetEGLAttributeCallbacks", "SDL3")
         )(platformAttribCallback, surfaceAttribCallback, contextAttribCallback);
@@ -43007,9 +42841,9 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     public static void EGLSetEGLAttributeCallbacks(
         [NativeTypeName("SDL_EGLAttribArrayCallback")]
-            delegate* unmanaged<nint*> platformAttribCallback,
-        [NativeTypeName("SDL_EGLIntArrayCallback")] delegate* unmanaged<int*> surfaceAttribCallback,
-        [NativeTypeName("SDL_EGLIntArrayCallback")] delegate* unmanaged<int*> contextAttribCallback
+            EGLAttribArrayCallback platformAttribCallback,
+        [NativeTypeName("SDL_EGLIntArrayCallback")] EGLIntArrayCallback surfaceAttribCallback,
+        [NativeTypeName("SDL_EGLIntArrayCallback")] EGLIntArrayCallback contextAttribCallback
     ) =>
         DllImport.EGLSetEGLAttributeCallbacks(
             platformAttribCallback,
@@ -43028,16 +42862,11 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     int ISdl.EnumerateDirectory(
         [NativeTypeName("const char *")] sbyte* path,
-        [NativeTypeName("SDL_EnumerateDirectoryCallback")]
-            delegate* unmanaged<void*, sbyte*, sbyte*, int> callback,
+        [NativeTypeName("SDL_EnumerateDirectoryCallback")] EnumerateDirectoryCallback callback,
         void* userdata
     ) =>
         (
-            (delegate* unmanaged<
-                sbyte*,
-                delegate* unmanaged<void*, sbyte*, sbyte*, int>,
-                void*,
-                int>)
+            (delegate* unmanaged<sbyte*, EnumerateDirectoryCallback, void*, int>)
                 nativeContext.LoadFunction("SDL_EnumerateDirectory", "SDL3")
         )(path, callback, userdata);
 
@@ -43045,16 +42874,14 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     public static int EnumerateDirectory(
         [NativeTypeName("const char *")] sbyte* path,
-        [NativeTypeName("SDL_EnumerateDirectoryCallback")]
-            delegate* unmanaged<void*, sbyte*, sbyte*, int> callback,
+        [NativeTypeName("SDL_EnumerateDirectoryCallback")] EnumerateDirectoryCallback callback,
         void* userdata
     ) => DllImport.EnumerateDirectory(path, callback, userdata);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     int ISdl.EnumerateDirectory(
         [NativeTypeName("const char *")] Ref<sbyte> path,
-        [NativeTypeName("SDL_EnumerateDirectoryCallback")]
-            delegate* unmanaged<void*, sbyte*, sbyte*, int> callback,
+        [NativeTypeName("SDL_EnumerateDirectoryCallback")] EnumerateDirectoryCallback callback,
         Ref userdata
     )
     {
@@ -43070,20 +42897,18 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     public static int EnumerateDirectory(
         [NativeTypeName("const char *")] Ref<sbyte> path,
-        [NativeTypeName("SDL_EnumerateDirectoryCallback")]
-            delegate* unmanaged<void*, sbyte*, sbyte*, int> callback,
+        [NativeTypeName("SDL_EnumerateDirectoryCallback")] EnumerateDirectoryCallback callback,
         Ref userdata
     ) => DllImport.EnumerateDirectory(path, callback, userdata);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     int ISdl.EnumerateProperties(
         [NativeTypeName("SDL_PropertiesID")] uint props,
-        [NativeTypeName("SDL_EnumeratePropertiesCallback")]
-            delegate* unmanaged<void*, uint, sbyte*, void> callback,
+        [NativeTypeName("SDL_EnumeratePropertiesCallback")] EnumeratePropertiesCallback callback,
         void* userdata
     ) =>
         (
-            (delegate* unmanaged<uint, delegate* unmanaged<void*, uint, sbyte*, void>, void*, int>)
+            (delegate* unmanaged<uint, EnumeratePropertiesCallback, void*, int>)
                 nativeContext.LoadFunction("SDL_EnumerateProperties", "SDL3")
         )(props, callback, userdata);
 
@@ -43091,16 +42916,14 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     public static int EnumerateProperties(
         [NativeTypeName("SDL_PropertiesID")] uint props,
-        [NativeTypeName("SDL_EnumeratePropertiesCallback")]
-            delegate* unmanaged<void*, uint, sbyte*, void> callback,
+        [NativeTypeName("SDL_EnumeratePropertiesCallback")] EnumeratePropertiesCallback callback,
         void* userdata
     ) => DllImport.EnumerateProperties(props, callback, userdata);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     int ISdl.EnumerateProperties(
         [NativeTypeName("SDL_PropertiesID")] uint props,
-        [NativeTypeName("SDL_EnumeratePropertiesCallback")]
-            delegate* unmanaged<void*, uint, sbyte*, void> callback,
+        [NativeTypeName("SDL_EnumeratePropertiesCallback")] EnumeratePropertiesCallback callback,
         Ref userdata
     )
     {
@@ -43115,8 +42938,7 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     public static int EnumerateProperties(
         [NativeTypeName("SDL_PropertiesID")] uint props,
-        [NativeTypeName("SDL_EnumeratePropertiesCallback")]
-            delegate* unmanaged<void*, uint, sbyte*, void> callback,
+        [NativeTypeName("SDL_EnumeratePropertiesCallback")] EnumeratePropertiesCallback callback,
         Ref userdata
     ) => DllImport.EnumerateProperties(props, callback, userdata);
 
@@ -43124,17 +42946,11 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     int ISdl.EnumerateStorageDirectory(
         StorageHandle storage,
         [NativeTypeName("const char *")] sbyte* path,
-        [NativeTypeName("SDL_EnumerateDirectoryCallback")]
-            delegate* unmanaged<void*, sbyte*, sbyte*, int> callback,
+        [NativeTypeName("SDL_EnumerateDirectoryCallback")] EnumerateDirectoryCallback callback,
         void* userdata
     ) =>
         (
-            (delegate* unmanaged<
-                StorageHandle,
-                sbyte*,
-                delegate* unmanaged<void*, sbyte*, sbyte*, int>,
-                void*,
-                int>)
+            (delegate* unmanaged<StorageHandle, sbyte*, EnumerateDirectoryCallback, void*, int>)
                 nativeContext.LoadFunction("SDL_EnumerateStorageDirectory", "SDL3")
         )(storage, path, callback, userdata);
 
@@ -43143,8 +42959,7 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     public static int EnumerateStorageDirectory(
         StorageHandle storage,
         [NativeTypeName("const char *")] sbyte* path,
-        [NativeTypeName("SDL_EnumerateDirectoryCallback")]
-            delegate* unmanaged<void*, sbyte*, sbyte*, int> callback,
+        [NativeTypeName("SDL_EnumerateDirectoryCallback")] EnumerateDirectoryCallback callback,
         void* userdata
     ) => DllImport.EnumerateStorageDirectory(storage, path, callback, userdata);
 
@@ -43152,8 +42967,7 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     int ISdl.EnumerateStorageDirectory(
         StorageHandle storage,
         [NativeTypeName("const char *")] Ref<sbyte> path,
-        [NativeTypeName("SDL_EnumerateDirectoryCallback")]
-            delegate* unmanaged<void*, sbyte*, sbyte*, int> callback,
+        [NativeTypeName("SDL_EnumerateDirectoryCallback")] EnumerateDirectoryCallback callback,
         Ref userdata
     )
     {
@@ -43176,8 +42990,7 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     public static int EnumerateStorageDirectory(
         StorageHandle storage,
         [NativeTypeName("const char *")] Ref<sbyte> path,
-        [NativeTypeName("SDL_EnumerateDirectoryCallback")]
-            delegate* unmanaged<void*, sbyte*, sbyte*, int> callback,
+        [NativeTypeName("SDL_EnumerateDirectoryCallback")] EnumerateDirectoryCallback callback,
         Ref userdata
     ) => DllImport.EnumerateStorageDirectory(storage, path, callback, userdata);
 
@@ -43304,26 +43117,23 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     void ISdl.FilterEvents(
-        [NativeTypeName("SDL_EventFilter")] delegate* unmanaged<void*, Event*, int> filter,
+        [NativeTypeName("SDL_EventFilter")] EventFilter filter,
         void* userdata
     ) =>
         (
-            (delegate* unmanaged<delegate* unmanaged<void*, Event*, int>, void*, void>)
+            (delegate* unmanaged<EventFilter, void*, void>)
                 nativeContext.LoadFunction("SDL_FilterEvents", "SDL3")
         )(filter, userdata);
 
     [NativeFunction("SDL3", EntryPoint = "SDL_FilterEvents")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     public static void FilterEvents(
-        [NativeTypeName("SDL_EventFilter")] delegate* unmanaged<void*, Event*, int> filter,
+        [NativeTypeName("SDL_EventFilter")] EventFilter filter,
         void* userdata
     ) => DllImport.FilterEvents(filter, userdata);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void ISdl.FilterEvents(
-        [NativeTypeName("SDL_EventFilter")] delegate* unmanaged<void*, Event*, int> filter,
-        Ref userdata
-    )
+    void ISdl.FilterEvents([NativeTypeName("SDL_EventFilter")] EventFilter filter, Ref userdata)
     {
         fixed (void* __dsl_userdata = userdata)
         {
@@ -43335,7 +43145,7 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     [NativeFunction("SDL3", EntryPoint = "SDL_FilterEvents")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     public static void FilterEvents(
-        [NativeTypeName("SDL_EventFilter")] delegate* unmanaged<void*, Event*, int> filter,
+        [NativeTypeName("SDL_EventFilter")] EventFilter filter,
         Ref userdata
     ) => DllImport.FilterEvents(filter, userdata);
 
@@ -43571,28 +43381,24 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
         DllImport.GamepadSensorEnabledRaw(gamepad, type);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    delegate* unmanaged<AssertData*, void*, AssertState> ISdl.GetAssertionHandler(
-        void** puserdata
-    ) =>
+    AssertionHandler ISdl.GetAssertionHandler(void** puserdata) =>
         (
-            (delegate* unmanaged<void**, delegate* unmanaged<AssertData*, void*, AssertState>>)
+            (delegate* unmanaged<void**, AssertionHandler>)
                 nativeContext.LoadFunction("SDL_GetAssertionHandler", "SDL3")
         )(puserdata);
 
     [return: NativeTypeName("SDL_AssertionHandler")]
     [NativeFunction("SDL3", EntryPoint = "SDL_GetAssertionHandler")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    public static delegate* unmanaged<AssertData*, void*, AssertState> GetAssertionHandler(
-        void** puserdata
-    ) => DllImport.GetAssertionHandler(puserdata);
+    public static AssertionHandler GetAssertionHandler(void** puserdata) =>
+        DllImport.GetAssertionHandler(puserdata);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    delegate* unmanaged<AssertData*, void*, AssertState> ISdl.GetAssertionHandler(Ref2D puserdata)
+    AssertionHandler ISdl.GetAssertionHandler(Ref2D puserdata)
     {
         fixed (void** __dsl_puserdata = puserdata)
         {
-            return (delegate* unmanaged<AssertData*, void*, AssertState>)
-                ((ISdl)this).GetAssertionHandler(__dsl_puserdata);
+            return (AssertionHandler)((ISdl)this).GetAssertionHandler(__dsl_puserdata);
         }
     }
 
@@ -43600,9 +43406,8 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     [Transformed]
     [NativeFunction("SDL3", EntryPoint = "SDL_GetAssertionHandler")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    public static delegate* unmanaged<AssertData*, void*, AssertState> GetAssertionHandler(
-        Ref2D puserdata
-    ) => DllImport.GetAssertionHandler(puserdata);
+    public static AssertionHandler GetAssertionHandler(Ref2D puserdata) =>
+        DllImport.GetAssertionHandler(puserdata);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     Ptr<AssertData> ISdl.GetAssertionReport() => (AssertData*)((ISdl)this).GetAssertionReportRaw();
@@ -44505,19 +44310,17 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     public static int GetDaysInMonth(int year, int month) => DllImport.GetDaysInMonth(year, month);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    delegate* unmanaged<AssertData*, void*, AssertState> ISdl.GetDefaultAssertionHandler() =>
+    AssertionHandler ISdl.GetDefaultAssertionHandler() =>
         (
-            (delegate* unmanaged<delegate* unmanaged<AssertData*, void*, AssertState>>)
+            (delegate* unmanaged<AssertionHandler>)
                 nativeContext.LoadFunction("SDL_GetDefaultAssertionHandler", "SDL3")
         )();
 
     [return: NativeTypeName("SDL_AssertionHandler")]
     [NativeFunction("SDL3", EntryPoint = "SDL_GetDefaultAssertionHandler")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    public static delegate* unmanaged<
-        AssertData*,
-        void*,
-        AssertState> GetDefaultAssertionHandler() => DllImport.GetDefaultAssertionHandler();
+    public static AssertionHandler GetDefaultAssertionHandler() =>
+        DllImport.GetDefaultAssertionHandler();
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     CursorHandle ISdl.GetDefaultCursor() =>
@@ -44787,11 +44590,11 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     int ISdl.GetEventFilter(
-        [NativeTypeName("SDL_EventFilter *")] delegate* unmanaged<void*, Event*, int>* filter,
+        [NativeTypeName("SDL_EventFilter *")] EventFilter* filter,
         void** userdata
     ) =>
         (
-            (delegate* unmanaged<delegate* unmanaged<void*, Event*, int>*, void**, int>)
+            (delegate* unmanaged<EventFilter*, void**, int>)
                 nativeContext.LoadFunction("SDL_GetEventFilter", "SDL3")
         )(filter, userdata);
 
@@ -44799,19 +44602,20 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     [NativeFunction("SDL3", EntryPoint = "SDL_GetEventFilter")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     public static int GetEventFilter(
-        [NativeTypeName("SDL_EventFilter *")] delegate* unmanaged<void*, Event*, int>* filter,
+        [NativeTypeName("SDL_EventFilter *")] EventFilter* filter,
         void** userdata
     ) => DllImport.GetEventFilter(filter, userdata);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     MaybeBool<int> ISdl.GetEventFilter(
-        [NativeTypeName("SDL_EventFilter *")] delegate* unmanaged<void*, Event*, int>* filter,
+        [NativeTypeName("SDL_EventFilter *")] Ref<EventFilter> filter,
         Ref2D userdata
     )
     {
         fixed (void** __dsl_userdata = userdata)
+        fixed (EventFilter* __dsl_filter = filter)
         {
-            return (MaybeBool<int>)(int)((ISdl)this).GetEventFilter(filter, __dsl_userdata);
+            return (MaybeBool<int>)(int)((ISdl)this).GetEventFilter(__dsl_filter, __dsl_userdata);
         }
     }
 
@@ -44820,7 +44624,7 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     [NativeFunction("SDL3", EntryPoint = "SDL_GetEventFilter")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     public static MaybeBool<int> GetEventFilter(
-        [NativeTypeName("SDL_EventFilter *")] delegate* unmanaged<void*, Event*, int>* filter,
+        [NativeTypeName("SDL_EventFilter *")] Ref<EventFilter> filter,
         Ref2D userdata
     ) => DllImport.GetEventFilter(filter, userdata);
 
@@ -46963,36 +46767,31 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     void ISdl.GetLogOutputFunction(
-        [NativeTypeName("SDL_LogOutputFunction *")]
-            delegate* unmanaged<void*, int, LogPriority, sbyte*, void>* callback,
+        [NativeTypeName("SDL_LogOutputFunction *")] LogOutputFunction* callback,
         void** userdata
     ) =>
         (
-            (delegate* unmanaged<
-                delegate* unmanaged<void*, int, LogPriority, sbyte*, void>*,
-                void**,
-                void>)
+            (delegate* unmanaged<LogOutputFunction*, void**, void>)
                 nativeContext.LoadFunction("SDL_GetLogOutputFunction", "SDL3")
         )(callback, userdata);
 
     [NativeFunction("SDL3", EntryPoint = "SDL_GetLogOutputFunction")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     public static void GetLogOutputFunction(
-        [NativeTypeName("SDL_LogOutputFunction *")]
-            delegate* unmanaged<void*, int, LogPriority, sbyte*, void>* callback,
+        [NativeTypeName("SDL_LogOutputFunction *")] LogOutputFunction* callback,
         void** userdata
     ) => DllImport.GetLogOutputFunction(callback, userdata);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     void ISdl.GetLogOutputFunction(
-        [NativeTypeName("SDL_LogOutputFunction *")]
-            delegate* unmanaged<void*, int, LogPriority, sbyte*, void>* callback,
+        [NativeTypeName("SDL_LogOutputFunction *")] Ref<LogOutputFunction> callback,
         Ref2D userdata
     )
     {
         fixed (void** __dsl_userdata = userdata)
+        fixed (LogOutputFunction* __dsl_callback = callback)
         {
-            ((ISdl)this).GetLogOutputFunction(callback, __dsl_userdata);
+            ((ISdl)this).GetLogOutputFunction(__dsl_callback, __dsl_userdata);
         }
     }
 
@@ -47000,8 +46799,7 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     [NativeFunction("SDL3", EntryPoint = "SDL_GetLogOutputFunction")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     public static void GetLogOutputFunction(
-        [NativeTypeName("SDL_LogOutputFunction *")]
-            delegate* unmanaged<void*, int, LogPriority, sbyte*, void>* callback,
+        [NativeTypeName("SDL_LogOutputFunction *")] Ref<LogOutputFunction> callback,
         Ref2D userdata
     ) => DllImport.GetLogOutputFunction(callback, userdata);
 
@@ -50743,27 +50541,24 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     public static WindowHandle GLGetCurrentWindow() => DllImport.GLGetCurrentWindow();
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    delegate* unmanaged<void> ISdl.GLGetProcAddress([NativeTypeName("const char *")] sbyte* proc) =>
+    FunctionPointer ISdl.GLGetProcAddress([NativeTypeName("const char *")] sbyte* proc) =>
         (
-            (delegate* unmanaged<sbyte*, delegate* unmanaged<void>>)
+            (delegate* unmanaged<sbyte*, FunctionPointer>)
                 nativeContext.LoadFunction("SDL_GL_GetProcAddress", "SDL3")
         )(proc);
 
     [return: NativeTypeName("SDL_FunctionPointer")]
     [NativeFunction("SDL3", EntryPoint = "SDL_GL_GetProcAddress")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    public static delegate* unmanaged<void> GLGetProcAddress(
-        [NativeTypeName("const char *")] sbyte* proc
-    ) => DllImport.GLGetProcAddress(proc);
+    public static FunctionPointer GLGetProcAddress([NativeTypeName("const char *")] sbyte* proc) =>
+        DllImport.GLGetProcAddress(proc);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    delegate* unmanaged<void> ISdl.GLGetProcAddress(
-        [NativeTypeName("const char *")] Ref<sbyte> proc
-    )
+    FunctionPointer ISdl.GLGetProcAddress([NativeTypeName("const char *")] Ref<sbyte> proc)
     {
         fixed (sbyte* __dsl_proc = proc)
         {
-            return (delegate* unmanaged<void>)((ISdl)this).GLGetProcAddress(__dsl_proc);
+            return (FunctionPointer)((ISdl)this).GLGetProcAddress(__dsl_proc);
         }
     }
 
@@ -50771,7 +50566,7 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     [Transformed]
     [NativeFunction("SDL3", EntryPoint = "SDL_GL_GetProcAddress")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    public static delegate* unmanaged<void> GLGetProcAddress(
+    public static FunctionPointer GLGetProcAddress(
         [NativeTypeName("const char *")] Ref<sbyte> proc
     ) => DllImport.GLGetProcAddress(proc);
 
@@ -52905,33 +52700,27 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     ) => DllImport.LoadFileIO(src, datasize, closeio);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    delegate* unmanaged<void> ISdl.LoadFunction(
-        void* handle,
-        [NativeTypeName("const char *")] sbyte* name
-    ) =>
+    FunctionPointer ISdl.LoadFunction(void* handle, [NativeTypeName("const char *")] sbyte* name) =>
         (
-            (delegate* unmanaged<void*, sbyte*, delegate* unmanaged<void>>)
+            (delegate* unmanaged<void*, sbyte*, FunctionPointer>)
                 nativeContext.LoadFunction("SDL_LoadFunction", "SDL3")
         )(handle, name);
 
     [return: NativeTypeName("SDL_FunctionPointer")]
     [NativeFunction("SDL3", EntryPoint = "SDL_LoadFunction")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    public static delegate* unmanaged<void> LoadFunction(
+    public static FunctionPointer LoadFunction(
         void* handle,
         [NativeTypeName("const char *")] sbyte* name
     ) => DllImport.LoadFunction(handle, name);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    delegate* unmanaged<void> ISdl.LoadFunction(
-        Ref handle,
-        [NativeTypeName("const char *")] Ref<sbyte> name
-    )
+    FunctionPointer ISdl.LoadFunction(Ref handle, [NativeTypeName("const char *")] Ref<sbyte> name)
     {
         fixed (sbyte* __dsl_name = name)
         fixed (void* __dsl_handle = handle)
         {
-            return (delegate* unmanaged<void>)((ISdl)this).LoadFunction(__dsl_handle, __dsl_name);
+            return (FunctionPointer)((ISdl)this).LoadFunction(__dsl_handle, __dsl_name);
         }
     }
 
@@ -52939,7 +52728,7 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     [Transformed]
     [NativeFunction("SDL3", EntryPoint = "SDL_LoadFunction")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    public static delegate* unmanaged<void> LoadFunction(
+    public static FunctionPointer LoadFunction(
         Ref handle,
         [NativeTypeName("const char *")] Ref<sbyte> name
     ) => DllImport.LoadFunction(handle, name);
@@ -53751,17 +53540,11 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     AudioStreamHandle ISdl.OpenAudioDeviceStream(
         [NativeTypeName("SDL_AudioDeviceID")] uint devid,
         [NativeTypeName("const SDL_AudioSpec *")] AudioSpec* spec,
-        [NativeTypeName("SDL_AudioStreamCallback")]
-            delegate* unmanaged<void*, AudioStreamHandle, int, int, void> callback,
+        [NativeTypeName("SDL_AudioStreamCallback")] AudioStreamCallback callback,
         void* userdata
     ) =>
         (
-            (delegate* unmanaged<
-                uint,
-                AudioSpec*,
-                delegate* unmanaged<void*, AudioStreamHandle, int, int, void>,
-                void*,
-                AudioStreamHandle>)
+            (delegate* unmanaged<uint, AudioSpec*, AudioStreamCallback, void*, AudioStreamHandle>)
                 nativeContext.LoadFunction("SDL_OpenAudioDeviceStream", "SDL3")
         )(devid, spec, callback, userdata);
 
@@ -53770,8 +53553,7 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     public static AudioStreamHandle OpenAudioDeviceStream(
         [NativeTypeName("SDL_AudioDeviceID")] uint devid,
         [NativeTypeName("const SDL_AudioSpec *")] AudioSpec* spec,
-        [NativeTypeName("SDL_AudioStreamCallback")]
-            delegate* unmanaged<void*, AudioStreamHandle, int, int, void> callback,
+        [NativeTypeName("SDL_AudioStreamCallback")] AudioStreamCallback callback,
         void* userdata
     ) => DllImport.OpenAudioDeviceStream(devid, spec, callback, userdata);
 
@@ -53779,8 +53561,7 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     AudioStreamHandle ISdl.OpenAudioDeviceStream(
         [NativeTypeName("SDL_AudioDeviceID")] uint devid,
         [NativeTypeName("const SDL_AudioSpec *")] Ref<AudioSpec> spec,
-        [NativeTypeName("SDL_AudioStreamCallback")]
-            delegate* unmanaged<void*, AudioStreamHandle, int, int, void> callback,
+        [NativeTypeName("SDL_AudioStreamCallback")] AudioStreamCallback callback,
         Ref userdata
     )
     {
@@ -53798,8 +53579,7 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     public static AudioStreamHandle OpenAudioDeviceStream(
         [NativeTypeName("SDL_AudioDeviceID")] uint devid,
         [NativeTypeName("const SDL_AudioSpec *")] Ref<AudioSpec> spec,
-        [NativeTypeName("SDL_AudioStreamCallback")]
-            delegate* unmanaged<void*, AudioStreamHandle, int, int, void> callback,
+        [NativeTypeName("SDL_AudioStreamCallback")] AudioStreamCallback callback,
         Ref userdata
     ) => DllImport.OpenAudioDeviceStream(devid, spec, callback, userdata);
 
@@ -56723,27 +56503,24 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     void ISdl.SetAssertionHandler(
-        [NativeTypeName("SDL_AssertionHandler")]
-            delegate* unmanaged<AssertData*, void*, AssertState> handler,
+        [NativeTypeName("SDL_AssertionHandler")] AssertionHandler handler,
         void* userdata
     ) =>
         (
-            (delegate* unmanaged<delegate* unmanaged<AssertData*, void*, AssertState>, void*, void>)
+            (delegate* unmanaged<AssertionHandler, void*, void>)
                 nativeContext.LoadFunction("SDL_SetAssertionHandler", "SDL3")
         )(handler, userdata);
 
     [NativeFunction("SDL3", EntryPoint = "SDL_SetAssertionHandler")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     public static void SetAssertionHandler(
-        [NativeTypeName("SDL_AssertionHandler")]
-            delegate* unmanaged<AssertData*, void*, AssertState> handler,
+        [NativeTypeName("SDL_AssertionHandler")] AssertionHandler handler,
         void* userdata
     ) => DllImport.SetAssertionHandler(handler, userdata);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     void ISdl.SetAssertionHandler(
-        [NativeTypeName("SDL_AssertionHandler")]
-            delegate* unmanaged<AssertData*, void*, AssertState> handler,
+        [NativeTypeName("SDL_AssertionHandler")] AssertionHandler handler,
         Ref userdata
     )
     {
@@ -56757,24 +56534,18 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     [NativeFunction("SDL3", EntryPoint = "SDL_SetAssertionHandler")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     public static void SetAssertionHandler(
-        [NativeTypeName("SDL_AssertionHandler")]
-            delegate* unmanaged<AssertData*, void*, AssertState> handler,
+        [NativeTypeName("SDL_AssertionHandler")] AssertionHandler handler,
         Ref userdata
     ) => DllImport.SetAssertionHandler(handler, userdata);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     int ISdl.SetAudioPostmixCallback(
         [NativeTypeName("SDL_AudioDeviceID")] uint devid,
-        [NativeTypeName("SDL_AudioPostmixCallback")]
-            delegate* unmanaged<void*, AudioSpec*, float*, int, void> callback,
+        [NativeTypeName("SDL_AudioPostmixCallback")] AudioPostmixCallback callback,
         void* userdata
     ) =>
         (
-            (delegate* unmanaged<
-                uint,
-                delegate* unmanaged<void*, AudioSpec*, float*, int, void>,
-                void*,
-                int>)
+            (delegate* unmanaged<uint, AudioPostmixCallback, void*, int>)
                 nativeContext.LoadFunction("SDL_SetAudioPostmixCallback", "SDL3")
         )(devid, callback, userdata);
 
@@ -56782,16 +56553,14 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     public static int SetAudioPostmixCallback(
         [NativeTypeName("SDL_AudioDeviceID")] uint devid,
-        [NativeTypeName("SDL_AudioPostmixCallback")]
-            delegate* unmanaged<void*, AudioSpec*, float*, int, void> callback,
+        [NativeTypeName("SDL_AudioPostmixCallback")] AudioPostmixCallback callback,
         void* userdata
     ) => DllImport.SetAudioPostmixCallback(devid, callback, userdata);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     int ISdl.SetAudioPostmixCallback(
         [NativeTypeName("SDL_AudioDeviceID")] uint devid,
-        [NativeTypeName("SDL_AudioPostmixCallback")]
-            delegate* unmanaged<void*, AudioSpec*, float*, int, void> callback,
+        [NativeTypeName("SDL_AudioPostmixCallback")] AudioPostmixCallback callback,
         Ref userdata
     )
     {
@@ -56806,8 +56575,7 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     public static int SetAudioPostmixCallback(
         [NativeTypeName("SDL_AudioDeviceID")] uint devid,
-        [NativeTypeName("SDL_AudioPostmixCallback")]
-            delegate* unmanaged<void*, AudioSpec*, float*, int, void> callback,
+        [NativeTypeName("SDL_AudioPostmixCallback")] AudioPostmixCallback callback,
         Ref userdata
     ) => DllImport.SetAudioPostmixCallback(devid, callback, userdata);
 
@@ -56868,16 +56636,11 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     int ISdl.SetAudioStreamGetCallback(
         AudioStreamHandle stream,
-        [NativeTypeName("SDL_AudioStreamCallback")]
-            delegate* unmanaged<void*, AudioStreamHandle, int, int, void> callback,
+        [NativeTypeName("SDL_AudioStreamCallback")] AudioStreamCallback callback,
         void* userdata
     ) =>
         (
-            (delegate* unmanaged<
-                AudioStreamHandle,
-                delegate* unmanaged<void*, AudioStreamHandle, int, int, void>,
-                void*,
-                int>)
+            (delegate* unmanaged<AudioStreamHandle, AudioStreamCallback, void*, int>)
                 nativeContext.LoadFunction("SDL_SetAudioStreamGetCallback", "SDL3")
         )(stream, callback, userdata);
 
@@ -56885,16 +56648,14 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     public static int SetAudioStreamGetCallback(
         AudioStreamHandle stream,
-        [NativeTypeName("SDL_AudioStreamCallback")]
-            delegate* unmanaged<void*, AudioStreamHandle, int, int, void> callback,
+        [NativeTypeName("SDL_AudioStreamCallback")] AudioStreamCallback callback,
         void* userdata
     ) => DllImport.SetAudioStreamGetCallback(stream, callback, userdata);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     int ISdl.SetAudioStreamGetCallback(
         AudioStreamHandle stream,
-        [NativeTypeName("SDL_AudioStreamCallback")]
-            delegate* unmanaged<void*, AudioStreamHandle, int, int, void> callback,
+        [NativeTypeName("SDL_AudioStreamCallback")] AudioStreamCallback callback,
         Ref userdata
     )
     {
@@ -56909,24 +56670,18 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     public static int SetAudioStreamGetCallback(
         AudioStreamHandle stream,
-        [NativeTypeName("SDL_AudioStreamCallback")]
-            delegate* unmanaged<void*, AudioStreamHandle, int, int, void> callback,
+        [NativeTypeName("SDL_AudioStreamCallback")] AudioStreamCallback callback,
         Ref userdata
     ) => DllImport.SetAudioStreamGetCallback(stream, callback, userdata);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     int ISdl.SetAudioStreamPutCallback(
         AudioStreamHandle stream,
-        [NativeTypeName("SDL_AudioStreamCallback")]
-            delegate* unmanaged<void*, AudioStreamHandle, int, int, void> callback,
+        [NativeTypeName("SDL_AudioStreamCallback")] AudioStreamCallback callback,
         void* userdata
     ) =>
         (
-            (delegate* unmanaged<
-                AudioStreamHandle,
-                delegate* unmanaged<void*, AudioStreamHandle, int, int, void>,
-                void*,
-                int>)
+            (delegate* unmanaged<AudioStreamHandle, AudioStreamCallback, void*, int>)
                 nativeContext.LoadFunction("SDL_SetAudioStreamPutCallback", "SDL3")
         )(stream, callback, userdata);
 
@@ -56934,16 +56689,14 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     public static int SetAudioStreamPutCallback(
         AudioStreamHandle stream,
-        [NativeTypeName("SDL_AudioStreamCallback")]
-            delegate* unmanaged<void*, AudioStreamHandle, int, int, void> callback,
+        [NativeTypeName("SDL_AudioStreamCallback")] AudioStreamCallback callback,
         void* userdata
     ) => DllImport.SetAudioStreamPutCallback(stream, callback, userdata);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     int ISdl.SetAudioStreamPutCallback(
         AudioStreamHandle stream,
-        [NativeTypeName("SDL_AudioStreamCallback")]
-            delegate* unmanaged<void*, AudioStreamHandle, int, int, void> callback,
+        [NativeTypeName("SDL_AudioStreamCallback")] AudioStreamCallback callback,
         Ref userdata
     )
     {
@@ -56958,8 +56711,7 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     public static int SetAudioStreamPutCallback(
         AudioStreamHandle stream,
-        [NativeTypeName("SDL_AudioStreamCallback")]
-            delegate* unmanaged<void*, AudioStreamHandle, int, int, void> callback,
+        [NativeTypeName("SDL_AudioStreamCallback")] AudioStreamCallback callback,
         Ref userdata
     ) => DllImport.SetAudioStreamPutCallback(stream, callback, userdata);
 
@@ -57006,17 +56758,16 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     int ISdl.SetClipboardData(
-        [NativeTypeName("SDL_ClipboardDataCallback")]
-            delegate* unmanaged<void*, sbyte*, nuint*, void*> callback,
-        [NativeTypeName("SDL_ClipboardCleanupCallback")] delegate* unmanaged<void*, void> cleanup,
+        [NativeTypeName("SDL_ClipboardDataCallback")] ClipboardDataCallback callback,
+        [NativeTypeName("SDL_ClipboardCleanupCallback")] ClipboardCleanupCallback cleanup,
         void* userdata,
         [NativeTypeName("const char **")] sbyte** mime_types,
         [NativeTypeName("size_t")] nuint num_mime_types
     ) =>
         (
             (delegate* unmanaged<
-                delegate* unmanaged<void*, sbyte*, nuint*, void*>,
-                delegate* unmanaged<void*, void>,
+                ClipboardDataCallback,
+                ClipboardCleanupCallback,
                 void*,
                 sbyte**,
                 nuint,
@@ -57027,9 +56778,8 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     [NativeFunction("SDL3", EntryPoint = "SDL_SetClipboardData")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     public static int SetClipboardData(
-        [NativeTypeName("SDL_ClipboardDataCallback")]
-            delegate* unmanaged<void*, sbyte*, nuint*, void*> callback,
-        [NativeTypeName("SDL_ClipboardCleanupCallback")] delegate* unmanaged<void*, void> cleanup,
+        [NativeTypeName("SDL_ClipboardDataCallback")] ClipboardDataCallback callback,
+        [NativeTypeName("SDL_ClipboardCleanupCallback")] ClipboardCleanupCallback cleanup,
         void* userdata,
         [NativeTypeName("const char **")] sbyte** mime_types,
         [NativeTypeName("size_t")] nuint num_mime_types
@@ -57037,9 +56787,8 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     int ISdl.SetClipboardData(
-        [NativeTypeName("SDL_ClipboardDataCallback")]
-            delegate* unmanaged<void*, sbyte*, nuint*, void*> callback,
-        [NativeTypeName("SDL_ClipboardCleanupCallback")] delegate* unmanaged<void*, void> cleanup,
+        [NativeTypeName("SDL_ClipboardDataCallback")] ClipboardDataCallback callback,
+        [NativeTypeName("SDL_ClipboardCleanupCallback")] ClipboardCleanupCallback cleanup,
         Ref userdata,
         [NativeTypeName("const char **")] Ref2D<sbyte> mime_types,
         [NativeTypeName("size_t")] nuint num_mime_types
@@ -57063,9 +56812,8 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     [NativeFunction("SDL3", EntryPoint = "SDL_SetClipboardData")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     public static int SetClipboardData(
-        [NativeTypeName("SDL_ClipboardDataCallback")]
-            delegate* unmanaged<void*, sbyte*, nuint*, void*> callback,
-        [NativeTypeName("SDL_ClipboardCleanupCallback")] delegate* unmanaged<void*, void> cleanup,
+        [NativeTypeName("SDL_ClipboardDataCallback")] ClipboardDataCallback callback,
+        [NativeTypeName("SDL_ClipboardCleanupCallback")] ClipboardCleanupCallback cleanup,
         Ref userdata,
         [NativeTypeName("const char **")] Ref2D<sbyte> mime_types,
         [NativeTypeName("size_t")] nuint num_mime_types
@@ -57142,26 +56890,23 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     void ISdl.SetEventFilter(
-        [NativeTypeName("SDL_EventFilter")] delegate* unmanaged<void*, Event*, int> filter,
+        [NativeTypeName("SDL_EventFilter")] EventFilter filter,
         void* userdata
     ) =>
         (
-            (delegate* unmanaged<delegate* unmanaged<void*, Event*, int>, void*, void>)
+            (delegate* unmanaged<EventFilter, void*, void>)
                 nativeContext.LoadFunction("SDL_SetEventFilter", "SDL3")
         )(filter, userdata);
 
     [NativeFunction("SDL3", EntryPoint = "SDL_SetEventFilter")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     public static void SetEventFilter(
-        [NativeTypeName("SDL_EventFilter")] delegate* unmanaged<void*, Event*, int> filter,
+        [NativeTypeName("SDL_EventFilter")] EventFilter filter,
         void* userdata
     ) => DllImport.SetEventFilter(filter, userdata);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void ISdl.SetEventFilter(
-        [NativeTypeName("SDL_EventFilter")] delegate* unmanaged<void*, Event*, int> filter,
-        Ref userdata
-    )
+    void ISdl.SetEventFilter([NativeTypeName("SDL_EventFilter")] EventFilter filter, Ref userdata)
     {
         fixed (void* __dsl_userdata = userdata)
         {
@@ -57173,7 +56918,7 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     [NativeFunction("SDL3", EntryPoint = "SDL_SetEventFilter")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     public static void SetEventFilter(
-        [NativeTypeName("SDL_EventFilter")] delegate* unmanaged<void*, Event*, int> filter,
+        [NativeTypeName("SDL_EventFilter")] EventFilter filter,
         Ref userdata
     ) => DllImport.SetEventFilter(filter, userdata);
 
@@ -57570,30 +57315,24 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     void ISdl.SetLogOutputFunction(
-        [NativeTypeName("SDL_LogOutputFunction")]
-            delegate* unmanaged<void*, int, LogPriority, sbyte*, void> callback,
+        [NativeTypeName("SDL_LogOutputFunction")] LogOutputFunction callback,
         void* userdata
     ) =>
         (
-            (delegate* unmanaged<
-                delegate* unmanaged<void*, int, LogPriority, sbyte*, void>,
-                void*,
-                void>)
+            (delegate* unmanaged<LogOutputFunction, void*, void>)
                 nativeContext.LoadFunction("SDL_SetLogOutputFunction", "SDL3")
         )(callback, userdata);
 
     [NativeFunction("SDL3", EntryPoint = "SDL_SetLogOutputFunction")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     public static void SetLogOutputFunction(
-        [NativeTypeName("SDL_LogOutputFunction")]
-            delegate* unmanaged<void*, int, LogPriority, sbyte*, void> callback,
+        [NativeTypeName("SDL_LogOutputFunction")] LogOutputFunction callback,
         void* userdata
     ) => DllImport.SetLogOutputFunction(callback, userdata);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     void ISdl.SetLogOutputFunction(
-        [NativeTypeName("SDL_LogOutputFunction")]
-            delegate* unmanaged<void*, int, LogPriority, sbyte*, void> callback,
+        [NativeTypeName("SDL_LogOutputFunction")] LogOutputFunction callback,
         Ref userdata
     )
     {
@@ -57607,8 +57346,7 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     [NativeFunction("SDL3", EntryPoint = "SDL_SetLogOutputFunction")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     public static void SetLogOutputFunction(
-        [NativeTypeName("SDL_LogOutputFunction")]
-            delegate* unmanaged<void*, int, LogPriority, sbyte*, void> callback,
+        [NativeTypeName("SDL_LogOutputFunction")] LogOutputFunction callback,
         Ref userdata
     ) => DllImport.SetLogOutputFunction(callback, userdata);
 
@@ -57812,18 +57550,11 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
         [NativeTypeName("SDL_PropertiesID")] uint props,
         [NativeTypeName("const char *")] sbyte* name,
         void* value,
-        [NativeTypeName("void (*)(void *, void *)")]
-            delegate* unmanaged<void*, void*, void> cleanup,
+        [NativeTypeName("void (*)(void *, void *)")] PfnVvVvV cleanup,
         void* userdata
     ) =>
         (
-            (delegate* unmanaged<
-                uint,
-                sbyte*,
-                void*,
-                delegate* unmanaged<void*, void*, void>,
-                void*,
-                int>)
+            (delegate* unmanaged<uint, sbyte*, void*, PfnVvVvV, void*, int>)
                 nativeContext.LoadFunction("SDL_SetPropertyWithCleanup", "SDL3")
         )(props, name, value, cleanup, userdata);
 
@@ -57833,8 +57564,7 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
         [NativeTypeName("SDL_PropertiesID")] uint props,
         [NativeTypeName("const char *")] sbyte* name,
         void* value,
-        [NativeTypeName("void (*)(void *, void *)")]
-            delegate* unmanaged<void*, void*, void> cleanup,
+        [NativeTypeName("void (*)(void *, void *)")] PfnVvVvV cleanup,
         void* userdata
     ) => DllImport.SetPropertyWithCleanup(props, name, value, cleanup, userdata);
 
@@ -57843,8 +57573,7 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
         [NativeTypeName("SDL_PropertiesID")] uint props,
         [NativeTypeName("const char *")] Ref<sbyte> name,
         Ref value,
-        [NativeTypeName("void (*)(void *, void *)")]
-            delegate* unmanaged<void*, void*, void> cleanup,
+        [NativeTypeName("void (*)(void *, void *)")] PfnVvVvV cleanup,
         Ref userdata
     )
     {
@@ -57870,8 +57599,7 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
         [NativeTypeName("SDL_PropertiesID")] uint props,
         [NativeTypeName("const char *")] Ref<sbyte> name,
         Ref value,
-        [NativeTypeName("void (*)(void *, void *)")]
-            delegate* unmanaged<void*, void*, void> cleanup,
+        [NativeTypeName("void (*)(void *, void *)")] PfnVvVvV cleanup,
         Ref userdata
     ) => DllImport.SetPropertyWithCleanup(props, name, value, cleanup, userdata);
 
@@ -58524,10 +58252,10 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     int ISdl.SetTLS(
         [NativeTypeName("SDL_TLSID")] uint id,
         [NativeTypeName("const void *")] void* value,
-        [NativeTypeName("void (*)(void *)")] delegate* unmanaged<void*, void> destructor
+        [NativeTypeName("void (*)(void *)")] ClipboardCleanupCallback destructor
     ) =>
         (
-            (delegate* unmanaged<uint, void*, delegate* unmanaged<void*, void>, int>)
+            (delegate* unmanaged<uint, void*, ClipboardCleanupCallback, int>)
                 nativeContext.LoadFunction("SDL_SetTLS", "SDL3")
         )(id, value, destructor);
 
@@ -58536,14 +58264,14 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     public static int SetTLS(
         [NativeTypeName("SDL_TLSID")] uint id,
         [NativeTypeName("const void *")] void* value,
-        [NativeTypeName("void (*)(void *)")] delegate* unmanaged<void*, void> destructor
+        [NativeTypeName("void (*)(void *)")] ClipboardCleanupCallback destructor
     ) => DllImport.SetTLS(id, value, destructor);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     int ISdl.SetTLS(
         [NativeTypeName("SDL_TLSID")] uint id,
         [NativeTypeName("const void *")] Ref value,
-        [NativeTypeName("void (*)(void *)")] delegate* unmanaged<void*, void> destructor
+        [NativeTypeName("void (*)(void *)")] ClipboardCleanupCallback destructor
     )
     {
         fixed (void* __dsl_value = value)
@@ -58558,7 +58286,7 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     public static int SetTLS(
         [NativeTypeName("SDL_TLSID")] uint id,
         [NativeTypeName("const void *")] Ref value,
-        [NativeTypeName("void (*)(void *)")] delegate* unmanaged<void*, void> destructor
+        [NativeTypeName("void (*)(void *)")] ClipboardCleanupCallback destructor
     ) => DllImport.SetTLS(id, value, destructor);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
@@ -58716,16 +58444,11 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     int ISdl.SetWindowHitTest(
         WindowHandle window,
-        [NativeTypeName("SDL_HitTest")]
-            delegate* unmanaged<WindowHandle, Point*, void*, HitTestResult> callback,
+        [NativeTypeName("SDL_HitTest")] HitTest callback,
         void* callback_data
     ) =>
         (
-            (delegate* unmanaged<
-                WindowHandle,
-                delegate* unmanaged<WindowHandle, Point*, void*, HitTestResult>,
-                void*,
-                int>)
+            (delegate* unmanaged<WindowHandle, HitTest, void*, int>)
                 nativeContext.LoadFunction("SDL_SetWindowHitTest", "SDL3")
         )(window, callback, callback_data);
 
@@ -58733,16 +58456,14 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     public static int SetWindowHitTest(
         WindowHandle window,
-        [NativeTypeName("SDL_HitTest")]
-            delegate* unmanaged<WindowHandle, Point*, void*, HitTestResult> callback,
+        [NativeTypeName("SDL_HitTest")] HitTest callback,
         void* callback_data
     ) => DllImport.SetWindowHitTest(window, callback, callback_data);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     int ISdl.SetWindowHitTest(
         WindowHandle window,
-        [NativeTypeName("SDL_HitTest")]
-            delegate* unmanaged<WindowHandle, Point*, void*, HitTestResult> callback,
+        [NativeTypeName("SDL_HitTest")] HitTest callback,
         Ref callback_data
     )
     {
@@ -58757,8 +58478,7 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     public static int SetWindowHitTest(
         WindowHandle window,
-        [NativeTypeName("SDL_HitTest")]
-            delegate* unmanaged<WindowHandle, Point*, void*, HitTestResult> callback,
+        [NativeTypeName("SDL_HitTest")] HitTest callback,
         Ref callback_data
     ) => DllImport.SetWindowHitTest(window, callback, callback_data);
 
@@ -59100,8 +58820,7 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     void ISdl.ShowOpenFileDialog(
-        [NativeTypeName("SDL_DialogFileCallback")]
-            delegate* unmanaged<void*, sbyte**, int, void> callback,
+        [NativeTypeName("SDL_DialogFileCallback")] DialogFileCallback callback,
         void* userdata,
         WindowHandle window,
         [NativeTypeName("const SDL_DialogFileFilter *")] DialogFileFilter* filters,
@@ -59110,7 +58829,7 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     ) =>
         (
             (delegate* unmanaged<
-                delegate* unmanaged<void*, sbyte**, int, void>,
+                DialogFileCallback,
                 void*,
                 WindowHandle,
                 DialogFileFilter*,
@@ -59123,8 +58842,7 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     [NativeFunction("SDL3", EntryPoint = "SDL_ShowOpenFileDialog")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     public static void ShowOpenFileDialog(
-        [NativeTypeName("SDL_DialogFileCallback")]
-            delegate* unmanaged<void*, sbyte**, int, void> callback,
+        [NativeTypeName("SDL_DialogFileCallback")] DialogFileCallback callback,
         void* userdata,
         WindowHandle window,
         [NativeTypeName("const SDL_DialogFileFilter *")] DialogFileFilter* filters,
@@ -59142,8 +58860,7 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     void ISdl.ShowOpenFileDialog(
-        [NativeTypeName("SDL_DialogFileCallback")]
-            delegate* unmanaged<void*, sbyte**, int, void> callback,
+        [NativeTypeName("SDL_DialogFileCallback")] DialogFileCallback callback,
         Ref userdata,
         WindowHandle window,
         [NativeTypeName("const SDL_DialogFileFilter *")] Ref<DialogFileFilter> filters,
@@ -59170,8 +58887,7 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     [NativeFunction("SDL3", EntryPoint = "SDL_ShowOpenFileDialog")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     public static void ShowOpenFileDialog(
-        [NativeTypeName("SDL_DialogFileCallback")]
-            delegate* unmanaged<void*, sbyte**, int, void> callback,
+        [NativeTypeName("SDL_DialogFileCallback")] DialogFileCallback callback,
         Ref userdata,
         WindowHandle window,
         [NativeTypeName("const SDL_DialogFileFilter *")] Ref<DialogFileFilter> filters,
@@ -59189,29 +58905,21 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     void ISdl.ShowOpenFolderDialog(
-        [NativeTypeName("SDL_DialogFileCallback")]
-            delegate* unmanaged<void*, sbyte**, int, void> callback,
+        [NativeTypeName("SDL_DialogFileCallback")] DialogFileCallback callback,
         void* userdata,
         WindowHandle window,
         [NativeTypeName("const char *")] sbyte* default_location,
         [NativeTypeName("SDL_bool")] int allow_many
     ) =>
         (
-            (delegate* unmanaged<
-                delegate* unmanaged<void*, sbyte**, int, void>,
-                void*,
-                WindowHandle,
-                sbyte*,
-                int,
-                void>)
+            (delegate* unmanaged<DialogFileCallback, void*, WindowHandle, sbyte*, int, void>)
                 nativeContext.LoadFunction("SDL_ShowOpenFolderDialog", "SDL3")
         )(callback, userdata, window, default_location, allow_many);
 
     [NativeFunction("SDL3", EntryPoint = "SDL_ShowOpenFolderDialog")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     public static void ShowOpenFolderDialog(
-        [NativeTypeName("SDL_DialogFileCallback")]
-            delegate* unmanaged<void*, sbyte**, int, void> callback,
+        [NativeTypeName("SDL_DialogFileCallback")] DialogFileCallback callback,
         void* userdata,
         WindowHandle window,
         [NativeTypeName("const char *")] sbyte* default_location,
@@ -59220,8 +58928,7 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     void ISdl.ShowOpenFolderDialog(
-        [NativeTypeName("SDL_DialogFileCallback")]
-            delegate* unmanaged<void*, sbyte**, int, void> callback,
+        [NativeTypeName("SDL_DialogFileCallback")] DialogFileCallback callback,
         Ref userdata,
         WindowHandle window,
         [NativeTypeName("const char *")] Ref<sbyte> default_location,
@@ -59245,8 +58952,7 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     [NativeFunction("SDL3", EntryPoint = "SDL_ShowOpenFolderDialog")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     public static void ShowOpenFolderDialog(
-        [NativeTypeName("SDL_DialogFileCallback")]
-            delegate* unmanaged<void*, sbyte**, int, void> callback,
+        [NativeTypeName("SDL_DialogFileCallback")] DialogFileCallback callback,
         Ref userdata,
         WindowHandle window,
         [NativeTypeName("const char *")] Ref<sbyte> default_location,
@@ -59255,8 +58961,7 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     void ISdl.ShowSaveFileDialog(
-        [NativeTypeName("SDL_DialogFileCallback")]
-            delegate* unmanaged<void*, sbyte**, int, void> callback,
+        [NativeTypeName("SDL_DialogFileCallback")] DialogFileCallback callback,
         void* userdata,
         WindowHandle window,
         [NativeTypeName("const SDL_DialogFileFilter *")] DialogFileFilter* filters,
@@ -59264,7 +58969,7 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     ) =>
         (
             (delegate* unmanaged<
-                delegate* unmanaged<void*, sbyte**, int, void>,
+                DialogFileCallback,
                 void*,
                 WindowHandle,
                 DialogFileFilter*,
@@ -59276,8 +58981,7 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     [NativeFunction("SDL3", EntryPoint = "SDL_ShowSaveFileDialog")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     public static void ShowSaveFileDialog(
-        [NativeTypeName("SDL_DialogFileCallback")]
-            delegate* unmanaged<void*, sbyte**, int, void> callback,
+        [NativeTypeName("SDL_DialogFileCallback")] DialogFileCallback callback,
         void* userdata,
         WindowHandle window,
         [NativeTypeName("const SDL_DialogFileFilter *")] DialogFileFilter* filters,
@@ -59286,8 +58990,7 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     void ISdl.ShowSaveFileDialog(
-        [NativeTypeName("SDL_DialogFileCallback")]
-            delegate* unmanaged<void*, sbyte**, int, void> callback,
+        [NativeTypeName("SDL_DialogFileCallback")] DialogFileCallback callback,
         Ref userdata,
         WindowHandle window,
         [NativeTypeName("const SDL_DialogFileFilter *")] Ref<DialogFileFilter> filters,
@@ -59312,8 +59015,7 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     [NativeFunction("SDL3", EntryPoint = "SDL_ShowSaveFileDialog")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     public static void ShowSaveFileDialog(
-        [NativeTypeName("SDL_DialogFileCallback")]
-            delegate* unmanaged<void*, sbyte**, int, void> callback,
+        [NativeTypeName("SDL_DialogFileCallback")] DialogFileCallback callback,
         Ref userdata,
         WindowHandle window,
         [NativeTypeName("const SDL_DialogFileFilter *")] Ref<DialogFileFilter> filters,

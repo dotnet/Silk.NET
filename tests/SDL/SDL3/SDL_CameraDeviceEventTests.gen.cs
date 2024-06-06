@@ -15,7 +15,7 @@ public static unsafe partial class SDL_CameraDeviceEventTests
     [Test]
     public static void IsBlittableTest()
     {
-        Assert.That(Marshal.SizeOf<SDL_CameraDeviceEvent>(), Is.EqualTo(sizeof(CameraDeviceEvent)));
+        Assert.That(Marshal.SizeOf<CameraDeviceEvent>(), Is.EqualTo(sizeof(CameraDeviceEvent)));
     }
 
     /// <summary>Validates that the <see cref = "SDL_CameraDeviceEvent"/> struct has the right <see cref = "LayoutKind"/>.</summary>

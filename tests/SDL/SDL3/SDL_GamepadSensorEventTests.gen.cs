@@ -15,10 +15,7 @@ public static unsafe partial class SDL_GamepadSensorEventTests
     [Test]
     public static void IsBlittableTest()
     {
-        Assert.That(
-            Marshal.SizeOf<SDL_GamepadSensorEvent>(),
-            Is.EqualTo(sizeof(GamepadSensorEvent))
-        );
+        Assert.That(Marshal.SizeOf<GamepadSensorEvent>(), Is.EqualTo(sizeof(GamepadSensorEvent)));
     }
 
     /// <summary>Validates that the <see cref = "SDL_GamepadSensorEvent"/> struct has the right <see cref = "LayoutKind"/>.</summary>

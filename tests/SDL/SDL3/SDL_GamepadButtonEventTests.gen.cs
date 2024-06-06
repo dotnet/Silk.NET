@@ -15,10 +15,7 @@ public static unsafe partial class SDL_GamepadButtonEventTests
     [Test]
     public static void IsBlittableTest()
     {
-        Assert.That(
-            Marshal.SizeOf<SDL_GamepadButtonEvent>(),
-            Is.EqualTo(sizeof(GamepadButtonEvent))
-        );
+        Assert.That(Marshal.SizeOf<GamepadButtonEvent>(), Is.EqualTo(sizeof(GamepadButtonEvent)));
     }
 
     /// <summary>Validates that the <see cref = "SDL_GamepadButtonEvent"/> struct has the right <see cref = "LayoutKind"/>.</summary>

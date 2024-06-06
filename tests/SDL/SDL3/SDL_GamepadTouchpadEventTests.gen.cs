@@ -16,7 +16,7 @@ public static unsafe partial class SDL_GamepadTouchpadEventTests
     public static void IsBlittableTest()
     {
         Assert.That(
-            Marshal.SizeOf<SDL_GamepadTouchpadEvent>(),
+            Marshal.SizeOf<GamepadTouchpadEvent>(),
             Is.EqualTo(sizeof(GamepadTouchpadEvent))
         );
     }

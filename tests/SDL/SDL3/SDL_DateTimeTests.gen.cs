@@ -15,7 +15,7 @@ public static unsafe partial class SDL_DateTimeTests
     [Test]
     public static void IsBlittableTest()
     {
-        Assert.That(Marshal.SizeOf<SDL_DateTime>(), Is.EqualTo(sizeof(DateTime)));
+        Assert.That(Marshal.SizeOf<DateTime>(), Is.EqualTo(sizeof(DateTime)));
     }
 
     /// <summary>Validates that the <see cref = "SDL_DateTime"/> struct has the right <see cref = "LayoutKind"/>.</summary>

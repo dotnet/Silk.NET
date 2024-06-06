@@ -47,20 +47,20 @@ public unsafe partial struct VirtualJoystickDesc
     public void* Userdata;
 
     [NativeTypeName("void (*)(void *)")]
-    public delegate* unmanaged<void*, void> Update;
+    public ClipboardCleanupCallback Update;
 
     [NativeTypeName("void (*)(void *, int)")]
-    public delegate* unmanaged<void*, int, void> SetPlayerIndex;
+    public PfnVvIV SetPlayerIndex;
 
     [NativeTypeName("int (*)(void *, Uint16, Uint16)")]
-    public delegate* unmanaged<void*, ushort, ushort, int> Rumble;
+    public PfnVvUsUsI Rumble;
 
     [NativeTypeName("int (*)(void *, Uint16, Uint16)")]
-    public delegate* unmanaged<void*, ushort, ushort, int> RumbleTriggers;
+    public PfnVvUsUsI RumbleTriggers;
 
     [NativeTypeName("int (*)(void *, Uint8, Uint8, Uint8)")]
-    public delegate* unmanaged<void*, byte, byte, byte, int> SetLED;
+    public PfnVvUbUbUbI SetLED;
 
     [NativeTypeName("int (*)(void *, const void *, int)")]
-    public delegate* unmanaged<void*, void*, int, int> SendEffect;
+    public PfnVvVvII SendEffect;
 }

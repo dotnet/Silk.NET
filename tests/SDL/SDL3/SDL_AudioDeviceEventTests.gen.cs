@@ -15,7 +15,7 @@ public static unsafe partial class SDL_AudioDeviceEventTests
     [Test]
     public static void IsBlittableTest()
     {
-        Assert.That(Marshal.SizeOf<SDL_AudioDeviceEvent>(), Is.EqualTo(sizeof(AudioDeviceEvent)));
+        Assert.That(Marshal.SizeOf<AudioDeviceEvent>(), Is.EqualTo(sizeof(AudioDeviceEvent)));
     }
 
     /// <summary>Validates that the <see cref = "SDL_AudioDeviceEvent"/> struct has the right <see cref = "LayoutKind"/>.</summary>

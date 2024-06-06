@@ -15,7 +15,7 @@ public static unsafe partial class SDL_ColorTests
     [Test]
     public static void IsBlittableTest()
     {
-        Assert.That(Marshal.SizeOf<SDL_Color>(), Is.EqualTo(sizeof(Color)));
+        Assert.That(Marshal.SizeOf<Color>(), Is.EqualTo(sizeof(Color)));
     }
 
     /// <summary>Validates that the <see cref = "SDL_Color"/> struct has the right <see cref = "LayoutKind"/>.</summary>

@@ -16,7 +16,7 @@ public static unsafe partial class SDL_SurfaceTests
     [Test]
     public static void IsBlittableTest()
     {
-        Assert.That(Marshal.SizeOf<SDL_Surface>(), Is.EqualTo(sizeof(Surface)));
+        Assert.That(Marshal.SizeOf<Surface>(), Is.EqualTo(sizeof(Surface)));
     }
 
     /// <summary>Validates that the <see cref = "SDL_Surface"/> struct has the right <see cref = "LayoutKind"/>.</summary>

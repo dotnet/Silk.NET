@@ -15,7 +15,7 @@ public static unsafe partial class SDL_FPointTests
     [Test]
     public static void IsBlittableTest()
     {
-        Assert.That(Marshal.SizeOf<SDL_FPoint>(), Is.EqualTo(sizeof(FPoint)));
+        Assert.That(Marshal.SizeOf<FPoint>(), Is.EqualTo(sizeof(FPoint)));
     }
 
     /// <summary>Validates that the <see cref = "SDL_FPoint"/> struct has the right <see cref = "LayoutKind"/>.</summary>

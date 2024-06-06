@@ -15,7 +15,7 @@ public static unsafe partial class SDL_FRectTests
     [Test]
     public static void IsBlittableTest()
     {
-        Assert.That(Marshal.SizeOf<SDL_FRect>(), Is.EqualTo(sizeof(FRect)));
+        Assert.That(Marshal.SizeOf<FRect>(), Is.EqualTo(sizeof(FRect)));
     }
 
     /// <summary>Validates that the <see cref = "SDL_FRect"/> struct has the right <see cref = "LayoutKind"/>.</summary>

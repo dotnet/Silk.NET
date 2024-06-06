@@ -15,7 +15,7 @@ public static unsafe partial class SDL_GUIDTests
     [Test]
     public static void IsBlittableTest()
     {
-        Assert.That(Marshal.SizeOf<SDL_GUID>(), Is.EqualTo(sizeof(Guid)));
+        Assert.That(Marshal.SizeOf<Guid>(), Is.EqualTo(sizeof(Guid)));
     }
 
     /// <summary>Validates that the <see cref = "SDL_GUID"/> struct has the right <see cref = "LayoutKind"/>.</summary>

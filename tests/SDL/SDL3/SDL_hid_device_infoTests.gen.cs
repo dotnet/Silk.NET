@@ -16,7 +16,7 @@ public static unsafe partial class SDL_hid_device_infoTests
     [Test]
     public static void IsBlittableTest()
     {
-        Assert.That(Marshal.SizeOf<SDL_hid_device_info>(), Is.EqualTo(sizeof(HidDeviceInfo)));
+        Assert.That(Marshal.SizeOf<HidDeviceInfo>(), Is.EqualTo(sizeof(HidDeviceInfo)));
     }
 
     /// <summary>Validates that the <see cref = "SDL_hid_device_info"/> struct has the right <see cref = "LayoutKind"/>.</summary>

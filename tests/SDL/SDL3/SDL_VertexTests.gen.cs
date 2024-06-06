@@ -15,7 +15,7 @@ public static unsafe partial class SDL_VertexTests
     [Test]
     public static void IsBlittableTest()
     {
-        Assert.That(Marshal.SizeOf<SDL_Vertex>(), Is.EqualTo(sizeof(Vertex)));
+        Assert.That(Marshal.SizeOf<Vertex>(), Is.EqualTo(sizeof(Vertex)));
     }
 
     /// <summary>Validates that the <see cref = "SDL_Vertex"/> struct has the right <see cref = "LayoutKind"/>.</summary>

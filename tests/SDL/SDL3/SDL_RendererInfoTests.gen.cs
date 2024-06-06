@@ -16,7 +16,7 @@ public static unsafe partial class SDL_RendererInfoTests
     [Test]
     public static void IsBlittableTest()
     {
-        Assert.That(Marshal.SizeOf<SDL_RendererInfo>(), Is.EqualTo(sizeof(RendererInfo)));
+        Assert.That(Marshal.SizeOf<RendererInfo>(), Is.EqualTo(sizeof(RendererInfo)));
     }
 
     /// <summary>Validates that the <see cref = "SDL_RendererInfo"/> struct has the right <see cref = "LayoutKind"/>.</summary>

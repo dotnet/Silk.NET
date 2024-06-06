@@ -16,7 +16,7 @@ public static unsafe partial class SDL_AssertDataTests
     [Test]
     public static void IsBlittableTest()
     {
-        Assert.That(Marshal.SizeOf<SDL_AssertData>(), Is.EqualTo(sizeof(AssertData)));
+        Assert.That(Marshal.SizeOf<AssertData>(), Is.EqualTo(sizeof(AssertData)));
     }
 
     /// <summary>Validates that the <see cref = "SDL_AssertData"/> struct has the right <see cref = "LayoutKind"/>.</summary>

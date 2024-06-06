@@ -9,37 +9,32 @@ namespace Silk.NET.SDL;
 public unsafe partial struct StorageInterface
 {
     [NativeTypeName("int (*)(void *)")]
-    public delegate* unmanaged<void*, int> Close;
+    public ThreadFunction Close;
 
     [NativeTypeName("SDL_bool (*)(void *)")]
-    public delegate* unmanaged<void*, int> Ready;
+    public ThreadFunction Ready;
 
     [NativeTypeName("int (*)(void *, const char *, SDL_EnumerateDirectoryCallback, void *)")]
-    public delegate* unmanaged<
-        void*,
-        sbyte*,
-        delegate* unmanaged<void*, sbyte*, sbyte*, int>,
-        void*,
-        int> Enumerate;
+    public PfnVvBvSDLEnumerateDirectoryCallbackVvI Enumerate;
 
     [NativeTypeName("int (*)(void *, const char *, SDL_PathInfo *)")]
-    public delegate* unmanaged<void*, sbyte*, PathInfo*, int> Info;
+    public PfnVvBvSDLPathInfovI Info;
 
     [NativeTypeName("int (*)(void *, const char *, void *, Uint64)")]
-    public delegate* unmanaged<void*, sbyte*, void*, ulong, int> ReadFile;
+    public PfnVvBvVvUi64I ReadFile;
 
     [NativeTypeName("int (*)(void *, const char *, const void *, Uint64)")]
-    public delegate* unmanaged<void*, sbyte*, void*, ulong, int> WriteFile;
+    public PfnVvBvVvUi64I WriteFile;
 
     [NativeTypeName("int (*)(void *, const char *)")]
-    public delegate* unmanaged<void*, sbyte*, int> Mkdir;
+    public PfnVvBvI Mkdir;
 
     [NativeTypeName("int (*)(void *, const char *)")]
-    public delegate* unmanaged<void*, sbyte*, int> Remove;
+    public PfnVvBvI Remove;
 
     [NativeTypeName("int (*)(void *, const char *, const char *)")]
-    public delegate* unmanaged<void*, sbyte*, sbyte*, int> Rename;
+    public EnumerateDirectoryCallback Rename;
 
     [NativeTypeName("Uint64 (*)(void *)")]
-    public delegate* unmanaged<void*, ulong> SpaceRemaining;
+    public PfnVvUi64 SpaceRemaining;
 }

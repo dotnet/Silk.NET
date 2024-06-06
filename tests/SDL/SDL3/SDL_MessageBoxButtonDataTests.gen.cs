@@ -17,7 +17,7 @@ public static unsafe partial class SDL_MessageBoxButtonDataTests
     public static void IsBlittableTest()
     {
         Assert.That(
-            Marshal.SizeOf<SDL_MessageBoxButtonData>(),
+            Marshal.SizeOf<MessageBoxButtonData>(),
             Is.EqualTo(sizeof(MessageBoxButtonData))
         );
     }

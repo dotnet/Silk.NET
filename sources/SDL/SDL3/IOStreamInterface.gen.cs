@@ -16,17 +16,17 @@ namespace Silk.NET.SDL;
 public unsafe partial struct IOStreamInterface
 {
     [NativeTypeName("Sint64 (*)(void *)")]
-    public delegate* unmanaged<void*, long> Size;
+    public PfnVvI64 Size;
 
     [NativeTypeName("Sint64 (*)(void *, Sint64, int)")]
-    public delegate* unmanaged<void*, long, int, long> Seek;
+    public PfnVvI64II64 Seek;
 
     [NativeTypeName("size_t (*)(void *, void *, size_t, SDL_IOStatus *)")]
-    public delegate* unmanaged<void*, void*, nuint, IOStatus*, nuint> Read;
+    public PfnVvVvNuintSdlioStatusvNuint Read;
 
     [NativeTypeName("size_t (*)(void *, const void *, size_t, SDL_IOStatus *)")]
-    public delegate* unmanaged<void*, void*, nuint, IOStatus*, nuint> Write;
+    public PfnVvVvNuintSdlioStatusvNuint Write;
 
     [NativeTypeName("int (*)(void *)")]
-    public delegate* unmanaged<void*, int> Close;
+    public ThreadFunction Close;
 }

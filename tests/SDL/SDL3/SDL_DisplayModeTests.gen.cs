@@ -16,7 +16,7 @@ public static unsafe partial class SDL_DisplayModeTests
     [Test]
     public static void IsBlittableTest()
     {
-        Assert.That(Marshal.SizeOf<SDL_DisplayMode>(), Is.EqualTo(sizeof(DisplayMode)));
+        Assert.That(Marshal.SizeOf<DisplayMode>(), Is.EqualTo(sizeof(DisplayMode)));
     }
 
     /// <summary>Validates that the <see cref = "SDL_DisplayMode"/> struct has the right <see cref = "LayoutKind"/>.</summary>

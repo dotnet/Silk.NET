@@ -15,7 +15,7 @@ public static unsafe partial class SDL_FingerTests
     [Test]
     public static void IsBlittableTest()
     {
-        Assert.That(Marshal.SizeOf<SDL_Finger>(), Is.EqualTo(sizeof(Finger)));
+        Assert.That(Marshal.SizeOf<Finger>(), Is.EqualTo(sizeof(Finger)));
     }
 
     /// <summary>Validates that the <see cref = "SDL_Finger"/> struct has the right <see cref = "LayoutKind"/>.</summary>

@@ -16,7 +16,7 @@ public static unsafe partial class SDL_StorageInterfaceTests
     [Test]
     public static void IsBlittableTest()
     {
-        Assert.That(Marshal.SizeOf<SDL_StorageInterface>(), Is.EqualTo(sizeof(StorageInterface)));
+        Assert.That(Marshal.SizeOf<StorageInterface>(), Is.EqualTo(sizeof(StorageInterface)));
     }
 
     /// <summary>Validates that the <see cref = "SDL_StorageInterface"/> struct has the right <see cref = "LayoutKind"/>.</summary>

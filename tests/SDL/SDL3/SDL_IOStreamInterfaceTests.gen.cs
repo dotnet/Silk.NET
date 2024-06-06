@@ -16,7 +16,7 @@ public static unsafe partial class SDL_IOStreamInterfaceTests
     [Test]
     public static void IsBlittableTest()
     {
-        Assert.That(Marshal.SizeOf<SDL_IOStreamInterface>(), Is.EqualTo(sizeof(IOStreamInterface)));
+        Assert.That(Marshal.SizeOf<IOStreamInterface>(), Is.EqualTo(sizeof(IOStreamInterface)));
     }
 
     /// <summary>Validates that the <see cref = "SDL_IOStreamInterface"/> struct has the right <see cref = "LayoutKind"/>.</summary>

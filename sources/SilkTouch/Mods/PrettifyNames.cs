@@ -717,6 +717,34 @@ public class PrettifyNames(
             }
         }
 
+        public override void VisitDelegateDeclaration(DelegateDeclarationSyntax node)
+        {
+            if (
+                _classInProgress is not null
+                || _enumInProgress is not null
+                || node.Ancestors().OfType<BaseTypeDeclarationSyntax>().Any()
+            )
+            {
+                if (node.Parent == _classInProgress?.Class)
+                {
+                    _classInProgress!.Value.NonFunctions.Add(node.Identifier.ToString());
+                }
+
+                return;
+            }
+
+            if (
+                node.AttributeLists.Any(x =>
+                    x.Attributes.Any(y => y.IsAttribute("Silk.NET.Core.Transformed"))
+                )
+            )
+            {
+                NonDeterminant.Add(node.Identifier.ToString());
+            }
+
+            Types.Add(node.Identifier.ToString(), (null, null, false));
+        }
+
         public override void VisitStructDeclaration(StructDeclarationSyntax node)
         {
             if (
@@ -798,7 +826,8 @@ public class PrettifyNames(
         private (
             BaseTypeDeclarationSyntax Type,
             Dictionary<string, string>? NonFunctions,
-            Dictionary<string, string>? Functions
+            Dictionary<string, string>? Functions,
+            string? NewName
         )? _typeInProgress;
         private FieldDeclarationSyntax? _memberInProgress;
         private bool _memberAccess;
@@ -818,7 +847,7 @@ public class PrettifyNames(
                 return base.VisitClassDeclaration(node);
             }
 
-            _typeInProgress = (node, info.NonFunctions, info.Functions);
+            _typeInProgress = (node, info.NonFunctions, info.Functions, info.NewName);
             var ret = (ClassDeclarationSyntax)base.VisitClassDeclaration(node)!;
             _typeInProgress = null;
             var memberIdentifiers = ret.Members.SelectMany(x => x.MemberIdentifiers()).ToHashSet();
@@ -888,6 +917,15 @@ public class PrettifyNames(
             return ret;
         }
 
+        public override SyntaxNode? VisitConstructorDeclaration(
+            ConstructorDeclarationSyntax node
+        ) =>
+            (base.VisitConstructorDeclaration(node) as ConstructorDeclarationSyntax ?? node)
+                is var v
+            && _typeInProgress is { NewName: { Length: > 0 } newName }
+                ? v.WithIdentifier(Identifier(newName))
+                : v;
+
         public override SyntaxNode? VisitEnumDeclaration(EnumDeclarationSyntax node)
         {
             if (
@@ -898,7 +936,7 @@ public class PrettifyNames(
                 return base.VisitEnumDeclaration(node);
             }
 
-            _typeInProgress = (node, info.NonFunctions, info.Functions);
+            _typeInProgress = (node, info.NonFunctions, info.Functions, info.NewName);
             var ret = base.VisitEnumDeclaration(node);
             _typeInProgress = null;
             return ((EnumDeclarationSyntax)ret!).WithIdentifier(Identifier(info.NewName));
@@ -933,12 +971,37 @@ public class PrettifyNames(
                 return base.VisitStructDeclaration(node);
             }
 
-            _typeInProgress = (node, info.NonFunctions, info.Functions);
+            _typeInProgress = (node, info.NonFunctions, info.Functions, info.NewName);
             var ret = ((StructDeclarationSyntax)base.VisitStructDeclaration(node)!).WithIdentifier(
                 Identifier(info.NewName)
             );
             _typeInProgress = null;
             return ret;
+        }
+
+        public override SyntaxNode? VisitDelegateDeclaration(DelegateDeclarationSyntax node)
+        {
+            if (
+                !(
+                    _typeInProgress?.NonFunctions?.TryGetValue(
+                        node.Identifier.ToString(),
+                        out var newName
+                    ) ?? false
+                )
+                && (
+                    newName = Types.TryGetValue(node.Identifier.ToString(), out var info)
+                        ? info.NewName
+                        : null
+                )
+                    is null
+            )
+            {
+                return base.VisitDelegateDeclaration(node);
+            }
+
+            return ((DelegateDeclarationSyntax)base.VisitDelegateDeclaration(node)!).WithIdentifier(
+                Identifier(newName)
+            );
         }
 
         public override SyntaxNode? VisitFieldDeclaration(FieldDeclarationSyntax node)
@@ -971,7 +1034,7 @@ public class PrettifyNames(
                 )
             )
             {
-                return node;
+                return base.VisitPropertyDeclaration(node);
             }
             return (
                 base.VisitPropertyDeclaration(node) as PropertyDeclarationSyntax ?? node
@@ -994,7 +1057,7 @@ public class PrettifyNames(
                 ).WithIdentifier(Identifier(newName));
             }
 
-            return node;
+            return base.VisitVariableDeclarator(node);
         }
 
         public override SyntaxNode? VisitMemberAccessExpression(MemberAccessExpressionSyntax node)
@@ -1015,7 +1078,7 @@ public class PrettifyNames(
                 else
                 {
                     _memberAccess = false;
-                    return node;
+                    return base.VisitMemberAccessExpression(node);
                 }
             }
 

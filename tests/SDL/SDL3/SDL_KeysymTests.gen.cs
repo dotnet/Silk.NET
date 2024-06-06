@@ -15,7 +15,7 @@ public static unsafe partial class SDL_KeysymTests
     [Test]
     public static void IsBlittableTest()
     {
-        Assert.That(Marshal.SizeOf<SDL_Keysym>(), Is.EqualTo(sizeof(Keysym)));
+        Assert.That(Marshal.SizeOf<Keysym>(), Is.EqualTo(sizeof(Keysym)));
     }
 
     /// <summary>Validates that the <see cref = "SDL_Keysym"/> struct has the right <see cref = "LayoutKind"/>.</summary>

@@ -15,7 +15,7 @@ public static unsafe partial class SDL_QuitEventTests
     [Test]
     public static void IsBlittableTest()
     {
-        Assert.That(Marshal.SizeOf<SDL_QuitEvent>(), Is.EqualTo(sizeof(QuitEvent)));
+        Assert.That(Marshal.SizeOf<QuitEvent>(), Is.EqualTo(sizeof(QuitEvent)));
     }
 
     /// <summary>Validates that the <see cref = "SDL_QuitEvent"/> struct has the right <see cref = "LayoutKind"/>.</summary>

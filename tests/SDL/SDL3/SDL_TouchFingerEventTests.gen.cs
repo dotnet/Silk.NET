@@ -15,7 +15,7 @@ public static unsafe partial class SDL_TouchFingerEventTests
     [Test]
     public static void IsBlittableTest()
     {
-        Assert.That(Marshal.SizeOf<SDL_TouchFingerEvent>(), Is.EqualTo(sizeof(TouchFingerEvent)));
+        Assert.That(Marshal.SizeOf<TouchFingerEvent>(), Is.EqualTo(sizeof(TouchFingerEvent)));
     }
 
     /// <summary>Validates that the <see cref = "SDL_TouchFingerEvent"/> struct has the right <see cref = "LayoutKind"/>.</summary>

@@ -15,7 +15,7 @@ public static unsafe partial class SDL_MessageBoxColorTests
     [Test]
     public static void IsBlittableTest()
     {
-        Assert.That(Marshal.SizeOf<SDL_MessageBoxColor>(), Is.EqualTo(sizeof(MessageBoxColor)));
+        Assert.That(Marshal.SizeOf<MessageBoxColor>(), Is.EqualTo(sizeof(MessageBoxColor)));
     }
 
     /// <summary>Validates that the <see cref = "SDL_MessageBoxColor"/> struct has the right <see cref = "LayoutKind"/>.</summary>

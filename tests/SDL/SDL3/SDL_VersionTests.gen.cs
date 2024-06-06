@@ -15,7 +15,7 @@ public static unsafe partial class SDL_VersionTests
     [Test]
     public static void IsBlittableTest()
     {
-        Assert.That(Marshal.SizeOf<SDL_Version>(), Is.EqualTo(sizeof(Version)));
+        Assert.That(Marshal.SizeOf<Version>(), Is.EqualTo(sizeof(Version)));
     }
 
     /// <summary>Validates that the <see cref = "SDL_Version"/> struct has the right <see cref = "LayoutKind"/>.</summary>

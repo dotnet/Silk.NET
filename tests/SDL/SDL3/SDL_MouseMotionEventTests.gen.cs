@@ -15,7 +15,7 @@ public static unsafe partial class SDL_MouseMotionEventTests
     [Test]
     public static void IsBlittableTest()
     {
-        Assert.That(Marshal.SizeOf<SDL_MouseMotionEvent>(), Is.EqualTo(sizeof(MouseMotionEvent)));
+        Assert.That(Marshal.SizeOf<MouseMotionEvent>(), Is.EqualTo(sizeof(MouseMotionEvent)));
     }
 
     /// <summary>Validates that the <see cref = "SDL_MouseMotionEvent"/> struct has the right <see cref = "LayoutKind"/>.</summary>

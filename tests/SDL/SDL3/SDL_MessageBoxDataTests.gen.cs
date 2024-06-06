@@ -16,7 +16,7 @@ public static unsafe partial class SDL_MessageBoxDataTests
     [Test]
     public static void IsBlittableTest()
     {
-        Assert.That(Marshal.SizeOf<SDL_MessageBoxData>(), Is.EqualTo(sizeof(MessageBoxData)));
+        Assert.That(Marshal.SizeOf<MessageBoxData>(), Is.EqualTo(sizeof(MessageBoxData)));
     }
 
     /// <summary>Validates that the <see cref = "SDL_MessageBoxData"/> struct has the right <see cref = "LayoutKind"/>.</summary>

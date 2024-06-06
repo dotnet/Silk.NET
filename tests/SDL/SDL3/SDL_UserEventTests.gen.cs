@@ -16,7 +16,7 @@ public static unsafe partial class SDL_UserEventTests
     [Test]
     public static void IsBlittableTest()
     {
-        Assert.That(Marshal.SizeOf<SDL_UserEvent>(), Is.EqualTo(sizeof(UserEvent)));
+        Assert.That(Marshal.SizeOf<UserEvent>(), Is.EqualTo(sizeof(UserEvent)));
     }
 
     /// <summary>Validates that the <see cref = "SDL_UserEvent"/> struct has the right <see cref = "LayoutKind"/>.</summary>

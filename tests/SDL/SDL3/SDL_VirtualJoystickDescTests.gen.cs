@@ -16,10 +16,7 @@ public static unsafe partial class SDL_VirtualJoystickDescTests
     [Test]
     public static void IsBlittableTest()
     {
-        Assert.That(
-            Marshal.SizeOf<SDL_VirtualJoystickDesc>(),
-            Is.EqualTo(sizeof(VirtualJoystickDesc))
-        );
+        Assert.That(Marshal.SizeOf<VirtualJoystickDesc>(), Is.EqualTo(sizeof(VirtualJoystickDesc)));
     }
 
     /// <summary>Validates that the <see cref = "SDL_VirtualJoystickDesc"/> struct has the right <see cref = "LayoutKind"/>.</summary>

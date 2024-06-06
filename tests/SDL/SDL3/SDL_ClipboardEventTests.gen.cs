@@ -15,7 +15,7 @@ public static unsafe partial class SDL_ClipboardEventTests
     [Test]
     public static void IsBlittableTest()
     {
-        Assert.That(Marshal.SizeOf<SDL_ClipboardEvent>(), Is.EqualTo(sizeof(ClipboardEvent)));
+        Assert.That(Marshal.SizeOf<ClipboardEvent>(), Is.EqualTo(sizeof(ClipboardEvent)));
     }
 
     /// <summary>Validates that the <see cref = "SDL_ClipboardEvent"/> struct has the right <see cref = "LayoutKind"/>.</summary>

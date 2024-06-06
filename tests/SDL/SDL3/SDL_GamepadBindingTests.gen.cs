@@ -15,7 +15,7 @@ public static unsafe partial class SDL_GamepadBindingTests
     [Test]
     public static void IsBlittableTest()
     {
-        Assert.That(Marshal.SizeOf<SDL_GamepadBinding>(), Is.EqualTo(sizeof(GamepadBinding)));
+        Assert.That(Marshal.SizeOf<GamepadBinding>(), Is.EqualTo(sizeof(GamepadBinding)));
     }
 
     /// <summary>Validates that the <see cref = "SDL_GamepadBinding"/> struct has the right <see cref = "LayoutKind"/>.</summary>

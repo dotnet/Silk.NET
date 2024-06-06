@@ -15,7 +15,7 @@ public static unsafe partial class SDL_PathInfoTests
     [Test]
     public static void IsBlittableTest()
     {
-        Assert.That(Marshal.SizeOf<SDL_PathInfo>(), Is.EqualTo(sizeof(PathInfo)));
+        Assert.That(Marshal.SizeOf<PathInfo>(), Is.EqualTo(sizeof(PathInfo)));
     }
 
     /// <summary>Validates that the <see cref = "SDL_PathInfo"/> struct has the right <see cref = "LayoutKind"/>.</summary>

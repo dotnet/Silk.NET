@@ -15,7 +15,7 @@ public static unsafe partial class SDL_HapticRampTests
     [Test]
     public static void IsBlittableTest()
     {
-        Assert.That(Marshal.SizeOf<SDL_HapticRamp>(), Is.EqualTo(sizeof(HapticRamp)));
+        Assert.That(Marshal.SizeOf<HapticRamp>(), Is.EqualTo(sizeof(HapticRamp)));
     }
 
     /// <summary>Validates that the <see cref = "SDL_HapticRamp"/> struct has the right <see cref = "LayoutKind"/>.</summary>

@@ -91,10 +91,10 @@ public static class ModUtils
     /// <param name="toks">Tokens e.g. ref, in, out.</param>
     /// <param name="type">The type syntax.</param>
     /// <returns>The discriminator string.</returns>
-    public static string DiscrimStr(SyntaxTokenList toks, TypeSyntax? type) =>
-        toks.Any(x =>
+    public static string DiscrimStr(SyntaxTokenList? toks, TypeSyntax? type) =>
+        toks?.Any(x =>
             x.Kind() is SyntaxKind.RefKeyword or SyntaxKind.InKeyword or SyntaxKind.OutKeyword
-        )
+        ) ?? false
             ? $"{type}&"
             : type?.ToString() ?? string.Empty;
 
@@ -108,15 +108,32 @@ public static class ModUtils
     /// <param name="returnType">The return type of the function.</param>
     /// <returns>The discriminator string.</returns>
     public static string DiscrimStr(
-        SyntaxTokenList modifiers,
+        SyntaxTokenList? modifiers,
         TypeParameterListSyntax? tParams,
-        string identifier,
-        BaseParameterListSyntax? @params,
+        ReadOnlySpan<char> identifier,
+        IEnumerable<BaseParameterSyntax>? @params,
         TypeSyntax? returnType
     ) =>
-        (modifiers.Any(SyntaxKind.StaticKeyword) ? "static " : string.Empty)
+        (modifiers?.Any(SyntaxKind.StaticKeyword) ?? false ? "static " : string.Empty)
         + $"{DiscrimStr(modifiers, returnType)} {identifier}{tParams}"
-        + $"({string.Join(", ", @params?.Parameters.Select(DiscrimStr) ?? Enumerable.Empty<string>())})";
+        + $"({string.Join(", ", @params?.Select(DiscrimStr) ?? Enumerable.Empty<string>())})";
+
+    /// <summary>
+    /// Gets a string that can be used to discriminate a function-like element for baking purposes.
+    /// </summary>
+    /// <param name="modifiers">The modifiers on the function.</param>
+    /// <param name="tParams">The type parameters.</param>
+    /// <param name="identifier">The name of the function.</param>
+    /// <param name="params">The parameters of the function.</param>
+    /// <param name="returnType">The return type of the function.</param>
+    /// <returns>The discriminator string.</returns>
+    public static string DiscrimStr(
+        SyntaxTokenList? modifiers,
+        TypeParameterListSyntax? tParams,
+        ReadOnlySpan<char> identifier,
+        BaseParameterListSyntax? @params,
+        TypeSyntax? returnType
+    ) => DiscrimStr(modifiers, tParams, identifier, @params?.Parameters, returnType);
 
     /// <summary>
     /// Gets a string that can be used to discriminate a single parameter.

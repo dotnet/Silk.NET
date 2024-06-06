@@ -15,7 +15,7 @@ public static unsafe partial class SDL_JoyHatEventTests
     [Test]
     public static void IsBlittableTest()
     {
-        Assert.That(Marshal.SizeOf<SDL_JoyHatEvent>(), Is.EqualTo(sizeof(JoyHatEvent)));
+        Assert.That(Marshal.SizeOf<JoyHatEvent>(), Is.EqualTo(sizeof(JoyHatEvent)));
     }
 
     /// <summary>Validates that the <see cref = "SDL_JoyHatEvent"/> struct has the right <see cref = "LayoutKind"/>.</summary>

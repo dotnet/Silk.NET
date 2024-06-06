@@ -15,7 +15,7 @@ public static unsafe partial class SDL_AtomicIntTests
     [Test]
     public static void IsBlittableTest()
     {
-        Assert.That(Marshal.SizeOf<SDL_AtomicInt>(), Is.EqualTo(sizeof(AtomicInt)));
+        Assert.That(Marshal.SizeOf<AtomicInt>(), Is.EqualTo(sizeof(AtomicInt)));
     }
 
     /// <summary>Validates that the <see cref = "SDL_AtomicInt"/> struct has the right <see cref = "LayoutKind"/>.</summary>

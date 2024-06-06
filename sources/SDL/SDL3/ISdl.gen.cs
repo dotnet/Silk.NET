@@ -35,14 +35,14 @@ public unsafe partial interface ISdl
 
         [NativeFunction("SDL3", EntryPoint = "SDL_AddEventWatch")]
         static abstract int AddEventWatch(
-            [NativeTypeName("SDL_EventFilter")] delegate* unmanaged<void*, Event*, int> filter,
+            [NativeTypeName("SDL_EventFilter")] EventFilter filter,
             void* userdata
         );
 
         [Transformed]
         [NativeFunction("SDL3", EntryPoint = "SDL_AddEventWatch")]
         static abstract int AddEventWatch(
-            [NativeTypeName("SDL_EventFilter")] delegate* unmanaged<void*, Event*, int> filter,
+            [NativeTypeName("SDL_EventFilter")] EventFilter filter,
             Ref userdata
         );
 
@@ -80,8 +80,7 @@ public unsafe partial interface ISdl
         [NativeFunction("SDL3", EntryPoint = "SDL_AddHintCallback")]
         static abstract int AddHintCallback(
             [NativeTypeName("const char *")] sbyte* name,
-            [NativeTypeName("SDL_HintCallback")]
-                delegate* unmanaged<void*, sbyte*, sbyte*, sbyte*, void> callback,
+            [NativeTypeName("SDL_HintCallback")] HintCallback callback,
             void* userdata
         );
 
@@ -89,8 +88,7 @@ public unsafe partial interface ISdl
         [NativeFunction("SDL3", EntryPoint = "SDL_AddHintCallback")]
         static abstract int AddHintCallback(
             [NativeTypeName("const char *")] Ref<sbyte> name,
-            [NativeTypeName("SDL_HintCallback")]
-                delegate* unmanaged<void*, sbyte*, sbyte*, sbyte*, void> callback,
+            [NativeTypeName("SDL_HintCallback")] HintCallback callback,
             Ref userdata
         );
 
@@ -98,7 +96,7 @@ public unsafe partial interface ISdl
         [NativeFunction("SDL3", EntryPoint = "SDL_AddTimer")]
         static abstract uint AddTimer(
             [NativeTypeName("Uint32")] uint interval,
-            [NativeTypeName("SDL_TimerCallback")] delegate* unmanaged<uint, void*, uint> callback,
+            [NativeTypeName("SDL_TimerCallback")] TimerCallback callback,
             void* param2
         );
 
@@ -107,7 +105,7 @@ public unsafe partial interface ISdl
         [NativeFunction("SDL3", EntryPoint = "SDL_AddTimer")]
         static abstract uint AddTimer(
             [NativeTypeName("Uint32")] uint interval,
-            [NativeTypeName("SDL_TimerCallback")] delegate* unmanaged<uint, void*, uint> callback,
+            [NativeTypeName("SDL_TimerCallback")] TimerCallback callback,
             Ref param2
         );
 
@@ -721,7 +719,7 @@ public unsafe partial interface ISdl
 
         [NativeFunction("SDL3", EntryPoint = "SDL_CreateThread")]
         static abstract ThreadHandle CreateThread(
-            [NativeTypeName("SDL_ThreadFunction")] delegate* unmanaged<void*, int> fn,
+            [NativeTypeName("SDL_ThreadFunction")] ThreadFunction fn,
             [NativeTypeName("const char *")] sbyte* name,
             void* data
         );
@@ -729,14 +727,14 @@ public unsafe partial interface ISdl
         [Transformed]
         [NativeFunction("SDL3", EntryPoint = "SDL_CreateThread")]
         static abstract ThreadHandle CreateThread(
-            [NativeTypeName("SDL_ThreadFunction")] delegate* unmanaged<void*, int> fn,
+            [NativeTypeName("SDL_ThreadFunction")] ThreadFunction fn,
             [NativeTypeName("const char *")] Ref<sbyte> name,
             Ref data
         );
 
         [NativeFunction("SDL3", EntryPoint = "SDL_CreateThreadWithStackSize")]
         static abstract ThreadHandle CreateThreadWithStackSize(
-            [NativeTypeName("SDL_ThreadFunction")] delegate* unmanaged<void*, int> fn,
+            [NativeTypeName("SDL_ThreadFunction")] ThreadFunction fn,
             [NativeTypeName("const char *")] sbyte* name,
             [NativeTypeName("const size_t")] nuint stacksize,
             void* data
@@ -745,7 +743,7 @@ public unsafe partial interface ISdl
         [Transformed]
         [NativeFunction("SDL3", EntryPoint = "SDL_CreateThreadWithStackSize")]
         static abstract ThreadHandle CreateThreadWithStackSize(
-            [NativeTypeName("SDL_ThreadFunction")] delegate* unmanaged<void*, int> fn,
+            [NativeTypeName("SDL_ThreadFunction")] ThreadFunction fn,
             [NativeTypeName("const char *")] Ref<sbyte> name,
             [NativeTypeName("const size_t")] nuint stacksize,
             Ref data
@@ -828,22 +826,21 @@ public unsafe partial interface ISdl
 
         [NativeFunction("SDL3", EntryPoint = "SDL_DelEventWatch")]
         static abstract void DelEventWatch(
-            [NativeTypeName("SDL_EventFilter")] delegate* unmanaged<void*, Event*, int> filter,
+            [NativeTypeName("SDL_EventFilter")] EventFilter filter,
             void* userdata
         );
 
         [Transformed]
         [NativeFunction("SDL3", EntryPoint = "SDL_DelEventWatch")]
         static abstract void DelEventWatch(
-            [NativeTypeName("SDL_EventFilter")] delegate* unmanaged<void*, Event*, int> filter,
+            [NativeTypeName("SDL_EventFilter")] EventFilter filter,
             Ref userdata
         );
 
         [NativeFunction("SDL3", EntryPoint = "SDL_DelHintCallback")]
         static abstract void DelHintCallback(
             [NativeTypeName("const char *")] sbyte* name,
-            [NativeTypeName("SDL_HintCallback")]
-                delegate* unmanaged<void*, sbyte*, sbyte*, sbyte*, void> callback,
+            [NativeTypeName("SDL_HintCallback")] HintCallback callback,
             void* userdata
         );
 
@@ -851,8 +848,7 @@ public unsafe partial interface ISdl
         [NativeFunction("SDL3", EntryPoint = "SDL_DelHintCallback")]
         static abstract void DelHintCallback(
             [NativeTypeName("const char *")] Ref<sbyte> name,
-            [NativeTypeName("SDL_HintCallback")]
-                delegate* unmanaged<void*, sbyte*, sbyte*, sbyte*, void> callback,
+            [NativeTypeName("SDL_HintCallback")] HintCallback callback,
             Ref userdata
         );
 
@@ -951,14 +947,14 @@ public unsafe partial interface ISdl
 
         [return: NativeTypeName("SDL_FunctionPointer")]
         [NativeFunction("SDL3", EntryPoint = "SDL_EGL_GetProcAddress")]
-        static abstract delegate* unmanaged<void> EGLGetProcAddress(
+        static abstract FunctionPointer EGLGetProcAddress(
             [NativeTypeName("const char *")] sbyte* proc
         );
 
         [return: NativeTypeName("SDL_FunctionPointer")]
         [Transformed]
         [NativeFunction("SDL3", EntryPoint = "SDL_EGL_GetProcAddress")]
-        static abstract delegate* unmanaged<void> EGLGetProcAddress(
+        static abstract FunctionPointer EGLGetProcAddress(
             [NativeTypeName("const char *")] Ref<sbyte> proc
         );
 
@@ -974,11 +970,9 @@ public unsafe partial interface ISdl
         [NativeFunction("SDL3", EntryPoint = "SDL_EGL_SetEGLAttributeCallbacks")]
         static abstract void EGLSetEGLAttributeCallbacks(
             [NativeTypeName("SDL_EGLAttribArrayCallback")]
-                delegate* unmanaged<nint*> platformAttribCallback,
-            [NativeTypeName("SDL_EGLIntArrayCallback")]
-                delegate* unmanaged<int*> surfaceAttribCallback,
-            [NativeTypeName("SDL_EGLIntArrayCallback")]
-                delegate* unmanaged<int*> contextAttribCallback
+                EGLAttribArrayCallback platformAttribCallback,
+            [NativeTypeName("SDL_EGLIntArrayCallback")] EGLIntArrayCallback surfaceAttribCallback,
+            [NativeTypeName("SDL_EGLIntArrayCallback")] EGLIntArrayCallback contextAttribCallback
         );
 
         [NativeFunction("SDL3", EntryPoint = "SDL_EnableScreenSaver")]
@@ -987,8 +981,7 @@ public unsafe partial interface ISdl
         [NativeFunction("SDL3", EntryPoint = "SDL_EnumerateDirectory")]
         static abstract int EnumerateDirectory(
             [NativeTypeName("const char *")] sbyte* path,
-            [NativeTypeName("SDL_EnumerateDirectoryCallback")]
-                delegate* unmanaged<void*, sbyte*, sbyte*, int> callback,
+            [NativeTypeName("SDL_EnumerateDirectoryCallback")] EnumerateDirectoryCallback callback,
             void* userdata
         );
 
@@ -996,8 +989,7 @@ public unsafe partial interface ISdl
         [NativeFunction("SDL3", EntryPoint = "SDL_EnumerateDirectory")]
         static abstract int EnumerateDirectory(
             [NativeTypeName("const char *")] Ref<sbyte> path,
-            [NativeTypeName("SDL_EnumerateDirectoryCallback")]
-                delegate* unmanaged<void*, sbyte*, sbyte*, int> callback,
+            [NativeTypeName("SDL_EnumerateDirectoryCallback")] EnumerateDirectoryCallback callback,
             Ref userdata
         );
 
@@ -1005,7 +997,7 @@ public unsafe partial interface ISdl
         static abstract int EnumerateProperties(
             [NativeTypeName("SDL_PropertiesID")] uint props,
             [NativeTypeName("SDL_EnumeratePropertiesCallback")]
-                delegate* unmanaged<void*, uint, sbyte*, void> callback,
+                EnumeratePropertiesCallback callback,
             void* userdata
         );
 
@@ -1014,7 +1006,7 @@ public unsafe partial interface ISdl
         static abstract int EnumerateProperties(
             [NativeTypeName("SDL_PropertiesID")] uint props,
             [NativeTypeName("SDL_EnumeratePropertiesCallback")]
-                delegate* unmanaged<void*, uint, sbyte*, void> callback,
+                EnumeratePropertiesCallback callback,
             Ref userdata
         );
 
@@ -1022,8 +1014,7 @@ public unsafe partial interface ISdl
         static abstract int EnumerateStorageDirectory(
             StorageHandle storage,
             [NativeTypeName("const char *")] sbyte* path,
-            [NativeTypeName("SDL_EnumerateDirectoryCallback")]
-                delegate* unmanaged<void*, sbyte*, sbyte*, int> callback,
+            [NativeTypeName("SDL_EnumerateDirectoryCallback")] EnumerateDirectoryCallback callback,
             void* userdata
         );
 
@@ -1032,8 +1023,7 @@ public unsafe partial interface ISdl
         static abstract int EnumerateStorageDirectory(
             StorageHandle storage,
             [NativeTypeName("const char *")] Ref<sbyte> path,
-            [NativeTypeName("SDL_EnumerateDirectoryCallback")]
-                delegate* unmanaged<void*, sbyte*, sbyte*, int> callback,
+            [NativeTypeName("SDL_EnumerateDirectoryCallback")] EnumerateDirectoryCallback callback,
             Ref userdata
         );
 
@@ -1083,14 +1073,14 @@ public unsafe partial interface ISdl
 
         [NativeFunction("SDL3", EntryPoint = "SDL_FilterEvents")]
         static abstract void FilterEvents(
-            [NativeTypeName("SDL_EventFilter")] delegate* unmanaged<void*, Event*, int> filter,
+            [NativeTypeName("SDL_EventFilter")] EventFilter filter,
             void* userdata
         );
 
         [Transformed]
         [NativeFunction("SDL3", EntryPoint = "SDL_FilterEvents")]
         static abstract void FilterEvents(
-            [NativeTypeName("SDL_EventFilter")] delegate* unmanaged<void*, Event*, int> filter,
+            [NativeTypeName("SDL_EventFilter")] EventFilter filter,
             Ref userdata
         );
 
@@ -1178,16 +1168,12 @@ public unsafe partial interface ISdl
 
         [return: NativeTypeName("SDL_AssertionHandler")]
         [NativeFunction("SDL3", EntryPoint = "SDL_GetAssertionHandler")]
-        static abstract delegate* unmanaged<AssertData*, void*, AssertState> GetAssertionHandler(
-            void** puserdata
-        );
+        static abstract AssertionHandler GetAssertionHandler(void** puserdata);
 
         [return: NativeTypeName("SDL_AssertionHandler")]
         [Transformed]
         [NativeFunction("SDL3", EntryPoint = "SDL_GetAssertionHandler")]
-        static abstract delegate* unmanaged<AssertData*, void*, AssertState> GetAssertionHandler(
-            Ref2D puserdata
-        );
+        static abstract AssertionHandler GetAssertionHandler(Ref2D puserdata);
 
         [return: NativeTypeName("const SDL_AssertData *")]
         [Transformed]
@@ -1515,10 +1501,7 @@ public unsafe partial interface ISdl
 
         [return: NativeTypeName("SDL_AssertionHandler")]
         [NativeFunction("SDL3", EntryPoint = "SDL_GetDefaultAssertionHandler")]
-        static abstract delegate* unmanaged<
-            AssertData*,
-            void*,
-            AssertState> GetDefaultAssertionHandler();
+        static abstract AssertionHandler GetDefaultAssertionHandler();
 
         [NativeFunction("SDL3", EntryPoint = "SDL_GetDefaultCursor")]
         static abstract CursorHandle GetDefaultCursor();
@@ -1625,7 +1608,7 @@ public unsafe partial interface ISdl
         [return: NativeTypeName("SDL_bool")]
         [NativeFunction("SDL3", EntryPoint = "SDL_GetEventFilter")]
         static abstract int GetEventFilter(
-            [NativeTypeName("SDL_EventFilter *")] delegate* unmanaged<void*, Event*, int>* filter,
+            [NativeTypeName("SDL_EventFilter *")] EventFilter* filter,
             void** userdata
         );
 
@@ -1633,7 +1616,7 @@ public unsafe partial interface ISdl
         [Transformed]
         [NativeFunction("SDL3", EntryPoint = "SDL_GetEventFilter")]
         static abstract MaybeBool<int> GetEventFilter(
-            [NativeTypeName("SDL_EventFilter *")] delegate* unmanaged<void*, Event*, int>* filter,
+            [NativeTypeName("SDL_EventFilter *")] Ref<EventFilter> filter,
             Ref2D userdata
         );
 
@@ -2417,16 +2400,14 @@ public unsafe partial interface ISdl
 
         [NativeFunction("SDL3", EntryPoint = "SDL_GetLogOutputFunction")]
         static abstract void GetLogOutputFunction(
-            [NativeTypeName("SDL_LogOutputFunction *")]
-                delegate* unmanaged<void*, int, LogPriority, sbyte*, void>* callback,
+            [NativeTypeName("SDL_LogOutputFunction *")] LogOutputFunction* callback,
             void** userdata
         );
 
         [Transformed]
         [NativeFunction("SDL3", EntryPoint = "SDL_GetLogOutputFunction")]
         static abstract void GetLogOutputFunction(
-            [NativeTypeName("SDL_LogOutputFunction *")]
-                delegate* unmanaged<void*, int, LogPriority, sbyte*, void>* callback,
+            [NativeTypeName("SDL_LogOutputFunction *")] Ref<LogOutputFunction> callback,
             Ref2D userdata
         );
 
@@ -3703,14 +3684,14 @@ public unsafe partial interface ISdl
 
         [return: NativeTypeName("SDL_FunctionPointer")]
         [NativeFunction("SDL3", EntryPoint = "SDL_GL_GetProcAddress")]
-        static abstract delegate* unmanaged<void> GLGetProcAddress(
+        static abstract FunctionPointer GLGetProcAddress(
             [NativeTypeName("const char *")] sbyte* proc
         );
 
         [return: NativeTypeName("SDL_FunctionPointer")]
         [Transformed]
         [NativeFunction("SDL3", EntryPoint = "SDL_GL_GetProcAddress")]
-        static abstract delegate* unmanaged<void> GLGetProcAddress(
+        static abstract FunctionPointer GLGetProcAddress(
             [NativeTypeName("const char *")] Ref<sbyte> proc
         );
 
@@ -4541,7 +4522,7 @@ public unsafe partial interface ISdl
 
         [return: NativeTypeName("SDL_FunctionPointer")]
         [NativeFunction("SDL3", EntryPoint = "SDL_LoadFunction")]
-        static abstract delegate* unmanaged<void> LoadFunction(
+        static abstract FunctionPointer LoadFunction(
             void* handle,
             [NativeTypeName("const char *")] sbyte* name
         );
@@ -4549,7 +4530,7 @@ public unsafe partial interface ISdl
         [return: NativeTypeName("SDL_FunctionPointer")]
         [Transformed]
         [NativeFunction("SDL3", EntryPoint = "SDL_LoadFunction")]
-        static abstract delegate* unmanaged<void> LoadFunction(
+        static abstract FunctionPointer LoadFunction(
             Ref handle,
             [NativeTypeName("const char *")] Ref<sbyte> name
         );
@@ -4821,8 +4802,7 @@ public unsafe partial interface ISdl
         static abstract AudioStreamHandle OpenAudioDeviceStream(
             [NativeTypeName("SDL_AudioDeviceID")] uint devid,
             [NativeTypeName("const SDL_AudioSpec *")] AudioSpec* spec,
-            [NativeTypeName("SDL_AudioStreamCallback")]
-                delegate* unmanaged<void*, AudioStreamHandle, int, int, void> callback,
+            [NativeTypeName("SDL_AudioStreamCallback")] AudioStreamCallback callback,
             void* userdata
         );
 
@@ -4831,8 +4811,7 @@ public unsafe partial interface ISdl
         static abstract AudioStreamHandle OpenAudioDeviceStream(
             [NativeTypeName("SDL_AudioDeviceID")] uint devid,
             [NativeTypeName("const SDL_AudioSpec *")] Ref<AudioSpec> spec,
-            [NativeTypeName("SDL_AudioStreamCallback")]
-                delegate* unmanaged<void*, AudioStreamHandle, int, int, void> callback,
+            [NativeTypeName("SDL_AudioStreamCallback")] AudioStreamCallback callback,
             Ref userdata
         );
 
@@ -5840,24 +5819,21 @@ public unsafe partial interface ISdl
 
         [NativeFunction("SDL3", EntryPoint = "SDL_SetAssertionHandler")]
         static abstract void SetAssertionHandler(
-            [NativeTypeName("SDL_AssertionHandler")]
-                delegate* unmanaged<AssertData*, void*, AssertState> handler,
+            [NativeTypeName("SDL_AssertionHandler")] AssertionHandler handler,
             void* userdata
         );
 
         [Transformed]
         [NativeFunction("SDL3", EntryPoint = "SDL_SetAssertionHandler")]
         static abstract void SetAssertionHandler(
-            [NativeTypeName("SDL_AssertionHandler")]
-                delegate* unmanaged<AssertData*, void*, AssertState> handler,
+            [NativeTypeName("SDL_AssertionHandler")] AssertionHandler handler,
             Ref userdata
         );
 
         [NativeFunction("SDL3", EntryPoint = "SDL_SetAudioPostmixCallback")]
         static abstract int SetAudioPostmixCallback(
             [NativeTypeName("SDL_AudioDeviceID")] uint devid,
-            [NativeTypeName("SDL_AudioPostmixCallback")]
-                delegate* unmanaged<void*, AudioSpec*, float*, int, void> callback,
+            [NativeTypeName("SDL_AudioPostmixCallback")] AudioPostmixCallback callback,
             void* userdata
         );
 
@@ -5865,8 +5841,7 @@ public unsafe partial interface ISdl
         [NativeFunction("SDL3", EntryPoint = "SDL_SetAudioPostmixCallback")]
         static abstract int SetAudioPostmixCallback(
             [NativeTypeName("SDL_AudioDeviceID")] uint devid,
-            [NativeTypeName("SDL_AudioPostmixCallback")]
-                delegate* unmanaged<void*, AudioSpec*, float*, int, void> callback,
+            [NativeTypeName("SDL_AudioPostmixCallback")] AudioPostmixCallback callback,
             Ref userdata
         );
 
@@ -5891,8 +5866,7 @@ public unsafe partial interface ISdl
         [NativeFunction("SDL3", EntryPoint = "SDL_SetAudioStreamGetCallback")]
         static abstract int SetAudioStreamGetCallback(
             AudioStreamHandle stream,
-            [NativeTypeName("SDL_AudioStreamCallback")]
-                delegate* unmanaged<void*, AudioStreamHandle, int, int, void> callback,
+            [NativeTypeName("SDL_AudioStreamCallback")] AudioStreamCallback callback,
             void* userdata
         );
 
@@ -5900,16 +5874,14 @@ public unsafe partial interface ISdl
         [NativeFunction("SDL3", EntryPoint = "SDL_SetAudioStreamGetCallback")]
         static abstract int SetAudioStreamGetCallback(
             AudioStreamHandle stream,
-            [NativeTypeName("SDL_AudioStreamCallback")]
-                delegate* unmanaged<void*, AudioStreamHandle, int, int, void> callback,
+            [NativeTypeName("SDL_AudioStreamCallback")] AudioStreamCallback callback,
             Ref userdata
         );
 
         [NativeFunction("SDL3", EntryPoint = "SDL_SetAudioStreamPutCallback")]
         static abstract int SetAudioStreamPutCallback(
             AudioStreamHandle stream,
-            [NativeTypeName("SDL_AudioStreamCallback")]
-                delegate* unmanaged<void*, AudioStreamHandle, int, int, void> callback,
+            [NativeTypeName("SDL_AudioStreamCallback")] AudioStreamCallback callback,
             void* userdata
         );
 
@@ -5917,8 +5889,7 @@ public unsafe partial interface ISdl
         [NativeFunction("SDL3", EntryPoint = "SDL_SetAudioStreamPutCallback")]
         static abstract int SetAudioStreamPutCallback(
             AudioStreamHandle stream,
-            [NativeTypeName("SDL_AudioStreamCallback")]
-                delegate* unmanaged<void*, AudioStreamHandle, int, int, void> callback,
+            [NativeTypeName("SDL_AudioStreamCallback")] AudioStreamCallback callback,
             Ref userdata
         );
 
@@ -5939,10 +5910,8 @@ public unsafe partial interface ISdl
 
         [NativeFunction("SDL3", EntryPoint = "SDL_SetClipboardData")]
         static abstract int SetClipboardData(
-            [NativeTypeName("SDL_ClipboardDataCallback")]
-                delegate* unmanaged<void*, sbyte*, nuint*, void*> callback,
-            [NativeTypeName("SDL_ClipboardCleanupCallback")]
-                delegate* unmanaged<void*, void> cleanup,
+            [NativeTypeName("SDL_ClipboardDataCallback")] ClipboardDataCallback callback,
+            [NativeTypeName("SDL_ClipboardCleanupCallback")] ClipboardCleanupCallback cleanup,
             void* userdata,
             [NativeTypeName("const char **")] sbyte** mime_types,
             [NativeTypeName("size_t")] nuint num_mime_types
@@ -5951,10 +5920,8 @@ public unsafe partial interface ISdl
         [Transformed]
         [NativeFunction("SDL3", EntryPoint = "SDL_SetClipboardData")]
         static abstract int SetClipboardData(
-            [NativeTypeName("SDL_ClipboardDataCallback")]
-                delegate* unmanaged<void*, sbyte*, nuint*, void*> callback,
-            [NativeTypeName("SDL_ClipboardCleanupCallback")]
-                delegate* unmanaged<void*, void> cleanup,
+            [NativeTypeName("SDL_ClipboardDataCallback")] ClipboardDataCallback callback,
+            [NativeTypeName("SDL_ClipboardCleanupCallback")] ClipboardCleanupCallback cleanup,
             Ref userdata,
             [NativeTypeName("const char **")] Ref2D<sbyte> mime_types,
             [NativeTypeName("size_t")] nuint num_mime_types
@@ -5985,14 +5952,14 @@ public unsafe partial interface ISdl
 
         [NativeFunction("SDL3", EntryPoint = "SDL_SetEventFilter")]
         static abstract void SetEventFilter(
-            [NativeTypeName("SDL_EventFilter")] delegate* unmanaged<void*, Event*, int> filter,
+            [NativeTypeName("SDL_EventFilter")] EventFilter filter,
             void* userdata
         );
 
         [Transformed]
         [NativeFunction("SDL3", EntryPoint = "SDL_SetEventFilter")]
         static abstract void SetEventFilter(
-            [NativeTypeName("SDL_EventFilter")] delegate* unmanaged<void*, Event*, int> filter,
+            [NativeTypeName("SDL_EventFilter")] EventFilter filter,
             Ref userdata
         );
 
@@ -6140,16 +6107,14 @@ public unsafe partial interface ISdl
 
         [NativeFunction("SDL3", EntryPoint = "SDL_SetLogOutputFunction")]
         static abstract void SetLogOutputFunction(
-            [NativeTypeName("SDL_LogOutputFunction")]
-                delegate* unmanaged<void*, int, LogPriority, sbyte*, void> callback,
+            [NativeTypeName("SDL_LogOutputFunction")] LogOutputFunction callback,
             void* userdata
         );
 
         [Transformed]
         [NativeFunction("SDL3", EntryPoint = "SDL_SetLogOutputFunction")]
         static abstract void SetLogOutputFunction(
-            [NativeTypeName("SDL_LogOutputFunction")]
-                delegate* unmanaged<void*, int, LogPriority, sbyte*, void> callback,
+            [NativeTypeName("SDL_LogOutputFunction")] LogOutputFunction callback,
             Ref userdata
         );
 
@@ -6224,8 +6189,7 @@ public unsafe partial interface ISdl
             [NativeTypeName("SDL_PropertiesID")] uint props,
             [NativeTypeName("const char *")] sbyte* name,
             void* value,
-            [NativeTypeName("void (*)(void *, void *)")]
-                delegate* unmanaged<void*, void*, void> cleanup,
+            [NativeTypeName("void (*)(void *, void *)")] PfnVvVvV cleanup,
             void* userdata
         );
 
@@ -6235,8 +6199,7 @@ public unsafe partial interface ISdl
             [NativeTypeName("SDL_PropertiesID")] uint props,
             [NativeTypeName("const char *")] Ref<sbyte> name,
             Ref value,
-            [NativeTypeName("void (*)(void *, void *)")]
-                delegate* unmanaged<void*, void*, void> cleanup,
+            [NativeTypeName("void (*)(void *, void *)")] PfnVvVvV cleanup,
             Ref userdata
         );
 
@@ -6465,7 +6428,7 @@ public unsafe partial interface ISdl
         static abstract int SetTLS(
             [NativeTypeName("SDL_TLSID")] uint id,
             [NativeTypeName("const void *")] void* value,
-            [NativeTypeName("void (*)(void *)")] delegate* unmanaged<void*, void> destructor
+            [NativeTypeName("void (*)(void *)")] ClipboardCleanupCallback destructor
         );
 
         [Transformed]
@@ -6473,7 +6436,7 @@ public unsafe partial interface ISdl
         static abstract int SetTLS(
             [NativeTypeName("SDL_TLSID")] uint id,
             [NativeTypeName("const void *")] Ref value,
-            [NativeTypeName("void (*)(void *)")] delegate* unmanaged<void*, void> destructor
+            [NativeTypeName("void (*)(void *)")] ClipboardCleanupCallback destructor
         );
 
         [NativeFunction("SDL3", EntryPoint = "SDL_SetWindowAlwaysOnTop")]
@@ -6544,8 +6507,7 @@ public unsafe partial interface ISdl
         [NativeFunction("SDL3", EntryPoint = "SDL_SetWindowHitTest")]
         static abstract int SetWindowHitTest(
             WindowHandle window,
-            [NativeTypeName("SDL_HitTest")]
-                delegate* unmanaged<WindowHandle, Point*, void*, HitTestResult> callback,
+            [NativeTypeName("SDL_HitTest")] HitTest callback,
             void* callback_data
         );
 
@@ -6553,8 +6515,7 @@ public unsafe partial interface ISdl
         [NativeFunction("SDL3", EntryPoint = "SDL_SetWindowHitTest")]
         static abstract int SetWindowHitTest(
             WindowHandle window,
-            [NativeTypeName("SDL_HitTest")]
-                delegate* unmanaged<WindowHandle, Point*, void*, HitTestResult> callback,
+            [NativeTypeName("SDL_HitTest")] HitTest callback,
             Ref callback_data
         );
 
@@ -6679,8 +6640,7 @@ public unsafe partial interface ISdl
 
         [NativeFunction("SDL3", EntryPoint = "SDL_ShowOpenFileDialog")]
         static abstract void ShowOpenFileDialog(
-            [NativeTypeName("SDL_DialogFileCallback")]
-                delegate* unmanaged<void*, sbyte**, int, void> callback,
+            [NativeTypeName("SDL_DialogFileCallback")] DialogFileCallback callback,
             void* userdata,
             WindowHandle window,
             [NativeTypeName("const SDL_DialogFileFilter *")] DialogFileFilter* filters,
@@ -6691,8 +6651,7 @@ public unsafe partial interface ISdl
         [Transformed]
         [NativeFunction("SDL3", EntryPoint = "SDL_ShowOpenFileDialog")]
         static abstract void ShowOpenFileDialog(
-            [NativeTypeName("SDL_DialogFileCallback")]
-                delegate* unmanaged<void*, sbyte**, int, void> callback,
+            [NativeTypeName("SDL_DialogFileCallback")] DialogFileCallback callback,
             Ref userdata,
             WindowHandle window,
             [NativeTypeName("const SDL_DialogFileFilter *")] Ref<DialogFileFilter> filters,
@@ -6702,8 +6661,7 @@ public unsafe partial interface ISdl
 
         [NativeFunction("SDL3", EntryPoint = "SDL_ShowOpenFolderDialog")]
         static abstract void ShowOpenFolderDialog(
-            [NativeTypeName("SDL_DialogFileCallback")]
-                delegate* unmanaged<void*, sbyte**, int, void> callback,
+            [NativeTypeName("SDL_DialogFileCallback")] DialogFileCallback callback,
             void* userdata,
             WindowHandle window,
             [NativeTypeName("const char *")] sbyte* default_location,
@@ -6713,8 +6671,7 @@ public unsafe partial interface ISdl
         [Transformed]
         [NativeFunction("SDL3", EntryPoint = "SDL_ShowOpenFolderDialog")]
         static abstract void ShowOpenFolderDialog(
-            [NativeTypeName("SDL_DialogFileCallback")]
-                delegate* unmanaged<void*, sbyte**, int, void> callback,
+            [NativeTypeName("SDL_DialogFileCallback")] DialogFileCallback callback,
             Ref userdata,
             WindowHandle window,
             [NativeTypeName("const char *")] Ref<sbyte> default_location,
@@ -6723,8 +6680,7 @@ public unsafe partial interface ISdl
 
         [NativeFunction("SDL3", EntryPoint = "SDL_ShowSaveFileDialog")]
         static abstract void ShowSaveFileDialog(
-            [NativeTypeName("SDL_DialogFileCallback")]
-                delegate* unmanaged<void*, sbyte**, int, void> callback,
+            [NativeTypeName("SDL_DialogFileCallback")] DialogFileCallback callback,
             void* userdata,
             WindowHandle window,
             [NativeTypeName("const SDL_DialogFileFilter *")] DialogFileFilter* filters,
@@ -6734,8 +6690,7 @@ public unsafe partial interface ISdl
         [Transformed]
         [NativeFunction("SDL3", EntryPoint = "SDL_ShowSaveFileDialog")]
         static abstract void ShowSaveFileDialog(
-            [NativeTypeName("SDL_DialogFileCallback")]
-                delegate* unmanaged<void*, sbyte**, int, void> callback,
+            [NativeTypeName("SDL_DialogFileCallback")] DialogFileCallback callback,
             Ref userdata,
             WindowHandle window,
             [NativeTypeName("const SDL_DialogFileFilter *")] Ref<DialogFileFilter> filters,
@@ -7367,17 +7322,11 @@ public unsafe partial interface ISdl
     );
 
     [NativeFunction("SDL3", EntryPoint = "SDL_AddEventWatch")]
-    int AddEventWatch(
-        [NativeTypeName("SDL_EventFilter")] delegate* unmanaged<void*, Event*, int> filter,
-        void* userdata
-    );
+    int AddEventWatch([NativeTypeName("SDL_EventFilter")] EventFilter filter, void* userdata);
 
     [Transformed]
     [NativeFunction("SDL3", EntryPoint = "SDL_AddEventWatch")]
-    int AddEventWatch(
-        [NativeTypeName("SDL_EventFilter")] delegate* unmanaged<void*, Event*, int> filter,
-        Ref userdata
-    );
+    int AddEventWatch([NativeTypeName("SDL_EventFilter")] EventFilter filter, Ref userdata);
 
     [NativeFunction("SDL3", EntryPoint = "SDL_AddGamepadMapping")]
     int AddGamepadMapping([NativeTypeName("const char *")] sbyte* mapping);
@@ -7406,8 +7355,7 @@ public unsafe partial interface ISdl
     [NativeFunction("SDL3", EntryPoint = "SDL_AddHintCallback")]
     int AddHintCallback(
         [NativeTypeName("const char *")] sbyte* name,
-        [NativeTypeName("SDL_HintCallback")]
-            delegate* unmanaged<void*, sbyte*, sbyte*, sbyte*, void> callback,
+        [NativeTypeName("SDL_HintCallback")] HintCallback callback,
         void* userdata
     );
 
@@ -7415,8 +7363,7 @@ public unsafe partial interface ISdl
     [NativeFunction("SDL3", EntryPoint = "SDL_AddHintCallback")]
     int AddHintCallback(
         [NativeTypeName("const char *")] Ref<sbyte> name,
-        [NativeTypeName("SDL_HintCallback")]
-            delegate* unmanaged<void*, sbyte*, sbyte*, sbyte*, void> callback,
+        [NativeTypeName("SDL_HintCallback")] HintCallback callback,
         Ref userdata
     );
 
@@ -7424,7 +7371,7 @@ public unsafe partial interface ISdl
     [NativeFunction("SDL3", EntryPoint = "SDL_AddTimer")]
     uint AddTimer(
         [NativeTypeName("Uint32")] uint interval,
-        [NativeTypeName("SDL_TimerCallback")] delegate* unmanaged<uint, void*, uint> callback,
+        [NativeTypeName("SDL_TimerCallback")] TimerCallback callback,
         void* param2
     );
 
@@ -7433,7 +7380,7 @@ public unsafe partial interface ISdl
     [NativeFunction("SDL3", EntryPoint = "SDL_AddTimer")]
     uint AddTimer(
         [NativeTypeName("Uint32")] uint interval,
-        [NativeTypeName("SDL_TimerCallback")] delegate* unmanaged<uint, void*, uint> callback,
+        [NativeTypeName("SDL_TimerCallback")] TimerCallback callback,
         Ref param2
     );
 
@@ -8011,7 +7958,7 @@ public unsafe partial interface ISdl
 
     [NativeFunction("SDL3", EntryPoint = "SDL_CreateThread")]
     ThreadHandle CreateThread(
-        [NativeTypeName("SDL_ThreadFunction")] delegate* unmanaged<void*, int> fn,
+        [NativeTypeName("SDL_ThreadFunction")] ThreadFunction fn,
         [NativeTypeName("const char *")] sbyte* name,
         void* data
     );
@@ -8019,14 +7966,14 @@ public unsafe partial interface ISdl
     [Transformed]
     [NativeFunction("SDL3", EntryPoint = "SDL_CreateThread")]
     ThreadHandle CreateThread(
-        [NativeTypeName("SDL_ThreadFunction")] delegate* unmanaged<void*, int> fn,
+        [NativeTypeName("SDL_ThreadFunction")] ThreadFunction fn,
         [NativeTypeName("const char *")] Ref<sbyte> name,
         Ref data
     );
 
     [NativeFunction("SDL3", EntryPoint = "SDL_CreateThreadWithStackSize")]
     ThreadHandle CreateThreadWithStackSize(
-        [NativeTypeName("SDL_ThreadFunction")] delegate* unmanaged<void*, int> fn,
+        [NativeTypeName("SDL_ThreadFunction")] ThreadFunction fn,
         [NativeTypeName("const char *")] sbyte* name,
         [NativeTypeName("const size_t")] nuint stacksize,
         void* data
@@ -8035,7 +7982,7 @@ public unsafe partial interface ISdl
     [Transformed]
     [NativeFunction("SDL3", EntryPoint = "SDL_CreateThreadWithStackSize")]
     ThreadHandle CreateThreadWithStackSize(
-        [NativeTypeName("SDL_ThreadFunction")] delegate* unmanaged<void*, int> fn,
+        [NativeTypeName("SDL_ThreadFunction")] ThreadFunction fn,
         [NativeTypeName("const char *")] Ref<sbyte> name,
         [NativeTypeName("const size_t")] nuint stacksize,
         Ref data
@@ -8115,23 +8062,16 @@ public unsafe partial interface ISdl
     void DelayNS([NativeTypeName("Uint64")] ulong ns);
 
     [NativeFunction("SDL3", EntryPoint = "SDL_DelEventWatch")]
-    void DelEventWatch(
-        [NativeTypeName("SDL_EventFilter")] delegate* unmanaged<void*, Event*, int> filter,
-        void* userdata
-    );
+    void DelEventWatch([NativeTypeName("SDL_EventFilter")] EventFilter filter, void* userdata);
 
     [Transformed]
     [NativeFunction("SDL3", EntryPoint = "SDL_DelEventWatch")]
-    void DelEventWatch(
-        [NativeTypeName("SDL_EventFilter")] delegate* unmanaged<void*, Event*, int> filter,
-        Ref userdata
-    );
+    void DelEventWatch([NativeTypeName("SDL_EventFilter")] EventFilter filter, Ref userdata);
 
     [NativeFunction("SDL3", EntryPoint = "SDL_DelHintCallback")]
     void DelHintCallback(
         [NativeTypeName("const char *")] sbyte* name,
-        [NativeTypeName("SDL_HintCallback")]
-            delegate* unmanaged<void*, sbyte*, sbyte*, sbyte*, void> callback,
+        [NativeTypeName("SDL_HintCallback")] HintCallback callback,
         void* userdata
     );
 
@@ -8139,8 +8079,7 @@ public unsafe partial interface ISdl
     [NativeFunction("SDL3", EntryPoint = "SDL_DelHintCallback")]
     void DelHintCallback(
         [NativeTypeName("const char *")] Ref<sbyte> name,
-        [NativeTypeName("SDL_HintCallback")]
-            delegate* unmanaged<void*, sbyte*, sbyte*, sbyte*, void> callback,
+        [NativeTypeName("SDL_HintCallback")] HintCallback callback,
         Ref userdata
     );
 
@@ -8237,12 +8176,12 @@ public unsafe partial interface ISdl
 
     [return: NativeTypeName("SDL_FunctionPointer")]
     [NativeFunction("SDL3", EntryPoint = "SDL_EGL_GetProcAddress")]
-    delegate* unmanaged<void> EGLGetProcAddress([NativeTypeName("const char *")] sbyte* proc);
+    FunctionPointer EGLGetProcAddress([NativeTypeName("const char *")] sbyte* proc);
 
     [return: NativeTypeName("SDL_FunctionPointer")]
     [Transformed]
     [NativeFunction("SDL3", EntryPoint = "SDL_EGL_GetProcAddress")]
-    delegate* unmanaged<void> EGLGetProcAddress([NativeTypeName("const char *")] Ref<sbyte> proc);
+    FunctionPointer EGLGetProcAddress([NativeTypeName("const char *")] Ref<sbyte> proc);
 
     [return: NativeTypeName("SDL_EGLSurface")]
     [Transformed]
@@ -8256,9 +8195,9 @@ public unsafe partial interface ISdl
     [NativeFunction("SDL3", EntryPoint = "SDL_EGL_SetEGLAttributeCallbacks")]
     void EGLSetEGLAttributeCallbacks(
         [NativeTypeName("SDL_EGLAttribArrayCallback")]
-            delegate* unmanaged<nint*> platformAttribCallback,
-        [NativeTypeName("SDL_EGLIntArrayCallback")] delegate* unmanaged<int*> surfaceAttribCallback,
-        [NativeTypeName("SDL_EGLIntArrayCallback")] delegate* unmanaged<int*> contextAttribCallback
+            EGLAttribArrayCallback platformAttribCallback,
+        [NativeTypeName("SDL_EGLIntArrayCallback")] EGLIntArrayCallback surfaceAttribCallback,
+        [NativeTypeName("SDL_EGLIntArrayCallback")] EGLIntArrayCallback contextAttribCallback
     );
 
     [NativeFunction("SDL3", EntryPoint = "SDL_EnableScreenSaver")]
@@ -8267,8 +8206,7 @@ public unsafe partial interface ISdl
     [NativeFunction("SDL3", EntryPoint = "SDL_EnumerateDirectory")]
     int EnumerateDirectory(
         [NativeTypeName("const char *")] sbyte* path,
-        [NativeTypeName("SDL_EnumerateDirectoryCallback")]
-            delegate* unmanaged<void*, sbyte*, sbyte*, int> callback,
+        [NativeTypeName("SDL_EnumerateDirectoryCallback")] EnumerateDirectoryCallback callback,
         void* userdata
     );
 
@@ -8276,16 +8214,14 @@ public unsafe partial interface ISdl
     [NativeFunction("SDL3", EntryPoint = "SDL_EnumerateDirectory")]
     int EnumerateDirectory(
         [NativeTypeName("const char *")] Ref<sbyte> path,
-        [NativeTypeName("SDL_EnumerateDirectoryCallback")]
-            delegate* unmanaged<void*, sbyte*, sbyte*, int> callback,
+        [NativeTypeName("SDL_EnumerateDirectoryCallback")] EnumerateDirectoryCallback callback,
         Ref userdata
     );
 
     [NativeFunction("SDL3", EntryPoint = "SDL_EnumerateProperties")]
     int EnumerateProperties(
         [NativeTypeName("SDL_PropertiesID")] uint props,
-        [NativeTypeName("SDL_EnumeratePropertiesCallback")]
-            delegate* unmanaged<void*, uint, sbyte*, void> callback,
+        [NativeTypeName("SDL_EnumeratePropertiesCallback")] EnumeratePropertiesCallback callback,
         void* userdata
     );
 
@@ -8293,8 +8229,7 @@ public unsafe partial interface ISdl
     [NativeFunction("SDL3", EntryPoint = "SDL_EnumerateProperties")]
     int EnumerateProperties(
         [NativeTypeName("SDL_PropertiesID")] uint props,
-        [NativeTypeName("SDL_EnumeratePropertiesCallback")]
-            delegate* unmanaged<void*, uint, sbyte*, void> callback,
+        [NativeTypeName("SDL_EnumeratePropertiesCallback")] EnumeratePropertiesCallback callback,
         Ref userdata
     );
 
@@ -8302,8 +8237,7 @@ public unsafe partial interface ISdl
     int EnumerateStorageDirectory(
         StorageHandle storage,
         [NativeTypeName("const char *")] sbyte* path,
-        [NativeTypeName("SDL_EnumerateDirectoryCallback")]
-            delegate* unmanaged<void*, sbyte*, sbyte*, int> callback,
+        [NativeTypeName("SDL_EnumerateDirectoryCallback")] EnumerateDirectoryCallback callback,
         void* userdata
     );
 
@@ -8312,8 +8246,7 @@ public unsafe partial interface ISdl
     int EnumerateStorageDirectory(
         StorageHandle storage,
         [NativeTypeName("const char *")] Ref<sbyte> path,
-        [NativeTypeName("SDL_EnumerateDirectoryCallback")]
-            delegate* unmanaged<void*, sbyte*, sbyte*, int> callback,
+        [NativeTypeName("SDL_EnumerateDirectoryCallback")] EnumerateDirectoryCallback callback,
         Ref userdata
     );
 
@@ -8362,17 +8295,11 @@ public unsafe partial interface ISdl
     );
 
     [NativeFunction("SDL3", EntryPoint = "SDL_FilterEvents")]
-    void FilterEvents(
-        [NativeTypeName("SDL_EventFilter")] delegate* unmanaged<void*, Event*, int> filter,
-        void* userdata
-    );
+    void FilterEvents([NativeTypeName("SDL_EventFilter")] EventFilter filter, void* userdata);
 
     [Transformed]
     [NativeFunction("SDL3", EntryPoint = "SDL_FilterEvents")]
-    void FilterEvents(
-        [NativeTypeName("SDL_EventFilter")] delegate* unmanaged<void*, Event*, int> filter,
-        Ref userdata
-    );
+    void FilterEvents([NativeTypeName("SDL_EventFilter")] EventFilter filter, Ref userdata);
 
     [NativeFunction("SDL3", EntryPoint = "SDL_FlashWindow")]
     int FlashWindow(WindowHandle window, FlashOperation operation);
@@ -8455,12 +8382,12 @@ public unsafe partial interface ISdl
 
     [return: NativeTypeName("SDL_AssertionHandler")]
     [NativeFunction("SDL3", EntryPoint = "SDL_GetAssertionHandler")]
-    delegate* unmanaged<AssertData*, void*, AssertState> GetAssertionHandler(void** puserdata);
+    AssertionHandler GetAssertionHandler(void** puserdata);
 
     [return: NativeTypeName("SDL_AssertionHandler")]
     [Transformed]
     [NativeFunction("SDL3", EntryPoint = "SDL_GetAssertionHandler")]
-    delegate* unmanaged<AssertData*, void*, AssertState> GetAssertionHandler(Ref2D puserdata);
+    AssertionHandler GetAssertionHandler(Ref2D puserdata);
 
     [return: NativeTypeName("const SDL_AssertData *")]
     [Transformed]
@@ -8766,7 +8693,7 @@ public unsafe partial interface ISdl
 
     [return: NativeTypeName("SDL_AssertionHandler")]
     [NativeFunction("SDL3", EntryPoint = "SDL_GetDefaultAssertionHandler")]
-    delegate* unmanaged<AssertData*, void*, AssertState> GetDefaultAssertionHandler();
+    AssertionHandler GetDefaultAssertionHandler();
 
     [NativeFunction("SDL3", EntryPoint = "SDL_GetDefaultCursor")]
     CursorHandle GetDefaultCursor();
@@ -8852,16 +8779,13 @@ public unsafe partial interface ISdl
 
     [return: NativeTypeName("SDL_bool")]
     [NativeFunction("SDL3", EntryPoint = "SDL_GetEventFilter")]
-    int GetEventFilter(
-        [NativeTypeName("SDL_EventFilter *")] delegate* unmanaged<void*, Event*, int>* filter,
-        void** userdata
-    );
+    int GetEventFilter([NativeTypeName("SDL_EventFilter *")] EventFilter* filter, void** userdata);
 
     [return: NativeTypeName("SDL_bool")]
     [Transformed]
     [NativeFunction("SDL3", EntryPoint = "SDL_GetEventFilter")]
     MaybeBool<int> GetEventFilter(
-        [NativeTypeName("SDL_EventFilter *")] delegate* unmanaged<void*, Event*, int>* filter,
+        [NativeTypeName("SDL_EventFilter *")] Ref<EventFilter> filter,
         Ref2D userdata
     );
 
@@ -9536,16 +9460,14 @@ public unsafe partial interface ISdl
 
     [NativeFunction("SDL3", EntryPoint = "SDL_GetLogOutputFunction")]
     void GetLogOutputFunction(
-        [NativeTypeName("SDL_LogOutputFunction *")]
-            delegate* unmanaged<void*, int, LogPriority, sbyte*, void>* callback,
+        [NativeTypeName("SDL_LogOutputFunction *")] LogOutputFunction* callback,
         void** userdata
     );
 
     [Transformed]
     [NativeFunction("SDL3", EntryPoint = "SDL_GetLogOutputFunction")]
     void GetLogOutputFunction(
-        [NativeTypeName("SDL_LogOutputFunction *")]
-            delegate* unmanaged<void*, int, LogPriority, sbyte*, void>* callback,
+        [NativeTypeName("SDL_LogOutputFunction *")] Ref<LogOutputFunction> callback,
         Ref2D userdata
     );
 
@@ -10731,12 +10653,12 @@ public unsafe partial interface ISdl
 
     [return: NativeTypeName("SDL_FunctionPointer")]
     [NativeFunction("SDL3", EntryPoint = "SDL_GL_GetProcAddress")]
-    delegate* unmanaged<void> GLGetProcAddress([NativeTypeName("const char *")] sbyte* proc);
+    FunctionPointer GLGetProcAddress([NativeTypeName("const char *")] sbyte* proc);
 
     [return: NativeTypeName("SDL_FunctionPointer")]
     [Transformed]
     [NativeFunction("SDL3", EntryPoint = "SDL_GL_GetProcAddress")]
-    delegate* unmanaged<void> GLGetProcAddress([NativeTypeName("const char *")] Ref<sbyte> proc);
+    FunctionPointer GLGetProcAddress([NativeTypeName("const char *")] Ref<sbyte> proc);
 
     [NativeFunction("SDL3", EntryPoint = "SDL_GL_GetSwapInterval")]
     int GLGetSwapInterval(int* interval);
@@ -11535,18 +11457,12 @@ public unsafe partial interface ISdl
 
     [return: NativeTypeName("SDL_FunctionPointer")]
     [NativeFunction("SDL3", EntryPoint = "SDL_LoadFunction")]
-    delegate* unmanaged<void> LoadFunction(
-        void* handle,
-        [NativeTypeName("const char *")] sbyte* name
-    );
+    FunctionPointer LoadFunction(void* handle, [NativeTypeName("const char *")] sbyte* name);
 
     [return: NativeTypeName("SDL_FunctionPointer")]
     [Transformed]
     [NativeFunction("SDL3", EntryPoint = "SDL_LoadFunction")]
-    delegate* unmanaged<void> LoadFunction(
-        Ref handle,
-        [NativeTypeName("const char *")] Ref<sbyte> name
-    );
+    FunctionPointer LoadFunction(Ref handle, [NativeTypeName("const char *")] Ref<sbyte> name);
 
     [NativeFunction("SDL3", EntryPoint = "SDL_LoadObject")]
     void* LoadObject([NativeTypeName("const char *")] sbyte* sofile);
@@ -11815,8 +11731,7 @@ public unsafe partial interface ISdl
     AudioStreamHandle OpenAudioDeviceStream(
         [NativeTypeName("SDL_AudioDeviceID")] uint devid,
         [NativeTypeName("const SDL_AudioSpec *")] AudioSpec* spec,
-        [NativeTypeName("SDL_AudioStreamCallback")]
-            delegate* unmanaged<void*, AudioStreamHandle, int, int, void> callback,
+        [NativeTypeName("SDL_AudioStreamCallback")] AudioStreamCallback callback,
         void* userdata
     );
 
@@ -11825,8 +11740,7 @@ public unsafe partial interface ISdl
     AudioStreamHandle OpenAudioDeviceStream(
         [NativeTypeName("SDL_AudioDeviceID")] uint devid,
         [NativeTypeName("const SDL_AudioSpec *")] Ref<AudioSpec> spec,
-        [NativeTypeName("SDL_AudioStreamCallback")]
-            delegate* unmanaged<void*, AudioStreamHandle, int, int, void> callback,
+        [NativeTypeName("SDL_AudioStreamCallback")] AudioStreamCallback callback,
         Ref userdata
     );
 
@@ -12725,24 +12639,21 @@ public unsafe partial interface ISdl
 
     [NativeFunction("SDL3", EntryPoint = "SDL_SetAssertionHandler")]
     void SetAssertionHandler(
-        [NativeTypeName("SDL_AssertionHandler")]
-            delegate* unmanaged<AssertData*, void*, AssertState> handler,
+        [NativeTypeName("SDL_AssertionHandler")] AssertionHandler handler,
         void* userdata
     );
 
     [Transformed]
     [NativeFunction("SDL3", EntryPoint = "SDL_SetAssertionHandler")]
     void SetAssertionHandler(
-        [NativeTypeName("SDL_AssertionHandler")]
-            delegate* unmanaged<AssertData*, void*, AssertState> handler,
+        [NativeTypeName("SDL_AssertionHandler")] AssertionHandler handler,
         Ref userdata
     );
 
     [NativeFunction("SDL3", EntryPoint = "SDL_SetAudioPostmixCallback")]
     int SetAudioPostmixCallback(
         [NativeTypeName("SDL_AudioDeviceID")] uint devid,
-        [NativeTypeName("SDL_AudioPostmixCallback")]
-            delegate* unmanaged<void*, AudioSpec*, float*, int, void> callback,
+        [NativeTypeName("SDL_AudioPostmixCallback")] AudioPostmixCallback callback,
         void* userdata
     );
 
@@ -12750,8 +12661,7 @@ public unsafe partial interface ISdl
     [NativeFunction("SDL3", EntryPoint = "SDL_SetAudioPostmixCallback")]
     int SetAudioPostmixCallback(
         [NativeTypeName("SDL_AudioDeviceID")] uint devid,
-        [NativeTypeName("SDL_AudioPostmixCallback")]
-            delegate* unmanaged<void*, AudioSpec*, float*, int, void> callback,
+        [NativeTypeName("SDL_AudioPostmixCallback")] AudioPostmixCallback callback,
         Ref userdata
     );
 
@@ -12776,8 +12686,7 @@ public unsafe partial interface ISdl
     [NativeFunction("SDL3", EntryPoint = "SDL_SetAudioStreamGetCallback")]
     int SetAudioStreamGetCallback(
         AudioStreamHandle stream,
-        [NativeTypeName("SDL_AudioStreamCallback")]
-            delegate* unmanaged<void*, AudioStreamHandle, int, int, void> callback,
+        [NativeTypeName("SDL_AudioStreamCallback")] AudioStreamCallback callback,
         void* userdata
     );
 
@@ -12785,16 +12694,14 @@ public unsafe partial interface ISdl
     [NativeFunction("SDL3", EntryPoint = "SDL_SetAudioStreamGetCallback")]
     int SetAudioStreamGetCallback(
         AudioStreamHandle stream,
-        [NativeTypeName("SDL_AudioStreamCallback")]
-            delegate* unmanaged<void*, AudioStreamHandle, int, int, void> callback,
+        [NativeTypeName("SDL_AudioStreamCallback")] AudioStreamCallback callback,
         Ref userdata
     );
 
     [NativeFunction("SDL3", EntryPoint = "SDL_SetAudioStreamPutCallback")]
     int SetAudioStreamPutCallback(
         AudioStreamHandle stream,
-        [NativeTypeName("SDL_AudioStreamCallback")]
-            delegate* unmanaged<void*, AudioStreamHandle, int, int, void> callback,
+        [NativeTypeName("SDL_AudioStreamCallback")] AudioStreamCallback callback,
         void* userdata
     );
 
@@ -12802,8 +12709,7 @@ public unsafe partial interface ISdl
     [NativeFunction("SDL3", EntryPoint = "SDL_SetAudioStreamPutCallback")]
     int SetAudioStreamPutCallback(
         AudioStreamHandle stream,
-        [NativeTypeName("SDL_AudioStreamCallback")]
-            delegate* unmanaged<void*, AudioStreamHandle, int, int, void> callback,
+        [NativeTypeName("SDL_AudioStreamCallback")] AudioStreamCallback callback,
         Ref userdata
     );
 
@@ -12824,9 +12730,8 @@ public unsafe partial interface ISdl
 
     [NativeFunction("SDL3", EntryPoint = "SDL_SetClipboardData")]
     int SetClipboardData(
-        [NativeTypeName("SDL_ClipboardDataCallback")]
-            delegate* unmanaged<void*, sbyte*, nuint*, void*> callback,
-        [NativeTypeName("SDL_ClipboardCleanupCallback")] delegate* unmanaged<void*, void> cleanup,
+        [NativeTypeName("SDL_ClipboardDataCallback")] ClipboardDataCallback callback,
+        [NativeTypeName("SDL_ClipboardCleanupCallback")] ClipboardCleanupCallback cleanup,
         void* userdata,
         [NativeTypeName("const char **")] sbyte** mime_types,
         [NativeTypeName("size_t")] nuint num_mime_types
@@ -12835,9 +12740,8 @@ public unsafe partial interface ISdl
     [Transformed]
     [NativeFunction("SDL3", EntryPoint = "SDL_SetClipboardData")]
     int SetClipboardData(
-        [NativeTypeName("SDL_ClipboardDataCallback")]
-            delegate* unmanaged<void*, sbyte*, nuint*, void*> callback,
-        [NativeTypeName("SDL_ClipboardCleanupCallback")] delegate* unmanaged<void*, void> cleanup,
+        [NativeTypeName("SDL_ClipboardDataCallback")] ClipboardDataCallback callback,
+        [NativeTypeName("SDL_ClipboardCleanupCallback")] ClipboardCleanupCallback cleanup,
         Ref userdata,
         [NativeTypeName("const char **")] Ref2D<sbyte> mime_types,
         [NativeTypeName("size_t")] nuint num_mime_types
@@ -12867,17 +12771,11 @@ public unsafe partial interface ISdl
     );
 
     [NativeFunction("SDL3", EntryPoint = "SDL_SetEventFilter")]
-    void SetEventFilter(
-        [NativeTypeName("SDL_EventFilter")] delegate* unmanaged<void*, Event*, int> filter,
-        void* userdata
-    );
+    void SetEventFilter([NativeTypeName("SDL_EventFilter")] EventFilter filter, void* userdata);
 
     [Transformed]
     [NativeFunction("SDL3", EntryPoint = "SDL_SetEventFilter")]
-    void SetEventFilter(
-        [NativeTypeName("SDL_EventFilter")] delegate* unmanaged<void*, Event*, int> filter,
-        Ref userdata
-    );
+    void SetEventFilter([NativeTypeName("SDL_EventFilter")] EventFilter filter, Ref userdata);
 
     [NativeFunction("SDL3", EntryPoint = "SDL_SetFloatProperty")]
     int SetFloatProperty(
@@ -13019,16 +12917,14 @@ public unsafe partial interface ISdl
 
     [NativeFunction("SDL3", EntryPoint = "SDL_SetLogOutputFunction")]
     void SetLogOutputFunction(
-        [NativeTypeName("SDL_LogOutputFunction")]
-            delegate* unmanaged<void*, int, LogPriority, sbyte*, void> callback,
+        [NativeTypeName("SDL_LogOutputFunction")] LogOutputFunction callback,
         void* userdata
     );
 
     [Transformed]
     [NativeFunction("SDL3", EntryPoint = "SDL_SetLogOutputFunction")]
     void SetLogOutputFunction(
-        [NativeTypeName("SDL_LogOutputFunction")]
-            delegate* unmanaged<void*, int, LogPriority, sbyte*, void> callback,
+        [NativeTypeName("SDL_LogOutputFunction")] LogOutputFunction callback,
         Ref userdata
     );
 
@@ -13101,8 +12997,7 @@ public unsafe partial interface ISdl
         [NativeTypeName("SDL_PropertiesID")] uint props,
         [NativeTypeName("const char *")] sbyte* name,
         void* value,
-        [NativeTypeName("void (*)(void *, void *)")]
-            delegate* unmanaged<void*, void*, void> cleanup,
+        [NativeTypeName("void (*)(void *, void *)")] PfnVvVvV cleanup,
         void* userdata
     );
 
@@ -13112,8 +13007,7 @@ public unsafe partial interface ISdl
         [NativeTypeName("SDL_PropertiesID")] uint props,
         [NativeTypeName("const char *")] Ref<sbyte> name,
         Ref value,
-        [NativeTypeName("void (*)(void *, void *)")]
-            delegate* unmanaged<void*, void*, void> cleanup,
+        [NativeTypeName("void (*)(void *, void *)")] PfnVvVvV cleanup,
         Ref userdata
     );
 
@@ -13303,7 +13197,7 @@ public unsafe partial interface ISdl
     int SetTLS(
         [NativeTypeName("SDL_TLSID")] uint id,
         [NativeTypeName("const void *")] void* value,
-        [NativeTypeName("void (*)(void *)")] delegate* unmanaged<void*, void> destructor
+        [NativeTypeName("void (*)(void *)")] ClipboardCleanupCallback destructor
     );
 
     [Transformed]
@@ -13311,7 +13205,7 @@ public unsafe partial interface ISdl
     int SetTLS(
         [NativeTypeName("SDL_TLSID")] uint id,
         [NativeTypeName("const void *")] Ref value,
-        [NativeTypeName("void (*)(void *)")] delegate* unmanaged<void*, void> destructor
+        [NativeTypeName("void (*)(void *)")] ClipboardCleanupCallback destructor
     );
 
     [NativeFunction("SDL3", EntryPoint = "SDL_SetWindowAlwaysOnTop")]
@@ -13370,8 +13264,7 @@ public unsafe partial interface ISdl
     [NativeFunction("SDL3", EntryPoint = "SDL_SetWindowHitTest")]
     int SetWindowHitTest(
         WindowHandle window,
-        [NativeTypeName("SDL_HitTest")]
-            delegate* unmanaged<WindowHandle, Point*, void*, HitTestResult> callback,
+        [NativeTypeName("SDL_HitTest")] HitTest callback,
         void* callback_data
     );
 
@@ -13379,8 +13272,7 @@ public unsafe partial interface ISdl
     [NativeFunction("SDL3", EntryPoint = "SDL_SetWindowHitTest")]
     int SetWindowHitTest(
         WindowHandle window,
-        [NativeTypeName("SDL_HitTest")]
-            delegate* unmanaged<WindowHandle, Point*, void*, HitTestResult> callback,
+        [NativeTypeName("SDL_HitTest")] HitTest callback,
         Ref callback_data
     );
 
@@ -13484,8 +13376,7 @@ public unsafe partial interface ISdl
 
     [NativeFunction("SDL3", EntryPoint = "SDL_ShowOpenFileDialog")]
     void ShowOpenFileDialog(
-        [NativeTypeName("SDL_DialogFileCallback")]
-            delegate* unmanaged<void*, sbyte**, int, void> callback,
+        [NativeTypeName("SDL_DialogFileCallback")] DialogFileCallback callback,
         void* userdata,
         WindowHandle window,
         [NativeTypeName("const SDL_DialogFileFilter *")] DialogFileFilter* filters,
@@ -13496,8 +13387,7 @@ public unsafe partial interface ISdl
     [Transformed]
     [NativeFunction("SDL3", EntryPoint = "SDL_ShowOpenFileDialog")]
     void ShowOpenFileDialog(
-        [NativeTypeName("SDL_DialogFileCallback")]
-            delegate* unmanaged<void*, sbyte**, int, void> callback,
+        [NativeTypeName("SDL_DialogFileCallback")] DialogFileCallback callback,
         Ref userdata,
         WindowHandle window,
         [NativeTypeName("const SDL_DialogFileFilter *")] Ref<DialogFileFilter> filters,
@@ -13507,8 +13397,7 @@ public unsafe partial interface ISdl
 
     [NativeFunction("SDL3", EntryPoint = "SDL_ShowOpenFolderDialog")]
     void ShowOpenFolderDialog(
-        [NativeTypeName("SDL_DialogFileCallback")]
-            delegate* unmanaged<void*, sbyte**, int, void> callback,
+        [NativeTypeName("SDL_DialogFileCallback")] DialogFileCallback callback,
         void* userdata,
         WindowHandle window,
         [NativeTypeName("const char *")] sbyte* default_location,
@@ -13518,8 +13407,7 @@ public unsafe partial interface ISdl
     [Transformed]
     [NativeFunction("SDL3", EntryPoint = "SDL_ShowOpenFolderDialog")]
     void ShowOpenFolderDialog(
-        [NativeTypeName("SDL_DialogFileCallback")]
-            delegate* unmanaged<void*, sbyte**, int, void> callback,
+        [NativeTypeName("SDL_DialogFileCallback")] DialogFileCallback callback,
         Ref userdata,
         WindowHandle window,
         [NativeTypeName("const char *")] Ref<sbyte> default_location,
@@ -13528,8 +13416,7 @@ public unsafe partial interface ISdl
 
     [NativeFunction("SDL3", EntryPoint = "SDL_ShowSaveFileDialog")]
     void ShowSaveFileDialog(
-        [NativeTypeName("SDL_DialogFileCallback")]
-            delegate* unmanaged<void*, sbyte**, int, void> callback,
+        [NativeTypeName("SDL_DialogFileCallback")] DialogFileCallback callback,
         void* userdata,
         WindowHandle window,
         [NativeTypeName("const SDL_DialogFileFilter *")] DialogFileFilter* filters,
@@ -13539,8 +13426,7 @@ public unsafe partial interface ISdl
     [Transformed]
     [NativeFunction("SDL3", EntryPoint = "SDL_ShowSaveFileDialog")]
     void ShowSaveFileDialog(
-        [NativeTypeName("SDL_DialogFileCallback")]
-            delegate* unmanaged<void*, sbyte**, int, void> callback,
+        [NativeTypeName("SDL_DialogFileCallback")] DialogFileCallback callback,
         Ref userdata,
         WindowHandle window,
         [NativeTypeName("const SDL_DialogFileFilter *")] Ref<DialogFileFilter> filters,

@@ -30,6 +30,13 @@ public static partial class NameUtils
     );
 
     /// <summary>
+    /// An instance of <see cref="SearchValues{T}"/> matching ASCII letters, numbers, and an underscore.
+    /// </summary>
+    public static readonly SearchValues<char> IdentifierChars = SearchValues.Create(
+        "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789_"
+    );
+
+    /// <summary>
     /// Prettifies the given string.
     /// </summary>
     /// <param name="str">The string to prettify.</param>
