@@ -37,7 +37,6 @@ partial class Build {
             }
 
             var utils = RootDirectory / "build" / "utilities";
-            DotNet("workload install android");
             DotNet($"build \"{utils / "android_probe.proj"}\" /t:GetAndroidJar");
             AndroidHomeValue = (AbsolutePath) File.ReadAllText(utils / "android.jar.gen.txt") / ".." / ".." / "..";
             Log.Information($"Android Home: {AndroidHomeValue}");
