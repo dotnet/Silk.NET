@@ -148,7 +148,7 @@ jobs:
 
       - name: Build SDL2
         if: runner.os != 'Linux'
-        run: ${{ matrix.env.nuke_invoke }} SDL2 ${{ runner.os == 'Windows' && format('{0} {1}', '--native true --android-sdk-override', env.ANDROID_HOME) || '' }} 
+        run: ${{ matrix.env.nuke_invoke }} SDL2 ${{ runner.os == 'Windows' && format('{0} {1}', '--native true --android-home-value', env.ANDROID_HOME) || '' }} 
         env:
           PUSHABLE_GITHUB_TOKEN: ${{ secrets.PUSHABLE_GITHUB_TOKEN }}
 

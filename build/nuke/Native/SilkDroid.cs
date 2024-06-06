@@ -36,15 +36,9 @@ partial class Build {
                 return AndroidHomeValue;
             }
 
-            if (AndroidHomeOverride is not null)
-            {
-                AndroidHomeValue = AndroidHomeOverride;
-                return AndroidHomeValue;
-            }
-
             if ((Environment.GetEnvironmentVariable("ANDROID_HOME") ?? Environment.GetEnvironmentVariable("ANDROID_SDK_ROOT")) is {} sdk)
             {
-                AndroidHomeOverride = sdk;
+                AndroidHomeValue = sdk;
                 return sdk;
             }
 

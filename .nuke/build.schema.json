@@ -30,7 +30,7 @@
           "type": "boolean",
           "description": "If specified, ignores any generated solution present and builds the entire project"
         },
-        "AndroidHomeOverride": {
+        "AndroidHomeValue": {
           "type": "string",
           "description": "Android home. Will be determined from dotnet if not provided"
         },
