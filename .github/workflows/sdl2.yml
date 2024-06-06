@@ -57,9 +57,17 @@ jobs:
         with:
           java-version: 21
           distribution: "temurin"
+      - name: Set PATH
+        if: runner.os == 'Windows'
+        id: set_path
+        run: |
+          echo "cur_path=$env:PATH\n" >> $GITHUB_OUTPUT
+          echo "usr_path=$env:USERPROFILE\n" >> $GITHUB_OUTPUT
       - name: Setup Android Environment
         uses: android-actions/setup-android@v3
         if: runner.os == 'Windows'
+        env:
+          PATH: "${{ steps.set_path.outputs.usr_path}}\\.dotnet\\tools;${{ steps.set_path.outputs.cur_path }}"
       - name: Install Android Platforms
         if: runner.os == 'Windows'
         run: |
