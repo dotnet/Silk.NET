@@ -39,7 +39,18 @@ jobs:
           git -c submodule.third_party/git-hooks.update=none submodule update --init --recursive build/submodules/SDL
           git config --local user.email "9011267+dotnet-bot@users.noreply.github.com"
           git config --local user.name "The Silk.NET Automaton"
+      - name: Setup .NET Core
+        uses: actions/setup-dotnet@v3
+        if: runner.os == 'Windows'
+        with:
+          dotnet-version: 6.0.x
+        env:
+          DOTNET_INSTALL_DIR: ~/.dotnet
 
+      - name: Setup PowerShell Core
+        continue-on-error: true
+        if: runner.os == 'Windows'
+        run: dotnet tool install --global PowerShell
       - name: Setup Java JDK 21
         uses: actions/setup-java@v2.3.0
         if: runner.os == 'Windows'
