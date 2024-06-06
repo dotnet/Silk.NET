@@ -24,7 +24,7 @@ jobs:
             nuke_invoke: ./build.sh
           - os: windows-2022
             name: Windows
-            nuke_invoke: ./build.cmd --native=true BuildLibSilkDroid
+            nuke_invoke: ./build.cmd BuildLibSilkDroid
           - os: macos-14
             name: Darwin
             nuke_invoke: ./build.sh
@@ -140,7 +140,7 @@ jobs:
 
       - name: Build SDL2
         if: runner.os != 'Linux'
-        run: ${{ matrix.env.nuke_invoke }} SDL2
+        run: ${{ matrix.env.nuke_invoke }} SDL2 ${{ runner.os == 'Windows' && '--native' || '' }}
         env:
           PUSHABLE_GITHUB_TOKEN: ${{ secrets.PUSHABLE_GITHUB_TOKEN }}
 
