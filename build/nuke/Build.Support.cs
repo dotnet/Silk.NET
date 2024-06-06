@@ -126,6 +126,18 @@ partial class Build
             {
                 // probably hasn't existed yet, don't care.
             }
+            try
+            {
+                if (Native)
+                {
+                    DotNet("workload install android");
+                }
+            }
+            catch
+            {
+                // oh well. maybe it's already installed?
+            }
+
             GenerateSolution();
         }
     );
