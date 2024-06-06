@@ -76,6 +76,7 @@ jobs:
           sdkmanager --install "platforms;android-31"
           sdkmanager --install "platforms;android-33"
           sdkmanager --install "platforms;android-34"
+          sdkmanager --install "ndk-bundle"
       # Install CMake
       - uses: lukka/get-cmake@latest
         if: runner.os != 'Linux'
@@ -143,5 +144,5 @@ jobs:
         run: ${{ matrix.env.nuke_invoke }} SDL2 ${{ runner.os == 'Windows' && '--native' || '' }}
         env:
           PUSHABLE_GITHUB_TOKEN: ${{ secrets.PUSHABLE_GITHUB_TOKEN }}
-
-
+          ANDROID_HOME: ${{ env.ANDROID_HOME }}
+          ANDROID_SDK_ROOT: ${{ env.ANDROID_SDK_ROOT }}
