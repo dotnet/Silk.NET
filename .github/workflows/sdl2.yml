@@ -21,17 +21,12 @@ jobs:
           - os: ubuntu-22.04
             name: Linux
             nuke_invoke: ./build.sh
-            extas: "dotnet workload install android"
           - os: windows-2022
             name: Windows
-            nuke_invoke: ./build.cmd
-            extras: |
-              dotnet workload install android
-              powershell build\Install-WindowsSDK.ps1
+            nuke_invoke: ./build.cmd --native BuildLibSilkDroid
           - os: macos-14
             name: Darwin
             nuke_invoke: ./build.sh
-            extras: "dotnet workload install android"
     name: ${{ matrix.env.name }} Build
     runs-on: ${{ matrix.env.os }}
     steps:
@@ -46,10 +41,26 @@ jobs:
           git config --local user.name "The Silk.NET Automaton"
 
       - name: Extra prerequisites
-        run: |
-          echo running extras
-          ${{ matrix.env.extras }}
+        if: runner.os == 'Windows'
+        run: dotnet workload install android
 
+      - name: Setup Java JDK 21
+        uses: actions/setup-java@v2.3.0
+        if: runner.os == 'Windows'
+        with:
+          java-version: 21
+          distribution: "temurin"
+      - name: Setup Android Environment
+        uses: android-actions/setup-android@v2
+        if: runner.os == 'Windows'
+      - name: Install Android Platforms
+        if: runner.os == 'Windows'
+        run: |
+          sdkmanager --install "build-tools;32.0.0"
+          sdkmanager --install "platform-tools"
+          sdkmanager --install "platforms;android-31"
+          sdkmanager --install "platforms;android-33"
+          sdkmanager --install "platforms;android-34"
       # Install CMake
       - uses: lukka/get-cmake@latest
         if: runner.os != 'Linux'
@@ -108,13 +119,13 @@ jobs:
             git config --global --add safe.directory /github/workspace
             git config --global --add safe.directory /github/workspace/build/submodules/SDL
 
-            ${{ matrix.env.nuke_invoke }} BuildLibSilkDroid SDL2 --native
+            ${{ matrix.env.nuke_invoke }} SDL2
         env:
           PUSHABLE_GITHUB_TOKEN: ${{ secrets.PUSHABLE_GITHUB_TOKEN }}
 
       - name: Build SDL2
         if: runner.os != 'Linux'
-        run: ${{ matrix.env.nuke_invoke }} BuildLibSilkDroid SDL2 --native
+        run: ${{ matrix.env.nuke_invoke }} SDL2
         env:
           PUSHABLE_GITHUB_TOKEN: ${{ secrets.PUSHABLE_GITHUB_TOKEN }}
 
