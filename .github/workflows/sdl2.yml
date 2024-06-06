@@ -21,15 +21,17 @@ jobs:
           - os: ubuntu-22.04
             name: Linux
             nuke_invoke: ./build.sh
+            extas: "dotnet workload install android"
           - os: windows-2022
             name: Windows
             nuke_invoke: ./build.cmd
             extras: |
-              pwsh build\Install-WindowsSDK.ps1
+              dotnet workload install android
+              powershell build\Install-WindowsSDK.ps1
           - os: macos-14
             name: Darwin
             nuke_invoke: ./build.sh
-            extras: ""
+            extras: "dotnet workload install android"
     name: ${{ matrix.env.name }} Build
     runs-on: ${{ matrix.env.os }}
     steps:
