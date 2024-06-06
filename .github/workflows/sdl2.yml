@@ -53,11 +53,11 @@ jobs:
         continue-on-error: true
         if: runner.os == 'Windows'
         run: dotnet tool install --global PowerShell
-      - name: Setup Java JDK 11
+      - name: Setup Java JDK 21
         uses: actions/setup-java@v2.3.0
         if: runner.os == 'Windows'
         with:
-          java-version: 11
+          java-version: 21
           distribution: "temurin"
       - name: Set PATH
         if: runner.os == 'Windows'
@@ -78,6 +78,12 @@ jobs:
           sdkmanager --install "platforms;android-33"
           sdkmanager --install "platforms;android-34"
           sdkmanager --install "ndk-bundle"
+      - name: Setup Java JDK 11
+        uses: actions/setup-java@v2.3.0
+        if: runner.os == 'Windows'
+        with:
+          java-version: 11
+          distribution: "temurin"
       # Install CMake
       - uses: lukka/get-cmake@latest
         if: runner.os != 'Linux'
