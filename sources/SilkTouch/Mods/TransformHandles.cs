@@ -118,11 +118,6 @@ public class TransformHandles(IOptionsSnapshot<TransformHandles.Config> config) 
                 _declaredTypes[_currentScope] = v = [];
             }
 
-            if (identifier.ToString() == "SDL_MessageBoxColorScheme_colors")
-            {
-                Debugger.Break();
-            }
-
             v.Add(
                 identifier.ToString(),
                 type is StructDeclarationSyntax s

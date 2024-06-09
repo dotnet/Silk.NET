@@ -38,6 +38,7 @@
       "OutputSourceRoot": "sources/SDL",
       "OutputTestRoot": "tests/SDL",
       "Solution": "Silk.NET.sln",
+      "DefaultLicenseHeader": "eng/silktouch/header.txt",
       "Mods": [
         "AddIncludes",
         "ExtractNestedTyping",
