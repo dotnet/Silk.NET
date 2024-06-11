@@ -146,7 +146,7 @@ public sealed unsafe class CustomFileIO : IDisposable
     
     [UnmanagedCallersOnly(CallConvs = new[] { typeof(CallConvCdecl) })]
     private static nuint ReadFile(File* file, byte* buffer, nuint size, nuint count) =>
-        GetStream(file).Read(new Span<byte>(buffer, (int) (size * count))) / size;
+        ((nuint) GetStream(file).Read(new Span<byte>(buffer, (int) (size * count)))) / size;
     
     [UnmanagedCallersOnly(CallConvs = new[] { typeof(CallConvCdecl) })]
     private static nuint WriteFile(File* file, byte* buffer, nuint size, nuint count)
