@@ -138,57 +138,39 @@ public sealed unsafe class CustomFileIO : IDisposable
         sHandle.Free();
         SilkMarshal.Free((nint) pFile);
     }
+
+    public static Stream GetStream(File* file) =>
+        GCHandle.FromIntPtr((nint) file->UserData).Target is not Stream s
+            ? throw new InvalidOperationException("Invalid UserData for File.")
+            : s;
     
     [UnmanagedCallersOnly(CallConvs = new[] { typeof(CallConvCdecl) })]
     private static nuint ReadFile(File* file, byte* buffer, nuint size, nuint count) =>
-        GCHandle.FromIntPtr((nint) file->UserData).Target is not Stream s
-            ? throw new InvalidOperationException("Invalid UserData for File.")
-            : (nuint) s.Read(new Span<byte>(buffer, (int) (size * count))) / size;
+        GetStream(file).Read(new Span<byte>(buffer, (int) (size * count))) / size;
     
     [UnmanagedCallersOnly(CallConvs = new[] { typeof(CallConvCdecl) })]
     private static nuint WriteFile(File* file, byte* buffer, nuint size, nuint count)
     {
-        if (GCHandle.FromIntPtr((nint) file->UserData).Target is not Stream s)
-        {
-            throw new InvalidOperationException("Invalid UserData for File.");
-        }
-
-        s.Write(new Span<byte>(buffer, (int) (size * count)));
+        GetStream(file).Write(new Span<byte>(buffer, (int) (size * count)));
         return count;
     }
     
     [UnmanagedCallersOnly(CallConvs = new[] { typeof(CallConvCdecl) })]
     private static nuint FileSize(File* file) =>
-        GCHandle.FromIntPtr((nint) file->UserData).Target is not Stream s
-            ? throw new InvalidOperationException("Invalid UserData for File.")
-            : (nuint) s.Length;
+        (nuint) GetStream(file).Length;
     
     [UnmanagedCallersOnly(CallConvs = new[] { typeof(CallConvCdecl) })]
     private static nuint FileTell(File* file) =>
-        GCHandle.FromIntPtr((nint) file->UserData).Target is not Stream s
-            ? throw new InvalidOperationException("Invalid UserData for File.")
-            : (nuint) s.Position;
+        (nuint) GetStream(file).Position;
     
     [UnmanagedCallersOnly(CallConvs = new[] { typeof(CallConvCdecl) })]
     private static void FileFlush(File* file)
-    {
-        if (GCHandle.FromIntPtr((nint) file->UserData).Target is not Stream s)
-        {
-            throw new InvalidOperationException("Invalid UserData for File.");
-        }
-        
-        s.Flush();
-    }
+        => GetStream(file).Flush();
     
     [UnmanagedCallersOnly(CallConvs = new[] { typeof(CallConvCdecl) })]
     private static Return FileSeek(File* file, nuint offset, Origin origin)
     {
-        if (GCHandle.FromIntPtr((nint) file->UserData).Target is not Stream s)
-        {
-            throw new InvalidOperationException("Invalid UserData for File.");
-        }
-        
-        s.Seek((long) offset, (SeekOrigin) origin);
+        GetStream(file).Seek((long) offset, (SeekOrigin) origin);
         return Return.Success;
     }
 
