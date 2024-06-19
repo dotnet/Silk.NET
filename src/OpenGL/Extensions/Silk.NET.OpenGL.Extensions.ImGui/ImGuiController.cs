@@ -94,7 +94,6 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ImGui
             io.BackendFlags |= ImGuiBackendFlags.RendererHasVtxOffset;
 
             CreateDeviceResources();
-            SetKeyMappings();
 
             SetPerFrameImGuiData(1f / 60f);
 
@@ -125,7 +124,42 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ImGui
             _frameBegun = true;
             _keyboard = _input.Keyboards[0];
             _view.Resize += WindowResized;
+            _keyboard.KeyDown += OnKeyDown;
+            _keyboard.KeyUp += OnKeyUp;
             _keyboard.KeyChar += OnKeyChar;
+        }
+
+        /// <summary>
+        /// Delegate to receive keyboard key down events.
+        /// </summary>
+        /// <param name="keyboard">The keyboard context generating the event.</param>
+        /// <param name="keycode">The native keycode of the pressed key.</param>
+        /// <param name="scancode">The native scancode of the pressed key.</param>
+        private static void OnKeyDown(IKeyboard keyboard, Key keycode, int scancode) =>
+            OnKeyEvent(keyboard, keycode, scancode, down: true);
+
+        /// <summary>
+        /// Delegate to receive keyboard key up events.
+        /// </summary>
+        /// <param name="keyboard">The keyboard context generating the event.</param>
+        /// <param name="keycode">The native keycode of the released key.</param>
+        /// <param name="scancode">The native scancode of the released key.</param>
+        private static void OnKeyUp(IKeyboard keyboard, Key keycode, int scancode) =>
+            OnKeyEvent(keyboard, keycode, scancode, down: false);
+
+        /// <summary>
+        /// Delegate to receive keyboard key events.
+        /// </summary>
+        /// <param name="keyboard">The keyboard context generating the event.</param>
+        /// <param name="keycode">The native keycode of the key generating the event.</param>
+        /// <param name="scancode">The native scancode of the key generating the event.</param>
+        /// <param name="down">True if the event is a key down event, otherwise False</param>
+        private static void OnKeyEvent(IKeyboard keyboard, Key keycode, int scancode, bool down)
+        {
+            var io = ImGuiNET.ImGui.GetIO();
+            var imGuiKey = TranslateInputKeyToImGuiKey(keycode);
+            io.AddKeyEvent(imGuiKey, down);
+            io.SetKeyEventNativeData(imGuiKey, (int) keycode, scancode);
         }
 
         private void OnKeyChar(IKeyboard arg1, char arg2)
@@ -214,7 +248,6 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ImGui
             io.DeltaTime = deltaSeconds; // DeltaTime is in seconds.
         }
 
-        private static Key[] keyEnumArr = (Key[]) Enum.GetValues(typeof(Key));
         private void UpdateImGuiInput()
         {
             var io = ImGuiNET.ImGui.GetIO();
@@ -232,15 +265,6 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ImGui
             io.MouseWheel = wheel.Y;
             io.MouseWheelH = wheel.X;
 
-            foreach (var key in keyEnumArr)
-            {
-                if (key == Key.Unknown)
-                {
-                    continue;
-                }
-                io.KeysDown[(int) key] = keyboardState.IsKeyPressed(key);
-            }
-
             foreach (var c in _pressedChars)
             {
                 io.AddInputCharacter(c);
@@ -257,30 +281,6 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ImGui
         internal void PressChar(char keyChar)
         {
             _pressedChars.Add(keyChar);
-        }
-
-        private static void SetKeyMappings()
-        {
-            var io = ImGuiNET.ImGui.GetIO();
-            io.KeyMap[(int) ImGuiKey.Tab] = (int) Key.Tab;
-            io.KeyMap[(int) ImGuiKey.LeftArrow] = (int) Key.Left;
-            io.KeyMap[(int) ImGuiKey.RightArrow] = (int) Key.Right;
-            io.KeyMap[(int) ImGuiKey.UpArrow] = (int) Key.Up;
-            io.KeyMap[(int) ImGuiKey.DownArrow] = (int) Key.Down;
-            io.KeyMap[(int) ImGuiKey.PageUp] = (int) Key.PageUp;
-            io.KeyMap[(int) ImGuiKey.PageDown] = (int) Key.PageDown;
-            io.KeyMap[(int) ImGuiKey.Home] = (int) Key.Home;
-            io.KeyMap[(int) ImGuiKey.End] = (int) Key.End;
-            io.KeyMap[(int) ImGuiKey.Delete] = (int) Key.Delete;
-            io.KeyMap[(int) ImGuiKey.Backspace] = (int) Key.Backspace;
-            io.KeyMap[(int) ImGuiKey.Enter] = (int) Key.Enter;
-            io.KeyMap[(int) ImGuiKey.Escape] = (int) Key.Escape;
-            io.KeyMap[(int) ImGuiKey.A] = (int) Key.A;
-            io.KeyMap[(int) ImGuiKey.C] = (int) Key.C;
-            io.KeyMap[(int) ImGuiKey.V] = (int) Key.V;
-            io.KeyMap[(int) ImGuiKey.X] = (int) Key.X;
-            io.KeyMap[(int) ImGuiKey.Y] = (int) Key.Y;
-            io.KeyMap[(int) ImGuiKey.Z] = (int) Key.Z;
         }
 
         /// <summary>
