@@ -18,7 +18,6 @@ using Silk.NET.OpenGL.Legacy;
 #endif
 using Silk.NET.Windowing;
 
-
 #if GL
 namespace Silk.NET.OpenGL.Extensions.ImGui
 #elif GLES
@@ -33,7 +32,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ImGui
         private IView _view;
         private IInputContext _input;
         private bool _frameBegun;
-        private readonly List<char> _pressedChars = new List<char>();
+        private readonly List<char> _pressedChars = new();
         private IKeyboard _keyboard;
 
         private int _attribLocationTex;
@@ -84,7 +83,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ImGui
             var io = ImGuiNET.ImGui.GetIO();
             if (imGuiFontConfig is not null)
             {
-                var glyphRange = imGuiFontConfig.Value.GetGlyphRange?.Invoke(io) ?? default(IntPtr);
+                var glyphRange = imGuiFontConfig.Value.GetGlyphRange?.Invoke(io) ?? default;
 
                 io.Fonts.AddFontFromFileTTF(imGuiFontConfig.Value.FontPath, imGuiFontConfig.Value.FontSize, null, glyphRange);
             }
@@ -94,7 +93,6 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ImGui
             io.BackendFlags |= ImGuiBackendFlags.RendererHasVtxOffset;
 
             CreateDeviceResources();
-            SetKeyMappings();
 
             SetPerFrameImGuiData(1f / 60f);
 
@@ -125,7 +123,42 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ImGui
             _frameBegun = true;
             _keyboard = _input.Keyboards[0];
             _view.Resize += WindowResized;
+            _keyboard.KeyDown += OnKeyDown;
+            _keyboard.KeyUp += OnKeyUp;
             _keyboard.KeyChar += OnKeyChar;
+        }
+
+        /// <summary>
+        /// Delegate to receive keyboard key down events.
+        /// </summary>
+        /// <param name="keyboard">The keyboard context generating the event.</param>
+        /// <param name="keycode">The native keycode of the pressed key.</param>
+        /// <param name="scancode">The native scancode of the pressed key.</param>
+        private static void OnKeyDown(IKeyboard keyboard, Key keycode, int scancode) =>
+            OnKeyEvent(keyboard, keycode, scancode, down: true);
+
+        /// <summary>
+        /// Delegate to receive keyboard key up events.
+        /// </summary>
+        /// <param name="keyboard">The keyboard context generating the event.</param>
+        /// <param name="keycode">The native keycode of the released key.</param>
+        /// <param name="scancode">The native scancode of the released key.</param>
+        private static void OnKeyUp(IKeyboard keyboard, Key keycode, int scancode) =>
+            OnKeyEvent(keyboard, keycode, scancode, down: false);
+
+        /// <summary>
+        /// Delegate to receive keyboard key events.
+        /// </summary>
+        /// <param name="keyboard">The keyboard context generating the event.</param>
+        /// <param name="keycode">The native keycode of the key generating the event.</param>
+        /// <param name="scancode">The native scancode of the key generating the event.</param>
+        /// <param name="down">True if the event is a key down event, otherwise False</param>
+        private static void OnKeyEvent(IKeyboard keyboard, Key keycode, int scancode, bool down)
+        {
+            var io = ImGuiNET.ImGui.GetIO();
+            var imGuiKey = TranslateInputKeyToImGuiKey(keycode);
+            io.AddKeyEvent(imGuiKey, down);
+            io.SetKeyEventNativeData(imGuiKey, (int) keycode, scancode);
         }
 
         private void OnKeyChar(IKeyboard arg1, char arg2)
@@ -214,13 +247,11 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ImGui
             io.DeltaTime = deltaSeconds; // DeltaTime is in seconds.
         }
 
-        private static Key[] keyEnumArr = (Key[]) Enum.GetValues(typeof(Key));
         private void UpdateImGuiInput()
         {
             var io = ImGuiNET.ImGui.GetIO();
 
             var mouseState = _input.Mice[0].CaptureState();
-            var keyboardState = _input.Keyboards[0];
 
             io.MouseDown[0] = mouseState.IsButtonPressed(MouseButton.Left);
             io.MouseDown[1] = mouseState.IsButtonPressed(MouseButton.Right);
@@ -233,15 +264,6 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ImGui
             io.MouseWheel = wheel.Y;
             io.MouseWheelH = wheel.X;
 
-            foreach (var key in keyEnumArr)
-            {
-                if (key == Key.Unknown)
-                {
-                    continue;
-                }
-                io.KeysDown[(int) key] = keyboardState.IsKeyPressed(key);
-            }
-
             foreach (var c in _pressedChars)
             {
                 io.AddInputCharacter(c);
@@ -249,10 +271,10 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ImGui
 
             _pressedChars.Clear();
 
-            io.KeyCtrl = keyboardState.IsKeyPressed(Key.ControlLeft) || keyboardState.IsKeyPressed(Key.ControlRight);
-            io.KeyAlt = keyboardState.IsKeyPressed(Key.AltLeft) || keyboardState.IsKeyPressed(Key.AltRight);
-            io.KeyShift = keyboardState.IsKeyPressed(Key.ShiftLeft) || keyboardState.IsKeyPressed(Key.ShiftRight);
-            io.KeySuper = keyboardState.IsKeyPressed(Key.SuperLeft) || keyboardState.IsKeyPressed(Key.SuperRight);
+            io.KeyCtrl = _keyboard.IsKeyPressed(Key.ControlLeft) || _keyboard.IsKeyPressed(Key.ControlRight);
+            io.KeyAlt = _keyboard.IsKeyPressed(Key.AltLeft) || _keyboard.IsKeyPressed(Key.AltRight);
+            io.KeyShift = _keyboard.IsKeyPressed(Key.ShiftLeft) || _keyboard.IsKeyPressed(Key.ShiftRight);
+            io.KeySuper = _keyboard.IsKeyPressed(Key.SuperLeft) || _keyboard.IsKeyPressed(Key.SuperRight);
         }
 
         internal void PressChar(char keyChar)
@@ -260,28 +282,135 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ImGui
             _pressedChars.Add(keyChar);
         }
 
-        private static void SetKeyMappings()
+        /// <summary>
+        /// Translates a Silk.NET.Input.Key to an ImGuiKey.
+        /// </summary>
+        /// <param name="key">The Silk.NET.Input.Key to translate.</param>
+        /// <returns>The corresponding ImGuiKey.</returns>
+        /// <exception cref="NotImplementedException">When the key has not been implemented yet.</exception>
+        private static ImGuiKey TranslateInputKeyToImGuiKey(Key key)
         {
-            var io = ImGuiNET.ImGui.GetIO();
-            io.KeyMap[(int) ImGuiKey.Tab] = (int) Key.Tab;
-            io.KeyMap[(int) ImGuiKey.LeftArrow] = (int) Key.Left;
-            io.KeyMap[(int) ImGuiKey.RightArrow] = (int) Key.Right;
-            io.KeyMap[(int) ImGuiKey.UpArrow] = (int) Key.Up;
-            io.KeyMap[(int) ImGuiKey.DownArrow] = (int) Key.Down;
-            io.KeyMap[(int) ImGuiKey.PageUp] = (int) Key.PageUp;
-            io.KeyMap[(int) ImGuiKey.PageDown] = (int) Key.PageDown;
-            io.KeyMap[(int) ImGuiKey.Home] = (int) Key.Home;
-            io.KeyMap[(int) ImGuiKey.End] = (int) Key.End;
-            io.KeyMap[(int) ImGuiKey.Delete] = (int) Key.Delete;
-            io.KeyMap[(int) ImGuiKey.Backspace] = (int) Key.Backspace;
-            io.KeyMap[(int) ImGuiKey.Enter] = (int) Key.Enter;
-            io.KeyMap[(int) ImGuiKey.Escape] = (int) Key.Escape;
-            io.KeyMap[(int) ImGuiKey.A] = (int) Key.A;
-            io.KeyMap[(int) ImGuiKey.C] = (int) Key.C;
-            io.KeyMap[(int) ImGuiKey.V] = (int) Key.V;
-            io.KeyMap[(int) ImGuiKey.X] = (int) Key.X;
-            io.KeyMap[(int) ImGuiKey.Y] = (int) Key.Y;
-            io.KeyMap[(int) ImGuiKey.Z] = (int) Key.Z;
+            return key switch
+            {
+                Key.Tab => ImGuiKey.Tab,
+                Key.Left => ImGuiKey.LeftArrow,
+                Key.Right => ImGuiKey.RightArrow,
+                Key.Up => ImGuiKey.UpArrow,
+                Key.Down => ImGuiKey.DownArrow,
+                Key.PageUp => ImGuiKey.PageUp,
+                Key.PageDown => ImGuiKey.PageDown,
+                Key.Home => ImGuiKey.Home,
+                Key.End => ImGuiKey.End,
+                Key.Insert => ImGuiKey.Insert,
+                Key.Delete => ImGuiKey.Delete,
+                Key.Backspace => ImGuiKey.Backspace,
+                Key.Space => ImGuiKey.Space,
+                Key.Enter => ImGuiKey.Enter,
+                Key.Escape => ImGuiKey.Escape,
+                Key.Apostrophe => ImGuiKey.Apostrophe,
+                Key.Comma => ImGuiKey.Comma,
+                Key.Minus => ImGuiKey.Minus,
+                Key.Period => ImGuiKey.Period,
+                Key.Slash => ImGuiKey.Slash,
+                Key.Semicolon => ImGuiKey.Semicolon,
+                Key.Equal => ImGuiKey.Equal,
+                Key.LeftBracket => ImGuiKey.LeftBracket,
+                Key.BackSlash => ImGuiKey.Backslash,
+                Key.RightBracket => ImGuiKey.RightBracket,
+                Key.GraveAccent => ImGuiKey.GraveAccent,
+                Key.CapsLock => ImGuiKey.CapsLock,
+                Key.ScrollLock => ImGuiKey.ScrollLock,
+                Key.NumLock => ImGuiKey.NumLock,
+                Key.PrintScreen => ImGuiKey.PrintScreen,
+                Key.Pause => ImGuiKey.Pause,
+                Key.Keypad0 => ImGuiKey.Keypad0,
+                Key.Keypad1 => ImGuiKey.Keypad1,
+                Key.Keypad2 => ImGuiKey.Keypad2,
+                Key.Keypad3 => ImGuiKey.Keypad3,
+                Key.Keypad4 => ImGuiKey.Keypad4,
+                Key.Keypad5 => ImGuiKey.Keypad5,
+                Key.Keypad6 => ImGuiKey.Keypad6,
+                Key.Keypad7 => ImGuiKey.Keypad7,
+                Key.Keypad8 => ImGuiKey.Keypad8,
+                Key.Keypad9 => ImGuiKey.Keypad9,
+                Key.KeypadDecimal => ImGuiKey.KeypadDecimal,
+                Key.KeypadDivide => ImGuiKey.KeypadDivide,
+                Key.KeypadMultiply => ImGuiKey.KeypadMultiply,
+                Key.KeypadSubtract => ImGuiKey.KeypadSubtract,
+                Key.KeypadAdd => ImGuiKey.KeypadAdd,
+                Key.KeypadEnter => ImGuiKey.KeypadEnter,
+                Key.KeypadEqual => ImGuiKey.KeypadEqual,
+                Key.ShiftLeft => ImGuiKey.LeftShift,
+                Key.ControlLeft => ImGuiKey.LeftCtrl,
+                Key.AltLeft => ImGuiKey.LeftAlt,
+                Key.SuperLeft => ImGuiKey.LeftSuper,
+                Key.ShiftRight => ImGuiKey.RightShift,
+                Key.ControlRight => ImGuiKey.RightCtrl,
+                Key.AltRight => ImGuiKey.RightAlt,
+                Key.SuperRight => ImGuiKey.RightSuper,
+                Key.Menu => ImGuiKey.Menu,
+                Key.Number0 => ImGuiKey._0,
+                Key.Number1 => ImGuiKey._1,
+                Key.Number2 => ImGuiKey._2,
+                Key.Number3 => ImGuiKey._3,
+                Key.Number4 => ImGuiKey._4,
+                Key.Number5 => ImGuiKey._5,
+                Key.Number6 => ImGuiKey._6,
+                Key.Number7 => ImGuiKey._7,
+                Key.Number8 => ImGuiKey._8,
+                Key.Number9 => ImGuiKey._9,
+                Key.A => ImGuiKey.A,
+                Key.B => ImGuiKey.B,
+                Key.C => ImGuiKey.C,
+                Key.D => ImGuiKey.D,
+                Key.E => ImGuiKey.E,
+                Key.F => ImGuiKey.F,
+                Key.G => ImGuiKey.G,
+                Key.H => ImGuiKey.H,
+                Key.I => ImGuiKey.I,
+                Key.J => ImGuiKey.J,
+                Key.K => ImGuiKey.K,
+                Key.L => ImGuiKey.L,
+                Key.M => ImGuiKey.M,
+                Key.N => ImGuiKey.N,
+                Key.O => ImGuiKey.O,
+                Key.P => ImGuiKey.P,
+                Key.Q => ImGuiKey.Q,
+                Key.R => ImGuiKey.R,
+                Key.S => ImGuiKey.S,
+                Key.T => ImGuiKey.T,
+                Key.U => ImGuiKey.U,
+                Key.V => ImGuiKey.V,
+                Key.W => ImGuiKey.W,
+                Key.X => ImGuiKey.X,
+                Key.Y => ImGuiKey.Y,
+                Key.Z => ImGuiKey.Z,
+                Key.F1 => ImGuiKey.F1,
+                Key.F2 => ImGuiKey.F2,
+                Key.F3 => ImGuiKey.F3,
+                Key.F4 => ImGuiKey.F4,
+                Key.F5 => ImGuiKey.F5,
+                Key.F6 => ImGuiKey.F6,
+                Key.F7 => ImGuiKey.F7,
+                Key.F8 => ImGuiKey.F8,
+                Key.F9 => ImGuiKey.F9,
+                Key.F10 => ImGuiKey.F10,
+                Key.F11 => ImGuiKey.F11,
+                Key.F12 => ImGuiKey.F12,
+                Key.F13 => ImGuiKey.F13,
+                Key.F14 => ImGuiKey.F14,
+                Key.F15 => ImGuiKey.F15,
+                Key.F16 => ImGuiKey.F16,
+                Key.F17 => ImGuiKey.F17,
+                Key.F18 => ImGuiKey.F18,
+                Key.F19 => ImGuiKey.F19,
+                Key.F20 => ImGuiKey.F20,
+                Key.F21 => ImGuiKey.F21,
+                Key.F22 => ImGuiKey.F22,
+                Key.F23 => ImGuiKey.F23,
+                Key.F24 => ImGuiKey.F24,
+                _ => throw new NotImplementedException(),
+            };
         }
 
         private unsafe void SetupRenderState(ImDrawDataPtr drawDataPtr, int framebufferWidth, int framebufferHeight)
@@ -477,6 +606,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ImGui
             {
                 _gl.Disable(GLEnum.DepthTest);
             }
+
             if (lastEnableStencilTest)
             {
                 _gl.Enable(GLEnum.StencilTest);
@@ -568,7 +698,6 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ImGui
             gl_Position = ProjMtx * vec4(Position.xy,0,1);
         }";
 #endif
-
 
             string fragmentSource =
 #if GLES
