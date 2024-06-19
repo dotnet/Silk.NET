@@ -18,7 +18,6 @@ using Silk.NET.OpenGL.Legacy;
 #endif
 using Silk.NET.Windowing;
 
-
 #if GL
 namespace Silk.NET.OpenGL.Extensions.ImGui
 #elif GLES
@@ -33,7 +32,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ImGui
         private IView _view;
         private IInputContext _input;
         private bool _frameBegun;
-        private readonly List<char> _pressedChars = new List<char>();
+        private readonly List<char> _pressedChars = new();
         private IKeyboard _keyboard;
 
         private int _attribLocationTex;
@@ -84,7 +83,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ImGui
             var io = ImGuiNET.ImGui.GetIO();
             if (imGuiFontConfig is not null)
             {
-                var glyphRange = imGuiFontConfig.Value.GetGlyphRange?.Invoke(io) ?? default(IntPtr);
+                var glyphRange = imGuiFontConfig.Value.GetGlyphRange?.Invoke(io) ?? default;
 
                 io.Fonts.AddFontFromFileTTF(imGuiFontConfig.Value.FontPath, imGuiFontConfig.Value.FontSize, null, glyphRange);
             }
@@ -608,6 +607,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ImGui
             {
                 _gl.Disable(GLEnum.DepthTest);
             }
+
             if (lastEnableStencilTest)
             {
                 _gl.Enable(GLEnum.StencilTest);
@@ -699,7 +699,6 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ImGui
             gl_Position = ProjMtx * vec4(Position.xy,0,1);
         }";
 #endif
-
 
             string fragmentSource =
 #if GLES
