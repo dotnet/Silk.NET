@@ -220,7 +220,6 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ImGui
             var io = ImGuiNET.ImGui.GetIO();
 
             var mouseState = _input.Mice[0].CaptureState();
-            var keyboardState = _input.Keyboards[0];
 
             io.MouseDown[0] = mouseState.IsButtonPressed(MouseButton.Left);
             io.MouseDown[1] = mouseState.IsButtonPressed(MouseButton.Right);
@@ -249,10 +248,10 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ImGui
 
             _pressedChars.Clear();
 
-            io.KeyCtrl = keyboardState.IsKeyPressed(Key.ControlLeft) || keyboardState.IsKeyPressed(Key.ControlRight);
-            io.KeyAlt = keyboardState.IsKeyPressed(Key.AltLeft) || keyboardState.IsKeyPressed(Key.AltRight);
-            io.KeyShift = keyboardState.IsKeyPressed(Key.ShiftLeft) || keyboardState.IsKeyPressed(Key.ShiftRight);
-            io.KeySuper = keyboardState.IsKeyPressed(Key.SuperLeft) || keyboardState.IsKeyPressed(Key.SuperRight);
+            io.KeyCtrl = _keyboard.IsKeyPressed(Key.ControlLeft) || _keyboard.IsKeyPressed(Key.ControlRight);
+            io.KeyAlt = _keyboard.IsKeyPressed(Key.AltLeft) || _keyboard.IsKeyPressed(Key.AltRight);
+            io.KeyShift = _keyboard.IsKeyPressed(Key.ShiftLeft) || _keyboard.IsKeyPressed(Key.ShiftRight);
+            io.KeySuper = _keyboard.IsKeyPressed(Key.SuperLeft) || _keyboard.IsKeyPressed(Key.SuperRight);
         }
 
         internal void PressChar(char keyChar)
