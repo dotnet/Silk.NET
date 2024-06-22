@@ -1023,7 +1023,7 @@ namespace Silk.NET.SDL
         public const int MinorVersion = unchecked((int) 0x1E);
         [NativeName("Type", "int")]
         [NativeName("Name", "SDL_PATCHLEVEL")]
-        public const int Patchlevel = unchecked((int) 0x1);
+        public const int Patchlevel = unchecked((int) 0x3);
         [NativeName("Type", "unsigned int")]
         [NativeName("Name", "SDL_INIT_TIMER")]
         public const uint InitTimer = unchecked((uint) 0x1);
@@ -1053,12 +1053,12 @@ namespace Silk.NET.SDL
         public const uint InitNoparachute = unchecked((uint) 0x100000);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 257, Column 38 in SDL_platform.h")]
+        [NativeName("Src", "Line 259, Column 38 in SDL_platform.h")]
         [NativeApi(EntryPoint = "SDL_GetPlatform")]
         public unsafe partial byte* GetPlatform();
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 257, Column 38 in SDL_platform.h")]
+        [NativeName("Src", "Line 259, Column 38 in SDL_platform.h")]
         [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
         [NativeApi(EntryPoint = "SDL_GetPlatform")]
         public partial string GetPlatformS();

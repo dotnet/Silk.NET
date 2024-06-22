@@ -17,18 +17,18 @@ pub fn build(b: *std.Build) void {
     if (optimize != .Debug)
         vkd3d_compiler.root_module.strip = true;
 
-    vkd3d_compiler.addLibraryPath(.{ .path = "." });
+    vkd3d_compiler.addLibraryPath(b.path("."));
 
     vkd3d_compiler.linkLibC();
 
     //Since we include vkd3d-shader sources, we need to dynamically link against SPIRV-Tools ourselves
     vkd3d_compiler.linkSystemLibrary("SPIRV-Tools-shared");
 
-    vkd3d_compiler.addIncludePath(.{ .path = vulkan_header_folder ++ "include/" });
+    vkd3d_compiler.addIncludePath(b.path(vulkan_header_folder ++ "include/"));
 
-    vkd3d_compiler.addIncludePath(.{ .path = vkd3d_folder ++ "include/" });
-    vkd3d_compiler.addIncludePath(.{ .path = vkd3d_folder ++ "include/private/" });
-    vkd3d_compiler.addIncludePath(.{ .path = vkd3d_folder ++ "libs/vkd3d-utils/" });
+    vkd3d_compiler.addIncludePath(b.path(vkd3d_folder ++ "include/"));
+    vkd3d_compiler.addIncludePath(b.path(vkd3d_folder ++ "include/private/"));
+    vkd3d_compiler.addIncludePath(b.path(vkd3d_folder ++ "libs/vkd3d-utils/"));
 
     vkd3d_compiler.addCSourceFiles(.{
         .files = &.{vkd3d_folder ++ "libs/vkd3d-utils/vkd3d_utils_main.c"},
