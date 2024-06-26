@@ -11,7 +11,7 @@ const darkCodeTheme = themes.dracula;
   url: 'https://dotnet.github.io',
   baseUrl: 'Silk.NET',
 
-  onBrokenLinks: 'throw',
+  onBrokenLinks: 'warn', // `throw` for assetments
   onBrokenMarkdownLinks: 'warn',
 
   favicon: 'img/favicon.ico',
