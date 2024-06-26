@@ -7,12 +7,13 @@ on:
       - build/nuke/Native/Dxvk.cs
       - .github/workflows/dxvk.yml
     branches-ignore:
-        - "ci/*"
-        - "develop/*"
+        - "ci/**"
+        - "develop/**"
         - "main"
 jobs:
   Build:
-    strategy: 
+    if: github.repository == 'dotnet/Silk.NET'
+    strategy:
       fail-fast: false
       matrix:
         env:
@@ -49,7 +50,7 @@ jobs:
         uses: Joshua-Ashton/arch-mingw-github-action@12cb3126180924c3be54025b08f42e4e14da080b
         with:
           command: |
-            pacman -Syu --needed --noconfirm dotnet-host dotnet-runtime dotnet-runtime-6.0 dotnet-sdk dotnet-sdk-6.0 dotnet-targeting-pack dotnet-targeting-pack-6.0 sdl2 lib32-sdl2
+            pacman -Syu --needed --noconfirm dotnet-host dotnet-runtime dotnet-runtime-6.0 dotnet-runtime-7.0 dotnet-sdk dotnet-sdk-6.0 dotnet-sdk-7.0 dotnet-targeting-pack dotnet-targeting-pack-6.0 dotnet-targeting-pack-7.0 sdl2 lib32-sdl2
 
             ${{ matrix.env.nuke_invoke }} Dxvk
         env:

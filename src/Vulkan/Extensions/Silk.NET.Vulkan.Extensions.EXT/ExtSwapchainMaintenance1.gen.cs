@@ -26,7 +26,7 @@ namespace Silk.NET.Vulkan.Extensions.EXT
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkReleaseSwapchainImagesEXT", Convention = CallingConvention.Winapi)]
-        public partial Result ReleaseSwapchainImages([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] in ReleaseSwapchainImagesInfoEXT pReleaseInfo);
+        public partial Result ReleaseSwapchainImages([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ReleaseSwapchainImagesInfoEXT pReleaseInfo);
 
         public ExtSwapchainMaintenance1(INativeContext ctx)
             : base(ctx)

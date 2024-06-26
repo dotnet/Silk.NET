@@ -133,24 +133,7 @@ partial class Build {
                        CopyAll(glfwOut.GlobFiles("dxvk-native-master/usr/lib/*"), runtimes   / "linux-x64" / "native");
                        CopyAll(glfwOut.GlobFiles("dxvk-native-master/usr/lib32/*"), runtimes / "linux-x86" / "native");
 
-                       var winx64 = runtimes / "win-x64" / "native";
-                       var winx86 = runtimes / "win-x86" / "native";
-                       
-                       var linuxx64 = runtimes / "linux-x64" / "native";
-                       var linuxx86 = runtimes / "linux-x86" / "native";
-
-                       var glob = string.Empty;
-                       var files = winx64.GlobFiles("*.dll")
-                                         .Concat(winx86.GlobFiles("*.dll"))
-                                         .Concat(linuxx64.GlobFiles("*.so"))
-                                         .Concat(linuxx86.GlobFiles("*.so"));
-
-                       glob = files.Aggregate(glob, (current, path) => current + $"\"{path}\" ");
-
-                       PrUpdatedNativeBinary
-                       (
-                           "DXVK", glob
-                       );
+                       PrUpdatedNativeBinary("DXVK");
                    }
                )
     );

@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Diagnostics.CodeAnalysis;
 using System.Drawing;
 using System.Linq;
 using System.Numerics;
@@ -26,7 +27,11 @@ namespace Silk.NET.OpenGLES
 
         public static GL GetApi(INativeContext ctx) => new GL(ctx);
 
+#if NET5_0_OR_GREATER
+        public bool TryGetExtension<[DynamicallyAccessedMembers(DynamicallyAccessedMemberTypes.PublicConstructors | DynamicallyAccessedMemberTypes.NonPublicConstructors)] T>(out T ext)
+#else
         public bool TryGetExtension<T>(out T ext)
+#endif
             where T : NativeExtension<GL>
         {
             ext = IsExtensionPresent(ExtensionAttribute.GetExtensionAttribute(typeof(T)).Name)

@@ -106,22 +106,22 @@ public unsafe static class PrintDocumentPackageStatusEventVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetTypeInfo(this ComPtr<IPrintDocumentPackageStatusEvent> thisVtbl, uint iTInfo, uint lcid, Silk.NET.Core.Native.IUnknown** ppTInfo)
+    public static unsafe int GetTypeInfo(this ComPtr<IPrintDocumentPackageStatusEvent> thisVtbl, uint iTInfo, uint lcid, ITypeInfo** ppTInfo)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
-        ret = ((delegate* unmanaged[Cdecl]<IPrintDocumentPackageStatusEvent*, uint, uint, Silk.NET.Core.Native.IUnknown**, int>)@this->LpVtbl[4])(@this, iTInfo, lcid, ppTInfo);
+        ret = ((delegate* unmanaged[Cdecl]<IPrintDocumentPackageStatusEvent*, uint, uint, ITypeInfo**, int>)@this->LpVtbl[4])(@this, iTInfo, lcid, ppTInfo);
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetTypeInfo(this ComPtr<IPrintDocumentPackageStatusEvent> thisVtbl, uint iTInfo, uint lcid, ref Silk.NET.Core.Native.IUnknown* ppTInfo)
+    public static unsafe int GetTypeInfo(this ComPtr<IPrintDocumentPackageStatusEvent> thisVtbl, uint iTInfo, uint lcid, ref ITypeInfo* ppTInfo)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
-        fixed (Silk.NET.Core.Native.IUnknown** ppTInfoPtr = &ppTInfo)
+        fixed (ITypeInfo** ppTInfoPtr = &ppTInfo)
         {
-            ret = ((delegate* unmanaged[Cdecl]<IPrintDocumentPackageStatusEvent*, uint, uint, Silk.NET.Core.Native.IUnknown**, int>)@this->LpVtbl[4])(@this, iTInfo, lcid, ppTInfoPtr);
+            ret = ((delegate* unmanaged[Cdecl]<IPrintDocumentPackageStatusEvent*, uint, uint, ITypeInfo**, int>)@this->LpVtbl[4])(@this, iTInfo, lcid, ppTInfoPtr);
         }
         return ret;
     }
@@ -763,22 +763,22 @@ public unsafe static class PrintDocumentPackageStatusEventVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int PackageStatusUpdated(this ComPtr<IPrintDocumentPackageStatusEvent> thisVtbl, MIDLMIDLItfDocumenttarget000000020001* packageStatus)
+    public static unsafe int PackageStatusUpdated(this ComPtr<IPrintDocumentPackageStatusEvent> thisVtbl, MIDLMIDLItfDocumentTarget000000020001* packageStatus)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
-        ret = ((delegate* unmanaged[Cdecl]<IPrintDocumentPackageStatusEvent*, MIDLMIDLItfDocumenttarget000000020001*, int>)@this->LpVtbl[7])(@this, packageStatus);
+        ret = ((delegate* unmanaged[Cdecl]<IPrintDocumentPackageStatusEvent*, MIDLMIDLItfDocumentTarget000000020001*, int>)@this->LpVtbl[7])(@this, packageStatus);
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static int PackageStatusUpdated(this ComPtr<IPrintDocumentPackageStatusEvent> thisVtbl, ref MIDLMIDLItfDocumenttarget000000020001 packageStatus)
+    public static int PackageStatusUpdated(this ComPtr<IPrintDocumentPackageStatusEvent> thisVtbl, ref MIDLMIDLItfDocumentTarget000000020001 packageStatus)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
-        fixed (MIDLMIDLItfDocumenttarget000000020001* packageStatusPtr = &packageStatus)
+        fixed (MIDLMIDLItfDocumentTarget000000020001* packageStatusPtr = &packageStatus)
         {
-            ret = ((delegate* unmanaged[Cdecl]<IPrintDocumentPackageStatusEvent*, MIDLMIDLItfDocumenttarget000000020001*, int>)@this->LpVtbl[7])(@this, packageStatusPtr);
+            ret = ((delegate* unmanaged[Cdecl]<IPrintDocumentPackageStatusEvent*, MIDLMIDLItfDocumentTarget000000020001*, int>)@this->LpVtbl[7])(@this, packageStatusPtr);
         }
         return ret;
     }
@@ -817,11 +817,11 @@ public unsafe static class PrintDocumentPackageStatusEventVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int GetTypeInfo<TI0>(this ComPtr<IPrintDocumentPackageStatusEvent> thisVtbl, uint iTInfo, uint lcid, ref ComPtr<TI0> ppTInfo) where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Native.IUnknown>, IComVtbl<TI0>
+    public static int GetTypeInfo<TI0>(this ComPtr<IPrintDocumentPackageStatusEvent> thisVtbl, uint iTInfo, uint lcid, ref ComPtr<TI0> ppTInfo) where TI0 : unmanaged, IComVtbl<ITypeInfo>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
-        return @this->GetTypeInfo(iTInfo, lcid, (Silk.NET.Core.Native.IUnknown**) ppTInfo.GetAddressOf());
+        return @this->GetTypeInfo(iTInfo, lcid, (ITypeInfo**) ppTInfo.GetAddressOf());
     }
 
     /// <summary>To be documented.</summary>
@@ -1169,7 +1169,7 @@ public unsafe static class PrintDocumentPackageStatusEventVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int PackageStatusUpdated(this ComPtr<IPrintDocumentPackageStatusEvent> thisVtbl, Span<MIDLMIDLItfDocumenttarget000000020001> packageStatus)
+    public static int PackageStatusUpdated(this ComPtr<IPrintDocumentPackageStatusEvent> thisVtbl, Span<MIDLMIDLItfDocumentTarget000000020001> packageStatus)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader

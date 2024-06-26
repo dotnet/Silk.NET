@@ -70,6 +70,8 @@ namespace Silk.NET.OpenCL.Extensions.IMG
         GrallocResourceNotAcquiredImg = 0x40D4,
         [NativeName("Name", "CL_INVALID_GRALLOC_OBJECT_IMG")]
         InvalidGrallocObjectImg = 0x40D5,
+        [NativeName("Name", "CL_CANCELLED_IMG")]
+        CancelledImg = unchecked((int) 0xFFFFFFFFFFFFFB9A),
         [NativeName("Name", "CL_MEM_USE_UNCACHED_CPU_MEMORY_IMG")]
         UseUncachedCpuMemoryImg = 0x4000000,
         [NativeName("Name", "CL_MEM_USE_UNCACHED_CPU_MEMORY_IMG")]

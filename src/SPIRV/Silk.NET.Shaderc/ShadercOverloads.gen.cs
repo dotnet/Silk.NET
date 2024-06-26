@@ -369,7 +369,7 @@ namespace Silk.NET.Shaderc
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 526, Column 45 in shaderc.h")]
+        [NativeName("Src", "Line 532, Column 45 in shaderc.h")]
         public static unsafe CompilationResult* CompileIntoSpv(this Shaderc thisApi, Compiler* compiler, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* source_text, nuint source_text_size, ShaderKind shader_kind, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* input_file_name, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> entry_point_name, CompileOptions* additional_options)
         {
             // SpanOverloader
@@ -377,7 +377,7 @@ namespace Silk.NET.Shaderc
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 526, Column 45 in shaderc.h")]
+        [NativeName("Src", "Line 532, Column 45 in shaderc.h")]
         public static unsafe CompilationResult* CompileIntoSpv(this Shaderc thisApi, Compiler* compiler, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* source_text, nuint source_text_size, ShaderKind shader_kind, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> input_file_name, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* entry_point_name, CompileOptions* additional_options)
         {
             // SpanOverloader
@@ -385,7 +385,7 @@ namespace Silk.NET.Shaderc
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 526, Column 45 in shaderc.h")]
+        [NativeName("Src", "Line 532, Column 45 in shaderc.h")]
         public static unsafe CompilationResult* CompileIntoSpv(this Shaderc thisApi, Compiler* compiler, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* source_text, nuint source_text_size, ShaderKind shader_kind, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> input_file_name, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> entry_point_name, CompileOptions* additional_options)
         {
             // SpanOverloader
@@ -393,7 +393,7 @@ namespace Silk.NET.Shaderc
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 526, Column 45 in shaderc.h")]
+        [NativeName("Src", "Line 532, Column 45 in shaderc.h")]
         public static unsafe CompilationResult* CompileIntoSpv(this Shaderc thisApi, Compiler* compiler, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* source_text, nuint source_text_size, ShaderKind shader_kind, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> input_file_name, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string entry_point_name, CompileOptions* additional_options)
         {
             // SpanOverloader
@@ -401,7 +401,7 @@ namespace Silk.NET.Shaderc
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 526, Column 45 in shaderc.h")]
+        [NativeName("Src", "Line 532, Column 45 in shaderc.h")]
         public static unsafe CompilationResult* CompileIntoSpv(this Shaderc thisApi, Compiler* compiler, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* source_text, nuint source_text_size, ShaderKind shader_kind, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string input_file_name, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> entry_point_name, CompileOptions* additional_options)
         {
             // SpanOverloader
@@ -409,7 +409,7 @@ namespace Silk.NET.Shaderc
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 526, Column 45 in shaderc.h")]
+        [NativeName("Src", "Line 532, Column 45 in shaderc.h")]
         public static unsafe CompilationResult* CompileIntoSpv(this Shaderc thisApi, Compiler* compiler, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> source_text, nuint source_text_size, ShaderKind shader_kind, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* input_file_name, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* entry_point_name, CompileOptions* additional_options)
         {
             // SpanOverloader
@@ -417,7 +417,7 @@ namespace Silk.NET.Shaderc
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 526, Column 45 in shaderc.h")]
+        [NativeName("Src", "Line 532, Column 45 in shaderc.h")]
         public static unsafe CompilationResult* CompileIntoSpv(this Shaderc thisApi, Compiler* compiler, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> source_text, nuint source_text_size, ShaderKind shader_kind, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* input_file_name, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> entry_point_name, CompileOptions* additional_options)
         {
             // SpanOverloader
@@ -425,7 +425,7 @@ namespace Silk.NET.Shaderc
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 526, Column 45 in shaderc.h")]
+        [NativeName("Src", "Line 532, Column 45 in shaderc.h")]
         public static unsafe CompilationResult* CompileIntoSpv(this Shaderc thisApi, Compiler* compiler, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> source_text, nuint source_text_size, ShaderKind shader_kind, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* input_file_name, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string entry_point_name, CompileOptions* additional_options)
         {
             // SpanOverloader
@@ -433,7 +433,7 @@ namespace Silk.NET.Shaderc
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 526, Column 45 in shaderc.h")]
+        [NativeName("Src", "Line 532, Column 45 in shaderc.h")]
         public static unsafe CompilationResult* CompileIntoSpv(this Shaderc thisApi, Compiler* compiler, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> source_text, nuint source_text_size, ShaderKind shader_kind, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> input_file_name, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* entry_point_name, CompileOptions* additional_options)
         {
             // SpanOverloader
@@ -441,7 +441,7 @@ namespace Silk.NET.Shaderc
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 526, Column 45 in shaderc.h")]
+        [NativeName("Src", "Line 532, Column 45 in shaderc.h")]
         public static unsafe CompilationResult* CompileIntoSpv(this Shaderc thisApi, Compiler* compiler, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> source_text, nuint source_text_size, ShaderKind shader_kind, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> input_file_name, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> entry_point_name, CompileOptions* additional_options)
         {
             // SpanOverloader
@@ -449,7 +449,7 @@ namespace Silk.NET.Shaderc
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 526, Column 45 in shaderc.h")]
+        [NativeName("Src", "Line 532, Column 45 in shaderc.h")]
         public static unsafe CompilationResult* CompileIntoSpv(this Shaderc thisApi, Compiler* compiler, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> source_text, nuint source_text_size, ShaderKind shader_kind, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> input_file_name, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string entry_point_name, CompileOptions* additional_options)
         {
             // SpanOverloader
@@ -457,7 +457,7 @@ namespace Silk.NET.Shaderc
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 526, Column 45 in shaderc.h")]
+        [NativeName("Src", "Line 532, Column 45 in shaderc.h")]
         public static unsafe CompilationResult* CompileIntoSpv(this Shaderc thisApi, Compiler* compiler, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> source_text, nuint source_text_size, ShaderKind shader_kind, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string input_file_name, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* entry_point_name, CompileOptions* additional_options)
         {
             // SpanOverloader
@@ -465,7 +465,7 @@ namespace Silk.NET.Shaderc
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 526, Column 45 in shaderc.h")]
+        [NativeName("Src", "Line 532, Column 45 in shaderc.h")]
         public static unsafe CompilationResult* CompileIntoSpv(this Shaderc thisApi, Compiler* compiler, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> source_text, nuint source_text_size, ShaderKind shader_kind, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string input_file_name, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> entry_point_name, CompileOptions* additional_options)
         {
             // SpanOverloader
@@ -473,7 +473,7 @@ namespace Silk.NET.Shaderc
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 526, Column 45 in shaderc.h")]
+        [NativeName("Src", "Line 532, Column 45 in shaderc.h")]
         public static unsafe CompilationResult* CompileIntoSpv(this Shaderc thisApi, Compiler* compiler, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> source_text, nuint source_text_size, ShaderKind shader_kind, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string input_file_name, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string entry_point_name, CompileOptions* additional_options)
         {
             // SpanOverloader
@@ -481,7 +481,7 @@ namespace Silk.NET.Shaderc
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 526, Column 45 in shaderc.h")]
+        [NativeName("Src", "Line 532, Column 45 in shaderc.h")]
         public static unsafe CompilationResult* CompileIntoSpv(this Shaderc thisApi, Compiler* compiler, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string source_text, nuint source_text_size, ShaderKind shader_kind, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* input_file_name, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> entry_point_name, CompileOptions* additional_options)
         {
             // SpanOverloader
@@ -489,7 +489,7 @@ namespace Silk.NET.Shaderc
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 526, Column 45 in shaderc.h")]
+        [NativeName("Src", "Line 532, Column 45 in shaderc.h")]
         public static unsafe CompilationResult* CompileIntoSpv(this Shaderc thisApi, Compiler* compiler, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string source_text, nuint source_text_size, ShaderKind shader_kind, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> input_file_name, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* entry_point_name, CompileOptions* additional_options)
         {
             // SpanOverloader
@@ -497,7 +497,7 @@ namespace Silk.NET.Shaderc
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 526, Column 45 in shaderc.h")]
+        [NativeName("Src", "Line 532, Column 45 in shaderc.h")]
         public static unsafe CompilationResult* CompileIntoSpv(this Shaderc thisApi, Compiler* compiler, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string source_text, nuint source_text_size, ShaderKind shader_kind, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> input_file_name, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> entry_point_name, CompileOptions* additional_options)
         {
             // SpanOverloader
@@ -505,7 +505,7 @@ namespace Silk.NET.Shaderc
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 526, Column 45 in shaderc.h")]
+        [NativeName("Src", "Line 532, Column 45 in shaderc.h")]
         public static unsafe CompilationResult* CompileIntoSpv(this Shaderc thisApi, Compiler* compiler, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string source_text, nuint source_text_size, ShaderKind shader_kind, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> input_file_name, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string entry_point_name, CompileOptions* additional_options)
         {
             // SpanOverloader
@@ -513,7 +513,7 @@ namespace Silk.NET.Shaderc
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 526, Column 45 in shaderc.h")]
+        [NativeName("Src", "Line 532, Column 45 in shaderc.h")]
         public static unsafe CompilationResult* CompileIntoSpv(this Shaderc thisApi, Compiler* compiler, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string source_text, nuint source_text_size, ShaderKind shader_kind, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string input_file_name, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> entry_point_name, CompileOptions* additional_options)
         {
             // SpanOverloader
@@ -521,7 +521,7 @@ namespace Silk.NET.Shaderc
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 535, Column 45 in shaderc.h")]
+        [NativeName("Src", "Line 541, Column 45 in shaderc.h")]
         public static unsafe CompilationResult* CompileIntoSpvAssembly(this Shaderc thisApi, Compiler* compiler, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* source_text, nuint source_text_size, ShaderKind shader_kind, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* input_file_name, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> entry_point_name, CompileOptions* additional_options)
         {
             // SpanOverloader
@@ -529,7 +529,7 @@ namespace Silk.NET.Shaderc
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 535, Column 45 in shaderc.h")]
+        [NativeName("Src", "Line 541, Column 45 in shaderc.h")]
         public static unsafe CompilationResult* CompileIntoSpvAssembly(this Shaderc thisApi, Compiler* compiler, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* source_text, nuint source_text_size, ShaderKind shader_kind, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> input_file_name, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* entry_point_name, CompileOptions* additional_options)
         {
             // SpanOverloader
@@ -537,7 +537,7 @@ namespace Silk.NET.Shaderc
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 535, Column 45 in shaderc.h")]
+        [NativeName("Src", "Line 541, Column 45 in shaderc.h")]
         public static unsafe CompilationResult* CompileIntoSpvAssembly(this Shaderc thisApi, Compiler* compiler, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* source_text, nuint source_text_size, ShaderKind shader_kind, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> input_file_name, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> entry_point_name, CompileOptions* additional_options)
         {
             // SpanOverloader
@@ -545,7 +545,7 @@ namespace Silk.NET.Shaderc
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 535, Column 45 in shaderc.h")]
+        [NativeName("Src", "Line 541, Column 45 in shaderc.h")]
         public static unsafe CompilationResult* CompileIntoSpvAssembly(this Shaderc thisApi, Compiler* compiler, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* source_text, nuint source_text_size, ShaderKind shader_kind, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> input_file_name, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string entry_point_name, CompileOptions* additional_options)
         {
             // SpanOverloader
@@ -553,7 +553,7 @@ namespace Silk.NET.Shaderc
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 535, Column 45 in shaderc.h")]
+        [NativeName("Src", "Line 541, Column 45 in shaderc.h")]
         public static unsafe CompilationResult* CompileIntoSpvAssembly(this Shaderc thisApi, Compiler* compiler, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* source_text, nuint source_text_size, ShaderKind shader_kind, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string input_file_name, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> entry_point_name, CompileOptions* additional_options)
         {
             // SpanOverloader
@@ -561,7 +561,7 @@ namespace Silk.NET.Shaderc
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 535, Column 45 in shaderc.h")]
+        [NativeName("Src", "Line 541, Column 45 in shaderc.h")]
         public static unsafe CompilationResult* CompileIntoSpvAssembly(this Shaderc thisApi, Compiler* compiler, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> source_text, nuint source_text_size, ShaderKind shader_kind, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* input_file_name, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* entry_point_name, CompileOptions* additional_options)
         {
             // SpanOverloader
@@ -569,7 +569,7 @@ namespace Silk.NET.Shaderc
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 535, Column 45 in shaderc.h")]
+        [NativeName("Src", "Line 541, Column 45 in shaderc.h")]
         public static unsafe CompilationResult* CompileIntoSpvAssembly(this Shaderc thisApi, Compiler* compiler, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> source_text, nuint source_text_size, ShaderKind shader_kind, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* input_file_name, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> entry_point_name, CompileOptions* additional_options)
         {
             // SpanOverloader
@@ -577,7 +577,7 @@ namespace Silk.NET.Shaderc
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 535, Column 45 in shaderc.h")]
+        [NativeName("Src", "Line 541, Column 45 in shaderc.h")]
         public static unsafe CompilationResult* CompileIntoSpvAssembly(this Shaderc thisApi, Compiler* compiler, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> source_text, nuint source_text_size, ShaderKind shader_kind, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* input_file_name, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string entry_point_name, CompileOptions* additional_options)
         {
             // SpanOverloader
@@ -585,7 +585,7 @@ namespace Silk.NET.Shaderc
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 535, Column 45 in shaderc.h")]
+        [NativeName("Src", "Line 541, Column 45 in shaderc.h")]
         public static unsafe CompilationResult* CompileIntoSpvAssembly(this Shaderc thisApi, Compiler* compiler, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> source_text, nuint source_text_size, ShaderKind shader_kind, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> input_file_name, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* entry_point_name, CompileOptions* additional_options)
         {
             // SpanOverloader
@@ -593,7 +593,7 @@ namespace Silk.NET.Shaderc
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 535, Column 45 in shaderc.h")]
+        [NativeName("Src", "Line 541, Column 45 in shaderc.h")]
         public static unsafe CompilationResult* CompileIntoSpvAssembly(this Shaderc thisApi, Compiler* compiler, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> source_text, nuint source_text_size, ShaderKind shader_kind, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> input_file_name, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> entry_point_name, CompileOptions* additional_options)
         {
             // SpanOverloader
@@ -601,7 +601,7 @@ namespace Silk.NET.Shaderc
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 535, Column 45 in shaderc.h")]
+        [NativeName("Src", "Line 541, Column 45 in shaderc.h")]
         public static unsafe CompilationResult* CompileIntoSpvAssembly(this Shaderc thisApi, Compiler* compiler, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> source_text, nuint source_text_size, ShaderKind shader_kind, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> input_file_name, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string entry_point_name, CompileOptions* additional_options)
         {
             // SpanOverloader
@@ -609,7 +609,7 @@ namespace Silk.NET.Shaderc
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 535, Column 45 in shaderc.h")]
+        [NativeName("Src", "Line 541, Column 45 in shaderc.h")]
         public static unsafe CompilationResult* CompileIntoSpvAssembly(this Shaderc thisApi, Compiler* compiler, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> source_text, nuint source_text_size, ShaderKind shader_kind, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string input_file_name, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* entry_point_name, CompileOptions* additional_options)
         {
             // SpanOverloader
@@ -617,7 +617,7 @@ namespace Silk.NET.Shaderc
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 535, Column 45 in shaderc.h")]
+        [NativeName("Src", "Line 541, Column 45 in shaderc.h")]
         public static unsafe CompilationResult* CompileIntoSpvAssembly(this Shaderc thisApi, Compiler* compiler, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> source_text, nuint source_text_size, ShaderKind shader_kind, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string input_file_name, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> entry_point_name, CompileOptions* additional_options)
         {
             // SpanOverloader
@@ -625,7 +625,7 @@ namespace Silk.NET.Shaderc
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 535, Column 45 in shaderc.h")]
+        [NativeName("Src", "Line 541, Column 45 in shaderc.h")]
         public static unsafe CompilationResult* CompileIntoSpvAssembly(this Shaderc thisApi, Compiler* compiler, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> source_text, nuint source_text_size, ShaderKind shader_kind, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string input_file_name, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string entry_point_name, CompileOptions* additional_options)
         {
             // SpanOverloader
@@ -633,7 +633,7 @@ namespace Silk.NET.Shaderc
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 535, Column 45 in shaderc.h")]
+        [NativeName("Src", "Line 541, Column 45 in shaderc.h")]
         public static unsafe CompilationResult* CompileIntoSpvAssembly(this Shaderc thisApi, Compiler* compiler, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string source_text, nuint source_text_size, ShaderKind shader_kind, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* input_file_name, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> entry_point_name, CompileOptions* additional_options)
         {
             // SpanOverloader
@@ -641,7 +641,7 @@ namespace Silk.NET.Shaderc
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 535, Column 45 in shaderc.h")]
+        [NativeName("Src", "Line 541, Column 45 in shaderc.h")]
         public static unsafe CompilationResult* CompileIntoSpvAssembly(this Shaderc thisApi, Compiler* compiler, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string source_text, nuint source_text_size, ShaderKind shader_kind, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> input_file_name, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* entry_point_name, CompileOptions* additional_options)
         {
             // SpanOverloader
@@ -649,7 +649,7 @@ namespace Silk.NET.Shaderc
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 535, Column 45 in shaderc.h")]
+        [NativeName("Src", "Line 541, Column 45 in shaderc.h")]
         public static unsafe CompilationResult* CompileIntoSpvAssembly(this Shaderc thisApi, Compiler* compiler, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string source_text, nuint source_text_size, ShaderKind shader_kind, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> input_file_name, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> entry_point_name, CompileOptions* additional_options)
         {
             // SpanOverloader
@@ -657,7 +657,7 @@ namespace Silk.NET.Shaderc
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 535, Column 45 in shaderc.h")]
+        [NativeName("Src", "Line 541, Column 45 in shaderc.h")]
         public static unsafe CompilationResult* CompileIntoSpvAssembly(this Shaderc thisApi, Compiler* compiler, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string source_text, nuint source_text_size, ShaderKind shader_kind, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> input_file_name, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string entry_point_name, CompileOptions* additional_options)
         {
             // SpanOverloader
@@ -665,7 +665,7 @@ namespace Silk.NET.Shaderc
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 535, Column 45 in shaderc.h")]
+        [NativeName("Src", "Line 541, Column 45 in shaderc.h")]
         public static unsafe CompilationResult* CompileIntoSpvAssembly(this Shaderc thisApi, Compiler* compiler, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string source_text, nuint source_text_size, ShaderKind shader_kind, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string input_file_name, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> entry_point_name, CompileOptions* additional_options)
         {
             // SpanOverloader
@@ -673,7 +673,7 @@ namespace Silk.NET.Shaderc
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 543, Column 45 in shaderc.h")]
+        [NativeName("Src", "Line 549, Column 45 in shaderc.h")]
         public static unsafe CompilationResult* CompileIntoPreprocessedText(this Shaderc thisApi, Compiler* compiler, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* source_text, nuint source_text_size, ShaderKind shader_kind, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* input_file_name, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> entry_point_name, CompileOptions* additional_options)
         {
             // SpanOverloader
@@ -681,7 +681,7 @@ namespace Silk.NET.Shaderc
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 543, Column 45 in shaderc.h")]
+        [NativeName("Src", "Line 549, Column 45 in shaderc.h")]
         public static unsafe CompilationResult* CompileIntoPreprocessedText(this Shaderc thisApi, Compiler* compiler, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* source_text, nuint source_text_size, ShaderKind shader_kind, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> input_file_name, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* entry_point_name, CompileOptions* additional_options)
         {
             // SpanOverloader
@@ -689,7 +689,7 @@ namespace Silk.NET.Shaderc
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 543, Column 45 in shaderc.h")]
+        [NativeName("Src", "Line 549, Column 45 in shaderc.h")]
         public static unsafe CompilationResult* CompileIntoPreprocessedText(this Shaderc thisApi, Compiler* compiler, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* source_text, nuint source_text_size, ShaderKind shader_kind, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> input_file_name, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> entry_point_name, CompileOptions* additional_options)
         {
             // SpanOverloader
@@ -697,7 +697,7 @@ namespace Silk.NET.Shaderc
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 543, Column 45 in shaderc.h")]
+        [NativeName("Src", "Line 549, Column 45 in shaderc.h")]
         public static unsafe CompilationResult* CompileIntoPreprocessedText(this Shaderc thisApi, Compiler* compiler, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* source_text, nuint source_text_size, ShaderKind shader_kind, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> input_file_name, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string entry_point_name, CompileOptions* additional_options)
         {
             // SpanOverloader
@@ -705,7 +705,7 @@ namespace Silk.NET.Shaderc
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 543, Column 45 in shaderc.h")]
+        [NativeName("Src", "Line 549, Column 45 in shaderc.h")]
         public static unsafe CompilationResult* CompileIntoPreprocessedText(this Shaderc thisApi, Compiler* compiler, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* source_text, nuint source_text_size, ShaderKind shader_kind, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string input_file_name, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> entry_point_name, CompileOptions* additional_options)
         {
             // SpanOverloader
@@ -713,7 +713,7 @@ namespace Silk.NET.Shaderc
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 543, Column 45 in shaderc.h")]
+        [NativeName("Src", "Line 549, Column 45 in shaderc.h")]
         public static unsafe CompilationResult* CompileIntoPreprocessedText(this Shaderc thisApi, Compiler* compiler, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> source_text, nuint source_text_size, ShaderKind shader_kind, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* input_file_name, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* entry_point_name, CompileOptions* additional_options)
         {
             // SpanOverloader
@@ -721,7 +721,7 @@ namespace Silk.NET.Shaderc
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 543, Column 45 in shaderc.h")]
+        [NativeName("Src", "Line 549, Column 45 in shaderc.h")]
         public static unsafe CompilationResult* CompileIntoPreprocessedText(this Shaderc thisApi, Compiler* compiler, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> source_text, nuint source_text_size, ShaderKind shader_kind, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* input_file_name, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> entry_point_name, CompileOptions* additional_options)
         {
             // SpanOverloader
@@ -729,7 +729,7 @@ namespace Silk.NET.Shaderc
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 543, Column 45 in shaderc.h")]
+        [NativeName("Src", "Line 549, Column 45 in shaderc.h")]
         public static unsafe CompilationResult* CompileIntoPreprocessedText(this Shaderc thisApi, Compiler* compiler, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> source_text, nuint source_text_size, ShaderKind shader_kind, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* input_file_name, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string entry_point_name, CompileOptions* additional_options)
         {
             // SpanOverloader
@@ -737,7 +737,7 @@ namespace Silk.NET.Shaderc
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 543, Column 45 in shaderc.h")]
+        [NativeName("Src", "Line 549, Column 45 in shaderc.h")]
         public static unsafe CompilationResult* CompileIntoPreprocessedText(this Shaderc thisApi, Compiler* compiler, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> source_text, nuint source_text_size, ShaderKind shader_kind, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> input_file_name, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* entry_point_name, CompileOptions* additional_options)
         {
             // SpanOverloader
@@ -745,7 +745,7 @@ namespace Silk.NET.Shaderc
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 543, Column 45 in shaderc.h")]
+        [NativeName("Src", "Line 549, Column 45 in shaderc.h")]
         public static unsafe CompilationResult* CompileIntoPreprocessedText(this Shaderc thisApi, Compiler* compiler, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> source_text, nuint source_text_size, ShaderKind shader_kind, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> input_file_name, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> entry_point_name, CompileOptions* additional_options)
         {
             // SpanOverloader
@@ -753,7 +753,7 @@ namespace Silk.NET.Shaderc
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 543, Column 45 in shaderc.h")]
+        [NativeName("Src", "Line 549, Column 45 in shaderc.h")]
         public static unsafe CompilationResult* CompileIntoPreprocessedText(this Shaderc thisApi, Compiler* compiler, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> source_text, nuint source_text_size, ShaderKind shader_kind, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> input_file_name, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string entry_point_name, CompileOptions* additional_options)
         {
             // SpanOverloader
@@ -761,7 +761,7 @@ namespace Silk.NET.Shaderc
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 543, Column 45 in shaderc.h")]
+        [NativeName("Src", "Line 549, Column 45 in shaderc.h")]
         public static unsafe CompilationResult* CompileIntoPreprocessedText(this Shaderc thisApi, Compiler* compiler, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> source_text, nuint source_text_size, ShaderKind shader_kind, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string input_file_name, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* entry_point_name, CompileOptions* additional_options)
         {
             // SpanOverloader
@@ -769,7 +769,7 @@ namespace Silk.NET.Shaderc
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 543, Column 45 in shaderc.h")]
+        [NativeName("Src", "Line 549, Column 45 in shaderc.h")]
         public static unsafe CompilationResult* CompileIntoPreprocessedText(this Shaderc thisApi, Compiler* compiler, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> source_text, nuint source_text_size, ShaderKind shader_kind, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string input_file_name, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> entry_point_name, CompileOptions* additional_options)
         {
             // SpanOverloader
@@ -777,7 +777,7 @@ namespace Silk.NET.Shaderc
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 543, Column 45 in shaderc.h")]
+        [NativeName("Src", "Line 549, Column 45 in shaderc.h")]
         public static unsafe CompilationResult* CompileIntoPreprocessedText(this Shaderc thisApi, Compiler* compiler, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> source_text, nuint source_text_size, ShaderKind shader_kind, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string input_file_name, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string entry_point_name, CompileOptions* additional_options)
         {
             // SpanOverloader
@@ -785,7 +785,7 @@ namespace Silk.NET.Shaderc
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 543, Column 45 in shaderc.h")]
+        [NativeName("Src", "Line 549, Column 45 in shaderc.h")]
         public static unsafe CompilationResult* CompileIntoPreprocessedText(this Shaderc thisApi, Compiler* compiler, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string source_text, nuint source_text_size, ShaderKind shader_kind, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* input_file_name, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> entry_point_name, CompileOptions* additional_options)
         {
             // SpanOverloader
@@ -793,7 +793,7 @@ namespace Silk.NET.Shaderc
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 543, Column 45 in shaderc.h")]
+        [NativeName("Src", "Line 549, Column 45 in shaderc.h")]
         public static unsafe CompilationResult* CompileIntoPreprocessedText(this Shaderc thisApi, Compiler* compiler, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string source_text, nuint source_text_size, ShaderKind shader_kind, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> input_file_name, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* entry_point_name, CompileOptions* additional_options)
         {
             // SpanOverloader
@@ -801,7 +801,7 @@ namespace Silk.NET.Shaderc
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 543, Column 45 in shaderc.h")]
+        [NativeName("Src", "Line 549, Column 45 in shaderc.h")]
         public static unsafe CompilationResult* CompileIntoPreprocessedText(this Shaderc thisApi, Compiler* compiler, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string source_text, nuint source_text_size, ShaderKind shader_kind, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> input_file_name, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> entry_point_name, CompileOptions* additional_options)
         {
             // SpanOverloader
@@ -809,7 +809,7 @@ namespace Silk.NET.Shaderc
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 543, Column 45 in shaderc.h")]
+        [NativeName("Src", "Line 549, Column 45 in shaderc.h")]
         public static unsafe CompilationResult* CompileIntoPreprocessedText(this Shaderc thisApi, Compiler* compiler, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string source_text, nuint source_text_size, ShaderKind shader_kind, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> input_file_name, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string entry_point_name, CompileOptions* additional_options)
         {
             // SpanOverloader
@@ -817,7 +817,7 @@ namespace Silk.NET.Shaderc
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 543, Column 45 in shaderc.h")]
+        [NativeName("Src", "Line 549, Column 45 in shaderc.h")]
         public static unsafe CompilationResult* CompileIntoPreprocessedText(this Shaderc thisApi, Compiler* compiler, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string source_text, nuint source_text_size, ShaderKind shader_kind, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string input_file_name, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> entry_point_name, CompileOptions* additional_options)
         {
             // SpanOverloader
@@ -825,7 +825,7 @@ namespace Silk.NET.Shaderc
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 558, Column 45 in shaderc.h")]
+        [NativeName("Src", "Line 564, Column 45 in shaderc.h")]
         public static unsafe CompilationResult* AssembleIntoSpv(this Shaderc thisApi, Compiler* compiler, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> source_assembly, nuint source_assembly_size, CompileOptions* additional_options)
         {
             // SpanOverloader
@@ -833,7 +833,7 @@ namespace Silk.NET.Shaderc
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 600, Column 21 in shaderc.h")]
+        [NativeName("Src", "Line 606, Column 21 in shaderc.h")]
         public static unsafe void GetSpvVersion(this Shaderc thisApi, uint* version, Span<uint> revision)
         {
             // SpanOverloader
@@ -841,7 +841,7 @@ namespace Silk.NET.Shaderc
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 600, Column 21 in shaderc.h")]
+        [NativeName("Src", "Line 606, Column 21 in shaderc.h")]
         public static unsafe void GetSpvVersion(this Shaderc thisApi, Span<uint> version, uint* revision)
         {
             // SpanOverloader
@@ -849,7 +849,7 @@ namespace Silk.NET.Shaderc
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 600, Column 21 in shaderc.h")]
+        [NativeName("Src", "Line 606, Column 21 in shaderc.h")]
         public static unsafe void GetSpvVersion(this Shaderc thisApi, Span<uint> version, Span<uint> revision)
         {
             // SpanOverloader
@@ -857,7 +857,7 @@ namespace Silk.NET.Shaderc
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 606, Column 21 in shaderc.h")]
+        [NativeName("Src", "Line 612, Column 21 in shaderc.h")]
         public static unsafe Silk.NET.Core.Bool32 ParseVersionProfile(this Shaderc thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* str, int* version, Span<Profile> profile)
         {
             // SpanOverloader
@@ -865,7 +865,7 @@ namespace Silk.NET.Shaderc
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 606, Column 21 in shaderc.h")]
+        [NativeName("Src", "Line 612, Column 21 in shaderc.h")]
         public static unsafe Silk.NET.Core.Bool32 ParseVersionProfile(this Shaderc thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* str, Span<int> version, Profile* profile)
         {
             // SpanOverloader
@@ -873,7 +873,7 @@ namespace Silk.NET.Shaderc
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 606, Column 21 in shaderc.h")]
+        [NativeName("Src", "Line 612, Column 21 in shaderc.h")]
         public static unsafe Silk.NET.Core.Bool32 ParseVersionProfile(this Shaderc thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* str, Span<int> version, Span<Profile> profile)
         {
             // SpanOverloader
@@ -881,7 +881,7 @@ namespace Silk.NET.Shaderc
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 606, Column 21 in shaderc.h")]
+        [NativeName("Src", "Line 612, Column 21 in shaderc.h")]
         public static unsafe Silk.NET.Core.Bool32 ParseVersionProfile(this Shaderc thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> str, int* version, Profile* profile)
         {
             // SpanOverloader
@@ -889,7 +889,7 @@ namespace Silk.NET.Shaderc
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 606, Column 21 in shaderc.h")]
+        [NativeName("Src", "Line 612, Column 21 in shaderc.h")]
         public static unsafe Silk.NET.Core.Bool32 ParseVersionProfile(this Shaderc thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> str, int* version, Span<Profile> profile)
         {
             // SpanOverloader
@@ -897,7 +897,7 @@ namespace Silk.NET.Shaderc
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 606, Column 21 in shaderc.h")]
+        [NativeName("Src", "Line 612, Column 21 in shaderc.h")]
         public static unsafe Silk.NET.Core.Bool32 ParseVersionProfile(this Shaderc thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> str, Span<int> version, Profile* profile)
         {
             // SpanOverloader
@@ -905,7 +905,7 @@ namespace Silk.NET.Shaderc
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 606, Column 21 in shaderc.h")]
+        [NativeName("Src", "Line 612, Column 21 in shaderc.h")]
         public static unsafe Silk.NET.Core.Bool32 ParseVersionProfile(this Shaderc thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> str, Span<int> version, Span<Profile> profile)
         {
             // SpanOverloader
@@ -913,7 +913,7 @@ namespace Silk.NET.Shaderc
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 606, Column 21 in shaderc.h")]
+        [NativeName("Src", "Line 612, Column 21 in shaderc.h")]
         public static unsafe Silk.NET.Core.Bool32 ParseVersionProfile(this Shaderc thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string str, int* version, Span<Profile> profile)
         {
             // SpanOverloader
@@ -921,7 +921,7 @@ namespace Silk.NET.Shaderc
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 606, Column 21 in shaderc.h")]
+        [NativeName("Src", "Line 612, Column 21 in shaderc.h")]
         public static unsafe Silk.NET.Core.Bool32 ParseVersionProfile(this Shaderc thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string str, Span<int> version, Profile* profile)
         {
             // SpanOverloader
@@ -929,7 +929,7 @@ namespace Silk.NET.Shaderc
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 606, Column 21 in shaderc.h")]
+        [NativeName("Src", "Line 612, Column 21 in shaderc.h")]
         public static unsafe Silk.NET.Core.Bool32 ParseVersionProfile(this Shaderc thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string str, Span<int> version, Span<Profile> profile)
         {
             // SpanOverloader

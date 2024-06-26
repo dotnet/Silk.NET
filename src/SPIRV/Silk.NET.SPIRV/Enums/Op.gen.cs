@@ -788,6 +788,14 @@ namespace Silk.NET.SPIRV
         ImageBlockMatchSsdqcom = 0x1182,
         [NativeName("Name", "SpvOpImageBlockMatchSADQCOM")]
         ImageBlockMatchSadqcom = 0x1183,
+        [NativeName("Name", "SpvOpImageBlockMatchWindowSSDQCOM")]
+        ImageBlockMatchWindowSsdqcom = 0x1194,
+        [NativeName("Name", "SpvOpImageBlockMatchWindowSADQCOM")]
+        ImageBlockMatchWindowSadqcom = 0x1195,
+        [NativeName("Name", "SpvOpImageBlockMatchGatherSSDQCOM")]
+        ImageBlockMatchGatherSsdqcom = 0x1196,
+        [NativeName("Name", "SpvOpImageBlockMatchGatherSADQCOM")]
+        ImageBlockMatchGatherSadqcom = 0x1197,
         [NativeName("Name", "SpvOpGroupIAddNonUniformAMD")]
         GroupIAddNonUniformAmd = 0x1388,
         [NativeName("Name", "SpvOpGroupFAddNonUniformAMD")]
@@ -816,6 +824,10 @@ namespace Silk.NET.SPIRV
         FinishWritingNodePayloadAmdx = 0x13D6,
         [NativeName("Name", "SpvOpInitializeNodePayloadsAMDX")]
         InitializeNodePayloadsAmdx = 0x13E2,
+        [NativeName("Name", "SpvOpGroupNonUniformQuadAllKHR")]
+        GroupNonUniformQuadAllKhr = 0x13F6,
+        [NativeName("Name", "SpvOpGroupNonUniformQuadAnyKHR")]
+        GroupNonUniformQuadAnyKhr = 0x13F7,
         [NativeName("Name", "SpvOpHitObjectRecordHitMotionNV")]
         HitObjectRecordHitMotionNV = 0x1481,
         [NativeName("Name", "SpvOpHitObjectRecordHitWithIndexMotionNV")]
@@ -952,6 +964,8 @@ namespace Silk.NET.SPIRV
         ConvertSampledImageToUnv = 0x1514,
         [NativeName("Name", "SpvOpSamplerImageAddressingModeNV")]
         SamplerImageAddressingModeNV = 0x1515,
+        [NativeName("Name", "SpvOpRawAccessChainNV")]
+        RawAccessChainNV = 0x1516,
         [NativeName("Name", "SpvOpSubgroupShuffleINTEL")]
         SubgroupShuffleIntel = 0x15C3,
         [NativeName("Name", "SpvOpSubgroupShuffleDownINTEL")]
@@ -1434,6 +1448,8 @@ namespace Silk.NET.SPIRV
         ConstantCompositeContinuedIntel = 0x17CB,
         [NativeName("Name", "SpvOpSpecConstantCompositeContinuedINTEL")]
         SpecConstantCompositeContinuedIntel = 0x17CC,
+        [NativeName("Name", "SpvOpCompositeConstructContinuedINTEL")]
+        CompositeConstructContinuedIntel = 0x17D0,
         [NativeName("Name", "SpvOpConvertFToBF16INTEL")]
         ConvertFToBF16intel = 0x17E4,
         [NativeName("Name", "SpvOpConvertBF16ToFINTEL")]
@@ -1458,6 +1474,10 @@ namespace Silk.NET.SPIRV
         GroupLogicalOrKhr = 0x1907,
         [NativeName("Name", "SpvOpGroupLogicalXorKHR")]
         GroupLogicalXorKhr = 0x1908,
+        [NativeName("Name", "SpvOpMaskedGatherINTEL")]
+        MaskedGatherIntel = 0x191C,
+        [NativeName("Name", "SpvOpMaskedScatterINTEL")]
+        MaskedScatterIntel = 0x191D,
         [NativeName("Name", "SpvOpMax")]
         Max = 0x7FFFFFFF,
     }

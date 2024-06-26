@@ -27,7 +27,13 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.EXT
         public unsafe partial void ColorPointer([Flow(Silk.NET.Core.Native.FlowDirection.In)] int size, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT type, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint stride, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint count, [Count(Computed = "size, type, stride, count"), Flow(Silk.NET.Core.Native.FlowDirection.In)] void* pointer);
 
         [NativeApi(EntryPoint = "glColorPointerEXT", Convention = CallingConvention.Winapi)]
+        public partial void ColorPointer([Flow(Silk.NET.Core.Native.FlowDirection.In)] int size, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT type, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint stride, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint count, [Count(Computed = "size, type, stride, count"), Flow(Silk.NET.Core.Native.FlowDirection.In)] nint pointer);
+
+        [NativeApi(EntryPoint = "glColorPointerEXT", Convention = CallingConvention.Winapi)]
         public unsafe partial void ColorPointer([Flow(Silk.NET.Core.Native.FlowDirection.In)] int size, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ColorPointerType type, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint stride, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint count, [Count(Computed = "size, type, stride, count"), Flow(Silk.NET.Core.Native.FlowDirection.In)] void* pointer);
+
+        [NativeApi(EntryPoint = "glColorPointerEXT", Convention = CallingConvention.Winapi)]
+        public partial void ColorPointer([Flow(Silk.NET.Core.Native.FlowDirection.In)] int size, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ColorPointerType type, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint stride, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint count, [Count(Computed = "size, type, stride, count"), Flow(Silk.NET.Core.Native.FlowDirection.In)] nint pointer);
 
         [NativeApi(EntryPoint = "glDrawArraysEXT", Convention = CallingConvention.Winapi)]
         public partial void DrawArrays([Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT mode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int first, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint count);
@@ -38,8 +44,12 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.EXT
         [NativeApi(EntryPoint = "glEdgeFlagPointerEXT", Convention = CallingConvention.Winapi)]
         public unsafe partial void EdgeFlagPointer([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint stride, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint count, [Count(Computed = "stride, count"), Flow(Silk.NET.Core.Native.FlowDirection.In)] bool* pointer);
 
+        [Obsolete("This overload exposes native-sized integer parameters (which are expressed as pointers in the original C function) as C# references due to a historical error, please consider using overloads that expose the following parameters as raw pointers or native integers instead: pointer")]
         [NativeApi(EntryPoint = "glEdgeFlagPointerEXT", Convention = CallingConvention.Winapi)]
-        public partial void EdgeFlagPointer([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint stride, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint count, [Count(Computed = "stride, count"), Flow(Silk.NET.Core.Native.FlowDirection.In)] in bool pointer);
+        public partial void EdgeFlagPointer([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint stride, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint count, [Count(Computed = "stride, count"), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in bool pointer);
+
+        [NativeApi(EntryPoint = "glEdgeFlagPointerEXT", Convention = CallingConvention.Winapi)]
+        public partial void EdgeFlagPointer([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint stride, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint count, [Count(Computed = "stride, count"), Flow(Silk.NET.Core.Native.FlowDirection.In)] nint pointer);
 
         [NativeApi(EntryPoint = "glGetPointervEXT", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetPointer([Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT pname, [Count(Count = 1), Flow(Silk.NET.Core.Native.FlowDirection.Out)] void** @params);
@@ -57,25 +67,49 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.EXT
         public unsafe partial void IndexPointer([Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT type, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint stride, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint count, [Count(Computed = "type, stride, count"), Flow(Silk.NET.Core.Native.FlowDirection.In)] void* pointer);
 
         [NativeApi(EntryPoint = "glIndexPointerEXT", Convention = CallingConvention.Winapi)]
+        public partial void IndexPointer([Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT type, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint stride, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint count, [Count(Computed = "type, stride, count"), Flow(Silk.NET.Core.Native.FlowDirection.In)] nint pointer);
+
+        [NativeApi(EntryPoint = "glIndexPointerEXT", Convention = CallingConvention.Winapi)]
         public unsafe partial void IndexPointer([Flow(Silk.NET.Core.Native.FlowDirection.In)] IndexPointerType type, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint stride, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint count, [Count(Computed = "type, stride, count"), Flow(Silk.NET.Core.Native.FlowDirection.In)] void* pointer);
+
+        [NativeApi(EntryPoint = "glIndexPointerEXT", Convention = CallingConvention.Winapi)]
+        public partial void IndexPointer([Flow(Silk.NET.Core.Native.FlowDirection.In)] IndexPointerType type, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint stride, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint count, [Count(Computed = "type, stride, count"), Flow(Silk.NET.Core.Native.FlowDirection.In)] nint pointer);
 
         [NativeApi(EntryPoint = "glNormalPointerEXT", Convention = CallingConvention.Winapi)]
         public unsafe partial void NormalPointer([Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT type, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint stride, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint count, [Count(Computed = "type, stride, count"), Flow(Silk.NET.Core.Native.FlowDirection.In)] void* pointer);
 
         [NativeApi(EntryPoint = "glNormalPointerEXT", Convention = CallingConvention.Winapi)]
+        public partial void NormalPointer([Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT type, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint stride, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint count, [Count(Computed = "type, stride, count"), Flow(Silk.NET.Core.Native.FlowDirection.In)] nint pointer);
+
+        [NativeApi(EntryPoint = "glNormalPointerEXT", Convention = CallingConvention.Winapi)]
         public unsafe partial void NormalPointer([Flow(Silk.NET.Core.Native.FlowDirection.In)] NormalPointerType type, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint stride, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint count, [Count(Computed = "type, stride, count"), Flow(Silk.NET.Core.Native.FlowDirection.In)] void* pointer);
+
+        [NativeApi(EntryPoint = "glNormalPointerEXT", Convention = CallingConvention.Winapi)]
+        public partial void NormalPointer([Flow(Silk.NET.Core.Native.FlowDirection.In)] NormalPointerType type, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint stride, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint count, [Count(Computed = "type, stride, count"), Flow(Silk.NET.Core.Native.FlowDirection.In)] nint pointer);
 
         [NativeApi(EntryPoint = "glTexCoordPointerEXT", Convention = CallingConvention.Winapi)]
         public unsafe partial void TexCoordPointer([Flow(Silk.NET.Core.Native.FlowDirection.In)] int size, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT type, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint stride, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint count, [Count(Computed = "size, type, stride, count"), Flow(Silk.NET.Core.Native.FlowDirection.In)] void* pointer);
 
         [NativeApi(EntryPoint = "glTexCoordPointerEXT", Convention = CallingConvention.Winapi)]
+        public partial void TexCoordPointer([Flow(Silk.NET.Core.Native.FlowDirection.In)] int size, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT type, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint stride, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint count, [Count(Computed = "size, type, stride, count"), Flow(Silk.NET.Core.Native.FlowDirection.In)] nint pointer);
+
+        [NativeApi(EntryPoint = "glTexCoordPointerEXT", Convention = CallingConvention.Winapi)]
         public unsafe partial void TexCoordPointer([Flow(Silk.NET.Core.Native.FlowDirection.In)] int size, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TexCoordPointerType type, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint stride, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint count, [Count(Computed = "size, type, stride, count"), Flow(Silk.NET.Core.Native.FlowDirection.In)] void* pointer);
+
+        [NativeApi(EntryPoint = "glTexCoordPointerEXT", Convention = CallingConvention.Winapi)]
+        public partial void TexCoordPointer([Flow(Silk.NET.Core.Native.FlowDirection.In)] int size, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TexCoordPointerType type, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint stride, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint count, [Count(Computed = "size, type, stride, count"), Flow(Silk.NET.Core.Native.FlowDirection.In)] nint pointer);
 
         [NativeApi(EntryPoint = "glVertexPointerEXT", Convention = CallingConvention.Winapi)]
         public unsafe partial void VertexPointer([Flow(Silk.NET.Core.Native.FlowDirection.In)] int size, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT type, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint stride, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint count, [Count(Computed = "size, type, stride, count"), Flow(Silk.NET.Core.Native.FlowDirection.In)] void* pointer);
 
         [NativeApi(EntryPoint = "glVertexPointerEXT", Convention = CallingConvention.Winapi)]
+        public partial void VertexPointer([Flow(Silk.NET.Core.Native.FlowDirection.In)] int size, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT type, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint stride, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint count, [Count(Computed = "size, type, stride, count"), Flow(Silk.NET.Core.Native.FlowDirection.In)] nint pointer);
+
+        [NativeApi(EntryPoint = "glVertexPointerEXT", Convention = CallingConvention.Winapi)]
         public unsafe partial void VertexPointer([Flow(Silk.NET.Core.Native.FlowDirection.In)] int size, [Flow(Silk.NET.Core.Native.FlowDirection.In)] VertexPointerType type, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint stride, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint count, [Count(Computed = "size, type, stride, count"), Flow(Silk.NET.Core.Native.FlowDirection.In)] void* pointer);
+
+        [NativeApi(EntryPoint = "glVertexPointerEXT", Convention = CallingConvention.Winapi)]
+        public partial void VertexPointer([Flow(Silk.NET.Core.Native.FlowDirection.In)] int size, [Flow(Silk.NET.Core.Native.FlowDirection.In)] VertexPointerType type, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint stride, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint count, [Count(Computed = "size, type, stride, count"), Flow(Silk.NET.Core.Native.FlowDirection.In)] nint pointer);
 
         public unsafe void* GetPointer([Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT pname)
         {

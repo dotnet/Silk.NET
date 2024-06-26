@@ -21,9 +21,14 @@ namespace Silk.NET.OpenXR
         [Obsolete("Deprecated in favour of \"AcceptDeskToTableMigrationBitFB\"")]
         [NativeName("Name", "XR_SEMANTIC_LABELS_SUPPORT_ACCEPT_DESK_TO_TABLE_MIGRATION_BIT_FB")]
         SemanticLabelsSupportAcceptDeskToTableMigrationBitFB = 2,
+        [Obsolete("Deprecated in favour of \"AcceptInvisibleWallFaceBitFB\"")]
+        [NativeName("Name", "XR_SEMANTIC_LABELS_SUPPORT_ACCEPT_INVISIBLE_WALL_FACE_BIT_FB")]
+        SemanticLabelsSupportAcceptInvisibleWallFaceBitFB = 4,
         [NativeName("Name", "XR_SEMANTIC_LABELS_SUPPORT_MULTIPLE_SEMANTIC_LABELS_BIT_FB")]
         MultipleSemanticLabelsBitFB = 1,
         [NativeName("Name", "XR_SEMANTIC_LABELS_SUPPORT_ACCEPT_DESK_TO_TABLE_MIGRATION_BIT_FB")]
         AcceptDeskToTableMigrationBitFB = 2,
+        [NativeName("Name", "XR_SEMANTIC_LABELS_SUPPORT_ACCEPT_INVISIBLE_WALL_FACE_BIT_FB")]
+        AcceptInvisibleWallFaceBitFB = 4,
     }
 }

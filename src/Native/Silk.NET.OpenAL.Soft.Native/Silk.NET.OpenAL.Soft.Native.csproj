@@ -1,14 +1,10 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
-  <PropertyGroup>
-    <SilkNativePackage>true</SilkNativePackage>
-  </PropertyGroup>
-
   <Import Project="..\..\..\build\props\common.props" />
 
   <PropertyGroup>
     <TargetFrameworks>netstandard2.0;net4.6.1</TargetFrameworks>
-    <PackageVersion>1.21.1.2</PackageVersion>
+    <PackageVersion>1.23.1</PackageVersion>
     <Authors>.NET Foundation and Contributors</Authors>
     <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
     <PackageLicenseExpression>LGPL-2.0-or-later</PackageLicenseExpression>
@@ -16,16 +12,6 @@
     <Description>Multi-platform native library for OpenAL Soft.</Description>
     <RepositoryType>git</RepositoryType>
     <RepositoryUrl>https://github.com/kcat/openal-soft</RepositoryUrl>
-    <IncludeBuildOutput>false</IncludeBuildOutput>
-    <IncludeContentInPack>true</IncludeContentInPack>
   </PropertyGroup>
-
-  <ItemGroup>
-    <Content Include="build\net461\$(PackageId).targets" PackagePath="build\net461\$(PackageId).targets" />
-    <Content Include="runtimes\linux-x64\native\libopenal.so" PackagePath="runtimes\linux-x64\native\libopenal.so" />
-    <Content Include="runtimes\osx-x64\native\libopenal.dylib" PackagePath="runtimes\osx-x64\native\libopenal.dylib" />
-    <Content Include="runtimes\win-x64\native\soft_oal.dll" PackagePath="runtimes\win-x64\native\soft_oal.dll" />
-    <Content Include="runtimes\win-x86\native\soft_oal.dll" PackagePath="runtimes\win-x86\native\soft_oal.dll" />
-  </ItemGroup>
 
 </Project>

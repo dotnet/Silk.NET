@@ -23,6 +23,7 @@ namespace Silk.NET.Windowing.Glfw
         private GlfwCallbacks.WindowPosCallback? _onMove;
         private GlfwCallbacks.WindowSizeCallback? _onResize;
         private GlfwCallbacks.FramebufferSizeCallback? _onFramebufferResize;
+        private GlfwCallbacks.WindowRefreshCallback? _onRefresh;
         private GlfwCallbacks.DropCallback? _onFileDrop;
         private GlfwCallbacks.WindowCloseCallback? _onClosing;
         private GlfwCallbacks.WindowFocusCallback? _onFocusChanged;
@@ -37,6 +38,16 @@ namespace Silk.NET.Windowing.Glfw
         private string _localTitleCache; // glfw doesn't let us get the window title.
         private GlfwContext? _glContext;
         private string _windowClass;
+        private bool _inDoEvents;
+
+        /// <summary>
+        /// The action passed to <see cref="Run"/>.
+        /// </summary>
+        /// <remarks>
+        /// May be called on repaint from within <see cref="DoEvents"/>.
+        /// For example, during modal operations such as resizing on Windows.
+        /// </remarks>
+        protected Action? _onFrame;
 
         public GlfwWindow(WindowOptions optionsCache, GlfwWindow? parent, GlfwMonitor? monitor) : base(optionsCache)
         {
@@ -66,6 +77,19 @@ namespace Silk.NET.Windowing.Glfw
         }
 
         protected override nint CoreHandle => (nint) _glfwWindow;
+
+        public override void Run(Action onFrame)
+        {
+            try
+            {
+                _onFrame = onFrame;
+                base.Run(onFrame);
+            }
+            finally
+            {
+                _onFrame = null;
+            }
+        }
 
         protected override void CoreReset()
         {
@@ -352,8 +376,18 @@ namespace Silk.NET.Windowing.Glfw
             // Set video mode (-1 = don't care)
             
             _glfw.WindowHint(WindowHintInt.RefreshRate, opts.VideoMode.RefreshRate      ?? GLFW.Glfw.DontCare);
-            _glfw.WindowHint(WindowHintInt.DepthBits, opts.PreferredDepthBufferBits     ?? GLFW.Glfw.DontCare);
-            _glfw.WindowHint(WindowHintInt.StencilBits, opts.PreferredStencilBufferBits ?? GLFW.Glfw.DontCare);
+            _glfw.WindowHint(WindowHintInt.DepthBits, opts.PreferredDepthBufferBits switch
+            {
+                null when opts.PreferredStencilBufferBits is null => 24,
+                {} x => x,
+                _ => GLFW.Glfw.DontCare
+            });
+            _glfw.WindowHint(WindowHintInt.StencilBits, opts.PreferredStencilBufferBits switch
+            {
+                null when opts.PreferredDepthBufferBits is null => 8,
+                {} x => x,
+                _ => GLFW.Glfw.DontCare
+            });
             
             _glfw.WindowHint(WindowHintInt.RedBits,   opts.PreferredBitDepth?.X ?? GLFW.Glfw.DontCare);
             _glfw.WindowHint(WindowHintInt.GreenBits, opts.PreferredBitDepth?.Y ?? GLFW.Glfw.DontCare);
@@ -528,6 +562,7 @@ namespace Silk.NET.Windowing.Glfw
             }
             set
             {
+                _swapIntervalChanged = true;
                 if (!IsInitialized)
                 {
                     throw new InvalidOperationException("Window is not running.");
@@ -598,13 +633,24 @@ namespace Silk.NET.Windowing.Glfw
 
         public override void DoEvents()
         {
-            if (IsEventDriven)
+            if (!_inDoEvents)
             {
-                _glfw.WaitEvents();
-            }
-            else
-            {
-                _glfw.PollEvents();
+                try
+                {
+                    _inDoEvents = true;
+                    if (IsEventDriven)
+                    {
+                        _glfw.WaitEvents();
+                    }
+                    else
+                    {
+                        _glfw.PollEvents();
+                    }
+                }
+                finally
+                {
+                    _inDoEvents = false;
+                }
             }
         }
 
@@ -629,6 +675,11 @@ namespace Silk.NET.Windowing.Glfw
             var ret = (addr = _glfw.GetProcAddress(proc)) != 0;
             _glfw.SetErrorCallback(errorCallback);
             return ret;
+        }
+
+        public override void Focus() 
+        {
+            _glfw.FocusWindow(_glfwWindow);
         }
 
         public override void Close()
@@ -657,6 +708,8 @@ namespace Silk.NET.Windowing.Glfw
             {
                 FramebufferResize?.Invoke(new(width, height));
             };
+
+            _onRefresh = (window) => _onFrame?.Invoke();
 
             _onClosing = window => Closing?.Invoke();
 
@@ -744,6 +797,7 @@ namespace Silk.NET.Windowing.Glfw
             _glfw.SetWindowIconifyCallback(_glfwWindow, _onMinimized);
             _glfw.SetWindowMaximizeCallback(_glfwWindow, _onMaximized);
             _glfw.SetFramebufferSizeCallback(_glfwWindow, _onFramebufferResize);
+            _glfw.SetWindowRefreshCallback(_glfwWindow, _onRefresh);
             _glfw.SetDropCallback(_glfwWindow, _onFileDrop);
             GLFW.Glfw.ThrowExceptions();
         }
@@ -761,6 +815,7 @@ namespace Silk.NET.Windowing.Glfw
                 _glfw.GcUtility.Unpin(_onMove);
                 _glfw.GcUtility.Unpin(_onResize);
                 _glfw.GcUtility.Unpin(_onFramebufferResize);
+                _glfw.GcUtility.Unpin(_onRefresh);
                 _glfw.GcUtility.Unpin(_onFileDrop);
                 _glfw.GcUtility.Unpin(_onFocusChanged);
 
@@ -770,6 +825,7 @@ namespace Silk.NET.Windowing.Glfw
                 _onMove = null;
                 _onResize = null;
                 _onFramebufferResize = null;
+                _onRefresh = null;
                 _onFileDrop = null;
                 _onFocusChanged = null;
             }

@@ -48,8 +48,8 @@ namespace Silk.NET.BuildTools
                 return 1;
             }
 
-            //If this is set it will scope the generation to only a single profile, eg only OpenGL or only WebGPU
-            string profile = null;
+            //If this is set it will scope the generation to only a single profile, eg only OpenGL or only WebGPU, or multiple comma-separated profiles
+            string[] profiles = null;
 
             var sw = Stopwatch.StartNew();
             var extraCtrls = new List<string>();
@@ -66,7 +66,7 @@ namespace Silk.NET.BuildTools
 
                 if (arg.StartsWith("--profile="))
                 {
-                    profile = arg.Substring("--profile=".Length);
+                    profiles = arg.Substring("--profile=".Length).Split(',');
                     continue;
                 }
 
@@ -96,9 +96,9 @@ namespace Silk.NET.BuildTools
                 var config = JsonConvert.DeserializeObject<Config>(File.ReadAllText(abs));
 
                 //if the profile scope is set, set the tasks to generate to *only* the task that matches the name
-                if(profile != null)
+                if(profiles != null)
                 {
-                    config.Tasks = config.Tasks.Where(x => x.Name.Equals(profile, StringComparison.InvariantCultureIgnoreCase)).ToArray();
+                    config.Tasks = config.Tasks.Where(x => profiles.Any(profile => x.Name.Equals(profile, StringComparison.InvariantCultureIgnoreCase))).ToArray();
                 }
 
                 Generator.Run(AddDescriptors(config, extraCtrls));

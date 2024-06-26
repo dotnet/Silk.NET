@@ -287,7 +287,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CopyPixels([Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Maths.Rectangle<int> prc, uint cbStride, uint cbBufferSize, byte* pbBuffer)
+        public readonly unsafe int CopyPixels([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Maths.Rectangle<int> prc, uint cbStride, uint cbBufferSize, byte* pbBuffer)
         {
             var @this = (IWICDevelopRaw*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -299,7 +299,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int CopyPixels([Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Maths.Rectangle<int> prc, uint cbStride, uint cbBufferSize, ref byte pbBuffer)
+        public readonly int CopyPixels([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Maths.Rectangle<int> prc, uint cbStride, uint cbBufferSize, ref byte pbBuffer)
         {
             var @this = (IWICDevelopRaw*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -314,7 +314,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int CopyPixels([Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Maths.Rectangle<int> prc, uint cbStride, uint cbBufferSize, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pbBuffer)
+        public readonly int CopyPixels([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Maths.Rectangle<int> prc, uint cbStride, uint cbBufferSize, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pbBuffer)
         {
             var @this = (IWICDevelopRaw*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -448,22 +448,22 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetCurrentParameterSet(Silk.NET.Core.Native.IUnknown** ppCurrentParameterSet)
+        public readonly unsafe int GetCurrentParameterSet(Silk.NET.Core.Win32Extras.IPropertyBag2** ppCurrentParameterSet)
         {
             var @this = (IWICDevelopRaw*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<IWICDevelopRaw*, Silk.NET.Core.Native.IUnknown**, int>)@this->LpVtbl[13])(@this, ppCurrentParameterSet);
+            ret = ((delegate* unmanaged[Stdcall]<IWICDevelopRaw*, Silk.NET.Core.Win32Extras.IPropertyBag2**, int>)@this->LpVtbl[13])(@this, ppCurrentParameterSet);
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetCurrentParameterSet(ref Silk.NET.Core.Native.IUnknown* ppCurrentParameterSet)
+        public readonly unsafe int GetCurrentParameterSet(ref Silk.NET.Core.Win32Extras.IPropertyBag2* ppCurrentParameterSet)
         {
             var @this = (IWICDevelopRaw*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            fixed (Silk.NET.Core.Native.IUnknown** ppCurrentParameterSetPtr = &ppCurrentParameterSet)
+            fixed (Silk.NET.Core.Win32Extras.IPropertyBag2** ppCurrentParameterSetPtr = &ppCurrentParameterSet)
             {
-                ret = ((delegate* unmanaged[Stdcall]<IWICDevelopRaw*, Silk.NET.Core.Native.IUnknown**, int>)@this->LpVtbl[13])(@this, ppCurrentParameterSetPtr);
+                ret = ((delegate* unmanaged[Stdcall]<IWICDevelopRaw*, Silk.NET.Core.Win32Extras.IPropertyBag2**, int>)@this->LpVtbl[13])(@this, ppCurrentParameterSetPtr);
             }
             return ret;
         }
@@ -994,7 +994,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int SetToneCurve(uint cbToneCurveSize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in RawToneCurve pToneCurve)
+        public readonly int SetToneCurve(uint cbToneCurveSize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in RawToneCurve pToneCurve)
         {
             var @this = (IWICDevelopRaw*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -1181,14 +1181,6 @@ namespace Silk.NET.WindowsCodecs
             var @this = (IWICDevelopRaw*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
             return @this->GetThumbnail((IWICBitmapSource**) ppIThumbnail.GetAddressOf());
-        }
-
-        /// <summary>To be documented.</summary>
-        public readonly int GetCurrentParameterSet<TI0>(ref ComPtr<TI0> ppCurrentParameterSet) where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Native.IUnknown>, IComVtbl<TI0>
-        {
-            var @this = (IWICDevelopRaw*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            // ComPtrOverloader
-            return @this->GetCurrentParameterSet((Silk.NET.Core.Native.IUnknown**) ppCurrentParameterSet.GetAddressOf());
         }
 
         /// <summary>To be documented.</summary>

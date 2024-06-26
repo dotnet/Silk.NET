@@ -276,10 +276,7 @@ namespace Silk.NET.BuildTools.Bind
                         sw.WriteLine("        public bool TryGetExtension<T>(out T ext)");
                         sw.WriteLine($"            where T:NativeExtension<{@class.ClassName}>");
                         sw.WriteLine("        {");
-                        sw.WriteLine("             ext = IsExtensionPresent(GetExtensionAttribute(typeof(T)).Name)");
-                        sw.WriteLine("                 ? (T) Activator.CreateInstance(typeof(T), Context)");
-                        sw.WriteLine("                 : null;");
-                        sw.WriteLine("             return ext is not null;");
+                        sw.WriteLine("             throw new NotImplementedException();");
                         sw.WriteLine("        }");
                         sw.WriteLine();
                         sw.WriteLine("        public override bool IsExtensionPresent(string extension)");

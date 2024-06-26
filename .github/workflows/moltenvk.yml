@@ -2,8 +2,8 @@ name: MoltenVK
 on:
     push:
         branches-ignore:
-            - "ci/*"
-            - "develop/*"
+            - "ci/**"
+            - "develop/**"
             - "main"
         paths:
             - build/submodules/MoltenVK
@@ -12,11 +12,12 @@ on:
             - .github/workflows/moltenvk.yml
 jobs:
     Build:
+        if: github.repository == 'dotnet/Silk.NET'
         strategy:
             fail-fast: false
             matrix:
                 env:
-                    - os: macos-latest
+                    - os: macos-13-xlarge
                       name: Darwin
                       nuke_invoke: ./build.sh
                       extras: ""

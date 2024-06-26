@@ -45,6 +45,8 @@ namespace Silk.NET.SPIRV.Reflect
             InterfaceVariable* interfaceVariables = null,
             uint? pushConstantBlockCount = null,
             BlockVariable* pushConstantBlocks = null,
+            uint? specConstantCount = null,
+            SpecializationConstant* specConstants = null,
             Internal* @internal = null
         ) : this()
         {
@@ -166,6 +168,16 @@ namespace Silk.NET.SPIRV.Reflect
             if (pushConstantBlocks is not null)
             {
                 PushConstantBlocks = pushConstantBlocks;
+            }
+
+            if (specConstantCount is not null)
+            {
+                SpecConstantCount = specConstantCount.Value;
+            }
+
+            if (specConstants is not null)
+            {
+                SpecConstants = specConstants;
             }
 
             if (@internal is not null)
@@ -388,6 +400,16 @@ namespace Silk.NET.SPIRV.Reflect
         [NativeName("Type.Name", "SpvReflectBlockVariable *")]
         [NativeName("Name", "push_constant_blocks")]
         public BlockVariable* PushConstantBlocks;
+
+        [NativeName("Type", "uint32_t")]
+        [NativeName("Type.Name", "uint32_t")]
+        [NativeName("Name", "spec_constant_count")]
+        public uint SpecConstantCount;
+
+        [NativeName("Type", "SpvReflectSpecializationConstant *")]
+        [NativeName("Type.Name", "SpvReflectSpecializationConstant *")]
+        [NativeName("Name", "spec_constants")]
+        public SpecializationConstant* SpecConstants;
 
         [NativeName("Type", "struct Internal *")]
         [NativeName("Type.Name", "struct Internal *")]

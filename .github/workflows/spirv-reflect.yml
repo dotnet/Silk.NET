@@ -2,8 +2,8 @@ name: SPIRV-Reflect
 on:
   push:
     branches-ignore:
-      - "ci/*"
-      - "develop/*"
+      - "ci/**"
+      - "develop/**"
       - "main"
     paths:
       - build/submodules/SPIRV-Reflect
@@ -12,6 +12,7 @@ on:
       - .github/workflows/spirv-reflect.yml
 jobs:
   Build:
+    if: github.repository == 'dotnet/Silk.NET'
     strategy:
       fail-fast: false
       matrix:
@@ -19,9 +20,6 @@ jobs:
           - os: ubuntu-latest
             name: Linux
             nuke_invoke: ./build.sh
-            extras: |
-              sudo apt-get update
-              sudo apt-get install -y build-essential
     name: ${{ matrix.env.name }} Build
     runs-on: ${{ matrix.env.os }}
     steps:

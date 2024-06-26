@@ -7,6 +7,10 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <ProjectReference Include="../../Native/Silk.NET.SPIRV.Cross.Native/Silk.NET.SPIRV.Cross.Native.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\Silk.NET.SPIRV\Silk.NET.SPIRV.csproj" />
   </ItemGroup>
 

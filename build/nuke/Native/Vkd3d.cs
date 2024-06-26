@@ -28,6 +28,7 @@ using static Nuke.Common.Tools.GitHub.GitHubTasks;
 partial class Build {
     AbsolutePath Vkd3dPath => RootDirectory / "build" / "submodules" / "vkd3d";
     AbsolutePath SPIRVToolsPath => RootDirectory / "build" / "submodules" / "SPIRV-Tools";
+    AbsolutePath VulkanHeadersPath => RootDirectory / "build" / "submodules" / "Vulkan-Headers";
 
     Target Vkd3d => CommonTarget
         (
@@ -37,64 +38,78 @@ partial class Build {
             (
                 () =>
                 {
-                    if(!RuntimeInformation.IsOSPlatform(OSPlatform.Linux))
+                    if (!RuntimeInformation.IsOSPlatform(OSPlatform.Linux))
                     {
                         throw new PlatformNotSupportedException("This task only runs on Linux!");
                     }
 
+                    InheritedShell($"./git-sync-deps", SPIRVToolsPath / "utils").AssertZeroExitCode();
+
+                    // Get rid of the Vulkan library check since we will not be needing it.
+                    File.WriteAllText(
+                        Vkd3dPath / "configure.ac",
+                        File.ReadAllText(Vkd3dPath / "configure.ac")
+                            .Replace("[VKD3D_CHECK_VULKAN]", "[]"));
+
+                    InheritedShell($"./autogen.sh", Vkd3dPath).AssertZeroExitCode();
+
+                    var spirvToolsBuild = SPIRVToolsPath / "build";
+                    var vkd3dBuild = Vkd3dPath / "build";
+                    var vkd3dShaderCompiler = RootDirectory / "src" / "Microsoft" / "Vkd3dCompiler";
                     var runtimes = RootDirectory / "src" / "Native" / "Silk.NET.Vkd3d.Native" / "runtimes";
 
-                    var vkd3dBuild = SPIRVToolsPath / "build";
-                    EnsureCleanDirectory(vkd3dBuild);
+                    foreach (var (triple, rid) in new[]
+                    {
+                        ("x86_64-linux-gnu", "linux-x64"),
+                        ("arm-linux-gnueabihf", "linux-arm"),
+                        ("aarch64-linux-gnu", "linux-arm64"),
+                    })
+                    {
+                        // SPIRV-Tools
+                        {
+                            EnsureCleanDirectory(spirvToolsBuild);
 
-                    { //SPIRV-Tools
-                        //Sync the external deps
-                        InheritedShell($"./git-sync-deps", SPIRVToolsPath / "utils").AssertZeroExitCode();
+                            InheritedShell($"cmake .. -DCMAKE_BUILD_TYPE=Release -DBUILD_SHARED_LIBS=ON -DSPIRV_SKIP_EXECUTABLES=ON {GetCMakeToolchainFlag(triple)}", spirvToolsBuild).AssertZeroExitCode();
+                            InheritedShell($"cmake --build . --config Release{JobsArg}", spirvToolsBuild).AssertZeroExitCode();
 
-                        //Make the build scripts, with shared libs enabled, and tests disabled
-                        InheritedShell($"cmake .. -DBUILD_SHARED_LIBS=1 -DSPIRV_SKIP_TESTS=ON", vkd3dBuild).AssertZeroExitCode();
+                            InheritedShell($"{triple}-strip --strip-unneeded source/libSPIRV-Tools-shared.so", spirvToolsBuild).AssertZeroExitCode();
 
-                        //Compile SPIRV-Tools
-                        InheritedShell($"cmake --build . --config Release {JobsArg}", vkd3dBuild).AssertZeroExitCode();
+                            CopyFile(spirvToolsBuild / "source" / "libSPIRV-Tools-shared.so", runtimes / rid / "native" / "libSPIRV-Tools-shared.so", FileExistsPolicy.Overwrite);
+                            CopyFile(spirvToolsBuild / "source" / "libSPIRV-Tools-shared.so", vkd3dShaderCompiler / "libSPIRV-Tools-shared.so", FileExistsPolicy.Overwrite);
+                        }
 
-                        //Run `strip -g` on the shared library file to remove debug info and shrink it from ~30mb down to only ~5.5mb
-                        InheritedShell($"strip -g libSPIRV-Tools-shared.so", vkd3dBuild / "source").AssertZeroExitCode();
+                        // Vkd3d
+                        {
+                            EnsureCleanDirectory(vkd3dBuild);
 
-                        //Copy the resulting SPIRV-Tools shared library to the runtimes folder
-                        CopyFile(vkd3dBuild / "source" / "libSPIRV-Tools-shared.so", runtimes / "linux-x64" / "native" / "libSPIRV-Tools-shared.so", FileExistsPolicy.Overwrite);
+                            // We only need to configure Vkd3d; we include its sources directly.
+                            InheritedShell($"./configure --prefix={vkd3dBuild} --disable-static --host={triple} --disable-tests --disable-doxygen-doc --with-spirv-tools WIDL=x86_64-w64-mingw32-widl CPPFLAGS=\"-I {VulkanHeadersPath / "include"} -I {SPIRVToolsPath / "external" / "spirv-headers" / "include"} -DNDEBUG -DVKD3D_NO_DEBUG_MESSAGES -DVKD3D_NO_TRACE_MESSAGES\" PKG_CONFIG_PATH={spirvToolsBuild}", Vkd3dPath).AssertZeroExitCode();
+
+                            // Invoke widl for some headers that we need.
+                            foreach (var name in new[]
+                            {
+                                "vkd3d_d3d12",
+                                "vkd3d_d3d12sdklayers",
+                                "vkd3d_d3dcommon",
+                                "vkd3d_dxgibase",
+                                "vkd3d_dxgiformat",
+                            })
+                            {
+                                InheritedShell($"make include/{name}.h", Vkd3dPath).AssertZeroExitCode();
+                            }
+                        }
+
+                        // d3dcompile_vkd3d
+                        {
+                            // Note that the glibc version should match the one used to build SPIRV-Tools. Since we
+                            // currently build on Ubuntu 22.04, that's glibc 2.35.
+                            InheritedShell($"zig build -Doptimize=ReleaseFast -Dtarget={triple}.2.35 --verbose", vkd3dShaderCompiler).AssertZeroExitCode();
+
+                            CopyFile(vkd3dShaderCompiler / "zig-out" / "lib" / "libd3dcompile_vkd3d.so", runtimes / rid / "native" / "libd3dcompile_vkd3d.so", FileExistsPolicy.Overwrite);
+                        }
                     }
 
-                    { //Vkd3d
-                        var dest = Vkd3dPath / "dest";
-                        var @out = Vkd3dPath / "build";
-
-                        EnsureCleanDirectory(@out);
-                        EnsureCleanDirectory(dest);
-
-                        //Run autogen
-                        InheritedShell($"./autogen.sh", Vkd3dPath).AssertZeroExitCode();
-                        //Run configure to make a non-debug build, with no trace messages, with a prefix of /usr and with spirv-tools
-                        InheritedShell($"./configure CPPFLAGS=\"-DNDEBUG -DVKD3D_NO_TRACE_MESSAGES -fPIC\" --prefix=/usr --with-spirv-tools --disable-doxygen-pdf", Vkd3dPath).AssertZeroExitCode();
-                        //Build vkd3d
-                        InheritedShell($"make {JobsArg}", Vkd3dPath).AssertZeroExitCode();
-                        //Install vkd3d to the dest folder
-                        InheritedShell($"make DESTDIR=\"{Vkd3dPath.ToString().TrimEnd('/')}/dest\" install", Vkd3dPath).AssertZeroExitCode();
-
-                        var vkd3dShaderCompiler = RootDirectory / "src" / "Microsoft" / "Vkd3dCompiler";
-
-                        //Copy libvkd3d-shader.a
-                        CopyFile(@dest / "usr" / "lib" / "libvkd3d-shader.a", vkd3dShaderCompiler / "libvkd3d-shader.a");
-                        //Copy libvkd3d-shader.la
-                        CopyFile(@dest / "usr" / "lib" / "libvkd3d-shader.la", vkd3dShaderCompiler / "libvkd3d-shader.la");
-                        //Copy libSPIRV-Tools-shared.so
-                        CopyFile(vkd3dBuild / "source" / "libSPIRV-Tools-shared.so", vkd3dShaderCompiler / "libSPIRV-Tools-shared.so");
-
-                        //Build the shader compiler
-                        InheritedShell($"zig build -Doptimize=ReleaseSmall -Dtarget=x86_64-linux-gnu --verbose", vkd3dShaderCompiler).AssertZeroExitCode();
-
-                        //Copy the resulting shader compiler to the native output
-                        CopyFile(vkd3dShaderCompiler / "zig-out" / "lib" / "libd3dcompile_vkd3d.so", runtimes / "linux-x64" / "native" / "libd3dcompile_vkd3d.so", FileExistsPolicy.Overwrite);
-                    }
+                    Git("checkout HEAD configure.ac", Vkd3dPath);
 
                     PrUpdatedNativeBinary("Vkd3d");
                 }

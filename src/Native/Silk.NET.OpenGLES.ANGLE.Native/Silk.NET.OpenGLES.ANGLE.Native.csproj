@@ -1,9 +1,11 @@
 <Project Sdk="Microsoft.NET.Sdk">
+
     <PropertyGroup>
-        <SilkSourceLinkExempt>true</SilkSourceLinkExempt>
         <SilkGitDirForVersion>$(MSBuildThisFileDirectory)..\..\..\build\submodules\ANGLE</SilkGitDirForVersion>
     </PropertyGroup>
+
     <Import Project="..\..\..\build\props\common.props" />
+
     <PropertyGroup>
         <TargetFrameworks>netstandard2.0;net4.6.1</TargetFrameworks>
         <Authors>.NET Foundation and Contributors</Authors>
@@ -12,19 +14,7 @@
         <PackageProjectUrl>https://github.com/dotnet/Silk.NET</PackageProjectUrl>
         <Description>Multi-platform native library for ANGLE.</Description>
         <RepositoryType>git</RepositoryType>
-        <RepositoryUrl>https://chromium.googlesource.com/angle/angle/</RepositoryUrl>
-        <IncludeBuildOutput>false</IncludeBuildOutput>
-        <IncludeContentInPack>true</IncludeContentInPack>
+        <RepositoryUrl>https://chromium.googlesource.com/angle/angle</RepositoryUrl>
     </PropertyGroup>
-    <ItemGroup>
-        <Content Include="build\net461\$(PackageId).targets" PackagePath="build\net461\$(PackageId).targets" />
-        <Content Include="runtimes\linux-x64\native\libGLESv2.so" PackagePath="runtimes\linux-x64\native\libGLESv2.so" />
-        <Content Include="runtimes\osx-x64\native\libGLESv2.dylib" PackagePath="runtimes\osx-x64\native\libGLESv2.dylib" />
-        <Content Include="runtimes\win-x64\native\libGLESv2.dll" PackagePath="runtimes\win-x64\native\libGLESv2.dll" />
-        <Content Include="runtimes\win-x86\native\libGLESv2.dll" PackagePath="runtimes\win-x86\native\libGLESv2.dll" />
-        <Content Include="runtimes\linux-x64\native\libEGL.so" PackagePath="runtimes\linux-x64\native\libEGL.so" />
-        <Content Include="runtimes\osx-x64\native\libEGL.dylib" PackagePath="runtimes\osx-x64\native\libEGL.dylib" />
-        <Content Include="runtimes\win-x64\native\libEGL.dll" PackagePath="runtimes\win-x64\native\libEGL.dll" />
-        <Content Include="runtimes\win-x86\native\libEGL.dll" PackagePath="runtimes\win-x86\native\libEGL.dll" />
-    </ItemGroup>
+
 </Project>

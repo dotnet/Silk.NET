@@ -17,6 +17,7 @@ using Nuke.Common.Tools.DotNet;
 using Nuke.Common.Tools.Git;
 using Octokit;
 using Octokit.Internal;
+using Serilog;
 using static Nuke.Common.IO.CompressionTasks;
 using static Nuke.Common.IO.FileSystemTasks;
 using static Nuke.Common.IO.HttpTasks;
@@ -38,7 +39,7 @@ partial class Build {
             var utils = RootDirectory / "build" / "utilities";
             DotNet($"build \"{utils / "android_probe.proj"}\" /t:GetAndroidJar");
             AndroidHomeValue = (AbsolutePath) File.ReadAllText(utils / "android.jar.gen.txt") / ".." / ".." / "..";
-            Logger.Info($"Android Home: {AndroidHomeValue}");
+            Log.Information($"Android Home: {AndroidHomeValue}");
             return AndroidHomeValue;
         }
     }
@@ -53,7 +54,7 @@ partial class Build {
                 {
                     if (!Native)
                     {
-                        Logger.Warn("Skipping gradlew build as the --native parameter has not been specified.");
+                        Log.Warning("Skipping gradlew build as the --native parameter has not been specified.");
                         return Enumerable.Empty<Output>();
                     }
 
@@ -70,7 +71,7 @@ partial class Build {
                     {
                         if (!Directory.Exists(from))
                         {
-                            ControlFlow.Fail
+                            Assert.Fail
                                 ($"\"{from}\" does not exist (did you forget to recursively clone the repo?)");
                         }
 

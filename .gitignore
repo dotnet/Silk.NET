@@ -477,3 +477,6 @@ src/**/build/
 # Silk.NET Website Generation Output
 website/.docusaurus/
 website/node_modules/
+
+# As much as I love Mac, really not interested in this litter.
+**/.DS_Store

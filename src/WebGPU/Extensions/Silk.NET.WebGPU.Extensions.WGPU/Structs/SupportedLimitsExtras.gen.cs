@@ -22,7 +22,7 @@ namespace Silk.NET.WebGPU.Extensions.WGPU
         public SupportedLimitsExtras
         (
             ChainedStructOut? chain = null,
-            uint? maxPushConstantSize = null
+            NativeLimits? limits = null
         ) : this()
         {
             if (chain is not null)
@@ -30,9 +30,9 @@ namespace Silk.NET.WebGPU.Extensions.WGPU
                 Chain = chain.Value;
             }
 
-            if (maxPushConstantSize is not null)
+            if (limits is not null)
             {
-                MaxPushConstantSize = maxPushConstantSize.Value;
+                Limits = limits.Value;
             }
         }
 
@@ -42,9 +42,9 @@ namespace Silk.NET.WebGPU.Extensions.WGPU
         [NativeName("Name", "chain")]
         public ChainedStructOut Chain;
 
-        [NativeName("Type", "uint32_t")]
-        [NativeName("Type.Name", "uint32_t")]
-        [NativeName("Name", "maxPushConstantSize")]
-        public uint MaxPushConstantSize;
+        [NativeName("Type", "WGPUNativeLimits")]
+        [NativeName("Type.Name", "WGPUNativeLimits")]
+        [NativeName("Name", "limits")]
+        public NativeLimits Limits;
     }
 }

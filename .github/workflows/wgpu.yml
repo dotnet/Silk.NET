@@ -2,8 +2,8 @@ name: WGPU
 on:
   push:
     branches-ignore:
-      - "ci/*"
-      - "develop/*"
+      - "ci/**"
+      - "develop/**"
       - "main"
     paths:
       - build/submodules/wgpu-native
@@ -12,21 +12,43 @@ on:
       - .github/workflows/wgpu.yml
 jobs:
   Build:
+    if: github.repository == 'dotnet/Silk.NET'
     strategy:
       fail-fast: false
       matrix:
         env:
-          - os: ubuntu-latest
+          - os: ubuntu-22.04
             name: Linux
             nuke_invoke: ./build.sh
             extras: |
-              sudo apt-get update
-              sudo apt-get install -y gcc-multilib
-          - os: windows-latest
+              # We need to adjust APT sources for multiarch. Use the ones corresponding to
+              # Ubuntu 22.04 with appropriate `arch` values. ports.ubuntu.com is required
+              # for armhf and arm64.
+              sudo tee /etc/apt/sources.list << EOF
+              deb [arch=amd64] http://archive.ubuntu.com/ubuntu jammy main multiverse restricted universe
+              deb [arch=amd64] http://archive.ubuntu.com/ubuntu jammy-backports main multiverse restricted universe
+              deb [arch=amd64] http://archive.ubuntu.com/ubuntu jammy-security main multiverse restricted universe
+              deb [arch=amd64] http://archive.ubuntu.com/ubuntu jammy-updates main multiverse restricted universe
+              deb [arch=arm64,armhf] http://ports.ubuntu.com jammy main multiverse restricted universe
+              deb [arch=arm64,armhf] http://ports.ubuntu.com jammy-backports main multiverse restricted universe
+              deb [arch=arm64,armhf] http://ports.ubuntu.com jammy-security main multiverse restricted universe
+              deb [arch=arm64,armhf] http://ports.ubuntu.com jammy-updates main multiverse restricted universe
+              deb [arch=amd64] http://security.ubuntu.com/ubuntu jammy main multiverse restricted universe
+              deb [arch=amd64] http://security.ubuntu.com/ubuntu jammy-backports main multiverse restricted universe
+              deb [arch=amd64] http://security.ubuntu.com/ubuntu jammy-security main multiverse restricted universe
+              deb [arch=amd64] http://security.ubuntu.com/ubuntu jammy-updates main multiverse restricted universe
+              EOF
+              sudo dpkg --add-architecture arm64
+              sudo dpkg --add-architecture armhf
+              sudo apt update
+              sudo apt install -y gcc-aarch64-linux-gnu gcc-arm-linux-gnueabihf
+              # These are needed because Rust tooling is weird about cross-linking.
+              sudo apt install -y libgcc-11-dev libgcc-11-dev-arm64-cross libgcc-11-dev-armhf-cross
+          - os: windows-2022
             name: Windows
             nuke_invoke: ./build.cmd
             extras: ""
-          - os: macos-latest
+          - os: macos-14
             name: Darwin
             nuke_invoke: ./build.sh
             extras: ""
@@ -46,7 +68,7 @@ jobs:
       - uses: dtolnay/rust-toolchain@stable
         if: runner.os == 'macOS'
         with:
-          toolchain: stable-x86_64-apple-darwin
+          toolchain: stable-aarch64-apple-darwin
 
       - name: Add targets
         if: runner.os == 'Windows'
@@ -57,12 +79,13 @@ jobs:
       - name: Add targets
         if: runner.os == 'Linux'
         run: |
-          rustup target add i686-unknown-linux-gnu
+          rustup target add aarch64-unknown-linux-gnu
+          rustup target add arm-unknown-linux-gnueabihf
 
       - name: Add targets
         if: runner.os == 'macOS'
         run: |
-          rustup target add aarch64-apple-darwin
+          rustup target add x86_64-apple-darwin
 
       - uses: actions/checkout@v2
         with:

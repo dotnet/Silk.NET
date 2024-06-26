@@ -10,6 +10,7 @@ using Nuke.Common.IO;
 using Nuke.Common.Tooling;
 using Octokit;
 using Octokit.Internal;
+using Serilog;
 using static Nuke.Common.Tools.Git.GitTasks;
 using static Nuke.Common.Tooling.ProcessTasks;
 using static Nuke.Common.Tools.DotNet.DotNetTasks;
@@ -133,10 +134,10 @@ partial class Build
                     // about adding dodgy MSBuild targets that could swipe it
                     var githubToken = EnvironmentInfo.GetVariable<string>("GITHUB_TOKEN");
                     EnvironmentInfo.SetVariable("GITHUB_TOKEN", string.Empty);
-                    
+
                     // run the format command
                     InheritedShell($"{cmd} --verify-no-changes").AssertZeroExitCode();
-                    
+
                     // add our github token back
                     EnvironmentInfo.SetVariable("GITHUB_TOKEN", githubToken);
                     await AddOrUpdatePrComment("public_api", "public_api_declared", true);
@@ -184,13 +185,13 @@ partial class Build
             Git("reset --hard", RootDirectory);
             if (GitCurrentCommit(RootDirectory) != curCommit) // might get "nothing to commit", you never know...
             {
-                Logger.Info("Checking for existing branch...");
+                Log.Information("Checking for existing branch...");
                 var exists = StartProcess("git", $"checkout \"{newBranch}\"", RootDirectory)
                     .AssertWaitForExit()
                     .ExitCode == 0;
                 if (!exists)
                 {
-                    Logger.Info("None found, creating a new one...");
+                    Log.Information("None found, creating a new one...");
                     Git($"checkout -b \"{newBranch}\"");
                 }
 

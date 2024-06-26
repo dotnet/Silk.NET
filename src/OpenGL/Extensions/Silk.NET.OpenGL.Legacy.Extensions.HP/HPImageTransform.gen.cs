@@ -96,49 +96,49 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.HP
         public unsafe partial void ImageTransformParameter([Flow(Silk.NET.Core.Native.FlowDirection.In)] HP target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] HP pname, [Count(Computed = "pname"), Flow(Silk.NET.Core.Native.FlowDirection.In)] int* @params);
 
         [NativeApi(EntryPoint = "glImageTransformParameterivHP", Convention = CallingConvention.Winapi)]
-        public partial void ImageTransformParameter([Flow(Silk.NET.Core.Native.FlowDirection.In)] HP target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] HP pname, [Count(Computed = "pname"), Flow(Silk.NET.Core.Native.FlowDirection.In)] in int @params);
+        public partial void ImageTransformParameter([Flow(Silk.NET.Core.Native.FlowDirection.In)] HP target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] HP pname, [Count(Computed = "pname"), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in int @params);
 
         [NativeApi(EntryPoint = "glImageTransformParameterivHP", Convention = CallingConvention.Winapi)]
         public unsafe partial void ImageTransformParameter([Flow(Silk.NET.Core.Native.FlowDirection.In)] HP target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ImageTransformPNameHP pname, [Count(Computed = "pname"), Flow(Silk.NET.Core.Native.FlowDirection.In)] int* @params);
 
         [NativeApi(EntryPoint = "glImageTransformParameterivHP", Convention = CallingConvention.Winapi)]
-        public partial void ImageTransformParameter([Flow(Silk.NET.Core.Native.FlowDirection.In)] HP target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ImageTransformPNameHP pname, [Count(Computed = "pname"), Flow(Silk.NET.Core.Native.FlowDirection.In)] in int @params);
+        public partial void ImageTransformParameter([Flow(Silk.NET.Core.Native.FlowDirection.In)] HP target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ImageTransformPNameHP pname, [Count(Computed = "pname"), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in int @params);
 
         [NativeApi(EntryPoint = "glImageTransformParameterivHP", Convention = CallingConvention.Winapi)]
         public unsafe partial void ImageTransformParameter([Flow(Silk.NET.Core.Native.FlowDirection.In)] ImageTransformTargetHP target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] HP pname, [Count(Computed = "pname"), Flow(Silk.NET.Core.Native.FlowDirection.In)] int* @params);
 
         [NativeApi(EntryPoint = "glImageTransformParameterivHP", Convention = CallingConvention.Winapi)]
-        public partial void ImageTransformParameter([Flow(Silk.NET.Core.Native.FlowDirection.In)] ImageTransformTargetHP target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] HP pname, [Count(Computed = "pname"), Flow(Silk.NET.Core.Native.FlowDirection.In)] in int @params);
+        public partial void ImageTransformParameter([Flow(Silk.NET.Core.Native.FlowDirection.In)] ImageTransformTargetHP target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] HP pname, [Count(Computed = "pname"), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in int @params);
 
         [NativeApi(EntryPoint = "glImageTransformParameterivHP", Convention = CallingConvention.Winapi)]
         public unsafe partial void ImageTransformParameter([Flow(Silk.NET.Core.Native.FlowDirection.In)] ImageTransformTargetHP target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ImageTransformPNameHP pname, [Count(Computed = "pname"), Flow(Silk.NET.Core.Native.FlowDirection.In)] int* @params);
 
         [NativeApi(EntryPoint = "glImageTransformParameterivHP", Convention = CallingConvention.Winapi)]
-        public partial void ImageTransformParameter([Flow(Silk.NET.Core.Native.FlowDirection.In)] ImageTransformTargetHP target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ImageTransformPNameHP pname, [Count(Computed = "pname"), Flow(Silk.NET.Core.Native.FlowDirection.In)] in int @params);
+        public partial void ImageTransformParameter([Flow(Silk.NET.Core.Native.FlowDirection.In)] ImageTransformTargetHP target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ImageTransformPNameHP pname, [Count(Computed = "pname"), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in int @params);
 
         [NativeApi(EntryPoint = "glImageTransformParameterfvHP", Convention = CallingConvention.Winapi)]
         public unsafe partial void ImageTransformParameter([Flow(Silk.NET.Core.Native.FlowDirection.In)] HP target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] HP pname, [Count(Computed = "pname"), Flow(Silk.NET.Core.Native.FlowDirection.In)] float* @params);
 
         [NativeApi(EntryPoint = "glImageTransformParameterfvHP", Convention = CallingConvention.Winapi)]
-        public partial void ImageTransformParameter([Flow(Silk.NET.Core.Native.FlowDirection.In)] HP target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] HP pname, [Count(Computed = "pname"), Flow(Silk.NET.Core.Native.FlowDirection.In)] in float @params);
+        public partial void ImageTransformParameter([Flow(Silk.NET.Core.Native.FlowDirection.In)] HP target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] HP pname, [Count(Computed = "pname"), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in float @params);
 
         [NativeApi(EntryPoint = "glImageTransformParameterfvHP", Convention = CallingConvention.Winapi)]
         public unsafe partial void ImageTransformParameter([Flow(Silk.NET.Core.Native.FlowDirection.In)] HP target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ImageTransformPNameHP pname, [Count(Computed = "pname"), Flow(Silk.NET.Core.Native.FlowDirection.In)] float* @params);
 
         [NativeApi(EntryPoint = "glImageTransformParameterfvHP", Convention = CallingConvention.Winapi)]
-        public partial void ImageTransformParameter([Flow(Silk.NET.Core.Native.FlowDirection.In)] HP target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ImageTransformPNameHP pname, [Count(Computed = "pname"), Flow(Silk.NET.Core.Native.FlowDirection.In)] in float @params);
+        public partial void ImageTransformParameter([Flow(Silk.NET.Core.Native.FlowDirection.In)] HP target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ImageTransformPNameHP pname, [Count(Computed = "pname"), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in float @params);
 
         [NativeApi(EntryPoint = "glImageTransformParameterfvHP", Convention = CallingConvention.Winapi)]
         public unsafe partial void ImageTransformParameter([Flow(Silk.NET.Core.Native.FlowDirection.In)] ImageTransformTargetHP target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] HP pname, [Count(Computed = "pname"), Flow(Silk.NET.Core.Native.FlowDirection.In)] float* @params);
 
         [NativeApi(EntryPoint = "glImageTransformParameterfvHP", Convention = CallingConvention.Winapi)]
-        public partial void ImageTransformParameter([Flow(Silk.NET.Core.Native.FlowDirection.In)] ImageTransformTargetHP target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] HP pname, [Count(Computed = "pname"), Flow(Silk.NET.Core.Native.FlowDirection.In)] in float @params);
+        public partial void ImageTransformParameter([Flow(Silk.NET.Core.Native.FlowDirection.In)] ImageTransformTargetHP target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] HP pname, [Count(Computed = "pname"), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in float @params);
 
         [NativeApi(EntryPoint = "glImageTransformParameterfvHP", Convention = CallingConvention.Winapi)]
         public unsafe partial void ImageTransformParameter([Flow(Silk.NET.Core.Native.FlowDirection.In)] ImageTransformTargetHP target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ImageTransformPNameHP pname, [Count(Computed = "pname"), Flow(Silk.NET.Core.Native.FlowDirection.In)] float* @params);
 
         [NativeApi(EntryPoint = "glImageTransformParameterfvHP", Convention = CallingConvention.Winapi)]
-        public partial void ImageTransformParameter([Flow(Silk.NET.Core.Native.FlowDirection.In)] ImageTransformTargetHP target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ImageTransformPNameHP pname, [Count(Computed = "pname"), Flow(Silk.NET.Core.Native.FlowDirection.In)] in float @params);
+        public partial void ImageTransformParameter([Flow(Silk.NET.Core.Native.FlowDirection.In)] ImageTransformTargetHP target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ImageTransformPNameHP pname, [Count(Computed = "pname"), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in float @params);
 
         public unsafe int GetImageTransformParameter([Flow(Silk.NET.Core.Native.FlowDirection.In)] HP target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] HP pname)
         {

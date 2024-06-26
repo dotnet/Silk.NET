@@ -22,7 +22,8 @@ namespace Silk.NET.WebGPU.Extensions.Dawn
         public SharedTextureMemoryDXGISharedHandleDescriptor
         (
             ChainedStruct? chain = null,
-            void* handle = null
+            void* handle = null,
+            Silk.NET.Core.Bool32? useKeyedMutex = null
         ) : this()
         {
             if (chain is not null)
@@ -33,6 +34,11 @@ namespace Silk.NET.WebGPU.Extensions.Dawn
             if (handle is not null)
             {
                 Handle = handle;
+            }
+
+            if (useKeyedMutex is not null)
+            {
+                UseKeyedMutex = useKeyedMutex.Value;
             }
         }
 
@@ -46,5 +52,10 @@ namespace Silk.NET.WebGPU.Extensions.Dawn
         [NativeName("Type.Name", "void *")]
         [NativeName("Name", "handle")]
         public void* Handle;
+
+        [NativeName("Type", "WGPUBool")]
+        [NativeName("Type.Name", "WGPUBool")]
+        [NativeName("Name", "useKeyedMutex")]
+        public Silk.NET.Core.Bool32 UseKeyedMutex;
     }
 }

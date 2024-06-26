@@ -255,7 +255,7 @@ public unsafe static class WICDevelopRawVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CopyPixels(this ComPtr<IWICDevelopRaw> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Maths.Rectangle<int> prc, uint cbStride, uint cbBufferSize, byte* pbBuffer)
+    public static unsafe int CopyPixels(this ComPtr<IWICDevelopRaw> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Maths.Rectangle<int> prc, uint cbStride, uint cbBufferSize, byte* pbBuffer)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -267,7 +267,7 @@ public unsafe static class WICDevelopRawVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int CopyPixels(this ComPtr<IWICDevelopRaw> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Maths.Rectangle<int> prc, uint cbStride, uint cbBufferSize, ref byte pbBuffer)
+    public static int CopyPixels(this ComPtr<IWICDevelopRaw> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Maths.Rectangle<int> prc, uint cbStride, uint cbBufferSize, ref byte pbBuffer)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -282,7 +282,7 @@ public unsafe static class WICDevelopRawVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int CopyPixels(this ComPtr<IWICDevelopRaw> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Maths.Rectangle<int> prc, uint cbStride, uint cbBufferSize, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pbBuffer)
+    public static int CopyPixels(this ComPtr<IWICDevelopRaw> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Maths.Rectangle<int> prc, uint cbStride, uint cbBufferSize, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pbBuffer)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -416,22 +416,22 @@ public unsafe static class WICDevelopRawVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetCurrentParameterSet(this ComPtr<IWICDevelopRaw> thisVtbl, Silk.NET.Core.Native.IUnknown** ppCurrentParameterSet)
+    public static unsafe int GetCurrentParameterSet(this ComPtr<IWICDevelopRaw> thisVtbl, Silk.NET.Core.Win32Extras.IPropertyBag2** ppCurrentParameterSet)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
-        ret = ((delegate* unmanaged[Stdcall]<IWICDevelopRaw*, Silk.NET.Core.Native.IUnknown**, int>)@this->LpVtbl[13])(@this, ppCurrentParameterSet);
+        ret = ((delegate* unmanaged[Stdcall]<IWICDevelopRaw*, Silk.NET.Core.Win32Extras.IPropertyBag2**, int>)@this->LpVtbl[13])(@this, ppCurrentParameterSet);
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetCurrentParameterSet(this ComPtr<IWICDevelopRaw> thisVtbl, ref Silk.NET.Core.Native.IUnknown* ppCurrentParameterSet)
+    public static unsafe int GetCurrentParameterSet(this ComPtr<IWICDevelopRaw> thisVtbl, ref Silk.NET.Core.Win32Extras.IPropertyBag2* ppCurrentParameterSet)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
-        fixed (Silk.NET.Core.Native.IUnknown** ppCurrentParameterSetPtr = &ppCurrentParameterSet)
+        fixed (Silk.NET.Core.Win32Extras.IPropertyBag2** ppCurrentParameterSetPtr = &ppCurrentParameterSet)
         {
-            ret = ((delegate* unmanaged[Stdcall]<IWICDevelopRaw*, Silk.NET.Core.Native.IUnknown**, int>)@this->LpVtbl[13])(@this, ppCurrentParameterSetPtr);
+            ret = ((delegate* unmanaged[Stdcall]<IWICDevelopRaw*, Silk.NET.Core.Win32Extras.IPropertyBag2**, int>)@this->LpVtbl[13])(@this, ppCurrentParameterSetPtr);
         }
         return ret;
     }
@@ -962,7 +962,7 @@ public unsafe static class WICDevelopRawVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int SetToneCurve(this ComPtr<IWICDevelopRaw> thisVtbl, uint cbToneCurveSize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in RawToneCurve pToneCurve)
+    public static int SetToneCurve(this ComPtr<IWICDevelopRaw> thisVtbl, uint cbToneCurveSize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in RawToneCurve pToneCurve)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1285,14 +1285,6 @@ public unsafe static class WICDevelopRawVtblExtensions
         var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->QueryRawCapabilitiesInfo(ref pInfo.GetPinnableReference());
-    }
-
-    /// <summary>To be documented.</summary>
-    public static int GetCurrentParameterSet<TI0>(this ComPtr<IWICDevelopRaw> thisVtbl, ref ComPtr<TI0> ppCurrentParameterSet) where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Native.IUnknown>, IComVtbl<TI0>
-    {
-        var @this = thisVtbl.Handle;
-        // ComPtrOverloader
-        return @this->GetCurrentParameterSet((Silk.NET.Core.Native.IUnknown**) ppCurrentParameterSet.GetAddressOf());
     }
 
     /// <summary>To be documented.</summary>

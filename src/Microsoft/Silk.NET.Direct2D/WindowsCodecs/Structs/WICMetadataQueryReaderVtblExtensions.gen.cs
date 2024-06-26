@@ -179,73 +179,73 @@ public unsafe static class WICMetadataQueryReaderVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetMetadataByName(this ComPtr<IWICMetadataQueryReader> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* wzName, void* pvarValue)
+    public static unsafe int GetMetadataByName(this ComPtr<IWICMetadataQueryReader> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* wzName, Silk.NET.Core.Win32Extras.PropVariant* pvarValue)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
-        ret = ((delegate* unmanaged[Stdcall]<IWICMetadataQueryReader*, char*, void*, int>)@this->LpVtbl[5])(@this, wzName, pvarValue);
+        ret = ((delegate* unmanaged[Stdcall]<IWICMetadataQueryReader*, char*, Silk.NET.Core.Win32Extras.PropVariant*, int>)@this->LpVtbl[5])(@this, wzName, pvarValue);
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetMetadataByName<T0>(this ComPtr<IWICMetadataQueryReader> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* wzName, ref T0 pvarValue) where T0 : unmanaged
+    public static unsafe int GetMetadataByName(this ComPtr<IWICMetadataQueryReader> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* wzName, ref Silk.NET.Core.Win32Extras.PropVariant pvarValue)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
-        fixed (void* pvarValuePtr = &pvarValue)
+        fixed (Silk.NET.Core.Win32Extras.PropVariant* pvarValuePtr = &pvarValue)
         {
-            ret = ((delegate* unmanaged[Stdcall]<IWICMetadataQueryReader*, char*, void*, int>)@this->LpVtbl[5])(@this, wzName, pvarValuePtr);
+            ret = ((delegate* unmanaged[Stdcall]<IWICMetadataQueryReader*, char*, Silk.NET.Core.Win32Extras.PropVariant*, int>)@this->LpVtbl[5])(@this, wzName, pvarValuePtr);
         }
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetMetadataByName(this ComPtr<IWICMetadataQueryReader> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in char wzName, void* pvarValue)
+    public static unsafe int GetMetadataByName(this ComPtr<IWICMetadataQueryReader> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char wzName, Silk.NET.Core.Win32Extras.PropVariant* pvarValue)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
         fixed (char* wzNamePtr = &wzName)
         {
-            ret = ((delegate* unmanaged[Stdcall]<IWICMetadataQueryReader*, char*, void*, int>)@this->LpVtbl[5])(@this, wzNamePtr, pvarValue);
+            ret = ((delegate* unmanaged[Stdcall]<IWICMetadataQueryReader*, char*, Silk.NET.Core.Win32Extras.PropVariant*, int>)@this->LpVtbl[5])(@this, wzNamePtr, pvarValue);
         }
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static int GetMetadataByName<T0>(this ComPtr<IWICMetadataQueryReader> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in char wzName, ref T0 pvarValue) where T0 : unmanaged
+    public static int GetMetadataByName(this ComPtr<IWICMetadataQueryReader> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char wzName, ref Silk.NET.Core.Win32Extras.PropVariant pvarValue)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
         fixed (char* wzNamePtr = &wzName)
         {
-            fixed (void* pvarValuePtr = &pvarValue)
+            fixed (Silk.NET.Core.Win32Extras.PropVariant* pvarValuePtr = &pvarValue)
             {
-                ret = ((delegate* unmanaged[Stdcall]<IWICMetadataQueryReader*, char*, void*, int>)@this->LpVtbl[5])(@this, wzNamePtr, pvarValuePtr);
+                ret = ((delegate* unmanaged[Stdcall]<IWICMetadataQueryReader*, char*, Silk.NET.Core.Win32Extras.PropVariant*, int>)@this->LpVtbl[5])(@this, wzNamePtr, pvarValuePtr);
             }
         }
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetMetadataByName(this ComPtr<IWICMetadataQueryReader> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string wzName, void* pvarValue)
+    public static unsafe int GetMetadataByName(this ComPtr<IWICMetadataQueryReader> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string wzName, Silk.NET.Core.Win32Extras.PropVariant* pvarValue)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
         var wzNamePtr = (byte*) SilkMarshal.StringToPtr(wzName, NativeStringEncoding.LPWStr);
-        ret = ((delegate* unmanaged[Stdcall]<IWICMetadataQueryReader*, byte*, void*, int>)@this->LpVtbl[5])(@this, wzNamePtr, pvarValue);
+        ret = ((delegate* unmanaged[Stdcall]<IWICMetadataQueryReader*, byte*, Silk.NET.Core.Win32Extras.PropVariant*, int>)@this->LpVtbl[5])(@this, wzNamePtr, pvarValue);
         SilkMarshal.Free((nint)wzNamePtr);
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static int GetMetadataByName<T0>(this ComPtr<IWICMetadataQueryReader> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string wzName, ref T0 pvarValue) where T0 : unmanaged
+    public static int GetMetadataByName(this ComPtr<IWICMetadataQueryReader> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string wzName, ref Silk.NET.Core.Win32Extras.PropVariant pvarValue)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
         var wzNamePtr = (byte*) SilkMarshal.StringToPtr(wzName, NativeStringEncoding.LPWStr);
-        fixed (void* pvarValuePtr = &pvarValue)
+        fixed (Silk.NET.Core.Win32Extras.PropVariant* pvarValuePtr = &pvarValue)
         {
-            ret = ((delegate* unmanaged[Stdcall]<IWICMetadataQueryReader*, byte*, void*, int>)@this->LpVtbl[5])(@this, wzNamePtr, pvarValuePtr);
+            ret = ((delegate* unmanaged[Stdcall]<IWICMetadataQueryReader*, byte*, Silk.NET.Core.Win32Extras.PropVariant*, int>)@this->LpVtbl[5])(@this, wzNamePtr, pvarValuePtr);
         }
         SilkMarshal.Free((nint)wzNamePtr);
         return ret;
@@ -338,7 +338,7 @@ public unsafe static class WICMetadataQueryReaderVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetMetadataByName<T0>(this ComPtr<IWICMetadataQueryReader> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* wzName, Span<T0> pvarValue) where T0 : unmanaged
+    public static unsafe int GetMetadataByName(this ComPtr<IWICMetadataQueryReader> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* wzName, Span<Silk.NET.Core.Win32Extras.PropVariant> pvarValue)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -346,7 +346,7 @@ public unsafe static class WICMetadataQueryReaderVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetMetadataByName(this ComPtr<IWICMetadataQueryReader> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<char> wzName, void* pvarValue)
+    public static unsafe int GetMetadataByName(this ComPtr<IWICMetadataQueryReader> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<char> wzName, Silk.NET.Core.Win32Extras.PropVariant* pvarValue)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -354,7 +354,7 @@ public unsafe static class WICMetadataQueryReaderVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int GetMetadataByName<T0>(this ComPtr<IWICMetadataQueryReader> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<char> wzName, Span<T0> pvarValue) where T0 : unmanaged
+    public static int GetMetadataByName(this ComPtr<IWICMetadataQueryReader> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<char> wzName, Span<Silk.NET.Core.Win32Extras.PropVariant> pvarValue)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -362,7 +362,7 @@ public unsafe static class WICMetadataQueryReaderVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int GetMetadataByName<T0>(this ComPtr<IWICMetadataQueryReader> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string wzName, Span<T0> pvarValue) where T0 : unmanaged
+    public static int GetMetadataByName(this ComPtr<IWICMetadataQueryReader> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string wzName, Span<Silk.NET.Core.Win32Extras.PropVariant> pvarValue)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader

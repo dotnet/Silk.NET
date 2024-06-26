@@ -69,6 +69,9 @@ namespace Silk.NET.Vulkan
         [Obsolete("Deprecated in favour of \"CreateFragmentDensityMapOffsetBitQCom\"")]
         [NativeName("Name", "VK_IMAGE_CREATE_FRAGMENT_DENSITY_MAP_OFFSET_BIT_QCOM")]
         ImageCreateFragmentDensityMapOffsetBitQCom = 32768,
+        [Obsolete("Deprecated in favour of \"CreateVideoProfileIndependentBitKhr\"")]
+        [NativeName("Name", "VK_IMAGE_CREATE_VIDEO_PROFILE_INDEPENDENT_BIT_KHR")]
+        ImageCreateVideoProfileIndependentBitKhr = 1048576,
         [Obsolete("Deprecated in favour of \"CreateAliasBit\"")]
         [NativeName("Name", "VK_IMAGE_CREATE_ALIAS_BIT")]
         ImageCreateAliasBit = 1024,
@@ -126,6 +129,8 @@ namespace Silk.NET.Vulkan
         Create2DViewCompatibleBitExt = 131072,
         [NativeName("Name", "VK_IMAGE_CREATE_FRAGMENT_DENSITY_MAP_OFFSET_BIT_QCOM")]
         CreateFragmentDensityMapOffsetBitQCom = 32768,
+        [NativeName("Name", "VK_IMAGE_CREATE_VIDEO_PROFILE_INDEPENDENT_BIT_KHR")]
+        CreateVideoProfileIndependentBitKhr = 1048576,
         [NativeName("Name", "VK_IMAGE_CREATE_ALIAS_BIT")]
         CreateAliasBit = 1024,
         [NativeName("Name", "VK_IMAGE_CREATE_SPLIT_INSTANCE_BIND_REGIONS_BIT")]

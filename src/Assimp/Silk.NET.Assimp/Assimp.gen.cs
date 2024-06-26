@@ -275,7 +275,7 @@ namespace Silk.NET.Assimp
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 107, Column 17 in cexport.h")]
         [NativeApi(EntryPoint = "aiReleaseExportFormatDescription")]
-        public partial void ReleaseExportFormatDescription([Flow(Silk.NET.Core.Native.FlowDirection.In)] in ExportFormatDesc desc);
+        public partial void ReleaseExportFormatDescription([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ExportFormatDesc desc);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 118, Column 17 in cexport.h")]
@@ -290,12 +290,12 @@ namespace Silk.NET.Assimp
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 118, Column 17 in cexport.h")]
         [NativeApi(EntryPoint = "aiCopyScene")]
-        public unsafe partial void CopyScene([Flow(Silk.NET.Core.Native.FlowDirection.In)] in Scene pIn, Scene** pOut);
+        public unsafe partial void CopyScene([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Scene pIn, Scene** pOut);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 118, Column 17 in cexport.h")]
         [NativeApi(EntryPoint = "aiCopyScene")]
-        public unsafe partial void CopyScene([Flow(Silk.NET.Core.Native.FlowDirection.In)] in Scene pIn, ref Scene* pOut);
+        public unsafe partial void CopyScene([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Scene pIn, ref Scene* pOut);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 123, Column 17 in cexport.h")]
@@ -305,7 +305,7 @@ namespace Silk.NET.Assimp
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 123, Column 17 in cexport.h")]
         [NativeApi(EntryPoint = "aiFreeScene")]
-        public partial void FreeScene([Flow(Silk.NET.Core.Native.FlowDirection.In)] in Scene pIn);
+        public partial void FreeScene([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Scene pIn);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 164, Column 21 in cexport.h")]
@@ -315,7 +315,7 @@ namespace Silk.NET.Assimp
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 164, Column 21 in cexport.h")]
         [NativeApi(EntryPoint = "aiExportScene")]
-        public unsafe partial Return ExportScene([Flow(Silk.NET.Core.Native.FlowDirection.In)] Scene* pScene, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* pFormatId, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte pFileName, uint pPreprocessing);
+        public unsafe partial Return ExportScene([Flow(Silk.NET.Core.Native.FlowDirection.In)] Scene* pScene, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* pFormatId, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte pFileName, uint pPreprocessing);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 164, Column 21 in cexport.h")]
@@ -325,17 +325,17 @@ namespace Silk.NET.Assimp
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 164, Column 21 in cexport.h")]
         [NativeApi(EntryPoint = "aiExportScene")]
-        public unsafe partial Return ExportScene([Flow(Silk.NET.Core.Native.FlowDirection.In)] Scene* pScene, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte pFormatId, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* pFileName, uint pPreprocessing);
+        public unsafe partial Return ExportScene([Flow(Silk.NET.Core.Native.FlowDirection.In)] Scene* pScene, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte pFormatId, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* pFileName, uint pPreprocessing);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 164, Column 21 in cexport.h")]
         [NativeApi(EntryPoint = "aiExportScene")]
-        public unsafe partial Return ExportScene([Flow(Silk.NET.Core.Native.FlowDirection.In)] Scene* pScene, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte pFormatId, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte pFileName, uint pPreprocessing);
+        public unsafe partial Return ExportScene([Flow(Silk.NET.Core.Native.FlowDirection.In)] Scene* pScene, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte pFormatId, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte pFileName, uint pPreprocessing);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 164, Column 21 in cexport.h")]
         [NativeApi(EntryPoint = "aiExportScene")]
-        public unsafe partial Return ExportScene([Flow(Silk.NET.Core.Native.FlowDirection.In)] Scene* pScene, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte pFormatId, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pFileName, uint pPreprocessing);
+        public unsafe partial Return ExportScene([Flow(Silk.NET.Core.Native.FlowDirection.In)] Scene* pScene, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte pFormatId, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pFileName, uint pPreprocessing);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 164, Column 21 in cexport.h")]
@@ -345,7 +345,7 @@ namespace Silk.NET.Assimp
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 164, Column 21 in cexport.h")]
         [NativeApi(EntryPoint = "aiExportScene")]
-        public unsafe partial Return ExportScene([Flow(Silk.NET.Core.Native.FlowDirection.In)] Scene* pScene, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pFormatId, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte pFileName, uint pPreprocessing);
+        public unsafe partial Return ExportScene([Flow(Silk.NET.Core.Native.FlowDirection.In)] Scene* pScene, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pFormatId, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte pFileName, uint pPreprocessing);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 164, Column 21 in cexport.h")]
@@ -355,47 +355,47 @@ namespace Silk.NET.Assimp
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 164, Column 21 in cexport.h")]
         [NativeApi(EntryPoint = "aiExportScene")]
-        public unsafe partial Return ExportScene([Flow(Silk.NET.Core.Native.FlowDirection.In)] in Scene pScene, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* pFormatId, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* pFileName, uint pPreprocessing);
+        public unsafe partial Return ExportScene([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Scene pScene, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* pFormatId, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* pFileName, uint pPreprocessing);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 164, Column 21 in cexport.h")]
         [NativeApi(EntryPoint = "aiExportScene")]
-        public unsafe partial Return ExportScene([Flow(Silk.NET.Core.Native.FlowDirection.In)] in Scene pScene, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* pFormatId, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte pFileName, uint pPreprocessing);
+        public unsafe partial Return ExportScene([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Scene pScene, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* pFormatId, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte pFileName, uint pPreprocessing);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 164, Column 21 in cexport.h")]
         [NativeApi(EntryPoint = "aiExportScene")]
-        public unsafe partial Return ExportScene([Flow(Silk.NET.Core.Native.FlowDirection.In)] in Scene pScene, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* pFormatId, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pFileName, uint pPreprocessing);
+        public unsafe partial Return ExportScene([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Scene pScene, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* pFormatId, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pFileName, uint pPreprocessing);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 164, Column 21 in cexport.h")]
         [NativeApi(EntryPoint = "aiExportScene")]
-        public unsafe partial Return ExportScene([Flow(Silk.NET.Core.Native.FlowDirection.In)] in Scene pScene, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte pFormatId, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* pFileName, uint pPreprocessing);
+        public unsafe partial Return ExportScene([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Scene pScene, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte pFormatId, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* pFileName, uint pPreprocessing);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 164, Column 21 in cexport.h")]
         [NativeApi(EntryPoint = "aiExportScene")]
-        public partial Return ExportScene([Flow(Silk.NET.Core.Native.FlowDirection.In)] in Scene pScene, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte pFormatId, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte pFileName, uint pPreprocessing);
+        public partial Return ExportScene([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Scene pScene, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte pFormatId, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte pFileName, uint pPreprocessing);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 164, Column 21 in cexport.h")]
         [NativeApi(EntryPoint = "aiExportScene")]
-        public partial Return ExportScene([Flow(Silk.NET.Core.Native.FlowDirection.In)] in Scene pScene, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte pFormatId, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pFileName, uint pPreprocessing);
+        public partial Return ExportScene([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Scene pScene, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte pFormatId, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pFileName, uint pPreprocessing);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 164, Column 21 in cexport.h")]
         [NativeApi(EntryPoint = "aiExportScene")]
-        public unsafe partial Return ExportScene([Flow(Silk.NET.Core.Native.FlowDirection.In)] in Scene pScene, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pFormatId, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* pFileName, uint pPreprocessing);
+        public unsafe partial Return ExportScene([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Scene pScene, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pFormatId, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* pFileName, uint pPreprocessing);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 164, Column 21 in cexport.h")]
         [NativeApi(EntryPoint = "aiExportScene")]
-        public partial Return ExportScene([Flow(Silk.NET.Core.Native.FlowDirection.In)] in Scene pScene, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pFormatId, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte pFileName, uint pPreprocessing);
+        public partial Return ExportScene([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Scene pScene, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pFormatId, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte pFileName, uint pPreprocessing);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 164, Column 21 in cexport.h")]
         [NativeApi(EntryPoint = "aiExportScene")]
-        public partial Return ExportScene([Flow(Silk.NET.Core.Native.FlowDirection.In)] in Scene pScene, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pFormatId, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pFileName, uint pPreprocessing);
+        public partial Return ExportScene([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Scene pScene, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pFormatId, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pFileName, uint pPreprocessing);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 184, Column 21 in cexport.h")]
@@ -410,12 +410,12 @@ namespace Silk.NET.Assimp
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 184, Column 21 in cexport.h")]
         [NativeApi(EntryPoint = "aiExportSceneEx")]
-        public unsafe partial Return ExportSceneEx([Flow(Silk.NET.Core.Native.FlowDirection.In)] Scene* pScene, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* pFormatId, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte pFileName, FileIO* pIO, uint pPreprocessing);
+        public unsafe partial Return ExportSceneEx([Flow(Silk.NET.Core.Native.FlowDirection.In)] Scene* pScene, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* pFormatId, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte pFileName, FileIO* pIO, uint pPreprocessing);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 184, Column 21 in cexport.h")]
         [NativeApi(EntryPoint = "aiExportSceneEx")]
-        public unsafe partial Return ExportSceneEx([Flow(Silk.NET.Core.Native.FlowDirection.In)] Scene* pScene, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* pFormatId, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte pFileName, ref FileIO pIO, uint pPreprocessing);
+        public unsafe partial Return ExportSceneEx([Flow(Silk.NET.Core.Native.FlowDirection.In)] Scene* pScene, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* pFormatId, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte pFileName, ref FileIO pIO, uint pPreprocessing);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 184, Column 21 in cexport.h")]
@@ -430,32 +430,32 @@ namespace Silk.NET.Assimp
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 184, Column 21 in cexport.h")]
         [NativeApi(EntryPoint = "aiExportSceneEx")]
-        public unsafe partial Return ExportSceneEx([Flow(Silk.NET.Core.Native.FlowDirection.In)] Scene* pScene, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte pFormatId, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* pFileName, FileIO* pIO, uint pPreprocessing);
+        public unsafe partial Return ExportSceneEx([Flow(Silk.NET.Core.Native.FlowDirection.In)] Scene* pScene, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte pFormatId, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* pFileName, FileIO* pIO, uint pPreprocessing);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 184, Column 21 in cexport.h")]
         [NativeApi(EntryPoint = "aiExportSceneEx")]
-        public unsafe partial Return ExportSceneEx([Flow(Silk.NET.Core.Native.FlowDirection.In)] Scene* pScene, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte pFormatId, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* pFileName, ref FileIO pIO, uint pPreprocessing);
+        public unsafe partial Return ExportSceneEx([Flow(Silk.NET.Core.Native.FlowDirection.In)] Scene* pScene, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte pFormatId, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* pFileName, ref FileIO pIO, uint pPreprocessing);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 184, Column 21 in cexport.h")]
         [NativeApi(EntryPoint = "aiExportSceneEx")]
-        public unsafe partial Return ExportSceneEx([Flow(Silk.NET.Core.Native.FlowDirection.In)] Scene* pScene, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte pFormatId, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte pFileName, FileIO* pIO, uint pPreprocessing);
+        public unsafe partial Return ExportSceneEx([Flow(Silk.NET.Core.Native.FlowDirection.In)] Scene* pScene, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte pFormatId, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte pFileName, FileIO* pIO, uint pPreprocessing);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 184, Column 21 in cexport.h")]
         [NativeApi(EntryPoint = "aiExportSceneEx")]
-        public unsafe partial Return ExportSceneEx([Flow(Silk.NET.Core.Native.FlowDirection.In)] Scene* pScene, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte pFormatId, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte pFileName, ref FileIO pIO, uint pPreprocessing);
+        public unsafe partial Return ExportSceneEx([Flow(Silk.NET.Core.Native.FlowDirection.In)] Scene* pScene, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte pFormatId, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte pFileName, ref FileIO pIO, uint pPreprocessing);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 184, Column 21 in cexport.h")]
         [NativeApi(EntryPoint = "aiExportSceneEx")]
-        public unsafe partial Return ExportSceneEx([Flow(Silk.NET.Core.Native.FlowDirection.In)] Scene* pScene, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte pFormatId, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pFileName, FileIO* pIO, uint pPreprocessing);
+        public unsafe partial Return ExportSceneEx([Flow(Silk.NET.Core.Native.FlowDirection.In)] Scene* pScene, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte pFormatId, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pFileName, FileIO* pIO, uint pPreprocessing);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 184, Column 21 in cexport.h")]
         [NativeApi(EntryPoint = "aiExportSceneEx")]
-        public unsafe partial Return ExportSceneEx([Flow(Silk.NET.Core.Native.FlowDirection.In)] Scene* pScene, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte pFormatId, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pFileName, ref FileIO pIO, uint pPreprocessing);
+        public unsafe partial Return ExportSceneEx([Flow(Silk.NET.Core.Native.FlowDirection.In)] Scene* pScene, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte pFormatId, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pFileName, ref FileIO pIO, uint pPreprocessing);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 184, Column 21 in cexport.h")]
@@ -470,12 +470,12 @@ namespace Silk.NET.Assimp
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 184, Column 21 in cexport.h")]
         [NativeApi(EntryPoint = "aiExportSceneEx")]
-        public unsafe partial Return ExportSceneEx([Flow(Silk.NET.Core.Native.FlowDirection.In)] Scene* pScene, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pFormatId, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte pFileName, FileIO* pIO, uint pPreprocessing);
+        public unsafe partial Return ExportSceneEx([Flow(Silk.NET.Core.Native.FlowDirection.In)] Scene* pScene, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pFormatId, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte pFileName, FileIO* pIO, uint pPreprocessing);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 184, Column 21 in cexport.h")]
         [NativeApi(EntryPoint = "aiExportSceneEx")]
-        public unsafe partial Return ExportSceneEx([Flow(Silk.NET.Core.Native.FlowDirection.In)] Scene* pScene, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pFormatId, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte pFileName, ref FileIO pIO, uint pPreprocessing);
+        public unsafe partial Return ExportSceneEx([Flow(Silk.NET.Core.Native.FlowDirection.In)] Scene* pScene, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pFormatId, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte pFileName, ref FileIO pIO, uint pPreprocessing);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 184, Column 21 in cexport.h")]
@@ -490,92 +490,92 @@ namespace Silk.NET.Assimp
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 184, Column 21 in cexport.h")]
         [NativeApi(EntryPoint = "aiExportSceneEx")]
-        public unsafe partial Return ExportSceneEx([Flow(Silk.NET.Core.Native.FlowDirection.In)] in Scene pScene, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* pFormatId, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* pFileName, FileIO* pIO, uint pPreprocessing);
+        public unsafe partial Return ExportSceneEx([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Scene pScene, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* pFormatId, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* pFileName, FileIO* pIO, uint pPreprocessing);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 184, Column 21 in cexport.h")]
         [NativeApi(EntryPoint = "aiExportSceneEx")]
-        public unsafe partial Return ExportSceneEx([Flow(Silk.NET.Core.Native.FlowDirection.In)] in Scene pScene, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* pFormatId, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* pFileName, ref FileIO pIO, uint pPreprocessing);
+        public unsafe partial Return ExportSceneEx([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Scene pScene, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* pFormatId, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* pFileName, ref FileIO pIO, uint pPreprocessing);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 184, Column 21 in cexport.h")]
         [NativeApi(EntryPoint = "aiExportSceneEx")]
-        public unsafe partial Return ExportSceneEx([Flow(Silk.NET.Core.Native.FlowDirection.In)] in Scene pScene, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* pFormatId, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte pFileName, FileIO* pIO, uint pPreprocessing);
+        public unsafe partial Return ExportSceneEx([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Scene pScene, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* pFormatId, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte pFileName, FileIO* pIO, uint pPreprocessing);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 184, Column 21 in cexport.h")]
         [NativeApi(EntryPoint = "aiExportSceneEx")]
-        public unsafe partial Return ExportSceneEx([Flow(Silk.NET.Core.Native.FlowDirection.In)] in Scene pScene, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* pFormatId, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte pFileName, ref FileIO pIO, uint pPreprocessing);
+        public unsafe partial Return ExportSceneEx([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Scene pScene, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* pFormatId, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte pFileName, ref FileIO pIO, uint pPreprocessing);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 184, Column 21 in cexport.h")]
         [NativeApi(EntryPoint = "aiExportSceneEx")]
-        public unsafe partial Return ExportSceneEx([Flow(Silk.NET.Core.Native.FlowDirection.In)] in Scene pScene, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* pFormatId, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pFileName, FileIO* pIO, uint pPreprocessing);
+        public unsafe partial Return ExportSceneEx([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Scene pScene, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* pFormatId, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pFileName, FileIO* pIO, uint pPreprocessing);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 184, Column 21 in cexport.h")]
         [NativeApi(EntryPoint = "aiExportSceneEx")]
-        public unsafe partial Return ExportSceneEx([Flow(Silk.NET.Core.Native.FlowDirection.In)] in Scene pScene, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* pFormatId, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pFileName, ref FileIO pIO, uint pPreprocessing);
+        public unsafe partial Return ExportSceneEx([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Scene pScene, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* pFormatId, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pFileName, ref FileIO pIO, uint pPreprocessing);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 184, Column 21 in cexport.h")]
         [NativeApi(EntryPoint = "aiExportSceneEx")]
-        public unsafe partial Return ExportSceneEx([Flow(Silk.NET.Core.Native.FlowDirection.In)] in Scene pScene, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte pFormatId, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* pFileName, FileIO* pIO, uint pPreprocessing);
+        public unsafe partial Return ExportSceneEx([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Scene pScene, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte pFormatId, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* pFileName, FileIO* pIO, uint pPreprocessing);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 184, Column 21 in cexport.h")]
         [NativeApi(EntryPoint = "aiExportSceneEx")]
-        public unsafe partial Return ExportSceneEx([Flow(Silk.NET.Core.Native.FlowDirection.In)] in Scene pScene, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte pFormatId, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* pFileName, ref FileIO pIO, uint pPreprocessing);
+        public unsafe partial Return ExportSceneEx([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Scene pScene, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte pFormatId, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* pFileName, ref FileIO pIO, uint pPreprocessing);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 184, Column 21 in cexport.h")]
         [NativeApi(EntryPoint = "aiExportSceneEx")]
-        public unsafe partial Return ExportSceneEx([Flow(Silk.NET.Core.Native.FlowDirection.In)] in Scene pScene, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte pFormatId, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte pFileName, FileIO* pIO, uint pPreprocessing);
+        public unsafe partial Return ExportSceneEx([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Scene pScene, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte pFormatId, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte pFileName, FileIO* pIO, uint pPreprocessing);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 184, Column 21 in cexport.h")]
         [NativeApi(EntryPoint = "aiExportSceneEx")]
-        public partial Return ExportSceneEx([Flow(Silk.NET.Core.Native.FlowDirection.In)] in Scene pScene, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte pFormatId, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte pFileName, ref FileIO pIO, uint pPreprocessing);
+        public partial Return ExportSceneEx([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Scene pScene, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte pFormatId, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte pFileName, ref FileIO pIO, uint pPreprocessing);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 184, Column 21 in cexport.h")]
         [NativeApi(EntryPoint = "aiExportSceneEx")]
-        public unsafe partial Return ExportSceneEx([Flow(Silk.NET.Core.Native.FlowDirection.In)] in Scene pScene, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte pFormatId, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pFileName, FileIO* pIO, uint pPreprocessing);
+        public unsafe partial Return ExportSceneEx([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Scene pScene, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte pFormatId, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pFileName, FileIO* pIO, uint pPreprocessing);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 184, Column 21 in cexport.h")]
         [NativeApi(EntryPoint = "aiExportSceneEx")]
-        public partial Return ExportSceneEx([Flow(Silk.NET.Core.Native.FlowDirection.In)] in Scene pScene, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte pFormatId, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pFileName, ref FileIO pIO, uint pPreprocessing);
+        public partial Return ExportSceneEx([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Scene pScene, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte pFormatId, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pFileName, ref FileIO pIO, uint pPreprocessing);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 184, Column 21 in cexport.h")]
         [NativeApi(EntryPoint = "aiExportSceneEx")]
-        public unsafe partial Return ExportSceneEx([Flow(Silk.NET.Core.Native.FlowDirection.In)] in Scene pScene, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pFormatId, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* pFileName, FileIO* pIO, uint pPreprocessing);
+        public unsafe partial Return ExportSceneEx([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Scene pScene, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pFormatId, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* pFileName, FileIO* pIO, uint pPreprocessing);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 184, Column 21 in cexport.h")]
         [NativeApi(EntryPoint = "aiExportSceneEx")]
-        public unsafe partial Return ExportSceneEx([Flow(Silk.NET.Core.Native.FlowDirection.In)] in Scene pScene, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pFormatId, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* pFileName, ref FileIO pIO, uint pPreprocessing);
+        public unsafe partial Return ExportSceneEx([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Scene pScene, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pFormatId, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* pFileName, ref FileIO pIO, uint pPreprocessing);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 184, Column 21 in cexport.h")]
         [NativeApi(EntryPoint = "aiExportSceneEx")]
-        public unsafe partial Return ExportSceneEx([Flow(Silk.NET.Core.Native.FlowDirection.In)] in Scene pScene, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pFormatId, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte pFileName, FileIO* pIO, uint pPreprocessing);
+        public unsafe partial Return ExportSceneEx([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Scene pScene, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pFormatId, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte pFileName, FileIO* pIO, uint pPreprocessing);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 184, Column 21 in cexport.h")]
         [NativeApi(EntryPoint = "aiExportSceneEx")]
-        public partial Return ExportSceneEx([Flow(Silk.NET.Core.Native.FlowDirection.In)] in Scene pScene, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pFormatId, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte pFileName, ref FileIO pIO, uint pPreprocessing);
+        public partial Return ExportSceneEx([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Scene pScene, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pFormatId, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte pFileName, ref FileIO pIO, uint pPreprocessing);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 184, Column 21 in cexport.h")]
         [NativeApi(EntryPoint = "aiExportSceneEx")]
-        public unsafe partial Return ExportSceneEx([Flow(Silk.NET.Core.Native.FlowDirection.In)] in Scene pScene, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pFormatId, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pFileName, FileIO* pIO, uint pPreprocessing);
+        public unsafe partial Return ExportSceneEx([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Scene pScene, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pFormatId, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pFileName, FileIO* pIO, uint pPreprocessing);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 184, Column 21 in cexport.h")]
         [NativeApi(EntryPoint = "aiExportSceneEx")]
-        public partial Return ExportSceneEx([Flow(Silk.NET.Core.Native.FlowDirection.In)] in Scene pScene, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pFormatId, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pFileName, ref FileIO pIO, uint pPreprocessing);
+        public partial Return ExportSceneEx([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Scene pScene, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pFormatId, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pFileName, ref FileIO pIO, uint pPreprocessing);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 258, Column 45 in cexport.h")]
@@ -585,7 +585,7 @@ namespace Silk.NET.Assimp
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 258, Column 45 in cexport.h")]
         [NativeApi(EntryPoint = "aiExportSceneToBlob")]
-        public unsafe partial ExportDataBlob* ExportSceneToBlob([Flow(Silk.NET.Core.Native.FlowDirection.In)] Scene* pScene, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte pFormatId, uint pPreprocessing);
+        public unsafe partial ExportDataBlob* ExportSceneToBlob([Flow(Silk.NET.Core.Native.FlowDirection.In)] Scene* pScene, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte pFormatId, uint pPreprocessing);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 258, Column 45 in cexport.h")]
@@ -595,17 +595,17 @@ namespace Silk.NET.Assimp
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 258, Column 45 in cexport.h")]
         [NativeApi(EntryPoint = "aiExportSceneToBlob")]
-        public unsafe partial ExportDataBlob* ExportSceneToBlob([Flow(Silk.NET.Core.Native.FlowDirection.In)] in Scene pScene, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* pFormatId, uint pPreprocessing);
+        public unsafe partial ExportDataBlob* ExportSceneToBlob([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Scene pScene, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* pFormatId, uint pPreprocessing);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 258, Column 45 in cexport.h")]
         [NativeApi(EntryPoint = "aiExportSceneToBlob")]
-        public unsafe partial ExportDataBlob* ExportSceneToBlob([Flow(Silk.NET.Core.Native.FlowDirection.In)] in Scene pScene, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte pFormatId, uint pPreprocessing);
+        public unsafe partial ExportDataBlob* ExportSceneToBlob([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Scene pScene, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte pFormatId, uint pPreprocessing);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 258, Column 45 in cexport.h")]
         [NativeApi(EntryPoint = "aiExportSceneToBlob")]
-        public unsafe partial ExportDataBlob* ExportSceneToBlob([Flow(Silk.NET.Core.Native.FlowDirection.In)] in Scene pScene, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pFormatId, uint pPreprocessing);
+        public unsafe partial ExportDataBlob* ExportSceneToBlob([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Scene pScene, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pFormatId, uint pPreprocessing);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 266, Column 17 in cexport.h")]
@@ -615,7 +615,7 @@ namespace Silk.NET.Assimp
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 266, Column 17 in cexport.h")]
         [NativeApi(EntryPoint = "aiReleaseExportBlob")]
-        public partial void ReleaseExportBlob([Flow(Silk.NET.Core.Native.FlowDirection.In)] in ExportDataBlob pData);
+        public partial void ReleaseExportBlob([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ExportDataBlob pData);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 148, Column 43 in importerdesc.h")]
@@ -625,7 +625,7 @@ namespace Silk.NET.Assimp
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 148, Column 43 in importerdesc.h")]
         [NativeApi(EntryPoint = "aiGetImporterDesc")]
-        public unsafe partial ImporterDesc* GetImporterDesc([Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte extension);
+        public unsafe partial ImporterDesc* GetImporterDesc([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte extension);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 148, Column 43 in importerdesc.h")]
@@ -640,7 +640,7 @@ namespace Silk.NET.Assimp
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 117, Column 36 in cimport.h")]
         [NativeApi(EntryPoint = "aiImportFile")]
-        public unsafe partial Scene* ImportFile([Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte pFile, uint pFlags);
+        public unsafe partial Scene* ImportFile([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte pFile, uint pFlags);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 117, Column 36 in cimport.h")]
@@ -660,12 +660,12 @@ namespace Silk.NET.Assimp
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 142, Column 36 in cimport.h")]
         [NativeApi(EntryPoint = "aiImportFileEx")]
-        public unsafe partial Scene* ImportFileEx([Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte pFile, uint pFlags, FileIO* pFS);
+        public unsafe partial Scene* ImportFileEx([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte pFile, uint pFlags, FileIO* pFS);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 142, Column 36 in cimport.h")]
         [NativeApi(EntryPoint = "aiImportFileEx")]
-        public unsafe partial Scene* ImportFileEx([Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte pFile, uint pFlags, ref FileIO pFS);
+        public unsafe partial Scene* ImportFileEx([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte pFile, uint pFlags, ref FileIO pFS);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 142, Column 36 in cimport.h")]
@@ -685,7 +685,7 @@ namespace Silk.NET.Assimp
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 163, Column 36 in cimport.h")]
         [NativeApi(EntryPoint = "aiImportFileExWithProperties")]
-        public unsafe partial Scene* ImportFileExWithProperties([Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* pFile, uint pFlags, FileIO* pFS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in PropertyStore pProps);
+        public unsafe partial Scene* ImportFileExWithProperties([Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* pFile, uint pFlags, FileIO* pFS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in PropertyStore pProps);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 163, Column 36 in cimport.h")]
@@ -695,27 +695,27 @@ namespace Silk.NET.Assimp
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 163, Column 36 in cimport.h")]
         [NativeApi(EntryPoint = "aiImportFileExWithProperties")]
-        public unsafe partial Scene* ImportFileExWithProperties([Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* pFile, uint pFlags, ref FileIO pFS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in PropertyStore pProps);
+        public unsafe partial Scene* ImportFileExWithProperties([Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* pFile, uint pFlags, ref FileIO pFS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in PropertyStore pProps);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 163, Column 36 in cimport.h")]
         [NativeApi(EntryPoint = "aiImportFileExWithProperties")]
-        public unsafe partial Scene* ImportFileExWithProperties([Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte pFile, uint pFlags, FileIO* pFS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PropertyStore* pProps);
+        public unsafe partial Scene* ImportFileExWithProperties([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte pFile, uint pFlags, FileIO* pFS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PropertyStore* pProps);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 163, Column 36 in cimport.h")]
         [NativeApi(EntryPoint = "aiImportFileExWithProperties")]
-        public unsafe partial Scene* ImportFileExWithProperties([Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte pFile, uint pFlags, FileIO* pFS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in PropertyStore pProps);
+        public unsafe partial Scene* ImportFileExWithProperties([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte pFile, uint pFlags, FileIO* pFS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in PropertyStore pProps);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 163, Column 36 in cimport.h")]
         [NativeApi(EntryPoint = "aiImportFileExWithProperties")]
-        public unsafe partial Scene* ImportFileExWithProperties([Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte pFile, uint pFlags, ref FileIO pFS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PropertyStore* pProps);
+        public unsafe partial Scene* ImportFileExWithProperties([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte pFile, uint pFlags, ref FileIO pFS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PropertyStore* pProps);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 163, Column 36 in cimport.h")]
         [NativeApi(EntryPoint = "aiImportFileExWithProperties")]
-        public unsafe partial Scene* ImportFileExWithProperties([Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte pFile, uint pFlags, ref FileIO pFS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in PropertyStore pProps);
+        public unsafe partial Scene* ImportFileExWithProperties([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte pFile, uint pFlags, ref FileIO pFS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in PropertyStore pProps);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 163, Column 36 in cimport.h")]
@@ -725,7 +725,7 @@ namespace Silk.NET.Assimp
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 163, Column 36 in cimport.h")]
         [NativeApi(EntryPoint = "aiImportFileExWithProperties")]
-        public unsafe partial Scene* ImportFileExWithProperties([Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pFile, uint pFlags, FileIO* pFS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in PropertyStore pProps);
+        public unsafe partial Scene* ImportFileExWithProperties([Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pFile, uint pFlags, FileIO* pFS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in PropertyStore pProps);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 163, Column 36 in cimport.h")]
@@ -735,7 +735,7 @@ namespace Silk.NET.Assimp
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 163, Column 36 in cimport.h")]
         [NativeApi(EntryPoint = "aiImportFileExWithProperties")]
-        public unsafe partial Scene* ImportFileExWithProperties([Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pFile, uint pFlags, ref FileIO pFS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in PropertyStore pProps);
+        public unsafe partial Scene* ImportFileExWithProperties([Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pFile, uint pFlags, ref FileIO pFS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in PropertyStore pProps);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 200, Column 36 in cimport.h")]
@@ -745,7 +745,7 @@ namespace Silk.NET.Assimp
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 200, Column 36 in cimport.h")]
         [NativeApi(EntryPoint = "aiImportFileFromMemory")]
-        public unsafe partial Scene* ImportFileFromMemory([Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* pBuffer, uint pLength, uint pFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte pHint);
+        public unsafe partial Scene* ImportFileFromMemory([Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* pBuffer, uint pLength, uint pFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte pHint);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 200, Column 36 in cimport.h")]
@@ -755,17 +755,17 @@ namespace Silk.NET.Assimp
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 200, Column 36 in cimport.h")]
         [NativeApi(EntryPoint = "aiImportFileFromMemory")]
-        public unsafe partial Scene* ImportFileFromMemory([Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte pBuffer, uint pLength, uint pFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* pHint);
+        public unsafe partial Scene* ImportFileFromMemory([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte pBuffer, uint pLength, uint pFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* pHint);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 200, Column 36 in cimport.h")]
         [NativeApi(EntryPoint = "aiImportFileFromMemory")]
-        public unsafe partial Scene* ImportFileFromMemory([Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte pBuffer, uint pLength, uint pFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte pHint);
+        public unsafe partial Scene* ImportFileFromMemory([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte pBuffer, uint pLength, uint pFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte pHint);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 200, Column 36 in cimport.h")]
         [NativeApi(EntryPoint = "aiImportFileFromMemory")]
-        public unsafe partial Scene* ImportFileFromMemory([Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte pBuffer, uint pLength, uint pFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pHint);
+        public unsafe partial Scene* ImportFileFromMemory([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte pBuffer, uint pLength, uint pFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pHint);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 200, Column 36 in cimport.h")]
@@ -775,7 +775,7 @@ namespace Silk.NET.Assimp
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 200, Column 36 in cimport.h")]
         [NativeApi(EntryPoint = "aiImportFileFromMemory")]
-        public unsafe partial Scene* ImportFileFromMemory([Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pBuffer, uint pLength, uint pFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte pHint);
+        public unsafe partial Scene* ImportFileFromMemory([Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pBuffer, uint pLength, uint pFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte pHint);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 200, Column 36 in cimport.h")]
@@ -790,17 +790,17 @@ namespace Silk.NET.Assimp
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 234, Column 36 in cimport.h")]
         [NativeApi(EntryPoint = "aiImportFileFromMemoryWithProperties")]
-        public unsafe partial Scene* ImportFileFromMemoryWithProperties([Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* pBuffer, uint pLength, uint pFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* pHint, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in PropertyStore pProps);
+        public unsafe partial Scene* ImportFileFromMemoryWithProperties([Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* pBuffer, uint pLength, uint pFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* pHint, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in PropertyStore pProps);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 234, Column 36 in cimport.h")]
         [NativeApi(EntryPoint = "aiImportFileFromMemoryWithProperties")]
-        public unsafe partial Scene* ImportFileFromMemoryWithProperties([Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* pBuffer, uint pLength, uint pFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte pHint, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PropertyStore* pProps);
+        public unsafe partial Scene* ImportFileFromMemoryWithProperties([Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* pBuffer, uint pLength, uint pFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte pHint, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PropertyStore* pProps);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 234, Column 36 in cimport.h")]
         [NativeApi(EntryPoint = "aiImportFileFromMemoryWithProperties")]
-        public unsafe partial Scene* ImportFileFromMemoryWithProperties([Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* pBuffer, uint pLength, uint pFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte pHint, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in PropertyStore pProps);
+        public unsafe partial Scene* ImportFileFromMemoryWithProperties([Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* pBuffer, uint pLength, uint pFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte pHint, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in PropertyStore pProps);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 234, Column 36 in cimport.h")]
@@ -810,37 +810,37 @@ namespace Silk.NET.Assimp
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 234, Column 36 in cimport.h")]
         [NativeApi(EntryPoint = "aiImportFileFromMemoryWithProperties")]
-        public unsafe partial Scene* ImportFileFromMemoryWithProperties([Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* pBuffer, uint pLength, uint pFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pHint, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in PropertyStore pProps);
+        public unsafe partial Scene* ImportFileFromMemoryWithProperties([Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* pBuffer, uint pLength, uint pFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pHint, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in PropertyStore pProps);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 234, Column 36 in cimport.h")]
         [NativeApi(EntryPoint = "aiImportFileFromMemoryWithProperties")]
-        public unsafe partial Scene* ImportFileFromMemoryWithProperties([Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte pBuffer, uint pLength, uint pFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* pHint, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PropertyStore* pProps);
+        public unsafe partial Scene* ImportFileFromMemoryWithProperties([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte pBuffer, uint pLength, uint pFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* pHint, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PropertyStore* pProps);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 234, Column 36 in cimport.h")]
         [NativeApi(EntryPoint = "aiImportFileFromMemoryWithProperties")]
-        public unsafe partial Scene* ImportFileFromMemoryWithProperties([Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte pBuffer, uint pLength, uint pFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* pHint, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in PropertyStore pProps);
+        public unsafe partial Scene* ImportFileFromMemoryWithProperties([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte pBuffer, uint pLength, uint pFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* pHint, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in PropertyStore pProps);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 234, Column 36 in cimport.h")]
         [NativeApi(EntryPoint = "aiImportFileFromMemoryWithProperties")]
-        public unsafe partial Scene* ImportFileFromMemoryWithProperties([Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte pBuffer, uint pLength, uint pFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte pHint, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PropertyStore* pProps);
+        public unsafe partial Scene* ImportFileFromMemoryWithProperties([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte pBuffer, uint pLength, uint pFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte pHint, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PropertyStore* pProps);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 234, Column 36 in cimport.h")]
         [NativeApi(EntryPoint = "aiImportFileFromMemoryWithProperties")]
-        public unsafe partial Scene* ImportFileFromMemoryWithProperties([Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte pBuffer, uint pLength, uint pFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte pHint, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in PropertyStore pProps);
+        public unsafe partial Scene* ImportFileFromMemoryWithProperties([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte pBuffer, uint pLength, uint pFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte pHint, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in PropertyStore pProps);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 234, Column 36 in cimport.h")]
         [NativeApi(EntryPoint = "aiImportFileFromMemoryWithProperties")]
-        public unsafe partial Scene* ImportFileFromMemoryWithProperties([Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte pBuffer, uint pLength, uint pFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pHint, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PropertyStore* pProps);
+        public unsafe partial Scene* ImportFileFromMemoryWithProperties([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte pBuffer, uint pLength, uint pFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pHint, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PropertyStore* pProps);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 234, Column 36 in cimport.h")]
         [NativeApi(EntryPoint = "aiImportFileFromMemoryWithProperties")]
-        public unsafe partial Scene* ImportFileFromMemoryWithProperties([Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte pBuffer, uint pLength, uint pFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pHint, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in PropertyStore pProps);
+        public unsafe partial Scene* ImportFileFromMemoryWithProperties([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte pBuffer, uint pLength, uint pFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pHint, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in PropertyStore pProps);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 234, Column 36 in cimport.h")]
@@ -850,17 +850,17 @@ namespace Silk.NET.Assimp
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 234, Column 36 in cimport.h")]
         [NativeApi(EntryPoint = "aiImportFileFromMemoryWithProperties")]
-        public unsafe partial Scene* ImportFileFromMemoryWithProperties([Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pBuffer, uint pLength, uint pFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* pHint, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in PropertyStore pProps);
+        public unsafe partial Scene* ImportFileFromMemoryWithProperties([Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pBuffer, uint pLength, uint pFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* pHint, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in PropertyStore pProps);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 234, Column 36 in cimport.h")]
         [NativeApi(EntryPoint = "aiImportFileFromMemoryWithProperties")]
-        public unsafe partial Scene* ImportFileFromMemoryWithProperties([Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pBuffer, uint pLength, uint pFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte pHint, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PropertyStore* pProps);
+        public unsafe partial Scene* ImportFileFromMemoryWithProperties([Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pBuffer, uint pLength, uint pFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte pHint, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PropertyStore* pProps);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 234, Column 36 in cimport.h")]
         [NativeApi(EntryPoint = "aiImportFileFromMemoryWithProperties")]
-        public unsafe partial Scene* ImportFileFromMemoryWithProperties([Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pBuffer, uint pLength, uint pFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte pHint, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in PropertyStore pProps);
+        public unsafe partial Scene* ImportFileFromMemoryWithProperties([Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pBuffer, uint pLength, uint pFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte pHint, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in PropertyStore pProps);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 234, Column 36 in cimport.h")]
@@ -870,7 +870,7 @@ namespace Silk.NET.Assimp
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 234, Column 36 in cimport.h")]
         [NativeApi(EntryPoint = "aiImportFileFromMemoryWithProperties")]
-        public unsafe partial Scene* ImportFileFromMemoryWithProperties([Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pBuffer, uint pLength, uint pFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pHint, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in PropertyStore pProps);
+        public unsafe partial Scene* ImportFileFromMemoryWithProperties([Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pBuffer, uint pLength, uint pFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pHint, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in PropertyStore pProps);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 256, Column 36 in cimport.h")]
@@ -880,7 +880,7 @@ namespace Silk.NET.Assimp
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 256, Column 36 in cimport.h")]
         [NativeApi(EntryPoint = "aiApplyPostProcessing")]
-        public unsafe partial Scene* ApplyPostProcessing([Flow(Silk.NET.Core.Native.FlowDirection.In)] in Scene pScene, uint pFlags);
+        public unsafe partial Scene* ApplyPostProcessing([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Scene pScene, uint pFlags);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 280, Column 33 in cimport.h")]
@@ -890,7 +890,7 @@ namespace Silk.NET.Assimp
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 280, Column 33 in cimport.h")]
         [NativeApi(EntryPoint = "aiGetPredefinedLogStream")]
-        public partial LogStream GetPredefinedLogStream(DefaultLogStream pStreams, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte file);
+        public partial LogStream GetPredefinedLogStream(DefaultLogStream pStreams, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte file);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 280, Column 33 in cimport.h")]
@@ -905,7 +905,7 @@ namespace Silk.NET.Assimp
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 294, Column 17 in cimport.h")]
         [NativeApi(EntryPoint = "aiAttachLogStream")]
-        public partial void AttachLogStream([Flow(Silk.NET.Core.Native.FlowDirection.In)] in LogStream stream);
+        public partial void AttachLogStream([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in LogStream stream);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 304, Column 17 in cimport.h")]
@@ -920,7 +920,7 @@ namespace Silk.NET.Assimp
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 315, Column 28 in cimport.h")]
         [NativeApi(EntryPoint = "aiDetachLogStream")]
-        public partial Return DetachLogStream([Flow(Silk.NET.Core.Native.FlowDirection.In)] in LogStream stream);
+        public partial Return DetachLogStream([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in LogStream stream);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 326, Column 17 in cimport.h")]
@@ -935,7 +935,7 @@ namespace Silk.NET.Assimp
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 334, Column 17 in cimport.h")]
         [NativeApi(EntryPoint = "aiReleaseImport")]
-        public partial void ReleaseImport([Flow(Silk.NET.Core.Native.FlowDirection.In)] in Scene pScene);
+        public partial void ReleaseImport([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Scene pScene);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 344, Column 24 in cimport.h")]
@@ -956,7 +956,7 @@ namespace Silk.NET.Assimp
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 353, Column 19 in cimport.h")]
         [NativeApi(EntryPoint = "aiIsExtensionSupported")]
-        public partial int IsExtensionSupported([Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte szExtension);
+        public partial int IsExtensionSupported([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte szExtension);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 353, Column 19 in cimport.h")]
@@ -986,12 +986,12 @@ namespace Silk.NET.Assimp
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 372, Column 17 in cimport.h")]
         [NativeApi(EntryPoint = "aiGetMemoryRequirements")]
-        public unsafe partial void GetMemoryRequirements([Flow(Silk.NET.Core.Native.FlowDirection.In)] in Scene pIn, MemoryInfo* @in);
+        public unsafe partial void GetMemoryRequirements([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Scene pIn, MemoryInfo* @in);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 372, Column 17 in cimport.h")]
         [NativeApi(EntryPoint = "aiGetMemoryRequirements")]
-        public partial void GetMemoryRequirements([Flow(Silk.NET.Core.Native.FlowDirection.In)] in Scene pIn, ref MemoryInfo @in);
+        public partial void GetMemoryRequirements([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Scene pIn, ref MemoryInfo @in);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 382, Column 38 in cimport.h")]
@@ -1016,7 +1016,7 @@ namespace Silk.NET.Assimp
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 402, Column 17 in cimport.h")]
         [NativeApi(EntryPoint = "aiSetImportPropertyInteger")]
-        public unsafe partial void SetImportPropertyInteger(PropertyStore* store, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte szName, int value);
+        public unsafe partial void SetImportPropertyInteger(PropertyStore* store, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte szName, int value);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 402, Column 17 in cimport.h")]
@@ -1031,7 +1031,7 @@ namespace Silk.NET.Assimp
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 402, Column 17 in cimport.h")]
         [NativeApi(EntryPoint = "aiSetImportPropertyInteger")]
-        public partial void SetImportPropertyInteger(ref PropertyStore store, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte szName, int value);
+        public partial void SetImportPropertyInteger(ref PropertyStore store, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte szName, int value);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 402, Column 17 in cimport.h")]
@@ -1046,7 +1046,7 @@ namespace Silk.NET.Assimp
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 419, Column 17 in cimport.h")]
         [NativeApi(EntryPoint = "aiSetImportPropertyFloat")]
-        public unsafe partial void SetImportPropertyFloat(PropertyStore* store, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte szName, float value);
+        public unsafe partial void SetImportPropertyFloat(PropertyStore* store, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte szName, float value);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 419, Column 17 in cimport.h")]
@@ -1061,7 +1061,7 @@ namespace Silk.NET.Assimp
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 419, Column 17 in cimport.h")]
         [NativeApi(EntryPoint = "aiSetImportPropertyFloat")]
-        public partial void SetImportPropertyFloat(ref PropertyStore store, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte szName, float value);
+        public partial void SetImportPropertyFloat(ref PropertyStore store, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte szName, float value);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 419, Column 17 in cimport.h")]
@@ -1076,17 +1076,17 @@ namespace Silk.NET.Assimp
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 436, Column 17 in cimport.h")]
         [NativeApi(EntryPoint = "aiSetImportPropertyString")]
-        public unsafe partial void SetImportPropertyString(PropertyStore* store, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* szName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in AssimpString st);
+        public unsafe partial void SetImportPropertyString(PropertyStore* store, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* szName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in AssimpString st);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 436, Column 17 in cimport.h")]
         [NativeApi(EntryPoint = "aiSetImportPropertyString")]
-        public unsafe partial void SetImportPropertyString(PropertyStore* store, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte szName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] AssimpString* st);
+        public unsafe partial void SetImportPropertyString(PropertyStore* store, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte szName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] AssimpString* st);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 436, Column 17 in cimport.h")]
         [NativeApi(EntryPoint = "aiSetImportPropertyString")]
-        public unsafe partial void SetImportPropertyString(PropertyStore* store, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte szName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in AssimpString st);
+        public unsafe partial void SetImportPropertyString(PropertyStore* store, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte szName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in AssimpString st);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 436, Column 17 in cimport.h")]
@@ -1096,7 +1096,7 @@ namespace Silk.NET.Assimp
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 436, Column 17 in cimport.h")]
         [NativeApi(EntryPoint = "aiSetImportPropertyString")]
-        public unsafe partial void SetImportPropertyString(PropertyStore* store, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string szName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in AssimpString st);
+        public unsafe partial void SetImportPropertyString(PropertyStore* store, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string szName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in AssimpString st);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 436, Column 17 in cimport.h")]
@@ -1106,17 +1106,17 @@ namespace Silk.NET.Assimp
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 436, Column 17 in cimport.h")]
         [NativeApi(EntryPoint = "aiSetImportPropertyString")]
-        public unsafe partial void SetImportPropertyString(ref PropertyStore store, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* szName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in AssimpString st);
+        public unsafe partial void SetImportPropertyString(ref PropertyStore store, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* szName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in AssimpString st);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 436, Column 17 in cimport.h")]
         [NativeApi(EntryPoint = "aiSetImportPropertyString")]
-        public unsafe partial void SetImportPropertyString(ref PropertyStore store, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte szName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] AssimpString* st);
+        public unsafe partial void SetImportPropertyString(ref PropertyStore store, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte szName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] AssimpString* st);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 436, Column 17 in cimport.h")]
         [NativeApi(EntryPoint = "aiSetImportPropertyString")]
-        public partial void SetImportPropertyString(ref PropertyStore store, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte szName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in AssimpString st);
+        public partial void SetImportPropertyString(ref PropertyStore store, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte szName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in AssimpString st);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 436, Column 17 in cimport.h")]
@@ -1126,7 +1126,7 @@ namespace Silk.NET.Assimp
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 436, Column 17 in cimport.h")]
         [NativeApi(EntryPoint = "aiSetImportPropertyString")]
-        public partial void SetImportPropertyString(ref PropertyStore store, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string szName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in AssimpString st);
+        public partial void SetImportPropertyString(ref PropertyStore store, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string szName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in AssimpString st);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 453, Column 17 in cimport.h")]
@@ -1136,17 +1136,17 @@ namespace Silk.NET.Assimp
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 453, Column 17 in cimport.h")]
         [NativeApi(EntryPoint = "aiSetImportPropertyMatrix")]
-        public unsafe partial void SetImportPropertyMatrix(PropertyStore* store, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* szName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in System.Numerics.Matrix4x4 mat);
+        public unsafe partial void SetImportPropertyMatrix(PropertyStore* store, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* szName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in System.Numerics.Matrix4x4 mat);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 453, Column 17 in cimport.h")]
         [NativeApi(EntryPoint = "aiSetImportPropertyMatrix")]
-        public unsafe partial void SetImportPropertyMatrix(PropertyStore* store, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte szName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] System.Numerics.Matrix4x4* mat);
+        public unsafe partial void SetImportPropertyMatrix(PropertyStore* store, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte szName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] System.Numerics.Matrix4x4* mat);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 453, Column 17 in cimport.h")]
         [NativeApi(EntryPoint = "aiSetImportPropertyMatrix")]
-        public unsafe partial void SetImportPropertyMatrix(PropertyStore* store, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte szName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in System.Numerics.Matrix4x4 mat);
+        public unsafe partial void SetImportPropertyMatrix(PropertyStore* store, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte szName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in System.Numerics.Matrix4x4 mat);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 453, Column 17 in cimport.h")]
@@ -1156,7 +1156,7 @@ namespace Silk.NET.Assimp
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 453, Column 17 in cimport.h")]
         [NativeApi(EntryPoint = "aiSetImportPropertyMatrix")]
-        public unsafe partial void SetImportPropertyMatrix(PropertyStore* store, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string szName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in System.Numerics.Matrix4x4 mat);
+        public unsafe partial void SetImportPropertyMatrix(PropertyStore* store, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string szName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in System.Numerics.Matrix4x4 mat);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 453, Column 17 in cimport.h")]
@@ -1166,17 +1166,17 @@ namespace Silk.NET.Assimp
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 453, Column 17 in cimport.h")]
         [NativeApi(EntryPoint = "aiSetImportPropertyMatrix")]
-        public unsafe partial void SetImportPropertyMatrix(ref PropertyStore store, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* szName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in System.Numerics.Matrix4x4 mat);
+        public unsafe partial void SetImportPropertyMatrix(ref PropertyStore store, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* szName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in System.Numerics.Matrix4x4 mat);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 453, Column 17 in cimport.h")]
         [NativeApi(EntryPoint = "aiSetImportPropertyMatrix")]
-        public unsafe partial void SetImportPropertyMatrix(ref PropertyStore store, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte szName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] System.Numerics.Matrix4x4* mat);
+        public unsafe partial void SetImportPropertyMatrix(ref PropertyStore store, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte szName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] System.Numerics.Matrix4x4* mat);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 453, Column 17 in cimport.h")]
         [NativeApi(EntryPoint = "aiSetImportPropertyMatrix")]
-        public partial void SetImportPropertyMatrix(ref PropertyStore store, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte szName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in System.Numerics.Matrix4x4 mat);
+        public partial void SetImportPropertyMatrix(ref PropertyStore store, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte szName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in System.Numerics.Matrix4x4 mat);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 453, Column 17 in cimport.h")]
@@ -1186,7 +1186,7 @@ namespace Silk.NET.Assimp
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 453, Column 17 in cimport.h")]
         [NativeApi(EntryPoint = "aiSetImportPropertyMatrix")]
-        public partial void SetImportPropertyMatrix(ref PropertyStore store, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string szName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in System.Numerics.Matrix4x4 mat);
+        public partial void SetImportPropertyMatrix(ref PropertyStore store, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string szName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in System.Numerics.Matrix4x4 mat);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 464, Column 17 in cimport.h")]
@@ -1196,7 +1196,7 @@ namespace Silk.NET.Assimp
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 464, Column 17 in cimport.h")]
         [NativeApi(EntryPoint = "aiCreateQuaternionFromMatrix")]
-        public unsafe partial void CreateQuaternionFromMatrix(AssimpQuaternion* quat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Maths.Matrix3X3<float> mat);
+        public unsafe partial void CreateQuaternionFromMatrix(AssimpQuaternion* quat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Maths.Matrix3X3<float> mat);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 464, Column 17 in cimport.h")]
@@ -1206,7 +1206,7 @@ namespace Silk.NET.Assimp
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 464, Column 17 in cimport.h")]
         [NativeApi(EntryPoint = "aiCreateQuaternionFromMatrix")]
-        public partial void CreateQuaternionFromMatrix(ref AssimpQuaternion quat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Maths.Matrix3X3<float> mat);
+        public partial void CreateQuaternionFromMatrix(ref AssimpQuaternion quat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Maths.Matrix3X3<float> mat);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 478, Column 17 in cimport.h")]
@@ -1251,42 +1251,42 @@ namespace Silk.NET.Assimp
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 478, Column 17 in cimport.h")]
         [NativeApi(EntryPoint = "aiDecomposeMatrix")]
-        public unsafe partial void DecomposeMatrix([Flow(Silk.NET.Core.Native.FlowDirection.In)] in System.Numerics.Matrix4x4 mat, System.Numerics.Vector3* scaling, AssimpQuaternion* rotation, System.Numerics.Vector3* position);
+        public unsafe partial void DecomposeMatrix([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in System.Numerics.Matrix4x4 mat, System.Numerics.Vector3* scaling, AssimpQuaternion* rotation, System.Numerics.Vector3* position);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 478, Column 17 in cimport.h")]
         [NativeApi(EntryPoint = "aiDecomposeMatrix")]
-        public unsafe partial void DecomposeMatrix([Flow(Silk.NET.Core.Native.FlowDirection.In)] in System.Numerics.Matrix4x4 mat, System.Numerics.Vector3* scaling, AssimpQuaternion* rotation, ref System.Numerics.Vector3 position);
+        public unsafe partial void DecomposeMatrix([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in System.Numerics.Matrix4x4 mat, System.Numerics.Vector3* scaling, AssimpQuaternion* rotation, ref System.Numerics.Vector3 position);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 478, Column 17 in cimport.h")]
         [NativeApi(EntryPoint = "aiDecomposeMatrix")]
-        public unsafe partial void DecomposeMatrix([Flow(Silk.NET.Core.Native.FlowDirection.In)] in System.Numerics.Matrix4x4 mat, System.Numerics.Vector3* scaling, ref AssimpQuaternion rotation, System.Numerics.Vector3* position);
+        public unsafe partial void DecomposeMatrix([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in System.Numerics.Matrix4x4 mat, System.Numerics.Vector3* scaling, ref AssimpQuaternion rotation, System.Numerics.Vector3* position);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 478, Column 17 in cimport.h")]
         [NativeApi(EntryPoint = "aiDecomposeMatrix")]
-        public unsafe partial void DecomposeMatrix([Flow(Silk.NET.Core.Native.FlowDirection.In)] in System.Numerics.Matrix4x4 mat, System.Numerics.Vector3* scaling, ref AssimpQuaternion rotation, ref System.Numerics.Vector3 position);
+        public unsafe partial void DecomposeMatrix([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in System.Numerics.Matrix4x4 mat, System.Numerics.Vector3* scaling, ref AssimpQuaternion rotation, ref System.Numerics.Vector3 position);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 478, Column 17 in cimport.h")]
         [NativeApi(EntryPoint = "aiDecomposeMatrix")]
-        public unsafe partial void DecomposeMatrix([Flow(Silk.NET.Core.Native.FlowDirection.In)] in System.Numerics.Matrix4x4 mat, ref System.Numerics.Vector3 scaling, AssimpQuaternion* rotation, System.Numerics.Vector3* position);
+        public unsafe partial void DecomposeMatrix([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in System.Numerics.Matrix4x4 mat, ref System.Numerics.Vector3 scaling, AssimpQuaternion* rotation, System.Numerics.Vector3* position);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 478, Column 17 in cimport.h")]
         [NativeApi(EntryPoint = "aiDecomposeMatrix")]
-        public unsafe partial void DecomposeMatrix([Flow(Silk.NET.Core.Native.FlowDirection.In)] in System.Numerics.Matrix4x4 mat, ref System.Numerics.Vector3 scaling, AssimpQuaternion* rotation, ref System.Numerics.Vector3 position);
+        public unsafe partial void DecomposeMatrix([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in System.Numerics.Matrix4x4 mat, ref System.Numerics.Vector3 scaling, AssimpQuaternion* rotation, ref System.Numerics.Vector3 position);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 478, Column 17 in cimport.h")]
         [NativeApi(EntryPoint = "aiDecomposeMatrix")]
-        public unsafe partial void DecomposeMatrix([Flow(Silk.NET.Core.Native.FlowDirection.In)] in System.Numerics.Matrix4x4 mat, ref System.Numerics.Vector3 scaling, ref AssimpQuaternion rotation, System.Numerics.Vector3* position);
+        public unsafe partial void DecomposeMatrix([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in System.Numerics.Matrix4x4 mat, ref System.Numerics.Vector3 scaling, ref AssimpQuaternion rotation, System.Numerics.Vector3* position);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 478, Column 17 in cimport.h")]
         [NativeApi(EntryPoint = "aiDecomposeMatrix")]
-        public partial void DecomposeMatrix([Flow(Silk.NET.Core.Native.FlowDirection.In)] in System.Numerics.Matrix4x4 mat, ref System.Numerics.Vector3 scaling, ref AssimpQuaternion rotation, ref System.Numerics.Vector3 position);
+        public partial void DecomposeMatrix([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in System.Numerics.Matrix4x4 mat, ref System.Numerics.Vector3 scaling, ref AssimpQuaternion rotation, ref System.Numerics.Vector3 position);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 488, Column 17 in cimport.h")]
@@ -1316,7 +1316,7 @@ namespace Silk.NET.Assimp
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 503, Column 17 in cimport.h")]
         [NativeApi(EntryPoint = "aiTransformVecByMatrix3")]
-        public unsafe partial void TransformVecByMatrix3(System.Numerics.Vector3* vec, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Maths.Matrix3X3<float> mat);
+        public unsafe partial void TransformVecByMatrix3(System.Numerics.Vector3* vec, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Maths.Matrix3X3<float> mat);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 503, Column 17 in cimport.h")]
@@ -1326,7 +1326,7 @@ namespace Silk.NET.Assimp
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 503, Column 17 in cimport.h")]
         [NativeApi(EntryPoint = "aiTransformVecByMatrix3")]
-        public partial void TransformVecByMatrix3(ref System.Numerics.Vector3 vec, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Maths.Matrix3X3<float> mat);
+        public partial void TransformVecByMatrix3(ref System.Numerics.Vector3 vec, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Maths.Matrix3X3<float> mat);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 512, Column 17 in cimport.h")]
@@ -1336,7 +1336,7 @@ namespace Silk.NET.Assimp
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 512, Column 17 in cimport.h")]
         [NativeApi(EntryPoint = "aiTransformVecByMatrix4")]
-        public unsafe partial void TransformVecByMatrix4(System.Numerics.Vector3* vec, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in System.Numerics.Matrix4x4 mat);
+        public unsafe partial void TransformVecByMatrix4(System.Numerics.Vector3* vec, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in System.Numerics.Matrix4x4 mat);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 512, Column 17 in cimport.h")]
@@ -1346,7 +1346,7 @@ namespace Silk.NET.Assimp
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 512, Column 17 in cimport.h")]
         [NativeApi(EntryPoint = "aiTransformVecByMatrix4")]
-        public partial void TransformVecByMatrix4(ref System.Numerics.Vector3 vec, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in System.Numerics.Matrix4x4 mat);
+        public partial void TransformVecByMatrix4(ref System.Numerics.Vector3 vec, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in System.Numerics.Matrix4x4 mat);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 521, Column 17 in cimport.h")]
@@ -1356,7 +1356,7 @@ namespace Silk.NET.Assimp
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 521, Column 17 in cimport.h")]
         [NativeApi(EntryPoint = "aiMultiplyMatrix4")]
-        public unsafe partial void MultiplyMatrix4(System.Numerics.Matrix4x4* dst, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in System.Numerics.Matrix4x4 src);
+        public unsafe partial void MultiplyMatrix4(System.Numerics.Matrix4x4* dst, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in System.Numerics.Matrix4x4 src);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 521, Column 17 in cimport.h")]
@@ -1366,7 +1366,7 @@ namespace Silk.NET.Assimp
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 521, Column 17 in cimport.h")]
         [NativeApi(EntryPoint = "aiMultiplyMatrix4")]
-        public partial void MultiplyMatrix4(ref System.Numerics.Matrix4x4 dst, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in System.Numerics.Matrix4x4 src);
+        public partial void MultiplyMatrix4(ref System.Numerics.Matrix4x4 dst, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in System.Numerics.Matrix4x4 src);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 530, Column 17 in cimport.h")]
@@ -1376,7 +1376,7 @@ namespace Silk.NET.Assimp
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 530, Column 17 in cimport.h")]
         [NativeApi(EntryPoint = "aiMultiplyMatrix3")]
-        public unsafe partial void MultiplyMatrix3(Silk.NET.Maths.Matrix3X3<float>* dst, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Maths.Matrix3X3<float> src);
+        public unsafe partial void MultiplyMatrix3(Silk.NET.Maths.Matrix3X3<float>* dst, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Maths.Matrix3X3<float> src);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 530, Column 17 in cimport.h")]
@@ -1386,7 +1386,7 @@ namespace Silk.NET.Assimp
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 530, Column 17 in cimport.h")]
         [NativeApi(EntryPoint = "aiMultiplyMatrix3")]
-        public partial void MultiplyMatrix3(ref Silk.NET.Maths.Matrix3X3<float> dst, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Maths.Matrix3X3<float> src);
+        public partial void MultiplyMatrix3(ref Silk.NET.Maths.Matrix3X3<float> dst, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Maths.Matrix3X3<float> src);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 538, Column 17 in cimport.h")]
@@ -1426,17 +1426,17 @@ namespace Silk.NET.Assimp
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 570, Column 16 in cimport.h")]
         [NativeApi(EntryPoint = "aiVector2AreEqual")]
-        public unsafe partial int Vector2AreEqual([Flow(Silk.NET.Core.Native.FlowDirection.In)] System.Numerics.Vector2* a, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in System.Numerics.Vector2 b);
+        public unsafe partial int Vector2AreEqual([Flow(Silk.NET.Core.Native.FlowDirection.In)] System.Numerics.Vector2* a, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in System.Numerics.Vector2 b);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 570, Column 16 in cimport.h")]
         [NativeApi(EntryPoint = "aiVector2AreEqual")]
-        public unsafe partial int Vector2AreEqual([Flow(Silk.NET.Core.Native.FlowDirection.In)] in System.Numerics.Vector2 a, [Flow(Silk.NET.Core.Native.FlowDirection.In)] System.Numerics.Vector2* b);
+        public unsafe partial int Vector2AreEqual([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in System.Numerics.Vector2 a, [Flow(Silk.NET.Core.Native.FlowDirection.In)] System.Numerics.Vector2* b);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 570, Column 16 in cimport.h")]
         [NativeApi(EntryPoint = "aiVector2AreEqual")]
-        public partial int Vector2AreEqual([Flow(Silk.NET.Core.Native.FlowDirection.In)] in System.Numerics.Vector2 a, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in System.Numerics.Vector2 b);
+        public partial int Vector2AreEqual([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in System.Numerics.Vector2 a, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in System.Numerics.Vector2 b);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 582, Column 16 in cimport.h")]
@@ -1446,17 +1446,17 @@ namespace Silk.NET.Assimp
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 582, Column 16 in cimport.h")]
         [NativeApi(EntryPoint = "aiVector2AreEqualEpsilon")]
-        public unsafe partial int Vector2AreEqualEpsilon([Flow(Silk.NET.Core.Native.FlowDirection.In)] System.Numerics.Vector2* a, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in System.Numerics.Vector2 b, float epsilon);
+        public unsafe partial int Vector2AreEqualEpsilon([Flow(Silk.NET.Core.Native.FlowDirection.In)] System.Numerics.Vector2* a, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in System.Numerics.Vector2 b, float epsilon);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 582, Column 16 in cimport.h")]
         [NativeApi(EntryPoint = "aiVector2AreEqualEpsilon")]
-        public unsafe partial int Vector2AreEqualEpsilon([Flow(Silk.NET.Core.Native.FlowDirection.In)] in System.Numerics.Vector2 a, [Flow(Silk.NET.Core.Native.FlowDirection.In)] System.Numerics.Vector2* b, float epsilon);
+        public unsafe partial int Vector2AreEqualEpsilon([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in System.Numerics.Vector2 a, [Flow(Silk.NET.Core.Native.FlowDirection.In)] System.Numerics.Vector2* b, float epsilon);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 582, Column 16 in cimport.h")]
         [NativeApi(EntryPoint = "aiVector2AreEqualEpsilon")]
-        public partial int Vector2AreEqualEpsilon([Flow(Silk.NET.Core.Native.FlowDirection.In)] in System.Numerics.Vector2 a, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in System.Numerics.Vector2 b, float epsilon);
+        public partial int Vector2AreEqualEpsilon([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in System.Numerics.Vector2 a, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in System.Numerics.Vector2 b, float epsilon);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 592, Column 17 in cimport.h")]
@@ -1466,7 +1466,7 @@ namespace Silk.NET.Assimp
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 592, Column 17 in cimport.h")]
         [NativeApi(EntryPoint = "aiVector2Add")]
-        public unsafe partial void Vector2Add(System.Numerics.Vector2* dst, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in System.Numerics.Vector2 src);
+        public unsafe partial void Vector2Add(System.Numerics.Vector2* dst, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in System.Numerics.Vector2 src);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 592, Column 17 in cimport.h")]
@@ -1476,7 +1476,7 @@ namespace Silk.NET.Assimp
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 592, Column 17 in cimport.h")]
         [NativeApi(EntryPoint = "aiVector2Add")]
-        public partial void Vector2Add(ref System.Numerics.Vector2 dst, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in System.Numerics.Vector2 src);
+        public partial void Vector2Add(ref System.Numerics.Vector2 dst, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in System.Numerics.Vector2 src);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 601, Column 17 in cimport.h")]
@@ -1486,7 +1486,7 @@ namespace Silk.NET.Assimp
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 601, Column 17 in cimport.h")]
         [NativeApi(EntryPoint = "aiVector2Subtract")]
-        public unsafe partial void Vector2Subtract(System.Numerics.Vector2* dst, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in System.Numerics.Vector2 src);
+        public unsafe partial void Vector2Subtract(System.Numerics.Vector2* dst, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in System.Numerics.Vector2 src);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 601, Column 17 in cimport.h")]
@@ -1496,7 +1496,7 @@ namespace Silk.NET.Assimp
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 601, Column 17 in cimport.h")]
         [NativeApi(EntryPoint = "aiVector2Subtract")]
-        public partial void Vector2Subtract(ref System.Numerics.Vector2 dst, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in System.Numerics.Vector2 src);
+        public partial void Vector2Subtract(ref System.Numerics.Vector2 dst, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in System.Numerics.Vector2 src);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 610, Column 17 in cimport.h")]
@@ -1516,7 +1516,7 @@ namespace Silk.NET.Assimp
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 620, Column 17 in cimport.h")]
         [NativeApi(EntryPoint = "aiVector2SymMul")]
-        public unsafe partial void Vector2SymMul(System.Numerics.Vector2* dst, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in System.Numerics.Vector2 other);
+        public unsafe partial void Vector2SymMul(System.Numerics.Vector2* dst, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in System.Numerics.Vector2 other);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 620, Column 17 in cimport.h")]
@@ -1526,7 +1526,7 @@ namespace Silk.NET.Assimp
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 620, Column 17 in cimport.h")]
         [NativeApi(EntryPoint = "aiVector2SymMul")]
-        public partial void Vector2SymMul(ref System.Numerics.Vector2 dst, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in System.Numerics.Vector2 other);
+        public partial void Vector2SymMul(ref System.Numerics.Vector2 dst, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in System.Numerics.Vector2 other);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 629, Column 17 in cimport.h")]
@@ -1566,7 +1566,7 @@ namespace Silk.NET.Assimp
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 647, Column 18 in cimport.h")]
         [NativeApi(EntryPoint = "aiVector2Length")]
-        public partial float Vector2Length([Flow(Silk.NET.Core.Native.FlowDirection.In)] in System.Numerics.Vector2 v);
+        public partial float Vector2Length([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in System.Numerics.Vector2 v);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 654, Column 18 in cimport.h")]
@@ -1576,7 +1576,7 @@ namespace Silk.NET.Assimp
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 654, Column 18 in cimport.h")]
         [NativeApi(EntryPoint = "aiVector2SquareLength")]
-        public partial float Vector2SquareLength([Flow(Silk.NET.Core.Native.FlowDirection.In)] in System.Numerics.Vector2 v);
+        public partial float Vector2SquareLength([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in System.Numerics.Vector2 v);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 661, Column 17 in cimport.h")]
@@ -1596,17 +1596,17 @@ namespace Silk.NET.Assimp
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 670, Column 18 in cimport.h")]
         [NativeApi(EntryPoint = "aiVector2DotProduct")]
-        public unsafe partial float Vector2DotProduct([Flow(Silk.NET.Core.Native.FlowDirection.In)] System.Numerics.Vector2* a, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in System.Numerics.Vector2 b);
+        public unsafe partial float Vector2DotProduct([Flow(Silk.NET.Core.Native.FlowDirection.In)] System.Numerics.Vector2* a, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in System.Numerics.Vector2 b);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 670, Column 18 in cimport.h")]
         [NativeApi(EntryPoint = "aiVector2DotProduct")]
-        public unsafe partial float Vector2DotProduct([Flow(Silk.NET.Core.Native.FlowDirection.In)] in System.Numerics.Vector2 a, [Flow(Silk.NET.Core.Native.FlowDirection.In)] System.Numerics.Vector2* b);
+        public unsafe partial float Vector2DotProduct([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in System.Numerics.Vector2 a, [Flow(Silk.NET.Core.Native.FlowDirection.In)] System.Numerics.Vector2* b);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 670, Column 18 in cimport.h")]
         [NativeApi(EntryPoint = "aiVector2DotProduct")]
-        public partial float Vector2DotProduct([Flow(Silk.NET.Core.Native.FlowDirection.In)] in System.Numerics.Vector2 a, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in System.Numerics.Vector2 b);
+        public partial float Vector2DotProduct([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in System.Numerics.Vector2 a, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in System.Numerics.Vector2 b);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 678, Column 17 in cimport.h")]
@@ -1626,17 +1626,17 @@ namespace Silk.NET.Assimp
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 688, Column 16 in cimport.h")]
         [NativeApi(EntryPoint = "aiVector3AreEqual")]
-        public unsafe partial int Vector3AreEqual([Flow(Silk.NET.Core.Native.FlowDirection.In)] System.Numerics.Vector3* a, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in System.Numerics.Vector3 b);
+        public unsafe partial int Vector3AreEqual([Flow(Silk.NET.Core.Native.FlowDirection.In)] System.Numerics.Vector3* a, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in System.Numerics.Vector3 b);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 688, Column 16 in cimport.h")]
         [NativeApi(EntryPoint = "aiVector3AreEqual")]
-        public unsafe partial int Vector3AreEqual([Flow(Silk.NET.Core.Native.FlowDirection.In)] in System.Numerics.Vector3 a, [Flow(Silk.NET.Core.Native.FlowDirection.In)] System.Numerics.Vector3* b);
+        public unsafe partial int Vector3AreEqual([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in System.Numerics.Vector3 a, [Flow(Silk.NET.Core.Native.FlowDirection.In)] System.Numerics.Vector3* b);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 688, Column 16 in cimport.h")]
         [NativeApi(EntryPoint = "aiVector3AreEqual")]
-        public partial int Vector3AreEqual([Flow(Silk.NET.Core.Native.FlowDirection.In)] in System.Numerics.Vector3 a, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in System.Numerics.Vector3 b);
+        public partial int Vector3AreEqual([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in System.Numerics.Vector3 a, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in System.Numerics.Vector3 b);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 700, Column 16 in cimport.h")]
@@ -1646,17 +1646,17 @@ namespace Silk.NET.Assimp
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 700, Column 16 in cimport.h")]
         [NativeApi(EntryPoint = "aiVector3AreEqualEpsilon")]
-        public unsafe partial int Vector3AreEqualEpsilon([Flow(Silk.NET.Core.Native.FlowDirection.In)] System.Numerics.Vector3* a, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in System.Numerics.Vector3 b, float epsilon);
+        public unsafe partial int Vector3AreEqualEpsilon([Flow(Silk.NET.Core.Native.FlowDirection.In)] System.Numerics.Vector3* a, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in System.Numerics.Vector3 b, float epsilon);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 700, Column 16 in cimport.h")]
         [NativeApi(EntryPoint = "aiVector3AreEqualEpsilon")]
-        public unsafe partial int Vector3AreEqualEpsilon([Flow(Silk.NET.Core.Native.FlowDirection.In)] in System.Numerics.Vector3 a, [Flow(Silk.NET.Core.Native.FlowDirection.In)] System.Numerics.Vector3* b, float epsilon);
+        public unsafe partial int Vector3AreEqualEpsilon([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in System.Numerics.Vector3 a, [Flow(Silk.NET.Core.Native.FlowDirection.In)] System.Numerics.Vector3* b, float epsilon);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 700, Column 16 in cimport.h")]
         [NativeApi(EntryPoint = "aiVector3AreEqualEpsilon")]
-        public partial int Vector3AreEqualEpsilon([Flow(Silk.NET.Core.Native.FlowDirection.In)] in System.Numerics.Vector3 a, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in System.Numerics.Vector3 b, float epsilon);
+        public partial int Vector3AreEqualEpsilon([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in System.Numerics.Vector3 a, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in System.Numerics.Vector3 b, float epsilon);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 713, Column 16 in cimport.h")]
@@ -1666,17 +1666,17 @@ namespace Silk.NET.Assimp
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 713, Column 16 in cimport.h")]
         [NativeApi(EntryPoint = "aiVector3LessThan")]
-        public unsafe partial int Vector3LessThan([Flow(Silk.NET.Core.Native.FlowDirection.In)] System.Numerics.Vector3* a, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in System.Numerics.Vector3 b);
+        public unsafe partial int Vector3LessThan([Flow(Silk.NET.Core.Native.FlowDirection.In)] System.Numerics.Vector3* a, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in System.Numerics.Vector3 b);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 713, Column 16 in cimport.h")]
         [NativeApi(EntryPoint = "aiVector3LessThan")]
-        public unsafe partial int Vector3LessThan([Flow(Silk.NET.Core.Native.FlowDirection.In)] in System.Numerics.Vector3 a, [Flow(Silk.NET.Core.Native.FlowDirection.In)] System.Numerics.Vector3* b);
+        public unsafe partial int Vector3LessThan([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in System.Numerics.Vector3 a, [Flow(Silk.NET.Core.Native.FlowDirection.In)] System.Numerics.Vector3* b);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 713, Column 16 in cimport.h")]
         [NativeApi(EntryPoint = "aiVector3LessThan")]
-        public partial int Vector3LessThan([Flow(Silk.NET.Core.Native.FlowDirection.In)] in System.Numerics.Vector3 a, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in System.Numerics.Vector3 b);
+        public partial int Vector3LessThan([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in System.Numerics.Vector3 a, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in System.Numerics.Vector3 b);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 722, Column 17 in cimport.h")]
@@ -1686,7 +1686,7 @@ namespace Silk.NET.Assimp
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 722, Column 17 in cimport.h")]
         [NativeApi(EntryPoint = "aiVector3Add")]
-        public unsafe partial void Vector3Add(System.Numerics.Vector3* dst, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in System.Numerics.Vector3 src);
+        public unsafe partial void Vector3Add(System.Numerics.Vector3* dst, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in System.Numerics.Vector3 src);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 722, Column 17 in cimport.h")]
@@ -1696,7 +1696,7 @@ namespace Silk.NET.Assimp
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 722, Column 17 in cimport.h")]
         [NativeApi(EntryPoint = "aiVector3Add")]
-        public partial void Vector3Add(ref System.Numerics.Vector3 dst, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in System.Numerics.Vector3 src);
+        public partial void Vector3Add(ref System.Numerics.Vector3 dst, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in System.Numerics.Vector3 src);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 731, Column 17 in cimport.h")]
@@ -1706,7 +1706,7 @@ namespace Silk.NET.Assimp
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 731, Column 17 in cimport.h")]
         [NativeApi(EntryPoint = "aiVector3Subtract")]
-        public unsafe partial void Vector3Subtract(System.Numerics.Vector3* dst, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in System.Numerics.Vector3 src);
+        public unsafe partial void Vector3Subtract(System.Numerics.Vector3* dst, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in System.Numerics.Vector3 src);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 731, Column 17 in cimport.h")]
@@ -1716,7 +1716,7 @@ namespace Silk.NET.Assimp
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 731, Column 17 in cimport.h")]
         [NativeApi(EntryPoint = "aiVector3Subtract")]
-        public partial void Vector3Subtract(ref System.Numerics.Vector3 dst, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in System.Numerics.Vector3 src);
+        public partial void Vector3Subtract(ref System.Numerics.Vector3 dst, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in System.Numerics.Vector3 src);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 740, Column 17 in cimport.h")]
@@ -1736,7 +1736,7 @@ namespace Silk.NET.Assimp
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 750, Column 17 in cimport.h")]
         [NativeApi(EntryPoint = "aiVector3SymMul")]
-        public unsafe partial void Vector3SymMul(System.Numerics.Vector3* dst, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in System.Numerics.Vector3 other);
+        public unsafe partial void Vector3SymMul(System.Numerics.Vector3* dst, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in System.Numerics.Vector3 other);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 750, Column 17 in cimport.h")]
@@ -1746,7 +1746,7 @@ namespace Silk.NET.Assimp
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 750, Column 17 in cimport.h")]
         [NativeApi(EntryPoint = "aiVector3SymMul")]
-        public partial void Vector3SymMul(ref System.Numerics.Vector3 dst, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in System.Numerics.Vector3 other);
+        public partial void Vector3SymMul(ref System.Numerics.Vector3 dst, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in System.Numerics.Vector3 other);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 759, Column 17 in cimport.h")]
@@ -1786,7 +1786,7 @@ namespace Silk.NET.Assimp
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 777, Column 18 in cimport.h")]
         [NativeApi(EntryPoint = "aiVector3Length")]
-        public partial float Vector3Length([Flow(Silk.NET.Core.Native.FlowDirection.In)] in System.Numerics.Vector3 v);
+        public partial float Vector3Length([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in System.Numerics.Vector3 v);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 784, Column 18 in cimport.h")]
@@ -1796,7 +1796,7 @@ namespace Silk.NET.Assimp
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 784, Column 18 in cimport.h")]
         [NativeApi(EntryPoint = "aiVector3SquareLength")]
-        public partial float Vector3SquareLength([Flow(Silk.NET.Core.Native.FlowDirection.In)] in System.Numerics.Vector3 v);
+        public partial float Vector3SquareLength([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in System.Numerics.Vector3 v);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 791, Column 17 in cimport.h")]
@@ -1816,17 +1816,17 @@ namespace Silk.NET.Assimp
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 800, Column 18 in cimport.h")]
         [NativeApi(EntryPoint = "aiVector3DotProduct")]
-        public unsafe partial float Vector3DotProduct([Flow(Silk.NET.Core.Native.FlowDirection.In)] System.Numerics.Vector3* a, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in System.Numerics.Vector3 b);
+        public unsafe partial float Vector3DotProduct([Flow(Silk.NET.Core.Native.FlowDirection.In)] System.Numerics.Vector3* a, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in System.Numerics.Vector3 b);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 800, Column 18 in cimport.h")]
         [NativeApi(EntryPoint = "aiVector3DotProduct")]
-        public unsafe partial float Vector3DotProduct([Flow(Silk.NET.Core.Native.FlowDirection.In)] in System.Numerics.Vector3 a, [Flow(Silk.NET.Core.Native.FlowDirection.In)] System.Numerics.Vector3* b);
+        public unsafe partial float Vector3DotProduct([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in System.Numerics.Vector3 a, [Flow(Silk.NET.Core.Native.FlowDirection.In)] System.Numerics.Vector3* b);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 800, Column 18 in cimport.h")]
         [NativeApi(EntryPoint = "aiVector3DotProduct")]
-        public partial float Vector3DotProduct([Flow(Silk.NET.Core.Native.FlowDirection.In)] in System.Numerics.Vector3 a, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in System.Numerics.Vector3 b);
+        public partial float Vector3DotProduct([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in System.Numerics.Vector3 a, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in System.Numerics.Vector3 b);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 811, Column 17 in cimport.h")]
@@ -1836,17 +1836,17 @@ namespace Silk.NET.Assimp
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 811, Column 17 in cimport.h")]
         [NativeApi(EntryPoint = "aiVector3CrossProduct")]
-        public unsafe partial void Vector3CrossProduct(System.Numerics.Vector3* dst, [Flow(Silk.NET.Core.Native.FlowDirection.In)] System.Numerics.Vector3* a, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in System.Numerics.Vector3 b);
+        public unsafe partial void Vector3CrossProduct(System.Numerics.Vector3* dst, [Flow(Silk.NET.Core.Native.FlowDirection.In)] System.Numerics.Vector3* a, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in System.Numerics.Vector3 b);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 811, Column 17 in cimport.h")]
         [NativeApi(EntryPoint = "aiVector3CrossProduct")]
-        public unsafe partial void Vector3CrossProduct(System.Numerics.Vector3* dst, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in System.Numerics.Vector3 a, [Flow(Silk.NET.Core.Native.FlowDirection.In)] System.Numerics.Vector3* b);
+        public unsafe partial void Vector3CrossProduct(System.Numerics.Vector3* dst, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in System.Numerics.Vector3 a, [Flow(Silk.NET.Core.Native.FlowDirection.In)] System.Numerics.Vector3* b);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 811, Column 17 in cimport.h")]
         [NativeApi(EntryPoint = "aiVector3CrossProduct")]
-        public unsafe partial void Vector3CrossProduct(System.Numerics.Vector3* dst, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in System.Numerics.Vector3 a, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in System.Numerics.Vector3 b);
+        public unsafe partial void Vector3CrossProduct(System.Numerics.Vector3* dst, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in System.Numerics.Vector3 a, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in System.Numerics.Vector3 b);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 811, Column 17 in cimport.h")]
@@ -1856,17 +1856,17 @@ namespace Silk.NET.Assimp
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 811, Column 17 in cimport.h")]
         [NativeApi(EntryPoint = "aiVector3CrossProduct")]
-        public unsafe partial void Vector3CrossProduct(ref System.Numerics.Vector3 dst, [Flow(Silk.NET.Core.Native.FlowDirection.In)] System.Numerics.Vector3* a, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in System.Numerics.Vector3 b);
+        public unsafe partial void Vector3CrossProduct(ref System.Numerics.Vector3 dst, [Flow(Silk.NET.Core.Native.FlowDirection.In)] System.Numerics.Vector3* a, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in System.Numerics.Vector3 b);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 811, Column 17 in cimport.h")]
         [NativeApi(EntryPoint = "aiVector3CrossProduct")]
-        public unsafe partial void Vector3CrossProduct(ref System.Numerics.Vector3 dst, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in System.Numerics.Vector3 a, [Flow(Silk.NET.Core.Native.FlowDirection.In)] System.Numerics.Vector3* b);
+        public unsafe partial void Vector3CrossProduct(ref System.Numerics.Vector3 dst, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in System.Numerics.Vector3 a, [Flow(Silk.NET.Core.Native.FlowDirection.In)] System.Numerics.Vector3* b);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 811, Column 17 in cimport.h")]
         [NativeApi(EntryPoint = "aiVector3CrossProduct")]
-        public partial void Vector3CrossProduct(ref System.Numerics.Vector3 dst, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in System.Numerics.Vector3 a, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in System.Numerics.Vector3 b);
+        public partial void Vector3CrossProduct(ref System.Numerics.Vector3 dst, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in System.Numerics.Vector3 a, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in System.Numerics.Vector3 b);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 820, Column 17 in cimport.h")]
@@ -1896,7 +1896,7 @@ namespace Silk.NET.Assimp
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 835, Column 17 in cimport.h")]
         [NativeApi(EntryPoint = "aiVector3RotateByQuaternion")]
-        public unsafe partial void Vector3RotateByQuaternion(System.Numerics.Vector3* v, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in AssimpQuaternion q);
+        public unsafe partial void Vector3RotateByQuaternion(System.Numerics.Vector3* v, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in AssimpQuaternion q);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 835, Column 17 in cimport.h")]
@@ -1906,7 +1906,7 @@ namespace Silk.NET.Assimp
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 835, Column 17 in cimport.h")]
         [NativeApi(EntryPoint = "aiVector3RotateByQuaternion")]
-        public partial void Vector3RotateByQuaternion(ref System.Numerics.Vector3 v, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in AssimpQuaternion q);
+        public partial void Vector3RotateByQuaternion(ref System.Numerics.Vector3 v, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in AssimpQuaternion q);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 844, Column 17 in cimport.h")]
@@ -1916,7 +1916,7 @@ namespace Silk.NET.Assimp
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 844, Column 17 in cimport.h")]
         [NativeApi(EntryPoint = "aiMatrix3FromMatrix4")]
-        public unsafe partial void Matrix3FromMatrix4(Silk.NET.Maths.Matrix3X3<float>* dst, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in System.Numerics.Matrix4x4 mat);
+        public unsafe partial void Matrix3FromMatrix4(Silk.NET.Maths.Matrix3X3<float>* dst, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in System.Numerics.Matrix4x4 mat);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 844, Column 17 in cimport.h")]
@@ -1926,7 +1926,7 @@ namespace Silk.NET.Assimp
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 844, Column 17 in cimport.h")]
         [NativeApi(EntryPoint = "aiMatrix3FromMatrix4")]
-        public partial void Matrix3FromMatrix4(ref Silk.NET.Maths.Matrix3X3<float> dst, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in System.Numerics.Matrix4x4 mat);
+        public partial void Matrix3FromMatrix4(ref Silk.NET.Maths.Matrix3X3<float> dst, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in System.Numerics.Matrix4x4 mat);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 853, Column 17 in cimport.h")]
@@ -1936,7 +1936,7 @@ namespace Silk.NET.Assimp
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 853, Column 17 in cimport.h")]
         [NativeApi(EntryPoint = "aiMatrix3FromQuaternion")]
-        public unsafe partial void Matrix3FromQuaternion(Silk.NET.Maths.Matrix3X3<float>* mat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in AssimpQuaternion q);
+        public unsafe partial void Matrix3FromQuaternion(Silk.NET.Maths.Matrix3X3<float>* mat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in AssimpQuaternion q);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 853, Column 17 in cimport.h")]
@@ -1946,7 +1946,7 @@ namespace Silk.NET.Assimp
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 853, Column 17 in cimport.h")]
         [NativeApi(EntryPoint = "aiMatrix3FromQuaternion")]
-        public partial void Matrix3FromQuaternion(ref Silk.NET.Maths.Matrix3X3<float> mat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in AssimpQuaternion q);
+        public partial void Matrix3FromQuaternion(ref Silk.NET.Maths.Matrix3X3<float> mat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in AssimpQuaternion q);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 864, Column 16 in cimport.h")]
@@ -1956,17 +1956,17 @@ namespace Silk.NET.Assimp
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 864, Column 16 in cimport.h")]
         [NativeApi(EntryPoint = "aiMatrix3AreEqual")]
-        public unsafe partial int Matrix3AreEqual([Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Matrix3X3<float>* a, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Maths.Matrix3X3<float> b);
+        public unsafe partial int Matrix3AreEqual([Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Matrix3X3<float>* a, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Maths.Matrix3X3<float> b);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 864, Column 16 in cimport.h")]
         [NativeApi(EntryPoint = "aiMatrix3AreEqual")]
-        public unsafe partial int Matrix3AreEqual([Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Maths.Matrix3X3<float> a, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Matrix3X3<float>* b);
+        public unsafe partial int Matrix3AreEqual([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Maths.Matrix3X3<float> a, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Matrix3X3<float>* b);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 864, Column 16 in cimport.h")]
         [NativeApi(EntryPoint = "aiMatrix3AreEqual")]
-        public partial int Matrix3AreEqual([Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Maths.Matrix3X3<float> a, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Maths.Matrix3X3<float> b);
+        public partial int Matrix3AreEqual([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Maths.Matrix3X3<float> a, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Maths.Matrix3X3<float> b);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 876, Column 16 in cimport.h")]
@@ -1976,17 +1976,17 @@ namespace Silk.NET.Assimp
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 876, Column 16 in cimport.h")]
         [NativeApi(EntryPoint = "aiMatrix3AreEqualEpsilon")]
-        public unsafe partial int Matrix3AreEqualEpsilon([Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Matrix3X3<float>* a, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Maths.Matrix3X3<float> b, float epsilon);
+        public unsafe partial int Matrix3AreEqualEpsilon([Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Matrix3X3<float>* a, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Maths.Matrix3X3<float> b, float epsilon);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 876, Column 16 in cimport.h")]
         [NativeApi(EntryPoint = "aiMatrix3AreEqualEpsilon")]
-        public unsafe partial int Matrix3AreEqualEpsilon([Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Maths.Matrix3X3<float> a, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Matrix3X3<float>* b, float epsilon);
+        public unsafe partial int Matrix3AreEqualEpsilon([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Maths.Matrix3X3<float> a, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Matrix3X3<float>* b, float epsilon);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 876, Column 16 in cimport.h")]
         [NativeApi(EntryPoint = "aiMatrix3AreEqualEpsilon")]
-        public partial int Matrix3AreEqualEpsilon([Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Maths.Matrix3X3<float> a, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Maths.Matrix3X3<float> b, float epsilon);
+        public partial int Matrix3AreEqualEpsilon([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Maths.Matrix3X3<float> a, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Maths.Matrix3X3<float> b, float epsilon);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 885, Column 17 in cimport.h")]
@@ -2006,7 +2006,7 @@ namespace Silk.NET.Assimp
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 892, Column 18 in cimport.h")]
         [NativeApi(EntryPoint = "aiMatrix3Determinant")]
-        public partial float Matrix3Determinant([Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Maths.Matrix3X3<float> mat);
+        public partial float Matrix3Determinant([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Maths.Matrix3X3<float> mat);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 900, Column 17 in cimport.h")]
@@ -2026,7 +2026,7 @@ namespace Silk.NET.Assimp
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 910, Column 17 in cimport.h")]
         [NativeApi(EntryPoint = "aiMatrix3FromRotationAroundAxis")]
-        public unsafe partial void Matrix3FromRotationAroundAxis(Silk.NET.Maths.Matrix3X3<float>* mat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in System.Numerics.Vector3 axis, float angle);
+        public unsafe partial void Matrix3FromRotationAroundAxis(Silk.NET.Maths.Matrix3X3<float>* mat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in System.Numerics.Vector3 axis, float angle);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 910, Column 17 in cimport.h")]
@@ -2036,7 +2036,7 @@ namespace Silk.NET.Assimp
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 910, Column 17 in cimport.h")]
         [NativeApi(EntryPoint = "aiMatrix3FromRotationAroundAxis")]
-        public partial void Matrix3FromRotationAroundAxis(ref Silk.NET.Maths.Matrix3X3<float> mat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in System.Numerics.Vector3 axis, float angle);
+        public partial void Matrix3FromRotationAroundAxis(ref Silk.NET.Maths.Matrix3X3<float> mat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in System.Numerics.Vector3 axis, float angle);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 920, Column 17 in cimport.h")]
@@ -2046,7 +2046,7 @@ namespace Silk.NET.Assimp
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 920, Column 17 in cimport.h")]
         [NativeApi(EntryPoint = "aiMatrix3Translation")]
-        public unsafe partial void Matrix3Translation(Silk.NET.Maths.Matrix3X3<float>* mat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in System.Numerics.Vector2 translation);
+        public unsafe partial void Matrix3Translation(Silk.NET.Maths.Matrix3X3<float>* mat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in System.Numerics.Vector2 translation);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 920, Column 17 in cimport.h")]
@@ -2056,7 +2056,7 @@ namespace Silk.NET.Assimp
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 920, Column 17 in cimport.h")]
         [NativeApi(EntryPoint = "aiMatrix3Translation")]
-        public partial void Matrix3Translation(ref Silk.NET.Maths.Matrix3X3<float> mat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in System.Numerics.Vector2 translation);
+        public partial void Matrix3Translation(ref Silk.NET.Maths.Matrix3X3<float> mat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in System.Numerics.Vector2 translation);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 930, Column 17 in cimport.h")]
@@ -2066,17 +2066,17 @@ namespace Silk.NET.Assimp
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 930, Column 17 in cimport.h")]
         [NativeApi(EntryPoint = "aiMatrix3FromTo")]
-        public unsafe partial void Matrix3FromTo(Silk.NET.Maths.Matrix3X3<float>* mat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] System.Numerics.Vector3* from, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in System.Numerics.Vector3 to);
+        public unsafe partial void Matrix3FromTo(Silk.NET.Maths.Matrix3X3<float>* mat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] System.Numerics.Vector3* from, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in System.Numerics.Vector3 to);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 930, Column 17 in cimport.h")]
         [NativeApi(EntryPoint = "aiMatrix3FromTo")]
-        public unsafe partial void Matrix3FromTo(Silk.NET.Maths.Matrix3X3<float>* mat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in System.Numerics.Vector3 from, [Flow(Silk.NET.Core.Native.FlowDirection.In)] System.Numerics.Vector3* to);
+        public unsafe partial void Matrix3FromTo(Silk.NET.Maths.Matrix3X3<float>* mat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in System.Numerics.Vector3 from, [Flow(Silk.NET.Core.Native.FlowDirection.In)] System.Numerics.Vector3* to);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 930, Column 17 in cimport.h")]
         [NativeApi(EntryPoint = "aiMatrix3FromTo")]
-        public unsafe partial void Matrix3FromTo(Silk.NET.Maths.Matrix3X3<float>* mat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in System.Numerics.Vector3 from, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in System.Numerics.Vector3 to);
+        public unsafe partial void Matrix3FromTo(Silk.NET.Maths.Matrix3X3<float>* mat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in System.Numerics.Vector3 from, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in System.Numerics.Vector3 to);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 930, Column 17 in cimport.h")]
@@ -2086,17 +2086,17 @@ namespace Silk.NET.Assimp
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 930, Column 17 in cimport.h")]
         [NativeApi(EntryPoint = "aiMatrix3FromTo")]
-        public unsafe partial void Matrix3FromTo(ref Silk.NET.Maths.Matrix3X3<float> mat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] System.Numerics.Vector3* from, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in System.Numerics.Vector3 to);
+        public unsafe partial void Matrix3FromTo(ref Silk.NET.Maths.Matrix3X3<float> mat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] System.Numerics.Vector3* from, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in System.Numerics.Vector3 to);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 930, Column 17 in cimport.h")]
         [NativeApi(EntryPoint = "aiMatrix3FromTo")]
-        public unsafe partial void Matrix3FromTo(ref Silk.NET.Maths.Matrix3X3<float> mat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in System.Numerics.Vector3 from, [Flow(Silk.NET.Core.Native.FlowDirection.In)] System.Numerics.Vector3* to);
+        public unsafe partial void Matrix3FromTo(ref Silk.NET.Maths.Matrix3X3<float> mat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in System.Numerics.Vector3 from, [Flow(Silk.NET.Core.Native.FlowDirection.In)] System.Numerics.Vector3* to);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 930, Column 17 in cimport.h")]
         [NativeApi(EntryPoint = "aiMatrix3FromTo")]
-        public partial void Matrix3FromTo(ref Silk.NET.Maths.Matrix3X3<float> mat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in System.Numerics.Vector3 from, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in System.Numerics.Vector3 to);
+        public partial void Matrix3FromTo(ref Silk.NET.Maths.Matrix3X3<float> mat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in System.Numerics.Vector3 from, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in System.Numerics.Vector3 to);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 940, Column 17 in cimport.h")]
@@ -2106,7 +2106,7 @@ namespace Silk.NET.Assimp
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 940, Column 17 in cimport.h")]
         [NativeApi(EntryPoint = "aiMatrix4FromMatrix3")]
-        public unsafe partial void Matrix4FromMatrix3(System.Numerics.Matrix4x4* dst, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Maths.Matrix3X3<float> mat);
+        public unsafe partial void Matrix4FromMatrix3(System.Numerics.Matrix4x4* dst, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Maths.Matrix3X3<float> mat);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 940, Column 17 in cimport.h")]
@@ -2116,7 +2116,7 @@ namespace Silk.NET.Assimp
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 940, Column 17 in cimport.h")]
         [NativeApi(EntryPoint = "aiMatrix4FromMatrix3")]
-        public partial void Matrix4FromMatrix3(ref System.Numerics.Matrix4x4 dst, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Maths.Matrix3X3<float> mat);
+        public partial void Matrix4FromMatrix3(ref System.Numerics.Matrix4x4 dst, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Maths.Matrix3X3<float> mat);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 951, Column 17 in cimport.h")]
@@ -2126,37 +2126,37 @@ namespace Silk.NET.Assimp
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 951, Column 17 in cimport.h")]
         [NativeApi(EntryPoint = "aiMatrix4FromScalingQuaternionPosition")]
-        public unsafe partial void Matrix4FromScalingQuaternionPosition(System.Numerics.Matrix4x4* mat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] System.Numerics.Vector3* scaling, [Flow(Silk.NET.Core.Native.FlowDirection.In)] AssimpQuaternion* rotation, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in System.Numerics.Vector3 position);
+        public unsafe partial void Matrix4FromScalingQuaternionPosition(System.Numerics.Matrix4x4* mat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] System.Numerics.Vector3* scaling, [Flow(Silk.NET.Core.Native.FlowDirection.In)] AssimpQuaternion* rotation, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in System.Numerics.Vector3 position);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 951, Column 17 in cimport.h")]
         [NativeApi(EntryPoint = "aiMatrix4FromScalingQuaternionPosition")]
-        public unsafe partial void Matrix4FromScalingQuaternionPosition(System.Numerics.Matrix4x4* mat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] System.Numerics.Vector3* scaling, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in AssimpQuaternion rotation, [Flow(Silk.NET.Core.Native.FlowDirection.In)] System.Numerics.Vector3* position);
+        public unsafe partial void Matrix4FromScalingQuaternionPosition(System.Numerics.Matrix4x4* mat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] System.Numerics.Vector3* scaling, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in AssimpQuaternion rotation, [Flow(Silk.NET.Core.Native.FlowDirection.In)] System.Numerics.Vector3* position);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 951, Column 17 in cimport.h")]
         [NativeApi(EntryPoint = "aiMatrix4FromScalingQuaternionPosition")]
-        public unsafe partial void Matrix4FromScalingQuaternionPosition(System.Numerics.Matrix4x4* mat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] System.Numerics.Vector3* scaling, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in AssimpQuaternion rotation, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in System.Numerics.Vector3 position);
+        public unsafe partial void Matrix4FromScalingQuaternionPosition(System.Numerics.Matrix4x4* mat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] System.Numerics.Vector3* scaling, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in AssimpQuaternion rotation, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in System.Numerics.Vector3 position);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 951, Column 17 in cimport.h")]
         [NativeApi(EntryPoint = "aiMatrix4FromScalingQuaternionPosition")]
-        public unsafe partial void Matrix4FromScalingQuaternionPosition(System.Numerics.Matrix4x4* mat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in System.Numerics.Vector3 scaling, [Flow(Silk.NET.Core.Native.FlowDirection.In)] AssimpQuaternion* rotation, [Flow(Silk.NET.Core.Native.FlowDirection.In)] System.Numerics.Vector3* position);
+        public unsafe partial void Matrix4FromScalingQuaternionPosition(System.Numerics.Matrix4x4* mat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in System.Numerics.Vector3 scaling, [Flow(Silk.NET.Core.Native.FlowDirection.In)] AssimpQuaternion* rotation, [Flow(Silk.NET.Core.Native.FlowDirection.In)] System.Numerics.Vector3* position);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 951, Column 17 in cimport.h")]
         [NativeApi(EntryPoint = "aiMatrix4FromScalingQuaternionPosition")]
-        public unsafe partial void Matrix4FromScalingQuaternionPosition(System.Numerics.Matrix4x4* mat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in System.Numerics.Vector3 scaling, [Flow(Silk.NET.Core.Native.FlowDirection.In)] AssimpQuaternion* rotation, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in System.Numerics.Vector3 position);
+        public unsafe partial void Matrix4FromScalingQuaternionPosition(System.Numerics.Matrix4x4* mat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in System.Numerics.Vector3 scaling, [Flow(Silk.NET.Core.Native.FlowDirection.In)] AssimpQuaternion* rotation, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in System.Numerics.Vector3 position);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 951, Column 17 in cimport.h")]
         [NativeApi(EntryPoint = "aiMatrix4FromScalingQuaternionPosition")]
-        public unsafe partial void Matrix4FromScalingQuaternionPosition(System.Numerics.Matrix4x4* mat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in System.Numerics.Vector3 scaling, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in AssimpQuaternion rotation, [Flow(Silk.NET.Core.Native.FlowDirection.In)] System.Numerics.Vector3* position);
+        public unsafe partial void Matrix4FromScalingQuaternionPosition(System.Numerics.Matrix4x4* mat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in System.Numerics.Vector3 scaling, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in AssimpQuaternion rotation, [Flow(Silk.NET.Core.Native.FlowDirection.In)] System.Numerics.Vector3* position);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 951, Column 17 in cimport.h")]
         [NativeApi(EntryPoint = "aiMatrix4FromScalingQuaternionPosition")]
-        public unsafe partial void Matrix4FromScalingQuaternionPosition(System.Numerics.Matrix4x4* mat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in System.Numerics.Vector3 scaling, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in AssimpQuaternion rotation, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in System.Numerics.Vector3 position);
+        public unsafe partial void Matrix4FromScalingQuaternionPosition(System.Numerics.Matrix4x4* mat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in System.Numerics.Vector3 scaling, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in AssimpQuaternion rotation, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in System.Numerics.Vector3 position);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 951, Column 17 in cimport.h")]
@@ -2166,37 +2166,37 @@ namespace Silk.NET.Assimp
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 951, Column 17 in cimport.h")]
         [NativeApi(EntryPoint = "aiMatrix4FromScalingQuaternionPosition")]
-        public unsafe partial void Matrix4FromScalingQuaternionPosition(ref System.Numerics.Matrix4x4 mat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] System.Numerics.Vector3* scaling, [Flow(Silk.NET.Core.Native.FlowDirection.In)] AssimpQuaternion* rotation, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in System.Numerics.Vector3 position);
+        public unsafe partial void Matrix4FromScalingQuaternionPosition(ref System.Numerics.Matrix4x4 mat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] System.Numerics.Vector3* scaling, [Flow(Silk.NET.Core.Native.FlowDirection.In)] AssimpQuaternion* rotation, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in System.Numerics.Vector3 position);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 951, Column 17 in cimport.h")]
         [NativeApi(EntryPoint = "aiMatrix4FromScalingQuaternionPosition")]
-        public unsafe partial void Matrix4FromScalingQuaternionPosition(ref System.Numerics.Matrix4x4 mat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] System.Numerics.Vector3* scaling, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in AssimpQuaternion rotation, [Flow(Silk.NET.Core.Native.FlowDirection.In)] System.Numerics.Vector3* position);
+        public unsafe partial void Matrix4FromScalingQuaternionPosition(ref System.Numerics.Matrix4x4 mat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] System.Numerics.Vector3* scaling, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in AssimpQuaternion rotation, [Flow(Silk.NET.Core.Native.FlowDirection.In)] System.Numerics.Vector3* position);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 951, Column 17 in cimport.h")]
         [NativeApi(EntryPoint = "aiMatrix4FromScalingQuaternionPosition")]
-        public unsafe partial void Matrix4FromScalingQuaternionPosition(ref System.Numerics.Matrix4x4 mat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] System.Numerics.Vector3* scaling, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in AssimpQuaternion rotation, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in System.Numerics.Vector3 position);
+        public unsafe partial void Matrix4FromScalingQuaternionPosition(ref System.Numerics.Matrix4x4 mat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] System.Numerics.Vector3* scaling, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in AssimpQuaternion rotation, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in System.Numerics.Vector3 position);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 951, Column 17 in cimport.h")]
         [NativeApi(EntryPoint = "aiMatrix4FromScalingQuaternionPosition")]
-        public unsafe partial void Matrix4FromScalingQuaternionPosition(ref System.Numerics.Matrix4x4 mat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in System.Numerics.Vector3 scaling, [Flow(Silk.NET.Core.Native.FlowDirection.In)] AssimpQuaternion* rotation, [Flow(Silk.NET.Core.Native.FlowDirection.In)] System.Numerics.Vector3* position);
+        public unsafe partial void Matrix4FromScalingQuaternionPosition(ref System.Numerics.Matrix4x4 mat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in System.Numerics.Vector3 scaling, [Flow(Silk.NET.Core.Native.FlowDirection.In)] AssimpQuaternion* rotation, [Flow(Silk.NET.Core.Native.FlowDirection.In)] System.Numerics.Vector3* position);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 951, Column 17 in cimport.h")]
         [NativeApi(EntryPoint = "aiMatrix4FromScalingQuaternionPosition")]
-        public unsafe partial void Matrix4FromScalingQuaternionPosition(ref System.Numerics.Matrix4x4 mat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in System.Numerics.Vector3 scaling, [Flow(Silk.NET.Core.Native.FlowDirection.In)] AssimpQuaternion* rotation, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in System.Numerics.Vector3 position);
+        public unsafe partial void Matrix4FromScalingQuaternionPosition(ref System.Numerics.Matrix4x4 mat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in System.Numerics.Vector3 scaling, [Flow(Silk.NET.Core.Native.FlowDirection.In)] AssimpQuaternion* rotation, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in System.Numerics.Vector3 position);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 951, Column 17 in cimport.h")]
         [NativeApi(EntryPoint = "aiMatrix4FromScalingQuaternionPosition")]
-        public unsafe partial void Matrix4FromScalingQuaternionPosition(ref System.Numerics.Matrix4x4 mat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in System.Numerics.Vector3 scaling, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in AssimpQuaternion rotation, [Flow(Silk.NET.Core.Native.FlowDirection.In)] System.Numerics.Vector3* position);
+        public unsafe partial void Matrix4FromScalingQuaternionPosition(ref System.Numerics.Matrix4x4 mat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in System.Numerics.Vector3 scaling, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in AssimpQuaternion rotation, [Flow(Silk.NET.Core.Native.FlowDirection.In)] System.Numerics.Vector3* position);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 951, Column 17 in cimport.h")]
         [NativeApi(EntryPoint = "aiMatrix4FromScalingQuaternionPosition")]
-        public partial void Matrix4FromScalingQuaternionPosition(ref System.Numerics.Matrix4x4 mat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in System.Numerics.Vector3 scaling, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in AssimpQuaternion rotation, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in System.Numerics.Vector3 position);
+        public partial void Matrix4FromScalingQuaternionPosition(ref System.Numerics.Matrix4x4 mat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in System.Numerics.Vector3 scaling, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in AssimpQuaternion rotation, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in System.Numerics.Vector3 position);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 962, Column 17 in cimport.h")]
@@ -2206,7 +2206,7 @@ namespace Silk.NET.Assimp
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 962, Column 17 in cimport.h")]
         [NativeApi(EntryPoint = "aiMatrix4Add")]
-        public unsafe partial void Matrix4Add(System.Numerics.Matrix4x4* dst, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in System.Numerics.Matrix4x4 src);
+        public unsafe partial void Matrix4Add(System.Numerics.Matrix4x4* dst, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in System.Numerics.Matrix4x4 src);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 962, Column 17 in cimport.h")]
@@ -2216,7 +2216,7 @@ namespace Silk.NET.Assimp
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 962, Column 17 in cimport.h")]
         [NativeApi(EntryPoint = "aiMatrix4Add")]
-        public partial void Matrix4Add(ref System.Numerics.Matrix4x4 dst, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in System.Numerics.Matrix4x4 src);
+        public partial void Matrix4Add(ref System.Numerics.Matrix4x4 dst, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in System.Numerics.Matrix4x4 src);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 973, Column 16 in cimport.h")]
@@ -2226,17 +2226,17 @@ namespace Silk.NET.Assimp
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 973, Column 16 in cimport.h")]
         [NativeApi(EntryPoint = "aiMatrix4AreEqual")]
-        public unsafe partial int Matrix4AreEqual([Flow(Silk.NET.Core.Native.FlowDirection.In)] System.Numerics.Matrix4x4* a, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in System.Numerics.Matrix4x4 b);
+        public unsafe partial int Matrix4AreEqual([Flow(Silk.NET.Core.Native.FlowDirection.In)] System.Numerics.Matrix4x4* a, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in System.Numerics.Matrix4x4 b);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 973, Column 16 in cimport.h")]
         [NativeApi(EntryPoint = "aiMatrix4AreEqual")]
-        public unsafe partial int Matrix4AreEqual([Flow(Silk.NET.Core.Native.FlowDirection.In)] in System.Numerics.Matrix4x4 a, [Flow(Silk.NET.Core.Native.FlowDirection.In)] System.Numerics.Matrix4x4* b);
+        public unsafe partial int Matrix4AreEqual([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in System.Numerics.Matrix4x4 a, [Flow(Silk.NET.Core.Native.FlowDirection.In)] System.Numerics.Matrix4x4* b);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 973, Column 16 in cimport.h")]
         [NativeApi(EntryPoint = "aiMatrix4AreEqual")]
-        public partial int Matrix4AreEqual([Flow(Silk.NET.Core.Native.FlowDirection.In)] in System.Numerics.Matrix4x4 a, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in System.Numerics.Matrix4x4 b);
+        public partial int Matrix4AreEqual([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in System.Numerics.Matrix4x4 a, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in System.Numerics.Matrix4x4 b);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 985, Column 16 in cimport.h")]
@@ -2246,17 +2246,17 @@ namespace Silk.NET.Assimp
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 985, Column 16 in cimport.h")]
         [NativeApi(EntryPoint = "aiMatrix4AreEqualEpsilon")]
-        public unsafe partial int Matrix4AreEqualEpsilon([Flow(Silk.NET.Core.Native.FlowDirection.In)] System.Numerics.Matrix4x4* a, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in System.Numerics.Matrix4x4 b, float epsilon);
+        public unsafe partial int Matrix4AreEqualEpsilon([Flow(Silk.NET.Core.Native.FlowDirection.In)] System.Numerics.Matrix4x4* a, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in System.Numerics.Matrix4x4 b, float epsilon);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 985, Column 16 in cimport.h")]
         [NativeApi(EntryPoint = "aiMatrix4AreEqualEpsilon")]
-        public unsafe partial int Matrix4AreEqualEpsilon([Flow(Silk.NET.Core.Native.FlowDirection.In)] in System.Numerics.Matrix4x4 a, [Flow(Silk.NET.Core.Native.FlowDirection.In)] System.Numerics.Matrix4x4* b, float epsilon);
+        public unsafe partial int Matrix4AreEqualEpsilon([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in System.Numerics.Matrix4x4 a, [Flow(Silk.NET.Core.Native.FlowDirection.In)] System.Numerics.Matrix4x4* b, float epsilon);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 985, Column 16 in cimport.h")]
         [NativeApi(EntryPoint = "aiMatrix4AreEqualEpsilon")]
-        public partial int Matrix4AreEqualEpsilon([Flow(Silk.NET.Core.Native.FlowDirection.In)] in System.Numerics.Matrix4x4 a, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in System.Numerics.Matrix4x4 b, float epsilon);
+        public partial int Matrix4AreEqualEpsilon([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in System.Numerics.Matrix4x4 a, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in System.Numerics.Matrix4x4 b, float epsilon);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 994, Column 17 in cimport.h")]
@@ -2276,7 +2276,7 @@ namespace Silk.NET.Assimp
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1002, Column 18 in cimport.h")]
         [NativeApi(EntryPoint = "aiMatrix4Determinant")]
-        public partial float Matrix4Determinant([Flow(Silk.NET.Core.Native.FlowDirection.In)] in System.Numerics.Matrix4x4 mat);
+        public partial float Matrix4Determinant([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in System.Numerics.Matrix4x4 mat);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1011, Column 16 in cimport.h")]
@@ -2286,7 +2286,7 @@ namespace Silk.NET.Assimp
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1011, Column 16 in cimport.h")]
         [NativeApi(EntryPoint = "aiMatrix4IsIdentity")]
-        public partial int Matrix4IsIdentity([Flow(Silk.NET.Core.Native.FlowDirection.In)] in System.Numerics.Matrix4x4 mat);
+        public partial int Matrix4IsIdentity([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in System.Numerics.Matrix4x4 mat);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1023, Column 17 in cimport.h")]
@@ -2331,42 +2331,42 @@ namespace Silk.NET.Assimp
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1023, Column 17 in cimport.h")]
         [NativeApi(EntryPoint = "aiMatrix4DecomposeIntoScalingEulerAnglesPosition")]
-        public unsafe partial void Matrix4DecomposeIntoScalingEulerAnglesPosition([Flow(Silk.NET.Core.Native.FlowDirection.In)] in System.Numerics.Matrix4x4 mat, System.Numerics.Vector3* scaling, System.Numerics.Vector3* rotation, System.Numerics.Vector3* position);
+        public unsafe partial void Matrix4DecomposeIntoScalingEulerAnglesPosition([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in System.Numerics.Matrix4x4 mat, System.Numerics.Vector3* scaling, System.Numerics.Vector3* rotation, System.Numerics.Vector3* position);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1023, Column 17 in cimport.h")]
         [NativeApi(EntryPoint = "aiMatrix4DecomposeIntoScalingEulerAnglesPosition")]
-        public unsafe partial void Matrix4DecomposeIntoScalingEulerAnglesPosition([Flow(Silk.NET.Core.Native.FlowDirection.In)] in System.Numerics.Matrix4x4 mat, System.Numerics.Vector3* scaling, System.Numerics.Vector3* rotation, ref System.Numerics.Vector3 position);
+        public unsafe partial void Matrix4DecomposeIntoScalingEulerAnglesPosition([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in System.Numerics.Matrix4x4 mat, System.Numerics.Vector3* scaling, System.Numerics.Vector3* rotation, ref System.Numerics.Vector3 position);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1023, Column 17 in cimport.h")]
         [NativeApi(EntryPoint = "aiMatrix4DecomposeIntoScalingEulerAnglesPosition")]
-        public unsafe partial void Matrix4DecomposeIntoScalingEulerAnglesPosition([Flow(Silk.NET.Core.Native.FlowDirection.In)] in System.Numerics.Matrix4x4 mat, System.Numerics.Vector3* scaling, ref System.Numerics.Vector3 rotation, System.Numerics.Vector3* position);
+        public unsafe partial void Matrix4DecomposeIntoScalingEulerAnglesPosition([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in System.Numerics.Matrix4x4 mat, System.Numerics.Vector3* scaling, ref System.Numerics.Vector3 rotation, System.Numerics.Vector3* position);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1023, Column 17 in cimport.h")]
         [NativeApi(EntryPoint = "aiMatrix4DecomposeIntoScalingEulerAnglesPosition")]
-        public unsafe partial void Matrix4DecomposeIntoScalingEulerAnglesPosition([Flow(Silk.NET.Core.Native.FlowDirection.In)] in System.Numerics.Matrix4x4 mat, System.Numerics.Vector3* scaling, ref System.Numerics.Vector3 rotation, ref System.Numerics.Vector3 position);
+        public unsafe partial void Matrix4DecomposeIntoScalingEulerAnglesPosition([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in System.Numerics.Matrix4x4 mat, System.Numerics.Vector3* scaling, ref System.Numerics.Vector3 rotation, ref System.Numerics.Vector3 position);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1023, Column 17 in cimport.h")]
         [NativeApi(EntryPoint = "aiMatrix4DecomposeIntoScalingEulerAnglesPosition")]
-        public unsafe partial void Matrix4DecomposeIntoScalingEulerAnglesPosition([Flow(Silk.NET.Core.Native.FlowDirection.In)] in System.Numerics.Matrix4x4 mat, ref System.Numerics.Vector3 scaling, System.Numerics.Vector3* rotation, System.Numerics.Vector3* position);
+        public unsafe partial void Matrix4DecomposeIntoScalingEulerAnglesPosition([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in System.Numerics.Matrix4x4 mat, ref System.Numerics.Vector3 scaling, System.Numerics.Vector3* rotation, System.Numerics.Vector3* position);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1023, Column 17 in cimport.h")]
         [NativeApi(EntryPoint = "aiMatrix4DecomposeIntoScalingEulerAnglesPosition")]
-        public unsafe partial void Matrix4DecomposeIntoScalingEulerAnglesPosition([Flow(Silk.NET.Core.Native.FlowDirection.In)] in System.Numerics.Matrix4x4 mat, ref System.Numerics.Vector3 scaling, System.Numerics.Vector3* rotation, ref System.Numerics.Vector3 position);
+        public unsafe partial void Matrix4DecomposeIntoScalingEulerAnglesPosition([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in System.Numerics.Matrix4x4 mat, ref System.Numerics.Vector3 scaling, System.Numerics.Vector3* rotation, ref System.Numerics.Vector3 position);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1023, Column 17 in cimport.h")]
         [NativeApi(EntryPoint = "aiMatrix4DecomposeIntoScalingEulerAnglesPosition")]
-        public unsafe partial void Matrix4DecomposeIntoScalingEulerAnglesPosition([Flow(Silk.NET.Core.Native.FlowDirection.In)] in System.Numerics.Matrix4x4 mat, ref System.Numerics.Vector3 scaling, ref System.Numerics.Vector3 rotation, System.Numerics.Vector3* position);
+        public unsafe partial void Matrix4DecomposeIntoScalingEulerAnglesPosition([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in System.Numerics.Matrix4x4 mat, ref System.Numerics.Vector3 scaling, ref System.Numerics.Vector3 rotation, System.Numerics.Vector3* position);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1023, Column 17 in cimport.h")]
         [NativeApi(EntryPoint = "aiMatrix4DecomposeIntoScalingEulerAnglesPosition")]
-        public partial void Matrix4DecomposeIntoScalingEulerAnglesPosition([Flow(Silk.NET.Core.Native.FlowDirection.In)] in System.Numerics.Matrix4x4 mat, ref System.Numerics.Vector3 scaling, ref System.Numerics.Vector3 rotation, ref System.Numerics.Vector3 position);
+        public partial void Matrix4DecomposeIntoScalingEulerAnglesPosition([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in System.Numerics.Matrix4x4 mat, ref System.Numerics.Vector3 scaling, ref System.Numerics.Vector3 rotation, ref System.Numerics.Vector3 position);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1040, Column 17 in cimport.h")]
@@ -2451,82 +2451,82 @@ namespace Silk.NET.Assimp
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1040, Column 17 in cimport.h")]
         [NativeApi(EntryPoint = "aiMatrix4DecomposeIntoScalingAxisAnglePosition")]
-        public unsafe partial void Matrix4DecomposeIntoScalingAxisAnglePosition([Flow(Silk.NET.Core.Native.FlowDirection.In)] in System.Numerics.Matrix4x4 mat, System.Numerics.Vector3* scaling, System.Numerics.Vector3* axis, float* angle, System.Numerics.Vector3* position);
+        public unsafe partial void Matrix4DecomposeIntoScalingAxisAnglePosition([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in System.Numerics.Matrix4x4 mat, System.Numerics.Vector3* scaling, System.Numerics.Vector3* axis, float* angle, System.Numerics.Vector3* position);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1040, Column 17 in cimport.h")]
         [NativeApi(EntryPoint = "aiMatrix4DecomposeIntoScalingAxisAnglePosition")]
-        public unsafe partial void Matrix4DecomposeIntoScalingAxisAnglePosition([Flow(Silk.NET.Core.Native.FlowDirection.In)] in System.Numerics.Matrix4x4 mat, System.Numerics.Vector3* scaling, System.Numerics.Vector3* axis, float* angle, ref System.Numerics.Vector3 position);
+        public unsafe partial void Matrix4DecomposeIntoScalingAxisAnglePosition([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in System.Numerics.Matrix4x4 mat, System.Numerics.Vector3* scaling, System.Numerics.Vector3* axis, float* angle, ref System.Numerics.Vector3 position);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1040, Column 17 in cimport.h")]
         [NativeApi(EntryPoint = "aiMatrix4DecomposeIntoScalingAxisAnglePosition")]
-        public unsafe partial void Matrix4DecomposeIntoScalingAxisAnglePosition([Flow(Silk.NET.Core.Native.FlowDirection.In)] in System.Numerics.Matrix4x4 mat, System.Numerics.Vector3* scaling, System.Numerics.Vector3* axis, ref float angle, System.Numerics.Vector3* position);
+        public unsafe partial void Matrix4DecomposeIntoScalingAxisAnglePosition([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in System.Numerics.Matrix4x4 mat, System.Numerics.Vector3* scaling, System.Numerics.Vector3* axis, ref float angle, System.Numerics.Vector3* position);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1040, Column 17 in cimport.h")]
         [NativeApi(EntryPoint = "aiMatrix4DecomposeIntoScalingAxisAnglePosition")]
-        public unsafe partial void Matrix4DecomposeIntoScalingAxisAnglePosition([Flow(Silk.NET.Core.Native.FlowDirection.In)] in System.Numerics.Matrix4x4 mat, System.Numerics.Vector3* scaling, System.Numerics.Vector3* axis, ref float angle, ref System.Numerics.Vector3 position);
+        public unsafe partial void Matrix4DecomposeIntoScalingAxisAnglePosition([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in System.Numerics.Matrix4x4 mat, System.Numerics.Vector3* scaling, System.Numerics.Vector3* axis, ref float angle, ref System.Numerics.Vector3 position);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1040, Column 17 in cimport.h")]
         [NativeApi(EntryPoint = "aiMatrix4DecomposeIntoScalingAxisAnglePosition")]
-        public unsafe partial void Matrix4DecomposeIntoScalingAxisAnglePosition([Flow(Silk.NET.Core.Native.FlowDirection.In)] in System.Numerics.Matrix4x4 mat, System.Numerics.Vector3* scaling, ref System.Numerics.Vector3 axis, float* angle, System.Numerics.Vector3* position);
+        public unsafe partial void Matrix4DecomposeIntoScalingAxisAnglePosition([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in System.Numerics.Matrix4x4 mat, System.Numerics.Vector3* scaling, ref System.Numerics.Vector3 axis, float* angle, System.Numerics.Vector3* position);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1040, Column 17 in cimport.h")]
         [NativeApi(EntryPoint = "aiMatrix4DecomposeIntoScalingAxisAnglePosition")]
-        public unsafe partial void Matrix4DecomposeIntoScalingAxisAnglePosition([Flow(Silk.NET.Core.Native.FlowDirection.In)] in System.Numerics.Matrix4x4 mat, System.Numerics.Vector3* scaling, ref System.Numerics.Vector3 axis, float* angle, ref System.Numerics.Vector3 position);
+        public unsafe partial void Matrix4DecomposeIntoScalingAxisAnglePosition([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in System.Numerics.Matrix4x4 mat, System.Numerics.Vector3* scaling, ref System.Numerics.Vector3 axis, float* angle, ref System.Numerics.Vector3 position);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1040, Column 17 in cimport.h")]
         [NativeApi(EntryPoint = "aiMatrix4DecomposeIntoScalingAxisAnglePosition")]
-        public unsafe partial void Matrix4DecomposeIntoScalingAxisAnglePosition([Flow(Silk.NET.Core.Native.FlowDirection.In)] in System.Numerics.Matrix4x4 mat, System.Numerics.Vector3* scaling, ref System.Numerics.Vector3 axis, ref float angle, System.Numerics.Vector3* position);
+        public unsafe partial void Matrix4DecomposeIntoScalingAxisAnglePosition([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in System.Numerics.Matrix4x4 mat, System.Numerics.Vector3* scaling, ref System.Numerics.Vector3 axis, ref float angle, System.Numerics.Vector3* position);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1040, Column 17 in cimport.h")]
         [NativeApi(EntryPoint = "aiMatrix4DecomposeIntoScalingAxisAnglePosition")]
-        public unsafe partial void Matrix4DecomposeIntoScalingAxisAnglePosition([Flow(Silk.NET.Core.Native.FlowDirection.In)] in System.Numerics.Matrix4x4 mat, System.Numerics.Vector3* scaling, ref System.Numerics.Vector3 axis, ref float angle, ref System.Numerics.Vector3 position);
+        public unsafe partial void Matrix4DecomposeIntoScalingAxisAnglePosition([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in System.Numerics.Matrix4x4 mat, System.Numerics.Vector3* scaling, ref System.Numerics.Vector3 axis, ref float angle, ref System.Numerics.Vector3 position);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1040, Column 17 in cimport.h")]
         [NativeApi(EntryPoint = "aiMatrix4DecomposeIntoScalingAxisAnglePosition")]
-        public unsafe partial void Matrix4DecomposeIntoScalingAxisAnglePosition([Flow(Silk.NET.Core.Native.FlowDirection.In)] in System.Numerics.Matrix4x4 mat, ref System.Numerics.Vector3 scaling, System.Numerics.Vector3* axis, float* angle, System.Numerics.Vector3* position);
+        public unsafe partial void Matrix4DecomposeIntoScalingAxisAnglePosition([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in System.Numerics.Matrix4x4 mat, ref System.Numerics.Vector3 scaling, System.Numerics.Vector3* axis, float* angle, System.Numerics.Vector3* position);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1040, Column 17 in cimport.h")]
         [NativeApi(EntryPoint = "aiMatrix4DecomposeIntoScalingAxisAnglePosition")]
-        public unsafe partial void Matrix4DecomposeIntoScalingAxisAnglePosition([Flow(Silk.NET.Core.Native.FlowDirection.In)] in System.Numerics.Matrix4x4 mat, ref System.Numerics.Vector3 scaling, System.Numerics.Vector3* axis, float* angle, ref System.Numerics.Vector3 position);
+        public unsafe partial void Matrix4DecomposeIntoScalingAxisAnglePosition([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in System.Numerics.Matrix4x4 mat, ref System.Numerics.Vector3 scaling, System.Numerics.Vector3* axis, float* angle, ref System.Numerics.Vector3 position);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1040, Column 17 in cimport.h")]
         [NativeApi(EntryPoint = "aiMatrix4DecomposeIntoScalingAxisAnglePosition")]
-        public unsafe partial void Matrix4DecomposeIntoScalingAxisAnglePosition([Flow(Silk.NET.Core.Native.FlowDirection.In)] in System.Numerics.Matrix4x4 mat, ref System.Numerics.Vector3 scaling, System.Numerics.Vector3* axis, ref float angle, System.Numerics.Vector3* position);
+        public unsafe partial void Matrix4DecomposeIntoScalingAxisAnglePosition([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in System.Numerics.Matrix4x4 mat, ref System.Numerics.Vector3 scaling, System.Numerics.Vector3* axis, ref float angle, System.Numerics.Vector3* position);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1040, Column 17 in cimport.h")]
         [NativeApi(EntryPoint = "aiMatrix4DecomposeIntoScalingAxisAnglePosition")]
-        public unsafe partial void Matrix4DecomposeIntoScalingAxisAnglePosition([Flow(Silk.NET.Core.Native.FlowDirection.In)] in System.Numerics.Matrix4x4 mat, ref System.Numerics.Vector3 scaling, System.Numerics.Vector3* axis, ref float angle, ref System.Numerics.Vector3 position);
+        public unsafe partial void Matrix4DecomposeIntoScalingAxisAnglePosition([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in System.Numerics.Matrix4x4 mat, ref System.Numerics.Vector3 scaling, System.Numerics.Vector3* axis, ref float angle, ref System.Numerics.Vector3 position);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1040, Column 17 in cimport.h")]
         [NativeApi(EntryPoint = "aiMatrix4DecomposeIntoScalingAxisAnglePosition")]
-        public unsafe partial void Matrix4DecomposeIntoScalingAxisAnglePosition([Flow(Silk.NET.Core.Native.FlowDirection.In)] in System.Numerics.Matrix4x4 mat, ref System.Numerics.Vector3 scaling, ref System.Numerics.Vector3 axis, float* angle, System.Numerics.Vector3* position);
+        public unsafe partial void Matrix4DecomposeIntoScalingAxisAnglePosition([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in System.Numerics.Matrix4x4 mat, ref System.Numerics.Vector3 scaling, ref System.Numerics.Vector3 axis, float* angle, System.Numerics.Vector3* position);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1040, Column 17 in cimport.h")]
         [NativeApi(EntryPoint = "aiMatrix4DecomposeIntoScalingAxisAnglePosition")]
-        public unsafe partial void Matrix4DecomposeIntoScalingAxisAnglePosition([Flow(Silk.NET.Core.Native.FlowDirection.In)] in System.Numerics.Matrix4x4 mat, ref System.Numerics.Vector3 scaling, ref System.Numerics.Vector3 axis, float* angle, ref System.Numerics.Vector3 position);
+        public unsafe partial void Matrix4DecomposeIntoScalingAxisAnglePosition([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in System.Numerics.Matrix4x4 mat, ref System.Numerics.Vector3 scaling, ref System.Numerics.Vector3 axis, float* angle, ref System.Numerics.Vector3 position);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1040, Column 17 in cimport.h")]
         [NativeApi(EntryPoint = "aiMatrix4DecomposeIntoScalingAxisAnglePosition")]
-        public unsafe partial void Matrix4DecomposeIntoScalingAxisAnglePosition([Flow(Silk.NET.Core.Native.FlowDirection.In)] in System.Numerics.Matrix4x4 mat, ref System.Numerics.Vector3 scaling, ref System.Numerics.Vector3 axis, ref float angle, System.Numerics.Vector3* position);
+        public unsafe partial void Matrix4DecomposeIntoScalingAxisAnglePosition([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in System.Numerics.Matrix4x4 mat, ref System.Numerics.Vector3 scaling, ref System.Numerics.Vector3 axis, ref float angle, System.Numerics.Vector3* position);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1040, Column 17 in cimport.h")]
         [NativeApi(EntryPoint = "aiMatrix4DecomposeIntoScalingAxisAnglePosition")]
-        public partial void Matrix4DecomposeIntoScalingAxisAnglePosition([Flow(Silk.NET.Core.Native.FlowDirection.In)] in System.Numerics.Matrix4x4 mat, ref System.Numerics.Vector3 scaling, ref System.Numerics.Vector3 axis, ref float angle, ref System.Numerics.Vector3 position);
+        public partial void Matrix4DecomposeIntoScalingAxisAnglePosition([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in System.Numerics.Matrix4x4 mat, ref System.Numerics.Vector3 scaling, ref System.Numerics.Vector3 axis, ref float angle, ref System.Numerics.Vector3 position);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1055, Column 17 in cimport.h")]
@@ -2551,22 +2551,22 @@ namespace Silk.NET.Assimp
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1055, Column 17 in cimport.h")]
         [NativeApi(EntryPoint = "aiMatrix4DecomposeNoScaling")]
-        public unsafe partial void Matrix4DecomposeNoScaling([Flow(Silk.NET.Core.Native.FlowDirection.In)] in System.Numerics.Matrix4x4 mat, AssimpQuaternion* rotation, System.Numerics.Vector3* position);
+        public unsafe partial void Matrix4DecomposeNoScaling([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in System.Numerics.Matrix4x4 mat, AssimpQuaternion* rotation, System.Numerics.Vector3* position);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1055, Column 17 in cimport.h")]
         [NativeApi(EntryPoint = "aiMatrix4DecomposeNoScaling")]
-        public unsafe partial void Matrix4DecomposeNoScaling([Flow(Silk.NET.Core.Native.FlowDirection.In)] in System.Numerics.Matrix4x4 mat, AssimpQuaternion* rotation, ref System.Numerics.Vector3 position);
+        public unsafe partial void Matrix4DecomposeNoScaling([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in System.Numerics.Matrix4x4 mat, AssimpQuaternion* rotation, ref System.Numerics.Vector3 position);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1055, Column 17 in cimport.h")]
         [NativeApi(EntryPoint = "aiMatrix4DecomposeNoScaling")]
-        public unsafe partial void Matrix4DecomposeNoScaling([Flow(Silk.NET.Core.Native.FlowDirection.In)] in System.Numerics.Matrix4x4 mat, ref AssimpQuaternion rotation, System.Numerics.Vector3* position);
+        public unsafe partial void Matrix4DecomposeNoScaling([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in System.Numerics.Matrix4x4 mat, ref AssimpQuaternion rotation, System.Numerics.Vector3* position);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1055, Column 17 in cimport.h")]
         [NativeApi(EntryPoint = "aiMatrix4DecomposeNoScaling")]
-        public partial void Matrix4DecomposeNoScaling([Flow(Silk.NET.Core.Native.FlowDirection.In)] in System.Numerics.Matrix4x4 mat, ref AssimpQuaternion rotation, ref System.Numerics.Vector3 position);
+        public partial void Matrix4DecomposeNoScaling([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in System.Numerics.Matrix4x4 mat, ref AssimpQuaternion rotation, ref System.Numerics.Vector3 position);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1067, Column 17 in cimport.h")]
@@ -2616,7 +2616,7 @@ namespace Silk.NET.Assimp
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1104, Column 17 in cimport.h")]
         [NativeApi(EntryPoint = "aiMatrix4FromRotationAroundAxis")]
-        public unsafe partial void Matrix4FromRotationAroundAxis(System.Numerics.Matrix4x4* mat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in System.Numerics.Vector3 axis, float angle);
+        public unsafe partial void Matrix4FromRotationAroundAxis(System.Numerics.Matrix4x4* mat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in System.Numerics.Vector3 axis, float angle);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1104, Column 17 in cimport.h")]
@@ -2626,7 +2626,7 @@ namespace Silk.NET.Assimp
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1104, Column 17 in cimport.h")]
         [NativeApi(EntryPoint = "aiMatrix4FromRotationAroundAxis")]
-        public partial void Matrix4FromRotationAroundAxis(ref System.Numerics.Matrix4x4 mat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in System.Numerics.Vector3 axis, float angle);
+        public partial void Matrix4FromRotationAroundAxis(ref System.Numerics.Matrix4x4 mat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in System.Numerics.Vector3 axis, float angle);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1114, Column 17 in cimport.h")]
@@ -2636,7 +2636,7 @@ namespace Silk.NET.Assimp
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1114, Column 17 in cimport.h")]
         [NativeApi(EntryPoint = "aiMatrix4Translation")]
-        public unsafe partial void Matrix4Translation(System.Numerics.Matrix4x4* mat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in System.Numerics.Vector3 translation);
+        public unsafe partial void Matrix4Translation(System.Numerics.Matrix4x4* mat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in System.Numerics.Vector3 translation);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1114, Column 17 in cimport.h")]
@@ -2646,7 +2646,7 @@ namespace Silk.NET.Assimp
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1114, Column 17 in cimport.h")]
         [NativeApi(EntryPoint = "aiMatrix4Translation")]
-        public partial void Matrix4Translation(ref System.Numerics.Matrix4x4 mat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in System.Numerics.Vector3 translation);
+        public partial void Matrix4Translation(ref System.Numerics.Matrix4x4 mat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in System.Numerics.Vector3 translation);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1123, Column 17 in cimport.h")]
@@ -2656,7 +2656,7 @@ namespace Silk.NET.Assimp
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1123, Column 17 in cimport.h")]
         [NativeApi(EntryPoint = "aiMatrix4Scaling")]
-        public unsafe partial void Matrix4Scaling(System.Numerics.Matrix4x4* mat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in System.Numerics.Vector3 scaling);
+        public unsafe partial void Matrix4Scaling(System.Numerics.Matrix4x4* mat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in System.Numerics.Vector3 scaling);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1123, Column 17 in cimport.h")]
@@ -2666,7 +2666,7 @@ namespace Silk.NET.Assimp
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1123, Column 17 in cimport.h")]
         [NativeApi(EntryPoint = "aiMatrix4Scaling")]
-        public partial void Matrix4Scaling(ref System.Numerics.Matrix4x4 mat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in System.Numerics.Vector3 scaling);
+        public partial void Matrix4Scaling(ref System.Numerics.Matrix4x4 mat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in System.Numerics.Vector3 scaling);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1133, Column 17 in cimport.h")]
@@ -2676,17 +2676,17 @@ namespace Silk.NET.Assimp
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1133, Column 17 in cimport.h")]
         [NativeApi(EntryPoint = "aiMatrix4FromTo")]
-        public unsafe partial void Matrix4FromTo(System.Numerics.Matrix4x4* mat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] System.Numerics.Vector3* from, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in System.Numerics.Vector3 to);
+        public unsafe partial void Matrix4FromTo(System.Numerics.Matrix4x4* mat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] System.Numerics.Vector3* from, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in System.Numerics.Vector3 to);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1133, Column 17 in cimport.h")]
         [NativeApi(EntryPoint = "aiMatrix4FromTo")]
-        public unsafe partial void Matrix4FromTo(System.Numerics.Matrix4x4* mat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in System.Numerics.Vector3 from, [Flow(Silk.NET.Core.Native.FlowDirection.In)] System.Numerics.Vector3* to);
+        public unsafe partial void Matrix4FromTo(System.Numerics.Matrix4x4* mat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in System.Numerics.Vector3 from, [Flow(Silk.NET.Core.Native.FlowDirection.In)] System.Numerics.Vector3* to);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1133, Column 17 in cimport.h")]
         [NativeApi(EntryPoint = "aiMatrix4FromTo")]
-        public unsafe partial void Matrix4FromTo(System.Numerics.Matrix4x4* mat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in System.Numerics.Vector3 from, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in System.Numerics.Vector3 to);
+        public unsafe partial void Matrix4FromTo(System.Numerics.Matrix4x4* mat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in System.Numerics.Vector3 from, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in System.Numerics.Vector3 to);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1133, Column 17 in cimport.h")]
@@ -2696,17 +2696,17 @@ namespace Silk.NET.Assimp
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1133, Column 17 in cimport.h")]
         [NativeApi(EntryPoint = "aiMatrix4FromTo")]
-        public unsafe partial void Matrix4FromTo(ref System.Numerics.Matrix4x4 mat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] System.Numerics.Vector3* from, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in System.Numerics.Vector3 to);
+        public unsafe partial void Matrix4FromTo(ref System.Numerics.Matrix4x4 mat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] System.Numerics.Vector3* from, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in System.Numerics.Vector3 to);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1133, Column 17 in cimport.h")]
         [NativeApi(EntryPoint = "aiMatrix4FromTo")]
-        public unsafe partial void Matrix4FromTo(ref System.Numerics.Matrix4x4 mat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in System.Numerics.Vector3 from, [Flow(Silk.NET.Core.Native.FlowDirection.In)] System.Numerics.Vector3* to);
+        public unsafe partial void Matrix4FromTo(ref System.Numerics.Matrix4x4 mat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in System.Numerics.Vector3 from, [Flow(Silk.NET.Core.Native.FlowDirection.In)] System.Numerics.Vector3* to);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1133, Column 17 in cimport.h")]
         [NativeApi(EntryPoint = "aiMatrix4FromTo")]
-        public partial void Matrix4FromTo(ref System.Numerics.Matrix4x4 mat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in System.Numerics.Vector3 from, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in System.Numerics.Vector3 to);
+        public partial void Matrix4FromTo(ref System.Numerics.Matrix4x4 mat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in System.Numerics.Vector3 from, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in System.Numerics.Vector3 to);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1145, Column 17 in cimport.h")]
@@ -2726,7 +2726,7 @@ namespace Silk.NET.Assimp
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1155, Column 17 in cimport.h")]
         [NativeApi(EntryPoint = "aiQuaternionFromAxisAngle")]
-        public unsafe partial void QuaternionFromAxisAngle(AssimpQuaternion* q, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in System.Numerics.Vector3 axis, float angle);
+        public unsafe partial void QuaternionFromAxisAngle(AssimpQuaternion* q, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in System.Numerics.Vector3 axis, float angle);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1155, Column 17 in cimport.h")]
@@ -2736,7 +2736,7 @@ namespace Silk.NET.Assimp
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1155, Column 17 in cimport.h")]
         [NativeApi(EntryPoint = "aiQuaternionFromAxisAngle")]
-        public partial void QuaternionFromAxisAngle(ref AssimpQuaternion q, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in System.Numerics.Vector3 axis, float angle);
+        public partial void QuaternionFromAxisAngle(ref AssimpQuaternion q, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in System.Numerics.Vector3 axis, float angle);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1166, Column 17 in cimport.h")]
@@ -2746,7 +2746,7 @@ namespace Silk.NET.Assimp
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1166, Column 17 in cimport.h")]
         [NativeApi(EntryPoint = "aiQuaternionFromNormalizedQuaternion")]
-        public unsafe partial void QuaternionFromNormalizedQuaternion(AssimpQuaternion* q, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in System.Numerics.Vector3 normalized);
+        public unsafe partial void QuaternionFromNormalizedQuaternion(AssimpQuaternion* q, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in System.Numerics.Vector3 normalized);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1166, Column 17 in cimport.h")]
@@ -2756,7 +2756,7 @@ namespace Silk.NET.Assimp
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1166, Column 17 in cimport.h")]
         [NativeApi(EntryPoint = "aiQuaternionFromNormalizedQuaternion")]
-        public partial void QuaternionFromNormalizedQuaternion(ref AssimpQuaternion q, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in System.Numerics.Vector3 normalized);
+        public partial void QuaternionFromNormalizedQuaternion(ref AssimpQuaternion q, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in System.Numerics.Vector3 normalized);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1177, Column 16 in cimport.h")]
@@ -2766,17 +2766,17 @@ namespace Silk.NET.Assimp
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1177, Column 16 in cimport.h")]
         [NativeApi(EntryPoint = "aiQuaternionAreEqual")]
-        public unsafe partial int QuaternionAreEqual([Flow(Silk.NET.Core.Native.FlowDirection.In)] AssimpQuaternion* a, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in AssimpQuaternion b);
+        public unsafe partial int QuaternionAreEqual([Flow(Silk.NET.Core.Native.FlowDirection.In)] AssimpQuaternion* a, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in AssimpQuaternion b);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1177, Column 16 in cimport.h")]
         [NativeApi(EntryPoint = "aiQuaternionAreEqual")]
-        public unsafe partial int QuaternionAreEqual([Flow(Silk.NET.Core.Native.FlowDirection.In)] in AssimpQuaternion a, [Flow(Silk.NET.Core.Native.FlowDirection.In)] AssimpQuaternion* b);
+        public unsafe partial int QuaternionAreEqual([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in AssimpQuaternion a, [Flow(Silk.NET.Core.Native.FlowDirection.In)] AssimpQuaternion* b);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1177, Column 16 in cimport.h")]
         [NativeApi(EntryPoint = "aiQuaternionAreEqual")]
-        public partial int QuaternionAreEqual([Flow(Silk.NET.Core.Native.FlowDirection.In)] in AssimpQuaternion a, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in AssimpQuaternion b);
+        public partial int QuaternionAreEqual([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in AssimpQuaternion a, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in AssimpQuaternion b);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1189, Column 16 in cimport.h")]
@@ -2786,17 +2786,17 @@ namespace Silk.NET.Assimp
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1189, Column 16 in cimport.h")]
         [NativeApi(EntryPoint = "aiQuaternionAreEqualEpsilon")]
-        public unsafe partial int QuaternionAreEqualEpsilon([Flow(Silk.NET.Core.Native.FlowDirection.In)] AssimpQuaternion* a, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in AssimpQuaternion b, float epsilon);
+        public unsafe partial int QuaternionAreEqualEpsilon([Flow(Silk.NET.Core.Native.FlowDirection.In)] AssimpQuaternion* a, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in AssimpQuaternion b, float epsilon);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1189, Column 16 in cimport.h")]
         [NativeApi(EntryPoint = "aiQuaternionAreEqualEpsilon")]
-        public unsafe partial int QuaternionAreEqualEpsilon([Flow(Silk.NET.Core.Native.FlowDirection.In)] in AssimpQuaternion a, [Flow(Silk.NET.Core.Native.FlowDirection.In)] AssimpQuaternion* b, float epsilon);
+        public unsafe partial int QuaternionAreEqualEpsilon([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in AssimpQuaternion a, [Flow(Silk.NET.Core.Native.FlowDirection.In)] AssimpQuaternion* b, float epsilon);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1189, Column 16 in cimport.h")]
         [NativeApi(EntryPoint = "aiQuaternionAreEqualEpsilon")]
-        public partial int QuaternionAreEqualEpsilon([Flow(Silk.NET.Core.Native.FlowDirection.In)] in AssimpQuaternion a, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in AssimpQuaternion b, float epsilon);
+        public partial int QuaternionAreEqualEpsilon([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in AssimpQuaternion a, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in AssimpQuaternion b, float epsilon);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1198, Column 17 in cimport.h")]
@@ -2826,7 +2826,7 @@ namespace Silk.NET.Assimp
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1214, Column 17 in cimport.h")]
         [NativeApi(EntryPoint = "aiQuaternionMultiply")]
-        public unsafe partial void QuaternionMultiply(AssimpQuaternion* dst, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in AssimpQuaternion q);
+        public unsafe partial void QuaternionMultiply(AssimpQuaternion* dst, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in AssimpQuaternion q);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1214, Column 17 in cimport.h")]
@@ -2836,7 +2836,7 @@ namespace Silk.NET.Assimp
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1214, Column 17 in cimport.h")]
         [NativeApi(EntryPoint = "aiQuaternionMultiply")]
-        public partial void QuaternionMultiply(ref AssimpQuaternion dst, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in AssimpQuaternion q);
+        public partial void QuaternionMultiply(ref AssimpQuaternion dst, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in AssimpQuaternion q);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1225, Column 17 in cimport.h")]
@@ -2846,17 +2846,17 @@ namespace Silk.NET.Assimp
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1225, Column 17 in cimport.h")]
         [NativeApi(EntryPoint = "aiQuaternionInterpolate")]
-        public unsafe partial void QuaternionInterpolate(AssimpQuaternion* dst, [Flow(Silk.NET.Core.Native.FlowDirection.In)] AssimpQuaternion* start, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in AssimpQuaternion end, float factor);
+        public unsafe partial void QuaternionInterpolate(AssimpQuaternion* dst, [Flow(Silk.NET.Core.Native.FlowDirection.In)] AssimpQuaternion* start, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in AssimpQuaternion end, float factor);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1225, Column 17 in cimport.h")]
         [NativeApi(EntryPoint = "aiQuaternionInterpolate")]
-        public unsafe partial void QuaternionInterpolate(AssimpQuaternion* dst, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in AssimpQuaternion start, [Flow(Silk.NET.Core.Native.FlowDirection.In)] AssimpQuaternion* end, float factor);
+        public unsafe partial void QuaternionInterpolate(AssimpQuaternion* dst, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in AssimpQuaternion start, [Flow(Silk.NET.Core.Native.FlowDirection.In)] AssimpQuaternion* end, float factor);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1225, Column 17 in cimport.h")]
         [NativeApi(EntryPoint = "aiQuaternionInterpolate")]
-        public unsafe partial void QuaternionInterpolate(AssimpQuaternion* dst, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in AssimpQuaternion start, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in AssimpQuaternion end, float factor);
+        public unsafe partial void QuaternionInterpolate(AssimpQuaternion* dst, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in AssimpQuaternion start, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in AssimpQuaternion end, float factor);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1225, Column 17 in cimport.h")]
@@ -2866,17 +2866,17 @@ namespace Silk.NET.Assimp
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1225, Column 17 in cimport.h")]
         [NativeApi(EntryPoint = "aiQuaternionInterpolate")]
-        public unsafe partial void QuaternionInterpolate(ref AssimpQuaternion dst, [Flow(Silk.NET.Core.Native.FlowDirection.In)] AssimpQuaternion* start, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in AssimpQuaternion end, float factor);
+        public unsafe partial void QuaternionInterpolate(ref AssimpQuaternion dst, [Flow(Silk.NET.Core.Native.FlowDirection.In)] AssimpQuaternion* start, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in AssimpQuaternion end, float factor);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1225, Column 17 in cimport.h")]
         [NativeApi(EntryPoint = "aiQuaternionInterpolate")]
-        public unsafe partial void QuaternionInterpolate(ref AssimpQuaternion dst, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in AssimpQuaternion start, [Flow(Silk.NET.Core.Native.FlowDirection.In)] AssimpQuaternion* end, float factor);
+        public unsafe partial void QuaternionInterpolate(ref AssimpQuaternion dst, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in AssimpQuaternion start, [Flow(Silk.NET.Core.Native.FlowDirection.In)] AssimpQuaternion* end, float factor);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1225, Column 17 in cimport.h")]
         [NativeApi(EntryPoint = "aiQuaternionInterpolate")]
-        public partial void QuaternionInterpolate(ref AssimpQuaternion dst, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in AssimpQuaternion start, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in AssimpQuaternion end, float factor);
+        public partial void QuaternionInterpolate(ref AssimpQuaternion dst, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in AssimpQuaternion start, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in AssimpQuaternion end, float factor);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 338, Column 24 in material.h")]
@@ -2897,17 +2897,17 @@ namespace Silk.NET.Assimp
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1477, Column 28 in material.h")]
         [NativeApi(EntryPoint = "aiGetMaterialProperty")]
-        public unsafe partial Return GetMaterialProperty([Flow(Silk.NET.Core.Native.FlowDirection.In)] Material* pMat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* pKey, uint type, uint index, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in MaterialProperty* pPropOut);
+        public unsafe partial Return GetMaterialProperty([Flow(Silk.NET.Core.Native.FlowDirection.In)] Material* pMat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* pKey, uint type, uint index, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in MaterialProperty* pPropOut);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1477, Column 28 in material.h")]
         [NativeApi(EntryPoint = "aiGetMaterialProperty")]
-        public unsafe partial Return GetMaterialProperty([Flow(Silk.NET.Core.Native.FlowDirection.In)] Material* pMat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte pKey, uint type, uint index, [Flow(Silk.NET.Core.Native.FlowDirection.In)] MaterialProperty** pPropOut);
+        public unsafe partial Return GetMaterialProperty([Flow(Silk.NET.Core.Native.FlowDirection.In)] Material* pMat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte pKey, uint type, uint index, [Flow(Silk.NET.Core.Native.FlowDirection.In)] MaterialProperty** pPropOut);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1477, Column 28 in material.h")]
         [NativeApi(EntryPoint = "aiGetMaterialProperty")]
-        public unsafe partial Return GetMaterialProperty([Flow(Silk.NET.Core.Native.FlowDirection.In)] Material* pMat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte pKey, uint type, uint index, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in MaterialProperty* pPropOut);
+        public unsafe partial Return GetMaterialProperty([Flow(Silk.NET.Core.Native.FlowDirection.In)] Material* pMat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte pKey, uint type, uint index, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in MaterialProperty* pPropOut);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1477, Column 28 in material.h")]
@@ -2917,37 +2917,37 @@ namespace Silk.NET.Assimp
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1477, Column 28 in material.h")]
         [NativeApi(EntryPoint = "aiGetMaterialProperty")]
-        public unsafe partial Return GetMaterialProperty([Flow(Silk.NET.Core.Native.FlowDirection.In)] Material* pMat, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pKey, uint type, uint index, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in MaterialProperty* pPropOut);
+        public unsafe partial Return GetMaterialProperty([Flow(Silk.NET.Core.Native.FlowDirection.In)] Material* pMat, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pKey, uint type, uint index, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in MaterialProperty* pPropOut);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1477, Column 28 in material.h")]
         [NativeApi(EntryPoint = "aiGetMaterialProperty")]
-        public unsafe partial Return GetMaterialProperty([Flow(Silk.NET.Core.Native.FlowDirection.In)] in Material pMat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* pKey, uint type, uint index, [Flow(Silk.NET.Core.Native.FlowDirection.In)] MaterialProperty** pPropOut);
+        public unsafe partial Return GetMaterialProperty([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Material pMat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* pKey, uint type, uint index, [Flow(Silk.NET.Core.Native.FlowDirection.In)] MaterialProperty** pPropOut);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1477, Column 28 in material.h")]
         [NativeApi(EntryPoint = "aiGetMaterialProperty")]
-        public unsafe partial Return GetMaterialProperty([Flow(Silk.NET.Core.Native.FlowDirection.In)] in Material pMat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* pKey, uint type, uint index, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in MaterialProperty* pPropOut);
+        public unsafe partial Return GetMaterialProperty([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Material pMat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* pKey, uint type, uint index, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in MaterialProperty* pPropOut);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1477, Column 28 in material.h")]
         [NativeApi(EntryPoint = "aiGetMaterialProperty")]
-        public unsafe partial Return GetMaterialProperty([Flow(Silk.NET.Core.Native.FlowDirection.In)] in Material pMat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte pKey, uint type, uint index, [Flow(Silk.NET.Core.Native.FlowDirection.In)] MaterialProperty** pPropOut);
+        public unsafe partial Return GetMaterialProperty([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Material pMat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte pKey, uint type, uint index, [Flow(Silk.NET.Core.Native.FlowDirection.In)] MaterialProperty** pPropOut);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1477, Column 28 in material.h")]
         [NativeApi(EntryPoint = "aiGetMaterialProperty")]
-        public unsafe partial Return GetMaterialProperty([Flow(Silk.NET.Core.Native.FlowDirection.In)] in Material pMat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte pKey, uint type, uint index, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in MaterialProperty* pPropOut);
+        public unsafe partial Return GetMaterialProperty([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Material pMat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte pKey, uint type, uint index, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in MaterialProperty* pPropOut);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1477, Column 28 in material.h")]
         [NativeApi(EntryPoint = "aiGetMaterialProperty")]
-        public unsafe partial Return GetMaterialProperty([Flow(Silk.NET.Core.Native.FlowDirection.In)] in Material pMat, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pKey, uint type, uint index, [Flow(Silk.NET.Core.Native.FlowDirection.In)] MaterialProperty** pPropOut);
+        public unsafe partial Return GetMaterialProperty([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Material pMat, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pKey, uint type, uint index, [Flow(Silk.NET.Core.Native.FlowDirection.In)] MaterialProperty** pPropOut);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1477, Column 28 in material.h")]
         [NativeApi(EntryPoint = "aiGetMaterialProperty")]
-        public unsafe partial Return GetMaterialProperty([Flow(Silk.NET.Core.Native.FlowDirection.In)] in Material pMat, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pKey, uint type, uint index, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in MaterialProperty* pPropOut);
+        public unsafe partial Return GetMaterialProperty([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Material pMat, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pKey, uint type, uint index, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in MaterialProperty* pPropOut);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1510, Column 28 in material.h")]
@@ -2972,22 +2972,22 @@ namespace Silk.NET.Assimp
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1510, Column 28 in material.h")]
         [NativeApi(EntryPoint = "aiGetMaterialFloatArray")]
-        public unsafe partial Return GetMaterialFloatArray([Flow(Silk.NET.Core.Native.FlowDirection.In)] Material* pMat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte pKey, uint type, uint index, float* pOut, uint* pMax);
+        public unsafe partial Return GetMaterialFloatArray([Flow(Silk.NET.Core.Native.FlowDirection.In)] Material* pMat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte pKey, uint type, uint index, float* pOut, uint* pMax);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1510, Column 28 in material.h")]
         [NativeApi(EntryPoint = "aiGetMaterialFloatArray")]
-        public unsafe partial Return GetMaterialFloatArray([Flow(Silk.NET.Core.Native.FlowDirection.In)] Material* pMat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte pKey, uint type, uint index, float* pOut, ref uint pMax);
+        public unsafe partial Return GetMaterialFloatArray([Flow(Silk.NET.Core.Native.FlowDirection.In)] Material* pMat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte pKey, uint type, uint index, float* pOut, ref uint pMax);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1510, Column 28 in material.h")]
         [NativeApi(EntryPoint = "aiGetMaterialFloatArray")]
-        public unsafe partial Return GetMaterialFloatArray([Flow(Silk.NET.Core.Native.FlowDirection.In)] Material* pMat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte pKey, uint type, uint index, ref float pOut, uint* pMax);
+        public unsafe partial Return GetMaterialFloatArray([Flow(Silk.NET.Core.Native.FlowDirection.In)] Material* pMat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte pKey, uint type, uint index, ref float pOut, uint* pMax);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1510, Column 28 in material.h")]
         [NativeApi(EntryPoint = "aiGetMaterialFloatArray")]
-        public unsafe partial Return GetMaterialFloatArray([Flow(Silk.NET.Core.Native.FlowDirection.In)] Material* pMat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte pKey, uint type, uint index, ref float pOut, ref uint pMax);
+        public unsafe partial Return GetMaterialFloatArray([Flow(Silk.NET.Core.Native.FlowDirection.In)] Material* pMat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte pKey, uint type, uint index, ref float pOut, ref uint pMax);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1510, Column 28 in material.h")]
@@ -3012,62 +3012,62 @@ namespace Silk.NET.Assimp
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1510, Column 28 in material.h")]
         [NativeApi(EntryPoint = "aiGetMaterialFloatArray")]
-        public unsafe partial Return GetMaterialFloatArray([Flow(Silk.NET.Core.Native.FlowDirection.In)] in Material pMat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* pKey, uint type, uint index, float* pOut, uint* pMax);
+        public unsafe partial Return GetMaterialFloatArray([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Material pMat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* pKey, uint type, uint index, float* pOut, uint* pMax);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1510, Column 28 in material.h")]
         [NativeApi(EntryPoint = "aiGetMaterialFloatArray")]
-        public unsafe partial Return GetMaterialFloatArray([Flow(Silk.NET.Core.Native.FlowDirection.In)] in Material pMat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* pKey, uint type, uint index, float* pOut, ref uint pMax);
+        public unsafe partial Return GetMaterialFloatArray([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Material pMat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* pKey, uint type, uint index, float* pOut, ref uint pMax);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1510, Column 28 in material.h")]
         [NativeApi(EntryPoint = "aiGetMaterialFloatArray")]
-        public unsafe partial Return GetMaterialFloatArray([Flow(Silk.NET.Core.Native.FlowDirection.In)] in Material pMat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* pKey, uint type, uint index, ref float pOut, uint* pMax);
+        public unsafe partial Return GetMaterialFloatArray([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Material pMat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* pKey, uint type, uint index, ref float pOut, uint* pMax);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1510, Column 28 in material.h")]
         [NativeApi(EntryPoint = "aiGetMaterialFloatArray")]
-        public unsafe partial Return GetMaterialFloatArray([Flow(Silk.NET.Core.Native.FlowDirection.In)] in Material pMat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* pKey, uint type, uint index, ref float pOut, ref uint pMax);
+        public unsafe partial Return GetMaterialFloatArray([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Material pMat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* pKey, uint type, uint index, ref float pOut, ref uint pMax);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1510, Column 28 in material.h")]
         [NativeApi(EntryPoint = "aiGetMaterialFloatArray")]
-        public unsafe partial Return GetMaterialFloatArray([Flow(Silk.NET.Core.Native.FlowDirection.In)] in Material pMat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte pKey, uint type, uint index, float* pOut, uint* pMax);
+        public unsafe partial Return GetMaterialFloatArray([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Material pMat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte pKey, uint type, uint index, float* pOut, uint* pMax);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1510, Column 28 in material.h")]
         [NativeApi(EntryPoint = "aiGetMaterialFloatArray")]
-        public unsafe partial Return GetMaterialFloatArray([Flow(Silk.NET.Core.Native.FlowDirection.In)] in Material pMat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte pKey, uint type, uint index, float* pOut, ref uint pMax);
+        public unsafe partial Return GetMaterialFloatArray([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Material pMat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte pKey, uint type, uint index, float* pOut, ref uint pMax);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1510, Column 28 in material.h")]
         [NativeApi(EntryPoint = "aiGetMaterialFloatArray")]
-        public unsafe partial Return GetMaterialFloatArray([Flow(Silk.NET.Core.Native.FlowDirection.In)] in Material pMat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte pKey, uint type, uint index, ref float pOut, uint* pMax);
+        public unsafe partial Return GetMaterialFloatArray([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Material pMat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte pKey, uint type, uint index, ref float pOut, uint* pMax);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1510, Column 28 in material.h")]
         [NativeApi(EntryPoint = "aiGetMaterialFloatArray")]
-        public partial Return GetMaterialFloatArray([Flow(Silk.NET.Core.Native.FlowDirection.In)] in Material pMat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte pKey, uint type, uint index, ref float pOut, ref uint pMax);
+        public partial Return GetMaterialFloatArray([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Material pMat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte pKey, uint type, uint index, ref float pOut, ref uint pMax);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1510, Column 28 in material.h")]
         [NativeApi(EntryPoint = "aiGetMaterialFloatArray")]
-        public unsafe partial Return GetMaterialFloatArray([Flow(Silk.NET.Core.Native.FlowDirection.In)] in Material pMat, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pKey, uint type, uint index, float* pOut, uint* pMax);
+        public unsafe partial Return GetMaterialFloatArray([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Material pMat, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pKey, uint type, uint index, float* pOut, uint* pMax);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1510, Column 28 in material.h")]
         [NativeApi(EntryPoint = "aiGetMaterialFloatArray")]
-        public unsafe partial Return GetMaterialFloatArray([Flow(Silk.NET.Core.Native.FlowDirection.In)] in Material pMat, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pKey, uint type, uint index, float* pOut, ref uint pMax);
+        public unsafe partial Return GetMaterialFloatArray([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Material pMat, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pKey, uint type, uint index, float* pOut, ref uint pMax);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1510, Column 28 in material.h")]
         [NativeApi(EntryPoint = "aiGetMaterialFloatArray")]
-        public unsafe partial Return GetMaterialFloatArray([Flow(Silk.NET.Core.Native.FlowDirection.In)] in Material pMat, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pKey, uint type, uint index, ref float pOut, uint* pMax);
+        public unsafe partial Return GetMaterialFloatArray([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Material pMat, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pKey, uint type, uint index, ref float pOut, uint* pMax);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1510, Column 28 in material.h")]
         [NativeApi(EntryPoint = "aiGetMaterialFloatArray")]
-        public partial Return GetMaterialFloatArray([Flow(Silk.NET.Core.Native.FlowDirection.In)] in Material pMat, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pKey, uint type, uint index, ref float pOut, ref uint pMax);
+        public partial Return GetMaterialFloatArray([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Material pMat, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pKey, uint type, uint index, ref float pOut, ref uint pMax);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1550, Column 28 in material.h")]
@@ -3092,22 +3092,22 @@ namespace Silk.NET.Assimp
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1550, Column 28 in material.h")]
         [NativeApi(EntryPoint = "aiGetMaterialIntegerArray")]
-        public unsafe partial Return GetMaterialIntegerArray([Flow(Silk.NET.Core.Native.FlowDirection.In)] Material* pMat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte pKey, uint type, uint index, int* pOut, uint* pMax);
+        public unsafe partial Return GetMaterialIntegerArray([Flow(Silk.NET.Core.Native.FlowDirection.In)] Material* pMat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte pKey, uint type, uint index, int* pOut, uint* pMax);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1550, Column 28 in material.h")]
         [NativeApi(EntryPoint = "aiGetMaterialIntegerArray")]
-        public unsafe partial Return GetMaterialIntegerArray([Flow(Silk.NET.Core.Native.FlowDirection.In)] Material* pMat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte pKey, uint type, uint index, int* pOut, ref uint pMax);
+        public unsafe partial Return GetMaterialIntegerArray([Flow(Silk.NET.Core.Native.FlowDirection.In)] Material* pMat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte pKey, uint type, uint index, int* pOut, ref uint pMax);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1550, Column 28 in material.h")]
         [NativeApi(EntryPoint = "aiGetMaterialIntegerArray")]
-        public unsafe partial Return GetMaterialIntegerArray([Flow(Silk.NET.Core.Native.FlowDirection.In)] Material* pMat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte pKey, uint type, uint index, ref int pOut, uint* pMax);
+        public unsafe partial Return GetMaterialIntegerArray([Flow(Silk.NET.Core.Native.FlowDirection.In)] Material* pMat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte pKey, uint type, uint index, ref int pOut, uint* pMax);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1550, Column 28 in material.h")]
         [NativeApi(EntryPoint = "aiGetMaterialIntegerArray")]
-        public unsafe partial Return GetMaterialIntegerArray([Flow(Silk.NET.Core.Native.FlowDirection.In)] Material* pMat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte pKey, uint type, uint index, ref int pOut, ref uint pMax);
+        public unsafe partial Return GetMaterialIntegerArray([Flow(Silk.NET.Core.Native.FlowDirection.In)] Material* pMat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte pKey, uint type, uint index, ref int pOut, ref uint pMax);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1550, Column 28 in material.h")]
@@ -3132,62 +3132,62 @@ namespace Silk.NET.Assimp
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1550, Column 28 in material.h")]
         [NativeApi(EntryPoint = "aiGetMaterialIntegerArray")]
-        public unsafe partial Return GetMaterialIntegerArray([Flow(Silk.NET.Core.Native.FlowDirection.In)] in Material pMat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* pKey, uint type, uint index, int* pOut, uint* pMax);
+        public unsafe partial Return GetMaterialIntegerArray([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Material pMat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* pKey, uint type, uint index, int* pOut, uint* pMax);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1550, Column 28 in material.h")]
         [NativeApi(EntryPoint = "aiGetMaterialIntegerArray")]
-        public unsafe partial Return GetMaterialIntegerArray([Flow(Silk.NET.Core.Native.FlowDirection.In)] in Material pMat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* pKey, uint type, uint index, int* pOut, ref uint pMax);
+        public unsafe partial Return GetMaterialIntegerArray([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Material pMat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* pKey, uint type, uint index, int* pOut, ref uint pMax);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1550, Column 28 in material.h")]
         [NativeApi(EntryPoint = "aiGetMaterialIntegerArray")]
-        public unsafe partial Return GetMaterialIntegerArray([Flow(Silk.NET.Core.Native.FlowDirection.In)] in Material pMat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* pKey, uint type, uint index, ref int pOut, uint* pMax);
+        public unsafe partial Return GetMaterialIntegerArray([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Material pMat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* pKey, uint type, uint index, ref int pOut, uint* pMax);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1550, Column 28 in material.h")]
         [NativeApi(EntryPoint = "aiGetMaterialIntegerArray")]
-        public unsafe partial Return GetMaterialIntegerArray([Flow(Silk.NET.Core.Native.FlowDirection.In)] in Material pMat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* pKey, uint type, uint index, ref int pOut, ref uint pMax);
+        public unsafe partial Return GetMaterialIntegerArray([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Material pMat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* pKey, uint type, uint index, ref int pOut, ref uint pMax);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1550, Column 28 in material.h")]
         [NativeApi(EntryPoint = "aiGetMaterialIntegerArray")]
-        public unsafe partial Return GetMaterialIntegerArray([Flow(Silk.NET.Core.Native.FlowDirection.In)] in Material pMat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte pKey, uint type, uint index, int* pOut, uint* pMax);
+        public unsafe partial Return GetMaterialIntegerArray([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Material pMat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte pKey, uint type, uint index, int* pOut, uint* pMax);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1550, Column 28 in material.h")]
         [NativeApi(EntryPoint = "aiGetMaterialIntegerArray")]
-        public unsafe partial Return GetMaterialIntegerArray([Flow(Silk.NET.Core.Native.FlowDirection.In)] in Material pMat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte pKey, uint type, uint index, int* pOut, ref uint pMax);
+        public unsafe partial Return GetMaterialIntegerArray([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Material pMat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte pKey, uint type, uint index, int* pOut, ref uint pMax);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1550, Column 28 in material.h")]
         [NativeApi(EntryPoint = "aiGetMaterialIntegerArray")]
-        public unsafe partial Return GetMaterialIntegerArray([Flow(Silk.NET.Core.Native.FlowDirection.In)] in Material pMat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte pKey, uint type, uint index, ref int pOut, uint* pMax);
+        public unsafe partial Return GetMaterialIntegerArray([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Material pMat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte pKey, uint type, uint index, ref int pOut, uint* pMax);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1550, Column 28 in material.h")]
         [NativeApi(EntryPoint = "aiGetMaterialIntegerArray")]
-        public partial Return GetMaterialIntegerArray([Flow(Silk.NET.Core.Native.FlowDirection.In)] in Material pMat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte pKey, uint type, uint index, ref int pOut, ref uint pMax);
+        public partial Return GetMaterialIntegerArray([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Material pMat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte pKey, uint type, uint index, ref int pOut, ref uint pMax);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1550, Column 28 in material.h")]
         [NativeApi(EntryPoint = "aiGetMaterialIntegerArray")]
-        public unsafe partial Return GetMaterialIntegerArray([Flow(Silk.NET.Core.Native.FlowDirection.In)] in Material pMat, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pKey, uint type, uint index, int* pOut, uint* pMax);
+        public unsafe partial Return GetMaterialIntegerArray([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Material pMat, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pKey, uint type, uint index, int* pOut, uint* pMax);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1550, Column 28 in material.h")]
         [NativeApi(EntryPoint = "aiGetMaterialIntegerArray")]
-        public unsafe partial Return GetMaterialIntegerArray([Flow(Silk.NET.Core.Native.FlowDirection.In)] in Material pMat, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pKey, uint type, uint index, int* pOut, ref uint pMax);
+        public unsafe partial Return GetMaterialIntegerArray([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Material pMat, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pKey, uint type, uint index, int* pOut, ref uint pMax);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1550, Column 28 in material.h")]
         [NativeApi(EntryPoint = "aiGetMaterialIntegerArray")]
-        public unsafe partial Return GetMaterialIntegerArray([Flow(Silk.NET.Core.Native.FlowDirection.In)] in Material pMat, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pKey, uint type, uint index, ref int pOut, uint* pMax);
+        public unsafe partial Return GetMaterialIntegerArray([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Material pMat, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pKey, uint type, uint index, ref int pOut, uint* pMax);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1550, Column 28 in material.h")]
         [NativeApi(EntryPoint = "aiGetMaterialIntegerArray")]
-        public partial Return GetMaterialIntegerArray([Flow(Silk.NET.Core.Native.FlowDirection.In)] in Material pMat, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pKey, uint type, uint index, ref int pOut, ref uint pMax);
+        public partial Return GetMaterialIntegerArray([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Material pMat, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pKey, uint type, uint index, ref int pOut, ref uint pMax);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1575, Column 28 in material.h")]
@@ -3202,12 +3202,12 @@ namespace Silk.NET.Assimp
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1575, Column 28 in material.h")]
         [NativeApi(EntryPoint = "aiGetMaterialColor")]
-        public unsafe partial Return GetMaterialColor([Flow(Silk.NET.Core.Native.FlowDirection.In)] Material* pMat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte pKey, uint type, uint index, System.Numerics.Vector4* pOut);
+        public unsafe partial Return GetMaterialColor([Flow(Silk.NET.Core.Native.FlowDirection.In)] Material* pMat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte pKey, uint type, uint index, System.Numerics.Vector4* pOut);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1575, Column 28 in material.h")]
         [NativeApi(EntryPoint = "aiGetMaterialColor")]
-        public unsafe partial Return GetMaterialColor([Flow(Silk.NET.Core.Native.FlowDirection.In)] Material* pMat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte pKey, uint type, uint index, ref System.Numerics.Vector4 pOut);
+        public unsafe partial Return GetMaterialColor([Flow(Silk.NET.Core.Native.FlowDirection.In)] Material* pMat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte pKey, uint type, uint index, ref System.Numerics.Vector4 pOut);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1575, Column 28 in material.h")]
@@ -3222,32 +3222,32 @@ namespace Silk.NET.Assimp
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1575, Column 28 in material.h")]
         [NativeApi(EntryPoint = "aiGetMaterialColor")]
-        public unsafe partial Return GetMaterialColor([Flow(Silk.NET.Core.Native.FlowDirection.In)] in Material pMat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* pKey, uint type, uint index, System.Numerics.Vector4* pOut);
+        public unsafe partial Return GetMaterialColor([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Material pMat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* pKey, uint type, uint index, System.Numerics.Vector4* pOut);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1575, Column 28 in material.h")]
         [NativeApi(EntryPoint = "aiGetMaterialColor")]
-        public unsafe partial Return GetMaterialColor([Flow(Silk.NET.Core.Native.FlowDirection.In)] in Material pMat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* pKey, uint type, uint index, ref System.Numerics.Vector4 pOut);
+        public unsafe partial Return GetMaterialColor([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Material pMat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* pKey, uint type, uint index, ref System.Numerics.Vector4 pOut);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1575, Column 28 in material.h")]
         [NativeApi(EntryPoint = "aiGetMaterialColor")]
-        public unsafe partial Return GetMaterialColor([Flow(Silk.NET.Core.Native.FlowDirection.In)] in Material pMat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte pKey, uint type, uint index, System.Numerics.Vector4* pOut);
+        public unsafe partial Return GetMaterialColor([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Material pMat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte pKey, uint type, uint index, System.Numerics.Vector4* pOut);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1575, Column 28 in material.h")]
         [NativeApi(EntryPoint = "aiGetMaterialColor")]
-        public partial Return GetMaterialColor([Flow(Silk.NET.Core.Native.FlowDirection.In)] in Material pMat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte pKey, uint type, uint index, ref System.Numerics.Vector4 pOut);
+        public partial Return GetMaterialColor([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Material pMat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte pKey, uint type, uint index, ref System.Numerics.Vector4 pOut);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1575, Column 28 in material.h")]
         [NativeApi(EntryPoint = "aiGetMaterialColor")]
-        public unsafe partial Return GetMaterialColor([Flow(Silk.NET.Core.Native.FlowDirection.In)] in Material pMat, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pKey, uint type, uint index, System.Numerics.Vector4* pOut);
+        public unsafe partial Return GetMaterialColor([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Material pMat, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pKey, uint type, uint index, System.Numerics.Vector4* pOut);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1575, Column 28 in material.h")]
         [NativeApi(EntryPoint = "aiGetMaterialColor")]
-        public partial Return GetMaterialColor([Flow(Silk.NET.Core.Native.FlowDirection.In)] in Material pMat, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pKey, uint type, uint index, ref System.Numerics.Vector4 pOut);
+        public partial Return GetMaterialColor([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Material pMat, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pKey, uint type, uint index, ref System.Numerics.Vector4 pOut);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1586, Column 28 in material.h")]
@@ -3262,12 +3262,12 @@ namespace Silk.NET.Assimp
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1586, Column 28 in material.h")]
         [NativeApi(EntryPoint = "aiGetMaterialUVTransform")]
-        public unsafe partial Return GetMaterialUVTransform([Flow(Silk.NET.Core.Native.FlowDirection.In)] Material* pMat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte pKey, uint type, uint index, UVTransform* pOut);
+        public unsafe partial Return GetMaterialUVTransform([Flow(Silk.NET.Core.Native.FlowDirection.In)] Material* pMat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte pKey, uint type, uint index, UVTransform* pOut);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1586, Column 28 in material.h")]
         [NativeApi(EntryPoint = "aiGetMaterialUVTransform")]
-        public unsafe partial Return GetMaterialUVTransform([Flow(Silk.NET.Core.Native.FlowDirection.In)] Material* pMat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte pKey, uint type, uint index, ref UVTransform pOut);
+        public unsafe partial Return GetMaterialUVTransform([Flow(Silk.NET.Core.Native.FlowDirection.In)] Material* pMat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte pKey, uint type, uint index, ref UVTransform pOut);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1586, Column 28 in material.h")]
@@ -3282,32 +3282,32 @@ namespace Silk.NET.Assimp
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1586, Column 28 in material.h")]
         [NativeApi(EntryPoint = "aiGetMaterialUVTransform")]
-        public unsafe partial Return GetMaterialUVTransform([Flow(Silk.NET.Core.Native.FlowDirection.In)] in Material pMat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* pKey, uint type, uint index, UVTransform* pOut);
+        public unsafe partial Return GetMaterialUVTransform([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Material pMat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* pKey, uint type, uint index, UVTransform* pOut);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1586, Column 28 in material.h")]
         [NativeApi(EntryPoint = "aiGetMaterialUVTransform")]
-        public unsafe partial Return GetMaterialUVTransform([Flow(Silk.NET.Core.Native.FlowDirection.In)] in Material pMat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* pKey, uint type, uint index, ref UVTransform pOut);
+        public unsafe partial Return GetMaterialUVTransform([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Material pMat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* pKey, uint type, uint index, ref UVTransform pOut);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1586, Column 28 in material.h")]
         [NativeApi(EntryPoint = "aiGetMaterialUVTransform")]
-        public unsafe partial Return GetMaterialUVTransform([Flow(Silk.NET.Core.Native.FlowDirection.In)] in Material pMat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte pKey, uint type, uint index, UVTransform* pOut);
+        public unsafe partial Return GetMaterialUVTransform([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Material pMat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte pKey, uint type, uint index, UVTransform* pOut);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1586, Column 28 in material.h")]
         [NativeApi(EntryPoint = "aiGetMaterialUVTransform")]
-        public partial Return GetMaterialUVTransform([Flow(Silk.NET.Core.Native.FlowDirection.In)] in Material pMat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte pKey, uint type, uint index, ref UVTransform pOut);
+        public partial Return GetMaterialUVTransform([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Material pMat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte pKey, uint type, uint index, ref UVTransform pOut);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1586, Column 28 in material.h")]
         [NativeApi(EntryPoint = "aiGetMaterialUVTransform")]
-        public unsafe partial Return GetMaterialUVTransform([Flow(Silk.NET.Core.Native.FlowDirection.In)] in Material pMat, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pKey, uint type, uint index, UVTransform* pOut);
+        public unsafe partial Return GetMaterialUVTransform([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Material pMat, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pKey, uint type, uint index, UVTransform* pOut);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1586, Column 28 in material.h")]
         [NativeApi(EntryPoint = "aiGetMaterialUVTransform")]
-        public partial Return GetMaterialUVTransform([Flow(Silk.NET.Core.Native.FlowDirection.In)] in Material pMat, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pKey, uint type, uint index, ref UVTransform pOut);
+        public partial Return GetMaterialUVTransform([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Material pMat, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pKey, uint type, uint index, ref UVTransform pOut);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1597, Column 28 in material.h")]
@@ -3322,12 +3322,12 @@ namespace Silk.NET.Assimp
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1597, Column 28 in material.h")]
         [NativeApi(EntryPoint = "aiGetMaterialString")]
-        public unsafe partial Return GetMaterialString([Flow(Silk.NET.Core.Native.FlowDirection.In)] Material* pMat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte pKey, uint type, uint index, AssimpString* pOut);
+        public unsafe partial Return GetMaterialString([Flow(Silk.NET.Core.Native.FlowDirection.In)] Material* pMat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte pKey, uint type, uint index, AssimpString* pOut);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1597, Column 28 in material.h")]
         [NativeApi(EntryPoint = "aiGetMaterialString")]
-        public unsafe partial Return GetMaterialString([Flow(Silk.NET.Core.Native.FlowDirection.In)] Material* pMat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte pKey, uint type, uint index, ref AssimpString pOut);
+        public unsafe partial Return GetMaterialString([Flow(Silk.NET.Core.Native.FlowDirection.In)] Material* pMat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte pKey, uint type, uint index, ref AssimpString pOut);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1597, Column 28 in material.h")]
@@ -3342,32 +3342,32 @@ namespace Silk.NET.Assimp
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1597, Column 28 in material.h")]
         [NativeApi(EntryPoint = "aiGetMaterialString")]
-        public unsafe partial Return GetMaterialString([Flow(Silk.NET.Core.Native.FlowDirection.In)] in Material pMat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* pKey, uint type, uint index, AssimpString* pOut);
+        public unsafe partial Return GetMaterialString([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Material pMat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* pKey, uint type, uint index, AssimpString* pOut);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1597, Column 28 in material.h")]
         [NativeApi(EntryPoint = "aiGetMaterialString")]
-        public unsafe partial Return GetMaterialString([Flow(Silk.NET.Core.Native.FlowDirection.In)] in Material pMat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* pKey, uint type, uint index, ref AssimpString pOut);
+        public unsafe partial Return GetMaterialString([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Material pMat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* pKey, uint type, uint index, ref AssimpString pOut);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1597, Column 28 in material.h")]
         [NativeApi(EntryPoint = "aiGetMaterialString")]
-        public unsafe partial Return GetMaterialString([Flow(Silk.NET.Core.Native.FlowDirection.In)] in Material pMat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte pKey, uint type, uint index, AssimpString* pOut);
+        public unsafe partial Return GetMaterialString([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Material pMat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte pKey, uint type, uint index, AssimpString* pOut);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1597, Column 28 in material.h")]
         [NativeApi(EntryPoint = "aiGetMaterialString")]
-        public partial Return GetMaterialString([Flow(Silk.NET.Core.Native.FlowDirection.In)] in Material pMat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte pKey, uint type, uint index, ref AssimpString pOut);
+        public partial Return GetMaterialString([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Material pMat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte pKey, uint type, uint index, ref AssimpString pOut);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1597, Column 28 in material.h")]
         [NativeApi(EntryPoint = "aiGetMaterialString")]
-        public unsafe partial Return GetMaterialString([Flow(Silk.NET.Core.Native.FlowDirection.In)] in Material pMat, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pKey, uint type, uint index, AssimpString* pOut);
+        public unsafe partial Return GetMaterialString([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Material pMat, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pKey, uint type, uint index, AssimpString* pOut);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1597, Column 28 in material.h")]
         [NativeApi(EntryPoint = "aiGetMaterialString")]
-        public partial Return GetMaterialString([Flow(Silk.NET.Core.Native.FlowDirection.In)] in Material pMat, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pKey, uint type, uint index, ref AssimpString pOut);
+        public partial Return GetMaterialString([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Material pMat, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pKey, uint type, uint index, ref AssimpString pOut);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1610, Column 25 in material.h")]
@@ -3377,7 +3377,7 @@ namespace Silk.NET.Assimp
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1610, Column 25 in material.h")]
         [NativeApi(EntryPoint = "aiGetMaterialTextureCount")]
-        public partial uint GetMaterialTextureCount([Flow(Silk.NET.Core.Native.FlowDirection.In)] in Material pMat, TextureType type);
+        public partial uint GetMaterialTextureCount([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Material pMat, TextureType type);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1651, Column 21 in material.h")]
@@ -4022,642 +4022,642 @@ namespace Silk.NET.Assimp
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1651, Column 21 in material.h")]
         [NativeApi(EntryPoint = "aiGetMaterialTexture")]
-        public unsafe partial Return GetMaterialTexture([Flow(Silk.NET.Core.Native.FlowDirection.In)] in Material mat, TextureType type, uint index, AssimpString* path, TextureMapping* mapping, uint* uvindex, float* blend, TextureOp* op, TextureMapMode* mapmode, uint* flags);
+        public unsafe partial Return GetMaterialTexture([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Material mat, TextureType type, uint index, AssimpString* path, TextureMapping* mapping, uint* uvindex, float* blend, TextureOp* op, TextureMapMode* mapmode, uint* flags);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1651, Column 21 in material.h")]
         [NativeApi(EntryPoint = "aiGetMaterialTexture")]
-        public unsafe partial Return GetMaterialTexture([Flow(Silk.NET.Core.Native.FlowDirection.In)] in Material mat, TextureType type, uint index, AssimpString* path, TextureMapping* mapping, uint* uvindex, float* blend, TextureOp* op, TextureMapMode* mapmode, ref uint flags);
+        public unsafe partial Return GetMaterialTexture([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Material mat, TextureType type, uint index, AssimpString* path, TextureMapping* mapping, uint* uvindex, float* blend, TextureOp* op, TextureMapMode* mapmode, ref uint flags);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1651, Column 21 in material.h")]
         [NativeApi(EntryPoint = "aiGetMaterialTexture")]
-        public unsafe partial Return GetMaterialTexture([Flow(Silk.NET.Core.Native.FlowDirection.In)] in Material mat, TextureType type, uint index, AssimpString* path, TextureMapping* mapping, uint* uvindex, float* blend, TextureOp* op, ref TextureMapMode mapmode, uint* flags);
+        public unsafe partial Return GetMaterialTexture([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Material mat, TextureType type, uint index, AssimpString* path, TextureMapping* mapping, uint* uvindex, float* blend, TextureOp* op, ref TextureMapMode mapmode, uint* flags);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1651, Column 21 in material.h")]
         [NativeApi(EntryPoint = "aiGetMaterialTexture")]
-        public unsafe partial Return GetMaterialTexture([Flow(Silk.NET.Core.Native.FlowDirection.In)] in Material mat, TextureType type, uint index, AssimpString* path, TextureMapping* mapping, uint* uvindex, float* blend, TextureOp* op, ref TextureMapMode mapmode, ref uint flags);
+        public unsafe partial Return GetMaterialTexture([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Material mat, TextureType type, uint index, AssimpString* path, TextureMapping* mapping, uint* uvindex, float* blend, TextureOp* op, ref TextureMapMode mapmode, ref uint flags);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1651, Column 21 in material.h")]
         [NativeApi(EntryPoint = "aiGetMaterialTexture")]
-        public unsafe partial Return GetMaterialTexture([Flow(Silk.NET.Core.Native.FlowDirection.In)] in Material mat, TextureType type, uint index, AssimpString* path, TextureMapping* mapping, uint* uvindex, float* blend, ref TextureOp op, TextureMapMode* mapmode, uint* flags);
+        public unsafe partial Return GetMaterialTexture([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Material mat, TextureType type, uint index, AssimpString* path, TextureMapping* mapping, uint* uvindex, float* blend, ref TextureOp op, TextureMapMode* mapmode, uint* flags);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1651, Column 21 in material.h")]
         [NativeApi(EntryPoint = "aiGetMaterialTexture")]
-        public unsafe partial Return GetMaterialTexture([Flow(Silk.NET.Core.Native.FlowDirection.In)] in Material mat, TextureType type, uint index, AssimpString* path, TextureMapping* mapping, uint* uvindex, float* blend, ref TextureOp op, TextureMapMode* mapmode, ref uint flags);
+        public unsafe partial Return GetMaterialTexture([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Material mat, TextureType type, uint index, AssimpString* path, TextureMapping* mapping, uint* uvindex, float* blend, ref TextureOp op, TextureMapMode* mapmode, ref uint flags);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1651, Column 21 in material.h")]
         [NativeApi(EntryPoint = "aiGetMaterialTexture")]
-        public unsafe partial Return GetMaterialTexture([Flow(Silk.NET.Core.Native.FlowDirection.In)] in Material mat, TextureType type, uint index, AssimpString* path, TextureMapping* mapping, uint* uvindex, float* blend, ref TextureOp op, ref TextureMapMode mapmode, uint* flags);
+        public unsafe partial Return GetMaterialTexture([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Material mat, TextureType type, uint index, AssimpString* path, TextureMapping* mapping, uint* uvindex, float* blend, ref TextureOp op, ref TextureMapMode mapmode, uint* flags);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1651, Column 21 in material.h")]
         [NativeApi(EntryPoint = "aiGetMaterialTexture")]
-        public unsafe partial Return GetMaterialTexture([Flow(Silk.NET.Core.Native.FlowDirection.In)] in Material mat, TextureType type, uint index, AssimpString* path, TextureMapping* mapping, uint* uvindex, float* blend, ref TextureOp op, ref TextureMapMode mapmode, ref uint flags);
+        public unsafe partial Return GetMaterialTexture([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Material mat, TextureType type, uint index, AssimpString* path, TextureMapping* mapping, uint* uvindex, float* blend, ref TextureOp op, ref TextureMapMode mapmode, ref uint flags);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1651, Column 21 in material.h")]
         [NativeApi(EntryPoint = "aiGetMaterialTexture")]
-        public unsafe partial Return GetMaterialTexture([Flow(Silk.NET.Core.Native.FlowDirection.In)] in Material mat, TextureType type, uint index, AssimpString* path, TextureMapping* mapping, uint* uvindex, ref float blend, TextureOp* op, TextureMapMode* mapmode, uint* flags);
+        public unsafe partial Return GetMaterialTexture([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Material mat, TextureType type, uint index, AssimpString* path, TextureMapping* mapping, uint* uvindex, ref float blend, TextureOp* op, TextureMapMode* mapmode, uint* flags);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1651, Column 21 in material.h")]
         [NativeApi(EntryPoint = "aiGetMaterialTexture")]
-        public unsafe partial Return GetMaterialTexture([Flow(Silk.NET.Core.Native.FlowDirection.In)] in Material mat, TextureType type, uint index, AssimpString* path, TextureMapping* mapping, uint* uvindex, ref float blend, TextureOp* op, TextureMapMode* mapmode, ref uint flags);
+        public unsafe partial Return GetMaterialTexture([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Material mat, TextureType type, uint index, AssimpString* path, TextureMapping* mapping, uint* uvindex, ref float blend, TextureOp* op, TextureMapMode* mapmode, ref uint flags);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1651, Column 21 in material.h")]
         [NativeApi(EntryPoint = "aiGetMaterialTexture")]
-        public unsafe partial Return GetMaterialTexture([Flow(Silk.NET.Core.Native.FlowDirection.In)] in Material mat, TextureType type, uint index, AssimpString* path, TextureMapping* mapping, uint* uvindex, ref float blend, TextureOp* op, ref TextureMapMode mapmode, uint* flags);
+        public unsafe partial Return GetMaterialTexture([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Material mat, TextureType type, uint index, AssimpString* path, TextureMapping* mapping, uint* uvindex, ref float blend, TextureOp* op, ref TextureMapMode mapmode, uint* flags);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1651, Column 21 in material.h")]
         [NativeApi(EntryPoint = "aiGetMaterialTexture")]
-        public unsafe partial Return GetMaterialTexture([Flow(Silk.NET.Core.Native.FlowDirection.In)] in Material mat, TextureType type, uint index, AssimpString* path, TextureMapping* mapping, uint* uvindex, ref float blend, TextureOp* op, ref TextureMapMode mapmode, ref uint flags);
+        public unsafe partial Return GetMaterialTexture([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Material mat, TextureType type, uint index, AssimpString* path, TextureMapping* mapping, uint* uvindex, ref float blend, TextureOp* op, ref TextureMapMode mapmode, ref uint flags);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1651, Column 21 in material.h")]
         [NativeApi(EntryPoint = "aiGetMaterialTexture")]
-        public unsafe partial Return GetMaterialTexture([Flow(Silk.NET.Core.Native.FlowDirection.In)] in Material mat, TextureType type, uint index, AssimpString* path, TextureMapping* mapping, uint* uvindex, ref float blend, ref TextureOp op, TextureMapMode* mapmode, uint* flags);
+        public unsafe partial Return GetMaterialTexture([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Material mat, TextureType type, uint index, AssimpString* path, TextureMapping* mapping, uint* uvindex, ref float blend, ref TextureOp op, TextureMapMode* mapmode, uint* flags);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1651, Column 21 in material.h")]
         [NativeApi(EntryPoint = "aiGetMaterialTexture")]
-        public unsafe partial Return GetMaterialTexture([Flow(Silk.NET.Core.Native.FlowDirection.In)] in Material mat, TextureType type, uint index, AssimpString* path, TextureMapping* mapping, uint* uvindex, ref float blend, ref TextureOp op, TextureMapMode* mapmode, ref uint flags);
+        public unsafe partial Return GetMaterialTexture([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Material mat, TextureType type, uint index, AssimpString* path, TextureMapping* mapping, uint* uvindex, ref float blend, ref TextureOp op, TextureMapMode* mapmode, ref uint flags);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1651, Column 21 in material.h")]
         [NativeApi(EntryPoint = "aiGetMaterialTexture")]
-        public unsafe partial Return GetMaterialTexture([Flow(Silk.NET.Core.Native.FlowDirection.In)] in Material mat, TextureType type, uint index, AssimpString* path, TextureMapping* mapping, uint* uvindex, ref float blend, ref TextureOp op, ref TextureMapMode mapmode, uint* flags);
+        public unsafe partial Return GetMaterialTexture([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Material mat, TextureType type, uint index, AssimpString* path, TextureMapping* mapping, uint* uvindex, ref float blend, ref TextureOp op, ref TextureMapMode mapmode, uint* flags);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1651, Column 21 in material.h")]
         [NativeApi(EntryPoint = "aiGetMaterialTexture")]
-        public unsafe partial Return GetMaterialTexture([Flow(Silk.NET.Core.Native.FlowDirection.In)] in Material mat, TextureType type, uint index, AssimpString* path, TextureMapping* mapping, uint* uvindex, ref float blend, ref TextureOp op, ref TextureMapMode mapmode, ref uint flags);
+        public unsafe partial Return GetMaterialTexture([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Material mat, TextureType type, uint index, AssimpString* path, TextureMapping* mapping, uint* uvindex, ref float blend, ref TextureOp op, ref TextureMapMode mapmode, ref uint flags);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1651, Column 21 in material.h")]
         [NativeApi(EntryPoint = "aiGetMaterialTexture")]
-        public unsafe partial Return GetMaterialTexture([Flow(Silk.NET.Core.Native.FlowDirection.In)] in Material mat, TextureType type, uint index, AssimpString* path, TextureMapping* mapping, ref uint uvindex, float* blend, TextureOp* op, TextureMapMode* mapmode, uint* flags);
+        public unsafe partial Return GetMaterialTexture([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Material mat, TextureType type, uint index, AssimpString* path, TextureMapping* mapping, ref uint uvindex, float* blend, TextureOp* op, TextureMapMode* mapmode, uint* flags);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1651, Column 21 in material.h")]
         [NativeApi(EntryPoint = "aiGetMaterialTexture")]
-        public unsafe partial Return GetMaterialTexture([Flow(Silk.NET.Core.Native.FlowDirection.In)] in Material mat, TextureType type, uint index, AssimpString* path, TextureMapping* mapping, ref uint uvindex, float* blend, TextureOp* op, TextureMapMode* mapmode, ref uint flags);
+        public unsafe partial Return GetMaterialTexture([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Material mat, TextureType type, uint index, AssimpString* path, TextureMapping* mapping, ref uint uvindex, float* blend, TextureOp* op, TextureMapMode* mapmode, ref uint flags);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1651, Column 21 in material.h")]
         [NativeApi(EntryPoint = "aiGetMaterialTexture")]
-        public unsafe partial Return GetMaterialTexture([Flow(Silk.NET.Core.Native.FlowDirection.In)] in Material mat, TextureType type, uint index, AssimpString* path, TextureMapping* mapping, ref uint uvindex, float* blend, TextureOp* op, ref TextureMapMode mapmode, uint* flags);
+        public unsafe partial Return GetMaterialTexture([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Material mat, TextureType type, uint index, AssimpString* path, TextureMapping* mapping, ref uint uvindex, float* blend, TextureOp* op, ref TextureMapMode mapmode, uint* flags);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1651, Column 21 in material.h")]
         [NativeApi(EntryPoint = "aiGetMaterialTexture")]
-        public unsafe partial Return GetMaterialTexture([Flow(Silk.NET.Core.Native.FlowDirection.In)] in Material mat, TextureType type, uint index, AssimpString* path, TextureMapping* mapping, ref uint uvindex, float* blend, TextureOp* op, ref TextureMapMode mapmode, ref uint flags);
+        public unsafe partial Return GetMaterialTexture([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Material mat, TextureType type, uint index, AssimpString* path, TextureMapping* mapping, ref uint uvindex, float* blend, TextureOp* op, ref TextureMapMode mapmode, ref uint flags);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1651, Column 21 in material.h")]
         [NativeApi(EntryPoint = "aiGetMaterialTexture")]
-        public unsafe partial Return GetMaterialTexture([Flow(Silk.NET.Core.Native.FlowDirection.In)] in Material mat, TextureType type, uint index, AssimpString* path, TextureMapping* mapping, ref uint uvindex, float* blend, ref TextureOp op, TextureMapMode* mapmode, uint* flags);
+        public unsafe partial Return GetMaterialTexture([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Material mat, TextureType type, uint index, AssimpString* path, TextureMapping* mapping, ref uint uvindex, float* blend, ref TextureOp op, TextureMapMode* mapmode, uint* flags);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1651, Column 21 in material.h")]
         [NativeApi(EntryPoint = "aiGetMaterialTexture")]
-        public unsafe partial Return GetMaterialTexture([Flow(Silk.NET.Core.Native.FlowDirection.In)] in Material mat, TextureType type, uint index, AssimpString* path, TextureMapping* mapping, ref uint uvindex, float* blend, ref TextureOp op, TextureMapMode* mapmode, ref uint flags);
+        public unsafe partial Return GetMaterialTexture([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Material mat, TextureType type, uint index, AssimpString* path, TextureMapping* mapping, ref uint uvindex, float* blend, ref TextureOp op, TextureMapMode* mapmode, ref uint flags);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1651, Column 21 in material.h")]
         [NativeApi(EntryPoint = "aiGetMaterialTexture")]
-        public unsafe partial Return GetMaterialTexture([Flow(Silk.NET.Core.Native.FlowDirection.In)] in Material mat, TextureType type, uint index, AssimpString* path, TextureMapping* mapping, ref uint uvindex, float* blend, ref TextureOp op, ref TextureMapMode mapmode, uint* flags);
+        public unsafe partial Return GetMaterialTexture([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Material mat, TextureType type, uint index, AssimpString* path, TextureMapping* mapping, ref uint uvindex, float* blend, ref TextureOp op, ref TextureMapMode mapmode, uint* flags);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1651, Column 21 in material.h")]
         [NativeApi(EntryPoint = "aiGetMaterialTexture")]
-        public unsafe partial Return GetMaterialTexture([Flow(Silk.NET.Core.Native.FlowDirection.In)] in Material mat, TextureType type, uint index, AssimpString* path, TextureMapping* mapping, ref uint uvindex, float* blend, ref TextureOp op, ref TextureMapMode mapmode, ref uint flags);
+        public unsafe partial Return GetMaterialTexture([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Material mat, TextureType type, uint index, AssimpString* path, TextureMapping* mapping, ref uint uvindex, float* blend, ref TextureOp op, ref TextureMapMode mapmode, ref uint flags);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1651, Column 21 in material.h")]
         [NativeApi(EntryPoint = "aiGetMaterialTexture")]
-        public unsafe partial Return GetMaterialTexture([Flow(Silk.NET.Core.Native.FlowDirection.In)] in Material mat, TextureType type, uint index, AssimpString* path, TextureMapping* mapping, ref uint uvindex, ref float blend, TextureOp* op, TextureMapMode* mapmode, uint* flags);
+        public unsafe partial Return GetMaterialTexture([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Material mat, TextureType type, uint index, AssimpString* path, TextureMapping* mapping, ref uint uvindex, ref float blend, TextureOp* op, TextureMapMode* mapmode, uint* flags);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1651, Column 21 in material.h")]
         [NativeApi(EntryPoint = "aiGetMaterialTexture")]
-        public unsafe partial Return GetMaterialTexture([Flow(Silk.NET.Core.Native.FlowDirection.In)] in Material mat, TextureType type, uint index, AssimpString* path, TextureMapping* mapping, ref uint uvindex, ref float blend, TextureOp* op, TextureMapMode* mapmode, ref uint flags);
+        public unsafe partial Return GetMaterialTexture([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Material mat, TextureType type, uint index, AssimpString* path, TextureMapping* mapping, ref uint uvindex, ref float blend, TextureOp* op, TextureMapMode* mapmode, ref uint flags);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1651, Column 21 in material.h")]
         [NativeApi(EntryPoint = "aiGetMaterialTexture")]
-        public unsafe partial Return GetMaterialTexture([Flow(Silk.NET.Core.Native.FlowDirection.In)] in Material mat, TextureType type, uint index, AssimpString* path, TextureMapping* mapping, ref uint uvindex, ref float blend, TextureOp* op, ref TextureMapMode mapmode, uint* flags);
+        public unsafe partial Return GetMaterialTexture([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Material mat, TextureType type, uint index, AssimpString* path, TextureMapping* mapping, ref uint uvindex, ref float blend, TextureOp* op, ref TextureMapMode mapmode, uint* flags);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1651, Column 21 in material.h")]
         [NativeApi(EntryPoint = "aiGetMaterialTexture")]
-        public unsafe partial Return GetMaterialTexture([Flow(Silk.NET.Core.Native.FlowDirection.In)] in Material mat, TextureType type, uint index, AssimpString* path, TextureMapping* mapping, ref uint uvindex, ref float blend, TextureOp* op, ref TextureMapMode mapmode, ref uint flags);
+        public unsafe partial Return GetMaterialTexture([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Material mat, TextureType type, uint index, AssimpString* path, TextureMapping* mapping, ref uint uvindex, ref float blend, TextureOp* op, ref TextureMapMode mapmode, ref uint flags);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1651, Column 21 in material.h")]
         [NativeApi(EntryPoint = "aiGetMaterialTexture")]
-        public unsafe partial Return GetMaterialTexture([Flow(Silk.NET.Core.Native.FlowDirection.In)] in Material mat, TextureType type, uint index, AssimpString* path, TextureMapping* mapping, ref uint uvindex, ref float blend, ref TextureOp op, TextureMapMode* mapmode, uint* flags);
+        public unsafe partial Return GetMaterialTexture([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Material mat, TextureType type, uint index, AssimpString* path, TextureMapping* mapping, ref uint uvindex, ref float blend, ref TextureOp op, TextureMapMode* mapmode, uint* flags);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1651, Column 21 in material.h")]
         [NativeApi(EntryPoint = "aiGetMaterialTexture")]
-        public unsafe partial Return GetMaterialTexture([Flow(Silk.NET.Core.Native.FlowDirection.In)] in Material mat, TextureType type, uint index, AssimpString* path, TextureMapping* mapping, ref uint uvindex, ref float blend, ref TextureOp op, TextureMapMode* mapmode, ref uint flags);
+        public unsafe partial Return GetMaterialTexture([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Material mat, TextureType type, uint index, AssimpString* path, TextureMapping* mapping, ref uint uvindex, ref float blend, ref TextureOp op, TextureMapMode* mapmode, ref uint flags);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1651, Column 21 in material.h")]
         [NativeApi(EntryPoint = "aiGetMaterialTexture")]
-        public unsafe partial Return GetMaterialTexture([Flow(Silk.NET.Core.Native.FlowDirection.In)] in Material mat, TextureType type, uint index, AssimpString* path, TextureMapping* mapping, ref uint uvindex, ref float blend, ref TextureOp op, ref TextureMapMode mapmode, uint* flags);
+        public unsafe partial Return GetMaterialTexture([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Material mat, TextureType type, uint index, AssimpString* path, TextureMapping* mapping, ref uint uvindex, ref float blend, ref TextureOp op, ref TextureMapMode mapmode, uint* flags);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1651, Column 21 in material.h")]
         [NativeApi(EntryPoint = "aiGetMaterialTexture")]
-        public unsafe partial Return GetMaterialTexture([Flow(Silk.NET.Core.Native.FlowDirection.In)] in Material mat, TextureType type, uint index, AssimpString* path, TextureMapping* mapping, ref uint uvindex, ref float blend, ref TextureOp op, ref TextureMapMode mapmode, ref uint flags);
+        public unsafe partial Return GetMaterialTexture([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Material mat, TextureType type, uint index, AssimpString* path, TextureMapping* mapping, ref uint uvindex, ref float blend, ref TextureOp op, ref TextureMapMode mapmode, ref uint flags);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1651, Column 21 in material.h")]
         [NativeApi(EntryPoint = "aiGetMaterialTexture")]
-        public unsafe partial Return GetMaterialTexture([Flow(Silk.NET.Core.Native.FlowDirection.In)] in Material mat, TextureType type, uint index, AssimpString* path, ref TextureMapping mapping, uint* uvindex, float* blend, TextureOp* op, TextureMapMode* mapmode, uint* flags);
+        public unsafe partial Return GetMaterialTexture([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Material mat, TextureType type, uint index, AssimpString* path, ref TextureMapping mapping, uint* uvindex, float* blend, TextureOp* op, TextureMapMode* mapmode, uint* flags);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1651, Column 21 in material.h")]
         [NativeApi(EntryPoint = "aiGetMaterialTexture")]
-        public unsafe partial Return GetMaterialTexture([Flow(Silk.NET.Core.Native.FlowDirection.In)] in Material mat, TextureType type, uint index, AssimpString* path, ref TextureMapping mapping, uint* uvindex, float* blend, TextureOp* op, TextureMapMode* mapmode, ref uint flags);
+        public unsafe partial Return GetMaterialTexture([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Material mat, TextureType type, uint index, AssimpString* path, ref TextureMapping mapping, uint* uvindex, float* blend, TextureOp* op, TextureMapMode* mapmode, ref uint flags);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1651, Column 21 in material.h")]
         [NativeApi(EntryPoint = "aiGetMaterialTexture")]
-        public unsafe partial Return GetMaterialTexture([Flow(Silk.NET.Core.Native.FlowDirection.In)] in Material mat, TextureType type, uint index, AssimpString* path, ref TextureMapping mapping, uint* uvindex, float* blend, TextureOp* op, ref TextureMapMode mapmode, uint* flags);
+        public unsafe partial Return GetMaterialTexture([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Material mat, TextureType type, uint index, AssimpString* path, ref TextureMapping mapping, uint* uvindex, float* blend, TextureOp* op, ref TextureMapMode mapmode, uint* flags);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1651, Column 21 in material.h")]
         [NativeApi(EntryPoint = "aiGetMaterialTexture")]
-        public unsafe partial Return GetMaterialTexture([Flow(Silk.NET.Core.Native.FlowDirection.In)] in Material mat, TextureType type, uint index, AssimpString* path, ref TextureMapping mapping, uint* uvindex, float* blend, TextureOp* op, ref TextureMapMode mapmode, ref uint flags);
+        public unsafe partial Return GetMaterialTexture([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Material mat, TextureType type, uint index, AssimpString* path, ref TextureMapping mapping, uint* uvindex, float* blend, TextureOp* op, ref TextureMapMode mapmode, ref uint flags);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1651, Column 21 in material.h")]
         [NativeApi(EntryPoint = "aiGetMaterialTexture")]
-        public unsafe partial Return GetMaterialTexture([Flow(Silk.NET.Core.Native.FlowDirection.In)] in Material mat, TextureType type, uint index, AssimpString* path, ref TextureMapping mapping, uint* uvindex, float* blend, ref TextureOp op, TextureMapMode* mapmode, uint* flags);
+        public unsafe partial Return GetMaterialTexture([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Material mat, TextureType type, uint index, AssimpString* path, ref TextureMapping mapping, uint* uvindex, float* blend, ref TextureOp op, TextureMapMode* mapmode, uint* flags);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1651, Column 21 in material.h")]
         [NativeApi(EntryPoint = "aiGetMaterialTexture")]
-        public unsafe partial Return GetMaterialTexture([Flow(Silk.NET.Core.Native.FlowDirection.In)] in Material mat, TextureType type, uint index, AssimpString* path, ref TextureMapping mapping, uint* uvindex, float* blend, ref TextureOp op, TextureMapMode* mapmode, ref uint flags);
+        public unsafe partial Return GetMaterialTexture([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Material mat, TextureType type, uint index, AssimpString* path, ref TextureMapping mapping, uint* uvindex, float* blend, ref TextureOp op, TextureMapMode* mapmode, ref uint flags);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1651, Column 21 in material.h")]
         [NativeApi(EntryPoint = "aiGetMaterialTexture")]
-        public unsafe partial Return GetMaterialTexture([Flow(Silk.NET.Core.Native.FlowDirection.In)] in Material mat, TextureType type, uint index, AssimpString* path, ref TextureMapping mapping, uint* uvindex, float* blend, ref TextureOp op, ref TextureMapMode mapmode, uint* flags);
+        public unsafe partial Return GetMaterialTexture([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Material mat, TextureType type, uint index, AssimpString* path, ref TextureMapping mapping, uint* uvindex, float* blend, ref TextureOp op, ref TextureMapMode mapmode, uint* flags);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1651, Column 21 in material.h")]
         [NativeApi(EntryPoint = "aiGetMaterialTexture")]
-        public unsafe partial Return GetMaterialTexture([Flow(Silk.NET.Core.Native.FlowDirection.In)] in Material mat, TextureType type, uint index, AssimpString* path, ref TextureMapping mapping, uint* uvindex, float* blend, ref TextureOp op, ref TextureMapMode mapmode, ref uint flags);
+        public unsafe partial Return GetMaterialTexture([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Material mat, TextureType type, uint index, AssimpString* path, ref TextureMapping mapping, uint* uvindex, float* blend, ref TextureOp op, ref TextureMapMode mapmode, ref uint flags);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1651, Column 21 in material.h")]
         [NativeApi(EntryPoint = "aiGetMaterialTexture")]
-        public unsafe partial Return GetMaterialTexture([Flow(Silk.NET.Core.Native.FlowDirection.In)] in Material mat, TextureType type, uint index, AssimpString* path, ref TextureMapping mapping, uint* uvindex, ref float blend, TextureOp* op, TextureMapMode* mapmode, uint* flags);
+        public unsafe partial Return GetMaterialTexture([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Material mat, TextureType type, uint index, AssimpString* path, ref TextureMapping mapping, uint* uvindex, ref float blend, TextureOp* op, TextureMapMode* mapmode, uint* flags);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1651, Column 21 in material.h")]
         [NativeApi(EntryPoint = "aiGetMaterialTexture")]
-        public unsafe partial Return GetMaterialTexture([Flow(Silk.NET.Core.Native.FlowDirection.In)] in Material mat, TextureType type, uint index, AssimpString* path, ref TextureMapping mapping, uint* uvindex, ref float blend, TextureOp* op, TextureMapMode* mapmode, ref uint flags);
+        public unsafe partial Return GetMaterialTexture([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Material mat, TextureType type, uint index, AssimpString* path, ref TextureMapping mapping, uint* uvindex, ref float blend, TextureOp* op, TextureMapMode* mapmode, ref uint flags);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1651, Column 21 in material.h")]
         [NativeApi(EntryPoint = "aiGetMaterialTexture")]
-        public unsafe partial Return GetMaterialTexture([Flow(Silk.NET.Core.Native.FlowDirection.In)] in Material mat, TextureType type, uint index, AssimpString* path, ref TextureMapping mapping, uint* uvindex, ref float blend, TextureOp* op, ref TextureMapMode mapmode, uint* flags);
+        public unsafe partial Return GetMaterialTexture([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Material mat, TextureType type, uint index, AssimpString* path, ref TextureMapping mapping, uint* uvindex, ref float blend, TextureOp* op, ref TextureMapMode mapmode, uint* flags);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1651, Column 21 in material.h")]
         [NativeApi(EntryPoint = "aiGetMaterialTexture")]
-        public unsafe partial Return GetMaterialTexture([Flow(Silk.NET.Core.Native.FlowDirection.In)] in Material mat, TextureType type, uint index, AssimpString* path, ref TextureMapping mapping, uint* uvindex, ref float blend, TextureOp* op, ref TextureMapMode mapmode, ref uint flags);
+        public unsafe partial Return GetMaterialTexture([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Material mat, TextureType type, uint index, AssimpString* path, ref TextureMapping mapping, uint* uvindex, ref float blend, TextureOp* op, ref TextureMapMode mapmode, ref uint flags);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1651, Column 21 in material.h")]
         [NativeApi(EntryPoint = "aiGetMaterialTexture")]
-        public unsafe partial Return GetMaterialTexture([Flow(Silk.NET.Core.Native.FlowDirection.In)] in Material mat, TextureType type, uint index, AssimpString* path, ref TextureMapping mapping, uint* uvindex, ref float blend, ref TextureOp op, TextureMapMode* mapmode, uint* flags);
+        public unsafe partial Return GetMaterialTexture([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Material mat, TextureType type, uint index, AssimpString* path, ref TextureMapping mapping, uint* uvindex, ref float blend, ref TextureOp op, TextureMapMode* mapmode, uint* flags);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1651, Column 21 in material.h")]
         [NativeApi(EntryPoint = "aiGetMaterialTexture")]
-        public unsafe partial Return GetMaterialTexture([Flow(Silk.NET.Core.Native.FlowDirection.In)] in Material mat, TextureType type, uint index, AssimpString* path, ref TextureMapping mapping, uint* uvindex, ref float blend, ref TextureOp op, TextureMapMode* mapmode, ref uint flags);
+        public unsafe partial Return GetMaterialTexture([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Material mat, TextureType type, uint index, AssimpString* path, ref TextureMapping mapping, uint* uvindex, ref float blend, ref TextureOp op, TextureMapMode* mapmode, ref uint flags);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1651, Column 21 in material.h")]
         [NativeApi(EntryPoint = "aiGetMaterialTexture")]
-        public unsafe partial Return GetMaterialTexture([Flow(Silk.NET.Core.Native.FlowDirection.In)] in Material mat, TextureType type, uint index, AssimpString* path, ref TextureMapping mapping, uint* uvindex, ref float blend, ref TextureOp op, ref TextureMapMode mapmode, uint* flags);
+        public unsafe partial Return GetMaterialTexture([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Material mat, TextureType type, uint index, AssimpString* path, ref TextureMapping mapping, uint* uvindex, ref float blend, ref TextureOp op, ref TextureMapMode mapmode, uint* flags);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1651, Column 21 in material.h")]
         [NativeApi(EntryPoint = "aiGetMaterialTexture")]
-        public unsafe partial Return GetMaterialTexture([Flow(Silk.NET.Core.Native.FlowDirection.In)] in Material mat, TextureType type, uint index, AssimpString* path, ref TextureMapping mapping, uint* uvindex, ref float blend, ref TextureOp op, ref TextureMapMode mapmode, ref uint flags);
+        public unsafe partial Return GetMaterialTexture([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Material mat, TextureType type, uint index, AssimpString* path, ref TextureMapping mapping, uint* uvindex, ref float blend, ref TextureOp op, ref TextureMapMode mapmode, ref uint flags);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1651, Column 21 in material.h")]
         [NativeApi(EntryPoint = "aiGetMaterialTexture")]
-        public unsafe partial Return GetMaterialTexture([Flow(Silk.NET.Core.Native.FlowDirection.In)] in Material mat, TextureType type, uint index, AssimpString* path, ref TextureMapping mapping, ref uint uvindex, float* blend, TextureOp* op, TextureMapMode* mapmode, uint* flags);
+        public unsafe partial Return GetMaterialTexture([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Material mat, TextureType type, uint index, AssimpString* path, ref TextureMapping mapping, ref uint uvindex, float* blend, TextureOp* op, TextureMapMode* mapmode, uint* flags);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1651, Column 21 in material.h")]
         [NativeApi(EntryPoint = "aiGetMaterialTexture")]
-        public unsafe partial Return GetMaterialTexture([Flow(Silk.NET.Core.Native.FlowDirection.In)] in Material mat, TextureType type, uint index, AssimpString* path, ref TextureMapping mapping, ref uint uvindex, float* blend, TextureOp* op, TextureMapMode* mapmode, ref uint flags);
+        public unsafe partial Return GetMaterialTexture([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Material mat, TextureType type, uint index, AssimpString* path, ref TextureMapping mapping, ref uint uvindex, float* blend, TextureOp* op, TextureMapMode* mapmode, ref uint flags);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1651, Column 21 in material.h")]
         [NativeApi(EntryPoint = "aiGetMaterialTexture")]
-        public unsafe partial Return GetMaterialTexture([Flow(Silk.NET.Core.Native.FlowDirection.In)] in Material mat, TextureType type, uint index, AssimpString* path, ref TextureMapping mapping, ref uint uvindex, float* blend, TextureOp* op, ref TextureMapMode mapmode, uint* flags);
+        public unsafe partial Return GetMaterialTexture([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Material mat, TextureType type, uint index, AssimpString* path, ref TextureMapping mapping, ref uint uvindex, float* blend, TextureOp* op, ref TextureMapMode mapmode, uint* flags);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1651, Column 21 in material.h")]
         [NativeApi(EntryPoint = "aiGetMaterialTexture")]
-        public unsafe partial Return GetMaterialTexture([Flow(Silk.NET.Core.Native.FlowDirection.In)] in Material mat, TextureType type, uint index, AssimpString* path, ref TextureMapping mapping, ref uint uvindex, float* blend, TextureOp* op, ref TextureMapMode mapmode, ref uint flags);
+        public unsafe partial Return GetMaterialTexture([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Material mat, TextureType type, uint index, AssimpString* path, ref TextureMapping mapping, ref uint uvindex, float* blend, TextureOp* op, ref TextureMapMode mapmode, ref uint flags);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1651, Column 21 in material.h")]
         [NativeApi(EntryPoint = "aiGetMaterialTexture")]
-        public unsafe partial Return GetMaterialTexture([Flow(Silk.NET.Core.Native.FlowDirection.In)] in Material mat, TextureType type, uint index, AssimpString* path, ref TextureMapping mapping, ref uint uvindex, float* blend, ref TextureOp op, TextureMapMode* mapmode, uint* flags);
+        public unsafe partial Return GetMaterialTexture([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Material mat, TextureType type, uint index, AssimpString* path, ref TextureMapping mapping, ref uint uvindex, float* blend, ref TextureOp op, TextureMapMode* mapmode, uint* flags);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1651, Column 21 in material.h")]
         [NativeApi(EntryPoint = "aiGetMaterialTexture")]
-        public unsafe partial Return GetMaterialTexture([Flow(Silk.NET.Core.Native.FlowDirection.In)] in Material mat, TextureType type, uint index, AssimpString* path, ref TextureMapping mapping, ref uint uvindex, float* blend, ref TextureOp op, TextureMapMode* mapmode, ref uint flags);
+        public unsafe partial Return GetMaterialTexture([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Material mat, TextureType type, uint index, AssimpString* path, ref TextureMapping mapping, ref uint uvindex, float* blend, ref TextureOp op, TextureMapMode* mapmode, ref uint flags);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1651, Column 21 in material.h")]
         [NativeApi(EntryPoint = "aiGetMaterialTexture")]
-        public unsafe partial Return GetMaterialTexture([Flow(Silk.NET.Core.Native.FlowDirection.In)] in Material mat, TextureType type, uint index, AssimpString* path, ref TextureMapping mapping, ref uint uvindex, float* blend, ref TextureOp op, ref TextureMapMode mapmode, uint* flags);
+        public unsafe partial Return GetMaterialTexture([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Material mat, TextureType type, uint index, AssimpString* path, ref TextureMapping mapping, ref uint uvindex, float* blend, ref TextureOp op, ref TextureMapMode mapmode, uint* flags);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1651, Column 21 in material.h")]
         [NativeApi(EntryPoint = "aiGetMaterialTexture")]
-        public unsafe partial Return GetMaterialTexture([Flow(Silk.NET.Core.Native.FlowDirection.In)] in Material mat, TextureType type, uint index, AssimpString* path, ref TextureMapping mapping, ref uint uvindex, float* blend, ref TextureOp op, ref TextureMapMode mapmode, ref uint flags);
+        public unsafe partial Return GetMaterialTexture([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Material mat, TextureType type, uint index, AssimpString* path, ref TextureMapping mapping, ref uint uvindex, float* blend, ref TextureOp op, ref TextureMapMode mapmode, ref uint flags);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1651, Column 21 in material.h")]
         [NativeApi(EntryPoint = "aiGetMaterialTexture")]
-        public unsafe partial Return GetMaterialTexture([Flow(Silk.NET.Core.Native.FlowDirection.In)] in Material mat, TextureType type, uint index, AssimpString* path, ref TextureMapping mapping, ref uint uvindex, ref float blend, TextureOp* op, TextureMapMode* mapmode, uint* flags);
+        public unsafe partial Return GetMaterialTexture([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Material mat, TextureType type, uint index, AssimpString* path, ref TextureMapping mapping, ref uint uvindex, ref float blend, TextureOp* op, TextureMapMode* mapmode, uint* flags);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1651, Column 21 in material.h")]
         [NativeApi(EntryPoint = "aiGetMaterialTexture")]
-        public unsafe partial Return GetMaterialTexture([Flow(Silk.NET.Core.Native.FlowDirection.In)] in Material mat, TextureType type, uint index, AssimpString* path, ref TextureMapping mapping, ref uint uvindex, ref float blend, TextureOp* op, TextureMapMode* mapmode, ref uint flags);
+        public unsafe partial Return GetMaterialTexture([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Material mat, TextureType type, uint index, AssimpString* path, ref TextureMapping mapping, ref uint uvindex, ref float blend, TextureOp* op, TextureMapMode* mapmode, ref uint flags);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1651, Column 21 in material.h")]
         [NativeApi(EntryPoint = "aiGetMaterialTexture")]
-        public unsafe partial Return GetMaterialTexture([Flow(Silk.NET.Core.Native.FlowDirection.In)] in Material mat, TextureType type, uint index, AssimpString* path, ref TextureMapping mapping, ref uint uvindex, ref float blend, TextureOp* op, ref TextureMapMode mapmode, uint* flags);
+        public unsafe partial Return GetMaterialTexture([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Material mat, TextureType type, uint index, AssimpString* path, ref TextureMapping mapping, ref uint uvindex, ref float blend, TextureOp* op, ref TextureMapMode mapmode, uint* flags);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1651, Column 21 in material.h")]
         [NativeApi(EntryPoint = "aiGetMaterialTexture")]
-        public unsafe partial Return GetMaterialTexture([Flow(Silk.NET.Core.Native.FlowDirection.In)] in Material mat, TextureType type, uint index, AssimpString* path, ref TextureMapping mapping, ref uint uvindex, ref float blend, TextureOp* op, ref TextureMapMode mapmode, ref uint flags);
+        public unsafe partial Return GetMaterialTexture([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Material mat, TextureType type, uint index, AssimpString* path, ref TextureMapping mapping, ref uint uvindex, ref float blend, TextureOp* op, ref TextureMapMode mapmode, ref uint flags);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1651, Column 21 in material.h")]
         [NativeApi(EntryPoint = "aiGetMaterialTexture")]
-        public unsafe partial Return GetMaterialTexture([Flow(Silk.NET.Core.Native.FlowDirection.In)] in Material mat, TextureType type, uint index, AssimpString* path, ref TextureMapping mapping, ref uint uvindex, ref float blend, ref TextureOp op, TextureMapMode* mapmode, uint* flags);
+        public unsafe partial Return GetMaterialTexture([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Material mat, TextureType type, uint index, AssimpString* path, ref TextureMapping mapping, ref uint uvindex, ref float blend, ref TextureOp op, TextureMapMode* mapmode, uint* flags);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1651, Column 21 in material.h")]
         [NativeApi(EntryPoint = "aiGetMaterialTexture")]
-        public unsafe partial Return GetMaterialTexture([Flow(Silk.NET.Core.Native.FlowDirection.In)] in Material mat, TextureType type, uint index, AssimpString* path, ref TextureMapping mapping, ref uint uvindex, ref float blend, ref TextureOp op, TextureMapMode* mapmode, ref uint flags);
+        public unsafe partial Return GetMaterialTexture([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Material mat, TextureType type, uint index, AssimpString* path, ref TextureMapping mapping, ref uint uvindex, ref float blend, ref TextureOp op, TextureMapMode* mapmode, ref uint flags);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1651, Column 21 in material.h")]
         [NativeApi(EntryPoint = "aiGetMaterialTexture")]
-        public unsafe partial Return GetMaterialTexture([Flow(Silk.NET.Core.Native.FlowDirection.In)] in Material mat, TextureType type, uint index, AssimpString* path, ref TextureMapping mapping, ref uint uvindex, ref float blend, ref TextureOp op, ref TextureMapMode mapmode, uint* flags);
+        public unsafe partial Return GetMaterialTexture([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Material mat, TextureType type, uint index, AssimpString* path, ref TextureMapping mapping, ref uint uvindex, ref float blend, ref TextureOp op, ref TextureMapMode mapmode, uint* flags);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1651, Column 21 in material.h")]
         [NativeApi(EntryPoint = "aiGetMaterialTexture")]
-        public unsafe partial Return GetMaterialTexture([Flow(Silk.NET.Core.Native.FlowDirection.In)] in Material mat, TextureType type, uint index, AssimpString* path, ref TextureMapping mapping, ref uint uvindex, ref float blend, ref TextureOp op, ref TextureMapMode mapmode, ref uint flags);
+        public unsafe partial Return GetMaterialTexture([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Material mat, TextureType type, uint index, AssimpString* path, ref TextureMapping mapping, ref uint uvindex, ref float blend, ref TextureOp op, ref TextureMapMode mapmode, ref uint flags);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1651, Column 21 in material.h")]
         [NativeApi(EntryPoint = "aiGetMaterialTexture")]
-        public unsafe partial Return GetMaterialTexture([Flow(Silk.NET.Core.Native.FlowDirection.In)] in Material mat, TextureType type, uint index, ref AssimpString path, TextureMapping* mapping, uint* uvindex, float* blend, TextureOp* op, TextureMapMode* mapmode, uint* flags);
+        public unsafe partial Return GetMaterialTexture([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Material mat, TextureType type, uint index, ref AssimpString path, TextureMapping* mapping, uint* uvindex, float* blend, TextureOp* op, TextureMapMode* mapmode, uint* flags);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1651, Column 21 in material.h")]
         [NativeApi(EntryPoint = "aiGetMaterialTexture")]
-        public unsafe partial Return GetMaterialTexture([Flow(Silk.NET.Core.Native.FlowDirection.In)] in Material mat, TextureType type, uint index, ref AssimpString path, TextureMapping* mapping, uint* uvindex, float* blend, TextureOp* op, TextureMapMode* mapmode, ref uint flags);
+        public unsafe partial Return GetMaterialTexture([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Material mat, TextureType type, uint index, ref AssimpString path, TextureMapping* mapping, uint* uvindex, float* blend, TextureOp* op, TextureMapMode* mapmode, ref uint flags);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1651, Column 21 in material.h")]
         [NativeApi(EntryPoint = "aiGetMaterialTexture")]
-        public unsafe partial Return GetMaterialTexture([Flow(Silk.NET.Core.Native.FlowDirection.In)] in Material mat, TextureType type, uint index, ref AssimpString path, TextureMapping* mapping, uint* uvindex, float* blend, TextureOp* op, ref TextureMapMode mapmode, uint* flags);
+        public unsafe partial Return GetMaterialTexture([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Material mat, TextureType type, uint index, ref AssimpString path, TextureMapping* mapping, uint* uvindex, float* blend, TextureOp* op, ref TextureMapMode mapmode, uint* flags);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1651, Column 21 in material.h")]
         [NativeApi(EntryPoint = "aiGetMaterialTexture")]
-        public unsafe partial Return GetMaterialTexture([Flow(Silk.NET.Core.Native.FlowDirection.In)] in Material mat, TextureType type, uint index, ref AssimpString path, TextureMapping* mapping, uint* uvindex, float* blend, TextureOp* op, ref TextureMapMode mapmode, ref uint flags);
+        public unsafe partial Return GetMaterialTexture([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Material mat, TextureType type, uint index, ref AssimpString path, TextureMapping* mapping, uint* uvindex, float* blend, TextureOp* op, ref TextureMapMode mapmode, ref uint flags);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1651, Column 21 in material.h")]
         [NativeApi(EntryPoint = "aiGetMaterialTexture")]
-        public unsafe partial Return GetMaterialTexture([Flow(Silk.NET.Core.Native.FlowDirection.In)] in Material mat, TextureType type, uint index, ref AssimpString path, TextureMapping* mapping, uint* uvindex, float* blend, ref TextureOp op, TextureMapMode* mapmode, uint* flags);
+        public unsafe partial Return GetMaterialTexture([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Material mat, TextureType type, uint index, ref AssimpString path, TextureMapping* mapping, uint* uvindex, float* blend, ref TextureOp op, TextureMapMode* mapmode, uint* flags);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1651, Column 21 in material.h")]
         [NativeApi(EntryPoint = "aiGetMaterialTexture")]
-        public unsafe partial Return GetMaterialTexture([Flow(Silk.NET.Core.Native.FlowDirection.In)] in Material mat, TextureType type, uint index, ref AssimpString path, TextureMapping* mapping, uint* uvindex, float* blend, ref TextureOp op, TextureMapMode* mapmode, ref uint flags);
+        public unsafe partial Return GetMaterialTexture([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Material mat, TextureType type, uint index, ref AssimpString path, TextureMapping* mapping, uint* uvindex, float* blend, ref TextureOp op, TextureMapMode* mapmode, ref uint flags);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1651, Column 21 in material.h")]
         [NativeApi(EntryPoint = "aiGetMaterialTexture")]
-        public unsafe partial Return GetMaterialTexture([Flow(Silk.NET.Core.Native.FlowDirection.In)] in Material mat, TextureType type, uint index, ref AssimpString path, TextureMapping* mapping, uint* uvindex, float* blend, ref TextureOp op, ref TextureMapMode mapmode, uint* flags);
+        public unsafe partial Return GetMaterialTexture([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Material mat, TextureType type, uint index, ref AssimpString path, TextureMapping* mapping, uint* uvindex, float* blend, ref TextureOp op, ref TextureMapMode mapmode, uint* flags);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1651, Column 21 in material.h")]
         [NativeApi(EntryPoint = "aiGetMaterialTexture")]
-        public unsafe partial Return GetMaterialTexture([Flow(Silk.NET.Core.Native.FlowDirection.In)] in Material mat, TextureType type, uint index, ref AssimpString path, TextureMapping* mapping, uint* uvindex, float* blend, ref TextureOp op, ref TextureMapMode mapmode, ref uint flags);
+        public unsafe partial Return GetMaterialTexture([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Material mat, TextureType type, uint index, ref AssimpString path, TextureMapping* mapping, uint* uvindex, float* blend, ref TextureOp op, ref TextureMapMode mapmode, ref uint flags);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1651, Column 21 in material.h")]
         [NativeApi(EntryPoint = "aiGetMaterialTexture")]
-        public unsafe partial Return GetMaterialTexture([Flow(Silk.NET.Core.Native.FlowDirection.In)] in Material mat, TextureType type, uint index, ref AssimpString path, TextureMapping* mapping, uint* uvindex, ref float blend, TextureOp* op, TextureMapMode* mapmode, uint* flags);
+        public unsafe partial Return GetMaterialTexture([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Material mat, TextureType type, uint index, ref AssimpString path, TextureMapping* mapping, uint* uvindex, ref float blend, TextureOp* op, TextureMapMode* mapmode, uint* flags);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1651, Column 21 in material.h")]
         [NativeApi(EntryPoint = "aiGetMaterialTexture")]
-        public unsafe partial Return GetMaterialTexture([Flow(Silk.NET.Core.Native.FlowDirection.In)] in Material mat, TextureType type, uint index, ref AssimpString path, TextureMapping* mapping, uint* uvindex, ref float blend, TextureOp* op, TextureMapMode* mapmode, ref uint flags);
+        public unsafe partial Return GetMaterialTexture([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Material mat, TextureType type, uint index, ref AssimpString path, TextureMapping* mapping, uint* uvindex, ref float blend, TextureOp* op, TextureMapMode* mapmode, ref uint flags);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1651, Column 21 in material.h")]
         [NativeApi(EntryPoint = "aiGetMaterialTexture")]
-        public unsafe partial Return GetMaterialTexture([Flow(Silk.NET.Core.Native.FlowDirection.In)] in Material mat, TextureType type, uint index, ref AssimpString path, TextureMapping* mapping, uint* uvindex, ref float blend, TextureOp* op, ref TextureMapMode mapmode, uint* flags);
+        public unsafe partial Return GetMaterialTexture([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Material mat, TextureType type, uint index, ref AssimpString path, TextureMapping* mapping, uint* uvindex, ref float blend, TextureOp* op, ref TextureMapMode mapmode, uint* flags);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1651, Column 21 in material.h")]
         [NativeApi(EntryPoint = "aiGetMaterialTexture")]
-        public unsafe partial Return GetMaterialTexture([Flow(Silk.NET.Core.Native.FlowDirection.In)] in Material mat, TextureType type, uint index, ref AssimpString path, TextureMapping* mapping, uint* uvindex, ref float blend, TextureOp* op, ref TextureMapMode mapmode, ref uint flags);
+        public unsafe partial Return GetMaterialTexture([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Material mat, TextureType type, uint index, ref AssimpString path, TextureMapping* mapping, uint* uvindex, ref float blend, TextureOp* op, ref TextureMapMode mapmode, ref uint flags);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1651, Column 21 in material.h")]
         [NativeApi(EntryPoint = "aiGetMaterialTexture")]
-        public unsafe partial Return GetMaterialTexture([Flow(Silk.NET.Core.Native.FlowDirection.In)] in Material mat, TextureType type, uint index, ref AssimpString path, TextureMapping* mapping, uint* uvindex, ref float blend, ref TextureOp op, TextureMapMode* mapmode, uint* flags);
+        public unsafe partial Return GetMaterialTexture([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Material mat, TextureType type, uint index, ref AssimpString path, TextureMapping* mapping, uint* uvindex, ref float blend, ref TextureOp op, TextureMapMode* mapmode, uint* flags);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1651, Column 21 in material.h")]
         [NativeApi(EntryPoint = "aiGetMaterialTexture")]
-        public unsafe partial Return GetMaterialTexture([Flow(Silk.NET.Core.Native.FlowDirection.In)] in Material mat, TextureType type, uint index, ref AssimpString path, TextureMapping* mapping, uint* uvindex, ref float blend, ref TextureOp op, TextureMapMode* mapmode, ref uint flags);
+        public unsafe partial Return GetMaterialTexture([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Material mat, TextureType type, uint index, ref AssimpString path, TextureMapping* mapping, uint* uvindex, ref float blend, ref TextureOp op, TextureMapMode* mapmode, ref uint flags);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1651, Column 21 in material.h")]
         [NativeApi(EntryPoint = "aiGetMaterialTexture")]
-        public unsafe partial Return GetMaterialTexture([Flow(Silk.NET.Core.Native.FlowDirection.In)] in Material mat, TextureType type, uint index, ref AssimpString path, TextureMapping* mapping, uint* uvindex, ref float blend, ref TextureOp op, ref TextureMapMode mapmode, uint* flags);
+        public unsafe partial Return GetMaterialTexture([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Material mat, TextureType type, uint index, ref AssimpString path, TextureMapping* mapping, uint* uvindex, ref float blend, ref TextureOp op, ref TextureMapMode mapmode, uint* flags);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1651, Column 21 in material.h")]
         [NativeApi(EntryPoint = "aiGetMaterialTexture")]
-        public unsafe partial Return GetMaterialTexture([Flow(Silk.NET.Core.Native.FlowDirection.In)] in Material mat, TextureType type, uint index, ref AssimpString path, TextureMapping* mapping, uint* uvindex, ref float blend, ref TextureOp op, ref TextureMapMode mapmode, ref uint flags);
+        public unsafe partial Return GetMaterialTexture([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Material mat, TextureType type, uint index, ref AssimpString path, TextureMapping* mapping, uint* uvindex, ref float blend, ref TextureOp op, ref TextureMapMode mapmode, ref uint flags);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1651, Column 21 in material.h")]
         [NativeApi(EntryPoint = "aiGetMaterialTexture")]
-        public unsafe partial Return GetMaterialTexture([Flow(Silk.NET.Core.Native.FlowDirection.In)] in Material mat, TextureType type, uint index, ref AssimpString path, TextureMapping* mapping, ref uint uvindex, float* blend, TextureOp* op, TextureMapMode* mapmode, uint* flags);
+        public unsafe partial Return GetMaterialTexture([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Material mat, TextureType type, uint index, ref AssimpString path, TextureMapping* mapping, ref uint uvindex, float* blend, TextureOp* op, TextureMapMode* mapmode, uint* flags);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1651, Column 21 in material.h")]
         [NativeApi(EntryPoint = "aiGetMaterialTexture")]
-        public unsafe partial Return GetMaterialTexture([Flow(Silk.NET.Core.Native.FlowDirection.In)] in Material mat, TextureType type, uint index, ref AssimpString path, TextureMapping* mapping, ref uint uvindex, float* blend, TextureOp* op, TextureMapMode* mapmode, ref uint flags);
+        public unsafe partial Return GetMaterialTexture([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Material mat, TextureType type, uint index, ref AssimpString path, TextureMapping* mapping, ref uint uvindex, float* blend, TextureOp* op, TextureMapMode* mapmode, ref uint flags);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1651, Column 21 in material.h")]
         [NativeApi(EntryPoint = "aiGetMaterialTexture")]
-        public unsafe partial Return GetMaterialTexture([Flow(Silk.NET.Core.Native.FlowDirection.In)] in Material mat, TextureType type, uint index, ref AssimpString path, TextureMapping* mapping, ref uint uvindex, float* blend, TextureOp* op, ref TextureMapMode mapmode, uint* flags);
+        public unsafe partial Return GetMaterialTexture([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Material mat, TextureType type, uint index, ref AssimpString path, TextureMapping* mapping, ref uint uvindex, float* blend, TextureOp* op, ref TextureMapMode mapmode, uint* flags);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1651, Column 21 in material.h")]
         [NativeApi(EntryPoint = "aiGetMaterialTexture")]
-        public unsafe partial Return GetMaterialTexture([Flow(Silk.NET.Core.Native.FlowDirection.In)] in Material mat, TextureType type, uint index, ref AssimpString path, TextureMapping* mapping, ref uint uvindex, float* blend, TextureOp* op, ref TextureMapMode mapmode, ref uint flags);
+        public unsafe partial Return GetMaterialTexture([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Material mat, TextureType type, uint index, ref AssimpString path, TextureMapping* mapping, ref uint uvindex, float* blend, TextureOp* op, ref TextureMapMode mapmode, ref uint flags);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1651, Column 21 in material.h")]
         [NativeApi(EntryPoint = "aiGetMaterialTexture")]
-        public unsafe partial Return GetMaterialTexture([Flow(Silk.NET.Core.Native.FlowDirection.In)] in Material mat, TextureType type, uint index, ref AssimpString path, TextureMapping* mapping, ref uint uvindex, float* blend, ref TextureOp op, TextureMapMode* mapmode, uint* flags);
+        public unsafe partial Return GetMaterialTexture([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Material mat, TextureType type, uint index, ref AssimpString path, TextureMapping* mapping, ref uint uvindex, float* blend, ref TextureOp op, TextureMapMode* mapmode, uint* flags);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1651, Column 21 in material.h")]
         [NativeApi(EntryPoint = "aiGetMaterialTexture")]
-        public unsafe partial Return GetMaterialTexture([Flow(Silk.NET.Core.Native.FlowDirection.In)] in Material mat, TextureType type, uint index, ref AssimpString path, TextureMapping* mapping, ref uint uvindex, float* blend, ref TextureOp op, TextureMapMode* mapmode, ref uint flags);
+        public unsafe partial Return GetMaterialTexture([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Material mat, TextureType type, uint index, ref AssimpString path, TextureMapping* mapping, ref uint uvindex, float* blend, ref TextureOp op, TextureMapMode* mapmode, ref uint flags);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1651, Column 21 in material.h")]
         [NativeApi(EntryPoint = "aiGetMaterialTexture")]
-        public unsafe partial Return GetMaterialTexture([Flow(Silk.NET.Core.Native.FlowDirection.In)] in Material mat, TextureType type, uint index, ref AssimpString path, TextureMapping* mapping, ref uint uvindex, float* blend, ref TextureOp op, ref TextureMapMode mapmode, uint* flags);
+        public unsafe partial Return GetMaterialTexture([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Material mat, TextureType type, uint index, ref AssimpString path, TextureMapping* mapping, ref uint uvindex, float* blend, ref TextureOp op, ref TextureMapMode mapmode, uint* flags);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1651, Column 21 in material.h")]
         [NativeApi(EntryPoint = "aiGetMaterialTexture")]
-        public unsafe partial Return GetMaterialTexture([Flow(Silk.NET.Core.Native.FlowDirection.In)] in Material mat, TextureType type, uint index, ref AssimpString path, TextureMapping* mapping, ref uint uvindex, float* blend, ref TextureOp op, ref TextureMapMode mapmode, ref uint flags);
+        public unsafe partial Return GetMaterialTexture([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Material mat, TextureType type, uint index, ref AssimpString path, TextureMapping* mapping, ref uint uvindex, float* blend, ref TextureOp op, ref TextureMapMode mapmode, ref uint flags);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1651, Column 21 in material.h")]
         [NativeApi(EntryPoint = "aiGetMaterialTexture")]
-        public unsafe partial Return GetMaterialTexture([Flow(Silk.NET.Core.Native.FlowDirection.In)] in Material mat, TextureType type, uint index, ref AssimpString path, TextureMapping* mapping, ref uint uvindex, ref float blend, TextureOp* op, TextureMapMode* mapmode, uint* flags);
+        public unsafe partial Return GetMaterialTexture([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Material mat, TextureType type, uint index, ref AssimpString path, TextureMapping* mapping, ref uint uvindex, ref float blend, TextureOp* op, TextureMapMode* mapmode, uint* flags);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1651, Column 21 in material.h")]
         [NativeApi(EntryPoint = "aiGetMaterialTexture")]
-        public unsafe partial Return GetMaterialTexture([Flow(Silk.NET.Core.Native.FlowDirection.In)] in Material mat, TextureType type, uint index, ref AssimpString path, TextureMapping* mapping, ref uint uvindex, ref float blend, TextureOp* op, TextureMapMode* mapmode, ref uint flags);
+        public unsafe partial Return GetMaterialTexture([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Material mat, TextureType type, uint index, ref AssimpString path, TextureMapping* mapping, ref uint uvindex, ref float blend, TextureOp* op, TextureMapMode* mapmode, ref uint flags);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1651, Column 21 in material.h")]
         [NativeApi(EntryPoint = "aiGetMaterialTexture")]
-        public unsafe partial Return GetMaterialTexture([Flow(Silk.NET.Core.Native.FlowDirection.In)] in Material mat, TextureType type, uint index, ref AssimpString path, TextureMapping* mapping, ref uint uvindex, ref float blend, TextureOp* op, ref TextureMapMode mapmode, uint* flags);
+        public unsafe partial Return GetMaterialTexture([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Material mat, TextureType type, uint index, ref AssimpString path, TextureMapping* mapping, ref uint uvindex, ref float blend, TextureOp* op, ref TextureMapMode mapmode, uint* flags);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1651, Column 21 in material.h")]
         [NativeApi(EntryPoint = "aiGetMaterialTexture")]
-        public unsafe partial Return GetMaterialTexture([Flow(Silk.NET.Core.Native.FlowDirection.In)] in Material mat, TextureType type, uint index, ref AssimpString path, TextureMapping* mapping, ref uint uvindex, ref float blend, TextureOp* op, ref TextureMapMode mapmode, ref uint flags);
+        public unsafe partial Return GetMaterialTexture([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Material mat, TextureType type, uint index, ref AssimpString path, TextureMapping* mapping, ref uint uvindex, ref float blend, TextureOp* op, ref TextureMapMode mapmode, ref uint flags);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1651, Column 21 in material.h")]
         [NativeApi(EntryPoint = "aiGetMaterialTexture")]
-        public unsafe partial Return GetMaterialTexture([Flow(Silk.NET.Core.Native.FlowDirection.In)] in Material mat, TextureType type, uint index, ref AssimpString path, TextureMapping* mapping, ref uint uvindex, ref float blend, ref TextureOp op, TextureMapMode* mapmode, uint* flags);
+        public unsafe partial Return GetMaterialTexture([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Material mat, TextureType type, uint index, ref AssimpString path, TextureMapping* mapping, ref uint uvindex, ref float blend, ref TextureOp op, TextureMapMode* mapmode, uint* flags);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1651, Column 21 in material.h")]
         [NativeApi(EntryPoint = "aiGetMaterialTexture")]
-        public unsafe partial Return GetMaterialTexture([Flow(Silk.NET.Core.Native.FlowDirection.In)] in Material mat, TextureType type, uint index, ref AssimpString path, TextureMapping* mapping, ref uint uvindex, ref float blend, ref TextureOp op, TextureMapMode* mapmode, ref uint flags);
+        public unsafe partial Return GetMaterialTexture([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Material mat, TextureType type, uint index, ref AssimpString path, TextureMapping* mapping, ref uint uvindex, ref float blend, ref TextureOp op, TextureMapMode* mapmode, ref uint flags);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1651, Column 21 in material.h")]
         [NativeApi(EntryPoint = "aiGetMaterialTexture")]
-        public unsafe partial Return GetMaterialTexture([Flow(Silk.NET.Core.Native.FlowDirection.In)] in Material mat, TextureType type, uint index, ref AssimpString path, TextureMapping* mapping, ref uint uvindex, ref float blend, ref TextureOp op, ref TextureMapMode mapmode, uint* flags);
+        public unsafe partial Return GetMaterialTexture([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Material mat, TextureType type, uint index, ref AssimpString path, TextureMapping* mapping, ref uint uvindex, ref float blend, ref TextureOp op, ref TextureMapMode mapmode, uint* flags);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1651, Column 21 in material.h")]
         [NativeApi(EntryPoint = "aiGetMaterialTexture")]
-        public unsafe partial Return GetMaterialTexture([Flow(Silk.NET.Core.Native.FlowDirection.In)] in Material mat, TextureType type, uint index, ref AssimpString path, TextureMapping* mapping, ref uint uvindex, ref float blend, ref TextureOp op, ref TextureMapMode mapmode, ref uint flags);
+        public unsafe partial Return GetMaterialTexture([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Material mat, TextureType type, uint index, ref AssimpString path, TextureMapping* mapping, ref uint uvindex, ref float blend, ref TextureOp op, ref TextureMapMode mapmode, ref uint flags);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1651, Column 21 in material.h")]
         [NativeApi(EntryPoint = "aiGetMaterialTexture")]
-        public unsafe partial Return GetMaterialTexture([Flow(Silk.NET.Core.Native.FlowDirection.In)] in Material mat, TextureType type, uint index, ref AssimpString path, ref TextureMapping mapping, uint* uvindex, float* blend, TextureOp* op, TextureMapMode* mapmode, uint* flags);
+        public unsafe partial Return GetMaterialTexture([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Material mat, TextureType type, uint index, ref AssimpString path, ref TextureMapping mapping, uint* uvindex, float* blend, TextureOp* op, TextureMapMode* mapmode, uint* flags);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1651, Column 21 in material.h")]
         [NativeApi(EntryPoint = "aiGetMaterialTexture")]
-        public unsafe partial Return GetMaterialTexture([Flow(Silk.NET.Core.Native.FlowDirection.In)] in Material mat, TextureType type, uint index, ref AssimpString path, ref TextureMapping mapping, uint* uvindex, float* blend, TextureOp* op, TextureMapMode* mapmode, ref uint flags);
+        public unsafe partial Return GetMaterialTexture([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Material mat, TextureType type, uint index, ref AssimpString path, ref TextureMapping mapping, uint* uvindex, float* blend, TextureOp* op, TextureMapMode* mapmode, ref uint flags);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1651, Column 21 in material.h")]
         [NativeApi(EntryPoint = "aiGetMaterialTexture")]
-        public unsafe partial Return GetMaterialTexture([Flow(Silk.NET.Core.Native.FlowDirection.In)] in Material mat, TextureType type, uint index, ref AssimpString path, ref TextureMapping mapping, uint* uvindex, float* blend, TextureOp* op, ref TextureMapMode mapmode, uint* flags);
+        public unsafe partial Return GetMaterialTexture([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Material mat, TextureType type, uint index, ref AssimpString path, ref TextureMapping mapping, uint* uvindex, float* blend, TextureOp* op, ref TextureMapMode mapmode, uint* flags);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1651, Column 21 in material.h")]
         [NativeApi(EntryPoint = "aiGetMaterialTexture")]
-        public unsafe partial Return GetMaterialTexture([Flow(Silk.NET.Core.Native.FlowDirection.In)] in Material mat, TextureType type, uint index, ref AssimpString path, ref TextureMapping mapping, uint* uvindex, float* blend, TextureOp* op, ref TextureMapMode mapmode, ref uint flags);
+        public unsafe partial Return GetMaterialTexture([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Material mat, TextureType type, uint index, ref AssimpString path, ref TextureMapping mapping, uint* uvindex, float* blend, TextureOp* op, ref TextureMapMode mapmode, ref uint flags);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1651, Column 21 in material.h")]
         [NativeApi(EntryPoint = "aiGetMaterialTexture")]
-        public unsafe partial Return GetMaterialTexture([Flow(Silk.NET.Core.Native.FlowDirection.In)] in Material mat, TextureType type, uint index, ref AssimpString path, ref TextureMapping mapping, uint* uvindex, float* blend, ref TextureOp op, TextureMapMode* mapmode, uint* flags);
+        public unsafe partial Return GetMaterialTexture([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Material mat, TextureType type, uint index, ref AssimpString path, ref TextureMapping mapping, uint* uvindex, float* blend, ref TextureOp op, TextureMapMode* mapmode, uint* flags);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1651, Column 21 in material.h")]
         [NativeApi(EntryPoint = "aiGetMaterialTexture")]
-        public unsafe partial Return GetMaterialTexture([Flow(Silk.NET.Core.Native.FlowDirection.In)] in Material mat, TextureType type, uint index, ref AssimpString path, ref TextureMapping mapping, uint* uvindex, float* blend, ref TextureOp op, TextureMapMode* mapmode, ref uint flags);
+        public unsafe partial Return GetMaterialTexture([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Material mat, TextureType type, uint index, ref AssimpString path, ref TextureMapping mapping, uint* uvindex, float* blend, ref TextureOp op, TextureMapMode* mapmode, ref uint flags);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1651, Column 21 in material.h")]
         [NativeApi(EntryPoint = "aiGetMaterialTexture")]
-        public unsafe partial Return GetMaterialTexture([Flow(Silk.NET.Core.Native.FlowDirection.In)] in Material mat, TextureType type, uint index, ref AssimpString path, ref TextureMapping mapping, uint* uvindex, float* blend, ref TextureOp op, ref TextureMapMode mapmode, uint* flags);
+        public unsafe partial Return GetMaterialTexture([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Material mat, TextureType type, uint index, ref AssimpString path, ref TextureMapping mapping, uint* uvindex, float* blend, ref TextureOp op, ref TextureMapMode mapmode, uint* flags);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1651, Column 21 in material.h")]
         [NativeApi(EntryPoint = "aiGetMaterialTexture")]
-        public unsafe partial Return GetMaterialTexture([Flow(Silk.NET.Core.Native.FlowDirection.In)] in Material mat, TextureType type, uint index, ref AssimpString path, ref TextureMapping mapping, uint* uvindex, float* blend, ref TextureOp op, ref TextureMapMode mapmode, ref uint flags);
+        public unsafe partial Return GetMaterialTexture([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Material mat, TextureType type, uint index, ref AssimpString path, ref TextureMapping mapping, uint* uvindex, float* blend, ref TextureOp op, ref TextureMapMode mapmode, ref uint flags);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1651, Column 21 in material.h")]
         [NativeApi(EntryPoint = "aiGetMaterialTexture")]
-        public unsafe partial Return GetMaterialTexture([Flow(Silk.NET.Core.Native.FlowDirection.In)] in Material mat, TextureType type, uint index, ref AssimpString path, ref TextureMapping mapping, uint* uvindex, ref float blend, TextureOp* op, TextureMapMode* mapmode, uint* flags);
+        public unsafe partial Return GetMaterialTexture([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Material mat, TextureType type, uint index, ref AssimpString path, ref TextureMapping mapping, uint* uvindex, ref float blend, TextureOp* op, TextureMapMode* mapmode, uint* flags);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1651, Column 21 in material.h")]
         [NativeApi(EntryPoint = "aiGetMaterialTexture")]
-        public unsafe partial Return GetMaterialTexture([Flow(Silk.NET.Core.Native.FlowDirection.In)] in Material mat, TextureType type, uint index, ref AssimpString path, ref TextureMapping mapping, uint* uvindex, ref float blend, TextureOp* op, TextureMapMode* mapmode, ref uint flags);
+        public unsafe partial Return GetMaterialTexture([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Material mat, TextureType type, uint index, ref AssimpString path, ref TextureMapping mapping, uint* uvindex, ref float blend, TextureOp* op, TextureMapMode* mapmode, ref uint flags);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1651, Column 21 in material.h")]
         [NativeApi(EntryPoint = "aiGetMaterialTexture")]
-        public unsafe partial Return GetMaterialTexture([Flow(Silk.NET.Core.Native.FlowDirection.In)] in Material mat, TextureType type, uint index, ref AssimpString path, ref TextureMapping mapping, uint* uvindex, ref float blend, TextureOp* op, ref TextureMapMode mapmode, uint* flags);
+        public unsafe partial Return GetMaterialTexture([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Material mat, TextureType type, uint index, ref AssimpString path, ref TextureMapping mapping, uint* uvindex, ref float blend, TextureOp* op, ref TextureMapMode mapmode, uint* flags);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1651, Column 21 in material.h")]
         [NativeApi(EntryPoint = "aiGetMaterialTexture")]
-        public unsafe partial Return GetMaterialTexture([Flow(Silk.NET.Core.Native.FlowDirection.In)] in Material mat, TextureType type, uint index, ref AssimpString path, ref TextureMapping mapping, uint* uvindex, ref float blend, TextureOp* op, ref TextureMapMode mapmode, ref uint flags);
+        public unsafe partial Return GetMaterialTexture([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Material mat, TextureType type, uint index, ref AssimpString path, ref TextureMapping mapping, uint* uvindex, ref float blend, TextureOp* op, ref TextureMapMode mapmode, ref uint flags);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1651, Column 21 in material.h")]
         [NativeApi(EntryPoint = "aiGetMaterialTexture")]
-        public unsafe partial Return GetMaterialTexture([Flow(Silk.NET.Core.Native.FlowDirection.In)] in Material mat, TextureType type, uint index, ref AssimpString path, ref TextureMapping mapping, uint* uvindex, ref float blend, ref TextureOp op, TextureMapMode* mapmode, uint* flags);
+        public unsafe partial Return GetMaterialTexture([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Material mat, TextureType type, uint index, ref AssimpString path, ref TextureMapping mapping, uint* uvindex, ref float blend, ref TextureOp op, TextureMapMode* mapmode, uint* flags);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1651, Column 21 in material.h")]
         [NativeApi(EntryPoint = "aiGetMaterialTexture")]
-        public unsafe partial Return GetMaterialTexture([Flow(Silk.NET.Core.Native.FlowDirection.In)] in Material mat, TextureType type, uint index, ref AssimpString path, ref TextureMapping mapping, uint* uvindex, ref float blend, ref TextureOp op, TextureMapMode* mapmode, ref uint flags);
+        public unsafe partial Return GetMaterialTexture([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Material mat, TextureType type, uint index, ref AssimpString path, ref TextureMapping mapping, uint* uvindex, ref float blend, ref TextureOp op, TextureMapMode* mapmode, ref uint flags);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1651, Column 21 in material.h")]
         [NativeApi(EntryPoint = "aiGetMaterialTexture")]
-        public unsafe partial Return GetMaterialTexture([Flow(Silk.NET.Core.Native.FlowDirection.In)] in Material mat, TextureType type, uint index, ref AssimpString path, ref TextureMapping mapping, uint* uvindex, ref float blend, ref TextureOp op, ref TextureMapMode mapmode, uint* flags);
+        public unsafe partial Return GetMaterialTexture([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Material mat, TextureType type, uint index, ref AssimpString path, ref TextureMapping mapping, uint* uvindex, ref float blend, ref TextureOp op, ref TextureMapMode mapmode, uint* flags);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1651, Column 21 in material.h")]
         [NativeApi(EntryPoint = "aiGetMaterialTexture")]
-        public unsafe partial Return GetMaterialTexture([Flow(Silk.NET.Core.Native.FlowDirection.In)] in Material mat, TextureType type, uint index, ref AssimpString path, ref TextureMapping mapping, uint* uvindex, ref float blend, ref TextureOp op, ref TextureMapMode mapmode, ref uint flags);
+        public unsafe partial Return GetMaterialTexture([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Material mat, TextureType type, uint index, ref AssimpString path, ref TextureMapping mapping, uint* uvindex, ref float blend, ref TextureOp op, ref TextureMapMode mapmode, ref uint flags);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1651, Column 21 in material.h")]
         [NativeApi(EntryPoint = "aiGetMaterialTexture")]
-        public unsafe partial Return GetMaterialTexture([Flow(Silk.NET.Core.Native.FlowDirection.In)] in Material mat, TextureType type, uint index, ref AssimpString path, ref TextureMapping mapping, ref uint uvindex, float* blend, TextureOp* op, TextureMapMode* mapmode, uint* flags);
+        public unsafe partial Return GetMaterialTexture([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Material mat, TextureType type, uint index, ref AssimpString path, ref TextureMapping mapping, ref uint uvindex, float* blend, TextureOp* op, TextureMapMode* mapmode, uint* flags);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1651, Column 21 in material.h")]
         [NativeApi(EntryPoint = "aiGetMaterialTexture")]
-        public unsafe partial Return GetMaterialTexture([Flow(Silk.NET.Core.Native.FlowDirection.In)] in Material mat, TextureType type, uint index, ref AssimpString path, ref TextureMapping mapping, ref uint uvindex, float* blend, TextureOp* op, TextureMapMode* mapmode, ref uint flags);
+        public unsafe partial Return GetMaterialTexture([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Material mat, TextureType type, uint index, ref AssimpString path, ref TextureMapping mapping, ref uint uvindex, float* blend, TextureOp* op, TextureMapMode* mapmode, ref uint flags);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1651, Column 21 in material.h")]
         [NativeApi(EntryPoint = "aiGetMaterialTexture")]
-        public unsafe partial Return GetMaterialTexture([Flow(Silk.NET.Core.Native.FlowDirection.In)] in Material mat, TextureType type, uint index, ref AssimpString path, ref TextureMapping mapping, ref uint uvindex, float* blend, TextureOp* op, ref TextureMapMode mapmode, uint* flags);
+        public unsafe partial Return GetMaterialTexture([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Material mat, TextureType type, uint index, ref AssimpString path, ref TextureMapping mapping, ref uint uvindex, float* blend, TextureOp* op, ref TextureMapMode mapmode, uint* flags);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1651, Column 21 in material.h")]
         [NativeApi(EntryPoint = "aiGetMaterialTexture")]
-        public unsafe partial Return GetMaterialTexture([Flow(Silk.NET.Core.Native.FlowDirection.In)] in Material mat, TextureType type, uint index, ref AssimpString path, ref TextureMapping mapping, ref uint uvindex, float* blend, TextureOp* op, ref TextureMapMode mapmode, ref uint flags);
+        public unsafe partial Return GetMaterialTexture([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Material mat, TextureType type, uint index, ref AssimpString path, ref TextureMapping mapping, ref uint uvindex, float* blend, TextureOp* op, ref TextureMapMode mapmode, ref uint flags);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1651, Column 21 in material.h")]
         [NativeApi(EntryPoint = "aiGetMaterialTexture")]
-        public unsafe partial Return GetMaterialTexture([Flow(Silk.NET.Core.Native.FlowDirection.In)] in Material mat, TextureType type, uint index, ref AssimpString path, ref TextureMapping mapping, ref uint uvindex, float* blend, ref TextureOp op, TextureMapMode* mapmode, uint* flags);
+        public unsafe partial Return GetMaterialTexture([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Material mat, TextureType type, uint index, ref AssimpString path, ref TextureMapping mapping, ref uint uvindex, float* blend, ref TextureOp op, TextureMapMode* mapmode, uint* flags);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1651, Column 21 in material.h")]
         [NativeApi(EntryPoint = "aiGetMaterialTexture")]
-        public unsafe partial Return GetMaterialTexture([Flow(Silk.NET.Core.Native.FlowDirection.In)] in Material mat, TextureType type, uint index, ref AssimpString path, ref TextureMapping mapping, ref uint uvindex, float* blend, ref TextureOp op, TextureMapMode* mapmode, ref uint flags);
+        public unsafe partial Return GetMaterialTexture([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Material mat, TextureType type, uint index, ref AssimpString path, ref TextureMapping mapping, ref uint uvindex, float* blend, ref TextureOp op, TextureMapMode* mapmode, ref uint flags);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1651, Column 21 in material.h")]
         [NativeApi(EntryPoint = "aiGetMaterialTexture")]
-        public unsafe partial Return GetMaterialTexture([Flow(Silk.NET.Core.Native.FlowDirection.In)] in Material mat, TextureType type, uint index, ref AssimpString path, ref TextureMapping mapping, ref uint uvindex, float* blend, ref TextureOp op, ref TextureMapMode mapmode, uint* flags);
+        public unsafe partial Return GetMaterialTexture([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Material mat, TextureType type, uint index, ref AssimpString path, ref TextureMapping mapping, ref uint uvindex, float* blend, ref TextureOp op, ref TextureMapMode mapmode, uint* flags);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1651, Column 21 in material.h")]
         [NativeApi(EntryPoint = "aiGetMaterialTexture")]
-        public unsafe partial Return GetMaterialTexture([Flow(Silk.NET.Core.Native.FlowDirection.In)] in Material mat, TextureType type, uint index, ref AssimpString path, ref TextureMapping mapping, ref uint uvindex, float* blend, ref TextureOp op, ref TextureMapMode mapmode, ref uint flags);
+        public unsafe partial Return GetMaterialTexture([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Material mat, TextureType type, uint index, ref AssimpString path, ref TextureMapping mapping, ref uint uvindex, float* blend, ref TextureOp op, ref TextureMapMode mapmode, ref uint flags);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1651, Column 21 in material.h")]
         [NativeApi(EntryPoint = "aiGetMaterialTexture")]
-        public unsafe partial Return GetMaterialTexture([Flow(Silk.NET.Core.Native.FlowDirection.In)] in Material mat, TextureType type, uint index, ref AssimpString path, ref TextureMapping mapping, ref uint uvindex, ref float blend, TextureOp* op, TextureMapMode* mapmode, uint* flags);
+        public unsafe partial Return GetMaterialTexture([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Material mat, TextureType type, uint index, ref AssimpString path, ref TextureMapping mapping, ref uint uvindex, ref float blend, TextureOp* op, TextureMapMode* mapmode, uint* flags);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1651, Column 21 in material.h")]
         [NativeApi(EntryPoint = "aiGetMaterialTexture")]
-        public unsafe partial Return GetMaterialTexture([Flow(Silk.NET.Core.Native.FlowDirection.In)] in Material mat, TextureType type, uint index, ref AssimpString path, ref TextureMapping mapping, ref uint uvindex, ref float blend, TextureOp* op, TextureMapMode* mapmode, ref uint flags);
+        public unsafe partial Return GetMaterialTexture([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Material mat, TextureType type, uint index, ref AssimpString path, ref TextureMapping mapping, ref uint uvindex, ref float blend, TextureOp* op, TextureMapMode* mapmode, ref uint flags);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1651, Column 21 in material.h")]
         [NativeApi(EntryPoint = "aiGetMaterialTexture")]
-        public unsafe partial Return GetMaterialTexture([Flow(Silk.NET.Core.Native.FlowDirection.In)] in Material mat, TextureType type, uint index, ref AssimpString path, ref TextureMapping mapping, ref uint uvindex, ref float blend, TextureOp* op, ref TextureMapMode mapmode, uint* flags);
+        public unsafe partial Return GetMaterialTexture([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Material mat, TextureType type, uint index, ref AssimpString path, ref TextureMapping mapping, ref uint uvindex, ref float blend, TextureOp* op, ref TextureMapMode mapmode, uint* flags);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1651, Column 21 in material.h")]
         [NativeApi(EntryPoint = "aiGetMaterialTexture")]
-        public unsafe partial Return GetMaterialTexture([Flow(Silk.NET.Core.Native.FlowDirection.In)] in Material mat, TextureType type, uint index, ref AssimpString path, ref TextureMapping mapping, ref uint uvindex, ref float blend, TextureOp* op, ref TextureMapMode mapmode, ref uint flags);
+        public unsafe partial Return GetMaterialTexture([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Material mat, TextureType type, uint index, ref AssimpString path, ref TextureMapping mapping, ref uint uvindex, ref float blend, TextureOp* op, ref TextureMapMode mapmode, ref uint flags);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1651, Column 21 in material.h")]
         [NativeApi(EntryPoint = "aiGetMaterialTexture")]
-        public unsafe partial Return GetMaterialTexture([Flow(Silk.NET.Core.Native.FlowDirection.In)] in Material mat, TextureType type, uint index, ref AssimpString path, ref TextureMapping mapping, ref uint uvindex, ref float blend, ref TextureOp op, TextureMapMode* mapmode, uint* flags);
+        public unsafe partial Return GetMaterialTexture([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Material mat, TextureType type, uint index, ref AssimpString path, ref TextureMapping mapping, ref uint uvindex, ref float blend, ref TextureOp op, TextureMapMode* mapmode, uint* flags);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1651, Column 21 in material.h")]
         [NativeApi(EntryPoint = "aiGetMaterialTexture")]
-        public unsafe partial Return GetMaterialTexture([Flow(Silk.NET.Core.Native.FlowDirection.In)] in Material mat, TextureType type, uint index, ref AssimpString path, ref TextureMapping mapping, ref uint uvindex, ref float blend, ref TextureOp op, TextureMapMode* mapmode, ref uint flags);
+        public unsafe partial Return GetMaterialTexture([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Material mat, TextureType type, uint index, ref AssimpString path, ref TextureMapping mapping, ref uint uvindex, ref float blend, ref TextureOp op, TextureMapMode* mapmode, ref uint flags);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1651, Column 21 in material.h")]
         [NativeApi(EntryPoint = "aiGetMaterialTexture")]
-        public unsafe partial Return GetMaterialTexture([Flow(Silk.NET.Core.Native.FlowDirection.In)] in Material mat, TextureType type, uint index, ref AssimpString path, ref TextureMapping mapping, ref uint uvindex, ref float blend, ref TextureOp op, ref TextureMapMode mapmode, uint* flags);
+        public unsafe partial Return GetMaterialTexture([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Material mat, TextureType type, uint index, ref AssimpString path, ref TextureMapping mapping, ref uint uvindex, ref float blend, ref TextureOp op, ref TextureMapMode mapmode, uint* flags);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1651, Column 21 in material.h")]
         [NativeApi(EntryPoint = "aiGetMaterialTexture")]
-        public partial Return GetMaterialTexture([Flow(Silk.NET.Core.Native.FlowDirection.In)] in Material mat, TextureType type, uint index, ref AssimpString path, ref TextureMapping mapping, ref uint uvindex, ref float blend, ref TextureOp op, ref TextureMapMode mapmode, ref uint flags);
+        public partial Return GetMaterialTexture([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Material mat, TextureType type, uint index, ref AssimpString path, ref TextureMapping mapping, ref uint uvindex, ref float blend, ref TextureOp op, ref TextureMapMode mapmode, ref uint flags);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 61, Column 25 in version.h")]

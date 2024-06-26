@@ -36,62 +36,65 @@ partial class Build {
             (
                 () =>
                 {
-                    var @out = GLFWPath / "build";
-                    var prepare = "cmake -S. -B build -D BUILD_SHARED_LIBS=ON";
-                    var build = $"cmake --build build --config Release{JobsArg}";
-                    EnsureCleanDirectory(@out);
+                    var buildDir = GLFWPath / "build";
                     var runtimes = RootDirectory / "src" / "Native" / "Silk.NET.GLFW.Native" / "runtimes";
+
+                    var prepare = "cmake .. -DCMAKE_BUILD_TYPE=Release -DBUILD_SHARED_LIBS=ON -DGLFW_BUILD_EXAMPLES=OFF -DGLFW_BUILD_TESTS=OFF -DGLFW_BUILD_DOCS=OFF";
+                    var build = $"cmake --build . --config Release{JobsArg}";
+
                     if (OperatingSystem.IsWindows())
                     {
-                        InheritedShell($"{prepare} -A X64", GLFWPath)
-                            .AssertZeroExitCode();
-                        InheritedShell(build, GLFWPath)
-                            .AssertZeroExitCode();
-                        
-                        CopyAll(@out.GlobFiles("src/Release/glfw3.dll"), runtimes / "win-x64" / "native");
+                        foreach (var (platform, rid) in new[]
+                        {
+                            ("Win32", "win-x86"),
+                            ("x64", "win-x64"),
+                            ("ARM64", "win-arm64"),
+                        })
+                        {
+                            EnsureCleanDirectory(buildDir);
 
-                        EnsureCleanDirectory(@out);
+                            InheritedShell($"{prepare} -A {platform}", buildDir).AssertZeroExitCode();
+                            InheritedShell(build, buildDir).AssertZeroExitCode();
 
-                        InheritedShell($"{prepare} -A Win32", GLFWPath)
-                            .AssertZeroExitCode();
-                        InheritedShell(build, GLFWPath)
-                            .AssertZeroExitCode();
-
-                        CopyAll(@out.GlobFiles("src/Release/glfw3.dll"), runtimes / "win-x86" / "native");
-                        
-                        EnsureCleanDirectory(@out);
-                        
-                        InheritedShell($"{prepare} -A arm64", GLFWPath)
-                            .AssertZeroExitCode();
-                        InheritedShell(build, GLFWPath)
-                            .AssertZeroExitCode();
-
-                        CopyAll(@out.GlobFiles("src/Release/glfw3.dll"), runtimes / "win-arm64" / "native");
+                            CopyAll((buildDir / "src" / "Release").GlobFiles("glfw3.dll"), runtimes / rid / "native");
+                        }
                     }
                     else if (OperatingSystem.IsLinux())
                     {
-                        InheritedShell($"{prepare} -DCMAKE_SYSTEM_PROCESSOR=x86_64", GLFWPath)
-                            .AssertZeroExitCode();
-                        InheritedShell(build, GLFWPath)
-                            .AssertZeroExitCode();
-                        CopyAll(@out.GlobFiles("src/libglfw.so"), runtimes / "linux-x64" / "native");
+                        foreach (var (triple, rid) in new[]
+                        {
+                            ("x86_64-linux-gnu", "linux-x64"),
+                            ("arm-linux-gnueabihf", "linux-arm"),
+                            ("aarch64-linux-gnu", "linux-arm64"),
+                        })
+                        {
+                            EnsureCleanDirectory(buildDir);
+
+                            InheritedShell($"{prepare} {GetCMakeToolchainFlag(triple)}", buildDir).AssertZeroExitCode();
+                            InheritedShell(build, buildDir).AssertZeroExitCode();
+
+                            InheritedShell($"{triple}-strip --strip-unneeded src/libglfw.so", buildDir).AssertZeroExitCode();
+
+                            CopyFile((buildDir / "src").GlobFiles("libglfw.so.3.*").First(), runtimes / rid / "native" / "libglfw.so.3", FileExistsPolicy.Overwrite);
+                        }
                     }
                     else if (OperatingSystem.IsMacOS())
                     {
-                        InheritedShell($"{prepare} -DCMAKE_OSX_ARCHITECTURES=x86_64", GLFWPath)
-                            .AssertZeroExitCode();
-                        InheritedShell(build, GLFWPath)
-                            .AssertZeroExitCode();
-                        CopyAll(@out.GlobFiles("src/libglfw.3.dylib"), runtimes / "osx-x64" / "native");
+                        foreach (var (arch, rid) in new[]
+                        {
+                            ("x86_64", "osx-x64"),
+                            ("arm64", "osx-arm64"),
+                        })
+                        {
+                            EnsureCleanDirectory(buildDir);
 
-                        EnsureCleanDirectory(@out);
+                            InheritedShell($"{prepare} -DCMAKE_OSX_ARCHITECTURES={arch}", buildDir).AssertZeroExitCode();
+                            InheritedShell(build, buildDir).AssertZeroExitCode();
 
-                        InheritedShell($"{prepare} -DCMAKE_OSX_ARCHITECTURES=arm64", GLFWPath)
-                            .AssertZeroExitCode();
-                        InheritedShell(build, GLFWPath)
-                            .AssertZeroExitCode();
+                            InheritedShell($"strip -Sx src/libglfw.3.dylib", buildDir).AssertZeroExitCode();
 
-                        CopyAll(@out.GlobFiles("src/libglfw.3.dylib"), runtimes / "osx-arm64" / "native");
+                            CopyAll((buildDir / "src").GlobFiles("libglfw.3.dylib"), runtimes / rid / "native");
+                        }
                     }
 
                     PrUpdatedNativeBinary("GLFW");

@@ -121,6 +121,7 @@ namespace Silk.NET.Windowing.Sdl
                 : _extendedOptionsCache.WindowState;
             set
             {
+                _swapIntervalChanged = true;
                 _extendedOptionsCache.WindowState = value;
                 if (!IsInitialized)
                 {
@@ -269,6 +270,7 @@ namespace Silk.NET.Windowing.Sdl
             }
             set
             {
+                _swapIntervalChanged = true;
                 if (!IsInitialized)
                 {
                     throw new InvalidOperationException("Window is not initialized.");
@@ -430,6 +432,7 @@ namespace Silk.NET.Windowing.Sdl
 
         protected override void CoreInitialize(ViewOptions opts)
         {
+            _swapIntervalChanged = true;
             Sdl.Setenv("SDL_VIDEO_X11_WMCLASS", WindowClass, 1);
 
             WindowFlags flags = 0;
@@ -451,8 +454,8 @@ namespace Silk.NET.Windowing.Sdl
             };
             CoreInitialize
             (
-                opts, flags, InitialMonitor?.Bounds.Origin.X + Position.X,
-                InitialMonitor?.Bounds.Origin.Y + Position.Y, Size.X, Size.Y, Title, SharedContext
+                opts, flags, (InitialMonitor?.Bounds.Origin.X ?? 0) + _extendedOptionsCache.Position.X,
+                (InitialMonitor?.Bounds.Origin.Y ?? 0) + _extendedOptionsCache.Position.Y, Size.X, Size.Y, Title, SharedContext
             );
         }
     }

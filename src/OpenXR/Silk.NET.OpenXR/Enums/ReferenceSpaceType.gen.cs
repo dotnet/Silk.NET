@@ -26,5 +26,7 @@ namespace Silk.NET.OpenXR
         LocalizationMapML = 1000139000,
         [NativeName("Name", "XR_REFERENCE_SPACE_TYPE_LOCAL_FLOOR_EXT")]
         LocalFloorExt = 1000426000,
+        [NativeName("Name", "XR_REFERENCE_SPACE_TYPE_LOCAL_FLOOR")]
+        LocalFloor = 1000426000,
     }
 }
