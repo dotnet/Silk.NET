@@ -157,9 +157,6 @@ namespace Silk.NET.SilkTouch.Mods
             /// </summary>
             private string _currentScope = string.Empty;
 
-            //private bool _isPointerType;
-            //private bool _derefPtr;
-
             private string GetNewName(string comName)
             {
                 return comName.Substring(1);
