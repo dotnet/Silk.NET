@@ -152,11 +152,6 @@ namespace Silk.NET.SilkTouch.Mods
         class Rewriter(List<(string, bool)> ComTypes)
             : CSharpSyntaxRewriter
         {
-            /// <summary>
-            /// The current scope i.e. fully qualified type name.
-            /// </summary>
-            private string _currentScope = string.Empty;
-
             private string GetNewName(string comName)
             {
                 return comName.Substring(1);
