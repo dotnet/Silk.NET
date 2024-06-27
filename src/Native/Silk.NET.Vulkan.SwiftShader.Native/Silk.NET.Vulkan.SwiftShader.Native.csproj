@@ -1,9 +1,11 @@
 <Project Sdk="Microsoft.NET.Sdk">
+
   <PropertyGroup>
-    <SilkSourceLinkExempt>true</SilkSourceLinkExempt>
     <SilkGitDirForVersion>$(MSBuildThisFileDirectory)..\..\..\build\submodules\SwiftShader</SilkGitDirForVersion>
   </PropertyGroup>
+
   <Import Project="..\..\..\build\props\common.props" />
+
   <PropertyGroup>
     <TargetFrameworks>netstandard2.0;net4.6.1</TargetFrameworks>
     <Authors>.NET Foundation and Contributors</Authors>
@@ -12,19 +14,7 @@
     <PackageProjectUrl>https://github.com/dotnet/Silk.NET</PackageProjectUrl>
     <Description>Multi-platform native library for SwiftShader.</Description>
     <RepositoryType>git</RepositoryType>
-    <RepositoryUrl>https://swiftshader.googlesource.com/SwiftShader/</RepositoryUrl>
-    <IncludeBuildOutput>false</IncludeBuildOutput>
-    <IncludeContentInPack>true</IncludeContentInPack>
+    <RepositoryUrl>https://github.com/google/swiftshader</RepositoryUrl>
   </PropertyGroup>
-  <ItemGroup>
-    <Content Include="build\net461\$(PackageId).targets" PackagePath="build\net461\$(PackageId).targets" />
-    <Content Include="runtimes\linux-x64\native\libvk_swiftshader.so" PackagePath="runtimes\linux-x64\native\libvk_swiftshader.so" />
-    <Content Include="runtimes\osx-x64\native\libvk_swiftshader.dylib" PackagePath="runtimes\osx-x64\native\libvk_swiftshader.dylib" />
-    <Content Include="runtimes\win-x64\native\vk_swiftshader.dll" PackagePath="runtimes\win-x64\native\vk_swiftshader.dll" />
-    <Content Include="runtimes\win-x86\native\vk_swiftshader.dll" PackagePath="runtimes\win-x86\native\vk_swiftshader.dll" />
-    <Content Include="runtimes\linux-x64\native\vk_swiftshader_icd.json" PackagePath="runtimes\linux-x64\native\vk_swiftshader_icd.json" />
-    <Content Include="runtimes\osx-x64\native\vk_swiftshader_icd.json" PackagePath="runtimes\osx-x64\native\vk_swiftshader_icd.json" />
-    <Content Include="runtimes\win-x64\native\vk_swiftshader_icd.json" PackagePath="runtimes\win-x64\native\vk_swiftshader_icd.json" />
-    <Content Include="runtimes\win-x86\native\vk_swiftshader_icd.json" PackagePath="runtimes\win-x86\native\vk_swiftshader_icd.json" />
-  </ItemGroup>
+
 </Project>

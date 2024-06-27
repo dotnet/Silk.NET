@@ -24,17 +24,17 @@ var backgroundColour = new[]{ 0.0f, 0.0f, 0.0f, 1.0f };
 
 float[] vertices =
 {
-    //X    Y      Z
-    0.5f,  0.5f, 0.0f,
-    0.5f, -0.5f, 0.0f,
-    -0.5f, -0.5f, 0.0f,
-    -0.5f,  0.5f, 0.5f
+    //  X      Y      Z
+     0.5f,  0.5f,  0.0f,
+     0.5f, -0.5f,  0.0f,
+    -0.5f, -0.5f,  0.0f,
+    -0.5f,  0.5f,  0.5f,
 };
 
 uint[] indices =
 {
     0, 1, 3,
-    1, 2, 3
+    1, 2, 3,
 };
 
 var vertexStride = 3U * sizeof(float);
@@ -240,7 +240,7 @@ unsafe void OnLoad()
     {
         if (vertexErrors.Handle is not null)
         {
-            Console.WriteLine(SilkMarshal.PtrToString((nint) vertexErrors.GetBufferPointer(), NativeStringEncoding.LPWStr));
+            Console.WriteLine(SilkMarshal.PtrToString((nint) vertexErrors.GetBufferPointer()));
         }
 
         hr.Throw();
@@ -269,7 +269,7 @@ unsafe void OnLoad()
     {
         if (pixelErrors.Handle is not null)
         {
-            Console.WriteLine(SilkMarshal.PtrToString((nint) pixelErrors.GetBufferPointer(), NativeStringEncoding.LPWStr));
+            Console.WriteLine(SilkMarshal.PtrToString((nint) pixelErrors.GetBufferPointer()));
         }
 
         hr.Throw();

@@ -19,6 +19,12 @@ namespace Silk.NET.Input.Sdl
                 {StandardCursor.Hand, SystemCursor.SystemCursorHand},
                 {StandardCursor.HResize, SystemCursor.SystemCursorSizewe},
                 {StandardCursor.VResize, SystemCursor.SystemCursorSizens},
+                {StandardCursor.NwseResize, SystemCursor.SystemCursorSizenwse},
+                {StandardCursor.NeswResize, SystemCursor.SystemCursorSizenesw},
+                {StandardCursor.ResizeAll, SystemCursor.SystemCursorSizeall},
+                {StandardCursor.NotAllowed, SystemCursor.SystemCursorNo},
+                {StandardCursor.Wait, SystemCursor.SystemCursorWait},
+                {StandardCursor.WaitArrow, SystemCursor.SystemCursorWaitarrow}
             };
 
         private const int BytesPerCursorPixel = 4;

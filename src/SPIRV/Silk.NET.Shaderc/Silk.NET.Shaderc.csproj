@@ -7,6 +7,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <ProjectReference Include="../../Native/Silk.NET.Shaderc.Native/Silk.NET.Shaderc.Native.csproj" />
   </ItemGroup>
 
   <Import Project="..\..\..\build\props\bindings.props" />

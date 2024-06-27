@@ -16,6 +16,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.EXT
 {
     public static class ExtVertexArrayOverloads
     {
+        [Obsolete("This overload exposes native-sized integer parameters (which are expressed as pointers in the original C function) as C# references due to a historical error, please consider using overloads that expose the following parameters as raw pointers or native integers instead: pointer")]
         public static unsafe void EdgeFlagPointer(this ExtVertexArray thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint stride, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint count, [Count(Computed = "stride, count"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<bool> pointer)
         {
             // SpanOverloader

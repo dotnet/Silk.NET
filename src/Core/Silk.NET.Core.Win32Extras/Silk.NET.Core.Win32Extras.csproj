@@ -7,6 +7,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\Maths\Silk.NET.Maths\Silk.NET.Maths.csproj" />
   </ItemGroup>
 
   <Import Project="..\..\..\build\props\bindings.props" />

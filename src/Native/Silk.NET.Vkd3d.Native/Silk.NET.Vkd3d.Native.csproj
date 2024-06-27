@@ -1,31 +1,17 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
-    <PropertyGroup>
-        <SilkNativePackage>true</SilkNativePackage>
-    </PropertyGroup>
-
     <Import Project="..\..\..\build\props\common.props" />
 
     <PropertyGroup>
         <TargetFrameworks>netstandard2.0;net4.6.1</TargetFrameworks>
         <PackageId>Silk.NET.Vkd3d.Native</PackageId>
-        <PackageVersion>2.17.0</PackageVersion>
         <Authors>.NET Foundation and Contributors</Authors>
         <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
         <PackageLicenseExpression>Zlib</PackageLicenseExpression>
         <PackageProjectUrl>https://github.com/dotnet/Silk.NET</PackageProjectUrl>
         <Description>Native library for Vkd3d.</Description>
         <RepositoryType>git</RepositoryType>
-        <RepositoryUrl>https://gitlab.winehq.org/wine/vkd3d/</RepositoryUrl>
-        <IncludeBuildOutput>false</IncludeBuildOutput>
-        <IncludeContentInPack>true</IncludeContentInPack>
+        <RepositoryUrl>https://gitlab.winehq.org/wine/vkd3d</RepositoryUrl>
     </PropertyGroup>
-
-    <ItemGroup>
-        <Content Include="build\net461\$(PackageId).props" PackagePath="build\net461\$(PackageId).props" />
-
-        <Content Include="runtimes\linux-x64\native\libd3dcompile_vkd3d.so" PackagePath="runtimes\linux-x64\native\libd3dcompile_vkd3d.so" />
-        <Content Include="runtimes\linux-x64\native\libSPIRV-Tools-shared.so" PackagePath="runtimes\linux-x64\native\libSPIRV-Tools-shared.so" />
-    </ItemGroup>
 
 </Project>

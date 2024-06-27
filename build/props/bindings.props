@@ -2,6 +2,7 @@
     <ItemGroup>
         <ProjectReference Include="$(MSBuildThisFileDirectory)..\..\src\Core\Silk.NET.Core\Silk.NET.Core.csproj" />
         <ProjectReference Include="$(MSBuildThisFileDirectory)..\..\src\Core\Silk.NET.SilkTouch\Silk.NET.SilkTouch.csproj" OutputItemType="Analyzer" ReferenceOutputAssembly="false"/>
+        <Compile Include="$(MSBuildThisFileDirectory)..\..\src\Core\Silk.NET.Core\Attributes\RequiresLocationAttribute.cs" />
     </ItemGroup>
     <PropertyGroup>
         <SilkPublicApiExempt>true</SilkPublicApiExempt>

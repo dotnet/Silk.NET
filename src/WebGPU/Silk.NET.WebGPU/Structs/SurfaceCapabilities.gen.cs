@@ -77,8 +77,8 @@ namespace Silk.NET.WebGPU
         [NativeName("Name", "formatCount")]
         public nuint FormatCount;
 
-        [NativeName("Type", "WGPUTextureFormat *")]
-        [NativeName("Type.Name", "WGPUTextureFormat *")]
+        [NativeName("Type", "const WGPUTextureFormat *")]
+        [NativeName("Type.Name", "const WGPUTextureFormat *")]
         [NativeName("Name", "formats")]
         public TextureFormat* Formats;
 
@@ -87,8 +87,8 @@ namespace Silk.NET.WebGPU
         [NativeName("Name", "presentModeCount")]
         public nuint PresentModeCount;
 
-        [NativeName("Type", "WGPUPresentMode *")]
-        [NativeName("Type.Name", "WGPUPresentMode *")]
+        [NativeName("Type", "const WGPUPresentMode *")]
+        [NativeName("Type.Name", "const WGPUPresentMode *")]
         [NativeName("Name", "presentModes")]
         public PresentMode* PresentModes;
 
@@ -97,8 +97,8 @@ namespace Silk.NET.WebGPU
         [NativeName("Name", "alphaModeCount")]
         public nuint AlphaModeCount;
 
-        [NativeName("Type", "WGPUCompositeAlphaMode *")]
-        [NativeName("Type.Name", "WGPUCompositeAlphaMode *")]
+        [NativeName("Type", "const WGPUCompositeAlphaMode *")]
+        [NativeName("Type.Name", "const WGPUCompositeAlphaMode *")]
         [NativeName("Name", "alphaModes")]
         public CompositeAlphaMode* AlphaModes;
     }

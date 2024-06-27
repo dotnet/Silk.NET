@@ -18,12 +18,15 @@ namespace Silk.NET.Core.Win32Extras
 {
     [Guid("ed90c8ad-5c34-4d05-a1ec-0e8a9b3ad7af")]
     [NativeName("Name", "IPrintDocumentPackageStatusEvent")]
-    public unsafe partial struct IPrintDocumentPackageStatusEvent : IComVtbl<IPrintDocumentPackageStatusEvent>, IComVtbl<Silk.NET.Core.Native.IUnknown>
+    public unsafe partial struct IPrintDocumentPackageStatusEvent : IComVtbl<IPrintDocumentPackageStatusEvent>, IComVtbl<IDispatch>, IComVtbl<Silk.NET.Core.Native.IUnknown>
     {
         public static readonly Guid Guid = new("ed90c8ad-5c34-4d05-a1ec-0e8a9b3ad7af");
 
         void*** IComVtbl.AsVtblPtr()
             => (void***) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+
+        public static implicit operator IDispatch(IPrintDocumentPackageStatusEvent val)
+            => Unsafe.As<IPrintDocumentPackageStatusEvent, IDispatch>(ref val);
 
         public static implicit operator Silk.NET.Core.Native.IUnknown(IPrintDocumentPackageStatusEvent val)
             => Unsafe.As<IPrintDocumentPackageStatusEvent, Silk.NET.Core.Native.IUnknown>(ref val);
@@ -132,22 +135,22 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetTypeInfo(uint iTInfo, uint lcid, Silk.NET.Core.Native.IUnknown** ppTInfo)
+        public readonly unsafe int GetTypeInfo(uint iTInfo, uint lcid, ITypeInfo** ppTInfo)
         {
             var @this = (IPrintDocumentPackageStatusEvent*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Cdecl]<IPrintDocumentPackageStatusEvent*, uint, uint, Silk.NET.Core.Native.IUnknown**, int>)@this->LpVtbl[4])(@this, iTInfo, lcid, ppTInfo);
+            ret = ((delegate* unmanaged[Cdecl]<IPrintDocumentPackageStatusEvent*, uint, uint, ITypeInfo**, int>)@this->LpVtbl[4])(@this, iTInfo, lcid, ppTInfo);
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetTypeInfo(uint iTInfo, uint lcid, ref Silk.NET.Core.Native.IUnknown* ppTInfo)
+        public readonly unsafe int GetTypeInfo(uint iTInfo, uint lcid, ref ITypeInfo* ppTInfo)
         {
             var @this = (IPrintDocumentPackageStatusEvent*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            fixed (Silk.NET.Core.Native.IUnknown** ppTInfoPtr = &ppTInfo)
+            fixed (ITypeInfo** ppTInfoPtr = &ppTInfo)
             {
-                ret = ((delegate* unmanaged[Cdecl]<IPrintDocumentPackageStatusEvent*, uint, uint, Silk.NET.Core.Native.IUnknown**, int>)@this->LpVtbl[4])(@this, iTInfo, lcid, ppTInfoPtr);
+                ret = ((delegate* unmanaged[Cdecl]<IPrintDocumentPackageStatusEvent*, uint, uint, ITypeInfo**, int>)@this->LpVtbl[4])(@this, iTInfo, lcid, ppTInfoPtr);
             }
             return ret;
         }
@@ -789,22 +792,22 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int PackageStatusUpdated(MIDLMIDLItfDocumenttarget000000020001* packageStatus)
+        public readonly unsafe int PackageStatusUpdated(MIDLMIDLItfDocumentTarget000000020001* packageStatus)
         {
             var @this = (IPrintDocumentPackageStatusEvent*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Cdecl]<IPrintDocumentPackageStatusEvent*, MIDLMIDLItfDocumenttarget000000020001*, int>)@this->LpVtbl[7])(@this, packageStatus);
+            ret = ((delegate* unmanaged[Cdecl]<IPrintDocumentPackageStatusEvent*, MIDLMIDLItfDocumentTarget000000020001*, int>)@this->LpVtbl[7])(@this, packageStatus);
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int PackageStatusUpdated(ref MIDLMIDLItfDocumenttarget000000020001 packageStatus)
+        public readonly int PackageStatusUpdated(ref MIDLMIDLItfDocumentTarget000000020001 packageStatus)
         {
             var @this = (IPrintDocumentPackageStatusEvent*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            fixed (MIDLMIDLItfDocumenttarget000000020001* packageStatusPtr = &packageStatus)
+            fixed (MIDLMIDLItfDocumentTarget000000020001* packageStatusPtr = &packageStatus)
             {
-                ret = ((delegate* unmanaged[Cdecl]<IPrintDocumentPackageStatusEvent*, MIDLMIDLItfDocumenttarget000000020001*, int>)@this->LpVtbl[7])(@this, packageStatusPtr);
+                ret = ((delegate* unmanaged[Cdecl]<IPrintDocumentPackageStatusEvent*, MIDLMIDLItfDocumentTarget000000020001*, int>)@this->LpVtbl[7])(@this, packageStatusPtr);
             }
             return ret;
         }
@@ -819,11 +822,11 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int GetTypeInfo<TI0>(uint iTInfo, uint lcid, ref ComPtr<TI0> ppTInfo) where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Native.IUnknown>, IComVtbl<TI0>
+        public readonly int GetTypeInfo<TI0>(uint iTInfo, uint lcid, ref ComPtr<TI0> ppTInfo) where TI0 : unmanaged, IComVtbl<ITypeInfo>, IComVtbl<TI0>
         {
             var @this = (IPrintDocumentPackageStatusEvent*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
-            return @this->GetTypeInfo(iTInfo, lcid, (Silk.NET.Core.Native.IUnknown**) ppTInfo.GetAddressOf());
+            return @this->GetTypeInfo(iTInfo, lcid, (ITypeInfo**) ppTInfo.GetAddressOf());
         }
 
         /// <summary>To be documented.</summary>

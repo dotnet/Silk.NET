@@ -60,6 +60,7 @@ namespace Silk.NET.Windowing.Internals
         // Lifetime controls
         protected override void CoreInitialize(ViewOptions opts)
         {
+            _swapIntervalChanged = true;
             ExtendedOptionsCache.ShouldSwapAutomatically = opts.ShouldSwapAutomatically;
             ExtendedOptionsCache.IsEventDriven = opts.IsEventDriven;
             ExtendedOptionsCache.FramesPerSecond = opts.FramesPerSecond;
@@ -157,6 +158,7 @@ namespace Silk.NET.Windowing.Internals
                     CoreWindowState = value;
                 }
 
+                _swapIntervalChanged = true;
                 ExtendedOptionsCache.WindowState = value;
             }
         }

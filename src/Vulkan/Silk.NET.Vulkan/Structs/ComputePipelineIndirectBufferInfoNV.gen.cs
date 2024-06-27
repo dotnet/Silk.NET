@@ -17,7 +17,7 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkComputePipelineIndirectBufferInfoNV")]
-    public unsafe partial struct ComputePipelineIndirectBufferInfoNV : IChainable
+    public unsafe partial struct ComputePipelineIndirectBufferInfoNV : IExtendsChain<ComputePipelineCreateInfo>
     {
         public ComputePipelineIndirectBufferInfoNV
         (

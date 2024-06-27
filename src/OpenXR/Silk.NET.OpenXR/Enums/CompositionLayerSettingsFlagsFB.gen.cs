@@ -27,6 +27,9 @@ namespace Silk.NET.OpenXR
         [Obsolete("Deprecated in favour of \"QualitySharpeningBitFB\"")]
         [NativeName("Name", "XR_COMPOSITION_LAYER_SETTINGS_QUALITY_SHARPENING_BIT_FB")]
         CompositionLayerSettingsQualitySharpeningBitFB = 8,
+        [Obsolete("Deprecated in favour of \"AutoLayerFilterBitMeta\"")]
+        [NativeName("Name", "XR_COMPOSITION_LAYER_SETTINGS_AUTO_LAYER_FILTER_BIT_META")]
+        CompositionLayerSettingsAutoLayerFilterBitMeta = 32,
         [NativeName("Name", "XR_COMPOSITION_LAYER_SETTINGS_NORMAL_SUPER_SAMPLING_BIT_FB")]
         NormalSuperSamplingBitFB = 1,
         [NativeName("Name", "XR_COMPOSITION_LAYER_SETTINGS_QUALITY_SUPER_SAMPLING_BIT_FB")]
@@ -35,5 +38,7 @@ namespace Silk.NET.OpenXR
         NormalSharpeningBitFB = 4,
         [NativeName("Name", "XR_COMPOSITION_LAYER_SETTINGS_QUALITY_SHARPENING_BIT_FB")]
         QualitySharpeningBitFB = 8,
+        [NativeName("Name", "XR_COMPOSITION_LAYER_SETTINGS_AUTO_LAYER_FILTER_BIT_META")]
+        AutoLayerFilterBitMeta = 32,
     }
 }

@@ -49,6 +49,9 @@ namespace Silk.NET.SDL
         [Obsolete("Deprecated in favour of \"Arrayf32\"")]
         [NativeName("Name", "SDL_PIXELTYPE_ARRAYF32")]
         PixeltypeArrayf32 = 0xB,
+        [Obsolete("Deprecated in favour of \"Index2\"")]
+        [NativeName("Name", "SDL_PIXELTYPE_INDEX2")]
+        PixeltypeIndex2 = 0xC,
         [NativeName("Name", "SDL_PIXELTYPE_UNKNOWN")]
         Unknown = 0x0,
         [NativeName("Name", "SDL_PIXELTYPE_INDEX1")]
@@ -73,5 +76,7 @@ namespace Silk.NET.SDL
         Arrayf16 = 0xA,
         [NativeName("Name", "SDL_PIXELTYPE_ARRAYF32")]
         Arrayf32 = 0xB,
+        [NativeName("Name", "SDL_PIXELTYPE_INDEX2")]
+        Index2 = 0xC,
     }
 }

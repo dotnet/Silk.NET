@@ -2,32 +2,52 @@ name: Vkd3d
 on:
   push:
     branches-ignore:
-      - "ci/*"
-      - "develop/*"
+      - "ci/**"
+      - "develop/**"
       - "main"
     paths:
       - build/submodules/vkd3d
       - build/submodules/SPIRV-Tools
-      - build/submodules/vkd3d-no-ms-abi.patch
+      - build/submodules/Vulkan-Headers
+      - "build/cmake/*"
       - build/nuke/Native/Core.cs
       - build/nuke/Native/Vkd3d.cs
       - .github/workflows/vkd3d.yml
       - src/Microsoft/Vkd3dCompiler/*
 jobs:
   Build:
+    if: github.repository == 'dotnet/Silk.NET'
     strategy:
       fail-fast: false
       matrix:
         env:
-          - os: ubuntu-latest
+          - os: ubuntu-22.04
             name: Linux
             nuke_invoke: ./build.sh
             extras: |
-              sudo apt-get update 
-              sudo apt-get install -y xorg-dev libvulkan-dev spirv-headers wine64-development-tools cmake build-essential
-
-              wget http://mirrors.kernel.org/ubuntu/pool/universe/s/spirv-tools/spirv-tools_2020.1-2_amd64.deb
-              sudo apt install ./spirv-tools_2020.1-2_amd64.deb
+              # We need to adjust APT sources for multiarch. Use the ones corresponding to
+              # Ubuntu 22.04 with appropriate `arch` values. ports.ubuntu.com is required
+              # for armhf and arm64.
+              sudo tee /etc/apt/sources.list << EOF
+              deb [arch=amd64] http://archive.ubuntu.com/ubuntu jammy main universe
+              deb [arch=amd64] http://archive.ubuntu.com/ubuntu jammy-backports main universe
+              deb [arch=amd64] http://archive.ubuntu.com/ubuntu jammy-security main universe
+              deb [arch=amd64] http://archive.ubuntu.com/ubuntu jammy-updates main universe
+              deb [arch=arm64,armhf] http://ports.ubuntu.com jammy main universe
+              deb [arch=arm64,armhf] http://ports.ubuntu.com jammy-backports main universe
+              deb [arch=arm64,armhf] http://ports.ubuntu.com jammy-security main universe
+              deb [arch=arm64,armhf] http://ports.ubuntu.com jammy-updates main universe
+              deb [arch=amd64] http://security.ubuntu.com/ubuntu jammy main universe
+              deb [arch=amd64] http://security.ubuntu.com/ubuntu jammy-backports main universe
+              deb [arch=amd64] http://security.ubuntu.com/ubuntu jammy-security main universe
+              deb [arch=amd64] http://security.ubuntu.com/ubuntu jammy-updates main universe
+              EOF
+              sudo dpkg --add-architecture arm64
+              sudo dpkg --add-architecture armhf
+              sudo apt update
+              sudo apt install -y gcc-aarch64-linux-gnu gcc-arm-linux-gnueabihf
+              sudo apt install -y g++-aarch64-linux-gnu g++-arm-linux-gnueabihf
+              sudo apt install -y mingw-w64-tools
     name: ${{ matrix.env.name }} Build
     runs-on: ${{ matrix.env.os }}
     steps:
@@ -38,6 +58,7 @@ jobs:
         run: |
           git submodule update --init --recursive --depth 0 build/submodules/vkd3d
           git submodule update --init --recursive --depth 0 build/submodules/SPIRV-Tools
+          git submodule update --init --recursive --depth 0 build/submodules/Vulkan-Headers
           git config --local user.email "9011267+dotnet-bot@users.noreply.github.com"
           git config --local user.name "The Silk.NET Automaton"
       - name: Extra prerequisites

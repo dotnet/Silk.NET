@@ -114,6 +114,8 @@ namespace Silk.NET.SPIRV
         WeightTextureQCom = 0x1187,
         [NativeName("Name", "SpvDecorationBlockMatchTextureQCOM")]
         BlockMatchTextureQCom = 0x1188,
+        [NativeName("Name", "SpvDecorationBlockMatchSamplerQCOM")]
+        BlockMatchSamplerQCom = 0x1193,
         [NativeName("Name", "SpvDecorationExplicitInterpAMD")]
         ExplicitInterpAmd = 0x1387,
         [NativeName("Name", "SpvDecorationNodeSharesPayloadLimitsWithAMDX")]
@@ -222,6 +224,12 @@ namespace Silk.NET.SPIRV
         BankBitsIntel = 0x16CB,
         [NativeName("Name", "SpvDecorationForcePow2DepthINTEL")]
         ForcePow2DepthIntel = 0x16CC,
+        [NativeName("Name", "SpvDecorationStridesizeINTEL")]
+        StridesizeIntel = 0x16FB,
+        [NativeName("Name", "SpvDecorationWordsizeINTEL")]
+        WordsizeIntel = 0x16FC,
+        [NativeName("Name", "SpvDecorationTrueDualPortINTEL")]
+        TrueDualPortIntel = 0x16FD,
         [NativeName("Name", "SpvDecorationBurstCoalesceINTEL")]
         BurstCoalesceIntel = 0x170B,
         [NativeName("Name", "SpvDecorationCacheSizeINTEL")]
@@ -258,12 +266,8 @@ namespace Silk.NET.SPIRV
         VectorComputeCallableFunctionIntel = 0x17C7,
         [NativeName("Name", "SpvDecorationMediaBlockIOINTEL")]
         MediaBlockIointel = 0x17FC,
-        [NativeName("Name", "SpvDecorationInitModeINTEL")]
-        InitModeIntel = 0x1803,
-        [NativeName("Name", "SpvDecorationImplementInRegisterMapINTEL")]
-        ImplementInRegisterMapIntel = 0x1804,
-        [NativeName("Name", "SpvDecorationHostAccessINTEL")]
-        HostAccessIntel = 0x1818,
+        [NativeName("Name", "SpvDecorationStallFreeINTEL")]
+        StallFreeIntel = 0x1807,
         [NativeName("Name", "SpvDecorationFPMaxErrorDecorationINTEL")]
         FPMaxErrorDecorationIntel = 0x181A,
         [NativeName("Name", "SpvDecorationLatencyControlLabelINTEL")]
@@ -288,6 +292,12 @@ namespace Silk.NET.SPIRV
         MMHostInterfaceWaitRequestIntel = 0x1826,
         [NativeName("Name", "SpvDecorationStableKernelArgumentINTEL")]
         StableKernelArgumentIntel = 0x1827,
+        [NativeName("Name", "SpvDecorationHostAccessINTEL")]
+        HostAccessIntel = 0x182C,
+        [NativeName("Name", "SpvDecorationInitModeINTEL")]
+        InitModeIntel = 0x182E,
+        [NativeName("Name", "SpvDecorationImplementInRegisterMapINTEL")]
+        ImplementInRegisterMapIntel = 0x182F,
         [NativeName("Name", "SpvDecorationCacheControlLoadINTEL")]
         CacheControlLoadIntel = 0x192A,
         [NativeName("Name", "SpvDecorationCacheControlStoreINTEL")]

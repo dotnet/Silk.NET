@@ -3,7 +3,7 @@ on:
   push:
     branches:
       - 'main'
-      - 'release/*'
+      - 'release/**'
     paths-ignore:
       - 'documentation/**'
     tags:
@@ -48,7 +48,7 @@ jobs:
       with:
         dotnet-version: 7.0.102
     - name: Install Workloads
-      run: dotnet workload install android ios maccatalyst maui
+      run: dotnet workload install android ios maccatalyst
     - name: Test
       if: ${{ github.repository != 'dotnet/Silk.NET' || !startsWith(github.ref, 'refs/tags/') }}
       # skip Clean, Restore, and Compile as this will build the affect the whole solution.
@@ -72,7 +72,7 @@ jobs:
       uses: actions/upload-artifact@v2.2.4
       with:
         name: unsigned_nupkgs
-        path: "build/output_packages/*.nupkg"
+        path: "build/output_packages/*nupkg"
         if-no-files-found: warn
         retention-days: 1
     - name: Push to Experimental Feed
@@ -100,7 +100,7 @@ jobs:
       uses: actions/upload-artifact@v2.2.4
       with:
         name: signed_nupkgs
-        path: "build/output_packages/*.nupkg"
+        path: "build/output_packages/*nupkg"
         if-no-files-found: warn
     - name: Push to NuGet
       run: .\build.cmd PushToNuGet --skip Clean Restore Pack --nuget-api-key ${{ secrets.NUGET_TOKEN }}

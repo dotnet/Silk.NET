@@ -35,7 +35,7 @@ namespace Tutorial
             _window.Load += OnLoad;
             _window.Update += OnUpdate;
             _window.Render += OnRender;
-            _window.FramebufferResize += OnResize;
+            _window.FramebufferResize += OnFramebufferResize;
             _window.Run();
 
             _window.Dispose();
@@ -305,9 +305,9 @@ namespace Tutorial
             _gl.DrawElements(PrimitiveType.Triangles, 6, DrawElementsType.UnsignedInt, (void*) 0);
         }
 
-        private static void OnResize(Vector2D<int> size)
+        private static void OnFramebufferResize(Vector2D<int> newSize)
         {
-            _gl.Viewport(0, 0, (uint) size.X, (uint) size.Y);
+            _gl.Viewport(newSize);
         }
     }
 }

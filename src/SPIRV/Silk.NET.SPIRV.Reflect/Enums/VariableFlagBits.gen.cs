@@ -16,5 +16,7 @@ namespace Silk.NET.SPIRV.Reflect
         None = 0x0,
         [NativeName("Name", "SPV_REFLECT_VARIABLE_FLAGS_UNUSED")]
         Unused = 0x1,
+        [NativeName("Name", "SPV_REFLECT_VARIABLE_FLAGS_PHYSICAL_POINTER_COPY")]
+        PhysicalPointerCopy = 0x2,
     }
 }

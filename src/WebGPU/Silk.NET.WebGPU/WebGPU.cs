@@ -1,4 +1,5 @@
 using System;
+using System.Diagnostics.CodeAnalysis;
 using System.Runtime.InteropServices;
 using System.Runtime.CompilerServices;
 using System.Text;
@@ -26,7 +27,11 @@ namespace Silk.NET.WebGPU
             throw new NotSupportedException();
         }
 
+#if NET5_0_OR_GREATER
+        public unsafe bool TryGetDeviceExtension<[DynamicallyAccessedMembers(DynamicallyAccessedMemberTypes.PublicConstructors | DynamicallyAccessedMemberTypes.NonPublicConstructors)] T>(Device* device, out T ext)
+#else
         public unsafe bool TryGetDeviceExtension<T>(Device* device, out T ext)
+#endif
             where T:NativeExtension<WebGPU>
         {
              ext = IsDeviceExtensionPresent(device, GetExtensionAttribute(typeof(T)).Name)

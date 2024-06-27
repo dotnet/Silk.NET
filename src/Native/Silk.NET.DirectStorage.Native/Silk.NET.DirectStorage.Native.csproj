@@ -1,8 +1,7 @@
 <Project Sdk="Microsoft.NET.Sdk">
-  <PropertyGroup>
-    <SilkSourceLinkExempt>true</SilkSourceLinkExempt>
-  </PropertyGroup>
+
   <Import Project="..\..\..\build\props\common.props" />
+
   <PropertyGroup>
     <TargetFrameworks>netstandard2.0;net4.6.1</TargetFrameworks>
     <Authors>.NET Foundation and Contributors</Authors>
@@ -14,19 +13,10 @@
     <Description>Contains DirectStorage binaries for use with .NET applications.</Description>
     <RepositoryType>git</RepositoryType>
     <RepositoryUrl>https://github.com/microsoft/DirectStorage</RepositoryUrl>
-    <IncludeBuildOutput>false</IncludeBuildOutput>
-    <IncludeContentInPack>true</IncludeContentInPack>
   </PropertyGroup>
+
   <ItemGroup>
-    <Content Include="build\net461\$(PackageId).targets" PackagePath="build\net461\$(PackageId).targets" />
-    <Content Include="runtimes\win-x64\native\dstorage.dll" PackagePath="runtimes\win-x64\native\dstorage.dll" />
-    <Content Include="runtimes\win-x86\native\dstorage.dll" PackagePath="runtimes\win-x86\native\dstorage.dll" />
-    <Content Include="runtimes\win-arm\native\dstorage.dll" PackagePath="runtimes\win-arm\native\dstorage.dll" />
-    <Content Include="runtimes\win-arm64\native\dstorage.dll" PackagePath="runtimes\win-arm64\native\dstorage.dll" />
-    <Content Include="runtimes\win-x64\native\dstoragecore.dll" PackagePath="runtimes\win-x64\native\dstoragecore.dll" />
-    <Content Include="runtimes\win-x86\native\dstoragecore.dll" PackagePath="runtimes\win-x86\native\dstoragecore.dll" />
-    <Content Include="runtimes\win-arm\native\dstoragecore.dll" PackagePath="runtimes\win-arm\native\dstoragecore.dll" />
-    <Content Include="runtimes\win-arm64\native\dstoragecore.dll" PackagePath="runtimes\win-arm64\native\dstoragecore.dll" />
-    <Content Include="LICENSE.txt" PackagePath="LICENSE.txt" />
+    <Content Include="LICENSE.txt" PackagePath="" />
   </ItemGroup>
+
 </Project>

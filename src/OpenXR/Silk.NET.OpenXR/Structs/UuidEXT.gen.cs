@@ -17,6 +17,7 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.OpenXR
 {
     [NativeName("Name", "XrUuidEXT")]
+    [NativeName("AliasOf", "XrUuid")]
     public unsafe partial struct UuidEXT
     {
         /// <summary></summary>

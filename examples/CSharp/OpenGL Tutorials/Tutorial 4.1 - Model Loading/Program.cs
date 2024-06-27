@@ -40,6 +40,7 @@ namespace Tutorial
             window.Load += OnLoad;
             window.Update += OnUpdate;
             window.Render += OnRender;
+            window.FramebufferResize += OnFramebufferResize;
             window.Closing += OnClose;
 
             window.Run();
@@ -107,11 +108,12 @@ namespace Tutorial
             //Use elapsed time to convert to radians to allow our cube to rotate over time
             var difference = (float) (window.Time * 100);
 
+            var size = window.FramebufferSize;
+
             var model = Matrix4x4.CreateRotationY(MathHelper.DegreesToRadians(difference)) * Matrix4x4.CreateRotationX(MathHelper.DegreesToRadians(difference));
             var view = Matrix4x4.CreateLookAt(CameraPosition, CameraPosition + CameraFront, CameraUp);
-            //It's super important for the width / height calculation to regard each value as a float, otherwise
-            //it creates rounding errors that result in viewport distortion
-            var projection = Matrix4x4.CreatePerspectiveFieldOfView(MathHelper.DegreesToRadians(CameraZoom), (float) window.Size.X / (float)window.Size.Y, 0.1f, 100.0f);
+            //Note that the apsect ratio calculation must be performed as a float, otherwise integer division will be performed (truncating the result).
+            var projection = Matrix4x4.CreatePerspectiveFieldOfView(MathHelper.DegreesToRadians(CameraZoom), (float)size.X / size.Y, 0.1f, 100.0f);
 
             foreach (var mesh in Model.Meshes)
             {
@@ -125,6 +127,11 @@ namespace Tutorial
 
                 Gl.DrawArrays(PrimitiveType.Triangles, 0, (uint)mesh.Vertices.Length);
             }
+        }
+
+        private static void OnFramebufferResize(Vector2D<int> newSize)
+        {
+            Gl.Viewport(newSize);
         }
 
         private static unsafe void OnMouseMove(IMouse mouse, Vector2 position)
