@@ -1,10 +1,10 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 // Ported from d3dcommon.h in microsoft/DirectX-Headers tag v1.606.4
 // Original source is Copyright © Microsoft. Licensed under the MIT license
-using Silk.NET.Windows;
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
+using Silk.NET.Windows;
 using static Silk.NET.Windows.IID;
 
 namespace Silk.NET.DirectX;
@@ -13,13 +13,11 @@ namespace Silk.NET.DirectX;
 [Guid("A06EB39A-50DA-425B-8C31-4EECD6C270F3")]
 [NativeTypeName("struct ID3DDestructionNotifier : IUnknown")]
 [NativeInheritance("IUnknown")]
-public unsafe partial struct ID3DDestructionNotifier
-    : ID3DDestructionNotifier.Interface,
-        INativeGuid
+public unsafe partial struct D3DDestructionNotifier : ID3DDestructionNotifier.Interface, INativeGuid
 {
     static Guid* INativeGuid.NativeGuid =>
         (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_ID3DDestructionNotifier));
-    public void** lpVtbl;
+    public void*** lpVtbl;
 
     /// <inheritdoc cref = "IUnknown.QueryInterface"/>
 
@@ -27,8 +25,8 @@ public unsafe partial struct ID3DDestructionNotifier
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<ID3DDestructionNotifier*, Guid*, void**, int>)(lpVtbl[0]))(
-            (ID3DDestructionNotifier*)Unsafe.AsPointer(ref this),
+        return ((delegate* unmanaged<D3DDestructionNotifier, Guid*, void**, int>)(*lpVtbl[0]))(
+            this,
             riid,
             ppvObject
         );
@@ -41,9 +39,7 @@ public unsafe partial struct ID3DDestructionNotifier
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<ID3DDestructionNotifier*, uint>)(lpVtbl[1]))(
-            (ID3DDestructionNotifier*)Unsafe.AsPointer(ref this)
-        );
+        return ((delegate* unmanaged<D3DDestructionNotifier, uint>)(*lpVtbl[1]))(this);
     }
 
     /// <inheritdoc cref = "IUnknown.Release"/>
@@ -53,9 +49,7 @@ public unsafe partial struct ID3DDestructionNotifier
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<ID3DDestructionNotifier*, uint>)(lpVtbl[2]))(
-            (ID3DDestructionNotifier*)Unsafe.AsPointer(ref this)
-        );
+        return ((delegate* unmanaged<D3DDestructionNotifier, uint>)(*lpVtbl[2]))(this);
     }
 
     /// <include file='ID3DDestructionNotifier.xml' path='doc/member[@name="ID3DDestructionNotifier.RegisterDestructionCallback"]/*'/>
@@ -70,12 +64,12 @@ public unsafe partial struct ID3DDestructionNotifier
     {
         return (
             (delegate* unmanaged<
-                ID3DDestructionNotifier*,
+                D3DDestructionNotifier,
                 delegate* unmanaged<void*, void>,
                 void*,
                 uint*,
-                int>)(lpVtbl[3])
-        )((ID3DDestructionNotifier*)Unsafe.AsPointer(ref this), callbackFn, pData, pCallbackID);
+                int>)(*lpVtbl[3])
+        )(this, callbackFn, pData, pCallbackID);
     }
 
     /// <include file='ID3DDestructionNotifier.xml' path='doc/member[@name="ID3DDestructionNotifier.UnregisterDestructionCallback"]/*'/>
@@ -84,8 +78,8 @@ public unsafe partial struct ID3DDestructionNotifier
     [VtblIndex(4)]
     public HRESULT UnregisterDestructionCallback(uint callbackID)
     {
-        return ((delegate* unmanaged<ID3DDestructionNotifier*, uint, int>)(lpVtbl[4]))(
-            (ID3DDestructionNotifier*)Unsafe.AsPointer(ref this),
+        return ((delegate* unmanaged<D3DDestructionNotifier, uint, int>)(*lpVtbl[4]))(
+            this,
             callbackID
         );
     }

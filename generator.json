@@ -2,7 +2,7 @@
   "Jobs": {
     "Microsoft": {
       "ClangSharpResponseFiles": [
-        "eng/submodules/terrafx.interop.windows/generation/**/generate.rsp"
+        "eng/submodules/terrafx.interop.windows/generation/DirectX/headers/d3dcommon/generate.rsp"
       ],
       "ManualOverrides": {
         "sources/Windows/um/icm/Windows.gen.cs": "eng/submodules/terrafx.interop.windows/sources/Interop/Windows/Windows/um/icm/Windows.cs",
@@ -18,7 +18,8 @@
       "Solution": "Silk.NET.sln",
       "Mods": [
         "AddIncludes",
-        "ChangeNamespace"
+        "ChangeNamespace",
+        "AddOpaqueCOM"
       ],
       "ChangeNamespace": {
         "Mappings": {
