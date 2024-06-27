@@ -1,0 +1,40 @@
+img {
+    user-select: none;
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.title {
+    text-align: center;
+}
+
+.item {
+    display: flex;
+}
+
+.item span {
+    height: 30px;
+    width: 30px;
+    aspect-ratio: 1/1;
+    background-color: rgba(65, 215, 242, .3);
+    border-radius: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 20px;
+}
+
+@media screen and (max-width: 478px)
+{
+    .item {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+
+        padding: 10px;
+    }
+}

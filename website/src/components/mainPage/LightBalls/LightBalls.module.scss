@@ -1,0 +1,30 @@
+#container {
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    z-index: -1;
+}
+
+.lightBall {
+    position: absolute;
+    background-color: white;
+    border-radius: 100%;
+    filter: blur(5px);
+    animation: lightBallMovement infinite;
+}
+
+html[data-theme='light'] .lightBall {
+    background-color: black;
+}
+
+@keyframes lightBallMovement {
+    0% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(30px);
+    }
+    100% {
+        transform: translateY(0px);
+    }
+}

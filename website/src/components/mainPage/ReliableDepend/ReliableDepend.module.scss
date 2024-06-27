@@ -1,0 +1,44 @@
+.title {
+    text-align: center;
+}
+
+.container {
+    background:var(--ifm-hero-background-color);
+    min-height: 100vh;
+    padding: 50px 0;
+}
+
+.item {
+    width: calc(100% - 300px);
+    margin: 30px 150px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.item p {
+    width: 100%;
+    text-align: justify;
+}
+
+.item .icon {
+    display: block;
+    height: 50px;
+    width: 50px;
+    background: rgba(65, 215, 242, .3);
+    border-radius: 100%;
+}
+
+.item .icon svg {
+    height: 50%;
+    width: 50%;
+    padding: 25%;
+}
+
+@media screen and (max-width: 650px)
+{
+    .item {
+        width: calc(90%);
+        margin: 0 5%;
+    }
+}

@@ -1,0 +1,57 @@
+{
+  "name": "silk-net-website",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "docusaurus": "docusaurus",
+    "start": "docusaurus start",
+    "build": "docusaurus build",
+    "swizzle": "docusaurus swizzle",
+    "deploy": "docusaurus deploy",
+    "clear": "docusaurus clear",
+    "serve": "docusaurus serve",
+    "write-translations": "docusaurus write-translations",
+    "write-heading-ids": "docusaurus write-heading-ids",
+    "typecheck": "tsc"
+  },
+  "dependencies": {
+    "@docusaurus/core": "3.3.2",
+    "@docusaurus/preset-classic": "3.3.2",
+    "@fortawesome/fontawesome-svg-core": "^6.5.1",
+    "@fortawesome/free-brands-svg-icons": "^6.5.1",
+    "@fortawesome/free-regular-svg-icons": "^6.5.1",
+    "@fortawesome/free-solid-svg-icons": "^6.5.1",
+    "@fortawesome/react-fontawesome": "^0.2.0",
+    "@mdx-js/react": "^3.0.0",
+    "@svgr/webpack": "^5.5.0",
+    "clsx": "^1.1.1",
+    "docusaurus-plugin-sass": "^0.2.5",
+    "file-loader": "^6.2.0",
+    "prism-react-renderer": "^2.1.0",
+    "react": "^18.3.0",
+    "react-dom": "^18.3.0",
+    "react-transition-group": "^4.4.5",
+    "sass": "^1.77.0",
+    "url-loader": "^4.1.1"
+  },
+  "devDependencies": {
+    "@docusaurus/module-type-aliases": "3.0.0",
+    "@docusaurus/tsconfig": "3.0.0",
+    "@types/react": "^18.2.29",
+    "@types/react-helmet": "^6.1.2",
+    "@types/react-router-dom": "^5.1.8",
+    "typescript": "~5.2.2"
+  },
+  "browserslist": {
+    "production": [
+      ">0.5%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
+}
