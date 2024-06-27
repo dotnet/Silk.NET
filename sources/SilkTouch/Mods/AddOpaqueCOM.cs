@@ -197,7 +197,7 @@ namespace Silk.NET.SilkTouch.Mods
             {
                 if (node.Identifier.ToString() == "lpVtbl")
                 {
-                    return PrefixUnaryExpression(SyntaxKind.PointerIndirectionExpression, node);
+                    return ParenthesizedExpression(PrefixUnaryExpression(SyntaxKind.PointerIndirectionExpression, node));
                 }
 
                 return base.VisitIdentifierName(node);
@@ -226,22 +226,6 @@ namespace Silk.NET.SilkTouch.Mods
 
                 return ret;
             }
-            
-
-            public override SyntaxNode? VisitClassDeclaration(ClassDeclarationSyntax node) =>
-                VisitType(node, node.Identifier, base.VisitClassDeclaration);
-
-            public override SyntaxNode? VisitRecordDeclaration(RecordDeclarationSyntax node) =>
-                VisitType(node, node.Identifier, base.VisitRecordDeclaration);
-
-            public override SyntaxNode? VisitEnumDeclaration(EnumDeclarationSyntax node) =>
-                VisitType(node, node.Identifier, base.VisitEnumDeclaration);
-
-            public override SyntaxNode? VisitDelegateDeclaration(DelegateDeclarationSyntax node) =>
-                VisitType(node, node.Identifier, base.VisitDelegateDeclaration);
-
-            public override SyntaxNode? VisitInterfaceDeclaration(InterfaceDeclarationSyntax node) =>
-                VisitType(node, node.Identifier, base.VisitInterfaceDeclaration);
 
             public override SyntaxNode? VisitVariableDeclaration(VariableDeclarationSyntax node)
             {

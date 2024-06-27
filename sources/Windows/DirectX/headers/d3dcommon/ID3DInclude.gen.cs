@@ -31,7 +31,7 @@ public unsafe partial struct ID3DInclude : ID3DInclude.Interface
                 void*,
                 void**,
                 uint*,
-                int>)(*lpVtbl[0])
+                int>)((*lpVtbl)[0])
         )(
             (ID3DInclude*)Unsafe.AsPointer(ref this),
             IncludeType,
@@ -48,7 +48,7 @@ public unsafe partial struct ID3DInclude : ID3DInclude.Interface
     [VtblIndex(1)]
     public HRESULT Close([NativeTypeName("LPCVOID")] void* pData)
     {
-        return ((delegate* unmanaged<ID3DInclude*, void*, int>)(*lpVtbl[1]))(
+        return ((delegate* unmanaged<ID3DInclude*, void*, int>)((*lpVtbl)[1]))(
             (ID3DInclude*)Unsafe.AsPointer(ref this),
             pData
         );

@@ -25,7 +25,7 @@ public unsafe partial struct D3DDestructionNotifier : ID3DDestructionNotifier.In
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<D3DDestructionNotifier, Guid*, void**, int>)(*lpVtbl[0]))(
+        return ((delegate* unmanaged<D3DDestructionNotifier, Guid*, void**, int>)((*lpVtbl)[0]))(
             this,
             riid,
             ppvObject
@@ -39,7 +39,7 @@ public unsafe partial struct D3DDestructionNotifier : ID3DDestructionNotifier.In
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<D3DDestructionNotifier, uint>)(*lpVtbl[1]))(this);
+        return ((delegate* unmanaged<D3DDestructionNotifier, uint>)((*lpVtbl)[1]))(this);
     }
 
     /// <inheritdoc cref = "IUnknown.Release"/>
@@ -49,7 +49,7 @@ public unsafe partial struct D3DDestructionNotifier : ID3DDestructionNotifier.In
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<D3DDestructionNotifier, uint>)(*lpVtbl[2]))(this);
+        return ((delegate* unmanaged<D3DDestructionNotifier, uint>)((*lpVtbl)[2]))(this);
     }
 
     /// <include file='ID3DDestructionNotifier.xml' path='doc/member[@name="ID3DDestructionNotifier.RegisterDestructionCallback"]/*'/>
@@ -68,7 +68,7 @@ public unsafe partial struct D3DDestructionNotifier : ID3DDestructionNotifier.In
                 delegate* unmanaged<void*, void>,
                 void*,
                 uint*,
-                int>)(*lpVtbl[3])
+                int>)((*lpVtbl)[3])
         )(this, callbackFn, pData, pCallbackID);
     }
 
@@ -78,7 +78,7 @@ public unsafe partial struct D3DDestructionNotifier : ID3DDestructionNotifier.In
     [VtblIndex(4)]
     public HRESULT UnregisterDestructionCallback(uint callbackID)
     {
-        return ((delegate* unmanaged<D3DDestructionNotifier, uint, int>)(*lpVtbl[4]))(
+        return ((delegate* unmanaged<D3DDestructionNotifier, uint, int>)((*lpVtbl)[4]))(
             this,
             callbackID
         );
