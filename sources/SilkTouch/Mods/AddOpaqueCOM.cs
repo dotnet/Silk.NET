@@ -162,18 +162,6 @@ namespace Silk.NET.SilkTouch.Mods
                 return comName.Substring(1);
             }
 
-            private SyntaxNode? VisitType<T>(T type, SyntaxToken identifier, Func<T, SyntaxNode?> @base)
-                where T : SyntaxNode
-            {
-                var before = _currentScope;
-                _currentScope = string.IsNullOrWhiteSpace(_currentScope)
-                    ? $"{type.NamespaceFromSyntaxNode()}.{identifier}"
-                    : $"{_currentScope}.{identifier}";
-                var ret = @base(type);
-                _currentScope = before;
-                return ret;
-            }
-
             public override SyntaxNode? VisitPointerType(PointerTypeSyntax node)
             {
                 for (int i = 0; i < ComTypes.Count; i++)
