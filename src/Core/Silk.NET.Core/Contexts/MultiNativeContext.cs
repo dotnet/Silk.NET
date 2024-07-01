@@ -30,16 +30,13 @@ namespace Silk.NET.Core.Contexts
         /// <inheritdoc />
         public nint GetProcAddress(string proc, int? slot = default)
         {
-            foreach (var nativeContext in Contexts)
+            if (!TryGetProcAddress(proc, out var ret, slot))
             {
-                var ret = nativeContext?.GetProcAddress(proc, slot) ?? default;
-                if (ret != default)
-                {
-                    return ret;
-                }
+                static void Throw(string fn) => throw new SymbolLoadingException(fn);
+                Throw(fn);
             }
 
-            return default;
+            return ret;
         }
 
         /// <inheritdoc />
