@@ -33,7 +33,7 @@ namespace Silk.NET.Core.Contexts
             if (!TryGetProcAddress(proc, out var ret, slot))
             {
                 static void Throw(string fn) => throw new SymbolLoadingException(fn);
-                Throw(fn);
+                Throw(proc);
             }
 
             return ret;
