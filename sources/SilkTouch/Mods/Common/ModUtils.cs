@@ -1,10 +1,11 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;
 using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices;
 using System.Text.RegularExpressions;
+using System.Threading;
 using ClangSharp;
 using Microsoft.CodeAnalysis;
 using Microsoft.CodeAnalysis.CSharp;
@@ -590,4 +591,200 @@ public static class ModUtils
                 )
         )
     );
+
+    /// <summary>
+    /// Merges two compilation units merging any common classes and structs
+    /// </summary>
+    /// <param name="unit1"></param>
+    /// <param name="unit2"></param>
+    /// <returns></returns>
+    public static CompilationUnitSyntax MergeCompilationUnits(CompilationUnitSyntax unit1, CompilationUnitSyntax unit2)
+    {
+        var combinedMembers = unit1.Members.Concat(unit2.Members);
+        var combinedUsings = unit1.Usings.Concat(unit2.Usings).Distinct();
+
+        var combinedUnit = CompilationUnit()
+            .WithUsings(List(combinedUsings))
+            .WithMembers(List(combinedMembers));
+
+        return combinedUnit.WithMembers(MergeNamespaceLevelMembers(combinedUnit.Members));
+    }
+
+    private static SyntaxList<MemberDeclarationSyntax> MergeNamespaceLevelMembers(SyntaxList<MemberDeclarationSyntax> members)
+    {
+        var namespaces = members
+            .OfType<FileScopedNamespaceDeclarationSyntax>()
+            .GroupBy(s => s.Name.ToString());
+
+        var mergedNamespaces = namespaces.Select(group => {
+            var first = group.First();
+            var mergedMembers = group.SelectMany(c => c.Members).ToList();
+
+            return first.WithMembers(List(mergedMembers));
+        });
+
+        List<MemberDeclarationSyntax> mergedMembers = [];
+        foreach (var ns in mergedNamespaces)
+        {
+            mergedMembers.Add(ns.WithMembers(MergeNamespaceLevelMembers(ns.Members)));
+        }
+
+        var typeGroups = members
+            .OfType<TypeDeclarationSyntax>()
+            .GroupBy(c => c.Identifier.Text);
+
+        var mergedTypes = typeGroups.Select(MergeTypeDeclarations);
+
+        foreach (var type in mergedTypes)
+        {
+            if (type is null)
+            {
+                continue;
+            }
+            mergedMembers.Add(type);
+        }
+
+        return List(mergedMembers);
+    }
+
+    private static TypeDeclarationSyntax? MergeTypeDeclarations(IEnumerable<TypeDeclarationSyntax> types)
+    {
+        long count = types.Count();
+        if (count == 0)
+            return null;
+
+        if (count == 1)
+            return types.First();
+        TypeDeclarationSyntax? first = null;
+
+        var isStatic = true;
+        var isAbstract = true;
+        var visibility = SyntaxKind.PrivateKeyword;
+        List<MemberDeclarationSyntax> members = [];
+        List<SyntaxToken> tokens = [];
+        List<AttributeSyntax> attributes = [];
+
+        foreach (TypeDeclarationSyntax type in types)
+        {
+            var isStaticFound = false;
+            var isAbstractFound = false;
+            foreach(SyntaxToken syntax in type.Modifiers)
+            {
+                if (syntax.IsKind(SyntaxKind.StaticKeyword))
+                {
+                    isStaticFound = true;
+                    continue;
+                }
+                if (syntax.IsKind(SyntaxKind.AbstractKeyword))
+                {
+                    isAbstractFound = true;
+                    continue;
+                }
+                if (syntax.IsKind(SyntaxKind.ProtectedKeyword))
+                {
+                    if (visibility == SyntaxKind.PrivateKeyword)
+                    {
+                        visibility = SyntaxKind.ProtectedKeyword;
+                    }
+                    continue;
+                }
+                if (syntax.IsKind(SyntaxKind.PublicKeyword))
+                {
+                    if (visibility == SyntaxKind.PrivateKeyword || visibility == SyntaxKind.ProtectedKeyword)
+                    {
+                        visibility = SyntaxKind.PublicKeyword;
+                    }
+                    continue;
+                }
+
+                if (!tokens.Any(syn => syn.ToString() == syntax.ToString()))
+                    tokens.Add(syntax);
+            }
+
+            if(!isStaticFound)
+            {
+                isStatic = false;
+            }
+
+            if (!isAbstractFound)
+            {
+                isAbstract = false;
+            }
+
+            if (first == null)
+            {
+                first = type;
+                continue;
+            }
+
+            var attribs = type.AttributeLists.Select(list => list.Attributes).Select(sepList => sepList.Where
+                                                                              (attr => !first.AttributeLists.Any
+                                                                                       (al => al.Attributes.Any(at => at.Name.ToString() == attr.Name.ToString())) &&
+                                                                                       !attributes.Any(at => at.Name.ToString() == attr.Name.ToString())));
+
+            foreach (var al in attribs)
+            {
+                if (al.Count() == 0)
+                {
+                    continue;
+                }
+                attributes.AddRange(al);
+            }
+
+            members.AddRange(type.Members);
+        }
+
+        if (first is null)
+        {
+            return null;
+        }
+
+        tokens.Insert(0, Token(visibility));
+        if (isStatic)
+        {
+            tokens.Add(Token(SyntaxKind.StaticKeyword));
+        }
+        if (isAbstract)
+        {
+            tokens.Add(Token(SyntaxKind.AbstractKeyword));
+        }
+
+        return first.AddAttributeLists(AttributeList(SeparatedList(attributes))).WithModifiers(TokenList(tokens)).WithMembers(MergeTypeMembers(members));
+    }
+
+    private static SyntaxList<MemberDeclarationSyntax> MergeTypeMembers(IEnumerable<MemberDeclarationSyntax> members)
+    {
+        List<MemberDeclarationSyntax> mergedMembers = [];
+        mergedMembers.AddRange(members
+            .OfType<PropertyDeclarationSyntax>()
+            .GroupBy(c => c.Identifier.Text)
+            .Select(group => group.First()));
+
+        mergedMembers.AddRange(members
+            .OfType<FieldDeclarationSyntax>()
+            .GroupBy(c => c.Declaration.Type.ToString())
+            .Select(group => group.First()));
+
+        mergedMembers.AddRange(members
+            .OfType<MethodDeclarationSyntax>()
+            .GroupBy(c => $"{c.Identifier.Text}({string.Join(",", c.ParameterList.Parameters.Select(p => $"{p.Type} {p.Identifier}"))})")
+            .Select(group => group.First()));
+
+        var typeGroups = members
+            .OfType<TypeDeclarationSyntax>()
+            .GroupBy(c => c.Identifier.Text);
+
+        var mergedTypes = typeGroups.Select(MergeTypeDeclarations);
+
+        foreach (var type in mergedTypes)
+        {
+            if (type is null)
+            {
+                continue;
+            }
+            mergedMembers.Add(type);
+        }
+
+        return List(mergedMembers);
+    }
 }

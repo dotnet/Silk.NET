@@ -84,7 +84,7 @@ public unsafe partial struct D3DDestructionNotifier : ID3DDestructionNotifier.In
         );
     }
 
-    public interface Interface : IUnknown.Interface
+    public interface Interface : Unknown.Interface
     {
         [VtblIndex(4)]
         HRESULT UnregisterDestructionCallback(uint callbackID);

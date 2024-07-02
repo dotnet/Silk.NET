@@ -34,6 +34,25 @@ public unsafe readonly ref struct Ref2D<T>
     }
 
     /// <summary>
+    /// Creates a references with the given underlying object.
+    /// This is needed for COM objects
+    /// </summary>
+    /// <param name="Ref"></param>
+    public Ref2D(ref T @Ref)
+    {
+        IL.Emit.Ldarg_0();
+        IL.Emit.Ldarg_1();
+        IL.Emit.Stfld(
+            FieldRef.Field(
+                TypeRef.Type(typeof(Ref2D<>).MakeGenericType(typeof(T))),
+                nameof(InteriorRef)
+            )
+        );
+        IL.Emit.Ret();
+        throw IL.Unreachable();
+    }
+
+    /// <summary>
     /// Creates a reference with the given underlying ref.
     /// </summary>
     /// <param name="InteriorRef">The underlying ref.</param>

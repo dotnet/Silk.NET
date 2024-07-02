@@ -72,7 +72,7 @@ public unsafe partial struct D3DBlob : ID3DBlob.Interface, INativeGuid
         return ((delegate* unmanaged<D3DBlob, nuint>)((*lpVtbl)[4]))(this);
     }
 
-    public interface Interface : IUnknown.Interface
+    public interface Interface : Unknown.Interface
     {
         [VtblIndex(3)]
         [return: NativeTypeName("LPVOID")]

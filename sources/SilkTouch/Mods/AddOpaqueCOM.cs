@@ -42,25 +42,73 @@ namespace Silk.NET.SilkTouch.Mods
 
             List<(string, bool)> COMTypes = firstPass.FoundCOMTypes;
 
+            List<string> removalList = [];
+
+            Dictionary<string, CompilationUnitSyntax> duplicates = new();
 
             var rewriter = new Rewriter(COMTypes);
-            syntax = syntax with {
+                syntax = syntax with {
                 Files = syntax.Files.ToDictionary(
                     x => {
-                        var effectiveName = ModUtils.GetEffectiveName(x.Key).ToString();
-                        if (!COMTypes.Any(val => val.Item1 == effectiveName))
+                        string key = RewriteFileNames(COMTypes, removalList, x);
+
+                        if (!syntax.Files.ContainsKey(key) || key == x.Key) return key;
+
+                        CompilationUnitSyntax? first = rewriter.Visit(x.Value) as CompilationUnitSyntax;
+
+                        if (first is null)
+                            return x.Key;
+
+                        if (!duplicates.ContainsKey(key))
                         {
+                            duplicates.Add(key, first);
                             return x.Key;
                         }
+                        
+                        CompilationUnitSyntax? second = duplicates[key] as CompilationUnitSyntax;
 
-                        syntax.Files.Remove(x.Key);
-                        return x.Key.Replace(effectiveName, $"{effectiveName.Substring(1)}");
+                        if (second is null) return x.Key;
+
+                        duplicates[key] = ModUtils.MergeCompilationUnits(first, second);
+                        return x.Key;
                     },
-                    x => rewriter.Visit(x.Value)
+                    x =>
+                    {
+                        return rewriter.Visit(x.Value);
+                    }
                 )
             };
 
+            foreach(string removal in removalList)
+                syntax.Files.Remove(removal);
+
+            foreach (var (fname, node) in syntax.Files)
+            {
+                if (duplicates.ContainsKey(fname))
+                {
+                    CompilationUnitSyntax? first = node as CompilationUnitSyntax;
+                    CompilationUnitSyntax? second = duplicates[fname] as CompilationUnitSyntax;
+
+                    if (first is null || second is null)
+                        continue;
+
+                    syntax.Files[fname] = ModUtils.MergeCompilationUnits(first, second);
+                }
+            }
+
             return Task.FromResult(syntax);
+        }
+
+        private static string RewriteFileNames(List<(string, bool)> COMTypes, List<string> removalList, KeyValuePair<string, SyntaxNode> x)
+        {
+            var effectiveName = ModUtils.GetEffectiveName(x.Key).ToString();
+            if (!COMTypes.Any(val => val.Item1 == effectiveName))
+            {
+                return x.Key;
+            }
+
+            removalList.Add(x.Key);
+            return x.Key.Replace(effectiveName, $"{effectiveName.Substring(1)}");
         }
 
         class TypeDiscoverer : CSharpSyntaxWalker
@@ -216,6 +264,33 @@ namespace Silk.NET.SilkTouch.Mods
                 }
 
                 return base.VisitVariableDeclaration(node);
+            }
+
+            public override SyntaxNode? VisitInterfaceDeclaration(InterfaceDeclarationSyntax node)
+            {
+                var ret = base.VisitInterfaceDeclaration(node);
+
+
+
+                if (ret is InterfaceDeclarationSyntax inter && inter.BaseList is not null && inter.BaseList.Types.Any(baseType => baseType.Type.ToString().StartsWith("I") && baseType.Type.ToString().EndsWith(".Interface")))
+                {
+                    List<BaseTypeSyntax> baseTypes = [];
+                    foreach (BaseTypeSyntax baseType in inter.BaseList.Types)
+                    {
+                        if (ComTypes.Any(com => $"{com.Item1}.Interface" == baseType.Type.ToString()))
+                        {
+                            baseTypes.Add(SimpleBaseType(IdentifierName(baseType.Type.ToString().Substring(1))));
+                        }
+                        else
+                        {
+                            baseTypes.Add(baseType);
+                        }
+                    }
+
+                    ret = inter.WithBaseList(BaseList(SeparatedList(baseTypes)));
+                }
+
+                return ret;
             }
 
             public override SyntaxNode? VisitCastExpression(CastExpressionSyntax node)
