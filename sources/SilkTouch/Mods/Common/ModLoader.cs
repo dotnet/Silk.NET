@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 
 namespace Silk.NET.SilkTouch.Mods;
 
@@ -23,6 +23,7 @@ public class ModLoader
             nameof(AddVTables) => typeof(AddVTables),
             nameof(AddApiProfiles) => typeof(AddApiProfiles),
             nameof(MixKhronosData) => typeof(MixKhronosData),
+            nameof(AddOpaqueCOM) => typeof(AddOpaqueCOM),
             _ => null
         };
 }

@@ -1,11 +1,11 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 // Ported from dxcore_interface.h in microsoft/DirectX-Headers tag v1.606.4
 // Original source is Copyright © Microsoft. Licensed under the MIT license
-using Silk.NET.Windows;
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using System.Runtime.Versioning;
+using Silk.NET.Windows;
 using static Silk.NET.Windows.IID;
 
 namespace Silk.NET.DirectX;
@@ -19,7 +19,7 @@ public unsafe partial struct IDXCoreAdapter : IDXCoreAdapter.Interface, INativeG
 {
     static Guid* INativeGuid.NativeGuid =>
         (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IDXCoreAdapter));
-    public void** lpVtbl;
+    public void*** lpVtbl;
 
     /// <inheritdoc cref = "IUnknown.QueryInterface"/>
 
@@ -27,8 +27,8 @@ public unsafe partial struct IDXCoreAdapter : IDXCoreAdapter.Interface, INativeG
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IDXCoreAdapter*, Guid*, void**, int>)(lpVtbl[0]))(
-            (IDXCoreAdapter*)Unsafe.AsPointer(ref this),
+        return ((delegate* unmanaged<IDXCoreAdapter, Guid*, void**, int>)((*lpVtbl)[0]))(
+            this,
             riid,
             ppvObject
         );
@@ -41,9 +41,7 @@ public unsafe partial struct IDXCoreAdapter : IDXCoreAdapter.Interface, INativeG
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IDXCoreAdapter*, uint>)(lpVtbl[1]))(
-            (IDXCoreAdapter*)Unsafe.AsPointer(ref this)
-        );
+        return ((delegate* unmanaged<IDXCoreAdapter, uint>)((*lpVtbl)[1]))(this);
     }
 
     /// <inheritdoc cref = "IUnknown.Release"/>
@@ -53,9 +51,7 @@ public unsafe partial struct IDXCoreAdapter : IDXCoreAdapter.Interface, INativeG
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IDXCoreAdapter*, uint>)(lpVtbl[2]))(
-            (IDXCoreAdapter*)Unsafe.AsPointer(ref this)
-        );
+        return ((delegate* unmanaged<IDXCoreAdapter, uint>)((*lpVtbl)[2]))(this);
     }
 
     /// <include file='IDXCoreAdapter.xml' path='doc/member[@name="IDXCoreAdapter.IsValid"]/*'/>
@@ -64,9 +60,7 @@ public unsafe partial struct IDXCoreAdapter : IDXCoreAdapter.Interface, INativeG
     [VtblIndex(3)]
     public bool IsValid()
     {
-        return ((delegate* unmanaged<IDXCoreAdapter*, byte>)(lpVtbl[3]))(
-                (IDXCoreAdapter*)Unsafe.AsPointer(ref this)
-            ) != 0;
+        return ((delegate* unmanaged<IDXCoreAdapter, byte>)((*lpVtbl)[3]))(this) != 0;
     }
 
     /// <include file='IDXCoreAdapter.xml' path='doc/member[@name="IDXCoreAdapter.IsAttributeSupported"]/*'/>
@@ -75,8 +69,8 @@ public unsafe partial struct IDXCoreAdapter : IDXCoreAdapter.Interface, INativeG
     [VtblIndex(4)]
     public bool IsAttributeSupported([NativeTypeName("const GUID &")] Guid* attributeGUID)
     {
-        return ((delegate* unmanaged<IDXCoreAdapter*, Guid*, byte>)(lpVtbl[4]))(
-                (IDXCoreAdapter*)Unsafe.AsPointer(ref this),
+        return ((delegate* unmanaged<IDXCoreAdapter, Guid*, byte>)((*lpVtbl)[4]))(
+                this,
                 attributeGUID
             ) != 0;
     }
@@ -87,8 +81,8 @@ public unsafe partial struct IDXCoreAdapter : IDXCoreAdapter.Interface, INativeG
     [VtblIndex(5)]
     public bool IsPropertySupported(DXCoreAdapterProperty property)
     {
-        return ((delegate* unmanaged<IDXCoreAdapter*, DXCoreAdapterProperty, byte>)(lpVtbl[5]))(
-                (IDXCoreAdapter*)Unsafe.AsPointer(ref this),
+        return ((delegate* unmanaged<IDXCoreAdapter, DXCoreAdapterProperty, byte>)((*lpVtbl)[5]))(
+                this,
                 property
             ) != 0;
     }
@@ -104,10 +98,10 @@ public unsafe partial struct IDXCoreAdapter : IDXCoreAdapter.Interface, INativeG
     )
     {
         return (
-            (delegate* unmanaged<IDXCoreAdapter*, DXCoreAdapterProperty, nuint, void*, int>)(
-                lpVtbl[6]
+            (delegate* unmanaged<IDXCoreAdapter, DXCoreAdapterProperty, nuint, void*, int>)(
+                (*lpVtbl)[6]
             )
-        )((IDXCoreAdapter*)Unsafe.AsPointer(ref this), property, bufferSize, propertyData);
+        )(this, property, bufferSize, propertyData);
     }
 
     /// <include file='IDXCoreAdapter.xml' path='doc/member[@name="IDXCoreAdapter.GetPropertySize"]/*'/>
@@ -120,8 +114,8 @@ public unsafe partial struct IDXCoreAdapter : IDXCoreAdapter.Interface, INativeG
     )
     {
         return (
-            (delegate* unmanaged<IDXCoreAdapter*, DXCoreAdapterProperty, nuint*, int>)(lpVtbl[7])
-        )((IDXCoreAdapter*)Unsafe.AsPointer(ref this), property, bufferSize);
+            (delegate* unmanaged<IDXCoreAdapter, DXCoreAdapterProperty, nuint*, int>)((*lpVtbl)[7])
+        )(this, property, bufferSize);
     }
 
     /// <include file='IDXCoreAdapter.xml' path='doc/member[@name="IDXCoreAdapter.IsQueryStateSupported"]/*'/>
@@ -130,8 +124,8 @@ public unsafe partial struct IDXCoreAdapter : IDXCoreAdapter.Interface, INativeG
     [VtblIndex(8)]
     public bool IsQueryStateSupported(DXCoreAdapterState property)
     {
-        return ((delegate* unmanaged<IDXCoreAdapter*, DXCoreAdapterState, byte>)(lpVtbl[8]))(
-                (IDXCoreAdapter*)Unsafe.AsPointer(ref this),
+        return ((delegate* unmanaged<IDXCoreAdapter, DXCoreAdapterState, byte>)((*lpVtbl)[8]))(
+                this,
                 property
             ) != 0;
     }
@@ -150,21 +144,14 @@ public unsafe partial struct IDXCoreAdapter : IDXCoreAdapter.Interface, INativeG
     {
         return (
             (delegate* unmanaged<
-                IDXCoreAdapter*,
+                IDXCoreAdapter,
                 DXCoreAdapterState,
                 nuint,
                 void*,
                 nuint,
                 void*,
-                int>)(lpVtbl[9])
-        )(
-            (IDXCoreAdapter*)Unsafe.AsPointer(ref this),
-            state,
-            inputStateDetailsSize,
-            inputStateDetails,
-            outputBufferSize,
-            outputBuffer
-        );
+                int>)((*lpVtbl)[9])
+        )(this, state, inputStateDetailsSize, inputStateDetails, outputBufferSize, outputBuffer);
     }
 
     /// <include file='IDXCoreAdapter.xml' path='doc/member[@name="IDXCoreAdapter.IsSetStateSupported"]/*'/>
@@ -173,8 +160,8 @@ public unsafe partial struct IDXCoreAdapter : IDXCoreAdapter.Interface, INativeG
     [VtblIndex(10)]
     public bool IsSetStateSupported(DXCoreAdapterState property)
     {
-        return ((delegate* unmanaged<IDXCoreAdapter*, DXCoreAdapterState, byte>)(lpVtbl[10]))(
-                (IDXCoreAdapter*)Unsafe.AsPointer(ref this),
+        return ((delegate* unmanaged<IDXCoreAdapter, DXCoreAdapterState, byte>)((*lpVtbl)[10]))(
+                this,
                 property
             ) != 0;
     }
@@ -193,21 +180,14 @@ public unsafe partial struct IDXCoreAdapter : IDXCoreAdapter.Interface, INativeG
     {
         return (
             (delegate* unmanaged<
-                IDXCoreAdapter*,
+                IDXCoreAdapter,
                 DXCoreAdapterState,
                 nuint,
                 void*,
                 nuint,
                 void*,
-                int>)(lpVtbl[11])
-        )(
-            (IDXCoreAdapter*)Unsafe.AsPointer(ref this),
-            state,
-            inputStateDetailsSize,
-            inputStateDetails,
-            inputDataSize,
-            inputData
-        );
+                int>)((*lpVtbl)[11])
+        )(this, state, inputStateDetailsSize, inputStateDetails, inputDataSize, inputData);
     }
 
     /// <include file='IDXCoreAdapter.xml' path='doc/member[@name="IDXCoreAdapter.GetFactory"]/*'/>
@@ -216,8 +196,8 @@ public unsafe partial struct IDXCoreAdapter : IDXCoreAdapter.Interface, INativeG
     [VtblIndex(12)]
     public HRESULT GetFactory([NativeTypeName("const IID &")] Guid* riid, void** ppvFactory)
     {
-        return ((delegate* unmanaged<IDXCoreAdapter*, Guid*, void**, int>)(lpVtbl[12]))(
-            (IDXCoreAdapter*)Unsafe.AsPointer(ref this),
+        return ((delegate* unmanaged<IDXCoreAdapter, Guid*, void**, int>)((*lpVtbl)[12]))(
+            this,
             riid,
             ppvFactory
         );
