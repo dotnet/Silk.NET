@@ -1,18 +1,13 @@
 // Licensed to the .NET Foundation under one or more agreements.
 // The .NET Foundation licenses this file to you under the MIT license.
 
-using System;
 using System.Collections.Generic;
-using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.CodeAnalysis;
 using Microsoft.CodeAnalysis.CSharp;
 using Microsoft.CodeAnalysis.CSharp.Syntax;
-using Microsoft.Extensions.Options;
-using Microsoft.VisualBasic;
 using Silk.NET.SilkTouch.Clang;
-using Silk.NET.SilkTouch.Naming;
 using static Microsoft.CodeAnalysis.CSharp.SyntaxFactory;
 
 namespace Silk.NET.SilkTouch.Mods
@@ -42,34 +37,12 @@ namespace Silk.NET.SilkTouch.Mods
 
             List<(string, bool)> COMTypes = firstPass.FoundCOMTypes;
 
-            List<string> removalList = [];
-
             Dictionary<string, CompilationUnitSyntax> duplicates = new();
 
             var rewriter = new Rewriter(COMTypes);
                 syntax = syntax with {
                 Files = syntax.Files.ToDictionary(
                     x => {
-                        string key = RewriteFileNames(COMTypes, removalList, x);
-
-                        if (!syntax.Files.ContainsKey(key) || key == x.Key) return key;
-
-                        CompilationUnitSyntax? first = rewriter.Visit(x.Value) as CompilationUnitSyntax;
-
-                        if (first is null)
-                            return x.Key;
-
-                        if (!duplicates.ContainsKey(key))
-                        {
-                            duplicates.Add(key, first);
-                            return x.Key;
-                        }
-                        
-                        CompilationUnitSyntax? second = duplicates[key] as CompilationUnitSyntax;
-
-                        if (second is null) return x.Key;
-
-                        duplicates[key] = ModUtils.MergeCompilationUnits(first, second);
                         return x.Key;
                     },
                     x =>
@@ -79,36 +52,7 @@ namespace Silk.NET.SilkTouch.Mods
                 )
             };
 
-            foreach(string removal in removalList)
-                syntax.Files.Remove(removal);
-
-            foreach (var (fname, node) in syntax.Files)
-            {
-                if (duplicates.ContainsKey(fname))
-                {
-                    CompilationUnitSyntax? first = node as CompilationUnitSyntax;
-                    CompilationUnitSyntax? second = duplicates[fname] as CompilationUnitSyntax;
-
-                    if (first is null || second is null)
-                        continue;
-
-                    syntax.Files[fname] = ModUtils.MergeCompilationUnits(first, second);
-                }
-            }
-
             return Task.FromResult(syntax);
-        }
-
-        private static string RewriteFileNames(List<(string, bool)> COMTypes, List<string> removalList, KeyValuePair<string, SyntaxNode> x)
-        {
-            var effectiveName = ModUtils.GetEffectiveName(x.Key).ToString();
-            if (!COMTypes.Any(val => val.Item1 == effectiveName))
-            {
-                return x.Key;
-            }
-
-            removalList.Add(x.Key);
-            return x.Key.Replace(effectiveName, $"{effectiveName.Substring(1)}");
         }
 
         class TypeDiscoverer : CSharpSyntaxWalker
@@ -200,11 +144,6 @@ namespace Silk.NET.SilkTouch.Mods
         class Rewriter(List<(string, bool)> ComTypes)
             : CSharpSyntaxRewriter
         {
-            private string GetNewName(string comName)
-            {
-                return comName.Substring(1);
-            }
-
             public override SyntaxNode? VisitPointerType(PointerTypeSyntax node)
             {
                 for (int i = 0; i < ComTypes.Count; i++)
@@ -212,7 +151,7 @@ namespace Silk.NET.SilkTouch.Mods
                     (string, bool) val = ComTypes[i];
                     if (val.Item1 == node.ElementType.ToString() && val.Item2)
                     {
-                        return IdentifierName(GetNewName(val.Item1));
+                        return IdentifierName(val.Item1);
                     }
                 }
 
@@ -229,30 +168,6 @@ namespace Silk.NET.SilkTouch.Mods
                 }
 
                 return base.VisitIdentifierName(node);
-            }
-
-            public override SyntaxNode? VisitStructDeclaration(StructDeclarationSyntax node)
-            {
-                var ret = base.VisitStructDeclaration(node);
-
-                var structDecl = ret as StructDeclarationSyntax;
-
-                if (structDecl is null)
-                {
-                    return ret;
-                }
-
-                var name = structDecl.Identifier.ToString();
-                for (int i = 0; i < ComTypes.Count; i++)
-                {
-                    (string, bool) val = ComTypes[i];
-                    if (name == val.Item1 && val.Item2)
-                    {
-                        return structDecl.WithIdentifier(Identifier(GetNewName(val.Item1)));
-                    }
-                }
-
-                return ret;
             }
 
             public override SyntaxNode? VisitVariableDeclaration(VariableDeclarationSyntax node)
@@ -279,7 +194,7 @@ namespace Silk.NET.SilkTouch.Mods
                     {
                         if (ComTypes.Any(com => $"{com.Item1}.Interface" == baseType.Type.ToString()))
                         {
-                            baseTypes.Add(SimpleBaseType(IdentifierName(baseType.Type.ToString().Substring(1))));
+                            baseTypes.Add(SimpleBaseType(IdentifierName(baseType.Type.ToString())));
                         }
                         else
                         {

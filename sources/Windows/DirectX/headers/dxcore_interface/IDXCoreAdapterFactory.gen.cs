@@ -1,11 +1,11 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 // Ported from dxcore_interface.h in microsoft/DirectX-Headers tag v1.606.4
 // Original source is Copyright © Microsoft. Licensed under the MIT license
-using Silk.NET.Windows;
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using System.Runtime.Versioning;
+using Silk.NET.Windows;
 using static Silk.NET.Windows.IID;
 
 namespace Silk.NET.DirectX;
@@ -19,7 +19,7 @@ public unsafe partial struct IDXCoreAdapterFactory : IDXCoreAdapterFactory.Inter
 {
     static Guid* INativeGuid.NativeGuid =>
         (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IDXCoreAdapterFactory));
-    public void** lpVtbl;
+    public void*** lpVtbl;
 
     /// <inheritdoc cref = "IUnknown.QueryInterface"/>
 
@@ -27,8 +27,8 @@ public unsafe partial struct IDXCoreAdapterFactory : IDXCoreAdapterFactory.Inter
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IDXCoreAdapterFactory*, Guid*, void**, int>)(lpVtbl[0]))(
-            (IDXCoreAdapterFactory*)Unsafe.AsPointer(ref this),
+        return ((delegate* unmanaged<IDXCoreAdapterFactory, Guid*, void**, int>)((*lpVtbl)[0]))(
+            this,
             riid,
             ppvObject
         );
@@ -41,9 +41,7 @@ public unsafe partial struct IDXCoreAdapterFactory : IDXCoreAdapterFactory.Inter
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IDXCoreAdapterFactory*, uint>)(lpVtbl[1]))(
-            (IDXCoreAdapterFactory*)Unsafe.AsPointer(ref this)
-        );
+        return ((delegate* unmanaged<IDXCoreAdapterFactory, uint>)((*lpVtbl)[1]))(this);
     }
 
     /// <inheritdoc cref = "IUnknown.Release"/>
@@ -53,9 +51,7 @@ public unsafe partial struct IDXCoreAdapterFactory : IDXCoreAdapterFactory.Inter
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IDXCoreAdapterFactory*, uint>)(lpVtbl[2]))(
-            (IDXCoreAdapterFactory*)Unsafe.AsPointer(ref this)
-        );
+        return ((delegate* unmanaged<IDXCoreAdapterFactory, uint>)((*lpVtbl)[2]))(this);
     }
 
     /// <include file='IDXCoreAdapterFactory.xml' path='doc/member[@name="IDXCoreAdapterFactory.CreateAdapterList"]/*'/>
@@ -70,16 +66,10 @@ public unsafe partial struct IDXCoreAdapterFactory : IDXCoreAdapterFactory.Inter
     )
     {
         return (
-            (delegate* unmanaged<IDXCoreAdapterFactory*, uint, Guid*, Guid*, void**, int>)(
-                lpVtbl[3]
+            (delegate* unmanaged<IDXCoreAdapterFactory, uint, Guid*, Guid*, void**, int>)(
+                (*lpVtbl)[3]
             )
-        )(
-            (IDXCoreAdapterFactory*)Unsafe.AsPointer(ref this),
-            numAttributes,
-            filterAttributes,
-            riid,
-            ppvAdapterList
-        );
+        )(this, numAttributes, filterAttributes, riid, ppvAdapterList);
     }
 
     /// <include file='IDXCoreAdapterFactory.xml' path='doc/member[@name="IDXCoreAdapterFactory.GetAdapterByLuid"]/*'/>
@@ -93,8 +83,8 @@ public unsafe partial struct IDXCoreAdapterFactory : IDXCoreAdapterFactory.Inter
     )
     {
         return (
-            (delegate* unmanaged<IDXCoreAdapterFactory*, LUID*, Guid*, void**, int>)(lpVtbl[4])
-        )((IDXCoreAdapterFactory*)Unsafe.AsPointer(ref this), adapterLUID, riid, ppvAdapter);
+            (delegate* unmanaged<IDXCoreAdapterFactory, LUID*, Guid*, void**, int>)((*lpVtbl)[4])
+        )(this, adapterLUID, riid, ppvAdapter);
     }
 
     /// <include file='IDXCoreAdapterFactory.xml' path='doc/member[@name="IDXCoreAdapterFactory.IsNotificationTypeSupported"]/*'/>
@@ -104,10 +94,10 @@ public unsafe partial struct IDXCoreAdapterFactory : IDXCoreAdapterFactory.Inter
     public bool IsNotificationTypeSupported(DXCoreNotificationType notificationType)
     {
         return (
-                (delegate* unmanaged<IDXCoreAdapterFactory*, DXCoreNotificationType, byte>)(
-                    lpVtbl[5]
+                (delegate* unmanaged<IDXCoreAdapterFactory, DXCoreNotificationType, byte>)(
+                    (*lpVtbl)[5]
                 )
-            )((IDXCoreAdapterFactory*)Unsafe.AsPointer(ref this), notificationType) != 0;
+            )(this, notificationType) != 0;
     }
 
     /// <include file='IDXCoreAdapterFactory.xml' path='doc/member[@name="IDXCoreAdapterFactory.RegisterEventNotification"]/*'/>
@@ -115,31 +105,24 @@ public unsafe partial struct IDXCoreAdapterFactory : IDXCoreAdapterFactory.Inter
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT RegisterEventNotification(
-        IUnknown* dxCoreObject,
+        IUnknown dxCoreObject,
         DXCoreNotificationType notificationType,
         [NativeTypeName("PFN_DXCORE_NOTIFICATION_CALLBACK")]
-            delegate* unmanaged<DXCoreNotificationType, IUnknown*, void*, void> callbackFunction,
+            delegate* unmanaged<DXCoreNotificationType, IUnknown, void*, void> callbackFunction,
         void* callbackContext,
         [NativeTypeName("uint32_t *")] uint* eventCookie
     )
     {
         return (
             (delegate* unmanaged<
-                IDXCoreAdapterFactory*,
-                IUnknown*,
+                IDXCoreAdapterFactory,
+                IUnknown,
                 DXCoreNotificationType,
-                delegate* unmanaged<DXCoreNotificationType, IUnknown*, void*, void>,
+                delegate* unmanaged<DXCoreNotificationType, IUnknown, void*, void>,
                 void*,
                 uint*,
-                int>)(lpVtbl[6])
-        )(
-            (IDXCoreAdapterFactory*)Unsafe.AsPointer(ref this),
-            dxCoreObject,
-            notificationType,
-            callbackFunction,
-            callbackContext,
-            eventCookie
-        );
+                int>)((*lpVtbl)[6])
+        )(this, dxCoreObject, notificationType, callbackFunction, callbackContext, eventCookie);
     }
 
     /// <include file='IDXCoreAdapterFactory.xml' path='doc/member[@name="IDXCoreAdapterFactory.UnregisterEventNotification"]/*'/>
@@ -148,8 +131,8 @@ public unsafe partial struct IDXCoreAdapterFactory : IDXCoreAdapterFactory.Inter
     [VtblIndex(7)]
     public HRESULT UnregisterEventNotification([NativeTypeName("uint32_t")] uint eventCookie)
     {
-        return ((delegate* unmanaged<IDXCoreAdapterFactory*, uint, int>)(lpVtbl[7]))(
-            (IDXCoreAdapterFactory*)Unsafe.AsPointer(ref this),
+        return ((delegate* unmanaged<IDXCoreAdapterFactory, uint, int>)((*lpVtbl)[7]))(
+            this,
             eventCookie
         );
     }
@@ -209,9 +192,9 @@ public unsafe partial struct IDXCoreAdapterFactory : IDXCoreAdapterFactory.Inter
         )]
         public delegate* unmanaged<
             TSelf*,
-            IUnknown*,
+            IUnknown,
             DXCoreNotificationType,
-            delegate* unmanaged<DXCoreNotificationType, IUnknown*, void*, void>,
+            delegate* unmanaged<DXCoreNotificationType, IUnknown, void*, void>,
             void*,
             uint*,
             int> RegisterEventNotification;

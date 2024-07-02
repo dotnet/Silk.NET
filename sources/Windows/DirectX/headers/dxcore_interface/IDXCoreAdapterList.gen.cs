@@ -1,11 +1,11 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 // Ported from dxcore_interface.h in microsoft/DirectX-Headers tag v1.606.4
 // Original source is Copyright © Microsoft. Licensed under the MIT license
-using Silk.NET.Windows;
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using System.Runtime.Versioning;
+using Silk.NET.Windows;
 using static Silk.NET.Windows.IID;
 
 namespace Silk.NET.DirectX;
@@ -19,7 +19,7 @@ public unsafe partial struct IDXCoreAdapterList : IDXCoreAdapterList.Interface, 
 {
     static Guid* INativeGuid.NativeGuid =>
         (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IDXCoreAdapterList));
-    public void** lpVtbl;
+    public void*** lpVtbl;
 
     /// <inheritdoc cref = "IUnknown.QueryInterface"/>
 
@@ -27,8 +27,8 @@ public unsafe partial struct IDXCoreAdapterList : IDXCoreAdapterList.Interface, 
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IDXCoreAdapterList*, Guid*, void**, int>)(lpVtbl[0]))(
-            (IDXCoreAdapterList*)Unsafe.AsPointer(ref this),
+        return ((delegate* unmanaged<IDXCoreAdapterList, Guid*, void**, int>)((*lpVtbl)[0]))(
+            this,
             riid,
             ppvObject
         );
@@ -41,9 +41,7 @@ public unsafe partial struct IDXCoreAdapterList : IDXCoreAdapterList.Interface, 
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IDXCoreAdapterList*, uint>)(lpVtbl[1]))(
-            (IDXCoreAdapterList*)Unsafe.AsPointer(ref this)
-        );
+        return ((delegate* unmanaged<IDXCoreAdapterList, uint>)((*lpVtbl)[1]))(this);
     }
 
     /// <inheritdoc cref = "IUnknown.Release"/>
@@ -53,9 +51,7 @@ public unsafe partial struct IDXCoreAdapterList : IDXCoreAdapterList.Interface, 
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IDXCoreAdapterList*, uint>)(lpVtbl[2]))(
-            (IDXCoreAdapterList*)Unsafe.AsPointer(ref this)
-        );
+        return ((delegate* unmanaged<IDXCoreAdapterList, uint>)((*lpVtbl)[2]))(this);
     }
 
     /// <include file='IDXCoreAdapterList.xml' path='doc/member[@name="IDXCoreAdapterList.GetAdapter"]/*'/>
@@ -68,8 +64,8 @@ public unsafe partial struct IDXCoreAdapterList : IDXCoreAdapterList.Interface, 
         void** ppvAdapter
     )
     {
-        return ((delegate* unmanaged<IDXCoreAdapterList*, uint, Guid*, void**, int>)(lpVtbl[3]))(
-            (IDXCoreAdapterList*)Unsafe.AsPointer(ref this),
+        return ((delegate* unmanaged<IDXCoreAdapterList, uint, Guid*, void**, int>)((*lpVtbl)[3]))(
+            this,
             index,
             riid,
             ppvAdapter
@@ -83,9 +79,7 @@ public unsafe partial struct IDXCoreAdapterList : IDXCoreAdapterList.Interface, 
     [return: NativeTypeName("uint32_t")]
     public uint GetAdapterCount()
     {
-        return ((delegate* unmanaged<IDXCoreAdapterList*, uint>)(lpVtbl[4]))(
-            (IDXCoreAdapterList*)Unsafe.AsPointer(ref this)
-        );
+        return ((delegate* unmanaged<IDXCoreAdapterList, uint>)((*lpVtbl)[4]))(this);
     }
 
     /// <include file='IDXCoreAdapterList.xml' path='doc/member[@name="IDXCoreAdapterList.IsStale"]/*'/>
@@ -94,9 +88,7 @@ public unsafe partial struct IDXCoreAdapterList : IDXCoreAdapterList.Interface, 
     [VtblIndex(5)]
     public bool IsStale()
     {
-        return ((delegate* unmanaged<IDXCoreAdapterList*, byte>)(lpVtbl[5]))(
-                (IDXCoreAdapterList*)Unsafe.AsPointer(ref this)
-            ) != 0;
+        return ((delegate* unmanaged<IDXCoreAdapterList, byte>)((*lpVtbl)[5]))(this) != 0;
     }
 
     /// <include file='IDXCoreAdapterList.xml' path='doc/member[@name="IDXCoreAdapterList.GetFactory"]/*'/>
@@ -105,8 +97,8 @@ public unsafe partial struct IDXCoreAdapterList : IDXCoreAdapterList.Interface, 
     [VtblIndex(6)]
     public HRESULT GetFactory([NativeTypeName("const IID &")] Guid* riid, void** ppvFactory)
     {
-        return ((delegate* unmanaged<IDXCoreAdapterList*, Guid*, void**, int>)(lpVtbl[6]))(
-            (IDXCoreAdapterList*)Unsafe.AsPointer(ref this),
+        return ((delegate* unmanaged<IDXCoreAdapterList, Guid*, void**, int>)((*lpVtbl)[6]))(
+            this,
             riid,
             ppvFactory
         );
@@ -122,10 +114,10 @@ public unsafe partial struct IDXCoreAdapterList : IDXCoreAdapterList.Interface, 
     )
     {
         return (
-            (delegate* unmanaged<IDXCoreAdapterList*, uint, DXCoreAdapterPreference*, int>)(
-                lpVtbl[7]
+            (delegate* unmanaged<IDXCoreAdapterList, uint, DXCoreAdapterPreference*, int>)(
+                (*lpVtbl)[7]
             )
-        )((IDXCoreAdapterList*)Unsafe.AsPointer(ref this), numPreferences, preferences);
+        )(this, numPreferences, preferences);
     }
 
     /// <include file='IDXCoreAdapterList.xml' path='doc/member[@name="IDXCoreAdapterList.IsAdapterPreferenceSupported"]/*'/>
@@ -135,8 +127,10 @@ public unsafe partial struct IDXCoreAdapterList : IDXCoreAdapterList.Interface, 
     public bool IsAdapterPreferenceSupported(DXCoreAdapterPreference preference)
     {
         return (
-                (delegate* unmanaged<IDXCoreAdapterList*, DXCoreAdapterPreference, byte>)(lpVtbl[8])
-            )((IDXCoreAdapterList*)Unsafe.AsPointer(ref this), preference) != 0;
+                (delegate* unmanaged<IDXCoreAdapterList, DXCoreAdapterPreference, byte>)(
+                    (*lpVtbl)[8]
+                )
+            )(this, preference) != 0;
     }
 
     public interface Interface : IUnknown.Interface

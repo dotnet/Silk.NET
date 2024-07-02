@@ -13,7 +13,7 @@ namespace Silk.NET.DirectX;
 [Guid("8BA5FB08-5195-40E2-AC58-0D989C3A0102")]
 [NativeTypeName("struct ID3D10Blob : IUnknown")]
 [NativeInheritance("IUnknown")]
-public unsafe partial struct D3DBlob : ID3DBlob.Interface, INativeGuid
+public unsafe partial struct ID3DBlob : ID3DBlob.Interface, INativeGuid
 {
     static Guid* INativeGuid.NativeGuid =>
         (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_ID3D10Blob));
@@ -25,7 +25,7 @@ public unsafe partial struct D3DBlob : ID3DBlob.Interface, INativeGuid
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<D3DBlob, Guid*, void**, int>)((*lpVtbl)[0]))(
+        return ((delegate* unmanaged<ID3DBlob, Guid*, void**, int>)((*lpVtbl)[0]))(
             this,
             riid,
             ppvObject
@@ -39,7 +39,7 @@ public unsafe partial struct D3DBlob : ID3DBlob.Interface, INativeGuid
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<D3DBlob, uint>)((*lpVtbl)[1]))(this);
+        return ((delegate* unmanaged<ID3DBlob, uint>)((*lpVtbl)[1]))(this);
     }
 
     /// <inheritdoc cref = "IUnknown.Release"/>
@@ -49,7 +49,7 @@ public unsafe partial struct D3DBlob : ID3DBlob.Interface, INativeGuid
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<D3DBlob, uint>)((*lpVtbl)[2]))(this);
+        return ((delegate* unmanaged<ID3DBlob, uint>)((*lpVtbl)[2]))(this);
     }
 
     /// <include file='ID3DBlob.xml' path='doc/member[@name="ID3DBlob.GetBufferPointer"]/*'/>
@@ -59,7 +59,7 @@ public unsafe partial struct D3DBlob : ID3DBlob.Interface, INativeGuid
     [return: NativeTypeName("LPVOID")]
     public void* GetBufferPointer()
     {
-        return ((delegate* unmanaged<D3DBlob, void*>)((*lpVtbl)[3]))(this);
+        return ((delegate* unmanaged<ID3DBlob, void*>)((*lpVtbl)[3]))(this);
     }
 
     /// <include file='ID3DBlob.xml' path='doc/member[@name="ID3DBlob.GetBufferSize"]/*'/>
@@ -69,10 +69,10 @@ public unsafe partial struct D3DBlob : ID3DBlob.Interface, INativeGuid
     [return: NativeTypeName("SIZE_T")]
     public nuint GetBufferSize()
     {
-        return ((delegate* unmanaged<D3DBlob, nuint>)((*lpVtbl)[4]))(this);
+        return ((delegate* unmanaged<ID3DBlob, nuint>)((*lpVtbl)[4]))(this);
     }
 
-    public interface Interface : Unknown.Interface
+    public interface Interface : IUnknown.Interface
     {
         [VtblIndex(3)]
         [return: NativeTypeName("LPVOID")]

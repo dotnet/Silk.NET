@@ -13,7 +13,9 @@ namespace Silk.NET.DirectX;
 [Guid("A06EB39A-50DA-425B-8C31-4EECD6C270F3")]
 [NativeTypeName("struct ID3DDestructionNotifier : IUnknown")]
 [NativeInheritance("IUnknown")]
-public unsafe partial struct D3DDestructionNotifier : ID3DDestructionNotifier.Interface, INativeGuid
+public unsafe partial struct ID3DDestructionNotifier
+    : ID3DDestructionNotifier.Interface,
+        INativeGuid
 {
     static Guid* INativeGuid.NativeGuid =>
         (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_ID3DDestructionNotifier));
@@ -25,7 +27,7 @@ public unsafe partial struct D3DDestructionNotifier : ID3DDestructionNotifier.In
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<D3DDestructionNotifier, Guid*, void**, int>)((*lpVtbl)[0]))(
+        return ((delegate* unmanaged<ID3DDestructionNotifier, Guid*, void**, int>)((*lpVtbl)[0]))(
             this,
             riid,
             ppvObject
@@ -39,7 +41,7 @@ public unsafe partial struct D3DDestructionNotifier : ID3DDestructionNotifier.In
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<D3DDestructionNotifier, uint>)((*lpVtbl)[1]))(this);
+        return ((delegate* unmanaged<ID3DDestructionNotifier, uint>)((*lpVtbl)[1]))(this);
     }
 
     /// <inheritdoc cref = "IUnknown.Release"/>
@@ -49,7 +51,7 @@ public unsafe partial struct D3DDestructionNotifier : ID3DDestructionNotifier.In
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<D3DDestructionNotifier, uint>)((*lpVtbl)[2]))(this);
+        return ((delegate* unmanaged<ID3DDestructionNotifier, uint>)((*lpVtbl)[2]))(this);
     }
 
     /// <include file='ID3DDestructionNotifier.xml' path='doc/member[@name="ID3DDestructionNotifier.RegisterDestructionCallback"]/*'/>
@@ -64,7 +66,7 @@ public unsafe partial struct D3DDestructionNotifier : ID3DDestructionNotifier.In
     {
         return (
             (delegate* unmanaged<
-                D3DDestructionNotifier,
+                ID3DDestructionNotifier,
                 delegate* unmanaged<void*, void>,
                 void*,
                 uint*,
@@ -78,13 +80,13 @@ public unsafe partial struct D3DDestructionNotifier : ID3DDestructionNotifier.In
     [VtblIndex(4)]
     public HRESULT UnregisterDestructionCallback(uint callbackID)
     {
-        return ((delegate* unmanaged<D3DDestructionNotifier, uint, int>)((*lpVtbl)[4]))(
+        return ((delegate* unmanaged<ID3DDestructionNotifier, uint, int>)((*lpVtbl)[4]))(
             this,
             callbackID
         );
     }
 
-    public interface Interface : Unknown.Interface
+    public interface Interface : IUnknown.Interface
     {
         [VtblIndex(4)]
         HRESULT UnregisterDestructionCallback(uint callbackID);

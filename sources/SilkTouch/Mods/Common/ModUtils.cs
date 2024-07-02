@@ -598,7 +598,7 @@ public static class ModUtils
     /// <param name="unit1"></param>
     /// <param name="unit2"></param>
     /// <returns></returns>
-    public static CompilationUnitSyntax MergeCompilationUnits(CompilationUnitSyntax unit1, CompilationUnitSyntax unit2)
+    private static CompilationUnitSyntax MergeCompilationUnits(CompilationUnitSyntax unit1, CompilationUnitSyntax unit2)
     {
         var combinedMembers = unit1.Members.Concat(unit2.Members);
         var combinedUsings = unit1.Usings.Concat(unit2.Usings).Distinct();
