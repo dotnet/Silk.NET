@@ -4,6 +4,7 @@
 #nullable enable
 using System;
 using System.Linq;
+using Silk.NET.Core.Loader;
 
 namespace Silk.NET.Core.Contexts
 {
