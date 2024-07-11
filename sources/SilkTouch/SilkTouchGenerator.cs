@@ -256,6 +256,8 @@ public class SilkTouchGenerator(
         rawBindings.Files.Clear(); // GC ASAP
         var bindings = new GeneratedSyntax(syntaxTrees, rawBindings.Diagnostics);
 
+        var context = new SyntaxContext( bindings );
+
         // Mod the bindings
         // ReSharper disable once LoopCanBeConvertedToQuery
         foreach (var mod in jobMods)
