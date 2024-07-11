@@ -30,7 +30,7 @@ public class SyntaxContext
         {
             if (node is CompilationUnitSyntax comp)
             {
-                Files.Add(fName, new CompilationContext(fName, comp, TypeDefinitionContainers));
+                Files.Add(fName, new CompilationContext(fName, comp, this));
             }
             else
             {
@@ -45,16 +45,106 @@ public class SyntaxContext
 
     Dictionary<string, List<TypeContextContainer>> TypeDefinitionContainers = [];
 
+    private TypeContextContainer GetTypeContainer(TypeSyntax syn, string ns, List<string> usings, TypeContext? currentType, out int pDepth, string parentName = "")
+    {
+        pDepth = 0;
+        while (syn is PointerTypeSyntax pointer)
+        {
+            pDepth++;
+            syn = pointer.ElementType;
+        }
+
+        string name = $"{(parentName.Length > 0 ? $"{parentName}." : "")}{currentType?.Node.Identifier.Text ?? string.Empty}";
+
+        TypeContextContainer type;
+        if (TypeDefinitionContainers.TryGetValue(syn.ToString(), out var list))
+        {
+            type = list.First();
+
+            foreach (var decl in list)
+            {
+                if (NamespaceMatch(ns, decl.Namespace) || usings.Contains(decl.Namespace) && (decl.IsPublic))
+                {
+                    type = decl;
+                    break;
+                }
+            }
+        }
+        else if (GetChildContainer(syn, currentType, out list, name) && list is not null)
+        {
+            type = list.First();
+
+            foreach (var decl in list)
+            {
+                if (ns == decl.Namespace)
+                {
+                    type = decl;
+                    break;
+                }
+            }
+        }
+        else
+        {
+            type = new(string.Empty, new UnknownTypeContext(syn), true);
+            TypeDefinitionContainers.Add(syn.ToString(), new() { type });
+        }
+
+        return type;
+    }
+
+    private void AddTypeContextContainer(ref TypeContextContainer container, string name)
+    {
+        if (!TypeDefinitionContainers.TryGetValue(name, out var list))
+        {
+            list = [];
+            TypeDefinitionContainers.Add(name, list);
+        }
+        if (list.Count == 1 && list[0].Type is UnknownTypeContext)
+        {
+            list[0].Type = container.Type;
+            list[0].Namespace = container.Namespace;
+            container = list[0];
+        }
+        else
+        {
+            list.Add(container);
+        }
+    }
+
+    private bool GetChildContainer(TypeSyntax syn, TypeContext? currentType, out List<TypeContextContainer>? list, string parentName, bool topLevel = true)
+    {
+        list = null;
+        if (currentType is null)
+        {
+            return false;
+        }
+
+        foreach(var child in currentType.SubTypes)
+        {
+            string name = $"{(parentName.Length > 0 ? $"{parentName}." : "")}{child.Key}";
+            if (TypeDefinitionContainers.TryGetValue(name, out list))
+            {
+                return true;
+            }
+
+            if (GetChildContainer(syn, child.Value.Type as TypeContext, out list, name, false))
+            {
+                return true;
+            }
+        }
+        return false;
+    }
+
     private class CompilationContext
     {
-        public CompilationContext(string file, CompilationUnitSyntax node, Dictionary<string, List<TypeContextContainer>> TypeDefinitionContainers)
+        public CompilationContext(string file, CompilationUnitSyntax node, SyntaxContext context)
         {
             List<string> usings = node.Usings.Select(u => u.Name!.ToString()).ToList();
             foreach (var member in node.Members)
             {
                 if (member is BaseNamespaceDeclarationSyntax ns)
                 {
-                    var nsContext = new NamespaceContext(string.Empty, ns, TypeDefinitionContainers, usings, file);
+                    var nsContext = new NamespaceContext(string.Empty, ns, context, usings, file);
                     Namespaces.Add(nsContext.Node.Name.ToString(), nsContext);
                 }
                 else
@@ -76,20 +166,20 @@ public class SyntaxContext
 
     private class NamespaceContext
     {
-        public NamespaceContext(string namesp, BaseNamespaceDeclarationSyntax node, Dictionary<string, List<TypeContextContainer>> TypeDefinitionContainers, List<string> usings, string file = "")
+        public NamespaceContext(string namesp, BaseNamespaceDeclarationSyntax node, SyntaxContext context, List<string> usings, string file = "")
         {
             string[] names = node.Name.ToString().Split('.');
 
             namesp += $"{(namesp.Length > 0 ? "." : "")}{node.Name}";
             if (names.Length != 1)
             {
-                NamespaceContext child = new NamespaceContext(namesp, node.WithName(IdentifierName(names[names.Length - 1])), TypeDefinitionContainers, usings, file);
+                NamespaceContext child = new NamespaceContext(namesp, node.WithName(IdentifierName(names[names.Length - 1])), context, usings, file);
                 namesp = namesp.Remove(namesp.Length - (names.Last().Length + 1));
                 node = node.WithMembers(List(Array.Empty<MemberDeclarationSyntax>()));
 
                 for (int i = names.Length - 2; i >= 1; i--)
                 {
-                    NamespaceContext current = new NamespaceContext(namesp, node.WithName(IdentifierName(names[i])), TypeDefinitionContainers, usings, file);
+                    NamespaceContext current = new NamespaceContext(namesp, node.WithName(IdentifierName(names[i])), context, usings, file);
                     namesp = namesp.Remove(namesp.Length - (names[i].Length + 1));
                     current.Namespaces.Add(names[i + 1], child);
                     child = current;
@@ -104,53 +194,19 @@ public class SyntaxContext
             {
                 if (member is BaseNamespaceDeclarationSyntax ns)
                 {
-                    var nsContext = new NamespaceContext(namesp, ns, TypeDefinitionContainers, usings, file);
+                    var nsContext = new NamespaceContext(namesp, ns, context, usings, file);
                     Namespaces.Add(nsContext.Node.Name.ToString(), nsContext);
                 }
                 else if (member is EnumDeclarationSyntax e)
                 {
-                    var en = new TypeContextContainer(namesp, new EnumContext(file, e));
-                    if (e.Modifiers.Any(token => token.IsKind(SyntaxKind.PublicKeyword)))
-                    {
-                        if (!TypeDefinitionContainers.TryGetValue(e.Identifier.Text, out var list))
-                        {
-                            list = [];
-                            TypeDefinitionContainers.Add(e.Identifier.Text, list);
-                        }
-                        if (list.Count == 1 && list[0].Type is UnknownTypeContext)
-                        {
-                            list[0].Type = en.Type;
-                            list[0].Namespace = en.Namespace;
-                            en = list[0];
-                        }
-                        else
-                        {
-                            list.Add(en);
-                        }
-                    }
+                    var en = new TypeContextContainer(namesp, new EnumContext(file, e), e.Modifiers.Any(token => token.IsKind(SyntaxKind.PublicKeyword)));
+                    context.AddTypeContextContainer(ref en, e.Identifier.Text);
                     Types.Add(e.Identifier.Text, en);
                 }
                 else if (member is TypeDeclarationSyntax t)
                 {
-                    var ty = new TypeContextContainer(namesp, new TypeContext(namesp, file, t, TypeDefinitionContainers, usings));
-                    if (t.Modifiers.Any(token => token.IsKind(SyntaxKind.PublicKeyword)))
-                    {
-                        if (!TypeDefinitionContainers.TryGetValue(t.Identifier.Text, out var list))
-                        {
-                            list = [];
-                            TypeDefinitionContainers.Add(t.Identifier.Text, list);
-                        }
-                        if (list.Count == 1 && list[0].Type is UnknownTypeContext)
-                        {
-                            list[0].Type = ty.Type;
-                            list[0].Namespace = ty.Namespace;
-                            ty = list[0];
-                        }
-                        else
-                        {
-                            list.Add(ty);
-                        }
-                    }
+                    var ty = new TypeContextContainer(namesp, new TypeContext(namesp, file, t, context, usings), t.Modifiers.Any(token => token.IsKind(SyntaxKind.PublicKeyword)));
+                    context.AddTypeContextContainer(ref ty, t.Identifier.Text);
                     Types.Add(t.Identifier.Text, ty);
                 }
                 else
@@ -177,7 +233,7 @@ public class SyntaxContext
 
     private class TypeContext : IBaseTypeContext
     {
-        public TypeContext(string ns, string file, TypeDeclarationSyntax node, Dictionary<string, List<TypeContextContainer>> TypeDefinitionContainers, List<string> usings)
+        public TypeContext(string ns, string file, TypeDeclarationSyntax node, SyntaxContext context, List<string> usings, string parentName = "")
         {
             File = file;
 
@@ -185,48 +241,16 @@ public class SyntaxContext
             {
                 if (member is EnumDeclarationSyntax e)
                 {
-                    var en = new TypeContextContainer(ns, new EnumContext(file, e));
-                    if (e.Modifiers.Any(token => token.IsKind(SyntaxKind.PublicKeyword)))
-                    {
-                        if (!TypeDefinitionContainers.TryGetValue(e.Identifier.Text, out var list))
-                        {
-                            list = [];
-                            TypeDefinitionContainers.Add(e.Identifier.Text, list);
-                        }
-                        if (list.Count == 1 && list[0].Type is UnknownTypeContext)
-                        {
-                            list[0].Type = en.Type;
-                            list[0].Namespace = en.Namespace;
-                            en = list[0];
-                        }
-                        else
-                        {
-                            list.Add(en);
-                        }
-                    }
+                    string name = $"{(parentName.Length > 0 ? $"{parentName}." : "")}{e.Identifier.Text}";
+                    var en = new TypeContextContainer(ns, new EnumContext(file, e), e.Modifiers.Any(token => token.IsKind(SyntaxKind.PublicKeyword)));
+                    context.AddTypeContextContainer(ref en, name);
                     SubTypes.Add(e.Identifier.Text, en);
                 }
                 else if (member is TypeDeclarationSyntax t)
                 {
-                    var ty = new TypeContextContainer(ns, new TypeContext(ns, file, t, TypeDefinitionContainers, usings));
-                    if (t.Modifiers.Any(token => token.IsKind(SyntaxKind.PublicKeyword)))
-                    {
-                        if (!TypeDefinitionContainers.TryGetValue(t.Identifier.Text, out var list))
-                        {
-                            list = [];
-                            TypeDefinitionContainers.Add(t.Identifier.Text, list);
-                        }
-                        if (list.Count == 1 && list[0].Type is UnknownTypeContext)
-                        {
-                            list[0].Type = ty.Type;
-                            list[0].Namespace = ty.Namespace;
-                            ty = list[0];
-                        }
-                        else
-                        {
-                            list.Add(ty);
-                        }
-                    }
+                    string name = $"{(parentName.Length > 0 ? $"{parentName}." : "")}{t.Identifier.Text}";
+                    var ty = new TypeContextContainer(ns, new TypeContext(ns, file, t, context, usings, name), t.Modifiers.Any(token => token.IsKind(SyntaxKind.PublicKeyword)));
+                    context.AddTypeContextContainer(ref ty, name);
                     SubTypes.Add(t.Identifier.Text, ty);
                 }
                 else if (member is MethodDeclarationSyntax m)
@@ -237,38 +261,12 @@ public class SyntaxContext
                         methods = new();
                         Methods.Add(name, methods);
                     }
-                    methods.Add(new(m));
+                    methods.Add(new(ns, m, context, usings, parentName, this));
                 }
                 else if (member is FieldDeclarationSyntax f)
                 {
-                    TypeSyntax syn = f.Declaration.Type;
-                    int pDepth = 0;
-                    while (syn is PointerTypeSyntax pointer)
-                    {
-                        pDepth++;
-                        syn = pointer.ElementType;
-                    }
+                    TypeContextContainer type = context.GetTypeContainer(f.Declaration.Type, ns, usings, this, out int pDepth, parentName);
 
-                    TypeContextContainer type;
-                    if (TypeDefinitionContainers.TryGetValue(syn.ToString(), out var list))
-                    {
-                        type = list.First();
-
-                        foreach(var decl in list)
-                        {
-                            if (NamespaceMatch(ns, decl.Namespace) || usings.Contains(decl.Namespace))
-                            {
-                                type = decl;
-                                break;
-                            }
-                        }
-                    }
-                    else
-                    {
-                        type = new(string.Empty, new UnknownTypeContext(syn));
-                        TypeDefinitionContainers.Add(syn.ToString(), new() { type });
-                    }
-                    
                     foreach (var dec in f.Declaration.Variables)
                     {
                         Fields.Add(dec.Identifier.Text, new(type, pDepth, f.WithDeclaration(f.Declaration.WithVariables(SeparatedList(new[] { dec })))));
@@ -276,33 +274,7 @@ public class SyntaxContext
                 }
                 else if (member is PropertyDeclarationSyntax p)
                 {
-                    TypeSyntax syn = p.Type;
-                    int pDepth = 0;
-                    while (syn is PointerTypeSyntax pointer)
-                    {
-                        pDepth++;
-                        syn = pointer.ElementType;
-                    }
-
-                    TypeContextContainer type;
-                    if (TypeDefinitionContainers.TryGetValue(syn.ToString(), out var list))
-                    {
-                        type = list.First();
-
-                        foreach (var decl in list)
-                        {
-                            if (NamespaceMatch(ns, decl.Namespace) || usings.Contains(decl.Namespace))
-                            {
-                                type = decl;
-                                break;
-                            }
-                        }
-                    }
-                    else
-                    {
-                        type = new(string.Empty, new UnknownTypeContext(syn));
-                        TypeDefinitionContainers.Add(syn.ToString(), new() { type });
-                    }
+                    TypeContextContainer type = context.GetTypeContainer(p.Type, ns, usings, this, out int pDepth, parentName);
 
                     Properties.Add(p.Identifier.Text, new(type, pDepth, p));
                 }
@@ -369,19 +341,31 @@ public class SyntaxContext
 
     private class TypeContextContainer
     {
-        public TypeContextContainer(string ns, IBaseTypeContext ty)
+        public TypeContextContainer(string ns, IBaseTypeContext ty, bool isPublic)
         {
             Namespace = ns;
             Type = ty;
+            IsPublic = isPublic;
         }
 
         public string Namespace;
+        public bool IsPublic;
         public IBaseTypeContext Type;
     }
 
     private class MethodContext : LeafNodeContext<MethodDeclarationSyntax>
     {
-        public MethodContext(MethodDeclarationSyntax node) : base(node) { }
+        public MethodContext(string ns, MethodDeclarationSyntax node, SyntaxContext context, List<string> usings, string parentName, TypeContext type) : base(node)
+        {
+            foreach (var para in node.ParameterList.Parameters)
+            {
+                TypeContextContainer pType = context.GetTypeContainer(para.Type!, ns, usings, type, out int pDepth, parentName);
+
+                Parameters.Add(para.Identifier.Text, pType);
+            }
+        }
+
+        public Dictionary<string, TypeContextContainer> Parameters = [];
     }
 
     private class FieldContext : VariableNodes<FieldDeclarationSyntax>
