@@ -3,7 +3,9 @@
 
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
+using System.Reflection.Metadata;
 using System.Text;
 using System.Threading.Tasks;
 using System.Xml.Linq;
@@ -11,6 +13,7 @@ using ClangSharp;
 using Microsoft.CodeAnalysis;
 using Microsoft.CodeAnalysis.CSharp;
 using Microsoft.CodeAnalysis.CSharp.Syntax;
+using Silk.NET.Core;
 using static Microsoft.CodeAnalysis.CSharp.SyntaxFactory;
 
 namespace Silk.NET.SilkTouch.Clang;
@@ -26,6 +29,7 @@ public class SyntaxContext
     /// <param name="syntax"></param>
     public SyntaxContext(GeneratedSyntax syntax)
     {
+        //Build initial per file tree
         foreach ((var fName, var node) in syntax.Files)
         {
             if (node is CompilationUnitSyntax comp)
@@ -37,13 +41,420 @@ public class SyntaxContext
                 throw new Exception("CompilationUnitSyntax missing");
             }
         }
+
+        //Merge common types into single types
+        foreach(var typeDef in TypeDefinitionContainers)
+        {
+            if (typeDef.Value.Count <= 1)
+            {
+                continue;
+            }
+
+            for (int i = 0; i < typeDef.Value.Count; i++)
+            {
+                List<TypeContextContainer> typesToMerge = [];
+                TypeContextContainer main = typeDef.Value[i];
+                string mainFile = typeDef.Value.Where(t => t.Type?.FileName.Length > 0).First().Type!.FileName;
+                List<string> files = [mainFile];
+
+                //find all types that are the same as our current main type
+                //this includes same generic arguments with the same constraints
+                //We also keep track of all file paths along the way
+                for (int j = 1; j < typeDef.Value.Count; j++)
+                {
+                    if (main.Namespace != typeDef.Value[j].Namespace ||
+                        !TypeVarCheck(main, typeDef.Value[j]))
+                    {
+                        continue;
+                    }
+
+                    string file = typeDef.Value[j].Type?.FileName ?? string.Empty;
+                    if (file.Length > 0 && !files.Contains(file))
+                    {
+                        files.Add(file);
+                    }
+
+                    typesToMerge.Add(typeDef.Value[j]);
+                    typeDef.Value.RemoveAt(j);
+                    j--;
+                }
+
+                if (typesToMerge.Count == 0)
+                {
+                    continue;
+                }
+
+                //Merge all types into main
+                MergeTypeContainers(main, typesToMerge);
+
+                //get new path which is placed at the common root of all the paths
+                mainFile = Path.Combine(FindCommonRoot(files), Path.GetFileName(mainFile)).Replace(".Manual.cs", ".gen.cs");
+
+                int fileIndex = 1;
+
+                //check that our new path doesn't already exist (unless it is our first file anyways)
+                while (Files.ContainsKey(mainFile) && !(files[0] == mainFile))
+                {
+                    mainFile = mainFile.Replace($"{(fileIndex > 1 ? fileIndex.ToString() : "")}.gen.cs", $"{fileIndex + 1}.gen.cs");
+                    fileIndex++;
+                }
+
+                //if our file isn't the same as our old one add the new path and remove the original
+                if (files[0] != mainFile)
+                {
+                    Files.Add(mainFile, Files[files[0]]);
+                    Files.Remove(files[0]);
+                }
+
+                //remove the first file path to avoid confusion
+                files.RemoveAt(0);
+
+                NamespaceContext ns = Files[mainFile].GetNamespace(main.Namespace);
+
+                //make sure our type actually is in our namespace (can happen if first type in declarations was an UnknownTypeContext which shouldn't happen)
+                if (!ns.Types.TryGetValue(typeDef.Key, out var list))
+                {
+                    list = [main];
+                    ns.Types.Add(typeDef.Key, list);
+                }
+                else if (!list.Contains(main))
+                {
+                    for (int j = 0; j < list.Count; j++)
+                    {
+                        if (main.Namespace != list[j].Namespace ||
+                        !TypeVarCheck(main, list[j]))
+                        {
+                            continue;
+                        }
+                        list.RemoveAt(j);
+                        j--;
+                    }
+
+                    list.Add(main);
+                }
+
+                //finally check all files have types still and either delete them or clean them of bad types
+                foreach(var file in files)
+                {
+                    if (Files.TryGetValue(file, out var comp) && comp.DefinedTypeCount == 0)
+                    {
+                        Files.Remove(file);
+                    }
+                    else if (comp is not null)
+                    {
+                        comp.Clean();
+                    }
+                }
+            }
+        }
+
+        //TODO: Create Full Syntax Tree from individual file trees
     }
 
     Dictionary<string, CompilationContext> Files = [];
 
-    Dictionary<string, NamespaceContext> Namespaces = [];
+    Dictionary<string, NamespaceContext> SyntaxTree = [];
 
     Dictionary<string, List<TypeContextContainer>> TypeDefinitionContainers = [];
+
+    private string FindCommonRoot(List<string> paths)
+    {
+        if (paths == null || paths.Count == 0)
+            return string.Empty;
+
+        if (paths.Count == 1)
+            return paths[0];
+
+        string[][] separatedPaths = paths
+            .Select(path => path.Split(Path.DirectorySeparatorChar))
+            .ToArray();
+
+        string commonPath = string.Join(Path.DirectorySeparatorChar.ToString(),
+            separatedPaths.First().TakeWhile((part, index) =>
+                separatedPaths.All(path => path.Length > index && path[index] == part)));
+
+        return commonPath;
+    }
+
+    private bool TypeVarCheck(TypeContextContainer t1,  TypeContextContainer t2)
+    {
+        if (t1.Type is EnumContext || t2.Type is EnumContext ||
+            t1.Type is not TypeContext ty1 || t2.Type is not TypeContext ty2)
+        {
+            return true;
+        }
+
+        if (ty1.Node.TypeParameterList is not null && ty2.Node.TypeParameterList is not null &&
+            ty1.Node.TypeParameterList.Parameters.Count != ty2.Node.TypeParameterList.Parameters.Count ||
+            (ty1.Node.ParameterList is null ^ ty2.Node.ParameterList is null))
+        {
+            return false;
+        }
+
+        return true;
+    }
+
+    private bool TypeVarCheck(TypeContextContainer type, TypeSyntax syntax)
+    {
+        if (syntax is not GenericNameSyntax generic)
+        {
+            if (type.Type is EnumContext || (type.Type is TypeContext ty &&
+                (ty.Node.TypeParameterList is null || ty.Node.TypeParameterList.Parameters.Count == 0)) ||
+                (type.Type is UnknownTypeContext && type.Type.Syntax is not GenericNameSyntax))
+            {
+                return true;
+            }
+            return false;
+        }
+        if (type.Type is EnumContext)
+        {
+            return false;
+        }
+
+        if (type.Type is TypeContext ty1)
+        {
+            if ((ty1.Node.TypeParameterList is not null &&
+                ty1.Node.TypeParameterList.Parameters.Count != generic.TypeArgumentList.Arguments.Count) ||
+                ty1.Node.ParameterList is null)
+            {
+                return false;
+            }
+
+            return true;
+        }
+        else if (type.Type is UnknownTypeContext && type.Type.Syntax is GenericNameSyntax generic2)
+        {
+            return generic.TypeArgumentList.Arguments.Count == generic2.TypeArgumentList.Arguments.Count;
+        }
+
+        return false;
+
+    }
+
+    private void MergeTypeContainers(TypeContextContainer main, List<TypeContextContainer> typesToMerge)
+    {
+        while (main.Type is UnknownTypeContext u)
+        {
+            main.Type = typesToMerge[0].Type;
+            main.Visibility = typesToMerge[0].Visibility;
+            typesToMerge.RemoveAt(0);
+        }
+
+        SyntaxKind visibility = main.IsPublic ? SyntaxKind.PublicKeyword : SyntaxKind.PrivateKeyword;
+        bool isStatic = true;
+
+        if (main.Type is EnumContext e)
+        {
+            if (!e.Node.Modifiers.Any(mod => mod.IsKind(SyntaxKind.StaticKeyword)))
+            {
+                isStatic = false;
+            }
+
+            bool emptyBaseType = e.Node.BaseList is null || e.Node.BaseList.Types.Count == 0;
+
+            foreach (var merge in typesToMerge)
+            {
+                if (visibility != SyntaxKind.PublicKeyword)
+                {
+                    if (merge.IsPublic)
+                    {
+                        visibility = SyntaxKind.PublicKeyword;
+                    }
+                    else if (visibility != SyntaxKind.ProtectedKeyword && merge.Visibility == SyntaxKind.ProtectedKeyword)
+                    {
+                        visibility = SyntaxKind.ProtectedKeyword;
+                    }
+                }
+
+                if (merge.Type is EnumContext en)
+                {
+                    if (isStatic && !en.Node.Modifiers.Any(mod => mod.IsKind(SyntaxKind.StaticKeyword)))
+                    {
+                        isStatic = false;
+                    }
+
+                    foreach (var member in en.Members)
+                    {
+                        if (e.Members.ContainsKey(member.Key))
+                        {
+                            continue;
+                        }
+                        e.Members.Add(member.Key, member.Value);
+                    }
+
+                    e.Node = e.Node.AddModifiers(en.Node.Modifiers.Where(mod => !mod.IsKind(SyntaxKind.PrivateKeyword) &&
+                                                                                !mod.IsKind(SyntaxKind.ProtectedKeyword) &&
+                                                                                !mod.IsKind(SyntaxKind.PublicKeyword) &&
+                                                                                !e.Node.Modifiers.Any(eMod => mod.IsKind(eMod.Kind()))).ToArray())
+                                    .AddAttributeLists(en.Node.AttributeLists.Select(al =>
+                                                                AttributeList(SeparatedList(al.Attributes.Where(at => !e.Node.AttributeLists
+                                                                    .Any(eAl => eAl.Attributes
+                                                                        .Any(eAt => at.ToString() != eAt.ToString())))))).ToArray());
+
+                    if (emptyBaseType)
+                    {
+                        e.Node = e.Node.WithBaseList(en.Node.BaseList);
+                        emptyBaseType = false;
+                    }
+                }
+                else if(merge.Type is not UnknownTypeContext)
+                {
+                    throw new Exception($"{main.Namespace}.{e.Node.Identifier.Text} is defined multiple times as both an enum and another type");
+                }
+                merge.Type = null;
+            }
+        }
+        else if (main.Type is TypeContext t)
+        {
+            if (!t.Node.Modifiers.Any(mod => mod.IsKind(SyntaxKind.StaticKeyword)))
+            {
+                isStatic = false;
+            }
+
+            bool hasBaseClass = !IsInterface(t.BaseTypes.Values.First());
+
+            foreach (var merge in typesToMerge)
+            {
+                if (visibility != SyntaxKind.PublicKeyword)
+                {
+                    if (merge.IsPublic)
+                    {
+                        visibility = SyntaxKind.PublicKeyword;
+                    }
+                    else if (visibility != SyntaxKind.ProtectedKeyword && merge.Visibility == SyntaxKind.ProtectedKeyword)
+                    {
+                        visibility = SyntaxKind.ProtectedKeyword;
+                    }
+                }
+
+                if (merge.Type is TypeContext ty)
+                {
+                    if (isStatic && !ty.Node.Modifiers.Any(mod => mod.IsKind(SyntaxKind.StaticKeyword)))
+                    {
+                        isStatic = false;
+                    }
+
+                    foreach (var member in ty.Methods)
+                    {
+                        if (!t.Methods.TryGetValue(member.Key, out var list))
+                        {
+                            t.Methods.Add(member.Key, member.Value);
+                            continue;
+                        }
+
+                        foreach (var method in member.Value)
+                        {
+                            if (list.Any(mem => method == mem))
+                            {
+                                continue;
+                            }
+
+                            list.Add(method);
+                        }
+                    }
+
+                    bool first = true;
+                    foreach (var bType in ty.BaseTypes)
+                    {
+                        bool isInterface = IsInterface(bType.Value);
+                        if (t.BaseTypes.ContainsKey(bType.Key) && ((first && !hasBaseClass) || isInterface))
+                        {
+                            first = false;
+                            continue;
+                        }
+
+                        first = false;
+                        if (isInterface)
+                        {
+                            t.BaseTypes.Add(bType.Key, bType.Value);
+                            continue;
+                        }
+
+                        t.BaseTypes = new Dictionary<string, TypeContextContainer> { [bType.Key] = bType.Value }.Concat(t.BaseTypes).ToDictionary();
+                    }
+
+                    t.Node = t.Node.WithBaseList(BaseList(SeparatedList(t.BaseTypes.Select(bType => (BaseTypeSyntax)SimpleBaseType(bType.Value.Type!.Syntax)))));
+
+                    foreach(var member in ty.Fields)
+                    {
+                        if (t.Fields.ContainsKey(member.Key))
+                        {
+                            continue;
+                        }
+                        t.Fields.Add(member.Key, member.Value);
+                    }
+
+                    foreach (var member in ty.Properties)
+                    {
+                        if (t.Properties.ContainsKey(member.Key))
+                        {
+                            continue;
+                        }
+                        t.Properties.Add(member.Key, member.Value);
+                    }
+
+                    foreach (var member in ty.SubTypes)
+                    {
+                        if (!t.SubTypes.TryGetValue(member.Key, out var list))
+                        {
+                            t.SubTypes.Add(member.Key, member.Value);
+                            continue;
+                        }
+
+                        for (int i = 0; i < list.Count; i++)
+                        {
+                            List<TypeContextContainer> typesToMerge2 = [];
+                            for (int j = 1; j < member.Value.Count; j++)
+                            {
+                                if (list[i].Namespace != member.Value[j].Namespace ||
+                                    !TypeVarCheck(list[i], member.Value[j]))
+                                {
+                                    continue;
+                                }
+                                typesToMerge2.Add(member.Value[j]);
+                                member.Value.RemoveAt(j);
+                                j--;
+                            }
+
+                            if (typesToMerge2.Count == 0)
+                            {
+                                continue;
+                            }
+
+                            MergeTypeContainers(list[i], typesToMerge2);
+                        }
+                    }
+
+
+                    t.Node = t.Node.AddModifiers(ty.Node.Modifiers.Where(mod => !mod.IsKind(SyntaxKind.PrivateKeyword) &&
+                                                                                !mod.IsKind(SyntaxKind.ProtectedKeyword) &&
+                                                                                !mod.IsKind(SyntaxKind.PublicKeyword) &&
+                                                                                !t.Node.Modifiers.Any(tMod => mod.IsKind(tMod.Kind()))).ToArray())
+                                    .AddAttributeLists(ty.Node.AttributeLists.Select(al =>
+                                                                AttributeList(SeparatedList(al.Attributes.Where(at => !t.Node.AttributeLists
+                                                                    .Any(tAl => tAl.Attributes
+                                                                        .Any(tAt => at.ToString() != tAt.ToString())))))).ToArray());
+                    
+                }
+                else if (merge.Type is not UnknownTypeContext)
+                {
+                    throw new Exception($"{main.Namespace}.{t.Node.Identifier.Text} is defined multiple times as both an type and an enum");
+                }
+                merge.Type = null;
+            }
+        }
+        
+    }
+
+    private bool IsInterface(TypeContextContainer container)
+    {
+        if (container.Type is not TypeContext t)
+        {
+            return false;
+        }
+
+        return t.Node.IsKind(SyntaxKind.InterfaceDeclaration);
+    }
 
     private TypeContextContainer GetTypeContainer(TypeSyntax syn, string ns, List<string> usings, TypeContext? currentType, out int pDepth, string parentName = "")
     {
@@ -56,14 +467,14 @@ public class SyntaxContext
 
         string name = $"{(parentName.Length > 0 ? $"{parentName}." : "")}{currentType?.Node.Identifier.Text ?? string.Empty}";
 
-        TypeContextContainer type;
-        if (TypeDefinitionContainers.TryGetValue(syn.ToString(), out var list))
+        TypeContextContainer? type = null;
+        List<TypeContextContainer>? list;
+        if (TypeDefinitionContainers.TryGetValue(syn.ToString(), out list))
         {
-            type = list.First();
 
             foreach (var decl in list)
             {
-                if (NamespaceMatch(ns, decl.Namespace) || usings.Contains(decl.Namespace) && (decl.IsPublic))
+                if ((NamespaceMatch(ns, decl.Namespace) || (usings.Contains(decl.Namespace) && decl.IsPublic)) && TypeVarCheck(decl, syn))
                 {
                     type = decl;
                     break;
@@ -76,39 +487,51 @@ public class SyntaxContext
 
             foreach (var decl in list)
             {
-                if (ns == decl.Namespace)
+                if (ns == decl.Namespace && TypeVarCheck(decl, syn))
                 {
                     type = decl;
                     break;
                 }
             }
         }
-        else
+
+        if (type is null)
         {
-            type = new(string.Empty, new UnknownTypeContext(syn), true);
-            TypeDefinitionContainers.Add(syn.ToString(), new() { type });
+            type = new(string.Empty, new UnknownTypeContext(syn), SyntaxKind.PublicKeyword);
+            if (TypeDefinitionContainers.TryGetValue(syn.ToString(), out list))
+            {
+                list = [];
+                TypeDefinitionContainers.Add(syn.ToString(), list);
+            }
+            list!.Add(type);
         }
 
         return type;
     }
 
-    private void AddTypeContextContainer(ref TypeContextContainer container, string name)
+    private void AddTypeContextContainer(ref TypeContextContainer container, string name, int genericArgumentCount = 0)
     {
         if (!TypeDefinitionContainers.TryGetValue(name, out var list))
         {
             list = [];
             TypeDefinitionContainers.Add(name, list);
         }
-        if (list.Count == 1 && list[0].Type is UnknownTypeContext)
+
+        for (int i = 0; i < list.Count; i++)
         {
-            list[0].Type = container.Type;
-            list[0].Namespace = container.Namespace;
-            container = list[0];
+            if (list[i].Type is UnknownTypeContext unknown &&
+                ((unknown.Syntax is not GenericNameSyntax && genericArgumentCount == 0) ||
+                (unknown.Syntax is GenericNameSyntax generic && generic.TypeArgumentList.Arguments.Count == genericArgumentCount)))
+            {
+                list[i].Type = container.Type;
+                list[i].Visibility = container.Visibility;
+                list[i].Namespace = container.Namespace;
+                container = list[i];
+                return;
+            }
         }
-        else
-        {
-            list.Add(container);
-        }
+
+        list.Add(container);
     }
 
     private bool GetChildContainer(TypeSyntax syn, TypeContext? currentType, out List<TypeContextContainer>? list, string parentName, bool topLevel = true)
@@ -127,9 +550,12 @@ public class SyntaxContext
                 return true;
             }
 
-            if (GetChildContainer(syn, child.Value.Type as TypeContext, out list, name, false))
+            foreach (var ch in child.Value)
             {
-                return true;
+                if (GetChildContainer(syn, ch.Type as TypeContext, out list, name, false))
+                {
+                    return true;
+                }
             }
         }
         return false;
@@ -161,6 +587,47 @@ public class SyntaxContext
         public CompilationUnitSyntax ToCompletedNode()
         {
             return Node.WithMembers(List(Namespaces.Select(n => (MemberDeclarationSyntax)n.Value.ToCompletedNode())));
+        }
+
+        public NamespaceContext GetNamespace(string ns)
+        {
+            int firstIndex = ns.IndexOf('.');
+            if (firstIndex == -1)
+            {
+                firstIndex = ns.Length - 1;
+            }
+
+            string name = ns.Substring(0, firstIndex);
+            if (!Namespaces.TryGetValue(name, out NamespaceContext? nameSpace))
+            {
+                nameSpace = new NamespaceContext(NamespaceDeclaration(IdentifierName(name)));
+                Namespaces.Add(name, nameSpace);
+            }
+            return nameSpace.GetNamespace(ns.Substring(firstIndex + 1));
+        }
+
+        public int DefinedTypeCount => Namespaces.Select(n => n.Value.DefinedTypeCount).Aggregate((a, b) => a + b);
+
+        public void Clean()
+        {
+            List<string> removals = [];
+
+            foreach (var ns in Namespaces)
+            {
+                if (ns.Value.DefinedTypeCount == 0)
+                {
+                    removals.Add(ns.Key);
+                }
+                else
+                {
+                    ns.Value.Clean();
+                }
+            }
+
+            foreach (var rem in removals)
+            {
+                Namespaces.Remove(rem);
+            }
         }
     }
 
@@ -199,15 +666,33 @@ public class SyntaxContext
                 }
                 else if (member is EnumDeclarationSyntax e)
                 {
-                    var en = new TypeContextContainer(namesp, new EnumContext(file, e), e.Modifiers.Any(token => token.IsKind(SyntaxKind.PublicKeyword)));
+                    var en = new TypeContextContainer(namesp, new EnumContext(file, e), e.Modifiers
+                            .Where(token => token.IsKind(SyntaxKind.PublicKeyword) || token.IsKind(SyntaxKind.ProtectedKeyword) || token.IsKind(SyntaxKind.PrivateKeyword))
+                            .Select(token => token.Kind())
+                            .FirstOrDefault(SyntaxKind.PrivateKeyword));
                     context.AddTypeContextContainer(ref en, e.Identifier.Text);
-                    Types.Add(e.Identifier.Text, en);
+
+                    if (!Types.TryGetValue(e.Identifier.Text, out var list))
+                    {
+                        list = [];
+                        Types.Add(e.Identifier.Text, list);
+                    }
+                    list.Add(en);
                 }
                 else if (member is TypeDeclarationSyntax t)
                 {
-                    var ty = new TypeContextContainer(namesp, new TypeContext(namesp, file, t, context, usings), t.Modifiers.Any(token => token.IsKind(SyntaxKind.PublicKeyword)));
-                    context.AddTypeContextContainer(ref ty, t.Identifier.Text);
-                    Types.Add(t.Identifier.Text, ty);
+                    var ty = new TypeContextContainer(namesp, new TypeContext(namesp, file, t, context, usings), t.Modifiers
+                            .Where(token => token.IsKind(SyntaxKind.PublicKeyword) || token.IsKind(SyntaxKind.ProtectedKeyword) || token.IsKind(SyntaxKind.PrivateKeyword))
+                            .Select(token => token.Kind())
+                            .FirstOrDefault(SyntaxKind.PrivateKeyword));
+                    context.AddTypeContextContainer(ref ty, t.Identifier.Text, t.TypeParameterList is null ? 0 : t.TypeParameterList.Parameters.Count);
+
+                    if (!Types.TryGetValue(t.Identifier.Text, out var list))
+                    {
+                        list = [];
+                        Types.Add(t.Identifier.Text, list);
+                    }
+                    list.Add(ty);
                 }
                 else
                 {
@@ -218,17 +703,98 @@ public class SyntaxContext
             Node = node.WithName(IdentifierName(names[0]));
         }
 
+        public NamespaceContext(BaseNamespaceDeclarationSyntax node)
+        {
+            Node = node;
+        }
+
         public BaseNamespaceDeclarationSyntax Node;
         public Dictionary<string, NamespaceContext> Namespaces = [];
-        public Dictionary<string, TypeContextContainer> Types = [];
+        public Dictionary<string, List<TypeContextContainer>> Types = [];
 
         public BaseNamespaceDeclarationSyntax ToCompletedNode()
         {
             List<MemberDeclarationSyntax> members = [];
             members.AddRange(Namespaces.Select(n => n.Value.ToCompletedNode()));
-            members.AddRange(Types.Select(t => t.Value.Type.ToCompletedNode()!));
+            foreach (var types in Types)
+            {
+                members.AddRange(types.Value.Where(t => t.Type is not null).Select(t => t.Type!.ToCompletedNode()!));
+            }
             return Node.WithMembers(List(members));
         }
+
+        public NamespaceContext GetNamespace(string ns)
+        {
+            if (ns.Length == 0)
+            {
+                return this;
+            }
+
+            int firstIndex = ns.IndexOf('.');
+            if (firstIndex == -1)
+            {
+                firstIndex = ns.Length - 1;
+            }
+
+            string name = ns.Substring(0, firstIndex);
+            if (!Namespaces.TryGetValue(name, out NamespaceContext? nameSpace))
+            {
+                nameSpace = new NamespaceContext(NamespaceDeclaration(IdentifierName(name)));
+                Namespaces.Add(name, nameSpace);
+            }
+            return nameSpace.GetNamespace(ns.Substring(firstIndex + 1));
+        }
+
+        public void Clean()
+        {
+            List<string> removals = [];
+
+            foreach (var ns in Namespaces)
+            {
+                if (ns.Value.DefinedTypeCount == 0)
+                {
+                    removals.Add(ns.Key);
+                }
+                else
+                {
+                    ns.Value.Clean();
+                }                
+            }
+
+            foreach (var rem in removals)
+            {
+                Namespaces.Remove(rem);
+            }
+
+            removals.Clear();
+            foreach (var types in Types)
+            {
+                for (int i = 0; i < types.Value.Count; i++)
+                {
+                    if (types.Value[i].Type is null)
+                    {
+                        types.Value.RemoveAt(i);
+                        i--;
+                    }
+                    else if (types.Value[i].Type is TypeContext ty)
+                    {
+                        ty.Clean();
+                    }
+                }
+
+                if (types.Value.Count == 0)
+                {
+                    removals.Add(types.Key);
+                }
+            }
+
+            foreach (var rem in removals)
+            {
+                Types.Remove(rem);
+            }
+        }
+
+        public int DefinedTypeCount => Types.Select(t => t.Value.Where(ty => ty.Type is not null).Select(ty => ty.Type is TypeContext type ? type.DefinedTypeCount : 1).Aggregate((a, b) => a + b)).Aggregate((a, b) => a + b) + Namespaces.Select(n => n.Value.DefinedTypeCount).Aggregate((a, b) => a + b);
     }
 
     private class TypeContext : IBaseTypeContext
@@ -242,16 +808,34 @@ public class SyntaxContext
                 if (member is EnumDeclarationSyntax e)
                 {
                     string name = $"{(parentName.Length > 0 ? $"{parentName}." : "")}{e.Identifier.Text}";
-                    var en = new TypeContextContainer(ns, new EnumContext(file, e), e.Modifiers.Any(token => token.IsKind(SyntaxKind.PublicKeyword)));
+                    var en = new TypeContextContainer(ns, new EnumContext(file, e), e.Modifiers
+                            .Where(token => token.IsKind(SyntaxKind.PublicKeyword) || token.IsKind(SyntaxKind.ProtectedKeyword) || token.IsKind(SyntaxKind.PrivateKeyword))
+                            .Select(token => token.Kind())
+                            .FirstOrDefault(SyntaxKind.PrivateKeyword));
                     context.AddTypeContextContainer(ref en, name);
-                    SubTypes.Add(e.Identifier.Text, en);
+
+                    if (!SubTypes.TryGetValue(e.Identifier.Text, out var list))
+                    {
+                        list = [];
+                        SubTypes.Add(e.Identifier.Text, list);
+                    }
+                    list.Add(en);
                 }
                 else if (member is TypeDeclarationSyntax t)
                 {
                     string name = $"{(parentName.Length > 0 ? $"{parentName}." : "")}{t.Identifier.Text}";
-                    var ty = new TypeContextContainer(ns, new TypeContext(ns, file, t, context, usings, name), t.Modifiers.Any(token => token.IsKind(SyntaxKind.PublicKeyword)));
-                    context.AddTypeContextContainer(ref ty, name);
-                    SubTypes.Add(t.Identifier.Text, ty);
+                    var ty = new TypeContextContainer(ns, new TypeContext(ns, file, t, context, usings, name), t.Modifiers
+                            .Where(token => token.IsKind(SyntaxKind.PublicKeyword) || token.IsKind(SyntaxKind.ProtectedKeyword) || token.IsKind(SyntaxKind.PrivateKeyword))
+                            .Select(token => token.Kind())
+                            .FirstOrDefault(SyntaxKind.PrivateKeyword));
+                    context.AddTypeContextContainer(ref ty, name, t.TypeParameterList is null ? 0 : t.TypeParameterList.Parameters.Count);
+
+                    if (!SubTypes.TryGetValue(t.Identifier.Text, out var list))
+                    {
+                        list = [];
+                        SubTypes.Add(t.Identifier.Text, list);
+                    }
+                    list.Add(ty);
                 }
                 else if (member is MethodDeclarationSyntax m)
                 {
@@ -280,42 +864,107 @@ public class SyntaxContext
                 }
             }
 
+            if (node.BaseList is not null)
+            {
+                foreach (var baseType in node.BaseList.Types)
+                {
+                    BaseTypes.Add(baseType.Type.ToString(), context.GetTypeContainer(baseType.Type, ns, usings, this, out int _));
+                }
+            }
+
             Node = node.WithMembers(List(Array.Empty<MemberDeclarationSyntax>()));
         }
 
         public string File;
         public TypeDeclarationSyntax Node;
-        public Dictionary<string, TypeContextContainer> SubTypes = [];
+        public Dictionary<string, TypeContextContainer> BaseTypes = [];
+        public Dictionary<string, List<TypeContextContainer>> SubTypes = [];
         public Dictionary<string, List<MethodContext>> Methods = [];
         public Dictionary<string, FieldContext> Fields = [];
         public Dictionary<string, PropertyContext> Properties = [];
 
         public TypeSyntax Syntax => IdentifierName(Node.Identifier.Text);
 
+        public string FileName => File;
+
         public MemberDeclarationSyntax? ToCompletedNode()
         {
             List<MemberDeclarationSyntax> members = [];
-            members.AddRange(SubTypes.Select(t => t.Value.Type.ToCompletedNode()!));
+            foreach (string type in SubTypes.Keys)
+            {
+                members.AddRange(SubTypes[type].Where(t => t.Type is not null).Select(t => t.Type!.ToCompletedNode()!));
+            }
             foreach (string method in Methods.Keys)
             {
                 members.AddRange(Methods[method].Select(m => m.Node));
             }
             members.AddRange(Fields.Select(f => f.Value.ToCompletedNode()));
             members.AddRange(Properties.Select(p => p.Value.ToCompletedNode()));
-            return Node.WithMembers(List(members));
+            return Node.WithMembers(List(members))
+                .WithBaseList(
+                    BaseList(
+                        SeparatedList(BaseTypes.Select(bType => (BaseTypeSyntax)SimpleBaseType(bType.Value.Type!.Syntax)))));
+        }
+
+        public int DefinedTypeCount => SubTypes.Select(t => t.Value.Where(ty => ty.Type is not null).Select(ty => ty.Type is TypeContext type ? type.DefinedTypeCount : 1).Aggregate((a, b) => a + b)).Aggregate((a, b) => a + b) + 1;
+
+        public void Clean()
+        {
+            List<string> removals = [];
+            foreach (var types in SubTypes)
+            {
+                for (int i = 0; i < types.Value.Count; i++)
+                {
+                    if (types.Value[i].Type is null)
+                    {
+                        types.Value.RemoveAt(i);
+                        i--;
+                    }
+                    else if (types.Value[i].Type is TypeContext ty)
+                    {
+                        ty.Clean();
+                    }
+                }
+
+                if (types.Value.Count == 0)
+                {
+                    removals.Add(types.Key);
+                }
+            }
+
+            foreach(var rem in removals)
+            {
+                SubTypes.Remove(rem);
+            }
         }
     }
 
-    private class EnumContext : LeafNodeContext<EnumDeclarationSyntax>, IBaseTypeContext
+    private class EnumContext : IBaseTypeContext
     {
-        public EnumContext(string file, EnumDeclarationSyntax node) : base(node) { File = file; }
+        public EnumContext(string file, EnumDeclarationSyntax node)
+        {
+            File = file;
+
+            foreach (var member in node.Members)
+            {
+                Members.Add(member.Identifier.Text, new(member));
+            }
+
+            Node = node.WithMembers(SeparatedList(Array.Empty<EnumMemberDeclarationSyntax>()));
+        }
+
+        public EnumDeclarationSyntax Node;
 
         public string File;
         public TypeSyntax Syntax => IdentifierName(Node.Identifier.Text);
 
+        public Dictionary<string, EnumMemberContext> Members = [];
+
+        public string FileName => File;
+
         public MemberDeclarationSyntax? ToCompletedNode()
         {
-            return Node;
+            return Node.WithMembers(SeparatedList(Members.Select(em => em.Value.Node)));
         }
     }
 
@@ -323,34 +972,61 @@ public class SyntaxContext
     {
         TypeSyntax Syntax { get; }
 
+        string FileName { get; }
+
         MemberDeclarationSyntax? ToCompletedNode();
     }
 
     private class UnknownTypeContext : IBaseTypeContext
     {
-        public UnknownTypeContext(TypeSyntax type) { Type = type; }
+        public UnknownTypeContext(TypeSyntax type)
+        {
+            Type = type;
+        }
         TypeSyntax Type;
 
         public TypeSyntax Syntax => Type;
+
+        public string FileName => string.Empty;
 
         public MemberDeclarationSyntax? ToCompletedNode()
         {
             return null;
         }
+
+
+        public enum TypeLocation
+        {
+            BaseList,
+            Field,
+            Property
+        }
     }
 
     private class TypeContextContainer
     {
-        public TypeContextContainer(string ns, IBaseTypeContext ty, bool isPublic)
+        public TypeContextContainer(string ns, IBaseTypeContext ty, SyntaxKind visibility)
         {
             Namespace = ns;
             Type = ty;
-            IsPublic = isPublic;
+            Visibility = visibility;
         }
 
         public string Namespace;
-        public bool IsPublic;
-        public IBaseTypeContext Type;
+        public SyntaxKind Visibility;
+        public IBaseTypeContext? Type;
+
+        public bool IsPublic => Visibility == SyntaxKind.PublicKeyword;
+
+        public override string ToString()
+        {
+            return Type?.Syntax.ToString() ?? string.Empty;
+        }
+    }
+
+    private class EnumMemberContext : LeafNodeContext<EnumMemberDeclarationSyntax>
+    {
+        public EnumMemberContext(EnumMemberDeclarationSyntax node) : base(node) { }
     }
 
     private class MethodContext : LeafNodeContext<MethodDeclarationSyntax>
@@ -366,6 +1042,27 @@ public class SyntaxContext
         }
 
         public Dictionary<string, TypeContextContainer> Parameters = [];
+
+        public override string ToString()
+        {
+            return $"{Node.Identifier.Text}({string.Join(',', Parameters.Select(par => $"{par.Value} {par.Key}"))})";
+        }
+
+        public static bool operator ==(MethodContext left, MethodContext right)
+        {
+            return left.Node.Identifier.Text == right.Node.Identifier.Text &&
+                left.Parameters.Values.SequenceEqual(right.Parameters.Values);
+        }
+
+        public static bool operator !=(MethodContext left, MethodContext right)
+        {
+            return left.Node.Identifier.Text != right.Node.Identifier.Text ||
+                !left.Parameters.Values.SequenceEqual(right.Parameters.Values);
+        }
+
+        public override bool Equals(object? obj) => base.Equals(obj);
+
+        public override int GetHashCode() => ToString().GetHashCode();
     }
 
     private class FieldContext : VariableNodes<FieldDeclarationSyntax>
@@ -376,7 +1073,7 @@ public class SyntaxContext
 
         public FieldDeclarationSyntax ToCompletedNode()
         {
-            var type = Container.Type.Syntax;
+            var type = Container.Type!.Syntax;
 
             int pDepth = PointerDepth;
             while (pDepth > 0)
@@ -397,7 +1094,7 @@ public class SyntaxContext
 
         public PropertyDeclarationSyntax ToCompletedNode()
         {
-            var type = Container.Type.Syntax;
+            var type = Container.Type!.Syntax;
 
             int pDepth = PointerDepth;
             while (pDepth > 0)
