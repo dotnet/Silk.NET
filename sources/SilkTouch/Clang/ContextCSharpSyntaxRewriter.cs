@@ -20,7 +20,7 @@ public abstract class ContextCSharpSyntaxRewriter(bool visitIntoStructuredTrivia
     /// <summary>
     /// The current type being visited
     /// </summary>
-    public SyntaxContext.IBaseTypeContext? CurrentContext { get; internal set; }
+    public IBaseTypeContext? CurrentContext { get; internal set; }
 
     /// <summary>
     /// The list of the namespaces being used
@@ -31,4 +31,9 @@ public abstract class ContextCSharpSyntaxRewriter(bool visitIntoStructuredTrivia
     /// The namespace of the current context
     /// </summary>
     public string CurrentNamespace { get; internal set; } = string.Empty;
+
+    /// <summary>
+    /// The currently SyntaxContext
+    /// </summary>
+    public SyntaxContext? Context { get; internal set; };
 }
