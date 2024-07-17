@@ -65,6 +65,20 @@ public class SyntaxContext
     }
 
     /// <summary>
+    /// Visits each node in this context with the provided visitor
+    /// </summary>
+    /// <param name="visitor"></param>
+    public void Visit(ContextCSharpSyntaxVisitor visitor)
+    {
+        visitor.Context = this;
+
+        foreach ((var fName, var context) in Files)
+        {
+            context.Visit(visitor);
+        }
+    }
+
+    /// <summary>
     /// Apply Syntax Rewriter on all objects in this Context
     /// </summary>
     /// <param name="rewriter"></param>
@@ -76,7 +90,7 @@ public class SyntaxContext
 
         foreach ((var fName, var context) in Files)
         {
-            if (!context.Rewrite(rewriter, fName, this))
+            if (!context.Rewrite(rewriter, fName))
             {
                 Removals.Add(fName);
             }
@@ -744,8 +758,22 @@ public class SyntaxContext
             }
         }
 
-        public bool Rewrite(ContextCSharpSyntaxRewriter rewriter, string file, SyntaxContext context)
+        public void Visit(ContextCSharpSyntaxVisitor visitor)
         {
+            List<string> usings = Node.Usings.Select(u => u.Name!.ToString()).ToList();
+            visitor.Usings = usings;
+            visitor.Visit(Node);
+
+            foreach (var nameSp in Namespaces)
+            {
+                nameSp.Value.Visit(visitor, usings);
+            }
+        }
+
+        public bool Rewrite(ContextCSharpSyntaxRewriter rewriter, string file)
+        {
+            List<string> usings = Node.Usings.Select(u => u.Name!.ToString()).ToList();
+            rewriter.Usings = usings;
             var node = rewriter.Visit(Node) as CompilationUnitSyntax;
 
             if (node is null)
@@ -753,12 +781,12 @@ public class SyntaxContext
                 return false;
             }
 
-            List<string> usings = Node.Usings.Select(u => u.Name!.ToString()).ToList();
+            usings = Node.Usings.Select(u => u.Name!.ToString()).ToList();
             foreach (var member in node.Members)
             {
                 if (member is BaseNamespaceDeclarationSyntax ns)
                 {
-                    var nsContext = new NamespaceContext(string.Empty, ns, context, usings, file);
+                    var nsContext = new NamespaceContext(string.Empty, ns, rewriter.Context!, rewriter.Usings, file);
                     Namespaces.Add(nsContext.Node.Name.ToString(), nsContext);
                 }
                 else
@@ -771,7 +799,7 @@ public class SyntaxContext
             List<string> removals = [];
             foreach (var nameSp in Namespaces)
             {
-                var output = nameSp.Value.Rewrite(rewriter, "", file, context, usings);
+                var output = nameSp.Value.Rewrite(rewriter, "", file);
                 if (output.Item1 is null)
                 {
                     removals.Add(nameSp.Key);
@@ -894,35 +922,58 @@ public class SyntaxContext
             return nameSpace.GetNamespace(ns.Substring(firstIndex + 1));
         }
 
-        public (BaseNamespaceDeclarationSyntax?, TypeContextContainer?) Rewrite(ContextCSharpSyntaxRewriter rewriter, string ns, string file, SyntaxContext context, List<string> usings)
+        public void Visit(ContextCSharpSyntaxVisitor visitor, List<string> usings, string ns = "")
+        {
+            ns = $"{(ns.Length > 0 ? $"{ns}." : "")}{Node.Name}";
+            visitor.CurrentNamespace = ns;
+            visitor.Visit(Node);
+
+
+            foreach (var name in Namespaces)
+            {
+                name.Value.Visit(visitor, usings, ns);
+                visitor.CurrentNamespace = ns;
+            }
+
+            visitor.CurrentNamespace = ns;
+            foreach (var types in Types)
+            {
+                foreach (var type in types.Value)
+                {
+                    type.Type?.Visit(visitor);
+                }
+            }
+        }
+
+        public (BaseNamespaceDeclarationSyntax?, TypeContextContainer?) Rewrite(ContextCSharpSyntaxRewriter rewriter, string ns, string file)
         {
             var node = rewriter.Visit(Node);
 
             (BaseNamespaceDeclarationSyntax?, TypeContextContainer?) ret;
 
-            string names = $"{ns}.{Node.Name}";
+            string names = $"{(ns.Length > 0 ? $"{ns}." : "")}{Node.Name}";
 
             if (node is BaseNamespaceDeclarationSyntax nameSp)
             {
                 Node = nameSp;
                 ret = (Node, null);
 
-                names = $"{ns}.{Node.Name}";
+                names = $"{(ns.Length > 0 ? $"{ns}." : "")}{Node.Name}";
                 foreach (var member in Node.Members)
                 {
                     if (member is BaseNamespaceDeclarationSyntax subns)
                     {
-                        var nsContext = new NamespaceContext(names, subns, context, usings, file);
+                        var nsContext = new NamespaceContext(names, subns, rewriter.Context!, rewriter.Usings, file);
                         Namespaces.Add(nsContext.Node.Name.ToString(), nsContext);
                     }
                     else if (member is BaseTypeDeclarationSyntax bT)
                     {
-                        var ty = new TypeContextContainer(names, context.CreateTypeContextFromNode(bT, names, file, usings)!, bT.Modifiers
+                        var ty = new TypeContextContainer(names, rewriter.Context!.CreateTypeContextFromNode(bT, names, file, rewriter.Usings)!, bT.Modifiers
                                 .Where(token => token.IsKind(SyntaxKind.PublicKeyword) || token.IsKind(SyntaxKind.ProtectedKeyword) || token.IsKind(SyntaxKind.PrivateKeyword))
                                 .Select(token => token.Kind())
                                 .FirstOrDefault(SyntaxKind.PrivateKeyword));
 
-                        context.AddTypeContextContainer(ty);
+                        rewriter.Context.AddTypeContextContainer(ty);
 
                         if (!Types.TryGetValue(bT.Identifier.Text, out var list))
                         {
@@ -941,18 +992,18 @@ public class SyntaxContext
             else if (node is TypeDeclarationSyntax type)
             {
                 names = ns;
-                var tyCont = context.CreateTypeContextFromNode(type, ns, file, usings, null) as TypeContext;
+                var tyCont = rewriter.Context!.CreateTypeContextFromNode(type, ns, file, rewriter.Usings, null) as TypeContext;
                 var ty = new TypeContextContainer(ns, tyCont!, type.Modifiers
                             .Where(token => token.IsKind(SyntaxKind.PublicKeyword) || token.IsKind(SyntaxKind.ProtectedKeyword) || token.IsKind(SyntaxKind.PrivateKeyword))
                             .Select(token => token.Kind())
                             .FirstOrDefault(SyntaxKind.PrivateKeyword));
 
-                context.AddTypeContextContainer(ty);
+                rewriter.Context!.AddTypeContextContainer(ty);
 
                 Types = Types.ToDictionary(kvp => $"{tyCont!.Name}." + kvp.Key, kvp => {
                     foreach (var val in kvp.Value)
                     {
-                        val.SetParent(tyCont, context);
+                        val.SetParent(tyCont, rewriter.Context);
                     }
                     return kvp.Value;
                 });
@@ -987,7 +1038,7 @@ public class SyntaxContext
             List<string> removals = [];
             foreach (var name in Namespaces)
             {
-                var output = name.Value.Rewrite(rewriter, names, file, context, usings);
+                var output = name.Value.Rewrite(rewriter, names, file);
                 if (output.Item1 is null)
                 {
                     removals.Add(name.Key);
@@ -1026,7 +1077,7 @@ public class SyntaxContext
                         i--;
                         continue;
                     }
-                    type.Type = type.Type.Rewrite(rewriter, names, file, context, usings);
+                    type.Type = type.Type.Rewrite(rewriter, names, file);
 
                     string name = type.Type!.Name;
                     if (name != types.Key)
@@ -1038,7 +1089,7 @@ public class SyntaxContext
                         }
                         list.Add(type);
 
-                        context.RenameType(type, types.Key);
+                        rewriter.Context!.RenameType(type, types.Key);
                     }
                 }
 
@@ -1315,15 +1366,49 @@ public class SyntaxContext
             return BaseTypes.ContainsKey(baseType);
         }
 
-        public IBaseTypeContext? Rewrite(ContextCSharpSyntaxRewriter rewriter, string ns, string file, SyntaxContext context, List<string> usings)
+        public void Visit(ContextCSharpSyntaxVisitor visitor)
+        {
+            var oldContext = visitor.CurrentContext;
+
+            visitor.CurrentContext = this;
+            visitor.Visit(Node);
+
+            foreach (var subTypes in SubTypes)
+            {
+                foreach (var subType in subTypes.Value)
+                {
+                    subType.Type?.Visit(visitor);
+                }
+            }
+
+            foreach (var field in Fields)
+            {
+                visitor.Visit(field.Value.Node);
+            }
+
+            foreach (var property in Properties)
+            {
+                visitor.Visit(property.Value.Node);
+            }
+
+            foreach (var methods in Methods)
+            {
+                foreach (var method in methods.Value)
+                {
+                    visitor.Visit(method.Node);
+                }
+            }
+
+            visitor.CurrentContext = oldContext;
+        }
+
+        public IBaseTypeContext? Rewrite(ContextCSharpSyntaxRewriter rewriter, string ns, string file)
         {
             var oldContext = rewriter.CurrentContext;
             var oldNamespace = rewriter.CurrentNamespace;
-            var oldUsings = rewriter.Usings;
 
             rewriter.CurrentContext = this;
             rewriter.CurrentNamespace = ns;
-            rewriter.Usings = usings;
 
             var newNode = rewriter.Visit(Node);
 
@@ -1331,7 +1416,6 @@ public class SyntaxContext
             {
                 rewriter.CurrentContext = oldContext;
                 rewriter.CurrentNamespace = oldNamespace;
-                rewriter.Usings = oldUsings;
                 return null;
             }
 
@@ -1341,7 +1425,6 @@ public class SyntaxContext
 
                 rewriter.CurrentContext = oldContext;
                 rewriter.CurrentNamespace = oldNamespace;
-                rewriter.Usings = oldUsings;
                 return rewriter.CurrentContext;
             }
             else if (newNode is TypeDeclarationSyntax ty)
@@ -1359,7 +1442,7 @@ public class SyntaxContext
                         {
                             continue;
                         }
-                        var node = member.Type.Rewrite(rewriter, ns, file, context, usings);
+                        var node = member.Type.Rewrite(rewriter, ns, file);
 
                         if (node is not TypeContext)
                         {
@@ -1383,7 +1466,7 @@ public class SyntaxContext
                                 newTypes.Add(node.Name, [member]);
                             }
 
-                            context.RenameType(member, members.Key);
+                            rewriter.Context!.RenameType(member, members.Key);
                         }
                     }
 
@@ -1404,16 +1487,59 @@ public class SyntaxContext
                     SubTypes.Add(newMember.Key, newMember.Value);
                 }
 
+                List<MemberDeclarationSyntax> newMembers = new List<MemberDeclarationSyntax>();
+                foreach (var field in Fields)
+                {
+                    var newMember = rewriter.Visit(field.Value.Node);
+
+                    if (newMember is MemberDeclarationSyntax member)
+                    {
+                        newMembers.Add(member);
+                    }
+                }
+
+                foreach (var property in Properties)
+                {
+                    var newMember = rewriter.Visit(property.Value.Node);
+
+                    if (newMember is MemberDeclarationSyntax member)
+                    {
+                        newMembers.Add(member);
+                    }
+                }
+
+                foreach (var methods in Methods)
+                {
+                    foreach (var method in methods.Value)
+                    {
+                        var newMember = rewriter.Visit(method.Node);
+
+                        if (newMember is MemberDeclarationSyntax member)
+                        {
+                            newMembers.Add(member);
+                        }
+                    }
+                }
+
+                Methods.Clear();
+                Fields.Clear();
+                Properties.Clear();
+
+                foreach (var member in newMembers)
+                {
+                    ProcessMember(member, ns, file, rewriter.Context!, rewriter.Usings);
+                }
+
                 foreach (var member in Node.Members)
                 {
-                    ProcessMember(member, ns, file, context, usings);
+                    ProcessMember(member, ns, file, rewriter.Context!, rewriter.Usings);
                 }
 
                 if (Node.BaseList is not null)
                 {
                     foreach (var baseType in Node.BaseList.Types)
                     {
-                        TryAddBaseType(baseType, context, rewriter);
+                        TryAddBaseType(baseType, rewriter.Context!, rewriter);
                     }
                 }
 
@@ -1423,13 +1549,11 @@ public class SyntaxContext
             {
                 rewriter.CurrentContext = oldContext;
                 rewriter.CurrentNamespace = oldNamespace;
-                rewriter.Usings = oldUsings;
                 throw new Exception("Type Declarations cannot be replaced with non type declarations");
             }
 
             rewriter.CurrentContext = oldContext;
             rewriter.CurrentNamespace = oldNamespace;
-            rewriter.Usings = oldUsings;
             return rewriter.CurrentContext;
         }
 
@@ -1647,15 +1771,23 @@ public class SyntaxContext
 
         public int GenericParameterCount => 0;
 
-        public IBaseTypeContext? Rewrite(ContextCSharpSyntaxRewriter rewriter, string ns, string file, SyntaxContext context, List<string> usings)
+        public void Visit(ContextCSharpSyntaxVisitor visitor)
+        {
+            visitor.Visit(Node);
+
+            foreach (var member in Members)
+            {
+                visitor.Visit(member.Value.Node);
+            }
+        }
+
+        public IBaseTypeContext? Rewrite(ContextCSharpSyntaxRewriter rewriter, string ns, string file)
         {
             var oldContext = rewriter.CurrentContext;
             var oldNamespace = rewriter.CurrentNamespace;
-            var oldUsings = rewriter.Usings;
 
             rewriter.CurrentContext = this;
             rewriter.CurrentNamespace = ns;
-            rewriter.Usings = usings;
 
             var newNode = rewriter.Visit(Node);
 
@@ -1663,7 +1795,6 @@ public class SyntaxContext
             {
                 rewriter.CurrentContext = oldContext;
                 rewriter.CurrentNamespace = oldNamespace;
-                rewriter.Usings = oldUsings;
                 return null;
             }
 
@@ -1709,11 +1840,10 @@ public class SyntaxContext
             }
             else if (newNode is TypeDeclarationSyntax ty)
             {
-                var newContext = new TypeContext(ns, file, ty, context, usings, ParentType);
+                var newContext = new TypeContext(ns, file, ty, rewriter.Context!, rewriter.Usings, ParentType);
 
                 rewriter.CurrentContext = oldContext;
                 rewriter.CurrentNamespace = oldNamespace;
-                rewriter.Usings = oldUsings;
                 return newContext;
             }
             else
@@ -1724,7 +1854,6 @@ public class SyntaxContext
             var originalContext = rewriter.CurrentContext;
             rewriter.CurrentContext = oldContext;
             rewriter.CurrentNamespace = oldNamespace;
-            rewriter.Usings = oldUsings;
             return originalContext;
         }
 
@@ -1844,15 +1973,13 @@ public class SyntaxContext
             return null;
         }
 
-        public IBaseTypeContext? Rewrite(ContextCSharpSyntaxRewriter rewriter, string ns, string file, SyntaxContext context, List<string> usings)
+        public IBaseTypeContext? Rewrite(ContextCSharpSyntaxRewriter rewriter, string ns, string file)
         {
             var oldContext = rewriter.CurrentContext;
             var oldNamespace = rewriter.CurrentNamespace;
-            var oldUsings = rewriter.Usings;
 
             rewriter.CurrentContext = this;
             rewriter.CurrentNamespace = ns;
-            rewriter.Usings = usings;
 
             var type = rewriter.Visit(Type) as TypeSyntax;
 
@@ -1860,14 +1987,12 @@ public class SyntaxContext
             {
                 rewriter.CurrentContext = oldContext;
                 rewriter.CurrentNamespace = oldNamespace;
-                rewriter.Usings = oldUsings;
 
                 return new UnknownTypeContext(type);
             }
 
             rewriter.CurrentContext = oldContext;
             rewriter.CurrentNamespace = oldNamespace;
-            rewriter.Usings = oldUsings;
             return null;
         }
 

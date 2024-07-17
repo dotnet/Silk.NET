@@ -233,12 +233,18 @@ public interface IBaseTypeContext
     /// Rewrites the current type with a given rewriter and some metadata
     /// </summary>
     /// <param name="rewriter"></param>
-    /// <param name="ns"></param>
-    /// <param name="file"></param>
-    /// <param name="context"></param>
-    /// <param name="usings"></param>
+    /// <param name="ns">current namespace</param>
+    /// <param name="file">file this type is in</param>
+    /// <param name="context">related syntax context</param>
+    /// <param name="usings">available usings</param>
     /// <returns></returns>
-    IBaseTypeContext? Rewrite(ContextCSharpSyntaxRewriter rewriter, string ns, string file, SyntaxContext context, List<string> usings);
+    IBaseTypeContext? Rewrite(ContextCSharpSyntaxRewriter rewriter, string ns, string file);
+
+    /// <summary>
+    /// Visits the current type with a given visitor and some metadata
+    /// </summary>
+    /// <param name="visitor"></param>
+    void Visit(ContextCSharpSyntaxVisitor visitor);
 
     /// <summary>
     /// Converts this type to a complete <see cref="MemberDeclarationSyntax"/>
