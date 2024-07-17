@@ -8,6 +8,7 @@ using System.Linq;
 using System.Reflection.Metadata;
 using System.Security.Cryptography;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Xml.Linq;
 using ClangSharp;
@@ -17,7 +18,6 @@ using Microsoft.CodeAnalysis.CSharp.Syntax;
 using Microsoft.VisualBasic.FileIO;
 using Silk.NET.Core;
 using static Microsoft.CodeAnalysis.CSharp.SyntaxFactory;
-using static Silk.NET.SilkTouch.Clang.SyntaxContext.IBaseTypeContext;
 
 namespace Silk.NET.SilkTouch.Clang;
 
@@ -46,8 +46,97 @@ public class SyntaxContext
             }
         }
 
+        MergeCommonTypes();
+    }
+
+    Dictionary<string, CompilationContext> Files = [];
+
+    Dictionary<string, List<TypeContextContainer>> TypeDefinitionContainers = [];
+
+    IReadOnlyList<ClangSharp.Diagnostic> Diagnostics;
+
+    /// <summary>
+    /// Creates a new <see cref="GeneratedSyntax"/> based on the current state of this Context
+    /// </summary>
+    /// <returns></returns>
+    public GeneratedSyntax ToGeneratedSyntax()
+    {
+        return new(Files.Select(file => new KeyValuePair<string, SyntaxNode>(file.Key, file.Value.ToCompletedNode())).ToDictionary(), Diagnostics);
+    }
+
+    /// <summary>
+    /// Apply Syntax Rewriter on all objects in this Context
+    /// </summary>
+    /// <param name="rewriter"></param>
+    public void Rewrite(ContextCSharpSyntaxRewriter rewriter)
+    {
+        rewriter.Context = this;
+
+        List<string> Removals = [];
+
+        foreach ((var fName, var context) in Files)
+        {
+            if (!context.Rewrite(rewriter, fName, this))
+            {
+                Removals.Add(fName);
+            }
+        }
+
+        foreach (string rem in Removals)
+        {
+            Files.Remove(rem);
+        }
+
+        MergeCommonTypes();
+    }
+
+    /// <summary>
+    /// Renames any file matching the old path regex based on the new path regex
+    /// </summary>
+    /// <param name="oldPathRegex"></param>
+    /// <param name="newPathRegex"></param>
+    public void RenameFile(string oldPathRegex, string newPathRegex)
+    {
+        Files = Files.ToDictionary(kvp => Regex.Replace(kvp.Key, oldPathRegex, newPathRegex), kvp => kvp.Value);
+    }
+
+    /// <summary>
+    /// Removes any file that matches the pathRegex
+    /// </summary>
+    /// <param name="pathRegex"></param>
+    public void RemoveFile(string pathRegex)
+    {
+        List<string> Removals = Files.Keys.Where(key => Regex.IsMatch(key, pathRegex)).ToList();
+
+        foreach (string rem in Removals)
+        {
+            Files.Remove(rem);
+        }
+    }
+
+    /// <summary>
+    /// Adds a new file into the SyntaxContext
+    /// </summary>
+    /// <param name="filePath"></param>
+    /// <param name="compUnit"></param>
+    public void AddFile(string filePath, CompilationUnitSyntax compUnit)
+    {
+        if (Files.ContainsKey(filePath))
+        {
+            Files[filePath] = new CompilationContext(filePath, compUnit, this);
+        }
+        else
+        {
+            Files.Add(filePath, new CompilationContext(filePath, compUnit, this));
+        }
+
+        MergeCommonTypes();
+    }
+
+    private void MergeCommonTypes()
+    {
         //Merge common types into single types
-        foreach(var typeDef in TypeDefinitionContainers)
+        foreach (var typeDef in TypeDefinitionContainers)
         {
             if (typeDef.Value.Count <= 1)
             {
@@ -138,7 +227,7 @@ public class SyntaxContext
                 }
 
                 //finally check all files have types still and either delete them or clean them of bad types
-                foreach(var file in files)
+                foreach (var file in files)
                 {
                     if (Files.TryGetValue(file, out var comp) && comp.DefinedTypeCount == 0)
                     {
@@ -153,59 +242,17 @@ public class SyntaxContext
         }
     }
 
-    Dictionary<string, CompilationContext> Files = [];
-
-    Dictionary<string, List<TypeContextContainer>> TypeDefinitionContainers = [];
-
-    IReadOnlyList<ClangSharp.Diagnostic> Diagnostics;
-
-    /// <summary>
-    /// Creates a new <see cref="GeneratedSyntax"/> based on the current state of this Context
-    /// </summary>
-    /// <returns></returns>
-    public GeneratedSyntax ToGeneratedSyntax()
-    {
-        return new(Files.Select(file => new KeyValuePair<string, SyntaxNode>(file.Key, file.Value.ToCompletedNode())).ToDictionary(), Diagnostics);
-    }
-
-    /// <summary>
-    /// Apply Syntax Rewriter on all objects in this Context
-    /// </summary>
-    /// <param name="rewriter"></param>
-    public void Rewrite(ContextCSharpSyntaxRewriter rewriter)
-    {
-        rewriter.Context = this;
-
-        List<string> removals = [];
-
-        foreach ((var fName, var context) in Files)
-        {
-            if (!context.Rewrite(rewriter, fName, this))
-            {
-                removals.Add(fName);
-            }
-        }
-
-        foreach (string rem in Removals)
-        {
-            Files.Remove(rem);
-        }
-    }
-
-    private IBaseTypeContext? CreateTypeContextFromNode(BaseTypeDeclarationSyntax type, out string name, string ns, string file, List<string> usings, IBaseTypeContext? parent = null)
+    private IBaseTypeContext? CreateTypeContextFromNode(BaseTypeDeclarationSyntax type, string ns, string file, List<string> usings, IBaseTypeContext? parent = null)
     {
         if (type is EnumDeclarationSyntax e)
         {
-            name = $"{(parent?.Name.Length > 0 ? $"{parent.Name}." : "")}{e.Identifier.Text}";
             return new EnumContext(file, e, parent);
 
         }
         else if (type is TypeDeclarationSyntax t)
         {
-            name = $"{(parent?.Name.Length > 0 ? $"{parent.Name}." : "")}{t.Identifier.Text}";
             return new TypeContext(ns, file, t, this, usings, parent);
         }
-        name = string.Empty;
         return null;
     }
 
@@ -550,30 +597,30 @@ public class SyntaxContext
         if (type is null)
         {
             type = new(string.Empty, new UnknownTypeContext(syn), SyntaxKind.PublicKeyword);
-            if (TypeDefinitionContainers.TryGetValue(syn.ToString(), out list))
+            if (!TypeDefinitionContainers.TryGetValue(syn.ToString(), out list))
             {
                 list = [];
                 TypeDefinitionContainers.Add(syn.ToString(), list);
             }
-            list!.Add(type);
+            list.Add(type);
         }
 
         return type;
     }
 
-    private void AddTypeContextContainer(ref TypeContextContainer container, string name, int genericArgumentCount = 0)
+    private void AddTypeContextContainer(TypeContextContainer container)
     {
-        if (!TypeDefinitionContainers.TryGetValue(name, out var list))
+        if (!TypeDefinitionContainers.TryGetValue(container.Type!.Name, out var list))
         {
             list = [];
-            TypeDefinitionContainers.Add(name, list);
+            TypeDefinitionContainers.Add(container.Type!.Name, list);
         }
 
         for (int i = 0; i < list.Count; i++)
         {
             if (list[i].Type is UnknownTypeContext unknown &&
-                ((unknown.Syntax is not GenericNameSyntax && genericArgumentCount == 0) ||
-                (unknown.Syntax is GenericNameSyntax generic && generic.TypeArgumentList.Arguments.Count == genericArgumentCount)))
+                ((unknown.Syntax is not GenericNameSyntax && container.Type!.GenericParameterCount == 0) ||
+                (unknown.Syntax is GenericNameSyntax generic && generic.TypeArgumentList.Arguments.Count == container.Type!.GenericParameterCount)))
             {
                 list[i].Type = container.Type;
                 list[i].Visibility = container.Visibility;
@@ -611,6 +658,21 @@ public class SyntaxContext
             }
         }
         return false;
+    }
+
+    private void RenameType(TypeContextContainer container, string oldName)
+    {
+        if (TypeDefinitionContainers.TryGetValue(oldName, out var list))
+        {
+            list.RemoveAt(list.IndexOf(container));
+
+            if (list.Count == 0)
+            {
+                TypeDefinitionContainers.Remove(oldName);
+            }
+        }
+
+        AddTypeContextContainer(container);
     }
 
     private class CompilationContext
@@ -689,9 +751,15 @@ public class SyntaxContext
             List<string> removals = [];
             foreach (var nameSp in Namespaces)
             {
-                if (!nameSp.Value.Rewrite(rewriter, "", file, context, usings))
+                var output = nameSp.Value.Rewrite(rewriter, "", file, context, usings);
+                if (output.Item1 is null)
                 {
                     removals.Add(nameSp.Key);
+                }
+
+                if (output.Item2 is not null)
+                {
+                    throw new Exception("Type Declarations not allowed in the global namespace");
                 }
             }
 
@@ -700,7 +768,7 @@ public class SyntaxContext
                 Namespaces.Remove(rem);
             }
 
-            //TODO: Fix Keys
+            Namespaces = Namespaces.ToDictionary(kvp => kvp.Value.Node.Name.ToString(), kvp => kvp.Value);
 
             return Namespaces.Count > 0;
         }
@@ -741,12 +809,12 @@ public class SyntaxContext
                 }
                 else if (member is BaseTypeDeclarationSyntax bT)
                 {
-                    var ty = new TypeContextContainer(namesp, context.CreateTypeContextFromNode(bT, out string name, namesp, file, usings)!, bT.Modifiers
+                    var ty = new TypeContextContainer(namesp, context.CreateTypeContextFromNode(bT, namesp, file, usings)!, bT.Modifiers
                             .Where(token => token.IsKind(SyntaxKind.PublicKeyword) || token.IsKind(SyntaxKind.ProtectedKeyword) || token.IsKind(SyntaxKind.PrivateKeyword))
                             .Select(token => token.Kind())
                             .FirstOrDefault(SyntaxKind.PrivateKeyword));
 
-                    context.AddTypeContextContainer(ref ty, name, (bT is not TypeDeclarationSyntax t || t.TypeParameterList is null) ? 0 : t.TypeParameterList.Parameters.Count);
+                    context.AddTypeContextContainer(ty);
 
                     if (!Types.TryGetValue(bT.Identifier.Text, out var list))
                     {
@@ -761,7 +829,7 @@ public class SyntaxContext
                 }
             }
 
-            Node = node.WithName(IdentifierName(names[0]));
+            Node = node.WithName(IdentifierName(names[0])).WithMembers(List(Array.Empty<MemberDeclarationSyntax>()));
         }
 
         public NamespaceContext(BaseNamespaceDeclarationSyntax node)
@@ -806,32 +874,115 @@ public class SyntaxContext
             return nameSpace.GetNamespace(ns.Substring(firstIndex + 1));
         }
 
-        public bool Rewrite(ContextCSharpSyntaxRewriter rewriter, string ns, string file, SyntaxContext context, List<string> usings)
+        public (BaseNamespaceDeclarationSyntax?, TypeContextContainer?) Rewrite(ContextCSharpSyntaxRewriter rewriter, string ns, string file, SyntaxContext context, List<string> usings)
         {
             var node = rewriter.Visit(Node);
+
+            (BaseNamespaceDeclarationSyntax?, TypeContextContainer?) ret;
+
+            string names = $"{ns}.{Node.Name}";
 
             if (node is BaseNamespaceDeclarationSyntax nameSp)
             {
                 Node = nameSp;
-                //process new members
+                ret = (Node, null);
+
+                names = $"{ns}.{Node.Name}";
+                foreach (var member in Node.Members)
+                {
+                    if (member is BaseNamespaceDeclarationSyntax subns)
+                    {
+                        var nsContext = new NamespaceContext(names, subns, context, usings, file);
+                        Namespaces.Add(nsContext.Node.Name.ToString(), nsContext);
+                    }
+                    else if (member is BaseTypeDeclarationSyntax bT)
+                    {
+                        var ty = new TypeContextContainer(names, context.CreateTypeContextFromNode(bT, names, file, usings)!, bT.Modifiers
+                                .Where(token => token.IsKind(SyntaxKind.PublicKeyword) || token.IsKind(SyntaxKind.ProtectedKeyword) || token.IsKind(SyntaxKind.PrivateKeyword))
+                                .Select(token => token.Kind())
+                                .FirstOrDefault(SyntaxKind.PrivateKeyword));
+
+                        context.AddTypeContextContainer(ty);
+
+                        if (!Types.TryGetValue(bT.Identifier.Text, out var list))
+                        {
+                            list = [];
+                            Types.Add(bT.Identifier.Text, list);
+                        }
+                        list.Add(ty);
+                    }
+                    else
+                    {
+                        throw new Exception($"Namespace {Node.Name}{(file != "" ? " in file " + file : "")} contains a member of type ({member.GetType()}) which isn't supported");
+                    }
+                }
+
             }
-            else if (node is TypeDeclarationSyntax ty)
+            else if (node is TypeDeclarationSyntax type)
             {
-                //move all members into new TypeContext
+                names = ns;
+                var tyCont = context.CreateTypeContextFromNode(type, ns, file, usings, null) as TypeContext;
+                var ty = new TypeContextContainer(ns, tyCont!, type.Modifiers
+                            .Where(token => token.IsKind(SyntaxKind.PublicKeyword) || token.IsKind(SyntaxKind.ProtectedKeyword) || token.IsKind(SyntaxKind.PrivateKeyword))
+                            .Select(token => token.Kind())
+                            .FirstOrDefault(SyntaxKind.PrivateKeyword));
+
+                context.AddTypeContextContainer(ty);
+
+                Types = Types.ToDictionary(kvp => $"{tyCont!.Name}." + kvp.Key, kvp => {
+                    foreach (var val in kvp.Value)
+                    {
+                        val.SetParent(tyCont, context);
+                    }
+                    return kvp.Value;
+                });
+
+                foreach (var subTypes in Types)
+                {
+                    if (tyCont!.SubTypes.TryGetValue(subTypes.Key, out var list))
+                    {
+                        foreach(var sType in subTypes.Value)
+                        {
+                            if (!list.Any(lType => lType.Type?.GenericParameterCount == sType.Type?.GenericParameterCount))
+                            {
+                                list.Add(sType);
+                            }
+                        }
+                    }
+                    else
+                    {
+                        tyCont.SubTypes.Add(subTypes.Key, subTypes.Value);
+                    }
+                }
+
+                ret = (null, ty);
+
+                Types = tyCont!.SubTypes;
             }
             else
             {
-                return false;
+                return (null, null);
             }
-
-            string names = $"{ns}.{Node.Name.ToString()}";
 
             List<string> removals = [];
             foreach (var name in Namespaces)
             {
-                if (!name.Value.Rewrite(rewriter, names, file, context, usings))
+                var output = name.Value.Rewrite(rewriter, names, file, context, usings);
+                if (output.Item1 is null)
                 {
                     removals.Add(name.Key);
+                }
+
+                if (output.Item2 is not null)
+                {
+                    
+                    if (!Types.TryGetValue(output.Item2.Type!.Name, out var list))
+                    {
+                        list = [];
+                        Types.Add(output.Item2.Type!.Name, list);
+                    }
+
+                    list.Add(output.Item2);
                 }
             }
 
@@ -840,7 +991,7 @@ public class SyntaxContext
                 Namespaces.Remove(rem);
             }
 
-            //fix keys
+            Namespaces = Namespaces.ToDictionary(kvp => kvp.Value.Node.Name.ToString(), kvp => kvp.Value);
 
             removals.Clear();
             Dictionary<string, List<TypeContextContainer>> newTypes = [];
@@ -856,7 +1007,19 @@ public class SyntaxContext
                         continue;
                     }
                     type.Type = type.Type.Rewrite(rewriter, names, file, context, usings);
-                    //move if type name has changed
+
+                    string name = type.Type!.Name;
+                    if (name != types.Key)
+                    {
+                        if (!Types.TryGetValue(name, out var list) && !newTypes.TryGetValue(name, out list))
+                        {
+                            list = [];
+                            newTypes.Add(name, list);
+                        }
+                        list.Add(type);
+
+                        context.RenameType(type, types.Key);
+                    }
                 }
 
                 if (types.Value.Count == 0)
@@ -875,7 +1038,7 @@ public class SyntaxContext
                 Types.Add(kvp.Key, kvp.Value);
             }
 
-            return Namepsaces.Count > 0 || Types.Count > 0;
+            return Namespaces.Count > 0 || Types.Count > 0 ? ret : (null, null);
         }
 
         public void Clean()
@@ -936,18 +1099,20 @@ public class SyntaxContext
         {
             ParentType = parent;
             File = file;
+            Node = node.WithMembers(List(Array.Empty<MemberDeclarationSyntax>()));
+
             string parentName = parent is null ? string.Empty : parent.Name;
 
             foreach (var member in node.Members)
             {
                 if (member is BaseTypeDeclarationSyntax bT)
                 {
-                    var ty = new TypeContextContainer(ns, context.CreateTypeContextFromNode(bT, out string name, ns, file, usings, this)!, bT.Modifiers
+                    var ty = new TypeContextContainer(ns, context.CreateTypeContextFromNode(bT, ns, file, usings, this)!, bT.Modifiers
                             .Where(token => token.IsKind(SyntaxKind.PublicKeyword) || token.IsKind(SyntaxKind.ProtectedKeyword) || token.IsKind(SyntaxKind.PrivateKeyword))
                             .Select(token => token.Kind())
                             .FirstOrDefault(SyntaxKind.PrivateKeyword));
 
-                    context.AddTypeContextContainer(ref ty, name, (bT is not TypeDeclarationSyntax t || t.TypeParameterList is null) ? 0 : t.TypeParameterList.Parameters.Count);
+                    context.AddTypeContextContainer(ty);
 
                     if (!SubTypes.TryGetValue(bT.Identifier.Text, out var list))
                     {
@@ -990,8 +1155,6 @@ public class SyntaxContext
                     BaseTypes.Add(baseType.Type.ToString(), context.GetTypeContainer(baseType.Type, ns, usings, this, out int _));
                 }
             }
-
-            Node = node.WithMembers(List(Array.Empty<MemberDeclarationSyntax>()));
         }
 
         public string File;
@@ -1019,7 +1182,7 @@ public class SyntaxContext
             methods.Value.Select(method => new IBaseTypeContext.Method(method.Node, method.ReturnType.Item1?.Type, method.ReturnType.Item2,
                 method.Parameters.Select(par => (par.Key, new IBaseTypeContext.MethodParameter(par.Value.Node, par.Value.Type.Type!, par.Value.PointerDepth)))))));
 
-        public string Name => Node.Identifier.Text;
+        public string Name => $"{(Parent is null ? string.Empty : $"{Parent.Name}.")}{Node.Identifier.Text}";
 
         public IBaseTypeContext? Parent => ParentType;
 
@@ -1185,7 +1348,8 @@ public class SyntaxContext
                             continue;
                         }
 
-                        if (node.Name != member.Type.Name)
+                        member.Type = node;
+                        if (members.Key != member.Type.Name)
                         {
                             members.Value.RemoveAt(i);
                             i--;
@@ -1198,9 +1362,9 @@ public class SyntaxContext
                             {
                                 newTypes.Add(node.Name, [member]);
                             }
-                        }
 
-                        member.Type = node;
+                            context.RenameType(member, members.Key);
+                        }
                     }
 
                     if (members.Value.Count == 0)
@@ -1254,12 +1418,12 @@ public class SyntaxContext
             string parentName = Parent is null ? string.Empty : Parent.Name;
             if (member is BaseTypeDeclarationSyntax bT)
             {
-                var ty = new TypeContextContainer(ns, context.CreateTypeContextFromNode(bT, out string name, ns, file, usings, this)!, bT.Modifiers
+                var ty = new TypeContextContainer(ns, context.CreateTypeContextFromNode(bT, ns, file, usings, this)!, bT.Modifiers
                         .Where(token => token.IsKind(SyntaxKind.PublicKeyword) || token.IsKind(SyntaxKind.ProtectedKeyword) || token.IsKind(SyntaxKind.PrivateKeyword))
                         .Select(token => token.Kind())
                         .FirstOrDefault(SyntaxKind.PrivateKeyword));
 
-                context.AddTypeContextContainer(ref ty, name, (bT is not TypeDeclarationSyntax t || t.TypeParameterList is null) ? 0 : t.TypeParameterList.Parameters.Count);
+                context.AddTypeContextContainer(ty);
 
                 if (!SubTypes.TryGetValue(bT.Identifier.Text, out var list))
                 {
@@ -1412,6 +1576,8 @@ public class SyntaxContext
         {
             Methods.Remove(name);
         }
+
+        public void SetParent(IBaseTypeContext? parent) => ParentType = parent;
     }
 
     private class EnumContext : IBaseTypeContext
@@ -1420,13 +1586,12 @@ public class SyntaxContext
         {
             ParentType = parent;
             File = file;
+            Node = node.WithMembers(SeparatedList(Array.Empty<EnumMemberDeclarationSyntax>()));
 
             foreach (var member in node.Members)
             {
                 Members.Add(member.Identifier.Text, new(member));
             }
-
-            Node = node.WithMembers(SeparatedList(Array.Empty<EnumMemberDeclarationSyntax>()));
         }
 
         public EnumDeclarationSyntax Node;
@@ -1454,7 +1619,7 @@ public class SyntaxContext
 
         public string FileName => File;
 
-        public string Name => Node.Identifier.Text;
+        public string Name => $"{(Parent is null ? string.Empty : $"{Parent.Name}.")}{Node.Identifier.Text}";
 
         public IBaseTypeContext? Parent => ParentType;
 
@@ -1616,6 +1781,8 @@ public class SyntaxContext
         {
             Members.Remove(name);
         }
+
+        public void SetParent(IBaseTypeContext? parent) => ParentType = parent;
     }
 
     private class UnknownTypeContext : IBaseTypeContext
@@ -1727,6 +1894,8 @@ public class SyntaxContext
         public void RemoveMethod(string name, params TypeSyntax[] parameters) { }
         public void RemoveMethods(string name) { }
 
+        public void SetParent(IBaseTypeContext? parent) { }
+
         public enum TypeLocation
         {
             BaseList,
@@ -1747,6 +1916,17 @@ public class SyntaxContext
         public string Namespace;
         public SyntaxKind Visibility;
         public IBaseTypeContext? Type;
+
+        public void SetParent(IBaseTypeContext? parent, SyntaxContext context)
+        {
+            if (Type is not null)
+            {
+                string name = Type.Name;
+                Type.SetParent(parent);
+
+                context.RenameType(this, name);
+            }
+        }
 
         public bool IsPublic => Visibility == SyntaxKind.PublicKeyword;
 

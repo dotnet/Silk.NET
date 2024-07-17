@@ -35,5 +35,5 @@ public abstract class ContextCSharpSyntaxRewriter(bool visitIntoStructuredTrivia
     /// <summary>
     /// The currently SyntaxContext
     /// </summary>
-    public SyntaxContext? Context { get; internal set; };
+    public SyntaxContext? Context { get; internal set; }
 }

@@ -247,6 +247,12 @@ public interface IBaseTypeContext
     MemberDeclarationSyntax? ToCompletedNode();
 
     /// <summary>
+    /// Changes the parent for this type
+    /// </summary>
+    /// <param name="parent"></param>
+    void SetParent(IBaseTypeContext? parent);
+
+    /// <summary>
     /// Represents a type defined within a type
     /// </summary>
     /// <param name="Node"></param>
