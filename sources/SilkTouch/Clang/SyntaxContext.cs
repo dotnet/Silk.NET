@@ -746,7 +746,27 @@ public class SyntaxContext
 
         public bool Rewrite(ContextCSharpSyntaxRewriter rewriter, string file, SyntaxContext context)
         {
+            var node = rewriter.Visit(Node) as CompilationUnitSyntax;
+
+            if (node is null)
+            {
+                return false;
+            }
+
             List<string> usings = Node.Usings.Select(u => u.Name!.ToString()).ToList();
+            foreach (var member in node.Members)
+            {
+                if (member is BaseNamespaceDeclarationSyntax ns)
+                {
+                    var nsContext = new NamespaceContext(string.Empty, ns, context, usings, file);
+                    Namespaces.Add(nsContext.Node.Name.ToString(), nsContext);
+                }
+                else
+                {
+                    throw new Exception($"CompilationUnit for {file} contains a member of type ({member.GetType()}) which isn't supported");
+                }
+            }
+            Node = node.WithMembers(List(Array.Empty<MemberDeclarationSyntax>()));
 
             List<string> removals = [];
             foreach (var nameSp in Namespaces)
