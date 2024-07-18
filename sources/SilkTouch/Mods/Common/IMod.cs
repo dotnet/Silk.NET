@@ -1,4 +1,4 @@
-﻿using System.Collections.Generic;
+using System.Collections.Generic;
 using System.Threading.Tasks;
 using Silk.NET.SilkTouch.Clang;
 
@@ -40,13 +40,13 @@ public interface IMod
     /// opportunity to mutate the syntax tree.
     /// </summary>
     /// <param name="key">The job name (corresponds to the configuration key for mod configs).</param>
-    /// <param name="syntax">The generated output from ClangSharp (or the previous mod).</param>
+    /// <param name="context">The generated output from ClangSharp (or the previous mod).</param>
     /// <returns>
     /// The modified syntax nodes to be either passed to the next mod or output from the generator if this is the last
     /// mod.
     /// </returns>
-    Task<GeneratedSyntax> AfterScrapeAsync(string key, GeneratedSyntax syntax) =>
-        Task.FromResult(syntax);
+    Task<SyntaxContext> AfterScrapeAsync(string key, SyntaxContext context) =>
+        Task.FromResult(context);
 
     /// <summary>
     /// Runs before SilkTouch is going to output the MSBuild workspace. The generated documents have already been added,

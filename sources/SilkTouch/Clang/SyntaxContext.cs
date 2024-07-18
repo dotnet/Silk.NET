@@ -5,27 +5,43 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using System.Reflection.Metadata;
-using System.Security.Cryptography;
-using System.Text;
 using System.Text.RegularExpressions;
-using System.Threading.Tasks;
-using System.Xml.Linq;
-using ClangSharp;
 using Microsoft.CodeAnalysis;
 using Microsoft.CodeAnalysis.CSharp;
 using Microsoft.CodeAnalysis.CSharp.Syntax;
-using Microsoft.VisualBasic.FileIO;
-using Silk.NET.Core;
 using static Microsoft.CodeAnalysis.CSharp.SyntaxFactory;
 
 namespace Silk.NET.SilkTouch.Clang;
 
 /// <summary>
-/// 
+/// A representation of the full SyntaxTree used to better provide bindings
 /// </summary>
 public class SyntaxContext
 {
+    /// <summary>
+    /// 
+    /// </summary>
+    /// <param name="diagnostics"></param>
+    /// <param name="files"></param>
+    public SyntaxContext(Dictionary<string, SyntaxNode> files, IReadOnlyList<ClangSharp.Diagnostic> diagnostics)
+    {
+        Diagnostics = diagnostics;
+        //Build initial per file tree
+        foreach ((var fName, var node) in files)
+        {
+            if (node is CompilationUnitSyntax comp)
+            {
+                Files.Add(fName, new CompilationContext(fName, comp, this));
+            }
+            else
+            {
+                throw new Exception("CompilationUnitSyntax missing");
+            }
+        }
+
+        MergeCommonTypes();
+    }
+
     /// <summary>
     /// 
     /// </summary>
@@ -49,7 +65,10 @@ public class SyntaxContext
         MergeCommonTypes();
     }
 
-    Dictionary<string, CompilationContext> Files = [];
+    /// <summary>
+    /// Syntax Context data for each file
+    /// </summary>
+    internal Dictionary<string, CompilationContext> Files = [];
 
     Dictionary<string, List<TypeContextContainer>> TypeDefinitionContainers = [];
 
@@ -256,16 +275,16 @@ public class SyntaxContext
         }
     }
 
-    private IBaseTypeContext? CreateTypeContextFromNode(BaseTypeDeclarationSyntax type, string ns, string file, List<string> usings, IBaseTypeContext? parent = null)
+    private TypeContainer? CreateTypeContextFromNode(BaseTypeDeclarationSyntax type, string ns, string file, List<string> usings, IBaseTypeContext? parent = null)
     {
         if (type is EnumDeclarationSyntax e)
         {
-            return new EnumContext(file, e, parent);
+            return new(Enum:new EnumContext(file, e, parent));
 
         }
         else if (type is TypeDeclarationSyntax t)
         {
-            return new TypeContext(ns, file, t, this, usings, parent);
+            return new(new TypeContext(ns, file, t, this, usings, parent));
         }
         return null;
     }
@@ -390,7 +409,7 @@ public class SyntaxContext
                     {
                         if (e.Members.ContainsKey(member.Key))
                         {
-                            continue;
+                            e.Members[member.Key] = member.Value;
                         }
                         e.Members.Add(member.Key, member.Value);
                     }
@@ -457,10 +476,16 @@ public class SyntaxContext
 
                         foreach (var method in member.Value)
                         {
-                            if (list.Any(mem => method == mem))
+                            for (int i = 0; i < list.Count; i++)
                             {
-                                continue;
+                                var mem = list[i];
+                                if (list.Any(mem => method == mem))
+                                {
+                                    list[i] = mem;
+                                    continue;
+                                }
                             }
+                            
 
                             list.Add(method);
                         }
@@ -492,7 +517,7 @@ public class SyntaxContext
                     {
                         if (t.Fields.ContainsKey(member.Key))
                         {
-                            continue;
+                            t.Fields[member.Key] = member.Value;
                         }
                         t.Fields.Add(member.Key, member.Value);
                     }
@@ -501,7 +526,7 @@ public class SyntaxContext
                     {
                         if (t.Properties.ContainsKey(member.Key))
                         {
-                            continue;
+                            t.Properties[member.Key] = member.Value;
                         }
                         t.Properties.Add(member.Key, member.Value);
                     }
@@ -689,7 +714,7 @@ public class SyntaxContext
         AddTypeContextContainer(container);
     }
 
-    private class CompilationContext
+    internal class CompilationContext
     {
         public CompilationContext(string file, CompilationUnitSyntax node, SyntaxContext context)
         {
@@ -822,7 +847,7 @@ public class SyntaxContext
         }
     }
 
-    private class NamespaceContext
+    internal class NamespaceContext
     {
         public NamespaceContext(string namesp, BaseNamespaceDeclarationSyntax node, SyntaxContext context, List<string> usings, string file = "")
         {
@@ -857,7 +882,7 @@ public class SyntaxContext
                 }
                 else if (member is BaseTypeDeclarationSyntax bT)
                 {
-                    var ty = new TypeContextContainer(namesp, context.CreateTypeContextFromNode(bT, namesp, file, usings)!, bT.Modifiers
+                    var ty = new TypeContextContainer(namesp, context.CreateTypeContextFromNode(bT, namesp, file, usings), bT.Modifiers
                             .Where(token => token.IsKind(SyntaxKind.PublicKeyword) || token.IsKind(SyntaxKind.ProtectedKeyword) || token.IsKind(SyntaxKind.PrivateKeyword))
                             .Select(token => token.Kind())
                             .FirstOrDefault(SyntaxKind.PrivateKeyword));
@@ -968,7 +993,7 @@ public class SyntaxContext
                     }
                     else if (member is BaseTypeDeclarationSyntax bT)
                     {
-                        var ty = new TypeContextContainer(names, rewriter.Context!.CreateTypeContextFromNode(bT, names, file, rewriter.Usings)!, bT.Modifiers
+                        var ty = new TypeContextContainer(names, rewriter.Context!.CreateTypeContextFromNode(bT, names, file, rewriter.Usings), bT.Modifiers
                                 .Where(token => token.IsKind(SyntaxKind.PublicKeyword) || token.IsKind(SyntaxKind.ProtectedKeyword) || token.IsKind(SyntaxKind.PrivateKeyword))
                                 .Select(token => token.Kind())
                                 .FirstOrDefault(SyntaxKind.PrivateKeyword));
@@ -992,18 +1017,26 @@ public class SyntaxContext
             else if (node is TypeDeclarationSyntax type)
             {
                 names = ns;
-                var tyCont = rewriter.Context!.CreateTypeContextFromNode(type, ns, file, rewriter.Usings, null) as TypeContext;
-                var ty = new TypeContextContainer(ns, tyCont!, type.Modifiers
+                var cont = rewriter.Context!.CreateTypeContextFromNode(type, ns, file, rewriter.Usings, null);
+                TypeContext? tyCont = null;
+
+                if (cont is not null)
+                {
+                    tyCont = cont.Value.Type as TypeContext;
+                }
+
+                var ty = new TypeContextContainer(ns, tyCont, type.Modifiers
                             .Where(token => token.IsKind(SyntaxKind.PublicKeyword) || token.IsKind(SyntaxKind.ProtectedKeyword) || token.IsKind(SyntaxKind.PrivateKeyword))
                             .Select(token => token.Kind())
                             .FirstOrDefault(SyntaxKind.PrivateKeyword));
+
 
                 rewriter.Context!.AddTypeContextContainer(ty);
 
                 Types = Types.ToDictionary(kvp => $"{tyCont!.Name}." + kvp.Key, kvp => {
                     foreach (var val in kvp.Value)
                     {
-                        val.SetParent(tyCont, rewriter.Context);
+                        val.SetParent(tyCont!, rewriter.Context);
                     }
                     return kvp.Value;
                 });
@@ -1022,7 +1055,7 @@ public class SyntaxContext
                     }
                     else
                     {
-                        tyCont.SubTypes.Add(subTypes.Key, subTypes.Value);
+                        tyCont!.SubTypes.Add(subTypes.Key, subTypes.Value);
                     }
                 }
 
@@ -1077,7 +1110,7 @@ public class SyntaxContext
                         i--;
                         continue;
                     }
-                    type.Type = type.Type.Rewrite(rewriter, names, file);
+                    type.ConvertContainer(type.Type.Rewrite(rewriter, names, file));
 
                     string name = type.Type!.Name;
                     if (name != types.Key)
@@ -1202,7 +1235,7 @@ public class SyntaxContext
                     }
                     methods.Add(new(ns, m, context, usings, parentName, this));
                 }
-                else if (member is FieldDeclarationSyntax f)
+                else if (member is BaseFieldDeclarationSyntax f)
                 {
                     TypeContextContainer type = context.GetTypeContainer(f.Declaration.Type, ns, usings, this, out int pDepth, parentName);
 
@@ -1228,6 +1261,7 @@ public class SyntaxContext
             }
         }
 
+
         public string File;
         public TypeDeclarationSyntax Node;
         public Dictionary<string, TypeContextContainer> BaseTypes = [];
@@ -1239,19 +1273,17 @@ public class SyntaxContext
 
         BaseTypeDeclarationSyntax? IBaseTypeContext.Node => Node;
 
-        public IEnumerable<(string, EnumMemberDeclarationSyntax)> EnumMembers => Array.Empty<(string, EnumMemberDeclarationSyntax)>();
-
         IEnumerable<(string, BaseTypeSyntax, IBaseTypeContext)> IBaseTypeContext.BaseTypes => BaseTypes.Where(bT => bT.Value.Type is not null).Select(bT => (bT.Key, (BaseTypeSyntax)SimpleBaseType(bT.Value.Type!.Syntax), bT.Value.Type!));
 
         IEnumerable<(string, IEnumerable<IBaseTypeContext.SubType>)> IBaseTypeContext.SubTypes => SubTypes.Select(types => (types.Key, types.Value.Select(type => new IBaseTypeContext.SubType(type.Type?.Node, type.Type))));
 
-        IEnumerable<(string, IBaseTypeContext.Field)> IBaseTypeContext.Fields => Fields.Select(field => (field.Key, new IBaseTypeContext.Field(field.Value.Node, field.Value.Container.Type, field.Value.PointerDepth)));
+        IEnumerable<(string, IBaseTypeContext.Field)> IBaseTypeContext.Fields => Fields.Select(field => (field.Key, new IBaseTypeContext.Field(field.Value.Node, field.Value.Container.ToTypeContainer(), field.Value.PointerDepth)));
 
-        IEnumerable<(string, IBaseTypeContext.Property)> IBaseTypeContext.Properties => Properties.Select(property => (property.Key, new IBaseTypeContext.Property(property.Value.Node, property.Value.Container.Type, property.Value.PointerDepth)));
+        IEnumerable<(string, IBaseTypeContext.Property)> IBaseTypeContext.Properties => Properties.Select(property => (property.Key, new IBaseTypeContext.Property(property.Value.Node, property.Value.Container.ToTypeContainer(), property.Value.PointerDepth)));
 
         IEnumerable<(string, IEnumerable<IBaseTypeContext.Method>)> IBaseTypeContext.Methods => Methods.Select(methods => (methods.Key,
-            methods.Value.Select(method => new IBaseTypeContext.Method(method.Node, method.ReturnType.Item1?.Type, method.ReturnType.Item2,
-                method.Parameters.Select(par => (par.Key, new IBaseTypeContext.MethodParameter(par.Value.Node, par.Value.Type.Type!, par.Value.PointerDepth)))))));
+            methods.Value.Select(method => new IBaseTypeContext.Method(method.Node, method.ReturnType.Item1?.ToTypeContainer(), method.ReturnType.Item2,
+                method.Parameters.Select(par => (par.Key, new IBaseTypeContext.MethodParameter(par.Value.Node, par.Value.Type.ToTypeContainer(), par.Value.PointerDepth)))))));
 
         public string Name => $"{(Parent is null ? string.Empty : $"{Parent.Name}.")}{Node.Identifier.Text}";
 
@@ -1281,8 +1313,6 @@ public class SyntaxContext
         }
 
         public int DefinedTypeCount => SubTypes.Select(t => t.Value.Where(ty => ty.Type is not null).Select(ty => ty.Type is TypeContext type ? type.DefinedTypeCount : 1).Aggregate((a, b) => a + b)).Aggregate((a, b) => a + b) + 1;
-
-        public bool IsEnum => false;
 
         public int GenericParameterCount => Node.TypeParameterList is null ? 0 : Node.TypeParameterList.Parameters.Count;
 
@@ -1345,7 +1375,7 @@ public class SyntaxContext
                 return false;
             }
 
-            field = new(context.Node, context.Container.Type, context.PointerDepth);
+            field = new(context.Node, context.Container.ToTypeContainer(), context.PointerDepth);
             return true;
         }
 
@@ -1357,7 +1387,7 @@ public class SyntaxContext
                 return false;
             }
 
-            property = new(context.Node, context.Container.Type, context.PointerDepth);
+            property = new(context.Node, context.Container.ToTypeContainer(), context.PointerDepth);
             return true;
         }
 
@@ -1402,12 +1432,12 @@ public class SyntaxContext
             visitor.CurrentContext = oldContext;
         }
 
-        public IBaseTypeContext? Rewrite(ContextCSharpSyntaxRewriter rewriter, string ns, string file)
+        public TypeContainer? Rewrite(ContextCSharpSyntaxRewriter rewriter, string ns, string file)
         {
             var oldContext = rewriter.CurrentContext;
             var oldNamespace = rewriter.CurrentNamespace;
 
-            rewriter.CurrentContext = this;
+            rewriter.CurrentContext = new(this);
             rewriter.CurrentNamespace = ns;
 
             var newNode = rewriter.Visit(Node);
@@ -1421,11 +1451,12 @@ public class SyntaxContext
 
             if (newNode is EnumDeclarationSyntax en)
             {
-                rewriter.CurrentContext = new EnumContext(file, en, this);
+                var newContext = new TypeContainer(Enum:new EnumContext(file, en, this));
+                rewriter.CurrentContext = newContext;
 
                 rewriter.CurrentContext = oldContext;
                 rewriter.CurrentNamespace = oldNamespace;
-                return rewriter.CurrentContext;
+                return newContext;
             }
             else if (newNode is TypeDeclarationSyntax ty)
             {
@@ -1442,28 +1473,27 @@ public class SyntaxContext
                         {
                             continue;
                         }
-                        var node = member.Type.Rewrite(rewriter, ns, file);
+                        member.ConvertContainer(member.Type.Rewrite(rewriter, ns, file));
 
-                        if (node is not TypeContext)
+                        if (member.IsNull)
                         {
                             members.Value.RemoveAt(i);
                             i--;
                             continue;
                         }
 
-                        member.Type = node;
-                        if (members.Key != member.Type.Name)
+                        if (members.Key != member.Name)
                         {
                             members.Value.RemoveAt(i);
                             i--;
 
-                            if (SubTypes.TryGetValue(node.Name, out var list2))
+                            if (SubTypes.TryGetValue(member.Name, out var list2))
                             {
                                 list2.Add(member);
                             }
                             else
                             {
-                                newTypes.Add(node.Name, [member]);
+                                newTypes.Add(member.Name, [member]);
                             }
 
                             rewriter.Context!.RenameType(member, members.Key);
@@ -1554,7 +1584,7 @@ public class SyntaxContext
 
             rewriter.CurrentContext = oldContext;
             rewriter.CurrentNamespace = oldNamespace;
-            return rewriter.CurrentContext;
+            return new(this);
         }
 
         private void ProcessMember(MemberDeclarationSyntax member, string ns, string file, SyntaxContext context, List<string> usings)
@@ -1586,7 +1616,7 @@ public class SyntaxContext
                 }
                 methods.Add(new(ns, m, context, usings, parentName, this));
             }
-            else if (member is FieldDeclarationSyntax f)
+            else if (member is BaseFieldDeclarationSyntax f)
             {
                 TypeContextContainer type = context.GetTypeContainer(f.Declaration.Type, ns, usings, this, out int pDepth, parentName);
 
@@ -1595,11 +1625,20 @@ public class SyntaxContext
                     Fields.Add(dec.Identifier.Text, new(type, pDepth, f.WithDeclaration(f.Declaration.WithVariables(SeparatedList(new[] { dec })))));
                 }
             }
-            else if (member is PropertyDeclarationSyntax p)
+            else if (member is BasePropertyDeclarationSyntax p)
             {
                 TypeContextContainer type = context.GetTypeContainer(p.Type, ns, usings, this, out int pDepth, parentName);
 
-                Properties.Add(p.Identifier.Text, new(type, pDepth, p));
+                string propName = "[]";
+                if (member is PropertyDeclarationSyntax prop)
+                {
+                    propName = prop.Identifier.Text;
+                }
+                else if (member is EventDeclarationSyntax even)
+                {
+                    propName = even.Identifier.Text;
+                }
+                Properties.Add(propName, new(type, pDepth, p));
             }
         }
 
@@ -1620,14 +1659,6 @@ public class SyntaxContext
         {
             BaseTypes.Remove(baseType.Type.ToString());
         }
-
-        public bool TryGetEnumMember(string memberName, out EnumMemberDeclarationSyntax? member)
-        {
-            member = null;
-            return false;
-        }
-        public bool TryAddEnumMember(EnumMemberDeclarationSyntax node) => false;
-        public void RemoveEnumMember(string name) { }
 
         public bool TryAddSubType(BaseTypeDeclarationSyntax node, ContextCSharpSyntaxRewriter rewriter)
         {
@@ -1658,7 +1689,7 @@ public class SyntaxContext
         {
             SubTypes.Remove(name);
         }
-        public bool TryAddField(FieldDeclarationSyntax node, ContextCSharpSyntaxRewriter rewriter)
+        public bool TryAddField(BaseFieldDeclarationSyntax node, ContextCSharpSyntaxRewriter rewriter)
         {
             ProcessMember(node, rewriter.CurrentNamespace, File, rewriter.Context!, rewriter.Usings);
             return true;
@@ -1667,7 +1698,7 @@ public class SyntaxContext
         {
             Fields.Remove(name);
         }
-        public bool TryAddProperty(PropertyDeclarationSyntax node, ContextCSharpSyntaxRewriter rewriter)
+        public bool TryAddProperty(BasePropertyDeclarationSyntax node, ContextCSharpSyntaxRewriter rewriter)
         {
             ProcessMember(node, rewriter.CurrentNamespace, File, rewriter.Context!, rewriter.Usings);
             return true;
@@ -1688,8 +1719,8 @@ public class SyntaxContext
                 methodInfo = Array.Empty<IBaseTypeContext.Method>();
                 return false;
             }
-            methodInfo = methods.Select(method => new IBaseTypeContext.Method(method.Node, method.ReturnType.Item1?.Type, method.ReturnType.Item2,
-                method.Parameters.Select(par => (par.Key, new IBaseTypeContext.MethodParameter(par.Value.Node, par.Value.Type.Type!, par.Value.PointerDepth)))));
+            methodInfo = methods.Select(method => new IBaseTypeContext.Method(method.Node, method.ReturnType.Item1?.ToTypeContainer(), method.ReturnType.Item2,
+                method.Parameters.Select(par => (par.Key, new IBaseTypeContext.MethodParameter(par.Value.Node, par.Value.Type.ToTypeContainer(), par.Value.PointerDepth)))));
             return true;
         }
         public bool TryAddMethod(MethodDeclarationSyntax node, ContextCSharpSyntaxRewriter rewriter)
@@ -1724,7 +1755,7 @@ public class SyntaxContext
         public void SetParent(IBaseTypeContext? parent) => ParentType = parent;
     }
 
-    private class EnumContext : IBaseTypeContext
+    private class EnumContext : IEnumTypeContext
     {
         public EnumContext(string file, EnumDeclarationSyntax node, IBaseTypeContext? parent)
         {
@@ -1746,20 +1777,10 @@ public class SyntaxContext
 
         public Dictionary<string, EnumMemberContext> Members = [];
 
-        BaseTypeDeclarationSyntax? IBaseTypeContext.Node => Node;
+        EnumDeclarationSyntax? IEnumTypeContext.Node => Node;
 
         public IEnumerable<(string, EnumMemberDeclarationSyntax)> EnumMembers => Members.Select(em => (em.Key, em.Value.Node));
-
         public IEnumerable<(string, BaseTypeSyntax, IBaseTypeContext)> BaseTypes => Node.BaseList is null ? Array.Empty<(string, BaseTypeSyntax, IBaseTypeContext)>() : Node.BaseList.Types.Select(type => (type.Type.ToString(), type, (IBaseTypeContext)new UnknownTypeContext(type.Type)));
-
-        public IEnumerable<(string, IEnumerable<IBaseTypeContext.SubType>)> SubTypes => Array.Empty<(string, IEnumerable<IBaseTypeContext.SubType>)>();
-
-        public IEnumerable<(string, IBaseTypeContext.Field)> Fields => Array.Empty<(string, IBaseTypeContext.Field)>();
-
-        public IEnumerable<(string, IBaseTypeContext.Property)> Properties => Array.Empty<(string, IBaseTypeContext.Property)>();
-
-        public IEnumerable<(string, IEnumerable<IBaseTypeContext.Method>)> Methods => Array.Empty<(string, IEnumerable<IBaseTypeContext.Method>)>();
-
 
         public string FileName => File;
 
@@ -1781,12 +1802,12 @@ public class SyntaxContext
             }
         }
 
-        public IBaseTypeContext? Rewrite(ContextCSharpSyntaxRewriter rewriter, string ns, string file)
+        public TypeContainer? Rewrite(ContextCSharpSyntaxRewriter rewriter, string ns, string file)
         {
             var oldContext = rewriter.CurrentContext;
             var oldNamespace = rewriter.CurrentNamespace;
 
-            rewriter.CurrentContext = this;
+            rewriter.CurrentContext = new(Enum:this);
             rewriter.CurrentNamespace = ns;
 
             var newNode = rewriter.Visit(Node);
@@ -1844,7 +1865,7 @@ public class SyntaxContext
 
                 rewriter.CurrentContext = oldContext;
                 rewriter.CurrentNamespace = oldNamespace;
-                return newContext;
+                return new(newContext);
             }
             else
             {
@@ -1879,40 +1900,6 @@ public class SyntaxContext
         {
             return Node.BaseList is not null && Node.BaseList.Types.Any(type => type == baseType);
         }
-
-        public bool TryAddBaseType(BaseTypeSyntax baseType, SyntaxContext context, ContextCSharpSyntaxRewriter rewriter) => false;
-        public bool TryGetSubType(string typeName, out IBaseTypeContext.SubType subType, int genericParameterCount = 0)
-        {
-            subType = new();
-            return false;
-        }
-        public bool TryAddSubType(BaseTypeDeclarationSyntax node, ContextCSharpSyntaxRewriter rewriter) => false;
-        public void RemoveSubType(string name, int genericParameterCount = 0) { }
-        public void RemoveSubTypes(string name) { }
-        public bool TryGetField(string fieldName, out IBaseTypeContext.Field field)
-        {
-            field = new();
-            return false;
-        }
-
-        public bool TryAddField(FieldDeclarationSyntax node, ContextCSharpSyntaxRewriter rewriter) => false;
-        public void RemoveField(string name) { }
-        public bool TryGetProperty(string propertyName, out IBaseTypeContext.Property property)
-        {
-            property = new();
-            return false;
-        }
-        public bool TryAddProperty(PropertyDeclarationSyntax node, ContextCSharpSyntaxRewriter rewriter) => false;
-        public void RemoveProperty(string name) { }
-        public void RemoveBaseType(string baseType) { }
-        public bool TryGetMethods(string name, out IEnumerable<IBaseTypeContext.Method> methodInfo)
-        {
-            methodInfo = Array.Empty<IBaseTypeContext.Method>();
-            return false;
-        }
-        public bool TryAddMethod(MethodDeclarationSyntax node, ContextCSharpSyntaxRewriter rewriter) => false;
-        public void RemoveMethod(string name, params TypeSyntax[] parameters) { }
-        public void RemoveMethods(string name) { }
 
         public bool TryAddEnumMember(EnumMemberDeclarationSyntax node)
         {
@@ -1952,11 +1939,7 @@ public class SyntaxContext
 
         public BaseTypeDeclarationSyntax? Node => null;
 
-        public bool IsEnum => false;
-
         public int GenericParameterCount => Type is GenericNameSyntax generic ? generic.TypeArgumentList.Arguments.Count : 0;
-
-        public IEnumerable<(string, EnumMemberDeclarationSyntax)> EnumMembers => Array.Empty<(string, EnumMemberDeclarationSyntax)>();
 
         public IEnumerable<(string, BaseTypeSyntax, IBaseTypeContext)> BaseTypes => Array.Empty<(string, BaseTypeSyntax, IBaseTypeContext)>();
 
@@ -1973,12 +1956,17 @@ public class SyntaxContext
             return null;
         }
 
-        public IBaseTypeContext? Rewrite(ContextCSharpSyntaxRewriter rewriter, string ns, string file)
+        public void Visit(ContextCSharpSyntaxVisitor visitor)
+        {
+            visitor.Visit(Node);
+        }
+
+        public TypeContainer? Rewrite(ContextCSharpSyntaxRewriter rewriter, string ns, string file)
         {
             var oldContext = rewriter.CurrentContext;
             var oldNamespace = rewriter.CurrentNamespace;
 
-            rewriter.CurrentContext = this;
+            rewriter.CurrentContext = new(this);
             rewriter.CurrentNamespace = ns;
 
             var type = rewriter.Visit(Type) as TypeSyntax;
@@ -1988,7 +1976,7 @@ public class SyntaxContext
                 rewriter.CurrentContext = oldContext;
                 rewriter.CurrentNamespace = oldNamespace;
 
-                return new UnknownTypeContext(type);
+                return new(new UnknownTypeContext(type));
             }
 
             rewriter.CurrentContext = oldContext;
@@ -1996,13 +1984,6 @@ public class SyntaxContext
             return null;
         }
 
-        public bool TryGetEnumMember(string memberName, out EnumMemberDeclarationSyntax? member)
-        {
-            member = null;
-            return false;
-        }
-        public bool TryAddEnumMember(EnumMemberDeclarationSyntax node) => false;
-        public void RemoveEnumMember(string name) { }
         public bool TryGetSubType(string typeName, out IBaseTypeContext.SubType subType, int genericParameterCount = 0)
         {
             subType = new();
@@ -2017,14 +1998,14 @@ public class SyntaxContext
             return false;
         }
 
-        public bool TryAddField(FieldDeclarationSyntax node, ContextCSharpSyntaxRewriter rewriter) => false;
+        public bool TryAddField(BaseFieldDeclarationSyntax node, ContextCSharpSyntaxRewriter rewriter) => false;
         public void RemoveField(string name) { }
         public bool TryGetProperty(string propertyName, out IBaseTypeContext.Property property)
         {
             property = new();
             return false;
         }
-        public bool TryAddProperty(PropertyDeclarationSyntax node, ContextCSharpSyntaxRewriter rewriter) => false;
+        public bool TryAddProperty(BasePropertyDeclarationSyntax node, ContextCSharpSyntaxRewriter rewriter) => false;
         public void RemoveProperty(string name) { }
         public bool HasBaseType(string baseType) => false;
         public bool HasBaseType(BaseTypeSyntax baseType) => false;
@@ -2049,18 +2030,113 @@ public class SyntaxContext
         }
     }
 
-    private class TypeContextContainer
+    private class DelegateContext : LeafNodeContext<DelegateDeclarationSyntax>, IDelegateContext
     {
-        public TypeContextContainer(string ns, IBaseTypeContext ty, SyntaxKind visibility)
+        public DelegateContext(DelegateDeclarationSyntax node, string ns, SyntaxContext context, List<string> usings, IBaseTypeContext? parent, TypeContext? type) : base(node)
+        {
+            int pDepth;
+            foreach (var para in node.ParameterList.Parameters)
+            {
+                Parameters.Add(para.Identifier.Text, new(para, ns, context, usings, parent?.Name ?? string.Empty, type));
+            }
+
+            ReturnType = (context.GetTypeContainer(node.ReturnType, ns, usings, type, out pDepth, parent?.Name ?? string.Empty), pDepth);
+        }
+
+        public Dictionary<string, MethodParameterContext> Parameters = [];
+        public (TypeContextContainer?, int) ReturnType;
+        public IBaseTypeContext? Parent;
+
+        public string Name => $"{(Parent is null ? "" : $"{Parent.Name}.")}{Node.Identifier.Text}";
+
+        DelegateDeclarationSyntax? IDelegateContext.Node => throw new NotImplementedException();
+
+        IEnumerable<(string, IBaseTypeContext.MethodParameter)> IDelegateContext.Parameters => Parameters.Select(par => (par.Key, new IBaseTypeContext.MethodParameter(par.Value.Node, par.Value.Type.ToTypeContainer(), par.Value.PointerDepth)));
+
+        public static bool operator ==(DelegateContext left, DelegateContext right)
+        {
+            return left.Name == right.Name &&
+                left.Parameters.Values.SequenceEqual(right.Parameters.Values);
+        }
+
+        public static bool operator !=(DelegateContext left, DelegateContext right)
+        {
+            return left.Name != right.Name ||
+                !left.Parameters.Values.SequenceEqual(right.Parameters.Values);
+        }
+
+        public override bool Equals(object? obj) => base.Equals(obj);
+
+        public override int GetHashCode() => ToString().GetHashCode();
+
+        public override string ToString()
+        {
+            return $"{Node.Identifier.Text}({string.Join(',', Parameters.Select(par => $"{par.Value} {par.Key}"))})";
+        }
+
+        public static DelegateContext? ToDelegateContext(IDelegateContext context)
+        {
+            return context as DelegateContext;
+        }
+
+        public TypeContainer? Rewrite(ContextCSharpSyntaxRewriter rewriter, string ns, string file) => throw new NotImplementedException();
+        public void Visit(ContextCSharpSyntaxVisitor visitor) => throw new NotImplementedException();
+    }
+
+    internal class TypeContextContainer
+    {
+        public TypeContextContainer(string ns, IBaseTypeContext? ty, IEnumTypeContext? en, IDelegateContext? del, SyntaxKind visibility)
         {
             Namespace = ns;
             Type = ty;
             Visibility = visibility;
+            Delegate = del;
+            Enum = en;
+        }
+
+        public TypeContextContainer(string ns, TypeContainer? container, SyntaxKind visibility)
+        {
+            Namespace = ns;
+            Type = container?.Type;
+            Delegate = container?.Delegate;
+            Enum = container?.Enum;
+            Visibility = visibility;
+        }
+
+        public TypeContextContainer(string ns, IBaseTypeContext? ty, SyntaxKind visibility)
+        {
+            Namespace = ns;
+            Type = ty;
+            Visibility = visibility;
+            Delegate = null;
+            Enum = null;
+        }
+
+        public TypeContextContainer(string ns, IEnumTypeContext? en, SyntaxKind visibility)
+        {
+            Namespace = ns;
+            Type = null;
+            Visibility = visibility;
+            Delegate = null;
+            Enum = en;
+        }
+
+        public TypeContextContainer(string ns, IDelegateContext? del, SyntaxKind visibility)
+        {
+            Namespace = ns;
+            Type = null;
+            Visibility = visibility;
+            Delegate = del;
+            Enum = null;
         }
 
         public string Namespace;
         public SyntaxKind Visibility;
         public IBaseTypeContext? Type;
+        public IEnumTypeContext? Enum;
+        public IDelegateContext? Delegate;
+
+        public string Name => Type is not null ? Type.Name : (Enum is not null ? Enum.Name : (Delegate is not null ? Delegate.Name : string.Empty));
 
         public void SetParent(IBaseTypeContext? parent, SyntaxContext context)
         {
@@ -2075,9 +2151,23 @@ public class SyntaxContext
 
         public bool IsPublic => Visibility == SyntaxKind.PublicKeyword;
 
+        public bool IsNull => Type is null && Enum is null && Delegate is null;
+
         public override string ToString()
         {
             return Type?.Syntax.ToString() ?? string.Empty;
+        }
+
+        public TypeContainer ToTypeContainer()
+        {
+            return new(Type, Enum, Delegate);
+        }
+
+        public void ConvertContainer(TypeContainer? container)
+        {
+            Type = container?.Type;
+            Enum = container?.Enum;
+            Delegate = container?.Delegate;
         }
     }
 
@@ -2126,7 +2216,7 @@ public class SyntaxContext
 
     private class MethodParameterContext : LeafNodeContext<ParameterSyntax>
     {
-        public MethodParameterContext(ParameterSyntax node, string ns, SyntaxContext context, List<string> usings, string parentName, TypeContext type) : base(node)
+        public MethodParameterContext(ParameterSyntax node, string ns, SyntaxContext context, List<string> usings, string parentName, TypeContext? type) : base(node)
         {
             Type = context.GetTypeContainer(node.Type!, ns, usings, type, out PointerDepth, parentName);
         }
@@ -2135,13 +2225,13 @@ public class SyntaxContext
         public int PointerDepth;
     }
 
-    private class FieldContext : VariableNodes<FieldDeclarationSyntax>
+    private class FieldContext : VariableNodes<BaseFieldDeclarationSyntax>
     {
-        public FieldContext(TypeContextContainer container, int pointerDepth, FieldDeclarationSyntax node) : base(container, node) { PointerDepth = pointerDepth; }
+        public FieldContext(TypeContextContainer container, int pointerDepth, BaseFieldDeclarationSyntax node) : base(container, node) { PointerDepth = pointerDepth; }
 
         public int PointerDepth;
 
-        public FieldDeclarationSyntax ToCompletedNode()
+        public BaseFieldDeclarationSyntax ToCompletedNode()
         {
             var type = Container.Type!.Syntax;
 
@@ -2156,13 +2246,13 @@ public class SyntaxContext
         }
     }
 
-    private class PropertyContext : VariableNodes<PropertyDeclarationSyntax>
+    private class PropertyContext : VariableNodes<BasePropertyDeclarationSyntax>
     {
-        public PropertyContext(TypeContextContainer container, int pointerDepth, PropertyDeclarationSyntax node) : base(container, node) { PointerDepth = pointerDepth; }
+        public PropertyContext(TypeContextContainer container, int pointerDepth, BasePropertyDeclarationSyntax node) : base(container, node) { PointerDepth = pointerDepth; }
 
         public int PointerDepth;
 
-        public PropertyDeclarationSyntax ToCompletedNode()
+        public BasePropertyDeclarationSyntax ToCompletedNode()
         {
             var type = Container.Type!.Syntax;
 

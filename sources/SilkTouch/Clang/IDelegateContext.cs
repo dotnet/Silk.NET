@@ -1,0 +1,47 @@
+// Licensed to the .NET Foundation under one or more agreements.
+// The .NET Foundation licenses this file to you under the MIT license.
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using Microsoft.CodeAnalysis.CSharp.Syntax;
+
+namespace Silk.NET.SilkTouch.Clang;
+
+/// <summary>
+/// A representation of a Delegate
+/// </summary>
+public interface IDelegateContext
+{
+    /// <summary>
+    /// The name of the delegate
+    /// </summary>
+    string Name { get; }
+
+    /// <summary>
+    /// The syntax node
+    /// </summary>
+    DelegateDeclarationSyntax? Node { get; }
+
+    /// <summary>
+    /// A representation of each of the parameters
+    /// </summary>
+    IEnumerable<(string, IBaseTypeContext.MethodParameter)> Parameters { get; }
+
+    /// <summary>
+    /// Rewrites the current type with a given rewriter and some metadata
+    /// </summary>
+    /// <param name="rewriter"></param>
+    /// <param name="ns">current namespace</param>
+    /// <param name="file">file this type is in</param>
+    /// <returns></returns>
+    TypeContainer? Rewrite(ContextCSharpSyntaxRewriter rewriter, string ns, string file);
+
+    /// <summary>
+    /// Visits the current type with a given visitor and some metadata
+    /// </summary>
+    /// <param name="visitor"></param>
+    void Visit(ContextCSharpSyntaxVisitor visitor);
+}

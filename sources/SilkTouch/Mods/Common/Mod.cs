@@ -1,4 +1,4 @@
-﻿using System.Collections.Generic;
+using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Silk.NET.SilkTouch.Clang;
@@ -55,8 +55,8 @@ public class Mod : IMod
     }
 
     /// <inheritdoc />
-    public virtual Task<GeneratedSyntax> AfterScrapeAsync(string key, GeneratedSyntax syntax) =>
-        Task.FromResult(syntax);
+    public virtual Task<GeneratedSyntax> AfterScrapeAsync(string key, SyntaxContext context) =>
+        Task.FromResult(context);
 
     /// <inheritdoc />
     public virtual Task<GeneratorWorkspace> BeforeOutputAsync(

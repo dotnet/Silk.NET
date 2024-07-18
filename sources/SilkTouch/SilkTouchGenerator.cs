@@ -254,9 +254,7 @@ public class SilkTouchGenerator(
             kvp => CSharpSyntaxTree.ParseText(SourceText.From(kvp.Value)).GetRoot()
         );
         rawBindings.Files.Clear(); // GC ASAP
-        var bindings = new GeneratedSyntax(syntaxTrees, rawBindings.Diagnostics);
-
-        var context = new SyntaxContext( bindings );
+        var context = new SyntaxContext(syntaxTrees, rawBindings.Diagnostics);
 
         // Mod the bindings
         // ReSharper disable once LoopCanBeConvertedToQuery
@@ -267,7 +265,7 @@ public class SilkTouchGenerator(
                 mod.GetType().Name,
                 key
             );
-            bindings = await mod.AfterScrapeAsync(key, bindings);
+            context = await mod.AfterScrapeAsync(key, context);
         }
 
         // Add a license header to files that don't have one
@@ -279,8 +277,9 @@ public class SilkTouchGenerator(
                 .Where(x => x.Length == 0 || x.StartsWith("//"))
                 .Select(x => Comment(x.Trim()))
                 .ToArray();
-            foreach (var (file, node) in bindings.Files)
+            foreach (var (file, comp) in context.Files)
             {
+                var node = comp.Node;
                 var shouldAddHeader =
                     !node.GetLeadingTrivia()
                         .Any(x => x.Kind() is SyntaxKind.SingleLineCommentTrivia)
@@ -292,7 +291,7 @@ public class SilkTouchGenerator(
                     ).GetValueOrDefault();
                 if (shouldAddHeader)
                 {
-                    bindings.Files[file] = node.WithLeadingTrivia(
+                    comp.Node = node.WithLeadingTrivia(
                         defaultLicenseHeaderTrivia.Concat(node.GetLeadingTrivia())
                     );
                 }
@@ -304,7 +303,7 @@ public class SilkTouchGenerator(
             "Bindings generation completed in {} seconds, writing to disk...",
             sw.Elapsed.TotalSeconds
         );
-        return bindings;
+        return context.ToGeneratedSyntax();
     }
 
     /// <summary>

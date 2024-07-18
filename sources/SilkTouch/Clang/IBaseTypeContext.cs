@@ -46,37 +46,6 @@ public interface IBaseTypeContext
     BaseTypeDeclarationSyntax? Node { get; }
 
     /// <summary>
-    /// Does this context represent an enum
-    /// </summary>
-    bool IsEnum { get; }
-
-    /// <summary>
-    /// Attempts to retrieve information about a enum member
-    /// </summary>
-    /// <param name="memberName"></param>
-    /// <param name="member"></param>
-    /// <returns></returns>
-    bool TryGetEnumMember(string memberName, out EnumMemberDeclarationSyntax? member);
-
-    /// <summary>
-    /// Attempts to Add or overwrites existing enum member within this type
-    /// </summary>
-    /// <param name="node"></param>
-    /// <returns></returns>
-    bool TryAddEnumMember(EnumMemberDeclarationSyntax node);
-
-    /// <summary>
-    /// Removes the enum member with the given name within this type
-    /// </summary>
-    /// <param name="name"></param>
-    void RemoveEnumMember(string name);
-
-    /// <summary>
-    /// All enumerable members contained within this type
-    /// </summary>
-    IEnumerable<(string, EnumMemberDeclarationSyntax)> EnumMembers { get; }
-
-    /// <summary>
     /// Attempts to get Type object that is contained within this type
     /// </summary>
     /// <param name="typeName"></param>
@@ -123,7 +92,7 @@ public interface IBaseTypeContext
     /// </summary>
     /// <param name="node"></param>
     /// <param name="rewriter"></param>
-    bool TryAddField(FieldDeclarationSyntax node, ContextCSharpSyntaxRewriter rewriter);
+    bool TryAddField(BaseFieldDeclarationSyntax node, ContextCSharpSyntaxRewriter rewriter);
 
     /// <summary>
     /// Removes the field with the given name within this type
@@ -149,7 +118,7 @@ public interface IBaseTypeContext
     /// </summary>
     /// <param name="node"></param>
     /// <param name="rewriter"></param>
-    bool TryAddProperty(PropertyDeclarationSyntax node, ContextCSharpSyntaxRewriter rewriter);
+    bool TryAddProperty(BasePropertyDeclarationSyntax node, ContextCSharpSyntaxRewriter rewriter);
 
     /// <summary>
     /// Removes the property with the given name within this type
@@ -235,10 +204,8 @@ public interface IBaseTypeContext
     /// <param name="rewriter"></param>
     /// <param name="ns">current namespace</param>
     /// <param name="file">file this type is in</param>
-    /// <param name="context">related syntax context</param>
-    /// <param name="usings">available usings</param>
     /// <returns></returns>
-    IBaseTypeContext? Rewrite(ContextCSharpSyntaxRewriter rewriter, string ns, string file);
+    TypeContainer? Rewrite(ContextCSharpSyntaxRewriter rewriter, string ns, string file);
 
     /// <summary>
     /// Visits the current type with a given visitor and some metadata
@@ -269,32 +236,41 @@ public interface IBaseTypeContext
     /// Represents a field defined within a type
     /// </summary>
     /// <param name="Node"></param>
-    /// <param name="TypeContext"></param>
+    /// <param name="Type"></param>
     /// <param name="TypePointerDepth"></param>
-    public record struct Field(FieldDeclarationSyntax? Node = null, IBaseTypeContext? TypeContext = null, int TypePointerDepth = 0);
+    public record struct Field(BaseFieldDeclarationSyntax? Node = null, TypeContainer? Type = null, int TypePointerDepth = 0);
 
     /// <summary>
     /// Represents a property defined within a type
     /// </summary>
     /// <param name="Node"></param>
-    /// <param name="TypeContext"></param>
+    /// <param name="Type"></param>
     /// <param name="TypePointerDepth"></param>
-    public record struct Property(PropertyDeclarationSyntax? Node = null, IBaseTypeContext? TypeContext = null, int TypePointerDepth = 0);
+    public record struct Property(BasePropertyDeclarationSyntax? Node = null, TypeContainer? Type = null, int TypePointerDepth = 0);
 
     /// <summary>
     /// Represents a method defined within a type
     /// </summary>
     /// <param name="Node"></param>
-    /// <param name="ReturnTypeContext"></param>
+    /// <param name="ReturnType"></param>
     /// <param name="ReturnTypePointerDepth"></param>
     /// <param name="Parameters"></param>
-    public record struct Method(MethodDeclarationSyntax? Node = null, IBaseTypeContext? ReturnTypeContext = null, int ReturnTypePointerDepth = 0, IEnumerable<(string, MethodParameter)>? Parameters = null);
+    public record struct Method(MethodDeclarationSyntax? Node = null, TypeContainer? ReturnType = null, int ReturnTypePointerDepth = 0, IEnumerable<(string, MethodParameter)>? Parameters = null);
 
     /// <summary>
     /// Represents a parameter of a method defined within a type
     /// </summary>
     /// <param name="Node"></param>
-    /// <param name="TypeContext"></param>
+    /// <param name="Type"></param>
     /// <param name="TypePointerDepth"></param>
-    public record struct MethodParameter(ParameterSyntax Node, IBaseTypeContext TypeContext, int TypePointerDepth);
+    public record struct MethodParameter(ParameterSyntax Node, TypeContainer? Type, int TypePointerDepth);
+
+    /// <summary>
+    /// Represents a delegate type
+    /// </summary>
+    /// <param name="Node"></param>
+    /// <param name="ReturnType"></param>
+    /// <param name="ReturnTypePointerDepth"></param>
+    /// <param name="Parameters"></param>
+    public record Delegate(DelegateDeclarationSyntax? Node = null, TypeContainer? ReturnType = null, int ReturnTypePointerDepth = 0, IEnumerable<(string, MethodParameter)>? Parameters = null);
 }
