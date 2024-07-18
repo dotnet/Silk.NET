@@ -226,6 +226,11 @@ public interface IBaseTypeContext
     void SetParent(IBaseTypeContext? parent);
 
     /// <summary>
+    /// Sets all subTypes to null to be cleaned later
+    /// </summary>
+    void Delete();
+
+    /// <summary>
     /// Represents a type defined within a type
     /// </summary>
     /// <param name="Node"></param>

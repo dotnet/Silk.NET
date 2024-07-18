@@ -26,6 +26,11 @@ public interface IDelegateContext
     DelegateDeclarationSyntax? Node { get; }
 
     /// <summary>
+    /// The containing parent type if this delegate is contained within a type
+    /// </summary>
+    IBaseTypeContext? Parent { get; }
+
+    /// <summary>
     /// A representation of each of the parameters
     /// </summary>
     IEnumerable<(string, IBaseTypeContext.MethodParameter)> Parameters { get; }
