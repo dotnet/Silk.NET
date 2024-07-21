@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -140,7 +140,7 @@ public class ChangeNamespace : IMod
     /// <inheritdoc />
     public Task AfterJobAsync(string key) => Task.FromResult(_jobs.Remove(key));
 
-    private class Rewriter : CSharpSyntaxRewriter
+    private class Rewriter : ContextCSharpSyntaxRewriter
     {
         private readonly HashSet<string> _allNamespaces;
         private readonly IReadOnlyList<(Regex Regex, string Replacement)> _regexes;
@@ -172,38 +172,100 @@ public class ChangeNamespace : IMod
 
         public override SyntaxNode? VisitNamespaceDeclaration(NamespaceDeclarationSyntax node)
         {
-            var oldNs = node.Name.ToString();
+            var oldNs = CurrentNamespaceContext?.FullNamespace ?? string.Empty;
             var newNs = ModUtils.GroupedRegexReplace(_regexes, oldNs);
-            if (oldNs != newNs && _allNamespaces.Contains(oldNs))
+
+            if (oldNs == newNs)
             {
-                _usingsToAdd.Add(oldNs);
+                return node;
             }
-            return base.VisitNamespaceDeclaration(node) switch
+
+            _usingsToAdd.Add(oldNs);
+
+            var newNames = newNs.Split('.');
+
+            BaseNamespaceDeclarationSyntax[] namespaces = new BaseNamespaceDeclarationSyntax[newNames.Length];
+
+            namespaces[namespaces.Length - 1] = CurrentNamespaceContext!.ToCompletedNode()!.WithName(IdentifierName(newNames[namespaces.Length - 1]));
+
+            for (int i = namespaces.Length - 2; i >= 0; i--)
             {
-                NamespaceDeclarationSyntax syntax
-                    => syntax.WithName(ModUtils.NamespaceIntoIdentifierName(newNs)),
-                { } ret => ret,
-                null => null
-            };
+                namespaces[i] = NamespaceDeclaration(IdentifierName(newNames[i])).WithMembers(List(new MemberDeclarationSyntax[] { namespaces[i + 1] }));
+            }
+
+            int index = 0;
+            INamespaceContext currentContext = TopNamespaceContext!;
+            do
+            {
+                if (currentContext.TryGetNamespace(newNames[index], out var ns))
+                {
+                    if (index == namespaces.Length - 1)
+                    {
+                        ns!.Merge(namespaces[index], this);
+                        break;
+                    }
+
+                    currentContext = ns!;
+                }
+                else
+                {
+                    currentContext.AddNamespace(namespaces[index], this);
+                    break;
+                }
+            }
+            while (true);
+
+            return null;
         }
 
         public override SyntaxNode? VisitFileScopedNamespaceDeclaration(
             FileScopedNamespaceDeclarationSyntax node
         )
         {
-            var oldNs = node.Name.ToString();
+            var oldNs = CurrentNamespaceContext?.FullNamespace ?? string.Empty;
             var newNs = ModUtils.GroupedRegexReplace(_regexes, oldNs);
-            if (oldNs != newNs && _allNamespaces.Contains(oldNs))
+
+            if (oldNs == newNs)
             {
-                _usingsToAdd.Add(oldNs);
+                return node;
             }
-            return base.VisitFileScopedNamespaceDeclaration(node) switch
+
+            _usingsToAdd.Add(oldNs);
+
+            var newNames = newNs.Split('.');
+
+            BaseNamespaceDeclarationSyntax[] namespaces = new BaseNamespaceDeclarationSyntax[newNames.Length];
+
+            namespaces[namespaces.Length - 1] = CurrentNamespaceContext!.ToCompletedNode()!.WithName(IdentifierName(newNames[namespaces.Length - 1]));
+
+            for (int i = namespaces.Length - 2; i >= 0; i--)
             {
-                FileScopedNamespaceDeclarationSyntax syntax
-                    => syntax.WithName(ModUtils.NamespaceIntoIdentifierName(newNs)),
-                { } ret => ret,
-                null => null
-            };
+                namespaces[i] = NamespaceDeclaration(IdentifierName(newNames[i])).WithMembers(List(new MemberDeclarationSyntax[] { namespaces[i + 1] }));
+            }
+
+            int index = 0;
+            INamespaceContext currentContext = TopNamespaceContext!;
+            do
+            {
+                if (currentContext.TryGetNamespace(newNames[index], out var ns))
+                {
+                    if (index == namespaces.Length - 1)
+                    {
+                        ns!.Merge(namespaces[index], this);
+                        break;
+                    }
+
+                    currentContext = ns!;
+                }
+                else
+                {
+                    currentContext.AddNamespace(namespaces[index], this);
+                    break;
+                }
+            }
+            while (true);
+
+            return null;
         }
     }
 }

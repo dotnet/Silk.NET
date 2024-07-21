@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -55,10 +55,10 @@ public class AddOpaqueStructs : IMod
     }
 
     /// <inheritdoc />
-    public Task<GeneratedSyntax> AfterScrapeAsync(string key, GeneratedSyntax syntax)
+    public Task<SyntaxContext> AfterScrapeAsync(string key, SyntaxContext context)
     {
         var cfg = _config.Get(key);
-        var diags = new List<Diagnostic>(syntax.Diagnostics);
+        var diags = new List<Diagnostic>(context.Diagnostics);
         foreach (var name in cfg.Names ?? Array.Empty<string>())
         {
             var qualified = name.LastIndexOf('.');
@@ -80,7 +80,7 @@ public class AddOpaqueStructs : IMod
                 continue;
             }
 
-            syntax.Files.Add(
+            context.AddFile(
                 $"sources/{name[(qualified + 1)..]}.gen.cs",
                 CompilationUnit()
                     .WithMembers(
@@ -103,6 +103,6 @@ public class AddOpaqueStructs : IMod
             );
         }
 
-        return Task.FromResult(syntax with { Diagnostics = diags });
+        return Task.FromResult(context);
     }
 }

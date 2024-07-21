@@ -55,7 +55,7 @@ public class Mod : IMod
     }
 
     /// <inheritdoc />
-    public virtual Task<GeneratedSyntax> AfterScrapeAsync(string key, SyntaxContext context) =>
+    public virtual Task<SyntaxContext> AfterScrapeAsync(string key, SyntaxContext context) =>
         Task.FromResult(context);
 
     /// <inheritdoc />

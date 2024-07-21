@@ -1,17 +1,13 @@
 // Licensed to the .NET Foundation under one or more agreements.
 // The .NET Foundation licenses this file to you under the MIT license.
 
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Microsoft.CodeAnalysis.CSharp.Syntax;
 
 namespace Silk.NET.SilkTouch.Clang;
 
 /// <summary>
-/// A queryable representation of a <see cref="BaseTypeDeclarationSyntax"/>
+/// A representation of a class, struct, etc. in a SyntaxContext
 /// </summary>
 public interface IBaseTypeContext
 {
@@ -46,13 +42,18 @@ public interface IBaseTypeContext
     BaseTypeDeclarationSyntax? Node { get; }
 
     /// <summary>
+    /// A list of generic parameters
+    /// </summary>
+    IEnumerable<TypeParameterSyntax> GenericParameters { get; }
+
+    /// <summary>
     /// Attempts to get Type object that is contained within this type
     /// </summary>
     /// <param name="typeName"></param>
     /// <param name="type"></param>
     /// <returns></returns>
     /// <param name="genericParameterCount"></param>
-    bool TryGetSubType(string typeName, out SubType type, int genericParameterCount = 0);
+    bool TryGetSubType(string typeName, out TypeContainer type, int genericParameterCount = 0);
 
     /// <summary>
     /// Attempts to Add or overwrites a sub type within this type
@@ -60,6 +61,13 @@ public interface IBaseTypeContext
     /// <param name="node"></param>
     /// <param name="rewriter"></param>
     bool TryAddSubType(BaseTypeDeclarationSyntax node, ContextCSharpSyntaxRewriter rewriter);
+
+    /// <summary>
+    /// Attempts to Add or overwrites a sub type within this type
+    /// </summary>
+    /// <param name="node"></param>
+    /// <param name="rewriter"></param>
+    bool TryAddSubType(DelegateDeclarationSyntax node, ContextCSharpSyntaxRewriter rewriter);
 
     /// <summary>
     /// Removes the subtype with the given name and number of parameters within this type
@@ -77,7 +85,7 @@ public interface IBaseTypeContext
     /// <summary>
     /// All subtypes contained within this type
     /// </summary>
-    IEnumerable<(string, IEnumerable<SubType>)> SubTypes { get; }
+    IEnumerable<(string, IEnumerable<TypeContainer>)> SubTypes { get; }
 
     /// <summary>
     /// Attempts to get the type and pointer depth of the field in this type
@@ -93,7 +101,7 @@ public interface IBaseTypeContext
     /// <param name="node"></param>
     /// <param name="rewriter"></param>
     bool TryAddField(BaseFieldDeclarationSyntax node, ContextCSharpSyntaxRewriter rewriter);
-
+    
     /// <summary>
     /// Removes the field with the given name within this type
     /// </summary>
@@ -269,13 +277,4 @@ public interface IBaseTypeContext
     /// <param name="Type"></param>
     /// <param name="TypePointerDepth"></param>
     public record struct MethodParameter(ParameterSyntax Node, TypeContainer? Type, int TypePointerDepth);
-
-    /// <summary>
-    /// Represents a delegate type
-    /// </summary>
-    /// <param name="Node"></param>
-    /// <param name="ReturnType"></param>
-    /// <param name="ReturnTypePointerDepth"></param>
-    /// <param name="Parameters"></param>
-    public record Delegate(DelegateDeclarationSyntax? Node = null, TypeContainer? ReturnType = null, int ReturnTypePointerDepth = 0, IEnumerable<(string, MethodParameter)>? Parameters = null);
 }

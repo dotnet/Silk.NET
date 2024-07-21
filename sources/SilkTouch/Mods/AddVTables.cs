@@ -1,9 +1,10 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
 using System.Text.Json.Serialization;
 using System.Threading.Tasks;
+using System.Xml.Linq;
 using Microsoft.CodeAnalysis;
 using Microsoft.CodeAnalysis.CSharp;
 using Microsoft.CodeAnalysis.CSharp.Syntax;
@@ -487,6 +488,9 @@ public class AddVTables(IOptionsSnapshot<AddVTables.Configuration> config) : IMo
     {
         private InterfaceDeclarationSyntax? _currentInterface;
         private VTable[] _vTables = vTables;
+
+        public List<(string, SyntaxNode)> NewFiles = [];
+
 
         private ClassDeclarationSyntax?[] _currentVTableOutputs = new ClassDeclarationSyntax?[
             vTables.Length
@@ -1150,10 +1154,75 @@ public class AddVTables(IOptionsSnapshot<AddVTables.Configuration> config) : IMo
                         )
                     )
             );
+
+        public override void OnFileStarted(string fileName)
+        {
+            InterfacePartials.Clear();
+            ClassName = null;
+        }
+
+        public override void OnFileFinished(string fileName)
+        {
+            if (InterfacePartials.Count == 0)
+            {
+                return;
+            }
+
+            var ifname =
+                ClassName is not null
+                && fileName.Replace(ClassName, $"I{ClassName}") is var ifn
+                && ifn != fileName
+            ? ifn
+                    : ModUtils.AddEffectiveSuffix(fileName, "Interfaces");
+            var nNamespaces = InterfacePartials.Select(x => x.Namespace).Distinct().Count();
+            NewFiles.Add(
+                (
+                    ifname,
+                    CompilationUnit()
+                        .WithUsings(
+                            ModCSharpSyntaxRewriter.GetUsings(AggregatedUsings, null)
+                        )
+                        .WithMembers(
+                            nNamespaces == 1
+                                ? string.IsNullOrWhiteSpace(InterfacePartials[0].Namespace)
+                                    ? List<MemberDeclarationSyntax>(
+                                        InterfacePartials.Select(x => x.Interface)
+                                    )
+                                    : SingletonList<MemberDeclarationSyntax>(
+                                        FileScopedNamespaceDeclaration(
+                                                ModUtils.NamespaceIntoIdentifierName(
+                                                    InterfacePartials[0].Namespace
+                                                )
+                                            )
+                                            .WithMembers(
+                                                List<MemberDeclarationSyntax>(
+                                                    InterfacePartials.Select(x =>
+                                                        x.Interface
+                                                    )
+                                                )
+                                            )
+                                    )
+                                : List<MemberDeclarationSyntax>(
+                                    InterfacePartials.GroupBy(x => x.Namespace)
+                                        .Select(g =>
+                                            NamespaceDeclaration(
+                                                    ModUtils.NamespaceIntoIdentifierName(g.Key)
+                                                )
+                                                .WithMembers(
+                                                    List<MemberDeclarationSyntax>(
+                                                        g.Select(x => x.Interface)
+                                                    )
+                                                )
+                                        )
+                                )
+                        )
+                )
+            );
+        }
     }
 
     /// <inheritdoc />
-    public Task<GeneratedSyntax> AfterScrapeAsync(string key, GeneratedSyntax syntax)
+    public Task<SyntaxContext> AfterScrapeAsync(string key, SyntaxContext context)
     {
         var cfg = config.Get(key);
         VTable[]? vTables = null;
@@ -1193,83 +1262,26 @@ public class AddVTables(IOptionsSnapshot<AddVTables.Configuration> config) : IMo
                 }
         );
 
-        var newFiles = new List<(string, SyntaxNode)>(rw.FullClassNames.Count);
-        foreach (var (fname, node) in syntax.Files)
+        rw.NewFiles = new List<(string, SyntaxNode)>(rw.FullClassNames.Count);
+
+        context.Rewrite(rw);
+
+        foreach (var (fname, node) in rw.NewFiles)
         {
-            if (fname.StartsWith("sources/"))
+            if (node is CompilationUnitSyntax comp)
             {
-                rw.InterfacePartials.Clear();
-                rw.ClassName = null;
-                syntax.Files[fname] =
-                    rw.Visit(node) ?? throw new InvalidOperationException("Visit returned null");
-                if (rw.InterfacePartials.Count == 0)
-                {
-                    continue;
-                }
-
-                var ifname =
-                    rw.ClassName is not null
-                    && fname.Replace(rw.ClassName, $"I{rw.ClassName}") is var ifn
-                    && ifn != fname
-                        ? ifn
-                        : ModUtils.AddEffectiveSuffix(fname, "Interfaces");
-                var nNamespaces = rw.InterfacePartials.Select(x => x.Namespace).Distinct().Count();
-                newFiles.Add(
-                    (
-                        ifname,
-                        CompilationUnit()
-                            .WithUsings(
-                                ModCSharpSyntaxRewriter.GetUsings(rw.AggregatedUsings, null)
-                            )
-                            .WithMembers(
-                                nNamespaces == 1
-                                    ? string.IsNullOrWhiteSpace(rw.InterfacePartials[0].Namespace)
-                                        ? List<MemberDeclarationSyntax>(
-                                            rw.InterfacePartials.Select(x => x.Interface)
-                                        )
-                                        : SingletonList<MemberDeclarationSyntax>(
-                                            FileScopedNamespaceDeclaration(
-                                                    ModUtils.NamespaceIntoIdentifierName(
-                                                        rw.InterfacePartials[0].Namespace
-                                                    )
-                                                )
-                                                .WithMembers(
-                                                    List<MemberDeclarationSyntax>(
-                                                        rw.InterfacePartials.Select(x =>
-                                                            x.Interface
-                                                        )
-                                                    )
-                                                )
-                                        )
-                                    : List<MemberDeclarationSyntax>(
-                                        rw.InterfacePartials.GroupBy(x => x.Namespace)
-                                            .Select(g =>
-                                                NamespaceDeclaration(
-                                                        ModUtils.NamespaceIntoIdentifierName(g.Key)
-                                                    )
-                                                    .WithMembers(
-                                                        List<MemberDeclarationSyntax>(
-                                                            g.Select(x => x.Interface)
-                                                        )
-                                                    )
-                                            )
-                                    )
-                            )
-                    )
-                );
+                context.AddFile(fname, comp);
             }
-        }
-
-        foreach (var (fname, node) in newFiles)
-        {
-            syntax.Files[fname] = node;
         }
 
         foreach (var (fname, node) in rw.GetExtraFiles())
         {
-            syntax.Files[fname] = node;
+            if (node is CompilationUnitSyntax comp)
+            {
+                context.AddFile(fname, comp);
+            }
         }
 
-        return Task.FromResult(syntax);
+        return Task.FromResult(context);
     }
 }

@@ -145,4 +145,7 @@ public abstract class ModCSharpSyntaxRewriter(bool visitIntoStructuredTrivia = f
     /// <returns>The discriminator string.</returns>
     protected static string Discrim(UsingDirectiveSyntax use) =>
         new(use.WithoutTrivia().ToString().Where(char.IsAsciiLetterOrDigit).ToArray());
+
+    /// <inheritdoc/>
+    public override bool ShouldSkipFile(string fileName) => fileName.StartsWith("sources/");
 }
