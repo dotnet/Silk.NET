@@ -12,6 +12,6 @@
       <ProjectReference Include="..\SDL\Silk.NET.SDL.csproj" />
     </ItemGroup>
 
-    <Import Project="../Core/Silk.NET.Core.targets" />
+    <Import Project="../Core/Core/Silk.NET.Core.targets" />
 
 </Project>

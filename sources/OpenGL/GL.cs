@@ -15,7 +15,7 @@ public partial class GL
         {
             if (ctx is GL { Context: IGLContext glContext })
             {
-                glContext.MakeCurrent();
+                glContext.IsCurrent = true;
             }
 
             Underlying.Value = ctx;

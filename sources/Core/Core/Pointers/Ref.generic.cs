@@ -139,6 +139,15 @@ public readonly ref struct Ref<T>
     public static implicit operator Ref<T>(Span<T> span) => new(ref span.GetPinnableReference());
 
     /// <summary>
+    /// Creates a <see cref="Ref{T}"/> from a span
+    /// </summary>
+    /// <param name="span"></param>
+    // TODO annotate requires readonly dest - const correctness etc
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    public static implicit operator Ref<T>(ReadOnlySpan<T> span) =>
+        new(ref Unsafe.AsRef(in span.GetPinnableReference()));
+
+    /// <summary>
     /// Creates a <see cref="Ref{T}"/> from a byte reference
     /// </summary>
     /// <param name="ptr"></param>
@@ -235,11 +244,15 @@ public readonly ref struct Ref<T>
     /// Creates a <see cref="Ref{T}"/> from a string
     /// </summary>
     /// <param name="str"></param>
-    public static implicit operator Ref<T>(string str)
+    public static implicit operator Ref<T>(string? str)
     {
         if (typeof(T) == typeof(char) || typeof(T) == typeof(ushort) || typeof(T) == typeof(short))
         {
-            return new(ref Unsafe.As<char, T>(ref Unsafe.AsRef(in str.GetPinnableReference())));
+            return str is not null
+                ? new Ref<T>(
+                    ref Unsafe.As<char, T>(ref Unsafe.AsRef(in str.GetPinnableReference()))
+                )
+                : nullptr;
         }
 
         if (typeof(T) == typeof(byte) || typeof(T) == typeof(sbyte))

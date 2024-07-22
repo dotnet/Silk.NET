@@ -25,7 +25,7 @@
     </ItemGroup>
 
     <ItemGroup>
-      <Compile Include="..\..\sources\Core\Silk.NET.Core.cs">
+      <Compile Include="..\..\sources\Core\Core\Silk.NET.Core.cs">
         <Link>Silk.NET.Core.cs</Link>
       </Compile>
     </ItemGroup>

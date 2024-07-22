@@ -43,6 +43,7 @@ Silk.NET.SDL
 ../../../submodules/sdl/include/SDL3/SDL_locale.h
 ../../../submodules/sdl/include/SDL3/SDL_log.h
 ../../../submodules/sdl/include/SDL3/SDL_messagebox.h
+../../../submodules/sdl/include/SDL3/SDL_main.h
 ../../../submodules/sdl/include/SDL3/SDL_metal.h
 ../../../submodules/sdl/include/SDL3/SDL_misc.h
 ../../../submodules/sdl/include/SDL3/SDL_mouse.h

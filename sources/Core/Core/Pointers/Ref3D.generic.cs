@@ -10,22 +10,22 @@ using InlineIL;
 namespace Silk.NET.Core;
 
 /// <summary>
-/// A two-dimensional managed reference wrapper class
+/// A three-dimensional  managed reference wrapper class
 /// </summary>
-public unsafe readonly ref struct Ref2D<T>
+public unsafe readonly ref struct Ref3D<T>
     where T : unmanaged
 {
     /// <summary>
     /// Creates a reference with the given underlying ref.
     /// </summary>
     /// <param name="Ref">The underlying ref.</param>
-    public Ref2D(ref Ref<T> @Ref)
+    public Ref3D(ref Ref2D<T> @Ref)
     {
         IL.Emit.Ldarg_0();
         IL.Emit.Ldarg_1();
         IL.Emit.Stfld(
             FieldRef.Field(
-                TypeRef.Type(typeof(Ref2D<>).MakeGenericType(typeof(T))),
+                TypeRef.Type(typeof(Ref3D<>).MakeGenericType(typeof(T))),
                 nameof(InteriorRef)
             )
         );
@@ -37,7 +37,7 @@ public unsafe readonly ref struct Ref2D<T>
     /// Creates a reference with the given underlying ref.
     /// </summary>
     /// <param name="InteriorRef">The underlying ref.</param>
-    internal Ref2D(ref byte @InteriorRef)
+    internal Ref3D(ref byte @InteriorRef)
     {
         this.InteriorRef = ref @InteriorRef;
     }
@@ -45,7 +45,7 @@ public unsafe readonly ref struct Ref2D<T>
     /// <summary>
     /// The underlying reference
     /// </summary>
-    public readonly ref Ref<T> Ref
+    public readonly ref Ref2D<T> Ref
     {
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -56,7 +56,7 @@ public unsafe readonly ref struct Ref2D<T>
             IL.Emit.Ldarg_0();
             IL.Emit.Ldfld(
                 FieldRef.Field(
-                    TypeRef.Type(typeof(Ref2D<>).MakeGenericType(typeof(T))),
+                    TypeRef.Type(typeof(Ref3D<>).MakeGenericType(typeof(T))),
                     nameof(InteriorRef)
                 )
             );
@@ -76,7 +76,7 @@ public unsafe readonly ref struct Ref2D<T>
     /// Gets the item at the given offset from this reference.
     /// </summary>
     /// <param name="index">The index.</param>
-    public ref Ref<T> this[nuint index]
+    public ref Ref2D<T> this[nuint index]
     {
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -86,7 +86,7 @@ public unsafe readonly ref struct Ref2D<T>
             IL.Emit.Ldarg_0();
             IL.Emit.Ldfld(
                 FieldRef.Field(
-                    TypeRef.Type(typeof(Ref2D<>).MakeGenericType(typeof(T))),
+                    TypeRef.Type(typeof(Ref3D<>).MakeGenericType(typeof(T))),
                     nameof(InteriorRef)
                 )
             );
@@ -104,14 +104,14 @@ public unsafe readonly ref struct Ref2D<T>
     /// </summary>
     /// <returns>The underlying reference.</returns>
     /// <remarks>
-    /// This function allows a <see cref="Ref2D{T}"/> to be used in a <c>fixed</c> statement.
+    /// This function allows a <see cref="Ref3D{T}"/> to be used in a <c>fixed</c> statement.
     /// </remarks>
-    public ref T* GetPinnableReference()
+    public ref T** GetPinnableReference()
     {
         IL.Emit.Ldarg_0();
         IL.Emit.Ldfld(
             FieldRef.Field(
-                TypeRef.Type(typeof(Ref2D<>).MakeGenericType(typeof(T))),
+                TypeRef.Type(typeof(Ref3D<>).MakeGenericType(typeof(T))),
                 nameof(InteriorRef)
             )
         );
@@ -120,7 +120,7 @@ public unsafe readonly ref struct Ref2D<T>
     }
 
     /// <summary>
-    /// Determines if this <see cref="Ref2D{T}"/> equals another object
+    /// Determines if this <see cref="Ref3D{T}"/> equals another object
     /// Always returns false as ref structs cannot be passed in, so it will never be true
     /// </summary>
     /// <param name="obj"></param>
@@ -133,116 +133,117 @@ public unsafe readonly ref struct Ref2D<T>
     public override int GetHashCode() => InteriorRef.GetHashCode();
 
     /// <summary>
-    /// Determines if two <see cref="Ref2D{T}"/> objects are equivalent
+    /// Determines if two <see cref="Ref3D{T}"/> objects are equivalent
     /// </summary>
     /// <param name="lh"></param>
     /// <param name="rh"></param>
     /// <returns>Whether the references are equal</returns>
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    public static bool operator ==(Ref2D<T> lh, Ref2D<T> rh) => (void*)lh == (void*)rh;
+    public static bool operator ==(Ref3D<T> lh, Ref3D<T> rh) => (void*)lh == (void*)rh;
 
     /// <summary>
-    /// Determines if two <see cref="Ref2D{T}"/> objects are not equivalent
+    /// Determines if two <see cref="Ref3D{T}"/> objects are not equivalent
     /// </summary>
     /// <param name="lh"></param>
     /// <param name="rh"></param>
     /// <returns>Whether the references are not equal</returns>
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    public static bool operator !=(Ref2D<T> lh, Ref2D<T> rh) => (void*)lh != (void*)rh;
+    public static bool operator !=(Ref3D<T> lh, Ref3D<T> rh) => (void*)lh != (void*)rh;
 
     /// <summary>
-    /// Creates a <see cref="Ref2D{T}"/> from a Nullptr
+    /// Creates a <see cref="Ref3D{T}"/> from a Nullptr
     /// </summary>
     /// <param name="ptr"></param>
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    public static unsafe implicit operator Ref2D<T>(NullPtr ptr) => (void*)ptr;
+    public static unsafe implicit operator Ref3D<T>(NullPtr ptr) => (void*)ptr;
 
     /// <summary>
-    /// Determines whether a <see cref="Ref2D{T}"/> and a NullPtr are equal
+    /// Determines whether a <see cref="Ref3D{T}"/> and a NullPtr are equal
     /// </summary>
     /// <param name="lh"></param>
     /// <param name="rh"></param>
-    /// <returns>Whether the <see cref="Ref2D{T}"/> and NullPtr are equal</returns>
+    /// <returns>Whether the <see cref="Ref3D{T}"/> and NullPtr are equal</returns>
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    public static bool operator ==(Ref2D<T> lh, NullPtr rh) => lh == (Ref2D<T>)rh;
+    public static bool operator ==(Ref3D<T> lh, NullPtr rh) => lh == (Ref3D<T>)rh;
 
     /// <summary>
-    /// Determines whether a <see cref="Ref2D{T}"/> and a NullPtr are not equal
+    /// Determines whether a <see cref="Ref3D{T}"/> and a NullPtr are not equal
     /// </summary>
     /// <param name="lh"></param>
     /// <param name="rh"></param>
-    /// <returns>Whether the <see cref="Ref2D{T}"/> and NullPtr are not equal</returns>
+    /// <returns>Whether the <see cref="Ref3D{T}"/> and NullPtr are not equal</returns>
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    public static bool operator !=(Ref2D<T> lh, NullPtr rh) => lh != (Ref2D<T>)rh;
+    public static bool operator !=(Ref3D<T> lh, NullPtr rh) => lh != (Ref3D<T>)rh;
 
     /// <summary>
-    /// Determines whether a NullPtr and a <see cref="Ref2D{T}"/> are equal
+    /// Determines whether a NullPtr and a <see cref="Ref3D{T}"/> are equal
     /// </summary>
     /// <param name="lh"></param>
     /// <param name="rh"></param>
-    /// <returns>Whether the NullPtr and <see cref="Ref2D{T}"/> are equal</returns>
+    /// <returns>Whether the NullPtr and <see cref="Ref3D{T}"/> are equal</returns>
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    public static bool operator ==(NullPtr lh, Ref2D<T> rh) => (Ref2D<T>)lh == rh;
+    public static bool operator ==(NullPtr lh, Ref3D<T> rh) => (Ref3D<T>)lh == rh;
 
     /// <summary>
-    /// Determines whether a NullPtr and a <see cref="Ref2D{T}"/> are not equal
+    /// Determines whether a NullPtr and a <see cref="Ref3D{T}"/> are not equal
     /// </summary>
     /// <param name="lh"></param>
     /// <param name="rh"></param>
-    /// <returns>Whether the NullPtr and <see cref="Ref2D{T}"/> are not equal</returns>
+    /// <returns>Whether the NullPtr and <see cref="Ref3D{T}"/> are not equal</returns>
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    public static bool operator !=(NullPtr lh, Ref2D<T> rh) => (Ref2D<T>)lh != rh;
+    public static bool operator !=(NullPtr lh, Ref3D<T> rh) => (Ref3D<T>)lh != rh;
 
     /// <summary>
-    /// Creates a <see cref="Ref2D{T}"/> from a void reference
+    /// Creates a <see cref="Ref3D{T}"/> from a void reference
     /// </summary>
     /// <param name="ptr"></param>
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    public static implicit operator Ref2D<T>(void* ptr) => new(ref Unsafe.AsRef<byte>(ptr));
+    public static implicit operator Ref3D<T>(void* ptr) => new(ref Unsafe.AsRef<byte>(ptr));
 
     /// <summary>
-    /// Creates a void reference from a <see cref="Ref2D{T}"/>
+    /// Creates a void reference from a <see cref="Ref3D{T}"/>
     /// </summary>
     /// <param name="ptr"></param>
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    public static explicit operator void*(Ref2D<T> ptr) =>
+    public static explicit operator void*(Ref3D<T> ptr) =>
         Unsafe.AsPointer(ref Unsafe.AsRef(in ptr.InteriorRef));
 
     /// <summary>
-    /// Creates a <see cref="Ref2D{T}"/> from a reference
+    /// Creates a <see cref="Ref3D{T}"/> from a reference
     /// </summary>
     /// <param name="ptr"></param>
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    public static implicit operator Ref2D<T>(T** ptr) => new(ref Unsafe.AsRef<byte>(ptr));
+    public static implicit operator Ref3D<T>(T*** ptr) => new(ref Unsafe.AsRef<byte>(ptr));
 
     /// <summary>
-    /// Creates a reference from a <see cref="Ref2D{T}"/>
+    /// Creates a reference from a <see cref="Ref3D{T}"/>
     /// </summary>
     /// <param name="ptr"></param>
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    public static explicit operator T**(Ref2D<T> ptr) => (T**)Unsafe.AsPointer(ref ptr.InteriorRef);
+    public static explicit operator T***(Ref3D<T> ptr) =>
+        (T***)Unsafe.AsPointer(ref ptr.InteriorRef);
 
     /// <summary>
-    /// creates a <see cref="Ref2D{T}"/> from an array
+    /// creates a <see cref="Ref3D{T}"/> from an array
     /// </summary>
     /// <param name="array"></param>
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    public static implicit operator Ref2D<T>(T[][] array) =>
+    public static implicit operator Ref3D<T>(T[][][] array) =>
         SilkMarshal.JaggedArrayToPointerArray<T>(array);
 
     /// <summary>
-    /// creates a <see cref="Ref2D{T}"/> from a reference array
+    /// creates a <see cref="Ref3D{T}"/> from a reference array
     /// </summary>
     /// <param name="array"></param>
-    public static implicit operator Ref2D<T>(T*[] array)
+    public static implicit operator Ref3D<T>(T**[] array)
     {
         IL.Emit.Ldarg_0();
         IL.Emit.Ldc_I4_0();
         IL.Emit.Ldelema(TypeRef.Type(typeof(T).MakePointerType()));
         IL.Emit.Newobj(
             MethodRef.Constructor(
-                TypeRef.Type(typeof(Ref2D<>).MakeGenericType(typeof(T))),
-                TypeRef.Type(typeof(Ref<>).MakeGenericType(typeof(T))).MakeByRefType()
+                TypeRef.Type(typeof(Ref3D<>).MakeGenericType(typeof(T))),
+                TypeRef.Type(typeof(Ref2D<>).MakeGenericType(typeof(T))).MakeByRefType()
             )
         );
         IL.Emit.Ret();
@@ -250,16 +251,16 @@ public unsafe readonly ref struct Ref2D<T>
     }
 
     /// <summary>
-    /// Create a non-generic version of <see cref="Ref2D{T}"/>
+    /// Create a non-generic version of <see cref="Ref3D{T}"/>
     /// </summary>
     /// <param name="ptr"></param>
-    public static implicit operator Ref2D(Ref2D<T> ptr) => new(ref ptr.InteriorRef);
+    public static implicit operator Ref3D(Ref3D<T> ptr) => new(ref ptr.InteriorRef);
 
     /// <summary>
-    /// Creates a <see cref="Ref2D"/> from a string array.
+    /// Creates a <see cref="Ref3D"/> from a string array.
     /// </summary>
     /// <param name="array">The string array.</param>
-    /// <returns>The <see cref="Ref2D{T}"/></returns>
-    public static implicit operator Ref2D<T>(string[] array) =>
+    /// <returns>The <see cref="Ref3D{T}"/></returns>
+    public static implicit operator Ref3D<T>(string?[][] array) =>
         new(ref SilkMarshal.StringArrayToNative(array, sizeof(T)));
 }

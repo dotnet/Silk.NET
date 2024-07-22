@@ -31,7 +31,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Core\Silk.NET.Core.csproj" />
+    <ProjectReference Include="..\Core\Core\Silk.NET.Core.csproj" />
   </ItemGroup>
 
 </Project>
