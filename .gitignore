@@ -474,10 +474,5 @@ src/**/build/
 *.gen.sln
 *.gen.txt
 
-# Silk.NET Website Generation Output
-/docs/
-src/Website/Silk.NET.Statiq/temp
-src/Website/Silk.NET.Statiq/cache
-
 # As much as I love Mac, really not interested in this litter.
 **/.DS_Store
