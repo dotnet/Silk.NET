@@ -1,5 +1,5 @@
 <!--suppress CheckTagEmptyBody -->
-<Project InitialTargets="SilkAddIcon;SilkGenerateNuGetReadme;SilkAddDateTime;SilkCreatePublicApi">
+<Project InitialTargets="SilkAddIcon;SilkGenerateNuGetReadme;SilkAddDateTime">
     <!-- Presets for metapackages and native packages -->
     <PropertyGroup Condition="'$(SilkMetapackage)' == 'true' or '$(SilkNativePackage)' == 'true'">
         <IncludeBuildOutput>false</IncludeBuildOutput>
