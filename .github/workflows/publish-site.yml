@@ -39,7 +39,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Build
-        #working-directory: ./website
+        working-directory: website/
         run: npm run docusaurus build
     needs: setup
 
