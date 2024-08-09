@@ -172,6 +172,7 @@
               "ValidateSolution",
               "Vkd3d",
               "VulkanLoader",
+              "Website",
               "Wgpu"
             ]
           }
@@ -216,6 +217,7 @@
               "ValidateSolution",
               "Vkd3d",
               "VulkanLoader",
+              "Website",
               "Wgpu"
             ]
           }

@@ -1,0 +1,87 @@
+/* #434C5E */
+/* hsl(0, 0%, 98%) */
+
+html[data-theme='dark'] .container {
+    background: #434C5E;
+}
+html[data-theme='light'] .container {
+    background: hsl(0, 0%, 98%);
+}
+.container {
+    padding: 30px 20px;
+
+    height: 50vh;
+    width: calc(100% - 100px);
+    margin: 50px;
+    box-shadow: 0px 5px 10px rgba(0,0,0, 0.5);
+
+    display: flex;
+}
+
+.container .left {
+    width: 60%;
+}
+
+.container h1 {
+    color: var(--ifm-color-danger);
+    font-weight: normal;
+}
+
+.container p {
+    text-align: justify;
+    font-size: 18px;
+    font-weight: lighter;
+}
+
+.container .right {
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+}
+.container .right .strideLogo {
+    width: 80%;
+}
+
+.container .right .learnMore {
+    background-color: white;
+    padding: 10px 20px;
+    margin: 20px 10px;
+    color: black;
+    border-radius: 10px;
+}
+
+html[data-theme='light'] .container .right .learnMore {
+    background-color: black;
+    color: white;
+}
+
+html[data-theme='dark'] .container .right .strideLogo {
+    filter: invert(100%);
+}
+
+@media screen and (max-width: 760px)
+{
+    .container {
+        height: auto;
+        flex-direction: column;
+        align-items: center;
+
+        .left {
+            width: 80%;
+        }
+
+        .right {
+            width: 80%;
+        }
+    }
+}
+
+@media screen and (max-width: 510px)
+{
+    .container {
+        width: calc(100% - 20px);
+        margin: 50px 10px;
+    }
+}

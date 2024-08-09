@@ -1,0 +1,250 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+@import url('https://db.onlinewebfonts.com/c/00d5a78493aed4b11e2584ad7cceee49?family=Gilroy-ExtraBold');
+
+html {
+  background-color: var(--ifm-background-color);
+}
+
+html[data-theme='dark'] {
+  --ifm-background-color: #3B4252;
+  --ifm-hero-background-color: #2E3440;
+}
+html[data-theme='light'] {
+  --ifm-background-color: white;
+  --ifm-hero-background-color: whitesmoke;
+}
+
+.heroBanner {
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+
+  height: calc(100vh - 110px);
+  padding-bottom: 84px;
+  margin-bottom: 50px;
+
+  color: white;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  z-index: 0;
+}
+
+html[data-theme='light'] .heroBanner {
+  color: black;
+}
+
+@media screen and (max-width: 966px) {
+  .heroBanner {
+    padding: 2rem;
+  }
+}
+
+.wordmark {
+  width: 300px;
+  margin: 20px;
+  user-select: none;
+}
+.wordmark.thin {
+  width: 20%;
+}
+html[data-theme='dark'] .wordmarkLight,
+html[data-theme='light'] .wordmarkDark {
+  display: none;
+}
+
+.wordmarkLabel {
+  font-family: "Gilroy-ExtraBold";
+  letter-spacing: 0.4em;
+}
+html[data-theme='dark'] .wordmarkLabel {
+  color: white;
+}
+html[data-theme='light'] .wordmarkLabel {
+  color: #5820d3;
+}
+
+.buttonsHolder {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width : 50%;
+}
+
+.button {
+  background-color: white;
+  color: black;
+  padding: 10px 20px;
+  font-size: large;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 5px;
+  user-select: none;
+  box-shadow: 0 5px 10px rgba(0,0,0,0.5);
+}
+
+.button:hover {
+  text-decoration: none;
+  color: black;
+  scale: 1.05;
+}
+.button:active {
+  scale: 0.95;
+  filter: brightness(75%);
+  transition: scale 0.2s;
+}
+
+.buttonIcons {
+  height: 30px;
+  width: 30px;
+  margin: 0 10px;
+  position: relative;
+}
+
+@media screen and (max-width: 770px) {
+  .buttons {
+    flex-direction: column;
+    height: 120px;
+  }
+}
+
+.container p {
+  color: inherit;
+}
+
+.subtitle {
+  font-weight: bold;
+  max-width: 500px;
+  font-size: 30px;
+  margin-bottom: 40px;
+}
+@media screen and (max-width: 600px) {
+  .subtitle {
+    font-weight: bold;
+    max-width: 500px;
+    font-size: 20px;
+  }
+}
+
+.description {
+  font-weight: lighter;
+  font-size: 20px;
+}
+
+.dotNetLogo {
+  width: 100%;
+  height: 80px;
+  position: absolute;
+  overflow: hidden;
+
+  bottom: 0;
+}
+
+.dotNetLogo .angledBar {
+  width: 120%;
+  height: 90px;
+
+  z-index: 0;
+
+  background-color: var(--ifm-background-color);
+  transform: rotate(-1deg);
+
+  top: 10px;
+
+  position: absolute;
+}
+
+.dotNetLogo .content {
+  position: absolute;
+  font-family: 'Open Sans', sans-serif;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  bottom: -1px;
+}
+.dotNetLogo .content p {
+  font-size: 13px;
+}
+.dotNetLogo .content img {
+  position: relative;
+  height: 50px;
+  top: -11px;
+  margin-left: 5px;
+}
+html[data-theme='light'] .dotNetLogo .content img {
+  filter: invert();
+}
+
+@media screen and (max-width: 940px)
+{
+  .buttonsHolder {
+    flex-direction: column;
+    height: 120px;
+  }
+
+  .button {
+    width: calc(200px + 20%);
+  }
+} 
+
+@media screen and (min-width: 600px)
+{
+  .wordmark.wide {
+    display: block;
+  }
+  .wordmark.thin {
+    display: none;
+  }
+  .wordmarkLabel {
+    display: none;
+  }
+}
+@media screen and (max-width: 600px)
+{
+  .wordmark.wide {
+    display: none;
+  }
+  .wordmark.thin {
+    display: block;
+  }
+  .wordmarkLabel {
+    display: block;
+  }
+}
+
+@media screen and (max-height: 700px) and (max-width: 700px)
+{
+  .subtitles,
+  .description,
+  .dynamicText
+  {
+    display: none;
+  }
+}
+
+
+/* Animation */
+.fadeEnter {
+  opacity: 0;
+  position: relative;
+  height: 0;
+  margin: 0;
+}
+.fadeEnterDone {
+  opacity: 1;
+  transition: opacity 500ms ease-in;
+}
+.fadeExit {
+  opacity: 1;
+}
+.fadeExitActive {
+  opacity: 0;
+  transition: opacity 500ms ease-out;
+}

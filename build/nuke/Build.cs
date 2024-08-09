@@ -1,5 +1,7 @@
+// Licensed to the .NET Foundation under one or more agreements.
+// The .NET Foundation licenses this file to you under the MIT license.
+
 using Nuke.Common;
-using Nuke.Common.Execution;
 
 partial class Build : NukeBuild
 {
@@ -24,6 +26,10 @@ partial class Build : NukeBuild
     // Deployment
     // ----------
     // - Build.NuGet.cs - targets for pushing NuGet packages to the NuGet Gallery (or some other feed).
+    // ----------
+    // Website
+    // ----------
+    // - Build.Website.cs - targets for testing and building the docusaurus website.
     // -------------
     // Miscellaneous
     // -------------

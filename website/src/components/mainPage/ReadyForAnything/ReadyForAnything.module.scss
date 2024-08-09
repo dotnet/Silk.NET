@@ -1,0 +1,138 @@
+
+.title {
+
+    font-size: xx-large;
+    text-align: center;
+
+}
+
+.majorContainer {
+    width: 100%;
+    height: 70vh;
+    margin-top: 100px;
+}
+
+.center {
+    position: relative;
+    margin: 0 30%;
+    top: 10%;
+    width: 40%;
+    text-align: center;
+
+}
+
+.apiItem {
+    height: 100px;
+    width: 100px;
+
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    margin: 20px;
+}
+
+.staticApiItensElement {
+    display: none;
+
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.movingApiItensElement .apiItem {
+    position: absolute;
+    left: calc(50% - 50px);
+    transform: translateX(calc(50vw - 150px)) rotateY(0.5deg);
+
+    animation: ApiItemOrbit 10s infinite linear;
+}
+
+@media screen and (max-width: 1000px) {
+    .movingApiItensElement {
+        display: none;
+    }  
+    .staticApiItensElement {
+        display: flex;
+    }
+
+    .majorContainer {
+        height: auto;
+        min-height: 70vh;
+    }
+
+    .center {
+        top: 0;
+        margin: 0 10%;
+        width: 80%;
+    }
+}
+
+@media screen and (max-width: 420px)
+{
+    .apiItem {
+        height: 50px;
+        width: 50px;
+    }
+}
+
+@keyframes ApiItemOrbit {
+    0% {
+        transform:
+            rotateX(0deg)
+            rotateY(0deg)
+            translateX(calc(35vw))
+            rotateY(0deg);
+            z-index: 0;
+    }
+
+    25% {
+        transform:
+            rotateX(10deg)
+            rotateY(90deg)
+            translateX(calc(35vw))
+            rotateY(-90deg);
+            z-index: 0;
+    }
+
+    50% {
+        transform:
+            rotateX(0deg)
+            rotateY(180deg)
+            translateX(calc(35vw))
+            rotateY(-180deg);
+        z-index: -1;
+    }
+
+    55% {
+        opacity: 1;
+        z-index: -3;
+    }
+    60% {
+        opacity: 0;
+    }
+
+    75% {
+        transform:
+            rotateX(15deg)
+            rotateY(270deg)
+            translateX(calc(35vw))
+            rotateY(-270deg);
+        z-index: -3;
+    }
+
+    90% {
+        opacity: 0;
+    }
+    95% {
+        opacity: 1;
+    }
+
+    100% {
+        transform:
+            rotateX(0deg)
+            rotateY(360deg)
+            translateX(calc(35vw))
+            rotateY(-360deg);
+        z-index: -1;
+    }
+}
