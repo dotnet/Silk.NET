@@ -25,14 +25,6 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v3
 
-  build:
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-
-    runs-on: ubuntu-latest
-
-    steps:
       - name: Set up Node.js
         uses: actions/setup-node@v3
         with:
@@ -46,11 +38,7 @@ jobs:
       - name: Build
         working-directory: ./website
         run: npm run docusaurus build
-    needs: setup
 
-  deploy:
-    runs-on: ubuntu-latest
-    steps:
       - name: Setup Pages
         uses: actions/configure-pages@v3
 
@@ -58,4 +46,3 @@ jobs:
         uses: actions/upload-pages-artifact@v2
         with:
           path: build
-    needs: build
