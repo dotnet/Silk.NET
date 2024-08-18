@@ -1,7 +1,7 @@
 import React from "react";
 import styles from "./AllinOneSolution.module.scss";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faTrowelBricks, faMobileScreen, faFaceSmile } from "@fortawesome/free-solid-svg-icons";
+import { faGear, faMobileScreen, faFaceSmile } from "@fortawesome/free-solid-svg-icons";
 
 export default function AllInOneSolution(): JSX.Element {
 
@@ -13,7 +13,7 @@ export default function AllInOneSolution(): JSX.Element {
             <img src={'img/xplatpromo.png'} draggable={"false"}></img>
 
             <div className={styles.item}>
-                <span><FontAwesomeIcon icon={faTrowelBricks}></FontAwesomeIcon></span>
+                <span><FontAwesomeIcon icon={faGear}></FontAwesomeIcon></span>
                 <p>First-party bindings for over 17 individual APIs</p>
             </div>
 

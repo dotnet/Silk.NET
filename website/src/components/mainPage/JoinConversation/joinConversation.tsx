@@ -22,8 +22,8 @@ export default function JoinTheConversation(): JSX.Element {
 
                     <div className={styles.content}>
 
-                        <p>Active and fun community;</p>
-                        <p>Quick answers and <span className={styles.channelLink}>help</span> channel;</p>
+                        <p>Active and fun community</p>
+                        <p>Easy & quick answers to questions</p>
                         <p>News and announcements</p>
 
                     </div>
@@ -56,15 +56,9 @@ export default function JoinTheConversation(): JSX.Element {
                     </div>
 
                     <div className={styles.content}>
-                        <p>Contribute with:</p>
-                        <div className={styles.list}>
-                            <p>💡 ideas;</p>
-                            <p>⏫ suggestions;</p>
-                            <p>🐞 bug reports;</p>
-                        </div>
                         <p>
-                            And the future of Silk.NET directly with the
-                            .NET team!
+                            Get answers to your questions, and participate in the development
+                            by discussing and/or contributing improvements.
                         </p>
                     </div>
 

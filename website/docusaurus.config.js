@@ -16,7 +16,7 @@ const darkCodeTheme = themes.dracula;
 
   favicon: 'img/favicon.ico',
 
-  organizationName: 'dotnet comunity',
+  organizationName: '.NET Foundation',
   projectName: 'Silk.NET',
 
   presets: [
@@ -28,14 +28,12 @@ const darkCodeTheme = themes.dracula;
           sidebarPath: require.resolve('./sidebars.js'),
           showLastUpdateAuthor: true,
           showLastUpdateTime: true,
-          // TOFIX update it to the right repo path
-          editUrl: 'https://github.com/facebook/docusaurus/edit/main/website/',
+          editUrl: 'https://github.com/dotnet/Silk.NET/tree/main/website',
         },
 
         blog: {
           showReadingTime: true,
-          // Please change this to your repo.
-          editUrl: 'https://github.com/facebook/docusaurus/edit/main/website/blog/',
+          editUrl: 'https://github.com/dotnet/Silk.NET/tree/main/website/blog',
         },
 
         theme: {
@@ -63,7 +61,7 @@ const darkCodeTheme = themes.dracula;
         items: [
           {
             label: 'Docs',
-            to: '/docs/getStarted',
+            to: '/docs/opengl/helloWindow',
             position: 'left'
           },
           
@@ -75,7 +73,7 @@ const darkCodeTheme = themes.dracula;
 
           {
             label: 'FAQ',
-            to : '/',
+            to : '/docs/faq',
             position: 'left'
           },
 
