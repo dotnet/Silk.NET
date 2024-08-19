@@ -16,9 +16,9 @@ partial class Build
     Target Website => _ => _
         .Executes(() =>
         {
-            Console.WriteLine("Verifying dependences:\n");
+            Console.WriteLine("Verifying dependencies:\n");
 
-            Assert.True(VerifyDependences());
+            Assert.True(VerifyDependencies());
 
             if (Configuration == "Debug")
             {
@@ -32,7 +32,7 @@ partial class Build
             }
         });
 
-    static bool VerifyDependences()
+    static bool VerifyDependencies()
     {
         Console.Write("Node.js ... ");
 
