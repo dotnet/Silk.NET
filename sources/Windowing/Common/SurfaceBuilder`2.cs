@@ -2,6 +2,7 @@
 // The .NET Foundation licenses this file to you under the MIT license.
 
 using Silk.NET.Core;
+using Silk.NET.Windowing.Hosting;
 
 namespace Silk.NET.Windowing;
 
@@ -12,8 +13,8 @@ namespace Silk.NET.Windowing;
 /// <typeparam name="TExtra">The type of the extra configuration.</typeparam>
 /// <typeparam name="TImpl">The source of the implementation of the surface's components.</typeparam>
 public readonly record struct SurfaceBuilder<TExtra, TImpl>(TExtra ExtraConfiguration)
-    where TExtra : IHluConfiguration
-    where TImpl : IHluComponentRegistry
+    where TExtra : IConfigureHost
+    where TImpl : ISurfaceHost
 {
     /// <summary>
     /// Creates a surface using the configuration encapsulated in this surface builder.

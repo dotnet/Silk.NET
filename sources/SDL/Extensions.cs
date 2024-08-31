@@ -26,4 +26,20 @@ public static class Extensions
             sdl.ClearError();
         }
     }
+
+    public static void ThrowSdlError(this int ec)
+    {
+        if (ec != 0)
+        {
+            Sdl.ThrowError();
+        }
+    }
+
+    public static void ThrowSdlError(this int ec, ISdl sdl)
+    {
+        if (ec != 0)
+        {
+            sdl.ThrowError();
+        }
+    }
 }

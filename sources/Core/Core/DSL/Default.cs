@@ -17,14 +17,10 @@ namespace Silk.NET.Core;
 /// </description>
 /// </item>
 /// <item>
-/// <description>
-/// Use this in place of a <see cref="IHluConfiguration"/> type parameter in builder pattern types to represent the lack
-/// of extra configurations.
-/// </description>
 /// </item>
 /// </list>
 /// </summary>
-public struct Default : IBoolScheme, IHluConfiguration
+public struct Default : IBoolScheme
 {
     /// <inheritdoc />
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
@@ -34,12 +30,5 @@ public struct Default : IBoolScheme, IHluConfiguration
         var ret = default(T);
         ret++;
         return ret;
-    }
-
-    /// <inheritdoc />
-    public bool TryGetConfiguration<T>([NotNullWhen(true)] out T? config)
-    {
-        config = default;
-        return false;
     }
 }

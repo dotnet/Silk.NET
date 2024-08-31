@@ -2,6 +2,7 @@
 // The .NET Foundation licenses this file to you under the MIT license.
 
 using Silk.NET.Core;
+using Silk.NET.Windowing.Hosting;
 
 namespace Silk.NET.Windowing;
 
@@ -10,12 +11,12 @@ namespace Silk.NET.Windowing;
 /// </summary>
 /// <typeparam name="TImpl">The implementation source of the surface components.</typeparam>
 public static class SurfaceBuilder<TImpl>
-    where TImpl : IHluComponentRegistry
+    where TImpl : ISurfaceHost
 {
     /// <summary>
     /// Creates a new <see cref="SurfaceBuilder{TExtra,TImpl}"/> with the default configuration, implemented by
     /// <typeparamref name="TImpl"/>.
     /// </summary>
     /// <returns>The surface builder.</returns>
-    public static SurfaceBuilder<Default, TImpl> Create() => new(default);
+    public static SurfaceBuilder<IConfigureHost.Null, TImpl> Create() => new(default);
 }

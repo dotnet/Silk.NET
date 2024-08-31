@@ -12,9 +12,10 @@ namespace Silk.NET.Windowing;
 public static class SurfaceBuilder
 {
     /// <summary>
-    /// Creates a <see cref="SurfaceBuilder{TExtra, TImpl}"/> using <see cref="Default"/> configuration and
+    /// Creates a <see cref="SurfaceBuilder{TExtra, TImpl}"/> using default configuration and
     /// the <see cref="ReferenceImplementation"/>.
     /// </summary>
     /// <returns>The surface builder.</returns>
-    public static SurfaceBuilder<Default, ReferenceImplementation> Create() => new(default);
+    public static SurfaceBuilder<IConfigureHost.Null, ReferenceImplementation> Create() =>
+        new(default);
 }

@@ -3,6 +3,7 @@
 
 using System.Diagnostics.CodeAnalysis;
 using System.Numerics;
+using Silk.NET.Windowing.Hosting;
 
 namespace Silk.NET.Windowing;
 
@@ -10,21 +11,21 @@ namespace Silk.NET.Windowing;
 /// Represents a native surface that has a drawable area (using operating system APIs) and that produces operating
 /// system events.
 /// </summary>
-public interface ISurface
+public interface ISurface : IDisposable
 {
     /// <summary>
     /// Gets the size of the client area (drawing area) in pixels.
     /// </summary>
     /// <remarks>
     /// This accounts for high density displays and may differ from the size in window coordinates.
-    /// Note that for this reason it is expected not to be accurate until <see cref="Run{T}"/> is called.
+    /// Note that for this reason it is expected not to be accurate until <see cref="Launch{T}"/> is called.
     /// </remarks>
     Vector2 ClientSize { get; }
 
     /// <summary>
-    /// Gets a unique handle representing this surface.
+    /// Gets a unique handle representing this surface. This may be null if <see cref="Launch{T}"/> is not called.
     /// </summary>
-    nint Handle { get; }
+    SurfaceHandle Handle { get; }
 
     /// <summary>
     /// Runs the window's event loop, dispatching events to the given actor. This may be blocking, but won't always be
@@ -34,6 +35,6 @@ public interface ISurface
     /// </summary>
     /// <param name="actor">The actor receiving events.</param>
     /// <typeparam name="T">The type of the actor.</typeparam>
-    void Run<T>(T actor)
+    void Launch<T>(T actor)
         where T : ISurfaceActor;
 }
