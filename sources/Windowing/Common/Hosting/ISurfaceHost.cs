@@ -192,7 +192,7 @@ public interface ISurfaceHost
 
     /// <summary>
     /// Pumps the event queue and determines whether there is an event to handle. <see cref="AcknowledgeEvent"/> must be
-    /// used after the event is inspected, otherwise subsequent calls will return <c>false</c>.
+    /// used after the event is inspected, otherwise subsequent calls will return <see cref="HostEventKind.None"/>.
     /// </summary>
     /// <param name="pump">The event pump.</param>
     /// <param name="event">
@@ -200,7 +200,7 @@ public interface ISurfaceHost
     /// event pump to ensure the correct event is subsequently received from the event pump. Must only be modified upon
     /// a successful query.
     /// </param>
-    /// <returns>True if an event has been taken from the event queue, false otherwise.</returns>
+    /// <returns>The event kind if an event has been taken from the event queue, false otherwise.</returns>
     /// <remarks>This must be called on the main thread.</remarks>
     static abstract HostEventKind QueryEvent(EventPumpHandle pump, ref int @event);
 

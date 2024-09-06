@@ -159,17 +159,161 @@ public unsafe class ReferenceImplementation : ISurfaceHost
     /// <inheritdoc />
     public static void DestroyEventPump(EventPumpHandle pump) { }
 
+    private static Event _event;
+
     /// <inheritdoc />
-    public static HostEventKind QueryEvent(EventPumpHandle pump, ref int @event) =>
-        throw new NotImplementedException();
+    public static HostEventKind QueryEvent(EventPumpHandle pump, ref int @event)
+    {
+        var ts = unchecked((int)_event.Common.Timestamp);
+        if (ts != 0 && @event == ts)
+        {
+            return HostEventKind.None;
+        }
+
+        if (!Sdl.PollEvent(_event.AsRef()))
+        {
+            return HostEventKind.None;
+        }
+
+        return (EventType)_event.Type switch
+        {
+            EventType.Quit => HostEventKind.AppLifecycleTerminationRequested,
+            EventType.Terminating => HostEventKind.AppLifecycleTerminating,
+            EventType.LowMemory => HostEventKind.AppLifecycleLowMemoryWarning,
+            EventType.WillEnterBackground => HostEventKind.AppLifecyclePausing,
+            EventType.DidEnterBackground => HostEventKind.AppLifecyclePaused,
+            EventType.WillEnterForeground => HostEventKind.AppLifecycleResuming,
+            EventType.DidEnterForeground => HostEventKind.AppLifecycleResumed,
+            // ???
+            EventType.LocaleChanged
+            or EventType.SystemThemeChanged
+                => HostEventKind.None,
+            // TODO monitor API
+            EventType.DisplayOrientation
+            or EventType.DisplayAdded
+            or EventType.DisplayRemoved
+            or EventType.DisplayMoved
+            or EventType.DisplayContentScaleChanged
+            or EventType.DisplayHdrStateChanged
+                => HostEventKind.None,
+            EventType.WindowShown
+            or EventType.WindowHidden
+            or EventType.WindowMoved
+            or EventType.WindowResized
+            or EventType.WindowPixelSizeChanged
+            or EventType.WindowMinimized
+            or EventType.WindowMaximized
+            or EventType.WindowRestored
+            or EventType.WindowMouseEnter
+            or EventType.WindowMouseLeave
+            or EventType.WindowFocusGained
+            or EventType.WindowFocusLost
+            or EventType.WindowCloseRequested
+            or EventType.WindowTakeFocus
+            or EventType.WindowHitTest
+            or EventType.WindowIccprofChanged
+            or EventType.WindowDisplayChanged
+            or EventType.WindowDisplayScaleChanged
+            or EventType.WindowOccluded
+            or EventType.WindowEnterFullscreen
+            or EventType.WindowLeaveFullscreen
+            or EventType.WindowPenEnter
+            or EventType.WindowPenLeave
+            or EventType.DropFile // TODO drag and drop
+            or EventType.DropText // TODO drag and drop
+            or EventType.DropBegin // TODO drag and drop
+            or EventType.DropComplete // TODO drag and drop
+            or EventType.DropPosition // TODO drag and drop
+                => HostEventKind.SurfacePropertyChanged, // TODO
+            // Not exposing this one right now, Tick should be invoked which means we'll redraw if we need to.
+            EventType.WindowExposed
+                => HostEventKind.None,
+            EventType.WindowDestroyed => HostEventKind.AppLifecycleTerminating,
+            EventType.KeyDown
+            or EventType.KeyUp
+            or EventType.TextEditing
+            or EventType.TextInput
+            or EventType.KeymapChanged
+            or EventType.KeyboardAdded
+            or EventType.KeyboardRemoved
+            or EventType.MouseMotion
+            or EventType.MouseButtonDown
+            or EventType.MouseButtonUp
+            or EventType.MouseWheel
+            or EventType.MouseAdded
+            or EventType.MouseRemoved
+            or EventType.JoystickAxisMotion
+            or EventType.JoystickBallMotion
+            or EventType.JoystickHatMotion
+            or EventType.JoystickButtonDown
+            or EventType.JoystickButtonUp
+            or EventType.JoystickAdded
+            or EventType.JoystickRemoved
+            or EventType.JoystickBatteryUpdated
+            or EventType.JoystickUpdateComplete
+            or EventType.GamepadAxisMotion
+            or EventType.GamepadButtonDown
+            or EventType.GamepadButtonUp
+            or EventType.GamepadAdded
+            or EventType.GamepadRemoved
+            or EventType.GamepadRemapped
+            or EventType.GamepadTouchpadDown
+            or EventType.GamepadTouchpadMotion
+            or EventType.GamepadTouchpadUp
+            or EventType.GamepadSensorUpdate
+            or EventType.GamepadUpdateComplete
+            or EventType.GamepadSteamHandleUpdated
+                => HostEventKind.None,
+            // TODO touch API in the input HLU one day?
+            EventType.FingerDown
+            or EventType.FingerUp
+            or EventType.FingerMotion
+            or EventType.ClipboardUpdate
+                => HostEventKind.None,
+            // don't care about these
+            EventType.AudioDeviceAdded
+            or EventType.AudioDeviceRemoved
+            or EventType.AudioDeviceFormatChanged
+                => HostEventKind.None,
+            // TODO drawing API in the input HLU one day?
+            EventType.SensorUpdate
+            or EventType.PenDown
+            or EventType.PenUp
+            or EventType.PenMotion
+            or EventType.PenButtonDown
+            or EventType.PenButtonUp
+                => HostEventKind.None,
+            // TODO camera API in the input HLU one day?
+            EventType.CameraDeviceAdded
+            or EventType.CameraDeviceRemoved
+            or EventType.CameraDeviceApproved
+            or EventType.CameraDeviceDenied
+                => HostEventKind.None,
+            // don't care about these
+            EventType.RenderTargetsReset
+            or EventType.RenderDeviceReset
+                => HostEventKind.None,
+            // EventType.PollSentinel => expr,
+            // EventType.User => expr,
+            // EventType.Last => expr,
+            // EventType.EnumPadding => expr,
+            _ => HostEventKind.None
+        };
+    }
 
     /// <inheritdoc />
     public static SurfaceHandle GetEventSurface(EventPumpHandle pump, int @event) =>
         throw new NotImplementedException();
 
     /// <inheritdoc />
-    public static void AcknowledgeEvent(EventPumpHandle pump, int @event) =>
-        throw new NotImplementedException();
+    public static void AcknowledgeEvent(EventPumpHandle pump, int @event)
+    {
+        var ts = unchecked((int)_event.Common.Timestamp);
+        if (ts != 0 && @event == ts)
+        {
+            _event = default;
+        }
+    }
 
     /// <inheritdoc />
     public static SurfaceProperty GetEventPropertyChanged(EventPumpHandle pump, int @event) =>

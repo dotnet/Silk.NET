@@ -19,11 +19,11 @@ public enum SurfacePropertyName : byte
     /// <summary>
     /// Whether events should be pumped on a separate thread to the root surface.
     /// </summary>
-    UseSeparateEventThread = 0b0100_0010,
+    UseSeparateEventThreadBoolean = 0b0100_0010,
 
     /// <summary>
     /// Whether events should be buffered instead of serialized (i.e. don't wait for all surfaces to read an event
     /// before polling for another event)
     /// </summary>
-    UseBufferedEventLoop = 0b0100_0011
+    UseBufferedEventLoopBoolean = 0b0100_0011
 }

@@ -43,7 +43,7 @@ public readonly record struct ThreadConfiguration(
             handle,
             new SurfaceProperty
             {
-                PropertyName = SurfacePropertyName.UseSeparateEventThread,
+                PropertyName = SurfacePropertyName.UseSeparateEventThreadBoolean,
                 Boolean = UseSeparateEventThread
             }
         );
@@ -51,7 +51,7 @@ public readonly record struct ThreadConfiguration(
             handle,
             new SurfaceProperty
             {
-                PropertyName = SurfacePropertyName.UseBufferedEventLoop,
+                PropertyName = SurfacePropertyName.UseBufferedEventLoopBoolean,
                 Boolean = UseBufferedEventLoop
             }
         );
