@@ -7,7 +7,7 @@
     </PropertyGroup>
 
     <ItemGroup>
-      <ProjectReference Include="..\..\sources\Maths\Silk.NET.Maths.csproj" />
+      <ProjectReference Include="..\..\..\sources\Maths\Maths\Silk.NET.Maths.csproj" />
     </ItemGroup>
 
     <ItemGroup>
