@@ -251,7 +251,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ImGui
         {
             var io = ImGuiNET.ImGui.GetIO();
 
-            var mouseState = _input.Mice[0].CaptureState();
+            using var mouseState = _input.Mice[0].CaptureState();
 
             io.MouseDown[0] = mouseState.IsButtonPressed(MouseButton.Left);
             io.MouseDown[1] = mouseState.IsButtonPressed(MouseButton.Right);
