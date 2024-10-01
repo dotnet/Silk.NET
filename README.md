@@ -13,6 +13,24 @@
 </div>
 
 <div>
+
+<h1 align="center">🚧 Silk.NET 3.0 is coming... 🚧</h1>
+
+We are currently hard at work on Silk.NET 3.0 - the latest and greatest Silk.NET, laser-focused on addressing pain points and reimagining how C# bindings libraries can be done.
+
+Because of this, Silk.NET 2.X investment is currently limited by the Silk.NET team, who consist entirely of volunteers working in their free time. Silk.NET 2.X updates are now released ad-hoc when development effort is justified and available.
+
+**If you're reading this and would like to step up to keep Silk.NET 2.X going, be that as a contributor or a maintainer, please do not hesitate to reach out to the Silk.NET team in our official Discord server!**
+
+Learn more about Silk.NET 3.0:
+- [Silk.NET 3.0 Plan](https://github.com/dotnet/Silk.NET/blob/14ee3f16a1c1b7c5f561c307b956f769c5e89474/documentation/proposals/Proposal%20-%203.0%20%26%203.X%20Software%20Development%20Plan.md)
+- [Silk.NET 3.0 Bindings Design](https://github.com/dotnet/Silk.NET/blob/main/documentation/proposals/Proposal%20-%20Generation%20of%20Library%20Sources%20and%20PInvoke%20Mechanisms.md)
+- [Silk.NET 3.0 Meeting 1](https://www.youtube.com/watch?v=dac3t0oh3VU)
+- [Silk.NET 3.0 Meeting 2](https://www.youtube.com/watch?v=yXNDZDE3AHE)
+- [SilkX (Silk.NET 3.0) Design Discussion](https://www.youtube.com/live/N7qcETE4X_I?t=1799)
+
+<h1 align="center">About Silk.NET 2.X</h1>
+
 <!-- End exclude from NuGet readme. -->
 <!-- Begin include in NuGet readme.
 ![Silk.NET Logo](https://raw.githubusercontent.com/dotnet/Silk.NET/main/documentation/readme/silkdotnet_v3_horizontal_96.svg)
