@@ -12,7 +12,6 @@ using Silk.NET.SilkTouch.Mods;
 using Silk.NET.SilkTouch.Mods.Transformation;
 using Silk.NET.SilkTouch.Naming;
 using Silk.NET.SilkTouch.Sources;
-using Silk.NET.SilkTouch.Workspace;
 
 namespace Silk.NET.SilkTouch;
 
@@ -99,12 +98,13 @@ public static class ServiceCollectionExtensions
         services.AddSingleton<ClangScraper>();
         services.AddSingleton<ResponseFileHandler>();
         services.AddSingleton<FunctionTransformer>();
-        services.AddSingleton<IWorkspaceSolutionProvider, WorkspaceSolutionProvider>();
-        services.AddSingleton<Microsoft.Build.Framework.ILogger, WorkspaceLogger>();
+        services.AddSingleton<MSBuildModContextProvider>();
+        services.TryAddSingleton<IModContextProvider>(s =>
+            s.GetRequiredService<MSBuildModContextProvider>()
+        );
         services.AddSingleton<NameTrimmer>();
         services.AddSingleton<INameTrimmer>(s => s.GetRequiredService<NameTrimmer>());
         services.AddSingleton(typeof(IJobDependency<>), typeof(JobDependencies.Global<>));
-        services.TryAddSingleton<IOutputWriter, DirectOutputWriter>();
         services.TryAddSingleton<ICacheProvider, FileSystemCacheProvider>();
         services.AddSingleton<IInputSource, GitInputSource>();
         services.AddSingleton<IInputSource, NuGetInputSource>();

@@ -1,7 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.Immutable;
 using System.Diagnostics;
+using System.IO;
 using System.Linq;
+using System.Threading;
 using System.Threading.Tasks;
 using Humanizer;
 using Microsoft.CodeAnalysis;
@@ -10,7 +13,6 @@ using Microsoft.CodeAnalysis.CSharp.Syntax;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 using Silk.NET.Core;
-using Silk.NET.SilkTouch.Clang;
 using Silk.NET.SilkTouch.Mods.Metadata;
 using static Microsoft.CodeAnalysis.CSharp.SyntaxFactory;
 
@@ -730,23 +732,45 @@ public class AddApiProfiles(
     private Dictionary<string, BakeSet> _baked = new();
 
     /// <inheritdoc />
-    public override Task<GeneratedSyntax> AfterScrapeAsync(string key, GeneratedSyntax syntax)
+    public override async Task ExecuteAsync(IModContext ctx, CancellationToken ct = default)
     {
-        var cfg = config.Get(key);
-        var rewriter = new Rewriter(key, versionProviders.Get(key).ToArray()) { Logger = logger };
+        if (
+            ctx.SourceProject is null
+            || await ctx.SourceProject.GetCompilationAsync(ct) is not { } comp
+        )
+        {
+            return;
+        }
+
+        var cfg = config.Get(ctx.JobKey);
+        var rewriter = new Rewriter(ctx.JobKey, versionProviders.Get(ctx.JobKey).ToArray())
+        {
+            Logger = logger
+        };
         var bakery = new Dictionary<string, BakeSet>();
         var baked = new List<string>();
         var aggregatedUsings = new Dictionary<string, UsingDirectiveSyntax>();
-        foreach (var (path, root) in syntax.Files)
+        foreach (var docId in ctx.SourceProject.DocumentIds)
         {
-            if (!path.StartsWith("sources/"))
+            var doc =
+                ctx.SourceProject.GetDocument(docId)
+                ?? throw new InvalidOperationException("Document missing");
+            var path = doc.RelativePath();
+            if (path is null)
             {
                 continue;
             }
 
+            var tree = await doc.GetSyntaxTreeAsync(ct);
+            if (tree is null)
+            {
+                continue;
+            }
+
+            var root = await tree.GetRootAsync(ct);
             rewriter.Profile = cfg
                 .Profiles?.Where(x =>
-                    path[8..].StartsWith(x.SourceSubdirectory, StringComparison.OrdinalIgnoreCase)
+                    path.StartsWith(x.SourceSubdirectory, StringComparison.OrdinalIgnoreCase)
                 )
                 .MaxBy(x => x.SourceSubdirectory.Length);
             if (rewriter.Profile is null)
@@ -757,7 +781,7 @@ public class AddApiProfiles(
             logger.LogDebug("Identified profile {} for {}", rewriter.Profile, path);
             if (rewriter.Profile.BakedOutputSubdirectory is not null)
             {
-                var discrim = $"sources/{rewriter.Profile.BakedOutputSubdirectory.Trim('/')}";
+                var discrim = rewriter.Profile.BakedOutputSubdirectory.Trim('/');
                 if (!bakery.TryGetValue(discrim, out var bakeSet))
                 {
                     bakeSet = bakery[discrim] = new BakeSet();
@@ -767,7 +791,7 @@ public class AddApiProfiles(
                 baked.Add(path);
             }
 
-            syntax.Files[path] = rewriter.Visit(root);
+            ctx.SourceProject = doc.WithSyntaxRoot(rewriter.Visit(root)).Project;
             foreach (var (k, v) in rewriter.UsingsToAdd)
             {
                 aggregatedUsings.TryAdd(k, v);
@@ -777,11 +801,36 @@ public class AddApiProfiles(
             rewriter.Profile = null;
         }
 
-        foreach (var path in baked)
+        var proj = ctx.SourceProject.RemoveDocuments(
+            [
+                .. ctx
+                    .SourceProject.Documents.Where(x =>
+                        x.RelativePath() is { } rp && baked.Contains(rp)
+                    )
+                    .Select(x => x.Id)
+            ]
+        );
+        foreach (
+            var (bakedRoot, bakedPath) in GetBaked(bakery, aggregatedUsings)
+                .Select(x => (x.Value, path: x.Key))
+        )
         {
-            syntax.Files.Remove(path);
+            proj = proj.AddDocument(
+                Path.GetFileName(bakedPath),
+                bakedRoot,
+                // we can forgive the below nulls because RelativePath checks them, and returns null if they're null.
+                filePath: proj.FullPath(bakedPath)
+            ).Project;
         }
 
+        ctx.SourceProject = proj;
+    }
+
+    private IEnumerable<KeyValuePair<string, CompilationUnitSyntax>> GetBaked(
+        Dictionary<string, BakeSet> bakery,
+        Dictionary<string, UsingDirectiveSyntax> aggregatedUsings
+    )
+    {
         foreach (var (subdir, bakeSet) in bakery)
         {
             foreach (var (fqTopLevelType, bakedMember) in bakeSet.Children)
@@ -797,7 +846,8 @@ public class AddApiProfiles(
                 var ns = fqTopLevelType.LastIndexOf('.') is not -1 and var idx
                     ? fqTopLevelType[..idx]
                     : null;
-                syntax.Files[$"{subdir}/{PathForFullyQualified(fqTopLevelType)}"] =
+                yield return new KeyValuePair<string, CompilationUnitSyntax>(
+                    $"{subdir}/{PathForFullyQualified(fqTopLevelType)}",
                     CompilationUnit()
                         .WithMembers(
                             ns is null
@@ -809,11 +859,10 @@ public class AddApiProfiles(
                                         .WithMembers(SingletonList(bakedSyntax))
                                 )
                         )
-                        .WithUsings(ModCSharpSyntaxRewriter.GetUsings(aggregatedUsings, null));
+                        .WithUsings(ModCSharpSyntaxRewriter.GetUsings(aggregatedUsings, null))
+                );
             }
         }
-
-        return Task.FromResult(syntax);
     }
 
     private static (string? Identifier, MemberDeclarationSyntax Syntax) Bake(

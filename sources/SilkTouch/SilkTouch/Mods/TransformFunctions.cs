@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading;
@@ -49,18 +50,19 @@ public class TransformFunctions(FunctionTransformer ft) : ModCSharpSyntaxRewrite
     }
 
     /// <inheritdoc />
-    public Task<GeneratedSyntax> AfterScrapeAsync(string key, GeneratedSyntax syntax)
+    public async Task ExecuteAsync(IModContext ctx, CancellationToken ct = default)
     {
-        _jobKey.Value = key;
-        foreach (var (fName, node) in syntax.Files)
+        _jobKey.Value = ctx.JobKey;
+        var proj = ctx.SourceProject;
+        foreach (var docId in proj?.DocumentIds ?? [])
         {
-            if (fName.StartsWith("sources/"))
+            var doc =
+                proj!.GetDocument(docId) ?? throw new InvalidOperationException("Document missing");
+            if (await doc.GetSyntaxRootAsync(ct) is { } root)
             {
-                syntax.Files[fName] = Visit(node);
+                proj = doc.WithSyntaxRoot(Visit(root)).Project;
             }
         }
-
-        return Task.FromResult(syntax);
     }
 
     /// <inheritdoc />

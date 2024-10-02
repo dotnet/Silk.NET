@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Diagnostics.CodeAnalysis;
 using System.IO;
 using System.Linq;
@@ -51,6 +52,17 @@ public static class ModUtils
                 .Reverse()
                 .Select(x => x.Name.ToString())
         );
+
+    /// <summary>
+    /// Gets the namespace in which a symbol is contained.
+    /// </summary>
+    /// <param name="symbol">The symbol.</param>
+    /// <returns>The namespace.</returns>
+    public static string NamespaceFromSymbol(this ISymbol symbol) =>
+        symbol is INamespaceSymbol
+            ? $"{NamespaceFromSymbol(symbol.ContainingNamespace)}.{symbol.Name}"
+            // ReSharper disable once TailRecursiveCall <-- this is more code than we need
+            : NamespaceFromSymbol(symbol.ContainingNamespace);
 
     /// <summary>
     /// Matches a potential replacement candidate against the given list of regex-replacement mappings and, if a regex
@@ -183,6 +195,112 @@ public static class ModUtils
                     )
                 )
             );
+
+    /// <summary>
+    /// Gets the relative path for this document.
+    /// </summary>
+    /// <param name="doc">The document.</param>
+    /// <returns>The relative path.</returns>
+    public static string? RelativePath(this Document doc)
+    {
+        if (
+            doc.FilePath is null
+            || doc.Project.FilePath is null
+            || Path.GetDirectoryName(doc.Project.FilePath) is not { Length: > 0 } dir
+        )
+        {
+            return default;
+        }
+
+        var ret = Path.GetRelativePath(dir, doc.FilePath);
+        return ret.StartsWith("..") ? default : ret.Replace('\\', '/').Trim('/');
+    }
+
+    /// <summary>
+    /// Converts a relative path into a full path for a project.
+    /// </summary>
+    /// <param name="proj">The project.</param>
+    /// <param name="relativePath">The relative path.</param>
+    /// <returns>The full path. Upon failure, null is returned.</returns>
+    public static string FullPath(this Project proj, string relativePath) =>
+        Path.GetDirectoryName(proj.FilePath) is { Length: > 0 } dir
+            ? Path.GetFullPath(relativePath, dir)
+            : relativePath;
+
+    /// <summary>
+    /// Gets the new <see cref="ISymbol"/> matching the given old <see cref="ISymbol"/> in a new
+    /// <see cref="Compilation"/>. This is useful for maintaining context after a mutating operation e.g. for getting a
+    /// new type symbol instance after a rename operation.
+    /// </summary>
+    /// <param name="newCompilation">The new compilation.</param>
+    /// <param name="oldSymbol">The symbol in the old compilation.</param>
+    /// <param name="newName">The new <see cref="ISymbol.Name"/> of the symbol, if changed.</param>
+    /// <returns>The new symbol.</returns>
+    /// <exception cref="ArgumentException">
+    /// <paramref name="oldSymbol"/> was not part of the <see cref="Compilation"/> it was originally sourced from (i.e.
+    /// it is a reference of a foreign type or otherwise did not have an <see cref="ISourceAssemblySymbol"/> ancestor).
+    /// </exception>
+    /// <exception cref="InvalidOperationException">
+    /// <paramref name="oldSymbol"/> or one of its ancestors did not have a matching symbol in
+    /// <paramref name="newCompilation"/>.
+    /// </exception>
+    public static ISymbol GetNewSymbol(
+        this Compilation newCompilation,
+        ISymbol oldSymbol,
+        string? newName = null
+    )
+    {
+        // Get all of the symbols we need to find.
+        // This is "reversed" because the last item of the path we need to follow comes first.
+        var oldPathReversed = oldSymbol.AncestorsAndSelf().ToArray();
+        if (oldPathReversed[^1] is not ISourceAssemblySymbol)
+        {
+            throw new ArgumentException(
+                "The given symbol was not part of the assembly represented by the Compilation i.e. it does not "
+                    + "have ISourceAssemblySymbol as an ancestor.",
+                nameof(oldSymbol)
+            );
+        }
+
+        // Start from the compilation's assembly and walk down.
+        var expectedEndMdName = newName is null
+            ? oldSymbol.MetadataName
+            : oldSymbol.MetadataName.Replace(oldSymbol.Name, newName);
+        ISymbol current = newCompilation.Assembly;
+        Debug.Assert(current is ISourceAssemblySymbol);
+
+        // ------------------------------------vvv-------------- because we're skipping the source assembly.
+        for (var i = oldPathReversed.Length - 2; i >= 0; i--)
+        {
+            var currentOld = oldPathReversed[i];
+            var expectedMdName = i == 0 ? expectedEndMdName : currentOld.MetadataName;
+            current =
+                current.Members().FirstOrDefault(x => x.MetadataName == expectedMdName)
+                ?? throw new InvalidOperationException($"Could not find \"{expectedMdName}\".");
+        }
+
+        return current;
+    }
+
+    private static IEnumerable<ISymbol> AncestorsAndSelf(this ISymbol sym)
+    {
+        do
+        {
+            yield return sym;
+        } while ((sym = sym.ContainingSymbol) is not null);
+    }
+
+    private static IEnumerable<ISymbol> Members(this ISymbol sym) =>
+        sym switch
+        {
+            IAssemblySymbol assemblySymbol => assemblySymbol.Modules,
+            IModuleSymbol moduleSymbol => [moduleSymbol.GlobalNamespace],
+            INamespaceOrTypeSymbol namespaceOrTypeSymbol => namespaceOrTypeSymbol.GetMembers(),
+            _ => []
+        };
+
+    private static IEnumerable<ISymbol> Descendants(this ISymbol sym) =>
+        sym.Members().SelectMany(x => x.Descendants());
 
     /// <summary>
     /// Gets the "effective name" of a given file name. That is, the path without its extension but with any dot

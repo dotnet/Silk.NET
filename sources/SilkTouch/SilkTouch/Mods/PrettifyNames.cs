@@ -1,10 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.CommandLine;
 using System.Linq;
+using System.Threading;
 using System.Threading.Tasks;
 using Microsoft.CodeAnalysis;
 using Microsoft.CodeAnalysis.CSharp;
 using Microsoft.CodeAnalysis.CSharp.Syntax;
+using Microsoft.CodeAnalysis.Rename;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 using Silk.NET.SilkTouch.Clang;
@@ -59,17 +62,30 @@ public class PrettifyNames(
     }
 
     /// <inheritdoc />
-    public Task<GeneratedSyntax> AfterScrapeAsync(string key, GeneratedSyntax syntax)
+    public async Task ExecuteAsync(IModContext ctx, CancellationToken ct = default)
     {
         // First pass to scan the sources and create a dictionary of type/member names.
-        var cfg = config.Get(key);
+        var cfg = config.Get(ctx.JobKey);
         var visitor = new Visitor { NameOverrides = (cfg.NameOverrides?.ToDictionary() ?? [])! };
-        foreach (var (_, node) in syntax.Files.Where(x => x.Key.StartsWith("sources/")))
+        if (ctx.SourceProject is null)
         {
-            visitor.Visit(node);
+            return;
         }
 
-        var rewriter = new Rewriter();
+        foreach (var doc in ctx.SourceProject.Documents)
+        {
+            visitor.Visit(await doc.GetSyntaxRootAsync(ct));
+        }
+
+        Dictionary<
+            string,
+            (
+                string NewName,
+                Dictionary<string, string>? NonFunctions,
+                Dictionary<string, string>? Functions,
+                bool IsEnum
+            )
+        > types = new();
         var translator = new NameUtils.NameTransformer(cfg.LongAcronymThreshold ?? 3);
 
         // If we have a trimmer baseline set, that means the user wants to trim the names as well as prettify them.
@@ -80,7 +96,7 @@ public class PrettifyNames(
             // but to be honest those trimmers aren't used and are only included for posterity and understanding of the
             // old logic.
             var trimmers = trimmerProviders
-                .SelectMany(x => x.Get(key))
+                .SelectMany(x => x.Get(ctx.JobKey))
                 .OrderBy(x => x.Version)
                 .ToArray();
 
@@ -97,7 +113,7 @@ public class PrettifyNames(
                 Trim(
                     null,
                     cfg.GlobalPrefixHint,
-                    key,
+                    ctx.JobKey,
                     typeNames,
                     cfg.PrefixOverrides,
                     trimmers,
@@ -124,7 +140,7 @@ public class PrettifyNames(
                     Trim(
                         typeName,
                         cfg.GlobalPrefixHint,
-                        key,
+                        ctx.JobKey,
                         constNames,
                         cfg.PrefixOverrides,
                         trimmers,
@@ -158,7 +174,7 @@ public class PrettifyNames(
                     Trim(
                         typeName,
                         cfg.GlobalPrefixHint,
-                        key,
+                        ctx.JobKey,
                         functionNames,
                         cfg.PrefixOverrides,
                         trimmers,
@@ -177,7 +193,7 @@ public class PrettifyNames(
                     : Enumerable.Empty<KeyValuePair<string, (string Primary, List<string>?)>>();
 
                 // Add it to the rewriter's list of names to... rewrite...
-                rewriter.Types[typeName] = (
+                types[typeName] = (
                     newTypeName.Prettify(translator, allowAllCaps: true), // <-- lenient about caps for type names
                     // TODO deprecate secondaries if they're within the baseline?
                     constNames
@@ -196,7 +212,7 @@ public class PrettifyNames(
             // Prettify only if the user has not indicated they want to trim.
             foreach (var (name, (nonFunctions, functions, isEnum)) in visitor.Types)
             {
-                rewriter.Types[name] = (
+                types[name] = (
                     name.Prettify(translator, allowAllCaps: true), // <-- lenient about caps for type names (e.g. GL)
                     nonFunctions?.ToDictionary(x => x, x => x.Prettify(translator)),
                     functions?.ToDictionary(x => x.Name, x => x.Name.Prettify(translator)),
@@ -207,7 +223,7 @@ public class PrettifyNames(
 
         if (logger.IsEnabled(LogLevel.Debug))
         {
-            foreach (var (name, (newName, nonFunctions, functions, _)) in rewriter.Types)
+            foreach (var (name, (newName, nonFunctions, functions, _)) in types)
             {
                 logger.LogDebug("{} = {}", name, newName);
                 foreach (var (old, @new) in nonFunctions ?? new())
@@ -222,25 +238,62 @@ public class PrettifyNames(
             }
         }
 
-        return Task.FromResult(
-            syntax with
-            {
-                Files = syntax
-                    .Files.Select(x =>
-                        (
-                            x.Key.EndsWith(".gen.cs")
-                            && rewriter.Types.TryGetValue(
-                                x.Key[(x.Key.LastIndexOf('/') + 1)..^7], // ^7 to strip the .gen.cs
-                                out var info
-                            )
-                                ? $"{x.Key[..(x.Key.LastIndexOf('/') + 1)]}{info.NewName}.gen.cs"
-                                : x.Key,
-                            rewriter.Visit(x.Value)
-                        )
-                    )
-                    .ToDictionary(x => x.Item1, x => x.Item2)
-            }
+        // Create the rename helper. We'll set the options up later.
+        var typeRenameOptions = new SymbolRenameOptions(
+            RenameOverloads: false,
+            RenameInStrings: false,
+            RenameInComments: false,
+            RenameFile: true
         );
+        var memberRenameOptions = new SymbolRenameOptions(
+            RenameOverloads: true,
+            RenameInStrings: false,
+            RenameInComments: false,
+            RenameFile: false
+        );
+        var renamer = new RenameHelper { Project = ctx.SourceProject, Options = typeRenameOptions };
+        foreach (var (typeName, (newTypeName, nonFunctions, functions, isEnum)) in types)
+        {
+            var comp = renamer.Compilation ?? await renamer.Project.GetCompilationAsync(ct);
+            if (comp is null)
+            {
+                continue;
+            }
+
+            var nonFunctionConflicts = nonFunctions
+                ?.Values.Where(x => functions?.ContainsValue(x) ?? false)
+                .ToHashSet();
+            while (
+                comp.GetSymbolsWithName(typeName, SymbolFilter.Type, ct).FirstOrDefault()
+                    is ITypeSymbol typeSymbol
+            )
+            {
+                renamer.Options = typeRenameOptions;
+                typeSymbol = (ITypeSymbol)
+                    await renamer.RenameSymbolAsync(typeSymbol, newTypeName, ct);
+                renamer.Options = memberRenameOptions;
+                foreach (
+                    var ((oldName, proposedName), isFunction) in (functions ?? [])
+                        .Select(x => (x, true))
+                        .Concat((nonFunctions ?? []).Select(x => (x, false)))
+                )
+                {
+                    var newName =
+                        !isFunction && (nonFunctionConflicts?.Contains(proposedName) ?? false)
+                            ? $"{proposedName}Value"
+                            : proposedName;
+                    while (typeSymbol.GetMembers(oldName) is [{ } toRename, ..])
+                    {
+                        typeSymbol = (ITypeSymbol)
+                            (
+                                await renamer.RenameSymbolAsync(toRename, newName, ct)
+                            ).ContainingSymbol;
+                    }
+                }
+            }
+        }
+
+        ctx.SourceProject = renamer.Project;
     }
 
     private void Trim(

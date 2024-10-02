@@ -146,11 +146,11 @@ public interface IInputResolver
     }
 
     /// <summary>
-    /// Resolves all paths referenced in the given job configuration.
+    /// Resolves all paths referenced in the given configuration.
     /// </summary>
-    /// <param name="config">The job config.</param>
-    /// <returns>The job config with all paths resolved.</returns>
-    async Task<SilkTouchConfiguration> Resolve(SilkTouchConfiguration config)
+    /// <param name="config">The configuration.</param>
+    /// <returns>The configuration with all paths resolved.</returns>
+    async Task<ClangScraper.Configuration> Resolve(ClangScraper.Configuration config)
     {
         await ResolveInPlace(config.ClangSharpResponseFiles);
         foreach (
@@ -159,20 +159,29 @@ public interface IInputResolver
         {
             config.ManualOverrides![k] = await ResolvePath(v);
         }
+
         return config with
         {
             InputSourceRoot = config.InputSourceRoot is null
                 ? null
                 : await ResolvePath(config.InputSourceRoot),
-            OutputSourceRoot = config.OutputSourceRoot is null
-                ? null
-                : await ResolvePath(config.OutputSourceRoot),
             InputTestRoot = config.InputTestRoot is null
                 ? null
-                : await ResolvePath(config.InputTestRoot),
-            OutputTestRoot = config.OutputTestRoot is null
-                ? null
-                : await ResolvePath(config.OutputTestRoot)
+                : await ResolvePath(config.InputTestRoot)
         };
     }
+
+    /// <summary>
+    /// Resolves all paths referenced in the given job configuration.
+    /// </summary>
+    /// <param name="config">The job config.</param>
+    /// <returns>The job config with all paths resolved.</returns>
+    async Task<SilkTouchConfiguration> Resolve(SilkTouchConfiguration config) =>
+        config with
+        {
+            SourceProject = config.SourceProject is null
+                ? null
+                : await ResolvePath(config.SourceProject),
+            TestProject = config.TestProject is null ? null : await ResolvePath(config.TestProject)
+        };
 }

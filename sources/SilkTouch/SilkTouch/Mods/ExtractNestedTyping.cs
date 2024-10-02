@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
 using System.Text.RegularExpressions;
+using System.Threading;
 using System.Threading.Tasks;
 using Humanizer;
 using Microsoft.CodeAnalysis;
@@ -35,56 +36,47 @@ namespace Silk.NET.SilkTouch.Mods;
 public partial class ExtractNestedTyping : Mod
 {
     /// <inheritdoc />
-    public override Task<GeneratedSyntax> AfterScrapeAsync(string key, GeneratedSyntax syntax)
+    public override async Task ExecuteAsync(IModContext ctx, CancellationToken ct = default)
     {
-        var dict = new Dictionary<string, SyntaxNode>(syntax.Files.Count);
         var fnPtrWalker = new FunctionPointerWalker();
         var rewriter = new Rewriter();
-        foreach (var (fname, node) in syntax.Files)
+
+        // First pass to discover the types to extract.
+        foreach (var doc in ctx.SourceProject?.Documents ?? [])
         {
+            var (fname, node) = (doc.RelativePath(), await doc.GetSyntaxRootAsync(ct));
+            if (fname is null)
+            {
+                continue;
+            }
+
             fnPtrWalker.File = fname;
             fnPtrWalker.Visit(node);
         }
 
+        // Second pass to modify existing files as per our discovery.
         rewriter.FunctionPointerTypes = fnPtrWalker.GetFunctionPointerTypes();
-        foreach (
-            var (structDecl, delegateDecl, fileDirs, namespaces) in rewriter
-                .FunctionPointerTypes
-                .Values
-        )
+        var proj = ctx.SourceProject;
+        foreach (var docId in proj?.DocumentIds ?? [])
         {
-            var ns = NameUtils.FindCommonPrefix(namespaces, true, false, true).AsSpan();
-            var dir = NameUtils.FindCommonPrefix(fileDirs, true, false, true).AsSpan().TrimEnd('/');
-            dict[$"{dir}/{structDecl.Identifier}.gen.cs"] = CompilationUnit()
-                .WithMembers(
-                    ns is { Length: > 0 }
-                        ? SingletonList<MemberDeclarationSyntax>(
-                            FileScopedNamespaceDeclaration(
-                                    ModUtils.NamespaceIntoIdentifierName(ns.TrimEnd('.'))
-                                )
-                                .WithMembers(SingletonList<MemberDeclarationSyntax>(structDecl))
-                        )
-                        : SingletonList<MemberDeclarationSyntax>(structDecl)
-                );
-            dict[$"{dir}/{delegateDecl.Identifier}.gen.cs"] = CompilationUnit()
-                .WithMembers(
-                    ns is { Length: > 0 }
-                        ? SingletonList<MemberDeclarationSyntax>(
-                            FileScopedNamespaceDeclaration(
-                                    ModUtils.NamespaceIntoIdentifierName(ns.TrimEnd('.'))
-                                )
-                                .WithMembers(SingletonList<MemberDeclarationSyntax>(delegateDecl))
-                        )
-                        : SingletonList<MemberDeclarationSyntax>(delegateDecl)
-                );
-        }
+            var doc =
+                proj!.GetDocument(docId) ?? throw new InvalidOperationException("Document missing");
+            var (fname, node) = (doc.RelativePath(), await doc.GetSyntaxRootAsync(ct));
+            if (fname is null)
+            {
+                continue;
+            }
 
-        foreach (var (fname, node) in syntax.Files)
-        {
-            dict[fname] = rewriter.Visit(node);
+            proj = doc.WithSyntaxRoot(
+                rewriter.Visit(await doc.GetSyntaxRootAsync(ct))
+                    ?? throw new InvalidOperationException("Visit returned null.")
+            ).Project;
             foreach (var newStruct in rewriter.ExtractedNestedStructs)
             {
-                dict[$"{fname.AsSpan()[..fname.LastIndexOf('/')]}/{newStruct.Identifier}.gen.cs"] =
+                var newFname =
+                    $"{fname.AsSpan()[..fname.LastIndexOf('/')]}/{newStruct.Identifier}.gen.cs";
+                proj = proj.AddDocument(
+                    $"{newStruct.Identifier}.gen.cs",
                     CompilationUnit()
                         .WithMembers(
                             rewriter.Namespace is not null
@@ -97,14 +89,77 @@ public partial class ExtractNestedTyping : Mod
                                         )
                                 )
                                 : SingletonList<MemberDeclarationSyntax>(newStruct)
-                        );
+                        ),
+                    filePath: proj.FullPath(newFname)
+                ).Project;
             }
 
             rewriter.Namespace = null;
             rewriter.ExtractedNestedStructs.Clear();
         }
 
-        return Task.FromResult(syntax with { Files = dict });
+        foreach (
+            var (structDecl, delegateDecl, fileDirs, namespaces) in rewriter
+                .FunctionPointerTypes
+                .Values
+        )
+        {
+            // Local function as async functions can't declare span variables.
+            GenerateNewTrees();
+            continue;
+            void GenerateNewTrees()
+            {
+                var ns = NameUtils.FindCommonPrefix(namespaces, true, false, true).AsSpan();
+                var dir = NameUtils
+                    .FindCommonPrefix(fileDirs, true, false, true)
+                    .AsSpan()
+                    .TrimEnd('/');
+                var structFname = $"{dir}/{structDecl.Identifier}.gen.cs";
+                var delegateFname = $"{dir}/{delegateDecl.Identifier}.gen.cs";
+                proj = proj
+                    ?.AddDocument(
+                        $"{structDecl.Identifier}.gen.cs",
+                        CompilationUnit()
+                            .WithMembers(
+                                ns is { Length: > 0 }
+                                    ? SingletonList<MemberDeclarationSyntax>(
+                                        FileScopedNamespaceDeclaration(
+                                                ModUtils.NamespaceIntoIdentifierName(
+                                                    ns.TrimEnd('.')
+                                                )
+                                            )
+                                            .WithMembers(
+                                                SingletonList<MemberDeclarationSyntax>(structDecl)
+                                            )
+                                    )
+                                    : SingletonList<MemberDeclarationSyntax>(structDecl)
+                            ),
+                        filePath: proj.FullPath(structFname)
+                    )
+                    .Project.AddDocument(
+                        $"{delegateDecl.Identifier}.gen.cs",
+                        CompilationUnit()
+                            .WithMembers(
+                                ns is { Length: > 0 }
+                                    ? SingletonList<MemberDeclarationSyntax>(
+                                        FileScopedNamespaceDeclaration(
+                                                ModUtils.NamespaceIntoIdentifierName(
+                                                    ns.TrimEnd('.')
+                                                )
+                                            )
+                                            .WithMembers(
+                                                SingletonList<MemberDeclarationSyntax>(delegateDecl)
+                                            )
+                                    )
+                                    : SingletonList<MemberDeclarationSyntax>(delegateDecl)
+                            ),
+                        filePath: proj.FullPath(delegateFname)
+                    )
+                    .Project;
+            }
+        }
+
+        ctx.SourceProject = proj;
     }
 
     partial class Rewriter : CSharpSyntaxRewriter
@@ -312,7 +367,7 @@ public partial class ExtractNestedTyping : Mod
             }
 
             info.ReferencingNamespaces.Add(ogNode.NamespaceFromSyntaxNode());
-            if (File?.StartsWith("sources/") ?? false)
+            if (File is not null)
             {
                 info.ReferencingFileDirs.Add(File[..File.LastIndexOf('/')]);
             }

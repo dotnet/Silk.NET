@@ -1,22 +1,59 @@
-﻿using System;
+// Licensed to the .NET Foundation under one or more agreements.
+// The .NET Foundation licenses this file to you under the MIT license.
+
+using System;
+using System.Collections.Concurrent;
+using System.Threading;
+using System.Threading.Tasks;
 using Microsoft.Build.Framework;
+using Microsoft.Build.Locator;
+using Microsoft.CodeAnalysis;
+using Microsoft.CodeAnalysis.MSBuild;
+using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
 
-namespace Silk.NET.SilkTouch.Workspace;
+namespace Silk.NET.SilkTouch.Mods;
 
 /// <summary>
-/// Forwards MSBuild logs to MS.Extensions.Logging.
+/// A <see cref="IModContextProvider"/> that uses an MSBuild workspace and writes the modified files to disk (without
+/// project modifications) upon disposal of the returned contexts.
 /// </summary>
-public class WorkspaceLogger : Microsoft.Build.Framework.ILogger
+public class MSBuildModContextProvider(ILogger<MSBuildModContextProvider> logger)
+    : IModContextProvider,
+        IProgress<ProjectLoadProgress>,
+        Microsoft.Build.Framework.ILogger
 {
-    private readonly ILogger<WorkspaceLogger> _logger;
-    private IEventSource? _eventSource;
+    static MSBuildModContextProvider() => MSBuildLocator.RegisterDefaults();
 
-    /// <summary>
-    /// Creates an MSBuild logger using the given MS logger.
-    /// </summary>
-    /// <param name="logger">Underlying logger.</param>
-    public WorkspaceLogger(ILogger<WorkspaceLogger> logger) => _logger = logger;
+    private MSBuildWorkspace _workspace = MSBuildWorkspace.Create();
+    private readonly ConcurrentDictionary<string, Task<Solution>> _solutions = [];
+
+    internal Task<Solution> OpenSolutionAsync(string file) =>
+        _solutions.GetOrAdd(file, x => _workspace.OpenSolutionAsync(x, this, this));
+
+    /// <inheritdoc />
+    public async Task<IModContext> GetContextAsync(
+        string key,
+        IConfigurationSection cfg,
+        CancellationToken ct = default
+    )
+    {
+        var ret = new MSBuildModContext(this, cfg, logger);
+        await ret.InitializeAsync();
+        return ret;
+    }
+
+    /// <inheritdoc />
+    public void Report(ProjectLoadProgress value) =>
+        logger.LogDebug(
+            "{0}: {1}({2}) - elapsed {3}",
+            value.Operation,
+            value.FilePath,
+            value.TargetFramework,
+            value.ElapsedTime
+        );
+
+    private IEventSource? _eventSource;
 
     /// <inheritdoc />
     public void Initialize(IEventSource eventSource)
@@ -44,7 +81,7 @@ public class WorkspaceLogger : Microsoft.Build.Framework.ILogger
     }
 
     private void EventSourceOnStatusEventRaised(object sender, BuildStatusEventArgs e) =>
-        _logger.LogTrace(
+        logger.LogTrace(
             "At {0} {1} raised status event: {2} ({3})",
             e.Timestamp,
             e.SenderName,
@@ -53,7 +90,7 @@ public class WorkspaceLogger : Microsoft.Build.Framework.ILogger
         );
 
     private void EventSourceOnCustomEventRaised(object sender, CustomBuildEventArgs e) =>
-        _logger.LogTrace(
+        logger.LogTrace(
             "At {0} {1} raised custom event: {2} ({3})",
             e.Timestamp,
             e.SenderName,
@@ -62,7 +99,7 @@ public class WorkspaceLogger : Microsoft.Build.Framework.ILogger
         );
 
     private void EventSourceOnWarningRaised(object sender, BuildWarningEventArgs e) =>
-        _logger.LogWarning(
+        logger.LogWarning(
             "{0}:{1}:{2} : warning {3}: {4} ({5})",
             e.File,
             e.LineNumber,
@@ -73,7 +110,7 @@ public class WorkspaceLogger : Microsoft.Build.Framework.ILogger
         );
 
     private void EventSourceOnTaskStarted(object sender, TaskStartedEventArgs e) =>
-        _logger.LogTrace(
+        logger.LogTrace(
             "At {0} {1} started task {2} from {3}, message: {4} ({5})",
             e.Timestamp,
             e.SenderName,
@@ -84,7 +121,7 @@ public class WorkspaceLogger : Microsoft.Build.Framework.ILogger
         );
 
     private void EventSourceOnTaskFinished(object sender, TaskFinishedEventArgs e) =>
-        _logger.LogTrace(
+        logger.LogTrace(
             "At {0} {1} finished task {2} from {3}, message: {4} ({5})",
             e.Timestamp,
             e.SenderName,
@@ -95,7 +132,7 @@ public class WorkspaceLogger : Microsoft.Build.Framework.ILogger
         );
 
     private void EventSourceOnTargetStarted(object sender, TargetStartedEventArgs e) =>
-        _logger.LogTrace(
+        logger.LogTrace(
             "At {0} {1} started target {2} from {3}, message: {4} ({5})",
             e.Timestamp,
             e.SenderName,
@@ -106,7 +143,7 @@ public class WorkspaceLogger : Microsoft.Build.Framework.ILogger
         );
 
     private void EventSourceOnTargetFinished(object sender, TargetFinishedEventArgs e) =>
-        _logger.LogTrace(
+        logger.LogTrace(
             "At {0} {1} finished target {2} from {3}, message: {4} ({5})",
             e.Timestamp,
             e.SenderName,
@@ -117,13 +154,13 @@ public class WorkspaceLogger : Microsoft.Build.Framework.ILogger
         );
 
     private void EventSourceOnProjectStarted(object sender, ProjectStartedEventArgs e) =>
-        _logger.LogTrace("MSBuild started processing project {0}: {1}", e.ProjectFile, e.Message);
+        logger.LogTrace("MSBuild started processing project {0}: {1}", e.ProjectFile, e.Message);
 
     private void EventSourceOnProjectFinished(object sender, ProjectFinishedEventArgs e) =>
-        _logger.LogTrace("MSBuild finished processing project {0}: {1}", e.ProjectFile, e.Message);
+        logger.LogTrace("MSBuild finished processing project {0}: {1}", e.ProjectFile, e.Message);
 
     private void EventSourceOnMessageRaised(object sender, BuildMessageEventArgs e) =>
-        _logger.LogTrace(
+        logger.LogTrace(
             "{0}:{1}:{2} : message {3}: {4} ({5})",
             e.File,
             e.LineNumber,
@@ -134,7 +171,7 @@ public class WorkspaceLogger : Microsoft.Build.Framework.ILogger
         );
 
     private void EventSourceOnErrorRaised(object sender, BuildErrorEventArgs e) =>
-        _logger.LogError(
+        logger.LogError(
             "{0}:{1}:{2} : error {3}: {4} ({5})",
             e.File,
             e.LineNumber,
@@ -147,12 +184,12 @@ public class WorkspaceLogger : Microsoft.Build.Framework.ILogger
     private void EventSourceOnBuildFinished(object sender, BuildFinishedEventArgs e)
         // was going to be a LogDebug/LogError but it seems this happens in some cases anyway?
         =>
-        _logger.LogDebug(
+        logger.LogDebug(
             e.Succeeded ? "MSBuild completed successfully" : "MSBuild failed (might be okay?)"
         );
 
     private void EventSourceOnAnyEventRaised(object sender, BuildEventArgs e) =>
-        _logger.LogTrace(
+        logger.LogTrace(
             "At {0} {1} raised event: {2} ({3})",
             e.Timestamp,
             e.SenderName,
@@ -161,7 +198,7 @@ public class WorkspaceLogger : Microsoft.Build.Framework.ILogger
         );
 
     private void EventSourceOnBuildStarted(object sender, BuildStartedEventArgs e) =>
-        _logger.LogDebug("MSBuild started.");
+        logger.LogDebug("MSBuild started.");
 
     /// <inheritdoc />
     public void Shutdown()

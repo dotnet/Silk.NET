@@ -1,10 +1,14 @@
 ﻿using System;
+using System.Collections.Concurrent;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
+using System.Threading;
 using System.Threading.Tasks;
-using ClangSharp;
+using Microsoft.CodeAnalysis;
 using Microsoft.CodeAnalysis.CSharp;
 using Microsoft.CodeAnalysis.CSharp.Syntax;
+using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 using Silk.NET.SilkTouch.Clang;
 using static Microsoft.CodeAnalysis.CSharp.SyntaxFactory;
@@ -15,10 +19,13 @@ namespace Silk.NET.SilkTouch.Mods;
 /// Adds opaque structs.
 /// </summary>
 [ModConfiguration<Configuration>]
-public class AddOpaqueStructs : IMod
+public class AddOpaqueStructs(
+    ILogger<AddOpaqueStructs> logger,
+    IOptionsSnapshot<AddOpaqueStructs.Configuration> config,
+    ClangScraper? scraper = null
+) : IMod
 {
-    private readonly IOptionsSnapshot<Configuration> _config;
-    private readonly Dictionary<string, string> _defaultNamespaces = new();
+    private readonly ConcurrentDictionary<string, string> _defaultNamespaces = new();
 
     /// <summary>
     /// The configuration for the opaque structs mod.
@@ -31,14 +38,7 @@ public class AddOpaqueStructs : IMod
         public required string[]? Names { get; init; }
     }
 
-    /// <summary>
-    /// Creates an instance of the mod using the given config.
-    /// </summary>
-    /// <param name="config">The config.</param>
-    public AddOpaqueStructs(IOptionsSnapshot<Configuration> config) => _config = config;
-
-    /// <inheritdoc />
-    public Task<List<ResponseFile>> BeforeScrapeAsync(string key, List<ResponseFile> rsps)
+    private Task<List<ResponseFile>> BeforeScrapeAsync(string key, List<ResponseFile> rsps)
     {
         if (rsps.Count <= 0)
         {
@@ -48,40 +48,57 @@ public class AddOpaqueStructs : IMod
         var ns = rsps[0].GeneratorConfiguration.DefaultNamespace;
         if (rsps.All(responseFile => responseFile.GeneratorConfiguration.DefaultNamespace == ns))
         {
-            _defaultNamespaces.Add(key, ns);
+            _defaultNamespaces[key] = ns;
         }
 
         return Task.FromResult(rsps);
     }
 
     /// <inheritdoc />
-    public Task<GeneratedSyntax> AfterScrapeAsync(string key, GeneratedSyntax syntax)
+    public void Initialize(IModContext ctx)
     {
-        var cfg = _config.Get(key);
-        var diags = new List<Diagnostic>(syntax.Diagnostics);
+        if (scraper is not null)
+        {
+            scraper.BeforeScrape += BeforeScrapeAsync;
+        }
+    }
+
+    /// <inheritdoc />
+    public Task ExecuteAsync(IModContext ctx, CancellationToken ct = default)
+    {
+        var cfg = config.Get(ctx.JobKey);
+        var proj = ctx.SourceProject;
+        if (
+            proj?.FilePath is null
+            || Path.GetDirectoryName(proj.FilePath) is not { Length: > 0 } dir
+        )
+        {
+            logger.LogError("Couldn't determine source project file path.");
+            return Task.CompletedTask;
+        }
+
         foreach (var name in cfg.Names ?? Array.Empty<string>())
         {
             var qualified = name.LastIndexOf('.');
             var ns =
                 qualified != -1
                     ? ModUtils.NamespaceIntoIdentifierName(name.AsSpan()[..qualified])
-                    : _defaultNamespaces.TryGetValue(key, out var def)
+                    : _defaultNamespaces.TryGetValue(ctx.JobKey, out var def)
                         ? ModUtils.NamespaceIntoIdentifierName(def)
                         : null;
             if (ns is null)
             {
-                diags.Add(
-                    new Diagnostic(
-                        DiagnosticLevel.Warning,
-                        $"Couldn't resolve namespace for opaque struct \"{name}\" - consider fully qualifying the type "
-                            + "in the config"
-                    )
+                logger.LogWarning(
+                    "Couldn't resolve namespace for opaque struct \"{0}\" - consider fully qualifying the type in the "
+                        + "config",
+                    name
                 );
                 continue;
             }
 
-            syntax.Files.Add(
-                $"sources/{name[(qualified + 1)..]}.gen.cs",
+            var fname = $"{name[(qualified + 1)..]}.gen.cs";
+            proj = proj.AddDocument(
+                fname,
                 CompilationUnit()
                     .WithMembers(
                         SingletonList<MemberDeclarationSyntax>(
@@ -99,10 +116,12 @@ public class AddOpaqueStructs : IMod
                                     )
                                 )
                         )
-                    )
-            );
+                    ),
+                filePath: proj.FullPath(fname)
+            ).Project;
         }
 
-        return Task.FromResult(syntax with { Diagnostics = diags });
+        ctx.SourceProject = proj;
+        return Task.CompletedTask;
     }
 }

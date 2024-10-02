@@ -1,6 +1,9 @@
 ﻿using System.Collections.Generic;
+using System.Diagnostics.CodeAnalysis;
 using System.Linq;
+using System.Threading;
 using System.Threading.Tasks;
+using Microsoft.CodeAnalysis;
 using Silk.NET.SilkTouch.Clang;
 using Silk.NET.SilkTouch.Naming;
 
@@ -9,7 +12,7 @@ namespace Silk.NET.SilkTouch.Mods;
 /// <summary>
 /// Represents an <see cref="IMod"/> with common functionality.
 /// </summary>
-public class Mod : IMod
+public abstract class Mod : IMod
 {
     /// <summary>
     /// Gets the common namespace determined from the default namespaces within the response file.
@@ -39,31 +42,58 @@ public class Mod : IMod
     }
 
     /// <inheritdoc />
-    public virtual Task BeforeJobAsync(string key, SilkTouchConfiguration config) =>
-        Task.CompletedTask;
+    public virtual void Initialize(IModContext ctx) { }
 
     /// <inheritdoc />
-    public virtual Task<List<ResponseFile>> BeforeScrapeAsync(string key, List<ResponseFile> rsps)
+    public virtual async Task ExecuteAsync(IModContext ctx, CancellationToken ct = default)
     {
-        CommonNamespace = NameUtils.FindCommonPrefix(
-            rsps.Select(rsp => rsp.GeneratorConfiguration.DefaultNamespace).ToList(),
-            true,
-            int.MaxValue,
-            true
-        );
-        return Task.FromResult(rsps);
+        if (
+            ctx.SourceProject is not null
+            && await ctx.SourceProject.GetCompilationAsync(ct) is { } comp
+        )
+        {
+            CommonNamespace = CommonNamespaceVisitor.CommonNamespaceFrom(comp.GlobalNamespace);
+        }
     }
 
-    /// <inheritdoc />
-    public virtual Task<GeneratedSyntax> AfterScrapeAsync(string key, GeneratedSyntax syntax) =>
-        Task.FromResult(syntax);
+    class CommonNamespaceVisitor : SymbolVisitor
+    {
+        private List<INamespaceSymbol> _namespacesWithTypes = [];
 
-    /// <inheritdoc />
-    public virtual Task<GeneratorWorkspace> BeforeOutputAsync(
-        string key,
-        GeneratorWorkspace workspace
-    ) => Task.FromResult(workspace);
+        public override void VisitNamespace(INamespaceSymbol symbol)
+        {
+            foreach (var member in symbol.GetMembers())
+            {
+                if (_namespacesWithTypes.Contains(member, SymbolEqualityComparer.Default))
+                {
+                    continue;
+                }
 
-    /// <inheritdoc />
-    public virtual Task AfterJobAsync(string key) => Task.CompletedTask;
+                member.Accept(this);
+            }
+        }
+
+        public override void VisitNamedType(INamedTypeSymbol symbol)
+        {
+            if (!_namespacesWithTypes.Contains(symbol.ContainingNamespace))
+            {
+                _namespacesWithTypes.Add(symbol.ContainingNamespace);
+            }
+        }
+
+        public string CommonNamespace =>
+            NameUtils.FindCommonPrefix(
+                _namespacesWithTypes.Select(x => x.NamespaceFromSymbol()).ToList(),
+                true,
+                int.MaxValue,
+                true
+            );
+
+        public static string CommonNamespaceFrom(ISymbol symbol)
+        {
+            var visitor = new CommonNamespaceVisitor();
+            visitor.Visit(symbol);
+            return visitor.CommonNamespace;
+        }
+    }
 }

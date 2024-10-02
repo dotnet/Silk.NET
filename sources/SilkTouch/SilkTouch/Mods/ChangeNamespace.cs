@@ -3,12 +3,12 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Text.RegularExpressions;
+using System.Threading;
 using System.Threading.Tasks;
 using ClangSharp;
 using Microsoft.CodeAnalysis;
 using Microsoft.CodeAnalysis.CSharp;
 using Microsoft.CodeAnalysis.CSharp.Syntax;
-using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 using Silk.NET.SilkTouch.Clang;
 using static Microsoft.CodeAnalysis.CSharp.SyntaxFactory;
@@ -20,10 +20,11 @@ namespace Silk.NET.SilkTouch.Mods;
 /// regards to namespaces.
 /// </summary>
 [ModConfiguration<Configuration>]
-public class ChangeNamespace : IMod
+public class ChangeNamespace(
+    IOptionsSnapshot<ChangeNamespace.Configuration> config,
+    ClangScraper? scraper = null
+) : IMod
 {
-    private readonly ILogger<ChangeNamespace> _logger;
-    private readonly IOptionsSnapshot<Configuration> _config;
     private readonly Dictionary<string, (HashSet<string>, IReadOnlyList<(Regex, string)>)> _jobs =
         new();
 
@@ -38,21 +39,20 @@ public class ChangeNamespace : IMod
         public required Dictionary<string, string>? Mappings { get; init; }
     }
 
-    /// <summary>
-    /// Creates an instance of this mod.
-    /// </summary>
-    /// <param name="logger">The logger.</param>
-    /// <param name="config">Configuration snapshot.</param>
-    public ChangeNamespace(
-        ILogger<ChangeNamespace> logger,
-        IOptionsSnapshot<Configuration> config
-    ) => (_logger, _config) = (logger, config);
-
     /// <inheritdoc />
-    public Task<List<ResponseFile>> BeforeScrapeAsync(string key, List<ResponseFile> rsps)
+    public void Initialize(IModContext ctx)
+    {
+        if (scraper is null)
+        {
+            return;
+        }
+        scraper.BeforeScrape += BeforeScrapeAsync;
+    }
+
+    private Task<List<ResponseFile>> BeforeScrapeAsync(string key, List<ResponseFile> rsps)
     {
         var regexes =
-            _config.Get(key).Mappings?.Select(kvp => (new Regex(kvp.Key), kvp.Value)).ToArray()
+            config.Get(key).Mappings?.Select(kvp => (new Regex(kvp.Key), kvp.Value)).ToArray()
             ?? Array.Empty<(Regex, string)>();
         var tmp = Path.GetTempFileName();
         for (var i = 0; i < rsps.Count; i++)
@@ -125,20 +125,24 @@ public class ChangeNamespace : IMod
     }
 
     /// <inheritdoc />
-    public Task<GeneratedSyntax> AfterScrapeAsync(string key, GeneratedSyntax syntax)
+    public async Task ExecuteAsync(IModContext ctx, CancellationToken ct = default)
     {
-        var (ns, regexes) = _jobs[key];
+        var (ns, regexes) = _jobs[ctx.JobKey];
         var rewriter = new Rewriter(ns, regexes);
-        foreach (var (fName, node) in syntax.Files)
+        var proj = ctx.SourceProject;
+        foreach (var docId in proj?.DocumentIds ?? [])
         {
-            syntax.Files[fName] = rewriter.Visit(node);
+            var doc =
+                proj!.GetDocument(docId) ?? throw new InvalidOperationException("Document missing");
+            proj = doc.WithSyntaxRoot(
+                rewriter.Visit(await doc.GetSyntaxRootAsync(ct))
+                    ?? throw new InvalidOperationException("Visit returned null.")
+            ).Project;
         }
 
-        return Task.FromResult(syntax);
+        ctx.SourceProject = proj;
+        _jobs.Remove(ctx.JobKey);
     }
-
-    /// <inheritdoc />
-    public Task AfterJobAsync(string key) => Task.FromResult(_jobs.Remove(key));
 
     private class Rewriter : CSharpSyntaxRewriter
     {

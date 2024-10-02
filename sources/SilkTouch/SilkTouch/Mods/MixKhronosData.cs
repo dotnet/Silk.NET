@@ -8,6 +8,7 @@ using System.Runtime.InteropServices;
 using System.Text.Json;
 using System.Text.Json.Serialization;
 using System.Text.RegularExpressions;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Xml.Linq;
 using Humanizer;
@@ -220,27 +221,27 @@ public partial class MixKhronosData(
     public Version Version { get; } = new(42, 42, 42, 42);
 
     /// <inheritdoc />
-    public async Task BeforeJobAsync(string key, SilkTouchConfiguration config)
+    public async Task ExecuteAsync(IModContext ctx, CancellationToken ct = default)
     {
-        var currentConfig = cfg.Get(key);
+        var currentConfig = cfg.Get(ctx.JobKey);
         var specPath = currentConfig.SpecPath;
-        var job = Jobs[key] = new JobData
+        var jobData = Jobs[ctx.JobKey] = new JobData
         {
             Configuration = currentConfig,
             TypeMap = currentConfig.TypeMap is not null
                 ? new Dictionary<string, string>(currentConfig.TypeMap)
                 : []
         };
-        job.TypeMap.TryAdd("int8_t", "sbyte");
-        job.TypeMap.TryAdd("uint8_t", "byte");
-        job.TypeMap.TryAdd("int16_t", "short");
-        job.TypeMap.TryAdd("uint16_t", "ushort");
-        job.TypeMap.TryAdd("int32_t", "int");
-        job.TypeMap.TryAdd("uint32_t", "uint");
-        job.TypeMap.TryAdd("int64_t", "long");
-        job.TypeMap.TryAdd("uint64_t", "ulong");
-        job.TypeMap.TryAdd("GLenum", "uint");
-        job.TypeMap.TryAdd("GLbitfield", "uint");
+        jobData.TypeMap.TryAdd("int8_t", "sbyte");
+        jobData.TypeMap.TryAdd("uint8_t", "byte");
+        jobData.TypeMap.TryAdd("int16_t", "short");
+        jobData.TypeMap.TryAdd("uint16_t", "ushort");
+        jobData.TypeMap.TryAdd("int32_t", "int");
+        jobData.TypeMap.TryAdd("uint32_t", "uint");
+        jobData.TypeMap.TryAdd("int64_t", "long");
+        jobData.TypeMap.TryAdd("uint64_t", "ulong");
+        jobData.TypeMap.TryAdd("GLenum", "uint");
+        jobData.TypeMap.TryAdd("GLbitfield", "uint");
         if (specPath is null)
         {
             // No metadata, can't continue. It'd be odd if the Khronos mod is being used in this case. There was once
@@ -253,7 +254,7 @@ public partial class MixKhronosData(
         await using var fs = File.OpenRead(specPath);
         var xml = await XDocument.LoadAsync(fs, LoadOptions.None, default);
         var (apiSets, supportedApiProfiles) = EvaluateProfiles(xml);
-        job.Vendors =
+        jobData.Vendors =
         [
             .. xml.Element("registry")
                 ?.Element("tags")
@@ -266,9 +267,9 @@ public partial class MixKhronosData(
                 .Attributes("name")
                 .Select(x => x.Value.Split('_')[1].ToUpper()) ?? Enumerable.Empty<string>()
         ];
-        job.ApiSets = apiSets;
-        job.SupportedApiProfiles = supportedApiProfiles;
-        ReadGroups(xml, Jobs[key], job.Vendors);
+        jobData.ApiSets = apiSets;
+        jobData.SupportedApiProfiles = supportedApiProfiles;
+        ReadGroups(xml, jobData, jobData.Vendors);
         foreach (var typeElement in xml.Elements("registry").Elements("types").Elements("type"))
         {
             var type = typeElement.Element("name")?.Value;
@@ -278,24 +279,31 @@ public partial class MixKhronosData(
                 continue;
             }
 
-            Jobs[key].TypeMap.TryAdd(type, baseType);
+            jobData.TypeMap.TryAdd(type, baseType);
+        }
+
+        var proj = ctx.SourceProject;
+        var rewriter = new Rewriter(jobData);
+        foreach (var docId in proj?.DocumentIds ?? [])
+        {
+            var doc =
+                proj!.GetDocument(docId) ?? throw new InvalidOperationException("Document missing");
+            proj = doc.WithSyntaxRoot(
+                rewriter.Visit(await doc.GetSyntaxRootAsync(ct))
+                    ?? throw new InvalidOperationException("Visit returned null.")
+            ).Project;
+        }
+
+        foreach (var (fname, node) in GetNewSyntaxTrees(jobData, rewriter))
+        {
+            proj = proj
+                ?.AddDocument(Path.GetFileName(fname), node, filePath: proj.FullPath(fname))
+                .Project;
         }
     }
 
-    /// <inheritdoc />
-    public Task<GeneratedSyntax> AfterScrapeAsync(string key, GeneratedSyntax syntax)
+    private IEnumerable<(string, SyntaxNode)> GetNewSyntaxTrees(JobData jobData, Rewriter rewriter)
     {
-        if (!Jobs.TryGetValue(key, out var jobData))
-        {
-            return Task.FromResult(syntax);
-        }
-
-        var rewriter = new Rewriter(jobData);
-        foreach (var (fname, node) in syntax.Files)
-        {
-            syntax.Files[fname] = rewriter.Visit(node);
-        }
-
         foreach (var (groupName, groupInfo) in jobData.Groups)
         {
             if (!rewriter.AlreadyPresentGroups.Contains(groupName))
@@ -337,63 +345,68 @@ public partial class MixKhronosData(
                     continue;
                 }
 
-                syntax.Files[$"sources/Enums/{groupName}.gen.cs"] = CompilationUnit()
-                    .WithMembers(
-                        SingletonList<MemberDeclarationSyntax>(
-                            FileScopedNamespaceDeclaration(ModUtils.NamespaceIntoIdentifierName(ns))
-                                .WithMembers(
-                                    SingletonList<MemberDeclarationSyntax>(
-                                        EnumDeclaration(groupName)
-                                            .WithModifiers(
-                                                TokenList(Token(SyntaxKind.PublicKeyword))
-                                            )
-                                            .WithAttributeLists(
-                                                SingletonList(
-                                                    AttributeList(
-                                                        SingletonSeparatedList(
-                                                            Attribute(IdentifierName("Transformed"))
+                yield return (
+                    $"Enums/{groupName}.gen.cs",
+                    CompilationUnit()
+                        .WithMembers(
+                            SingletonList<MemberDeclarationSyntax>(
+                                FileScopedNamespaceDeclaration(
+                                        ModUtils.NamespaceIntoIdentifierName(ns)
+                                    )
+                                    .WithMembers(
+                                        SingletonList<MemberDeclarationSyntax>(
+                                            EnumDeclaration(groupName)
+                                                .WithModifiers(
+                                                    TokenList(Token(SyntaxKind.PublicKeyword))
+                                                )
+                                                .WithAttributeLists(
+                                                    SingletonList(
+                                                        AttributeList(
+                                                            SingletonSeparatedList(
+                                                                Attribute(
+                                                                    IdentifierName("Transformed")
+                                                                )
+                                                            )
                                                         )
                                                     )
                                                 )
-                                            )
-                                            .WithBaseList(
-                                                BaseList(
-                                                    SingletonSeparatedList<BaseTypeSyntax>(
-                                                        SimpleBaseType(IdentifierName(baseType))
+                                                .WithBaseList(
+                                                    BaseList(
+                                                        SingletonSeparatedList<BaseTypeSyntax>(
+                                                            SimpleBaseType(IdentifierName(baseType))
+                                                        )
                                                     )
                                                 )
-                                            )
-                                            .WithMembers(
-                                                SeparatedList(
-                                                    groupInfo.Enums.Select(x =>
-                                                        EnumMemberDeclaration(
-                                                                x.Identifier.ToString()
-                                                            )
-                                                            // TODO actually eval the expression to see if necessary?
-                                                            .WithEqualsValue(
-                                                                x.Initializer?.WithValue(
-                                                                    CheckedExpression(
-                                                                        SyntaxKind.UncheckedExpression,
-                                                                        CastExpression(
-                                                                            IdentifierName(
-                                                                                baseType
-                                                                            ),
-                                                                            x.Initializer.Value
+                                                .WithMembers(
+                                                    SeparatedList(
+                                                        groupInfo.Enums.Select(x =>
+                                                            EnumMemberDeclaration(
+                                                                    x.Identifier.ToString()
+                                                                )
+                                                                // TODO actually eval the expression to see if necessary?
+                                                                .WithEqualsValue(
+                                                                    x.Initializer?.WithValue(
+                                                                        CheckedExpression(
+                                                                            SyntaxKind.UncheckedExpression,
+                                                                            CastExpression(
+                                                                                IdentifierName(
+                                                                                    baseType
+                                                                                ),
+                                                                                x.Initializer.Value
+                                                                            )
                                                                         )
                                                                     )
                                                                 )
-                                                            )
+                                                        )
                                                     )
                                                 )
-                                            )
+                                        )
                                     )
-                                )
+                            )
                         )
-                    );
+                );
             }
         }
-
-        return Task.FromResult(syntax);
     }
 
     internal record EnumGroup(

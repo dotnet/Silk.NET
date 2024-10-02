@@ -1,6 +1,8 @@
-﻿using System.Collections.Generic;
+﻿// Licensed to the .NET Foundation under one or more agreements.
+// The .NET Foundation licenses this file to you under the MIT license.
+
+using System.Threading;
 using System.Threading.Tasks;
-using Silk.NET.SilkTouch.Clang;
 
 namespace Silk.NET.SilkTouch.Mods;
 
@@ -16,53 +18,19 @@ namespace Silk.NET.SilkTouch.Mods;
 public interface IMod
 {
     /// <summary>
-    /// Runs before SilkTouch does anything with the given job name and job configuration.
+    /// Initialises the mod for the given job context.
     /// </summary>
-    /// <param name="key">The job name (corresponds to the configuration key for mod configs).</param>
-    /// <param name="config">The job config.</param>
+    /// <param name="ctx">The generation job context.</param>
+    void Initialize(IModContext ctx) { }
+
+    /// <summary>
+    /// Executes the mod as originally initialised for the given job context asynchronously.
+    /// </summary>
+    /// <param name="ctx">The generation job context.</param>
+    /// <param name="ct">Cancellation token.</param>
     /// <returns>An asynchronous task.</returns>
-    Task BeforeJobAsync(string key, SilkTouchConfiguration config) => Task.CompletedTask;
-
-    /// <summary>
-    /// Runs before SilkTouch invokes ClangSharp with the given parsed response files. Gives each mod an opportunity to
-    /// modify the generator configuration.
-    /// </summary>
-    /// <param name="key">The job name (corresponds to the configuration key for mod configs).</param>
-    /// <param name="rsps">The read response files.</param>
-    /// <returns>
-    /// The modified response files to be passed into either the next mod or ClangSharp if this is the last mod.
-    /// </returns>
-    Task<List<ResponseFile>> BeforeScrapeAsync(string key, List<ResponseFile> rsps) =>
-        Task.FromResult(rsps);
-
-    /// <summary>
-    /// Runs after SilkTouch has invoked ClangSharp which generated the given syntax nodes. Gives each mod an
-    /// opportunity to mutate the syntax tree.
-    /// </summary>
-    /// <param name="key">The job name (corresponds to the configuration key for mod configs).</param>
-    /// <param name="syntax">The generated output from ClangSharp (or the previous mod).</param>
-    /// <returns>
-    /// The modified syntax nodes to be either passed to the next mod or output from the generator if this is the last
-    /// mod.
-    /// </returns>
-    Task<GeneratedSyntax> AfterScrapeAsync(string key, GeneratedSyntax syntax) =>
-        Task.FromResult(syntax);
-
-    /// <summary>
-    /// Runs before SilkTouch is going to output the MSBuild workspace. The generated documents have already been added,
-    /// so this gives the opportunity for the mod to modify the workspace further.
-    /// </summary>
-    /// <param name="key">The job name (corresponds to the configuration key for mod configs).</param>
-    /// <param name="workspace">The generated output from scraping.</param>
-    /// <returns>The modified MSBuild solution either to be output or passed to the next mod if applicable.</returns>
-    Task<GeneratorWorkspace> BeforeOutputAsync(string key, GeneratorWorkspace workspace) =>
-        Task.FromResult(workspace);
-
-    /// <summary>
-    /// Runs after all generation activities have completed. Gives each mod an opportunity to clean up its state for
-    /// this job.
-    /// </summary>
-    /// <param name="key">The job name (corresponds to the configuration key for mod configs).</param>
-    /// <returns>An asynchronous task.</returns>
-    Task AfterJobAsync(string key) => Task.CompletedTask;
+    /// <remarks>
+    /// Always preceded by <see cref="Initialize"/>.
+    /// </remarks>
+    Task ExecuteAsync(IModContext ctx, CancellationToken ct = default);
 }

@@ -81,7 +81,7 @@ rootCommand.SetHandler(async ctx =>
 
     var logger = sp.GetRequiredService<ILogger<Program>>();
     var skipped = ctx.ParseResult.GetValueForOption(skip);
-    var diags = new ConcurrentBag<Diagnostic>();
+    var generator = sp.GetRequiredService<SilkTouchGenerator>();
     await Parallel.ForEachAsync(
         config
             .GetSection("Jobs")
@@ -91,36 +91,15 @@ rootCommand.SetHandler(async ctx =>
             ),
         async (job, ct) =>
         {
-            var generator = sp.GetRequiredService<SilkTouchGenerator>();
-            foreach (
-                var diagnostic in await generator.OutputBindingsAsync(
-                    job.Key,
-                    config,
-                    ctx.ParseResult.GetValueForOption(jobs),
-                    ct
-                )
-            )
-            {
-                diags.Add(diagnostic);
-            }
+            await generator.RunAsync(
+                job.Key,
+                job,
+                // TODO parallelism configuration
+                // ctx.ParseResult.GetValueForOption(jobs),
+                ct
+            );
         }
     );
-    logger.LogInformation("Diagnostics for jobs:");
-    foreach (var diagnostic in diags)
-    {
-        logger.Log(
-            diagnostic.Level switch
-            {
-                DiagnosticLevel.Info => LogLevel.Information,
-                DiagnosticLevel.Warning => LogLevel.Warning,
-                DiagnosticLevel.Error => LogLevel.Error,
-                _ => throw new ArgumentOutOfRangeException()
-            },
-            "    {}: {}",
-            diagnostic.Location,
-            diagnostic.Message
-        );
-    }
     // workaround for dangling logging/socket engine threads
     Environment.Exit(0);
 });

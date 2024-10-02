@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Threading;
 using System.Threading.Tasks;
 using Microsoft.Extensions.FileSystemGlobbing;
 using Microsoft.Extensions.Options;
@@ -18,6 +19,7 @@ namespace Silk.NET.SilkTouch.Mods;
 /// <param name="options">The mod configuration options snapshot.</param>
 [ModConfiguration<Configuration>]
 public class AddIncludes(
+    ClangScraper scraper,
     IStdIncludeResolver stdResolver,
     IInputResolver inputResolver,
     IOptionsSnapshot<AddIncludes.Configuration> options
@@ -54,8 +56,7 @@ public class AddIncludes(
         public string[]? AdditionalIncludes { get; init; }
     }
 
-    /// <inheritdoc />
-    public async Task<List<ResponseFile>> BeforeScrapeAsync(string key, List<ResponseFile> rsps)
+    private async Task<List<ResponseFile>> BeforeScrapeAsync(string key, List<ResponseFile> rsps)
     {
         var cfg = options.Get(key);
         for (var i = 0; i < rsps.Count; i++)
@@ -134,4 +135,10 @@ public class AddIncludes(
 
         return rsps;
     }
+
+    /// <inheritdoc />
+    public void Initialize(IModContext ctx) => scraper.BeforeScrape += BeforeScrapeAsync;
+
+    /// <inheritdoc />
+    public Task ExecuteAsync(IModContext ctx, CancellationToken ct = default) => Task.CompletedTask;
 }

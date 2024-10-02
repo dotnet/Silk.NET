@@ -1,4 +1,5 @@
 ﻿using System;
+using Silk.NET.SilkTouch.Clang;
 
 namespace Silk.NET.SilkTouch.Mods;
 
@@ -25,6 +26,7 @@ public class ModLoader
             nameof(MixKhronosData) => typeof(MixKhronosData),
             nameof(TransformHandles) => typeof(TransformHandles),
             nameof(ExtractNestedTyping) => typeof(ExtractNestedTyping),
+            nameof(ClangScraper) => typeof(ClangScraper),
             _ => null
         };
 }
