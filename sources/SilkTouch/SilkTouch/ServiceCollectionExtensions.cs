@@ -95,7 +95,7 @@ public static class ServiceCollectionExtensions
         // - https://andrewlock.net/how-to-register-a-service-with-multiple-interfaces-for-in-asp-net-core-di/
         // - https://discordapp.com/channels/143867839282020352/663803973119115264/1129546023388332075 (C# Discord)
 
-        services.AddSingleton<ClangScraper>();
+        // services.AddSingleton<ClangScraper>(); <-- this is a mod now
         services.AddSingleton<ResponseFileHandler>();
         services.AddSingleton<FunctionTransformer>();
         services.AddSingleton<MSBuildModContextProvider>();

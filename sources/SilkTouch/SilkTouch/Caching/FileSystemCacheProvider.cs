@@ -50,9 +50,15 @@ public class FileSystemCacheProvider(ILogger<FileSystemCacheProvider> logger) : 
         var path = GetCachePath(cacheKey, intent);
         var sema = _semaphores.GetOrAdd(path, _ => new SemaphoreSlim(1, 1));
         await (sema?.WaitAsync() ?? Task.CompletedTask);
+
+        // If the cache file/directory doesn't exist, create it.
         if (
             sema is not null
-            && ((isUnstaged && !Directory.Exists(path)) || (!isUnstaged && !File.Exists(path)))
+            && (
+                (isUnstaged && !Directory.Exists(path))
+                || (!isUnstaged && !File.Exists(path))
+                || (flags & CacheFlags.RequireNewLocked) == CacheFlags.RequireNewLocked
+            )
         )
         {
             if ((flags & CacheFlags.AllowNewLocked) == 0)

@@ -239,19 +239,11 @@ public class PrettifyNames(
         }
 
         // Create the rename helper. We'll set the options up later.
-        var typeRenameOptions = new SymbolRenameOptions(
-            RenameOverloads: false,
-            RenameInStrings: false,
-            RenameInComments: false,
-            RenameFile: true
-        );
-        var memberRenameOptions = new SymbolRenameOptions(
-            RenameOverloads: true,
-            RenameInStrings: false,
-            RenameInComments: false,
-            RenameFile: false
-        );
-        var renamer = new RenameHelper { Project = ctx.SourceProject, Options = typeRenameOptions };
+        var renamer = new RenameHelper
+        {
+            Project = ctx.SourceProject,
+            Options = _typeRenameOptions
+        };
         foreach (var (typeName, (newTypeName, nonFunctions, functions, isEnum)) in types)
         {
             var comp = renamer.Compilation ?? await renamer.Project.GetCompilationAsync(ct);
@@ -260,40 +252,102 @@ public class PrettifyNames(
                 continue;
             }
 
+            logger.LogDebug(
+                "Renaming type {} to {}... ({} function rename(s) and {} other rename(s) therein)",
+                typeName,
+                newTypeName,
+                functions?.Count ?? 0,
+                nonFunctions?.Count ?? 0
+            );
             var nonFunctionConflicts = nonFunctions
                 ?.Values.Where(x => functions?.ContainsValue(x) ?? false)
                 .ToHashSet();
-            while (
-                comp.GetSymbolsWithName(typeName, SymbolFilter.Type, ct).FirstOrDefault()
-                    is ITypeSymbol typeSymbol
+            foreach (
+                var typeSymbol in comp.GetSymbolsWithName(typeName, SymbolFilter.Type, ct)
+                    .OfType<ITypeSymbol>()
             )
             {
-                renamer.Options = typeRenameOptions;
-                typeSymbol = (ITypeSymbol)
-                    await renamer.RenameSymbolAsync(typeSymbol, newTypeName, ct);
-                renamer.Options = memberRenameOptions;
-                foreach (
-                    var ((oldName, proposedName), isFunction) in (functions ?? [])
-                        .Select(x => (x, true))
-                        .Concat((nonFunctions ?? []).Select(x => (x, false)))
-                )
-                {
-                    var newName =
-                        !isFunction && (nonFunctionConflicts?.Contains(proposedName) ?? false)
-                            ? $"{proposedName}Value"
-                            : proposedName;
-                    while (typeSymbol.GetMembers(oldName) is [{ } toRename, ..])
-                    {
-                        typeSymbol = (ITypeSymbol)
-                            (
-                                await renamer.RenameSymbolAsync(toRename, newName, ct)
-                            ).ContainingSymbol;
-                    }
-                }
+                await RenameTypeAsync(
+                    renamer,
+                    (ITypeSymbol)comp.GetNewSymbol(typeSymbol),
+                    typeName,
+                    newTypeName,
+                    functions,
+                    nonFunctions,
+                    nonFunctionConflicts,
+                    ct
+                );
+                comp =
+                    await renamer.Project.GetCompilationAsync(ct)
+                    ?? throw new InvalidOperationException(
+                        "Failed to obtain compilation for new project!"
+                    );
             }
         }
 
         ctx.SourceProject = renamer.Project;
+    }
+
+    private static readonly SymbolRenameOptions _typeRenameOptions =
+        new(
+            RenameOverloads: false,
+            RenameInStrings: false,
+            RenameInComments: false,
+            RenameFile: true
+        );
+    private static readonly SymbolRenameOptions _memberRenameOptions =
+        new(
+            RenameOverloads: true,
+            RenameInStrings: false,
+            RenameInComments: false,
+            RenameFile: false
+        );
+
+    private async Task RenameTypeAsync(
+        RenameHelper renamer,
+        ITypeSymbol typeSymbol,
+        string typeName,
+        string newTypeName,
+        Dictionary<string, string>? functions,
+        Dictionary<string, string>? nonFunctions,
+        HashSet<string>? nonFunctionConflicts,
+        CancellationToken ct = default
+    )
+    {
+        renamer.Options = _typeRenameOptions;
+        typeSymbol = (ITypeSymbol)await renamer.RenameSymbolAsync(typeSymbol, newTypeName, ct);
+        logger.LogTrace("Processed {} = {}", typeName, newTypeName);
+        renamer.Options = _memberRenameOptions;
+        foreach (
+            var ((oldName, proposedName), isFunction) in (functions ?? [])
+                .Select(x => (x, true))
+                .Concat((nonFunctions ?? []).Select(x => (x, false)))
+        )
+        {
+            var newName =
+                !isFunction && (nonFunctionConflicts?.Contains(proposedName) ?? false)
+                    ? $"{proposedName}Value"
+                    : proposedName;
+            if (oldName == newName)
+            {
+                // wtf????
+                continue;
+            }
+
+            while (typeSymbol.GetMembers(oldName) is [{ } toRename, ..])
+            {
+                typeSymbol = (ITypeSymbol)
+                    (await renamer.RenameSymbolAsync(toRename, newName, ct)).ContainingSymbol;
+                logger.LogTrace(
+                    "Processed {}.{} = {}.{} (function = {})",
+                    typeName,
+                    oldName,
+                    newTypeName,
+                    newName,
+                    isFunction
+                );
+            }
+        }
     }
 
     private void Trim(

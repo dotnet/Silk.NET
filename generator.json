@@ -1,25 +1,28 @@
 {
   "Jobs": {
     "Microsoft": {
-      "ClangSharpResponseFiles": [
-        "eng/submodules/terrafx.interop.windows/generation/**/generate.rsp"
-      ],
-      "ManualOverrides": {
-        "sources/Windows/um/icm/Windows.gen.cs": "eng/submodules/terrafx.interop.windows/sources/Interop/Windows/Windows/um/icm/Windows.cs",
-        "sources/Gdiplus/um/gdiplustypes/GpRect.gen.cs": "eng/submodules/terrafx.interop.windows/sources/Interop/Windows/Gdiplus/um/gdiplustypes/GpRect.cs",
-        "sources/Gdiplus/um/gdiplustypes/GpRectF.gen.cs": "eng/submodules/terrafx.interop.windows/sources/Interop/Windows/Gdiplus/um/gdiplustypes/GpRectF.cs",
-        "sources/Gdiplus/um/gdiplustypes/GpPathData.gen.cs": "eng/submodules/terrafx.interop.windows/sources/Interop/Windows/Gdiplus/um/gdiplustypes/GpPathData.cs"
-      },
-      "InputSourceRoot": "eng/submodules/terrafx.interop.windows/sources/Interop/Windows",
-      "InputTestRoot": "eng/submodules/terrafx.interop.windows/tests/Interop/Windows",
-      "OutputSourceRoot": "sources/Windows",
-      "OutputTestRoot": "tests/Windows",
-      "DefaultLicenseHeader": "eng/silktouch/header.txt",
       "Solution": "Silk.NET.sln",
+      "SourceProject": "TODO.csproj",
+      "TestProject": "tests/TODO.csproj",
+      "DefaultLicenseHeader": "eng/silktouch/header.txt",
       "Mods": [
         "AddIncludes",
+        "ClangScraper",
         "ChangeNamespace"
       ],
+      "ClangScraper": {
+        "ClangSharpResponseFiles": [
+          "eng/submodules/terrafx.interop.windows/generation/**/generate.rsp"
+        ],
+        "ManualOverrides": {
+          "sources/Windows/um/icm/Windows.gen.cs": "eng/submodules/terrafx.interop.windows/sources/Interop/Windows/Windows/um/icm/Windows.cs",
+          "sources/Gdiplus/um/gdiplustypes/GpRect.gen.cs": "eng/submodules/terrafx.interop.windows/sources/Interop/Windows/Gdiplus/um/gdiplustypes/GpRect.cs",
+          "sources/Gdiplus/um/gdiplustypes/GpRectF.gen.cs": "eng/submodules/terrafx.interop.windows/sources/Interop/Windows/Gdiplus/um/gdiplustypes/GpRectF.cs",
+          "sources/Gdiplus/um/gdiplustypes/GpPathData.gen.cs": "eng/submodules/terrafx.interop.windows/sources/Interop/Windows/Gdiplus/um/gdiplustypes/GpPathData.cs"
+        },
+        "InputSourceRoot": "eng/submodules/terrafx.interop.windows/sources/Interop/Windows",
+        "InputTestRoot": "eng/submodules/terrafx.interop.windows/tests/Interop/Windows"
+      },
       "ChangeNamespace": {
         "Mappings": {
           "TerraFX.Interop.(.*)": "Silk.NET.$1"
@@ -30,23 +33,26 @@
       ]
     },
     "SDL": {
-      "ClangSharpResponseFiles": [
-        "eng/silktouch/sdl/**/generate.rsp"
-      ],
-      "InputSourceRoot": "sources/SDL",
-      "InputTestRoot": "tests/SDL",
-      "OutputSourceRoot": "sources/SDL",
-      "OutputTestRoot": "tests/SDL",
+      "SourceProject": "sources/SDL/SDL/Silk.NET.SDL.csproj",
+      "TestProject": "tests/SDL/SDL/Silk.NET.SDL.UnitTests.csproj",
       "Solution": "Silk.NET.sln",
       "DefaultLicenseHeader": "eng/silktouch/header.txt",
       "Mods": [
         "AddIncludes",
+        "ClangScraper",
         "ExtractNestedTyping",
         "TransformHandles",
         "TransformFunctions",
         "PrettifyNames",
         "AddVTables"
       ],
+      "ClangScraper": {
+        "ClangSharpResponseFiles": [
+          "eng/silktouch/sdl/**/generate.rsp"
+        ],
+        "InputSourceRoot": "sources/SDL",
+        "InputTestRoot": "tests/SDL"
+      },
       "TransformHandles": {
         "AssumeMissingTypesOpaque": true,
         "UseDSL": true
@@ -58,17 +64,12 @@
       }
     },
     "OpenGL": {
-      "ClangSharpResponseFiles": [
-        "eng/silktouch/opengl/**/generate.rsp"
-      ],
-      "InputSourceRoot": "sources/OpenGL",
-      "InputTestRoot": "tests/OpenGL",
-      "OutputSourceRoot": "sources/OpenGL",
-      "OutputTestRoot": "tests/OpenGL",
+      "SourceProject": "sources/OpenGL/OpenGL/Silk.NET.OpenGL.csproj",
       "Solution": "Silk.NET.sln",
       "DefaultLicenseHeader": "eng/silktouch/header.txt",
       "Mods": [
         "AddIncludes",
+        "ClangScraper",
         "AddApiProfiles",
         "MixKhronosData",
         "AddOpaqueStructs",
@@ -76,6 +77,13 @@
         "PrettifyNames",
         "AddVTables"
       ],
+      "ClangScraper": {
+        "ClangSharpResponseFiles": [
+          "eng/silktouch/opengl/**/generate.rsp"
+        ],
+        "InputSourceRoot": "sources/OpenGL",
+        "InputTestRoot": "tests/OpenGL"
+      },
       "AddApiProfiles": {
         "Profiles": [
           {

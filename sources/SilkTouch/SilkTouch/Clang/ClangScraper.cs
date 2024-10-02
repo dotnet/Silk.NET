@@ -34,6 +34,8 @@ namespace Silk.NET.SilkTouch.Clang;
 /// </param>
 /// <param name="config">The configuration to use.</param>
 /// <param name="logger">The logger to use.</param>
+/// <param name="inputResolver">The input resolver to use.</param>
+/// <param name="cacheProvider">The cache provider into which ClangSharp outputs are cached.</param>
 [ModConfiguration<Configuration>]
 public sealed class ClangScraper(
     ResponseFileHandler rspHandler,
@@ -302,11 +304,19 @@ public sealed class ClangScraper(
                                 rsp.GeneratorConfiguration.TestOutputLocation
                             );
 
+                            static MemoryStream Reopen(MemoryStream ms) =>
+                                ms.TryGetBuffer(out var buff) && buff.Array is not null
+                                    ? new MemoryStream(buff.Array, buff.Offset, buff.Count)
+                                    : new MemoryStream(buff.ToArray());
+
                             // Parse and optionally cache the files for the compilation.
                             foreach (
                                 var (isTest, (path, stream)) in sources
                                     .Select(x => (false, x))
                                     .Concat(tests.Select(x => (true, x)))
+                                    .Select(x =>
+                                        (x.Item1, (x.x.Key, Reopen((MemoryStream)x.x.Value)))
+                                    )
                             )
                             {
                                 // Make the path relative as above.

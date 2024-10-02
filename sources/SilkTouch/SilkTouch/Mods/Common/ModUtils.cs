@@ -287,7 +287,7 @@ public static class ModUtils
         do
         {
             yield return sym;
-        } while ((sym = sym.ContainingSymbol) is not null);
+        } while ((sym = sym!.ContainingSymbol!) is not null);
     }
 
     private static IEnumerable<ISymbol> Members(this ISymbol sym) =>

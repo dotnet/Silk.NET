@@ -14,6 +14,7 @@ namespace Silk.NET.SilkTouch.Mods;
 /// A mod that will add standard include directories and any other user-provided include paths to a response file that
 /// doesn't already have them (i.e. that doesn't depend on the exact location/version of said standard includes)
 /// </summary>
+/// <param name="scraper">The ClangSharp scraper to add the inclusions to.</param>
 /// <param name="stdResolver">The standard include resolver.</param>
 /// <param name="inputResolver">The user path input resolver.</param>
 /// <param name="options">The mod configuration options snapshot.</param>

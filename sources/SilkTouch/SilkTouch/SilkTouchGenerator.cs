@@ -54,7 +54,7 @@ public class SilkTouchGenerator(
     {
         var sw = Stopwatch.StartNew();
         var job =
-            jobConfig.GetRequiredSection($"Jobs:{key}").Get<SilkTouchConfiguration>()
+            jobConfig.Get<SilkTouchConfiguration>()
             ?? throw new InvalidOperationException("Configuration was null");
 
         // Resolve any relative paths in the job configuration.

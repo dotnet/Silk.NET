@@ -23,13 +23,18 @@ public class MSBuildModContextProvider(ILogger<MSBuildModContextProvider> logger
         IProgress<ProjectLoadProgress>,
         Microsoft.Build.Framework.ILogger
 {
-    static MSBuildModContextProvider() => MSBuildLocator.RegisterDefaults();
-
     private MSBuildWorkspace _workspace = MSBuildWorkspace.Create();
     private readonly ConcurrentDictionary<string, Task<Solution>> _solutions = [];
 
     internal Task<Solution> OpenSolutionAsync(string file) =>
-        _solutions.GetOrAdd(file, x => _workspace.OpenSolutionAsync(x, this, this));
+        _solutions.GetOrAdd(
+            file,
+            async x =>
+            {
+                logger.LogInformation("Opening solution at {}...", x);
+                return await _workspace.OpenSolutionAsync(x, this, this);
+            }
+        );
 
     /// <inheritdoc />
     public async Task<IModContext> GetContextAsync(
