@@ -54,7 +54,7 @@ public class TransformFunctions(FunctionTransformer ft) : ModCSharpSyntaxRewrite
     {
         _jobKey.Value = ctx.JobKey;
         var proj = ctx.SourceProject;
-        foreach (var docId in proj?.DocumentIds ?? [])
+        foreach (var docId in ctx.SourceProject?.DocumentIds ?? [])
         {
             var doc =
                 proj!.GetDocument(docId) ?? throw new InvalidOperationException("Document missing");
@@ -63,6 +63,8 @@ public class TransformFunctions(FunctionTransformer ft) : ModCSharpSyntaxRewrite
                 proj = doc.WithSyntaxRoot(Visit(root)).Project;
             }
         }
+
+        ctx.SourceProject = proj;
     }
 
     /// <inheritdoc />

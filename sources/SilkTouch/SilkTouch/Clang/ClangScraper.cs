@@ -322,7 +322,7 @@ public sealed class ClangScraper(
                                 // Make the path relative as above.
                                 var relativeKey = Path.Combine(
                                         isTest ? testRootRel : srcRootRel,
-                                        path
+                                        Path.GetRelativePath(isTest ? testRoot : srcRoot, path)
                                     )
                                     .Replace('\\', '/')
                                     .TrimEnd('/');

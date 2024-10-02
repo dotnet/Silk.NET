@@ -57,7 +57,53 @@ public partial class ExtractNestedTyping : Mod
         // Second pass to modify existing files as per our discovery.
         rewriter.FunctionPointerTypes = fnPtrWalker.GetFunctionPointerTypes();
         var proj = ctx.SourceProject;
-        foreach (var docId in proj?.DocumentIds ?? [])
+        foreach (
+            var (structDecl, delegateDecl, fileDirs, namespaces) in rewriter
+                .FunctionPointerTypes
+                .Values
+        )
+        {
+            var ns = NameUtils.FindCommonPrefix(namespaces, true, false, true);
+            var dir = NameUtils.FindCommonPrefix(fileDirs, true, false, true).TrimEnd('/');
+            proj = proj
+                ?.AddDocument(
+                    $"{structDecl.Identifier}.gen.cs",
+                    CompilationUnit()
+                        .WithMembers(
+                            ns is { Length: > 0 }
+                                ? SingletonList<MemberDeclarationSyntax>(
+                                    FileScopedNamespaceDeclaration(
+                                            ModUtils.NamespaceIntoIdentifierName(ns.TrimEnd('.'))
+                                        )
+                                        .WithMembers(
+                                            SingletonList<MemberDeclarationSyntax>(structDecl)
+                                        )
+                                )
+                                : SingletonList<MemberDeclarationSyntax>(structDecl)
+                        ),
+                    filePath: proj.FullPath($"{dir}/{structDecl.Identifier}.gen.cs")
+                )
+                .Project.AddDocument(
+                    $"{delegateDecl.Identifier}.gen.cs",
+                    CompilationUnit()
+                        .WithMembers(
+                            ns is { Length: > 0 }
+                                ? SingletonList<MemberDeclarationSyntax>(
+                                    FileScopedNamespaceDeclaration(
+                                            ModUtils.NamespaceIntoIdentifierName(ns.TrimEnd('.'))
+                                        )
+                                        .WithMembers(
+                                            SingletonList<MemberDeclarationSyntax>(delegateDecl)
+                                        )
+                                )
+                                : SingletonList<MemberDeclarationSyntax>(delegateDecl)
+                        ),
+                    filePath: proj.FullPath($"{dir}/{delegateDecl.Identifier}.gen.cs")
+                )
+                .Project;
+        }
+
+        foreach (var docId in ctx.SourceProject?.DocumentIds ?? [])
         {
             var doc =
                 proj!.GetDocument(docId) ?? throw new InvalidOperationException("Document missing");
@@ -66,15 +112,12 @@ public partial class ExtractNestedTyping : Mod
             {
                 continue;
             }
-
             proj = doc.WithSyntaxRoot(
-                rewriter.Visit(await doc.GetSyntaxRootAsync(ct))
-                    ?? throw new InvalidOperationException("Visit returned null.")
+                rewriter.Visit(node)
+                    ?? throw new InvalidOperationException("Rewriter returned null")
             ).Project;
             foreach (var newStruct in rewriter.ExtractedNestedStructs)
             {
-                var newFname =
-                    $"{fname.AsSpan()[..fname.LastIndexOf('/')]}/{newStruct.Identifier}.gen.cs";
                 proj = proj.AddDocument(
                     $"{newStruct.Identifier}.gen.cs",
                     CompilationUnit()
@@ -90,73 +133,14 @@ public partial class ExtractNestedTyping : Mod
                                 )
                                 : SingletonList<MemberDeclarationSyntax>(newStruct)
                         ),
-                    filePath: proj.FullPath(newFname)
+                    filePath: proj.FullPath(
+                        $"{fname.AsSpan()[..fname.LastIndexOf('/')]}/{newStruct.Identifier}.gen.cs"
+                    )
                 ).Project;
             }
 
             rewriter.Namespace = null;
             rewriter.ExtractedNestedStructs.Clear();
-        }
-
-        foreach (
-            var (structDecl, delegateDecl, fileDirs, namespaces) in rewriter
-                .FunctionPointerTypes
-                .Values
-        )
-        {
-            // Local function as async functions can't declare span variables.
-            GenerateNewTrees();
-            continue;
-            void GenerateNewTrees()
-            {
-                var ns = NameUtils.FindCommonPrefix(namespaces, true, false, true).AsSpan();
-                var dir = NameUtils
-                    .FindCommonPrefix(fileDirs, true, false, true)
-                    .AsSpan()
-                    .TrimEnd('/');
-                var structFname = $"{dir}/{structDecl.Identifier}.gen.cs";
-                var delegateFname = $"{dir}/{delegateDecl.Identifier}.gen.cs";
-                proj = proj
-                    ?.AddDocument(
-                        $"{structDecl.Identifier}.gen.cs",
-                        CompilationUnit()
-                            .WithMembers(
-                                ns is { Length: > 0 }
-                                    ? SingletonList<MemberDeclarationSyntax>(
-                                        FileScopedNamespaceDeclaration(
-                                                ModUtils.NamespaceIntoIdentifierName(
-                                                    ns.TrimEnd('.')
-                                                )
-                                            )
-                                            .WithMembers(
-                                                SingletonList<MemberDeclarationSyntax>(structDecl)
-                                            )
-                                    )
-                                    : SingletonList<MemberDeclarationSyntax>(structDecl)
-                            ),
-                        filePath: proj.FullPath(structFname)
-                    )
-                    .Project.AddDocument(
-                        $"{delegateDecl.Identifier}.gen.cs",
-                        CompilationUnit()
-                            .WithMembers(
-                                ns is { Length: > 0 }
-                                    ? SingletonList<MemberDeclarationSyntax>(
-                                        FileScopedNamespaceDeclaration(
-                                                ModUtils.NamespaceIntoIdentifierName(
-                                                    ns.TrimEnd('.')
-                                                )
-                                            )
-                                            .WithMembers(
-                                                SingletonList<MemberDeclarationSyntax>(delegateDecl)
-                                            )
-                                    )
-                                    : SingletonList<MemberDeclarationSyntax>(delegateDecl)
-                            ),
-                        filePath: proj.FullPath(delegateFname)
-                    )
-                    .Project;
-            }
         }
 
         ctx.SourceProject = proj;

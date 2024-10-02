@@ -1,0 +1,134 @@
+// Licensed to the .NET Foundation under one or more agreements.
+// The .NET Foundation licenses this file to you under the MIT license.
+// Ported from SDL.h and corresponding dependencies of SDL3.
+// Original source is Copyright (C) 1997-2024 Sam Lantinga. Licensed under the zlib license.
+using System;
+using System.Runtime.CompilerServices;
+using System.Runtime.InteropServices;
+using static Silk.NET.SDL.ArrayOrder;
+using static Silk.NET.SDL.BitmapOrder;
+using static Silk.NET.SDL.ChromaLocation;
+using static Silk.NET.SDL.ColorPrimaries;
+using static Silk.NET.SDL.ColorRange;
+using static Silk.NET.SDL.ColorType;
+using static Silk.NET.SDL.MatrixCoefficients;
+using static Silk.NET.SDL.PackedLayout;
+using static Silk.NET.SDL.PackedOrder;
+using static Silk.NET.SDL.PenAxis;
+using static Silk.NET.SDL.PixelType;
+using static Silk.NET.SDL.Scancode;
+using static Silk.NET.SDL.TransferCharacteristics;
+
+namespace Silk.NET.SDL;
+
+[NativeTypeName("unsigned int")]
+public enum EventType : uint
+{
+    First = 0,
+    Quit = 0x100,
+    Terminating,
+    LowMemory,
+    WillEnterBackground,
+    DidEnterBackground,
+    WillEnterForeground,
+    DidEnterForeground,
+    LocaleChanged,
+    SystemThemeChanged,
+    DisplayOrientation = 0x151,
+    DisplayAdded,
+    DisplayRemoved,
+    DisplayMoved,
+    DisplayContentScaleChanged,
+    DisplayHdrStateChanged,
+    DisplayFirst = DisplayOrientation,
+    DisplayLast = DisplayHdrStateChanged,
+    WindowShown = 0x202,
+    WindowHidden,
+    WindowExposed,
+    WindowMoved,
+    WindowResized,
+    WindowPixelSizeChanged,
+    WindowMinimized,
+    WindowMaximized,
+    WindowRestored,
+    WindowMouseEnter,
+    WindowMouseLeave,
+    WindowFocusGained,
+    WindowFocusLost,
+    WindowCloseRequested,
+    WindowTakeFocus,
+    WindowHitTest,
+    WindowIccprofChanged,
+    WindowDisplayChanged,
+    WindowDisplayScaleChanged,
+    WindowOccluded,
+    WindowEnterFullscreen,
+    WindowLeaveFullscreen,
+    WindowDestroyed,
+    WindowPenEnter,
+    WindowPenLeave,
+    WindowFirst = WindowShown,
+    WindowLast = WindowPenLeave,
+    KeyDown = 0x300,
+    KeyUp,
+    TextEditing,
+    TextInput,
+    KeymapChanged,
+    KeyboardAdded,
+    KeyboardRemoved,
+    MouseMotion = 0x400,
+    MouseButtonDown,
+    MouseButtonUp,
+    MouseWheel,
+    MouseAdded,
+    MouseRemoved,
+    JoystickAxisMotion = 0x600,
+    JoystickBallMotion,
+    JoystickHatMotion,
+    JoystickButtonDown,
+    JoystickButtonUp,
+    JoystickAdded,
+    JoystickRemoved,
+    JoystickBatteryUpdated,
+    JoystickUpdateComplete,
+    GamepadAxisMotion = 0x650,
+    GamepadButtonDown,
+    GamepadButtonUp,
+    GamepadAdded,
+    GamepadRemoved,
+    GamepadRemapped,
+    GamepadTouchpadDown,
+    GamepadTouchpadMotion,
+    GamepadTouchpadUp,
+    GamepadSensorUpdate,
+    GamepadUpdateComplete,
+    GamepadSteamHandleUpdated,
+    FingerDown = 0x700,
+    FingerUp,
+    FingerMotion,
+    ClipboardUpdate = 0x900,
+    DropFile = 0x1000,
+    DropText,
+    DropBegin,
+    DropComplete,
+    DropPosition,
+    AudioDeviceAdded = 0x1100,
+    AudioDeviceRemoved,
+    AudioDeviceFormatChanged,
+    SensorUpdate = 0x1200,
+    PenDown = 0x1300,
+    PenUp,
+    PenMotion,
+    PenButtonDown,
+    PenButtonUp,
+    CameraDeviceAdded = 0x1400,
+    CameraDeviceRemoved,
+    CameraDeviceApproved,
+    CameraDeviceDenied,
+    RenderTargetsReset = 0x2000,
+    RenderDeviceReset,
+    PollSentinel = 0x7F00,
+    User = 0x8000,
+    Last = 0xFFFF,
+    EnumPadding = 0x7FFFFFFF,
+}

@@ -7,10 +7,10 @@ using NUnit.Framework;
 
 namespace Silk.NET.SDL.UnitTests;
 
-/// <summary>Provides validation of the <see cref = "DateTime"/> struct.</summary>
+/// <summary>Provides validation of the <see cref = "System.DateTime"/> struct.</summary>
 public static unsafe partial class SDL_DateTimeTests
 {
-    /// <summary>Validates that the <see cref = "DateTime"/> struct is blittable.</summary>
+    /// <summary>Validates that the <see cref = "System.DateTime"/> struct is blittable.</summary>
 
     [Test]
     public static void IsBlittableTest()
@@ -18,7 +18,7 @@ public static unsafe partial class SDL_DateTimeTests
         Assert.That(Marshal.SizeOf<System.DateTime>(), Is.EqualTo(sizeof(System.DateTime)));
     }
 
-    /// <summary>Validates that the <see cref = "DateTime"/> struct has the right <see cref = "LayoutKind"/>.</summary>
+    /// <summary>Validates that the <see cref = "System.DateTime"/> struct has the right <see cref = "LayoutKind"/>.</summary>
 
     [Test]
     public static void IsLayoutSequentialTest()
@@ -26,7 +26,7 @@ public static unsafe partial class SDL_DateTimeTests
         Assert.That(typeof(System.DateTime).IsLayoutSequential, Is.True);
     }
 
-    /// <summary>Validates that the <see cref = "DateTime"/> struct has the correct size.</summary>
+    /// <summary>Validates that the <see cref = "System.DateTime"/> struct has the correct size.</summary>
 
     [Test]
     public static void SizeOfTest()
