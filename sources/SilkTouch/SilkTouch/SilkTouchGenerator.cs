@@ -66,7 +66,7 @@ public class SilkTouchGenerator(
             job.Mods?.Select(x => Mods.First(y => y.GetType().Name == x)).ToArray()
             ?? Array.Empty<IMod>();
 
-        await using var ctx = await modContextProvider.GetContextAsync(key, jobConfig, ct);
+        var ctx = await modContextProvider.GetContextAsync(key, jobConfig, ct);
         foreach (var jobMod in jobMods)
         {
             logger.LogDebug("Using mod {0} for {1}", jobMod.GetType().Name, key);
@@ -78,6 +78,9 @@ public class SilkTouchGenerator(
             logger.LogInformation("Executing {} for {}...", jobMod.GetType().Name, key);
             await jobMod.ExecuteAsync(ctx, ct);
         }
+
+        // Manually dispose so that we don't do this when generation fails (await using is too clever).
+        await ctx.DisposeAsync();
 
         // Output the generated bindings
         logger.LogInformation(

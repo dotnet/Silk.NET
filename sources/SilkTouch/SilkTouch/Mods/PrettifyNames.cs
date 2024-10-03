@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.CommandLine;
+using System.Diagnostics;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
@@ -244,6 +245,32 @@ public class PrettifyNames(
             Project = ctx.SourceProject,
             Options = _typeRenameOptions
         };
+
+        // Before we rename, we should ensure name dependent things are correct e.g. DllImport explicitly specify their
+        // EntryPoint
+        logger.LogDebug("Fixing up attributes for {} to make them safe for rename...", ctx.JobKey);
+        var rewriter = new Rewriter();
+        foreach (var docId in renamer.Project.DocumentIds)
+        {
+            var doc = renamer.Project.GetDocument(docId);
+            if (doc is null)
+            {
+                continue;
+            }
+
+            var root = rewriter.Visit(await doc.GetSyntaxRootAsync(ct));
+            if (root is not null)
+            {
+                renamer.Project = doc.WithSyntaxRoot(root).Project;
+            }
+        }
+
+        // Rename all the types.
+        logger.LogInformation("Applying renames for {}, this may take a while...", ctx.JobKey);
+        var toComplete = types.Sum(x =>
+            1 + (x.Value.Functions?.Count ?? 0) + (x.Value.NonFunctions?.Count ?? 0)
+        );
+        var nCompleted = 0;
         foreach (var (typeName, (newTypeName, nonFunctions, functions, isEnum)) in types)
         {
             var comp = renamer.Compilation ?? await renamer.Project.GetCompilationAsync(ct);
@@ -253,9 +280,11 @@ public class PrettifyNames(
             }
 
             logger.LogDebug(
-                "Renaming type {} to {}... ({} function rename(s) and {} other rename(s) therein)",
+                "Renaming type {} to {}... ({}/{}, {} function rename(s) and {} other rename(s) therein)",
                 typeName,
                 newTypeName,
+                nCompleted,
+                toComplete,
                 functions?.Count ?? 0,
                 nonFunctions?.Count ?? 0
             );
@@ -267,7 +296,7 @@ public class PrettifyNames(
                     .OfType<ITypeSymbol>()
             )
             {
-                await RenameTypeAsync(
+                nCompleted = await RenameTypeAsync(
                     renamer,
                     (ITypeSymbol)comp.GetNewSymbol(typeSymbol),
                     typeName,
@@ -275,6 +304,8 @@ public class PrettifyNames(
                     functions,
                     nonFunctions,
                     nonFunctionConflicts,
+                    toComplete,
+                    nCompleted,
                     ct
                 );
                 comp =
@@ -283,6 +314,26 @@ public class PrettifyNames(
                         "Failed to obtain compilation for new project!"
                     );
             }
+        }
+
+        // Change the filenames as Roslyn can't do this apparently (probably the .gen.cs)
+        foreach (var docId in renamer.Project.DocumentIds)
+        {
+            var doc = renamer.Project.GetDocument(docId);
+            if (
+                doc is not { FilePath: not null, Name: not null }
+                || types
+                    .OrderByDescending(x => x.Key.Length)
+                    .FirstOrDefault(x => doc.FilePath.Contains(x.Key) || doc.Name.Contains(x.Key))
+                    is not { Key: { } oldName, Value.NewName: { } newName }
+            )
+            {
+                continue;
+            }
+
+            renamer.Project = doc.WithFilePath(doc.FilePath.Replace(oldName, newName))
+                .WithName(doc.Name.Replace(oldName, newName))
+                .Project;
         }
 
         ctx.SourceProject = renamer.Project;
@@ -303,7 +354,7 @@ public class PrettifyNames(
             RenameFile: false
         );
 
-    private async Task RenameTypeAsync(
+    private async Task<int> RenameTypeAsync(
         RenameHelper renamer,
         ITypeSymbol typeSymbol,
         string typeName,
@@ -311,6 +362,8 @@ public class PrettifyNames(
         Dictionary<string, string>? functions,
         Dictionary<string, string>? nonFunctions,
         HashSet<string>? nonFunctionConflicts,
+        int toComplete,
+        int nCompleted,
         CancellationToken ct = default
     )
     {
@@ -339,15 +392,19 @@ public class PrettifyNames(
                 typeSymbol = (ITypeSymbol)
                     (await renamer.RenameSymbolAsync(toRename, newName, ct)).ContainingSymbol;
                 logger.LogTrace(
-                    "Processed {}.{} = {}.{} (function = {})",
+                    "Processed {}.{} = {}.{} ({}/{}, function = {})",
                     typeName,
                     oldName,
                     newTypeName,
                     newName,
+                    ++nCompleted,
+                    toComplete,
                     isFunction
                 );
             }
         }
+
+        return ++nCompleted;
     }
 
     private void Trim(
@@ -936,13 +993,6 @@ public class PrettifyNames(
             Dictionary<string, string>? Functions,
             string? NewName
         )? _typeInProgress;
-        private FieldDeclarationSyntax? _memberInProgress;
-        private bool _memberAccess;
-        private bool _accessing;
-        private bool _member;
-        private string? _memberAccessType;
-        private readonly List<MemberDeclarationSyntax> _constants = new();
-        private readonly Dictionary<string, string> _scope = new();
 
         public override SyntaxNode? VisitClassDeclaration(ClassDeclarationSyntax node)
         {
@@ -957,53 +1007,7 @@ public class PrettifyNames(
             _typeInProgress = (node, info.NonFunctions, info.Functions, info.NewName);
             var ret = (ClassDeclarationSyntax)base.VisitClassDeclaration(node)!;
             _typeInProgress = null;
-            var memberIdentifiers = ret.Members.SelectMany(x => x.MemberIdentifiers()).ToHashSet();
-            var constantsMayConflict = _constants
-                .SelectMany(x => x.MemberIdentifiers())
-                .Any(y => memberIdentifiers.Contains(y));
-            ret = ret.WithIdentifier(Identifier(info.NewName))
-                .WithMembers(
-                    List(
-                        // Constants can be quite prone to conflicting with their functions e.g. consider
-                        // GL_PROGRAM_STRING_ARB and glProgramStringARB, as such we relegate the ones that don't
-                        // eventually end up in an enum to be in a subclass instead
-                        (
-                            constantsMayConflict
-                                ? SingletonList<MemberDeclarationSyntax>(
-                                    ClassDeclaration("Constants")
-                                        .WithModifiers(
-                                            TokenList(
-                                                Token(SyntaxKind.PublicKeyword),
-                                                Token(SyntaxKind.StaticKeyword),
-                                                Token(SyntaxKind.PartialKeyword)
-                                            )
-                                        )
-                                        .WithMembers(List<MemberDeclarationSyntax>(_constants))
-                                )
-                                : _constants.OfType<MemberDeclarationSyntax>()
-                        ).Concat(ret.Members)
-                    )
-                );
-            _constants.Clear();
             return ret;
-        }
-
-        public override SyntaxNode? VisitParameter(ParameterSyntax node)
-        {
-            if (
-                node
-                    .Type?.DescendantTokens()
-                    .Where(x => x.IsKind(SyntaxKind.IdentifierToken))
-                    .Select((x, i) => (x.ToString(), i))
-                    .LastOrDefault()
-                    is
-                    ({ } tid, 0)
-                && Types.ContainsKey(tid)
-            )
-            {
-                _scope[node.Identifier.ToString()] = tid;
-            }
-            return base.VisitParameter(node);
         }
 
         public override SyntaxNode? VisitMethodDeclaration(MethodDeclarationSyntax node)
@@ -1011,61 +1015,13 @@ public class PrettifyNames(
             var ret = (MethodDeclarationSyntax)base.VisitMethodDeclaration(node)!;
             if (
                 _typeInProgress?.Functions is not null
-                && _typeInProgress.Value.Functions.TryGetValue(
-                    node.Identifier.ToString(),
-                    out var newName
-                )
+                && _typeInProgress.Value.Functions.ContainsKey(node.Identifier.ToString())
             )
             {
-                ret = ret.WithIdentifierForImport(Identifier(newName));
+                ret = ret.WithRenameSafeAttributeLists();
             }
 
-            _scope.Clear();
             return ret;
-        }
-
-        public override SyntaxNode? VisitConstructorDeclaration(
-            ConstructorDeclarationSyntax node
-        ) =>
-            (base.VisitConstructorDeclaration(node) as ConstructorDeclarationSyntax ?? node)
-                is var v
-            && _typeInProgress is { NewName: { Length: > 0 } newName }
-                ? v.WithIdentifier(Identifier(newName))
-                : v;
-
-        public override SyntaxNode? VisitEnumDeclaration(EnumDeclarationSyntax node)
-        {
-            if (
-                _typeInProgress is not null
-                || !Types.TryGetValue(node.Identifier.ToString(), out var info)
-            )
-            {
-                return base.VisitEnumDeclaration(node);
-            }
-
-            _typeInProgress = (node, info.NonFunctions, info.Functions, info.NewName);
-            var ret = base.VisitEnumDeclaration(node);
-            _typeInProgress = null;
-            return ((EnumDeclarationSyntax)ret!).WithIdentifier(Identifier(info.NewName));
-        }
-
-        public override SyntaxNode? VisitEnumMemberDeclaration(EnumMemberDeclarationSyntax node)
-        {
-            if (
-                _typeInProgress is null
-                || !(
-                    _typeInProgress.Value.NonFunctions?.TryGetValue(
-                        node.Identifier.ToString(),
-                        out var newName
-                    ) ?? false
-                )
-            )
-            {
-                return node;
-            }
-            return (
-                base.VisitEnumMemberDeclaration(node) as EnumMemberDeclarationSyntax ?? node
-            ).WithIdentifier(Identifier(newName));
         }
 
         public override SyntaxNode? VisitStructDeclaration(StructDeclarationSyntax node)
@@ -1079,219 +1035,9 @@ public class PrettifyNames(
             }
 
             _typeInProgress = (node, info.NonFunctions, info.Functions, info.NewName);
-            var ret = ((StructDeclarationSyntax)base.VisitStructDeclaration(node)!).WithIdentifier(
-                Identifier(info.NewName)
-            );
+            var ret = base.VisitStructDeclaration(node)!;
             _typeInProgress = null;
             return ret;
-        }
-
-        public override SyntaxNode? VisitDelegateDeclaration(DelegateDeclarationSyntax node)
-        {
-            if (
-                !(
-                    _typeInProgress?.NonFunctions?.TryGetValue(
-                        node.Identifier.ToString(),
-                        out var newName
-                    ) ?? false
-                )
-                && (
-                    newName = Types.TryGetValue(node.Identifier.ToString(), out var info)
-                        ? info.NewName
-                        : null
-                )
-                    is null
-            )
-            {
-                return base.VisitDelegateDeclaration(node);
-            }
-
-            return ((DelegateDeclarationSyntax)base.VisitDelegateDeclaration(node)!).WithIdentifier(
-                Identifier(newName)
-            );
-        }
-
-        public override SyntaxNode? VisitFieldDeclaration(FieldDeclarationSyntax node)
-        {
-            if (_typeInProgress is not null && _memberInProgress is null)
-            {
-                _memberInProgress = node;
-            }
-            var ret = base.VisitFieldDeclaration(node);
-            _memberInProgress = null;
-            if (
-                !node.Modifiers.Any(SyntaxKind.ConstKeyword)
-                || _typeInProgress?.Type is not ClassDeclarationSyntax
-            )
-            {
-                return ret;
-            }
-
-            _constants.Add((FieldDeclarationSyntax)ret!);
-            return null;
-        }
-
-        public override SyntaxNode? VisitPropertyDeclaration(PropertyDeclarationSyntax node)
-        {
-            if (
-                _typeInProgress?.NonFunctions is null
-                || !_typeInProgress.Value.NonFunctions.TryGetValue(
-                    node.Identifier.ToString(),
-                    out var newName
-                )
-            )
-            {
-                return base.VisitPropertyDeclaration(node);
-            }
-            return (
-                base.VisitPropertyDeclaration(node) as PropertyDeclarationSyntax ?? node
-            ).WithIdentifier(Identifier(newName));
-        }
-
-        public override SyntaxNode? VisitVariableDeclarator(VariableDeclaratorSyntax node)
-        {
-            if (
-                _typeInProgress?.NonFunctions is not null
-                && _memberInProgress == node.Parent?.Parent
-                && _typeInProgress.Value.NonFunctions.TryGetValue(
-                    node.Identifier.ToString(),
-                    out var newName
-                )
-            )
-            {
-                return (
-                    base.VisitVariableDeclarator(node) as VariableDeclaratorSyntax ?? node
-                ).WithIdentifier(Identifier(newName));
-            }
-
-            return base.VisitVariableDeclarator(node);
-        }
-
-        public override SyntaxNode? VisitMemberAccessExpression(MemberAccessExpressionSyntax node)
-        {
-            _memberAccess = true;
-            _accessing = true;
-            Visit(node.Expression);
-            _accessing = false;
-            if (_memberAccessType is null || !Types.ContainsKey(_memberAccessType))
-            {
-                if (
-                    _memberAccessType is not null
-                    && _scope.TryGetValue(_memberAccessType, out var value)
-                )
-                {
-                    _memberAccessType = value;
-                }
-                else
-                {
-                    _memberAccess = false;
-                    return base.VisitMemberAccessExpression(node);
-                }
-            }
-
-            var accessing = (ExpressionSyntax)Visit(node.Expression);
-            _member = true;
-            var member = (SimpleNameSyntax)Visit(node.Name);
-            _member = false;
-            var ret = node.Update(accessing, VisitToken(node.OperatorToken), member);
-            _memberAccess = false;
-            _memberAccessType = null;
-            return ret;
-        }
-
-        public override SyntaxNode? VisitIdentifierName(IdentifierNameSyntax node)
-        {
-            if (_memberAccess)
-            {
-                if (_accessing) // getting the last identifier in the thing we're accessing
-                {
-                    _memberAccessType = node.Identifier.ToString();
-                    return node;
-                }
-
-                if (_member) // change name of the member we're accessing
-                {
-                    if (!Types.TryGetValue(_memberAccessType!, out var info))
-                    {
-                        return base.VisitIdentifierName(node);
-                    }
-
-                    if (
-                        info.NonFunctions?.TryGetValue(node.Identifier.ToString(), out var cName)
-                        ?? false
-                    )
-                    {
-                        return IdentifierName(cName);
-                    }
-
-                    if (
-                        info.Functions?.TryGetValue(node.Identifier.ToString(), out var fName)
-                        ?? false
-                    )
-                    {
-                        return IdentifierName(fName);
-                    }
-                }
-                else // changing name of the thing we're accessing
-                {
-                    var str = node.Identifier.ToString();
-                    if (str == _memberAccessType)
-                    {
-                        return IdentifierName(Types[str].NewName);
-                    }
-                }
-            }
-            else if (
-                _typeInProgress?.Functions is not null
-                && _typeInProgress.Value.Functions.TryGetValue(
-                    node.Identifier.ToString(),
-                    out var fName
-                )
-            )
-            {
-                return IdentifierName(fName);
-            }
-            else if (
-                _typeInProgress?.NonFunctions is not null
-                && _typeInProgress.Value.NonFunctions.TryGetValue(
-                    node.Identifier.ToString(),
-                    out var cName
-                )
-            )
-            {
-                return IdentifierName(cName);
-            }
-            else if (
-                // For constants, C has no enum namespacing which means that the constant referenced may be
-                // referenced in another enum.
-                Types
-                    .Select(x =>
-                        x.Value.IsEnum
-                        && (
-                            x.Value.NonFunctions?.TryGetValue(
-                                node.Identifier.ToString(),
-                                out var nn
-                            ) ?? false
-                        )
-                            ? (x.Value.NewName, nn)
-                            : default
-                    )
-                    .FirstOrDefault(x => x is (not null, not null)) is
-
-                ({ } type, { } newName)
-            )
-            {
-                return MemberAccessExpression(
-                    SyntaxKind.SimpleMemberAccessExpression,
-                    IdentifierName(type),
-                    IdentifierName(newName)
-                );
-            }
-            else if (Types.TryGetValue(node.Identifier.ToString(), out var info))
-            {
-                return IdentifierName(info.NewName);
-            }
-            return base.VisitIdentifierName(node);
         }
     }
 }

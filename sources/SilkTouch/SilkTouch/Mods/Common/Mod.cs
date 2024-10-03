@@ -1,10 +1,8 @@
 ﻿using System.Collections.Generic;
-using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 using Microsoft.CodeAnalysis;
-using Silk.NET.SilkTouch.Clang;
 using Silk.NET.SilkTouch.Naming;
 
 namespace Silk.NET.SilkTouch.Mods;
@@ -52,7 +50,7 @@ public abstract class Mod : IMod
             && await ctx.SourceProject.GetCompilationAsync(ct) is { } comp
         )
         {
-            CommonNamespace = CommonNamespaceVisitor.CommonNamespaceFrom(comp.GlobalNamespace);
+            CommonNamespace = CommonNamespaceVisitor.CommonNamespaceFrom(comp.SourceModule);
         }
     }
 
@@ -60,16 +58,11 @@ public abstract class Mod : IMod
     {
         private List<INamespaceSymbol> _namespacesWithTypes = [];
 
-        public override void VisitNamespace(INamespaceSymbol symbol)
+        public override void DefaultVisit(ISymbol symbol)
         {
-            foreach (var member in symbol.GetMembers())
+            foreach (var member in symbol.Members())
             {
-                if (_namespacesWithTypes.Contains(member, SymbolEqualityComparer.Default))
-                {
-                    continue;
-                }
-
-                member.Accept(this);
+                Visit(member);
             }
         }
 
@@ -83,7 +76,10 @@ public abstract class Mod : IMod
 
         public string CommonNamespace =>
             NameUtils.FindCommonPrefix(
-                _namespacesWithTypes.Select(x => x.NamespaceFromSymbol()).ToList(),
+                _namespacesWithTypes
+                    .Select(x => x.NamespaceFromSymbol())
+                    .Where(x => !string.IsNullOrWhiteSpace(x))
+                    .ToList(),
                 true,
                 int.MaxValue,
                 true

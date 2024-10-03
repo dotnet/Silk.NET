@@ -135,7 +135,7 @@ public class ChangeNamespace(
             var doc =
                 proj!.GetDocument(docId) ?? throw new InvalidOperationException("Document missing");
             proj = doc.WithSyntaxRoot(
-                rewriter.Visit(await doc.GetSyntaxRootAsync(ct))
+                rewriter.Visit(await doc.GetSyntaxRootAsync(ct))?.NormalizeWhitespace()
                     ?? throw new InvalidOperationException("Visit returned null.")
             ).Project;
         }

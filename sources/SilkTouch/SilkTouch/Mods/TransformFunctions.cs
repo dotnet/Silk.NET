@@ -60,7 +60,7 @@ public class TransformFunctions(FunctionTransformer ft) : ModCSharpSyntaxRewrite
                 proj!.GetDocument(docId) ?? throw new InvalidOperationException("Document missing");
             if (await doc.GetSyntaxRootAsync(ct) is { } root)
             {
-                proj = doc.WithSyntaxRoot(Visit(root)).Project;
+                proj = doc.WithSyntaxRoot(Visit(root).NormalizeWhitespace()).Project;
             }
         }
 

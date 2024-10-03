@@ -293,17 +293,6 @@ public sealed class ClangScraper(
                             // Generate the raw bindings.
                             var (sources, tests, hasErrors) = ScrapeRawBindings(rsp);
 
-                            // Make sure that we make the paths relative to the overall output root to ensure we put
-                            // them in the correct place relative to the csproj.
-                            var srcRootRel = Path.GetRelativePath(
-                                srcRoot,
-                                rsp.GeneratorConfiguration.OutputLocation
-                            );
-                            var testRootRel = Path.GetRelativePath(
-                                testRoot,
-                                rsp.GeneratorConfiguration.TestOutputLocation
-                            );
-
                             static MemoryStream Reopen(MemoryStream ms) =>
                                 ms.TryGetBuffer(out var buff) && buff.Array is not null
                                     ? new MemoryStream(buff.Array, buff.Offset, buff.Count)
@@ -320,9 +309,9 @@ public sealed class ClangScraper(
                             )
                             {
                                 // Make the path relative as above.
-                                var relativeKey = Path.Combine(
-                                        isTest ? testRootRel : srcRootRel,
-                                        Path.GetRelativePath(isTest ? testRoot : srcRoot, path)
+                                var relativeKey = Path.GetRelativePath(
+                                        isTest ? testRoot : srcRoot,
+                                        path
                                     )
                                     .Replace('\\', '/')
                                     .TrimEnd('/');

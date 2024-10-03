@@ -1,0 +1,56 @@
+// Licensed to the .NET Foundation under one or more agreements.
+// The .NET Foundation licenses this file to you under the MIT license.
+// Ported from SDL.h and corresponding dependencies of SDL3.
+// Original source is Copyright (C) 1997-2024 Sam Lantinga. Licensed under the zlib license.
+using System.Runtime.CompilerServices;
+using System.Runtime.InteropServices;
+using static Silk.NET.SDL.ArrayOrder;
+using static Silk.NET.SDL.BitmapOrder;
+using static Silk.NET.SDL.PackedLayout;
+using static Silk.NET.SDL.PackedOrder;
+using static Silk.NET.SDL.PixelType;
+
+namespace Silk.NET.SDL;
+
+public unsafe partial struct HapticCustom
+{
+    [NativeTypeName("Uint16")]
+    public ushort Type;
+    public HapticDirection Direction;
+
+    [NativeTypeName("Uint32")]
+    public uint Length;
+
+    [NativeTypeName("Uint16")]
+    public ushort Delay;
+
+    [NativeTypeName("Uint16")]
+    public ushort Button;
+
+    [NativeTypeName("Uint16")]
+    public ushort Interval;
+
+    [NativeTypeName("Uint8")]
+    public byte Channels;
+
+    [NativeTypeName("Uint16")]
+    public ushort Period;
+
+    [NativeTypeName("Uint16")]
+    public ushort Samples;
+
+    [NativeTypeName("Uint16 *")]
+    public ushort* Data;
+
+    [NativeTypeName("Uint16")]
+    public ushort AttackLength;
+
+    [NativeTypeName("Uint16")]
+    public ushort AttackLevel;
+
+    [NativeTypeName("Uint16")]
+    public ushort FadeLength;
+
+    [NativeTypeName("Uint16")]
+    public ushort FadeLevel;
+}

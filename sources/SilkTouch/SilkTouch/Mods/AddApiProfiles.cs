@@ -734,6 +734,7 @@ public class AddApiProfiles(
     /// <inheritdoc />
     public override async Task ExecuteAsync(IModContext ctx, CancellationToken ct = default)
     {
+        await base.ExecuteAsync(ctx, ct);
         if (
             ctx.SourceProject is null
             || await ctx.SourceProject.GetCompilationAsync(ct) is not { } comp
@@ -791,7 +792,9 @@ public class AddApiProfiles(
                 baked.Add(path);
             }
 
-            ctx.SourceProject = doc.WithSyntaxRoot(rewriter.Visit(root)).Project;
+            ctx.SourceProject = doc.WithSyntaxRoot(
+                rewriter.Visit(root).NormalizeWhitespace()
+            ).Project;
             foreach (var (k, v) in rewriter.UsingsToAdd)
             {
                 aggregatedUsings.TryAdd(k, v);
@@ -817,7 +820,7 @@ public class AddApiProfiles(
         {
             proj = proj.AddDocument(
                 Path.GetFileName(bakedPath),
-                bakedRoot,
+                bakedRoot.NormalizeWhitespace(),
                 // we can forgive the below nulls because RelativePath checks them, and returns null if they're null.
                 filePath: proj.FullPath(bakedPath)
             ).Project;

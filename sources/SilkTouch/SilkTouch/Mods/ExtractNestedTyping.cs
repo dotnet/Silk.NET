@@ -38,6 +38,7 @@ public partial class ExtractNestedTyping : Mod
     /// <inheritdoc />
     public override async Task ExecuteAsync(IModContext ctx, CancellationToken ct = default)
     {
+        await base.ExecuteAsync(ctx, ct);
         var fnPtrWalker = new FunctionPointerWalker();
         var rewriter = new Rewriter();
 
@@ -58,11 +59,16 @@ public partial class ExtractNestedTyping : Mod
         rewriter.FunctionPointerTypes = fnPtrWalker.GetFunctionPointerTypes();
         var proj = ctx.SourceProject;
         foreach (
-            var (structDecl, delegateDecl, fileDirs, namespaces) in rewriter
+            var (structDecl, delegateDecl, fileDirs, namespaces, isUnique) in rewriter
                 .FunctionPointerTypes
                 .Values
         )
         {
+            if (!isUnique)
+            {
+                continue;
+            }
+
             var ns = NameUtils.FindCommonPrefix(namespaces, true, false, true);
             var dir = NameUtils.FindCommonPrefix(fileDirs, true, false, true).TrimEnd('/');
             proj = proj
@@ -80,7 +86,8 @@ public partial class ExtractNestedTyping : Mod
                                         )
                                 )
                                 : SingletonList<MemberDeclarationSyntax>(structDecl)
-                        ),
+                        )
+                        .NormalizeWhitespace(),
                     filePath: proj.FullPath($"{dir}/{structDecl.Identifier}.gen.cs")
                 )
                 .Project.AddDocument(
@@ -97,7 +104,8 @@ public partial class ExtractNestedTyping : Mod
                                         )
                                 )
                                 : SingletonList<MemberDeclarationSyntax>(delegateDecl)
-                        ),
+                        )
+                        .NormalizeWhitespace(),
                     filePath: proj.FullPath($"{dir}/{delegateDecl.Identifier}.gen.cs")
                 )
                 .Project;
@@ -113,7 +121,7 @@ public partial class ExtractNestedTyping : Mod
                 continue;
             }
             proj = doc.WithSyntaxRoot(
-                rewriter.Visit(node)
+                rewriter.Visit(node)?.NormalizeWhitespace()
                     ?? throw new InvalidOperationException("Rewriter returned null")
             ).Project;
             foreach (var newStruct in rewriter.ExtractedNestedStructs)
@@ -132,7 +140,8 @@ public partial class ExtractNestedTyping : Mod
                                         )
                                 )
                                 : SingletonList<MemberDeclarationSyntax>(newStruct)
-                        ),
+                        )
+                        .NormalizeWhitespace(),
                     filePath: proj.FullPath(
                         $"{fname.AsSpan()[..fname.LastIndexOf('/')]}/{newStruct.Identifier}.gen.cs"
                     )
@@ -158,7 +167,8 @@ public partial class ExtractNestedTyping : Mod
                 StructDeclarationSyntax Pfn,
                 DelegateDeclarationSyntax Delegate,
                 HashSet<string> ReferencingFileDirs,
-                HashSet<string> ReferencingNamespaces
+                HashSet<string> ReferencingNamespaces,
+                bool IsUnique
             )
         >? FunctionPointerTypes { get; set; }
 
@@ -365,7 +375,8 @@ public partial class ExtractNestedTyping : Mod
                 StructDeclarationSyntax Pfn,
                 DelegateDeclarationSyntax Delegate,
                 HashSet<string> ReferencingFileDirs,
-                HashSet<string> ReferencingNamespaces
+                HashSet<string> ReferencingNamespaces,
+                bool IsUnique
             )
         > GetFunctionPointerTypes()
         {
@@ -375,7 +386,8 @@ public partial class ExtractNestedTyping : Mod
                     StructDeclarationSyntax,
                     DelegateDeclarationSyntax,
                     HashSet<string>,
-                    HashSet<string>
+                    HashSet<string>,
+                    bool
                 )
             >(_fnPtrs.Count);
             foreach (var (discrim, info) in _fnPtrs)
@@ -393,7 +405,8 @@ public partial class ExtractNestedTyping : Mod
                     StructDeclarationSyntax Pfn,
                     DelegateDeclarationSyntax Delegate,
                     HashSet<string> ReferencingFileDirs,
-                    HashSet<string> ReferencingNamespaces
+                    HashSet<string> ReferencingNamespaces,
+                    bool IsUnique
                 )
             > dst,
             string discrim,
@@ -485,8 +498,13 @@ public partial class ExtractNestedTyping : Mod
                             .Select((x, i) => (x, i))
                             .First(x => x.x.Key == discrim)
                             .i + 1;
-                    identifier = $"{info.UsageHints[0].ParentSymbol} function {functionNumber}";
+                    identifier = $"{info.UsageHints[0].ParentSymbol}_function_{functionNumber}";
                 }
+            }
+
+            if (identifier == "SDL_StorageInterface_enumerate")
+            {
+                Debugger.Break();
             }
 
             var rawPfn = info.Pfn;
@@ -735,10 +753,22 @@ public partial class ExtractNestedTyping : Mod
                     )
                 );
 
-            dst[discrim] = (pfn, @delegate, info.ReferencingFileDirs, info.ReferencingNamespaces);
+            dst[discrim] = (
+                pfn,
+                @delegate,
+                info.ReferencingFileDirs,
+                info.ReferencingNamespaces,
+                true
+            );
             if (newDiscrim is not null)
             {
-                dst[newDiscrim] = dst[discrim];
+                dst[newDiscrim] = (
+                    pfn,
+                    @delegate,
+                    info.ReferencingFileDirs,
+                    info.ReferencingNamespaces,
+                    false
+                );
             }
         }
 
@@ -751,7 +781,8 @@ public partial class ExtractNestedTyping : Mod
                     StructDeclarationSyntax Pfn,
                     DelegateDeclarationSyntax Delegate,
                     HashSet<string> ReferencingFileDirs,
-                    HashSet<string> ReferencingNamespaces
+                    HashSet<string> ReferencingNamespaces,
+                    bool IsUnique
                 )
             > dst,
             bool topLevel = true
@@ -772,7 +803,8 @@ public partial class ExtractNestedTyping : Mod
                         StructDeclarationSyntax Pfn,
                         DelegateDeclarationSyntax Delegate,
                         HashSet<string> ReferencingFileDirs,
-                        HashSet<string> ReferencingNamespaces
+                        HashSet<string> ReferencingNamespaces,
+                        bool IsUnique
                     )
                 > dest
             ) =>

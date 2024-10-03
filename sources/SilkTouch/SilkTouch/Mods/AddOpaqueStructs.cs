@@ -116,7 +116,8 @@ public class AddOpaqueStructs(
                                     )
                                 )
                         )
-                    ),
+                    )
+                    .NormalizeWhitespace(),
                 filePath: proj.FullPath(fname)
             ).Project;
         }

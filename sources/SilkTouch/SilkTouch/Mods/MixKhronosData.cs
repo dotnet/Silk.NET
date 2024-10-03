@@ -289,7 +289,7 @@ public partial class MixKhronosData(
             var doc =
                 proj!.GetDocument(docId) ?? throw new InvalidOperationException("Document missing");
             proj = doc.WithSyntaxRoot(
-                rewriter.Visit(await doc.GetSyntaxRootAsync(ct))
+                rewriter.Visit(await doc.GetSyntaxRootAsync(ct))?.NormalizeWhitespace()
                     ?? throw new InvalidOperationException("Visit returned null.")
             ).Project;
         }
@@ -297,7 +297,11 @@ public partial class MixKhronosData(
         foreach (var (fname, node) in GetNewSyntaxTrees(jobData, rewriter))
         {
             proj = proj
-                ?.AddDocument(Path.GetFileName(fname), node, filePath: proj.FullPath(fname))
+                ?.AddDocument(
+                    Path.GetFileName(fname),
+                    node.NormalizeWhitespace(),
+                    filePath: proj.FullPath(fname)
+                )
                 .Project;
         }
     }

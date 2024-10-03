@@ -1229,7 +1229,8 @@ public class AddVTables(IOptionsSnapshot<AddVTables.Configuration> config) : IMo
             rw.InterfacePartials.Clear();
             rw.ClassName = null;
             proj = doc.WithSyntaxRoot(
-                rw.Visit(node) ?? throw new InvalidOperationException("Visit returned null")
+                rw.Visit(node)?.NormalizeWhitespace()
+                    ?? throw new InvalidOperationException("Visit returned null")
             ).Project;
             if (rw.InterfacePartials.Count == 0)
             {
@@ -1289,7 +1290,11 @@ public class AddVTables(IOptionsSnapshot<AddVTables.Configuration> config) : IMo
         )
         {
             proj = proj
-                ?.AddDocument(Path.GetFileName(fname), root, filePath: proj.FullPath(fname))
+                ?.AddDocument(
+                    Path.GetFileName(fname),
+                    root.NormalizeWhitespace(),
+                    filePath: proj.FullPath(fname)
+                )
                 .Project;
         }
 

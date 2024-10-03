@@ -51,6 +51,7 @@ public class TransformHandles(IOptionsSnapshot<TransformHandles.Config> config) 
     /// <inheritdoc />
     public override async Task ExecuteAsync(IModContext ctx, CancellationToken ct = default)
     {
+        await base.ExecuteAsync(ctx, ct);
         var cfg = config.Get(ctx.JobKey);
         var firstPass = new TypeDiscoverer();
         var proj = ctx.SourceProject;
@@ -71,13 +72,17 @@ public class TransformHandles(IOptionsSnapshot<TransformHandles.Config> config) 
             {
                 var rel = $"Handles/{PathForFullyQualified(fqTypeName)}";
                 proj = proj
-                    ?.AddDocument(Path.GetFileName(rel), node, filePath: proj.FullPath(rel))
+                    ?.AddDocument(
+                        Path.GetFileName(rel),
+                        node.NormalizeWhitespace(),
+                        filePath: proj.FullPath(rel)
+                    )
                     .Project;
             }
         }
 
         var rewriter = new Rewriter(handles, cfg.UseDSL);
-        foreach (var docId in ctx.SourceProject?.DocumentIds ?? [])
+        foreach (var docId in proj?.DocumentIds ?? [])
         {
             var doc =
                 proj?.GetDocument(docId) ?? throw new InvalidOperationException("Document missing");
@@ -86,7 +91,7 @@ public class TransformHandles(IOptionsSnapshot<TransformHandles.Config> config) 
                 continue;
             }
 
-            doc = doc.WithSyntaxRoot(rewriter.Visit(root));
+            doc = doc.WithSyntaxRoot(rewriter.Visit(root).NormalizeWhitespace());
             var effectiveName = ModUtils.GetEffectiveName(doc.FilePath).ToString();
             if (handles.ContainsKey(effectiveName))
             {
@@ -98,6 +103,8 @@ public class TransformHandles(IOptionsSnapshot<TransformHandles.Config> config) 
 
             proj = doc.Project;
         }
+
+        ctx.SourceProject = proj;
     }
 
     class TypeDiscoverer : CSharpSyntaxWalker

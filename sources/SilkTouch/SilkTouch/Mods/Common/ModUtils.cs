@@ -58,11 +58,15 @@ public static class ModUtils
     /// </summary>
     /// <param name="symbol">The symbol.</param>
     /// <returns>The namespace.</returns>
-    public static string NamespaceFromSymbol(this ISymbol symbol) =>
+    public static string NamespaceFromSymbol(this ISymbol? symbol) =>
         symbol is INamespaceSymbol
-            ? $"{NamespaceFromSymbol(symbol.ContainingNamespace)}.{symbol.Name}"
+            ? NamespaceFromSymbol(symbol.ContainingNamespace) is { Length: > 0 } parent
+                ? $"{parent}.{symbol.Name}"
+                : symbol.Name
             // ReSharper disable once TailRecursiveCall <-- this is more code than we need
-            : NamespaceFromSymbol(symbol.ContainingNamespace);
+            : symbol?.ContainingNamespace is not null
+                ? NamespaceFromSymbol(symbol.ContainingNamespace)
+                : string.Empty;
 
     /// <summary>
     /// Matches a potential replacement candidate against the given list of regex-replacement mappings and, if a regex
@@ -156,45 +160,42 @@ public static class ModUtils
         DiscrimStr(param.Modifiers, param.Type);
 
     /// <summary>
-    /// Changes the identifier of a method while taking into account any <see cref="DllImportAttribute"/>s the method
-    /// may have.
+    /// Modifies the <see cref="DllImportAttribute"/>s the method may have to make them resistant to method identifier
+    /// changes.
     /// </summary>
     /// <param name="node">The original method.</param>
-    /// <param name="newIdentifier">The new identifier.</param>
     /// <returns>The modified method.</returns>
-    public static MethodDeclarationSyntax WithIdentifierForImport(
-        this MethodDeclarationSyntax node,
-        SyntaxToken newIdentifier
+    public static MethodDeclarationSyntax WithRenameSafeAttributeLists(
+        this MethodDeclarationSyntax node
     ) =>
-        node.WithIdentifier(newIdentifier)
-            .WithAttributeLists(
-                List(
-                    node.AttributeLists.Select(x =>
-                        x.WithAttributes(
-                            SeparatedList(
-                                x.Attributes.Select(y =>
-                                    y.IsAttribute("System.Runtime.InteropServices.DllImport")
-                                    && (
-                                        y.ArgumentList?.Arguments.All(z =>
-                                            z.NameEquals?.Name.ToString() != "EntryPoint"
-                                        ) ?? true
-                                    )
-                                        ? y.AddArgumentListArguments(
-                                            AttributeArgument(
-                                                    LiteralExpression(
-                                                        SyntaxKind.StringLiteralExpression,
-                                                        Literal(node.Identifier.ToString())
-                                                    )
-                                                )
-                                                .WithNameEquals(NameEquals("EntryPoint"))
-                                        )
-                                        : y
+        node.WithAttributeLists(
+            List(
+                node.AttributeLists.Select(x =>
+                    x.WithAttributes(
+                        SeparatedList(
+                            x.Attributes.Select(y =>
+                                y.IsAttribute("System.Runtime.InteropServices.DllImport")
+                                && (
+                                    y.ArgumentList?.Arguments.All(z =>
+                                        z.NameEquals?.Name.ToString() != "EntryPoint"
+                                    ) ?? true
                                 )
+                                    ? y.AddArgumentListArguments(
+                                        AttributeArgument(
+                                                LiteralExpression(
+                                                    SyntaxKind.StringLiteralExpression,
+                                                    Literal(node.Identifier.ToString())
+                                                )
+                                            )
+                                            .WithNameEquals(NameEquals("EntryPoint"))
+                                    )
+                                    : y
                             )
                         )
                     )
                 )
-            );
+            )
+        );
 
     /// <summary>
     /// Gets the relative path for this document.
@@ -290,7 +291,12 @@ public static class ModUtils
         } while ((sym = sym!.ContainingSymbol!) is not null);
     }
 
-    private static IEnumerable<ISymbol> Members(this ISymbol sym) =>
+    /// <summary>
+    /// Enumerates the members of the given symbol.
+    /// </summary>
+    /// <param name="sym">The symbol.</param>
+    /// <returns>The member symbols.</returns>
+    public static IEnumerable<ISymbol> Members(this ISymbol sym) =>
         sym switch
         {
             IAssemblySymbol assemblySymbol => assemblySymbol.Modules,
