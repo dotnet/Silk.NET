@@ -58,6 +58,11 @@ internal class MSBuildModContext(
     {
         if (thisProject is null)
         {
+            if (value is null)
+            {
+                return;
+            }
+
             throw new InvalidOperationException(
                 $"Can't set {thisProjectMemberName} if it did not exist at time of context creation."
             );

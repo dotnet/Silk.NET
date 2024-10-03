@@ -502,11 +502,6 @@ public partial class ExtractNestedTyping : Mod
                 }
             }
 
-            if (identifier == "SDL_StorageInterface_enumerate")
-            {
-                Debugger.Break();
-            }
-
             var rawPfn = info.Pfn;
             Dictionary<string, string>? replacements = null;
             foreach (
