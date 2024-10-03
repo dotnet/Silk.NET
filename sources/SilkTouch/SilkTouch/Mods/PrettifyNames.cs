@@ -977,67 +977,9 @@ public class PrettifyNames(
 
     private class Rewriter : CSharpSyntaxRewriter
     {
-        public Dictionary<
-            string,
+        public override SyntaxNode VisitMethodDeclaration(MethodDeclarationSyntax node) =>
             (
-                string NewName,
-                Dictionary<string, string>? NonFunctions,
-                Dictionary<string, string>? Functions,
-                bool IsEnum
-            )
-        > Types = new();
-
-        private (
-            BaseTypeDeclarationSyntax Type,
-            Dictionary<string, string>? NonFunctions,
-            Dictionary<string, string>? Functions,
-            string? NewName
-        )? _typeInProgress;
-
-        public override SyntaxNode? VisitClassDeclaration(ClassDeclarationSyntax node)
-        {
-            if (
-                _typeInProgress is not null
-                || !Types.TryGetValue(node.Identifier.ToString(), out var info)
-            )
-            {
-                return base.VisitClassDeclaration(node);
-            }
-
-            _typeInProgress = (node, info.NonFunctions, info.Functions, info.NewName);
-            var ret = (ClassDeclarationSyntax)base.VisitClassDeclaration(node)!;
-            _typeInProgress = null;
-            return ret;
-        }
-
-        public override SyntaxNode? VisitMethodDeclaration(MethodDeclarationSyntax node)
-        {
-            var ret = (MethodDeclarationSyntax)base.VisitMethodDeclaration(node)!;
-            if (
-                _typeInProgress?.Functions is not null
-                && _typeInProgress.Value.Functions.ContainsKey(node.Identifier.ToString())
-            )
-            {
-                ret = ret.WithRenameSafeAttributeLists();
-            }
-
-            return ret;
-        }
-
-        public override SyntaxNode? VisitStructDeclaration(StructDeclarationSyntax node)
-        {
-            if (
-                _typeInProgress is not null
-                || !Types.TryGetValue(node.Identifier.ToString(), out var info)
-            )
-            {
-                return base.VisitStructDeclaration(node);
-            }
-
-            _typeInProgress = (node, info.NonFunctions, info.Functions, info.NewName);
-            var ret = base.VisitStructDeclaration(node)!;
-            _typeInProgress = null;
-            return ret;
-        }
+                (MethodDeclarationSyntax)base.VisitMethodDeclaration(node)!
+            ).WithRenameSafeAttributeLists();
     }
 }

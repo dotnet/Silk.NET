@@ -36,13 +36,15 @@ namespace Silk.NET.SilkTouch.Clang;
 /// <param name="logger">The logger to use.</param>
 /// <param name="inputResolver">The input resolver to use.</param>
 /// <param name="cacheProvider">The cache provider into which ClangSharp outputs are cached.</param>
+/// <param name="responseFileMods">The mods that modify response files before they are fed to ClangSharp.</param>
 [ModConfiguration<Configuration>]
 public sealed class ClangScraper(
     ResponseFileHandler rspHandler,
     IOptionsSnapshot<ClangScraper.Configuration> config,
     ILogger<ClangScraper> logger,
     IInputResolver inputResolver,
-    ICacheProvider? cacheProvider = null
+    ICacheProvider? cacheProvider = null,
+    IEnumerable<IJobDependency<IResponseFileMod>>? responseFileMods = null
 ) : IMod
 {
     // TODO add Windows SDK and Xcode configuration
@@ -83,25 +85,6 @@ public sealed class ClangScraper(
         /// </summary>
         // TODO document
         public string[]? SkipScrapeIf { get; init; }
-    }
-
-    private List<Func<string, List<ResponseFile>, Task<List<ResponseFile>>>>? _responseFileMods;
-
-    /// <summary>
-    /// Provides an opportunity for other mods to modify the response files before executing ClangSharp. This should be
-    /// assigned at initialisation time. Bound callbacks are called in the order in which they're added, with the output
-    /// from the previous as the argument.
-    /// </summary>
-    public event Func<string, List<ResponseFile>, Task<List<ResponseFile>>> BeforeScrape
-    {
-        add
-        {
-            if (!(_responseFileMods ??= []).Contains(value))
-            {
-                _responseFileMods.Add(value);
-            }
-        }
-        remove => _responseFileMods?.Remove(value);
     }
 
     /// <summary>
@@ -460,9 +443,9 @@ public sealed class ClangScraper(
 
         // Apply modifications. This is done before the cache key as modifications to the rsps result in different
         // outputs.
-        foreach (var mod in _responseFileMods ?? [])
+        foreach (var mod in responseFileMods?.SelectMany(x => x.Get(ctx.JobKey)) ?? [])
         {
-            rsps = await mod(ctx.JobKey, rsps);
+            rsps = await mod.BeforeScrapeAsync(ctx.JobKey, rsps);
         }
 
         // If we're caching the outputs from the entire job, then obtain a cache key to use.

@@ -14,17 +14,15 @@ namespace Silk.NET.SilkTouch.Mods;
 /// A mod that will add standard include directories and any other user-provided include paths to a response file that
 /// doesn't already have them (i.e. that doesn't depend on the exact location/version of said standard includes)
 /// </summary>
-/// <param name="scraper">The ClangSharp scraper to add the inclusions to.</param>
 /// <param name="stdResolver">The standard include resolver.</param>
 /// <param name="inputResolver">The user path input resolver.</param>
 /// <param name="options">The mod configuration options snapshot.</param>
 [ModConfiguration<Configuration>]
 public class AddIncludes(
-    ClangScraper scraper,
     IStdIncludeResolver stdResolver,
     IInputResolver inputResolver,
     IOptionsSnapshot<AddIncludes.Configuration> options
-) : IMod
+) : IMod, IResponseFileMod
 {
     /// <summary>
     /// The mod configuration.
@@ -57,7 +55,8 @@ public class AddIncludes(
         public string[]? AdditionalIncludes { get; init; }
     }
 
-    private async Task<List<ResponseFile>> BeforeScrapeAsync(string key, List<ResponseFile> rsps)
+    /// <inheritdoc />
+    public async Task<List<ResponseFile>> BeforeScrapeAsync(string key, List<ResponseFile> rsps)
     {
         var cfg = options.Get(key);
         for (var i = 0; i < rsps.Count; i++)
@@ -136,9 +135,6 @@ public class AddIncludes(
 
         return rsps;
     }
-
-    /// <inheritdoc />
-    public void Initialize(IModContext ctx) => scraper.BeforeScrape += BeforeScrapeAsync;
 
     /// <inheritdoc />
     public Task ExecuteAsync(IModContext ctx, CancellationToken ct = default) => Task.CompletedTask;

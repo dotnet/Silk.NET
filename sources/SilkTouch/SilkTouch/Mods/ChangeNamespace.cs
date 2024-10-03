@@ -20,10 +20,9 @@ namespace Silk.NET.SilkTouch.Mods;
 /// regards to namespaces.
 /// </summary>
 [ModConfiguration<Configuration>]
-public class ChangeNamespace(
-    IOptionsSnapshot<ChangeNamespace.Configuration> config,
-    ClangScraper? scraper = null
-) : IMod
+public class ChangeNamespace(IOptionsSnapshot<ChangeNamespace.Configuration> config)
+    : IMod,
+        IResponseFileMod
 {
     private readonly Dictionary<string, (HashSet<string>, IReadOnlyList<(Regex, string)>)> _jobs =
         new();
@@ -40,16 +39,7 @@ public class ChangeNamespace(
     }
 
     /// <inheritdoc />
-    public void Initialize(IModContext ctx)
-    {
-        if (scraper is null)
-        {
-            return;
-        }
-        scraper.BeforeScrape += BeforeScrapeAsync;
-    }
-
-    private Task<List<ResponseFile>> BeforeScrapeAsync(string key, List<ResponseFile> rsps)
+    public Task<List<ResponseFile>> BeforeScrapeAsync(string key, List<ResponseFile> rsps)
     {
         var regexes =
             config.Get(key).Mappings?.Select(kvp => (new Regex(kvp.Key), kvp.Value)).ToArray()

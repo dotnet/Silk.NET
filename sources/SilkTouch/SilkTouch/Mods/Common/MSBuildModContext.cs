@@ -137,7 +137,8 @@ internal class MSBuildModContext(
         }
 
         existingFiles = Directory.GetFiles(srcDir, "*.gen.cs", SearchOption.AllDirectories);
-        if (Path.GetDirectoryName(_srcProject?.FilePath) is { Length: > 0 } testDir)
+        var testDir = Path.GetDirectoryName(_testProject?.FilePath);
+        if (testDir is { Length: > 0 })
         {
             existingFiles = existingFiles.Concat(
                 Directory.GetFiles(testDir, "*.gen.cs", SearchOption.AllDirectories)
@@ -164,6 +165,13 @@ internal class MSBuildModContext(
                     doc.FilePath is null
                     || await doc.GetSyntaxRootAsync(ct) is not { } root
                     || Path.GetDirectoryName(doc.FilePath) is not { Length: > 0 } fileDir
+                    || (
+                        Path.GetRelativePath(srcDir, doc.FilePath).StartsWith("..")
+                        && (
+                            testDir is null
+                            || Path.GetRelativePath(testDir, doc.FilePath).StartsWith("..")
+                        )
+                    )
                 )
                 {
                     return;
@@ -185,6 +193,7 @@ internal class MSBuildModContext(
         foreach (var existing in existingFileSet)
         {
             File.Delete(existing);
+            logger.LogDebug("Deleted {}", existing);
         }
         logger.LogInformation("Wrote {} to disk in {} seconds.", JobKey, sw.Elapsed.TotalSeconds);
     }
@@ -261,6 +270,11 @@ internal class MSBuildModContext(
             await using var fs = File.Open(fname, FileMode.Create);
             await fs.WriteAsync(outputArray.AsMemory()[..byteCount], ct);
             await fs.FlushAsync(ct);
+            logger.LogDebug("Wrote {}", fname);
+        }
+        else
+        {
+            logger.LogDebug("{} is up-to-date", fname);
         }
 
         // No memory leaks here!

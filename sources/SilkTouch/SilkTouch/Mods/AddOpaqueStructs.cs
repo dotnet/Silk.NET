@@ -21,9 +21,8 @@ namespace Silk.NET.SilkTouch.Mods;
 [ModConfiguration<Configuration>]
 public class AddOpaqueStructs(
     ILogger<AddOpaqueStructs> logger,
-    IOptionsSnapshot<AddOpaqueStructs.Configuration> config,
-    ClangScraper? scraper = null
-) : IMod
+    IOptionsSnapshot<AddOpaqueStructs.Configuration> config
+) : IMod, IResponseFileMod
 {
     private readonly ConcurrentDictionary<string, string> _defaultNamespaces = new();
 
@@ -38,7 +37,8 @@ public class AddOpaqueStructs(
         public required string[]? Names { get; init; }
     }
 
-    private Task<List<ResponseFile>> BeforeScrapeAsync(string key, List<ResponseFile> rsps)
+    /// <inheritdoc />
+    public Task<List<ResponseFile>> BeforeScrapeAsync(string key, List<ResponseFile> rsps)
     {
         if (rsps.Count <= 0)
         {
@@ -52,15 +52,6 @@ public class AddOpaqueStructs(
         }
 
         return Task.FromResult(rsps);
-    }
-
-    /// <inheritdoc />
-    public void Initialize(IModContext ctx)
-    {
-        if (scraper is not null)
-        {
-            scraper.BeforeScrape += BeforeScrapeAsync;
-        }
     }
 
     /// <inheritdoc />

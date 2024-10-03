@@ -220,28 +220,27 @@ public partial class MixKhronosData(
     // non-versioned trimmer (and needs to be a big number to come after the default trimmers)
     public Version Version { get; } = new(42, 42, 42, 42);
 
-    /// <inheritdoc />
-    public async Task ExecuteAsync(IModContext ctx, CancellationToken ct = default)
+    internal async Task BeforeJobAsync(string key, CancellationToken ct = default)
     {
-        var currentConfig = cfg.Get(ctx.JobKey);
+        var currentConfig = cfg.Get(key);
         var specPath = currentConfig.SpecPath;
-        var jobData = Jobs[ctx.JobKey] = new JobData
+        var job = Jobs[key] = new JobData
         {
             Configuration = currentConfig,
             TypeMap = currentConfig.TypeMap is not null
                 ? new Dictionary<string, string>(currentConfig.TypeMap)
                 : []
         };
-        jobData.TypeMap.TryAdd("int8_t", "sbyte");
-        jobData.TypeMap.TryAdd("uint8_t", "byte");
-        jobData.TypeMap.TryAdd("int16_t", "short");
-        jobData.TypeMap.TryAdd("uint16_t", "ushort");
-        jobData.TypeMap.TryAdd("int32_t", "int");
-        jobData.TypeMap.TryAdd("uint32_t", "uint");
-        jobData.TypeMap.TryAdd("int64_t", "long");
-        jobData.TypeMap.TryAdd("uint64_t", "ulong");
-        jobData.TypeMap.TryAdd("GLenum", "uint");
-        jobData.TypeMap.TryAdd("GLbitfield", "uint");
+        job.TypeMap.TryAdd("int8_t", "sbyte");
+        job.TypeMap.TryAdd("uint8_t", "byte");
+        job.TypeMap.TryAdd("int16_t", "short");
+        job.TypeMap.TryAdd("uint16_t", "ushort");
+        job.TypeMap.TryAdd("int32_t", "int");
+        job.TypeMap.TryAdd("uint32_t", "uint");
+        job.TypeMap.TryAdd("int64_t", "long");
+        job.TypeMap.TryAdd("uint64_t", "ulong");
+        job.TypeMap.TryAdd("GLenum", "uint");
+        job.TypeMap.TryAdd("GLbitfield", "uint");
         if (specPath is null)
         {
             // No metadata, can't continue. It'd be odd if the Khronos mod is being used in this case. There was once
@@ -254,7 +253,7 @@ public partial class MixKhronosData(
         await using var fs = File.OpenRead(specPath);
         var xml = await XDocument.LoadAsync(fs, LoadOptions.None, default);
         var (apiSets, supportedApiProfiles) = EvaluateProfiles(xml);
-        jobData.Vendors =
+        job.Vendors =
         [
             .. xml.Element("registry")
                 ?.Element("tags")
@@ -267,9 +266,9 @@ public partial class MixKhronosData(
                 .Attributes("name")
                 .Select(x => x.Value.Split('_')[1].ToUpper()) ?? Enumerable.Empty<string>()
         ];
-        jobData.ApiSets = apiSets;
-        jobData.SupportedApiProfiles = supportedApiProfiles;
-        ReadGroups(xml, jobData, jobData.Vendors);
+        job.ApiSets = apiSets;
+        job.SupportedApiProfiles = supportedApiProfiles;
+        ReadGroups(xml, job, job.Vendors);
         foreach (var typeElement in xml.Elements("registry").Elements("types").Elements("type"))
         {
             var type = typeElement.Element("name")?.Value;
@@ -279,9 +278,15 @@ public partial class MixKhronosData(
                 continue;
             }
 
-            jobData.TypeMap.TryAdd(type, baseType);
+            job.TypeMap.TryAdd(type, baseType);
         }
+    }
 
+    /// <inheritdoc />
+    public async Task ExecuteAsync(IModContext ctx, CancellationToken ct = default)
+    {
+        await BeforeJobAsync(ctx.JobKey, ct);
+        var jobData = Jobs[ctx.JobKey];
         var proj = ctx.SourceProject;
         var rewriter = new Rewriter(jobData);
         foreach (var docId in proj?.DocumentIds ?? [])

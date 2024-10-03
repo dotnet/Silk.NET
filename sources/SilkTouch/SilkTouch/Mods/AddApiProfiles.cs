@@ -28,7 +28,9 @@ namespace Silk.NET.SilkTouch.Mods;
 public class AddApiProfiles(
     ILogger<AddApiProfiles> logger,
     IOptionsSnapshot<AddApiProfiles.Configuration> config,
-    IJobDependency<IApiMetadataProvider<IEnumerable<SupportedApiProfileAttribute>>> versionProviders
+    IEnumerable<
+        IJobDependency<IApiMetadataProvider<IEnumerable<SupportedApiProfileAttribute>>>
+    > versionProviders
 ) : Mod
 {
     /// <summary>
@@ -744,7 +746,10 @@ public class AddApiProfiles(
         }
 
         var cfg = config.Get(ctx.JobKey);
-        var rewriter = new Rewriter(ctx.JobKey, versionProviders.Get(ctx.JobKey).ToArray())
+        var rewriter = new Rewriter(
+            ctx.JobKey,
+            versionProviders.SelectMany(x => x.Get(ctx.JobKey)).ToArray()
+        )
         {
             Logger = logger
         };
