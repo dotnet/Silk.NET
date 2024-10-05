@@ -8,6 +8,7 @@ using System.Threading.Tasks;
 using Microsoft.CodeAnalysis;
 using Microsoft.CodeAnalysis.CSharp;
 using Microsoft.CodeAnalysis.CSharp.Syntax;
+using Microsoft.CodeAnalysis.FindSymbols;
 using Microsoft.CodeAnalysis.Rename;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
@@ -264,6 +265,39 @@ public class PrettifyNames(
                 renamer.Project = doc.WithSyntaxRoot(root).Project;
             }
         }
+
+        // TODO is this fast enough?
+        logger.LogDebug("start test");
+        var sw = Stopwatch.StartNew();
+        var comp2 =
+            renamer.Compilation
+            ?? await renamer.Project.GetCompilationAsync(ct)
+            ?? throw new("what");
+        await RenameAllAsync(
+            ctx,
+            types.SelectMany(x =>
+            {
+                // TODO conflicts.
+                return comp2
+                    .GetSymbolsWithName(x.Key, SymbolFilter.Type, ct)
+                    .OfType<ITypeSymbol>()
+                    .SelectMany<ITypeSymbol, (ISymbol, string)>(y =>
+
+                        [
+                            .. Enumerable.SelectMany(
+                                [.. x.Value.NonFunctions ?? [], .. x.Value.Functions ?? []],
+                                z =>
+                                {
+                                    return y.GetMembers(z.Key).Select(w => (w, z.Value));
+                                }
+                            ),
+                            (y, x.Value.NewName)
+                        ]
+                    );
+            }),
+            ct
+        );
+        logger.LogDebug("end test - {}", sw.Elapsed.TotalSeconds);
 
         // Rename all the types.
         logger.LogInformation("Applying renames for {}, this may take a while...", ctx.JobKey);
@@ -981,5 +1015,107 @@ public class PrettifyNames(
             (
                 (MethodDeclarationSyntax)base.VisitMethodDeclaration(node)!
             ).WithRenameSafeAttributeLists();
+    }
+
+    private class TokenCrawler(ILogger logger)
+        : CSharpSyntaxWalker(SyntaxWalkerDepth.StructuredTrivia)
+    {
+        public required Dictionary<Location, string> ReferenceRenames { get; set; }
+        public Dictionary<(SyntaxTree Tree, int TokenNumber), string>? TokenRenames { get; set; }
+        public int TokenNumber { get; set; }
+        public SyntaxTree? Tree { get; set; }
+
+        public override void VisitToken(SyntaxToken token)
+        {
+            TokenNumber++;
+            if (Tree is null)
+            {
+                return;
+            }
+
+            if (!ReferenceRenames.TryGetValue(token.GetLocation(), out var renameTo))
+            {
+                base.VisitToken(token);
+                return;
+            }
+
+            if (!token.IsKind(SyntaxKind.IdentifierToken))
+            {
+                logger.LogTrace(
+                    "Skipping token {} of kind {}: {}",
+                    TokenNumber - 1,
+                    token.Kind(),
+                    token.ToString()
+                );
+                return;
+            }
+
+            (TokenRenames ??= new Dictionary<(SyntaxTree, int), string>(ReferenceRenames.Count))[
+                (Tree, TokenNumber - 1)
+            ] = renameTo;
+        }
+    }
+
+    // - Find all references
+    // - Correlate the locations with token numbers
+    // - Replace those token numbers
+    private async Task RenameAllAsync(
+        IModContext ctx,
+        IEnumerable<(ISymbol Symbol, string NewName)> toRename,
+        CancellationToken ct = default
+    )
+    {
+        // First, let's find all the references of the symbols.
+        var locations = new Dictionary<Location, string>();
+        foreach (var (symbol, newName) in toRename)
+        {
+            foreach (
+                var referencedSymbol in await SymbolFinder.FindReferencesAsync(
+                    symbol,
+                    ctx.SourceProject?.Solution
+                        ?? throw new ArgumentException("SourceProject is null"),
+                    ct
+                )
+            )
+            {
+                foreach (var referencedSymbolLocation in referencedSymbol.Locations)
+                {
+                    if (
+                        referencedSymbolLocation.IsCandidateLocation
+                        || referencedSymbolLocation.IsImplicit
+                    )
+                    {
+                        continue;
+                    }
+
+                    locations.Add(referencedSymbolLocation.Location, newName);
+                }
+            }
+        }
+
+        logger.LogDebug("{} referencing locations for renames for {}", locations.Count, ctx.JobKey);
+
+        // Next, we need to map those locations to token numbers so we know where to splice the new tokens in.
+        var crawler = new TokenCrawler(logger) { ReferenceRenames = locations };
+        foreach (var tree in locations.Keys.Select(x => x.SourceTree).Distinct())
+        {
+            if (tree is null)
+            {
+                continue;
+            }
+
+            crawler.TokenNumber = 0;
+            crawler.Tree = tree;
+            crawler.Visit(await tree.GetRootAsync(ct));
+        }
+
+        locations.Clear();
+        logger.LogDebug(
+            "{} references resolved to tokens for {}",
+            crawler.TokenRenames?.Count ?? 0,
+            ctx.JobKey
+        );
+
+        // Finally, let's actually rewrite the references.
     }
 }
