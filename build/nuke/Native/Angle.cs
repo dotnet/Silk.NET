@@ -99,11 +99,7 @@ partial class Build {
                         }
                         
                         // create universal mac binaries
-                        var arm64NativeRuntimes = runtimes / "osx-arm64" / "native";
-                        var x64NativeRuntimes = runtimes / "osx-x64" / "native";
                         var universalNativeRuntimes = runtimes / "osx" / "native";
-                        EnsureCleanDirectory(arm64NativeRuntimes);
-                        EnsureCleanDirectory(x64NativeRuntimes);
                         EnsureCleanDirectory(universalNativeRuntimes);
                         foreach (var lib in new[] { "libGLESv2.dylib", "libEGL.dylib" })
                         {
