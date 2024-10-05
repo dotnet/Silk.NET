@@ -24,6 +24,9 @@ namespace Silk.NET.Vulkan
         [Obsolete("Deprecated in favour of \"DerivativeBitKhr\"")]
         [NativeName("Name", "VK_PIPELINE_CREATE_2_DERIVATIVE_BIT_KHR")]
         PipelineCreate2DerivativeBitKhr = 4,
+        [Obsolete("Deprecated in favour of \"EnableLegacyDitheringBitExt\"")]
+        [NativeName("Name", "VK_PIPELINE_CREATE_2_ENABLE_LEGACY_DITHERING_BIT_EXT")]
+        PipelineCreate2EnableLegacyDitheringBitExt = 17179869184,
         [Obsolete("Deprecated in favour of \"ViewIndexFromDeviceIndexBitKhr\"")]
         [NativeName("Name", "VK_PIPELINE_CREATE_2_VIEW_INDEX_FROM_DEVICE_INDEX_BIT_KHR")]
         PipelineCreate2ViewIndexFromDeviceIndexBitKhr = 8,
@@ -114,6 +117,8 @@ namespace Silk.NET.Vulkan
         AllowDerivativesBitKhr = 2,
         [NativeName("Name", "VK_PIPELINE_CREATE_2_DERIVATIVE_BIT_KHR")]
         DerivativeBitKhr = 4,
+        [NativeName("Name", "VK_PIPELINE_CREATE_2_ENABLE_LEGACY_DITHERING_BIT_EXT")]
+        EnableLegacyDitheringBitExt = 17179869184,
         [NativeName("Name", "VK_PIPELINE_CREATE_2_VIEW_INDEX_FROM_DEVICE_INDEX_BIT_KHR")]
         ViewIndexFromDeviceIndexBitKhr = 8,
         [NativeName("Name", "VK_PIPELINE_CREATE_2_DISPATCH_BASE_BIT_KHR")]

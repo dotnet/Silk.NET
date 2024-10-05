@@ -128,5 +128,9 @@ namespace Silk.NET.OpenGL
         TextureUnnormalizedCoordinatesArm = 0x8F6A,
         [NativeName("Name", "GL_SURFACE_COMPRESSION_EXT")]
         SurfaceCompressionExt = 0x96C0,
+        [NativeName("Name", "GL_TEXTURE_Y_DEGAMMA_QCOM")]
+        TextureYDegammaQCom = 0x9710,
+        [NativeName("Name", "GL_TEXTURE_CBCR_DEGAMMA_QCOM")]
+        TextureCbcrDegammaQCom = 0x9711,
     }
 }

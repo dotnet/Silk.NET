@@ -84,15 +84,15 @@ pub fn build(b: *std.Build) void {
                     { //Windows
                         //Build for Windows x86_64
                         InheritedShell($"zig build {buildMode} -Dtarget=x86_64-windows --verbose", SPIRVReflectPath).AssertZeroExitCode();
-                        CopyFile(SPIRVReflectPath / "zig-out" / "lib" / "spirv-reflect.dll", runtimes / "win-x64" / "native" / "spirv-reflect.dll", FileExistsPolicy.Overwrite);
+                        CopyFile(SPIRVReflectPath / "zig-out" / "bin" / "spirv-reflect.dll", runtimes / "win-x64" / "native" / "spirv-reflect.dll", FileExistsPolicy.Overwrite);
 
                         //Build for Windows x86
                         InheritedShell($"zig build {buildMode} -Dtarget=x86-windows --verbose", SPIRVReflectPath).AssertZeroExitCode();
-                        CopyFile(SPIRVReflectPath / "zig-out" / "lib" / "spirv-reflect.dll", runtimes / "win-x86" / "native" / "spirv-reflect.dll", FileExistsPolicy.Overwrite);
+                        CopyFile(SPIRVReflectPath / "zig-out" / "bin" / "spirv-reflect.dll", runtimes / "win-x86" / "native" / "spirv-reflect.dll", FileExistsPolicy.Overwrite);
 
                         //Build for Windows arm64
                         InheritedShell($"zig build {buildMode} -Dtarget=aarch64-windows --verbose", SPIRVReflectPath).AssertZeroExitCode();
-                        CopyFile(SPIRVReflectPath / "zig-out" / "lib" / "spirv-reflect.dll", runtimes / "win-arm64" / "native" / "spirv-reflect.dll", FileExistsPolicy.Overwrite);
+                        CopyFile(SPIRVReflectPath / "zig-out" / "bin" / "spirv-reflect.dll", runtimes / "win-arm64" / "native" / "spirv-reflect.dll", FileExistsPolicy.Overwrite);
                     }
 
                     { //MacOS

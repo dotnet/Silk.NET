@@ -1478,6 +1478,10 @@ namespace Silk.NET.OpenCL
         CommandBufferSyncDevicesKhr = 0x12AC,
         [NativeName("Name", "CL_DEVICE_COMMAND_BUFFER_SYNC_DEVICES_KHR")]
         DeviceCommandBufferSyncDevicesKhr = 0x12AC,
+        [NativeName("Name", "CL_DEVICE_KERNEL_CLOCK_CAPABILITIES_KHR")]
+        KernelClockCapabilitiesKhr = 0x1076,
+        [NativeName("Name", "CL_DEVICE_KERNEL_CLOCK_CAPABILITIES_KHR")]
+        DeviceKernelClockCapabilitiesKhr = 0x1076,
         [NativeName("Name", "CL_LOCAL")]
         Local = 0x1,
         [NativeName("Name", "CL_GLOBAL")]
