@@ -10,7 +10,6 @@ on:
             - build/nuke/Native/Core.cs
             - build/nuke/Native/Angle.cs
             - .github/workflows/angle.yml
-    workflow_dispatch:
 jobs:
     Build:
         if: github.repository == 'dotnet/Silk.NET'

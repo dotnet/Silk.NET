@@ -69,7 +69,7 @@ jobs:
       # TODO build native mixins such as BuildLibSilkDroid
       run: ./build.sh Pack --configuration Release --msbuild-properties ContinuousIntegrationBuild=true
     - name: Upload Unsigned Artifacts to Actions
-      uses: actions/upload-artifact@v2.2.4
+      uses: actions/upload-artifact@v4
       with:
         name: unsigned_nupkgs
         path: "build/output_packages/*nupkg"
@@ -90,14 +90,14 @@ jobs:
     - uses: actions/checkout@v3.5.2
       with:
         submodules: 'false'
-    - uses: actions/download-artifact@v3
+    - uses: actions/download-artifact@v4
       with:
         name: unsigned_nupkgs
         path: build/output_packages
     - name: Sign Packages
       run: .\build.cmd SignPackages --akv-certificate ${{ secrets.AKV_CERTIFICATE }} --akv-client-id ${{ secrets.AKV_CLIENT_ID }} --akv-client-secret ${{ secrets.AKV_CLIENT_SECRET }} --akv-tenant ${{ secrets.AKV_TENANT }} --akv-vault-url ${{ secrets.AKV_VAULT_URL }}
     - name: Upload Signed Artifacts to Actions
-      uses: actions/upload-artifact@v2.2.4
+      uses: actions/upload-artifact@v4
       with:
         name: signed_nupkgs
         path: "build/output_packages/*nupkg"
