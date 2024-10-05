@@ -1,4 +1,4 @@
-name: MoltenVK
+name: ANGLE
 on:
     push:
         branches-ignore:
