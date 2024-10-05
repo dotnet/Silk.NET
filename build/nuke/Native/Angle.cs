@@ -99,27 +99,19 @@ partial class Build {
                         }
                         
                         // create universal mac binaries
-                        var arm64NativeRuntimes = runtimes / "osx-arm64" / "native";
-                        var x64NativeRuntimes = runtimes / "osx-x64" / "native";
-                        EnsureCleanDirectory(arm64NativeRuntimes);
-                        EnsureCleanDirectory(x64NativeRuntimes);
+                        var universalNativeRuntimes = runtimes / "osx" / "native";
+                        EnsureCleanDirectory(universalNativeRuntimes);
                         foreach (var lib in new[] { "libGLESv2.dylib", "libEGL.dylib" })
                         {
                             var x64Lib = angleSourceDir / "out" / "Release_x64" / lib;
                             var arm64Lib = angleSourceDir / "out" / "Release_arm64" / lib;
                             InheritedShell
                                 (
-                                    $"lipo -create \"{arm64Lib}\" \"{x64Lib}\" -output \"{arm64NativeRuntimes / lib}\"",
+                                    $"lipo -create \"{arm64Lib}\" \"{x64Lib}\" -output \"{universalNativeRuntimes / lib}\"",
                                     angleSourceDir
                                 )
                                 .AssertZeroExitCode();
                         }
-                        
-                        CopyAll
-                        (
-                            arm64NativeRuntimes.GlobFiles("libGLESv2.dll", "libEGL.dll", "libANGLE.dll"),
-                            x64NativeRuntimes
-                        );
                     }
                     // else
                     //     if (OperatingSystem.IsLinux())
