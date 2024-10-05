@@ -35,7 +35,7 @@ partial class Build
     ///   - Microsoft VSCode           https://nuke.build/vscode
     public static int Main() => Execute<Build>(x => x.Compile);
 
-    [Parameter("Outputs build warnings instead of keeping the MSBuild logging quiet with just errors.")]
+    [Nuke.Common.Parameter("Outputs build warnings instead of keeping the MSBuild logging quiet with just errors.")]
     bool Warnings;
 
     static int IndexOfOrThrow(string x, char y)
@@ -126,6 +126,18 @@ partial class Build
             {
                 // probably hasn't existed yet, don't care.
             }
+            try
+            {
+                if (Native)
+                {
+                    DotNet("workload install android");
+                }
+            }
+            catch
+            {
+                // oh well. maybe it's already installed?
+            }
+
             GenerateSolution();
         }
     );
