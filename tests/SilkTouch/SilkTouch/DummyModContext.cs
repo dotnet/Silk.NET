@@ -7,7 +7,7 @@ using Silk.NET.SilkTouch.Mods;
 
 namespace Silk.NET.SilkTouch.UnitTests;
 
-public class MockModContext : IModContext
+public class DummyModContext : IModContext
 {
     public ValueTask DisposeAsync() => ValueTask.CompletedTask;
 

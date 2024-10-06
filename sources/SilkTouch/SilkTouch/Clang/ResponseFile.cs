@@ -16,6 +16,7 @@ namespace Silk.NET.SilkTouch.Clang;
 /// </param>
 /// <param name="TranslationFlags">Flags to use when creating the translation unit.</param>
 /// <param name="FileHash">The XxHash64 hash of the original input.</param>
+/// <param name="FilePath">The original file path.</param>
 public record ResponseFile(
     IReadOnlyList<string> ErrorList,
     PInvokeGeneratorConfiguration GeneratorConfiguration,
@@ -23,5 +24,6 @@ public record ResponseFile(
     string FileDirectory,
     string[] ClangCommandLineArgs,
     CXTranslationUnit_Flags TranslationFlags,
-    ulong FileHash
+    ulong FileHash,
+    string? FilePath
 );

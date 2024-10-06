@@ -65,7 +65,7 @@ public class MixKhronosDataTests
                         Value = new MixKhronosData.Configuration { SpecPath = TestFile(x) }
                     }
                 );
-                await mod.BeforeJobAsync("");
+                await mod.InitializeAsync(new DummyModContext());
                 return (object[])[x, mod.Jobs[""]];
             });
     }

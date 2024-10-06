@@ -27,3 +27,4 @@ multi-file
 trimmable-vtbls
 preview-codegen
 generate-file-scoped-namespaces
+exclude-using-statics-for-enums

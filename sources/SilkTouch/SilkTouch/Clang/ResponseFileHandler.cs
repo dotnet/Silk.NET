@@ -871,8 +871,13 @@ public class ResponseFileHandler
     /// </summary>
     /// <param name="args">The arguments read from the rsp file.</param>
     /// <param name="directory">The directory in which the rsp file resides.</param>
+    /// <param name="filePath">The file path from which the response file arguments were read.</param>
     /// <returns></returns>
-    public ResponseFile ReadResponseFile(IReadOnlyList<string> args, string? directory = null)
+    public ResponseFile ReadResponseFile(
+        IReadOnlyList<string> args,
+        string? directory = null,
+        string? filePath = null
+    )
     {
         _logger.LogDebug("ClangSharp command line arguments: {0}", string.Join(" ", args));
         var parseResult = new Parser(_rootCommand).Parse(args);
@@ -1487,7 +1492,8 @@ public class ResponseFileHandler
                             .Where(x => x.Length > 0)
                     )
                 )
-            )
+            ),
+            filePath
         );
     }
 
@@ -1516,7 +1522,7 @@ public class ResponseFileHandler
             var dir =
                 Path.GetDirectoryName(rsp)
                 ?? throw new InvalidOperationException("Couldn't get directory name of path");
-            var read = ReadResponseFile(RspRelativeTo(dir, rsp).ToArray(), dir);
+            var read = ReadResponseFile(RspRelativeTo(dir, rsp).ToArray(), dir, rsp);
             yield return read with
             {
                 FileDirectory = dir

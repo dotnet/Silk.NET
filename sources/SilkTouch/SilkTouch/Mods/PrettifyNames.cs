@@ -33,7 +33,7 @@ public class PrettifyNames(
     ILogger<PrettifyNames> logger,
     IOptionsSnapshot<PrettifyNames.Configuration> config,
     IEnumerable<IJobDependency<INameTrimmer>> trimmerProviders
-) : IMod
+) : IMod, IResponseFileMod
 {
     /// <summary>
     /// The configuration for the prettify names mod.
@@ -303,6 +303,12 @@ public class PrettifyNames(
                                     return y.GetMembers(z.Key).Select(w => (w, z.Value));
                                 }
                             ),
+                            .. y.GetMembers()
+                                .OfType<IMethodSymbol>()
+                                .Where(z =>
+                                    z.MethodKind is MethodKind.Constructor or MethodKind.Destructor
+                                )
+                                .Select(z => (z, x.Value.NewName)),
                             (y, x.Value.NewName)
                         ]
                     );
@@ -331,7 +337,9 @@ public class PrettifyNames(
                 continue;
             }
 
-            proj = doc.Project;
+            proj = doc.WithFilePath(doc.FilePath.Replace(oldName, newName))
+                .WithName(doc.Name.Replace(oldName, newName))
+                .Project;
         }
 
         ctx.SourceProject = proj;
@@ -971,6 +979,8 @@ public class PrettifyNames(
             MethodDeclarationSyntax m => m.Identifier.GetLocation(),
             PropertyDeclarationSyntax p => p.Identifier.GetLocation(),
             VariableDeclaratorSyntax v => v.Identifier.GetLocation(),
+            ConstructorDeclarationSyntax c => c.Identifier.GetLocation(),
+            DestructorDeclarationSyntax d => d.Identifier.GetLocation(),
             _ => null
         };
 
@@ -1092,5 +1102,24 @@ public class PrettifyNames(
         }
 
         ctx.SourceProject = sln.GetProject(srcProjId);
+    }
+
+    /// <inheritdoc />
+    public Task<List<ResponseFile>> BeforeScrapeAsync(string key, List<ResponseFile> rsps)
+    {
+        foreach (var responseFile in rsps)
+        {
+            if (!responseFile.GeneratorConfiguration.DontUseUsingStaticsForEnums)
+            {
+                logger.LogWarning(
+                    "{} (for {}) should use exclude-using-statics-for-enums as PrettifyNames does not resolve "
+                        + "conflicts with members of other types.",
+                    responseFile.FilePath,
+                    key
+                );
+            }
+        }
+
+        return Task.FromResult(rsps);
     }
 }
