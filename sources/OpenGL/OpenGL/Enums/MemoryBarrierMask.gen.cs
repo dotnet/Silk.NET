@@ -1,6 +1,6 @@
 // Licensed to the .NET Foundation under one or more agreements.
 // The .NET Foundation licenses this file to you under the MIT license.
-// Ported from the OpenGL Core Profile headers and corresponding dependencies.
+// Ported from the OpenGL headers and corresponding dependencies.
 // Original source is Copyright 2013-2020 The Khronos Group Inc. Licensed under the MIT license.
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
@@ -26,7 +26,6 @@ public enum MemoryBarrierMask : uint
     ShaderStorageBarrierBit = unchecked((uint)0x00002000),
     ClientMappedBufferBarrierBit = unchecked((uint)0x00004000),
     QueryBufferBarrierBit = unchecked((uint)0x00008000),
-    ShaderGlobalAccessBarrierBitNV = unchecked((uint)0x00000010),
     VertexAttribArrayBarrierBitEXT = unchecked((uint)0x00000001),
     ElementArrayBarrierBitEXT = unchecked((uint)0x00000002),
     UniformBarrierBitEXT = unchecked((uint)0x00000004),
@@ -40,5 +39,6 @@ public enum MemoryBarrierMask : uint
     TransformFeedbackBarrierBitEXT = unchecked((uint)0x00000800),
     AtomicCounterBarrierBitEXT = unchecked((uint)0x00001000),
     AllBarrierBitsEXT = unchecked((uint)0xFFFFFFFF),
+    ShaderGlobalAccessBarrierBitNV = unchecked((uint)0x00000010),
     ClientMappedBufferBarrierBitEXT = unchecked((uint)0x00004000)
 }

@@ -1,6 +1,6 @@
 // Licensed to the .NET Foundation under one or more agreements.
 // The .NET Foundation licenses this file to you under the MIT license.
-// Ported from the OpenGL Core Profile headers and corresponding dependencies.
+// Ported from the OpenGL headers and corresponding dependencies.
 // Original source is Copyright 2013-2020 The Khronos Group Inc. Licensed under the MIT license.
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
@@ -12,6 +12,7 @@ public enum InternalFormatPName : uint
 {
     Samples = unchecked((uint)0x80A9),
     TextureCompressed = unchecked((uint)0x86A1),
+    GenerateMipmap = unchecked((uint)0x8191),
     NumSampleCounts = unchecked((uint)0x9380),
     ImageFormatCompatibilityType = unchecked((uint)0x90C7),
     InternalformatSupported = unchecked((uint)0x826F),
@@ -80,6 +81,5 @@ public enum InternalFormatPName : uint
     TextureView = unchecked((uint)0x82B5),
     ViewCompatibilityClass = unchecked((uint)0x82B6),
     ClearTexture = unchecked((uint)0x9365),
-    GenerateMipmap = unchecked((uint)0x8191),
     NumSurfaceCompressionFixedRatesEXT = unchecked((uint)0x8F6E)
 }

@@ -1,6 +1,6 @@
 // Licensed to the .NET Foundation under one or more agreements.
 // The .NET Foundation licenses this file to you under the MIT license.
-// Ported from the OpenGL Core Profile headers and corresponding dependencies.
+// Ported from the OpenGL headers and corresponding dependencies.
 // Original source is Copyright 2013-2020 The Khronos Group Inc. Licensed under the MIT license.
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
@@ -17,13 +17,13 @@ public enum GetTextureParameter : uint
     TextureMinFilter = unchecked((uint)0x2801),
     TextureWrapS = unchecked((uint)0x2802),
     TextureWrapT = unchecked((uint)0x2803),
+    TextureComponents = unchecked((uint)0x1003),
+    TextureBorder = unchecked((uint)0x1005),
     TextureInternalFormat = unchecked((uint)0x1003),
     TextureRedSize = unchecked((uint)0x805C),
     TextureGreenSize = unchecked((uint)0x805D),
     TextureBlueSize = unchecked((uint)0x805E),
     TextureAlphaSize = unchecked((uint)0x805F),
-    TextureComponents = unchecked((uint)0x1003),
-    TextureBorder = unchecked((uint)0x1005),
     TextureLuminanceSize = unchecked((uint)0x8060),
     TextureIntensitySize = unchecked((uint)0x8061),
     TexturePriority = unchecked((uint)0x8066),
@@ -71,9 +71,9 @@ public enum GetTextureParameter : uint
     TextureLodBiasRSGIX = unchecked((uint)0x8190),
     PostTextureFilterBiasSGIX = unchecked((uint)0x8179),
     PostTextureFilterScaleSGIX = unchecked((uint)0x817A),
-    NormalMapOES = unchecked((uint)0x8511),
-    ReflectionMapOES = unchecked((uint)0x8512),
     TextureUnnormalizedCoordinatesARM = unchecked((uint)0x8F6A),
     SurfaceCompressionEXT = unchecked((uint)0x96C0),
-    TextureBorderColorNV = unchecked((uint)0x1004)
+    TextureBorderColorNV = unchecked((uint)0x1004),
+    NormalMapOES = unchecked((uint)0x8511),
+    ReflectionMapOES = unchecked((uint)0x8512)
 }

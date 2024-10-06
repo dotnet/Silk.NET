@@ -1,6 +1,6 @@
 // Licensed to the .NET Foundation under one or more agreements.
 // The .NET Foundation licenses this file to you under the MIT license.
-// Ported from the OpenGL Core Profile headers and corresponding dependencies.
+// Ported from the OpenGL headers and corresponding dependencies.
 // Original source is Copyright 2013-2020 The Khronos Group Inc. Licensed under the MIT license.
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
@@ -12,13 +12,13 @@ public enum HintTarget : uint
 {
     LineSmoothHint = unchecked((uint)0x0C52),
     PolygonSmoothHint = unchecked((uint)0x0C53),
-    TextureCompressionHint = unchecked((uint)0x84EF),
-    FragmentShaderDerivativeHint = unchecked((uint)0x8B8B),
-    ProgramBinaryRetrievableHint = unchecked((uint)0x8257),
     PerspectiveCorrectionHint = unchecked((uint)0x0C50),
     PointSmoothHint = unchecked((uint)0x0C51),
     FogHint = unchecked((uint)0x0C54),
+    TextureCompressionHint = unchecked((uint)0x84EF),
     GenerateMipmapHint = unchecked((uint)0x8192),
+    FragmentShaderDerivativeHint = unchecked((uint)0x8B8B),
+    ProgramBinaryRetrievableHint = unchecked((uint)0x8257),
     FragmentShaderDerivativeHintARB = unchecked((uint)0x8B8B),
     TextureCompressionHintARB = unchecked((uint)0x84EF),
     TextureStorageHintApple = unchecked((uint)0x85BC),

@@ -5,13 +5,6 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static Silk.NET.SDL.ArrayOrder;
-using static Silk.NET.SDL.BitmapOrder;
-using static Silk.NET.SDL.PackedLayout;
-using static Silk.NET.SDL.PackedOrder;
-using static Silk.NET.SDL.PenAxis;
-using static Silk.NET.SDL.PixelType;
-using static Silk.NET.SDL.Scancode;
 
 namespace Silk.NET.SDL;
 
@@ -37817,560 +37810,560 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     public const sbyte Kz = (sbyte)('z');
 
     [NativeTypeName("#define SDLK_CAPSLOCK SDL_SCANCODE_TO_KEYCODE(SDL_SCANCODE_CAPSLOCK)")]
-    public const int KCapslock = ((int)(ScancodeCapslock) | (1 << 30));
+    public const int KCapslock = ((int)(Scancode.ScancodeCapslock) | (1 << 30));
 
     [NativeTypeName("#define SDLK_F1 SDL_SCANCODE_TO_KEYCODE(SDL_SCANCODE_F1)")]
-    public const int KF1 = ((int)(ScancodeF1) | (1 << 30));
+    public const int KF1 = ((int)(Scancode.ScancodeF1) | (1 << 30));
 
     [NativeTypeName("#define SDLK_F2 SDL_SCANCODE_TO_KEYCODE(SDL_SCANCODE_F2)")]
-    public const int KF2 = ((int)(ScancodeF2) | (1 << 30));
+    public const int KF2 = ((int)(Scancode.ScancodeF2) | (1 << 30));
 
     [NativeTypeName("#define SDLK_F3 SDL_SCANCODE_TO_KEYCODE(SDL_SCANCODE_F3)")]
-    public const int KF3 = ((int)(ScancodeF3) | (1 << 30));
+    public const int KF3 = ((int)(Scancode.ScancodeF3) | (1 << 30));
 
     [NativeTypeName("#define SDLK_F4 SDL_SCANCODE_TO_KEYCODE(SDL_SCANCODE_F4)")]
-    public const int KF4 = ((int)(ScancodeF4) | (1 << 30));
+    public const int KF4 = ((int)(Scancode.ScancodeF4) | (1 << 30));
 
     [NativeTypeName("#define SDLK_F5 SDL_SCANCODE_TO_KEYCODE(SDL_SCANCODE_F5)")]
-    public const int KF5 = ((int)(ScancodeF5) | (1 << 30));
+    public const int KF5 = ((int)(Scancode.ScancodeF5) | (1 << 30));
 
     [NativeTypeName("#define SDLK_F6 SDL_SCANCODE_TO_KEYCODE(SDL_SCANCODE_F6)")]
-    public const int KF6 = ((int)(ScancodeF6) | (1 << 30));
+    public const int KF6 = ((int)(Scancode.ScancodeF6) | (1 << 30));
 
     [NativeTypeName("#define SDLK_F7 SDL_SCANCODE_TO_KEYCODE(SDL_SCANCODE_F7)")]
-    public const int KF7 = ((int)(ScancodeF7) | (1 << 30));
+    public const int KF7 = ((int)(Scancode.ScancodeF7) | (1 << 30));
 
     [NativeTypeName("#define SDLK_F8 SDL_SCANCODE_TO_KEYCODE(SDL_SCANCODE_F8)")]
-    public const int KF8 = ((int)(ScancodeF8) | (1 << 30));
+    public const int KF8 = ((int)(Scancode.ScancodeF8) | (1 << 30));
 
     [NativeTypeName("#define SDLK_F9 SDL_SCANCODE_TO_KEYCODE(SDL_SCANCODE_F9)")]
-    public const int KF9 = ((int)(ScancodeF9) | (1 << 30));
+    public const int KF9 = ((int)(Scancode.ScancodeF9) | (1 << 30));
 
     [NativeTypeName("#define SDLK_F10 SDL_SCANCODE_TO_KEYCODE(SDL_SCANCODE_F10)")]
-    public const int KF10 = ((int)(ScancodeF10) | (1 << 30));
+    public const int KF10 = ((int)(Scancode.ScancodeF10) | (1 << 30));
 
     [NativeTypeName("#define SDLK_F11 SDL_SCANCODE_TO_KEYCODE(SDL_SCANCODE_F11)")]
-    public const int KF11 = ((int)(ScancodeF11) | (1 << 30));
+    public const int KF11 = ((int)(Scancode.ScancodeF11) | (1 << 30));
 
     [NativeTypeName("#define SDLK_F12 SDL_SCANCODE_TO_KEYCODE(SDL_SCANCODE_F12)")]
-    public const int KF12 = ((int)(ScancodeF12) | (1 << 30));
+    public const int KF12 = ((int)(Scancode.ScancodeF12) | (1 << 30));
 
     [NativeTypeName("#define SDLK_PRINTSCREEN SDL_SCANCODE_TO_KEYCODE(SDL_SCANCODE_PRINTSCREEN)")]
-    public const int KPrintscreen = ((int)(ScancodePrintscreen) | (1 << 30));
+    public const int KPrintscreen = ((int)(Scancode.ScancodePrintscreen) | (1 << 30));
 
     [NativeTypeName("#define SDLK_SCROLLLOCK SDL_SCANCODE_TO_KEYCODE(SDL_SCANCODE_SCROLLLOCK)")]
-    public const int KScrolllock = ((int)(ScancodeScrolllock) | (1 << 30));
+    public const int KScrolllock = ((int)(Scancode.ScancodeScrolllock) | (1 << 30));
 
     [NativeTypeName("#define SDLK_PAUSE SDL_SCANCODE_TO_KEYCODE(SDL_SCANCODE_PAUSE)")]
-    public const int KPause = ((int)(ScancodePause) | (1 << 30));
+    public const int KPause = ((int)(Scancode.ScancodePause) | (1 << 30));
 
     [NativeTypeName("#define SDLK_INSERT SDL_SCANCODE_TO_KEYCODE(SDL_SCANCODE_INSERT)")]
-    public const int KInsert = ((int)(ScancodeInsert) | (1 << 30));
+    public const int KInsert = ((int)(Scancode.ScancodeInsert) | (1 << 30));
 
     [NativeTypeName("#define SDLK_HOME SDL_SCANCODE_TO_KEYCODE(SDL_SCANCODE_HOME)")]
-    public const int KHome = ((int)(ScancodeHome) | (1 << 30));
+    public const int KHome = ((int)(Scancode.ScancodeHome) | (1 << 30));
 
     [NativeTypeName("#define SDLK_PAGEUP SDL_SCANCODE_TO_KEYCODE(SDL_SCANCODE_PAGEUP)")]
-    public const int KPageup = ((int)(ScancodePageup) | (1 << 30));
+    public const int KPageup = ((int)(Scancode.ScancodePageup) | (1 << 30));
 
     [NativeTypeName("#define SDLK_DELETE '\\x7F'")]
     public const sbyte KDelete = (sbyte)('');
 
     [NativeTypeName("#define SDLK_END SDL_SCANCODE_TO_KEYCODE(SDL_SCANCODE_END)")]
-    public const int KEnd = ((int)(ScancodeEnd) | (1 << 30));
+    public const int KEnd = ((int)(Scancode.ScancodeEnd) | (1 << 30));
 
     [NativeTypeName("#define SDLK_PAGEDOWN SDL_SCANCODE_TO_KEYCODE(SDL_SCANCODE_PAGEDOWN)")]
-    public const int KPagedown = ((int)(ScancodePagedown) | (1 << 30));
+    public const int KPagedown = ((int)(Scancode.ScancodePagedown) | (1 << 30));
 
     [NativeTypeName("#define SDLK_RIGHT SDL_SCANCODE_TO_KEYCODE(SDL_SCANCODE_RIGHT)")]
-    public const int KRight = ((int)(ScancodeRight) | (1 << 30));
+    public const int KRight = ((int)(Scancode.ScancodeRight) | (1 << 30));
 
     [NativeTypeName("#define SDLK_LEFT SDL_SCANCODE_TO_KEYCODE(SDL_SCANCODE_LEFT)")]
-    public const int KLeft = ((int)(ScancodeLeft) | (1 << 30));
+    public const int KLeft = ((int)(Scancode.ScancodeLeft) | (1 << 30));
 
     [NativeTypeName("#define SDLK_DOWN SDL_SCANCODE_TO_KEYCODE(SDL_SCANCODE_DOWN)")]
-    public const int KDown = ((int)(ScancodeDown) | (1 << 30));
+    public const int KDown = ((int)(Scancode.ScancodeDown) | (1 << 30));
 
     [NativeTypeName("#define SDLK_UP SDL_SCANCODE_TO_KEYCODE(SDL_SCANCODE_UP)")]
-    public const int KUp = ((int)(ScancodeUp) | (1 << 30));
+    public const int KUp = ((int)(Scancode.ScancodeUp) | (1 << 30));
 
     [NativeTypeName("#define SDLK_NUMLOCKCLEAR SDL_SCANCODE_TO_KEYCODE(SDL_SCANCODE_NUMLOCKCLEAR)")]
-    public const int KNumlockclear = ((int)(ScancodeNumlockclear) | (1 << 30));
+    public const int KNumlockclear = ((int)(Scancode.ScancodeNumlockclear) | (1 << 30));
 
     [NativeTypeName("#define SDLK_KP_DIVIDE SDL_SCANCODE_TO_KEYCODE(SDL_SCANCODE_KP_DIVIDE)")]
-    public const int KKpDivide = ((int)(ScancodeKpDivide) | (1 << 30));
+    public const int KKpDivide = ((int)(Scancode.ScancodeKpDivide) | (1 << 30));
 
     [NativeTypeName("#define SDLK_KP_MULTIPLY SDL_SCANCODE_TO_KEYCODE(SDL_SCANCODE_KP_MULTIPLY)")]
-    public const int KKpMultiply = ((int)(ScancodeKpMultiply) | (1 << 30));
+    public const int KKpMultiply = ((int)(Scancode.ScancodeKpMultiply) | (1 << 30));
 
     [NativeTypeName("#define SDLK_KP_MINUS SDL_SCANCODE_TO_KEYCODE(SDL_SCANCODE_KP_MINUS)")]
-    public const int KKpMinus = ((int)(ScancodeKpMinus) | (1 << 30));
+    public const int KKpMinus = ((int)(Scancode.ScancodeKpMinus) | (1 << 30));
 
     [NativeTypeName("#define SDLK_KP_PLUS SDL_SCANCODE_TO_KEYCODE(SDL_SCANCODE_KP_PLUS)")]
-    public const int KKpPlus = ((int)(ScancodeKpPlus) | (1 << 30));
+    public const int KKpPlus = ((int)(Scancode.ScancodeKpPlus) | (1 << 30));
 
     [NativeTypeName("#define SDLK_KP_ENTER SDL_SCANCODE_TO_KEYCODE(SDL_SCANCODE_KP_ENTER)")]
-    public const int KKpEnter = ((int)(ScancodeKpEnter) | (1 << 30));
+    public const int KKpEnter = ((int)(Scancode.ScancodeKpEnter) | (1 << 30));
 
     [NativeTypeName("#define SDLK_KP_1 SDL_SCANCODE_TO_KEYCODE(SDL_SCANCODE_KP_1)")]
-    public const int KKp1 = ((int)(ScancodeKp1) | (1 << 30));
+    public const int KKp1 = ((int)(Scancode.ScancodeKp1) | (1 << 30));
 
     [NativeTypeName("#define SDLK_KP_2 SDL_SCANCODE_TO_KEYCODE(SDL_SCANCODE_KP_2)")]
-    public const int KKp2 = ((int)(ScancodeKp2) | (1 << 30));
+    public const int KKp2 = ((int)(Scancode.ScancodeKp2) | (1 << 30));
 
     [NativeTypeName("#define SDLK_KP_3 SDL_SCANCODE_TO_KEYCODE(SDL_SCANCODE_KP_3)")]
-    public const int KKp3 = ((int)(ScancodeKp3) | (1 << 30));
+    public const int KKp3 = ((int)(Scancode.ScancodeKp3) | (1 << 30));
 
     [NativeTypeName("#define SDLK_KP_4 SDL_SCANCODE_TO_KEYCODE(SDL_SCANCODE_KP_4)")]
-    public const int KKp4 = ((int)(ScancodeKp4) | (1 << 30));
+    public const int KKp4 = ((int)(Scancode.ScancodeKp4) | (1 << 30));
 
     [NativeTypeName("#define SDLK_KP_5 SDL_SCANCODE_TO_KEYCODE(SDL_SCANCODE_KP_5)")]
-    public const int KKp5 = ((int)(ScancodeKp5) | (1 << 30));
+    public const int KKp5 = ((int)(Scancode.ScancodeKp5) | (1 << 30));
 
     [NativeTypeName("#define SDLK_KP_6 SDL_SCANCODE_TO_KEYCODE(SDL_SCANCODE_KP_6)")]
-    public const int KKp6 = ((int)(ScancodeKp6) | (1 << 30));
+    public const int KKp6 = ((int)(Scancode.ScancodeKp6) | (1 << 30));
 
     [NativeTypeName("#define SDLK_KP_7 SDL_SCANCODE_TO_KEYCODE(SDL_SCANCODE_KP_7)")]
-    public const int KKp7 = ((int)(ScancodeKp7) | (1 << 30));
+    public const int KKp7 = ((int)(Scancode.ScancodeKp7) | (1 << 30));
 
     [NativeTypeName("#define SDLK_KP_8 SDL_SCANCODE_TO_KEYCODE(SDL_SCANCODE_KP_8)")]
-    public const int KKp8 = ((int)(ScancodeKp8) | (1 << 30));
+    public const int KKp8 = ((int)(Scancode.ScancodeKp8) | (1 << 30));
 
     [NativeTypeName("#define SDLK_KP_9 SDL_SCANCODE_TO_KEYCODE(SDL_SCANCODE_KP_9)")]
-    public const int KKp9 = ((int)(ScancodeKp9) | (1 << 30));
+    public const int KKp9 = ((int)(Scancode.ScancodeKp9) | (1 << 30));
 
     [NativeTypeName("#define SDLK_KP_0 SDL_SCANCODE_TO_KEYCODE(SDL_SCANCODE_KP_0)")]
-    public const int KKp0 = ((int)(ScancodeKp0) | (1 << 30));
+    public const int KKp0 = ((int)(Scancode.ScancodeKp0) | (1 << 30));
 
     [NativeTypeName("#define SDLK_KP_PERIOD SDL_SCANCODE_TO_KEYCODE(SDL_SCANCODE_KP_PERIOD)")]
-    public const int KKpPeriod = ((int)(ScancodeKpPeriod) | (1 << 30));
+    public const int KKpPeriod = ((int)(Scancode.ScancodeKpPeriod) | (1 << 30));
 
     [NativeTypeName("#define SDLK_APPLICATION SDL_SCANCODE_TO_KEYCODE(SDL_SCANCODE_APPLICATION)")]
-    public const int KApplication = ((int)(ScancodeApplication) | (1 << 30));
+    public const int KApplication = ((int)(Scancode.ScancodeApplication) | (1 << 30));
 
     [NativeTypeName("#define SDLK_POWER SDL_SCANCODE_TO_KEYCODE(SDL_SCANCODE_POWER)")]
-    public const int KPower = ((int)(ScancodePower) | (1 << 30));
+    public const int KPower = ((int)(Scancode.ScancodePower) | (1 << 30));
 
     [NativeTypeName("#define SDLK_KP_EQUALS SDL_SCANCODE_TO_KEYCODE(SDL_SCANCODE_KP_EQUALS)")]
-    public const int KKpEquals = ((int)(ScancodeKpEquals) | (1 << 30));
+    public const int KKpEquals = ((int)(Scancode.ScancodeKpEquals) | (1 << 30));
 
     [NativeTypeName("#define SDLK_F13 SDL_SCANCODE_TO_KEYCODE(SDL_SCANCODE_F13)")]
-    public const int KF13 = ((int)(ScancodeF13) | (1 << 30));
+    public const int KF13 = ((int)(Scancode.ScancodeF13) | (1 << 30));
 
     [NativeTypeName("#define SDLK_F14 SDL_SCANCODE_TO_KEYCODE(SDL_SCANCODE_F14)")]
-    public const int KF14 = ((int)(ScancodeF14) | (1 << 30));
+    public const int KF14 = ((int)(Scancode.ScancodeF14) | (1 << 30));
 
     [NativeTypeName("#define SDLK_F15 SDL_SCANCODE_TO_KEYCODE(SDL_SCANCODE_F15)")]
-    public const int KF15 = ((int)(ScancodeF15) | (1 << 30));
+    public const int KF15 = ((int)(Scancode.ScancodeF15) | (1 << 30));
 
     [NativeTypeName("#define SDLK_F16 SDL_SCANCODE_TO_KEYCODE(SDL_SCANCODE_F16)")]
-    public const int KF16 = ((int)(ScancodeF16) | (1 << 30));
+    public const int KF16 = ((int)(Scancode.ScancodeF16) | (1 << 30));
 
     [NativeTypeName("#define SDLK_F17 SDL_SCANCODE_TO_KEYCODE(SDL_SCANCODE_F17)")]
-    public const int KF17 = ((int)(ScancodeF17) | (1 << 30));
+    public const int KF17 = ((int)(Scancode.ScancodeF17) | (1 << 30));
 
     [NativeTypeName("#define SDLK_F18 SDL_SCANCODE_TO_KEYCODE(SDL_SCANCODE_F18)")]
-    public const int KF18 = ((int)(ScancodeF18) | (1 << 30));
+    public const int KF18 = ((int)(Scancode.ScancodeF18) | (1 << 30));
 
     [NativeTypeName("#define SDLK_F19 SDL_SCANCODE_TO_KEYCODE(SDL_SCANCODE_F19)")]
-    public const int KF19 = ((int)(ScancodeF19) | (1 << 30));
+    public const int KF19 = ((int)(Scancode.ScancodeF19) | (1 << 30));
 
     [NativeTypeName("#define SDLK_F20 SDL_SCANCODE_TO_KEYCODE(SDL_SCANCODE_F20)")]
-    public const int KF20 = ((int)(ScancodeF20) | (1 << 30));
+    public const int KF20 = ((int)(Scancode.ScancodeF20) | (1 << 30));
 
     [NativeTypeName("#define SDLK_F21 SDL_SCANCODE_TO_KEYCODE(SDL_SCANCODE_F21)")]
-    public const int KF21 = ((int)(ScancodeF21) | (1 << 30));
+    public const int KF21 = ((int)(Scancode.ScancodeF21) | (1 << 30));
 
     [NativeTypeName("#define SDLK_F22 SDL_SCANCODE_TO_KEYCODE(SDL_SCANCODE_F22)")]
-    public const int KF22 = ((int)(ScancodeF22) | (1 << 30));
+    public const int KF22 = ((int)(Scancode.ScancodeF22) | (1 << 30));
 
     [NativeTypeName("#define SDLK_F23 SDL_SCANCODE_TO_KEYCODE(SDL_SCANCODE_F23)")]
-    public const int KF23 = ((int)(ScancodeF23) | (1 << 30));
+    public const int KF23 = ((int)(Scancode.ScancodeF23) | (1 << 30));
 
     [NativeTypeName("#define SDLK_F24 SDL_SCANCODE_TO_KEYCODE(SDL_SCANCODE_F24)")]
-    public const int KF24 = ((int)(ScancodeF24) | (1 << 30));
+    public const int KF24 = ((int)(Scancode.ScancodeF24) | (1 << 30));
 
     [NativeTypeName("#define SDLK_EXECUTE SDL_SCANCODE_TO_KEYCODE(SDL_SCANCODE_EXECUTE)")]
-    public const int KExecute = ((int)(ScancodeExecute) | (1 << 30));
+    public const int KExecute = ((int)(Scancode.ScancodeExecute) | (1 << 30));
 
     [NativeTypeName("#define SDLK_HELP SDL_SCANCODE_TO_KEYCODE(SDL_SCANCODE_HELP)")]
-    public const int KHelp = ((int)(ScancodeHelp) | (1 << 30));
+    public const int KHelp = ((int)(Scancode.ScancodeHelp) | (1 << 30));
 
     [NativeTypeName("#define SDLK_MENU SDL_SCANCODE_TO_KEYCODE(SDL_SCANCODE_MENU)")]
-    public const int KMenu = ((int)(ScancodeMenu) | (1 << 30));
+    public const int KMenu = ((int)(Scancode.ScancodeMenu) | (1 << 30));
 
     [NativeTypeName("#define SDLK_SELECT SDL_SCANCODE_TO_KEYCODE(SDL_SCANCODE_SELECT)")]
-    public const int KSelect = ((int)(ScancodeSelect) | (1 << 30));
+    public const int KSelect = ((int)(Scancode.ScancodeSelect) | (1 << 30));
 
     [NativeTypeName("#define SDLK_STOP SDL_SCANCODE_TO_KEYCODE(SDL_SCANCODE_STOP)")]
-    public const int KStop = ((int)(ScancodeStop) | (1 << 30));
+    public const int KStop = ((int)(Scancode.ScancodeStop) | (1 << 30));
 
     [NativeTypeName("#define SDLK_AGAIN SDL_SCANCODE_TO_KEYCODE(SDL_SCANCODE_AGAIN)")]
-    public const int KAgain = ((int)(ScancodeAgain) | (1 << 30));
+    public const int KAgain = ((int)(Scancode.ScancodeAgain) | (1 << 30));
 
     [NativeTypeName("#define SDLK_UNDO SDL_SCANCODE_TO_KEYCODE(SDL_SCANCODE_UNDO)")]
-    public const int KUndo = ((int)(ScancodeUndo) | (1 << 30));
+    public const int KUndo = ((int)(Scancode.ScancodeUndo) | (1 << 30));
 
     [NativeTypeName("#define SDLK_CUT SDL_SCANCODE_TO_KEYCODE(SDL_SCANCODE_CUT)")]
-    public const int KCut = ((int)(ScancodeCut) | (1 << 30));
+    public const int KCut = ((int)(Scancode.ScancodeCut) | (1 << 30));
 
     [NativeTypeName("#define SDLK_COPY SDL_SCANCODE_TO_KEYCODE(SDL_SCANCODE_COPY)")]
-    public const int KCopy = ((int)(ScancodeCopy) | (1 << 30));
+    public const int KCopy = ((int)(Scancode.ScancodeCopy) | (1 << 30));
 
     [NativeTypeName("#define SDLK_PASTE SDL_SCANCODE_TO_KEYCODE(SDL_SCANCODE_PASTE)")]
-    public const int KPaste = ((int)(ScancodePaste) | (1 << 30));
+    public const int KPaste = ((int)(Scancode.ScancodePaste) | (1 << 30));
 
     [NativeTypeName("#define SDLK_FIND SDL_SCANCODE_TO_KEYCODE(SDL_SCANCODE_FIND)")]
-    public const int KFind = ((int)(ScancodeFind) | (1 << 30));
+    public const int KFind = ((int)(Scancode.ScancodeFind) | (1 << 30));
 
     [NativeTypeName("#define SDLK_MUTE SDL_SCANCODE_TO_KEYCODE(SDL_SCANCODE_MUTE)")]
-    public const int KMute = ((int)(ScancodeMute) | (1 << 30));
+    public const int KMute = ((int)(Scancode.ScancodeMute) | (1 << 30));
 
     [NativeTypeName("#define SDLK_VOLUMEUP SDL_SCANCODE_TO_KEYCODE(SDL_SCANCODE_VOLUMEUP)")]
-    public const int KVolumeup = ((int)(ScancodeVolumeup) | (1 << 30));
+    public const int KVolumeup = ((int)(Scancode.ScancodeVolumeup) | (1 << 30));
 
     [NativeTypeName("#define SDLK_VOLUMEDOWN SDL_SCANCODE_TO_KEYCODE(SDL_SCANCODE_VOLUMEDOWN)")]
-    public const int KVolumedown = ((int)(ScancodeVolumedown) | (1 << 30));
+    public const int KVolumedown = ((int)(Scancode.ScancodeVolumedown) | (1 << 30));
 
     [NativeTypeName("#define SDLK_KP_COMMA SDL_SCANCODE_TO_KEYCODE(SDL_SCANCODE_KP_COMMA)")]
-    public const int KKpComma = ((int)(ScancodeKpComma) | (1 << 30));
+    public const int KKpComma = ((int)(Scancode.ScancodeKpComma) | (1 << 30));
 
     [NativeTypeName(
         "#define SDLK_KP_EQUALSAS400 SDL_SCANCODE_TO_KEYCODE(SDL_SCANCODE_KP_EQUALSAS400)"
     )]
-    public const int KKpEqualsas400 = ((int)(ScancodeKpEqualsas400) | (1 << 30));
+    public const int KKpEqualsas400 = ((int)(Scancode.ScancodeKpEqualsas400) | (1 << 30));
 
     [NativeTypeName("#define SDLK_ALTERASE SDL_SCANCODE_TO_KEYCODE(SDL_SCANCODE_ALTERASE)")]
-    public const int KAlterase = ((int)(ScancodeAlterase) | (1 << 30));
+    public const int KAlterase = ((int)(Scancode.ScancodeAlterase) | (1 << 30));
 
     [NativeTypeName("#define SDLK_SYSREQ SDL_SCANCODE_TO_KEYCODE(SDL_SCANCODE_SYSREQ)")]
-    public const int KSysreq = ((int)(ScancodeSysreq) | (1 << 30));
+    public const int KSysreq = ((int)(Scancode.ScancodeSysreq) | (1 << 30));
 
     [NativeTypeName("#define SDLK_CANCEL SDL_SCANCODE_TO_KEYCODE(SDL_SCANCODE_CANCEL)")]
-    public const int KCancel = ((int)(ScancodeCancel) | (1 << 30));
+    public const int KCancel = ((int)(Scancode.ScancodeCancel) | (1 << 30));
 
     [NativeTypeName("#define SDLK_CLEAR SDL_SCANCODE_TO_KEYCODE(SDL_SCANCODE_CLEAR)")]
-    public const int KClear = ((int)(ScancodeClear) | (1 << 30));
+    public const int KClear = ((int)(Scancode.ScancodeClear) | (1 << 30));
 
     [NativeTypeName("#define SDLK_PRIOR SDL_SCANCODE_TO_KEYCODE(SDL_SCANCODE_PRIOR)")]
-    public const int KPrior = ((int)(ScancodePrior) | (1 << 30));
+    public const int KPrior = ((int)(Scancode.ScancodePrior) | (1 << 30));
 
     [NativeTypeName("#define SDLK_RETURN2 SDL_SCANCODE_TO_KEYCODE(SDL_SCANCODE_RETURN2)")]
-    public const int KReturn2 = ((int)(ScancodeReturn2) | (1 << 30));
+    public const int KReturn2 = ((int)(Scancode.ScancodeReturn2) | (1 << 30));
 
     [NativeTypeName("#define SDLK_SEPARATOR SDL_SCANCODE_TO_KEYCODE(SDL_SCANCODE_SEPARATOR)")]
-    public const int KSeparator = ((int)(ScancodeSeparator) | (1 << 30));
+    public const int KSeparator = ((int)(Scancode.ScancodeSeparator) | (1 << 30));
 
     [NativeTypeName("#define SDLK_OUT SDL_SCANCODE_TO_KEYCODE(SDL_SCANCODE_OUT)")]
-    public const int KOut = ((int)(ScancodeOut) | (1 << 30));
+    public const int KOut = ((int)(Scancode.ScancodeOut) | (1 << 30));
 
     [NativeTypeName("#define SDLK_OPER SDL_SCANCODE_TO_KEYCODE(SDL_SCANCODE_OPER)")]
-    public const int KOper = ((int)(ScancodeOper) | (1 << 30));
+    public const int KOper = ((int)(Scancode.ScancodeOper) | (1 << 30));
 
     [NativeTypeName("#define SDLK_CLEARAGAIN SDL_SCANCODE_TO_KEYCODE(SDL_SCANCODE_CLEARAGAIN)")]
-    public const int KClearagain = ((int)(ScancodeClearagain) | (1 << 30));
+    public const int KClearagain = ((int)(Scancode.ScancodeClearagain) | (1 << 30));
 
     [NativeTypeName("#define SDLK_CRSEL SDL_SCANCODE_TO_KEYCODE(SDL_SCANCODE_CRSEL)")]
-    public const int KCrsel = ((int)(ScancodeCrsel) | (1 << 30));
+    public const int KCrsel = ((int)(Scancode.ScancodeCrsel) | (1 << 30));
 
     [NativeTypeName("#define SDLK_EXSEL SDL_SCANCODE_TO_KEYCODE(SDL_SCANCODE_EXSEL)")]
-    public const int KExsel = ((int)(ScancodeExsel) | (1 << 30));
+    public const int KExsel = ((int)(Scancode.ScancodeExsel) | (1 << 30));
 
     [NativeTypeName("#define SDLK_KP_00 SDL_SCANCODE_TO_KEYCODE(SDL_SCANCODE_KP_00)")]
-    public const int KKp00 = ((int)(ScancodeKp00) | (1 << 30));
+    public const int KKp00 = ((int)(Scancode.ScancodeKp00) | (1 << 30));
 
     [NativeTypeName("#define SDLK_KP_000 SDL_SCANCODE_TO_KEYCODE(SDL_SCANCODE_KP_000)")]
-    public const int KKp000 = ((int)(ScancodeKp000) | (1 << 30));
+    public const int KKp000 = ((int)(Scancode.ScancodeKp000) | (1 << 30));
 
     [NativeTypeName(
         "#define SDLK_THOUSANDSSEPARATOR SDL_SCANCODE_TO_KEYCODE(SDL_SCANCODE_THOUSANDSSEPARATOR)"
     )]
-    public const int KThousandsseparator = ((int)(ScancodeThousandsseparator) | (1 << 30));
+    public const int KThousandsseparator = ((int)(Scancode.ScancodeThousandsseparator) | (1 << 30));
 
     [NativeTypeName(
         "#define SDLK_DECIMALSEPARATOR SDL_SCANCODE_TO_KEYCODE(SDL_SCANCODE_DECIMALSEPARATOR)"
     )]
-    public const int KDecimalseparator = ((int)(ScancodeDecimalseparator) | (1 << 30));
+    public const int KDecimalseparator = ((int)(Scancode.ScancodeDecimalseparator) | (1 << 30));
 
     [NativeTypeName("#define SDLK_CURRENCYUNIT SDL_SCANCODE_TO_KEYCODE(SDL_SCANCODE_CURRENCYUNIT)")]
-    public const int KCurrencyunit = ((int)(ScancodeCurrencyunit) | (1 << 30));
+    public const int KCurrencyunit = ((int)(Scancode.ScancodeCurrencyunit) | (1 << 30));
 
     [NativeTypeName(
         "#define SDLK_CURRENCYSUBUNIT SDL_SCANCODE_TO_KEYCODE(SDL_SCANCODE_CURRENCYSUBUNIT)"
     )]
-    public const int KCurrencysubunit = ((int)(ScancodeCurrencysubunit) | (1 << 30));
+    public const int KCurrencysubunit = ((int)(Scancode.ScancodeCurrencysubunit) | (1 << 30));
 
     [NativeTypeName("#define SDLK_KP_LEFTPAREN SDL_SCANCODE_TO_KEYCODE(SDL_SCANCODE_KP_LEFTPAREN)")]
-    public const int KKpLeftparen = ((int)(ScancodeKpLeftparen) | (1 << 30));
+    public const int KKpLeftparen = ((int)(Scancode.ScancodeKpLeftparen) | (1 << 30));
 
     [NativeTypeName(
         "#define SDLK_KP_RIGHTPAREN SDL_SCANCODE_TO_KEYCODE(SDL_SCANCODE_KP_RIGHTPAREN)"
     )]
-    public const int KKpRightparen = ((int)(ScancodeKpRightparen) | (1 << 30));
+    public const int KKpRightparen = ((int)(Scancode.ScancodeKpRightparen) | (1 << 30));
 
     [NativeTypeName("#define SDLK_KP_LEFTBRACE SDL_SCANCODE_TO_KEYCODE(SDL_SCANCODE_KP_LEFTBRACE)")]
-    public const int KKpLeftbrace = ((int)(ScancodeKpLeftbrace) | (1 << 30));
+    public const int KKpLeftbrace = ((int)(Scancode.ScancodeKpLeftbrace) | (1 << 30));
 
     [NativeTypeName(
         "#define SDLK_KP_RIGHTBRACE SDL_SCANCODE_TO_KEYCODE(SDL_SCANCODE_KP_RIGHTBRACE)"
     )]
-    public const int KKpRightbrace = ((int)(ScancodeKpRightbrace) | (1 << 30));
+    public const int KKpRightbrace = ((int)(Scancode.ScancodeKpRightbrace) | (1 << 30));
 
     [NativeTypeName("#define SDLK_KP_TAB SDL_SCANCODE_TO_KEYCODE(SDL_SCANCODE_KP_TAB)")]
-    public const int KKpTab = ((int)(ScancodeKpTab) | (1 << 30));
+    public const int KKpTab = ((int)(Scancode.ScancodeKpTab) | (1 << 30));
 
     [NativeTypeName("#define SDLK_KP_BACKSPACE SDL_SCANCODE_TO_KEYCODE(SDL_SCANCODE_KP_BACKSPACE)")]
-    public const int KKpBackspace = ((int)(ScancodeKpBackspace) | (1 << 30));
+    public const int KKpBackspace = ((int)(Scancode.ScancodeKpBackspace) | (1 << 30));
 
     [NativeTypeName("#define SDLK_KP_A SDL_SCANCODE_TO_KEYCODE(SDL_SCANCODE_KP_A)")]
-    public const int KKpA = ((int)(ScancodeKpA) | (1 << 30));
+    public const int KKpA = ((int)(Scancode.ScancodeKpA) | (1 << 30));
 
     [NativeTypeName("#define SDLK_KP_B SDL_SCANCODE_TO_KEYCODE(SDL_SCANCODE_KP_B)")]
-    public const int KKpB = ((int)(ScancodeKpB) | (1 << 30));
+    public const int KKpB = ((int)(Scancode.ScancodeKpB) | (1 << 30));
 
     [NativeTypeName("#define SDLK_KP_C SDL_SCANCODE_TO_KEYCODE(SDL_SCANCODE_KP_C)")]
-    public const int KKpC = ((int)(ScancodeKpC) | (1 << 30));
+    public const int KKpC = ((int)(Scancode.ScancodeKpC) | (1 << 30));
 
     [NativeTypeName("#define SDLK_KP_D SDL_SCANCODE_TO_KEYCODE(SDL_SCANCODE_KP_D)")]
-    public const int KKpD = ((int)(ScancodeKpD) | (1 << 30));
+    public const int KKpD = ((int)(Scancode.ScancodeKpD) | (1 << 30));
 
     [NativeTypeName("#define SDLK_KP_E SDL_SCANCODE_TO_KEYCODE(SDL_SCANCODE_KP_E)")]
-    public const int KKpE = ((int)(ScancodeKpE) | (1 << 30));
+    public const int KKpE = ((int)(Scancode.ScancodeKpE) | (1 << 30));
 
     [NativeTypeName("#define SDLK_KP_F SDL_SCANCODE_TO_KEYCODE(SDL_SCANCODE_KP_F)")]
-    public const int KKpF = ((int)(ScancodeKpF) | (1 << 30));
+    public const int KKpF = ((int)(Scancode.ScancodeKpF) | (1 << 30));
 
     [NativeTypeName("#define SDLK_KP_XOR SDL_SCANCODE_TO_KEYCODE(SDL_SCANCODE_KP_XOR)")]
-    public const int KKpXor = ((int)(ScancodeKpXor) | (1 << 30));
+    public const int KKpXor = ((int)(Scancode.ScancodeKpXor) | (1 << 30));
 
     [NativeTypeName("#define SDLK_KP_POWER SDL_SCANCODE_TO_KEYCODE(SDL_SCANCODE_KP_POWER)")]
-    public const int KKpPower = ((int)(ScancodeKpPower) | (1 << 30));
+    public const int KKpPower = ((int)(Scancode.ScancodeKpPower) | (1 << 30));
 
     [NativeTypeName("#define SDLK_KP_PERCENT SDL_SCANCODE_TO_KEYCODE(SDL_SCANCODE_KP_PERCENT)")]
-    public const int KKpPercent = ((int)(ScancodeKpPercent) | (1 << 30));
+    public const int KKpPercent = ((int)(Scancode.ScancodeKpPercent) | (1 << 30));
 
     [NativeTypeName("#define SDLK_KP_LESS SDL_SCANCODE_TO_KEYCODE(SDL_SCANCODE_KP_LESS)")]
-    public const int KKpLess = ((int)(ScancodeKpLess) | (1 << 30));
+    public const int KKpLess = ((int)(Scancode.ScancodeKpLess) | (1 << 30));
 
     [NativeTypeName("#define SDLK_KP_GREATER SDL_SCANCODE_TO_KEYCODE(SDL_SCANCODE_KP_GREATER)")]
-    public const int KKpGreater = ((int)(ScancodeKpGreater) | (1 << 30));
+    public const int KKpGreater = ((int)(Scancode.ScancodeKpGreater) | (1 << 30));
 
     [NativeTypeName("#define SDLK_KP_AMPERSAND SDL_SCANCODE_TO_KEYCODE(SDL_SCANCODE_KP_AMPERSAND)")]
-    public const int KKpAmpersand = ((int)(ScancodeKpAmpersand) | (1 << 30));
+    public const int KKpAmpersand = ((int)(Scancode.ScancodeKpAmpersand) | (1 << 30));
 
     [NativeTypeName(
         "#define SDLK_KP_DBLAMPERSAND SDL_SCANCODE_TO_KEYCODE(SDL_SCANCODE_KP_DBLAMPERSAND)"
     )]
-    public const int KKpDblampersand = ((int)(ScancodeKpDblampersand) | (1 << 30));
+    public const int KKpDblampersand = ((int)(Scancode.ScancodeKpDblampersand) | (1 << 30));
 
     [NativeTypeName(
         "#define SDLK_KP_VERTICALBAR SDL_SCANCODE_TO_KEYCODE(SDL_SCANCODE_KP_VERTICALBAR)"
     )]
-    public const int KKpVerticalbar = ((int)(ScancodeKpVerticalbar) | (1 << 30));
+    public const int KKpVerticalbar = ((int)(Scancode.ScancodeKpVerticalbar) | (1 << 30));
 
     [NativeTypeName(
         "#define SDLK_KP_DBLVERTICALBAR SDL_SCANCODE_TO_KEYCODE(SDL_SCANCODE_KP_DBLVERTICALBAR)"
     )]
-    public const int KKpDblverticalbar = ((int)(ScancodeKpDblverticalbar) | (1 << 30));
+    public const int KKpDblverticalbar = ((int)(Scancode.ScancodeKpDblverticalbar) | (1 << 30));
 
     [NativeTypeName("#define SDLK_KP_COLON SDL_SCANCODE_TO_KEYCODE(SDL_SCANCODE_KP_COLON)")]
-    public const int KKpColon = ((int)(ScancodeKpColon) | (1 << 30));
+    public const int KKpColon = ((int)(Scancode.ScancodeKpColon) | (1 << 30));
 
     [NativeTypeName("#define SDLK_KP_HASH SDL_SCANCODE_TO_KEYCODE(SDL_SCANCODE_KP_HASH)")]
-    public const int KKpHash = ((int)(ScancodeKpHash) | (1 << 30));
+    public const int KKpHash = ((int)(Scancode.ScancodeKpHash) | (1 << 30));
 
     [NativeTypeName("#define SDLK_KP_SPACE SDL_SCANCODE_TO_KEYCODE(SDL_SCANCODE_KP_SPACE)")]
-    public const int KKpSpace = ((int)(ScancodeKpSpace) | (1 << 30));
+    public const int KKpSpace = ((int)(Scancode.ScancodeKpSpace) | (1 << 30));
 
     [NativeTypeName("#define SDLK_KP_AT SDL_SCANCODE_TO_KEYCODE(SDL_SCANCODE_KP_AT)")]
-    public const int KKpAt = ((int)(ScancodeKpAt) | (1 << 30));
+    public const int KKpAt = ((int)(Scancode.ScancodeKpAt) | (1 << 30));
 
     [NativeTypeName("#define SDLK_KP_EXCLAM SDL_SCANCODE_TO_KEYCODE(SDL_SCANCODE_KP_EXCLAM)")]
-    public const int KKpExclam = ((int)(ScancodeKpExclam) | (1 << 30));
+    public const int KKpExclam = ((int)(Scancode.ScancodeKpExclam) | (1 << 30));
 
     [NativeTypeName("#define SDLK_KP_MEMSTORE SDL_SCANCODE_TO_KEYCODE(SDL_SCANCODE_KP_MEMSTORE)")]
-    public const int KKpMemstore = ((int)(ScancodeKpMemstore) | (1 << 30));
+    public const int KKpMemstore = ((int)(Scancode.ScancodeKpMemstore) | (1 << 30));
 
     [NativeTypeName("#define SDLK_KP_MEMRECALL SDL_SCANCODE_TO_KEYCODE(SDL_SCANCODE_KP_MEMRECALL)")]
-    public const int KKpMemrecall = ((int)(ScancodeKpMemrecall) | (1 << 30));
+    public const int KKpMemrecall = ((int)(Scancode.ScancodeKpMemrecall) | (1 << 30));
 
     [NativeTypeName("#define SDLK_KP_MEMCLEAR SDL_SCANCODE_TO_KEYCODE(SDL_SCANCODE_KP_MEMCLEAR)")]
-    public const int KKpMemclear = ((int)(ScancodeKpMemclear) | (1 << 30));
+    public const int KKpMemclear = ((int)(Scancode.ScancodeKpMemclear) | (1 << 30));
 
     [NativeTypeName("#define SDLK_KP_MEMADD SDL_SCANCODE_TO_KEYCODE(SDL_SCANCODE_KP_MEMADD)")]
-    public const int KKpMemadd = ((int)(ScancodeKpMemadd) | (1 << 30));
+    public const int KKpMemadd = ((int)(Scancode.ScancodeKpMemadd) | (1 << 30));
 
     [NativeTypeName(
         "#define SDLK_KP_MEMSUBTRACT SDL_SCANCODE_TO_KEYCODE(SDL_SCANCODE_KP_MEMSUBTRACT)"
     )]
-    public const int KKpMemsubtract = ((int)(ScancodeKpMemsubtract) | (1 << 30));
+    public const int KKpMemsubtract = ((int)(Scancode.ScancodeKpMemsubtract) | (1 << 30));
 
     [NativeTypeName(
         "#define SDLK_KP_MEMMULTIPLY SDL_SCANCODE_TO_KEYCODE(SDL_SCANCODE_KP_MEMMULTIPLY)"
     )]
-    public const int KKpMemmultiply = ((int)(ScancodeKpMemmultiply) | (1 << 30));
+    public const int KKpMemmultiply = ((int)(Scancode.ScancodeKpMemmultiply) | (1 << 30));
 
     [NativeTypeName("#define SDLK_KP_MEMDIVIDE SDL_SCANCODE_TO_KEYCODE(SDL_SCANCODE_KP_MEMDIVIDE)")]
-    public const int KKpMemdivide = ((int)(ScancodeKpMemdivide) | (1 << 30));
+    public const int KKpMemdivide = ((int)(Scancode.ScancodeKpMemdivide) | (1 << 30));
 
     [NativeTypeName("#define SDLK_KP_PLUSMINUS SDL_SCANCODE_TO_KEYCODE(SDL_SCANCODE_KP_PLUSMINUS)")]
-    public const int KKpPlusminus = ((int)(ScancodeKpPlusminus) | (1 << 30));
+    public const int KKpPlusminus = ((int)(Scancode.ScancodeKpPlusminus) | (1 << 30));
 
     [NativeTypeName("#define SDLK_KP_CLEAR SDL_SCANCODE_TO_KEYCODE(SDL_SCANCODE_KP_CLEAR)")]
-    public const int KKpClear = ((int)(ScancodeKpClear) | (1 << 30));
+    public const int KKpClear = ((int)(Scancode.ScancodeKpClear) | (1 << 30));
 
     [NativeTypeName(
         "#define SDLK_KP_CLEARENTRY SDL_SCANCODE_TO_KEYCODE(SDL_SCANCODE_KP_CLEARENTRY)"
     )]
-    public const int KKpClearentry = ((int)(ScancodeKpClearentry) | (1 << 30));
+    public const int KKpClearentry = ((int)(Scancode.ScancodeKpClearentry) | (1 << 30));
 
     [NativeTypeName("#define SDLK_KP_BINARY SDL_SCANCODE_TO_KEYCODE(SDL_SCANCODE_KP_BINARY)")]
-    public const int KKpBinary = ((int)(ScancodeKpBinary) | (1 << 30));
+    public const int KKpBinary = ((int)(Scancode.ScancodeKpBinary) | (1 << 30));
 
     [NativeTypeName("#define SDLK_KP_OCTAL SDL_SCANCODE_TO_KEYCODE(SDL_SCANCODE_KP_OCTAL)")]
-    public const int KKpOctal = ((int)(ScancodeKpOctal) | (1 << 30));
+    public const int KKpOctal = ((int)(Scancode.ScancodeKpOctal) | (1 << 30));
 
     [NativeTypeName("#define SDLK_KP_DECIMAL SDL_SCANCODE_TO_KEYCODE(SDL_SCANCODE_KP_DECIMAL)")]
-    public const int KKpDecimal = ((int)(ScancodeKpDecimal) | (1 << 30));
+    public const int KKpDecimal = ((int)(Scancode.ScancodeKpDecimal) | (1 << 30));
 
     [NativeTypeName(
         "#define SDLK_KP_HEXADECIMAL SDL_SCANCODE_TO_KEYCODE(SDL_SCANCODE_KP_HEXADECIMAL)"
     )]
-    public const int KKpHexadecimal = ((int)(ScancodeKpHexadecimal) | (1 << 30));
+    public const int KKpHexadecimal = ((int)(Scancode.ScancodeKpHexadecimal) | (1 << 30));
 
     [NativeTypeName("#define SDLK_LCTRL SDL_SCANCODE_TO_KEYCODE(SDL_SCANCODE_LCTRL)")]
-    public const int KLctrl = ((int)(ScancodeLctrl) | (1 << 30));
+    public const int KLctrl = ((int)(Scancode.ScancodeLctrl) | (1 << 30));
 
     [NativeTypeName("#define SDLK_LSHIFT SDL_SCANCODE_TO_KEYCODE(SDL_SCANCODE_LSHIFT)")]
-    public const int KLshift = ((int)(ScancodeLshift) | (1 << 30));
+    public const int KLshift = ((int)(Scancode.ScancodeLshift) | (1 << 30));
 
     [NativeTypeName("#define SDLK_LALT SDL_SCANCODE_TO_KEYCODE(SDL_SCANCODE_LALT)")]
-    public const int KLalt = ((int)(ScancodeLalt) | (1 << 30));
+    public const int KLalt = ((int)(Scancode.ScancodeLalt) | (1 << 30));
 
     [NativeTypeName("#define SDLK_LGUI SDL_SCANCODE_TO_KEYCODE(SDL_SCANCODE_LGUI)")]
-    public const int KLgui = ((int)(ScancodeLgui) | (1 << 30));
+    public const int KLgui = ((int)(Scancode.ScancodeLgui) | (1 << 30));
 
     [NativeTypeName("#define SDLK_RCTRL SDL_SCANCODE_TO_KEYCODE(SDL_SCANCODE_RCTRL)")]
-    public const int KRctrl = ((int)(ScancodeRctrl) | (1 << 30));
+    public const int KRctrl = ((int)(Scancode.ScancodeRctrl) | (1 << 30));
 
     [NativeTypeName("#define SDLK_RSHIFT SDL_SCANCODE_TO_KEYCODE(SDL_SCANCODE_RSHIFT)")]
-    public const int KRshift = ((int)(ScancodeRshift) | (1 << 30));
+    public const int KRshift = ((int)(Scancode.ScancodeRshift) | (1 << 30));
 
     [NativeTypeName("#define SDLK_RALT SDL_SCANCODE_TO_KEYCODE(SDL_SCANCODE_RALT)")]
-    public const int KRalt = ((int)(ScancodeRalt) | (1 << 30));
+    public const int KRalt = ((int)(Scancode.ScancodeRalt) | (1 << 30));
 
     [NativeTypeName("#define SDLK_RGUI SDL_SCANCODE_TO_KEYCODE(SDL_SCANCODE_RGUI)")]
-    public const int KRgui = ((int)(ScancodeRgui) | (1 << 30));
+    public const int KRgui = ((int)(Scancode.ScancodeRgui) | (1 << 30));
 
     [NativeTypeName("#define SDLK_MODE SDL_SCANCODE_TO_KEYCODE(SDL_SCANCODE_MODE)")]
-    public const int KMode = ((int)(ScancodeMode) | (1 << 30));
+    public const int KMode = ((int)(Scancode.ScancodeMode) | (1 << 30));
 
     [NativeTypeName("#define SDLK_AUDIONEXT SDL_SCANCODE_TO_KEYCODE(SDL_SCANCODE_AUDIONEXT)")]
-    public const int KAudionext = ((int)(ScancodeAudionext) | (1 << 30));
+    public const int KAudionext = ((int)(Scancode.ScancodeAudionext) | (1 << 30));
 
     [NativeTypeName("#define SDLK_AUDIOPREV SDL_SCANCODE_TO_KEYCODE(SDL_SCANCODE_AUDIOPREV)")]
-    public const int KAudioprev = ((int)(ScancodeAudioprev) | (1 << 30));
+    public const int KAudioprev = ((int)(Scancode.ScancodeAudioprev) | (1 << 30));
 
     [NativeTypeName("#define SDLK_AUDIOSTOP SDL_SCANCODE_TO_KEYCODE(SDL_SCANCODE_AUDIOSTOP)")]
-    public const int KAudiostop = ((int)(ScancodeAudiostop) | (1 << 30));
+    public const int KAudiostop = ((int)(Scancode.ScancodeAudiostop) | (1 << 30));
 
     [NativeTypeName("#define SDLK_AUDIOPLAY SDL_SCANCODE_TO_KEYCODE(SDL_SCANCODE_AUDIOPLAY)")]
-    public const int KAudioplay = ((int)(ScancodeAudioplay) | (1 << 30));
+    public const int KAudioplay = ((int)(Scancode.ScancodeAudioplay) | (1 << 30));
 
     [NativeTypeName("#define SDLK_AUDIOMUTE SDL_SCANCODE_TO_KEYCODE(SDL_SCANCODE_AUDIOMUTE)")]
-    public const int KAudiomute = ((int)(ScancodeAudiomute) | (1 << 30));
+    public const int KAudiomute = ((int)(Scancode.ScancodeAudiomute) | (1 << 30));
 
     [NativeTypeName("#define SDLK_MEDIASELECT SDL_SCANCODE_TO_KEYCODE(SDL_SCANCODE_MEDIASELECT)")]
-    public const int KMediaselect = ((int)(ScancodeMediaselect) | (1 << 30));
+    public const int KMediaselect = ((int)(Scancode.ScancodeMediaselect) | (1 << 30));
 
     [NativeTypeName("#define SDLK_WWW SDL_SCANCODE_TO_KEYCODE(SDL_SCANCODE_WWW)")]
-    public const int KWww = ((int)(ScancodeWww) | (1 << 30));
+    public const int KWww = ((int)(Scancode.ScancodeWww) | (1 << 30));
 
     [NativeTypeName("#define SDLK_MAIL SDL_SCANCODE_TO_KEYCODE(SDL_SCANCODE_MAIL)")]
-    public const int KMail = ((int)(ScancodeMail) | (1 << 30));
+    public const int KMail = ((int)(Scancode.ScancodeMail) | (1 << 30));
 
     [NativeTypeName("#define SDLK_CALCULATOR SDL_SCANCODE_TO_KEYCODE(SDL_SCANCODE_CALCULATOR)")]
-    public const int KCalculator = ((int)(ScancodeCalculator) | (1 << 30));
+    public const int KCalculator = ((int)(Scancode.ScancodeCalculator) | (1 << 30));
 
     [NativeTypeName("#define SDLK_COMPUTER SDL_SCANCODE_TO_KEYCODE(SDL_SCANCODE_COMPUTER)")]
-    public const int KComputer = ((int)(ScancodeComputer) | (1 << 30));
+    public const int KComputer = ((int)(Scancode.ScancodeComputer) | (1 << 30));
 
     [NativeTypeName("#define SDLK_AC_SEARCH SDL_SCANCODE_TO_KEYCODE(SDL_SCANCODE_AC_SEARCH)")]
-    public const int KAcSearch = ((int)(ScancodeAcSearch) | (1 << 30));
+    public const int KAcSearch = ((int)(Scancode.ScancodeAcSearch) | (1 << 30));
 
     [NativeTypeName("#define SDLK_AC_HOME SDL_SCANCODE_TO_KEYCODE(SDL_SCANCODE_AC_HOME)")]
-    public const int KAcHome = ((int)(ScancodeAcHome) | (1 << 30));
+    public const int KAcHome = ((int)(Scancode.ScancodeAcHome) | (1 << 30));
 
     [NativeTypeName("#define SDLK_AC_BACK SDL_SCANCODE_TO_KEYCODE(SDL_SCANCODE_AC_BACK)")]
-    public const int KAcBack = ((int)(ScancodeAcBack) | (1 << 30));
+    public const int KAcBack = ((int)(Scancode.ScancodeAcBack) | (1 << 30));
 
     [NativeTypeName("#define SDLK_AC_FORWARD SDL_SCANCODE_TO_KEYCODE(SDL_SCANCODE_AC_FORWARD)")]
-    public const int KAcForward = ((int)(ScancodeAcForward) | (1 << 30));
+    public const int KAcForward = ((int)(Scancode.ScancodeAcForward) | (1 << 30));
 
     [NativeTypeName("#define SDLK_AC_STOP SDL_SCANCODE_TO_KEYCODE(SDL_SCANCODE_AC_STOP)")]
-    public const int KAcStop = ((int)(ScancodeAcStop) | (1 << 30));
+    public const int KAcStop = ((int)(Scancode.ScancodeAcStop) | (1 << 30));
 
     [NativeTypeName("#define SDLK_AC_REFRESH SDL_SCANCODE_TO_KEYCODE(SDL_SCANCODE_AC_REFRESH)")]
-    public const int KAcRefresh = ((int)(ScancodeAcRefresh) | (1 << 30));
+    public const int KAcRefresh = ((int)(Scancode.ScancodeAcRefresh) | (1 << 30));
 
     [NativeTypeName("#define SDLK_AC_BOOKMARKS SDL_SCANCODE_TO_KEYCODE(SDL_SCANCODE_AC_BOOKMARKS)")]
-    public const int KAcBookmarks = ((int)(ScancodeAcBookmarks) | (1 << 30));
+    public const int KAcBookmarks = ((int)(Scancode.ScancodeAcBookmarks) | (1 << 30));
 
     [NativeTypeName(
         "#define SDLK_BRIGHTNESSDOWN SDL_SCANCODE_TO_KEYCODE(SDL_SCANCODE_BRIGHTNESSDOWN)"
     )]
-    public const int KBrightnessdown = ((int)(ScancodeBrightnessdown) | (1 << 30));
+    public const int KBrightnessdown = ((int)(Scancode.ScancodeBrightnessdown) | (1 << 30));
 
     [NativeTypeName("#define SDLK_BRIGHTNESSUP SDL_SCANCODE_TO_KEYCODE(SDL_SCANCODE_BRIGHTNESSUP)")]
-    public const int KBrightnessup = ((int)(ScancodeBrightnessup) | (1 << 30));
+    public const int KBrightnessup = ((int)(Scancode.ScancodeBrightnessup) | (1 << 30));
 
     [NativeTypeName(
         "#define SDLK_DISPLAYSWITCH SDL_SCANCODE_TO_KEYCODE(SDL_SCANCODE_DISPLAYSWITCH)"
     )]
-    public const int KDisplayswitch = ((int)(ScancodeDisplayswitch) | (1 << 30));
+    public const int KDisplayswitch = ((int)(Scancode.ScancodeDisplayswitch) | (1 << 30));
 
     [NativeTypeName(
         "#define SDLK_KBDILLUMTOGGLE SDL_SCANCODE_TO_KEYCODE(SDL_SCANCODE_KBDILLUMTOGGLE)"
     )]
-    public const int KKbdillumtoggle = ((int)(ScancodeKbdillumtoggle) | (1 << 30));
+    public const int KKbdillumtoggle = ((int)(Scancode.ScancodeKbdillumtoggle) | (1 << 30));
 
     [NativeTypeName("#define SDLK_KBDILLUMDOWN SDL_SCANCODE_TO_KEYCODE(SDL_SCANCODE_KBDILLUMDOWN)")]
-    public const int KKbdillumdown = ((int)(ScancodeKbdillumdown) | (1 << 30));
+    public const int KKbdillumdown = ((int)(Scancode.ScancodeKbdillumdown) | (1 << 30));
 
     [NativeTypeName("#define SDLK_KBDILLUMUP SDL_SCANCODE_TO_KEYCODE(SDL_SCANCODE_KBDILLUMUP)")]
-    public const int KKbdillumup = ((int)(ScancodeKbdillumup) | (1 << 30));
+    public const int KKbdillumup = ((int)(Scancode.ScancodeKbdillumup) | (1 << 30));
 
     [NativeTypeName("#define SDLK_EJECT SDL_SCANCODE_TO_KEYCODE(SDL_SCANCODE_EJECT)")]
-    public const int KEject = ((int)(ScancodeEject) | (1 << 30));
+    public const int KEject = ((int)(Scancode.ScancodeEject) | (1 << 30));
 
     [NativeTypeName("#define SDLK_SLEEP SDL_SCANCODE_TO_KEYCODE(SDL_SCANCODE_SLEEP)")]
-    public const int KSleep = ((int)(ScancodeSleep) | (1 << 30));
+    public const int KSleep = ((int)(Scancode.ScancodeSleep) | (1 << 30));
 
     [NativeTypeName("#define SDLK_APP1 SDL_SCANCODE_TO_KEYCODE(SDL_SCANCODE_APP1)")]
-    public const int KApp1 = ((int)(ScancodeApp1) | (1 << 30));
+    public const int KApp1 = ((int)(Scancode.ScancodeApp1) | (1 << 30));
 
     [NativeTypeName("#define SDLK_APP2 SDL_SCANCODE_TO_KEYCODE(SDL_SCANCODE_APP2)")]
-    public const int KApp2 = ((int)(ScancodeApp2) | (1 << 30));
+    public const int KApp2 = ((int)(Scancode.ScancodeApp2) | (1 << 30));
 
     [NativeTypeName("#define SDLK_AUDIOREWIND SDL_SCANCODE_TO_KEYCODE(SDL_SCANCODE_AUDIOREWIND)")]
-    public const int KAudiorewind = ((int)(ScancodeAudiorewind) | (1 << 30));
+    public const int KAudiorewind = ((int)(Scancode.ScancodeAudiorewind) | (1 << 30));
 
     [NativeTypeName(
         "#define SDLK_AUDIOFASTFORWARD SDL_SCANCODE_TO_KEYCODE(SDL_SCANCODE_AUDIOFASTFORWARD)"
     )]
-    public const int KAudiofastforward = ((int)(ScancodeAudiofastforward) | (1 << 30));
+    public const int KAudiofastforward = ((int)(Scancode.ScancodeAudiofastforward) | (1 << 30));
 
     [NativeTypeName("#define SDLK_SOFTLEFT SDL_SCANCODE_TO_KEYCODE(SDL_SCANCODE_SOFTLEFT)")]
-    public const int KSoftleft = ((int)(ScancodeSoftleft) | (1 << 30));
+    public const int KSoftleft = ((int)(Scancode.ScancodeSoftleft) | (1 << 30));
 
     [NativeTypeName("#define SDLK_SOFTRIGHT SDL_SCANCODE_TO_KEYCODE(SDL_SCANCODE_SOFTRIGHT)")]
-    public const int KSoftright = ((int)(ScancodeSoftright) | (1 << 30));
+    public const int KSoftright = ((int)(Scancode.ScancodeSoftright) | (1 << 30));
 
     [NativeTypeName("#define SDLK_CALL SDL_SCANCODE_TO_KEYCODE(SDL_SCANCODE_CALL)")]
-    public const int KCall = ((int)(ScancodeCall) | (1 << 30));
+    public const int KCall = ((int)(Scancode.ScancodeCall) | (1 << 30));
 
     [NativeTypeName("#define SDLK_ENDCALL SDL_SCANCODE_TO_KEYCODE(SDL_SCANCODE_ENDCALL)")]
-    public const int KEndcall = ((int)(ScancodeEndcall) | (1 << 30));
+    public const int KEndcall = ((int)(Scancode.ScancodeEndcall) | (1 << 30));
 
     [NativeTypeName("#define SDL_BUTTON_LEFT 1")]
     public const int ButtonLeft = 1;
@@ -38443,34 +38436,34 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     [NativeTypeName(
         "#define SDL_PEN_AXIS_PRESSURE_MASK SDL_PEN_AXIS_CAPABILITY(SDL_PEN_AXIS_PRESSURE)"
     )]
-    public const nuint PenAxisPressureMask = (1U << ((int)(AxisPressure) + 16));
+    public const nuint PenAxisPressureMask = (1U << ((int)(PenAxis.AxisPressure) + 16));
 
     [NativeTypeName("#define SDL_PEN_AXIS_XTILT_MASK SDL_PEN_AXIS_CAPABILITY(SDL_PEN_AXIS_XTILT)")]
-    public const nuint PenAxisXtiltMask = (1U << ((int)(AxisXtilt) + 16));
+    public const nuint PenAxisXtiltMask = (1U << ((int)(PenAxis.AxisXtilt) + 16));
 
     [NativeTypeName("#define SDL_PEN_AXIS_YTILT_MASK SDL_PEN_AXIS_CAPABILITY(SDL_PEN_AXIS_YTILT)")]
-    public const nuint PenAxisYtiltMask = (1U << ((int)(AxisYtilt) + 16));
+    public const nuint PenAxisYtiltMask = (1U << ((int)(PenAxis.AxisYtilt) + 16));
 
     [NativeTypeName(
         "#define SDL_PEN_AXIS_DISTANCE_MASK SDL_PEN_AXIS_CAPABILITY(SDL_PEN_AXIS_DISTANCE)"
     )]
-    public const nuint PenAxisDistanceMask = (1U << ((int)(AxisDistance) + 16));
+    public const nuint PenAxisDistanceMask = (1U << ((int)(PenAxis.AxisDistance) + 16));
 
     [NativeTypeName(
         "#define SDL_PEN_AXIS_ROTATION_MASK SDL_PEN_AXIS_CAPABILITY(SDL_PEN_AXIS_ROTATION)"
     )]
-    public const nuint PenAxisRotationMask = (1U << ((int)(AxisRotation) + 16));
+    public const nuint PenAxisRotationMask = (1U << ((int)(PenAxis.AxisRotation) + 16));
 
     [NativeTypeName(
         "#define SDL_PEN_AXIS_SLIDER_MASK SDL_PEN_AXIS_CAPABILITY(SDL_PEN_AXIS_SLIDER)"
     )]
-    public const nuint PenAxisSliderMask = (1U << ((int)(AxisSlider) + 16));
+    public const nuint PenAxisSliderMask = (1U << ((int)(PenAxis.AxisSlider) + 16));
 
     [NativeTypeName(
         "#define SDL_PEN_AXIS_BIDIRECTIONAL_MASKS (SDL_PEN_AXIS_XTILT_MASK | SDL_PEN_AXIS_YTILT_MASK)"
     )]
     public const nuint PenAxisBidirectionalMasks = (
-        (1U << ((int)(AxisXtilt) + 16)) | (1U << ((int)(AxisYtilt) + 16))
+        (1U << ((int)(PenAxis.AxisXtilt) + 16)) | (1U << ((int)(PenAxis.AxisYtilt) + 16))
     );
 
     [NativeTypeName("#define SDL_TOUCH_MOUSEID ((SDL_MouseID)-1)")]

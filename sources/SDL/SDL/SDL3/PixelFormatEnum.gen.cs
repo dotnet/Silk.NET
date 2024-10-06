@@ -4,11 +4,6 @@
 // Original source is Copyright (C) 1997-2024 Sam Lantinga. Licensed under the zlib license.
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static Silk.NET.SDL.ArrayOrder;
-using static Silk.NET.SDL.BitmapOrder;
-using static Silk.NET.SDL.PackedLayout;
-using static Silk.NET.SDL.PackedOrder;
-using static Silk.NET.SDL.PixelType;
 
 namespace Silk.NET.SDL;
 
@@ -19,8 +14,8 @@ public enum PixelFormatEnum : uint
     Index1Lsb =
         (
             (1 << 28)
-            | ((Index1) << 24)
-            | ((Bitmaporder4321) << 20)
+            | ((PixelType.Index1) << 24)
+            | ((BitmapOrder.Bitmaporder4321) << 20)
             | ((0) << 16)
             | ((1) << 8)
             | ((0) << 0)
@@ -28,8 +23,8 @@ public enum PixelFormatEnum : uint
     Index1Msb =
         (
             (1 << 28)
-            | ((Index1) << 24)
-            | ((Bitmaporder1234) << 20)
+            | ((PixelType.Index1) << 24)
+            | ((BitmapOrder.Bitmaporder1234) << 20)
             | ((0) << 16)
             | ((1) << 8)
             | ((0) << 0)
@@ -37,8 +32,8 @@ public enum PixelFormatEnum : uint
     Index2Lsb =
         (
             (1 << 28)
-            | ((Index2) << 24)
-            | ((Bitmaporder4321) << 20)
+            | ((PixelType.Index2) << 24)
+            | ((BitmapOrder.Bitmaporder4321) << 20)
             | ((0) << 16)
             | ((2) << 8)
             | ((0) << 0)
@@ -46,8 +41,8 @@ public enum PixelFormatEnum : uint
     Index2Msb =
         (
             (1 << 28)
-            | ((Index2) << 24)
-            | ((Bitmaporder1234) << 20)
+            | ((PixelType.Index2) << 24)
+            | ((BitmapOrder.Bitmaporder1234) << 20)
             | ((0) << 16)
             | ((2) << 8)
             | ((0) << 0)
@@ -55,8 +50,8 @@ public enum PixelFormatEnum : uint
     Index4Lsb =
         (
             (1 << 28)
-            | ((Index4) << 24)
-            | ((Bitmaporder4321) << 20)
+            | ((PixelType.Index4) << 24)
+            | ((BitmapOrder.Bitmaporder4321) << 20)
             | ((0) << 16)
             | ((4) << 8)
             | ((0) << 0)
@@ -64,8 +59,8 @@ public enum PixelFormatEnum : uint
     Index4Msb =
         (
             (1 << 28)
-            | ((Index4) << 24)
-            | ((Bitmaporder1234) << 20)
+            | ((PixelType.Index4) << 24)
+            | ((BitmapOrder.Bitmaporder1234) << 20)
             | ((0) << 16)
             | ((4) << 8)
             | ((0) << 0)
@@ -82,18 +77,18 @@ public enum PixelFormatEnum : uint
     Rgb332 =
         (
             (1 << 28)
-            | ((Packed8) << 24)
-            | ((Xrgb) << 20)
-            | ((Packedlayout332) << 16)
+            | ((PixelType.Packed8) << 24)
+            | ((PackedOrder.Xrgb) << 20)
+            | ((PackedLayout.Packedlayout332) << 16)
             | ((8) << 8)
             | ((1) << 0)
         ),
     Xrgb4444 =
         (
             (1 << 28)
-            | ((Packed16) << 24)
-            | ((Xrgb) << 20)
-            | ((Packedlayout4444) << 16)
+            | ((PixelType.Packed16) << 24)
+            | ((PackedOrder.Xrgb) << 20)
+            | ((PackedLayout.Packedlayout4444) << 16)
             | ((12) << 8)
             | ((2) << 0)
         ),
@@ -101,9 +96,9 @@ public enum PixelFormatEnum : uint
     Xbgr4444 =
         (
             (1 << 28)
-            | ((Packed16) << 24)
-            | ((Xbgr) << 20)
-            | ((Packedlayout4444) << 16)
+            | ((PixelType.Packed16) << 24)
+            | ((PackedOrder.Xbgr) << 20)
+            | ((PackedLayout.Packedlayout4444) << 16)
             | ((12) << 8)
             | ((2) << 0)
         ),
@@ -111,9 +106,9 @@ public enum PixelFormatEnum : uint
     Xrgb1555 =
         (
             (1 << 28)
-            | ((Packed16) << 24)
-            | ((Xrgb) << 20)
-            | ((Packedlayout1555) << 16)
+            | ((PixelType.Packed16) << 24)
+            | ((PackedOrder.Xrgb) << 20)
+            | ((PackedLayout.Packedlayout1555) << 16)
             | ((15) << 8)
             | ((2) << 0)
         ),
@@ -121,9 +116,9 @@ public enum PixelFormatEnum : uint
     Xbgr1555 =
         (
             (1 << 28)
-            | ((Packed16) << 24)
-            | ((Xbgr) << 20)
-            | ((Packedlayout1555) << 16)
+            | ((PixelType.Packed16) << 24)
+            | ((PackedOrder.Xbgr) << 20)
+            | ((PackedLayout.Packedlayout1555) << 16)
             | ((15) << 8)
             | ((2) << 0)
         ),
@@ -131,213 +126,241 @@ public enum PixelFormatEnum : uint
     Argb4444 =
         (
             (1 << 28)
-            | ((Packed16) << 24)
+            | ((PixelType.Packed16) << 24)
             | ((PackedOrder.Argb) << 20)
-            | ((Packedlayout4444) << 16)
+            | ((PackedLayout.Packedlayout4444) << 16)
             | ((16) << 8)
             | ((2) << 0)
         ),
     Rgba4444 =
         (
             (1 << 28)
-            | ((Packed16) << 24)
+            | ((PixelType.Packed16) << 24)
             | ((PackedOrder.Rgba) << 20)
-            | ((Packedlayout4444) << 16)
+            | ((PackedLayout.Packedlayout4444) << 16)
             | ((16) << 8)
             | ((2) << 0)
         ),
     Abgr4444 =
         (
             (1 << 28)
-            | ((Packed16) << 24)
+            | ((PixelType.Packed16) << 24)
             | ((PackedOrder.Abgr) << 20)
-            | ((Packedlayout4444) << 16)
+            | ((PackedLayout.Packedlayout4444) << 16)
             | ((16) << 8)
             | ((2) << 0)
         ),
     Bgra4444 =
         (
             (1 << 28)
-            | ((Packed16) << 24)
+            | ((PixelType.Packed16) << 24)
             | ((PackedOrder.Bgra) << 20)
-            | ((Packedlayout4444) << 16)
+            | ((PackedLayout.Packedlayout4444) << 16)
             | ((16) << 8)
             | ((2) << 0)
         ),
     Argb1555 =
         (
             (1 << 28)
-            | ((Packed16) << 24)
+            | ((PixelType.Packed16) << 24)
             | ((PackedOrder.Argb) << 20)
-            | ((Packedlayout1555) << 16)
+            | ((PackedLayout.Packedlayout1555) << 16)
             | ((16) << 8)
             | ((2) << 0)
         ),
     Rgba5551 =
         (
             (1 << 28)
-            | ((Packed16) << 24)
+            | ((PixelType.Packed16) << 24)
             | ((PackedOrder.Rgba) << 20)
-            | ((Packedlayout5551) << 16)
+            | ((PackedLayout.Packedlayout5551) << 16)
             | ((16) << 8)
             | ((2) << 0)
         ),
     Abgr1555 =
         (
             (1 << 28)
-            | ((Packed16) << 24)
+            | ((PixelType.Packed16) << 24)
             | ((PackedOrder.Abgr) << 20)
-            | ((Packedlayout1555) << 16)
+            | ((PackedLayout.Packedlayout1555) << 16)
             | ((16) << 8)
             | ((2) << 0)
         ),
     Bgra5551 =
         (
             (1 << 28)
-            | ((Packed16) << 24)
+            | ((PixelType.Packed16) << 24)
             | ((PackedOrder.Bgra) << 20)
-            | ((Packedlayout5551) << 16)
+            | ((PackedLayout.Packedlayout5551) << 16)
             | ((16) << 8)
             | ((2) << 0)
         ),
     Rgb565 =
         (
             (1 << 28)
-            | ((Packed16) << 24)
-            | ((Xrgb) << 20)
-            | ((Packedlayout565) << 16)
+            | ((PixelType.Packed16) << 24)
+            | ((PackedOrder.Xrgb) << 20)
+            | ((PackedLayout.Packedlayout565) << 16)
             | ((16) << 8)
             | ((2) << 0)
         ),
     Bgr565 =
         (
             (1 << 28)
-            | ((Packed16) << 24)
-            | ((Xbgr) << 20)
-            | ((Packedlayout565) << 16)
+            | ((PixelType.Packed16) << 24)
+            | ((PackedOrder.Xbgr) << 20)
+            | ((PackedLayout.Packedlayout565) << 16)
             | ((16) << 8)
             | ((2) << 0)
         ),
     Rgb24 =
-        ((1 << 28) | ((Arrayu8) << 24) | ((Rgb) << 20) | ((0) << 16) | ((24) << 8) | ((3) << 0)),
+        (
+            (1 << 28)
+            | ((PixelType.Arrayu8) << 24)
+            | ((ArrayOrder.Rgb) << 20)
+            | ((0) << 16)
+            | ((24) << 8)
+            | ((3) << 0)
+        ),
     Bgr24 =
-        ((1 << 28) | ((Arrayu8) << 24) | ((Bgr) << 20) | ((0) << 16) | ((24) << 8) | ((3) << 0)),
+        (
+            (1 << 28)
+            | ((PixelType.Arrayu8) << 24)
+            | ((ArrayOrder.Bgr) << 20)
+            | ((0) << 16)
+            | ((24) << 8)
+            | ((3) << 0)
+        ),
     Xrgb8888 =
         (
             (1 << 28)
-            | ((Packed32) << 24)
-            | ((Xrgb) << 20)
-            | ((Packedlayout8888) << 16)
+            | ((PixelType.Packed32) << 24)
+            | ((PackedOrder.Xrgb) << 20)
+            | ((PackedLayout.Packedlayout8888) << 16)
             | ((24) << 8)
             | ((4) << 0)
         ),
     Rgbx8888 =
         (
             (1 << 28)
-            | ((Packed32) << 24)
-            | ((Rgbx) << 20)
-            | ((Packedlayout8888) << 16)
+            | ((PixelType.Packed32) << 24)
+            | ((PackedOrder.Rgbx) << 20)
+            | ((PackedLayout.Packedlayout8888) << 16)
             | ((24) << 8)
             | ((4) << 0)
         ),
     Xbgr8888 =
         (
             (1 << 28)
-            | ((Packed32) << 24)
-            | ((Xbgr) << 20)
-            | ((Packedlayout8888) << 16)
+            | ((PixelType.Packed32) << 24)
+            | ((PackedOrder.Xbgr) << 20)
+            | ((PackedLayout.Packedlayout8888) << 16)
             | ((24) << 8)
             | ((4) << 0)
         ),
     Bgrx8888 =
         (
             (1 << 28)
-            | ((Packed32) << 24)
-            | ((Bgrx) << 20)
-            | ((Packedlayout8888) << 16)
+            | ((PixelType.Packed32) << 24)
+            | ((PackedOrder.Bgrx) << 20)
+            | ((PackedLayout.Packedlayout8888) << 16)
             | ((24) << 8)
             | ((4) << 0)
         ),
     Argb8888 =
         (
             (1 << 28)
-            | ((Packed32) << 24)
+            | ((PixelType.Packed32) << 24)
             | ((PackedOrder.Argb) << 20)
-            | ((Packedlayout8888) << 16)
+            | ((PackedLayout.Packedlayout8888) << 16)
             | ((32) << 8)
             | ((4) << 0)
         ),
     Rgba8888 =
         (
             (1 << 28)
-            | ((Packed32) << 24)
+            | ((PixelType.Packed32) << 24)
             | ((PackedOrder.Rgba) << 20)
-            | ((Packedlayout8888) << 16)
+            | ((PackedLayout.Packedlayout8888) << 16)
             | ((32) << 8)
             | ((4) << 0)
         ),
     Abgr8888 =
         (
             (1 << 28)
-            | ((Packed32) << 24)
+            | ((PixelType.Packed32) << 24)
             | ((PackedOrder.Abgr) << 20)
-            | ((Packedlayout8888) << 16)
+            | ((PackedLayout.Packedlayout8888) << 16)
             | ((32) << 8)
             | ((4) << 0)
         ),
     Bgra8888 =
         (
             (1 << 28)
-            | ((Packed32) << 24)
+            | ((PixelType.Packed32) << 24)
             | ((PackedOrder.Bgra) << 20)
-            | ((Packedlayout8888) << 16)
+            | ((PackedLayout.Packedlayout8888) << 16)
             | ((32) << 8)
             | ((4) << 0)
         ),
     Xrgb2101010 =
         (
             (1 << 28)
-            | ((Packed32) << 24)
-            | ((Xrgb) << 20)
-            | ((Packedlayout2101010) << 16)
+            | ((PixelType.Packed32) << 24)
+            | ((PackedOrder.Xrgb) << 20)
+            | ((PackedLayout.Packedlayout2101010) << 16)
             | ((32) << 8)
             | ((4) << 0)
         ),
     Xbgr2101010 =
         (
             (1 << 28)
-            | ((Packed32) << 24)
-            | ((Xbgr) << 20)
-            | ((Packedlayout2101010) << 16)
+            | ((PixelType.Packed32) << 24)
+            | ((PackedOrder.Xbgr) << 20)
+            | ((PackedLayout.Packedlayout2101010) << 16)
             | ((32) << 8)
             | ((4) << 0)
         ),
     Argb2101010 =
         (
             (1 << 28)
-            | ((Packed32) << 24)
+            | ((PixelType.Packed32) << 24)
             | ((PackedOrder.Argb) << 20)
-            | ((Packedlayout2101010) << 16)
+            | ((PackedLayout.Packedlayout2101010) << 16)
             | ((32) << 8)
             | ((4) << 0)
         ),
     Abgr2101010 =
         (
             (1 << 28)
-            | ((Packed32) << 24)
+            | ((PixelType.Packed32) << 24)
             | ((PackedOrder.Abgr) << 20)
-            | ((Packedlayout2101010) << 16)
+            | ((PackedLayout.Packedlayout2101010) << 16)
             | ((32) << 8)
             | ((4) << 0)
         ),
     Rgb48 =
-        ((1 << 28) | ((Arrayu16) << 24) | ((Rgb) << 20) | ((0) << 16) | ((48) << 8) | ((6) << 0)),
+        (
+            (1 << 28)
+            | ((PixelType.Arrayu16) << 24)
+            | ((ArrayOrder.Rgb) << 20)
+            | ((0) << 16)
+            | ((48) << 8)
+            | ((6) << 0)
+        ),
     Bgr48 =
-        ((1 << 28) | ((Arrayu16) << 24) | ((Bgr) << 20) | ((0) << 16) | ((48) << 8) | ((6) << 0)),
+        (
+            (1 << 28)
+            | ((PixelType.Arrayu16) << 24)
+            | ((ArrayOrder.Bgr) << 20)
+            | ((0) << 16)
+            | ((48) << 8)
+            | ((6) << 0)
+        ),
     Rgba64 =
         (
             (1 << 28)
-            | ((Arrayu16) << 24)
+            | ((PixelType.Arrayu16) << 24)
             | ((ArrayOrder.Rgba) << 20)
             | ((0) << 16)
             | ((64) << 8)
@@ -346,7 +369,7 @@ public enum PixelFormatEnum : uint
     Argb64 =
         (
             (1 << 28)
-            | ((Arrayu16) << 24)
+            | ((PixelType.Arrayu16) << 24)
             | ((ArrayOrder.Argb) << 20)
             | ((0) << 16)
             | ((64) << 8)
@@ -355,7 +378,7 @@ public enum PixelFormatEnum : uint
     Bgra64 =
         (
             (1 << 28)
-            | ((Arrayu16) << 24)
+            | ((PixelType.Arrayu16) << 24)
             | ((ArrayOrder.Bgra) << 20)
             | ((0) << 16)
             | ((64) << 8)
@@ -364,20 +387,34 @@ public enum PixelFormatEnum : uint
     Abgr64 =
         (
             (1 << 28)
-            | ((Arrayu16) << 24)
+            | ((PixelType.Arrayu16) << 24)
             | ((ArrayOrder.Abgr) << 20)
             | ((0) << 16)
             | ((64) << 8)
             | ((8) << 0)
         ),
     Rgb48Float =
-        ((1 << 28) | ((Arrayf16) << 24) | ((Rgb) << 20) | ((0) << 16) | ((48) << 8) | ((6) << 0)),
+        (
+            (1 << 28)
+            | ((PixelType.Arrayf16) << 24)
+            | ((ArrayOrder.Rgb) << 20)
+            | ((0) << 16)
+            | ((48) << 8)
+            | ((6) << 0)
+        ),
     Bgr48Float =
-        ((1 << 28) | ((Arrayf16) << 24) | ((Bgr) << 20) | ((0) << 16) | ((48) << 8) | ((6) << 0)),
+        (
+            (1 << 28)
+            | ((PixelType.Arrayf16) << 24)
+            | ((ArrayOrder.Bgr) << 20)
+            | ((0) << 16)
+            | ((48) << 8)
+            | ((6) << 0)
+        ),
     Rgba64Float =
         (
             (1 << 28)
-            | ((Arrayf16) << 24)
+            | ((PixelType.Arrayf16) << 24)
             | ((ArrayOrder.Rgba) << 20)
             | ((0) << 16)
             | ((64) << 8)
@@ -386,7 +423,7 @@ public enum PixelFormatEnum : uint
     Argb64Float =
         (
             (1 << 28)
-            | ((Arrayf16) << 24)
+            | ((PixelType.Arrayf16) << 24)
             | ((ArrayOrder.Argb) << 20)
             | ((0) << 16)
             | ((64) << 8)
@@ -395,7 +432,7 @@ public enum PixelFormatEnum : uint
     Bgra64Float =
         (
             (1 << 28)
-            | ((Arrayf16) << 24)
+            | ((PixelType.Arrayf16) << 24)
             | ((ArrayOrder.Bgra) << 20)
             | ((0) << 16)
             | ((64) << 8)
@@ -404,20 +441,34 @@ public enum PixelFormatEnum : uint
     Abgr64Float =
         (
             (1 << 28)
-            | ((Arrayf16) << 24)
+            | ((PixelType.Arrayf16) << 24)
             | ((ArrayOrder.Abgr) << 20)
             | ((0) << 16)
             | ((64) << 8)
             | ((8) << 0)
         ),
     Rgb96Float =
-        ((1 << 28) | ((Arrayf32) << 24) | ((Rgb) << 20) | ((0) << 16) | ((96) << 8) | ((12) << 0)),
+        (
+            (1 << 28)
+            | ((PixelType.Arrayf32) << 24)
+            | ((ArrayOrder.Rgb) << 20)
+            | ((0) << 16)
+            | ((96) << 8)
+            | ((12) << 0)
+        ),
     Bgr96Float =
-        ((1 << 28) | ((Arrayf32) << 24) | ((Bgr) << 20) | ((0) << 16) | ((96) << 8) | ((12) << 0)),
+        (
+            (1 << 28)
+            | ((PixelType.Arrayf32) << 24)
+            | ((ArrayOrder.Bgr) << 20)
+            | ((0) << 16)
+            | ((96) << 8)
+            | ((12) << 0)
+        ),
     Rgba128Float =
         (
             (1 << 28)
-            | ((Arrayf32) << 24)
+            | ((PixelType.Arrayf32) << 24)
             | ((ArrayOrder.Rgba) << 20)
             | ((0) << 16)
             | ((128) << 8)
@@ -426,7 +477,7 @@ public enum PixelFormatEnum : uint
     Argb128Float =
         (
             (1 << 28)
-            | ((Arrayf32) << 24)
+            | ((PixelType.Arrayf32) << 24)
             | ((ArrayOrder.Argb) << 20)
             | ((0) << 16)
             | ((128) << 8)
@@ -435,7 +486,7 @@ public enum PixelFormatEnum : uint
     Bgra128Float =
         (
             (1 << 28)
-            | ((Arrayf32) << 24)
+            | ((PixelType.Arrayf32) << 24)
             | ((ArrayOrder.Bgra) << 20)
             | ((0) << 16)
             | ((128) << 8)
@@ -444,7 +495,7 @@ public enum PixelFormatEnum : uint
     Abgr128Float =
         (
             (1 << 28)
-            | ((Arrayf32) << 24)
+            | ((PixelType.Arrayf32) << 24)
             | ((ArrayOrder.Abgr) << 20)
             | ((0) << 16)
             | ((128) << 8)

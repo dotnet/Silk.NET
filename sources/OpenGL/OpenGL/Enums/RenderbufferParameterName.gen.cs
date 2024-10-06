@@ -1,6 +1,6 @@
 // Licensed to the .NET Foundation under one or more agreements.
 // The .NET Foundation licenses this file to you under the MIT license.
-// Ported from the OpenGL Core Profile headers and corresponding dependencies.
+// Ported from the OpenGL headers and corresponding dependencies.
 // Original source is Copyright 2013-2020 The Khronos Group Inc. Licensed under the MIT license.
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
@@ -21,8 +21,6 @@ public enum RenderbufferParameterName : uint
     DepthSize = unchecked((uint)0x8D54),
     StencilSize = unchecked((uint)0x8D55),
     StorageSamplesAMD = unchecked((uint)0x91B2),
-    CoverageSamplesNV = unchecked((uint)0x8CAB),
-    ColorSamplesNV = unchecked((uint)0x8E10),
     SamplesEXT = unchecked((uint)0x8CAB),
     WidthEXT = unchecked((uint)0x8D42),
     HeightEXT = unchecked((uint)0x8D43),
@@ -33,6 +31,12 @@ public enum RenderbufferParameterName : uint
     AlphaSizeEXT = unchecked((uint)0x8D53),
     DepthSizeEXT = unchecked((uint)0x8D54),
     StencilSizeEXT = unchecked((uint)0x8D55),
+    CoverageSamplesNV = unchecked((uint)0x8CAB),
+    ColorSamplesNV = unchecked((uint)0x8E10),
+    SamplesAngle = unchecked((uint)0x8CAB),
+    SamplesApple = unchecked((uint)0x8CAB),
+    SamplesIMG = unchecked((uint)0x9133),
+    SamplesNV = unchecked((uint)0x8CAB),
     WidthOES = unchecked((uint)0x8D42),
     HeightOES = unchecked((uint)0x8D43),
     InternalFormatOES = unchecked((uint)0x8D44),
@@ -41,9 +45,5 @@ public enum RenderbufferParameterName : uint
     BlueSizeOES = unchecked((uint)0x8D52),
     AlphaSizeOES = unchecked((uint)0x8D53),
     DepthSizeOES = unchecked((uint)0x8D54),
-    StencilSizeOES = unchecked((uint)0x8D55),
-    SamplesApple = unchecked((uint)0x8CAB),
-    SamplesIMG = unchecked((uint)0x9133),
-    SamplesAngle = unchecked((uint)0x8CAB),
-    SamplesNV = unchecked((uint)0x8CAB)
+    StencilSizeOES = unchecked((uint)0x8D55)
 }

@@ -1,6 +1,6 @@
 // Licensed to the .NET Foundation under one or more agreements.
 // The .NET Foundation licenses this file to you under the MIT license.
-// Ported from the OpenGL Core Profile headers and corresponding dependencies.
+// Ported from the OpenGL headers and corresponding dependencies.
 // Original source is Copyright 2013-2020 The Khronos Group Inc. Licensed under the MIT license.
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
@@ -38,8 +38,6 @@ public enum TextureTarget : uint
     ProxyTexture2DMultisampleArray = unchecked((uint)0x9103),
     TextureCubeMapArray = unchecked((uint)0x9009),
     ProxyTextureCubeMapArray = unchecked((uint)0x900B),
-    TextureCubeMapArrayARB = unchecked((uint)0x9009),
-    ProxyTextureCubeMapArrayARB = unchecked((uint)0x900B),
     TextureCubeMapARB = unchecked((uint)0x8513),
     TextureCubeMapPositiveXARB = unchecked((uint)0x8515),
     TextureCubeMapNegativeXARB = unchecked((uint)0x8516),
@@ -48,6 +46,8 @@ public enum TextureTarget : uint
     TextureCubeMapPositiveZARB = unchecked((uint)0x8519),
     TextureCubeMapNegativeZARB = unchecked((uint)0x851A),
     ProxyTextureCubeMapARB = unchecked((uint)0x851B),
+    TextureCubeMapArrayARB = unchecked((uint)0x9009),
+    ProxyTextureCubeMapArrayARB = unchecked((uint)0x900B),
     TextureRectangleARB = unchecked((uint)0x84F5),
     ProxyTextureRectangleARB = unchecked((uint)0x84F7),
     ProxyTexture1DEXT = unchecked((uint)0x8063),
@@ -69,14 +69,14 @@ public enum TextureTarget : uint
     DetailTexture2DSGIS = unchecked((uint)0x8095),
     Texture4DSGIS = unchecked((uint)0x8134),
     ProxyTexture4DSGIS = unchecked((uint)0x8135),
+    Texture3DOES = unchecked((uint)0x806F),
+    TextureCubeMapArrayOES = unchecked((uint)0x9009),
+    TextureCubeMapArrayEXT = unchecked((uint)0x9009),
     TextureCubeMapOES = unchecked((uint)0x8513),
     TextureCubeMapPositiveXOES = unchecked((uint)0x8515),
     TextureCubeMapNegativeXOES = unchecked((uint)0x8516),
     TextureCubeMapPositiveYOES = unchecked((uint)0x8517),
     TextureCubeMapNegativeYOES = unchecked((uint)0x8518),
     TextureCubeMapPositiveZOES = unchecked((uint)0x8519),
-    TextureCubeMapNegativeZOES = unchecked((uint)0x851A),
-    Texture3DOES = unchecked((uint)0x806F),
-    TextureCubeMapArrayOES = unchecked((uint)0x9009),
-    TextureCubeMapArrayEXT = unchecked((uint)0x9009)
+    TextureCubeMapNegativeZOES = unchecked((uint)0x851A)
 }

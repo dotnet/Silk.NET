@@ -4,11 +4,6 @@
 // Original source is Copyright (C) 1997-2024 Sam Lantinga. Licensed under the zlib license.
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static Silk.NET.SDL.ArrayOrder;
-using static Silk.NET.SDL.BitmapOrder;
-using static Silk.NET.SDL.PackedLayout;
-using static Silk.NET.SDL.PackedOrder;
-using static Silk.NET.SDL.PixelType;
 
 namespace Silk.NET.SDL;
 

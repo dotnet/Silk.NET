@@ -7,19 +7,6 @@ using System.Reflection;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using Silk.NET.Core.Loader;
-using static Silk.NET.SDL.ArrayOrder;
-using static Silk.NET.SDL.BitmapOrder;
-using static Silk.NET.SDL.ChromaLocation;
-using static Silk.NET.SDL.ColorPrimaries;
-using static Silk.NET.SDL.ColorRange;
-using static Silk.NET.SDL.ColorType;
-using static Silk.NET.SDL.MatrixCoefficients;
-using static Silk.NET.SDL.PackedLayout;
-using static Silk.NET.SDL.PackedOrder;
-using static Silk.NET.SDL.PenAxis;
-using static Silk.NET.SDL.PixelType;
-using static Silk.NET.SDL.Scancode;
-using static Silk.NET.SDL.TransferCharacteristics;
 
 namespace Silk.NET.SDL;
 

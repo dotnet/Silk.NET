@@ -5,19 +5,6 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static Silk.NET.SDL.ArrayOrder;
-using static Silk.NET.SDL.BitmapOrder;
-using static Silk.NET.SDL.ChromaLocation;
-using static Silk.NET.SDL.ColorPrimaries;
-using static Silk.NET.SDL.ColorRange;
-using static Silk.NET.SDL.ColorType;
-using static Silk.NET.SDL.MatrixCoefficients;
-using static Silk.NET.SDL.PackedLayout;
-using static Silk.NET.SDL.PackedOrder;
-using static Silk.NET.SDL.PenAxis;
-using static Silk.NET.SDL.PixelType;
-using static Silk.NET.SDL.Scancode;
-using static Silk.NET.SDL.TransferCharacteristics;
 
 namespace Silk.NET.SDL;
 
@@ -28,34 +15,34 @@ public enum Colorspace : uint
     Srgb =
         (
             ((uint)(ColorType.Rgb) << 28)
-            | ((uint)(Full) << 24)
+            | ((uint)(ColorRange.Full) << 24)
             | ((uint)(ChromaLocation.None) << 20)
             | ((uint)(ColorPrimaries.Bt709) << 10)
             | ((uint)(TransferCharacteristics.Srgb) << 5)
-            | ((uint)(Identity) << 0)
+            | ((uint)(MatrixCoefficients.Identity) << 0)
         ),
     SrgbLinear =
         (
             ((uint)(ColorType.Rgb) << 28)
-            | ((uint)(Full) << 24)
+            | ((uint)(ColorRange.Full) << 24)
             | ((uint)(ChromaLocation.None) << 20)
             | ((uint)(ColorPrimaries.Bt709) << 10)
-            | ((uint)(Linear) << 5)
-            | ((uint)(Identity) << 0)
+            | ((uint)(TransferCharacteristics.Linear) << 5)
+            | ((uint)(MatrixCoefficients.Identity) << 0)
         ),
     Hdr10 =
         (
             ((uint)(ColorType.Rgb) << 28)
-            | ((uint)(Full) << 24)
+            | ((uint)(ColorRange.Full) << 24)
             | ((uint)(ChromaLocation.None) << 20)
-            | ((uint)(Bt2020) << 10)
-            | ((uint)(Pq) << 5)
-            | ((uint)(Identity) << 0)
+            | ((uint)(ColorPrimaries.Bt2020) << 10)
+            | ((uint)(TransferCharacteristics.Pq) << 5)
+            | ((uint)(MatrixCoefficients.Identity) << 0)
         ),
     Jpeg =
         (
-            ((uint)(Ycbcr) << 28)
-            | ((uint)(Full) << 24)
+            ((uint)(ColorType.Ycbcr) << 28)
+            | ((uint)(ColorRange.Full) << 24)
             | ((uint)(ChromaLocation.None) << 20)
             | ((uint)(ColorPrimaries.Bt709) << 10)
             | ((uint)(TransferCharacteristics.Bt601) << 5)
@@ -63,57 +50,57 @@ public enum Colorspace : uint
         ),
     Bt601Limited =
         (
-            ((uint)(Ycbcr) << 28)
-            | ((uint)(Limited) << 24)
-            | ((uint)(Left) << 20)
+            ((uint)(ColorType.Ycbcr) << 28)
+            | ((uint)(ColorRange.Limited) << 24)
+            | ((uint)(ChromaLocation.Left) << 20)
             | ((uint)(ColorPrimaries.Bt601) << 10)
             | ((uint)(TransferCharacteristics.Bt601) << 5)
             | ((uint)(MatrixCoefficients.Bt601) << 0)
         ),
     Bt601Full =
         (
-            ((uint)(Ycbcr) << 28)
-            | ((uint)(Full) << 24)
-            | ((uint)(Left) << 20)
+            ((uint)(ColorType.Ycbcr) << 28)
+            | ((uint)(ColorRange.Full) << 24)
+            | ((uint)(ChromaLocation.Left) << 20)
             | ((uint)(ColorPrimaries.Bt601) << 10)
             | ((uint)(TransferCharacteristics.Bt601) << 5)
             | ((uint)(MatrixCoefficients.Bt601) << 0)
         ),
     Bt709Limited =
         (
-            ((uint)(Ycbcr) << 28)
-            | ((uint)(Limited) << 24)
-            | ((uint)(Left) << 20)
+            ((uint)(ColorType.Ycbcr) << 28)
+            | ((uint)(ColorRange.Limited) << 24)
+            | ((uint)(ChromaLocation.Left) << 20)
             | ((uint)(ColorPrimaries.Bt709) << 10)
             | ((uint)(TransferCharacteristics.Bt709) << 5)
             | ((uint)(MatrixCoefficients.Bt709) << 0)
         ),
     Bt709Full =
         (
-            ((uint)(Ycbcr) << 28)
-            | ((uint)(Full) << 24)
-            | ((uint)(Left) << 20)
+            ((uint)(ColorType.Ycbcr) << 28)
+            | ((uint)(ColorRange.Full) << 24)
+            | ((uint)(ChromaLocation.Left) << 20)
             | ((uint)(ColorPrimaries.Bt709) << 10)
             | ((uint)(TransferCharacteristics.Bt709) << 5)
             | ((uint)(MatrixCoefficients.Bt709) << 0)
         ),
     Bt2020Limited =
         (
-            ((uint)(Ycbcr) << 28)
-            | ((uint)(Limited) << 24)
-            | ((uint)(Left) << 20)
-            | ((uint)(Bt2020) << 10)
-            | ((uint)(Pq) << 5)
-            | ((uint)(Bt2020Ncl) << 0)
+            ((uint)(ColorType.Ycbcr) << 28)
+            | ((uint)(ColorRange.Limited) << 24)
+            | ((uint)(ChromaLocation.Left) << 20)
+            | ((uint)(ColorPrimaries.Bt2020) << 10)
+            | ((uint)(TransferCharacteristics.Pq) << 5)
+            | ((uint)(MatrixCoefficients.Bt2020Ncl) << 0)
         ),
     Bt2020Full =
         (
-            ((uint)(Ycbcr) << 28)
-            | ((uint)(Full) << 24)
-            | ((uint)(Left) << 20)
-            | ((uint)(Bt2020) << 10)
-            | ((uint)(Pq) << 5)
-            | ((uint)(Bt2020Ncl) << 0)
+            ((uint)(ColorType.Ycbcr) << 28)
+            | ((uint)(ColorRange.Full) << 24)
+            | ((uint)(ChromaLocation.Left) << 20)
+            | ((uint)(ColorPrimaries.Bt2020) << 10)
+            | ((uint)(TransferCharacteristics.Pq) << 5)
+            | ((uint)(MatrixCoefficients.Bt2020Ncl) << 0)
         ),
     RgbDefault = Srgb,
     YuvDefault = Jpeg,

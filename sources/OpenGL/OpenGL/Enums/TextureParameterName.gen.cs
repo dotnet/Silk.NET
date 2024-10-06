@@ -1,6 +1,6 @@
 // Licensed to the .NET Foundation under one or more agreements.
 // The .NET Foundation licenses this file to you under the MIT license.
-// Ported from the OpenGL Core Profile headers and corresponding dependencies.
+// Ported from the OpenGL headers and corresponding dependencies.
 // Original source is Copyright 2013-2020 The Khronos Group Inc. Licensed under the MIT license.
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
@@ -17,11 +17,17 @@ public enum TextureParameterName : uint
     TextureMinFilter = unchecked((uint)0x2801),
     TextureWrapS = unchecked((uint)0x2802),
     TextureWrapT = unchecked((uint)0x2803),
+    TextureComponents = unchecked((uint)0x1003),
+    TextureBorder = unchecked((uint)0x1005),
     TextureInternalFormat = unchecked((uint)0x1003),
     TextureRedSize = unchecked((uint)0x805C),
     TextureGreenSize = unchecked((uint)0x805D),
     TextureBlueSize = unchecked((uint)0x805E),
     TextureAlphaSize = unchecked((uint)0x805F),
+    TextureLuminanceSize = unchecked((uint)0x8060),
+    TextureIntensitySize = unchecked((uint)0x8061),
+    TexturePriority = unchecked((uint)0x8066),
+    TextureResident = unchecked((uint)0x8067),
     TextureWrapR = unchecked((uint)0x8072),
     TextureMinLod = unchecked((uint)0x813A),
     TextureMaxLod = unchecked((uint)0x813B),
@@ -30,6 +36,7 @@ public enum TextureParameterName : uint
     TextureLodBias = unchecked((uint)0x8501),
     TextureCompareMode = unchecked((uint)0x884C),
     TextureCompareFunc = unchecked((uint)0x884D),
+    GenerateMipmap = unchecked((uint)0x8191),
     TextureSwizzleR = unchecked((uint)0x8E42),
     TextureSwizzleG = unchecked((uint)0x8E43),
     TextureSwizzleB = unchecked((uint)0x8E44),
@@ -37,13 +44,6 @@ public enum TextureParameterName : uint
     TextureSwizzleRgba = unchecked((uint)0x8E46),
     DepthStencilTextureMode = unchecked((uint)0x90EA),
     TextureMaxAnisotropy = unchecked((uint)0x84FE),
-    TextureComponents = unchecked((uint)0x1003),
-    TextureBorder = unchecked((uint)0x1005),
-    TextureLuminanceSize = unchecked((uint)0x8060),
-    TextureIntensitySize = unchecked((uint)0x8061),
-    TexturePriority = unchecked((uint)0x8066),
-    TextureResident = unchecked((uint)0x8067),
-    GenerateMipmap = unchecked((uint)0x8191),
     TextureTilingEXT = unchecked((uint)0x9580),
     TextureDepthEXT = unchecked((uint)0x8071),
     TextureWrapREXT = unchecked((uint)0x8072),

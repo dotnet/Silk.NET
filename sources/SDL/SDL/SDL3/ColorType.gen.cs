@@ -5,13 +5,6 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static Silk.NET.SDL.ArrayOrder;
-using static Silk.NET.SDL.BitmapOrder;
-using static Silk.NET.SDL.PackedLayout;
-using static Silk.NET.SDL.PackedOrder;
-using static Silk.NET.SDL.PenAxis;
-using static Silk.NET.SDL.PixelType;
-using static Silk.NET.SDL.Scancode;
 
 namespace Silk.NET.SDL;
 

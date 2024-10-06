@@ -1,6 +1,6 @@
 // Licensed to the .NET Foundation under one or more agreements.
 // The .NET Foundation licenses this file to you under the MIT license.
-// Ported from the OpenGL Core Profile headers and corresponding dependencies.
+// Ported from the OpenGL headers and corresponding dependencies.
 // Original source is Copyright 2013-2020 The Khronos Group Inc. Licensed under the MIT license.
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
@@ -65,9 +65,6 @@ public enum InvalidateFramebufferAttachment : uint
     ColorAttachment15EXT = unchecked((uint)0x8CEF),
     DepthAttachmentEXT = unchecked((uint)0x8D00),
     StencilAttachmentEXT = unchecked((uint)0x8D20),
-    ColorAttachment0OES = unchecked((uint)0x8CE0),
-    DepthAttachmentOES = unchecked((uint)0x8D00),
-    StencilAttachmentOES = unchecked((uint)0x8D20),
     ColorAttachment0NV = unchecked((uint)0x8CE0),
     ColorAttachment1NV = unchecked((uint)0x8CE1),
     ColorAttachment2NV = unchecked((uint)0x8CE2),
@@ -83,5 +80,8 @@ public enum InvalidateFramebufferAttachment : uint
     ColorAttachment12NV = unchecked((uint)0x8CEC),
     ColorAttachment13NV = unchecked((uint)0x8CED),
     ColorAttachment14NV = unchecked((uint)0x8CEE),
-    ColorAttachment15NV = unchecked((uint)0x8CEF)
+    ColorAttachment15NV = unchecked((uint)0x8CEF),
+    ColorAttachment0OES = unchecked((uint)0x8CE0),
+    DepthAttachmentOES = unchecked((uint)0x8D00),
+    StencilAttachmentOES = unchecked((uint)0x8D20)
 }

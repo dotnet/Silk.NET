@@ -1,6 +1,6 @@
 // Licensed to the .NET Foundation under one or more agreements.
 // The .NET Foundation licenses this file to you under the MIT license.
-// Ported from the OpenGL Core Profile headers and corresponding dependencies.
+// Ported from the OpenGL headers and corresponding dependencies.
 // Original source is Copyright 2013-2020 The Khronos Group Inc. Licensed under the MIT license.
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
@@ -127,8 +127,6 @@ public enum AttributeType : uint
     UnsignedInt64Vec2ARB = unchecked((uint)0x8FF5),
     UnsignedInt64Vec3ARB = unchecked((uint)0x8FF6),
     UnsignedInt64Vec4ARB = unchecked((uint)0x8FF7),
-    Int64NV = unchecked((uint)0x140E),
-    UnsignedInt64NV = unchecked((uint)0x140F),
     FloatVec2ARB = unchecked((uint)0x8B50),
     FloatVec3ARB = unchecked((uint)0x8B51),
     FloatVec4ARB = unchecked((uint)0x8B52),
@@ -150,6 +148,8 @@ public enum AttributeType : uint
     Sampler2DShadowARB = unchecked((uint)0x8B62),
     Sampler2DRectARB = unchecked((uint)0x8B63),
     Sampler2DRectShadowARB = unchecked((uint)0x8B64),
+    Int64NV = unchecked((uint)0x140E),
+    UnsignedInt64NV = unchecked((uint)0x140F),
     Sampler3DOES = unchecked((uint)0x8B5F),
     Sampler2DShadowEXT = unchecked((uint)0x8B62),
     FloatMAT2X3NV = unchecked((uint)0x8B65),
