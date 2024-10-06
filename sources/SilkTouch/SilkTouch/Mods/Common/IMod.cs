@@ -21,7 +21,8 @@ public interface IMod
     /// Initialises the mod for the given job context.
     /// </summary>
     /// <param name="ctx">The generation job context.</param>
-    void Initialize(IModContext ctx) { }
+    /// <param name="ct">The cancellation token.</param>
+    Task InitializeAsync(IModContext ctx, CancellationToken ct = default) => Task.CompletedTask;
 
     /// <summary>
     /// Executes the mod as originally initialised for the given job context asynchronously.
@@ -30,7 +31,7 @@ public interface IMod
     /// <param name="ct">Cancellation token.</param>
     /// <returns>An asynchronous task.</returns>
     /// <remarks>
-    /// Always preceded by <see cref="Initialize"/>.
+    /// Always preceded by <see cref="InitializeAsync"/>.
     /// </remarks>
     Task ExecuteAsync(IModContext ctx, CancellationToken ct = default);
 }

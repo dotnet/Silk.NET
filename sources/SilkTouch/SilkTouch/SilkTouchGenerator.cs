@@ -67,10 +67,22 @@ public class SilkTouchGenerator(
             ?? Array.Empty<IMod>();
 
         var ctx = await modContextProvider.GetContextAsync(key, jobConfig, ct);
+
+        // Just in case a mod gets naughty and tries to modify at the initialization stage.
+        var srcProj = ctx.SourceProject;
+        var testProj = ctx.TestProject;
+
+        // Initialize the mods
         foreach (var jobMod in jobMods)
         {
             logger.LogDebug("Using mod {0} for {1}", jobMod.GetType().Name, key);
-            jobMod.Initialize(ctx);
+            await jobMod.InitializeAsync(ctx, ct);
+            if (ctx.SourceProject != srcProj || ctx.TestProject != testProj)
+            {
+                throw new InvalidOperationException(
+                    $"{jobMod.GetType().Name} illegally generated code at the initialization stage."
+                );
+            }
         }
 
         foreach (var jobMod in jobMods)

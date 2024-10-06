@@ -220,11 +220,12 @@ public partial class MixKhronosData(
     // non-versioned trimmer (and needs to be a big number to come after the default trimmers)
     public Version Version { get; } = new(42, 42, 42, 42);
 
-    internal async Task BeforeJobAsync(string key, CancellationToken ct = default)
+    /// <inheritdoc />
+    public async Task InitializeAsync(IModContext ctx, CancellationToken ct = default)
     {
-        var currentConfig = cfg.Get(key);
+        var currentConfig = cfg.Get(ctx.JobKey);
         var specPath = currentConfig.SpecPath;
-        var job = Jobs[key] = new JobData
+        var job = Jobs[ctx.JobKey] = new JobData
         {
             Configuration = currentConfig,
             TypeMap = currentConfig.TypeMap is not null
@@ -285,7 +286,6 @@ public partial class MixKhronosData(
     /// <inheritdoc />
     public async Task ExecuteAsync(IModContext ctx, CancellationToken ct = default)
     {
-        await BeforeJobAsync(ctx.JobKey, ct);
         var jobData = Jobs[ctx.JobKey];
         var proj = ctx.SourceProject;
         var rewriter = new Rewriter(jobData);
@@ -309,6 +309,8 @@ public partial class MixKhronosData(
                 )
                 .Project;
         }
+
+        ctx.SourceProject = proj;
     }
 
     private IEnumerable<(string, SyntaxNode)> GetNewSyntaxTrees(JobData jobData, Rewriter rewriter)

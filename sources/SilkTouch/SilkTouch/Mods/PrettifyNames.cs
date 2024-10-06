@@ -1,8 +1,12 @@
 ﻿using System;
+using System.Collections.Concurrent;
 using System.Collections.Generic;
+using System.Collections.Immutable;
 using System.CommandLine;
 using System.Diagnostics;
 using System.Linq;
+using System.Reflection;
+using System.Runtime.CompilerServices;
 using System.Threading;
 using System.Threading.Tasks;
 using Microsoft.CodeAnalysis;
@@ -240,20 +244,14 @@ public class PrettifyNames(
             }
         }
 
-        // Create the rename helper. We'll set the options up later.
-        var renamer = new RenameHelper
-        {
-            Project = ctx.SourceProject,
-            Options = _typeRenameOptions
-        };
-
         // Before we rename, we should ensure name dependent things are correct e.g. DllImport explicitly specify their
         // EntryPoint
         logger.LogDebug("Fixing up attributes for {} to make them safe for rename...", ctx.JobKey);
-        var rewriter = new Rewriter();
-        foreach (var docId in renamer.Project.DocumentIds)
+        var rewriter = new RenameSafeAttributeListsRewriter();
+        var proj = ctx.SourceProject;
+        foreach (var docId in proj.DocumentIds)
         {
-            var doc = renamer.Project.GetDocument(docId);
+            var doc = proj.GetDocument(docId);
             if (doc is null)
             {
                 continue;
@@ -262,30 +260,44 @@ public class PrettifyNames(
             var root = rewriter.Visit(await doc.GetSyntaxRootAsync(ct));
             if (root is not null)
             {
-                renamer.Project = doc.WithSyntaxRoot(root).Project;
+                proj = doc.WithSyntaxRoot(root).Project;
             }
         }
 
-        // TODO is this fast enough?
-        logger.LogDebug("start test");
         var sw = Stopwatch.StartNew();
-        var comp2 =
-            renamer.Compilation
-            ?? await renamer.Project.GetCompilationAsync(ct)
-            ?? throw new("what");
+        logger.LogDebug("Discovering references to symbols to rename for {}...", ctx.JobKey);
+        ctx.SourceProject = proj;
+        var comp =
+            await proj.GetCompilationAsync(ct)
+            ?? throw new InvalidOperationException(
+                "Failed to obtain compilation for source project!"
+            );
         await RenameAllAsync(
             ctx,
             types.SelectMany(x =>
             {
-                // TODO conflicts.
-                return comp2
-                    .GetSymbolsWithName(x.Key, SymbolFilter.Type, ct)
+                var nonFunctionConflicts = x
+                    .Value.NonFunctions?.Values.Where(y =>
+                        x.Value.Functions?.ContainsValue(y) ?? false
+                    )
+                    .ToHashSet();
+                return comp.GetSymbolsWithName(x.Key, SymbolFilter.Type, ct)
                     .OfType<ITypeSymbol>()
                     .SelectMany<ITypeSymbol, (ISymbol, string)>(y =>
 
                         [
                             .. Enumerable.SelectMany(
-                                [.. x.Value.NonFunctions ?? [], .. x.Value.Functions ?? []],
+                                [
+                                    .. x.Value.NonFunctions?.Select(z =>
+                                        nonFunctionConflicts?.Contains(z.Value) ?? false
+                                            ? new KeyValuePair<string, string>(
+                                                z.Key,
+                                                $"{z.Value}Value"
+                                            )
+                                            : z
+                                    ) ?? [],
+                                    .. x.Value.Functions ?? []
+                                ],
                                 z =>
                                 {
                                     return y.GetMembers(z.Key).Select(w => (w, z.Value));
@@ -297,63 +309,17 @@ public class PrettifyNames(
             }),
             ct
         );
-        logger.LogDebug("end test - {}", sw.Elapsed.TotalSeconds);
-
-        // Rename all the types.
-        logger.LogInformation("Applying renames for {}, this may take a while...", ctx.JobKey);
-        var toComplete = types.Sum(x =>
-            1 + (x.Value.Functions?.Count ?? 0) + (x.Value.NonFunctions?.Count ?? 0)
+        logger.LogDebug(
+            "Reference renaming took {} seconds for {}.",
+            sw.Elapsed.TotalSeconds,
+            ctx.JobKey
         );
-        var nCompleted = 0;
-        foreach (var (typeName, (newTypeName, nonFunctions, functions, isEnum)) in types)
-        {
-            var comp = renamer.Compilation ?? await renamer.Project.GetCompilationAsync(ct);
-            if (comp is null)
-            {
-                continue;
-            }
 
-            logger.LogDebug(
-                "Renaming type {} to {}... ({}/{}, {} function rename(s) and {} other rename(s) therein)",
-                typeName,
-                newTypeName,
-                nCompleted,
-                toComplete,
-                functions?.Count ?? 0,
-                nonFunctions?.Count ?? 0
-            );
-            var nonFunctionConflicts = nonFunctions
-                ?.Values.Where(x => functions?.ContainsValue(x) ?? false)
-                .ToHashSet();
-            foreach (
-                var typeSymbol in comp.GetSymbolsWithName(typeName, SymbolFilter.Type, ct)
-                    .OfType<ITypeSymbol>()
-            )
-            {
-                nCompleted = await RenameTypeAsync(
-                    renamer,
-                    (ITypeSymbol)comp.GetNewSymbol(typeSymbol),
-                    typeName,
-                    newTypeName,
-                    functions,
-                    nonFunctions,
-                    nonFunctionConflicts,
-                    toComplete,
-                    nCompleted,
-                    ct
-                );
-                comp =
-                    await renamer.Project.GetCompilationAsync(ct)
-                    ?? throw new InvalidOperationException(
-                        "Failed to obtain compilation for new project!"
-                    );
-            }
-        }
-
-        // Change the filenames as Roslyn can't do this apparently (probably the .gen.cs)
-        foreach (var docId in renamer.Project.DocumentIds)
+        // Change the filenames where appropriate.
+        proj = ctx.SourceProject;
+        foreach (var docId in proj.DocumentIds)
         {
-            var doc = renamer.Project.GetDocument(docId);
+            var doc = proj.GetDocument(docId);
             if (
                 doc is not { FilePath: not null, Name: not null }
                 || types
@@ -365,12 +331,10 @@ public class PrettifyNames(
                 continue;
             }
 
-            renamer.Project = doc.WithFilePath(doc.FilePath.Replace(oldName, newName))
-                .WithName(doc.Name.Replace(oldName, newName))
-                .Project;
+            proj = doc.Project;
         }
 
-        ctx.SourceProject = renamer.Project;
+        ctx.SourceProject = proj;
     }
 
     private static readonly SymbolRenameOptions _typeRenameOptions =
@@ -387,59 +351,6 @@ public class PrettifyNames(
             RenameInComments: false,
             RenameFile: false
         );
-
-    private async Task<int> RenameTypeAsync(
-        RenameHelper renamer,
-        ITypeSymbol typeSymbol,
-        string typeName,
-        string newTypeName,
-        Dictionary<string, string>? functions,
-        Dictionary<string, string>? nonFunctions,
-        HashSet<string>? nonFunctionConflicts,
-        int toComplete,
-        int nCompleted,
-        CancellationToken ct = default
-    )
-    {
-        renamer.Options = _typeRenameOptions;
-        typeSymbol = (ITypeSymbol)await renamer.RenameSymbolAsync(typeSymbol, newTypeName, ct);
-        logger.LogTrace("Processed {} = {}", typeName, newTypeName);
-        renamer.Options = _memberRenameOptions;
-        foreach (
-            var ((oldName, proposedName), isFunction) in (functions ?? [])
-                .Select(x => (x, true))
-                .Concat((nonFunctions ?? []).Select(x => (x, false)))
-        )
-        {
-            var newName =
-                !isFunction && (nonFunctionConflicts?.Contains(proposedName) ?? false)
-                    ? $"{proposedName}Value"
-                    : proposedName;
-            if (oldName == newName)
-            {
-                // wtf????
-                continue;
-            }
-
-            while (typeSymbol.GetMembers(oldName) is [{ } toRename, ..])
-            {
-                typeSymbol = (ITypeSymbol)
-                    (await renamer.RenameSymbolAsync(toRename, newName, ct)).ContainingSymbol;
-                logger.LogTrace(
-                    "Processed {}.{} = {}.{} ({}/{}, function = {})",
-                    typeName,
-                    oldName,
-                    newTypeName,
-                    newName,
-                    ++nCompleted,
-                    toComplete,
-                    isFunction
-                );
-            }
-        }
-
-        return ++nCompleted;
-    }
 
     private void Trim(
         string? container,
@@ -1009,7 +920,7 @@ public class PrettifyNames(
         }
     }
 
-    private class Rewriter : CSharpSyntaxRewriter
+    private class RenameSafeAttributeListsRewriter : CSharpSyntaxRewriter
     {
         public override SyntaxNode VisitMethodDeclaration(MethodDeclarationSyntax node) =>
             (
@@ -1017,105 +928,169 @@ public class PrettifyNames(
             ).WithRenameSafeAttributeLists();
     }
 
-    private class TokenCrawler(ILogger logger)
-        : CSharpSyntaxWalker(SyntaxWalkerDepth.StructuredTrivia)
-    {
-        public required Dictionary<Location, string> ReferenceRenames { get; set; }
-        public Dictionary<(SyntaxTree Tree, int TokenNumber), string>? TokenRenames { get; set; }
-        public int TokenNumber { get; set; }
-        public SyntaxTree? Tree { get; set; }
+    private static Func<
+        ImmutableArray<ISymbol>,
+        Solution,
+        CancellationToken,
+        Task<ImmutableArray<ReferencedSymbol>>
+    >? _findRenamableReferencesAsync;
 
-        public override void VisitToken(SyntaxToken token)
+    private static Task<ImmutableArray<ReferencedSymbol>> FindRenamableReferencesAsync(
+        ImmutableArray<ISymbol> symbols,
+        Solution solution,
+        CancellationToken cancellationToken
+    ) =>
+        (
+            _findRenamableReferencesAsync ??= (
+                typeof(SymbolFinder).GetMethod(
+                    nameof(FindRenamableReferencesAsync),
+                    BindingFlags.Static | BindingFlags.NonPublic,
+                    [
+                        typeof(ImmutableArray<>).MakeGenericType(typeof(ISymbol)),
+                        typeof(Solution),
+                        typeof(CancellationToken)
+                    ]
+                ) ?? throw new MissingMethodException()
+            ).CreateDelegate<
+                Func<
+                    ImmutableArray<ISymbol>,
+                    Solution,
+                    CancellationToken,
+                    Task<ImmutableArray<ReferencedSymbol>>
+                >
+            >()
+        )(symbols, solution, cancellationToken);
+
+    private Location? IdentifierLocation(SyntaxNode? node) =>
+        node switch
         {
-            TokenNumber++;
-            if (Tree is null)
-            {
-                return;
-            }
+            BaseTypeDeclarationSyntax bt => bt.Identifier.GetLocation(),
+            DelegateDeclarationSyntax d => d.Identifier.GetLocation(),
+            EnumMemberDeclarationSyntax em => em.Identifier.GetLocation(),
+            EventDeclarationSyntax e => e.Identifier.GetLocation(),
+            MethodDeclarationSyntax m => m.Identifier.GetLocation(),
+            PropertyDeclarationSyntax p => p.Identifier.GetLocation(),
+            VariableDeclaratorSyntax v => v.Identifier.GetLocation(),
+            _ => null
+        };
 
-            if (!ReferenceRenames.TryGetValue(token.GetLocation(), out var renameTo))
-            {
-                base.VisitToken(token);
-                return;
-            }
-
-            if (!token.IsKind(SyntaxKind.IdentifierToken))
-            {
-                logger.LogTrace(
-                    "Skipping token {} of kind {}: {}",
-                    TokenNumber - 1,
-                    token.Kind(),
-                    token.ToString()
-                );
-                return;
-            }
-
-            (TokenRenames ??= new Dictionary<(SyntaxTree, int), string>(ReferenceRenames.Count))[
-                (Tree, TokenNumber - 1)
-            ] = renameTo;
-        }
-    }
-
-    // - Find all references
-    // - Correlate the locations with token numbers
-    // - Replace those token numbers
     private async Task RenameAllAsync(
         IModContext ctx,
         IEnumerable<(ISymbol Symbol, string NewName)> toRename,
         CancellationToken ct = default
     )
     {
-        // First, let's find all the references of the symbols.
+        // First, let's add all of the locations of the declaration identifiers.
         var locations = new Dictionary<Location, string>();
+        var symbols = new List<ISymbol>();
         foreach (var (symbol, newName) in toRename)
         {
-            foreach (
-                var referencedSymbol in await SymbolFinder.FindReferencesAsync(
-                    symbol,
-                    ctx.SourceProject?.Solution
-                        ?? throw new ArgumentException("SourceProject is null"),
-                    ct
-                )
-            )
+            symbols.Add(symbol);
+            foreach (var syntaxRef in symbol.DeclaringSyntaxReferences)
             {
-                foreach (var referencedSymbolLocation in referencedSymbol.Locations)
+                var identifierLocation = IdentifierLocation(await syntaxRef.GetSyntaxAsync(ct));
+                if (identifierLocation is not null)
                 {
-                    if (
-                        referencedSymbolLocation.IsCandidateLocation
-                        || referencedSymbolLocation.IsImplicit
-                    )
-                    {
-                        continue;
-                    }
-
-                    locations.Add(referencedSymbolLocation.Location, newName);
+                    locations.TryAdd(identifierLocation, newName);
                 }
             }
         }
 
+        // Next, let's find all the references of the symbols.
+        foreach (
+            var referencedSymbol in await FindRenamableReferencesAsync(
+                [.. symbols],
+                ctx.SourceProject?.Solution ?? throw new ArgumentException("SourceProject is null"),
+                ct
+            )
+        )
+        {
+            string? newName = null;
+            foreach (var declRef in referencedSymbol.Definition.DeclaringSyntaxReferences)
+            {
+                if (
+                    IdentifierLocation(await declRef.GetSyntaxAsync(ct)) is { } loc
+                    && locations.TryGetValue(loc, out newName)
+                )
+                {
+                    break;
+                }
+            }
+
+            if (newName is null)
+            {
+                // TODO log?
+                continue;
+            }
+
+            foreach (var referencedSymbolLocation in referencedSymbol.Locations)
+            {
+                if (
+                    referencedSymbolLocation.IsCandidateLocation
+                    || referencedSymbolLocation.IsImplicit
+                )
+                {
+                    continue;
+                }
+
+                locations.TryAdd(referencedSymbolLocation.Location, newName);
+            }
+        }
+
+        symbols.Clear();
         logger.LogDebug("{} referencing locations for renames for {}", locations.Count, ctx.JobKey);
 
-        // Next, we need to map those locations to token numbers so we know where to splice the new tokens in.
-        var crawler = new TokenCrawler(logger) { ReferenceRenames = locations };
-        foreach (var tree in locations.Keys.Select(x => x.SourceTree).Distinct())
+        // Now it's just a simple find and replace.
+        var sln = ctx.SourceProject.Solution;
+        var srcProjId = ctx.SourceProject.Id;
+        var testProjId = ctx.TestProject?.Id;
+        foreach (
+            var (syntaxTree, renameLocations) in locations
+                .GroupBy(x => x.Key.SourceTree)
+                .Select(x => (x.Key, x.OrderByDescending(y => y.Key.SourceSpan)))
+        )
         {
-            if (tree is null)
+            if (
+                syntaxTree is null
+                || sln.GetDocument(syntaxTree) is not { } doc
+                || (doc.Project.Id != srcProjId && doc.Project.Id != testProjId)
+                || await syntaxTree.GetTextAsync(ct) is not { } text
+            )
             {
                 continue;
             }
 
-            crawler.TokenNumber = 0;
-            crawler.Tree = tree;
-            crawler.Visit(await tree.GetRootAsync(ct));
+            var ogText = text;
+            foreach (var (location, newName) in renameLocations)
+            {
+                var contents = ogText.GetSubText(location.SourceSpan).ToString();
+                if (contents.Contains(' '))
+                {
+                    logger.LogWarning(
+                        "Refusing to do unsafe rename/replacement of \"{}\" to \"{}\" at {}",
+                        contents,
+                        newName,
+                        location.GetLineSpan()
+                    );
+                    continue;
+                }
+
+                if (logger.IsEnabled(LogLevel.Trace))
+                {
+                    logger.LogTrace(
+                        "\"{}\" -> \"{}\" at {}",
+                        contents,
+                        newName,
+                        location.GetLineSpan()
+                    );
+                }
+
+                text = text.Replace(location.SourceSpan, newName);
+            }
+
+            sln = doc.WithText(text).Project.Solution;
         }
 
-        locations.Clear();
-        logger.LogDebug(
-            "{} references resolved to tokens for {}",
-            crawler.TokenRenames?.Count ?? 0,
-            ctx.JobKey
-        );
-
-        // Finally, let's actually rewrite the references.
+        ctx.SourceProject = sln.GetProject(srcProjId);
     }
 }
