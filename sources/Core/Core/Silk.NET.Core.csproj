@@ -19,9 +19,9 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Analyzers\Silk.NET.Core.Analyzers.csproj" OutputItemType="Analyzer" ReferenceOutputAssembly="false" />
+    <Folder Include="Core\" />
   </ItemGroup>
-
+  
   <!-- Dogfooding -->
   <Import Project="Silk.NET.Core.targets" />
 

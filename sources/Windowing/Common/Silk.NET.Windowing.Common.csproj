@@ -9,7 +9,7 @@
 
     <ItemGroup>
       <ProjectReference Include="..\..\Core\Core\Silk.NET.Core.csproj" />
-      <ProjectReference Include="..\..\Maths\Silk.NET.Maths.csproj" />
+      <ProjectReference Include="..\..\Maths\Maths\Silk.NET.Maths.csproj" />
     </ItemGroup>
 
     <ItemGroup>

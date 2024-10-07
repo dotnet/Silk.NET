@@ -8,7 +8,7 @@
 
     <ItemGroup>
       <ProjectReference Include="..\..\Core\Core\Silk.NET.Core.csproj" />
-      <ProjectReference Include="..\..\SDL\Silk.NET.SDL.csproj" />
+      <ProjectReference Include="..\..\SDL\SDL\Silk.NET.SDL.csproj" />
       <ProjectReference Include="..\Common\Silk.NET.Windowing.Common.csproj" />
     </ItemGroup>
 

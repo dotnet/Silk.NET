@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <NoWarn>8012;$(NoWarn)</NoWarn>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\sources\SilkTouch\SilkTouch\Silk.NET.SilkTouch.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Update="NUnit" Version="4.1.0" />
+    <PackageReference Include="Silk.NET.BuildTools" Version="2.21.0" />
+    <PackageReference Include="System.Linq.Async" Version="6.0.1" />
+    <PackageReference Include="Verify.DiffPlex" Version="3.0.0" />
+    <PackageReference Include="Verify.NUnit" Version="25.0.1" />
+    <None Include="**/*.received.*" />
+    <None Include="**/*.verified.*" />
+  </ItemGroup>
+
+</Project>
