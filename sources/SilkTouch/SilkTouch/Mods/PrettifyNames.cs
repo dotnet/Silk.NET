@@ -8,6 +8,7 @@ using System.Linq;
 using System.Reflection;
 using System.Runtime.CompilerServices;
 using System.Threading;
+using System.Threading.Channels;
 using System.Threading.Tasks;
 using Microsoft.CodeAnalysis;
 using Microsoft.CodeAnalysis.CSharp;
@@ -936,39 +937,6 @@ public class PrettifyNames(
             ).WithRenameSafeAttributeLists();
     }
 
-    private static Func<
-        ImmutableArray<ISymbol>,
-        Solution,
-        CancellationToken,
-        Task<ImmutableArray<ReferencedSymbol>>
-    >? _findRenamableReferencesAsync;
-
-    private static Task<ImmutableArray<ReferencedSymbol>> FindRenamableReferencesAsync(
-        ImmutableArray<ISymbol> symbols,
-        Solution solution,
-        CancellationToken cancellationToken
-    ) =>
-        (
-            _findRenamableReferencesAsync ??= (
-                typeof(SymbolFinder).GetMethod(
-                    nameof(FindRenamableReferencesAsync),
-                    BindingFlags.Static | BindingFlags.NonPublic,
-                    [
-                        typeof(ImmutableArray<>).MakeGenericType(typeof(ISymbol)),
-                        typeof(Solution),
-                        typeof(CancellationToken)
-                    ]
-                ) ?? throw new MissingMethodException()
-            ).CreateDelegate<
-                Func<
-                    ImmutableArray<ISymbol>,
-                    Solution,
-                    CancellationToken,
-                    Task<ImmutableArray<ReferencedSymbol>>
-                >
-            >()
-        )(symbols, solution, cancellationToken);
-
     private Location? IdentifierLocation(SyntaxNode? node) =>
         node switch
         {
@@ -990,64 +958,55 @@ public class PrettifyNames(
         CancellationToken ct = default
     )
     {
-        // First, let's add all of the locations of the declaration identifiers.
-        var locations = new Dictionary<Location, string>();
-        var symbols = new List<ISymbol>();
-        foreach (var (symbol, newName) in toRename)
+        if (ctx.SourceProject is null)
         {
-            symbols.Add(symbol);
-            foreach (var syntaxRef in symbol.DeclaringSyntaxReferences)
-            {
-                var identifierLocation = IdentifierLocation(await syntaxRef.GetSyntaxAsync(ct));
-                if (identifierLocation is not null)
-                {
-                    locations.TryAdd(identifierLocation, newName);
-                }
-            }
+            return;
         }
 
-        // Next, let's find all the references of the symbols.
-        foreach (
-            var referencedSymbol in await FindRenamableReferencesAsync(
-                [.. symbols],
-                ctx.SourceProject?.Solution ?? throw new ArgumentException("SourceProject is null"),
-                ct
-            )
-        )
-        {
-            string? newName = null;
-            foreach (var declRef in referencedSymbol.Definition.DeclaringSyntaxReferences)
+        var locations = new ConcurrentDictionary<Location, string>();
+        // TODO this needs parallelisation config & be sensitive to the environment (future src generator form factor?)
+        await Parallel.ForEachAsync(
+            toRename,
+            ct,
+            async (tuple, _) =>
             {
-                if (
-                    IdentifierLocation(await declRef.GetSyntaxAsync(ct)) is { } loc
-                    && locations.TryGetValue(loc, out newName)
-                )
+                // First, let's add all of the locations of the declaration identifiers.
+                var (symbol, newName) = tuple;
+                foreach (var syntaxRef in symbol.DeclaringSyntaxReferences)
                 {
-                    break;
-                }
-            }
-
-            if (newName is null)
-            {
-                // TODO log?
-                continue;
-            }
-
-            foreach (var referencedSymbolLocation in referencedSymbol.Locations)
-            {
-                if (
-                    referencedSymbolLocation.IsCandidateLocation
-                    || referencedSymbolLocation.IsImplicit
-                )
-                {
-                    continue;
+                    var identifierLocation = IdentifierLocation(await syntaxRef.GetSyntaxAsync(ct));
+                    if (identifierLocation is not null)
+                    {
+                        locations.TryAdd(identifierLocation, newName);
+                    }
                 }
 
-                locations.TryAdd(referencedSymbolLocation.Location, newName);
-            }
-        }
+                // Next, let's find all the references of the symbols.
+                var references = await SymbolFinder.FindReferencesAsync(
+                    symbol,
+                    ctx.SourceProject?.Solution
+                        ?? throw new ArgumentException("SourceProject is null"),
+                    ct
+                );
 
-        symbols.Clear();
+                foreach (var referencedSymbol in references)
+                {
+                    foreach (var referencedSymbolLocation in referencedSymbol.Locations)
+                    {
+                        if (
+                            referencedSymbolLocation.IsCandidateLocation
+                            || referencedSymbolLocation.IsImplicit
+                        )
+                        {
+                            continue;
+                        }
+
+                        locations.TryAdd(referencedSymbolLocation.Location, newName);
+                    }
+                }
+            }
+        );
+
         logger.LogDebug("{} referencing locations for renames for {}", locations.Count, ctx.JobKey);
 
         // Now it's just a simple find and replace.
