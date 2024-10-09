@@ -17,10 +17,6 @@
     <PackageReference Include="Fody" Version="6.8.1" PrivateAssets="all" />
     <PackageReference Include="InlineIL.Fody" Version="1.8.0" PrivateAssets="all" />
   </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="Core\" />
-  </ItemGroup>
   
   <!-- Dogfooding -->
   <Import Project="Silk.NET.Core.targets" />
