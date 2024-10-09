@@ -793,4 +793,46 @@ public static unsafe class SilkMarshal
                 ? SignedCast(value)
                 : UnsignedCast(value);
     }
+
+    /// <summary>
+    /// Holds <see cref="GCHandle"/>s for delegates passed to <see cref="DelegateToPtr{T}"/> to prevent
+    /// <see cref="ExecutionEngineException"/>s as a result of the delegate being garbage collected.
+    /// </summary>
+    private static readonly Dictionary<nint, GCHandle> _delegateGCHandles = new();
+
+    /// <summary>
+    /// Gets a function pointer for the given delegate.
+    /// </summary>
+    /// <param name="delegate">The delegate.</param>
+    /// <typeparam name="T">The type of the delegate.</typeparam>
+    /// <returns>The function pointer.</returns>
+    /// <remarks>
+    /// The returned pointer must be freed using <see cref="Free"/> once it is no longer in use.
+    /// </remarks>
+    public static Ptr DelegateToPtr<T>(T @delegate)
+        where T : Delegate
+    {
+        var gch = GCHandle.Alloc(@delegate);
+        var ptr = Marshal.GetFunctionPointerForDelegate(@delegate);
+        _delegateGCHandles[ptr] = gch;
+        return (void*)ptr;
+    }
+
+    /// <summary>
+    /// Frees a pointer previously allocated from:
+    /// <list type="bullet">
+    /// <item><description><see cref="DelegateToPtr{T}"/></description></item>
+    /// </list>
+    /// </summary>
+    /// <param name="ptr">The pointer to free.</param>
+    /// <remarks>
+    /// Generally this function must be used for any <see cref="SilkMarshal"/> function returning
+    /// </remarks>
+    public static void Free(Ptr ptr)
+    {
+        if (_delegateGCHandles.Remove((nint)ptr.Native, out var gch))
+        {
+            gch.Free();
+        }
+    }
 }

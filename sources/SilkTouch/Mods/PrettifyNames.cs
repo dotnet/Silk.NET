@@ -109,7 +109,7 @@ public class PrettifyNames(
             // Now rename everything within that type.
             foreach (var (typeName, (newTypeName, _)) in typeNames)
             {
-                var (_, (consts, functions)) = visitor.Types.First(x => x.Key == typeName);
+                var (_, (consts, functions, isEnum)) = visitor.Types.First(x => x.Key == typeName);
 
                 // Rename the "constants" i.e. all the consts/static readonlys in this type. These are treated
                 // individually because everything that isn't a constant or a function is only prettified instead of prettified & trimmed.
@@ -186,26 +186,28 @@ public class PrettifyNames(
                     functionNames?.ToDictionary(
                         x => x.Key,
                         x => x.Value.Primary.Prettify(translator)
-                    )
+                    ),
+                    isEnum
                 );
             }
         }
         else // (there's no trimming baseline)
         {
             // Prettify only if the user has not indicated they want to trim.
-            foreach (var (name, (nonFunctions, functions)) in visitor.Types)
+            foreach (var (name, (nonFunctions, functions, isEnum)) in visitor.Types)
             {
                 rewriter.Types[name] = (
                     name.Prettify(translator, allowAllCaps: true), // <-- lenient about caps for type names (e.g. GL)
                     nonFunctions?.ToDictionary(x => x, x => x.Prettify(translator)),
-                    functions?.ToDictionary(x => x.Name, x => x.Name.Prettify(translator))
+                    functions?.ToDictionary(x => x.Name, x => x.Name.Prettify(translator)),
+                    isEnum
                 );
             }
         }
 
         if (logger.IsEnabled(LogLevel.Debug))
         {
-            foreach (var (name, (newName, nonFunctions, functions)) in rewriter.Types)
+            foreach (var (name, (newName, nonFunctions, functions, _)) in rewriter.Types)
             {
                 logger.LogDebug("{} = {}", name, newName);
                 foreach (var (old, @new) in nonFunctions ?? new())
@@ -303,11 +305,6 @@ public class PrettifyNames(
                 overriddenName,
                 [.. v.Secondary ?? Enumerable.Empty<string>(), nameToAdd]
             );
-        }
-
-        if (container == "FragmentShaderColorModMaskATI")
-        {
-            System.Diagnostics.Debugger.Break();
         }
 
         // Run each trimmer
@@ -588,7 +585,8 @@ public class PrettifyNames(
             string,
             (
                 List<string>? NonFunctions,
-                List<(string Name, MethodDeclarationSyntax Syntax)>? Functions
+                List<(string Name, MethodDeclarationSyntax Syntax)>? Functions,
+                bool IsEnum
             )
         > Types = new();
 
@@ -637,7 +635,7 @@ public class PrettifyNames(
             // Tolerate partial classes.
             if (!Types.TryGetValue(id, out var inner))
             {
-                inner = (new List<string>(), new List<(string, MethodDeclarationSyntax)>());
+                inner = (new List<string>(), new List<(string, MethodDeclarationSyntax)>(), false);
                 Types.Add(id, inner);
             }
 
@@ -662,10 +660,7 @@ public class PrettifyNames(
             // If it's not a constant then we only prettify.
             if (
                 !node.Modifiers.Any(SyntaxKind.ConstKeyword)
-                && (
-                    !node.Modifiers.Any(SyntaxKind.StaticKeyword)
-                    || !node.Modifiers.Any(SyntaxKind.ReadOnlyKeyword)
-                )
+                && !node.Modifiers.Any(SyntaxKind.StaticKeyword)
             )
             {
                 _prettifyOnly = true;
@@ -714,6 +709,42 @@ public class PrettifyNames(
             }
         }
 
+        public override void VisitPropertyDeclaration(PropertyDeclarationSyntax node)
+        {
+            if (node.Parent == _classInProgress?.Class)
+            {
+                _classInProgress!.Value.NonFunctions.Add(node.Identifier.ToString());
+            }
+        }
+
+        public override void VisitDelegateDeclaration(DelegateDeclarationSyntax node)
+        {
+            if (
+                _classInProgress is not null
+                || _enumInProgress is not null
+                || node.Ancestors().OfType<BaseTypeDeclarationSyntax>().Any()
+            )
+            {
+                if (node.Parent == _classInProgress?.Class)
+                {
+                    _classInProgress!.Value.NonFunctions.Add(node.Identifier.ToString());
+                }
+
+                return;
+            }
+
+            if (
+                node.AttributeLists.Any(x =>
+                    x.Attributes.Any(y => y.IsAttribute("Silk.NET.Core.Transformed"))
+                )
+            )
+            {
+                NonDeterminant.Add(node.Identifier.ToString());
+            }
+
+            Types.Add(node.Identifier.ToString(), (null, null, false));
+        }
+
         public override void VisitStructDeclaration(StructDeclarationSyntax node)
         {
             if (
@@ -734,7 +765,7 @@ public class PrettifyNames(
                 NonDeterminant.Add(node.Identifier.ToString());
             }
 
-            Types[node.Identifier.ToString()] = (null, null);
+            Types[node.Identifier.ToString()] = (null, null, false);
             base.VisitStructDeclaration(node);
         }
 
@@ -771,7 +802,7 @@ public class PrettifyNames(
             var id = _enumInProgress.Value.Enum.Identifier.ToString();
             if (!Types.TryGetValue(id, out var inner))
             {
-                inner = (new List<string>(), new List<(string, MethodDeclarationSyntax)>());
+                inner = (new List<string>(), new List<(string, MethodDeclarationSyntax)>(), true);
                 Types.Add(id, inner);
             }
 
@@ -787,21 +818,24 @@ public class PrettifyNames(
             (
                 string NewName,
                 Dictionary<string, string>? NonFunctions,
-                Dictionary<string, string>? Functions
+                Dictionary<string, string>? Functions,
+                bool IsEnum
             )
         > Types = new();
 
         private (
             BaseTypeDeclarationSyntax Type,
             Dictionary<string, string>? NonFunctions,
-            Dictionary<string, string>? Functions
+            Dictionary<string, string>? Functions,
+            string? NewName
         )? _typeInProgress;
         private FieldDeclarationSyntax? _memberInProgress;
         private bool _memberAccess;
         private bool _accessing;
         private bool _member;
         private string? _memberAccessType;
-        private readonly List<FieldDeclarationSyntax> _constants = new();
+        private readonly List<MemberDeclarationSyntax> _constants = new();
+        private readonly Dictionary<string, string> _scope = new();
 
         public override SyntaxNode? VisitClassDeclaration(ClassDeclarationSyntax node)
         {
@@ -813,35 +847,61 @@ public class PrettifyNames(
                 return base.VisitClassDeclaration(node);
             }
 
-            _typeInProgress = (node, info.NonFunctions, info.Functions);
+            _typeInProgress = (node, info.NonFunctions, info.Functions, info.NewName);
             var ret = (ClassDeclarationSyntax)base.VisitClassDeclaration(node)!;
             _typeInProgress = null;
+            var memberIdentifiers = ret.Members.SelectMany(x => x.MemberIdentifiers()).ToHashSet();
+            var constantsMayConflict = _constants
+                .SelectMany(x => x.MemberIdentifiers())
+                .Any(y => memberIdentifiers.Contains(y));
             ret = ret.WithIdentifier(Identifier(info.NewName))
                 .WithMembers(
                     List(
                         // Constants can be quite prone to conflicting with their functions e.g. consider
                         // GL_PROGRAM_STRING_ARB and glProgramStringARB, as such we relegate the ones that don't
                         // eventually end up in an enum to be in a subclass instead
-                        SingletonList<MemberDeclarationSyntax>(
-                                ClassDeclaration("Constants")
-                                    .WithModifiers(
-                                        TokenList(
-                                            Token(SyntaxKind.PublicKeyword),
-                                            Token(SyntaxKind.StaticKeyword),
-                                            Token(SyntaxKind.PartialKeyword)
+                        (
+                            constantsMayConflict
+                                ? SingletonList<MemberDeclarationSyntax>(
+                                    ClassDeclaration("Constants")
+                                        .WithModifiers(
+                                            TokenList(
+                                                Token(SyntaxKind.PublicKeyword),
+                                                Token(SyntaxKind.StaticKeyword),
+                                                Token(SyntaxKind.PartialKeyword)
+                                            )
                                         )
-                                    )
-                                    .WithMembers(List<MemberDeclarationSyntax>(_constants))
-                            )
-                            .Concat(ret.Members)
+                                        .WithMembers(List<MemberDeclarationSyntax>(_constants))
+                                )
+                                : _constants.OfType<MemberDeclarationSyntax>()
+                        ).Concat(ret.Members)
                     )
                 );
             _constants.Clear();
             return ret;
         }
 
+        public override SyntaxNode? VisitParameter(ParameterSyntax node)
+        {
+            if (
+                node
+                    .Type?.DescendantTokens()
+                    .Where(x => x.IsKind(SyntaxKind.IdentifierToken))
+                    .Select((x, i) => (x.ToString(), i))
+                    .LastOrDefault()
+                    is
+                    ({ } tid, 0)
+                && Types.ContainsKey(tid)
+            )
+            {
+                _scope[node.Identifier.ToString()] = tid;
+            }
+            return base.VisitParameter(node);
+        }
+
         public override SyntaxNode? VisitMethodDeclaration(MethodDeclarationSyntax node)
         {
+            var ret = (MethodDeclarationSyntax)base.VisitMethodDeclaration(node)!;
             if (
                 _typeInProgress?.Functions is not null
                 && _typeInProgress.Value.Functions.TryGetValue(
@@ -850,12 +910,21 @@ public class PrettifyNames(
                 )
             )
             {
-                return (
-                    (MethodDeclarationSyntax)base.VisitMethodDeclaration(node)!
-                ).WithIdentifierForImport(Identifier(newName));
+                ret = ret.WithIdentifierForImport(Identifier(newName));
             }
-            return base.VisitMethodDeclaration(node);
+
+            _scope.Clear();
+            return ret;
         }
+
+        public override SyntaxNode? VisitConstructorDeclaration(
+            ConstructorDeclarationSyntax node
+        ) =>
+            (base.VisitConstructorDeclaration(node) as ConstructorDeclarationSyntax ?? node)
+                is var v
+            && _typeInProgress is { NewName: { Length: > 0 } newName }
+                ? v.WithIdentifier(Identifier(newName))
+                : v;
 
         public override SyntaxNode? VisitEnumDeclaration(EnumDeclarationSyntax node)
         {
@@ -867,7 +936,7 @@ public class PrettifyNames(
                 return base.VisitEnumDeclaration(node);
             }
 
-            _typeInProgress = (node, info.NonFunctions, info.Functions);
+            _typeInProgress = (node, info.NonFunctions, info.Functions, info.NewName);
             var ret = base.VisitEnumDeclaration(node);
             _typeInProgress = null;
             return ((EnumDeclarationSyntax)ret!).WithIdentifier(Identifier(info.NewName));
@@ -887,7 +956,9 @@ public class PrettifyNames(
             {
                 return node;
             }
-            return node.WithIdentifier(Identifier(newName));
+            return (
+                base.VisitEnumMemberDeclaration(node) as EnumMemberDeclarationSyntax ?? node
+            ).WithIdentifier(Identifier(newName));
         }
 
         public override SyntaxNode? VisitStructDeclaration(StructDeclarationSyntax node)
@@ -900,12 +971,37 @@ public class PrettifyNames(
                 return base.VisitStructDeclaration(node);
             }
 
-            _typeInProgress = (node, info.NonFunctions, info.Functions);
+            _typeInProgress = (node, info.NonFunctions, info.Functions, info.NewName);
             var ret = ((StructDeclarationSyntax)base.VisitStructDeclaration(node)!).WithIdentifier(
                 Identifier(info.NewName)
             );
             _typeInProgress = null;
             return ret;
+        }
+
+        public override SyntaxNode? VisitDelegateDeclaration(DelegateDeclarationSyntax node)
+        {
+            if (
+                !(
+                    _typeInProgress?.NonFunctions?.TryGetValue(
+                        node.Identifier.ToString(),
+                        out var newName
+                    ) ?? false
+                )
+                && (
+                    newName = Types.TryGetValue(node.Identifier.ToString(), out var info)
+                        ? info.NewName
+                        : null
+                )
+                    is null
+            )
+            {
+                return base.VisitDelegateDeclaration(node);
+            }
+
+            return ((DelegateDeclarationSyntax)base.VisitDelegateDeclaration(node)!).WithIdentifier(
+                Identifier(newName)
+            );
         }
 
         public override SyntaxNode? VisitFieldDeclaration(FieldDeclarationSyntax node)
@@ -938,9 +1034,11 @@ public class PrettifyNames(
                 )
             )
             {
-                return node;
+                return base.VisitPropertyDeclaration(node);
             }
-            return node.WithIdentifier(Identifier(newName));
+            return (
+                base.VisitPropertyDeclaration(node) as PropertyDeclarationSyntax ?? node
+            ).WithIdentifier(Identifier(newName));
         }
 
         public override SyntaxNode? VisitVariableDeclarator(VariableDeclaratorSyntax node)
@@ -954,10 +1052,12 @@ public class PrettifyNames(
                 )
             )
             {
-                return node.WithIdentifier(Identifier(newName));
+                return (
+                    base.VisitVariableDeclarator(node) as VariableDeclaratorSyntax ?? node
+                ).WithIdentifier(Identifier(newName));
             }
 
-            return node;
+            return base.VisitVariableDeclarator(node);
         }
 
         public override SyntaxNode? VisitMemberAccessExpression(MemberAccessExpressionSyntax node)
@@ -966,10 +1066,20 @@ public class PrettifyNames(
             _accessing = true;
             Visit(node.Expression);
             _accessing = false;
-            if (_memberAccessType is null || !Types.TryGetValue(_memberAccessType, out var info))
+            if (_memberAccessType is null || !Types.ContainsKey(_memberAccessType))
             {
-                _memberAccess = false;
-                return node;
+                if (
+                    _memberAccessType is not null
+                    && _scope.TryGetValue(_memberAccessType, out var value)
+                )
+                {
+                    _memberAccessType = value;
+                }
+                else
+                {
+                    _memberAccess = false;
+                    return base.VisitMemberAccessExpression(node);
+                }
             }
 
             var accessing = (ExpressionSyntax)Visit(node.Expression);
@@ -1043,6 +1153,32 @@ public class PrettifyNames(
             )
             {
                 return IdentifierName(cName);
+            }
+            else if (
+                // For constants, C has no enum namespacing which means that the constant referenced may be
+                // referenced in another enum.
+                Types
+                    .Select(x =>
+                        x.Value.IsEnum
+                        && (
+                            x.Value.NonFunctions?.TryGetValue(
+                                node.Identifier.ToString(),
+                                out var nn
+                            ) ?? false
+                        )
+                            ? (x.Value.NewName, nn)
+                            : default
+                    )
+                    .FirstOrDefault(x => x is (not null, not null)) is
+
+                ({ } type, { } newName)
+            )
+            {
+                return MemberAccessExpression(
+                    SyntaxKind.SimpleMemberAccessExpression,
+                    IdentifierName(type),
+                    IdentifierName(newName)
+                );
             }
             else if (Types.TryGetValue(node.Identifier.ToString(), out var info))
             {

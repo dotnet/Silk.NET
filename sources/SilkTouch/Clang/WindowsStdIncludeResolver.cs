@@ -33,7 +33,7 @@ public class WindowsStdIncludeResolver : IStdIncludeResolver
                 "Successfully resolved VS to {path}",
                 info.InstallationBaseFolder
             );
-            return _stds = info.MsvcToolsIncludes.Concat(info.UcrtIncludes);
+            return _stds = info.MsvcToolsIncludes.Concat(info.UcrtIncludes).Select(x => $"-I{x}");
         }
 
         _logger.LogWarning("Failed to resolve VS, but OS is Windows!");

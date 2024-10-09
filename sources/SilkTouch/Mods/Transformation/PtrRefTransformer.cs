@@ -41,7 +41,12 @@ public sealed partial class PtrRefTransformer()
         _ctx.Value = null;
     }
 
-    private static bool ShouldConvertToDSL(TypeSyntax syn) => syn is PointerTypeSyntax;
+    private static bool ShouldConvertToDSL(TypeSyntax syn) =>
+        syn is PointerTypeSyntax ptr && DoesNotContainIllegalGeneric(ptr);
+
+    private static bool DoesNotContainIllegalGeneric(PointerTypeSyntax syn) =>
+        syn.ElementType is not FunctionPointerTypeSyntax
+        && (syn.ElementType is not PointerTypeSyntax el || DoesNotContainIllegalGeneric(el));
 
     private static bool ShouldConvertFromDSL(TypeSyntax syn)
     {

@@ -365,14 +365,14 @@ public class AddVTables(IOptionsSnapshot<AddVTables.Configuration> config) : IMo
                     )
             ).AddMembers(
                 ctx.StaticDecl.WithModifiers(
-                    TokenList(
-                        new[] { Token(SyntaxKind.PublicKeyword) }.Concat(
-                            ctx.StaticDecl.Modifiers.Where(x =>
-                                x.Kind() is SyntaxKind.StaticKeyword or SyntaxKind.UnsafeKeyword
+                        TokenList(
+                            new[] { Token(SyntaxKind.PublicKeyword) }.Concat(
+                                ctx.StaticDecl.Modifiers.Where(x =>
+                                    x.Kind() is SyntaxKind.StaticKeyword or SyntaxKind.UnsafeKeyword
+                                )
                             )
                         )
                     )
-                )
                     .WithExpressionBody(
                         ctx.StaticDecl.Body is not null
                             ? null
@@ -662,13 +662,13 @@ public class AddVTables(IOptionsSnapshot<AddVTables.Configuration> config) : IMo
                     .WithModifiers(
                         TokenList(
                             node.Modifiers.Where(x =>
-                                x.Kind()
-                                    is SyntaxKind.PublicKeyword
-                                        or SyntaxKind.PrivateKeyword
-                                        or SyntaxKind.InternalKeyword
-                                        or SyntaxKind.ProtectedKeyword
-                                        or SyntaxKind.UnsafeKeyword
-                            )
+                                    x.Kind()
+                                        is SyntaxKind.PublicKeyword
+                                            or SyntaxKind.PrivateKeyword
+                                            or SyntaxKind.InternalKeyword
+                                            or SyntaxKind.ProtectedKeyword
+                                            or SyntaxKind.UnsafeKeyword
+                                )
                                 .Concat(Enumerable.Repeat(Token(SyntaxKind.PartialKeyword), 1))
                         )
                     )
@@ -718,18 +718,20 @@ public class AddVTables(IOptionsSnapshot<AddVTables.Configuration> config) : IMo
                 .WithAttributeLists(
                     List(
                         node.AttributeLists.Select(x =>
-                            x.WithAttributes(
-                                SeparatedList(
-                                    x.Attributes.Where(y =>
-                                        !y.IsAttribute("System.Runtime.InteropServices.DllImport")
-                                        && !y.IsAttribute("Silk.NET.Core.NativeFunction")
-                                        && !y.IsAttribute(
-                                            "System.Runtime.CompilerServices.MethodImpl"
+                                x.WithAttributes(
+                                    SeparatedList(
+                                        x.Attributes.Where(y =>
+                                            !y.IsAttribute(
+                                                "System.Runtime.InteropServices.DllImport"
+                                            )
+                                            && !y.IsAttribute("Silk.NET.Core.NativeFunction")
+                                            && !y.IsAttribute(
+                                                "System.Runtime.CompilerServices.MethodImpl"
+                                            )
                                         )
                                     )
                                 )
                             )
-                        )
                             .Where(x => x.Attributes.Count > 0)
                     )
                 )
@@ -875,8 +877,9 @@ public class AddVTables(IOptionsSnapshot<AddVTables.Configuration> config) : IMo
                 node.Expression is IdentifierNameSyntax { Identifier: var tok }
                 && (
                     type?.Members.Any(x =>
-                        x.ChildTokens().First(y => y.IsKind(SyntaxKind.IdentifierToken)).ToString()
-                        == tok.ToString()
+                        x.ChildTokens()
+                            .FirstOrDefault(y => y.IsKind(SyntaxKind.IdentifierToken))
+                            .ToString() == tok.ToString()
                     ) ?? false
                 )
             )
@@ -980,15 +983,33 @@ public class AddVTables(IOptionsSnapshot<AddVTables.Configuration> config) : IMo
                 && !_vTables.Any(x => x is ThisThread && x.Name == _staticDefault)
             )
             {
+                yield return PropertyDeclaration(
+                        IdentifierName($"I{nonInterfaceName}"),
+                        Identifier("Instance")
+                    )
+                    .WithModifiers(
+                        TokenList(Token(SyntaxKind.PublicKeyword), Token(SyntaxKind.StaticKeyword))
+                    )
+                    .WithAccessorList(
+                        AccessorList(
+                            SingletonList(
+                                AccessorDeclaration(SyntaxKind.GetAccessorDeclaration)
+                                    .WithSemicolonToken(Token(SyntaxKind.SemicolonToken))
+                            )
+                        )
+                    )
+                    .WithInitializer(
+                        EqualsValueClause(
+                            ObjectCreationExpression(_staticDefaultWrapper, ArgumentList(), null)
+                        )
+                    )
+                    .WithSemicolonToken(Token(SyntaxKind.SemicolonToken));
+
                 yield return MethodDeclaration(IdentifierName($"I{nonInterfaceName}"), "Create")
                     .WithModifiers(
                         TokenList(Token(SyntaxKind.PublicKeyword), Token(SyntaxKind.StaticKeyword))
                     )
-                    .WithExpressionBody(
-                        ArrowExpressionClause(
-                            ObjectCreationExpression(_staticDefaultWrapper, ArgumentList(), null)
-                        )
-                    )
+                    .WithExpressionBody(ArrowExpressionClause(IdentifierName("Instance")))
                     .WithSemicolonToken(Token(SyntaxKind.SemicolonToken));
             }
 

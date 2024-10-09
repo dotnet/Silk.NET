@@ -43,7 +43,8 @@ namespace Silk.NET.Core;
         | AttributeTargets.Interface
         | AttributeTargets.Method
         | AttributeTargets.Property
-        | AttributeTargets.Struct,
+        | AttributeTargets.Struct
+        | AttributeTargets.Delegate,
     AllowMultiple = true,
     Inherited = false
 )]

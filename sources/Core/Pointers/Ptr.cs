@@ -228,7 +228,7 @@ namespace Silk.NET.Core
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
-        public static implicit operator Ref(Ptr ptr) => ptr;
+        public static implicit operator Ref(Ptr ptr) => ptr.Native;
 
         /// <summary>
         /// Creates a <see cref="Ptr"/> from a <see cref="Ref"/>

@@ -8,8 +8,8 @@ namespace Silk.NET.SilkTouch.Clang;
 public interface IStdIncludeResolver
 {
     /// <summary>
-    /// Gets the standard includes for the C compilation on this PC.
+    /// Gets the standard include libclang arguments for the C compilation on this PC.
     /// </summary>
-    /// <returns>Standard include directories.</returns>
+    /// <returns>Standard include libclang arguments.</returns>
     IEnumerable<string> GetStandardIncludes();
 }

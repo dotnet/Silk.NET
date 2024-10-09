@@ -30,6 +30,13 @@ public static partial class NameUtils
     );
 
     /// <summary>
+    /// An instance of <see cref="SearchValues{T}"/> matching ASCII letters, numbers, and an underscore.
+    /// </summary>
+    public static readonly SearchValues<char> IdentifierChars = SearchValues.Create(
+        "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789_"
+    );
+
+    /// <summary>
     /// Prettifies the given string.
     /// </summary>
     /// <param name="str">The string to prettify.</param>
@@ -73,12 +80,17 @@ public static partial class NameUtils
     /// </param>
     /// <returns>String that is common between all provided names</returns>
     public static string FindCommonPrefix(
-        IReadOnlyList<string> names,
+        IReadOnlyCollection<string> names,
         bool allowFullMatch,
         bool allowLeadingDigits,
         bool naive = false
     )
     {
+        if (allowFullMatch && names.Count == 1)
+        {
+            return names.First();
+        }
+
         var commonPrefixFirstPass = FindCommonPrefix(
             names,
             allowFullMatch,
@@ -109,7 +121,7 @@ public static partial class NameUtils
     /// </param>
     /// <returns>String that is common between all provided names</returns>
     public static string FindCommonPrefix(
-        IReadOnlyList<string> names,
+        IReadOnlyCollection<string> names,
         bool allowFullMatch,
         int maxLen,
         bool naive = false
@@ -119,16 +131,17 @@ public static partial class NameUtils
         var foundPrefix = "";
         var minLen = names.Min(x => x.Length);
         var found = false;
+        var firstName = names.First();
         while (!found)
         {
             pos++;
-            if (pos >= maxLen || pos > (naive ? minLen : names[0].Length))
+            if (pos > (naive ? maxLen : maxLen - 1) || pos > (naive ? minLen : firstName.Length))
             {
                 break;
             }
 
-            var prefix = names[0][..pos];
-            foreach (var name in names.Skip(1))
+            var prefix = firstName[..pos];
+            foreach (var name in names)
             {
                 if (name.StartsWith(prefix, StringComparison.OrdinalIgnoreCase))
                 {
@@ -139,7 +152,7 @@ public static partial class NameUtils
                 break;
             }
 
-            if (pos > 1) // if pos is smaller, that means we haven't even done a full loop yet and already tripped up.
+            if (pos > 1 && !found) // if pos is smaller, that means we haven't even done a full loop yet and already tripped up.
             {
                 foundPrefix = prefix;
             }
@@ -155,13 +168,18 @@ public static partial class NameUtils
             return foundPrefix;
         }
 
-        // @Perksey says: I added a -1 here in the naive case in #2020 because it felt like it was wrong (why would we
-        // want the prefix to be equal to something we *know* isn't applicable to all names?) and was producing one
-        // specific bad result for which there is now a regression test. If this is having catastrophic impacts on other
-        // bindings then please reverse this change and find a smarter fix.
-        return foundPrefix[
-            ..(naive ? int.Max(foundPrefix.Length - 1, 0) : foundPrefix.LastIndexOf('_') + 1)
-        ];
+        // @Perksey says: Originally I added a -1 here in the naive case in #2020 because it felt like it was wrong
+        // (why would we want the prefix to be equal to something we *know* isn't applicable to all
+        // names?) and was producing one specific bad result for which there is now a regression test.
+        // If this is having catastrophic impacts on other bindings then please reverse this change and
+        // find a smarter fix.
+        //
+        // It turns out however there were other cases where this wasn't doing what it should, for instance finding the
+        // prefix between Silk.NET.SDL and Silk.NET.SDL with allowFullMatch set (i.e. the result should be Silk.NET.SDL)
+        // so instead a naive case was added in the while loop itself, changing to
+        // `if (pos > (naive ? maxLen : maxLen - 1)...` so that it should hopefully have the same effect and then some.
+        // This was done in #2207. I guess this was the smarter fix my previous comment was talking about.
+        return foundPrefix[..(naive ? foundPrefix.Length : foundPrefix.LastIndexOf('_') + 1)];
     }
 
     /// <summary>

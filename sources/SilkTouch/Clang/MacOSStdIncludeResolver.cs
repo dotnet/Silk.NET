@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
+using System.Linq;
 using Microsoft.Extensions.Logging;
 
 namespace Silk.NET.SilkTouch.Clang;
@@ -28,13 +29,35 @@ public class MacOSStdIncludeResolver : UnixStdIncludeResolver
         }
 
         var sdkPath = GetXCodeSdkPath();
-        _logger.LogTrace("Using SDK {sdk} as base", sdkPath);
+        _logger.LogTrace("Using SDK {sdk} as base", sdkPath); // TODO iOS profile?
+        yield return $"-isysroot{sdkPath}";
         var p1 = Path.Combine(sdkPath, "usr/include");
         _logger.LogTrace("Suggesting additional path {path}", p1);
-        yield return p1;
+        yield return $"-isystem{p1}";
         var p2 = Path.Combine(sdkPath, "usr/local/include");
         _logger.LogTrace("Suggesting additional path {path}", p2);
-        yield return p2;
+        yield return $"-isystem{p2}";
+        var maybeToolchain = Path.Combine(
+            sdkPath,
+            "../../../../../Toolchains/XcodeDefault.xctoolchain/usr/lib/clang"
+        );
+        var toolchainClangDir = new DirectoryInfo(maybeToolchain);
+        _logger.LogTrace("Assuming default toolchain of {}", toolchainClangDir.FullName);
+        if (
+            toolchainClangDir.Exists
+            && toolchainClangDir
+                .GetDirectories()
+                .Select(x => (x, Version.TryParse(x.Name, out var v) ? v : null))
+                .Where(x => x.Item2 is not null)
+                .OrderByDescending(x => x.Item2)
+                .FirstOrDefault()
+                is { x: { } dir }
+        )
+        {
+            var p3 = Path.Join(dir.FullName, "include");
+            _logger.LogTrace("Suggesting additional path {path}", p3);
+            yield return $"-isystem{p3}";
+        }
     }
 
     private string GetXCodeSdkPath()

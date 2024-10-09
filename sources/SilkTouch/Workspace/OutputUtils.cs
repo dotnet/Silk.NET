@@ -11,6 +11,8 @@ namespace Silk.NET.SilkTouch.Workspace;
 /// </summary>
 public static class OutputUtils
 {
+    private static readonly CodeFormatterOptions _opts = new() { EndOfLine = EndOfLine.LF };
+
     /// <summary>
     /// Prettifies the given syntax tree using <see cref="CSharpier"/> if possible, otherwise uses Roslyn to normalize
     /// the whitespace.
@@ -25,11 +27,11 @@ public static class OutputUtils
     {
         var result = await CodeFormatter.FormatAsync(
             root.NormalizeWhitespace().SyntaxTree,
-            new CodeFormatterOptions(),
+            _opts,
             ct
         );
         return !result.CompilationErrors.Any()
             ? result.Code
-            : root.NormalizeWhitespace().ToFullString();
+            : root.NormalizeWhitespace(eol: "\n").ToFullString();
     }
 }

@@ -73,9 +73,7 @@ public class AddIncludes(
             );
             if (!cfg.SuppressStdIncludes)
             {
-                cmdLineArgs.AddRange(
-                    stdResolver.GetStandardIncludes().Select(x => $"--include-directory={x}")
-                );
+                cmdLineArgs.AddRange(stdResolver.GetStandardIncludes());
             }
 
             var matcher = new Matcher();

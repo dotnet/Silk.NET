@@ -91,10 +91,10 @@ public static class ModUtils
     /// <param name="toks">Tokens e.g. ref, in, out.</param>
     /// <param name="type">The type syntax.</param>
     /// <returns>The discriminator string.</returns>
-    public static string DiscrimStr(SyntaxTokenList toks, TypeSyntax? type) =>
-        toks.Any(x =>
+    public static string DiscrimStr(SyntaxTokenList? toks, TypeSyntax? type) =>
+        toks?.Any(x =>
             x.Kind() is SyntaxKind.RefKeyword or SyntaxKind.InKeyword or SyntaxKind.OutKeyword
-        )
+        ) ?? false
             ? $"{type}&"
             : type?.ToString() ?? string.Empty;
 
@@ -108,22 +108,39 @@ public static class ModUtils
     /// <param name="returnType">The return type of the function.</param>
     /// <returns>The discriminator string.</returns>
     public static string DiscrimStr(
-        SyntaxTokenList modifiers,
+        SyntaxTokenList? modifiers,
         TypeParameterListSyntax? tParams,
-        string identifier,
-        ParameterListSyntax? @params,
+        ReadOnlySpan<char> identifier,
+        IEnumerable<BaseParameterSyntax>? @params,
         TypeSyntax? returnType
     ) =>
-        (modifiers.Any(SyntaxKind.StaticKeyword) ? "static " : string.Empty)
+        (modifiers?.Any(SyntaxKind.StaticKeyword) ?? false ? "static " : string.Empty)
         + $"{DiscrimStr(modifiers, returnType)} {identifier}{tParams}"
-        + $"({string.Join(", ", @params?.Parameters.Select(DiscrimStr) ?? Enumerable.Empty<string>())})";
+        + $"({string.Join(", ", @params?.Select(DiscrimStr) ?? Enumerable.Empty<string>())})";
+
+    /// <summary>
+    /// Gets a string that can be used to discriminate a function-like element for baking purposes.
+    /// </summary>
+    /// <param name="modifiers">The modifiers on the function.</param>
+    /// <param name="tParams">The type parameters.</param>
+    /// <param name="identifier">The name of the function.</param>
+    /// <param name="params">The parameters of the function.</param>
+    /// <param name="returnType">The return type of the function.</param>
+    /// <returns>The discriminator string.</returns>
+    public static string DiscrimStr(
+        SyntaxTokenList? modifiers,
+        TypeParameterListSyntax? tParams,
+        ReadOnlySpan<char> identifier,
+        BaseParameterListSyntax? @params,
+        TypeSyntax? returnType
+    ) => DiscrimStr(modifiers, tParams, identifier, @params?.Parameters, returnType);
 
     /// <summary>
     /// Gets a string that can be used to discriminate a single parameter.
     /// </summary>
     /// <param name="param">The parameter.</param>
     /// <returns>The discriminator string.</returns>
-    public static string DiscrimStr(ParameterSyntax param) =>
+    public static string DiscrimStr(BaseParameterSyntax param) =>
         DiscrimStr(param.Modifiers, param.Type);
 
     /// <summary>
@@ -558,6 +575,26 @@ public static class ModUtils
                 or SyntaxKind.ShortKeyword
                 or SyntaxKind.ByteKeyword
                 or SyntaxKind.SByteKeyword;
+
+    /// <summary>
+    /// Gets all of the identifiers within the given identifiable member syntax.
+    /// </summary>
+    /// <param name="syn">The member with the identifiers.</param>
+    /// <returns>The identifiers.</returns>
+    public static IEnumerable<string> MemberIdentifiers(this MemberDeclarationSyntax syn) =>
+        syn switch
+        {
+            BaseFieldDeclarationSyntax fld
+                => fld.Declaration.Variables.Select(x => x.Identifier.ToString()),
+            MethodDeclarationSyntax meth => [meth.Identifier.ToString()],
+            BaseNamespaceDeclarationSyntax nsd => [nsd.Name.ToString()],
+            EventDeclarationSyntax ev => [ev.Identifier.ToString()],
+            PropertyDeclarationSyntax prop => [prop.Identifier.ToString()],
+            BaseTypeDeclarationSyntax typ => [typ.Identifier.ToString()],
+            DelegateDeclarationSyntax del => [del.Identifier.ToString()],
+            EnumMemberDeclarationSyntax em => [em.Identifier.ToString()],
+            _ => []
+        };
 
     /// <summary>
     /// Gets an attribute list representing a <see cref="System.Runtime.CompilerServices.MethodImplAttribute"/> with

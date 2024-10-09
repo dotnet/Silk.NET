@@ -1,0 +1,2 @@
+--remap
+SDL_fabsf=float.Abs
