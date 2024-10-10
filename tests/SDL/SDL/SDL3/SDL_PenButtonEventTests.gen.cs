@@ -7,10 +7,10 @@ using NUnit.Framework;
 
 namespace Silk.NET.SDL.UnitTests;
 
-/// <summary>Provides validation of the <see cref = "SDL_PenButtonEvent"/> struct.</summary>
+/// <summary>Provides validation of the <see cref = "PenButtonEvent"/> struct.</summary>
 public static unsafe partial class SDL_PenButtonEventTests
 {
-    /// <summary>Validates that the <see cref = "SDL_PenButtonEvent"/> struct is blittable.</summary>
+    /// <summary>Validates that the <see cref = "PenButtonEvent"/> struct is blittable.</summary>
 
     [Test]
     public static void IsBlittableTest()
@@ -18,7 +18,7 @@ public static unsafe partial class SDL_PenButtonEventTests
         Assert.That(Marshal.SizeOf<PenButtonEvent>(), Is.EqualTo(sizeof(PenButtonEvent)));
     }
 
-    /// <summary>Validates that the <see cref = "SDL_PenButtonEvent"/> struct has the right <see cref = "LayoutKind"/>.</summary>
+    /// <summary>Validates that the <see cref = "PenButtonEvent"/> struct has the right <see cref = "LayoutKind"/>.</summary>
 
     [Test]
     public static void IsLayoutSequentialTest()
@@ -26,7 +26,7 @@ public static unsafe partial class SDL_PenButtonEventTests
         Assert.That(typeof(PenButtonEvent).IsLayoutSequential, Is.True);
     }
 
-    /// <summary>Validates that the <see cref = "SDL_PenButtonEvent"/> struct has the correct size.</summary>
+    /// <summary>Validates that the <see cref = "PenButtonEvent"/> struct has the correct size.</summary>
 
     [Test]
     public static void SizeOfTest()

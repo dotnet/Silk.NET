@@ -7,10 +7,10 @@ using NUnit.Framework;
 
 namespace Silk.NET.SDL.UnitTests;
 
-/// <summary>Provides validation of the <see cref = "SDL_HapticDirection"/> struct.</summary>
+/// <summary>Provides validation of the <see cref = "HapticDirection"/> struct.</summary>
 public static unsafe partial class SDL_HapticDirectionTests
 {
-    /// <summary>Validates that the <see cref = "SDL_HapticDirection"/> struct is blittable.</summary>
+    /// <summary>Validates that the <see cref = "HapticDirection"/> struct is blittable.</summary>
 
     [Test]
     public static void IsBlittableTest()
@@ -18,7 +18,7 @@ public static unsafe partial class SDL_HapticDirectionTests
         Assert.That(Marshal.SizeOf<HapticDirection>(), Is.EqualTo(sizeof(HapticDirection)));
     }
 
-    /// <summary>Validates that the <see cref = "SDL_HapticDirection"/> struct has the right <see cref = "LayoutKind"/>.</summary>
+    /// <summary>Validates that the <see cref = "HapticDirection"/> struct has the right <see cref = "LayoutKind"/>.</summary>
 
     [Test]
     public static void IsLayoutSequentialTest()
@@ -26,7 +26,7 @@ public static unsafe partial class SDL_HapticDirectionTests
         Assert.That(typeof(HapticDirection).IsLayoutSequential, Is.True);
     }
 
-    /// <summary>Validates that the <see cref = "SDL_HapticDirection"/> struct has the correct size.</summary>
+    /// <summary>Validates that the <see cref = "HapticDirection"/> struct has the correct size.</summary>
 
     [Test]
     public static void SizeOfTest()

@@ -7,10 +7,10 @@ using NUnit.Framework;
 
 namespace Silk.NET.SDL.UnitTests;
 
-/// <summary>Provides validation of the <see cref = "SDL_Event"/> struct.</summary>
+/// <summary>Provides validation of the <see cref = "Event"/> struct.</summary>
 public static unsafe partial class SDL_EventTests
 {
-    /// <summary>Validates that the <see cref = "SDL_Event"/> struct is blittable.</summary>
+    /// <summary>Validates that the <see cref = "Event"/> struct is blittable.</summary>
 
     [Test]
     public static void IsBlittableTest()
@@ -18,7 +18,7 @@ public static unsafe partial class SDL_EventTests
         Assert.That(Marshal.SizeOf<Event>(), Is.EqualTo(sizeof(Event)));
     }
 
-    /// <summary>Validates that the <see cref = "SDL_Event"/> struct has the right <see cref = "LayoutKind"/>.</summary>
+    /// <summary>Validates that the <see cref = "Event"/> struct has the right <see cref = "LayoutKind"/>.</summary>
 
     [Test]
     public static void IsLayoutExplicitTest()
@@ -26,7 +26,7 @@ public static unsafe partial class SDL_EventTests
         Assert.That(typeof(Event).IsExplicitLayout, Is.True);
     }
 
-    /// <summary>Validates that the <see cref = "SDL_Event"/> struct has the correct size.</summary>
+    /// <summary>Validates that the <see cref = "Event"/> struct has the correct size.</summary>
 
     [Test]
     public static void SizeOfTest()

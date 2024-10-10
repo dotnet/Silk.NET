@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
 using System.Text.RegularExpressions;
+using System.Threading;
 using System.Threading.Tasks;
 using Humanizer;
 using Microsoft.CodeAnalysis;
@@ -35,56 +36,98 @@ namespace Silk.NET.SilkTouch.Mods;
 public partial class ExtractNestedTyping : Mod
 {
     /// <inheritdoc />
-    public override Task<GeneratedSyntax> AfterScrapeAsync(string key, GeneratedSyntax syntax)
+    public override async Task ExecuteAsync(IModContext ctx, CancellationToken ct = default)
     {
-        var dict = new Dictionary<string, SyntaxNode>(syntax.Files.Count);
+        await base.ExecuteAsync(ctx, ct);
         var fnPtrWalker = new FunctionPointerWalker();
         var rewriter = new Rewriter();
-        foreach (var (fname, node) in syntax.Files)
+
+        // First pass to discover the types to extract.
+        foreach (var doc in ctx.SourceProject?.Documents ?? [])
         {
+            var (fname, node) = (doc.RelativePath(), await doc.GetSyntaxRootAsync(ct));
+            if (fname is null)
+            {
+                continue;
+            }
+
             fnPtrWalker.File = fname;
             fnPtrWalker.Visit(node);
         }
 
+        // Second pass to modify existing files as per our discovery.
         rewriter.FunctionPointerTypes = fnPtrWalker.GetFunctionPointerTypes();
+        var proj = ctx.SourceProject;
         foreach (
-            var (structDecl, delegateDecl, fileDirs, namespaces) in rewriter
+            var (structDecl, delegateDecl, fileDirs, namespaces, isUnique) in rewriter
                 .FunctionPointerTypes
                 .Values
         )
         {
-            var ns = NameUtils.FindCommonPrefix(namespaces, true, false, true).AsSpan();
-            var dir = NameUtils.FindCommonPrefix(fileDirs, true, false, true).AsSpan().TrimEnd('/');
-            dict[$"{dir}/{structDecl.Identifier}.gen.cs"] = CompilationUnit()
-                .WithMembers(
-                    ns is { Length: > 0 }
-                        ? SingletonList<MemberDeclarationSyntax>(
-                            FileScopedNamespaceDeclaration(
-                                    ModUtils.NamespaceIntoIdentifierName(ns.TrimEnd('.'))
+            if (!isUnique)
+            {
+                continue;
+            }
+
+            var ns = NameUtils.FindCommonPrefix(namespaces, true, false, true);
+            var dir = NameUtils.FindCommonPrefix(fileDirs, true, false, true).TrimEnd('/');
+            proj = proj
+                ?.AddDocument(
+                    $"{structDecl.Identifier}.gen.cs",
+                    CompilationUnit()
+                        .WithMembers(
+                            ns is { Length: > 0 }
+                                ? SingletonList<MemberDeclarationSyntax>(
+                                    FileScopedNamespaceDeclaration(
+                                            ModUtils.NamespaceIntoIdentifierName(ns.TrimEnd('.'))
+                                        )
+                                        .WithMembers(
+                                            SingletonList<MemberDeclarationSyntax>(structDecl)
+                                        )
                                 )
-                                .WithMembers(SingletonList<MemberDeclarationSyntax>(structDecl))
+                                : SingletonList<MemberDeclarationSyntax>(structDecl)
                         )
-                        : SingletonList<MemberDeclarationSyntax>(structDecl)
-                );
-            dict[$"{dir}/{delegateDecl.Identifier}.gen.cs"] = CompilationUnit()
-                .WithMembers(
-                    ns is { Length: > 0 }
-                        ? SingletonList<MemberDeclarationSyntax>(
-                            FileScopedNamespaceDeclaration(
-                                    ModUtils.NamespaceIntoIdentifierName(ns.TrimEnd('.'))
+                        .NormalizeWhitespace(),
+                    filePath: proj.FullPath($"{dir}/{structDecl.Identifier}.gen.cs")
+                )
+                .Project.AddDocument(
+                    $"{delegateDecl.Identifier}.gen.cs",
+                    CompilationUnit()
+                        .WithMembers(
+                            ns is { Length: > 0 }
+                                ? SingletonList<MemberDeclarationSyntax>(
+                                    FileScopedNamespaceDeclaration(
+                                            ModUtils.NamespaceIntoIdentifierName(ns.TrimEnd('.'))
+                                        )
+                                        .WithMembers(
+                                            SingletonList<MemberDeclarationSyntax>(delegateDecl)
+                                        )
                                 )
-                                .WithMembers(SingletonList<MemberDeclarationSyntax>(delegateDecl))
+                                : SingletonList<MemberDeclarationSyntax>(delegateDecl)
                         )
-                        : SingletonList<MemberDeclarationSyntax>(delegateDecl)
-                );
+                        .NormalizeWhitespace(),
+                    filePath: proj.FullPath($"{dir}/{delegateDecl.Identifier}.gen.cs")
+                )
+                .Project;
         }
 
-        foreach (var (fname, node) in syntax.Files)
+        foreach (var docId in ctx.SourceProject?.DocumentIds ?? [])
         {
-            dict[fname] = rewriter.Visit(node);
+            var doc =
+                proj!.GetDocument(docId) ?? throw new InvalidOperationException("Document missing");
+            var (fname, node) = (doc.RelativePath(), await doc.GetSyntaxRootAsync(ct));
+            if (fname is null)
+            {
+                continue;
+            }
+            proj = doc.WithSyntaxRoot(
+                rewriter.Visit(node)?.NormalizeWhitespace()
+                    ?? throw new InvalidOperationException("Rewriter returned null")
+            ).Project;
             foreach (var newStruct in rewriter.ExtractedNestedStructs)
             {
-                dict[$"{fname.AsSpan()[..fname.LastIndexOf('/')]}/{newStruct.Identifier}.gen.cs"] =
+                proj = proj.AddDocument(
+                    $"{newStruct.Identifier}.gen.cs",
                     CompilationUnit()
                         .WithMembers(
                             rewriter.Namespace is not null
@@ -97,14 +140,19 @@ public partial class ExtractNestedTyping : Mod
                                         )
                                 )
                                 : SingletonList<MemberDeclarationSyntax>(newStruct)
-                        );
+                        )
+                        .NormalizeWhitespace(),
+                    filePath: proj.FullPath(
+                        $"{fname.AsSpan()[..fname.LastIndexOf('/')]}/{newStruct.Identifier}.gen.cs"
+                    )
+                ).Project;
             }
 
             rewriter.Namespace = null;
             rewriter.ExtractedNestedStructs.Clear();
         }
 
-        return Task.FromResult(syntax with { Files = dict });
+        ctx.SourceProject = proj;
     }
 
     partial class Rewriter : CSharpSyntaxRewriter
@@ -119,7 +167,8 @@ public partial class ExtractNestedTyping : Mod
                 StructDeclarationSyntax Pfn,
                 DelegateDeclarationSyntax Delegate,
                 HashSet<string> ReferencingFileDirs,
-                HashSet<string> ReferencingNamespaces
+                HashSet<string> ReferencingNamespaces,
+                bool IsUnique
             )
         >? FunctionPointerTypes { get; set; }
 
@@ -312,7 +361,7 @@ public partial class ExtractNestedTyping : Mod
             }
 
             info.ReferencingNamespaces.Add(ogNode.NamespaceFromSyntaxNode());
-            if (File?.StartsWith("sources/") ?? false)
+            if (File is not null)
             {
                 info.ReferencingFileDirs.Add(File[..File.LastIndexOf('/')]);
             }
@@ -326,7 +375,8 @@ public partial class ExtractNestedTyping : Mod
                 StructDeclarationSyntax Pfn,
                 DelegateDeclarationSyntax Delegate,
                 HashSet<string> ReferencingFileDirs,
-                HashSet<string> ReferencingNamespaces
+                HashSet<string> ReferencingNamespaces,
+                bool IsUnique
             )
         > GetFunctionPointerTypes()
         {
@@ -336,7 +386,8 @@ public partial class ExtractNestedTyping : Mod
                     StructDeclarationSyntax,
                     DelegateDeclarationSyntax,
                     HashSet<string>,
-                    HashSet<string>
+                    HashSet<string>,
+                    bool
                 )
             >(_fnPtrs.Count);
             foreach (var (discrim, info) in _fnPtrs)
@@ -354,7 +405,8 @@ public partial class ExtractNestedTyping : Mod
                     StructDeclarationSyntax Pfn,
                     DelegateDeclarationSyntax Delegate,
                     HashSet<string> ReferencingFileDirs,
-                    HashSet<string> ReferencingNamespaces
+                    HashSet<string> ReferencingNamespaces,
+                    bool IsUnique
                 )
             > dst,
             string discrim,
@@ -446,7 +498,7 @@ public partial class ExtractNestedTyping : Mod
                             .Select((x, i) => (x, i))
                             .First(x => x.x.Key == discrim)
                             .i + 1;
-                    identifier = $"{info.UsageHints[0].ParentSymbol} function {functionNumber}";
+                    identifier = $"{info.UsageHints[0].ParentSymbol}_function_{functionNumber}";
                 }
             }
 
@@ -696,10 +748,22 @@ public partial class ExtractNestedTyping : Mod
                     )
                 );
 
-            dst[discrim] = (pfn, @delegate, info.ReferencingFileDirs, info.ReferencingNamespaces);
+            dst[discrim] = (
+                pfn,
+                @delegate,
+                info.ReferencingFileDirs,
+                info.ReferencingNamespaces,
+                true
+            );
             if (newDiscrim is not null)
             {
-                dst[newDiscrim] = dst[discrim];
+                dst[newDiscrim] = (
+                    pfn,
+                    @delegate,
+                    info.ReferencingFileDirs,
+                    info.ReferencingNamespaces,
+                    false
+                );
             }
         }
 
@@ -712,7 +776,8 @@ public partial class ExtractNestedTyping : Mod
                     StructDeclarationSyntax Pfn,
                     DelegateDeclarationSyntax Delegate,
                     HashSet<string> ReferencingFileDirs,
-                    HashSet<string> ReferencingNamespaces
+                    HashSet<string> ReferencingNamespaces,
+                    bool IsUnique
                 )
             > dst,
             bool topLevel = true
@@ -733,7 +798,8 @@ public partial class ExtractNestedTyping : Mod
                         StructDeclarationSyntax Pfn,
                         DelegateDeclarationSyntax Delegate,
                         HashSet<string> ReferencingFileDirs,
-                        HashSet<string> ReferencingNamespaces
+                        HashSet<string> ReferencingNamespaces,
+                        bool IsUnique
                     )
                 > dest
             ) =>

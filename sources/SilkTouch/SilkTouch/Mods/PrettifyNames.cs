@@ -1,10 +1,20 @@
 ﻿using System;
+using System.Collections.Concurrent;
 using System.Collections.Generic;
+using System.Collections.Immutable;
+using System.CommandLine;
+using System.Diagnostics;
 using System.Linq;
+using System.Reflection;
+using System.Runtime.CompilerServices;
+using System.Threading;
+using System.Threading.Channels;
 using System.Threading.Tasks;
 using Microsoft.CodeAnalysis;
 using Microsoft.CodeAnalysis.CSharp;
 using Microsoft.CodeAnalysis.CSharp.Syntax;
+using Microsoft.CodeAnalysis.FindSymbols;
+using Microsoft.CodeAnalysis.Rename;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 using Silk.NET.SilkTouch.Clang;
@@ -24,7 +34,7 @@ public class PrettifyNames(
     ILogger<PrettifyNames> logger,
     IOptionsSnapshot<PrettifyNames.Configuration> config,
     IEnumerable<IJobDependency<INameTrimmer>> trimmerProviders
-) : IMod
+) : IMod, IResponseFileMod
 {
     /// <summary>
     /// The configuration for the prettify names mod.
@@ -59,17 +69,30 @@ public class PrettifyNames(
     }
 
     /// <inheritdoc />
-    public Task<GeneratedSyntax> AfterScrapeAsync(string key, GeneratedSyntax syntax)
+    public async Task ExecuteAsync(IModContext ctx, CancellationToken ct = default)
     {
         // First pass to scan the sources and create a dictionary of type/member names.
-        var cfg = config.Get(key);
+        var cfg = config.Get(ctx.JobKey);
         var visitor = new Visitor { NameOverrides = (cfg.NameOverrides?.ToDictionary() ?? [])! };
-        foreach (var (_, node) in syntax.Files.Where(x => x.Key.StartsWith("sources/")))
+        if (ctx.SourceProject is null)
         {
-            visitor.Visit(node);
+            return;
         }
 
-        var rewriter = new Rewriter();
+        foreach (var doc in ctx.SourceProject.Documents)
+        {
+            visitor.Visit(await doc.GetSyntaxRootAsync(ct));
+        }
+
+        Dictionary<
+            string,
+            (
+                string NewName,
+                Dictionary<string, string>? NonFunctions,
+                Dictionary<string, string>? Functions,
+                bool IsEnum
+            )
+        > types = new();
         var translator = new NameUtils.NameTransformer(cfg.LongAcronymThreshold ?? 3);
 
         // If we have a trimmer baseline set, that means the user wants to trim the names as well as prettify them.
@@ -80,7 +103,7 @@ public class PrettifyNames(
             // but to be honest those trimmers aren't used and are only included for posterity and understanding of the
             // old logic.
             var trimmers = trimmerProviders
-                .SelectMany(x => x.Get(key))
+                .SelectMany(x => x.Get(ctx.JobKey))
                 .OrderBy(x => x.Version)
                 .ToArray();
 
@@ -97,7 +120,7 @@ public class PrettifyNames(
                 Trim(
                     null,
                     cfg.GlobalPrefixHint,
-                    key,
+                    ctx.JobKey,
                     typeNames,
                     cfg.PrefixOverrides,
                     trimmers,
@@ -124,7 +147,7 @@ public class PrettifyNames(
                     Trim(
                         typeName,
                         cfg.GlobalPrefixHint,
-                        key,
+                        ctx.JobKey,
                         constNames,
                         cfg.PrefixOverrides,
                         trimmers,
@@ -158,7 +181,7 @@ public class PrettifyNames(
                     Trim(
                         typeName,
                         cfg.GlobalPrefixHint,
-                        key,
+                        ctx.JobKey,
                         functionNames,
                         cfg.PrefixOverrides,
                         trimmers,
@@ -177,7 +200,7 @@ public class PrettifyNames(
                     : Enumerable.Empty<KeyValuePair<string, (string Primary, List<string>?)>>();
 
                 // Add it to the rewriter's list of names to... rewrite...
-                rewriter.Types[typeName] = (
+                types[typeName] = (
                     newTypeName.Prettify(translator, allowAllCaps: true), // <-- lenient about caps for type names
                     // TODO deprecate secondaries if they're within the baseline?
                     constNames
@@ -196,7 +219,7 @@ public class PrettifyNames(
             // Prettify only if the user has not indicated they want to trim.
             foreach (var (name, (nonFunctions, functions, isEnum)) in visitor.Types)
             {
-                rewriter.Types[name] = (
+                types[name] = (
                     name.Prettify(translator, allowAllCaps: true), // <-- lenient about caps for type names (e.g. GL)
                     nonFunctions?.ToDictionary(x => x, x => x.Prettify(translator)),
                     functions?.ToDictionary(x => x.Name, x => x.Name.Prettify(translator)),
@@ -207,7 +230,7 @@ public class PrettifyNames(
 
         if (logger.IsEnabled(LogLevel.Debug))
         {
-            foreach (var (name, (newName, nonFunctions, functions, _)) in rewriter.Types)
+            foreach (var (name, (newName, nonFunctions, functions, _)) in types)
             {
                 logger.LogDebug("{} = {}", name, newName);
                 foreach (var (old, @new) in nonFunctions ?? new())
@@ -222,26 +245,121 @@ public class PrettifyNames(
             }
         }
 
-        return Task.FromResult(
-            syntax with
+        // Before we rename, we should ensure name dependent things are correct e.g. DllImport explicitly specify their
+        // EntryPoint
+        logger.LogDebug("Fixing up attributes for {} to make them safe for rename...", ctx.JobKey);
+        var rewriter = new RenameSafeAttributeListsRewriter();
+        var proj = ctx.SourceProject;
+        foreach (var docId in proj.DocumentIds)
+        {
+            var doc = proj.GetDocument(docId);
+            if (doc is null)
             {
-                Files = syntax
-                    .Files.Select(x =>
-                        (
-                            x.Key.EndsWith(".gen.cs")
-                            && rewriter.Types.TryGetValue(
-                                x.Key[(x.Key.LastIndexOf('/') + 1)..^7], // ^7 to strip the .gen.cs
-                                out var info
-                            )
-                                ? $"{x.Key[..(x.Key.LastIndexOf('/') + 1)]}{info.NewName}.gen.cs"
-                                : x.Key,
-                            rewriter.Visit(x.Value)
-                        )
-                    )
-                    .ToDictionary(x => x.Item1, x => x.Item2)
+                continue;
             }
+
+            var root = rewriter.Visit(await doc.GetSyntaxRootAsync(ct));
+            if (root is not null)
+            {
+                proj = doc.WithSyntaxRoot(root).Project;
+            }
+        }
+
+        var sw = Stopwatch.StartNew();
+        logger.LogDebug("Discovering references to symbols to rename for {}...", ctx.JobKey);
+        ctx.SourceProject = proj;
+        var comp =
+            await proj.GetCompilationAsync(ct)
+            ?? throw new InvalidOperationException(
+                "Failed to obtain compilation for source project!"
+            );
+        await RenameAllAsync(
+            ctx,
+            types.SelectMany(x =>
+            {
+                var nonFunctionConflicts = x
+                    .Value.NonFunctions?.Values.Where(y =>
+                        x.Value.Functions?.ContainsValue(y) ?? false
+                    )
+                    .ToHashSet();
+                return comp.GetSymbolsWithName(x.Key, SymbolFilter.Type, ct)
+                    .OfType<ITypeSymbol>()
+                    .SelectMany<ITypeSymbol, (ISymbol, string)>(y =>
+
+                        [
+                            .. Enumerable.SelectMany(
+                                [
+                                    .. x.Value.NonFunctions?.Select(z =>
+                                        nonFunctionConflicts?.Contains(z.Value) ?? false
+                                            ? new KeyValuePair<string, string>(
+                                                z.Key,
+                                                $"{z.Value}Value"
+                                            )
+                                            : z
+                                    ) ?? [],
+                                    .. x.Value.Functions ?? []
+                                ],
+                                z =>
+                                {
+                                    return y.GetMembers(z.Key).Select(w => (w, z.Value));
+                                }
+                            ),
+                            .. y.GetMembers()
+                                .OfType<IMethodSymbol>()
+                                .Where(z =>
+                                    z.MethodKind is MethodKind.Constructor or MethodKind.Destructor
+                                )
+                                .Select(z => (z, x.Value.NewName)),
+                            (y, x.Value.NewName)
+                        ]
+                    );
+            }),
+            ct
         );
+        logger.LogDebug(
+            "Reference renaming took {} seconds for {}.",
+            sw.Elapsed.TotalSeconds,
+            ctx.JobKey
+        );
+
+        // Change the filenames where appropriate.
+        proj = ctx.SourceProject;
+        foreach (var docId in proj.DocumentIds)
+        {
+            var doc = proj.GetDocument(docId);
+            if (
+                doc is not { FilePath: not null, Name: not null }
+                || types
+                    .OrderByDescending(x => x.Key.Length)
+                    .FirstOrDefault(x => doc.FilePath.Contains(x.Key) || doc.Name.Contains(x.Key))
+                    is not { Key: { } oldName, Value.NewName: { } newName }
+            )
+            {
+                continue;
+            }
+
+            proj = doc.WithFilePath(doc.FilePath.Replace(oldName, newName))
+                .WithName(doc.Name.Replace(oldName, newName))
+                .Project;
+        }
+
+        ctx.SourceProject = proj;
     }
+
+    private static readonly SymbolRenameOptions _typeRenameOptions =
+        new(
+            RenameOverloads: false,
+            RenameInStrings: false,
+            RenameInComments: false,
+            RenameFile: true
+        );
+    private static readonly SymbolRenameOptions _memberRenameOptions =
+        new(
+            RenameOverloads: true,
+            RenameInStrings: false,
+            RenameInComments: false,
+            RenameFile: false
+        );
 
     private void Trim(
         string? container,
@@ -811,380 +929,156 @@ public class PrettifyNames(
         }
     }
 
-    private class Rewriter : CSharpSyntaxRewriter
+    private class RenameSafeAttributeListsRewriter : CSharpSyntaxRewriter
     {
-        public Dictionary<
-            string,
+        public override SyntaxNode VisitMethodDeclaration(MethodDeclarationSyntax node) =>
             (
-                string NewName,
-                Dictionary<string, string>? NonFunctions,
-                Dictionary<string, string>? Functions,
-                bool IsEnum
-            )
-        > Types = new();
+                (MethodDeclarationSyntax)base.VisitMethodDeclaration(node)!
+            ).WithRenameSafeAttributeLists();
+    }
 
-        private (
-            BaseTypeDeclarationSyntax Type,
-            Dictionary<string, string>? NonFunctions,
-            Dictionary<string, string>? Functions,
-            string? NewName
-        )? _typeInProgress;
-        private FieldDeclarationSyntax? _memberInProgress;
-        private bool _memberAccess;
-        private bool _accessing;
-        private bool _member;
-        private string? _memberAccessType;
-        private readonly List<MemberDeclarationSyntax> _constants = new();
-        private readonly Dictionary<string, string> _scope = new();
-
-        public override SyntaxNode? VisitClassDeclaration(ClassDeclarationSyntax node)
+    private Location? IdentifierLocation(SyntaxNode? node) =>
+        node switch
         {
-            if (
-                _typeInProgress is not null
-                || !Types.TryGetValue(node.Identifier.ToString(), out var info)
-            )
-            {
-                return base.VisitClassDeclaration(node);
-            }
+            BaseTypeDeclarationSyntax bt => bt.Identifier.GetLocation(),
+            DelegateDeclarationSyntax d => d.Identifier.GetLocation(),
+            EnumMemberDeclarationSyntax em => em.Identifier.GetLocation(),
+            EventDeclarationSyntax e => e.Identifier.GetLocation(),
+            MethodDeclarationSyntax m => m.Identifier.GetLocation(),
+            PropertyDeclarationSyntax p => p.Identifier.GetLocation(),
+            VariableDeclaratorSyntax v => v.Identifier.GetLocation(),
+            ConstructorDeclarationSyntax c => c.Identifier.GetLocation(),
+            DestructorDeclarationSyntax d => d.Identifier.GetLocation(),
+            _ => null
+        };
 
-            _typeInProgress = (node, info.NonFunctions, info.Functions, info.NewName);
-            var ret = (ClassDeclarationSyntax)base.VisitClassDeclaration(node)!;
-            _typeInProgress = null;
-            var memberIdentifiers = ret.Members.SelectMany(x => x.MemberIdentifiers()).ToHashSet();
-            var constantsMayConflict = _constants
-                .SelectMany(x => x.MemberIdentifiers())
-                .Any(y => memberIdentifiers.Contains(y));
-            ret = ret.WithIdentifier(Identifier(info.NewName))
-                .WithMembers(
-                    List(
-                        // Constants can be quite prone to conflicting with their functions e.g. consider
-                        // GL_PROGRAM_STRING_ARB and glProgramStringARB, as such we relegate the ones that don't
-                        // eventually end up in an enum to be in a subclass instead
-                        (
-                            constantsMayConflict
-                                ? SingletonList<MemberDeclarationSyntax>(
-                                    ClassDeclaration("Constants")
-                                        .WithModifiers(
-                                            TokenList(
-                                                Token(SyntaxKind.PublicKeyword),
-                                                Token(SyntaxKind.StaticKeyword),
-                                                Token(SyntaxKind.PartialKeyword)
-                                            )
-                                        )
-                                        .WithMembers(List<MemberDeclarationSyntax>(_constants))
-                                )
-                                : _constants.OfType<MemberDeclarationSyntax>()
-                        ).Concat(ret.Members)
-                    )
+    private async Task RenameAllAsync(
+        IModContext ctx,
+        IEnumerable<(ISymbol Symbol, string NewName)> toRename,
+        CancellationToken ct = default
+    )
+    {
+        if (ctx.SourceProject is null)
+        {
+            return;
+        }
+
+        var locations = new ConcurrentDictionary<Location, string>();
+        // TODO this needs parallelisation config & be sensitive to the environment (future src generator form factor?)
+        await Parallel.ForEachAsync(
+            toRename,
+            ct,
+            async (tuple, _) =>
+            {
+                // First, let's add all of the locations of the declaration identifiers.
+                var (symbol, newName) = tuple;
+                foreach (var syntaxRef in symbol.DeclaringSyntaxReferences)
+                {
+                    var identifierLocation = IdentifierLocation(await syntaxRef.GetSyntaxAsync(ct));
+                    if (identifierLocation is not null)
+                    {
+                        locations.TryAdd(identifierLocation, newName);
+                    }
+                }
+
+                // Next, let's find all the references of the symbols.
+                var references = await SymbolFinder.FindReferencesAsync(
+                    symbol,
+                    ctx.SourceProject?.Solution
+                        ?? throw new ArgumentException("SourceProject is null"),
+                    ct
                 );
-            _constants.Clear();
-            return ret;
-        }
 
-        public override SyntaxNode? VisitParameter(ParameterSyntax node)
-        {
-            if (
-                node
-                    .Type?.DescendantTokens()
-                    .Where(x => x.IsKind(SyntaxKind.IdentifierToken))
-                    .Select((x, i) => (x.ToString(), i))
-                    .LastOrDefault()
-                    is
-                    ({ } tid, 0)
-                && Types.ContainsKey(tid)
-            )
-            {
-                _scope[node.Identifier.ToString()] = tid;
-            }
-            return base.VisitParameter(node);
-        }
-
-        public override SyntaxNode? VisitMethodDeclaration(MethodDeclarationSyntax node)
-        {
-            var ret = (MethodDeclarationSyntax)base.VisitMethodDeclaration(node)!;
-            if (
-                _typeInProgress?.Functions is not null
-                && _typeInProgress.Value.Functions.TryGetValue(
-                    node.Identifier.ToString(),
-                    out var newName
-                )
-            )
-            {
-                ret = ret.WithIdentifierForImport(Identifier(newName));
-            }
-
-            _scope.Clear();
-            return ret;
-        }
-
-        public override SyntaxNode? VisitConstructorDeclaration(
-            ConstructorDeclarationSyntax node
-        ) =>
-            (base.VisitConstructorDeclaration(node) as ConstructorDeclarationSyntax ?? node)
-                is var v
-            && _typeInProgress is { NewName: { Length: > 0 } newName }
-                ? v.WithIdentifier(Identifier(newName))
-                : v;
-
-        public override SyntaxNode? VisitEnumDeclaration(EnumDeclarationSyntax node)
-        {
-            if (
-                _typeInProgress is not null
-                || !Types.TryGetValue(node.Identifier.ToString(), out var info)
-            )
-            {
-                return base.VisitEnumDeclaration(node);
-            }
-
-            _typeInProgress = (node, info.NonFunctions, info.Functions, info.NewName);
-            var ret = base.VisitEnumDeclaration(node);
-            _typeInProgress = null;
-            return ((EnumDeclarationSyntax)ret!).WithIdentifier(Identifier(info.NewName));
-        }
-
-        public override SyntaxNode? VisitEnumMemberDeclaration(EnumMemberDeclarationSyntax node)
-        {
-            if (
-                _typeInProgress is null
-                || !(
-                    _typeInProgress.Value.NonFunctions?.TryGetValue(
-                        node.Identifier.ToString(),
-                        out var newName
-                    ) ?? false
-                )
-            )
-            {
-                return node;
-            }
-            return (
-                base.VisitEnumMemberDeclaration(node) as EnumMemberDeclarationSyntax ?? node
-            ).WithIdentifier(Identifier(newName));
-        }
-
-        public override SyntaxNode? VisitStructDeclaration(StructDeclarationSyntax node)
-        {
-            if (
-                _typeInProgress is not null
-                || !Types.TryGetValue(node.Identifier.ToString(), out var info)
-            )
-            {
-                return base.VisitStructDeclaration(node);
-            }
-
-            _typeInProgress = (node, info.NonFunctions, info.Functions, info.NewName);
-            var ret = ((StructDeclarationSyntax)base.VisitStructDeclaration(node)!).WithIdentifier(
-                Identifier(info.NewName)
-            );
-            _typeInProgress = null;
-            return ret;
-        }
-
-        public override SyntaxNode? VisitDelegateDeclaration(DelegateDeclarationSyntax node)
-        {
-            if (
-                !(
-                    _typeInProgress?.NonFunctions?.TryGetValue(
-                        node.Identifier.ToString(),
-                        out var newName
-                    ) ?? false
-                )
-                && (
-                    newName = Types.TryGetValue(node.Identifier.ToString(), out var info)
-                        ? info.NewName
-                        : null
-                )
-                    is null
-            )
-            {
-                return base.VisitDelegateDeclaration(node);
-            }
-
-            return ((DelegateDeclarationSyntax)base.VisitDelegateDeclaration(node)!).WithIdentifier(
-                Identifier(newName)
-            );
-        }
-
-        public override SyntaxNode? VisitFieldDeclaration(FieldDeclarationSyntax node)
-        {
-            if (_typeInProgress is not null && _memberInProgress is null)
-            {
-                _memberInProgress = node;
-            }
-            var ret = base.VisitFieldDeclaration(node);
-            _memberInProgress = null;
-            if (
-                !node.Modifiers.Any(SyntaxKind.ConstKeyword)
-                || _typeInProgress?.Type is not ClassDeclarationSyntax
-            )
-            {
-                return ret;
-            }
-
-            _constants.Add((FieldDeclarationSyntax)ret!);
-            return null;
-        }
-
-        public override SyntaxNode? VisitPropertyDeclaration(PropertyDeclarationSyntax node)
-        {
-            if (
-                _typeInProgress?.NonFunctions is null
-                || !_typeInProgress.Value.NonFunctions.TryGetValue(
-                    node.Identifier.ToString(),
-                    out var newName
-                )
-            )
-            {
-                return base.VisitPropertyDeclaration(node);
-            }
-            return (
-                base.VisitPropertyDeclaration(node) as PropertyDeclarationSyntax ?? node
-            ).WithIdentifier(Identifier(newName));
-        }
-
-        public override SyntaxNode? VisitVariableDeclarator(VariableDeclaratorSyntax node)
-        {
-            if (
-                _typeInProgress?.NonFunctions is not null
-                && _memberInProgress == node.Parent?.Parent
-                && _typeInProgress.Value.NonFunctions.TryGetValue(
-                    node.Identifier.ToString(),
-                    out var newName
-                )
-            )
-            {
-                return (
-                    base.VisitVariableDeclarator(node) as VariableDeclaratorSyntax ?? node
-                ).WithIdentifier(Identifier(newName));
-            }
-
-            return base.VisitVariableDeclarator(node);
-        }
-
-        public override SyntaxNode? VisitMemberAccessExpression(MemberAccessExpressionSyntax node)
-        {
-            _memberAccess = true;
-            _accessing = true;
-            Visit(node.Expression);
-            _accessing = false;
-            if (_memberAccessType is null || !Types.ContainsKey(_memberAccessType))
-            {
-                if (
-                    _memberAccessType is not null
-                    && _scope.TryGetValue(_memberAccessType, out var value)
-                )
+                foreach (var referencedSymbol in references)
                 {
-                    _memberAccessType = value;
-                }
-                else
-                {
-                    _memberAccess = false;
-                    return base.VisitMemberAccessExpression(node);
-                }
-            }
-
-            var accessing = (ExpressionSyntax)Visit(node.Expression);
-            _member = true;
-            var member = (SimpleNameSyntax)Visit(node.Name);
-            _member = false;
-            var ret = node.Update(accessing, VisitToken(node.OperatorToken), member);
-            _memberAccess = false;
-            _memberAccessType = null;
-            return ret;
-        }
-
-        public override SyntaxNode? VisitIdentifierName(IdentifierNameSyntax node)
-        {
-            if (_memberAccess)
-            {
-                if (_accessing) // getting the last identifier in the thing we're accessing
-                {
-                    _memberAccessType = node.Identifier.ToString();
-                    return node;
-                }
-
-                if (_member) // change name of the member we're accessing
-                {
-                    if (!Types.TryGetValue(_memberAccessType!, out var info))
+                    foreach (var referencedSymbolLocation in referencedSymbol.Locations)
                     {
-                        return base.VisitIdentifierName(node);
-                    }
-
-                    if (
-                        info.NonFunctions?.TryGetValue(node.Identifier.ToString(), out var cName)
-                        ?? false
-                    )
-                    {
-                        return IdentifierName(cName);
-                    }
-
-                    if (
-                        info.Functions?.TryGetValue(node.Identifier.ToString(), out var fName)
-                        ?? false
-                    )
-                    {
-                        return IdentifierName(fName);
-                    }
-                }
-                else // changing name of the thing we're accessing
-                {
-                    var str = node.Identifier.ToString();
-                    if (str == _memberAccessType)
-                    {
-                        return IdentifierName(Types[str].NewName);
-                    }
-                }
-            }
-            else if (
-                _typeInProgress?.Functions is not null
-                && _typeInProgress.Value.Functions.TryGetValue(
-                    node.Identifier.ToString(),
-                    out var fName
-                )
-            )
-            {
-                return IdentifierName(fName);
-            }
-            else if (
-                _typeInProgress?.NonFunctions is not null
-                && _typeInProgress.Value.NonFunctions.TryGetValue(
-                    node.Identifier.ToString(),
-                    out var cName
-                )
-            )
-            {
-                return IdentifierName(cName);
-            }
-            else if (
-                // For constants, C has no enum namespacing which means that the constant referenced may be
-                // referenced in another enum.
-                Types
-                    .Select(x =>
-                        x.Value.IsEnum
-                        && (
-                            x.Value.NonFunctions?.TryGetValue(
-                                node.Identifier.ToString(),
-                                out var nn
-                            ) ?? false
+                        if (
+                            referencedSymbolLocation.IsCandidateLocation
+                            || referencedSymbolLocation.IsImplicit
                         )
-                            ? (x.Value.NewName, nn)
-                            : default
-                    )
-                    .FirstOrDefault(x => x is (not null, not null)) is
+                        {
+                            continue;
+                        }
 
-                ({ } type, { } newName)
+                        locations.TryAdd(referencedSymbolLocation.Location, newName);
+                    }
+                }
+            }
+        );
+
+        logger.LogDebug("{} referencing locations for renames for {}", locations.Count, ctx.JobKey);
+
+        // Now it's just a simple find and replace.
+        var sln = ctx.SourceProject.Solution;
+        var srcProjId = ctx.SourceProject.Id;
+        var testProjId = ctx.TestProject?.Id;
+        foreach (
+            var (syntaxTree, renameLocations) in locations
+                .GroupBy(x => x.Key.SourceTree)
+                .Select(x => (x.Key, x.OrderByDescending(y => y.Key.SourceSpan)))
+        )
+        {
+            if (
+                syntaxTree is null
+                || sln.GetDocument(syntaxTree) is not { } doc
+                || (doc.Project.Id != srcProjId && doc.Project.Id != testProjId)
+                || await syntaxTree.GetTextAsync(ct) is not { } text
             )
             {
-                return MemberAccessExpression(
-                    SyntaxKind.SimpleMemberAccessExpression,
-                    IdentifierName(type),
-                    IdentifierName(newName)
+                continue;
+            }
+
+            var ogText = text;
+            foreach (var (location, newName) in renameLocations)
+            {
+                var contents = ogText.GetSubText(location.SourceSpan).ToString();
+                if (contents.Contains(' '))
+                {
+                    logger.LogWarning(
+                        "Refusing to do unsafe rename/replacement of \"{}\" to \"{}\" at {}",
+                        contents,
+                        newName,
+                        location.GetLineSpan()
+                    );
+                    continue;
+                }
+
+                if (logger.IsEnabled(LogLevel.Trace))
+                {
+                    logger.LogTrace(
+                        "\"{}\" -> \"{}\" at {}",
+                        contents,
+                        newName,
+                        location.GetLineSpan()
+                    );
+                }
+
+                text = text.Replace(location.SourceSpan, newName);
+            }
+
+            sln = doc.WithText(text).Project.Solution;
+        }
+
+        ctx.SourceProject = sln.GetProject(srcProjId);
+    }
+
+    /// <inheritdoc />
+    public Task<List<ResponseFile>> BeforeScrapeAsync(string key, List<ResponseFile> rsps)
+    {
+        foreach (var responseFile in rsps)
+        {
+            if (!responseFile.GeneratorConfiguration.DontUseUsingStaticsForEnums)
+            {
+                logger.LogWarning(
+                    "{} (for {}) should use exclude-using-statics-for-enums as PrettifyNames does not resolve "
+                        + "conflicts with members of other types.",
+                    responseFile.FilePath,
+                    key
                 );
             }
-            else if (Types.TryGetValue(node.Identifier.ToString(), out var info))
-            {
-                return IdentifierName(info.NewName);
-            }
-            return base.VisitIdentifierName(node);
         }
+
+        return Task.FromResult(rsps);
     }
 }

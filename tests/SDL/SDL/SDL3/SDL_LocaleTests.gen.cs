@@ -8,10 +8,10 @@ using NUnit.Framework;
 
 namespace Silk.NET.SDL.UnitTests;
 
-/// <summary>Provides validation of the <see cref = "SDL_Locale"/> struct.</summary>
+/// <summary>Provides validation of the <see cref = "Locale"/> struct.</summary>
 public static unsafe partial class SDL_LocaleTests
 {
-    /// <summary>Validates that the <see cref = "SDL_Locale"/> struct is blittable.</summary>
+    /// <summary>Validates that the <see cref = "Locale"/> struct is blittable.</summary>
 
     [Test]
     public static void IsBlittableTest()
@@ -19,7 +19,7 @@ public static unsafe partial class SDL_LocaleTests
         Assert.That(Marshal.SizeOf<Locale>(), Is.EqualTo(sizeof(Locale)));
     }
 
-    /// <summary>Validates that the <see cref = "SDL_Locale"/> struct has the right <see cref = "LayoutKind"/>.</summary>
+    /// <summary>Validates that the <see cref = "Locale"/> struct has the right <see cref = "LayoutKind"/>.</summary>
 
     [Test]
     public static void IsLayoutSequentialTest()
@@ -27,7 +27,7 @@ public static unsafe partial class SDL_LocaleTests
         Assert.That(typeof(Locale).IsLayoutSequential, Is.True);
     }
 
-    /// <summary>Validates that the <see cref = "SDL_Locale"/> struct has the correct size.</summary>
+    /// <summary>Validates that the <see cref = "Locale"/> struct has the correct size.</summary>
 
     [Test]
     public static void SizeOfTest()

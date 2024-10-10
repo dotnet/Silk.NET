@@ -7,10 +7,10 @@ using NUnit.Framework;
 
 namespace Silk.NET.SDL.UnitTests;
 
-/// <summary>Provides validation of the <see cref = "SDL_FColor"/> struct.</summary>
+/// <summary>Provides validation of the <see cref = "FColor"/> struct.</summary>
 public static unsafe partial class SDL_FColorTests
 {
-    /// <summary>Validates that the <see cref = "SDL_FColor"/> struct is blittable.</summary>
+    /// <summary>Validates that the <see cref = "FColor"/> struct is blittable.</summary>
 
     [Test]
     public static void IsBlittableTest()
@@ -18,7 +18,7 @@ public static unsafe partial class SDL_FColorTests
         Assert.That(Marshal.SizeOf<FColor>(), Is.EqualTo(sizeof(FColor)));
     }
 
-    /// <summary>Validates that the <see cref = "SDL_FColor"/> struct has the right <see cref = "LayoutKind"/>.</summary>
+    /// <summary>Validates that the <see cref = "FColor"/> struct has the right <see cref = "LayoutKind"/>.</summary>
 
     [Test]
     public static void IsLayoutSequentialTest()
@@ -26,7 +26,7 @@ public static unsafe partial class SDL_FColorTests
         Assert.That(typeof(FColor).IsLayoutSequential, Is.True);
     }
 
-    /// <summary>Validates that the <see cref = "SDL_FColor"/> struct has the correct size.</summary>
+    /// <summary>Validates that the <see cref = "FColor"/> struct has the correct size.</summary>
 
     [Test]
     public static void SizeOfTest()

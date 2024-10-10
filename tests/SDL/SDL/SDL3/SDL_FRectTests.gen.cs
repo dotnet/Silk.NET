@@ -7,10 +7,10 @@ using NUnit.Framework;
 
 namespace Silk.NET.SDL.UnitTests;
 
-/// <summary>Provides validation of the <see cref = "SDL_FRect"/> struct.</summary>
+/// <summary>Provides validation of the <see cref = "FRect"/> struct.</summary>
 public static unsafe partial class SDL_FRectTests
 {
-    /// <summary>Validates that the <see cref = "SDL_FRect"/> struct is blittable.</summary>
+    /// <summary>Validates that the <see cref = "FRect"/> struct is blittable.</summary>
 
     [Test]
     public static void IsBlittableTest()
@@ -18,7 +18,7 @@ public static unsafe partial class SDL_FRectTests
         Assert.That(Marshal.SizeOf<FRect>(), Is.EqualTo(sizeof(FRect)));
     }
 
-    /// <summary>Validates that the <see cref = "SDL_FRect"/> struct has the right <see cref = "LayoutKind"/>.</summary>
+    /// <summary>Validates that the <see cref = "FRect"/> struct has the right <see cref = "LayoutKind"/>.</summary>
 
     [Test]
     public static void IsLayoutSequentialTest()
@@ -26,7 +26,7 @@ public static unsafe partial class SDL_FRectTests
         Assert.That(typeof(FRect).IsLayoutSequential, Is.True);
     }
 
-    /// <summary>Validates that the <see cref = "SDL_FRect"/> struct has the correct size.</summary>
+    /// <summary>Validates that the <see cref = "FRect"/> struct has the correct size.</summary>
 
     [Test]
     public static void SizeOfTest()

@@ -65,10 +65,7 @@ public class MixKhronosDataTests
                         Value = new MixKhronosData.Configuration { SpecPath = TestFile(x) }
                     }
                 );
-                await mod.BeforeJobAsync(
-                    "",
-                    new SilkTouchConfiguration { ClangSharpResponseFiles = [], Solution = "" }
-                );
+                await mod.InitializeAsync(new DummyModContext());
                 return (object[])[x, mod.Jobs[""]];
             });
     }

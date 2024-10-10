@@ -7,10 +7,10 @@ using NUnit.Framework;
 
 namespace Silk.NET.SDL.UnitTests;
 
-/// <summary>Provides validation of the <see cref = "SDL_Vertex"/> struct.</summary>
+/// <summary>Provides validation of the <see cref = "Vertex"/> struct.</summary>
 public static unsafe partial class SDL_VertexTests
 {
-    /// <summary>Validates that the <see cref = "SDL_Vertex"/> struct is blittable.</summary>
+    /// <summary>Validates that the <see cref = "Vertex"/> struct is blittable.</summary>
 
     [Test]
     public static void IsBlittableTest()
@@ -18,7 +18,7 @@ public static unsafe partial class SDL_VertexTests
         Assert.That(Marshal.SizeOf<Vertex>(), Is.EqualTo(sizeof(Vertex)));
     }
 
-    /// <summary>Validates that the <see cref = "SDL_Vertex"/> struct has the right <see cref = "LayoutKind"/>.</summary>
+    /// <summary>Validates that the <see cref = "Vertex"/> struct has the right <see cref = "LayoutKind"/>.</summary>
 
     [Test]
     public static void IsLayoutSequentialTest()
@@ -26,7 +26,7 @@ public static unsafe partial class SDL_VertexTests
         Assert.That(typeof(Vertex).IsLayoutSequential, Is.True);
     }
 
-    /// <summary>Validates that the <see cref = "SDL_Vertex"/> struct has the correct size.</summary>
+    /// <summary>Validates that the <see cref = "Vertex"/> struct has the correct size.</summary>
 
     [Test]
     public static void SizeOfTest()

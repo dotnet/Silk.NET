@@ -2,7 +2,7 @@
 --define-macro
 TODO_DEFINE_MACROS=HERE
 --headerFile
-header.txt
+../header.txt
 --include-directory
 ../../../submodules/opengl/api
 ../../../submodules/egl/api

@@ -7,10 +7,10 @@ using NUnit.Framework;
 
 namespace Silk.NET.SDL.UnitTests;
 
-/// <summary>Provides validation of the <see cref = "SDL_PenTipEvent"/> struct.</summary>
+/// <summary>Provides validation of the <see cref = "PenTipEvent"/> struct.</summary>
 public static unsafe partial class SDL_PenTipEventTests
 {
-    /// <summary>Validates that the <see cref = "SDL_PenTipEvent"/> struct is blittable.</summary>
+    /// <summary>Validates that the <see cref = "PenTipEvent"/> struct is blittable.</summary>
 
     [Test]
     public static void IsBlittableTest()
@@ -18,7 +18,7 @@ public static unsafe partial class SDL_PenTipEventTests
         Assert.That(Marshal.SizeOf<PenTipEvent>(), Is.EqualTo(sizeof(PenTipEvent)));
     }
 
-    /// <summary>Validates that the <see cref = "SDL_PenTipEvent"/> struct has the right <see cref = "LayoutKind"/>.</summary>
+    /// <summary>Validates that the <see cref = "PenTipEvent"/> struct has the right <see cref = "LayoutKind"/>.</summary>
 
     [Test]
     public static void IsLayoutSequentialTest()
@@ -26,7 +26,7 @@ public static unsafe partial class SDL_PenTipEventTests
         Assert.That(typeof(PenTipEvent).IsLayoutSequential, Is.True);
     }
 
-    /// <summary>Validates that the <see cref = "SDL_PenTipEvent"/> struct has the correct size.</summary>
+    /// <summary>Validates that the <see cref = "PenTipEvent"/> struct has the correct size.</summary>
 
     [Test]
     public static void SizeOfTest()

@@ -1,6 +1,6 @@
 // Licensed to the .NET Foundation under one or more agreements.
 // The .NET Foundation licenses this file to you under the MIT license.
-// Ported from the OpenGL Core Profile headers and corresponding dependencies.
+// Ported from the OpenGL headers and corresponding dependencies.
 // Original source is Copyright 2013-2020 The Khronos Group Inc. Licensed under the MIT license.
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
@@ -10,8 +10,6 @@ namespace Silk.NET.OpenGL;
 [Transformed]
 public enum TextureEnvParameter : uint
 {
-    TextureLodBias = unchecked((uint)0x8501),
-    Src1Alpha = unchecked((uint)0x8589),
     AlphaScale = unchecked((uint)0x0D1C),
     TextureEnvMode = unchecked((uint)0x2200),
     TextureEnvColor = unchecked((uint)0x2201),
@@ -36,6 +34,8 @@ public enum TextureEnvParameter : uint
     Constant = unchecked((uint)0x8576),
     PrimaryColor = unchecked((uint)0x8577),
     Previous = unchecked((uint)0x8578),
+    TextureLodBias = unchecked((uint)0x8501),
+    Src1Alpha = unchecked((uint)0x8589),
     Src0Rgb = unchecked((uint)0x8580),
     Src1Rgb = unchecked((uint)0x8581),
     Src2Rgb = unchecked((uint)0x8582),

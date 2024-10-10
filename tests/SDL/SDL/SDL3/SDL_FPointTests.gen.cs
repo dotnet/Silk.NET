@@ -7,10 +7,10 @@ using NUnit.Framework;
 
 namespace Silk.NET.SDL.UnitTests;
 
-/// <summary>Provides validation of the <see cref = "SDL_FPoint"/> struct.</summary>
+/// <summary>Provides validation of the <see cref = "FPoint"/> struct.</summary>
 public static unsafe partial class SDL_FPointTests
 {
-    /// <summary>Validates that the <see cref = "SDL_FPoint"/> struct is blittable.</summary>
+    /// <summary>Validates that the <see cref = "FPoint"/> struct is blittable.</summary>
 
     [Test]
     public static void IsBlittableTest()
@@ -18,7 +18,7 @@ public static unsafe partial class SDL_FPointTests
         Assert.That(Marshal.SizeOf<FPoint>(), Is.EqualTo(sizeof(FPoint)));
     }
 
-    /// <summary>Validates that the <see cref = "SDL_FPoint"/> struct has the right <see cref = "LayoutKind"/>.</summary>
+    /// <summary>Validates that the <see cref = "FPoint"/> struct has the right <see cref = "LayoutKind"/>.</summary>
 
     [Test]
     public static void IsLayoutSequentialTest()
@@ -26,7 +26,7 @@ public static unsafe partial class SDL_FPointTests
         Assert.That(typeof(FPoint).IsLayoutSequential, Is.True);
     }
 
-    /// <summary>Validates that the <see cref = "SDL_FPoint"/> struct has the correct size.</summary>
+    /// <summary>Validates that the <see cref = "FPoint"/> struct has the correct size.</summary>
 
     [Test]
     public static void SizeOfTest()

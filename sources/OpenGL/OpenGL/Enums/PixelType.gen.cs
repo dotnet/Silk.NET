@@ -1,6 +1,6 @@
 // Licensed to the .NET Foundation under one or more agreements.
 // The .NET Foundation licenses this file to you under the MIT license.
-// Ported from the OpenGL Core Profile headers and corresponding dependencies.
+// Ported from the OpenGL headers and corresponding dependencies.
 // Original source is Copyright 2013-2020 The Khronos Group Inc. Licensed under the MIT license.
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
@@ -17,6 +17,7 @@ public enum PixelType : uint
     Int = unchecked((uint)0x1404),
     UnsignedInt = unchecked((uint)0x1405),
     Float = unchecked((uint)0x1406),
+    Bitmap = unchecked((uint)0x1A00),
     UnsignedByte3X3X2 = unchecked((uint)0x8032),
     UnsignedShort4X4X4X4 = unchecked((uint)0x8033),
     UnsignedShort5X5X5X1 = unchecked((uint)0x8034),
@@ -34,8 +35,6 @@ public enum PixelType : uint
     Float32UnsignedInt24X8Rev = unchecked((uint)0x8DAD),
     UnsignedInt24X8 = unchecked((uint)0x84FA),
     HalfFloat = unchecked((uint)0x140B),
-    Float32UnsignedInt24X8RevNV = unchecked((uint)0x8DAD),
-    Bitmap = unchecked((uint)0x1A00),
     HalfFloatARB = unchecked((uint)0x140B),
     HalfApple = unchecked((uint)0x140B),
     UnsignedInt24X8EXT = unchecked((uint)0x84FA),
@@ -46,13 +45,14 @@ public enum PixelType : uint
     UnsignedInt8X8X8X8EXT = unchecked((uint)0x8035),
     UnsignedInt10X10X10X2EXT = unchecked((uint)0x8036),
     UnsignedInt5X9X9X9RevEXT = unchecked((uint)0x8C3E),
+    Float32UnsignedInt24X8RevNV = unchecked((uint)0x8DAD),
     HalfFloatNV = unchecked((uint)0x140B),
     UnsignedInt24X8NV = unchecked((uint)0x84FA),
     UnsignedInt24X8OES = unchecked((uint)0x84FA),
-    UnsignedShort4X4X4X4RevEXT = unchecked((uint)0x8365),
-    UnsignedShort1X5X5X5RevEXT = unchecked((uint)0x8366),
-    UnsignedShort4X4X4X4RevIMG = unchecked((uint)0x8365),
     UnsignedInt10F11F11FRevApple = unchecked((uint)0x8C3B),
     UnsignedInt5X9X9X9RevApple = unchecked((uint)0x8C3E),
-    UnsignedInt2X10X10X10RevEXT = unchecked((uint)0x8368)
+    UnsignedShort4X4X4X4RevEXT = unchecked((uint)0x8365),
+    UnsignedShort1X5X5X5RevEXT = unchecked((uint)0x8366),
+    UnsignedInt2X10X10X10RevEXT = unchecked((uint)0x8368),
+    UnsignedShort4X4X4X4RevIMG = unchecked((uint)0x8365)
 }

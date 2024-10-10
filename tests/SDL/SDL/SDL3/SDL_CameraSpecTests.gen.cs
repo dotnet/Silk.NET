@@ -7,10 +7,10 @@ using NUnit.Framework;
 
 namespace Silk.NET.SDL.UnitTests;
 
-/// <summary>Provides validation of the <see cref = "SDL_CameraSpec"/> struct.</summary>
+/// <summary>Provides validation of the <see cref = "CameraSpec"/> struct.</summary>
 public static unsafe partial class SDL_CameraSpecTests
 {
-    /// <summary>Validates that the <see cref = "SDL_CameraSpec"/> struct is blittable.</summary>
+    /// <summary>Validates that the <see cref = "CameraSpec"/> struct is blittable.</summary>
 
     [Test]
     public static void IsBlittableTest()
@@ -18,7 +18,7 @@ public static unsafe partial class SDL_CameraSpecTests
         Assert.That(Marshal.SizeOf<CameraSpec>(), Is.EqualTo(sizeof(CameraSpec)));
     }
 
-    /// <summary>Validates that the <see cref = "SDL_CameraSpec"/> struct has the right <see cref = "LayoutKind"/>.</summary>
+    /// <summary>Validates that the <see cref = "CameraSpec"/> struct has the right <see cref = "LayoutKind"/>.</summary>
 
     [Test]
     public static void IsLayoutSequentialTest()
@@ -26,7 +26,7 @@ public static unsafe partial class SDL_CameraSpecTests
         Assert.That(typeof(CameraSpec).IsLayoutSequential, Is.True);
     }
 
-    /// <summary>Validates that the <see cref = "SDL_CameraSpec"/> struct has the correct size.</summary>
+    /// <summary>Validates that the <see cref = "CameraSpec"/> struct has the correct size.</summary>
 
     [Test]
     public static void SizeOfTest()

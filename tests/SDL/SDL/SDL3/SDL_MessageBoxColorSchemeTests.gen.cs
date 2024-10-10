@@ -7,10 +7,10 @@ using NUnit.Framework;
 
 namespace Silk.NET.SDL.UnitTests;
 
-/// <summary>Provides validation of the <see cref = "SDL_MessageBoxColorScheme"/> struct.</summary>
+/// <summary>Provides validation of the <see cref = "MessageBoxColorScheme"/> struct.</summary>
 public static unsafe partial class SDL_MessageBoxColorSchemeTests
 {
-    /// <summary>Validates that the <see cref = "SDL_MessageBoxColorScheme"/> struct is blittable.</summary>
+    /// <summary>Validates that the <see cref = "MessageBoxColorScheme"/> struct is blittable.</summary>
 
     [Test]
     public static void IsBlittableTest()
@@ -21,7 +21,7 @@ public static unsafe partial class SDL_MessageBoxColorSchemeTests
         );
     }
 
-    /// <summary>Validates that the <see cref = "SDL_MessageBoxColorScheme"/> struct has the right <see cref = "LayoutKind"/>.</summary>
+    /// <summary>Validates that the <see cref = "MessageBoxColorScheme"/> struct has the right <see cref = "LayoutKind"/>.</summary>
 
     [Test]
     public static void IsLayoutSequentialTest()
@@ -29,7 +29,7 @@ public static unsafe partial class SDL_MessageBoxColorSchemeTests
         Assert.That(typeof(MessageBoxColorScheme).IsLayoutSequential, Is.True);
     }
 
-    /// <summary>Validates that the <see cref = "SDL_MessageBoxColorScheme"/> struct has the correct size.</summary>
+    /// <summary>Validates that the <see cref = "MessageBoxColorScheme"/> struct has the correct size.</summary>
 
     [Test]
     public static void SizeOfTest()

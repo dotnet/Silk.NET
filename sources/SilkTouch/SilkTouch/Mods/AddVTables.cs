@@ -1,8 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.IO;
 using System.Linq;
 using System.Text.Json.Serialization;
+using System.Threading;
 using System.Threading.Tasks;
 using Microsoft.CodeAnalysis;
 using Microsoft.CodeAnalysis.CSharp;
@@ -904,7 +906,7 @@ public class AddVTables(IOptionsSnapshot<AddVTables.Configuration> config) : IMo
             return base.VisitInvocationExpression(node);
         }
 
-        public IEnumerable<KeyValuePair<string, SyntaxNode>> GetExtraFiles()
+        public IEnumerable<KeyValuePair<string, CSharpSyntaxNode>> GetExtraFiles()
         {
             var uta = UsingsToAdd;
             UsingsToAdd = AggregatedUsings;
@@ -952,8 +954,8 @@ public class AddVTables(IOptionsSnapshot<AddVTables.Configuration> config) : IMo
                     );
                 AddUsing("Silk.NET.Core.Loader");
                 AddUsing("System.Reflection");
-                yield return new KeyValuePair<string, SyntaxNode>(
-                    $"sources/{outputName}.gen.cs",
+                yield return new KeyValuePair<string, CSharpSyntaxNode>(
+                    $"{outputName}.gen.cs",
                     CompilationUnit()
                         .WithUsings(GetUsings(UsingsToAdd, null))
                         .WithMembers(
@@ -1174,9 +1176,9 @@ public class AddVTables(IOptionsSnapshot<AddVTables.Configuration> config) : IMo
     }
 
     /// <inheritdoc />
-    public Task<GeneratedSyntax> AfterScrapeAsync(string key, GeneratedSyntax syntax)
+    public async Task ExecuteAsync(IModContext ctx, CancellationToken ct = default)
     {
-        var cfg = config.Get(key);
+        var cfg = config.Get(ctx.JobKey);
         VTable[]? vTables = null;
         if (cfg.VTables is not null)
         {
@@ -1203,7 +1205,6 @@ public class AddVTables(IOptionsSnapshot<AddVTables.Configuration> config) : IMo
                 );
             }
         }
-
         var rw = new Rewriter(
             vTables
                 ?? new VTable[]
@@ -1213,84 +1214,90 @@ public class AddVTables(IOptionsSnapshot<AddVTables.Configuration> config) : IMo
                     new ThisThread()
                 }
         );
-
-        var newFiles = new List<(string, SyntaxNode)>(rw.FullClassNames.Count);
-        foreach (var (fname, node) in syntax.Files)
+        var newFiles = new List<(string, CSharpSyntaxNode)>(rw.FullClassNames.Count);
+        var proj = ctx.SourceProject;
+        foreach (var docId in ctx.SourceProject?.DocumentIds ?? [])
         {
-            if (fname.StartsWith("sources/"))
+            var doc =
+                proj!.GetDocument(docId) ?? throw new InvalidOperationException("Document missing");
+            var (fname, node) = (doc.RelativePath(), await doc.GetSyntaxRootAsync(ct));
+            if (fname is null)
             {
-                rw.InterfacePartials.Clear();
-                rw.ClassName = null;
-                syntax.Files[fname] =
-                    rw.Visit(node) ?? throw new InvalidOperationException("Visit returned null");
-                if (rw.InterfacePartials.Count == 0)
-                {
-                    continue;
-                }
+                continue;
+            }
 
-                var ifname =
-                    rw.ClassName is not null
-                    && fname.Replace(rw.ClassName, $"I{rw.ClassName}") is var ifn
-                    && ifn != fname
-                        ? ifn
-                        : ModUtils.AddEffectiveSuffix(fname, "Interfaces");
-                var nNamespaces = rw.InterfacePartials.Select(x => x.Namespace).Distinct().Count();
-                newFiles.Add(
-                    (
-                        ifname,
-                        CompilationUnit()
-                            .WithUsings(
-                                ModCSharpSyntaxRewriter.GetUsings(rw.AggregatedUsings, null)
-                            )
-                            .WithMembers(
-                                nNamespaces == 1
-                                    ? string.IsNullOrWhiteSpace(rw.InterfacePartials[0].Namespace)
-                                        ? List<MemberDeclarationSyntax>(
-                                            rw.InterfacePartials.Select(x => x.Interface)
-                                        )
-                                        : SingletonList<MemberDeclarationSyntax>(
-                                            FileScopedNamespaceDeclaration(
-                                                    ModUtils.NamespaceIntoIdentifierName(
-                                                        rw.InterfacePartials[0].Namespace
-                                                    )
+            rw.InterfacePartials.Clear();
+            rw.ClassName = null;
+            proj = doc.WithSyntaxRoot(
+                rw.Visit(node)?.NormalizeWhitespace()
+                    ?? throw new InvalidOperationException("Visit returned null")
+            ).Project;
+            if (rw.InterfacePartials.Count == 0)
+            {
+                continue;
+            }
+
+            var ifname =
+                rw.ClassName is not null
+                && fname.Replace(rw.ClassName, $"I{rw.ClassName}") is var ifn
+                && ifn != fname
+                    ? ifn
+                    : ModUtils.AddEffectiveSuffix(fname, "Interfaces");
+            var nNamespaces = rw.InterfacePartials.Select(x => x.Namespace).Distinct().Count();
+            newFiles.Add(
+                (
+                    ifname,
+                    CompilationUnit()
+                        .WithUsings(ModCSharpSyntaxRewriter.GetUsings(rw.AggregatedUsings, null))
+                        .WithMembers(
+                            nNamespaces == 1
+                                ? string.IsNullOrWhiteSpace(rw.InterfacePartials[0].Namespace)
+                                    ? List<MemberDeclarationSyntax>(
+                                        rw.InterfacePartials.Select(x => x.Interface)
+                                    )
+                                    : SingletonList<MemberDeclarationSyntax>(
+                                        FileScopedNamespaceDeclaration(
+                                                ModUtils.NamespaceIntoIdentifierName(
+                                                    rw.InterfacePartials[0].Namespace
+                                                )
+                                            )
+                                            .WithMembers(
+                                                List<MemberDeclarationSyntax>(
+                                                    rw.InterfacePartials.Select(x => x.Interface)
+                                                )
+                                            )
+                                    )
+                                : List<MemberDeclarationSyntax>(
+                                    rw.InterfacePartials.GroupBy(x => x.Namespace)
+                                        .Select(g =>
+                                            NamespaceDeclaration(
+                                                    ModUtils.NamespaceIntoIdentifierName(g.Key)
                                                 )
                                                 .WithMembers(
                                                     List<MemberDeclarationSyntax>(
-                                                        rw.InterfacePartials.Select(x =>
-                                                            x.Interface
-                                                        )
+                                                        g.Select(x => x.Interface)
                                                     )
                                                 )
                                         )
-                                    : List<MemberDeclarationSyntax>(
-                                        rw.InterfacePartials.GroupBy(x => x.Namespace)
-                                            .Select(g =>
-                                                NamespaceDeclaration(
-                                                        ModUtils.NamespaceIntoIdentifierName(g.Key)
-                                                    )
-                                                    .WithMembers(
-                                                        List<MemberDeclarationSyntax>(
-                                                            g.Select(x => x.Interface)
-                                                        )
-                                                    )
-                                            )
-                                    )
-                            )
-                    )
-                );
-            }
+                                )
+                        )
+                )
+            );
         }
 
-        foreach (var (fname, node) in newFiles)
+        foreach (
+            var (fname, root) in newFiles.Concat(rw.GetExtraFiles().Select(x => (x.Key, x.Value)))
+        )
         {
-            syntax.Files[fname] = node;
+            proj = proj
+                ?.AddDocument(
+                    Path.GetFileName(fname),
+                    root.NormalizeWhitespace(),
+                    filePath: proj.FullPath(fname)
+                )
+                .Project;
         }
 
-        foreach (var (fname, node) in rw.GetExtraFiles())
-        {
-            syntax.Files[fname] = node;
-        }
-
-        return Task.FromResult(syntax);
+        ctx.SourceProject = proj;
     }
 }

@@ -7,10 +7,10 @@ using NUnit.Framework;
 
 namespace Silk.NET.SDL.UnitTests;
 
-/// <summary>Provides validation of the <see cref = "SDL_KeyboardDeviceEvent"/> struct.</summary>
+/// <summary>Provides validation of the <see cref = "KeyboardDeviceEvent"/> struct.</summary>
 public static unsafe partial class SDL_KeyboardDeviceEventTests
 {
-    /// <summary>Validates that the <see cref = "SDL_KeyboardDeviceEvent"/> struct is blittable.</summary>
+    /// <summary>Validates that the <see cref = "KeyboardDeviceEvent"/> struct is blittable.</summary>
 
     [Test]
     public static void IsBlittableTest()
@@ -18,7 +18,7 @@ public static unsafe partial class SDL_KeyboardDeviceEventTests
         Assert.That(Marshal.SizeOf<KeyboardDeviceEvent>(), Is.EqualTo(sizeof(KeyboardDeviceEvent)));
     }
 
-    /// <summary>Validates that the <see cref = "SDL_KeyboardDeviceEvent"/> struct has the right <see cref = "LayoutKind"/>.</summary>
+    /// <summary>Validates that the <see cref = "KeyboardDeviceEvent"/> struct has the right <see cref = "LayoutKind"/>.</summary>
 
     [Test]
     public static void IsLayoutSequentialTest()
@@ -26,7 +26,7 @@ public static unsafe partial class SDL_KeyboardDeviceEventTests
         Assert.That(typeof(KeyboardDeviceEvent).IsLayoutSequential, Is.True);
     }
 
-    /// <summary>Validates that the <see cref = "SDL_KeyboardDeviceEvent"/> struct has the correct size.</summary>
+    /// <summary>Validates that the <see cref = "KeyboardDeviceEvent"/> struct has the correct size.</summary>
 
     [Test]
     public static void SizeOfTest()

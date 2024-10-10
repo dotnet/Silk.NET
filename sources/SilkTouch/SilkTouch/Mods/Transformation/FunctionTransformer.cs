@@ -177,7 +177,9 @@ public class FunctionTransformer(
                     }
 
                     // Add the suffixed function
-                    var newFun = function.WithIdentifierForImport(Identifier(newIden));
+                    var newFun = function
+                        .WithRenameSafeAttributeLists()
+                        .WithIdentifier(Identifier(newIden));
                     discrim = ModUtils.DiscrimStr(
                         function.Modifiers,
                         function.TypeParameterList,

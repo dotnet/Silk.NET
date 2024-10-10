@@ -8,10 +8,10 @@ using NUnit.Framework;
 
 namespace Silk.NET.SDL.UnitTests;
 
-/// <summary>Provides validation of the <see cref = "SDL_HapticEffect"/> struct.</summary>
+/// <summary>Provides validation of the <see cref = "HapticEffect"/> struct.</summary>
 public static unsafe partial class SDL_HapticEffectTests
 {
-    /// <summary>Validates that the <see cref = "SDL_HapticEffect"/> struct is blittable.</summary>
+    /// <summary>Validates that the <see cref = "HapticEffect"/> struct is blittable.</summary>
 
     [Test]
     public static void IsBlittableTest()
@@ -19,7 +19,7 @@ public static unsafe partial class SDL_HapticEffectTests
         Assert.That(Marshal.SizeOf<HapticEffect>(), Is.EqualTo(sizeof(HapticEffect)));
     }
 
-    /// <summary>Validates that the <see cref = "SDL_HapticEffect"/> struct has the right <see cref = "LayoutKind"/>.</summary>
+    /// <summary>Validates that the <see cref = "HapticEffect"/> struct has the right <see cref = "LayoutKind"/>.</summary>
 
     [Test]
     public static void IsLayoutExplicitTest()
@@ -27,7 +27,7 @@ public static unsafe partial class SDL_HapticEffectTests
         Assert.That(typeof(HapticEffect).IsExplicitLayout, Is.True);
     }
 
-    /// <summary>Validates that the <see cref = "SDL_HapticEffect"/> struct has the correct size.</summary>
+    /// <summary>Validates that the <see cref = "HapticEffect"/> struct has the correct size.</summary>
 
     [Test]
     public static void SizeOfTest()

@@ -8,10 +8,10 @@ using NUnit.Framework;
 
 namespace Silk.NET.SDL.UnitTests;
 
-/// <summary>Provides validation of the <see cref = "SDL_UserEvent"/> struct.</summary>
+/// <summary>Provides validation of the <see cref = "UserEvent"/> struct.</summary>
 public static unsafe partial class SDL_UserEventTests
 {
-    /// <summary>Validates that the <see cref = "SDL_UserEvent"/> struct is blittable.</summary>
+    /// <summary>Validates that the <see cref = "UserEvent"/> struct is blittable.</summary>
 
     [Test]
     public static void IsBlittableTest()
@@ -19,7 +19,7 @@ public static unsafe partial class SDL_UserEventTests
         Assert.That(Marshal.SizeOf<UserEvent>(), Is.EqualTo(sizeof(UserEvent)));
     }
 
-    /// <summary>Validates that the <see cref = "SDL_UserEvent"/> struct has the right <see cref = "LayoutKind"/>.</summary>
+    /// <summary>Validates that the <see cref = "UserEvent"/> struct has the right <see cref = "LayoutKind"/>.</summary>
 
     [Test]
     public static void IsLayoutSequentialTest()
@@ -27,7 +27,7 @@ public static unsafe partial class SDL_UserEventTests
         Assert.That(typeof(UserEvent).IsLayoutSequential, Is.True);
     }
 
-    /// <summary>Validates that the <see cref = "SDL_UserEvent"/> struct has the correct size.</summary>
+    /// <summary>Validates that the <see cref = "UserEvent"/> struct has the correct size.</summary>
 
     [Test]
     public static void SizeOfTest()

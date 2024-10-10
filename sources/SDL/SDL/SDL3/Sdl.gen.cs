@@ -5,14 +5,6 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static Silk.NET.SDL.ChromaLocation;
-using static Silk.NET.SDL.ColorPrimaries;
-using static Silk.NET.SDL.ColorRange;
-using static Silk.NET.SDL.ColorType;
-using static Silk.NET.SDL.MatrixCoefficients;
-using static Silk.NET.SDL.PenAxis;
-using static Silk.NET.SDL.Scancode;
-using static Silk.NET.SDL.TransferCharacteristics;
 
 namespace Silk.NET.SDL;
 
@@ -37012,6 +37004,10 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     [NativeTypeName("#define SDL_ASSERT_LEVEL 2")]
     public const int AssertLevel = 2;
 
+    [NativeTypeName("#define SDL_FILE __FILE__")]
+    public static ReadOnlySpan<byte> File =>
+        "/Users/dylan/Documents/Silk.NET3/eng/silktouch/sdl/SDL3/sdl-SDL.h"u8;
+
     [NativeTypeName("#define SDL_LINE __LINE__")]
     public const int Line = 7;
 
@@ -37023,6 +37019,33 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
 
     [NativeTypeName("#define SDL_RWLOCK_TIMEDOUT SDL_MUTEX_TIMEDOUT")]
     public const int RwlockTimedout = 1;
+
+    [NativeTypeName(
+        "#define SDL_PROP_IOSTREAM_WINDOWS_HANDLE_POINTER \"SDL.iostream.windows.handle\""
+    )]
+    public static ReadOnlySpan<byte> PropIostreamWindowsHandlePointer =>
+        "SDL.iostream.windows.handle"u8;
+
+    [NativeTypeName("#define SDL_PROP_IOSTREAM_STDIO_FILE_POINTER \"SDL.iostream.stdio.file\"")]
+    public static ReadOnlySpan<byte> PropIostreamStdioFilePointer => "SDL.iostream.stdio.file"u8;
+
+    [NativeTypeName(
+        "#define SDL_PROP_IOSTREAM_ANDROID_AASSET_POINTER \"SDL.iostream.android.aasset\""
+    )]
+    public static ReadOnlySpan<byte> PropIostreamAndroidAassetPointer =>
+        "SDL.iostream.android.aasset"u8;
+
+    [NativeTypeName(
+        "#define SDL_PROP_IOSTREAM_DYNAMIC_MEMORY_POINTER \"SDL.iostream.dynamic.memory\""
+    )]
+    public static ReadOnlySpan<byte> PropIostreamDynamicMemoryPointer =>
+        "SDL.iostream.dynamic.memory"u8;
+
+    [NativeTypeName(
+        "#define SDL_PROP_IOSTREAM_DYNAMIC_CHUNKSIZE_NUMBER \"SDL.iostream.dynamic.chunksize\""
+    )]
+    public static ReadOnlySpan<byte> PropIostreamDynamicChunksizeNumber =>
+        "SDL.iostream.dynamic.chunksize"u8;
 
     [NativeTypeName("#define SDL_IO_SEEK_SET 0")]
     public const int IoSeekSet = 0;
@@ -37111,6 +37134,27 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     [NativeTypeName("#define SDL_SURFACE_USES_PROPERTIES 0x00000010")]
     public const int SurfaceUsesProperties = 0x00000010;
 
+    [NativeTypeName("#define SDL_PROP_SURFACE_COLORSPACE_NUMBER \"SDL.surface.colorspace\"")]
+    public static ReadOnlySpan<byte> PropSurfaceColorspaceNumber => "SDL.surface.colorspace"u8;
+
+    [NativeTypeName(
+        "#define SDL_PROP_SURFACE_SDR_WHITE_POINT_FLOAT \"SDL.surface.SDR_white_point\""
+    )]
+    public static ReadOnlySpan<byte> PropSurfaceSdrWhitePointFloat =>
+        "SDL.surface.SDR_white_point"u8;
+
+    [NativeTypeName("#define SDL_PROP_SURFACE_HDR_HEADROOM_FLOAT \"SDL.surface.HDR_headroom\"")]
+    public static ReadOnlySpan<byte> PropSurfaceHdrHeadroomFloat => "SDL.surface.HDR_headroom"u8;
+
+    [NativeTypeName("#define SDL_PROP_SURFACE_TONEMAP_OPERATOR_STRING \"SDL.surface.tonemap\"")]
+    public static ReadOnlySpan<byte> PropSurfaceTonemapOperatorString => "SDL.surface.tonemap"u8;
+
+    [NativeTypeName(
+        "#define SDL_PROP_GLOBAL_VIDEO_WAYLAND_WL_DISPLAY_POINTER \"SDL.video.wayland.wl_display\""
+    )]
+    public static ReadOnlySpan<byte> PropGlobalVideoWaylandWlDisplayPointer =>
+        "SDL.video.wayland.wl_display"u8;
+
     [NativeTypeName("#define SDL_WINDOW_FULLSCREEN 0x00000001U")]
     public const uint WindowFullscreen = 0x00000001U;
 
@@ -37195,6 +37239,273 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     [NativeTypeName("#define SDL_WINDOWPOS_CENTERED SDL_WINDOWPOS_CENTERED_DISPLAY(0)")]
     public const uint WindowposCentered = (0x2FFF0000U | (0));
 
+    [NativeTypeName("#define SDL_PROP_DISPLAY_HDR_ENABLED_BOOLEAN \"SDL.display.HDR_enabled\"")]
+    public static ReadOnlySpan<byte> PropDisplayHdrEnabledBoolean => "SDL.display.HDR_enabled"u8;
+
+    [NativeTypeName(
+        "#define SDL_PROP_DISPLAY_SDR_WHITE_POINT_FLOAT \"SDL.display.SDR_white_point\""
+    )]
+    public static ReadOnlySpan<byte> PropDisplaySdrWhitePointFloat =>
+        "SDL.display.SDR_white_point"u8;
+
+    [NativeTypeName("#define SDL_PROP_DISPLAY_HDR_HEADROOM_FLOAT \"SDL.display.HDR_headroom\"")]
+    public static ReadOnlySpan<byte> PropDisplayHdrHeadroomFloat => "SDL.display.HDR_headroom"u8;
+
+    [NativeTypeName("#define SDL_PROP_WINDOW_CREATE_ALWAYS_ON_TOP_BOOLEAN \"always_on_top\"")]
+    public static ReadOnlySpan<byte> PropWindowCreateAlwaysOnTopBoolean => "always_on_top"u8;
+
+    [NativeTypeName("#define SDL_PROP_WINDOW_CREATE_BORDERLESS_BOOLEAN \"borderless\"")]
+    public static ReadOnlySpan<byte> PropWindowCreateBorderlessBoolean => "borderless"u8;
+
+    [NativeTypeName("#define SDL_PROP_WINDOW_CREATE_FOCUSABLE_BOOLEAN \"focusable\"")]
+    public static ReadOnlySpan<byte> PropWindowCreateFocusableBoolean => "focusable"u8;
+
+    [NativeTypeName(
+        "#define SDL_PROP_WINDOW_CREATE_EXTERNAL_GRAPHICS_CONTEXT_BOOLEAN \"external_graphics_context\""
+    )]
+    public static ReadOnlySpan<byte> PropWindowCreateExternalGraphicsContextBoolean =>
+        "external_graphics_context"u8;
+
+    [NativeTypeName("#define SDL_PROP_WINDOW_CREATE_FULLSCREEN_BOOLEAN \"fullscreen\"")]
+    public static ReadOnlySpan<byte> PropWindowCreateFullscreenBoolean => "fullscreen"u8;
+
+    [NativeTypeName("#define SDL_PROP_WINDOW_CREATE_HEIGHT_NUMBER \"height\"")]
+    public static ReadOnlySpan<byte> PropWindowCreateHeightNumber => "height"u8;
+
+    [NativeTypeName("#define SDL_PROP_WINDOW_CREATE_HIDDEN_BOOLEAN \"hidden\"")]
+    public static ReadOnlySpan<byte> PropWindowCreateHiddenBoolean => "hidden"u8;
+
+    [NativeTypeName(
+        "#define SDL_PROP_WINDOW_CREATE_HIGH_PIXEL_DENSITY_BOOLEAN \"high_pixel_density\""
+    )]
+    public static ReadOnlySpan<byte> PropWindowCreateHighPixelDensityBoolean =>
+        "high_pixel_density"u8;
+
+    [NativeTypeName("#define SDL_PROP_WINDOW_CREATE_MAXIMIZED_BOOLEAN \"maximized\"")]
+    public static ReadOnlySpan<byte> PropWindowCreateMaximizedBoolean => "maximized"u8;
+
+    [NativeTypeName("#define SDL_PROP_WINDOW_CREATE_MENU_BOOLEAN \"menu\"")]
+    public static ReadOnlySpan<byte> PropWindowCreateMenuBoolean => "menu"u8;
+
+    [NativeTypeName("#define SDL_PROP_WINDOW_CREATE_METAL_BOOLEAN \"metal\"")]
+    public static ReadOnlySpan<byte> PropWindowCreateMetalBoolean => "metal"u8;
+
+    [NativeTypeName("#define SDL_PROP_WINDOW_CREATE_MINIMIZED_BOOLEAN \"minimized\"")]
+    public static ReadOnlySpan<byte> PropWindowCreateMinimizedBoolean => "minimized"u8;
+
+    [NativeTypeName("#define SDL_PROP_WINDOW_CREATE_MODAL_BOOLEAN \"modal\"")]
+    public static ReadOnlySpan<byte> PropWindowCreateModalBoolean => "modal"u8;
+
+    [NativeTypeName("#define SDL_PROP_WINDOW_CREATE_MOUSE_GRABBED_BOOLEAN \"mouse_grabbed\"")]
+    public static ReadOnlySpan<byte> PropWindowCreateMouseGrabbedBoolean => "mouse_grabbed"u8;
+
+    [NativeTypeName("#define SDL_PROP_WINDOW_CREATE_OPENGL_BOOLEAN \"opengl\"")]
+    public static ReadOnlySpan<byte> PropWindowCreateOpenglBoolean => "opengl"u8;
+
+    [NativeTypeName("#define SDL_PROP_WINDOW_CREATE_PARENT_POINTER \"parent\"")]
+    public static ReadOnlySpan<byte> PropWindowCreateParentPointer => "parent"u8;
+
+    [NativeTypeName("#define SDL_PROP_WINDOW_CREATE_RESIZABLE_BOOLEAN \"resizable\"")]
+    public static ReadOnlySpan<byte> PropWindowCreateResizableBoolean => "resizable"u8;
+
+    [NativeTypeName("#define SDL_PROP_WINDOW_CREATE_TITLE_STRING \"title\"")]
+    public static ReadOnlySpan<byte> PropWindowCreateTitleString => "title"u8;
+
+    [NativeTypeName("#define SDL_PROP_WINDOW_CREATE_TRANSPARENT_BOOLEAN \"transparent\"")]
+    public static ReadOnlySpan<byte> PropWindowCreateTransparentBoolean => "transparent"u8;
+
+    [NativeTypeName("#define SDL_PROP_WINDOW_CREATE_TOOLTIP_BOOLEAN \"tooltip\"")]
+    public static ReadOnlySpan<byte> PropWindowCreateTooltipBoolean => "tooltip"u8;
+
+    [NativeTypeName("#define SDL_PROP_WINDOW_CREATE_UTILITY_BOOLEAN \"utility\"")]
+    public static ReadOnlySpan<byte> PropWindowCreateUtilityBoolean => "utility"u8;
+
+    [NativeTypeName("#define SDL_PROP_WINDOW_CREATE_VULKAN_BOOLEAN \"vulkan\"")]
+    public static ReadOnlySpan<byte> PropWindowCreateVulkanBoolean => "vulkan"u8;
+
+    [NativeTypeName("#define SDL_PROP_WINDOW_CREATE_WIDTH_NUMBER \"width\"")]
+    public static ReadOnlySpan<byte> PropWindowCreateWidthNumber => "width"u8;
+
+    [NativeTypeName("#define SDL_PROP_WINDOW_CREATE_X_NUMBER \"x\"")]
+    public static ReadOnlySpan<byte> PropWindowCreateXNumber => "x"u8;
+
+    [NativeTypeName("#define SDL_PROP_WINDOW_CREATE_Y_NUMBER \"y\"")]
+    public static ReadOnlySpan<byte> PropWindowCreateYNumber => "y"u8;
+
+    [NativeTypeName("#define SDL_PROP_WINDOW_CREATE_COCOA_WINDOW_POINTER \"cocoa.window\"")]
+    public static ReadOnlySpan<byte> PropWindowCreateCocoaWindowPointer => "cocoa.window"u8;
+
+    [NativeTypeName("#define SDL_PROP_WINDOW_CREATE_COCOA_VIEW_POINTER \"cocoa.view\"")]
+    public static ReadOnlySpan<byte> PropWindowCreateCocoaViewPointer => "cocoa.view"u8;
+
+    [NativeTypeName(
+        "#define SDL_PROP_WINDOW_CREATE_WAYLAND_SCALE_TO_DISPLAY_BOOLEAN \"wayland.scale_to_display\""
+    )]
+    public static ReadOnlySpan<byte> PropWindowCreateWaylandScaleToDisplayBoolean =>
+        "wayland.scale_to_display"u8;
+
+    [NativeTypeName(
+        "#define SDL_PROP_WINDOW_CREATE_WAYLAND_SURFACE_ROLE_CUSTOM_BOOLEAN \"wayland.surface_role_custom\""
+    )]
+    public static ReadOnlySpan<byte> PropWindowCreateWaylandSurfaceRoleCustomBoolean =>
+        "wayland.surface_role_custom"u8;
+
+    [NativeTypeName(
+        "#define SDL_PROP_WINDOW_CREATE_WAYLAND_CREATE_EGL_WINDOW_BOOLEAN \"wayland.create_egl_window\""
+    )]
+    public static ReadOnlySpan<byte> PropWindowCreateWaylandCreateEglWindowBoolean =>
+        "wayland.create_egl_window"u8;
+
+    [NativeTypeName(
+        "#define SDL_PROP_WINDOW_CREATE_WAYLAND_WL_SURFACE_POINTER \"wayland.wl_surface\""
+    )]
+    public static ReadOnlySpan<byte> PropWindowCreateWaylandWlSurfacePointer =>
+        "wayland.wl_surface"u8;
+
+    [NativeTypeName("#define SDL_PROP_WINDOW_CREATE_WIN32_HWND_POINTER \"win32.hwnd\"")]
+    public static ReadOnlySpan<byte> PropWindowCreateWin32HwndPointer => "win32.hwnd"u8;
+
+    [NativeTypeName(
+        "#define SDL_PROP_WINDOW_CREATE_WIN32_PIXEL_FORMAT_HWND_POINTER \"win32.pixel_format_hwnd\""
+    )]
+    public static ReadOnlySpan<byte> PropWindowCreateWin32PixelFormatHwndPointer =>
+        "win32.pixel_format_hwnd"u8;
+
+    [NativeTypeName("#define SDL_PROP_WINDOW_CREATE_X11_WINDOW_NUMBER \"x11.window\"")]
+    public static ReadOnlySpan<byte> PropWindowCreateX11WindowNumber => "x11.window"u8;
+
+    [NativeTypeName("#define SDL_PROP_WINDOW_SHAPE_POINTER \"SDL.window.shape\"")]
+    public static ReadOnlySpan<byte> PropWindowShapePointer => "SDL.window.shape"u8;
+
+    [NativeTypeName("#define SDL_PROP_WINDOW_ANDROID_WINDOW_POINTER \"SDL.window.android.window\"")]
+    public static ReadOnlySpan<byte> PropWindowAndroidWindowPointer =>
+        "SDL.window.android.window"u8;
+
+    [NativeTypeName(
+        "#define SDL_PROP_WINDOW_ANDROID_SURFACE_POINTER \"SDL.window.android.surface\""
+    )]
+    public static ReadOnlySpan<byte> PropWindowAndroidSurfacePointer =>
+        "SDL.window.android.surface"u8;
+
+    [NativeTypeName("#define SDL_PROP_WINDOW_UIKIT_WINDOW_POINTER \"SDL.window.uikit.window\"")]
+    public static ReadOnlySpan<byte> PropWindowUikitWindowPointer => "SDL.window.uikit.window"u8;
+
+    [NativeTypeName(
+        "#define SDL_PROP_WINDOW_UIKIT_METAL_VIEW_TAG_NUMBER \"SDL.window.uikit.metal_view_tag\""
+    )]
+    public static ReadOnlySpan<byte> PropWindowUikitMetalViewTagNumber =>
+        "SDL.window.uikit.metal_view_tag"u8;
+
+    [NativeTypeName(
+        "#define SDL_PROP_WINDOW_KMSDRM_DEVICE_INDEX_NUMBER \"SDL.window.kmsdrm.dev_index\""
+    )]
+    public static ReadOnlySpan<byte> PropWindowKmsdrmDeviceIndexNumber =>
+        "SDL.window.kmsdrm.dev_index"u8;
+
+    [NativeTypeName("#define SDL_PROP_WINDOW_KMSDRM_DRM_FD_NUMBER \"SDL.window.kmsdrm.drm_fd\"")]
+    public static ReadOnlySpan<byte> PropWindowKmsdrmDrmFdNumber => "SDL.window.kmsdrm.drm_fd"u8;
+
+    [NativeTypeName(
+        "#define SDL_PROP_WINDOW_KMSDRM_GBM_DEVICE_POINTER \"SDL.window.kmsdrm.gbm_dev\""
+    )]
+    public static ReadOnlySpan<byte> PropWindowKmsdrmGbmDevicePointer =>
+        "SDL.window.kmsdrm.gbm_dev"u8;
+
+    [NativeTypeName("#define SDL_PROP_WINDOW_COCOA_WINDOW_POINTER \"SDL.window.cocoa.window\"")]
+    public static ReadOnlySpan<byte> PropWindowCocoaWindowPointer => "SDL.window.cocoa.window"u8;
+
+    [NativeTypeName(
+        "#define SDL_PROP_WINDOW_COCOA_METAL_VIEW_TAG_NUMBER \"SDL.window.cocoa.metal_view_tag\""
+    )]
+    public static ReadOnlySpan<byte> PropWindowCocoaMetalViewTagNumber =>
+        "SDL.window.cocoa.metal_view_tag"u8;
+
+    [NativeTypeName(
+        "#define SDL_PROP_WINDOW_VIVANTE_DISPLAY_POINTER \"SDL.window.vivante.display\""
+    )]
+    public static ReadOnlySpan<byte> PropWindowVivanteDisplayPointer =>
+        "SDL.window.vivante.display"u8;
+
+    [NativeTypeName("#define SDL_PROP_WINDOW_VIVANTE_WINDOW_POINTER \"SDL.window.vivante.window\"")]
+    public static ReadOnlySpan<byte> PropWindowVivanteWindowPointer =>
+        "SDL.window.vivante.window"u8;
+
+    [NativeTypeName(
+        "#define SDL_PROP_WINDOW_VIVANTE_SURFACE_POINTER \"SDL.window.vivante.surface\""
+    )]
+    public static ReadOnlySpan<byte> PropWindowVivanteSurfacePointer =>
+        "SDL.window.vivante.surface"u8;
+
+    [NativeTypeName("#define SDL_PROP_WINDOW_WINRT_WINDOW_POINTER \"SDL.window.winrt.window\"")]
+    public static ReadOnlySpan<byte> PropWindowWinrtWindowPointer => "SDL.window.winrt.window"u8;
+
+    [NativeTypeName("#define SDL_PROP_WINDOW_WIN32_HWND_POINTER \"SDL.window.win32.hwnd\"")]
+    public static ReadOnlySpan<byte> PropWindowWin32HwndPointer => "SDL.window.win32.hwnd"u8;
+
+    [NativeTypeName("#define SDL_PROP_WINDOW_WIN32_HDC_POINTER \"SDL.window.win32.hdc\"")]
+    public static ReadOnlySpan<byte> PropWindowWin32HdcPointer => "SDL.window.win32.hdc"u8;
+
+    [NativeTypeName("#define SDL_PROP_WINDOW_WIN32_INSTANCE_POINTER \"SDL.window.win32.instance\"")]
+    public static ReadOnlySpan<byte> PropWindowWin32InstancePointer =>
+        "SDL.window.win32.instance"u8;
+
+    [NativeTypeName(
+        "#define SDL_PROP_WINDOW_WAYLAND_DISPLAY_POINTER \"SDL.window.wayland.display\""
+    )]
+    public static ReadOnlySpan<byte> PropWindowWaylandDisplayPointer =>
+        "SDL.window.wayland.display"u8;
+
+    [NativeTypeName(
+        "#define SDL_PROP_WINDOW_WAYLAND_SURFACE_POINTER \"SDL.window.wayland.surface\""
+    )]
+    public static ReadOnlySpan<byte> PropWindowWaylandSurfacePointer =>
+        "SDL.window.wayland.surface"u8;
+
+    [NativeTypeName(
+        "#define SDL_PROP_WINDOW_WAYLAND_EGL_WINDOW_POINTER \"SDL.window.wayland.egl_window\""
+    )]
+    public static ReadOnlySpan<byte> PropWindowWaylandEglWindowPointer =>
+        "SDL.window.wayland.egl_window"u8;
+
+    [NativeTypeName(
+        "#define SDL_PROP_WINDOW_WAYLAND_XDG_SURFACE_POINTER \"SDL.window.wayland.xdg_surface\""
+    )]
+    public static ReadOnlySpan<byte> PropWindowWaylandXdgSurfacePointer =>
+        "SDL.window.wayland.xdg_surface"u8;
+
+    [NativeTypeName(
+        "#define SDL_PROP_WINDOW_WAYLAND_XDG_TOPLEVEL_POINTER \"SDL.window.wayland.xdg_toplevel\""
+    )]
+    public static ReadOnlySpan<byte> PropWindowWaylandXdgToplevelPointer =>
+        "SDL.window.wayland.xdg_toplevel"u8;
+
+    [NativeTypeName(
+        "#define SDL_PROP_WINDOW_WAYLAND_XDG_TOPLEVEL_EXPORT_HANDLE_STRING \"SDL.window.wayland.xdg_toplevel_export_handle\""
+    )]
+    public static ReadOnlySpan<byte> PropWindowWaylandXdgToplevelExportHandleString =>
+        "SDL.window.wayland.xdg_toplevel_export_handle"u8;
+
+    [NativeTypeName(
+        "#define SDL_PROP_WINDOW_WAYLAND_XDG_POPUP_POINTER \"SDL.window.wayland.xdg_popup\""
+    )]
+    public static ReadOnlySpan<byte> PropWindowWaylandXdgPopupPointer =>
+        "SDL.window.wayland.xdg_popup"u8;
+
+    [NativeTypeName(
+        "#define SDL_PROP_WINDOW_WAYLAND_XDG_POSITIONER_POINTER \"SDL.window.wayland.xdg_positioner\""
+    )]
+    public static ReadOnlySpan<byte> PropWindowWaylandXdgPositionerPointer =>
+        "SDL.window.wayland.xdg_positioner"u8;
+
+    [NativeTypeName("#define SDL_PROP_WINDOW_X11_DISPLAY_POINTER \"SDL.window.x11.display\"")]
+    public static ReadOnlySpan<byte> PropWindowX11DisplayPointer => "SDL.window.x11.display"u8;
+
+    [NativeTypeName("#define SDL_PROP_WINDOW_X11_SCREEN_NUMBER \"SDL.window.x11.screen\"")]
+    public static ReadOnlySpan<byte> PropWindowX11ScreenNumber => "SDL.window.x11.screen"u8;
+
+    [NativeTypeName("#define SDL_PROP_WINDOW_X11_WINDOW_NUMBER \"SDL.window.x11.window\"")]
+    public static ReadOnlySpan<byte> PropWindowX11WindowNumber => "SDL.window.x11.window"u8;
+
     [NativeTypeName("#define SDL_CACHELINE_SIZE 128")]
     public const int CachelineSize = 128;
 
@@ -37206,6 +37517,27 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
 
     [NativeTypeName("#define SDL_IPHONE_MAX_GFORCE 5.0")]
     public const double IphoneMaxGforce = 5.0;
+
+    [NativeTypeName("#define SDL_PROP_JOYSTICK_CAP_MONO_LED_BOOLEAN \"SDL.joystick.cap.mono_led\"")]
+    public static ReadOnlySpan<byte> PropJoystickCapMonoLedBoolean => "SDL.joystick.cap.mono_led"u8;
+
+    [NativeTypeName("#define SDL_PROP_JOYSTICK_CAP_RGB_LED_BOOLEAN \"SDL.joystick.cap.rgb_led\"")]
+    public static ReadOnlySpan<byte> PropJoystickCapRgbLedBoolean => "SDL.joystick.cap.rgb_led"u8;
+
+    [NativeTypeName(
+        "#define SDL_PROP_JOYSTICK_CAP_PLAYER_LED_BOOLEAN \"SDL.joystick.cap.player_led\""
+    )]
+    public static ReadOnlySpan<byte> PropJoystickCapPlayerLedBoolean =>
+        "SDL.joystick.cap.player_led"u8;
+
+    [NativeTypeName("#define SDL_PROP_JOYSTICK_CAP_RUMBLE_BOOLEAN \"SDL.joystick.cap.rumble\"")]
+    public static ReadOnlySpan<byte> PropJoystickCapRumbleBoolean => "SDL.joystick.cap.rumble"u8;
+
+    [NativeTypeName(
+        "#define SDL_PROP_JOYSTICK_CAP_TRIGGER_RUMBLE_BOOLEAN \"SDL.joystick.cap.trigger_rumble\""
+    )]
+    public static ReadOnlySpan<byte> PropJoystickCapTriggerRumbleBoolean =>
+        "SDL.joystick.cap.trigger_rumble"u8;
 
     [NativeTypeName("#define SDL_HAT_CENTERED 0x00")]
     public const int HatCentered = 0x00;
@@ -37236,6 +37568,33 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
 
     [NativeTypeName("#define SDL_STANDARD_GRAVITY 9.80665f")]
     public const float StandardGravity = 9.80665f;
+
+    [NativeTypeName(
+        "#define SDL_PROP_GAMEPAD_CAP_MONO_LED_BOOLEAN SDL_PROP_JOYSTICK_CAP_MONO_LED_BOOLEAN"
+    )]
+    public static ReadOnlySpan<byte> PropGamepadCapMonoLedBoolean => "SDL.joystick.cap.mono_led"u8;
+
+    [NativeTypeName(
+        "#define SDL_PROP_GAMEPAD_CAP_RGB_LED_BOOLEAN SDL_PROP_JOYSTICK_CAP_RGB_LED_BOOLEAN"
+    )]
+    public static ReadOnlySpan<byte> PropGamepadCapRgbLedBoolean => "SDL.joystick.cap.rgb_led"u8;
+
+    [NativeTypeName(
+        "#define SDL_PROP_GAMEPAD_CAP_PLAYER_LED_BOOLEAN SDL_PROP_JOYSTICK_CAP_PLAYER_LED_BOOLEAN"
+    )]
+    public static ReadOnlySpan<byte> PropGamepadCapPlayerLedBoolean =>
+        "SDL.joystick.cap.player_led"u8;
+
+    [NativeTypeName(
+        "#define SDL_PROP_GAMEPAD_CAP_RUMBLE_BOOLEAN SDL_PROP_JOYSTICK_CAP_RUMBLE_BOOLEAN"
+    )]
+    public static ReadOnlySpan<byte> PropGamepadCapRumbleBoolean => "SDL.joystick.cap.rumble"u8;
+
+    [NativeTypeName(
+        "#define SDL_PROP_GAMEPAD_CAP_TRIGGER_RUMBLE_BOOLEAN SDL_PROP_JOYSTICK_CAP_TRIGGER_RUMBLE_BOOLEAN"
+    )]
+    public static ReadOnlySpan<byte> PropGamepadCapTriggerRumbleBoolean =>
+        "SDL.joystick.cap.trigger_rumble"u8;
 
     [NativeTypeName("#define SDLK_SCANCODE_MASK (1<<30)")]
     public const int KScancodeMask = (1 << 30);
@@ -38202,402 +38561,6 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
 
     [NativeTypeName("#define SDL_HAPTIC_INFINITY 4294967295U")]
     public const uint HapticInfinity = 4294967295U;
-
-    [NativeTypeName("#define SDL_MS_PER_SECOND 1000")]
-    public const int MsPerSecond = 1000;
-
-    [NativeTypeName("#define SDL_US_PER_SECOND 1000000")]
-    public const int UsPerSecond = 1000000;
-
-    [NativeTypeName("#define SDL_NS_PER_SECOND 1000000000LL")]
-    public const long NsPerSecond = 1000000000L;
-
-    [NativeTypeName("#define SDL_NS_PER_MS 1000000")]
-    public const int NsPerMs = 1000000;
-
-    [NativeTypeName("#define SDL_NS_PER_US 1000")]
-    public const int NsPerUs = 1000;
-
-    [NativeTypeName("#define SDL_MAJOR_VERSION 3")]
-    public const int MajorVersion = 3;
-
-    [NativeTypeName("#define SDL_MINOR_VERSION 1")]
-    public const int MinorVersion = 1;
-
-    [NativeTypeName("#define SDL_PATCHLEVEL 2")]
-    public const int Patchlevel = 2;
-
-    [NativeTypeName(
-        "#define SDL_COMPILEDVERSION SDL_VERSIONNUM(SDL_MAJOR_VERSION, SDL_MINOR_VERSION, SDL_PATCHLEVEL)"
-    )]
-    public const int Compiledversion = ((3) << 24 | (1) << 8 | (2) << 0);
-
-    [NativeTypeName("#define SDL_FILE __FILE__")]
-    public static ReadOnlySpan<byte> File =>
-        "/Users/dylan/Documents/Silk.NET3/eng/silktouch/sdl/SDL3/sdl-SDL.h"u8;
-
-    [NativeTypeName(
-        "#define SDL_PROP_IOSTREAM_WINDOWS_HANDLE_POINTER \"SDL.iostream.windows.handle\""
-    )]
-    public static ReadOnlySpan<byte> PropIostreamWindowsHandlePointer =>
-        "SDL.iostream.windows.handle"u8;
-
-    [NativeTypeName("#define SDL_PROP_IOSTREAM_STDIO_FILE_POINTER \"SDL.iostream.stdio.file\"")]
-    public static ReadOnlySpan<byte> PropIostreamStdioFilePointer => "SDL.iostream.stdio.file"u8;
-
-    [NativeTypeName(
-        "#define SDL_PROP_IOSTREAM_ANDROID_AASSET_POINTER \"SDL.iostream.android.aasset\""
-    )]
-    public static ReadOnlySpan<byte> PropIostreamAndroidAassetPointer =>
-        "SDL.iostream.android.aasset"u8;
-
-    [NativeTypeName(
-        "#define SDL_PROP_IOSTREAM_DYNAMIC_MEMORY_POINTER \"SDL.iostream.dynamic.memory\""
-    )]
-    public static ReadOnlySpan<byte> PropIostreamDynamicMemoryPointer =>
-        "SDL.iostream.dynamic.memory"u8;
-
-    [NativeTypeName(
-        "#define SDL_PROP_IOSTREAM_DYNAMIC_CHUNKSIZE_NUMBER \"SDL.iostream.dynamic.chunksize\""
-    )]
-    public static ReadOnlySpan<byte> PropIostreamDynamicChunksizeNumber =>
-        "SDL.iostream.dynamic.chunksize"u8;
-
-    [NativeTypeName("#define SDL_PROP_SURFACE_COLORSPACE_NUMBER \"SDL.surface.colorspace\"")]
-    public static ReadOnlySpan<byte> PropSurfaceColorspaceNumber => "SDL.surface.colorspace"u8;
-
-    [NativeTypeName(
-        "#define SDL_PROP_SURFACE_SDR_WHITE_POINT_FLOAT \"SDL.surface.SDR_white_point\""
-    )]
-    public static ReadOnlySpan<byte> PropSurfaceSdrWhitePointFloat =>
-        "SDL.surface.SDR_white_point"u8;
-
-    [NativeTypeName("#define SDL_PROP_SURFACE_HDR_HEADROOM_FLOAT \"SDL.surface.HDR_headroom\"")]
-    public static ReadOnlySpan<byte> PropSurfaceHdrHeadroomFloat => "SDL.surface.HDR_headroom"u8;
-
-    [NativeTypeName("#define SDL_PROP_SURFACE_TONEMAP_OPERATOR_STRING \"SDL.surface.tonemap\"")]
-    public static ReadOnlySpan<byte> PropSurfaceTonemapOperatorString => "SDL.surface.tonemap"u8;
-
-    [NativeTypeName(
-        "#define SDL_PROP_GLOBAL_VIDEO_WAYLAND_WL_DISPLAY_POINTER \"SDL.video.wayland.wl_display\""
-    )]
-    public static ReadOnlySpan<byte> PropGlobalVideoWaylandWlDisplayPointer =>
-        "SDL.video.wayland.wl_display"u8;
-
-    [NativeTypeName("#define SDL_PROP_DISPLAY_HDR_ENABLED_BOOLEAN \"SDL.display.HDR_enabled\"")]
-    public static ReadOnlySpan<byte> PropDisplayHdrEnabledBoolean => "SDL.display.HDR_enabled"u8;
-
-    [NativeTypeName(
-        "#define SDL_PROP_DISPLAY_SDR_WHITE_POINT_FLOAT \"SDL.display.SDR_white_point\""
-    )]
-    public static ReadOnlySpan<byte> PropDisplaySdrWhitePointFloat =>
-        "SDL.display.SDR_white_point"u8;
-
-    [NativeTypeName("#define SDL_PROP_DISPLAY_HDR_HEADROOM_FLOAT \"SDL.display.HDR_headroom\"")]
-    public static ReadOnlySpan<byte> PropDisplayHdrHeadroomFloat => "SDL.display.HDR_headroom"u8;
-
-    [NativeTypeName("#define SDL_PROP_WINDOW_CREATE_ALWAYS_ON_TOP_BOOLEAN \"always_on_top\"")]
-    public static ReadOnlySpan<byte> PropWindowCreateAlwaysOnTopBoolean => "always_on_top"u8;
-
-    [NativeTypeName("#define SDL_PROP_WINDOW_CREATE_BORDERLESS_BOOLEAN \"borderless\"")]
-    public static ReadOnlySpan<byte> PropWindowCreateBorderlessBoolean => "borderless"u8;
-
-    [NativeTypeName("#define SDL_PROP_WINDOW_CREATE_FOCUSABLE_BOOLEAN \"focusable\"")]
-    public static ReadOnlySpan<byte> PropWindowCreateFocusableBoolean => "focusable"u8;
-
-    [NativeTypeName(
-        "#define SDL_PROP_WINDOW_CREATE_EXTERNAL_GRAPHICS_CONTEXT_BOOLEAN \"external_graphics_context\""
-    )]
-    public static ReadOnlySpan<byte> PropWindowCreateExternalGraphicsContextBoolean =>
-        "external_graphics_context"u8;
-
-    [NativeTypeName("#define SDL_PROP_WINDOW_CREATE_FULLSCREEN_BOOLEAN \"fullscreen\"")]
-    public static ReadOnlySpan<byte> PropWindowCreateFullscreenBoolean => "fullscreen"u8;
-
-    [NativeTypeName("#define SDL_PROP_WINDOW_CREATE_HEIGHT_NUMBER \"height\"")]
-    public static ReadOnlySpan<byte> PropWindowCreateHeightNumber => "height"u8;
-
-    [NativeTypeName("#define SDL_PROP_WINDOW_CREATE_HIDDEN_BOOLEAN \"hidden\"")]
-    public static ReadOnlySpan<byte> PropWindowCreateHiddenBoolean => "hidden"u8;
-
-    [NativeTypeName(
-        "#define SDL_PROP_WINDOW_CREATE_HIGH_PIXEL_DENSITY_BOOLEAN \"high_pixel_density\""
-    )]
-    public static ReadOnlySpan<byte> PropWindowCreateHighPixelDensityBoolean =>
-        "high_pixel_density"u8;
-
-    [NativeTypeName("#define SDL_PROP_WINDOW_CREATE_MAXIMIZED_BOOLEAN \"maximized\"")]
-    public static ReadOnlySpan<byte> PropWindowCreateMaximizedBoolean => "maximized"u8;
-
-    [NativeTypeName("#define SDL_PROP_WINDOW_CREATE_MENU_BOOLEAN \"menu\"")]
-    public static ReadOnlySpan<byte> PropWindowCreateMenuBoolean => "menu"u8;
-
-    [NativeTypeName("#define SDL_PROP_WINDOW_CREATE_METAL_BOOLEAN \"metal\"")]
-    public static ReadOnlySpan<byte> PropWindowCreateMetalBoolean => "metal"u8;
-
-    [NativeTypeName("#define SDL_PROP_WINDOW_CREATE_MINIMIZED_BOOLEAN \"minimized\"")]
-    public static ReadOnlySpan<byte> PropWindowCreateMinimizedBoolean => "minimized"u8;
-
-    [NativeTypeName("#define SDL_PROP_WINDOW_CREATE_MODAL_BOOLEAN \"modal\"")]
-    public static ReadOnlySpan<byte> PropWindowCreateModalBoolean => "modal"u8;
-
-    [NativeTypeName("#define SDL_PROP_WINDOW_CREATE_MOUSE_GRABBED_BOOLEAN \"mouse_grabbed\"")]
-    public static ReadOnlySpan<byte> PropWindowCreateMouseGrabbedBoolean => "mouse_grabbed"u8;
-
-    [NativeTypeName("#define SDL_PROP_WINDOW_CREATE_OPENGL_BOOLEAN \"opengl\"")]
-    public static ReadOnlySpan<byte> PropWindowCreateOpenglBoolean => "opengl"u8;
-
-    [NativeTypeName("#define SDL_PROP_WINDOW_CREATE_PARENT_POINTER \"parent\"")]
-    public static ReadOnlySpan<byte> PropWindowCreateParentPointer => "parent"u8;
-
-    [NativeTypeName("#define SDL_PROP_WINDOW_CREATE_RESIZABLE_BOOLEAN \"resizable\"")]
-    public static ReadOnlySpan<byte> PropWindowCreateResizableBoolean => "resizable"u8;
-
-    [NativeTypeName("#define SDL_PROP_WINDOW_CREATE_TITLE_STRING \"title\"")]
-    public static ReadOnlySpan<byte> PropWindowCreateTitleString => "title"u8;
-
-    [NativeTypeName("#define SDL_PROP_WINDOW_CREATE_TRANSPARENT_BOOLEAN \"transparent\"")]
-    public static ReadOnlySpan<byte> PropWindowCreateTransparentBoolean => "transparent"u8;
-
-    [NativeTypeName("#define SDL_PROP_WINDOW_CREATE_TOOLTIP_BOOLEAN \"tooltip\"")]
-    public static ReadOnlySpan<byte> PropWindowCreateTooltipBoolean => "tooltip"u8;
-
-    [NativeTypeName("#define SDL_PROP_WINDOW_CREATE_UTILITY_BOOLEAN \"utility\"")]
-    public static ReadOnlySpan<byte> PropWindowCreateUtilityBoolean => "utility"u8;
-
-    [NativeTypeName("#define SDL_PROP_WINDOW_CREATE_VULKAN_BOOLEAN \"vulkan\"")]
-    public static ReadOnlySpan<byte> PropWindowCreateVulkanBoolean => "vulkan"u8;
-
-    [NativeTypeName("#define SDL_PROP_WINDOW_CREATE_WIDTH_NUMBER \"width\"")]
-    public static ReadOnlySpan<byte> PropWindowCreateWidthNumber => "width"u8;
-
-    [NativeTypeName("#define SDL_PROP_WINDOW_CREATE_X_NUMBER \"x\"")]
-    public static ReadOnlySpan<byte> PropWindowCreateXNumber => "x"u8;
-
-    [NativeTypeName("#define SDL_PROP_WINDOW_CREATE_Y_NUMBER \"y\"")]
-    public static ReadOnlySpan<byte> PropWindowCreateYNumber => "y"u8;
-
-    [NativeTypeName("#define SDL_PROP_WINDOW_CREATE_COCOA_WINDOW_POINTER \"cocoa.window\"")]
-    public static ReadOnlySpan<byte> PropWindowCreateCocoaWindowPointer => "cocoa.window"u8;
-
-    [NativeTypeName("#define SDL_PROP_WINDOW_CREATE_COCOA_VIEW_POINTER \"cocoa.view\"")]
-    public static ReadOnlySpan<byte> PropWindowCreateCocoaViewPointer => "cocoa.view"u8;
-
-    [NativeTypeName(
-        "#define SDL_PROP_WINDOW_CREATE_WAYLAND_SCALE_TO_DISPLAY_BOOLEAN \"wayland.scale_to_display\""
-    )]
-    public static ReadOnlySpan<byte> PropWindowCreateWaylandScaleToDisplayBoolean =>
-        "wayland.scale_to_display"u8;
-
-    [NativeTypeName(
-        "#define SDL_PROP_WINDOW_CREATE_WAYLAND_SURFACE_ROLE_CUSTOM_BOOLEAN \"wayland.surface_role_custom\""
-    )]
-    public static ReadOnlySpan<byte> PropWindowCreateWaylandSurfaceRoleCustomBoolean =>
-        "wayland.surface_role_custom"u8;
-
-    [NativeTypeName(
-        "#define SDL_PROP_WINDOW_CREATE_WAYLAND_CREATE_EGL_WINDOW_BOOLEAN \"wayland.create_egl_window\""
-    )]
-    public static ReadOnlySpan<byte> PropWindowCreateWaylandCreateEglWindowBoolean =>
-        "wayland.create_egl_window"u8;
-
-    [NativeTypeName(
-        "#define SDL_PROP_WINDOW_CREATE_WAYLAND_WL_SURFACE_POINTER \"wayland.wl_surface\""
-    )]
-    public static ReadOnlySpan<byte> PropWindowCreateWaylandWlSurfacePointer =>
-        "wayland.wl_surface"u8;
-
-    [NativeTypeName("#define SDL_PROP_WINDOW_CREATE_WIN32_HWND_POINTER \"win32.hwnd\"")]
-    public static ReadOnlySpan<byte> PropWindowCreateWin32HwndPointer => "win32.hwnd"u8;
-
-    [NativeTypeName(
-        "#define SDL_PROP_WINDOW_CREATE_WIN32_PIXEL_FORMAT_HWND_POINTER \"win32.pixel_format_hwnd\""
-    )]
-    public static ReadOnlySpan<byte> PropWindowCreateWin32PixelFormatHwndPointer =>
-        "win32.pixel_format_hwnd"u8;
-
-    [NativeTypeName("#define SDL_PROP_WINDOW_CREATE_X11_WINDOW_NUMBER \"x11.window\"")]
-    public static ReadOnlySpan<byte> PropWindowCreateX11WindowNumber => "x11.window"u8;
-
-    [NativeTypeName("#define SDL_PROP_WINDOW_SHAPE_POINTER \"SDL.window.shape\"")]
-    public static ReadOnlySpan<byte> PropWindowShapePointer => "SDL.window.shape"u8;
-
-    [NativeTypeName("#define SDL_PROP_WINDOW_ANDROID_WINDOW_POINTER \"SDL.window.android.window\"")]
-    public static ReadOnlySpan<byte> PropWindowAndroidWindowPointer =>
-        "SDL.window.android.window"u8;
-
-    [NativeTypeName(
-        "#define SDL_PROP_WINDOW_ANDROID_SURFACE_POINTER \"SDL.window.android.surface\""
-    )]
-    public static ReadOnlySpan<byte> PropWindowAndroidSurfacePointer =>
-        "SDL.window.android.surface"u8;
-
-    [NativeTypeName("#define SDL_PROP_WINDOW_UIKIT_WINDOW_POINTER \"SDL.window.uikit.window\"")]
-    public static ReadOnlySpan<byte> PropWindowUikitWindowPointer => "SDL.window.uikit.window"u8;
-
-    [NativeTypeName(
-        "#define SDL_PROP_WINDOW_UIKIT_METAL_VIEW_TAG_NUMBER \"SDL.window.uikit.metal_view_tag\""
-    )]
-    public static ReadOnlySpan<byte> PropWindowUikitMetalViewTagNumber =>
-        "SDL.window.uikit.metal_view_tag"u8;
-
-    [NativeTypeName(
-        "#define SDL_PROP_WINDOW_KMSDRM_DEVICE_INDEX_NUMBER \"SDL.window.kmsdrm.dev_index\""
-    )]
-    public static ReadOnlySpan<byte> PropWindowKmsdrmDeviceIndexNumber =>
-        "SDL.window.kmsdrm.dev_index"u8;
-
-    [NativeTypeName("#define SDL_PROP_WINDOW_KMSDRM_DRM_FD_NUMBER \"SDL.window.kmsdrm.drm_fd\"")]
-    public static ReadOnlySpan<byte> PropWindowKmsdrmDrmFdNumber => "SDL.window.kmsdrm.drm_fd"u8;
-
-    [NativeTypeName(
-        "#define SDL_PROP_WINDOW_KMSDRM_GBM_DEVICE_POINTER \"SDL.window.kmsdrm.gbm_dev\""
-    )]
-    public static ReadOnlySpan<byte> PropWindowKmsdrmGbmDevicePointer =>
-        "SDL.window.kmsdrm.gbm_dev"u8;
-
-    [NativeTypeName("#define SDL_PROP_WINDOW_COCOA_WINDOW_POINTER \"SDL.window.cocoa.window\"")]
-    public static ReadOnlySpan<byte> PropWindowCocoaWindowPointer => "SDL.window.cocoa.window"u8;
-
-    [NativeTypeName(
-        "#define SDL_PROP_WINDOW_COCOA_METAL_VIEW_TAG_NUMBER \"SDL.window.cocoa.metal_view_tag\""
-    )]
-    public static ReadOnlySpan<byte> PropWindowCocoaMetalViewTagNumber =>
-        "SDL.window.cocoa.metal_view_tag"u8;
-
-    [NativeTypeName(
-        "#define SDL_PROP_WINDOW_VIVANTE_DISPLAY_POINTER \"SDL.window.vivante.display\""
-    )]
-    public static ReadOnlySpan<byte> PropWindowVivanteDisplayPointer =>
-        "SDL.window.vivante.display"u8;
-
-    [NativeTypeName("#define SDL_PROP_WINDOW_VIVANTE_WINDOW_POINTER \"SDL.window.vivante.window\"")]
-    public static ReadOnlySpan<byte> PropWindowVivanteWindowPointer =>
-        "SDL.window.vivante.window"u8;
-
-    [NativeTypeName(
-        "#define SDL_PROP_WINDOW_VIVANTE_SURFACE_POINTER \"SDL.window.vivante.surface\""
-    )]
-    public static ReadOnlySpan<byte> PropWindowVivanteSurfacePointer =>
-        "SDL.window.vivante.surface"u8;
-
-    [NativeTypeName("#define SDL_PROP_WINDOW_WINRT_WINDOW_POINTER \"SDL.window.winrt.window\"")]
-    public static ReadOnlySpan<byte> PropWindowWinrtWindowPointer => "SDL.window.winrt.window"u8;
-
-    [NativeTypeName("#define SDL_PROP_WINDOW_WIN32_HWND_POINTER \"SDL.window.win32.hwnd\"")]
-    public static ReadOnlySpan<byte> PropWindowWin32HwndPointer => "SDL.window.win32.hwnd"u8;
-
-    [NativeTypeName("#define SDL_PROP_WINDOW_WIN32_HDC_POINTER \"SDL.window.win32.hdc\"")]
-    public static ReadOnlySpan<byte> PropWindowWin32HdcPointer => "SDL.window.win32.hdc"u8;
-
-    [NativeTypeName("#define SDL_PROP_WINDOW_WIN32_INSTANCE_POINTER \"SDL.window.win32.instance\"")]
-    public static ReadOnlySpan<byte> PropWindowWin32InstancePointer =>
-        "SDL.window.win32.instance"u8;
-
-    [NativeTypeName(
-        "#define SDL_PROP_WINDOW_WAYLAND_DISPLAY_POINTER \"SDL.window.wayland.display\""
-    )]
-    public static ReadOnlySpan<byte> PropWindowWaylandDisplayPointer =>
-        "SDL.window.wayland.display"u8;
-
-    [NativeTypeName(
-        "#define SDL_PROP_WINDOW_WAYLAND_SURFACE_POINTER \"SDL.window.wayland.surface\""
-    )]
-    public static ReadOnlySpan<byte> PropWindowWaylandSurfacePointer =>
-        "SDL.window.wayland.surface"u8;
-
-    [NativeTypeName(
-        "#define SDL_PROP_WINDOW_WAYLAND_EGL_WINDOW_POINTER \"SDL.window.wayland.egl_window\""
-    )]
-    public static ReadOnlySpan<byte> PropWindowWaylandEglWindowPointer =>
-        "SDL.window.wayland.egl_window"u8;
-
-    [NativeTypeName(
-        "#define SDL_PROP_WINDOW_WAYLAND_XDG_SURFACE_POINTER \"SDL.window.wayland.xdg_surface\""
-    )]
-    public static ReadOnlySpan<byte> PropWindowWaylandXdgSurfacePointer =>
-        "SDL.window.wayland.xdg_surface"u8;
-
-    [NativeTypeName(
-        "#define SDL_PROP_WINDOW_WAYLAND_XDG_TOPLEVEL_POINTER \"SDL.window.wayland.xdg_toplevel\""
-    )]
-    public static ReadOnlySpan<byte> PropWindowWaylandXdgToplevelPointer =>
-        "SDL.window.wayland.xdg_toplevel"u8;
-
-    [NativeTypeName(
-        "#define SDL_PROP_WINDOW_WAYLAND_XDG_TOPLEVEL_EXPORT_HANDLE_STRING \"SDL.window.wayland.xdg_toplevel_export_handle\""
-    )]
-    public static ReadOnlySpan<byte> PropWindowWaylandXdgToplevelExportHandleString =>
-        "SDL.window.wayland.xdg_toplevel_export_handle"u8;
-
-    [NativeTypeName(
-        "#define SDL_PROP_WINDOW_WAYLAND_XDG_POPUP_POINTER \"SDL.window.wayland.xdg_popup\""
-    )]
-    public static ReadOnlySpan<byte> PropWindowWaylandXdgPopupPointer =>
-        "SDL.window.wayland.xdg_popup"u8;
-
-    [NativeTypeName(
-        "#define SDL_PROP_WINDOW_WAYLAND_XDG_POSITIONER_POINTER \"SDL.window.wayland.xdg_positioner\""
-    )]
-    public static ReadOnlySpan<byte> PropWindowWaylandXdgPositionerPointer =>
-        "SDL.window.wayland.xdg_positioner"u8;
-
-    [NativeTypeName("#define SDL_PROP_WINDOW_X11_DISPLAY_POINTER \"SDL.window.x11.display\"")]
-    public static ReadOnlySpan<byte> PropWindowX11DisplayPointer => "SDL.window.x11.display"u8;
-
-    [NativeTypeName("#define SDL_PROP_WINDOW_X11_SCREEN_NUMBER \"SDL.window.x11.screen\"")]
-    public static ReadOnlySpan<byte> PropWindowX11ScreenNumber => "SDL.window.x11.screen"u8;
-
-    [NativeTypeName("#define SDL_PROP_WINDOW_X11_WINDOW_NUMBER \"SDL.window.x11.window\"")]
-    public static ReadOnlySpan<byte> PropWindowX11WindowNumber => "SDL.window.x11.window"u8;
-
-    [NativeTypeName("#define SDL_PROP_JOYSTICK_CAP_MONO_LED_BOOLEAN \"SDL.joystick.cap.mono_led\"")]
-    public static ReadOnlySpan<byte> PropJoystickCapMonoLedBoolean => "SDL.joystick.cap.mono_led"u8;
-
-    [NativeTypeName("#define SDL_PROP_JOYSTICK_CAP_RGB_LED_BOOLEAN \"SDL.joystick.cap.rgb_led\"")]
-    public static ReadOnlySpan<byte> PropJoystickCapRgbLedBoolean => "SDL.joystick.cap.rgb_led"u8;
-
-    [NativeTypeName(
-        "#define SDL_PROP_JOYSTICK_CAP_PLAYER_LED_BOOLEAN \"SDL.joystick.cap.player_led\""
-    )]
-    public static ReadOnlySpan<byte> PropJoystickCapPlayerLedBoolean =>
-        "SDL.joystick.cap.player_led"u8;
-
-    [NativeTypeName("#define SDL_PROP_JOYSTICK_CAP_RUMBLE_BOOLEAN \"SDL.joystick.cap.rumble\"")]
-    public static ReadOnlySpan<byte> PropJoystickCapRumbleBoolean => "SDL.joystick.cap.rumble"u8;
-
-    [NativeTypeName(
-        "#define SDL_PROP_JOYSTICK_CAP_TRIGGER_RUMBLE_BOOLEAN \"SDL.joystick.cap.trigger_rumble\""
-    )]
-    public static ReadOnlySpan<byte> PropJoystickCapTriggerRumbleBoolean =>
-        "SDL.joystick.cap.trigger_rumble"u8;
-
-    [NativeTypeName(
-        "#define SDL_PROP_GAMEPAD_CAP_MONO_LED_BOOLEAN SDL_PROP_JOYSTICK_CAP_MONO_LED_BOOLEAN"
-    )]
-    public static ReadOnlySpan<byte> PropGamepadCapMonoLedBoolean => "SDL.joystick.cap.mono_led"u8;
-
-    [NativeTypeName(
-        "#define SDL_PROP_GAMEPAD_CAP_RGB_LED_BOOLEAN SDL_PROP_JOYSTICK_CAP_RGB_LED_BOOLEAN"
-    )]
-    public static ReadOnlySpan<byte> PropGamepadCapRgbLedBoolean => "SDL.joystick.cap.rgb_led"u8;
-
-    [NativeTypeName(
-        "#define SDL_PROP_GAMEPAD_CAP_PLAYER_LED_BOOLEAN SDL_PROP_JOYSTICK_CAP_PLAYER_LED_BOOLEAN"
-    )]
-    public static ReadOnlySpan<byte> PropGamepadCapPlayerLedBoolean =>
-        "SDL.joystick.cap.player_led"u8;
-
-    [NativeTypeName(
-        "#define SDL_PROP_GAMEPAD_CAP_RUMBLE_BOOLEAN SDL_PROP_JOYSTICK_CAP_RUMBLE_BOOLEAN"
-    )]
-    public static ReadOnlySpan<byte> PropGamepadCapRumbleBoolean => "SDL.joystick.cap.rumble"u8;
-
-    [NativeTypeName(
-        "#define SDL_PROP_GAMEPAD_CAP_TRIGGER_RUMBLE_BOOLEAN SDL_PROP_JOYSTICK_CAP_TRIGGER_RUMBLE_BOOLEAN"
-    )]
-    public static ReadOnlySpan<byte> PropGamepadCapTriggerRumbleBoolean =>
-        "SDL.joystick.cap.trigger_rumble"u8;
 
     [NativeTypeName(
         "#define SDL_HINT_ALLOW_ALT_TAB_WHILE_GRABBED \"SDL_ALLOW_ALT_TAB_WHILE_GRABBED\""
@@ -39753,6 +39716,35 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
 
     [NativeTypeName("#define SDL_PROP_GLOBAL_SYSTEM_TIME_FORMAT_NUMBER \"SDL.time.time_format\"")]
     public static ReadOnlySpan<byte> PropGlobalSystemTimeFormatNumber => "SDL.time.time_format"u8;
+
+    [NativeTypeName("#define SDL_MS_PER_SECOND 1000")]
+    public const int MsPerSecond = 1000;
+
+    [NativeTypeName("#define SDL_US_PER_SECOND 1000000")]
+    public const int UsPerSecond = 1000000;
+
+    [NativeTypeName("#define SDL_NS_PER_SECOND 1000000000LL")]
+    public const long NsPerSecond = 1000000000L;
+
+    [NativeTypeName("#define SDL_NS_PER_MS 1000000")]
+    public const int NsPerMs = 1000000;
+
+    [NativeTypeName("#define SDL_NS_PER_US 1000")]
+    public const int NsPerUs = 1000;
+
+    [NativeTypeName("#define SDL_MAJOR_VERSION 3")]
+    public const int MajorVersion = 3;
+
+    [NativeTypeName("#define SDL_MINOR_VERSION 1")]
+    public const int MinorVersion = 1;
+
+    [NativeTypeName("#define SDL_PATCHLEVEL 2")]
+    public const int Patchlevel = 2;
+
+    [NativeTypeName(
+        "#define SDL_COMPILEDVERSION SDL_VERSIONNUM(SDL_MAJOR_VERSION, SDL_MINOR_VERSION, SDL_PATCHLEVEL)"
+    )]
+    public const int Compiledversion = ((3) << 24 | (1) << 8 | (2) << 0);
 
     [return: NativeTypeName("SDL_bool")]
     public static int PointInRect(

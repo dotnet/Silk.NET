@@ -8,10 +8,10 @@ using NUnit.Framework;
 
 namespace Silk.NET.SDL.UnitTests;
 
-/// <summary>Provides validation of the <see cref = "SDL_RendererInfo"/> struct.</summary>
+/// <summary>Provides validation of the <see cref = "RendererInfo"/> struct.</summary>
 public static unsafe partial class SDL_RendererInfoTests
 {
-    /// <summary>Validates that the <see cref = "SDL_RendererInfo"/> struct is blittable.</summary>
+    /// <summary>Validates that the <see cref = "RendererInfo"/> struct is blittable.</summary>
 
     [Test]
     public static void IsBlittableTest()
@@ -19,7 +19,7 @@ public static unsafe partial class SDL_RendererInfoTests
         Assert.That(Marshal.SizeOf<RendererInfo>(), Is.EqualTo(sizeof(RendererInfo)));
     }
 
-    /// <summary>Validates that the <see cref = "SDL_RendererInfo"/> struct has the right <see cref = "LayoutKind"/>.</summary>
+    /// <summary>Validates that the <see cref = "RendererInfo"/> struct has the right <see cref = "LayoutKind"/>.</summary>
 
     [Test]
     public static void IsLayoutSequentialTest()
@@ -27,7 +27,7 @@ public static unsafe partial class SDL_RendererInfoTests
         Assert.That(typeof(RendererInfo).IsLayoutSequential, Is.True);
     }
 
-    /// <summary>Validates that the <see cref = "SDL_RendererInfo"/> struct has the correct size.</summary>
+    /// <summary>Validates that the <see cref = "RendererInfo"/> struct has the correct size.</summary>
 
     [Test]
     public static void SizeOfTest()

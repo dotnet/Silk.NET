@@ -7,10 +7,10 @@ using NUnit.Framework;
 
 namespace Silk.NET.SDL.UnitTests;
 
-/// <summary>Provides validation of the <see cref = "SDL_GUID"/> struct.</summary>
+/// <summary>Provides validation of the <see cref = "Guid"/> struct.</summary>
 public static unsafe partial class SDL_GUIDTests
 {
-    /// <summary>Validates that the <see cref = "SDL_GUID"/> struct is blittable.</summary>
+    /// <summary>Validates that the <see cref = "Guid"/> struct is blittable.</summary>
 
     [Test]
     public static void IsBlittableTest()
@@ -18,7 +18,7 @@ public static unsafe partial class SDL_GUIDTests
         Assert.That(Marshal.SizeOf<Guid>(), Is.EqualTo(sizeof(Guid)));
     }
 
-    /// <summary>Validates that the <see cref = "SDL_GUID"/> struct has the right <see cref = "LayoutKind"/>.</summary>
+    /// <summary>Validates that the <see cref = "Guid"/> struct has the right <see cref = "LayoutKind"/>.</summary>
 
     [Test]
     public static void IsLayoutSequentialTest()
@@ -26,7 +26,7 @@ public static unsafe partial class SDL_GUIDTests
         Assert.That(typeof(Guid).IsLayoutSequential, Is.True);
     }
 
-    /// <summary>Validates that the <see cref = "SDL_GUID"/> struct has the correct size.</summary>
+    /// <summary>Validates that the <see cref = "Guid"/> struct has the correct size.</summary>
 
     [Test]
     public static void SizeOfTest()

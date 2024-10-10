@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Threading;
 using System.Threading.Tasks;
 using Microsoft.Extensions.FileSystemGlobbing;
 using Microsoft.Extensions.Options;
@@ -21,7 +22,7 @@ public class AddIncludes(
     IStdIncludeResolver stdResolver,
     IInputResolver inputResolver,
     IOptionsSnapshot<AddIncludes.Configuration> options
-) : IMod
+) : IMod, IResponseFileMod
 {
     /// <summary>
     /// The mod configuration.
@@ -134,4 +135,7 @@ public class AddIncludes(
 
         return rsps;
     }
+
+    /// <inheritdoc />
+    public Task ExecuteAsync(IModContext ctx, CancellationToken ct = default) => Task.CompletedTask;
 }

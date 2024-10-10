@@ -1,6 +1,6 @@
 // Licensed to the .NET Foundation under one or more agreements.
 // The .NET Foundation licenses this file to you under the MIT license.
-// Ported from the OpenGL Core Profile headers and corresponding dependencies.
+// Ported from the OpenGL headers and corresponding dependencies.
 // Original source is Copyright 2013-2020 The Khronos Group Inc. Licensed under the MIT license.
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
@@ -18,6 +18,8 @@ public enum PrimitiveType : uint
     TriangleStrip = unchecked((uint)0x0005),
     TriangleFan = unchecked((uint)0x0006),
     Quads = unchecked((uint)0x0007),
+    QuadStrip = unchecked((uint)0x0008),
+    Polygon = unchecked((uint)0x0009),
     LinesAdjacency = unchecked((uint)0x000A),
     LineStripAdjacency = unchecked((uint)0x000B),
     TrianglesAdjacency = unchecked((uint)0x000C),
@@ -27,8 +29,6 @@ public enum PrimitiveType : uint
     LineStripAdjacencyARB = unchecked((uint)0x000B),
     TrianglesAdjacencyARB = unchecked((uint)0x000C),
     TriangleStripAdjacencyARB = unchecked((uint)0x000D),
-    QuadStrip = unchecked((uint)0x0008),
-    Polygon = unchecked((uint)0x0009),
     LinesAdjacencyEXT = unchecked((uint)0x000A),
     LineStripAdjacencyEXT = unchecked((uint)0x000B),
     TrianglesAdjacencyEXT = unchecked((uint)0x000C),

@@ -4,7 +4,9 @@
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.IO;
 using System.Linq;
+using System.Threading;
 using System.Threading.Tasks;
 using Microsoft.CodeAnalysis;
 using Microsoft.CodeAnalysis.CSharp;
@@ -47,13 +49,18 @@ public class TransformHandles(IOptionsSnapshot<TransformHandles.Config> config) 
     }
 
     /// <inheritdoc />
-    public override Task<GeneratedSyntax> AfterScrapeAsync(string key, GeneratedSyntax syntax)
+    public override async Task ExecuteAsync(IModContext ctx, CancellationToken ct = default)
     {
-        var cfg = config.Get(key);
+        await base.ExecuteAsync(ctx, ct);
+        var cfg = config.Get(ctx.JobKey);
         var firstPass = new TypeDiscoverer();
-        foreach (var (_, node) in syntax.Files)
+        var proj = ctx.SourceProject;
+        foreach (var doc in ctx.SourceProject?.Documents ?? [])
         {
-            firstPass.Visit(node);
+            if (await doc.GetSyntaxRootAsync(ct) is { } root)
+            {
+                firstPass.Visit(root);
+            }
         }
 
         Dictionary<string, SyntaxNode>? missingFullyQualifiedTypeNamesToRootNodes =
@@ -63,30 +70,41 @@ public class TransformHandles(IOptionsSnapshot<TransformHandles.Config> config) 
         {
             foreach (var (fqTypeName, node) in missingFullyQualifiedTypeNamesToRootNodes)
             {
-                syntax.Files[$"sources/Handles/{PathForFullyQualified(fqTypeName)}"] = node;
+                var rel = $"Handles/{PathForFullyQualified(fqTypeName)}";
+                proj = proj
+                    ?.AddDocument(
+                        Path.GetFileName(rel),
+                        node.NormalizeWhitespace(),
+                        filePath: proj.FullPath(rel)
+                    )
+                    .Project;
             }
         }
 
         var rewriter = new Rewriter(handles, cfg.UseDSL);
-        syntax = syntax with
+        foreach (var docId in proj?.DocumentIds ?? [])
         {
-            Files = syntax.Files.ToDictionary(
-                x =>
-                {
-                    var effectiveName = ModUtils.GetEffectiveName(x.Key).ToString();
-                    if (!handles.ContainsKey(effectiveName))
-                    {
-                        return x.Key;
-                    }
+            var doc =
+                proj?.GetDocument(docId) ?? throw new InvalidOperationException("Document missing");
+            if (await doc.GetSyntaxRootAsync(ct) is not { } root)
+            {
+                continue;
+            }
 
-                    syntax.Files.Remove(x.Key);
-                    return x.Key.Replace(effectiveName, $"{effectiveName}Handle");
-                },
-                x => rewriter.Visit(x.Value)
-            )
-        };
+            doc = doc.WithSyntaxRoot(rewriter.Visit(root).NormalizeWhitespace());
+            var effectiveName = ModUtils.GetEffectiveName(doc.FilePath).ToString();
+            if (handles.ContainsKey(effectiveName))
+            {
+                doc = doc.WithFilePath(
+                        doc.FilePath!.Replace(effectiveName, $"{effectiveName}Handle")
+                    )
+                    .WithName(doc.Name.Replace(effectiveName, $"{effectiveName}Handle"));
+            }
 
-        return Task.FromResult(syntax);
+            proj = doc.Project;
+        }
+
+        ctx.SourceProject = proj;
     }
 
     class TypeDiscoverer : CSharpSyntaxWalker

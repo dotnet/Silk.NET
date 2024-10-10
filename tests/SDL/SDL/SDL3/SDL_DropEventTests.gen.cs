@@ -8,10 +8,10 @@ using NUnit.Framework;
 
 namespace Silk.NET.SDL.UnitTests;
 
-/// <summary>Provides validation of the <see cref = "SDL_DropEvent"/> struct.</summary>
+/// <summary>Provides validation of the <see cref = "DropEvent"/> struct.</summary>
 public static unsafe partial class SDL_DropEventTests
 {
-    /// <summary>Validates that the <see cref = "SDL_DropEvent"/> struct is blittable.</summary>
+    /// <summary>Validates that the <see cref = "DropEvent"/> struct is blittable.</summary>
 
     [Test]
     public static void IsBlittableTest()
@@ -19,7 +19,7 @@ public static unsafe partial class SDL_DropEventTests
         Assert.That(Marshal.SizeOf<DropEvent>(), Is.EqualTo(sizeof(DropEvent)));
     }
 
-    /// <summary>Validates that the <see cref = "SDL_DropEvent"/> struct has the right <see cref = "LayoutKind"/>.</summary>
+    /// <summary>Validates that the <see cref = "DropEvent"/> struct has the right <see cref = "LayoutKind"/>.</summary>
 
     [Test]
     public static void IsLayoutSequentialTest()
@@ -27,7 +27,7 @@ public static unsafe partial class SDL_DropEventTests
         Assert.That(typeof(DropEvent).IsLayoutSequential, Is.True);
     }
 
-    /// <summary>Validates that the <see cref = "SDL_DropEvent"/> struct has the correct size.</summary>
+    /// <summary>Validates that the <see cref = "DropEvent"/> struct has the correct size.</summary>
 
     [Test]
     public static void SizeOfTest()

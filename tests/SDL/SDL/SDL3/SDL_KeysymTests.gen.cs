@@ -7,10 +7,10 @@ using NUnit.Framework;
 
 namespace Silk.NET.SDL.UnitTests;
 
-/// <summary>Provides validation of the <see cref = "SDL_Keysym"/> struct.</summary>
+/// <summary>Provides validation of the <see cref = "Keysym"/> struct.</summary>
 public static unsafe partial class SDL_KeysymTests
 {
-    /// <summary>Validates that the <see cref = "SDL_Keysym"/> struct is blittable.</summary>
+    /// <summary>Validates that the <see cref = "Keysym"/> struct is blittable.</summary>
 
     [Test]
     public static void IsBlittableTest()
@@ -18,7 +18,7 @@ public static unsafe partial class SDL_KeysymTests
         Assert.That(Marshal.SizeOf<Keysym>(), Is.EqualTo(sizeof(Keysym)));
     }
 
-    /// <summary>Validates that the <see cref = "SDL_Keysym"/> struct has the right <see cref = "LayoutKind"/>.</summary>
+    /// <summary>Validates that the <see cref = "Keysym"/> struct has the right <see cref = "LayoutKind"/>.</summary>
 
     [Test]
     public static void IsLayoutSequentialTest()
@@ -26,7 +26,7 @@ public static unsafe partial class SDL_KeysymTests
         Assert.That(typeof(Keysym).IsLayoutSequential, Is.True);
     }
 
-    /// <summary>Validates that the <see cref = "SDL_Keysym"/> struct has the correct size.</summary>
+    /// <summary>Validates that the <see cref = "Keysym"/> struct has the correct size.</summary>
 
     [Test]
     public static void SizeOfTest()

@@ -7,10 +7,10 @@ using NUnit.Framework;
 
 namespace Silk.NET.SDL.UnitTests;
 
-/// <summary>Provides validation of the <see cref = "SDL_WindowEvent"/> struct.</summary>
+/// <summary>Provides validation of the <see cref = "WindowEvent"/> struct.</summary>
 public static unsafe partial class SDL_WindowEventTests
 {
-    /// <summary>Validates that the <see cref = "SDL_WindowEvent"/> struct is blittable.</summary>
+    /// <summary>Validates that the <see cref = "WindowEvent"/> struct is blittable.</summary>
 
     [Test]
     public static void IsBlittableTest()
@@ -18,7 +18,7 @@ public static unsafe partial class SDL_WindowEventTests
         Assert.That(Marshal.SizeOf<WindowEvent>(), Is.EqualTo(sizeof(WindowEvent)));
     }
 
-    /// <summary>Validates that the <see cref = "SDL_WindowEvent"/> struct has the right <see cref = "LayoutKind"/>.</summary>
+    /// <summary>Validates that the <see cref = "WindowEvent"/> struct has the right <see cref = "LayoutKind"/>.</summary>
 
     [Test]
     public static void IsLayoutSequentialTest()
@@ -26,7 +26,7 @@ public static unsafe partial class SDL_WindowEventTests
         Assert.That(typeof(WindowEvent).IsLayoutSequential, Is.True);
     }
 
-    /// <summary>Validates that the <see cref = "SDL_WindowEvent"/> struct has the correct size.</summary>
+    /// <summary>Validates that the <see cref = "WindowEvent"/> struct has the correct size.</summary>
 
     [Test]
     public static void SizeOfTest()

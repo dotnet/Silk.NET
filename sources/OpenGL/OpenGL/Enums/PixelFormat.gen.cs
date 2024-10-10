@@ -1,6 +1,6 @@
 // Licensed to the .NET Foundation under one or more agreements.
 // The .NET Foundation licenses this file to you under the MIT license.
-// Ported from the OpenGL Core Profile headers and corresponding dependencies.
+// Ported from the OpenGL headers and corresponding dependencies.
 // Original source is Copyright 2013-2020 The Khronos Group Inc. Licensed under the MIT license.
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
@@ -20,6 +20,9 @@ public enum PixelFormat : uint
     Alpha = unchecked((uint)0x1906),
     Rgb = unchecked((uint)0x1907),
     Rgba = unchecked((uint)0x1908),
+    ColorIndex = unchecked((uint)0x1900),
+    Luminance = unchecked((uint)0x1909),
+    LuminanceAlpha = unchecked((uint)0x190A),
     Bgr = unchecked((uint)0x80E0),
     Bgra = unchecked((uint)0x80E1),
     RedInteger = unchecked((uint)0x8D94),
@@ -32,9 +35,6 @@ public enum PixelFormat : uint
     DepthStencil = unchecked((uint)0x84F9),
     Rg = unchecked((uint)0x8227),
     RgInteger = unchecked((uint)0x8228),
-    ColorIndex = unchecked((uint)0x1900),
-    Luminance = unchecked((uint)0x1909),
-    LuminanceAlpha = unchecked((uint)0x190A),
     AbgrEXT = unchecked((uint)0x8000),
     BgrEXT = unchecked((uint)0x80E0),
     BgraEXT = unchecked((uint)0x80E1),
@@ -42,6 +42,6 @@ public enum PixelFormat : uint
     CmykaEXT = unchecked((uint)0x800D),
     Ycrcb422Sgix = unchecked((uint)0x81BB),
     Ycrcb444Sgix = unchecked((uint)0x81BC),
-    BgraIMG = unchecked((uint)0x80E1),
-    RedEXT = unchecked((uint)0x1903)
+    RedEXT = unchecked((uint)0x1903),
+    BgraIMG = unchecked((uint)0x80E1)
 }
