@@ -7,7 +7,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\sources\SilkTouch\Silk.NET.SilkTouch.csproj" />
+    <ProjectReference Include="..\..\..\sources\SilkTouch\SilkTouch\Silk.NET.SilkTouch.csproj" />
   </ItemGroup>
 
   <ItemGroup>
