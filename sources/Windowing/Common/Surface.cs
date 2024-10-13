@@ -50,6 +50,7 @@ public abstract class Surface : ISurface, ISurfaceActor
     /// <typeparam name="TExtra">The type of the configuration for the surface.</typeparam>
     /// <typeparam name="TImpl">The surface implementation.</typeparam>
     /// <returns>The surface.</returns>
+    /// <remarks>This is not recommended for use if you intend to create multiple windows.</remarks>
     public static Surface<TImpl> CreateSingleThreaded<TExtra, TImpl>(TExtra config)
         where TExtra : IConfigureHost
         where TImpl : ISurfaceHost => Surface<TImpl>.Create(config);

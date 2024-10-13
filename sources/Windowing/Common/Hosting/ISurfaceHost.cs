@@ -15,7 +15,7 @@ namespace Silk.NET.Windowing.Hosting;
 /// assembly's main function.
 /// </remarks>
 [MockStaticAbstract]
-public interface ISurfaceHost
+public interface ISurfaceHost : ISurfaceProvider
 {
     /// <summary>
     /// Whether multiple surfaces can be spawned as children of the first surface created.
