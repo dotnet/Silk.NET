@@ -5,34 +5,20 @@ namespace Silk.NET.Core;
 /// <summary>
 /// Represents an OpenGL context.
 /// </summary>
-public interface IGLContext : INativeContext, IDisposable
+public interface IGLContext : INativeContext
 {
     /// <summary>
     /// Whether the context is current on this thread.
     /// </summary>
-    bool IsCurrent { get; }
+    bool IsCurrent { get; set; }
 
     /// <summary>
-    /// Sets the number of vertical blanks to wait for until the next backbuffer swap.
+    /// The number of vertical blanks to wait for before sending another frame.
     /// </summary>
-    /// <param name="interval">The number of frames.</param>
-    void SwapInterval(int interval);
+    int SwapInterval { get; set; }
 
     /// <summary>
     /// Swaps the backbuffer to present the contents to the window.
     /// </summary>
     void SwapBuffers();
-
-    /// <summary>
-    /// Makes the context current.
-    /// </summary>
-    void MakeCurrent();
-
-    /// <summary>
-    /// Clears the context from this thread.
-    /// </summary>
-    /// <remarks>
-    /// This should check whether <c>GL.ThisThread</c> has this as current as well.
-    /// </remarks>
-    void Clear();
 }
