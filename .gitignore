@@ -474,11 +474,6 @@ src/**/build/
 *.gen.sln
 *.gen.txt
 
-# Silk.NET Website Generation Output
-/docs/
-src/Website/Silk.NET.Statiq/temp
-src/Website/Silk.NET.Statiq/cache
-
 # SilkTouch configs
 !eng/silktouch/**/*.rsp
 
