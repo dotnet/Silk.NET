@@ -16,8 +16,4 @@
       <ProjectReference Include="..\..\Core\Analyzers\Silk.NET.Core.Analyzers.csproj" OutputItemType="Analyzer" ReferenceOutputAssembly="false" />
     </ItemGroup>
 
-    <ItemGroup>
-      <Content Include="Hosting\README.md" />
-    </ItemGroup>
-
 </Project>

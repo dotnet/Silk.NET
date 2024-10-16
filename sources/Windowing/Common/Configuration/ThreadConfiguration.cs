@@ -1,14 +1,10 @@
 // Licensed to the .NET Foundation under one or more agreements.
 // The .NET Foundation licenses this file to you under the MIT license.
 
-using Silk.NET.Windowing.Hosting;
-
 namespace Silk.NET.Windowing;
 
 /// <summary>
-/// Configures the <see cref="MultiThreadedSurfaceHost{TUnderlying}"/> (or a <see cref="ISurfaceHost"/> with similar
-/// threading rules implemented in terms of this configuration) with the given threading configuration. This must be
-/// applied to the root surface.
+/// Configures the surface with the given threading configuration. This must be applied to the root surface.
 /// </summary>
 /// <param name="UseSeparateEventThread">
 /// Whether a separate event thread should be used for the root surface. If <c>false</c>, the root surface will be
@@ -32,28 +28,4 @@ namespace Silk.NET.Windowing;
 public readonly record struct ThreadConfiguration(
     bool UseSeparateEventThread = false,
     bool UseBufferedEventLoop = false
-) : IConfigureHost
-{
-    /// <inheritdoc />
-    public void ConfigureHost<THandle, THost>(THandle handle)
-        where THandle : ISurfaceOrRequestHandle
-        where THost : ISurfaceHost
-    {
-        THost.SetSurfaceProperty(
-            handle,
-            new SurfaceProperty
-            {
-                PropertyName = SurfacePropertyName.UseSeparateEventThreadBoolean,
-                Boolean = UseSeparateEventThread
-            }
-        );
-        THost.SetSurfaceProperty(
-            handle,
-            new SurfaceProperty
-            {
-                PropertyName = SurfacePropertyName.UseBufferedEventLoopBoolean,
-                Boolean = UseBufferedEventLoop
-            }
-        );
-    }
-}
+);

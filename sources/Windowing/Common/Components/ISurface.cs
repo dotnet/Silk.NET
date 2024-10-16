@@ -3,7 +3,6 @@
 
 using System.Diagnostics.CodeAnalysis;
 using System.Numerics;
-using Silk.NET.Windowing.Hosting;
 
 namespace Silk.NET.Windowing;
 
@@ -25,7 +24,15 @@ public interface ISurface : IDisposable
     /// <summary>
     /// Gets a unique handle representing this surface. This may be null if <see cref="Launch{T}"/> is not called.
     /// </summary>
-    SurfaceHandle Handle { get; }
+    nint Handle { get; }
+
+    /// <summary>
+    /// Gets an implementation of the given component type if implemented by this surface.
+    /// </summary>
+    /// <param name="component">The component implementation.</param>
+    /// <typeparam name="T">The component type.</typeparam>
+    /// <returns>The </returns>
+    bool TryGetComponent<T>([NotNullWhen(true)] out T? component);
 
     /// <summary>
     /// Runs the window's event loop, dispatching events to the given actor. This may be blocking, but won't always be

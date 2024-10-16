@@ -2,70 +2,22 @@
 // The .NET Foundation licenses this file to you under the MIT license.
 
 using System.Diagnostics;
+using System.Diagnostics.CodeAnalysis;
 using System.Numerics;
-using Silk.NET.Windowing.Hosting;
 
 namespace Silk.NET.Windowing;
 
 /// <summary>
-/// An implementation of an <see cref="ISurface"/> using a <see cref="ISurfaceHost"/>, optionally providing an
-/// event-based subscription mechanism for <see cref="ISurfaceActor"/>'s events.
+/// An <see cref="ISurface"/> wrapper, optionally providing an event-based subscription mechanism for
+/// <see cref="ISurfaceActor"/>'s events.
 /// </summary>
 public abstract class Surface : ISurface, ISurfaceActor
 {
-    /// <summary>
-    /// Creates a surface with the given configuration and underlying implementation.
-    /// </summary>
-    /// <param name="config">The configuration for the surface.</param>
-    /// <typeparam name="TExtra">The type of the configuration for the surface.</typeparam>
-    /// <typeparam name="TImpl">The surface implementation.</typeparam>
-    /// <returns>The surface.</returns>
-    /// <remarks>
-    /// The underlying implementation may be wrapped in a <see cref="MultiThreadedSurfaceHost{TUnderlying}"/> if it
-    /// isn't already if <see cref="ISurfaceHost.IsMultiSurface"/> is <c>true</c> to facilitate the use of
-    /// multi-threaded multi-window workflows. Note that a surface must only access its own properties from the thread
-    /// on which it was created.
-    /// </remarks>
-    public static Surface Create<TExtra, TImpl>(TExtra config)
-        where TExtra : IConfigureHost
-        where TImpl : ISurfaceHost
-    {
-        var req = TImpl.CreateSurfaceRequest();
-        config.ConfigureHost<RequestHandle, TImpl>(req);
-        if (
-            !TImpl.IsMultiSurface
-            || typeof(IMultiThreadedSurfaceHost).IsAssignableFrom(typeof(TImpl))
-        )
-        {
-            return Surface<TImpl>.Create(req);
-        }
-
-        return Surface<MultiThreadedSurfaceHost<TImpl>>.Create(req);
-    }
-
-    /// <summary>
-    /// Creates a surface with no thread safety, the given configuration, and underlying implementation.
-    /// </summary>
-    /// <param name="config">The configuration for the surface.</param>
-    /// <typeparam name="TExtra">The type of the configuration for the surface.</typeparam>
-    /// <typeparam name="TImpl">The surface implementation.</typeparam>
-    /// <returns>The surface.</returns>
-    /// <remarks>This is not recommended for use if you intend to create multiple windows.</remarks>
-    public static Surface<TImpl> CreateSingleThreaded<TExtra, TImpl>(TExtra config)
-        where TExtra : IConfigureHost
-        where TImpl : ISurfaceHost => Surface<TImpl>.Create(config);
-
-    /// <summary>
-    /// Marker interface so we can check in an inlining-friendly way whether <c>TImpl</c> is already a
-    /// <see cref="MultiThreadedSurfaceHost{TUnderlying}"/> without knowing <c>TUnderlying</c>.
-    /// </summary>
-    internal interface IMultiThreadedSurfaceHost;
-
     /// <inheritdoc />
     public abstract Vector2 ClientSize { get; }
 
     /// <inheritdoc />
-    public abstract SurfaceHandle Handle { get; protected set; }
+    public abstract nint Handle { get; protected set; }
 
     /// <summary>
     /// An event executed when the surface is first loaded.
@@ -163,6 +115,9 @@ public abstract class Surface : ISurface, ISurfaceActor
     }
 
     private double _renderPeriod = 1 / 60.0;
+
+    /// <inheritdoc />
+    public abstract bool TryGetComponent<T>([NotNullWhen(true)] out T? component);
 
     /// <inheritdoc />
     /// <remarks>
