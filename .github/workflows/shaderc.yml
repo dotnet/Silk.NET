@@ -17,9 +17,10 @@ jobs:
       fail-fast: false
       matrix:
         env:
-          - os: ubuntu-latest
-            name: Linux
-            nuke_invoke: ./build.sh
+          - os: windows-2022
+            name: Windows
+            nuke_invoke: ./build.cmd
+            extras: ""
     name: ${{ matrix.env.name }} Build
     runs-on: ${{ matrix.env.os }}
     steps:
