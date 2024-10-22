@@ -29,7 +29,6 @@ public class SDL {
 
     // This function stores the current activity (SDL or not)
     public static void setContext(Context context) {
-        SDLAudioManager.setContext(context);
         mContext = context;
     }
 
