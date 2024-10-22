@@ -103,6 +103,7 @@ partial class Build {
                         SourceDirectory / "Windowing" / "Silk.NET.Windowing.Sdl" / "Android" / "app-release.aar",
                         FileExistsPolicy.Overwrite
                     );
+                    InheritedShell(string.Format(FormatDeclCmd, SourceDirectory / "Windowing" / "Silk.NET.Windowing.Sdl" / "Silk.NET.Windowing.Sdl.csproj"));
                     return ret;
                 }
             )
