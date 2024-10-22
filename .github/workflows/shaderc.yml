@@ -44,6 +44,7 @@ jobs:
           dotnet-version: |
             6.0.201
             7.0.*
+            8.0.*
       - name: Build Shaderc
         run: ${{ matrix.env.nuke_invoke }} Shaderc
         env:
