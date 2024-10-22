@@ -127,7 +127,7 @@
             </a>
           </li>
       }
-      @if (tocModelRoot.Metadata?.TryGetValue("theme.silk.nav.github", out discordLink) ?? false)
+      @if (tocModelRoot.Metadata?.TryGetValue("theme.silk.nav.github", out githubLink) ?? false)
       {
           <li class="nav-item">
             <a class="nav-link nav-link-icon" href="@githubLink" target="_blank" data-toggle="tooltip" title="Star us on Github">
