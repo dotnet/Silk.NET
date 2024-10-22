@@ -581,7 +581,7 @@ pub fn build(b: *std.Build) void {
             File.WriteAllText(ShadercPath / "build.zig", ShadercBuildScript);
 
             //Clone all the deps for shaderc
-            InheritedShell("./git-sync-deps", ShadercPath / "utils").AssertZeroExitCode();
+            InheritedShell("python3 ./git-sync-deps", ShadercPath / "utils").AssertZeroExitCode();
 
             const string libname = "shaderc_shared";
 
