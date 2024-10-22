@@ -45,10 +45,11 @@ jobs:
         uses: actions/setup-dotnet@v3
         if: runner.os == 'Windows'
         with:
-          dotnet-version: 6.0.x
+          dotnet-version: |
+            6.0.201
+            7.0.*
         env:
           DOTNET_INSTALL_DIR: ~/.dotnet
-
       - name: Setup PowerShell Core
         continue-on-error: true
         if: runner.os == 'Windows'
@@ -145,6 +146,10 @@ jobs:
             ${{ matrix.env.nuke_invoke }} SDL2
         env:
           PUSHABLE_GITHUB_TOKEN: ${{ secrets.PUSHABLE_GITHUB_TOKEN }}
+
+      - name: Install Workloads
+        if: runner.os == 'Windows'
+        run: dotnet workload install android ios
 
       - name: Build SDL2
         if: runner.os != 'Linux'
