@@ -67,7 +67,7 @@ partial class Build {
             Git("fetch --all", RootDirectory);
             Git("pull");
             Git("add -f src/Native/*/runtimes/*/native/*", RootDirectory);
-            Git("add **/*.aar **/*.java", RootDirectory);
+            Git("add **/*.aar **/*.java **/PublicAPI.Unshipped.txt", RootDirectory);
             var newBranch = $"ci/{curBranch}/{name.ToLower().Replace(' ', '_')}_bins";
             var curCommit = GitCurrentCommit(RootDirectory);
             var commitCmd = InheritedShell
