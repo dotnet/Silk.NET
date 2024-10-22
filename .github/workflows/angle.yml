@@ -1,0 +1,43 @@
+name: ANGLE
+on:
+    push:
+        branches-ignore:
+            - "ci/**"
+            - "develop/**"
+            - "main"
+        paths:
+            - build/submodules/ANGLE
+            - build/nuke/Native/Core.cs
+            - build/nuke/Native/Angle.cs
+            - .github/workflows/angle.yml
+jobs:
+    Build:
+        if: github.repository == 'dotnet/Silk.NET'
+        strategy:
+            fail-fast: false
+            matrix:
+                env:
+                    - os: macos-13-xlarge
+                      name: Darwin
+                      nuke_invoke: ./build.sh
+        name: ${{ matrix.env.name }} Build
+        runs-on: ${{ matrix.env.os }}
+        steps:
+            - uses: actions/checkout@v2
+              with:
+                  token: ${{ secrets.PUSHABLE_GITHUB_TOKEN }}
+
+            - name: Configure git
+              run: |
+                  git config --local user.email "9011267+dotnet-bot@users.noreply.github.com"
+                  git config --local user.name "The Silk.NET Automaton"
+
+            # Install python
+            - uses: actions/setup-python@v4
+              with:
+                  python-version: "3.10"
+
+            - name: Build ANGLE
+              run: ${{ matrix.env.nuke_invoke }} Angle
+              env:
+                  PUSHABLE_GITHUB_TOKEN: ${{ secrets.PUSHABLE_GITHUB_TOKEN }}
