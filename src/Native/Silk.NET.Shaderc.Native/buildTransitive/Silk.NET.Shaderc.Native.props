@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <_Silk_NativePackages_Shaderc_IsWindows Condition="'$([System.Runtime.InteropServices.RuntimeInformation]::IsOSPlatform($([System.Runtime.InteropServices.OSPlatform]::Windows)))' == 'true'">true</_Silk_NativePackages_Shaderc_IsWindows>
+    <_Silk_NativePackages_Shaderc_IsMacOS Condition="'$([System.Runtime.InteropServices.RuntimeInformation]::IsOSPlatform($([System.Runtime.InteropServices.OSPlatform]::OSX)))' == 'true'">true</_Silk_NativePackages_Shaderc_IsMacOS>
+    <_Silk_NativePackages_Shaderc_IsLinux Condition="'$([System.Runtime.InteropServices.RuntimeInformation]::IsOSPlatform($([System.Runtime.InteropServices.OSPlatform]::Linux)))' == 'true'">true</_Silk_NativePackages_Shaderc_IsLinux>
+
+    <_Silk_NativePackages_Shaderc_NativeRuntime Condition=" '$(_Silk_NativePackages_Shaderc_NativeRuntime)' == '' And '$(_Silk_NativePackages_Shaderc_IsLinux)' == 'true' And ('$(Prefer32Bit)' == 'true' Or '$(PlatformTarget)' == 'x86')">linux-x86</_Silk_NativePackages_Shaderc_NativeRuntime>
+    <_Silk_NativePackages_Shaderc_NativeRuntime Condition=" '$(_Silk_NativePackages_Shaderc_NativeRuntime)' == '' And '$(_Silk_NativePackages_Shaderc_IsLinux)' == 'true' And ('$(Prefer32Bit)' == 'false' Or '$(PlatformTarget)' == 'x64')">linux-x64</_Silk_NativePackages_Shaderc_NativeRuntime>
+    <_Silk_NativePackages_Shaderc_NativeRuntime Condition=" '$(_Silk_NativePackages_Shaderc_NativeRuntime)' == '' And '$(_Silk_NativePackages_Shaderc_IsLinux)' == 'true' And '$(PlatformTarget)' == 'arm64'">linux-arm64</_Silk_NativePackages_Shaderc_NativeRuntime>
+
+    <_Silk_NativePackages_Shaderc_NativeRuntime Condition=" '$(_Silk_NativePackages_Shaderc_NativeRuntime)' == '' And '$(_Silk_NativePackages_Shaderc_IsWindows)' == 'true' And ('$(Prefer32Bit)' == 'true' Or '$(PlatformTarget)' == 'x86')">win-x86</_Silk_NativePackages_Shaderc_NativeRuntime>
+    <_Silk_NativePackages_Shaderc_NativeRuntime Condition=" '$(_Silk_NativePackages_Shaderc_NativeRuntime)' == '' And '$(_Silk_NativePackages_Shaderc_IsWindows)' == 'true' And ('$(Prefer32Bit)' == 'false' Or '$(PlatformTarget)' == 'x64')">win-x64</_Silk_NativePackages_Shaderc_NativeRuntime>
+    <_Silk_NativePackages_Shaderc_NativeRuntime Condition=" '$(_Silk_NativePackages_Shaderc_NativeRuntime)' == '' And '$(_Silk_NativePackages_Shaderc_IsWindows)' == 'true' And '$(PlatformTarget)' == 'arm64'">win-arm64</_Silk_NativePackages_Shaderc_NativeRuntime>
+    
+    <_Silk_NativePackages_Shaderc_NativeRuntime Condition=" '$(_Silk_NativePackages_Shaderc_NativeRuntime)' == '' And '$(_Silk_NativePackages_Shaderc_IsMacOS)' == 'true' And ('$(Prefer32Bit)' == 'false' Or '$(PlatformTarget)' == 'x64')">osx-x64</_Silk_NativePackages_Shaderc_NativeRuntime>
+    <_Silk_NativePackages_Shaderc_NativeRuntime Condition=" '$(_Silk_NativePackages_Shaderc_NativeRuntime)' == '' And '$(_Silk_NativePackages_Shaderc_IsMacOS)' == 'true' And '$(PlatformTarget)' == 'arm64'">osx-arm64</_Silk_NativePackages_Shaderc_NativeRuntime>
+
+    <_Silk_NativePackages_Shaderc_NativeLibName Condition="'$(_Silk_NativePackages_Shaderc_NativeRuntime)' == 'win-x86'">shaderc_shared.dll</_Silk_NativePackages_Shaderc_NativeLibName>
+    <_Silk_NativePackages_Shaderc_NativeLibName Condition="'$(_Silk_NativePackages_Shaderc_NativeRuntime)' == 'win-x64'">shaderc_shared.dll</_Silk_NativePackages_Shaderc_NativeLibName>
+    <_Silk_NativePackages_Shaderc_NativeLibName Condition="'$(_Silk_NativePackages_Shaderc_NativeRuntime)' == 'win-arm64'">shaderc_shared.dll</_Silk_NativePackages_Shaderc_NativeLibName>
+    
+    <_Silk_NativePackages_Shaderc_NativeLibName Condition="'$(_Silk_NativePackages_Shaderc_NativeRuntime)' == 'linux-x64'">libshaderc_shared.so</_Silk_NativePackages_Shaderc_NativeLibName>
+    <_Silk_NativePackages_Shaderc_NativeLibName Condition="'$(_Silk_NativePackages_Shaderc_NativeRuntime)' == 'linux-x86'">libshaderc_shared.so</_Silk_NativePackages_Shaderc_NativeLibName>
+    <_Silk_NativePackages_Shaderc_NativeLibName Condition="'$(_Silk_NativePackages_Shaderc_NativeRuntime)' == 'linux-arm64'">libshaderc_shared.so</_Silk_NativePackages_Shaderc_NativeLibName>
+    
+    <_Silk_NativePackages_Shaderc_NativeLibName Condition="'$(_Silk_NativePackages_Shaderc_NativeRuntime)' == 'osx-arm64'">libshaderc_shared.dylib</_Silk_NativePackages_Shaderc_NativeLibName>
+    <_Silk_NativePackages_Shaderc_NativeLibName Condition="'$(_Silk_NativePackages_Shaderc_NativeRuntime)' == 'osx-x64'">libshaderc_shared.dylib</_Silk_NativePackages_Shaderc_NativeLibName>
+  </PropertyGroup>
+  <ItemGroup>
+    <Content Condition="'$(_Silk_NativePackages_Shaderc_NativeRuntime)' != ''" Include="$(MSBuildThisFileDirectory)..\..\runtimes\$(_Silk_NativePackages_Shaderc_NativeRuntime)\native\$(_Silk_NativePackages_Shaderc_NativeLibName)">
+      <Link>%(Filename)%(Extension)</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <Visible>False</Visible>
+    </Content>
+  </ItemGroup>
+</Project>

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <_Ultz_NativePackages_Assimp_IsWindows Condition="'$([System.Runtime.InteropServices.RuntimeInformation]::IsOSPlatform($([System.Runtime.InteropServices.OSPlatform]::Windows)))' == 'true'">true</_Ultz_NativePackages_Assimp_IsWindows>
+    <_Ultz_NativePackages_Assimp_IsMacOS Condition="'$([System.Runtime.InteropServices.RuntimeInformation]::IsOSPlatform($([System.Runtime.InteropServices.OSPlatform]::OSX)))' == 'true'">true</_Ultz_NativePackages_Assimp_IsMacOS>
+    <_Ultz_NativePackages_Assimp_IsLinux Condition="'$([System.Runtime.InteropServices.RuntimeInformation]::IsOSPlatform($([System.Runtime.InteropServices.OSPlatform]::Linux)))' == 'true'">true</_Ultz_NativePackages_Assimp_IsLinux>
+
+    <_Ultz_NativePackages_Assimp_NativeRuntime Condition=" '$(_Ultz_NativePackages_Assimp_NativeRuntime)' == '' And '$(_Ultz_NativePackages_Assimp_IsMacOS)' == 'true' And ('$(Prefer32Bit)' == 'false' Or '$(PlatformTarget)' == 'x64')">osx-x64</_Ultz_NativePackages_Assimp_NativeRuntime>
+    <_Ultz_NativePackages_Assimp_NativeRuntime Condition=" '$(_Ultz_NativePackages_Assimp_NativeRuntime)' == '' And '$(_Ultz_NativePackages_Assimp_IsLinux)' == 'true' And ('$(Prefer32Bit)' == 'false' Or '$(PlatformTarget)' == 'x64')">linux-x64</_Ultz_NativePackages_Assimp_NativeRuntime>
+    <_Ultz_NativePackages_Assimp_NativeRuntime Condition=" '$(_Ultz_NativePackages_Assimp_NativeRuntime)' == '' And '$(_Ultz_NativePackages_Assimp_IsWindows)' == 'true' And ('$(Prefer32Bit)' == 'true' Or '$(PlatformTarget)' == 'x86')">win-x86</_Ultz_NativePackages_Assimp_NativeRuntime>
+    <_Ultz_NativePackages_Assimp_NativeRuntime Condition=" '$(_Ultz_NativePackages_Assimp_NativeRuntime)' == '' And '$(_Ultz_NativePackages_Assimp_IsWindows)' == 'true' And ('$(Prefer32Bit)' == 'false' Or '$(PlatformTarget)' == 'x64')">win-x64</_Ultz_NativePackages_Assimp_NativeRuntime>
+
+    <_Ultz_NativePackages_Assimp_NativeLibName Condition="'$(_Ultz_NativePackages_Assimp_NativeRuntime)' == 'win-x86'">Assimp32.dll</_Ultz_NativePackages_Assimp_NativeLibName>
+    <_Ultz_NativePackages_Assimp_NativeLibName Condition="'$(_Ultz_NativePackages_Assimp_NativeRuntime)' == 'win-x64'">Assimp64.dll</_Ultz_NativePackages_Assimp_NativeLibName>
+    <_Ultz_NativePackages_Assimp_NativeLibName Condition="'$(_Ultz_NativePackages_Assimp_NativeRuntime)' == 'osx-x64'">libassimp.5.dylib</_Ultz_NativePackages_Assimp_NativeLibName>
+    <_Ultz_NativePackages_Assimp_NativeLibName Condition="'$(_Ultz_NativePackages_Assimp_NativeRuntime)' == 'osx-arm64'">libassimp.5.dylib</_Ultz_NativePackages_Assimp_NativeLibName>
+    <_Ultz_NativePackages_Assimp_NativeLibName Condition="'$(_Ultz_NativePackages_Assimp_NativeRuntime)' == 'linux-x64'">libassimp.so.5</_Ultz_NativePackages_Assimp_NativeLibName>
+  </PropertyGroup>
+  <ItemGroup>
+    <Content Condition="'$(_Ultz_NativePackages_Assimp_NativeRuntime)' != ''" Include="$(MSBuildThisFileDirectory)..\..\runtimes\$(_Ultz_NativePackages_Assimp_NativeRuntime)\native\$(_Ultz_NativePackages_Assimp_NativeLibName)">
+      <Link>%(Filename)%(Extension)</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <Visible>False</Visible>
+    </Content>
+  </ItemGroup>
+</Project>
