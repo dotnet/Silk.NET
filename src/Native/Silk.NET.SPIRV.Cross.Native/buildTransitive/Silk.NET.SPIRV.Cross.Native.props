@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <_Silk_NativePackages_SPIRVCross_IsWindows Condition="'$([System.Runtime.InteropServices.RuntimeInformation]::IsOSPlatform($([System.Runtime.InteropServices.OSPlatform]::Windows)))' == 'true'">true</_Silk_NativePackages_SPIRVCross_IsWindows>
+    <_Silk_NativePackages_SPIRVCross_IsMacOS Condition="'$([System.Runtime.InteropServices.RuntimeInformation]::IsOSPlatform($([System.Runtime.InteropServices.OSPlatform]::OSX)))' == 'true'">true</_Silk_NativePackages_SPIRVCross_IsMacOS>
+    <_Silk_NativePackages_SPIRVCross_IsLinux Condition="'$([System.Runtime.InteropServices.RuntimeInformation]::IsOSPlatform($([System.Runtime.InteropServices.OSPlatform]::Linux)))' == 'true'">true</_Silk_NativePackages_SPIRVCross_IsLinux>
+
+    <_Silk_NativePackages_SPIRVCross_NativeRuntime Condition=" '$(_Silk_NativePackages_SPIRVCross_NativeRuntime)' == '' And '$(_Silk_NativePackages_SPIRVCross_IsLinux)' == 'true' And ('$(Prefer32Bit)' == 'true' Or '$(PlatformTarget)' == 'x86')">linux-x86</_Silk_NativePackages_SPIRVCross_NativeRuntime>
+    <_Silk_NativePackages_SPIRVCross_NativeRuntime Condition=" '$(_Silk_NativePackages_SPIRVCross_NativeRuntime)' == '' And '$(_Silk_NativePackages_SPIRVCross_IsLinux)' == 'true' And ('$(Prefer32Bit)' == 'false' Or '$(PlatformTarget)' == 'x64')">linux-x64</_Silk_NativePackages_SPIRVCross_NativeRuntime>
+    <_Silk_NativePackages_SPIRVCross_NativeRuntime Condition=" '$(_Silk_NativePackages_SPIRVCross_NativeRuntime)' == '' And '$(_Silk_NativePackages_SPIRVCross_IsLinux)' == 'true' And '$(PlatformTarget)' == 'arm64'">linux-arm64</_Silk_NativePackages_SPIRVCross_NativeRuntime>
+    
+    <_Silk_NativePackages_SPIRVCross_NativeRuntime Condition=" '$(_Silk_NativePackages_SPIRVCross_NativeRuntime)' == '' And '$(_Silk_NativePackages_SPIRVCross_IsWindows)' == 'true' And ('$(Prefer32Bit)' == 'true' Or '$(PlatformTarget)' == 'x86')">win-x86</_Silk_NativePackages_SPIRVCross_NativeRuntime>
+    <_Silk_NativePackages_SPIRVCross_NativeRuntime Condition=" '$(_Silk_NativePackages_SPIRVCross_NativeRuntime)' == '' And '$(_Silk_NativePackages_SPIRVCross_IsWindows)' == 'true' And ('$(Prefer32Bit)' == 'false' Or '$(PlatformTarget)' == 'x64')">win-x64</_Silk_NativePackages_SPIRVCross_NativeRuntime>
+    <_Silk_NativePackages_SPIRVCross_NativeRuntime Condition=" '$(_Silk_NativePackages_SPIRVCross_NativeRuntime)' == '' And '$(_Silk_NativePackages_SPIRVCross_IsWindows)' == 'true' And '$(PlatformTarget)' == 'arm64'">win-arm64</_Silk_NativePackages_SPIRVCross_NativeRuntime>
+    
+    <_Silk_NativePackages_SPIRVCross_NativeRuntime Condition=" '$(_Silk_NativePackages_SPIRVCross_NativeRuntime)' == '' And '$(_Silk_NativePackages_SPIRVCross_IsMacOS)' == 'true' And ('$(Prefer32Bit)' == 'false' Or '$(PlatformTarget)' == 'x64')">osx-x64</_Silk_NativePackages_SPIRVCross_NativeRuntime>
+    <_Silk_NativePackages_SPIRVCross_NativeRuntime Condition=" '$(_Silk_NativePackages_SPIRVCross_NativeRuntime)' == '' And '$(_Silk_NativePackages_SPIRVCross_IsMacOS)' == 'true' And '$(PlatformTarget)' == 'arm64'">osx-arm64</_Silk_NativePackages_SPIRVCross_NativeRuntime>
+
+    <_Silk_NativePackages_SPIRVCross_NativeLibName Condition="'$(_Silk_NativePackages_SPIRVCross_NativeRuntime)' == 'win-x86'">spirv-cross.dll</_Silk_NativePackages_SPIRVCross_NativeLibName>
+    <_Silk_NativePackages_SPIRVCross_NativeLibName Condition="'$(_Silk_NativePackages_SPIRVCross_NativeRuntime)' == 'win-x64'">spirv-cross.dll</_Silk_NativePackages_SPIRVCross_NativeLibName>
+    <_Silk_NativePackages_SPIRVCross_NativeLibName Condition="'$(_Silk_NativePackages_SPIRVCross_NativeRuntime)' == 'win-arm64'">spirv-cross.dll</_Silk_NativePackages_SPIRVCross_NativeLibName>
+    
+    <_Silk_NativePackages_SPIRVCross_NativeLibName Condition="'$(_Silk_NativePackages_SPIRVCross_NativeRuntime)' == 'linux-x64'">libspirv-cross.so</_Silk_NativePackages_SPIRVCross_NativeLibName>
+    <_Silk_NativePackages_SPIRVCross_NativeLibName Condition="'$(_Silk_NativePackages_SPIRVCross_NativeRuntime)' == 'linux-x86'">libspirv-cross.so</_Silk_NativePackages_SPIRVCross_NativeLibName>
+    <_Silk_NativePackages_SPIRVCross_NativeLibName Condition="'$(_Silk_NativePackages_SPIRVCross_NativeRuntime)' == 'linux-arm64'">libspirv-cross.so</_Silk_NativePackages_SPIRVCross_NativeLibName>
+    
+    <_Silk_NativePackages_SPIRVCross_NativeLibName Condition="'$(_Silk_NativePackages_SPIRVCross_NativeRuntime)' == 'osx-arm64'">libspirv-cross.dylib</_Silk_NativePackages_SPIRVCross_NativeLibName>
+    <_Silk_NativePackages_SPIRVCross_NativeLibName Condition="'$(_Silk_NativePackages_SPIRVCross_NativeRuntime)' == 'osx-x64'">libspirv-cross.dylib</_Silk_NativePackages_SPIRVCross_NativeLibName>
+  </PropertyGroup>
+  <ItemGroup>
+    <Content Condition="'$(_Silk_NativePackages_SPIRVCross_NativeRuntime)' != ''" Include="$(MSBuildThisFileDirectory)..\..\runtimes\$(_Silk_NativePackages_SPIRVCross_NativeRuntime)\native\$(_Silk_NativePackages_SPIRVCross_NativeLibName)">
+      <Link>%(Filename)%(Extension)</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <Visible>False</Visible>
+    </Content>
+  </ItemGroup>
+</Project>
