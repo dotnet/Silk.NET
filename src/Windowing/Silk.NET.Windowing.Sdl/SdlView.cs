@@ -1,15 +1,21 @@
 // Licensed to the .NET Foundation under one or more agreements.
 // The .NET Foundation licenses this file to you under the MIT license.
 
+using System;
 using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;
 using System.Reflection;
+using System.Runtime.CompilerServices;
+using System.Runtime.InteropServices;
 using System.Threading;
 using Silk.NET.Core;
 using Silk.NET.Core.Contexts;
 using Silk.NET.Maths;
 using Silk.NET.SDL;
 using Silk.NET.Windowing.Internals;
+#if __IOS__
+using Silk.NET.Windowing.Sdl.iOS;
+#endif
 
 // We can't import System because System has a type called nint on iOS and Mac Catalyst.
 // As such, throughout this file System is fully qualified.
@@ -262,6 +268,67 @@ namespace Silk.NET.Windowing.Sdl
 
             Sdl.ThrowError();
         }
+
+#if __IOS__
+#pragma warning disable CS0618 // Type or member is obsolete
+        public override void Run(Action onFrame)
+        {
+            if (_coreRunSelf is not null || _onFrame is not null)
+            {
+                throw new InvalidOperationException("App is already running.");
+            }
+
+            if (SilkMobile.IsRunning)
+            {
+                // This is not correct, we should be using SDL_iPhoneSetAnimationCallback and then letting
+                // SDL_UIKitRunApp take care of the lifetime, and I attempt to warn the developer about this in the
+                // deprecation warning. For now, do things the old way.
+                base.Run(onFrame);
+                return;
+            }
+
+            ulong name = 0x796D6D7564; // dummy
+            var namePtr = (byte*)&name;
+            _coreRunSelf = this;
+            _onFrame = onFrame;
+            SilkMobile.RunApp(1, &namePtr, (PfnMainFunc) (delegate* unmanaged[Cdecl]<int, byte**, int>) &CoreRun);
+        }
+#pragma warning restore CS0618 // Type or member is obsolete
+
+        private static SdlView? _coreRunSelf;
+        private Action? _onFrame;
+
+        [UnmanagedCallersOnly(CallConvs = new[] { typeof(CallConvCdecl) })]
+        private static int CoreRun(int argc, byte** argv)
+        {
+            if (_coreRunSelf is null)
+            {
+                return 1;
+            }
+
+            _coreRunSelf.CoreRun();
+            return 0;
+        }
+
+        private void CoreRun()
+        {
+            if (Sdl.IPhoneSetAnimationCallback(SdlWindow, 1, (delegate* unmanaged[Cdecl]<void*, void>) &OnFrame, null) != 0)
+            {
+                Sdl.ThrowError();
+            }
+        }
+        
+        [UnmanagedCallersOnly(CallConvs = new[] { typeof(CallConvCdecl) })]
+        private static void OnFrame(void* userData)
+        {
+            if (_coreRunSelf is not { _onFrame: {} onFrame })
+            {
+                return;
+            }
+
+            onFrame();
+        }
+#endif
 
         protected override void CoreReset()
         {
