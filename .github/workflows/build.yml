@@ -59,14 +59,12 @@ jobs:
       run: ./build.sh ValidateSolution
     - name: Pack (CI)
       if: ${{ github.repository != 'dotnet/Silk.NET' || !startsWith(github.ref, 'refs/tags/') }}
-      # TODO build native mixins such as BuildLibSilkDroid
       # Use a release NUKE so it doesn't interfere with the debug build
-      run: dotnet run --project build/nuke/Silk.NET.NUKE.csproj -c Release -- Pack --configuration Debug --msbuild-properties VersionSuffix=build${{ github.run_number }}.0 ContinuousIntegrationBuild=true
+      run: dotnet run --project build/nuke/Silk.NET.NUKE.csproj -c Release -- Pack --configuration Debug --msbuild-properties VersionSuffix=${{ github.event_name != 'pull_request' && format('build{0}.0', github.run_number) || format('pr{0}.{1}', github.event.number, github.run_number) }} ContinuousIntegrationBuild=true
       env:
         ANDROID_HOME: /Users/runner/Library/Android/sdk
     - name: Pack (CD)
       if: ${{ github.repository == 'dotnet/Silk.NET' && startsWith(github.ref, 'refs/tags/') }}
-      # TODO build native mixins such as BuildLibSilkDroid
       run: ./build.sh Pack --configuration Release --msbuild-properties ContinuousIntegrationBuild=true
     - name: Upload Unsigned Artifacts to Actions
       uses: actions/upload-artifact@v4
@@ -76,10 +74,10 @@ jobs:
         if-no-files-found: warn
         retention-days: 1
     - name: Push to Experimental Feed
-      if: ${{ github.repository == 'dotnet/Silk.NET' && github.event_name != 'pull_request' }}
+      if: ${{ github.repository == 'dotnet/Silk.NET' }}
       run: ./build.sh PushToNuGet --skip Clean Restore Compile Pack --nuget-feed https://dotnet.github.io/Silk.NET/nuget/experimental/index.json --nuget-username ${{ secrets.EXP_NUGET_USERNAME }} --nuget-password ${{ secrets.EXP_NUGET_PASSWORD }} --nuget-api-key ${{ secrets.EXP_NUGET_PASSWORD }}
     - name: Push to GitHub Packages
-      if: ${{ github.repository == 'dotnet/Silk.NET' && github.event_name != 'pull_request' }}
+      if: ${{ github.repository == 'dotnet/Silk.NET' }}
       run: ./build.sh PushToNuGet --skip Clean Restore Compile Pack --nuget-feed https://nuget.pkg.github.com/dotnet/index.json --nuget-api-key ${{ secrets.GITHUB_TOKEN }}
   PushRelease:
     name: Push Release to NuGet

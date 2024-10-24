@@ -1,25 +1,34 @@
+using System;
 using System.Collections.Generic;
+using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using ObjCRuntime;
 using Silk.NET.Core.Loader;
 using Silk.NET.Core.Native;
+using Silk.NET.SDL;
 
 namespace Silk.NET.Windowing.Sdl.iOS
 {
+    [Obsolete(
+        "Upon its graduation from experimental status in Silk.NET 2.22, SilkMobile is now implicit behaviour when " +
+        "calling IView.Run. SilkMobile should no longer be used and its continued usage may cause unexpected " +
+        "behaviour (e.g. with Game Center integration)."
+    )]
     public static class SilkMobile
     {
         static SilkMobile()
         {
             SearchPathContainer.Platform = UnderlyingPlatform.IOS;
         }
-        
-        private static bool _running;
+
+        public static bool IsRunning { get; private set; }
+
         private static MainFunction? CurrentMain { get; set; }
         [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
         public unsafe delegate void MainFunction(int numArgs, byte** args);
         [DllImport("__Internal", EntryPoint = "SDL_UIKitRunApp")]
         private static extern unsafe void CoreRunApp(int numArgs, byte** args, nint callback);
-            
+
         public static unsafe void RunApp(int numArgs, byte** args, nint callback)
         {
             BeginRun();
@@ -76,23 +85,27 @@ namespace Silk.NET.Windowing.Sdl.iOS
             EndRun();
         }
 
-        [MonoPInvokeCallback(typeof(MainFunction))]
-        private static unsafe void CallMain(int numArgs, byte** args) => CurrentMain!(numArgs, args);
-        
+        [UnmanagedCallersOnly(CallConvs = new[]{typeof(CallConvCdecl)})]
+        private static unsafe int CallMain(int numArgs, byte** args)
+        {
+            CurrentMain!(numArgs, args);
+            return 0; // We screwed up when originally adding this...
+        }
+
         private static unsafe nint GetCallMainPtr()
-            => Marshal.GetFunctionPointerForDelegate((MainFunction) CallMain);
+            => (PfnMainFunc)(delegate* unmanaged[Cdecl]<int, byte**, int>) &CallMain;
 
         private static void BeginRun()
         {
-            if (_running)
+            if (IsRunning)
             {
                 throw new System.InvalidOperationException("App already running.");
             }
 
             SdlWindowing.RegisterPlatform();
-            _running = true;
+            IsRunning = true;
         }
 
-        private static void EndRun() => _running = false;
+        private static void EndRun() => IsRunning = false;
     }
 }

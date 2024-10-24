@@ -38,6 +38,7 @@
         <WriteLinesToFile File="@(SilkGeneratedTargetFile)" Lines="@(SilkGeneratedTargetLine)" Overwrite="true" Encoding="UTF-8" Condition="'@(SilkPInvokeOverride)' != ''" />
         <ItemGroup Condition="'@(SilkPInvokeOverride)' != ''">
             <TfmSpecificPackageFile Include="@(SilkGeneratedTargetFile)" Link="build/$(_SilkNuGetShortFolderName)/$(PackageId).targets" Pack="true" PackagePath="build/$(_SilkNuGetShortFolderName)/$(PackageId).targets" />
+            <TfmSpecificPackageFile Include="@(SilkGeneratedTargetFile)" Link="buildTransitive/$(_SilkNuGetShortFolderName)/$(PackageId).targets" Pack="true" PackagePath="buildTransitive/$(_SilkNuGetShortFolderName)/$(PackageId).targets" />
         </ItemGroup>
     </Target>
     <Target Name="SilkGenerateILLinkSubs" Condition="$(TargetFramework.Contains('net6')) or $(TargetFramework.Contains('net7')) or $(TargetFramework.Contains('net8'))">

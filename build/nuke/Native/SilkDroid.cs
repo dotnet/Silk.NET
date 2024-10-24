@@ -36,6 +36,12 @@ partial class Build {
                 return AndroidHomeValue;
             }
 
+            if ((Environment.GetEnvironmentVariable("ANDROID_HOME") ?? Environment.GetEnvironmentVariable("ANDROID_SDK_ROOT")) is {} sdk)
+            {
+                AndroidHomeValue = sdk;
+                return sdk;
+            }
+
             var utils = RootDirectory / "build" / "utilities";
             DotNet($"build \"{utils / "android_probe.proj"}\" /t:GetAndroidJar");
             AndroidHomeValue = (AbsolutePath) File.ReadAllText(utils / "android.jar.gen.txt") / ".." / ".." / "..";
@@ -80,6 +86,7 @@ partial class Build {
 
                     var envVars = CreateEnvVarDictionary();
                     envVars["ANDROID_HOME"] = AndroidHome;
+                    envVars["ANDROID_SDK_ROOT"] = AndroidHome;
 
                     foreach (var ndk in Directory.GetDirectories((AbsolutePath) AndroidHome / "ndk")
                                  .OrderByDescending(x => Version.Parse(Path.GetFileName(x))))
@@ -87,7 +94,7 @@ partial class Build {
                         envVars["ANDROID_NDK_HOME"] = ndk;
                     }
 
-                    using var process = StartShell($".{Path.PathSeparator}gradlew build", silkDroid, envVars);
+                    using var process = StartShell($".{Path.DirectorySeparatorChar}gradlew build", silkDroid, envVars);
                     process.AssertZeroExitCode();
                     var ret = process.Output;
                     CopyFile
@@ -96,6 +103,12 @@ partial class Build {
                         SourceDirectory / "Windowing" / "Silk.NET.Windowing.Sdl" / "Android" / "app-release.aar",
                         FileExistsPolicy.Overwrite
                     );
+
+                    // Not expecting this to succeed, but we need to do this so we generate the bindings to go in the public API.
+                    InheritedShell($"dotnet build \"{SourceDirectory / "Windowing" / "Silk.NET.Windowing.Sdl" / "Silk.NET.Windowing.Sdl.csproj"}\"").AssertWaitForExit();
+
+                    // Update the public API.
+                    InheritedShell(string.Format(FormatDeclCmd, SourceDirectory / "Windowing" / "Silk.NET.Windowing.Sdl" / "Silk.NET.Windowing.Sdl.csproj")).AssertZeroExitCode();
                     return ret;
                 }
             )
