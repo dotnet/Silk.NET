@@ -90,3 +90,4 @@ jobs:
         run: ${{ matrix.env.nuke_invoke }} VulkanLoader
         env:
           PUSHABLE_GITHUB_TOKEN: ${{ secrets.PUSHABLE_GITHUB_TOKEN }}
+          VERBOSE: true

@@ -1696,6 +1696,10 @@ namespace Silk.NET.Vulkan
         PhysicalDeviceMutableDescriptorTypeFeaturesExt = 1000351000,
         [NativeName("Name", "VK_STRUCTURE_TYPE_MUTABLE_DESCRIPTOR_TYPE_CREATE_INFO_EXT")]
         MutableDescriptorTypeCreateInfoExt = 1000351002,
+        [NativeName("Name", "VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_LEGACY_VERTEX_ATTRIBUTES_FEATURES_EXT")]
+        PhysicalDeviceLegacyVertexAttributesFeaturesExt = 1000495000,
+        [NativeName("Name", "VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_LEGACY_VERTEX_ATTRIBUTES_PROPERTIES_EXT")]
+        PhysicalDeviceLegacyVertexAttributesPropertiesExt = 1000495001,
         [NativeName("Name", "VK_STRUCTURE_TYPE_LAYER_SETTINGS_CREATE_INFO_EXT")]
         LayerSettingsCreateInfoExt = 1000496000,
         [NativeName("Name", "VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_SHADER_CORE_BUILTINS_FEATURES_ARM")]
@@ -1828,6 +1832,12 @@ namespace Silk.NET.Vulkan
         PhysicalDeviceShaderAtomicFloat16VectorFeaturesNV = 1000563000,
         [NativeName("Name", "VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_RAY_TRACING_VALIDATION_FEATURES_NV")]
         PhysicalDeviceRayTracingValidationFeaturesNV = 1000568000,
+        [NativeName("Name", "VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_IMAGE_ALIGNMENT_CONTROL_FEATURES_MESA")]
+        PhysicalDeviceImageAlignmentControlFeaturesMesa = 1000575000,
+        [NativeName("Name", "VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_IMAGE_ALIGNMENT_CONTROL_PROPERTIES_MESA")]
+        PhysicalDeviceImageAlignmentControlPropertiesMesa = 1000575001,
+        [NativeName("Name", "VK_STRUCTURE_TYPE_IMAGE_ALIGNMENT_CONTROL_CREATE_INFO_MESA")]
+        ImageAlignmentControlCreateInfoMesa = 1000575002,
         [NativeName("Name", "VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_SUBGROUP_PROPERTIES")]
         PhysicalDeviceSubgroupProperties = 1000094000,
         [NativeName("Name", "VK_STRUCTURE_TYPE_BIND_BUFFER_MEMORY_INFO")]
