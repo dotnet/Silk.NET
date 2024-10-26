@@ -9,6 +9,8 @@
         <RuntimeIdentifiers Condition="'$(RuntimeIdentifiers)' == '' And '$(TargetFramework)' == 'net6.0'">$(NETCoreSdkRuntimeIdentifier)</RuntimeIdentifiers>
         <RuntimeIdentifiers Condition="'$(RuntimeIdentifiers)' == '' And '$(TargetFramework)' == 'net6.0-android'">android-arm64;android-x86;android-arm;android-x64</RuntimeIdentifiers>
         <TrimMode>full</TrimMode>
+        <PublishTrimmed>true</PublishTrimmed>
+        <LinkMode>Full</LinkMode>
     </PropertyGroup>
 
     <ItemGroup>

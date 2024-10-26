@@ -15,6 +15,9 @@ namespace Silk.NET.Windowing.Sdl.iOS
         "calling IView.Run. SilkMobile should no longer be used and its continued usage may cause unexpected " +
         "behaviour (e.g. with Game Center integration)."
     )]
+    // We need to keep Microsoft.iOS.dll from being linked out, and to do that we need to reference MainFunction
+    // which references MonoPInvokeCallback which is in Microsoft.iOS.dll.
+    [DynamicallyAccessedMembers(DynamicallyAccessedMemberTypes.NonPublicMethods)]
     public static class SilkMobile
     {
         static SilkMobile()
@@ -111,9 +114,6 @@ namespace Silk.NET.Windowing.Sdl.iOS
 
         private static void EndRun() => IsRunning = false;
 
-        // We need to keep Microsoft.iOS.dll from being linked out, and to do that we need to reference MainFunction
-        // which references MonoPInvokeCallback which is in Microsoft.iOS.dll.
-        [DynamicallyAccessedMembers(DynamicallyAccessedMemberTypes.All)]
         private static unsafe nint Dummy() => Marshal.GetFunctionPointerForDelegate<MainFunction>(Dummy);
 
         [MonoPInvokeCallback(typeof(MainFunction))]
