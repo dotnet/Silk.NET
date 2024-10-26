@@ -27,7 +27,6 @@ namespace Silk.NET.Windowing.Sdl.iOS
         private static MainFunction? CurrentMain { get; set; }
 
         [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-        [MonoPInvokeCallback]
         public unsafe delegate void MainFunction(int numArgs, byte** args);
 
         [DllImport("__Internal", EntryPoint = "SDL_UIKitRunApp")]
@@ -115,6 +114,9 @@ namespace Silk.NET.Windowing.Sdl.iOS
         // We need to keep Microsoft.iOS.dll from being linked out, and to do that we need to reference MainFunction
         // which references MonoPInvokeCallback which is in Microsoft.iOS.dll.
         [DynamicallyAccessedMembers(DynamicallyAccessedMemberTypes.All)]
-        private static unsafe void Dummy() => Marshal.GetFunctionPointerForDelegate<MainFunction>((_, _) => {});
+        private static unsafe nint Dummy() => Marshal.GetFunctionPointerForDelegate<MainFunction>(Dummy);
+
+        [MonoPInvokeCallback(typeof(MainFunction))]
+        private static unsafe void Dummy(int argc, byte** argv) {}
     }
 }
