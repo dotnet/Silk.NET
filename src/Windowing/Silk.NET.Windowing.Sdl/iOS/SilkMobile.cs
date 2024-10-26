@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Diagnostics.CodeAnalysis;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using ObjCRuntime;
@@ -24,8 +25,11 @@ namespace Silk.NET.Windowing.Sdl.iOS
         public static bool IsRunning { get; private set; }
 
         private static MainFunction? CurrentMain { get; set; }
+
         [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
+        [MonoPInvokeCallback]
         public unsafe delegate void MainFunction(int numArgs, byte** args);
+
         [DllImport("__Internal", EntryPoint = "SDL_UIKitRunApp")]
         private static extern unsafe void CoreRunApp(int numArgs, byte** args, nint callback);
 
@@ -107,5 +111,8 @@ namespace Silk.NET.Windowing.Sdl.iOS
         }
 
         private static void EndRun() => IsRunning = false;
+
+        [DynamicallyAccessedMembers(DynamicallyAccessedMemberTypes.All)]
+        private static void Dummy() => Marshal.GetFunctionPointerForDelegate<MainFunction>();
     }
 }
