@@ -112,7 +112,9 @@ namespace Silk.NET.Windowing.Sdl.iOS
 
         private static void EndRun() => IsRunning = false;
 
+        // We need to keep Microsoft.iOS.dll from being linked out, and to do that we need to reference MainFunction
+        // which references MonoPInvokeCallback which is in Microsoft.iOS.dll.
         [DynamicallyAccessedMembers(DynamicallyAccessedMemberTypes.All)]
-        private static void Dummy() => Marshal.GetFunctionPointerForDelegate<MainFunction>();
+        private static unsafe void Dummy() => Marshal.GetFunctionPointerForDelegate<MainFunction>((_, _) => {});
     }
 }
