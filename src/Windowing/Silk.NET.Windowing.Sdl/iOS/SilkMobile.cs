@@ -1,23 +1,16 @@
-using System;
 using System.Collections.Generic;
-using System.Diagnostics.CodeAnalysis;
-using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using ObjCRuntime;
 using Silk.NET.Core.Loader;
 using Silk.NET.Core.Native;
-using Silk.NET.SDL;
 
 namespace Silk.NET.Windowing.Sdl.iOS
 {
-    [Obsolete(
+    [System.Obsolete(
         "Upon its graduation from experimental status in Silk.NET 2.22, SilkMobile is now implicit behaviour when " +
         "calling IView.Run. SilkMobile should no longer be used and its continued usage may cause unexpected " +
         "behaviour (e.g. with Game Center integration)."
     )]
-    // We need to keep Microsoft.iOS.dll from being linked out, and to do that we need to reference MainFunction
-    // which references MonoPInvokeCallback which is in Microsoft.iOS.dll.
-    [DynamicallyAccessedMembers(DynamicallyAccessedMemberTypes.NonPublicMethods)]
     public static class SilkMobile
     {
         static SilkMobile()
@@ -28,10 +21,8 @@ namespace Silk.NET.Windowing.Sdl.iOS
         public static bool IsRunning { get; private set; }
 
         private static MainFunction? CurrentMain { get; set; }
-
         [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
         public unsafe delegate void MainFunction(int numArgs, byte** args);
-
         [DllImport("__Internal", EntryPoint = "SDL_UIKitRunApp")]
         private static extern unsafe void CoreRunApp(int numArgs, byte** args, nint callback);
 
@@ -91,15 +82,11 @@ namespace Silk.NET.Windowing.Sdl.iOS
             EndRun();
         }
 
-        [UnmanagedCallersOnly(CallConvs = new[]{typeof(CallConvCdecl)})]
-        private static unsafe int CallMain(int numArgs, byte** args)
-        {
-            CurrentMain!(numArgs, args);
-            return 0; // We screwed up when originally adding this...
-        }
+        [MonoPInvokeCallback(typeof(MainFunction))]
+        private static unsafe void CallMain(int numArgs, byte** args) => CurrentMain!(numArgs, args);
 
         private static unsafe nint GetCallMainPtr()
-            => (PfnMainFunc)(delegate* unmanaged[Cdecl]<int, byte**, int>) &CallMain;
+            => Marshal.GetFunctionPointerForDelegate((MainFunction) CallMain);
 
         private static void BeginRun()
         {
@@ -113,10 +100,5 @@ namespace Silk.NET.Windowing.Sdl.iOS
         }
 
         private static void EndRun() => IsRunning = false;
-
-        private static unsafe nint Dummy() => Marshal.GetFunctionPointerForDelegate<MainFunction>(Dummy);
-
-        [MonoPInvokeCallback(typeof(MainFunction))]
-        private static unsafe void Dummy(int argc, byte** argv) {}
     }
 }

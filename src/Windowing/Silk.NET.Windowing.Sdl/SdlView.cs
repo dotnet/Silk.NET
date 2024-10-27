@@ -291,33 +291,23 @@ namespace Silk.NET.Windowing.Sdl
             var namePtr = (byte*)&name;
             _coreRunSelf = this;
             _onFrame = onFrame;
-            SilkMobile.RunApp(1, &namePtr, (PfnMainFunc) (delegate* unmanaged[Cdecl]<int, byte**, int>) &CoreRun);
+            SilkMobile.RunApp
+            (
+                1,
+                &namePtr,
+                _ =>
+                {
+                    if (Sdl.IPhoneSetAnimationCallback(SdlWindow, 1, (delegate* unmanaged[Cdecl]<void*, void>) &OnFrame, null) != 0)
+                    {
+                        Sdl.ThrowError();
+                    }
+                }
+            );
         }
 #pragma warning restore CS0618 // Type or member is obsolete
 
         private static SdlView? _coreRunSelf;
         private Action? _onFrame;
-
-        [UnmanagedCallersOnly(CallConvs = new[] { typeof(CallConvCdecl) })]
-        private static int CoreRun(int argc, byte** argv)
-        {
-            if (_coreRunSelf is null)
-            {
-                return 1;
-            }
-
-            _coreRunSelf.CoreRun();
-            return 0;
-        }
-
-        private void CoreRun()
-        {
-            if (Sdl.IPhoneSetAnimationCallback(SdlWindow, 1, (delegate* unmanaged[Cdecl]<void*, void>) &OnFrame, null) != 0)
-            {
-                Sdl.ThrowError();
-            }
-        }
-        
         [UnmanagedCallersOnly(CallConvs = new[] { typeof(CallConvCdecl) })]
         private static void OnFrame(void* userData)
         {
