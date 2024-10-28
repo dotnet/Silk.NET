@@ -27,8 +27,6 @@ using static Nuke.Common.Tools.Git.GitTasks;
 using static Nuke.Common.Tools.GitHub.GitHubTasks;
 
 partial class Build {
-    // TODO the dishes
-    
     [Nuke.Common.Parameter("Build native code")] readonly bool Native;
 
     [CanBeNull] string AndroidHomeValue;
@@ -76,7 +74,7 @@ partial class Build {
                     $"git commit -m \"New binaries for {name} on {RuntimeInformation.OSDescription}\""
                 )
                 .AssertWaitForExit();
-            if (!commitCmd.Output.Any(x => x.Text.Contains("no changes added to commit", StringComparison.OrdinalIgnoreCase) || x.Text.Contains("nothing to commit", StringComparison.OrdinalIgnoreCase)))
+            if (!commitCmd.Output.Any(x => x.Text.Contains("no changes added to commit", StringComparison.OrdinalIgnoreCase) || x.Text.Contains("nothing", StringComparison.OrdinalIgnoreCase)))
             {
                 commitCmd.AssertZeroExitCode();
             }
