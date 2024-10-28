@@ -270,53 +270,30 @@ namespace Silk.NET.Windowing.Sdl
         }
 
 #if __IOS__
-#pragma warning disable CS0618 // Type or member is obsolete
+        private static bool _isRunning;
         public override void Run(Action onFrame)
         {
-            if (_coreRunSelf is not null || _onFrame is not null)
+            if (_isRunning)
             {
-                throw new InvalidOperationException("App is already running.");
+                throw new NotSupportedException("A view is already running in this mobile application.");
             }
 
-            if (SilkMobile.IsRunning)
+            if (!SilkMobile.IsRunning)
             {
-                // This is not correct, we should be using SDL_iPhoneSetAnimationCallback and then letting
-                // SDL_UIKitRunApp take care of the lifetime, and I attempt to warn the developer about this in the
-                // deprecation warning. For now, do things the old way.
-                base.Run(onFrame);
-                return;
+                throw new InvalidOperationException
+                (
+                    "The view could not be created as the underlying mobile application is not running. On iOS, " +
+                    "please wrap your main function in a call to SilkMobile.RunApp to ensure that application " +
+                    "lifecycles can be managed properly."
+                );
             }
-
-            ulong name = 0x796D6D7564; // dummy
-            var namePtr = (byte*)&name;
-            _coreRunSelf = this;
-            _onFrame = onFrame;
-            SilkMobile.RunApp
-            (
-                1,
-                &namePtr,
-                _ =>
-                {
-                    if (Sdl.IPhoneSetAnimationCallback(SdlWindow, 1, (delegate* unmanaged[Cdecl]<void*, void>) &OnFrame, null) != 0)
-                    {
-                        Sdl.ThrowError();
-                    }
-                }
-            );
-        }
-#pragma warning restore CS0618 // Type or member is obsolete
-
-        private static SdlView? _coreRunSelf;
-        private Action? _onFrame;
-        [UnmanagedCallersOnly(CallConvs = new[] { typeof(CallConvCdecl) })]
-        private static void OnFrame(void* userData)
-        {
-            if (_coreRunSelf is not { _onFrame: {} onFrame })
-            {
-                return;
-            }
-
-            onFrame();
+            
+            // This is not correct, we should be using SDL_iPhoneSetAnimationCallback and then letting
+            // SDL_UIKitRunApp take care of the lifetime, but this would be a breaking change as Run in 2.X is expected
+            // to only exit when the view does. We'll fix this properly in 3.0.
+            _isRunning = true;
+            base.Run(onFrame);
+            _isRunning = false;
         }
 #endif
 

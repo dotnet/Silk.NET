@@ -6,11 +6,6 @@ using Silk.NET.Core.Native;
 
 namespace Silk.NET.Windowing.Sdl.iOS
 {
-    [System.Obsolete(
-        "Upon its graduation from experimental status in Silk.NET 2.22, SilkMobile is now implicit behaviour when " +
-        "calling IView.Run. SilkMobile should no longer be used and its continued usage may cause unexpected " +
-        "behaviour (e.g. with Game Center integration)."
-    )]
     public static class SilkMobile
     {
         static SilkMobile()
