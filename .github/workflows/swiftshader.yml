@@ -18,26 +18,26 @@ jobs:
       fail-fast: false
       matrix:
         env:
-          - os: ubuntu-22.04
+          - os: ubuntu-24.04
             name: Linux
             nuke_invoke: ./build.sh
             extras: |
               # We need to adjust APT sources for multiarch. Use the ones corresponding to
-              # Ubuntu 22.04 with appropriate `arch` values. ports.ubuntu.com is required
+              # Ubuntu 24.04 with appropriate `arch` values. ports.ubuntu.com is required
               # for armhf and arm64.
               sudo tee /etc/apt/sources.list << EOF
-              deb [arch=amd64] http://archive.ubuntu.com/ubuntu jammy main multiverse restricted universe
-              deb [arch=amd64] http://archive.ubuntu.com/ubuntu jammy-backports main multiverse restricted universe
-              deb [arch=amd64] http://archive.ubuntu.com/ubuntu jammy-security main multiverse restricted universe
-              deb [arch=amd64] http://archive.ubuntu.com/ubuntu jammy-updates main multiverse restricted universe
-              deb [arch=arm64,armhf] http://ports.ubuntu.com jammy main multiverse restricted universe
-              deb [arch=arm64,armhf] http://ports.ubuntu.com jammy-backports main multiverse restricted universe
-              deb [arch=arm64,armhf] http://ports.ubuntu.com jammy-security main multiverse restricted universe
-              deb [arch=arm64,armhf] http://ports.ubuntu.com jammy-updates main multiverse restricted universe
-              deb [arch=amd64] http://security.ubuntu.com/ubuntu jammy main multiverse restricted universe
-              deb [arch=amd64] http://security.ubuntu.com/ubuntu jammy-backports main multiverse restricted universe
-              deb [arch=amd64] http://security.ubuntu.com/ubuntu jammy-security main multiverse restricted universe
-              deb [arch=amd64] http://security.ubuntu.com/ubuntu jammy-updates main multiverse restricted universe
+              deb [arch=amd64] http://archive.ubuntu.com/ubuntu noble main multiverse restricted universe
+              deb [arch=amd64] http://archive.ubuntu.com/ubuntu noble-backports main multiverse restricted universe
+              deb [arch=amd64] http://archive.ubuntu.com/ubuntu noble-security main multiverse restricted universe
+              deb [arch=amd64] http://archive.ubuntu.com/ubuntu noble-updates main multiverse restricted universe
+              deb [arch=arm64,armhf] http://ports.ubuntu.com noble main multiverse restricted universe
+              deb [arch=arm64,armhf] http://ports.ubuntu.com noble-backports main multiverse restricted universe
+              deb [arch=arm64,armhf] http://ports.ubuntu.com noble-security main multiverse restricted universe
+              deb [arch=arm64,armhf] http://ports.ubuntu.com noble-updates main multiverse restricted universe
+              deb [arch=amd64] http://security.ubuntu.com/ubuntu noble main multiverse restricted universe
+              deb [arch=amd64] http://security.ubuntu.com/ubuntu noble-backports main multiverse restricted universe
+              deb [arch=amd64] http://security.ubuntu.com/ubuntu noble-security main multiverse restricted universe
+              deb [arch=amd64] http://security.ubuntu.com/ubuntu noble-updates main multiverse restricted universe
               EOF
               sudo dpkg --add-architecture arm64
               sudo dpkg --add-architecture armhf
