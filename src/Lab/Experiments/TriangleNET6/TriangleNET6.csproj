@@ -8,9 +8,9 @@
         <LangVersion>preview</LangVersion>
         <RuntimeIdentifiers Condition="'$(RuntimeIdentifiers)' == '' And '$(TargetFramework)' == 'net6.0'">$(NETCoreSdkRuntimeIdentifier)</RuntimeIdentifiers>
         <RuntimeIdentifiers Condition="'$(RuntimeIdentifiers)' == '' And '$(TargetFramework)' == 'net6.0-android'">android-arm64;android-x86;android-arm;android-x64</RuntimeIdentifiers>
-        <TrimMode>full</TrimMode>
-        <LinkMode>Full</LinkMode>
-        <PublishTrimmed>true</PublishTrimmed>
+        <TrimMode Condition="'$(TargetFramework)' != 'net6.0-android'">full</TrimMode>
+        <LinkMode Condition="'$(TargetFramework)' != 'net6.0-android'">Full</LinkMode>
+        <PublishTrimmed Condition="'$(TargetFramework)' != 'net6.0-android'">true</PublishTrimmed>
     </PropertyGroup>
 
     <ItemGroup>
