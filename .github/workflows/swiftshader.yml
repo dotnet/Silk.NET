@@ -20,13 +20,16 @@ jobs:
         env:
           - os: ubuntu-22.04
             name: Linux x64
-            nuke_invoke: ./build.sh --matrix-arg linux-x64
+            nuke_invoke: ./build.sh
+            nuke_extra: --matrix-arg linux-x64
           - os: ubuntu-22.04
             name: Linux ARM32
-            nuke_invoke: ./build.sh --matrix-arg linux-arm
+            nuke_invoke: ./build.sh
+            nuke_extra: --matrix-arg linux-arm
           - os: ubuntu-22.04
             name: Linux ARM64
-            nuke_invoke: ./build.sh --matrix-arg linux-arm64
+            nuke_invoke: ./build.sh
+            nuke_extra: --matrix-arg linux-arm64
           - os: windows-2022
             name: Windows
             nuke_invoke: ./build.cmd
@@ -64,9 +67,9 @@ jobs:
             6.0.201
             7.0.*
       - name: Install Zig
-        if: ${{ matrix.env.name == 'Linux' }}
+        if: ${{ matrix.env.os == 'ubuntu-22.04' }}
         uses: goto-bus-stop/setup-zig@v2
       - name: Build SwiftShader
-        run: ${{ matrix.env.nuke_invoke }} SwiftShader
+        run: ${{ matrix.env.nuke_invoke }} SwiftShader ${{ matrix.env.nuke_extra }}
         env:
           PUSHABLE_GITHUB_TOKEN: ${{ secrets.PUSHABLE_GITHUB_TOKEN }}
