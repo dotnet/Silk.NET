@@ -71,17 +71,25 @@ partial class Build {
                     {
                         foreach (var (triple, rid) in new[]
                         {
-                            ("x86_64-linux-gnu", "linux-x64"),
-                            ("arm-linux-gnueabihf", "linux-arm"),
-                            ("aarch64-linux-gnu", "linux-arm64"),
+                            ("zig-toolchain-x86_64-linux-gnu.2.17", "linux-x64"),
+                            ("zig-toolchain-arm-linux-gnueabihf.2.17", "linux-arm"),
+                            ("zig-toolchain-aarch64-linux-gnu.2.17", "linux-arm64"),
                         })
                         {
                             EnsureCleanDirectory(buildDir);
-
-                            InheritedShell($"{prepare} {GetCMakeToolchainFlag(triple)}", buildDir).AssertZeroExitCode();
-                            InheritedShell(build, buildDir).AssertZeroExitCode();
-
-                            InheritedShell($"{triple}-strip --strip-unneeded Linux/libvk_swiftshader.so", buildDir).AssertZeroExitCode();
+                            InheritedShell($"{prepare} {GetCMakeToolchainFlag(triple)} -DCMAKE_C_FLAGS_RELEASE=\"-s -Wl,--undefined-version\" -DCMAKE_CXX_FLAGS_RELEASE=\"-s -Wl,--undefined-version\"", buildDir).AssertZeroExitCode();
+                            InheritedShell
+                            (
+                                build,
+                                buildDir,
+                                new Dictionary<string, string>
+                                {
+                                    // zig cc doesn't recognise generic as a valid -mtune for some reason
+                                    {"SILKDOTNET_ReplaceArchitectureZigCcFlags", "generic="},
+                                    // https://issues.chromium.org/issues/40242425#comment3
+                                    {"LDFLAGS", "-Wl,--undefined-version"}
+                                }
+                            ).AssertZeroExitCode();
 
                             CopyFile(buildDir / "Linux" / "libvk_swiftshader.so", runtimes / rid / "native" / "libvk_swiftshader.so", FileExistsPolicy.Overwrite);
                             CopyFile(buildDir / "Linux" / "vk_swiftshader_icd.json", runtimes / rid / "native" / "vk_swiftshader_icd.json", FileExistsPolicy.Overwrite);
