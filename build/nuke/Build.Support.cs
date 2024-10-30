@@ -49,15 +49,16 @@ partial class Build
         return idx;
     }
 
-    Dictionary<string, string> CreateEnvVarDictionary()
+    Dictionary<string, string> CreateEnvVarDictionary([CanBeNull] IReadOnlyDictionary<string, string> concat = null)
         => Environment.GetEnvironmentVariables()
             .Cast<DictionaryEntry>()
+            .Concat((concat ?? Enumerable.Empty<KeyValuePair<string, string>>()).Select(x => new DictionaryEntry(x.Key, x.Value)))
             .ToDictionary(x => (string) x.Key, x => (string) x.Value);
 
-    IProcess InheritedShell(string cmd, [CanBeNull] string workDir = null)
+    IProcess InheritedShell(string cmd, [CanBeNull] string workDir = null, [CanBeNull] IReadOnlyDictionary<string, string> envVars = null)
         => OperatingSystem.IsWindows()
-            ? StartProcess("powershell", $"-Command {cmd.DoubleQuote()}", workDir, CreateEnvVarDictionary())
-            : StartProcess("bash", $"-c {cmd.DoubleQuote()}", workDir, CreateEnvVarDictionary());
+            ? StartProcess("powershell", $"-Command {cmd.DoubleQuote()}", workDir, CreateEnvVarDictionary(envVars))
+            : StartProcess("bash", $"-c {cmd.DoubleQuote()}", workDir, CreateEnvVarDictionary(envVars));
 
     void AddToPath(string dir)
     {
