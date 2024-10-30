@@ -68,7 +68,7 @@ partial class Build {
                         {
                             EnsureCleanDirectory(buildDir);
 
-                            InheritedShell($"{prepare} {GetCMakeToolchainFlag(triple)}", buildDir).AssertZeroExitCode();
+                            InheritedShell($"{prepare} -DUSE_GAS=OFF {GetCMakeToolchainFlag(triple)}", buildDir).AssertZeroExitCode();
                             InheritedShell(build, buildDir).AssertZeroExitCode();
 
                             InheritedShell($"{triple}-strip --strip-unneeded loader/libvulkan.so", buildDir).AssertZeroExitCode();

@@ -74,7 +74,7 @@ partial class Build {
                             ("zig-toolchain-x86_64-linux-gnu.2.17", "linux-x64"),
                             ("zig-toolchain-arm-linux-gnueabihf.2.17", "linux-arm"),
                             ("zig-toolchain-aarch64-linux-gnu.2.17", "linux-arm64"),
-                        })
+                        }.Select(x => string.IsNullOrWhiteSpace(MatrixArg) || x.Item2 == MatrixArg))
                         {
                             EnsureCleanDirectory(buildDir);
                             InheritedShell($"{prepare} {GetCMakeToolchainFlag(triple)} -DCMAKE_C_FLAGS_RELEASE=\"-s -Wl,--undefined-version\" -DCMAKE_CXX_FLAGS_RELEASE=\"-s -Wl,--undefined-version\"", buildDir).AssertZeroExitCode();

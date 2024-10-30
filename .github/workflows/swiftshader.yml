@@ -19,8 +19,14 @@ jobs:
       matrix:
         env:
           - os: ubuntu-22.04
-            name: Linux
-            nuke_invoke: ./build.sh
+            name: Linux x64
+            nuke_invoke: ./build.sh --matrix-arg linux-x64
+          - os: ubuntu-22.04
+            name: Linux ARM32
+            nuke_invoke: ./build.sh --matrix-arg linux-arm
+          - os: ubuntu-22.04
+            name: Linux ARM64
+            nuke_invoke: ./build.sh --matrix-arg linux-arm64
           - os: windows-2022
             name: Windows
             nuke_invoke: ./build.cmd

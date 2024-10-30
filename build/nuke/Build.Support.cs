@@ -38,6 +38,9 @@ partial class Build
     [Parameter("Outputs build warnings instead of keeping the MSBuild logging quiet with just errors.")]
     bool Warnings;
 
+    [Parameter("Matrix job argument e.g. a RID for native builds."), CanBeNull]
+    string MatrixArg;
+
     static int IndexOfOrThrow(string x, char y)
     {
         var idx = x.IndexOf(y);
