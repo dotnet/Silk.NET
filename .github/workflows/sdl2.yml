@@ -10,6 +10,8 @@ on:
       - "build/cmake/*"
       - build/nuke/Native/Core.cs
       - build/nuke/Native/SDL2.cs
+      - build/nuke/Native/SilkDroid.cs
+      - build/nuke/Build.Support.cs
       - .github/workflows/sdl2.yml
 jobs:
   Build:
@@ -21,15 +23,12 @@ jobs:
           - os: ubuntu-22.04
             name: Linux
             nuke_invoke: ./build.sh
-          - os: windows-2022
+          - os: windows-latest  # runner is not setup for android yet
             name: Windows
-            nuke_invoke: ./build.cmd
-            extras: |
-              pwsh build\Install-WindowsSDK.ps1
+            nuke_invoke: ./build.cmd BuildLibSilkDroid
           - os: macos-14
             name: Darwin
             nuke_invoke: ./build.sh
-            extras: ""
     name: ${{ matrix.env.name }} Build
     runs-on: ${{ matrix.env.os }}
     steps:
@@ -42,12 +41,52 @@ jobs:
           git -c submodule.third_party/git-hooks.update=none submodule update --init --recursive build/submodules/SDL
           git config --local user.email "9011267+dotnet-bot@users.noreply.github.com"
           git config --local user.name "The Silk.NET Automaton"
-
-      - name: Extra prerequisites
+      - name: Setup .NET Core
+        uses: actions/setup-dotnet@v3
+        if: runner.os == 'Windows'
+        with:
+          dotnet-version: |
+            6.0.201
+            7.0.*
+            8.0.*
+        env:
+          DOTNET_INSTALL_DIR: ~/.dotnet
+      - name: Setup PowerShell Core
+        continue-on-error: true
+        if: runner.os == 'Windows'
+        run: dotnet tool install --global PowerShell
+      - name: Setup Java JDK 21
+        uses: actions/setup-java@v2.3.0
+        if: runner.os == 'Windows'
+        with:
+          java-version: 21
+          distribution: "temurin"
+      - name: Set PATH
+        if: runner.os == 'Windows'
+        id: set_path
         run: |
-          echo running extras
-          ${{ matrix.env.extras }}
-
+          echo "cur_path=$env:PATH\n" >> $env:GITHUB_OUTPUT
+      - name: Setup Android Environment
+        uses: android-actions/setup-android@v3
+        if: runner.os == 'Windows'
+        env:
+          PATH: "${{ env.DOTNET_ROOT }};${{ env.DOTNET_ROOT }}\\tools;${{ steps.set_path.outputs.cur_path }}"
+      - name: Install Android Platforms
+        if: runner.os == 'Windows'
+        run: |
+          sdkmanager --install "build-tools;30.0.2"
+          sdkmanager --install "platform-tools"
+          sdkmanager --install "platforms;android-31"
+          sdkmanager --install "platforms;android-33"
+          sdkmanager --install "platforms;android-34"
+          sdkmanager --install "ndk-bundle"
+          sdkmanager --install "ndk;21.4.7075529"
+      - name: Setup Java JDK 11
+        uses: actions/setup-java@v2.3.0
+        if: runner.os == 'Windows'
+        with:
+          java-version: 11
+          distribution: "temurin"
       # Install CMake
       - uses: lukka/get-cmake@latest
         if: runner.os != 'Linux'
@@ -110,10 +149,13 @@ jobs:
         env:
           PUSHABLE_GITHUB_TOKEN: ${{ secrets.PUSHABLE_GITHUB_TOKEN }}
 
+      - name: Install Workloads
+        if: runner.os == 'Windows'
+        run: dotnet workload install android ios maccatalyst
+
       - name: Build SDL2
         if: runner.os != 'Linux'
-        run: ${{ matrix.env.nuke_invoke }} SDL2
+        run: ${{ matrix.env.nuke_invoke }} SDL2 ${{ runner.os == 'Windows' && format('{0} {1}', '--native true --android-home-value', env.ANDROID_HOME) || '' }} 
         env:
           PUSHABLE_GITHUB_TOKEN: ${{ secrets.PUSHABLE_GITHUB_TOKEN }}
-
 
