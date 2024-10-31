@@ -9,6 +9,7 @@ using Silk.NET.Core.Attributes;
 
 namespace Silk.NET.Direct3D12
 {
+    [Flags]
     [NativeName("Name", "D3D12_STATE_OBJECT_TYPE")]
     public enum StateObjectType : int
     {
@@ -18,9 +19,14 @@ namespace Silk.NET.Direct3D12
         [Obsolete("Deprecated in favour of \"RaytracingPipeline\"")]
         [NativeName("Name", "D3D12_STATE_OBJECT_TYPE_RAYTRACING_PIPELINE")]
         StateObjectTypeRaytracingPipeline = 0x3,
+        [Obsolete("Deprecated in favour of \"Executable\"")]
+        [NativeName("Name", "D3D12_STATE_OBJECT_TYPE_EXECUTABLE")]
+        StateObjectTypeExecutable = 0x4,
         [NativeName("Name", "D3D12_STATE_OBJECT_TYPE_COLLECTION")]
         Collection = 0x0,
         [NativeName("Name", "D3D12_STATE_OBJECT_TYPE_RAYTRACING_PIPELINE")]
         RaytracingPipeline = 0x3,
+        [NativeName("Name", "D3D12_STATE_OBJECT_TYPE_EXECUTABLE")]
+        Executable = 0x4,
     }
 }

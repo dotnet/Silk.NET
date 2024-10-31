@@ -67,7 +67,7 @@ namespace Silk.NET.Direct3D12
         public RootParameterType ParameterType;
 
         [NativeName("Type", "")]
-        [NativeName("Type.Name", "__AnonymousRecord_d3d12_L3727_C5")]
+        [NativeName("Type.Name", "__AnonymousRecord_d3d12_L4095_C5")]
         [NativeName("Name", "anonymous1")]
         public RootParameter1Union Anonymous;
 

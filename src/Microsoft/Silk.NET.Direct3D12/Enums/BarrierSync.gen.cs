@@ -22,9 +22,9 @@ namespace Silk.NET.Direct3D12
         [Obsolete("Deprecated in favour of \"Draw\"")]
         [NativeName("Name", "D3D12_BARRIER_SYNC_DRAW")]
         BarrierSyncDraw = 0x2,
-        [Obsolete("Deprecated in favour of \"InputAssembler\"")]
-        [NativeName("Name", "D3D12_BARRIER_SYNC_INPUT_ASSEMBLER")]
-        BarrierSyncInputAssembler = 0x4,
+        [Obsolete("Deprecated in favour of \"IndexInput\"")]
+        [NativeName("Name", "D3D12_BARRIER_SYNC_INDEX_INPUT")]
+        BarrierSyncIndexInput = 0x4,
         [Obsolete("Deprecated in favour of \"VertexShading\"")]
         [NativeName("Name", "D3D12_BARRIER_SYNC_VERTEX_SHADING")]
         BarrierSyncVertexShading = 0x8,
@@ -64,6 +64,9 @@ namespace Silk.NET.Direct3D12
         [Obsolete("Deprecated in favour of \"EmitRaytracingAccelerationStructurePostbuildInfo\"")]
         [NativeName("Name", "D3D12_BARRIER_SYNC_EMIT_RAYTRACING_ACCELERATION_STRUCTURE_POSTBUILD_INFO")]
         BarrierSyncEmitRaytracingAccelerationStructurePostbuildInfo = 0x4000,
+        [Obsolete("Deprecated in favour of \"ClearUnorderedAccessView\"")]
+        [NativeName("Name", "D3D12_BARRIER_SYNC_CLEAR_UNORDERED_ACCESS_VIEW")]
+        BarrierSyncClearUnorderedAccessView = 0x8000,
         [Obsolete("Deprecated in favour of \"VideoDecode\"")]
         [NativeName("Name", "D3D12_BARRIER_SYNC_VIDEO_DECODE")]
         BarrierSyncVideoDecode = 0x100000,
@@ -88,8 +91,8 @@ namespace Silk.NET.Direct3D12
         All = 0x1,
         [NativeName("Name", "D3D12_BARRIER_SYNC_DRAW")]
         Draw = 0x2,
-        [NativeName("Name", "D3D12_BARRIER_SYNC_INPUT_ASSEMBLER")]
-        InputAssembler = 0x4,
+        [NativeName("Name", "D3D12_BARRIER_SYNC_INDEX_INPUT")]
+        IndexInput = 0x4,
         [NativeName("Name", "D3D12_BARRIER_SYNC_VERTEX_SHADING")]
         VertexShading = 0x8,
         [NativeName("Name", "D3D12_BARRIER_SYNC_PIXEL_SHADING")]
@@ -116,6 +119,8 @@ namespace Silk.NET.Direct3D12
         NonPixelShading = 0x2000,
         [NativeName("Name", "D3D12_BARRIER_SYNC_EMIT_RAYTRACING_ACCELERATION_STRUCTURE_POSTBUILD_INFO")]
         EmitRaytracingAccelerationStructurePostbuildInfo = 0x4000,
+        [NativeName("Name", "D3D12_BARRIER_SYNC_CLEAR_UNORDERED_ACCESS_VIEW")]
+        ClearUnorderedAccessView = 0x8000,
         [NativeName("Name", "D3D12_BARRIER_SYNC_VIDEO_DECODE")]
         VideoDecode = 0x100000,
         [NativeName("Name", "D3D12_BARRIER_SYNC_VIDEO_PROCESS")]

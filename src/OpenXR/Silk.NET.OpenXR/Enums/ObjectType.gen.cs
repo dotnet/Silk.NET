@@ -56,6 +56,8 @@ namespace Silk.NET.OpenXR
         MarkerDetectorML = 1000138000,
         [NativeName("Name", "XR_OBJECT_TYPE_EXPORTED_LOCALIZATION_MAP_ML")]
         ExportedLocalizationMapML = 1000139000,
+        [NativeName("Name", "XR_OBJECT_TYPE_SPATIAL_ANCHORS_STORAGE_ML")]
+        SpatialAnchorsStorageML = 1000141000,
         [NativeName("Name", "XR_OBJECT_TYPE_SPATIAL_ANCHOR_STORE_CONNECTION_MSFT")]
         SpatialAnchorStoreConnectionMsft = 1000142000,
         [NativeName("Name", "XR_OBJECT_TYPE_FACE_TRACKER_FB")]
@@ -76,7 +78,11 @@ namespace Silk.NET.OpenXR
         EnvironmentDepthSwapchainMeta = 1000291001,
         [NativeName("Name", "XR_OBJECT_TYPE_PASSTHROUGH_HTC")]
         PassthroughHtc = 1000317000,
+        [NativeName("Name", "XR_OBJECT_TYPE_BODY_TRACKER_HTC")]
+        BodyTrackerHtc = 1000320000,
         [NativeName("Name", "XR_OBJECT_TYPE_PLANE_DETECTOR_EXT")]
         PlaneDetectorExt = 1000429000,
+        [NativeName("Name", "XR_OBJECT_TYPE_WORLD_MESH_DETECTOR_ML")]
+        WorldMeshDetectorML = 1000474000,
     }
 }

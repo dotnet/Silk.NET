@@ -189,6 +189,14 @@ namespace Silk.NET.Vulkan.Extensions.EXT
         public partial void CmdSetDepthClampEnable([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] Bool32 depthClampEnable);
 
         /// <summary>To be documented.</summary>
+        [NativeApi(EntryPoint = "vkCmdSetDepthClampRangeEXT", Convention = CallingConvention.Winapi)]
+        public unsafe partial void CmdSetDepthClampRange([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] DepthClampModeEXT depthClampMode, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] DepthClampRangeEXT* pDepthClampRange);
+
+        /// <summary>To be documented.</summary>
+        [NativeApi(EntryPoint = "vkCmdSetDepthClampRangeEXT", Convention = CallingConvention.Winapi)]
+        public partial void CmdSetDepthClampRange([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] DepthClampModeEXT depthClampMode, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in DepthClampRangeEXT pDepthClampRange);
+
+        /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkCmdSetDepthClipEnableEXT", Convention = CallingConvention.Winapi)]
         public partial void CmdSetDepthClipEnable([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] Bool32 depthClipEnable);
 

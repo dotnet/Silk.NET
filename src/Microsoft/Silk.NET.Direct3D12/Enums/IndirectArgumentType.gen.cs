@@ -45,6 +45,9 @@ namespace Silk.NET.Direct3D12
         [Obsolete("Deprecated in favour of \"DispatchMesh\"")]
         [NativeName("Name", "D3D12_INDIRECT_ARGUMENT_TYPE_DISPATCH_MESH")]
         IndirectArgumentTypeDispatchMesh = 0xA,
+        [Obsolete("Deprecated in favour of \"IncrementingConstant\"")]
+        [NativeName("Name", "D3D12_INDIRECT_ARGUMENT_TYPE_INCREMENTING_CONSTANT")]
+        IndirectArgumentTypeIncrementingConstant = 0xB,
         [NativeName("Name", "D3D12_INDIRECT_ARGUMENT_TYPE_DRAW")]
         Draw = 0x0,
         [NativeName("Name", "D3D12_INDIRECT_ARGUMENT_TYPE_DRAW_INDEXED")]
@@ -67,5 +70,7 @@ namespace Silk.NET.Direct3D12
         DispatchRays = 0x9,
         [NativeName("Name", "D3D12_INDIRECT_ARGUMENT_TYPE_DISPATCH_MESH")]
         DispatchMesh = 0xA,
+        [NativeName("Name", "D3D12_INDIRECT_ARGUMENT_TYPE_INCREMENTING_CONSTANT")]
+        IncrementingConstant = 0xB,
     }
 }

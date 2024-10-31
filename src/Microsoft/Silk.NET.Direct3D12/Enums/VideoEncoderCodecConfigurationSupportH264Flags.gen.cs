@@ -37,6 +37,9 @@ namespace Silk.NET.Direct3D12
         [Obsolete("Deprecated in favour of \"ConstrainedIntrapredictionSupport\"")]
         [NativeName("Name", "D3D12_VIDEO_ENCODER_CODEC_CONFIGURATION_SUPPORT_H264_FLAG_CONSTRAINED_INTRAPREDICTION_SUPPORT")]
         VideoEncoderCodecConfigurationSupportH264FlagConstrainedIntrapredictionSupport = 0x40,
+        [Obsolete("Deprecated in favour of \"NumRefIdxActiveOverrideFlagSliceSupport\"")]
+        [NativeName("Name", "D3D12_VIDEO_ENCODER_CODEC_CONFIGURATION_SUPPORT_H264_FLAG_NUM_REF_IDX_ACTIVE_OVERRIDE_FLAG_SLICE_SUPPORT")]
+        VideoEncoderCodecConfigurationSupportH264FlagNumRefIdxActiveOverrideFlagSliceSupport = 0x80,
         [NativeName("Name", "D3D12_VIDEO_ENCODER_CODEC_CONFIGURATION_SUPPORT_H264_FLAG_NONE")]
         None = 0x0,
         [NativeName("Name", "D3D12_VIDEO_ENCODER_CODEC_CONFIGURATION_SUPPORT_H264_FLAG_CABAC_ENCODING_SUPPORT")]
@@ -53,5 +56,7 @@ namespace Silk.NET.Direct3D12
         DirectTemporalEncodingSupport = 0x20,
         [NativeName("Name", "D3D12_VIDEO_ENCODER_CODEC_CONFIGURATION_SUPPORT_H264_FLAG_CONSTRAINED_INTRAPREDICTION_SUPPORT")]
         ConstrainedIntrapredictionSupport = 0x40,
+        [NativeName("Name", "D3D12_VIDEO_ENCODER_CODEC_CONFIGURATION_SUPPORT_H264_FLAG_NUM_REF_IDX_ACTIVE_OVERRIDE_FLAG_SLICE_SUPPORT")]
+        NumRefIdxActiveOverrideFlagSliceSupport = 0x80,
     }
 }

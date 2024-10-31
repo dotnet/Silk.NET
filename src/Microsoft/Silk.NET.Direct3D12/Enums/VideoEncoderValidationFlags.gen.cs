@@ -43,6 +43,9 @@ namespace Silk.NET.Direct3D12
         [Obsolete("Deprecated in favour of \"GopStructureNotSupported\"")]
         [NativeName("Name", "D3D12_VIDEO_ENCODER_VALIDATION_FLAG_GOP_STRUCTURE_NOT_SUPPORTED")]
         VideoEncoderValidationFlagGopStructureNotSupported = 0x800,
+        [Obsolete("Deprecated in favour of \"SubregionLayoutDataNotSupported\"")]
+        [NativeName("Name", "D3D12_VIDEO_ENCODER_VALIDATION_FLAG_SUBREGION_LAYOUT_DATA_NOT_SUPPORTED")]
+        VideoEncoderValidationFlagSubregionLayoutDataNotSupported = 0x1000,
         [NativeName("Name", "D3D12_VIDEO_ENCODER_VALIDATION_FLAG_NONE")]
         None = 0x0,
         [NativeName("Name", "D3D12_VIDEO_ENCODER_VALIDATION_FLAG_CODEC_NOT_SUPPORTED")]
@@ -63,5 +66,7 @@ namespace Silk.NET.Direct3D12
         ResolutionNotSupportedInList = 0x200,
         [NativeName("Name", "D3D12_VIDEO_ENCODER_VALIDATION_FLAG_GOP_STRUCTURE_NOT_SUPPORTED")]
         GopStructureNotSupported = 0x800,
+        [NativeName("Name", "D3D12_VIDEO_ENCODER_VALIDATION_FLAG_SUBREGION_LAYOUT_DATA_NOT_SUPPORTED")]
+        SubregionLayoutDataNotSupported = 0x1000,
     }
 }

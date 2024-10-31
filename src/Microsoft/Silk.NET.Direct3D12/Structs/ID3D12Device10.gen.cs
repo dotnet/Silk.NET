@@ -12221,7 +12221,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateCommittedResource3([Flow(Silk.NET.Core.Native.FlowDirection.In)] HeapProperties* pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc1* pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, ID3D12ProtectedResourceSession* pProtectedSession, uint NumCastableFormats, Silk.NET.DXGI.Format* pCastableFormats, Guid* riidResource, void** ppvResource)
+        public readonly unsafe int CreateCommittedResource3([Flow(Silk.NET.Core.Native.FlowDirection.In)] HeapProperties* pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc1* pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, ID3D12ProtectedResourceSession* pProtectedSession, uint NumCastableFormats, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.DXGI.Format* pCastableFormats, Guid* riidResource, void** ppvResource)
         {
             var @this = (ID3D12Device10*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -12230,7 +12230,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateCommittedResource3([Flow(Silk.NET.Core.Native.FlowDirection.In)] HeapProperties* pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc1* pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, ID3D12ProtectedResourceSession* pProtectedSession, uint NumCastableFormats, Silk.NET.DXGI.Format* pCastableFormats, Guid* riidResource, ref void* ppvResource)
+        public readonly unsafe int CreateCommittedResource3([Flow(Silk.NET.Core.Native.FlowDirection.In)] HeapProperties* pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc1* pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, ID3D12ProtectedResourceSession* pProtectedSession, uint NumCastableFormats, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.DXGI.Format* pCastableFormats, Guid* riidResource, ref void* ppvResource)
         {
             var @this = (ID3D12Device10*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -12242,7 +12242,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateCommittedResource3([Flow(Silk.NET.Core.Native.FlowDirection.In)] HeapProperties* pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc1* pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, ID3D12ProtectedResourceSession* pProtectedSession, uint NumCastableFormats, Silk.NET.DXGI.Format* pCastableFormats, ref Guid riidResource, void** ppvResource)
+        public readonly unsafe int CreateCommittedResource3([Flow(Silk.NET.Core.Native.FlowDirection.In)] HeapProperties* pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc1* pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, ID3D12ProtectedResourceSession* pProtectedSession, uint NumCastableFormats, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.DXGI.Format* pCastableFormats, ref Guid riidResource, void** ppvResource)
         {
             var @this = (ID3D12Device10*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -12254,7 +12254,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateCommittedResource3([Flow(Silk.NET.Core.Native.FlowDirection.In)] HeapProperties* pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc1* pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, ID3D12ProtectedResourceSession* pProtectedSession, uint NumCastableFormats, Silk.NET.DXGI.Format* pCastableFormats, ref Guid riidResource, ref void* ppvResource)
+        public readonly unsafe int CreateCommittedResource3([Flow(Silk.NET.Core.Native.FlowDirection.In)] HeapProperties* pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc1* pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, ID3D12ProtectedResourceSession* pProtectedSession, uint NumCastableFormats, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.DXGI.Format* pCastableFormats, ref Guid riidResource, ref void* ppvResource)
         {
             var @this = (ID3D12Device10*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -12269,7 +12269,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateCommittedResource3([Flow(Silk.NET.Core.Native.FlowDirection.In)] HeapProperties* pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc1* pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, ID3D12ProtectedResourceSession* pProtectedSession, uint NumCastableFormats, ref Silk.NET.DXGI.Format pCastableFormats, Guid* riidResource, void** ppvResource)
+        public readonly unsafe int CreateCommittedResource3([Flow(Silk.NET.Core.Native.FlowDirection.In)] HeapProperties* pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc1* pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, ID3D12ProtectedResourceSession* pProtectedSession, uint NumCastableFormats, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.DXGI.Format pCastableFormats, Guid* riidResource, void** ppvResource)
         {
             var @this = (ID3D12Device10*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -12281,7 +12281,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateCommittedResource3([Flow(Silk.NET.Core.Native.FlowDirection.In)] HeapProperties* pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc1* pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, ID3D12ProtectedResourceSession* pProtectedSession, uint NumCastableFormats, ref Silk.NET.DXGI.Format pCastableFormats, Guid* riidResource, ref void* ppvResource)
+        public readonly unsafe int CreateCommittedResource3([Flow(Silk.NET.Core.Native.FlowDirection.In)] HeapProperties* pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc1* pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, ID3D12ProtectedResourceSession* pProtectedSession, uint NumCastableFormats, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.DXGI.Format pCastableFormats, Guid* riidResource, ref void* ppvResource)
         {
             var @this = (ID3D12Device10*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -12296,7 +12296,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateCommittedResource3([Flow(Silk.NET.Core.Native.FlowDirection.In)] HeapProperties* pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc1* pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, ID3D12ProtectedResourceSession* pProtectedSession, uint NumCastableFormats, ref Silk.NET.DXGI.Format pCastableFormats, ref Guid riidResource, void** ppvResource)
+        public readonly unsafe int CreateCommittedResource3([Flow(Silk.NET.Core.Native.FlowDirection.In)] HeapProperties* pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc1* pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, ID3D12ProtectedResourceSession* pProtectedSession, uint NumCastableFormats, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.DXGI.Format pCastableFormats, ref Guid riidResource, void** ppvResource)
         {
             var @this = (ID3D12Device10*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -12311,7 +12311,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateCommittedResource3([Flow(Silk.NET.Core.Native.FlowDirection.In)] HeapProperties* pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc1* pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, ID3D12ProtectedResourceSession* pProtectedSession, uint NumCastableFormats, ref Silk.NET.DXGI.Format pCastableFormats, ref Guid riidResource, ref void* ppvResource)
+        public readonly unsafe int CreateCommittedResource3([Flow(Silk.NET.Core.Native.FlowDirection.In)] HeapProperties* pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc1* pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, ID3D12ProtectedResourceSession* pProtectedSession, uint NumCastableFormats, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.DXGI.Format pCastableFormats, ref Guid riidResource, ref void* ppvResource)
         {
             var @this = (ID3D12Device10*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -12329,7 +12329,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateCommittedResource3([Flow(Silk.NET.Core.Native.FlowDirection.In)] HeapProperties* pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc1* pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, ref ID3D12ProtectedResourceSession pProtectedSession, uint NumCastableFormats, Silk.NET.DXGI.Format* pCastableFormats, Guid* riidResource, void** ppvResource)
+        public readonly unsafe int CreateCommittedResource3([Flow(Silk.NET.Core.Native.FlowDirection.In)] HeapProperties* pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc1* pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, ref ID3D12ProtectedResourceSession pProtectedSession, uint NumCastableFormats, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.DXGI.Format* pCastableFormats, Guid* riidResource, void** ppvResource)
         {
             var @this = (ID3D12Device10*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -12341,7 +12341,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateCommittedResource3([Flow(Silk.NET.Core.Native.FlowDirection.In)] HeapProperties* pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc1* pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, ref ID3D12ProtectedResourceSession pProtectedSession, uint NumCastableFormats, Silk.NET.DXGI.Format* pCastableFormats, Guid* riidResource, ref void* ppvResource)
+        public readonly unsafe int CreateCommittedResource3([Flow(Silk.NET.Core.Native.FlowDirection.In)] HeapProperties* pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc1* pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, ref ID3D12ProtectedResourceSession pProtectedSession, uint NumCastableFormats, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.DXGI.Format* pCastableFormats, Guid* riidResource, ref void* ppvResource)
         {
             var @this = (ID3D12Device10*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -12356,7 +12356,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateCommittedResource3([Flow(Silk.NET.Core.Native.FlowDirection.In)] HeapProperties* pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc1* pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, ref ID3D12ProtectedResourceSession pProtectedSession, uint NumCastableFormats, Silk.NET.DXGI.Format* pCastableFormats, ref Guid riidResource, void** ppvResource)
+        public readonly unsafe int CreateCommittedResource3([Flow(Silk.NET.Core.Native.FlowDirection.In)] HeapProperties* pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc1* pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, ref ID3D12ProtectedResourceSession pProtectedSession, uint NumCastableFormats, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.DXGI.Format* pCastableFormats, ref Guid riidResource, void** ppvResource)
         {
             var @this = (ID3D12Device10*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -12371,7 +12371,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateCommittedResource3([Flow(Silk.NET.Core.Native.FlowDirection.In)] HeapProperties* pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc1* pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, ref ID3D12ProtectedResourceSession pProtectedSession, uint NumCastableFormats, Silk.NET.DXGI.Format* pCastableFormats, ref Guid riidResource, ref void* ppvResource)
+        public readonly unsafe int CreateCommittedResource3([Flow(Silk.NET.Core.Native.FlowDirection.In)] HeapProperties* pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc1* pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, ref ID3D12ProtectedResourceSession pProtectedSession, uint NumCastableFormats, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.DXGI.Format* pCastableFormats, ref Guid riidResource, ref void* ppvResource)
         {
             var @this = (ID3D12Device10*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -12389,7 +12389,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateCommittedResource3([Flow(Silk.NET.Core.Native.FlowDirection.In)] HeapProperties* pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc1* pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, ref ID3D12ProtectedResourceSession pProtectedSession, uint NumCastableFormats, ref Silk.NET.DXGI.Format pCastableFormats, Guid* riidResource, void** ppvResource)
+        public readonly unsafe int CreateCommittedResource3([Flow(Silk.NET.Core.Native.FlowDirection.In)] HeapProperties* pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc1* pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, ref ID3D12ProtectedResourceSession pProtectedSession, uint NumCastableFormats, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.DXGI.Format pCastableFormats, Guid* riidResource, void** ppvResource)
         {
             var @this = (ID3D12Device10*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -12404,7 +12404,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateCommittedResource3([Flow(Silk.NET.Core.Native.FlowDirection.In)] HeapProperties* pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc1* pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, ref ID3D12ProtectedResourceSession pProtectedSession, uint NumCastableFormats, ref Silk.NET.DXGI.Format pCastableFormats, Guid* riidResource, ref void* ppvResource)
+        public readonly unsafe int CreateCommittedResource3([Flow(Silk.NET.Core.Native.FlowDirection.In)] HeapProperties* pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc1* pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, ref ID3D12ProtectedResourceSession pProtectedSession, uint NumCastableFormats, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.DXGI.Format pCastableFormats, Guid* riidResource, ref void* ppvResource)
         {
             var @this = (ID3D12Device10*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -12422,7 +12422,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateCommittedResource3([Flow(Silk.NET.Core.Native.FlowDirection.In)] HeapProperties* pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc1* pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, ref ID3D12ProtectedResourceSession pProtectedSession, uint NumCastableFormats, ref Silk.NET.DXGI.Format pCastableFormats, ref Guid riidResource, void** ppvResource)
+        public readonly unsafe int CreateCommittedResource3([Flow(Silk.NET.Core.Native.FlowDirection.In)] HeapProperties* pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc1* pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, ref ID3D12ProtectedResourceSession pProtectedSession, uint NumCastableFormats, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.DXGI.Format pCastableFormats, ref Guid riidResource, void** ppvResource)
         {
             var @this = (ID3D12Device10*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -12440,7 +12440,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateCommittedResource3([Flow(Silk.NET.Core.Native.FlowDirection.In)] HeapProperties* pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc1* pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, ref ID3D12ProtectedResourceSession pProtectedSession, uint NumCastableFormats, ref Silk.NET.DXGI.Format pCastableFormats, ref Guid riidResource, ref void* ppvResource)
+        public readonly unsafe int CreateCommittedResource3([Flow(Silk.NET.Core.Native.FlowDirection.In)] HeapProperties* pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc1* pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, ref ID3D12ProtectedResourceSession pProtectedSession, uint NumCastableFormats, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.DXGI.Format pCastableFormats, ref Guid riidResource, ref void* ppvResource)
         {
             var @this = (ID3D12Device10*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -12461,7 +12461,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateCommittedResource3([Flow(Silk.NET.Core.Native.FlowDirection.In)] HeapProperties* pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc1* pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ClearValue pOptimizedClearValue, ID3D12ProtectedResourceSession* pProtectedSession, uint NumCastableFormats, Silk.NET.DXGI.Format* pCastableFormats, Guid* riidResource, void** ppvResource)
+        public readonly unsafe int CreateCommittedResource3([Flow(Silk.NET.Core.Native.FlowDirection.In)] HeapProperties* pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc1* pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ClearValue pOptimizedClearValue, ID3D12ProtectedResourceSession* pProtectedSession, uint NumCastableFormats, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.DXGI.Format* pCastableFormats, Guid* riidResource, void** ppvResource)
         {
             var @this = (ID3D12Device10*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -12473,7 +12473,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateCommittedResource3([Flow(Silk.NET.Core.Native.FlowDirection.In)] HeapProperties* pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc1* pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ClearValue pOptimizedClearValue, ID3D12ProtectedResourceSession* pProtectedSession, uint NumCastableFormats, Silk.NET.DXGI.Format* pCastableFormats, Guid* riidResource, ref void* ppvResource)
+        public readonly unsafe int CreateCommittedResource3([Flow(Silk.NET.Core.Native.FlowDirection.In)] HeapProperties* pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc1* pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ClearValue pOptimizedClearValue, ID3D12ProtectedResourceSession* pProtectedSession, uint NumCastableFormats, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.DXGI.Format* pCastableFormats, Guid* riidResource, ref void* ppvResource)
         {
             var @this = (ID3D12Device10*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -12488,7 +12488,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateCommittedResource3([Flow(Silk.NET.Core.Native.FlowDirection.In)] HeapProperties* pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc1* pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ClearValue pOptimizedClearValue, ID3D12ProtectedResourceSession* pProtectedSession, uint NumCastableFormats, Silk.NET.DXGI.Format* pCastableFormats, ref Guid riidResource, void** ppvResource)
+        public readonly unsafe int CreateCommittedResource3([Flow(Silk.NET.Core.Native.FlowDirection.In)] HeapProperties* pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc1* pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ClearValue pOptimizedClearValue, ID3D12ProtectedResourceSession* pProtectedSession, uint NumCastableFormats, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.DXGI.Format* pCastableFormats, ref Guid riidResource, void** ppvResource)
         {
             var @this = (ID3D12Device10*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -12503,7 +12503,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateCommittedResource3([Flow(Silk.NET.Core.Native.FlowDirection.In)] HeapProperties* pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc1* pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ClearValue pOptimizedClearValue, ID3D12ProtectedResourceSession* pProtectedSession, uint NumCastableFormats, Silk.NET.DXGI.Format* pCastableFormats, ref Guid riidResource, ref void* ppvResource)
+        public readonly unsafe int CreateCommittedResource3([Flow(Silk.NET.Core.Native.FlowDirection.In)] HeapProperties* pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc1* pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ClearValue pOptimizedClearValue, ID3D12ProtectedResourceSession* pProtectedSession, uint NumCastableFormats, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.DXGI.Format* pCastableFormats, ref Guid riidResource, ref void* ppvResource)
         {
             var @this = (ID3D12Device10*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -12521,7 +12521,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateCommittedResource3([Flow(Silk.NET.Core.Native.FlowDirection.In)] HeapProperties* pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc1* pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ClearValue pOptimizedClearValue, ID3D12ProtectedResourceSession* pProtectedSession, uint NumCastableFormats, ref Silk.NET.DXGI.Format pCastableFormats, Guid* riidResource, void** ppvResource)
+        public readonly unsafe int CreateCommittedResource3([Flow(Silk.NET.Core.Native.FlowDirection.In)] HeapProperties* pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc1* pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ClearValue pOptimizedClearValue, ID3D12ProtectedResourceSession* pProtectedSession, uint NumCastableFormats, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.DXGI.Format pCastableFormats, Guid* riidResource, void** ppvResource)
         {
             var @this = (ID3D12Device10*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -12536,7 +12536,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateCommittedResource3([Flow(Silk.NET.Core.Native.FlowDirection.In)] HeapProperties* pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc1* pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ClearValue pOptimizedClearValue, ID3D12ProtectedResourceSession* pProtectedSession, uint NumCastableFormats, ref Silk.NET.DXGI.Format pCastableFormats, Guid* riidResource, ref void* ppvResource)
+        public readonly unsafe int CreateCommittedResource3([Flow(Silk.NET.Core.Native.FlowDirection.In)] HeapProperties* pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc1* pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ClearValue pOptimizedClearValue, ID3D12ProtectedResourceSession* pProtectedSession, uint NumCastableFormats, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.DXGI.Format pCastableFormats, Guid* riidResource, ref void* ppvResource)
         {
             var @this = (ID3D12Device10*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -12554,7 +12554,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateCommittedResource3([Flow(Silk.NET.Core.Native.FlowDirection.In)] HeapProperties* pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc1* pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ClearValue pOptimizedClearValue, ID3D12ProtectedResourceSession* pProtectedSession, uint NumCastableFormats, ref Silk.NET.DXGI.Format pCastableFormats, ref Guid riidResource, void** ppvResource)
+        public readonly unsafe int CreateCommittedResource3([Flow(Silk.NET.Core.Native.FlowDirection.In)] HeapProperties* pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc1* pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ClearValue pOptimizedClearValue, ID3D12ProtectedResourceSession* pProtectedSession, uint NumCastableFormats, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.DXGI.Format pCastableFormats, ref Guid riidResource, void** ppvResource)
         {
             var @this = (ID3D12Device10*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -12572,7 +12572,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateCommittedResource3([Flow(Silk.NET.Core.Native.FlowDirection.In)] HeapProperties* pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc1* pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ClearValue pOptimizedClearValue, ID3D12ProtectedResourceSession* pProtectedSession, uint NumCastableFormats, ref Silk.NET.DXGI.Format pCastableFormats, ref Guid riidResource, ref void* ppvResource)
+        public readonly unsafe int CreateCommittedResource3([Flow(Silk.NET.Core.Native.FlowDirection.In)] HeapProperties* pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc1* pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ClearValue pOptimizedClearValue, ID3D12ProtectedResourceSession* pProtectedSession, uint NumCastableFormats, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.DXGI.Format pCastableFormats, ref Guid riidResource, ref void* ppvResource)
         {
             var @this = (ID3D12Device10*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -12593,7 +12593,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateCommittedResource3([Flow(Silk.NET.Core.Native.FlowDirection.In)] HeapProperties* pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc1* pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ClearValue pOptimizedClearValue, ref ID3D12ProtectedResourceSession pProtectedSession, uint NumCastableFormats, Silk.NET.DXGI.Format* pCastableFormats, Guid* riidResource, void** ppvResource)
+        public readonly unsafe int CreateCommittedResource3([Flow(Silk.NET.Core.Native.FlowDirection.In)] HeapProperties* pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc1* pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ClearValue pOptimizedClearValue, ref ID3D12ProtectedResourceSession pProtectedSession, uint NumCastableFormats, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.DXGI.Format* pCastableFormats, Guid* riidResource, void** ppvResource)
         {
             var @this = (ID3D12Device10*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -12608,7 +12608,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateCommittedResource3([Flow(Silk.NET.Core.Native.FlowDirection.In)] HeapProperties* pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc1* pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ClearValue pOptimizedClearValue, ref ID3D12ProtectedResourceSession pProtectedSession, uint NumCastableFormats, Silk.NET.DXGI.Format* pCastableFormats, Guid* riidResource, ref void* ppvResource)
+        public readonly unsafe int CreateCommittedResource3([Flow(Silk.NET.Core.Native.FlowDirection.In)] HeapProperties* pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc1* pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ClearValue pOptimizedClearValue, ref ID3D12ProtectedResourceSession pProtectedSession, uint NumCastableFormats, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.DXGI.Format* pCastableFormats, Guid* riidResource, ref void* ppvResource)
         {
             var @this = (ID3D12Device10*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -12626,7 +12626,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateCommittedResource3([Flow(Silk.NET.Core.Native.FlowDirection.In)] HeapProperties* pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc1* pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ClearValue pOptimizedClearValue, ref ID3D12ProtectedResourceSession pProtectedSession, uint NumCastableFormats, Silk.NET.DXGI.Format* pCastableFormats, ref Guid riidResource, void** ppvResource)
+        public readonly unsafe int CreateCommittedResource3([Flow(Silk.NET.Core.Native.FlowDirection.In)] HeapProperties* pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc1* pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ClearValue pOptimizedClearValue, ref ID3D12ProtectedResourceSession pProtectedSession, uint NumCastableFormats, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.DXGI.Format* pCastableFormats, ref Guid riidResource, void** ppvResource)
         {
             var @this = (ID3D12Device10*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -12644,7 +12644,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateCommittedResource3([Flow(Silk.NET.Core.Native.FlowDirection.In)] HeapProperties* pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc1* pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ClearValue pOptimizedClearValue, ref ID3D12ProtectedResourceSession pProtectedSession, uint NumCastableFormats, Silk.NET.DXGI.Format* pCastableFormats, ref Guid riidResource, ref void* ppvResource)
+        public readonly unsafe int CreateCommittedResource3([Flow(Silk.NET.Core.Native.FlowDirection.In)] HeapProperties* pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc1* pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ClearValue pOptimizedClearValue, ref ID3D12ProtectedResourceSession pProtectedSession, uint NumCastableFormats, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.DXGI.Format* pCastableFormats, ref Guid riidResource, ref void* ppvResource)
         {
             var @this = (ID3D12Device10*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -12665,7 +12665,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateCommittedResource3([Flow(Silk.NET.Core.Native.FlowDirection.In)] HeapProperties* pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc1* pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ClearValue pOptimizedClearValue, ref ID3D12ProtectedResourceSession pProtectedSession, uint NumCastableFormats, ref Silk.NET.DXGI.Format pCastableFormats, Guid* riidResource, void** ppvResource)
+        public readonly unsafe int CreateCommittedResource3([Flow(Silk.NET.Core.Native.FlowDirection.In)] HeapProperties* pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc1* pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ClearValue pOptimizedClearValue, ref ID3D12ProtectedResourceSession pProtectedSession, uint NumCastableFormats, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.DXGI.Format pCastableFormats, Guid* riidResource, void** ppvResource)
         {
             var @this = (ID3D12Device10*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -12683,7 +12683,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateCommittedResource3([Flow(Silk.NET.Core.Native.FlowDirection.In)] HeapProperties* pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc1* pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ClearValue pOptimizedClearValue, ref ID3D12ProtectedResourceSession pProtectedSession, uint NumCastableFormats, ref Silk.NET.DXGI.Format pCastableFormats, Guid* riidResource, ref void* ppvResource)
+        public readonly unsafe int CreateCommittedResource3([Flow(Silk.NET.Core.Native.FlowDirection.In)] HeapProperties* pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc1* pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ClearValue pOptimizedClearValue, ref ID3D12ProtectedResourceSession pProtectedSession, uint NumCastableFormats, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.DXGI.Format pCastableFormats, Guid* riidResource, ref void* ppvResource)
         {
             var @this = (ID3D12Device10*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -12704,7 +12704,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateCommittedResource3([Flow(Silk.NET.Core.Native.FlowDirection.In)] HeapProperties* pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc1* pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ClearValue pOptimizedClearValue, ref ID3D12ProtectedResourceSession pProtectedSession, uint NumCastableFormats, ref Silk.NET.DXGI.Format pCastableFormats, ref Guid riidResource, void** ppvResource)
+        public readonly unsafe int CreateCommittedResource3([Flow(Silk.NET.Core.Native.FlowDirection.In)] HeapProperties* pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc1* pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ClearValue pOptimizedClearValue, ref ID3D12ProtectedResourceSession pProtectedSession, uint NumCastableFormats, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.DXGI.Format pCastableFormats, ref Guid riidResource, void** ppvResource)
         {
             var @this = (ID3D12Device10*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -12725,7 +12725,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateCommittedResource3([Flow(Silk.NET.Core.Native.FlowDirection.In)] HeapProperties* pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc1* pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ClearValue pOptimizedClearValue, ref ID3D12ProtectedResourceSession pProtectedSession, uint NumCastableFormats, ref Silk.NET.DXGI.Format pCastableFormats, ref Guid riidResource, ref void* ppvResource)
+        public readonly unsafe int CreateCommittedResource3([Flow(Silk.NET.Core.Native.FlowDirection.In)] HeapProperties* pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc1* pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ClearValue pOptimizedClearValue, ref ID3D12ProtectedResourceSession pProtectedSession, uint NumCastableFormats, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.DXGI.Format pCastableFormats, ref Guid riidResource, ref void* ppvResource)
         {
             var @this = (ID3D12Device10*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -12749,7 +12749,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateCommittedResource3([Flow(Silk.NET.Core.Native.FlowDirection.In)] HeapProperties* pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ResourceDesc1 pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, ID3D12ProtectedResourceSession* pProtectedSession, uint NumCastableFormats, Silk.NET.DXGI.Format* pCastableFormats, Guid* riidResource, void** ppvResource)
+        public readonly unsafe int CreateCommittedResource3([Flow(Silk.NET.Core.Native.FlowDirection.In)] HeapProperties* pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ResourceDesc1 pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, ID3D12ProtectedResourceSession* pProtectedSession, uint NumCastableFormats, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.DXGI.Format* pCastableFormats, Guid* riidResource, void** ppvResource)
         {
             var @this = (ID3D12Device10*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -12761,7 +12761,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateCommittedResource3([Flow(Silk.NET.Core.Native.FlowDirection.In)] HeapProperties* pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ResourceDesc1 pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, ID3D12ProtectedResourceSession* pProtectedSession, uint NumCastableFormats, Silk.NET.DXGI.Format* pCastableFormats, Guid* riidResource, ref void* ppvResource)
+        public readonly unsafe int CreateCommittedResource3([Flow(Silk.NET.Core.Native.FlowDirection.In)] HeapProperties* pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ResourceDesc1 pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, ID3D12ProtectedResourceSession* pProtectedSession, uint NumCastableFormats, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.DXGI.Format* pCastableFormats, Guid* riidResource, ref void* ppvResource)
         {
             var @this = (ID3D12Device10*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -12776,7 +12776,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateCommittedResource3([Flow(Silk.NET.Core.Native.FlowDirection.In)] HeapProperties* pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ResourceDesc1 pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, ID3D12ProtectedResourceSession* pProtectedSession, uint NumCastableFormats, Silk.NET.DXGI.Format* pCastableFormats, ref Guid riidResource, void** ppvResource)
+        public readonly unsafe int CreateCommittedResource3([Flow(Silk.NET.Core.Native.FlowDirection.In)] HeapProperties* pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ResourceDesc1 pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, ID3D12ProtectedResourceSession* pProtectedSession, uint NumCastableFormats, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.DXGI.Format* pCastableFormats, ref Guid riidResource, void** ppvResource)
         {
             var @this = (ID3D12Device10*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -12791,7 +12791,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateCommittedResource3([Flow(Silk.NET.Core.Native.FlowDirection.In)] HeapProperties* pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ResourceDesc1 pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, ID3D12ProtectedResourceSession* pProtectedSession, uint NumCastableFormats, Silk.NET.DXGI.Format* pCastableFormats, ref Guid riidResource, ref void* ppvResource)
+        public readonly unsafe int CreateCommittedResource3([Flow(Silk.NET.Core.Native.FlowDirection.In)] HeapProperties* pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ResourceDesc1 pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, ID3D12ProtectedResourceSession* pProtectedSession, uint NumCastableFormats, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.DXGI.Format* pCastableFormats, ref Guid riidResource, ref void* ppvResource)
         {
             var @this = (ID3D12Device10*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -12809,7 +12809,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateCommittedResource3([Flow(Silk.NET.Core.Native.FlowDirection.In)] HeapProperties* pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ResourceDesc1 pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, ID3D12ProtectedResourceSession* pProtectedSession, uint NumCastableFormats, ref Silk.NET.DXGI.Format pCastableFormats, Guid* riidResource, void** ppvResource)
+        public readonly unsafe int CreateCommittedResource3([Flow(Silk.NET.Core.Native.FlowDirection.In)] HeapProperties* pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ResourceDesc1 pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, ID3D12ProtectedResourceSession* pProtectedSession, uint NumCastableFormats, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.DXGI.Format pCastableFormats, Guid* riidResource, void** ppvResource)
         {
             var @this = (ID3D12Device10*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -12824,7 +12824,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateCommittedResource3([Flow(Silk.NET.Core.Native.FlowDirection.In)] HeapProperties* pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ResourceDesc1 pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, ID3D12ProtectedResourceSession* pProtectedSession, uint NumCastableFormats, ref Silk.NET.DXGI.Format pCastableFormats, Guid* riidResource, ref void* ppvResource)
+        public readonly unsafe int CreateCommittedResource3([Flow(Silk.NET.Core.Native.FlowDirection.In)] HeapProperties* pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ResourceDesc1 pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, ID3D12ProtectedResourceSession* pProtectedSession, uint NumCastableFormats, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.DXGI.Format pCastableFormats, Guid* riidResource, ref void* ppvResource)
         {
             var @this = (ID3D12Device10*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -12842,7 +12842,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateCommittedResource3([Flow(Silk.NET.Core.Native.FlowDirection.In)] HeapProperties* pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ResourceDesc1 pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, ID3D12ProtectedResourceSession* pProtectedSession, uint NumCastableFormats, ref Silk.NET.DXGI.Format pCastableFormats, ref Guid riidResource, void** ppvResource)
+        public readonly unsafe int CreateCommittedResource3([Flow(Silk.NET.Core.Native.FlowDirection.In)] HeapProperties* pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ResourceDesc1 pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, ID3D12ProtectedResourceSession* pProtectedSession, uint NumCastableFormats, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.DXGI.Format pCastableFormats, ref Guid riidResource, void** ppvResource)
         {
             var @this = (ID3D12Device10*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -12860,7 +12860,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateCommittedResource3([Flow(Silk.NET.Core.Native.FlowDirection.In)] HeapProperties* pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ResourceDesc1 pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, ID3D12ProtectedResourceSession* pProtectedSession, uint NumCastableFormats, ref Silk.NET.DXGI.Format pCastableFormats, ref Guid riidResource, ref void* ppvResource)
+        public readonly unsafe int CreateCommittedResource3([Flow(Silk.NET.Core.Native.FlowDirection.In)] HeapProperties* pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ResourceDesc1 pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, ID3D12ProtectedResourceSession* pProtectedSession, uint NumCastableFormats, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.DXGI.Format pCastableFormats, ref Guid riidResource, ref void* ppvResource)
         {
             var @this = (ID3D12Device10*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -12881,7 +12881,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateCommittedResource3([Flow(Silk.NET.Core.Native.FlowDirection.In)] HeapProperties* pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ResourceDesc1 pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, ref ID3D12ProtectedResourceSession pProtectedSession, uint NumCastableFormats, Silk.NET.DXGI.Format* pCastableFormats, Guid* riidResource, void** ppvResource)
+        public readonly unsafe int CreateCommittedResource3([Flow(Silk.NET.Core.Native.FlowDirection.In)] HeapProperties* pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ResourceDesc1 pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, ref ID3D12ProtectedResourceSession pProtectedSession, uint NumCastableFormats, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.DXGI.Format* pCastableFormats, Guid* riidResource, void** ppvResource)
         {
             var @this = (ID3D12Device10*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -12896,7 +12896,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateCommittedResource3([Flow(Silk.NET.Core.Native.FlowDirection.In)] HeapProperties* pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ResourceDesc1 pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, ref ID3D12ProtectedResourceSession pProtectedSession, uint NumCastableFormats, Silk.NET.DXGI.Format* pCastableFormats, Guid* riidResource, ref void* ppvResource)
+        public readonly unsafe int CreateCommittedResource3([Flow(Silk.NET.Core.Native.FlowDirection.In)] HeapProperties* pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ResourceDesc1 pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, ref ID3D12ProtectedResourceSession pProtectedSession, uint NumCastableFormats, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.DXGI.Format* pCastableFormats, Guid* riidResource, ref void* ppvResource)
         {
             var @this = (ID3D12Device10*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -12914,7 +12914,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateCommittedResource3([Flow(Silk.NET.Core.Native.FlowDirection.In)] HeapProperties* pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ResourceDesc1 pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, ref ID3D12ProtectedResourceSession pProtectedSession, uint NumCastableFormats, Silk.NET.DXGI.Format* pCastableFormats, ref Guid riidResource, void** ppvResource)
+        public readonly unsafe int CreateCommittedResource3([Flow(Silk.NET.Core.Native.FlowDirection.In)] HeapProperties* pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ResourceDesc1 pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, ref ID3D12ProtectedResourceSession pProtectedSession, uint NumCastableFormats, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.DXGI.Format* pCastableFormats, ref Guid riidResource, void** ppvResource)
         {
             var @this = (ID3D12Device10*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -12932,7 +12932,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateCommittedResource3([Flow(Silk.NET.Core.Native.FlowDirection.In)] HeapProperties* pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ResourceDesc1 pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, ref ID3D12ProtectedResourceSession pProtectedSession, uint NumCastableFormats, Silk.NET.DXGI.Format* pCastableFormats, ref Guid riidResource, ref void* ppvResource)
+        public readonly unsafe int CreateCommittedResource3([Flow(Silk.NET.Core.Native.FlowDirection.In)] HeapProperties* pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ResourceDesc1 pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, ref ID3D12ProtectedResourceSession pProtectedSession, uint NumCastableFormats, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.DXGI.Format* pCastableFormats, ref Guid riidResource, ref void* ppvResource)
         {
             var @this = (ID3D12Device10*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -12953,7 +12953,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateCommittedResource3([Flow(Silk.NET.Core.Native.FlowDirection.In)] HeapProperties* pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ResourceDesc1 pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, ref ID3D12ProtectedResourceSession pProtectedSession, uint NumCastableFormats, ref Silk.NET.DXGI.Format pCastableFormats, Guid* riidResource, void** ppvResource)
+        public readonly unsafe int CreateCommittedResource3([Flow(Silk.NET.Core.Native.FlowDirection.In)] HeapProperties* pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ResourceDesc1 pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, ref ID3D12ProtectedResourceSession pProtectedSession, uint NumCastableFormats, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.DXGI.Format pCastableFormats, Guid* riidResource, void** ppvResource)
         {
             var @this = (ID3D12Device10*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -12971,7 +12971,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateCommittedResource3([Flow(Silk.NET.Core.Native.FlowDirection.In)] HeapProperties* pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ResourceDesc1 pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, ref ID3D12ProtectedResourceSession pProtectedSession, uint NumCastableFormats, ref Silk.NET.DXGI.Format pCastableFormats, Guid* riidResource, ref void* ppvResource)
+        public readonly unsafe int CreateCommittedResource3([Flow(Silk.NET.Core.Native.FlowDirection.In)] HeapProperties* pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ResourceDesc1 pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, ref ID3D12ProtectedResourceSession pProtectedSession, uint NumCastableFormats, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.DXGI.Format pCastableFormats, Guid* riidResource, ref void* ppvResource)
         {
             var @this = (ID3D12Device10*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -12992,7 +12992,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateCommittedResource3([Flow(Silk.NET.Core.Native.FlowDirection.In)] HeapProperties* pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ResourceDesc1 pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, ref ID3D12ProtectedResourceSession pProtectedSession, uint NumCastableFormats, ref Silk.NET.DXGI.Format pCastableFormats, ref Guid riidResource, void** ppvResource)
+        public readonly unsafe int CreateCommittedResource3([Flow(Silk.NET.Core.Native.FlowDirection.In)] HeapProperties* pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ResourceDesc1 pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, ref ID3D12ProtectedResourceSession pProtectedSession, uint NumCastableFormats, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.DXGI.Format pCastableFormats, ref Guid riidResource, void** ppvResource)
         {
             var @this = (ID3D12Device10*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -13013,7 +13013,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateCommittedResource3([Flow(Silk.NET.Core.Native.FlowDirection.In)] HeapProperties* pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ResourceDesc1 pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, ref ID3D12ProtectedResourceSession pProtectedSession, uint NumCastableFormats, ref Silk.NET.DXGI.Format pCastableFormats, ref Guid riidResource, ref void* ppvResource)
+        public readonly unsafe int CreateCommittedResource3([Flow(Silk.NET.Core.Native.FlowDirection.In)] HeapProperties* pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ResourceDesc1 pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, ref ID3D12ProtectedResourceSession pProtectedSession, uint NumCastableFormats, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.DXGI.Format pCastableFormats, ref Guid riidResource, ref void* ppvResource)
         {
             var @this = (ID3D12Device10*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -13037,7 +13037,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateCommittedResource3([Flow(Silk.NET.Core.Native.FlowDirection.In)] HeapProperties* pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ResourceDesc1 pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ClearValue pOptimizedClearValue, ID3D12ProtectedResourceSession* pProtectedSession, uint NumCastableFormats, Silk.NET.DXGI.Format* pCastableFormats, Guid* riidResource, void** ppvResource)
+        public readonly unsafe int CreateCommittedResource3([Flow(Silk.NET.Core.Native.FlowDirection.In)] HeapProperties* pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ResourceDesc1 pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ClearValue pOptimizedClearValue, ID3D12ProtectedResourceSession* pProtectedSession, uint NumCastableFormats, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.DXGI.Format* pCastableFormats, Guid* riidResource, void** ppvResource)
         {
             var @this = (ID3D12Device10*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -13052,7 +13052,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateCommittedResource3([Flow(Silk.NET.Core.Native.FlowDirection.In)] HeapProperties* pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ResourceDesc1 pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ClearValue pOptimizedClearValue, ID3D12ProtectedResourceSession* pProtectedSession, uint NumCastableFormats, Silk.NET.DXGI.Format* pCastableFormats, Guid* riidResource, ref void* ppvResource)
+        public readonly unsafe int CreateCommittedResource3([Flow(Silk.NET.Core.Native.FlowDirection.In)] HeapProperties* pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ResourceDesc1 pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ClearValue pOptimizedClearValue, ID3D12ProtectedResourceSession* pProtectedSession, uint NumCastableFormats, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.DXGI.Format* pCastableFormats, Guid* riidResource, ref void* ppvResource)
         {
             var @this = (ID3D12Device10*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -13070,7 +13070,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateCommittedResource3([Flow(Silk.NET.Core.Native.FlowDirection.In)] HeapProperties* pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ResourceDesc1 pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ClearValue pOptimizedClearValue, ID3D12ProtectedResourceSession* pProtectedSession, uint NumCastableFormats, Silk.NET.DXGI.Format* pCastableFormats, ref Guid riidResource, void** ppvResource)
+        public readonly unsafe int CreateCommittedResource3([Flow(Silk.NET.Core.Native.FlowDirection.In)] HeapProperties* pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ResourceDesc1 pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ClearValue pOptimizedClearValue, ID3D12ProtectedResourceSession* pProtectedSession, uint NumCastableFormats, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.DXGI.Format* pCastableFormats, ref Guid riidResource, void** ppvResource)
         {
             var @this = (ID3D12Device10*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -13088,7 +13088,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateCommittedResource3([Flow(Silk.NET.Core.Native.FlowDirection.In)] HeapProperties* pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ResourceDesc1 pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ClearValue pOptimizedClearValue, ID3D12ProtectedResourceSession* pProtectedSession, uint NumCastableFormats, Silk.NET.DXGI.Format* pCastableFormats, ref Guid riidResource, ref void* ppvResource)
+        public readonly unsafe int CreateCommittedResource3([Flow(Silk.NET.Core.Native.FlowDirection.In)] HeapProperties* pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ResourceDesc1 pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ClearValue pOptimizedClearValue, ID3D12ProtectedResourceSession* pProtectedSession, uint NumCastableFormats, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.DXGI.Format* pCastableFormats, ref Guid riidResource, ref void* ppvResource)
         {
             var @this = (ID3D12Device10*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -13109,7 +13109,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateCommittedResource3([Flow(Silk.NET.Core.Native.FlowDirection.In)] HeapProperties* pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ResourceDesc1 pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ClearValue pOptimizedClearValue, ID3D12ProtectedResourceSession* pProtectedSession, uint NumCastableFormats, ref Silk.NET.DXGI.Format pCastableFormats, Guid* riidResource, void** ppvResource)
+        public readonly unsafe int CreateCommittedResource3([Flow(Silk.NET.Core.Native.FlowDirection.In)] HeapProperties* pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ResourceDesc1 pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ClearValue pOptimizedClearValue, ID3D12ProtectedResourceSession* pProtectedSession, uint NumCastableFormats, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.DXGI.Format pCastableFormats, Guid* riidResource, void** ppvResource)
         {
             var @this = (ID3D12Device10*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -13127,7 +13127,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateCommittedResource3([Flow(Silk.NET.Core.Native.FlowDirection.In)] HeapProperties* pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ResourceDesc1 pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ClearValue pOptimizedClearValue, ID3D12ProtectedResourceSession* pProtectedSession, uint NumCastableFormats, ref Silk.NET.DXGI.Format pCastableFormats, Guid* riidResource, ref void* ppvResource)
+        public readonly unsafe int CreateCommittedResource3([Flow(Silk.NET.Core.Native.FlowDirection.In)] HeapProperties* pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ResourceDesc1 pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ClearValue pOptimizedClearValue, ID3D12ProtectedResourceSession* pProtectedSession, uint NumCastableFormats, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.DXGI.Format pCastableFormats, Guid* riidResource, ref void* ppvResource)
         {
             var @this = (ID3D12Device10*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -13148,7 +13148,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateCommittedResource3([Flow(Silk.NET.Core.Native.FlowDirection.In)] HeapProperties* pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ResourceDesc1 pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ClearValue pOptimizedClearValue, ID3D12ProtectedResourceSession* pProtectedSession, uint NumCastableFormats, ref Silk.NET.DXGI.Format pCastableFormats, ref Guid riidResource, void** ppvResource)
+        public readonly unsafe int CreateCommittedResource3([Flow(Silk.NET.Core.Native.FlowDirection.In)] HeapProperties* pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ResourceDesc1 pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ClearValue pOptimizedClearValue, ID3D12ProtectedResourceSession* pProtectedSession, uint NumCastableFormats, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.DXGI.Format pCastableFormats, ref Guid riidResource, void** ppvResource)
         {
             var @this = (ID3D12Device10*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -13169,7 +13169,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateCommittedResource3([Flow(Silk.NET.Core.Native.FlowDirection.In)] HeapProperties* pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ResourceDesc1 pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ClearValue pOptimizedClearValue, ID3D12ProtectedResourceSession* pProtectedSession, uint NumCastableFormats, ref Silk.NET.DXGI.Format pCastableFormats, ref Guid riidResource, ref void* ppvResource)
+        public readonly unsafe int CreateCommittedResource3([Flow(Silk.NET.Core.Native.FlowDirection.In)] HeapProperties* pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ResourceDesc1 pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ClearValue pOptimizedClearValue, ID3D12ProtectedResourceSession* pProtectedSession, uint NumCastableFormats, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.DXGI.Format pCastableFormats, ref Guid riidResource, ref void* ppvResource)
         {
             var @this = (ID3D12Device10*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -13193,7 +13193,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateCommittedResource3([Flow(Silk.NET.Core.Native.FlowDirection.In)] HeapProperties* pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ResourceDesc1 pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ClearValue pOptimizedClearValue, ref ID3D12ProtectedResourceSession pProtectedSession, uint NumCastableFormats, Silk.NET.DXGI.Format* pCastableFormats, Guid* riidResource, void** ppvResource)
+        public readonly unsafe int CreateCommittedResource3([Flow(Silk.NET.Core.Native.FlowDirection.In)] HeapProperties* pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ResourceDesc1 pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ClearValue pOptimizedClearValue, ref ID3D12ProtectedResourceSession pProtectedSession, uint NumCastableFormats, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.DXGI.Format* pCastableFormats, Guid* riidResource, void** ppvResource)
         {
             var @this = (ID3D12Device10*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -13211,7 +13211,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateCommittedResource3([Flow(Silk.NET.Core.Native.FlowDirection.In)] HeapProperties* pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ResourceDesc1 pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ClearValue pOptimizedClearValue, ref ID3D12ProtectedResourceSession pProtectedSession, uint NumCastableFormats, Silk.NET.DXGI.Format* pCastableFormats, Guid* riidResource, ref void* ppvResource)
+        public readonly unsafe int CreateCommittedResource3([Flow(Silk.NET.Core.Native.FlowDirection.In)] HeapProperties* pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ResourceDesc1 pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ClearValue pOptimizedClearValue, ref ID3D12ProtectedResourceSession pProtectedSession, uint NumCastableFormats, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.DXGI.Format* pCastableFormats, Guid* riidResource, ref void* ppvResource)
         {
             var @this = (ID3D12Device10*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -13232,7 +13232,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateCommittedResource3([Flow(Silk.NET.Core.Native.FlowDirection.In)] HeapProperties* pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ResourceDesc1 pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ClearValue pOptimizedClearValue, ref ID3D12ProtectedResourceSession pProtectedSession, uint NumCastableFormats, Silk.NET.DXGI.Format* pCastableFormats, ref Guid riidResource, void** ppvResource)
+        public readonly unsafe int CreateCommittedResource3([Flow(Silk.NET.Core.Native.FlowDirection.In)] HeapProperties* pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ResourceDesc1 pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ClearValue pOptimizedClearValue, ref ID3D12ProtectedResourceSession pProtectedSession, uint NumCastableFormats, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.DXGI.Format* pCastableFormats, ref Guid riidResource, void** ppvResource)
         {
             var @this = (ID3D12Device10*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -13253,7 +13253,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateCommittedResource3([Flow(Silk.NET.Core.Native.FlowDirection.In)] HeapProperties* pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ResourceDesc1 pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ClearValue pOptimizedClearValue, ref ID3D12ProtectedResourceSession pProtectedSession, uint NumCastableFormats, Silk.NET.DXGI.Format* pCastableFormats, ref Guid riidResource, ref void* ppvResource)
+        public readonly unsafe int CreateCommittedResource3([Flow(Silk.NET.Core.Native.FlowDirection.In)] HeapProperties* pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ResourceDesc1 pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ClearValue pOptimizedClearValue, ref ID3D12ProtectedResourceSession pProtectedSession, uint NumCastableFormats, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.DXGI.Format* pCastableFormats, ref Guid riidResource, ref void* ppvResource)
         {
             var @this = (ID3D12Device10*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -13277,7 +13277,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateCommittedResource3([Flow(Silk.NET.Core.Native.FlowDirection.In)] HeapProperties* pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ResourceDesc1 pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ClearValue pOptimizedClearValue, ref ID3D12ProtectedResourceSession pProtectedSession, uint NumCastableFormats, ref Silk.NET.DXGI.Format pCastableFormats, Guid* riidResource, void** ppvResource)
+        public readonly unsafe int CreateCommittedResource3([Flow(Silk.NET.Core.Native.FlowDirection.In)] HeapProperties* pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ResourceDesc1 pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ClearValue pOptimizedClearValue, ref ID3D12ProtectedResourceSession pProtectedSession, uint NumCastableFormats, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.DXGI.Format pCastableFormats, Guid* riidResource, void** ppvResource)
         {
             var @this = (ID3D12Device10*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -13298,7 +13298,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateCommittedResource3([Flow(Silk.NET.Core.Native.FlowDirection.In)] HeapProperties* pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ResourceDesc1 pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ClearValue pOptimizedClearValue, ref ID3D12ProtectedResourceSession pProtectedSession, uint NumCastableFormats, ref Silk.NET.DXGI.Format pCastableFormats, Guid* riidResource, ref void* ppvResource)
+        public readonly unsafe int CreateCommittedResource3([Flow(Silk.NET.Core.Native.FlowDirection.In)] HeapProperties* pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ResourceDesc1 pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ClearValue pOptimizedClearValue, ref ID3D12ProtectedResourceSession pProtectedSession, uint NumCastableFormats, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.DXGI.Format pCastableFormats, Guid* riidResource, ref void* ppvResource)
         {
             var @this = (ID3D12Device10*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -13322,7 +13322,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateCommittedResource3([Flow(Silk.NET.Core.Native.FlowDirection.In)] HeapProperties* pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ResourceDesc1 pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ClearValue pOptimizedClearValue, ref ID3D12ProtectedResourceSession pProtectedSession, uint NumCastableFormats, ref Silk.NET.DXGI.Format pCastableFormats, ref Guid riidResource, void** ppvResource)
+        public readonly unsafe int CreateCommittedResource3([Flow(Silk.NET.Core.Native.FlowDirection.In)] HeapProperties* pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ResourceDesc1 pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ClearValue pOptimizedClearValue, ref ID3D12ProtectedResourceSession pProtectedSession, uint NumCastableFormats, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.DXGI.Format pCastableFormats, ref Guid riidResource, void** ppvResource)
         {
             var @this = (ID3D12Device10*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -13346,7 +13346,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateCommittedResource3([Flow(Silk.NET.Core.Native.FlowDirection.In)] HeapProperties* pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ResourceDesc1 pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ClearValue pOptimizedClearValue, ref ID3D12ProtectedResourceSession pProtectedSession, uint NumCastableFormats, ref Silk.NET.DXGI.Format pCastableFormats, ref Guid riidResource, ref void* ppvResource)
+        public readonly unsafe int CreateCommittedResource3([Flow(Silk.NET.Core.Native.FlowDirection.In)] HeapProperties* pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ResourceDesc1 pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ClearValue pOptimizedClearValue, ref ID3D12ProtectedResourceSession pProtectedSession, uint NumCastableFormats, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.DXGI.Format pCastableFormats, ref Guid riidResource, ref void* ppvResource)
         {
             var @this = (ID3D12Device10*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -13373,7 +13373,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateCommittedResource3([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in HeapProperties pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc1* pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, ID3D12ProtectedResourceSession* pProtectedSession, uint NumCastableFormats, Silk.NET.DXGI.Format* pCastableFormats, Guid* riidResource, void** ppvResource)
+        public readonly unsafe int CreateCommittedResource3([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in HeapProperties pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc1* pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, ID3D12ProtectedResourceSession* pProtectedSession, uint NumCastableFormats, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.DXGI.Format* pCastableFormats, Guid* riidResource, void** ppvResource)
         {
             var @this = (ID3D12Device10*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -13385,7 +13385,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateCommittedResource3([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in HeapProperties pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc1* pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, ID3D12ProtectedResourceSession* pProtectedSession, uint NumCastableFormats, Silk.NET.DXGI.Format* pCastableFormats, Guid* riidResource, ref void* ppvResource)
+        public readonly unsafe int CreateCommittedResource3([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in HeapProperties pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc1* pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, ID3D12ProtectedResourceSession* pProtectedSession, uint NumCastableFormats, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.DXGI.Format* pCastableFormats, Guid* riidResource, ref void* ppvResource)
         {
             var @this = (ID3D12Device10*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -13400,7 +13400,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateCommittedResource3([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in HeapProperties pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc1* pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, ID3D12ProtectedResourceSession* pProtectedSession, uint NumCastableFormats, Silk.NET.DXGI.Format* pCastableFormats, ref Guid riidResource, void** ppvResource)
+        public readonly unsafe int CreateCommittedResource3([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in HeapProperties pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc1* pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, ID3D12ProtectedResourceSession* pProtectedSession, uint NumCastableFormats, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.DXGI.Format* pCastableFormats, ref Guid riidResource, void** ppvResource)
         {
             var @this = (ID3D12Device10*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -13415,7 +13415,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateCommittedResource3([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in HeapProperties pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc1* pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, ID3D12ProtectedResourceSession* pProtectedSession, uint NumCastableFormats, Silk.NET.DXGI.Format* pCastableFormats, ref Guid riidResource, ref void* ppvResource)
+        public readonly unsafe int CreateCommittedResource3([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in HeapProperties pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc1* pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, ID3D12ProtectedResourceSession* pProtectedSession, uint NumCastableFormats, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.DXGI.Format* pCastableFormats, ref Guid riidResource, ref void* ppvResource)
         {
             var @this = (ID3D12Device10*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -13433,7 +13433,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateCommittedResource3([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in HeapProperties pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc1* pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, ID3D12ProtectedResourceSession* pProtectedSession, uint NumCastableFormats, ref Silk.NET.DXGI.Format pCastableFormats, Guid* riidResource, void** ppvResource)
+        public readonly unsafe int CreateCommittedResource3([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in HeapProperties pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc1* pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, ID3D12ProtectedResourceSession* pProtectedSession, uint NumCastableFormats, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.DXGI.Format pCastableFormats, Guid* riidResource, void** ppvResource)
         {
             var @this = (ID3D12Device10*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -13448,7 +13448,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateCommittedResource3([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in HeapProperties pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc1* pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, ID3D12ProtectedResourceSession* pProtectedSession, uint NumCastableFormats, ref Silk.NET.DXGI.Format pCastableFormats, Guid* riidResource, ref void* ppvResource)
+        public readonly unsafe int CreateCommittedResource3([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in HeapProperties pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc1* pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, ID3D12ProtectedResourceSession* pProtectedSession, uint NumCastableFormats, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.DXGI.Format pCastableFormats, Guid* riidResource, ref void* ppvResource)
         {
             var @this = (ID3D12Device10*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -13466,7 +13466,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateCommittedResource3([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in HeapProperties pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc1* pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, ID3D12ProtectedResourceSession* pProtectedSession, uint NumCastableFormats, ref Silk.NET.DXGI.Format pCastableFormats, ref Guid riidResource, void** ppvResource)
+        public readonly unsafe int CreateCommittedResource3([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in HeapProperties pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc1* pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, ID3D12ProtectedResourceSession* pProtectedSession, uint NumCastableFormats, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.DXGI.Format pCastableFormats, ref Guid riidResource, void** ppvResource)
         {
             var @this = (ID3D12Device10*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -13484,7 +13484,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateCommittedResource3([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in HeapProperties pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc1* pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, ID3D12ProtectedResourceSession* pProtectedSession, uint NumCastableFormats, ref Silk.NET.DXGI.Format pCastableFormats, ref Guid riidResource, ref void* ppvResource)
+        public readonly unsafe int CreateCommittedResource3([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in HeapProperties pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc1* pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, ID3D12ProtectedResourceSession* pProtectedSession, uint NumCastableFormats, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.DXGI.Format pCastableFormats, ref Guid riidResource, ref void* ppvResource)
         {
             var @this = (ID3D12Device10*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -13505,7 +13505,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateCommittedResource3([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in HeapProperties pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc1* pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, ref ID3D12ProtectedResourceSession pProtectedSession, uint NumCastableFormats, Silk.NET.DXGI.Format* pCastableFormats, Guid* riidResource, void** ppvResource)
+        public readonly unsafe int CreateCommittedResource3([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in HeapProperties pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc1* pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, ref ID3D12ProtectedResourceSession pProtectedSession, uint NumCastableFormats, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.DXGI.Format* pCastableFormats, Guid* riidResource, void** ppvResource)
         {
             var @this = (ID3D12Device10*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -13520,7 +13520,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateCommittedResource3([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in HeapProperties pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc1* pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, ref ID3D12ProtectedResourceSession pProtectedSession, uint NumCastableFormats, Silk.NET.DXGI.Format* pCastableFormats, Guid* riidResource, ref void* ppvResource)
+        public readonly unsafe int CreateCommittedResource3([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in HeapProperties pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc1* pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, ref ID3D12ProtectedResourceSession pProtectedSession, uint NumCastableFormats, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.DXGI.Format* pCastableFormats, Guid* riidResource, ref void* ppvResource)
         {
             var @this = (ID3D12Device10*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -13538,7 +13538,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateCommittedResource3([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in HeapProperties pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc1* pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, ref ID3D12ProtectedResourceSession pProtectedSession, uint NumCastableFormats, Silk.NET.DXGI.Format* pCastableFormats, ref Guid riidResource, void** ppvResource)
+        public readonly unsafe int CreateCommittedResource3([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in HeapProperties pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc1* pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, ref ID3D12ProtectedResourceSession pProtectedSession, uint NumCastableFormats, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.DXGI.Format* pCastableFormats, ref Guid riidResource, void** ppvResource)
         {
             var @this = (ID3D12Device10*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -13556,7 +13556,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateCommittedResource3([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in HeapProperties pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc1* pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, ref ID3D12ProtectedResourceSession pProtectedSession, uint NumCastableFormats, Silk.NET.DXGI.Format* pCastableFormats, ref Guid riidResource, ref void* ppvResource)
+        public readonly unsafe int CreateCommittedResource3([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in HeapProperties pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc1* pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, ref ID3D12ProtectedResourceSession pProtectedSession, uint NumCastableFormats, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.DXGI.Format* pCastableFormats, ref Guid riidResource, ref void* ppvResource)
         {
             var @this = (ID3D12Device10*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -13577,7 +13577,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateCommittedResource3([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in HeapProperties pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc1* pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, ref ID3D12ProtectedResourceSession pProtectedSession, uint NumCastableFormats, ref Silk.NET.DXGI.Format pCastableFormats, Guid* riidResource, void** ppvResource)
+        public readonly unsafe int CreateCommittedResource3([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in HeapProperties pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc1* pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, ref ID3D12ProtectedResourceSession pProtectedSession, uint NumCastableFormats, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.DXGI.Format pCastableFormats, Guid* riidResource, void** ppvResource)
         {
             var @this = (ID3D12Device10*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -13595,7 +13595,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateCommittedResource3([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in HeapProperties pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc1* pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, ref ID3D12ProtectedResourceSession pProtectedSession, uint NumCastableFormats, ref Silk.NET.DXGI.Format pCastableFormats, Guid* riidResource, ref void* ppvResource)
+        public readonly unsafe int CreateCommittedResource3([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in HeapProperties pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc1* pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, ref ID3D12ProtectedResourceSession pProtectedSession, uint NumCastableFormats, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.DXGI.Format pCastableFormats, Guid* riidResource, ref void* ppvResource)
         {
             var @this = (ID3D12Device10*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -13616,7 +13616,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateCommittedResource3([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in HeapProperties pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc1* pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, ref ID3D12ProtectedResourceSession pProtectedSession, uint NumCastableFormats, ref Silk.NET.DXGI.Format pCastableFormats, ref Guid riidResource, void** ppvResource)
+        public readonly unsafe int CreateCommittedResource3([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in HeapProperties pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc1* pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, ref ID3D12ProtectedResourceSession pProtectedSession, uint NumCastableFormats, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.DXGI.Format pCastableFormats, ref Guid riidResource, void** ppvResource)
         {
             var @this = (ID3D12Device10*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -13637,7 +13637,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateCommittedResource3([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in HeapProperties pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc1* pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, ref ID3D12ProtectedResourceSession pProtectedSession, uint NumCastableFormats, ref Silk.NET.DXGI.Format pCastableFormats, ref Guid riidResource, ref void* ppvResource)
+        public readonly unsafe int CreateCommittedResource3([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in HeapProperties pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc1* pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, ref ID3D12ProtectedResourceSession pProtectedSession, uint NumCastableFormats, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.DXGI.Format pCastableFormats, ref Guid riidResource, ref void* ppvResource)
         {
             var @this = (ID3D12Device10*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -13661,7 +13661,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateCommittedResource3([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in HeapProperties pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc1* pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ClearValue pOptimizedClearValue, ID3D12ProtectedResourceSession* pProtectedSession, uint NumCastableFormats, Silk.NET.DXGI.Format* pCastableFormats, Guid* riidResource, void** ppvResource)
+        public readonly unsafe int CreateCommittedResource3([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in HeapProperties pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc1* pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ClearValue pOptimizedClearValue, ID3D12ProtectedResourceSession* pProtectedSession, uint NumCastableFormats, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.DXGI.Format* pCastableFormats, Guid* riidResource, void** ppvResource)
         {
             var @this = (ID3D12Device10*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -13676,7 +13676,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateCommittedResource3([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in HeapProperties pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc1* pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ClearValue pOptimizedClearValue, ID3D12ProtectedResourceSession* pProtectedSession, uint NumCastableFormats, Silk.NET.DXGI.Format* pCastableFormats, Guid* riidResource, ref void* ppvResource)
+        public readonly unsafe int CreateCommittedResource3([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in HeapProperties pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc1* pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ClearValue pOptimizedClearValue, ID3D12ProtectedResourceSession* pProtectedSession, uint NumCastableFormats, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.DXGI.Format* pCastableFormats, Guid* riidResource, ref void* ppvResource)
         {
             var @this = (ID3D12Device10*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -13694,7 +13694,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateCommittedResource3([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in HeapProperties pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc1* pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ClearValue pOptimizedClearValue, ID3D12ProtectedResourceSession* pProtectedSession, uint NumCastableFormats, Silk.NET.DXGI.Format* pCastableFormats, ref Guid riidResource, void** ppvResource)
+        public readonly unsafe int CreateCommittedResource3([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in HeapProperties pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc1* pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ClearValue pOptimizedClearValue, ID3D12ProtectedResourceSession* pProtectedSession, uint NumCastableFormats, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.DXGI.Format* pCastableFormats, ref Guid riidResource, void** ppvResource)
         {
             var @this = (ID3D12Device10*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -13712,7 +13712,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateCommittedResource3([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in HeapProperties pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc1* pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ClearValue pOptimizedClearValue, ID3D12ProtectedResourceSession* pProtectedSession, uint NumCastableFormats, Silk.NET.DXGI.Format* pCastableFormats, ref Guid riidResource, ref void* ppvResource)
+        public readonly unsafe int CreateCommittedResource3([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in HeapProperties pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc1* pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ClearValue pOptimizedClearValue, ID3D12ProtectedResourceSession* pProtectedSession, uint NumCastableFormats, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.DXGI.Format* pCastableFormats, ref Guid riidResource, ref void* ppvResource)
         {
             var @this = (ID3D12Device10*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -13733,7 +13733,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateCommittedResource3([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in HeapProperties pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc1* pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ClearValue pOptimizedClearValue, ID3D12ProtectedResourceSession* pProtectedSession, uint NumCastableFormats, ref Silk.NET.DXGI.Format pCastableFormats, Guid* riidResource, void** ppvResource)
+        public readonly unsafe int CreateCommittedResource3([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in HeapProperties pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc1* pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ClearValue pOptimizedClearValue, ID3D12ProtectedResourceSession* pProtectedSession, uint NumCastableFormats, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.DXGI.Format pCastableFormats, Guid* riidResource, void** ppvResource)
         {
             var @this = (ID3D12Device10*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -13751,7 +13751,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateCommittedResource3([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in HeapProperties pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc1* pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ClearValue pOptimizedClearValue, ID3D12ProtectedResourceSession* pProtectedSession, uint NumCastableFormats, ref Silk.NET.DXGI.Format pCastableFormats, Guid* riidResource, ref void* ppvResource)
+        public readonly unsafe int CreateCommittedResource3([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in HeapProperties pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc1* pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ClearValue pOptimizedClearValue, ID3D12ProtectedResourceSession* pProtectedSession, uint NumCastableFormats, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.DXGI.Format pCastableFormats, Guid* riidResource, ref void* ppvResource)
         {
             var @this = (ID3D12Device10*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -13772,7 +13772,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateCommittedResource3([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in HeapProperties pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc1* pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ClearValue pOptimizedClearValue, ID3D12ProtectedResourceSession* pProtectedSession, uint NumCastableFormats, ref Silk.NET.DXGI.Format pCastableFormats, ref Guid riidResource, void** ppvResource)
+        public readonly unsafe int CreateCommittedResource3([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in HeapProperties pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc1* pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ClearValue pOptimizedClearValue, ID3D12ProtectedResourceSession* pProtectedSession, uint NumCastableFormats, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.DXGI.Format pCastableFormats, ref Guid riidResource, void** ppvResource)
         {
             var @this = (ID3D12Device10*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -13793,7 +13793,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateCommittedResource3([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in HeapProperties pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc1* pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ClearValue pOptimizedClearValue, ID3D12ProtectedResourceSession* pProtectedSession, uint NumCastableFormats, ref Silk.NET.DXGI.Format pCastableFormats, ref Guid riidResource, ref void* ppvResource)
+        public readonly unsafe int CreateCommittedResource3([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in HeapProperties pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc1* pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ClearValue pOptimizedClearValue, ID3D12ProtectedResourceSession* pProtectedSession, uint NumCastableFormats, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.DXGI.Format pCastableFormats, ref Guid riidResource, ref void* ppvResource)
         {
             var @this = (ID3D12Device10*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -13817,7 +13817,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateCommittedResource3([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in HeapProperties pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc1* pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ClearValue pOptimizedClearValue, ref ID3D12ProtectedResourceSession pProtectedSession, uint NumCastableFormats, Silk.NET.DXGI.Format* pCastableFormats, Guid* riidResource, void** ppvResource)
+        public readonly unsafe int CreateCommittedResource3([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in HeapProperties pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc1* pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ClearValue pOptimizedClearValue, ref ID3D12ProtectedResourceSession pProtectedSession, uint NumCastableFormats, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.DXGI.Format* pCastableFormats, Guid* riidResource, void** ppvResource)
         {
             var @this = (ID3D12Device10*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -13835,7 +13835,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateCommittedResource3([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in HeapProperties pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc1* pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ClearValue pOptimizedClearValue, ref ID3D12ProtectedResourceSession pProtectedSession, uint NumCastableFormats, Silk.NET.DXGI.Format* pCastableFormats, Guid* riidResource, ref void* ppvResource)
+        public readonly unsafe int CreateCommittedResource3([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in HeapProperties pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc1* pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ClearValue pOptimizedClearValue, ref ID3D12ProtectedResourceSession pProtectedSession, uint NumCastableFormats, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.DXGI.Format* pCastableFormats, Guid* riidResource, ref void* ppvResource)
         {
             var @this = (ID3D12Device10*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -13856,7 +13856,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateCommittedResource3([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in HeapProperties pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc1* pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ClearValue pOptimizedClearValue, ref ID3D12ProtectedResourceSession pProtectedSession, uint NumCastableFormats, Silk.NET.DXGI.Format* pCastableFormats, ref Guid riidResource, void** ppvResource)
+        public readonly unsafe int CreateCommittedResource3([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in HeapProperties pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc1* pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ClearValue pOptimizedClearValue, ref ID3D12ProtectedResourceSession pProtectedSession, uint NumCastableFormats, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.DXGI.Format* pCastableFormats, ref Guid riidResource, void** ppvResource)
         {
             var @this = (ID3D12Device10*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -13877,7 +13877,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateCommittedResource3([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in HeapProperties pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc1* pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ClearValue pOptimizedClearValue, ref ID3D12ProtectedResourceSession pProtectedSession, uint NumCastableFormats, Silk.NET.DXGI.Format* pCastableFormats, ref Guid riidResource, ref void* ppvResource)
+        public readonly unsafe int CreateCommittedResource3([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in HeapProperties pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc1* pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ClearValue pOptimizedClearValue, ref ID3D12ProtectedResourceSession pProtectedSession, uint NumCastableFormats, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.DXGI.Format* pCastableFormats, ref Guid riidResource, ref void* ppvResource)
         {
             var @this = (ID3D12Device10*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -13901,7 +13901,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateCommittedResource3([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in HeapProperties pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc1* pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ClearValue pOptimizedClearValue, ref ID3D12ProtectedResourceSession pProtectedSession, uint NumCastableFormats, ref Silk.NET.DXGI.Format pCastableFormats, Guid* riidResource, void** ppvResource)
+        public readonly unsafe int CreateCommittedResource3([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in HeapProperties pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc1* pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ClearValue pOptimizedClearValue, ref ID3D12ProtectedResourceSession pProtectedSession, uint NumCastableFormats, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.DXGI.Format pCastableFormats, Guid* riidResource, void** ppvResource)
         {
             var @this = (ID3D12Device10*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -13922,7 +13922,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateCommittedResource3([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in HeapProperties pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc1* pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ClearValue pOptimizedClearValue, ref ID3D12ProtectedResourceSession pProtectedSession, uint NumCastableFormats, ref Silk.NET.DXGI.Format pCastableFormats, Guid* riidResource, ref void* ppvResource)
+        public readonly unsafe int CreateCommittedResource3([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in HeapProperties pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc1* pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ClearValue pOptimizedClearValue, ref ID3D12ProtectedResourceSession pProtectedSession, uint NumCastableFormats, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.DXGI.Format pCastableFormats, Guid* riidResource, ref void* ppvResource)
         {
             var @this = (ID3D12Device10*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -13946,7 +13946,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateCommittedResource3([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in HeapProperties pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc1* pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ClearValue pOptimizedClearValue, ref ID3D12ProtectedResourceSession pProtectedSession, uint NumCastableFormats, ref Silk.NET.DXGI.Format pCastableFormats, ref Guid riidResource, void** ppvResource)
+        public readonly unsafe int CreateCommittedResource3([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in HeapProperties pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc1* pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ClearValue pOptimizedClearValue, ref ID3D12ProtectedResourceSession pProtectedSession, uint NumCastableFormats, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.DXGI.Format pCastableFormats, ref Guid riidResource, void** ppvResource)
         {
             var @this = (ID3D12Device10*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -13970,7 +13970,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateCommittedResource3([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in HeapProperties pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc1* pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ClearValue pOptimizedClearValue, ref ID3D12ProtectedResourceSession pProtectedSession, uint NumCastableFormats, ref Silk.NET.DXGI.Format pCastableFormats, ref Guid riidResource, ref void* ppvResource)
+        public readonly unsafe int CreateCommittedResource3([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in HeapProperties pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc1* pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ClearValue pOptimizedClearValue, ref ID3D12ProtectedResourceSession pProtectedSession, uint NumCastableFormats, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.DXGI.Format pCastableFormats, ref Guid riidResource, ref void* ppvResource)
         {
             var @this = (ID3D12Device10*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -13997,7 +13997,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateCommittedResource3([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in HeapProperties pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ResourceDesc1 pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, ID3D12ProtectedResourceSession* pProtectedSession, uint NumCastableFormats, Silk.NET.DXGI.Format* pCastableFormats, Guid* riidResource, void** ppvResource)
+        public readonly unsafe int CreateCommittedResource3([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in HeapProperties pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ResourceDesc1 pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, ID3D12ProtectedResourceSession* pProtectedSession, uint NumCastableFormats, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.DXGI.Format* pCastableFormats, Guid* riidResource, void** ppvResource)
         {
             var @this = (ID3D12Device10*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -14012,7 +14012,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateCommittedResource3([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in HeapProperties pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ResourceDesc1 pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, ID3D12ProtectedResourceSession* pProtectedSession, uint NumCastableFormats, Silk.NET.DXGI.Format* pCastableFormats, Guid* riidResource, ref void* ppvResource)
+        public readonly unsafe int CreateCommittedResource3([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in HeapProperties pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ResourceDesc1 pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, ID3D12ProtectedResourceSession* pProtectedSession, uint NumCastableFormats, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.DXGI.Format* pCastableFormats, Guid* riidResource, ref void* ppvResource)
         {
             var @this = (ID3D12Device10*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -14030,7 +14030,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateCommittedResource3([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in HeapProperties pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ResourceDesc1 pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, ID3D12ProtectedResourceSession* pProtectedSession, uint NumCastableFormats, Silk.NET.DXGI.Format* pCastableFormats, ref Guid riidResource, void** ppvResource)
+        public readonly unsafe int CreateCommittedResource3([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in HeapProperties pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ResourceDesc1 pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, ID3D12ProtectedResourceSession* pProtectedSession, uint NumCastableFormats, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.DXGI.Format* pCastableFormats, ref Guid riidResource, void** ppvResource)
         {
             var @this = (ID3D12Device10*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -14048,7 +14048,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateCommittedResource3([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in HeapProperties pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ResourceDesc1 pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, ID3D12ProtectedResourceSession* pProtectedSession, uint NumCastableFormats, Silk.NET.DXGI.Format* pCastableFormats, ref Guid riidResource, ref void* ppvResource)
+        public readonly unsafe int CreateCommittedResource3([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in HeapProperties pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ResourceDesc1 pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, ID3D12ProtectedResourceSession* pProtectedSession, uint NumCastableFormats, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.DXGI.Format* pCastableFormats, ref Guid riidResource, ref void* ppvResource)
         {
             var @this = (ID3D12Device10*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -14069,7 +14069,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateCommittedResource3([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in HeapProperties pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ResourceDesc1 pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, ID3D12ProtectedResourceSession* pProtectedSession, uint NumCastableFormats, ref Silk.NET.DXGI.Format pCastableFormats, Guid* riidResource, void** ppvResource)
+        public readonly unsafe int CreateCommittedResource3([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in HeapProperties pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ResourceDesc1 pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, ID3D12ProtectedResourceSession* pProtectedSession, uint NumCastableFormats, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.DXGI.Format pCastableFormats, Guid* riidResource, void** ppvResource)
         {
             var @this = (ID3D12Device10*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -14087,7 +14087,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateCommittedResource3([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in HeapProperties pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ResourceDesc1 pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, ID3D12ProtectedResourceSession* pProtectedSession, uint NumCastableFormats, ref Silk.NET.DXGI.Format pCastableFormats, Guid* riidResource, ref void* ppvResource)
+        public readonly unsafe int CreateCommittedResource3([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in HeapProperties pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ResourceDesc1 pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, ID3D12ProtectedResourceSession* pProtectedSession, uint NumCastableFormats, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.DXGI.Format pCastableFormats, Guid* riidResource, ref void* ppvResource)
         {
             var @this = (ID3D12Device10*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -14108,7 +14108,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateCommittedResource3([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in HeapProperties pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ResourceDesc1 pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, ID3D12ProtectedResourceSession* pProtectedSession, uint NumCastableFormats, ref Silk.NET.DXGI.Format pCastableFormats, ref Guid riidResource, void** ppvResource)
+        public readonly unsafe int CreateCommittedResource3([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in HeapProperties pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ResourceDesc1 pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, ID3D12ProtectedResourceSession* pProtectedSession, uint NumCastableFormats, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.DXGI.Format pCastableFormats, ref Guid riidResource, void** ppvResource)
         {
             var @this = (ID3D12Device10*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -14129,7 +14129,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateCommittedResource3([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in HeapProperties pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ResourceDesc1 pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, ID3D12ProtectedResourceSession* pProtectedSession, uint NumCastableFormats, ref Silk.NET.DXGI.Format pCastableFormats, ref Guid riidResource, ref void* ppvResource)
+        public readonly unsafe int CreateCommittedResource3([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in HeapProperties pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ResourceDesc1 pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, ID3D12ProtectedResourceSession* pProtectedSession, uint NumCastableFormats, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.DXGI.Format pCastableFormats, ref Guid riidResource, ref void* ppvResource)
         {
             var @this = (ID3D12Device10*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -14153,7 +14153,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateCommittedResource3([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in HeapProperties pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ResourceDesc1 pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, ref ID3D12ProtectedResourceSession pProtectedSession, uint NumCastableFormats, Silk.NET.DXGI.Format* pCastableFormats, Guid* riidResource, void** ppvResource)
+        public readonly unsafe int CreateCommittedResource3([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in HeapProperties pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ResourceDesc1 pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, ref ID3D12ProtectedResourceSession pProtectedSession, uint NumCastableFormats, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.DXGI.Format* pCastableFormats, Guid* riidResource, void** ppvResource)
         {
             var @this = (ID3D12Device10*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -14171,7 +14171,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateCommittedResource3([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in HeapProperties pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ResourceDesc1 pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, ref ID3D12ProtectedResourceSession pProtectedSession, uint NumCastableFormats, Silk.NET.DXGI.Format* pCastableFormats, Guid* riidResource, ref void* ppvResource)
+        public readonly unsafe int CreateCommittedResource3([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in HeapProperties pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ResourceDesc1 pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, ref ID3D12ProtectedResourceSession pProtectedSession, uint NumCastableFormats, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.DXGI.Format* pCastableFormats, Guid* riidResource, ref void* ppvResource)
         {
             var @this = (ID3D12Device10*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -14192,7 +14192,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateCommittedResource3([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in HeapProperties pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ResourceDesc1 pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, ref ID3D12ProtectedResourceSession pProtectedSession, uint NumCastableFormats, Silk.NET.DXGI.Format* pCastableFormats, ref Guid riidResource, void** ppvResource)
+        public readonly unsafe int CreateCommittedResource3([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in HeapProperties pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ResourceDesc1 pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, ref ID3D12ProtectedResourceSession pProtectedSession, uint NumCastableFormats, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.DXGI.Format* pCastableFormats, ref Guid riidResource, void** ppvResource)
         {
             var @this = (ID3D12Device10*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -14213,7 +14213,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateCommittedResource3([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in HeapProperties pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ResourceDesc1 pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, ref ID3D12ProtectedResourceSession pProtectedSession, uint NumCastableFormats, Silk.NET.DXGI.Format* pCastableFormats, ref Guid riidResource, ref void* ppvResource)
+        public readonly unsafe int CreateCommittedResource3([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in HeapProperties pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ResourceDesc1 pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, ref ID3D12ProtectedResourceSession pProtectedSession, uint NumCastableFormats, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.DXGI.Format* pCastableFormats, ref Guid riidResource, ref void* ppvResource)
         {
             var @this = (ID3D12Device10*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -14237,7 +14237,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateCommittedResource3([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in HeapProperties pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ResourceDesc1 pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, ref ID3D12ProtectedResourceSession pProtectedSession, uint NumCastableFormats, ref Silk.NET.DXGI.Format pCastableFormats, Guid* riidResource, void** ppvResource)
+        public readonly unsafe int CreateCommittedResource3([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in HeapProperties pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ResourceDesc1 pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, ref ID3D12ProtectedResourceSession pProtectedSession, uint NumCastableFormats, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.DXGI.Format pCastableFormats, Guid* riidResource, void** ppvResource)
         {
             var @this = (ID3D12Device10*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -14258,7 +14258,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateCommittedResource3([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in HeapProperties pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ResourceDesc1 pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, ref ID3D12ProtectedResourceSession pProtectedSession, uint NumCastableFormats, ref Silk.NET.DXGI.Format pCastableFormats, Guid* riidResource, ref void* ppvResource)
+        public readonly unsafe int CreateCommittedResource3([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in HeapProperties pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ResourceDesc1 pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, ref ID3D12ProtectedResourceSession pProtectedSession, uint NumCastableFormats, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.DXGI.Format pCastableFormats, Guid* riidResource, ref void* ppvResource)
         {
             var @this = (ID3D12Device10*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -14282,7 +14282,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateCommittedResource3([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in HeapProperties pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ResourceDesc1 pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, ref ID3D12ProtectedResourceSession pProtectedSession, uint NumCastableFormats, ref Silk.NET.DXGI.Format pCastableFormats, ref Guid riidResource, void** ppvResource)
+        public readonly unsafe int CreateCommittedResource3([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in HeapProperties pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ResourceDesc1 pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, ref ID3D12ProtectedResourceSession pProtectedSession, uint NumCastableFormats, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.DXGI.Format pCastableFormats, ref Guid riidResource, void** ppvResource)
         {
             var @this = (ID3D12Device10*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -14306,7 +14306,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateCommittedResource3([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in HeapProperties pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ResourceDesc1 pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, ref ID3D12ProtectedResourceSession pProtectedSession, uint NumCastableFormats, ref Silk.NET.DXGI.Format pCastableFormats, ref Guid riidResource, ref void* ppvResource)
+        public readonly unsafe int CreateCommittedResource3([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in HeapProperties pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ResourceDesc1 pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, ref ID3D12ProtectedResourceSession pProtectedSession, uint NumCastableFormats, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.DXGI.Format pCastableFormats, ref Guid riidResource, ref void* ppvResource)
         {
             var @this = (ID3D12Device10*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -14333,7 +14333,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateCommittedResource3([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in HeapProperties pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ResourceDesc1 pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ClearValue pOptimizedClearValue, ID3D12ProtectedResourceSession* pProtectedSession, uint NumCastableFormats, Silk.NET.DXGI.Format* pCastableFormats, Guid* riidResource, void** ppvResource)
+        public readonly unsafe int CreateCommittedResource3([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in HeapProperties pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ResourceDesc1 pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ClearValue pOptimizedClearValue, ID3D12ProtectedResourceSession* pProtectedSession, uint NumCastableFormats, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.DXGI.Format* pCastableFormats, Guid* riidResource, void** ppvResource)
         {
             var @this = (ID3D12Device10*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -14351,7 +14351,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateCommittedResource3([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in HeapProperties pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ResourceDesc1 pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ClearValue pOptimizedClearValue, ID3D12ProtectedResourceSession* pProtectedSession, uint NumCastableFormats, Silk.NET.DXGI.Format* pCastableFormats, Guid* riidResource, ref void* ppvResource)
+        public readonly unsafe int CreateCommittedResource3([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in HeapProperties pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ResourceDesc1 pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ClearValue pOptimizedClearValue, ID3D12ProtectedResourceSession* pProtectedSession, uint NumCastableFormats, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.DXGI.Format* pCastableFormats, Guid* riidResource, ref void* ppvResource)
         {
             var @this = (ID3D12Device10*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -14372,7 +14372,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateCommittedResource3([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in HeapProperties pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ResourceDesc1 pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ClearValue pOptimizedClearValue, ID3D12ProtectedResourceSession* pProtectedSession, uint NumCastableFormats, Silk.NET.DXGI.Format* pCastableFormats, ref Guid riidResource, void** ppvResource)
+        public readonly unsafe int CreateCommittedResource3([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in HeapProperties pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ResourceDesc1 pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ClearValue pOptimizedClearValue, ID3D12ProtectedResourceSession* pProtectedSession, uint NumCastableFormats, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.DXGI.Format* pCastableFormats, ref Guid riidResource, void** ppvResource)
         {
             var @this = (ID3D12Device10*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -14393,7 +14393,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateCommittedResource3([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in HeapProperties pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ResourceDesc1 pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ClearValue pOptimizedClearValue, ID3D12ProtectedResourceSession* pProtectedSession, uint NumCastableFormats, Silk.NET.DXGI.Format* pCastableFormats, ref Guid riidResource, ref void* ppvResource)
+        public readonly unsafe int CreateCommittedResource3([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in HeapProperties pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ResourceDesc1 pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ClearValue pOptimizedClearValue, ID3D12ProtectedResourceSession* pProtectedSession, uint NumCastableFormats, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.DXGI.Format* pCastableFormats, ref Guid riidResource, ref void* ppvResource)
         {
             var @this = (ID3D12Device10*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -14417,7 +14417,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateCommittedResource3([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in HeapProperties pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ResourceDesc1 pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ClearValue pOptimizedClearValue, ID3D12ProtectedResourceSession* pProtectedSession, uint NumCastableFormats, ref Silk.NET.DXGI.Format pCastableFormats, Guid* riidResource, void** ppvResource)
+        public readonly unsafe int CreateCommittedResource3([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in HeapProperties pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ResourceDesc1 pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ClearValue pOptimizedClearValue, ID3D12ProtectedResourceSession* pProtectedSession, uint NumCastableFormats, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.DXGI.Format pCastableFormats, Guid* riidResource, void** ppvResource)
         {
             var @this = (ID3D12Device10*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -14438,7 +14438,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateCommittedResource3([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in HeapProperties pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ResourceDesc1 pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ClearValue pOptimizedClearValue, ID3D12ProtectedResourceSession* pProtectedSession, uint NumCastableFormats, ref Silk.NET.DXGI.Format pCastableFormats, Guid* riidResource, ref void* ppvResource)
+        public readonly unsafe int CreateCommittedResource3([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in HeapProperties pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ResourceDesc1 pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ClearValue pOptimizedClearValue, ID3D12ProtectedResourceSession* pProtectedSession, uint NumCastableFormats, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.DXGI.Format pCastableFormats, Guid* riidResource, ref void* ppvResource)
         {
             var @this = (ID3D12Device10*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -14462,7 +14462,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateCommittedResource3([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in HeapProperties pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ResourceDesc1 pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ClearValue pOptimizedClearValue, ID3D12ProtectedResourceSession* pProtectedSession, uint NumCastableFormats, ref Silk.NET.DXGI.Format pCastableFormats, ref Guid riidResource, void** ppvResource)
+        public readonly unsafe int CreateCommittedResource3([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in HeapProperties pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ResourceDesc1 pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ClearValue pOptimizedClearValue, ID3D12ProtectedResourceSession* pProtectedSession, uint NumCastableFormats, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.DXGI.Format pCastableFormats, ref Guid riidResource, void** ppvResource)
         {
             var @this = (ID3D12Device10*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -14486,7 +14486,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateCommittedResource3([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in HeapProperties pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ResourceDesc1 pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ClearValue pOptimizedClearValue, ID3D12ProtectedResourceSession* pProtectedSession, uint NumCastableFormats, ref Silk.NET.DXGI.Format pCastableFormats, ref Guid riidResource, ref void* ppvResource)
+        public readonly unsafe int CreateCommittedResource3([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in HeapProperties pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ResourceDesc1 pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ClearValue pOptimizedClearValue, ID3D12ProtectedResourceSession* pProtectedSession, uint NumCastableFormats, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.DXGI.Format pCastableFormats, ref Guid riidResource, ref void* ppvResource)
         {
             var @this = (ID3D12Device10*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -14513,7 +14513,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateCommittedResource3([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in HeapProperties pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ResourceDesc1 pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ClearValue pOptimizedClearValue, ref ID3D12ProtectedResourceSession pProtectedSession, uint NumCastableFormats, Silk.NET.DXGI.Format* pCastableFormats, Guid* riidResource, void** ppvResource)
+        public readonly unsafe int CreateCommittedResource3([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in HeapProperties pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ResourceDesc1 pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ClearValue pOptimizedClearValue, ref ID3D12ProtectedResourceSession pProtectedSession, uint NumCastableFormats, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.DXGI.Format* pCastableFormats, Guid* riidResource, void** ppvResource)
         {
             var @this = (ID3D12Device10*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -14534,7 +14534,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateCommittedResource3([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in HeapProperties pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ResourceDesc1 pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ClearValue pOptimizedClearValue, ref ID3D12ProtectedResourceSession pProtectedSession, uint NumCastableFormats, Silk.NET.DXGI.Format* pCastableFormats, Guid* riidResource, ref void* ppvResource)
+        public readonly unsafe int CreateCommittedResource3([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in HeapProperties pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ResourceDesc1 pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ClearValue pOptimizedClearValue, ref ID3D12ProtectedResourceSession pProtectedSession, uint NumCastableFormats, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.DXGI.Format* pCastableFormats, Guid* riidResource, ref void* ppvResource)
         {
             var @this = (ID3D12Device10*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -14558,7 +14558,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateCommittedResource3([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in HeapProperties pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ResourceDesc1 pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ClearValue pOptimizedClearValue, ref ID3D12ProtectedResourceSession pProtectedSession, uint NumCastableFormats, Silk.NET.DXGI.Format* pCastableFormats, ref Guid riidResource, void** ppvResource)
+        public readonly unsafe int CreateCommittedResource3([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in HeapProperties pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ResourceDesc1 pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ClearValue pOptimizedClearValue, ref ID3D12ProtectedResourceSession pProtectedSession, uint NumCastableFormats, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.DXGI.Format* pCastableFormats, ref Guid riidResource, void** ppvResource)
         {
             var @this = (ID3D12Device10*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -14582,7 +14582,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateCommittedResource3([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in HeapProperties pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ResourceDesc1 pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ClearValue pOptimizedClearValue, ref ID3D12ProtectedResourceSession pProtectedSession, uint NumCastableFormats, Silk.NET.DXGI.Format* pCastableFormats, ref Guid riidResource, ref void* ppvResource)
+        public readonly unsafe int CreateCommittedResource3([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in HeapProperties pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ResourceDesc1 pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ClearValue pOptimizedClearValue, ref ID3D12ProtectedResourceSession pProtectedSession, uint NumCastableFormats, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.DXGI.Format* pCastableFormats, ref Guid riidResource, ref void* ppvResource)
         {
             var @this = (ID3D12Device10*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -14609,7 +14609,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateCommittedResource3([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in HeapProperties pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ResourceDesc1 pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ClearValue pOptimizedClearValue, ref ID3D12ProtectedResourceSession pProtectedSession, uint NumCastableFormats, ref Silk.NET.DXGI.Format pCastableFormats, Guid* riidResource, void** ppvResource)
+        public readonly unsafe int CreateCommittedResource3([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in HeapProperties pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ResourceDesc1 pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ClearValue pOptimizedClearValue, ref ID3D12ProtectedResourceSession pProtectedSession, uint NumCastableFormats, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.DXGI.Format pCastableFormats, Guid* riidResource, void** ppvResource)
         {
             var @this = (ID3D12Device10*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -14633,7 +14633,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateCommittedResource3([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in HeapProperties pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ResourceDesc1 pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ClearValue pOptimizedClearValue, ref ID3D12ProtectedResourceSession pProtectedSession, uint NumCastableFormats, ref Silk.NET.DXGI.Format pCastableFormats, Guid* riidResource, ref void* ppvResource)
+        public readonly unsafe int CreateCommittedResource3([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in HeapProperties pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ResourceDesc1 pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ClearValue pOptimizedClearValue, ref ID3D12ProtectedResourceSession pProtectedSession, uint NumCastableFormats, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.DXGI.Format pCastableFormats, Guid* riidResource, ref void* ppvResource)
         {
             var @this = (ID3D12Device10*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -14660,7 +14660,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateCommittedResource3([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in HeapProperties pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ResourceDesc1 pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ClearValue pOptimizedClearValue, ref ID3D12ProtectedResourceSession pProtectedSession, uint NumCastableFormats, ref Silk.NET.DXGI.Format pCastableFormats, ref Guid riidResource, void** ppvResource)
+        public readonly unsafe int CreateCommittedResource3([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in HeapProperties pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ResourceDesc1 pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ClearValue pOptimizedClearValue, ref ID3D12ProtectedResourceSession pProtectedSession, uint NumCastableFormats, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.DXGI.Format pCastableFormats, ref Guid riidResource, void** ppvResource)
         {
             var @this = (ID3D12Device10*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -14687,7 +14687,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateCommittedResource3([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in HeapProperties pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ResourceDesc1 pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ClearValue pOptimizedClearValue, ref ID3D12ProtectedResourceSession pProtectedSession, uint NumCastableFormats, ref Silk.NET.DXGI.Format pCastableFormats, ref Guid riidResource, ref void* ppvResource)
+        public readonly unsafe int CreateCommittedResource3([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in HeapProperties pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ResourceDesc1 pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ClearValue pOptimizedClearValue, ref ID3D12ProtectedResourceSession pProtectedSession, uint NumCastableFormats, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.DXGI.Format pCastableFormats, ref Guid riidResource, ref void* ppvResource)
         {
             var @this = (ID3D12Device10*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -14717,7 +14717,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreatePlacedResource2(ID3D12Heap* pHeap, ulong HeapOffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc1* pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, uint NumCastableFormats, Silk.NET.DXGI.Format* pCastableFormats, Guid* riid, void** ppvResource)
+        public readonly unsafe int CreatePlacedResource2(ID3D12Heap* pHeap, ulong HeapOffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc1* pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, uint NumCastableFormats, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.DXGI.Format* pCastableFormats, Guid* riid, void** ppvResource)
         {
             var @this = (ID3D12Device10*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -14726,7 +14726,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreatePlacedResource2(ID3D12Heap* pHeap, ulong HeapOffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc1* pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, uint NumCastableFormats, Silk.NET.DXGI.Format* pCastableFormats, Guid* riid, ref void* ppvResource)
+        public readonly unsafe int CreatePlacedResource2(ID3D12Heap* pHeap, ulong HeapOffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc1* pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, uint NumCastableFormats, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.DXGI.Format* pCastableFormats, Guid* riid, ref void* ppvResource)
         {
             var @this = (ID3D12Device10*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -14738,7 +14738,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreatePlacedResource2(ID3D12Heap* pHeap, ulong HeapOffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc1* pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, uint NumCastableFormats, Silk.NET.DXGI.Format* pCastableFormats, ref Guid riid, void** ppvResource)
+        public readonly unsafe int CreatePlacedResource2(ID3D12Heap* pHeap, ulong HeapOffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc1* pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, uint NumCastableFormats, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.DXGI.Format* pCastableFormats, ref Guid riid, void** ppvResource)
         {
             var @this = (ID3D12Device10*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -14750,7 +14750,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreatePlacedResource2(ID3D12Heap* pHeap, ulong HeapOffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc1* pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, uint NumCastableFormats, Silk.NET.DXGI.Format* pCastableFormats, ref Guid riid, ref void* ppvResource)
+        public readonly unsafe int CreatePlacedResource2(ID3D12Heap* pHeap, ulong HeapOffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc1* pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, uint NumCastableFormats, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.DXGI.Format* pCastableFormats, ref Guid riid, ref void* ppvResource)
         {
             var @this = (ID3D12Device10*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -14765,7 +14765,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreatePlacedResource2(ID3D12Heap* pHeap, ulong HeapOffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc1* pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, uint NumCastableFormats, ref Silk.NET.DXGI.Format pCastableFormats, Guid* riid, void** ppvResource)
+        public readonly unsafe int CreatePlacedResource2(ID3D12Heap* pHeap, ulong HeapOffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc1* pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, uint NumCastableFormats, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.DXGI.Format pCastableFormats, Guid* riid, void** ppvResource)
         {
             var @this = (ID3D12Device10*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -14777,7 +14777,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreatePlacedResource2(ID3D12Heap* pHeap, ulong HeapOffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc1* pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, uint NumCastableFormats, ref Silk.NET.DXGI.Format pCastableFormats, Guid* riid, ref void* ppvResource)
+        public readonly unsafe int CreatePlacedResource2(ID3D12Heap* pHeap, ulong HeapOffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc1* pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, uint NumCastableFormats, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.DXGI.Format pCastableFormats, Guid* riid, ref void* ppvResource)
         {
             var @this = (ID3D12Device10*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -14792,7 +14792,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreatePlacedResource2(ID3D12Heap* pHeap, ulong HeapOffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc1* pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, uint NumCastableFormats, ref Silk.NET.DXGI.Format pCastableFormats, ref Guid riid, void** ppvResource)
+        public readonly unsafe int CreatePlacedResource2(ID3D12Heap* pHeap, ulong HeapOffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc1* pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, uint NumCastableFormats, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.DXGI.Format pCastableFormats, ref Guid riid, void** ppvResource)
         {
             var @this = (ID3D12Device10*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -14807,7 +14807,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreatePlacedResource2(ID3D12Heap* pHeap, ulong HeapOffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc1* pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, uint NumCastableFormats, ref Silk.NET.DXGI.Format pCastableFormats, ref Guid riid, ref void* ppvResource)
+        public readonly unsafe int CreatePlacedResource2(ID3D12Heap* pHeap, ulong HeapOffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc1* pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, uint NumCastableFormats, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.DXGI.Format pCastableFormats, ref Guid riid, ref void* ppvResource)
         {
             var @this = (ID3D12Device10*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -14825,7 +14825,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreatePlacedResource2(ID3D12Heap* pHeap, ulong HeapOffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc1* pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ClearValue pOptimizedClearValue, uint NumCastableFormats, Silk.NET.DXGI.Format* pCastableFormats, Guid* riid, void** ppvResource)
+        public readonly unsafe int CreatePlacedResource2(ID3D12Heap* pHeap, ulong HeapOffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc1* pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ClearValue pOptimizedClearValue, uint NumCastableFormats, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.DXGI.Format* pCastableFormats, Guid* riid, void** ppvResource)
         {
             var @this = (ID3D12Device10*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -14837,7 +14837,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreatePlacedResource2(ID3D12Heap* pHeap, ulong HeapOffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc1* pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ClearValue pOptimizedClearValue, uint NumCastableFormats, Silk.NET.DXGI.Format* pCastableFormats, Guid* riid, ref void* ppvResource)
+        public readonly unsafe int CreatePlacedResource2(ID3D12Heap* pHeap, ulong HeapOffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc1* pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ClearValue pOptimizedClearValue, uint NumCastableFormats, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.DXGI.Format* pCastableFormats, Guid* riid, ref void* ppvResource)
         {
             var @this = (ID3D12Device10*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -14852,7 +14852,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreatePlacedResource2(ID3D12Heap* pHeap, ulong HeapOffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc1* pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ClearValue pOptimizedClearValue, uint NumCastableFormats, Silk.NET.DXGI.Format* pCastableFormats, ref Guid riid, void** ppvResource)
+        public readonly unsafe int CreatePlacedResource2(ID3D12Heap* pHeap, ulong HeapOffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc1* pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ClearValue pOptimizedClearValue, uint NumCastableFormats, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.DXGI.Format* pCastableFormats, ref Guid riid, void** ppvResource)
         {
             var @this = (ID3D12Device10*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -14867,7 +14867,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreatePlacedResource2(ID3D12Heap* pHeap, ulong HeapOffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc1* pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ClearValue pOptimizedClearValue, uint NumCastableFormats, Silk.NET.DXGI.Format* pCastableFormats, ref Guid riid, ref void* ppvResource)
+        public readonly unsafe int CreatePlacedResource2(ID3D12Heap* pHeap, ulong HeapOffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc1* pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ClearValue pOptimizedClearValue, uint NumCastableFormats, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.DXGI.Format* pCastableFormats, ref Guid riid, ref void* ppvResource)
         {
             var @this = (ID3D12Device10*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -14885,7 +14885,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreatePlacedResource2(ID3D12Heap* pHeap, ulong HeapOffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc1* pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ClearValue pOptimizedClearValue, uint NumCastableFormats, ref Silk.NET.DXGI.Format pCastableFormats, Guid* riid, void** ppvResource)
+        public readonly unsafe int CreatePlacedResource2(ID3D12Heap* pHeap, ulong HeapOffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc1* pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ClearValue pOptimizedClearValue, uint NumCastableFormats, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.DXGI.Format pCastableFormats, Guid* riid, void** ppvResource)
         {
             var @this = (ID3D12Device10*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -14900,7 +14900,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreatePlacedResource2(ID3D12Heap* pHeap, ulong HeapOffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc1* pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ClearValue pOptimizedClearValue, uint NumCastableFormats, ref Silk.NET.DXGI.Format pCastableFormats, Guid* riid, ref void* ppvResource)
+        public readonly unsafe int CreatePlacedResource2(ID3D12Heap* pHeap, ulong HeapOffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc1* pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ClearValue pOptimizedClearValue, uint NumCastableFormats, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.DXGI.Format pCastableFormats, Guid* riid, ref void* ppvResource)
         {
             var @this = (ID3D12Device10*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -14918,7 +14918,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreatePlacedResource2(ID3D12Heap* pHeap, ulong HeapOffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc1* pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ClearValue pOptimizedClearValue, uint NumCastableFormats, ref Silk.NET.DXGI.Format pCastableFormats, ref Guid riid, void** ppvResource)
+        public readonly unsafe int CreatePlacedResource2(ID3D12Heap* pHeap, ulong HeapOffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc1* pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ClearValue pOptimizedClearValue, uint NumCastableFormats, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.DXGI.Format pCastableFormats, ref Guid riid, void** ppvResource)
         {
             var @this = (ID3D12Device10*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -14936,7 +14936,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreatePlacedResource2(ID3D12Heap* pHeap, ulong HeapOffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc1* pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ClearValue pOptimizedClearValue, uint NumCastableFormats, ref Silk.NET.DXGI.Format pCastableFormats, ref Guid riid, ref void* ppvResource)
+        public readonly unsafe int CreatePlacedResource2(ID3D12Heap* pHeap, ulong HeapOffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc1* pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ClearValue pOptimizedClearValue, uint NumCastableFormats, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.DXGI.Format pCastableFormats, ref Guid riid, ref void* ppvResource)
         {
             var @this = (ID3D12Device10*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -14957,7 +14957,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreatePlacedResource2(ID3D12Heap* pHeap, ulong HeapOffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ResourceDesc1 pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, uint NumCastableFormats, Silk.NET.DXGI.Format* pCastableFormats, Guid* riid, void** ppvResource)
+        public readonly unsafe int CreatePlacedResource2(ID3D12Heap* pHeap, ulong HeapOffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ResourceDesc1 pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, uint NumCastableFormats, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.DXGI.Format* pCastableFormats, Guid* riid, void** ppvResource)
         {
             var @this = (ID3D12Device10*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -14969,7 +14969,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreatePlacedResource2(ID3D12Heap* pHeap, ulong HeapOffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ResourceDesc1 pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, uint NumCastableFormats, Silk.NET.DXGI.Format* pCastableFormats, Guid* riid, ref void* ppvResource)
+        public readonly unsafe int CreatePlacedResource2(ID3D12Heap* pHeap, ulong HeapOffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ResourceDesc1 pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, uint NumCastableFormats, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.DXGI.Format* pCastableFormats, Guid* riid, ref void* ppvResource)
         {
             var @this = (ID3D12Device10*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -14984,7 +14984,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreatePlacedResource2(ID3D12Heap* pHeap, ulong HeapOffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ResourceDesc1 pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, uint NumCastableFormats, Silk.NET.DXGI.Format* pCastableFormats, ref Guid riid, void** ppvResource)
+        public readonly unsafe int CreatePlacedResource2(ID3D12Heap* pHeap, ulong HeapOffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ResourceDesc1 pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, uint NumCastableFormats, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.DXGI.Format* pCastableFormats, ref Guid riid, void** ppvResource)
         {
             var @this = (ID3D12Device10*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -14999,7 +14999,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreatePlacedResource2(ID3D12Heap* pHeap, ulong HeapOffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ResourceDesc1 pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, uint NumCastableFormats, Silk.NET.DXGI.Format* pCastableFormats, ref Guid riid, ref void* ppvResource)
+        public readonly unsafe int CreatePlacedResource2(ID3D12Heap* pHeap, ulong HeapOffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ResourceDesc1 pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, uint NumCastableFormats, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.DXGI.Format* pCastableFormats, ref Guid riid, ref void* ppvResource)
         {
             var @this = (ID3D12Device10*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -15017,7 +15017,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreatePlacedResource2(ID3D12Heap* pHeap, ulong HeapOffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ResourceDesc1 pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, uint NumCastableFormats, ref Silk.NET.DXGI.Format pCastableFormats, Guid* riid, void** ppvResource)
+        public readonly unsafe int CreatePlacedResource2(ID3D12Heap* pHeap, ulong HeapOffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ResourceDesc1 pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, uint NumCastableFormats, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.DXGI.Format pCastableFormats, Guid* riid, void** ppvResource)
         {
             var @this = (ID3D12Device10*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -15032,7 +15032,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreatePlacedResource2(ID3D12Heap* pHeap, ulong HeapOffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ResourceDesc1 pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, uint NumCastableFormats, ref Silk.NET.DXGI.Format pCastableFormats, Guid* riid, ref void* ppvResource)
+        public readonly unsafe int CreatePlacedResource2(ID3D12Heap* pHeap, ulong HeapOffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ResourceDesc1 pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, uint NumCastableFormats, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.DXGI.Format pCastableFormats, Guid* riid, ref void* ppvResource)
         {
             var @this = (ID3D12Device10*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -15050,7 +15050,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreatePlacedResource2(ID3D12Heap* pHeap, ulong HeapOffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ResourceDesc1 pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, uint NumCastableFormats, ref Silk.NET.DXGI.Format pCastableFormats, ref Guid riid, void** ppvResource)
+        public readonly unsafe int CreatePlacedResource2(ID3D12Heap* pHeap, ulong HeapOffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ResourceDesc1 pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, uint NumCastableFormats, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.DXGI.Format pCastableFormats, ref Guid riid, void** ppvResource)
         {
             var @this = (ID3D12Device10*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -15068,7 +15068,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreatePlacedResource2(ID3D12Heap* pHeap, ulong HeapOffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ResourceDesc1 pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, uint NumCastableFormats, ref Silk.NET.DXGI.Format pCastableFormats, ref Guid riid, ref void* ppvResource)
+        public readonly unsafe int CreatePlacedResource2(ID3D12Heap* pHeap, ulong HeapOffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ResourceDesc1 pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, uint NumCastableFormats, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.DXGI.Format pCastableFormats, ref Guid riid, ref void* ppvResource)
         {
             var @this = (ID3D12Device10*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -15089,7 +15089,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreatePlacedResource2(ID3D12Heap* pHeap, ulong HeapOffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ResourceDesc1 pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ClearValue pOptimizedClearValue, uint NumCastableFormats, Silk.NET.DXGI.Format* pCastableFormats, Guid* riid, void** ppvResource)
+        public readonly unsafe int CreatePlacedResource2(ID3D12Heap* pHeap, ulong HeapOffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ResourceDesc1 pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ClearValue pOptimizedClearValue, uint NumCastableFormats, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.DXGI.Format* pCastableFormats, Guid* riid, void** ppvResource)
         {
             var @this = (ID3D12Device10*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -15104,7 +15104,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreatePlacedResource2(ID3D12Heap* pHeap, ulong HeapOffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ResourceDesc1 pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ClearValue pOptimizedClearValue, uint NumCastableFormats, Silk.NET.DXGI.Format* pCastableFormats, Guid* riid, ref void* ppvResource)
+        public readonly unsafe int CreatePlacedResource2(ID3D12Heap* pHeap, ulong HeapOffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ResourceDesc1 pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ClearValue pOptimizedClearValue, uint NumCastableFormats, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.DXGI.Format* pCastableFormats, Guid* riid, ref void* ppvResource)
         {
             var @this = (ID3D12Device10*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -15122,7 +15122,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreatePlacedResource2(ID3D12Heap* pHeap, ulong HeapOffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ResourceDesc1 pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ClearValue pOptimizedClearValue, uint NumCastableFormats, Silk.NET.DXGI.Format* pCastableFormats, ref Guid riid, void** ppvResource)
+        public readonly unsafe int CreatePlacedResource2(ID3D12Heap* pHeap, ulong HeapOffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ResourceDesc1 pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ClearValue pOptimizedClearValue, uint NumCastableFormats, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.DXGI.Format* pCastableFormats, ref Guid riid, void** ppvResource)
         {
             var @this = (ID3D12Device10*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -15140,7 +15140,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreatePlacedResource2(ID3D12Heap* pHeap, ulong HeapOffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ResourceDesc1 pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ClearValue pOptimizedClearValue, uint NumCastableFormats, Silk.NET.DXGI.Format* pCastableFormats, ref Guid riid, ref void* ppvResource)
+        public readonly unsafe int CreatePlacedResource2(ID3D12Heap* pHeap, ulong HeapOffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ResourceDesc1 pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ClearValue pOptimizedClearValue, uint NumCastableFormats, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.DXGI.Format* pCastableFormats, ref Guid riid, ref void* ppvResource)
         {
             var @this = (ID3D12Device10*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -15161,7 +15161,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreatePlacedResource2(ID3D12Heap* pHeap, ulong HeapOffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ResourceDesc1 pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ClearValue pOptimizedClearValue, uint NumCastableFormats, ref Silk.NET.DXGI.Format pCastableFormats, Guid* riid, void** ppvResource)
+        public readonly unsafe int CreatePlacedResource2(ID3D12Heap* pHeap, ulong HeapOffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ResourceDesc1 pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ClearValue pOptimizedClearValue, uint NumCastableFormats, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.DXGI.Format pCastableFormats, Guid* riid, void** ppvResource)
         {
             var @this = (ID3D12Device10*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -15179,7 +15179,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreatePlacedResource2(ID3D12Heap* pHeap, ulong HeapOffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ResourceDesc1 pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ClearValue pOptimizedClearValue, uint NumCastableFormats, ref Silk.NET.DXGI.Format pCastableFormats, Guid* riid, ref void* ppvResource)
+        public readonly unsafe int CreatePlacedResource2(ID3D12Heap* pHeap, ulong HeapOffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ResourceDesc1 pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ClearValue pOptimizedClearValue, uint NumCastableFormats, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.DXGI.Format pCastableFormats, Guid* riid, ref void* ppvResource)
         {
             var @this = (ID3D12Device10*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -15200,7 +15200,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreatePlacedResource2(ID3D12Heap* pHeap, ulong HeapOffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ResourceDesc1 pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ClearValue pOptimizedClearValue, uint NumCastableFormats, ref Silk.NET.DXGI.Format pCastableFormats, ref Guid riid, void** ppvResource)
+        public readonly unsafe int CreatePlacedResource2(ID3D12Heap* pHeap, ulong HeapOffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ResourceDesc1 pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ClearValue pOptimizedClearValue, uint NumCastableFormats, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.DXGI.Format pCastableFormats, ref Guid riid, void** ppvResource)
         {
             var @this = (ID3D12Device10*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -15221,7 +15221,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreatePlacedResource2(ID3D12Heap* pHeap, ulong HeapOffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ResourceDesc1 pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ClearValue pOptimizedClearValue, uint NumCastableFormats, ref Silk.NET.DXGI.Format pCastableFormats, ref Guid riid, ref void* ppvResource)
+        public readonly unsafe int CreatePlacedResource2(ID3D12Heap* pHeap, ulong HeapOffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ResourceDesc1 pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ClearValue pOptimizedClearValue, uint NumCastableFormats, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.DXGI.Format pCastableFormats, ref Guid riid, ref void* ppvResource)
         {
             var @this = (ID3D12Device10*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -15245,7 +15245,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreatePlacedResource2(ref ID3D12Heap pHeap, ulong HeapOffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc1* pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, uint NumCastableFormats, Silk.NET.DXGI.Format* pCastableFormats, Guid* riid, void** ppvResource)
+        public readonly unsafe int CreatePlacedResource2(ref ID3D12Heap pHeap, ulong HeapOffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc1* pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, uint NumCastableFormats, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.DXGI.Format* pCastableFormats, Guid* riid, void** ppvResource)
         {
             var @this = (ID3D12Device10*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -15257,7 +15257,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreatePlacedResource2(ref ID3D12Heap pHeap, ulong HeapOffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc1* pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, uint NumCastableFormats, Silk.NET.DXGI.Format* pCastableFormats, Guid* riid, ref void* ppvResource)
+        public readonly unsafe int CreatePlacedResource2(ref ID3D12Heap pHeap, ulong HeapOffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc1* pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, uint NumCastableFormats, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.DXGI.Format* pCastableFormats, Guid* riid, ref void* ppvResource)
         {
             var @this = (ID3D12Device10*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -15272,7 +15272,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreatePlacedResource2(ref ID3D12Heap pHeap, ulong HeapOffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc1* pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, uint NumCastableFormats, Silk.NET.DXGI.Format* pCastableFormats, ref Guid riid, void** ppvResource)
+        public readonly unsafe int CreatePlacedResource2(ref ID3D12Heap pHeap, ulong HeapOffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc1* pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, uint NumCastableFormats, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.DXGI.Format* pCastableFormats, ref Guid riid, void** ppvResource)
         {
             var @this = (ID3D12Device10*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -15287,7 +15287,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreatePlacedResource2(ref ID3D12Heap pHeap, ulong HeapOffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc1* pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, uint NumCastableFormats, Silk.NET.DXGI.Format* pCastableFormats, ref Guid riid, ref void* ppvResource)
+        public readonly unsafe int CreatePlacedResource2(ref ID3D12Heap pHeap, ulong HeapOffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc1* pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, uint NumCastableFormats, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.DXGI.Format* pCastableFormats, ref Guid riid, ref void* ppvResource)
         {
             var @this = (ID3D12Device10*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -15305,7 +15305,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreatePlacedResource2(ref ID3D12Heap pHeap, ulong HeapOffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc1* pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, uint NumCastableFormats, ref Silk.NET.DXGI.Format pCastableFormats, Guid* riid, void** ppvResource)
+        public readonly unsafe int CreatePlacedResource2(ref ID3D12Heap pHeap, ulong HeapOffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc1* pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, uint NumCastableFormats, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.DXGI.Format pCastableFormats, Guid* riid, void** ppvResource)
         {
             var @this = (ID3D12Device10*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -15320,7 +15320,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreatePlacedResource2(ref ID3D12Heap pHeap, ulong HeapOffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc1* pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, uint NumCastableFormats, ref Silk.NET.DXGI.Format pCastableFormats, Guid* riid, ref void* ppvResource)
+        public readonly unsafe int CreatePlacedResource2(ref ID3D12Heap pHeap, ulong HeapOffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc1* pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, uint NumCastableFormats, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.DXGI.Format pCastableFormats, Guid* riid, ref void* ppvResource)
         {
             var @this = (ID3D12Device10*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -15338,7 +15338,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreatePlacedResource2(ref ID3D12Heap pHeap, ulong HeapOffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc1* pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, uint NumCastableFormats, ref Silk.NET.DXGI.Format pCastableFormats, ref Guid riid, void** ppvResource)
+        public readonly unsafe int CreatePlacedResource2(ref ID3D12Heap pHeap, ulong HeapOffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc1* pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, uint NumCastableFormats, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.DXGI.Format pCastableFormats, ref Guid riid, void** ppvResource)
         {
             var @this = (ID3D12Device10*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -15356,7 +15356,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreatePlacedResource2(ref ID3D12Heap pHeap, ulong HeapOffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc1* pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, uint NumCastableFormats, ref Silk.NET.DXGI.Format pCastableFormats, ref Guid riid, ref void* ppvResource)
+        public readonly unsafe int CreatePlacedResource2(ref ID3D12Heap pHeap, ulong HeapOffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc1* pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, uint NumCastableFormats, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.DXGI.Format pCastableFormats, ref Guid riid, ref void* ppvResource)
         {
             var @this = (ID3D12Device10*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -15377,7 +15377,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreatePlacedResource2(ref ID3D12Heap pHeap, ulong HeapOffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc1* pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ClearValue pOptimizedClearValue, uint NumCastableFormats, Silk.NET.DXGI.Format* pCastableFormats, Guid* riid, void** ppvResource)
+        public readonly unsafe int CreatePlacedResource2(ref ID3D12Heap pHeap, ulong HeapOffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc1* pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ClearValue pOptimizedClearValue, uint NumCastableFormats, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.DXGI.Format* pCastableFormats, Guid* riid, void** ppvResource)
         {
             var @this = (ID3D12Device10*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -15392,7 +15392,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreatePlacedResource2(ref ID3D12Heap pHeap, ulong HeapOffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc1* pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ClearValue pOptimizedClearValue, uint NumCastableFormats, Silk.NET.DXGI.Format* pCastableFormats, Guid* riid, ref void* ppvResource)
+        public readonly unsafe int CreatePlacedResource2(ref ID3D12Heap pHeap, ulong HeapOffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc1* pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ClearValue pOptimizedClearValue, uint NumCastableFormats, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.DXGI.Format* pCastableFormats, Guid* riid, ref void* ppvResource)
         {
             var @this = (ID3D12Device10*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -15410,7 +15410,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreatePlacedResource2(ref ID3D12Heap pHeap, ulong HeapOffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc1* pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ClearValue pOptimizedClearValue, uint NumCastableFormats, Silk.NET.DXGI.Format* pCastableFormats, ref Guid riid, void** ppvResource)
+        public readonly unsafe int CreatePlacedResource2(ref ID3D12Heap pHeap, ulong HeapOffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc1* pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ClearValue pOptimizedClearValue, uint NumCastableFormats, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.DXGI.Format* pCastableFormats, ref Guid riid, void** ppvResource)
         {
             var @this = (ID3D12Device10*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -15428,7 +15428,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreatePlacedResource2(ref ID3D12Heap pHeap, ulong HeapOffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc1* pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ClearValue pOptimizedClearValue, uint NumCastableFormats, Silk.NET.DXGI.Format* pCastableFormats, ref Guid riid, ref void* ppvResource)
+        public readonly unsafe int CreatePlacedResource2(ref ID3D12Heap pHeap, ulong HeapOffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc1* pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ClearValue pOptimizedClearValue, uint NumCastableFormats, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.DXGI.Format* pCastableFormats, ref Guid riid, ref void* ppvResource)
         {
             var @this = (ID3D12Device10*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -15449,7 +15449,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreatePlacedResource2(ref ID3D12Heap pHeap, ulong HeapOffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc1* pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ClearValue pOptimizedClearValue, uint NumCastableFormats, ref Silk.NET.DXGI.Format pCastableFormats, Guid* riid, void** ppvResource)
+        public readonly unsafe int CreatePlacedResource2(ref ID3D12Heap pHeap, ulong HeapOffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc1* pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ClearValue pOptimizedClearValue, uint NumCastableFormats, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.DXGI.Format pCastableFormats, Guid* riid, void** ppvResource)
         {
             var @this = (ID3D12Device10*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -15467,7 +15467,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreatePlacedResource2(ref ID3D12Heap pHeap, ulong HeapOffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc1* pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ClearValue pOptimizedClearValue, uint NumCastableFormats, ref Silk.NET.DXGI.Format pCastableFormats, Guid* riid, ref void* ppvResource)
+        public readonly unsafe int CreatePlacedResource2(ref ID3D12Heap pHeap, ulong HeapOffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc1* pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ClearValue pOptimizedClearValue, uint NumCastableFormats, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.DXGI.Format pCastableFormats, Guid* riid, ref void* ppvResource)
         {
             var @this = (ID3D12Device10*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -15488,7 +15488,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreatePlacedResource2(ref ID3D12Heap pHeap, ulong HeapOffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc1* pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ClearValue pOptimizedClearValue, uint NumCastableFormats, ref Silk.NET.DXGI.Format pCastableFormats, ref Guid riid, void** ppvResource)
+        public readonly unsafe int CreatePlacedResource2(ref ID3D12Heap pHeap, ulong HeapOffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc1* pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ClearValue pOptimizedClearValue, uint NumCastableFormats, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.DXGI.Format pCastableFormats, ref Guid riid, void** ppvResource)
         {
             var @this = (ID3D12Device10*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -15509,7 +15509,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreatePlacedResource2(ref ID3D12Heap pHeap, ulong HeapOffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc1* pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ClearValue pOptimizedClearValue, uint NumCastableFormats, ref Silk.NET.DXGI.Format pCastableFormats, ref Guid riid, ref void* ppvResource)
+        public readonly unsafe int CreatePlacedResource2(ref ID3D12Heap pHeap, ulong HeapOffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc1* pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ClearValue pOptimizedClearValue, uint NumCastableFormats, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.DXGI.Format pCastableFormats, ref Guid riid, ref void* ppvResource)
         {
             var @this = (ID3D12Device10*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -15533,7 +15533,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreatePlacedResource2(ref ID3D12Heap pHeap, ulong HeapOffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ResourceDesc1 pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, uint NumCastableFormats, Silk.NET.DXGI.Format* pCastableFormats, Guid* riid, void** ppvResource)
+        public readonly unsafe int CreatePlacedResource2(ref ID3D12Heap pHeap, ulong HeapOffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ResourceDesc1 pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, uint NumCastableFormats, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.DXGI.Format* pCastableFormats, Guid* riid, void** ppvResource)
         {
             var @this = (ID3D12Device10*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -15548,7 +15548,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreatePlacedResource2(ref ID3D12Heap pHeap, ulong HeapOffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ResourceDesc1 pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, uint NumCastableFormats, Silk.NET.DXGI.Format* pCastableFormats, Guid* riid, ref void* ppvResource)
+        public readonly unsafe int CreatePlacedResource2(ref ID3D12Heap pHeap, ulong HeapOffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ResourceDesc1 pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, uint NumCastableFormats, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.DXGI.Format* pCastableFormats, Guid* riid, ref void* ppvResource)
         {
             var @this = (ID3D12Device10*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -15566,7 +15566,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreatePlacedResource2(ref ID3D12Heap pHeap, ulong HeapOffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ResourceDesc1 pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, uint NumCastableFormats, Silk.NET.DXGI.Format* pCastableFormats, ref Guid riid, void** ppvResource)
+        public readonly unsafe int CreatePlacedResource2(ref ID3D12Heap pHeap, ulong HeapOffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ResourceDesc1 pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, uint NumCastableFormats, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.DXGI.Format* pCastableFormats, ref Guid riid, void** ppvResource)
         {
             var @this = (ID3D12Device10*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -15584,7 +15584,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreatePlacedResource2(ref ID3D12Heap pHeap, ulong HeapOffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ResourceDesc1 pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, uint NumCastableFormats, Silk.NET.DXGI.Format* pCastableFormats, ref Guid riid, ref void* ppvResource)
+        public readonly unsafe int CreatePlacedResource2(ref ID3D12Heap pHeap, ulong HeapOffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ResourceDesc1 pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, uint NumCastableFormats, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.DXGI.Format* pCastableFormats, ref Guid riid, ref void* ppvResource)
         {
             var @this = (ID3D12Device10*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -15605,7 +15605,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreatePlacedResource2(ref ID3D12Heap pHeap, ulong HeapOffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ResourceDesc1 pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, uint NumCastableFormats, ref Silk.NET.DXGI.Format pCastableFormats, Guid* riid, void** ppvResource)
+        public readonly unsafe int CreatePlacedResource2(ref ID3D12Heap pHeap, ulong HeapOffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ResourceDesc1 pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, uint NumCastableFormats, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.DXGI.Format pCastableFormats, Guid* riid, void** ppvResource)
         {
             var @this = (ID3D12Device10*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -15623,7 +15623,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreatePlacedResource2(ref ID3D12Heap pHeap, ulong HeapOffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ResourceDesc1 pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, uint NumCastableFormats, ref Silk.NET.DXGI.Format pCastableFormats, Guid* riid, ref void* ppvResource)
+        public readonly unsafe int CreatePlacedResource2(ref ID3D12Heap pHeap, ulong HeapOffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ResourceDesc1 pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, uint NumCastableFormats, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.DXGI.Format pCastableFormats, Guid* riid, ref void* ppvResource)
         {
             var @this = (ID3D12Device10*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -15644,7 +15644,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreatePlacedResource2(ref ID3D12Heap pHeap, ulong HeapOffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ResourceDesc1 pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, uint NumCastableFormats, ref Silk.NET.DXGI.Format pCastableFormats, ref Guid riid, void** ppvResource)
+        public readonly unsafe int CreatePlacedResource2(ref ID3D12Heap pHeap, ulong HeapOffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ResourceDesc1 pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, uint NumCastableFormats, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.DXGI.Format pCastableFormats, ref Guid riid, void** ppvResource)
         {
             var @this = (ID3D12Device10*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -15665,7 +15665,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreatePlacedResource2(ref ID3D12Heap pHeap, ulong HeapOffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ResourceDesc1 pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, uint NumCastableFormats, ref Silk.NET.DXGI.Format pCastableFormats, ref Guid riid, ref void* ppvResource)
+        public readonly unsafe int CreatePlacedResource2(ref ID3D12Heap pHeap, ulong HeapOffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ResourceDesc1 pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, uint NumCastableFormats, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.DXGI.Format pCastableFormats, ref Guid riid, ref void* ppvResource)
         {
             var @this = (ID3D12Device10*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -15689,7 +15689,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreatePlacedResource2(ref ID3D12Heap pHeap, ulong HeapOffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ResourceDesc1 pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ClearValue pOptimizedClearValue, uint NumCastableFormats, Silk.NET.DXGI.Format* pCastableFormats, Guid* riid, void** ppvResource)
+        public readonly unsafe int CreatePlacedResource2(ref ID3D12Heap pHeap, ulong HeapOffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ResourceDesc1 pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ClearValue pOptimizedClearValue, uint NumCastableFormats, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.DXGI.Format* pCastableFormats, Guid* riid, void** ppvResource)
         {
             var @this = (ID3D12Device10*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -15707,7 +15707,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreatePlacedResource2(ref ID3D12Heap pHeap, ulong HeapOffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ResourceDesc1 pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ClearValue pOptimizedClearValue, uint NumCastableFormats, Silk.NET.DXGI.Format* pCastableFormats, Guid* riid, ref void* ppvResource)
+        public readonly unsafe int CreatePlacedResource2(ref ID3D12Heap pHeap, ulong HeapOffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ResourceDesc1 pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ClearValue pOptimizedClearValue, uint NumCastableFormats, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.DXGI.Format* pCastableFormats, Guid* riid, ref void* ppvResource)
         {
             var @this = (ID3D12Device10*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -15728,7 +15728,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreatePlacedResource2(ref ID3D12Heap pHeap, ulong HeapOffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ResourceDesc1 pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ClearValue pOptimizedClearValue, uint NumCastableFormats, Silk.NET.DXGI.Format* pCastableFormats, ref Guid riid, void** ppvResource)
+        public readonly unsafe int CreatePlacedResource2(ref ID3D12Heap pHeap, ulong HeapOffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ResourceDesc1 pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ClearValue pOptimizedClearValue, uint NumCastableFormats, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.DXGI.Format* pCastableFormats, ref Guid riid, void** ppvResource)
         {
             var @this = (ID3D12Device10*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -15749,7 +15749,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreatePlacedResource2(ref ID3D12Heap pHeap, ulong HeapOffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ResourceDesc1 pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ClearValue pOptimizedClearValue, uint NumCastableFormats, Silk.NET.DXGI.Format* pCastableFormats, ref Guid riid, ref void* ppvResource)
+        public readonly unsafe int CreatePlacedResource2(ref ID3D12Heap pHeap, ulong HeapOffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ResourceDesc1 pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ClearValue pOptimizedClearValue, uint NumCastableFormats, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.DXGI.Format* pCastableFormats, ref Guid riid, ref void* ppvResource)
         {
             var @this = (ID3D12Device10*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -15773,7 +15773,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreatePlacedResource2(ref ID3D12Heap pHeap, ulong HeapOffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ResourceDesc1 pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ClearValue pOptimizedClearValue, uint NumCastableFormats, ref Silk.NET.DXGI.Format pCastableFormats, Guid* riid, void** ppvResource)
+        public readonly unsafe int CreatePlacedResource2(ref ID3D12Heap pHeap, ulong HeapOffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ResourceDesc1 pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ClearValue pOptimizedClearValue, uint NumCastableFormats, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.DXGI.Format pCastableFormats, Guid* riid, void** ppvResource)
         {
             var @this = (ID3D12Device10*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -15794,7 +15794,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreatePlacedResource2(ref ID3D12Heap pHeap, ulong HeapOffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ResourceDesc1 pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ClearValue pOptimizedClearValue, uint NumCastableFormats, ref Silk.NET.DXGI.Format pCastableFormats, Guid* riid, ref void* ppvResource)
+        public readonly unsafe int CreatePlacedResource2(ref ID3D12Heap pHeap, ulong HeapOffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ResourceDesc1 pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ClearValue pOptimizedClearValue, uint NumCastableFormats, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.DXGI.Format pCastableFormats, Guid* riid, ref void* ppvResource)
         {
             var @this = (ID3D12Device10*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -15818,7 +15818,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreatePlacedResource2(ref ID3D12Heap pHeap, ulong HeapOffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ResourceDesc1 pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ClearValue pOptimizedClearValue, uint NumCastableFormats, ref Silk.NET.DXGI.Format pCastableFormats, ref Guid riid, void** ppvResource)
+        public readonly unsafe int CreatePlacedResource2(ref ID3D12Heap pHeap, ulong HeapOffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ResourceDesc1 pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ClearValue pOptimizedClearValue, uint NumCastableFormats, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.DXGI.Format pCastableFormats, ref Guid riid, void** ppvResource)
         {
             var @this = (ID3D12Device10*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -15842,7 +15842,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreatePlacedResource2(ref ID3D12Heap pHeap, ulong HeapOffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ResourceDesc1 pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ClearValue pOptimizedClearValue, uint NumCastableFormats, ref Silk.NET.DXGI.Format pCastableFormats, ref Guid riid, ref void* ppvResource)
+        public readonly unsafe int CreatePlacedResource2(ref ID3D12Heap pHeap, ulong HeapOffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ResourceDesc1 pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ClearValue pOptimizedClearValue, uint NumCastableFormats, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.DXGI.Format pCastableFormats, ref Guid riid, ref void* ppvResource)
         {
             var @this = (ID3D12Device10*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -15869,7 +15869,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateReservedResource2([Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc* pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, ID3D12ProtectedResourceSession* pProtectedSession, uint NumCastableFormats, Silk.NET.DXGI.Format* pCastableFormats, Guid* riid, void** ppvResource)
+        public readonly unsafe int CreateReservedResource2([Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc* pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, ID3D12ProtectedResourceSession* pProtectedSession, uint NumCastableFormats, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.DXGI.Format* pCastableFormats, Guid* riid, void** ppvResource)
         {
             var @this = (ID3D12Device10*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -15878,7 +15878,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateReservedResource2([Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc* pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, ID3D12ProtectedResourceSession* pProtectedSession, uint NumCastableFormats, Silk.NET.DXGI.Format* pCastableFormats, Guid* riid, ref void* ppvResource)
+        public readonly unsafe int CreateReservedResource2([Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc* pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, ID3D12ProtectedResourceSession* pProtectedSession, uint NumCastableFormats, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.DXGI.Format* pCastableFormats, Guid* riid, ref void* ppvResource)
         {
             var @this = (ID3D12Device10*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -15890,7 +15890,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateReservedResource2([Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc* pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, ID3D12ProtectedResourceSession* pProtectedSession, uint NumCastableFormats, Silk.NET.DXGI.Format* pCastableFormats, ref Guid riid, void** ppvResource)
+        public readonly unsafe int CreateReservedResource2([Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc* pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, ID3D12ProtectedResourceSession* pProtectedSession, uint NumCastableFormats, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.DXGI.Format* pCastableFormats, ref Guid riid, void** ppvResource)
         {
             var @this = (ID3D12Device10*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -15902,7 +15902,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateReservedResource2([Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc* pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, ID3D12ProtectedResourceSession* pProtectedSession, uint NumCastableFormats, Silk.NET.DXGI.Format* pCastableFormats, ref Guid riid, ref void* ppvResource)
+        public readonly unsafe int CreateReservedResource2([Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc* pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, ID3D12ProtectedResourceSession* pProtectedSession, uint NumCastableFormats, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.DXGI.Format* pCastableFormats, ref Guid riid, ref void* ppvResource)
         {
             var @this = (ID3D12Device10*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -15917,7 +15917,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateReservedResource2([Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc* pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, ID3D12ProtectedResourceSession* pProtectedSession, uint NumCastableFormats, ref Silk.NET.DXGI.Format pCastableFormats, Guid* riid, void** ppvResource)
+        public readonly unsafe int CreateReservedResource2([Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc* pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, ID3D12ProtectedResourceSession* pProtectedSession, uint NumCastableFormats, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.DXGI.Format pCastableFormats, Guid* riid, void** ppvResource)
         {
             var @this = (ID3D12Device10*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -15929,7 +15929,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateReservedResource2([Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc* pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, ID3D12ProtectedResourceSession* pProtectedSession, uint NumCastableFormats, ref Silk.NET.DXGI.Format pCastableFormats, Guid* riid, ref void* ppvResource)
+        public readonly unsafe int CreateReservedResource2([Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc* pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, ID3D12ProtectedResourceSession* pProtectedSession, uint NumCastableFormats, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.DXGI.Format pCastableFormats, Guid* riid, ref void* ppvResource)
         {
             var @this = (ID3D12Device10*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -15944,7 +15944,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateReservedResource2([Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc* pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, ID3D12ProtectedResourceSession* pProtectedSession, uint NumCastableFormats, ref Silk.NET.DXGI.Format pCastableFormats, ref Guid riid, void** ppvResource)
+        public readonly unsafe int CreateReservedResource2([Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc* pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, ID3D12ProtectedResourceSession* pProtectedSession, uint NumCastableFormats, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.DXGI.Format pCastableFormats, ref Guid riid, void** ppvResource)
         {
             var @this = (ID3D12Device10*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -15959,7 +15959,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateReservedResource2([Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc* pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, ID3D12ProtectedResourceSession* pProtectedSession, uint NumCastableFormats, ref Silk.NET.DXGI.Format pCastableFormats, ref Guid riid, ref void* ppvResource)
+        public readonly unsafe int CreateReservedResource2([Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc* pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, ID3D12ProtectedResourceSession* pProtectedSession, uint NumCastableFormats, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.DXGI.Format pCastableFormats, ref Guid riid, ref void* ppvResource)
         {
             var @this = (ID3D12Device10*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -15977,7 +15977,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateReservedResource2([Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc* pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, ref ID3D12ProtectedResourceSession pProtectedSession, uint NumCastableFormats, Silk.NET.DXGI.Format* pCastableFormats, Guid* riid, void** ppvResource)
+        public readonly unsafe int CreateReservedResource2([Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc* pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, ref ID3D12ProtectedResourceSession pProtectedSession, uint NumCastableFormats, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.DXGI.Format* pCastableFormats, Guid* riid, void** ppvResource)
         {
             var @this = (ID3D12Device10*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -15989,7 +15989,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateReservedResource2([Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc* pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, ref ID3D12ProtectedResourceSession pProtectedSession, uint NumCastableFormats, Silk.NET.DXGI.Format* pCastableFormats, Guid* riid, ref void* ppvResource)
+        public readonly unsafe int CreateReservedResource2([Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc* pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, ref ID3D12ProtectedResourceSession pProtectedSession, uint NumCastableFormats, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.DXGI.Format* pCastableFormats, Guid* riid, ref void* ppvResource)
         {
             var @this = (ID3D12Device10*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -16004,7 +16004,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateReservedResource2([Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc* pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, ref ID3D12ProtectedResourceSession pProtectedSession, uint NumCastableFormats, Silk.NET.DXGI.Format* pCastableFormats, ref Guid riid, void** ppvResource)
+        public readonly unsafe int CreateReservedResource2([Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc* pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, ref ID3D12ProtectedResourceSession pProtectedSession, uint NumCastableFormats, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.DXGI.Format* pCastableFormats, ref Guid riid, void** ppvResource)
         {
             var @this = (ID3D12Device10*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -16019,7 +16019,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateReservedResource2([Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc* pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, ref ID3D12ProtectedResourceSession pProtectedSession, uint NumCastableFormats, Silk.NET.DXGI.Format* pCastableFormats, ref Guid riid, ref void* ppvResource)
+        public readonly unsafe int CreateReservedResource2([Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc* pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, ref ID3D12ProtectedResourceSession pProtectedSession, uint NumCastableFormats, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.DXGI.Format* pCastableFormats, ref Guid riid, ref void* ppvResource)
         {
             var @this = (ID3D12Device10*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -16037,7 +16037,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateReservedResource2([Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc* pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, ref ID3D12ProtectedResourceSession pProtectedSession, uint NumCastableFormats, ref Silk.NET.DXGI.Format pCastableFormats, Guid* riid, void** ppvResource)
+        public readonly unsafe int CreateReservedResource2([Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc* pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, ref ID3D12ProtectedResourceSession pProtectedSession, uint NumCastableFormats, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.DXGI.Format pCastableFormats, Guid* riid, void** ppvResource)
         {
             var @this = (ID3D12Device10*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -16052,7 +16052,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateReservedResource2([Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc* pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, ref ID3D12ProtectedResourceSession pProtectedSession, uint NumCastableFormats, ref Silk.NET.DXGI.Format pCastableFormats, Guid* riid, ref void* ppvResource)
+        public readonly unsafe int CreateReservedResource2([Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc* pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, ref ID3D12ProtectedResourceSession pProtectedSession, uint NumCastableFormats, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.DXGI.Format pCastableFormats, Guid* riid, ref void* ppvResource)
         {
             var @this = (ID3D12Device10*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -16070,7 +16070,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateReservedResource2([Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc* pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, ref ID3D12ProtectedResourceSession pProtectedSession, uint NumCastableFormats, ref Silk.NET.DXGI.Format pCastableFormats, ref Guid riid, void** ppvResource)
+        public readonly unsafe int CreateReservedResource2([Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc* pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, ref ID3D12ProtectedResourceSession pProtectedSession, uint NumCastableFormats, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.DXGI.Format pCastableFormats, ref Guid riid, void** ppvResource)
         {
             var @this = (ID3D12Device10*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -16088,7 +16088,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateReservedResource2([Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc* pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, ref ID3D12ProtectedResourceSession pProtectedSession, uint NumCastableFormats, ref Silk.NET.DXGI.Format pCastableFormats, ref Guid riid, ref void* ppvResource)
+        public readonly unsafe int CreateReservedResource2([Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc* pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, ref ID3D12ProtectedResourceSession pProtectedSession, uint NumCastableFormats, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.DXGI.Format pCastableFormats, ref Guid riid, ref void* ppvResource)
         {
             var @this = (ID3D12Device10*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -16109,7 +16109,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateReservedResource2([Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc* pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ClearValue pOptimizedClearValue, ID3D12ProtectedResourceSession* pProtectedSession, uint NumCastableFormats, Silk.NET.DXGI.Format* pCastableFormats, Guid* riid, void** ppvResource)
+        public readonly unsafe int CreateReservedResource2([Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc* pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ClearValue pOptimizedClearValue, ID3D12ProtectedResourceSession* pProtectedSession, uint NumCastableFormats, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.DXGI.Format* pCastableFormats, Guid* riid, void** ppvResource)
         {
             var @this = (ID3D12Device10*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -16121,7 +16121,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateReservedResource2([Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc* pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ClearValue pOptimizedClearValue, ID3D12ProtectedResourceSession* pProtectedSession, uint NumCastableFormats, Silk.NET.DXGI.Format* pCastableFormats, Guid* riid, ref void* ppvResource)
+        public readonly unsafe int CreateReservedResource2([Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc* pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ClearValue pOptimizedClearValue, ID3D12ProtectedResourceSession* pProtectedSession, uint NumCastableFormats, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.DXGI.Format* pCastableFormats, Guid* riid, ref void* ppvResource)
         {
             var @this = (ID3D12Device10*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -16136,7 +16136,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateReservedResource2([Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc* pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ClearValue pOptimizedClearValue, ID3D12ProtectedResourceSession* pProtectedSession, uint NumCastableFormats, Silk.NET.DXGI.Format* pCastableFormats, ref Guid riid, void** ppvResource)
+        public readonly unsafe int CreateReservedResource2([Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc* pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ClearValue pOptimizedClearValue, ID3D12ProtectedResourceSession* pProtectedSession, uint NumCastableFormats, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.DXGI.Format* pCastableFormats, ref Guid riid, void** ppvResource)
         {
             var @this = (ID3D12Device10*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -16151,7 +16151,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateReservedResource2([Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc* pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ClearValue pOptimizedClearValue, ID3D12ProtectedResourceSession* pProtectedSession, uint NumCastableFormats, Silk.NET.DXGI.Format* pCastableFormats, ref Guid riid, ref void* ppvResource)
+        public readonly unsafe int CreateReservedResource2([Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc* pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ClearValue pOptimizedClearValue, ID3D12ProtectedResourceSession* pProtectedSession, uint NumCastableFormats, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.DXGI.Format* pCastableFormats, ref Guid riid, ref void* ppvResource)
         {
             var @this = (ID3D12Device10*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -16169,7 +16169,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateReservedResource2([Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc* pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ClearValue pOptimizedClearValue, ID3D12ProtectedResourceSession* pProtectedSession, uint NumCastableFormats, ref Silk.NET.DXGI.Format pCastableFormats, Guid* riid, void** ppvResource)
+        public readonly unsafe int CreateReservedResource2([Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc* pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ClearValue pOptimizedClearValue, ID3D12ProtectedResourceSession* pProtectedSession, uint NumCastableFormats, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.DXGI.Format pCastableFormats, Guid* riid, void** ppvResource)
         {
             var @this = (ID3D12Device10*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -16184,7 +16184,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateReservedResource2([Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc* pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ClearValue pOptimizedClearValue, ID3D12ProtectedResourceSession* pProtectedSession, uint NumCastableFormats, ref Silk.NET.DXGI.Format pCastableFormats, Guid* riid, ref void* ppvResource)
+        public readonly unsafe int CreateReservedResource2([Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc* pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ClearValue pOptimizedClearValue, ID3D12ProtectedResourceSession* pProtectedSession, uint NumCastableFormats, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.DXGI.Format pCastableFormats, Guid* riid, ref void* ppvResource)
         {
             var @this = (ID3D12Device10*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -16202,7 +16202,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateReservedResource2([Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc* pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ClearValue pOptimizedClearValue, ID3D12ProtectedResourceSession* pProtectedSession, uint NumCastableFormats, ref Silk.NET.DXGI.Format pCastableFormats, ref Guid riid, void** ppvResource)
+        public readonly unsafe int CreateReservedResource2([Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc* pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ClearValue pOptimizedClearValue, ID3D12ProtectedResourceSession* pProtectedSession, uint NumCastableFormats, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.DXGI.Format pCastableFormats, ref Guid riid, void** ppvResource)
         {
             var @this = (ID3D12Device10*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -16220,7 +16220,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateReservedResource2([Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc* pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ClearValue pOptimizedClearValue, ID3D12ProtectedResourceSession* pProtectedSession, uint NumCastableFormats, ref Silk.NET.DXGI.Format pCastableFormats, ref Guid riid, ref void* ppvResource)
+        public readonly unsafe int CreateReservedResource2([Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc* pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ClearValue pOptimizedClearValue, ID3D12ProtectedResourceSession* pProtectedSession, uint NumCastableFormats, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.DXGI.Format pCastableFormats, ref Guid riid, ref void* ppvResource)
         {
             var @this = (ID3D12Device10*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -16241,7 +16241,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateReservedResource2([Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc* pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ClearValue pOptimizedClearValue, ref ID3D12ProtectedResourceSession pProtectedSession, uint NumCastableFormats, Silk.NET.DXGI.Format* pCastableFormats, Guid* riid, void** ppvResource)
+        public readonly unsafe int CreateReservedResource2([Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc* pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ClearValue pOptimizedClearValue, ref ID3D12ProtectedResourceSession pProtectedSession, uint NumCastableFormats, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.DXGI.Format* pCastableFormats, Guid* riid, void** ppvResource)
         {
             var @this = (ID3D12Device10*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -16256,7 +16256,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateReservedResource2([Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc* pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ClearValue pOptimizedClearValue, ref ID3D12ProtectedResourceSession pProtectedSession, uint NumCastableFormats, Silk.NET.DXGI.Format* pCastableFormats, Guid* riid, ref void* ppvResource)
+        public readonly unsafe int CreateReservedResource2([Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc* pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ClearValue pOptimizedClearValue, ref ID3D12ProtectedResourceSession pProtectedSession, uint NumCastableFormats, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.DXGI.Format* pCastableFormats, Guid* riid, ref void* ppvResource)
         {
             var @this = (ID3D12Device10*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -16274,7 +16274,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateReservedResource2([Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc* pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ClearValue pOptimizedClearValue, ref ID3D12ProtectedResourceSession pProtectedSession, uint NumCastableFormats, Silk.NET.DXGI.Format* pCastableFormats, ref Guid riid, void** ppvResource)
+        public readonly unsafe int CreateReservedResource2([Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc* pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ClearValue pOptimizedClearValue, ref ID3D12ProtectedResourceSession pProtectedSession, uint NumCastableFormats, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.DXGI.Format* pCastableFormats, ref Guid riid, void** ppvResource)
         {
             var @this = (ID3D12Device10*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -16292,7 +16292,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateReservedResource2([Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc* pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ClearValue pOptimizedClearValue, ref ID3D12ProtectedResourceSession pProtectedSession, uint NumCastableFormats, Silk.NET.DXGI.Format* pCastableFormats, ref Guid riid, ref void* ppvResource)
+        public readonly unsafe int CreateReservedResource2([Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc* pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ClearValue pOptimizedClearValue, ref ID3D12ProtectedResourceSession pProtectedSession, uint NumCastableFormats, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.DXGI.Format* pCastableFormats, ref Guid riid, ref void* ppvResource)
         {
             var @this = (ID3D12Device10*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -16313,7 +16313,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateReservedResource2([Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc* pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ClearValue pOptimizedClearValue, ref ID3D12ProtectedResourceSession pProtectedSession, uint NumCastableFormats, ref Silk.NET.DXGI.Format pCastableFormats, Guid* riid, void** ppvResource)
+        public readonly unsafe int CreateReservedResource2([Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc* pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ClearValue pOptimizedClearValue, ref ID3D12ProtectedResourceSession pProtectedSession, uint NumCastableFormats, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.DXGI.Format pCastableFormats, Guid* riid, void** ppvResource)
         {
             var @this = (ID3D12Device10*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -16331,7 +16331,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateReservedResource2([Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc* pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ClearValue pOptimizedClearValue, ref ID3D12ProtectedResourceSession pProtectedSession, uint NumCastableFormats, ref Silk.NET.DXGI.Format pCastableFormats, Guid* riid, ref void* ppvResource)
+        public readonly unsafe int CreateReservedResource2([Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc* pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ClearValue pOptimizedClearValue, ref ID3D12ProtectedResourceSession pProtectedSession, uint NumCastableFormats, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.DXGI.Format pCastableFormats, Guid* riid, ref void* ppvResource)
         {
             var @this = (ID3D12Device10*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -16352,7 +16352,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateReservedResource2([Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc* pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ClearValue pOptimizedClearValue, ref ID3D12ProtectedResourceSession pProtectedSession, uint NumCastableFormats, ref Silk.NET.DXGI.Format pCastableFormats, ref Guid riid, void** ppvResource)
+        public readonly unsafe int CreateReservedResource2([Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc* pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ClearValue pOptimizedClearValue, ref ID3D12ProtectedResourceSession pProtectedSession, uint NumCastableFormats, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.DXGI.Format pCastableFormats, ref Guid riid, void** ppvResource)
         {
             var @this = (ID3D12Device10*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -16373,7 +16373,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateReservedResource2([Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc* pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ClearValue pOptimizedClearValue, ref ID3D12ProtectedResourceSession pProtectedSession, uint NumCastableFormats, ref Silk.NET.DXGI.Format pCastableFormats, ref Guid riid, ref void* ppvResource)
+        public readonly unsafe int CreateReservedResource2([Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc* pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ClearValue pOptimizedClearValue, ref ID3D12ProtectedResourceSession pProtectedSession, uint NumCastableFormats, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.DXGI.Format pCastableFormats, ref Guid riid, ref void* ppvResource)
         {
             var @this = (ID3D12Device10*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -16397,7 +16397,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateReservedResource2([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ResourceDesc pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, ID3D12ProtectedResourceSession* pProtectedSession, uint NumCastableFormats, Silk.NET.DXGI.Format* pCastableFormats, Guid* riid, void** ppvResource)
+        public readonly unsafe int CreateReservedResource2([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ResourceDesc pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, ID3D12ProtectedResourceSession* pProtectedSession, uint NumCastableFormats, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.DXGI.Format* pCastableFormats, Guid* riid, void** ppvResource)
         {
             var @this = (ID3D12Device10*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -16409,7 +16409,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateReservedResource2([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ResourceDesc pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, ID3D12ProtectedResourceSession* pProtectedSession, uint NumCastableFormats, Silk.NET.DXGI.Format* pCastableFormats, Guid* riid, ref void* ppvResource)
+        public readonly unsafe int CreateReservedResource2([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ResourceDesc pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, ID3D12ProtectedResourceSession* pProtectedSession, uint NumCastableFormats, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.DXGI.Format* pCastableFormats, Guid* riid, ref void* ppvResource)
         {
             var @this = (ID3D12Device10*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -16424,7 +16424,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateReservedResource2([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ResourceDesc pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, ID3D12ProtectedResourceSession* pProtectedSession, uint NumCastableFormats, Silk.NET.DXGI.Format* pCastableFormats, ref Guid riid, void** ppvResource)
+        public readonly unsafe int CreateReservedResource2([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ResourceDesc pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, ID3D12ProtectedResourceSession* pProtectedSession, uint NumCastableFormats, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.DXGI.Format* pCastableFormats, ref Guid riid, void** ppvResource)
         {
             var @this = (ID3D12Device10*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -16439,7 +16439,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateReservedResource2([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ResourceDesc pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, ID3D12ProtectedResourceSession* pProtectedSession, uint NumCastableFormats, Silk.NET.DXGI.Format* pCastableFormats, ref Guid riid, ref void* ppvResource)
+        public readonly unsafe int CreateReservedResource2([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ResourceDesc pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, ID3D12ProtectedResourceSession* pProtectedSession, uint NumCastableFormats, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.DXGI.Format* pCastableFormats, ref Guid riid, ref void* ppvResource)
         {
             var @this = (ID3D12Device10*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -16457,7 +16457,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateReservedResource2([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ResourceDesc pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, ID3D12ProtectedResourceSession* pProtectedSession, uint NumCastableFormats, ref Silk.NET.DXGI.Format pCastableFormats, Guid* riid, void** ppvResource)
+        public readonly unsafe int CreateReservedResource2([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ResourceDesc pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, ID3D12ProtectedResourceSession* pProtectedSession, uint NumCastableFormats, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.DXGI.Format pCastableFormats, Guid* riid, void** ppvResource)
         {
             var @this = (ID3D12Device10*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -16472,7 +16472,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateReservedResource2([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ResourceDesc pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, ID3D12ProtectedResourceSession* pProtectedSession, uint NumCastableFormats, ref Silk.NET.DXGI.Format pCastableFormats, Guid* riid, ref void* ppvResource)
+        public readonly unsafe int CreateReservedResource2([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ResourceDesc pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, ID3D12ProtectedResourceSession* pProtectedSession, uint NumCastableFormats, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.DXGI.Format pCastableFormats, Guid* riid, ref void* ppvResource)
         {
             var @this = (ID3D12Device10*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -16490,7 +16490,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateReservedResource2([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ResourceDesc pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, ID3D12ProtectedResourceSession* pProtectedSession, uint NumCastableFormats, ref Silk.NET.DXGI.Format pCastableFormats, ref Guid riid, void** ppvResource)
+        public readonly unsafe int CreateReservedResource2([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ResourceDesc pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, ID3D12ProtectedResourceSession* pProtectedSession, uint NumCastableFormats, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.DXGI.Format pCastableFormats, ref Guid riid, void** ppvResource)
         {
             var @this = (ID3D12Device10*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -16508,7 +16508,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateReservedResource2([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ResourceDesc pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, ID3D12ProtectedResourceSession* pProtectedSession, uint NumCastableFormats, ref Silk.NET.DXGI.Format pCastableFormats, ref Guid riid, ref void* ppvResource)
+        public readonly unsafe int CreateReservedResource2([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ResourceDesc pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, ID3D12ProtectedResourceSession* pProtectedSession, uint NumCastableFormats, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.DXGI.Format pCastableFormats, ref Guid riid, ref void* ppvResource)
         {
             var @this = (ID3D12Device10*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -16529,7 +16529,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateReservedResource2([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ResourceDesc pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, ref ID3D12ProtectedResourceSession pProtectedSession, uint NumCastableFormats, Silk.NET.DXGI.Format* pCastableFormats, Guid* riid, void** ppvResource)
+        public readonly unsafe int CreateReservedResource2([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ResourceDesc pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, ref ID3D12ProtectedResourceSession pProtectedSession, uint NumCastableFormats, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.DXGI.Format* pCastableFormats, Guid* riid, void** ppvResource)
         {
             var @this = (ID3D12Device10*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -16544,7 +16544,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateReservedResource2([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ResourceDesc pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, ref ID3D12ProtectedResourceSession pProtectedSession, uint NumCastableFormats, Silk.NET.DXGI.Format* pCastableFormats, Guid* riid, ref void* ppvResource)
+        public readonly unsafe int CreateReservedResource2([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ResourceDesc pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, ref ID3D12ProtectedResourceSession pProtectedSession, uint NumCastableFormats, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.DXGI.Format* pCastableFormats, Guid* riid, ref void* ppvResource)
         {
             var @this = (ID3D12Device10*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -16562,7 +16562,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateReservedResource2([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ResourceDesc pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, ref ID3D12ProtectedResourceSession pProtectedSession, uint NumCastableFormats, Silk.NET.DXGI.Format* pCastableFormats, ref Guid riid, void** ppvResource)
+        public readonly unsafe int CreateReservedResource2([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ResourceDesc pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, ref ID3D12ProtectedResourceSession pProtectedSession, uint NumCastableFormats, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.DXGI.Format* pCastableFormats, ref Guid riid, void** ppvResource)
         {
             var @this = (ID3D12Device10*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -16580,7 +16580,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateReservedResource2([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ResourceDesc pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, ref ID3D12ProtectedResourceSession pProtectedSession, uint NumCastableFormats, Silk.NET.DXGI.Format* pCastableFormats, ref Guid riid, ref void* ppvResource)
+        public readonly unsafe int CreateReservedResource2([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ResourceDesc pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, ref ID3D12ProtectedResourceSession pProtectedSession, uint NumCastableFormats, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.DXGI.Format* pCastableFormats, ref Guid riid, ref void* ppvResource)
         {
             var @this = (ID3D12Device10*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -16601,7 +16601,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateReservedResource2([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ResourceDesc pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, ref ID3D12ProtectedResourceSession pProtectedSession, uint NumCastableFormats, ref Silk.NET.DXGI.Format pCastableFormats, Guid* riid, void** ppvResource)
+        public readonly unsafe int CreateReservedResource2([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ResourceDesc pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, ref ID3D12ProtectedResourceSession pProtectedSession, uint NumCastableFormats, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.DXGI.Format pCastableFormats, Guid* riid, void** ppvResource)
         {
             var @this = (ID3D12Device10*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -16619,7 +16619,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateReservedResource2([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ResourceDesc pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, ref ID3D12ProtectedResourceSession pProtectedSession, uint NumCastableFormats, ref Silk.NET.DXGI.Format pCastableFormats, Guid* riid, ref void* ppvResource)
+        public readonly unsafe int CreateReservedResource2([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ResourceDesc pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, ref ID3D12ProtectedResourceSession pProtectedSession, uint NumCastableFormats, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.DXGI.Format pCastableFormats, Guid* riid, ref void* ppvResource)
         {
             var @this = (ID3D12Device10*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -16640,7 +16640,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateReservedResource2([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ResourceDesc pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, ref ID3D12ProtectedResourceSession pProtectedSession, uint NumCastableFormats, ref Silk.NET.DXGI.Format pCastableFormats, ref Guid riid, void** ppvResource)
+        public readonly unsafe int CreateReservedResource2([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ResourceDesc pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, ref ID3D12ProtectedResourceSession pProtectedSession, uint NumCastableFormats, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.DXGI.Format pCastableFormats, ref Guid riid, void** ppvResource)
         {
             var @this = (ID3D12Device10*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -16661,7 +16661,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateReservedResource2([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ResourceDesc pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, ref ID3D12ProtectedResourceSession pProtectedSession, uint NumCastableFormats, ref Silk.NET.DXGI.Format pCastableFormats, ref Guid riid, ref void* ppvResource)
+        public readonly unsafe int CreateReservedResource2([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ResourceDesc pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, ref ID3D12ProtectedResourceSession pProtectedSession, uint NumCastableFormats, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.DXGI.Format pCastableFormats, ref Guid riid, ref void* ppvResource)
         {
             var @this = (ID3D12Device10*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -16685,7 +16685,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateReservedResource2([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ResourceDesc pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ClearValue pOptimizedClearValue, ID3D12ProtectedResourceSession* pProtectedSession, uint NumCastableFormats, Silk.NET.DXGI.Format* pCastableFormats, Guid* riid, void** ppvResource)
+        public readonly unsafe int CreateReservedResource2([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ResourceDesc pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ClearValue pOptimizedClearValue, ID3D12ProtectedResourceSession* pProtectedSession, uint NumCastableFormats, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.DXGI.Format* pCastableFormats, Guid* riid, void** ppvResource)
         {
             var @this = (ID3D12Device10*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -16700,7 +16700,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateReservedResource2([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ResourceDesc pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ClearValue pOptimizedClearValue, ID3D12ProtectedResourceSession* pProtectedSession, uint NumCastableFormats, Silk.NET.DXGI.Format* pCastableFormats, Guid* riid, ref void* ppvResource)
+        public readonly unsafe int CreateReservedResource2([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ResourceDesc pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ClearValue pOptimizedClearValue, ID3D12ProtectedResourceSession* pProtectedSession, uint NumCastableFormats, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.DXGI.Format* pCastableFormats, Guid* riid, ref void* ppvResource)
         {
             var @this = (ID3D12Device10*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -16718,7 +16718,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateReservedResource2([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ResourceDesc pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ClearValue pOptimizedClearValue, ID3D12ProtectedResourceSession* pProtectedSession, uint NumCastableFormats, Silk.NET.DXGI.Format* pCastableFormats, ref Guid riid, void** ppvResource)
+        public readonly unsafe int CreateReservedResource2([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ResourceDesc pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ClearValue pOptimizedClearValue, ID3D12ProtectedResourceSession* pProtectedSession, uint NumCastableFormats, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.DXGI.Format* pCastableFormats, ref Guid riid, void** ppvResource)
         {
             var @this = (ID3D12Device10*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -16736,7 +16736,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateReservedResource2([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ResourceDesc pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ClearValue pOptimizedClearValue, ID3D12ProtectedResourceSession* pProtectedSession, uint NumCastableFormats, Silk.NET.DXGI.Format* pCastableFormats, ref Guid riid, ref void* ppvResource)
+        public readonly unsafe int CreateReservedResource2([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ResourceDesc pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ClearValue pOptimizedClearValue, ID3D12ProtectedResourceSession* pProtectedSession, uint NumCastableFormats, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.DXGI.Format* pCastableFormats, ref Guid riid, ref void* ppvResource)
         {
             var @this = (ID3D12Device10*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -16757,7 +16757,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateReservedResource2([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ResourceDesc pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ClearValue pOptimizedClearValue, ID3D12ProtectedResourceSession* pProtectedSession, uint NumCastableFormats, ref Silk.NET.DXGI.Format pCastableFormats, Guid* riid, void** ppvResource)
+        public readonly unsafe int CreateReservedResource2([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ResourceDesc pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ClearValue pOptimizedClearValue, ID3D12ProtectedResourceSession* pProtectedSession, uint NumCastableFormats, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.DXGI.Format pCastableFormats, Guid* riid, void** ppvResource)
         {
             var @this = (ID3D12Device10*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -16775,7 +16775,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateReservedResource2([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ResourceDesc pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ClearValue pOptimizedClearValue, ID3D12ProtectedResourceSession* pProtectedSession, uint NumCastableFormats, ref Silk.NET.DXGI.Format pCastableFormats, Guid* riid, ref void* ppvResource)
+        public readonly unsafe int CreateReservedResource2([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ResourceDesc pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ClearValue pOptimizedClearValue, ID3D12ProtectedResourceSession* pProtectedSession, uint NumCastableFormats, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.DXGI.Format pCastableFormats, Guid* riid, ref void* ppvResource)
         {
             var @this = (ID3D12Device10*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -16796,7 +16796,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateReservedResource2([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ResourceDesc pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ClearValue pOptimizedClearValue, ID3D12ProtectedResourceSession* pProtectedSession, uint NumCastableFormats, ref Silk.NET.DXGI.Format pCastableFormats, ref Guid riid, void** ppvResource)
+        public readonly unsafe int CreateReservedResource2([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ResourceDesc pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ClearValue pOptimizedClearValue, ID3D12ProtectedResourceSession* pProtectedSession, uint NumCastableFormats, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.DXGI.Format pCastableFormats, ref Guid riid, void** ppvResource)
         {
             var @this = (ID3D12Device10*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -16817,7 +16817,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateReservedResource2([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ResourceDesc pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ClearValue pOptimizedClearValue, ID3D12ProtectedResourceSession* pProtectedSession, uint NumCastableFormats, ref Silk.NET.DXGI.Format pCastableFormats, ref Guid riid, ref void* ppvResource)
+        public readonly unsafe int CreateReservedResource2([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ResourceDesc pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ClearValue pOptimizedClearValue, ID3D12ProtectedResourceSession* pProtectedSession, uint NumCastableFormats, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.DXGI.Format pCastableFormats, ref Guid riid, ref void* ppvResource)
         {
             var @this = (ID3D12Device10*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -16841,7 +16841,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateReservedResource2([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ResourceDesc pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ClearValue pOptimizedClearValue, ref ID3D12ProtectedResourceSession pProtectedSession, uint NumCastableFormats, Silk.NET.DXGI.Format* pCastableFormats, Guid* riid, void** ppvResource)
+        public readonly unsafe int CreateReservedResource2([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ResourceDesc pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ClearValue pOptimizedClearValue, ref ID3D12ProtectedResourceSession pProtectedSession, uint NumCastableFormats, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.DXGI.Format* pCastableFormats, Guid* riid, void** ppvResource)
         {
             var @this = (ID3D12Device10*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -16859,7 +16859,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateReservedResource2([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ResourceDesc pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ClearValue pOptimizedClearValue, ref ID3D12ProtectedResourceSession pProtectedSession, uint NumCastableFormats, Silk.NET.DXGI.Format* pCastableFormats, Guid* riid, ref void* ppvResource)
+        public readonly unsafe int CreateReservedResource2([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ResourceDesc pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ClearValue pOptimizedClearValue, ref ID3D12ProtectedResourceSession pProtectedSession, uint NumCastableFormats, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.DXGI.Format* pCastableFormats, Guid* riid, ref void* ppvResource)
         {
             var @this = (ID3D12Device10*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -16880,7 +16880,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateReservedResource2([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ResourceDesc pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ClearValue pOptimizedClearValue, ref ID3D12ProtectedResourceSession pProtectedSession, uint NumCastableFormats, Silk.NET.DXGI.Format* pCastableFormats, ref Guid riid, void** ppvResource)
+        public readonly unsafe int CreateReservedResource2([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ResourceDesc pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ClearValue pOptimizedClearValue, ref ID3D12ProtectedResourceSession pProtectedSession, uint NumCastableFormats, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.DXGI.Format* pCastableFormats, ref Guid riid, void** ppvResource)
         {
             var @this = (ID3D12Device10*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -16901,7 +16901,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateReservedResource2([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ResourceDesc pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ClearValue pOptimizedClearValue, ref ID3D12ProtectedResourceSession pProtectedSession, uint NumCastableFormats, Silk.NET.DXGI.Format* pCastableFormats, ref Guid riid, ref void* ppvResource)
+        public readonly unsafe int CreateReservedResource2([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ResourceDesc pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ClearValue pOptimizedClearValue, ref ID3D12ProtectedResourceSession pProtectedSession, uint NumCastableFormats, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.DXGI.Format* pCastableFormats, ref Guid riid, ref void* ppvResource)
         {
             var @this = (ID3D12Device10*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -16925,7 +16925,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateReservedResource2([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ResourceDesc pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ClearValue pOptimizedClearValue, ref ID3D12ProtectedResourceSession pProtectedSession, uint NumCastableFormats, ref Silk.NET.DXGI.Format pCastableFormats, Guid* riid, void** ppvResource)
+        public readonly unsafe int CreateReservedResource2([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ResourceDesc pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ClearValue pOptimizedClearValue, ref ID3D12ProtectedResourceSession pProtectedSession, uint NumCastableFormats, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.DXGI.Format pCastableFormats, Guid* riid, void** ppvResource)
         {
             var @this = (ID3D12Device10*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -16946,7 +16946,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateReservedResource2([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ResourceDesc pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ClearValue pOptimizedClearValue, ref ID3D12ProtectedResourceSession pProtectedSession, uint NumCastableFormats, ref Silk.NET.DXGI.Format pCastableFormats, Guid* riid, ref void* ppvResource)
+        public readonly unsafe int CreateReservedResource2([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ResourceDesc pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ClearValue pOptimizedClearValue, ref ID3D12ProtectedResourceSession pProtectedSession, uint NumCastableFormats, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.DXGI.Format pCastableFormats, Guid* riid, ref void* ppvResource)
         {
             var @this = (ID3D12Device10*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -16970,7 +16970,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateReservedResource2([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ResourceDesc pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ClearValue pOptimizedClearValue, ref ID3D12ProtectedResourceSession pProtectedSession, uint NumCastableFormats, ref Silk.NET.DXGI.Format pCastableFormats, ref Guid riid, void** ppvResource)
+        public readonly unsafe int CreateReservedResource2([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ResourceDesc pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ClearValue pOptimizedClearValue, ref ID3D12ProtectedResourceSession pProtectedSession, uint NumCastableFormats, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.DXGI.Format pCastableFormats, ref Guid riid, void** ppvResource)
         {
             var @this = (ID3D12Device10*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -16994,7 +16994,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateReservedResource2([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ResourceDesc pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ClearValue pOptimizedClearValue, ref ID3D12ProtectedResourceSession pProtectedSession, uint NumCastableFormats, ref Silk.NET.DXGI.Format pCastableFormats, ref Guid riid, ref void* ppvResource)
+        public readonly unsafe int CreateReservedResource2([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ResourceDesc pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ClearValue pOptimizedClearValue, ref ID3D12ProtectedResourceSession pProtectedSession, uint NumCastableFormats, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.DXGI.Format pCastableFormats, ref Guid riid, ref void* ppvResource)
         {
             var @this = (ID3D12Device10*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -19679,7 +19679,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateCommittedResource3<TI0, TI1>([Flow(Silk.NET.Core.Native.FlowDirection.In)] HeapProperties* pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc1* pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, ComPtr<TI0> pProtectedSession, uint NumCastableFormats, Silk.NET.DXGI.Format* pCastableFormats, out ComPtr<TI1> ppvResource) where TI0 : unmanaged, IComVtbl<ID3D12ProtectedResourceSession>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<TI1>
+        public readonly unsafe int CreateCommittedResource3<TI0, TI1>([Flow(Silk.NET.Core.Native.FlowDirection.In)] HeapProperties* pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc1* pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, ComPtr<TI0> pProtectedSession, uint NumCastableFormats, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.DXGI.Format* pCastableFormats, out ComPtr<TI1> ppvResource) where TI0 : unmanaged, IComVtbl<ID3D12ProtectedResourceSession>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<TI1>
         {
             var @this = (ID3D12Device10*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -19688,7 +19688,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateCommittedResource3<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] HeapProperties* pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc1* pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, ComPtr<TI0> pProtectedSession, uint NumCastableFormats, Silk.NET.DXGI.Format* pCastableFormats, Guid* riidResource, ref void* ppvResource) where TI0 : unmanaged, IComVtbl<ID3D12ProtectedResourceSession>, IComVtbl<TI0>
+        public readonly unsafe int CreateCommittedResource3<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] HeapProperties* pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc1* pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, ComPtr<TI0> pProtectedSession, uint NumCastableFormats, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.DXGI.Format* pCastableFormats, Guid* riidResource, ref void* ppvResource) where TI0 : unmanaged, IComVtbl<ID3D12ProtectedResourceSession>, IComVtbl<TI0>
         {
             var @this = (ID3D12Device10*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -19696,7 +19696,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateCommittedResource3<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] HeapProperties* pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc1* pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, ComPtr<TI0> pProtectedSession, uint NumCastableFormats, Silk.NET.DXGI.Format* pCastableFormats, ref Guid riidResource, void** ppvResource) where TI0 : unmanaged, IComVtbl<ID3D12ProtectedResourceSession>, IComVtbl<TI0>
+        public readonly unsafe int CreateCommittedResource3<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] HeapProperties* pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc1* pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, ComPtr<TI0> pProtectedSession, uint NumCastableFormats, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.DXGI.Format* pCastableFormats, ref Guid riidResource, void** ppvResource) where TI0 : unmanaged, IComVtbl<ID3D12ProtectedResourceSession>, IComVtbl<TI0>
         {
             var @this = (ID3D12Device10*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -19704,7 +19704,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateCommittedResource3<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] HeapProperties* pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc1* pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, ComPtr<TI0> pProtectedSession, uint NumCastableFormats, Silk.NET.DXGI.Format* pCastableFormats, ref Guid riidResource, ref void* ppvResource) where TI0 : unmanaged, IComVtbl<ID3D12ProtectedResourceSession>, IComVtbl<TI0>
+        public readonly unsafe int CreateCommittedResource3<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] HeapProperties* pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc1* pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, ComPtr<TI0> pProtectedSession, uint NumCastableFormats, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.DXGI.Format* pCastableFormats, ref Guid riidResource, ref void* ppvResource) where TI0 : unmanaged, IComVtbl<ID3D12ProtectedResourceSession>, IComVtbl<TI0>
         {
             var @this = (ID3D12Device10*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -19712,40 +19712,40 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateCommittedResource3<TI0, TI1>([Flow(Silk.NET.Core.Native.FlowDirection.In)] HeapProperties* pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc1* pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, ComPtr<TI0> pProtectedSession, uint NumCastableFormats, ref Silk.NET.DXGI.Format pCastableFormats, out ComPtr<TI1> ppvResource) where TI0 : unmanaged, IComVtbl<ID3D12ProtectedResourceSession>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<TI1>
+        public readonly unsafe int CreateCommittedResource3<TI0, TI1>([Flow(Silk.NET.Core.Native.FlowDirection.In)] HeapProperties* pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc1* pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, ComPtr<TI0> pProtectedSession, uint NumCastableFormats, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.DXGI.Format pCastableFormats, out ComPtr<TI1> ppvResource) where TI0 : unmanaged, IComVtbl<ID3D12ProtectedResourceSession>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<TI1>
         {
             var @this = (ID3D12Device10*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
             ppvResource = default;
-            return @this->CreateCommittedResource3(pHeapProperties, HeapFlags, pDesc, InitialLayout, pOptimizedClearValue, (ID3D12ProtectedResourceSession*) pProtectedSession.Handle, NumCastableFormats, ref pCastableFormats, SilkMarshal.GuidPtrOf<TI1>(), (void**) ppvResource.GetAddressOf());
+            return @this->CreateCommittedResource3(pHeapProperties, HeapFlags, pDesc, InitialLayout, pOptimizedClearValue, (ID3D12ProtectedResourceSession*) pProtectedSession.Handle, NumCastableFormats, in pCastableFormats, SilkMarshal.GuidPtrOf<TI1>(), (void**) ppvResource.GetAddressOf());
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateCommittedResource3<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] HeapProperties* pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc1* pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, ComPtr<TI0> pProtectedSession, uint NumCastableFormats, ref Silk.NET.DXGI.Format pCastableFormats, Guid* riidResource, ref void* ppvResource) where TI0 : unmanaged, IComVtbl<ID3D12ProtectedResourceSession>, IComVtbl<TI0>
+        public readonly unsafe int CreateCommittedResource3<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] HeapProperties* pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc1* pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, ComPtr<TI0> pProtectedSession, uint NumCastableFormats, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.DXGI.Format pCastableFormats, Guid* riidResource, ref void* ppvResource) where TI0 : unmanaged, IComVtbl<ID3D12ProtectedResourceSession>, IComVtbl<TI0>
         {
             var @this = (ID3D12Device10*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
-            return @this->CreateCommittedResource3(pHeapProperties, HeapFlags, pDesc, InitialLayout, pOptimizedClearValue, (ID3D12ProtectedResourceSession*) pProtectedSession.Handle, NumCastableFormats, ref pCastableFormats, riidResource, ref ppvResource);
+            return @this->CreateCommittedResource3(pHeapProperties, HeapFlags, pDesc, InitialLayout, pOptimizedClearValue, (ID3D12ProtectedResourceSession*) pProtectedSession.Handle, NumCastableFormats, in pCastableFormats, riidResource, ref ppvResource);
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateCommittedResource3<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] HeapProperties* pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc1* pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, ComPtr<TI0> pProtectedSession, uint NumCastableFormats, ref Silk.NET.DXGI.Format pCastableFormats, ref Guid riidResource, void** ppvResource) where TI0 : unmanaged, IComVtbl<ID3D12ProtectedResourceSession>, IComVtbl<TI0>
+        public readonly unsafe int CreateCommittedResource3<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] HeapProperties* pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc1* pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, ComPtr<TI0> pProtectedSession, uint NumCastableFormats, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.DXGI.Format pCastableFormats, ref Guid riidResource, void** ppvResource) where TI0 : unmanaged, IComVtbl<ID3D12ProtectedResourceSession>, IComVtbl<TI0>
         {
             var @this = (ID3D12Device10*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
-            return @this->CreateCommittedResource3(pHeapProperties, HeapFlags, pDesc, InitialLayout, pOptimizedClearValue, (ID3D12ProtectedResourceSession*) pProtectedSession.Handle, NumCastableFormats, ref pCastableFormats, ref riidResource, ppvResource);
+            return @this->CreateCommittedResource3(pHeapProperties, HeapFlags, pDesc, InitialLayout, pOptimizedClearValue, (ID3D12ProtectedResourceSession*) pProtectedSession.Handle, NumCastableFormats, in pCastableFormats, ref riidResource, ppvResource);
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateCommittedResource3<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] HeapProperties* pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc1* pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, ComPtr<TI0> pProtectedSession, uint NumCastableFormats, ref Silk.NET.DXGI.Format pCastableFormats, ref Guid riidResource, ref void* ppvResource) where TI0 : unmanaged, IComVtbl<ID3D12ProtectedResourceSession>, IComVtbl<TI0>
+        public readonly unsafe int CreateCommittedResource3<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] HeapProperties* pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc1* pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, ComPtr<TI0> pProtectedSession, uint NumCastableFormats, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.DXGI.Format pCastableFormats, ref Guid riidResource, ref void* ppvResource) where TI0 : unmanaged, IComVtbl<ID3D12ProtectedResourceSession>, IComVtbl<TI0>
         {
             var @this = (ID3D12Device10*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
-            return @this->CreateCommittedResource3(pHeapProperties, HeapFlags, pDesc, InitialLayout, pOptimizedClearValue, (ID3D12ProtectedResourceSession*) pProtectedSession.Handle, NumCastableFormats, ref pCastableFormats, ref riidResource, ref ppvResource);
+            return @this->CreateCommittedResource3(pHeapProperties, HeapFlags, pDesc, InitialLayout, pOptimizedClearValue, (ID3D12ProtectedResourceSession*) pProtectedSession.Handle, NumCastableFormats, in pCastableFormats, ref riidResource, ref ppvResource);
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateCommittedResource3<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] HeapProperties* pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc1* pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, ref ID3D12ProtectedResourceSession pProtectedSession, uint NumCastableFormats, Silk.NET.DXGI.Format* pCastableFormats, out ComPtr<TI0> ppvResource) where TI0 : unmanaged, IComVtbl<TI0>
+        public readonly unsafe int CreateCommittedResource3<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] HeapProperties* pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc1* pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, ref ID3D12ProtectedResourceSession pProtectedSession, uint NumCastableFormats, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.DXGI.Format* pCastableFormats, out ComPtr<TI0> ppvResource) where TI0 : unmanaged, IComVtbl<TI0>
         {
             var @this = (ID3D12Device10*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -19754,16 +19754,16 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateCommittedResource3<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] HeapProperties* pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc1* pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, ref ID3D12ProtectedResourceSession pProtectedSession, uint NumCastableFormats, ref Silk.NET.DXGI.Format pCastableFormats, out ComPtr<TI0> ppvResource) where TI0 : unmanaged, IComVtbl<TI0>
+        public readonly unsafe int CreateCommittedResource3<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] HeapProperties* pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc1* pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, ref ID3D12ProtectedResourceSession pProtectedSession, uint NumCastableFormats, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.DXGI.Format pCastableFormats, out ComPtr<TI0> ppvResource) where TI0 : unmanaged, IComVtbl<TI0>
         {
             var @this = (ID3D12Device10*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
             ppvResource = default;
-            return @this->CreateCommittedResource3(pHeapProperties, HeapFlags, pDesc, InitialLayout, pOptimizedClearValue, ref pProtectedSession, NumCastableFormats, ref pCastableFormats, SilkMarshal.GuidPtrOf<TI0>(), (void**) ppvResource.GetAddressOf());
+            return @this->CreateCommittedResource3(pHeapProperties, HeapFlags, pDesc, InitialLayout, pOptimizedClearValue, ref pProtectedSession, NumCastableFormats, in pCastableFormats, SilkMarshal.GuidPtrOf<TI0>(), (void**) ppvResource.GetAddressOf());
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateCommittedResource3<TI0, TI1>([Flow(Silk.NET.Core.Native.FlowDirection.In)] HeapProperties* pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc1* pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ClearValue pOptimizedClearValue, ComPtr<TI0> pProtectedSession, uint NumCastableFormats, Silk.NET.DXGI.Format* pCastableFormats, out ComPtr<TI1> ppvResource) where TI0 : unmanaged, IComVtbl<ID3D12ProtectedResourceSession>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<TI1>
+        public readonly unsafe int CreateCommittedResource3<TI0, TI1>([Flow(Silk.NET.Core.Native.FlowDirection.In)] HeapProperties* pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc1* pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ClearValue pOptimizedClearValue, ComPtr<TI0> pProtectedSession, uint NumCastableFormats, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.DXGI.Format* pCastableFormats, out ComPtr<TI1> ppvResource) where TI0 : unmanaged, IComVtbl<ID3D12ProtectedResourceSession>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<TI1>
         {
             var @this = (ID3D12Device10*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -19772,7 +19772,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateCommittedResource3<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] HeapProperties* pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc1* pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ClearValue pOptimizedClearValue, ComPtr<TI0> pProtectedSession, uint NumCastableFormats, Silk.NET.DXGI.Format* pCastableFormats, Guid* riidResource, ref void* ppvResource) where TI0 : unmanaged, IComVtbl<ID3D12ProtectedResourceSession>, IComVtbl<TI0>
+        public readonly unsafe int CreateCommittedResource3<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] HeapProperties* pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc1* pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ClearValue pOptimizedClearValue, ComPtr<TI0> pProtectedSession, uint NumCastableFormats, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.DXGI.Format* pCastableFormats, Guid* riidResource, ref void* ppvResource) where TI0 : unmanaged, IComVtbl<ID3D12ProtectedResourceSession>, IComVtbl<TI0>
         {
             var @this = (ID3D12Device10*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -19780,7 +19780,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateCommittedResource3<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] HeapProperties* pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc1* pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ClearValue pOptimizedClearValue, ComPtr<TI0> pProtectedSession, uint NumCastableFormats, Silk.NET.DXGI.Format* pCastableFormats, ref Guid riidResource, void** ppvResource) where TI0 : unmanaged, IComVtbl<ID3D12ProtectedResourceSession>, IComVtbl<TI0>
+        public readonly unsafe int CreateCommittedResource3<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] HeapProperties* pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc1* pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ClearValue pOptimizedClearValue, ComPtr<TI0> pProtectedSession, uint NumCastableFormats, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.DXGI.Format* pCastableFormats, ref Guid riidResource, void** ppvResource) where TI0 : unmanaged, IComVtbl<ID3D12ProtectedResourceSession>, IComVtbl<TI0>
         {
             var @this = (ID3D12Device10*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -19788,7 +19788,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateCommittedResource3<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] HeapProperties* pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc1* pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ClearValue pOptimizedClearValue, ComPtr<TI0> pProtectedSession, uint NumCastableFormats, Silk.NET.DXGI.Format* pCastableFormats, ref Guid riidResource, ref void* ppvResource) where TI0 : unmanaged, IComVtbl<ID3D12ProtectedResourceSession>, IComVtbl<TI0>
+        public readonly unsafe int CreateCommittedResource3<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] HeapProperties* pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc1* pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ClearValue pOptimizedClearValue, ComPtr<TI0> pProtectedSession, uint NumCastableFormats, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.DXGI.Format* pCastableFormats, ref Guid riidResource, ref void* ppvResource) where TI0 : unmanaged, IComVtbl<ID3D12ProtectedResourceSession>, IComVtbl<TI0>
         {
             var @this = (ID3D12Device10*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -19796,40 +19796,40 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateCommittedResource3<TI0, TI1>([Flow(Silk.NET.Core.Native.FlowDirection.In)] HeapProperties* pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc1* pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ClearValue pOptimizedClearValue, ComPtr<TI0> pProtectedSession, uint NumCastableFormats, ref Silk.NET.DXGI.Format pCastableFormats, out ComPtr<TI1> ppvResource) where TI0 : unmanaged, IComVtbl<ID3D12ProtectedResourceSession>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<TI1>
+        public readonly unsafe int CreateCommittedResource3<TI0, TI1>([Flow(Silk.NET.Core.Native.FlowDirection.In)] HeapProperties* pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc1* pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ClearValue pOptimizedClearValue, ComPtr<TI0> pProtectedSession, uint NumCastableFormats, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.DXGI.Format pCastableFormats, out ComPtr<TI1> ppvResource) where TI0 : unmanaged, IComVtbl<ID3D12ProtectedResourceSession>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<TI1>
         {
             var @this = (ID3D12Device10*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
             ppvResource = default;
-            return @this->CreateCommittedResource3(pHeapProperties, HeapFlags, pDesc, InitialLayout, in pOptimizedClearValue, (ID3D12ProtectedResourceSession*) pProtectedSession.Handle, NumCastableFormats, ref pCastableFormats, SilkMarshal.GuidPtrOf<TI1>(), (void**) ppvResource.GetAddressOf());
+            return @this->CreateCommittedResource3(pHeapProperties, HeapFlags, pDesc, InitialLayout, in pOptimizedClearValue, (ID3D12ProtectedResourceSession*) pProtectedSession.Handle, NumCastableFormats, in pCastableFormats, SilkMarshal.GuidPtrOf<TI1>(), (void**) ppvResource.GetAddressOf());
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateCommittedResource3<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] HeapProperties* pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc1* pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ClearValue pOptimizedClearValue, ComPtr<TI0> pProtectedSession, uint NumCastableFormats, ref Silk.NET.DXGI.Format pCastableFormats, Guid* riidResource, ref void* ppvResource) where TI0 : unmanaged, IComVtbl<ID3D12ProtectedResourceSession>, IComVtbl<TI0>
+        public readonly unsafe int CreateCommittedResource3<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] HeapProperties* pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc1* pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ClearValue pOptimizedClearValue, ComPtr<TI0> pProtectedSession, uint NumCastableFormats, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.DXGI.Format pCastableFormats, Guid* riidResource, ref void* ppvResource) where TI0 : unmanaged, IComVtbl<ID3D12ProtectedResourceSession>, IComVtbl<TI0>
         {
             var @this = (ID3D12Device10*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
-            return @this->CreateCommittedResource3(pHeapProperties, HeapFlags, pDesc, InitialLayout, in pOptimizedClearValue, (ID3D12ProtectedResourceSession*) pProtectedSession.Handle, NumCastableFormats, ref pCastableFormats, riidResource, ref ppvResource);
+            return @this->CreateCommittedResource3(pHeapProperties, HeapFlags, pDesc, InitialLayout, in pOptimizedClearValue, (ID3D12ProtectedResourceSession*) pProtectedSession.Handle, NumCastableFormats, in pCastableFormats, riidResource, ref ppvResource);
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateCommittedResource3<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] HeapProperties* pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc1* pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ClearValue pOptimizedClearValue, ComPtr<TI0> pProtectedSession, uint NumCastableFormats, ref Silk.NET.DXGI.Format pCastableFormats, ref Guid riidResource, void** ppvResource) where TI0 : unmanaged, IComVtbl<ID3D12ProtectedResourceSession>, IComVtbl<TI0>
+        public readonly unsafe int CreateCommittedResource3<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] HeapProperties* pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc1* pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ClearValue pOptimizedClearValue, ComPtr<TI0> pProtectedSession, uint NumCastableFormats, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.DXGI.Format pCastableFormats, ref Guid riidResource, void** ppvResource) where TI0 : unmanaged, IComVtbl<ID3D12ProtectedResourceSession>, IComVtbl<TI0>
         {
             var @this = (ID3D12Device10*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
-            return @this->CreateCommittedResource3(pHeapProperties, HeapFlags, pDesc, InitialLayout, in pOptimizedClearValue, (ID3D12ProtectedResourceSession*) pProtectedSession.Handle, NumCastableFormats, ref pCastableFormats, ref riidResource, ppvResource);
+            return @this->CreateCommittedResource3(pHeapProperties, HeapFlags, pDesc, InitialLayout, in pOptimizedClearValue, (ID3D12ProtectedResourceSession*) pProtectedSession.Handle, NumCastableFormats, in pCastableFormats, ref riidResource, ppvResource);
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateCommittedResource3<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] HeapProperties* pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc1* pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ClearValue pOptimizedClearValue, ComPtr<TI0> pProtectedSession, uint NumCastableFormats, ref Silk.NET.DXGI.Format pCastableFormats, ref Guid riidResource, ref void* ppvResource) where TI0 : unmanaged, IComVtbl<ID3D12ProtectedResourceSession>, IComVtbl<TI0>
+        public readonly unsafe int CreateCommittedResource3<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] HeapProperties* pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc1* pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ClearValue pOptimizedClearValue, ComPtr<TI0> pProtectedSession, uint NumCastableFormats, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.DXGI.Format pCastableFormats, ref Guid riidResource, ref void* ppvResource) where TI0 : unmanaged, IComVtbl<ID3D12ProtectedResourceSession>, IComVtbl<TI0>
         {
             var @this = (ID3D12Device10*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
-            return @this->CreateCommittedResource3(pHeapProperties, HeapFlags, pDesc, InitialLayout, in pOptimizedClearValue, (ID3D12ProtectedResourceSession*) pProtectedSession.Handle, NumCastableFormats, ref pCastableFormats, ref riidResource, ref ppvResource);
+            return @this->CreateCommittedResource3(pHeapProperties, HeapFlags, pDesc, InitialLayout, in pOptimizedClearValue, (ID3D12ProtectedResourceSession*) pProtectedSession.Handle, NumCastableFormats, in pCastableFormats, ref riidResource, ref ppvResource);
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateCommittedResource3<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] HeapProperties* pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc1* pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ClearValue pOptimizedClearValue, ref ID3D12ProtectedResourceSession pProtectedSession, uint NumCastableFormats, Silk.NET.DXGI.Format* pCastableFormats, out ComPtr<TI0> ppvResource) where TI0 : unmanaged, IComVtbl<TI0>
+        public readonly unsafe int CreateCommittedResource3<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] HeapProperties* pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc1* pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ClearValue pOptimizedClearValue, ref ID3D12ProtectedResourceSession pProtectedSession, uint NumCastableFormats, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.DXGI.Format* pCastableFormats, out ComPtr<TI0> ppvResource) where TI0 : unmanaged, IComVtbl<TI0>
         {
             var @this = (ID3D12Device10*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -19838,16 +19838,16 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateCommittedResource3<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] HeapProperties* pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc1* pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ClearValue pOptimizedClearValue, ref ID3D12ProtectedResourceSession pProtectedSession, uint NumCastableFormats, ref Silk.NET.DXGI.Format pCastableFormats, out ComPtr<TI0> ppvResource) where TI0 : unmanaged, IComVtbl<TI0>
+        public readonly unsafe int CreateCommittedResource3<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] HeapProperties* pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc1* pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ClearValue pOptimizedClearValue, ref ID3D12ProtectedResourceSession pProtectedSession, uint NumCastableFormats, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.DXGI.Format pCastableFormats, out ComPtr<TI0> ppvResource) where TI0 : unmanaged, IComVtbl<TI0>
         {
             var @this = (ID3D12Device10*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
             ppvResource = default;
-            return @this->CreateCommittedResource3(pHeapProperties, HeapFlags, pDesc, InitialLayout, in pOptimizedClearValue, ref pProtectedSession, NumCastableFormats, ref pCastableFormats, SilkMarshal.GuidPtrOf<TI0>(), (void**) ppvResource.GetAddressOf());
+            return @this->CreateCommittedResource3(pHeapProperties, HeapFlags, pDesc, InitialLayout, in pOptimizedClearValue, ref pProtectedSession, NumCastableFormats, in pCastableFormats, SilkMarshal.GuidPtrOf<TI0>(), (void**) ppvResource.GetAddressOf());
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateCommittedResource3<TI0, TI1>([Flow(Silk.NET.Core.Native.FlowDirection.In)] HeapProperties* pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ResourceDesc1 pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, ComPtr<TI0> pProtectedSession, uint NumCastableFormats, Silk.NET.DXGI.Format* pCastableFormats, out ComPtr<TI1> ppvResource) where TI0 : unmanaged, IComVtbl<ID3D12ProtectedResourceSession>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<TI1>
+        public readonly unsafe int CreateCommittedResource3<TI0, TI1>([Flow(Silk.NET.Core.Native.FlowDirection.In)] HeapProperties* pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ResourceDesc1 pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, ComPtr<TI0> pProtectedSession, uint NumCastableFormats, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.DXGI.Format* pCastableFormats, out ComPtr<TI1> ppvResource) where TI0 : unmanaged, IComVtbl<ID3D12ProtectedResourceSession>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<TI1>
         {
             var @this = (ID3D12Device10*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -19856,7 +19856,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateCommittedResource3<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] HeapProperties* pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ResourceDesc1 pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, ComPtr<TI0> pProtectedSession, uint NumCastableFormats, Silk.NET.DXGI.Format* pCastableFormats, Guid* riidResource, ref void* ppvResource) where TI0 : unmanaged, IComVtbl<ID3D12ProtectedResourceSession>, IComVtbl<TI0>
+        public readonly unsafe int CreateCommittedResource3<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] HeapProperties* pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ResourceDesc1 pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, ComPtr<TI0> pProtectedSession, uint NumCastableFormats, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.DXGI.Format* pCastableFormats, Guid* riidResource, ref void* ppvResource) where TI0 : unmanaged, IComVtbl<ID3D12ProtectedResourceSession>, IComVtbl<TI0>
         {
             var @this = (ID3D12Device10*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -19864,7 +19864,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateCommittedResource3<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] HeapProperties* pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ResourceDesc1 pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, ComPtr<TI0> pProtectedSession, uint NumCastableFormats, Silk.NET.DXGI.Format* pCastableFormats, ref Guid riidResource, void** ppvResource) where TI0 : unmanaged, IComVtbl<ID3D12ProtectedResourceSession>, IComVtbl<TI0>
+        public readonly unsafe int CreateCommittedResource3<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] HeapProperties* pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ResourceDesc1 pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, ComPtr<TI0> pProtectedSession, uint NumCastableFormats, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.DXGI.Format* pCastableFormats, ref Guid riidResource, void** ppvResource) where TI0 : unmanaged, IComVtbl<ID3D12ProtectedResourceSession>, IComVtbl<TI0>
         {
             var @this = (ID3D12Device10*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -19872,7 +19872,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateCommittedResource3<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] HeapProperties* pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ResourceDesc1 pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, ComPtr<TI0> pProtectedSession, uint NumCastableFormats, Silk.NET.DXGI.Format* pCastableFormats, ref Guid riidResource, ref void* ppvResource) where TI0 : unmanaged, IComVtbl<ID3D12ProtectedResourceSession>, IComVtbl<TI0>
+        public readonly unsafe int CreateCommittedResource3<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] HeapProperties* pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ResourceDesc1 pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, ComPtr<TI0> pProtectedSession, uint NumCastableFormats, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.DXGI.Format* pCastableFormats, ref Guid riidResource, ref void* ppvResource) where TI0 : unmanaged, IComVtbl<ID3D12ProtectedResourceSession>, IComVtbl<TI0>
         {
             var @this = (ID3D12Device10*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -19880,40 +19880,40 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateCommittedResource3<TI0, TI1>([Flow(Silk.NET.Core.Native.FlowDirection.In)] HeapProperties* pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ResourceDesc1 pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, ComPtr<TI0> pProtectedSession, uint NumCastableFormats, ref Silk.NET.DXGI.Format pCastableFormats, out ComPtr<TI1> ppvResource) where TI0 : unmanaged, IComVtbl<ID3D12ProtectedResourceSession>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<TI1>
+        public readonly unsafe int CreateCommittedResource3<TI0, TI1>([Flow(Silk.NET.Core.Native.FlowDirection.In)] HeapProperties* pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ResourceDesc1 pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, ComPtr<TI0> pProtectedSession, uint NumCastableFormats, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.DXGI.Format pCastableFormats, out ComPtr<TI1> ppvResource) where TI0 : unmanaged, IComVtbl<ID3D12ProtectedResourceSession>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<TI1>
         {
             var @this = (ID3D12Device10*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
             ppvResource = default;
-            return @this->CreateCommittedResource3(pHeapProperties, HeapFlags, in pDesc, InitialLayout, pOptimizedClearValue, (ID3D12ProtectedResourceSession*) pProtectedSession.Handle, NumCastableFormats, ref pCastableFormats, SilkMarshal.GuidPtrOf<TI1>(), (void**) ppvResource.GetAddressOf());
+            return @this->CreateCommittedResource3(pHeapProperties, HeapFlags, in pDesc, InitialLayout, pOptimizedClearValue, (ID3D12ProtectedResourceSession*) pProtectedSession.Handle, NumCastableFormats, in pCastableFormats, SilkMarshal.GuidPtrOf<TI1>(), (void**) ppvResource.GetAddressOf());
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateCommittedResource3<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] HeapProperties* pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ResourceDesc1 pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, ComPtr<TI0> pProtectedSession, uint NumCastableFormats, ref Silk.NET.DXGI.Format pCastableFormats, Guid* riidResource, ref void* ppvResource) where TI0 : unmanaged, IComVtbl<ID3D12ProtectedResourceSession>, IComVtbl<TI0>
+        public readonly unsafe int CreateCommittedResource3<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] HeapProperties* pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ResourceDesc1 pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, ComPtr<TI0> pProtectedSession, uint NumCastableFormats, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.DXGI.Format pCastableFormats, Guid* riidResource, ref void* ppvResource) where TI0 : unmanaged, IComVtbl<ID3D12ProtectedResourceSession>, IComVtbl<TI0>
         {
             var @this = (ID3D12Device10*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
-            return @this->CreateCommittedResource3(pHeapProperties, HeapFlags, in pDesc, InitialLayout, pOptimizedClearValue, (ID3D12ProtectedResourceSession*) pProtectedSession.Handle, NumCastableFormats, ref pCastableFormats, riidResource, ref ppvResource);
+            return @this->CreateCommittedResource3(pHeapProperties, HeapFlags, in pDesc, InitialLayout, pOptimizedClearValue, (ID3D12ProtectedResourceSession*) pProtectedSession.Handle, NumCastableFormats, in pCastableFormats, riidResource, ref ppvResource);
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateCommittedResource3<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] HeapProperties* pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ResourceDesc1 pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, ComPtr<TI0> pProtectedSession, uint NumCastableFormats, ref Silk.NET.DXGI.Format pCastableFormats, ref Guid riidResource, void** ppvResource) where TI0 : unmanaged, IComVtbl<ID3D12ProtectedResourceSession>, IComVtbl<TI0>
+        public readonly unsafe int CreateCommittedResource3<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] HeapProperties* pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ResourceDesc1 pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, ComPtr<TI0> pProtectedSession, uint NumCastableFormats, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.DXGI.Format pCastableFormats, ref Guid riidResource, void** ppvResource) where TI0 : unmanaged, IComVtbl<ID3D12ProtectedResourceSession>, IComVtbl<TI0>
         {
             var @this = (ID3D12Device10*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
-            return @this->CreateCommittedResource3(pHeapProperties, HeapFlags, in pDesc, InitialLayout, pOptimizedClearValue, (ID3D12ProtectedResourceSession*) pProtectedSession.Handle, NumCastableFormats, ref pCastableFormats, ref riidResource, ppvResource);
+            return @this->CreateCommittedResource3(pHeapProperties, HeapFlags, in pDesc, InitialLayout, pOptimizedClearValue, (ID3D12ProtectedResourceSession*) pProtectedSession.Handle, NumCastableFormats, in pCastableFormats, ref riidResource, ppvResource);
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateCommittedResource3<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] HeapProperties* pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ResourceDesc1 pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, ComPtr<TI0> pProtectedSession, uint NumCastableFormats, ref Silk.NET.DXGI.Format pCastableFormats, ref Guid riidResource, ref void* ppvResource) where TI0 : unmanaged, IComVtbl<ID3D12ProtectedResourceSession>, IComVtbl<TI0>
+        public readonly unsafe int CreateCommittedResource3<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] HeapProperties* pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ResourceDesc1 pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, ComPtr<TI0> pProtectedSession, uint NumCastableFormats, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.DXGI.Format pCastableFormats, ref Guid riidResource, ref void* ppvResource) where TI0 : unmanaged, IComVtbl<ID3D12ProtectedResourceSession>, IComVtbl<TI0>
         {
             var @this = (ID3D12Device10*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
-            return @this->CreateCommittedResource3(pHeapProperties, HeapFlags, in pDesc, InitialLayout, pOptimizedClearValue, (ID3D12ProtectedResourceSession*) pProtectedSession.Handle, NumCastableFormats, ref pCastableFormats, ref riidResource, ref ppvResource);
+            return @this->CreateCommittedResource3(pHeapProperties, HeapFlags, in pDesc, InitialLayout, pOptimizedClearValue, (ID3D12ProtectedResourceSession*) pProtectedSession.Handle, NumCastableFormats, in pCastableFormats, ref riidResource, ref ppvResource);
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateCommittedResource3<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] HeapProperties* pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ResourceDesc1 pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, ref ID3D12ProtectedResourceSession pProtectedSession, uint NumCastableFormats, Silk.NET.DXGI.Format* pCastableFormats, out ComPtr<TI0> ppvResource) where TI0 : unmanaged, IComVtbl<TI0>
+        public readonly unsafe int CreateCommittedResource3<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] HeapProperties* pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ResourceDesc1 pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, ref ID3D12ProtectedResourceSession pProtectedSession, uint NumCastableFormats, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.DXGI.Format* pCastableFormats, out ComPtr<TI0> ppvResource) where TI0 : unmanaged, IComVtbl<TI0>
         {
             var @this = (ID3D12Device10*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -19922,16 +19922,16 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateCommittedResource3<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] HeapProperties* pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ResourceDesc1 pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, ref ID3D12ProtectedResourceSession pProtectedSession, uint NumCastableFormats, ref Silk.NET.DXGI.Format pCastableFormats, out ComPtr<TI0> ppvResource) where TI0 : unmanaged, IComVtbl<TI0>
+        public readonly unsafe int CreateCommittedResource3<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] HeapProperties* pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ResourceDesc1 pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, ref ID3D12ProtectedResourceSession pProtectedSession, uint NumCastableFormats, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.DXGI.Format pCastableFormats, out ComPtr<TI0> ppvResource) where TI0 : unmanaged, IComVtbl<TI0>
         {
             var @this = (ID3D12Device10*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
             ppvResource = default;
-            return @this->CreateCommittedResource3(pHeapProperties, HeapFlags, in pDesc, InitialLayout, pOptimizedClearValue, ref pProtectedSession, NumCastableFormats, ref pCastableFormats, SilkMarshal.GuidPtrOf<TI0>(), (void**) ppvResource.GetAddressOf());
+            return @this->CreateCommittedResource3(pHeapProperties, HeapFlags, in pDesc, InitialLayout, pOptimizedClearValue, ref pProtectedSession, NumCastableFormats, in pCastableFormats, SilkMarshal.GuidPtrOf<TI0>(), (void**) ppvResource.GetAddressOf());
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateCommittedResource3<TI0, TI1>([Flow(Silk.NET.Core.Native.FlowDirection.In)] HeapProperties* pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ResourceDesc1 pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ClearValue pOptimizedClearValue, ComPtr<TI0> pProtectedSession, uint NumCastableFormats, Silk.NET.DXGI.Format* pCastableFormats, out ComPtr<TI1> ppvResource) where TI0 : unmanaged, IComVtbl<ID3D12ProtectedResourceSession>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<TI1>
+        public readonly unsafe int CreateCommittedResource3<TI0, TI1>([Flow(Silk.NET.Core.Native.FlowDirection.In)] HeapProperties* pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ResourceDesc1 pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ClearValue pOptimizedClearValue, ComPtr<TI0> pProtectedSession, uint NumCastableFormats, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.DXGI.Format* pCastableFormats, out ComPtr<TI1> ppvResource) where TI0 : unmanaged, IComVtbl<ID3D12ProtectedResourceSession>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<TI1>
         {
             var @this = (ID3D12Device10*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -19940,7 +19940,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateCommittedResource3<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] HeapProperties* pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ResourceDesc1 pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ClearValue pOptimizedClearValue, ComPtr<TI0> pProtectedSession, uint NumCastableFormats, Silk.NET.DXGI.Format* pCastableFormats, Guid* riidResource, ref void* ppvResource) where TI0 : unmanaged, IComVtbl<ID3D12ProtectedResourceSession>, IComVtbl<TI0>
+        public readonly unsafe int CreateCommittedResource3<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] HeapProperties* pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ResourceDesc1 pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ClearValue pOptimizedClearValue, ComPtr<TI0> pProtectedSession, uint NumCastableFormats, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.DXGI.Format* pCastableFormats, Guid* riidResource, ref void* ppvResource) where TI0 : unmanaged, IComVtbl<ID3D12ProtectedResourceSession>, IComVtbl<TI0>
         {
             var @this = (ID3D12Device10*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -19948,7 +19948,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateCommittedResource3<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] HeapProperties* pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ResourceDesc1 pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ClearValue pOptimizedClearValue, ComPtr<TI0> pProtectedSession, uint NumCastableFormats, Silk.NET.DXGI.Format* pCastableFormats, ref Guid riidResource, void** ppvResource) where TI0 : unmanaged, IComVtbl<ID3D12ProtectedResourceSession>, IComVtbl<TI0>
+        public readonly unsafe int CreateCommittedResource3<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] HeapProperties* pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ResourceDesc1 pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ClearValue pOptimizedClearValue, ComPtr<TI0> pProtectedSession, uint NumCastableFormats, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.DXGI.Format* pCastableFormats, ref Guid riidResource, void** ppvResource) where TI0 : unmanaged, IComVtbl<ID3D12ProtectedResourceSession>, IComVtbl<TI0>
         {
             var @this = (ID3D12Device10*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -19956,7 +19956,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateCommittedResource3<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] HeapProperties* pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ResourceDesc1 pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ClearValue pOptimizedClearValue, ComPtr<TI0> pProtectedSession, uint NumCastableFormats, Silk.NET.DXGI.Format* pCastableFormats, ref Guid riidResource, ref void* ppvResource) where TI0 : unmanaged, IComVtbl<ID3D12ProtectedResourceSession>, IComVtbl<TI0>
+        public readonly unsafe int CreateCommittedResource3<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] HeapProperties* pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ResourceDesc1 pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ClearValue pOptimizedClearValue, ComPtr<TI0> pProtectedSession, uint NumCastableFormats, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.DXGI.Format* pCastableFormats, ref Guid riidResource, ref void* ppvResource) where TI0 : unmanaged, IComVtbl<ID3D12ProtectedResourceSession>, IComVtbl<TI0>
         {
             var @this = (ID3D12Device10*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -19964,40 +19964,40 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateCommittedResource3<TI0, TI1>([Flow(Silk.NET.Core.Native.FlowDirection.In)] HeapProperties* pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ResourceDesc1 pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ClearValue pOptimizedClearValue, ComPtr<TI0> pProtectedSession, uint NumCastableFormats, ref Silk.NET.DXGI.Format pCastableFormats, out ComPtr<TI1> ppvResource) where TI0 : unmanaged, IComVtbl<ID3D12ProtectedResourceSession>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<TI1>
+        public readonly unsafe int CreateCommittedResource3<TI0, TI1>([Flow(Silk.NET.Core.Native.FlowDirection.In)] HeapProperties* pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ResourceDesc1 pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ClearValue pOptimizedClearValue, ComPtr<TI0> pProtectedSession, uint NumCastableFormats, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.DXGI.Format pCastableFormats, out ComPtr<TI1> ppvResource) where TI0 : unmanaged, IComVtbl<ID3D12ProtectedResourceSession>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<TI1>
         {
             var @this = (ID3D12Device10*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
             ppvResource = default;
-            return @this->CreateCommittedResource3(pHeapProperties, HeapFlags, in pDesc, InitialLayout, in pOptimizedClearValue, (ID3D12ProtectedResourceSession*) pProtectedSession.Handle, NumCastableFormats, ref pCastableFormats, SilkMarshal.GuidPtrOf<TI1>(), (void**) ppvResource.GetAddressOf());
+            return @this->CreateCommittedResource3(pHeapProperties, HeapFlags, in pDesc, InitialLayout, in pOptimizedClearValue, (ID3D12ProtectedResourceSession*) pProtectedSession.Handle, NumCastableFormats, in pCastableFormats, SilkMarshal.GuidPtrOf<TI1>(), (void**) ppvResource.GetAddressOf());
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateCommittedResource3<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] HeapProperties* pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ResourceDesc1 pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ClearValue pOptimizedClearValue, ComPtr<TI0> pProtectedSession, uint NumCastableFormats, ref Silk.NET.DXGI.Format pCastableFormats, Guid* riidResource, ref void* ppvResource) where TI0 : unmanaged, IComVtbl<ID3D12ProtectedResourceSession>, IComVtbl<TI0>
+        public readonly unsafe int CreateCommittedResource3<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] HeapProperties* pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ResourceDesc1 pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ClearValue pOptimizedClearValue, ComPtr<TI0> pProtectedSession, uint NumCastableFormats, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.DXGI.Format pCastableFormats, Guid* riidResource, ref void* ppvResource) where TI0 : unmanaged, IComVtbl<ID3D12ProtectedResourceSession>, IComVtbl<TI0>
         {
             var @this = (ID3D12Device10*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
-            return @this->CreateCommittedResource3(pHeapProperties, HeapFlags, in pDesc, InitialLayout, in pOptimizedClearValue, (ID3D12ProtectedResourceSession*) pProtectedSession.Handle, NumCastableFormats, ref pCastableFormats, riidResource, ref ppvResource);
+            return @this->CreateCommittedResource3(pHeapProperties, HeapFlags, in pDesc, InitialLayout, in pOptimizedClearValue, (ID3D12ProtectedResourceSession*) pProtectedSession.Handle, NumCastableFormats, in pCastableFormats, riidResource, ref ppvResource);
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateCommittedResource3<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] HeapProperties* pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ResourceDesc1 pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ClearValue pOptimizedClearValue, ComPtr<TI0> pProtectedSession, uint NumCastableFormats, ref Silk.NET.DXGI.Format pCastableFormats, ref Guid riidResource, void** ppvResource) where TI0 : unmanaged, IComVtbl<ID3D12ProtectedResourceSession>, IComVtbl<TI0>
+        public readonly unsafe int CreateCommittedResource3<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] HeapProperties* pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ResourceDesc1 pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ClearValue pOptimizedClearValue, ComPtr<TI0> pProtectedSession, uint NumCastableFormats, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.DXGI.Format pCastableFormats, ref Guid riidResource, void** ppvResource) where TI0 : unmanaged, IComVtbl<ID3D12ProtectedResourceSession>, IComVtbl<TI0>
         {
             var @this = (ID3D12Device10*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
-            return @this->CreateCommittedResource3(pHeapProperties, HeapFlags, in pDesc, InitialLayout, in pOptimizedClearValue, (ID3D12ProtectedResourceSession*) pProtectedSession.Handle, NumCastableFormats, ref pCastableFormats, ref riidResource, ppvResource);
+            return @this->CreateCommittedResource3(pHeapProperties, HeapFlags, in pDesc, InitialLayout, in pOptimizedClearValue, (ID3D12ProtectedResourceSession*) pProtectedSession.Handle, NumCastableFormats, in pCastableFormats, ref riidResource, ppvResource);
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateCommittedResource3<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] HeapProperties* pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ResourceDesc1 pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ClearValue pOptimizedClearValue, ComPtr<TI0> pProtectedSession, uint NumCastableFormats, ref Silk.NET.DXGI.Format pCastableFormats, ref Guid riidResource, ref void* ppvResource) where TI0 : unmanaged, IComVtbl<ID3D12ProtectedResourceSession>, IComVtbl<TI0>
+        public readonly unsafe int CreateCommittedResource3<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] HeapProperties* pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ResourceDesc1 pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ClearValue pOptimizedClearValue, ComPtr<TI0> pProtectedSession, uint NumCastableFormats, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.DXGI.Format pCastableFormats, ref Guid riidResource, ref void* ppvResource) where TI0 : unmanaged, IComVtbl<ID3D12ProtectedResourceSession>, IComVtbl<TI0>
         {
             var @this = (ID3D12Device10*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
-            return @this->CreateCommittedResource3(pHeapProperties, HeapFlags, in pDesc, InitialLayout, in pOptimizedClearValue, (ID3D12ProtectedResourceSession*) pProtectedSession.Handle, NumCastableFormats, ref pCastableFormats, ref riidResource, ref ppvResource);
+            return @this->CreateCommittedResource3(pHeapProperties, HeapFlags, in pDesc, InitialLayout, in pOptimizedClearValue, (ID3D12ProtectedResourceSession*) pProtectedSession.Handle, NumCastableFormats, in pCastableFormats, ref riidResource, ref ppvResource);
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateCommittedResource3<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] HeapProperties* pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ResourceDesc1 pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ClearValue pOptimizedClearValue, ref ID3D12ProtectedResourceSession pProtectedSession, uint NumCastableFormats, Silk.NET.DXGI.Format* pCastableFormats, out ComPtr<TI0> ppvResource) where TI0 : unmanaged, IComVtbl<TI0>
+        public readonly unsafe int CreateCommittedResource3<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] HeapProperties* pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ResourceDesc1 pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ClearValue pOptimizedClearValue, ref ID3D12ProtectedResourceSession pProtectedSession, uint NumCastableFormats, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.DXGI.Format* pCastableFormats, out ComPtr<TI0> ppvResource) where TI0 : unmanaged, IComVtbl<TI0>
         {
             var @this = (ID3D12Device10*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -20006,16 +20006,16 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateCommittedResource3<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] HeapProperties* pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ResourceDesc1 pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ClearValue pOptimizedClearValue, ref ID3D12ProtectedResourceSession pProtectedSession, uint NumCastableFormats, ref Silk.NET.DXGI.Format pCastableFormats, out ComPtr<TI0> ppvResource) where TI0 : unmanaged, IComVtbl<TI0>
+        public readonly unsafe int CreateCommittedResource3<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] HeapProperties* pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ResourceDesc1 pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ClearValue pOptimizedClearValue, ref ID3D12ProtectedResourceSession pProtectedSession, uint NumCastableFormats, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.DXGI.Format pCastableFormats, out ComPtr<TI0> ppvResource) where TI0 : unmanaged, IComVtbl<TI0>
         {
             var @this = (ID3D12Device10*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
             ppvResource = default;
-            return @this->CreateCommittedResource3(pHeapProperties, HeapFlags, in pDesc, InitialLayout, in pOptimizedClearValue, ref pProtectedSession, NumCastableFormats, ref pCastableFormats, SilkMarshal.GuidPtrOf<TI0>(), (void**) ppvResource.GetAddressOf());
+            return @this->CreateCommittedResource3(pHeapProperties, HeapFlags, in pDesc, InitialLayout, in pOptimizedClearValue, ref pProtectedSession, NumCastableFormats, in pCastableFormats, SilkMarshal.GuidPtrOf<TI0>(), (void**) ppvResource.GetAddressOf());
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateCommittedResource3<TI0, TI1>([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in HeapProperties pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc1* pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, ComPtr<TI0> pProtectedSession, uint NumCastableFormats, Silk.NET.DXGI.Format* pCastableFormats, out ComPtr<TI1> ppvResource) where TI0 : unmanaged, IComVtbl<ID3D12ProtectedResourceSession>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<TI1>
+        public readonly unsafe int CreateCommittedResource3<TI0, TI1>([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in HeapProperties pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc1* pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, ComPtr<TI0> pProtectedSession, uint NumCastableFormats, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.DXGI.Format* pCastableFormats, out ComPtr<TI1> ppvResource) where TI0 : unmanaged, IComVtbl<ID3D12ProtectedResourceSession>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<TI1>
         {
             var @this = (ID3D12Device10*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -20024,7 +20024,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateCommittedResource3<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in HeapProperties pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc1* pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, ComPtr<TI0> pProtectedSession, uint NumCastableFormats, Silk.NET.DXGI.Format* pCastableFormats, Guid* riidResource, ref void* ppvResource) where TI0 : unmanaged, IComVtbl<ID3D12ProtectedResourceSession>, IComVtbl<TI0>
+        public readonly unsafe int CreateCommittedResource3<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in HeapProperties pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc1* pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, ComPtr<TI0> pProtectedSession, uint NumCastableFormats, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.DXGI.Format* pCastableFormats, Guid* riidResource, ref void* ppvResource) where TI0 : unmanaged, IComVtbl<ID3D12ProtectedResourceSession>, IComVtbl<TI0>
         {
             var @this = (ID3D12Device10*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -20032,7 +20032,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateCommittedResource3<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in HeapProperties pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc1* pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, ComPtr<TI0> pProtectedSession, uint NumCastableFormats, Silk.NET.DXGI.Format* pCastableFormats, ref Guid riidResource, void** ppvResource) where TI0 : unmanaged, IComVtbl<ID3D12ProtectedResourceSession>, IComVtbl<TI0>
+        public readonly unsafe int CreateCommittedResource3<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in HeapProperties pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc1* pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, ComPtr<TI0> pProtectedSession, uint NumCastableFormats, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.DXGI.Format* pCastableFormats, ref Guid riidResource, void** ppvResource) where TI0 : unmanaged, IComVtbl<ID3D12ProtectedResourceSession>, IComVtbl<TI0>
         {
             var @this = (ID3D12Device10*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -20040,7 +20040,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateCommittedResource3<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in HeapProperties pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc1* pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, ComPtr<TI0> pProtectedSession, uint NumCastableFormats, Silk.NET.DXGI.Format* pCastableFormats, ref Guid riidResource, ref void* ppvResource) where TI0 : unmanaged, IComVtbl<ID3D12ProtectedResourceSession>, IComVtbl<TI0>
+        public readonly unsafe int CreateCommittedResource3<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in HeapProperties pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc1* pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, ComPtr<TI0> pProtectedSession, uint NumCastableFormats, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.DXGI.Format* pCastableFormats, ref Guid riidResource, ref void* ppvResource) where TI0 : unmanaged, IComVtbl<ID3D12ProtectedResourceSession>, IComVtbl<TI0>
         {
             var @this = (ID3D12Device10*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -20048,40 +20048,40 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateCommittedResource3<TI0, TI1>([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in HeapProperties pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc1* pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, ComPtr<TI0> pProtectedSession, uint NumCastableFormats, ref Silk.NET.DXGI.Format pCastableFormats, out ComPtr<TI1> ppvResource) where TI0 : unmanaged, IComVtbl<ID3D12ProtectedResourceSession>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<TI1>
+        public readonly unsafe int CreateCommittedResource3<TI0, TI1>([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in HeapProperties pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc1* pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, ComPtr<TI0> pProtectedSession, uint NumCastableFormats, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.DXGI.Format pCastableFormats, out ComPtr<TI1> ppvResource) where TI0 : unmanaged, IComVtbl<ID3D12ProtectedResourceSession>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<TI1>
         {
             var @this = (ID3D12Device10*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
             ppvResource = default;
-            return @this->CreateCommittedResource3(in pHeapProperties, HeapFlags, pDesc, InitialLayout, pOptimizedClearValue, (ID3D12ProtectedResourceSession*) pProtectedSession.Handle, NumCastableFormats, ref pCastableFormats, SilkMarshal.GuidPtrOf<TI1>(), (void**) ppvResource.GetAddressOf());
+            return @this->CreateCommittedResource3(in pHeapProperties, HeapFlags, pDesc, InitialLayout, pOptimizedClearValue, (ID3D12ProtectedResourceSession*) pProtectedSession.Handle, NumCastableFormats, in pCastableFormats, SilkMarshal.GuidPtrOf<TI1>(), (void**) ppvResource.GetAddressOf());
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateCommittedResource3<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in HeapProperties pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc1* pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, ComPtr<TI0> pProtectedSession, uint NumCastableFormats, ref Silk.NET.DXGI.Format pCastableFormats, Guid* riidResource, ref void* ppvResource) where TI0 : unmanaged, IComVtbl<ID3D12ProtectedResourceSession>, IComVtbl<TI0>
+        public readonly unsafe int CreateCommittedResource3<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in HeapProperties pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc1* pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, ComPtr<TI0> pProtectedSession, uint NumCastableFormats, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.DXGI.Format pCastableFormats, Guid* riidResource, ref void* ppvResource) where TI0 : unmanaged, IComVtbl<ID3D12ProtectedResourceSession>, IComVtbl<TI0>
         {
             var @this = (ID3D12Device10*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
-            return @this->CreateCommittedResource3(in pHeapProperties, HeapFlags, pDesc, InitialLayout, pOptimizedClearValue, (ID3D12ProtectedResourceSession*) pProtectedSession.Handle, NumCastableFormats, ref pCastableFormats, riidResource, ref ppvResource);
+            return @this->CreateCommittedResource3(in pHeapProperties, HeapFlags, pDesc, InitialLayout, pOptimizedClearValue, (ID3D12ProtectedResourceSession*) pProtectedSession.Handle, NumCastableFormats, in pCastableFormats, riidResource, ref ppvResource);
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateCommittedResource3<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in HeapProperties pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc1* pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, ComPtr<TI0> pProtectedSession, uint NumCastableFormats, ref Silk.NET.DXGI.Format pCastableFormats, ref Guid riidResource, void** ppvResource) where TI0 : unmanaged, IComVtbl<ID3D12ProtectedResourceSession>, IComVtbl<TI0>
+        public readonly unsafe int CreateCommittedResource3<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in HeapProperties pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc1* pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, ComPtr<TI0> pProtectedSession, uint NumCastableFormats, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.DXGI.Format pCastableFormats, ref Guid riidResource, void** ppvResource) where TI0 : unmanaged, IComVtbl<ID3D12ProtectedResourceSession>, IComVtbl<TI0>
         {
             var @this = (ID3D12Device10*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
-            return @this->CreateCommittedResource3(in pHeapProperties, HeapFlags, pDesc, InitialLayout, pOptimizedClearValue, (ID3D12ProtectedResourceSession*) pProtectedSession.Handle, NumCastableFormats, ref pCastableFormats, ref riidResource, ppvResource);
+            return @this->CreateCommittedResource3(in pHeapProperties, HeapFlags, pDesc, InitialLayout, pOptimizedClearValue, (ID3D12ProtectedResourceSession*) pProtectedSession.Handle, NumCastableFormats, in pCastableFormats, ref riidResource, ppvResource);
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateCommittedResource3<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in HeapProperties pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc1* pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, ComPtr<TI0> pProtectedSession, uint NumCastableFormats, ref Silk.NET.DXGI.Format pCastableFormats, ref Guid riidResource, ref void* ppvResource) where TI0 : unmanaged, IComVtbl<ID3D12ProtectedResourceSession>, IComVtbl<TI0>
+        public readonly unsafe int CreateCommittedResource3<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in HeapProperties pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc1* pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, ComPtr<TI0> pProtectedSession, uint NumCastableFormats, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.DXGI.Format pCastableFormats, ref Guid riidResource, ref void* ppvResource) where TI0 : unmanaged, IComVtbl<ID3D12ProtectedResourceSession>, IComVtbl<TI0>
         {
             var @this = (ID3D12Device10*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
-            return @this->CreateCommittedResource3(in pHeapProperties, HeapFlags, pDesc, InitialLayout, pOptimizedClearValue, (ID3D12ProtectedResourceSession*) pProtectedSession.Handle, NumCastableFormats, ref pCastableFormats, ref riidResource, ref ppvResource);
+            return @this->CreateCommittedResource3(in pHeapProperties, HeapFlags, pDesc, InitialLayout, pOptimizedClearValue, (ID3D12ProtectedResourceSession*) pProtectedSession.Handle, NumCastableFormats, in pCastableFormats, ref riidResource, ref ppvResource);
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateCommittedResource3<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in HeapProperties pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc1* pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, ref ID3D12ProtectedResourceSession pProtectedSession, uint NumCastableFormats, Silk.NET.DXGI.Format* pCastableFormats, out ComPtr<TI0> ppvResource) where TI0 : unmanaged, IComVtbl<TI0>
+        public readonly unsafe int CreateCommittedResource3<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in HeapProperties pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc1* pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, ref ID3D12ProtectedResourceSession pProtectedSession, uint NumCastableFormats, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.DXGI.Format* pCastableFormats, out ComPtr<TI0> ppvResource) where TI0 : unmanaged, IComVtbl<TI0>
         {
             var @this = (ID3D12Device10*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -20090,16 +20090,16 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateCommittedResource3<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in HeapProperties pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc1* pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, ref ID3D12ProtectedResourceSession pProtectedSession, uint NumCastableFormats, ref Silk.NET.DXGI.Format pCastableFormats, out ComPtr<TI0> ppvResource) where TI0 : unmanaged, IComVtbl<TI0>
+        public readonly unsafe int CreateCommittedResource3<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in HeapProperties pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc1* pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, ref ID3D12ProtectedResourceSession pProtectedSession, uint NumCastableFormats, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.DXGI.Format pCastableFormats, out ComPtr<TI0> ppvResource) where TI0 : unmanaged, IComVtbl<TI0>
         {
             var @this = (ID3D12Device10*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
             ppvResource = default;
-            return @this->CreateCommittedResource3(in pHeapProperties, HeapFlags, pDesc, InitialLayout, pOptimizedClearValue, ref pProtectedSession, NumCastableFormats, ref pCastableFormats, SilkMarshal.GuidPtrOf<TI0>(), (void**) ppvResource.GetAddressOf());
+            return @this->CreateCommittedResource3(in pHeapProperties, HeapFlags, pDesc, InitialLayout, pOptimizedClearValue, ref pProtectedSession, NumCastableFormats, in pCastableFormats, SilkMarshal.GuidPtrOf<TI0>(), (void**) ppvResource.GetAddressOf());
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateCommittedResource3<TI0, TI1>([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in HeapProperties pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc1* pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ClearValue pOptimizedClearValue, ComPtr<TI0> pProtectedSession, uint NumCastableFormats, Silk.NET.DXGI.Format* pCastableFormats, out ComPtr<TI1> ppvResource) where TI0 : unmanaged, IComVtbl<ID3D12ProtectedResourceSession>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<TI1>
+        public readonly unsafe int CreateCommittedResource3<TI0, TI1>([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in HeapProperties pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc1* pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ClearValue pOptimizedClearValue, ComPtr<TI0> pProtectedSession, uint NumCastableFormats, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.DXGI.Format* pCastableFormats, out ComPtr<TI1> ppvResource) where TI0 : unmanaged, IComVtbl<ID3D12ProtectedResourceSession>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<TI1>
         {
             var @this = (ID3D12Device10*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -20108,7 +20108,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateCommittedResource3<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in HeapProperties pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc1* pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ClearValue pOptimizedClearValue, ComPtr<TI0> pProtectedSession, uint NumCastableFormats, Silk.NET.DXGI.Format* pCastableFormats, Guid* riidResource, ref void* ppvResource) where TI0 : unmanaged, IComVtbl<ID3D12ProtectedResourceSession>, IComVtbl<TI0>
+        public readonly unsafe int CreateCommittedResource3<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in HeapProperties pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc1* pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ClearValue pOptimizedClearValue, ComPtr<TI0> pProtectedSession, uint NumCastableFormats, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.DXGI.Format* pCastableFormats, Guid* riidResource, ref void* ppvResource) where TI0 : unmanaged, IComVtbl<ID3D12ProtectedResourceSession>, IComVtbl<TI0>
         {
             var @this = (ID3D12Device10*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -20116,7 +20116,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateCommittedResource3<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in HeapProperties pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc1* pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ClearValue pOptimizedClearValue, ComPtr<TI0> pProtectedSession, uint NumCastableFormats, Silk.NET.DXGI.Format* pCastableFormats, ref Guid riidResource, void** ppvResource) where TI0 : unmanaged, IComVtbl<ID3D12ProtectedResourceSession>, IComVtbl<TI0>
+        public readonly unsafe int CreateCommittedResource3<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in HeapProperties pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc1* pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ClearValue pOptimizedClearValue, ComPtr<TI0> pProtectedSession, uint NumCastableFormats, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.DXGI.Format* pCastableFormats, ref Guid riidResource, void** ppvResource) where TI0 : unmanaged, IComVtbl<ID3D12ProtectedResourceSession>, IComVtbl<TI0>
         {
             var @this = (ID3D12Device10*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -20124,7 +20124,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateCommittedResource3<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in HeapProperties pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc1* pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ClearValue pOptimizedClearValue, ComPtr<TI0> pProtectedSession, uint NumCastableFormats, Silk.NET.DXGI.Format* pCastableFormats, ref Guid riidResource, ref void* ppvResource) where TI0 : unmanaged, IComVtbl<ID3D12ProtectedResourceSession>, IComVtbl<TI0>
+        public readonly unsafe int CreateCommittedResource3<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in HeapProperties pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc1* pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ClearValue pOptimizedClearValue, ComPtr<TI0> pProtectedSession, uint NumCastableFormats, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.DXGI.Format* pCastableFormats, ref Guid riidResource, ref void* ppvResource) where TI0 : unmanaged, IComVtbl<ID3D12ProtectedResourceSession>, IComVtbl<TI0>
         {
             var @this = (ID3D12Device10*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -20132,40 +20132,40 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateCommittedResource3<TI0, TI1>([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in HeapProperties pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc1* pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ClearValue pOptimizedClearValue, ComPtr<TI0> pProtectedSession, uint NumCastableFormats, ref Silk.NET.DXGI.Format pCastableFormats, out ComPtr<TI1> ppvResource) where TI0 : unmanaged, IComVtbl<ID3D12ProtectedResourceSession>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<TI1>
+        public readonly unsafe int CreateCommittedResource3<TI0, TI1>([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in HeapProperties pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc1* pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ClearValue pOptimizedClearValue, ComPtr<TI0> pProtectedSession, uint NumCastableFormats, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.DXGI.Format pCastableFormats, out ComPtr<TI1> ppvResource) where TI0 : unmanaged, IComVtbl<ID3D12ProtectedResourceSession>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<TI1>
         {
             var @this = (ID3D12Device10*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
             ppvResource = default;
-            return @this->CreateCommittedResource3(in pHeapProperties, HeapFlags, pDesc, InitialLayout, in pOptimizedClearValue, (ID3D12ProtectedResourceSession*) pProtectedSession.Handle, NumCastableFormats, ref pCastableFormats, SilkMarshal.GuidPtrOf<TI1>(), (void**) ppvResource.GetAddressOf());
+            return @this->CreateCommittedResource3(in pHeapProperties, HeapFlags, pDesc, InitialLayout, in pOptimizedClearValue, (ID3D12ProtectedResourceSession*) pProtectedSession.Handle, NumCastableFormats, in pCastableFormats, SilkMarshal.GuidPtrOf<TI1>(), (void**) ppvResource.GetAddressOf());
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateCommittedResource3<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in HeapProperties pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc1* pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ClearValue pOptimizedClearValue, ComPtr<TI0> pProtectedSession, uint NumCastableFormats, ref Silk.NET.DXGI.Format pCastableFormats, Guid* riidResource, ref void* ppvResource) where TI0 : unmanaged, IComVtbl<ID3D12ProtectedResourceSession>, IComVtbl<TI0>
+        public readonly unsafe int CreateCommittedResource3<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in HeapProperties pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc1* pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ClearValue pOptimizedClearValue, ComPtr<TI0> pProtectedSession, uint NumCastableFormats, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.DXGI.Format pCastableFormats, Guid* riidResource, ref void* ppvResource) where TI0 : unmanaged, IComVtbl<ID3D12ProtectedResourceSession>, IComVtbl<TI0>
         {
             var @this = (ID3D12Device10*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
-            return @this->CreateCommittedResource3(in pHeapProperties, HeapFlags, pDesc, InitialLayout, in pOptimizedClearValue, (ID3D12ProtectedResourceSession*) pProtectedSession.Handle, NumCastableFormats, ref pCastableFormats, riidResource, ref ppvResource);
+            return @this->CreateCommittedResource3(in pHeapProperties, HeapFlags, pDesc, InitialLayout, in pOptimizedClearValue, (ID3D12ProtectedResourceSession*) pProtectedSession.Handle, NumCastableFormats, in pCastableFormats, riidResource, ref ppvResource);
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateCommittedResource3<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in HeapProperties pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc1* pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ClearValue pOptimizedClearValue, ComPtr<TI0> pProtectedSession, uint NumCastableFormats, ref Silk.NET.DXGI.Format pCastableFormats, ref Guid riidResource, void** ppvResource) where TI0 : unmanaged, IComVtbl<ID3D12ProtectedResourceSession>, IComVtbl<TI0>
+        public readonly unsafe int CreateCommittedResource3<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in HeapProperties pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc1* pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ClearValue pOptimizedClearValue, ComPtr<TI0> pProtectedSession, uint NumCastableFormats, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.DXGI.Format pCastableFormats, ref Guid riidResource, void** ppvResource) where TI0 : unmanaged, IComVtbl<ID3D12ProtectedResourceSession>, IComVtbl<TI0>
         {
             var @this = (ID3D12Device10*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
-            return @this->CreateCommittedResource3(in pHeapProperties, HeapFlags, pDesc, InitialLayout, in pOptimizedClearValue, (ID3D12ProtectedResourceSession*) pProtectedSession.Handle, NumCastableFormats, ref pCastableFormats, ref riidResource, ppvResource);
+            return @this->CreateCommittedResource3(in pHeapProperties, HeapFlags, pDesc, InitialLayout, in pOptimizedClearValue, (ID3D12ProtectedResourceSession*) pProtectedSession.Handle, NumCastableFormats, in pCastableFormats, ref riidResource, ppvResource);
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateCommittedResource3<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in HeapProperties pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc1* pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ClearValue pOptimizedClearValue, ComPtr<TI0> pProtectedSession, uint NumCastableFormats, ref Silk.NET.DXGI.Format pCastableFormats, ref Guid riidResource, ref void* ppvResource) where TI0 : unmanaged, IComVtbl<ID3D12ProtectedResourceSession>, IComVtbl<TI0>
+        public readonly unsafe int CreateCommittedResource3<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in HeapProperties pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc1* pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ClearValue pOptimizedClearValue, ComPtr<TI0> pProtectedSession, uint NumCastableFormats, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.DXGI.Format pCastableFormats, ref Guid riidResource, ref void* ppvResource) where TI0 : unmanaged, IComVtbl<ID3D12ProtectedResourceSession>, IComVtbl<TI0>
         {
             var @this = (ID3D12Device10*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
-            return @this->CreateCommittedResource3(in pHeapProperties, HeapFlags, pDesc, InitialLayout, in pOptimizedClearValue, (ID3D12ProtectedResourceSession*) pProtectedSession.Handle, NumCastableFormats, ref pCastableFormats, ref riidResource, ref ppvResource);
+            return @this->CreateCommittedResource3(in pHeapProperties, HeapFlags, pDesc, InitialLayout, in pOptimizedClearValue, (ID3D12ProtectedResourceSession*) pProtectedSession.Handle, NumCastableFormats, in pCastableFormats, ref riidResource, ref ppvResource);
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateCommittedResource3<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in HeapProperties pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc1* pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ClearValue pOptimizedClearValue, ref ID3D12ProtectedResourceSession pProtectedSession, uint NumCastableFormats, Silk.NET.DXGI.Format* pCastableFormats, out ComPtr<TI0> ppvResource) where TI0 : unmanaged, IComVtbl<TI0>
+        public readonly unsafe int CreateCommittedResource3<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in HeapProperties pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc1* pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ClearValue pOptimizedClearValue, ref ID3D12ProtectedResourceSession pProtectedSession, uint NumCastableFormats, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.DXGI.Format* pCastableFormats, out ComPtr<TI0> ppvResource) where TI0 : unmanaged, IComVtbl<TI0>
         {
             var @this = (ID3D12Device10*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -20174,16 +20174,16 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateCommittedResource3<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in HeapProperties pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc1* pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ClearValue pOptimizedClearValue, ref ID3D12ProtectedResourceSession pProtectedSession, uint NumCastableFormats, ref Silk.NET.DXGI.Format pCastableFormats, out ComPtr<TI0> ppvResource) where TI0 : unmanaged, IComVtbl<TI0>
+        public readonly unsafe int CreateCommittedResource3<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in HeapProperties pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc1* pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ClearValue pOptimizedClearValue, ref ID3D12ProtectedResourceSession pProtectedSession, uint NumCastableFormats, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.DXGI.Format pCastableFormats, out ComPtr<TI0> ppvResource) where TI0 : unmanaged, IComVtbl<TI0>
         {
             var @this = (ID3D12Device10*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
             ppvResource = default;
-            return @this->CreateCommittedResource3(in pHeapProperties, HeapFlags, pDesc, InitialLayout, in pOptimizedClearValue, ref pProtectedSession, NumCastableFormats, ref pCastableFormats, SilkMarshal.GuidPtrOf<TI0>(), (void**) ppvResource.GetAddressOf());
+            return @this->CreateCommittedResource3(in pHeapProperties, HeapFlags, pDesc, InitialLayout, in pOptimizedClearValue, ref pProtectedSession, NumCastableFormats, in pCastableFormats, SilkMarshal.GuidPtrOf<TI0>(), (void**) ppvResource.GetAddressOf());
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateCommittedResource3<TI0, TI1>([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in HeapProperties pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ResourceDesc1 pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, ComPtr<TI0> pProtectedSession, uint NumCastableFormats, Silk.NET.DXGI.Format* pCastableFormats, out ComPtr<TI1> ppvResource) where TI0 : unmanaged, IComVtbl<ID3D12ProtectedResourceSession>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<TI1>
+        public readonly unsafe int CreateCommittedResource3<TI0, TI1>([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in HeapProperties pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ResourceDesc1 pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, ComPtr<TI0> pProtectedSession, uint NumCastableFormats, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.DXGI.Format* pCastableFormats, out ComPtr<TI1> ppvResource) where TI0 : unmanaged, IComVtbl<ID3D12ProtectedResourceSession>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<TI1>
         {
             var @this = (ID3D12Device10*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -20192,7 +20192,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateCommittedResource3<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in HeapProperties pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ResourceDesc1 pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, ComPtr<TI0> pProtectedSession, uint NumCastableFormats, Silk.NET.DXGI.Format* pCastableFormats, Guid* riidResource, ref void* ppvResource) where TI0 : unmanaged, IComVtbl<ID3D12ProtectedResourceSession>, IComVtbl<TI0>
+        public readonly unsafe int CreateCommittedResource3<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in HeapProperties pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ResourceDesc1 pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, ComPtr<TI0> pProtectedSession, uint NumCastableFormats, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.DXGI.Format* pCastableFormats, Guid* riidResource, ref void* ppvResource) where TI0 : unmanaged, IComVtbl<ID3D12ProtectedResourceSession>, IComVtbl<TI0>
         {
             var @this = (ID3D12Device10*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -20200,7 +20200,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateCommittedResource3<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in HeapProperties pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ResourceDesc1 pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, ComPtr<TI0> pProtectedSession, uint NumCastableFormats, Silk.NET.DXGI.Format* pCastableFormats, ref Guid riidResource, void** ppvResource) where TI0 : unmanaged, IComVtbl<ID3D12ProtectedResourceSession>, IComVtbl<TI0>
+        public readonly unsafe int CreateCommittedResource3<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in HeapProperties pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ResourceDesc1 pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, ComPtr<TI0> pProtectedSession, uint NumCastableFormats, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.DXGI.Format* pCastableFormats, ref Guid riidResource, void** ppvResource) where TI0 : unmanaged, IComVtbl<ID3D12ProtectedResourceSession>, IComVtbl<TI0>
         {
             var @this = (ID3D12Device10*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -20208,7 +20208,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateCommittedResource3<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in HeapProperties pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ResourceDesc1 pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, ComPtr<TI0> pProtectedSession, uint NumCastableFormats, Silk.NET.DXGI.Format* pCastableFormats, ref Guid riidResource, ref void* ppvResource) where TI0 : unmanaged, IComVtbl<ID3D12ProtectedResourceSession>, IComVtbl<TI0>
+        public readonly unsafe int CreateCommittedResource3<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in HeapProperties pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ResourceDesc1 pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, ComPtr<TI0> pProtectedSession, uint NumCastableFormats, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.DXGI.Format* pCastableFormats, ref Guid riidResource, ref void* ppvResource) where TI0 : unmanaged, IComVtbl<ID3D12ProtectedResourceSession>, IComVtbl<TI0>
         {
             var @this = (ID3D12Device10*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -20216,40 +20216,40 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateCommittedResource3<TI0, TI1>([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in HeapProperties pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ResourceDesc1 pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, ComPtr<TI0> pProtectedSession, uint NumCastableFormats, ref Silk.NET.DXGI.Format pCastableFormats, out ComPtr<TI1> ppvResource) where TI0 : unmanaged, IComVtbl<ID3D12ProtectedResourceSession>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<TI1>
+        public readonly unsafe int CreateCommittedResource3<TI0, TI1>([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in HeapProperties pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ResourceDesc1 pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, ComPtr<TI0> pProtectedSession, uint NumCastableFormats, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.DXGI.Format pCastableFormats, out ComPtr<TI1> ppvResource) where TI0 : unmanaged, IComVtbl<ID3D12ProtectedResourceSession>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<TI1>
         {
             var @this = (ID3D12Device10*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
             ppvResource = default;
-            return @this->CreateCommittedResource3(in pHeapProperties, HeapFlags, in pDesc, InitialLayout, pOptimizedClearValue, (ID3D12ProtectedResourceSession*) pProtectedSession.Handle, NumCastableFormats, ref pCastableFormats, SilkMarshal.GuidPtrOf<TI1>(), (void**) ppvResource.GetAddressOf());
+            return @this->CreateCommittedResource3(in pHeapProperties, HeapFlags, in pDesc, InitialLayout, pOptimizedClearValue, (ID3D12ProtectedResourceSession*) pProtectedSession.Handle, NumCastableFormats, in pCastableFormats, SilkMarshal.GuidPtrOf<TI1>(), (void**) ppvResource.GetAddressOf());
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateCommittedResource3<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in HeapProperties pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ResourceDesc1 pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, ComPtr<TI0> pProtectedSession, uint NumCastableFormats, ref Silk.NET.DXGI.Format pCastableFormats, Guid* riidResource, ref void* ppvResource) where TI0 : unmanaged, IComVtbl<ID3D12ProtectedResourceSession>, IComVtbl<TI0>
+        public readonly unsafe int CreateCommittedResource3<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in HeapProperties pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ResourceDesc1 pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, ComPtr<TI0> pProtectedSession, uint NumCastableFormats, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.DXGI.Format pCastableFormats, Guid* riidResource, ref void* ppvResource) where TI0 : unmanaged, IComVtbl<ID3D12ProtectedResourceSession>, IComVtbl<TI0>
         {
             var @this = (ID3D12Device10*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
-            return @this->CreateCommittedResource3(in pHeapProperties, HeapFlags, in pDesc, InitialLayout, pOptimizedClearValue, (ID3D12ProtectedResourceSession*) pProtectedSession.Handle, NumCastableFormats, ref pCastableFormats, riidResource, ref ppvResource);
+            return @this->CreateCommittedResource3(in pHeapProperties, HeapFlags, in pDesc, InitialLayout, pOptimizedClearValue, (ID3D12ProtectedResourceSession*) pProtectedSession.Handle, NumCastableFormats, in pCastableFormats, riidResource, ref ppvResource);
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateCommittedResource3<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in HeapProperties pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ResourceDesc1 pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, ComPtr<TI0> pProtectedSession, uint NumCastableFormats, ref Silk.NET.DXGI.Format pCastableFormats, ref Guid riidResource, void** ppvResource) where TI0 : unmanaged, IComVtbl<ID3D12ProtectedResourceSession>, IComVtbl<TI0>
+        public readonly unsafe int CreateCommittedResource3<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in HeapProperties pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ResourceDesc1 pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, ComPtr<TI0> pProtectedSession, uint NumCastableFormats, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.DXGI.Format pCastableFormats, ref Guid riidResource, void** ppvResource) where TI0 : unmanaged, IComVtbl<ID3D12ProtectedResourceSession>, IComVtbl<TI0>
         {
             var @this = (ID3D12Device10*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
-            return @this->CreateCommittedResource3(in pHeapProperties, HeapFlags, in pDesc, InitialLayout, pOptimizedClearValue, (ID3D12ProtectedResourceSession*) pProtectedSession.Handle, NumCastableFormats, ref pCastableFormats, ref riidResource, ppvResource);
+            return @this->CreateCommittedResource3(in pHeapProperties, HeapFlags, in pDesc, InitialLayout, pOptimizedClearValue, (ID3D12ProtectedResourceSession*) pProtectedSession.Handle, NumCastableFormats, in pCastableFormats, ref riidResource, ppvResource);
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateCommittedResource3<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in HeapProperties pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ResourceDesc1 pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, ComPtr<TI0> pProtectedSession, uint NumCastableFormats, ref Silk.NET.DXGI.Format pCastableFormats, ref Guid riidResource, ref void* ppvResource) where TI0 : unmanaged, IComVtbl<ID3D12ProtectedResourceSession>, IComVtbl<TI0>
+        public readonly unsafe int CreateCommittedResource3<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in HeapProperties pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ResourceDesc1 pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, ComPtr<TI0> pProtectedSession, uint NumCastableFormats, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.DXGI.Format pCastableFormats, ref Guid riidResource, ref void* ppvResource) where TI0 : unmanaged, IComVtbl<ID3D12ProtectedResourceSession>, IComVtbl<TI0>
         {
             var @this = (ID3D12Device10*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
-            return @this->CreateCommittedResource3(in pHeapProperties, HeapFlags, in pDesc, InitialLayout, pOptimizedClearValue, (ID3D12ProtectedResourceSession*) pProtectedSession.Handle, NumCastableFormats, ref pCastableFormats, ref riidResource, ref ppvResource);
+            return @this->CreateCommittedResource3(in pHeapProperties, HeapFlags, in pDesc, InitialLayout, pOptimizedClearValue, (ID3D12ProtectedResourceSession*) pProtectedSession.Handle, NumCastableFormats, in pCastableFormats, ref riidResource, ref ppvResource);
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateCommittedResource3<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in HeapProperties pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ResourceDesc1 pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, ref ID3D12ProtectedResourceSession pProtectedSession, uint NumCastableFormats, Silk.NET.DXGI.Format* pCastableFormats, out ComPtr<TI0> ppvResource) where TI0 : unmanaged, IComVtbl<TI0>
+        public readonly unsafe int CreateCommittedResource3<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in HeapProperties pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ResourceDesc1 pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, ref ID3D12ProtectedResourceSession pProtectedSession, uint NumCastableFormats, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.DXGI.Format* pCastableFormats, out ComPtr<TI0> ppvResource) where TI0 : unmanaged, IComVtbl<TI0>
         {
             var @this = (ID3D12Device10*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -20258,16 +20258,16 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateCommittedResource3<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in HeapProperties pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ResourceDesc1 pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, ref ID3D12ProtectedResourceSession pProtectedSession, uint NumCastableFormats, ref Silk.NET.DXGI.Format pCastableFormats, out ComPtr<TI0> ppvResource) where TI0 : unmanaged, IComVtbl<TI0>
+        public readonly unsafe int CreateCommittedResource3<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in HeapProperties pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ResourceDesc1 pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, ref ID3D12ProtectedResourceSession pProtectedSession, uint NumCastableFormats, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.DXGI.Format pCastableFormats, out ComPtr<TI0> ppvResource) where TI0 : unmanaged, IComVtbl<TI0>
         {
             var @this = (ID3D12Device10*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
             ppvResource = default;
-            return @this->CreateCommittedResource3(in pHeapProperties, HeapFlags, in pDesc, InitialLayout, pOptimizedClearValue, ref pProtectedSession, NumCastableFormats, ref pCastableFormats, SilkMarshal.GuidPtrOf<TI0>(), (void**) ppvResource.GetAddressOf());
+            return @this->CreateCommittedResource3(in pHeapProperties, HeapFlags, in pDesc, InitialLayout, pOptimizedClearValue, ref pProtectedSession, NumCastableFormats, in pCastableFormats, SilkMarshal.GuidPtrOf<TI0>(), (void**) ppvResource.GetAddressOf());
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateCommittedResource3<TI0, TI1>([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in HeapProperties pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ResourceDesc1 pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ClearValue pOptimizedClearValue, ComPtr<TI0> pProtectedSession, uint NumCastableFormats, Silk.NET.DXGI.Format* pCastableFormats, out ComPtr<TI1> ppvResource) where TI0 : unmanaged, IComVtbl<ID3D12ProtectedResourceSession>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<TI1>
+        public readonly unsafe int CreateCommittedResource3<TI0, TI1>([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in HeapProperties pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ResourceDesc1 pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ClearValue pOptimizedClearValue, ComPtr<TI0> pProtectedSession, uint NumCastableFormats, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.DXGI.Format* pCastableFormats, out ComPtr<TI1> ppvResource) where TI0 : unmanaged, IComVtbl<ID3D12ProtectedResourceSession>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<TI1>
         {
             var @this = (ID3D12Device10*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -20276,7 +20276,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateCommittedResource3<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in HeapProperties pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ResourceDesc1 pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ClearValue pOptimizedClearValue, ComPtr<TI0> pProtectedSession, uint NumCastableFormats, Silk.NET.DXGI.Format* pCastableFormats, Guid* riidResource, ref void* ppvResource) where TI0 : unmanaged, IComVtbl<ID3D12ProtectedResourceSession>, IComVtbl<TI0>
+        public readonly unsafe int CreateCommittedResource3<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in HeapProperties pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ResourceDesc1 pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ClearValue pOptimizedClearValue, ComPtr<TI0> pProtectedSession, uint NumCastableFormats, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.DXGI.Format* pCastableFormats, Guid* riidResource, ref void* ppvResource) where TI0 : unmanaged, IComVtbl<ID3D12ProtectedResourceSession>, IComVtbl<TI0>
         {
             var @this = (ID3D12Device10*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -20284,7 +20284,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateCommittedResource3<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in HeapProperties pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ResourceDesc1 pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ClearValue pOptimizedClearValue, ComPtr<TI0> pProtectedSession, uint NumCastableFormats, Silk.NET.DXGI.Format* pCastableFormats, ref Guid riidResource, void** ppvResource) where TI0 : unmanaged, IComVtbl<ID3D12ProtectedResourceSession>, IComVtbl<TI0>
+        public readonly unsafe int CreateCommittedResource3<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in HeapProperties pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ResourceDesc1 pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ClearValue pOptimizedClearValue, ComPtr<TI0> pProtectedSession, uint NumCastableFormats, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.DXGI.Format* pCastableFormats, ref Guid riidResource, void** ppvResource) where TI0 : unmanaged, IComVtbl<ID3D12ProtectedResourceSession>, IComVtbl<TI0>
         {
             var @this = (ID3D12Device10*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -20292,7 +20292,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateCommittedResource3<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in HeapProperties pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ResourceDesc1 pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ClearValue pOptimizedClearValue, ComPtr<TI0> pProtectedSession, uint NumCastableFormats, Silk.NET.DXGI.Format* pCastableFormats, ref Guid riidResource, ref void* ppvResource) where TI0 : unmanaged, IComVtbl<ID3D12ProtectedResourceSession>, IComVtbl<TI0>
+        public readonly unsafe int CreateCommittedResource3<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in HeapProperties pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ResourceDesc1 pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ClearValue pOptimizedClearValue, ComPtr<TI0> pProtectedSession, uint NumCastableFormats, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.DXGI.Format* pCastableFormats, ref Guid riidResource, ref void* ppvResource) where TI0 : unmanaged, IComVtbl<ID3D12ProtectedResourceSession>, IComVtbl<TI0>
         {
             var @this = (ID3D12Device10*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -20300,40 +20300,40 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int CreateCommittedResource3<TI0, TI1>([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in HeapProperties pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ResourceDesc1 pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ClearValue pOptimizedClearValue, ComPtr<TI0> pProtectedSession, uint NumCastableFormats, ref Silk.NET.DXGI.Format pCastableFormats, out ComPtr<TI1> ppvResource) where TI0 : unmanaged, IComVtbl<ID3D12ProtectedResourceSession>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<TI1>
+        public readonly int CreateCommittedResource3<TI0, TI1>([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in HeapProperties pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ResourceDesc1 pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ClearValue pOptimizedClearValue, ComPtr<TI0> pProtectedSession, uint NumCastableFormats, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.DXGI.Format pCastableFormats, out ComPtr<TI1> ppvResource) where TI0 : unmanaged, IComVtbl<ID3D12ProtectedResourceSession>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<TI1>
         {
             var @this = (ID3D12Device10*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
             ppvResource = default;
-            return @this->CreateCommittedResource3(in pHeapProperties, HeapFlags, in pDesc, InitialLayout, in pOptimizedClearValue, (ID3D12ProtectedResourceSession*) pProtectedSession.Handle, NumCastableFormats, ref pCastableFormats, SilkMarshal.GuidPtrOf<TI1>(), (void**) ppvResource.GetAddressOf());
+            return @this->CreateCommittedResource3(in pHeapProperties, HeapFlags, in pDesc, InitialLayout, in pOptimizedClearValue, (ID3D12ProtectedResourceSession*) pProtectedSession.Handle, NumCastableFormats, in pCastableFormats, SilkMarshal.GuidPtrOf<TI1>(), (void**) ppvResource.GetAddressOf());
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateCommittedResource3<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in HeapProperties pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ResourceDesc1 pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ClearValue pOptimizedClearValue, ComPtr<TI0> pProtectedSession, uint NumCastableFormats, ref Silk.NET.DXGI.Format pCastableFormats, Guid* riidResource, ref void* ppvResource) where TI0 : unmanaged, IComVtbl<ID3D12ProtectedResourceSession>, IComVtbl<TI0>
+        public readonly unsafe int CreateCommittedResource3<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in HeapProperties pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ResourceDesc1 pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ClearValue pOptimizedClearValue, ComPtr<TI0> pProtectedSession, uint NumCastableFormats, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.DXGI.Format pCastableFormats, Guid* riidResource, ref void* ppvResource) where TI0 : unmanaged, IComVtbl<ID3D12ProtectedResourceSession>, IComVtbl<TI0>
         {
             var @this = (ID3D12Device10*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
-            return @this->CreateCommittedResource3(in pHeapProperties, HeapFlags, in pDesc, InitialLayout, in pOptimizedClearValue, (ID3D12ProtectedResourceSession*) pProtectedSession.Handle, NumCastableFormats, ref pCastableFormats, riidResource, ref ppvResource);
+            return @this->CreateCommittedResource3(in pHeapProperties, HeapFlags, in pDesc, InitialLayout, in pOptimizedClearValue, (ID3D12ProtectedResourceSession*) pProtectedSession.Handle, NumCastableFormats, in pCastableFormats, riidResource, ref ppvResource);
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateCommittedResource3<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in HeapProperties pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ResourceDesc1 pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ClearValue pOptimizedClearValue, ComPtr<TI0> pProtectedSession, uint NumCastableFormats, ref Silk.NET.DXGI.Format pCastableFormats, ref Guid riidResource, void** ppvResource) where TI0 : unmanaged, IComVtbl<ID3D12ProtectedResourceSession>, IComVtbl<TI0>
+        public readonly unsafe int CreateCommittedResource3<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in HeapProperties pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ResourceDesc1 pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ClearValue pOptimizedClearValue, ComPtr<TI0> pProtectedSession, uint NumCastableFormats, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.DXGI.Format pCastableFormats, ref Guid riidResource, void** ppvResource) where TI0 : unmanaged, IComVtbl<ID3D12ProtectedResourceSession>, IComVtbl<TI0>
         {
             var @this = (ID3D12Device10*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
-            return @this->CreateCommittedResource3(in pHeapProperties, HeapFlags, in pDesc, InitialLayout, in pOptimizedClearValue, (ID3D12ProtectedResourceSession*) pProtectedSession.Handle, NumCastableFormats, ref pCastableFormats, ref riidResource, ppvResource);
+            return @this->CreateCommittedResource3(in pHeapProperties, HeapFlags, in pDesc, InitialLayout, in pOptimizedClearValue, (ID3D12ProtectedResourceSession*) pProtectedSession.Handle, NumCastableFormats, in pCastableFormats, ref riidResource, ppvResource);
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateCommittedResource3<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in HeapProperties pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ResourceDesc1 pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ClearValue pOptimizedClearValue, ComPtr<TI0> pProtectedSession, uint NumCastableFormats, ref Silk.NET.DXGI.Format pCastableFormats, ref Guid riidResource, ref void* ppvResource) where TI0 : unmanaged, IComVtbl<ID3D12ProtectedResourceSession>, IComVtbl<TI0>
+        public readonly unsafe int CreateCommittedResource3<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in HeapProperties pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ResourceDesc1 pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ClearValue pOptimizedClearValue, ComPtr<TI0> pProtectedSession, uint NumCastableFormats, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.DXGI.Format pCastableFormats, ref Guid riidResource, ref void* ppvResource) where TI0 : unmanaged, IComVtbl<ID3D12ProtectedResourceSession>, IComVtbl<TI0>
         {
             var @this = (ID3D12Device10*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
-            return @this->CreateCommittedResource3(in pHeapProperties, HeapFlags, in pDesc, InitialLayout, in pOptimizedClearValue, (ID3D12ProtectedResourceSession*) pProtectedSession.Handle, NumCastableFormats, ref pCastableFormats, ref riidResource, ref ppvResource);
+            return @this->CreateCommittedResource3(in pHeapProperties, HeapFlags, in pDesc, InitialLayout, in pOptimizedClearValue, (ID3D12ProtectedResourceSession*) pProtectedSession.Handle, NumCastableFormats, in pCastableFormats, ref riidResource, ref ppvResource);
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateCommittedResource3<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in HeapProperties pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ResourceDesc1 pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ClearValue pOptimizedClearValue, ref ID3D12ProtectedResourceSession pProtectedSession, uint NumCastableFormats, Silk.NET.DXGI.Format* pCastableFormats, out ComPtr<TI0> ppvResource) where TI0 : unmanaged, IComVtbl<TI0>
+        public readonly unsafe int CreateCommittedResource3<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in HeapProperties pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ResourceDesc1 pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ClearValue pOptimizedClearValue, ref ID3D12ProtectedResourceSession pProtectedSession, uint NumCastableFormats, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.DXGI.Format* pCastableFormats, out ComPtr<TI0> ppvResource) where TI0 : unmanaged, IComVtbl<TI0>
         {
             var @this = (ID3D12Device10*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -20342,16 +20342,16 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int CreateCommittedResource3<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in HeapProperties pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ResourceDesc1 pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ClearValue pOptimizedClearValue, ref ID3D12ProtectedResourceSession pProtectedSession, uint NumCastableFormats, ref Silk.NET.DXGI.Format pCastableFormats, out ComPtr<TI0> ppvResource) where TI0 : unmanaged, IComVtbl<TI0>
+        public readonly int CreateCommittedResource3<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in HeapProperties pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ResourceDesc1 pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ClearValue pOptimizedClearValue, ref ID3D12ProtectedResourceSession pProtectedSession, uint NumCastableFormats, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.DXGI.Format pCastableFormats, out ComPtr<TI0> ppvResource) where TI0 : unmanaged, IComVtbl<TI0>
         {
             var @this = (ID3D12Device10*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
             ppvResource = default;
-            return @this->CreateCommittedResource3(in pHeapProperties, HeapFlags, in pDesc, InitialLayout, in pOptimizedClearValue, ref pProtectedSession, NumCastableFormats, ref pCastableFormats, SilkMarshal.GuidPtrOf<TI0>(), (void**) ppvResource.GetAddressOf());
+            return @this->CreateCommittedResource3(in pHeapProperties, HeapFlags, in pDesc, InitialLayout, in pOptimizedClearValue, ref pProtectedSession, NumCastableFormats, in pCastableFormats, SilkMarshal.GuidPtrOf<TI0>(), (void**) ppvResource.GetAddressOf());
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreatePlacedResource2<TI0, TI1>(ComPtr<TI0> pHeap, ulong HeapOffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc1* pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, uint NumCastableFormats, Silk.NET.DXGI.Format* pCastableFormats, out ComPtr<TI1> ppvResource) where TI0 : unmanaged, IComVtbl<ID3D12Heap>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<TI1>
+        public readonly unsafe int CreatePlacedResource2<TI0, TI1>(ComPtr<TI0> pHeap, ulong HeapOffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc1* pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, uint NumCastableFormats, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.DXGI.Format* pCastableFormats, out ComPtr<TI1> ppvResource) where TI0 : unmanaged, IComVtbl<ID3D12Heap>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<TI1>
         {
             var @this = (ID3D12Device10*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -20360,7 +20360,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreatePlacedResource2<TI0>(ComPtr<TI0> pHeap, ulong HeapOffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc1* pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, uint NumCastableFormats, Silk.NET.DXGI.Format* pCastableFormats, Guid* riid, ref void* ppvResource) where TI0 : unmanaged, IComVtbl<ID3D12Heap>, IComVtbl<TI0>
+        public readonly unsafe int CreatePlacedResource2<TI0>(ComPtr<TI0> pHeap, ulong HeapOffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc1* pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, uint NumCastableFormats, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.DXGI.Format* pCastableFormats, Guid* riid, ref void* ppvResource) where TI0 : unmanaged, IComVtbl<ID3D12Heap>, IComVtbl<TI0>
         {
             var @this = (ID3D12Device10*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -20368,7 +20368,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreatePlacedResource2<TI0>(ComPtr<TI0> pHeap, ulong HeapOffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc1* pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, uint NumCastableFormats, Silk.NET.DXGI.Format* pCastableFormats, ref Guid riid, void** ppvResource) where TI0 : unmanaged, IComVtbl<ID3D12Heap>, IComVtbl<TI0>
+        public readonly unsafe int CreatePlacedResource2<TI0>(ComPtr<TI0> pHeap, ulong HeapOffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc1* pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, uint NumCastableFormats, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.DXGI.Format* pCastableFormats, ref Guid riid, void** ppvResource) where TI0 : unmanaged, IComVtbl<ID3D12Heap>, IComVtbl<TI0>
         {
             var @this = (ID3D12Device10*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -20376,7 +20376,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreatePlacedResource2<TI0>(ComPtr<TI0> pHeap, ulong HeapOffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc1* pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, uint NumCastableFormats, Silk.NET.DXGI.Format* pCastableFormats, ref Guid riid, ref void* ppvResource) where TI0 : unmanaged, IComVtbl<ID3D12Heap>, IComVtbl<TI0>
+        public readonly unsafe int CreatePlacedResource2<TI0>(ComPtr<TI0> pHeap, ulong HeapOffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc1* pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, uint NumCastableFormats, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.DXGI.Format* pCastableFormats, ref Guid riid, ref void* ppvResource) where TI0 : unmanaged, IComVtbl<ID3D12Heap>, IComVtbl<TI0>
         {
             var @this = (ID3D12Device10*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -20384,40 +20384,40 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreatePlacedResource2<TI0, TI1>(ComPtr<TI0> pHeap, ulong HeapOffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc1* pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, uint NumCastableFormats, ref Silk.NET.DXGI.Format pCastableFormats, out ComPtr<TI1> ppvResource) where TI0 : unmanaged, IComVtbl<ID3D12Heap>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<TI1>
+        public readonly unsafe int CreatePlacedResource2<TI0, TI1>(ComPtr<TI0> pHeap, ulong HeapOffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc1* pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, uint NumCastableFormats, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.DXGI.Format pCastableFormats, out ComPtr<TI1> ppvResource) where TI0 : unmanaged, IComVtbl<ID3D12Heap>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<TI1>
         {
             var @this = (ID3D12Device10*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
             ppvResource = default;
-            return @this->CreatePlacedResource2((ID3D12Heap*) pHeap.Handle, HeapOffset, pDesc, InitialLayout, pOptimizedClearValue, NumCastableFormats, ref pCastableFormats, SilkMarshal.GuidPtrOf<TI1>(), (void**) ppvResource.GetAddressOf());
+            return @this->CreatePlacedResource2((ID3D12Heap*) pHeap.Handle, HeapOffset, pDesc, InitialLayout, pOptimizedClearValue, NumCastableFormats, in pCastableFormats, SilkMarshal.GuidPtrOf<TI1>(), (void**) ppvResource.GetAddressOf());
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreatePlacedResource2<TI0>(ComPtr<TI0> pHeap, ulong HeapOffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc1* pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, uint NumCastableFormats, ref Silk.NET.DXGI.Format pCastableFormats, Guid* riid, ref void* ppvResource) where TI0 : unmanaged, IComVtbl<ID3D12Heap>, IComVtbl<TI0>
+        public readonly unsafe int CreatePlacedResource2<TI0>(ComPtr<TI0> pHeap, ulong HeapOffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc1* pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, uint NumCastableFormats, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.DXGI.Format pCastableFormats, Guid* riid, ref void* ppvResource) where TI0 : unmanaged, IComVtbl<ID3D12Heap>, IComVtbl<TI0>
         {
             var @this = (ID3D12Device10*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
-            return @this->CreatePlacedResource2((ID3D12Heap*) pHeap.Handle, HeapOffset, pDesc, InitialLayout, pOptimizedClearValue, NumCastableFormats, ref pCastableFormats, riid, ref ppvResource);
+            return @this->CreatePlacedResource2((ID3D12Heap*) pHeap.Handle, HeapOffset, pDesc, InitialLayout, pOptimizedClearValue, NumCastableFormats, in pCastableFormats, riid, ref ppvResource);
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreatePlacedResource2<TI0>(ComPtr<TI0> pHeap, ulong HeapOffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc1* pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, uint NumCastableFormats, ref Silk.NET.DXGI.Format pCastableFormats, ref Guid riid, void** ppvResource) where TI0 : unmanaged, IComVtbl<ID3D12Heap>, IComVtbl<TI0>
+        public readonly unsafe int CreatePlacedResource2<TI0>(ComPtr<TI0> pHeap, ulong HeapOffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc1* pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, uint NumCastableFormats, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.DXGI.Format pCastableFormats, ref Guid riid, void** ppvResource) where TI0 : unmanaged, IComVtbl<ID3D12Heap>, IComVtbl<TI0>
         {
             var @this = (ID3D12Device10*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
-            return @this->CreatePlacedResource2((ID3D12Heap*) pHeap.Handle, HeapOffset, pDesc, InitialLayout, pOptimizedClearValue, NumCastableFormats, ref pCastableFormats, ref riid, ppvResource);
+            return @this->CreatePlacedResource2((ID3D12Heap*) pHeap.Handle, HeapOffset, pDesc, InitialLayout, pOptimizedClearValue, NumCastableFormats, in pCastableFormats, ref riid, ppvResource);
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreatePlacedResource2<TI0>(ComPtr<TI0> pHeap, ulong HeapOffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc1* pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, uint NumCastableFormats, ref Silk.NET.DXGI.Format pCastableFormats, ref Guid riid, ref void* ppvResource) where TI0 : unmanaged, IComVtbl<ID3D12Heap>, IComVtbl<TI0>
+        public readonly unsafe int CreatePlacedResource2<TI0>(ComPtr<TI0> pHeap, ulong HeapOffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc1* pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, uint NumCastableFormats, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.DXGI.Format pCastableFormats, ref Guid riid, ref void* ppvResource) where TI0 : unmanaged, IComVtbl<ID3D12Heap>, IComVtbl<TI0>
         {
             var @this = (ID3D12Device10*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
-            return @this->CreatePlacedResource2((ID3D12Heap*) pHeap.Handle, HeapOffset, pDesc, InitialLayout, pOptimizedClearValue, NumCastableFormats, ref pCastableFormats, ref riid, ref ppvResource);
+            return @this->CreatePlacedResource2((ID3D12Heap*) pHeap.Handle, HeapOffset, pDesc, InitialLayout, pOptimizedClearValue, NumCastableFormats, in pCastableFormats, ref riid, ref ppvResource);
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreatePlacedResource2<TI0, TI1>(ComPtr<TI0> pHeap, ulong HeapOffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc1* pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ClearValue pOptimizedClearValue, uint NumCastableFormats, Silk.NET.DXGI.Format* pCastableFormats, out ComPtr<TI1> ppvResource) where TI0 : unmanaged, IComVtbl<ID3D12Heap>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<TI1>
+        public readonly unsafe int CreatePlacedResource2<TI0, TI1>(ComPtr<TI0> pHeap, ulong HeapOffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc1* pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ClearValue pOptimizedClearValue, uint NumCastableFormats, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.DXGI.Format* pCastableFormats, out ComPtr<TI1> ppvResource) where TI0 : unmanaged, IComVtbl<ID3D12Heap>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<TI1>
         {
             var @this = (ID3D12Device10*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -20426,7 +20426,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreatePlacedResource2<TI0>(ComPtr<TI0> pHeap, ulong HeapOffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc1* pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ClearValue pOptimizedClearValue, uint NumCastableFormats, Silk.NET.DXGI.Format* pCastableFormats, Guid* riid, ref void* ppvResource) where TI0 : unmanaged, IComVtbl<ID3D12Heap>, IComVtbl<TI0>
+        public readonly unsafe int CreatePlacedResource2<TI0>(ComPtr<TI0> pHeap, ulong HeapOffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc1* pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ClearValue pOptimizedClearValue, uint NumCastableFormats, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.DXGI.Format* pCastableFormats, Guid* riid, ref void* ppvResource) where TI0 : unmanaged, IComVtbl<ID3D12Heap>, IComVtbl<TI0>
         {
             var @this = (ID3D12Device10*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -20434,7 +20434,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreatePlacedResource2<TI0>(ComPtr<TI0> pHeap, ulong HeapOffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc1* pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ClearValue pOptimizedClearValue, uint NumCastableFormats, Silk.NET.DXGI.Format* pCastableFormats, ref Guid riid, void** ppvResource) where TI0 : unmanaged, IComVtbl<ID3D12Heap>, IComVtbl<TI0>
+        public readonly unsafe int CreatePlacedResource2<TI0>(ComPtr<TI0> pHeap, ulong HeapOffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc1* pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ClearValue pOptimizedClearValue, uint NumCastableFormats, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.DXGI.Format* pCastableFormats, ref Guid riid, void** ppvResource) where TI0 : unmanaged, IComVtbl<ID3D12Heap>, IComVtbl<TI0>
         {
             var @this = (ID3D12Device10*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -20442,7 +20442,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreatePlacedResource2<TI0>(ComPtr<TI0> pHeap, ulong HeapOffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc1* pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ClearValue pOptimizedClearValue, uint NumCastableFormats, Silk.NET.DXGI.Format* pCastableFormats, ref Guid riid, ref void* ppvResource) where TI0 : unmanaged, IComVtbl<ID3D12Heap>, IComVtbl<TI0>
+        public readonly unsafe int CreatePlacedResource2<TI0>(ComPtr<TI0> pHeap, ulong HeapOffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc1* pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ClearValue pOptimizedClearValue, uint NumCastableFormats, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.DXGI.Format* pCastableFormats, ref Guid riid, ref void* ppvResource) where TI0 : unmanaged, IComVtbl<ID3D12Heap>, IComVtbl<TI0>
         {
             var @this = (ID3D12Device10*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -20450,40 +20450,40 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreatePlacedResource2<TI0, TI1>(ComPtr<TI0> pHeap, ulong HeapOffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc1* pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ClearValue pOptimizedClearValue, uint NumCastableFormats, ref Silk.NET.DXGI.Format pCastableFormats, out ComPtr<TI1> ppvResource) where TI0 : unmanaged, IComVtbl<ID3D12Heap>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<TI1>
+        public readonly unsafe int CreatePlacedResource2<TI0, TI1>(ComPtr<TI0> pHeap, ulong HeapOffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc1* pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ClearValue pOptimizedClearValue, uint NumCastableFormats, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.DXGI.Format pCastableFormats, out ComPtr<TI1> ppvResource) where TI0 : unmanaged, IComVtbl<ID3D12Heap>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<TI1>
         {
             var @this = (ID3D12Device10*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
             ppvResource = default;
-            return @this->CreatePlacedResource2((ID3D12Heap*) pHeap.Handle, HeapOffset, pDesc, InitialLayout, in pOptimizedClearValue, NumCastableFormats, ref pCastableFormats, SilkMarshal.GuidPtrOf<TI1>(), (void**) ppvResource.GetAddressOf());
+            return @this->CreatePlacedResource2((ID3D12Heap*) pHeap.Handle, HeapOffset, pDesc, InitialLayout, in pOptimizedClearValue, NumCastableFormats, in pCastableFormats, SilkMarshal.GuidPtrOf<TI1>(), (void**) ppvResource.GetAddressOf());
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreatePlacedResource2<TI0>(ComPtr<TI0> pHeap, ulong HeapOffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc1* pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ClearValue pOptimizedClearValue, uint NumCastableFormats, ref Silk.NET.DXGI.Format pCastableFormats, Guid* riid, ref void* ppvResource) where TI0 : unmanaged, IComVtbl<ID3D12Heap>, IComVtbl<TI0>
+        public readonly unsafe int CreatePlacedResource2<TI0>(ComPtr<TI0> pHeap, ulong HeapOffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc1* pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ClearValue pOptimizedClearValue, uint NumCastableFormats, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.DXGI.Format pCastableFormats, Guid* riid, ref void* ppvResource) where TI0 : unmanaged, IComVtbl<ID3D12Heap>, IComVtbl<TI0>
         {
             var @this = (ID3D12Device10*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
-            return @this->CreatePlacedResource2((ID3D12Heap*) pHeap.Handle, HeapOffset, pDesc, InitialLayout, in pOptimizedClearValue, NumCastableFormats, ref pCastableFormats, riid, ref ppvResource);
+            return @this->CreatePlacedResource2((ID3D12Heap*) pHeap.Handle, HeapOffset, pDesc, InitialLayout, in pOptimizedClearValue, NumCastableFormats, in pCastableFormats, riid, ref ppvResource);
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreatePlacedResource2<TI0>(ComPtr<TI0> pHeap, ulong HeapOffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc1* pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ClearValue pOptimizedClearValue, uint NumCastableFormats, ref Silk.NET.DXGI.Format pCastableFormats, ref Guid riid, void** ppvResource) where TI0 : unmanaged, IComVtbl<ID3D12Heap>, IComVtbl<TI0>
+        public readonly unsafe int CreatePlacedResource2<TI0>(ComPtr<TI0> pHeap, ulong HeapOffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc1* pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ClearValue pOptimizedClearValue, uint NumCastableFormats, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.DXGI.Format pCastableFormats, ref Guid riid, void** ppvResource) where TI0 : unmanaged, IComVtbl<ID3D12Heap>, IComVtbl<TI0>
         {
             var @this = (ID3D12Device10*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
-            return @this->CreatePlacedResource2((ID3D12Heap*) pHeap.Handle, HeapOffset, pDesc, InitialLayout, in pOptimizedClearValue, NumCastableFormats, ref pCastableFormats, ref riid, ppvResource);
+            return @this->CreatePlacedResource2((ID3D12Heap*) pHeap.Handle, HeapOffset, pDesc, InitialLayout, in pOptimizedClearValue, NumCastableFormats, in pCastableFormats, ref riid, ppvResource);
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreatePlacedResource2<TI0>(ComPtr<TI0> pHeap, ulong HeapOffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc1* pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ClearValue pOptimizedClearValue, uint NumCastableFormats, ref Silk.NET.DXGI.Format pCastableFormats, ref Guid riid, ref void* ppvResource) where TI0 : unmanaged, IComVtbl<ID3D12Heap>, IComVtbl<TI0>
+        public readonly unsafe int CreatePlacedResource2<TI0>(ComPtr<TI0> pHeap, ulong HeapOffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc1* pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ClearValue pOptimizedClearValue, uint NumCastableFormats, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.DXGI.Format pCastableFormats, ref Guid riid, ref void* ppvResource) where TI0 : unmanaged, IComVtbl<ID3D12Heap>, IComVtbl<TI0>
         {
             var @this = (ID3D12Device10*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
-            return @this->CreatePlacedResource2((ID3D12Heap*) pHeap.Handle, HeapOffset, pDesc, InitialLayout, in pOptimizedClearValue, NumCastableFormats, ref pCastableFormats, ref riid, ref ppvResource);
+            return @this->CreatePlacedResource2((ID3D12Heap*) pHeap.Handle, HeapOffset, pDesc, InitialLayout, in pOptimizedClearValue, NumCastableFormats, in pCastableFormats, ref riid, ref ppvResource);
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreatePlacedResource2<TI0, TI1>(ComPtr<TI0> pHeap, ulong HeapOffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ResourceDesc1 pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, uint NumCastableFormats, Silk.NET.DXGI.Format* pCastableFormats, out ComPtr<TI1> ppvResource) where TI0 : unmanaged, IComVtbl<ID3D12Heap>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<TI1>
+        public readonly unsafe int CreatePlacedResource2<TI0, TI1>(ComPtr<TI0> pHeap, ulong HeapOffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ResourceDesc1 pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, uint NumCastableFormats, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.DXGI.Format* pCastableFormats, out ComPtr<TI1> ppvResource) where TI0 : unmanaged, IComVtbl<ID3D12Heap>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<TI1>
         {
             var @this = (ID3D12Device10*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -20492,7 +20492,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreatePlacedResource2<TI0>(ComPtr<TI0> pHeap, ulong HeapOffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ResourceDesc1 pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, uint NumCastableFormats, Silk.NET.DXGI.Format* pCastableFormats, Guid* riid, ref void* ppvResource) where TI0 : unmanaged, IComVtbl<ID3D12Heap>, IComVtbl<TI0>
+        public readonly unsafe int CreatePlacedResource2<TI0>(ComPtr<TI0> pHeap, ulong HeapOffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ResourceDesc1 pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, uint NumCastableFormats, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.DXGI.Format* pCastableFormats, Guid* riid, ref void* ppvResource) where TI0 : unmanaged, IComVtbl<ID3D12Heap>, IComVtbl<TI0>
         {
             var @this = (ID3D12Device10*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -20500,7 +20500,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreatePlacedResource2<TI0>(ComPtr<TI0> pHeap, ulong HeapOffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ResourceDesc1 pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, uint NumCastableFormats, Silk.NET.DXGI.Format* pCastableFormats, ref Guid riid, void** ppvResource) where TI0 : unmanaged, IComVtbl<ID3D12Heap>, IComVtbl<TI0>
+        public readonly unsafe int CreatePlacedResource2<TI0>(ComPtr<TI0> pHeap, ulong HeapOffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ResourceDesc1 pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, uint NumCastableFormats, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.DXGI.Format* pCastableFormats, ref Guid riid, void** ppvResource) where TI0 : unmanaged, IComVtbl<ID3D12Heap>, IComVtbl<TI0>
         {
             var @this = (ID3D12Device10*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -20508,7 +20508,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreatePlacedResource2<TI0>(ComPtr<TI0> pHeap, ulong HeapOffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ResourceDesc1 pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, uint NumCastableFormats, Silk.NET.DXGI.Format* pCastableFormats, ref Guid riid, ref void* ppvResource) where TI0 : unmanaged, IComVtbl<ID3D12Heap>, IComVtbl<TI0>
+        public readonly unsafe int CreatePlacedResource2<TI0>(ComPtr<TI0> pHeap, ulong HeapOffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ResourceDesc1 pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, uint NumCastableFormats, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.DXGI.Format* pCastableFormats, ref Guid riid, ref void* ppvResource) where TI0 : unmanaged, IComVtbl<ID3D12Heap>, IComVtbl<TI0>
         {
             var @this = (ID3D12Device10*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -20516,40 +20516,40 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreatePlacedResource2<TI0, TI1>(ComPtr<TI0> pHeap, ulong HeapOffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ResourceDesc1 pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, uint NumCastableFormats, ref Silk.NET.DXGI.Format pCastableFormats, out ComPtr<TI1> ppvResource) where TI0 : unmanaged, IComVtbl<ID3D12Heap>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<TI1>
+        public readonly unsafe int CreatePlacedResource2<TI0, TI1>(ComPtr<TI0> pHeap, ulong HeapOffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ResourceDesc1 pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, uint NumCastableFormats, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.DXGI.Format pCastableFormats, out ComPtr<TI1> ppvResource) where TI0 : unmanaged, IComVtbl<ID3D12Heap>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<TI1>
         {
             var @this = (ID3D12Device10*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
             ppvResource = default;
-            return @this->CreatePlacedResource2((ID3D12Heap*) pHeap.Handle, HeapOffset, in pDesc, InitialLayout, pOptimizedClearValue, NumCastableFormats, ref pCastableFormats, SilkMarshal.GuidPtrOf<TI1>(), (void**) ppvResource.GetAddressOf());
+            return @this->CreatePlacedResource2((ID3D12Heap*) pHeap.Handle, HeapOffset, in pDesc, InitialLayout, pOptimizedClearValue, NumCastableFormats, in pCastableFormats, SilkMarshal.GuidPtrOf<TI1>(), (void**) ppvResource.GetAddressOf());
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreatePlacedResource2<TI0>(ComPtr<TI0> pHeap, ulong HeapOffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ResourceDesc1 pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, uint NumCastableFormats, ref Silk.NET.DXGI.Format pCastableFormats, Guid* riid, ref void* ppvResource) where TI0 : unmanaged, IComVtbl<ID3D12Heap>, IComVtbl<TI0>
+        public readonly unsafe int CreatePlacedResource2<TI0>(ComPtr<TI0> pHeap, ulong HeapOffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ResourceDesc1 pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, uint NumCastableFormats, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.DXGI.Format pCastableFormats, Guid* riid, ref void* ppvResource) where TI0 : unmanaged, IComVtbl<ID3D12Heap>, IComVtbl<TI0>
         {
             var @this = (ID3D12Device10*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
-            return @this->CreatePlacedResource2((ID3D12Heap*) pHeap.Handle, HeapOffset, in pDesc, InitialLayout, pOptimizedClearValue, NumCastableFormats, ref pCastableFormats, riid, ref ppvResource);
+            return @this->CreatePlacedResource2((ID3D12Heap*) pHeap.Handle, HeapOffset, in pDesc, InitialLayout, pOptimizedClearValue, NumCastableFormats, in pCastableFormats, riid, ref ppvResource);
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreatePlacedResource2<TI0>(ComPtr<TI0> pHeap, ulong HeapOffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ResourceDesc1 pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, uint NumCastableFormats, ref Silk.NET.DXGI.Format pCastableFormats, ref Guid riid, void** ppvResource) where TI0 : unmanaged, IComVtbl<ID3D12Heap>, IComVtbl<TI0>
+        public readonly unsafe int CreatePlacedResource2<TI0>(ComPtr<TI0> pHeap, ulong HeapOffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ResourceDesc1 pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, uint NumCastableFormats, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.DXGI.Format pCastableFormats, ref Guid riid, void** ppvResource) where TI0 : unmanaged, IComVtbl<ID3D12Heap>, IComVtbl<TI0>
         {
             var @this = (ID3D12Device10*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
-            return @this->CreatePlacedResource2((ID3D12Heap*) pHeap.Handle, HeapOffset, in pDesc, InitialLayout, pOptimizedClearValue, NumCastableFormats, ref pCastableFormats, ref riid, ppvResource);
+            return @this->CreatePlacedResource2((ID3D12Heap*) pHeap.Handle, HeapOffset, in pDesc, InitialLayout, pOptimizedClearValue, NumCastableFormats, in pCastableFormats, ref riid, ppvResource);
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreatePlacedResource2<TI0>(ComPtr<TI0> pHeap, ulong HeapOffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ResourceDesc1 pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, uint NumCastableFormats, ref Silk.NET.DXGI.Format pCastableFormats, ref Guid riid, ref void* ppvResource) where TI0 : unmanaged, IComVtbl<ID3D12Heap>, IComVtbl<TI0>
+        public readonly unsafe int CreatePlacedResource2<TI0>(ComPtr<TI0> pHeap, ulong HeapOffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ResourceDesc1 pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, uint NumCastableFormats, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.DXGI.Format pCastableFormats, ref Guid riid, ref void* ppvResource) where TI0 : unmanaged, IComVtbl<ID3D12Heap>, IComVtbl<TI0>
         {
             var @this = (ID3D12Device10*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
-            return @this->CreatePlacedResource2((ID3D12Heap*) pHeap.Handle, HeapOffset, in pDesc, InitialLayout, pOptimizedClearValue, NumCastableFormats, ref pCastableFormats, ref riid, ref ppvResource);
+            return @this->CreatePlacedResource2((ID3D12Heap*) pHeap.Handle, HeapOffset, in pDesc, InitialLayout, pOptimizedClearValue, NumCastableFormats, in pCastableFormats, ref riid, ref ppvResource);
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreatePlacedResource2<TI0, TI1>(ComPtr<TI0> pHeap, ulong HeapOffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ResourceDesc1 pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ClearValue pOptimizedClearValue, uint NumCastableFormats, Silk.NET.DXGI.Format* pCastableFormats, out ComPtr<TI1> ppvResource) where TI0 : unmanaged, IComVtbl<ID3D12Heap>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<TI1>
+        public readonly unsafe int CreatePlacedResource2<TI0, TI1>(ComPtr<TI0> pHeap, ulong HeapOffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ResourceDesc1 pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ClearValue pOptimizedClearValue, uint NumCastableFormats, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.DXGI.Format* pCastableFormats, out ComPtr<TI1> ppvResource) where TI0 : unmanaged, IComVtbl<ID3D12Heap>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<TI1>
         {
             var @this = (ID3D12Device10*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -20558,7 +20558,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreatePlacedResource2<TI0>(ComPtr<TI0> pHeap, ulong HeapOffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ResourceDesc1 pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ClearValue pOptimizedClearValue, uint NumCastableFormats, Silk.NET.DXGI.Format* pCastableFormats, Guid* riid, ref void* ppvResource) where TI0 : unmanaged, IComVtbl<ID3D12Heap>, IComVtbl<TI0>
+        public readonly unsafe int CreatePlacedResource2<TI0>(ComPtr<TI0> pHeap, ulong HeapOffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ResourceDesc1 pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ClearValue pOptimizedClearValue, uint NumCastableFormats, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.DXGI.Format* pCastableFormats, Guid* riid, ref void* ppvResource) where TI0 : unmanaged, IComVtbl<ID3D12Heap>, IComVtbl<TI0>
         {
             var @this = (ID3D12Device10*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -20566,7 +20566,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreatePlacedResource2<TI0>(ComPtr<TI0> pHeap, ulong HeapOffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ResourceDesc1 pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ClearValue pOptimizedClearValue, uint NumCastableFormats, Silk.NET.DXGI.Format* pCastableFormats, ref Guid riid, void** ppvResource) where TI0 : unmanaged, IComVtbl<ID3D12Heap>, IComVtbl<TI0>
+        public readonly unsafe int CreatePlacedResource2<TI0>(ComPtr<TI0> pHeap, ulong HeapOffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ResourceDesc1 pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ClearValue pOptimizedClearValue, uint NumCastableFormats, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.DXGI.Format* pCastableFormats, ref Guid riid, void** ppvResource) where TI0 : unmanaged, IComVtbl<ID3D12Heap>, IComVtbl<TI0>
         {
             var @this = (ID3D12Device10*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -20574,7 +20574,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreatePlacedResource2<TI0>(ComPtr<TI0> pHeap, ulong HeapOffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ResourceDesc1 pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ClearValue pOptimizedClearValue, uint NumCastableFormats, Silk.NET.DXGI.Format* pCastableFormats, ref Guid riid, ref void* ppvResource) where TI0 : unmanaged, IComVtbl<ID3D12Heap>, IComVtbl<TI0>
+        public readonly unsafe int CreatePlacedResource2<TI0>(ComPtr<TI0> pHeap, ulong HeapOffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ResourceDesc1 pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ClearValue pOptimizedClearValue, uint NumCastableFormats, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.DXGI.Format* pCastableFormats, ref Guid riid, ref void* ppvResource) where TI0 : unmanaged, IComVtbl<ID3D12Heap>, IComVtbl<TI0>
         {
             var @this = (ID3D12Device10*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -20582,40 +20582,40 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int CreatePlacedResource2<TI0, TI1>(ComPtr<TI0> pHeap, ulong HeapOffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ResourceDesc1 pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ClearValue pOptimizedClearValue, uint NumCastableFormats, ref Silk.NET.DXGI.Format pCastableFormats, out ComPtr<TI1> ppvResource) where TI0 : unmanaged, IComVtbl<ID3D12Heap>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<TI1>
+        public readonly int CreatePlacedResource2<TI0, TI1>(ComPtr<TI0> pHeap, ulong HeapOffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ResourceDesc1 pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ClearValue pOptimizedClearValue, uint NumCastableFormats, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.DXGI.Format pCastableFormats, out ComPtr<TI1> ppvResource) where TI0 : unmanaged, IComVtbl<ID3D12Heap>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<TI1>
         {
             var @this = (ID3D12Device10*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
             ppvResource = default;
-            return @this->CreatePlacedResource2((ID3D12Heap*) pHeap.Handle, HeapOffset, in pDesc, InitialLayout, in pOptimizedClearValue, NumCastableFormats, ref pCastableFormats, SilkMarshal.GuidPtrOf<TI1>(), (void**) ppvResource.GetAddressOf());
+            return @this->CreatePlacedResource2((ID3D12Heap*) pHeap.Handle, HeapOffset, in pDesc, InitialLayout, in pOptimizedClearValue, NumCastableFormats, in pCastableFormats, SilkMarshal.GuidPtrOf<TI1>(), (void**) ppvResource.GetAddressOf());
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreatePlacedResource2<TI0>(ComPtr<TI0> pHeap, ulong HeapOffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ResourceDesc1 pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ClearValue pOptimizedClearValue, uint NumCastableFormats, ref Silk.NET.DXGI.Format pCastableFormats, Guid* riid, ref void* ppvResource) where TI0 : unmanaged, IComVtbl<ID3D12Heap>, IComVtbl<TI0>
+        public readonly unsafe int CreatePlacedResource2<TI0>(ComPtr<TI0> pHeap, ulong HeapOffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ResourceDesc1 pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ClearValue pOptimizedClearValue, uint NumCastableFormats, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.DXGI.Format pCastableFormats, Guid* riid, ref void* ppvResource) where TI0 : unmanaged, IComVtbl<ID3D12Heap>, IComVtbl<TI0>
         {
             var @this = (ID3D12Device10*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
-            return @this->CreatePlacedResource2((ID3D12Heap*) pHeap.Handle, HeapOffset, in pDesc, InitialLayout, in pOptimizedClearValue, NumCastableFormats, ref pCastableFormats, riid, ref ppvResource);
+            return @this->CreatePlacedResource2((ID3D12Heap*) pHeap.Handle, HeapOffset, in pDesc, InitialLayout, in pOptimizedClearValue, NumCastableFormats, in pCastableFormats, riid, ref ppvResource);
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreatePlacedResource2<TI0>(ComPtr<TI0> pHeap, ulong HeapOffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ResourceDesc1 pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ClearValue pOptimizedClearValue, uint NumCastableFormats, ref Silk.NET.DXGI.Format pCastableFormats, ref Guid riid, void** ppvResource) where TI0 : unmanaged, IComVtbl<ID3D12Heap>, IComVtbl<TI0>
+        public readonly unsafe int CreatePlacedResource2<TI0>(ComPtr<TI0> pHeap, ulong HeapOffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ResourceDesc1 pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ClearValue pOptimizedClearValue, uint NumCastableFormats, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.DXGI.Format pCastableFormats, ref Guid riid, void** ppvResource) where TI0 : unmanaged, IComVtbl<ID3D12Heap>, IComVtbl<TI0>
         {
             var @this = (ID3D12Device10*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
-            return @this->CreatePlacedResource2((ID3D12Heap*) pHeap.Handle, HeapOffset, in pDesc, InitialLayout, in pOptimizedClearValue, NumCastableFormats, ref pCastableFormats, ref riid, ppvResource);
+            return @this->CreatePlacedResource2((ID3D12Heap*) pHeap.Handle, HeapOffset, in pDesc, InitialLayout, in pOptimizedClearValue, NumCastableFormats, in pCastableFormats, ref riid, ppvResource);
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreatePlacedResource2<TI0>(ComPtr<TI0> pHeap, ulong HeapOffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ResourceDesc1 pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ClearValue pOptimizedClearValue, uint NumCastableFormats, ref Silk.NET.DXGI.Format pCastableFormats, ref Guid riid, ref void* ppvResource) where TI0 : unmanaged, IComVtbl<ID3D12Heap>, IComVtbl<TI0>
+        public readonly unsafe int CreatePlacedResource2<TI0>(ComPtr<TI0> pHeap, ulong HeapOffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ResourceDesc1 pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ClearValue pOptimizedClearValue, uint NumCastableFormats, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.DXGI.Format pCastableFormats, ref Guid riid, ref void* ppvResource) where TI0 : unmanaged, IComVtbl<ID3D12Heap>, IComVtbl<TI0>
         {
             var @this = (ID3D12Device10*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
-            return @this->CreatePlacedResource2((ID3D12Heap*) pHeap.Handle, HeapOffset, in pDesc, InitialLayout, in pOptimizedClearValue, NumCastableFormats, ref pCastableFormats, ref riid, ref ppvResource);
+            return @this->CreatePlacedResource2((ID3D12Heap*) pHeap.Handle, HeapOffset, in pDesc, InitialLayout, in pOptimizedClearValue, NumCastableFormats, in pCastableFormats, ref riid, ref ppvResource);
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreatePlacedResource2<TI0>(ref ID3D12Heap pHeap, ulong HeapOffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc1* pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, uint NumCastableFormats, Silk.NET.DXGI.Format* pCastableFormats, out ComPtr<TI0> ppvResource) where TI0 : unmanaged, IComVtbl<TI0>
+        public readonly unsafe int CreatePlacedResource2<TI0>(ref ID3D12Heap pHeap, ulong HeapOffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc1* pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, uint NumCastableFormats, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.DXGI.Format* pCastableFormats, out ComPtr<TI0> ppvResource) where TI0 : unmanaged, IComVtbl<TI0>
         {
             var @this = (ID3D12Device10*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -20624,16 +20624,16 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreatePlacedResource2<TI0>(ref ID3D12Heap pHeap, ulong HeapOffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc1* pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, uint NumCastableFormats, ref Silk.NET.DXGI.Format pCastableFormats, out ComPtr<TI0> ppvResource) where TI0 : unmanaged, IComVtbl<TI0>
+        public readonly unsafe int CreatePlacedResource2<TI0>(ref ID3D12Heap pHeap, ulong HeapOffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc1* pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, uint NumCastableFormats, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.DXGI.Format pCastableFormats, out ComPtr<TI0> ppvResource) where TI0 : unmanaged, IComVtbl<TI0>
         {
             var @this = (ID3D12Device10*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
             ppvResource = default;
-            return @this->CreatePlacedResource2(ref pHeap, HeapOffset, pDesc, InitialLayout, pOptimizedClearValue, NumCastableFormats, ref pCastableFormats, SilkMarshal.GuidPtrOf<TI0>(), (void**) ppvResource.GetAddressOf());
+            return @this->CreatePlacedResource2(ref pHeap, HeapOffset, pDesc, InitialLayout, pOptimizedClearValue, NumCastableFormats, in pCastableFormats, SilkMarshal.GuidPtrOf<TI0>(), (void**) ppvResource.GetAddressOf());
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreatePlacedResource2<TI0>(ref ID3D12Heap pHeap, ulong HeapOffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc1* pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ClearValue pOptimizedClearValue, uint NumCastableFormats, Silk.NET.DXGI.Format* pCastableFormats, out ComPtr<TI0> ppvResource) where TI0 : unmanaged, IComVtbl<TI0>
+        public readonly unsafe int CreatePlacedResource2<TI0>(ref ID3D12Heap pHeap, ulong HeapOffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc1* pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ClearValue pOptimizedClearValue, uint NumCastableFormats, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.DXGI.Format* pCastableFormats, out ComPtr<TI0> ppvResource) where TI0 : unmanaged, IComVtbl<TI0>
         {
             var @this = (ID3D12Device10*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -20642,16 +20642,16 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreatePlacedResource2<TI0>(ref ID3D12Heap pHeap, ulong HeapOffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc1* pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ClearValue pOptimizedClearValue, uint NumCastableFormats, ref Silk.NET.DXGI.Format pCastableFormats, out ComPtr<TI0> ppvResource) where TI0 : unmanaged, IComVtbl<TI0>
+        public readonly unsafe int CreatePlacedResource2<TI0>(ref ID3D12Heap pHeap, ulong HeapOffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc1* pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ClearValue pOptimizedClearValue, uint NumCastableFormats, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.DXGI.Format pCastableFormats, out ComPtr<TI0> ppvResource) where TI0 : unmanaged, IComVtbl<TI0>
         {
             var @this = (ID3D12Device10*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
             ppvResource = default;
-            return @this->CreatePlacedResource2(ref pHeap, HeapOffset, pDesc, InitialLayout, in pOptimizedClearValue, NumCastableFormats, ref pCastableFormats, SilkMarshal.GuidPtrOf<TI0>(), (void**) ppvResource.GetAddressOf());
+            return @this->CreatePlacedResource2(ref pHeap, HeapOffset, pDesc, InitialLayout, in pOptimizedClearValue, NumCastableFormats, in pCastableFormats, SilkMarshal.GuidPtrOf<TI0>(), (void**) ppvResource.GetAddressOf());
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreatePlacedResource2<TI0>(ref ID3D12Heap pHeap, ulong HeapOffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ResourceDesc1 pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, uint NumCastableFormats, Silk.NET.DXGI.Format* pCastableFormats, out ComPtr<TI0> ppvResource) where TI0 : unmanaged, IComVtbl<TI0>
+        public readonly unsafe int CreatePlacedResource2<TI0>(ref ID3D12Heap pHeap, ulong HeapOffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ResourceDesc1 pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, uint NumCastableFormats, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.DXGI.Format* pCastableFormats, out ComPtr<TI0> ppvResource) where TI0 : unmanaged, IComVtbl<TI0>
         {
             var @this = (ID3D12Device10*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -20660,16 +20660,16 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreatePlacedResource2<TI0>(ref ID3D12Heap pHeap, ulong HeapOffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ResourceDesc1 pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, uint NumCastableFormats, ref Silk.NET.DXGI.Format pCastableFormats, out ComPtr<TI0> ppvResource) where TI0 : unmanaged, IComVtbl<TI0>
+        public readonly unsafe int CreatePlacedResource2<TI0>(ref ID3D12Heap pHeap, ulong HeapOffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ResourceDesc1 pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, uint NumCastableFormats, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.DXGI.Format pCastableFormats, out ComPtr<TI0> ppvResource) where TI0 : unmanaged, IComVtbl<TI0>
         {
             var @this = (ID3D12Device10*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
             ppvResource = default;
-            return @this->CreatePlacedResource2(ref pHeap, HeapOffset, in pDesc, InitialLayout, pOptimizedClearValue, NumCastableFormats, ref pCastableFormats, SilkMarshal.GuidPtrOf<TI0>(), (void**) ppvResource.GetAddressOf());
+            return @this->CreatePlacedResource2(ref pHeap, HeapOffset, in pDesc, InitialLayout, pOptimizedClearValue, NumCastableFormats, in pCastableFormats, SilkMarshal.GuidPtrOf<TI0>(), (void**) ppvResource.GetAddressOf());
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreatePlacedResource2<TI0>(ref ID3D12Heap pHeap, ulong HeapOffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ResourceDesc1 pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ClearValue pOptimizedClearValue, uint NumCastableFormats, Silk.NET.DXGI.Format* pCastableFormats, out ComPtr<TI0> ppvResource) where TI0 : unmanaged, IComVtbl<TI0>
+        public readonly unsafe int CreatePlacedResource2<TI0>(ref ID3D12Heap pHeap, ulong HeapOffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ResourceDesc1 pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ClearValue pOptimizedClearValue, uint NumCastableFormats, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.DXGI.Format* pCastableFormats, out ComPtr<TI0> ppvResource) where TI0 : unmanaged, IComVtbl<TI0>
         {
             var @this = (ID3D12Device10*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -20678,16 +20678,16 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int CreatePlacedResource2<TI0>(ref ID3D12Heap pHeap, ulong HeapOffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ResourceDesc1 pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ClearValue pOptimizedClearValue, uint NumCastableFormats, ref Silk.NET.DXGI.Format pCastableFormats, out ComPtr<TI0> ppvResource) where TI0 : unmanaged, IComVtbl<TI0>
+        public readonly int CreatePlacedResource2<TI0>(ref ID3D12Heap pHeap, ulong HeapOffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ResourceDesc1 pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ClearValue pOptimizedClearValue, uint NumCastableFormats, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.DXGI.Format pCastableFormats, out ComPtr<TI0> ppvResource) where TI0 : unmanaged, IComVtbl<TI0>
         {
             var @this = (ID3D12Device10*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
             ppvResource = default;
-            return @this->CreatePlacedResource2(ref pHeap, HeapOffset, in pDesc, InitialLayout, in pOptimizedClearValue, NumCastableFormats, ref pCastableFormats, SilkMarshal.GuidPtrOf<TI0>(), (void**) ppvResource.GetAddressOf());
+            return @this->CreatePlacedResource2(ref pHeap, HeapOffset, in pDesc, InitialLayout, in pOptimizedClearValue, NumCastableFormats, in pCastableFormats, SilkMarshal.GuidPtrOf<TI0>(), (void**) ppvResource.GetAddressOf());
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateReservedResource2<TI0, TI1>([Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc* pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, ComPtr<TI0> pProtectedSession, uint NumCastableFormats, Silk.NET.DXGI.Format* pCastableFormats, out ComPtr<TI1> ppvResource) where TI0 : unmanaged, IComVtbl<ID3D12ProtectedResourceSession>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<TI1>
+        public readonly unsafe int CreateReservedResource2<TI0, TI1>([Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc* pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, ComPtr<TI0> pProtectedSession, uint NumCastableFormats, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.DXGI.Format* pCastableFormats, out ComPtr<TI1> ppvResource) where TI0 : unmanaged, IComVtbl<ID3D12ProtectedResourceSession>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<TI1>
         {
             var @this = (ID3D12Device10*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -20696,7 +20696,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateReservedResource2<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc* pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, ComPtr<TI0> pProtectedSession, uint NumCastableFormats, Silk.NET.DXGI.Format* pCastableFormats, Guid* riid, ref void* ppvResource) where TI0 : unmanaged, IComVtbl<ID3D12ProtectedResourceSession>, IComVtbl<TI0>
+        public readonly unsafe int CreateReservedResource2<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc* pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, ComPtr<TI0> pProtectedSession, uint NumCastableFormats, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.DXGI.Format* pCastableFormats, Guid* riid, ref void* ppvResource) where TI0 : unmanaged, IComVtbl<ID3D12ProtectedResourceSession>, IComVtbl<TI0>
         {
             var @this = (ID3D12Device10*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -20704,7 +20704,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateReservedResource2<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc* pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, ComPtr<TI0> pProtectedSession, uint NumCastableFormats, Silk.NET.DXGI.Format* pCastableFormats, ref Guid riid, void** ppvResource) where TI0 : unmanaged, IComVtbl<ID3D12ProtectedResourceSession>, IComVtbl<TI0>
+        public readonly unsafe int CreateReservedResource2<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc* pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, ComPtr<TI0> pProtectedSession, uint NumCastableFormats, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.DXGI.Format* pCastableFormats, ref Guid riid, void** ppvResource) where TI0 : unmanaged, IComVtbl<ID3D12ProtectedResourceSession>, IComVtbl<TI0>
         {
             var @this = (ID3D12Device10*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -20712,7 +20712,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateReservedResource2<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc* pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, ComPtr<TI0> pProtectedSession, uint NumCastableFormats, Silk.NET.DXGI.Format* pCastableFormats, ref Guid riid, ref void* ppvResource) where TI0 : unmanaged, IComVtbl<ID3D12ProtectedResourceSession>, IComVtbl<TI0>
+        public readonly unsafe int CreateReservedResource2<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc* pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, ComPtr<TI0> pProtectedSession, uint NumCastableFormats, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.DXGI.Format* pCastableFormats, ref Guid riid, ref void* ppvResource) where TI0 : unmanaged, IComVtbl<ID3D12ProtectedResourceSession>, IComVtbl<TI0>
         {
             var @this = (ID3D12Device10*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -20720,40 +20720,40 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateReservedResource2<TI0, TI1>([Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc* pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, ComPtr<TI0> pProtectedSession, uint NumCastableFormats, ref Silk.NET.DXGI.Format pCastableFormats, out ComPtr<TI1> ppvResource) where TI0 : unmanaged, IComVtbl<ID3D12ProtectedResourceSession>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<TI1>
+        public readonly unsafe int CreateReservedResource2<TI0, TI1>([Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc* pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, ComPtr<TI0> pProtectedSession, uint NumCastableFormats, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.DXGI.Format pCastableFormats, out ComPtr<TI1> ppvResource) where TI0 : unmanaged, IComVtbl<ID3D12ProtectedResourceSession>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<TI1>
         {
             var @this = (ID3D12Device10*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
             ppvResource = default;
-            return @this->CreateReservedResource2(pDesc, InitialLayout, pOptimizedClearValue, (ID3D12ProtectedResourceSession*) pProtectedSession.Handle, NumCastableFormats, ref pCastableFormats, SilkMarshal.GuidPtrOf<TI1>(), (void**) ppvResource.GetAddressOf());
+            return @this->CreateReservedResource2(pDesc, InitialLayout, pOptimizedClearValue, (ID3D12ProtectedResourceSession*) pProtectedSession.Handle, NumCastableFormats, in pCastableFormats, SilkMarshal.GuidPtrOf<TI1>(), (void**) ppvResource.GetAddressOf());
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateReservedResource2<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc* pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, ComPtr<TI0> pProtectedSession, uint NumCastableFormats, ref Silk.NET.DXGI.Format pCastableFormats, Guid* riid, ref void* ppvResource) where TI0 : unmanaged, IComVtbl<ID3D12ProtectedResourceSession>, IComVtbl<TI0>
+        public readonly unsafe int CreateReservedResource2<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc* pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, ComPtr<TI0> pProtectedSession, uint NumCastableFormats, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.DXGI.Format pCastableFormats, Guid* riid, ref void* ppvResource) where TI0 : unmanaged, IComVtbl<ID3D12ProtectedResourceSession>, IComVtbl<TI0>
         {
             var @this = (ID3D12Device10*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
-            return @this->CreateReservedResource2(pDesc, InitialLayout, pOptimizedClearValue, (ID3D12ProtectedResourceSession*) pProtectedSession.Handle, NumCastableFormats, ref pCastableFormats, riid, ref ppvResource);
+            return @this->CreateReservedResource2(pDesc, InitialLayout, pOptimizedClearValue, (ID3D12ProtectedResourceSession*) pProtectedSession.Handle, NumCastableFormats, in pCastableFormats, riid, ref ppvResource);
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateReservedResource2<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc* pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, ComPtr<TI0> pProtectedSession, uint NumCastableFormats, ref Silk.NET.DXGI.Format pCastableFormats, ref Guid riid, void** ppvResource) where TI0 : unmanaged, IComVtbl<ID3D12ProtectedResourceSession>, IComVtbl<TI0>
+        public readonly unsafe int CreateReservedResource2<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc* pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, ComPtr<TI0> pProtectedSession, uint NumCastableFormats, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.DXGI.Format pCastableFormats, ref Guid riid, void** ppvResource) where TI0 : unmanaged, IComVtbl<ID3D12ProtectedResourceSession>, IComVtbl<TI0>
         {
             var @this = (ID3D12Device10*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
-            return @this->CreateReservedResource2(pDesc, InitialLayout, pOptimizedClearValue, (ID3D12ProtectedResourceSession*) pProtectedSession.Handle, NumCastableFormats, ref pCastableFormats, ref riid, ppvResource);
+            return @this->CreateReservedResource2(pDesc, InitialLayout, pOptimizedClearValue, (ID3D12ProtectedResourceSession*) pProtectedSession.Handle, NumCastableFormats, in pCastableFormats, ref riid, ppvResource);
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateReservedResource2<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc* pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, ComPtr<TI0> pProtectedSession, uint NumCastableFormats, ref Silk.NET.DXGI.Format pCastableFormats, ref Guid riid, ref void* ppvResource) where TI0 : unmanaged, IComVtbl<ID3D12ProtectedResourceSession>, IComVtbl<TI0>
+        public readonly unsafe int CreateReservedResource2<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc* pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, ComPtr<TI0> pProtectedSession, uint NumCastableFormats, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.DXGI.Format pCastableFormats, ref Guid riid, ref void* ppvResource) where TI0 : unmanaged, IComVtbl<ID3D12ProtectedResourceSession>, IComVtbl<TI0>
         {
             var @this = (ID3D12Device10*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
-            return @this->CreateReservedResource2(pDesc, InitialLayout, pOptimizedClearValue, (ID3D12ProtectedResourceSession*) pProtectedSession.Handle, NumCastableFormats, ref pCastableFormats, ref riid, ref ppvResource);
+            return @this->CreateReservedResource2(pDesc, InitialLayout, pOptimizedClearValue, (ID3D12ProtectedResourceSession*) pProtectedSession.Handle, NumCastableFormats, in pCastableFormats, ref riid, ref ppvResource);
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateReservedResource2<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc* pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, ref ID3D12ProtectedResourceSession pProtectedSession, uint NumCastableFormats, Silk.NET.DXGI.Format* pCastableFormats, out ComPtr<TI0> ppvResource) where TI0 : unmanaged, IComVtbl<TI0>
+        public readonly unsafe int CreateReservedResource2<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc* pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, ref ID3D12ProtectedResourceSession pProtectedSession, uint NumCastableFormats, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.DXGI.Format* pCastableFormats, out ComPtr<TI0> ppvResource) where TI0 : unmanaged, IComVtbl<TI0>
         {
             var @this = (ID3D12Device10*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -20762,16 +20762,16 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateReservedResource2<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc* pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, ref ID3D12ProtectedResourceSession pProtectedSession, uint NumCastableFormats, ref Silk.NET.DXGI.Format pCastableFormats, out ComPtr<TI0> ppvResource) where TI0 : unmanaged, IComVtbl<TI0>
+        public readonly unsafe int CreateReservedResource2<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc* pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, ref ID3D12ProtectedResourceSession pProtectedSession, uint NumCastableFormats, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.DXGI.Format pCastableFormats, out ComPtr<TI0> ppvResource) where TI0 : unmanaged, IComVtbl<TI0>
         {
             var @this = (ID3D12Device10*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
             ppvResource = default;
-            return @this->CreateReservedResource2(pDesc, InitialLayout, pOptimizedClearValue, ref pProtectedSession, NumCastableFormats, ref pCastableFormats, SilkMarshal.GuidPtrOf<TI0>(), (void**) ppvResource.GetAddressOf());
+            return @this->CreateReservedResource2(pDesc, InitialLayout, pOptimizedClearValue, ref pProtectedSession, NumCastableFormats, in pCastableFormats, SilkMarshal.GuidPtrOf<TI0>(), (void**) ppvResource.GetAddressOf());
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateReservedResource2<TI0, TI1>([Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc* pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ClearValue pOptimizedClearValue, ComPtr<TI0> pProtectedSession, uint NumCastableFormats, Silk.NET.DXGI.Format* pCastableFormats, out ComPtr<TI1> ppvResource) where TI0 : unmanaged, IComVtbl<ID3D12ProtectedResourceSession>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<TI1>
+        public readonly unsafe int CreateReservedResource2<TI0, TI1>([Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc* pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ClearValue pOptimizedClearValue, ComPtr<TI0> pProtectedSession, uint NumCastableFormats, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.DXGI.Format* pCastableFormats, out ComPtr<TI1> ppvResource) where TI0 : unmanaged, IComVtbl<ID3D12ProtectedResourceSession>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<TI1>
         {
             var @this = (ID3D12Device10*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -20780,7 +20780,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateReservedResource2<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc* pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ClearValue pOptimizedClearValue, ComPtr<TI0> pProtectedSession, uint NumCastableFormats, Silk.NET.DXGI.Format* pCastableFormats, Guid* riid, ref void* ppvResource) where TI0 : unmanaged, IComVtbl<ID3D12ProtectedResourceSession>, IComVtbl<TI0>
+        public readonly unsafe int CreateReservedResource2<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc* pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ClearValue pOptimizedClearValue, ComPtr<TI0> pProtectedSession, uint NumCastableFormats, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.DXGI.Format* pCastableFormats, Guid* riid, ref void* ppvResource) where TI0 : unmanaged, IComVtbl<ID3D12ProtectedResourceSession>, IComVtbl<TI0>
         {
             var @this = (ID3D12Device10*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -20788,7 +20788,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateReservedResource2<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc* pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ClearValue pOptimizedClearValue, ComPtr<TI0> pProtectedSession, uint NumCastableFormats, Silk.NET.DXGI.Format* pCastableFormats, ref Guid riid, void** ppvResource) where TI0 : unmanaged, IComVtbl<ID3D12ProtectedResourceSession>, IComVtbl<TI0>
+        public readonly unsafe int CreateReservedResource2<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc* pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ClearValue pOptimizedClearValue, ComPtr<TI0> pProtectedSession, uint NumCastableFormats, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.DXGI.Format* pCastableFormats, ref Guid riid, void** ppvResource) where TI0 : unmanaged, IComVtbl<ID3D12ProtectedResourceSession>, IComVtbl<TI0>
         {
             var @this = (ID3D12Device10*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -20796,7 +20796,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateReservedResource2<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc* pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ClearValue pOptimizedClearValue, ComPtr<TI0> pProtectedSession, uint NumCastableFormats, Silk.NET.DXGI.Format* pCastableFormats, ref Guid riid, ref void* ppvResource) where TI0 : unmanaged, IComVtbl<ID3D12ProtectedResourceSession>, IComVtbl<TI0>
+        public readonly unsafe int CreateReservedResource2<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc* pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ClearValue pOptimizedClearValue, ComPtr<TI0> pProtectedSession, uint NumCastableFormats, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.DXGI.Format* pCastableFormats, ref Guid riid, ref void* ppvResource) where TI0 : unmanaged, IComVtbl<ID3D12ProtectedResourceSession>, IComVtbl<TI0>
         {
             var @this = (ID3D12Device10*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -20804,40 +20804,40 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateReservedResource2<TI0, TI1>([Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc* pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ClearValue pOptimizedClearValue, ComPtr<TI0> pProtectedSession, uint NumCastableFormats, ref Silk.NET.DXGI.Format pCastableFormats, out ComPtr<TI1> ppvResource) where TI0 : unmanaged, IComVtbl<ID3D12ProtectedResourceSession>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<TI1>
+        public readonly unsafe int CreateReservedResource2<TI0, TI1>([Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc* pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ClearValue pOptimizedClearValue, ComPtr<TI0> pProtectedSession, uint NumCastableFormats, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.DXGI.Format pCastableFormats, out ComPtr<TI1> ppvResource) where TI0 : unmanaged, IComVtbl<ID3D12ProtectedResourceSession>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<TI1>
         {
             var @this = (ID3D12Device10*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
             ppvResource = default;
-            return @this->CreateReservedResource2(pDesc, InitialLayout, in pOptimizedClearValue, (ID3D12ProtectedResourceSession*) pProtectedSession.Handle, NumCastableFormats, ref pCastableFormats, SilkMarshal.GuidPtrOf<TI1>(), (void**) ppvResource.GetAddressOf());
+            return @this->CreateReservedResource2(pDesc, InitialLayout, in pOptimizedClearValue, (ID3D12ProtectedResourceSession*) pProtectedSession.Handle, NumCastableFormats, in pCastableFormats, SilkMarshal.GuidPtrOf<TI1>(), (void**) ppvResource.GetAddressOf());
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateReservedResource2<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc* pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ClearValue pOptimizedClearValue, ComPtr<TI0> pProtectedSession, uint NumCastableFormats, ref Silk.NET.DXGI.Format pCastableFormats, Guid* riid, ref void* ppvResource) where TI0 : unmanaged, IComVtbl<ID3D12ProtectedResourceSession>, IComVtbl<TI0>
+        public readonly unsafe int CreateReservedResource2<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc* pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ClearValue pOptimizedClearValue, ComPtr<TI0> pProtectedSession, uint NumCastableFormats, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.DXGI.Format pCastableFormats, Guid* riid, ref void* ppvResource) where TI0 : unmanaged, IComVtbl<ID3D12ProtectedResourceSession>, IComVtbl<TI0>
         {
             var @this = (ID3D12Device10*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
-            return @this->CreateReservedResource2(pDesc, InitialLayout, in pOptimizedClearValue, (ID3D12ProtectedResourceSession*) pProtectedSession.Handle, NumCastableFormats, ref pCastableFormats, riid, ref ppvResource);
+            return @this->CreateReservedResource2(pDesc, InitialLayout, in pOptimizedClearValue, (ID3D12ProtectedResourceSession*) pProtectedSession.Handle, NumCastableFormats, in pCastableFormats, riid, ref ppvResource);
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateReservedResource2<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc* pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ClearValue pOptimizedClearValue, ComPtr<TI0> pProtectedSession, uint NumCastableFormats, ref Silk.NET.DXGI.Format pCastableFormats, ref Guid riid, void** ppvResource) where TI0 : unmanaged, IComVtbl<ID3D12ProtectedResourceSession>, IComVtbl<TI0>
+        public readonly unsafe int CreateReservedResource2<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc* pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ClearValue pOptimizedClearValue, ComPtr<TI0> pProtectedSession, uint NumCastableFormats, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.DXGI.Format pCastableFormats, ref Guid riid, void** ppvResource) where TI0 : unmanaged, IComVtbl<ID3D12ProtectedResourceSession>, IComVtbl<TI0>
         {
             var @this = (ID3D12Device10*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
-            return @this->CreateReservedResource2(pDesc, InitialLayout, in pOptimizedClearValue, (ID3D12ProtectedResourceSession*) pProtectedSession.Handle, NumCastableFormats, ref pCastableFormats, ref riid, ppvResource);
+            return @this->CreateReservedResource2(pDesc, InitialLayout, in pOptimizedClearValue, (ID3D12ProtectedResourceSession*) pProtectedSession.Handle, NumCastableFormats, in pCastableFormats, ref riid, ppvResource);
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateReservedResource2<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc* pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ClearValue pOptimizedClearValue, ComPtr<TI0> pProtectedSession, uint NumCastableFormats, ref Silk.NET.DXGI.Format pCastableFormats, ref Guid riid, ref void* ppvResource) where TI0 : unmanaged, IComVtbl<ID3D12ProtectedResourceSession>, IComVtbl<TI0>
+        public readonly unsafe int CreateReservedResource2<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc* pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ClearValue pOptimizedClearValue, ComPtr<TI0> pProtectedSession, uint NumCastableFormats, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.DXGI.Format pCastableFormats, ref Guid riid, ref void* ppvResource) where TI0 : unmanaged, IComVtbl<ID3D12ProtectedResourceSession>, IComVtbl<TI0>
         {
             var @this = (ID3D12Device10*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
-            return @this->CreateReservedResource2(pDesc, InitialLayout, in pOptimizedClearValue, (ID3D12ProtectedResourceSession*) pProtectedSession.Handle, NumCastableFormats, ref pCastableFormats, ref riid, ref ppvResource);
+            return @this->CreateReservedResource2(pDesc, InitialLayout, in pOptimizedClearValue, (ID3D12ProtectedResourceSession*) pProtectedSession.Handle, NumCastableFormats, in pCastableFormats, ref riid, ref ppvResource);
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateReservedResource2<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc* pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ClearValue pOptimizedClearValue, ref ID3D12ProtectedResourceSession pProtectedSession, uint NumCastableFormats, Silk.NET.DXGI.Format* pCastableFormats, out ComPtr<TI0> ppvResource) where TI0 : unmanaged, IComVtbl<TI0>
+        public readonly unsafe int CreateReservedResource2<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc* pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ClearValue pOptimizedClearValue, ref ID3D12ProtectedResourceSession pProtectedSession, uint NumCastableFormats, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.DXGI.Format* pCastableFormats, out ComPtr<TI0> ppvResource) where TI0 : unmanaged, IComVtbl<TI0>
         {
             var @this = (ID3D12Device10*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -20846,16 +20846,16 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateReservedResource2<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc* pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ClearValue pOptimizedClearValue, ref ID3D12ProtectedResourceSession pProtectedSession, uint NumCastableFormats, ref Silk.NET.DXGI.Format pCastableFormats, out ComPtr<TI0> ppvResource) where TI0 : unmanaged, IComVtbl<TI0>
+        public readonly unsafe int CreateReservedResource2<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc* pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ClearValue pOptimizedClearValue, ref ID3D12ProtectedResourceSession pProtectedSession, uint NumCastableFormats, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.DXGI.Format pCastableFormats, out ComPtr<TI0> ppvResource) where TI0 : unmanaged, IComVtbl<TI0>
         {
             var @this = (ID3D12Device10*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
             ppvResource = default;
-            return @this->CreateReservedResource2(pDesc, InitialLayout, in pOptimizedClearValue, ref pProtectedSession, NumCastableFormats, ref pCastableFormats, SilkMarshal.GuidPtrOf<TI0>(), (void**) ppvResource.GetAddressOf());
+            return @this->CreateReservedResource2(pDesc, InitialLayout, in pOptimizedClearValue, ref pProtectedSession, NumCastableFormats, in pCastableFormats, SilkMarshal.GuidPtrOf<TI0>(), (void**) ppvResource.GetAddressOf());
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateReservedResource2<TI0, TI1>([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ResourceDesc pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, ComPtr<TI0> pProtectedSession, uint NumCastableFormats, Silk.NET.DXGI.Format* pCastableFormats, out ComPtr<TI1> ppvResource) where TI0 : unmanaged, IComVtbl<ID3D12ProtectedResourceSession>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<TI1>
+        public readonly unsafe int CreateReservedResource2<TI0, TI1>([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ResourceDesc pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, ComPtr<TI0> pProtectedSession, uint NumCastableFormats, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.DXGI.Format* pCastableFormats, out ComPtr<TI1> ppvResource) where TI0 : unmanaged, IComVtbl<ID3D12ProtectedResourceSession>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<TI1>
         {
             var @this = (ID3D12Device10*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -20864,7 +20864,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateReservedResource2<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ResourceDesc pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, ComPtr<TI0> pProtectedSession, uint NumCastableFormats, Silk.NET.DXGI.Format* pCastableFormats, Guid* riid, ref void* ppvResource) where TI0 : unmanaged, IComVtbl<ID3D12ProtectedResourceSession>, IComVtbl<TI0>
+        public readonly unsafe int CreateReservedResource2<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ResourceDesc pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, ComPtr<TI0> pProtectedSession, uint NumCastableFormats, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.DXGI.Format* pCastableFormats, Guid* riid, ref void* ppvResource) where TI0 : unmanaged, IComVtbl<ID3D12ProtectedResourceSession>, IComVtbl<TI0>
         {
             var @this = (ID3D12Device10*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -20872,7 +20872,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateReservedResource2<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ResourceDesc pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, ComPtr<TI0> pProtectedSession, uint NumCastableFormats, Silk.NET.DXGI.Format* pCastableFormats, ref Guid riid, void** ppvResource) where TI0 : unmanaged, IComVtbl<ID3D12ProtectedResourceSession>, IComVtbl<TI0>
+        public readonly unsafe int CreateReservedResource2<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ResourceDesc pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, ComPtr<TI0> pProtectedSession, uint NumCastableFormats, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.DXGI.Format* pCastableFormats, ref Guid riid, void** ppvResource) where TI0 : unmanaged, IComVtbl<ID3D12ProtectedResourceSession>, IComVtbl<TI0>
         {
             var @this = (ID3D12Device10*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -20880,7 +20880,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateReservedResource2<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ResourceDesc pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, ComPtr<TI0> pProtectedSession, uint NumCastableFormats, Silk.NET.DXGI.Format* pCastableFormats, ref Guid riid, ref void* ppvResource) where TI0 : unmanaged, IComVtbl<ID3D12ProtectedResourceSession>, IComVtbl<TI0>
+        public readonly unsafe int CreateReservedResource2<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ResourceDesc pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, ComPtr<TI0> pProtectedSession, uint NumCastableFormats, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.DXGI.Format* pCastableFormats, ref Guid riid, ref void* ppvResource) where TI0 : unmanaged, IComVtbl<ID3D12ProtectedResourceSession>, IComVtbl<TI0>
         {
             var @this = (ID3D12Device10*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -20888,40 +20888,40 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateReservedResource2<TI0, TI1>([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ResourceDesc pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, ComPtr<TI0> pProtectedSession, uint NumCastableFormats, ref Silk.NET.DXGI.Format pCastableFormats, out ComPtr<TI1> ppvResource) where TI0 : unmanaged, IComVtbl<ID3D12ProtectedResourceSession>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<TI1>
+        public readonly unsafe int CreateReservedResource2<TI0, TI1>([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ResourceDesc pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, ComPtr<TI0> pProtectedSession, uint NumCastableFormats, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.DXGI.Format pCastableFormats, out ComPtr<TI1> ppvResource) where TI0 : unmanaged, IComVtbl<ID3D12ProtectedResourceSession>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<TI1>
         {
             var @this = (ID3D12Device10*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
             ppvResource = default;
-            return @this->CreateReservedResource2(in pDesc, InitialLayout, pOptimizedClearValue, (ID3D12ProtectedResourceSession*) pProtectedSession.Handle, NumCastableFormats, ref pCastableFormats, SilkMarshal.GuidPtrOf<TI1>(), (void**) ppvResource.GetAddressOf());
+            return @this->CreateReservedResource2(in pDesc, InitialLayout, pOptimizedClearValue, (ID3D12ProtectedResourceSession*) pProtectedSession.Handle, NumCastableFormats, in pCastableFormats, SilkMarshal.GuidPtrOf<TI1>(), (void**) ppvResource.GetAddressOf());
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateReservedResource2<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ResourceDesc pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, ComPtr<TI0> pProtectedSession, uint NumCastableFormats, ref Silk.NET.DXGI.Format pCastableFormats, Guid* riid, ref void* ppvResource) where TI0 : unmanaged, IComVtbl<ID3D12ProtectedResourceSession>, IComVtbl<TI0>
+        public readonly unsafe int CreateReservedResource2<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ResourceDesc pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, ComPtr<TI0> pProtectedSession, uint NumCastableFormats, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.DXGI.Format pCastableFormats, Guid* riid, ref void* ppvResource) where TI0 : unmanaged, IComVtbl<ID3D12ProtectedResourceSession>, IComVtbl<TI0>
         {
             var @this = (ID3D12Device10*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
-            return @this->CreateReservedResource2(in pDesc, InitialLayout, pOptimizedClearValue, (ID3D12ProtectedResourceSession*) pProtectedSession.Handle, NumCastableFormats, ref pCastableFormats, riid, ref ppvResource);
+            return @this->CreateReservedResource2(in pDesc, InitialLayout, pOptimizedClearValue, (ID3D12ProtectedResourceSession*) pProtectedSession.Handle, NumCastableFormats, in pCastableFormats, riid, ref ppvResource);
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateReservedResource2<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ResourceDesc pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, ComPtr<TI0> pProtectedSession, uint NumCastableFormats, ref Silk.NET.DXGI.Format pCastableFormats, ref Guid riid, void** ppvResource) where TI0 : unmanaged, IComVtbl<ID3D12ProtectedResourceSession>, IComVtbl<TI0>
+        public readonly unsafe int CreateReservedResource2<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ResourceDesc pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, ComPtr<TI0> pProtectedSession, uint NumCastableFormats, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.DXGI.Format pCastableFormats, ref Guid riid, void** ppvResource) where TI0 : unmanaged, IComVtbl<ID3D12ProtectedResourceSession>, IComVtbl<TI0>
         {
             var @this = (ID3D12Device10*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
-            return @this->CreateReservedResource2(in pDesc, InitialLayout, pOptimizedClearValue, (ID3D12ProtectedResourceSession*) pProtectedSession.Handle, NumCastableFormats, ref pCastableFormats, ref riid, ppvResource);
+            return @this->CreateReservedResource2(in pDesc, InitialLayout, pOptimizedClearValue, (ID3D12ProtectedResourceSession*) pProtectedSession.Handle, NumCastableFormats, in pCastableFormats, ref riid, ppvResource);
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateReservedResource2<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ResourceDesc pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, ComPtr<TI0> pProtectedSession, uint NumCastableFormats, ref Silk.NET.DXGI.Format pCastableFormats, ref Guid riid, ref void* ppvResource) where TI0 : unmanaged, IComVtbl<ID3D12ProtectedResourceSession>, IComVtbl<TI0>
+        public readonly unsafe int CreateReservedResource2<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ResourceDesc pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, ComPtr<TI0> pProtectedSession, uint NumCastableFormats, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.DXGI.Format pCastableFormats, ref Guid riid, ref void* ppvResource) where TI0 : unmanaged, IComVtbl<ID3D12ProtectedResourceSession>, IComVtbl<TI0>
         {
             var @this = (ID3D12Device10*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
-            return @this->CreateReservedResource2(in pDesc, InitialLayout, pOptimizedClearValue, (ID3D12ProtectedResourceSession*) pProtectedSession.Handle, NumCastableFormats, ref pCastableFormats, ref riid, ref ppvResource);
+            return @this->CreateReservedResource2(in pDesc, InitialLayout, pOptimizedClearValue, (ID3D12ProtectedResourceSession*) pProtectedSession.Handle, NumCastableFormats, in pCastableFormats, ref riid, ref ppvResource);
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateReservedResource2<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ResourceDesc pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, ref ID3D12ProtectedResourceSession pProtectedSession, uint NumCastableFormats, Silk.NET.DXGI.Format* pCastableFormats, out ComPtr<TI0> ppvResource) where TI0 : unmanaged, IComVtbl<TI0>
+        public readonly unsafe int CreateReservedResource2<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ResourceDesc pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, ref ID3D12ProtectedResourceSession pProtectedSession, uint NumCastableFormats, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.DXGI.Format* pCastableFormats, out ComPtr<TI0> ppvResource) where TI0 : unmanaged, IComVtbl<TI0>
         {
             var @this = (ID3D12Device10*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -20930,16 +20930,16 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateReservedResource2<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ResourceDesc pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, ref ID3D12ProtectedResourceSession pProtectedSession, uint NumCastableFormats, ref Silk.NET.DXGI.Format pCastableFormats, out ComPtr<TI0> ppvResource) where TI0 : unmanaged, IComVtbl<TI0>
+        public readonly unsafe int CreateReservedResource2<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ResourceDesc pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, ref ID3D12ProtectedResourceSession pProtectedSession, uint NumCastableFormats, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.DXGI.Format pCastableFormats, out ComPtr<TI0> ppvResource) where TI0 : unmanaged, IComVtbl<TI0>
         {
             var @this = (ID3D12Device10*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
             ppvResource = default;
-            return @this->CreateReservedResource2(in pDesc, InitialLayout, pOptimizedClearValue, ref pProtectedSession, NumCastableFormats, ref pCastableFormats, SilkMarshal.GuidPtrOf<TI0>(), (void**) ppvResource.GetAddressOf());
+            return @this->CreateReservedResource2(in pDesc, InitialLayout, pOptimizedClearValue, ref pProtectedSession, NumCastableFormats, in pCastableFormats, SilkMarshal.GuidPtrOf<TI0>(), (void**) ppvResource.GetAddressOf());
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateReservedResource2<TI0, TI1>([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ResourceDesc pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ClearValue pOptimizedClearValue, ComPtr<TI0> pProtectedSession, uint NumCastableFormats, Silk.NET.DXGI.Format* pCastableFormats, out ComPtr<TI1> ppvResource) where TI0 : unmanaged, IComVtbl<ID3D12ProtectedResourceSession>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<TI1>
+        public readonly unsafe int CreateReservedResource2<TI0, TI1>([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ResourceDesc pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ClearValue pOptimizedClearValue, ComPtr<TI0> pProtectedSession, uint NumCastableFormats, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.DXGI.Format* pCastableFormats, out ComPtr<TI1> ppvResource) where TI0 : unmanaged, IComVtbl<ID3D12ProtectedResourceSession>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<TI1>
         {
             var @this = (ID3D12Device10*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -20948,7 +20948,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateReservedResource2<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ResourceDesc pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ClearValue pOptimizedClearValue, ComPtr<TI0> pProtectedSession, uint NumCastableFormats, Silk.NET.DXGI.Format* pCastableFormats, Guid* riid, ref void* ppvResource) where TI0 : unmanaged, IComVtbl<ID3D12ProtectedResourceSession>, IComVtbl<TI0>
+        public readonly unsafe int CreateReservedResource2<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ResourceDesc pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ClearValue pOptimizedClearValue, ComPtr<TI0> pProtectedSession, uint NumCastableFormats, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.DXGI.Format* pCastableFormats, Guid* riid, ref void* ppvResource) where TI0 : unmanaged, IComVtbl<ID3D12ProtectedResourceSession>, IComVtbl<TI0>
         {
             var @this = (ID3D12Device10*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -20956,7 +20956,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateReservedResource2<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ResourceDesc pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ClearValue pOptimizedClearValue, ComPtr<TI0> pProtectedSession, uint NumCastableFormats, Silk.NET.DXGI.Format* pCastableFormats, ref Guid riid, void** ppvResource) where TI0 : unmanaged, IComVtbl<ID3D12ProtectedResourceSession>, IComVtbl<TI0>
+        public readonly unsafe int CreateReservedResource2<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ResourceDesc pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ClearValue pOptimizedClearValue, ComPtr<TI0> pProtectedSession, uint NumCastableFormats, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.DXGI.Format* pCastableFormats, ref Guid riid, void** ppvResource) where TI0 : unmanaged, IComVtbl<ID3D12ProtectedResourceSession>, IComVtbl<TI0>
         {
             var @this = (ID3D12Device10*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -20964,7 +20964,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateReservedResource2<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ResourceDesc pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ClearValue pOptimizedClearValue, ComPtr<TI0> pProtectedSession, uint NumCastableFormats, Silk.NET.DXGI.Format* pCastableFormats, ref Guid riid, ref void* ppvResource) where TI0 : unmanaged, IComVtbl<ID3D12ProtectedResourceSession>, IComVtbl<TI0>
+        public readonly unsafe int CreateReservedResource2<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ResourceDesc pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ClearValue pOptimizedClearValue, ComPtr<TI0> pProtectedSession, uint NumCastableFormats, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.DXGI.Format* pCastableFormats, ref Guid riid, ref void* ppvResource) where TI0 : unmanaged, IComVtbl<ID3D12ProtectedResourceSession>, IComVtbl<TI0>
         {
             var @this = (ID3D12Device10*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -20972,40 +20972,40 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int CreateReservedResource2<TI0, TI1>([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ResourceDesc pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ClearValue pOptimizedClearValue, ComPtr<TI0> pProtectedSession, uint NumCastableFormats, ref Silk.NET.DXGI.Format pCastableFormats, out ComPtr<TI1> ppvResource) where TI0 : unmanaged, IComVtbl<ID3D12ProtectedResourceSession>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<TI1>
+        public readonly int CreateReservedResource2<TI0, TI1>([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ResourceDesc pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ClearValue pOptimizedClearValue, ComPtr<TI0> pProtectedSession, uint NumCastableFormats, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.DXGI.Format pCastableFormats, out ComPtr<TI1> ppvResource) where TI0 : unmanaged, IComVtbl<ID3D12ProtectedResourceSession>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<TI1>
         {
             var @this = (ID3D12Device10*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
             ppvResource = default;
-            return @this->CreateReservedResource2(in pDesc, InitialLayout, in pOptimizedClearValue, (ID3D12ProtectedResourceSession*) pProtectedSession.Handle, NumCastableFormats, ref pCastableFormats, SilkMarshal.GuidPtrOf<TI1>(), (void**) ppvResource.GetAddressOf());
+            return @this->CreateReservedResource2(in pDesc, InitialLayout, in pOptimizedClearValue, (ID3D12ProtectedResourceSession*) pProtectedSession.Handle, NumCastableFormats, in pCastableFormats, SilkMarshal.GuidPtrOf<TI1>(), (void**) ppvResource.GetAddressOf());
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateReservedResource2<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ResourceDesc pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ClearValue pOptimizedClearValue, ComPtr<TI0> pProtectedSession, uint NumCastableFormats, ref Silk.NET.DXGI.Format pCastableFormats, Guid* riid, ref void* ppvResource) where TI0 : unmanaged, IComVtbl<ID3D12ProtectedResourceSession>, IComVtbl<TI0>
+        public readonly unsafe int CreateReservedResource2<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ResourceDesc pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ClearValue pOptimizedClearValue, ComPtr<TI0> pProtectedSession, uint NumCastableFormats, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.DXGI.Format pCastableFormats, Guid* riid, ref void* ppvResource) where TI0 : unmanaged, IComVtbl<ID3D12ProtectedResourceSession>, IComVtbl<TI0>
         {
             var @this = (ID3D12Device10*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
-            return @this->CreateReservedResource2(in pDesc, InitialLayout, in pOptimizedClearValue, (ID3D12ProtectedResourceSession*) pProtectedSession.Handle, NumCastableFormats, ref pCastableFormats, riid, ref ppvResource);
+            return @this->CreateReservedResource2(in pDesc, InitialLayout, in pOptimizedClearValue, (ID3D12ProtectedResourceSession*) pProtectedSession.Handle, NumCastableFormats, in pCastableFormats, riid, ref ppvResource);
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateReservedResource2<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ResourceDesc pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ClearValue pOptimizedClearValue, ComPtr<TI0> pProtectedSession, uint NumCastableFormats, ref Silk.NET.DXGI.Format pCastableFormats, ref Guid riid, void** ppvResource) where TI0 : unmanaged, IComVtbl<ID3D12ProtectedResourceSession>, IComVtbl<TI0>
+        public readonly unsafe int CreateReservedResource2<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ResourceDesc pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ClearValue pOptimizedClearValue, ComPtr<TI0> pProtectedSession, uint NumCastableFormats, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.DXGI.Format pCastableFormats, ref Guid riid, void** ppvResource) where TI0 : unmanaged, IComVtbl<ID3D12ProtectedResourceSession>, IComVtbl<TI0>
         {
             var @this = (ID3D12Device10*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
-            return @this->CreateReservedResource2(in pDesc, InitialLayout, in pOptimizedClearValue, (ID3D12ProtectedResourceSession*) pProtectedSession.Handle, NumCastableFormats, ref pCastableFormats, ref riid, ppvResource);
+            return @this->CreateReservedResource2(in pDesc, InitialLayout, in pOptimizedClearValue, (ID3D12ProtectedResourceSession*) pProtectedSession.Handle, NumCastableFormats, in pCastableFormats, ref riid, ppvResource);
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateReservedResource2<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ResourceDesc pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ClearValue pOptimizedClearValue, ComPtr<TI0> pProtectedSession, uint NumCastableFormats, ref Silk.NET.DXGI.Format pCastableFormats, ref Guid riid, ref void* ppvResource) where TI0 : unmanaged, IComVtbl<ID3D12ProtectedResourceSession>, IComVtbl<TI0>
+        public readonly unsafe int CreateReservedResource2<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ResourceDesc pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ClearValue pOptimizedClearValue, ComPtr<TI0> pProtectedSession, uint NumCastableFormats, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.DXGI.Format pCastableFormats, ref Guid riid, ref void* ppvResource) where TI0 : unmanaged, IComVtbl<ID3D12ProtectedResourceSession>, IComVtbl<TI0>
         {
             var @this = (ID3D12Device10*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
-            return @this->CreateReservedResource2(in pDesc, InitialLayout, in pOptimizedClearValue, (ID3D12ProtectedResourceSession*) pProtectedSession.Handle, NumCastableFormats, ref pCastableFormats, ref riid, ref ppvResource);
+            return @this->CreateReservedResource2(in pDesc, InitialLayout, in pOptimizedClearValue, (ID3D12ProtectedResourceSession*) pProtectedSession.Handle, NumCastableFormats, in pCastableFormats, ref riid, ref ppvResource);
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateReservedResource2<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ResourceDesc pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ClearValue pOptimizedClearValue, ref ID3D12ProtectedResourceSession pProtectedSession, uint NumCastableFormats, Silk.NET.DXGI.Format* pCastableFormats, out ComPtr<TI0> ppvResource) where TI0 : unmanaged, IComVtbl<TI0>
+        public readonly unsafe int CreateReservedResource2<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ResourceDesc pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ClearValue pOptimizedClearValue, ref ID3D12ProtectedResourceSession pProtectedSession, uint NumCastableFormats, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.DXGI.Format* pCastableFormats, out ComPtr<TI0> ppvResource) where TI0 : unmanaged, IComVtbl<TI0>
         {
             var @this = (ID3D12Device10*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -21014,12 +21014,12 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int CreateReservedResource2<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ResourceDesc pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ClearValue pOptimizedClearValue, ref ID3D12ProtectedResourceSession pProtectedSession, uint NumCastableFormats, ref Silk.NET.DXGI.Format pCastableFormats, out ComPtr<TI0> ppvResource) where TI0 : unmanaged, IComVtbl<TI0>
+        public readonly int CreateReservedResource2<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ResourceDesc pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ClearValue pOptimizedClearValue, ref ID3D12ProtectedResourceSession pProtectedSession, uint NumCastableFormats, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.DXGI.Format pCastableFormats, out ComPtr<TI0> ppvResource) where TI0 : unmanaged, IComVtbl<TI0>
         {
             var @this = (ID3D12Device10*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
             ppvResource = default;
-            return @this->CreateReservedResource2(in pDesc, InitialLayout, in pOptimizedClearValue, ref pProtectedSession, NumCastableFormats, ref pCastableFormats, SilkMarshal.GuidPtrOf<TI0>(), (void**) ppvResource.GetAddressOf());
+            return @this->CreateReservedResource2(in pDesc, InitialLayout, in pOptimizedClearValue, ref pProtectedSession, NumCastableFormats, in pCastableFormats, SilkMarshal.GuidPtrOf<TI0>(), (void**) ppvResource.GetAddressOf());
         }
 
         /// <summary>To be documented.</summary>
@@ -22193,7 +22193,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe ComPtr<TI1> CreateCommittedResource3<TI0, TI1>([Flow(Silk.NET.Core.Native.FlowDirection.In)] HeapProperties* pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc1* pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, ComPtr<TI0> pProtectedSession, uint NumCastableFormats, Silk.NET.DXGI.Format* pCastableFormats) where TI0 : unmanaged, IComVtbl<ID3D12ProtectedResourceSession>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<TI1>
+        public readonly unsafe ComPtr<TI1> CreateCommittedResource3<TI0, TI1>([Flow(Silk.NET.Core.Native.FlowDirection.In)] HeapProperties* pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc1* pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, ComPtr<TI0> pProtectedSession, uint NumCastableFormats, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.DXGI.Format* pCastableFormats) where TI0 : unmanaged, IComVtbl<ID3D12ProtectedResourceSession>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<TI1>
         {
             var @this = (ID3D12Device10*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // NonKhrReturnTypeOverloader
@@ -22202,16 +22202,16 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe ComPtr<TI1> CreateCommittedResource3<TI0, TI1>([Flow(Silk.NET.Core.Native.FlowDirection.In)] HeapProperties* pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc1* pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, ComPtr<TI0> pProtectedSession, uint NumCastableFormats, ref Silk.NET.DXGI.Format pCastableFormats) where TI0 : unmanaged, IComVtbl<ID3D12ProtectedResourceSession>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<TI1>
+        public readonly unsafe ComPtr<TI1> CreateCommittedResource3<TI0, TI1>([Flow(Silk.NET.Core.Native.FlowDirection.In)] HeapProperties* pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc1* pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, ComPtr<TI0> pProtectedSession, uint NumCastableFormats, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.DXGI.Format pCastableFormats) where TI0 : unmanaged, IComVtbl<ID3D12ProtectedResourceSession>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<TI1>
         {
             var @this = (ID3D12Device10*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // NonKhrReturnTypeOverloader
-            SilkMarshal.ThrowHResult(@this->CreateCommittedResource3(pHeapProperties, HeapFlags, pDesc, InitialLayout, pOptimizedClearValue, pProtectedSession, NumCastableFormats, ref pCastableFormats, out ComPtr<TI1> silkRet));
+            SilkMarshal.ThrowHResult(@this->CreateCommittedResource3(pHeapProperties, HeapFlags, pDesc, InitialLayout, pOptimizedClearValue, pProtectedSession, NumCastableFormats, in pCastableFormats, out ComPtr<TI1> silkRet));
             return silkRet;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe ComPtr<TI0> CreateCommittedResource3<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] HeapProperties* pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc1* pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, ref ID3D12ProtectedResourceSession pProtectedSession, uint NumCastableFormats, Silk.NET.DXGI.Format* pCastableFormats) where TI0 : unmanaged, IComVtbl<TI0>
+        public readonly unsafe ComPtr<TI0> CreateCommittedResource3<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] HeapProperties* pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc1* pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, ref ID3D12ProtectedResourceSession pProtectedSession, uint NumCastableFormats, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.DXGI.Format* pCastableFormats) where TI0 : unmanaged, IComVtbl<TI0>
         {
             var @this = (ID3D12Device10*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // NonKhrReturnTypeOverloader
@@ -22220,16 +22220,16 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe ComPtr<TI0> CreateCommittedResource3<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] HeapProperties* pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc1* pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, ref ID3D12ProtectedResourceSession pProtectedSession, uint NumCastableFormats, ref Silk.NET.DXGI.Format pCastableFormats) where TI0 : unmanaged, IComVtbl<TI0>
+        public readonly unsafe ComPtr<TI0> CreateCommittedResource3<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] HeapProperties* pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc1* pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, ref ID3D12ProtectedResourceSession pProtectedSession, uint NumCastableFormats, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.DXGI.Format pCastableFormats) where TI0 : unmanaged, IComVtbl<TI0>
         {
             var @this = (ID3D12Device10*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // NonKhrReturnTypeOverloader
-            SilkMarshal.ThrowHResult(@this->CreateCommittedResource3(pHeapProperties, HeapFlags, pDesc, InitialLayout, pOptimizedClearValue, ref pProtectedSession, NumCastableFormats, ref pCastableFormats, out ComPtr<TI0> silkRet));
+            SilkMarshal.ThrowHResult(@this->CreateCommittedResource3(pHeapProperties, HeapFlags, pDesc, InitialLayout, pOptimizedClearValue, ref pProtectedSession, NumCastableFormats, in pCastableFormats, out ComPtr<TI0> silkRet));
             return silkRet;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe ComPtr<TI1> CreateCommittedResource3<TI0, TI1>([Flow(Silk.NET.Core.Native.FlowDirection.In)] HeapProperties* pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc1* pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ClearValue pOptimizedClearValue, ComPtr<TI0> pProtectedSession, uint NumCastableFormats, Silk.NET.DXGI.Format* pCastableFormats) where TI0 : unmanaged, IComVtbl<ID3D12ProtectedResourceSession>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<TI1>
+        public readonly unsafe ComPtr<TI1> CreateCommittedResource3<TI0, TI1>([Flow(Silk.NET.Core.Native.FlowDirection.In)] HeapProperties* pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc1* pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ClearValue pOptimizedClearValue, ComPtr<TI0> pProtectedSession, uint NumCastableFormats, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.DXGI.Format* pCastableFormats) where TI0 : unmanaged, IComVtbl<ID3D12ProtectedResourceSession>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<TI1>
         {
             var @this = (ID3D12Device10*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // NonKhrReturnTypeOverloader
@@ -22238,16 +22238,16 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe ComPtr<TI1> CreateCommittedResource3<TI0, TI1>([Flow(Silk.NET.Core.Native.FlowDirection.In)] HeapProperties* pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc1* pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ClearValue pOptimizedClearValue, ComPtr<TI0> pProtectedSession, uint NumCastableFormats, ref Silk.NET.DXGI.Format pCastableFormats) where TI0 : unmanaged, IComVtbl<ID3D12ProtectedResourceSession>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<TI1>
+        public readonly unsafe ComPtr<TI1> CreateCommittedResource3<TI0, TI1>([Flow(Silk.NET.Core.Native.FlowDirection.In)] HeapProperties* pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc1* pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ClearValue pOptimizedClearValue, ComPtr<TI0> pProtectedSession, uint NumCastableFormats, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.DXGI.Format pCastableFormats) where TI0 : unmanaged, IComVtbl<ID3D12ProtectedResourceSession>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<TI1>
         {
             var @this = (ID3D12Device10*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // NonKhrReturnTypeOverloader
-            SilkMarshal.ThrowHResult(@this->CreateCommittedResource3(pHeapProperties, HeapFlags, pDesc, InitialLayout, in pOptimizedClearValue, pProtectedSession, NumCastableFormats, ref pCastableFormats, out ComPtr<TI1> silkRet));
+            SilkMarshal.ThrowHResult(@this->CreateCommittedResource3(pHeapProperties, HeapFlags, pDesc, InitialLayout, in pOptimizedClearValue, pProtectedSession, NumCastableFormats, in pCastableFormats, out ComPtr<TI1> silkRet));
             return silkRet;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe ComPtr<TI0> CreateCommittedResource3<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] HeapProperties* pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc1* pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ClearValue pOptimizedClearValue, ref ID3D12ProtectedResourceSession pProtectedSession, uint NumCastableFormats, Silk.NET.DXGI.Format* pCastableFormats) where TI0 : unmanaged, IComVtbl<TI0>
+        public readonly unsafe ComPtr<TI0> CreateCommittedResource3<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] HeapProperties* pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc1* pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ClearValue pOptimizedClearValue, ref ID3D12ProtectedResourceSession pProtectedSession, uint NumCastableFormats, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.DXGI.Format* pCastableFormats) where TI0 : unmanaged, IComVtbl<TI0>
         {
             var @this = (ID3D12Device10*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // NonKhrReturnTypeOverloader
@@ -22256,16 +22256,16 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe ComPtr<TI0> CreateCommittedResource3<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] HeapProperties* pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc1* pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ClearValue pOptimizedClearValue, ref ID3D12ProtectedResourceSession pProtectedSession, uint NumCastableFormats, ref Silk.NET.DXGI.Format pCastableFormats) where TI0 : unmanaged, IComVtbl<TI0>
+        public readonly unsafe ComPtr<TI0> CreateCommittedResource3<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] HeapProperties* pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc1* pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ClearValue pOptimizedClearValue, ref ID3D12ProtectedResourceSession pProtectedSession, uint NumCastableFormats, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.DXGI.Format pCastableFormats) where TI0 : unmanaged, IComVtbl<TI0>
         {
             var @this = (ID3D12Device10*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // NonKhrReturnTypeOverloader
-            SilkMarshal.ThrowHResult(@this->CreateCommittedResource3(pHeapProperties, HeapFlags, pDesc, InitialLayout, in pOptimizedClearValue, ref pProtectedSession, NumCastableFormats, ref pCastableFormats, out ComPtr<TI0> silkRet));
+            SilkMarshal.ThrowHResult(@this->CreateCommittedResource3(pHeapProperties, HeapFlags, pDesc, InitialLayout, in pOptimizedClearValue, ref pProtectedSession, NumCastableFormats, in pCastableFormats, out ComPtr<TI0> silkRet));
             return silkRet;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe ComPtr<TI1> CreateCommittedResource3<TI0, TI1>([Flow(Silk.NET.Core.Native.FlowDirection.In)] HeapProperties* pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ResourceDesc1 pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, ComPtr<TI0> pProtectedSession, uint NumCastableFormats, Silk.NET.DXGI.Format* pCastableFormats) where TI0 : unmanaged, IComVtbl<ID3D12ProtectedResourceSession>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<TI1>
+        public readonly unsafe ComPtr<TI1> CreateCommittedResource3<TI0, TI1>([Flow(Silk.NET.Core.Native.FlowDirection.In)] HeapProperties* pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ResourceDesc1 pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, ComPtr<TI0> pProtectedSession, uint NumCastableFormats, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.DXGI.Format* pCastableFormats) where TI0 : unmanaged, IComVtbl<ID3D12ProtectedResourceSession>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<TI1>
         {
             var @this = (ID3D12Device10*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // NonKhrReturnTypeOverloader
@@ -22274,16 +22274,16 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe ComPtr<TI1> CreateCommittedResource3<TI0, TI1>([Flow(Silk.NET.Core.Native.FlowDirection.In)] HeapProperties* pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ResourceDesc1 pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, ComPtr<TI0> pProtectedSession, uint NumCastableFormats, ref Silk.NET.DXGI.Format pCastableFormats) where TI0 : unmanaged, IComVtbl<ID3D12ProtectedResourceSession>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<TI1>
+        public readonly unsafe ComPtr<TI1> CreateCommittedResource3<TI0, TI1>([Flow(Silk.NET.Core.Native.FlowDirection.In)] HeapProperties* pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ResourceDesc1 pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, ComPtr<TI0> pProtectedSession, uint NumCastableFormats, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.DXGI.Format pCastableFormats) where TI0 : unmanaged, IComVtbl<ID3D12ProtectedResourceSession>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<TI1>
         {
             var @this = (ID3D12Device10*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // NonKhrReturnTypeOverloader
-            SilkMarshal.ThrowHResult(@this->CreateCommittedResource3(pHeapProperties, HeapFlags, in pDesc, InitialLayout, pOptimizedClearValue, pProtectedSession, NumCastableFormats, ref pCastableFormats, out ComPtr<TI1> silkRet));
+            SilkMarshal.ThrowHResult(@this->CreateCommittedResource3(pHeapProperties, HeapFlags, in pDesc, InitialLayout, pOptimizedClearValue, pProtectedSession, NumCastableFormats, in pCastableFormats, out ComPtr<TI1> silkRet));
             return silkRet;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe ComPtr<TI0> CreateCommittedResource3<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] HeapProperties* pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ResourceDesc1 pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, ref ID3D12ProtectedResourceSession pProtectedSession, uint NumCastableFormats, Silk.NET.DXGI.Format* pCastableFormats) where TI0 : unmanaged, IComVtbl<TI0>
+        public readonly unsafe ComPtr<TI0> CreateCommittedResource3<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] HeapProperties* pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ResourceDesc1 pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, ref ID3D12ProtectedResourceSession pProtectedSession, uint NumCastableFormats, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.DXGI.Format* pCastableFormats) where TI0 : unmanaged, IComVtbl<TI0>
         {
             var @this = (ID3D12Device10*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // NonKhrReturnTypeOverloader
@@ -22292,16 +22292,16 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe ComPtr<TI0> CreateCommittedResource3<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] HeapProperties* pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ResourceDesc1 pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, ref ID3D12ProtectedResourceSession pProtectedSession, uint NumCastableFormats, ref Silk.NET.DXGI.Format pCastableFormats) where TI0 : unmanaged, IComVtbl<TI0>
+        public readonly unsafe ComPtr<TI0> CreateCommittedResource3<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] HeapProperties* pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ResourceDesc1 pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, ref ID3D12ProtectedResourceSession pProtectedSession, uint NumCastableFormats, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.DXGI.Format pCastableFormats) where TI0 : unmanaged, IComVtbl<TI0>
         {
             var @this = (ID3D12Device10*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // NonKhrReturnTypeOverloader
-            SilkMarshal.ThrowHResult(@this->CreateCommittedResource3(pHeapProperties, HeapFlags, in pDesc, InitialLayout, pOptimizedClearValue, ref pProtectedSession, NumCastableFormats, ref pCastableFormats, out ComPtr<TI0> silkRet));
+            SilkMarshal.ThrowHResult(@this->CreateCommittedResource3(pHeapProperties, HeapFlags, in pDesc, InitialLayout, pOptimizedClearValue, ref pProtectedSession, NumCastableFormats, in pCastableFormats, out ComPtr<TI0> silkRet));
             return silkRet;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe ComPtr<TI1> CreateCommittedResource3<TI0, TI1>([Flow(Silk.NET.Core.Native.FlowDirection.In)] HeapProperties* pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ResourceDesc1 pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ClearValue pOptimizedClearValue, ComPtr<TI0> pProtectedSession, uint NumCastableFormats, Silk.NET.DXGI.Format* pCastableFormats) where TI0 : unmanaged, IComVtbl<ID3D12ProtectedResourceSession>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<TI1>
+        public readonly unsafe ComPtr<TI1> CreateCommittedResource3<TI0, TI1>([Flow(Silk.NET.Core.Native.FlowDirection.In)] HeapProperties* pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ResourceDesc1 pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ClearValue pOptimizedClearValue, ComPtr<TI0> pProtectedSession, uint NumCastableFormats, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.DXGI.Format* pCastableFormats) where TI0 : unmanaged, IComVtbl<ID3D12ProtectedResourceSession>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<TI1>
         {
             var @this = (ID3D12Device10*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // NonKhrReturnTypeOverloader
@@ -22310,16 +22310,16 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe ComPtr<TI1> CreateCommittedResource3<TI0, TI1>([Flow(Silk.NET.Core.Native.FlowDirection.In)] HeapProperties* pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ResourceDesc1 pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ClearValue pOptimizedClearValue, ComPtr<TI0> pProtectedSession, uint NumCastableFormats, ref Silk.NET.DXGI.Format pCastableFormats) where TI0 : unmanaged, IComVtbl<ID3D12ProtectedResourceSession>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<TI1>
+        public readonly unsafe ComPtr<TI1> CreateCommittedResource3<TI0, TI1>([Flow(Silk.NET.Core.Native.FlowDirection.In)] HeapProperties* pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ResourceDesc1 pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ClearValue pOptimizedClearValue, ComPtr<TI0> pProtectedSession, uint NumCastableFormats, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.DXGI.Format pCastableFormats) where TI0 : unmanaged, IComVtbl<ID3D12ProtectedResourceSession>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<TI1>
         {
             var @this = (ID3D12Device10*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // NonKhrReturnTypeOverloader
-            SilkMarshal.ThrowHResult(@this->CreateCommittedResource3(pHeapProperties, HeapFlags, in pDesc, InitialLayout, in pOptimizedClearValue, pProtectedSession, NumCastableFormats, ref pCastableFormats, out ComPtr<TI1> silkRet));
+            SilkMarshal.ThrowHResult(@this->CreateCommittedResource3(pHeapProperties, HeapFlags, in pDesc, InitialLayout, in pOptimizedClearValue, pProtectedSession, NumCastableFormats, in pCastableFormats, out ComPtr<TI1> silkRet));
             return silkRet;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe ComPtr<TI0> CreateCommittedResource3<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] HeapProperties* pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ResourceDesc1 pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ClearValue pOptimizedClearValue, ref ID3D12ProtectedResourceSession pProtectedSession, uint NumCastableFormats, Silk.NET.DXGI.Format* pCastableFormats) where TI0 : unmanaged, IComVtbl<TI0>
+        public readonly unsafe ComPtr<TI0> CreateCommittedResource3<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] HeapProperties* pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ResourceDesc1 pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ClearValue pOptimizedClearValue, ref ID3D12ProtectedResourceSession pProtectedSession, uint NumCastableFormats, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.DXGI.Format* pCastableFormats) where TI0 : unmanaged, IComVtbl<TI0>
         {
             var @this = (ID3D12Device10*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // NonKhrReturnTypeOverloader
@@ -22328,16 +22328,16 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe ComPtr<TI0> CreateCommittedResource3<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] HeapProperties* pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ResourceDesc1 pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ClearValue pOptimizedClearValue, ref ID3D12ProtectedResourceSession pProtectedSession, uint NumCastableFormats, ref Silk.NET.DXGI.Format pCastableFormats) where TI0 : unmanaged, IComVtbl<TI0>
+        public readonly unsafe ComPtr<TI0> CreateCommittedResource3<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] HeapProperties* pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ResourceDesc1 pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ClearValue pOptimizedClearValue, ref ID3D12ProtectedResourceSession pProtectedSession, uint NumCastableFormats, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.DXGI.Format pCastableFormats) where TI0 : unmanaged, IComVtbl<TI0>
         {
             var @this = (ID3D12Device10*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // NonKhrReturnTypeOverloader
-            SilkMarshal.ThrowHResult(@this->CreateCommittedResource3(pHeapProperties, HeapFlags, in pDesc, InitialLayout, in pOptimizedClearValue, ref pProtectedSession, NumCastableFormats, ref pCastableFormats, out ComPtr<TI0> silkRet));
+            SilkMarshal.ThrowHResult(@this->CreateCommittedResource3(pHeapProperties, HeapFlags, in pDesc, InitialLayout, in pOptimizedClearValue, ref pProtectedSession, NumCastableFormats, in pCastableFormats, out ComPtr<TI0> silkRet));
             return silkRet;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe ComPtr<TI1> CreateCommittedResource3<TI0, TI1>([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in HeapProperties pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc1* pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, ComPtr<TI0> pProtectedSession, uint NumCastableFormats, Silk.NET.DXGI.Format* pCastableFormats) where TI0 : unmanaged, IComVtbl<ID3D12ProtectedResourceSession>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<TI1>
+        public readonly unsafe ComPtr<TI1> CreateCommittedResource3<TI0, TI1>([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in HeapProperties pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc1* pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, ComPtr<TI0> pProtectedSession, uint NumCastableFormats, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.DXGI.Format* pCastableFormats) where TI0 : unmanaged, IComVtbl<ID3D12ProtectedResourceSession>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<TI1>
         {
             var @this = (ID3D12Device10*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // NonKhrReturnTypeOverloader
@@ -22346,16 +22346,16 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe ComPtr<TI1> CreateCommittedResource3<TI0, TI1>([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in HeapProperties pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc1* pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, ComPtr<TI0> pProtectedSession, uint NumCastableFormats, ref Silk.NET.DXGI.Format pCastableFormats) where TI0 : unmanaged, IComVtbl<ID3D12ProtectedResourceSession>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<TI1>
+        public readonly unsafe ComPtr<TI1> CreateCommittedResource3<TI0, TI1>([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in HeapProperties pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc1* pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, ComPtr<TI0> pProtectedSession, uint NumCastableFormats, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.DXGI.Format pCastableFormats) where TI0 : unmanaged, IComVtbl<ID3D12ProtectedResourceSession>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<TI1>
         {
             var @this = (ID3D12Device10*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // NonKhrReturnTypeOverloader
-            SilkMarshal.ThrowHResult(@this->CreateCommittedResource3(in pHeapProperties, HeapFlags, pDesc, InitialLayout, pOptimizedClearValue, pProtectedSession, NumCastableFormats, ref pCastableFormats, out ComPtr<TI1> silkRet));
+            SilkMarshal.ThrowHResult(@this->CreateCommittedResource3(in pHeapProperties, HeapFlags, pDesc, InitialLayout, pOptimizedClearValue, pProtectedSession, NumCastableFormats, in pCastableFormats, out ComPtr<TI1> silkRet));
             return silkRet;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe ComPtr<TI0> CreateCommittedResource3<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in HeapProperties pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc1* pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, ref ID3D12ProtectedResourceSession pProtectedSession, uint NumCastableFormats, Silk.NET.DXGI.Format* pCastableFormats) where TI0 : unmanaged, IComVtbl<TI0>
+        public readonly unsafe ComPtr<TI0> CreateCommittedResource3<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in HeapProperties pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc1* pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, ref ID3D12ProtectedResourceSession pProtectedSession, uint NumCastableFormats, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.DXGI.Format* pCastableFormats) where TI0 : unmanaged, IComVtbl<TI0>
         {
             var @this = (ID3D12Device10*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // NonKhrReturnTypeOverloader
@@ -22364,16 +22364,16 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe ComPtr<TI0> CreateCommittedResource3<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in HeapProperties pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc1* pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, ref ID3D12ProtectedResourceSession pProtectedSession, uint NumCastableFormats, ref Silk.NET.DXGI.Format pCastableFormats) where TI0 : unmanaged, IComVtbl<TI0>
+        public readonly unsafe ComPtr<TI0> CreateCommittedResource3<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in HeapProperties pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc1* pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, ref ID3D12ProtectedResourceSession pProtectedSession, uint NumCastableFormats, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.DXGI.Format pCastableFormats) where TI0 : unmanaged, IComVtbl<TI0>
         {
             var @this = (ID3D12Device10*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // NonKhrReturnTypeOverloader
-            SilkMarshal.ThrowHResult(@this->CreateCommittedResource3(in pHeapProperties, HeapFlags, pDesc, InitialLayout, pOptimizedClearValue, ref pProtectedSession, NumCastableFormats, ref pCastableFormats, out ComPtr<TI0> silkRet));
+            SilkMarshal.ThrowHResult(@this->CreateCommittedResource3(in pHeapProperties, HeapFlags, pDesc, InitialLayout, pOptimizedClearValue, ref pProtectedSession, NumCastableFormats, in pCastableFormats, out ComPtr<TI0> silkRet));
             return silkRet;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe ComPtr<TI1> CreateCommittedResource3<TI0, TI1>([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in HeapProperties pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc1* pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ClearValue pOptimizedClearValue, ComPtr<TI0> pProtectedSession, uint NumCastableFormats, Silk.NET.DXGI.Format* pCastableFormats) where TI0 : unmanaged, IComVtbl<ID3D12ProtectedResourceSession>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<TI1>
+        public readonly unsafe ComPtr<TI1> CreateCommittedResource3<TI0, TI1>([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in HeapProperties pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc1* pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ClearValue pOptimizedClearValue, ComPtr<TI0> pProtectedSession, uint NumCastableFormats, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.DXGI.Format* pCastableFormats) where TI0 : unmanaged, IComVtbl<ID3D12ProtectedResourceSession>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<TI1>
         {
             var @this = (ID3D12Device10*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // NonKhrReturnTypeOverloader
@@ -22382,16 +22382,16 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe ComPtr<TI1> CreateCommittedResource3<TI0, TI1>([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in HeapProperties pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc1* pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ClearValue pOptimizedClearValue, ComPtr<TI0> pProtectedSession, uint NumCastableFormats, ref Silk.NET.DXGI.Format pCastableFormats) where TI0 : unmanaged, IComVtbl<ID3D12ProtectedResourceSession>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<TI1>
+        public readonly unsafe ComPtr<TI1> CreateCommittedResource3<TI0, TI1>([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in HeapProperties pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc1* pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ClearValue pOptimizedClearValue, ComPtr<TI0> pProtectedSession, uint NumCastableFormats, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.DXGI.Format pCastableFormats) where TI0 : unmanaged, IComVtbl<ID3D12ProtectedResourceSession>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<TI1>
         {
             var @this = (ID3D12Device10*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // NonKhrReturnTypeOverloader
-            SilkMarshal.ThrowHResult(@this->CreateCommittedResource3(in pHeapProperties, HeapFlags, pDesc, InitialLayout, in pOptimizedClearValue, pProtectedSession, NumCastableFormats, ref pCastableFormats, out ComPtr<TI1> silkRet));
+            SilkMarshal.ThrowHResult(@this->CreateCommittedResource3(in pHeapProperties, HeapFlags, pDesc, InitialLayout, in pOptimizedClearValue, pProtectedSession, NumCastableFormats, in pCastableFormats, out ComPtr<TI1> silkRet));
             return silkRet;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe ComPtr<TI0> CreateCommittedResource3<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in HeapProperties pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc1* pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ClearValue pOptimizedClearValue, ref ID3D12ProtectedResourceSession pProtectedSession, uint NumCastableFormats, Silk.NET.DXGI.Format* pCastableFormats) where TI0 : unmanaged, IComVtbl<TI0>
+        public readonly unsafe ComPtr<TI0> CreateCommittedResource3<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in HeapProperties pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc1* pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ClearValue pOptimizedClearValue, ref ID3D12ProtectedResourceSession pProtectedSession, uint NumCastableFormats, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.DXGI.Format* pCastableFormats) where TI0 : unmanaged, IComVtbl<TI0>
         {
             var @this = (ID3D12Device10*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // NonKhrReturnTypeOverloader
@@ -22400,16 +22400,16 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe ComPtr<TI0> CreateCommittedResource3<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in HeapProperties pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc1* pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ClearValue pOptimizedClearValue, ref ID3D12ProtectedResourceSession pProtectedSession, uint NumCastableFormats, ref Silk.NET.DXGI.Format pCastableFormats) where TI0 : unmanaged, IComVtbl<TI0>
+        public readonly unsafe ComPtr<TI0> CreateCommittedResource3<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in HeapProperties pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc1* pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ClearValue pOptimizedClearValue, ref ID3D12ProtectedResourceSession pProtectedSession, uint NumCastableFormats, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.DXGI.Format pCastableFormats) where TI0 : unmanaged, IComVtbl<TI0>
         {
             var @this = (ID3D12Device10*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // NonKhrReturnTypeOverloader
-            SilkMarshal.ThrowHResult(@this->CreateCommittedResource3(in pHeapProperties, HeapFlags, pDesc, InitialLayout, in pOptimizedClearValue, ref pProtectedSession, NumCastableFormats, ref pCastableFormats, out ComPtr<TI0> silkRet));
+            SilkMarshal.ThrowHResult(@this->CreateCommittedResource3(in pHeapProperties, HeapFlags, pDesc, InitialLayout, in pOptimizedClearValue, ref pProtectedSession, NumCastableFormats, in pCastableFormats, out ComPtr<TI0> silkRet));
             return silkRet;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe ComPtr<TI1> CreateCommittedResource3<TI0, TI1>([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in HeapProperties pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ResourceDesc1 pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, ComPtr<TI0> pProtectedSession, uint NumCastableFormats, Silk.NET.DXGI.Format* pCastableFormats) where TI0 : unmanaged, IComVtbl<ID3D12ProtectedResourceSession>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<TI1>
+        public readonly unsafe ComPtr<TI1> CreateCommittedResource3<TI0, TI1>([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in HeapProperties pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ResourceDesc1 pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, ComPtr<TI0> pProtectedSession, uint NumCastableFormats, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.DXGI.Format* pCastableFormats) where TI0 : unmanaged, IComVtbl<ID3D12ProtectedResourceSession>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<TI1>
         {
             var @this = (ID3D12Device10*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // NonKhrReturnTypeOverloader
@@ -22418,16 +22418,16 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe ComPtr<TI1> CreateCommittedResource3<TI0, TI1>([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in HeapProperties pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ResourceDesc1 pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, ComPtr<TI0> pProtectedSession, uint NumCastableFormats, ref Silk.NET.DXGI.Format pCastableFormats) where TI0 : unmanaged, IComVtbl<ID3D12ProtectedResourceSession>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<TI1>
+        public readonly unsafe ComPtr<TI1> CreateCommittedResource3<TI0, TI1>([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in HeapProperties pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ResourceDesc1 pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, ComPtr<TI0> pProtectedSession, uint NumCastableFormats, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.DXGI.Format pCastableFormats) where TI0 : unmanaged, IComVtbl<ID3D12ProtectedResourceSession>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<TI1>
         {
             var @this = (ID3D12Device10*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // NonKhrReturnTypeOverloader
-            SilkMarshal.ThrowHResult(@this->CreateCommittedResource3(in pHeapProperties, HeapFlags, in pDesc, InitialLayout, pOptimizedClearValue, pProtectedSession, NumCastableFormats, ref pCastableFormats, out ComPtr<TI1> silkRet));
+            SilkMarshal.ThrowHResult(@this->CreateCommittedResource3(in pHeapProperties, HeapFlags, in pDesc, InitialLayout, pOptimizedClearValue, pProtectedSession, NumCastableFormats, in pCastableFormats, out ComPtr<TI1> silkRet));
             return silkRet;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe ComPtr<TI0> CreateCommittedResource3<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in HeapProperties pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ResourceDesc1 pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, ref ID3D12ProtectedResourceSession pProtectedSession, uint NumCastableFormats, Silk.NET.DXGI.Format* pCastableFormats) where TI0 : unmanaged, IComVtbl<TI0>
+        public readonly unsafe ComPtr<TI0> CreateCommittedResource3<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in HeapProperties pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ResourceDesc1 pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, ref ID3D12ProtectedResourceSession pProtectedSession, uint NumCastableFormats, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.DXGI.Format* pCastableFormats) where TI0 : unmanaged, IComVtbl<TI0>
         {
             var @this = (ID3D12Device10*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // NonKhrReturnTypeOverloader
@@ -22436,16 +22436,16 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe ComPtr<TI0> CreateCommittedResource3<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in HeapProperties pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ResourceDesc1 pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, ref ID3D12ProtectedResourceSession pProtectedSession, uint NumCastableFormats, ref Silk.NET.DXGI.Format pCastableFormats) where TI0 : unmanaged, IComVtbl<TI0>
+        public readonly unsafe ComPtr<TI0> CreateCommittedResource3<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in HeapProperties pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ResourceDesc1 pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, ref ID3D12ProtectedResourceSession pProtectedSession, uint NumCastableFormats, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.DXGI.Format pCastableFormats) where TI0 : unmanaged, IComVtbl<TI0>
         {
             var @this = (ID3D12Device10*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // NonKhrReturnTypeOverloader
-            SilkMarshal.ThrowHResult(@this->CreateCommittedResource3(in pHeapProperties, HeapFlags, in pDesc, InitialLayout, pOptimizedClearValue, ref pProtectedSession, NumCastableFormats, ref pCastableFormats, out ComPtr<TI0> silkRet));
+            SilkMarshal.ThrowHResult(@this->CreateCommittedResource3(in pHeapProperties, HeapFlags, in pDesc, InitialLayout, pOptimizedClearValue, ref pProtectedSession, NumCastableFormats, in pCastableFormats, out ComPtr<TI0> silkRet));
             return silkRet;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe ComPtr<TI1> CreateCommittedResource3<TI0, TI1>([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in HeapProperties pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ResourceDesc1 pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ClearValue pOptimizedClearValue, ComPtr<TI0> pProtectedSession, uint NumCastableFormats, Silk.NET.DXGI.Format* pCastableFormats) where TI0 : unmanaged, IComVtbl<ID3D12ProtectedResourceSession>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<TI1>
+        public readonly unsafe ComPtr<TI1> CreateCommittedResource3<TI0, TI1>([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in HeapProperties pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ResourceDesc1 pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ClearValue pOptimizedClearValue, ComPtr<TI0> pProtectedSession, uint NumCastableFormats, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.DXGI.Format* pCastableFormats) where TI0 : unmanaged, IComVtbl<ID3D12ProtectedResourceSession>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<TI1>
         {
             var @this = (ID3D12Device10*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // NonKhrReturnTypeOverloader
@@ -22454,16 +22454,16 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly ComPtr<TI1> CreateCommittedResource3<TI0, TI1>([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in HeapProperties pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ResourceDesc1 pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ClearValue pOptimizedClearValue, ComPtr<TI0> pProtectedSession, uint NumCastableFormats, ref Silk.NET.DXGI.Format pCastableFormats) where TI0 : unmanaged, IComVtbl<ID3D12ProtectedResourceSession>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<TI1>
+        public readonly ComPtr<TI1> CreateCommittedResource3<TI0, TI1>([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in HeapProperties pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ResourceDesc1 pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ClearValue pOptimizedClearValue, ComPtr<TI0> pProtectedSession, uint NumCastableFormats, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.DXGI.Format pCastableFormats) where TI0 : unmanaged, IComVtbl<ID3D12ProtectedResourceSession>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<TI1>
         {
             var @this = (ID3D12Device10*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // NonKhrReturnTypeOverloader
-            SilkMarshal.ThrowHResult(@this->CreateCommittedResource3(in pHeapProperties, HeapFlags, in pDesc, InitialLayout, in pOptimizedClearValue, pProtectedSession, NumCastableFormats, ref pCastableFormats, out ComPtr<TI1> silkRet));
+            SilkMarshal.ThrowHResult(@this->CreateCommittedResource3(in pHeapProperties, HeapFlags, in pDesc, InitialLayout, in pOptimizedClearValue, pProtectedSession, NumCastableFormats, in pCastableFormats, out ComPtr<TI1> silkRet));
             return silkRet;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe ComPtr<TI0> CreateCommittedResource3<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in HeapProperties pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ResourceDesc1 pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ClearValue pOptimizedClearValue, ref ID3D12ProtectedResourceSession pProtectedSession, uint NumCastableFormats, Silk.NET.DXGI.Format* pCastableFormats) where TI0 : unmanaged, IComVtbl<TI0>
+        public readonly unsafe ComPtr<TI0> CreateCommittedResource3<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in HeapProperties pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ResourceDesc1 pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ClearValue pOptimizedClearValue, ref ID3D12ProtectedResourceSession pProtectedSession, uint NumCastableFormats, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.DXGI.Format* pCastableFormats) where TI0 : unmanaged, IComVtbl<TI0>
         {
             var @this = (ID3D12Device10*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // NonKhrReturnTypeOverloader
@@ -22472,16 +22472,16 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly ComPtr<TI0> CreateCommittedResource3<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in HeapProperties pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ResourceDesc1 pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ClearValue pOptimizedClearValue, ref ID3D12ProtectedResourceSession pProtectedSession, uint NumCastableFormats, ref Silk.NET.DXGI.Format pCastableFormats) where TI0 : unmanaged, IComVtbl<TI0>
+        public readonly ComPtr<TI0> CreateCommittedResource3<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in HeapProperties pHeapProperties, HeapFlags HeapFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ResourceDesc1 pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ClearValue pOptimizedClearValue, ref ID3D12ProtectedResourceSession pProtectedSession, uint NumCastableFormats, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.DXGI.Format pCastableFormats) where TI0 : unmanaged, IComVtbl<TI0>
         {
             var @this = (ID3D12Device10*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // NonKhrReturnTypeOverloader
-            SilkMarshal.ThrowHResult(@this->CreateCommittedResource3(in pHeapProperties, HeapFlags, in pDesc, InitialLayout, in pOptimizedClearValue, ref pProtectedSession, NumCastableFormats, ref pCastableFormats, out ComPtr<TI0> silkRet));
+            SilkMarshal.ThrowHResult(@this->CreateCommittedResource3(in pHeapProperties, HeapFlags, in pDesc, InitialLayout, in pOptimizedClearValue, ref pProtectedSession, NumCastableFormats, in pCastableFormats, out ComPtr<TI0> silkRet));
             return silkRet;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe ComPtr<TI1> CreatePlacedResource2<TI0, TI1>(ComPtr<TI0> pHeap, ulong HeapOffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc1* pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, uint NumCastableFormats, Silk.NET.DXGI.Format* pCastableFormats) where TI0 : unmanaged, IComVtbl<ID3D12Heap>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<TI1>
+        public readonly unsafe ComPtr<TI1> CreatePlacedResource2<TI0, TI1>(ComPtr<TI0> pHeap, ulong HeapOffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc1* pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, uint NumCastableFormats, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.DXGI.Format* pCastableFormats) where TI0 : unmanaged, IComVtbl<ID3D12Heap>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<TI1>
         {
             var @this = (ID3D12Device10*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // NonKhrReturnTypeOverloader
@@ -22490,16 +22490,16 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe ComPtr<TI1> CreatePlacedResource2<TI0, TI1>(ComPtr<TI0> pHeap, ulong HeapOffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc1* pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, uint NumCastableFormats, ref Silk.NET.DXGI.Format pCastableFormats) where TI0 : unmanaged, IComVtbl<ID3D12Heap>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<TI1>
+        public readonly unsafe ComPtr<TI1> CreatePlacedResource2<TI0, TI1>(ComPtr<TI0> pHeap, ulong HeapOffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc1* pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, uint NumCastableFormats, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.DXGI.Format pCastableFormats) where TI0 : unmanaged, IComVtbl<ID3D12Heap>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<TI1>
         {
             var @this = (ID3D12Device10*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // NonKhrReturnTypeOverloader
-            SilkMarshal.ThrowHResult(@this->CreatePlacedResource2(pHeap, HeapOffset, pDesc, InitialLayout, pOptimizedClearValue, NumCastableFormats, ref pCastableFormats, out ComPtr<TI1> silkRet));
+            SilkMarshal.ThrowHResult(@this->CreatePlacedResource2(pHeap, HeapOffset, pDesc, InitialLayout, pOptimizedClearValue, NumCastableFormats, in pCastableFormats, out ComPtr<TI1> silkRet));
             return silkRet;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe ComPtr<TI1> CreatePlacedResource2<TI0, TI1>(ComPtr<TI0> pHeap, ulong HeapOffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc1* pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ClearValue pOptimizedClearValue, uint NumCastableFormats, Silk.NET.DXGI.Format* pCastableFormats) where TI0 : unmanaged, IComVtbl<ID3D12Heap>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<TI1>
+        public readonly unsafe ComPtr<TI1> CreatePlacedResource2<TI0, TI1>(ComPtr<TI0> pHeap, ulong HeapOffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc1* pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ClearValue pOptimizedClearValue, uint NumCastableFormats, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.DXGI.Format* pCastableFormats) where TI0 : unmanaged, IComVtbl<ID3D12Heap>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<TI1>
         {
             var @this = (ID3D12Device10*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // NonKhrReturnTypeOverloader
@@ -22508,16 +22508,16 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe ComPtr<TI1> CreatePlacedResource2<TI0, TI1>(ComPtr<TI0> pHeap, ulong HeapOffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc1* pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ClearValue pOptimizedClearValue, uint NumCastableFormats, ref Silk.NET.DXGI.Format pCastableFormats) where TI0 : unmanaged, IComVtbl<ID3D12Heap>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<TI1>
+        public readonly unsafe ComPtr<TI1> CreatePlacedResource2<TI0, TI1>(ComPtr<TI0> pHeap, ulong HeapOffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc1* pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ClearValue pOptimizedClearValue, uint NumCastableFormats, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.DXGI.Format pCastableFormats) where TI0 : unmanaged, IComVtbl<ID3D12Heap>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<TI1>
         {
             var @this = (ID3D12Device10*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // NonKhrReturnTypeOverloader
-            SilkMarshal.ThrowHResult(@this->CreatePlacedResource2(pHeap, HeapOffset, pDesc, InitialLayout, in pOptimizedClearValue, NumCastableFormats, ref pCastableFormats, out ComPtr<TI1> silkRet));
+            SilkMarshal.ThrowHResult(@this->CreatePlacedResource2(pHeap, HeapOffset, pDesc, InitialLayout, in pOptimizedClearValue, NumCastableFormats, in pCastableFormats, out ComPtr<TI1> silkRet));
             return silkRet;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe ComPtr<TI1> CreatePlacedResource2<TI0, TI1>(ComPtr<TI0> pHeap, ulong HeapOffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ResourceDesc1 pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, uint NumCastableFormats, Silk.NET.DXGI.Format* pCastableFormats) where TI0 : unmanaged, IComVtbl<ID3D12Heap>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<TI1>
+        public readonly unsafe ComPtr<TI1> CreatePlacedResource2<TI0, TI1>(ComPtr<TI0> pHeap, ulong HeapOffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ResourceDesc1 pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, uint NumCastableFormats, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.DXGI.Format* pCastableFormats) where TI0 : unmanaged, IComVtbl<ID3D12Heap>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<TI1>
         {
             var @this = (ID3D12Device10*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // NonKhrReturnTypeOverloader
@@ -22526,16 +22526,16 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe ComPtr<TI1> CreatePlacedResource2<TI0, TI1>(ComPtr<TI0> pHeap, ulong HeapOffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ResourceDesc1 pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, uint NumCastableFormats, ref Silk.NET.DXGI.Format pCastableFormats) where TI0 : unmanaged, IComVtbl<ID3D12Heap>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<TI1>
+        public readonly unsafe ComPtr<TI1> CreatePlacedResource2<TI0, TI1>(ComPtr<TI0> pHeap, ulong HeapOffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ResourceDesc1 pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, uint NumCastableFormats, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.DXGI.Format pCastableFormats) where TI0 : unmanaged, IComVtbl<ID3D12Heap>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<TI1>
         {
             var @this = (ID3D12Device10*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // NonKhrReturnTypeOverloader
-            SilkMarshal.ThrowHResult(@this->CreatePlacedResource2(pHeap, HeapOffset, in pDesc, InitialLayout, pOptimizedClearValue, NumCastableFormats, ref pCastableFormats, out ComPtr<TI1> silkRet));
+            SilkMarshal.ThrowHResult(@this->CreatePlacedResource2(pHeap, HeapOffset, in pDesc, InitialLayout, pOptimizedClearValue, NumCastableFormats, in pCastableFormats, out ComPtr<TI1> silkRet));
             return silkRet;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe ComPtr<TI1> CreatePlacedResource2<TI0, TI1>(ComPtr<TI0> pHeap, ulong HeapOffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ResourceDesc1 pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ClearValue pOptimizedClearValue, uint NumCastableFormats, Silk.NET.DXGI.Format* pCastableFormats) where TI0 : unmanaged, IComVtbl<ID3D12Heap>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<TI1>
+        public readonly unsafe ComPtr<TI1> CreatePlacedResource2<TI0, TI1>(ComPtr<TI0> pHeap, ulong HeapOffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ResourceDesc1 pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ClearValue pOptimizedClearValue, uint NumCastableFormats, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.DXGI.Format* pCastableFormats) where TI0 : unmanaged, IComVtbl<ID3D12Heap>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<TI1>
         {
             var @this = (ID3D12Device10*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // NonKhrReturnTypeOverloader
@@ -22544,16 +22544,16 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly ComPtr<TI1> CreatePlacedResource2<TI0, TI1>(ComPtr<TI0> pHeap, ulong HeapOffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ResourceDesc1 pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ClearValue pOptimizedClearValue, uint NumCastableFormats, ref Silk.NET.DXGI.Format pCastableFormats) where TI0 : unmanaged, IComVtbl<ID3D12Heap>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<TI1>
+        public readonly ComPtr<TI1> CreatePlacedResource2<TI0, TI1>(ComPtr<TI0> pHeap, ulong HeapOffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ResourceDesc1 pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ClearValue pOptimizedClearValue, uint NumCastableFormats, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.DXGI.Format pCastableFormats) where TI0 : unmanaged, IComVtbl<ID3D12Heap>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<TI1>
         {
             var @this = (ID3D12Device10*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // NonKhrReturnTypeOverloader
-            SilkMarshal.ThrowHResult(@this->CreatePlacedResource2(pHeap, HeapOffset, in pDesc, InitialLayout, in pOptimizedClearValue, NumCastableFormats, ref pCastableFormats, out ComPtr<TI1> silkRet));
+            SilkMarshal.ThrowHResult(@this->CreatePlacedResource2(pHeap, HeapOffset, in pDesc, InitialLayout, in pOptimizedClearValue, NumCastableFormats, in pCastableFormats, out ComPtr<TI1> silkRet));
             return silkRet;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe ComPtr<TI0> CreatePlacedResource2<TI0>(ref ID3D12Heap pHeap, ulong HeapOffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc1* pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, uint NumCastableFormats, Silk.NET.DXGI.Format* pCastableFormats) where TI0 : unmanaged, IComVtbl<TI0>
+        public readonly unsafe ComPtr<TI0> CreatePlacedResource2<TI0>(ref ID3D12Heap pHeap, ulong HeapOffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc1* pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, uint NumCastableFormats, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.DXGI.Format* pCastableFormats) where TI0 : unmanaged, IComVtbl<TI0>
         {
             var @this = (ID3D12Device10*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // NonKhrReturnTypeOverloader
@@ -22562,16 +22562,16 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe ComPtr<TI0> CreatePlacedResource2<TI0>(ref ID3D12Heap pHeap, ulong HeapOffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc1* pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, uint NumCastableFormats, ref Silk.NET.DXGI.Format pCastableFormats) where TI0 : unmanaged, IComVtbl<TI0>
+        public readonly unsafe ComPtr<TI0> CreatePlacedResource2<TI0>(ref ID3D12Heap pHeap, ulong HeapOffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc1* pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, uint NumCastableFormats, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.DXGI.Format pCastableFormats) where TI0 : unmanaged, IComVtbl<TI0>
         {
             var @this = (ID3D12Device10*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // NonKhrReturnTypeOverloader
-            SilkMarshal.ThrowHResult(@this->CreatePlacedResource2(ref pHeap, HeapOffset, pDesc, InitialLayout, pOptimizedClearValue, NumCastableFormats, ref pCastableFormats, out ComPtr<TI0> silkRet));
+            SilkMarshal.ThrowHResult(@this->CreatePlacedResource2(ref pHeap, HeapOffset, pDesc, InitialLayout, pOptimizedClearValue, NumCastableFormats, in pCastableFormats, out ComPtr<TI0> silkRet));
             return silkRet;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe ComPtr<TI0> CreatePlacedResource2<TI0>(ref ID3D12Heap pHeap, ulong HeapOffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc1* pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ClearValue pOptimizedClearValue, uint NumCastableFormats, Silk.NET.DXGI.Format* pCastableFormats) where TI0 : unmanaged, IComVtbl<TI0>
+        public readonly unsafe ComPtr<TI0> CreatePlacedResource2<TI0>(ref ID3D12Heap pHeap, ulong HeapOffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc1* pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ClearValue pOptimizedClearValue, uint NumCastableFormats, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.DXGI.Format* pCastableFormats) where TI0 : unmanaged, IComVtbl<TI0>
         {
             var @this = (ID3D12Device10*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // NonKhrReturnTypeOverloader
@@ -22580,16 +22580,16 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe ComPtr<TI0> CreatePlacedResource2<TI0>(ref ID3D12Heap pHeap, ulong HeapOffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc1* pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ClearValue pOptimizedClearValue, uint NumCastableFormats, ref Silk.NET.DXGI.Format pCastableFormats) where TI0 : unmanaged, IComVtbl<TI0>
+        public readonly unsafe ComPtr<TI0> CreatePlacedResource2<TI0>(ref ID3D12Heap pHeap, ulong HeapOffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc1* pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ClearValue pOptimizedClearValue, uint NumCastableFormats, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.DXGI.Format pCastableFormats) where TI0 : unmanaged, IComVtbl<TI0>
         {
             var @this = (ID3D12Device10*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // NonKhrReturnTypeOverloader
-            SilkMarshal.ThrowHResult(@this->CreatePlacedResource2(ref pHeap, HeapOffset, pDesc, InitialLayout, in pOptimizedClearValue, NumCastableFormats, ref pCastableFormats, out ComPtr<TI0> silkRet));
+            SilkMarshal.ThrowHResult(@this->CreatePlacedResource2(ref pHeap, HeapOffset, pDesc, InitialLayout, in pOptimizedClearValue, NumCastableFormats, in pCastableFormats, out ComPtr<TI0> silkRet));
             return silkRet;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe ComPtr<TI0> CreatePlacedResource2<TI0>(ref ID3D12Heap pHeap, ulong HeapOffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ResourceDesc1 pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, uint NumCastableFormats, Silk.NET.DXGI.Format* pCastableFormats) where TI0 : unmanaged, IComVtbl<TI0>
+        public readonly unsafe ComPtr<TI0> CreatePlacedResource2<TI0>(ref ID3D12Heap pHeap, ulong HeapOffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ResourceDesc1 pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, uint NumCastableFormats, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.DXGI.Format* pCastableFormats) where TI0 : unmanaged, IComVtbl<TI0>
         {
             var @this = (ID3D12Device10*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // NonKhrReturnTypeOverloader
@@ -22598,16 +22598,16 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe ComPtr<TI0> CreatePlacedResource2<TI0>(ref ID3D12Heap pHeap, ulong HeapOffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ResourceDesc1 pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, uint NumCastableFormats, ref Silk.NET.DXGI.Format pCastableFormats) where TI0 : unmanaged, IComVtbl<TI0>
+        public readonly unsafe ComPtr<TI0> CreatePlacedResource2<TI0>(ref ID3D12Heap pHeap, ulong HeapOffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ResourceDesc1 pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, uint NumCastableFormats, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.DXGI.Format pCastableFormats) where TI0 : unmanaged, IComVtbl<TI0>
         {
             var @this = (ID3D12Device10*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // NonKhrReturnTypeOverloader
-            SilkMarshal.ThrowHResult(@this->CreatePlacedResource2(ref pHeap, HeapOffset, in pDesc, InitialLayout, pOptimizedClearValue, NumCastableFormats, ref pCastableFormats, out ComPtr<TI0> silkRet));
+            SilkMarshal.ThrowHResult(@this->CreatePlacedResource2(ref pHeap, HeapOffset, in pDesc, InitialLayout, pOptimizedClearValue, NumCastableFormats, in pCastableFormats, out ComPtr<TI0> silkRet));
             return silkRet;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe ComPtr<TI0> CreatePlacedResource2<TI0>(ref ID3D12Heap pHeap, ulong HeapOffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ResourceDesc1 pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ClearValue pOptimizedClearValue, uint NumCastableFormats, Silk.NET.DXGI.Format* pCastableFormats) where TI0 : unmanaged, IComVtbl<TI0>
+        public readonly unsafe ComPtr<TI0> CreatePlacedResource2<TI0>(ref ID3D12Heap pHeap, ulong HeapOffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ResourceDesc1 pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ClearValue pOptimizedClearValue, uint NumCastableFormats, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.DXGI.Format* pCastableFormats) where TI0 : unmanaged, IComVtbl<TI0>
         {
             var @this = (ID3D12Device10*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // NonKhrReturnTypeOverloader
@@ -22616,16 +22616,16 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly ComPtr<TI0> CreatePlacedResource2<TI0>(ref ID3D12Heap pHeap, ulong HeapOffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ResourceDesc1 pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ClearValue pOptimizedClearValue, uint NumCastableFormats, ref Silk.NET.DXGI.Format pCastableFormats) where TI0 : unmanaged, IComVtbl<TI0>
+        public readonly ComPtr<TI0> CreatePlacedResource2<TI0>(ref ID3D12Heap pHeap, ulong HeapOffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ResourceDesc1 pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ClearValue pOptimizedClearValue, uint NumCastableFormats, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.DXGI.Format pCastableFormats) where TI0 : unmanaged, IComVtbl<TI0>
         {
             var @this = (ID3D12Device10*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // NonKhrReturnTypeOverloader
-            SilkMarshal.ThrowHResult(@this->CreatePlacedResource2(ref pHeap, HeapOffset, in pDesc, InitialLayout, in pOptimizedClearValue, NumCastableFormats, ref pCastableFormats, out ComPtr<TI0> silkRet));
+            SilkMarshal.ThrowHResult(@this->CreatePlacedResource2(ref pHeap, HeapOffset, in pDesc, InitialLayout, in pOptimizedClearValue, NumCastableFormats, in pCastableFormats, out ComPtr<TI0> silkRet));
             return silkRet;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe ComPtr<TI1> CreateReservedResource2<TI0, TI1>([Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc* pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, ComPtr<TI0> pProtectedSession, uint NumCastableFormats, Silk.NET.DXGI.Format* pCastableFormats) where TI0 : unmanaged, IComVtbl<ID3D12ProtectedResourceSession>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<TI1>
+        public readonly unsafe ComPtr<TI1> CreateReservedResource2<TI0, TI1>([Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc* pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, ComPtr<TI0> pProtectedSession, uint NumCastableFormats, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.DXGI.Format* pCastableFormats) where TI0 : unmanaged, IComVtbl<ID3D12ProtectedResourceSession>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<TI1>
         {
             var @this = (ID3D12Device10*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // NonKhrReturnTypeOverloader
@@ -22634,16 +22634,16 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe ComPtr<TI1> CreateReservedResource2<TI0, TI1>([Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc* pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, ComPtr<TI0> pProtectedSession, uint NumCastableFormats, ref Silk.NET.DXGI.Format pCastableFormats) where TI0 : unmanaged, IComVtbl<ID3D12ProtectedResourceSession>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<TI1>
+        public readonly unsafe ComPtr<TI1> CreateReservedResource2<TI0, TI1>([Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc* pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, ComPtr<TI0> pProtectedSession, uint NumCastableFormats, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.DXGI.Format pCastableFormats) where TI0 : unmanaged, IComVtbl<ID3D12ProtectedResourceSession>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<TI1>
         {
             var @this = (ID3D12Device10*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // NonKhrReturnTypeOverloader
-            SilkMarshal.ThrowHResult(@this->CreateReservedResource2(pDesc, InitialLayout, pOptimizedClearValue, pProtectedSession, NumCastableFormats, ref pCastableFormats, out ComPtr<TI1> silkRet));
+            SilkMarshal.ThrowHResult(@this->CreateReservedResource2(pDesc, InitialLayout, pOptimizedClearValue, pProtectedSession, NumCastableFormats, in pCastableFormats, out ComPtr<TI1> silkRet));
             return silkRet;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe ComPtr<TI0> CreateReservedResource2<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc* pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, ref ID3D12ProtectedResourceSession pProtectedSession, uint NumCastableFormats, Silk.NET.DXGI.Format* pCastableFormats) where TI0 : unmanaged, IComVtbl<TI0>
+        public readonly unsafe ComPtr<TI0> CreateReservedResource2<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc* pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, ref ID3D12ProtectedResourceSession pProtectedSession, uint NumCastableFormats, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.DXGI.Format* pCastableFormats) where TI0 : unmanaged, IComVtbl<TI0>
         {
             var @this = (ID3D12Device10*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // NonKhrReturnTypeOverloader
@@ -22652,16 +22652,16 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe ComPtr<TI0> CreateReservedResource2<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc* pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, ref ID3D12ProtectedResourceSession pProtectedSession, uint NumCastableFormats, ref Silk.NET.DXGI.Format pCastableFormats) where TI0 : unmanaged, IComVtbl<TI0>
+        public readonly unsafe ComPtr<TI0> CreateReservedResource2<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc* pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, ref ID3D12ProtectedResourceSession pProtectedSession, uint NumCastableFormats, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.DXGI.Format pCastableFormats) where TI0 : unmanaged, IComVtbl<TI0>
         {
             var @this = (ID3D12Device10*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // NonKhrReturnTypeOverloader
-            SilkMarshal.ThrowHResult(@this->CreateReservedResource2(pDesc, InitialLayout, pOptimizedClearValue, ref pProtectedSession, NumCastableFormats, ref pCastableFormats, out ComPtr<TI0> silkRet));
+            SilkMarshal.ThrowHResult(@this->CreateReservedResource2(pDesc, InitialLayout, pOptimizedClearValue, ref pProtectedSession, NumCastableFormats, in pCastableFormats, out ComPtr<TI0> silkRet));
             return silkRet;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe ComPtr<TI1> CreateReservedResource2<TI0, TI1>([Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc* pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ClearValue pOptimizedClearValue, ComPtr<TI0> pProtectedSession, uint NumCastableFormats, Silk.NET.DXGI.Format* pCastableFormats) where TI0 : unmanaged, IComVtbl<ID3D12ProtectedResourceSession>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<TI1>
+        public readonly unsafe ComPtr<TI1> CreateReservedResource2<TI0, TI1>([Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc* pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ClearValue pOptimizedClearValue, ComPtr<TI0> pProtectedSession, uint NumCastableFormats, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.DXGI.Format* pCastableFormats) where TI0 : unmanaged, IComVtbl<ID3D12ProtectedResourceSession>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<TI1>
         {
             var @this = (ID3D12Device10*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // NonKhrReturnTypeOverloader
@@ -22670,16 +22670,16 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe ComPtr<TI1> CreateReservedResource2<TI0, TI1>([Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc* pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ClearValue pOptimizedClearValue, ComPtr<TI0> pProtectedSession, uint NumCastableFormats, ref Silk.NET.DXGI.Format pCastableFormats) where TI0 : unmanaged, IComVtbl<ID3D12ProtectedResourceSession>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<TI1>
+        public readonly unsafe ComPtr<TI1> CreateReservedResource2<TI0, TI1>([Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc* pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ClearValue pOptimizedClearValue, ComPtr<TI0> pProtectedSession, uint NumCastableFormats, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.DXGI.Format pCastableFormats) where TI0 : unmanaged, IComVtbl<ID3D12ProtectedResourceSession>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<TI1>
         {
             var @this = (ID3D12Device10*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // NonKhrReturnTypeOverloader
-            SilkMarshal.ThrowHResult(@this->CreateReservedResource2(pDesc, InitialLayout, in pOptimizedClearValue, pProtectedSession, NumCastableFormats, ref pCastableFormats, out ComPtr<TI1> silkRet));
+            SilkMarshal.ThrowHResult(@this->CreateReservedResource2(pDesc, InitialLayout, in pOptimizedClearValue, pProtectedSession, NumCastableFormats, in pCastableFormats, out ComPtr<TI1> silkRet));
             return silkRet;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe ComPtr<TI0> CreateReservedResource2<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc* pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ClearValue pOptimizedClearValue, ref ID3D12ProtectedResourceSession pProtectedSession, uint NumCastableFormats, Silk.NET.DXGI.Format* pCastableFormats) where TI0 : unmanaged, IComVtbl<TI0>
+        public readonly unsafe ComPtr<TI0> CreateReservedResource2<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc* pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ClearValue pOptimizedClearValue, ref ID3D12ProtectedResourceSession pProtectedSession, uint NumCastableFormats, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.DXGI.Format* pCastableFormats) where TI0 : unmanaged, IComVtbl<TI0>
         {
             var @this = (ID3D12Device10*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // NonKhrReturnTypeOverloader
@@ -22688,16 +22688,16 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe ComPtr<TI0> CreateReservedResource2<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc* pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ClearValue pOptimizedClearValue, ref ID3D12ProtectedResourceSession pProtectedSession, uint NumCastableFormats, ref Silk.NET.DXGI.Format pCastableFormats) where TI0 : unmanaged, IComVtbl<TI0>
+        public readonly unsafe ComPtr<TI0> CreateReservedResource2<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceDesc* pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ClearValue pOptimizedClearValue, ref ID3D12ProtectedResourceSession pProtectedSession, uint NumCastableFormats, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.DXGI.Format pCastableFormats) where TI0 : unmanaged, IComVtbl<TI0>
         {
             var @this = (ID3D12Device10*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // NonKhrReturnTypeOverloader
-            SilkMarshal.ThrowHResult(@this->CreateReservedResource2(pDesc, InitialLayout, in pOptimizedClearValue, ref pProtectedSession, NumCastableFormats, ref pCastableFormats, out ComPtr<TI0> silkRet));
+            SilkMarshal.ThrowHResult(@this->CreateReservedResource2(pDesc, InitialLayout, in pOptimizedClearValue, ref pProtectedSession, NumCastableFormats, in pCastableFormats, out ComPtr<TI0> silkRet));
             return silkRet;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe ComPtr<TI1> CreateReservedResource2<TI0, TI1>([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ResourceDesc pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, ComPtr<TI0> pProtectedSession, uint NumCastableFormats, Silk.NET.DXGI.Format* pCastableFormats) where TI0 : unmanaged, IComVtbl<ID3D12ProtectedResourceSession>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<TI1>
+        public readonly unsafe ComPtr<TI1> CreateReservedResource2<TI0, TI1>([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ResourceDesc pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, ComPtr<TI0> pProtectedSession, uint NumCastableFormats, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.DXGI.Format* pCastableFormats) where TI0 : unmanaged, IComVtbl<ID3D12ProtectedResourceSession>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<TI1>
         {
             var @this = (ID3D12Device10*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // NonKhrReturnTypeOverloader
@@ -22706,16 +22706,16 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe ComPtr<TI1> CreateReservedResource2<TI0, TI1>([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ResourceDesc pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, ComPtr<TI0> pProtectedSession, uint NumCastableFormats, ref Silk.NET.DXGI.Format pCastableFormats) where TI0 : unmanaged, IComVtbl<ID3D12ProtectedResourceSession>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<TI1>
+        public readonly unsafe ComPtr<TI1> CreateReservedResource2<TI0, TI1>([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ResourceDesc pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, ComPtr<TI0> pProtectedSession, uint NumCastableFormats, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.DXGI.Format pCastableFormats) where TI0 : unmanaged, IComVtbl<ID3D12ProtectedResourceSession>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<TI1>
         {
             var @this = (ID3D12Device10*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // NonKhrReturnTypeOverloader
-            SilkMarshal.ThrowHResult(@this->CreateReservedResource2(in pDesc, InitialLayout, pOptimizedClearValue, pProtectedSession, NumCastableFormats, ref pCastableFormats, out ComPtr<TI1> silkRet));
+            SilkMarshal.ThrowHResult(@this->CreateReservedResource2(in pDesc, InitialLayout, pOptimizedClearValue, pProtectedSession, NumCastableFormats, in pCastableFormats, out ComPtr<TI1> silkRet));
             return silkRet;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe ComPtr<TI0> CreateReservedResource2<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ResourceDesc pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, ref ID3D12ProtectedResourceSession pProtectedSession, uint NumCastableFormats, Silk.NET.DXGI.Format* pCastableFormats) where TI0 : unmanaged, IComVtbl<TI0>
+        public readonly unsafe ComPtr<TI0> CreateReservedResource2<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ResourceDesc pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, ref ID3D12ProtectedResourceSession pProtectedSession, uint NumCastableFormats, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.DXGI.Format* pCastableFormats) where TI0 : unmanaged, IComVtbl<TI0>
         {
             var @this = (ID3D12Device10*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // NonKhrReturnTypeOverloader
@@ -22724,16 +22724,16 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe ComPtr<TI0> CreateReservedResource2<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ResourceDesc pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, ref ID3D12ProtectedResourceSession pProtectedSession, uint NumCastableFormats, ref Silk.NET.DXGI.Format pCastableFormats) where TI0 : unmanaged, IComVtbl<TI0>
+        public readonly unsafe ComPtr<TI0> CreateReservedResource2<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ResourceDesc pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearValue* pOptimizedClearValue, ref ID3D12ProtectedResourceSession pProtectedSession, uint NumCastableFormats, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.DXGI.Format pCastableFormats) where TI0 : unmanaged, IComVtbl<TI0>
         {
             var @this = (ID3D12Device10*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // NonKhrReturnTypeOverloader
-            SilkMarshal.ThrowHResult(@this->CreateReservedResource2(in pDesc, InitialLayout, pOptimizedClearValue, ref pProtectedSession, NumCastableFormats, ref pCastableFormats, out ComPtr<TI0> silkRet));
+            SilkMarshal.ThrowHResult(@this->CreateReservedResource2(in pDesc, InitialLayout, pOptimizedClearValue, ref pProtectedSession, NumCastableFormats, in pCastableFormats, out ComPtr<TI0> silkRet));
             return silkRet;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe ComPtr<TI1> CreateReservedResource2<TI0, TI1>([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ResourceDesc pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ClearValue pOptimizedClearValue, ComPtr<TI0> pProtectedSession, uint NumCastableFormats, Silk.NET.DXGI.Format* pCastableFormats) where TI0 : unmanaged, IComVtbl<ID3D12ProtectedResourceSession>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<TI1>
+        public readonly unsafe ComPtr<TI1> CreateReservedResource2<TI0, TI1>([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ResourceDesc pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ClearValue pOptimizedClearValue, ComPtr<TI0> pProtectedSession, uint NumCastableFormats, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.DXGI.Format* pCastableFormats) where TI0 : unmanaged, IComVtbl<ID3D12ProtectedResourceSession>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<TI1>
         {
             var @this = (ID3D12Device10*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // NonKhrReturnTypeOverloader
@@ -22742,16 +22742,16 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly ComPtr<TI1> CreateReservedResource2<TI0, TI1>([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ResourceDesc pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ClearValue pOptimizedClearValue, ComPtr<TI0> pProtectedSession, uint NumCastableFormats, ref Silk.NET.DXGI.Format pCastableFormats) where TI0 : unmanaged, IComVtbl<ID3D12ProtectedResourceSession>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<TI1>
+        public readonly ComPtr<TI1> CreateReservedResource2<TI0, TI1>([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ResourceDesc pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ClearValue pOptimizedClearValue, ComPtr<TI0> pProtectedSession, uint NumCastableFormats, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.DXGI.Format pCastableFormats) where TI0 : unmanaged, IComVtbl<ID3D12ProtectedResourceSession>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<TI1>
         {
             var @this = (ID3D12Device10*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // NonKhrReturnTypeOverloader
-            SilkMarshal.ThrowHResult(@this->CreateReservedResource2(in pDesc, InitialLayout, in pOptimizedClearValue, pProtectedSession, NumCastableFormats, ref pCastableFormats, out ComPtr<TI1> silkRet));
+            SilkMarshal.ThrowHResult(@this->CreateReservedResource2(in pDesc, InitialLayout, in pOptimizedClearValue, pProtectedSession, NumCastableFormats, in pCastableFormats, out ComPtr<TI1> silkRet));
             return silkRet;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe ComPtr<TI0> CreateReservedResource2<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ResourceDesc pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ClearValue pOptimizedClearValue, ref ID3D12ProtectedResourceSession pProtectedSession, uint NumCastableFormats, Silk.NET.DXGI.Format* pCastableFormats) where TI0 : unmanaged, IComVtbl<TI0>
+        public readonly unsafe ComPtr<TI0> CreateReservedResource2<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ResourceDesc pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ClearValue pOptimizedClearValue, ref ID3D12ProtectedResourceSession pProtectedSession, uint NumCastableFormats, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.DXGI.Format* pCastableFormats) where TI0 : unmanaged, IComVtbl<TI0>
         {
             var @this = (ID3D12Device10*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // NonKhrReturnTypeOverloader
@@ -22760,11 +22760,11 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly ComPtr<TI0> CreateReservedResource2<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ResourceDesc pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ClearValue pOptimizedClearValue, ref ID3D12ProtectedResourceSession pProtectedSession, uint NumCastableFormats, ref Silk.NET.DXGI.Format pCastableFormats) where TI0 : unmanaged, IComVtbl<TI0>
+        public readonly ComPtr<TI0> CreateReservedResource2<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ResourceDesc pDesc, BarrierLayout InitialLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ClearValue pOptimizedClearValue, ref ID3D12ProtectedResourceSession pProtectedSession, uint NumCastableFormats, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.DXGI.Format pCastableFormats) where TI0 : unmanaged, IComVtbl<TI0>
         {
             var @this = (ID3D12Device10*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // NonKhrReturnTypeOverloader
-            SilkMarshal.ThrowHResult(@this->CreateReservedResource2(in pDesc, InitialLayout, in pOptimizedClearValue, ref pProtectedSession, NumCastableFormats, ref pCastableFormats, out ComPtr<TI0> silkRet));
+            SilkMarshal.ThrowHResult(@this->CreateReservedResource2(in pDesc, InitialLayout, in pOptimizedClearValue, ref pProtectedSession, NumCastableFormats, in pCastableFormats, out ComPtr<TI0> silkRet));
             return silkRet;
         }
 

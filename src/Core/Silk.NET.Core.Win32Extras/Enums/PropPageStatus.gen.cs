@@ -9,9 +9,12 @@ using Silk.NET.Core.Attributes;
 
 namespace Silk.NET.Core.Win32Extras
 {
+    [Flags]
     [NativeName("Name", "tagPROPPAGESTATUS")]
     public enum PropPageStatus : int
     {
+        [NativeName("Name", "")]
+        None = 0,
         [Obsolete("Deprecated in favour of \"Dirty\"")]
         [NativeName("Name", "PROPPAGESTATUS_DIRTY")]
         ProppagestatusDirty = 0x1,

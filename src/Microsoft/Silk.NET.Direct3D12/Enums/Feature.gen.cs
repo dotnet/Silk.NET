@@ -111,6 +111,39 @@ namespace Silk.NET.Direct3D12
         [Obsolete("Deprecated in favour of \"D3D12Options13\"")]
         [NativeName("Name", "D3D12_FEATURE_D3D12_OPTIONS13")]
         FeatureD3D12Options13 = 0x2A,
+        [Obsolete("Deprecated in favour of \"D3D12Options14\"")]
+        [NativeName("Name", "D3D12_FEATURE_D3D12_OPTIONS14")]
+        FeatureD3D12Options14 = 0x2B,
+        [Obsolete("Deprecated in favour of \"D3D12Options15\"")]
+        [NativeName("Name", "D3D12_FEATURE_D3D12_OPTIONS15")]
+        FeatureD3D12Options15 = 0x2C,
+        [Obsolete("Deprecated in favour of \"D3D12Options16\"")]
+        [NativeName("Name", "D3D12_FEATURE_D3D12_OPTIONS16")]
+        FeatureD3D12Options16 = 0x2D,
+        [Obsolete("Deprecated in favour of \"D3D12Options17\"")]
+        [NativeName("Name", "D3D12_FEATURE_D3D12_OPTIONS17")]
+        FeatureD3D12Options17 = 0x2E,
+        [Obsolete("Deprecated in favour of \"D3D12Options18\"")]
+        [NativeName("Name", "D3D12_FEATURE_D3D12_OPTIONS18")]
+        FeatureD3D12Options18 = 0x2F,
+        [Obsolete("Deprecated in favour of \"D3D12Options19\"")]
+        [NativeName("Name", "D3D12_FEATURE_D3D12_OPTIONS19")]
+        FeatureD3D12Options19 = 0x30,
+        [Obsolete("Deprecated in favour of \"D3D12Options20\"")]
+        [NativeName("Name", "D3D12_FEATURE_D3D12_OPTIONS20")]
+        FeatureD3D12Options20 = 0x31,
+        [Obsolete("Deprecated in favour of \"Predication\"")]
+        [NativeName("Name", "D3D12_FEATURE_PREDICATION")]
+        FeaturePredication = 0x32,
+        [Obsolete("Deprecated in favour of \"PlacedResourceSupportInfo\"")]
+        [NativeName("Name", "D3D12_FEATURE_PLACED_RESOURCE_SUPPORT_INFO")]
+        FeaturePlacedResourceSupportInfo = 0x33,
+        [Obsolete("Deprecated in favour of \"HardwareCopy\"")]
+        [NativeName("Name", "D3D12_FEATURE_HARDWARE_COPY")]
+        FeatureHardwareCopy = 0x34,
+        [Obsolete("Deprecated in favour of \"D3D12Options21\"")]
+        [NativeName("Name", "D3D12_FEATURE_D3D12_OPTIONS21")]
+        FeatureD3D12Options21 = 0x35,
         [NativeName("Name", "D3D12_FEATURE_D3D12_OPTIONS")]
         D3D12Options = 0x0,
         [NativeName("Name", "D3D12_FEATURE_ARCHITECTURE")]
@@ -177,5 +210,27 @@ namespace Silk.NET.Direct3D12
         D3D12Options12 = 0x29,
         [NativeName("Name", "D3D12_FEATURE_D3D12_OPTIONS13")]
         D3D12Options13 = 0x2A,
+        [NativeName("Name", "D3D12_FEATURE_D3D12_OPTIONS14")]
+        D3D12Options14 = 0x2B,
+        [NativeName("Name", "D3D12_FEATURE_D3D12_OPTIONS15")]
+        D3D12Options15 = 0x2C,
+        [NativeName("Name", "D3D12_FEATURE_D3D12_OPTIONS16")]
+        D3D12Options16 = 0x2D,
+        [NativeName("Name", "D3D12_FEATURE_D3D12_OPTIONS17")]
+        D3D12Options17 = 0x2E,
+        [NativeName("Name", "D3D12_FEATURE_D3D12_OPTIONS18")]
+        D3D12Options18 = 0x2F,
+        [NativeName("Name", "D3D12_FEATURE_D3D12_OPTIONS19")]
+        D3D12Options19 = 0x30,
+        [NativeName("Name", "D3D12_FEATURE_D3D12_OPTIONS20")]
+        D3D12Options20 = 0x31,
+        [NativeName("Name", "D3D12_FEATURE_PREDICATION")]
+        Predication = 0x32,
+        [NativeName("Name", "D3D12_FEATURE_PLACED_RESOURCE_SUPPORT_INFO")]
+        PlacedResourceSupportInfo = 0x33,
+        [NativeName("Name", "D3D12_FEATURE_HARDWARE_COPY")]
+        HardwareCopy = 0x34,
+        [NativeName("Name", "D3D12_FEATURE_D3D12_OPTIONS21")]
+        D3D12Options21 = 0x35,
     }
 }

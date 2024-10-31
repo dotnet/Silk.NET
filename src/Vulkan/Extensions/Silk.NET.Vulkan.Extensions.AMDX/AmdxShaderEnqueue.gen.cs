@@ -22,27 +22,27 @@ namespace Silk.NET.Vulkan.Extensions.AMDX
         public const string ExtensionName = "VK_AMDX_shader_enqueue";
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkCmdDispatchGraphAMDX", Convention = CallingConvention.Winapi)]
-        public unsafe partial void CmdDispatchGraph([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] ulong scratch, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] DispatchGraphCountInfoAMDX* pCountInfo);
+        public unsafe partial void CmdDispatchGraph([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] ulong scratch, [Count(Count = 0)] ulong scratchSize, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] DispatchGraphCountInfoAMDX* pCountInfo);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkCmdDispatchGraphAMDX", Convention = CallingConvention.Winapi)]
-        public partial void CmdDispatchGraph([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] ulong scratch, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in DispatchGraphCountInfoAMDX pCountInfo);
+        public partial void CmdDispatchGraph([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] ulong scratch, [Count(Count = 0)] ulong scratchSize, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in DispatchGraphCountInfoAMDX pCountInfo);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkCmdDispatchGraphIndirectAMDX", Convention = CallingConvention.Winapi)]
-        public unsafe partial void CmdDispatchGraphIndirect([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] ulong scratch, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] DispatchGraphCountInfoAMDX* pCountInfo);
+        public unsafe partial void CmdDispatchGraphIndirect([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] ulong scratch, [Count(Count = 0)] ulong scratchSize, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] DispatchGraphCountInfoAMDX* pCountInfo);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkCmdDispatchGraphIndirectAMDX", Convention = CallingConvention.Winapi)]
-        public partial void CmdDispatchGraphIndirect([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] ulong scratch, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in DispatchGraphCountInfoAMDX pCountInfo);
+        public partial void CmdDispatchGraphIndirect([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] ulong scratch, [Count(Count = 0)] ulong scratchSize, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in DispatchGraphCountInfoAMDX pCountInfo);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkCmdDispatchGraphIndirectCountAMDX", Convention = CallingConvention.Winapi)]
-        public partial void CmdDispatchGraphIndirectCount([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] ulong scratch, [Count(Count = 0)] ulong countInfo);
+        public partial void CmdDispatchGraphIndirectCount([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] ulong scratch, [Count(Count = 0)] ulong scratchSize, [Count(Count = 0)] ulong countInfo);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkCmdInitializeGraphScratchMemoryAMDX", Convention = CallingConvention.Winapi)]
-        public partial void CmdInitializeGraphScratchMemory([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] ulong scratch);
+        public partial void CmdInitializeGraphScratchMemory([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] Pipeline executionGraph, [Count(Count = 0)] ulong scratch, [Count(Count = 0)] ulong scratchSize);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkCreateExecutionGraphPipelinesAMDX", Convention = CallingConvention.Winapi)]

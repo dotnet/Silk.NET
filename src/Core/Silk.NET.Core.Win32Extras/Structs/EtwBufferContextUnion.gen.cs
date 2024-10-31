@@ -17,7 +17,7 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Core.Win32Extras
 {
     [StructLayout(LayoutKind.Explicit)]
-    [NativeName("Name", "__AnonymousRecord_evntrace_L1307_C5")]
+    [NativeName("Name", "__AnonymousRecord_evntrace_L1341_C5")]
     public unsafe partial struct EtwBufferContextUnion
     {
         public EtwBufferContextUnion
@@ -52,7 +52,7 @@ namespace Silk.NET.Core.Win32Extras
 
         [FieldOffset(0)]
         [NativeName("Type", "")]
-        [NativeName("Type.Name", "__AnonymousRecord_evntrace_L1308_C9")]
+        [NativeName("Type.Name", "__AnonymousRecord_evntrace_L1342_C9")]
         [NativeName("Name", "anonymous1")]
         public EtwBufferContextUnionUnion Anonymous;
 
