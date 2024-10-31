@@ -79,5 +79,11 @@ namespace Silk.NET.OpenXR
         [NativeName("Type.Name", "XrSwapchainSubImage")]
         [NativeName("Name", "subImage")]
         public SwapchainSubImage SubImage;
+        /// <summary>To be documented.</summary>
+        public override string ToString()
+        {
+            return Handle.ToString();
+        }
+
     }
 }

@@ -58,6 +58,12 @@ namespace Silk.NET.Vulkan
         [NativeName("Type.Name", "VkTessellationDomainOrigin")]
         [NativeName("Name", "domainOrigin")]
         public TessellationDomainOrigin DomainOrigin;
+        /// <summary>To be documented.</summary>
+        public override string ToString()
+        {
+            return Handle.ToString();
+        }
+
 
         /// <inheritdoc />
         StructureType IStructuredType.StructureType()

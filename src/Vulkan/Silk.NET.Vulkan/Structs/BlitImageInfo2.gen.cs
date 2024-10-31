@@ -124,6 +124,12 @@ namespace Silk.NET.Vulkan
         [NativeName("Type.Name", "VkFilter")]
         [NativeName("Name", "filter")]
         public Filter Filter;
+        /// <summary>To be documented.</summary>
+        public override string ToString()
+        {
+            return Handle.ToString();
+        }
+
 
         /// <inheritdoc />
         StructureType IStructuredType.StructureType()

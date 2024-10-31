@@ -625,21 +625,31 @@ namespace Silk.NET.BuildTools.Common
         }
         
         public static bool IsProbablyABitmask(this Enums.Enum @enum)
-            => @enum.Tokens.Count > 1 && // there is more than one token
-               // at least approx 50% of the tokens have only one bit set
-               @enum.Tokens.Count(x => BitOperations.PopCount(ParseToken(x.Value, @enum)) == 1)
-               >= MathF.Floor(@enum.Tokens.Count / 2f) &&
-               // it's not sequential (1, 2, 3)
-               !@enum.IsSequential();
+        {
+            var parsed = @enum.Tokens.Select(x => ParseToken(x.Value, @enum)).ToArray();
+            var popcnt1Cnt = parsed.Count(x => BitOperations.PopCount(x) == 1);
+            // there is more than one token
+            return @enum.Tokens.Count > 1 &&
+                // at least approx 50% of the tokens have only one bit set
+                popcnt1Cnt >= MathF.Floor(@enum.Tokens.Count / 2f) &&
+                // it's not sequential (1, 2, 3)
+                !parsed.IsSeeminglySequential() ||
+                // alternatively, all items that are not MaxValue or 0 have popcnt == 1
+                // https://github.com/dotnet/Silk.NET/issues/2238
+                parsed.Count(x => x is not 0 and not 0x7FFFFFFF) == popcnt1Cnt &&
+                // and there are more than two items with popcnt == 1
+                popcnt1Cnt > 2;
+        }
 
-        private static bool IsSequential(this Enums.Enum @enum)
+        // renamed from IsSequential as suggested by this comment:
+        // https://discord.com/channels/521092042781229087/587346162802229298/1284528132807987212
+        private static bool IsSeeminglySequential(this ulong[] @enum)
         {
             const int maxMisses = 1;
             var misses = 0;
-            for (var i = 0; i < @enum.Tokens.Count; i++)
+            for (var i = 0; i < @enum.Length; i++)
             {
-                if (ParseToken(@enum.Tokens[i].Value, @enum) != (ulong)(i - misses) &&
-                    ParseToken(@enum.Tokens[i].Value, @enum) != (ulong)((i - misses) + 1))
+                if (@enum[i] != (ulong)(i - misses) && @enum[i] != (ulong)(i - misses + 1))
                 {
                     misses++;
                 }

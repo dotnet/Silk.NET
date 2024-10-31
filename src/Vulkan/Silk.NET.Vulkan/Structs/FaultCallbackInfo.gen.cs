@@ -79,6 +79,12 @@ namespace Silk.NET.Vulkan
         [NativeName("Type.Name", "PFN_vkFaultCallbackFunction")]
         [NativeName("Name", "pfnFaultCallback")]
         public PfnFaultCallbackFunction PfnFaultCallback;
+        /// <summary>To be documented.</summary>
+        public override string ToString()
+        {
+            return Handle.ToString();
+        }
+
 
         /// <inheritdoc />
         StructureType IStructuredType.StructureType()

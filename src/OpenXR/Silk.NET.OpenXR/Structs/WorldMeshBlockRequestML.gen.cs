@@ -68,5 +68,11 @@ namespace Silk.NET.OpenXR
         [NativeName("Type.Name", "XrWorldMeshDetectorLodML")]
         [NativeName("Name", "lod")]
         public WorldMeshDetectorLodML Lod;
+        /// <summary>To be documented.</summary>
+        public override string ToString()
+        {
+            return Handle.ToString();
+        }
+
     }
 }

@@ -90,6 +90,12 @@ namespace Silk.NET.Vulkan
         [NativeName("Type.Name", "VkPipelineTessellationStateCreateInfo")]
         [NativeName("Name", "pTessellationState")]
         public PipelineTessellationStateCreateInfo* PTessellationState;
+        /// <summary>To be documented.</summary>
+        public override string ToString()
+        {
+            return Handle.ToString();
+        }
+
 
         /// <inheritdoc />
         StructureType IStructuredType.StructureType()

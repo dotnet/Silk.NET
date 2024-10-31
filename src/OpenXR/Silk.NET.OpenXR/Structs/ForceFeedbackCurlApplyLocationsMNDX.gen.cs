@@ -68,5 +68,11 @@ namespace Silk.NET.OpenXR
         [NativeName("Type.Name", "XrForceFeedbackCurlApplyLocationMNDX")]
         [NativeName("Name", "locations")]
         public ForceFeedbackCurlApplyLocationMNDX* Locations;
+        /// <summary>To be documented.</summary>
+        public override string ToString()
+        {
+            return Handle.ToString();
+        }
+
     }
 }

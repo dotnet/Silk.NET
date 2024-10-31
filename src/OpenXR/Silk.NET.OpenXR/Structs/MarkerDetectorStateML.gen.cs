@@ -57,5 +57,11 @@ namespace Silk.NET.OpenXR
         [NativeName("Type.Name", "XrMarkerDetectorStatusML")]
         [NativeName("Name", "state")]
         public MarkerDetectorStatusML State;
+        /// <summary>To be documented.</summary>
+        public override string ToString()
+        {
+            return Handle.ToString();
+        }
+
     }
 }

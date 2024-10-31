@@ -57,6 +57,12 @@ namespace Silk.NET.Vulkan
         [NativeName("Type.Name", "StdVideoEncodeH264ReferenceInfo")]
         [NativeName("Name", "pStdReferenceInfo")]
         public Video.StdVideoEncodeH264ReferenceInfo* PStdReferenceInfo;
+        /// <summary>To be documented.</summary>
+        public override string ToString()
+        {
+            return Handle.ToString();
+        }
+
 
         /// <inheritdoc />
         StructureType IStructuredType.StructureType()

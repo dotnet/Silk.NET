@@ -102,6 +102,12 @@ namespace Silk.NET.Vulkan
         [NativeName("Type.Name", "VkImageTiling")]
         [NativeName("Name", "tiling")]
         public ImageTiling Tiling;
+        /// <summary>To be documented.</summary>
+        public override string ToString()
+        {
+            return Handle.ToString();
+        }
+
 
         /// <inheritdoc />
         StructureType IStructuredType.StructureType()

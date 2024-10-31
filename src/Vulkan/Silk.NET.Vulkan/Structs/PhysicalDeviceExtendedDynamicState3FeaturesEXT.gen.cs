@@ -387,6 +387,12 @@ namespace Silk.NET.Vulkan
         [NativeName("Type.Name", "VkBool32")]
         [NativeName("Name", "extendedDynamicState3ShadingRateImageEnable")]
         public Bool32 ExtendedDynamicState3ShadingRateImageEnable;
+        /// <summary>To be documented.</summary>
+        public override string ToString()
+        {
+            return Handle.ToString();
+        }
+
 
         /// <inheritdoc />
         StructureType IStructuredType.StructureType()

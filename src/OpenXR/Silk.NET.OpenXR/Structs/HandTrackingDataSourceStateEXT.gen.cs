@@ -68,5 +68,11 @@ namespace Silk.NET.OpenXR
         [NativeName("Type.Name", "XrHandTrackingDataSourceEXT")]
         [NativeName("Name", "dataSource")]
         public HandTrackingDataSourceEXT DataSource;
+        /// <summary>To be documented.</summary>
+        public override string ToString()
+        {
+            return Handle.ToString();
+        }
+
     }
 }

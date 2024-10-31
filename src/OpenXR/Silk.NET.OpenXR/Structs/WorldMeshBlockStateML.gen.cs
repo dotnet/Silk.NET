@@ -101,5 +101,11 @@ namespace Silk.NET.OpenXR
         [NativeName("Type.Name", "XrWorldMeshBlockStatusML")]
         [NativeName("Name", "status")]
         public WorldMeshBlockStatusML Status;
+        /// <summary>To be documented.</summary>
+        public override string ToString()
+        {
+            return Handle.ToString();
+        }
+
     }
 }

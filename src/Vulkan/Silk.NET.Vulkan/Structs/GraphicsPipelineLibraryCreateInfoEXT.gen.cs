@@ -57,6 +57,12 @@ namespace Silk.NET.Vulkan
         [NativeName("Type.Name", "VkGraphicsPipelineLibraryFlagsEXT")]
         [NativeName("Name", "flags")]
         public GraphicsPipelineLibraryFlagsEXT Flags;
+        /// <summary>To be documented.</summary>
+        public override string ToString()
+        {
+            return Handle.ToString();
+        }
+
 
         /// <inheritdoc />
         StructureType IStructuredType.StructureType()

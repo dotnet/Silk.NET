@@ -57,6 +57,12 @@ namespace Silk.NET.Vulkan
         [NativeName("Type.Name", "StdVideoAV1SequenceHeader")]
         [NativeName("Name", "pStdSequenceHeader")]
         public Video.StdVideoAV1SequenceHeader* PStdSequenceHeader;
+        /// <summary>To be documented.</summary>
+        public override string ToString()
+        {
+            return Handle.ToString();
+        }
+
 
         /// <inheritdoc />
         StructureType IStructuredType.StructureType()

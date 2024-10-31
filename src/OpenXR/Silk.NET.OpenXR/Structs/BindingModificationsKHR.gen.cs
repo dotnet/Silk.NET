@@ -68,5 +68,11 @@ namespace Silk.NET.OpenXR
         [NativeName("Type.Name", "XrBindingModificationBaseHeaderKHR")]
         [NativeName("Name", "bindingModifications")]
         public BindingModificationBaseHeaderKHR** BindingModifications;
+        /// <summary>To be documented.</summary>
+        public override string ToString()
+        {
+            return Handle.ToString();
+        }
+
     }
 }

@@ -57,5 +57,11 @@ namespace Silk.NET.OpenXR
         [NativeName("Type.Name", "XrSpatialAnchorConfidenceML")]
         [NativeName("Name", "confidence")]
         public SpatialAnchorConfidenceML Confidence;
+        /// <summary>To be documented.</summary>
+        public override string ToString()
+        {
+            return Handle.ToString();
+        }
+
     }
 }

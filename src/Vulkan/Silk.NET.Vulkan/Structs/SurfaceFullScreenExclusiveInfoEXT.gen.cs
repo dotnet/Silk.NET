@@ -57,6 +57,12 @@ namespace Silk.NET.Vulkan
         [NativeName("Type.Name", "VkFullScreenExclusiveEXT")]
         [NativeName("Name", "fullScreenExclusive")]
         public FullScreenExclusiveEXT FullScreenExclusive;
+        /// <summary>To be documented.</summary>
+        public override string ToString()
+        {
+            return Handle.ToString();
+        }
+
 
         /// <inheritdoc />
         StructureType IStructuredType.StructureType()

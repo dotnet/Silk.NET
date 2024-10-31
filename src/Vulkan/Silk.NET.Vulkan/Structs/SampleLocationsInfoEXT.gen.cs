@@ -90,6 +90,12 @@ namespace Silk.NET.Vulkan
         [NativeName("Type.Name", "VkSampleLocationEXT")]
         [NativeName("Name", "pSampleLocations")]
         public SampleLocationEXT* PSampleLocations;
+        /// <summary>To be documented.</summary>
+        public override string ToString()
+        {
+            return Handle.ToString();
+        }
+
 
         /// <inheritdoc />
         StructureType IStructuredType.StructureType()

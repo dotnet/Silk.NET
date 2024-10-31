@@ -79,6 +79,12 @@ namespace Silk.NET.Vulkan
         [NativeName("Type.Name", "wl_surface")]
         [NativeName("Name", "surface")]
         public nint* Surface;
+        /// <summary>To be documented.</summary>
+        public override string ToString()
+        {
+            return Handle.ToString();
+        }
+
 
         /// <inheritdoc />
         StructureType IStructuredType.StructureType()

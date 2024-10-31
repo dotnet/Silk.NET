@@ -79,5 +79,11 @@ namespace Silk.NET.OpenXR
         [NativeName("Type.Name", "XrVector3f")]
         [NativeName("Name", "angularVelocity")]
         public Vector3f AngularVelocity;
+        /// <summary>To be documented.</summary>
+        public override string ToString()
+        {
+            return Handle.ToString();
+        }
+
     }
 }

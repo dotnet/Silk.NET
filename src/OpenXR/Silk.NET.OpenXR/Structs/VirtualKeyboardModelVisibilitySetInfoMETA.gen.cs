@@ -57,5 +57,11 @@ namespace Silk.NET.OpenXR
         [NativeName("Type.Name", "XrBool32")]
         [NativeName("Name", "visible")]
         public uint Visible;
+        /// <summary>To be documented.</summary>
+        public override string ToString()
+        {
+            return Handle.ToString();
+        }
+
     }
 }

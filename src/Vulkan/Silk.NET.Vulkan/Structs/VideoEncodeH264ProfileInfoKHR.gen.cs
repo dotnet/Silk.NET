@@ -57,6 +57,12 @@ namespace Silk.NET.Vulkan
         [NativeName("Type.Name", "StdVideoH264ProfileIdc")]
         [NativeName("Name", "stdProfileIdc")]
         public Video.StdVideoH264ProfileIdc StdProfileIdc;
+        /// <summary>To be documented.</summary>
+        public override string ToString()
+        {
+            return Handle.ToString();
+        }
+
 
         /// <inheritdoc />
         StructureType IStructuredType.StructureType()

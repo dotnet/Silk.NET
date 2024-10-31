@@ -57,5 +57,11 @@ namespace Silk.NET.OpenXR
         [NativeName("Type.Name", "XrVirtualKeyboardMETA")]
         [NativeName("Name", "keyboard")]
         public VirtualKeyboardMETA Keyboard;
+        /// <summary>To be documented.</summary>
+        public override string ToString()
+        {
+            return Handle.ToString();
+        }
+
     }
 }

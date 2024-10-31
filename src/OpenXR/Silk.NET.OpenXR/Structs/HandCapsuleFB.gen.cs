@@ -78,5 +78,11 @@ namespace Silk.NET.OpenXR
         [NativeName("Type.Name", "XrHandJointEXT")]
         [NativeName("Name", "joint")]
         public HandJointEXT Joint;
+        /// <summary>To be documented.</summary>
+        public override string ToString()
+        {
+            return Handle.ToString();
+        }
+
     }
 }

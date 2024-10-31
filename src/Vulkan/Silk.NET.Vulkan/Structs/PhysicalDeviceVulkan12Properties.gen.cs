@@ -606,6 +606,12 @@ namespace Silk.NET.Vulkan
         [NativeName("Type.Name", "VkSampleCountFlags")]
         [NativeName("Name", "framebufferIntegerColorSampleCounts")]
         public SampleCountFlags FramebufferIntegerColorSampleCounts;
+        /// <summary>To be documented.</summary>
+        public override string ToString()
+        {
+            return Handle.ToString();
+        }
+
 
         /// <inheritdoc />
         StructureType IStructuredType.StructureType()

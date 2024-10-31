@@ -46,5 +46,11 @@ namespace Silk.NET.Vulkan
         [NativeName("Type.Name", "VkExtent2D")]
         [NativeName("Name", "extent")]
         public Extent2D Extent;
+        /// <summary>To be documented.</summary>
+        public override string ToString()
+        {
+            return Handle.ToString();
+        }
+
     }
 }

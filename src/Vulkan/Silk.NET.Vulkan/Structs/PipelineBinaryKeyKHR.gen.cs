@@ -62,6 +62,12 @@ namespace Silk.NET.Vulkan
         [NativeName("Type.Name", "uint8_t")]
         [NativeName("Name", "key")]
         public fixed byte Key[32];
+        /// <summary>To be documented.</summary>
+        public override string ToString()
+        {
+            return Handle.ToString();
+        }
+
 
         /// <inheritdoc />
         StructureType IStructuredType.StructureType()

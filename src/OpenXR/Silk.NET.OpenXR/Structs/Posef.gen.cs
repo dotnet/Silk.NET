@@ -46,5 +46,11 @@ namespace Silk.NET.OpenXR
         [NativeName("Type.Name", "XrVector3f")]
         [NativeName("Name", "position")]
         public Vector3f Position;
+        /// <summary>To be documented.</summary>
+        public override string ToString()
+        {
+            return Handle.ToString();
+        }
+
     }
 }

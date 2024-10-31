@@ -46,5 +46,11 @@ namespace Silk.NET.Vulkan
         [NativeName("Type.Name", "VkGeometryAABBNV")]
         [NativeName("Name", "aabbs")]
         public GeometryAABBNV Aabbs;
+        /// <summary>To be documented.</summary>
+        public override string ToString()
+        {
+            return Handle.ToString();
+        }
+
     }
 }

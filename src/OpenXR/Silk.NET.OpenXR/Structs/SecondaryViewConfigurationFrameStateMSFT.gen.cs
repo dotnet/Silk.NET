@@ -68,5 +68,11 @@ namespace Silk.NET.OpenXR
         [NativeName("Type.Name", "XrSecondaryViewConfigurationStateMSFT")]
         [NativeName("Name", "viewConfigurationStates")]
         public SecondaryViewConfigurationStateMSFT* ViewConfigurationStates;
+        /// <summary>To be documented.</summary>
+        public override string ToString()
+        {
+            return Handle.ToString();
+        }
+
     }
 }

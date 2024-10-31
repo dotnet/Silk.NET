@@ -68,6 +68,12 @@ namespace Silk.NET.Vulkan
         [NativeName("Type.Name", "VkBlockMatchWindowCompareModeQCOM")]
         [NativeName("Name", "windowCompareMode")]
         public BlockMatchWindowCompareModeQCOM WindowCompareMode;
+        /// <summary>To be documented.</summary>
+        public override string ToString()
+        {
+            return Handle.ToString();
+        }
+
 
         /// <inheritdoc />
         StructureType IStructuredType.StructureType()

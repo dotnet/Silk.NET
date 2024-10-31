@@ -29,7 +29,7 @@ using static Nuke.Common.Tools.GitHub.GitHubTasks;
 partial class Build {
     [Nuke.Common.Parameter("Build native code")] readonly bool Native;
 
-    [CanBeNull] string AndroidHomeValue;
+    [Nuke.Common.Parameter("Android home. Will be determined from dotnet if not provided.")] [CanBeNull] string AndroidHomeValue;
 
     static string JobsArg => string.IsNullOrWhiteSpace(GitHubActions.Instance?.Job)
         ? $" -j{Jobs}"
@@ -66,7 +66,8 @@ partial class Build {
 
             Git("fetch --all", RootDirectory);
             Git("pull");
-            Git($"add -f src/Native/*/runtimes/*/native/*", RootDirectory);
+            Git("add -f src/Native/*/runtimes/*/native/*", RootDirectory);
+            Git("add **/*.aar **/*.java **/PublicAPI.Unshipped.txt", RootDirectory);
             var newBranch = $"ci/{curBranch}/{name.ToLower().Replace(' ', '_')}_bins";
             var curCommit = GitCurrentCommit(RootDirectory);
             var commitCmd = InheritedShell

@@ -68,6 +68,12 @@ namespace Silk.NET.Vulkan
         [NativeName("Type.Name", "VkSciSyncPrimitiveTypeNV")]
         [NativeName("Name", "primitiveType")]
         public SciSyncPrimitiveTypeNV PrimitiveType;
+        /// <summary>To be documented.</summary>
+        public override string ToString()
+        {
+            return Handle.ToString();
+        }
+
 
         /// <inheritdoc />
         StructureType IStructuredType.StructureType()

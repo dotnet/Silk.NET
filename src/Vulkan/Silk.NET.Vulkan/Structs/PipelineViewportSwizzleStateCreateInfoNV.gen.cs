@@ -79,6 +79,12 @@ namespace Silk.NET.Vulkan
         [NativeName("Type.Name", "VkViewportSwizzleNV")]
         [NativeName("Name", "pViewportSwizzles")]
         public ViewportSwizzleNV* PViewportSwizzles;
+        /// <summary>To be documented.</summary>
+        public override string ToString()
+        {
+            return Handle.ToString();
+        }
+
 
         /// <inheritdoc />
         StructureType IStructuredType.StructureType()

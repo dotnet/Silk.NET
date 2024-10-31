@@ -101,5 +101,11 @@ namespace Silk.NET.OpenXR
         [NativeName("Type.Name", "XrLocalizationMapErrorFlagsML")]
         [NativeName("Name", "errorFlags")]
         public LocalizationMapErrorFlagsML ErrorFlags;
+        /// <summary>To be documented.</summary>
+        public override string ToString()
+        {
+            return Handle.ToString();
+        }
+
     }
 }

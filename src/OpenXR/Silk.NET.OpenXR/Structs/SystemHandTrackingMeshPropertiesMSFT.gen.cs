@@ -79,5 +79,11 @@ namespace Silk.NET.OpenXR
         [NativeName("Type.Name", "uint32_t")]
         [NativeName("Name", "maxHandMeshVertexCount")]
         public uint MaxHandMeshVertexCount;
+        /// <summary>To be documented.</summary>
+        public override string ToString()
+        {
+            return Handle.ToString();
+        }
+
     }
 }

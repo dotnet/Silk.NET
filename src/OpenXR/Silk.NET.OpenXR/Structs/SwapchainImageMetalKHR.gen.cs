@@ -57,5 +57,11 @@ namespace Silk.NET.OpenXR
         [NativeName("Type.Name", "void")]
         [NativeName("Name", "texture")]
         public void* Texture;
+        /// <summary>To be documented.</summary>
+        public override string ToString()
+        {
+            return Handle.ToString();
+        }
+
     }
 }

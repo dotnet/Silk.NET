@@ -68,5 +68,11 @@ namespace Silk.NET.OpenXR
         [NativeName("Type.Name", "XrSceneMarkerQRCodeMSFT")]
         [NativeName("Name", "qrCodes")]
         public SceneMarkerQRCodeMSFT* QrCodes;
+        /// <summary>To be documented.</summary>
+        public override string ToString()
+        {
+            return Handle.ToString();
+        }
+
     }
 }

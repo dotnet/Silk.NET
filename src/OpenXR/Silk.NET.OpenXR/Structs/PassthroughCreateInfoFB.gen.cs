@@ -57,5 +57,11 @@ namespace Silk.NET.OpenXR
         [NativeName("Type.Name", "XrPassthroughFlagsFB")]
         [NativeName("Name", "flags")]
         public PassthroughFlagsFB Flags;
+        /// <summary>To be documented.</summary>
+        public override string ToString()
+        {
+            return Handle.ToString();
+        }
+
     }
 }

@@ -123,6 +123,12 @@ namespace Silk.NET.Vulkan
         [NativeName("Type.Name", "VkVideoEncodeFeedbackFlagsKHR")]
         [NativeName("Name", "supportedEncodeFeedbackFlags")]
         public VideoEncodeFeedbackFlagsKHR SupportedEncodeFeedbackFlags;
+        /// <summary>To be documented.</summary>
+        public override string ToString()
+        {
+            return Handle.ToString();
+        }
+
 
         /// <inheritdoc />
         StructureType IStructuredType.StructureType()

@@ -79,6 +79,12 @@ namespace Silk.NET.Vulkan
         [NativeName("Type.Name", "VkImageCompressionFixedRateFlagsEXT")]
         [NativeName("Name", "pFixedRateFlags")]
         public ImageCompressionFixedRateFlagsEXT* PFixedRateFlags;
+        /// <summary>To be documented.</summary>
+        public override string ToString()
+        {
+            return Handle.ToString();
+        }
+
 
         /// <inheritdoc />
         StructureType IStructuredType.StructureType()

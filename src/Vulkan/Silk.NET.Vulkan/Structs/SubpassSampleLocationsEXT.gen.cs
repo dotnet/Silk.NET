@@ -46,5 +46,11 @@ namespace Silk.NET.Vulkan
         [NativeName("Type.Name", "VkSampleLocationsInfoEXT")]
         [NativeName("Name", "sampleLocationsInfo")]
         public SampleLocationsInfoEXT SampleLocationsInfo;
+        /// <summary>To be documented.</summary>
+        public override string ToString()
+        {
+            return Handle.ToString();
+        }
+
     }
 }

@@ -79,6 +79,12 @@ namespace Silk.NET.Vulkan
         [NativeName("Type.Name", "xcb_window_t")]
         [NativeName("Name", "window")]
         public nint Window;
+        /// <summary>To be documented.</summary>
+        public override string ToString()
+        {
+            return Handle.ToString();
+        }
+
 
         /// <inheritdoc />
         StructureType IStructuredType.StructureType()

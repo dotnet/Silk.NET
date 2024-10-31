@@ -79,5 +79,11 @@ namespace Silk.NET.Vulkan
         [NativeName("Type.Name", "VkMemoryDecompressionMethodFlagsNV")]
         [NativeName("Name", "decompressionMethod")]
         public MemoryDecompressionMethodFlagsNV DecompressionMethod;
+        /// <summary>To be documented.</summary>
+        public override string ToString()
+        {
+            return Handle.ToString();
+        }
+
     }
 }

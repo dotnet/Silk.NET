@@ -79,5 +79,11 @@ namespace Silk.NET.OpenXR
         [NativeName("Type.Name", "XrFoveationDynamicFB")]
         [NativeName("Name", "dynamic")]
         public FoveationDynamicFB Dynamic;
+        /// <summary>To be documented.</summary>
+        public override string ToString()
+        {
+            return Handle.ToString();
+        }
+
     }
 }

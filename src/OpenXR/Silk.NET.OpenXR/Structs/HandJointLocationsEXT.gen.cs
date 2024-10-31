@@ -79,5 +79,11 @@ namespace Silk.NET.OpenXR
         [NativeName("Type.Name", "XrHandJointLocationEXT")]
         [NativeName("Name", "jointLocations")]
         public HandJointLocationEXT* JointLocations;
+        /// <summary>To be documented.</summary>
+        public override string ToString()
+        {
+            return Handle.ToString();
+        }
+
     }
 }

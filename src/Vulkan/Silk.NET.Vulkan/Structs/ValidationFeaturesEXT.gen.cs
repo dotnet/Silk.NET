@@ -90,6 +90,12 @@ namespace Silk.NET.Vulkan
         [NativeName("Type.Name", "VkValidationFeatureDisableEXT")]
         [NativeName("Name", "pDisabledValidationFeatures")]
         public ValidationFeatureDisableEXT* PDisabledValidationFeatures;
+        /// <summary>To be documented.</summary>
+        public override string ToString()
+        {
+            return Handle.ToString();
+        }
+
 
         /// <inheritdoc />
         StructureType IStructuredType.StructureType()

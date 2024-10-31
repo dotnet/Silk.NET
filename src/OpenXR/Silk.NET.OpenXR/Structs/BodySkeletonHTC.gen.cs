@@ -68,5 +68,11 @@ namespace Silk.NET.OpenXR
         [NativeName("Type.Name", "XrBodySkeletonJointHTC")]
         [NativeName("Name", "joints")]
         public BodySkeletonJointHTC* Joints;
+        /// <summary>To be documented.</summary>
+        public override string ToString()
+        {
+            return Handle.ToString();
+        }
+
     }
 }

@@ -134,6 +134,12 @@ namespace Silk.NET.Vulkan
         [NativeName("Type.Name", "VkVideoReferenceSlotInfoKHR")]
         [NativeName("Name", "pReferenceSlots")]
         public VideoReferenceSlotInfoKHR* PReferenceSlots;
+        /// <summary>To be documented.</summary>
+        public override string ToString()
+        {
+            return Handle.ToString();
+        }
+
 
         /// <inheritdoc />
         StructureType IStructuredType.StructureType()

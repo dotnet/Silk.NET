@@ -112,5 +112,11 @@ namespace Silk.NET.OpenXR
         [NativeName("Type.Name", "XrExtent2Df")]
         [NativeName("Name", "size")]
         public Extent2Df Size;
+        /// <summary>To be documented.</summary>
+        public override string ToString()
+        {
+            return Handle.ToString();
+        }
+
     }
 }

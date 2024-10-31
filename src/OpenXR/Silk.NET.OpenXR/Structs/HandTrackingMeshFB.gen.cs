@@ -211,5 +211,11 @@ namespace Silk.NET.OpenXR
         [NativeName("Type.Name", "int16_t")]
         [NativeName("Name", "indices")]
         public short* Indices;
+        /// <summary>To be documented.</summary>
+        public override string ToString()
+        {
+            return Handle.ToString();
+        }
+
     }
 }

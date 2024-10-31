@@ -57,5 +57,11 @@ namespace Silk.NET.OpenXR
         [NativeName("Type.Name", "XrFoveationDynamicFlagsHTC")]
         [NativeName("Name", "dynamicFlags")]
         public FoveationDynamicFlagsHTC DynamicFlags;
+        /// <summary>To be documented.</summary>
+        public override string ToString()
+        {
+            return Handle.ToString();
+        }
+
     }
 }

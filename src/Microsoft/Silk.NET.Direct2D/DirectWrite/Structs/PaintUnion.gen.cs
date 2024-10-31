@@ -22,16 +22,16 @@ namespace Silk.NET.DirectWrite
     {
         public PaintUnion
         (
-            DWRITE_PAINT_ELEMENT::PAINT_UNION::PAINT_LAYERS? layers = null,
-            DWRITE_PAINT_ELEMENT::PAINT_UNION::PAINT_SOLID_GLYPH? solidGlyph = null,
+            PaintLayers? layers = null,
+            PaintSolidGlyph? solidGlyph = null,
             PaintColor? solid = null,
-            DWRITE_PAINT_ELEMENT::PAINT_UNION::PAINT_LINEAR_GRADIENT? linearGradient = null,
-            DWRITE_PAINT_ELEMENT::PAINT_UNION::PAINT_RADIAL_GRADIENT? radialGradient = null,
-            DWRITE_PAINT_ELEMENT::PAINT_UNION::PAINT_SWEEP_GRADIENT? sweepGradient = null,
-            DWRITE_PAINT_ELEMENT::PAINT_UNION::PAINT_GLYPH? glyph = null,
-            DWRITE_PAINT_ELEMENT::PAINT_UNION::PAINT_COLOR_GLYPH? colorGlyph = null,
+            PaintLinearGradient? linearGradient = null,
+            PaintRadialGradient? radialGradient = null,
+            PaintSweepGradient? sweepGradient = null,
+            PaintGlyph? glyph = null,
+            PaintColorGlyph? colorGlyph = null,
             Matrix? transform = null,
-            DWRITE_PAINT_ELEMENT::PAINT_UNION::PAINT_COMPOSITE? composite = null
+            PaintComposite? composite = null
         ) : this()
         {
             if (layers is not null)
@@ -90,13 +90,13 @@ namespace Silk.NET.DirectWrite
         [NativeName("Type", "struct PAINT_LAYERS")]
         [NativeName("Type.Name", "struct PAINT_LAYERS")]
         [NativeName("Name", "layers")]
-        public DWRITE_PAINT_ELEMENT::PAINT_UNION::PAINT_LAYERS Layers;
+        public PaintLayers Layers;
 
         [FieldOffset(0)]
         [NativeName("Type", "struct PAINT_SOLID_GLYPH")]
         [NativeName("Type.Name", "struct PAINT_SOLID_GLYPH")]
         [NativeName("Name", "solidGlyph")]
-        public DWRITE_PAINT_ELEMENT::PAINT_UNION::PAINT_SOLID_GLYPH SolidGlyph;
+        public PaintSolidGlyph SolidGlyph;
 
         [FieldOffset(0)]
         [NativeName("Type", "DWRITE_PAINT_COLOR")]
@@ -108,31 +108,31 @@ namespace Silk.NET.DirectWrite
         [NativeName("Type", "struct PAINT_LINEAR_GRADIENT")]
         [NativeName("Type.Name", "struct PAINT_LINEAR_GRADIENT")]
         [NativeName("Name", "linearGradient")]
-        public DWRITE_PAINT_ELEMENT::PAINT_UNION::PAINT_LINEAR_GRADIENT LinearGradient;
+        public PaintLinearGradient LinearGradient;
 
         [FieldOffset(0)]
         [NativeName("Type", "struct PAINT_RADIAL_GRADIENT")]
         [NativeName("Type.Name", "struct PAINT_RADIAL_GRADIENT")]
         [NativeName("Name", "radialGradient")]
-        public DWRITE_PAINT_ELEMENT::PAINT_UNION::PAINT_RADIAL_GRADIENT RadialGradient;
+        public PaintRadialGradient RadialGradient;
 
         [FieldOffset(0)]
         [NativeName("Type", "struct PAINT_SWEEP_GRADIENT")]
         [NativeName("Type.Name", "struct PAINT_SWEEP_GRADIENT")]
         [NativeName("Name", "sweepGradient")]
-        public DWRITE_PAINT_ELEMENT::PAINT_UNION::PAINT_SWEEP_GRADIENT SweepGradient;
+        public PaintSweepGradient SweepGradient;
 
         [FieldOffset(0)]
         [NativeName("Type", "struct PAINT_GLYPH")]
         [NativeName("Type.Name", "struct PAINT_GLYPH")]
         [NativeName("Name", "glyph")]
-        public DWRITE_PAINT_ELEMENT::PAINT_UNION::PAINT_GLYPH Glyph;
+        public PaintGlyph Glyph;
 
         [FieldOffset(0)]
         [NativeName("Type", "struct PAINT_COLOR_GLYPH")]
         [NativeName("Type.Name", "struct PAINT_COLOR_GLYPH")]
         [NativeName("Name", "colorGlyph")]
-        public DWRITE_PAINT_ELEMENT::PAINT_UNION::PAINT_COLOR_GLYPH ColorGlyph;
+        public PaintColorGlyph ColorGlyph;
 
         [FieldOffset(0)]
         [NativeName("Type", "DWRITE_MATRIX")]
@@ -144,6 +144,6 @@ namespace Silk.NET.DirectWrite
         [NativeName("Type", "struct PAINT_COMPOSITE")]
         [NativeName("Type.Name", "struct PAINT_COMPOSITE")]
         [NativeName("Name", "composite")]
-        public DWRITE_PAINT_ELEMENT::PAINT_UNION::PAINT_COMPOSITE Composite;
+        public PaintComposite Composite;
     }
 }

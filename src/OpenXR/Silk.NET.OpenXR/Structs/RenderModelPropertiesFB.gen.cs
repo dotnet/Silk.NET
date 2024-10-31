@@ -95,5 +95,11 @@ namespace Silk.NET.OpenXR
         [NativeName("Type.Name", "XrRenderModelFlagsFB")]
         [NativeName("Name", "flags")]
         public RenderModelFlagsFB Flags;
+        /// <summary>To be documented.</summary>
+        public override string ToString()
+        {
+            return Handle.ToString();
+        }
+
     }
 }

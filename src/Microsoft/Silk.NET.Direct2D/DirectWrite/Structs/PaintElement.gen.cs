@@ -22,7 +22,7 @@ namespace Silk.NET.DirectWrite
         public PaintElement
         (
             PaintType? paintType = null,
-            DWRITE_PAINT_ELEMENT::PAINT_UNION? paint = null
+            PaintUnion? paint = null
         ) : this()
         {
             if (paintType is not null)
@@ -45,6 +45,6 @@ namespace Silk.NET.DirectWrite
         [NativeName("Type", "union PAINT_UNION")]
         [NativeName("Type.Name", "union PAINT_UNION")]
         [NativeName("Name", "paint")]
-        public DWRITE_PAINT_ELEMENT::PAINT_UNION Paint;
+        public PaintUnion Paint;
     }
 }

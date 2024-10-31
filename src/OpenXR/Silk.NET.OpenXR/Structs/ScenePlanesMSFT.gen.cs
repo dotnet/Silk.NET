@@ -68,5 +68,11 @@ namespace Silk.NET.OpenXR
         [NativeName("Type.Name", "XrScenePlaneMSFT")]
         [NativeName("Name", "scenePlanes")]
         public ScenePlaneMSFT* ScenePlanes;
+        /// <summary>To be documented.</summary>
+        public override string ToString()
+        {
+            return Handle.ToString();
+        }
+
     }
 }

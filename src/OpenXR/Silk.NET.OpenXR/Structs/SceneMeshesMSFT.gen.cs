@@ -68,5 +68,11 @@ namespace Silk.NET.OpenXR
         [NativeName("Type.Name", "XrSceneMeshMSFT")]
         [NativeName("Name", "sceneMeshes")]
         public SceneMeshMSFT* SceneMeshes;
+        /// <summary>To be documented.</summary>
+        public override string ToString()
+        {
+            return Handle.ToString();
+        }
+
     }
 }

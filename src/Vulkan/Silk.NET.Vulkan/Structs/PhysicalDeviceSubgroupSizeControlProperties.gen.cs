@@ -91,6 +91,12 @@ namespace Silk.NET.Vulkan
         [NativeName("Type.Name", "VkShaderStageFlags")]
         [NativeName("Name", "requiredSubgroupSizeStages")]
         public ShaderStageFlags RequiredSubgroupSizeStages;
+        /// <summary>To be documented.</summary>
+        public override string ToString()
+        {
+            return Handle.ToString();
+        }
+
 
         /// <inheritdoc />
         StructureType IStructuredType.StructureType()

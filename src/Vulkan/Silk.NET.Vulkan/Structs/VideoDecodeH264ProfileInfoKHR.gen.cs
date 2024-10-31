@@ -68,6 +68,12 @@ namespace Silk.NET.Vulkan
         [NativeName("Type.Name", "VkVideoDecodeH264PictureLayoutFlagBitsKHR")]
         [NativeName("Name", "pictureLayout")]
         public VideoDecodeH264PictureLayoutFlagsKHR PictureLayout;
+        /// <summary>To be documented.</summary>
+        public override string ToString()
+        {
+            return Handle.ToString();
+        }
+
 
         /// <inheritdoc />
         StructureType IStructuredType.StructureType()

@@ -69,5 +69,11 @@ namespace Silk.NET.OpenXR
         [NativeName("Type.Name", "XrSpaceVelocityData")]
         [NativeName("Name", "velocities")]
         public SpaceVelocityData* Velocities;
+        /// <summary>To be documented.</summary>
+        public override string ToString()
+        {
+            return Handle.ToString();
+        }
+
     }
 }

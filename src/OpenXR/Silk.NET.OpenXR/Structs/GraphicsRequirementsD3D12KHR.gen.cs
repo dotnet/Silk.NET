@@ -68,5 +68,11 @@ namespace Silk.NET.OpenXR
         [NativeName("Type.Name", "D3D_FEATURE_LEVEL")]
         [NativeName("Name", "minFeatureLevel")]
         public uint MinFeatureLevel;
+        /// <summary>To be documented.</summary>
+        public override string ToString()
+        {
+            return Handle.ToString();
+        }
+
     }
 }

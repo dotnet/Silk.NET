@@ -101,6 +101,12 @@ namespace Silk.NET.Vulkan
         [NativeName("Type.Name", "VkSpecializationInfo")]
         [NativeName("Name", "pSpecializationInfo")]
         public SpecializationInfo* PSpecializationInfo;
+        /// <summary>To be documented.</summary>
+        public override string ToString()
+        {
+            return Handle.ToString();
+        }
+
 
         /// <inheritdoc />
         StructureType IStructuredType.StructureType()

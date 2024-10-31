@@ -58,6 +58,12 @@ namespace Silk.NET.Vulkan
         [NativeName("Type.Name", "VkPrivateDataSlotCreateFlags")]
         [NativeName("Name", "flags")]
         public PrivateDataSlotCreateFlags Flags;
+        /// <summary>To be documented.</summary>
+        public override string ToString()
+        {
+            return Handle.ToString();
+        }
+
 
         /// <inheritdoc />
         StructureType IStructuredType.StructureType()

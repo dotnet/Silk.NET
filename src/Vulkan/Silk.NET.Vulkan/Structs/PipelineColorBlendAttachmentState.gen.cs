@@ -112,5 +112,11 @@ namespace Silk.NET.Vulkan
         [NativeName("Type.Name", "VkColorComponentFlags")]
         [NativeName("Name", "colorWriteMask")]
         public ColorComponentFlags ColorWriteMask;
+        /// <summary>To be documented.</summary>
+        public override string ToString()
+        {
+            return Handle.ToString();
+        }
+
     }
 }

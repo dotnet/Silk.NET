@@ -57,6 +57,12 @@ namespace Silk.NET.Vulkan
         [NativeName("Type.Name", "VkShaderStageFlags")]
         [NativeName("Name", "cooperativeMatrixSupportedStages")]
         public ShaderStageFlags CooperativeMatrixSupportedStages;
+        /// <summary>To be documented.</summary>
+        public override string ToString()
+        {
+            return Handle.ToString();
+        }
+
 
         /// <inheritdoc />
         StructureType IStructuredType.StructureType()

@@ -90,5 +90,11 @@ namespace Silk.NET.OpenXR
         [NativeName("Type.Name", "XrPassthroughColorHTC")]
         [NativeName("Name", "color")]
         public PassthroughColorHTC Color;
+        /// <summary>To be documented.</summary>
+        public override string ToString()
+        {
+            return Handle.ToString();
+        }
+
     }
 }

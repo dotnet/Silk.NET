@@ -5,6 +5,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Text;
 using Silk.NET.BuildTools.Common;
 using Silk.NET.BuildTools.Common.Enums;
 using Silk.NET.BuildTools.Common.Functions;
@@ -148,6 +149,14 @@ namespace Silk.NET.BuildTools.Converters.Readers
                     continue;
                 }
 
+                var toString = new Function
+                {
+                    Accessibility = Accessibility.Public,
+                    IsOverride = true,
+                    ReturnType = new Type { Name = "string" },
+                    Name = "ToString"
+                };
+
                 var @struct = new Struct
                 {
                     Fields = s.Members.Select
@@ -179,6 +188,10 @@ namespace Silk.NET.BuildTools.Converters.Readers
                             }.WithFixedFieldFixup09072020()
                         )
                         .ToList(),
+                    Functions = new List<ImplementedFunction>
+                    {
+                        new(toString, new StringBuilder("return Handle.ToString();"), toString, false)
+                    },
                     Name = Naming.TranslateLite(TrimName(s.Name, task), prefix),
                     NativeName = s.Name,
                     ProfileName = s.Api
