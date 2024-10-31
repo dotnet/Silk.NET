@@ -38,7 +38,7 @@ namespace Silk.NET.Vulkan
         /// <summary>To be documented.</summary>
         public override string ToString()
         {
-            return Handle.ToString();
+            return sizeof(nint) == 8 ? $"0x{Handle:x16}" : $"0x{Handle:x8}";
         }
 
     }

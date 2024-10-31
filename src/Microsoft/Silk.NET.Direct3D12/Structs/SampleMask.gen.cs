@@ -21,12 +21,12 @@ namespace Silk.NET.Direct3D12
     {
         public SampleMask
         (
-            uint? sampleMask = null
+            uint? value = null
         ) : this()
         {
-            if (sampleMask is not null)
+            if (value is not null)
             {
-                SampleMask = sampleMask.Value;
+                Value = value.Value;
             }
         }
 
@@ -34,6 +34,6 @@ namespace Silk.NET.Direct3D12
         [NativeName("Type", "UINT")]
         [NativeName("Type.Name", "UINT")]
         [NativeName("Name", "SampleMask")]
-        public uint SampleMask;
+        public uint Value;
     }
 }

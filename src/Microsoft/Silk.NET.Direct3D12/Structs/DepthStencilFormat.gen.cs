@@ -21,12 +21,12 @@ namespace Silk.NET.Direct3D12
     {
         public DepthStencilFormat
         (
-            Silk.NET.DXGI.Format? depthStencilFormat = null
+            Silk.NET.DXGI.Format? value = null
         ) : this()
         {
-            if (depthStencilFormat is not null)
+            if (value is not null)
             {
-                DepthStencilFormat = depthStencilFormat.Value;
+                Value = value.Value;
             }
         }
 
@@ -34,6 +34,6 @@ namespace Silk.NET.Direct3D12
         [NativeName("Type", "DXGI_FORMAT")]
         [NativeName("Type.Name", "DXGI_FORMAT")]
         [NativeName("Name", "DepthStencilFormat")]
-        public Silk.NET.DXGI.Format DepthStencilFormat;
+        public Silk.NET.DXGI.Format Value;
     }
 }
