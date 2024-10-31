@@ -24,7 +24,6 @@ partial class Build
     Target RegenerateBindings => CommonTarget
     (
         x => x.After(Clean)
-            .DependsOn(Restore)
             .Executes
             (
                 () =>
