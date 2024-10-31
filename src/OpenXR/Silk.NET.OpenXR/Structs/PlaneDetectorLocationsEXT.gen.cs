@@ -79,5 +79,11 @@ namespace Silk.NET.OpenXR
         [NativeName("Type.Name", "XrPlaneDetectorLocationEXT")]
         [NativeName("Name", "planeLocations")]
         public PlaneDetectorLocationEXT* PlaneLocations;
+        /// <summary>To be documented.</summary>
+        public override string ToString()
+        {
+            return Handle.ToString();
+        }
+
     }
 }

@@ -68,5 +68,11 @@ namespace Silk.NET.OpenXR
         [NativeName("Type.Name", "XrSceneObjectTypeMSFT")]
         [NativeName("Name", "objectTypes")]
         public SceneObjectTypeMSFT* ObjectTypes;
+        /// <summary>To be documented.</summary>
+        public override string ToString()
+        {
+            return Handle.ToString();
+        }
+
     }
 }

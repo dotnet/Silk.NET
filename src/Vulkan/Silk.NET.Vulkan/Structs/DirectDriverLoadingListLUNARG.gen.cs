@@ -79,6 +79,12 @@ namespace Silk.NET.Vulkan
         [NativeName("Type.Name", "VkDirectDriverLoadingInfoLUNARG")]
         [NativeName("Name", "pDrivers")]
         public DirectDriverLoadingInfoLUNARG* PDrivers;
+        /// <summary>To be documented.</summary>
+        public override string ToString()
+        {
+            return Handle.ToString();
+        }
+
 
         /// <inheritdoc />
         StructureType IStructuredType.StructureType()

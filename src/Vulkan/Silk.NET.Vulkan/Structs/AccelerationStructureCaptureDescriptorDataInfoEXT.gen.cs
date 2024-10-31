@@ -68,6 +68,12 @@ namespace Silk.NET.Vulkan
         [NativeName("Type.Name", "VkAccelerationStructureNV")]
         [NativeName("Name", "accelerationStructureNV")]
         public AccelerationStructureNV AccelerationStructureNV;
+        /// <summary>To be documented.</summary>
+        public override string ToString()
+        {
+            return Handle.ToString();
+        }
+
 
         /// <inheritdoc />
         StructureType IStructuredType.StructureType()

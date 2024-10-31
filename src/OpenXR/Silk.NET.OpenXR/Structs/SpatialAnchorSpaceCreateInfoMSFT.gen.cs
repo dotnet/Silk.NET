@@ -68,5 +68,11 @@ namespace Silk.NET.OpenXR
         [NativeName("Type.Name", "XrPosef")]
         [NativeName("Name", "poseInAnchorSpace")]
         public Posef PoseInAnchorSpace;
+        /// <summary>To be documented.</summary>
+        public override string ToString()
+        {
+            return Handle.ToString();
+        }
+
     }
 }

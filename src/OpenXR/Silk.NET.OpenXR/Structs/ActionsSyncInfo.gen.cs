@@ -68,5 +68,11 @@ namespace Silk.NET.OpenXR
         [NativeName("Type.Name", "XrActiveActionSet")]
         [NativeName("Name", "activeActionSets")]
         public ActiveActionSet* ActiveActionSets;
+        /// <summary>To be documented.</summary>
+        public override string ToString()
+        {
+            return Handle.ToString();
+        }
+
     }
 }

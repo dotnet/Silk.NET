@@ -60,7 +60,7 @@ namespace Silk.NET.Direct3D11
         public VdovDimension ViewDimension;
 
         [NativeName("Type", "")]
-        [NativeName("Type.Name", "__AnonymousRecord_d3d11_L11649_C5")]
+        [NativeName("Type.Name", "__AnonymousRecord_d3d11_L11668_C5")]
         [NativeName("Name", "anonymous1")]
         public VideoDecoderOutputViewDescUnion Anonymous;
 #if NETSTANDARD2_1 || NETCOREAPP3_1 || NET5_0 || NET5_0_OR_GREATER

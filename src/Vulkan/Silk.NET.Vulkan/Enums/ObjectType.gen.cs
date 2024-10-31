@@ -114,6 +114,12 @@ namespace Silk.NET.Vulkan
         OpticalFlowSessionNV = 1000464000,
         [NativeName("Name", "VK_OBJECT_TYPE_SHADER_EXT")]
         ShaderExt = 1000482000,
+        [NativeName("Name", "VK_OBJECT_TYPE_PIPELINE_BINARY_KHR")]
+        PipelineBinaryKhr = 1000483000,
+        [NativeName("Name", "VK_OBJECT_TYPE_INDIRECT_COMMANDS_LAYOUT_EXT")]
+        IndirectCommandsLayoutExt = 1000572000,
+        [NativeName("Name", "VK_OBJECT_TYPE_INDIRECT_EXECUTION_SET_EXT")]
+        IndirectExecutionSetExt = 1000572001,
         [NativeName("Name", "VK_OBJECT_TYPE_SAMPLER_YCBCR_CONVERSION")]
         SamplerYcbcrConversion = 1000156000,
         [NativeName("Name", "VK_OBJECT_TYPE_DESCRIPTOR_UPDATE_TEMPLATE")]

@@ -9,9 +9,12 @@ using Silk.NET.Core.Attributes;
 
 namespace Silk.NET.DXGI
 {
+    [Flags]
     [NativeName("Name", "DXGI_HARDWARE_COMPOSITION_SUPPORT_FLAGS")]
     public enum HardwareCompositionSupportFlags : int
     {
+        [NativeName("Name", "")]
+        None = 0,
         [Obsolete("Deprecated in favour of \"Fullscreen\"")]
         [NativeName("Name", "DXGI_HARDWARE_COMPOSITION_SUPPORT_FLAG_FULLSCREEN")]
         HardwareCompositionSupportFlagFullscreen = 0x1,

@@ -69,5 +69,11 @@ namespace Silk.NET.OpenXR
         [NativeName("Type.Name", "XrSpaceLocationData")]
         [NativeName("Name", "locations")]
         public SpaceLocationData* Locations;
+        /// <summary>To be documented.</summary>
+        public override string ToString()
+        {
+            return Handle.ToString();
+        }
+
     }
 }

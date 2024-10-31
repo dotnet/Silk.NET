@@ -17,7 +17,7 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Core.Win32Extras
 {
     [StructLayout(LayoutKind.Explicit)]
-    [NativeName("Name", "__AnonymousRecord_evntprov_L182_C5")]
+    [NativeName("Name", "__AnonymousRecord_evntprov_L183_C5")]
     public unsafe partial struct EventDataDescriptorUnion
     {
         public EventDataDescriptorUnion
@@ -64,7 +64,7 @@ namespace Silk.NET.Core.Win32Extras
 
         [FieldOffset(0)]
         [NativeName("Type", "")]
-        [NativeName("Type.Name", "__AnonymousRecord_evntprov_L184_C9")]
+        [NativeName("Type.Name", "__AnonymousRecord_evntprov_L185_C9")]
         [NativeName("Name", "anonymous1")]
         public EventDataDescriptorUnionUnion Anonymous;
 #if NETSTANDARD2_1 || NETCOREAPP3_1 || NET5_0 || NET5_0_OR_GREATER

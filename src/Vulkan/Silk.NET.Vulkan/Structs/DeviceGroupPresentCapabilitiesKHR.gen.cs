@@ -62,6 +62,12 @@ namespace Silk.NET.Vulkan
         [NativeName("Type.Name", "VkDeviceGroupPresentModeFlagsKHR")]
         [NativeName("Name", "modes")]
         public DeviceGroupPresentModeFlagsKHR Modes;
+        /// <summary>To be documented.</summary>
+        public override string ToString()
+        {
+            return Handle.ToString();
+        }
+
 
         /// <inheritdoc />
         StructureType IStructuredType.StructureType()

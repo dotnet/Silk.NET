@@ -80,6 +80,12 @@ namespace Silk.NET.Vulkan
         [NativeName("Type.Name", "VkExternalFenceFeatureFlags")]
         [NativeName("Name", "externalFenceFeatures")]
         public ExternalFenceFeatureFlags ExternalFenceFeatures;
+        /// <summary>To be documented.</summary>
+        public override string ToString()
+        {
+            return Handle.ToString();
+        }
+
 
         /// <inheritdoc />
         StructureType IStructuredType.StructureType()

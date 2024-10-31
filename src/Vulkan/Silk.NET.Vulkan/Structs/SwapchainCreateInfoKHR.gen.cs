@@ -222,6 +222,12 @@ namespace Silk.NET.Vulkan
         [NativeName("Type.Name", "VkSwapchainKHR")]
         [NativeName("Name", "oldSwapchain")]
         public SwapchainKHR OldSwapchain;
+        /// <summary>To be documented.</summary>
+        public override string ToString()
+        {
+            return Handle.ToString();
+        }
+
 
         /// <inheritdoc />
         StructureType IStructuredType.StructureType()

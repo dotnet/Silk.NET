@@ -101,6 +101,12 @@ namespace Silk.NET.Vulkan
         [NativeName("Type.Name", "VkImageToMemoryCopyEXT")]
         [NativeName("Name", "pRegions")]
         public ImageToMemoryCopyEXT* PRegions;
+        /// <summary>To be documented.</summary>
+        public override string ToString()
+        {
+            return Handle.ToString();
+        }
+
 
         /// <inheritdoc />
         StructureType IStructuredType.StructureType()

@@ -68,5 +68,11 @@ namespace Silk.NET.OpenXR
         [NativeName("Type.Name", "XrOverlayMainSessionFlagsEXTX")]
         [NativeName("Name", "flags")]
         public OverlayMainSessionFlagsEXTX Flags;
+        /// <summary>To be documented.</summary>
+        public override string ToString()
+        {
+            return Handle.ToString();
+        }
+
     }
 }

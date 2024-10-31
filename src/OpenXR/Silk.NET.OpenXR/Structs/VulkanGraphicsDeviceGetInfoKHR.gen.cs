@@ -68,5 +68,11 @@ namespace Silk.NET.OpenXR
         [NativeName("Type.Name", "VkInstance")]
         [NativeName("Name", "vulkanInstance")]
         public Silk.NET.Core.Native.VkHandle VulkanInstance;
+        /// <summary>To be documented.</summary>
+        public override string ToString()
+        {
+            return Handle.ToString();
+        }
+
     }
 }

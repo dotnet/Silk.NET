@@ -29,6 +29,9 @@ namespace Silk.NET.OpenXR
         [NativeName("Name", "XR_API_LAYER_NEXT_INFO_STRUCT_VERSION")]
         public const uint ApiLayerNextInfoStructVersion = unchecked((uint) 1);
         [NativeName("Type", "")]
+        [NativeName("Name", "XR_BODY_JOINT_COUNT_HTC")]
+        public const uint BodyJointCountHtc = unchecked((uint) 26);
+        [NativeName("Type", "")]
         [NativeName("Name", "XR_CURRENT_LOADER_API_LAYER_VERSION")]
         public const uint CurrentLoaderApiLayerVersion = unchecked((uint) 1);
         [NativeName("Type", "")]

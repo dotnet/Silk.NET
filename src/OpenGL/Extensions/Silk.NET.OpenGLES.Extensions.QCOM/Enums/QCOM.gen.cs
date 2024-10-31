@@ -160,5 +160,9 @@ namespace Silk.NET.OpenGLES.Extensions.QCOM
         MultisampleBufferBit7QCom = unchecked((int)0x80000000),
         [NativeName("Name", "GL_WRITEONLY_RENDERING_QCOM")]
         WriteonlyRenderingQCom = 0x8823,
+        [NativeName("Name", "GL_TEXTURE_Y_DEGAMMA_QCOM")]
+        TextureYDegammaQCom = 0x9710,
+        [NativeName("Name", "GL_TEXTURE_CBCR_DEGAMMA_QCOM")]
+        TextureCbcrDegammaQCom = 0x9711,
     }
 }

@@ -79,6 +79,12 @@ namespace Silk.NET.Vulkan
         [NativeName("Type.Name", "VkBufferCollectionConstraintsInfoFUCHSIA")]
         [NativeName("Name", "bufferCollectionConstraints")]
         public BufferCollectionConstraintsInfoFUCHSIA BufferCollectionConstraints;
+        /// <summary>To be documented.</summary>
+        public override string ToString()
+        {
+            return Handle.ToString();
+        }
+
 
         /// <inheritdoc />
         StructureType IStructuredType.StructureType()

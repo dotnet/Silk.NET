@@ -23,7 +23,9 @@ namespace Silk.NET.Vulkan
         (
             StructureType? sType = StructureType.ExecutionGraphPipelineScratchSizeAmdx,
             void* pNext = null,
-            ulong? size = null
+            ulong? minSize = null,
+            ulong? maxSize = null,
+            ulong? sizeGranularity = null
         ) : this()
         {
             if (sType is not null)
@@ -36,9 +38,19 @@ namespace Silk.NET.Vulkan
                 PNext = pNext;
             }
 
-            if (size is not null)
+            if (minSize is not null)
             {
-                Size = size.Value;
+                MinSize = minSize.Value;
+            }
+
+            if (maxSize is not null)
+            {
+                MaxSize = maxSize.Value;
+            }
+
+            if (sizeGranularity is not null)
+            {
+                SizeGranularity = sizeGranularity.Value;
             }
         }
 
@@ -55,8 +67,24 @@ namespace Silk.NET.Vulkan
 /// <summary></summary>
         [NativeName("Type", "VkDeviceSize")]
         [NativeName("Type.Name", "VkDeviceSize")]
-        [NativeName("Name", "size")]
-        public ulong Size;
+        [NativeName("Name", "minSize")]
+        public ulong MinSize;
+/// <summary></summary>
+        [NativeName("Type", "VkDeviceSize")]
+        [NativeName("Type.Name", "VkDeviceSize")]
+        [NativeName("Name", "maxSize")]
+        public ulong MaxSize;
+/// <summary></summary>
+        [NativeName("Type", "VkDeviceSize")]
+        [NativeName("Type.Name", "VkDeviceSize")]
+        [NativeName("Name", "sizeGranularity")]
+        public ulong SizeGranularity;
+        /// <summary>To be documented.</summary>
+        public override string ToString()
+        {
+            return Handle.ToString();
+        }
+
 
         /// <inheritdoc />
         StructureType IStructuredType.StructureType()

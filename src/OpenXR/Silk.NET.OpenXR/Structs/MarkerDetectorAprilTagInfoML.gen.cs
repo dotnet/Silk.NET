@@ -57,5 +57,11 @@ namespace Silk.NET.OpenXR
         [NativeName("Type.Name", "XrMarkerAprilTagDictML")]
         [NativeName("Name", "aprilTagDict")]
         public MarkerAprilTagDictML AprilTagDict;
+        /// <summary>To be documented.</summary>
+        public override string ToString()
+        {
+            return Handle.ToString();
+        }
+
     }
 }

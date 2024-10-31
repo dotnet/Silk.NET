@@ -68,6 +68,12 @@ namespace Silk.NET.Vulkan
         [NativeName("Type.Name", "VkSemaphoreSubmitInfo")]
         [NativeName("Name", "pStripeSemaphoreInfos")]
         public SemaphoreSubmitInfo* PStripeSemaphoreInfos;
+        /// <summary>To be documented.</summary>
+        public override string ToString()
+        {
+            return Handle.ToString();
+        }
+
 
         /// <inheritdoc />
         StructureType IStructuredType.StructureType()

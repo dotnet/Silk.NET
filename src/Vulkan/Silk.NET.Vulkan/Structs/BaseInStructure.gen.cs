@@ -46,6 +46,12 @@ namespace Silk.NET.Vulkan
         [NativeName("Type.Name", "VkBaseInStructure")]
         [NativeName("Name", "pNext")]
         public BaseInStructure* PNext;
+        /// <summary>To be documented.</summary>
+        public override string ToString()
+        {
+            return Handle.ToString();
+        }
+
 
         /// <inheritdoc />
         /// <remarks>Note, there is no fixed value for this type.</remarks>

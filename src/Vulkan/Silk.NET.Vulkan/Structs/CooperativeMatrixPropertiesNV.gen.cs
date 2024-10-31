@@ -134,6 +134,12 @@ namespace Silk.NET.Vulkan
         [NativeName("Type.Name", "VkScopeNV")]
         [NativeName("Name", "scope")]
         public ScopeNV Scope;
+        /// <summary>To be documented.</summary>
+        public override string ToString()
+        {
+            return Handle.ToString();
+        }
+
 
         /// <inheritdoc />
         StructureType IStructuredType.StructureType()

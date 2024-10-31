@@ -157,82 +157,82 @@ public unsafe static class DxcResultVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetOutput(this ComPtr<IDxcResult> thisVtbl, OutKind dxcOutKind, Guid* iid, void** ppvObject, IDxcBlobUtf16** ppOutputName)
+    public static unsafe int GetOutput(this ComPtr<IDxcResult> thisVtbl, OutKind dxcOutKind, Guid* iid, void** ppvObject, IDxcBlobWide** ppOutputName)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
-        ret = ((delegate* unmanaged[Stdcall]<IDxcResult*, OutKind, Guid*, void**, IDxcBlobUtf16**, int>)@this->LpVtbl[7])(@this, dxcOutKind, iid, ppvObject, ppOutputName);
+        ret = ((delegate* unmanaged[Stdcall]<IDxcResult*, OutKind, Guid*, void**, IDxcBlobWide**, int>)@this->LpVtbl[7])(@this, dxcOutKind, iid, ppvObject, ppOutputName);
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetOutput(this ComPtr<IDxcResult> thisVtbl, OutKind dxcOutKind, Guid* iid, void** ppvObject, ref IDxcBlobUtf16* ppOutputName)
+    public static unsafe int GetOutput(this ComPtr<IDxcResult> thisVtbl, OutKind dxcOutKind, Guid* iid, void** ppvObject, ref IDxcBlobWide* ppOutputName)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
-        fixed (IDxcBlobUtf16** ppOutputNamePtr = &ppOutputName)
+        fixed (IDxcBlobWide** ppOutputNamePtr = &ppOutputName)
         {
-            ret = ((delegate* unmanaged[Stdcall]<IDxcResult*, OutKind, Guid*, void**, IDxcBlobUtf16**, int>)@this->LpVtbl[7])(@this, dxcOutKind, iid, ppvObject, ppOutputNamePtr);
+            ret = ((delegate* unmanaged[Stdcall]<IDxcResult*, OutKind, Guid*, void**, IDxcBlobWide**, int>)@this->LpVtbl[7])(@this, dxcOutKind, iid, ppvObject, ppOutputNamePtr);
         }
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetOutput(this ComPtr<IDxcResult> thisVtbl, OutKind dxcOutKind, Guid* iid, ref void* ppvObject, IDxcBlobUtf16** ppOutputName)
+    public static unsafe int GetOutput(this ComPtr<IDxcResult> thisVtbl, OutKind dxcOutKind, Guid* iid, ref void* ppvObject, IDxcBlobWide** ppOutputName)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
         fixed (void** ppvObjectPtr = &ppvObject)
         {
-            ret = ((delegate* unmanaged[Stdcall]<IDxcResult*, OutKind, Guid*, void**, IDxcBlobUtf16**, int>)@this->LpVtbl[7])(@this, dxcOutKind, iid, ppvObjectPtr, ppOutputName);
+            ret = ((delegate* unmanaged[Stdcall]<IDxcResult*, OutKind, Guid*, void**, IDxcBlobWide**, int>)@this->LpVtbl[7])(@this, dxcOutKind, iid, ppvObjectPtr, ppOutputName);
         }
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetOutput(this ComPtr<IDxcResult> thisVtbl, OutKind dxcOutKind, Guid* iid, ref void* ppvObject, ref IDxcBlobUtf16* ppOutputName)
+    public static unsafe int GetOutput(this ComPtr<IDxcResult> thisVtbl, OutKind dxcOutKind, Guid* iid, ref void* ppvObject, ref IDxcBlobWide* ppOutputName)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
         fixed (void** ppvObjectPtr = &ppvObject)
         {
-            fixed (IDxcBlobUtf16** ppOutputNamePtr = &ppOutputName)
+            fixed (IDxcBlobWide** ppOutputNamePtr = &ppOutputName)
             {
-                ret = ((delegate* unmanaged[Stdcall]<IDxcResult*, OutKind, Guid*, void**, IDxcBlobUtf16**, int>)@this->LpVtbl[7])(@this, dxcOutKind, iid, ppvObjectPtr, ppOutputNamePtr);
+                ret = ((delegate* unmanaged[Stdcall]<IDxcResult*, OutKind, Guid*, void**, IDxcBlobWide**, int>)@this->LpVtbl[7])(@this, dxcOutKind, iid, ppvObjectPtr, ppOutputNamePtr);
             }
         }
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetOutput(this ComPtr<IDxcResult> thisVtbl, OutKind dxcOutKind, ref Guid iid, void** ppvObject, IDxcBlobUtf16** ppOutputName)
+    public static unsafe int GetOutput(this ComPtr<IDxcResult> thisVtbl, OutKind dxcOutKind, ref Guid iid, void** ppvObject, IDxcBlobWide** ppOutputName)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
         fixed (Guid* iidPtr = &iid)
         {
-            ret = ((delegate* unmanaged[Stdcall]<IDxcResult*, OutKind, Guid*, void**, IDxcBlobUtf16**, int>)@this->LpVtbl[7])(@this, dxcOutKind, iidPtr, ppvObject, ppOutputName);
+            ret = ((delegate* unmanaged[Stdcall]<IDxcResult*, OutKind, Guid*, void**, IDxcBlobWide**, int>)@this->LpVtbl[7])(@this, dxcOutKind, iidPtr, ppvObject, ppOutputName);
         }
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetOutput(this ComPtr<IDxcResult> thisVtbl, OutKind dxcOutKind, ref Guid iid, void** ppvObject, ref IDxcBlobUtf16* ppOutputName)
+    public static unsafe int GetOutput(this ComPtr<IDxcResult> thisVtbl, OutKind dxcOutKind, ref Guid iid, void** ppvObject, ref IDxcBlobWide* ppOutputName)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
         fixed (Guid* iidPtr = &iid)
         {
-            fixed (IDxcBlobUtf16** ppOutputNamePtr = &ppOutputName)
+            fixed (IDxcBlobWide** ppOutputNamePtr = &ppOutputName)
             {
-                ret = ((delegate* unmanaged[Stdcall]<IDxcResult*, OutKind, Guid*, void**, IDxcBlobUtf16**, int>)@this->LpVtbl[7])(@this, dxcOutKind, iidPtr, ppvObject, ppOutputNamePtr);
+                ret = ((delegate* unmanaged[Stdcall]<IDxcResult*, OutKind, Guid*, void**, IDxcBlobWide**, int>)@this->LpVtbl[7])(@this, dxcOutKind, iidPtr, ppvObject, ppOutputNamePtr);
             }
         }
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetOutput(this ComPtr<IDxcResult> thisVtbl, OutKind dxcOutKind, ref Guid iid, ref void* ppvObject, IDxcBlobUtf16** ppOutputName)
+    public static unsafe int GetOutput(this ComPtr<IDxcResult> thisVtbl, OutKind dxcOutKind, ref Guid iid, ref void* ppvObject, IDxcBlobWide** ppOutputName)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -240,14 +240,14 @@ public unsafe static class DxcResultVtblExtensions
         {
             fixed (void** ppvObjectPtr = &ppvObject)
             {
-                ret = ((delegate* unmanaged[Stdcall]<IDxcResult*, OutKind, Guid*, void**, IDxcBlobUtf16**, int>)@this->LpVtbl[7])(@this, dxcOutKind, iidPtr, ppvObjectPtr, ppOutputName);
+                ret = ((delegate* unmanaged[Stdcall]<IDxcResult*, OutKind, Guid*, void**, IDxcBlobWide**, int>)@this->LpVtbl[7])(@this, dxcOutKind, iidPtr, ppvObjectPtr, ppOutputName);
             }
         }
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetOutput(this ComPtr<IDxcResult> thisVtbl, OutKind dxcOutKind, ref Guid iid, ref void* ppvObject, ref IDxcBlobUtf16* ppOutputName)
+    public static unsafe int GetOutput(this ComPtr<IDxcResult> thisVtbl, OutKind dxcOutKind, ref Guid iid, ref void* ppvObject, ref IDxcBlobWide* ppOutputName)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -255,9 +255,9 @@ public unsafe static class DxcResultVtblExtensions
         {
             fixed (void** ppvObjectPtr = &ppvObject)
             {
-                fixed (IDxcBlobUtf16** ppOutputNamePtr = &ppOutputName)
+                fixed (IDxcBlobWide** ppOutputNamePtr = &ppOutputName)
                 {
-                    ret = ((delegate* unmanaged[Stdcall]<IDxcResult*, OutKind, Guid*, void**, IDxcBlobUtf16**, int>)@this->LpVtbl[7])(@this, dxcOutKind, iidPtr, ppvObjectPtr, ppOutputNamePtr);
+                    ret = ((delegate* unmanaged[Stdcall]<IDxcResult*, OutKind, Guid*, void**, IDxcBlobWide**, int>)@this->LpVtbl[7])(@this, dxcOutKind, iidPtr, ppvObjectPtr, ppOutputNamePtr);
                 }
             }
         }
@@ -341,15 +341,15 @@ public unsafe static class DxcResultVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int GetOutput<TI0, TI1>(this ComPtr<IDxcResult> thisVtbl, OutKind dxcOutKind, ref ComPtr<TI0> ppvObject, ref ComPtr<TI1> ppOutputName) where TI0 : unmanaged, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDxcBlobUtf16>, IComVtbl<TI1>
+    public static int GetOutput<TI0, TI1>(this ComPtr<IDxcResult> thisVtbl, OutKind dxcOutKind, ref ComPtr<TI0> ppvObject, ref ComPtr<TI1> ppOutputName) where TI0 : unmanaged, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDxcBlobWide>, IComVtbl<TI1>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
-        return @this->GetOutput(dxcOutKind, SilkMarshal.GuidPtrOf<TI0>(), (void**) ppvObject.GetAddressOf(), (IDxcBlobUtf16**) ppOutputName.GetAddressOf());
+        return @this->GetOutput(dxcOutKind, SilkMarshal.GuidPtrOf<TI0>(), (void**) ppvObject.GetAddressOf(), (IDxcBlobWide**) ppOutputName.GetAddressOf());
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetOutput<TI0>(this ComPtr<IDxcResult> thisVtbl, OutKind dxcOutKind, ref ComPtr<TI0> ppvObject, ref IDxcBlobUtf16* ppOutputName) where TI0 : unmanaged, IComVtbl<TI0>
+    public static unsafe int GetOutput<TI0>(this ComPtr<IDxcResult> thisVtbl, OutKind dxcOutKind, ref ComPtr<TI0> ppvObject, ref IDxcBlobWide* ppOutputName) where TI0 : unmanaged, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -357,15 +357,15 @@ public unsafe static class DxcResultVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetOutput<TI0>(this ComPtr<IDxcResult> thisVtbl, OutKind dxcOutKind, Guid* iid, ref void* ppvObject, ref ComPtr<TI0> ppOutputName) where TI0 : unmanaged, IComVtbl<IDxcBlobUtf16>, IComVtbl<TI0>
+    public static unsafe int GetOutput<TI0>(this ComPtr<IDxcResult> thisVtbl, OutKind dxcOutKind, Guid* iid, ref void* ppvObject, ref ComPtr<TI0> ppOutputName) where TI0 : unmanaged, IComVtbl<IDxcBlobWide>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
-        return @this->GetOutput(dxcOutKind, iid, ref ppvObject, (IDxcBlobUtf16**) ppOutputName.GetAddressOf());
+        return @this->GetOutput(dxcOutKind, iid, ref ppvObject, (IDxcBlobWide**) ppOutputName.GetAddressOf());
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetOutput(this ComPtr<IDxcResult> thisVtbl, OutKind dxcOutKind, Span<Guid> iid, void** ppvObject, IDxcBlobUtf16** ppOutputName)
+    public static unsafe int GetOutput(this ComPtr<IDxcResult> thisVtbl, OutKind dxcOutKind, Span<Guid> iid, void** ppvObject, IDxcBlobWide** ppOutputName)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -373,15 +373,15 @@ public unsafe static class DxcResultVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetOutput<TI0>(this ComPtr<IDxcResult> thisVtbl, OutKind dxcOutKind, ref Guid iid, void** ppvObject, ref ComPtr<TI0> ppOutputName) where TI0 : unmanaged, IComVtbl<IDxcBlobUtf16>, IComVtbl<TI0>
+    public static unsafe int GetOutput<TI0>(this ComPtr<IDxcResult> thisVtbl, OutKind dxcOutKind, ref Guid iid, void** ppvObject, ref ComPtr<TI0> ppOutputName) where TI0 : unmanaged, IComVtbl<IDxcBlobWide>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
-        return @this->GetOutput(dxcOutKind, ref iid, ppvObject, (IDxcBlobUtf16**) ppOutputName.GetAddressOf());
+        return @this->GetOutput(dxcOutKind, ref iid, ppvObject, (IDxcBlobWide**) ppOutputName.GetAddressOf());
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetOutput(this ComPtr<IDxcResult> thisVtbl, OutKind dxcOutKind, Span<Guid> iid, void** ppvObject, ref IDxcBlobUtf16* ppOutputName)
+    public static unsafe int GetOutput(this ComPtr<IDxcResult> thisVtbl, OutKind dxcOutKind, Span<Guid> iid, void** ppvObject, ref IDxcBlobWide* ppOutputName)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -389,7 +389,7 @@ public unsafe static class DxcResultVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetOutput(this ComPtr<IDxcResult> thisVtbl, OutKind dxcOutKind, Span<Guid> iid, ref void* ppvObject, IDxcBlobUtf16** ppOutputName)
+    public static unsafe int GetOutput(this ComPtr<IDxcResult> thisVtbl, OutKind dxcOutKind, Span<Guid> iid, ref void* ppvObject, IDxcBlobWide** ppOutputName)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -397,15 +397,15 @@ public unsafe static class DxcResultVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetOutput<TI0>(this ComPtr<IDxcResult> thisVtbl, OutKind dxcOutKind, ref Guid iid, ref void* ppvObject, ref ComPtr<TI0> ppOutputName) where TI0 : unmanaged, IComVtbl<IDxcBlobUtf16>, IComVtbl<TI0>
+    public static unsafe int GetOutput<TI0>(this ComPtr<IDxcResult> thisVtbl, OutKind dxcOutKind, ref Guid iid, ref void* ppvObject, ref ComPtr<TI0> ppOutputName) where TI0 : unmanaged, IComVtbl<IDxcBlobWide>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
-        return @this->GetOutput(dxcOutKind, ref iid, ref ppvObject, (IDxcBlobUtf16**) ppOutputName.GetAddressOf());
+        return @this->GetOutput(dxcOutKind, ref iid, ref ppvObject, (IDxcBlobWide**) ppOutputName.GetAddressOf());
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetOutput(this ComPtr<IDxcResult> thisVtbl, OutKind dxcOutKind, Span<Guid> iid, ref void* ppvObject, ref IDxcBlobUtf16* ppOutputName)
+    public static unsafe int GetOutput(this ComPtr<IDxcResult> thisVtbl, OutKind dxcOutKind, Span<Guid> iid, ref void* ppvObject, ref IDxcBlobWide* ppOutputName)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader

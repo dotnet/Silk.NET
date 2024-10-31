@@ -134,5 +134,11 @@ namespace Silk.NET.OpenXR
         [NativeName("Type.Name", "XrVector2f")]
         [NativeName("Name", "bias")]
         public Vector2f Bias;
+        /// <summary>To be documented.</summary>
+        public override string ToString()
+        {
+            return Handle.ToString();
+        }
+
     }
 }

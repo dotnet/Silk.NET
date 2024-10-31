@@ -112,6 +112,12 @@ namespace Silk.NET.Vulkan
         [NativeName("Type.Name", "StdVideoH265PictureParameterSet")]
         [NativeName("Name", "pStdPPSs")]
         public Video.StdVideoH265PictureParameterSet* PStdPpss;
+        /// <summary>To be documented.</summary>
+        public override string ToString()
+        {
+            return Handle.ToString();
+        }
+
 
         /// <inheritdoc />
         StructureType IStructuredType.StructureType()

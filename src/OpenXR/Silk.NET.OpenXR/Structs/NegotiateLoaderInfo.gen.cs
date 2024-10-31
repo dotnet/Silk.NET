@@ -101,5 +101,11 @@ namespace Silk.NET.OpenXR
         [NativeName("Type.Name", "XrVersion")]
         [NativeName("Name", "maxApiVersion")]
         public ulong MaxApiVersion;
+        /// <summary>To be documented.</summary>
+        public override string ToString()
+        {
+            return Handle.ToString();
+        }
+
     }
 }

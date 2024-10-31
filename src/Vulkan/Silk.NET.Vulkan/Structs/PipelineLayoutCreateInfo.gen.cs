@@ -17,7 +17,7 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkPipelineLayoutCreateInfo")]
-    public unsafe partial struct PipelineLayoutCreateInfo : IExtendsChain<BindDescriptorSetsInfoKHR>, IExtendsChain<PushConstantsInfoKHR>, IExtendsChain<PushDescriptorSetInfoKHR>, IExtendsChain<PushDescriptorSetWithTemplateInfoKHR>, IExtendsChain<SetDescriptorBufferOffsetsInfoEXT>, IExtendsChain<BindDescriptorBufferEmbeddedSamplersInfoEXT>
+    public unsafe partial struct PipelineLayoutCreateInfo : IExtendsChain<BindDescriptorSetsInfoKHR>, IExtendsChain<PushConstantsInfoKHR>, IExtendsChain<PushDescriptorSetInfoKHR>, IExtendsChain<PushDescriptorSetWithTemplateInfoKHR>, IExtendsChain<SetDescriptorBufferOffsetsInfoEXT>, IExtendsChain<BindDescriptorBufferEmbeddedSamplersInfoEXT>, IExtendsChain<IndirectCommandsLayoutCreateInfoEXT>
     {
         public PipelineLayoutCreateInfo
         (
@@ -101,6 +101,12 @@ namespace Silk.NET.Vulkan
         [NativeName("Type.Name", "VkPushConstantRange")]
         [NativeName("Name", "pPushConstantRanges")]
         public PushConstantRange* PPushConstantRanges;
+        /// <summary>To be documented.</summary>
+        public override string ToString()
+        {
+            return Handle.ToString();
+        }
+
 
         /// <inheritdoc />
         StructureType IStructuredType.StructureType()

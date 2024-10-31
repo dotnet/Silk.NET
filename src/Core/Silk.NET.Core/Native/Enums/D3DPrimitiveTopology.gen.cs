@@ -24,6 +24,8 @@ namespace Silk.NET.Core.Native
         D3DPrimitiveTopologyTrianglelist = 0x4,
         [NativeName("Name", "D3D_PRIMITIVE_TOPOLOGY_TRIANGLESTRIP")]
         D3DPrimitiveTopologyTrianglestrip = 0x5,
+        [NativeName("Name", "D3D_PRIMITIVE_TOPOLOGY_TRIANGLEFAN")]
+        D3DPrimitiveTopologyTrianglefan = 0x6,
         [NativeName("Name", "D3D_PRIMITIVE_TOPOLOGY_LINELIST_ADJ")]
         D3DPrimitiveTopologyLinelistAdj = 0xA,
         [NativeName("Name", "D3D_PRIMITIVE_TOPOLOGY_LINESTRIP_ADJ")]

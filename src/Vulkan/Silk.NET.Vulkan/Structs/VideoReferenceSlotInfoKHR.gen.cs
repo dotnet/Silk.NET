@@ -68,6 +68,12 @@ namespace Silk.NET.Vulkan
         [NativeName("Type.Name", "VkVideoPictureResourceInfoKHR")]
         [NativeName("Name", "pPictureResource")]
         public VideoPictureResourceInfoKHR* PPictureResource;
+        /// <summary>To be documented.</summary>
+        public override string ToString()
+        {
+            return Handle.ToString();
+        }
+
 
         /// <inheritdoc />
         StructureType IStructuredType.StructureType()

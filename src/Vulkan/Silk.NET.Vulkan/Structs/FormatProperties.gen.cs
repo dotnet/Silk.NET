@@ -57,5 +57,11 @@ namespace Silk.NET.Vulkan
         [NativeName("Type.Name", "VkFormatFeatureFlags")]
         [NativeName("Name", "bufferFeatures")]
         public FormatFeatureFlags BufferFeatures;
+        /// <summary>To be documented.</summary>
+        public override string ToString()
+        {
+            return Handle.ToString();
+        }
+
     }
 }

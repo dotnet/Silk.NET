@@ -156,6 +156,12 @@ namespace Silk.NET.Vulkan
         [NativeName("Type.Name", "VkDebugUtilsObjectNameInfoEXT")]
         [NativeName("Name", "pObjects")]
         public DebugUtilsObjectNameInfoEXT* PObjects;
+        /// <summary>To be documented.</summary>
+        public override string ToString()
+        {
+            return Handle.ToString();
+        }
+
 
         /// <inheritdoc />
         StructureType IStructuredType.StructureType()

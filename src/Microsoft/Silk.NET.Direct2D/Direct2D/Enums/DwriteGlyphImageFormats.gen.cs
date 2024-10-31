@@ -31,5 +31,7 @@ namespace Silk.NET.Direct2D
         Tiff = 0x40,
         [NativeName("Name", "DWRITE_GLYPH_IMAGE_FORMATS_PREMULTIPLIED_B8G8R8A8")]
         PremultipliedB8G8R8A8 = 0x80,
+        [NativeName("Name", "DWRITE_GLYPH_IMAGE_FORMATS_COLR_PAINT_TREE")]
+        ColrPaintTree = 0x100,
     }
 }

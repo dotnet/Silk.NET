@@ -68,5 +68,11 @@ namespace Silk.NET.OpenXR
         [NativeName("Type.Name", "XrHandMeshVertexMSFT")]
         [NativeName("Name", "vertices")]
         public HandMeshVertexMSFT* Vertices;
+        /// <summary>To be documented.</summary>
+        public override string ToString()
+        {
+            return Handle.ToString();
+        }
+
     }
 }

@@ -79,5 +79,11 @@ namespace Silk.NET.OpenXR
         [NativeName("Type.Name", "XrVirtualKeyboardAnimationStateMETA")]
         [NativeName("Name", "states")]
         public VirtualKeyboardAnimationStateMETA* States;
+        /// <summary>To be documented.</summary>
+        public override string ToString()
+        {
+            return Handle.ToString();
+        }
+
     }
 }

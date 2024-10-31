@@ -184,6 +184,9 @@ namespace Silk.NET.Vulkan
         [Obsolete("Deprecated in favour of \"CommandPreprocessBitNV\"")]
         [NativeName("Name", "VK_PIPELINE_STAGE_2_COMMAND_PREPROCESS_BIT_NV")]
         PipelineStage2CommandPreprocessBitNV = 131072,
+        [Obsolete("Deprecated in favour of \"CommandPreprocessBitExt\"")]
+        [NativeName("Name", "VK_PIPELINE_STAGE_2_COMMAND_PREPROCESS_BIT_EXT")]
+        PipelineStage2CommandPreprocessBitExt = 131072,
         [Obsolete("Deprecated in favour of \"FragmentShadingRateAttachmentBitKhr\"")]
         [NativeName("Name", "VK_PIPELINE_STAGE_2_FRAGMENT_SHADING_RATE_ATTACHMENT_BIT_KHR")]
         PipelineStage2FragmentShadingRateAttachmentBitKhr = 4194304,
@@ -352,6 +355,8 @@ namespace Silk.NET.Vulkan
         ConditionalRenderingBitExt = 262144,
         [NativeName("Name", "VK_PIPELINE_STAGE_2_COMMAND_PREPROCESS_BIT_NV")]
         CommandPreprocessBitNV = 131072,
+        [NativeName("Name", "VK_PIPELINE_STAGE_2_COMMAND_PREPROCESS_BIT_EXT")]
+        CommandPreprocessBitExt = 131072,
         [NativeName("Name", "VK_PIPELINE_STAGE_2_FRAGMENT_SHADING_RATE_ATTACHMENT_BIT_KHR")]
         FragmentShadingRateAttachmentBitKhr = 4194304,
         [NativeName("Name", "VK_PIPELINE_STAGE_2_SHADING_RATE_IMAGE_BIT_NV")]

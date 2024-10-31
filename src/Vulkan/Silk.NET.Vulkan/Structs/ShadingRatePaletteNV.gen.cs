@@ -46,5 +46,11 @@ namespace Silk.NET.Vulkan
         [NativeName("Type.Name", "VkShadingRatePaletteEntryNV")]
         [NativeName("Name", "pShadingRatePaletteEntries")]
         public ShadingRatePaletteEntryNV* PShadingRatePaletteEntries;
+        /// <summary>To be documented.</summary>
+        public override string ToString()
+        {
+            return Handle.ToString();
+        }
+
     }
 }

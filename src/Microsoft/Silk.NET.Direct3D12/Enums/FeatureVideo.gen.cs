@@ -132,6 +132,12 @@ namespace Silk.NET.Direct3D12
         [Obsolete("Deprecated in favour of \"EncoderResourceRequirements\"")]
         [NativeName("Name", "D3D12_FEATURE_VIDEO_ENCODER_RESOURCE_REQUIREMENTS")]
         FeatureVideoEncoderResourceRequirements = 0x2D,
+        [Obsolete("Deprecated in favour of \"EncoderFrameSubregionLayoutConfig\"")]
+        [NativeName("Name", "D3D12_FEATURE_VIDEO_ENCODER_FRAME_SUBREGION_LAYOUT_CONFIG")]
+        FeatureVideoEncoderFrameSubregionLayoutConfig = 0x2E,
+        [Obsolete("Deprecated in favour of \"EncoderSupport1\"")]
+        [NativeName("Name", "D3D12_FEATURE_VIDEO_ENCODER_SUPPORT1")]
+        FeatureVideoEncoderSupport1 = 0x2F,
         [NativeName("Name", "D3D12_FEATURE_VIDEO_DECODE_SUPPORT")]
         DecodeSupport = 0x0,
         [NativeName("Name", "D3D12_FEATURE_VIDEO_DECODE_PROFILES")]
@@ -212,5 +218,9 @@ namespace Silk.NET.Direct3D12
         EncoderCodecPictureControlSupport = 0x2C,
         [NativeName("Name", "D3D12_FEATURE_VIDEO_ENCODER_RESOURCE_REQUIREMENTS")]
         EncoderResourceRequirements = 0x2D,
+        [NativeName("Name", "D3D12_FEATURE_VIDEO_ENCODER_FRAME_SUBREGION_LAYOUT_CONFIG")]
+        EncoderFrameSubregionLayoutConfig = 0x2E,
+        [NativeName("Name", "D3D12_FEATURE_VIDEO_ENCODER_SUPPORT1")]
+        EncoderSupport1 = 0x2F,
     }
 }

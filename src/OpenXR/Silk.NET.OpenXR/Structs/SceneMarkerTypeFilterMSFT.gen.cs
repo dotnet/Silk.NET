@@ -68,5 +68,11 @@ namespace Silk.NET.OpenXR
         [NativeName("Type.Name", "XrSceneMarkerTypeMSFT")]
         [NativeName("Name", "markerTypes")]
         public SceneMarkerTypeMSFT* MarkerTypes;
+        /// <summary>To be documented.</summary>
+        public override string ToString()
+        {
+            return Handle.ToString();
+        }
+
     }
 }

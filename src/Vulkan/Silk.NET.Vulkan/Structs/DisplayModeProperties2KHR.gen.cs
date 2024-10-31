@@ -57,6 +57,12 @@ namespace Silk.NET.Vulkan
         [NativeName("Type.Name", "VkDisplayModePropertiesKHR")]
         [NativeName("Name", "displayModeProperties")]
         public DisplayModePropertiesKHR DisplayModeProperties;
+        /// <summary>To be documented.</summary>
+        public override string ToString()
+        {
+            return Handle.ToString();
+        }
+
 
         /// <inheritdoc />
         StructureType IStructuredType.StructureType()

@@ -58,5 +58,11 @@ namespace Silk.NET.Vulkan
         [NativeName("Type.Name", "VkImageAspectFlags")]
         [NativeName("Name", "aspectMask")]
         public ImageAspectFlags AspectMask;
+        /// <summary>To be documented.</summary>
+        public override string ToString()
+        {
+            return Handle.ToString();
+        }
+
     }
 }

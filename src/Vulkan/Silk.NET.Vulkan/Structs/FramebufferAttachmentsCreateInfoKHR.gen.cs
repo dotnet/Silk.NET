@@ -69,6 +69,12 @@ namespace Silk.NET.Vulkan
         [NativeName("Type.Name", "VkFramebufferAttachmentImageInfo")]
         [NativeName("Name", "pAttachmentImageInfos")]
         public FramebufferAttachmentImageInfo* PAttachmentImageInfos;
+        /// <summary>To be documented.</summary>
+        public override string ToString()
+        {
+            return Handle.ToString();
+        }
+
 
         /// <inheritdoc />
         StructureType IStructuredType.StructureType()

@@ -90,6 +90,12 @@ namespace Silk.NET.Vulkan
         [NativeName("Type.Name", "VkSubpassSampleLocationsEXT")]
         [NativeName("Name", "pPostSubpassSampleLocations")]
         public SubpassSampleLocationsEXT* PPostSubpassSampleLocations;
+        /// <summary>To be documented.</summary>
+        public override string ToString()
+        {
+            return Handle.ToString();
+        }
+
 
         /// <inheritdoc />
         StructureType IStructuredType.StructureType()

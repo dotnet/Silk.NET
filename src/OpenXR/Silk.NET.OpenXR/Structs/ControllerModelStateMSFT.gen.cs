@@ -79,5 +79,11 @@ namespace Silk.NET.OpenXR
         [NativeName("Type.Name", "XrControllerModelNodeStateMSFT")]
         [NativeName("Name", "nodeStates")]
         public ControllerModelNodeStateMSFT* NodeStates;
+        /// <summary>To be documented.</summary>
+        public override string ToString()
+        {
+            return Handle.ToString();
+        }
+
     }
 }

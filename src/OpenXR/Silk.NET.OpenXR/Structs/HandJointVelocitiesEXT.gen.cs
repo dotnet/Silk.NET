@@ -68,5 +68,11 @@ namespace Silk.NET.OpenXR
         [NativeName("Type.Name", "XrHandJointVelocityEXT")]
         [NativeName("Name", "jointVelocities")]
         public HandJointVelocityEXT* JointVelocities;
+        /// <summary>To be documented.</summary>
+        public override string ToString()
+        {
+            return Handle.ToString();
+        }
+
     }
 }

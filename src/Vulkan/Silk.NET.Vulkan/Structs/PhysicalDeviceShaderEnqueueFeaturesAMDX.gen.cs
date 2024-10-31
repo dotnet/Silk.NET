@@ -23,7 +23,8 @@ namespace Silk.NET.Vulkan
         (
             StructureType? sType = StructureType.PhysicalDeviceShaderEnqueueFeaturesAmdx,
             void* pNext = null,
-            Bool32? shaderEnqueue = null
+            Bool32? shaderEnqueue = null,
+            Bool32? shaderMeshEnqueue = null
         ) : this()
         {
             if (sType is not null)
@@ -39,6 +40,11 @@ namespace Silk.NET.Vulkan
             if (shaderEnqueue is not null)
             {
                 ShaderEnqueue = shaderEnqueue.Value;
+            }
+
+            if (shaderMeshEnqueue is not null)
+            {
+                ShaderMeshEnqueue = shaderMeshEnqueue.Value;
             }
         }
 
@@ -57,6 +63,17 @@ namespace Silk.NET.Vulkan
         [NativeName("Type.Name", "VkBool32")]
         [NativeName("Name", "shaderEnqueue")]
         public Bool32 ShaderEnqueue;
+/// <summary></summary>
+        [NativeName("Type", "VkBool32")]
+        [NativeName("Type.Name", "VkBool32")]
+        [NativeName("Name", "shaderMeshEnqueue")]
+        public Bool32 ShaderMeshEnqueue;
+        /// <summary>To be documented.</summary>
+        public override string ToString()
+        {
+            return Handle.ToString();
+        }
+
 
         /// <inheritdoc />
         StructureType IStructuredType.StructureType()

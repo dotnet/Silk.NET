@@ -57,6 +57,12 @@ namespace Silk.NET.Vulkan
         [NativeName("Type.Name", "VkRasterizationOrderAMD")]
         [NativeName("Name", "rasterizationOrder")]
         public RasterizationOrderAMD RasterizationOrder;
+        /// <summary>To be documented.</summary>
+        public override string ToString()
+        {
+            return Handle.ToString();
+        }
+
 
         /// <inheritdoc />
         StructureType IStructuredType.StructureType()

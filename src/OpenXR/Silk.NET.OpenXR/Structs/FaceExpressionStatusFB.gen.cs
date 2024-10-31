@@ -46,5 +46,11 @@ namespace Silk.NET.OpenXR
         [NativeName("Type.Name", "XrBool32")]
         [NativeName("Name", "isEyeFollowingBlendshapesValid")]
         public uint IsEyeFollowingBlendshapesValid;
+        /// <summary>To be documented.</summary>
+        public override string ToString()
+        {
+            return Handle.ToString();
+        }
+
     }
 }

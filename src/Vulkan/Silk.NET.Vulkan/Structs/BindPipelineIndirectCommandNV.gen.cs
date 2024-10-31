@@ -35,5 +35,11 @@ namespace Silk.NET.Vulkan
         [NativeName("Type.Name", "VkDeviceAddress")]
         [NativeName("Name", "pipelineAddress")]
         public ulong PipelineAddress;
+        /// <summary>To be documented.</summary>
+        public override string ToString()
+        {
+            return Handle.ToString();
+        }
+
     }
 }

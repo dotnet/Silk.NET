@@ -80,6 +80,12 @@ namespace Silk.NET.Vulkan
         [NativeName("Type.Name", "VkAttachmentReference2")]
         [NativeName("Name", "pDepthStencilResolveAttachment")]
         public AttachmentReference2* PDepthStencilResolveAttachment;
+        /// <summary>To be documented.</summary>
+        public override string ToString()
+        {
+            return Handle.ToString();
+        }
+
 
         /// <inheritdoc />
         StructureType IStructuredType.StructureType()

@@ -17,17 +17,23 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Direct3D12
 {
     [StructLayout(LayoutKind.Explicit)]
-    [NativeName("Name", "__AnonymousRecord_d3d12_L18918_C5")]
+    [NativeName("Name", "__AnonymousRecord_d3d12_L20676_C5")]
     public unsafe partial struct RenderPassBeginningAccessUnion
     {
         public RenderPassBeginningAccessUnion
         (
-            RenderPassBeginningAccessClearParameters? clear = null
+            RenderPassBeginningAccessClearParameters? clear = null,
+            RenderPassBeginningAccessPreserveLocalParameters? preserveLocal = null
         ) : this()
         {
             if (clear is not null)
             {
                 Clear = clear.Value;
+            }
+
+            if (preserveLocal is not null)
+            {
+                PreserveLocal = preserveLocal.Value;
             }
         }
 
@@ -37,5 +43,11 @@ namespace Silk.NET.Direct3D12
         [NativeName("Type.Name", "D3D12_RENDER_PASS_BEGINNING_ACCESS_CLEAR_PARAMETERS")]
         [NativeName("Name", "Clear")]
         public RenderPassBeginningAccessClearParameters Clear;
+
+        [FieldOffset(0)]
+        [NativeName("Type", "D3D12_RENDER_PASS_BEGINNING_ACCESS_PRESERVE_LOCAL_PARAMETERS")]
+        [NativeName("Type.Name", "D3D12_RENDER_PASS_BEGINNING_ACCESS_PRESERVE_LOCAL_PARAMETERS")]
+        [NativeName("Name", "PreserveLocal")]
+        public RenderPassBeginningAccessPreserveLocalParameters PreserveLocal;
     }
 }

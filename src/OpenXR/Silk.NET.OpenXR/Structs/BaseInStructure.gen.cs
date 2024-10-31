@@ -46,5 +46,11 @@ namespace Silk.NET.OpenXR
         [NativeName("Type.Name", "XrBaseInStructure")]
         [NativeName("Name", "next")]
         public BaseInStructure* Next;
+        /// <summary>To be documented.</summary>
+        public override string ToString()
+        {
+            return Handle.ToString();
+        }
+
     }
 }

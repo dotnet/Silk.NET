@@ -57,5 +57,11 @@ namespace Silk.NET.OpenXR
         [NativeName("Type.Name", "XrCompositionLayerImageLayoutFlagsFB")]
         [NativeName("Name", "flags")]
         public CompositionLayerImageLayoutFlagsFB Flags;
+        /// <summary>To be documented.</summary>
+        public override string ToString()
+        {
+            return Handle.ToString();
+        }
+
     }
 }

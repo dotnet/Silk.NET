@@ -68,5 +68,11 @@ namespace Silk.NET.OpenXR
         [NativeName("Type.Name", "XrInputSourceLocalizedNameFlags")]
         [NativeName("Name", "whichComponents")]
         public InputSourceLocalizedNameFlags WhichComponents;
+        /// <summary>To be documented.</summary>
+        public override string ToString()
+        {
+            return Handle.ToString();
+        }
+
     }
 }

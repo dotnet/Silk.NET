@@ -91,6 +91,12 @@ namespace Silk.NET.Vulkan
         [NativeName("Type.Name", "uint16_t")]
         [NativeName("Name", "lineStipplePattern")]
         public ushort LineStipplePattern;
+        /// <summary>To be documented.</summary>
+        public override string ToString()
+        {
+            return Handle.ToString();
+        }
+
 
         /// <inheritdoc />
         StructureType IStructuredType.StructureType()

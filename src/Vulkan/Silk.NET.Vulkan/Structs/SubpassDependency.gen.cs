@@ -101,5 +101,11 @@ namespace Silk.NET.Vulkan
         [NativeName("Type.Name", "VkDependencyFlags")]
         [NativeName("Name", "dependencyFlags")]
         public DependencyFlags DependencyFlags;
+        /// <summary>To be documented.</summary>
+        public override string ToString()
+        {
+            return Handle.ToString();
+        }
+
     }
 }

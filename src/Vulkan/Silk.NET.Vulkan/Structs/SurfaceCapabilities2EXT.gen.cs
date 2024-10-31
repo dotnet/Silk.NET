@@ -167,6 +167,12 @@ namespace Silk.NET.Vulkan
         [NativeName("Type.Name", "VkSurfaceCounterFlagsEXT")]
         [NativeName("Name", "supportedSurfaceCounters")]
         public SurfaceCounterFlagsEXT SupportedSurfaceCounters;
+        /// <summary>To be documented.</summary>
+        public override string ToString()
+        {
+            return Handle.ToString();
+        }
+
 
         /// <inheritdoc />
         StructureType IStructuredType.StructureType()

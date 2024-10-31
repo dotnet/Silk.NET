@@ -113,6 +113,12 @@ namespace Silk.NET.Vulkan
         [NativeName("Type.Name", "VkImageResolve2")]
         [NativeName("Name", "pRegions")]
         public ImageResolve2* PRegions;
+        /// <summary>To be documented.</summary>
+        public override string ToString()
+        {
+            return Handle.ToString();
+        }
+
 
         /// <inheritdoc />
         StructureType IStructuredType.StructureType()

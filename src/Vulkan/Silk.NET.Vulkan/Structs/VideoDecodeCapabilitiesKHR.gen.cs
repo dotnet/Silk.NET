@@ -57,6 +57,12 @@ namespace Silk.NET.Vulkan
         [NativeName("Type.Name", "VkVideoDecodeCapabilityFlagsKHR")]
         [NativeName("Name", "flags")]
         public VideoDecodeCapabilityFlagsKHR Flags;
+        /// <summary>To be documented.</summary>
+        public override string ToString()
+        {
+            return Handle.ToString();
+        }
+
 
         /// <inheritdoc />
         StructureType IStructuredType.StructureType()

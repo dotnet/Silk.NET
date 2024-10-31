@@ -57,5 +57,11 @@ namespace Silk.NET.OpenXR
         [NativeName("Type.Name", "XrMarkerArucoDictML")]
         [NativeName("Name", "arucoDict")]
         public MarkerArucoDictML ArucoDict;
+        /// <summary>To be documented.</summary>
+        public override string ToString()
+        {
+            return Handle.ToString();
+        }
+
     }
 }

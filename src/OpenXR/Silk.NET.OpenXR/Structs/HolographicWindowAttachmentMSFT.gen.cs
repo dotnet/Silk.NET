@@ -68,5 +68,11 @@ namespace Silk.NET.OpenXR
         [NativeName("Type.Name", "IUnknown")]
         [NativeName("Name", "coreWindow")]
         public Silk.NET.Core.Native.IUnknown* CoreWindow;
+        /// <summary>To be documented.</summary>
+        public override string ToString()
+        {
+            return Handle.ToString();
+        }
+
     }
 }

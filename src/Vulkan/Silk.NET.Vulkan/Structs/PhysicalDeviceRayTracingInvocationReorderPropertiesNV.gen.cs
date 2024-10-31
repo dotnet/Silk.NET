@@ -57,6 +57,12 @@ namespace Silk.NET.Vulkan
         [NativeName("Type.Name", "VkRayTracingInvocationReorderModeNV")]
         [NativeName("Name", "rayTracingInvocationReorderReorderingHint")]
         public RayTracingInvocationReorderModeNV RayTracingInvocationReorderReorderingHint;
+        /// <summary>To be documented.</summary>
+        public override string ToString()
+        {
+            return Handle.ToString();
+        }
+
 
         /// <inheritdoc />
         StructureType IStructuredType.StructureType()

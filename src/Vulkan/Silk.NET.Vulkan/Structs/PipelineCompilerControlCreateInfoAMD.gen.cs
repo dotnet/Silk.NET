@@ -57,6 +57,12 @@ namespace Silk.NET.Vulkan
         [NativeName("Type.Name", "VkPipelineCompilerControlFlagsAMD")]
         [NativeName("Name", "compilerControlFlags")]
         public PipelineCompilerControlFlagsAMD CompilerControlFlags;
+        /// <summary>To be documented.</summary>
+        public override string ToString()
+        {
+            return Handle.ToString();
+        }
+
 
         /// <inheritdoc />
         StructureType IStructuredType.StructureType()
