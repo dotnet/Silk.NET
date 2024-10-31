@@ -47,7 +47,8 @@ jobs:
         dotnet-version: 3.1.404
     - name: Install Workloads
       # TODO: This is slow. Maybe we can make a docker container with this already done?
-      run: dotnet workload install android ios maccatalyst
+      # manually specifying source to mitigate signing errors
+      run: dotnet workload install android ios maccatalyst -s https://api.nuget.org/v3/index.json
     - uses: GuillaumeFalourd/setup-windows10-sdk-action@v1.9
       name: Setup Windows 11 SDK
       with:
