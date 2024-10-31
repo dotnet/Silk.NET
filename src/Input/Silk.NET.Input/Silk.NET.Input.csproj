@@ -1,14 +1,25 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
     <PropertyGroup>
-        <TargetFrameworks>netstandard2.0;netstandard2.1;netcoreapp3.1;net5.0</TargetFrameworks>
+        <TargetFrameworks>netstandard2.0;netstandard2.1;netcoreapp3.1;net5.0;net6.0;net6.0-android;net6.0-ios;net6.0-maccatalyst</TargetFrameworks>
         <SilkMetapackage>true</SilkMetapackage>
     </PropertyGroup>
 
     <ItemGroup>
       <ProjectReference Include="..\Silk.NET.Input.Common\Silk.NET.Input.Common.csproj" />
-      <ProjectReference Include="..\Silk.NET.Input.Glfw\Silk.NET.Input.Glfw.csproj" />
-      <ProjectReference Include="..\Silk.NET.Input.Sdl\Silk.NET.Input.Sdl.csproj" />
+    </ItemGroup>
+
+    <ItemGroup Condition="'$(TargetFramework)' != 'net6.0-android' And '$(TargetFramework)' != 'net6.0-ios' And '$(TargetFramework)' != 'net6.0-maccatalyst' And '$(TargetFramework)' != 'net6.0'">
+        <ProjectReference Include="..\Silk.NET.Input.Glfw\Silk.NET.Input.Glfw.csproj" />
+        <ProjectReference Include="..\Silk.NET.Input.Sdl\Silk.NET.Input.Sdl.csproj" />
+    </ItemGroup>
+
+    <ItemGroup Condition="'$(TargetFramework)' == 'net6.0-android' Or '$(TargetFramework)' == 'net6.0-ios' Or '$(TargetFramework)' == 'net6.0-maccatalyst'">
+        <ProjectReference Include="..\Silk.NET.Input.Sdl\Silk.NET.Input.Sdl.csproj" />
+    </ItemGroup>
+    
+    <ItemGroup Condition="'$(TargetFramework)' == 'net6.0'">
+        <ProjectReference Include="..\Silk.NET.Input.Glfw\Silk.NET.Input.Glfw.csproj" />
     </ItemGroup>
     
     <Import Project="..\..\..\build\props\common.props" />
