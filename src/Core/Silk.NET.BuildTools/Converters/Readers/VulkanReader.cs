@@ -149,14 +149,6 @@ namespace Silk.NET.BuildTools.Converters.Readers
                     continue;
                 }
 
-                var toString = new Function
-                {
-                    Accessibility = Accessibility.Public,
-                    IsOverride = true,
-                    ReturnType = new Type { Name = "string" },
-                    Name = "ToString"
-                };
-
                 var @struct = new Struct
                 {
                     Fields = s.Members.Select
@@ -188,10 +180,6 @@ namespace Silk.NET.BuildTools.Converters.Readers
                             }.WithFixedFieldFixup09072020()
                         )
                         .ToList(),
-                    Functions = new List<ImplementedFunction>
-                    {
-                        new(toString, new StringBuilder("return Handle.ToString();"), toString, false)
-                    },
                     Name = Naming.TranslateLite(TrimName(s.Name, task), prefix),
                     NativeName = s.Name,
                     ProfileName = s.Api
@@ -348,6 +336,19 @@ namespace Silk.NET.BuildTools.Converters.Readers
                 }
             }
 
+            var toString = new Function
+            {
+                Accessibility = Accessibility.Public,
+                IsOverride = true,
+                ReturnType = new Type { Name = "string" },
+                Name = "ToString"
+            };
+
+            var handleFuns = new List<ImplementedFunction>
+            {
+                new(toString, new StringBuilder("return Handle.ToString();"), toString, false)
+            };
+
             foreach (var h in spec.Handles)
             {
                 ret.Add
@@ -359,7 +360,8 @@ namespace Silk.NET.BuildTools.Converters.Readers
                             new Field {Name = "Handle", Type = new Type {Name = h.CanBeDispatched ? "nint" : "ulong"}}
                         },
                         Name = Naming.TranslateLite(TrimName(h.Name, task), prefix),
-                        NativeName = h.Name
+                        NativeName = h.Name,
+                        Functions = handleFuns
                     }
                 );
             }
