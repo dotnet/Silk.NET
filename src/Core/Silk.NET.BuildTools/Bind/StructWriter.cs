@@ -503,6 +503,16 @@ namespace Silk.NET.BuildTools.Bind
                 sw.WriteLine();
             }
 
+            var handleField = @struct.Fields.FirstOrDefault(t => t.Name == "Handle" && t.Type.Name == "ulong");
+            if (handleField != null)
+            {
+                sw.WriteLine("       public override string ToString()");
+                sw.WriteLine("       {");
+                sw.WriteLine("           return string.Format(\"0x{0:X}\", Handle);");
+                sw.WriteLine("       }");
+                sw.WriteLine();
+            }
+
             if (structuredType is not null)
             {
                 sw.WriteLine
