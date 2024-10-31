@@ -68,11 +68,5 @@ namespace Silk.NET.Vulkan
         [NativeName("Type.Name", "VkComponentSwizzle")]
         [NativeName("Name", "a")]
         public ComponentSwizzle A;
-        /// <summary>To be documented.</summary>
-        public override string ToString()
-        {
-            return Handle.ToString();
-        }
-
     }
 }

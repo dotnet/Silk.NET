@@ -58,12 +58,6 @@ namespace Silk.NET.Vulkan
         [NativeName("Type.Name", "VkBool32")]
         [NativeName("Name", "hostQueryReset")]
         public Bool32 HostQueryReset;
-        /// <summary>To be documented.</summary>
-        public override string ToString()
-        {
-            return Handle.ToString();
-        }
-
 
         /// <inheritdoc />
         StructureType IStructuredType.StructureType()

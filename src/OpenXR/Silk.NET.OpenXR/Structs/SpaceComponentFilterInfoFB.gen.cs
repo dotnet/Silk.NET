@@ -57,11 +57,5 @@ namespace Silk.NET.OpenXR
         [NativeName("Type.Name", "XrSpaceComponentTypeFB")]
         [NativeName("Name", "componentType")]
         public SpaceComponentTypeFB ComponentType;
-        /// <summary>To be documented.</summary>
-        public override string ToString()
-        {
-            return Handle.ToString();
-        }
-
     }
 }

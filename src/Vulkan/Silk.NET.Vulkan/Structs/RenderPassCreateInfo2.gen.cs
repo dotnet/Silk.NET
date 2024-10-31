@@ -146,12 +146,6 @@ namespace Silk.NET.Vulkan
         [NativeName("Type.Name", "uint32_t")]
         [NativeName("Name", "pCorrelatedViewMasks")]
         public uint* PCorrelatedViewMasks;
-        /// <summary>To be documented.</summary>
-        public override string ToString()
-        {
-            return Handle.ToString();
-        }
-
 
         /// <inheritdoc />
         StructureType IStructuredType.StructureType()

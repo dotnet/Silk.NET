@@ -68,11 +68,5 @@ namespace Silk.NET.OpenXR
         [NativeName("Type.Name", "VkImageUsageFlags")]
         [NativeName("Name", "additionalUsageFlags")]
         public uint AdditionalUsageFlags;
-        /// <summary>To be documented.</summary>
-        public override string ToString()
-        {
-            return Handle.ToString();
-        }
-
     }
 }

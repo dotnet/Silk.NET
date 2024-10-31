@@ -112,12 +112,6 @@ namespace Silk.NET.Vulkan
         [NativeName("Type.Name", "uint32_t")]
         [NativeName("Name", "initialVirtualBufferSizeInMs")]
         public uint InitialVirtualBufferSizeInMs;
-        /// <summary>To be documented.</summary>
-        public override string ToString()
-        {
-            return Handle.ToString();
-        }
-
 
         /// <inheritdoc />
         StructureType IStructuredType.StructureType()

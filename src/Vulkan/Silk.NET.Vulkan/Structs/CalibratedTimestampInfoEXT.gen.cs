@@ -58,12 +58,6 @@ namespace Silk.NET.Vulkan
         [NativeName("Type.Name", "VkTimeDomainKHR")]
         [NativeName("Name", "timeDomain")]
         public TimeDomainKHR TimeDomain;
-        /// <summary>To be documented.</summary>
-        public override string ToString()
-        {
-            return Handle.ToString();
-        }
-
 
         /// <inheritdoc />
         StructureType IStructuredType.StructureType()

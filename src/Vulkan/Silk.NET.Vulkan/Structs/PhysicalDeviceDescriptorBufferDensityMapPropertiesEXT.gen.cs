@@ -57,12 +57,6 @@ namespace Silk.NET.Vulkan
         [NativeName("Type.Name", "size_t")]
         [NativeName("Name", "combinedImageSamplerDensityMapDescriptorSize")]
         public nuint CombinedImageSamplerDensityMapDescriptorSize;
-        /// <summary>To be documented.</summary>
-        public override string ToString()
-        {
-            return Handle.ToString();
-        }
-
 
         /// <inheritdoc />
         StructureType IStructuredType.StructureType()

@@ -69,12 +69,6 @@ namespace Silk.NET.Vulkan
         [NativeName("Type.Name", "VkMutableDescriptorTypeListEXT")]
         [NativeName("Name", "pMutableDescriptorTypeLists")]
         public MutableDescriptorTypeListEXT* PMutableDescriptorTypeLists;
-        /// <summary>To be documented.</summary>
-        public override string ToString()
-        {
-            return Handle.ToString();
-        }
-
 
         /// <inheritdoc />
         StructureType IStructuredType.StructureType()

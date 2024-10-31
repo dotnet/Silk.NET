@@ -57,11 +57,5 @@ namespace Silk.NET.OpenXR
         [NativeName("Type.Name", "XrResult")]
         [NativeName("Name", "futureResult")]
         public Result FutureResult;
-        /// <summary>To be documented.</summary>
-        public override string ToString()
-        {
-            return Handle.ToString();
-        }
-
     }
 }

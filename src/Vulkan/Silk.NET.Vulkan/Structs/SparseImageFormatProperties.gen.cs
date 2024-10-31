@@ -57,11 +57,5 @@ namespace Silk.NET.Vulkan
         [NativeName("Type.Name", "VkSparseImageFormatFlags")]
         [NativeName("Name", "flags")]
         public SparseImageFormatFlags Flags;
-        /// <summary>To be documented.</summary>
-        public override string ToString()
-        {
-            return Handle.ToString();
-        }
-
     }
 }

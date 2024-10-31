@@ -90,12 +90,6 @@ namespace Silk.NET.Vulkan
         [NativeName("Type.Name", "VkImageConstraintsInfoFlagsFUCHSIA")]
         [NativeName("Name", "flags")]
         public ImageConstraintsInfoFlagsFUCHSIA Flags;
-        /// <summary>To be documented.</summary>
-        public override string ToString()
-        {
-            return Handle.ToString();
-        }
-
 
         /// <inheritdoc />
         StructureType IStructuredType.StructureType()

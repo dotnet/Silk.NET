@@ -112,11 +112,5 @@ namespace Silk.NET.OpenXR
         [NativeName("Type.Name", "XrQuaternionf")]
         [NativeName("Name", "orientation")]
         public Quaternionf Orientation;
-        /// <summary>To be documented.</summary>
-        public override string ToString()
-        {
-            return Handle.ToString();
-        }
-
     }
 }

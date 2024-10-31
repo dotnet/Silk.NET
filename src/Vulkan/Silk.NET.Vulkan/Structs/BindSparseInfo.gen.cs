@@ -156,12 +156,6 @@ namespace Silk.NET.Vulkan
         [NativeName("Type.Name", "VkSemaphore")]
         [NativeName("Name", "pSignalSemaphores")]
         public Semaphore* PSignalSemaphores;
-        /// <summary>To be documented.</summary>
-        public override string ToString()
-        {
-            return Handle.ToString();
-        }
-
 
         /// <inheritdoc />
         StructureType IStructuredType.StructureType()

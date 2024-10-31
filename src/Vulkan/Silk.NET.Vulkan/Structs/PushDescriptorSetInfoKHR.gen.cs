@@ -101,12 +101,6 @@ namespace Silk.NET.Vulkan
         [NativeName("Type.Name", "VkWriteDescriptorSet")]
         [NativeName("Name", "pDescriptorWrites")]
         public WriteDescriptorSet* PDescriptorWrites;
-        /// <summary>To be documented.</summary>
-        public override string ToString()
-        {
-            return Handle.ToString();
-        }
-
 
         /// <inheritdoc />
         StructureType IStructuredType.StructureType()

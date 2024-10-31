@@ -79,12 +79,6 @@ namespace Silk.NET.Vulkan
         [NativeName("Type.Name", "VkChromaLocation")]
         [NativeName("Name", "externalFormatResolveChromaOffsetY")]
         public ChromaLocation ExternalFormatResolveChromaOffsetY;
-        /// <summary>To be documented.</summary>
-        public override string ToString()
-        {
-            return Handle.ToString();
-        }
-
 
         /// <inheritdoc />
         StructureType IStructuredType.StructureType()

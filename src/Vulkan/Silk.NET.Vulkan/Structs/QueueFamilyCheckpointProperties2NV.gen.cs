@@ -57,12 +57,6 @@ namespace Silk.NET.Vulkan
         [NativeName("Type.Name", "VkPipelineStageFlags2")]
         [NativeName("Name", "checkpointExecutionStageMask")]
         public PipelineStageFlags2 CheckpointExecutionStageMask;
-        /// <summary>To be documented.</summary>
-        public override string ToString()
-        {
-            return Handle.ToString();
-        }
-
 
         /// <inheritdoc />
         StructureType IStructuredType.StructureType()

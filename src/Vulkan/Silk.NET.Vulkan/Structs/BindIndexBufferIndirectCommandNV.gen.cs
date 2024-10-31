@@ -57,11 +57,5 @@ namespace Silk.NET.Vulkan
         [NativeName("Type.Name", "VkIndexType")]
         [NativeName("Name", "indexType")]
         public IndexType IndexType;
-        /// <summary>To be documented.</summary>
-        public override string ToString()
-        {
-            return Handle.ToString();
-        }
-
     }
 }

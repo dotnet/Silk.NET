@@ -58,12 +58,6 @@ namespace Silk.NET.Vulkan
         [NativeName("Type.Name", "VkSparseImageMemoryRequirements")]
         [NativeName("Name", "memoryRequirements")]
         public SparseImageMemoryRequirements MemoryRequirements;
-        /// <summary>To be documented.</summary>
-        public override string ToString()
-        {
-            return Handle.ToString();
-        }
-
 
         /// <inheritdoc />
         StructureType IStructuredType.StructureType()

@@ -57,12 +57,6 @@ namespace Silk.NET.Vulkan
         [NativeName("Type.Name", "VkSurfaceKHR")]
         [NativeName("Name", "surface")]
         public SurfaceKHR Surface;
-        /// <summary>To be documented.</summary>
-        public override string ToString()
-        {
-            return Handle.ToString();
-        }
-
 
         /// <inheritdoc />
         StructureType IStructuredType.StructureType()

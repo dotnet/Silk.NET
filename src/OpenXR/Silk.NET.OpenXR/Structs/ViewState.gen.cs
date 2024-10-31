@@ -57,11 +57,5 @@ namespace Silk.NET.OpenXR
         [NativeName("Type.Name", "XrViewStateFlags")]
         [NativeName("Name", "viewStateFlags")]
         public ViewStateFlags ViewStateFlags;
-        /// <summary>To be documented.</summary>
-        public override string ToString()
-        {
-            return Handle.ToString();
-        }
-
     }
 }

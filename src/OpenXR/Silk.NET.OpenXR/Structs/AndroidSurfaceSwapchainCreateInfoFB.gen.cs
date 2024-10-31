@@ -57,11 +57,5 @@ namespace Silk.NET.OpenXR
         [NativeName("Type.Name", "XrAndroidSurfaceSwapchainFlagsFB")]
         [NativeName("Name", "createFlags")]
         public AndroidSurfaceSwapchainFlagsFB CreateFlags;
-        /// <summary>To be documented.</summary>
-        public override string ToString()
-        {
-            return Handle.ToString();
-        }
-
     }
 }

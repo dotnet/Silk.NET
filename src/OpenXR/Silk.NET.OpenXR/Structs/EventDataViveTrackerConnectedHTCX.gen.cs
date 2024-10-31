@@ -57,11 +57,5 @@ namespace Silk.NET.OpenXR
         [NativeName("Type.Name", "XrViveTrackerPathsHTCX")]
         [NativeName("Name", "paths")]
         public ViveTrackerPathsHTCX* Paths;
-        /// <summary>To be documented.</summary>
-        public override string ToString()
-        {
-            return Handle.ToString();
-        }
-
     }
 }

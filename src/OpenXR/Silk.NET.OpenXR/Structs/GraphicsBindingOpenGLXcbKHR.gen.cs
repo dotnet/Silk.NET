@@ -112,11 +112,5 @@ namespace Silk.NET.OpenXR
         [NativeName("Type.Name", "xcb_glx_context_t")]
         [NativeName("Name", "glxContext")]
         public nint GlxContext;
-        /// <summary>To be documented.</summary>
-        public override string ToString()
-        {
-            return Handle.ToString();
-        }
-
     }
 }

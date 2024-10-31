@@ -58,12 +58,6 @@ namespace Silk.NET.Vulkan
         [NativeName("Type.Name", "VkPhysicalDeviceMemoryProperties")]
         [NativeName("Name", "memoryProperties")]
         public PhysicalDeviceMemoryProperties MemoryProperties;
-        /// <summary>To be documented.</summary>
-        public override string ToString()
-        {
-            return Handle.ToString();
-        }
-
 
         /// <inheritdoc />
         StructureType IStructuredType.StructureType()

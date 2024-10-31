@@ -68,11 +68,5 @@ namespace Silk.NET.Vulkan
         [NativeName("Type.Name", "VkExternalMemoryHandleTypeFlagsNV")]
         [NativeName("Name", "compatibleHandleTypes")]
         public ExternalMemoryHandleTypeFlagsNV CompatibleHandleTypes;
-        /// <summary>To be documented.</summary>
-        public override string ToString()
-        {
-            return Handle.ToString();
-        }
-
     }
 }

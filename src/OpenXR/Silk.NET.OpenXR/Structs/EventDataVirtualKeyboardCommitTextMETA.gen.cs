@@ -62,11 +62,5 @@ namespace Silk.NET.OpenXR
         [NativeName("Type.Name", "char")]
         [NativeName("Name", "text")]
         public fixed byte Text[3992];
-        /// <summary>To be documented.</summary>
-        public override string ToString()
-        {
-            return Handle.ToString();
-        }
-
     }
 }

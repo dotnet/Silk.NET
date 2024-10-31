@@ -90,11 +90,5 @@ namespace Silk.NET.OpenXR
         [NativeName("Type.Name", "float")]
         [NativeName("Name", "radius")]
         public float Radius;
-        /// <summary>To be documented.</summary>
-        public override string ToString()
-        {
-            return Handle.ToString();
-        }
-
     }
 }

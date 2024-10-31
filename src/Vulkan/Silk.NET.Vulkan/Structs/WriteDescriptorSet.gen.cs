@@ -134,12 +134,6 @@ namespace Silk.NET.Vulkan
         [NativeName("Type.Name", "VkBufferView")]
         [NativeName("Name", "pTexelBufferView")]
         public BufferView* PTexelBufferView;
-        /// <summary>To be documented.</summary>
-        public override string ToString()
-        {
-            return Handle.ToString();
-        }
-
 
         /// <inheritdoc />
         StructureType IStructuredType.StructureType()

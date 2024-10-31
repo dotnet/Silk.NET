@@ -51,11 +51,5 @@ namespace Silk.NET.OpenXR
         [NativeName("Type.Name", "uint8_t")]
         [NativeName("Name", "varying")]
         public fixed byte Varying[4000];
-        /// <summary>To be documented.</summary>
-        public override string ToString()
-        {
-            return Handle.ToString();
-        }
-
     }
 }

@@ -68,11 +68,5 @@ namespace Silk.NET.OpenXR
         [NativeName("Type.Name", "XrSpatialAnchorCompletionResultML")]
         [NativeName("Name", "results")]
         public SpatialAnchorCompletionResultML* Results;
-        /// <summary>To be documented.</summary>
-        public override string ToString()
-        {
-            return Handle.ToString();
-        }
-
     }
 }

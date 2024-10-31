@@ -145,11 +145,5 @@ namespace Silk.NET.OpenXR
         [NativeName("Type.Name", "XrHapticBaseHeader")]
         [NativeName("Name", "offHaptic")]
         public HapticBaseHeader* OffHaptic;
-        /// <summary>To be documented.</summary>
-        public override string ToString()
-        {
-            return Handle.ToString();
-        }
-
     }
 }

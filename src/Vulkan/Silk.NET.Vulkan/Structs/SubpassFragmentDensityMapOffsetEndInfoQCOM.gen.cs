@@ -68,12 +68,6 @@ namespace Silk.NET.Vulkan
         [NativeName("Type.Name", "VkOffset2D")]
         [NativeName("Name", "pFragmentDensityOffsets")]
         public Offset2D* PFragmentDensityOffsets;
-        /// <summary>To be documented.</summary>
-        public override string ToString()
-        {
-            return Handle.ToString();
-        }
-
 
         /// <inheritdoc />
         StructureType IStructuredType.StructureType()

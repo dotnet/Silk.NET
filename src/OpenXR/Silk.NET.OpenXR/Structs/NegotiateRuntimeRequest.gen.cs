@@ -90,11 +90,5 @@ namespace Silk.NET.OpenXR
         [NativeName("Type.Name", "PFN_xrGetInstanceProcAddr")]
         [NativeName("Name", "getInstanceProcAddr")]
         public PfnGetInstanceProcAddr GetInstanceProcAddr;
-        /// <summary>To be documented.</summary>
-        public override string ToString()
-        {
-            return Handle.ToString();
-        }
-
     }
 }

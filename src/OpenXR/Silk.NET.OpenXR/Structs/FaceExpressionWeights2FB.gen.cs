@@ -134,11 +134,5 @@ namespace Silk.NET.OpenXR
         [NativeName("Type.Name", "XrTime")]
         [NativeName("Name", "time")]
         public long Time;
-        /// <summary>To be documented.</summary>
-        public override string ToString()
-        {
-            return Handle.ToString();
-        }
-
     }
 }

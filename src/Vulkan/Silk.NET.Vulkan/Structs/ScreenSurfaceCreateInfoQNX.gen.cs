@@ -79,12 +79,6 @@ namespace Silk.NET.Vulkan
         [NativeName("Type.Name", "_screen_window")]
         [NativeName("Name", "window")]
         public void* Window;
-        /// <summary>To be documented.</summary>
-        public override string ToString()
-        {
-            return Handle.ToString();
-        }
-
 
         /// <inheritdoc />
         StructureType IStructuredType.StructureType()

@@ -101,11 +101,5 @@ namespace Silk.NET.OpenXR
         [NativeName("Type.Name", "XrVector3f")]
         [NativeName("Name", "scale")]
         public Vector3f Scale;
-        /// <summary>To be documented.</summary>
-        public override string ToString()
-        {
-            return Handle.ToString();
-        }
-
     }
 }

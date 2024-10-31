@@ -68,11 +68,5 @@ namespace Silk.NET.Vulkan
         [NativeName("Type.Name", "VkCoarseSampleLocationNV")]
         [NativeName("Name", "pSampleLocations")]
         public CoarseSampleLocationNV* PSampleLocations;
-        /// <summary>To be documented.</summary>
-        public override string ToString()
-        {
-            return Handle.ToString();
-        }
-
     }
 }

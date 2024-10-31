@@ -90,11 +90,5 @@ namespace Silk.NET.OpenXR
         [NativeName("Type.Name", "XrBlendFactorFB")]
         [NativeName("Name", "dstFactorAlpha")]
         public BlendFactorFB DstFactorAlpha;
-        /// <summary>To be documented.</summary>
-        public override string ToString()
-        {
-            return Handle.ToString();
-        }
-
     }
 }

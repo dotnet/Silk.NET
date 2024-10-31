@@ -68,11 +68,5 @@ namespace Silk.NET.OpenXR
         [NativeName("Type.Name", "XrColor4f")]
         [NativeName("Name", "colorBias")]
         public Color4f ColorBias;
-        /// <summary>To be documented.</summary>
-        public override string ToString()
-        {
-            return Handle.ToString();
-        }
-
     }
 }

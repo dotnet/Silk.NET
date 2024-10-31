@@ -79,12 +79,6 @@ namespace Silk.NET.Vulkan
         [NativeName("Type.Name", "VkSubresourceLayout")]
         [NativeName("Name", "pPlaneLayouts")]
         public SubresourceLayout* PPlaneLayouts;
-        /// <summary>To be documented.</summary>
-        public override string ToString()
-        {
-            return Handle.ToString();
-        }
-
 
         /// <inheritdoc />
         StructureType IStructuredType.StructureType()

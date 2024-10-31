@@ -57,11 +57,5 @@ namespace Silk.NET.OpenXR
         [NativeName("Type.Name", "XrCompositionLayerSecureContentFlagsFB")]
         [NativeName("Name", "flags")]
         public CompositionLayerSecureContentFlagsFB Flags;
-        /// <summary>To be documented.</summary>
-        public override string ToString()
-        {
-            return Handle.ToString();
-        }
-
     }
 }

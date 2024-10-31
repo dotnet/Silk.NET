@@ -68,11 +68,5 @@ namespace Silk.NET.OpenXR
         [NativeName("Type.Name", "XrViewConfigurationType")]
         [NativeName("Name", "enabledViewConfigurationTypes")]
         public ViewConfigurationType* EnabledViewConfigurationTypes;
-        /// <summary>To be documented.</summary>
-        public override string ToString()
-        {
-            return Handle.ToString();
-        }
-
     }
 }

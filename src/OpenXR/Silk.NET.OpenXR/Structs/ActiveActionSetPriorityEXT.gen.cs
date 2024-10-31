@@ -46,11 +46,5 @@ namespace Silk.NET.OpenXR
         [NativeName("Type.Name", "uint32_t")]
         [NativeName("Name", "priorityOverride")]
         public uint PriorityOverride;
-        /// <summary>To be documented.</summary>
-        public override string ToString()
-        {
-            return Handle.ToString();
-        }
-
     }
 }

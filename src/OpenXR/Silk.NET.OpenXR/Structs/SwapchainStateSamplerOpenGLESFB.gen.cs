@@ -156,11 +156,5 @@ namespace Silk.NET.OpenXR
         [NativeName("Type.Name", "XrColor4f")]
         [NativeName("Name", "borderColor")]
         public Color4f BorderColor;
-        /// <summary>To be documented.</summary>
-        public override string ToString()
-        {
-            return Handle.ToString();
-        }
-
     }
 }

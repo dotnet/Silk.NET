@@ -89,11 +89,5 @@ namespace Silk.NET.OpenXR
         [NativeName("Type.Name", "XrFoveationEyeTrackedStateFlagsMETA")]
         [NativeName("Name", "flags")]
         public FoveationEyeTrackedStateFlagsMETA Flags;
-        /// <summary>To be documented.</summary>
-        public override string ToString()
-        {
-            return Handle.ToString();
-        }
-
     }
 }

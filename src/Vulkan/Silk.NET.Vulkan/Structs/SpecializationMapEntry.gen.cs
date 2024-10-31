@@ -57,11 +57,5 @@ namespace Silk.NET.Vulkan
         [NativeName("Type.Name", "size_t")]
         [NativeName("Name", "size")]
         public nuint Size;
-        /// <summary>To be documented.</summary>
-        public override string ToString()
-        {
-            return Handle.ToString();
-        }
-
     }
 }

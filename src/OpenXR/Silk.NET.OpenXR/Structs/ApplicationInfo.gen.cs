@@ -67,11 +67,5 @@ namespace Silk.NET.OpenXR
         [NativeName("Type.Name", "XrVersion")]
         [NativeName("Name", "apiVersion")]
         public ulong ApiVersion;
-        /// <summary>To be documented.</summary>
-        public override string ToString()
-        {
-            return Handle.ToString();
-        }
-
     }
 }

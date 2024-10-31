@@ -57,11 +57,5 @@ namespace Silk.NET.OpenXR
         [NativeName("Type.Name", "XrPlaneDetectorFlagsEXT")]
         [NativeName("Name", "flags")]
         public PlaneDetectorFlagsEXT Flags;
-        /// <summary>To be documented.</summary>
-        public override string ToString()
-        {
-            return Handle.ToString();
-        }
-
     }
 }

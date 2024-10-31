@@ -46,12 +46,6 @@ namespace Silk.NET.Vulkan
         [NativeName("Type.Name", "VkBaseOutStructure")]
         [NativeName("Name", "pNext")]
         public BaseOutStructure* PNext;
-        /// <summary>To be documented.</summary>
-        public override string ToString()
-        {
-            return Handle.ToString();
-        }
-
 
         /// <inheritdoc />
         /// <remarks>Note, there is no fixed value for this type.</remarks>

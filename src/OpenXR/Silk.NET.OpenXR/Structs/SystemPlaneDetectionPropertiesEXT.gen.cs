@@ -57,11 +57,5 @@ namespace Silk.NET.OpenXR
         [NativeName("Type.Name", "XrPlaneDetectionCapabilityFlagsEXT")]
         [NativeName("Name", "supportedFeatures")]
         public PlaneDetectionCapabilityFlagsEXT SupportedFeatures;
-        /// <summary>To be documented.</summary>
-        public override string ToString()
-        {
-            return Handle.ToString();
-        }
-
     }
 }

@@ -68,11 +68,5 @@ namespace Silk.NET.OpenXR
         [NativeName("Type.Name", "XrFoveationConfigurationHTC")]
         [NativeName("Name", "configs")]
         public FoveationConfigurationHTC* Configs;
-        /// <summary>To be documented.</summary>
-        public override string ToString()
-        {
-            return Handle.ToString();
-        }
-
     }
 }

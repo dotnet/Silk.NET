@@ -79,11 +79,5 @@ namespace Silk.NET.OpenXR
         [NativeName("Type.Name", "XrPassthroughLayerFB")]
         [NativeName("Name", "layerHandle")]
         public PassthroughLayerFB LayerHandle;
-        /// <summary>To be documented.</summary>
-        public override string ToString()
-        {
-            return Handle.ToString();
-        }
-
     }
 }

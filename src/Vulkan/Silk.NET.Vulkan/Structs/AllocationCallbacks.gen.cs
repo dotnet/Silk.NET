@@ -90,11 +90,5 @@ namespace Silk.NET.Vulkan
         [NativeName("Type.Name", "PFN_vkInternalFreeNotification")]
         [NativeName("Name", "pfnInternalFree")]
         public PfnInternalFreeNotification PfnInternalFree;
-        /// <summary>To be documented.</summary>
-        public override string ToString()
-        {
-            return Handle.ToString();
-        }
-
     }
 }

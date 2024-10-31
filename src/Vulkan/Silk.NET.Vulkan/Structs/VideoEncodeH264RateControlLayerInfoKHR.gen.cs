@@ -112,12 +112,6 @@ namespace Silk.NET.Vulkan
         [NativeName("Type.Name", "VkVideoEncodeH264FrameSizeKHR")]
         [NativeName("Name", "maxFrameSize")]
         public VideoEncodeH264FrameSizeKHR MaxFrameSize;
-        /// <summary>To be documented.</summary>
-        public override string ToString()
-        {
-            return Handle.ToString();
-        }
-
 
         /// <inheritdoc />
         StructureType IStructuredType.StructureType()

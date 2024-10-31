@@ -145,12 +145,6 @@ namespace Silk.NET.Vulkan
         [NativeName("Type.Name", "VkOpticalFlowSessionCreateFlagsNV")]
         [NativeName("Name", "flags")]
         public OpticalFlowSessionCreateFlagsNV Flags;
-        /// <summary>To be documented.</summary>
-        public override string ToString()
-        {
-            return Handle.ToString();
-        }
-
 
         /// <inheritdoc />
         StructureType IStructuredType.StructureType()

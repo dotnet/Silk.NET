@@ -79,11 +79,5 @@ namespace Silk.NET.OpenXR
         [NativeName("Type.Name", "XrPassthroughColorLutDataMETA")]
         [NativeName("Name", "data")]
         public PassthroughColorLutDataMETA Data;
-        /// <summary>To be documented.</summary>
-        public override string ToString()
-        {
-            return Handle.ToString();
-        }
-
     }
 }

@@ -46,11 +46,5 @@ namespace Silk.NET.Vulkan
         [NativeName("Type.Name", "VkMemoryHeapFlags")]
         [NativeName("Name", "flags")]
         public MemoryHeapFlags Flags;
-        /// <summary>To be documented.</summary>
-        public override string ToString()
-        {
-            return Handle.ToString();
-        }
-
     }
 }

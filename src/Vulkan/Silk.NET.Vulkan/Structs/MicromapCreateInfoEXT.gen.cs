@@ -112,12 +112,6 @@ namespace Silk.NET.Vulkan
         [NativeName("Type.Name", "VkDeviceAddress")]
         [NativeName("Name", "deviceAddress")]
         public ulong DeviceAddress;
-        /// <summary>To be documented.</summary>
-        public override string ToString()
-        {
-            return Handle.ToString();
-        }
-
 
         /// <inheritdoc />
         StructureType IStructuredType.StructureType()

@@ -112,12 +112,6 @@ namespace Silk.NET.Vulkan
         [NativeName("Type.Name", "int64_t")]
         [NativeName("Name", "renderMinor")]
         public long RenderMinor;
-        /// <summary>To be documented.</summary>
-        public override string ToString()
-        {
-            return Handle.ToString();
-        }
-
 
         /// <inheritdoc />
         StructureType IStructuredType.StructureType()

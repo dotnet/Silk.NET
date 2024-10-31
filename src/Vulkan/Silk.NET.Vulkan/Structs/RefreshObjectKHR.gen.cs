@@ -57,11 +57,5 @@ namespace Silk.NET.Vulkan
         [NativeName("Type.Name", "VkRefreshObjectFlagsKHR")]
         [NativeName("Name", "flags")]
         public RefreshObjectFlagsKHR Flags;
-        /// <summary>To be documented.</summary>
-        public override string ToString()
-        {
-            return Handle.ToString();
-        }
-
     }
 }

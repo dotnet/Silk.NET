@@ -68,11 +68,5 @@ namespace Silk.NET.OpenXR
         [NativeName("Type.Name", "XrSpatialAnchorMSFT")]
         [NativeName("Name", "spatialAnchor")]
         public SpatialAnchorMSFT SpatialAnchor;
-        /// <summary>To be documented.</summary>
-        public override string ToString()
-        {
-            return Handle.ToString();
-        }
-
     }
 }

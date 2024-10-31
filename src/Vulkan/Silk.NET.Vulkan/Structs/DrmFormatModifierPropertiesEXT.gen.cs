@@ -57,11 +57,5 @@ namespace Silk.NET.Vulkan
         [NativeName("Type.Name", "VkFormatFeatureFlags")]
         [NativeName("Name", "drmFormatModifierTilingFeatures")]
         public FormatFeatureFlags DrmFormatModifierTilingFeatures;
-        /// <summary>To be documented.</summary>
-        public override string ToString()
-        {
-            return Handle.ToString();
-        }
-
     }
 }

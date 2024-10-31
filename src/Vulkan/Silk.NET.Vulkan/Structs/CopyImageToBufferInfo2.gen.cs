@@ -102,12 +102,6 @@ namespace Silk.NET.Vulkan
         [NativeName("Type.Name", "VkBufferImageCopy2")]
         [NativeName("Name", "pRegions")]
         public BufferImageCopy2* PRegions;
-        /// <summary>To be documented.</summary>
-        public override string ToString()
-        {
-            return Handle.ToString();
-        }
-
 
         /// <inheritdoc />
         StructureType IStructuredType.StructureType()

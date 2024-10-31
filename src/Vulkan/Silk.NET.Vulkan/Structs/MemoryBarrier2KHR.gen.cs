@@ -91,12 +91,6 @@ namespace Silk.NET.Vulkan
         [NativeName("Type.Name", "VkAccessFlags2")]
         [NativeName("Name", "dstAccessMask")]
         public AccessFlags2 DstAccessMask;
-        /// <summary>To be documented.</summary>
-        public override string ToString()
-        {
-            return Handle.ToString();
-        }
-
 
         /// <inheritdoc />
         StructureType IStructuredType.StructureType()

@@ -112,11 +112,5 @@ namespace Silk.NET.OpenXR
         [NativeName("Type.Name", "XrSceneFrustumBoundMSFT")]
         [NativeName("Name", "frustums")]
         public SceneFrustumBoundMSFT* Frustums;
-        /// <summary>To be documented.</summary>
-        public override string ToString()
-        {
-            return Handle.ToString();
-        }
-
     }
 }

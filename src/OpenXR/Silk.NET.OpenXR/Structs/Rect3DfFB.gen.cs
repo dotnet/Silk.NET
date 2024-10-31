@@ -46,11 +46,5 @@ namespace Silk.NET.OpenXR
         [NativeName("Type.Name", "XrExtent3DfFB")]
         [NativeName("Name", "extent")]
         public Extent3DfFB Extent;
-        /// <summary>To be documented.</summary>
-        public override string ToString()
-        {
-            return Handle.ToString();
-        }
-
     }
 }

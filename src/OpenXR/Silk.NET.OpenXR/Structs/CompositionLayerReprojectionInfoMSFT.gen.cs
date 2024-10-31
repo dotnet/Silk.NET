@@ -57,11 +57,5 @@ namespace Silk.NET.OpenXR
         [NativeName("Type.Name", "XrReprojectionModeMSFT")]
         [NativeName("Name", "reprojectionMode")]
         public ReprojectionModeMSFT ReprojectionMode;
-        /// <summary>To be documented.</summary>
-        public override string ToString()
-        {
-            return Handle.ToString();
-        }
-
     }
 }

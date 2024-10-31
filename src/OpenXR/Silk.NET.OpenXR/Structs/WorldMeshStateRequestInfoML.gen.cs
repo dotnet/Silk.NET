@@ -90,11 +90,5 @@ namespace Silk.NET.OpenXR
         [NativeName("Type.Name", "XrExtent3DfEXT")]
         [NativeName("Name", "boundingBoxExtents")]
         public Extent3DfEXT BoundingBoxExtents;
-        /// <summary>To be documented.</summary>
-        public override string ToString()
-        {
-            return Handle.ToString();
-        }
-
     }
 }

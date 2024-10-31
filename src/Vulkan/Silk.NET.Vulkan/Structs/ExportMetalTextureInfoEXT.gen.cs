@@ -101,12 +101,6 @@ namespace Silk.NET.Vulkan
         [NativeName("Type.Name", "MTLTexture_id")]
         [NativeName("Name", "mtlTexture")]
         public nint MtlTexture;
-        /// <summary>To be documented.</summary>
-        public override string ToString()
-        {
-            return Handle.ToString();
-        }
-
 
         /// <inheritdoc />
         StructureType IStructuredType.StructureType()

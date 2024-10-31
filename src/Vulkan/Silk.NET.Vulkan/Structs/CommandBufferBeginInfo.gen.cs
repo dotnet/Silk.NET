@@ -68,12 +68,6 @@ namespace Silk.NET.Vulkan
         [NativeName("Type.Name", "VkCommandBufferInheritanceInfo")]
         [NativeName("Name", "pInheritanceInfo")]
         public CommandBufferInheritanceInfo* PInheritanceInfo;
-        /// <summary>To be documented.</summary>
-        public override string ToString()
-        {
-            return Handle.ToString();
-        }
-
 
         /// <inheritdoc />
         StructureType IStructuredType.StructureType()

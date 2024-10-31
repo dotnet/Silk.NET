@@ -101,12 +101,6 @@ namespace Silk.NET.Vulkan
         [NativeName("Type.Name", "VkVertexInputAttributeDescription")]
         [NativeName("Name", "pVertexAttributeDescriptions")]
         public VertexInputAttributeDescription* PVertexAttributeDescriptions;
-        /// <summary>To be documented.</summary>
-        public override string ToString()
-        {
-            return Handle.ToString();
-        }
-
 
         /// <inheritdoc />
         StructureType IStructuredType.StructureType()

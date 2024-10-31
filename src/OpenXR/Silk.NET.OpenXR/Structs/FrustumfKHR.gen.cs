@@ -69,11 +69,5 @@ namespace Silk.NET.OpenXR
         [NativeName("Type.Name", "float")]
         [NativeName("Name", "farZ")]
         public float FarZ;
-        /// <summary>To be documented.</summary>
-        public override string ToString()
-        {
-            return Handle.ToString();
-        }
-
     }
 }

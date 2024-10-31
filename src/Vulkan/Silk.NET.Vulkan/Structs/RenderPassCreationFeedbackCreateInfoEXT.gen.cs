@@ -57,12 +57,6 @@ namespace Silk.NET.Vulkan
         [NativeName("Type.Name", "VkRenderPassCreationFeedbackInfoEXT")]
         [NativeName("Name", "pRenderPassFeedback")]
         public RenderPassCreationFeedbackInfoEXT* PRenderPassFeedback;
-        /// <summary>To be documented.</summary>
-        public override string ToString()
-        {
-            return Handle.ToString();
-        }
-
 
         /// <inheritdoc />
         StructureType IStructuredType.StructureType()

@@ -167,12 +167,6 @@ namespace Silk.NET.Vulkan
         [NativeName("Type.Name", "VkChromaLocation")]
         [NativeName("Name", "suggestedYChromaOffset")]
         public ChromaLocation SuggestedYChromaOffset;
-        /// <summary>To be documented.</summary>
-        public override string ToString()
-        {
-            return Handle.ToString();
-        }
-
 
         /// <inheritdoc />
         StructureType IStructuredType.StructureType()

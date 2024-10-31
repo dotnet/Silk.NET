@@ -46,11 +46,5 @@ namespace Silk.NET.Vulkan
         [NativeName("Type.Name", "VkColorSpaceKHR")]
         [NativeName("Name", "colorSpace")]
         public ColorSpaceKHR ColorSpace;
-        /// <summary>To be documented.</summary>
-        public override string ToString()
-        {
-            return Handle.ToString();
-        }
-
     }
 }

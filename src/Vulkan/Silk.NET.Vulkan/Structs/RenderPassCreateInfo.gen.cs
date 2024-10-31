@@ -123,12 +123,6 @@ namespace Silk.NET.Vulkan
         [NativeName("Type.Name", "VkSubpassDependency")]
         [NativeName("Name", "pDependencies")]
         public SubpassDependency* PDependencies;
-        /// <summary>To be documented.</summary>
-        public override string ToString()
-        {
-            return Handle.ToString();
-        }
-
 
         /// <inheritdoc />
         StructureType IStructuredType.StructureType()

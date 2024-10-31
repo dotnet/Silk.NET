@@ -90,12 +90,6 @@ namespace Silk.NET.Vulkan
         [NativeName("Type.Name", "VkDescriptorPoolSize")]
         [NativeName("Name", "pPoolSizes")]
         public DescriptorPoolSize* PPoolSizes;
-        /// <summary>To be documented.</summary>
-        public override string ToString()
-        {
-            return Handle.ToString();
-        }
-
 
         /// <inheritdoc />
         StructureType IStructuredType.StructureType()

@@ -79,12 +79,6 @@ namespace Silk.NET.Vulkan
         [NativeName("Type.Name", "VkBufferUsageFlags")]
         [NativeName("Name", "extendedSparseBufferUsageFlags")]
         public BufferUsageFlags ExtendedSparseBufferUsageFlags;
-        /// <summary>To be documented.</summary>
-        public override string ToString()
-        {
-            return Handle.ToString();
-        }
-
 
         /// <inheritdoc />
         StructureType IStructuredType.StructureType()

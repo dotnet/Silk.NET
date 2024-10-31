@@ -79,11 +79,5 @@ namespace Silk.NET.OpenXR
         [NativeName("Type.Name", "XrExtent2Di")]
         [NativeName("Name", "imageSensorPixelResolution")]
         public Extent2Di ImageSensorPixelResolution;
-        /// <summary>To be documented.</summary>
-        public override string ToString()
-        {
-            return Handle.ToString();
-        }
-
     }
 }

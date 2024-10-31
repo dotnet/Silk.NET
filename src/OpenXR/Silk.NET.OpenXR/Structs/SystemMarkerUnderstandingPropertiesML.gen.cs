@@ -57,11 +57,5 @@ namespace Silk.NET.OpenXR
         [NativeName("Type.Name", "XrBool32")]
         [NativeName("Name", "supportsMarkerUnderstanding")]
         public uint SupportsMarkerUnderstanding;
-        /// <summary>To be documented.</summary>
-        public override string ToString()
-        {
-            return Handle.ToString();
-        }
-
     }
 }

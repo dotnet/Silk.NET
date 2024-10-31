@@ -47,11 +47,5 @@ namespace Silk.NET.Vulkan
         [NativeName("Type.Name", "VkDescriptorType")]
         [NativeName("Name", "pDescriptorTypes")]
         public DescriptorType* PDescriptorTypes;
-        /// <summary>To be documented.</summary>
-        public override string ToString()
-        {
-            return Handle.ToString();
-        }
-
     }
 }

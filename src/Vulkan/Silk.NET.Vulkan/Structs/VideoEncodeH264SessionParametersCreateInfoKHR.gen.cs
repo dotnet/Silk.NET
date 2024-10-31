@@ -79,12 +79,6 @@ namespace Silk.NET.Vulkan
         [NativeName("Type.Name", "VkVideoEncodeH264SessionParametersAddInfoKHR")]
         [NativeName("Name", "pParametersAddInfo")]
         public VideoEncodeH264SessionParametersAddInfoKHR* PParametersAddInfo;
-        /// <summary>To be documented.</summary>
-        public override string ToString()
-        {
-            return Handle.ToString();
-        }
-
 
         /// <inheritdoc />
         StructureType IStructuredType.StructureType()

@@ -57,11 +57,5 @@ namespace Silk.NET.OpenXR
         [NativeName("Type.Name", "XrColorSpaceFB")]
         [NativeName("Name", "colorSpace")]
         public ColorSpaceFB ColorSpace;
-        /// <summary>To be documented.</summary>
-        public override string ToString()
-        {
-            return Handle.ToString();
-        }
-
     }
 }

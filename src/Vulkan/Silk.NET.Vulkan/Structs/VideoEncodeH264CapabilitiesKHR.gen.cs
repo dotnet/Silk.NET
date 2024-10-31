@@ -189,12 +189,6 @@ namespace Silk.NET.Vulkan
         [NativeName("Type.Name", "VkVideoEncodeH264StdFlagsKHR")]
         [NativeName("Name", "stdSyntaxFlags")]
         public VideoEncodeH264StdFlagsKHR StdSyntaxFlags;
-        /// <summary>To be documented.</summary>
-        public override string ToString()
-        {
-            return Handle.ToString();
-        }
-
 
         /// <inheritdoc />
         StructureType IStructuredType.StructureType()

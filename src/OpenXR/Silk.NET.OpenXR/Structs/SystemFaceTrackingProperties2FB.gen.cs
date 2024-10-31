@@ -68,11 +68,5 @@ namespace Silk.NET.OpenXR
         [NativeName("Type.Name", "XrBool32")]
         [NativeName("Name", "supportsAudioFaceTracking")]
         public uint SupportsAudioFaceTracking;
-        /// <summary>To be documented.</summary>
-        public override string ToString()
-        {
-            return Handle.ToString();
-        }
-
     }
 }

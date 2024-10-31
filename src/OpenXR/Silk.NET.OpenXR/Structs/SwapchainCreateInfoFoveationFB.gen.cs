@@ -57,11 +57,5 @@ namespace Silk.NET.OpenXR
         [NativeName("Type.Name", "XrSwapchainCreateFoveationFlagsFB")]
         [NativeName("Name", "flags")]
         public SwapchainCreateFoveationFlagsFB Flags;
-        /// <summary>To be documented.</summary>
-        public override string ToString()
-        {
-            return Handle.ToString();
-        }
-
     }
 }

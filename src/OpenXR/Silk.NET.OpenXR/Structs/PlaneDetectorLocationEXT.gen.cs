@@ -123,11 +123,5 @@ namespace Silk.NET.OpenXR
         [NativeName("Type.Name", "uint32_t")]
         [NativeName("Name", "polygonBufferCount")]
         public uint PolygonBufferCount;
-        /// <summary>To be documented.</summary>
-        public override string ToString()
-        {
-            return Handle.ToString();
-        }
-
     }
 }

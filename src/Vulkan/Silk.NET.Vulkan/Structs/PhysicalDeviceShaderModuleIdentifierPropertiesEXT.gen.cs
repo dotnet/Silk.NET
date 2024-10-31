@@ -51,12 +51,6 @@ namespace Silk.NET.Vulkan
         [NativeName("Type.Name", "uint8_t")]
         [NativeName("Name", "shaderModuleIdentifierAlgorithmUUID")]
         public fixed byte ShaderModuleIdentifierAlgorithmUuid[16];
-        /// <summary>To be documented.</summary>
-        public override string ToString()
-        {
-            return Handle.ToString();
-        }
-
 
         /// <inheritdoc />
         StructureType IStructuredType.StructureType()

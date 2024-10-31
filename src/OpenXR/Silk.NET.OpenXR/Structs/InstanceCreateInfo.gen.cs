@@ -112,11 +112,5 @@ namespace Silk.NET.OpenXR
         [NativeName("Type.Name", "char")]
         [NativeName("Name", "enabledExtensionNames")]
         public byte** EnabledExtensionNames;
-        /// <summary>To be documented.</summary>
-        public override string ToString()
-        {
-            return Handle.ToString();
-        }
-
     }
 }

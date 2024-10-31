@@ -101,11 +101,5 @@ namespace Silk.NET.OpenXR
         [NativeName("Type.Name", "XrSpaceStorageLocationFB")]
         [NativeName("Name", "location")]
         public SpaceStorageLocationFB Location;
-        /// <summary>To be documented.</summary>
-        public override string ToString()
-        {
-            return Handle.ToString();
-        }
-
     }
 }

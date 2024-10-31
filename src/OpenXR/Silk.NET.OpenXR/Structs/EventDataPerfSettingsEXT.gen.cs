@@ -90,11 +90,5 @@ namespace Silk.NET.OpenXR
         [NativeName("Type.Name", "XrPerfSettingsNotificationLevelEXT")]
         [NativeName("Name", "toLevel")]
         public PerfSettingsNotificationLevelEXT ToLevel;
-        /// <summary>To be documented.</summary>
-        public override string ToString()
-        {
-            return Handle.ToString();
-        }
-
     }
 }

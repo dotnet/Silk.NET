@@ -57,11 +57,5 @@ namespace Silk.NET.OpenXR
         [NativeName("Type.Name", "XrFaceExpressionSetFB")]
         [NativeName("Name", "faceExpressionSet")]
         public FaceExpressionSetFB FaceExpressionSet;
-        /// <summary>To be documented.</summary>
-        public override string ToString()
-        {
-            return Handle.ToString();
-        }
-
     }
 }

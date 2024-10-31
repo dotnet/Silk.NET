@@ -123,11 +123,5 @@ namespace Silk.NET.OpenXR
         [NativeName("Type.Name", "XrDebugUtilsLabelEXT")]
         [NativeName("Name", "sessionLabels")]
         public DebugUtilsLabelEXT* SessionLabels;
-        /// <summary>To be documented.</summary>
-        public override string ToString()
-        {
-            return Handle.ToString();
-        }
-
     }
 }

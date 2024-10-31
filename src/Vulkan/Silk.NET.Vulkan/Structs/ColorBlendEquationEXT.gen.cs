@@ -90,11 +90,5 @@ namespace Silk.NET.Vulkan
         [NativeName("Type.Name", "VkBlendOp")]
         [NativeName("Name", "alphaBlendOp")]
         public BlendOp AlphaBlendOp;
-        /// <summary>To be documented.</summary>
-        public override string ToString()
-        {
-            return Handle.ToString();
-        }
-
     }
 }

@@ -89,11 +89,5 @@ namespace Silk.NET.OpenXR
         [NativeName("Type.Name", "char")]
         [NativeName("Name", "localizedActionName")]
         public fixed byte LocalizedActionName[128];
-        /// <summary>To be documented.</summary>
-        public override string ToString()
-        {
-            return Handle.ToString();
-        }
-
     }
 }

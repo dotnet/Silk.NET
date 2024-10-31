@@ -68,12 +68,6 @@ namespace Silk.NET.Vulkan
         [NativeName("Type.Name", "StdVideoEncodeH265SliceSegmentHeader")]
         [NativeName("Name", "pStdSliceSegmentHeader")]
         public Video.StdVideoEncodeH265SliceSegmentHeader* PStdSliceSegmentHeader;
-        /// <summary>To be documented.</summary>
-        public override string ToString()
-        {
-            return Handle.ToString();
-        }
-
 
         /// <inheritdoc />
         StructureType IStructuredType.StructureType()

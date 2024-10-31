@@ -57,11 +57,5 @@ namespace Silk.NET.OpenXR
         [NativeName("Type.Name", "XrHandJointsMotionRangeEXT")]
         [NativeName("Name", "handJointsMotionRange")]
         public HandJointsMotionRangeEXT HandJointsMotionRange;
-        /// <summary>To be documented.</summary>
-        public override string ToString()
-        {
-            return Handle.ToString();
-        }
-
     }
 }

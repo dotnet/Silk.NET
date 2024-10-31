@@ -57,11 +57,5 @@ namespace Silk.NET.Vulkan
         [NativeName("Type.Name", "VkAccelerationStructureMotionInstanceDataNV")]
         [NativeName("Name", "data")]
         public AccelerationStructureMotionInstanceDataNV Data;
-        /// <summary>To be documented.</summary>
-        public override string ToString()
-        {
-            return Handle.ToString();
-        }
-
     }
 }

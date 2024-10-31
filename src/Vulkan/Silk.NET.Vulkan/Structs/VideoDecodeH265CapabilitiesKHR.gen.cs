@@ -57,12 +57,6 @@ namespace Silk.NET.Vulkan
         [NativeName("Type.Name", "StdVideoH265LevelIdc")]
         [NativeName("Name", "maxLevelIdc")]
         public Video.StdVideoH265LevelIdc MaxLevelIdc;
-        /// <summary>To be documented.</summary>
-        public override string ToString()
-        {
-            return Handle.ToString();
-        }
-
 
         /// <inheritdoc />
         StructureType IStructuredType.StructureType()

@@ -90,12 +90,6 @@ namespace Silk.NET.Vulkan
         [NativeName("Type.Name", "VkBool32")]
         [NativeName("Name", "workgroupMemoryExplicitLayout16BitAccess")]
         public Bool32 WorkgroupMemoryExplicitLayout16BitAccess;
-        /// <summary>To be documented.</summary>
-        public override string ToString()
-        {
-            return Handle.ToString();
-        }
-
 
         /// <inheritdoc />
         StructureType IStructuredType.StructureType()

@@ -90,11 +90,5 @@ namespace Silk.NET.OpenXR
         [NativeName("Type.Name", "XrCompositionLayerProjectionView")]
         [NativeName("Name", "views")]
         public CompositionLayerProjectionView* Views;
-        /// <summary>To be documented.</summary>
-        public override string ToString()
-        {
-            return Handle.ToString();
-        }
-
     }
 }

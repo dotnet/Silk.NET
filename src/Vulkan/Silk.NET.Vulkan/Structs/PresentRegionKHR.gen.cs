@@ -46,11 +46,5 @@ namespace Silk.NET.Vulkan
         [NativeName("Type.Name", "VkRectLayerKHR")]
         [NativeName("Name", "pRectangles")]
         public RectLayerKHR* PRectangles;
-        /// <summary>To be documented.</summary>
-        public override string ToString()
-        {
-            return Handle.ToString();
-        }
-
     }
 }

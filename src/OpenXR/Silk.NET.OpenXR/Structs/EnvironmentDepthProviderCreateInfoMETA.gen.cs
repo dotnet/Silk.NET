@@ -57,11 +57,5 @@ namespace Silk.NET.OpenXR
         [NativeName("Type.Name", "XrEnvironmentDepthProviderCreateFlagsMETA")]
         [NativeName("Name", "createFlags")]
         public EnvironmentDepthProviderCreateFlagsMETA CreateFlags;
-        /// <summary>To be documented.</summary>
-        public override string ToString()
-        {
-            return Handle.ToString();
-        }
-
     }
 }

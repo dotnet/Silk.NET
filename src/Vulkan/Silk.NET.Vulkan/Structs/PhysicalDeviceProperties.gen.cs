@@ -111,11 +111,5 @@ namespace Silk.NET.Vulkan
         [NativeName("Type.Name", "VkPhysicalDeviceSparseProperties")]
         [NativeName("Name", "sparseProperties")]
         public PhysicalDeviceSparseProperties SparseProperties;
-        /// <summary>To be documented.</summary>
-        public override string ToString()
-        {
-            return Handle.ToString();
-        }
-
     }
 }

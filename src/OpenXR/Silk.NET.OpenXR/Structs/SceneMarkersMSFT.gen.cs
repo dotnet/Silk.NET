@@ -68,11 +68,5 @@ namespace Silk.NET.OpenXR
         [NativeName("Type.Name", "XrSceneMarkerMSFT")]
         [NativeName("Name", "sceneMarkers")]
         public SceneMarkerMSFT* SceneMarkers;
-        /// <summary>To be documented.</summary>
-        public override string ToString()
-        {
-            return Handle.ToString();
-        }
-
     }
 }

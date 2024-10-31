@@ -46,11 +46,5 @@ namespace Silk.NET.OpenXR
         [NativeName("Type.Name", "XrExtent2Di")]
         [NativeName("Name", "extent")]
         public Extent2Di Extent;
-        /// <summary>To be documented.</summary>
-        public override string ToString()
-        {
-            return Handle.ToString();
-        }
-
     }
 }

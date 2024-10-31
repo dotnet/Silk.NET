@@ -79,11 +79,5 @@ namespace Silk.NET.OpenXR
         [NativeName("Type.Name", "XrFaceTrackingDataSource2FB")]
         [NativeName("Name", "requestedDataSources")]
         public FaceTrackingDataSource2FB* RequestedDataSources;
-        /// <summary>To be documented.</summary>
-        public override string ToString()
-        {
-            return Handle.ToString();
-        }
-
     }
 }

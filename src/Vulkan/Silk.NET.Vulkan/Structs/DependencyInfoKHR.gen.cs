@@ -124,12 +124,6 @@ namespace Silk.NET.Vulkan
         [NativeName("Type.Name", "VkImageMemoryBarrier2")]
         [NativeName("Name", "pImageMemoryBarriers")]
         public ImageMemoryBarrier2* PImageMemoryBarriers;
-        /// <summary>To be documented.</summary>
-        public override string ToString()
-        {
-            return Handle.ToString();
-        }
-
 
         /// <inheritdoc />
         StructureType IStructuredType.StructureType()

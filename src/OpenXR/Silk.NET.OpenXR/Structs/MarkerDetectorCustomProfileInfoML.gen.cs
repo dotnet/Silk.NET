@@ -112,11 +112,5 @@ namespace Silk.NET.OpenXR
         [NativeName("Type.Name", "XrMarkerDetectorFullAnalysisIntervalML")]
         [NativeName("Name", "fullAnalysisIntervalHint")]
         public MarkerDetectorFullAnalysisIntervalML FullAnalysisIntervalHint;
-        /// <summary>To be documented.</summary>
-        public override string ToString()
-        {
-            return Handle.ToString();
-        }
-
     }
 }

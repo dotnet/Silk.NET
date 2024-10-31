@@ -57,11 +57,5 @@ namespace Silk.NET.OpenXR
         [NativeName("Type.Name", "XrFacialTrackingTypeHTC")]
         [NativeName("Name", "facialTrackingType")]
         public FacialTrackingTypeHTC FacialTrackingType;
-        /// <summary>To be documented.</summary>
-        public override string ToString()
-        {
-            return Handle.ToString();
-        }
-
     }
 }

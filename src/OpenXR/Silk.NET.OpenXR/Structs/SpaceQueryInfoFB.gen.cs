@@ -101,11 +101,5 @@ namespace Silk.NET.OpenXR
         [NativeName("Type.Name", "XrSpaceFilterInfoBaseHeaderFB")]
         [NativeName("Name", "excludeFilter")]
         public SpaceFilterInfoBaseHeaderFB* ExcludeFilter;
-        /// <summary>To be documented.</summary>
-        public override string ToString()
-        {
-            return Handle.ToString();
-        }
-
     }
 }
