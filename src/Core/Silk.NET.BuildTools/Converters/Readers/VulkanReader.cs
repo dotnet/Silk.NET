@@ -346,7 +346,13 @@ namespace Silk.NET.BuildTools.Converters.Readers
 
             var handleFuns = new List<ImplementedFunction>
             {
-                new(toString, new StringBuilder("return Handle.ToString();"), toString, false)
+                new
+                (
+                    toString,
+                    new StringBuilder("return sizeof(nint) == 8 ? $\"0x{Handle:x16}\" : $\"0x{Handle:x8}\";"),
+                    toString,
+                    false
+                )
             };
 
             foreach (var h in spec.Handles)
