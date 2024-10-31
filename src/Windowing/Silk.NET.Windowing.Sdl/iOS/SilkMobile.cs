@@ -12,14 +12,15 @@ namespace Silk.NET.Windowing.Sdl.iOS
         {
             SearchPathContainer.Platform = UnderlyingPlatform.IOS;
         }
-        
-        private static bool _running;
+
+        public static bool IsRunning { get; private set; }
+
         private static MainFunction? CurrentMain { get; set; }
         [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
         public unsafe delegate void MainFunction(int numArgs, byte** args);
         [DllImport("__Internal", EntryPoint = "SDL_UIKitRunApp")]
         private static extern unsafe void CoreRunApp(int numArgs, byte** args, nint callback);
-            
+
         public static unsafe void RunApp(int numArgs, byte** args, nint callback)
         {
             BeginRun();
@@ -78,21 +79,21 @@ namespace Silk.NET.Windowing.Sdl.iOS
 
         [MonoPInvokeCallback(typeof(MainFunction))]
         private static unsafe void CallMain(int numArgs, byte** args) => CurrentMain!(numArgs, args);
-        
+
         private static unsafe nint GetCallMainPtr()
             => Marshal.GetFunctionPointerForDelegate((MainFunction) CallMain);
 
         private static void BeginRun()
         {
-            if (_running)
+            if (IsRunning)
             {
                 throw new System.InvalidOperationException("App already running.");
             }
 
             SdlWindowing.RegisterPlatform();
-            _running = true;
+            IsRunning = true;
         }
 
-        private static void EndRun() => _running = false;
+        private static void EndRun() => IsRunning = false;
     }
 }
