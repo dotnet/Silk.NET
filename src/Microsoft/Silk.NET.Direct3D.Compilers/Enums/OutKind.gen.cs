@@ -45,6 +45,21 @@ namespace Silk.NET.Direct3D.Compilers
         [Obsolete("Deprecated in favour of \"ExtraOutputs\"")]
         [NativeName("Name", "DXC_OUT_EXTRA_OUTPUTS")]
         OutExtraOutputs = 0xA,
+        [Obsolete("Deprecated in favour of \"Remarks\"")]
+        [NativeName("Name", "DXC_OUT_REMARKS")]
+        OutRemarks = 0xB,
+        [Obsolete("Deprecated in favour of \"TimeReport\"")]
+        [NativeName("Name", "DXC_OUT_TIME_REPORT")]
+        OutTimeReport = 0xC,
+        [Obsolete("Deprecated in favour of \"TimeTrace\"")]
+        [NativeName("Name", "DXC_OUT_TIME_TRACE")]
+        OutTimeTrace = 0xD,
+        [Obsolete("Deprecated in favour of \"Last\"")]
+        [NativeName("Name", "DXC_OUT_LAST")]
+        OutLast = 0xD,
+        [Obsolete("Deprecated in favour of \"NumEnums\"")]
+        [NativeName("Name", "DXC_OUT_NUM_ENUMS")]
+        OutNumEnums = 0xE,
         [Obsolete("Deprecated in favour of \"ForceDword\"")]
         [NativeName("Name", "DXC_OUT_FORCE_DWORD")]
         OutForceDword = unchecked((int) 0xFFFFFFFFFFFFFFFF),
@@ -70,6 +85,16 @@ namespace Silk.NET.Direct3D.Compilers
         RootSignature = 0x9,
         [NativeName("Name", "DXC_OUT_EXTRA_OUTPUTS")]
         ExtraOutputs = 0xA,
+        [NativeName("Name", "DXC_OUT_REMARKS")]
+        Remarks = 0xB,
+        [NativeName("Name", "DXC_OUT_TIME_REPORT")]
+        TimeReport = 0xC,
+        [NativeName("Name", "DXC_OUT_TIME_TRACE")]
+        TimeTrace = 0xD,
+        [NativeName("Name", "DXC_OUT_LAST")]
+        Last = 0xD,
+        [NativeName("Name", "DXC_OUT_NUM_ENUMS")]
+        NumEnums = 0xE,
         [NativeName("Name", "DXC_OUT_FORCE_DWORD")]
         ForceDword = unchecked((int) 0xFFFFFFFFFFFFFFFF),
     }

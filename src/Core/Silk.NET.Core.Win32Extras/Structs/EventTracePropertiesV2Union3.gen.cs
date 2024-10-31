@@ -17,7 +17,7 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Core.Win32Extras
 {
     [StructLayout(LayoutKind.Explicit)]
-    [NativeName("Name", "__AnonymousRecord_evntrace_L1260_C5")]
+    [NativeName("Name", "__AnonymousRecord_evntrace_L1294_C5")]
     public unsafe partial struct EventTracePropertiesV2Union3
     {
         public EventTracePropertiesV2Union3
@@ -64,7 +64,7 @@ namespace Silk.NET.Core.Win32Extras
 
         [FieldOffset(0)]
         [NativeName("Type", "")]
-        [NativeName("Type.Name", "__AnonymousRecord_evntrace_L1261_C9")]
+        [NativeName("Type.Name", "__AnonymousRecord_evntrace_L1295_C9")]
         [NativeName("Name", "anonymous1")]
         public EventTracePropertiesV2Union3Union Anonymous;
 

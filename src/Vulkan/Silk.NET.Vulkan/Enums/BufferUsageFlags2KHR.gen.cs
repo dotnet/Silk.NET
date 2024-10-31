@@ -96,6 +96,9 @@ namespace Silk.NET.Vulkan
         [Obsolete("Deprecated in favour of \"MicromapStorageBitExt\"")]
         [NativeName("Name", "VK_BUFFER_USAGE_2_MICROMAP_STORAGE_BIT_EXT")]
         BufferUsage2MicromapStorageBitExt = 16777216,
+        [Obsolete("Deprecated in favour of \"PreprocessBufferBitExt\"")]
+        [NativeName("Name", "VK_BUFFER_USAGE_2_PREPROCESS_BUFFER_BIT_EXT")]
+        BufferUsage2PreprocessBufferBitExt = 2147483648,
         [NativeName("Name", "VK_BUFFER_USAGE_2_TRANSFER_SRC_BIT_KHR")]
         TransferSrcBitKhr = 1,
         [NativeName("Name", "VK_BUFFER_USAGE_2_TRANSFER_DST_BIT_KHR")]
@@ -150,5 +153,7 @@ namespace Silk.NET.Vulkan
         MicromapBuildInputReadOnlyBitExt = 8388608,
         [NativeName("Name", "VK_BUFFER_USAGE_2_MICROMAP_STORAGE_BIT_EXT")]
         MicromapStorageBitExt = 16777216,
+        [NativeName("Name", "VK_BUFFER_USAGE_2_PREPROCESS_BUFFER_BIT_EXT")]
+        PreprocessBufferBitExt = 2147483648,
     }
 }

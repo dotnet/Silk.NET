@@ -20,5 +20,7 @@ namespace Silk.NET.OpenCL.Extensions.KHR
         OpaqueWin32 = 0x2056,
         [NativeName("Name", "CL_SEMAPHORE_HANDLE_OPAQUE_WIN32_KMT_KHR")]
         OpaqueWin32Kmt = 0x2057,
+        [NativeName("Name", "CL_SEMAPHORE_HANDLE_OPAQUE_WIN32_NAME_KHR")]
+        OpaqueWin32Name = 0x2068,
     }
 }

@@ -171,5 +171,9 @@ namespace Silk.NET.OpenGLES
         TextureTilingExt = 0x9580,
         [NativeName("Name", "GL_TEXTURE_FOVEATED_CUTOFF_DENSITY_QCOM")]
         TextureFoveatedCutoffDensityQCom = 0x96A0,
+        [NativeName("Name", "GL_TEXTURE_Y_DEGAMMA_QCOM")]
+        TextureYDegammaQCom = 0x9710,
+        [NativeName("Name", "GL_TEXTURE_CBCR_DEGAMMA_QCOM")]
+        TextureCbcrDegammaQCom = 0x9711,
     }
 }

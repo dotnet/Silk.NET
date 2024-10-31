@@ -155,7 +155,7 @@ namespace Silk.NET.Core.Win32Extras
         public uint BuffersRead;
 
         [NativeName("Type", "")]
-        [NativeName("Type.Name", "__AnonymousRecord_evntrace_L1548_C5")]
+        [NativeName("Type.Name", "__AnonymousRecord_evntrace_L1589_C5")]
         [NativeName("Name", "anonymous1")]
         public EventTraceLogfilewUnion1 Anonymous1;
 
@@ -190,7 +190,7 @@ namespace Silk.NET.Core.Win32Extras
         public uint EventsLost;
 
         [NativeName("Type", "")]
-        [NativeName("Type.Name", "__AnonymousRecord_evntrace_L1567_C5")]
+        [NativeName("Type.Name", "__AnonymousRecord_evntrace_L1608_C5")]
         [NativeName("Name", "anonymous2")]
         public EventTraceLogfilewUnion2 Anonymous2;
 

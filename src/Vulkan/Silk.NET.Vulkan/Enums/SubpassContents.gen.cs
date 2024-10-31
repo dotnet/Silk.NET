@@ -18,5 +18,7 @@ namespace Silk.NET.Vulkan
         SecondaryCommandBuffers = 1,
         [NativeName("Name", "VK_SUBPASS_CONTENTS_INLINE_AND_SECONDARY_COMMAND_BUFFERS_EXT")]
         InlineAndSecondaryCommandBuffersExt = 1000451000,
+        [NativeName("Name", "VK_SUBPASS_CONTENTS_INLINE_AND_SECONDARY_COMMAND_BUFFERS_KHR")]
+        InlineAndSecondaryCommandBuffersKhr = 1000451000,
     }
 }

@@ -157,12 +157,12 @@ namespace Silk.NET.Core.Win32Extras
         public ushort Size;
 
         [NativeName("Type", "")]
-        [NativeName("Type.Name", "__AnonymousRecord_evntrace_L880_C5")]
+        [NativeName("Type.Name", "__AnonymousRecord_evntrace_L914_C5")]
         [NativeName("Name", "anonymous1")]
         public EventTraceHeaderUnion1 Anonymous1;
 
         [NativeName("Type", "")]
-        [NativeName("Type.Name", "__AnonymousRecord_evntrace_L887_C5")]
+        [NativeName("Type.Name", "__AnonymousRecord_evntrace_L921_C5")]
         [NativeName("Name", "anonymous2")]
         public EventTraceHeaderUnion2 Anonymous2;
 
@@ -182,12 +182,12 @@ namespace Silk.NET.Core.Win32Extras
         public long TimeStamp;
 
         [NativeName("Type", "")]
-        [NativeName("Type.Name", "__AnonymousRecord_evntrace_L898_C5")]
+        [NativeName("Type.Name", "__AnonymousRecord_evntrace_L932_C5")]
         [NativeName("Name", "anonymous3")]
         public EventTraceHeaderUnion3 Anonymous3;
 
         [NativeName("Type", "")]
-        [NativeName("Type.Name", "__AnonymousRecord_evntrace_L902_C5")]
+        [NativeName("Type.Name", "__AnonymousRecord_evntrace_L936_C5")]
         [NativeName("Name", "anonymous4")]
         public EventTraceHeaderUnion4 Anonymous4;
 #if NETSTANDARD2_1 || NETCOREAPP3_1 || NET5_0 || NET5_0_OR_GREATER

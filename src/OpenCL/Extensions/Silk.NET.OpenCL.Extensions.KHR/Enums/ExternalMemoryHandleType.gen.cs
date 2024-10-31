@@ -20,5 +20,7 @@ namespace Silk.NET.OpenCL.Extensions.KHR
         OpaqueWin32 = 0x2061,
         [NativeName("Name", "CL_EXTERNAL_MEMORY_HANDLE_OPAQUE_WIN32_KMT_KHR")]
         OpaqueWin32Kmt = 0x2062,
+        [NativeName("Name", "CL_EXTERNAL_MEMORY_HANDLE_OPAQUE_WIN32_NAME_KHR")]
+        OpaqueWin32Name = 0x2069,
     }
 }
