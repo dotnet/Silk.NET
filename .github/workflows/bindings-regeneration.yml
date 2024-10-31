@@ -45,8 +45,6 @@ jobs:
       uses: actions/setup-dotnet@v1
       with:
         dotnet-version: 3.1.404
-    - name: Setup NUKE
-      run: dotnet tool install Nuke.GlobalTool --global
     - name: Install Workloads
       # TODO: This is slow. Maybe we can make a docker container with this already done?
       run: dotnet workload install android ios maccatalyst
